@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	usbredir
 PORTVERSION=	0.8.0
 CATEGORIES=	net devel

@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>, Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	WWW-VenusEnvy
 PORTVERSION=	1.10
 PORTREVISION=	2

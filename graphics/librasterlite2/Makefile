@@ -1,5 +1,3 @@
-# Created by: lbartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	librasterlite2
 PORTVERSION=	1.1.0
 DISTVERSIONSUFFIX=-beta1

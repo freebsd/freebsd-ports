@@ -1,5 +1,3 @@
-# Created by: sumikawa
-
 PORTNAME=	FFmpeg-Command
 PORTVERSION=	0.19
 PORTREVISION=	6

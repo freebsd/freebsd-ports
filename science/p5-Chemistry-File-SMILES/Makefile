@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	Chemistry-File-SMILES
 PORTVERSION=	0.47
 PORTREVISION=	2

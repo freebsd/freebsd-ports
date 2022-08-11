@@ -1,5 +1,3 @@
-# Created by: wosch
-
 PORTNAME=	uk-postcodes
 PORTVERSION=	2.2
 CATEGORIES=	misc

@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	HTTP-Cookies
 PORTVERSION=	6.10
 CATEGORIES=	www perl5

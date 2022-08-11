@@ -1,5 +1,3 @@
-# Created by: Lupe Christoph <lupe@lupe-christoph.de>
-
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
 CATEGORIES=	sysutils perl5

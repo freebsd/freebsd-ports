@@ -1,5 +1,3 @@
-# Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
-
 PORTNAME=	bdfresize
 PORTVERSION=	1.5
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	odamex
 PORTVERSION=	0.7.0
 PORTREVISION=	3

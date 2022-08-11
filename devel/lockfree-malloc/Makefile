@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	lockfree-malloc
 PORTVERSION=	0.0.${DATE}
 PORTREVISION=	10

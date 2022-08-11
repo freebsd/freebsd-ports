@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	reduce
 PORTVERSION=	20211019
 CATEGORIES=	math lang

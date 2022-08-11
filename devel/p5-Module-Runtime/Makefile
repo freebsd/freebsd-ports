@@ -1,5 +1,3 @@
-# Created by: brix@FreeBSD.org
-
 PORTNAME=	Module-Runtime
 PORTVERSION=	0.016
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Ilia Skalozubov <freebsd@skinc.ru>
-
 PORTNAME=	pyenet
 DISTVERSION=	1.3.13.post7
 CATEGORIES=	net python

@@ -1,7 +1,7 @@
 PORTNAME=	ipamjm
 PORTVERSION=	00601
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	https://mojikiban.ipa.go.jp/OSCDL/IPAmjMincho/
+MASTER_SITES=	https://dforest.watch.impress.co.jp/library/i/ipamjfont/10750/
 PKGNAMEPREFIX=	ja-font-
 DISTNAME=	${PORTNAME}${PORTVERSION}
 

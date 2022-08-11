@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	SVN-Notify-Filter-EmailFlatFileDB
 PORTVERSION=	1.01
 PORTREVISION=	1

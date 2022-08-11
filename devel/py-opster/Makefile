@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	opster
 PORTVERSION=	4.2
 CATEGORIES=	devel python

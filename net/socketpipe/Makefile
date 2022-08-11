@@ -1,5 +1,3 @@
-# Created by: dds
-
 PORTNAME=	socketpipe
 PORTVERSION=	1.10
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Dmitri Goutnik <dg@syrec.org>
-
 PORTNAME=	alttab
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.1

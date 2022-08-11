@@ -1,5 +1,3 @@
-# Created by: Filippo Natali <filippo.natali@gmail.com>
-
 PORTNAME=	tinystats
 PORTVERSION=	1.1
 CATEGORIES=	dns

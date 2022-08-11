@@ -1,5 +1,3 @@
-# Created by: Robert Withrow <witr@rwwa.com>
-
 PORTNAME=	findutils
 PORTVERSION=	4.9.0
 CATEGORIES=	misc

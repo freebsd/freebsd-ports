@@ -1,5 +1,3 @@
-# Created by: philip@FreeBSD.org
-
 PORTNAME=	tarsnapper
 PORTVERSION=	0.4
 CATEGORIES=	sysutils python

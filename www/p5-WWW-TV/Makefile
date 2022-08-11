@@ -1,5 +1,3 @@
-# Created by: Anatoliy Dmytriyev <tolid@plab.ku.dk>
-
 PORTNAME=	WWW-TV
 PORTVERSION=	0.14
 PORTREVISION=	1

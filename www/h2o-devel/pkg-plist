@@ -49,8 +49,8 @@ include/h2o/version.h
 include/h2o/websocket.h
 libdata/pkgconfig/libh2o-evloop.pc
 libdata/pkgconfig/libh2o.pc
-man/man5/h2o.conf.5.gz
-man/man8/h2o.8.gz
+share/man/man5/h2o.conf.5.gz
+share/man/man8/h2o.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/assets/8mbps100msec-nginx195-h2o150.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/firstpaintbench.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/remotebench.png

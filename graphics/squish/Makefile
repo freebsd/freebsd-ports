@@ -1,5 +1,3 @@
-# Created by: Reinier de Blois <rddeblois@gmail.com>
-
 PORTNAME=	squish
 PORTVERSION=	1.10
 PORTREVISION=	2
@@ -21,6 +19,8 @@ USE_LDCONFIG=	yes
 OPTIONS_RADIO=	RG1
 OPTIONS_RADIO_RG1=	ALTIVEC SSE
 OPTIONS_DEFAULT_amd64=	SSE
+OPTIONS_DEFAULT_powerpc64=	ALTIVEC
+OPTIONS_DEFAULT_powerpc64le=	ALTIVEC
 ALTIVEC_DESC=	Use Altivec instructions
 RG1_DESC=	Optimizations Selection
 

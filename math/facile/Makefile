@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	facile
 PORTVERSION=	1.1.3
 PORTREVISION=	1

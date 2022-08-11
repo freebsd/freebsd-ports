@@ -1,5 +1,3 @@
-# Created by: Christopher Key <cjk32@cam.ac.uk>
-
 PORTNAME=	WebService-MoviePosterDB
 PORTVERSION=	0.18
 PORTREVISION=	1

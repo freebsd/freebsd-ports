@@ -1,5 +1,3 @@
-# Created by: antoine@FreeBSD.org
-
 PORTNAME=	pyaff4
 DISTVERSION=	0.26.post6
 CATEGORIES=	security devel python

@@ -1,9 +1,5 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-#   $MCom: ports/textproc/exempi/Makefile,v 1.1 2008/02/26 18:50:26 ahze Exp $
-
 PORTNAME=	exempi
-DISTVERSION=	2.5.2
-PORTREVISION=	1
+DISTVERSION=	2.6.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 

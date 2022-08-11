@@ -16,4 +16,4 @@ message using the Message class. Using this facility mime4j
 automatically handles the decoding of fields and bodies and uses
 temporary files for large attachments.
 
-WWW: http://james.apache.org/mime4j/
+WWW: https://james.apache.org/mime4j/

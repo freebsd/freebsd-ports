@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xworm
 PORTVERSION=	1.02
 PORTREVISION=	2

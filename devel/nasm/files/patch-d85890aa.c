@@ -1,8 +1,6 @@
-diff --git a/Makefile.in b/Makefile.in
-index baca4396..924ba9d6 100644
---- Makefile.in
+--- Makefile.in.orig	2020-08-28 16:04:43 UTC
 +++ Makefile.in
-@@ -75,7 +75,7 @@ ifeq ($(TRACE),1)
+@@ -75,7 +75,7 @@ endif
  endif
  
  .SUFFIXES:
@@ -11,7 +9,7 @@ index baca4396..924ba9d6 100644
  
  .PHONY: all doc rdf install clean distclean cleaner spotless install_rdf test
  .PHONY: install_doc everything install_everything strip perlreq dist tags TAGS
-@@ -100,7 +100,10 @@ endif
+@@ -100,7 +100,10 @@ NDISASM = disasm/ndisasm.$(O)
  NASM    = asm/nasm.$(O)
  NDISASM = disasm/ndisasm.$(O)
  
@@ -23,7 +21,7 @@ index baca4396..924ba9d6 100644
  	stdlib/strnlen.$(O) stdlib/strrchrnul.$(O) \
  	\
  	nasmlib/ver.$(O) \
-@@ -122,7 +125,7 @@ LIBOBJ = stdlib/snprintf.$(O) stdlib/vsnprintf.$(O) stdlib/strlcpy.$(O) \
+@@ -122,7 +125,7 @@ LIBOBJ = stdlib/snprintf.$(O) stdlib/vsnprintf.$(O) st
  	x86/regs.$(O) x86/regvals.$(O) x86/regflags.$(O) x86/regdis.$(O) \
  	x86/disp8.$(O) x86/iflag.$(O) \
  	\
@@ -32,21 +30,21 @@ index baca4396..924ba9d6 100644
  	asm/floats.$(O) \
  	asm/directiv.$(O) asm/directbl.$(O) \
  	asm/pragma.$(O) \
-@@ -147,7 +150,12 @@ LIBOBJ = stdlib/snprintf.$(O) stdlib/vsnprintf.$(O) stdlib/strlcpy.$(O) \
+@@ -147,15 +150,20 @@ LIBOBJ = stdlib/snprintf.$(O) stdlib/vsnprintf.$(O) st
  	\
  	disasm/disasm.$(O) disasm/sync.$(O)
  
 -ALLOBJ = $(NASM) $(NDISASM) $(LIBOBJ)
 +# Warnings depend on all source files, so handle them separately
 +WARNOBJ   = asm/warnings.$(O)
-+
+ 
 +LIBOBJ    = $(LIBOBJ_NW) $(WARNOBJ)
 +ALLOBJ_NW = $(PROGOBJ) $(LIBOBJ_NW)
 +ALLOBJ    = $(PROGOBJ) $(LIBOBJ)
- 
++
  SUBDIRS  = stdlib nasmlib output asm disasm x86 common macros
  XSUBDIRS = test doc nsis rdoff
-@@ -155,7 +163,7 @@ DEPDIRS  = . include config x86 rdoff $(SUBDIRS)
+ DEPDIRS  = . include config x86 rdoff $(SUBDIRS)
  #-- End File Lists --#
  
  all: dirs
@@ -55,7 +53,7 @@ index baca4396..924ba9d6 100644
  
  NASMLIB = libnasm.$(A)
  
-@@ -271,18 +279,30 @@ warnings:
+@@ -271,19 +279,31 @@ warnings:
  	$(RM_F) $(WARNFILES)
  	$(MAKE) asm/warnings.time
  
@@ -69,11 +67,11 @@ index baca4396..924ba9d6 100644
 +asm/warnings.c.time: asm/warnings.pl asm/warnings.time
  	$(RUNPERL) $(srcdir)/asm/warnings.pl c asm/warnings.c $(srcdir)
 +	: > asm/warnings.c.time
-+
-+asm/warnings.c: asm/warnings.c.time
-+	@: Side effect
  
 -include/warnings.h: asm/warnings.pl asm/warnings.time
++asm/warnings.c: asm/warnings.c.time
++	@: Side effect
++
 +include/warnings.h.time: asm/warnings.pl asm/warnings.time
  	$(RUNPERL) $(srcdir)/asm/warnings.pl h include/warnings.h $(srcdir)
 +	: > include/warnings.h.time
@@ -85,13 +83,14 @@ index baca4396..924ba9d6 100644
 +doc/warnings.src.time: asm/warnings.pl asm/warnings.time
  	$(RUNPERL) $(srcdir)/asm/warnings.pl doc doc/warnings.src $(srcdir)
 +	: > doc/warnings.src.time
-+
+ 
 +doc/warnings.src : doc/warnings.src.time
 +	@: Side effect
- 
++
  # Assembler token hash
  asm/tokhash.c: x86/insns.dat x86/regs.dat asm/tokens.dat asm/tokhash.pl \
-@@ -385,10 +405,9 @@ nsis: nsis/nasm.nsi nsis/arch.nsh nsis/version.nsh
+ 	perllib/phash.ph
+@@ -385,10 +405,9 @@ manpages: nasm.1 ndisasm.1
  # Generated manpages, also pregenerated for distribution
  manpages: nasm.1 ndisasm.1
  
@@ -135,7 +134,7 @@ index baca4396..924ba9d6 100644
  
  TAGS:
  	$(RM_F) TAGS
-@@ -496,13 +515,13 @@ nasm.spec: nasm.spec.in nasm.spec.sed version.sed perlbreq.si
+@@ -496,13 +515,13 @@ splint:
  splint:
  	splint -weak *.c
  
@@ -152,11 +151,9 @@ index baca4396..924ba9d6 100644
  	$(PYTHON3) travis/nasm-t.py run
  
  #
-diff --git a/Mkfiles/msvc.mak b/Mkfiles/msvc.mak
-index ee2022d3..f0b3944b 100644
---- Mkfiles/msvc.mak
+--- Mkfiles/msvc.mak.orig	2020-08-28 16:04:43 UTC
 +++ Mkfiles/msvc.mak
-@@ -64,7 +64,10 @@ X               = .exe
+@@ -64,7 +64,10 @@ NDISASM = disasm\ndisasm.$(O)
  NASM    = asm\nasm.$(O)
  NDISASM = disasm\ndisasm.$(O)
  
@@ -168,7 +165,7 @@ index ee2022d3..f0b3944b 100644
  	stdlib\strnlen.$(O) stdlib\strrchrnul.$(O) \
  	\
  	nasmlib\ver.$(O) \
-@@ -86,7 +89,7 @@ LIBOBJ = stdlib\snprintf.$(O) stdlib\vsnprintf.$(O) stdlib\strlcpy.$(O) \
+@@ -86,7 +89,7 @@ LIBOBJ = stdlib\snprintf.$(O) stdlib\vsnprintf.$(O) st
  	x86\regs.$(O) x86\regvals.$(O) x86\regflags.$(O) x86\regdis.$(O) \
  	x86\disp8.$(O) x86\iflag.$(O) \
  	\
@@ -177,20 +174,21 @@ index ee2022d3..f0b3944b 100644
  	asm\floats.$(O) \
  	asm\directiv.$(O) asm\directbl.$(O) \
  	asm\pragma.$(O) \
-@@ -111,7 +114,12 @@ LIBOBJ = stdlib\snprintf.$(O) stdlib\vsnprintf.$(O) stdlib\strlcpy.$(O) \
+@@ -111,8 +114,13 @@ LIBOBJ = stdlib\snprintf.$(O) stdlib\vsnprintf.$(O) st
  	\
  	disasm\disasm.$(O) disasm\sync.$(O)
  
 -ALLOBJ = $(NASM) $(NDISASM) $(LIBOBJ)
 +# Warnings depend on all source files, so handle them separately
 +WARNOBJ   = asm\warnings.$(O)
-+
+ 
 +LIBOBJ    = $(LIBOBJ_NW) $(WARNOBJ)
 +ALLOBJ_NW = $(PROGOBJ) $(LIBOBJ_NW)
 +ALLOBJ    = $(PROGOBJ) $(LIBOBJ)
- 
++
  SUBDIRS  = stdlib nasmlib output asm disasm x86 common macros
  XSUBDIRS = test doc nsis rdoff
+ DEPDIRS  = . include config x86 rdoff $(SUBDIRS)
 @@ -230,18 +238,30 @@ warnings:
  	$(RM_F) $(WARNFILES)
  	$(MAKE) asm\warnings.time
@@ -205,11 +203,11 @@ index ee2022d3..f0b3944b 100644
 +asm\warnings.c.time: asm\warnings.pl asm\warnings.time
  	$(RUNPERL) $(srcdir)\asm\warnings.pl c asm\warnings.c $(srcdir)
 +	: > asm\warnings.c.time
-+
-+asm\warnings.c: asm\warnings.c.time
-+	@: Side effect
  
 -include\warnings.h: asm\warnings.pl asm\warnings.time
++asm\warnings.c: asm\warnings.c.time
++	@: Side effect
++
 +include\warnings.h.time: asm\warnings.pl asm\warnings.time
  	$(RUNPERL) $(srcdir)\asm\warnings.pl h include\warnings.h $(srcdir)
 +	: > include\warnings.h.time
@@ -227,11 +225,9 @@ index ee2022d3..f0b3944b 100644
  
  # Assembler token hash
  asm\tokhash.c: x86\insns.dat x86\regs.dat asm\tokens.dat asm\tokhash.pl \
-diff --git a/Mkfiles/openwcom.mak b/Mkfiles/openwcom.mak
-index 9d080290..ab49a3a5 100644
---- Mkfiles/openwcom.mak
+--- Mkfiles/openwcom.mak.orig	2020-08-28 16:04:44 UTC
 +++ Mkfiles/openwcom.mak
-@@ -53,7 +53,10 @@ X               = .exe
+@@ -53,7 +53,10 @@ NDISASM = disasm\ndisasm.$(O)
  NASM    = asm\nasm.$(O)
  NDISASM = disasm\ndisasm.$(O)
  
@@ -243,7 +239,7 @@ index 9d080290..ab49a3a5 100644
  	stdlib\strnlen.$(O) stdlib\strrchrnul.$(O) &
  	&
  	nasmlib\ver.$(O) &
-@@ -75,7 +78,7 @@ LIBOBJ = stdlib\snprintf.$(O) stdlib\vsnprintf.$(O) stdlib\strlcpy.$(O) &
+@@ -75,7 +78,7 @@ LIBOBJ = stdlib\snprintf.$(O) stdlib\vsnprintf.$(O) st
  	x86\regs.$(O) x86\regvals.$(O) x86\regflags.$(O) x86\regdis.$(O) &
  	x86\disp8.$(O) x86\iflag.$(O) &
  	&
@@ -252,20 +248,21 @@ index 9d080290..ab49a3a5 100644
  	asm\floats.$(O) &
  	asm\directiv.$(O) asm\directbl.$(O) &
  	asm\pragma.$(O) &
-@@ -100,7 +103,12 @@ LIBOBJ = stdlib\snprintf.$(O) stdlib\vsnprintf.$(O) stdlib\strlcpy.$(O) &
+@@ -100,8 +103,13 @@ LIBOBJ = stdlib\snprintf.$(O) stdlib\vsnprintf.$(O) st
  	&
  	disasm\disasm.$(O) disasm\sync.$(O)
  
 -ALLOBJ = $(NASM) $(NDISASM) $(LIBOBJ)
 +# Warnings depend on all source files, so handle them separately
 +WARNOBJ   = asm\warnings.$(O)
-+
+ 
 +LIBOBJ    = $(LIBOBJ_NW) $(WARNOBJ)
 +ALLOBJ_NW = $(PROGOBJ) $(LIBOBJ_NW)
 +ALLOBJ    = $(PROGOBJ) $(LIBOBJ)
- 
++
  SUBDIRS  = stdlib nasmlib output asm disasm x86 common macros
  XSUBDIRS = test doc nsis rdoff
+ DEPDIRS  = . include config x86 rdoff $(SUBDIRS)
 @@ -243,18 +251,30 @@ warnings:
  	$(RM_F) $(WARNFILES)
  	$(MAKE) asm\warnings.time
@@ -280,11 +277,11 @@ index 9d080290..ab49a3a5 100644
 +asm\warnings.c.time: asm\warnings.pl asm\warnings.time
  	$(RUNPERL) $(srcdir)\asm\warnings.pl c asm\warnings.c $(srcdir)
 +	: > asm\warnings.c.time
-+
-+asm\warnings.c: asm\warnings.c.time
-+	@: Side effect
  
 -include\warnings.h: asm\warnings.pl asm\warnings.time
++asm\warnings.c: asm\warnings.c.time
++	@: Side effect
++
 +include\warnings.h.time: asm\warnings.pl asm\warnings.time
  	$(RUNPERL) $(srcdir)\asm\warnings.pl h include\warnings.h $(srcdir)
 +	: > include\warnings.h.time

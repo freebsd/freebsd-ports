@@ -1,5 +1,3 @@
-# Created by: pat
-
 PORTNAME=	wmjupiter
 PORTVERSION=	1.21
 PORTREVISION=	1

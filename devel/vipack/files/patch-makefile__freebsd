@@ -1,0 +1,11 @@
+--- makefile_freebsd.orig	2022-06-20 11:06:36 UTC
++++ makefile_freebsd
+@@ -12,7 +12,7 @@ CFLAGS=
+
+ CFLAGS=
+
+-all: deps
++all:
+
+ 	#git submodule init
+ 	#git submodule update

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	rsstail
 PORTVERSION=	2.1
 CATEGORIES=	www

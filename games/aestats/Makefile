@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	aestats
 PORTVERSION=	5.39
 CATEGORIES=	games

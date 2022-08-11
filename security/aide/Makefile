@@ -1,5 +1,3 @@
-# Created by: Cy Schubert (Cy.Schubert@uumail.gov.bc.ca)
-
 PORTNAME=	aide
 PORTVERSION=	0.17.4
 CATEGORIES=	security

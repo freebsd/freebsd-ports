@@ -1,5 +1,3 @@
-# Created by: James Bailie <jimmy@mammothcheese.ca>
-
 PORTNAME=	dkns
 PORTVERSION=	1.100
 CATEGORIES=	editors

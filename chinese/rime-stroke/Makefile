@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-stroke
 DISTVERSION=	g20191221
 PORTREVISION=	1

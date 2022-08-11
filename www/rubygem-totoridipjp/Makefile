@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	totoridipjp
 PORTVERSION=	0.1.0
 PORTREVISION=	1

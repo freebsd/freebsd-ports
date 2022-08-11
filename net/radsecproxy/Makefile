@@ -1,7 +1,5 @@
-# Created by: Honza Betik
-
 PORTNAME=	radsecproxy
-DISTVERSION=	1.8.2
+DISTVERSION=	1.9.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Devel-STrace
 PORTVERSION=	0.31
 PORTREVISION=	2

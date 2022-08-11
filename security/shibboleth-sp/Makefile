@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-
 PORTNAME=	shibboleth-sp
 PORTVERSION=	3.3.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	slock
 PORTVERSION=	1.4
 PORTREVISION=	2

@@ -1,11 +1,8 @@
-# Created by: Bernard Spil <brnrd@FreeBSD.org>
-
 PORTNAME?=	mariadb
-PORTVERSION=	10.6.7
-PORTREVISION?=	3
+PORTVERSION=	10.6.8
+PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	https://downloads.mariadb.org/rest-api/mariadb/${PORTVERSION}/ \
-		https://mirror.nodesdirect.com/${SITESDIR}/ \
+MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror.one.com/${SITESDIR}/ \
 		https://ftp.nluug.nl/db/${SITESDIR}/ \
 		https://ftp.icm.edu.pl/pub/unix/database/${SITESDIR}/ \
@@ -15,7 +12,8 @@ MASTER_SITES=	https://downloads.mariadb.org/rest-api/mariadb/${PORTVERSION}/ \
 		https://mirror.kku.ac.th/${SITESDIR}/ \
 		https://espejito.fder.edu.uy/${SITESDIR}/ \
 		https://mirror1.cl.netactuate.com/${SITESDIR}/ \
-		https://ftp.osuosl.org/pub/${SITESDIR}/
+		https://ftp.osuosl.org/pub/${SITESDIR}/ \
+		https://downloads.mariadb.org/rest-api/mariadb/${PORTVERSION}/
 PKGNAMESUFFIX?=	106-server
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -91,6 +89,7 @@ CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${PREFIX} \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
 		-DINSTALL_INFODIR="info" \
 		-DINSTALL_LIBDIR="lib/mysql" \
+		-DINSTALL_MANDIR="share/man" \
 		-DINSTALL_MYSQLDATADIR="${MARIADB_DBDIR}" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \
 		-DINSTALL_MYSQLTESTDIR= \
@@ -273,7 +272,7 @@ post-install:
 		${STAGEDIR}${ETCDIR}/logrotate.d \
 		${STAGEDIR}${DOCSDIR}/COPYING
 	${MKDIR} ${STAGEDIR}${MARIADB_LOGDIR}
-	${SED} '/%%/d;/^@comment /d;s/^/@comment /' ../${PORTNAME}${PKGNAMESUFFIX:S/-server/-client/}/pkg-plist \
+	${SED} '/%%/d;/^@comment /d;s/^/@comment /' ${PORTSDIR}/${CATEGORIES:[1]}/${PORTNAME}${PKGNAMESUFFIX:S/-server/-client/}/pkg-plist \
 		>> ${TMPPLIST}
 
 post-install-MROONGA-on:

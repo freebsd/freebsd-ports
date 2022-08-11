@@ -1,10 +1,7 @@
-# Created by: Nikolai Lifanov <lifanov@FreeBSD.org>
-
 PORTNAME=		docker
 PORTVERSION=		18.09.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
-PORTREVISION=		1
+PORTREVISION=		4
 CATEGORIES=		sysutils
 
 MAINTAINER=		ports@FreeBSD.org

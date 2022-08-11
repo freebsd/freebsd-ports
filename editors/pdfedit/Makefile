@@ -1,8 +1,6 @@
-# Created by: alepulver
-
 PORTNAME=	pdfedit
 PORTVERSION=	0.4.5
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	editors
 MASTER_SITES=	SF
 

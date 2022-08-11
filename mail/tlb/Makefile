@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	tlb
 PORTVERSION=	0.11a
 PORTREVISION=	1

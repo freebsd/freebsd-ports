@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	uutf
 PORTVERSION=	1.0.2
 CATEGORIES=	devel

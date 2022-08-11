@@ -1,5 +1,3 @@
-# Created by: Horia Racoviceanu <horia@racoviceanu.com>
-
 PORTNAME=	haml-contrib
 PORTVERSION=	1.0.0.1
 CATEGORIES=	www rubygems

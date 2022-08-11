@@ -1,5 +1,3 @@
-# Created by: Joel Sutton <jsutton@webnet.com.au>
-
 PORTNAME=	atari800
 PORTVERSION=	3.1.0
 PORTREVISION=	2

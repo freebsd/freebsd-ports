@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	mechanize
 PORTVERSION=	0.4.8
 PORTREVISION=	1

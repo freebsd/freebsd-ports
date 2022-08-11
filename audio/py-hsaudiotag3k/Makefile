@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	hsaudiotag3k
 DISTVERSION=	1.1.3.post1
 CATEGORIES=	audio python

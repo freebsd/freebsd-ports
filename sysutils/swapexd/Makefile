@@ -1,5 +1,3 @@
-# Created by: Jesse Smith
-
 PORTNAME=	swapexd
 PORTVERSION=	0.4
 CATEGORIES=	sysutils

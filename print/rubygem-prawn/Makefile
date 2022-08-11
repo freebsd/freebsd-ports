@@ -1,5 +1,3 @@
-# Created by: wenheping@gmail.com
-
 PORTNAME=	prawn
 PORTVERSION=	2.4.0
 CATEGORIES=	print rubygems

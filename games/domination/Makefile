@@ -1,7 +1,5 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	domination
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/d/D/}/${PORTVERSION}/:game \
 		http://domination.sourceforge.net/maps/
@@ -46,7 +44,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}-FlashGUI ${PORTNAME}-Increment1GUI \
 		${PORTNAME}-SimpleGUI ${PORTNAME}-SwingGUI \
-		pkg-deinstall
+		pkg-message
 
 DESKTOP_ENTRIES="Domination" "" "${PORTNAME}" \
 		"${PORTNAME}-SwingGUI" "Game;StrategyGame;" ""

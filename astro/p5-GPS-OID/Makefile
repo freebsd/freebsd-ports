@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	GPS-OID
 PORTVERSION=	0.07
 PORTREVISION=	1

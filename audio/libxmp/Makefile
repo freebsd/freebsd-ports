@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	libxmp
 PORTVERSION=	4.5.0
 CATEGORIES=	audio

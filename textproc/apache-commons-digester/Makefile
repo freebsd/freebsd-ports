@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
-
 PORTNAME=	commons-digester
 PORTVERSION=	2.1
 PORTREVISION=	2

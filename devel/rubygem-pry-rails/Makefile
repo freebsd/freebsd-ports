@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	pry-rails
 PORTVERSION=	0.3.9
 CATEGORIES=	devel rubygems

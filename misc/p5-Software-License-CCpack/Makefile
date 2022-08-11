@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Software-License-CCpack
 PORTVERSION=	1.11
 CATEGORIES=	misc perl5

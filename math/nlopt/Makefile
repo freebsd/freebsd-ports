@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	nlopt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.1
@@ -17,17 +15,14 @@ BROKEN_armv7=	fails to package: Unable to access file site-packages/_nlopt.a:No 
 
 BUILD_DEPENDS=	swig:devel/swig \
 		${PYNUMPY}
-RUN_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libguile-2.2.so:lang/guile2
+RUN_DEPENDS=	${PYNUMPY}
 
-USES=		cmake compiler:features pathfix pkgconfig python
-USE_LDCONFIG=	yes
+USES=		cmake:testing compiler:features localbase pathfix pkgconfig python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stevengj
-
-# Needed to find gmp.h
-CFLAGS+=	-I${LOCALBASE}/include
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

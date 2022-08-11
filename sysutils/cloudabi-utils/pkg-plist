@@ -3,4 +3,4 @@ include/cloudabi/program.h
 lib/libcloudabi.so
 lib/libcloudabi.so.1
 libexec/cloudabi-reexec
-man/man1/cloudabi-run.1.gz
+share/man/man1/cloudabi-run.1.gz

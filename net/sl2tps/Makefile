@@ -1,5 +1,3 @@
-# Created by: Archie Cobbs
-
 PORTNAME=	sl2tps
 PORTVERSION=	0.4.2
 PORTREVISION=	2

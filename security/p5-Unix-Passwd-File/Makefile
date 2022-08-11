@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	Unix-Passwd-File
 PORTVERSION=	0.251
 CATEGORIES=	security perl5

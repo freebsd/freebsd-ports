@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	YAPE-HTML
 PORTVERSION=	1.11
 PORTREVISION=	1

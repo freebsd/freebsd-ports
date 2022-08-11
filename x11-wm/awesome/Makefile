@@ -1,5 +1,3 @@
-# Created by: Nikos Ntarmos <ntarmos@ceid.upatras.gr>
-
 PORTNAME=	awesome
 PORTVERSION=	4.3
 PORTREVISION=	1

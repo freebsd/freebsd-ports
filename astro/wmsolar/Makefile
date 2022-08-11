@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@FreeBSD.org>
-
 PORTNAME=	wmsolar
 PORTVERSION=	1.1
 CATEGORIES=	astro windowmaker

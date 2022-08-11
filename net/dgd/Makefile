@@ -1,5 +1,3 @@
-# Created by: adam@veda.is
-
 PORTNAME=	dgd
 PORTVERSION=	1.4.23
 CATEGORIES=	net lang games

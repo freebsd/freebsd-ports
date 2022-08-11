@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	Class-WhiteHole
 PORTVERSION=	0.04
 PORTREVISION=	1

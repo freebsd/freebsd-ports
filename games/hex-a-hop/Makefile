@@ -1,5 +1,3 @@
-# Created by: jamie
-
 PORTNAME=	hex-a-hop
 PORTVERSION=	1.1.0
 PORTREVISION=	6

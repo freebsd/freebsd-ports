@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	python-obelisk
 PORTVERSION=	0.1.3
 PORTREVISION=	2

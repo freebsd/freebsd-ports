@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	sjeng
 PORTVERSION=	11.2
 PORTREVISION=	3

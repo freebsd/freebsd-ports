@@ -1,5 +1,3 @@
-# Created by: Vladimir Kotal <vlada@devnull.cz>
-
 PORTNAME=	ipv6gen
 PORTVERSION=	1.0
 CATEGORIES=	net-mgmt

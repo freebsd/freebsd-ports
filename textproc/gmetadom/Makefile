@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gmetadom
 PORTVERSION=	0.2.6
 PORTREVISION=	7

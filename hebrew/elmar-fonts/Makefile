@@ -1,5 +1,3 @@
-# Created by: nadav@cs.technion.ac.il
-
 PORTNAME=	elmar
 PORTVERSION=	3.3
 PORTREVISION=	6

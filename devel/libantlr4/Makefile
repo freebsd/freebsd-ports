@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman<5u623l20@gmail.com>
-
 PORTNAME=	antlr4
 PORTVERSION=	4.9.3
 DISTVERSIONPREFIX=	cpp-runtime-

@@ -1,5 +1,3 @@
-# Created by: Alfred Perlstein <alfred@FreeBSD.org>
-
 PORTNAME=	insub
 PORTVERSION=	16.0
 PORTREVISION=	1

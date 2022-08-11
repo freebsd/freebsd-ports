@@ -1,5 +1,3 @@
-# Created by: Yi-Hsuan Hsin <mhsin@mhsin.org>
-
 PORTNAME=	Math-Base36
 PORTVERSION=	0.14
 PORTEPOCH=	2

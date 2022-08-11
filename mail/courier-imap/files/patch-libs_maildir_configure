@@ -1,22 +1,23 @@
---- libs/maildir/configure.orig	2021-03-14 17:58:25 UTC
+--- libs/maildir/configure.orig	2022-05-25 23:49:49 UTC
 +++ libs/maildir/configure
-@@ -17924,19 +17924,6 @@ fi
- done
+@@ -18965,20 +18965,6 @@ fi
+ fi
  
  
--for ac_func in inotify_init inotify_init1
--do :
--  as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
--ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
--if eval test \"x\$"$as_ac_var"\" = x"yes"; then :
--  cat >>confdefs.h <<_ACEOF
--#define `$as_echo "HAVE_$ac_func" | $as_tr_cpp` 1
--_ACEOF
+-ac_fn_c_check_func "$LINENO" "inotify_init" "ac_cv_func_inotify_init"
+-if test "x$ac_cv_func_inotify_init" = xyes
+-then :
+-  printf "%s\n" "#define HAVE_INOTIFY_INIT 1" >>confdefs.h
 -
 -fi
--done
+-ac_fn_c_check_func "$LINENO" "inotify_init1" "ac_cv_func_inotify_init1"
+-if test "x$ac_cv_func_inotify_init1" = xyes
+-then :
+-  printf "%s\n" "#define HAVE_INOTIFY_INIT1 1" >>confdefs.h
+-
+-fi
 -
 -
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for missing gethostname prototype" >&5
- $as_echo_n "checking for missing gethostname prototype... " >&6; }
- if ${maildir_cv_SYS_GETHOSTNAME+:} false; then :
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for missing gethostname prototype" >&5
+ printf %s "checking for missing gethostname prototype... " >&6; }
+ if test ${maildir_cv_SYS_GETHOSTNAME+y}

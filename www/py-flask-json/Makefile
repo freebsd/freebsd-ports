@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	flask-json
 PORTVERSION=	0.3.4
 CATEGORIES=	www python

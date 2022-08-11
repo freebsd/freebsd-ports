@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	File-RsyncP
 PORTVERSION=	0.76
 CATEGORIES=	net perl5

@@ -1,12 +1,10 @@
-# Created by: Boris Samorodov <bsam@FreeBSDD.org>
-
 PORTNAME=	blackbox_exporter
-PORTVERSION=	0.17.0
-PORTREVISION=	2
-DISTVERSIONPREFIX=v
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Prometheus exporter for endpoints over HTTP(S), DNS, TCP and ICMP
 
 LICENSE=	APACHE20
@@ -14,11 +12,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe go:modules
 CPE_VENDOR=	prometheus
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	prometheus
-GH_TUPLE=	golang:net:83d349e8ac1a:golang_net/vendor/golang.org/x/net_83d349e8ac1a
 USE_RC_SUBR=	blackbox_exporter
+
+GO_MODULE=	github.com/prometheus/blackbox_exporter
+
+SUB_FILES=	pkg-message
+SUB_LIST=	DISTVERSIONFULL=${DISTVERSIONFULL}
 
 USERS=		prometheus
 GROUPS=		prometheus
@@ -26,13 +25,6 @@ GROUPS=		prometheus
 PORTEXAMPLES=	${WRKSRC}/*.yml
 
 OPTIONS_DEFINE=	EXAMPLES
-
-SUB_FILES=	pkg-message
-SUB_LIST=	GH_TAGNAME=${GH_TAGNAME}
-
-post-extract:
-	${RM} -r ${WRKSRC}/vendor/golang.org/x/net
-	${MV} ${WRKSRC}/vendor/golang.org/x/net_83d349e8ac1a ${WRKSRC}/vendor/golang.org/x/net
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

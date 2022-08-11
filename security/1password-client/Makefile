@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	1password-client
 DISTVERSION=	1.12.4
 CATEGORIES=	security

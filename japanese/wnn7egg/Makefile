@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	wnn7egg
 PORTVERSION=	1.02
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	sary
 PORTVERSION=	1.2.0
 PORTREVISION=	5

@@ -1,0 +1,17 @@
+bin/check_isa
+bin/ispc
+include/ispcrt/ispcrt.h
+include/ispcrt/ispcrt.hpp
+include/ispcrt/ispcrt.isph
+lib/cmake/ispcrt-1.18.0/Finddpcpp_compiler.cmake
+lib/cmake/ispcrt-1.18.0/Findlevel_zero.cmake
+lib/cmake/ispcrt-1.18.0/interop.cmake
+lib/cmake/ispcrt-1.18.0/ispc.cmake
+lib/cmake/ispcrt-1.18.0/ispcrtConfig.cmake
+lib/cmake/ispcrt-1.18.0/ispcrtConfigVersion.cmake
+lib/cmake/ispcrt-1.18.0/ispcrt_Exports-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ispcrt-1.18.0/ispcrt_Exports.cmake
+lib/libispcrt.so
+lib/libispcrt.so.1
+lib/libispcrt.so.1.18.0
+lib/libispcrt_static.a

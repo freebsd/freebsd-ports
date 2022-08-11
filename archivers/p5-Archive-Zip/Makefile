@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Archive-Zip
 PORTVERSION=	1.68
 CATEGORIES=	archivers perl5

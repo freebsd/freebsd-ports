@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+java version 11 or higher is required.  Example:
+	tomcat10_java_home="%%LOCALBASE%%/openjdk11" in /etc/rc.conf
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+It is necessary to reindex from scratch when upgrading from anything
+older than opengrok 1.4.1, and is recommended when upgrading from
+anything older than opengrok 1.7.25.
+
+java version 11 or higher is required.  Example:
+	tomcat10_java_home="%%LOCALBASE%%/openjdk11" in /etc/rc.conf
+EOM
+}
+]

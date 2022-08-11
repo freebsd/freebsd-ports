@@ -1,5 +1,3 @@
-# Created by: andreas@FreeBSD.org
-
 PORTNAME=	utftpd
 PORTVERSION=	0.2.4
 PORTREVISION=	2

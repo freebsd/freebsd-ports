@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	tarantool
 PORTVERSION=	0.5.8
 CATEGORIES=	databases rubygems

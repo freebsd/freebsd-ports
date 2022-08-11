@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	toronado
 PORTVERSION=	0.0.11
 CATEGORIES=	textproc www python

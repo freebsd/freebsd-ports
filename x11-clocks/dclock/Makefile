@@ -1,5 +1,3 @@
-# Created by: David Leonard <leonard@dstc.edu.au>
-
 PORTNAME=	dclock
 PORTVERSION=	2.2.2
 CATEGORIES=	x11-clocks

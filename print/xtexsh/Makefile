@@ -1,5 +1,3 @@
-# Created by: Jean-Sebastien Roy <js@jeannot.org>
-
 PORTNAME=	xtexsh
 DISTVERSION=	1.4-2
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: KIMURA Yasuhiro <yasu@utahime.org>
-
 PORTNAME=	c-sig
 PORTVERSION=	3.8.0.1
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	synthpod
 PORTVERSION=	g20190407
 PORTREVISION=	2

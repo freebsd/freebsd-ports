@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	gbase
 PORTVERSION=	0.5
 PORTREVISION=	8

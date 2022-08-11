@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	isl
 PORTVERSION=	0.24
 CATEGORIES=	devel math

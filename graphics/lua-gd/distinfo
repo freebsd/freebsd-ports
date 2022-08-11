@@ -1,2 +1,3 @@
-SHA256 (lua-gd-2.0.33r2.tar.gz) = 235eceba9b55fd6b6cb6d88b0df676d6f94ff49155a0710363c21e2cc0987ec6
-SIZE (lua-gd-2.0.33r2.tar.gz) = 448606
+TIMESTAMP = 1582425200
+SHA256 (ittner-lua-gd-2.0.33r3-2ce8e47_GH0.tar.gz) = cc0b17efff44f0b715a17da3c0a3d8238f1354fb41315b4c231ed0f40f3de2b6
+SIZE (ittner-lua-gd-2.0.33r3-2ce8e47_GH0.tar.gz) = 436980

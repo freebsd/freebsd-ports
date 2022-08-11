@@ -1,5 +1,3 @@
-# Created by: Mahdi Mokhtari <mokhi64@gmail.com>
-
 PORTNAME=	libtuntap
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	0.4

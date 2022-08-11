@@ -1,0 +1,6 @@
+OpenCA LibPKI provides an easy-to-use PKI library for PKI enabled application
+development.
+The library provides the developer with all the needed functionalities to
+manage certificates, from generation to validation.
+
+WWW: https://www.openca.org/projects/libpki

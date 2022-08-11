@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	pirum
 PORTVERSION=	20110921
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	apache-jmeter
 PORTVERSION=	2.11
 PORTREVISION=	3

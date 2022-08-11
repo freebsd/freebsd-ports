@@ -1,5 +1,3 @@
-# Created by: Charlie Kester <corky1951@comcast.net>
-
 PORTNAME=	photofilmstrip
 PORTVERSION=	3.7.0
 PORTREVISION=	3
@@ -18,8 +16,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR
 RUN_DEPENDS=	mencoder:multimedia/mencoder \
 		mplayer:multimedia/mplayer
 
-USES=		python:3.6+ gettext
-USE_GSTREAMER1=	jpeg
+USES=		python:3.6+ gettext gstreamer
+USE_GSTREAMER=	jpeg
 USE_PYTHON=	distutils
 USE_WX=		3.1
 WX_COMPS=	python:lib

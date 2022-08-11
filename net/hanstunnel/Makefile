@@ -1,5 +1,3 @@
-# Created by: Alexander Panyushkin <vsityz@gmail.com>
-
 PORTNAME=	hans
 DISTVERSION=	1.0
 CATEGORIES=	net security

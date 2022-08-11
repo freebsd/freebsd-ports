@@ -1,5 +1,3 @@
-# Created by: Frederic Han <han@math.jussieu.fr>
-
 PORTNAME=	giacxcas
 DISTVERSION=	1.6.0-7
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	shellwords
 PORTVERSION=	0.1.0
 CATEGORIES=	shells rubygems

@@ -1,5 +1,3 @@
-# Created by: Andreas Kohn <andreas@syndrom23.de>
-
 PORTNAME=	pas2dox
 DISTVERSION=	0.50rc1
 CATEGORIES=	devel converters

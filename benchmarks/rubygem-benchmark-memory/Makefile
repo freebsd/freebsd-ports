@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	benchmark-memory
 PORTVERSION=	0.1.2
 CATEGORIES=	benchmarks rubygems

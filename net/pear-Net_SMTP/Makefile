@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	Net_SMTP
 PORTVERSION=	1.10.0
 CATEGORIES=	net mail www pear

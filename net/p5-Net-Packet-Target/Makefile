@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Net-Packet-Target
 PORTVERSION=	1.01
 PORTREVISION=	1

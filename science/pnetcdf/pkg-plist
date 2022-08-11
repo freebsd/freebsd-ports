@@ -1,8 +1,9 @@
+bin/cdfdiff
 bin/ncmpidiff
 bin/ncmpidump
 bin/ncmpigen
-bin/ncmpivalid
 bin/ncoffsets
+bin/ncvalidator
 bin/pnetcdf-config
 bin/pnetcdf_version
 include/pnetcdf
@@ -11,11 +12,12 @@ include/pnetcdf.inc
 include/pnetcdf.mod
 lib/libpnetcdf.a
 libdata/pkgconfig/pnetcdf.pc
+man/man1/cdfdiff.1.gz
 man/man1/ncmpidiff.1.gz
 man/man1/ncmpidump.1.gz
 man/man1/ncmpigen.1.gz
-man/man1/ncmpivalid.1.gz
 man/man1/ncoffsets.1.gz
+man/man1/ncvalidator.1.gz
 man/man1/pnetcdf_version.1.gz
 man/man3/pnetcdf.3.gz
 man/man3/pnetcdf_f77.3.gz

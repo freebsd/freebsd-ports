@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	funionfs
 PORTVERSION=	0.4.3
 CATEGORIES=	sysutils

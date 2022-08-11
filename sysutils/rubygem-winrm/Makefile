@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	winrm
 PORTVERSION=	2.3.4
 CATEGORIES=	sysutils rubygems

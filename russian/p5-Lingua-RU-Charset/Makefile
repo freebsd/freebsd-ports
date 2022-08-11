@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <kapr@crosswinds.net>
-
 PORTNAME=	Lingua-RU-Charset
 PORTVERSION=	0.02
 PORTREVISION=	1

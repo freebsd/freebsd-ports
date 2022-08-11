@@ -45,8 +45,7 @@ pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-f ${opensearch_dashboards_syslog_output_flags} -P ${pidfile} -t ${name} \
 	/usr/bin/env NODE_ENV=production ${opensearch_dashboards_env} \
-	${NODE} --no-warnings --max-http-header-size=65536 \
-	%%WWWDIR%%/src/cli/dist serve \
+	${NODE} %%WWWDIR%%/src/cli/dist serve \
 	--config ${opensearch_dashboards_config} --log-file ${opensearch_dashboards_log} \
 	${opensearch_dashboards_args}"
 

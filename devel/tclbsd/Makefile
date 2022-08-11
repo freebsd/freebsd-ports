@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	tclbsd
 PORTVERSION=	1.9.2
 PORTREVISION=	0

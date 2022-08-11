@@ -1,5 +1,3 @@
-# Created by: Murray Stokely <murray@FreeBSD.org>
-
 PORTNAME=	eterm
 PORTVERSION=	0.9.6
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	XML-DOM-Lite
 PORTVERSION=	0.16
 CATEGORIES=	textproc perl5

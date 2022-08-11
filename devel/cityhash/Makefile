@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	cityhash
 PORTVERSION=	1.1.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Net-DAAP-Client
 PORTVERSION=	0.42
 PORTREVISION=	3

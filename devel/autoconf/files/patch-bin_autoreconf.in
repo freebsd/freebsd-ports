@@ -1,0 +1,10 @@
+--- bin/autoreconf.in.orig	2012-04-24 22:00:28 UTC
++++ bin/autoreconf.in
+@@ -692,6 +692,7 @@ parse_args;
+ 
+ # Autoreconf all the given configure.ac.  Unless `--no-recursive' is passed,
+ # AC_CONFIG_SUBDIRS will be traversed in &autoreconf_current_directory.
++$ENV{'AUTOCONF'} = $autoconf;
+ $ENV{'AUTOM4TE'} = $autom4te;
+ for my $directory (@ARGV)
+   {

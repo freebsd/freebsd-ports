@@ -1,5 +1,3 @@
-# Created by: sobomax
-
 PORTNAME=	debugedit
 PORTVERSION=	20170411.1
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Joe Clarke <marcus@marcuscom.com>
-
 PORTNAME=	confregdecode
 PORTVERSION=	1.2.1
 PORTREVISION=	3

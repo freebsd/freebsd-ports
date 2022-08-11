@@ -1,5 +1,3 @@
-# Created by: eric
-
 PORTNAME=	jed
 DISTVERSION=	0.99-19
 PORTREVISION=	4

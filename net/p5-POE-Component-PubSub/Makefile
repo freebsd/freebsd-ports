@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	POE-Component-PubSub
 PORTVERSION=	0.091370
 CATEGORIES=	net perl5

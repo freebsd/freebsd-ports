@@ -1,8 +1,6 @@
-# Created by: Rob Zinkov <rzinkov@gmail.com>
-
 PORTNAME=	moc
 PORTVERSION=	2.5.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.daper.net/pub/soft/moc/stable/
 

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	vistir
 PORTVERSION=	0.5.2
 CATEGORIES=	devel python

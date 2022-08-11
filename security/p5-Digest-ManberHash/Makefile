@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-ManberHash
 PORTVERSION=	0.7
 PORTREVISION=	1

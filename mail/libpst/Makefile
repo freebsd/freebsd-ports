@@ -1,5 +1,3 @@
-# Created by: Nate Underwood <natey@natey.com>
-
 PORTNAME=	libpst
 PORTVERSION=	0.6.76
 PORTREVISION=	1

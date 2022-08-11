@@ -1,5 +1,3 @@
-# Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-
 PORTNAME=	soundscrape
 PORTVERSION=	0.30.2
 PORTREVISION=	1

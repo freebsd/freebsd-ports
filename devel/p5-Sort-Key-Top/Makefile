@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Sort-Key-Top
 PORTVERSION=	0.08
 PORTREVISION=	1

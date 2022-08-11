@@ -1,5 +1,3 @@
-# Created by: Mahlon E. Smith <mahlon@martini.nu>
-
 PORTNAME=	shelldap
 PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v

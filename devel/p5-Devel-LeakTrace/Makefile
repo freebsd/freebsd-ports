@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Devel-LeakTrace
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

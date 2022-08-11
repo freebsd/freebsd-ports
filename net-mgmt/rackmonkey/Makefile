@@ -1,5 +1,3 @@
-# Created by: Eric F Crist <ecrist@secure-computing.net>
-
 PORTNAME=	rackmonkey
 PORTVERSION=	1.2.5
 DISTVERSIONSUFFIX=	-1

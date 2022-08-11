@@ -1,7 +1,7 @@
 PORTNAME=	leela-zero
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17
-PORTREVISION=	9
+DISTVERSION=	0.17-30
+DISTVERSIONSUFFIX=	-ge3ed631
 CATEGORIES=	games
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,5 +29,8 @@ PLIST_FILES=	bin/autogtp \
 
 do-test:
 	@cd ${WRKSRC} && ${MKDIR} .build && ${CP} ../.build/tests .build && cd .build && ./tests
+
+download-weights:
+	@${FETCH_CMD} https://zero.sjeng.org/best-network -o ~/.local/share/leela-zero/
 
 .include <bsd.port.mk>

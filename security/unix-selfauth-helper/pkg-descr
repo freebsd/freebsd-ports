@@ -1,0 +1,5 @@
+This is a little suid-root helper allowing self-authentication against the
+local unix passwd database using pam_exec on a FreeBSD system. As a result,
+the behavior of LinuxPAM is mimicked without changes to the pam_unix module.
+
+WWW: https://github.com/Zirias/unix-selfauth-helper

@@ -1,8 +1,6 @@
-# Created by: marius nuennerich
-
 PORTNAME=	mumble
 PORTVERSION=	1.3.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 
 MAINTAINER=	feld@FreeBSD.org
@@ -89,6 +87,7 @@ MAKE_JOBS_UNSAFE=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
+	@${REINPLACE_CMD} -e 's|--no-add-needed|--no-copy-dt-needed-entries|' ${WRKSRC}/qmake/compiler.pri
 	@${RM} ${WRKSRC}/plugins/manual/.qmake.cache
 
 do-install:

@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	mptd
 PORTVERSION=	0.01
 PORTREVISION=	1

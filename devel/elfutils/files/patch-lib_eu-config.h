@@ -1,8 +1,8 @@
---- lib/eu-config.h.orig	2020-03-30 12:17:45 UTC
+--- lib/eu-config.h.orig	2022-04-25 20:56:39 UTC
 +++ lib/eu-config.h
-@@ -176,6 +176,186 @@ asm (".section predict_data, \"aw\"; .previous\n"
- #define ELFUTILS_HEADER(name) <lib##name.h>
- 
+@@ -188,6 +188,186 @@ asm (".section predict_data, \"aw\"; .previous\n"
+ # define used_in_asm /* empty */
+ #endif
  
 +/* FreeBSD ports of glibcisms */
 +#include <sys/cdefs.h>
@@ -185,5 +185,5 @@
 +#endif
 +
  #ifdef SYMBOL_VERSIONING
- # define OLD_VERSION(name, version) \
-   asm (".globl _compat." #version "." #name "\n" \
+ # define NEW_INTDEF(name) __typeof (name) INTUSE(name) \
+   __attribute__ ((alias ("_new." #name))) attribute_hidden;

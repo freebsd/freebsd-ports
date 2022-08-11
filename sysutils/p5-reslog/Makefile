@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	reslog
 PORTVERSION=	3.16
 PORTREVISION=	3

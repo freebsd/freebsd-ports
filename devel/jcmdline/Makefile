@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	jcmdline
 PORTVERSION=	2.0.0
 CATEGORIES=	devel java

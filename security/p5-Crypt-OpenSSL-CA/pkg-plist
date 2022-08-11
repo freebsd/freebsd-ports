@@ -2,6 +2,8 @@
 %%SITE_ARCH%%/Crypt/OpenSSL/CA/AlphabetSoup.pod
 %%SITE_ARCH%%/Crypt/OpenSSL/CA/Inline/C.pm
 %%SITE_ARCH%%/Crypt/OpenSSL/CA/Resources.pod
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/ASN1_INTEGER/ASN1_INTEGER.so
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/ASN1_TIME/ASN1_TIME.so
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/CONF/CONF.so
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/PrivateKey/PrivateKey.so
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/PublicKey/PublicKey.so

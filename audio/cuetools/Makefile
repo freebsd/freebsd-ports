@@ -1,5 +1,3 @@
-# Created by: Vincent Tantardini <vinc@FreeBSD-fr.org>
-
 PORTNAME=	cuetools
 DISTVERSION=	1.4.1
 CATEGORIES=	audio

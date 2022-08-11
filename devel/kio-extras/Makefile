@@ -1,6 +1,6 @@
 PORTNAME=	kio-extras
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	devel kde kde-applications # kde kde-applications-plasma
+CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 library to increase the functionality of KIO

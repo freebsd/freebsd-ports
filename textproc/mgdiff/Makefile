@@ -1,5 +1,3 @@
-# Created by: andreas@marvin.robin.de
-
 PORTNAME=	mgdiff
 PORTVERSION=	1.0
 PORTREVISION=	5

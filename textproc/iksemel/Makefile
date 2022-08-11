@@ -1,5 +1,3 @@
-# Created by: trasz
-
 PORTNAME=	iksemel
 PORTVERSION=	1.5
 CATEGORIES=	textproc

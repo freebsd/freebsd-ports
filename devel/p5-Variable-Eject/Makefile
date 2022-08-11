@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Variable-Eject
 PORTVERSION=	0.04
 CATEGORIES=	devel perl5

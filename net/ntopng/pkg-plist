@@ -2777,8 +2777,10 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/rest/v1/export/snmp/config.lua
 %%DATADIR%%/scripts/lua/rest/v1/get/active_monitoring/pools.lua
 %%DATADIR%%/scripts/lua/rest/v1/get/alert/.dontdelete
+%%DATADIR%%/scripts/lua/rest/v1/get/alert/data.lua
 %%DATADIR%%/scripts/lua/rest/v1/get/alert/severity/consts.lua
 %%DATADIR%%/scripts/lua/rest/v1/get/alert/severity/counters.lua
+%%DATADIR%%/scripts/lua/rest/v1/get/alert/ts.lua
 %%DATADIR%%/scripts/lua/rest/v1/get/alert/type/consts.lua
 %%DATADIR%%/scripts/lua/rest/v1/get/alert/type/counters.lua
 %%DATADIR%%/scripts/lua/rest/v1/get/all/alert/list.lua

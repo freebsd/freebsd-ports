@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	login_info
 DISTVERSION=	1.2
 PORTREVISION=	1
@@ -17,7 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.5:mail/roundcube@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 WWWDIR=		${LOCALBASE}/www/roundcube
 NO_ARCH=	yes

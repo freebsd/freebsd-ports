@@ -1,5 +1,3 @@
-# Created by: Yoshiro MIHIRA <sanpei@FreeBSD.org>
-
 PORTNAME=	thumbnail_index
 PORTVERSION=	1998.08.10
 PORTREVISION=	4

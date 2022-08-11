@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-
 PORTNAME=	glaxium
 PORTVERSION=	0.5
 PORTREVISION=	18

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	thread_safe
 PORTVERSION=	0.3.6
 CATEGORIES=	devel rubygems

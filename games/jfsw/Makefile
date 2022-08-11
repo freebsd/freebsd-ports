@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	jfsw
 PORTVERSION=	20211225
 CATEGORIES=	games

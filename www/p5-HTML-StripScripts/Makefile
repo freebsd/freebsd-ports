@@ -1,5 +1,3 @@
-# Created by: kftseng@iyard.org
-
 PORTNAME=	HTML-StripScripts
 PORTVERSION=	1.06
 CATEGORIES=	www perl5

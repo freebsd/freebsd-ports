@@ -1,5 +1,3 @@
-# Created by: Davíð Steinn Geirsson <david@isnic.is>
-
 PORTNAME=	Redis-RateLimit
 PORTVERSION=	1.0002
 CATEGORIES=	databases perl5

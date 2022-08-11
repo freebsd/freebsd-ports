@@ -1,5 +1,3 @@
-# Created by: Martin Dieringer <Martin.Dieringer@t-online.de>
-
 PORTNAME=	tta
 PORTVERSION=	3.4.1
 CATEGORIES=	audio

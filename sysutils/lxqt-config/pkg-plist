@@ -40,6 +40,7 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_gl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_he.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_hi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_hr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_hu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_ia.qm
@@ -50,6 +51,7 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_lt.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_nb_NO.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_nl.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_oc.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_pl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_pt.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_pt_BR.qm
@@ -123,6 +125,7 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_gl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_he.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_hi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_hr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_hu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_id.qm
@@ -241,6 +244,7 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_gl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_he.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_hi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_hr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_hu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_id.qm

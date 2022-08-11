@@ -41,6 +41,7 @@
     SUBDIR += ktoblzcheck
     SUBDIR += ledger
     SUBDIR += ledgersmb12
+    SUBDIR += libbtc
     SUBDIR += libofx
     SUBDIR += libstocks
     SUBDIR += moneymanagerex

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	SVG-Parser
 PORTVERSION=	1.03
 PORTREVISION=	1

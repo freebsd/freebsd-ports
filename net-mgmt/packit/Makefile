@@ -1,7 +1,6 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	packit
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ehaupt@FreeBSD.org

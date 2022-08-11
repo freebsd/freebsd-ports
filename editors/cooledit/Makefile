@@ -1,5 +1,3 @@
-# Created by: brett@peloton.physics.montana.edu
-
 PORTNAME=	cooledit
 DISTVERSION=	3.17.28
 PORTREVISION=	3

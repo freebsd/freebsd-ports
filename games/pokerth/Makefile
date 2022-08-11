@@ -1,5 +1,3 @@
-# Created by: Yinghong.Liu <relaxbsd@gmail.com>
-
 PORTNAME=	pokerth
 PORTVERSION=	1.1.2
 PORTREVISION=	16
@@ -22,6 +20,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libircclient.so:irc/libircclient
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp \
 		protoc:devel/protobuf
+
+BROKEN=		error: use of undeclared identifier '_1'
 
 USES=		compiler:c++11-lang gl gmake iconv qmake qt:5 sdl sqlite ssl
 USE_GL=		gl

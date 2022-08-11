@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Authen-PAAS
 PORTVERSION=	1.1.1
 PORTREVISION=	1

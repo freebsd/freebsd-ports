@@ -1,5 +1,3 @@
-# Created by: Horance Chou <horance@freedom.ie.cycu.edu.tw>
-
 PORTNAME=	libffi
 PORTVERSION=	3.4.2
 CATEGORIES=	devel

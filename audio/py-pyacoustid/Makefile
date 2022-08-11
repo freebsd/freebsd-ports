@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pyacoustid
 PORTVERSION=	1.2.2
 CATEGORIES=	audio python

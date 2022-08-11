@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	slack-notifier
 PORTVERSION=	2.4.0
 CATEGORIES=	devel rubygems

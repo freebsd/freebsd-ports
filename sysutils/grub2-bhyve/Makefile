@@ -1,5 +1,3 @@
-# Created by: kmoore@FreeBSD.org
-
 PORTNAME=	grub2-bhyve
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.40

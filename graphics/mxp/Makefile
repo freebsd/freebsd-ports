@@ -1,5 +1,3 @@
-# Created by: NAKATA Maho <maho@FreeBSD.org>
-
 PORTNAME=	mxp
 PORTVERSION=	1.3
 PORTREVISION=	5

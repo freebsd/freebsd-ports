@@ -1,5 +1,3 @@
-# Created by: Matthias Andree <mandree@FreeBSD.org>
-
 PORTNAME=	db5
 PORTVERSION=	5.3.28
 PORTREVISION=	8

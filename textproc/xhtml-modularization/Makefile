@@ -1,5 +1,3 @@
-# Created by: nectar
-
 PORTNAME=	xhtml-modularization
 PORTVERSION=	1.0.${RECDATE}
 PORTREVISION=	1

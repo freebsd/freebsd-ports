@@ -1,5 +1,3 @@
-# Created by: Dima Sivachenko <dima@chg.ru>
-
 PORTNAME=	Net-RawIP
 PORTVERSION=	0.25
 PORTREVISION=	1

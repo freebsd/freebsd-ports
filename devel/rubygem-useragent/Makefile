@@ -1,5 +1,3 @@
-# Created by: Sir l33tname <sirl33tname@gmail.com>
-
 PORTNAME=	useragent
 PORTVERSION=	0.16.10
 CATEGORIES=	devel rubygems

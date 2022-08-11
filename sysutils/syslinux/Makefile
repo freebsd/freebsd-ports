@@ -1,5 +1,3 @@
-# Created by: luigi@FreeBSD.org
-
 PORTNAME=	syslinux
 PORTVERSION=	6.03
 CATEGORIES=	sysutils

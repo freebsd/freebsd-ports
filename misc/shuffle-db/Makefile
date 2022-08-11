@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	shuffle-db
 DISTVERSION=	1.0-rc1
 PORTREVISION=	1

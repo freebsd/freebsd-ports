@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	libproxy
 DISTVERSION=	0.4.17
 PORTREVISION?=	1

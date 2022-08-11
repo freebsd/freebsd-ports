@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Template-Plugin-StripScripts
 PORTVERSION=	0.02
 PORTREVISION=	1

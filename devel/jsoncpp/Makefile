@@ -1,5 +1,3 @@
-# Created by: Johan Str??m <johan@stromnet.se>
-
 PORTNAME=	jsoncpp
 DISTVERSION=	1.9.5
 CATEGORIES=	devel

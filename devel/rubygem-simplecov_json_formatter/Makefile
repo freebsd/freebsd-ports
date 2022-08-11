@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	simplecov_json_formatter
 PORTVERSION=	0.1.4
 CATEGORIES=	devel rubygems

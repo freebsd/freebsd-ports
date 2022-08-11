@@ -1,5 +1,3 @@
-# Created by: Björn König <bkoenig@alpha-tierchen.de>
-
 PORTNAME=	sablevm-classpath
 PORTVERSION=	1.13
 PORTREVISION=	12

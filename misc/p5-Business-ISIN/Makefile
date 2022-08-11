@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Business-ISIN
 PORTVERSION=	0.20
 PORTREVISION=	1

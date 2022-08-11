@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	gpsim
 DISTVERSION=	0.31.0
 CATEGORIES=	misc

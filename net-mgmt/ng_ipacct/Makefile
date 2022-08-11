@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	ng_ipacct
 PORTVERSION=	20210316
 PORTREVISION=	1

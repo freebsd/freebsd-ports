@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	porttools
 PORTVERSION=	1.10
 CATEGORIES=	ports-mgmt

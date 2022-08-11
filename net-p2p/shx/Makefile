@@ -1,5 +1,3 @@
-# Created by: Devin Teske <dteske@FreeBSD.org>
-
 PORTNAME=	shx
 PORTVERSION=	0.2.4
 PORTREVISION=	2

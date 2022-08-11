@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	Class-AutoClass
 PORTVERSION=	1.56
 PORTREVISION=	2

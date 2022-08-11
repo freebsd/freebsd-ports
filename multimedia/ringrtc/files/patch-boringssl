@@ -1,0 +1,35 @@
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259334
+
+--- ../../src/webrtc/src/third_party/boringssl/src/util/generate_build_files.py.orig	2022-05-04 15:47:04 UTC
++++ ../../src/webrtc/src/third_party/boringssl/src/util/generate_build_files.py
+@@ -447,7 +447,7 @@ if(NOT WIN32)
+ 
+ # pthread_rwlock_t requires a feature flag.
+ if(NOT WIN32)
+-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_XOPEN_SOURCE=700")
++  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ")
+ endif()
+ 
+ if(WIN32)
+--- ../../src/webrtc/src/third_party/boringssl/src/util/BUILD.toplevel.orig	2022-05-04 15:47:04 UTC
++++ ../../src/webrtc/src/third_party/boringssl/src/util/BUILD.toplevel
+@@ -95,7 +95,7 @@ linux_copts = posix_copts + [
+     # This is needed on Linux systems (at least) to get rwlock in pthread, but
+     # it should not be set on Apple platforms, where it instead disables APIs
+     # we use. See compat(5) and sys/cdefs.h.
+-    "-D_XOPEN_SOURCE=700",
++    "",
+ ]
+ 
+ boringssl_copts = select({
+--- ../../src/webrtc/src/third_party/boringssl/src/CMakeLists.txt.orig	2022-05-04 15:46:59 UTC
++++ ../../src/webrtc/src/third_party/boringssl/src/CMakeLists.txt
+@@ -262,7 +262,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ # and sys/cdefs.h. Reportedly, FreeBSD also breaks when this is set. See
+ # https://crbug.com/boringssl/471.
+ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_XOPEN_SOURCE=700")
++  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ")
+ endif()
+ 
+ if(FUZZ)

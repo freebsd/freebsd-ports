@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Template-Plugin-Class
 PORTVERSION=	0.14
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-internet-archive
 PORTVERSION=	0.0.2
 CATEGORIES=	net rubygems

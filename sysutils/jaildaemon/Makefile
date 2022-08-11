@@ -1,5 +1,3 @@
-# Created by: Dirk Engling <erdgeist@erdgeist.org>
-
 PORTNAME=	jaildaemon
 PORTVERSION=	0.4
 CATEGORIES=	sysutils

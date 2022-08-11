@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	qnetwalk
 PORTVERSION=	1.7.0
 CATEGORIES=	games

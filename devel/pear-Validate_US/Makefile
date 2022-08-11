@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Validate_US
 PORTVERSION=	0.5.5
 CATEGORIES=	devel www pear

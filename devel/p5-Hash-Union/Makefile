@@ -1,5 +1,3 @@
-# Created by: Oleg A. Mamontov <oleg@mamontov.net>
-
 PORTNAME=	Hash-Union
 PORTVERSION=	0.03
 PORTREVISION=	1

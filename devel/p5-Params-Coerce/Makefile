@@ -1,5 +1,3 @@
-# Created by: Cory R. King <coryking@mozimedia.com>
-
 PORTNAME=	Params-Coerce
 DISTVERSION=	0.15
 CATEGORIES=	devel perl5

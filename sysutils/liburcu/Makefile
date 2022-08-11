@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns-lab.com>
-
 PORTNAME=	liburcu
 PORTVERSION=	0.13.0
 CATEGORIES=	sysutils

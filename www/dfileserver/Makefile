@@ -1,5 +1,3 @@
-# Created by: Dash|RD
-
 PORTNAME=	DFileServer
 PORTVERSION=	1.1.3
 PORTREVISION=	1

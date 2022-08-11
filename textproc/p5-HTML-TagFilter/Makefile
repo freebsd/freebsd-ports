@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	HTML-TagFilter
 PORTVERSION=	1.03
 PORTREVISION=	1

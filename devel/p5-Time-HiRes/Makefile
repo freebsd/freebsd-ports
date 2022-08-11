@@ -1,5 +1,3 @@
-# Created by: Stephen J. Roznowski <sjr@home.net>
-
 PORTNAME=	Time-HiRes
 PORTVERSION=	1.9764
 PORTEPOCH=	1

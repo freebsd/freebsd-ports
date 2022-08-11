@@ -1,5 +1,3 @@
-# Created by: Yasuhiro Fukuma <yasuf@big.or.jp>
-
 PORTNAME=	npc
 PORTVERSION=	0.83
 CATEGORIES=	www

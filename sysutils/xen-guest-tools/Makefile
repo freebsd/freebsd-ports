@@ -1,5 +1,3 @@
-# Created by: Evan Sarmiento <esarmiento@wayfair.com>
-
 PORTNAME=	xen-guest-tools
 PORTVERSION=	4.14.0
 PORTREVISION=	0

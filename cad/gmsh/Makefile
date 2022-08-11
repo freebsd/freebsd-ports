@@ -1,7 +1,6 @@
-# Created by: Pedro Giffuni <giffunip@asme.org>
-
 PORTNAME=	gmsh
 DISTVERSION=	4.9.2
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libgmp.so:math/gmp \
 		libhdf5.so:science/hdf5 \
 		libpng.so:graphics/png \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	getdp:science/getdp
 

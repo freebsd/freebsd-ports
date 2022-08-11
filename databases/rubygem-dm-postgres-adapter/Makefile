@@ -1,5 +1,3 @@
-# Created by: stas
-
 PORTNAME=	dm-postgres-adapter
 PORTVERSION=	1.2.0
 PORTREVISION=	2

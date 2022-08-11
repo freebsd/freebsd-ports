@@ -1,5 +1,3 @@
-# Created by: Jeff Putsch <jdputsch@comcast.net>
-
 PORTNAME=	POE-Component-Jabber
 PORTVERSION=	3.00
 PORTREVISION=	3

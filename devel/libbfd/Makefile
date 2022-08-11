@@ -1,5 +1,3 @@
-# Created by: Joerg Wunsch <joerg@FreeBSD.org>
-
 PORTNAME=	libbfd
 PORTVERSION=	2.33.1
 CATEGORIES=	devel

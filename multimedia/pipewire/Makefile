@@ -1,6 +1,5 @@
 PORTNAME=	pipewire
-DISTVERSION=	0.3.43
-PORTREVISION=	1
+DISTVERSION=	0.3.54
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/${MEDIA_SESSION_VERSION}/:media_session
 DISTFILES=	media-session-${MEDIA_SESSION_VERSION}${EXTRACT_SUFX}:media_session
@@ -32,9 +31,8 @@ OPTIONS_DEFINE=		GSTREAMER PIPEWIRE_JACK MANPAGES MEDIASESSION PULSEAUDIO SDL VU
 OPTIONS_DEFAULT=	GSTREAMER PIPEWIRE_JACK MANPAGES MEDIASESSION
 OPTIONS_SUB=	yes
 
+GSTREAMER_USES=		gstreamer
 GSTREAMER_MESON_ENABLED=gstreamer
-GSTREAMER_LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1 \
-			libgstaudio-1.0.so:multimedia/gstreamer1-plugins
 
 PIPEWIRE_JACK_DESC=		Build pipewire-jack
 PIPEWIRE_JACK_MESON_ENABLED=	pipewire-jack

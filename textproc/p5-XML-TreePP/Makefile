@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	XML-TreePP
 PORTVERSION=	0.43
 CATEGORIES=	textproc perl5

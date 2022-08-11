@@ -1,8 +1,6 @@
-# Created by: Thomas Zander <riggs@FreeBSD.org>
-
 PORTNAME=	pms-devel
 PORTVERSION=	0.0.20211015
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	riggs@FreeBSD.org

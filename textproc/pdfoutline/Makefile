@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	pdfoutline
 PORTVERSION=	5.4
 DISTVERSIONPREFIX=	release/

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Sub-Identify
 PORTVERSION=	0.14
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Jonathan Hanna
-
 PORTNAME=	edict
 PORTVERSION=	19990714
 PORTREVISION=	5

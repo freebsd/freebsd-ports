@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	URI-imaps
 PORTVERSION=	1.04
 CATEGORIES=	mail perl5

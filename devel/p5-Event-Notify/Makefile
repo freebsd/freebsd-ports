@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	Event-Notify
 PORTVERSION=	0.00004
 PORTREVISION=	1

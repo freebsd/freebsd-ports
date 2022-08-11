@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	nbdime
 PORTVERSION=	3.1.1
 CATEGORIES=	devel python

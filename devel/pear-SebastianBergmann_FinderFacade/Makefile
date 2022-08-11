@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	FinderFacade
 PORTVERSION=	1.2.3
 CATEGORIES=	devel pear

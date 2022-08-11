@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	WWW-OpenSearch
 PORTVERSION=	0.17
 PORTREVISION=	1

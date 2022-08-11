@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	aumix
 PORTVERSION=	2.9.1
 PORTREVISION=	1

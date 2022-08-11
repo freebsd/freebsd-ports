@@ -1,6 +1,0 @@
-gettext is an internationalization (i18n) and localization (l10n) system
-commonly used for writing multilingual programs. Gettext is a standard for
-i18n in different communities, meaning there is a great set of tooling for
-developers and translators.
-
-WWW: https://github.com/elixir-lang/gettext

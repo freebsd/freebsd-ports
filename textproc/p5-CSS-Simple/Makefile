@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	CSS-Simple
 PORTVERSION=	3220
 CATEGORIES=	textproc www perl5

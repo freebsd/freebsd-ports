@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Test-Exception
 PORTVERSION=	0.43
 CATEGORIES=	devel perl5

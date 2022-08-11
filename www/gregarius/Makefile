@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	gregarius
 PORTVERSION=	0.6.1
 PORTREVISION=	1

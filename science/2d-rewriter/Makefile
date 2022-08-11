@@ -1,5 +1,3 @@
-# Created by: Igor Serikov <iserikov@acm.org>
-
 PORTNAME=	2d-rewriter
 PORTVERSION=	1.6
 CATEGORIES=	science

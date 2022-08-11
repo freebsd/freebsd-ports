@@ -1,5 +1,3 @@
-# Created by: citrin+bsd@citrin.ru
-
 PORTNAME=	Catalyst-Controller-SOAP
 PORTVERSION=	1.25
 PORTREVISION=	1

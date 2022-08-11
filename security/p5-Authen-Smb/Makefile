@@ -1,5 +1,3 @@
-# Created by: Mustafa Arif <ma499@doc.ic.ac.uk>
-
 PORTNAME=	Authen-Smb
 PORTVERSION=	0.91
 PORTREVISION=	1

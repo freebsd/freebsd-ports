@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Crypt-GCrypt
 PORTVERSION=	1.26
 PORTREVISION=	3

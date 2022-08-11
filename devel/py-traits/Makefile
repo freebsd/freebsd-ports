@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	traits
 PORTVERSION=	6.3.2
 CATEGORIES=	devel python

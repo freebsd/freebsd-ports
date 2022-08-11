@@ -5,6 +5,7 @@
     SUBDIR += abiword-docs
     SUBDIR += aee
     SUBDIR += aewan
+    SUBDIR += amp
     SUBDIR += apel
     SUBDIR += asedit
     SUBDIR += beav
@@ -16,7 +17,6 @@
     SUBDIR += calligra
     SUBDIR += calligraplan
     SUBDIR += chexedit
-    SUBDIR += codelite
     SUBDIR += cooledit
     SUBDIR += cpeditor
     SUBDIR += cream
@@ -51,6 +51,7 @@
     SUBDIR += ghostwriter
     SUBDIR += gmanedit
     SUBDIR += gnome-latex
+    SUBDIR += gnome-text-editor
     SUBDIR += gobby
     SUBDIR += gomate
     SUBDIR += gummi
@@ -193,6 +194,7 @@
     SUBDIR += linux-sublime-text4
     SUBDIR += linux-sublime3
     SUBDIR += linux-wps-office
+    SUBDIR += lite
     SUBDIR += madedit
     SUBDIR += marker
     SUBDIR += mg
@@ -207,6 +209,7 @@
     SUBDIR += nedit
     SUBDIR += neovim
     SUBDIR += neovim-qt
+    SUBDIR += notepadnext
     SUBDIR += nvi-m17n
     SUBDIR += nvi2
     SUBDIR += o
@@ -266,6 +269,7 @@
     SUBDIR += vscode
     SUBDIR += web-mode
     SUBDIR += with-editor
+    SUBDIR += with-editor-devel
     SUBDIR += wordgrinder
     SUBDIR += wxhexeditor
     SUBDIR += xcoral

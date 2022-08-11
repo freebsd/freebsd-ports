@@ -3,8 +3,8 @@ lib/lv2/drumkv1.lv2/drumkv1.so
 lib/lv2/drumkv1.lv2/drumkv1.ttl
 lib/lv2/drumkv1.lv2/drumkv1_ui.ttl
 lib/lv2/drumkv1.lv2/manifest.ttl
-man/fr/man1/drumkv1.1.gz
-man/man1/drumkv1.1.gz
+share/man/fr/man1/drumkv1.1.gz
+share/man/man1/drumkv1.1.gz
 share/applications/org.rncbc.drumkv1.desktop
 share/icons/hicolor/32x32/apps/org.rncbc.drumkv1.png
 share/icons/hicolor/32x32/mimetypes/org.rncbc.drumkv1.application-x-drumkv1-preset.png

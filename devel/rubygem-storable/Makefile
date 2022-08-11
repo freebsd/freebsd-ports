@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	storable
 PORTVERSION=	0.8.9
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@FreeBSD.org>
-
 PORTNAME=	qmail-qfilter
 PORTVERSION=	2.1
 PORTREVISION=	4

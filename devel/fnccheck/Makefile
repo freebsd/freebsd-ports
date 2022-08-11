@@ -11,6 +11,8 @@ COMMENT=	Profiling library/utilities for C/C++ programs
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN=		does not build: /usr/local/include/libiberty/libiberty.h:317:74: error: expected function body after function declarator
+
 BUILD_DEPENDS=	gnulibiberty>=2.19.1:devel/gnulibiberty
 LIB_DEPENDS=	libbfd.so:devel/libbfd
 

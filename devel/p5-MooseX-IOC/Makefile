@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	MooseX-IOC
 PORTVERSION=	0.03
 PORTREVISION=	3

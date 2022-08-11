@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	AnyEvent-Graphite
 PORTVERSION=	0.08
 PORTREVISION=	1

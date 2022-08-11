@@ -1,5 +1,3 @@
-# Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
-
 PORTNAME=	libskk
 DISTVERSION=	1.0.5
 CATEGORIES=	japanese

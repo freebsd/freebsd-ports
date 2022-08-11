@@ -1,7 +1,5 @@
-# Created by: Lars Engels <lars.engels@0x20.net>
-
 PORTNAME=	tvbrowser
-PORTVERSION=	4.2.4
+PORTVERSION=	4.2.6
 CATEGORIES=	misc java
 MASTER_SITES=	SF/${PORTNAME}/TV-Browser%20Releases%20%28Java%2011%20and%20higher%29/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_bin
@@ -13,7 +11,6 @@ LICENSE=	GPLv3
 
 USE_JAVA=	yes
 JAVA_VERSION=	11+
-USE_LDCONFIG=	yes
 
 NO_BUILD=	yes
 SUB_FILES=	tvbrowser

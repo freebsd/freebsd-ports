@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	AutoXS-Header
 PORTVERSION=	1.02
 PORTREVISION=	1

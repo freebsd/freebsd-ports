@@ -1,5 +1,3 @@
-# Created by: Talal Al Dik (tad@vif.com)
-
 PORTNAME=	sngrep
 DISTVERSION=	1.4.9
 CATEGORIES=	net

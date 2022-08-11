@@ -1,5 +1,3 @@
-# Created by: pat
-
 PORTNAME=	wmupmon
 PORTVERSION=	0.1.3
 PORTREVISION=	5

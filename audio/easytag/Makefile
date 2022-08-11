@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	easytag
 PORTVERSION=	2.4.3
 PORTREVISION=	5

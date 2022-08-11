@@ -1,5 +1,3 @@
-# Created by: Stefan Pauly <stefan@fh-mainz.de>
-
 PORTNAME=	RRDTool-OO
 PORTVERSION=	0.36
 PORTREVISION=	1

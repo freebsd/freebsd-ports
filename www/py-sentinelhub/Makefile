@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sentinelhub
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,17 +15,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aenum>=2.1.4:devel/py-aenum@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dataclasses-json>=0:devel/py-dataclasses-json@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oauthlib>=0:security/py-oauthlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=9.2.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproj>=2.2.0:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.5.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0:www/py-requests-oauthlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.27.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=1.0.0:www/py-requests-oauthlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Shapely>=0:devel/py-shapely@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tifffile>=2020.9.30:graphics/py-tifffile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}utm>=0:graphics/py-utm@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

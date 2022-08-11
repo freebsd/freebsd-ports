@@ -25,6 +25,11 @@ GH_TUPLE=	gismo:gsElasticity:a94347d:gsElasticity/extensions/gsElasticity \
 
 .if ${ARCH} == aarch64
 CMAKE_ARGS+=	-DTARGET_ARCHITECTURE="cortex-a53"
+.elif ${ARCH} == armv6
+# Raspberry Pi 1, the only supported armv6 target
+CMAKE_ARGS+=	-DTARGET_ARCHITECTURE="arm1176jzf-s"
+.elif ${ARCH} == armv7
+CMAKE_ARGS+=	-DTARGET_ARCHITECTURE="cortex-a7"
 .endif
 
 .include <bsd.port.post.mk>

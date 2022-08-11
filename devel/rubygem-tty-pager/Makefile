@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tty-pager
 PORTVERSION=	0.14.0
 CATEGORIES=	devel rubygems

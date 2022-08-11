@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	ultragetopt
 PORTVERSION=	0.6.0
 PORTREVISION=	1

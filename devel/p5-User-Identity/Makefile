@@ -1,5 +1,3 @@
-# Created by: Max Campos <mcampos@bpsw.biz>
-
 PORTNAME=	User-Identity
 PORTVERSION=	1.01
 CATEGORIES=	devel perl5

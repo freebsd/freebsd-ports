@@ -1,5 +1,3 @@
-# Created by: Foxfair Hu <foxfair@FreeBSD.org>
-
 PORTNAME=	Math-Round
 PORTVERSION=	0.07
 CATEGORIES=	math perl5

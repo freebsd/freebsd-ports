@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	HTML-Highlight
 PORTVERSION=	0.20
 PORTREVISION=	1

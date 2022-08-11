@@ -1,5 +1,3 @@
-# Created by: Serge Gagnon <ser_gagnon@sympatico.ca>
-
 PORTNAME=	${DICT}-aspell
 SPELLVERSION=	6-en-2020.12.07-0
 CATEGORIES=	textproc

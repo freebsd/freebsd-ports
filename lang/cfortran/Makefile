@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	cfortran
 PORTVERSION=	4.3
 CATEGORIES=	lang

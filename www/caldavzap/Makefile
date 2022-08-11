@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	caldavzap
 PORTVERSION=	0.13.1
 PORTREVISION=	1

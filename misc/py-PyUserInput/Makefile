@@ -9,7 +9,7 @@ COMMENT=	Module for mouse and keyboard control
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>0:x11-toolkits/py-xlib@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>0:x11-toolkits/py-python-xlib@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist

@@ -1,6 +1,6 @@
 bin/etr
-share/appdata/etr.appdata.xml
 share/applications/etr.desktop
+share/metainfo/etr.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/code
 %%PORTDOCS%%%%DOCSDIR%%/courses_events
@@ -472,6 +472,7 @@ share/applications/etr.desktop
 %%DATADIR%%/translations/es_ES.lst
 %%DATADIR%%/translations/fi_FI.lst
 %%DATADIR%%/translations/fr_FR.lst
+%%DATADIR%%/translations/it_IT.lst
 %%DATADIR%%/translations/languages.lst
 %%DATADIR%%/translations/pl_PL.lst
 %%DATADIR%%/translations/ro_RO.lst

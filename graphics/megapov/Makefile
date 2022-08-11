@@ -1,5 +1,3 @@
-# Created by: maho@FreeBSD.org
-
 PORTNAME=	megapov
 PORTVERSION=	1.2.1
 PORTREVISION=	8
@@ -8,6 +6,9 @@ MASTER_SITES=	http://megapov.inetart.net/packages/unix/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
+
+DEPRECATED=	Abandoned upstream. graphics/povray37 is the recommended replacement.
+EXPIRATION_DATE=	2022-10-01
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff

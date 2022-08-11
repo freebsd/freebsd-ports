@@ -1,5 +1,3 @@
-# Created by: Andrej Zverev <andrey.zverev@electro-com.ru>
-
 PORTNAME=	Regexp-Copy
 PORTVERSION=	0.06
 PORTREVISION=	2

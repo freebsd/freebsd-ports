@@ -6,4 +6,4 @@ Gigabytes of memory within seconds. An attacker can also keep CPUs busy for
 a long time with a small to medium size request.  This library prevents
 such issues.
 
-WWW: https://bitbucket.org/tiran/defusedxml
+WWW: https://github.com/tiran/defusedxml

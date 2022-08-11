@@ -1,5 +1,3 @@
-# Created by: Jille Timmermans (jille@quis.cx)
-
 PORTNAME=	oggvideotools
 PORTVERSION=	0.9.1
 PORTREVISION=	16

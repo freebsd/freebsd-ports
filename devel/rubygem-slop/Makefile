@@ -1,5 +1,3 @@
-# Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-
 PORTNAME=	slop
 PORTVERSION=	4.9.2
 CATEGORIES=	devel ruby

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	File-ShareDir
 PORTVERSION=	1.118
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	omi
 PORTVERSION=	20030719
 CATEGORIES=	ftp

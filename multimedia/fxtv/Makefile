@@ -1,5 +1,3 @@
-# Created by: Randall Hopper <aa8vb@nc.rr.com>
-
 PORTNAME=	fxtv
 PORTVERSION=	1.03
 PORTREVISION=	13

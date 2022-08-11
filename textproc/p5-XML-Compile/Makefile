@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	XML-Compile
 PORTVERSION=	1.63
 CATEGORIES=	textproc perl5

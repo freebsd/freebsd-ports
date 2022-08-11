@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	pybrain
 PORTVERSION=	0.3.3
 PORTREVISION=	4

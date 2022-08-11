@@ -1,5 +1,3 @@
-# Created by: thompsa@FreeBSD.org
-
 PORTNAME=	fconfig
 PORTVERSION=	20080329
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: paulo@isr.uc.pt
-
 PORTNAME=	povray
 PORTVERSION=	3.6.1
 PORTREVISION=	13

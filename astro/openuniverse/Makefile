@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	openuniverse
 DISTVERSION=	1.0beta3
 PORTREVISION=	13

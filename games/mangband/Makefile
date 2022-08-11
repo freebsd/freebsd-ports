@@ -1,5 +1,3 @@
-# Created by: driedfruit
-
 PORTNAME=	mangband
 PORTVERSION=	1.5.3
 CATEGORIES=	games

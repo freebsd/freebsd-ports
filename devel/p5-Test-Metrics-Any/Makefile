@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-Metrics-Any
 PORTVERSION=	0.01
 CATEGORIES=	devel perl5

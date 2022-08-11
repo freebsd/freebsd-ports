@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	IO-Socket-Multicast6
 PORTVERSION=	0.03
 PORTREVISION=	2

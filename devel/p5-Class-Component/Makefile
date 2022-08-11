@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	Class-Component
 PORTVERSION=	0.17
 PORTREVISION=	1

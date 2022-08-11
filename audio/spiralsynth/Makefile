@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	spiralsynth
 PORTVERSION=	0.1.7
 PORTREVISION=	8

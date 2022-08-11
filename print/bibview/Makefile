@@ -1,5 +1,3 @@
-# Created by: dbader@eece.unm.edu
-
 PORTNAME=	bibview
 PORTVERSION=	2.2
 PORTREVISION=	2

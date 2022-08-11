@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	xmine
 PORTVERSION=	1.0.3
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	xvmcinfo
 PORTVERSION=	0.1
 CATEGORIES=	x11

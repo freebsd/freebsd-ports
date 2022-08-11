@@ -1,5 +1,3 @@
-# Created by: Mark Hannon <markhannon@optusnet.com.au>
-
 PORTNAME=	gnome-ssh-askpass
 PORTVERSION=	6.6p1
 CATEGORIES=	security gnome

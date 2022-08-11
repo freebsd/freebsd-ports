@@ -1,0 +1,17 @@
+--- build/configure.ac.system.orig	2020-11-26 23:20:59 UTC
++++ build/configure.ac.system
+@@ -53,11 +53,11 @@ LIBS="$LIBS $LIBM"
+ AC_CHECK_LIBM
+ LIBS="$LIBS $LIBM"
+ 
+-AC_CHECK_LIB(rt, sched_yield)
++AC_CHECK_LIB(c, sched_yield)
+ 
+ has_shm_open=
+-AC_CHECK_LIB(rt, shm_open, [
+-	     SHM_LIBS=-lrt
++AC_CHECK_LIB(c, shm_open, [
++	     SHM_LIBS=
+ 	     has_shm_open=yes
+ 	     ], [SHM_LIBS=])
+ AM_CONDITIONAL(HAVE_SHM, test "x$has_shm_open" = "xyes")

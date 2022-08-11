@@ -1,5 +1,3 @@
-# Created by: Sheldon Hearn <axl@iafrica.com>
-
 PORTNAME=	xzx
 PORTVERSION=	4.6
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Nmap-Scanner
 PORTVERSION=	1.0
 PORTREVISION=	5

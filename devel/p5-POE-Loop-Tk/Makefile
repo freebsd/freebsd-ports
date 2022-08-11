@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	POE-Loop-Tk
 PORTVERSION=	1.305
 PORTREVISION=	2

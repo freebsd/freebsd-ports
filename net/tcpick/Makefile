@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	tcpick
 PORTVERSION=	0.2.1
 PORTREVISION=	1

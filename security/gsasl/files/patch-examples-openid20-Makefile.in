@@ -1,6 +1,6 @@
---- examples/openid20/Makefile.in.orig	2021-01-01 16:32:53 UTC
+--- examples/openid20/Makefile.in.orig	2022-06-20 15:55:14 UTC
 +++ examples/openid20/Makefile.in
-@@ -219,7 +219,6 @@ smtp_server_openid20_SOURCES = smtp-server-openid20.c
+@@ -223,7 +223,6 @@ smtp_server_openid20_SOURCES = smtp-server-openid20.c
  smtp_server_openid20_OBJECTS = smtp-server-openid20.$(OBJEXT)
  smtp_server_openid20_LDADD = $(LDADD)
  smtp_server_openid20_DEPENDENCIES =  \
@@ -8,7 +8,7 @@
  	$(top_builddir)/gl/libgl.la
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-@@ -1543,7 +1542,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/gl -I$(top_builddir)/gl 
+@@ -1818,7 +1817,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/gl -I$(top_builddir)/gl 
  	-I$(top_srcdir)/lib/src -I$(top_builddir)/lib/src
  
  AM_LDFLAGS = -no-install

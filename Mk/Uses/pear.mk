@@ -22,6 +22,7 @@ IGNORE=	Incorrect 'USES+= pear:${pear_ARGS}' usage: argument [${arg}] is not rec
 .    endif
 .  endfor
 
+IGNORE_WITH_PHP?=	82
 php_ARGS+=	flavors
 .include "${USESDIR}/php.mk"
 
@@ -114,6 +115,10 @@ pear-pre-install:
 	@${ECHO_MSG} ""
 	@${FALSE}
 .    endif
+	(if [ -f ${WRKSRC}/package.xml ]	\
+	&& [ ! -f ${WRKDIR}/package.xml ] ; then	\
+		${CP} -p ${WRKSRC}/package.xml ${WRKDIR} ;	\
+	fi)
 
 DIRFILTER=	${SED} -En '\:^.*/[^/]*$$:s:^(.+)/[^/]*$$:\1:p' \
 		    | ( while read r; do \

@@ -1,5 +1,3 @@
-# Created by: smyru@heron.pl
-
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0
 PORTREVISION=	17

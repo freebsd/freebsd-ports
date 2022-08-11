@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin
-
 PORTNAME=	skem
 PORTVERSION=	1.0.2
 PORTREVISION=	2

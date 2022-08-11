@@ -1,5 +1,3 @@
-# Created by: Joerg Wunsch <joerg@FreeBSD.org>
-
 PORTNAME=	gdb
 PORTVERSION=	7.3.1
 PORTREVISION=	6

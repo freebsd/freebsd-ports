@@ -1,5 +1,3 @@
-# Created by: Jacques Marneweck <jacques@php.net>
-
 PORTNAME=	Perlbal
 PORTVERSION=	1.80
 PORTREVISION=	1

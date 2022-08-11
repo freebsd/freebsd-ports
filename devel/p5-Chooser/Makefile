@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Chooser
 PORTVERSION=	2.0.0
 PORTREVISION=	2

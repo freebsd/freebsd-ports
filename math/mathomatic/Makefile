@@ -1,5 +1,3 @@
-# Created by: Roman Neuhauser <neuhauser@sigpipe.cz>
-
 PORTNAME=	mathomatic
 PORTVERSION=	16.0.5
 PORTREVISION=	2

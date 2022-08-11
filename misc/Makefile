@@ -13,6 +13,7 @@
     SUBDIR += artikulate
     SUBDIR += asbutton
     SUBDIR += asr-manpages
+    SUBDIR += astc-encoder
     SUBDIR += bb
     SUBDIR += bbjd
     SUBDIR += bdelta
@@ -43,6 +44,7 @@
     SUBDIR += clpbar
     SUBDIR += colortail
     SUBDIR += colwide
+    SUBDIR += compat.el
     SUBDIR += compat10x
     SUBDIR += compat11x
     SUBDIR += compat12x
@@ -61,7 +63,7 @@
     SUBDIR += cs
     SUBDIR += cstream
     SUBDIR += ctm
-    SUBDIR += cxxmatrix
+    SUBDIR += cuttlefish
     SUBDIR += dahdi
     SUBDIR += dahdi-kmod
     SUBDIR += dahdi-kmod26
@@ -80,13 +82,10 @@
     SUBDIR += dynomite
     SUBDIR += e2fsprogs-libblkid
     SUBDIR += e2fsprogs-libuuid
+    SUBDIR += edfbrowser
     SUBDIR += edflib
-    SUBDIR += elixir-mime
-    SUBDIR += elixir-uuid
     SUBDIR += elki
     SUBDIR += elscreen
-    SUBDIR += erlang-mimerl
-    SUBDIR += erlang-mimetypes
     SUBDIR += estic
     SUBDIR += exercism
     SUBDIR += explosions
@@ -117,6 +116,7 @@
     SUBDIR += freebsd-doc-es
     SUBDIR += freebsd-doc-fr
     SUBDIR += freebsd-doc-hu
+    SUBDIR += freebsd-doc-id
     SUBDIR += freebsd-doc-it
     SUBDIR += freebsd-doc-ja
     SUBDIR += freebsd-doc-ko
@@ -255,7 +255,6 @@
     SUBDIR += najitool
     SUBDIR += ncnn
     SUBDIR += netron
-    SUBDIR += ngraph
     SUBDIR += nms
     SUBDIR += nn-insight
     SUBDIR += nnn
@@ -360,6 +359,7 @@
     SUBDIR += php74-calendar
     SUBDIR += php80-calendar
     SUBDIR += php81-calendar
+    SUBDIR += php82-calendar
     SUBDIR += pinfo
     SUBDIR += pipe
     SUBDIR += posixtestsuite
@@ -372,6 +372,7 @@
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
     SUBDIR += py-alive-progress
+    SUBDIR += py-boost-histogram
     SUBDIR += py-cinder
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
@@ -379,12 +380,14 @@
     SUBDIR += py-dictdiffer
     SUBDIR += py-eemeter
     SUBDIR += py-emoji
+    SUBDIR += py-ezc3d
     SUBDIR += py-fast-histogram
     SUBDIR += py-fleep
     SUBDIR += py-fuzzy
     SUBDIR += py-gluoncv
     SUBDIR += py-gluonnlp
     SUBDIR += py-halo
+    SUBDIR += py-histoprint
     SUBDIR += py-huepy
     SUBDIR += py-kartograph
     SUBDIR += py-log_symbols
@@ -409,6 +412,7 @@
     SUBDIR += py-pyprind
     SUBDIR += py-python-geohash
     SUBDIR += py-python-utils
+    SUBDIR += py-qiskit-machine-learning
     SUBDIR += py-scikit-fusion
     SUBDIR += py-serverfiles
     SUBDIR += py-soapy_power
@@ -416,12 +420,14 @@
     SUBDIR += py-spdx-lookup
     SUBDIR += py-spdx-tools
     SUBDIR += py-spinners
+    SUBDIR += py-tes
     SUBDIR += py-tflearn
     SUBDIR += py-tflite
     SUBDIR += py-tflite-support
     SUBDIR += py-toil
     SUBDIR += py-tqdm
     SUBDIR += py-tvm
+    SUBDIR += py-uhi
     SUBDIR += py-wurlitzer
     SUBDIR += py-xgboost
     SUBDIR += pyobd
@@ -479,6 +485,7 @@
     SUBDIR += susv2
     SUBDIR += susv3
     SUBDIR += susv4
+    SUBDIR += swissfileknife
     SUBDIR += sword
     SUBDIR += table.el
     SUBDIR += talkfilters
@@ -523,6 +530,7 @@
     SUBDIR += vdmfec
     SUBDIR += veles
     SUBDIR += vera
+    SUBDIR += vfc
     SUBDIR += vifm
     SUBDIR += visp
     SUBDIR += viz

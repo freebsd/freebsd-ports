@@ -1,8 +1,11 @@
 PORTNAME=	visp
-DISTVERSION=	3.4.0
-PORTREVISION=	7
+DISTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://visp-doc.inria.fr/download/releases/
+
+PATCH_SITES=	https://github.com/lagadic/${PORTNAME}/commit/
+PATCHFILES=	ff554ca8be5f43a3470e1cb20150d8171a66b463.patch:-p1 # fix https://github.com/lagadic/visp/issues/1059
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modular library for visual tracking and visual servoing

@@ -1,5 +1,3 @@
-# Created by: Martin Kammerhofer <mkamm@gmx.net>
-
 PORTNAME=	jline
 PORTVERSION=	0.9.94
 CATEGORIES=	devel java

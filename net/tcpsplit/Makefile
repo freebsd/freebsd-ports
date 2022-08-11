@@ -1,5 +1,3 @@
-# Created by: Lars Eggert <lars@eggert.org>
-
 PORTNAME=	tcpsplit
 PORTVERSION=	0.2
 CATEGORIES=	net

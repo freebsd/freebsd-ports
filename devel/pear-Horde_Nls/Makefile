@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Nls
 PORTVERSION=	2.2.1
 PORTREVISION=	1

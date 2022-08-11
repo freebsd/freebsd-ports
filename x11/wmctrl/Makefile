@@ -1,5 +1,3 @@
-# Created by: Florent Thoumie <flz@xbsd.org>
-
 PORTNAME=	wmctrl
 PORTVERSION=	1.07
 PORTREVISION=	7

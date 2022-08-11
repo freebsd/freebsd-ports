@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	DBIx-AnyDBD
 PORTVERSION=	2.03
 CATEGORIES=	databases perl5

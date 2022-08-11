@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Tk-FontDialog
 PORTVERSION=	0.17
 PORTREVISION=	1

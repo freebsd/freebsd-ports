@@ -1,5 +1,3 @@
-# Created by: Andrew Wingorodov <mail@andr.ru>
-
 PORTNAME=	pstreams
 PORTVERSION=	0.8.1
 CATEGORIES=	devel

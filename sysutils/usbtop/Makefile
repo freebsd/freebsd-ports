@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@FreeBSD.org>
-
 PORTNAME=	usbtop
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1.0

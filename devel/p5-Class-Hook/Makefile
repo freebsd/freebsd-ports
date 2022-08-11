@@ -1,5 +1,3 @@
-# Created by: Brian Skrab <brian@quynh-and-brian.org>
-
 PORTNAME=	Class-Hook
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

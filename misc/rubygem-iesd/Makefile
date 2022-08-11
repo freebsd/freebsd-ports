@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	iesd
 PORTVERSION=	1.2.2
 CATEGORIES=	misc rubygems

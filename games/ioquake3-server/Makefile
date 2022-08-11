@@ -1,5 +1,3 @@
-# Created by: Dominic Fandrey <kamikaze@bsdforen.de>
-
 PORTNAME=	ioquake3
 PKGNAMESUFFIX=	-server
 

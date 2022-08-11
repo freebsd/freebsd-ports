@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	Cflow
 PORTVERSION=	1.053
 PORTREVISION=	2

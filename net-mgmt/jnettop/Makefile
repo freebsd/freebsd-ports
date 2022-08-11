@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz
-
 PORTNAME=	jnettop
 PORTVERSION=	0.13.0
 PORTREVISION=	1

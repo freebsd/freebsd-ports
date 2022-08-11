@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	extended-markdown-filter
 PORTVERSION=	0.7.0
 CATEGORIES=	textproc rubygems

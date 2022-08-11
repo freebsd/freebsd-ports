@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	no_proxy_fix
 PORTVERSION=	0.1.2
 CATEGORIES=	net rubygems

@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	TimeDate
 PORTVERSION=	2.33
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	guile-lib
 PORTVERSION=	0.2.6.1
 PORTREVISION=	2

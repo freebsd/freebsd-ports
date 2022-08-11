@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libolecf
 DISTVERSION=	alpha-20210512
 CATEGORIES=	devel

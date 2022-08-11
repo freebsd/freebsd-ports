@@ -1,8 +1,6 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	randlm
 PORTVERSION=	0.2.5
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}
 

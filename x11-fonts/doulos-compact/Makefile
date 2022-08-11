@@ -1,5 +1,3 @@
-# Created by: bf <bf@FreeBSD.org>
-
 PORTNAME=	DoulosSILCompact
 PORTVERSION=	4.110
 PORTREVISION=	3

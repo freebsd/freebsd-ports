@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Import-Base
 PORTVERSION=	1.004
 CATEGORIES=	devel perl5

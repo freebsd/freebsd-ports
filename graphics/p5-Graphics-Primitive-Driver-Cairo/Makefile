@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Graphics-Primitive-Driver-Cairo
 PORTVERSION=	0.47
 CATEGORIES=	graphics perl5

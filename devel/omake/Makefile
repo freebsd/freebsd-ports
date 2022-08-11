@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	omake
 PORTVERSION=	0.10.3
 CATEGORIES=	devel

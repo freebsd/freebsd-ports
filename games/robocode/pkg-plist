@@ -13,20 +13,20 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/battles/intro.battle
 %%DATADIR%%/battles/sample.battle
 %%DATADIR%%/compilers/CompilerTest.java
-%%DATADIR%%/compilers/org.eclipse.core.commands-3.10.100.jar
+%%DATADIR%%/compilers/org.eclipse.core.commands-3.10.200.jar
 %%DATADIR%%/compilers/org.eclipse.core.contenttype-3.8.100.jar
 %%DATADIR%%/compilers/org.eclipse.core.expressions-3.8.100.jar
-%%DATADIR%%/compilers/org.eclipse.core.filesystem-1.9.300.jar
-%%DATADIR%%/compilers/org.eclipse.core.jobs-3.12.100.jar
-%%DATADIR%%/compilers/org.eclipse.core.resources-3.16.100.jar
-%%DATADIR%%/compilers/org.eclipse.core.runtime-3.24.100.jar
+%%DATADIR%%/compilers/org.eclipse.core.filesystem-1.9.400.jar
+%%DATADIR%%/compilers/org.eclipse.core.jobs-3.13.0.jar
+%%DATADIR%%/compilers/org.eclipse.core.resources-3.17.0.jar
+%%DATADIR%%/compilers/org.eclipse.core.runtime-3.25.0.jar
 %%DATADIR%%/compilers/org.eclipse.equinox.app-1.6.100.jar
-%%DATADIR%%/compilers/org.eclipse.equinox.common-3.16.0.jar
-%%DATADIR%%/compilers/org.eclipse.equinox.preferences-3.9.100.jar
+%%DATADIR%%/compilers/org.eclipse.equinox.common-3.16.100.jar
+%%DATADIR%%/compilers/org.eclipse.equinox.preferences-3.10.1.jar
 %%DATADIR%%/compilers/org.eclipse.equinox.registry-3.11.100.jar
 %%DATADIR%%/compilers/org.eclipse.jdt.core-3.26.0.jar
-%%DATADIR%%/compilers/org.eclipse.osgi-3.17.200.jar
-%%DATADIR%%/compilers/org.eclipse.text-3.12.0.jar
+%%DATADIR%%/compilers/org.eclipse.osgi-3.18.0.jar
+%%DATADIR%%/compilers/org.eclipse.text-3.12.100.jar
 %%DATADIR%%/javadoc/allclasses-frame.html
 %%DATADIR%%/javadoc/allclasses-noframe.html
 %%DATADIR%%/javadoc/constant-values.html
@@ -176,6 +176,8 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/libs/codesize-1.2.jar
 %%DATADIR%%/libs/kotlin-stdlib-1.5.20.jar
 %%DATADIR%%/libs/kotlin-stdlib-common-1.5.20.jar
+%%DATADIR%%/libs/org.osgi.service.prefs-1.1.2.jar
+%%DATADIR%%/libs/osgi.annotation-8.0.1.jar
 %%DATADIR%%/libs/picocontainer-2.14.2.jar
 %%DATADIR%%/libs/robocode.battle-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/robocode.core-%%PORTVERSION%%.jar
@@ -293,5 +295,6 @@ share/applications/robocodeTwinDuel.desktop
 share/pixmaps/robocode.png
 share/pixmaps/roborumble.png
 @dir(,,755) %%DATADIR%%/robots
+@dir(,,755) %%DATADIR%%/robots/test
 @dir(,,755) %%DATADIR%%/roborumble
 @dir(,,755) %%DATADIR%%/config

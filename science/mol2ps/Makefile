@@ -1,8 +1,6 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	mol2ps
 PORTVERSION=	0.4b
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	science
 MASTER_SITES=	https://homepage.univie.ac.at/norbert.haider/download/chemistry/mol2ps/
 DISTNAME=	${PORTNAME}

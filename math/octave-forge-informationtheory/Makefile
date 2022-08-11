@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-informationtheory
 PORTVERSION=	0.1.8
 PORTREVISION=	27

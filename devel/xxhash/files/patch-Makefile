@@ -1,0 +1,15 @@
+--- Makefile.orig	2021-11-29 18:34:10 UTC
++++ Makefile
+@@ -518,9 +518,9 @@ endif
+ 	$(Q)ln -sf xxhsum $(DESTDIR)$(BINDIR)/xxh128sum
+ 	@echo Installing man pages
+ 	$(Q)$(INSTALL_DATA) $(MAN) $(DESTDIR)$(MANDIR)/xxhsum.1
+-	$(Q)ln -sf $(MAN) $(DESTDIR)$(MANDIR)/xxh32sum.1
+-	$(Q)ln -sf $(MAN) $(DESTDIR)$(MANDIR)/xxh64sum.1
+-	$(Q)ln -sf $(MAN) $(DESTDIR)$(MANDIR)/xxh128sum.1
++	$(Q)ln -sf xxhsum.1 $(DESTDIR)$(MANDIR)/xxh32sum.1
++	$(Q)ln -sf xxhsum.1 $(DESTDIR)$(MANDIR)/xxh64sum.1
++	$(Q)ln -sf xxhsum.1 $(DESTDIR)$(MANDIR)/xxh128sum.1
+ 	@echo xxhash installation completed
+ 
+ .PHONY: uninstall

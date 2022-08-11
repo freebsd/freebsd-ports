@@ -1,5 +1,3 @@
-# Created by: liamfoy@sepulcrum.org
-
 PORTNAME=	gnetcat
 PORTVERSION=	0.7.1
 PORTREVISION=	5

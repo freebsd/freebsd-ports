@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ostruct
 PORTVERSION=	0.5.5
 CATEGORIES=	devel rubygems

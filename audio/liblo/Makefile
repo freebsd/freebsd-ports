@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	liblo
 PORTVERSION=	0.31
 PORTREVISION=	2
@@ -19,6 +17,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES
 OPTIONS_SUB=	yes
+DOXYGEN_IMPLIES=DOCS
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 

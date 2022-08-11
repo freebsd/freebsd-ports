@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Email-MessageID
 PORTVERSION=	1.406
 PORTREVISION=	1

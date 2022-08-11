@@ -1,5 +1,3 @@
-# Created by: Dikshie <dikshie@sfc.wide.ad.jp>
-
 PORTNAME=	yaf
 PORTVERSION=	2.11.0
 CATEGORIES=	net-mgmt

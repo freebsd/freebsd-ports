@@ -1,5 +1,3 @@
-# Created by: Machiel Mastenbroek <machiel_mastenbroek@hotmail.com>
-
 PORTNAME=	skyutils
 PORTVERSION=	3.0
 CATEGORIES=	misc

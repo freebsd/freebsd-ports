@@ -1,5 +1,3 @@
-# Created by: olgeni@FreeBSD.org
-
 PORTNAME=	wings
 DISTVERSION=	2.2.9
 CATEGORIES=	graphics

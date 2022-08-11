@@ -1,5 +1,3 @@
-# Created by: Radim Kolar
-
 PORTNAME=	memtest86
 PORTVERSION=	4.3.7
 CATEGORIES=	sysutils

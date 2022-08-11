@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Test-Reporter-Transport-Metabase
 PORTVERSION=	1.999010
 CATEGORIES=	devel perl5

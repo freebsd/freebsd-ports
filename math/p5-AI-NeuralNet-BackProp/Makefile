@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	AI-NeuralNet-BackProp
 PORTVERSION=	0.89
 PORTREVISION=	1

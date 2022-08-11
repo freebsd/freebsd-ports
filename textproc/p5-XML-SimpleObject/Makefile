@@ -1,5 +1,3 @@
-# Created by: steve
-
 PORTNAME=	XML-SimpleObject
 PORTVERSION=	0.53
 PORTREVISION=	2

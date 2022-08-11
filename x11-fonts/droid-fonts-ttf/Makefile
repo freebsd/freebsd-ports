@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-
 PORTNAME=	droid-fonts-ttf
 PORTVERSION=	20131024
 PORTREVISION=	5

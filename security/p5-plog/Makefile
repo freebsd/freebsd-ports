@@ -1,5 +1,3 @@
-# Created by: Cy Schubert <cy@FreeBSD.org>
-
 PORTNAME=	plog
 PORTVERSION=	0.10
 CATEGORIES=	security perl5

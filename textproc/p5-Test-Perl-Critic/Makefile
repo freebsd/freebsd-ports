@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Test-Perl-Critic
 PORTVERSION=	1.04
 CATEGORIES=	textproc perl5

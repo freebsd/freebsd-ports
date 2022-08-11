@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Sort-Sub
 PORTVERSION=	0.120
 CATEGORIES=	devel perl5

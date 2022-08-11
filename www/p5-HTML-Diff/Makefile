@@ -1,5 +1,3 @@
-# Created by: Travis Campbell <hcoyote@ghostar.org>
-
 PORTNAME=	HTML-Diff
 PORTVERSION=	0.561
 PORTREVISION=	1

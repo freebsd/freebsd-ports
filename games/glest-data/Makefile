@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	data
 PORTVERSION=	3.2.1
 CATEGORIES=	games

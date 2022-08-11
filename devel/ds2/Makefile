@@ -2,7 +2,7 @@ PORTNAME=	ds2
 PORTVERSION=	20151028
 CATEGORIES=	devel
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Debug server for lldb
 
 LICENSE=	NCSA

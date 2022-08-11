@@ -1,5 +1,3 @@
-# Created by: Anton Karpov <toxa@toxahost.ru>
-
 PORTNAME=	gpsd
 PORTVERSION=	3.23.1
 CATEGORIES=	astro geography

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	profxp
 PORTVERSION=	3p2
 PORTREVISION=	2

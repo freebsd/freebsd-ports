@@ -1,5 +1,3 @@
-# Created by: Jeremy Norris <ishmael27@home.com>
-
 PORTNAME=	giblib
 PORTVERSION=	1.2.4
 PORTREVISION=	13

@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-HCE_MD5
 PORTVERSION=	0.75
 CATEGORIES=	security perl5

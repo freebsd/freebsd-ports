@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	JE
 PORTVERSION=	0.066
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis
-
 PORTNAME=	hebcal
 PORTVERSION=	4.13
 DISTVERSIONPREFIX=	v

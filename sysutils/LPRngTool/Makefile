@@ -1,5 +1,3 @@
-# Created by: papowell@lprng.com
-
 PORTNAME=	LPRngTool
 PORTVERSION=	1.3.2
 PORTREVISION=	10

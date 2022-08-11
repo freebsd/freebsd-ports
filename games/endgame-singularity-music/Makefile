@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	endgame-singularity-music
 PORTVERSION=	007
 PORTREVISION=	1

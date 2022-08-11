@@ -1,5 +1,3 @@
-# Created by: Alex Samorukov, samm@freebsd.org
-
 PORTNAME=	flowviewer
 PORTVERSION=	4.5
 PORTREVISION=	4

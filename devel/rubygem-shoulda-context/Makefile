@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	shoulda-context
 PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems

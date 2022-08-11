@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	ckpass
 PORTVERSION=	0.2
 CATEGORIES=	security

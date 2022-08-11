@@ -1,5 +1,3 @@
-# Created by: Jase Thew <freebsd@beardz.net>
-
 PORTNAME=	POE-Loop-Glib
 PORTVERSION=	0.038
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	WebService-Technorati
 PORTVERSION=	0.04
 PORTREVISION=	4

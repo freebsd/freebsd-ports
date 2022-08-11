@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	processing
 PORTVERSION=	1.5.1
 PORTEPOCH=	1

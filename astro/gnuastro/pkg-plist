@@ -82,8 +82,8 @@ include/gnuastro/units.h
 include/gnuastro/wcs.h
 lib/libgnuastro.a
 lib/libgnuastro.so
-lib/libgnuastro.so.15
-lib/libgnuastro.so.15.0.0
+lib/libgnuastro.so.16
+lib/libgnuastro.so.16.0.0
 libdata/pkgconfig/gnuastro.pc
 man/man1/astarithmetic.1.gz
 man/man1/astbuildprog.1.gz
@@ -120,6 +120,10 @@ share/info/gnuastro-figures/flatplane.eps
 share/info/gnuastro-figures/flatplane.pdf
 share/info/gnuastro-figures/flatplane.png
 share/info/gnuastro-figures/flatplane.txt
+share/info/gnuastro-figures/gnuastro.eps
+share/info/gnuastro-figures/gnuastro.pdf
+share/info/gnuastro-figures/gnuastro.svg
+share/info/gnuastro-figures/gnuastro.txt
 share/info/gnuastro-figures/iandtime.eps
 share/info/gnuastro-figures/iandtime.pdf
 share/info/gnuastro-figures/iandtime.png

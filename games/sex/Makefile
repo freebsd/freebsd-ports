@@ -1,5 +1,3 @@
-# Created by: Nick Johnson <freebsd@spatula.net>
-
 PORTNAME=	sex
 PORTVERSION=	1.0
 PORTREVISION=	1

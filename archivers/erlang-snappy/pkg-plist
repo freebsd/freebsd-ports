@@ -1,6 +1,0 @@
-lib/erlang/lib/snappy-%%VERSION%%/ebin/snappy.app
-lib/erlang/lib/snappy-%%VERSION%%/ebin/snappy.beam
-lib/erlang/lib/snappy-%%VERSION%%/priv/snappy_nif.so
-lib/erlang/lib/snappy-%%VERSION%%/src/snappy.app.src
-lib/erlang/lib/snappy-%%VERSION%%/src/snappy.erl
-%%PORTDOCS%%%%DOCSDIR%%/README.md

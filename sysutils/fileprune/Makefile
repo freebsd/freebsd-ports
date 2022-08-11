@@ -1,5 +1,3 @@
-# Created by: dds
-
 PORTNAME=	fileprune
 PORTVERSION=	1.12
 CATEGORIES=	sysutils

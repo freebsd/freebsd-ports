@@ -1,5 +1,3 @@
-# Created by: Sandro Sigala
-
 PORTNAME=	cutils
 PORTVERSION=	1.6
 PORTREVISION=	1

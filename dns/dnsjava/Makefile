@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
-
 PORTNAME=	dnsjava
 PORTVERSION=	2.1.9
 DISTVERSIONPREFIX=	v

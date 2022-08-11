@@ -1,5 +1,3 @@
-# Created by: maintainer.freebsd@xpoundit.com
-
 PORTNAME=	civetweb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.15

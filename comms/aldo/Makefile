@@ -1,5 +1,3 @@
-# Created by: lambert@lambertfam.org
-
 PORTNAME=	aldo
 DISTVERSION=	0.7.7
 PORTREVISION=	3

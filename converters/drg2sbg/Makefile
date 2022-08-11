@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	drg2sbg
 PORTVERSION=	2.2
 DISTVERSIONPREFIX=	v

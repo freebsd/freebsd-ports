@@ -1,5 +1,3 @@
-# Created by: Matthias Andree <mandree@FreeBSD.org>
-
 PORTNAME=	docear
 PORTVERSION=	1.2.0
 _suffix=	_stable

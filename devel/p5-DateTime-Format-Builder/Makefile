@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Format-Builder
 PORTVERSION=	0.83
 CATEGORIES=	devel perl5

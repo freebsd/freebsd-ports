@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-
 PORTNAME=	abook
 PORTVERSION=	0.6.1
 PORTREVISION=	2

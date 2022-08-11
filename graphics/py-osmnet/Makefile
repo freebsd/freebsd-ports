@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	osmnet
 PORTVERSION=	0.1.6
 CATEGORIES=	graphics python

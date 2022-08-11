@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	multi_json
 PORTVERSION=	1.15.0
 CATEGORIES=	devel rubygems

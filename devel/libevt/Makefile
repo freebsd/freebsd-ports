@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libevt
 DISTVERSION=	alpha-20210424
 CATEGORIES=	devel

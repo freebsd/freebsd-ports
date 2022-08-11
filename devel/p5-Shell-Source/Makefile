@@ -1,5 +1,3 @@
-# Created by: Timur I. Bakeyev <bat@cpan.org>
-
 PORTNAME=	Shell-Source
 PORTVERSION=	0.01
 PORTREVISION=	1

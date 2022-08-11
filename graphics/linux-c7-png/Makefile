@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libpng
 PORTVERSION=	1.5.13
 DISTVERSIONSUFFIX=	-8.el7

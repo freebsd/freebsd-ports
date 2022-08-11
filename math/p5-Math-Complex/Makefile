@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Math-Complex
 PORTVERSION=	1.59
 PORTREVISION=	1

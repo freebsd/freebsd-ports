@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	arabic-reshaper
 PORTVERSION=	2.1.3
 CATEGORIES=	textproc python

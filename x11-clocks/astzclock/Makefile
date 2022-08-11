@@ -1,5 +1,3 @@
-# Created by: Greg Lewis <glewis@FreeBSD.org>
-
 PORTNAME=	astzclock
 PORTVERSION=	1.0
 PORTREVISION=	2

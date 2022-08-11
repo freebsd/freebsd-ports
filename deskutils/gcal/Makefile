@@ -1,5 +1,3 @@
-# Created by: Cyrille Lefevre <clefevre@citeweb.net>
-
 PORTNAME=	gcal
 PORTVERSION=	4.1
 PORTREVISION=	1

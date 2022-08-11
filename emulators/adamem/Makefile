@@ -1,5 +1,3 @@
-# Created by: Jeremy Karlson
-
 PORTNAME=	adamem
 PORTVERSION=	1.0
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-NBsocket
 PORTVERSION=	0.24
 PORTREVISION=	1

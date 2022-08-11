@@ -1,5 +1,3 @@
-# Created by: Stefan Bethke <stb@lassitu.de>
-
 PORTNAME=	sauserprefs
 PORTVERSION=	1.10 # PLEASE MIRROR DISTFILE WITH VERSIONED DIR
 PORTREVISION=	1
@@ -18,7 +16,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.8:mail/roundcube@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/sauserprefs
 NO_ARCH=	yes

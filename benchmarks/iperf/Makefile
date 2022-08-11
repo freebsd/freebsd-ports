@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	iperf
 PORTVERSION=	2.1.7
 CATEGORIES=	benchmarks

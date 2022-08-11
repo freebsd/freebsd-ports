@@ -1,3 +1,3 @@
-TIMESTAMP = 1634111932
-SHA256 (rubygem/sidekiq-unique-jobs-7.1.8.gem) = bb5c59a2b87952f4b49bcff3e6fb3a535ddbc2d252750ebfce451d1c4fd06110
-SIZE (rubygem/sidekiq-unique-jobs-7.1.8.gem) = 80896
+TIMESTAMP = 1659209966
+SHA256 (rubygem/sidekiq-unique-jobs-7.1.27.gem) = 22e812742302156a23b832c7bb257bde7833fb0639ace0dce9086ae4f910478f
+SIZE (rubygem/sidekiq-unique-jobs-7.1.27.gem) = 88064

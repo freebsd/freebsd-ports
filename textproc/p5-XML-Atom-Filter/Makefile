@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	XML-Atom-Filter
 PORTVERSION=	0.07
 PORTREVISION=	1

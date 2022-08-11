@@ -1,5 +1,3 @@
-# Created by: Thomas-Martin Seck <tmseck@web.de>
-
 PORTNAME=	libecap
 PORTVERSION=	1.0.1
 CATEGORIES=	www security

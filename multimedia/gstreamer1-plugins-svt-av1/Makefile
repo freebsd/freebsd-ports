@@ -1,6 +1,6 @@
 PORTNAME=	svt-av1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.2.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	gstreamer1-plugins-
 
@@ -12,13 +12,12 @@ LICENSE_FILE=	${_LICENSE_STORE}/LGPL21
 
 LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
 
-USES=		gnome meson pkgconfig
+USES=		gnome gstreamer meson pkgconfig
 USE_GITLAB=	yes
 USE_GNOME=	glib20
-USE_GSTREAMER1=	yes
 GL_ACCOUNT=	AOMediaCodec
 GL_PROJECT=	SVT-AV1
-GL_COMMIT=	da60d7c6e27c08806da0b493d5d3fc0a08629102
+GL_COMMIT=	14c38dca41e352a89643c4a89bc5417b7e5c1ae8
 WRKSRC_SUBDIR=	gstreamer-plugin
 PLIST_FILES=	lib/gstreamer-1.0/libgstsvtav1enc.so
 

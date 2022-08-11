@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Lock
 PORTVERSION=	2.1.4
 CATEGORIES=	devel www pear

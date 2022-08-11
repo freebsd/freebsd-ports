@@ -1,3 +1,3 @@
-TIMESTAMP = 1650101905
-SHA256 (KDE/release-service/22.04.0/kdev-php-22.04.0.tar.xz) = be846cf516450e686432062ba41ce04061b9e4587e9d4e955321ab6f57f65502
-SIZE (KDE/release-service/22.04.0/kdev-php-22.04.0.tar.xz) = 1080952
+TIMESTAMP = 1657013323
+SHA256 (KDE/release-service/22.04.3/kdev-php-22.04.3.tar.xz) = 1a267c2eaed3658ac0b2dacc28956867eab7608bacf57b3041952a868f27c915
+SIZE (KDE/release-service/22.04.3/kdev-php-22.04.3.tar.xz) = 1081120

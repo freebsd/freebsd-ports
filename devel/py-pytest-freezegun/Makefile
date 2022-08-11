@@ -16,4 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>0.3:devel/py-freezegun@${PY_FLAVOR
 USES=		python:3.6+ zip
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

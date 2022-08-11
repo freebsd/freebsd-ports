@@ -63,7 +63,15 @@ MASTER_SITES_QSCI2=	RIVERBANK/QScintilla/${PORTVERSION} \
 			SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
 			GENTOO
 
-SIP_VERSION=		6.5.1
+# PORTEPOCH is important here, because version-comparisons in *_DEPENDS
+# take it into account (visually, 6.5.1 >= 5.5.3,1, but it isn't).
+# Adding the epoch directly into the version here cannot be done,
+# because the DISTVERSION of each of these ports is obtained from the
+# *_VERSION variable (and PORTEPOCH is set in each individual port).
+#
+# Where noted, the ports are epoched and the py-${comp}-PATH variables,
+# below, should have a suitable epoch appended to the version.
+SIP_VERSION=		6.5.1	# ,1
 SIP4_VERSION=		4.19.25
 QSCI2_VERSION=		2.13.2
 PYQT5_VERSION=		5.15.6
@@ -99,8 +107,8 @@ PYQT_DISTNAME=		${PYQT${_PYQT_VERSION}_DISTNAME}
 PYQT_DISTINFO_FILE=	${PYQT${_PYQT_VERSION}_DISTINFO_FILE}
 PYQT_LICENSE=		${PYQT${_PYQT_VERSION}_LICENSE}
 
-# PATH
-py-sip_PATH=			${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}
+# PATH (see note about epochs, above)
+py-sip_PATH=			${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION},1
 py-pysip_PATH=			${PYQT_PY_RELNAME}-sip>=${PYQTSIP_VERSION}
 py-qscintilla2_PATH=		${PYQT_PY_RELNAME}-qscintilla2>=${QSCI2_VERSION}
 py-qtbuilder_PATH=		${PYTHON_PKGNAMEPREFIX}qtbuilder>=${PYQTBUILDER_VERSION}

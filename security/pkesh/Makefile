@@ -1,5 +1,3 @@
-# Created by: Colin Percival
-
 PORTNAME=	pkesh
 PORTVERSION=	1.0
 CATEGORIES=	security

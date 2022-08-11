@@ -1,5 +1,3 @@
-# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-
 PORTNAME=	mkntpwd
 PORTVERSION=	1.0
 CATEGORIES=	sysutils net

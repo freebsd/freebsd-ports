@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	wmCalClock
 PORTVERSION=	1.26
 PORTREVISION=	2

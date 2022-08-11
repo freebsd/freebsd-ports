@@ -1,5 +1,3 @@
-# Created by: hrs
-
 PORTNAME=	canna
 PORTVERSION=	3.7p3
 PORTREVISION=	9

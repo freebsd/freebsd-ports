@@ -1,5 +1,3 @@
-# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-
 PORTNAME=	smarty
 PORTVERSION=	2.6.32
 DISTVERSIONPREFIX=	v

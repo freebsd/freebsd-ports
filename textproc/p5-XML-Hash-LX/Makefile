@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	XML-Hash-LX
 PORTVERSION=	0.07
 PORTEPOCH=	1

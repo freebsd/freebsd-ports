@@ -1,5 +1,3 @@
-# Created by: Dan Langille
-
 PORTNAME=	robotframework-databaselibrary
 PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	gngb
 PORTVERSION=	20060309
 PORTREVISION=	10

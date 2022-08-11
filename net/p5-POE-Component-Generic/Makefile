@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	POE-Component-Generic
 PORTVERSION=	0.1403
 CATEGORIES=	net perl5

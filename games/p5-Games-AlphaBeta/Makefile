@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Games-AlphaBeta
 PORTVERSION=	0.4.7
 PORTREVISION=	2

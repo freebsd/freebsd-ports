@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	db2latex
 PORTVERSION=	0.8p1
 PORTREVISION=	2

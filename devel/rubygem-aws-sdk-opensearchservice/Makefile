@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-opensearchservice
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -1,5 +1,3 @@
-# Created by: Alex Miller (<asm@asm.kiev.ua>)
-
 PORTNAME=	XML_Util
 PORTVERSION=	1.4.5
 CATEGORIES=	devel www pear

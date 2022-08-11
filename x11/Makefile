@@ -7,7 +7,6 @@
     SUBDIR += admiral
     SUBDIR += alacritty
     SUBDIR += albert
-    SUBDIR += alltray
     SUBDIR += alttab
     SUBDIR += aminal
     SUBDIR += antimicro
@@ -30,6 +29,9 @@
     SUBDIR += bmpanel2
     SUBDIR += brisk-menu
     SUBDIR += cde
+    SUBDIR += cde-24
+    SUBDIR += cde-25
+    SUBDIR += cde-devel
     SUBDIR += cinnamon
     SUBDIR += cinnamon-desktop
     SUBDIR += cinnamon-menus
@@ -51,7 +53,6 @@
     SUBDIR += deskmenu
     SUBDIR += disman
     SUBDIR += dmenu
-    SUBDIR += dmenu-wayland
     SUBDIR += docker-tray
     SUBDIR += dsbautostart
     SUBDIR += dsbxinput
@@ -82,6 +83,7 @@
     SUBDIR += gmrun
     SUBDIR += gnome
     SUBDIR += gnome-clipboard-daemon
+    SUBDIR += gnome-console
     SUBDIR += gnome-desktop
     SUBDIR += gnome-menus
     SUBDIR += gnome-pie
@@ -97,21 +99,18 @@
     SUBDIR += gskrab
     SUBDIR += gstreamer1-plugins-x
     SUBDIR += gstreamer1-plugins-ximagesrc
-    SUBDIR += gsynaptics
     SUBDIR += gtk-app-menu
     SUBDIR += gtk-theme-switch2
     SUBDIR += gtkchtheme
     SUBDIR += gtkterm2
     SUBDIR += guake
     SUBDIR += gxkb
-    SUBDIR += havoc
+    SUBDIR += hamclock
     SUBDIR += hhpc
     SUBDIR += hs-xmobar
     SUBDIR += hsetroot
     SUBDIR += i3blocks
-    SUBDIR += i3lock
     SUBDIR += i3lock-color
-    SUBDIR += i3status
     SUBDIR += iceauth
     SUBDIR += ico
     SUBDIR += idesk
@@ -119,6 +118,7 @@
     SUBDIR += innerspace
     SUBDIR += inputplug
     SUBDIR += j4-dmenu-desktop
+    SUBDIR += jbxvt
     SUBDIR += jgmenu
     SUBDIR += kanshi
     SUBDIR += kb2mb2
@@ -146,6 +146,7 @@
     SUBDIR += konsole
     SUBDIR += lavalauncher
     SUBDIR += lemonbar
+    SUBDIR += lemonbar-xft
     SUBDIR += libICE
     SUBDIR += libSM
     SUBDIR += libX11
@@ -205,6 +206,7 @@
     SUBDIR += linux-nvidia-libs-304
     SUBDIR += linux-nvidia-libs-340
     SUBDIR += linux-nvidia-libs-390
+    SUBDIR += linux-nvidia-libs-470
     SUBDIR += listres
     SUBDIR += lsw
     SUBDIR += luit
@@ -251,6 +253,7 @@
     SUBDIR += nvidia-driver-304
     SUBDIR += nvidia-driver-340
     SUBDIR += nvidia-driver-390
+    SUBDIR += nvidia-driver-470
     SUBDIR += nvidia-hybrid-graphics
     SUBDIR += nvidia-secondary-driver
     SUBDIR += nvidia-secondary-driver-390
@@ -330,7 +333,6 @@
     SUBDIR += setxkbmap
     SUBDIR += showkeys
     SUBDIR += showmethekey
-    SUBDIR += simdock
     SUBDIR += simplestroke
     SUBDIR += sirula
     SUBDIR += slick-greeter
@@ -444,7 +446,6 @@
     SUBDIR += xcb-util-renderutil
     SUBDIR += xcb-util-wm
     SUBDIR += xcb-util-xrm
-    SUBDIR += xcbautolock
     SUBDIR += xclickroot
     SUBDIR += xclip
     SUBDIR += xclipboard

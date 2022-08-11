@@ -9,7 +9,8 @@ include/Cuda/Kokkos_Cuda_Error.hpp
 include/Cuda/Kokkos_Cuda_GraphNodeKernel.hpp
 include/Cuda/Kokkos_Cuda_GraphNode_Impl.hpp
 include/Cuda/Kokkos_Cuda_Graph_Impl.hpp
-include/Cuda/Kokkos_Cuda_Half.hpp
+include/Cuda/Kokkos_Cuda_Half_Conversion.hpp
+include/Cuda/Kokkos_Cuda_Half_Impl_Type.hpp
 include/Cuda/Kokkos_Cuda_Instance.hpp
 include/Cuda/Kokkos_Cuda_KernelLaunch.hpp
 include/Cuda/Kokkos_Cuda_Locks.hpp
@@ -27,6 +28,8 @@ include/HIP/Kokkos_HIP_Abort.hpp
 include/HIP/Kokkos_HIP_Atomic.hpp
 include/HIP/Kokkos_HIP_BlockSize_Deduction.hpp
 include/HIP/Kokkos_HIP_Error.hpp
+include/HIP/Kokkos_HIP_Half_Conversion.hpp
+include/HIP/Kokkos_HIP_Half_Impl_Type.hpp
 include/HIP/Kokkos_HIP_Instance.hpp
 include/HIP/Kokkos_HIP_KernelLaunch.hpp
 include/HIP/Kokkos_HIP_Locks.hpp
@@ -40,7 +43,6 @@ include/HIP/Kokkos_HIP_Team.hpp
 include/HIP/Kokkos_HIP_UniqueToken.hpp
 include/HIP/Kokkos_HIP_Vectorization.hpp
 include/HIP/Kokkos_HIP_WorkGraphPolicy.hpp
-include/HPX/Kokkos_HPX_ChunkedRoundRobinExecutor.hpp
 include/HPX/Kokkos_HPX_Task.hpp
 include/HPX/Kokkos_HPX_WorkGraphPolicy.hpp
 include/KokkosCore_Config_DeclareBackend.hpp
@@ -54,6 +56,7 @@ include/Kokkos_AcquireUniqueTokenImpl.hpp
 include/Kokkos_AnonymousSpace.hpp
 include/Kokkos_Array.hpp
 include/Kokkos_Atomic.hpp
+include/Kokkos_Atomics_Desul_Config.hpp
 include/Kokkos_Atomics_Desul_Volatile_Wrapper.hpp
 include/Kokkos_Atomics_Desul_Wrapper.hpp
 include/Kokkos_Bitset.hpp
@@ -87,10 +90,12 @@ include/Kokkos_Layout.hpp
 include/Kokkos_LogicalSpaces.hpp
 include/Kokkos_Macros.hpp
 include/Kokkos_MasterLock.hpp
+include/Kokkos_MathematicalConstants.hpp
 include/Kokkos_MathematicalFunctions.hpp
 include/Kokkos_MathematicalSpecialFunctions.hpp
 include/Kokkos_MemoryPool.hpp
 include/Kokkos_MemoryTraits.hpp
+include/Kokkos_MinMaxClamp.hpp
 include/Kokkos_NumericTraits.hpp
 include/Kokkos_OffsetView.hpp
 include/Kokkos_OpenMP.hpp
@@ -110,6 +115,7 @@ include/Kokkos_ScratchSpace.hpp
 include/Kokkos_Serial.hpp
 include/Kokkos_Sort.hpp
 include/Kokkos_StaticCrsGraph.hpp
+include/Kokkos_StdAlgorithms.hpp
 include/Kokkos_TaskPolicy.hpp
 include/Kokkos_TaskScheduler.hpp
 include/Kokkos_TaskScheduler_fwd.hpp
@@ -138,6 +144,8 @@ include/OpenMPTarget/Kokkos_OpenMPTarget_Task.hpp
 include/OpenMPTarget/Kokkos_OpenMPTarget_UniqueToken.hpp
 include/SYCL/Kokkos_SYCL_Abort.hpp
 include/SYCL/Kokkos_SYCL_DeepCopy.hpp
+include/SYCL/Kokkos_SYCL_Half_Conversion.hpp
+include/SYCL/Kokkos_SYCL_Half_Impl_Type.hpp
 include/SYCL/Kokkos_SYCL_Instance.hpp
 include/SYCL/Kokkos_SYCL_MDRangePolicy.hpp
 include/SYCL/Kokkos_SYCL_Parallel_Range.hpp
@@ -170,6 +178,7 @@ include/desul/atomics/Compare_Exchange_HIP.hpp
 include/desul/atomics/Compare_Exchange_MSVC.hpp
 include/desul/atomics/Compare_Exchange_OpenMP.hpp
 include/desul/atomics/Compare_Exchange_SYCL.hpp
+include/desul/atomics/Compare_Exchange_ScopeCaller.hpp
 include/desul/atomics/Compare_Exchange_Serial.hpp
 include/desul/atomics/GCC.hpp
 include/desul/atomics/Generic.hpp
@@ -237,6 +246,7 @@ include/impl/Kokkos_CPUDiscovery.hpp
 include/impl/Kokkos_ChaseLev.hpp
 include/impl/Kokkos_ClockTic.hpp
 include/impl/Kokkos_Combined_Reducer.hpp
+include/impl/Kokkos_Command_Line_Parsing.hpp
 include/impl/Kokkos_ConcurrentBitset.hpp
 include/impl/Kokkos_Default_GraphNodeKernel.hpp
 include/impl/Kokkos_Default_GraphNode_Impl.hpp
@@ -293,6 +303,7 @@ include/impl/Kokkos_TaskResult.hpp
 include/impl/Kokkos_TaskTeamMember.hpp
 include/impl/Kokkos_Timer.hpp
 include/impl/Kokkos_Tools.hpp
+include/impl/Kokkos_Tools_Generic.hpp
 include/impl/Kokkos_Traits.hpp
 include/impl/Kokkos_UnorderedMap_impl.hpp
 include/impl/Kokkos_Utilities.hpp
@@ -307,6 +318,28 @@ include/impl/Kokkos_Volatile_Load.hpp
 include/setup/Kokkos_Setup_Cuda.hpp
 include/setup/Kokkos_Setup_HIP.hpp
 include/setup/Kokkos_Setup_SYCL.hpp
+include/std_algorithms/Kokkos_BeginEnd.hpp
+include/std_algorithms/Kokkos_Constraints.hpp
+include/std_algorithms/Kokkos_Distance.hpp
+include/std_algorithms/Kokkos_HelperPredicates.hpp
+include/std_algorithms/Kokkos_MinMaxElementOperations.hpp
+include/std_algorithms/Kokkos_ModifyingOperations.hpp
+include/std_algorithms/Kokkos_ModifyingSequenceOperations.hpp
+include/std_algorithms/Kokkos_NonModifyingSequenceOperations.hpp
+include/std_algorithms/Kokkos_Numeric.hpp
+include/std_algorithms/Kokkos_PartitioningOperations.hpp
+include/std_algorithms/Kokkos_RandomAccessIterator.hpp
+include/std_algorithms/Kokkos_ReducerWithArbitraryJoinerNoNeutralElement.hpp
+include/std_algorithms/Kokkos_SortingOperations.hpp
+include/std_algorithms/Kokkos_ValueWrapperForNoNeutralElement.hpp
+include/std_algorithms/modifying_sequence_ops/Kokkos_ModifyingSequenceOperationsSet1.hpp
+include/std_algorithms/modifying_sequence_ops/Kokkos_ModifyingSequenceOperationsSet2.hpp
+include/std_algorithms/numeric/Kokkos_AdjacentDifference.hpp
+include/std_algorithms/numeric/Kokkos_ExclusiveScan.hpp
+include/std_algorithms/numeric/Kokkos_IdentityReferenceUnaryFunctor.hpp
+include/std_algorithms/numeric/Kokkos_InclusiveScan.hpp
+include/std_algorithms/numeric/Kokkos_Reduce.hpp
+include/std_algorithms/numeric/Kokkos_TransformReduce.hpp
 include/traits/Kokkos_ExecutionSpaceTrait.hpp
 include/traits/Kokkos_GraphKernelTrait.hpp
 include/traits/Kokkos_IndexTypeTrait.hpp
@@ -325,9 +358,8 @@ lib/cmake/Kokkos/KokkosConfigVersion.cmake
 lib/cmake/Kokkos/KokkosTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Kokkos/KokkosTargets.cmake
 lib/libkokkoscontainers.so
-lib/libkokkoscontainers.so.3.5
-lib/libkokkoscontainers.so.3.5.00
+lib/libkokkoscontainers.so.3.6
+lib/libkokkoscontainers.so.3.6.01
 lib/libkokkoscore.so
-lib/libkokkoscore.so.3.5
-lib/libkokkoscore.so.3.5.00
-@dir include/desul/src
+lib/libkokkoscore.so.3.6
+lib/libkokkoscore.so.3.6.01

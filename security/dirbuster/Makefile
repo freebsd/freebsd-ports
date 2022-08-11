@@ -1,5 +1,3 @@
-# Created by: Niels Heinen
-
 PORTNAME=	dirbuster
 PORTVERSION=	1.0r1
 CATEGORIES=	security java

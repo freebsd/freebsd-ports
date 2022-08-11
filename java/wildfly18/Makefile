@@ -1,5 +1,3 @@
-# Created by: Simeo Reig <reig.simeo@gmail.com>
-
 PORTNAME=	wildfly18
 PORTVERSION=	18.0.1
 CATEGORIES=	java www

@@ -1,5 +1,3 @@
-# Created by: Andrew Khlebutin <andrey@hm.perm.ru>
-
 PORTNAME=	pwgen
 PORTVERSION=	2.08
 PORTEPOCH=	2

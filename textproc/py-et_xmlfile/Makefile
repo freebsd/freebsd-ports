@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	et_xmlfile
 PORTVERSION=	1.0.1
 CATEGORIES=	textproc python

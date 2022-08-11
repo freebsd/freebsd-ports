@@ -1,5 +1,3 @@
-# Created by: Christer Edwards <christer.edwards@gmail.com>
-
 PORTNAME=	listadmin
 PORTVERSION=	2.40
 CATEGORIES=	mail perl5

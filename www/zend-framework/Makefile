@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	ZendFramework
 PORTVERSION=	2.4.13
 PORTREVISION=	0
@@ -7,7 +5,7 @@ CATEGORIES=	www
 MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
 
 LICENSE=	BSD3CLAUSE

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	MooseX-Declare
 PORTVERSION=	0.43
 CATEGORIES=	devel perl5

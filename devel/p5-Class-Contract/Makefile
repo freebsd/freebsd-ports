@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Class-Contract
 PORTVERSION=	1.14
 PORTREVISION=	1

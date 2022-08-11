@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	App-Genpass
 PORTVERSION=	2.401
 CATEGORIES=	security perl5

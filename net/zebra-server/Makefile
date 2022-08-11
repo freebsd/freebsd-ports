@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	zebra-server
 PORTVERSION=	2.0.55
 PORTREVISION=	18

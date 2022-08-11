@@ -1,5 +1,3 @@
-# Created by: William Grzybowski
-
 PORTNAME=	python-mimeparse
 PORTVERSION=	1.6.0
 CATEGORIES=	devel python

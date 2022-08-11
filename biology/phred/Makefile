@@ -1,5 +1,3 @@
-# Created by: Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
-
 PORTNAME=	phred
 PORTVERSION=	0.020425.c
 CATEGORIES=	biology

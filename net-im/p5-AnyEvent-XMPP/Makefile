@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	AnyEvent-XMPP
 PORTVERSION=	0.55
 PORTREVISION=	1

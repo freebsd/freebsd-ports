@@ -6,7 +6,8 @@ share/applications/screengrab.desktop
 %%DOCSDIR%%/html/en/index.html
 %%DOCSDIR%%/html/pt_BR/index.html
 %%DOCSDIR%%/html/ru/index.html
-share/icons/hicolor/32x32/apps/screengrab.png
+share/icons/hicolor/scalable/apps/screengrab.svg
+share/metainfo/screengrab.metainfo.xml
 %%DATADIR%%/screengrab.conf
 %%DATADIR%%/translations/screengrab_arn.qm
 %%DATADIR%%/translations/screengrab_ast.qm
@@ -25,6 +26,7 @@ share/icons/hicolor/32x32/apps/screengrab.png
 %%DATADIR%%/translations/screengrab_hu.qm
 %%DATADIR%%/translations/screengrab_it.qm
 %%DATADIR%%/translations/screengrab_ja.qm
+%%DATADIR%%/translations/screengrab_ko.qm
 %%DATADIR%%/translations/screengrab_lt.qm
 %%DATADIR%%/translations/screengrab_nb_NO.qm
 %%DATADIR%%/translations/screengrab_nl.qm
@@ -35,6 +37,7 @@ share/icons/hicolor/32x32/apps/screengrab.png
 %%DATADIR%%/translations/screengrab_ru.qm
 %%DATADIR%%/translations/screengrab_si.qm
 %%DATADIR%%/translations/screengrab_sk.qm
+%%DATADIR%%/translations/screengrab_sl.qm
 %%DATADIR%%/translations/screengrab_sv.qm
 %%DATADIR%%/translations/screengrab_tr.qm
 %%DATADIR%%/translations/screengrab_uk.qm

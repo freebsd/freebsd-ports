@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	wmglobe
 PORTVERSION=	1.3
 PORTREVISION=	11

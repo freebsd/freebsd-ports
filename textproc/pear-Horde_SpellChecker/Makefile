@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_SpellChecker
 PORTVERSION=	2.1.3
 CATEGORIES=	textproc www pear

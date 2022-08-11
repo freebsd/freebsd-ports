@@ -1,5 +1,3 @@
-# Created by: Brian Candler <B.Candler@pobox.com>
-
 PORTNAME=	docbook-utils
 PORTVERSION=	0.6.14
 PORTREVISION=	13

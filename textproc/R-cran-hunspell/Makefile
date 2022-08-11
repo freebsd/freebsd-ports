@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	hunspell
 DISTVERSION=	3.0.1
 CATEGORIES=	textproc

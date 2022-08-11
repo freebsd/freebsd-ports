@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	hp48xgcc
 PORTVERSION=	1.0.2
 PORTREVISION=	2

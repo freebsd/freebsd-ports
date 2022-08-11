@@ -1,5 +1,3 @@
-# Created by: andrew@scoop.co.nz
-
 PORTNAME=	HTML-Breadcrumbs
 PORTVERSION=	0.7
 PORTREVISION=	1

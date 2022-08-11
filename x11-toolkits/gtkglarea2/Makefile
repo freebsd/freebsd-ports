@@ -1,5 +1,3 @@
-# Created by: Marc Recht <marc@informatik.uni-bremen.de>
-
 PORTNAME=	gtkglarea
 PORTVERSION=	2.0.1
 PORTREVISION=	11

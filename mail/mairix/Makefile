@@ -1,5 +1,3 @@
-# Created by: Oliver Braun <obraun@FreeBSD.org>
-
 PORTNAME=	mairix
 DISTVERSION=	0.24
 CATEGORIES=	mail

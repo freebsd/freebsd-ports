@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Marpa-PP
 PORTVERSION=	0.014
 DISTVERSIONSUFFIX=	000

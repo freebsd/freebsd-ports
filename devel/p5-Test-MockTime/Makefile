@@ -1,5 +1,3 @@
-# Created by: Timur I. Bakeyev <bat@cpan.org>
-
 PORTNAME=	Test-MockTime
 PORTVERSION=	0.17
 CATEGORIES=	devel perl5

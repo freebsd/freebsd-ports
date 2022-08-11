@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Set-Partition
 PORTVERSION=	0.03
 PORTREVISION=	1

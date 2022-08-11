@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Dancer2
 PORTVERSION=	0.400000
 CATEGORIES=	www perl5

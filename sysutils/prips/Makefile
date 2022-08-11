@@ -1,5 +1,3 @@
-# Created by: Jeremy Shaffner <jeremy@external.org>
-
 PORTNAME=	prips
 PORTVERSION=	1.2.0
 CATEGORIES=	sysutils

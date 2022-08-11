@@ -1,5 +1,3 @@
-# Created by: Naram Qashat <cyberbotx@cyberbotx.com>
-
 PORTNAME=	pHash
 PORTVERSION=	0.9.6
 PORTREVISION=	15

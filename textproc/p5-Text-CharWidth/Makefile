@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Text-CharWidth
 DISTVERSION=	0.04
 PORTREVISION=	2

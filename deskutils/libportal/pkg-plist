@@ -3,6 +3,7 @@ include/libportal-qt5/portal-qt5.h
 include/libportal/account.h
 include/libportal/background.h
 include/libportal/camera.h
+include/libportal/dynamic-launcher.h
 include/libportal/email.h
 include/libportal/filechooser.h
 include/libportal/inhibit.h

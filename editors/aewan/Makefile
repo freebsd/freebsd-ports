@@ -1,5 +1,3 @@
-# Created by: krion
-
 PORTNAME=	aewan
 PORTVERSION=	1.0.01
 PORTREVISION=	1

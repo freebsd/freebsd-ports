@@ -1,5 +1,3 @@
-# Created by: Elias Mandouvalos <ocean@compulink.gr>
-
 PORTNAME=	tn5250
 PORTVERSION=	0.17.4
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	nnls
 PORTVERSION=	1.4
 PORTREVISION=	12

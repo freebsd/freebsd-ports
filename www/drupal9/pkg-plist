@@ -375,6 +375,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/alignment/translations/tr.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/alignment/translations/ug.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/alignment/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/alignment/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/alignment/translations/uz.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/alignment/translations/vi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/alignment/translations/zh-cn.js
@@ -439,6 +440,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/basic-styles/translations/tt.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/basic-styles/translations/ug.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/basic-styles/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/basic-styles/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/basic-styles/translations/uz.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/basic-styles/translations/vi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/basic-styles/translations/zh-cn.js
@@ -497,6 +499,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/block-quote/translations/tr.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/block-quote/translations/ug.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/block-quote/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/block-quote/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/block-quote/translations/uz.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/block-quote/translations/vi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/block-quote/translations/zh-cn.js
@@ -524,6 +527,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/fi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/fr.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/gl.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/gu.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/he.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/hi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/hr.js
@@ -538,6 +542,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/ku.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/lt.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/lv.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/ms.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/nb.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/ne.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/nl.js
@@ -561,11 +566,13 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/tt.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/ug.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/uz.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/vi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/zh-cn.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/ckeditor5-dll/translations/zh.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/code-block.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/translations/af.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/translations/az.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/translations/bs.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/translations/cs.js
@@ -603,6 +610,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/translations/tr.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/translations/ug.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/translations/uz.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/translations/zh-cn.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/code-block/translations/zh.js
@@ -664,6 +672,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/heading/translations/tr.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/heading/translations/ug.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/heading/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/heading/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/heading/translations/uz.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/heading/translations/vi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/heading/translations/zh-cn.js
@@ -707,6 +716,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/horizontal-line/translations/tk.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/horizontal-line/translations/tr.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/horizontal-line/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/horizontal-line/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/horizontal-line/translations/vi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/horizontal-line/translations/zh-cn.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/horizontal-line/translations/zh.js
@@ -722,6 +732,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/id.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/it.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/jv.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/lv.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/nl.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/pl.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/pt-br.js
@@ -729,6 +740,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/sk.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/sr-latn.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/sr.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/html-support/translations/zh.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/image/image.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/image/translations/ar.js
@@ -785,6 +797,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/image/translations/tr.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/image/translations/ug.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/image/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/image/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/image/translations/uz.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/image/translations/vi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/image/translations/zh-cn.js
@@ -829,6 +842,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/indent/translations/tk.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/indent/translations/tr.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/indent/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/indent/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/indent/translations/uz.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/indent/translations/vi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/indent/translations/zh-cn.js
@@ -849,6 +863,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/language/translations/id.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/language/translations/it.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/language/translations/jv.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/language/translations/lv.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/language/translations/nl.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/language/translations/pl.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/language/translations/pt-br.js
@@ -912,6 +927,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/link/translations/tr.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/link/translations/ug.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/link/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/link/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/link/translations/uz.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/link/translations/vi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/link/translations/zh-cn.js
@@ -969,6 +985,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/list/translations/tr.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/list/translations/ug.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/list/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/list/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/list/translations/uz.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/list/translations/vi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/list/translations/zh-cn.js
@@ -1030,6 +1047,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/source-editing/translations/hu.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/source-editing/translations/id.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/source-editing/translations/it.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/source-editing/translations/lv.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/source-editing/translations/nl.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/source-editing/translations/pl.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/source-editing/translations/pt-br.js
@@ -1056,6 +1074,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/special-characters/translations/it.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/special-characters/translations/ja.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/special-characters/translations/ko.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/special-characters/translations/lv.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/special-characters/translations/nl.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/special-characters/translations/pl.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/special-characters/translations/pt-br.js
@@ -1113,6 +1132,7 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor5/table/translations/tr.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/table/translations/ug.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/table/translations/uk.js
+%%WWWDIR%%/core/assets/vendor/ckeditor5/table/translations/ur.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/table/translations/uz.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/table/translations/vi.js
 %%WWWDIR%%/core/assets/vendor/ckeditor5/table/translations/zh-cn.js
@@ -4274,6 +4294,7 @@
 %%WWWDIR%%/core/modules/ckeditor5/ckeditor5.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/ckeditor5.libraries.yml
 %%WWWDIR%%/core/modules/ckeditor5/ckeditor5.module
+%%WWWDIR%%/core/modules/ckeditor5/ckeditor5.post_update.php
 %%WWWDIR%%/core/modules/ckeditor5/ckeditor5.routing.yml
 %%WWWDIR%%/core/modules/ckeditor5/ckeditor5.services.yml
 %%WWWDIR%%/core/modules/ckeditor5/config/schema/ckeditor5.data_types.yml
@@ -4285,7 +4306,6 @@
 %%WWWDIR%%/core/modules/ckeditor5/css/code-block.admin.css
 %%WWWDIR%%/core/modules/ckeditor5/css/drupalmedia.admin.css
 %%WWWDIR%%/core/modules/ckeditor5/css/drupalmedia.css
-%%WWWDIR%%/core/modules/ckeditor5/css/filter.admin.css
 %%WWWDIR%%/core/modules/ckeditor5/css/heading.admin.css
 %%WWWDIR%%/core/modules/ckeditor5/css/horizontal-line.admin.css
 %%WWWDIR%%/core/modules/ckeditor5/css/ie-warnings.css
@@ -4354,7 +4374,6 @@
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalHtmlEngine/src/drupalhtmlengine.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalHtmlEngine/src/drupalhtmlwriter.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalHtmlEngine/src/index.js
-%%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalImage/README.md
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalImage/src/drupalimage.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalImage/src/drupalimagealternativetext.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalImage/src/drupalimageediting.js
@@ -4372,6 +4391,7 @@
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupalelementstyle/drupalelementstylecommand.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupalelementstyle/drupalelementstyleediting.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupalelementstyle/drupalelementstyleui.js
+%%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupalelementstyle/utils.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupallinkmedia/drupallinkmedia.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupallinkmedia/drupallinkmediaediting.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupallinkmedia/drupallinkmediaui.js
@@ -4412,14 +4432,18 @@
 %%WWWDIR%%/core/modules/ckeditor5/src/Controller/CKEditor5MediaController.php
 %%WWWDIR%%/core/modules/ckeditor5/src/EventSubscriber/CKEditor5CacheTag.php
 %%WWWDIR%%/core/modules/ckeditor5/src/HTMLRestrictions.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor4To5Upgrade/Contrib.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor4To5Upgrade/Core.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor4To5UpgradePluginInterface.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor4To5UpgradePluginManager.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/Alignment.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/DynamicPluginConfigWithCsrfTokenUrlTrait.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/GlobalAttribute.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/Heading.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/ImageResize.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/ImageUpload.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/Language.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/ListPlugin.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/Media.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/MediaLibrary.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/SourceEditing.php
@@ -4434,11 +4458,15 @@
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Editor/CKEditor5.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/CKEditor5ElementConstraint.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/CKEditor5ElementConstraintValidator.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/CKEditor5MediaAndFilterSettingsInSyncConstraint.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/CKEditor5MediaAndFilterSettingsInSyncConstraintValidator.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/EnabledConfigurablePluginsConstraint.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/EnabledConfigurablePluginsConstraintValidator.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/FundamentalCompatibilityConstraint.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/FundamentalCompatibilityConstraintValidator.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/PluginManagerDependentValidatorTrait.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/SourceEditingPreventSelfXssConstraint.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/SourceEditingPreventSelfXssConstraintValidator.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/SourceEditingRedundantTagsConstraint.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/SourceEditingRedundantTagsConstraintValidator.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/TextEditorObjectDependentValidatorTrait.php
@@ -4450,12 +4478,21 @@
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/ToolbarItemDependencyConstraintValidator.php
 %%WWWDIR%%/core/modules/ckeditor5/src/SmartDefaultSettings.php
 %%WWWDIR%%/core/modules/ckeditor5/templates/ckeditor5-settings-toolbar.html.twig
+%%WWWDIR%%/core/modules/ckeditor5/tests/fixtures/update/ckeditor5-3259593.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/fixtures/update/editor.editor.test_format.yml
+%%WWWDIR%%/core/modules/ckeditor5/tests/fixtures/update/filter.format.test_format.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor4to5upgrade_plugin_test/ckeditor4to5upgrade_plugin_test.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor4to5upgrade_plugin_test/ckeditor4to5upgrade_plugin_test.module
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_automatic_link_decorator_test/ckeditor5_automatic_link_decorator_test.ckeditor5.yml
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_automatic_link_decorator_test/ckeditor5_automatic_link_decorator_test.info.yml
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_automatic_link_decorator_test_2/ckeditor5_automatic_link_decorator_test_2.ckeditor5.yml
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_automatic_link_decorator_test_2/ckeditor5_automatic_link_decorator_test_2.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_definition_supporting_element/ckeditor5_definition_supporting_element.ckeditor5.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_definition_supporting_element/ckeditor5_definition_supporting_element.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_drupalelementstyle_test/ckeditor5_drupalelementstyle_test.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_drupalelementstyle_test/ckeditor5_drupalelementstyle_test.module
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_incompatible_filter_test/ckeditor5_incompatible_filter_test.info.yml
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_incompatible_filter_test/src/Plugin/Filter/FilterIsIncompatible.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_manual_decorator_test/ckeditor5_manual_decorator_test.ckeditor5.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_manual_decorator_test/ckeditor5_manual_decorator_test.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_plugin_conditions_test/ckeditor5_plugin_conditions_test.ckeditor5.yml
@@ -4477,6 +4514,7 @@
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Functional/ImageUploadAccessTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Functional/ImageUploadTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Functional/MediaEntityMetadataApiTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/Functional/Update/CKEditor5UpdateAlignmentTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/FunctionalJavascript/AdminUiTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/FunctionalJavascript/CKEditor5AllowedTagsTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/FunctionalJavascript/CKEditor5CKEditor4Compatibility.php
@@ -4493,6 +4531,7 @@
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/FunctionalJavascript/MediaLibraryTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/FunctionalJavascript/MediaTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/FunctionalJavascript/SourceEditingTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/FunctionalJavascript/TableTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Kernel/CKEditor4to5UpgradeCompletenessTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Kernel/CKEditor5PluginManagerTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Kernel/CKEditor5StylesheetsTest.php
@@ -4507,9 +4546,14 @@
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Traits/CKEditor5TestTrait.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Traits/PrivateMethodUnitTestTrait.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Traits/SynchronizeCsrfTokenSeedTrait.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/AlignmentPluginTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/CKEditor5Test.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/HTMLRestrictionsTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/HeadingPluginTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/LanguagePluginTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/ListPluginTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/SmartDefaultSettingsTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/SourceEditingPluginTest.php
 %%WWWDIR%%/core/modules/ckeditor5/webpack.config.js
 %%WWWDIR%%/core/modules/color/color.es6.js
 %%WWWDIR%%/core/modules/color/color.info.yml
@@ -6619,6 +6663,8 @@
 %%WWWDIR%%/core/modules/history/src/Plugin/views/filter/HistoryUserTimestamp.php
 %%WWWDIR%%/core/modules/history/tests/src/Functional/HistoryTest.php
 %%WWWDIR%%/core/modules/history/tests/src/Kernel/Views/HistoryTimestampTest.php
+%%WWWDIR%%/core/modules/history/tests/themes/history_test_theme/history_test_theme.info.yml
+%%WWWDIR%%/core/modules/history/tests/themes/history_test_theme/templates/mark.html.twig
 %%WWWDIR%%/core/modules/image/config/install/image.settings.yml
 %%WWWDIR%%/core/modules/image/config/install/image.style.large.yml
 %%WWWDIR%%/core/modules/image/config/install/image.style.medium.yml
@@ -9396,7 +9442,7 @@
 %%WWWDIR%%/core/modules/search/tests/src/Kernel/SearchExcerptTest.php
 %%WWWDIR%%/core/modules/search/tests/src/Kernel/SearchIndexTest.php
 %%WWWDIR%%/core/modules/search/tests/src/Kernel/SearchMatchTest.php
-%%WWWDIR%%/core/modules/search/tests/src/Kernel/SearchSimplifyTest.php
+%%WWWDIR%%/core/modules/search/tests/src/Kernel/SearchTextProcessorTest.php
 %%WWWDIR%%/core/modules/search/tests/src/Kernel/SearchTokenizerTest.php
 %%WWWDIR%%/core/modules/search/tests/src/Unit/SearchPageRepositoryTest.php
 %%WWWDIR%%/core/modules/search/tests/src/Unit/SearchPluginCollectionTest.php
@@ -10060,6 +10106,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestBrokenQueue.php
 %%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestDatabaseDelayException.php
 %%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestException.php
+%%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestLeaseTime.php
 %%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestMemoryDelayException.php
 %%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestRequeueException.php
 %%WWWDIR%%/core/modules/system/tests/modules/csrf_race_test/csrf_race_test.info.yml
@@ -10578,6 +10625,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/module_handler_test_multiple/module_handler_test_multiple.install
 %%WWWDIR%%/core/modules/system/tests/modules/module_handler_test_multiple/module_handler_test_multiple_child/module_handler_test_multiple_child.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/module_handler_test_multiple/module_handler_test_multiple_child/module_handler_test_multiple_child.install
+%%WWWDIR%%/core/modules/system/tests/modules/module_info_type_comment/module_info_type_comment.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/module_install_class_loader_test1/module_install_class_loader_test1.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/module_install_class_loader_test1/module_install_class_loader_test1.services.yml
 %%WWWDIR%%/core/modules/system/tests/modules/module_install_class_loader_test1/src/EventSubscriber.php
@@ -11808,12 +11856,12 @@
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.broken.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.dev.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.0.1_0.2.xml
-%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.0.2-rc2-b.xml
-%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.0.2-rc2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.0.2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.1.2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.1.2_insecure-unsupported.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.1.2_insecure.xml
+%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.2.0-rc2-b.xml
+%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.2.0-rc2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.2.0.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.2.0_3.0-rc1.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.2.0_9.0.0.xml
@@ -11837,12 +11885,12 @@
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.9.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.dev.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.0.1_0.2.xml
-%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.0.2-rc2-b.xml
-%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.0.2-rc2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.0.2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.1.2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.1.2_insecure-unsupported.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.1.2_insecure.xml
+%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.2.0-rc2-b.xml
+%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.2.0-rc2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/update_test_basetheme.1_1-sec.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/update_test_new_module.1_1.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/update_test_subtheme.1_0.xml
@@ -18341,6 +18389,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/StreamWrapper.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UploadedFile.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Uri.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriComparator.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriNormalizer.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriResolver.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Utils.php

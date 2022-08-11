@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin
-
 PORTNAME=	dispy
 PORTVERSION=	4.10.6
 CATEGORIES=	devel net

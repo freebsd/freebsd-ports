@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	tntnet
 PORTVERSION=	2.2.1
 PORTREVISION=	5

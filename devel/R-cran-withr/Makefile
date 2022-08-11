@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	withr
 PORTVERSION=	2.5.0
 CATEGORIES=	devel

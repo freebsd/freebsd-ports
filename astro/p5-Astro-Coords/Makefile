@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Astro-Coords
 PORTVERSION=	0.20
 CATEGORIES=	astro perl5

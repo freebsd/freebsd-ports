@@ -1,8 +1,6 @@
-# Created by: Jin-Sih Lin <linpct@gmail.com>
-
 PORTNAME=	phalcon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.0beta3
+DISTVERSION=	5.0.0RC3
 CATEGORIES=	www
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -11,13 +9,11 @@ COMMENT=	Phalcon PHP Framework written in C-language
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/psr.so:devel/pecl-psr@${PHP_FLAVOR}
-
 USES=		localbase php:ext
 USE_GITHUB=	yes
 GH_PROJECT=	c${PORTNAME}
-USE_PHP=	json:build pdo:build session:build
-IGNORE_WITH_PHP=	81
+USE_PHP=	json:build mbstring pdo:build session:build
+IGNORE_WITH_PHP=	82
 
 CONFIGURE_ARGS=	--enable-phalcon
 

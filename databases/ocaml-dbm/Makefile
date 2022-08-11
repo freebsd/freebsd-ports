@@ -1,5 +1,3 @@
-# Created by: Jaap Boender <jaapb@kerguelen.org>
-
 PORTNAME=	dbm
 PORTVERSION=	1.0
 CATEGORIES=	databases

@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Calendar-Julian
 PORTVERSION=	0.107
 CATEGORIES=	devel perl5

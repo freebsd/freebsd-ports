@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Text-PDF
 PORTVERSION=	0.31
 CATEGORIES=	print perl5

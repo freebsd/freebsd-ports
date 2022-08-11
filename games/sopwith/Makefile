@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	sopwith
 PORTVERSION=	1.8.4
 CATEGORIES=	games

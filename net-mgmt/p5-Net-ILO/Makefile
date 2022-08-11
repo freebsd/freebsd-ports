@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Net-ILO
 PORTVERSION=	0.54
 PORTREVISION=	1

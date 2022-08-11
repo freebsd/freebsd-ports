@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers
-
 PORTNAME=	pm3umpdl
 PORTVERSION=	1.0.0
 CATEGORIES=	audio deskutils

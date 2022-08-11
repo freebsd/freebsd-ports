@@ -1,5 +1,3 @@
-# Created by: Juha Erkkilä <erkkila@cc.jyu.fi>
-
 PORTNAME=	etktab
 PORTVERSION=	3.2
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Text-vCard
 PORTVERSION=	3.09
 CATEGORIES=	textproc perl5

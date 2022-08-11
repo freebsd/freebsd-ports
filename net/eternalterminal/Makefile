@@ -1,7 +1,6 @@
 PORTNAME=	eternalterminal
 DISTVERSIONPREFIX=	et-v
-DISTVERSION=	6.1.11
-PORTREVISION=	4
+DISTVERSION=	6.2.1
 CATEGORIES=	net
 
 MAINTAINER=	willtisdale@gmail.com
@@ -23,7 +22,7 @@ GH_PROJECT=	EternalTerminal
 
 CMAKE_ON=	DISABLE_VCPKG
 
-MAKE_JOBS_UNSAFE=	yes # temporarily set due to weird races resulting in build failures
+ALL_TARGET=	generated-code all # workaround for a suspected dependency problem, see https://github.com/MisterTea/EternalTerminal/issues/528
 
 CONFLICTS_INSTALL=	linux-enemyterritory # bin/et
 

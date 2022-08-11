@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	minisign
 PORTVERSION=	0.9
 CATEGORIES=	security
@@ -16,6 +14,6 @@ USES=	cmake localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	jedisct1
 
-PLIST_FILES=	bin/minisign man/man1/minisign.1.gz
+PLIST_FILES=	bin/minisign share/man/man1/minisign.1.gz
 
 .include <bsd.port.mk>

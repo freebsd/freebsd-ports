@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung
-
 PORTNAME=	POE-Component-RSSAggregator
 PORTVERSION=	1.11
 PORTREVISION=	1

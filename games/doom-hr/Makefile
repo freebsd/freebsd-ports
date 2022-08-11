@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	hr
 PORTVERSION=	1.0
 PORTREVISION=	1

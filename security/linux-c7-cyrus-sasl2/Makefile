@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.26
 DISTVERSIONSUFFIX=	-23.el7

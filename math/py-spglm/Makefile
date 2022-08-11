@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	spglm
 PORTVERSION=	1.0.8
 CATEGORIES=	math python

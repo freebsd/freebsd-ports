@@ -1,8 +1,6 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	evolvotron
 DISTVERSION=	0.7.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

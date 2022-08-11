@@ -147,6 +147,13 @@ lib/girepository-1.0/Dazzle-1.0.typelib
 lib/libdazzle-1.0.so
 lib/libdazzle-1.0.so.0
 libdata/pkgconfig/libdazzle-1.0.pc
+share/locale/de/LC_MESSAGES/libdazzle-1.0.mo
+share/locale/es/LC_MESSAGES/libdazzle-1.0.mo
+share/locale/eu/LC_MESSAGES/libdazzle-1.0.mo
+share/locale/pl/LC_MESSAGES/libdazzle-1.0.mo
+share/locale/sv/LC_MESSAGES/libdazzle-1.0.mo
+share/locale/uk/LC_MESSAGES/libdazzle-1.0.mo
+share/locale/zh_CN/LC_MESSAGES/libdazzle-1.0.mo
 share/gir-1.0/Dazzle-1.0.gir
 share/vala/vapi/libdazzle-1.0.deps
 share/vala/vapi/libdazzle-1.0.vapi

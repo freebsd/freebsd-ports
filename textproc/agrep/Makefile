@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@FreeBSD.org)
-
 PORTNAME=	agrep
 PORTVERSION=	2.04
 PORTREVISION=	2

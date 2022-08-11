@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	dotenv-rails
-PORTVERSION=	2.7.6
+PORTVERSION=	2.8.1
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50

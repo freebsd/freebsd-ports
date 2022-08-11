@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Event-ICal
 PORTVERSION=	0.13
 CATEGORIES=	devel perl5

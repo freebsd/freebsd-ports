@@ -1,5 +1,4 @@
 # Originally from bsd.xorg.mk
-# Created by: Florent Thoumie <flz@FreeBSD.org>
 #
 # Feature:		xorg
 # Usage:		USES=xorg

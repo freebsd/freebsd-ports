@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	XPC
 PORTVERSION=	0.2
 PORTREVISION=	2

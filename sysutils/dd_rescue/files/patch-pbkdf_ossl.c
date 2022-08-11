@@ -1,7 +1,7 @@
---- pbkdf_ossl.c.orig	2017-11-04 09:03:51 UTC
+--- pbkdf_ossl.c.orig	2021-04-14 08:23:02 UTC
 +++ pbkdf_ossl.c
-@@ -11,7 +11,7 @@
- #include "md5.h"
+@@ -12,7 +12,7 @@
+ #include "secmem.h"
  #include <stdlib.h>
  #include <assert.h>
 -#include <endian.h>

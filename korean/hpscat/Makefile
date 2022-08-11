@@ -1,5 +1,3 @@
-# Created by: Junho CHOI <junho.choi@gmail.com>
-
 PORTNAME=	hpscat
 PORTVERSION=	1.3.1
 PORTEPOCH=	2

@@ -1,0 +1,13 @@
+- workaround for https://github.com/KarlsruheMIS/KaMIS/issues/30
+
+--- wmis/CMakeLists.txt.orig	2022-07-13 03:12:06 UTC
++++ wmis/CMakeLists.txt
+@@ -5,7 +5,7 @@ if (NOT CMAKE_BUILD_TYPE)
+     set(CMAKE_BUILD_TYPE Release) 
+ endif (NOT CMAKE_BUILD_TYPE)
+ 
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -fno-omit-frame-pointer -march=native -DNDEBUG -fPIC -O3 ")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -fno-omit-frame-pointer -DNDEBUG -fPIC -O3 ")
+ 
+ CHECK_CXX_COMPILER_FLAG(-Wno-unused-value COMPILER_SUPPORTS_NOUNUSED)
+ if(COMPILER_SUPPORTS_NOUNUSED)

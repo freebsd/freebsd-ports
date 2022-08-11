@@ -1,5 +1,3 @@
-# Created by: Alexander Leidinger <netchild@FreeBSD.org>
-
 PORTNAME=	cil
 PORTVERSION=	1.7.3
 PORTREVISION=	2

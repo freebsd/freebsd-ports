@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	bibcursed
 PORTVERSION=	2.0.1
 CATEGORIES=	print

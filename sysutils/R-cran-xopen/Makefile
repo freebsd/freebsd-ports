@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	xopen
 DISTVERSION=	1.0.0
 CATEGORIES=	sysutils

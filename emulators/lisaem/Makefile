@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	lisaem
 PORTVERSION=	1.2.6.2
 PORTREVISION=	2

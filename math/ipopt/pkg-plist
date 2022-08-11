@@ -82,13 +82,13 @@ include/coin-or/SensStepCalc.hpp
 include/coin-or/SensUtils.hpp
 lib/libipopt.so
 lib/libipopt.so.3
-lib/libipopt.so.3.14.4
+lib/libipopt.so.3.14.9
 lib/libipoptamplinterface.so
 lib/libipoptamplinterface.so.3
-lib/libipoptamplinterface.so.3.14.4
+lib/libipoptamplinterface.so.3.14.9
 lib/libsipopt.so
 lib/libsipopt.so.3
-lib/libsipopt.so.3.14.4
+lib/libsipopt.so.3.14.9
 libdata/pkgconfig/ipopt.pc
 libdata/pkgconfig/ipoptamplinterface.pc
 share/doc/ipopt/AUTHORS

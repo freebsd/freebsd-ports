@@ -1,5 +1,3 @@
-# Created by: bf <bf@FreeBSD.org>
-
 PORTNAME=	abi-compliance-checker
 DISTVERSION=	2.3
 CATEGORIES=	devel perl5

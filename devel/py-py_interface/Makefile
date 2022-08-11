@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	py_interface
 PORTVERSION=	2.3
 CATEGORIES=	devel python

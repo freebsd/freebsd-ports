@@ -1,5 +1,3 @@
-# Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-
 PORTNAME=	hipercontracer
 PORTVERSION=	1.6.0
 CATEGORIES=	benchmarks
@@ -18,6 +16,8 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libboost_program_options.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs
+
+BROKEN=		error: expected '(' for function-style cast or type construction
 
 USES=		cmake compiler:c++14-lang python shebangfix tar:xz
 USE_LDCONFIG=	yes

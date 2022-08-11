@@ -1,5 +1,5 @@
 PORTNAME=	redmine
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.6
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	42

@@ -1,5 +1,3 @@
-# Created by: Vladimir Timofeev <vovkasm@gmail.com>
-
 PORTNAME=	EV
 PORTVERSION=	4.33
 PORTEPOCH=	1

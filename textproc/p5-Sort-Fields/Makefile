@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Sort-Fields
 PORTVERSION=	1.001
 CATEGORIES=	textproc perl5

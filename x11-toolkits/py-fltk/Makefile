@@ -1,5 +1,3 @@
-# Created by: Radim Kolar
-
 PORTNAME=	fltk
 PORTVERSION=	1.3.4.1
 CATEGORIES=	x11-toolkits python

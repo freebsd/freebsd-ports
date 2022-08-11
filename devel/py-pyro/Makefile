@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	pyro
 DISTVERSION=	4.77
 CATEGORIES=	devel python

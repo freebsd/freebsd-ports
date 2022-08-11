@@ -1,0 +1,6 @@
+Dhall is a programmable configuration language that can be thought of as: JSON +
+functions + types + imports.  The dhall program allows for execution of dhall
+files.  See the hs-dhall-json, hs-dhall-bash, and hs-dhall-yaml ports for
+converting dhall files to these formats.
+
+WWW: https://dhall-lang.org/

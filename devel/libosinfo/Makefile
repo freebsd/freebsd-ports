@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	libosinfo
 PORTVERSION=	1.10.0
 PORTREVISION=	2

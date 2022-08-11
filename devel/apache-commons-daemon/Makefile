@@ -1,5 +1,3 @@
-# Created by: Ronald Klop <ronald@echteman.nl>
-
 PORTNAME=	commons-daemon
 PORTVERSION=	1.2.4
 CATEGORIES=	devel java

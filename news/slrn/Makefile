@@ -1,5 +1,3 @@
-# Created by: Carey Jones <mcj@acquiesce.org>
-
 PORTNAME=	slrn
 PORTVERSION=	1.0.3a
 PORTREVISION=	1

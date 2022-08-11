@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	html2fo
 PORTVERSION=	0.4.2
 CATEGORIES=	textproc

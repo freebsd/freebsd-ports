@@ -1,6 +1,6 @@
 PORTNAME=	castxml
-PORTVERSION=	g20181115
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.5
 CATEGORIES=	textproc devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,11 +13,11 @@ BUILD_DEPENDS=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 TEST_DEPENDS=	${LOCALBASE}/lib/libxml2.so:textproc/libxml2
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake:testing compiler:c++11-lang
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	CastXML
 GH_PROJECT=	CastXML
-GH_TAGNAME=	c3a239d
 
 CMAKE_ARGS=	-DLLVM_DIR:STRING=${LOCALBASE}/llvm${LLVM_VERSION}/lib/cmake/llvm
 

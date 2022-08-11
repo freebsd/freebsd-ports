@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
-
 PORTNAME=	nux
 PORTVERSION=	1.6
 PORTREVISION=	3

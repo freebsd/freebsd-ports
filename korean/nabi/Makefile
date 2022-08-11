@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@FreeBSD.org>
-
 PORTNAME=	nabi
 PORTVERSION=	1.0.0
 PORTREVISION=	1

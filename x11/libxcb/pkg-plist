@@ -49,7 +49,7 @@ lib/libxcb-dri2.so.0.0.0
 lib/libxcb-dri3.a
 lib/libxcb-dri3.so
 lib/libxcb-dri3.so.0
-lib/libxcb-dri3.so.0.0.0
+lib/libxcb-dri3.so.0.1.0
 lib/libxcb-glx.a
 lib/libxcb-glx.so
 lib/libxcb-glx.so.0
@@ -389,6 +389,8 @@ man/man3/xcb_dri3_pixmap_from_buffers_checked.3.gz
 man/man3/xcb_dri3_query_version.3.gz
 man/man3/xcb_dri3_query_version_reply.3.gz
 man/man3/xcb_dri3_query_version_unchecked.3.gz
+man/man3/xcb_dri3_set_drm_device_in_use.3.gz
+man/man3/xcb_dri3_set_drm_device_in_use_checked.3.gz
 man/man3/xcb_enter_notify_event_t.3.gz
 man/man3/xcb_expose_event_t.3.gz
 man/man3/xcb_fill_poly.3.gz
@@ -971,6 +973,8 @@ man/man3/xcb_input_device_property_notify_event_t.3.gz
 man/man3/xcb_input_device_state_notify_event_t.3.gz
 man/man3/xcb_input_device_valuator_event_t.3.gz
 man/man3/xcb_input_enter_event_t.3.gz
+man/man3/xcb_input_gesture_pinch_begin_event_t.3.gz
+man/man3/xcb_input_gesture_swipe_begin_event_t.3.gz
 man/man3/xcb_input_get_device_button_mapping.3.gz
 man/man3/xcb_input_get_device_button_mapping_map.3.gz
 man/man3/xcb_input_get_device_button_mapping_map_end.3.gz
@@ -2134,6 +2138,9 @@ man/man3/xcb_xfixes_fetch_region_rectangles_iterator.3.gz
 man/man3/xcb_xfixes_fetch_region_rectangles_length.3.gz
 man/man3/xcb_xfixes_fetch_region_reply.3.gz
 man/man3/xcb_xfixes_fetch_region_unchecked.3.gz
+man/man3/xcb_xfixes_get_client_disconnect_mode.3.gz
+man/man3/xcb_xfixes_get_client_disconnect_mode_reply.3.gz
+man/man3/xcb_xfixes_get_client_disconnect_mode_unchecked.3.gz
 man/man3/xcb_xfixes_get_cursor_image.3.gz
 man/man3/xcb_xfixes_get_cursor_image_and_name.3.gz
 man/man3/xcb_xfixes_get_cursor_image_and_name_cursor_image.3.gz
@@ -2171,6 +2178,8 @@ man/man3/xcb_xfixes_select_cursor_input_checked.3.gz
 man/man3/xcb_xfixes_select_selection_input.3.gz
 man/man3/xcb_xfixes_select_selection_input_checked.3.gz
 man/man3/xcb_xfixes_selection_notify_event_t.3.gz
+man/man3/xcb_xfixes_set_client_disconnect_mode.3.gz
+man/man3/xcb_xfixes_set_client_disconnect_mode_checked.3.gz
 man/man3/xcb_xfixes_set_cursor_name.3.gz
 man/man3/xcb_xfixes_set_cursor_name_checked.3.gz
 man/man3/xcb_xfixes_set_gc_clip_region.3.gz

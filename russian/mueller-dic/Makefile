@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	mueller-dic
 PORTVERSION=	1.2
 PORTREVISION=	4

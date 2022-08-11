@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-
 PORTNAME=	chez-scheme
 PORTVERSION=	9.5.8
 DISTVERSIONPREFIX=	v

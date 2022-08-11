@@ -1,5 +1,3 @@
-# Created by: Mark Huizer; Eindhoven
-
 PORTNAME=	logtools
 PORTVERSION=	0.13e
 PORTREVISION=	2

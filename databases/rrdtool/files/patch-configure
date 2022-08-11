@@ -1,27 +1,27 @@
---- configure.orig	2017-05-16 11:55:23 UTC
+--- configure.orig	2022-03-14 14:29:38 UTC
 +++ configure
-@@ -13698,7 +13698,7 @@ fi
- 
- 
- if test "x$GCC" = "xyes"; then
--  for flag in -fno-strict-aliasing -Wall -std=gnu99 -pedantic -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wold-style-definition -W; do
-+  for flag in -fno-strict-aliasing -Wall -std=gnu99 -pedantic -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wold-style-definition; do
-     oCFLAGS="$CFLAGS"
-     CFLAGS="$CFLAGS $flag"
-     cachename=rd_cv_gcc_flag_`echo $flag|sed 's/[^A-Za-z]/_/g'`
-@@ -22422,9 +22422,9 @@ $as_echo "$am_cv_python_pyexecdir" >&6; }
- $as_echo_n "checking for headers required to compile python extensions... " >&6; }
- py_prefix=`$PYTHON -c "import sys; print(sys.prefix)"`
- py_exec_prefix=`$PYTHON -c "import sys; print(sys.exec_prefix)"`
--PYTHON_INCLUDES="-I${py_prefix}/include/python${PYTHON_VERSION}"
-+PYTHON_INCLUDES="-I${py_prefix}/include/python${PYTHON_VERSION} -I${py_prefix}/include/python${PYTHON_VERSION}m"
- if test "$py_prefix" != "$py_exec_prefix"; then
--  PYTHON_INCLUDES="$PYTHON_INCLUDES -I${py_exec_prefix}/include/python${PYTHON_VERSION}"
-+  PYTHON_INCLUDES="$PYTHON_INCLUDES -I${py_exec_prefix}/include/python${PYTHON_VERSION} -I${py_exec_prefix}/include/python${PYTHON_VERSION}m"
+@@ -22491,7 +22491,7 @@ else
+ if test "${enable_ruby_site_install+set}" = set; then :
+   enableval=$enable_ruby_site_install; RUBY_MAKE_OPTIONS=
+ else
+-  RUBY_MAKE_OPTIONS="sitedir=$langpref/lib/ruby"
++  RUBY_MAKE_OPTIONS="PREFIX=$langpref INSTALL_BASE= LIB=$langpref/lib/ruby"
  fi
  
- save_CPPFLAGS="$CPPFLAGS"
-@@ -27780,18 +27780,6 @@ $as_echo_n "checking in... " >&6; }
+ 
+@@ -23388,9 +23388,9 @@ else
+ if test -x "$PYTHON_CONFIG"; then
+   PYTHON_INCLUDES=`$PYTHON_CONFIG --includes 2>/dev/null`
+ else
+-  PYTHON_INCLUDES="-I${py_prefix}/include/python${PYTHON_VERSION}"
++  PYTHON_INCLUDES="-I${py_prefix}/include/python${PYTHON_VERSION} -I${py_prefix}/include/python${PYTHON_VERSION}m"
+   if test "$py_prefix" != "$py_exec_prefix"; then
+-    PYTHON_INCLUDES="$PYTHON_INCLUDES -I${py_exec_prefix}/include/python${PYTHON_VERSION}"
++    PYTHON_INCLUDES="$PYTHON_INCLUDES -I${py_exec_prefix}/include/python${PYTHON_VERSION} -I${py_exec_prefix}/include/python${PYTHON_VERSION}m"
+   fi
+ fi
+ 
+@@ -28807,19 +28807,6 @@ $as_echo "and out again" >&6; }
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: and out again" >&5
  $as_echo "and out again" >&6; }
  
@@ -37,6 +37,7 @@
 -sleep 1
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: result:  just kidding ;-)" >&5
 -$as_echo " just kidding ;-)" >&6; }
- echo
+-echo
  echo "----------------------------------------------------------------"
  echo "Config is DONE!"
+ echo

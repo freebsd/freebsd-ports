@@ -34,6 +34,7 @@ bin/leftwm-worker
 %%THEMES%%%%DATADIR%%/themes/basic_lemonbar/template.liquid
 %%THEMES%%%%DATADIR%%/themes/basic_lemonbar/theme.toml
 %%THEMES%%%%DATADIR%%/themes/basic_lemonbar/up
+%%THEMES%%%%DATADIR%%/themes/basic_polybar/README.md
 %%THEMES%%%%DATADIR%%/themes/basic_polybar/background.jpg
 %%THEMES%%%%DATADIR%%/themes/basic_polybar/change_to_tag
 %%THEMES%%%%DATADIR%%/themes/basic_polybar/down

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	datapackage
 PORTVERSION=	1.15.2
 CATEGORIES=	devel python

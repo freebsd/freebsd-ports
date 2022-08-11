@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	c${PORTNAME}
 
 USE_PHP=	json:build mbstring pdo:build session
-IGNORE_WITH_PHP=	80 81
+IGNORE_WITH_PHP=	80 81 82
 PHP_MOD_PRIO=	30
 
 CONFIGURE_ARGS=	--enable-phalcon

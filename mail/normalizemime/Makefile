@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	normalizemime
 PORTVERSION=	1.19
 PORTREVISION=	1

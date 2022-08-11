@@ -325,17 +325,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # usage inside the ports framework, and the latter are reserved for user-
 # settable options.  (Setting USE_* in /etc/make.conf is always wrong).
 #
-# WITH_DEBUG            - If set, debugging flags are added to CFLAGS and the
-#                         binaries don't get stripped by INSTALL_PROGRAM or
-#                         INSTALL_LIB. Besides, individual ports might
-#                         add their specific to produce binaries for debugging
-#                         purposes. You can override the debug flags that are
-#                         passed to the compiler by setting DEBUG_FLAGS. It is
-#                         set to "-g" at default.
-#
-#			  NOTE: to override a globally defined WITH_DEBUG at a
-#			        later time ".undef WITH_DEBUG" can be used
-#
 # WITH_DEBUG_PORTS		- A list of origins for which WITH_DEBUG will be set
 #
 # WITHOUT_SSP	- Disable SSP.
@@ -1019,6 +1008,8 @@ LC_ALL=		C
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
+_LIST_OF_WITH_FEATURES=	debug lto ssp
+_DEFAULT_WITH_FEATURES=	ssp
 PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
 LINUXBASE?=		/compat/linux
@@ -1050,7 +1041,8 @@ PORTS_FEATURES+=	FLAVORS
 MINIMAL_PKG_VERSION=	1.17.2
 
 _PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
-						${STAGEDIR}${PREFIX} ${WRKDIR}/pkg ${BINARY_LINKDIR}
+						${STAGEDIR}${PREFIX} ${WRKDIR}/pkg ${BINARY_LINKDIR} \
+						${PKGCONFIG_LINKDIR}
 
 # Ensure .CURDIR contains an absolute path without a trailing slash.  Failed
 # builds can occur when PORTSDIR is a symbolic link, or with something like
@@ -1320,6 +1312,11 @@ WITH_DEBUG=	yes
 .      endif
 .    endif
 
+.    if defined(USE_LTO)
+WITH_LTO=	${USE_LTO}
+WARNING+=	USE_LTO is deprecated in favor of WITH_LTO
+.    endif
+
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 .include "${PORTSDIR}/Mk/bsd.options.mk"
 
@@ -1428,10 +1425,6 @@ USES+=mysql:${USE_MYSQL}
 
 .    if defined(WANT_WX) || defined(USE_WX) || defined(USE_WX_NOT)
 .include "${PORTSDIR}/Mk/bsd.wx.mk"
-.    endif
-
-.    if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER) || defined(USE_GSTREAMER1)
-.include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
 .    endif
 
 .    if !defined(UID)
@@ -1696,6 +1689,13 @@ MAKE_ENV+=			PATH=${PATH}
 CONFIGURE_ENV+=		PATH=${PATH}
 .    endif
 
+PKGCONFIG_LINKDIR=	${WRKDIR}/.pkgconfig
+PKGCONFIG_BASEDIR=	/usr/libdata/pkgconfig
+.    if !${MAKE_ENV:MPKG_CONFIG_LIBDIR=*} && !${CONFIGURE_ENV:MPKG_CONFIG_LIBDIR=*}
+MAKE_ENV+=			PKG_CONFIG_LIBDIR=${PKGCONFIG_LINKDIR}:${LOCALBASE}/libdata/pkgconfig:${LOCALBASE}/share/pkgconfig:${PKGCONFIG_BASEDIR}
+CONFIGURE_ENV+=		PKG_CONFIG_LIBDIR=${PKGCONFIG_LINKDIR}:${LOCALBASE}/libdata/pkgconfig:${LOCALBASE}/share/pkgconfig:${PKGCONFIG_BASEDIR}
+.    endif
+
 .    if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB) && empty(USE_GITHUB:Mnodefault)
 .      if defined(WRKSRC)
 DEV_WARNING+=	"You are using USE_GITHUB and WRKSRC is set which is wrong.  Set GH_PROJECT correctly or set WRKSRC_SUBDIR and remove WRKSRC entirely."
@@ -1773,27 +1773,11 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 .      endif
 .    endif
 
-# Reset value from bsd.own.mk.
-.    if defined(WITH_DEBUG)
-.      if !defined(INSTALL_STRIPPED)
-STRIP=	#none
-MAKE_ENV+=	DONTSTRIP=yes
-STRIP_CMD=	${TRUE}
+.    for f in ${_LIST_OF_WITH_FEATURES}
+.      if defined(WITH_${f:tu}) || ( ${_DEFAULT_WITH_FEATURES:M${f}} &&  !defined(WITHOUT_${f:tu}) )
+.include "${PORTSDIR}/Mk/Features/$f.mk"
 .      endif
-DEBUG_FLAGS?=	-g
-CFLAGS:=		${CFLAGS:N-O*:N-fno-strict*} ${DEBUG_FLAGS}
-.      if defined(INSTALL_TARGET)
-INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
-.      endif
-.    endif
-
-.    if defined(USE_LTO)
-.include "${PORTSDIR}/Mk/bsd.lto.mk"
-.    endif
-
-.    if !defined(WITHOUT_SSP)
-.include "${PORTSDIR}/Mk/bsd.ssp.mk"
-.    endif
+.    endfor
 
 # XXX PIE support to be added here
 MAKE_ENV+=	NO_PIE=yes
@@ -1931,26 +1915,12 @@ PKGPOSTINSTALL?=	${PKGDIR}/pkg-post-install
 PKGPREDEINSTALL?=	${PKGDIR}/pkg-pre-deinstall
 PKGPOSTDEINSTALL?=	${PKGDIR}/pkg-post-deinstall
 
-_FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
-						fonts.dir fonts.scale gtk-update-icon-cache \
-						gtk-query-immodules \
-						ldconfig \
-						load-octave-pkg \
-						ocamlfind \
-						update-desktop-database update-mime-database \
-						catalog.ports \
-						ccache-update-links
-
 .    if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .    endif
 .    for odir in ${OVERLAYS}
 .sinclude "${odir}/Mk/bsd.overlay.mk"
 .    endfor
-
-.    if defined(USE_GSTREAMER1)
-.include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
-.    endif
 
 .    if defined(USE_JAVA)
 .include "${PORTSDIR}/Mk/bsd.java.mk"
@@ -2233,11 +2203,11 @@ PKG_SUFX=	.pkg
 .    if defined(PKG_NOCOMPRESS)
 PKG_COMPRESSION_FORMAT?=	tar
 .    else
-.if ${OSVERSION} > 1400000
+.      if ${OSVERSION} > 1400000
 PKG_COMPRESSION_FORMAT?=	tzst
-.else
+.      else
 PKG_COMPRESSION_FORMAT?=	txz
-.endif
+.      endif
 .    endif
 
 # where pkg(8) stores its data
@@ -2629,7 +2599,6 @@ PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
 PACKAGES:=	${PACKAGES:S/:/\:/g}
 _HAVE_PACKAGES=	yes
 PKGFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_SUFX}
-PKGOLDFILE?=		${PKGREPOSITORY}/${PKGNAME}.${PKG_COMPRESSION_FORMAT}
 .    else
 PKGFILE?=		${.CURDIR}/${PKGNAME}${PKG_SUFX}
 .    endif
@@ -2639,10 +2608,12 @@ WRKDIR_PKGFILE=	${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
 PKGBASE?=			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
+.    if ${PKG_COMPRESSION_FORMAT} == txz
 PKGOLDLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}.${PKG_COMPRESSION_FORMAT}
 # Temporary workaround to be deleted once every supported version of FreeBSD
 # have a bootstrap which handles the pkg extension.
 PKGOLDSIGFILE=			${PKGLATESTREPOSITORY}/${PKGBASE}.${PKG_COMPRESSION_FORMAT}.sig
+.    endif
 
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_CMD?=		./${CONFIGURE_SCRIPT}
@@ -2818,6 +2789,13 @@ IGNORE+=	(reason: ${NOT_FOR_ARCHS_REASON})
 
 # Check the user interaction and legal issues
 .    if !defined(NO_IGNORE)
+.      for v in ${OSREL} ${OSREL:R}
+.        for f in ${FLAVOR}
+.          if defined($f_IGNORE_${OPSYS}_${v})
+IGNORE+= "${${f}_IGNORE_${OPSYS}_${v}}"
+.          endif
+.        endfor
+.      endfor
 .      if (defined(IS_INTERACTIVE) && defined(BATCH))
 IGNORE=		is an interactive port
 .      elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
@@ -3402,12 +3380,6 @@ ${PKGFILE}: ${WRKDIR_PKGFILE} ${PKGREPOSITORY}
 	@${LN} -f ${WRKDIR_PKGFILE} ${PKGFILE} 2>/dev/null \
 			|| ${CP} -f ${WRKDIR_PKGFILE} ${PKGFILE}
 
-.      if !defined(_PKG_TRANSITIONING_TO_NEW_EXT)
-_EXTRA_PACKAGE_TARGET_DEP+= ${PKGOLDFILE}
-${PKGOLDFILE}: ${PKGFILE}
-	${INSTALL} -l rs ${PKGFILE} ${PKGOLDFILE}
-.      endif
-
 .      if ${PKGORIGIN} == "ports-mgmt/pkg" || ${PKGORIGIN} == "ports-mgmt/pkg-devel"
 _EXTRA_PACKAGE_TARGET_DEP+=	${PKGLATESTREPOSITORY}
 _PORTS_DIRECTORIES+=	${PKGLATESTREPOSITORY}
@@ -3417,11 +3389,11 @@ _EXTRA_PACKAGE_TARGET_DEP+=	${PKGLATESTFILE}
 ${PKGLATESTFILE}: ${PKGFILE} ${PKGLATESTREPOSITORY}
 	${INSTALL} -l rs ${PKGFILE} ${PKGLATESTFILE}
 
-.        if !defined(_PKG_TRANSITIONING_TO_NEW_EXT)
+.        if !defined(_PKG_TRANSITIONING_TO_NEW_EXT) && ${PKG_COMPRESSION_FORMAT} == txz
 _EXTRA_PACKAGE_TARGET_DEP+=	${PKGOLDLATESTFILE} ${PKGOLDSIGFILE}
 
-${PKGOLDLATESTFILE}: ${PKGOLDFILE} ${PKGLATESTREPOSITORY}
-	${INSTALL} -l rs ${PKGOLDFILE} ${PKGOLDLATESTFILE}
+${PKGOLDLATESTFILE}: ${PKGFILE} ${PKGLATESTREPOSITORY}
+	${INSTALL} -l rs ${PKGFILE} ${PKGOLDLATESTFILE}
 
 # Temporary workaround to be deleted once every supported version of FreeBSD
 # have a bootstrap which handles the pkg extension.
@@ -3435,7 +3407,7 @@ ${PKGOLDSIGFILE}: ${PKGLATESTREPOSITORY}
 
 # from here this will become a loop for subpackages
 ${WRKDIR_PKGFILE}: ${TMPPLIST} create-manifest ${WRKDIR}/pkg
-	@if ! ${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -m ${METADIR} -p ${TMPPLIST} -o ${WRKDIR}/pkg ${PKGNAME}; then \
+	@if ! ${SETENV} ${PKG_ENV} ${PKG_CREATE} ${PKG_CREATE_ARGS} -m ${METADIR} -p ${TMPPLIST} -o ${WRKDIR}/pkg ${PKGNAME}; then \
 		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
 		exit 1; \
 	fi
@@ -3761,7 +3733,7 @@ deinstall:
 
 .    if !target(deinstall-all)
 deinstall-all:
-.if ${UID} != 0 && !defined(INSTALL_AS_USER)
+.      if ${UID} != 0 && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${.TARGET}"
@@ -4953,6 +4925,7 @@ do-config:
 	trap "${RM} $${TMPOPTIONSFILE}; exit 1" 1 2 3 5 10 13 15; \
 	${SETENV} ${D4P_ENV} ${SH} ${SCRIPTSDIR}/dialog4ports.sh $${TMPOPTIONSFILE} || { \
 		${RM} $${TMPOPTIONSFILE}; \
+		${ECHO_CMD}; \
 		${ECHO_MSG} "===> Options unchanged"; \
 		exit 0; \
 	}; \
@@ -5173,6 +5146,20 @@ create-binary-alias: ${BINARY_LINKDIR}
 .      endif
 .    endif
 
+.    if !empty(PKGCONFIG_BASE)
+.      if !target(create-base-pkgconfig)
+create-base-pkgconfig: ${PKGCONFIG_LINKDIR}
+.        for pcfile in ${PKGCONFIG_BASE:S/$/.pc/}
+			@if `test -f ${PKGCONFIG_BASEDIR}/${pcfile}`; then \
+				${RLN} ${PKGCONFIG_BASEDIR}/${pcfile} ${PKGCONFIG_LINKDIR}/${pcfile}; \
+			else \
+				${ECHO_MSG} "===>  Missing \"${pcfile}\" to create a link at \"${PKGCONFIG_LINKDIR}/${pcfile}\"     "; \
+				${FALSE}; \
+			fi
+.        endfor
+.      endif
+.    endif
+
 .    if !empty(BINARY_WRAPPERS)
 .      if !target(create-binary-wrappers)
 create-binary-wrappers: ${BINARY_LINKDIR}
@@ -5282,7 +5269,7 @@ _PATCH_SEQ=		050:ask-license 100:patch-message 150:patch-depends \
 				${_OPTIONS_patch} ${_USES_patch}
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	150:build-depends 151:lib-depends 160:create-binary-alias \
-				161:create-binary-wrappers \
+				161:create-binary-wrappers 170:create-base-pkgconfig \
 				200:configure-message 210:apply-slist \
 				300:pre-configure 450:pre-configure-script \
 				490:run-autotools-fixup 500:do-configure 700:post-configure \

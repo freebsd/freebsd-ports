@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	omniauth-salesforce
 PORTVERSION=	1.0.5
 PORTREVISION=	1

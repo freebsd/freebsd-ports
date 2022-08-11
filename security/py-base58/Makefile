@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	base58
 PORTVERSION=	2.1.1
 CATEGORIES=	security python

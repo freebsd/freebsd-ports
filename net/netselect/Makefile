@@ -1,5 +1,3 @@
-# Created by: Timothy Redaelli <drizzt@gufi.org>
-
 PORTNAME=	netselect
 PORTVERSION=	0.4
 DISTVERSIONPREFIX=${PORTNAME}-

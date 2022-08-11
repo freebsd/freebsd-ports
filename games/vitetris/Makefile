@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	vitetris
 PORTVERSION=	0.59.1
 DISTVERSIONPREFIX=	v

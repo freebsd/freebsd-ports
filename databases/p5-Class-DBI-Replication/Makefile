@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Class-DBI-Replication
 PORTVERSION=	0.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	rhtvision
 PORTVERSION=	2.2.1.1
 PORTREVISION=	10

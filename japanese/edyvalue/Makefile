@@ -1,5 +1,3 @@
-# Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
-
 PORTNAME=	edyvalue
 PORTVERSION=	2007.01.06
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Danton Dorati <urisso@bsd.com.br>
-
 PORTNAME=	snortsam
 PORTVERSION=	2.70
 PORTREVISION=	1

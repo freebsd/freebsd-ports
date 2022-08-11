@@ -10,6 +10,9 @@ COMMENT=	Surge Synthesizer (XT) LV2 and VST plug-in
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	riscv64 # see https://github.com/surge-synthesizer/surge/issues/6363
+NOT_FOR_ARCHS_REASON=	simde doesn't support riscv64
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/nanosvg.h:graphics/nanosvg \
 		${LOCALBASE}/include/simde/simde-common.h:devel/simde \
@@ -57,5 +60,13 @@ GH_TUPLE=	surge-synthesizer:tuning-library:bdb107f58ea22720bfa2a6d7a910fc77e69d7
 		free-audio:clap-helpers:0b9f7ae5e24e370a4047fd1d6b5d3b83fa0ae7ee:free_audio_clap_helpers/libs/clap-juce-extensions/clap-libs/clap-helpers
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
+
+PORTSCOUT=	ignore:1 # conflicts with old-gen audio/surge-synthesizer-lv2
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == aarch64
+CMAKE_ARGS+=	-DARM_NATIVE=native # based on https://github.com/surge-synthesizer/surge/tree/release/1.9.0#building-for-arm-platforms
+.endif
 
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-# Created by: Carey Jones <mcj@acquiesce.org>
-
 PORTNAME=	mpg123
 PORTVERSION=	1.29.3
 CATEGORIES=	audio

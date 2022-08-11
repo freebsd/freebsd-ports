@@ -1,5 +1,3 @@
-# Created by: Eric A. Griff <eric@talesfromthereal.com>
-
 PORTNAME=	WDDX
 PORTVERSION=	1.02
 PORTREVISION=	2

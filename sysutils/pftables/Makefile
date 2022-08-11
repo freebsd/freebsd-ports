@@ -1,4 +1,3 @@
-# Created by: Thomas Zander <riggs@FreeBSD.org>
 #
 
 PORTNAME=	pftables

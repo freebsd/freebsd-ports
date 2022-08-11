@@ -1,5 +1,3 @@
-# Created by: Rob Zinkov
-
 PORTNAME=	gambit-c
 PORTVERSION=	4.9.4
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Term-ReadLine-Perl
 PORTVERSION=	1.0303
 PORTREVISION=	1

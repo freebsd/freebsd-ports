@@ -1,5 +1,3 @@
-# Created by: autrijus@autrijus.org
-
 PORTNAME=	VCP
 PORTVERSION=	0.9.20050110
 PORTREVISION=	2

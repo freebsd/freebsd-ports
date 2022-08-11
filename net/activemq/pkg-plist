@@ -3,11 +3,8 @@ bin/activemq-diag
 @owner activemq
 @group activemq
 @sample %%ETCDIR%%/activemq.xml.sample
-@sample %%ETCDIR%%/broker-localhost.cert.sample
 @sample %%ETCDIR%%/broker.ks.sample
 @sample %%ETCDIR%%/broker.ts.sample
-@sample %%ETCDIR%%/client.ks.sample
-@sample %%ETCDIR%%/client.ts.sample
 @sample %%ETCDIR%%/credentials-enc.properties.sample
 @sample %%ETCDIR%%/credentials.properties.sample
 @sample %%ETCDIR%%/groups.properties.sample
@@ -16,7 +13,8 @@ bin/activemq-diag
 @sample %%ETCDIR%%/jetty.xml.sample
 @sample %%ETCDIR%%/jmx.access.sample
 @sample %%ETCDIR%%/jmx.password.sample
-@sample %%ETCDIR%%/log4j.properties.sample
+@sample %%ETCDIR%%/jolokia-access.xml.sample
+@sample %%ETCDIR%%/log4j2.properties.sample
 @sample %%ETCDIR%%/logging.properties.sample
 @sample %%ETCDIR%%/login.config.sample
 @sample %%ETCDIR%%/users.properties.sample

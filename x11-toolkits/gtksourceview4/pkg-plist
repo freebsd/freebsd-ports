@@ -133,6 +133,7 @@ share/gir-1.0/GtkSource-4.gir
 %%DATADIR%%-4/language-specs/language.rng
 %%DATADIR%%-4/language-specs/language2.rng
 %%DATADIR%%-4/language-specs/latex.lang
+%%DATADIR%%-4/language-specs/lean.lang
 %%DATADIR%%-4/language-specs/less.lang
 %%DATADIR%%-4/language-specs/lex.lang
 %%DATADIR%%-4/language-specs/libtool.lang
@@ -185,13 +186,16 @@ share/gir-1.0/GtkSource-4.gir
 %%DATADIR%%-4/language-specs/sml.lang
 %%DATADIR%%-4/language-specs/solidity.lang
 %%DATADIR%%-4/language-specs/sparql.lang
+%%DATADIR%%-4/language-specs/spice.lang
 %%DATADIR%%-4/language-specs/sql.lang
+%%DATADIR%%-4/language-specs/star.lang
 %%DATADIR%%-4/language-specs/sweave.lang
 %%DATADIR%%-4/language-specs/swift.lang
 %%DATADIR%%-4/language-specs/systemverilog.lang
 %%DATADIR%%-4/language-specs/t2t.lang
 %%DATADIR%%-4/language-specs/tcl.lang
 %%DATADIR%%-4/language-specs/tera.lang
+%%DATADIR%%-4/language-specs/terraform.lang
 %%DATADIR%%-4/language-specs/texinfo.lang
 %%DATADIR%%-4/language-specs/thrift.lang
 %%DATADIR%%-4/language-specs/toml.lang
@@ -259,6 +263,7 @@ share/locale/hr/LC_MESSAGES/gtksourceview-4.mo
 share/locale/hu/LC_MESSAGES/gtksourceview-4.mo
 share/locale/id/LC_MESSAGES/gtksourceview-4.mo
 share/locale/it/LC_MESSAGES/gtksourceview-4.mo
+share/locale/is/LC_MESSAGES/gtksourceview-4.mo
 share/locale/ja/LC_MESSAGES/gtksourceview-4.mo
 share/locale/kk/LC_MESSAGES/gtksourceview-4.mo
 share/locale/kn/LC_MESSAGES/gtksourceview-4.mo

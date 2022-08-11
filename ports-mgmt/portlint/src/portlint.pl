@@ -49,7 +49,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 11;
+my $micro = 12;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1364,6 +1364,7 @@ sub checkmakefile {
 	my(@mman, @pman);
 	my(@aopt, @mopt, @opt);
 	my($pkg_version, $versiondir, $versionfile) = ('', '', '');
+	my $indexfile = '';
 	my $useindex = 0;
 	my %deprecated = ();
 	my @deplist = ();
@@ -3013,10 +3014,11 @@ DIST_SUBDIR EXTRACT_ONLY
 
 	$versiondir = $ENV{VERSIONDIR} // '/var/db/chkversion';
 
+	$indexfile = "$portsdir/$makevar{INDEXFILE}";
 	$versionfile = "$versiondir/VERSIONS";
 	$useindex = !-r "$versionfile";
 
-	$versionfile = "$portsdir/$makevar{INDEXFILE}"
+	$versionfile = $indexfile
 		if $useindex;
 
 	if (-r "$versionfile") {
@@ -3052,6 +3054,42 @@ DIST_SUBDIR EXTRACT_ONLY
 			}
 		}
 		close VERSIONS;
+	}
+
+	# use INDEX (if present) to check for PKGBASE collisions
+	if (-r "$indexfile") {
+	    open INDEX, "<$portsdir/$makevar{INDEXFILE}";
+	    while (<INDEX>) {
+			my($origin, $pkgbase) = ('', '');
+			chomp;
+			next if /^(#|$)/;
+			($pkgbase, $origin) = split /\|/;
+			$pkgbase =~ s,-[^-]+$,,;
+			$origin =~ s,^.*/([^/]+/[^/]+)/?$,$1,;
+			if ($pkgbase eq $makevar{PKGBASE} and $origin ne $makevar{PKGORIGIN}) {
+		    	&perror("FATAL", $file, -1, "The package base name \"$makevar{PKGBASE}\" is already in use by the \"$origin\" port. ".
+			    	"Choose another PORTNAME or use a PKGNAMEPREFIX or PKGNAMESUFFIX.");
+			}
+	    }
+	    close INDEX;
+	}
+
+	# verify that all flavors have distinct names
+	if ($makevar{FLAVORS}) {
+	    my %PKGFLAVOR;
+	    my @FLAVORS = split(/ /, $makevar{FLAVORS});
+	    my $makeenv_save = $makeenv;
+	    for my $flavor (@FLAVORS) {
+			$makeenv = $makeenv_save . " FLAVOR=$flavor";
+			my $pkgbase = &get_makevar("PKGBASE");
+			if ($PKGFLAVOR{$pkgbase}) {
+		    	&perror("FATAL", $file, -1, "The flavors \"$PKGFLAVOR{$pkgbase}\" and \"$flavor\" both generate a package named \"$pkgbase\". ".
+			    	"Make the package names unique, e.g., with different PKGNAMEPREFIX or PKGNAMESUFFIX values for each flavor.");
+			} else {
+		    	$PKGFLAVOR{$pkgbase} = $flavor;
+			}
+	    }
+	    my $makeenv = $makeenv_save;
 	}
 
 	# if DISTFILES have only single item, it is better to avoid DISTFILES

@@ -1,6 +1,6 @@
 PORTNAME=	kde5
 DISTVERSION=	${KDE_PLASMA_VERSION}.${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	x11 kde # kde-plasma
+CATEGORIES=	x11 kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Plasma Desktop and Applications (current)

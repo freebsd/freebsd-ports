@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Tie-Array-Sorted
 PORTVERSION=	1.41
 CATEGORIES=	devel perl5

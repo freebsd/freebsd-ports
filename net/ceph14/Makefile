@@ -1,9 +1,7 @@
-# Created by: Willem Jan Withagen <wjw@digiware.nl>
-
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
 DISTVERSION=	14.2.22
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 PKGNAMESUFFIX=	14
 

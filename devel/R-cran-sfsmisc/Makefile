@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	sfsmisc
 DISTVERSION=	1.1-13
 CATEGORIES=	devel

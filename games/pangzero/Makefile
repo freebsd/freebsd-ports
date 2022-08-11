@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	pangzero
 PORTVERSION=	1.3
 PORTREVISION=	3

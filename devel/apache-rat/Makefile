@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	apache-rat
 PORTVERSION=	0.13
 CATEGORIES=	devel java

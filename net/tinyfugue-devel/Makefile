@@ -1,5 +1,3 @@
-# $FreeBSD: head/net/tinyfugue/Makefile 525173 2020-02-04 16:17:25Z dinoex $
-
 PORTNAME=	tinyfugue
 PORTVERSION=	5.1.3
 PORTREVISION=	0

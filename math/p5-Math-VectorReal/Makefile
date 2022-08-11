@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Math-VectorReal
 PORTVERSION=	1.02
 PORTREVISION=	1

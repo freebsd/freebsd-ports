@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Metabase-Fact
 PORTVERSION=	0.025
 CATEGORIES=	devel perl5

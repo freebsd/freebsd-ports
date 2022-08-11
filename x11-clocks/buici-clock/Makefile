@@ -1,5 +1,3 @@
-# Created by: Hendrik Scholz <hscholz@raisdorf.net>
-
 PORTNAME=	buici-clock
 PORTVERSION=	0.4.9.4
 PORTREVISION=	1

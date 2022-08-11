@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <kapr@crosswinds.net>
-
 PORTNAME=	HTML-Clean
 PORTVERSION=	1.4
 CATEGORIES=	www perl5

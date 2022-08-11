@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	transifex-client
 PORTVERSION=	0.14.4
 CATEGORIES=	textproc python

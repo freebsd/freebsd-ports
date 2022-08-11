@@ -1,5 +1,5 @@
 PORTNAME=	libslirp
-DISTVERSION=	4.6.1
+DISTVERSION=	4.7.0
 CATEGORIES=	net
 
 MAINTAINER=	makc@FreeBSD.org
@@ -17,6 +17,6 @@ CPE_VENDOR=	libslirp_project
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	slirp
-GL_COMMIT=	cceced0cce9d578ed01db68edf31af78eb66f858
+GL_COMMIT=	3ad1710a96678fe79066b1469cead4058713a1d9
 
 .include <bsd.port.mk>

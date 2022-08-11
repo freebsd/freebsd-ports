@@ -1,5 +1,3 @@
-# Created by: Wen Heping<wen@FreeBSD.org>
-
 PORTNAME=	Astro-App-Satpass2
 PORTVERSION=	0.049
 CATEGORIES=	astro perl5

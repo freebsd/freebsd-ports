@@ -1,5 +1,3 @@
-# Created by: Ryo MIYAMOTO
-
 PORTNAME=	dungeon
 PORTVERSION=	3.2
 PORTREVISION=	1

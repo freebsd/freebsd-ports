@@ -1,5 +1,3 @@
-# Created by: pat
-
 PORTNAME=	wmdiskmon
 PORTVERSION=	0.0.2
 PORTREVISION=	4

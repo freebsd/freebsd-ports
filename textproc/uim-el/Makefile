@@ -1,11 +1,7 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	uim-el
-PORTVERSION=	1.8.9.b.20210104
-PORTREVISION=	3
+PORTVERSION=	1.8.9.b.${SNAPDATE}
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
-#DISTNAME=	uim-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Emacs lisp for uim input method library
@@ -16,14 +12,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	uim-el-agent:textproc/uim
 
-USES=		autoreconf:build emacs gettext gmake gnome iconv libtool pathfix perl5 pkgconfig
+USES=		autoreconf:build,2.69 emacs gettext gmake gnome iconv libtool \
+		pathfix perl5 pkgconfig
 USE_GNOME=	intltool
 USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uim
 GH_PROJECT=	uim
-GH_TAGNAME=	d1ac9d9
+GH_TAGNAME=	6d8fcc8
+
+SNAPDATE=	20220318
 
 GNU_CONFIGURE=	yes
 
@@ -42,7 +41,7 @@ PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
 OPTIONS_DEFINE=	DOCS
 
 pre-configure:
-	cd ${WRKSRC} && ./autogen.sh
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

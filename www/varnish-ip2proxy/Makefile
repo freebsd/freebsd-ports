@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	ip2proxy
 PORTVERSION=	1.2.0
 PORTREVISION=	2

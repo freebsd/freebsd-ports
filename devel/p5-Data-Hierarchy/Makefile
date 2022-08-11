@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	Data-Hierarchy
 PORTVERSION=	0.34
 PORTREVISION=	1

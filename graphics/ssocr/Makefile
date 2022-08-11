@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	ssocr
 PORTVERSION=	2.22.1
 CATEGORIES=	graphics

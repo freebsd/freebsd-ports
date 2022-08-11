@@ -1,5 +1,3 @@
-# Created by: markm
-
 PORTNAME=	dejagnu
 PORTVERSION=	1.6.3
 CATEGORIES=	misc tcl

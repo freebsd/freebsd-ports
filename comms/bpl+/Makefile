@@ -1,5 +1,3 @@
-# Created by: Masafumi NAKANE <max@FreeBSD.org>
-
 PORTNAME=	bpl+
 PORTVERSION=	1.0
 PORTREVISION=	1

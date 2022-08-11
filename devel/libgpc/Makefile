@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin
-
 PORTNAME=	libgpc
 PORTVERSION=	2.32
 CATEGORIES=	devel math graphics

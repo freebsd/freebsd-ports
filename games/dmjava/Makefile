@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <lehmann@ans-netz.de>
-
 PORTNAME=	dmjava
 PORTVERSION=	1.05
 PORTREVISION=	2

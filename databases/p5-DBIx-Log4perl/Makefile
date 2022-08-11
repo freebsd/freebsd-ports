@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	DBIx-Log4perl
 PORTVERSION=	0.26
 PORTREVISION=	1

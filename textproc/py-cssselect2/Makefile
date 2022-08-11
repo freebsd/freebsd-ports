@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cssselect2
 PORTVERSION=	0.6.0
 CATEGORIES=	textproc python

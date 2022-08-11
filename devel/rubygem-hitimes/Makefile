@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	hitimes
 PORTVERSION=	2.0.0
 CATEGORIES=	devel ruby

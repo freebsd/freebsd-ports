@@ -1,5 +1,3 @@
-# Created by: Lukasz Komsta
-
 PORTNAME=	seccure
 PORTVERSION=	0.5
 PORTREVISION=	8

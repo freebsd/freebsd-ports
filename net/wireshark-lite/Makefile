@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@mu.org>
-
 LITE=		yes
 
 CONFLICTS_INSTALL?=	wireshark tshark tshark-lite

@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	Net-Amazon-Thumbnail
 PORTVERSION=	0.06
 PORTREVISION=	3

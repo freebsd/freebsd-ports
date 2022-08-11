@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	javatar
 PORTVERSION=	2.5
 PORTREVISION=	2

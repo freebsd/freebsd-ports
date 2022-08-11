@@ -1,5 +1,3 @@
-# Created by: Oliver Braun <obraun@FreeBSD.org>
-
 PORTNAME=	cvs2darcs
 PORTVERSION=	0.8
 PORTREVISION=	9

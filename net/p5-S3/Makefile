@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	S3
 PORTVERSION=	20071102
 PORTREVISION=	2

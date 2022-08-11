@@ -1,5 +1,3 @@
-# Created by: BluePex Security Solutions <freebsd-ports@bluepex.com>
-
 PORTNAME=	SNMP-Simple
 PORTVERSION=	0.02
 PORTREVISION=	3

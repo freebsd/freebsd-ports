@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libdvbpsi
 PORTVERSION=	1.3.3
 CATEGORIES=	multimedia

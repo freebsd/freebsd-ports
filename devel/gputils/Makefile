@@ -1,5 +1,3 @@
-# Created by: Samuel Tardieu <sam@rfc1149.net>
-
 PORTNAME=	gputils
 DISTVERSION=	1.5.2
 CATEGORIES=	devel

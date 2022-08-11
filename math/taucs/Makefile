@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <giffunip@asme.org>
-
 PORTNAME=	taucs
 PORTVERSION=	2.2
 PORTREVISION=	23

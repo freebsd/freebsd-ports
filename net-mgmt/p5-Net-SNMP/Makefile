@@ -1,5 +1,3 @@
-# Created by: Christopher N. Harrell <cnh@ivmg.net>
-
 PORTNAME=	Net-SNMP
 PORTVERSION=	6.0.1
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Andrea Venturoli <freebsd@netfence.it>
-
 PORTNAME=	Mail-Field-Received
 PORTVERSION=	0.26
 PORTREVISION=	1

@@ -1,7 +1,7 @@
 include/bzrtp/bzrtp.h
 lib/libbzrtp.so
 lib/libbzrtp.so.0
-%%DATADIR%%/cmake/BZRTPConfig.cmake
-%%DATADIR%%/cmake/BZRTPConfigVersion.cmake
-%%DATADIR%%/cmake/BZRTPTargets-%%CMAKE_BUILD_TYPE%%.cmake
-%%DATADIR%%/cmake/BZRTPTargets.cmake
+%%DATADIR%%/cmake/bzrtpConfig.cmake
+%%DATADIR%%/cmake/bzrtpConfigVersion.cmake
+%%DATADIR%%/cmake/bzrtpTargets-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/cmake/bzrtpTargets.cmake

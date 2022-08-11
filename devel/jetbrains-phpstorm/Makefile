@@ -1,7 +1,5 @@
-# Created by: Pedro Giffuni <pfg@FreeBSD.org>
-
 PORTNAME=	phpstorm
-PORTVERSION=	2022.1
+PORTVERSION=	2022.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-
@@ -22,7 +20,7 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 USES=		cpe python:run shebangfix
 
 USE_JAVA=	yes
-JAVA_VERSION=	11+
+JAVA_VERSION=	17+
 
 CPE_VENDOR=	jetbrains
 
@@ -32,7 +30,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 
-WRKSRC=		${WRKDIR}/PhpStorm-221.5080.224
+WRKSRC=		${WRKDIR}/PhpStorm-222.3345.135
 
 do-install:
 # Linux/Windows/OS X only so remove them

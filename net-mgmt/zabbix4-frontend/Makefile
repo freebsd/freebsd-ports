@@ -1,5 +1,3 @@
-# Created by: Pakhom Golynga <pg@pakhom.spb.ru>
-
 PORTNAME=	zabbix4
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-frontend

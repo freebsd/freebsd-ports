@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	duel
 PORTVERSION=	0.98
 PORTREVISION=	11

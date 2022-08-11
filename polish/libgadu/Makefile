@@ -1,5 +1,3 @@
-# Created by: Aleksander Fafula <alex@BSDGuru.org>
-
 PORTNAME=	libgadu
 PORTVERSION=	1.12.2
 PORTREVISION=	1

@@ -412,4 +412,8 @@ share/metainfo/git-dag.appdata.xml
 %%PYTHON_SITELIBDIR%%/cola/widgets/text.py
 %%PYTHON_SITELIBDIR%%/cola/widgets/toolbar.py
 %%PYTHON_SITELIBDIR%%/cola/widgets/toolbarcmds.py
-%%PYTHON_SITELIBDIR%%/git_cola-3.10.1-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/git_cola-3.10.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/git_cola-3.10.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/git_cola-3.10.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/git_cola-3.10.1-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/git_cola-3.10.1-py%%PYTHON_VER%%.egg-info/top_level.txt

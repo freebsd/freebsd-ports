@@ -1,5 +1,5 @@
 PORTNAME=	mxnet
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	Apache MXNet: Ultra-scalable deep learning framework
 LICENSE=	APACHE20
 
 BROKEN_i386=	https://github.com/apache/incubator-mxnet/issues/20832
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core \

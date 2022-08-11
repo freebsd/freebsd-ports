@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Term-ProgressBar-Quiet
 PORTVERSION=	0.31
 PORTREVISION=	2

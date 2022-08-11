@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Finance-Currency-Convert-WebserviceX
 PORTVERSION=	0.07001
 PORTREVISION=	1

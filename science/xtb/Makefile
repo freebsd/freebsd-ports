@@ -1,5 +1,3 @@
-# Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	xtb
 PORTVERSION=	6.4.1
 DISTVERSIONPREFIX=	v
@@ -10,6 +8,10 @@ COMMENT=	Semiempirical Extended Tight-Binding Program Package
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 USES=		fortran cmake blaslapack:openblas
 

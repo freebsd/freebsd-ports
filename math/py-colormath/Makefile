@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	colormath
 PORTVERSION=	3.0.0
 PORTREVISION=	1

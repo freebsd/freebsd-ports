@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Text-FixedLength-Extra
 PORTVERSION=	1.1
 PORTREVISION=	1

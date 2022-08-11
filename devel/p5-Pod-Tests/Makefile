@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Pod-Tests
 PORTVERSION=	1.20
 CATEGORIES=	devel perl5

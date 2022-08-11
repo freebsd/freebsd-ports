@@ -1,5 +1,3 @@
-# Created by: xenophon+fbsdports@irtnog.org
-
 PORTNAME=	yapps2
 PORTVERSION=	2.1.1
 PORTREVISION=	1

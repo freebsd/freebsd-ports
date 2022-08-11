@@ -120,12 +120,14 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Daemonize.3.gz
 %%PERL5_MAN3%%/OpenXPKI::DateTime.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Debug.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Dumper.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Exception.3.gz
 %%PERL5_MAN3%%/OpenXPKI::FileUtils.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Log4perl.3.gz
 %%PERL5_MAN3%%/OpenXPKI::MooseParams.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Password.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Random.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Role::DNSValidation.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Role::IssuerSerial.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Serialization::Fast.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Serialization::JSON.3.gz
@@ -260,6 +262,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Database.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Database::Driver::DB2.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Database::Driver::MariaDB.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Database::Driver::MariaDB2.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Database::Driver::MySQL.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Database::Driver::Oracle.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Database::Driver::PostgreSQL.3.gz
@@ -426,6 +429,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WFHash.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WorkflowCreator.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WorkflowHasState.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Field.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Helpers.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Observer::Debug.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Observer::Log.3.gz
@@ -623,12 +627,14 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Daemonize.pm
 %%SITE_PERL%%/OpenXPKI/DateTime.pm
 %%SITE_PERL%%/OpenXPKI/Debug.pm
+%%SITE_PERL%%/OpenXPKI/Dumper.pm
 %%SITE_PERL%%/OpenXPKI/Exception.pm
 %%SITE_PERL%%/OpenXPKI/FileUtils.pm
 %%SITE_PERL%%/OpenXPKI/Log4perl.pm
 %%SITE_PERL%%/OpenXPKI/MooseParams.pm
 %%SITE_PERL%%/OpenXPKI/Password.pm
 %%SITE_PERL%%/OpenXPKI/Random.pm
+%%SITE_PERL%%/OpenXPKI/Role/DNSValidation.pm
 %%SITE_PERL%%/OpenXPKI/Role/IssuerSerial.pm
 %%SITE_PERL%%/OpenXPKI/Role/SubjectAltNameMaps.pm
 %%SITE_PERL%%/OpenXPKI/Role/SubjectOID.pm
@@ -768,6 +774,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/Database.pm
 %%SITE_PERL%%/OpenXPKI/Server/Database/Driver/DB2.pm
 %%SITE_PERL%%/OpenXPKI/Server/Database/Driver/MariaDB.pm
+%%SITE_PERL%%/OpenXPKI/Server/Database/Driver/MariaDB2.pm
 %%SITE_PERL%%/OpenXPKI/Server/Database/Driver/MySQL.pm
 %%SITE_PERL%%/OpenXPKI/Server/Database/Driver/Oracle.pm
 %%SITE_PERL%%/OpenXPKI/Server/Database/Driver/PostgreSQL.pm
@@ -941,6 +948,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/WFHash.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/WorkflowCreator.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/WorkflowHasState.pm
+%%SITE_PERL%%/OpenXPKI/Server/Workflow/Field.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Helpers.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Observer/AddExecuteHistory.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Observer/Debug.pm

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	flawfinder
 PORTVERSION=	2.0.19
 CATEGORIES=	security devel

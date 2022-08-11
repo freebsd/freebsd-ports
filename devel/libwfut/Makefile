@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann
-
 PORTNAME=	libwfut
 PORTVERSION=	0.2.3
 PORTREVISION=	8

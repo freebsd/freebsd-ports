@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	mjpegtools
 PORTVERSION=	2.1.0
 PORTREVISION=	15

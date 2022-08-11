@@ -1,0 +1,30 @@
+--- ncbi-vdb/interfaces/ext/hdf5/H5Opublic.h.orig	2021-03-15 18:16:43 UTC
++++ ncbi-vdb/interfaces/ext/hdf5/H5Opublic.h
+@@ -150,8 +150,13 @@ H5_DLL hid_t H5Oopen_by_idx(hid_t loc_id, const char *
+     H5_index_t idx_type, H5_iter_order_t order, hsize_t n, hid_t lapl_id);
+ H5_DLL htri_t H5Oexists_by_name(hid_t loc_id, const char *name, hid_t lapl_id);
+ H5_DLL herr_t H5Oget_info(hid_t loc_id, H5O_info_t *oinfo);
++#if H5_VERSION_GE(1,12,0)
++H5_DLL herr_t H5Oget_info_by_name(hid_t loc_id, const char *name, H5O_info_t *oinfo, unsigned fields,
++    hid_t lapl_id);
++#else
+ H5_DLL herr_t H5Oget_info_by_name(hid_t loc_id, const char *name, H5O_info_t *oinfo,
+     hid_t lapl_id);
++#endif
+ H5_DLL herr_t H5Oget_info_by_idx(hid_t loc_id, const char *group_name,
+     H5_index_t idx_type, H5_iter_order_t order, hsize_t n, H5O_info_t *oinfo,
+     hid_t lapl_id);
+--- ncbi-vdb/libs/hdf5/hdf5dir.c.orig	2021-03-15 18:16:43 UTC
++++ ncbi-vdb/libs/hdf5/hdf5dir.c
+@@ -292,7 +292,11 @@ rc_t CC HDF5DirVisitUpdate ( HDF5Dir *self, bool recur
+ static uint32_t HDF5DirPathTypeOnBuffer( const HDF5Dir *self, const char *buffer )
+ {
+     H5O_info_t obj_info;
++#if H5_VERSION_GE(1,12,0)
++    herr_t h5e = H5Oget_info_by_name( self->hdf5_handle, buffer, &obj_info, H5O_INFO_BASIC, H5P_DEFAULT );
++#else
+     herr_t h5e = H5Oget_info_by_name( self->hdf5_handle, buffer, &obj_info, H5P_DEFAULT );
++#endif
+     if ( h5e >= 0 )
+     {
+         switch( obj_info.type )

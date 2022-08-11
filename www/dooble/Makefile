@@ -1,5 +1,5 @@
 PORTNAME=	dooble
-DISTVERSION=	2022.04.04
+DISTVERSION=	2022.06.15
 CATEGORIES=	www
 
 MAINTAINER=	eric@camachat.org
@@ -28,7 +28,7 @@ PLIST_FILES=	${PREFIX}/share/applications/${PORTNAME}.desktop \
 
 QT5_VER_MINOR=	${QT5_VERSION:C/^[0-9]+\.//:C/\..+$//}
 .if ${QT5_VER_MINOR} < 15
-BROKEN=		Qt 5.15 or higher required, using 5.${QT5_VER_MINOR} now
+BROKEN=		Qt 5.15 or higher required, using 5.${QT5_VER_MINOR} now.
 .endif
 
 do-install:

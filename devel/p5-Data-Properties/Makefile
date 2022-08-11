@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	Data-Properties
 PORTVERSION=	1.07
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	xhtml
 PORTVERSION=	1.1.${RECDATE}
 PORTREVISION=	1

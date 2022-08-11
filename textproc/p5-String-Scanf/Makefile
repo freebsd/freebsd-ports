@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	String-Scanf
 PORTVERSION=	2.1
 PORTREVISION=	1

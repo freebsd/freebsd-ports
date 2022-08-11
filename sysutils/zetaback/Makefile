@@ -1,5 +1,3 @@
-# Created by: Cy Schubert <cy@FreeBSD.org>
-
 PORTNAME=	zetaback
 DISTVERSION=	1.0.7
 CATEGORIES=	sysutils

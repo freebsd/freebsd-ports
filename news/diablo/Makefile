@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	diablo
 PORTVERSION=	5.1
 PORTREVISION=	2

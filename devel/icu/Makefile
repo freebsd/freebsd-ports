@@ -1,5 +1,3 @@
-# Created by: dwm
-
 PORTNAME=	icu
 DISTVERSION=	71_1
 PORTREVISION?=	0 # keep for icu-lx

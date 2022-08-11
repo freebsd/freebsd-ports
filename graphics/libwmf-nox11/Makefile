@@ -1,5 +1,3 @@
-# Created by: mm@FreeBSD.org
-
 PKGNAMESUFFIX=	-nox11
 PORTSCOUT=	ignore:1
 

@@ -1,5 +1,3 @@
-# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-
 PORTNAME=	Validate_AU
 PORTVERSION=	0.1.4
 PORTREVISION=	1

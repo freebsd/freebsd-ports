@@ -1,5 +1,5 @@
 PORTNAME=	libg15
-DISTVERSION=	3.0.6
+DISTVERSION=	3.0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.com/menelkir/${PORTNAME}/-/archive/${PORTVERSION}/
 

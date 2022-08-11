@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	MongoDB
 PORTVERSION=	2.2.2
 DISTVERSIONPREFIX=	v

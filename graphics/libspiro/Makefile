@@ -1,5 +1,3 @@
-# Created by: Naram Qashat <cyberbotx@cyberbotx.com>
-
 PORTNAME=	libspiro
 DISTVERSION=	20200505
 PORTEPOCH=	1

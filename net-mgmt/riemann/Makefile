@@ -1,5 +1,3 @@
-# Created by: Dave Cottlehuber <dch@FreeBSD.org>
-
 PORTNAME=	riemann
 DISTVERSION=	0.3.8
 PORTREVISION=	1

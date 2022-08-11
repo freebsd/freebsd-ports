@@ -1,5 +1,3 @@
-# Created by: Tom Hukins <tom@eborcom.com>
-
 # You can define the following to enable further compile time
 # customizations:
 # MAILDROP_SUID=<username>,
@@ -15,7 +13,7 @@
 # MAILDROP_MBOX_DIR=<dir>	Specify DEFAULT mailbox location
 
 PORTNAME=	maildrop
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 

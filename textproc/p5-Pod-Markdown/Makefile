@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Pod-Markdown
 PORTVERSION=	3.300
 CATEGORIES=	textproc devel perl5

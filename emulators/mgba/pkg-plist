@@ -145,8 +145,8 @@ lib/libmgba.so
 lib/libmgba.so.0.9
 lib/libmgba.so.0.9.3
 %%LIBRETRO%%lib/libretro/mgba_libretro.so
-%%QT5%%man/man6/mgba-qt.6.gz
-man/man6/mgba.6.gz
+%%QT5%%share/man/man6/mgba-qt.6.gz
+share/man/man6/mgba.6.gz
 %%QT5%%share/applications/mgba-qt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE

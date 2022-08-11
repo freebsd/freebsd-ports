@@ -1,5 +1,3 @@
-# Created by: renchap@cocoa-x.com
-
 PORTNAME=	wmi-lite
 PORTVERSION=	1.0.5
 CATEGORIES=	devel rubygems

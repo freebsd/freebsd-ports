@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	uget
 PORTVERSION=	2.2.1
 PORTREVISION=	4
@@ -36,7 +34,7 @@ GNUTLS_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libgpg-error.so:security/libgpg-error
 GNUTLS_CONFIGURE_ON=	--with-gnutls=yes
 
-GSTREAMER_USE=	gstreamer1=yes
+GSTREAMER_USES=	gstreamer
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer
 
 NLS_USES=	gettext-runtime

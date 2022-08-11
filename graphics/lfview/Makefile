@@ -1,5 +1,3 @@
-# Created by: Yuu Yashiki
-
 PORTNAME=	lfview
 PORTVERSION=	1.1a
 PORTREVISION=	3

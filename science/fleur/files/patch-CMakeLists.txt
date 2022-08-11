@@ -1,0 +1,13 @@
+- pass external FFLAGS to the build
+
+--- CMakeLists.txt.orig	2022-07-17 04:43:42 UTC
++++ CMakeLists.txt
+@@ -11,7 +11,7 @@ endif()
+ 
+ # sometimes cmake clears CMAKE_Fortran_FLAGS during project()
+ set(CMAKE_Fortran_FLAGS_backup ${CMAKE_Fortran_FLAGS})
+-set(CMAKE_Fortran_FLAGS "")
++#set(CMAKE_Fortran_FLAGS "")
+ project(FLEUR LANGUAGES C CXX Fortran)
+ string(STRIP "${CMAKE_Fortran_FLAGS} ${CMAKE_Fortran_FLAGS_backup}" CMAKE_Fortran_FLAGS)
+ 

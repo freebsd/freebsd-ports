@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	mod_webauth
 PORTVERSION=	4.7.0
 PORTREVISION=	2

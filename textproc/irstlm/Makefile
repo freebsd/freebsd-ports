@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	irstlm
 PORTVERSION=	5.80.03
 PORTREVISION=	4

@@ -1,3 +1,0 @@
-lib/libgda-%%VERSION%%/providers/libgda-bdb.so
-libdata/pkgconfig/libgda-bdb-%%VERSION%%.pc
-share/libgda-%%VERSION%%/bdb_specs_dsn.xml

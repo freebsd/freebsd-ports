@@ -1,5 +1,3 @@
-# Created by: Kuan-Chung Chiu <buganini@gmail.com>
-
 PORTNAME=	mondulkiri
 PORTVERSION=	2
 PORTREVISION=	3

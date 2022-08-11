@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Template-Plugin-Number-Format
 PORTVERSION=	1.06
 CATEGORIES=	www perl5

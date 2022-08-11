@@ -1,5 +1,3 @@
-# Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	clipnotify
 DISTVERSION=	1.0.2
 CATEGORIES=	deskutils

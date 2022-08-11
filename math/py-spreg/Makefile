@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	spreg
 PORTVERSION=	1.2.4
 CATEGORIES=	math python

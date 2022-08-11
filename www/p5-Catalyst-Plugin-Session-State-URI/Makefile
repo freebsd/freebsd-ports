@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Session-State-URI
 PORTVERSION=	0.15
 PORTREVISION=	1

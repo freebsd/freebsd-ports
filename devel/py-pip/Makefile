@@ -1,13 +1,11 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	pip
-PORTVERSION=	20.3.4
+PORTVERSION=	22.2.1
 CATEGORIES=	devel python
-MASTER_SITES=	https://files.pythonhosted.org/packages/f9/d3/955738b20d3832dfa3cd3d9b07e29a8162edb480bf988332f5e6e48ca444/:test_setuptools \
-		https://files.pythonhosted.org/packages/a7/00/3df031b3ecd5444d572141321537080b40c1c25e1caa3d86cdd12e5e919c/:test_wheel
+MASTER_SITES=	https://files.pythonhosted.org/packages/a4/53/bfc6409447ca024558b8b19d055de94c813c3e32c0296c48a0873a161cf5/:test_setuptools \
+		https://files.pythonhosted.org/packages/27/d6/003e593296a85fd6ed616ed962795b2f87709c3eee2bca4f6d0fe55c6d00/:test_wheel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	setuptools-44.0.0-py2.py3-none-any.whl:test_setuptools \
-		wheel-0.35.1-py2.py3-none-any.whl:test_wheel
+DISTFILES=	setuptools-63.2.0-py3-none-any.whl:test_setuptools \
+		wheel-0.37.1-py2.py3-none-any.whl:test_wheel
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -19,19 +17,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # Tests also need bzr, git, otherwise they fail
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}csv23>=0:devel/py-csv23@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>=0:devel/py-freezegun@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}invoke>=0:devel/py-invoke@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pretend>=0:devel/py-pretend@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-rerunfailures>=0:devel/py-pytest-rerunfailures@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=0:devel/py-pytest-timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0:devel/py-pytest-xdist@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scripttest>=0:devel/py-scripttest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tox>=0:devel/py-tox@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tomli-w>=0:textproc/py-tomli-w@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>=0:www/py-werkzeug@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
@@ -39,12 +31,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${
 		git:devel/git \
 		svn:devel/subversion
 
-USES=		cpe python:3.6+ shebangfix
+USES=		cpe python:3.7+ shebangfix
 CPE_VENDOR=	pypa
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 MAKE_ENV=	PYTHONPATH=${WRKSRC}/src/
 NO_ARCH=	yes
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pypa
@@ -54,8 +47,12 @@ SHEBANG_FILES=	src/pip/__init__.py
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>=0:textproc/py-furo@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}sphinx>=2.4.3,1:textproc/py-sphinx@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>=0:textproc/py-sphinx-inline-tabs@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}myst-parser>=0:textproc/py-myst-parser@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx>=4.2,1<5,1:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>=0:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>=0:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-towncrier>=0.2.0a0:textproc/py-sphinxcontrib-towncrier@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}towncrier>=0:textproc/py-towncrier@${PY_FLAVOR}
 DOCS_PORTDOCS=		*
 DOCS_VARS=		PYDISTUTILS_BUILD_TARGET=build_sphinx \
 			PYDISTUTILS_BUILDARGS="-n --all-files --fresh-env"
@@ -65,12 +62,11 @@ post-install-DOCS-on:
 	(cd ${WRKSRC}/build/sphinx/html && \
 	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -name objects.inv")
 
-do-test:
+pre-test:
 	${MKDIR} ${WRKSRC}/tests/data/common_wheels
 	# the tests check for these wheel files, so fetch them and copy them in
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/setuptools-44.0.0-py2.py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/wheel-0.35.1-py2.py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/setuptools-63.2.0-py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/wheel-0.37.1-py2.py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
 	${LN} -sf ${LOCALBASE}/bin/pip ${LOCALBASE}/bin/pip3
-	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
 
 .include <bsd.port.mk>

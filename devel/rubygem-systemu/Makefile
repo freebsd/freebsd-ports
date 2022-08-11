@@ -1,5 +1,3 @@
-# Created by: renchap@cocoa-x.com
-
 PORTNAME=	systemu
 PORTVERSION=	2.6.5
 CATEGORIES=	devel rubygems

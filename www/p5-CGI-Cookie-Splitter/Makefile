@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	CGI-Cookie-Splitter
 PORTVERSION=	0.05
 CATEGORIES=	www perl5

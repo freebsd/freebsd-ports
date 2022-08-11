@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@bluelife.at>
-
 PORTNAME=	isbg
 PORTVERSION=	2.2.1
 CATEGORIES=	mail

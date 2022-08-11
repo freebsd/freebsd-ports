@@ -1,5 +1,3 @@
-# Created by: dawe <daweonline@gmail.com>
-
 PORTNAME=	Statistics-TTest
 PORTVERSION=	1.1.0
 PORTREVISION=	3

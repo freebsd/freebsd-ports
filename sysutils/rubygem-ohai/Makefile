@@ -1,5 +1,3 @@
-# Created by: Renaud Chaput <renchap@cocoa-x.com>
-
 PORTNAME=	ohai
 PORTVERSION=	16.17.0
 CATEGORIES=	sysutils rubygems

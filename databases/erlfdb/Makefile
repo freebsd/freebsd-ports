@@ -8,6 +8,8 @@ COMMENT=	FoundationDB client in Erlang via FDB C bindings
 
 LICENSE=	APACHE20
 
+BROKEN=		does not build: ld: error: unable to find library -lerl_interface
+
 LIB_DEPENDS=	libfdb_c.so:databases/foundationdb
 
 USES=		erlang:rebar

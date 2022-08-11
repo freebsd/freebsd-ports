@@ -1,8 +1,6 @@
-# Created by: Klaus Goger <klaus.goger@reflex.at>
-
 PORTNAME=	SDL
 PORTVERSION=	2.548
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

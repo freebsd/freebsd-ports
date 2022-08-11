@@ -1,5 +1,3 @@
-# Created by: mi@aldan.algebra.com
-
 PORTNAME=	incron
 DISTVERSION=	2017-11-13
 PORTREVISION=	1

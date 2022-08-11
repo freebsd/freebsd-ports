@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	libdivide
 DISTVERSION=	5.0
 CATEGORIES=	math

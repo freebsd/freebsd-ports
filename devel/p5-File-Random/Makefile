@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	File-Random
 PORTVERSION=	0.21
 CATEGORIES=	devel perl5

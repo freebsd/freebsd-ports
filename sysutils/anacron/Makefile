@@ -1,5 +1,3 @@
-# Created by: Derik van Zuetphen <dz@426.ch>
-
 PORTNAME=	anacron
 PORTVERSION=	2.3
 PORTREVISION=	7

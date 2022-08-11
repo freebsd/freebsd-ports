@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	faup
 DISTVERSION=	1.5-48
 PORTREVISION=	1

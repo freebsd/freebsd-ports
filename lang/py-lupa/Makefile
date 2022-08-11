@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	lupa
 PORTVERSION=	1.13
 CATEGORIES=	lang python

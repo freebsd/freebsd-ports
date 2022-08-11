@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	ubench
 PORTVERSION=	0.32
 CATEGORIES=	benchmarks

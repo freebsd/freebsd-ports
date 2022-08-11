@@ -1,5 +1,3 @@
-# Created by: Matthew Luckie <mjl@luckie.org.nz>
-
 PORTNAME=	thunderbird-dictionaries
 PORTVERSION=	20060220
 PORTREVISION=	13

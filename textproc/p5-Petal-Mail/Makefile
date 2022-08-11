@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Petal-Mail
 PORTVERSION=	0.31
 PORTREVISION=	2

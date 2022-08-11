@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	BSD-Process
 PORTVERSION=	0.07
 PORTREVISION=	2

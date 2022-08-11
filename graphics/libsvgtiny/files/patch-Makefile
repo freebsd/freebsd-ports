@@ -1,0 +1,11 @@
+--- Makefile.orig	2022-07-13 11:37:39 UTC
++++ Makefile
+@@ -25,7 +25,7 @@ WARNFLAGS := -Wall -W -Wundef -Wpointer-arith -Wcast-a
+ # BeOS/Haiku/AmigaOS standard library headers create warnings
+ ifneq ($(BUILD),i586-pc-haiku)
+   ifneq ($(findstring amigaos,$(BUILD)),amigaos)
+-    WARNFLAGS := $(WARNFLAGS) -Werror
++    WARNFLAGS := $(WARNFLAGS)
+   endif
+ endif
+ 

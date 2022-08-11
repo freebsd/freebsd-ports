@@ -1,7 +1,7 @@
 PORTNAME=	ipaex
 PORTVERSION=	00401
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	https://ipafont.ipa.go.jp/IPAexfont/
+MASTER_SITES=	https://moji.or.jp/wp-content/ipafont/IPAexfont/
 PKGNAMEPREFIX=	ja-font-
 DISTNAME=	IPAexfont${PORTVERSION}
 

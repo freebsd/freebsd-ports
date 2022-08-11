@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	sharutils
 PORTVERSION=	4.15.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	thegrind
 PORTVERSION=	0.1.2
 PORTREVISION=	6

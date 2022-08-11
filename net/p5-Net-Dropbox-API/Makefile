@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-Dropbox-API
 PORTVERSION=	1.9
 PORTREVISION=	1

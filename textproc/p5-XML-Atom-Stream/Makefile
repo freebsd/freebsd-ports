@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	XML-Atom-Stream
 PORTVERSION=	0.11
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	fcitx5-gtk
 DISTVERSION=	5.0.10
 CATEGORIES=	textproc

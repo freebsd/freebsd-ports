@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-
 PORTNAME=	logtool
 PORTVERSION=	1.3.1
 PORTREVISION=	1

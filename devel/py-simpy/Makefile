@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	simpy
 PORTVERSION=	3.0.13
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Crypt-Dining
 PORTVERSION=	1.01
 PORTREVISION=	1

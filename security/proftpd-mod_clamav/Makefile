@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	mod_clamav
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14rc2

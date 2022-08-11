@@ -1,0 +1,11 @@
+--- ../../src/webrtc/src/modules/video_capture/BUILD.gn.orig	2021-01-28 23:16:17 UTC
++++ ../../src/webrtc/src/modules/video_capture/BUILD.gn
+@@ -53,7 +53,7 @@ if (!build_with_chromium) {
+       "../../system_wrappers",
+     ]
+ 
+-    if (is_linux || is_chromeos) {
++    if ((is_linux || is_chromeos) && !is_bsd) {
+       sources = [
+         "linux/device_info_linux.cc",
+         "linux/device_info_linux.h",

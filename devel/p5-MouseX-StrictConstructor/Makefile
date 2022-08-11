@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MouseX-StrictConstructor
 PORTVERSION=	0.02
 PORTREVISION=	1

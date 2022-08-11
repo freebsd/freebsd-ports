@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Net-Whois-IP
 PORTVERSION=	1.19
 PORTREVISION=	1

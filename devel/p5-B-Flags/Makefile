@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	B-Flags
 PORTVERSION=	0.17
 CATEGORIES=	devel perl5

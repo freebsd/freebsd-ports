@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	meshlab
 DISTVERSIONPREFIX=	Meshlab-
 DISTVERSION=	2020.05
@@ -26,9 +24,7 @@ QMAKE_SOURCE_PATH=	${WRKSRC}/src/meshlab.pro
 
 DOS2UNIX_GLOB=	*.c *.cpp *.h
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
+.if !exists(/usr/include/omp.h)
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++11-lang

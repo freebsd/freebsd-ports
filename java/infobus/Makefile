@@ -1,5 +1,3 @@
-# Created by: Jose Marques
-
 PORTNAME=	infobus
 PORTVERSION=	1.2
 PORTREVISION=	2

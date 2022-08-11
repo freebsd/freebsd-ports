@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Validate-Net
 PORTVERSION=	0.6
 PORTREVISION=	1

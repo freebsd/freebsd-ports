@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_policy_insights
 PORTVERSION=	0.17.8
 CATEGORIES=	devel rubygems

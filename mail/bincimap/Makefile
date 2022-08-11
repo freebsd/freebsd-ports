@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	bincimap
 PORTVERSION=	1.2.13
 PORTREVISION=	3

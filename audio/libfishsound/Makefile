@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	libfishsound
 PORTVERSION=	1.0.0
 PORTREVISION=	4

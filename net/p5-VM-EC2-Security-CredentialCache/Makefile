@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	VM-EC2-Security-CredentialCache
 PORTVERSION=	0.25
 CATEGORIES=	net perl5

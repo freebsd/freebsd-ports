@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	fasta
 PORTVERSION=	21.1.1
 CATEGORIES=	biology

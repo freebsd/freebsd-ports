@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	IPC-Run3
 PORTVERSION=	0.048
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	reshape2
 PORTVERSION=	1.4.4
 PORTREVISION=	1

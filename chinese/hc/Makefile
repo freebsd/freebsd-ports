@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@FreeBSD.org)
-
 PORTNAME=	hc
 PORTVERSION=	3.0
 CATEGORIES=	chinese

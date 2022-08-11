@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	String-CRC32
 PORTVERSION=	2.100
 CATEGORIES=	devel perl5

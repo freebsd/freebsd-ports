@@ -1,12 +1,10 @@
-# Created by: Michael L. Hostbaek <mich@freebsdcluster.org>
-
 PORTNAME=	newspost
 PORTVERSION=	2.1.1
 PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://newspost.unixcab.org/download/
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured Usenet binary autoposter
 
 LICENSE=	GPLv2

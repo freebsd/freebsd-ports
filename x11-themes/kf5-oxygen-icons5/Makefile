@@ -13,9 +13,7 @@ USE_KDE=	ecm_build  # We only install icons.
 # We explicitly prevent it from looking for qt5-core and specify qmake's path
 # to avoid needlessly depending on qt5-core; we're just installing a ton of
 # icon files and do not even use the paths queried from qmake.
-USE_QT=		qmake_build
-CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Core=TRUE \
-		-DQMAKE_EXECUTABLE:PATH=${QMAKE}
+USE_QT=		buildtools_build qmake_build
 
 NO_ARCH=	yes
 

@@ -1,11 +1,11 @@
---- powerpc64/p8/aes-decrypt-internal.asm.orig	2021-06-06 20:06:30 UTC
+--- powerpc64/p8/aes-decrypt-internal.asm.orig	2022-06-02 17:57:16 UTC
 +++ powerpc64/p8/aes-decrypt-internal.asm
 @@ -71,7 +71,7 @@ define(`FUNC_ALIGN', `5')
  PROLOGUE(_nettle_aes_decrypt)
   vxor ZERO,ZERO,ZERO
  
-- DATA_LOAD_VEC(swap_mask,.swap_mask,r5)
-+ DATA_LOAD_VEC(swap_mask,.swap_data,r5)
+- DATA_LOAD_VEC(SWAP_MASK,.swap_mask,r5)
++ DATA_LOAD_VEC(SWAP_MASK,.swap_data,r5)
  
   subi ROUNDS,ROUNDS,1
   srdi LENGTH,LENGTH,4

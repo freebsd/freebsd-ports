@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis (edwin@mavetju.org)
-
 PORTNAME=	postgresql-relay
 PORTVERSION=	1.3.2
 PORTREVISION=	1

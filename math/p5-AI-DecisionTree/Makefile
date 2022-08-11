@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	AI-DecisionTree
 PORTVERSION=	0.11
 PORTREVISION=	1

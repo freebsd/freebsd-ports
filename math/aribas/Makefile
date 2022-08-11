@@ -1,5 +1,3 @@
-# Created by: Lars Engels <lme@FreeBSD.org>
-
 PORTNAME=	aribas
 PORTVERSION=	1.64
 CATEGORIES=	math

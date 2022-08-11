@@ -1,5 +1,3 @@
-# Created by: Brett Taylor <brett@peloton.physics.montana.edu>
-
 PORTNAME=	splaytk
 PORTVERSION=	2.0
 PORTREVISION=	2

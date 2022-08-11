@@ -1,5 +1,3 @@
-# Created by: Albert Vernon <f3cun3c02@sneakemail.com>
-
 PORTNAME=	plzip
 PORTVERSION=	1.10
 CATEGORIES=	archivers

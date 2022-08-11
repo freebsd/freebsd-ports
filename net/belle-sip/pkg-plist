@@ -14,8 +14,10 @@ include/belle-sip/list.h
 include/belle-sip/listener.h
 include/belle-sip/listeningpoint.h
 include/belle-sip/mainloop.h
+include/belle-sip/mdns_register.h
 include/belle-sip/message.h
 include/belle-sip/object.h
+include/belle-sip/object++.hh
 include/belle-sip/parameters.h
 include/belle-sip/provider.h
 include/belle-sip/refresher.h
@@ -27,9 +29,10 @@ include/belle-sip/types.h
 include/belle-sip/utils.h
 include/belle-sip/wakelock.h
 lib/libbellesip.so
-lib/libbellesip.so.0
+lib/libbellesip.so.1
 libdata/pkgconfig/belle-sip.pc
-share/BelleSIP/cmake/BelleSIPConfig.cmake
-share/BelleSIP/cmake/BelleSIPConfigVersion.cmake
-share/BelleSIP/cmake/BelleSIPTargets-%%CMAKE_BUILD_TYPE%%.cmake
-share/BelleSIP/cmake/BelleSIPTargets.cmake
+lib/cmake/BelleSIP/BelleSIPConfig.cmake
+lib/cmake/BelleSIP/BelleSIPConfigVersion.cmake
+lib/cmake/BelleSIP/BelleSIPTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/BelleSIP/BelleSIPTargets.cmake
+share/belr/grammars/sdp_grammar

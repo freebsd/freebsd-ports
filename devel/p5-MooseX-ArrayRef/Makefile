@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	MooseX-ArrayRef
 PORTVERSION=	0.005
 CATEGORIES=	devel perl5

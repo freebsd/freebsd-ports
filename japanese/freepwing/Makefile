@@ -1,5 +1,3 @@
-# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-
 PORTNAME=	freepwing
 PORTVERSION=	1.4.4
 PORTREVISION=	2

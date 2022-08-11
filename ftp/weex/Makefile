@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	weex
 PORTVERSION=	2.8.4.1
 CATEGORIES=	ftp

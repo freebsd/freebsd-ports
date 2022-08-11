@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	timemachine
 PORTVERSION=	0.3.3
 PORTREVISION=	7

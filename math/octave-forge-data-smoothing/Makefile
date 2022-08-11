@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-data-smoothing
 PORTVERSION=	1.3.0
 PORTREVISION=	21

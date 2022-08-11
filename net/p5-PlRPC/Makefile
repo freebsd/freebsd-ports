@@ -1,5 +1,3 @@
-# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-
 PORTNAME=	PlRPC
 PORTVERSION=	0.2020
 PORTREVISION=	2

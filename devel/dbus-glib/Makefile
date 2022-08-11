@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	dbus-glib
 PORTVERSION=	0.112
 CATEGORIES=	devel gnome

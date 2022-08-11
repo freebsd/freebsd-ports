@@ -1,5 +1,3 @@
-# Created by: Jeremy Norris <ishmael27@home.com>
-
 PORTNAME=	ferite
 PORTVERSION=	1.0.2
 PORTREVISION=	9

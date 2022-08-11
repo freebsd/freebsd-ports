@@ -1,5 +1,3 @@
-# Created by: Alexander Kriventsov
-
 PORTNAME=	repos-style
 PORTVERSION=	2.0
 PORTREVISION=	2

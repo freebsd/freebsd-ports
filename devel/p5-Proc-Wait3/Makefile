@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Proc-Wait3
 PORTVERSION=	0.05
 PORTREVISION=	1

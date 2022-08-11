@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	dseg
 PORTVERSION=	0.46
 DISTVERSIONPREFIX=	v

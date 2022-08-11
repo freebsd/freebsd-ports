@@ -1,5 +1,3 @@
-# Created by: Oleg Mamontov <oleg@mamontov.net>
-
 PORTNAME=	Catalyst-Authentication-Store-DBIx-Class
 PORTVERSION=	0.1506
 PORTREVISION=	1

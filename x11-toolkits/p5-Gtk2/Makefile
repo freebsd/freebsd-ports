@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Gtk2
 PORTVERSION=	1.24993
 PORTREVISION=	1

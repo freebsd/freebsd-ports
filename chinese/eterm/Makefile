@@ -1,5 +1,3 @@
-# Created by: Michael C. Wu
-
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../x11/eterm

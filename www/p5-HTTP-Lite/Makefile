@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	HTTP-Lite
 PORTVERSION=	2.44
 CATEGORIES=	www perl5

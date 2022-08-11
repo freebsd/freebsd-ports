@@ -15,6 +15,7 @@
     SUBDIR += brlcad
     SUBDIR += calculix
     SUBDIR += calculix-ccx
+    SUBDIR += camotics
     SUBDIR += caneda
     SUBDIR += cascade
     SUBDIR += cascade-compiler
@@ -74,6 +75,7 @@
     SUBDIR += librecad
     SUBDIR += libredwg
     SUBDIR += librepcb
+    SUBDIR += librnd
     SUBDIR += linux-eagle5
     SUBDIR += logisim
     SUBDIR += magic
@@ -97,6 +99,7 @@
     SUBDIR += p5-Verilog-Perl
     SUBDIR += padring
     SUBDIR += pcb
+    SUBDIR += pcb-rnd
     SUBDIR += pdnmesh
     SUBDIR += py-cadquery
     SUBDIR += py-cq-editor
@@ -114,6 +117,8 @@
     SUBDIR += qflow
     SUBDIR += qmls
     SUBDIR += qrouter
+    SUBDIR += qucs-s
+    SUBDIR += qucsator
     SUBDIR += repsnapper
     SUBDIR += rubygem-gdsii
     SUBDIR += scotch
@@ -133,6 +138,7 @@
     SUBDIR += verilog-mode.el
     SUBDIR += veroroute
     SUBDIR += xcircuit
+    SUBDIR += xyce
     SUBDIR += yosys
     SUBDIR += z88
     SUBDIR += zcad

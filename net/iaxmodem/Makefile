@@ -1,5 +1,3 @@
-# Created by: Filippo Natali <filippo.natali@gmail.com>
-
 PORTNAME=	iaxmodem
 PORTVERSION=	1.2.0
 PORTREVISION=	10

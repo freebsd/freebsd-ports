@@ -1,5 +1,3 @@
-# Created by: sahne
-
 PORTNAME=	lxde-common
 PORTVERSION=	0.99.2
 PORTREVISION=	1

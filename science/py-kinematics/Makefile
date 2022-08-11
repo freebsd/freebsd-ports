@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	kinematics
 PORTVERSION=	0.1.7
 CATEGORIES=	science python

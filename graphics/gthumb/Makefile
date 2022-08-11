@@ -1,15 +1,11 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-#   $MCom: ports/trunk/graphics/gthumb/Makefile 19823 2014-08-20 09:28:14Z gusi $
-
 PORTNAME=	gthumb
-PORTVERSION=	3.10.1
-PORTREVISION=	3
+PORTVERSION=	3.12.2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Image viewer and browser for the GNOME 3 environment
+COMMENT=	Image viewer and browser for the GNOME environment
 
 LICENSE=	GPLv2+
 
@@ -83,7 +79,7 @@ CLUTTER_LIB_DEPENDS=	libclutter-gtk-1.0.so:graphics/clutter-gtk3
 CLUTTER_MESON_TRUE=	clutter
 EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_MESON_TRUE=	exiv2
-GSTREAMER_USE=		gstreamer1=yes
+GSTREAMER_USES=		gstreamer
 GSTREAMER_MESON_TRUE=	gstreamer
 RAW_DESC=		Raw image support via libraw
 RAW_LIB_DEPENDS=	libraw.so:graphics/libraw

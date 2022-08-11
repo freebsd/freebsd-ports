@@ -1,5 +1,3 @@
-# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-
 PORTNAME=	csrd
 PORTVERSION=	1.0
 PORTREVISION=	1

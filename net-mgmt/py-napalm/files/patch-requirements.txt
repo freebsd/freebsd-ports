@@ -1,0 +1,13 @@
+Relax requirements for newer versions of TextFSM.
+
+--- requirements.txt.orig	2022-07-22 03:43:11 UTC
++++ requirements.txt
+@@ -3,7 +3,7 @@ future
+ paramiko>=2.6.0
+ requests>=2.7.0
+ future
+-textfsm<=1.1.2
++textfsm>=1.1.2
+ jinja2
+ netaddr
+ pyYAML

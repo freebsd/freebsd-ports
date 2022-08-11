@@ -85,7 +85,6 @@ lib/libspamc.so.0
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/DNSEval.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/DecodeShortURLs.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/DMARC.pm
-%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Esp.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/ExtractText.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/FreeMail.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/FromNameSpoof.pm
@@ -191,7 +190,6 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DNSEval.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DecodeShortURLs.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DMARC.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Esp.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::ExtractText.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::FreeMail.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::FromNameSpoof.3.gz

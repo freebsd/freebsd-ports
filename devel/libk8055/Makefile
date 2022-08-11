@@ -1,5 +1,3 @@
-# Created by: Jake Smith <jake@xz.cx>
-
 PORTNAME=	libk8055
 PORTVERSION=	0.2
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Plugin-Authentication
 PORTVERSION=	0.23
 CATEGORIES=	www perl5

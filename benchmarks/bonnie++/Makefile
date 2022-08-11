@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	bonnie++
 PORTVERSION=	1.98
 CATEGORIES=	benchmarks

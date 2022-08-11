@@ -1,5 +1,3 @@
-# Created by: Rouslan Iskhakov <rouslan@rshell.net>
-
 PORTNAME=	Pipeline
 PORTVERSION=	3.12
 PORTREVISION=	2

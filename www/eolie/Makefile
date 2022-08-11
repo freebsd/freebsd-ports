@@ -1,5 +1,3 @@
-# Created by: Rozhuk Ivan 2019 <rozhuk.im@gmail.com>
-
 PORTNAME=	eolie
 PORTVERSION=	0.9.101
 CATEGORIES=	www gnome

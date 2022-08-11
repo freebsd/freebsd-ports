@@ -1,9 +1,7 @@
-# Created by: Simon Olofsson <simon@olofsson.de>
-
 PORTNAME=	hub
 PORTVERSION=	2.14.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org

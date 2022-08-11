@@ -1,5 +1,3 @@
-# Created by: NAKATA Maho <maho@FreeBSD.org>
-
 PORTNAME=	epm
 PORTVERSION=	4.5.1
 CATEGORIES=	devel

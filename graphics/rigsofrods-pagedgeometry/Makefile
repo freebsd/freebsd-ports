@@ -1,5 +1,3 @@
-# Created by: Thibault Payet <monwarez@mailoo.org>
-
 PORTNAME=	rigsofrods-pagedgeometry
 PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v

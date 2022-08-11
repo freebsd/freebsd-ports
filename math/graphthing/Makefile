@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	graphthing
 PORTVERSION=	1.3.2
 PORTREVISION=	13

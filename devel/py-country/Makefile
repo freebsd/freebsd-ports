@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	country
 DISTVERSION=	22.3.5
 CATEGORIES=	devel python

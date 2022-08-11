@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Cache-Memcached
 PORTVERSION=	0.8
 PORTREVISION=	2

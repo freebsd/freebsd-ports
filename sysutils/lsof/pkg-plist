@@ -6,16 +6,14 @@ sbin/lsof
 @group wheel
 %%DATADIR%%/00MANIFEST
 %%DATADIR%%/00README
-%%DATADIR%%/big_brother.perl5
-%%DATADIR%%/count_pf.perl
-%%DATADIR%%/count_pf.perl5
-%%DATADIR%%/identd.perl5
-%%DATADIR%%/idrlogin.perl
-%%DATADIR%%/idrlogin.perl5
-%%DATADIR%%/list_NULf.perl5
+%%DATADIR%%/big_brother.pl
+%%DATADIR%%/count_pf.pl
+%%DATADIR%%/identd.pl
+%%DATADIR%%/idrlogin.pl
+%%DATADIR%%/list_NULf.pl
 %%DATADIR%%/list_fields.awk
-%%DATADIR%%/list_fields.perl
-%%DATADIR%%/shared.perl5
-%%DATADIR%%/sort_res.perl5
-%%DATADIR%%/watch_a_file.perl
+%%DATADIR%%/list_fields.pl
+%%DATADIR%%/shared.pl
+%%DATADIR%%/sort_res.pl
+%%DATADIR%%/watch_a_file.pl
 %%DATADIR%%/xusers.awk

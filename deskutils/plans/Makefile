@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	plans
 PORTVERSION=	8.2.1
 PORTREVISION=	3

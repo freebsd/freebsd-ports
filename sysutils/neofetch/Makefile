@@ -1,7 +1,6 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	neofetch
 DISTVERSION=	7.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org

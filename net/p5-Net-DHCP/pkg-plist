@@ -1,4 +1,12 @@
+%%SITE_PERL%%/Net/DHCP.pm
 %%SITE_PERL%%/Net/DHCP/Constants.pm
 %%SITE_PERL%%/Net/DHCP/Packet.pm
+%%SITE_PERL%%/Net/DHCP/Packet/Attributes.pm
+%%SITE_PERL%%/Net/DHCP/Packet/IPv4Utils.pm
+%%SITE_PERL%%/Net/DHCP/Packet/OrderOptions.pm
+%%PERL5_MAN3%%/Net::DHCP.3.gz
 %%PERL5_MAN3%%/Net::DHCP::Constants.3.gz
 %%PERL5_MAN3%%/Net::DHCP::Packet.3.gz
+%%PERL5_MAN3%%/Net::DHCP::Packet::Attributes.3.gz
+%%PERL5_MAN3%%/Net::DHCP::Packet::IPv4Utils.3.gz
+%%PERL5_MAN3%%/Net::DHCP::Packet::OrderOptions.3.gz

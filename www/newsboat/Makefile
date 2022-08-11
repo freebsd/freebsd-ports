@@ -1,7 +1,6 @@
-# Created by: arved
-
 PORTNAME=	newsboat
 DISTVERSION=	2.27
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://newsboat.org/releases/${DISTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

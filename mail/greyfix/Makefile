@@ -1,5 +1,3 @@
-# Created by: Keith Gaughan <k@stereochro.me>
-
 PORTNAME=	greyfix
 PORTVERSION=	0.4.0
 PORTREVISION=	1

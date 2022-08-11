@@ -1,5 +1,3 @@
-# Created by: bms@FreeBSD.org
-
 PORTNAME=		calibrator
 PORTVERSION=		0.9
 CATEGORIES=		devel

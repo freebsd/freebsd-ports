@@ -1,5 +1,3 @@
-# Created by: Ryan T. Dean <rtdean@cytherianage.net>
-
 PORTNAME=	jrrd
 PORTVERSION=	1.1.4
 CATEGORIES=	databases java

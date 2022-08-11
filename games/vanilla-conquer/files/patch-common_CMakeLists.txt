@@ -1,0 +1,15 @@
+--- common/CMakeLists.txt.orig	2022-08-04 11:21:27 UTC
++++ common/CMakeLists.txt
+@@ -164,11 +164,9 @@ add_library(common STATIC ${COMMON_SRC} ${COMMON_HEADE
+ file(GLOB_RECURSE COMMON_HEADERS "*.h")
+ 
+ add_library(common STATIC ${COMMON_SRC} ${COMMON_HEADERS})
+-target_link_libraries(common PUBLIC ${COMMON_LIBS})
++target_link_libraries(common PUBLIC ${COMMON_LIBS} compat)
+ target_include_directories(common PUBLIC .)
+ target_compile_definitions(common PRIVATE FIXIT_FAST_LOAD $<$<CONFIG:Debug>:_DEBUG>)
+-# Make build check state of git to check for uncommitted changes.
+-add_dependencies(common check_git)
+ 
+ if(BUILD_REMASTERTD OR BUILD_REMASTERRA)
+     add_library(commonr STATIC ${COMMONR_SRC})

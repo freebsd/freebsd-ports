@@ -1,5 +1,3 @@
-# Created by: pat@databits.net
-
 PORTNAME=	quake3
 PORTVERSION=	1.32c
 CATEGORIES=	games linux

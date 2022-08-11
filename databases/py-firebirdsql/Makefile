@@ -1,5 +1,3 @@
-# Created by: Jose Jachuf <jjachuf@gmail.com>
-
 PORTNAME=	firebirdsql
 DISTVERSION=	1.1.4
 CATEGORIES=	databases python

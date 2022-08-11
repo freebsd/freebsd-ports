@@ -1,0 +1,32 @@
+Reference: https://docs.myhdl.org/en/stable/manual/reference.html#myhdl.ResetSignal
+
+--- pyfda/hdl_generation/filter_iir.py.orig	2017-01-10 06:40:25 UTC
++++ pyfda/hdl_generation/filter_iir.py
+@@ -3,9 +3,6 @@
+ # Copyright (c) 2011, 2015 Christopher L. Felton
+ #
+ 
+-from __future__ import absolute_import
+-from __future__ import print_function
+-from __future__ import division
+ 
+ """
+ IIR Hadward Filter Generation
+@@ -243,7 +240,7 @@ class FilterIIR(object):
+             return iir
+ 
+         clock = Signal(False)
+-        reset = ResetSignal(0, active=1, async=False)
++        reset = ResetSignal(0, active=1, isasync=False)
+         x = Signal(intbv(0, min=-imax, max=imax))
+         y = Signal(intbv(0, min=-imax, max=imax))
+         xdv, ydv = Signal(bool(0)), Signal(bool(0))
+@@ -268,7 +265,7 @@ class FilterIIR(object):
+         self.Nfft = Nfft
+         w = self.word_format[0]
+         clock = Signal(bool(0))
+-        reset = ResetSignal(0, active=1, async=False)
++        reset = ResetSignal(0, active=1, isasync=False)
+         sigin = FilterInterface(word_format=self.word_format)
+         sigout = FilterInterface(word_format=self.word_format)
+         xf = Signal(0.0)    # floating point version

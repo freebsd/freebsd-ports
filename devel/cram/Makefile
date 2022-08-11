@@ -1,5 +1,3 @@
-# Created by: Conrad Meyer <cem@FreeBSD.org>
-
 PORTNAME=	cram
 PORTVERSION=	0.7
 CATEGORIES=	devel python

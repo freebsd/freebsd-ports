@@ -1,5 +1,3 @@
-# Created by: Piero Serini <piero@FreeBSD.org>
-
 PORTNAME=	xearth
 PORTVERSION=	1.2
 CATEGORIES=	astro geography

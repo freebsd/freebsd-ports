@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Data-Lazy
 PORTVERSION=	0.6
 PORTREVISION=	1

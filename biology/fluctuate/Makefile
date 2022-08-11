@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <wjv@FreeBSD.org>
-
 PORTNAME=	fluctuate
 PORTVERSION=	1.40
 CATEGORIES=	biology

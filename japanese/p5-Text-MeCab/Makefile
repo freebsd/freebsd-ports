@@ -1,5 +1,3 @@
-# Created by: TAOKA Fumiyoshi <fmysh@iijmio-mail.jp>
-
 PORTNAME=	Text-MeCab
 PORTVERSION=	0.20009
 PORTREVISION=	3

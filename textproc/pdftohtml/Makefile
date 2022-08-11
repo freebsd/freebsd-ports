@@ -1,5 +1,3 @@
-# Created by: Soeren Boll Overgaard <boll@tolkien.dk>
-
 PORTNAME=	pdftohtml
 PORTVERSION=	0.40a
 PORTREVISION=	2

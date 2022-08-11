@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	ck4up
 PORTVERSION=	1.4
 PORTREVISION=	1

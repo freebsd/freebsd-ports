@@ -1,6 +1,6 @@
 PORTNAME=	xdg-desktop-portal
 PORTVERSION=	1.10.1
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils wayland
 
 PATCH_SITES=	https://arrowd.name/:freebsd_compat
 PATCHFILES=	552.patch:-p1:freebsd_compat

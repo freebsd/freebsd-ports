@@ -1,12 +1,10 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	django-pipeline
 PORTVERSION=	1.6.14
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Asset (css/js) packaging library for Django
 
 LICENSE=	MIT

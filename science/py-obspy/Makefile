@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	obspy
 PORTVERSION=	1.3.0
 CATEGORIES=	science python

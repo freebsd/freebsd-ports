@@ -1,5 +1,3 @@
-# Created by: Anes Muhametov <anes@anes.su>
-
 PORTNAME=	Declare-Constraints-Simple
 PORTVERSION=	0.03
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Perl-OSType
 PORTVERSION=	1.010
 CATEGORIES=	devel perl5

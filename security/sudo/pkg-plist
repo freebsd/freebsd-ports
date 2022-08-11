@@ -22,13 +22,13 @@ man/man1/cvtsudoers.1.gz
 man/man5/sudo.conf.5.gz
 man/man5/sudo_logsrv.proto.5.gz
 man/man5/sudo_logsrvd.conf.5.gz
+man/man5/sudo_plugin.5.gz
+%%PYTHON%%man/man5/sudo_plugin_python.5.gz
 man/man5/sudoers.5.gz
 man/man5/sudoers_timestamp.5.gz
 %%LDAP%%man/man5/sudoers.ldap.5.gz
 man/man8/sudo.8.gz
 man/man8/sudo_logsrvd.8.gz
-man/man8/sudo_plugin.8.gz
-%%PYTHON%%man/man8/sudo_plugin_python.8.gz
 man/man8/sudo_sendlog.8.gz
 man/man8/sudoedit.8.gz
 man/man8/sudoreplay.8.gz
@@ -97,6 +97,7 @@ sbin/sudo_sendlog
 %%NLS%%share/locale/it/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/sudoers.mo

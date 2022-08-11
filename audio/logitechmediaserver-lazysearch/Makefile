@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tdb@FreeBSD.org>
-
 PORTNAME=	lazysearch
 PORTVERSION=	3.6.5
 CATEGORIES=	audio

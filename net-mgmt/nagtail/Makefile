@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <rpsfa@rit.edu>
-
 PORTNAME=	nagtail
 PORTVERSION=	0.0.31
 CATEGORIES=	net-mgmt

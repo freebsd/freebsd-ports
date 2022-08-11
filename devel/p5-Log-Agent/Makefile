@@ -1,5 +1,3 @@
-# Created by: Jesse McConnell <jesse@gallup.com>
-
 PORTNAME=	Log-Agent
 PORTVERSION=	1.005
 CATEGORIES=	devel perl5

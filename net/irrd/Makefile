@@ -1,7 +1,5 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	irrd
-PORTVERSION=	4.2.4
+PORTVERSION=	4.2.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

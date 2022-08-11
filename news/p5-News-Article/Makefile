@@ -1,5 +1,3 @@
-# Created by: Don Croyle <croyle@gelemna.org>
-
 PORTNAME=	News-Article
 PORTVERSION=	1.27
 PORTREVISION=	4

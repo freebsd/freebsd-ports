@@ -1,5 +1,3 @@
-# Created by: Otacilio de Araujo Ramos Neto <otacilio.neto@bsd.com.br>
-
 PORTNAME=	flexdock
 PORTVERSION=	1.2.4
 CATEGORIES=	devel java
@@ -15,6 +13,7 @@ USE_ANT=	yes
 USE_JAVA=	yes
 
 ALL_TARGET=	dist
+NO_ARCH=	yes
 
 PLIST_FILES=	${JAVAJARDIR}/flexdock.jar
 PORTDOCS=	*

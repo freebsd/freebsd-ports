@@ -507,6 +507,8 @@ libdata/pkgconfig/OktetaCore.pc
 libdata/pkgconfig/OktetaGui.pc
 share/applications/org.kde.okteta.desktop
 share/config.kcfg/structureviewpreferences.kcfg
+share/doc/HTML/ca/okteta/index.cache.bz2
+share/doc/HTML/ca/okteta/index.docbook
 share/doc/HTML/de/okteta/index.cache.bz2
 share/doc/HTML/de/okteta/index.docbook
 share/doc/HTML/en/okteta/index.cache.bz2

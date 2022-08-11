@@ -18,6 +18,7 @@
 %%MANPAGES%%man/man1/gh-codespace-create.1.gz
 %%MANPAGES%%man/man1/gh-codespace-delete.1.gz
 %%MANPAGES%%man/man1/gh-codespace-edit.1.gz
+%%MANPAGES%%man/man1/gh-codespace-jupyter.1.gz
 %%MANPAGES%%man/man1/gh-codespace-list.1.gz
 %%MANPAGES%%man/man1/gh-codespace-logs.1.gz
 %%MANPAGES%%man/man1/gh-codespace-ports-forward.1.gz
@@ -32,6 +33,7 @@
 %%MANPAGES%%man/man1/gh-config-set.1.gz
 %%MANPAGES%%man/man1/gh-config.1.gz
 %%MANPAGES%%man/man1/gh-extension-create.1.gz
+%%MANPAGES%%man/man1/gh-extension-exec.1.gz
 %%MANPAGES%%man/man1/gh-extension-install.1.gz
 %%MANPAGES%%man/man1/gh-extension-list.1.gz
 %%MANPAGES%%man/man1/gh-extension-remove.1.gz
@@ -58,7 +60,10 @@
 %%MANPAGES%%man/man1/gh-issue-transfer.1.gz
 %%MANPAGES%%man/man1/gh-issue-view.1.gz
 %%MANPAGES%%man/man1/gh-issue.1.gz
+%%MANPAGES%%man/man1/gh-label-clone.1.gz
 %%MANPAGES%%man/man1/gh-label-create.1.gz
+%%MANPAGES%%man/man1/gh-label-delete.1.gz
+%%MANPAGES%%man/man1/gh-label-edit.1.gz
 %%MANPAGES%%man/man1/gh-label-list.1.gz
 %%MANPAGES%%man/man1/gh-label.1.gz
 %%MANPAGES%%man/man1/gh-pr-checkout.1.gz
@@ -80,6 +85,7 @@
 %%MANPAGES%%man/man1/gh-release-delete-asset.1.gz
 %%MANPAGES%%man/man1/gh-release-delete.1.gz
 %%MANPAGES%%man/man1/gh-release-download.1.gz
+%%MANPAGES%%man/man1/gh-release-edit.1.gz
 %%MANPAGES%%man/man1/gh-release-list.1.gz
 %%MANPAGES%%man/man1/gh-release-upload.1.gz
 %%MANPAGES%%man/man1/gh-release-view.1.gz
@@ -110,8 +116,8 @@
 %%MANPAGES%%man/man1/gh-search-prs.1.gz
 %%MANPAGES%%man/man1/gh-search-repos.1.gz
 %%MANPAGES%%man/man1/gh-search.1.gz
+%%MANPAGES%%man/man1/gh-secret-delete.1.gz
 %%MANPAGES%%man/man1/gh-secret-list.1.gz
-%%MANPAGES%%man/man1/gh-secret-remove.1.gz
 %%MANPAGES%%man/man1/gh-secret-set.1.gz
 %%MANPAGES%%man/man1/gh-secret.1.gz
 %%MANPAGES%%man/man1/gh-ssh-key-add.1.gz

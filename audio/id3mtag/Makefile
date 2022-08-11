@@ -1,5 +1,3 @@
-# Created by: squell@alumina.nl
-
 PORTNAME=	id3mtag
 PORTVERSION=	0.80
 CATEGORIES=	audio

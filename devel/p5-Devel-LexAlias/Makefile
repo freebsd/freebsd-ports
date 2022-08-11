@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Chen
-
 PORTNAME=	Devel-LexAlias
 PORTVERSION=	0.05
 PORTREVISION=	2

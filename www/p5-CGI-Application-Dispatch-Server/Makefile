@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Dispatch-Server
 PORTVERSION=	0.53
 PORTREVISION=	1

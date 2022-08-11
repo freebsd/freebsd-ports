@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-jquery.tablesorter
 PORTVERSION=	2.14.5.2
 CATEGORIES=	devel python

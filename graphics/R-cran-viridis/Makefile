@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	viridis
 PORTVERSION=	0.6.2
 CATEGORIES=	graphics

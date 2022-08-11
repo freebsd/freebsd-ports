@@ -1,5 +1,3 @@
-# Created by: Sir l33tname <sirl33tname@gmail.com>
-
 PORTNAME=	libevent
 PORTVERSION=	0.4.6
 DISTVERSIONPREFIX=v

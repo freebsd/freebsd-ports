@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	String-CamelCase
 PORTVERSION=	0.04
 CATEGORIES=	textproc perl5

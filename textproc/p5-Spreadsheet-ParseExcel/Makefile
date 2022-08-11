@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Spreadsheet-ParseExcel
 PORTVERSION=	0.65
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	pbc
 PORTVERSION=	0.5.14
 PORTREVISION=	1

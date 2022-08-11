@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	abind
 DISTVERSION=	1.4-5
 PORTREVISION=	3

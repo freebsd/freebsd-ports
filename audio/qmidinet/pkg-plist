@@ -1,6 +1,6 @@
 bin/qmidinet
-man/fr/man1/qmidinet.1.gz
-man/man1/qmidinet.1.gz
+share/man/fr/man1/qmidinet.1.gz
+share/man/man1/qmidinet.1.gz
 share/applications/org.rncbc.qmidinet.desktop
 share/icons/hicolor/32x32/apps/org.rncbc.qmidinet.png
 share/icons/hicolor/scalable/apps/org.rncbc.qmidinet.svg

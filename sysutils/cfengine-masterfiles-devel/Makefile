@@ -1,15 +1,11 @@
-# Created by: cy@FreeBSD.org
-
 PORTNAME=	cfengine-masterfiles
 PORTVERSION=	3.${CFENGINE_COMMIT_DATE}
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
-HASH=		e7384539
-CFENGINE_COMMIT_DATE=	2022.04.22
+HASH=		7704bfde
+CFENGINE_COMMIT_DATE=	2022.08.02
 
 MAINTAINER=	cy@FreeBSD.org
-#		gjb@FreeBSD.org is also committer for this port
-#		skreuzer@FreeBSD.org is also committer for this port
 COMMENT=	cfengine sample policies for installations and upgrades
 
 LICENSE=	GPLv3

@@ -1,3 +1,2802 @@
+  <vuln vid="c3610f39-18f1-11ed-9854-641c67a117d8">
+    <topic>varnish -- Denial of Service Vulnerability</topic>
+    <affects>
+      <package>
+	<name>varnish7</name>
+	<range><lt>7.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Varnish Cache Project reports:</p>
+	<blockquote cite="https://varnish-cache.org/security/VSV00009.html">
+	<p>A denial of service attack can be performed against Varnish Cache
+	  servers by specially formatting the reason phrase of the backend response
+	  status line. In order to execute an attack, the attacker would have to
+	  be able to influence the HTTP/1 responses that the Varnish Server
+	  receives from its configured backends. A successful attack would cause
+	  the Varnish Server to assert and automatically restart.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://varnish-cache.org/security/VSV00009.html</url>
+    </references>
+    <dates>
+      <discovery>2022-08-09</discovery>
+      <entry>2022-08-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8eaaf135-1893-11ed-9b22-002590c1f29c">
+    <topic>FreeBSD -- Missing bounds check in 9p message handling</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.1</ge><lt>13.1_1</lt></range>
+	<range><ge>13.0</ge><lt>13.0_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The implementation of lib9p's handling of RWALK messages was
+	missing a bounds check needed when unpacking the message contents.
+	The missing check means that the receipt of a specially crafted
+	message will cause lib9p to overwrite unrelated memory.</p>
+	<h1>Impact:</h1>
+	<p>The bug can be triggered by a malicious bhyve guest kernel to
+	overwrite memory in the bhyve(8) process.  This could potentially lead
+	to user-mode code execution on the host, subject to bhyve's Capsicum
+	sandbox.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23092</cvename>
+      <freebsdsa>SA-22:12.lib9p</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-08-09</discovery>
+      <entry>2022-08-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="02fb9764-1893-11ed-9b22-002590c1f29c">
+    <topic>FreeBSD -- Memory disclosure by stale virtual memory mapping</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.1</ge><lt>13.1_1</lt></range>
+	<range><ge>13.0</ge><lt>13.0_12</lt></range>
+	<range><ge>12.3</ge><lt>12.3_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>A particular case of memory sharing is mishandled in the virtual
+	memory system.  This is very similar to SA-21:08.vm, but with a
+	different root cause.</p>
+	<h1>Impact:</h1>
+	<p>An unprivileged local user process can maintain a mapping of a page
+	after it is freed, allowing that process to read private data
+	belonging to other processes or the kernel.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23091</cvename>
+      <freebsdsa>SA-22:11.vm</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-08-09</discovery>
+      <entry>2022-08-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5ddbe47b-1891-11ed-9b22-002590c1f29c">
+    <topic>FreeBSD -- AIO credential reference count leak</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.0</ge><lt>13.0_12</lt></range>
+	<range><ge>12.3</ge><lt>12.3_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The aio_aqueue function, used by the lio_listio system call, fails
+	to release a reference to a credential in an error case.</p>
+	<h1>Impact:</h1>
+	<p>An attacker may cause the reference count to overflow, leading to a
+	use after free (UAF).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23090</cvename>
+      <freebsdsa>SA-22:10.aio</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-08-09</discovery>
+      <entry>2022-08-10</entry>
+      <modified>2022-08-10</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="5028c1ae-1890-11ed-9b22-002590c1f29c">
+    <topic>FreeBSD -- Out of bound read in elf_note_prpsinfo()</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.1</ge><lt>13.1_1</lt></range>
+	<range><ge>13.0</ge><lt>13.0_12</lt></range>
+	<range><ge>12.3</ge><lt>12.3_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When dumping core and saving process information, proc_getargv()
+	might return an sbuf which have a sbuf_len() of 0 or -1, which is not
+	properly handled.</p>
+	<h1>Impact:</h1>
+	<p>An out-of-bound read can happen when user constructs a specially
+	crafted ps_string, which in turn can cause the kernel to crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23089</cvename>
+      <freebsdsa>SA-22:09.elf</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-08-09</discovery>
+      <entry>2022-08-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="21f43976-1887-11ed-9911-40b034429ecf">
+    <topic>rsync -- client-side arbitrary file write vulnerability</topic>
+    <affects>
+      <package>
+	<name>rsync</name>
+	<range><lt>3.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Openwall oss-security reports:</p>
+	<blockquote cite="https://www.openwall.com/lists/oss-security/2022/08/02/1">
+	  <p>We have discovered a critical arbitrary file write vulnerability
+	    in the rsync utility that allows malicious remote servers to write
+	    arbitrary files inside the directories of connecting peers.
+	    The server chooses which files/directories are sent to the client.
+	    Due to the insufficient controls inside the do_server_recv function
+	    a malicious rysnc server (or Man-in-The-Middle attacker) can
+	    overwrite arbitrary files in the rsync client target directory and
+	    subdirectories.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-29154</cvename>
+      <url>https://www.openwall.com/lists/oss-security/2022/08/02/1</url>
+    </references>
+    <dates>
+      <discovery>2022-08-02</discovery>
+      <entry>2022-08-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1cd0c17a-17c0-11ed-91a5-080027f5fec9">
+    <topic>gnutls -- double free vulnerability</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><ge>3.6.0</ge><lt>3.7.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GnuTLS project reports:</p>
+	<blockquote cite="https://www.gnutls.org/security-new.html#GNUTLS-SA-2022-07-07">
+	  <p>
+	    When gnutls_pkcs7_verify cannot verify signature against
+	    given trust list, it starts creating a chain of
+	    certificates starting from identified signer up to known
+	    root. During the creation of this chain the signer
+	    certificate gets freed which results in double free when
+	    the same signer certificate is freed at the end of the
+	    algorithm.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2509</cvename>
+      <url>https://www.gnutls.org/security-new.html#GNUTLS-SA-2022-07-07</url>
+    </references>
+    <dates>
+      <discovery>2022-07-07</discovery>
+      <entry>2022-08-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9b9a5f6e-1755-11ed-adef-589cfc01894a">
+    <topic>wolfssl -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>wolfssl</name>
+	<range><lt>5.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>wolfSSL blog  reports:</p>
+	<blockquote cite="https://www.wolfssl.com/wolfssl-5-4-0-release/">
+	  <p>In release 5.4.0 there were 3 vulnerabilities listed as
+	    fixed in wolfSSL. Two relatively new reports, one dealing with a DTLS
+	    1.0/1.2 denial of service attack and the other a ciphertext attack on
+	    ECC/DH operations. The last vulnerability listed was a public
+	    disclosure of a previous attack on AMD devices fixed since wolfSSL
+	    version 5.1.0. Coordination of the disclosure of the attack was done
+	    responsibly, in cooperation with the researchers, waiting for the
+	    public release of the attack details since it affects multiple
+	    security libraries.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-34293</cvename>
+      <cvename>CVE-2020-12966</cvename>
+      <cvename>CVE-2021-46744</cvename>
+      <url>https://github.com/wolfSSL/wolfssl/releases/tag/v5.4.0-stable</url>
+      <url>https://www.amd.com/en/corporate/product-security/bulletin/amd-sb-1013</url>
+      <url>https://www.amd.com/en/corporate/product-security/bulletin/amd-sb-1033</url>
+    </references>
+    <dates>
+      <discovery>2022-07-11</discovery>
+      <entry>2022-08-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8bec3994-104d-11ed-a7ac-0800273f11ea">
+    <topic>gitea -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.17.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/20114">
+	  <p>Use git.HOME_PATH for Git HOME directory</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/20332">
+	  <p>Add write check for creating Commit status</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/18697">
+	  <p>Remove deprecated SSH ciphers from default</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.17.0</url>
+    </references>
+    <dates>
+      <discovery>2022-07-12</discovery>
+      <entry>2022-08-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bc43a578-14ec-11ed-856e-d4c9ef517024">
+    <topic>Unbound -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><lt>1.16.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs reports:</p>
+	<blockquote cite="https://www.nlnetlabs.nl/projects/unbound/security-advisories/">
+	  <p>novel type of the "ghost domain names" attack. The vulnerability
+	    works by targeting an Unbound instance. Unbound is queried for a
+	    rogue domain name when the cached delegation information is about to
+	    expire. The rogue nameserver delays the response so that the cached
+	    delegation information is expired. Upon receiving the delayed answer
+	    containing the delegation information, Unbound overwrites the now
+	    expired entries. This action can be repeated when the delegation
+	    information is about to expire making the rogue delegation
+	    information ever-updating.</p>
+	  <p>novel type of the "ghost domain names" attack. The vulnerability
+	    works by targeting an Unbound instance. Unbound is queried for a
+	    subdomain of a rogue domain name. The rogue nameserver returns
+	    delegation information for the subdomain that updates Unbound's
+	    delegation cache. This action can be repeated before expiry of the
+	    delegation information by querying Unbound for a second level
+	    subdomain which the rogue nameserver provides new delegation
+	    information.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-30699</cvename>
+      <cvename>CVE-2022-30698</cvename>
+      <url>https://www.nlnetlabs.nl/projects/unbound/security-advisories/</url>
+    </references>
+    <dates>
+      <discovery>2022-08-01</discovery>
+      <entry>2022-08-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="df29c391-1046-11ed-a7ac-0800273f11ea">
+    <topic>gitea -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.16.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/20334">
+	  <p>Add write check for creating Commit status</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/20196">
+	  <p>Check for permission when fetching user controlled issues</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.16.9</url>
+    </references>
+    <dates>
+      <discovery>2022-07-12</discovery>
+      <entry>2022-08-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3b47104f-1461-11ed-a0c5-080027240888">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py38-django32</name>
+	<name>py39-django32</name>
+	<name>py310-django32</name>
+	<range><lt>3.2.15</lt></range>
+      </package>
+      <package>
+	<name>py38-django40</name>
+	<name>py39-django40</name>
+	<name>py310-django40</name>
+	<range><lt>4.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2022/aug/03/security-releases/">
+	  <p>CVE-2022-36359: Potential reflected file download vulnerability in FileResponse.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-36359</cvename>
+      <url>https://www.djangoproject.com/weblog/2022/aug/03/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2022-08-01</discovery>
+      <entry>2022-08-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="96a41723-133a-11ed-be3b-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>104.0.5112.79</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/08/stable-channel-update-for-desktop.html">
+	  <p>This release contains 27 security fixes, including:</p>
+	  <ul>
+	    <li>[1325699] High CVE-2022-2603: Use after free in Omnibox. Reported by Anonymous on 2022-05-16</li>
+	    <li>[1335316] High CVE-2022-2604: Use after free in Safe Browsing. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-06-10</li>
+	    <li>[1338470] High CVE-2022-2605: Out of bounds read in Dawn. Reported by Looben Yang on 2022-06-22</li>
+	    <li>[1330489] High CVE-2022-2606: Use after free in Managed devices API. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-05-31</li>
+	    <li>[1286203] High CVE-2022-2607: Use after free in Tab Strip. Reported by @ginggilBesel on 2022-01-11</li>
+	    <li>[1330775] High CVE-2022-2608: Use after free in Overview Mode. Reported by Khalil Zhani on 2022-06-01</li>
+	    <li>[1338560] High CVE-2022-2609: Use after free in Nearby Share. Reported by koocola(@alo_cook) and Guang Gong of 360 Vulnerability Research Institute on 2022-06-22</li>
+	    <li>[1278255] Medium CVE-2022-2610: Insufficient policy enforcement in Background Fetch. Reported by Maurice Dauer on 2021-12-09</li>
+	    <li>[1320538] Medium CVE-2022-2611: Inappropriate implementation in Fullscreen API. Reported by Irvan Kurniawan (sourc7) on 2022-04-28</li>
+	    <li>[1321350] Medium CVE-2022-2612: Side-channel information leakage in Keyboard input. Reported by Erik Kraft (erik.kraft5@gmx.at), Martin Schwarzl (martin.schwarzl@iaik.tugraz.at) on 2022-04-30</li>
+	    <li>[1325256] Medium CVE-2022-2613: Use after free in Input. Reported by Piotr Tworek (Vewd) on 2022-05-13</li>
+	    <li>[1341907] Medium CVE-2022-2614: Use after free in Sign-In Flow. Reported by raven at KunLun lab on 2022-07-05</li>
+	    <li>[1268580] Medium CVE-2022-2615: Insufficient policy enforcement in Cookies. Reported by Maurice Dauer on 2021-11-10</li>
+	    <li>[1302159] Medium CVE-2022-2616: Inappropriate implementation in Extensions API. Reported by Alesandro Ortiz on 2022-03-02</li>
+	    <li>[1292451] Medium CVE-2022-2617: Use after free in Extensions API. Reported by @ginggilBesel on 2022-01-31</li>
+	    <li>[1308422] Medium CVE-2022-2618: Insufficient validation of untrusted input in Internals. Reported by asnine on 2022-03-21</li>
+	    <li>[1332881] Medium CVE-2022-2619: Insufficient validation of untrusted input in Settings. Reported by Oliver Dunk on 2022-06-04</li>
+	    <li>[1337304] Medium CVE-2022-2620: Use after free in WebUI. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-06-17</li>
+	    <li>[1323449] Medium CVE-2022-2621: Use after free in Extensions. Reported by Huyna at Viettel Cyber Security on 2022-05-07</li>
+	    <li>[1332392] Medium CVE-2022-2622: Insufficient validation of untrusted input in Safe Browsing. Reported by Imre Rad (@ImreRad) and @j00sean on 2022-06-03</li>
+	    <li>[1337798] Medium CVE-2022-2623: Use after free in Offline. Reported by raven at KunLun lab on 2022-06-20</li>
+	    <li>[1339745] Medium CVE-2022-2624: Heap buffer overflow in PDF. Reported by YU-CHANG CHEN and CHIH-YEN CHANG, working with DEVCORE Internship Program on 2022-06-27</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2603</cvename>
+      <cvename>CVE-2022-2604</cvename>
+      <cvename>CVE-2022-2605</cvename>
+      <cvename>CVE-2022-2606</cvename>
+      <cvename>CVE-2022-2607</cvename>
+      <cvename>CVE-2022-2608</cvename>
+      <cvename>CVE-2022-2609</cvename>
+      <cvename>CVE-2022-2610</cvename>
+      <cvename>CVE-2022-2611</cvename>
+      <cvename>CVE-2022-2612</cvename>
+      <cvename>CVE-2022-2613</cvename>
+      <cvename>CVE-2022-2614</cvename>
+      <cvename>CVE-2022-2615</cvename>
+      <cvename>CVE-2022-2616</cvename>
+      <cvename>CVE-2022-2617</cvename>
+      <cvename>CVE-2022-2618</cvename>
+      <cvename>CVE-2022-2619</cvename>
+      <cvename>CVE-2022-2620</cvename>
+      <cvename>CVE-2022-2621</cvename>
+      <cvename>CVE-2022-2622</cvename>
+      <cvename>CVE-2022-2623</cvename>
+      <cvename>CVE-2022-2624</cvename>
+      <url>https://chromereleases.googleblog.com/2022/08/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-08-02</discovery>
+      <entry>2022-08-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7f8d5435-125a-11ed-9a69-10c37b4ac2ea">
+    <topic>go -- decoding big.Float and big.Rat can panic</topic>
+    <affects>
+      <package>
+	<name>go118</name>
+	<range><lt>1.18.5</lt></range>
+      </package>
+      <package>
+	<name>go117</name>
+	<range><lt>1.17.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/53871">
+	  <p>encoding/gob &amp; math/big: decoding big.Float and
+	    big.Rat can panic</p>
+	  <p>Decoding big.Float and big.Rat types can panic if the
+	    encoded message is too short.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-32189</cvename>
+      <url>https://groups.google.com/g/golang-announce/c/YqYYG87xB10</url>
+    </references>
+    <dates>
+      <discovery>2022-07-14</discovery>
+      <entry>2022-08-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4c26f668-0fd2-11ed-a83d-001b217b3468">
+    <topic>Gitlab -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.2.0</ge><lt>15.2.1</lt></range>
+	<range><ge>15.1.0</ge><lt>15.1.4</lt></range>
+	<range><ge>0</ge><lt>15.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/07/28/security-release-gitlab-15-2-1-released/">
+	  <p>Revoke access to confidential notes todos</p>
+	  <p>Pipeline subscriptions trigger new pipelines with the wrong author</p>
+	  <p>Ability to gain access to private project through an email invite by using other user's email address as an unverified secondary email</p>
+	  <p>Import via git protocol allows to bypass checks on repository</p>
+	  <p>Unauthenticated IP allowlist bypass when accessing job artifacts through GitLab Pages</p>
+	  <p>Maintainer can leak Packagist and other integration access tokens by changing integration URL</p>
+	  <p>Unauthenticated access to victims Grafana datasources through path traversal</p>
+	  <p>Unauthorized users can filter issues by contact and organization</p>
+	  <p>Malicious Maintainer may change the visibility of project or a group</p>
+	  <p>Stored XSS in job error messages</p>
+	  <p>Enforced group MFA can be bypassed when using Resource Owner Password Credentials grant</p>
+	  <p>Non project members can view public project's Deploy Keys</p>
+	  <p>IDOR in project with Jira integration leaks project owner's other projects Jira issues</p>
+	  <p>Group Bot Users and Tokens not deleted after group deletion</p>
+	  <p>Email invited members can join projects even after the member lock has been enabled</p>
+	  <p>Datadog integration returns user emails</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2512</cvename>
+      <cvename>CVE-2022-2498</cvename>
+      <cvename>CVE-2022-2326</cvename>
+      <cvename>CVE-2022-2417</cvename>
+      <cvename>CVE-2022-2501</cvename>
+      <cvename>CVE-2022-2497</cvename>
+      <cvename>CVE-2022-2531</cvename>
+      <cvename>CVE-2022-2539</cvename>
+      <cvename>CVE-2022-2456</cvename>
+      <cvename>CVE-2022-2500</cvename>
+      <cvename>CVE-2022-2303</cvename>
+      <cvename>CVE-2022-2095</cvename>
+      <cvename>CVE-2022-2499</cvename>
+      <cvename>CVE-2022-2307</cvename>
+      <cvename>CVE-2022-2459</cvename>
+      <cvename>CVE-2022-2534</cvename>
+      <url>https://about.gitlab.com/releases/2022/07/28/security-release-gitlab-15-2-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-07-28</discovery>
+      <entry>2022-07-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e1387e95-08d0-11ed-be26-001999f8d30b">
+    <topic>VirtualBox -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>virtualbox-ose</name>
+	<range><lt>6.1.36</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujul2022.html">
+	  <p> Easily exploitable vulnerability allows high privileged
+	  attacker with logon to the infrastructure where Oracle
+	  VM VirtualBox executes to compromise Oracle VM VirtualBox.
+	  Successful attacks of this vulnerability can result in
+	  unauthorized ability to cause a hang or frequently
+	  repeatable crash (complete DOS) of Oracle VM VirtualBox.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-21554</cvename>
+      <cvename>CVE-2022-21571</cvename>
+      <url>https://www.oracle.com/security-alerts/cpujul2022.html</url>
+    </references>
+    <dates>
+      <discovery>2022-07-20</discovery>
+      <entry>2022-07-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8e150606-08c9-11ed-856e-d4c9ef517024">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql-server56</name>
+	<range><lt>5.6.52</lt></range>
+      </package>
+      <package>
+	<name>mysql-server57</name>
+	<range><lt>5.7.39</lt></range>
+      </package>
+      <package>
+	<name>mysql-client80</name>
+	<range><lt>8.0.30</lt></range>
+      </package>
+      <package>
+	<name>mysql-server80</name>
+	<range><lt>8.0.30</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujul2022.html#AppendixMSQL">
+	  <p>This Critical Patch Update contains 34 new security patches plus
+	    additional third party patches noted below for Oracle MySQL. 10 of
+	    these vulnerabilities may be remotely exploitable without
+	    authentication, i.e., may be exploited over a network without
+	    requiring user credentials.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1292</cvename>
+      <cvename>CVE-2022-21824</cvename>
+      <cvename>CVE-2022-27778</cvename>
+      <cvename>CVE-2018-25032</cvename>
+      <cvename>CVE-2022-21556</cvename>
+      <cvename>CVE-2022-21569</cvename>
+      <cvename>CVE-2022-21550</cvename>
+      <cvename>CVE-2022-21519</cvename>
+      <cvename>CVE-2022-21527</cvename>
+      <cvename>CVE-2022-21528</cvename>
+      <cvename>CVE-2022-21509</cvename>
+      <cvename>CVE-2022-21539</cvename>
+      <cvename>CVE-2022-21517</cvename>
+      <cvename>CVE-2022-21537</cvename>
+      <cvename>CVE-2022-21547</cvename>
+      <cvename>CVE-2022-21525</cvename>
+      <cvename>CVE-2022-21526</cvename>
+      <cvename>CVE-2022-21529</cvename>
+      <cvename>CVE-2022-21530</cvename>
+      <cvename>CVE-2022-21531</cvename>
+      <cvename>CVE-2022-21553</cvename>
+      <cvename>CVE-2022-21515</cvename>
+      <cvename>CVE-2022-21455</cvename>
+      <cvename>CVE-2022-21534</cvename>
+      <cvename>CVE-2022-21522</cvename>
+      <cvename>CVE-2022-21538</cvename>
+      <cvename>CVE-2022-21535</cvename>
+      <url>https://www.oracle.com/security-alerts/cpujul2022.html#AppendixMSQL</url>
+    </references>
+    <dates>
+      <discovery>2022-07-19</discovery>
+      <entry>2022-07-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="27cc4258-0805-11ed-8ac1-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>103.0.5060.134</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/07/stable-channel-update-for-desktop_19.html">
+	  <p>This release contains 11 security fixes, including:</p>
+	  <ul>
+	    <li>[1336266] High CVE-2022-2477: Use after free in Guest View. Reported by anonymous on 2022-06-14</li>
+	    <li>[1335861] High CVE-2022-2478: Use after free in PDF. Reported by triplepwns on 2022-06-13</li>
+	    <li>[1329987] High CVE-2022-2479: Insufficient validation of untrusted input in File. Reported by anonymous on 2022-05-28</li>
+	    <li>[1339844] High CVE-2022-2480: Use after free in Service Worker API. Reported by Sergei Glazunov of Google Project Zero on 2022-06-27</li>
+	    <li>[1341603] High CVE-2022-2481: Use after free in Views. Reported by YoungJoo Lee(@ashuu_lee) of CompSecLab at Seoul National University on 2022-07-04</li>
+	    <li>[1308341] Low CVE-2022-2163: Use after free in Cast UI and Toolbar. Reported by Chaoyuan Peng (@ret2happy) on 2022-03-21</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2163</cvename>
+      <cvename>CVE-2022-2477</cvename>
+      <cvename>CVE-2022-2478</cvename>
+      <cvename>CVE-2022-2479</cvename>
+      <cvename>CVE-2022-2480</cvename>
+      <cvename>CVE-2022-2481</cvename>
+      <url>https://chromereleases.googleblog.com/2022/07/stable-channel-update-for-desktop_19.html</url>
+    </references>
+    <dates>
+      <discovery>2022-07-19</discovery>
+      <entry>2022-07-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="871d93f9-06aa-11ed-8d5f-080027f5fec9">
+    <topic>redis -- Potential remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><ge>7.0.0</ge><lt>7.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Redis core team reports:</p>
+	<blockquote cite="https://groups.google.com/g/redis-db/c/FWngtg3WpfA">
+	  <p>
+	    A specially crafted XAUTOCLAIM command on a stream key in
+	    a specific state may result with heap overflow, and
+	    potentially remote code execution.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31144</cvename>
+      <url>https://groups.google.com/g/redis-db/c/FWngtg3WpfA</url>
+    </references>
+    <dates>
+      <discovery>2022-07-18</discovery>
+      <entry>2022-07-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0c367e98-0415-11ed-a53b-6c3be5272acd">
+    <topic>Grafana -- Stored XSS</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>8.3.0</ge><lt>8.3.10</lt></range>
+	<range><ge>8.4.0</ge><lt>8.4.10</lt></range>
+	<range><ge>8.5.0</ge><lt>8.5.9</lt></range>
+	<range><ge>9.0.0</ge><lt>9.0.3</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.3.0</ge><lt>8.3.10</lt></range>
+	<range><ge>8.4.0</ge><lt>8.4.10</lt></range>
+	<range><ge>8.5.0</ge><lt>8.5.9</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><lt>9.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/07/14/grafana-v9-0-3-8-5-9-8-4-10-and-8-3-10-released-with-high-severity-security-fix/">
+	  <p>An attacker can exploit this vulnerability to escalate privilege from editor to admin by tricking an authenticated admin to click on a link. (Note: Grafana Alerting is activated by default in Grafana 9.0.)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31097</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-vw7q-p2qg-4m5f</url>
+    </references>
+    <dates>
+      <discovery>2022-06-19</discovery>
+      <entry>2022-07-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0859e6d5-0415-11ed-a53b-6c3be5272acd">
+    <topic>Grafana -- OAuth Account Takeover</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>5.3.0</ge><lt>8.3.10</lt></range>
+	<range><ge>8.4.0</ge><lt>8.4.10</lt></range>
+	<range><ge>8.5.0</ge><lt>8.5.9</lt></range>
+	<range><ge>9.0.0</ge><lt>9.0.3</lt></range>
+      </package>
+      <package>
+	<name>grafana7</name>
+	<range><ge>7.0</ge></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.3.0</ge><lt>8.3.10</lt></range>
+	<range><ge>8.4.0</ge><lt>8.4.10</lt></range>
+	<range><ge>8.5.0</ge><lt>8.5.9</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><lt>9.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/07/14/grafana-v9-0-3-8-5-9-8-4-10-and-8-3-10-released-with-high-severity-security-fix/">
+	  <p>It is possible for a malicious user who has authorization to log into a Grafana instance via a configured OAuth IdP to take over an existing Grafana account under some conditions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31107</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-mx47-6497-3fv2</url>
+    </references>
+    <dates>
+      <discovery>2022-06-27</discovery>
+      <entry>2022-07-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a4f2416c-02a0-11ed-b817-10c37b4ac2ea">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go118</name>
+	<range><lt>1.18.4</lt></range>
+      </package>
+      <package>
+	<name>go117</name>
+	<range><lt>1.17.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/53188">
+	  <p>net/http: improper sanitization of Transfer-Encoding
+	    header</p>
+	  <p>The HTTP/1 client accepted some invalid
+	    Transfer-Encoding headers as indicating a "chunked"
+	    encoding. This could potentially allow for request
+	    smuggling, but only if combined with an intermediate
+	    server that also improperly failed to reject the header
+	    as invalid.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53423">
+	  <p>When httputil.ReverseProxy.ServeHTTP was called with a
+	    Request.Header map containing a nil value for the
+	    X-Forwarded-For header, ReverseProxy would set the client
+	    IP as the value of the X-Forwarded-For header, contrary to
+	    its documentation. In the more usual case where a Director
+	    function set the X-Forwarded-For header value to nil,
+	    ReverseProxy would leave the header unmodified as
+	    expected.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53168">
+	  <p>compress/gzip: stack exhaustion in Reader.Read</p>
+	  <p>Calling Reader.Read on an archive containing a large
+	    number of concatenated 0-length compressed files can
+	    cause a panic due to stack exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53611">
+	  <p>encoding/xml: stack exhaustion in Unmarshal</p>
+	  <p>Calling Unmarshal on a XML document into a Go struct
+	    which has a nested field that uses the any field tag can
+	    cause a panic due to stack exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53614">
+	  <p>encoding/xml: stack exhaustion in Decoder.Skip</p>
+	  <p>Calling Decoder.Skip when parsing a deeply nested XML
+	    document can cause a panic due to stack exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53615">
+	  <p>encoding/gob: stack exhaustion in Decoder.Decode</p>
+	  <p>Calling Decoder.Decode on a message which contains
+	    deeply nested structures can cause a panic due to stack
+	    exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53416">
+	  <p>path/filepath: stack exhaustion in Glob</p>
+	  <p>Calling Glob on a path which contains a large number of
+	    path separators can cause a panic due to stack
+	    exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53415">
+	  <p>io/fs: stack exhaustion in Glob</p>
+	  <p>Calling Glob on a path which contains a large number of
+	    path separators can cause a panic due to stack
+	    exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53616">
+	  <p>go/parser: stack exhaustion in all Parse* functions</p>
+	  <p>Calling any of the Parse functions on Go source code
+	    which contains deeply nested types or declarations can
+	    cause a panic due to stack exhaustion.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1705</cvename>
+      <cvename>CVE-2022-32148</cvename>
+      <cvename>CVE-2022-30631</cvename>
+      <cvename>CVE-2022-30633</cvename>
+      <cvename>CVE-2022-28131</cvename>
+      <cvename>CVE-2022-30635</cvename>
+      <cvename>CVE-2022-30632</cvename>
+      <cvename>CVE-2022-30630</cvename>
+      <cvename>CVE-2022-1962</cvename>
+      <url>https://groups.google.com/g/golang-dev/c/frczlF8OFQ0</url>
+    </references>
+    <dates>
+      <discovery>2022-07-12</discovery>
+      <entry>2022-07-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b99f99f6-021e-11ed-8c6f-000c29ffbb6c">
+    <topic>git -- privilege escalation</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>2.37.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The git project reports:</p>
+	<blockquote cite="https://lkml.org/lkml/2022/7/12/1137">
+	  <p>Git is vulnerable to privilege escalation in all platforms.
+	    An unsuspecting user could still be affected by the issue
+	    reported in CVE-2022-24765, for example when navigating as
+	    root into a shared tmp directory that is owned by them, but
+	    where an attacker could create a git repository.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-29187</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29187</url>
+    </references>
+    <dates>
+      <discovery>2022-07-12</discovery>
+      <entry>2022-07-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="830855f3-ffcc-11ec-9d41-d05099c8b5a7">
+    <topic>mat2 -- directory traversal/arbitrary file read during ZIP file processing</topic>
+    <affects>
+      <package>
+	<name>mat2</name>
+	<range><lt>0.13.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35410">
+	  <p>
+	    mat2 (aka metadata anonymisation toolkit) before 0.13.0 allows ../
+	    directory traversal during the ZIP archive cleaning process. This
+	    primarily affects mat2 web instances, in which clients could obtain
+	    sensitive information via a crafted archive.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-35410</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35410</url>
+    </references>
+    <dates>
+      <discovery>2022-07-08</discovery>
+      <entry>2022-07-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d1b35142-ff4a-11ec-8be3-001b217b3468">
+    <topic>Gitlab -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.1.0</ge><lt>15.1.1</lt></range>
+	<range><ge>15.0.0</ge><lt>15.0.4</lt></range>
+	<range><ge>0</ge><lt>14.10.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/06/30/critical-security-release-gitlab-15-1-1-released/">
+	  <p>Remote Command Execution via Project Imports</p>
+	  <p>XSS in ZenTao integration affecting self hosted instances without strict CSP</p>
+	  <p>XSS in project settings page</p>
+	  <p>Unallowed users can read unprotected CI variables</p>
+	  <p>IP allow-list bypass to access Container Registries</p>
+	  <p>2FA status is disclosed to unauthenticated users</p>
+	  <p>CI variables provided to runners outside of a group's restricted IP range</p>
+	  <p>IDOR in sentry issues</p>
+	  <p>Reporters can manage issues in error tracking</p>
+	  <p>Regular Expression Denial of Service via malicious web server responses</p>
+	  <p>Unauthorized read for conan repository</p>
+	  <p>Open redirect vulnerability</p>
+	  <p>Group labels are editable through subproject</p>
+	  <p>Release titles visible for any users if group milestones are associated with any project releases</p>
+	  <p>Restrict membership by email domain bypass</p>
+	  <p>Job information is leaked to users who previously were maintainers via the Runner Jobs API endpoint</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2185</cvename>
+      <cvename>CVE-2022-2235</cvename>
+      <cvename>CVE-2022-2230</cvename>
+      <cvename>CVE-2022-2229</cvename>
+      <cvename>CVE-2022-1983</cvename>
+      <cvename>CVE-2022-1963</cvename>
+      <cvename>CVE-2022-2228</cvename>
+      <cvename>CVE-2022-2243</cvename>
+      <cvename>CVE-2022-2244</cvename>
+      <cvename>CVE-2022-1954</cvename>
+      <cvename>CVE-2022-2270</cvename>
+      <cvename>CVE-2022-2250</cvename>
+      <cvename>CVE-2022-1999</cvename>
+      <cvename>CVE-2022-2281</cvename>
+      <cvename>CVE-2022-1981</cvename>
+      <cvename>CVE-2022-2227</cvename>
+      <url>https://about.gitlab.com/releases/2022/06/30/critical-security-release-gitlab-15-1-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-06-30</discovery>
+      <entry>2022-07-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b9210706-feb0-11ec-81fa-1c697a616631">
+    <topic>Node.js -- July 7th 2022 Security Releases</topic>
+    <affects>
+      <package>
+	<name>node</name>
+	<range><ge>14.0.0</ge><lt>14.20.0</lt></range>
+	<range><ge>16.0.0</ge><lt>16.16.0</lt></range>
+	<range><ge>18.0.0</ge><lt>18.5.0</lt></range>
+      </package>
+      <package>
+	<name>node16</name>
+	<range><lt>16.16.0</lt></range>
+      </package>
+      <package>
+	<name>node14</name>
+	<range><lt>14.20.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Node.js reports:</p>
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/july-2022-security-releases/">
+	  <h1>HTTP Request Smuggling - Flawed Parsing of Transfer-Encoding
+	  (Medium)(CVE-2022-32213)</h1>
+	  <p>The llhttp parser in the http module does not correctly parse and
+	  validate Transfer-Encoding headers. This can lead to HTTP Request
+	  Smuggling (HRS).</p>
+	  <h1>HTTP Request Smuggling - Improper Delimiting of Header Fields
+	  (Medium)(CVE-2022-32214)</h1>
+	  <p>The llhttp parser in the http module does not strictly use the CRLF
+	  sequence to delimit HTTP requests. This can lead to HTTP Request
+	  Smuggling (HRS).</p>
+	  <h1>HTTP Request Smuggling - Incorrect Parsing of Multi-line
+	  Transfer-Encoding (Medium)(CVE-2022-32215)</h1>
+	  <p>The llhttp parser in the http module does not correctly handle
+	  multi-line Transfer-Encoding headers. This can lead to HTTP Request
+	  Smuggling (HRS).</p>
+	  <h1>DNS rebinding in --inspect via invalid IP addresses
+	  (High)(CVE-2022-32212)</h1>
+	  <p>The IsAllowedHost check can easily be bypassed because IsIPAddress
+	  does not properly check if an IP address is invalid or not. When an
+	  invalid IPv4 address is provided (for instance 10.0.2.555 is
+	  provided), browsers (such as Firefox) will make DNS requests to the
+	  DNS server, providing a vector for an attacker-controlled DNS server
+	  or a MITM who can spoof DNS responses to perform a rebinding attack
+	  and hence connect to the WebSocket debugger, allowing for arbitrary
+	  code execution. This is a bypass of CVE-2021-22884.</p>
+	  <h1>Attempt to read openssl.cnf from /home/iojs/build/ upon startup
+	  (Medium)(CVE-2022-32222)</h1>
+	  <p>When Node.js starts on linux based systems, it attempts to read
+	  /home/iojs/build/ws/out/Release/obj.target/deps/openssl/openssl.cnf,
+	  which ordinarily doesn't exist. On some shared systems an attacker may
+	  be able create this file and therefore affect the default OpenSSL
+	  configuration for other users.</p>
+	  <h1>OpenSSL - AES OCB fails to encrypt some bytes
+	  (Medium)(CVE-2022-2097)</h1>
+	  <p>AES OCB mode for 32-bit x86 platforms using the AES-NI assembly
+	  optimised implementation will not encrypt the entirety of the data
+	  under some circumstances. This could reveal sixteen bytes of data that
+	  was preexisting in the memory that wasn't written. In the special case
+	  of "in place" encryption, sixteen bytes of the plaintext would be
+	  revealed.  Since OpenSSL does not support OCB based cipher suites for
+	  TLS and DTLS, they are both unaffected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-32212</cvename>
+      <cvename>CVE-2022-32213</cvename>
+      <cvename>CVE-2022-32214</cvename>
+      <cvename>CVE-2022-32215</cvename>
+      <cvename>CVE-2022-32222</cvename>
+      <cvename>CVE-2022-2097</cvename>
+      <url>https://nodejs.org/en/blog/vulnerability/july-2022-security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2022-07-05</discovery>
+      <entry>2022-07-08</entry>
+      <modified>2022-07-08</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="744ec9d7-fe0f-11ec-bcd2-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>103.0.5060.114</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/07/stable-channel-update-for-desktop.html">
+	  <p>This release contains 4 security fixes, including:</p>
+	  <ul>
+	    <li>[1341043] High CVE-2022-2294: Heap buffer overflow in WebRTC. Reported by Jan Vojtesek from the Avast Threat Intelligence team on 2022-07-01</li>
+	    <li>[1336869] High CVE-2022-2295: Type Confusion in V8. Reported by avaue and Buff3tts at S.S.L. on 2022-06-16</li>
+	    <li>[1327087] High CVE-2022-2296: Use after free in Chrome OS Shell. Reported by Khalil Zhani on 2022-05-19</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2294</cvename>
+      <cvename>CVE-2022-2295</cvename>
+      <cvename>CVE-2022-2296</cvename>
+      <url>https://chromereleases.googleblog.com/2022/07/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-07-04</discovery>
+      <entry>2022-07-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a28e8b7e-fc70-11ec-856e-d4c9ef517024">
+    <topic>OpenSSL -- AES OCB fails to encrypt some bytes</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1q,1</lt></range>
+      </package>
+      <package>
+	<name>openssl-devel</name>
+	<range><lt>3.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20220705.txt">
+	  <p>AES OCB mode for 32-bit x86 platforms using the AES-NI assembly optimised
+	    implementation will not encrypt the entirety of the data under some
+	    circumstances.  This could reveal sixteen bytes of data that was
+	    preexisting in the memory that wasn't written.  In the special case of
+	    "in place" encryption, sixteen bytes of the plaintext would be revealed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2097</cvename>
+      <url>https://www.openssl.org/news/secadv/20220705.txt</url>
+    </references>
+    <dates>
+      <discovery>2022-07-05</discovery>
+      <entry>2022-07-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5be19b0d-fb85-11ec-95cd-080027b24e86">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py37-django32</name>
+	<name>py38-django32</name>
+	<name>py39-django32</name>
+	<name>py310-django32</name>
+	<range><lt>3.2.14</lt></range>
+      </package>
+      <package>
+	<name>py38-django40</name>
+	<name>py39-django40</name>
+	<name>py310-django40</name>
+	<range><lt>4.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2022/jul/04/security-releases/">
+	  <p>CVE-2022-34265: Potential SQL injection via Trunc(kind) and
+	    Extract(lookup_name) arguments.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-34265</cvename>
+      <url>https://www.djangoproject.com/weblog/2022/jul/04/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2022-06-21</discovery>
+      <entry>2022-07-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f0e45968-faff-11ec-856e-d4c9ef517024">
+    <topic>OpenSSL -- Heap memory corruption with RSA private key operation</topic>
+    <affects>
+      <package>
+	<name>openssl-devel</name>
+	<range><ge>3.0.4</ge><lt>3.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://mta.openssl.org/pipermail/openssl-announce/2022-July/000229.html">
+	  <p>The OpenSSL 3.0.4 release introduced a serious bug in the RSA
+	    implementation for X86_64 CPUs supporting the AVX512IFMA instructions.
+	    This issue makes the RSA implementation with 2048 bit private keys
+	    incorrect on such machines and memory corruption will happen during
+	    the computation. As a consequence of the memory corruption an attacker
+	    may be able to trigger a remote code execution on the machine performing
+	    the computation.</p>
+	  <p>SSL/TLS servers or other servers using 2048 bit RSA private keys running
+	    on machines supporting AVX512IFMA instructions of the X86_64 architecture
+	    are affected by this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2274</cvename>
+      <url>https://www.openssl.org/news/secadv/20220705.txt</url>
+    </references>
+    <dates>
+      <discovery>2022-07-01</discovery>
+      <entry>2022-07-03</entry>
+      <modified>2022-07-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="5ab54ea0-fa94-11ec-996c-080027b24e86">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki135</name>
+	<range><lt>1.35.7</lt></range>
+      </package>
+      <package>
+	<name>mediawiki137</name>
+	<range><lt>1.37.3</lt></range>
+      </package>
+      <package>
+	<name>mediawiki138</name>
+	<range><lt>1.38.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/PIPYDRSHXOYW5DB7X755QDNUV5EZWPWB/">
+	  <p>(T308471) Username is not escaped in the "welcomeuser" message.</p>
+	  <p>(T308473) Username not escaped in the contributions-title message.</p>
+	  <p>(T309377, CVE-2022-29248) Update "guzzlehttp/guzzle" to version 6.5.6.</p>
+	  <p>(T311384, CVE-2022-27776) Update "guzzlehttp/guzzle" to 6.5.8/7.4.5.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-29248</cvename>
+      <cvename>CVE-2022-27776</cvename>
+      <url>https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/PIPYDRSHXOYW5DB7X755QDNUV5EZWPWB/</url>
+    </references>
+    <dates>
+      <discovery>2022-05-16</discovery>
+      <entry>2022-07-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="07c0d782-f758-11ec-acaa-901b0e9408dc">
+    <topic>py-matrix-synapse -- unbounded recursion in urlpreview</topic>
+    <affects>
+      <package>
+	<name>py37-matrix-synapse</name>
+	<name>py38-matrix-synapse</name>
+	<name>py39-matrix-synapse</name>
+	<name>py310-matrix-synapse</name>
+	<name>py311-matrix-synapse</name>
+	<range><lt>1.61.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix developers report:</p>
+	<blockquote cite="https://matrix.org/blog/2022/06/28/security-release-synapse-1-61-1">
+	  <p>This release fixes a vulnerability with Synapse's URL preview feature. URL previews
+	  of some web pages can lead to unbounded recursion, causing the request to either fail,
+	  or in some cases crash the running Synapse process.</p>
+	  <p>Note that:</p>
+	  <ul>
+	    <li>Homeservers with the url_preview_enabled configuration option set to false
+	    (the default value) are unaffected.</li>
+	    <li>Instances with the enable_media_repo configuration option set to false are
+	    also unaffected, as this also disables the URL preview functionality.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31052</cvename>
+      <url>https://matrix.org/blog/2022/06/28/security-release-synapse-1-61-1</url>
+    </references>
+    <dates>
+      <discovery>2022-06-28</discovery>
+      <entry>2022-06-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ae5722a6-f5f0-11ec-856e-d4c9ef517024">
+    <topic>cURL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>7.16.4</ge><lt>7.84.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cURL project reports:</p>
+	<blockquote cite="https://curl.se/docs/security.html">
+	  <ul>
+	    <li>CVE-2022-32205: Set-Cookie denial of service</li>
+	    <li>CVE-2022-32206: HTTP compression denial of service</li>
+	    <li>CVE-2022-32207: Unpreserved file permissions</li>
+	    <li>CVE-2022-32208: FTP-KRB bad message verification</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-32205</cvename>
+      <cvename>CVE-2022-32206</cvename>
+      <cvename>CVE-2022-32207</cvename>
+      <cvename>CVE-2022-32208</cvename>
+      <url>https://curl.se/docs/security.html</url>
+    </references>
+    <dates>
+      <discovery>2022-06-27</discovery>
+      <entry>2022-06-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="25be46f0-f25d-11ec-b62a-00e081b7aa2d">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.356</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.346.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2022-06-22/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-2781 / CVE-2022-34170 (SECURITY-2779), CVE-2022-34171 (SECURITY-2761), CVE-2022-34172 (SECURITY-2776), CVE-2022-34173 (SECURITY-2780)</h5>
+	  <p>Multiple XSS vulnerabilities</p>
+	  <h5>(Medium) SECURITY-2566 / CVE-2022-34174</h5>
+	  <p>Observable timing discrepancy allows determining username validity</p>
+	  <h5>(Medium) Unauthorized view fragment access</h5>
+	  <p>SECURITY-2777 / CVE-2022-34175</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-34170</cvename>
+      <cvename>CVE-2022-34171</cvename>
+      <cvename>CVE-2022-34172</cvename>
+      <cvename>CVE-2022-34173</cvename>
+      <cvename>CVE-2022-34174</cvename>
+      <cvename>CVE-2022-34175</cvename>
+      <url>https://www.jenkins.io/security/advisory/2022-06-22/</url>
+    </references>
+    <dates>
+      <discovery>2022-06-22</discovery>
+      <entry>2022-06-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4eeb93bf-f204-11ec-8fbd-d4c9ef517024">
+    <topic>OpenSSL -- Command injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1p,1</lt></range>
+      </package>
+      <package>
+	<name>openssl-devel</name>
+	<range><lt>3.0.4</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20220621.txt">
+	  <p>Circumstances where the c_rehash script does not properly
+	    sanitise shell metacharacters to prevent command injection were
+	    found by code review.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2068</cvename>
+      <url>https://www.openssl.org/news/secadv/20220621.txt</url>
+    </references>
+    <dates>
+      <discovery>2022-06-21</discovery>
+      <entry>2022-06-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b2a4c5f1-f1fe-11ec-bcd2-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>103.0.5060.53</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/06/stable-channel-update-for-desktop_21.html">
+	  <p>This release contains 14 security fixes, including:</p>
+	  <ul>
+	    <li>[1335458] Critical CVE-2022-2156: Use after free in Base. Reported by Mark Brand of Google Project Zero on 2022-06-11</li>
+	    <li>[1327312] High CVE-2022-2157: Use after free in Interest groups. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-05-19</li>
+	    <li>[1321078] High CVE-2022-2158: Type Confusion in V8. Reported by Bohan Liu (@P4nda20371774) of Tencent Security Xuanwu Lab on 2022-04-29</li>
+	    <li>[1116450] Medium CVE-2022-2160: Insufficient policy enforcement in DevTools. Reported by David Erceg on 2020-08-14</li>
+	    <li>[1330289] Medium CVE-2022-2161: Use after free in WebApp Provider. Reported by Zhihua Yao of KunLun Lab on 2022-05-30</li>
+	    <li>[1307930] Medium CVE-2022-2162: Insufficient policy enforcement in File System API. Reported by Abdelhamid Naceri (halov) on 2022-03-19</li>
+	    <li>[1308341] Low CVE-2022-2163: Use after free in Cast UI and Toolbar. Reported by Chaoyuan Peng (@ret2happy) on 2022-03-21</li>
+	    <li>[1268445] Low CVE-2022-2164: Inappropriate implementation in Extensions API. Reported by José Miguel Moreno Computer Security Lab (COSEC) at UC3M on 2021-11-10</li>
+	    <li>[1250993] Low CVE-2022-2165: Insufficient data validation in URL formatting. Reported by Rayyan Bijoora on 2021-09-19</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2156</cvename>
+      <cvename>CVE-2022-2157</cvename>
+      <cvename>CVE-2022-2158</cvename>
+      <cvename>CVE-2022-2160</cvename>
+      <cvename>CVE-2022-2161</cvename>
+      <cvename>CVE-2022-2162</cvename>
+      <cvename>CVE-2022-2163</cvename>
+      <cvename>CVE-2022-2164</cvename>
+      <cvename>CVE-2022-2165</cvename>
+      <url>https://chromereleases.googleblog.com/2022/06/stable-channel-update-for-desktop_21.html</url>
+    </references>
+    <dates>
+      <discovery>2022-06-21</discovery>
+      <entry>2022-06-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="482456fb-e9af-11ec-93b6-318d1419ea39">
+    <topic>Security Vulnerability found in ExifTool leading to RCE</topic>
+    <affects>
+      <package>
+	<name>p5-Image-ExifTool</name>
+	<range><lt>12.38</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian Security tracker reports:</p>
+	<blockquote cite="https://security-tracker.debian.org/tracker/CVE-2022-23935">
+	  <p>ExifTool.pm in ExifTool before 12.38 mishandles a file special characters check, leading to command injection</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23935</cvename>
+      <url>https://www.cvedetails.com/cve/CVE-2022-23935</url>
+    </references>
+    <dates>
+      <discovery>2022-01-25</discovery>
+      <entry>2022-06-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ad37a349-ebb7-11ec-b9f7-21427354249d">
+    <topic>mitmproxy -- Insufficient Protection against HTTP Request Smuggling</topic>
+    <affects>
+      <package>
+	<name>mitmproxy</name>
+	<range><lt>8.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Zeyu Zhang reports:</p>
+	<blockquote cite="https://github.com/mitmproxy/mitmproxy/commit/b06fb6d157087d526bd02e7aadbe37c56865c71b">
+	  <p>
+	    In mitmproxy 7.0.4 and below, a malicious client or server is able to
+	    perform HTTP request smuggling attacks through mitmproxy. This means
+	    that a malicious client/server could smuggle a request/response through
+	    mitmproxy as part of another request/response's HTTP message body. While
+	    mitmproxy would only see one request, the target server would see
+	    multiple requests. A smuggled request is still captured as part of
+	    another request's body, but it does not appear in the request list and
+	    does not go through the usual mitmproxy event hooks, where users may
+	    have implemented custom access control checks or input sanitization.
+	  </p>
+	  <p>
+	    Unless you use mitmproxy to protect an HTTP/1 service, no action is required.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24766</cvename>
+      <url>https://github.com/mitmproxy/mitmproxy/commit/b06fb6d157087d526bd02e7aadbe37c56865c71b</url>
+    </references>
+    <dates>
+      <discovery>2022-03-21</discovery>
+      <entry>2022-06-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5d1e4f6a-ee4f-11ec-86c2-485b3931c969">
+    <topic>Tor - Unspecified high severity vulnerability</topic>
+    <affects>
+      <package>
+	<name>tor</name>
+	<range><lt>0.4.7.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tor organization reports:</p>
+	<blockquote cite="https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/TROVE">
+	  <p>TROVE-2022-001</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/TROVE</url>
+    </references>
+    <dates>
+      <discovery>2022-06-14</discovery>
+      <entry>2022-06-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="55cff5d2-e95c-11ec-ae20-001999f8d30b">
+    <topic>XFCE -- Allows executing malicious .desktop files pointing to remote code</topic>
+    <affects>
+      <package>
+	<name>libexo</name>
+	<range><lt>4.16.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>XFCE Project reports:</p>
+	<blockquote cite="https://gitlab.xfce.org/xfce/exo/-/commit/cc047717c3b5efded2cc7bd419c41a3d1f1e48b6">
+	  <p>Prevent executing possibly malicious .desktop files
+	  from online sources (ftp://, http:// etc.).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-32278</cvename>
+      <url>https://gitlab.xfce.org/xfce/exo/-/commit/cc047717c3b5efded2cc7bd419c41a3d1f1e48b6</url>
+    </references>
+    <dates>
+      <discovery>2022-06-11</discovery>
+      <entry>2022-06-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b51cfaea-e919-11ec-9fba-080027240888">
+    <topic>py-numpy -- Missing return-value validation of the function PyArray_DescrNew</topic>
+    <affects>
+      <package>
+	<name>py38-numpy</name>
+	<name>py39-numpy</name>
+	<name>py310-numpy</name>
+	<range><lt>1.22.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Numpy reports:</p>
+	<blockquote cite="https://github.com/numpy/numpy/pull/20960">
+	  <p>At most call-sites for PyArray_DescrNew, there are no validations of its return,
+	    but an invalid address may be returned.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41495</cvename>
+      <url>https://github.com/numpy/numpy/pull/20960</url>
+    </references>
+    <dates>
+      <discovery>2021-05-19</discovery>
+      <entry>2022-06-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c80ce2dd-e831-11ec-bcd2-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>102.0.5005.115</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/06/stable-channel-update-for-desktop.html">
+	  <p>This release contains 7 security fixes, including:</p>
+	  <ul>
+	    <li>[1326210] High CVE-2022-2007: Use after free in WebGPU. Reported by David Manouchehri on 2022-05-17</li>
+	    <li>[1317673] High CVE-2022-2008: Out of bounds memory access in WebGL. Reported by khangkito - Tran Van Khang (VinCSS) on 2022-04-19</li>
+	    <li>[1325298] High CVE-2022-2010: Out of bounds read in compositing. Reported by Mark Brand of Google Project Zero on 2022-05-13</li>
+	    <li>[1330379] High CVE-2022-2011: Use after free in ANGLE. Reported by SeongHwan Park (SeHwa) on 2022-05-31</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2007</cvename>
+      <cvename>CVE-2022-2008</cvename>
+      <cvename>CVE-2022-2010</cvename>
+      <cvename>CVE-2022-2011</cvename>
+      <url>https://chromereleases.googleblog.com/2022/06/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-06-09</discovery>
+      <entry>2022-06-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="49adfbe5-e7d1-11ec-8fbd-d4c9ef517024">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.54</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="http://downloads.apache.org/httpd/CHANGES_2.4.54">
+	  <ul>
+	    <li>CVE-2022-31813: mod_proxy X-Forwarded-For dropped by hop-by-hop
+	      mechanism. Apache HTTP Server 2.4.53 and earlier may not send the
+	      X-Forwarded-* headers to the origin server based on client side
+	      Connection header hop-by-hop mechanism. This may be used to bypass
+	      IP based authentication on the origin server/application.</li>
+	    <li>CVE-2022-30556: Information Disclosure in mod_lua with websockets.
+	      Apache HTTP Server 2.4.53 and earlier may return lengths to
+	      applications calling r:wsread() that point past the end of the
+	      storage allocated for the buffer.</li>
+	    <li>CVE-2022-30522: mod_sed denial of service. If Apache HTTP Server
+	      2.4.53 is configured to do transformations with mod_sed in contexts
+	      where the input to mod_sed may be very large, mod_sed may make
+	      excessively large memory allocations and trigger an abort.</li>
+	    <li>CVE-2022-29404: Denial of service in mod_lua r:parsebody. In Apache
+	      HTTP Server 2.4.53 and earlier, a malicious request to a lua script
+	      that calls r:parsebody(0) may cause a denial of service due to no
+	      default limit on possible input size.</li>
+	    <li>CVE-2022-28615: Read beyond bounds in ap_strcmp_match(). Apache
+	      HTTP Server 2.4.53 and earlier may crash or disclose information due
+	      to a read beyond bounds in ap_strcmp_match() when provided with an
+	      extremely large input buffer.  While no code distributed with the
+	      server can be coerced into such a call, third-party modules or lua
+	      scripts that use ap_strcmp_match() may hypothetically be affected.
+	    </li>
+	    <li>CVE-2022-28614: read beyond bounds via ap_rwrite(). The ap_rwrite()
+	      function in Apache HTTP Server 2.4.53 and earlier may read unintended
+	      memory if an attacker can cause the server to reflect very large
+	      input using ap_rwrite() or ap_rputs(), such as with mod_luas r:puts()
+	      function.</li>
+	    <li>CVE-2022-28330: read beyond bounds in mod_isapi. Apache HTTP Server
+	      2.4.53 and earlier on Windows may read beyond bounds when configured
+	      to process requests with the mod_isapi module.</li>
+	    <li>CVE-2022-26377: mod_proxy_ajp: Possible request smuggling.
+	      Inconsistent Interpretation of HTTP Requests ('HTTP Request
+	      Smuggling') vulnerability in mod_proxy_ajp of Apache HTTP Server
+	      allows an attacker to smuggle requests to the AJP server it forwards
+	      requests to.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31813</cvename>
+      <cvename>CVE-2022-30556</cvename>
+      <cvename>CVE-2022-30522</cvename>
+      <cvename>CVE-2022-29404</cvename>
+      <cvename>CVE-2022-28615</cvename>
+      <cvename>CVE-2022-28614</cvename>
+      <cvename>CVE-2022-28330</cvename>
+      <cvename>CVE-2022-26377</cvename>
+      <url>http://downloads.apache.org/httpd/CHANGES_2.4.54</url>
+    </references>
+    <dates>
+      <discovery>2022-06-08</discovery>
+      <entry>2022-06-09</entry>
+      <modified>2022-06-10</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="15888c7e-e659-11ec-b7fe-10c37b4ac2ea">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go118</name>
+	<range><lt>1.18.3</lt></range>
+      </package>
+      <package>
+	<name>go117</name>
+	<range><lt>1.17.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/52561">
+	  <p>crypto/rand: rand.Read hangs with extremely large buffers</p>
+	  <p>On Windows, rand.Read will hang indefinitely if passed a
+	    buffer larger than 1 &lt;&lt; 32 - 1 bytes.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/52814">
+	  <p>crypto/tls: session tickets lack random ticket_age_add</p>
+	  <p>Session tickets generated by crypto/tls did not contain
+	    a randomly generated ticket_age_add. This allows an
+	    attacker that can observe TLS handshakes to correlate
+	    successive connections by comparing ticket ages during
+	    session resumption.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/52574">
+	  <p>os/exec: empty Cmd.Path can result in running unintended
+	    binary on Windows</p>
+	  <p>If, on Windows, Cmd.Run, cmd.Start, cmd.Output, or
+	    cmd.CombinedOutput are executed when Cmd.Path is unset
+	    and, in the working directory, there are binaries named
+	    either "..com" or "..exe", they will be executed.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/52476">
+	  <p>path/filepath: Clean(`.\c:`) returns `c:` on Windows</p>
+	  <p>On Windows, the filepath.Clean function could convert an
+	    invalid path to a valid, absolute path. For example,
+	    Clean(`.\c:`) returned `c:`.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://groups.google.com/g/golang-dev/c/DidEMYAH_n0</url>
+      <cvename>CVE-2022-30634</cvename>
+      <url>https://go.dev/issue/52561</url>
+      <cvename>CVE-2022-30629</cvename>
+      <url>https://go.dev/issue/52814</url>
+      <cvename>CVE-2022-30580</cvename>
+      <url>https://go.dev/issue/52574</url>
+      <cvename>CVE-2022-29804</cvename>
+      <url>https://go.dev/issue/52476</url>
+    </references>
+    <dates>
+      <discovery>2022-06-01</discovery>
+      <entry>2022-06-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a58f3fde-e4e0-11ec-8340-2d623369b8b5">
+    <topic>e2fsprogs -- out-of-bounds read/write vulnerability</topic>
+    <affects>
+      <package>
+	<name>e2fsprogs</name>
+	<range><lt>1.46.5_1</lt></range>
+      </package>
+      <package>
+	<name>e2fsprogs-nobootfsck</name>
+	<range><lt>1.46.5_1</lt></range>
+      </package>
+      <package>
+	<name>e2fsprogs-roothardlinks</name>
+	<range><lt>1.46.5_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nils Bars reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=2068113">
+	  <p>
+	    During the processing of [a specially fuzzed disk image], an
+	    out-of-bounds write is triggered and causes a segmentation fault
+	    (SIGSEGV).
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1304</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=2068113</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=2069726</url>
+      <url>https://lore.kernel.org/linux-ext4/20220421173148.20193-1-lczerner@redhat.com/T/#u</url>
+    </references>
+    <dates>
+      <discovery>2022-03-24</discovery>
+      <entry>2022-06-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f414d69f-e43d-11ec-9ea4-001b217b3468">
+    <topic>Gitlab -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.0.0</ge><lt>15.0.1</lt></range>
+	<range><ge>14.10.0</ge><lt>14.10.4</lt></range>
+	<range><ge>11.10.0</ge><lt>14.9.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/06/01/critical-security-release-gitlab-15-0-1-released/">
+	  <p>Account take over via SCIM email change</p>
+	  <p>Stored XSS in Jira integration</p>
+	  <p>Quick action commands susceptible to XSS</p>
+	  <p>IP allowlist bypass when using Trigger tokens</p>
+	  <p>IP allowlist bypass when using Project Deploy Tokens</p>
+	  <p>Improper authorization in the Interactive Web Terminal</p>
+	  <p>Subgroup member can list members of parent group</p>
+	  <p>Group member lock bypass</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1680</cvename>
+      <cvename>CVE-2022-1940</cvename>
+      <cvename>CVE-2022-1948</cvename>
+      <cvename>CVE-2022-1935</cvename>
+      <cvename>CVE-2022-1936</cvename>
+      <cvename>CVE-2022-1944</cvename>
+      <cvename>CVE-2022-1821</cvename>
+      <cvename>CVE-2022-1783</cvename>
+      <url>https://about.gitlab.com/releases/2022/06/01/critical-security-release-gitlab-15-0-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-06-01</discovery>
+      <entry>2022-06-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="204f1a7a-43df-412f-ad25-7dbe88f54fa4">
+    <topic>zeek -- potential DoS vulnerabilty</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>4.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v4.0.7">
+	  <p> Fix potential hang in the DNS analyzer when receiving
+	  a specially-crafted packet. Due to the possibility of
+	  this happening with packets received from the network,
+	  this is a potential DoS vulnerability. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v4.0.7</url>
+    </references>
+    <dates>
+      <discovery>2022-06-01</discovery>
+      <entry>2022-06-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="40e2c35e-db99-11ec-b0cf-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>102.0.5005.61</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/05/stable-channel-update-for-desktop_24.html">
+	  <p>This release contains 32 security fixes, including:</p>
+	  <ul>
+	    <li>[1324864] Critical CVE-2022-1853: Use after free in Indexed DB. Reported by Anonymous on 2022-05-12</li>
+	    <li>[1320024] High CVE-2022-1854: Use after free in ANGLE. Reported by SeongHwan Park (SeHwa) on 2022-04-27</li>
+	    <li>[1228661] High CVE-2022-1855: Use after free in Messaging. Reported by Anonymous on 2021-07-13</li>
+	    <li>[1323239] High CVE-2022-1856: Use after free in User Education. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-05-06</li>
+	    <li>[1227995] High CVE-2022-1857: Insufficient policy enforcement in File System API. Reported by Daniel Rhea on 2021-07-11</li>
+	    <li>[1314310] High CVE-2022-1858: Out of bounds read in DevTools. Reported by EllisVlad on 2022-04-07</li>
+	    <li>[1322744] High CVE-2022-1859: Use after free in Performance Manager. Reported by Guannan Wang (@Keenan7310) of Tencent Security Xuanwu Lab on 2022-05-05</li>
+	    <li>[1297209] High CVE-2022-1860: Use after free in UI Foundations. Reported by @ginggilBesel on 2022-02-15</li>
+	    <li>[1316846] High CVE-2022-1861: Use after free in Sharing. Reported by Khalil Zhani on 2022-04-16</li>
+	    <li>[1236325] Medium CVE-2022-1862: Inappropriate implementation in Extensions. Reported by Alesandro Ortiz on 2021-08-04</li>
+	    <li>[1292870] Medium CVE-2022-1863: Use after free in Tab Groups. Reported by David Erceg on 2022-02-01</li>
+	    <li>[1320624] Medium CVE-2022-1864: Use after free in WebApp Installs. Reported by Yuntao You (@GraVity0) of Bytedance Wuheng Lab on 2022-04-28</li>
+	    <li>[1289192] Medium CVE-2022-1865: Use after free in Bookmarks. Reported by Rong Jian of VRI on 2022-01-20</li>
+	    <li>[1292264] Medium CVE-2022-1866: Use after free in Tablet Mode. Reported by @ginggilBesel on 2022-01-29</li>
+	    <li>[1315563] Medium CVE-2022-1867: Insufficient validation of untrusted input in Data Transfer. Reported by Michal Bentkowski of Securitum on 2022-04-12</li>
+	    <li>[1301203] Medium CVE-2022-1868: Inappropriate implementation in Extensions API. Reported by Alesandro Ortiz on 2022-02-28</li>
+	    <li>[1309467] Medium CVE-2022-1869: Type Confusion in V8. Reported by Man Yue Mo of GitHub Security Lab on 2022-03-23</li>
+	    <li>[1323236] Medium CVE-2022-1870: Use after free in App Service. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-05-06</li>
+	    <li>[1308199] Low CVE-2022-1871: Insufficient policy enforcement in File System API. Reported by Thomas Orlita on 2022-03-21</li>
+	    <li>[1310461] Low CVE-2022-1872: Insufficient policy enforcement in Extensions API. Reported by ChaobinZhang on 2022-03-26</li>
+	    <li>[1305394] Low CVE-2022-1873: Insufficient policy enforcement in COOP. Reported by NDevTK on 2022-03-11</li>
+	    <li>[1251588] Low CVE-2022-1874: Insufficient policy enforcement in Safe Browsing. Reported by hjy79425575 on 2021-09-21</li>
+	    <li>[1306443] Low CVE-2022-1875: Inappropriate implementation in PDF. Reported by NDevTK on 2022-03-15</li>
+	    <li>[1313600] Low CVE-2022-1876: Heap buffer overflow in DevTools. Reported by @ginggilBesel on 2022-04-06</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1853</cvename>
+      <cvename>CVE-2022-1854</cvename>
+      <cvename>CVE-2022-1855</cvename>
+      <cvename>CVE-2022-1856</cvename>
+      <cvename>CVE-2022-1857</cvename>
+      <cvename>CVE-2022-1858</cvename>
+      <cvename>CVE-2022-1859</cvename>
+      <cvename>CVE-2022-1860</cvename>
+      <cvename>CVE-2022-1861</cvename>
+      <cvename>CVE-2022-1862</cvename>
+      <cvename>CVE-2022-1863</cvename>
+      <cvename>CVE-2022-1864</cvename>
+      <cvename>CVE-2022-1865</cvename>
+      <cvename>CVE-2022-1866</cvename>
+      <cvename>CVE-2022-1867</cvename>
+      <cvename>CVE-2022-1868</cvename>
+      <cvename>CVE-2022-1869</cvename>
+      <cvename>CVE-2022-1870</cvename>
+      <cvename>CVE-2022-1871</cvename>
+      <cvename>CVE-2022-1872</cvename>
+      <cvename>CVE-2022-1873</cvename>
+      <cvename>CVE-2022-1874</cvename>
+      <cvename>CVE-2022-1875</cvename>
+      <cvename>CVE-2022-1876</cvename>
+      <url>https://chromereleases.googleblog.com/2022/05/stable-channel-update-for-desktop_24.html</url>
+    </references>
+    <dates>
+      <discovery>2022-05-24</discovery>
+      <entry>2022-05-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="04fecc47-dad2-11ec-8fbd-d4c9ef517024">
+    <topic>MariaDB -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mariadb103-client</name>
+	<range><lt>10.3.35</lt></range>
+      </package>
+      <package>
+	<name>mariadb103-server</name>
+	<range><lt>10.3.35</lt></range>
+      </package>
+      <package>
+	<name>mariadb104-client</name>
+	<range><lt>10.4.25</lt></range>
+      </package>
+      <package>
+	<name>mariadb104-server</name>
+	<range><lt>10.4.25</lt></range>
+      </package>
+      <package>
+	<name>mariadb105-client</name>
+	<range><lt>10.5.16</lt></range>
+      </package>
+      <package>
+	<name>mariadb105-server</name>
+	<range><lt>10.5.16</lt></range>
+      </package>
+      <package>
+	<name>mariadb106-client</name>
+	<range><lt>10.6.8</lt></range>
+      </package>
+      <package>
+	<name>mariadb106-server</name>
+	<range><lt>10.6.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MariaDB project reports:</p>
+	<blockquote cite="https://mariadb.com/kb/en/security/#full-list-of-cves-fixed-in-mariadb">
+	  <p>MariaDB fixed 23 vulnerabilities across all supported versions</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-46669</cvename>
+      <cvename>CVE-2022-27376</cvename>
+      <cvename>CVE-2022-27377</cvename>
+      <cvename>CVE-2022-27378</cvename>
+      <cvename>CVE-2022-27379</cvename>
+      <cvename>CVE-2022-27380</cvename>
+      <cvename>CVE-2022-27381</cvename>
+      <cvename>CVE-2022-27382</cvename>
+      <cvename>CVE-2022-27383</cvename>
+      <cvename>CVE-2022-27384</cvename>
+      <cvename>CVE-2022-27386</cvename>
+      <cvename>CVE-2022-27387</cvename>
+      <cvename>CVE-2022-27444</cvename>
+      <cvename>CVE-2022-27445</cvename>
+      <cvename>CVE-2022-27446</cvename>
+      <cvename>CVE-2022-27447</cvename>
+      <cvename>CVE-2022-27448</cvename>
+      <cvename>CVE-2022-27449</cvename>
+      <cvename>CVE-2022-27451</cvename>
+      <cvename>CVE-2022-27452</cvename>
+      <cvename>CVE-2022-27455</cvename>
+      <cvename>CVE-2022-27456</cvename>
+      <cvename>CVE-2022-27457</cvename>
+      <cvename>CVE-2022-27458</cvename>
+      <url>https://mariadb.com/kb/en/security/#full-list-of-cves-fixed-in-mariadb</url>
+    </references>
+    <dates>
+      <discovery>2022-05-20</discovery>
+      <entry>2022-05-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b2407db1-d79f-11ec-a15f-589cfc0f81b0">
+    <topic>clamav -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.104.3,1</lt></range>
+      </package>
+      <package>
+	<name>clamav-lts</name>
+	<range><lt>0.103.6,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ClamAV project reports:</p>
+	<blockquote cite="https://blog.clamav.net/2022/05/clamav-01050-01043-01036-released.html">
+	  <p>Fixed a possible double-free vulnerability in the OLE2 file
+	    parser. Issue affects versions 0.104.0 through 0.104.2. Issue
+	    identified by OSS-Fuzz.</p>
+	  <p>Fixed a possible infinite loop vulnerability in the CHM file
+	    parser. Issue affects versions 0.104.0 through 0.104.2 and LTS
+	    version 0.103.5 and prior versions. Thank you to Michał Dardas
+	    for reporting this issue.</p>
+	  <p>Fixed a possible NULL-pointer dereference crash in the scan
+	    verdict cache check. Issue affects versions 0.103.4, 0.103.5,
+	    0.104.1, and 0.104.2. Thank you to Alexander Patrakov and
+	    Antoine Gatineau for reporting this issue.</p>
+	  <p>Fixed a possible infinite loop vulnerability in the TIFF file
+	    parser. Issue affects versions 0.104.0 through 0.104.2 and LTS
+	    version 0.103.5 and prior versions. The issue only occurs if the
+	    "--alert-broken-media" ClamScan option is enabled. For ClamD,
+	    the affected option is "AlertBrokenMedia yes", and for libclamav
+	    it is the "CL_SCAN_HEURISTIC_BROKEN_MEDIA" scan option. Thank
+	    you to Michał Dardas for reporting this issue.</p>
+	  <p>Fixed a possible memory leak in the HTML file parser /
+	    Javascript normalizer. Issue affects versions 0.104.0 through
+	    0.104.2 and LTS version 0.103.5 and prior versions. Thank you to
+	    Michał Dardas for reporting this issue.</p>
+	  <p>Fixed a possible multi-byte heap buffer overflow write
+	    vulnerability in the signature database load module. The fix was
+	    to update the vendored regex library to the latest version.
+	    Issue affects versions 0.104.0 through 0.104.2 and LTS version
+	    0.103.5 and prior versions. Thank you to Michał Dardas for
+	    reporting this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-20803</cvename>
+      <cvename>CVE-2022-20770</cvename>
+      <cvename>CVE-2022-20796</cvename>
+      <cvename>CVE-2022-20771</cvename>
+      <cvename>CVE-2022-20785</cvename>
+      <cvename>CVE-2022-20792</cvename>
+      <url>https://blog.clamav.net/2022/05/clamav-01050-01043-01036-released.html#more</url>
+    </references>
+    <dates>
+      <discovery>2022-05-04</discovery>
+      <entry>2022-05-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a1360138-d446-11ec-8ea1-10c37b4ac2ea">
+    <topic>go -- syscall.Faccessat checks wrong group on Linux</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.18.2,1</lt></range>
+      </package>
+      <package>
+	<name>go117</name>
+	<range><lt>1.17.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/52313">
+	  <p>When called with a non-zero flags parameter, the
+	    syscall.Faccessat function could incorrectly report that a
+	    file is accessible. This bug only occurs on Linux systems.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-29526</cvename>
+      <url>https://github.com/golang/go/issues/52313</url>
+      <url>https://groups.google.com/g/golang-dev/c/CPU3TB6d4oY</url>
+    </references>
+    <dates>
+      <discovery>2022-04-12</discovery>
+      <entry>2022-05-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="11e36890-d28c-11ec-a06f-d4c9ef517024">
+    <topic>curl -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.83.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The curl project reports:</p>
+	<blockquote cite="https://curl.se/docs/security.html">
+	  <p>CVE-2022-27778: curl removes wrong file on error</p>
+	  <p>CVE-2022-27779: cookie for trailing dot TLD</p>
+	  <p>CVE-2022-27780: percent-encoded path separator in URL host</p>
+	  <p>CVE-2022-27781: CERTINFO never-ending busy-loop</p>
+	  <p>CVE-2022-27782: TLS and SSH connection too eager reuse</p>
+	  <p>CVE-2022-30115: HSTS bypass via trailing dot</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-27778</cvename>
+      <cvename>CVE-2022-27779</cvename>
+      <cvename>CVE-2022-27780</cvename>
+      <cvename>CVE-2022-27781</cvename>
+      <cvename>CVE-2022-27782</cvename>
+      <cvename>CVE-2022-30115</cvename>
+      <url>https://curl.se/docs/security.html</url>
+    </references>
+    <dates>
+      <discovery>2022-05-11</discovery>
+      <entry>2022-05-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="157ce083-d145-11ec-ab9b-6cc21735f730">
+    <topic>PostgreSQL Server -- execute arbitrary SQL code as DBA user</topic>
+    <affects>
+      <package>
+	<name>postgresql14-server</name>
+	<range><lt>14.3</lt></range>
+      </package>
+      <package>
+	<name>postgresql13-server</name>
+	<range><lt>13.7</lt></range>
+      </package>
+      <package>
+	<name>postgresql12-server</name>
+	<range><lt>12.11</lt></range>
+      </package>
+      <package>
+	<name>postgresql11-server</name>
+	<range><lt>11.16</lt></range>
+      </package>
+      <package>
+	<name>postgresql10-server</name>
+	<range><lt>10.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL project reports:</p>
+	<blockquote>
+	  <p>
+	    Confine additional operations within "security restricted
+	    operation" sandboxes.
+	  </p>
+	  <p>
+	    Autovacuum, CLUSTER, CREATE INDEX, REINDEX, REFRESH MATERIALIZED VIEW,
+	    and pg_amcheck activated the "security restricted operation" protection
+	    mechanism too late, or even not at all in some code paths.
+	    A user having permission to create non-temporary objects within a
+	    database could define an object that would execute arbitrary SQL
+	    code with superuser permissions the next time that autovacuum
+	    processed the object, or that some superuser ran one of the affected
+	    commands against it.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1552</cvename>
+    </references>
+    <dates>
+      <discovery>2022-05-11</discovery>
+      <entry>2022-05-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ac91cf5e-d098-11ec-bead-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>101.0.4951.64</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/05/stable-channel-update-for-desktop_10.html">
+	  <p>This release contains 13 security fixes, including:</p>
+	  <ul>
+	    <li>[1316990] High CVE-2022-1633: Use after free in Sharesheet. Reported by Khalil Zhani on 2022-04-18</li>
+	    <li>[1314908] High CVE-2022-1634: Use after free in Browser UI. Reported by Khalil Zhani on 2022-04-09</li>
+	    <li>[1319797] High CVE-2022-1635: Use after free in Permission Prompts. Reported by Anonymous on 2022-04-26</li>
+	    <li>[1297283] High CVE-2022-1636: Use after free in Performance APIs. Reported by Seth Brenith, Microsoft on 2022-02-15</li>
+	    <li>[1311820] High CVE-2022-1637: Inappropriate implementation in Web Contents. Reported by Alesandro Ortiz on 2022-03-31</li>
+	    <li>[1316946] High CVE-2022-1638: Heap buffer overflow in V8 Internationalization. Reported by DoHyun Lee (@l33d0hyun) of DNSLab, Korea University on 2022-04-17</li>
+	    <li>[1317650] High CVE-2022-1639: Use after free in ANGLE. Reported by SeongHwan Park (SeHwa) on 2022-04-19</li>
+	    <li>[1320592] High CVE-2022-1640: Use after free in Sharing. Reported by Weipeng Jiang (@Krace) and Guang Gong of 360 Vulnerability Research Institute on 2022-04-28</li>
+	    <li>[1305068] Medium CVE-2022-1641: Use after free in Web UI Diagnostics. Reported by Rong Jian of VRI on 2022-03-10</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1633</cvename>
+      <cvename>CVE-2022-1634</cvename>
+      <cvename>CVE-2022-1635</cvename>
+      <cvename>CVE-2022-1636</cvename>
+      <cvename>CVE-2022-1637</cvename>
+      <cvename>CVE-2022-1638</cvename>
+      <cvename>CVE-2022-1639</cvename>
+      <cvename>CVE-2022-1640</cvename>
+      <cvename>CVE-2022-1641</cvename>
+      <url>https://chromereleases.googleblog.com/2022/05/stable-channel-update-for-desktop_10.html</url>
+    </references>
+    <dates>
+      <discovery>2022-05-10</discovery>
+      <entry>2022-05-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b9837fa1-cd72-11ec-98f1-6805ca0b3d42">
+    <topic>rsyslog8 -- heap buffer overflow on receiving TCP syslog</topic>
+    <affects>
+      <package>
+	<name>rsyslog</name>
+	<range><lt>8.2204.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rainer Gerhards reports:</p>
+	<blockquote cite="https://github.com/rsyslog/rsyslog/security/advisories/GHSA-ggw7-xr6h-mmr8">
+	  <p>Modules for TCP syslog reception have a heap buffer
+	  overflow when octet-counted framing is used. The attacker
+	  can corrupt heap values, leading to data integrity issues
+	  and availability impact. Remote code execution is unlikely
+	  to happen but not impossible..</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24903</cvename>
+      <url>https://github.com/rsyslog/rsyslog/security/advisories/GHSA-ggw7-xr6h-mmr8</url>
+    </references>
+    <dates>
+      <discovery>2022-05-05</discovery>
+      <entry>2022-05-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="647ac600-cc70-11ec-9cfc-10c37b4ac2ea">
+    <topic>gogs -- XSS in issue attachments</topic>
+    <affects>
+      <package>
+	<name>gogs</name>
+	<range><lt>0.12.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The gogs project reports:</p>
+	<blockquote cite="https://github.com/gogs/gogs/issues/6919">
+	  <p>Repository issues page allows HTML attachments with arbitrary
+	    JS code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1464</cvename>
+      <url>https://github.com/gogs/gogs/issues/6919</url>
+      <url>https://huntr.dev/bounties/34a12146-3a5d-4efc-a0f8-7a3ae04b198d/</url>
+    </references>
+    <dates>
+      <discovery>2022-04-12</discovery>
+      <entry>2022-05-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="95ee401d-cc6a-11ec-9cfc-10c37b4ac2ea">
+    <topic>gitea -- Escape git fetch remote</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.16.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/19487">
+	  <p>Escape git fetch remote in
+	    services/migrations/gitea_uploader.go</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/pull/19487</url>
+    </references>
+    <dates>
+      <discovery>2022-04-25</discovery>
+      <entry>2022-05-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fceb2b08-cb76-11ec-a06f-d4c9ef517024">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1o,1</lt></range>
+      </package>
+      <package>
+	<name>openssl-devel</name>
+	<range><lt>3.0.3</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20220503.txt">
+	  <ul>
+	    <li>The c_rehash script allows command injection (CVE-2022-1292)
+	      (Moderate) <br/>The c_rehash script does not properly sanitise shell
+	      metacharacters to prevent command injection.  This script is distributed
+	      by some operating systems in a manner where it is automatically
+	      executed. On such operating systems, an attacker could execute arbitrary
+	      commands with the privileges of the script.</li>
+	    <li>OCSP_basic_verify may incorrectly verify the response signing
+	      certificate (CVE-2022-1343) (Moderate)<br/>The function
+	      `OCSP_basic_verify` verifies the signer certificate on an OCSP response.
+	      In the case where the (non-default) flag OCSP_NOCHECKS is used then the
+	      response will be positive (meaning a successful verification) even in
+	      the case where the response signing certificate fails to verify.</li>
+	    <li>Incorrect MAC key used in the RC4-MD5 ciphersuite (CVE-2022-1434)
+	      (Low)<br/>The OpenSSL 3.0 implementation of the RC4-MD5 ciphersuite
+	      incorrectly uses the AAD data as the MAC key. This makes the MAC key
+	      trivially predictable.</li>
+	    <li>Resource leakage when decoding certificates and keys (CVE-2022-1473)
+	      (Low)<br/>The OPENSSL_LH_flush() function, which empties a hash table,
+	      containsa bug that breaks reuse of the memory occuppied by the removed
+	      hash table entries.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1292</cvename>
+      <cvename>CVE-2022-1343</cvename>
+      <cvename>CVE-2022-1434</cvename>
+      <cvename>CVE-2022-1473</cvename>
+      <url>https://www.openssl.org/news/secadv/20220503.txt</url>
+    </references>
+    <dates>
+      <discovery>2022-05-03</discovery>
+      <entry>2022-05-04</entry>
+      <modified>2022-05-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="a8118db0-cac2-11ec-9288-0800270512f4">
+    <topic>rainloop -- cross-site-scripting (XSS) vulnerability</topic>
+    <affects>
+      <package>
+	<name>rainloop-php74</name>
+	<name>rainloop-php80</name>
+	<name>rainloop-php81</name>
+	<name>rainloop-community-php74</name>
+	<name>rainloop-community-php80</name>
+	<name>rainloop-community-php81</name>
+	<range><lt>1.16.0_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Scannell reports:</p>
+	<blockquote cite="https://blog.sonarsource.com/rainloop-emails-at-risk-due-to-code-flaw">
+	  <p>
+	    The code vulnerability can be easily exploited by an
+	    attacker by sending a malicious email to a victim that
+	    uses RainLoop as a mail client. When the email is viewed
+	    by the victim, the attacker gains full control over the
+	    session of the victim and can steal any of their emails,
+	    including those that contain highly sensitive information
+	    such as passwords, documents, and password reset links.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-29360</cvename>
+      <url>https://blog.sonarsource.com/rainloop-emails-at-risk-due-to-code-flaw</url>
+      <url>https://github.com/RainLoop/rainloop-webmail/issues/2142</url>
+    </references>
+    <dates>
+      <discovery>2022-04-19</discovery>
+      <entry>2022-05-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="61bce714-ca0c-11ec-9cfc-10c37b4ac2ea">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.18.1,1</lt></range>
+      </package>
+      <package>
+	<name>go117</name>
+	<range><lt>1.17.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/51853">
+	  <p>encoding/pem: fix stack overflow in Decode.</p>
+	  <p>A large (more than 5 MB) PEM input can cause a stack
+	    overflow in Decode, leading the program to crash.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/52075">
+	  <p>crypto/elliptic: tolerate all oversized scalars in generic
+	    P-256.</p>
+	  <p>A crafted scalar input longer than 32 bytes can
+	    cause P256().ScalarMult or P256().ScalarBaseMult to panic.
+	    Indirect uses through crypto/ecdsa and crypto/tls are
+	    unaffected. amd64, arm64, ppc64le, and s390x are
+	    unaffected.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/51759">
+	  <p>crypto/x509: non-compliant certificates can cause a panic
+	    in Verify on macOS in Go 1.18.</p>
+	  <p>Verifying certificate chains containing certificates
+	    which are not compliant with RFC 5280 causes
+	    Certificate.Verify to panic on macOS. These chains can be
+	    delivered through TLS and can cause a crypto/tls or
+	    net/http client to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24675</cvename>
+      <url>https://github.com/golang/go/issues/51853</url>
+      <cvename>CVE-2022-28327</cvename>
+      <url>https://github.com/golang/go/issues/52075</url>
+      <cvename>CVE-2022-27536</cvename>
+      <url>https://github.com/golang/go/issues/51759</url>
+    </references>
+    <dates>
+      <discovery>2022-04-12</discovery>
+      <entry>2022-05-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9db93f3d-c725-11ec-9618-000d3ac47524">
+    <topic>Rails -- XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-actionpack52</name>
+	<range><lt>5.2.7.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack60</name>
+	<range><lt>6.0.4.8</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack61</name>
+	<range><lt>6.1.5.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack70</name>
+	<range><lt>7.0.2.4</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionview52</name>
+	<range><lt>5.2.7.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionview60</name>
+	<range><lt>6.0.4.8</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionview61</name>
+	<range><lt>6.1.5.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionview70</name>
+	<range><lt>7.0.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby on Rails blog:</p>
+	<blockquote cite="https://rubyonrails.org/2022/4/26/Rails-7-0-2-4-6-1-5-1-6-0-4-8-and-5-2-7-1-have-been-released">
+	  <p>This is an announcement to let you know that Rails 7.0.2.4, 6.1.5.1,
+	    6.0.4.8, and 5.2.7.1 have been released!</p>
+	  <p>These are security releases so please update as soon as you can. Once
+	    again we've made these releases based on the last release tag, so
+	    hopefully upgrading will go smoothly.</p>
+	  <p>The releases address two vulnerabilities, CVE-2022-22577, and
+	    CVS-2022-27777. They are both XSS vulnerabilities, so please take a look
+	    at the forum posts to see how (or if) they might possibly impact your
+	    application.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-22577</cvename>
+      <cvename>CVE-2022-27777</cvename>
+      <url>https://rubyonrails.org/2022/4/26/Rails-7-0-2-4-6-1-5-1-6-0-4-8-and-5-2-7-1-have-been-released</url>
+    </references>
+    <dates>
+      <discovery>2022-04-26</discovery>
+      <entry>2022-04-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2220827b-c732-11ec-b272-901b0e934d69">
+    <topic>hiredis -- integer/buffer overflow</topic>
+    <affects>
+      <package>
+	<name>hiredis</name>
+	<range><lt>1.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>hiredis maintainers report:</p>
+	<blockquote cite="https://github.com/redis/hiredis/security/advisories/GHSA-hfm9-39pp-55p2">
+	  <p>
+	    Hiredis is vulnurable to integer overflow if provided maliciously crafted or corrupted RESP mult-bulk protocol data.
+
+	    When parsing multi-bulk (array-like) replies, hiredis fails to check if count * sizeof(redisReply*) can be represented in SIZE_MAX. If it can not, and the calloc() call doesn't itself make this check, it would result in a short allocation and subsequent buffer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32765</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32765</url>
+      <url>https://github.com/redis/hiredis/security/advisories/GHSA-hfm9-39pp-55p2</url>
+    </references>
+    <dates>
+      <discovery>2021-10-04</discovery>
+      <entry>2022-04-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="92a4d881-c6cf-11ec-a06f-d4c9ef517024">
+    <topic>cURL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.83.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cURL project reports:</p>
+	<blockquote cite="https://curl.se/docs/vuln-7.82.0.html">
+	  <ul>
+	    <li>OAUTH2 bearer bypass in connection re-use (CVE-2022-22576)</li>
+	    <li>Credential leak on redirect (CVE-2022-27774)</li>
+	    <li>Bad local IPv6 connection reuse (CVE-2022-27775)</li>
+	    <li>Auth/cookie leak on redirect (CVE-2022-27776)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-22576</cvename>
+      <cvename>CVE-2022-27774</cvename>
+      <cvename>CVE-2022-27775</cvename>
+      <cvename>CVE-2022-27776</cvename>
+      <url>https://curl.se/docs/vuln-7.82.0.html</url>
+    </references>
+    <dates>
+      <discovery>2022-04-27</discovery>
+      <entry>2022-04-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="26f2123b-c6c6-11ec-b66f-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>101.0.4951.41</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/04/stable-channel-update-for-desktop_26.html">
+	  <p>This release contains 30 security fixes, including:</p>
+	  <ul>
+	    <li>[1313905] High CVE-2022-1477: Use after free in Vulkan. Reported by SeongHwan Park (SeHwa) on 2022-04-06</li>
+	    <li>[1299261] High CVE-2022-1478: Use after free in SwiftShader. Reported by SeongHwan Park (SeHwa) on 2022-02-20</li>
+	    <li>[1305190] High CVE-2022-1479: Use after free in ANGLE. Reported by Jeonghoon Shin of Theori on 2022-03-10</li>
+	    <li>[1307223] High CVE-2022-1480: Use after free in Device API. Reported by @uwu7586 on 2022-03-17</li>
+	    <li>[1302949] High CVE-2022-1481: Use after free in Sharing. Reported by Weipeng Jiang (@Krace) and Guang Gong of 360 Vulnerability Research Institute on 2022-03-04</li>
+	    <li>[1304987] High CVE-2022-1482: Inappropriate implementation in WebGL. Reported by Christoph Diehl, Microsoft on 2022-03-10</li>
+	    <li>[1314754] High CVE-2022-1483: Heap buffer overflow in WebGPU. Reported by Mark Brand of Google Project Zero on 2022-04-08</li>
+	    <li>[1297429] Medium CVE-2022-1484: Heap buffer overflow in Web UI Settings. Reported by Chaoyuan Peng (@ret2happy) on 2022-02-15</li>
+	    <li>[1299743] Medium CVE-2022-1485: Use after free in File System API. Reported by Anonymous on 2022-02-22</li>
+	    <li>[1314616] Medium CVE-2022-1486: Type Confusion in V8. Reported by Brendon Tiszka on 2022-04-08</li>
+	    <li>[1304368] Medium CVE-2022-1487: Use after free in Ozone. Reported by Sri on 2022-03-09</li>
+	    <li>[1302959] Medium CVE-2022-1488: Inappropriate implementation in Extensions API. Reported by Thomas Beverley from Wavebox.io on 2022-03-04</li>
+	    <li>[1300561] Medium CVE-2022-1489: Out of bounds memory access in UI Shelf. Reported by Khalil Zhani on 2022-02-25</li>
+	    <li>[1301840] Medium CVE-2022-1490: Use after free in Browser Switcher. Reported by raven at KunLun lab on 2022-03-01</li>
+	    <li>[1305706] Medium CVE-2022-1491: Use after free in Bookmarks. Reported by raven at KunLun lab on 2022-03-12</li>
+	    <li>[1315040] Medium CVE-2022-1492: Insufficient data validation in Blink Editing. Reported by Michal Bentkowski of Securitum on 2022-04-11</li>
+	    <li>[1275414] Medium CVE-2022-1493: Use after free in Dev Tools. Reported by Zhihua Yao of KunLun Lab on 2021-12-01</li>
+	    <li>[1298122] Medium CVE-2022-1494: Insufficient data validation in Trusted Types. Reported by Masato Kinugawa on 2022-02-17</li>
+	    <li>[1301180] Medium CVE-2022-1495: Incorrect security UI in Downloads. Reported by Umar Farooq on 2022-02-28</li>
+	    <li>[1306391] Medium CVE-2022-1496: Use after free in File Manager. Reported by Zhiyi Zhang and Zhunki from Codesafe Team of Legendsec at Qi'anxin Group on 2022-03-15</li>
+	    <li>[1264543] Medium CVE-2022-1497: Inappropriate implementation in Input. Reported by Abdulrahman Alqabandi, Microsoft Browser Vulnerability Research on 2021-10-29</li>
+	    <li>[1297138] Low CVE-2022-1498: Inappropriate implementation in HTML Parser. Reported by SeungJu Oh (@real_as3617) on 2022-02-14</li>
+	    <li>[1000408] Low CVE-2022-1499: Inappropriate implementation in WebAuthentication. Reported by Jun Kokatsu, Microsoft Browser Vulnerability Research on 2019-09-04</li>
+	    <li>[1223475] Low CVE-2022-1500: Insufficient data validation in Dev Tools. Reported by Hoang Nguyen on 2021-06-25</li>
+	    <li>[1293191] Low CVE-2022-1501: Inappropriate implementation in iframe. Reported by Oriol Brufau on 2022-02-02</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1477</cvename>
+      <cvename>CVE-2022-1478</cvename>
+      <cvename>CVE-2022-1479</cvename>
+      <cvename>CVE-2022-1480</cvename>
+      <cvename>CVE-2022-1481</cvename>
+      <cvename>CVE-2022-1482</cvename>
+      <cvename>CVE-2022-1483</cvename>
+      <cvename>CVE-2022-1484</cvename>
+      <cvename>CVE-2022-1485</cvename>
+      <cvename>CVE-2022-1486</cvename>
+      <cvename>CVE-2022-1487</cvename>
+      <cvename>CVE-2022-1488</cvename>
+      <cvename>CVE-2022-1489</cvename>
+      <cvename>CVE-2022-1490</cvename>
+      <cvename>CVE-2022-1491</cvename>
+      <cvename>CVE-2022-1492</cvename>
+      <cvename>CVE-2022-1493</cvename>
+      <cvename>CVE-2022-1494</cvename>
+      <cvename>CVE-2022-1495</cvename>
+      <cvename>CVE-2022-1496</cvename>
+      <cvename>CVE-2022-1497</cvename>
+      <cvename>CVE-2022-1498</cvename>
+      <cvename>CVE-2022-1499</cvename>
+      <cvename>CVE-2022-1500</cvename>
+      <cvename>CVE-2022-1501</cvename>
+      <url>https://chromereleases.googleblog.com/2022/04/stable-channel-update-for-desktop_26.html</url>
+    </references>
+    <dates>
+      <discovery>2022-04-26</discovery>
+      <entry>2022-04-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cc42db1c-c65f-11ec-ad96-0800270512f4">
+    <topic>redis -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>6.2.7</lt></range>
+      </package>
+      <package>
+	<name>redis-devel</name>
+	<range><lt>7.0.0.20220428</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><lt>6.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Aviv Yahav reports:</p>
+	<blockquote cite="https://groups.google.com/g/redis-db/c/7iWUlwtoDqU">
+	  <dl>
+	    <dt>CVE-2022-24735</dt>
+	    <dd>
+	      By exploiting weaknesses in the Lua script execution
+	      environment, an attacker with access to Redis can inject
+	      Lua code that will execute with the (potentially higher)
+	      privileges of another Redis user.
+	    </dd>
+	    <dt>CVE-2022-24736</dt>
+	    <dd>
+	      An attacker attempting to load a specially crafted Lua
+	      script can cause NULL pointer dereference which will
+	      result with a crash of the redis-server process.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24735</cvename>
+      <cvename>CVE-2022-24736</cvename>
+      <url>https://groups.google.com/g/redis-db/c/7iWUlwtoDqU</url>
+    </references>
+    <dates>
+      <discovery>2022-04-27</discovery>
+      <entry>2022-04-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="17a30a24-c579-11ec-bbbd-0800270512f4">
+    <topic>eb -- Potential buffer overrun vulnerability</topic>
+    <affects>
+      <package>
+	<name>ja-eb</name>
+	<range><lt>4.4.3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kazuhiro Ito reports:</p>
+	<blockquote cite="mailto:edict@ring.gr.jp">
+	  <p>Potential buffer overrun vulnerability is found in eb/multiplex.c.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>mailto:edict@ring.gr.jp</url>
+    </references>
+    <dates>
+      <discovery>2022-04-25</discovery>
+      <entry>2022-04-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a00c76d9-0c05-4d99-bef7-ae4521cb2a4d">
     <topic>zeek -- potential DoS vulnerabilty</topic>
     <affects>
@@ -123,10 +2922,45 @@
     </description>
     <references>
       <url>https://www.oracle.com/security-alerts/cpuapr2022.html</url>
+      <cvename>CVE-2022-0778</cvename>
+      <cvename>CVE-2021-22570</cvename>
+      <cvename>CVE-2022-0778</cvename>
+      <cvename>CVE-2022-21454</cvename>
+      <cvename>CVE-2022-21482</cvename>
+      <cvename>CVE-2022-21483</cvename>
+      <cvename>CVE-2022-21489</cvename>
+      <cvename>CVE-2022-21490</cvename>
+      <cvename>CVE-2022-21457</cvename>
+      <cvename>CVE-2022-21425</cvename>
+      <cvename>CVE-2022-21440</cvename>
+      <cvename>CVE-2022-21459</cvename>
+      <cvename>CVE-2022-21478</cvename>
+      <cvename>CVE-2022-21479</cvename>
+      <cvename>CVE-2022-21418</cvename>
+      <cvename>CVE-2022-21417</cvename>
+      <cvename>CVE-2022-21413</cvename>
+      <cvename>CVE-2022-21427</cvename>
+      <cvename>CVE-2022-21412</cvename>
+      <cvename>CVE-2022-21414</cvename>
+      <cvename>CVE-2022-21435</cvename>
+      <cvename>CVE-2022-21436</cvename>
+      <cvename>CVE-2022-21437</cvename>
+      <cvename>CVE-2022-21438</cvename>
+      <cvename>CVE-2022-21452</cvename>
+      <cvename>CVE-2022-21462</cvename>
+      <cvename>CVE-2022-21415</cvename>
+      <cvename>CVE-2022-21451</cvename>
+      <cvename>CVE-2022-21444</cvename>
+      <cvename>CVE-2022-21460</cvename>
+      <cvename>CVE-2022-21484</cvename>
+      <cvename>CVE-2022-21485</cvename>
+      <cvename>CVE-2022-21486</cvename>
+      <cvename>CVE-2022-21423</cvename>
     </references>
     <dates>
       <discovery>2022-04-16</discovery>
       <entry>2022-04-16</entry>
+      <modified>2022-05-23</modified>
     </dates>
   </vuln>
 
@@ -519,7 +3353,7 @@
       <package>
 	<name>py38-django40</name>
 	<name>py39-django40</name>
-	<name>py31-django40</name>
+	<name>py310-django40</name>
 	<range><lt>4.0.4</lt></range>
       </package>
     </affects>

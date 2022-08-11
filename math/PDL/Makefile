@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@plab.ku.dk>
-
 PORTNAME=	PDL
 PORTVERSION=	2.019
 PORTREVISION=	5
@@ -17,7 +15,7 @@ BROKEN_i386=	ld: error: can't create dynamic relocation R_386_32 against local s
 .endif
 
 BUILD_DEPENDS=	p5-Devel-CheckLib>=1.01:devel/p5-Devel-CheckLib \
-		${P5_POD_PARSER} \
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Astro-FITS-Header>=0:astro/p5-Astro-FITS-Header \
 		p5-Convert-UU>=0:converters/p5-Convert-UU \

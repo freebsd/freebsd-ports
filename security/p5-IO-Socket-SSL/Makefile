@@ -1,5 +1,3 @@
-# Created by: scrappy
-
 PORTNAME=	IO-Socket-SSL
 DISTVERSION=	2.074
 CATEGORIES=	security perl5

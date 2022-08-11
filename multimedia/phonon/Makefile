@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	phonon
 DISTVERSION=	4.11.1
 CATEGORIES=	multimedia kde

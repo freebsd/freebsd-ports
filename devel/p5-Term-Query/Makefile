@@ -1,5 +1,3 @@
-# Created by: Garrett Wollman <wollman@lcs.mit.edu>
-
 PORTNAME=	Term-Query
 PORTVERSION=	2.0
 PORTREVISION=	1

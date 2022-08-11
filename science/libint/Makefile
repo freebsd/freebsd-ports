@@ -1,5 +1,3 @@
-# Created by: NAKATA, Maho <maho@FreeBSD.org>
-
 PORTNAME=	libint
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1-2-1-15

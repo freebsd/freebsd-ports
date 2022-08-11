@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-Table-More
 PORTVERSION=	0.025
 CATEGORIES=	textproc perl5

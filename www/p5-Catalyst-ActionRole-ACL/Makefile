@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Catalyst-ActionRole-ACL
 PORTVERSION=	0.07
 PORTREVISION=	1

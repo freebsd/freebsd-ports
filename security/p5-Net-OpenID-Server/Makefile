@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <kappa@rambler-co.ru>
-
 PORTNAME=	Net-OpenID-Server
 PORTVERSION=	1.09
 PORTREVISION=	2

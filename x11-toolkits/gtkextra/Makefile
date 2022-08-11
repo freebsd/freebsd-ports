@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	gtkextra
 PORTVERSION=	3.3.4
 CATEGORIES=	x11-toolkits

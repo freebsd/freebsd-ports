@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	camljava
 PORTVERSION=	0.3
 PORTREVISION=	3

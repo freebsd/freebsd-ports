@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	gtkchtheme
 PORTVERSION=	0.3.1
 PORTREVISION=	11

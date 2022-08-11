@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	LaTeX-Table
 PORTVERSION=	1.0.6
 DISTVERSIONPREFIX=	v

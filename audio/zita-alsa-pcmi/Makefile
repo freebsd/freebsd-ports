@@ -1,5 +1,5 @@
 PORTNAME=	zita-alsa-pcmi
-DISTVERSION=	0.4.0
+DISTVERSION=	0.5.1
 CATEGORIES=	audio
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
@@ -39,8 +39,11 @@ do-install:
 .endfor
 
 post-install:
+	# add symlink, see comment in the patch
 	@cd ${STAGEDIR}${PREFIX} && \
-		(cd lib && ${RLN} libzita-alsa-pcmi.so.${DISTVERSION} libzita-alsa-pcmi.so.${DISTVERSION:R:R}) && \
+		(cd lib && ${RLN} libzita-alsa-pcmi.so.${DISTVERSION} libzita-alsa-pcmi.so.${DISTVERSION:R:R})
+	# strip binaries
+	@cd ${STAGEDIR}${PREFIX} && \
 		${STRIP_CMD} \
 			bin/alsa_delay \
 			bin/alsa_loopback \

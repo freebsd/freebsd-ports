@@ -1,7 +1,6 @@
-# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
-
 PORTNAME=	racket
-PORTVERSION=	8.4
+PORTVERSION=	8.5
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \

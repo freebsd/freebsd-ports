@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	MooseX-SemiAffordanceAccessor
 PORTVERSION=	0.10
 CATEGORIES=	devel perl5

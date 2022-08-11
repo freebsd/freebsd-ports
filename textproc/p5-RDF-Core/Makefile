@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	RDF-Core
 PORTVERSION=	0.51
 PORTREVISION=	1

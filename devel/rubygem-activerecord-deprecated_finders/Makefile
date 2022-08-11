@@ -3,7 +3,7 @@ PORTVERSION=	1.0.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@michael-fausten.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deprecated finder APIs from Active Record
 
 LICENSE=	MIT

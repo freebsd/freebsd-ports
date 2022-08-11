@@ -13,5 +13,17 @@ The installation procedure will fetch 6 GB of compressed data and will
 temporarily need 18 GB of free space in that directory and 13 GB when
 the installation is complete.
 EOM
+},
+{ type : remove
+  message: <<EOM
+------------------------------------------------------------------------------
+
+If you are no longer using the %%PORTNAME%% port, then manually delete
+the following directory and all its contents:
+
+	/var/db/%%PORTNAME%%
+
+------------------------------------------------------------------------------
+EOM
 }
 ]

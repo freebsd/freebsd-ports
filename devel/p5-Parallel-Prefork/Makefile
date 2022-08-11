@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Parallel-Prefork
 PORTVERSION=	0.18
 CATEGORIES=	devel perl5

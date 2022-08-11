@@ -1,8 +1,6 @@
-# Created by: Jordan DeLong <fracture@allusion.net>
-
 PORTNAME=	prboom
 PORTVERSION=	2.5.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 

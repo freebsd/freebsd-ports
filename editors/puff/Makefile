@@ -1,5 +1,3 @@
-# Created by: Leif Pedersen <bilbo@devpit.org>
-
 PORTNAME=	puff
 PORTVERSION=	1.0.1
 CATEGORIES=	editors

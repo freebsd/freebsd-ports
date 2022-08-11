@@ -1,5 +1,3 @@
-# Created by: Jan Siml <jsi@jules.de>
-
 PORTNAME=	rth
 PORTVERSION=	1.7.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	Console_Table
 PORTVERSION=	1.3.1
 CATEGORIES=	devel pear

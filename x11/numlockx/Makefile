@@ -1,5 +1,3 @@
-# Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-
 PORTNAME=	numlockx
 PORTVERSION=	1.2
 CATEGORIES=	x11

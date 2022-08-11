@@ -131,6 +131,7 @@
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/api-ephemeris.rst
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/api-framelib.rst
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/api-iokit.rst
+%%PYTHON_SITELIBDIR%%/skyfield/documentation/api-kepler.rst
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/api-planetary.rst
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/api-position.rst
 %%PYTHON_SITELIBDIR%%/skyfield/documentation/api-satellites.rst

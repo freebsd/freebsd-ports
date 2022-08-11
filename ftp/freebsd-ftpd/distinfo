@@ -1,3 +1,3 @@
-TIMESTAMP = 1624028878
-SHA256 (cschuber-freebsd-ftpd-v20200704_GH0.tar.gz) = b07938fcdea2191e967db16ad4d204711a33e06b2083a08622022fc55e42fbed
-SIZE (cschuber-freebsd-ftpd-v20200704_GH0.tar.gz) = 49136
+TIMESTAMP = 1657598581
+SHA256 (cschuber-freebsd-ftpd-v20220711_GH0.tar.gz) = fe266c7eb97e07195ab63468ed0bf3ba872d3bcaa7d5bb062c306de5fd9be4d4
+SIZE (cschuber-freebsd-ftpd-v20220711_GH0.tar.gz) = 48765

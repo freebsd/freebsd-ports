@@ -1,5 +1,3 @@
-# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
-
 PORTNAME=	sendEmail
 PORTVERSION=	1.56
 PORTREVISION=	2

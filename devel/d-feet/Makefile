@@ -1,5 +1,3 @@
-# Created by: Thinker K.F. Li <thinker@eeebox.branda.to>
-
 PORTNAME=	d-feet
 PORTVERSION=	0.3.15
 CATEGORIES=	devel

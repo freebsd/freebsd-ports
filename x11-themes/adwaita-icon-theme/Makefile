@@ -1,5 +1,3 @@
-# Created by: Gustau Pérez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	adwaita-icon-theme
 DISTVERSION=	40.1.1
 CATEGORIES=	x11-themes gnome

@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	fdk-aac
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.2

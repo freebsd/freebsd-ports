@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	audiofile
 PORTVERSION=	0.3.6
 DISTVERSIONSUFFIX=	-9.el7

@@ -1,5 +1,3 @@
-# Created by: Charlie Root <se@FreeBSD.org>
-
 PORTNAME=	pwned-check
 PORTVERSION=	2.2
 PORTREVISION=	1
@@ -12,6 +10,9 @@ MAINTAINER=	se@FreeBSD.org
 COMMENT=	Check whether password is known to have been exposed in a data breach
 
 LICENSE=	BSD2CLAUSE
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME}
 
 NO_ARCH=	yes
 NO_BUILD=	yes

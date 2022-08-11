@@ -1,5 +1,3 @@
-# Created by: Attila Nagy <bra@fsn.hu>
-
 PORTNAME=	Text_Password
 PORTVERSION=	1.2.1
 CATEGORIES=	security www pear

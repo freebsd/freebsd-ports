@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Carp-Assert-More
 PORTVERSION=	2.0.1
 CATEGORIES=	devel perl5

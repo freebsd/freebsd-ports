@@ -1,5 +1,3 @@
-# Created by: Wen Heping
-
 PORTNAME=	Rose-DBx-Object-Renderer
 PORTVERSION=	0.77
 PORTREVISION=	1

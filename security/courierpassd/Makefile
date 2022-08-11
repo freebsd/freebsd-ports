@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	courierpassd
 PORTVERSION=	1.1.2
 CATEGORIES=	security mail

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	unicodedata2
 PORTVERSION=	14.0.0
 CATEGORIES=	devel python

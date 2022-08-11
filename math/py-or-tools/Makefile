@@ -11,6 +11,7 @@ COMMENT=	Google's Operations Research tools (Python binding)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 
+BROKEN_armv7=	SWIG wrapped code invalid in 32 bit architecture, regenerate code using -DSWIGWORDSIZE32
 BROKEN_i386=	SWIG wrapped code invalid in 32 bit architecture, regenerate code using -DSWIGWORDSIZE32 # see https://github.com/google/or-tools/issues/2130
 
 PY_DEPENDS=	${PYNUMPY} \

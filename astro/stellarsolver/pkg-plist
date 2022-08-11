@@ -1,3 +1,4 @@
+bin/StellarBatchSolver
 include/libstellarsolver/astrometry/an-bool.h
 include/libstellarsolver/astrometry/anqfits.h
 include/libstellarsolver/astrometry/bl-nl.h
@@ -71,5 +72,18 @@ lib/cmake/StellarSolver/StellarSolverConfig.cmake
 lib/cmake/StellarSolver/StellarSolverConfigVersion.cmake
 lib/libstellarsolver.so
 lib/libstellarsolver.so.2
-lib/libstellarsolver.so.2.2
+lib/libstellarsolver.so.2.3
 libdata/pkgconfig/stellarsolver.pc
+share/applications/com.github.rlancaste.stellarbatchsolver.desktop
+share/icons/.DS_Store
+share/icons/hicolor/.DS_Store
+share/icons/hicolor/128x128/.DS_Store
+share/icons/hicolor/128x128/apps/StellarBatchSolverIcon.png
+share/icons/hicolor/16x16/.DS_Store
+share/icons/hicolor/16x16/apps/StellarBatchSolverIcon.png
+share/icons/hicolor/32x32/.DS_Store
+share/icons/hicolor/32x32/apps/StellarBatchSolverIcon.png
+share/icons/hicolor/48x48/.DS_Store
+share/icons/hicolor/48x48/apps/StellarBatchSolverIcon.png
+share/icons/hicolor/64x64/.DS_Store
+share/icons/hicolor/64x64/apps/StellarBatchSolverIcon.png

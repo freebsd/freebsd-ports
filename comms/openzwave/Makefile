@@ -1,5 +1,3 @@
-# Created by: Johan Strom <johan@stromnet.se>
-
 PORTNAME=	openzwave
 PORTVERSION=	1.4.3254
 CATEGORIES=	comms

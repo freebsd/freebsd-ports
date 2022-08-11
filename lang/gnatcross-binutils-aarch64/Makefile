@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTREVISION=	1
 PKGNAMEPREFIX=	gnatcross-
 PKGNAMESUFFIX=	-aarch64

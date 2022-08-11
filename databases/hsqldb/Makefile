@@ -1,5 +1,3 @@
-# Created by: Michael Winking <mwfp@foldl.net>
-
 PORTNAME=	hsqldb
 PORTVERSION=	2.3.4
 CATEGORIES=	databases java

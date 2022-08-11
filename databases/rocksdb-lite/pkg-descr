@@ -1,0 +1,10 @@
+RocksDB is an embeddable persistent key-value store for fast storage. RocksDB
+can also be the foundation for a client-server database but our current focus is
+on embedded workloads.
+
+RocksDB builds on LevelDB to be scalable to run on servers with many CPU cores,
+to efficiently use fast storage, to support IO-bound, in-memory and write-once
+workloads, and to be flexible to allow for innovation.
+
+WWW: https://rocksdb.org/
+WWW: https://github.com/facebook/rocksdb

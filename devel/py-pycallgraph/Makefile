@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-
 PORTNAME=	pycallgraph
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python

@@ -89,6 +89,7 @@ man/man8/poudriere-version.8.gz
 %%DATADIR%%/image.sh
 %%DATADIR%%/image_dump.sh
 %%DATADIR%%/image_firmware.sh
+%%DATADIR%%/image_hybridiso.sh
 %%DATADIR%%/image_iso.sh
 %%DATADIR%%/image_mfs.sh
 %%DATADIR%%/image_rawdisk.sh

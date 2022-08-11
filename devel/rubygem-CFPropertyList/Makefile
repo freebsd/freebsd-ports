@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	CFPropertyList
 PORTVERSION=	3.0.5
 CATEGORIES=	devel rubygems

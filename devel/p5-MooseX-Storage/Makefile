@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	MooseX-Storage
 PORTVERSION=	0.53
 PORTREVISION=	1

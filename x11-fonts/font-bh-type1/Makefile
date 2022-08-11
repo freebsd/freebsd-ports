@@ -1,5 +1,3 @@
-# Created by: Pawel Worach
-
 PORTNAME=	font-bh-type1
 PORTVERSION=	1.0.3
 PORTREVISION=	4

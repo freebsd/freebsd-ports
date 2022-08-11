@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	zxid
 PORTVERSION=	1.42
 PORTREVISION=	1

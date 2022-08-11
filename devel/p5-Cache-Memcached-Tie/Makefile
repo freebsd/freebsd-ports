@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	Cache-Memcached-Tie
 PORTVERSION=	0.09
 PORTREVISION=	1

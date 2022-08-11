@@ -1,5 +1,3 @@
-# Created by: Talal Al-Dik <tad@vif.com>
-
 PORTNAME=	archmbox
 PORTVERSION=	4.10.0
 PORTREVISION=	1

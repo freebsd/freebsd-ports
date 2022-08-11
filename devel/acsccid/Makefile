@@ -1,5 +1,3 @@
-# Created by: mp39590@gmail.com
-
 PORTNAME=	acsccid
 PORTVERSION=	1.1.8
 CATEGORIES=	devel

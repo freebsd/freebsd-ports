@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: ocspd
+# REQUIRE: NETWORK
+
+. /etc/rc.subr
+
+name=ocspd
+rcvar=ocspd_enable
+
+pidfile="/var/run/${name}.pid"
+
+command="%%PREFIX%%/sbin/ocspd"
+command_args="-c %%PREFIX%%/etc/ocspd/ocspd.xml -d -v"
+
+load_rc_config ${name}
+: ${ocspd_enable:=no}
+: ${ocspd_msg="Nothing started."}
+
+
+run_rc_command "$1"

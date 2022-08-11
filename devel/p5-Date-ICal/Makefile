@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	Date-ICal
 PORTVERSION=	2.678
 PORTREVISION=	1

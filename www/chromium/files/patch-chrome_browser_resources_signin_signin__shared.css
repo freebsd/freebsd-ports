@@ -1,0 +1,11 @@
+--- chrome/browser/resources/signin/signin_shared.css.orig	2022-07-22 17:30:31 UTC
++++ chrome/browser/resources/signin/signin_shared.css
+@@ -37,7 +37,7 @@ cr-button + cr-button {
+   margin-inline-start: 8px;
+ }
+ 
+-<if expr="is_macosx or is_linux or chromeos_ash or chromeos_lacros">
++<if expr="is_macosx or is_posix or chromeos_ash or chromeos_lacros">
+ .action-container {
+   flex-flow: row-reverse;
+   justify-content: flex-start;

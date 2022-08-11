@@ -1,5 +1,3 @@
-# Created by: Felix Hanley
-
 PORTNAME=	capnproto
 PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v

@@ -1,0 +1,62 @@
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2022-05-25 04:01:09 UTC
++++ third_party/blink/renderer/platform/runtime_enabled_features.json5
+@@ -33,7 +33,7 @@
+     // shipped stable can have its runtime flag removed soon after.
+     status: {
+       valid_values: ["stable", "experimental", "test"],
+-      valid_keys: ["Android", "Win", "ChromeOS_Ash", "ChromeOS_Lacros", "Mac", "Linux"]
++      valid_keys: ["Android", "Win", "ChromeOS_Ash", "ChromeOS_Lacros", "Mac", "Linux", "OpenBSD", "FreeBSD"]
+     },
+ 
+     // "implied_by" or "depends_on" specifies relationship to other features:
+@@ -1098,7 +1098,7 @@
+       depends_on: ["FileSystemAccess"],
+       status: {"Android": "test", "default": "experimental"},
+       origin_trial_feature_name: "FileHandling",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+     },
+     {
+       name: "FileHandlingIcons",
+@@ -2366,7 +2366,7 @@
+     {
+       name: "U2FSecurityKeyAPI",
+       origin_trial_feature_name: "U2FSecurityKeyAPI",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       origin_trial_type: "deprecation",
+     },
+     {
+@@ -2385,7 +2385,7 @@
+     {
+       name: "UnrestrictedSharedArrayBuffer",
+       origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+     },
+     {
+       name: "URLPattern",
+@@ -2411,7 +2411,7 @@
+       origin_trial_feature_name: "UserAgentReduction",
+       origin_trial_allows_third_party: true,
+       // iOS not included as it should not send a reduced User-Agent string.
+-      origin_trial_os: ["android", "chromeos", "fuchsia", "linux", "mac", "win"],
++      origin_trial_os: ["android", "chromeos", "fuchsia", "linux", "mac", "win", "openbsd", "freebsd"],
+     },
+     {
+       name: "UUID",
+@@ -2537,12 +2537,12 @@
+       name: "WebAppUrlHandling",
+       status: "experimental",
+       origin_trial_feature_name: "WebAppUrlHandling",
+-      origin_trial_os: ["win", "mac", "linux"],
++      origin_trial_os: ["win", "mac", "linux", "openbsd", "freebsd"],
+     },
+     {
+       name: "WebAppWindowControlsOverlay",
+       origin_trial_feature_name: "WebAppWindowControlsOverlay",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       status: "experimental",
+     },
+     {

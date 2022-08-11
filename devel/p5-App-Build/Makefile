@@ -1,5 +1,3 @@
-# Created by: Alex Bakhtin <Alex.Bakhtin@gmail.com>
-
 PORTNAME=	App-Build
 PORTVERSION=	0.74
 PORTREVISION=	1

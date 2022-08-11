@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	BigIP-ParseConfig
 PORTVERSION=	1.1.9
 CATEGORIES=	textproc perl5

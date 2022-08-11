@@ -1,5 +1,0 @@
-lib/erlang/lib/getopt-%%VERSION%%/ebin/getopt.app
-lib/erlang/lib/getopt-%%VERSION%%/ebin/getopt.beam
-lib/erlang/lib/getopt-%%VERSION%%/src/getopt.app.src
-lib/erlang/lib/getopt-%%VERSION%%/src/getopt.erl
-%%PORTDOCS%%%%DOCSDIR%%/README.md

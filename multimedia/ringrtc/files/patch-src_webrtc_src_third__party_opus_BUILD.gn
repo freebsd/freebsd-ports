@@ -1,0 +1,18 @@
+Use VAR_ARRAYS on FreeBSD (same as audio/opus)
+
+--- ../../src/webrtc/src/third_party/opus/BUILD.gn	2021-03-15 17:51:55 UTC
++++ ../../src/webrtc/src/third_party/opus/BUILD.gn
+@@ -37,10 +37,11 @@ config("opus_private_config") {
+     "OPUS_EXPORT=",
+     "ENABLE_HARDENING",
+ 
++    "VAR_ARRAYS",
+     # Prefer alloca() over variable length arrays which are often inefficient;
+     # the opus code will automatically handle this correctly per-platform.
+-    "USE_ALLOCA",
+-    "HAVE_ALLOCA_H",
++#    "USE_ALLOCA",
++#    "HAVE_ALLOCA_H",
+   ]
+ 
+   include_dirs = [

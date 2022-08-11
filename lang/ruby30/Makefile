@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
 PORTREVISION=	${RUBY_PORTREVISION}

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	DBIx-Sunny
 PORTVERSION=	0.9992
 CATEGORIES=	databases perl5

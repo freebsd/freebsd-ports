@@ -1,8 +1,6 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	netwib
 PORTVERSION=	5.38.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/netwib/download/v5/ \

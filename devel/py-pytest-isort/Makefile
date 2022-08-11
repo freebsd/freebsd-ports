@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytest-isort
 PORTVERSION=	3.0.0
 CATEGORIES=	devel python

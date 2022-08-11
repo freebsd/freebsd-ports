@@ -1,5 +1,3 @@
-# Created by: David Chaplin-Loebell <direct@klatha.com>
-
 PORTNAME=	Tie-CPHash
 PORTVERSION=	2.000
 CATEGORIES=	devel perl5

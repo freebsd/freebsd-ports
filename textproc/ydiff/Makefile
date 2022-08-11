@@ -1,5 +1,3 @@
-# Created by: eivind
-
 PORTNAME=	ydiff
 DISTVERSION=	1.2
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	mytop
 PORTVERSION=	1.7
 CATEGORIES=	databases

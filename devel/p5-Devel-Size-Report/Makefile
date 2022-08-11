@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	Devel-Size-Report
 PORTVERSION=	0.13
 PORTREVISION=	3

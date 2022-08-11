@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	cups-smb-backend
 PORTVERSION=	1.0
 PORTREVISION=	12

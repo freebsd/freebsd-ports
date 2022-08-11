@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	qtqr
 DISTVERSION=	2.0.bzr39
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	XML-Validate
 PORTVERSION=	1.025
 PORTREVISION=	2

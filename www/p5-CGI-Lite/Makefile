@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	CGI-Lite
 PORTVERSION=	3.03
 CATEGORIES=	www perl5

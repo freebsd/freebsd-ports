@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-Command
 PORTVERSION=	0.11
 PORTREVISION=	1

@@ -1,6 +1,6 @@
-TIMESTAMP = 1637214995
-SHA256 (flaviotordini-minitube-3.9.2_GH0.tar.gz) = 47b0332dab7a1367f7d34a0ed7124dafd1727e983754ffc55ea70aa1e30441dc
-SIZE (flaviotordini-minitube-3.9.2_GH0.tar.gz) = 1322866
+TIMESTAMP = 1651863580
+SHA256 (flaviotordini-minitube-3.9.3_GH0.tar.gz) = 04539c9cfb67f24fa0fa14a75475be6b8cf3a63acfdb29fd278a84a560907f58
+SIZE (flaviotordini-minitube-3.9.3_GH0.tar.gz) = 1323478
 SHA256 (flaviotordini-http-68b9cf0_GH0.tar.gz) = bb2bd331df6fc16e19291f118797827d6ea5897de3b8065f4353aaf465d4538f
 SIZE (flaviotordini-http-68b9cf0_GH0.tar.gz) = 11162
 SHA256 (flaviotordini-idle-6aa092d_GH0.tar.gz) = 9aa3ac940f900d8b6924492905ff1351e9af6224fdcb2d1b6e5a55af920c81eb

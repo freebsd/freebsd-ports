@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	exifprobe
 DISTVERSION=	2.0.1
 CATEGORIES=	graphics

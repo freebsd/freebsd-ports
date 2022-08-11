@@ -1,5 +1,3 @@
-# Created by: Evaldas Auryla <ea@zaib.as>
-
 PORTNAME=	digitemp
 PORTVERSION=	3.7.2
 DISTVERSIONPREFIX=	v

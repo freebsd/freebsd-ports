@@ -151,7 +151,7 @@ do_http_request() {
   if [ -n "${body}" ]; then txt="${txt}${CR}${NL}Content-Length: ${#body}"; fi
   txt="${txt}${CR}${NL}${CR}${NL}${body}"
 
-  resp=$(echo "${txt}" | nlog "out" | ${NC} ${nc_host} ${nc_port} | nlog "in" 2>/dev/null)
+  resp=$(echo "${txt}" | nlog "out" | ${NC} -w ${timeout} ${nc_host} ${nc_port} | nlog "in" 2>/dev/null)
   if [ $? -ne 0 ]; then
     if [ ${do_log} -ne 0 ]; then
       log "FAIL" "Failed to send data to the host ${nc_host}:${nc_port}, is network or host down?"

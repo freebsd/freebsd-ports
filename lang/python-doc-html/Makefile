@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	python-doc-${DOCFORMAT}
 DISTVERSION=	${PYTHON_DISTVERSION}
 CATEGORIES=	lang python

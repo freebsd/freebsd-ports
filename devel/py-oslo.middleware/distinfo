@@ -1,3 +1,3 @@
-TIMESTAMP = 1646057992
-SHA256 (oslo.middleware-4.5.1.tar.gz) = c286933ce38ceeedae6b613599ad329546373ca27e0b130d506b6f0cce1099b3
-SIZE (oslo.middleware-4.5.1.tar.gz) = 64263
+TIMESTAMP = 1657835443
+SHA256 (oslo.middleware-5.0.0.tar.gz) = 3d0f2fd723d194d2a8c64068e8a057a5038c860abe0c03f6f0f08cf7b86781d1
+SIZE (oslo.middleware-5.0.0.tar.gz) = 64322

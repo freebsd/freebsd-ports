@@ -1,5 +1,3 @@
-# Created by: ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
-
 PORTNAME=	today
 PORTVERSION=	2.12
 PORTREVISION=	2

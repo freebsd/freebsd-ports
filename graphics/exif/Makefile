@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	exif
 PORTVERSION=	0.6.22
 CATEGORIES=	graphics

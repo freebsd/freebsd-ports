@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	SOAP-Transport-FTP
 PORTVERSION=	0.711
 PORTREVISION=	1

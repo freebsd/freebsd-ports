@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	period
 PORTVERSION=	0.6.1
 CATEGORIES=	devel python

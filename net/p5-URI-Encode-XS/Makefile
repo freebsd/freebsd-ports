@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	URI-Encode-XS
 PORTVERSION=	0.11
 CATEGORIES=	net perl5

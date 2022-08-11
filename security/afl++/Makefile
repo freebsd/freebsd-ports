@@ -1,5 +1,3 @@
-# Created by: Fabian Keil <fk@fabiankeil.de>
-
 PORTNAME=	afl
 PORTVERSION=	4.00c
 CATEGORIES=	security

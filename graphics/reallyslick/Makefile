@@ -1,5 +1,3 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	reallyslick
 PORTVERSION=	0.9.1
 PORTREVISION=	23

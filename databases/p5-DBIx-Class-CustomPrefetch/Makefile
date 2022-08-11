@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	DBIx-Class-CustomPrefetch
 PORTVERSION=	0.09
 PORTREVISION=	2

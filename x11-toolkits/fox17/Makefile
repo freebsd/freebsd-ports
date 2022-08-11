@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	fox
 PORTVERSION=	1.7.79
 CATEGORIES=	x11-toolkits

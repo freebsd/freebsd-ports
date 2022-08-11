@@ -1,5 +1,3 @@
-# Created by: Henrik Brix Andersen <brix@FreeBSD.org>
-
 PORTNAME=	usbutils
 PORTVERSION=	0.91
 DISTVERSIONPREFIX=	v

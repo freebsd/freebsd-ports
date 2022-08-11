@@ -1,5 +1,3 @@
-# Created by: Dikshie <dikshie@sfc.wide.ad.jp>
-
 PORTNAME=	Config-Grammar
 PORTVERSION=	1.10
 PORTREVISION=	1

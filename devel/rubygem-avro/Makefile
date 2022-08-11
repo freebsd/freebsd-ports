@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	avro
 PORTVERSION=	1.11.0
 CATEGORIES=	devel rubygems

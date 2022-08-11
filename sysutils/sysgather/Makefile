@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	sysgather
 DISTVERSION=	1.0pre10
 PORTREVISION=	1

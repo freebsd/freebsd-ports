@@ -1,5 +1,3 @@
-# Created by: Anton Berezin
-
 PORTNAME=	File-CountLines
 PORTVERSION=	0.0.3
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	Net-Google-Code
 PORTVERSION=	0.19
 PORTREVISION=	1

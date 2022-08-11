@@ -1,5 +1,5 @@
 PORTNAME=	cwm
-DISTVERSION=	6.7
+DISTVERSION=	7.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://leahneukirchen.org/releases/
 

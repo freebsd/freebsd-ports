@@ -247,10 +247,14 @@ share/xsessions/e16-gnome3-session.desktop
 %%DATADIR%%/themes/winter/dialogs/images/window-base.png
 %%DATADIR%%/themes/winter/dock/dock.cfg
 %%DATADIR%%/themes/winter/dragbar/dragbar.cfg
-%%DATADIR%%/themes/winter/dragbar/images/a1.png
-%%DATADIR%%/themes/winter/dragbar/images/a1b.png
-%%DATADIR%%/themes/winter/dragbar/images/a2.png
-%%DATADIR%%/themes/winter/dragbar/images/a2b.png
+%%DATADIR%%/themes/winter/dragbar/images/a1_horiz.png
+%%DATADIR%%/themes/winter/dragbar/images/a1_vert.png
+%%DATADIR%%/themes/winter/dragbar/images/a1b_horiz.png
+%%DATADIR%%/themes/winter/dragbar/images/a1b_vert.png
+%%DATADIR%%/themes/winter/dragbar/images/a2_horiz.png
+%%DATADIR%%/themes/winter/dragbar/images/a2_vert.png
+%%DATADIR%%/themes/winter/dragbar/images/a2b_horiz.png
+%%DATADIR%%/themes/winter/dragbar/images/a2b_vert.png
 %%DATADIR%%/themes/winter/dragbar/images/dragbar_horiz.png
 %%DATADIR%%/themes/winter/dragbar/images/dragbar_vert.png
 %%DATADIR%%/themes/winter/epplets/epplets.cfg
@@ -351,6 +355,7 @@ share/xsessions/e16-gnome3-session.desktop
 %%DATADIR%%/themes/winter/iconbox/images/cover.png
 %%DATADIR%%/themes/winter/iconbox/images/scroll-base_h.png
 %%DATADIR%%/themes/winter/iconbox/images/scroll-base_v.png
+%%DATADIR%%/themes/winter/iconbox/images/scroll-base_v.png.old
 %%DATADIR%%/themes/winter/iconbox/images/scroll-knob.png
 %%DATADIR%%/themes/winter/iconbox/images/scroll-knob_active.png
 %%DATADIR%%/themes/winter/iconbox/images/scroll-knob_clicked.png

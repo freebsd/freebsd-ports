@@ -1,5 +1,3 @@
-# Created by: dlowe
-
 PORTNAME=	xmake
 PORTVERSION=	1.06
 PORTREVISION=	1

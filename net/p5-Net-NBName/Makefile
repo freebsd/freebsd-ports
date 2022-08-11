@@ -1,5 +1,3 @@
-# Created by: Bill Fenner <fenner@FreeBSD.org>
-
 PORTNAME=	Net-NBName
 PORTVERSION=	0.26
 PORTREVISION=	1

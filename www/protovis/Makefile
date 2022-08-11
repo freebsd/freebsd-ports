@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	protovis
 PORTVERSION=	3.3.1
 DISTVERSIONPREFIX=	v

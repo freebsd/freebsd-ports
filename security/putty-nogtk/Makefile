@@ -1,5 +1,3 @@
-# Created by: Matthias Andree <mandree@FreeBSD.org>
-
 PKGNAMESUFFIX=		-nogtk
 
 OPTIONS_EXCLUDE=	GTK2 GTK3

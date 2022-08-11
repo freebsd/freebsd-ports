@@ -1,5 +1,3 @@
-# Created by: Alexander Kuehn <freebsd@nagilum.org>
-
 PORTNAME=	swapmon
 PORTVERSION=	1.5
 CATEGORIES=	sysutils

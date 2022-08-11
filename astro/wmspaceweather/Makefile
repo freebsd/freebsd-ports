@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	wmspaceweather
 PORTVERSION=	1.04
 PORTREVISION=	5

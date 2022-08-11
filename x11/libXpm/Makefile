@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXpm
 PORTVERSION=	3.5.13
 CATEGORIES=	x11

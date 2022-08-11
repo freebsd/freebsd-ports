@@ -1,5 +1,3 @@
-# Created by: David Barksdale <amatus@gnu.org>
-
 PORTNAME=	libmicrohttpd
 DISTVERSION=	0.9.75
 CATEGORIES=	www

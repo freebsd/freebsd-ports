@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <lin-chi@lastamericanempire.com>
-
 PORTNAME=	POE-Component-Server-HTTP
 PORTVERSION=	0.09
 PORTREVISION=	2

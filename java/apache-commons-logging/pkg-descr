@@ -9,4 +9,4 @@ libraries. Commons components may use the Logging API to remove compile-time
 and run-time dependencies on any particular logging package, and contributors
 may write Log implementations for the library of their choice.
 
-WWW: http://commons.apache.org/proper/commons-logging/
+WWW: https://commons.apache.org/proper/commons-logging/

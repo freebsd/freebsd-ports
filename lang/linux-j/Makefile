@@ -1,5 +1,3 @@
-# Created by: js@jeannot.org
-
 PORTNAME=	j
 PORTVERSION=	504b
 PORTREVISION=	4

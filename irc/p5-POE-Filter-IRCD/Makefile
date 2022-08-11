@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	POE-Filter-IRCD
 PORTVERSION=	2.44
 PORTREVISION=	1

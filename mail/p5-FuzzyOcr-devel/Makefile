@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@FreeBSD.org>
-
 PORTNAME=	FuzzyOcr
 DISTVERSION=	3.6.0
 PORTREVISION=	6

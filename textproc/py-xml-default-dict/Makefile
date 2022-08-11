@@ -1,5 +1,3 @@
-# Created by: Silvio Ap Silva aka kanazuchi <alvolivre@live.com>
-
 PORTNAME=	xml-default-dict
 PORTVERSION=	0.3
 CATEGORIES=	textproc python

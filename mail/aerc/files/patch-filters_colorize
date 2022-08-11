@@ -1,0 +1,8 @@
+--- filters/colorize.orig	2022-07-19 17:09:54 UTC
++++ filters/colorize
+@@ -1,4 +1,4 @@
+-#!/bin/awk -f
++#!/usr/bin/awk -f
+ # Copyright (c) 2022 Robin Jarry
+ 
+ BEGIN {

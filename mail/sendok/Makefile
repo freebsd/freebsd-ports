@@ -1,5 +1,3 @@
-# Created by: Zak Johnson <zakj@nox.cx>
-
 PORTNAME=	sendok
 PORTVERSION=	0.9.2
 CATEGORIES=	mail

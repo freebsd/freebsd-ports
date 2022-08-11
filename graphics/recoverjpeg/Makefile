@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	recoverjpeg
 PORTVERSION=	2.6.3
 PORTREVISION=	1

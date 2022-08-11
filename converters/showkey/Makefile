@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	showkey
 PORTVERSION=	1.7
 CATEGORIES=	converters

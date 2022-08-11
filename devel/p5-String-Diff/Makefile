@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	String-Diff
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5

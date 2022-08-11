@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	species
 PORTVERSION=	1.2d
 PORTREVISION=	1

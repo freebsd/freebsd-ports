@@ -1,5 +1,3 @@
-# Created by: reed@pugetsoundtechnology.com
-
 PORTNAME=	libwpd
 PORTVERSION=	0.10.3
 PORTREVISION=	6

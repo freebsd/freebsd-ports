@@ -1,8 +1,4 @@
 bin/linphone
-bin/linphone-tester
+lib/linphone/libapp-plugin.so
 share/applications/linphone.desktop
 share/icons/hicolor/scalable/apps/linphone.svg
-%%DATADIR%%/assistant/create-linphone-sip-account.rc
-%%DATADIR%%/assistant/use-linphone-sip-account.rc
-%%DATADIR%%/assistant/use-other-sip-account.rc
-%%DATADIR%%/linphonerc-factory

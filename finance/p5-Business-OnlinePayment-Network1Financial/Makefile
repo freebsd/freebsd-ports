@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OnlinePayment-Network1Financial
 PORTVERSION=	0.02
 PORTREVISION=	3

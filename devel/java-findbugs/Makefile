@@ -1,5 +1,3 @@
-# Created by: glewis
-
 PORTNAME=	findbugs
 PORTVERSION=	1.3.9
 PORTREVISION=	1

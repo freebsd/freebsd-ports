@@ -1,5 +1,3 @@
-# Created by: Craig Boston <craig@yekse.gank.org>
-
 PORTNAME=	openvmps
 PORTVERSION=	1.4.06
 CATEGORIES=	net-mgmt

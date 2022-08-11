@@ -1,5 +1,3 @@
-# Created by: David Carlier
-
 PORTNAME=	deviceatlas-enterprise-c
 PORTVERSION=	2.3.4
 CATEGORIES=	net devel

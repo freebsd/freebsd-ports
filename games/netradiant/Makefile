@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	netradiant
 PORTVERSION=	20150621
 PORTREVISION=	4

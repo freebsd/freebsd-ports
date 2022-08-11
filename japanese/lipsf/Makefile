@@ -1,5 +1,3 @@
-# Created by: Mita Yoshio <mita@jp.FreeBSD.org>
-
 PORTNAME=	lipsf
 PORTVERSION=	2.00
 PORTREVISION=	1

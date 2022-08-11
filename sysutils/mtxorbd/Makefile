@@ -1,5 +1,3 @@
-# Created by: rhay
-
 PORTNAME=	mtxorbd
 PORTVERSION=	1.0.2
 CATEGORIES=	sysutils

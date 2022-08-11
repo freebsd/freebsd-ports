@@ -1,5 +1,3 @@
-# Created by: Frank W. Josellis <frank@dynamical-systems.org>
-
 PORTNAME=	siproxd
 PORTVERSION=	0.8.2
 PORTREVISION=	1

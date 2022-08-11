@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	Mail-OpenDKIM
 PORTVERSION=	4204
 CATEGORIES=	mail perl5

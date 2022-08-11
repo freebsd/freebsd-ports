@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jaro_winkler
 PORTVERSION=	1.5.4
 CATEGORIES=	devel rubygems

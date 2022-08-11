@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libthai
 PORTVERSION=	0.1.14
 DISTVERSIONSUFFIX=	-9.el7

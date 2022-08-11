@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Set-NestedGroups
 PORTVERSION=	0.01
 PORTREVISION=	1

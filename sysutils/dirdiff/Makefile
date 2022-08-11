@@ -1,5 +1,3 @@
-# Created by: grog
-
 PORTNAME=	dirdiff
 PORTVERSION=	2.1
 PORTREVISION=	4

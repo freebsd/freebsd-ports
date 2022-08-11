@@ -1,7 +1,5 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rspec-rails
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

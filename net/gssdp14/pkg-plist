@@ -1,0 +1,15 @@
+%%SNIFFER%%bin/gssdp-device-sniffer
+include/gssdp-1.2/libgssdp/gssdp-client.h
+include/gssdp-1.2/libgssdp/gssdp-enums.h
+include/gssdp-1.2/libgssdp/gssdp-error.h
+include/gssdp-1.2/libgssdp/gssdp-resource-browser.h
+include/gssdp-1.2/libgssdp/gssdp-resource-group.h
+include/gssdp-1.2/libgssdp/gssdp.h
+lib/girepository-1.0/GSSDP-1.2.typelib
+lib/libgssdp-1.2.so
+lib/libgssdp-1.2.so.0
+lib/libgssdp-1.2.so.0.104.0
+libdata/pkgconfig/gssdp-1.2.pc
+share/gir-1.0/GSSDP-1.2.gir
+%%VAPI%%share/vala/vapi/gssdp-1.2.deps
+%%VAPI%%share/vala/vapi/gssdp-1.2.vapi

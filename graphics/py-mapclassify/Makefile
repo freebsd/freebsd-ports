@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mapclassify
 PORTVERSION=	2.4.3
 CATEGORIES=	graphics python

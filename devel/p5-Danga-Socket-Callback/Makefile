@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	Danga-Socket-Callback
 PORTVERSION=	0.013
 PORTREVISION=	1

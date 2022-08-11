@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	DBA
 PORTVERSION=	1.1.1
 CATEGORIES=	databases www pear

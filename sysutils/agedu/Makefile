@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	agedu
 PORTVERSION=	20211129.8cd63c5
 CATEGORIES=	sysutils
@@ -18,6 +16,6 @@ CMAKE_OFF=	BUILD_MANPAGE
 CMAKE_ON=	AGEDU_IPV4 AGEDU_IPV6
 
 PLIST_FILES=	bin/agedu \
-		man/man1/agedu.1.gz
+		share/man/man1/agedu.1.gz
 
 .include <bsd.port.mk>

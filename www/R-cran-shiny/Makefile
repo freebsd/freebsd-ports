@@ -1,7 +1,5 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	shiny
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

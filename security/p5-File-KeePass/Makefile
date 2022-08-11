@@ -1,5 +1,3 @@
-# Created by: Alexander Y. Grigoryev <alexander.4mail@gmail.com>
-
 PORTNAME=	File-KeePass
 PORTVERSION=	2.03
 PORTREVISION=	2

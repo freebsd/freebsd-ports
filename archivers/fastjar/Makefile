@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	fastjar
 PORTVERSION=	0.93.20060808
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: shurd@FreeBSD.org
-
 PORTNAME=	xnec2c
 PORTVERSION=	3.4
 CATEGORIES=	comms hamradio

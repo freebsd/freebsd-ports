@@ -1,5 +1,3 @@
-# Created by: Jason Evans <jasone@FreeBSD.org>
-
 PORTNAME=	procmap
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	MooseX-Singleton
 PORTVERSION=	0.30
 CATEGORIES=	devel perl5

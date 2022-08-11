@@ -1,0 +1,11 @@
+--- configure.ac.orig	2022-05-04 14:55:23 UTC
++++ configure.ac
+@@ -1220,7 +1220,7 @@ if test $ol_with_tls = openssl || test $ol_with_tls = 
+ [#endif]])],
+ 					, [AC_MSG_FAILURE([OpenSSL 1.1.1 or newer required])])
+ 
+-		AC_CHECK_LIB(ssl, SSL_export_keying_material_early,
++		AC_CHECK_LIB(ssl, SSL_write_early_data,
+ 			[have_openssl=yes], [have_openssl=no],
+ 			[-lcrypto])
+ 

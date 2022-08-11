@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	mbox2imap
 PORTVERSION=	1.0
 PORTREVISION=	2

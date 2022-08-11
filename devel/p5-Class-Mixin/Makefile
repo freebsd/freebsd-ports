@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Class-Mixin
 PORTVERSION=	1.00
 PORTREVISION=	1

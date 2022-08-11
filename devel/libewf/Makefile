@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	libewf
 PORTVERSION=	20140812
 CATEGORIES=	devel

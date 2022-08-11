@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	xkeycaps
 PORTVERSION=	2.46
 PORTREVISION=	3

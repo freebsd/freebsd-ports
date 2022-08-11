@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	openpgm
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	5-2-122

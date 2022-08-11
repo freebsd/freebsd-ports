@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	renrot
 PORTVERSION=	1.2.0
 PORTREVISION=	1

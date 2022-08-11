@@ -1,5 +1,3 @@
-# Created by: coryking
-
 PORTNAME=	Image-Math-Constrain
 PORTVERSION=	1.02
 PORTREVISION=	1

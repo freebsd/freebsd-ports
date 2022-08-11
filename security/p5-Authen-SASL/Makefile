@@ -1,5 +1,3 @@
-# Created by: Blaz Zupan <blaz@si.FreeBSD.org>
-
 PORTNAME=	Authen-SASL
 PORTVERSION=	2.16
 PORTREVISION=	1

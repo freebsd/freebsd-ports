@@ -1,5 +1,3 @@
-# Created by: Lukasz Wasikowski <lukasz@wasikowski.net>
-
 PORTNAME=	modman
 PORTVERSION=	1.12
 CATEGORIES=	sysutils www

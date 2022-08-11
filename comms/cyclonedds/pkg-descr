@@ -1,0 +1,7 @@
+Eclipse Cyclone DDS is a very performant and robust open-source implementation
+of the OMG DDS specification. Cyclone DDS is developed completely in the open
+as an Eclipse IoT project (see eclipse-cyclone-dds) with a growing list of
+adopters (if you're one of them, please add your logo). It is a tier-1
+middleware for the Robot Operating System ROS 2.
+
+WWW: https://cyclonedds.io/

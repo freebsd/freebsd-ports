@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	meqcc
 PORTVERSION=	1.4
 CATEGORIES=	games devel

@@ -1,5 +1,3 @@
-# Created by: Vladimir Laskov <samflanker@gmail.com>
-
 PORTNAME=	megacli
 DISTVERSION=	8-07-14
 CATEGORIES=	sysutils

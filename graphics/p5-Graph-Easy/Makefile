@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Graph-Easy
 PORTVERSION=	0.76
 CATEGORIES=	graphics perl5

@@ -1,5 +1,3 @@
-# Created by: Stefan Bethke <stb@lassitu.de>
-
 PORTNAME=	ttf2eot
 PORTVERSION=	0.0.3
 DISTVERSIONPREFIX=	v

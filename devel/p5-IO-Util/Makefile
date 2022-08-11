@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	IO-Util
 PORTVERSION=	1.5
 PORTREVISION=	2

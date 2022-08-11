@@ -1,0 +1,6 @@
+This tool compares pairs of ELF binary files and provides information
+about differences in the contained symbols with respect to the space
+that they occupy in program memory (functions and global data) and in
+RAM (global data).
+
+WWW: https://github.com/noseglasses/elf_diff

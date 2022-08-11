@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	grpcio-gcp
 PORTVERSION=	0.2.2
 PORTREVISION=	1

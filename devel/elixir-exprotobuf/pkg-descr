@@ -1,6 +1,0 @@
-exprotobuf works by building module/struct definitions from a Google
-Protocol Buffer schema. This allows you to work with protocol buffers
-natively in Elixir, with easy decoding/encoding for transport across
-the wire.
-
-WWW: https://github.com/bitwalker/exprotobuf

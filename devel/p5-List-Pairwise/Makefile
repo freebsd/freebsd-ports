@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	List-Pairwise
 PORTVERSION=	1.03
 CATEGORIES=	devel perl5

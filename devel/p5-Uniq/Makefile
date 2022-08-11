@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Uniq
 PORTVERSION=	0.01
 PORTREVISION=	1

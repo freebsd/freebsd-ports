@@ -1,0 +1,24 @@
+--- RULES/i386-freebsd-clang.rul.orig	2022-07-05 01:45:06 UTC
++++ RULES/i386-freebsd-clang.rul
+@@ -38,4 +38,21 @@ LIB_KVM=	
+ 
+ #LDOPTS=		$(LIBS_PATH) $(LDPATH)
+ 
++#
++# Sunpro C/C++ run on Solaris and Linux and both have linkers
++# that support mapfiles
++#
++MAPVERS=	$(_MAPVERS) # This enables to use mapfiles
++#
++# The GNU linker is buggy and does not like the official order in linker map
++# files for symbol versioning. The following command reverses the order of
++# the version names in the linker map file.
++#
++MAPFILE_POST=	| sed 's/^SCHILY/+SCHILY/' | tr '\012' '@' | tr '+' '\012' | tail -r |  tr '@' '\012'
++
++#LDOPTS=		$(LIBS_PATH) $(LDPATH) $(RUNPATH:-R%=-Wl,-R%)
++#LDOPTS=		$(LIBS_PATH) $(LDPATH)
++LDOPTMAP=	$(PMAPVERS:%=-Wl,--version-script=%)
++LDOPTDYN=	-shared -Wl,-soname,$(TARGET) $(LDOPTMAP)
++
+ RANLIB=		$(NOECHO)echo "	==> RANDOMIZING ARCHIVE \"$@\""; ranlib

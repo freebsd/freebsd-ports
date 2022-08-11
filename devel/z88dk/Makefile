@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	z88dk
 PORTVERSION=	2.1
 PORTREVISION=	3
@@ -35,7 +33,7 @@ TEST_DEPENDS=	dos2unix:converters/unix2dos \
 USES=		gmake gnome perl5 shebangfix tar:tgz
 USE_GNOME=	libxml2
 USE_PERL5=	run
-MAKE_ENV=	ZCCCFG=${WRKSRC}/lib/config Q=	# force verbose build
+MAKE_ENV=	ZCCCFG=${WRKSRC}/lib/config Q= MALLOC_CONF=junk:false
 SHEBANG_FILES=	src/z80asm/asmpp.pl
 TEST_TARGET=	testsuite test
 WRKSRC=		${WRKDIR}/${PORTNAME}

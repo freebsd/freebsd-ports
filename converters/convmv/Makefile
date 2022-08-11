@@ -1,5 +1,3 @@
-# Created by: Kuang-che Wu <kcwu@csie.org>
-
 PORTNAME=	convmv
 PORTVERSION=	2.05
 CATEGORIES=	converters perl5

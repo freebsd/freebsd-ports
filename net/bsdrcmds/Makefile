@@ -1,5 +1,3 @@
-# Created by: Jeremie Le Hen <jlh@FreeBSD.org>
-
 PORTNAME=	bsdrcmds
 PORTVERSION=	20171003.01
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Christer Edwards <christer.edwards@gmail.com>
-
 PORTNAME=	kafka-python
 DISTVERSION=	1.4.5
 CATEGORIES=	net python

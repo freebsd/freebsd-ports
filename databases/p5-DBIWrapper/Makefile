@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	DBIWrapper
 PORTVERSION=	0.30
 PORTREVISION=	1

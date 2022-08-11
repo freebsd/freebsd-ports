@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	email_footer
 PORTVERSION=	0.6
 PORTREVISION=	1

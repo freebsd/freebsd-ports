@@ -1,5 +1,3 @@
-# Created by: Heiner <h.eichmann@gmx.de>
-
 PORTNAME=	dvdisaster
 PORTVERSION=	0.79.5
 PORTREVISION=	1

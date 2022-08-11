@@ -1,5 +1,3 @@
-# Created by: Jerry A! <jerry@thehutt.org>
-
 PORTNAME=	ap-utils
 PORTVERSION=	1.4.1
 PORTREVISION=	5

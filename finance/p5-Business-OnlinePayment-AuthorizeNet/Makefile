@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OnlinePayment-AuthorizeNet
 PORTVERSION=	3.23
 CATEGORIES=	finance perl5

@@ -1,8 +1,6 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	mixxx
 DISTVERSION=	2.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org

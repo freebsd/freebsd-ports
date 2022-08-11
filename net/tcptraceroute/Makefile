@@ -1,7 +1,6 @@
-# Created by: jeff@cetlink.net
-
 PORTNAME=	tcptraceroute
 PORTVERSION=	1.5beta7
+PORTREVISION=	1
 DISTVERSIONPREFIX=	tcptraceroute-
 CATEGORIES=	net
 

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Plack-Middleware-DBIx-DisconnectAll
 PORTVERSION=	0.02
 CATEGORIES=	www perl5

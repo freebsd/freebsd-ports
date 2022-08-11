@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	GraphViz2-Parse-RecDescent
 PORTVERSION=	2.52
 CATEGORIES=	graphics perl5

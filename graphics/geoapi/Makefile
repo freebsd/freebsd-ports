@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>
-
 PORTNAME=	geoapi
 PORTVERSION=	3.0.0
 CATEGORIES=	graphics geography

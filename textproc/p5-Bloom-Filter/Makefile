@@ -1,5 +1,3 @@
-# Created by: Aaron Straup Cope <ascope@cpan.org>
-
 PORTNAME=	Bloom-Filter
 PORTVERSION=	1.2
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Timur I. Bakeyev <bat@cpan.org>
-
 PORTNAME=	boolean
 PORTVERSION=	0.46
 CATEGORIES=	devel perl5

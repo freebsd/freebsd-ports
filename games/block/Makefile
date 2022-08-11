@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	block
 PORTVERSION=	0.6
 CATEGORIES=	games

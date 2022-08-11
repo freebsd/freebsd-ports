@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Astro-Sunrise
 PORTVERSION=	0.99
 CATEGORIES=	astro perl5

@@ -1,5 +1,3 @@
-# Created by: dillon
-
 PORTNAME=	crw
 PORTVERSION=	1.03
 PORTREVISION=	3

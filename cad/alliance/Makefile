@@ -1,5 +1,3 @@
-# Created by: hrs
-
 PORTNAME=	alliance
 DISTVERSION=	5.1.1
 PORTREVISION=	2

@@ -1,0 +1,16 @@
+When you think about software built for automated writing assistance, a
+lot of assumptions probably come to mind. You have heard terms like
+cloud-based, artificial intelligence, and machine learning. You have
+been promised sophisticated, human-like feedback to dramatically
+improve your writing.
+
+Vale is none of that; it was not designed to be, and it does not try to be.
+To put it succinctly, Vale does not teach you how to write, it is a tool for
+writers.
+
+This distinction is particularly important to understand because Vale
+does not offer any of its own advice. Instead, it offers a framework for
+creating and enforcing custom rules. Its approach is much more similar
+to code linters than it is to traditional grammar checkers.
+
+WWW: https://vale.sh/

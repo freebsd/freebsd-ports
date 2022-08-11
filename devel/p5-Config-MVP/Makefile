@@ -1,5 +1,3 @@
-# Created by: andrey@kostenko.name
-
 PORTNAME=	Config-MVP
 PORTVERSION=	2.200012
 CATEGORIES=	devel perl5

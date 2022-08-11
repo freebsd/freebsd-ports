@@ -1,5 +1,3 @@
-# Created by: Justin Stanford <jus@security.za.net>
-
 PORTNAME=	ripmime
 PORTVERSION=	1.4.0.10
 CATEGORIES=	mail

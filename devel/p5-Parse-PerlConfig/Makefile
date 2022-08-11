@@ -1,5 +1,3 @@
-# Created by: Leif Pedersen <pedersen@meridian-enviro.com>
-
 PORTNAME=	Parse-PerlConfig
 PORTVERSION=	0.05
 PORTREVISION=	3

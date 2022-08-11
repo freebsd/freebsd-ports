@@ -1,5 +1,3 @@
-# Created by: bf <bf2006a@yahoo.com>
-
 PORTNAME=	unuran
 PORTVERSION=	1.9.0
 CATEGORIES=	math

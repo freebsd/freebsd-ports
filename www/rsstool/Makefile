@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	rsstool
 PORTVERSION=	1.0.0
 PORTREVISION=	4

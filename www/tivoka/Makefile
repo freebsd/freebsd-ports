@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	tivoka
 PORTVERSION=	3.5.2
 CATEGORIES=	www

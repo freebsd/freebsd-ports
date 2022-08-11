@@ -1,9 +1,7 @@
-# Created by: Doug Barton <dougb@FreeBSD.org>
-
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.13
-PORTEPOCH=	1
+DISTVERSION=	1.2.16
+PORTEPOCH=	2
 CATEGORIES=	net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,6 +10,8 @@ COMMENT=	Python bindings for libtorrent-rasterbar
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../COPYING
+
+BROKEN=		can't create dynamic relocation R_X86_64_32 against local symbol in readonly segment, see https://github.com/arvidn/libtorrent/issues/6890
 
 BUILD_DEPENDS=	b2:devel/boost_build
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \

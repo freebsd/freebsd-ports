@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	amqplib
 PORTVERSION=	1.0.2
 PORTREVISION=	1

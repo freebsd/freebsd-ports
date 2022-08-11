@@ -1,5 +1,3 @@
-# Created by: Dima Sivachenko <dima@Chg.RU>
-
 PORTNAME=	calamaris
 PORTVERSION=	2.59
 PORTREVISION=	2

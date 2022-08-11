@@ -1,5 +1,3 @@
-# Created by: Victor Popov <v.a.popov@gmail.com>
-
 PORTNAME=	Crypt-PBKDF2
 PORTVERSION=	0.161520
 CATEGORIES=	security perl5

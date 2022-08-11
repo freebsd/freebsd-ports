@@ -1,5 +1,3 @@
-# Created by: Bartek Rutkowski <r@robakdesign.com>
-
 PORTNAME=	pgtop
 PORTVERSION=	0.11
 CATEGORIES=	databases

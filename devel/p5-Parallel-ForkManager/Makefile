@@ -1,5 +1,3 @@
-# Created by: Nicolas Jombart <Nicolas.Jombart@hsc-labs.com>
-
 PORTNAME=	Parallel-ForkManager
 PORTVERSION=	2.02
 CATEGORIES=	devel perl5

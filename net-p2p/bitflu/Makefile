@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	bitflu
 PORTVERSION=	1.52
 CATEGORIES=	net-p2p

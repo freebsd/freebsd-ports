@@ -1,5 +1,3 @@
-# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-
 PORTNAME=	CGI-FastTemplate
 PORTVERSION=	1.09
 PORTREVISION=	1

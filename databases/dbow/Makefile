@@ -1,5 +1,3 @@
-# Created by: Dermot Tynan <dtynan@kalopa.com>
-
 PORTNAME=	dbow
 PORTVERSION=	0.7
 PORTREVISION=	1

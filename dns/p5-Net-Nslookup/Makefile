@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Net-Nslookup
 PORTVERSION=	2.04
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	nanoc
 DISTVERSION=	4.12.5
 CATEGORIES=	www rubygems

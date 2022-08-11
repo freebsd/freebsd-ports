@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	net-http-persistent
 PORTVERSION=	2.9.4
 CATEGORIES=	www net rubygems

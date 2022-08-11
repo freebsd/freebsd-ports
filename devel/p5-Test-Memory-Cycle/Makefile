@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Test-Memory-Cycle
 PORTVERSION=	1.06
 CATEGORIES=	devel perl5

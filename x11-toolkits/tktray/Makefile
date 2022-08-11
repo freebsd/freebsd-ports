@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	tktray
 PORTVERSION=	1.3.9
 CATEGORIES=	x11-toolkits tk

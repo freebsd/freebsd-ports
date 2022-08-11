@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	Module-Starter-Plugin-TT2
 PORTVERSION=	0.125
 PORTREVISION=	2

@@ -6,8 +6,4 @@ encoded in the PDF output using lossless Group 4 fax compression
 ratio for text and line art.  JPEG images will be preserved with the
 original coding.
 
-The current version of Tumble will only work on little-endian systems,
-such as x86, VAX, and Alpha.  The byte order dependencies will be fixed
-in a later release.
-
 WWW: http://tumble.brouhaha.com/

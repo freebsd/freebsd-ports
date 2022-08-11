@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	WWW-Mixi-Scraper
 PORTVERSION=	0.34
 PORTREVISION=	1

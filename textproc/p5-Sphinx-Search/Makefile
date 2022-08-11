@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	Sphinx-Search
 PORTVERSION=	0.31
 CATEGORIES=	textproc perl5

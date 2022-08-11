@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-
 PORTNAME=	Digest-SHA1
 PORTVERSION=	2.13
 PORTREVISION=	2

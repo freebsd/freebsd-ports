@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	UUID-Random
 PORTVERSION=	0.04
 PORTREVISION=	1

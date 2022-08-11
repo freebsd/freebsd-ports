@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	self-init
 PORTVERSION=	0.01
 PORTREVISION=	1

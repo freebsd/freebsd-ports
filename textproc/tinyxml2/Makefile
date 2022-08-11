@@ -1,5 +1,3 @@
-# Created by: b.f. <bf@FreeBSD.org>
-
 PORTNAME=	tinyxml2
 PORTVERSION=	9.0.0
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Andrey Slusar <anray@FreeBSD.org>
-
 PORTNAME=	ida
 PORTVERSION=	2.14
 PORTREVISION=	1

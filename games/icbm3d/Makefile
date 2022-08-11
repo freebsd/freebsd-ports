@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	icbm3d
 PORTVERSION=	0.4
 PORTREVISION=	4

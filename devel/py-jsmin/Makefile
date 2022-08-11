@@ -1,5 +1,3 @@
-# Created by: Po-Chien Lin <linpc@cs.nctu.edu.tw>
-
 PORTNAME=	jsmin
 PORTVERSION=	3.0.1
 CATEGORIES=	devel www python

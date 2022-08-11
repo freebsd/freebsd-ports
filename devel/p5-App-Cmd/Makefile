@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	App-Cmd
 PORTVERSION=	0.334
 CATEGORIES=	devel perl5

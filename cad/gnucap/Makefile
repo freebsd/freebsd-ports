@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gnucap
 DISTVERSION=	2013-04-23
 CATEGORIES=	cad

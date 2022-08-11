@@ -1,9 +1,7 @@
-# Created by: Athanasios Douitsis <aduitsis@cpan.org>
-
 PORTNAME=		unbound_exporter
 PORTVERSION=		0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		aduitsis@cpan.org

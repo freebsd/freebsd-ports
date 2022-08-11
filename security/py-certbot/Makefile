@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	certbot
 PORTVERSION=	${ACME_VERSION}
 PORTEPOCH=	1
@@ -15,20 +13,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${ACME_VERSION},1:security/py-acme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configargparse>=0.9.3:devel/py-configargparse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=1.2.3:security/py-cryptography@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.6:devel/py-configobj@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cryptography>=2.5.0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=1.0.1:sysutils/py-distro@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}josepy>=1.3.0:security/py-josepy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}parsedatetime>=1.3:devel/py-parsedatetime@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}josepy>=1.13.0:security/py-josepy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}parsedatetime>=2.4:devel/py-parsedatetime@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyrfc3339>0:devel/py-pyrfc3339@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytz>2019.3,1:devel/py-pytz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=2019.3,1:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.component>0:devel/py-zope.component@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 SUB_FILES=	500.certbot pkg-message
@@ -66,9 +62,6 @@ post-install-MANPAGES-on:
 		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/certbot.7 \
 		${STAGEDIR}${PREFIX}/share/man/man7
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
 .include "${.CURDIR}/../py-acme/version.mk"
 .include <bsd.port.mk>

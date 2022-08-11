@@ -1,9 +1,7 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	atlantis
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.2
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	0xdutra@gmail.com

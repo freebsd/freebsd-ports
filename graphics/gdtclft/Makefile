@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	Gdtclft
 PORTVERSION=	2.2.5
 PORTREVISION=	18

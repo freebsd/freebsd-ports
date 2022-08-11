@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	qstylizer
 PORTVERSION=	0.2.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: jeffhung
-
 PORTNAME=	Exception-Handler
 PORTVERSION=	1.004
 PORTREVISION=	1

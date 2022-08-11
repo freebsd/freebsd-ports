@@ -1,5 +1,3 @@
-# Created by: Jeremy Shaffner <jeremy@external.org>
-
 PORTNAME=	reportmagic
 PORTVERSION=	2.21
 PORTREVISION=	4

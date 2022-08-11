@@ -1,5 +1,3 @@
-# Created by: Michaël Grünewald
-
 PORTNAME=	classes
 PORTVERSION=	4.00
 CATEGORIES=	devel

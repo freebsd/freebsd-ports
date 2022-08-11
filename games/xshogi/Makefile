@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	xshogi
 PORTVERSION=	1.4.2
 CATEGORIES=	games

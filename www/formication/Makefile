@@ -1,5 +1,3 @@
-# Created by: Michael Ranner <mranner@inode.at>
-
 PORTNAME=	formication
 PORTVERSION=	1.0.b1
 PORTREVISION=	3

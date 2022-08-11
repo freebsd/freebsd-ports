@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyu2f
 PORTVERSION=	0.1.5
 CATEGORIES=	net python

@@ -1,5 +1,3 @@
-# Created by: Jeremy Shaffner <jeremy@external.org>
-
 PORTNAME=	dmalloc
 DISTVERSION=	5.6.5
 CATEGORIES=	devel

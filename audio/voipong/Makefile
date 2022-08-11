@@ -1,5 +1,3 @@
-# Created by: Necati Ersen SISECI <siseci@enderunix.org>
-
 PORTNAME=	voipong
 PORTVERSION=	2.0
 CATEGORIES=	audio

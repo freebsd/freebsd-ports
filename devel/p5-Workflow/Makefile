@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski
-
 PORTNAME=	Workflow
 DISTVERSION=	1.60
 CATEGORIES=	devel perl5

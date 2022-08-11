@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Finance-TW-EmergingQuote
 PORTVERSION=	0.26
 PORTREVISION=	1

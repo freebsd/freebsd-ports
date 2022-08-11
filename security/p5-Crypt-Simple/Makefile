@@ -1,5 +1,3 @@
-# Created by: Alexander Kriventsov <avk@vl.ru>
-
 PORTNAME=	Crypt-Simple
 PORTVERSION=	0.06
 PORTREVISION=	4

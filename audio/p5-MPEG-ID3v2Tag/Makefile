@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	MPEG-ID3v2Tag
 PORTVERSION=	0.39
 PORTREVISION=	1

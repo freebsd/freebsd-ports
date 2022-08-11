@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	Catalyst-Plugin-Session-Store-Delegate
 PORTVERSION=	0.06
 PORTREVISION=	1

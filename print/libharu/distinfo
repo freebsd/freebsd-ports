@@ -1,2 +1,7 @@
-SHA256 (libharu-libharu-RELEASE_2_3_0_GH0.tar.gz) = 8f9e68cc5d5f7d53d1bc61a1ed876add1faf4f91070dbc360d8b259f46d9a4d2
-SIZE (libharu-libharu-RELEASE_2_3_0_GH0.tar.gz) = 1396413
+TIMESTAMP = 1653483669
+SHA256 (libharu/libharu-libharu-RELEASE_2_3_0_GH0.tar.gz) = 8f9e68cc5d5f7d53d1bc61a1ed876add1faf4f91070dbc360d8b259f46d9a4d2
+SIZE (libharu/libharu-libharu-RELEASE_2_3_0_GH0.tar.gz) = 1396413
+SHA256 (libharu/157.diff) = c65e567f04d3c0f995eb671ece25cf7f5170d6568d9d709e6f93f98b6a519f1d
+SIZE (libharu/157.diff) = 15274
+SHA256 (libharu/187.diff) = e211ca9a2633a2fccf2cb1dc320cc3d2e9ee99466b304fa6a57755414e89c162
+SIZE (libharu/187.diff) = 2416

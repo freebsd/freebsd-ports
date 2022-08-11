@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	websh
 PORTVERSION=	3.6.0b5
 PORTREVISION=	6

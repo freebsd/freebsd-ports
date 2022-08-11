@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	countrycodes
 PORTVERSION=	1.0.6
 CATEGORIES=	misc

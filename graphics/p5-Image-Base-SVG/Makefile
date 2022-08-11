@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Image-Base-SVG
 PORTVERSION=	5
 CATEGORIES=	graphics perl5

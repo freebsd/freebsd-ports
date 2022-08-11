@@ -1,5 +1,3 @@
-# Created by: Hung-Yi Chen <gaod@hychen.org>
-
 PORTNAME=	ssspl
 PORTVERSION=	0.1
 CATEGORIES=	net perl5

@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	String-RexxParse
 PORTVERSION=	1.10
 PORTREVISION=	1

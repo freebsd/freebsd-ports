@@ -1,5 +1,3 @@
-# Created by: Pietro Cerutti <gahr@gahr.ch>
-
 PORTNAME=	scew
 PORTVERSION=	1.2.0
 CATEGORIES=	textproc

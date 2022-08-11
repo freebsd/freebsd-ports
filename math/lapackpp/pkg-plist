@@ -1,0 +1,13 @@
+include/lapack.hh
+include/lapack/config.h
+include/lapack/defines.h
+include/lapack/flops.hh
+include/lapack/fortran.h
+include/lapack/mangling.h
+include/lapack/util.hh
+include/lapack/wrappers.hh
+lib/lapackpp/lapackppConfig.cmake
+lib/lapackpp/lapackppConfigVersion.cmake
+lib/lapackpp/lapackppTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/lapackpp/lapackppTargets.cmake
+lib/liblapackpp.so

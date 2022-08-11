@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	WWW-Mechanize-FormFiller
 PORTVERSION=	0.12
 CATEGORIES=	www perl5

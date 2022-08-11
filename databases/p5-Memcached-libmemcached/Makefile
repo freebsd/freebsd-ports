@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Memcached-libmemcached
 PORTVERSION=	1.001801
 PORTREVISION=	1

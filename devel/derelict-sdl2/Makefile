@@ -1,5 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	derelict-sdl2
 PORTVERSION=	2.1.4
 PORTREVISION=	4

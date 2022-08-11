@@ -1,5 +1,5 @@
 PORTNAME=	pdk
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -27,6 +27,9 @@ RUN_DEPENDS=	rubygem-bundler>=1.15:sysutils/rubygem-bundler \
 		rubygem-tty-prompt>=0.22:devel/rubygem-tty-prompt \
 		rubygem-tty-spinner>=0.5:devel/rubygem-tty-spinner \
 		rubygem-tty-which>=0.3:devel/rubygem-tty-which
+
+BROKEN_RUBY30=	yes
+BROKEN_RUBY31=	yes
 
 USES=		gem
 USE_RUBY=	yes

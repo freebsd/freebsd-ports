@@ -1,5 +1,3 @@
-# Created by: Dmitri Goutnik <dg@syrec.org>
-
 PORTNAME=	encryptpad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0.1

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	libmt_client
 PORTVERSION=	0.1.98
 PORTREVISION=	10

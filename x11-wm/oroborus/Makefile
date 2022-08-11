@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	oroborus
 PORTVERSION=	2.0.20
 CATEGORIES=	x11-wm

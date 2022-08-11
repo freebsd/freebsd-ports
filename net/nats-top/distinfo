@@ -1,6 +1,6 @@
-TIMESTAMP = 1648053009
-SHA256 (nats-io-nats-top-v0.5.0_GH0.tar.gz) = 6ef4325d7e999fefb846c1be922df35f779f4fb1d8cb5a23b05902ca8326c1ef
-SIZE (nats-io-nats-top-v0.5.0_GH0.tar.gz) = 19895
+TIMESTAMP = 1652247171
+SHA256 (nats-io-nats-top-v0.5.2_GH0.tar.gz) = 4464b37c5a6e6f5bc2ef5b6347debf0e0a5cd47f0ce99f0eeea7831d7a761fa8
+SIZE (nats-io-nats-top-v0.5.2_GH0.tar.gz) = 19884
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
 SIZE (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 42152
 SHA256 (gizak-termui-e62b5929642a_GH0.tar.gz) = 8de172145510472f80c1a4f35ed9847cec2fc07db386924c7d601f2571c244e4

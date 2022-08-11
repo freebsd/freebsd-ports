@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	stymulator
 PORTVERSION=	0.21a
 PORTREVISION=	4

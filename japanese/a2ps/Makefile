@@ -1,5 +1,3 @@
-# Created by: SAITO Itsuro <saito@miv.t.u-tokyo.ac.jp>
-
 PORTNAME=	a2ps
 PORTVERSION=	1.45
 PORTREVISION=	5

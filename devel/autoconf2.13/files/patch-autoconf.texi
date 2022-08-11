@@ -1,0 +1,17 @@
+--- autoconf.texi.orig	2000-02-27 16:18:10 UTC
++++ autoconf.texi
+@@ -15,11 +15,10 @@
+ @end iftex
+ 
+ @ifinfo
+-@format
+-START-INFO-DIR-ENTRY
++@dircategory Software development
++@direntry
+ * Autoconf: (autoconf).         Create source code configuration scripts.
+-END-INFO-DIR-ENTRY
+-@end format
++@end direntry
+ 
+ Autoconf: Creating Automatic Configuration Scripts, by David MacKenzie.
+ 

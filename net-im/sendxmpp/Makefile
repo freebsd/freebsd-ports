@@ -1,5 +1,3 @@
-# Created by: Max E. Kuznecov <mek@mek.uz.ua>
-
 PORTNAME=	sendxmpp
 PORTVERSION=	1.24
 DISTVERSIONPREFIX=	v

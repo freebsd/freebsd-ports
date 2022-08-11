@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Filter-Template
 PORTVERSION=	1.043
 PORTREVISION=	1

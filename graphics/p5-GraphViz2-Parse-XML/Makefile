@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	GraphViz2-Parse-XML
 PORTVERSION=	2.50
 CATEGORIES=	graphics perl5

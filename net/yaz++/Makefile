@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	yaz++
 PORTVERSION=	1.6.1
 PORTREVISION=	1

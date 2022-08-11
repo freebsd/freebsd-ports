@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Locale-Currency-Format
 PORTVERSION=	1.35
 CATEGORIES=	finance perl5

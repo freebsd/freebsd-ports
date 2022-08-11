@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	atk
 PORTVERSION=	2.28.1
 DISTVERSIONSUFFIX=	-2.el7

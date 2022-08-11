@@ -1,5 +1,3 @@
-# Created by: jabley
-
 PORTNAME=	aggregate
 PORTVERSION=	1.6
 PORTREVISION=	1

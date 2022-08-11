@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	mtop
 PORTVERSION=	0.6.6
 PORTREVISION=	5

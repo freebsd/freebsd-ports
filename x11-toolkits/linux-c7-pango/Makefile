@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	pango
 PORTVERSION=	1.42.4
 DISTVERSIONSUFFIX=	-4.el7_7

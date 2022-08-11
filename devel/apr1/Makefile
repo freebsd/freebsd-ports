@@ -1,5 +1,3 @@
-# Created by: Garrett Rooney <rooneg@electricjellyfish.net>
-
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
 PORTREVISION=	2
@@ -112,10 +110,6 @@ APR_CONF_ENV+=	${CONFIGURE_ENV:O:u} CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CP
 APU_CONF_ENV+=	${CONFIGURE_ENV:O:u} CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${APU_CPPFLAGS} ${CPPFLAGS}"
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc || ${ARCH} == powerpcspe
-CONFIGURE_ENV+=	ap_cv_atomic_builtins=no
-.endif
 
 .if ${PORT_OPTIONS:MSSL} || ${PORT_OPTIONS:MNSS}
 APU_CONF_ARGS+=	--with-crypto

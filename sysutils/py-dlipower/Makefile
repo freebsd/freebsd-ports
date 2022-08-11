@@ -1,5 +1,3 @@
-# Created by: M. Warner Losh <imp@FreeBSD.org>
-
 PORTNAME=	dlipower
 PORTVERSION=	1.0.176
 PORTEPOCH=	2

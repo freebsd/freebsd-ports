@@ -1,5 +1,3 @@
-# Created by: Motoyuki Kasahara <m-kasahr@sra.co.jp>
-
 PORTNAME=	libtool
 PORTREVISION=	0
 

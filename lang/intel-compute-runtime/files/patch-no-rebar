@@ -43,11 +43,22 @@ level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:204:55: error: use of un
     this->preadFunction(fdConfig, configMemory.get(), PCI_CFG_SPACE_EXP_SIZE, 0);
                                                       ^
 
---- level_zero/tools/source/sysman/linux/os_sysman_imp.cpp.orig	2022-04-01 18:23:59 UTC
-+++ level_zero/tools/source/sysman/linux/os_sysman_imp.cpp
-@@ -14,7 +14,12 @@
+--- level_zero/tools/source/sysman/diagnostics/linux/os_diagnostics_imp.cpp.orig	2022-06-08 12:04:46 UTC
++++ level_zero/tools/source/sysman/diagnostics/linux/os_diagnostics_imp.cpp
+@@ -11,7 +11,9 @@
  
- #include "sysman/linux/firmware_util/firmware_util.h"
+ #include "level_zero/core/source/device/device_imp.h"
+ 
++#ifdef __linux__
+ #include <linux/pci_regs.h>
++#endif
+ 
+ namespace L0 {
+ const std::string LinuxDiagnosticsImp::deviceDir("device");
+--- level_zero/tools/source/sysman/linux/os_sysman_imp.h.orig	2022-06-08 12:04:46 UTC
++++ level_zero/tools/source/sysman/linux/os_sysman_imp.h
+@@ -18,6 +20,11 @@
+ #include "level_zero/tools/source/sysman/sysman_imp.h"
  
 +#ifdef __linux__
  #include <linux/pci_regs.h>
@@ -55,9 +66,9 @@ level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:204:55: error: use of un
 +#define PCI_BRIDGE_CONTROL 0x3e
 +#define PCI_BRIDGE_CTL_BUS_RESET 0x40
 +#endif
+ #include <map>
  
  namespace L0 {
- 
 --- level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp.orig	2021-08-11 16:12:33 UTC
 +++ level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp
 @@ -12,7 +12,9 @@

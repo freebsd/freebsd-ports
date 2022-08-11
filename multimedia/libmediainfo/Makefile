@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libmediainfo
-PORTVERSION=	22.03
+PORTVERSION=	22.06
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -26,14 +24,12 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/MediaInfoLib/Project/GNU/Library
 
-OPTIONS_DEFINE=	CURL MMS TINYXML2
+OPTIONS_DEFINE=	CURL TINYXML2
 OPTIONS_DEFAULT=TINYXML2
 TINYXML2_DESC=	Use textproc/tinyxml2 instead of bundled one
 
 CURL_CONFIGURE_ON=	--with-libcurl=${LOCALBASE}
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-MMS_CONFIGURE_ON=	--with-libmms=${LOCALBASE}
-MMS_LIB_DEPENDS=	libmms.so:net/libmms
 TINYXML2_CONFIGURE_ON=	--with-libtinyxml2=yes
 TINYXML2_LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 

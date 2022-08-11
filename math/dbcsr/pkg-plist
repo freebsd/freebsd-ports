@@ -7,8 +7,8 @@ lib/cmake/dbcsr/DBCSRConfigVersion.cmake
 lib/cmake/dbcsr/DBCSRTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dbcsr/DBCSRTargets.cmake
 lib/libdbcsr.so
-lib/libdbcsr.so.2.2
-lib/libdbcsr.so.2.2.0
+lib/libdbcsr.so.2.3
+lib/libdbcsr.so.2.3.0
 %%C_API%%lib/libdbcsr_c.so
-%%C_API%%lib/libdbcsr_c.so.2.2
-%%C_API%%lib/libdbcsr_c.so.2.2.0
+%%C_API%%lib/libdbcsr_c.so.2.3
+%%C_API%%lib/libdbcsr_c.so.2.3.0

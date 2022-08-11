@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Catalyst-Component-ACCEPT_CONTEXT
 PORTVERSION=	0.07
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Mail-Box-Parser-C
 PORTVERSION=	3.009
 CATEGORIES=	mail perl5

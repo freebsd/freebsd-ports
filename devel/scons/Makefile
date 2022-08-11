@@ -1,5 +1,3 @@
-# Created by: Peter Haight <peterh@sapros.com>
-
 PORTNAME=	scons
 PORTVERSION=	4.3.0
 CATEGORIES=	devel python

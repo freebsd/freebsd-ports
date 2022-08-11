@@ -1,6 +1,5 @@
 # bsd.local.mk - Sandbox for local modification to ports framework.
 #
-# Created by: Mark Linimon <linimon@FreeBSD.org>
 
 .if !defined(_POSTMKINCLUDED) && !defined(Local_Pre_Include)
 

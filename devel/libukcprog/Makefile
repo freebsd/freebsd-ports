@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	libukcprog
 PORTVERSION=	1.0.2
 PORTREVISION=	5

@@ -13,6 +13,10 @@ share/locale/az/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/az/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/az/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/az/LC_MESSAGES/mountisoaction.mo
+share/locale/bg/LC_MESSAGES/fileviewbazaarplugin.mo
+share/locale/bg/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/bg/LC_MESSAGES/fileviewhgplugin.mo
+share/locale/bg/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/bg/LC_MESSAGES/mountisoaction.mo
 share/locale/bs/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/bs/LC_MESSAGES/fileviewgitplugin.mo

@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	Proc-ProcessTable
 PORTVERSION=	0.63.4
 CATEGORIES=	devel perl5

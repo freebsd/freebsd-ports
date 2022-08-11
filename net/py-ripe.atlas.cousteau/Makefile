@@ -1,5 +1,3 @@
-# Created by: Massimiliano Stucchi <mstucchi@ripe.net>
-
 PORTNAME=	ripe.atlas.cousteau
 DISTVERSION=	1.4.2
 CATEGORIES=	net python

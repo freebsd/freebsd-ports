@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libvmdk
 PORTVERSION=	20210807
 DISTVERSIONPREFIX=	alpha-

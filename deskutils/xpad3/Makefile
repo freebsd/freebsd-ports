@@ -1,5 +1,3 @@
-# Created by: Guillaume Paquet <amyfoub@gmail.com>
-
 PORTNAME=	xpad
 PORTVERSION=	3.1
 PORTREVISION=	9

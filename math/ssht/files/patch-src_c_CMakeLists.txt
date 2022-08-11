@@ -1,0 +1,8 @@
+--- src/c/CMakeLists.txt.orig	2022-08-06 19:20:16 UTC
++++ src/c/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-add_library(ssht STATIC ssht_adjoint.c ssht_core.c ssht_dl.c ssht_sampling.c)
++add_library(ssht ssht_adjoint.c ssht_core.c ssht_dl.c ssht_sampling.c)
+ target_link_libraries(ssht PUBLIC FFTW3::FFTW3 ${MATH_LIBRARY})
+ target_include_directories(
+     ssht

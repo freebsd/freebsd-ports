@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-objectpath
 PORTVERSION=	1.2.1.0
 PORTREVISION=	2

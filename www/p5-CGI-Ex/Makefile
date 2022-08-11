@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	CGI-Ex
 PORTVERSION=	2.54
 CATEGORIES=	www perl5

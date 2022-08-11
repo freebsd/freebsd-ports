@@ -1,0 +1,17 @@
+--- npm-better-sqlite3-7.5.0-3c4a7eebba3d5f5d8cb88fe83be1c01b8c0dea7d/node_modules/better-sqlite3/deps/sqlite3.gyp.orig	2022-07-02 14:34:04 UTC
++++ npm-better-sqlite3-7.5.0-3c4a7eebba3d5f5d8cb88fe83be1c01b8c0dea7d/node_modules/better-sqlite3/deps/sqlite3.gyp
+@@ -95,6 +95,14 @@
+             ]
+           }
+         },
++        'OS == "freebsd"', {
++          'link_settings': {
++            'libraries': [
++              # This statically links libcrypto, whereas -lcrypto would dynamically link it
++              '/usr/local/lib/libcrypto.a'
++            ]
++          }
++        },
+         { # Linux
+           'link_settings': {
+             'libraries': [

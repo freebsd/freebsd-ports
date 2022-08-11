@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	tidyr
 PORTVERSION=	1.2.0
 CATEGORIES=	devel

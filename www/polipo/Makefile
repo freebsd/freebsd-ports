@@ -1,5 +1,3 @@
-# Created by: Frank Behrens <frank@pinky.sax.de>
-
 PORTNAME=	polipo
 PORTVERSION=	1.1.1
 PORTREVISION=	3

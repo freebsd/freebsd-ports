@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Proc-Queue
 PORTVERSION=	1.23
 PORTREVISION=	1

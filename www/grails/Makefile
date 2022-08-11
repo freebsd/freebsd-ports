@@ -1,5 +1,3 @@
-# Created by: Mitchell Smith <mjs@bur.st>
-
 PORTNAME=	grails
 DISTVERSION=	1.3.6
 CATEGORIES=	www java

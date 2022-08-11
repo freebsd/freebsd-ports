@@ -1,5 +1,3 @@
-# Created by: olevole@olevole.ru
-
 PORTNAME=	libspice-server
 DISTVERSION=	0.15.0
 CATEGORIES=	devel
@@ -19,9 +17,9 @@ OPTIONS_DEFINE=		GSTREAMER LZ4 SASL STATISTICS
 OPTIONS_DEFAULT=	GSTREAMER LZ4 SASL
 STATISTICS_DESC=	Statistic code
 
+GSTREAMER_USES=			gstreamer
 GSTREAMER_CONFIGURE_ON=		--enable-gstreamer=1.0
 GSTREAMER_CONFIGURE_OFF=	--enable-gstreamer=no
-GSTREAMER_USE=			gstreamer1=yes
 GSTREAMER_LIB_DEPENDS=		liborc-0.4.so:devel/orc
 
 LZ4_CONFIGURE_ENABLE=	lz4
@@ -32,8 +30,8 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 STATISTICS_CONFIGURE_ENABLE=	statistics
 
-USES=		autoreconf compiler:c++11-lang cpe gmake gnome jpeg libtool \
-		localbase:ldflag pkgconfig python ssl tar:bzip2 xorg
+USES=		autoreconf:2.69 compiler:c++11-lang cpe gmake gnome jpeg \
+		libtool localbase:ldflag pkgconfig python ssl tar:bzip2 xorg
 
 USE_GNOME=	glib20
 USE_XORG=	pixman

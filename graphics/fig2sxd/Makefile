@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	fig2sxd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.22.1-3

@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	quantis
 DISTVERSION=	v18.03.08
 CATEGORIES=	security

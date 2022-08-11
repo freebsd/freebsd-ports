@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	WWW-Scripter-Plugin-Ajax
 PORTVERSION=	0.09
 PORTREVISION=	1

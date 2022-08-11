@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	murder
 PORTVERSION=	0.1.2
 CATEGORIES=	sysutils rubygems

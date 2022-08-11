@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Apache-ConfigParser
 PORTVERSION=	1.02
 CATEGORIES=	www perl5

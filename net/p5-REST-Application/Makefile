@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	REST-Application
 PORTVERSION=	0.992
 PORTREVISION=	1

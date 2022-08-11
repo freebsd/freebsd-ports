@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner <nbm@FreeBSD.org>
-
 PORTNAME=	rockdodger
 PORTVERSION=	1.1.4
 CATEGORIES=	games

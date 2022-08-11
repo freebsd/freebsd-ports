@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Class-Prototyped
 PORTVERSION=	1.13
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-
 PORTNAME=	suphp
 PORTVERSION=	0.7.2
 PORTREVISION=	2

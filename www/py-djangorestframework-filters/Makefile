@@ -1,5 +1,3 @@
-# Created by: Alfred Perlstein <alfred@freebsd.org>
-
 PORTNAME=	djangorestframework-filters
 PORTVERSION=	0.10.2
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-EN-Squeeze
 PORTVERSION=	2020.02
 CATEGORIES=	textproc perl5

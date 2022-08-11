@@ -1,5 +1,3 @@
-# Created by: Chris Larsen <darth@vader.dk>
-
 PORTNAME=	SQLite-Work
 PORTVERSION=	0.16.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Timur Bakeyev <bat@cpan.org>
-
 PORTNAME=	URI-UTF8-Punycode
 PORTVERSION=	1.05
 CATEGORIES=	converters perl5

@@ -1,5 +1,3 @@
-# Created by: Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
-
 PORTNAME=	XML-Filter-GenericChunk
 PORTVERSION=	0.07
 PORTREVISION=	1

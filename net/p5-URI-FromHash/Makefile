@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	URI-FromHash
 DISTVERSION=	0.05
 CATEGORIES=	net perl5

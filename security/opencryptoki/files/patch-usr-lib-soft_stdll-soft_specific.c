@@ -1,4 +1,4 @@
---- usr/lib/soft_stdll/soft_specific.c.orig	2018-11-16 14:53:03 UTC
+--- usr/lib/soft_stdll/soft_specific.c.orig	2022-04-25 11:04:51 UTC
 +++ usr/lib/soft_stdll/soft_specific.c
 @@ -19,6 +19,10 @@
  
@@ -11,7 +11,7 @@
  #include <pthread.h>
  #include <string.h>             // for memcmp() et al
  #include <stdlib.h>
-@@ -36,7 +40,17 @@
+@@ -38,7 +42,17 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <fcntl.h>
@@ -27,5 +27,5 @@
  #include <endian.h>
 +#endif
  
- #include <openssl/des.h>
  #include <openssl/rand.h>
+ #include <openssl/dh.h>

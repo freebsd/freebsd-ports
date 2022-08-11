@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-honeycode
 PORTVERSION=	1.17.0
 CATEGORIES=	devel rubygems

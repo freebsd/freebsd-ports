@@ -1,5 +1,3 @@
-# Created by: Julien Laffaye <kimelto@gmail.com>
-
 PORTNAME=	python-gflags
 DISTVERSION=	3.1.2
 CATEGORIES=	devel python

@@ -1,6 +1,6 @@
 PORTNAME=	chrono
-DISTVERSION=	7.0.2
-PORTREVISION=	1
+DISTVERSION=	7.0.3
+PORTREVISION=	3
 CATEGORIES=	science devel
 PKGNAMESUFFIX=	-physics-simulation-engine
 
@@ -14,6 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	use of overloaded operator '[]' is ambiguous (with operand types 'chrono::quaternion' and 'int'): https://github.com/projectchrono/chrono/issues/158
+BROKEN_aarch64=	cannot find -lFALSE, see https://github.com/projectchrono/chrono/issues/389
 
 BUILD_DEPENDS=	openmpi>0:net/openmpi
 LIB_DEPENDS=	libblas.so:math/blas \
@@ -74,7 +75,7 @@ PARDISO_PROJECT_BROKEN=		Not available for FreeBSD; License is restrictive
 SENSOR_BROKEN=			requires CUDA
 
 SYNCHRONO_USES=			localbase
-SYNCHRONO_BUILD_DEPENDS=	flatbuffers>0:devel/flatbuffers
+SYNCHRONO_BUILD_DEPENDS=	flatc:devel/flatbuffers205 # until https://github.com/projectchrono/chrono/issues/391 is fixed
 SYNCHRONO_LIB_DEPENDS=		libmpi.so:net/mpich
 SYNCHRONO_IMPLIES=		VEHICLE
 
@@ -83,7 +84,7 @@ OPENGL_USE=			GL=gl,glu,glew
 OPENGL_BUILD_DEPENDS=		${LOCALBASE}/include/glm/glm.hpp:math/glm
 OPENGL_LIB_DEPENDS=		libglfw.so:graphics/glfw
 
-VEHICLE_LIB_DEPENDS=		libsz.so:science/szip \
+VEHICLE_LIB_DEPENDS=		libsz.so:science/libaec \
 				libmpi.so:net/openmpi
 
 .for module in ${ALL_MODULES}
@@ -112,10 +113,6 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name CMakeLists.txt -o -name "*.cmake*" | ${XARGS} ${REINPLACE_CMD} -i '' 's|lib64|lib|'
-	@${REINPLACE_CMD} -e 's/ -march=native//' \
-		${WRKSRC}/cmake/FindAVX.cmake \
-		${WRKSRC}/cmake/FindFMA.cmake \
-		${WRKSRC}/cmake/FindSSE.cmake
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \

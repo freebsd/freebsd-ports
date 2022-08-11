@@ -1,5 +1,3 @@
-# Created by: Rene Ladan <rene@FreeBSD.org>
-
 PORTNAME=	stemming
 PORTVERSION=	1.0.1
 CATEGORIES=	textproc python

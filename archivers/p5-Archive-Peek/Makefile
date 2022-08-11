@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Archive-Peek
 PORTVERSION=	0.37
 CATEGORIES=	archivers perl5

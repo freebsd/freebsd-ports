@@ -1,5 +1,5 @@
---- src/mainwindow.cpp	2021-09-04 23:55:40.427687000 -0500
-+++ src/mainwindow.cpp	2021-09-05 00:10:09.774435000 -0500
+--- src/mainwindow.cpp	2022-05-22 01:43:45.247103000 -0500
++++ src/mainwindow.cpp	2022-05-22 01:50:16.014480000 -0500
 @@ -295,6 +295,8 @@
      #ifdef Q_OS_OSX
          //Note this is the Path where python3 gets symlinked by homebrew.
@@ -27,16 +27,25 @@
      #endif
          if (flat.isEmpty() == false)
              return flat + "/share/GSC";
-@@ -339,6 +345,8 @@
+@@ -329,6 +335,8 @@
      #ifdef Q_OS_OSX
          QString appPath = QCoreApplication::applicationDirPath();
-         return QDir(appPath + "/indi").absolutePath();
+         return QDir(appPath + "/../../").absolutePath();
++    #elif defined(Q_OS_FREEBSD)
++        return "%%LOCALBASE%%/bin/";
+     #endif
+         return "";
+     }
+@@ -338,6 +346,8 @@
+     {
+     #ifdef Q_OS_OSX
+         return QDir(QCoreApplication::applicationDirPath()).absolutePath();
 +    #elif defined(Q_OS_FREEBSD)
 +        return "%%LOCALBASE%%/bin/";
      #endif
          if (flat.isEmpty() == false)
              return flat + "/bin/";
-@@ -352,6 +360,8 @@
+@@ -351,6 +361,8 @@
      #ifdef Q_OS_OSX
          QString appPath = QCoreApplication::applicationDirPath();
          return QDir(appPath + "/../Resources/DriverSupport").absolutePath();
@@ -45,7 +54,7 @@
      #elif defined(Q_OS_LINUX)
          if (flat.isEmpty() == false)
              return flat + "/share/indi";
-@@ -544,7 +554,6 @@
+@@ -543,7 +555,6 @@
   */
  bool MainWindow::pythonInstalled(QString pythonExecFolder)
  {

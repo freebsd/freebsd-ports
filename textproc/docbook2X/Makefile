@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	docbook2X
 PORTVERSION=	0.8.8
 PORTREVISION=	7

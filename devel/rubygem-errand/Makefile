@@ -1,5 +1,3 @@
-# Created by: Brad Davis <brd@FreeBSD.org>
-
 PORTNAME=	errand
 PORTVERSION=	0.8.1
 PORTREVISION=	2

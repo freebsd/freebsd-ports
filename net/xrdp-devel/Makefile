@@ -1,8 +1,6 @@
-# Created by: alepulver
-
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.20.b20220329
+DISTVERSION=	0.9.80.b20220528
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
@@ -31,9 +29,10 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_TAGNAME=	cd1af47
-GH_TUPLE=	neutrinolabs:librfxcodec:v0.1.6:librfxcodec/librfxcodec \
-		neutrinolabs:libpainter:v0.1.1:libpainter/libpainter
+GH_TAGNAME=	55215cf
+GH_TUPLE=	neutrinolabs:librfxcodec:79619b6:librfxcodec/librfxcodec \
+		neutrinolabs:libpainter:v0.1.1:libpainter/libpainter \
+		neutrinolabs:ulalaca-xrdp:f683d17:ulalaca/ulalaca
 
 CONFIGURE_ARGS=	--localstatedir=/var --enable-strict-locations \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
@@ -77,7 +76,7 @@ CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e "s|0.9.14|${DISTVERSION}-${GH_TAGNAME}|" ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e "s|0.9.80|${DISTVERSION}-${GH_TAGNAME}|" ${WRKSRC}/configure.ac
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./bootstrap
 
 post-install:

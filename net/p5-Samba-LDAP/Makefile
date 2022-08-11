@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Samba-LDAP
 PORTVERSION=	0.05
 PORTREVISION=	2

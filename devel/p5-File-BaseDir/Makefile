@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	File-BaseDir
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

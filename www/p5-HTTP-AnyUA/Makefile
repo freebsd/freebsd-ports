@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	HTTP-AnyUA
 PORTVERSION=	0.904
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@FreeBSD.org>
-
 PORTNAME=	h2
 PORTVERSION=	4.0.0
 CATEGORIES=	www python

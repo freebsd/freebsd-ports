@@ -1,5 +1,3 @@
-# Created by: Torsten Zühlsdorff <ports@toco-domains.de>
-
 PORTNAME=	akismet
 PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems

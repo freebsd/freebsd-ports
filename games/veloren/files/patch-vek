@@ -9,9 +9,9 @@ error[E0658]: platform intrinsics are experimental and possibly buggy
    = note: see issue #27731 <https://github.com/rust-lang/rust/issues/27731> for more information
    = help: add `#![feature(platform_intrinsics)]` to the crate attributes to enable
 
---- ../vek-df6842cc874a697dec8896c66851817e744af7e8/build.rs.orig	2021-03-03 21:14:39 UTC
-+++ ../vek-df6842cc874a697dec8896c66851817e744af7e8/build.rs
-@@ -4,19 +4,6 @@ use rustc_version::{version, version_meta, Channel};
+--- ../vek-84d5cb65841d46599a986c5477341bea4456be26/build.rs.orig	2022-04-24 18:01:19 UTC
++++ ../vek-84d5cb65841d46599a986c5477341bea4456be26/build.rs
+@@ -4,19 +4,6 @@ fn main() {
  fn main() {
      assert!(version().unwrap().major >= 1);
  

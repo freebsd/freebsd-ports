@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@php.net>)
-
 PORTNAME=	DB_DataObject
 PORTVERSION=	1.11.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	initutil
 PORTVERSION=	2.1.b
 CATEGORIES=	devel

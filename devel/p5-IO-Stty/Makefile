@@ -1,5 +1,3 @@
-# Created by: Stephon Chen <stephon@gmail.com>
-
 PORTNAME=	IO-Stty
 PORTVERSION=	0.04
 CATEGORIES=	devel perl5

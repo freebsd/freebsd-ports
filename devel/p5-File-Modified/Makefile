@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	File-Modified
 PORTVERSION=	0.10
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	bit64
 DISTVERSION=	4.0.5
 CATEGORIES=	devel

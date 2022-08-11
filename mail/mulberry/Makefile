@@ -1,5 +1,3 @@
-# Created by: Yarema <yds@CoolRat.org>
-
 PORTNAME=	mulberry
 DISTVERSION=	4_0_8
 PORTREVISION=	2

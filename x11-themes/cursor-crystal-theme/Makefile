@@ -1,5 +1,3 @@
-# Created by: David Naylor <naylor.b.david@gmail.com>
-
 PORTNAME=	cursor-crystal-theme
 DISTVERSION=	1.1.1
 PORTREVISION=	6

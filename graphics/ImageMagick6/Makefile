@@ -1,29 +1,13 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.12-46
+DISTVERSION=	6.9.12-58
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
-MASTER_SITES=	https://www.imagemagick.org/download/ \
-		https://www.imagemagick.org/download/releases/ \
-		http://servingzone.com/mirrors/ImageMagick/ \
-		http://mirror.checkdomain.de/imagemagick/ \
-		http://imagemagick.spd.co.il/ \
-		http://www.champground.com/imagemagick/ \
-		http://ftp.surfnet.nl/pub/ImageMagick/ \
-		http://mirror.searchdaimon.com/ImageMagick/ \
-		http://mirror.is.co.za/pub/imagemagick/ \
-		http://imagemagick.mirrorcatalogs.com/ \
-		ftp://ftp.imagemagick.org/pub/ImageMagick/ \
-		ftp://mirror.aarnet.edu.au/pub/imagemagick/ \
-		ftp://mirror.checkdomain.de/imagemagick/ \
-		ftp://ftp.kddlabs.co.jp/graphics/ImageMagick/ \
-		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/imagemagick.org/ \
-		ftp://ftp.nluug.nl/pub/ImageMagick/ \
-		ftp://mirror.searchdaimon.com/ImageMagick/ \
-		ftp://sunsite.icm.edu.pl/packages/ImageMagick/ \
-		ftp://ftp.tpnet.pl/pub/graphics/ImageMagick/ \
-		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
-		ftp://ftp.is.co.za/pub/imagemagick/ \
-		ftp://ftp.fifi.org/pub/ImageMagick/
+MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
+		https://mirror.dogado.de/imagemagick/releases/ \
+		https://mirror.checkdomain.de/imagemagick/releases/ \
+		https://ftp.icm.edu.pl/pub/unix/graphics/ImageMagick/releases/ \
+		https://imagemagick.org/archive/releases/
 PKGNAMESUFFIX=	6
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -66,7 +50,7 @@ OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFMPEG FFTW FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB HEIF JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
 		OPENEXR OPENMP PANGO PDF PERL PNG RAQM SVG TESTS TIFF WEBP WMF \
 		THREADS X11 16BIT_PIXEL HDRI RAW
-OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FREETYPE \
+OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FREETYPE HEIF \
 		JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG RAQM SVG \
 		TIFF WEBP WMF THREADS X11 RAW
 
@@ -106,7 +90,6 @@ GRAPHVIZ_LIB_DEPENDS=	libgvc.so:graphics/graphviz
 GRAPHVIZ_CFLAGS=	-I${LOCALBASE}/include/graphviz
 GRAPHVIZ_LDFLAGS=	-L${LOCALBASE}/lib/graphviz
 
-HEIF_DESC=		ISO/IEC 23008-12:2017 HEIF file format support
 HEIF_CONFIGURE_WITH=	heic
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
 
@@ -230,10 +213,10 @@ _IMAGEMAGICK_THREADS=no
 . if ${_IMAGEMAGICK_THREADS} == "no"
 IGNORE=OpenMP requires threads${_IMAGEMAGICK_THREADS_IGNORE_MSG}
 . else
-CONFIGURE_ARGS+=       --enable-openmp
+CONFIGURE_ARGS+=	--enable-openmp
 . endif
 .else
-CONFIGURE_ARGS+=       --disable-openmp
+CONFIGURE_ARGS+=	--disable-openmp
 .endif
 
 .if defined(WITH_WINDOWS_FONT_DIR)

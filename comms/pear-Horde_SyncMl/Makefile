@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_SyncMl
 PORTVERSION=	2.0.7
 CATEGORIES=	comms www pear

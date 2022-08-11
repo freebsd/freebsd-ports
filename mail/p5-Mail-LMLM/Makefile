@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Mail-LMLM
 PORTVERSION=	0.6807
 CATEGORIES=	mail perl5

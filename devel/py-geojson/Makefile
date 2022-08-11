@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	geojson
 PORTVERSION=	2.3.0
 PORTEPOCH=	1

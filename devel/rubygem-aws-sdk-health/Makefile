@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-health
 PORTVERSION=	1.47.0
 CATEGORIES=	devel rubygems

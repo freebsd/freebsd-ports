@@ -1,5 +1,3 @@
-# Created by: Aaron Straup Cope
-
 PORTNAME=	resume-extensions
 PORTVERSION=	0.5
 PORTREVISION=	2

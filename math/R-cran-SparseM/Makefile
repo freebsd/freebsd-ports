@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	SparseM
 PORTVERSION=	1.81
 CATEGORIES=	math

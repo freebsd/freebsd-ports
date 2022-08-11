@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Ioctl
 PORTVERSION=	0.81
 PORTREVISION=	1

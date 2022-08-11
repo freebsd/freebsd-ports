@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Tk-Contrib
 PORTVERSION=	0.07
 PORTREVISION=	5

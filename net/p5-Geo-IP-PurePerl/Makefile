@@ -1,5 +1,3 @@
-# Created by: Joe Horn <joehorn@gmail.com>
-
 PORTNAME=	Geo-IP-PurePerl
 PORTVERSION=	1.26
 CATEGORIES=	net perl5

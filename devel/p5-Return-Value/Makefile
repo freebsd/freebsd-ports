@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Return-Value
 PORTVERSION=	1.666005
 CATEGORIES=	devel perl5

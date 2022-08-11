@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	sampsvr
 PORTVERSION=	0.3c
 PORTREVISION=	1

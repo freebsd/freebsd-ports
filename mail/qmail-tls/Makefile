@@ -1,5 +1,3 @@
-# Created by: Mario S F Ferreira <lioux@linf.unb.br>
-
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${TLS_PATCH_DATE}
 PORTREVISION=	4

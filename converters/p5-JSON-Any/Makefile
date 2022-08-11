@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	JSON-Any
 PORTVERSION=	1.39
 PORTREVISION=	1

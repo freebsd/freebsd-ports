@@ -52,6 +52,7 @@ include/libtorrent/aux_/session_interface.hpp
 include/libtorrent/aux_/session_settings.hpp
 include/libtorrent/aux_/session_udp_sockets.hpp
 include/libtorrent/aux_/set_socket_buffer.hpp
+include/libtorrent/aux_/set_traffic_class.hpp
 include/libtorrent/aux_/socket_type.hpp
 include/libtorrent/aux_/storage_piece_set.hpp
 include/libtorrent/aux_/storage_utils.hpp

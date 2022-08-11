@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Convert-Color-XTerm
 PORTVERSION=	0.06
 CATEGORIES=	graphics perl5

@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	contracts
 PORTVERSION=	0.11.0
 CATEGORIES=	devel rubygems

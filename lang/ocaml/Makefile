@@ -1,4 +1,3 @@
-# Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # for committer: bump PORTREVISION for math/facile whenever ocaml gets updated
 
 PORTNAME=	ocaml
@@ -64,7 +63,7 @@ DOCS_DISTFILES=	${DISTNAME:R}-refman-html.tar.gz:docs \
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 CONFIGURE_ARGS+=	-as "${AS} ${ASFLAGS} -meabi=5"
-.elif ${ARCH} == powerpc
+.elif ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LLD_UNSAFE=		yes
 .else
 CONFIGURE_ARGS+=	-as "${AS} ${ASFLAGS}"
@@ -102,11 +101,6 @@ PLIST_SUB+=	PROF=""
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-asmcomp_power_arch.ml
-LLD_UNSAFE=	yes
-.endif
-
-.if ${ARCH} == powerpc64le
-LLD_UNSAFE=	yes
 .endif
 
 post-patch:

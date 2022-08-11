@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	checkmate
 PORTVERSION=	0.21
 CATEGORIES=	audio

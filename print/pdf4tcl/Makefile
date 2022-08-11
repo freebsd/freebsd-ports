@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	pdf4tcl
 PORTVERSION=	0.8
 CATEGORIES=	print

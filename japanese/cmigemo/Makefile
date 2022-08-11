@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	cmigemo
 PORTVERSION=	20141220
 CATEGORIES=	japanese

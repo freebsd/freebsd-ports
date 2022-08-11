@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	w3mir
 PORTVERSION=	1.0.10
 PORTREVISION=	3

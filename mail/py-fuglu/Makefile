@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	fuglu
 PORTVERSION=	0.8.0
 CATEGORIES=	mail python

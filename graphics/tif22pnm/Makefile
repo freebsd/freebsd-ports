@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	tif22pnm
 PORTVERSION=	0.14
 PORTREVISION=	1

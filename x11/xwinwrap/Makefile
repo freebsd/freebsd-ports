@@ -1,5 +1,3 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-
 PORTNAME=	xwinwrap
 PORTVERSION=	0.3
 PORTREVISION=	4

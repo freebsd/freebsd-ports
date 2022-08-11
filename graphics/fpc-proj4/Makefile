@@ -1,5 +1,3 @@
-# Created by: Christopher Key <cjk32@cam.ac.uk>
-
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-proj4
 

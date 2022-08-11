@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	XML-LibXML-Simple
 PORTVERSION=	0.95
 CATEGORIES=	textproc perl5

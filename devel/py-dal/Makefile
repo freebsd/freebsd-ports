@@ -1,5 +1,3 @@
-# Created by: Andriy Pylypenko <bamby@sippysoft.com>
-
 PORTNAME=	dal
 PORTVERSION=	20081016
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	crashme
 PORTVERSION=	2.4
 PORTREVISION=	1

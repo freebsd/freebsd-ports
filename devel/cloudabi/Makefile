@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@FreeBSD.org>
-
 PORTNAME=	cloudabi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.19

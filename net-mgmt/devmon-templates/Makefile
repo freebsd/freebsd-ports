@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	devmon-templates
 DISTVERSION=	20080206
 CATEGORIES=	net-mgmt

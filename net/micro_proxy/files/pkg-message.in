@@ -16,5 +16,11 @@ to inetd.conf(5),
 
 to rc.conf(5) and restart inetd(8). See micro_proxy(8) for more information.
 EOM
+},
+{ type: remove
+  message: <<EOM
+Micro_proxy has been successfully deinstalled. If you ran it with inetd(8) make
+sure you remove all the manual configuration.
+EOM
 }
 ]

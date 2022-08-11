@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	esda
 PORTVERSION=	2.4.1
 CATEGORIES=	science python

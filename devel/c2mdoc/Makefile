@@ -1,5 +1,3 @@
-# Created by: Bruce M. Simpson <bms@FreeBSD.org>
-
 PORTNAME=	c2mdoc
 PORTVERSION=	20040302
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: alm
-
 PORTNAME=	bsmtrace
 PORTVERSION=	1.4
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
-
 PORTNAME=	DBIx-SQLEngine
 PORTVERSION=	0.93
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Check-ISA
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

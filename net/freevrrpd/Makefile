@@ -1,5 +1,3 @@
-# Created by: Sebastien Petit <spe@phear.org>
-
 PORTNAME=	freevrrpd
 PORTVERSION=	1.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Martin Neubauer <m.ne@gmx.net>
-
 PORTNAME=	pymediainfo
 PORTVERSION=	4.1
 CATEGORIES=	multimedia devel python

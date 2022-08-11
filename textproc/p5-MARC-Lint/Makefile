@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	MARC-Lint
 PORTVERSION=	1.46
 PORTREVISION=	1

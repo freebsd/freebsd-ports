@@ -1,5 +1,3 @@
-# Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	sleef
 DISTVERSION=	3.5.0
 PORTREVISION=	3

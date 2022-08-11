@@ -1,5 +1,3 @@
-# Created by: Jeremy Shaffner <jeremy@external.org>
-
 PORTNAME=	File-Tail
 PORTVERSION=	1.3
 CATEGORIES=	devel perl5

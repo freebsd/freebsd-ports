@@ -1,5 +1,3 @@
-# Created by: Michael Haro <mharo@FreeBSD.org>
-
 PORTNAME=	Crypt-Random
 PORTVERSION=	1.54
 CATEGORIES=	security perl5

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	OpenCA-REQ
 PORTVERSION=	0.9.60
 PORTREVISION=	1

@@ -8,7 +8,7 @@ MASTER_SITES=	https://download-cf.jetbrains.com/idea/
 DISTNAME=	ideaIC-${PORTVERSION}-no-jbr
 DIST_SUBDIR=	jetbrains
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	IntelliJ IDEA Community Edition
 
 LICENSE=	APACHE20

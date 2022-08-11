@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	unico
 PORTVERSION=	1.0.2.1
 CATEGORIES=	x11-themes

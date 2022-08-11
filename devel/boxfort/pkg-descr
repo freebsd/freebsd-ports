@@ -1,0 +1,6 @@
+BoxFort is a simple, cross-platform sandboxing C library powering
+Criterion.
+
+BoxFort provides a simple API to run user code in isolated processes.
+
+WWW: https://github.com/Snaipe/BoxFort

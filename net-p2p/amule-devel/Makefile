@@ -1,5 +1,3 @@
-# Created by: Ganael LAPLANCHE <ganael.laplanche@martymac.org>
-
 PORTNAME=	amule
 PORTVERSION=	11065
 PORTREVISION=	2

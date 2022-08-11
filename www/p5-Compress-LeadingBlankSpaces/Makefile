@@ -1,5 +1,3 @@
-# Created by: Bill Swingle <unfurl@FreeBSD.org>
-
 PORTNAME=	Compress-LeadingBlankSpaces
 PORTVERSION=	0.06
 PORTREVISION=	1

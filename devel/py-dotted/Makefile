@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	dotted
 PORTVERSION=	0.1.8
 CATEGORIES=	devel python

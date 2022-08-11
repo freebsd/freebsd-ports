@@ -1,5 +1,3 @@
-# Created by: Aleksander Fafula <alex@bsdguru.org>
-
 PORTNAME=	ogg2mp3
 PORTVERSION=	0.6.1
 PORTREVISION?=	3

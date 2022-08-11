@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	PDFLib
 PORTVERSION=	0.14
 PORTREVISION=	1

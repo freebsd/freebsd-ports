@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pbzip2
 PORTVERSION=	1.1.13
 CATEGORIES=	archivers

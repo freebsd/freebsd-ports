@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-TimeZone-Alias
 PORTVERSION=	0.06
 PORTREVISION=	1

@@ -1,3 +1,5 @@
-TIMESTAMP = 1631528863
-SHA256 (johnmehr-gitup-0.96_GH0.tar.gz) = 47e2df5cbe95afab6c419da3bfa1ac3068812c00e49033b160e5ba847923e9c1
-SIZE (johnmehr-gitup-0.96_GH0.tar.gz) = 29134
+TIMESTAMP = 1654646024
+SHA256 (johnmehr-gitup-0.97_GH0.tar.gz) = e474a88a4cd9fda43e6004b536ac0e519d508addb0d5b5b10b8289f04276cf43
+SIZE (johnmehr-gitup-0.97_GH0.tar.gz) = 31005
+SHA256 (dfbe3f0f847cb09225b5d09c4a09d654356bab68.patch) = cbd5ed74efdc79027b12f3b1bd5ef34e8e2eaeef1d32059f333de64394e6c8e1
+SIZE (dfbe3f0f847cb09225b5d09c4a09d654356bab68.patch) = 1171

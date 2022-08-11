@@ -22,10 +22,3 @@
  message(STATUS "<lua>")
  
  CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
-@@ -31,4 +48,4 @@ LIST(REMOVE_ITEM LUA_SRC
-     "${SRC_DIR}/src/luac.c")
- 
- ADD_LIBRARY(lua ${LUA_SRC})
--message(STATUS "</lua>")
-\ No newline at end of file
-+message(STATUS "</lua>")

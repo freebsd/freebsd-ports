@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	json
 PORTVERSION=	1.3.4
 PORTREVISION=	1

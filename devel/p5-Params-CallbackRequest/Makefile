@@ -1,5 +1,3 @@
-# Created by: Rod Taylor <ports@rbt.ca>
-
 PORTNAME=	Params-CallbackRequest
 PORTVERSION=	1.20
 PORTREVISION=	1

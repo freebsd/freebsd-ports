@@ -1,5 +1,3 @@
-# Created by: kwm@rainbow-runner.nl
-
 PORTNAME=	libtremor
 PORTVERSION=	1.2.1.s20180316
 CATEGORIES=	audio

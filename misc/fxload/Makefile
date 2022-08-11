@@ -1,5 +1,3 @@
-# Created by: Wojciech A. Koszek <wkoszek@FreeBSD.org>
-
 PORTNAME=	fxload
 PORTVERSION=	20140224
 CATEGORIES=	misc

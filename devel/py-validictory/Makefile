@@ -1,5 +1,3 @@
-# Created by: Thomas Zander <riggs@FreeBSD.org>
-
 PORTNAME=	validictory
 PORTVERSION=	1.1.2
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
-
 PORTNAME=	jmtpfs
 DISTVERSION=	g20190420
 CATEGORIES=	sysutils

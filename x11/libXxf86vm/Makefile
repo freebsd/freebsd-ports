@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXxf86vm
 PORTVERSION=	1.1.4
 PORTREVISION=	3

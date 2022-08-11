@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	gemdiff
 PORTVERSION=	4.1.0
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-NamespaceSupport
 PORTVERSION=	1.12
 CATEGORIES=	textproc perl5

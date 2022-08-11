@@ -1,17 +1,16 @@
-# Created by: Igor Pokrovsky <ip@unixway.org>
-
 PORTNAME=	wmforecast
-DISTVERSION=	1.6
+DISTVERSION=	1.8.1
 CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	https://github.com/d-torrance/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ip@unixway.org
+MAINTAINER=	obscenum999@gmail.com
 COMMENT=	Weather dockapp for Window Maker using the Yahoo Weather API
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgweather-3.so:net/libgweather \
+		libharfbuzz.so:print/harfbuzz \
 		libWINGs.so:x11-wm/windowmaker \
 		libwraster.so:x11-wm/libwraster
 

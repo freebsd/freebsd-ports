@@ -1,11 +1,11 @@
---- src/fNewQSO.lfm.orig	2022-01-25 16:11:35 UTC
-+++ src/fNewQSO.lfm
-@@ -8,7 +8,7 @@ object frmNewQSO: TfrmNewQSO
-   HorzScrollBar.Page = 997
-   VertScrollBar.Page = 623
+--- src/fNewQSO.lfm	2021-02-12 11:24:42.000000000 -0500
++++ src/fNewQSO.lfm	2022-07-12 23:12:45.643902000 -0500
+@@ -8,7 +8,7 @@
+   HorzScrollBar.Page = 974
+   VertScrollBar.Page = 638
    AutoScroll = True
 -  Caption = 'New QSO ... (CQRLOG for Linux)'
 +  Caption = 'New QSO ... (CQRLOG for FreeBSD)'
-   ClientHeight = 673
-   ClientWidth = 997
+   ClientHeight = 684
+   ClientWidth = 1032
    Icon.Data = {

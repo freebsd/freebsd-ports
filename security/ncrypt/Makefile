@@ -1,5 +1,3 @@
-# Created by: Frank Laszlo <laszlof@vonostingroup.com>
-
 PORTNAME=	ncrypt
 PORTVERSION=	0.8.1
 CATEGORIES=	security

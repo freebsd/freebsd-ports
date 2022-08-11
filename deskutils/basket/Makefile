@@ -1,5 +1,3 @@
-# Created by: Markus Brueffer <brueffer@phoenix-systems.de>
-
 PORTNAME=	basket
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.49a-46

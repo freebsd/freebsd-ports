@@ -1,5 +1,3 @@
-# Created by: giffunip
-
 PORTNAME=	gsfonts
 PORTVERSION=	8.11
 PORTREVISION=	8

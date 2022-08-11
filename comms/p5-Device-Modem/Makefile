@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	Device-Modem
 PORTVERSION=	1.59
 CATEGORIES=	comms perl5

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Data-Path
 PORTVERSION=	1.4.1
 PORTREVISION=	1

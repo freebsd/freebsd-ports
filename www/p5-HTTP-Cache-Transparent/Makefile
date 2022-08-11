@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	HTTP-Cache-Transparent
 PORTVERSION=	1.4
 CATEGORIES=	www perl5

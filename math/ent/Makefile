@@ -1,5 +1,3 @@
-# Created by: Horia Racoviceanu <horia@racoviceanu.com>
-
 PORTNAME=	ent
 PORTVERSION=	0.20080128
 PORTREVISION=	1

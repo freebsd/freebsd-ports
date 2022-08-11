@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pysendfile
 PORTVERSION=	2.0.1
 PORTREVISION=	1

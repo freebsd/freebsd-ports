@@ -1,5 +1,3 @@
-# Created by: Dereckson <dereckson@gmail.com>
-
 PORTNAME=	Text-CSV-Encoded
 PORTVERSION=	0.25
 PORTREVISION=	2

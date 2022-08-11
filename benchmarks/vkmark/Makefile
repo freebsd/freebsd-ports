@@ -1,8 +1,8 @@
 PORTNAME=	vkmark
-DISTVERSION=	2017.08-24
-DISTVERSIONSUFFIX=	-g53abc4f
-PORTREVISION=	2
-CATEGORIES=	benchmarks
+DISTVERSION=	2017.08-29
+PORTREVISION=	1
+DISTVERSIONSUFFIX=	-gd872846
+CATEGORIES=	benchmarks wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	27fa846e34ed.patch:-p1 # https://github.com/vkmark/vkmark/pull/29

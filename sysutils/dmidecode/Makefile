@@ -1,7 +1,5 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	dmidecode
-PORTVERSION=	3.3
+PORTVERSION=	3.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SAVANNAH
 

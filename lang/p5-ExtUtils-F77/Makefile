@@ -1,7 +1,6 @@
-# Created by: jmz
-
 PORTNAME=	ExtUtils-F77
 PORTVERSION=	1.26
+PORTREVISION=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +20,6 @@ USE_PERL5=	configure
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|'gfortran48'|'${FC}'|; s|'-O2'|'${CFLAGS}'|" ${WRKSRC}/F77.pm
+	@${REINPLACE_CMD} -e "s|'FB_GFORTRAN'|'${FC}'|; s|'-O2'|'${CFLAGS}'|" ${WRKSRC}/F77.pm
 
 .include <bsd.port.mk>

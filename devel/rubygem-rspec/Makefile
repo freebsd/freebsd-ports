@@ -1,5 +1,3 @@
-# Created by: Roman Shterenzon <romanbsd@yahoo.com>
-
 PORTNAME=	rspec
 PORTVERSION=	3.11.0
 CATEGORIES=	devel rubygems

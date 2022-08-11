@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@telegraph.spb.ru>
-
 PORTNAME=	szip
 PORTVERSION=	1.12b
 PORTREVISION=	2

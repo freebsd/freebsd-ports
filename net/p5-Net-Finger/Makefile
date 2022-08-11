@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	Net-Finger
 PORTVERSION=	1.06
 PORTREVISION=	1

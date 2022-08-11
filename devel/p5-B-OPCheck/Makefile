@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	B-OPCheck
 PORTVERSION=	0.32
 CATEGORIES=	devel perl5

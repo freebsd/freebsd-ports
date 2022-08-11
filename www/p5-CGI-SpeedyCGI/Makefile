@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	CGI-SpeedyCGI
 PORTVERSION=	2.22
 PORTREVISION=	9

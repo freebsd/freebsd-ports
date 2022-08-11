@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	st
 PORTVERSION=	1.9
 PORTREVISION=	2

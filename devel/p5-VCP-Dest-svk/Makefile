@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	VCP-Dest-svk
 PORTVERSION=	0.29
 PORTREVISION=	6

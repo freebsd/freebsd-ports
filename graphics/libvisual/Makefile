@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 # WARNING: when updating this port check if the ports that use libvisual
 # can work with it. Backwards compatibility is known to be broken in the past.
 

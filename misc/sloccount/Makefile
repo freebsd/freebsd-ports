@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	sloccount
 PORTVERSION=	2.26
 PORTREVISION=	1

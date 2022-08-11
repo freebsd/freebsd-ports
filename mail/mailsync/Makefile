@@ -1,5 +1,3 @@
-# Created by: Maxim Tulyuk <mt@primats.org.ua>
-
 PORTNAME=	mailsync
 PORTVERSION=	5.2.1
 PORTREVISION=	4

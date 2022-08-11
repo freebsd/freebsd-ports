@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-HTTP-LocalServer
 PORTVERSION=	0.74
 CATEGORIES=	www perl5

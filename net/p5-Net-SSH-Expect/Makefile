@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Net-SSH-Expect
 PORTVERSION=	1.09
 PORTREVISION=	1

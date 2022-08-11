@@ -1,0 +1,146 @@
+--- base/BUILD.gn.orig	2022-05-19 05:17:33 UTC
++++ base/BUILD.gn
+@@ -999,7 +999,7 @@ mixed_component("base") {
+       "timer/hi_res_timer_manager_posix.cc",
+     ]
+ 
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "cpu_affinity_posix.cc",
+         "cpu_affinity_posix.h",
+@@ -1010,6 +1010,12 @@ mixed_component("base") {
+         "profiler/thread_delegate_posix.h",
+       ]
+     }
++
++    if (is_bsd) {
++      sources += [
++        "profiler/stack_sampler_posix.cc",
++      ]
++    }
+   }
+ 
+   if (is_win) {
+@@ -1478,11 +1484,23 @@ mixed_component("base") {
+   # building inside the cros_sdk environment - use host_toolchain as a
+   # more robust check for this.
+   if (!use_sysroot &&
+-      (is_android || ((is_linux || is_chromeos) && !is_chromecast)) &&
++      (is_android || ((is_linux || is_chromeos) && !is_chromecast && !is_bsd)) &&
+       host_toolchain != "//build/toolchain/cros:host") {
+     libs += [ "atomic" ]
+   }
+ 
++  # *BSD needs libkvm
++  if (is_bsd) {
++    libs += [ "kvm" ]
++  }
++
++  if (is_freebsd) {
++    libs += [
++      "execinfo",
++      "util",
++    ]
++  }
++
+   if (use_allocator_shim) {
+     sources += [
+       "allocator/allocator_shim.cc",
+@@ -1506,7 +1524,7 @@ mixed_component("base") {
+       ]
+       configs += [ "//base/allocator:mac_no_default_new_delete_symbols" ]
+     }
+-    if (is_chromeos || is_linux) {
++    if (is_chromeos || (is_linux && !is_bsd)) {
+       sources += [
+         "allocator/allocator_shim_override_cpp_symbols.h",
+         "allocator/allocator_shim_override_glibc_weak_symbols.h",
+@@ -1563,7 +1581,7 @@ mixed_component("base") {
+   # Allow more direct string conversions on platforms with native utf8
+   # strings
+   # TODO(crbug/1052397): Consider replacing is_ash with is_chromeos once lacros switches to target_os=chromeos
+-  if (is_apple || is_chromeos_ash || is_chromecast || is_fuchsia) {
++  if (is_apple || is_chromeos_ash || is_chromecast || is_fuchsia || is_bsd) {
+     defines += [ "SYSTEM_NATIVE_UTF8" ]
+   }
+ 
+@@ -2243,6 +2261,42 @@ mixed_component("base") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "files/file_path_watcher_linux.cc",
++      "files/file_util_linux.cc",
++      "files/scoped_file_linux.cc",
++      "process/memory_linux.cc",
++      "process/process_linux.cc",
++      "system/sys_info_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc"
++    ]
++    sources += [
++      "process/memory_stubs.cc",
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_bsd.cc",
++    ]
++  }
++
++  if (is_openbsd) {
++    sources += [
++      "process/process_handle_openbsd.cc",
++      "process/process_iterator_openbsd.cc",
++      "process/process_metrics_openbsd.cc",
++      "system/sys_info_openbsd.cc",
++    ]
++  } else if (is_freebsd) {
++    sources += [
++      "process/process_handle_freebsd.cc",
++      "process/process_iterator_freebsd.cc",
++      "process/process_metrics_freebsd.cc",
++      "system/sys_info_freebsd.cc",
++    ]
++  }
++
+   # iOS
+   if (is_ios) {
+     sources -= [
+@@ -3495,7 +3549,7 @@ test("base_unittests") {
+     }
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "debug/proc_maps_linux_unittest.cc",
+       "files/scoped_file_linux_unittest.cc",
+@@ -3543,7 +3597,7 @@ test("base_unittests") {
+       "posix/unix_domain_socket_unittest.cc",
+       "task/thread_pool/task_tracker_posix_unittest.cc",
+     ]
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "cpu_affinity_posix_unittest.cc",
+         "profiler/stack_copier_signal_unittest.cc",
+@@ -3555,7 +3609,7 @@ test("base_unittests") {
+   # Allow more direct string conversions on platforms with native utf8
+   # strings
+   # TODO(crbug/1052397): Consider replacing is_ash with is_chromeos once lacros switches to target_os=chromeos
+-  if (is_apple || is_chromeos_ash || is_chromecast || is_fuchsia) {
++  if (is_apple || is_chromeos_ash || is_chromecast || is_fuchsia || is_bsd) {
+     defines += [ "SYSTEM_NATIVE_UTF8" ]
+   }
+ 
+@@ -3724,7 +3778,7 @@ test("base_unittests") {
+     }
+   }
+ 
+-  if (is_fuchsia || is_linux || is_chromeos) {
++  if ((is_fuchsia || is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "debug/elf_reader_unittest.cc",
+       "debug/test_elf_image_builder.cc",

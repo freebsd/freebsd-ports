@@ -1,5 +1,3 @@
-# Created by: Alexander Leidinger <netchild@FreeBSD.org>
-
 PORTNAME=	libssh2
 PORTVERSION=	1.10.0
 PORTEPOCH=	3

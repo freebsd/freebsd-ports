@@ -1,5 +1,3 @@
-# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-
 PORTNAME=	dm-core
 PORTVERSION=	1.2.1
 PORTREVISION=	1

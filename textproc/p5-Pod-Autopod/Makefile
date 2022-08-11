@@ -1,5 +1,3 @@
-# Created by: Wen Heping<wen@FreeBSD.org>
-
 PORTNAME=	Pod-Autopod
 PORTVERSION=	1.215
 CATEGORIES=	textproc perl5

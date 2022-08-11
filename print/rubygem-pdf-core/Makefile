@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	pdf-core
 PORTVERSION=	0.9.0
 CATEGORIES=	print rubygems

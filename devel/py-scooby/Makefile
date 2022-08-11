@@ -1,0 +1,18 @@
+PORTNAME=	scooby
+DISTVERSION=	0.5.12
+CATEGORIES=	devel
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Python environment detective
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		python:3.7+
+USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

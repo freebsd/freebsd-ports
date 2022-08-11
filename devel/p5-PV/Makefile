@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	PV
 PORTVERSION=	1.5
 PORTREVISION=	1

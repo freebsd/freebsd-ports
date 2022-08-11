@@ -1,23 +1,23 @@
---- gdb/i386-fbsd-nat.c 2017-09-14 09:28:17 UTC
-+++ gdb/i386-fbsd-nat.c
-@@ -43,8 +43,6 @@ public:
-   const struct target_desc *read_description () override;
- #endif
+--- gdb/i386-fbsd-nat.c.orig	2022-05-02 12:03:48.925048000 -0700
++++ gdb/i386-fbsd-nat.c	2022-05-02 12:04:43.474983000 -0700
+@@ -41,8 +41,6 @@ class i386_fbsd_nat_target final : public x86_fbsd_nat
+   void store_registers (struct regcache *, int) override;
  
--  void resume (ptid_t, int, enum gdb_signal) override;
+   const struct target_desc *read_description () override;
 -
- #if defined(HAVE_PT_GETDBREGS) && defined(USE_SIGTRAP_SIGINFO)
-   bool supports_stopped_by_hw_breakpoint () override;
- #endif
-@@ -52,6 +50,7 @@ public:
+-  void resume (ptid_t, int, enum gdb_signal) override;
+ };
  
  static i386_fbsd_nat_target the_i386_fbsd_nat_target;
+@@ -227,6 +225,7 @@ i386_fbsd_nat_target::store_registers (struct regcache
+     perror_with_name (_("Couldn't write floating point status"));
+ }
  
 +#if 0
  /* Resume execution of the inferior process.  If STEP is nonzero,
     single-step it.  If SIGNAL is nonzero, give it that signal.  */
  
-@@ -98,6 +97,7 @@ i386_fbsd_nat_target::resume (ptid_t ptid, int step, enum gdb_signal signal)
+@@ -273,6 +272,7 @@ i386_fbsd_nat_target::resume (ptid_t ptid, int step, e
  	      gdb_signal_to_host (signal)) == -1)
      perror_with_name (("ptrace"));
  }

@@ -22,6 +22,9 @@ include/KF5/KCMUtils/ksettings/PluginPage
 include/KF5/KCMUtils/ksettings/dialog.h
 include/KF5/KCMUtils/ksettings/dispatcher.h
 include/KF5/KCMUtils/ksettings/pluginpage.h
+include/KF5/KCMUtilsCore/KPluginModel
+include/KF5/KCMUtilsCore/kcmutilscore_export.h
+include/KF5/KCMUtilsCore/kpluginmodel.h
 lib/cmake/KF5KCMUtils/KF5KCMUtilsConfig.cmake
 lib/cmake/KF5KCMUtils/KF5KCMUtilsConfigVersion.cmake
 lib/cmake/KF5KCMUtils/KF5KCMUtilsMacros.cmake
@@ -32,7 +35,15 @@ lib/cmake/KF5KCMUtils/kcmutilsgeneratemoduledata.h.in
 lib/libKF5KCMUtils.so
 lib/libKF5KCMUtils.so.5
 lib/libKF5KCMUtils.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKF5KCMUtilsCore.so
+lib/libKF5KCMUtilsCore.so.5
+lib/libKF5KCMUtilsCore.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KCMUtils.pri
+%%QT_QMLDIR%%/org/kde/kcmutils/components/KPluginDelegate.qml
+%%QT_QMLDIR%%/org/kde/kcmutils/components/KPluginSelector.qml
+%%QT_QMLDIR%%/org/kde/kcmutils/components/private/AboutPlugin.qml
+%%QT_QMLDIR%%/org/kde/kcmutils/libkcmutilsqmlplugin.so
+%%QT_QMLDIR%%/org/kde/kcmutils/qmldir
 share/kservicetypes5/kcmodule.desktop
 share/kservicetypes5/kcmoduleinit.desktop
 share/locale/af/LC_MESSAGES/kcmutils5.mo

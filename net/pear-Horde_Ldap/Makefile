@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Ldap
 DISTVERSION=	2.4.2
 CATEGORIES=	net www pear

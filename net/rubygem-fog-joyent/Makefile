@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-joyent
 PORTVERSION=	0.0.1
 PORTREVISION=	2

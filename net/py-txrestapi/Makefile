@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	txrestapi
 PORTVERSION=	0.2
 CATEGORIES=	net python

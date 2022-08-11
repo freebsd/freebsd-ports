@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	AnyEvent-SNMP
 PORTVERSION=	6.0
 PORTREVISION=	1

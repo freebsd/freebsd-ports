@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	IO-All-LWP
 PORTVERSION=	0.14
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	coderay
 PORTVERSION=	1.1.3
 CATEGORIES=	textproc rubygems

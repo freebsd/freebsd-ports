@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	fasta3
 PORTVERSION=	36.3.8
 CATEGORIES=	biology

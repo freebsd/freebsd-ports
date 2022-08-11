@@ -1,5 +1,3 @@
-# Created by: Brandon Fosdick <bfoz@bfoz.net>
-
 PORTNAME=	WWW-iTunesConnect
 PORTVERSION=	1.16
 PORTREVISION=	3

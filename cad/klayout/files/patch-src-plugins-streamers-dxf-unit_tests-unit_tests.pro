@@ -1,6 +1,6 @@
---- src/plugins/streamers/dxf/unit_tests/unit_tests.pro.orig	2021-08-28 17:08:02 UTC
+--- src/plugins/streamers/dxf/unit_tests/unit_tests.pro.orig	2022-04-24 08:12:38 UTC
 +++ src/plugins/streamers/dxf/unit_tests/unit_tests.pro
-@@ -11,9 +11,9 @@ SOURCES = \
+@@ -12,9 +12,9 @@ SOURCES = \
  INCLUDEPATH += $$LAY_INC $$TL_INC $$DB_INC $$GSI_INC $$PWD/../db_plugin $$PWD/../../../common
  DEPENDPATH += $$LAY_INC $$TL_INC $$DB_INC $$GSI_INC $$PWD/../db_plugin $$PWD/../../../common
  

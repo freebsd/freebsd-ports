@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Regexp-Common-net-CIDR
 PORTVERSION=	0.03
 CATEGORIES=	textproc perl5
@@ -14,5 +12,7 @@ RUN_DEPENDS=	p5-Regexp-Common>0:textproc/p5-Regexp-Common
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

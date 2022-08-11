@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	consolekit
 PORTVERSION=	1.2.4
 PORTREVISION=	3

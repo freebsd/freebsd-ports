@@ -17,7 +17,6 @@
 # 		* proto    install .pc file, needs pathfix, most only needed at
 # 		           build time.
 # 		* util     no particular notes
-# 		* xserver  xorg x servers
 #
 # 		These categories has to match upstream categories.  Don't invent
 # 		your own.
@@ -35,7 +34,7 @@
 .if !defined(_INCLUDE_USES_XORG_CAT_MK)
 _INCLUDE_USES_XORG_CAT_MK=yes
 
-_XORG_CATEGORIES=	app data doc driver font lib proto util xserver
+_XORG_CATEGORIES=	app data doc driver font lib proto util
 _XORG_BUILDSYSTEMS=	autotools meson
 
 _XORG_CAT=		# empty
@@ -162,21 +161,6 @@ CONFIGURE_ARGS+=--enable-malloc0returnsnull
 
 .  elif ${_XORG_CAT} == proto
 .include "${USESDIR}/pathfix.mk"
-
-.  elif ${_XORG_CAT} == xserver
-DISTNAME?=	xorg-server-${PORTVERSION}
-CFLAGS+=	-Werror=uninitialized
-.include "${USESDIR}/pathfix.mk"
-.    if ${_XORG_BUILDSYS} == meson
-# put meson stuff here
-.    else
-CONFIGURE_ARGS+=	--with-xkb-path=${LOCALBASE}/share/X11/xkb \
-			--with-fontrootdir=${LOCALBASE}/share/fonts
-libtool_ARGS?=	# empty
-.include "${USESDIR}/libtool.mk"
-.    endif
-LIB_PC_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
-USE_XORG+=	fontutil
 
 .  endif # ${_XORG_CAT} == <category>
 

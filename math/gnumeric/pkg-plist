@@ -280,7 +280,6 @@ man/man1/ssconvert.1.gz
 man/man1/ssdiff.1.gz
 man/man1/ssgrep.1.gz
 man/man1/ssindex.1.gz
-share/appdata/gnumeric.appdata.xml
 share/applications/gnumeric.desktop
 share/gir-1.0/Gnm-%%SHORT_VER%%.gir
 %%DATADIR%%/%%VERSION%%/Gnumeric-embed.xml
@@ -2281,3 +2280,4 @@ share/locale/zh_HK/LC_MESSAGES/gnumeric-functions.mo
 share/locale/zh_HK/LC_MESSAGES/gnumeric.mo
 share/locale/zh_TW/LC_MESSAGES/gnumeric-functions.mo
 share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
+share/metainfo/gnumeric.appdata.xml

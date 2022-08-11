@@ -1,5 +1,3 @@
-# Created by: Bruce Simpson
-
 PORTNAME=	pyang
 PORTVERSION=	1.7.8
 CATEGORIES=	net-mgmt python

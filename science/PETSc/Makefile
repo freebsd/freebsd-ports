@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	PETSc
 DISTVERSION=	3.16.3
 CATEGORIES=	science devel

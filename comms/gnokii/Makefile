@@ -1,8 +1,6 @@
-# Created by: Staffan Ulfberg <staffanu@multivac.fatburen.org>
-
 PORTNAME=	gnokii
 PORTVERSION=	0.6.31
-PORTREVISION=	12
+PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -18,24 +16,24 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 GROUPS=		${PORTNAME}
 USES=		gettext gmake gnome iconv libtool localbase pathfix pkgconfig \
-		readline tar:bzip2
+		readline shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
 USE_GNOME=	glib20 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-security
+SHEBANG_FILES=	smsd/action
 
 SUB_FILES+=	pkg-message
 PORTDOCS=	*
 
 CONFLICTS=	smstools sendsms
 
-FIXPREFIX=	Docs/man/gnokiid.8 Docs/DataCalls-QuickStart Docs/README \
-		common/cfgreader.c
+FIXPREFIX=	Docs/README common/cfgreader.c
 
-OPTIONS_DEFINE=	DOCS ICAL PCSC SMSD SMSDDB USB X11
-OPTIONS_MULTI=	SMSDDB
-OPTIONS_MULTI_SMSDDB=	MYSQL PGSQL SQLITE
+OPTIONS_DEFINE=	DOCS ICAL PCSC SMSD USB X11
+OPTIONS_GROUP=	SMSDDB
+OPTIONS_GROUP_SMSDDB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	X11
 
 ICAL_DESC=	Build with IETF iCal support
@@ -70,15 +68,15 @@ SQLITE_PLIST_SUB_OFF=	SQLT='@comment '
 SQLITE_CONFIGURE_OFF=	--disable-sqlite
 X11_CONFIGURE_WITH=	x
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2
-X11_USES=		gnome xorg
+			libfreetype.so:print/freetype2 \
+			libharfbuzz.so:print/harfbuzz
+X11_USES=		xorg
 X11_USE=		XORG=x11 XORG=xpm \
 			GNOME=cairo GNOME=gdkpixbuf2 GNOME=gtk20
 X11_PLIST_SUB=		X11=''
 X11_PLIST_SUB_OFF=	X11='@comment '
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/bash/sh/" ${WRKSRC}/smsd/action
 .for f in ${FIXPREFIX}
 	@${REINPLACE_CMD} -e "s:/etc/gnokiirc:${PREFIX}/etc/gnokiirc:g" \
 		${WRKSRC}/${f}
@@ -87,10 +85,6 @@ post-patch:
 	@${REINPLACE_CMD} -E -e "s:^(#ifdef.*)__OpenBSD__:\1__FreeBSD__:" \
 		${WRKSRC}/${f}
 .endfor
-# fix test(1) conditions in configure script
-	@${REINPLACE_CMD} -E \
-		-e 's|([[:space:]]+test[[:space:]]+.+)==([[:space:]]+"yes")|\1=\2|' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${MV} ${WRKSRC}/Docs/man/xgnokii.1x ${WRKSRC}/Docs/man/xgnokii.1
 
 post-install:
@@ -106,18 +100,18 @@ post-install-DOCS-off:
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install -C ${WRKSRC}/Docs/man
 
 post-install-SMSD-on:
-	@${MKDIR} -p ${STAGEDIR}${PREFIX}/share/smsd
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/smsd
 	@cd ${WRKSRC}/smsd && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
 	${INSTALL_SCRIPT} ${WRKSRC}/smsd/action ${STAGEDIR}${PREFIX}/share/smsd
 	${INSTALL_DATA} ${WRKSRC}/smsd/README ${STAGEDIR}${PREFIX}/share/smsd
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/smsd/*.so
 
 post-install-MYSQL-on:
-	@${MKDIR} -p ${STAGEDIR}${PREFIX}/share/smsd
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/smsd
 	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.mysql.sql ${STAGEDIR}${PREFIX}/share/smsd
 
 post-install-PGSQL-on:
-	@${MKDIR} -p ${STAGEDIR}${PREFIX}/share/smsd
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/smsd
 	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.pq.sql ${STAGEDIR}${PREFIX}/share/smsd
 
 .include <bsd.port.mk>

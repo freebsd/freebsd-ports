@@ -1,5 +1,0 @@
-lib/erlang/lib/base64url-%%VERSION%%/ebin/base64url.app
-lib/erlang/lib/base64url-%%VERSION%%/ebin/base64url.beam
-lib/erlang/lib/base64url-%%VERSION%%/src/base64url.app.src
-lib/erlang/lib/base64url-%%VERSION%%/src/base64url.erl
-%%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -1,6 +1,6 @@
 PORTNAME=	erkale
-DISTVERSION=	g20210215
-PORTREVISION=	3
+DISTVERSION=	g20220405
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libderiv.so:science/libint \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
 		libint.so:science/libint \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libxc.so:science/libxc
 RUN_DEPENDS=	${LOCALBASE}/share/erkale/basis/6-21G.gbs:science/erkale-pseudopotentials
 
@@ -25,10 +25,11 @@ FLAVOR?=	${FLAVORS:[1]}
 serial_PKGNAMESUFFIX=	-serial
 
 USES=		cmake:noninja compiler:c11 fortran pkgconfig
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	susilehtola
-GH_TAGNAME=	8297aefe5aac9dbbb291e04c07661f3cff94a99a
-USE_LDCONFIG=	yes
+GH_TAGNAME=	f005a9ed588d7b6fcda54648db16523419308cbd
 
 TEST_TARGET=	test
 

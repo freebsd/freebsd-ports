@@ -1,5 +1,3 @@
-# Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
-
 PORTNAME=	thunar-vcs-plugin
 PORTVERSION=	0.2.0
 PORTREVISION=	2

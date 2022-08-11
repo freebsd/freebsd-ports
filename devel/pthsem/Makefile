@@ -1,5 +1,3 @@
-# Created by: Björn König <bkoenig@alpha-tierchen.de>
-
 PORTNAME=	pthsem
 PORTVERSION=	2.0.8
 PORTREVISION=	3

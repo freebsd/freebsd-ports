@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	did_you_mean
 PORTVERSION=	1.6.1
 CATEGORIES=	devel rubygems

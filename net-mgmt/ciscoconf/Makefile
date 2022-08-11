@@ -1,5 +1,3 @@
-# Created by: jabley@clear.co.nz
-
 PORTNAME=	ciscoconf
 PORTVERSION=	1.1
 CATEGORIES=	net-mgmt

@@ -1,5 +1,3 @@
-# Created by: Alexander Timoshenko <gonzo@univ.kiev.ua>
-
 PORTNAME=	tkabber
 PORTVERSION=	1.1.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	Crypt-T_e_a
 PORTVERSION=	2.12
 PORTREVISION=	1

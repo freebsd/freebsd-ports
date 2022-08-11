@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-
 PORTNAME=	uml2svg
 PORTVERSION=	0.18
 CATEGORIES=	textproc

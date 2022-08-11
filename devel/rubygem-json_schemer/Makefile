@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	json_schemer
 PORTVERSION=	0.2.20
 CATEGORIES=	devel rubygems

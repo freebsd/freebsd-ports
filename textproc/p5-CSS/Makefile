@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	CSS
 PORTVERSION=	1.09
 PORTREVISION=	1

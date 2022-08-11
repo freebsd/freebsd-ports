@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Test-WWW-Selenium
 PORTVERSION=	1.36
 PORTREVISION=	1

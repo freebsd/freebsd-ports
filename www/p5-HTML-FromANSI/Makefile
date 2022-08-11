@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	HTML-FromANSI
 PORTVERSION=	2.03
 PORTREVISION=	1

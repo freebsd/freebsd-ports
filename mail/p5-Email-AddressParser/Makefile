@@ -1,5 +1,3 @@
-# Created by: dliakh
-
 PORTNAME=	Email-AddressParser
 PORTVERSION=	0.04
 PORTREVISION=	1

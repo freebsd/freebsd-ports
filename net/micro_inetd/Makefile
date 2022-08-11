@@ -1,5 +1,3 @@
-# Created by: Pankov Pavel <pankov_p@mail.ru>
-
 PORTNAME=	micro_inetd
 PORTVERSION=	2014.08.14
 CATEGORIES=	net

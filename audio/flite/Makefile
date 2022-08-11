@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	flite
 PORTVERSION=	2.1
 CATEGORIES=	audio

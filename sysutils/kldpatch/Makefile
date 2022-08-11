@@ -1,5 +1,3 @@
-# Created by: luigi@FreeBSD.org
-
 PORTNAME=	kldpatch
 PORTVERSION=	20090116
 CATEGORIES=	sysutils

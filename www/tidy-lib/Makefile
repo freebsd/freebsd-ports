@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	tidy
 CATEGORIES=	www
 PKGNAMESUFFIX=	-lib

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Term-ReadLine-Zoid
 PORTVERSION=	0.07
 PORTREVISION=	1

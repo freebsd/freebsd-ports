@@ -1,5 +1,3 @@
-# Created by: lightside <lightside@gmx.com>
-
 PORTNAME=	wxlauncher
 PORTVERSION=	0.10.1
 DISTVERSIONPREFIX=	release-

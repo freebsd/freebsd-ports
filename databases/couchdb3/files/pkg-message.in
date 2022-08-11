@@ -48,7 +48,7 @@ curl -X PUT http://admin:passwd@127.0.0.1:5984/_global_changes
 Then use the admin interface at http://127.0.0.1:5984/_utils/# as usual.
 
 For more information see
-http://docs.couchdb.org/en/latest/install/setup.html
+http://docs.couchdb.org/en/latest/setup/index.html
 EOM
 }
 ]

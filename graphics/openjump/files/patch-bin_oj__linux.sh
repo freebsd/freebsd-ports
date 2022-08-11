@@ -1,4 +1,4 @@
---- bin/oj_linux.sh.orig	2020-12-23 15:00:38 UTC
+--- bin/oj_linux.sh.orig	2021-07-27 11:30:06 UTC
 +++ bin/oj_linux.sh
 @@ -4,9 +4,11 @@
  ## if unset defaults to
@@ -20,7 +20,7 @@
      file=$(basename "$filepath")
      folder=$(dirname "$filepath")
      done=".$file.unzipped"
-@@ -78,6 +81,7 @@ postinstall(){
+@@ -78,6 +81,7 @@ macinstall(){
  
  macinstall(){
    # create app package
@@ -28,7 +28,7 @@
    cp -R -a "$1"/bin/OpenJUMP.app/Contents "$1" &&\
    awk '{sub(/..\/oj_/,"bin/oj_",$0)}1' "$1"/bin/OpenJUMP.app/Contents/Resources/script > "$1"/Contents/Resources/script &&\
    echo patched oj.app
-@@ -113,14 +117,20 @@ case "$1" in
+@@ -113,14 +117,20 @@ esac
  esac
  
  ## cd into jump home
@@ -69,7 +69,7 @@
  fi
  
  # java available
-@@ -154,24 +169,28 @@ fi
+@@ -154,24 +169,28 @@ add the location of java to your PATH environment vari
  add the location of java to your PATH environment variable." && ERROR=1 && end
  
  # resolve recursive links to java binary
@@ -109,7 +109,7 @@
  JAVA_ARCH=$(echo $JAVA_VERSIONSTRING | grep -q -i 64-bit && echo x64 || echo x86)
  JAVA_NEEDED="1.6"
  if ! is_decimal "$JAVA_VERSION"; then
-@@ -193,7 +212,7 @@ echo ---JAVA---
+@@ -193,7 +212,7 @@ echo "Using '$(basename "${JAVA}")' found in '$(dirnam
  echo "Using '$(basename "${JAVA}")' found in '$(dirname "${JAVA}")'"
  "$JAVA" -version 2>&1|awk 'BEGIN{ORS=""}{print $0"; "}END{print "\n"}'
  
@@ -132,7 +132,7 @@
  
  JUMP_PLUGINS=./bin/default-plugins.xml
  if [ -z "$JUMP_PLUGINS" ] || [ ! -f "$JUMP_PLUGINS" ]; then
-@@ -212,6 +236,7 @@ if [ -z "$JUMP_PLUGINS" ] || [ ! -f "$JUMP_PLUGINS" ];
+@@ -212,6 +236,7 @@ fi
      JUMP_PLUGINS="./scripts/default-plugins.xml"
    fi
  fi
@@ -140,7 +140,7 @@
  
  # include every jar/zip in lib and native dir
  for libfile in "$JUMP_LIB/"*.zip "$JUMP_LIB/"*.jar "$JUMP_NATIVE_DIR/$JAVA_ARCH/"*.jar "$JUMP_NATIVE_DIR/"*.jar
-@@ -220,26 +245,34 @@ do
+@@ -220,26 +245,34 @@ export CLASSPATH;
  done
  CLASSPATH=.:./bin:$CLASSPATH
  export CLASSPATH;
@@ -148,7 +148,7 @@
  
  ## prepend jump opts
  #
- JUMP_OPTS="-plug-in-directory $JUMP_PLUGIN_DIR $JUMP_OPTS"
+ JUMP_OPTS="-extensions-directory $JUMP_PLUGIN_DIR $JUMP_OPTS"
 +echo "#####  JUMP_OPTS = '$JUMP_OPTS'"
  if [ -f "$JUMP_PLUGINS" ]; then
    JUMP_OPTS="-default-plugins $JUMP_PLUGINS $JUMP_OPTS"
@@ -175,7 +175,7 @@
  
  # java9+ needs some packages explicitly added/exported
  if awk "BEGIN{if($JAVA_VERSION >= 9)exit 0;else exit 1}"; then
-@@ -259,7 +292,8 @@ fi
+@@ -259,7 +292,8 @@ JAVA_OPTS="-Dcom.sun.media.jai.disableMediaLib=true $J
  JAVA_OPTS="-Dcom.sun.media.jai.disableMediaLib=true $JAVA_OPTS"
  
  # in case some additional archives were placed in native dir inbetween
@@ -185,7 +185,7 @@
  
  # allow jre to find native libraries in native dir, lib/ext (backwards compatibility)
  NATIVE_PATH="$JUMP_NATIVE_DIR/$JAVA_ARCH:$JUMP_NATIVE_DIR:$JUMP_PLUGIN_DIR"
-@@ -323,7 +357,11 @@ echo "$JUMP_SETTINGS/"
+@@ -323,7 +357,11 @@ echo ---Detect maximum memory limit---
  
  echo ---Detect maximum memory limit---
  # use previously set or detect RAM size in bytes

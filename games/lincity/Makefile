@@ -1,5 +1,3 @@
-# Created by: Julian Assange
-
 PORTNAME=	lincity
 PORTVERSION=	1.13.1
 PORTREVISION=	8

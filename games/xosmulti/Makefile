@@ -1,5 +1,3 @@
-# Created by: Seiichirou Hiraoka
-
 PORTNAME=	xosmulti
 PORTVERSION=	1.00
 PORTREVISION=	3

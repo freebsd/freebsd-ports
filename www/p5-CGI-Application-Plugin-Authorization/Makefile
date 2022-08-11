@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Plugin-Authorization
 PORTVERSION=	0.07
 PORTREVISION=	2

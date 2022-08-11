@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-
 PORTNAME=	WWW-Scraper-ISBN-Amazon_Driver
 PORTVERSION=	1.00
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	RColorBrewer
 DISTVERSION=	1.1-3
 CATEGORIES=	graphics

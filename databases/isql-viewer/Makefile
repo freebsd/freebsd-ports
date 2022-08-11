@@ -1,5 +1,3 @@
-# Created by: Stefan Schmidt <stefan.schmidt@stadtbuch.de>
-
 PORTNAME=	isql-viewer
 PORTVERSION=	2.1.8
 PORTREVISION=	5

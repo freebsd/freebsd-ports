@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OnlinePayment-iAuthorizer
 PORTVERSION=	0.2.1
 PORTREVISION=	3

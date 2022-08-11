@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	unigine-tropics
 PORTVERSION=	1.3
 CATEGORIES=	benchmarks linux
@@ -23,7 +21,7 @@ do-extract:
 	@${TAIL} -n 211448 ${DISTDIR}/${DISTFILES} | ${TAR} xzf - -C ${WRKSRC}
 
 post-patch:
-# Avoid clash with other Unigine benchmarks
+# Rename the scripts to avoid the clash with other Unigine benchmarks
 .for script in 1024x768_windowed 1920x1080_fullscreen
 	@${SED} -e 's,\./bin,${DATADIR}/bin,' ${WRKSRC}/${script}.sh \
 		> ${WRKSRC}/${PORTNAME}_${script}.sh

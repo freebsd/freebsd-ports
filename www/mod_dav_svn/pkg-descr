@@ -1,4 +1,4 @@
 Installs the mod_dav_svn and mod_authz_svn apache modules for use with
 subversion when serving the repository from Apache.
 
-WWW: http://subversion.apache.org/
+WWW: https://subversion.apache.org/

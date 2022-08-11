@@ -1,8 +1,6 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	nast
 PORTVERSION=	0.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	BERLIOS
 

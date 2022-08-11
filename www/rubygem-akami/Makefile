@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	akami
 PORTVERSION=	1.3.1
 CATEGORIES=	www rubygems

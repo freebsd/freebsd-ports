@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	tidyp
 PORTVERSION=	1.04
 PORTREVISION=	2

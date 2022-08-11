@@ -1,5 +1,3 @@
-# Created by: Tuc <freebsd-ports@t-b-o-h.net>
-
 PORTNAME=	Data-Validate-IP
 PORTVERSION=	0.27
 CATEGORIES=	net-mgmt perl5

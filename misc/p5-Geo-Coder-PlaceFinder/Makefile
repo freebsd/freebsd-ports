@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Geo-Coder-PlaceFinder
 PORTVERSION=	0.05
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	gauche
 PORTVERSION=	0.9.10
 PORTREVISION=	1

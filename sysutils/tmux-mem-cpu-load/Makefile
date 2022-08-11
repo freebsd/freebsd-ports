@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	tmux-mem-cpu-load
 PORTVERSION=	3.6.0
 DISTVERSIONPREFIX=	v

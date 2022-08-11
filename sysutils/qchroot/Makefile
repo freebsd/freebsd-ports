@@ -1,5 +1,3 @@
-# Created by: Joe Barbish <qchroot1@a1poweruser.com>
-
 PORTNAME=	qchroot
 PORTVERSION=	0.1
 CATEGORIES=	sysutils

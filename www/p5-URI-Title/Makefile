@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	URI-Title
 PORTVERSION=	1.902
 CATEGORIES=	www perl5

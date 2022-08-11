@@ -1,5 +1,3 @@
-# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-
 PORTNAME=	spam-buttons
 PORTVERSION=	2.3.1
 PORTREVISION=	2

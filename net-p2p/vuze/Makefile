@@ -1,5 +1,3 @@
-# Created by: Jeremy Faulkner <gldisater@gldis.ca>
-
 PORTNAME=	vuze
 PORTVERSION=	5.7.4.0
 PORTREVISION=	2

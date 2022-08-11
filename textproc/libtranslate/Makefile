@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	libtranslate
 PORTVERSION=	0.99
 PORTREVISION=	11

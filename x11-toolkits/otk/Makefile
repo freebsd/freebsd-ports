@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-
 PORTNAME=	otk
 PORTVERSION=	0.96
 PORTREVISION=	4

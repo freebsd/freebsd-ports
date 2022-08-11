@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	XML-Generator-DBI
 PORTVERSION=	1.00
 PORTREVISION=	2

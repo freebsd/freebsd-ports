@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lev@FreeBSD.org

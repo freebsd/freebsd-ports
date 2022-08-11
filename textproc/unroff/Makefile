@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	unroff
 PORTVERSION=	1.0.2
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Philip Drapeau <pdrapeau@advanis.ca>
-
 PORTNAME=	Cvs
 PORTVERSION=	0.07
 PORTREVISION=	2

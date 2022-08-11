@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	sax-machine
 PORTVERSION=	1.3.2
 CATEGORIES=	textproc rubygems

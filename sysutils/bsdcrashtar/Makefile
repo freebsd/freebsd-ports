@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-
 PORTNAME=	bsdcrashtar
 PORTVERSION=	0.1.3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Peter Vereshagin <peter@vereshagin.org>
-
 PORTNAME=	IPC-MMA
 PORTVERSION=	0.81
 PORTREVISION=	2

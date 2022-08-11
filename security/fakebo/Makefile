@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	fakebo
 PORTVERSION=	0.4.2.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Thomas Hurst <tom@hur.st>
-
 PORTNAME=	optipng
 PORTVERSION=	0.7.7
 CATEGORIES=	graphics

@@ -1,5 +1,3 @@
-# Created by: Pontus Stenetorp <ninjin@kth.se>
-
 PORTNAME=	nesasm
 PORTVERSION=	20040314
 PORTREVISION=	1

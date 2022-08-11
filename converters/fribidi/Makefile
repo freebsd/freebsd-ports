@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	fribidi
 DISTVERSION=	1.0.12
 CATEGORIES=	converters

@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	trickle
 PORTVERSION=	1.07
 PORTREVISION=	7

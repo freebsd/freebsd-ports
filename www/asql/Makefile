@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	asql
 PORTVERSION=	1.7
 CATEGORIES=	www

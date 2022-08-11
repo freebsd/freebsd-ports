@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi
-
 PORTNAME=	xmltooling
 PORTVERSION=	3.2.1
 CATEGORIES=	devel security

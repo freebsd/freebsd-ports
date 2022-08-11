@@ -1,5 +1,3 @@
-# Created by: Matthew Hunt <mph@FreeBSD.org>
-
 PORTNAME=	xzip
 PORTVERSION=	1.8.2
 PORTREVISION=	2

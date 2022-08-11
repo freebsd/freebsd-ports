@@ -1,5 +1,3 @@
-# Created by: Victor Yagofarov <xnasx@yandex.ru>
-
 PORTNAME=	kcat
 DISTVERSION=	1.7.0
 CATEGORIES=	net

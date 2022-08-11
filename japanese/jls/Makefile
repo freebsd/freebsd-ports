@@ -1,5 +1,3 @@
-# Created by: shige
-
 PORTNAME=	ls
 PORTVERSION=	0.5
 CATEGORIES=	japanese

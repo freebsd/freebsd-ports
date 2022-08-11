@@ -1,5 +1,3 @@
-# Created by: jfieber
-
 PORTNAME=	html
 PORTVERSION=	4.01
 PORTREVISION=	2

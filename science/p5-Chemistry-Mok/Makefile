@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	Chemistry-Mok
 PORTVERSION=	0.25
 PORTREVISION=	1

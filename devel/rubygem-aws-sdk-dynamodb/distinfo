@@ -1,3 +1,3 @@
-TIMESTAMP = 1646058370
-SHA256 (rubygem/aws-sdk-dynamodb-1.74.0.gem) = 1c42837cecdf598b6977ea9b8a7c12744ae7d221539aac5583773282d79d980c
-SIZE (rubygem/aws-sdk-dynamodb-1.74.0.gem) = 178688
+TIMESTAMP = 1655829854
+SHA256 (rubygem/aws-sdk-dynamodb-1.75.0.gem) = 6eb2cdf444f84b7f54b7c575a590a48c03cc0619a129d9e644af83287d4a9d12
+SIZE (rubygem/aws-sdk-dynamodb-1.75.0.gem) = 179200

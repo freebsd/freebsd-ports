@@ -1,0 +1,19 @@
+This is the Python implementation of the distributed quantile sketch algorithm
+DDSketch. DDSketch has relative-error guarantees for any quantile q in [0, 1].
+That is if the true value of the qth-quantile is x then DDSketch returns a value
+y such that |x-y| / x < e where e is the relative error parameter. (The default
+here is set to 0.01.) DDSketch is also fully mergeable, meaning that multiple
+sketches from distributed systems can be combined in a central node.
+
+Our default implementation, DDSketch, is guaranteed to not grow too large in
+size for any data that can be described by a distribution whose tails are
+sub-exponential.
+
+We also provide implementations (LogCollapsingLowestDenseDDSketch and
+LogCollapsingHighestDenseDDSketch) where the q-quantile will be accurate up to
+the specified relative error for q that is not too small (or large). Concretely,
+the q-quantile will be accurate up to the specified relative error as long as it
+belongs to one of the m bins kept by the sketch. If the data is time in seconds,
+the default of m = 2048 covers 80 microseconds to 1 year.
+
+WWW: https://github.com/DataDog/sketches-py

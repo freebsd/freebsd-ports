@@ -1,7 +1,5 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Pod-Usage
-PORTVERSION=	2.01
+PORTVERSION=	2.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,15 +18,8 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503200
-BUILD_DEPENDS+=	p5-Pod-Simple>=3.40:textproc/p5-Pod-Simple
-RUN_DEPENDS+=	p5-Pod-Simple>=3.40:textproc/p5-Pod-Simple
-.endif
-
 post-patch:
 # Do not conflict with lang/perl5.*
 	@${RM} ${WRKSRC}/scripts/pod2usage.PL ${WRKSRC}/t/pod/pod2usage.t
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

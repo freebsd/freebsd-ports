@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	knightcap
 PORTVERSION=	3.6
 PORTREVISION=	9

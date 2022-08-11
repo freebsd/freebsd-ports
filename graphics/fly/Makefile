@@ -1,5 +1,3 @@
-# Created by: Juergen Unger <j.unger@choin.net>
-
 PORTNAME=	fly
 PORTVERSION=	2.0.1
 PORTREVISION=	7

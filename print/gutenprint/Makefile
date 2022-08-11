@@ -1,5 +1,3 @@
-# Created by: dgilbert@velocet.ca
-
 PORTNAME=	gutenprint
 PORTVERSION=	5.3.3
 PORTREVISION?=	0

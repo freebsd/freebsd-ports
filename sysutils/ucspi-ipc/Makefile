@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	ucspi-ipc
 PORTVERSION=	0.67
 CATEGORIES=	sysutils

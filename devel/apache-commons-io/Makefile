@@ -1,5 +1,3 @@
-# Created by: Michael Winking <mwfp@foldl.net>
-
 PORTNAME=	commons-io
 PORTVERSION=	2.11.0
 CATEGORIES=	devel java

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Authentication-Store-Htpasswd
 PORTVERSION=	0.020
 PORTREVISION=	2

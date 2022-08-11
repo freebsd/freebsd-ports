@@ -1,7 +1,5 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	python-magic
-PORTVERSION=	0.4.25
+PORTVERSION=	0.4.27
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,14 +10,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
+TEST_ENV=	LC_ALL=en_US.UTF-8 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ahupp
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} LC_ALL=en_US.UTF-8 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} ${PYTHON_CMD} -m unittest -v
 
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-# Created by: okeeblow <root@cooltrainer.org>
-
 PORTNAME=	abgx360
 PORTVERSION=	1.0.6
 PORTREVISION=	1

@@ -1,7 +1,5 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	glfw
-PORTVERSION=	3.3.7
+DISTVERSION=	3.3.8
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/glfw/glfw/releases/download/${PORTVERSION}/
 
@@ -17,8 +15,10 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
-PLIST_SUB=	MAJVER="${PORTVERSION:C|\..*||}" \
-		VERSION=${PORTVERSION:R}
+CONFLICTS_INSTALL=	glfw2
+
+PLIST_SUB=	MAJVER="${DISTVERSION:C|\..*||}" \
+		VERSION=${DISTVERSION:R}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 

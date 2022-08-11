@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	File-HStore
 PORTVERSION=	0.10
 PORTREVISION=	2

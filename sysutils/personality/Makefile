@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@FreeBSD.org>
-
 PORTNAME=	personality
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

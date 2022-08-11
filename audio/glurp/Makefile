@@ -1,5 +1,3 @@
-# Created by: Mark Reidel <ports@mark.reidel.info>
-
 PORTNAME=	glurp
 PORTVERSION=	0.12.3
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tinycss2
 PORTVERSION=	1.1.1
 CATEGORIES=	textproc python

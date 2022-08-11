@@ -1,5 +1,3 @@
-# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-
 PORTNAME=	Crypt_DiffieHellman
 PORTVERSION=	0.2.6
 CATEGORIES=	security www pear

@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	rvi
 PORTVERSION=	1.0.0
 CATEGORIES=	devel

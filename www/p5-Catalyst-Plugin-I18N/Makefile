@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-I18N
 PORTVERSION=	0.10
 PORTREVISION=	2

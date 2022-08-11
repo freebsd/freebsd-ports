@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Devel-MAT-Dumper
 PORTVERSION=	0.45
 CATEGORIES=	devel perl5

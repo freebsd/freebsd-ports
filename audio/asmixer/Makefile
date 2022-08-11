@@ -1,5 +1,3 @@
-# Created by: Mike Makonnen <mtm@identd.net>
-
 PORTNAME=	asmixer
 PORTVERSION=	0.5
 PORTREVISION=	3

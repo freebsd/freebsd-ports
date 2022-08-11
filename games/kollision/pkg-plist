@@ -18,6 +18,7 @@ share/icons/oxygen/128x128/apps/kollision.png
 %%DATADIR%%/sounds/start.ogg
 %%DATADIR%%/sounds/you_lose.ogg
 share/locale/ar/LC_MESSAGES/kollision.mo
+share/locale/bg/LC_MESSAGES/kollision.mo
 share/locale/bs/LC_MESSAGES/kollision.mo
 share/locale/ca/LC_MESSAGES/kollision.mo
 share/locale/ca@valencia/LC_MESSAGES/kollision.mo

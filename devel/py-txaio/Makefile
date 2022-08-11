@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	txaio
 PORTVERSION=	22.2.1
 CATEGORIES=	devel python

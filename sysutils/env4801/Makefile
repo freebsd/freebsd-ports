@@ -1,5 +1,3 @@
-# Created by: Patrick M. Hausen (pmh@hausen.com)
-
 PORTNAME=		env4801
 PORTVERSION=		0.3
 PORTREVISION=		1

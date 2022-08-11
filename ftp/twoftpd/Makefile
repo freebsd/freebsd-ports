@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
-
 PORTNAME=	twoftpd
 PORTVERSION=	1.43
 PORTREVISION=	1

@@ -1,8 +1,6 @@
-# Created by: Alexander Yerenkow <yerenkow@gmail.com>
-
 PORTNAME=	residualvm
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	yerenkow@gmail.com

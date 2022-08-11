@@ -1,5 +1,3 @@
-# Created by: t.vanklaveren@student.utwente.nl
-
 PORTNAME=	libvorbis
 PORTVERSION=	1.3.7
 PORTREVISION=	2

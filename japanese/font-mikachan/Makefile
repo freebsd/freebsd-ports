@@ -1,5 +1,3 @@
-# Created by: sada
-
 PORTNAME=	mikachan
 PORTVERSION=	9.1
 CATEGORIES=	japanese x11-fonts

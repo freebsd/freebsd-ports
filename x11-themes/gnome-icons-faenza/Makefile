@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	faenza
 PORTVERSION=	1.3.1
 CATEGORIES=	x11-themes gnome

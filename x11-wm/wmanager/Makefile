@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	wmanager
 PORTVERSION=	0.2.1
 PORTREVISION=	15

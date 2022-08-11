@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Lingua-EN-PluralToSingular
 PORTVERSION=	0.21
 CATEGORIES=	textproc perl5

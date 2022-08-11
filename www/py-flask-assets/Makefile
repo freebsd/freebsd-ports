@@ -1,5 +1,3 @@
-# Created by: Kyle Evans <kevans@FreeBSD.org>
-
 PORTNAME=	Flask-Assets
 PORTVERSION=    2.0
 CATEGORIES=	www python

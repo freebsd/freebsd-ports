@@ -1,5 +1,3 @@
-# Created by: Dave Cottlehuber <dch@FreeBSD.org>
-
 PORTNAME=	graphite-api
 PORTVERSION=	1.1.3
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	URL-Encode-XS
 PORTVERSION=	0.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	Search-Saryer
 PORTVERSION=	0.40
 PORTREVISION=	3

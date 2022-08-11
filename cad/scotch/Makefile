@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	scotch
 DISTVERSION=	6.0.4-aster7
 PORTREVISION=	3

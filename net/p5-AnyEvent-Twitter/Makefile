@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@tandon.net>
-
 PORTNAME=	AnyEvent-Twitter
 PORTVERSION=	0.64
 PORTREVISION=	1

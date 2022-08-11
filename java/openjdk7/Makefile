@@ -1,5 +1,3 @@
-# Created by: Greg Lewis <glewis@FreeBSD.org>
-
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
 PORTEPOCH=	1
@@ -14,6 +12,9 @@ LICENSE=	GPLv2
 
 BROKEN_FreeBSD_13=	does not link: duplicate symbol: fp_g_free
 BROKEN_FreeBSD_14=	does not link: duplicate symbol: fp_g_free
+
+DEPRECATED=		EOLed since 31 July 2022
+EXPIRATION_DATE=	2022-09-03
 
 CPE_VENDOR=	oracle
 

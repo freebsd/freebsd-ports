@@ -41,6 +41,7 @@ bin/ghe-restore
 %%DATADIR%%/ghe-restore-mysql-binary
 %%DATADIR%%/ghe-restore-mysql-legacy
 %%DATADIR%%/ghe-restore-mysql-logical
+%%DATADIR%%/ghe-restore-packages
 %%DATADIR%%/ghe-restore-pages
 %%DATADIR%%/ghe-restore-repositories
 %%DATADIR%%/ghe-restore-repositories-gist

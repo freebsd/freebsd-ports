@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	lynx
 PORTVERSION=	2.9.0d10
 CATEGORIES=	www

@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdradmin-am
 PORTVERSION=	3.6.10
 CATEGORIES=	www

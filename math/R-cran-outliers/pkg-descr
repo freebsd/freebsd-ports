@@ -12,4 +12,4 @@ A collection of some tests commonly used for identifying outliers:
   - Remove the value(s) most differing from the mean
   - Calculate scores of the sample
 
-WWW: http://cran.r-project.org/web/packages/outliers/
+WWW: https://cran.r-project.org/web/packages/outliers/

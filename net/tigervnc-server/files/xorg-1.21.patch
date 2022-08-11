@@ -1,0 +1,24 @@
+From 736b50d04e1ba965696cd15d456dc2b7fc123150 Mon Sep 17 00:00:00 2001
+From: Joakim Tjernlund <joakim.tjernlund@infinera.com>
+Date: Wed, 24 Nov 2021 21:09:36 +0100
+Subject: [PATCH] xorg-version.h: Increase supported Xorg version to 1.21
+
+---
+ unix/xserver/hw/vnc/xorg-version.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/unix/xserver/hw/vnc/xorg-version.h b/unix/xserver/hw/vnc/xorg-version.h
+index 5df9f8d21..a0d44d926 100644
+--- a/unix/xserver/hw/vnc/xorg-version.h
++++ b/unix/xserver/hw/vnc/xorg-version.h
+@@ -33,8 +33,8 @@
+ #error "X.Org older than 1.16 is not supported"
+ #endif
+ 
+-#if XORG_AT_LEAST(1, 21, 0)
+-#error "X.Org newer than 1.20 is not supported"
++#if XORG_AT_LEAST(1, 22, 0)
++#error "X.Org newer than 1.21 is not supported"
+ #endif
+ 
+ #endif

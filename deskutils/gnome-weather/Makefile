@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-weather
 PORTVERSION=	42.0
 CATEGORIES=	deskutils gnome

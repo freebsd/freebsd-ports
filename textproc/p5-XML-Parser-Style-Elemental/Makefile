@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	XML-Parser-Style-Elemental
 PORTVERSION=	0.50
 PORTREVISION=	1

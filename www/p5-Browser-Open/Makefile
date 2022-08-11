@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Browser-Open
 PORTVERSION=	0.04
 PORTREVISION=	1

@@ -28,5 +28,16 @@ Edit your rc.conf and include this:
 amd_enable="YES"
 amd_flags="-a /.am -c 1800 -w 60 -l syslog /snap %%PREFIX%%/etc/amd.map.snap"
 EOM
+},
+{ type: remove
+  message: <<EOM
+If you completly remove this port, do not forget
+then remove lines included by you in:
+
+crontab
+periodic.conf
+rc.conf
+
+EOM
 }
 ]

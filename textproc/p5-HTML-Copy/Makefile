@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	HTML-Copy
 PORTVERSION=	1.31
 PORTREVISION=	1

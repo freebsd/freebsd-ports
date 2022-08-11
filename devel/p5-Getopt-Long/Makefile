@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Getopt-Long
 PORTVERSION=	2.52
 CATEGORIES=	devel perl5

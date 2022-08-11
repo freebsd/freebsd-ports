@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Graph-Writer-GraphViz
 PORTVERSION=	0.12
 CATEGORIES=	graphics perl5

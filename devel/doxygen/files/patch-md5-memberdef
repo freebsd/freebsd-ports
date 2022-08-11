@@ -8,13 +8,13 @@
  
  #include "md5.h"
  #include "memberdef.h"
-@@ -4139,10 +4140,8 @@ void MemberDefImpl::setAnchor()
+@@ -4115,10 +4116,8 @@ void MemberDefImpl::setAnchor()
    }
  
    // convert to md5 hash
 -  uchar md5_sig[16];
 -  char sigStr[33];
--  MD5Buffer((const unsigned char *)memAnchor.data(),memAnchor.length(),md5_sig);
+-  MD5Buffer(memAnchor.data(),memAnchor.length(),md5_sig);
 -  MD5SigToString(md5_sig,sigStr);
 +  QCString sigStr(33);
 +  MD5Data((const unsigned char *)memAnchor.data(),memAnchor.length(),sigStr.rawData());

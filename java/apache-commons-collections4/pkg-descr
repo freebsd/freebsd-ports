@@ -1,0 +1,7 @@
+A suite of classes that extend or augment the Java Collections
+Framework. Commons-Collections seek to build upon the JDK classes
+by providing new interfaces, implementations and utilities.
+
+This port correspond to release 4.x.
+
+WWW: https://commons.apache.org/proper/commons-collections/

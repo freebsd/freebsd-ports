@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME=	nini
 PORTVERSION=	1.1.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Devel-TraceCalls
 PORTVERSION=	0.04
 PORTREVISION=	1

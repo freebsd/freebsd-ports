@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	String-Multibyte
 PORTVERSION=	1.12
 CATEGORIES=	converters perl5

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	B-Utils
 PORTVERSION=	0.27
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	molinillo
 PORTVERSION=	0.8.0
 CATEGORIES=	devel rubygems

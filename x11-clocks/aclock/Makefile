@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	aclock
 PORTVERSION=	0.4.0
 PORTREVISION=	9

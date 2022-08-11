@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	squirrelmail-translations
 PORTVERSION=	20200422
 CATEGORIES=	mail www

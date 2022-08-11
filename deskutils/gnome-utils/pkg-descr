@@ -1,10 +1,8 @@
-GNOME 3.0 support utilities, these include:
+GNOME support utilities, these include:
 
 baobab, a graphics disk space display program.
 gnome-screenshot, desktop screenshot program.
 gnote, note taking application.
 gnome-contacts, integrated address book.
-gnome-search-tool, local disk search tool.
 gnome-dictionary, client for DICT server to look up definitions.
-gnome-system-log, view system logs.
 gnome-font-viewer, show installed fonts.

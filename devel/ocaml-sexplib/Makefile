@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	sexplib
 PORTVERSION=	113.00.00
 MASTER_SITES=	https://ocaml.janestreet.com/ocaml-core/${PORTVERSION:R}/files/

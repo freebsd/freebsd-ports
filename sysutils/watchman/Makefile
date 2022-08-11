@@ -1,5 +1,3 @@
-# Created by: Jin-Sih, Lin <linpct@gmail.com>
-
 PORTNAME=	watchman
 PORTVERSION=	4.5.0 # frozen at 4.5.0: the current version 2020.08.10.00 is broken because F_GETPATH isn't currently available on FreeBSD
 PORTEPOCH=	1

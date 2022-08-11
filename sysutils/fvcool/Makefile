@@ -1,5 +1,3 @@
-# Created by: Frerich Raabe <frerich.raabe@gmx.de>
-
 PORTNAME=	fvcool
 PORTVERSION=	1.0.4
 CATEGORIES=	sysutils

@@ -1,5 +1,15 @@
 %%SITE_PERL%%/Devel/KYTProf.pm
 %%SITE_PERL%%/Devel/KYTProf/Logger/LTSV.pm
 %%SITE_PERL%%/Devel/KYTProf/Logger/LTSV.pod
+%%SITE_PERL%%/Devel/KYTProf/Profiler/Cache/Memcached/Fast.pm
+%%SITE_PERL%%/Devel/KYTProf/Profiler/DBI.pm
+%%SITE_PERL%%/Devel/KYTProf/Profiler/Furl/HTTP.pm
+%%SITE_PERL%%/Devel/KYTProf/Profiler/LWP/UserAgent.pm
+%%SITE_PERL%%/Devel/KYTProf/Profiler/MogileFS/Client.pm
 %%PERL5_MAN3%%/Devel::KYTProf.3.gz
 %%PERL5_MAN3%%/Devel::KYTProf::Logger::LTSV.3.gz
+%%PERL5_MAN3%%/Devel::KYTProf::Profiler::Cache::Memcached::Fast.3.gz
+%%PERL5_MAN3%%/Devel::KYTProf::Profiler::DBI.3.gz
+%%PERL5_MAN3%%/Devel::KYTProf::Profiler::Furl::HTTP.3.gz
+%%PERL5_MAN3%%/Devel::KYTProf::Profiler::LWP::UserAgent.3.gz
+%%PERL5_MAN3%%/Devel::KYTProf::Profiler::MogileFS::Client.3.gz

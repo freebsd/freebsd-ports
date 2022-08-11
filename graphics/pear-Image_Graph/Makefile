@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	Image_Graph
 PORTVERSION=	0.8.0
 CATEGORIES=	graphics www pear

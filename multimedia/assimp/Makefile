@@ -1,6 +1,6 @@
 PORTNAME=	assimp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.5
+DISTVERSION=	5.2.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,18 +9,20 @@ COMMENT=	Library to import various 3D model formats in a uniform manner
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++11-lib cpe localbase:ldflags minizip pkgconfig
+BROKEN_armv6=	field within 'Assimp::MDL::Vertex_MDL7' is less aligned than 'Assimp::MDL::Vertex_MDL7::..., see https://github.com/assimp/assimp/issues/4640
+
+USES=		cmake:testing compiler:c++11-lib cpe localbase:ldflags pkgconfig # minizip is disabled for https://github.com/assimp/assimp/issues/4374
 
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=		ASSIMP_BUILD_TESTS
+CMAKE_ON=		ASSIMP_BUILD_MINIZIP # workaround for https://github.com/assimp/assimp/issues/4374
 CMAKE_TESTING_ON=	ASSIMP_BUILD_TESTS
+CMAKE_TESTING_TARGET=	${ALL_TARGET} # hack to avoid target
 
-do-test:
+post-test:
 	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -D${CMAKE_TESTING_ON}=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} ${CMAKE_TESTING_TARGET} && \
 		${BUILD_WRKSRC}/bin/unit
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	containerd
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.6.2
-PORTREVISION=	1
+DISTVERSION=	1.6.6
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -10,10 +10,9 @@ COMMENT=	Open and reliable container runtime
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bash:shells/bash \
-		go:lang/go
+BUILD_DEPENDS=	bash:shells/bash
 
-USES=		cpe gmake
+USES=		cpe gmake go:modules,no_targets
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/containerd/containerd
 

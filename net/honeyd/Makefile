@@ -1,5 +1,3 @@
-# Created by: Dominic Marks <dominic.marks@btinternet.com>
-
 PORTNAME=	honeyd
 PORTVERSION=	1.5c
 PORTREVISION=	12

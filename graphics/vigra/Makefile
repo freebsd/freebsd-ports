@@ -1,9 +1,7 @@
-# Created by: cartola (Carlos E. G. Carvalho)
-
 PORTNAME=	vigra
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.11.1
-PORTREVISION=	20
+PORTREVISION=	22
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libImath.so:math/Imath \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		cmake compiler:c++14-lang python:run shebangfix
 USE_GITHUB=	yes
@@ -33,6 +31,7 @@ OPTIONS_GROUP=		IMAGEFORMATS
 OPTIONS_GROUP_IMAGEFORMATS=	PNG JPEG TIFF
 OPTIONS_SUB=		yes
 
+HDF5_CFLAGS=		-DH5_USE_110_API=1
 HDF5_CMAKE_BOOL=	WITH_HDF5
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
 

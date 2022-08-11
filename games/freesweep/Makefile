@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	freesweep
 PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	v

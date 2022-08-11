@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Crypt-CipherSaber
 PORTVERSION=	1.01
 CATEGORIES=	security perl5

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Geo-Coder-OSM
 PORTVERSION=	0.03
 PORTREVISION=	1

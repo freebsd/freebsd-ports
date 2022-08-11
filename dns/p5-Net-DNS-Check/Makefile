@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <rpsfa@rit.edu>
-
 PORTNAME=	Net-DNS-Check
 PORTVERSION=	0.45
 PORTREVISION=	1

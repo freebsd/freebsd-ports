@@ -1,7 +1,5 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	castellan
-PORTVERSION=	3.10.1
+PORTVERSION=	4.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=2.7:security/py-cryptography@$
 		${PYTHON_PKGNAMEPREFIX}requests>=2.18.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.20.0:devel/py-stevedore@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		python:3.8+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

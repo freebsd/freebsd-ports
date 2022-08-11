@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Scalar-Defer
 PORTVERSION=	0.23
 PORTREVISION=	1

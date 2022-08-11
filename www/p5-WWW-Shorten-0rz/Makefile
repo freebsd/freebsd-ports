@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	WWW-Shorten-0rz
 PORTVERSION=	0.074
 CATEGORIES=	www perl5

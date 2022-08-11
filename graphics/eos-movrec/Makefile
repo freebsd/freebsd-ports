@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	eos-movrec
 DISTVERSION=	0.3.2_beta
 PORTREVISION=	6

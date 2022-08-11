@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	constant-lexical
 PORTVERSION=	2.0003
 PORTREVISION=	1

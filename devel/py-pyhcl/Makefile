@@ -1,5 +1,3 @@
-# Created by: Alessando Sagratini <ale_sagra@hotmail.com>
-
 PORTNAME=	pyhcl
 PORTVERSION=	0.4.4
 CATEGORIES=	devel python

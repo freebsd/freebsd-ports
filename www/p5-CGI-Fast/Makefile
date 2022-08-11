@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	CGI-Fast
 PORTVERSION=	2.16
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Data-FormValidator
 PORTVERSION=	4.88
 CATEGORIES=	textproc perl5

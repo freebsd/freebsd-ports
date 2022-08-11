@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	App-Options
 PORTVERSION=	1.12
 PORTREVISION=	2

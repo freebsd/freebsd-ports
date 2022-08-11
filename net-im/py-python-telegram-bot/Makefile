@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	python-telegram-bot
 PORTVERSION=	13.1
 PORTREVISION=	1

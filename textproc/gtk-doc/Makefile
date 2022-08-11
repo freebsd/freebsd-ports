@@ -1,5 +1,3 @@
-# Created by: fenner
-
 PORTNAME=	gtk-doc
 DISTVERSION=	1.33.2
 PORTREVISION=	2

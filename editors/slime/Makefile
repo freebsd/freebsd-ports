@@ -1,5 +1,3 @@
-# Created by: Dominic Mitchell
-
 PORTNAME=	slime
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.26.1-9

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	ruby-bugzilla
 PORTVERSION=	0.6.5
 CATEGORIES=	devel rubygems

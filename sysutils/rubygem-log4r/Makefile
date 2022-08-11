@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	log4r
 PORTVERSION=	1.1.10
 CATEGORIES=	sysutils rubygems

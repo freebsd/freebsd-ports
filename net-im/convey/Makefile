@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	convey
 PORTVERSION=	0.3
 PORTREVISION=	3

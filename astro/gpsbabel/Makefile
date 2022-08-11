@@ -1,5 +1,3 @@
-# Created by: Laurent Courty
-
 PORTNAME=	gpsbabel
 DISTVERSIONPREFIX=	${PORTNAME}_
 DISTVERSION=	1_7_0

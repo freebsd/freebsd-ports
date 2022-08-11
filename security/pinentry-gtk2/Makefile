@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	pinentry
 PORTREVISION=	0
 

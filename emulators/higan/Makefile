@@ -1,5 +1,3 @@
-# Created by: elbarto
-
 PORTNAME=	higan
 PORTVERSION=	106
 PORTREVISION=	9

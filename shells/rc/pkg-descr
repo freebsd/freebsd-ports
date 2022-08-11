@@ -5,4 +5,4 @@ cleaner and simpler syntax. Among other things, this makes rc much better than
 Bourne-compatible shells at handling filenames which contain spaces. Thus,
 writing rc scripts is less error-prone than writing sh scripts.
 
-WWW: http://tobold.org/article/rc
+WWW: https://github.com/rakitzis/rc

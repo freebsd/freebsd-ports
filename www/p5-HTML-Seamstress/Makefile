@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	HTML-Seamstress
 PORTVERSION=	6.112830
 CATEGORIES=	www perl5

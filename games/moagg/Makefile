@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	moagg
 PORTVERSION=	1.95b
 PORTREVISION=	1

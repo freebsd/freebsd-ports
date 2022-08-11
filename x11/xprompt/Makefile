@@ -1,5 +1,3 @@
-# Created by: Matthew Hunt <mph@pobox.com>
-
 PORTNAME=	xprompt
 PORTVERSION=	1.4
 PORTREVISION=	2

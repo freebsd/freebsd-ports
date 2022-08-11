@@ -1,5 +1,3 @@
-# Created by: Mike Carlson (carlson39@llnl.gov)
-
 PORTNAME=	couchrest
 PORTVERSION=	2.0.1
 CATEGORIES=	databases rubygems

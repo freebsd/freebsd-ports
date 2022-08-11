@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	ogmtools
 PORTVERSION=	1.5
 PORTREVISION=	16

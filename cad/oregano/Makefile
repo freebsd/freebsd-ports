@@ -1,5 +1,3 @@
-# Created by: Anders Andersson <anders@hack.org>
-
 PORTNAME=	oregano
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.84.43

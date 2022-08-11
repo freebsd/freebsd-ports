@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	socat
 DISTVERSION=	1.7.4.3
 CATEGORIES=	net

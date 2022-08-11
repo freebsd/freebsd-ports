@@ -1,7 +1,5 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	webmin
-PORTVERSION=	1.990
+PORTVERSION=	1.996
 PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \

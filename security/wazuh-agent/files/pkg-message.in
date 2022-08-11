@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+Wazuh Agent was installed
+
+1) Copy /etc/locatime to /var/ossec/etc directory
+
+   # cp /etc/localtime /var/ossec/etc
+
+2) You must edit /var/ossec/etc/ossec.conf.sample for your setup and rename/copy
+   it to ossec.conf
+
+   Take a look wazuh configuration at the following url:
+
+   https://documentation.wazuh.com/current/user-manual/index.html
+
+3) You can find additional useful files installed at
+
+  # /var/ossec/packages_files/agent_installation_scripts
+
+4) Add Wazuh agent to /etc/rc.conf
+
+  # sysrc wazuh_agent_enable="YES"
+
+5) Start Wazuh agent
+
+  # service wazuh_agent start
+
+6) Enjoy it ;)
+EOM
+}
+]

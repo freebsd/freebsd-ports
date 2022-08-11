@@ -1,5 +1,3 @@
-# Created by: johans
-
 PORTNAME=	dmtx-utils
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.6

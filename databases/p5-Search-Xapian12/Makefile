@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Search-Xapian
 PORTVERSION=	1.2.25.2
 CATEGORIES=	databases perl5
@@ -25,6 +23,8 @@ USE_PERL5=	configure
 
 CC=		${CXX}
 CONFIGURE_ARGS=	XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
+
+CONFLICTS_INSTALL=	p5-Search-Xapian # lib/perl5/site_perl/mach/5.32/Search/Xapian.pm
 
 # later version does not support xapian-core 1.2.x
 PORTSCOUT=	ignore:1

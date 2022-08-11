@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	fattr
 PORTVERSION=	2.4.0
 CATEGORIES=	devel rubygems

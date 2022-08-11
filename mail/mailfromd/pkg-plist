@@ -24,6 +24,7 @@ sbin/mailfromd
 %%DATADIR%%/%%VERSION%%/include/match_cidr.mf
 %%DATADIR%%/%%VERSION%%/include/match_dnsbl.mf
 %%DATADIR%%/%%VERSION%%/include/match_rhsbl.mf
+%%DATADIR%%/%%VERSION%%/include/mime.mf
 %%DATADIR%%/%%VERSION%%/include/poll.mf
 %%DATADIR%%/%%VERSION%%/include/portprobe.mf
 %%DATADIR%%/%%VERSION%%/include/pp-setup

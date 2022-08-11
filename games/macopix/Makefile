@@ -1,5 +1,3 @@
-# Created by: Shinya Esu <esu@yk.rim.or.jp>
-
 PORTNAME=	macopix
 PORTVERSION=	1.7.4
 PORTREVISION=	12

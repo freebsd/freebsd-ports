@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Statistics-Descriptive-Discrete
 PORTVERSION=	0.12
 CATEGORIES=	math perl5

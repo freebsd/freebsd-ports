@@ -1,5 +1,3 @@
-# Created by: Dominic Fandrey <kamikaze@bsdforen.de>
-
 PORTNAME=	automounter
 PORTVERSION=	1.5.1
 CATEGORIES=	sysutils

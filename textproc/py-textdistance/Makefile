@@ -1,7 +1,5 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	textdistance
-PORTVERSION=	4.2.2
+PORTVERSION=	4.3.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -1,5 +1,3 @@
-# Created by: Yuichiro NAITO <naito.yuichiro@gmail.com>
-
 PORTNAME=	serverspec
 PORTVERSION=	2.41.5
 CATEGORIES=	sysutils rubygems

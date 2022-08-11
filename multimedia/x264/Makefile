@@ -1,4 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
 #
 # NOTES FOR UPDATING PORT:
 #

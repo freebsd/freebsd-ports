@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-
 PORTNAME=	XML-Stream
 DISTVERSION=	1.24
 CATEGORIES=	textproc perl5

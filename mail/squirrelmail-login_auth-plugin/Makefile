@@ -1,5 +1,3 @@
-# Created by: Stefan Bethke <stb@lassitu.de>
-
 PORTNAME=	login_auth
 PORTVERSION=	3.0
 PORTREVISION=	2

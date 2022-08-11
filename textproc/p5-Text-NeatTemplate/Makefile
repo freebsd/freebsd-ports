@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Text-NeatTemplate
 PORTVERSION=	0.11.01
 CATEGORIES=	textproc perl5

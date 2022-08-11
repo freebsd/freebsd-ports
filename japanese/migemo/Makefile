@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-
 PORTNAME=	migemo
 PORTVERSION=	0.40
 PORTREVISION=	9

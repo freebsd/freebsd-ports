@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	combinat
 DISTVERSION=	0.0-8
 PORTREVISION=	4

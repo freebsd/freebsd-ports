@@ -1,0 +1,11 @@
+KaMIS (Karlsruhe Maximum Independent Sets) is an open source project
+finding maximum independent sets and vertex covers of large sparse
+graphs.
+
+Given a graph G=(V,E), the goal of the maximum independent set problem
+is to compute a maximum cardinality set of vertices I, such that no
+vertices in the set are adjacent to one another. Such a set is called
+a maximum independent set. The problem is NP-hard and particularly
+difficult to solve in large sparse graphs.
+
+WWW: https://karlsruhemis.github.io/

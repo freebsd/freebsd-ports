@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	simpleparse
 PORTVERSION=	2.2.2
 CATEGORIES=	devel python

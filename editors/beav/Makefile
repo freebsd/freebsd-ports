@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	beav
 PORTVERSION=	1.40.18
 PORTREVISION=	3

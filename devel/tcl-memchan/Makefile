@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	memchan
 PORTVERSION=	2.3
 CATEGORIES=	devel tcl

@@ -1,5 +1,3 @@
-# Created by: Simon Barner <barner@in.tum.de>
-
 PORTNAME=	Mail-RFC822-Address
 PORTVERSION=	0.3
 PORTREVISION=	1

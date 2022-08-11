@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	libzdb
 PORTVERSION=	3.2.2
 CATEGORIES=	databases

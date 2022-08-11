@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	anthy
 PORTVERSION=	0.4
 PORTREVISION=	3

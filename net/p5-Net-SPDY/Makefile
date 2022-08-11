@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Net-SPDY
 DISTVERSION=	0.1_5
 PORTREVISION=	2

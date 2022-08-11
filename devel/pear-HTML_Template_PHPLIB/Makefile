@@ -1,5 +1,3 @@
-# Created by: Alex Miller (<asm@asm.kiev.ua>)
-
 PORTNAME=	HTML_Template_PHPLIB
 PORTVERSION=	1.6.1
 CATEGORIES=	devel www pear

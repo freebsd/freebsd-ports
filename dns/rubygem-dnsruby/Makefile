@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	dnsruby
 PORTVERSION=	1.61.9
 CATEGORIES=	dns rubygems

@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns.company>
-
 PORTNAME=	flamethrower
 PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=v

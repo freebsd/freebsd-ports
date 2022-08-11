@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	roauth
 PORTVERSION=	0.0.8
 CATEGORIES=	security rubygems

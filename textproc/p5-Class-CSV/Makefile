@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Class-CSV
 PORTVERSION=	1.03
 PORTREVISION=	1

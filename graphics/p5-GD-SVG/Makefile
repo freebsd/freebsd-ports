@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	GD-SVG
 PORTVERSION=	0.33
 PORTREVISION=	6

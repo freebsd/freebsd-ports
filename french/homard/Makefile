@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	homard
 DISTVERSION=	11.12-aster2
 PORTREVISION=	1

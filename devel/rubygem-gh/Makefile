@@ -1,5 +1,6 @@
 PORTNAME=	gh
 PORTVERSION=	0.18.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport52>=5.0<6:devel/rubygem-activesupport52 \
 		rubygem-addressable>=2.4<3:www/rubygem-addressable \
-		rubygem-faraday>=1.0<2:www/rubygem-faraday \
+		rubygem-faraday1>=1.0<2:www/rubygem-faraday1 \
 		rubygem-faraday_middleware>=1.0<2:www/rubygem-faraday_middleware \
 		rubygem-multi_json>=1.0<2:devel/rubygem-multi_json \
 		rubygem-net-http-persistent2>=2.9<3:www/rubygem-net-http-persistent2 \

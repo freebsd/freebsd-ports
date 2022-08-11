@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	ShipIt-Step-Manifest
 PORTVERSION=	0.01
 PORTREVISION=	1

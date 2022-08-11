@@ -1,5 +1,3 @@
-# Created by: Philip Paeps <philip@FreeBSD.org>
-
 PORTNAME=	recaptcha
 PORTVERSION=	1.0.6
 PORTREVISION=	1

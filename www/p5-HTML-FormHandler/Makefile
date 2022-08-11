@@ -1,5 +1,3 @@
-# Created by: gugu
-
 PORTNAME=	HTML-FormHandler
 PORTVERSION=	0.40068
 PORTEPOCH=	1

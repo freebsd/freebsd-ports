@@ -1,12 +1,8 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	babl
-PORTVERSION=	0.1.88
+PORTVERSION=	0.1.92
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	GIMP
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	9a74120fbdd2.patch:-p1 # https://gitlab.gnome.org/GNOME/babl/-/merge_requests/45
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dynamic pixel format conversion library
@@ -23,10 +19,25 @@ USE_LDCONFIG=	yes
 USE_GNOME=	introspection:build
 
 OPTIONS_DEFINE=	SIMD
-OPTIONS_DEFAULT=SIMD
+OPTIONS_DEFAULT_amd64=SIMD
+OPTIONS_EXCLUDE_i386=SIMD
 
 SIMD_MESON_OFF=	-Denable-mmx=false -Denable-sse=false \
 		-Denable-sse2=false -Denable-sse4_1=false \
 		-Denable-avx2=false -Denable-f16c=false
 
-.include <bsd.port.mk>
+BABL_SHLIB=	0.191.1
+BABL_VER=	0.1
+PLIST_SUB+=	BABL_SHLIB=${BABL_SHLIB} BABL_VER=${BABL_VER}
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+PLIST_SUB+=	AMD64="" ARM="@comment "
+.elif ${ARCH} == "armv6" || ${ARCH} == "armv7"
+PLIST_SUB+=	AMD64="@comment " ARM=""
+.else
+PLIST_SUB+=	AMD64="@comment " ARM="@comment "
+.endif
+
+.include <bsd.port.post.mk>

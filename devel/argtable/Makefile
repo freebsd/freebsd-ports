@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	argtable
 PORTVERSION=	2.13
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	daemontools-encore
 PORTVERSION=	1.11
 CATEGORIES=	sysutils

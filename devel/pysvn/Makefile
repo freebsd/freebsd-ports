@@ -1,5 +1,3 @@
-# Created by: bra@fsn.hu
-
 PORTNAME=	pysvn
 PORTVERSION=	1.9.12
 CATEGORIES=	devel

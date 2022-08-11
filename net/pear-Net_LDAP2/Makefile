@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Net_LDAP2
 PORTVERSION=	2.2.0
 PORTEPOCH=	1

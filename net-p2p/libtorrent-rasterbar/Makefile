@@ -1,8 +1,7 @@
-# Created by: Doug Barton <dougb@FreeBSD.org>
-
 PORTNAME=	libtorrent-rasterbar
-DISTVERSION=	1.2.14
-PORTEPOCH=	1
+DISTVERSION=	1.2.16 # 2.x is unusable until memory problems are resolved, see https://github.com/arvidn/libtorrent/issues/6781
+PORTREVISION=	1
+PORTEPOCH=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
 
@@ -19,6 +18,8 @@ LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 USES=		cmake compiler:c++11-lib iconv:wchar_t libtool localbase:ldflags pathfix pkgconfig python:test shebangfix ssl
 SHEBANG_FILES=	test/socks.py test/web_server.py
 USE_LDCONFIG=	yes
+
+USE_CXXSTD=	c++17 # prevent boost-related SEGV, see bug#264278
 
 LDFLAGS+=	${ICONV_LIB}
 
@@ -38,6 +39,8 @@ EXAMPLES_CMAKE_BOOL=	build_examples
 LOGGING_CMAKE_BOOL=	logging
 
 PORTSCOUT=	limit:^1.* # 2.x is WIP and we don't accept it before qBittorrent does
+
+CONFLICTS_INSTALL=	libtorrent-rasterbar2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|return "python3";|return "${PYTHON_CMD}";|' \

@@ -1,5 +1,3 @@
-# Created by: Jerry A! <jerry@thehutt.org>
-
 PORTNAME=	libstroke
 PORTVERSION=	0.5.1
 PORTREVISION=	6

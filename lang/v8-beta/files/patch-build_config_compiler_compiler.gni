@@ -1,6 +1,6 @@
---- build/config/compiler/compiler.gni.orig	2022-04-04 20:12:27 UTC
+--- build/config/compiler/compiler.gni.orig	2022-05-07 05:44:29 UTC
 +++ build/config/compiler/compiler.gni
-@@ -225,7 +225,7 @@ declare_args() {
+@@ -224,7 +224,7 @@ enable_arm_cfi_table = is_android && !is_component_bui
  
  declare_args() {
    # Whether to use the gold linker from binutils instead of lld or bfd.

@@ -1,5 +1,9 @@
 %%SITE_PERL%%/PDF/Table.pm
+%%SITE_PERL%%/PDF/Table/ColumnWidth.pm
+%%SITE_PERL%%/PDF/Table/Settings.pm
+%%SITE_PERL%%/PDF/Table/Table.pod
 %%PERL5_MAN3%%/PDF::Table.3.gz
+%%PERL5_MAN3%%/PDF::Table::Table.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/010_fonts.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/PDFpref
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/border_rules.pl
@@ -9,3 +13,4 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/header_repeat_with_cell_props.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/row_height.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample1.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/size.pl

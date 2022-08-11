@@ -1,5 +1,3 @@
-# Created by: Rink Springer <rink@FreeBSD.org>
-
 PORTNAME=	ClearSilver
 PORTVERSION=	0.10.5
 PORTREVISION=	2

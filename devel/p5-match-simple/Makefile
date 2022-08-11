@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	match-simple
 PORTVERSION=	0.010
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Crypt_GPG
 PORTVERSION=	1.6.7
 CATEGORIES=	security www pear

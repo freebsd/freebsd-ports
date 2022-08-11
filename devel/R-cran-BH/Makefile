@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	BH
 DISTVERSION=	1.78.0-0
 CATEGORIES=	devel

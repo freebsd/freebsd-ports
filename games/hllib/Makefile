@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	hllib
 PORTVERSION=	2.4.6
 CATEGORIES=	games devel

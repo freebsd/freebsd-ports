@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Statistics-OLS
 PORTVERSION=	0.07
 PORTREVISION=	1

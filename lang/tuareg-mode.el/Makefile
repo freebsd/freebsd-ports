@@ -1,5 +1,3 @@
-# Created by: dd
-
 PORTNAME=	tuareg-mode
 PORTVERSION=	2.0.8
 PORTREVISION=	11

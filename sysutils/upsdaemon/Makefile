@@ -1,5 +1,3 @@
-# Created by: Ederson de Moura <ederbs@ederbs.org>
-
 PORTNAME=	upsdaemon
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

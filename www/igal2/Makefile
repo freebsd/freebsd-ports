@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	igal2
 PORTVERSION=	2.2
 PORTREVISION=	3

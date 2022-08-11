@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	fastdb
 PORTVERSION=	3.75
 PORTREVISION=	7

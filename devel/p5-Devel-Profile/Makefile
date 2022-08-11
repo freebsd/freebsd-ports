@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Devel-Profile
 PORTVERSION=	1.05
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Config-Model-Tester
 PORTVERSION=	4.007
 CATEGORIES=	devel perl5

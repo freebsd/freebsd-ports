@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	libaiff
 PORTVERSION=	5.0
 DISTVERSIONSUFFIX=	-release

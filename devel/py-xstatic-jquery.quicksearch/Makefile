@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-jquery.quicksearch
 PORTVERSION=	2.0.3.2
 CATEGORIES=	devel python

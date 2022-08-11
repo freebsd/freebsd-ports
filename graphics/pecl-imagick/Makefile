@@ -1,5 +1,3 @@
-# Created by: Andrey Slusar <anray@FreeBSD.org>
-
 PORTNAME=	imagick
 PORTVERSION=	3.5.1
 CATEGORIES=	graphics

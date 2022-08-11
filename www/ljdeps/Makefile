@@ -1,5 +1,3 @@
-# Created by: Ryan T. Dean <rtdean@cytherianage.net>
-
 PORTNAME=	ljdeps
 PORTVERSION=	1.0
 PORTREVISION=	6

@@ -1,7 +1,6 @@
 PORTNAME=	librespot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
-PORTREVISION=	4
+DISTVERSION=	0.4.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -26,9 +25,8 @@ ALSA_DESC=		Rodio audio backend using ALSA
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_VARS=		CARGO_FEATURES+=rodio-backend
-GSTREAMER_USES=		gnome
-GSTREAMER_USE=		GNOME=glib20 \
-			GSTREAMER1=yes
+GSTREAMER_USES=		gnome gstreamer
+GSTREAMER_USE=		GNOME=glib20
 GSTREAMER_VARS=		CARGO_FEATURES+=gstreamer-backend
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_VARS=		CARGO_FEATURES+=jackaudio-backend

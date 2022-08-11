@@ -1,5 +1,3 @@
-# Created by: Andreas Kohn <andreas@syndrom23.de>
-
 PORTNAME=	miredo
 PORTVERSION=	1.2.6
 PORTREVISION=	6

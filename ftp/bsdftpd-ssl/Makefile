@@ -1,5 +1,3 @@
-# Created by: Nick Leuta
-
 PORTNAME=	bsdftpd-ssl
 PORTVERSION=	1.1.0
 PORTREVISION=	4

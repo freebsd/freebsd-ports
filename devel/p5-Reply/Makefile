@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Reply
 PORTVERSION=	0.42
 CATEGORIES=	devel perl5

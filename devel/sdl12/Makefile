@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	sdl
 PORTVERSION=	1.2.15
 PORTREVISION=	15

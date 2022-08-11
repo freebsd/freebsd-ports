@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	hxtools
 PORTVERSION=	20211204
 CATEGORIES=	misc

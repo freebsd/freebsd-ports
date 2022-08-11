@@ -1,5 +1,3 @@
-# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-
 PORTNAME=	mdocml
 PORTVERSION=	1.14.5
 CATEGORIES=	textproc

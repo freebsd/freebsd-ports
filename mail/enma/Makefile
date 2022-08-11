@@ -1,5 +1,3 @@
-# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-
 PORTNAME=	enma
 PORTVERSION=	1.2.0
 PORTREVISION=	6

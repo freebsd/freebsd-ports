@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Mail-Graph
 PORTVERSION=	0.14
 PORTREVISION=	8

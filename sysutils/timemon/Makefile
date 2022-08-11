@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	timemon
 PORTVERSION=	4.2
 PORTREVISION=	5

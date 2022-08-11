@@ -1,12 +1,14 @@
 PORTNAME=	7-zip
 DISTVERSION=	21.07
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.7-zip.org/a/
 DISTNAME=	7z${DISTVERSION:S/.//}-src
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Console version of the 7-Zip file archiver
+
+CONFLICTS_INSTALL=	p7zip
 
 LICENSE=	BSD3CLAUSE LGPL21+ UNRAR
 LICENSE_COMB=	multi
@@ -39,9 +41,10 @@ DOS2UNIX_FILES=	C/CpuArch.c \
 		CPP/7zip/var_gcc.mak \
 		CPP/Windows/SystemInfo.cpp
 
-PLIST_FILES=	bin/7zz \
+PLIST_FILES=	bin/7z \
+		bin/7zz \
 		share/man/man1/7zz.1.gz
-PORTDOCS=	7zC.txt 7zFormat.txt License.txt Methods.txt \
+PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt \
 		lzma.txt readme.txt src-history.txt
 
 OPTIONS_DEFINE=	DOCS
@@ -51,6 +54,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/b/c/7zz ${STAGEDIR}/${PREFIX}/bin
+	${LN} -sf 7zz ${STAGEDIR}/${PREFIX}/bin/7z
 	${INSTALL_MAN} ${FILESDIR}/7zz.1 ${STAGEDIR}/${PREFIX}/share/man/man1
 
 do-install-DOCS-on:

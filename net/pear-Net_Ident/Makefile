@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Net_Ident
 PORTVERSION=	1.1.0
 CATEGORIES=	net www pear

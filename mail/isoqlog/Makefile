@@ -1,5 +1,3 @@
-# Created by: ofsen@enderunix.org
-
 PORTNAME=	isoqlog
 PORTVERSION=	2.2.1
 PORTREVISION=	1

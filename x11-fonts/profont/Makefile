@@ -1,5 +1,3 @@
-# Created by: Manuel Giraud <manuel.giraud@gmail.com>
-
 PORTNAME=	profont
 PORTVERSION=	400
 PORTREVISION=	5

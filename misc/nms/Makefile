@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	nms
 PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v

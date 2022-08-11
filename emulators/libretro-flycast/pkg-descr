@@ -1,0 +1,6 @@
+Standalone port of Flycast to libretro.
+
+Flycast is a multi-platform Sega Dreamcast, Naomi and Atomiswave emulator
+derived from Reicast.
+
+WWW: https://git.libretro.com/libretro/flycast

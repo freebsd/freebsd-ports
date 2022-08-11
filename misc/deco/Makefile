@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	deco
 PORTVERSION=	3.9
 PORTREVISION=	5

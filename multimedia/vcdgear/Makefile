@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	vcdgear
 PORTVERSION=	1.6d
 CATEGORIES=	multimedia

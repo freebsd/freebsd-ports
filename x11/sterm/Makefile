@@ -1,5 +1,3 @@
-# Created by: Matthew Donovan <kitchetech@gmail.com>
-
 PORTNAME=	sterm
 DISTVERSION=	0.8.5
 CATEGORIES=	x11

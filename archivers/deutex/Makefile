@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	deutex
 PORTVERSION=	5.2.2
 DISTVERSIONPREFIX=	v

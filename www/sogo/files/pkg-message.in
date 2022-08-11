@@ -1,20 +1,28 @@
 [
 { type: install
   message: <<EOM
-SOGo 4 was installed
+SOGo 5 was installed
 
-In order to run the sogo daemon (sogod), you will need to create and configure
+1) if you are updated sogo from version < 5.6, you must do the following:
+
+drop sogo_sessions_folder table. A new version of this table will be generated
+automatically
+
+if you are using nginx, you must change proxy_buffer_size from 4k to 8k. It
+avoids "unhandled error response" on webmail login
+
+2) In order to run the sogo daemon (sogod), you will need to create and configure
 the main configuration file, e.g.:
 
-cp -p %%LOCALBASE%%/etc/sogo/sogo.conf.sample %%LOCALBASE%%/etc/sogo/sogo.conf
+# cp -p %%LOCALBASE%%/etc/sogo/sogo.conf.sample %%LOCALBASE%%/etc/sogo/sogo.conf
 
 And to allow the service to run at system startup, add sogod_enable="YES"
 in your rc.conf.
 
-If you need to allow email alarms (notifications) for calendar events, copy
+3) If you need to allow email alarms (notifications) for calendar events, copy
 the sample credentials file:
 
-cp -p %%LOCALBASE%%/etc/sogo/ealarms-notify.creds.sample \
+# cp -p %%LOCALBASE%%/etc/sogo/ealarms-notify.creds.sample \
  %%LOCALBASE%%/etc/sogo/ealarms-notify.creds
 
 Then replace the username:password with appropriate credentials for SMTP AUTH
@@ -22,7 +30,7 @@ sending capabilities.
 
 Then copy the sample cron executable:
 
-cp -p %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-ealarms-notify.sample \
+# cp -p %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-ealarms-notify.sample \
  %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-ealarms-notify
 
 And edit this file to suit your server timezone (e.g. TZ=Africa/Algiers).
@@ -32,10 +40,10 @@ Then add the following lines to the root users' crontab (crontab -e):
 # Process email reminders every minute
 * * * * * %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-ealarms-notify
 
-If you need to automatically purge vacation messages from users sieve scripts,
+4) If you need to automatically purge vacation messages from users sieve scripts,
 copy the sample credentials file:
 
-cp -p ${LOCALBASE}/etc/sogo/expire-autoreply.creds.sample \
+# cp -p ${LOCALBASE}/etc/sogo/expire-autoreply.creds.sample \
  %%LOCALBASE%%/etc/sogo/expire-autoreply.creds
 
 Then replace the username:password with appropriate credentials for your
@@ -43,7 +51,7 @@ IMAP servers' sieve account.
 
 Then copy the sample cron executable:
 
-cp -p %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-expire-autoreply.sample \
+# cp -p %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-expire-autoreply.sample \
  %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-expire-autoreply
 
 And edit this file to suit your server timezone (e.g. TZ=Africa/Algiers).

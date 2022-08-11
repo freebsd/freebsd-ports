@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Import-Into
 PORTVERSION=	1.002005
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Sebastian Schuetz <sschuetz@fhm.edu>
-
 PORTNAME=	tpm-tools
 PORTVERSION=	1.3.9.1
 PORTREVISION=	1

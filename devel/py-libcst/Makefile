@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libcst
 PORTVERSION=	0.3.23
 CATEGORIES=	devel python

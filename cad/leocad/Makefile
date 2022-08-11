@@ -1,5 +1,3 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	leocad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	21.06

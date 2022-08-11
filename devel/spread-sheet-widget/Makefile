@@ -1,5 +1,3 @@
-# Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-
 PORTNAME=	spread-sheet-widget
 PORTVERSION=	0.8
 CATEGORIES=	devel

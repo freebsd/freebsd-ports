@@ -1,8 +1,6 @@
-# Created by: Klaus Aehlig <aehlig@linta.de>
-
 PORTNAME=	h5utils
 DISTVERSION=	1.13.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 
 MAINTAINER=	aehlig@linta.de

@@ -1,5 +1,5 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.19.4
+DISTVERSION=	0.20.1
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -27,9 +27,9 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libboost_thread.so:devel/boost-libs \
 		libarea.so:devel/libarea \
 		libmed.so:french/med \
-		libmpi.so:net/openmpi \
+		libmpi.so:net/mpich \
 		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
-		libhdf5.so:science/hdf5
+		libhdf5-110.so:science/hdf5-110
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
@@ -38,8 +38,9 @@ USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran jpeg \
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
-USE_QT=		buildtools concurrent core gui network opengl printsupport \
-		qmake_build svg webkit widgets xml xmlpatterns
+USE_QT=		buildtools concurrent core declarative gui location network \
+		opengl printsupport qmake_build svg webchannel webengine \
+		widgets xml xmlpatterns
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freecad_project
@@ -56,6 +57,11 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DPYTHON_PACKAGES_PATH="${PYTHON_SITELIBDIR}" \
 		-DPYTHON_EXECUTABLE="${PYTHON_CMD}" \
 		-DBUILD_ASSEMBLY="OFF" -DBUILD_FLAT_MESH="ON" \
+		-DHDF5_CFLAGS="-I${LOCALBASE}/include/hdf5-110" \
+		-DHDF5_FOUND=TRUE \
+		-DHDF5_INCLUDE_DIRS="${LOCALBASE}/include/hdf5-110" \
+		-DHDF5_LIBRARIES="-L${LOCALBASE}/lib -lhdf5-110" \
+		-DHDF5_LIBRARY_DIRS="${LOCALBASE}/lib" \
 		-DPYSIDE2RCCBINARY="${RCC}" \
 		-DPYSIDE2UICBINARY="${UIC}" \
 		-DBUILD_ENABLE_CXX_STD=C++17

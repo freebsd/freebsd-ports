@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	xmlcharent
 PORTVERSION=	0.3
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	state_machines-activerecord
 PORTVERSION=	0.8.0
 PORTREVISION=	0

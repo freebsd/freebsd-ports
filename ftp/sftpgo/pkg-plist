@@ -1,6 +1,8 @@
 bin/sftpgo
 %%BASH%%etc/bash_completion.d/sftpgo
 @sample etc/sftpgo.json.sample
+%%MANPAGES%%man/man1/sftpgo-acme-run.1.gz
+%%MANPAGES%%man/man1/sftpgo-acme.1.gz
 %%MANPAGES%%man/man1/sftpgo-gen-completion-bash.1.gz
 %%MANPAGES%%man/man1/sftpgo-gen-completion-fish.1.gz
 %%MANPAGES%%man/man1/sftpgo-gen-completion-powershell.1.gz
@@ -19,7 +21,11 @@ bin/sftpgo
 %%FISH%%share/fish/completions/sftpgo.fish
 %%DATADIR%%/static/css/sb-admin-2.min.css
 %%DATADIR%%/static/favicon.ico
+%%DATADIR%%/static/img/login_image.png
+%%DATADIR%%/static/img/logo.png
 %%DATADIR%%/static/js/sb-admin-2.min.js
+%%DATADIR%%/static/vendor/bootstrap-select/css/bootstrap-select.min.css
+%%DATADIR%%/static/vendor/bootstrap-select/js/bootstrap-select.min.js
 %%DATADIR%%/static/vendor/bootstrap/js/bootstrap.bundle.min.js
 %%DATADIR%%/static/vendor/bootstrap/js/bootstrap.min.js
 %%DATADIR%%/static/vendor/codemirror/addon/dialog/dialog.css
@@ -36,11 +42,14 @@ bin/sftpgo
 %%DATADIR%%/static/vendor/codemirror/meta.js
 %%DATADIR%%/static/vendor/datatables/buttons.bootstrap4.min.css
 %%DATADIR%%/static/vendor/datatables/buttons.bootstrap4.min.js
+%%DATADIR%%/static/vendor/datatables/buttons.colVis.min.js
+%%DATADIR%%/static/vendor/datatables/colReorder.bootstrap4.min.css
 %%DATADIR%%/static/vendor/datatables/dataTables.bootstrap4.min.css
 %%DATADIR%%/static/vendor/datatables/dataTables.bootstrap4.min.js
 %%DATADIR%%/static/vendor/datatables/dataTables.buttons.min.js
 %%DATADIR%%/static/vendor/datatables/dataTables.checkboxes.css
 %%DATADIR%%/static/vendor/datatables/dataTables.checkboxes.min.js
+%%DATADIR%%/static/vendor/datatables/dataTables.colReorder.min.js
 %%DATADIR%%/static/vendor/datatables/dataTables.fixedHeader.min.js
 %%DATADIR%%/static/vendor/datatables/dataTables.responsive.min.js
 %%DATADIR%%/static/vendor/datatables/dataTables.select.min.js
@@ -83,6 +92,7 @@ bin/sftpgo
 %%DATADIR%%/static/vendor/tempusdominus/js/tempusdominus-bootstrap-4.min.js
 %%DATADIR%%/templates/common/forgot-password.html
 %%DATADIR%%/templates/common/reset-password.html
+%%DATADIR%%/templates/common/sftpgo.css
 %%DATADIR%%/templates/email/reset-password.html
 %%DATADIR%%/templates/email/retention-check-report.html
 %%DATADIR%%/templates/webadmin/admin.html
@@ -96,11 +106,14 @@ bin/sftpgo
 %%DATADIR%%/templates/webadmin/folder.html
 %%DATADIR%%/templates/webadmin/folders.html
 %%DATADIR%%/templates/webadmin/fsconfig.html
+%%DATADIR%%/templates/webadmin/group.html
+%%DATADIR%%/templates/webadmin/groups.html
 %%DATADIR%%/templates/webadmin/login.html
 %%DATADIR%%/templates/webadmin/maintenance.html
 %%DATADIR%%/templates/webadmin/message.html
 %%DATADIR%%/templates/webadmin/mfa.html
 %%DATADIR%%/templates/webadmin/profile.html
+%%DATADIR%%/templates/webadmin/sharedcomponents.html
 %%DATADIR%%/templates/webadmin/status.html
 %%DATADIR%%/templates/webadmin/twofactor-recovery.html
 %%DATADIR%%/templates/webadmin/twofactor.html
@@ -116,7 +129,9 @@ bin/sftpgo
 %%DATADIR%%/templates/webclient/mfa.html
 %%DATADIR%%/templates/webclient/profile.html
 %%DATADIR%%/templates/webclient/share.html
+%%DATADIR%%/templates/webclient/sharefiles.html
 %%DATADIR%%/templates/webclient/shares.html
+%%DATADIR%%/templates/webclient/shareupload.html
 %%DATADIR%%/templates/webclient/twofactor-recovery.html
 %%DATADIR%%/templates/webclient/twofactor.html
 %%DATADIR%%/templates/webclient/viewpdf.html

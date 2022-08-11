@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
-
 PORTNAME=	Mason
 PORTVERSION=	2.24
 CATEGORIES=	www textproc perl5

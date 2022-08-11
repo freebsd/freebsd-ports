@@ -1,5 +1,3 @@
-# Created by: Tom Hukins <tom@eborcom.com>
-
 PORTNAME=	serialmail
 PORTVERSION=	0.75
 PORTREVISION=	3

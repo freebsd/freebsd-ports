@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libxdiff
 PORTVERSION=	0.23
 PORTREVISION=	1

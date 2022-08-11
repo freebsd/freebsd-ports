@@ -1,0 +1,18 @@
+XMLBeans is a technology for accessing XML by binding it to Java types. XMLBeans
+provides several ways to get at the XML, including:
+
+- Through XML schema that has been compiled to generate Java types that
+  represent schema types. In this way, you can access instances of the schema
+  through JavaBeans-style accessors after the fashion of "getFoo" and "setFoo".
+  The XMLBeans API also allows you to reflect into the XML schema itself through
+  an XML Schema Object model.
+
+- A cursor model through which you can traverse the full XML infoset.
+
+- Support for XML DOM.
+
+This port contains also the OOXML Schemas, XmlBeans generated from the Ecma
+supplied xsds.
+See https://poi.apache.org/help/faq.html#faq-N10025 .
+
+WWW: https://xmlbeans.apache.org/

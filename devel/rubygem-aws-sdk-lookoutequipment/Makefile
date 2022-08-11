@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-lookoutequipment
-PORTVERSION=	1.10.0
+PORTVERSION=	1.12.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

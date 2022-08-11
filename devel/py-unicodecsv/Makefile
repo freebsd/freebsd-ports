@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	unicodecsv
 PORTVERSION=	0.14.1
 CATEGORIES=	devel python

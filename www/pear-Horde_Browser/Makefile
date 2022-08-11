@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Browser
 PORTVERSION=	2.0.16
 CATEGORIES=	www pear

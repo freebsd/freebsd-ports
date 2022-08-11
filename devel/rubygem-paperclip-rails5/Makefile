@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	paperclip
 DISTVERSION=	6.1.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Marc Bruenink
-
 PORTNAME=	coccinella
 PORTVERSION=	0.96.20
 PORTREVISION=	2

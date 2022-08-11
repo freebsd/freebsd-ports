@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Test-Regexp
 PORTVERSION=	2017040101
 CATEGORIES=	textproc perl5

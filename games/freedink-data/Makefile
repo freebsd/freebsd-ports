@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	freedink-data
 PORTVERSION=	1.08.${PORTVER}
 CATEGORIES=	games

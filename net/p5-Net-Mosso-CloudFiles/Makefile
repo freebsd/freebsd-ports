@@ -1,5 +1,3 @@
-# Created by: glarkin
-
 PORTNAME=	Net-Mosso-CloudFiles
 PORTVERSION=	0.44
 PORTREVISION=	1

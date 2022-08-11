@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	microversion-parse
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python

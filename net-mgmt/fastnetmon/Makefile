@@ -1,9 +1,7 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	fastnetmon
 PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt security
 
 MAINTAINER=	farrokhi@FreeBSD.org

@@ -1,9 +1,9 @@
 Async http client/server framework
 
-Key Features
-
-  * Supports both client and server side of HTTP protocol.
-  * Supports both client and server Web-Sockets out-of-the-box.
-  * Provides Web-server with middlewares and pluggable routing.
+Key Features:
+- Supports both client and server side of HTTP protocol.
+- Supports both client and server Web-Sockets out-of-the-box and avoids Callback
+  Hell.
+- Provides Web-server with middlewares and plugable routing.
 
 WWW: https://github.com/aio-libs/aiohttp

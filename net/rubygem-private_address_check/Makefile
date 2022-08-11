@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	private_address_check
 PORTVERSION=	0.5.0
 CATEGORIES=	net rubygems

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	fatback
 PORTVERSION=	1.3
 PORTREVISION=	2

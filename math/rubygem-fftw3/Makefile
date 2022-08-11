@@ -1,5 +1,3 @@
-# Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-
 PORTNAME=	fftw3
 PORTVERSION=	0.3
 CATEGORIES=	math rubygems

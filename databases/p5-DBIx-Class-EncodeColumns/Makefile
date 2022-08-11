@@ -1,5 +1,3 @@
-# Created by: Vladimir Timofeev <vovkasm@gmail.com>
-
 PORTNAME=	DBIx-Class-EncodeColumns
 PORTVERSION=	0.02
 PORTREVISION=	1

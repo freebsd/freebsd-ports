@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Class-Accessor
 PORTVERSION=	0.51
 CATEGORIES=	devel perl5

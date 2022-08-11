@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	pop-icon-theme
 DISTVERSION=	20210111
 CATEGORIES=	x11-themes

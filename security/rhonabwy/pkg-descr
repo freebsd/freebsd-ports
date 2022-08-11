@@ -1,0 +1,14 @@
+Javascript Object Signing and Encryption (JOSE) library - JWK, JWKS, JWS, JWE
+and JWT
+
+* Create, modify, parse, import or export JSON Web Keys (JWK) and
+  JSON Web Keys Set (JWKS)
+* Create, modify, parse, validate or serialize JSON Web Signatures (JWS)
+* Create, modify, parse, validate or serialize JSON Web Encryption (JWE)
+* Create, modify, parse, validate or serialize JSON Web Token (JWT)
+
+JWT Relies on JWS and JWE functions, so it supports the same functionalities as
+the other 2. JWT functionalities also support nesting serialization (JWE nested
+in a JWS or the opposite).
+
+WWW: https://github.com/babelouest/rhonabwy

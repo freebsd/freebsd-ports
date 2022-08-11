@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	Module-Version
 PORTVERSION=	0.201
 CATEGORIES=	devel perl5

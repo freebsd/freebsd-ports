@@ -1,5 +1,3 @@
-# Created by: Daniel Eischen <deischen@FreeBSD.org>
-
 PORTNAME=	nedit
 PORTVERSION=	5.7
 CATEGORIES=	editors

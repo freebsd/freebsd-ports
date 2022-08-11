@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org
-
 PORTNAME=	hamcrest
 PORTVERSION=	1.3
 CATEGORIES=	java devel

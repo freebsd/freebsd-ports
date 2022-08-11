@@ -1,5 +1,3 @@
-# Created by: Joseph Scott <joseph@randomnetworks.com>
-
 PORTNAME=	webresolve
 PORTVERSION=	0.2.0
 PORTREVISION=	1

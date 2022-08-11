@@ -11,9 +11,9 @@ COMMENT=	GStreamer GTK4 video sink plugin
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 gnome meson pkgconfig tar:xz
+USES=		compiler:c11 gnome gstreamer meson pkgconfig tar:xz
 USE_GNOME=	cairo gtk40
-USE_GSTREAMER1=	gl
+USE_GSTREAMER=	gl
 MESON_ARGS=	--auto-features=disabled -Dgtk4=enabled
 PLIST_FILES=	lib/gstreamer-1.0/libgstgtk4.so
 

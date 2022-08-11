@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	MooseX-SetOnce
 PORTVERSION=	0.201000
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	android_key_attestation
 PORTVERSION=	0.3.0
 CATEGORIES=	security rubygems

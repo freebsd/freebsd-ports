@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Pod-WSDL
 PORTVERSION=	0.063
 PORTREVISION=	1

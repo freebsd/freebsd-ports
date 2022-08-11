@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Apache-ConfigFile
 PORTVERSION=	1.23
 PORTREVISION=	1

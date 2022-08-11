@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Services_Twitter
 PORTVERSION=	0.7.0
 CATEGORIES=	net www pear

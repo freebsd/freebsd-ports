@@ -1,0 +1,4 @@
+python-ptrace is a debugger using ptrace (Linux, BSD and Darwin system call to
+trace processes) written in Python.
+
+WWW: https://github.com/vstinner/python-ptrace

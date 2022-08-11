@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Test-XML-Valid
 PORTVERSION=	0.04
 PORTREVISION=	1

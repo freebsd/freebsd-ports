@@ -1,5 +1,5 @@
 PORTNAME=	lua-resty-core
-PORTVERSION=	0.1.22
+DISTVERSION=	0.1.23
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -8,8 +8,8 @@ COMMENT=	New FFI-based Lua API for OpenResty NGINX Lua modules
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	luajit-openresty>=2.1:lang/luajit-openresty \
-		lua-resty-lrucache>=0.10:www/lua-resty-lrucache
+RUN_DEPENDS=	lua-resty-lrucache>=0.10:www/lua-resty-lrucache \
+		luajit-openresty>=2.1:lang/luajit-openresty
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openresty
@@ -17,7 +17,7 @@ GH_ACCOUNT=	openresty
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-LUA_MODSHAREDIR=${LOCALBASE}/share/lua/5.1
+LUA_MODSHAREDIR=	${LOCALBASE}/share/lua/5.1
 
 PLIST_SUB=	LUA_MODSHAREDIR=${LUA_MODSHAREDIR}
 

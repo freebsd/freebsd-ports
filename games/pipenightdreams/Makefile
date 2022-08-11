@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	pipenightdreams
 PORTVERSION=	0.10.0
 PORTREVISION=	14

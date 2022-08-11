@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	HTML-Prototype
 PORTVERSION=	1.48
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Garrett Wollman <wollman@lcs.mit.edu>
-
 PORTNAME=	Chart-PNGgraph
 PORTVERSION=	1.21
 PORTREVISION=	8

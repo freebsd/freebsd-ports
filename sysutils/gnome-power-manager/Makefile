@@ -1,10 +1,8 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-power-manager
 PORTVERSION=	3.32.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Power management system for the GNOME Desktop

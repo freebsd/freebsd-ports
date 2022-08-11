@@ -1,5 +1,3 @@
-# Created by: Gregory Sutter <gsutter@zer0.org>
-
 PORTNAME=	junkfilter
 PORTVERSION=	20030115
 PORTREVISION=	1

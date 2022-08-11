@@ -1,5 +1,3 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	spiralsynthmodular
 PORTVERSION=	0.2.2a
 PORTREVISION=	12

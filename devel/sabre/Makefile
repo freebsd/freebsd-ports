@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	sabre
 PORTVERSION=	20100501
 CATEGORIES=	devel multimedia java

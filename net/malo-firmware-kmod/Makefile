@@ -1,5 +1,3 @@
-# Created by: cpm <cpm@fbsd.es>
-
 PORTNAME=	malo-firmware
 PORTVERSION=	${FWVERSION}
 CATEGORIES=	net

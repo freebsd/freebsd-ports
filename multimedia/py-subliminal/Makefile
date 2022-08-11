@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <william88@gmail.com>
-
 PORTNAME=	subliminal
 PORTVERSION=	2.1.0
 CATEGORIES=	multimedia python

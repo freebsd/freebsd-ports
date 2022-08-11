@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-
 PORTNAME=	git-crypt
 PORTVERSION=	0.6.0
 PORTREVISION=	1

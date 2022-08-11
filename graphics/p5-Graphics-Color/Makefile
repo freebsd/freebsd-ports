@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Graphics-Color
 PORTVERSION=	0.31
 CATEGORIES=	graphics perl5

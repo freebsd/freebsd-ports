@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Log-Simple
 PORTVERSION=	1.8
 PORTREVISION=	1

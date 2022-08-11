@@ -1,5 +1,3 @@
-# Created by: Martin Wilke (miwi@FreeBSD.org)
-
 PORTNAME=	thunar-media-tags-plugin
 PORTVERSION=	0.3.0
 PORTREVISION=	1

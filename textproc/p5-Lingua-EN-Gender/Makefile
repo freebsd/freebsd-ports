@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-EN-Gender
 PORTVERSION=	0.02
 PORTREVISION=	2

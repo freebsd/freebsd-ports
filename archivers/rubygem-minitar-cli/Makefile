@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	minitar-cli
 PORTVERSION=	0.8
 PORTREVISION=	1

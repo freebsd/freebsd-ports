@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <stas@core.310.ru>
-
 PORTNAME=	teco
 PORTVERSION=	0398
 PORTREVISION=	1

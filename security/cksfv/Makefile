@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	cksfv
 PORTVERSION=	1.3.15
 CATEGORIES=	security

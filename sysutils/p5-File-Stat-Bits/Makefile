@@ -1,5 +1,3 @@
-# Created by: Jim Pirzyk pirzyk@FreeBSD.org
-
 PORTNAME=	File-Stat-Bits
 PORTVERSION=	1.01
 PORTREVISION=	2

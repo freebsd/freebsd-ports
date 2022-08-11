@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	String-Pad
 PORTVERSION=	0.021
 CATEGORIES=	textproc perl5

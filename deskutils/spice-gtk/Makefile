@@ -1,5 +1,3 @@
-# Created by: olevole@olevole.ru
-
 PORTNAME=	spice-gtk
 PORTVERSION=	0.37
 CATEGORIES?=	deskutils gnome
@@ -18,11 +16,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:devel/py-pyparsing@${PY_F
 		spice-protocol>=0.12.15:devel/spice-protocol
 RUN_DEPENDS=	spice-protocol>=0.12.15:devel/spice-protocol
 
-USES=		autoreconf compiler:c11 cpe gettext-tools gmake gnome jpeg \
+USES=		compiler:c11 cpe gettext-tools gmake gnome gstreamer jpeg \
 		libtool localbase:ldflags pkgconfig python ssl tar:bzip2 xorg
 USE_XORG=	pixman x11
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 intltool introspection:build
-USE_GSTREAMER1=	yes
 
 CPE_VENDOR=	spice-gtk_project
 

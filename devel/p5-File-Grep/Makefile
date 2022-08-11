@@ -1,5 +1,3 @@
-# Created by: Xavier Beaudouin <kiwi@oav.net>
-
 PORTNAME=	File-Grep
 PORTVERSION=	0.02
 PORTREVISION=	1

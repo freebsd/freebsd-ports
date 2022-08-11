@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	sa-utils
 PORTVERSION=	0.04
 CATEGORIES=	mail

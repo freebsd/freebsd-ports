@@ -1,5 +1,3 @@
-# Created by: Olga Smirnova <mistresssilvara@hotmail.com>
-
 PORTNAME=	poke
 PORTVERSION=	1.0
 CATEGORIES=	editors

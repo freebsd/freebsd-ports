@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	x2goclient
 PORTVERSION=	4.1.2.2
 PORTREVISION=	3

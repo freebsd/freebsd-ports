@@ -1,5 +1,3 @@
-# Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-
 PORTNAME=	URL-Encode
 PORTVERSION=	0.03
 CATEGORIES=	www perl5

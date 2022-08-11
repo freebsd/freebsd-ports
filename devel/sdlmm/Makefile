@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	sdlmm
 PORTVERSION=	0.1.8
 PORTREVISION=	9

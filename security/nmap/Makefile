@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	nmap
 DISTVERSION=	7.91
 PORTREVISION=	2
@@ -57,7 +55,6 @@ CONFIGURE_ARGS+=--without-localdirs \
 
 .if ${PORT_OPTIONS:MPCAP}
 BROKEN_FreeBSD_14=	Conflicts with pcap in base
-BROKEN_FreeBSD_13=	Conflicts with pcap in base
 .endif
 
 # XXX limit results if we do a grep in the sources!

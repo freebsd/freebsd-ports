@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	io
 PORTVERSION=	20180807
 PORTREVISION=	2

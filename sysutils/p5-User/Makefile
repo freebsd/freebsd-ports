@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	User
 PORTVERSION=	1.9
 PORTREVISION=	1

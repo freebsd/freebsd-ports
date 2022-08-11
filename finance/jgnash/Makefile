@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@bluelife.at>
-
 PORTNAME=	jgnash
 PORTVERSION=	2.21.0
 CATEGORIES=	finance java

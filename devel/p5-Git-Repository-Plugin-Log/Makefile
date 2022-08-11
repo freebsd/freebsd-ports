@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Git-Repository-Plugin-Log
 PORTVERSION=	1.314
 CATEGORIES=	devel perl5

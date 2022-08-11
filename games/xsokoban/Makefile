@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	xsokoban
 PORTVERSION=	3.3c
 PORTREVISION=	2

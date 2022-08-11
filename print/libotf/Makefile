@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	libotf
 DISTVERSION=	0.9.16
 PORTREVISION=	1

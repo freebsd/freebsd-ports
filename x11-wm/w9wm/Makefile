@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	w9wm
 PORTVERSION=	0.4.2
 PORTREVISION=	2

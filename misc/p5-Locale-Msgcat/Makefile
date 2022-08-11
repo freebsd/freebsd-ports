@@ -1,5 +1,3 @@
-# Created by: Sebastien gioria <gioria@FreeBSD.org>
-
 PORTNAME=	Msgcat
 PORTVERSION=	1.03
 PORTREVISION=	1

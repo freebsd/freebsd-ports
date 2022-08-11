@@ -1,5 +1,3 @@
-# Created by: Evgueni V. Gavrilov <aquatique@rusunix.org>
-
 PORTNAME=	bopm
 PORTVERSION=	3.1.3
 PORTREVISION=	3

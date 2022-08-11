@@ -1,5 +1,3 @@
-# Created by: itojun@itojun.org
-
 PORTNAME=	choparp
 PORTVERSION=	20150613
 DISTVERSIONPREFIX=	release/

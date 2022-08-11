@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	3dc
 PORTVERSION=	0.8.1
 PORTREVISION=	4

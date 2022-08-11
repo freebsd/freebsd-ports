@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	chroot_safe
 PORTVERSION=	1.4
 PORTREVISION=	1

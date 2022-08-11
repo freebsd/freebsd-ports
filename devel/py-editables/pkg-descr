@@ -1,0 +1,6 @@
+This library supports the building of wheels which, when installed, will expose
+packages in a local directory on sys.path in "editable mode". In other words,
+changes to the package source will be reflected in the package visible to
+Python, without needing a reinstall.
+
+WWW: https://github.com/pfmoore/editables

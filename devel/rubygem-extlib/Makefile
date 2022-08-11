@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	extlib
 PORTVERSION=	0.9.16
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	MooseX-Role-Parameterized
 PORTVERSION=	1.11
 CATEGORIES=	devel perl5

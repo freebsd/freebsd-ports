@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Data-DumpXML
 PORTVERSION=	1.06
 PORTREVISION=	2

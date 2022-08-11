@@ -1,5 +1,3 @@
-# Created by: Jun-ichiro itojun Itoh <itojun@itojun.org>
-
 PORTNAME=	nvi
 PORTVERSION=	1.79.20040608
 PORTREVISION=	5

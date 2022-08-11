@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	Template-Tiny
 PORTVERSION=	1.14
 CATEGORIES=	textproc perl5

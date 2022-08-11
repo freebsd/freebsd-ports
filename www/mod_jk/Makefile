@@ -1,5 +1,3 @@
-# Created by: Dirk Froemberg <dirk@FreeBSD.org>
-
 PORTNAME=	mod_jk
 PORTVERSION=	1.2.48
 PORTEPOCH=	1

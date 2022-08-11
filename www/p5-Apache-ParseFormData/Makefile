@@ -1,5 +1,3 @@
-# Created by: Jon Nistor <nistor@snickers.org>
-
 PORTNAME=	Apache-ParseFormData
 PORTVERSION=	0.09
 PORTREVISION=	3

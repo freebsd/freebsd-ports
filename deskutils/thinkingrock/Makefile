@@ -1,5 +1,3 @@
-# Created by: Beat Gaetzi <beat@chruetertee.ch>
-
 PORTNAME=	thinkingrock
 PORTVERSION=	2.2.1
 PORTREVISION=	3

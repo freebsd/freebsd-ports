@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Test-WWW-Mechanize-CGI
 PORTVERSION=	0.1
 PORTREVISION=	1

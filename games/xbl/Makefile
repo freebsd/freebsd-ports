@@ -1,5 +1,3 @@
-# Created by: pgs (original)
-
 PORTNAME=	xbl
 PORTVERSION=	1.1.6
 CATEGORIES=	games

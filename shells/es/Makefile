@@ -1,5 +1,3 @@
-# Created by: erich@rrnet.com
-
 PORTNAME=	es
 PORTVERSION=	0.9.b1
 PORTREVISION=	6

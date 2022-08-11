@@ -1,5 +1,3 @@
-# Created by: Patrick Powell <papowell@astart.com>
-
 PORTNAME=	pic2fig
 PORTVERSION=	1.4
 PORTREVISION=	2

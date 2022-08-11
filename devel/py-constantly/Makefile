@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	constantly
 PORTVERSION=	15.1.0
 CATEGORIES=	devel python

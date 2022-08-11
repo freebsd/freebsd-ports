@@ -1,5 +1,3 @@
-# Created by: swhetzel@gmail.com
-
 PORTNAME=	torrentzip
 PORTVERSION=	0.2
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: freebsd@spatula.net
-
 PORTNAME=	muse
 PORTVERSION=	0.2
 CATEGORIES=	sysutils

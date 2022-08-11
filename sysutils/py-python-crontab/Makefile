@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	python-crontab
 PORTVERSION=	2.4.0
 CATEGORIES=	sysutils python

@@ -1,5 +1,3 @@
-# Created by: mm
-
 PORTNAME=	libquicktime
 PORTREVISION=	6
 CATEGORIES=	multimedia

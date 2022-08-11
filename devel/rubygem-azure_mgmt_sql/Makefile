@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_sql
 PORTVERSION=	0.19.1
 CATEGORIES=	devel rubygems

@@ -1,0 +1,5 @@
+XLConnect is a comprehensive and cross-platform R package for manipulating
+Microsoft Excel files from within R.
+
+WWW: https://cran.r-project.org/package=XLConnect
+WWW: https://github.com/miraisolutions/xlconnect

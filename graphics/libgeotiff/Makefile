@@ -1,5 +1,3 @@
-# Created by: Sam Lawrance
-
 PORTNAME=	libgeotiff
 PORTVERSION=	1.7.1
 CATEGORIES=	graphics

@@ -10,8 +10,8 @@ lib/libktoblzcheck.so
 lib/libktoblzcheck.so.1
 lib/libktoblzcheck.so.1.5.26
 libdata/pkgconfig/ktoblzcheck.pc
-man/man1/ibanchk.1.gz
-man/man1/ktoblzcheck.1.gz
+share/man/man1/ibanchk.1.gz
+share/man/man1/ktoblzcheck.1.gz
 %%DOXYGEN%%%%DOCSDIR%%/api/README_8md.html
 %%DOXYGEN%%%%DOCSDIR%%/api/annotated.html
 %%DOXYGEN%%%%DOCSDIR%%/api/bc_s.png

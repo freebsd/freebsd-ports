@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	jargon-fpw
 PORTVERSION=	2.0
 PORTREVISION=	0

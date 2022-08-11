@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	team
 PORTVERSION=	3.1
 PORTREVISION=	2

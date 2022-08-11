@@ -1,5 +1,3 @@
-# Created by: Martin Tournoij <martin@arp242.net>
-
 PORTNAME=	nlarn
 DISTVERSIONPREFIX=	NLarn-
 DISTVERSION=	0.7.6

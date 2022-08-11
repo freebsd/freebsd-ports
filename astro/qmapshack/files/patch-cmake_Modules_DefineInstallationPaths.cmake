@@ -14,7 +14,7 @@
    )
    SET(MAN_INSTALL_DIR
 -    "${SHARE_INSTALL_PREFIX}/man"
-+    "${CMAKE_INSTALL_PREFIX}/man"
++    "${CMAKE_INSTALL_PREFIX}/share/man"
      CACHE PATH "The ${_PROJECT_NAME} man install dir (default prefix/man)"
      FORCE
    )

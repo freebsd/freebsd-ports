@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Regexp-RegGrp
 PORTVERSION=	2.01
 CATEGORIES=	devel perl5

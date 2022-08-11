@@ -1,5 +1,3 @@
-# Created by: Paul Chvostek <paul@it.ca>
-
 PORTNAME=	rotorouter
 PORTVERSION=	1.0
 PORTREVISION=	3

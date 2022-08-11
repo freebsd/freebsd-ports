@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	tagged
 PORTVERSION=	0.40
 PORTREVISION=	1

@@ -1,7 +1,5 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	sinatra
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +9,7 @@ COMMENT=	Classy web development framework in ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-mustermann>=1.0<2:devel/rubygem-mustermann \
+RUN_DEPENDS=	rubygem-mustermann>=2.0<3:devel/rubygem-mustermann \
 		rubygem-rack>=2.2,3<3,3:www/rubygem-rack \
 		rubygem-rack-protection>=${PORTVERSION}:www/rubygem-rack-protection \
 		rubygem-tilt>=2.0<3:devel/rubygem-tilt

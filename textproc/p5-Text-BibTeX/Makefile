@@ -1,5 +1,3 @@
-# Created by: David Bremner <bremner@unb.ca>
-
 PORTNAME=	Text-BibTeX
 PORTVERSION=	0.88
 CATEGORIES=	textproc perl5

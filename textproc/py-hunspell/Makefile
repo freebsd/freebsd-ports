@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	hunspell
 PORTVERSION=	0.5.5
 PORTREVISION=	1

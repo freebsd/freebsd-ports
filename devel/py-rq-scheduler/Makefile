@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rq-scheduler
 PORTVERSION=	0.11.0
 CATEGORIES=	devel python

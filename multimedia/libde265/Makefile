@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libde265
 DISTVERSION=	1.0.8
 CATEGORIES=	multimedia

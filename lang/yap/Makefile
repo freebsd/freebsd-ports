@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilogondolfo@gmail.com>
-
 PORTNAME=	yap
 PORTVERSION=	6.2.2
 PORTREVISION=	11

@@ -1,5 +1,3 @@
-# Created by: Marcin Cieslak <saper@SYSTEM.PL>
-
 PORTNAME=	jtopen
 PORTVERSION=	6.2
 CATEGORIES=	sysutils java

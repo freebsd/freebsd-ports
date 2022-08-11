@@ -1,5 +1,3 @@
-# Created by: Espen Tagestad <espen@tagestad.no>
-
 PORTNAME=	DBD-Mock
 PORTVERSION=	1.59
 CATEGORIES=	databases perl5

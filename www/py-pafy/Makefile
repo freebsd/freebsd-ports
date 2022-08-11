@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	pafy
 PORTVERSION=	0.5.5
 PORTREVISION=	1

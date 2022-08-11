@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	zope.testing
 PORTVERSION=	4.1.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	LaTeX-Driver
 PORTVERSION=	1.2.0
 CATEGORIES=	textproc perl5

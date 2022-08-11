@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Data-ObjectDriver
 PORTVERSION=	0.21
 CATEGORIES=	devel perl5

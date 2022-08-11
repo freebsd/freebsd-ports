@@ -1,5 +1,5 @@
 bin/gdl
-man/man1/gdl.1.gz
+share/man/man1/gdl.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/banner_for_testsuite.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/benchmark/basic_benchmarks_by_type.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/benchmark/basic_benchmarks.pro

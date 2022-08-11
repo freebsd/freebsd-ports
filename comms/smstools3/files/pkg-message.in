@@ -1,0 +1,11 @@
+[
+{ type: remove
+  message: <<EOM
+If you are permanently removing smstools, you should also:
+
+rm -rf %%SPOOLDIR%%
+rm -rf %%LOGDIR%%
+rm -rf %%PIDDIR%%
+EOM
+}
+]

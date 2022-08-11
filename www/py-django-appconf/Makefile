@@ -4,7 +4,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Helper class for handling configuration defaults gracefully
 
 LICENSE=	BSD3CLAUSE

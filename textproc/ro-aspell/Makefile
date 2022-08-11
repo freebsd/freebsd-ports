@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	${DICT}-aspell
 SPELLVERSION=	5-ro-3.3-2
 PORTEPOCH=	1

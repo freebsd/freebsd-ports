@@ -1,5 +1,3 @@
-# Created by: Ilya A. Arkhipov <rum1cro@yandex.ru>
-
 PORTNAME=	dialog4ports
 PORTVERSION=	0.1.6
 PORTREVISION?=	1

@@ -1,5 +1,3 @@
-# Created by: Andreas Fehlner (fehlner@gmx.de)
-
 CATEGORIES=	french
 
 MAINTAINER=	ports@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	xiphos
 DISTVERSION=	4.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc gnome
 # Don't use USE_GITHUB: the sources downloaded by USE_GITHUB cannot be
 # built as they miss the file ${WRKSRC}/cmake/source_version.txt.
@@ -29,7 +29,7 @@ LIB_DEPENDS=	libbiblesync.so:misc/biblesync \
 
 # gettext is always needed, even if NLS is off
 USES=		cmake compiler:c11 gettext gnome minizip pkgconfig
-USE_GNOME=	cairo gconf2 gtk30 gtkhtml4 intltool libgsf
+USE_GNOME=	cairo gtk30 gtkhtml4 intltool libgsf
 
 CMAKE_OFF=	EPUB
 CMAKE_ON=	GTKHTML

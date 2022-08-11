@@ -1,5 +1,3 @@
-# Created by: Dave Grochowski
-
 PORTNAME=	gccmakedep
 PORTVERSION=	1.0.3
 CATEGORIES=	devel

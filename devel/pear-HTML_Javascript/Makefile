@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	HTML_Javascript
 PORTVERSION=	1.1.2
 CATEGORIES=	devel www pear

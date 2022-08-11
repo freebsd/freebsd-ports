@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	webinject
 PORTVERSION=	1.41
 PORTREVISION=	1

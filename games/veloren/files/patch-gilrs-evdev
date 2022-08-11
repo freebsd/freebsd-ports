@@ -1,7 +1,7 @@
 https://gitlab.com/gilrs-project/gilrs/-/merge_requests/56
 
---- cargo-crates/gilrs-0.8.1/src/mapping/mod.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-0.8.1/src/mapping/mod.rs
+--- cargo-crates/gilrs-0.8.2/src/mapping/mod.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-0.8.2/src/mapping/mod.rs
 @@ -24,14 +24,14 @@ use vec_map::VecMap;
  use self::parser::{Error as ParserError, ErrorKind as ParserErrorKind, Parser, Token};
  
@@ -19,9 +19,9 @@ https://gitlab.com/gilrs-project/gilrs/-/merge_requests/56
      not(target_os = "macos"),
      not(target_os = "windows")
  ))]
---- cargo-crates/gilrs-core-0.3.1/Cargo.toml.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.3.1/Cargo.toml
-@@ -54,16 +54,16 @@ optional = true
+--- cargo-crates/gilrs-core-0.3.2/Cargo.toml.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.3.2/Cargo.toml
+@@ -53,16 +53,16 @@ package = "wasm-bindgen"
  [target."cfg(target_arch = \"wasm32\")".dev-dependencies.wasm-bindgen-rs]
  version = "0.2"
  package = "wasm-bindgen"
@@ -35,15 +35,15 @@ https://gitlab.com/gilrs-project/gilrs/-/merge_requests/56
  
 -[target."cfg(target_os = \"linux\")".dependencies.nix]
 +[target."cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\"))".dependencies.nix]
- version = "0.20"
+ version = "0.23.1"
  
 -[target."cfg(target_os = \"linux\")".dependencies.vec_map]
 +[target."cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\"))".dependencies.vec_map]
  version = "0.8"
  [target."cfg(target_os = \"macos\")".dependencies.core-foundation]
  version = "0.6"
---- cargo-crates/gilrs-core-0.3.1/src/platform/linux/ff.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.3.1/src/platform/linux/ff.rs
+--- cargo-crates/gilrs-core-0.3.2/src/platform/linux/ff.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.3.2/src/platform/linux/ff.rs
 @@ -104,10 +104,10 @@ impl Device {
  
  impl Drop for Device {
@@ -59,8 +59,8 @@ https://gitlab.com/gilrs-project/gilrs/-/merge_requests/56
  
          if let Err(err) = unsafe { ioctl::eviocrmff(self.file.as_raw_fd(), effect) } {
              error!(
---- cargo-crates/gilrs-core-0.3.1/src/platform/mod.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.3.1/src/platform/mod.rs
+--- cargo-crates/gilrs-core-0.3.2/src/platform/mod.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.3.2/src/platform/mod.rs
 @@ -21,7 +21,7 @@
  
  pub use self::platform::*;

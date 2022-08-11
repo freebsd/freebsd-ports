@@ -1,5 +1,3 @@
-# Created by: Ralf S. Engelschall
-
 PORTNAME=	str
 PORTVERSION=	0.9.12
 PORTREVISION=	1

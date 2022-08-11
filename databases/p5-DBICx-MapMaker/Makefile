@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	DBICx-MapMaker
 PORTVERSION=	0.03
 PORTREVISION=	1

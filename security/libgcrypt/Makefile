@@ -1,5 +1,6 @@
 PORTNAME=	libgcrypt
 DISTVERSION=	1.9.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -38,10 +39,6 @@ INFO_USES=	makeinfo
 STATIC_CONFIGURE_ENABLE=	static
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == "powerpc"
-CONFIGURE_ARGS+=	--disable-asm
-.endif
 
 .if ${ARCH} == "armv6" || ${ARCH} == "armv7"
 CONFIGURE_ARGS+=	--disable-jent-support

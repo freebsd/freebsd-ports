@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	i18n_data
 PORTVERSION=	0.10.0
 CATEGORIES=	devel rubygems

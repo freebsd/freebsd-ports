@@ -1,5 +1,3 @@
-# Created by: Florian Limberger <flo@snakeoilproductions.net>
-
 PORTNAME=	linden-hill
 DISTVERSION=	g20110526
 PORTREVISION=	1

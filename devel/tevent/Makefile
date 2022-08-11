@@ -1,100 +1,71 @@
-PORTNAME=		tevent
-PORTVERSION=		0.10.2
-PORTREVISION=		1
-PORTEPOCH=		0
-CATEGORIES=		devel
-MASTER_SITES=		SAMBA
+PORTNAME=			tevent
+DISTVERSION=			0.13.0
+PORTREVISION=			0
+PORTEPOCH=			0
+CATEGORIES=			devel
+MASTER_SITES=			SAMBA
 
-MAINTAINER=		timur@FreeBSD.org
-COMMENT=		Talloc based event loop library
+MAINTAINER=			timur@FreeBSD.org
+COMMENT=			Talloc based event loop library
 
-LICENSE=		LGPL3
+LICENSE=			LGPL3
 
-IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
+BUILD_DEPENDS=			talloc>=2.3.4:devel/talloc
+RUN_DEPENDS=			talloc>=2.3.4:devel/talloc
 
-BUILD_DEPENDS=		talloc>=2.3.1:devel/talloc
-RUN_DEPENDS=		talloc>=2.3.1:devel/talloc
+USES=				compiler pkgconfig shebangfix  waf
+USE_LDCONFIG=			yes
+SHEBANG_GLOB=			*.py
+WAF_CMD=			buildtools/bin/waf
+CONFIGURE_LOG=			bin/config.log
 
-CONFLICTS_INSTALL=	tevent1
+PKGCONFIGDIR?=			${PREFIX}/libdata/pkgconfig
+PLIST_SUB+=			PKGCONFIGDIR=${PKGCONFIGDIR:S;^${PREFIX}/;;}
 
-#FLAVORS=		default nopython
-#nopython_PKGNAMESUFFIX=	-nopython
-#nopython_CONFLICTS=	tevent
-#default_CONFLICTS=	tevent-nopython
+CONFIGURE_ARGS+=		--mandir=${MANPREFIX}/man \
+				--disable-rpath \
+				--disable-rpath-install \
+				--bundled-libraries=!talloc,cmocka \
+				--builtin-libraries=replace \
+				--without-gettext
+CONFIGURE_ENV=			PYTHONHASHSEED=1
+MAKE_ENV=			PYTHONHASHSEED=1
 
-USES=			compiler gettext-runtime pkgconfig waf
-USE_LDCONFIG=		yes
-WAF_CMD=		buildtools/bin/waf
-CONFIGURE_LOG=		bin/config.log
+MANPAGES_DESC=			Build and install manpages (requires textproc/docbook-xsl)
 
-PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
-PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
+OPTIONS_DEFINE=			DEBUG MANPAGES PYTHON
+OPTIONS_DEFAULT=		PYTHON
+OPTIONS_SUB=			yes
 
-CONFIGURE_ARGS+=	--bundled-libraries=!talloc
+DEBUG_CFLAGS=			-g -ggdb3 -O0
+DEBUG_CONFIGURE_ON=		--verbose --enable-debug
+DEBUG_MAKE_ARGS=		--verbose
 
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
-			--disable-rpath \
-			--without-gettext
+PYTHON_USES=			gettext-runtime python:3.6+
+PYTHON_USE+=			python=py3kplist
+PYTHON_USES_OFF=		python:build,test
+PYTHON_CONFIGURE_OFF=		--disable-python
 
-OPTIONS_DEFINE=		MANPAGES DEBUG
-MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
-
-DEBUG_CONFIGURE_ON=	--verbose --enable-debug
-DEBUG_MAKE_ARGS=	--verbose
-DEBUG_FLAGS=		-g -ggdb3 -O0
-
-.include <bsd.port.options.mk>
-
-PLIST_FILES+=		include/tevent.h \
-			lib/libtevent.so \
-			lib/libtevent.so.0 \
-			${PKGCONFIGDIR}/tevent.pc
-
-.if defined(NO_PYTHON)
-USES+=			python:build,test
-CONFIGURE_ARGS+=	--disable-python
-.else
-USES+=			python:3.4+
-USE_PYTHON=		py3kplist
-
-PLIST_FILES+=		${PYTHON_SITELIBDIR}/_tevent${PYTHON_EXT_SUFFIX}.so \
-			${PYTHON_SITELIBDIR}/tevent.py \
-			${PYTHON_SITELIBDIR}/__pycache__/tevent.cpython-${PYTHON_SUFFIX}.pyc
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ! ${PORT_OPTIONS:MMANPAGES}
-CONFIGURE_ENV+=		XSLTPROC="true"
-.else
-BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
-			xsltproc:textproc/libxslt
-.endif
+MANPAGES_CONFIGURE_ENV_OFF+=	XSLTPROC="true"
+MANPAGES_BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+				xsltproc:textproc/libxslt
 # No fancy color error messages
-.if ${COMPILER_TYPE} == "clang"
-CFLAGS+=		-fno-color-diagnostics
-.endif
-CONFIGURE_ENV+=		NOCOLOR=yes
-MAKE_ENV+=		NOCOLOR=yes
+CFLAGS+=			${CFLAGS_${CHOSEN_COMPILER_TYPE}}
+CFLAGS_clang=			-fno-color-diagnostics
+CONFIGURE_ENV+=			NOCOLOR=yes
+MAKE_ENV+=			NOCOLOR=yes
 
 post-patch:
-			@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \
-				${BUILD_WRKSRC}/wscript
-
-# Use threading (or multiprocessing) but not thread (renamed in python 3+).
-pre-configure:
-			@if ! ${PYTHON_CMD} -c "import multiprocessing;" 2>/dev/null; then \
-				${ECHO_CMD}; \
-				${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE_NONTHREAD_PYTHON:Q}.; \
-				${ECHO_CMD}; \
-				${FALSE}; \
-			fi
+				@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \
+					${BUILD_WRKSRC}/wscript
 
 post-install:
-			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtevent.so
-.if !defined(NO_PYTHON)
-			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_tevent*.so
-			${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-.endif
+				${RM} ${STAGEDIR}${PREFIX}/lib/tevent/libcmocka-tevent.so
+				${RMDIR} ${STAGEDIR}${PREFIX}/lib/tevent
+				${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtevent.so
 
-.include <bsd.port.post.mk>
+post-install-PYTHON-on:
+				${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_tevent*.so
+				${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+
+.include <bsd.port.mk>

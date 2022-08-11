@@ -1,5 +1,3 @@
-# Created by: Junho CHOI <junho.choi@gmail.com>
-
 PORTNAME=	imhangul
 PORTVERSION=	3.1.1
 CATEGORIES=	korean

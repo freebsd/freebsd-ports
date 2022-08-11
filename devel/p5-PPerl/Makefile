@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	PPerl
 PORTVERSION=	0.25
 PORTREVISION=	4

@@ -1,4 +1,6 @@
+share/awesome/lib/vicious/.build.yml
 share/awesome/lib/vicious/.gitignore
+share/awesome/lib/vicious/LICENSE
 share/awesome/lib/vicious/contrib/ac_linux.lua
 share/awesome/lib/vicious/contrib/ati_linux.lua
 share/awesome/lib/vicious/contrib/batpmu_linux.lua

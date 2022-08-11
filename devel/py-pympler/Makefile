@@ -1,12 +1,10 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	Pympler
 PORTVERSION=	0.4.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Measure, monitor and analyze the memory behavior of Python objects
 
 LICENSE=	APACHE20

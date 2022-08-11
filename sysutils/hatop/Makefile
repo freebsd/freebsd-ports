@@ -1,5 +1,3 @@
-# Created by: Jim Riggs <ports@christianserving.org>
-
 PORTNAME=	hatop
 PORTVERSION=	0.8.1
 DISTVERSIONPREFIX=	v

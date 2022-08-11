@@ -1,5 +1,3 @@
-# Created by: Noritaka Ishizumi <graphite@taurus.bekkoame.or.jp>
-
 PORTNAME=	suck
 PORTVERSION=	4.3.4
 CATEGORIES=	news

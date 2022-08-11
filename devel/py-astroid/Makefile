@@ -1,5 +1,5 @@
 PORTNAME=	astroid
-PORTVERSION=	2.11.2
+PORTVERSION=	2.12.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lazy-object-proxy>=1.4.0:devel/py-lazy-objec
 		${PYTHON_PKGNAMEPREFIX}wrapt>=1.11<2:devel/py-wrapt@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
+
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}astroid253
 
 NO_ARCH=	yes
 

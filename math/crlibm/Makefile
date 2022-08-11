@@ -1,5 +1,3 @@
-# Created by: bf@FreeBSD.org
-
 PORTNAME=	crlibm
 DISTVERSION=	1.0beta4
 PORTREVISION=	2

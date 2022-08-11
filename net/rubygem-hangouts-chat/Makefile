@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	hangouts-chat
 PORTVERSION=	0.0.6
 CATEGORIES=	net rubygems

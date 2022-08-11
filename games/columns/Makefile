@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	columns
 PORTVERSION=	1.2b
 PORTREVISION=	9

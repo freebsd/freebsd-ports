@@ -1,5 +1,3 @@
-# Created by: Juraj Lutter <juraj@lutter.sk>
-
 PORTNAME=	logswan
 DISTVERSION=	2.1.11
 CATEGORIES=	www
@@ -16,6 +14,6 @@ LIB_DEPENDS=	libjansson.so:devel/jansson \
 USES=		cmake compiler:c11
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

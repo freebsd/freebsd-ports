@@ -1,7 +1,6 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	saga
-PORTVERSION=	8.2.1
+PORTVERSION=	8.3.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -10,6 +9,10 @@ COMMENT=	System for Automated Geoscientific Analyses
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
+
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		swig:devel/swig
@@ -25,7 +28,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libproj.so:graphics/proj \
 		libqhull_r.so:math/qhull \
 		libsvm.so:science/libsvm \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS:=	swig:devel/swig
 
@@ -48,9 +51,11 @@ OPTIONS_DEFINE=	PGSQL OPENMP VIGRA
 OPTIONS_DEFAULT=	PGSQL VIGRA
 OPTIONS_DEFAULT_amd64=	OPENMP
 OPTIONS_DEFAULT_i386=	OPENMP
+OPTIONS_DEFAULT_powerpc64=	OPENMP
+OPTIONS_DEFAULT_powerpc64le=	OPENMP
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=	yes
-OPENMP_DESC=	Enable Multiprocessing (only amd64 and i386)
+OPENMP_DESC=	Enable Multiprocessing (only amd64, i386 and powerpc64*)
 VIGRA_DESC=	Enable 'Vision with Generic Algorithms' Library
 
 OPENMP_CONFIGURE_ENABLE=	openmp
@@ -77,8 +82,6 @@ post-patch:
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 	@${REINPLACE_CMD} -e 's|-lgomp|-lomp|' \
 		${WRKSRC}/src/accessories/templates/template4saga-tools/my_tool_library/Makefile
-	@${REINPLACE_CMD} -e 's|COMMAND python -c|COMMAND python${PYTHON_VER} -c|' \
-		${WRKSRC}/src/saga_core/saga_api/saga_api_python/CMakeLists.txt
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

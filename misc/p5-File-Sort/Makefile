@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	File-Sort
 PORTVERSION=	1.01
 PORTREVISION=	1

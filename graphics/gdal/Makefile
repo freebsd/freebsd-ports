@@ -1,7 +1,5 @@
-# Created by: Randall Hopper
-
 PORTNAME=	gdal
-PORTVERSION=	3.4.2
+PORTVERSION=	3.5.1
 PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
@@ -22,25 +20,6 @@ LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff \
 		libproj.so:graphics/proj \
 		libqhull_r.so:math/qhull \
 		libtiff.so:graphics/tiff
-
-OPTIONS_DEFINE=	ARMADILLO BRUNSLI CFITSIO CHARLS CRYPTOPP CURL DEFLATE DODS ECW EXPAT EXR FREEXL GEOS GTA HDF5 HEIF JASPER KML LERC LIBXML2 LZ4 MYSQL NETCDF ODBC OPENJPEG PCRE PCRE2 PGSQL RASTERLITE2 SFCGAL SPATIALITE SQLITE TILEDB WEBP XERCES ZSTD
-OPTIONS_RADIO=	PDF
-OPTIONS_RADIO_PDF=	PODOFO POPPLER
-OPTIONS_DEFAULT=CURL EXPAT FREEXL GEOS JASPER LIBXML2 LZ4 OPENJPEG PCRE2 PGSQL POPPLER WEBP ZSTD \
-		HDF5 KML NETCDF SPATIALITE SFCGAL SQLITE XERCES
-OPTIONS_SUB=	yes
-BRUNSLI_DESC=	Brunsli support via libbrunsli library
-CHARLS_DESC=	JPEG-Lossless support via charls
-CRYPTOPP_DESC=	Cryptopp support
-DEFLATE_DESC=	Faster deflate support via libdeflate library
-DODS_DESC=	DODS/OPeNDAP support
-EXR_DESC=	EXR support via OpenEXR library
-HEIF_DESC=	HEIF support via libheif library
-LERC_DESC=	LERC (Limited Error Raster Compression) support
-PCRE_DESC=	Regular expression support for SQLite
-PCRE2_DESC=	Regular expression support for SQLite
-RASTERLITE2_DESC=	RasterLite2 support
-TILEDB_DESC=	TileDB support
 
 USES=		compiler:c++17-lang cpe gmake iconv jpeg localbase pkgconfig ssl tar:xz
 
@@ -68,14 +47,14 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
 		--without-libtool \
 		${ICONV_CONFIGURE_ARG}
 GNU_CONFIGURE=	yes
-LDFLAGS+=	${ICONV_LIB}
+LDFLAGS+=	-L${WRKSRC} ${ICONV_LIB}
 MAKEFILE=	GNUmakefile
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-SLAVEDIRS=	graphics/p5-Geo-GDAL graphics/py-gdal
+SLAVEDIRS=	graphics/py-gdal
 
 CPE_VENDOR=	osgeo
 
@@ -95,6 +74,22 @@ HEADER_FILES=	alg/gdalwarpkernel_opencl.h \
 		port/cpl_vsil_curl_priv.h \
 		port/cpl_worker_thread_pool.h
 
+OPTIONS_DEFINE=	ARMADILLO BRUNSLI CFITSIO CRYPTOPP CURL DEFLATE ECW EXPAT EXR FREEXL GEOS GTA HDF5 HEIF KML LERC LIBXML2 LZ4 MYSQL NETCDF ODBC OPENJPEG PCRE PCRE2 PGSQL RASTERLITE2 SFCGAL SPATIALITE SQLITE TILEDB WEBP XERCES ZSTD
+OPTIONS_RADIO=	PDF
+OPTIONS_RADIO_PDF=	PODOFO POPPLER
+OPTIONS_DEFAULT=CURL EXPAT FREEXL GEOS LIBXML2 LZ4 OPENJPEG PCRE2 PGSQL POPPLER WEBP ZSTD \
+		HDF5 KML NETCDF SPATIALITE SFCGAL SQLITE XERCES
+OPTIONS_SUB=	yes
+BRUNSLI_DESC=	Brunsli support via libbrunsli library
+CRYPTOPP_DESC=	Cryptopp support
+DEFLATE_DESC=	Faster deflate support via libdeflate library
+EXR_DESC=	EXR support via OpenEXR library
+LERC_DESC=	LERC (Limited Error Raster Compression) support
+PCRE_DESC=	Regular expression support for SQLite
+PCRE2_DESC=	Regular expression support for SQLite
+RASTERLITE2_DESC=	RasterLite2 support
+TILEDB_DESC=	TileDB support
+
 ARMADILLO_CONFIGURE_OFF=--with-armadillo=no
 ARMADILLO_CONFIGURE_ON=	--with-armadillo=${LOCALBASE}
 ARMADILLO_LIB_DEPENDS=	libarmadillo.so:math/armadillo
@@ -102,8 +97,6 @@ BRUNSLI_CONFIGURE_WITH=	brunsli
 BRUNSLI_LIB_DEPENDS=	libbrunslidec-c.so:graphics/brunsli
 CFITSIO_CONFIGURE_WITH=	cfitsio
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
-CHARLS_CONFIGURE_WITH=	charls
-CHARLS_LIB_DEPENDS=	libcharls.so:graphics/charls
 CRYPTOPP_CONFIGURE_OFF=	--with-cryptopp=no
 CRYPTOPP_CONFIGURE_ON=	--with-cryptopp=${LOCALBASE}
 CRYPTOPP_LIB_DEPENDS=	libcryptopp.so:security/cryptopp
@@ -112,9 +105,6 @@ CURL_CONFIGURE_ON=	--with-curl=${LOCALBASE}/bin/curl-config
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 DEFLATE_CONFIGURE_WITH=	libdeflate
 DEFLATE_LIB_DEPENDS=	libdeflate.so:archivers/libdeflate
-DODS_CONFIGURE_OFF=	--with-dods-root=no
-DODS_CONFIGURE_ON=	--with-dods-root=${LOCALBASE}
-DODS_LIB_DEPENDS=	libdap.so:devel/libdap
 ECW_CONFIGURE_WITH=	ecw
 ECW_LIB_DEPENDS=	libNCSEcw.so:graphics/libecwj2
 EXPAT_CONFIGURE_WITH=	expat
@@ -134,8 +124,6 @@ HDF5_CONFIGURE_WITH=	hdf5
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
 HEIF_CONFIGURE_WITH=	heif
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
-JASPER_CONFIGURE_WITH=	jasper
-JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 KML_CONFIGURE_WITH=	libkml
 KML_LIB_DEPENDS=	libkmlbase.so:science/libkml
 LERC_CONFIGURE_OFF=	--with-lerc=no

@@ -1,7 +1,5 @@
-# Created by: mm@FreeBSD.org
-
 PORTNAME=	adodb
-PORTVERSION=	5.22.1
+PORTVERSION=	5.22.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases www
 PKGNAMESUFFIX=	5${PHP_PKGNAMESUFFIX}
@@ -19,7 +17,7 @@ USE_PHP=	pcre
 USE_GITHUB=	yes
 GH_PROJECT=	ADOdb
 
-CONFLICTS=	adodb-4.*
+CONFLICTS_INSTALL=	adodb5-php[0-9][0-9] # share/adodb/adodb-active-record.inc.php
 
 NO_BUILD=	yes
 NO_ARCH=	yes

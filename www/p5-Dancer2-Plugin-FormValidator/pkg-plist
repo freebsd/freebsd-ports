@@ -1,5 +1,8 @@
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Config.pm
+%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Factory/Extensions.pm
+%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Factory/Messages.pm
+%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Input.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Processor.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Registry.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Result.pm
@@ -10,9 +13,8 @@
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Role/Validator.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Accepted.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Alpha.pm
-%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/AlphaAscii.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/AlphaNum.pm
-%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/AlphaNumAscii.pm
+%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Boolean.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Email.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/EmailDns.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Enum.pm
@@ -23,5 +25,7 @@
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Min.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Numeric.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Required.pm
+%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/RequiredWith.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Same.pm
+%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator.pm
 %%PERL5_MAN3%%/Dancer2::Plugin::FormValidator.3.gz

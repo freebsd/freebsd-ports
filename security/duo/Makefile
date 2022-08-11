@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	duo
 PORTVERSION=	1.12.0
 CATEGORIES=	security

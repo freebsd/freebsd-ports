@@ -1,6 +1,6 @@
 bin/qmidictl
-man/fr/man1/qmidictl.1.gz
-man/man1/qmidictl.1.gz
+share/man/fr/man1/qmidictl.1.gz
+share/man/man1/qmidictl.1.gz
 share/applications/org.rncbc.qmidictl.desktop
 share/icons/hicolor/32x32/apps/org.rncbc.qmidictl.png
 share/icons/hicolor/scalable/apps/org.rncbc.qmidictl.svg

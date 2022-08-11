@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Rose-URI
 PORTVERSION=	1.02
 CATEGORIES=	net perl5

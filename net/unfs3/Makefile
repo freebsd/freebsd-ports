@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <clement@FreeBSD.org>
-
 PORTNAME=	unfs3
 DISTVERSION=	0.9.22
 PORTREVISION=	2

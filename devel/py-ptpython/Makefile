@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ptpython
 PORTVERSION=	3.0.20
 CATEGORIES=	devel python

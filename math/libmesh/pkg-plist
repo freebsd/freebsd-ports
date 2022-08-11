@@ -55,6 +55,7 @@ include/libmesh/cell_tet10.h
 include/libmesh/cell_tet4.h
 include/libmesh/centroid_partitioner.h
 include/libmesh/checkpoint_io.h
+include/libmesh/chunked_mapvector.h
 include/libmesh/communicator.h
 include/libmesh/compare_elems_by_level.h
 include/libmesh/compare_types.h
@@ -122,9 +123,11 @@ include/libmesh/enum_error_estimator_type.h
 include/libmesh/enum_fe_family.h
 include/libmesh/enum_inf_map_type.h
 include/libmesh/enum_io_package.h
+include/libmesh/enum_matrix_build_type.h
 include/libmesh/enum_norm_type.h
 include/libmesh/enum_order.h
 include/libmesh/enum_parallel_type.h
+include/libmesh/enum_partitioner_type.h
 include/libmesh/enum_point_locator_type.h
 include/libmesh/enum_preconditioner_type.h
 include/libmesh/enum_quadrature_type.h
@@ -211,6 +214,7 @@ include/libmesh/inf_fe_instantiate_3D.h
 include/libmesh/inf_fe_macro.h
 include/libmesh/inf_fe_map.h
 include/libmesh/int_range.h
+include/libmesh/inter_mesh_projection.h
 include/libmesh/jacobi_polynomials.h
 include/libmesh/jump_error_estimator.h
 include/libmesh/kelly_error_estimator.h
@@ -229,6 +233,7 @@ include/libmesh/linear_implicit_system.h
 include/libmesh/linear_partitioner.h
 include/libmesh/linear_solver.h
 include/libmesh/location_maps.h
+include/libmesh/lumped_mass_matrix.h
 include/libmesh/mapped_subdomain_partitioner.h
 include/libmesh/mapvector.h
 include/libmesh/matlab_io.h
@@ -334,6 +339,7 @@ include/libmesh/plane.h
 include/libmesh/plt_loader.h
 include/libmesh/point.h
 include/libmesh/point_locator_base.h
+include/libmesh/point_locator_nanoflann.h
 include/libmesh/point_locator_tree.h
 include/libmesh/point_neighbor_coupling.h
 include/libmesh/pointer_to_pointer_iter.h
@@ -472,6 +478,7 @@ include/libmesh/vtk_io.h
 include/libmesh/weighted_patch_recovery_error_estimator.h
 include/libmesh/wrapped_function.h
 include/libmesh/wrapped_functor.h
+include/libmesh/wrapped_petsc.h
 include/libmesh/xdr_cxx.h
 include/libmesh/xdr_io.h
 include/libmesh/zero_function.h
@@ -498,6 +505,7 @@ include/timpi/request.h
 include/timpi/restore_warnings.h
 include/timpi/serial_implementation.h
 include/timpi/standard_type.h
+include/timpi/standard_type_forward.h
 include/timpi/status.h
 include/timpi/timpi.h
 include/timpi/timpi_assert.h
@@ -509,8 +517,8 @@ lib/libmesh_opt.so
 lib/libmesh_opt.so.0
 lib/libmesh_opt.so.0.0.0
 lib/libtimpi_opt.so
-lib/libtimpi_opt.so.2
-lib/libtimpi_opt.so.2.0.0
+lib/libtimpi_opt.so.5
+lib/libtimpi_opt.so.5.0.0
 libdata/pkgconfig/libmesh-opt.pc
 libdata/pkgconfig/libmesh.pc
 libdata/pkgconfig/timpi.pc

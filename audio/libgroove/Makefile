@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	libgroove
 PORTVERSION=	4.3.0
 PORTREVISION=	8

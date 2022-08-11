@@ -1,5 +1,3 @@
-# Created by: Hendrik Scholz <hendrik@scholz.net>
-
 PORTNAME=	fbdesk
 PORTVERSION=	1.4.1
 PORTREVISION=	6

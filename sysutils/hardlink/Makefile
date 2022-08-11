@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift
-
 PORTNAME=	hardlink
 PORTVERSION=	0.3.0
 CATEGORIES=	sysutils

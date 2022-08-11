@@ -9,6 +9,7 @@ LIB_DEPENDS=	libcln.so:math/cln \
 		libdbusmenu-qt5.so:devel/libdbusmenu-qt \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
+		libicui18n.so:devel/icu \
 		libqalculate.so:math/libqalculate \
 		libwayland-client.so:graphics/wayland \
 		libxcb-image.so:x11/xcb-util-image \

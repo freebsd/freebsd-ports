@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	highlnk
 DISTVERSION=	0.2
 CATEGORIES=	sysutils

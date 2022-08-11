@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	multipledispatch
 PORTVERSION=	0.4.8
 CATEGORIES=	devel python

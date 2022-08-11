@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-ipa
 DISTVERSION=	g20200413
 CATEGORIES=	chinese textproc

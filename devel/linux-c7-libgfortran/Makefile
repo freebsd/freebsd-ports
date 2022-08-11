@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <emulation@FreeBSD.org$
-
 PORTNAME=	libgfortran
 PORTVERSION=	4.8.5
 DISTVERSIONSUFFIX=	-44.el7

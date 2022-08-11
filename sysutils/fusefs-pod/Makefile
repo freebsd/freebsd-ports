@@ -1,5 +1,3 @@
-# Created by: Max Khon
-
 PORTNAME=	pod
 PORTVERSION=	0.5.2
 PORTREVISION=	14

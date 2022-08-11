@@ -1,5 +1,3 @@
-# Created by: bf <bf2006a@yahoo.com>
-
 PORTNAME=	TestU01
 PORTVERSION=	1.2.3
 PORTREVISION=	3

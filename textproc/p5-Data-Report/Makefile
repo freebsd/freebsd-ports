@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Data-Report
 PORTVERSION=	1.001
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	bsearch
 PORTVERSION=	1.5
 PORTREVISION=	1

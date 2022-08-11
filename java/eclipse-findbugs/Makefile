@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	findbugs
 DISTVERSION=	3.0.1.20150306-5afe4d1
 CATEGORIES=	java devel

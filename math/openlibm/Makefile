@@ -1,5 +1,3 @@
-# Created by: Iblis Lin <iblis@hs.ntnu.edu.tw>
-
 PORTNAME=	openlibm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0

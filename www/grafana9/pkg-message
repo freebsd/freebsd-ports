@@ -1,0 +1,11 @@
+[
+{
+  type: upgrade
+  maximum_version: "8.0"
+  message: <<EOM
+- rc-script: grafana_conf renamed to grafana_config;
+- grafana.conf moved to etc/grafana/grafana.ini;
+- provisioning dir moved to etc/grafana/provisioning.
+EOM
+}
+]

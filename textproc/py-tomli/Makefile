@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tomli
 PORTVERSION=	2.0.1
 CATEGORIES=	textproc python

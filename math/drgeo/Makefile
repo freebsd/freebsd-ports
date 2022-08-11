@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	drgeo
 PORTVERSION=	1.1.0
 PORTREVISION=	24

@@ -1,5 +1,3 @@
-# Created by: Koichiro IWAO <meta@FreeBSD.org>
-
 PORTNAME=	awesome_print
 PORTVERSION=	1.8.0
 CATEGORIES=	devel rubygems

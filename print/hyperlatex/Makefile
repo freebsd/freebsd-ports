@@ -1,5 +1,3 @@
-# Created by: Robert Withrow <witr@rwwa.com>
-
 PORTNAME=	Hyperlatex
 DISTVERSION=	2.9a
 PORTREVISION=	15

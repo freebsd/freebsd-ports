@@ -1,5 +1,3 @@
-# Created by: nordwick@xcf.berkeley.edu
-
 PORTNAME=	cup
 PORTVERSION=	11b.20160615
 CATEGORIES=	java devel

@@ -1,5 +1,3 @@
-# Created by: Mykola Marzhan <delgod@portaone.com>
-
 PORTNAME=	HTTP-Daemon-SSL
 PORTVERSION=	1.04
 PORTREVISION=	1

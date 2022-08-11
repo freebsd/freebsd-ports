@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Service_Gravatar
 PORTVERSION=	1.0.1
 CATEGORIES=	www pear

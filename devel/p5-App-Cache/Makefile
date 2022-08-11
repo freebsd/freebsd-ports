@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	App-Cache
 PORTVERSION=	0.37
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@inerd.com>
-
 PORTNAME=	ratbox-respond
 PORTVERSION=	1.0
 PORTREVISION=	3

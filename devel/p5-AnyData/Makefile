@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	AnyData
 PORTVERSION=	0.12
 CATEGORIES=	devel perl5

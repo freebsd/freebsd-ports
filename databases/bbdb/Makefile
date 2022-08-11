@@ -1,5 +1,3 @@
-# Created by: Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-
 PORTNAME=	bbdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.2a
@@ -21,6 +19,9 @@ GH_TAGNAME=	a50c89a
 
 BBDB_LISPDIR=	${EMACS_SITE_LISPDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
+
+CONFLICTS_INSTALL=	bbdb bbdb-emacs_* # share/doc/bbdb/bbdb.pdf
+
 # Do not install the info file.  Upstream has yet to add any real content to it.
 #INFO=		bbdb
 PORTDOCS=	bbdb.pdf

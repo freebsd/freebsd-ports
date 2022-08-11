@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-DependentModules
 PORTVERSION=	0.27
 CATEGORIES=	devel perl5

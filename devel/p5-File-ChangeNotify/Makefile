@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	File-ChangeNotify
 PORTVERSION=	0.31
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Mail-Spool
 PORTVERSION=	0.50
 PORTREVISION=	1

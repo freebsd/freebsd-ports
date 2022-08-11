@@ -1,8 +1,6 @@
-# Created by: alepulver
-
 PORTNAME=	uhexen2
 PORTVERSION=	1.5.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Hammer%20of%20Thyrion/${PORTVERSION}/Source \
 		SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.29b:data \
@@ -12,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gamedata-all-1.29b${EXTRACT_SUFX}:data
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ip@unixway.org
+MAINTAINER=	obscenum999@gmail.com
 COMMENT=	Hexen II source port supporting Linux/FreeBSD/Unix/Windows
 
 LICENSE=	GPLv2+

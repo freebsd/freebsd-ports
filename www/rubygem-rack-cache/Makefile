@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	rack-cache
 PORTVERSION=	1.13.0
 CATEGORIES=	www rubygems

@@ -1,8 +1,6 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	vavoom
 PORTVERSION=	1.33
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Vavoom-source/${PORTVERSION}
 

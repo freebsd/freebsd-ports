@@ -1,5 +1,3 @@
-# Created by: lightside <lightside@gmx.com>
-
 PORTNAME=	ardoise
 PORTVERSION=	3.6
 CATEGORIES=	x11-themes

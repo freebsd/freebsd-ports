@@ -6,16 +6,6 @@ lib/libsemantik.so.%%PORTVERSION%%
 man/man1/semantik.1.gz
 share/applications/semantik-d.desktop
 share/applications/semantik.desktop
-share/icons/hicolor/128x128/apps/semantik-d.png
-share/icons/hicolor/128x128/apps/semantik.png
-share/icons/hicolor/22x22/apps/semantik-d.png
-share/icons/hicolor/22x22/apps/semantik.png
-share/icons/hicolor/32x32/apps/semantik-d.png
-share/icons/hicolor/32x32/apps/semantik.png
-share/icons/hicolor/48x48/apps/semantik-d.png
-share/icons/hicolor/48x48/apps/semantik.png
-share/icons/hicolor/64x64/apps/semantik-d.png
-share/icons/hicolor/64x64/apps/semantik.png
 share/icons/hicolor/scalable/apps/semantik-d.svg
 share/icons/hicolor/scalable/apps/semantik.svg
 share/kxmlgui5/semantik-d/semantik-dui.rc
@@ -73,6 +63,7 @@ share/mime/packages/semantik.xml
 %%DATADIR%%/templates/java/Mapview.java
 %%DATADIR%%/templates/java/main.html
 %%DATADIR%%/templates/java/run.sh
+%%DATADIR%%/templates/markdown.sem.py
 %%DATADIR%%/templates/odp.sem.py
 %%DATADIR%%/templates/odp/content.xml
 %%DATADIR%%/templates/odp/manifest.xml

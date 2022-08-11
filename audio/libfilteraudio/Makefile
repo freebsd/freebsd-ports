@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	libfilteraudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.1

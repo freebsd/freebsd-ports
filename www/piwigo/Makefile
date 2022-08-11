@@ -1,7 +1,6 @@
-# Created by: Goran Lowkrantz <glz@hidden-powers.com>
-
 PORTNAME=	piwigo
-DISTVERSION=	12.2.0
+DISTVERSION=	12.3.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
 
@@ -19,7 +18,7 @@ USE_PHP=	ctype dom exif filter gd hash iconv json mbstring mysqli \
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-SUB_FILES=	pkg-deinstall pkg-message
+SUB_FILES=	pkg-message
 SUB_LIST+=	CHOWN="${CHOWN}" \
 		CP="${CP}" \
 		MKDIR="${MKDIR}" \

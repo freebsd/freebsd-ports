@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	zfs-replicate
 PORTVERSION=	0.7
 PORTREVISION=	2

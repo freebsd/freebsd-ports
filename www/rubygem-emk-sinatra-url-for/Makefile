@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	emk-sinatra-url-for
 PORTVERSION=	0.2.1
 CATEGORIES=	www rubygems

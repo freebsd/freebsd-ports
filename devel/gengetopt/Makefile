@@ -1,5 +1,3 @@
-# Created by: Cyrille Lefevre <clefevre@citeweb.net>
-
 PORTNAME=	gengetopt
 PORTVERSION=	2.23
 CATEGORIES=	devel

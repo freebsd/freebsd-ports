@@ -1,5 +1,3 @@
-# Created by: Volker Stolz <vs@FreeBSD.org>
-
 PORTNAME=	gastex
 PORTVERSION=	3.0
 CATEGORIES=	textproc

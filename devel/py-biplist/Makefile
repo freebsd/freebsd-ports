@@ -1,12 +1,10 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	biplist
 PORTVERSION=	1.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Library for reading/writing binary plists
 
 LICENSE=	BSD3CLAUSE

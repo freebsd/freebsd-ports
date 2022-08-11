@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@FreeBSD.org>
-
 PORTNAME=	gio-sharp
 PORTVERSION=	2.22.3
 PORTREVISION=	1

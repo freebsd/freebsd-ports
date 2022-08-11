@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Text-Context
 PORTVERSION=	3.7
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Yonatan <onatan@gmail.com>
-
 PORTNAME=	memdump
 PORTVERSION=	1.01
 CATEGORIES=	sysutils

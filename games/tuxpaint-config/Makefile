@@ -1,22 +1,20 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	tuxpaint-config
-PORTVERSION=	0.0.13
-PORTREVISION=	1
+PORTVERSION=	0.0.19
 CATEGORIES=	games
 MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Graphical tool to change TuxPaint settings
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 LIB_DEPENDS=	libpaper.so:print/libpaper \
-		libfltk.so:x11-toolkits/fltk
+		libfltk.so:x11-toolkits/fltk \
+		libunibreak.so:textproc/libunibreak
 RUN_DEPENDS=	tuxpaint:games/tuxpaint
 
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		MAN_PREFIX="${MANPREFIX}/man" \
 		GNOME_PREFIX="${PREFIX}" \

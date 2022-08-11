@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Image-MetaData-JPEG
 PORTVERSION=	0.153
 PORTREVISION=	1

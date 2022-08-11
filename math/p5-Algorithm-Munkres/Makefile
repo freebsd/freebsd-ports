@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Algorithm-Munkres
 PORTVERSION=	0.08
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Stéphane D'Alu <sdalu@sdalu.com>
-
 PORTNAME=	json_schema
 PORTVERSION=	0.21.0
 CATEGORIES=	devel rubygems

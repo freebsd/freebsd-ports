@@ -1,5 +1,3 @@
-# Created by: Qing Feng <qingfeng@douban.com>
-
 PORTNAME=	Scrapy
 DISTVERSION=	2.5.1
 CATEGORIES=	www python

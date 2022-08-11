@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	Data-UUID
 PORTVERSION=	1.226
 CATEGORIES=	devel perl5

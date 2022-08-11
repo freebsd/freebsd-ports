@@ -1,7 +1,5 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	oslo.middleware
-PORTVERSION=	4.5.1
+PORTVERSION=	5.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.3:security/py-bcrypt@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.20.0:devel/py-stevedore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.8.0:www/py-webob@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

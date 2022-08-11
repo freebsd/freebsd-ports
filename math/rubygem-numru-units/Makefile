@@ -1,5 +1,3 @@
-# Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-
 PORTNAME=	numru-units
 PORTVERSION=	1.9.0
 CATEGORIES=	math rubygems

@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	mongrel2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12.2

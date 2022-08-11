@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	python-multipart
 PORTVERSION=	0.0.5
 CATEGORIES=	www python

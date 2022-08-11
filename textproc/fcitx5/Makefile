@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	fcitx5
 DISTVERSION=	5.0.11
 PORTREVISION=	1

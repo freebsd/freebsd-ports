@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	morse
 PORTVERSION=	2.5
 CATEGORIES=	comms hamradio

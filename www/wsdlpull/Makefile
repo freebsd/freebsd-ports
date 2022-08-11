@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	wsdlpull
 PORTVERSION=	1.24
 PORTREVISION=	3

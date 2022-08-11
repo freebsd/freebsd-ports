@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	namespace-clean
 PORTVERSION=	0.27
 CATEGORIES=	devel perl5

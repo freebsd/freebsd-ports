@@ -1,5 +1,3 @@
-# Created by: michael johnson <ahze@ahze.net>
-
 PORTNAME=	premake
 PORTVERSION=	3.7
 PORTREVISION=	1

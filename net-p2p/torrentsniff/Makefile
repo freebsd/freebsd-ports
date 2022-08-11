@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@oook.cz>
-
 PORTNAME=	torrentsniff
 PORTVERSION=	0.3.0
 PORTREVISION=	1

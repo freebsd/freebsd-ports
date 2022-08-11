@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=		Crypt-Solitaire
 PORTVERSION=		2.0
 PORTREVISION=	1

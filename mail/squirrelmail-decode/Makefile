@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	squirrelmail-decode
 PORTVERSION=	1.2
 PORTREVISION=	1

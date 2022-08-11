@@ -1,5 +1,3 @@
-# Created by: Andrey <gugu@zoo.rambler.ru>
-
 PORTNAME=	Algorithm-FloodControl
 PORTVERSION=	2.001000
 PORTREVISION=	2

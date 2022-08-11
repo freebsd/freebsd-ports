@@ -1,5 +1,3 @@
-# Created by: Balwinder S "bsd" Dheeman <bsd@rubyforge.org>
-
 PORTNAME=	ta-lib
 PORTVERSION=	0.4.0
 PORTREVISION=	2

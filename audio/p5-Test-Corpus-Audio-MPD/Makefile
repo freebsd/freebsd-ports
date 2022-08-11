@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Test-Corpus-Audio-MPD
 PORTVERSION=	1.120990
 PORTREVISION=	1

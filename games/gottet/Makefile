@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	gottet
 PORTVERSION=	1.2.0
 DISTVERSIONSUFFIX=	-src

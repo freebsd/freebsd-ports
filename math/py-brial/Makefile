@@ -1,7 +1,5 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	brial
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.11
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,5 +18,7 @@ USES=		python:3.6+
 
 WRKSRC_SUBDIR=	sage-brial
 USE_PYTHON=	distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

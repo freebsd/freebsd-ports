@@ -1,5 +1,3 @@
-# Created by: yukinopo@livedoor.com
-
 PORTNAME=	phplot
 PORTVERSION=	6.2.0
 PORTREVISION=	2

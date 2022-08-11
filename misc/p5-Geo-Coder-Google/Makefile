@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	Geo-Coder-Google
 PORTVERSION=	0.20
 CATEGORIES=	misc geography perl5

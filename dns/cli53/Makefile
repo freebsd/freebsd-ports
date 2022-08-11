@@ -1,8 +1,6 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	cli53
 DISTVERSION=	0.8.18
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	dns
 
 MAINTAINER=	meta@FreeBSD.org

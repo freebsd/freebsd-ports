@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	xmascot
 PORTVERSION=	2.6a.20200830
 DISTVERSIONPREFIX=	v

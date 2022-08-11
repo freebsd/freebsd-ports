@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	tkhylafax
 PORTVERSION=	3.2b
 PORTREVISION=	6

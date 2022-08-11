@@ -1,9 +1,9 @@
---- conf/jetty-requestlog.xml.orig	2016-09-17 19:33:10 UTC
-+++ conf/jetty-requestlog.xml
-@@ -27,7 +27,7 @@
+--- conf/jetty-requestlog.xml	2022-03-23 19:24:46.000000000 +0100
++++ conf/jetty-requestlog.xml	2022-04-06 21:10:27.448020000 +0200
+@@ -22,7 +22,7 @@
          <New id="RequestLogHandler" class="org.eclipse.jetty.server.handler.RequestLogHandler">
            <Set name="requestLog">
-             <New id="LogbackRequestLog" class="ch.qos.logback.access.jetty.RequestLogImpl">
+             <New id="LogbackRequestLog" class="ch.qos.logback.access.jetty.RequestLogImpl2">
 -              <Set name="fileName"><Property name="bundleBasedir"/>/conf/logback-access.xml</Set>
 +              <Set name="fileName"><Property name="nexus-conf"/>/logback-access.xml</Set>
                <Set name="quiet">true</Set>

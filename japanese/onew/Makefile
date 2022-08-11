@@ -1,5 +1,3 @@
-# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-
 PORTNAME=	onew
 PORTVERSION=	2.2.10
 PORTREVISION=	2

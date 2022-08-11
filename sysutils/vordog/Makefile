@@ -1,5 +1,3 @@
-# Created by: Kueifeng Li <thinker@branda.to>
-
 PORTNAME=	vordog
 PORTVERSION=	20080708
 CATEGORIES=	sysutils

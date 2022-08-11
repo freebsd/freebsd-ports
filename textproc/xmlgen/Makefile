@@ -1,5 +1,3 @@
-# Created by: Sébastien Santoro <dereckson@gmail.com>
-
 PORTNAME=	xmlgen
 PORTVERSION=	1.4
 CATEGORIES=	textproc tcl

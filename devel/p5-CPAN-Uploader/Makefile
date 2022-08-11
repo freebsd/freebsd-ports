@@ -1,5 +1,3 @@
-# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-
 PORTNAME=	CPAN-Uploader
 PORTVERSION=	0.103013
 PORTREVISION=	1

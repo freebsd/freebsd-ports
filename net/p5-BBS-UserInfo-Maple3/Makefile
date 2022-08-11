@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	BBS-UserInfo-Maple3
 PORTVERSION=	0.01
 PORTREVISION=	1

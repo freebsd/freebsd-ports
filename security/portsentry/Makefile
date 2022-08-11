@@ -1,5 +1,3 @@
-# Created by: chris@still.whet.org
-
 PORTNAME=	portsentry
 PORTVERSION=	1.2
 PORTREVISION=	1

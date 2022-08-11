@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	sleuth
 PORTVERSION=	1.4.4
 CATEGORIES=	dns

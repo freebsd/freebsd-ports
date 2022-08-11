@@ -1,5 +1,3 @@
-# Created by: Jase Thew <freebsd@beardz.net>
-
 PORTNAME=	POE-Component-Resolver
 PORTVERSION=	0.921
 PORTREVISION=	2

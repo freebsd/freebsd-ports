@@ -1,5 +1,3 @@
-# Created by: anhot
-
 PORTNAME=	sswf
 PORTVERSION=	1.8.4
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Janne Snabb <snabb@epipe.com>
-
 PORTNAME=	scam-backscatter
 PORTVERSION=	1.5.1
 PORTREVISION=	2

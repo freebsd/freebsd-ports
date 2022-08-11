@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	ssamtfe
 PORTVERSION=	1.05b3
 PORTREVISION=	1

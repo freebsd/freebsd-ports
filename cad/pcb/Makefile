@@ -1,5 +1,3 @@
-# Created by: Michael Reifenberger <mr@FreeBSD.org>
-
 PORTNAME=	pcb
 PORTVERSION=	4.2.0
 PORTREVISION=	2

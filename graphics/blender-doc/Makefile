@@ -1,5 +1,3 @@
-# Created by: Alex Ivasyuv <siegerstein@pochta.ru>
-
 PORTNAME=	blender
 PORTVERSION=	2.3
 CATEGORIES=	graphics

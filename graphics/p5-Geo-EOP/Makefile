@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Geo-EOP
 PORTVERSION=	0.50
 CATEGORIES=	graphics perl5

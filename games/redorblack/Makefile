@@ -1,5 +1,3 @@
-# Created by: buratello@easy.com
-
 PORTNAME=	redorblack
 PORTVERSION=	1.0
 CATEGORIES=	games

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Search-Estraier
 PORTVERSION=	0.09
 PORTREVISION=	3

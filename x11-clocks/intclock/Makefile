@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	intclock
 PORTVERSION=	2.13
 PORTREVISION=	2

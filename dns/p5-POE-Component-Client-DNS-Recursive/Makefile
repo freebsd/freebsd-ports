@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	POE-Component-Client-DNS-Recursive
 PORTVERSION=	1.12
 CATEGORIES=	dns perl5

@@ -1,5 +1,3 @@
-# Created by: Dmitry Liakh <dliakh@ukr.net>
-
 PORTNAME=	Mobile-UserAgent
 PORTVERSION=	1.05
 PORTREVISION=	1

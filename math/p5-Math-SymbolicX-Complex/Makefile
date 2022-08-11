@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-SymbolicX-Complex
 PORTVERSION=	1.01
 PORTREVISION=	1

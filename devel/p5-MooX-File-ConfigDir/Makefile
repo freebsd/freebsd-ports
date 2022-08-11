@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MooX-File-ConfigDir
 PORTVERSION=	0.008
 CATEGORIES=	devel perl5

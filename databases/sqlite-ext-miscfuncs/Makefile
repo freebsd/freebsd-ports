@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	sqlite-ext-miscfuncs
 PORTVERSION=	1.1
 PORTREVISION=	2

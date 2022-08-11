@@ -1,6 +1,8 @@
 include/ortp/b64.h
 include/ortp/event.h
+include/ortp/fecstream.h
 include/ortp/logging.h
+include/ortp/nack.h
 include/ortp/ortp.h
 include/ortp/payloadtype.h
 include/ortp/port.h
@@ -13,10 +15,10 @@ include/ortp/sessionset.h
 include/ortp/str_utils.h
 include/ortp/telephonyevents.h
 include/ortp/utils.h
+lib/cmake/ortp/ortpConfig.cmake
+lib/cmake/ortp/ortpConfigVersion.cmake
+lib/cmake/ortp/ortpTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ortp/ortpTargets.cmake
 lib/libortp.so
-lib/libortp.so.13
+lib/libortp.so.15
 libdata/pkgconfig/ortp.pc
-share/oRTP/cmake/ORTPConfig.cmake
-share/oRTP/cmake/ORTPConfigVersion.cmake
-share/oRTP/cmake/ORTPTargets-%%CMAKE_BUILD_TYPE%%.cmake
-share/oRTP/cmake/ORTPTargets.cmake

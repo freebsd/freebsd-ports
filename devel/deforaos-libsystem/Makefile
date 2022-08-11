@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	libsystem
 PORTVERSION=	0.3.1
 PORTREVISION=	1

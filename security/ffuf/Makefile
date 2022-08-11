@@ -1,9 +1,7 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	ffuf
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.3.1
-PORTREVISION=	1
+DISTVERSION=	1.5.0
+PORTREVISION=	3
 CATEGORIES=	security www
 
 MAINTAINER=	0xdutra@gmail.com

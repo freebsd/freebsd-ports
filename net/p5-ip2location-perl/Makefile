@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	ip2location-perl
 PORTVERSION=	20180302
 CATEGORIES=	net

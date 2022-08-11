@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Stat-lsMode
 PORTVERSION=	0.50
 PORTREVISION=	1

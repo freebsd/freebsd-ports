@@ -1,5 +1,3 @@
-# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-
 PORTNAME=	epsonepl
 PORTVERSION=	0.2.2
 PORTREVISION=	6

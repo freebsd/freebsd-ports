@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	9base
 PORTVERSION=	20170701
 CATEGORIES=	devel

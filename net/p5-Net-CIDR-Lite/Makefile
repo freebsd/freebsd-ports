@@ -1,5 +1,3 @@
-# Created by: mharo@FreeBSD.org
-
 PORTNAME=	Net-CIDR-Lite
 PORTVERSION=	0.22
 CATEGORIES=	net perl5

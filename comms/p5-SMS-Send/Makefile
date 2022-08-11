@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	SMS-Send
 PORTVERSION=	1.06
 PORTREVISION=	1

@@ -42,5 +42,5 @@
 -#INCLUDES		+= -isystem$(SDKSTAGE)/usr/include -isystem$(SDKSTAGE)/opt/vc/include -isystem$(SYSROOT)/usr/include -isystem$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -isystem$(SDKSTAGE)/usr/include/freetype2
 -INCLUDES		+= -isystem$(SDKSTAGE)/opt/vc/include -isystem$(SYSROOT)/usr/include -isystem$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -Ipcre/build -Iboost-trunk -Ifreetype2/include
 +CFLAGS			+= -fomit-frame-pointer
-+LDFLAGS			+= -L$(LOCALBASE)/lib -L$(LOCALBASE)/lib/ffmpeg
-+INCLUDES		+= -I$(LOCALBASE)/include -I$(LOCALBASE)/include/interface/vcos/pthreads -I$(LOCALBASE)/include/interface/vmcs_host/linux -I$(LOCALBASE)/lib/dbus-1.0/include
++LDFLAGS			+= -L$(LOCALBASE)/share/vc/lib -L$(LOCALBASE)/lib -L$(LOCALBASE)/lib/ffmpeg
++INCLUDES		+= -I$(LOCALBASE)/share/vc/include -I$(LOCALBASE)/include -I$(LOCALBASE)/share/vc/include/interface/vcos/pthreads -I$(LOCALBASE)/share/vc/include/interface/vmcs_host/linux -I$(LOCALBASE)/lib/dbus-1.0/include

@@ -1,5 +1,3 @@
-# Created by: Mike Bristow <mike@urgle.com>
-
 PORTNAME=	XML-Descent
 PORTVERSION=	1.04
 PORTREVISION=	1

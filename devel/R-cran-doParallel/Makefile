@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	doParallel
 PORTVERSION=	1.0.17
 CATEGORIES=	devel

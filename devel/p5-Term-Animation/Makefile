@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	Term-Animation
 PORTVERSION=	2.6
 PORTREVISION=	1

@@ -1,8 +1,6 @@
-# Created by: Martin Blapp
-
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -51,6 +49,7 @@ LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 BROKEN_powerpc64=	fails to compile: aoo-4.2.0/main/solver/420/unxfbsdppc64.pro/inc/stl/vector:31:11: fatal error: boost/tr1/tr1/vector: No such file or directory
+BROKEN=		does not build: fails to build vcl module with C++ errors in boost
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
@@ -61,6 +60,7 @@ BUILD_DEPENDS=								\
 		epm:devel/epm						\
 		${LOCALBASE}/bin/gperf:devel/gperf			\
 		imake:devel/imake					\
+		libunwind>=20211201_1:devel/libunwind			\
 		gpatch:devel/patch					\
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends	\
 		${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
@@ -190,7 +190,7 @@ GNOME_LIB_DEPENDS=		libdbus-1.so:devel/dbus \
 				libdbus-glib-1.so:devel/dbus-glib
 
 MMEDIA_CONFIGURE_ENABLE=	gstreamer
-MMEDIA_USE=			GSTREAMER1=yes
+MMEDIA_USES=			gstreamer
 
 MYSQL_CONFIGURE_ENABLE=		mysql-connector
 MYSQL_CONFIGURE_WITH=		system-mysql
@@ -229,6 +229,13 @@ WITH=	SDK
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( \
+    (${OSVERSION} >= 1300525 && ${OSVERSION} < 1301000) || \
+    (${OSVERSION} >= 1301500 && ${OSVERSION} < 1301502) || \
+    (${OSVERSION} >= 1400051 && ${OSVERSION} < 1400057))
+BROKEN=	please update FreeBSD base system first to fix an ABI incompatibility
+.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-symbols

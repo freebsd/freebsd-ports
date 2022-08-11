@@ -1,5 +1,14 @@
 --- make/Makefile.orig	2022-01-13 23:40:10 UTC
 +++ make/Makefile
+@@ -68,7 +68,7 @@ APBS_LIBS = -lapbsmainroutines -lapbs -lmaloc -lapbsbl
+ 
+ F77 = gfortran
+ F77FLAGS = -c
+-OPTFLAGS = -Ofast -march=native -fopenmp
++OPTFLAGS = -Ofast -fopenmp
+ #OPTFLAGS = -Ofast -msse3 -fopenmp
+ #OPTFLAGS = -Og -fbacktrace -fcheck=bounds -Wunused -Wmaybe-uninitialized
+ LIBDIR = -L. -L$(TINKER_LIBDIR)/linux -Wl,--no-as-needed -ldl
 @@ -803,136 +803,136 @@ listing:
  	cat *.f *.c > tinker.txt
  

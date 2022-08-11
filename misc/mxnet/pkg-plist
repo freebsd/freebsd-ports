@@ -129,5 +129,4 @@ include/nnvm/pass.h
 include/nnvm/pass_functions.h
 include/nnvm/symbolic.h
 include/nnvm/tuple.h
-lib/libmxnet.a
 lib/libmxnet.so

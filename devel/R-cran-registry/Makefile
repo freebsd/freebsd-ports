@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	registry
 DISTVERSION=	0.5-1
 PORTREVISION=	2

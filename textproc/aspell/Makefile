@@ -1,5 +1,3 @@
-# Created by: Josh Gilliam <josh@quick.net>
-
 PORTNAME=	aspell
 PORTVERSION=	0.60.8
 PORTREVISION=	1

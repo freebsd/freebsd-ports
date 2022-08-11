@@ -1,15 +1,12 @@
-# Created by: Beech Rintoul <beech@FreeBSD.org>
-
 PORTNAME=	mnemosyne
-PORTVERSION=		2.7.3
-PORTREVISION=	4
+PORTVERSION=		2.9
 PORTEPOCH=	1
 CATEGORIES=	games education python
 MASTER_SITES=	SF/mnemosyne-proj/${PORTNAME}/${PORTNAME}-${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Mnemosyne-${DISTVERSION}
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash-card tool which optimises your learning process
 
 LICENSE=	LGPL3

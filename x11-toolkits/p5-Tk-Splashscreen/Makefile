@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Tk-Splashscreen
 PORTVERSION=	1.0
 PORTREVISION=	5

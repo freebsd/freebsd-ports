@@ -45,24 +45,26 @@ FIREBIRD_DEFAULT?=	2.5
 FORTRAN_DEFAULT?=	gfortran
 # Possible values: 3.2.2
 FPC_DEFAULT?=		3.2.2
-# Possible values: 8 (last to support powerpcspe), 9, 10, 11
+# Possible values: 8 (last to support powerpcspe), 9, 10, 11, 12
 # (Any other version is completely unsupported and not meant for general use.)
 .  if ${ARCH} == "powerpcspe"
 GCC_DEFAULT?=		8
 .  else
-GCC_DEFAULT?=		10
+GCC_DEFAULT?=		11
 .  endif
 # Possible values: mesa-libs, mesa-devel
 GL_DEFAULT?=		mesa-libs
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
+# Possible values: 1.18, 1.19, 1.20-devel
+GO_DEFAULT?=		1.19
 # Possible values: 6, 6-nox11, 7, 7-nox11
 IMAGEMAGICK_DEFAULT?=	7
-# Possible values: 7, 8, 11, 12, 13, 14, 15, 16
+# Possible values: 7, 8, 11, 17, 18
 JAVA_DEFAULT?=		8
-# Possible values: 2.2.0, 2.3.0
+# Possible values: 2.2.2, 2.3.0
 .  if !defined(WANT_LAZARUS_DEVEL)
-LAZARUS_DEFAULT?=       2.2.0
+LAZARUS_DEFAULT?=       2.2.2
 .  else
 LAZARUS_DEFAULT?=       2.3.0
 .  endif
@@ -74,7 +76,7 @@ LIBRSVG2_DEFAULT?=	legacy
 .  endif
 # Possible values: c7
 LINUX_DEFAULT?=		c7
-# Possible values: 70, 80, 90, 10, 11, 12, 13, -devel (to be used when non-base compiler is required)
+# Possible values: 70, 80, 90, 10, 11, 12, 13, 14, -devel (to be used when non-base compiler is required)
 # Please give notice to the Graphics Team (x11@FreeBSD.org) in advance before
 # bumping the LLVM version.
 .  if ${ARCH} == powerpc
@@ -86,11 +88,11 @@ LLVM_DEFAULT?=		90
 LUA_DEFAULT?=		5.2
 # Possible values: 5.10, 5.20, 6.8
 MONO_DEFAULT=		5.10
-# Possible values: 5.5, 5.6, 5.7, 8.0, 10.3m, 10.4m, 10.5m, 5.5p, 5.6p, 5.7p, 5.6w, 5.7w
+# Possible values: 5.6, 5.7, 8.0, 10.3m, 10.4m, 10.5m, 5.7p, 5.7w
 MYSQL_DEFAULT?=		5.7
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
-# Possible values: 5.30, 5.32, 5.34, devel
+# Possible values: 5.32, 5.34, 5.36, devel
 .  if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
 PERL5_DEFAULT?=		5.32
@@ -105,16 +107,16 @@ _PERL5_FROM_BIN!=	${LOCALBASE}/bin/perl -e 'printf "%vd\n", $$^V;'
 _EXPORTED_VARS+=	_PERL5_FROM_BIN
 PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 .  endif
-# Possible values: 10, 11, 12, 13, 14
+# Possible values: 10, 11, 12, 13, 14, 15
 PGSQL_DEFAULT?=		13
 # Possible values: 7.4, 8.0, 8.1
 PHP_DEFAULT?=		8.0
 # Possible values: 2.7, 3.7, 3.8, 3.9, 3.10, 3.11
-PYTHON_DEFAULT?=	3.8
+PYTHON_DEFAULT?=	3.9
 # Possible values: 2.7
 PYTHON2_DEFAULT?=	2.7
 # Possible values: 3.7, 3.8, 3.9, 3.10, 3.11
-PYTHON3_DEFAULT?=	3.8
+PYTHON3_DEFAULT?=	3.9
 # Possible values: 2.7, 3.0, 3.1, 3.2
 RUBY_DEFAULT?=		3.0
 # Possible values: rust, rust-nightly
@@ -163,7 +165,7 @@ TCLTK_DEFAULT?=		8.6
 # Possible values: 4, 6
 VARNISH_DEFAULT?=	4
 
-# Possible value: 14, 16, 17, lts, current
+# Possible value: 14, 16, 18, lts, current
 NODEJS_DEFAULT?=    lts
 
 .endif

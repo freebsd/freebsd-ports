@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	libdca
 PORTVERSION=	0.0.7
 CATEGORIES=	multimedia

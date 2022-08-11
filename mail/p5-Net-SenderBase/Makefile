@@ -1,5 +1,3 @@
-# Created by: J.R. Oldroyd <fbsd@opal.com>
-
 PORTNAME=	Net-SenderBase
 PORTVERSION=	1.02
 PORTREVISION=	1

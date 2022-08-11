@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Business-UPS
 PORTVERSION=	2.02
 CATEGORIES=	misc perl5

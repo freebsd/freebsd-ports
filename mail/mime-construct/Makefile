@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	mime-construct
 PORTVERSION=	1.11
 PORTREVISION=	2

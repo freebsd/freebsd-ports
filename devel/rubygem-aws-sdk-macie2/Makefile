@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-macie2
-PORTVERSION=	1.44.0
+PORTVERSION=	1.46.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	egypt
 PORTVERSION=	1.11
 CATEGORIES=	devel perl5

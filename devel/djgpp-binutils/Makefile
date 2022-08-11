@@ -1,5 +1,3 @@
-# Created by: Peter Johnson <johnson.peter@gmail.com>
-
 PORTNAME=	binutils
 PORTVERSION=	2.17
 PORTREVISION=	1

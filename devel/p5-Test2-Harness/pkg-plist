@@ -78,6 +78,7 @@ bin/yath
 %%SITE_PERL%%/Test2/Harness/Runner/Preloader/Stage.pm
 %%SITE_PERL%%/Test2/Harness/Runner/Reloader.pm
 %%SITE_PERL%%/Test2/Harness/Runner/Resource.pm
+%%SITE_PERL%%/Test2/Harness/Runner/Resource/JobCount.pm
 %%SITE_PERL%%/Test2/Harness/Runner/Run.pm
 %%SITE_PERL%%/Test2/Harness/Runner/Spawn.pm
 %%SITE_PERL%%/Test2/Harness/Runner/State.pm
@@ -177,6 +178,7 @@ bin/yath
 %%PERL5_MAN3%%/Test2::Harness::Runner::Preloader::Stage.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Runner::Reloader.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Runner::Resource.3.gz
+%%PERL5_MAN3%%/Test2::Harness::Runner::Resource::JobCount.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Runner::Run.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Runner::Spawn.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Runner::State.3.gz

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Text-Delimited
 PORTVERSION=	2.12
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Mykola Dzham <i@levsha.me>
-
 PORTNAME=	libbpm
 PORTVERSION=	0.3
 PORTREVISION=	1

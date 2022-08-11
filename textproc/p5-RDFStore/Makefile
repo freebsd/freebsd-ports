@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	RDFStore
 PORTVERSION=	0.51
 PORTREVISION=	3

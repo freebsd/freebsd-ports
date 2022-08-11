@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Sort-Naturally
 PORTVERSION=	1.03
 PORTREVISION=	1

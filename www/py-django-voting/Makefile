@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	django-voting
 PORTVERSION=	1.0
 CATEGORIES=	www python

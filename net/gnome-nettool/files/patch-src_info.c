@@ -1,4 +1,4 @@
---- src/info.c.orig	2013-05-31 00:00:21 UTC
+--- src/info.c.orig	2022-04-06 01:52:01 UTC
 +++ src/info.c
 @@ -20,6 +20,10 @@
  #include <gtk/gtk.h>
@@ -28,8 +28,8 @@
 +	{ N_("Modem Interface"),         INFO_INTERFACE_PPP,     "16_ppp.xpm",      "tun",        NULL },
  	{ N_("Parallel Line Interface"), INFO_INTERFACE_PLIP,    "16_plip.xpm",     "plip",       NULL },
  	{ N_("Infrared Interface"),      INFO_INTERFACE_IRLAN,   "irda-16.png",     "irlan",      NULL },
- 	{ N_("Loopback Interface"),      INFO_INTERFACE_LO,      "16_loopback.xpm", "lo",         NULL },
-@@ -131,9 +139,35 @@ info_get_interface_from_dev_name (const gchar *dev_nam
+ 	{ N_("Infiniband Interface"),    INFO_INTERFACE_IB,      "network.png",     "ib",         NULL },
+@@ -132,9 +140,35 @@ info_get_interface_from_dev_name (const gchar *dev_nam
  {
  	gint i;
  	gchar *path;

@@ -1,8 +1,6 @@
-# Created by: alex
-
 PORTNAME=	xine
 DISTVERSION=	1.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -160,9 +158,6 @@ XVMC_CONFIGURE_ENABLE=		xvmc
 
 .if ${ARCH} == aarch64
 BUILD_DEPENDS+=	as:devel/binutils
-.elif ${ARCH} == powerpc
-BUILD_DEPENDS+=	as:devel/binutils
-CFLAGS+=	-fno-integrated-as
 .endif
 
 .if !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL}

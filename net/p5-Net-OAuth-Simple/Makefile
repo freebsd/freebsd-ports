@@ -1,5 +1,3 @@
-# Created by: skreuzer
-
 PORTNAME=	Net-OAuth-Simple
 PORTVERSION=	1.7
 CATEGORIES=	net perl5

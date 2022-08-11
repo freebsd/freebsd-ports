@@ -1,6 +1,5 @@
 bin/remotebox
-%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
-%%PORTDOCS%%%%DOCSDIR%%/remotebox.pdf
+@comment share/applications/remotebox.desktop
 share/pixmaps/remotebox.png
 %%DATADIR%%/icons/add_host_iface_16px.png
 %%DATADIR%%/icons/arrow_down_10px.png
@@ -71,7 +70,6 @@ share/pixmaps/remotebox.png
 %%DATADIR%%/icons/hd_move_32px.png
 %%DATADIR%%/icons/hd_release_32px.png
 %%DATADIR%%/icons/hd_remove_32px.png
-%%DATADIR%%/icons/help_16px.png
 %%DATADIR%%/icons/host_iface_edit_16px.png
 %%DATADIR%%/icons/host_iface_manager_16px.png
 %%DATADIR%%/icons/hostkey_captured_16px.png
@@ -157,6 +155,7 @@ share/pixmaps/remotebox.png
 %%DATADIR%%/icons/os/Windows.png
 %%DATADIR%%/icons/os/Windows10.png
 %%DATADIR%%/icons/os/Windows10_64.png
+%%DATADIR%%/icons/os/Windows11_64.png
 %%DATADIR%%/icons/os/Windows2000.png
 %%DATADIR%%/icons/os/Windows2003.png
 %%DATADIR%%/icons/os/Windows2003_64.png
@@ -285,8 +284,6 @@ share/pixmaps/remotebox.png
 %%DATADIR%%/icons/vrdp_16px.png
 %%DATADIR%%/icons/vrdp_24px.png
 %%DATADIR%%/icons/vrdp_32px.png
-%%DATADIR%%/old_vboxService.pm
-%%DATADIR%%/old_vboxserializers.pl
 %%DATADIR%%/rbox_edit.pl
 %%DATADIR%%/rbox_edit_audio.pl
 %%DATADIR%%/rbox_edit_disp_capture.pl

@@ -1,5 +1,3 @@
-# Created by: TANAKA Hiroyuki <kattyo@abk.nu>
-
 PORTNAME=	xtr
 PORTVERSION=	1.50e.0.2
 PORTREVISION=	8

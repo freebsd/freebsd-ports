@@ -1,5 +1,3 @@
-# Created by: Kelly Yancey <kbyanc@FreeBSD.org>
-
 PORTNAME=	cclient
 PORTVERSION=	20130621
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Jason Portwood <jason@iac.net>
-
 PORTNAME=	OLE-Storage_Lite
 PORTVERSION=	0.20
 PORTREVISION=	1

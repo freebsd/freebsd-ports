@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	hashie-forbidden_attributes
 PORTVERSION=	0.1.1
 CATEGORIES=	devel rubygems

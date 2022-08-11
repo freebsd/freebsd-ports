@@ -1,5 +1,3 @@
-# Created by: pst
-
 PORTNAME=	gsm
 DISTVERSION=	1.0.19
 CATEGORIES=	audio

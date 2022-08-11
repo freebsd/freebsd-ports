@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Regexp-Bind
 PORTVERSION=	0.05
 PORTREVISION=	1

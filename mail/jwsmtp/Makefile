@@ -1,5 +1,3 @@
-# Created by: Mohammad S. Babaei <info@babaei.net>
-
 PORTNAME=	jwsmtp
 PORTVERSION=	1.32.15
 CATEGORIES=	mail

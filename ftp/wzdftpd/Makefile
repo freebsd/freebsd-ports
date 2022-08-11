@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy
-
 PORTNAME=	wzdftpd
 PORTVERSION=	0.8.3
 PORTREVISION=	8
@@ -12,7 +10,7 @@ COMMENT=	Modular FTP server configurable online using SITE commands
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf cpe gettext-tools libtool localbase pkgconfig
+USES=		autoreconf:2.69 cpe gettext-tools libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --disable-bonjour --disable-static
 INSTALL_TARGET=	install-strip

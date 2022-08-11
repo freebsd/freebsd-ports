@@ -1,4 +1,8 @@
 lib/xfce4/panel/plugins/libxkb.so
+share/icons/hicolor/128x128/apps/org.xfce.panel.xkb.png
+share/icons/hicolor/16x16/apps/org.xfce.panel.xkb.png
+share/icons/hicolor/32x32/apps/org.xfce.panel.xkb.png
+share/icons/hicolor/scalable/apps/org.xfce.panel.xkb.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-xkb-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-xkb-plugin.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-xkb-plugin.mo

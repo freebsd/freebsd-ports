@@ -1,8 +1,6 @@
-# Created by: Matt Peterson <matt@peterson.org>
-
 PORTNAME=	collectd
 PORTVERSION=	5.12.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
@@ -231,7 +229,7 @@ REDIS_CONFIGURE_ENABLE=	redis write_redis
 REDIS_CONFIGURE_WITH=	libhiredis=${LOCALBASE}
 
 RIEMANN_LIB_DEPENDS=		libltdl.so:devel/libltdl \
-				libriemann-client.so:net-mgmt/riemann-c-client
+				libriemann-client-gnutls.so:net-mgmt/riemann-c-client
 RIEMANN_CONFIGURE_ENABLE=	write_riemann
 
 RRDTOOL_LIB_DEPENDS=		librrd.so:databases/rrdtool

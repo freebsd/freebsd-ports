@@ -26,4 +26,6 @@ USE_PYTHON=	autoplist concurrent distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	linkedin
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

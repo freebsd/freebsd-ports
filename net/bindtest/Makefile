@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-
 PORTNAME=	bindtest
 PORTVERSION=	1.56
 PORTREVISION=	1

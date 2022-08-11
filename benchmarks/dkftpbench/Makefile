@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
-
 PORTNAME=	dkftpbench
 PORTVERSION=	0.45
 PORTREVISION=	2

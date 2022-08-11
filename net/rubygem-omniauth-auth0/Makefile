@@ -1,7 +1,6 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-
 PORTNAME=	omniauth-auth0
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +9,11 @@ COMMENT=	Authentication broker supporting different identity providers
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.1:net/rubygem-omniauth-oauth2
+RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.4<2:net/rubygem-omniauth-oauth2
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>

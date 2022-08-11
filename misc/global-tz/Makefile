@@ -1,5 +1,3 @@
-# Created by: Philip Paeps <philip@FreeBSD.org>
-
 PORTNAME=	global-tz
 DISTVERSION=	2022agtz
 CATEGORIES=	misc

@@ -1,5 +1,3 @@
-# Created by: GreenDog <fiziologus@gmail.com>
-
 PORTNAME=	lua
 PORTVERSION=	5.1.5
 PORTREVISION=	9

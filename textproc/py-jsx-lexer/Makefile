@@ -1,5 +1,5 @@
 PORTNAME=	jsx-lexer
-PORTVERSION=	1.0.0
+PORTVERSION=	2.0.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ COMMENT=	JSX lexer for Pygments
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=2.7:textproc/py-pygments@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=2.9.0:textproc/py-pygments@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils

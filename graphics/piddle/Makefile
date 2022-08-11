@@ -1,5 +1,3 @@
-# Created by: dom@happygiraffe.net
-
 PORTNAME=	piddle
 PORTVERSION=	1.0.15
 PORTEPOCH=	1

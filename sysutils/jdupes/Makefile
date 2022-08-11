@@ -1,5 +1,3 @@
-# Created by: Thomas Hurst <tom@hur.st>
-
 PORTNAME=	jdupes
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.19.2

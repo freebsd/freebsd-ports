@@ -1,5 +1,3 @@
-# Created by: Julien Laffaye <kimelto@gmail.com>
-
 PORTNAME=	bgs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8

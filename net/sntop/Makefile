@@ -1,5 +1,3 @@
-# Created by: Matt Emmerton <matt@gsicomp.on.ca>
-
 PORTNAME=	sntop
 PORTVERSION=	1.4.3
 PORTREVISION=	1

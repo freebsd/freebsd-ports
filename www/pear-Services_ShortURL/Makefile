@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Services_ShortURL
 PORTVERSION=	0.3.1
 CATEGORIES=	www pear

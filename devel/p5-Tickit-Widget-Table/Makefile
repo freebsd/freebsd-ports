@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Tickit-Widget-Table
 PORTVERSION=	0.216
 CATEGORIES=	devel perl5

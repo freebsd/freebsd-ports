@@ -141,7 +141,7 @@ chroot_autoupdate()
 	# The OpenSSL engines and BIND9 plugins should be present in the
 	# chroot, named loads them after chrooting.
 	null_mount_or_copy ${_openssl_engines}
-	null_mount_or_copy %%PREFIX%%/lib/named
+	null_mount_or_copy %%PREFIX%%/lib/bind
 
 	# Copy and/or update key files to the chroot /etc
 	#
@@ -225,7 +225,7 @@ named_stop()
 named_poststop()
 {
 	if [ -n "${named_chrootdir}" ]; then
-		null_umount %%PREFIX%%/lib/named
+		null_umount %%PREFIX%%/lib/bind
 		null_umount ${_openssl_engines}
 		if [ -c ${named_chrootdir}/dev/null ]; then
 			# unmount /dev

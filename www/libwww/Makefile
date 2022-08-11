@@ -1,5 +1,3 @@
-# Created by: torstenb
-
 PORTNAME=	libwww
 PORTVERSION=	5.4.2
 CATEGORIES=	www devel

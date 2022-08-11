@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	makiki
 PORTVERSION=	0.3
 DISTVERSIONPREFIX=	release_

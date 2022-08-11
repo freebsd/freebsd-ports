@@ -1,5 +1,3 @@
-# Created by: Dermot Tynan <dtynan@kalopa.com>
-
 PORTNAME=	beanie
 PORTVERSION=	0.8.2
 PORTREVISION=	1

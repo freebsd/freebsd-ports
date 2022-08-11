@@ -1,5 +1,3 @@
-# Created by: Stefan A. Deutscher (sad@mailaps.org)
-
 PORTNAME=	renattach
 PORTVERSION=	1.2.4
 PORTREVISION=	1

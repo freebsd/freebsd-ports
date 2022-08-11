@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	sdl_image
 PORTVERSION=	1.2.12
 DISTVERSIONSUFFIX=	-11.el7

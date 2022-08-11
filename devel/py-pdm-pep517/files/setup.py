@@ -34,7 +34,7 @@ setup_kwargs = {
     'long_description_content_type': 'text/markdown',
     'keywords': ['packaging', 'PEP 517', 'build'],
     'classifiers': [
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',

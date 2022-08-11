@@ -1,7 +1,5 @@
-# Created by: gahr
-
 PORTNAME=	carddav
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.2
 DISTVERSIONPREFIX=v
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/mstilkerich/rcmcarddav/releases/download/${DISTVERSIONFULL}/
@@ -13,10 +11,10 @@ COMMENT=	Roundcube CardDAV plugin
 
 LICENSE=	GPLv2
 
-IGNORE_WITH_PHP=81
+IGNORE_WITH_PHP=81 82
 
-BUILD_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
-RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
+BUILD_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.5:mail/roundcube@${PHP_FLAVOR}
+RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.5:mail/roundcube@${PHP_FLAVOR}
 
 USES=		php:flavors
 

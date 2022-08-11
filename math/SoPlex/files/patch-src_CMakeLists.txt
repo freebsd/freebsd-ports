@@ -1,22 +1,22 @@
 - Change to shared libraries.
 
---- src/CMakeLists.txt.orig	2021-05-27 15:31:06 UTC
+--- src/CMakeLists.txt.orig	2022-01-19 13:02:23 UTC
 +++ src/CMakeLists.txt
-@@ -119,7 +119,7 @@ file(GLOB headers
- )
+@@ -129,7 +129,7 @@ if(MSVC)
+ endif()
  
-     # create soplex library with pic
--    add_library(libsoplex-pic STATIC ${sources})
-+    add_library(libsoplex-pic SHARED ${sources})
-     set_target_properties(libsoplex-pic PROPERTIES
-     POSITION_INDEPENDENT_CODE on
-     VERSION ${SOPLEX_VERSION_MAJOR}.${SOPLEX_VERSION_MINOR}.${SOPLEX_VERSION_PATCH}.${SOPLEX_VERSION_SUB}
-@@ -128,7 +128,7 @@ add_dependencies(libsoplex-pic soplex_update_githash)
+ # create soplex library with pic
+-add_library(libsoplex-pic STATIC ${sources})
++add_library(libsoplex-pic SHARED ${sources})
+ if(MSVC)
+     setLibProperties(libsoplex-pic "libsoplex-pic")
+ else()
+@@ -148,7 +148,7 @@ target_include_directories(libsoplex-pic PUBLIC
  target_link_libraries(libsoplex-pic ${libs})
  
  # create soplex library without pic
 -add_library(libsoplex STATIC ${sources})
 +add_library(libsoplex SHARED ${sources})
- set_target_properties(libsoplex PROPERTIES
-     VERSION ${SOPLEX_VERSION_MAJOR}.${SOPLEX_VERSION_MINOR}.${SOPLEX_VERSION_PATCH}.${SOPLEX_VERSION_SUB}
-     SOVERSION ${SOPLEX_VERSION_MAJOR}.${SOPLEX_VERSION_MINOR})
+ if(MSVC)
+     setLibProperties(libsoplex "libsoplex")
+ else()

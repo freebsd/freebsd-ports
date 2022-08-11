@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	optik
 PORTVERSION=	1.5.3
 CATEGORIES=	devel python

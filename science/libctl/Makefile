@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libctl
 DISTVERSION=	4.5.0
 CATEGORIES=	science math

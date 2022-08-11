@@ -1,5 +1,5 @@
-TIMESTAMP = 1642410957
-SHA256 (gdb-11.2.tar.xz) = 1497c36a71881b8671a9a84a0ee40faab788ca30d7ba19d8463c3cc787152e32
-SIZE (gdb-11.2.tar.xz) = 22039420
+TIMESTAMP = 1651512279
+SHA256 (gdb-12.1.tar.xz) = 0e1793bf8f2b54d53f46dea84ccfd446f48f81b297b28c4f7fc017b818d69fed
+SIZE (gdb-12.1.tar.xz) = 22470332
 SHA256 (bsdjhb-libcxx-gdbpy-03d0d9b_GH0.tar.gz) = 2c1563f361d4fb59b54b1b39bff5cdf609d73962758eb05a8cdfe2c22551b259
 SIZE (bsdjhb-libcxx-gdbpy-03d0d9b_GH0.tar.gz) = 6052

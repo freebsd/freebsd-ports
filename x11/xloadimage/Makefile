@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	xloadimage
 PORTVERSION=	4.1.24
 CATEGORIES=	x11 graphics

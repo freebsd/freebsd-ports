@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	net-pop
 PORTVERSION=	0.1.1
 PORTREVISION=	1

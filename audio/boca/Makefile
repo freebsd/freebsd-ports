@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	1.0.5
 DISTVERSIONPREFIX=	v

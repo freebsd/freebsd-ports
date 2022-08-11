@@ -1,5 +1,3 @@
-# Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
-
 PORTNAME=	pngcrush
 PORTVERSION=	1.8.13
 CATEGORIES=	graphics

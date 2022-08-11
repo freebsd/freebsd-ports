@@ -1,5 +1,3 @@
-# Created by: Hiroyuki Iwatsuki <don@na.rim.or.jp>
-
 PKGNAMEPREFIX=	ruby-
 
 MAINTAINER=	lev@FreeBSD.org

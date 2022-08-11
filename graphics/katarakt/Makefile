@@ -1,8 +1,6 @@
-# Created by: Kurt Kanzenbach <kurt@kmk-computers.de>
-
 PORTNAME=	katarakt
 PORTVERSION=	0.2
-PORTREVISION=	15
+PORTREVISION=	20
 CATEGORIES=	graphics
 
 MAINTAINER=	kurt@kmk-computers.de

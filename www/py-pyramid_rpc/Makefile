@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	pyramid_rpc
 PORTVERSION=	0.8
 CATEGORIES=	www python

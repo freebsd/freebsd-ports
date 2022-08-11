@@ -1,0 +1,5 @@
+Firmware modules for the drm-kmod drivers.
+
+Firmware files for Radeon GPUs supported by the radeonkms driver.
+
+WWW: https://github.com/freebsd/drm-kmod-firmware

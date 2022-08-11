@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@FreeBSD.org>)
-
 PORTNAME=	Cache
 PORTVERSION=	1.5.6
 PORTREVISION=	1

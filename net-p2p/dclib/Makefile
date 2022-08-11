@@ -1,5 +1,3 @@
-# Created by: Sverrir Valgeirsson <e96sv@yahoo.se> and
-
 PORTNAME=	dclib
 PORTVERSION=	0.3.23
 PORTREVISION=	7

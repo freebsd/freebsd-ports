@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	binutils
 PORTVERSION=	2.27
 PORTREVISION=	1

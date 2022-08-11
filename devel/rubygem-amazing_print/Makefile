@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	amazing_print
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems

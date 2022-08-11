@@ -1,5 +1,3 @@
-# Created by: Enrico M. Crisostomo <enrico.m.crisostomo@gmail.com>
-
 PORTNAME=	fswatch
 DISTVERSION=	1.13.0
 PORTREVISION=	2

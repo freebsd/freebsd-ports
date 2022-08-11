@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Text-Report
 PORTVERSION=	1.004
 PORTREVISION=	1

@@ -1,7 +1,6 @@
 PORTNAME=		sensu-go
 DISTVERSION=		5.11.1
-PORTREVISION=	1
-PORTREVISION=		1
+PORTREVISION=		4
 CATEGORIES=		sysutils
 
 MAINTAINER=		jp+ports@supplntr.io

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-Log-Log4perl
 PORTVERSION=	0.32
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	leafpak
 PORTVERSION=	1.1.1
 CATEGORIES=	graphics

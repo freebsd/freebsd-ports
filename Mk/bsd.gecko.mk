@@ -78,8 +78,8 @@ BINARY_ALIAS+=	python3=${PYTHON_CMD}
 BUNDLE_LIBS=	yes
 
 BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
-				rust-cbindgen>=0.19.0:devel/rust-cbindgen \
-				${RUST_DEFAULT}>=1.59.0:lang/${RUST_DEFAULT} \
+				rust-cbindgen>=0.24.3:devel/rust-cbindgen \
+				${RUST_DEFAULT}>=1.62.0:lang/${RUST_DEFAULT} \
 				node:www/node
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 RUN_DEPENDS+=	${LOCALBASE}/lib/libpci.so:devel/libpci
@@ -95,11 +95,12 @@ MOZ_OPTIONS+=	--with-libclang-path="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib"
 .    if !exists(/usr/bin/llvm-objdump)
 MOZ_EXPORT+=	LLVM_OBJDUMP="${LOCALBASE}/bin/llvm-objdump${LLVM_DEFAULT}"
 .    endif
-# Ignore Mk/bsd.default-versions.mk but respect make.conf(5) unless LTO is enabled
-.    if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*} || ${PORT_OPTIONS:MLTO}
+# fix LLVM to version 13, as that's the only reasonable wasi-toolchain
+# we currently have
+#    if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*} || ${PORT_OPTIONS:MLTO}
 LLVM_DEFAULT=	13 # chase bundled LLVM in lang/rust for LTO
 LLVM_VERSION=	13.0.1 # keep in sync with devel/wasi-compiler-rt${LLVM_DEFAULT}
-.    endif
+#    endif
 # Require newer Clang than what's in base system unless user opted out
 .    if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
@@ -118,7 +119,7 @@ MOZILLA_PLIST_DIRS?=	bin lib share/pixmaps share/applications
 # Adjust -C target-cpu if -march/-mcpu is set by bsd.cpu.mk
 .    if ${ARCH} == amd64 || ${ARCH} == i386
 RUSTFLAGS+=	${CFLAGS:M-march=*:S/-march=/-C target-cpu=/}
-.    elif ${ARCH:Mpowerpc64*}
+.    elif ${ARCH:Mpowerpc*}
 RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/:S/power/pwr/}
 .    else
 RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
@@ -270,10 +271,18 @@ MOZ_OPTIONS+=	--disable-pulseaudio
 
 .    if ${PORT_OPTIONS:MSNDIO}
 BUILD_DEPENDS+=	${LOCALBASE}/include/sndio.h:audio/sndio
+.      if ${MOZILLA_VER:R:R} < 100
 post-patch-SNDIO-on:
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
 		-e '/DISABLE_LIBSNDIO_DLOPEN/d' \
 		${MOZSRC}/media/libcubeb/src/moz.build
+.      else
+MOZ_OPTIONS+=	--enable-sndio
+.      endif
+.    else
+.      if ${MOZILLA_VER:R:R} >= 100
+MOZ_OPTIONS+=	--disable-sndio
+.      endif
 .    endif
 
 .    if ${PORT_OPTIONS:MDEBUG}
@@ -328,9 +337,6 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 .      endif
 .    elif ${ARCH:Mpowerpc*}
 BUILD_DEPENDS+=	as:devel/binutils
-.      if ${ARCH} == "powerpc64"
-MOZ_EXPORT+=	UNAME_m="${ARCH}"
-.      endif
 .    endif
 
 .  else # bsd.port.post.mk

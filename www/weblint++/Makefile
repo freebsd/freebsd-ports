@@ -1,5 +1,3 @@
-# Created by: aaron@FreeBSD.org
-
 PORTNAME=	weblint++
 PORTVERSION=	1.15
 PORTREVISION=	3

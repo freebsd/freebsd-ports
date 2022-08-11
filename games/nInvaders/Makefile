@@ -1,12 +1,10 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	nInvaders
 PORTVERSION=	0.1.1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	ninvaders-${PORTVERSION}
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Space Invaders clone for ncurses
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: alienBlock

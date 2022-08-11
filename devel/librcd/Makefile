@@ -1,5 +1,3 @@
-# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-
 PORTNAME=	librcd
 PORTVERSION=	0.1.14
 PORTREVISION=	2

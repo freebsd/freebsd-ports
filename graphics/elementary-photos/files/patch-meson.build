@@ -1,0 +1,10 @@
+--- meson.build.orig	2022-02-01 18:38:16 UTC
++++ meson.build
+@@ -6,7 +6,6 @@ project(
+ )
+ 
+ add_project_arguments([
+-        '-Wno-discarded-qualifiers',
+         '-Wno-incompatible-pointer-types',
+         '-Wno-unused',
+         '-Wl,--enable-new-dtags',

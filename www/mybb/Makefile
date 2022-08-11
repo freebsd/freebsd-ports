@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	mybb
 DISTVERSION=	1.8.29
 CATEGORIES=	www

@@ -1,5 +1,3 @@
-# Created by: Matthias Andree <matthias.andree@gmx.de>
-
 PORTNAME=	bogofilter
 DISTVERSION=	1.2.5
 PORTREVISION?=	3

@@ -1,8 +1,6 @@
-# Created by: Carlo Strub <cs@FreeBSD.org>
-
 PORTNAME=	tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.10
+DISTVERSION=	0.1.12
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -43,7 +41,8 @@ GO_TARGET=	./cmd/auth/cookieauth \
 		./cmd/signature-fuzzer/fuzz-runner \
 		./cmd/ssadump \
 		./cmd/stress \
-		./cmd/stringer
+		./cmd/stringer \
+		./cmd/toolstash
 
 CONFLICTS_INSTALL=	easygit p5-Devel-Cover rubygem-bundler
 
@@ -56,7 +55,6 @@ RARE_VARS=	GO_TARGET+=" \
 		./cmd/benchcmp \
 		./cmd/getgo \
 		./cmd/getgo/server \
-		./cmd/splitdwarf \
-		./cmd/toolstash"
+		./cmd/splitdwarf"
 
 .include <bsd.port.mk>

@@ -1060,6 +1060,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/jquery_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/jquery_update_v2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/profilefield_cleanup.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/remove_orphaned_roles.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/remove_profilefield_aol.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v331.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v331rc1.php
@@ -1071,6 +1072,9 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v334rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v335.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v335rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v336.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v336rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v337.php
 %%PHPBBDIR%%/phpbb/db/migration/exception.php
 %%PHPBBDIR%%/phpbb/db/migration/helper.php
 %%PHPBBDIR%%/phpbb/db/migration/migration.php
@@ -1773,10 +1777,11 @@
 %%PHPBBDIR%%/vendor/guzzlehttp/promises/src/Utils.php
 %%PHPBBDIR%%/vendor/guzzlehttp/promises/src/functions.php
 %%PHPBBDIR%%/vendor/guzzlehttp/promises/src/functions_include.php
-%%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/workflows/bc.yml
+%%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/FUNDING.yml
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/workflows/ci.yml
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/workflows/integration.yml
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/workflows/static.yml
+%%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/stale.yml
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/.php_cs.dist
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/CHANGELOG.md
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/LICENSE
@@ -3335,11 +3340,12 @@
 %%PHPBBDIR%%/vendor/symfony/yaml/Unescaper.php
 %%PHPBBDIR%%/vendor/symfony/yaml/Yaml.php
 %%PHPBBDIR%%/vendor/symfony/yaml/composer.json
+%%PHPBBDIR%%/vendor/twig/twig/.github/workflows/ci.yml
+%%PHPBBDIR%%/vendor/twig/twig/.github/workflows/documentation.yml
 %%PHPBBDIR%%/vendor/twig/twig/.gitattributes
-%%PHPBBDIR%%/vendor/twig/twig/.php_cs.dist
+%%PHPBBDIR%%/vendor/twig/twig/.php-cs-fixer.dist.php
 %%PHPBBDIR%%/vendor/twig/twig/LICENSE
 %%PHPBBDIR%%/vendor/twig/twig/composer.json
-%%PHPBBDIR%%/vendor/twig/twig/drupal_test.sh
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/BaseNodeVisitor.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Cache/Filesystem.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Cache/Null.php
@@ -3552,6 +3558,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/BlockNode.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/BlockReferenceNode.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/BodyNode.php
+%%PHPBBDIR%%/vendor/twig/twig/src/Node/CheckSecurityCallNode.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/CheckSecurityNode.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/CheckToStringNode.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/DeprecatedNode.php

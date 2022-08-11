@@ -1,5 +1,3 @@
-# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-
 PORTNAME=	tiarra
 PORTVERSION=	20100212
 PORTREVISION=	7

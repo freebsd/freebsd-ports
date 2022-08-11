@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Data-Currency
 PORTVERSION=	0.06000
 PORTREVISION=	1

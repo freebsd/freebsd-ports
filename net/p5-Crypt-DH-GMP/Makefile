@@ -1,5 +1,3 @@
-# Created by: andrey@kostenko.name
-
 PORTNAME=	Crypt-DH-GMP
 PORTVERSION=	0.00012
 PORTREVISION=	1

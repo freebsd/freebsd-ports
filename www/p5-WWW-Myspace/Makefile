@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	WWW-Myspace
 PORTVERSION=	0.92
 PORTREVISION=	1

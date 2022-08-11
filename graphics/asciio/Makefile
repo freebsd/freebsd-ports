@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	asciio
 PORTVERSION=	1.51.3
 PORTREVISION=	2

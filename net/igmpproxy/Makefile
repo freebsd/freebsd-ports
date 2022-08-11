@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	igmpproxy
 DISTVERSION=	0.3
 PORTEPOCH=	1

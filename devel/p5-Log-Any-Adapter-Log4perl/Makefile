@@ -1,5 +1,3 @@
-# Created by: Evgeniy Kosov <evgeniy@kosov.su>
-
 PORTNAME=	Log-Any-Adapter-Log4perl
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

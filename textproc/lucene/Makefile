@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	lucene
 PORTVERSION=	3.6.2
 # Be sure to chase devel/openoffice-devel and textproc/py-lucene

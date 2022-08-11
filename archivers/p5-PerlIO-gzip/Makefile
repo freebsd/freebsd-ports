@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	PerlIO-gzip
 PORTVERSION=	0.20
 CATEGORIES=	archivers perl5

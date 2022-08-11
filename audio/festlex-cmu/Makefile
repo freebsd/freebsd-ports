@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	festlex-cmu
 PORTVERSION=	1.95
 CATEGORIES=	audio accessibility

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Email-Stuffer
 PORTVERSION=	0.018
 CATEGORIES=	mail perl5

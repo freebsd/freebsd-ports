@@ -1,8 +1,5 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-#    $MCom: ports/print/libspectre/Makefile,v 1.7 2010/04/19 15:38:43 kwm Exp $
-
 PORTNAME=	libspectre
-PORTVERSION=	0.2.9
+PORTVERSION=	0.2.10
 CATEGORIES=	print
 MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 

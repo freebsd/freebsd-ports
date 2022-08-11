@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	dzip
 PORTVERSION=	2.9
 CATEGORIES=	archivers games

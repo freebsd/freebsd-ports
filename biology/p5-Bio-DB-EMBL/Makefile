@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Bio-DB-EMBL
 PORTVERSION=	1.7.4
 CATEGORIES=	biology perl5

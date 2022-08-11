@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	Mail-Procmail
 PORTVERSION=	1.08
 PORTREVISION=	2

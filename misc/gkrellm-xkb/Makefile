@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@oook.cz>
-
 PORTNAME=	gkrellm-xkb
 PORTVERSION=	1.05
 PORTREVISION=	11

@@ -1,8 +1,6 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	rnd_jue
 PORTVERSION=	3.3.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/:game \
 		SF/nemysisfreebsdp/${CATEGORIES}/rocksndiamonds/

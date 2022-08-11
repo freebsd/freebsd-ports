@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	fl0p
 PORTVERSION=	0.0.2.b
 CATEGORIES=	security

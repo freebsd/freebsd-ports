@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Tk
 PORTVERSION=	804.035
 CATEGORIES=	x11-toolkits tk perl5

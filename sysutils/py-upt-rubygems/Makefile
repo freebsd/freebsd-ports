@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	upt-rubygems
 PORTVERSION=	0.4.1
 CATEGORIES=	sysutils python

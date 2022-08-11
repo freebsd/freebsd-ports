@@ -1,8 +1,6 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	cinder
 PORTVERSION=	12.0.10
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -71,12 +69,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.11.0:databases/py-sqlalchemy-migrate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy12>=1.0.10:databases/py-sqlalchemy12@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.20.0:devel/py-stevedore@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}suds-jurko>=0.6:net/py-suds-jurko@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}suds>=0.6:net/py-suds@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}taskflow>=2.16.0:devel/py-taskflow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tooz>=1.58.0:devel/py-tooz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.7.1:www/py-webob@${PY_FLAVOR}
 
-USES=		cpe python:3.6+
+USES=		cpe python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

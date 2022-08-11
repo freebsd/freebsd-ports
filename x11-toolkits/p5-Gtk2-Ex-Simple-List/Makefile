@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Gtk2-Ex-Simple-List
 PORTVERSION=	0.50
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	rapidjson
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0-524

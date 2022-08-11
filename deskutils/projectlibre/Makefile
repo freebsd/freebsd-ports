@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	projectlibre
 PORTVERSION=	1.9.3
 CATEGORIES=	deskutils editors java

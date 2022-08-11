@@ -1,5 +1,3 @@
-# Created by: Denise H. G. <darcsis@gmail.com>
-
 PORTNAME=	wavegain
 PORTVERSION=	1.2.8
 PORTREVISION=	2

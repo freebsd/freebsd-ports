@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tlslite-ng
 PORTVERSION=	0.7.6
 CATEGORIES=	security python

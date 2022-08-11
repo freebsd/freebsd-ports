@@ -1,5 +1,3 @@
-# Created by: peter
-
 PORTNAME=	rdist
 PORTVERSION=	6.1.5
 PORTREVISION=	7

@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Please add the following to your .weatherrc in order to use installed data files:
+
+[default]
+setpath = %%DATADIR%%
+EOM
+}
+]

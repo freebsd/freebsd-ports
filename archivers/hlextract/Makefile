@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	hlextract
 PORTVERSION=	2.4.6
 CATEGORIES=	archivers games

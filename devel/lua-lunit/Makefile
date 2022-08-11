@@ -1,5 +1,3 @@
-# Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
-
 PORTNAME=	lunit
 PORTVERSION=	0.5
 CATEGORIES=	devel

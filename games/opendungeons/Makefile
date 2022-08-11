@@ -23,6 +23,8 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libCEGUIBase-0.so:graphics/cegui \
 		libOgreMain.so:graphics/ogre3d19
 
+BROKEN=		error: no template named 'conditional_t' in namespace 'std'
+
 USES=		cmake pkgconfig
 
 USE_GITHUB=	yes
@@ -35,9 +37,5 @@ CMAKE_ARGS=	-DOD_BIN_PATH:PATH=${PREFIX}/bin \
 		-DOD_TREAT_WARNINGS_AS_ERRORS:BOOL=FALSE
 
 LDFLAGS+=	-lexecinfo
-
-post-patch:
-	@${REINPLACE_CMD} '/man6/ s|OD_SHARE_PATH|CMAKE_INSTALL_PREFIX|' \
-		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

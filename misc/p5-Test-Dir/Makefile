@@ -1,5 +1,3 @@
-# Created by: Xavier Beaudouin <kiwi@oav.net>
-
 PORTNAME=	Test-Dir
 PORTVERSION=	1.014
 PORTREVISION=	1

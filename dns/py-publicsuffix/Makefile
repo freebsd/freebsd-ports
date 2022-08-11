@@ -1,8 +1,6 @@
-# Created by: Dmitry Pryadko <d.pryadko@rambler-co.ru>
-
 PORTNAME=	publicsuffix
 PORTVERSION=	1.1.0
-PORTREVISION=	51
+PORTREVISION=	54
 CATEGORIES=	dns python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

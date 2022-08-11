@@ -1,5 +1,3 @@
-# Created by: Baptiste Daroussin
-
 PORTNAME=	Config-GitLike
 PORTVERSION=	1.18
 CATEGORIES=	devel perl5

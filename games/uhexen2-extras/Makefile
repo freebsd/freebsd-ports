@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	uhexen2
 PORTVERSION=	1.5.6
 CATEGORIES=	games

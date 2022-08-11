@@ -1,7 +1,7 @@
 # PORTNAME and CATEGORIES duplicated here, otherwise <bsd.port.options.mk> fails
 PORTNAME=	gcc
 CATEGORIES=	devel
-PORTVERSION=	8.4.0
+PORTVERSION=	11.3.0
 PKGNAMEPREFIX=	arm-none-eabi-
 GCC_TARGET=	arm-none-eabi
 PLIST=	${.CURDIR}/pkg-plist

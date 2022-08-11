@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	mopd
 PORTVERSION=	2.5.3
 PORTREVISION=	2

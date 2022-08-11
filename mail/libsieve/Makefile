@@ -1,5 +1,3 @@
-# Created by: Mark Starovoytov <mark_sf@kikg.ifmo.ru>
-
 PORTNAME=	libsieve
 PORTVERSION=	2.3.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	phpldapadmin
 PORTVERSION=	1.2.6.3
 PORTREVISION=	1

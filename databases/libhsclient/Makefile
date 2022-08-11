@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	libhsclient
 DISTVERSION=	1.0.6-20110614
 PORTREVISION=	1

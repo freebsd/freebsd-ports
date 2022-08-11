@@ -1,5 +1,0 @@
-gnoMint is an X.509 Certificate Authority (CA) management tool with both a GTK
-and command-line interface. It allows anyone to create and manage a CA without
-having to write configuration files or remember long command-line arguments.
-
-WWW: http://gnomint.sourceforge.net/

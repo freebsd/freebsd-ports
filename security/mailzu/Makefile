@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@tandon.net>
-
 PORTNAME=	mailzu
 DISTVERSION=	0.8rc3
 PORTREVISION=	9
@@ -22,6 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:security/amavisd-new \
 
 USES=		php:flavors,web
 USE_PHP=	sockets
+IGNORE_WITH_PHP=	82
 
 NO_ARCH=	yes
 NO_BUILD=	yes

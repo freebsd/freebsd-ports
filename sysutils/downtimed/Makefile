@@ -1,5 +1,3 @@
-# Created by: Janne Snabb <snabb@epipe.com>
-
 PORTNAME=	downtimed
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	Text-Aligner
 PORTVERSION=	0.16
 PORTREVISION=	1

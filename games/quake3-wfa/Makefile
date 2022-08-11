@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	wfa
 PORTVERSION=	3.5b
 CATEGORIES=	games

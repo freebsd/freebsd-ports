@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	icontact
 PORTVERSION=	1.5
 PORTREVISION=	3

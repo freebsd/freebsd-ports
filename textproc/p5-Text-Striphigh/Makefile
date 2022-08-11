@@ -1,5 +1,3 @@
-# Created by: kai
-
 PORTNAME=	Text-Striphigh
 PORTVERSION=	0.02
 PORTREVISION=	1

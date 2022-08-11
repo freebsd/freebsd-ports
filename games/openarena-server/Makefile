@@ -1,5 +1,3 @@
-# Created by: Dominic Fandrey
-
 PORTNAME=	openarena
 PKGNAMESUFFIX=	-server
 

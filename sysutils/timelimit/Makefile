@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	timelimit
 PORTVERSION=	1.9.2
 CATEGORIES=	sysutils

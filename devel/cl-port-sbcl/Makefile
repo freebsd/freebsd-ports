@@ -1,8 +1,6 @@
-# Created by: Henrik Motakef <henrik.motakef@web.de>
-
 PORTNAME=	port
 PORTVERSION=	2002.10.02.1
-PORTREVISION=	69
+PORTREVISION=	72
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

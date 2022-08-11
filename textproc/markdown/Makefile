@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	markdown
 PORTVERSION=	1.0.1
 PORTREVISION=	2

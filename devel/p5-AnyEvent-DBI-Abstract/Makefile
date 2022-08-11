@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	AnyEvent-DBI-Abstract
 PORTVERSION=	0.01
 PORTREVISION=	2

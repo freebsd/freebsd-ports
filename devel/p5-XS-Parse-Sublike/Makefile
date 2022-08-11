@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	XS-Parse-Sublike
 PORTVERSION=	0.16
 CATEGORIES=	devel perl5

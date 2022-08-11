@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Template-Plugin-FillInForm
 PORTVERSION=	0.04
 PORTREVISION=	1

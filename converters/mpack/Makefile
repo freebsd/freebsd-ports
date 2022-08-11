@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	mpack
 PORTVERSION=	1.6
 PORTREVISION=	3

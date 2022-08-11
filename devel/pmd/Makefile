@@ -1,5 +1,3 @@
-# Created by: Alex Varju <freebsd-ports@varju.ca>
-
 PORTNAME=	pmd
 PORTVERSION=	6.42.0
 CATEGORIES=	devel java

@@ -1,5 +1,3 @@
-# Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
-
 PORTNAME=	astah
 PORTVERSION=	6.9.0
 PORTREVISION=	1

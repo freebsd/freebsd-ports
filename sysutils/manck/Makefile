@@ -1,13 +1,13 @@
-# Created by: joerg
-
 PORTNAME=	manck
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wolfram.schneider.org/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Manual page consistency checker
+
+RUN_DEPENDS=	p5-Perl4-CoreLibs>=0:devel/p5-Perl4-CoreLibs
 
 USES=		perl5 shebangfix uidfix
 USE_PERL5=	run

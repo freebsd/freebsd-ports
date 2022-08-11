@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Mojolicious-Plugin-NYTProf
 PORTVERSION=	0.23
 CATEGORIES=	devel www perl5

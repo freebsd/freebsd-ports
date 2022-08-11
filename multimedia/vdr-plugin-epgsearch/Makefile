@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-epgsearch
 PORTVERSION=	1.0.1s20120322
 PORTREVISION=	8

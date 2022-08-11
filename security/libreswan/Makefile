@@ -1,5 +1,5 @@
 PORTNAME=	libreswan
-DISTVERSION=	4.6
+DISTVERSION=	4.7
 CATEGORIES=	security
 MASTER_SITES=	https://download.libreswan.org/
 
@@ -39,7 +39,10 @@ post-configure:
 		${RLN} netbsd.mk freebsd.mk
 
 post-install:
-.for f in _import_crl addconn algparse cavp dncheck ecdsasigkey enumcheck hunkcheck ipcheck jambufcheck keyidcheck pluto readwriteconf rsasigkey showhostkey timecheck whack
+.for f in \
+	_import_crl addconn algparse asn1check cavp dncheck ecdsasigkey \
+	enumcheck hunkcheck ipcheck jambufcheck keyidcheck pluto readwriteconf \
+	routecheck rsasigkey showhostkey timecheck vendoridcheck whack
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/ipsec/${f}
 .endfor
 

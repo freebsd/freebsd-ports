@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Regexp-Trie
 PORTVERSION=	0.02
 CATEGORIES=	devel perl5

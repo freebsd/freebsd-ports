@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Unix-Processors
 PORTVERSION=	2.046
 CATEGORIES=	sysutils perl5

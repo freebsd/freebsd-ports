@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	solve
 PORTVERSION=	4.0.4
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Leland Wang <llwang@infor.org>
-
 PORTNAME=	proggy_fonts
 PORTVERSION=	1.0
 PORTREVISION=	5

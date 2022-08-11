@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	String-Flogger
 PORTVERSION=	1.101245
 CATEGORIES=	textproc perl5

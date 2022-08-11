@@ -1,6 +1,6 @@
---- dynamicEDT3D/src/CMakeLists.txt.orig	2018-11-20 06:37:53 UTC
+--- dynamicEDT3D/src/CMakeLists.txt.orig	2022-05-12 20:49:09 UTC
 +++ dynamicEDT3D/src/CMakeLists.txt
-@@ -9,28 +9,28 @@ set_target_properties(dynamicedt3d PROPE
+@@ -9,28 +9,28 @@ set_target_properties(dynamicedt3d PROPERTIES
  )
  target_link_libraries(dynamicedt3d ${OCTOMAP_LIBRARIES})
  
@@ -33,5 +33,5 @@
 -install(TARGETS dynamicedt3d dynamicedt3d-static
 +install(TARGETS dynamicedt3d
    EXPORT dynamicEDT3DTargets
-   INCLUDES DESTINATION include
+   INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
    ${INSTALL_TARGETS_DEFAULT_ARGS}

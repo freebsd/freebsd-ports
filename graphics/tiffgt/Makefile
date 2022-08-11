@@ -1,6 +1,5 @@
 PORTNAME=	tiffgt
-DISTVERSION=	4.3.0
-PORTREVISION=	1
+DISTVERSION=	4.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.osgeo.org/libtiff/
 DISTNAME=	tiff-${DISTVERSION}
@@ -20,13 +19,17 @@ USES=		cpe gl jpeg libtool pathfix xorg
 CPE_PRODUCT=	libtiff
 CPE_VERSION=	${DISTVERSION:C/[a-z]+//}
 CPE_UPDATE=	${DISTVERSION:C/[0-9.]+//}
-USE_XORG=	sm ice xmu xi x11
-USE_GL=		glut glu gl
+USE_GL=		gl glu glut
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USE_XORG=	ice sm x11 xi xmu
+
+GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
-			--with-jpeg-lib-dir=${LOCALBASE}/lib --with-x
-PLIST_FILES=	bin/tiffgt man/man1/tiffgt.1.gz
+			--with-jpeg-lib-dir=${LOCALBASE}/lib \
+			--with-x
+
+PLIST_FILES=	bin/tiffgt \
+		man/man1/tiffgt.1.gz
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|^docfiles|no-docfiles|' \

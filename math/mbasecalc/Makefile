@@ -1,5 +1,3 @@
-# Created by: Pierre-Paul Lavoie <ppl@nbnet.nb.ca>
-
 PORTNAME=	mbasecalc
 PORTVERSION=	1.1
 PORTREVISION=	8

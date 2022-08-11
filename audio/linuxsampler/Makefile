@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	linuxsampler
 DISTVERSION=	2.2.0
 PORTREVISION=	2

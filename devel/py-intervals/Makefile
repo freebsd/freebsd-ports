@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	intervals
 PORTVERSION=	0.9.2
 CATEGORIES=	devel python

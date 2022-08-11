@@ -1,5 +1,3 @@
-# Created by: Vyacheslav Anikin <anikinsl@gmail.com>
-
 PORTNAME=	rux
 PORTVERSION=	0.82
 CATEGORIES=	russian

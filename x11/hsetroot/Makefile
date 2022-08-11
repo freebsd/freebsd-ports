@@ -1,5 +1,3 @@
-# Created by: Vincent Tantardini <vinc@freebsd-fr.org>
-
 PORTNAME=	hsetroot
 PORTVERSION=	1.0.5
 CATEGORIES=	x11

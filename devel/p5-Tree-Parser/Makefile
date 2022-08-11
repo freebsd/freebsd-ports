@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Tree-Parser
 PORTVERSION=	0.15
 PORTREVISION=	2

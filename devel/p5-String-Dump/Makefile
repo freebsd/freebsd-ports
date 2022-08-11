@@ -1,5 +1,3 @@
-# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
-
 PORTNAME=	String-Dump
 PORTVERSION=	0.09
 PORTREVISION=	2

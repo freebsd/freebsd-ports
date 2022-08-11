@@ -1,5 +1,5 @@
 PORTNAME=	sphinx-autoapi
-PORTVERSION=	1.8.4
+DISTVERSION=	1.9.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,7 @@ COMMENT=	Sphinx API documentation generator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-# Upstream switched to PEP-517 packaging
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=2.7:devel/py-astroid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=2.7:devel/py-astroid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unidecode>0:converters/py-unidecode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

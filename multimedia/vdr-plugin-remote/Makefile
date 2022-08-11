@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-remote
 PORTVERSION=	0.4.0
 PORTREVISION=	16

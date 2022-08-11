@@ -22,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils 
 
-CONFLICTS_INSTALL=	py*-alembic
+CONFLICTS_INSTALL=	py*-alembic* # lib/python3.8/site-packages/alembic/__init__.py'
 
 NO_ARCH=	yes
 PORTSCOUT=	limit:^1\.4\.

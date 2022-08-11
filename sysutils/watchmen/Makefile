@@ -1,5 +1,3 @@
-# Created by: Oleg Alexeenkov <proler@gmail.com>
-
 PORTNAME=	watchmen
 PORTVERSION=	0.09
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: markm@FreeBSD.org
-
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
 PORTREVISION?=	5

@@ -1,9 +1,7 @@
-# Created by: Alexey Bobkov <mr.deadlystorm@gmail.com>
-
 PORTNAME=	mysqld_exporter
 PORTVERSION=	0.12.1
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	mr.deadlystorm@gmail.com

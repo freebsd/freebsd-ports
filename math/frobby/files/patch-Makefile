@@ -1,6 +1,6 @@
---- Makefile.orig	2021-02-23 21:29:06 UTC
+--- Makefile.orig	2022-05-03 16:32:53 UTC
 +++ Makefile
-@@ -99,7 +99,6 @@ endif
+@@ -107,7 +107,6 @@ ifeq ($(MODE), release)
  MATCH=false
  ifeq ($(MODE), release)
    outdir = bin/release/
@@ -8,7 +8,7 @@
    MATCH=true
  endif
  ifeq ($(MODE), debug)
-@@ -111,13 +110,13 @@ ifeq ($(MODE), debug)
+@@ -119,13 +118,13 @@ ifeq ($(MODE), shared)
  endif
  ifeq ($(MODE), shared)
    outdir = bin/shared/
@@ -24,3 +24,17 @@
    ldflags += -pg
    MATCH=true
    benchArgs = _profile $(FROBBYARGS)
+@@ -306,11 +305,11 @@ develDocPdf: bin/develDoc/
+ 	rm -rf bin/develDoc/latexPdf bin/develDoc/warningLog
+ 	cat doc/doxygen.conf doc/doxPdf|doxygen -
+ 	cd bin/develDoc/latexPdf; for f in `ls *.eps`; do epstopdf $$f; done # Cygwin fix
+-	cd bin/develDoc/latexPdf/; make refman.pdf; mv refman.pdf ../develDoc.pdf
++	cd bin/develDoc/latexPdf/; ${MAKE} refman.pdf; mv refman.pdf ../develDoc.pdf
+ develDocPs: bin/develDoc/
+ 	rm -rf bin/develDoc/latexPs bin/develDoc/warningLog
+ 	cat doc/doxygen.conf doc/doxPs|doxygen -
+-	cd bin/develDoc/latexPs/; make refman.ps; mv refman.ps ../develDoc.ps
++	cd bin/develDoc/latexPs/; ${MAKE} refman.ps; mv refman.ps ../develDoc.ps
+ 
+ clean: tidy
+ 	rm -rf bin

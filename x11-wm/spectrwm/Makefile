@@ -1,5 +1,3 @@
-# Created by: Aragon Gouveia <aragon@phat.za.net>
-
 PORTNAME=	spectrwm
 DISTVERSIONPREFIX=	SPECTRWM_
 DISTVERSION=	3_4_1

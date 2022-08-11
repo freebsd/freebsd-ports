@@ -1,5 +1,3 @@
-# Created by: David Kalliecharan <dave@dal.ca>
-
 PORTNAME=	hy
 PORTVERSION=	0.19.0
 CATEGORIES=	lang python

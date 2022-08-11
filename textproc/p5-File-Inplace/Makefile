@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	File-Inplace
 PORTVERSION=	0.20
 PORTREVISION=	1

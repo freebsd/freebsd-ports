@@ -1,5 +1,3 @@
-# Created by: chuck@pkix.net
-
 PORTNAME=	clean
 PORTVERSION=	3.4
 CATEGORIES=	sysutils

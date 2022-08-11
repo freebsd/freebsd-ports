@@ -1,5 +1,3 @@
-# Created by: Andrew Elble <aweits@rit.edu>
-
 PORTNAME=	ding-libs
 PORTVERSION=	0.6.1
 CATEGORIES=	devel

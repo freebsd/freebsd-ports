@@ -1,5 +1,3 @@
-# Created by: gebhart@secnetix.de
-
 PORTNAME=	Scalar-Util-Numeric
 PORTVERSION=	0.40
 CATEGORIES=	devel perl5

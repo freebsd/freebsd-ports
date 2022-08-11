@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nacai@iname.com>
-
 PORTNAME=	SOCKS
 PORTVERSION=	0.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	jdictionary
 DISTVERSION=	1_8
 PORTREVISION=	4

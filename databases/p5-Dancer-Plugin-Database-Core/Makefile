@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Dancer-Plugin-Database-Core
 PORTVERSION=	0.20
 CATEGORIES=	databases perl5

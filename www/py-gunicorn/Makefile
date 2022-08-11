@@ -1,5 +1,3 @@
-# Created by: Kristaps Kulis <kristaps.kulis@gmail.com>
-
 PORTNAME=	gunicorn
 PORTVERSION=	20.1.0
 CATEGORIES=	www python

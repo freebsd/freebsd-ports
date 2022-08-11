@@ -1,5 +1,3 @@
-# Created by: Alexander Best <arundel@gmx.net>
-
 PORTNAME=	vba
 PORTVERSION=	1.7.2
 PORTREVISION=	13

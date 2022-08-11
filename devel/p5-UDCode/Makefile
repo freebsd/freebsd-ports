@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	UDCode
 PORTVERSION=	1.03
 PORTREVISION=	1

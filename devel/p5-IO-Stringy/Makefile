@@ -1,5 +1,3 @@
-# Created by: Eivind Eklund <eivind@FreeBSD.org>
-
 PORTNAME=	IO-Stringy
 PORTVERSION=	2.113
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Bio-FeatureIO
 PORTVERSION=	1.6.905
 CATEGORIES=	biology perl5

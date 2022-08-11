@@ -1,11 +1,8 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	yelp-tools
-PORTVERSION=	40.0
-PORTREVISION=	2
+PORTVERSION=	42.0
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Utilities to help manage documentation for Yelp and the web

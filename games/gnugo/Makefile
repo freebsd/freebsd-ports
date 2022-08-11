@@ -1,5 +1,3 @@
-# Created by: jseger@scds.com
-
 PORTNAME=	gnugo
 PORTVERSION=	3.8
 PORTREVISION=	1

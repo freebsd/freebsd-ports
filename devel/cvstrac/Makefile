@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@spc.org>
-
 PORTNAME?=	cvstrac
 PORTVERSION=	2.0.1
 PORTREVISION?=	1

@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Plugin-AnyTemplate
 PORTVERSION=	0.18
 PORTREVISION=	2

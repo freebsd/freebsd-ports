@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Mail-Freshmeat
 PORTVERSION=	1.20
 PORTREVISION=	1

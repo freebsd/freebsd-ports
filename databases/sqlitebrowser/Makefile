@@ -1,5 +1,3 @@
-# Created by: loïc bartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	sqlitebrowser
 PORTVERSION=	3.12.1
 PORTREVISION=	7

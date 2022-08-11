@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	WWW-2ch
 PORTVERSION=	0.07
 PORTREVISION=	2

@@ -36,7 +36,7 @@ include/appstream/as-version.h
 include/appstream/as-video.h
 lib/girepository-1.0/AppStream-1.0.typelib
 lib/libappstream.so
-lib/libappstream.so.0.15.3
+lib/libappstream.so.0.15.4
 lib/libappstream.so.4
 libdata/pkgconfig/appstream.pc
 man/man1/appstreamcli.1.gz
@@ -46,6 +46,7 @@ share/gir-1.0/AppStream-1.0.gir
 share/installed-tests/appstream/metainfo-validate.test
 share/locale/ain/LC_MESSAGES/appstream.mo
 share/locale/ar/LC_MESSAGES/appstream.mo
+share/locale/bn/LC_MESSAGES/appstream.mo
 share/locale/bn_BD/LC_MESSAGES/appstream.mo
 share/locale/ca/LC_MESSAGES/appstream.mo
 share/locale/ckb/LC_MESSAGES/appstream.mo

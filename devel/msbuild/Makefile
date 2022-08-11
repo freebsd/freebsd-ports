@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@dragon.local>
-
 PORTNAME=	msbuild
 DISTVERSIONPREFIX=	v
 DISTVERSION=	15.8-preview

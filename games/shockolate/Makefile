@@ -1,5 +1,3 @@
-# Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
-
 PORTNAME=	shockolate
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2-43

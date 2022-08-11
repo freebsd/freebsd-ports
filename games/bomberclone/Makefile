@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis
-
 PORTNAME=	bomberclone
 PORTVERSION=	0.11.9
 PORTREVISION=	3

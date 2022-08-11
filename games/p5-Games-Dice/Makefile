@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Games-Dice
 PORTVERSION=	0.045
 CATEGORIES=	games perl5

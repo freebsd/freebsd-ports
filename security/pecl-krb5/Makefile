@@ -1,5 +1,3 @@
-# Created by: girgen@FreeBSD.org
-
 PORTNAME=	krb5
 PORTVERSION=	1.1.4
 CATEGORIES=	security pear

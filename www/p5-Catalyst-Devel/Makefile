@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Devel
 PORTVERSION=	1.42
 CATEGORIES=	www perl5

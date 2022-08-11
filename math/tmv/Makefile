@@ -21,9 +21,7 @@ MAKEFILE=	${FILESDIR}/Makefile
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
+.if !exists(/usr/include/omp.h)
 USES+=		compiler:gcc-c++11-lib
 .endif
 

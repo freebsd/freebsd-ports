@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Data-Phrasebook
 PORTVERSION=	0.35
 PORTREVISION=	2

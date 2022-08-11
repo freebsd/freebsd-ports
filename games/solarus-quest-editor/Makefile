@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	solarus-quest-editor
 PORTVERSION=	1.6.4
 DISTVERSIONPREFIX=	v

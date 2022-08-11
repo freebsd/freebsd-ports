@@ -62,6 +62,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/LinkButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ListItemDragHandle.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ListSectionHeader.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/LoadingPlaceholder.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/MenuDialog.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/NavigationTabBar.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/NavigationTabButton.qml
@@ -76,6 +77,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/RouterWindow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ScrollablePage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/SearchField.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/SelectableLabel.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Separator.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ShadowedImage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/SwipeListItem.qml
@@ -152,6 +154,7 @@ share/kdevappwizard/templates/kirigami.tar.bz2
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ast/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/az/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/bg/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/cs/LC_MESSAGES/libkirigami2plugin_qt.qm

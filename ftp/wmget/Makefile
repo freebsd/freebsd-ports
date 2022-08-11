@@ -1,5 +1,3 @@
-# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-
 PORTNAME=	wmget
 PORTVERSION=	0.6.0
 PORTREVISION=	8

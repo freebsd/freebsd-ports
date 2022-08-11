@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	rstudioapi
 PORTVERSION=	0.13
 CATEGORIES=	devel

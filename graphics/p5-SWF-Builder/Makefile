@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	SWF-Builder
 PORTVERSION=	0.16
 PORTREVISION=	2

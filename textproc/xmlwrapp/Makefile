@@ -1,8 +1,6 @@
-# Created by: ijliao
-
 PORTNAME=	xmlwrapp
 PORTVERSION=	0.7.0
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 

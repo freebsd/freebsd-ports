@@ -1,5 +1,3 @@
-# Created by: Gustavo Perez Querol <gustau.perez@gmail.com>
-
 PORTNAME=	brutalchess
 PORTVERSION=	0.5.2
 PORTREVISION=	15

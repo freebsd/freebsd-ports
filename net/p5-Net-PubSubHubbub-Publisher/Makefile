@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-PubSubHubbub-Publisher
 PORTVERSION=	0.91
 PORTREVISION=	1

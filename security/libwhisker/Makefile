@@ -1,5 +1,3 @@
-# Created by: pandzilla
-
 PORTNAME=	libwhisker
 PORTVERSION=	2.5
 PORTREVISION=	2

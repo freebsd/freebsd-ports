@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	geary
 PORTVERSION=	40.0
 PORTREVISION=	4
@@ -8,7 +6,7 @@ MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Mail client for GNOME 3
+COMMENT=	Mail client for GNOME
 
 LICENSE=	BSD2CLAUSE CC-BY-3.0 LGPL21+
 LICENSE_COMB=	multi

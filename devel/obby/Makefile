@@ -1,5 +1,3 @@
-# Created by: Andreas Kohn <andreas@syndrom23.de>
-
 PORTNAME=	obby
 PORTVERSION=	0.4.8
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	awale
 PORTVERSION=	1.6
 CATEGORIES=	games

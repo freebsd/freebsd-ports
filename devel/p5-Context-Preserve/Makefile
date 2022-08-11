@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Context-Preserve
 PORTVERSION=	0.03
 CATEGORIES=	devel perl5

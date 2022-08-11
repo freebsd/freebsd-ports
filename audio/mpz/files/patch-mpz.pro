@@ -1,14 +1,7 @@
---- mpz.pro.orig	2020-10-22 11:15:32 UTC
+--- mpz.pro.orig	2022-05-28 06:35:00 UTC
 +++ mpz.pro
-@@ -2,39 +2,37 @@ TEMPLATE = subdirs
- CONFIG += ordered
- 
- SUBDIRS = \
--  libs/taglib \
--  libs/yaml-cpp \
-   libs/qtwaitingspinner \
-   libs/qhotkey \
-   app
+@@ -13,32 +13,32 @@ SUBDIRS += app
+ SUBDIRS += app
  
  # make install
 -desktop.path = /usr/share/applications/

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	POE-Component-Client-FTP
 PORTVERSION=	0.24
 CATEGORIES=	ftp perl5

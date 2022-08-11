@@ -1,5 +1,3 @@
-# Created by: G. Adam Stanislav <adam@whizkidtech.net>
-
 PORTNAME=	fastcrc
 PORTVERSION=	1.0
 CATEGORIES=	devel

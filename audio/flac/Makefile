@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	flac
 PORTVERSION=	1.3.4
 CATEGORIES=	audio

@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-
 PORTNAME=	octave-forge-database
 PORTVERSION=	2.4.4
 PORTREVISION=	4

@@ -5,6 +5,7 @@
     SUBDIR += R-cran-zip
     SUBDIR += advancecomp
     SUBDIR += amigadepacker
+    SUBDIR += apache-commons-compress
     SUBDIR += arc
     SUBDIR += arj
     SUBDIR += ark
@@ -25,7 +26,6 @@
     SUBDIR += draco
     SUBDIR += dzip
     SUBDIR += engrampa
-    SUBDIR += erlang-snappy
     SUBDIR += fastjar
     SUBDIR += file-roller
     SUBDIR += fpc-bzip2
@@ -133,7 +133,6 @@
     SUBDIR += p5-POE-Filter-Zlib
     SUBDIR += p5-PerlIO-gzip
     SUBDIR += p5-PerlIO-via-Bzip2
-    SUBDIR += p7zip
     SUBDIR += packddir
     SUBDIR += paq
     SUBDIR += par
@@ -165,6 +164,10 @@
     SUBDIR += php81-phar
     SUBDIR += php81-zip
     SUBDIR += php81-zlib
+    SUBDIR += php82-bz2
+    SUBDIR += php82-phar
+    SUBDIR += php82-zip
+    SUBDIR += php82-zlib
     SUBDIR += pigz
     SUBDIR += pixz
     SUBDIR += plzip

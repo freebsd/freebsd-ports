@@ -1,5 +1,3 @@
-# Created by: Stefan Walter <sw@gegenunendlich.de>
-
 PORTNAME=	foiltex
 PORTVERSION=	2.1.4b
 PORTREVISION=	5

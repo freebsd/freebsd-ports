@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	invisible_captcha
 PORTVERSION=	1.1.0
 PORTREVISION=	3

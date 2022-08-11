@@ -49,11 +49,18 @@ nomad_startprecmd()
 		install -o ${nomad_user} -g ${nomad_group} /dev/null ${pidfile};
 	fi
 
-	if [ ! -d ${nomad_dir} ]; then
-		install -d -o ${nomad_user} -g ${nomad_group} ${nomad_dir}
+	if [ ! -d "${nomad_dir}" ]; then
+		install -d -o ${nomad_user} -g ${nomad_group} "${nomad_dir}"
+		chmod 0700 "${nomad_dir}"
 	fi
+
 	if [ "${nomad_debug}" != "NO" ]; then
 		command_args="-T ${name} ${command_args}"
+	fi
+
+	if [ "$(stat -f "%Lp" "${nomad_dir}")" -ne "700" ]; then
+		2>&1 echo "Error: File permissions of ${nomad_dir} must be 700, not starting."
+		exit 1
 	fi
 }
 

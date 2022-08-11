@@ -1,5 +1,3 @@
-# Created by: geniusj@ods.org
-
 PORTNAME=	updatedd
 PORTVERSION=	2.6
 PORTREVISION=	2

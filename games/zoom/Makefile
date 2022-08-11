@@ -1,5 +1,3 @@
-# Created by: Jan Stocker <Jan.Stocker@t-online.de>
-
 PORTNAME=	zoom
 PORTVERSION=	1.1.5
 PORTREVISION=	3

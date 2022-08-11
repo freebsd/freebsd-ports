@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	libpcap
 PORTVERSION=	1.10.1
 PORTREVISION=	1

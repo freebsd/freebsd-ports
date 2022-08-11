@@ -1,5 +1,3 @@
-# Created by: doconnor@gsoft.com.au
-
 PORTNAME=	netpipes
 PORTVERSION=	4.2
 CATEGORIES=	net

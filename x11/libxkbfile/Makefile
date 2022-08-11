@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libxkbfile
 PORTVERSION=	1.1.0
 CATEGORIES=	x11

@@ -1,5 +1,3 @@
-# Created by: Christian Brueffer <chris@unixpages.org>
-
 PORTNAME=	mencal
 PORTVERSION=	3.0
 CATEGORIES=	deskutils

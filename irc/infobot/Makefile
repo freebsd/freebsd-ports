@@ -1,5 +1,3 @@
-# Created by: perlguy@perlguy.com
-
 PORTNAME=	infobot
 PORTVERSION=	0.45.3
 PORTREVISION=	3

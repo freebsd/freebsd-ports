@@ -1,5 +1,3 @@
-# Created by: Stas Timokhin <stast@bsdportal.ru>
-
 PORTNAME=	alpng
 PORTVERSION=	1.3
 PORTREVISION=	4

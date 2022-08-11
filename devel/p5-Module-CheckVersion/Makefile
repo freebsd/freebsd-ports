@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Module-CheckVersion
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

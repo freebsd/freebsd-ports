@@ -13,9 +13,11 @@
 #				Set it to the full path to the config file
 #				that stunnel will use during the automated
 #				start-up.
-# stunnel_pidfile (str):	Default "%%PREFIX%%/var/stunnel/stunnel.pid"
+# stunnel_pidfile (str):	Default "%%STUNNEL_PIDFILE%%"
 #				Set it to the value of 'pid' in
 #				the stunnel.conf file.
+# stunnel_uid (str):		Default "%%STUNNEL_USER%%"
+# stunnel_gid (str):		Default "%%STUNNEL_GROUP%%"
 #
 
 . /etc/rc.subr
@@ -27,12 +29,24 @@ load_rc_config $name
 
 : ${stunnel_enable="NO"}
 : ${stunnel_config="%%ETCDIR%%/${name}.conf"}
-: ${stunnel_pidfile="/var/run/${name}.pid"}
+: ${stunnel_pidfile="%%STUNNEL_PIDFILE%%"}
+: ${stunnel_uid="%%STUNNEL_USER%%"}
+: ${stunnel_gid="%%STUNNEL_GROUP%%"}
 
 command="%%PREFIX%%/bin/stunnel"
 command_args=${stunnel_config}
 pidfile=${stunnel_pidfile}
 
 required_files="${stunnel_config}"
+
+start_precmd=stunnel_start_precmd
+
+stunnel_start_precmd () {
+	local piddir
+	piddir=`/usr/bin/dirname "${pidfile}"`
+	if [ ! -d "${piddir}" ] ; then
+		/usr/bin/install -d -o "${stunnel_uid}" -g "${stunnel_gid}" "${piddir}"
+	fi
+}
 
 run_rc_command "$1"

@@ -1,5 +1,3 @@
-# Created by: Vladimir Timofeev <vovkasm@gmail.com>
-
 PORTNAME=	Storable-AMF
 PORTVERSION=	1.00
 PORTREVISION=	1

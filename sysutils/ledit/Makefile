@@ -1,5 +1,3 @@
-# Created by: Marwan Burelle <marwan.burelle@lri.fr>
-
 PORTNAME=	ledit
 PORTVERSION=	2.04
 CATEGORIES=	sysutils

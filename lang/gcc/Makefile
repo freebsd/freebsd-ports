@@ -1,5 +1,3 @@
-# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
-
 PORTNAME=	gcc
 PORTVERSION=	${GCC_DEFAULT}
 PORTREVISION=	4

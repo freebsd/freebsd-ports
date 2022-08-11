@@ -1,5 +1,3 @@
-# Created by: Christopher Boumenot <boumenot@gmail.com>
-
 PORTNAME=	Net-TiVo
 PORTVERSION=	0.11
 PORTREVISION=	1

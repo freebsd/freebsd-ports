@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=		libe
 PORTVERSION=		0.11.0
 DISTVERSIONPREFIX=	releases/

@@ -1,5 +1,3 @@
-# Created by: Thomas Bernard <nanard@free.fr>
-
 PORTNAME=	teo
 PORTVERSION=	1.8.4
 DISTVERSIONSUFFIX=	-src

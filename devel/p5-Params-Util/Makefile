@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Params-Util
 PORTVERSION=	1.102
 CATEGORIES=	devel perl5

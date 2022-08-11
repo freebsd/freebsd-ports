@@ -1,5 +1,3 @@
-# Created by: Jim Geovedi <jim@corebsd.or.id>
-
 PORTNAME=	SHA
 PORTVERSION=	2.01
 PORTREVISION=	1

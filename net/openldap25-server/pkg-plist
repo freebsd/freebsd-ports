@@ -101,6 +101,11 @@
 %%DYNLIST%%libexec/openldap/dynlist-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%DYNLIST%%libexec/openldap/dynlist.la
 %%DYNLIST%%libexec/openldap/dynlist.so
+%%EMPTYDS%%libexec/openldap/emptyds.la
+%%EMPTYDS%%libexec/openldap/emptyds.so
+%%EMPTYDS%%libexec/openldap/emptyds.so.0
+%%EMPTYDS%%libexec/openldap/emptyds.so.0.0.0
+%%EMPTYDS%%man/man5/slapo-emptyds.5.gz
 %%HOMEDIR%%libexec/openldap/homedir-%%OPENLDAP_MAJOR%%.so.0
 %%HOMEDIR%%libexec/openldap/homedir-%%OPENLDAP_MAJOR%%.so.0.%%SHLIB_MINOR%%
 %%HOMEDIR%%libexec/openldap/homedir.la

@@ -1,5 +1,3 @@
-# Created by: Dmitry Kazarov <d.y.kazarov@mail.ru>
-
 PORTNAME=	qpdf
 DISTVERSION=	10.6.3
 CATEGORIES=	print

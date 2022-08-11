@@ -1,5 +1,3 @@
-# Created by: Chris Hutchinson <portmaster@bsdforge.com>
-
 PORTNAME=	sansi
 PORTVERSION=	1.0.2
 CATEGORIES=	textproc sysutils

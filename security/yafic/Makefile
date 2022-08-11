@@ -1,5 +1,3 @@
-# Created by: allan@saddi.com
-
 PORTNAME=	yafic
 PORTVERSION=	1.2.2
 PORTREVISION=	3

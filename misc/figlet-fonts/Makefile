@@ -1,5 +1,3 @@
-# Created by: dd
-
 PORTNAME=	figlet-fonts
 PORTVERSION=	20121202
 CATEGORIES=	misc

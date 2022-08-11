@@ -1,0 +1,6 @@
+RapidJSON is an extremely fast C++ JSON parser and serialization
+library: this module wraps it into a Python 3 extension, exposing
+its serialization/deserialization (to/from either bytes, str or
+file-like instances) and JSON Schema validation capabilities.
+
+WWW: https://github.com/python-rapidjson/python-rapidjson

@@ -1,5 +1,3 @@
-# Created by: snb@threerings.net
-
 PORTNAME=	osslsigncode
 PORTVERSION=	1.7.1
 PORTREVISION=	1

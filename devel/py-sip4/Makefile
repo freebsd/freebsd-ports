@@ -1,5 +1,3 @@
-# Created by: nbm
-
 PORTNAME=	sip4
 PORTVERSION=	${SIP4_VERSION}
 CATEGORIES=	devel python

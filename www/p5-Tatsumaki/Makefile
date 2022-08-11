@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Tatsumaki
 PORTVERSION=	0.1013
 PORTREVISION=	1

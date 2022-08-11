@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Locale-Maketext-Lexicon
 PORTVERSION=	1.00
 PORTREVISION=	1

@@ -1,8 +1,8 @@
 PORTNAME=	gxplugins
 DISTVERSION=	0.9
 CATEGORIES=	audio
-PKGNAMESUFFIX=	-lv2
 MASTER_SITES=	https://github.com/brummer10/GxPlugins.lv2/files/6329721/
+PKGNAMESUFFIX=	-lv2
 DISTNAME=	GxPlugins_${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +10,8 @@ COMMENT=	Set of LV2 plugins from the guitarix project
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_riscv64=	ld: error: gui/pedal.o: cannot link object files with different floating-point ABI
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 

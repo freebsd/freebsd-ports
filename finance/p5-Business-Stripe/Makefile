@@ -1,5 +1,3 @@
-# Created by: Vick Khera <vivek@khera.org>
-
 PORTNAME=	Business-Stripe
 PORTVERSION=	0.07
 CATEGORIES=	finance perl5

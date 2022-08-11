@@ -1,5 +1,3 @@
-# Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	flang-clang
 DISTVERSION=	7.0-g20191020
 PORTREVISION=	2
@@ -12,6 +10,9 @@ LICENSE=	LLVM
 LICENSE_NAME=	LLVM Release License
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	Very outdated and unsupported upstream, current version in tree is several years old and upstream is still active
+EXPIRATION_DATE=2022-09-30
 
 ONLY_FOR_ARCHS=	amd64
 
@@ -41,11 +42,14 @@ CMAKE_INSTALL_PREFIX=	${PREFIX}/flang
 CC=		${LOCALBASE}/llvm${LLVM_VER}/bin/clang
 CXX=		${LOCALBASE}/llvm${LLVM_VER}/bin/clang++
 
+# Support __builtin_is_constant_evaluated(), for libc++ >= 14
+CXXFLAGS+=	-include ${FILESDIR}/builtin_is_constant_evaluated.h
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/lib/Driver/ToolChains/FreeBSD.cpp
 
 post-install:
-	@${GZIP_CMD} ${STAGEDIR}/${PREFIX}/flang/man/man1/scan-build.1
+	@${GZIP_CMD} ${STAGEDIR}/${PREFIX}/flang/share/man/man1/scan-build.1
 	${RLN} ${STAGEDIR}${PREFIX}/flang/bin/flang ${STAGEDIR}${PREFIX}/bin/flang
 
 .include <bsd.port.mk>

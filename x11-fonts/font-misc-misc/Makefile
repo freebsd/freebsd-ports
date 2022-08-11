@@ -1,5 +1,3 @@
-# Created by: Pawel Worach
-
 PORTNAME=	font-misc-misc
 PORTVERSION=	1.1.2
 PORTREVISION=	4

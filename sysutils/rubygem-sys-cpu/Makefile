@@ -1,7 +1,5 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	sys-cpu
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

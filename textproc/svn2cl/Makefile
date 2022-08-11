@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	svn2cl
 PORTVERSION=	0.14
 CATEGORIES=	textproc

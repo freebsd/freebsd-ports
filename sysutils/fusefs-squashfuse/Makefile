@@ -1,6 +1,7 @@
 PORTNAME=	squashfuse
-PORTVERSION=	0.1.103
+PORTVERSION=	0.1.104
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/vasi/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	jsmith@resonatingmedia.com
@@ -10,8 +11,6 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf fuse libtool pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	vasi
 GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip

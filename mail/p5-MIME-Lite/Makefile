@@ -1,5 +1,3 @@
-# Created by: Alex Perel <veers@disturbed.net>
-
 PORTNAME=	MIME-Lite
 PORTVERSION=	3.033
 CATEGORIES=	mail perl5

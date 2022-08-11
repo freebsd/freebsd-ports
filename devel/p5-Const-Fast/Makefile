@@ -1,5 +1,3 @@
-# Created by: Philip M. Gollucci
-
 PORTNAME=	Const-Fast
 PORTVERSION=	0.014
 PORTREVISION=	2

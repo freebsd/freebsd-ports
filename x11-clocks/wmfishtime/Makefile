@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	wmfishtime
 PORTVERSION=	1.24
 PORTREVISION=	7

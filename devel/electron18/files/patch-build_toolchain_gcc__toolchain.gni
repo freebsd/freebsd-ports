@@ -1,0 +1,35 @@
+--- build/toolchain/gcc_toolchain.gni.orig	2022-05-19 05:17:34 UTC
++++ build/toolchain/gcc_toolchain.gni
+@@ -53,6 +53,13 @@ if (enable_resource_allowlist_generation) {
+       "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
+ }
+ 
++declare_args() {
++  extra_cflags = ""
++  extra_cppflags = ""
++  extra_cxxflags = ""
++  extra_ldflags = ""
++}
++
+ # This template defines a toolchain for something that works like gcc
+ # (including clang).
+ #
+@@ -771,13 +778,12 @@ template("gcc_toolchain") {
+ # use_gold too.
+ template("clang_toolchain") {
+   gcc_toolchain(target_name) {
+-    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
+-    cc = "${prefix}/clang"
+-    cxx = "${prefix}/clang++"
++    cc = "cc"
++    cxx = "c++"
+     ld = cxx
+-    readelf = "${prefix}/llvm-readelf"
+-    ar = "${prefix}/llvm-ar"
+-    nm = "${prefix}/llvm-nm"
++    readelf = "readelf"
++    ar = "ar"
++    nm = "nm"
+ 
+     forward_variables_from(invoker,
+                            [

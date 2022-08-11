@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	UCD
 PORTVERSION=	14.0.0
 CATEGORIES=	textproc

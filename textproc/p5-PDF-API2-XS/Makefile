@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	PDF-API2-XS
 PORTVERSION=	1.002
 CATEGORIES=	textproc perl5

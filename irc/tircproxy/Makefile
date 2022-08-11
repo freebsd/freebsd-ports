@@ -1,5 +1,3 @@
-# Created by: Eugeny Kuzakov <CoreDumped@CoreDumped.null.ru>
-
 PORTNAME=	tircproxy
 PORTVERSION=	0.4.5
 PORTREVISION=	4

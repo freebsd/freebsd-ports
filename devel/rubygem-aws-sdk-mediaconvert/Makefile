@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-mediaconvert
-PORTVERSION=	1.88.0
+PORTVERSION=	1.92.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

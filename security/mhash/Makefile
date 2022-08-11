@@ -1,5 +1,3 @@
-# Created by: nsayer@FreeBSD.org
-
 PORTNAME=	mhash
 PORTVERSION=	0.9.9.9
 PORTREVISION=	5

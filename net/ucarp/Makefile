@@ -1,5 +1,3 @@
-# Created by: Meno Abels <meno.abels@adviser.com>
-
 PORTNAME=	ucarp
 PORTVERSION=	1.5.2.20171201
 CATEGORIES=	net

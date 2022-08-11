@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	Auth
 PORTVERSION=	1.6.4
 CATEGORIES=	security pear

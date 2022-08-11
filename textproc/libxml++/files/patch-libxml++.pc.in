@@ -1,0 +1,8 @@
+--- libxml++.pc.in.orig	2021-05-27 10:36:45 UTC
++++ libxml++.pc.in
+@@ -16,4 +16,4 @@ Libs: -L${libdir} -lxml++@MSVC_TOOLSET_VER@-@LIBXMLXX_
+ URL: https://libxmlplusplus.github.io/libxmlplusplus/
+ Requires: @LIBXMLXX_MODULES@
+ Libs: -L${libdir} -lxml++@MSVC_TOOLSET_VER@-@LIBXMLXX_API_VERSION@ @LIBXML2_LIB_NO_PKGCONFIG@
+-Cflags: -I${includedir}/@LIBXMLXX_MODULE_NAME@ -I${libdir}/@LIBXMLXX_MODULE_NAME@/include
++Cflags: -I${includedir}/@LIBXMLXX_MODULE_NAME@ -I${includedir}/@LIBXMLXX_MODULE_NAME@/include

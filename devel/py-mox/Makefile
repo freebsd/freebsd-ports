@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	mox
 PORTVERSION=	0.5.3
 PORTREVISION=	2

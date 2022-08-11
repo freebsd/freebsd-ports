@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	middleman
 PORTVERSION=	1.9.1
 PORTREVISION=	2

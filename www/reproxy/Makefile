@@ -1,9 +1,7 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	reproxy
 PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	www
 
 MAINTAINER=	danfe@FreeBSD.org

@@ -1,5 +1,3 @@
-# Created by: Nishika <nishika@cheerful.com>
-
 PORTNAME=	quasi88
 PORTVERSION=	0.6.4
 CATEGORIES=	emulators

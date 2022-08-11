@@ -1,5 +1,3 @@
-# Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
-
 PORTNAME=	xjig
 PORTVERSION=	2.4
 PORTREVISION=	5

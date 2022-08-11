@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	Archive-Rar
 PORTVERSION=	2.02
 PORTREVISION=	2

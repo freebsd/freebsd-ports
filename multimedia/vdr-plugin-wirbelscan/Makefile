@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-wirbelscan
 PORTVERSION=	0.0.7
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: Bo-Yi Wu <appleboy.tw@gmail.com>
-
 PORTNAME=	phpbb
 PORTVERSION=	3.0.12
 PORTREVISION=	0

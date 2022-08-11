@@ -1,8 +1,6 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	deadbeef
 PORTVERSION=	0.7.2
-PORTREVISION=	19
+PORTREVISION=	21
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 

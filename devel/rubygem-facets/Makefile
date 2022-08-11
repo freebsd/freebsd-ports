@@ -1,5 +1,3 @@
-# Created by: Yarema <yds@CoolRat.org>
-
 PORTNAME=	facets
 PORTVERSION=	3.1.0
 CATEGORIES=	devel rubygems

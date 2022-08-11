@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	nss
 PORTVERSION=	3.53.1
 DISTVERSIONSUFFIX=	-3.el7_9

@@ -1,5 +1,3 @@
-# Created by: Don Croyle <croyle@gelemna.org>
-
 PORTNAME=	bugsx
 PORTVERSION=	1.08
 PORTREVISION=	2

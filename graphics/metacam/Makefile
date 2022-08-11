@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	metacam
 PORTVERSION=	1.2
 CATEGORIES=	graphics

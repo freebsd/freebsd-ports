@@ -1,5 +1,3 @@
-# Created by: Vladimir Kondratyev <wulf@FreeBSD.org>
-
 PORTNAME=	hid-tools
 PORTVERSION=	0.2
 CATEGORIES=	sysutils python

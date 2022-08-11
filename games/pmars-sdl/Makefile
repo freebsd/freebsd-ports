@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	pmars
 PORTVERSION=	0.9.2
 PORTREVISION=	7

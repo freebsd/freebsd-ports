@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Perl6-Junction
 PORTVERSION=	1.60000
 PORTREVISION=	1

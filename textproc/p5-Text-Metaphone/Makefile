@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Text-Metaphone
 PORTVERSION=	20160805
 CATEGORIES=	textproc perl5

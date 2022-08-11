@@ -1,5 +1,3 @@
-# Created by: Jerry Hicks <wghicks@bellsouth.net>
-
 PORTNAME=	Parse-RecDescent
 PORTVERSION=	1.967015
 CATEGORIES=	devel perl5

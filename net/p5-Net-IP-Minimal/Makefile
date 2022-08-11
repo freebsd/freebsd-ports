@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Net-IP-Minimal
 PORTVERSION=	0.06
 PORTREVISION=	1

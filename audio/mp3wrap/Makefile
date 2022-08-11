@@ -1,5 +1,3 @@
-# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-
 PORTNAME=	mp3wrap
 PORTVERSION=	0.5
 CATEGORIES=	audio

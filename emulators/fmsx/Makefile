@@ -1,5 +1,3 @@
-# Created by: dk
-
 PORTNAME=	fmsx
 PORTVERSION=	6.0
 CATEGORIES=	emulators

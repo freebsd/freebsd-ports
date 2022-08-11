@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sphinx-autobuild
 PORTVERSION=	2021.3.14
 CATEGORIES=	textproc python

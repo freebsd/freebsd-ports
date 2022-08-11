@@ -45,6 +45,7 @@ man/man1/libinput.1.gz
 %%DATADIR%%/10-generic-lid.quirks
 %%DATADIR%%/10-generic-mouse.quirks
 %%DATADIR%%/10-generic-trackball.quirks
+%%DATADIR%%/30-vendor-a4tech.quirks
 %%DATADIR%%/30-vendor-aiptek.quirks
 %%DATADIR%%/30-vendor-alps.quirks
 %%DATADIR%%/30-vendor-contour.quirks
@@ -56,6 +57,7 @@ man/man1/libinput.1.gz
 %%DATADIR%%/30-vendor-madcatz.quirks
 %%DATADIR%%/30-vendor-microsoft.quirks
 %%DATADIR%%/30-vendor-razer.quirks
+%%DATADIR%%/30-vendor-starlabs.quirks
 %%DATADIR%%/30-vendor-synaptics.quirks
 %%DATADIR%%/30-vendor-trust.quirks
 %%DATADIR%%/30-vendor-vmware.quirks
@@ -70,6 +72,7 @@ man/man1/libinput.1.gz
 %%DATADIR%%/50-system-dell.quirks
 %%DATADIR%%/50-system-gigabyte.quirks
 %%DATADIR%%/50-system-google.quirks
+%%DATADIR%%/50-system-gpd.quirks
 %%DATADIR%%/50-system-hp.quirks
 %%DATADIR%%/50-system-huawei.quirks
 %%DATADIR%%/50-system-lenovo.quirks

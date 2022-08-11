@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	power_assert
 PORTVERSION=	2.0.1
 CATEGORIES=	devel rubygems

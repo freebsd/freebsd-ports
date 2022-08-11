@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-angular-fileupload
 PORTVERSION=	12.0.4.0
 PORTREVISION=	2

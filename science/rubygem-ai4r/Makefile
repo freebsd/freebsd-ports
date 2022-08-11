@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	ai4r
 PORTVERSION=	1.13
 CATEGORIES=	science rubygems

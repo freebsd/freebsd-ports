@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	soundtouch
 DISTVERSION=	2.3.1
 CATEGORIES=	audio

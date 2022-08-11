@@ -1,5 +1,3 @@
-# Created by: Saulius Menkevicius <bob@nulis.lt>
-
 PORTNAME=	vqcc-gtk
 PORTVERSION=	0.5
 PORTREVISION=	9

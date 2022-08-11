@@ -1,0 +1,15 @@
+--- core/dplugins/generic/webservices/CMakeLists.txt.orig	2022-06-22 11:35:53 UTC
++++ core/dplugins/generic/webservices/CMakeLists.txt
+@@ -33,10 +33,10 @@ add_subdirectory(twitter)
+ 
+ add_subdirectory(smugmug)
+ add_subdirectory(twitter)
+-#add_subdirectory(yandexfotki)
++add_subdirectory(yandexfotki)
+ 
+ if(KF5KIO_FOUND)
+-#    add_subdirectory(vkontakte)
++    add_subdirectory(vkontakte)
+     add_subdirectory(filetransfer)
+ endif()
+ 

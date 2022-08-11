@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	granulate
 PORTVERSION=	0.2
 CATEGORIES=	misc

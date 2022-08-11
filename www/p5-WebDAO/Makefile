@@ -1,5 +1,3 @@
-# Created by: Zahatski Aliaksandr <zag@cpan.org>
-
 PORTNAME=	WebDAO
 PORTVERSION=	2.25
 CATEGORIES=	www perl5

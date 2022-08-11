@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	cfg
 PORTVERSION=	2.2.0
 CATEGORIES=	devel

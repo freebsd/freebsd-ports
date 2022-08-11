@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	tkgeomap
 PORTVERSION=	2.11.6
 CATEGORIES=	astro tk

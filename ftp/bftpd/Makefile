@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	bftpd
 PORTVERSION=	6.1
 CATEGORIES=	ftp

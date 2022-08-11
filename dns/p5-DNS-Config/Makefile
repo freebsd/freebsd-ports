@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-
 PORTNAME=	DNS-Config
 PORTVERSION=	0.66
 PORTREVISION=	1

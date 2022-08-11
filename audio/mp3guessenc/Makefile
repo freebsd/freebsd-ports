@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	mp3guessenc
 PORTVERSION=	0.27.5
 CATEGORIES=	audio

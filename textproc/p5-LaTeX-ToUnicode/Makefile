@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	LaTeX-ToUnicode
 PORTVERSION=	0.11
 CATEGORIES=	textproc perl5

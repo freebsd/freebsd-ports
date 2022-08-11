@@ -1,5 +1,3 @@
-# Created by: Oliver Mahmoudi <olivermahmoudi@gmail.com>
-
 PORTNAME=	kamailio
 PORTVERSION=	5.5.4
 PORTREVISION=	2

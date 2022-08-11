@@ -1,8 +1,6 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	source-highlight
 DISTVERSION=	3.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/src-highlite
 

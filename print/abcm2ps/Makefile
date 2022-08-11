@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	abcm2ps
 PORTVERSION=	8.13.23
 DISTVERSIONPREFIX=	v

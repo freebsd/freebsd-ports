@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	calculix
 PORTVERSION=	2.19
 CATEGORIES=	cad

@@ -1,5 +1,3 @@
-# Created by: simonm@dcs.gla.ac.uk
-
 PORTNAME=	cgoban
 PORTVERSION=	1.9.14
 PORTREVISION=	4

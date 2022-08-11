@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	tmu
 DISTVERSION=	1.901b
 PORTREVISION=	2

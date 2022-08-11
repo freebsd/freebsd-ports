@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger
-
 PORTNAME=	fluxter
 PORTVERSION=	0.2.0
 PORTREVISION=	3

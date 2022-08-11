@@ -1,5 +1,3 @@
-# Created by: Choe, Cheng-Dae
-
 PORTNAME=	nevow
 PORTVERSION=	0.14.0
 PORTREVISION=	1

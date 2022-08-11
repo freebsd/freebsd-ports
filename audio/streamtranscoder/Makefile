@@ -1,8 +1,6 @@
-# Created by: Mark Kane <mark@mkproductions.org>
-
 PORTNAME=	streamtranscoder
 PORTVERSION=	1.2.8
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio
 MASTER_SITES=	https://BSDforge.com/projects/source/audio/streamtranscoder/
 

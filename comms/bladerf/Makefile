@@ -1,5 +1,5 @@
 PORTNAME=	bladeRF
-DISTVERSION=	2019.07
+DISTVERSION=	2021.10
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,10 +9,11 @@ LICENSE=	MIT LGPL20 GPLv2
 LICENSE_COMB=	multi
 
 USES=		cmake compiler:c11 libedit
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Nuand
 GH_TUPLE=	analogdevicesinc:no-OS:0bba46e:x/thirdparty/analogdevicesinc/no-OS
-USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/bladeRF-cli \
 		bin/bladeRF-fsk \

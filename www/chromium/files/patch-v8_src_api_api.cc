@@ -1,4 +1,4 @@
---- v8/src/api/api.cc.orig	2022-05-19 14:06:27 UTC
+--- v8/src/api/api.cc.orig	2022-07-22 17:30:31 UTC
 +++ v8/src/api/api.cc
 @@ -138,7 +138,7 @@
  #include "src/wasm/wasm-serialization.h"
@@ -7,9 +7,9 @@
 -#if V8_OS_LINUX || V8_OS_DARWIN || V8_OS_FREEBSD
 +#if V8_OS_LINUX || V8_OS_DARWIN || V8_OS_FREEBSD || V8_OS_OPENBSD
  #include <signal.h>
- #include "include/v8-wasm-trap-handler-posix.h"
- #include "src/trap-handler/handler-inside-posix.h"
-@@ -6064,7 +6064,7 @@ bool v8::V8::Initialize(const int build_config) {
+ 
+ #if V8_ENABLE_WEBASSEMBLY
+@@ -6060,7 +6060,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

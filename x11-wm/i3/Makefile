@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <dhn@FreeBSD.org>
-
 PORTNAME=	i3
 DISTVERSION=	4.20.1
 CATEGORIES=	x11-wm

@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>
-
 PORTNAME=	weberp
 PORTVERSION=	4.15.2
 CATEGORIES=	finance www

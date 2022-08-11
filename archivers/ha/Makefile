@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	ha
 PORTVERSION=	0.999b
 PORTREVISION=	2

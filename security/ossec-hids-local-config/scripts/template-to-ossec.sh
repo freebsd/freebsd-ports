@@ -24,13 +24,15 @@ fi
 
 replace() {
     if grep -q "<template_config>" "${ossec_file}"; then
-        sed -e 's|<template_config>|<ossec_config>|' \
+        sed -E \
+            -e 's|<template_config>|<ossec_config>|' \
             -e 's|</template_config>|</ossec_config>|' \
             -e "s|%%OSSEC_SYSCHECK_BIN_DIRS%%|${ossec_syscheck_bin_dirs}|" \
             -e "s|%%OSSEC_SYSCHECK_ETC_DIRS%%|${ossec_syscheck_etc_dirs}|" \
             "${ossec_file}"
     else
-        sed -e 's|<template_config .*os="FreeBSD".*>|<ossec_config>|' \
+        sed -E \
+            -e 's|<template_config .*os="FreeBSD".*>|<ossec_config>|' \
             -e 's|</template_config>|</ossec_config>|' \
             -e "s|%%OSSEC_SYSCHECK_BIN_DIRS%%|${ossec_syscheck_bin_dirs}|" \
             -e "s|%%OSSEC_SYSCHECK_ETC_DIRS%%|${ossec_syscheck_etc_dirs}|" \
@@ -39,7 +41,7 @@ replace() {
 }
 
 extract() {
-    sed -n '/^<ossec_config.*>$/,/^<\/ossec_config>$/p'
+    sed -En '/^<ossec_config.*>$/,/^<\/ossec_config>$/p'
 }
 
 replace | extract

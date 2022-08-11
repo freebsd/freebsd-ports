@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	Module-Recursive-Require
 PORTVERSION=	0.04
 PORTREVISION=	1

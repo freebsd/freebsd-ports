@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Algorithm-NaiveBayes
 PORTVERSION=	0.04
 PORTREVISION=	1

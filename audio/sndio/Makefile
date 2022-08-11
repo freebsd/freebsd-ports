@@ -1,5 +1,5 @@
 PORTNAME=	sndio
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.0
 CATEGORIES=	audio
 MASTER_SITES=	https://sndio.org/
 
@@ -30,6 +30,6 @@ post-patch:
 post-install:
 	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} \
 		aucat midicat sndioctl sndiod
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsndio.so.7.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsndio.so.7.2
 
 .include <bsd.port.mk>

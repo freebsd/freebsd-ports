@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	Net-IP
 PORTVERSION=	1.26
 PORTREVISION=	1

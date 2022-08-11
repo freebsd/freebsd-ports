@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	libshhcards
 PORTVERSION=	1.0.6
 CATEGORIES=	games

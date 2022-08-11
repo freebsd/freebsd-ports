@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	fcitx5-lua
 DISTVERSION=	5.0.5
 CATEGORIES=	textproc

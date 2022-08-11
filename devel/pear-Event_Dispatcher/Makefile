@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Event_Dispatcher
 PORTVERSION=	1.1.0
 CATEGORIES=	devel pear

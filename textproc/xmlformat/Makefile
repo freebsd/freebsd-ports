@@ -1,5 +1,3 @@
-# Created by: Hiroki Sato <hrs@FreeBSD.org>
-
 PORTNAME=	xmlformat
 PORTVERSION=	1.04
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Robert Nelson <robertn@the-nelsons.org>
-
 PORTNAME=	emailrelay
 PORTVERSION=	1.9
 PORTREVISION=	6

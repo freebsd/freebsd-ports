@@ -1,5 +1,3 @@
-# Created by: maho@FreeBSD.org
-
 PORTNAME=	garlic
 PORTVERSION=	1.6
 PORTREVISION=	1

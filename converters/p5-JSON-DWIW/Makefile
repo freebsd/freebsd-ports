@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	JSON-DWIW
 PORTVERSION=	0.47
 PORTREVISION=	1

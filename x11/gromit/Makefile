@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	gromit
 PORTVERSION=	20041213
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: freebsd-ports@henrik.synth.no
-
 PORTNAME=	stardates
 PORTVERSION=	1.6.1
 CATEGORIES=	astro

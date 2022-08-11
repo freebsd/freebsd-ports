@@ -1,5 +1,3 @@
-# Created by: verm@drunkmonk.net
-
 PORTNAME=	lbreakout2
 PORTVERSION=	2.6.5
 PORTREVISION=	1

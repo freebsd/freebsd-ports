@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	bluelet
 PORTVERSION=	0.2.0
 CATEGORIES=	devel python

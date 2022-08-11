@@ -1,5 +1,3 @@
-# Created by: Jie Gao	<gaoj@cpsc.ucalgary.ca>
-
 PORTNAME=	scim
 PORTVERSION=	1.4.9
 PORTREVISION=	6

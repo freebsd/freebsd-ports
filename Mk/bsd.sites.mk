@@ -852,7 +852,7 @@ MASTER_SITE_MYSQL+= \
 	ftp://ftp.ntua.gr/pub/databases/mysql/Downloads/%SUBDIR%/ \
 	ftp://mirror.switch.ch/mirror/mysql/Downloads/%SUBDIR%/ \
 	http://mysql.mirrors.pair.com/Downloads/%SUBDIR%/ \
-	http://download.softagency.net/MySQL/Downloads/%SUBDIR%/
+	https://dev.mysql.com/get/Downloads/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_NETBSD)
@@ -1116,11 +1116,11 @@ MASTER_SITE_TCLTK+= \
 
 .if !defined(IGNORE_MASTER_SITE_TEX_CTAN)
 MASTER_SITE_TEX_CTAN+= \
-	https://ftp.math.utah.edu/pub/tex/historic/%SUBDIR%/ \
 	https://ftp.tu-chemnitz.de/pub/tug/historic/%SUBDIR%/ \
 	https://pi.kwarc.info/historic/%SUBDIR%/ \
 	https://mirrors.tuna.tsinghua.edu.cn/tex-historic-archive/%SUBDIR%/ \
-	https://mirror.nju.edu.cn/tex-historic/%SUBDIR%/
+	https://mirror.nju.edu.cn/tex-historic/%SUBDIR%/ \
+	https://ftp.math.utah.edu/pub/tex/historic/%SUBDIR%/
 .endif
 
 # Derived from: https://www.torproject.org/getinvolved/mirrors.html.en

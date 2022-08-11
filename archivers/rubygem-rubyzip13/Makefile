@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rubyzip
 PORTVERSION=	1.3.0
 CATEGORIES=	archivers rubygems

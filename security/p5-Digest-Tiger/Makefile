@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-Tiger
 PORTVERSION=	0.03
 PORTREVISION=	1

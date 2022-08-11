@@ -1,5 +1,3 @@
-# Created by: mi
-
 PORTNAME=	XPostitPlus
 PORTVERSION=	2.3
 PORTREVISION=	3

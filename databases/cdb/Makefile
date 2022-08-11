@@ -1,5 +1,3 @@
-# Created by: Gary Palmer <gpalmer@FreeBSD.org>
-
 PORTNAME=	cdb
 PORTVERSION=	0.75
 CATEGORIES=	databases

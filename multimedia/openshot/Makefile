@@ -1,5 +1,3 @@
-# Created by: Charlie Kester <corky1951@comcast.net>
-
 PORTNAME=	openshot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.1

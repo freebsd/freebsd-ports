@@ -1,5 +1,3 @@
-# Created by: Marcello Coutinho <marcellocoutinho@gmail.com>
-
 PORTNAME=	Acme-Comment
 PORTVERSION=	1.04
 PORTREVISION=	1

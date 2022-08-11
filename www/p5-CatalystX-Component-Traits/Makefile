@@ -1,5 +1,3 @@
-# Created by: Bill Brinzer <bill.brinzer@gmail.com>
-
 PORTNAME=	CatalystX-Component-Traits
 PORTVERSION=	0.19
 CATEGORIES=	www perl5

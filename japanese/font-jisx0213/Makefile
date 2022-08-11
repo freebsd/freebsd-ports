@@ -1,5 +1,3 @@
-# Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
-
 PORTNAME=	jisx0213
 PORTVERSION=	20040425
 PORTREVISION=	8

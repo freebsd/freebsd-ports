@@ -1,5 +1,3 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	rdiscount
 PORTVERSION=	2.2.0.2
 CATEGORIES=	textproc rubygems

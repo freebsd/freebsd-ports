@@ -1,7 +1,5 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	BRiAl
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.11
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -22,6 +20,7 @@ USES=		autoreconf compiler:c++11-lang libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 .include <bsd.port.mk>

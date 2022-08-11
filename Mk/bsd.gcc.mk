@@ -3,7 +3,6 @@
 #
 # bsd.gcc.mk - Support for smarter USE_GCC usage.
 #
-# Created by: Edwin Groothuis <edwin@freebsd.org>
 #
 # To request the use of a current version of GCC, specify USE_GCC=yes in
 # your port/system configuration.  This is the preferred use of USE_GCC.
@@ -41,7 +40,7 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 # All GCC versions supported by this framework.
 #
 # When updating this, keep Mk/bsd.default-versions.mk in sync.
-GCCVERSIONS=	4.8 8 9 10 11 12
+GCCVERSIONS=	4.8 8 9 10 11 12 13
 
 # No configurable parts below this. ####################################
 #
@@ -103,7 +102,7 @@ _USE_GCC:=	${GCC_DEFAULT}
 # A concrete version has been selected. Set proper ports dependencies,
 # CC, CXX, CPP, and flags.
 V:=			${_USE_GCC:S/.//}
-.  if ${V} == 12
+.  if ${V} == 13
 _GCC_PORT:=		gcc${V}-devel
 .  else
 _GCC_PORT:=		gcc${V}

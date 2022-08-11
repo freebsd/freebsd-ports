@@ -1,5 +1,3 @@
-# Created by: Filip Parag <filip@parag.rs>
-
 PORTNAME=	wikiman
 DISTVERSION=	2.12.2
 CATEGORIES=	textproc

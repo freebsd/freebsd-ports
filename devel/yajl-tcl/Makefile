@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	yajl-tcl
 PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v

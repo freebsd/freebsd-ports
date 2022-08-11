@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-PageCache
 PORTVERSION=	0.32
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Yonatan <onatan@gmail.com>
-
 PORTNAME=	isnprober
 PORTVERSION=	1.02
 CATEGORIES=	security

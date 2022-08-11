@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	ceylon
 PORTVERSION=	1.3.3
 CATEGORIES=	lang java

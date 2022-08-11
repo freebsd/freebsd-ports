@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	hipchat
 PORTVERSION=	1.6.0
 CATEGORIES=	net-im rubygems

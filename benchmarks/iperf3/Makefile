@@ -1,5 +1,3 @@
-# Created by: Bruce A. Mah <bmah@FreeBSD.org>
-
 PORTNAME=	iperf
 DISTVERSION=	3.11
 CATEGORIES=	benchmarks

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	openttd
 DISTVERSION=	12.2
 CATEGORIES=	games

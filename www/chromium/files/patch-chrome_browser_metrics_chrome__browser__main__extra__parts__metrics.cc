@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2022-03-25 21:59:56 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2022-07-22 17:30:31 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -57,8 +57,10 @@
+@@ -58,8 +58,10 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

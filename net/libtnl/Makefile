@@ -1,5 +1,3 @@
-# Created by: aaron@FreeBSD.org
-
 PORTNAME=	libtnl
 PORTVERSION=	1.5.0
 PORTREVISION=	7

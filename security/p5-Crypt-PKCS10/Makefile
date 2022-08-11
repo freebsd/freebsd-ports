@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Crypt-PKCS10
 PORTVERSION=	2.003
 PORTEPOCH=	1

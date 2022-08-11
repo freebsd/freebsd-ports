@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	flac
 PORTVERSION=	1.3.0
 DISTVERSIONSUFFIX=	-5.el7_1

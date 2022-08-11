@@ -1,5 +1,3 @@
-# Created by: Mark R V Murray <markm@FreeBSD.org>
-
 PORTNAME=	jacal
 PORTVERSION=	1c7
 CATEGORIES=	math

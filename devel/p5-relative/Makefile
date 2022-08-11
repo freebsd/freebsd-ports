@@ -1,5 +1,3 @@
-# Created by: skreuzer@exit2shell.com
-
 PORTNAME=	relative
 PORTVERSION=	0.04
 PORTREVISION=	1

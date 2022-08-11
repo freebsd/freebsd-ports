@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	clearlooks
 PKGNAMESUFFIX+=	-themes
 

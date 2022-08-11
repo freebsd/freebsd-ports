@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	FreeBSD-i386-Ptrace
 PORTVERSION=	0.05
 CATEGORIES=	devel perl5

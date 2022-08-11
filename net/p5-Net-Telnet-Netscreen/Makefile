@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Net-Telnet-Netscreen
 PORTVERSION=	1.2
 PORTREVISION=	1

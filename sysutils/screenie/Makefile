@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	screenie
 PORTVERSION=	20120406
 CATEGORIES=	sysutils

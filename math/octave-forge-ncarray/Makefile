@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-
 PORTNAME=	octave-forge-ncarray
 PORTVERSION=	1.0.4
 PORTREVISION=	13

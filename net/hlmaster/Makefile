@@ -1,5 +1,3 @@
-# Created by: pat@databits.net
-
 PORTNAME=	hlmaster
 PORTVERSION=	0.9.3
 CATEGORIES=	net games

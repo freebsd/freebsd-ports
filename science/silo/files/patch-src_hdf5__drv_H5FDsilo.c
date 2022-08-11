@@ -37,3 +37,45 @@
  #endif /* !defined(HDfstat) || !defined(HDstat) */
  #ifndef HDlseek
      #ifdef H5_HAVE_LSEEK64
+@@ -255,13 +243,13 @@ static const char *flavors(H5F_mem_t m)
+         snprintf(msg, sizeof(msg), Msg "(errno=%d, \"%s\")",	\
+             Errno, strerror(Errno));					\
+     ret_value = Ret;							\
+-    H5Epush_ret(Func, Cls, Maj, Min, msg, Ret)				\
++    H5Epush_ret(Func, Cls, Maj, Min, msg, Ret);				\
+ }
+ #else
+ #define H5E_PUSH_HELPER(Func,Cls,Maj,Min,Msg,Ret,Errno)			\
+ {									\
+     ret_value = Ret;							\
+-    H5Epush_ret(Func, Cls, Maj, Min, Msg, Ret)				\
++    H5Epush_ret(Func, Cls, Maj, Min, Msg, Ret);				\
+ }
+ #endif
+ 
+@@ -1308,7 +1296,7 @@ H5FD_silo_sb_encode(H5FD_t *_file, char *name/*out*/,
+     assert(sizeof(hsize_t)<=8);
+     memcpy(p, &file->block_size, sizeof(hsize_t));
+     if (H5Tconvert(H5T_NATIVE_HSIZE, H5T_STD_U64LE, 1, buf+8, NULL, H5P_DEFAULT)<0)
+-        H5Epush_ret(func, H5E_ERR_CLS, H5E_DATATYPE, H5E_CANTCONVERT, "can't convert superblock info", -1)
++        H5Epush_ret(func, H5E_ERR_CLS, H5E_DATATYPE, H5E_CANTCONVERT, "can't convert superblock info", -1);
+ 
+     return 0;
+ }
+@@ -1336,14 +1324,14 @@ H5FD_silo_sb_decode(H5FD_t *_file, const char *name, c
+ 
+     /* Make sure the name/version number is correct */
+     if (strcmp(name, "LLNLsilo"))
+-        H5Epush_ret(func, H5E_ERR_CLS, H5E_FILE, H5E_BADVALUE, "invalid silo superblock", -1)
++        H5Epush_ret(func, H5E_ERR_CLS, H5E_FILE, H5E_BADVALUE, "invalid silo superblock", -1);
+ 
+     buf += 8;
+     /* Decode block size */
+     assert(sizeof(hsize_t)<=8);
+     memcpy(x, buf, 8);
+     if (H5Tconvert(H5T_STD_U64LE, H5T_NATIVE_HSIZE, 1, x, NULL, H5P_DEFAULT)<0)
+-        H5Epush_ret(func, H5E_ERR_CLS, H5E_DATATYPE, H5E_CANTCONVERT, "can't convert superblock info", -1)
++        H5Epush_ret(func, H5E_ERR_CLS, H5E_DATATYPE, H5E_CANTCONVERT, "can't convert superblock info", -1);
+     ap = (hsize_t*)x;
+     /*file->block_size = *ap; ignore stored value for now */
+ 

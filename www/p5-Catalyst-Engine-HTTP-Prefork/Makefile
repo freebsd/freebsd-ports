@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Catalyst-Engine-HTTP-Prefork
 PORTVERSION=	0.51
 PORTREVISION=	1

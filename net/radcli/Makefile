@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	radcli
 PORTVERSION=	1.3.0
 MASTER_SITES=	https://github.com/radcli/radcli/releases/download/${PORTVERSION}/

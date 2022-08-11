@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	sakura
 PORTVERSION=	3.8.4
 CATEGORIES=	x11 gnome

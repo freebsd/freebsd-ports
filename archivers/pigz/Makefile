@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	pigz
 PORTVERSION=	2.7
 CATEGORIES=	archivers

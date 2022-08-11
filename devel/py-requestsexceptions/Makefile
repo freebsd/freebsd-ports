@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	requestsexceptions
 PORTVERSION=	1.4.0
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	hexdump
 PORTVERSION=	3.3
 CATEGORIES=	textproc python

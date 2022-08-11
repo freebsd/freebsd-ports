@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Iterator-IO
 PORTVERSION=	0.02
 PORTREVISION=	1

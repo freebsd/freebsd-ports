@@ -1,5 +1,3 @@
-# Created by: Peter Ankerstal <peter@pean.org>
-
 PORTNAME=	zfs-periodic
 PORTVERSION=	1.0.20130213
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	File-BOM
 PORTVERSION=	0.18
 CATEGORIES=	devel perl5

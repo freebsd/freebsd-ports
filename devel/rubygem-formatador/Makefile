@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	formatador
 PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems

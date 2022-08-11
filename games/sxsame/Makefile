@@ -1,5 +1,3 @@
-# Created by: Yuichi Narahara
-
 PORTNAME=	sxsame
 PORTVERSION=	3.02
 PORTREVISION=	1

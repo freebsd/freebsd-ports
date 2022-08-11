@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	sessioninfo
 DISTVERSION=	1.2.2
 CATEGORIES=	devel

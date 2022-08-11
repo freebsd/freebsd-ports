@@ -1,5 +1,3 @@
-# Created by: <mr@freebsd.org>
-
 PORTNAME=	inspectrum
 PORTVERSION=	g20191102
 PORTREVISION=	0

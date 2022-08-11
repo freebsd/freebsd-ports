@@ -1,5 +1,3 @@
-# Created by: Koop Mast <einekoai@chello.nl>
-
 PORTNAME=	workrave
 PORTVERSION=	1.10.44
 PORTREVISION=	2
@@ -43,7 +41,8 @@ DBUS_CONFIGURE_ENABLE=	dbus
 
 DISTRIBUTION_CONFIGURE_ENABLE=	distribution
 
-GSTREAMER_USE=			GSTREAMER1=good
+GSTREAMER_USES=			gstreamer
+GSTREAMER_USE=			GSTREAMER=good
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer
 
 .include <bsd.port.mk>

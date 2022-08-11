@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-RRDTool
 PORTVERSION=	0.18
 PORTREVISION=	6

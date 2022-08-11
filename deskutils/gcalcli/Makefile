@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gcalcli
 PORTVERSION=	4.0.4
 DISTVERSIONPREFIX=	v

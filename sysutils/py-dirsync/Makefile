@@ -1,5 +1,3 @@
-# Created by: René Ladan <rene@freebsd.org>
-
 PORTNAME=	dirsync
 PORTVERSION=	2.2.5
 CATEGORIES=	sysutils python

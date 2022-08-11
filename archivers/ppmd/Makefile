@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	ppmd
 PORTVERSION=	20050811
 CATEGORIES=	archivers

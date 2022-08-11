@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Term-UI
 PORTVERSION=	0.50
 CATEGORIES=	devel perl5

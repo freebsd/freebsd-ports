@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	Crypt-RC5
 PORTVERSION=	2.00
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Jean-Marc Zucconi <jmz@FreeBSD.org>
-
 PORTNAME=	netpbm
 DISTVERSION=	10.91.01
 PORTREVISION=	1

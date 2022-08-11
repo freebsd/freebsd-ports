@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	yconalyzer
 PORTVERSION=	1.0.4
 PORTREVISION=	1

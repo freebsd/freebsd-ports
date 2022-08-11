@@ -1,5 +1,3 @@
-# Created by: jfreund
-
 PORTNAME=	cdeploy
 PORTVERSION=	0.2.1
 CATEGORIES=	sysutils

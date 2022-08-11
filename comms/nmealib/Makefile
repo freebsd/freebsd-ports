@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	nmealib
 PORTVERSION=	0.5.3
 CATEGORIES=	comms

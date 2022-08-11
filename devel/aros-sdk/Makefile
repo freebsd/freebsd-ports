@@ -1,5 +1,3 @@
-# Created by: Jona Joachim <walkingshadow@grummel.net>
-
 PORTNAME=	aros-sdk
 PORTVERSION=	0.20060207
 CATEGORIES=	devel

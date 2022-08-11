@@ -1,5 +1,3 @@
-# Created by: Michael Gmelin <grembo@FreeBSD.org>
-
 PORTNAME=	buildbot-waterfall-view
 PORTVERSION=	3.5.0
 CATEGORIES=	devel python

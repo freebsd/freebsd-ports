@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	lzma
 PORTVERSION=	0.5.0
 CATEGORIES=	archivers python

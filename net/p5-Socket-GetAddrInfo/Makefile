@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@tandon.net>
-
 PORTNAME=	Socket-GetAddrInfo
 PORTVERSION=	0.22
 PORTREVISION=	4

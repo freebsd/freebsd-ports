@@ -1,5 +1,3 @@
-# Created by: Kian Mohageri <kian.mohageri@gmail.com>
-
 PORTNAME=	nagios-pf-plugin
 PORTVERSION=	0.1
 PORTREVISION=	2

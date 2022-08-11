@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	hunspell
 PORTVERSION=	2.10
 CATEGORIES=	textproc

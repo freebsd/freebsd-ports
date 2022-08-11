@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	File_Fstab
 PORTVERSION=	2.0.3
 CATEGORIES=	sysutils devel pear

@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	Feersum
 PORTVERSION=	1.410
 CATEGORIES=	www perl5

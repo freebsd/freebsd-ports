@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	NSNMP
 PORTVERSION=	0.5
 PORTREVISION=	1

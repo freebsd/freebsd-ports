@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Bread-Board
 PORTVERSION=	0.37
 CATEGORIES=	devel perl5

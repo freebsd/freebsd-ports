@@ -1,8 +1,6 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	public_suffix_service
 PORTVERSION=	0.9.1
-PORTREVISION=	63
+PORTREVISION=	66
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	mangohud
 PORTVERSION=	0.6.5
 PORTREVISION=	1

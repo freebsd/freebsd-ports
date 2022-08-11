@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.2.79
 CATEGORIES=	databases

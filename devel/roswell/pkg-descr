@@ -1,3 +1,9 @@
-Roswell is a lisp implementation manager that aids in installing and using lisp
+Roswell is a Lisp implementation installer/manager, launcher, and much more! It
+started as a command-line tool with the aim to make installing and managing
+Common Lisp implementations really simple and easy.
 
-WWW: https://github.com/roswell/roswell
+Roswell has now evolved into a full-stack environment for Common Lisp
+development, and has many features that makes it easy to test, share, and
+distribute your Lisp applications.
+
+WWW: https://roswell.github.io/

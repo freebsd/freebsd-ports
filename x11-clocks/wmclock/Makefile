@@ -1,5 +1,3 @@
-# Created by: Per Otterstr=F6m <pelle@fukt.bth.se>
-
 PORTNAME=	wmclock
 PORTVERSION=	1.0.16
 CATEGORIES=	x11-clocks windowmaker

@@ -1,5 +1,3 @@
-# Created by: stas
-
 PORTNAME=	autoconf
 PORTVERSION=	1.1
 CATEGORIES=	lang

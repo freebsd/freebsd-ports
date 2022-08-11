@@ -1,6 +1,6 @@
---- chrome/app/theme/theme_resources.grd.orig	2022-05-19 14:06:27 UTC
+--- chrome/app/theme/theme_resources.grd.orig	2022-06-17 14:20:10 UTC
 +++ chrome/app/theme/theme_resources.grd
-@@ -128,11 +128,11 @@
+@@ -130,11 +130,11 @@
          <structure type="chrome_scaled_image" name="IDR_PRERENDER" file="common/prerender_succeed_icon.png" />
        </if>
        <if expr="not _google_chrome">
@@ -14,7 +14,7 @@
            <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="chromium/linux/product_logo_16.png" />
            <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="chromium/linux/product_logo_32.png" />
          </if>
-@@ -140,7 +140,7 @@
+@@ -142,7 +142,7 @@
          <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_NAME_22_WHITE" file="chromium/product_logo_name_22_white.png" />
        </if>
        <if expr="_google_chrome">
@@ -23,7 +23,7 @@
            <if expr="not is_android">
              <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="google_chrome/product_logo_16.png" />
              <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="google_chrome/product_logo_32.png" />
-@@ -148,7 +148,7 @@
+@@ -150,7 +150,7 @@
            <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32_BETA" file="google_chrome/product_logo_32_beta.png" />
            <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32_DEV" file="google_chrome/product_logo_32_dev.png" />
          </if>

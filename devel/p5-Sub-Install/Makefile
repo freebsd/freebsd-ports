@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Sub-Install
 PORTVERSION=	0.928
 PORTREVISION=	1

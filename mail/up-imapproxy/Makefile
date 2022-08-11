@@ -1,5 +1,3 @@
-# Created by: Martin Blapp
-
 PORTNAME=	imapproxy
 DISTVERSION=	1.2.8-pre20171105
 CATEGORIES=	mail

@@ -1,5 +1,3 @@
-# Created by: Florent Thoumie <flz@xbsd.org>
-
 PORTNAME=	visitors
 PORTVERSION=	0.7.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Pascal Vizeli <pvizeli@yahoo.de>
-
 PORTNAME=	mp4box
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
@@ -13,7 +11,9 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libgpac.so:multimedia/gpac-libgpac
 
-USES=		localbase:ldflags
+USES=		cpe localbase:ldflags
+
+CPE_VENDOR=	gpac
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gpac

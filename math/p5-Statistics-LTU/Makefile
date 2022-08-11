@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Statistics-LTU
 PORTVERSION=	2.8
 PORTREVISION=	1

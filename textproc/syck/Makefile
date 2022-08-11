@@ -1,5 +1,3 @@
-# Created by: dd
-
 PORTNAME=	syck
 PORTVERSION=	0.70
 CATEGORIES=	textproc devel

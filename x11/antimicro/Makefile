@@ -1,5 +1,3 @@
-# Created by: Anton Toernqvist <antont@inbox.lv>
-
 PORTNAME=	antimicro
 PORTVERSION=	2.23
 PORTREVISION=	3

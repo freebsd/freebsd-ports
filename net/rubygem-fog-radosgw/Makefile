@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-radosgw
 PORTVERSION=	0.0.5
 CATEGORIES=	net rubygems

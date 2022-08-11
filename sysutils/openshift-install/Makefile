@@ -1,9 +1,7 @@
-# Created by: John Hixson <jhixson@freebsd.org>
-
 PORTNAME=	openshift-install
 PORTVERSION=	4.9
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@freebsd.org
@@ -11,6 +9,8 @@ COMMENT=	RedHat OpenShift installer
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE
+
+BROKEN=		unfetchable dependency openshift-cluster-api-provider-gcp
 
 ONLY_FOR_ARCHS=	amd64
 

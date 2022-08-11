@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	rabbiter
 PORTVERSION=	2.0.4
 CATEGORIES=	net rubygems

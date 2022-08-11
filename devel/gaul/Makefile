@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gaul
 PORTVERSION=	0.1849.0
 PORTREVISION=	5

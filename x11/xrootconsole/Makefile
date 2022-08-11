@@ -1,5 +1,3 @@
-# Created by: incabulos@mac.com
-
 PORTNAME=	xrootconsole
 PORTVERSION=	0.6
 PORTREVISION=	1

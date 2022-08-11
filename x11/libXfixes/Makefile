@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXfixes
 DISTVERSION=	6.0.0
 CATEGORIES=	x11

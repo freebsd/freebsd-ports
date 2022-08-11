@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	eventmachine
 PORTVERSION=	1.2.7
 CATEGORIES=	devel rubygems

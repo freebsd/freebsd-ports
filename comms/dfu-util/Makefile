@@ -1,5 +1,3 @@
-# Created by: Bruce Cran <bruce@cran.org.uk>
-
 PORTNAME=	dfu-util
 PORTVERSION=	0.11
 CATEGORIES=	comms

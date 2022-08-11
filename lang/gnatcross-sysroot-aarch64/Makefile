@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	sysroot
 PORTVERSION=	1
 PORTREVISION=	1

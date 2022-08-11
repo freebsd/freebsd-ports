@@ -2,6 +2,7 @@
 %%PYTHON%%bin/arcstat
 %%PYTHON%%bin/dbufstat
 %%TESTS%%bin/raidz_test
+etc/bash_completion.d/zfs
 etc/sudoers.d/zfs
 etc/zfs/vdev_id.conf.alias.example
 etc/zfs/vdev_id.conf.multipath.example
@@ -54,18 +55,12 @@ etc/zfs/zpool.d/w_ucor
 include/libspl/assert.h
 include/libspl/atomic.h
 include/libspl/fcntl.h
-include/libspl/libdevinfo.h
 include/libspl/libgen.h
 include/libspl/libshare.h
-include/libspl/limits.h
-include/libspl/locale.h
 include/libspl/rpc/xdr.h
-include/libspl/sscanf.h
 include/libspl/statcommon.h
-include/libspl/stdio.h
 include/libspl/stdlib.h
 include/libspl/string.h
-include/libspl/stropts.h
 include/libspl/sys/acl.h
 include/libspl/sys/acl_impl.h
 include/libspl/sys/byteorder.h
@@ -79,8 +74,6 @@ include/libspl/sys/dktp/fdisk.h
 include/libspl/sys/fcntl.h
 include/libspl/sys/feature_tests.h
 include/libspl/sys/file.h
-include/libspl/sys/int_limits.h
-include/libspl/sys/int_types.h
 include/libspl/sys/inttypes.h
 include/libspl/sys/isa_defs.h
 include/libspl/sys/kmem.h
@@ -102,7 +95,6 @@ include/libspl/sys/stack.h
 include/libspl/sys/stat.h
 include/libspl/sys/stdtypes.h
 include/libspl/sys/string.h
-include/libspl/sys/stropts.h
 include/libspl/sys/sunddi.h
 include/libspl/sys/sysmacros.h
 include/libspl/sys/systeminfo.h
@@ -111,18 +103,12 @@ include/libspl/sys/trace_spl.h
 include/libspl/sys/trace_zfs.h
 include/libspl/sys/types.h
 include/libspl/sys/types32.h
-include/libspl/sys/tzfile.h
 include/libspl/sys/uio.h
-include/libspl/sys/va_list.h
-include/libspl/sys/varargs.h
 include/libspl/sys/vfs.h
 include/libspl/sys/vnode.h
 include/libspl/sys/wmsum.h
 include/libspl/sys/zfs_context_os.h
 include/libspl/sys/zone.h
-include/libspl/thread.h
-include/libspl/tzfile.h
-include/libspl/ucred.h
 include/libspl/umem.h
 include/libspl/unistd.h
 include/libspl/zone.h
@@ -397,6 +383,7 @@ man/man1/zvol_wait.1.gz
 man/man4/spl.4.gz
 man/man4/zfs.4.gz
 man/man5/vdev_id.conf.5.gz
+man/man7/dracut.zfs.7.gz
 man/man7/zfsconcepts.7.gz
 man/man7/zfsprops.7.gz
 man/man7/zpool-features.7.gz
@@ -554,6 +541,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/bin/draid
 %%TESTS%%share/zfs/zfs-tests/bin/edonr_test
 %%TESTS%%share/zfs/zfs-tests/bin/ereports
+%%TESTS%%share/zfs/zfs-tests/bin/file_append
 %%TESTS%%share/zfs/zfs-tests/bin/file_check
 %%TESTS%%share/zfs/zfs-tests/bin/file_trunc
 %%TESTS%%share/zfs/zfs-tests/bin/file_write
@@ -566,6 +554,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/bin/mktree
 %%TESTS%%share/zfs/zfs-tests/bin/mmap_exec
 %%TESTS%%share/zfs/zfs-tests/bin/mmap_seek
+%%TESTS%%share/zfs/zfs-tests/bin/mmap_sync
 %%TESTS%%share/zfs/zfs-tests/bin/mmapwrite
 %%TESTS%%share/zfs/zfs-tests/bin/nvlist_to_lua
 %%TESTS%%share/zfs/zfs-tests/bin/randwritecomp
@@ -627,6 +616,10 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/alloc_class/alloc_class_013_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/alloc_class/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/alloc_class/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/append/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/append/file_append.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/append/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/append/threadsappend_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/arc/arcstats_runtime_tuning.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/arc/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/arc/dbufstats_001_pos.ksh
@@ -1194,6 +1187,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_unshare/zfs_unshare_005_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_unshare/zfs_unshare_006_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_unshare/zfs_unshare_007_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_unshare/zfs_unshare_008_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_upgrade/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_upgrade/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_upgrade/zfs_upgrade.kshlib
@@ -1475,6 +1469,8 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_002_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_003_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_004_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_features_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_sync/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_sync/setup.ksh
@@ -1747,6 +1743,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/fallocate_prealloc.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/fallocate_punch-hole.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/fallocate_zero-range.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_offline_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_online_001_pos.ksh
@@ -1926,6 +1923,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_libaio_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_read_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_seek_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_sync_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_write_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/cleanup.ksh
@@ -2357,9 +2355,6 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_to_suid.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_to_suid_sgid.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_zil_replay.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/threadsappend/cleanup.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/threadsappend/setup.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/threadsappend/threadsappend_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/trim/autotrim_config.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/trim/autotrim_integrity.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/trim/autotrim_trim_integrity.ksh

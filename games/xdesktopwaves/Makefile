@@ -1,5 +1,3 @@
-# Created by: ericyu@mail2000.com.tw
-
 PORTNAME=	xdesktopwaves
 PORTVERSION=	1.4
 CATEGORIES=	games

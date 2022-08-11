@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ffi-libarchive
 PORTVERSION=	1.1.3
 CATEGORIES=	devel rubygems

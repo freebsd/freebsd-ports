@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	cocaine
 PORTVERSION=	0.6.0
 CATEGORIES=	devel rubygems

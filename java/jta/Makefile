@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	jta
 PORTVERSION=	1.0.1
 CATEGORIES=	java devel

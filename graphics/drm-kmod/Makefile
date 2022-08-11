@@ -1,14 +1,13 @@
-# Created by: Johannes Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	drm-kmod
-PORTVERSION=	g20190710
-PORTREVISION=	1
+PORTVERSION=	20220501
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Metaport of DRM modules for the linuxkpi-based KMS components
 
 USES=		metaport
+
+RUN_DEPENDS=	gpu-firmware-kmod>=20220511:graphics/gpu-firmware-kmod
 
 .include <bsd.port.options.mk>
 
@@ -23,7 +22,7 @@ IGNORE=		not supported on older 13, no kernel support
 .elif ${OSVERSION} >= 1300136 && ${OSVERSION} < 1400000
 RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-fbsd13-kmod
 .elif ${OSVERSION} >= 1400000
-RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-current-kmod
+RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-510-kmod
 .else
 IGNORE=		not supported for this configuration
 .endif

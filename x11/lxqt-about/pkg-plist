@@ -1,5 +1,6 @@
 bin/lxqt-about
 share/applications/lxqt-about.desktop
+share/icons/hicolor/scalable/apps/lxqt-about.svg
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_ar.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_arn.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_ast.qm
@@ -21,6 +22,7 @@ share/applications/lxqt-about.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_gl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_he.qm
+%%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_hi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_hr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_hu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_ia.qm

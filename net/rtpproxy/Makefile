@@ -1,5 +1,3 @@
-# Created by: sobomax
-
 PORTNAME=	rtpproxy
 PORTVERSION=	2.1.1
 DISTVERSIONPREFIX=	v

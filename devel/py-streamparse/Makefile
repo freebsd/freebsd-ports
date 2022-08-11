@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	streamparse
 PORTVERSION=	4.1.2
 CATEGORIES=	devel python

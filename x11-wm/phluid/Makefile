@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	phluid
 PORTVERSION=	0.0.3
 PORTREVISION=	13

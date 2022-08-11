@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	yandex
 
-USES=		autoreconf bison compiler:c++11-lib libtool
+USES=		autoreconf:2.69 bison compiler:c++11-lib libtool
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

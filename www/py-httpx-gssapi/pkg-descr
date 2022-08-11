@@ -1,0 +1,14 @@
+HTTPX is a full featured Python HTTP library with both sync and async APIs
+designed to be a next generation HTTP client for Python. This library is a
+port of Requests GSSAPI to HTTPX which adds optional GSSAPI authentication
+support and supports mutual authentication.
+
+Basic GET usage:
+
+>>> import httpx
+>>> from httpx_gssapi import HTTPSPNEGOAuth
+>>> r = httpx.get("http://example.org", auth=HTTPSPNEGOAuth())
+
+Both the sync and async HTTPX APIs should be fully supported.
+
+WWW: https://github.com/pythongssapi/httpx-gssapi

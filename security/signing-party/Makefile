@@ -1,5 +1,3 @@
-# Created by: johans
-
 PORTNAME=	signing-party
 PORTVERSION=	2.10
 CATEGORIES=	security

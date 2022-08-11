@@ -1,5 +1,3 @@
-# Created by: shanee@augusta.de
-
 PORTNAME=	unclutter
 PORTVERSION=	8
 PORTREVISION=	3

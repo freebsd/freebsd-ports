@@ -1,5 +1,3 @@
-# Created by: Junho CHOI <junho.choi@gmail.com>
-
 PORTNAME=	hmconv
 PORTVERSION=	1.0.3
 PORTREVISION=	1

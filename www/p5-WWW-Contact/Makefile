@@ -1,5 +1,3 @@
-# Created by: Fred Cox
-
 PORTNAME=	WWW-Contact
 PORTVERSION=	0.51
 CATEGORIES=	www perl5

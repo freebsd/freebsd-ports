@@ -1,5 +1,3 @@
-# Created by: Thibault Payet <monwarez@mailoo.org>
-
 PORTNAME=	rigsofrods-caelum
 PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Jonathan Weiss (<jw@innerewut.de>)
-
 PORTNAME=	actionpack
 PORTVERSION=	4.2.11.3
 CATEGORIES=	www rubygems

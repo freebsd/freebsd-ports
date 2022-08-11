@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Mail-Box-POP3
 PORTVERSION=	3.005
 CATEGORIES=	mail perl5

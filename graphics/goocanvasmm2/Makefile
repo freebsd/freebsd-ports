@@ -1,6 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-#   $MCom: ports/trunk/graphics/goocanvasmm2/Makefile 17268 2013-04-01 05:13:11Z marcus $
-
 PORTNAME=	goocanvasmm
 PORTVERSION=	1.90.9
 PORTREVISION=	11

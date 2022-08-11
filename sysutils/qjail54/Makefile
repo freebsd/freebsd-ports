@@ -1,5 +1,3 @@
-# Created by: Joe Barbish
-
 PORTNAME=	qjail
 PORTVERSION=	5.4
 CATEGORIES=	sysutils

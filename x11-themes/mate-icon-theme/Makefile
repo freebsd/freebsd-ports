@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	mate-icon-theme
 PORTVERSION=	1.26.0
 CATEGORIES=	x11-themes mate
@@ -22,5 +20,7 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext-tools gmake gnome pkgconfig tar:xz
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

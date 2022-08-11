@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	tass64
 PORTVERSION=	1.56.2625
 CATEGORIES=	devel

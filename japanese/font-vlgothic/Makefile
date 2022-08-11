@@ -1,5 +1,3 @@
-# Created by: NIIMI Satoshi <sa2c@sa2c.net>
-
 PORTNAME=	vlgothic
 PORTVERSION=	20200720
 CATEGORIES=	japanese x11-fonts

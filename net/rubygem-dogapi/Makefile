@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	dogapi
 PORTVERSION=	1.45.0
 CATEGORIES=	net rubygems

@@ -1,5 +1,5 @@
 PORTNAME=	abx
-DISTVERSION=	0.0-b1
+DISTVERSION=	0.1
 CATEGORIES=	audio
 MASTER_SITES=	https://phintsan.kapsi.fi/
 
@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libportaudio.so:audio/portaudio \
 		libsndfile.so:audio/libsndfile
 

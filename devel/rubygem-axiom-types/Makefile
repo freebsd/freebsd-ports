@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	axiom-types
 PORTVERSION=	0.1.1
 CATEGORIES=	devel rubygems

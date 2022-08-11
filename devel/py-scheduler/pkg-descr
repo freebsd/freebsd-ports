@@ -1,0 +1,6 @@
+scheduler is a simple in-process python scheduler library with
+asyncio, threading and timezone support. Schedule tasks by their time
+cycles, fixed times, weekdays, dates, weights, offsets and execution
+counts and automate jobs.
+
+WWW: https://gitlab.com/DigonIO/scheduler

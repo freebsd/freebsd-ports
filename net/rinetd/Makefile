@@ -1,5 +1,3 @@
-# Created by: alexp
-
 PORTNAME=	rinetd
 PORTVERSION=	0.62
 PORTREVISION=	4

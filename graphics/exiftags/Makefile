@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	exiftags
 PORTVERSION=	1.01
 CATEGORIES=	graphics

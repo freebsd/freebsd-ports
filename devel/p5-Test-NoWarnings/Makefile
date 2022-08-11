@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <alex@kapranoff.ru>
-
 PORTNAME=	Test-NoWarnings
 PORTVERSION=	1.06
 CATEGORIES=	devel perl5

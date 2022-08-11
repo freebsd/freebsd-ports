@@ -1,5 +1,3 @@
-# Created by: LEVAI Daniel <leva@ecentrum.hu>
-
 PORTNAME=		kc
 PORTVERSION=		2.4.2
 PORTREVISION=	3

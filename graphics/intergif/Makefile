@@ -1,5 +1,3 @@
-# Created by: jamie
-
 PORTNAME=	interGif
 PORTVERSION=	6.15
 CATEGORIES=	graphics

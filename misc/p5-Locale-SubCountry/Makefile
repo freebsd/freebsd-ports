@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Locale-SubCountry
 PORTVERSION=	2.07
 CATEGORIES=	misc perl5

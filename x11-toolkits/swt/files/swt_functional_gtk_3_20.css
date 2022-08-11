@@ -1,0 +1,13 @@
+@binding-set SWTTreeViewBinding {
+	bind "Left" { "expand-collapse-cursor-row" (0,0,0)};
+	bind "Right" { "expand-collapse-cursor-row" (0,1,0)};
+}
+
+treeview {
+	-gtk-key-bindings: SWTTreeViewBinding;
+}
+
+scrolledwindow undershoot.top, scrolledwindow undershoot.right,
+	scrolledwindow undershoot.bottom, scrolledwindow undershoot.left {
+	background-image: none;
+}

@@ -1,5 +1,5 @@
 bin/openttd
-man/man6/openttd.6.gz
+share/man/man6/openttd.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/known-bugs.txt

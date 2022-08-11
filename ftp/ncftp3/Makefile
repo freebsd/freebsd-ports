@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	ncftp
 PORTVERSION=	3.2.6
 PORTREVISION?=	2

@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	POE-Component-Server-IRC
 PORTVERSION=	1.54
 PORTREVISION=	1

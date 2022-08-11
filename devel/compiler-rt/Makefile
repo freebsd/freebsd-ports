@@ -1,5 +1,3 @@
-# Created by: Brooks Davis
-
 PORTNAME=	compiler-rt
 DISTVERSION=	0.r${SVN_REV}
 CATEGORIES=	devel

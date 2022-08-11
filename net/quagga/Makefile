@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	quagga
 PORTVERSION=	1.2.4
 PORTREVISION=	9

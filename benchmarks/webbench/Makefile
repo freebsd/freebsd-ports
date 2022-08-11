@@ -1,5 +1,3 @@
-# Created by: Radim Kolar
-
 PORTNAME=	webbench
 PORTVERSION=	1.5
 CATEGORIES=	benchmarks www

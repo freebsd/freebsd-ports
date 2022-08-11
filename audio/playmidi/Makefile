@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	playmidi
 PORTVERSION=	2.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
-
 PORTNAME=	daa2iso
 PORTVERSION=	0.1.7e
 PORTREVISION=	1

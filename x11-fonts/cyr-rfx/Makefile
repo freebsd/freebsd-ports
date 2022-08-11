@@ -1,5 +1,3 @@
-# Created by: mi@aldan.algebra.com
-
 PORTNAME=	cyr-rfx-${CYR_RFX_ENCODING}
 PORTVERSION=	1.1
 PORTREVISION=	5

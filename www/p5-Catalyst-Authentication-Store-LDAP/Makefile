@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Catalyst-Authentication-Store-LDAP
 PORTVERSION=	1.017
 CATEGORIES=	www perl5

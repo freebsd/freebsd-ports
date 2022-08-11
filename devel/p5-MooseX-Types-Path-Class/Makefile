@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	MooseX-Types-Path-Class
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

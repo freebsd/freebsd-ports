@@ -1,5 +1,3 @@
-# Created by: johans
-
 PORTNAME=	libdmtx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.5

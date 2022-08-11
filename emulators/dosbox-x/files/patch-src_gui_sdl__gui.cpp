@@ -1,27 +1,31 @@
---- src/gui/sdl_gui.cpp.orig	2022-04-21 18:01:44 UTC
+--- src/gui/sdl_gui.cpp.orig	2022-07-23 20:37:25 UTC
 +++ src/gui/sdl_gui.cpp
-@@ -3022,7 +3022,7 @@ class ConfigurationWindow : public GUI::ToplevelWindow
-             std::string url = "https://dosbox-x.com/";
- #if defined(WIN32)
-             ShellExecute(NULL, "open", url.c_str(), NULL, NULL, SW_SHOWNORMAL);
--#elif defined(LINUX)
-+#elif defined(LINUX) || defined(__FreeBSD__)
-             system(("xdg-open "+url).c_str());
- #elif defined(MACOSX)
-             system(("open "+url).c_str());
-@@ -3436,7 +3436,7 @@ void GUI_Shortcut(int select) {
-         PIC_AddEvent(RunCfgTool, 100);
+@@ -3563,6 +3563,7 @@ void GUI_Shortcut(int select) {
+     shortcutid=select;
+     shortcut=true;
+     sel = select;
++#ifndef __FreeBSD__
+ #if defined(USE_TTF)
+     if (ttf.inUse && !confres) {
+         ttf_switch_off();
+@@ -3572,12 +3573,14 @@ void GUI_Shortcut(int select) {
      } else
  #endif
--    RunCfgTool(NULL);
-+    RunCfgTool(0);
+     RunCfgTool(NULL);
++#endif
  }
  
  void GUI_Run(bool pressed) {
-@@ -3458,5 +3458,5 @@ void GUI_Run(bool pressed) {
-         PIC_AddEvent(RunCfgTool, 100);
+     if (pressed || running) return;
+ 
+     sel = -1;
++#ifndef __FreeBSD__
+ #if defined(USE_TTF)
+     if (ttf.inUse) {
+         ttf_switch_off();
+@@ -3587,4 +3590,5 @@ void GUI_Run(bool pressed) {
      } else
  #endif
--    RunCfgTool(NULL);
-+    RunCfgTool(0);
+     RunCfgTool(NULL);
++#endif
  }

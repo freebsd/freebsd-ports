@@ -1,5 +1,3 @@
-# Created by: John Hein <jhein@symmetricom.com>
-
 PORTNAME=	blame
 PORTVERSION=	1.3.1
 CATEGORIES=	devel

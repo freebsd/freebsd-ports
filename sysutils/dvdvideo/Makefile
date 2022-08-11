@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	dvdvideo
 PORTVERSION=	20130117
 PORTREVISION=	2

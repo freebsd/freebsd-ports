@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	sfront
 PORTVERSION=	0.99
 CATEGORIES=	audio

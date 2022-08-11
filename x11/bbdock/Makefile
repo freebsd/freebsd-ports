@@ -1,5 +1,3 @@
-# Created by: Francis Bacque <idroxid01@yahoo.fr>
-
 PORTNAME=	bbdock
 PORTVERSION=	0.2.9
 PORTREVISION=	2

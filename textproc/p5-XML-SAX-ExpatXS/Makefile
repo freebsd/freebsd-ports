@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-SAX-ExpatXS
 PORTVERSION=	1.33
 PORTREVISION=	2

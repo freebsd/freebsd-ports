@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Curses-Application
 PORTVERSION=	0.2
 PORTREVISION=	1

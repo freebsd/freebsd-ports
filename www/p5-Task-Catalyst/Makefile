@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Task-Catalyst
 PORTVERSION=	4.02
 PORTREVISION=	2

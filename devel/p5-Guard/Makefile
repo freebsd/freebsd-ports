@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Guard
 PORTVERSION=	1.023
 PORTREVISION=	1

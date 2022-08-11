@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	fam
 PORTVERSION=	1.1.1
 PORTREVISION=	3

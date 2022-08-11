@@ -1,0 +1,10 @@
+pgagroal is a high-performance protocol-native connection pool for
+PostgreSQL. Which features High performance, Connection pool, Limit
+connections for users and databases, Prefill support, Remove idle
+connections, Connection validation, Enable / disable database access,
+Graceful / fast shutdown, Prometheus support, Grafana 8 dashboard,
+Remote management, Authentication query support, Failover support,
+Transport Layer Security (TLS) v1.2+ support, Daemon support, User
+vault, Lightweight connection pooler for PostgreSQL.
+
+WWW: https://agroal.github.io/pgagroal/

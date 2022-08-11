@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	nexuiz
 PORTVERSION=	2.5.2
 PORTREVISION=	20

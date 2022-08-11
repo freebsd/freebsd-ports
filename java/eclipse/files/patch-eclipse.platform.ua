@@ -43,14 +43,15 @@ diff -ru eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal
 diff -ru eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java
 --- eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java	0000-00-00 00:00:00.000000000 +0000
-@@ -103,6 +103,7 @@
+@@ -95,7 +95,7 @@
+ 		if (defaultBrowserDesc == null) {
+ 			if (Constants.WS_WIN32.equalsIgnoreCase(os)) {
  				setDefaultBrowserID(BROWSER_ID_SYSTEM);
- 			} else if (Constants.OS_AIX.equalsIgnoreCase(os)
- 					|| (Constants.OS_HPUX.equalsIgnoreCase(os))
-+					|| (Constants.OS_FREEBSD.equalsIgnoreCase(os))
- 					|| (Constants.OS_LINUX.equalsIgnoreCase(os))
- 					|| (Constants.OS_SOLARIS.equalsIgnoreCase(os))) {
- 				setDefaultBrowserID(BROWSER_ID_MOZILLA);
+-			} else if (Constants.OS_LINUX.equalsIgnoreCase(os)) {
++			} else if (Constants.OS_LINUX.equalsIgnoreCase(os) || Constants.OS_FREEBSD.equalsIgnoreCase(os)) {
+ 				setDefaultBrowserID(BROWSER_ID_FIREFOX);
+ 			} else if (Constants.OS_MACOSX.equalsIgnoreCase(os)) {
+ 				setDefaultBrowserID(BROWSER_ID_MAC_SYSTEM);
 diff -ru eclipse.platform.ua/org.eclipse.help.ui/src/org/eclipse/help/ui/internal/browser/embedded/EmbeddedBrowserFactory.java eclipse.platform.ua/org.eclipse.help.ui/src/org/eclipse/help/ui/internal/browser/embedded/EmbeddedBrowserFactory.java
 --- eclipse.platform.ua/org.eclipse.help.ui/src/org/eclipse/help/ui/internal/browser/embedded/EmbeddedBrowserFactory.java	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.ua/org.eclipse.help.ui/src/org/eclipse/help/ui/internal/browser/embedded/EmbeddedBrowserFactory.java	0000-00-00 00:00:00.000000000 +0000

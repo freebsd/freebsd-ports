@@ -1,5 +1,3 @@
-# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-
 PORTNAME=	Template-Provider-Encode
 PORTVERSION=	0.02
 PORTREVISION=	1

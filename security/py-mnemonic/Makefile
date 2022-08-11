@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	mnemonic
 PORTVERSION=	0.20
 CATEGORIES=	security python

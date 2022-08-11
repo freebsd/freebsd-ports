@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Test-Database
 PORTVERSION=	1.113
 PORTREVISION=	1

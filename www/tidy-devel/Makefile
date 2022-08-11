@@ -1,5 +1,3 @@
-# Created by: Abel Chow <achow@transoft.net>
-
 PORTNAME?=	tidy
 DISTVERSION=	090315-cvs
 PORTREVISION=	3

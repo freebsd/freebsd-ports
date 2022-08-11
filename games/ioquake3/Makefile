@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME?=	ioquake3
 PORTVERSION?=	${IOQUAKE3VER}
 PORTREVISION?=	17

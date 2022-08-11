@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	lmon
 PORTVERSION=	1.2
 PORTREVISION=	1

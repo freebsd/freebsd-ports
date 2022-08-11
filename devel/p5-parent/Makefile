@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	parent
 PORTVERSION=	0.238
 CATEGORIES=	devel perl5

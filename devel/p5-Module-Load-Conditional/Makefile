@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Module-Load-Conditional
 PORTVERSION=	0.74
 CATEGORIES=	devel perl5

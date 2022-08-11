@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	singularity
 PORTVERSION=	1.00
 CATEGORIES=	games

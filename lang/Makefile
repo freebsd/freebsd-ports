@@ -30,8 +30,6 @@
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
     SUBDIR += clover
-    SUBDIR += cmucl
-    SUBDIR += cmucl-extra
     SUBDIR += cocor
     SUBDIR += coffeescript
     SUBDIR += cparser
@@ -39,6 +37,7 @@
     SUBDIR += csharp-mode.el
     SUBDIR += cython
     SUBDIR += cython-devel
+    SUBDIR += dhall
     SUBDIR += dlang-tools
     SUBDIR += dlv
     SUBDIR += duktape
@@ -59,6 +58,7 @@
     SUBDIR += erlang-runtime22
     SUBDIR += erlang-runtime23
     SUBDIR += erlang-runtime24
+    SUBDIR += erlang-runtime25
     SUBDIR += erlang-wx
     SUBDIR += execline
     SUBDIR += expect
@@ -91,13 +91,16 @@
     SUBDIR += gcc10
     SUBDIR += gcc11
     SUBDIR += gcc11-devel
+    SUBDIR += gcc12
     SUBDIR += gcc12-devel
+    SUBDIR += gcc13-devel
     SUBDIR += gcc48
     SUBDIR += gcc6-aux
     SUBDIR += gcc8
     SUBDIR += gcc9
     SUBDIR += gforth
     SUBDIR += ghc
+    SUBDIR += ghc810
     SUBDIR += gjs
     SUBDIR += gleam
     SUBDIR += gnatcross-binutils-aarch64
@@ -111,7 +114,8 @@
     SUBDIR += gnustep-base
     SUBDIR += go
     SUBDIR += go-devel
-    SUBDIR += go117
+    SUBDIR += go118
+    SUBDIR += go119
     SUBDIR += gomacro
     SUBDIR += gprolog
     SUBDIR += gravity
@@ -121,6 +125,7 @@
     SUBDIR += guile1
     SUBDIR += guile2
     SUBDIR += halide
+    SUBDIR += harec
     SUBDIR += haskell-mode.el
     SUBDIR += hermes
     SUBDIR += hla
@@ -245,9 +250,9 @@
     SUBDIR += pbasic
     SUBDIR += pcc
     SUBDIR += perl5-devel
-    SUBDIR += perl5.30
     SUBDIR += perl5.32
     SUBDIR += perl5.34
+    SUBDIR += perl5.36
     SUBDIR += petite-chez
     SUBDIR += pfe
     SUBDIR += pharo
@@ -258,6 +263,8 @@
     SUBDIR += php80-extensions
     SUBDIR += php81
     SUBDIR += php81-extensions
+    SUBDIR += php82
+    SUBDIR += php82-extensions
     SUBDIR += picoc
     SUBDIR += plexil
     SUBDIR += pocl
@@ -286,6 +293,7 @@
     SUBDIR += qmasm
     SUBDIR += qscheme
     SUBDIR += quickjs
+    SUBDIR += quilc
     SUBDIR += racket
     SUBDIR += racket-minimal
     SUBDIR += ratfor

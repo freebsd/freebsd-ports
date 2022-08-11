@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-
 PORTNAME=	jad
 PORTVERSION=	1.5.8c
 CATEGORIES=	java devel

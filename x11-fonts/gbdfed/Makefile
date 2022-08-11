@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	gbdfed
 PORTVERSION=	1.6
 PORTREVISION=	1

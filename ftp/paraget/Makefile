@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	paraget
 PORTVERSION=	0.3.0
 PORTREVISION=	3

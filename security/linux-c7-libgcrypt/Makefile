@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libgcrypt
 PORTVERSION=	1.5.3
 DISTVERSIONSUFFIX=	-14.el7

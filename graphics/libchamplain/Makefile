@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libchamplain
 PORTVERSION=	0.12.20
 PORTREVISION=	1

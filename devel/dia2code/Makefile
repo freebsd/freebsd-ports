@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	dia2code
 PORTVERSION=	0.8.8
 PORTREVISION=	2

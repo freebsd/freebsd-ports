@@ -1,5 +1,3 @@
-# Created by: Petr Rehor <rx@rx.cz>
-
 PORTNAME=	amavisd-milter
 PORTVERSION=	1.7.0
 CATEGORIES=	security mail

@@ -1,5 +1,3 @@
-# Created by: Peter Avalos <pavalos@theshell.com>
-
 PORTNAME=	HTML-Widgets-SelectLayers
 PORTVERSION=	0.07
 PORTREVISION=	2

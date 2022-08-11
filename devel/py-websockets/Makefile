@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	websockets
 PORTVERSION=	10.3
 CATEGORIES=	devel python

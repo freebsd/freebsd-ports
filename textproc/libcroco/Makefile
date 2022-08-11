@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	libcroco
 PORTVERSION=	0.6.13
 PORTREVISION=	2

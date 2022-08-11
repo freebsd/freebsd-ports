@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao & <ychsiao@ychsiao.org>
-
 PORTNAME=	Module-Build-Kwalitee
 PORTVERSION=	0.24
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Conor McDermottroe <ports@mcdermottroe.com>
-
 PORTNAME=	jflex
 PORTVERSION=	1.8.1
 CATEGORIES=	java devel

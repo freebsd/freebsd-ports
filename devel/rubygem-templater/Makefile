@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	templater
 PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems

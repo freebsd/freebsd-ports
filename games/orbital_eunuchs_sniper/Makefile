@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	orbital_eunuchs_sniper
 PORTVERSION=	1.30
 PORTREVISION=	9

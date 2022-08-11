@@ -1,5 +1,3 @@
-# Created by: swallace
-
 PORTNAME=	xrobots
 PORTVERSION=	1.0
 PORTREVISION=	5

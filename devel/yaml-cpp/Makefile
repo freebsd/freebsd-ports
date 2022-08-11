@@ -1,5 +1,3 @@
-# Created by: Tim Niemueller <tim@niemueller.de>
-
 PORTNAME=	yaml-cpp
 PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	${PORTNAME}-

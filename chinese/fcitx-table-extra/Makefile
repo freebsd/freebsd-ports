@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	fcitx-table-extra
 PORTVERSION=	0.3.8
 PORTREVISION=	1

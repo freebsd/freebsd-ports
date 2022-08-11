@@ -1,5 +1,3 @@
-# Created by: Konstantin Menshikov <kostjnspb@yandex.ru>
-
 PORTNAME=	File-Tee
 PORTVERSION=	0.07
 PORTREVISION=	1

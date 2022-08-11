@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Lingua-ZH-Summarize
 PORTVERSION=	0.01
 PORTREVISION=	2

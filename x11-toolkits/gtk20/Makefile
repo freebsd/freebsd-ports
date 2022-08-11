@@ -1,5 +1,3 @@
-# Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
-
 PORTNAME=	gtk
 PORTVERSION=	2.24.33		# sync with graphics/gtk-update-icon-cache
 CATEGORIES=	x11-toolkits

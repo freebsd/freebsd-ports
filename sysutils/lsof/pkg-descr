@@ -6,4 +6,4 @@ socket).
 
 See also fstat(1) in the base system.
 
-WWW: https://people.freebsd.org/~abe/
+WWW: https://github.com/lsof-org/lsof

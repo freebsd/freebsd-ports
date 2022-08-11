@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
 PORTREVISION=	14

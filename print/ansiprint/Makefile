@@ -1,5 +1,3 @@
-# Created by: Stephen Fisher
-
 PORTNAME=	ansiprint
 PORTVERSION=	1.0
 CATEGORIES=	print

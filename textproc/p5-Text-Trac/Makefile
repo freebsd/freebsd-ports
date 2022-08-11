@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Text-Trac
 PORTVERSION=	0.24
 CATEGORIES=	textproc perl5

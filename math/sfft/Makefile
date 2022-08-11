@@ -1,5 +1,3 @@
-# Created by: bf@FreeBSD.org
-
 PORTNAME=	sfft
 PORTVERSION=	0.1.0
 PORTREVISION=	11

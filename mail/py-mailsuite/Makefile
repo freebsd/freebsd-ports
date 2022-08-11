@@ -1,6 +1,5 @@
 PORTNAME=	mailsuite
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+DISTVERSION=	1.7.3
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,8 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=2.0.0:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html2text>=2020.1.16:textproc/py-html2text@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imapclient>=2.1.0:mail/py-imapclient@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mail-parser>=3.11.0:mail/py-mail-parser@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}mail-parser>=3.14.0:mail/py-mail-parser@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}publicsuffix2>=2.20190812:dns/py-publicsuffix2@${PY_FLAVOR}
 
 USES=		python:3.4+
 USE_PYTHON=	autoplist concurrent distutils

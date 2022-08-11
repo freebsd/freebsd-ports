@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	RPC-ExtDirect
 PORTVERSION=	3.24
 CATEGORIES=	www perl5

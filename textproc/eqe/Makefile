@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	eqe
 PORTVERSION=	1.3.0
 PORTREVISION=	5

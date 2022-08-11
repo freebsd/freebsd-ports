@@ -1,9 +1,7 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	axmldec
 PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org

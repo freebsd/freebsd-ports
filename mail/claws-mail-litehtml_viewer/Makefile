@@ -1,5 +1,3 @@
-# Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
-
 PORTNAME=	litehtml_viewer
 
 COMMENT=	Viewer plugin for HTML emails, using the litehtml library

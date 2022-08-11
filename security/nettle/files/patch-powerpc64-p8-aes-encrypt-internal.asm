@@ -1,11 +1,11 @@
---- powerpc64/p8/aes-encrypt-internal.asm.orig	2021-06-06 20:06:30 UTC
+--- powerpc64/p8/aes-encrypt-internal.asm.orig	2022-06-02 17:57:16 UTC
 +++ powerpc64/p8/aes-encrypt-internal.asm
 @@ -63,7 +63,7 @@ define(`S7', `v9')
  
  define(`FUNC_ALIGN', `5')
  PROLOGUE(_nettle_aes_encrypt)
-- DATA_LOAD_VEC(swap_mask,.swap_mask,r5)
-+ DATA_LOAD_VEC(swap_mask,.swap_data,r5)
+- DATA_LOAD_VEC(SWAP_MASK,.swap_mask,r5)
++ DATA_LOAD_VEC(SWAP_MASK,.swap_data,r5)
  
   subi ROUNDS,ROUNDS,1
   srdi LENGTH,LENGTH,4

@@ -1,0 +1,7 @@
+arc_summary is included in the OpenZFS repository.  It provides basic
+information on the ZFS ARC, its efficiency, the L2ARC (if present), the
+Data Management Unit (DMU), Virtual Devices (VDEVs), and tunables.  See
+the in-source documentation and code at
+https://github.com/openzfs/zfs/blob/master/module/zfs/arc.c for details.
+The original introduction to arc_summary can be found at
+http://cuddletech.com/?p=454

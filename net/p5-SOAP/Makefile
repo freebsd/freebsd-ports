@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	SOAP
 PORTVERSION=	0.28
 PORTREVISION=	1

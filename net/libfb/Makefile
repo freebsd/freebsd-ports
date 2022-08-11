@@ -1,8 +1,6 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	libfb
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net net-mgmt
 MASTER_SITES=	http://support.red-fone.com/downloads/fonulator/
 

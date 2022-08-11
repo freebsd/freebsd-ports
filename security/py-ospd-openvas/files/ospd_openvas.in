@@ -23,7 +23,7 @@ export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
 
 : ${ospd_openvas_enable:=NO}
 : ${ospd_openvas_pidfile="/var/run/ospd/ospd-openvas.pid"}
-: ${ospd_openvas_config="/usr/local/etc/gvm/ospd.conf"}
+: ${ospd_openvas_config="/usr/local/etc/gvm/ospd-openvas.conf"}
 : ${ospd_openvas_flags="--lock-file-dir /var/run/ospd --socket-mode 770 --unix-socket /var/run/ospd/ospd-openvas.sock"}
 : ${ospd_openvas_user="gvm"}
 

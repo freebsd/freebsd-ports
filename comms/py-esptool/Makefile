@@ -1,6 +1,6 @@
 PORTNAME=	esptool
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3
+DISTVERSION=	4.1
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>=3.0:comms/py-pyserial@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}reedsolo>=1.5.3,<=1.5.4:devel/py-reedsolo@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 

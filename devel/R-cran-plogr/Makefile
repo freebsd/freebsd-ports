@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	plogr
 DISTVERSION=	0.2.0
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: theraven@FreeBSD.org
-
 PORTNAME=	pikopixel
 DISTVERSION=	1.0-b10
 PORTREVISION=	1

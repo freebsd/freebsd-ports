@@ -1,9 +1,7 @@
-# Created by: Andreas Fehlner <fehlner@gmx.de>
-
 PORTNAME=	gramps
 PORTVERSION=	5.1.5
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	science gnome python
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,14 +10,10 @@ COMMENT=	GTK3-based genealogy program
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Requires py-bsddb3 which requires upstream EOLd db5
-EXPIRATION_DATE=	2022-06-30
-
 LIB_DEPENDS=	libgeocode-glib.so:net/geocode-glib \
 		libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb3>0:databases/py-bsddb3@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:graphics/py-pygraphviz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyicu>=1.8:devel/py-pyicu@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:graphics/py-pygraphviz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		xdg-open:devel/xdg-utils
 

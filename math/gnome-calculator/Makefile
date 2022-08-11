@@ -1,14 +1,11 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-calculator
-PORTVERSION=	42.0
-PORTREVISION=	2
+PORTVERSION=	42.2
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME 3 calculator tool
+COMMENT=	GNOME calculator tool
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

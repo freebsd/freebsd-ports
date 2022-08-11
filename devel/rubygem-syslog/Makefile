@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	syslog
 PORTVERSION=	0.1.0
 CATEGORIES=	devel rubygems

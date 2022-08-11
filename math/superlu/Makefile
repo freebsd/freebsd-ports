@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <giffunip@asme.org>
-
 PORTNAME=	superlu
 PORTVERSION=	5.2.2
 CATEGORIES=	math

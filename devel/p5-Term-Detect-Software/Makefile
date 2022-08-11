@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Term-Detect-Software
 PORTVERSION=	0.223
 CATEGORIES=	devel perl5

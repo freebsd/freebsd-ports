@@ -1,5 +1,5 @@
 PORTNAME=	puppetdb
-PORTVERSION=	7.10.1
+PORTVERSION=	7.11.0
 CATEGORIES=	databases java
 MASTER_SITES=	https://downloads.puppetlabs.com/puppetdb/
 PKGNAMESUFFIX=	7
@@ -13,7 +13,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_RC_SUBR=	puppetdb
 
-CONFLICTS_INSTALL=	puppetdb5 puppetdb6
+CONFLICTS_INSTALL=	puppetdb[0-9] # etc/puppetdb/bootstrap.cfg.sample
 USES=		cpe shebangfix
 CPE_VENDOR=	puppet
 SHEBANG_FILES=	ext/bin/puppetdb \

@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
-
 PORTNAME=	centreon-clib
 PORTVERSION=	21.04.4
 CATEGORIES=	net-mgmt

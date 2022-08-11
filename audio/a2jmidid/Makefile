@@ -1,5 +1,3 @@
-# Created by: Hans Petter Selasky <hselasky@FreeBSD.org>
-
 PORTNAME=	a2jmidid
 PORTVERSION=	9
 PORTREVISION=	1

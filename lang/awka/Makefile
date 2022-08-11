@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	awka
 PORTVERSION=	0.7.5
 PORTREVISION=	1

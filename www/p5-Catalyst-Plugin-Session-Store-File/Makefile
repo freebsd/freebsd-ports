@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Session-Store-File
 PORTVERSION=	0.18
 PORTREVISION=	1

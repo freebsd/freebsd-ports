@@ -1,5 +1,3 @@
-# Created by: Mons Anderson <mons@cpan.org>
-
 PORTNAME=	AnyEvent-HTTPD
 PORTVERSION=	0.93
 PORTREVISION=	1

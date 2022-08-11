@@ -1,5 +1,3 @@
-# Created by: Lars Engels <lme@FreeBSD.org>
-
 PORTNAME=	quicksynergy
 PORTVERSION=	0.9.0
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	png
 PORTVERSION=	1.2.1
 CATEGORIES=	graphics rubygems

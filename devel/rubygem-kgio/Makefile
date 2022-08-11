@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	kgio
 PORTVERSION=	2.11.4
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	liberation-fonts-ttf
 PORTVERSION=	2.1.5
 PORTEPOCH=	2

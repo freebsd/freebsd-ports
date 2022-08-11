@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	libdv
 DISTVERSION=	1.0.0
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	PyLD
 PORTVERSION=	0.7.1
 CATEGORIES=	devel python

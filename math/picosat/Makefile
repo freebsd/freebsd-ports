@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	picosat
 DISTVERSION=	965
 CATEGORIES=	math

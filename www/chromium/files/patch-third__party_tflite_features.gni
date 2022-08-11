@@ -1,0 +1,9 @@
+--- third_party/tflite/features.gni.orig	2022-06-17 14:20:10 UTC
++++ third_party/tflite/features.gni
+@@ -7,5 +7,5 @@ import("//build/config/chrome_build.gni")
+ declare_args() {
+   # This enables building TFLite with XNNPACK. Currently only available for
+   # Linux x64.
+-  build_tflite_with_xnnpack = is_linux && target_cpu == "x64"
++  build_tflite_with_xnnpack = (is_linux && target_cpu == "x64") && !is_bsd
+ }

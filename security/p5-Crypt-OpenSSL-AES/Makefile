@@ -1,5 +1,3 @@
-# Created by: John Ferrell <jdferrell3@yahoo.com>
-
 PORTNAME=	Crypt-OpenSSL-AES
 PORTVERSION=	0.02
 PORTREVISION=	3

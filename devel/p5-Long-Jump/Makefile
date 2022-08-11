@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Long-Jump
 PORTVERSION=	0.000001
 CATEGORIES=	devel perl5

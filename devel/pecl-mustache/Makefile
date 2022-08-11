@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mustache
 PORTVERSION=	0.9.2
 CATEGORIES=	devel

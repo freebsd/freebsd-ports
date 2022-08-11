@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	Nagios-Object
 PORTVERSION=	0.21.18
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Boris B. Samorodov <bsam@ipt.ru>
-
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

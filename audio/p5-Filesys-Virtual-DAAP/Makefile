@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Filesys-Virtual-DAAP
 PORTVERSION=	0.04
 PORTREVISION=	2

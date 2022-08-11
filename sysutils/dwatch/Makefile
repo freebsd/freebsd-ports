@@ -1,5 +1,3 @@
-# Created by: Andrew Turner <zombie@i4free.co.nz>
-
 PORTNAME=	dwatch
 PORTVERSION=	0.1.1
 PORTREVISION=	1

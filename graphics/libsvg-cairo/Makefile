@@ -1,6 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-#   $MCom: ports/graphics/libsvg-cairo/Makefile,v 1.5 2005/08/09 04:49:38 ahze Exp $
-
 PORTNAME=	libsvg-cairo
 PORTVERSION=	0.1.6
 PORTREVISION=	9

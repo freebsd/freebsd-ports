@@ -1,5 +1,3 @@
-# Created by: steinex
-
 PORTNAME=	check_smartmon
 PORTVERSION=	20100318
 PORTREVISION=	5

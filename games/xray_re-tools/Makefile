@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	xray_re-tools
 DISTVERSION=	g20180902
 CATEGORIES=	games converters

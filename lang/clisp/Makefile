@@ -1,5 +1,3 @@
-# Created by: Jeff Brown <jabrown@caida.org>
-
 PORTNAME=	clisp
 PORTVERSION=	2.49.93+
 PORTREVISION=	3
@@ -11,7 +9,6 @@ COMMENT=	Common Lisp implementation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GNU-GPL
 
-BROKEN_powerpc=	Does not compile
 BROKEN_sparc64=	Does not compile
 
 LIB_DEPENDS=	libffcall.so:devel/libffcall \

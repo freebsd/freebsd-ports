@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	oletools
 PORTVERSION=	0.54.2
 CATEGORIES=	devel python

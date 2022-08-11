@@ -679,6 +679,8 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/PdegreeToKey.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pdfsm.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pdict.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Pdiff.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Pdrop.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/PdurStutter.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Peak.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/PeakFollower.schelp
@@ -1513,10 +1515,10 @@ share/SuperCollider/SCClassLibrary/Common/Math/Number.sc
 share/SuperCollider/SCClassLibrary/Common/Math/Polar.sc
 share/SuperCollider/SCClassLibrary/Common/Math/Signal.sc
 share/SuperCollider/SCClassLibrary/Common/Math/SimpleNumber.sc
+share/SuperCollider/SCClassLibrary/Common/Quarks/GUI/QuarksGui.sc
 share/SuperCollider/SCClassLibrary/Common/Quarks/Git.sc
 share/SuperCollider/SCClassLibrary/Common/Quarks/Quark.sc
 share/SuperCollider/SCClassLibrary/Common/Quarks/Quarks.sc
-share/SuperCollider/SCClassLibrary/Common/Quarks/QuarksGui.sc
 share/SuperCollider/SCClassLibrary/Common/Quarks/packages.sc
 share/SuperCollider/SCClassLibrary/Common/Streams/BasicOpsStream.sc
 share/SuperCollider/SCClassLibrary/Common/Streams/EventStreamCleanup.sc
@@ -1544,9 +1546,9 @@ share/SuperCollider/SCClassLibrary/Common/Streams/Rest.sc
 share/SuperCollider/SCClassLibrary/Common/Streams/Stream.sc
 share/SuperCollider/SCClassLibrary/Common/Streams/TabFileReader.sc
 share/SuperCollider/SCClassLibrary/Common/Streams/TimePatterns.sc
+share/SuperCollider/SCClassLibrary/Common/UnitTesting/GUI/UnitTestGUI.sc
 share/SuperCollider/SCClassLibrary/Common/UnitTesting/MixedBundleTester.sc
 share/SuperCollider/SCClassLibrary/Common/UnitTesting/UnitTest.sc
-share/SuperCollider/SCClassLibrary/Common/UnitTesting/UnitTestGUI.sc
 share/SuperCollider/SCClassLibrary/Common/Unix/Unix.sc
 share/SuperCollider/SCClassLibrary/Common/Unix/UnixFILE.sc
 share/SuperCollider/SCClassLibrary/DefaultLibrary/Main.sc
@@ -1587,8 +1589,8 @@ share/SuperCollider/SCClassLibrary/Platform/Platform.sc
 share/SuperCollider/SCClassLibrary/Platform/iphone/SystemOverwrites/extFile.sc
 share/SuperCollider/SCClassLibrary/Platform/iphone/extMain.sc
 share/SuperCollider/SCClassLibrary/Platform/iphone/iPhonePlatform.sc
+share/SuperCollider/SCClassLibrary/Platform/linux/GUI/LIDGui.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/LID.sc
-share/SuperCollider/SCClassLibrary/Platform/linux/LIDGui.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/LinuxPlatform.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/SystemOverwrites/extMIDIOut.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/extMain.sc
@@ -1609,9 +1611,9 @@ share/SuperCollider/SCClassLibrary/backwards_compatibility/PMOsc.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/AudioIn.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/File.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/GUI/File.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.10/GUI/Plotter.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/GUI/QWebView.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/Main.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.10/Plotter.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/deprecated-3.10.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/osc/OSCpathResponder.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/osc/OSCresponder.sc

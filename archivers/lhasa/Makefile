@@ -1,5 +1,3 @@
-# Created by: Carsten Larsen <cs@innolan.dk>
-
 PORTNAME=	lhasa
 PORTVERSION=	0.3.1
 CATEGORIES=	archivers

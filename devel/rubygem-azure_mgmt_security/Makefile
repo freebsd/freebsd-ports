@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_security
 PORTVERSION=	0.19.0
 CATEGORIES=	devel rubygems

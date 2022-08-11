@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	jekyll-assets
 PORTVERSION=	3.0.12
 PORTREVISION=	2

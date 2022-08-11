@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	soothsayer
 PORTVERSION=	0.6.3
 PORTREVISION=	3

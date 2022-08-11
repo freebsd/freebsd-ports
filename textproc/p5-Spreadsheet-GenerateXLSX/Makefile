@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Spreadsheet-GenerateXLSX
 PORTVERSION=	0.05
 CATEGORIES=	textproc perl5

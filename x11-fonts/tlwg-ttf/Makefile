@@ -1,5 +1,3 @@
-# Created by: Jordan Irwin <antumdeluge@gmail.com>
-
 PORTNAME=	tlwg-ttf
 PORTVERSION=	0.6.1
 CATEGORIES=	x11-fonts

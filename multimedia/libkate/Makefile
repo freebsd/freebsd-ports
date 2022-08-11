@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	libkate
 PORTVERSION=	0.4.1
 PORTREVISION=	11

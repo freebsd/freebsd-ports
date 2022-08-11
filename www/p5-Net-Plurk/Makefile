@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Net-Plurk
 PORTVERSION=	0.11
 PORTREVISION=	1

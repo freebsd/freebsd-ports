@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	WWW-Mechanize-DecodedContent
 PORTVERSION=	0.02
 PORTREVISION=	1

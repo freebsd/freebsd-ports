@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Archive-Any-Plugin-Rar
 PORTVERSION=	0.02
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: nectar@FreeBSD.org
-
 PORTNAME=	heimdal
 PORTVERSION=	7.7.0
 PORTREVISION=	1

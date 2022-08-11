@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	guard-rspec
 PORTVERSION=	4.7.3
 CATEGORIES=	sysutils rubygems

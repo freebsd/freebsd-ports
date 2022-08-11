@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	primegen
 PORTVERSION=	0.97
 CATEGORIES=	math

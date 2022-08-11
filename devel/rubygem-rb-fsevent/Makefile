@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	rb-fsevent
 PORTVERSION=	0.11.1
 CATEGORIES=	devel rubygems

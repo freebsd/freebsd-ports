@@ -160,10 +160,13 @@
     SUBDIR += slim-themes
     SUBDIR += thewidgetfactory
     SUBDIR += wallpapers-freebsd-kde
+    SUBDIR += win98se-icon-theme
     SUBDIR += xcursor-themes
     SUBDIR += xfce-icons-elementary
     SUBDIR += yaru-gtk-themes
     SUBDIR += yaru-icon-theme
+    SUBDIR += zorin-gtk-themes
+    SUBDIR += zorin-icon-themes
     SUBDIR += zuki-themes
 
 .include <bsd.port.subdir.mk>

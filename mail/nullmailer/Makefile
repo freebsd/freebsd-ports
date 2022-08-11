@@ -1,7 +1,6 @@
-# Created by: clive
-
 PORTNAME=	nullmailer
 PORTVERSION=	2.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
@@ -20,7 +19,7 @@ USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${LOCALSTATEDIR}
 
-SUB_FILES=	pkg-install pkg-deinstall pkg-message
+SUB_FILES=	pkg-install pkg-message
 SUB_LIST=	LOCALSTATEDIR=${LOCALSTATEDIR} NULLMAIL_USER=${USERS}
 
 USERS=		nullmail

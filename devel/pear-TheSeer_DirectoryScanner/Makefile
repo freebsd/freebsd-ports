@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	DirectoryScanner
 PORTVERSION=	1.3.3
 CATEGORIES=	devel pear

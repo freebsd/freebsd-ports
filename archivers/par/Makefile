@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	par
 PORTVERSION=	0.03.01
 CATEGORIES=	archivers games

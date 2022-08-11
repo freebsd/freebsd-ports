@@ -1,9 +1,17 @@
-Robot Framework is a generic test automation framework for acceptance
-testing and acceptance test-driven development (ATDD). It has
-easy-to-use tabular test data syntax and utilizes the keyword-driven
-testing approach. Its testing capabilities can be extended by test
-libraries implemented either with Python or Java, and users can create
-new keywords from existing ones using the same syntax that is used for
-creating test cases.
+Robot Framework is a generic open source automation framework. It can be used
+for test automation and robotic process automation (RPA).
+
+Robot Framework is supported by Robot Framework Foundation. Many
+industry-leading companies use the tool in their software development.
+
+Robot Framework is open and extensible. Robot Framework can be integrated with
+virtually any other tool to create powerful and flexible automation solutions.
+Robot Framework is free to use without licensing costs.
+
+Robot Framework has an easy syntax, utilizing human-readable keywords. Its
+capabilities can be extended by libraries implemented with Python, Java or many
+other programming languages. Robot Framework has a rich ecosystem around it,
+consisting of libraries and tools that are developed as separate projects.
 
 WWW: https://robotframework.org/
+WWW: https://github.com/robotframework/robotframework

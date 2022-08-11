@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	DBIx-Dump
 PORTVERSION=	0.04
 PORTREVISION=	2

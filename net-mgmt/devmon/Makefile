@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	devmon
 DISTVERSION=	0.3.1-beta1
 PORTREVISION=	4

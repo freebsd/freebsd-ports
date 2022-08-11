@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	xtic
 PORTVERSION=	1.12
 PORTREVISION=	2

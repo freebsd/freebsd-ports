@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	joblib
 PORTVERSION=	1.1.0
 CATEGORIES=	devel python

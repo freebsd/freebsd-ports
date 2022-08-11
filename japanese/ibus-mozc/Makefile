@@ -1,5 +1,3 @@
-# Created by: Daichi GOTO <daichi@FreeBSD.org>
-
 PKGNAMEPREFIX=	ja-ibus-
 
 COMMENT=	Mozc engine for IBus

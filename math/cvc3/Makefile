@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-
 PORTNAME=	cvc3
 PORTVERSION=	2.4.1
 PORTREVISION=	7

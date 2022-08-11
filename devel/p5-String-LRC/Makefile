@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	String-LRC
 PORTVERSION=	1.01
 PORTREVISION=	2

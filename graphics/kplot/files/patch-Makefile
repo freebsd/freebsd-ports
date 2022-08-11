@@ -1,0 +1,113 @@
+--- Makefile.orig	2022-07-03 06:07:22 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+ .SUFFIXES: .3 .3.html
+ 
+-CFLAGS		= -g -W -Wall -Wstrict-prototypes -Wno-unused-parameter -Wwrite-strings
++CFLAGS		+= -W -Wall -Wstrict-prototypes -Wno-unused-parameter -Wwrite-strings -fPIC
+ #If you're on Mac OSX without XQuarts, you'll need /usr/X11 instead of /opt/X11!
+ CPPFLAGS	= `pkg-config --cflags --silence-errors cairo || echo '-I/opt/X11/include/cairo'`
+ VERSION		= 0.1.15
+@@ -165,13 +165,13 @@ MANS		= man/kdata_array_alloc.3 \
+ 		  man/kplot_get_plotcfg.3 \
+ 	 	  man/kplotcfg_defaults.3
+ 
+-all: libkplot.a $(EXAMPLES)
++all: libkplot.so $(EXAMPLES)
+ 
+ install: all
+ 	mkdir -p $(DESTDIR)$(PREFIX)/lib
+ 	mkdir -p $(DESTDIR)$(PREFIX)/include
+ 	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man3
+-	install -m 0444 libkplot.a $(DESTDIR)$(PREFIX)/lib
++	install -m 0444 libkplot.so $(DESTDIR)$(PREFIX)/lib
+ 	install -m 0444 kplot.h $(DESTDIR)$(PREFIX)/include
+ 	install -m 0444 $(MANS) $(DESTDIR)$(PREFIX)/man/man3
+ 
+@@ -186,50 +186,50 @@ installwww: www
+ 	install -m 0444 kplot.tgz $(PREFIX)/snapshots
+ 	install -m 0444 kplot.tgz.sha512 $(PREFIX)/snapshots
+ 
+-$(EXAMPLES): libkplot.a
++$(EXAMPLES): libkplot.so
+ 
+-EXAMPLE_LIBS = libkplot.a $(LDADD) -lm 
++EXAMPLE_LIBS = libkplot.so $(LDADD) -lm 
+ 
+-example0: example0.c libkplot.a
++example0: example0.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example1: example1.c libkplot.a
++example1: example1.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example2: example2.c libkplot.a
++example2: example2.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example3: example3.c libkplot.a
++example3: example3.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example4: example4.c libkplot.a
++example4: example4.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example5: example5.c libkplot.a
++example5: example5.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example6: example6.c libkplot.a
++example6: example6.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example7: example7.c libkplot.a
++example7: example7.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example8: example8.c libkplot.a
++example8: example8.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example9: example9.c libkplot.a
++example9: example9.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example10: example10.c libkplot.a
++example10: example10.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example11: example11.c libkplot.a
++example11: example11.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example12: example12.c libkplot.a
++example12: example12.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+-example13: example13.c libkplot.a
++example13: example13.c libkplot.so
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $< $(EXAMPLE_LIBS)
+ 
+ example0.png: example0
+@@ -274,8 +274,8 @@ example12.png: example12
+ example13.png: example13
+ 	./example13
+ 
+-libkplot.a: $(OBJS)
+-	$(AR) rs $@ $(OBJS)
++libkplot.so: $(OBJS)
++	$(CC) -shared -o $@ $(OBJS) -L$(PREFIX)/lib -lcairo
+ 
+ $(OBJS): kplot.h compat.h extern.h
+ 
+@@ -305,7 +305,7 @@ kplot.tgz:
+ 	rm -rf .dist
+ 
+ clean:
+-	rm -f libkplot.a compat.h test-reallocarray 
++	rm -f libkplot.so compat.h test-reallocarray 
+ 	rm -f $(EXAMPLES)
+ 	rm -rf *.dSYM
+ 	rm -f $(OBJS)

@@ -1,6 +1,4 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
-PORTREVISION=	5
+PORTREVISION=	0
 CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

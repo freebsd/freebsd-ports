@@ -1,5 +1,3 @@
-# Created by: Stacey D. Son <sds@son.org>
-
 PORTNAME=	aoe
 PORTVERSION=	1.2.0
 PORTREVISION=	2

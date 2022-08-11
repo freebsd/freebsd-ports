@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+quickterm will work without any configuration, so long as you add a
+typical i3 binding:
+
+# just pop standard shell
+bindsym $mod+b exec i3-quickterm shell
+# with prompt for shells
+bindsym $mod+p exec i3-quickterm
+
+Further configuration can be done via ~/.config/i3/i3-quickterm.json,
+see README.md for further details.
+EOM
+}
+]

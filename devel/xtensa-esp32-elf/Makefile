@@ -1,5 +1,3 @@
-# Created by: Craig Leres <leres@freebsd.org>
-
 PORTNAME=	xtensa-esp32-elf
 DISTVERSION=	1.22.0.g20200907
 PORTREVISION=	2

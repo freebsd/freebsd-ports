@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	dirspec
 PORTVERSION=	13.10
 PORTREVISION=	0

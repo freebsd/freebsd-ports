@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@f2o.org>
-
 PORTNAME=	WWW-Hotmail
 PORTVERSION=	0.10
 PORTREVISION=	1

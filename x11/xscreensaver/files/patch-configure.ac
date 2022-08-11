@@ -1,0 +1,91 @@
+--- configure.ac.orig	2021-10-04 22:18:28 UTC
++++ configure.ac
+@@ -274,8 +274,8 @@ AH_TEMPLATE([HAVE_ADJUNCT_PASSWD],
+ AH_TEMPLATE([HAVE_HPUX_PASSWD],
+ 	    [Define this for HPUX so-called "Secure Passwords".])
+ 
+-#AH_TEMPLATE([PASSWD_HELPER_PROGRAM],
+-#	    [Define this to use a third-party password helper program.])
++AH_TEMPLATE([PASSWD_HELPER_PROGRAM],
++	    [Define this to use a third-party password helper program.])
+ 
+ AH_TEMPLATE([HAVE_SYSLOG],
+ 	    [Define this if you have openlog/syslog/closelog.])
+@@ -2725,31 +2725,31 @@ fi
+ #
+ ###############################################################################
+ 
+-#have_passwd_helper=no
+-#with_passwd_helper_req=unspecified
+-#
+-#AC_ARG_WITH(passwd-helper,
+-#[  --with-passwd-helper    Include support for external password verification.],
+-#  [with_passwd_helper="$withval"; with_passwd_helper_req="$withval"],[with_passwd_helper=no])
+-## no HANDLE_X_PATH_ARG for this one
+-#
+-#if test "$enable_locking" = no ; then
+-#  with_passwd_helper_req=no
+-#  with_passwd_helper=no
+-#fi
+-#
+-#case "$with_passwd_helper" in
+-#  ""|no) : ;;
+-#  /*)
+-#    AC_DEFINE_UNQUOTED(PASSWD_HELPER_PROGRAM, "$with_passwd_helper")
+-#    have_passwd_helper=yes;;
+-#  *)
+-#    echo "error: --with-passwd-helper needs full pathname of helper (not '$with_passwd_helper')." >&2
+-#    exit 1
+-#esac
++have_passwd_helper=no
++with_passwd_helper_req=unspecified
+ 
++AC_ARG_WITH(passwd-helper,
++[  --with-passwd-helper    Include support for external password verification.],
++  [with_passwd_helper="$withval"; with_passwd_helper_req="$withval"],[with_passwd_helper=no])
++# no HANDLE_X_PATH_ARG for this one
+ 
++if test "$enable_locking" = no ; then
++  with_passwd_helper_req=no
++  with_passwd_helper=no
++fi
+ 
++case "$with_passwd_helper" in
++  ""|no) : ;;
++  /*)
++    AC_DEFINE_UNQUOTED(PASSWD_HELPER_PROGRAM, "$with_passwd_helper")
++    have_passwd_helper=yes;;
++  *)
++    echo "error: --with-passwd-helper needs full pathname of helper (not '$with_passwd_helper')." >&2
++    exit 1
++esac
++
++
++
+ # Most of the above shadow mechanisms will have set setuid_auth to yes,
+ # if they were found.  But, on some systems, we need setuid even when
+ # using plain old vanilla passwords.
+@@ -4011,7 +4011,7 @@ fi
+ ###############################################################################
+ 
+ PTY_LIBS=
+-AC_CHECK_HEADERS(pty.h util.h sys/termios.h)
++AC_CHECK_HEADERS(pty.h util.h libutil.h sys/termios.h)
+ AC_CHECK_X_LIB(util, forkpty,
+                [PTY_LIBS="-lutil"
+                 ac_have_forkpty=yes
+@@ -4174,10 +4174,10 @@ if test "$enable_pam_check_account_type" = yes; then
+ else
+   COMMENT_PAM_CHECK_ACCOUNT="#"
+ fi
+-#if test "$have_passwd_helper" = yes; then
+-#  PASSWD_SRCS="$PASSWD_SRCS \$(PWHELPER_SRCS)"
+-#  PASSWD_OBJS="$PASSWD_OBJS \$(PWHELPER_OBJS)"
+-#fi
++if test "$have_passwd_helper" = yes; then
++  PASSWD_SRCS="$PASSWD_SRCS \$(PWHELPER_SRCS)"
++  PASSWD_OBJS="$PASSWD_OBJS \$(PWHELPER_OBJS)"
++fi
+   PASSWD_SRCS="$PASSWD_SRCS \$(PWENT_SRCS)"
+   PASSWD_OBJS="$PASSWD_OBJS \$(PWENT_OBJS)"
+ 

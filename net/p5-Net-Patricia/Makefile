@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	Net-Patricia
 PORTVERSION=	1.22
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: courou <courou@users.sourceforge.net>
-
 PORTNAME=	myphpmoney
 PORTVERSION=	1.3.r3
 PORTEPOCH=	1

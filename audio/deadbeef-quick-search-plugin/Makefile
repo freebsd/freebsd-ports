@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	deadbeef-quick-search-plugin
 DISTVERSION=	0.0.2016.01.02
 CATEGORIES=	audio

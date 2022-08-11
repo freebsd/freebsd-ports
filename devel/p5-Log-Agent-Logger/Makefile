@@ -1,5 +1,3 @@
-# Created by: devin@spamcop.net
-
 PORTNAME=	Log-Agent-Logger
 PORTVERSION=	0.201
 CATEGORIES=	devel perl5

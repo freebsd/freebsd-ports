@@ -1,5 +1,3 @@
-# Created by: mwest@uct.ac.za
-
 PORTNAME=	rdesktop
 PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=	v

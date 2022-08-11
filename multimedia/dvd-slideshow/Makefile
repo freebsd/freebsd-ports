@@ -1,5 +1,3 @@
-# Created by: Phil Oleson <oz@nixil.net>
-
 PORTNAME=	dvd-slideshow
 PORTVERSION=	0.8.4
 DISTVERSIONSUFFIX=	-2

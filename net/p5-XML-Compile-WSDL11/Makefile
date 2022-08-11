@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	XML-Compile-WSDL11
 PORTVERSION=	3.08
 CATEGORIES=	net www perl5

@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	leafpad
 PORTVERSION=	0.8.18.1
 PORTREVISION=	2

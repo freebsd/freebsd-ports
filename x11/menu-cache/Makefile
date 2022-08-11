@@ -1,5 +1,3 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
-
 PORTNAME=	menu-cache
 PORTVERSION=	1.1.0
 CATEGORIES=	x11

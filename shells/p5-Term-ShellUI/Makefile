@@ -1,5 +1,3 @@
-# Created by: Sergey Matveychuk <sem@FreeBSD.org>
-
 PORTNAME=	Term-ShellUI
 PORTVERSION=	0.92
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	l2tpd
 PORTVERSION=	0.69
 PORTREVISION=	10

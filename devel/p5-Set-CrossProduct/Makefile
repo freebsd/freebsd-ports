@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Set-CrossProduct
 PORTVERSION=	2.008
 CATEGORIES=	devel perl5

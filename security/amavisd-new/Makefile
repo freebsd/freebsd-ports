@@ -1,5 +1,6 @@
 PORTNAME=	amavisd-new
 PORTVERSION=	2.12.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://gitlab.com/amavis/amavis/-/archive/v${PORTVERSION}/
@@ -25,6 +26,7 @@ USE_PERL5=	run
 SHEBANG_FILES=	amavisd-agent amavisd-nanny amavisd-release p0f-analyzer.pl \
 		amavisd-snmp-subagent amavisd
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 DOCS=		AAAREADME.first AMAVIS-MIB.txt INSTALL LDAP.schema LICENSE \
@@ -42,7 +44,7 @@ DAEMON?=	/usr/sbin/daemon -p
 OPTIONS_DEFINE=	IPV6 BDB SNMP SQLITE MYSQL PGSQL LDAP SASL SPAMASSASSIN P0F \
 		FILE RAR UNRAR ARJ UNARJ LHA ARC NOMARCH CAB RPM ZOO UNZOO LZOP \
 		7ZIP MSWORD TNEF DOCS
-OPTIONS_DEFAULT=	BDB SPAMASSASSIN FILE UNRAR ARJ LHA ARC CAB RPM ZOO LZOP \
+OPTIONS_DEFAULT=	BDB SPAMASSASSIN FILE UNRAR ARJ ARC CAB RPM ZOO LZOP \
 			7ZIP MSWORD
 BDB_DESC=		Use BerkeleyDB for nanny/cache/snmp
 SNMP_DESC=		Install amavisd snmp subagent

@@ -1,5 +1,5 @@
 PORTNAME=	github-linguist
-PORTVERSION=	7.20.0
+PORTVERSION=	7.22.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,8 @@ COMMENT=	GitHub Language detection
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.7<0.8:textproc/rubygem-charlock_holmes \
-		rubygem-escape_utils>=1.2.0<1.3:textproc/rubygem-escape_utils \
+RUN_DEPENDS=	rubygem-cgi>=0:www/rubygem-cgi \
+		rubygem-charlock_holmes>=0.7.7<0.8:textproc/rubygem-charlock_holmes \
 		rubygem-mini_mime>=1.0<2:mail/rubygem-mini_mime \
 		rubygem-rugged>=1.0<2:devel/rubygem-rugged
 

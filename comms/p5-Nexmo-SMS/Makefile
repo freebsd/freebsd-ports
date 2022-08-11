@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	Nexmo-SMS
 PORTVERSION=	0.06
 PORTREVISION=	2

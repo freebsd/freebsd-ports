@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	LWP-Protocol-https
 PORTVERSION=	6.10
 CATEGORIES=	www perl5

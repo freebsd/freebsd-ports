@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Compress-LZF
 PORTVERSION=	3.80
 CATEGORIES=	archivers perl5

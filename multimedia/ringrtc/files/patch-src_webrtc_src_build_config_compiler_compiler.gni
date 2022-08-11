@@ -1,0 +1,11 @@
+--- ../../src/webrtc/src/build/config/compiler/compiler.gni.orig	2021-11-15 18:52:18 UTC
++++ ../../src/webrtc/src/build/config/compiler/compiler.gni
+@@ -219,7 +219,7 @@ declare_args() {
+ 
+ declare_args() {
+   # Whether to use the gold linker from binutils instead of lld or bfd.
+-  use_gold = !use_lld && !(is_chromecast && is_linux &&
++  use_gold = !use_lld && !is_bsd && !(is_chromecast && is_linux &&
+                            (current_cpu == "arm" || current_cpu == "mipsel")) &&
+              (((is_linux || is_chromeos_lacros) &&
+                (current_cpu == "x64" || current_cpu == "x86" ||

@@ -12,11 +12,8 @@ LICENSE=	LGPL21+
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyinstaller>=0:devel/py-pyinstaller@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils unittest
 
 NO_ARCH=	yes
-
-do-test:
-	cd ${WRKSRC} && ${PYTHON_CMD} -m unittest -v
 
 .include <bsd.port.mk>

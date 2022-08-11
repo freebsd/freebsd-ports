@@ -120,7 +120,7 @@ bhyve_status()
 bhyve_poll()
 {
 	echo -n "Waiting for session: ${_session}"
-	while ${command} has-session -t ${_session} 2>dev/null; do
+	while ${command} has-session -t ${_session} 2>/dev/null; do
 		sleep 1
 	done
 	echo
@@ -131,7 +131,7 @@ bhyve_stop()
 	if ${command} has-session -t ${_session} 2>/dev/null; then
 		echo "Stopping ${_session}."
 		${command} kill-session -t ${_session}
-		while ${command} has-session -t ${_session} 2>dev/null; do
+		while ${command} has-session -t ${_session} 2>/dev/null; do
 			sleep 1
 		done
 	fi

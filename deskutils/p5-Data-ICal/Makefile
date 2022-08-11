@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Data-ICal
 PORTVERSION=	0.24
 CATEGORIES=	deskutils perl5

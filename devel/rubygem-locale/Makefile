@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	locale
 PORTVERSION=	2.1.3
 CATEGORIES=	devel rubygems

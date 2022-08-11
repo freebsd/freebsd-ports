@@ -1,5 +1,3 @@
-# Created by: Carlos J Puga Medina <cpm@fbsd.es>
-
 PORTNAME=	repoze.sphinx.autointerface
 PORTVERSION=	0.8
 CATEGORIES=	devel python

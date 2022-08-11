@@ -1,5 +1,3 @@
-# Created by: Brian Dean <bsd@FreeBSD.org>
-
 PORTNAME=	avarice
 PORTVERSION=	2.14
 CATEGORIES=	devel

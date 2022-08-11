@@ -1,5 +1,3 @@
-# Created by: Peter Schuller <peter.schuller@infidyne.com>
-
 PORTNAME=	classifier
 PORTVERSION=	1.3.5
 CATEGORIES=	devel rubygems

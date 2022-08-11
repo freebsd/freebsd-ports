@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Net-SSH2
 PORTVERSION=	0.72
 PORTREVISION=	1

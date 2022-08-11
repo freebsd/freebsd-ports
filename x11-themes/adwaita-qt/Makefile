@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	adwaita-qt
 DISTVERSION=	1.4.1
 CATEGORIES=	x11-themes

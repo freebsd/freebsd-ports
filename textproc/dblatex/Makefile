@@ -1,5 +1,3 @@
-# Created by: Peter Johnson <johnson.peter@gmail.com>
-
 PORTNAME=	dblatex
 DISTVERSION=	0.3.12
 CATEGORIES=	textproc

@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXfont2
 PORTVERSION=	2.0.5
 CATEGORIES=	x11-fonts

@@ -1,5 +1,3 @@
-# Created by: G. Adam Stanislav <adam@whizkidtech.net>
-
 PORTNAME=	g-gcl
 PORTVERSION=	1.10
 CATEGORIES=	www graphics

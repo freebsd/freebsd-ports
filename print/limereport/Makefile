@@ -1,5 +1,3 @@
-# Created by: Golyashov Sergey <svvord@soft-wizard.ru>
-
 PORTNAME=	limereport
 PORTVERSION=	1.5.35
 PORTREVISION=	1

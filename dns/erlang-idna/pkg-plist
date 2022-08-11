@@ -1,9 +1,0 @@
-lib/erlang/lib/idna-%%VERSION%%/ebin/idna.app
-lib/erlang/lib/idna-%%VERSION%%/ebin/idna.beam
-lib/erlang/lib/idna-%%VERSION%%/ebin/idna_ucs.beam
-lib/erlang/lib/idna-%%VERSION%%/ebin/punycode.beam
-lib/erlang/lib/idna-%%VERSION%%/src/idna.app.src
-lib/erlang/lib/idna-%%VERSION%%/src/idna.erl
-lib/erlang/lib/idna-%%VERSION%%/src/idna_ucs.erl
-lib/erlang/lib/idna-%%VERSION%%/src/punycode.erl
-%%PORTDOCS%%%%DOCSDIR%%/README.md

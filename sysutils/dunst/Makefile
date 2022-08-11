@@ -1,9 +1,7 @@
-# Created by: Rod Person <rodperson@rodperson.com>
-
 PORTNAME=	dunst
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.3
-CATEGORIES=	sysutils
+DISTVERSION=	1.9.0
+CATEGORIES=	sysutils wayland
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Lightweight notification daemon
@@ -24,9 +22,7 @@ USE_GNOME=	cairo gdkpixbuf2 pango
 USE_PERL5=	build
 USE_XORG=	x11 xext xinerama xrandr xscrnsaver
 
-MAKE_ARGS=	MANPREFIX="${PREFIX}/man" SYSCONFDIR="${PREFIX}/etc"
-ALL_TARGET=	dunst
-TEST_TARGET=	test
+MAKE_ARGS=	MANPREFIX="${PREFIX}/man" SYSCONFDIR="${PREFIX}/etc" SYSTEMD=0
 
 OPTIONS_DEFINE=	DUNSTIFY WAYLAND
 OPTIONS_DEFAULT=	DUNSTIFY WAYLAND
@@ -41,13 +37,14 @@ WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_MAKE_ENV_OFF=	WAYLAND=0
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},g' \
+	@${REINPLACE_CMD} \
+		-e 's,/usr/bin,${PREFIX}/bin,g' \
+		-e 's,/usr/share,${PREFIX}/share,g' \
 		-e 's,/etc,${PREFIX}&,g' \
 		${WRKSRC}/docs/dunst.?.pod \
 		${WRKSRC}/dunstrc \
-		${WRKSRC}/src/settings.c
-	@${REINPLACE_CMD} -e 's,/dunstrc,&.sample,' \
-		${WRKSRC}/Makefile
+		${WRKSRC}/src/settings_data.h \
+		${WRKSRC}/src/icon-lookup.c
 
 post-patch-DUNSTIFY-off:
 	@${REINPLACE_CMD} -e '/^all:/s/dunstify//' \

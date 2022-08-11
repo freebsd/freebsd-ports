@@ -1,8 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	opentype-sanitizer
-PORTVERSION=	8.1.4
-DISTVERSIONSUFFIX=	.post3
+PORTVERSION=	8.2.1
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,10 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	ots-sanitize:x11-fonts/ots
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 LDFLAGS+=	-lpython${PYTHON_VER}${PYTHON_ABIVER}
 
@@ -28,8 +24,5 @@ post-patch:
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
-do-test:
-	cd ${WRKSRC}/ && ${PYTHON_CMD} -m pytest -rs -v
 
 .include <bsd.port.mk>

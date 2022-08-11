@@ -1,5 +1,3 @@
-# Created by: <ports@c0decafe.net>
-
 PORTNAME=	Dancer-Plugin-DBIC
 PORTVERSION=	0.2104
 CATEGORIES=	databases perl5

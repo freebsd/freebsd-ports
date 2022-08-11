@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	XML-RSS-LibXML
 PORTVERSION=	0.3105
 CATEGORIES=	textproc perl5

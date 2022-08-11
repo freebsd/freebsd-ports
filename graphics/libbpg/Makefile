@@ -1,5 +1,3 @@
-# Created by: Matthieu Volat <mazhe@alkumuna.eu>
-
 PORTNAME=	libbpg
 PORTVERSION=	0.9.8
 CATEGORIES=	graphics

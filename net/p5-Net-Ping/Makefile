@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Net-Ping
 PORTVERSION=	2.74
 CATEGORIES=	net perl5

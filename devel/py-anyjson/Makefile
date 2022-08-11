@@ -1,5 +1,3 @@
-# Created by: Mirko Zinn <mail@derzinn.de>
-
 PORTNAME=	anyjson
 PORTVERSION=	0.3.3
 PORTREVISION=	1

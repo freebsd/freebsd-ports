@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	BIND-Config-Parser
 PORTVERSION=	0.01
 PORTREVISION=	1

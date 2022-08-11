@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	gp2c
 DISTVERSION=	0.0.12
 CATEGORIES=	math

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	sfm
 PORTVERSION=	0.4
 DISTVERSIONPREFIX=	v

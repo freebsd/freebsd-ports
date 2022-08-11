@@ -1,5 +1,3 @@
-# Created by: king@v2project.com
-
 PORTNAME=	gplink
 PORTVERSION=	1.5
 PORTREVISION=	1

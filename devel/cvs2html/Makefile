@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	cvs2html
 PORTVERSION=	1.98
 PORTREVISION=	1

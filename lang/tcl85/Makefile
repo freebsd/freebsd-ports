@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	tcl
 PORTVERSION=	8.5.19
 PORTREVISION=	4

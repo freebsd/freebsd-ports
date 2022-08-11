@@ -4,7 +4,7 @@ CATEGORIES=		www
 MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/
 DISTNAME=		dojo-release-${PORTVERSION}
 
-MAINTAINER=		wg@FreeBSD.org
+MAINTAINER=		bofh@FreeBSD.org
 COMMENT=		Open-source DHTML toolkit written in JavaScript
 
 USES=			cpe

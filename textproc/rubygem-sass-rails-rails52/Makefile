@@ -1,5 +1,3 @@
-# Created by: Johannes Jost Meixner <xmj@FreeBSD.org>
-
 PORTNAME=	sass-rails
 PORTVERSION=	6.0.0
 CATEGORIES=	textproc rubygems

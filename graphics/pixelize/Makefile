@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pixelize
 PORTVERSION=	1.0.0
 PORTREVISION=	4

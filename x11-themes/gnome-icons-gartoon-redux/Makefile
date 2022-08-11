@@ -1,5 +1,3 @@
-# Created by: Jonathan Chen <jonc@chen.org.nz>
-
 PORTNAME=	gartoon-redux
 PORTVERSION=	1.11
 PORTREVISION=	2

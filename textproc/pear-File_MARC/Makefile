@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	File_MARC
 PORTVERSION=	1.4.1
 CATEGORIES=	textproc pear

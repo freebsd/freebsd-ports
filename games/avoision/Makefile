@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	avoision
 PORTVERSION=	1.1
 PORTREVISION=	9

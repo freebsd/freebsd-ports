@@ -1,5 +1,3 @@
-# Created by: Chris D. Faulhaber <jedgar@fxp.org>
-
 PORTNAME=	grepmail
 PORTVERSION=	5.3033
 PORTREVISION=	1

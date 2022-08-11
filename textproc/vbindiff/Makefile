@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	vbindiff
 DISTVERSION=	3.0_beta5
 CATEGORIES=	textproc

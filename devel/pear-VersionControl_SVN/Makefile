@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	VersionControl_SVN
 PORTVERSION=	0.5.2
 CATEGORIES=	devel pear

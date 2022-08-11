@@ -1,8 +1,6 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	freedink
 PORTVERSION=	108.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	-engine

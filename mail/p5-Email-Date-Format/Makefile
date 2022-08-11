@@ -1,5 +1,3 @@
-# Created by: Anton Yuzhaninov <citrin@rambler-co.ru>
-
 PORTNAME=	Email-Date-Format
 PORTVERSION=	1.005
 CATEGORIES=	mail perl5

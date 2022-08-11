@@ -1,5 +1,3 @@
-# Created by: Oliver Breuninger <ob@breuninger.org>
-
 PORTNAME=	discid
 PORTVERSION=	1.3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	blist
 PORTVERSION=	1.3.6
 PORTREVISION=	1

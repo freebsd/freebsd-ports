@@ -1,5 +1,3 @@
-# Created by: Dan Rench <citric@cubicone.tmetic.com>
-
 PORTNAME=	MIME-Base64-URLSafe
 PORTVERSION=	0.01
 PORTREVISION=	2
@@ -15,5 +13,7 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

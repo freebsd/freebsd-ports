@@ -1,5 +1,3 @@
-# Created by: Greg Lewis <glewis@FreeBSD.org>
-
 PORTNAME=	udunits
 PORTVERSION=	2.2.28
 CATEGORIES=	science math

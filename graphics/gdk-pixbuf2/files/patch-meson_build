@@ -1,0 +1,16 @@
+https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues/106
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -414,7 +414,9 @@ subdir('gdk-pixbuf')
+ subdir('po')
+ 
+ if not meson.is_cross_build()
+-  subdir('tests')
++  if get_option('installed_tests')
++    subdir('tests')
++  endif
+   subdir('thumbnailer')
+ endif
+ 

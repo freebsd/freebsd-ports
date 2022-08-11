@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 # Also update devel/libgit2, devel/rubygem-rugged, devel/py-pygit2
 
 PORTNAME=	libgit2-glib

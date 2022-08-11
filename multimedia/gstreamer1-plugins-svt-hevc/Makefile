@@ -12,10 +12,9 @@ LICENSE_FILE=	${_LICENSE_STORE}/LGPL21
 
 LIB_DEPENDS=	libSvtHevcEnc.so:multimedia/svt-hevc
 
-USES=		gnome meson pkgconfig
+USES=		gnome gstreamer meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	glib20
-USE_GSTREAMER1=	yes
 GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-HEVC
 WRKSRC_SUBDIR=	gstreamer-plugin

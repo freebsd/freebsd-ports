@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	yagiuda
 PORTVERSION=	1.19
 PORTREVISION=	1

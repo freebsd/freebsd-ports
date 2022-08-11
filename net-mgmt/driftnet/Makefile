@@ -1,5 +1,3 @@
-# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-
 PORTNAME=	driftnet
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v

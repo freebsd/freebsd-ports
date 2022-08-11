@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-codebuild
 PORTVERSION=	1.88.0
 CATEGORIES=	devel rubygems

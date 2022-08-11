@@ -1,5 +1,3 @@
-# Created by: Tobias Roth <ports@fsck.ch>
-
 PORTNAME=	gkx86info2
 PORTVERSION=	0.0.2
 PORTREVISION=	8

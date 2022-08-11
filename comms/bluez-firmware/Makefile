@@ -1,5 +1,3 @@
-# Created by: dirkx@webweaving.org
-
 PORTNAME=	bluez-firmware
 PORTVERSION=	1.2
 CATEGORIES=	comms kld

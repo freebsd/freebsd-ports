@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ttfautohint-py
 PORTVERSION=	0.5.1
 CATEGORIES=	print python

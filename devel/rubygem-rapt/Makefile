@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	rapt
 PORTVERSION=	0.2.2
 CATEGORIES=	devel rubygems

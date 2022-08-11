@@ -1,5 +1,3 @@
-# Created by: Alex Deiter <alex.deiter@gmail.com>
-
 PORTNAME=	openipmi
 PORTVERSION=	2.0.29
 CATEGORIES=	sysutils

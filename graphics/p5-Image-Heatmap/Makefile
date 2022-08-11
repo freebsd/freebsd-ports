@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	Image-Heatmap
 PORTVERSION=	0.565
 PORTREVISION=	3

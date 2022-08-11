@@ -1,5 +1,3 @@
-# Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
-
 PORTNAME=	ExtUtils-Manifest
 PORTVERSION=	1.73
 CATEGORIES=	devel perl5

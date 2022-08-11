@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	XML_Wddx
 PORTVERSION=	1.0.2
 CATEGORIES=	textproc devel pear

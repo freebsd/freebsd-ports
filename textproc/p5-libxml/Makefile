@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	libxml
 PORTVERSION=	0.08
 PORTREVISION=	1

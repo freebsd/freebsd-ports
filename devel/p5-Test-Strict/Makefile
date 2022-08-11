@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Test-Strict
 PORTVERSION=	0.52
 PORTREVISION=	1

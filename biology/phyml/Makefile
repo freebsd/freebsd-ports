@@ -1,5 +1,3 @@
-# Created by: ballen
-
 PORTNAME=	phyml
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.20211231

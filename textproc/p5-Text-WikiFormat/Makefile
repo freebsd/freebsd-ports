@@ -1,5 +1,3 @@
-# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-
 PORTNAME=	Text-WikiFormat
 PORTVERSION=	0.81
 PORTREVISION=	1
@@ -18,5 +16,7 @@ RUN_DEPENDS=	p5-URI>=0.01:net/p5-URI
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Class-DBI-Pager
 PORTVERSION=	0.08
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Joachim Strombergson <watchman@ludd.ltu.se>
-
 PORTNAME=	dinotrace
 PORTVERSION=	9.4c
 PORTREVISION=	14

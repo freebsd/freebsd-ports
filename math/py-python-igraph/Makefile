@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-
 PORTNAME=	python-igraph
 DISTVERSION=	0.9.9
 PORTREVISION=	2

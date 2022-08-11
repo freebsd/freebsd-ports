@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@thomas.as>)
-
 PORTNAME=	kronolith
 PORTVERSION=	4.2.29
 CATEGORIES=	deskutils www pear

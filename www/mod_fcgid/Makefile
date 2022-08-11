@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	mod_fcgid
 PORTVERSION=	2.3.9
 CATEGORIES=	www

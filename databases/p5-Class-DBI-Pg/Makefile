@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Class-DBI-Pg
 PORTVERSION=	0.09
 PORTREVISION=	4

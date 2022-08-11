@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	munkres
 PORTVERSION=	1.0.12
 DISTVERSIONPREFIX=	release-

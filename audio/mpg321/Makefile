@@ -1,8 +1,6 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	mpg321
 PORTVERSION=	0.2.10
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	SF
 

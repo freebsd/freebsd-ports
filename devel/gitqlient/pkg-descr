@@ -1,0 +1,12 @@
+GitQlient, pronounced as git+client is a multi-platform Git client.
+The original idea was to provide a GUI-oriented Git clientthat was
+easy to integrate with QtCreator. In addition, one goal was to
+modernize the old code that QGit is based on and provide a easy UI/UX
+that I was actually missing on other clients.
+
+- Visualisation and search of git history, branches, tags
+- Git operations such as commit, cherry-pick
+- Workflow support including pomodoro
+- Multiple repositories
+
+WWW: https://francescmm.github.io/GitQlient/

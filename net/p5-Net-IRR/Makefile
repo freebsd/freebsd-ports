@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Net-IRR
 PORTVERSION=	0.08
 PORTREVISION=	1

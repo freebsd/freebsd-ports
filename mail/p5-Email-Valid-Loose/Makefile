@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	Email-Valid-Loose
 PORTVERSION=	0.05
 PORTREVISION=	1

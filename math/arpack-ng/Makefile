@@ -1,5 +1,3 @@
-# Created by: bf <bf@FreeBSD.org>
-
 PORTNAME=	arpack-ng
 DISTVERSION=	3.8.0
 CATEGORIES=	math

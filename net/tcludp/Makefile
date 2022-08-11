@@ -1,5 +1,3 @@
-# Created by: Frank Fenor <frank@fenor.de>
-
 PORTNAME=	tcludp
 PORTVERSION=	1.0.11
 CATEGORIES=	net tcl

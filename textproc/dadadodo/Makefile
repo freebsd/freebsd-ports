@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	dadadodo
 PORTVERSION=	1.04
 CATEGORIES=	textproc

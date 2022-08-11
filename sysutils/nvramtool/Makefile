@@ -1,5 +1,3 @@
-# Created by: Andrey Zonov <andrey@zonov.org>
-
 PORTNAME=	nvramtool
 PORTVERSION=	r6440
 CATEGORIES=	sysutils

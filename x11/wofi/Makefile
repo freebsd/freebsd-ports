@@ -1,7 +1,7 @@
 PORTNAME=	wofi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.4
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	jbeich@FreeBSD.org

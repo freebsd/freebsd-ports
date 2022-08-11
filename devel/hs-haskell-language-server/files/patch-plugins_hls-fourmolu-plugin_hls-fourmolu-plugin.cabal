@@ -1,7 +1,0 @@
---- plugins/hls-fourmolu-plugin/hls-fourmolu-plugin.cabal.orig	2021-09-15 07:36:17 UTC
-+++ plugins/hls-fourmolu-plugin/hls-fourmolu-plugin.cabal
-@@ -44,4 +44,3 @@ test-suite tests
-     , filepath
-     , hls-fourmolu-plugin
-     , hls-test-utils       >=1.0 && <1.2
--    , lsp-test

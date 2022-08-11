@@ -1,5 +1,3 @@
-# Created by: Frank Wall <fw@moov.de>
-
 PORTNAME=	omping
 PORTVERSION=	0.0.4
 CATEGORIES=	net-mgmt

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aes_key_wrap
 PORTVERSION=	1.1.0
 CATEGORIES=	security rubygems

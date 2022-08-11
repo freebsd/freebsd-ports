@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Pod-ProjectDocs
 PORTVERSION=	0.53
 CATEGORIES=	textproc perl5

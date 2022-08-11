@@ -1,5 +1,3 @@
-# Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
-
 PORTNAME=	pyaudio
 PORTVERSION=	0.2.11
 PORTREVISION=	2

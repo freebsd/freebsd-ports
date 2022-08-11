@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	rescue
 PORTVERSION=	1.0.0.3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	Tree-Simple
 PORTVERSION=	1.33
 CATEGORIES=	devel perl5

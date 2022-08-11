@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Crypt-OpenSSL-Guess
 PORTVERSION=	0.15
 CATEGORIES=	security perl5

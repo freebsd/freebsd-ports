@@ -1,5 +1,3 @@
-# Created by: Dmitry Liakh <dliakh@ukr.net>
-
 PORTNAME=	Lingua-DetectCyrillic
 PORTVERSION=	0.02
 PORTREVISION=	1

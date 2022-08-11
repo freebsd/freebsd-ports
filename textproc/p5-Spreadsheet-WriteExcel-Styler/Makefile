@@ -1,5 +1,3 @@
-# Created by: jupengfei <jupengfei@gmail.com>
-
 PORTNAME=	Spreadsheet-WriteExcel-Styler
 PORTVERSION=	1.02
 PORTREVISION=	1

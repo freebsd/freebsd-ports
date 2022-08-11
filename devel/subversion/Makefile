@@ -1,6 +1,4 @@
-# Created by: rooneg@electricjellyfish.net
-
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system

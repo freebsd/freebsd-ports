@@ -1,5 +1,3 @@
-# Created by: Philippe Le Berre <philippe@le-berre.com>
-
 PORTNAME=	ftpproxy
 PORTVERSION=	1.2.3
 PORTREVISION=	1

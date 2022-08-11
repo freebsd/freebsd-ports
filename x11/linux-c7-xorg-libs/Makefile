@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	xorg-libs
 PORTVERSION=	7.7
 PORTREVISION=	9

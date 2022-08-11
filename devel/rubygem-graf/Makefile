@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	graf
 PORTVERSION=	0.0.5
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	eawplus
 PORTVERSION=	12.1
 PORTREVISION=	3

@@ -1,7 +1,5 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	IPC-Locker
-PORTVERSION=	1.500
+PORTVERSION=	1.502
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

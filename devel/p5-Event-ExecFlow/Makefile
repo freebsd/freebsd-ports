@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Event-ExecFlow
 PORTVERSION=	0.64
 PORTREVISION=	1

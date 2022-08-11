@@ -1,7 +1,8 @@
 PORTNAME=	nwg-bar
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
-CATEGORIES=	x11
+PORTREVISION=	3
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK3-based button bar for sway and other wlroots-based compositors

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Time-Duration-Parse
 PORTVERSION=	0.16
 CATEGORIES=	devel perl5

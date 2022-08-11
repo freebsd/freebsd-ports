@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Type-Tiny-XS
 PORTVERSION=	0.022
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Donald Burr <dburr@FreeBSD.org>
-
 PORTNAME=	PathTools
 PORTVERSION=	3.7500
 CATEGORIES=	devel perl5

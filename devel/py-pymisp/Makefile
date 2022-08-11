@@ -1,5 +1,5 @@
 PORTNAME=	pymisp
-PORTVERSION=	2.4.128
+PORTVERSION=	2.4.157
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,13 +10,16 @@ COMMENT=	Python library to access MISP platforms via their REST API
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	python:3.6+ shebangfix
+USES=		python:3.8+ shebangfix
 
-SHEBANG_FILES=	pymisp/data/misp-objects/validate_all.sh pymisp/data/misp-objects/jq_all_the_things.sh
+SHEBANG_FILES=	pymisp/data/misp-objects/validate_all.sh \
+		pymisp/data/misp-objects/jq_all_the_things.sh \
+		pymisp/data/misp-objects/tools/validate_opposites.sh
 
 USE_PYTHON=	autoplist distutils
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		bash>0:shells/bash
 
 NO_ARCH=	yes
 

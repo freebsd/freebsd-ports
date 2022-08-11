@@ -1,5 +1,3 @@
-# Created by: KIMURA Yasuhiro <yasu@utahime.org>
-
 PORTNAME=	yaml-mode.el
 PORTVERSION=	0.0.15
 PORTREVISION=	4

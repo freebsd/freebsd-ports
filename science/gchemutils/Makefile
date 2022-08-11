@@ -1,8 +1,5 @@
-# Created by: Pav Lucistnik <pav@oook.cz>
-
 PORTNAME=	gchemutils
-PORTVERSION=	0.14.16
-PORTREVISION=	10
+PORTVERSION=	0.14.17
 CATEGORIES=	science
 MASTER_SITES=	SAVANNAH/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Net-Domain-TLD
 PORTVERSION=	1.75
 CATEGORIES=	dns perl5

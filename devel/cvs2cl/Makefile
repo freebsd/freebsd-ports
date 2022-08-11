@@ -1,5 +1,3 @@
-# Created by: knu@FreeBSD.org
-
 PORTNAME=	cvs2cl
 PORTVERSION=	2.73
 CATEGORIES=	devel

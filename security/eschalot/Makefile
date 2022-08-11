@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	eschalot
 PORTVERSION=	1.2.0.20191006
 CATEGORIES=	security

@@ -1,0 +1,9 @@
+bin/edfbrowser
+share/applications/edfbrowser.desktop
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/montage_file_format.txt
+share/icons/edf.png
+share/icons/hicolor/48x48/apps/edf.png
+share/icons/hicolor/48x48/mimetypes/edf.png
+share/mime/packages/edfbrowser.xml
+share/pixmaps/edf.png

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	pastix
 PORTVERSION=	6.2.1
 DISTVERSIONPREFIX=	v

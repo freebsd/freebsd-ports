@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	ModelMetrics
 PORTVERSION=	1.2.2.2
 PORTREVISION=	1

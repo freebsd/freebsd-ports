@@ -1,5 +1,3 @@
-# Created by: Julien Laffaye <kimelto@gmail.com>
-
 PORTNAME=	sselp
 PORTVERSION=	0.2
 CATEGORIES=	x11

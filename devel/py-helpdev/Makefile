@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	helpdev
 PORTVERSION=	0.7.1
 PORTREVISION=	1

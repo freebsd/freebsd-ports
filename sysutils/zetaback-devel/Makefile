@@ -1,5 +1,3 @@
-# Created by: Cy Schubert <cy@FreeBSD.org>
-
 PORTNAME=	zetaback
 DISTVERSION=	${ZETABACK_COMMIT_DATE}
 CATEGORIES=	sysutils

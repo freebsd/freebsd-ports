@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <kappa@rambler-co.ru>
-
 PORTNAME=	CPANPLUS
 PORTVERSION=	0.9914
 CATEGORIES=	devel perl5

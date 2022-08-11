@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	tinc
 PORTVERSION=	1.0.36
 PORTREVISION=	2

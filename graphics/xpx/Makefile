@@ -1,5 +1,3 @@
-# Created by: Seiichirou Hiraoka
-
 PORTNAME=	xpx
 PORTVERSION=	1.41
 PORTREVISION=	2

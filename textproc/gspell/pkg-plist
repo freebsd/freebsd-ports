@@ -17,7 +17,7 @@ include/gspell-1/gspell/gspell.h
 lib/girepository-1.0/Gspell-1.typelib
 lib/libgspell-1.so
 lib/libgspell-1.so.2
-lib/libgspell-1.so.2.3.0
+lib/libgspell-1.so.2.3.1
 libdata/pkgconfig/gspell-1.pc
 share/gir-1.0/Gspell-1.gir
 share/gtk-doc/html/gspell-1.0/GspellChecker.html
@@ -90,6 +90,9 @@ share/gtk-doc/html/gspell-1.0/up.png
 %%NLS%%share/locale/nb/LC_MESSAGES/gspell-1.mo
 %%NLS%%share/locale/ne/LC_MESSAGES/gspell-1.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gspell-1.mo
+%%NLS%%share/locale/ab/LC_MESSAGES/gspell-1.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/gspell-1.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/gspell-1.mo
 %%NLS%%share/locale/oc/LC_MESSAGES/gspell-1.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/gspell-1.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gspell-1.mo

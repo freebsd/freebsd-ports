@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	FEAR-API
 PORTVERSION=	0.489
 PORTREVISION=	3

@@ -1,0 +1,5 @@
+jbxvt is an XCB-based terminal emulator implementing modern terminal
+emulator features and legacy expectations. It is a fork of XVT
+focused on usability and minimal resource usage.
+
+WWW: https://github.com/jefbed/jbxvt

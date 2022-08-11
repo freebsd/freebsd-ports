@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cairosvg
 PORTVERSION=	2.5.2
 CATEGORIES=	graphics python

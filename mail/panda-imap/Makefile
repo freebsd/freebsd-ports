@@ -1,5 +1,3 @@
-# Created by: pst
-
 PORTNAME=	panda-imap
 PORTVERSION=	20130621
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	tensor
 DISTVERSION=	1.5
 CATEGORIES=	math

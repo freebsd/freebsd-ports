@@ -1,5 +1,3 @@
-# Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	googler
 PORTVERSION=	4.3.2
 DISTVERSIONPREFIX=	v

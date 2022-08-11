@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Zelig
 DISTVERSION=	5.1.7
 CATEGORIES=	math

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net_Gearman
 PORTVERSION=	0.2.3
 PORTREVISION=	3

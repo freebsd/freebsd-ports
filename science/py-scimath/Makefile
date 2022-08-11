@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	scimath
 PORTVERSION=	4.2.0
 CATEGORIES=	science math python

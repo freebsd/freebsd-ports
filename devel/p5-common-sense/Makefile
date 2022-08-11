@@ -1,5 +1,3 @@
-# Created by: Mons Anderson <mons@cpan.org>
-
 PORTNAME=	common-sense
 PORTVERSION=	3.75
 CATEGORIES=	devel perl5

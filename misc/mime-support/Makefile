@@ -1,5 +1,3 @@
-# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-
 PORTNAME=	mime-support
 PORTVERSION=	3.62
 CATEGORIES=	misc
@@ -17,6 +15,7 @@ CPE_VENDOR=	debian
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/run-mailcap etc/mime.types \
 		man/man1/run-mailcap.1.gz

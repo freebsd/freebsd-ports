@@ -1,5 +1,3 @@
-# Created by: Jeremy Chadwick <freebsd@jdc.parodius.com>
-
 PORTNAME=	mcelog
 PORTVERSION=	178
 DISTVERSIONPREFIX=	v

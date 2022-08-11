@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	mda-lv2
 PORTVERSION=	1.2.6
 CATEGORIES=	audio

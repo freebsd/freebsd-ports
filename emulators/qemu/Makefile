@@ -1,7 +1,6 @@
-# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
-
 PORTNAME=	qemu
 PORTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -12,10 +11,10 @@ COMMENT=	QEMU CPU Emulator ${${FLAVOR}_COMMENT}
 LICENSE=	GPLv2
 
 .if ${FLAVOR:U} != tools
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64
 # We need to check if it build with other ARCHS
 # For i386 we have unknown type name 'vm_page_t'
-# ONLY_FOR_ARCHS=	powerpc powerpc64 powerpc64 powerpc64le
+# ONLY_FOR_ARCHS=	powerpc64le
 .endif
 
 BUILD_DEPENDS=	bash:shells/bash
@@ -210,7 +209,11 @@ USE_GCC=	yes
 .endif
 
 .if ${ARCH} == "powerpc64"
+CONFIGURE_ARGS+=	--disable-bsd-user
 MAKE_ARGS+=	ARCH=ppc64
+PLIST_SUB+=	BSDUSER="@comment "
+.else
+PLIST_SUB+=	BSDUSER=""
 .endif
 
 .if ${ARCH} == "sparc64"

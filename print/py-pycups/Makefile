@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	pycups
 PORTVERSION=	2.0.1
 CATEGORIES=	print python

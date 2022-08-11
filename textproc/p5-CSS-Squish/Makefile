@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	CSS-Squish
 PORTVERSION=	0.10
 PORTREVISION=	1
@@ -16,5 +14,7 @@ RUN_DEPENDS=	p5-URI>=0:net/p5-URI
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

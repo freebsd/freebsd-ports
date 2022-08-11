@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Spreadsheet-WriteExcelXML
 PORTVERSION=	0.15
 CATEGORIES=	textproc perl5

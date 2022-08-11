@@ -1,8 +1,6 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	heroes
 PORTVERSION=	0.21
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/${PORTNAME}-data/${DATAVERSION}:data \

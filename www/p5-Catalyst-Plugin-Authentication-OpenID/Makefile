@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Catalyst-Plugin-Authentication-OpenID
 PORTVERSION=	0.02
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	tracker
 PORTVERSION=	2.3.4
 PORTREVISION=	8

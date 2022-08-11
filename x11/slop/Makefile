@@ -25,6 +25,6 @@ PLIST_FILES=	bin/slop \
 		include/slop.hpp \
 		lib/libslopy.so \
 		lib/libslopy.so.${PORTVERSION} \
-		man/man1/slop.1.gz
+		share/man/man1/slop.1.gz
 
 .include <bsd.port.mk>

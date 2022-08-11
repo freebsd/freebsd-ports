@@ -1,6 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-#    $MCom: ports/multimedia/gstreamermm/Makefile,v 1.6 2009/09/26 13:42:00 marcus Exp $
-
 PORTNAME=	gstreamermm
 PORTVERSION=	1.10.0
 PORTREVISION=	2
@@ -13,10 +10,9 @@ COMMENT=	C++ wrapper library for the multimedia library GStreamer
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang gmake gnome libtool pathfix pkgconfig \
+USES=		compiler:c++11-lang gmake gnome gstreamer libtool pathfix pkgconfig \
 		tar:xz
 USE_CXXSTD=	c++11
-USE_GSTREAMER1=	yes
 USE_GNOME=	gnomeprefix gtkmm24
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-documentation

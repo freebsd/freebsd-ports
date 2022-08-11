@@ -1,5 +1,3 @@
-# Created by: Ilia Chipitsine <ilia@cgu.chel.su>
-
 PORTNAME=	String-Approx
 PORTVERSION=	3.28
 CATEGORIES=	devel perl5

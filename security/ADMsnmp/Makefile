@@ -1,5 +1,3 @@
-# Created by: onatan@gmail.com
-
 PORTNAME=	ADMsnmp
 PORTVERSION=	0.1
 CATEGORIES=	security

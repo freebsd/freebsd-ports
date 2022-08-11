@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	HTML-DOM
 PORTVERSION=	0.058
 CATEGORIES=	www perl5

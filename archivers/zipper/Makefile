@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	zipper
 PORTVERSION=	1.5
 PORTREVISION=	8

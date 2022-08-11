@@ -1,5 +1,3 @@
-# Created by: Janni
-
 PORTNAME=	el
 DISTVERSION=	1.9.5.9-1
 PORTREVISION=	2

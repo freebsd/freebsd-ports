@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	url-normalize
 PORTVERSION=	1.4.3
 CATEGORIES=	net python

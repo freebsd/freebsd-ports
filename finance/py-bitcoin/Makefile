@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	bitcoin
 DISTVERSION=	1.1.42
 CATEGORIES=	finance python

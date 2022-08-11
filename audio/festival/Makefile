@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	festival
 PORTVERSION=	2.4
 PORTREVISION=	1

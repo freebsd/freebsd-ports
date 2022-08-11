@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	mp3-archive-tools
 PORTVERSION=	0.9
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	rack-raw-upload
 PORTVERSION=	1.1.1
 CATEGORIES=	devel rubygems

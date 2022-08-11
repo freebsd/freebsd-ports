@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	beautify
 PORTVERSION=	2012.08.12.00
 PORTREVISION=	9

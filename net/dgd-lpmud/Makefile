@@ -1,5 +1,3 @@
-# Created by: adam
-
 PORTNAME=	dgd-lpmud
 PORTVERSION=	2.4.5
 PORTREVISION=	6

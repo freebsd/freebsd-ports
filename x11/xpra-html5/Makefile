@@ -1,5 +1,6 @@
 PORTNAME=	xpra-html5
-PORTVERSION=	4.5.2
+PORTVERSION=	5.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
@@ -28,8 +29,9 @@ GH_ACCOUNT=	Xpra-org
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+ETCDIR=		${PREFIX}/etc/xpra/html5-client
 
 do-install:
-	cd ${WRKSRC} && ${PYTHON_CMD} setup.py install ${STAGEDIR}${PREFIX}/share/xpra/www ${MINIFIER}
+	cd ${WRKSRC} && ${PYTHON_CMD} setup.py install ${STAGEDIR} ${PREFIX}/share/xpra/www ${ETCDIR} ${MINIFIER}
 
 .include <bsd.port.mk>

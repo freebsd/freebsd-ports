@@ -1,8 +1,15 @@
 Don't install Linux specific init script.
 
---- interface/vmcs_host/linux/vcfiled/CMakeLists.txt.orig	2015-02-13 18:39:19 UTC
+--- interface/vmcs_host/linux/vcfiled/CMakeLists.txt.orig	2016-10-24 19:59:54 UTC
 +++ interface/vmcs_host/linux/vcfiled/CMakeLists.txt
-@@ -20,8 +20,8 @@ install(TARGETS vcfiled 
+@@ -1,6 +1,3 @@
+-
+-add_definitions(-Werror)
+-
+ # vcfiled - serves files to videocore. used for media handlers from
+ # OpenMAX/IL and loading VLLs.
+ add_executable(vcfiled vcfiled.c)
+@@ -20,8 +17,8 @@ install(TARGETS vcfiled 
  configure_file (etc/init.d/vcfiled ${PROJECT_BINARY_DIR}/etc/init.d/vcfiled)
  
  # script to start up vcfiled at start of day

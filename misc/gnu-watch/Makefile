@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	watch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.17

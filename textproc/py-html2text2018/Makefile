@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	html2text
 PORTVERSION=	2018.1.9
 PORTREVISION=	2

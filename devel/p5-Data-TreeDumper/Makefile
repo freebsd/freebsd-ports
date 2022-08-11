@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Data-TreeDumper
 PORTVERSION=	0.40
 PORTREVISION=	2

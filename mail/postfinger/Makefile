@@ -1,5 +1,3 @@
-# Created by: Andrew J. Caines <A.J.Caines@halplant.com>
-
 PORTNAME=	postfinger
 PORTVERSION=	1.30
 CATEGORIES=	mail

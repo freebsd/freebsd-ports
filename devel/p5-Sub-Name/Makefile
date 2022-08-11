@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Sub-Name
 PORTVERSION=	0.26
 PORTEPOCH=	1

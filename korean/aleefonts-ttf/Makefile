@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	aleefonts
 PORTVERSION=	13.3
 PORTREVISION=	1

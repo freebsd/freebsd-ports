@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	vii
 PORTVERSION=	4.2
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	pydicom
 PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=v

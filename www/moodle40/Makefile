@@ -1,8 +1,5 @@
-# Created by: Javier Martin Rueda <jmrueda@diatel.upm.es>
-
 PORTNAME=	moodle
-PORTVERSION=	4.0
-PORTREVISION=	1
+PORTVERSION=	4.0.2
 CATEGORIES=	www education
 MASTER_SITES=	SF/moodle/Moodle/stable400/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
@@ -19,7 +16,7 @@ USE_PHP=	ctype curl dom exif fileinfo filter gd hash \
 		iconv intl json mbstring opcache openssl \
 		pcre session simplexml soap sodium spl tokenizer \
 		xml xmlreader xmlrpc zip zlib
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 WRKSRC=		${WRKDIR}/moodle
 

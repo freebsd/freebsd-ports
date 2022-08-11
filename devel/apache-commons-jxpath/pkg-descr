@@ -3,4 +3,4 @@ expression language called XPath. JXPath applies XPath  expressions to
 graphs of objects of all kinds: JavaBeans, Maps, Servlet contexts, DOM
 etc, including mixtures thereof.
 
-WWW: http://commons.apache.org/proper/commons-jxpath/
+WWW: https://commons.apache.org/proper/commons-jxpath/

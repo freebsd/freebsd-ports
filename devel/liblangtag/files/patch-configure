@@ -1,15 +1,15 @@
---- configure.orig	2014-05-21 03:36:23 UTC
+--- configure.orig	2022-06-30 06:47:45 UTC
 +++ configure
-@@ -14651,11 +14651,7 @@ MODULE_LIBS=
+@@ -16369,11 +16369,7 @@ printf %s "checking for the suffix of module shared li
  if test "x$enable_modules" != "xno"; then
- 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for the suffix of module shared libraries" >&5
- $as_echo_n "checking for the suffix of module shared libraries... " >&6; }
+ 	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for the suffix of module shared libraries" >&5
+ printf %s "checking for the suffix of module shared libraries... " >&6; }
 -	export SED
 -	shrext_cmds=`libtool --config | grep '^shrext_cmds='`
 -	eval $shrext_cmds
 -	module=yes eval std_shrext=$shrext_cmds
 -	lt_module_suffix=`echo $std_shrext | sed 's/^\.//'`
 +	lt_module_suffix=so
- 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: .$lt_module_suffix" >&5
- $as_echo ".$lt_module_suffix" >&6; }
+ 	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: .$lt_module_suffix" >&5
+ printf "%s\n" ".$lt_module_suffix" >&6; }
  	if test "x$lt_module_suffix" = x; then

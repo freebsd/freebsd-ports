@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	squashfs-tools-ng
 PORTVERSION=	1.1.4
 CATEGORIES=	sysutils

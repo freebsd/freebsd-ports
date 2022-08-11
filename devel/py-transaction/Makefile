@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	transaction
 PORTVERSION=	3.0.1
 CATEGORIES=	devel python

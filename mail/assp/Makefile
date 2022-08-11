@@ -1,5 +1,3 @@
-# Created by: J.R. Oldroyd <fbsd@opal.com>
-
 PORTNAME=	assp
 PORTVERSION=	1.9.9.14158
 PORTEPOCH=	1

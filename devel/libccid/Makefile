@@ -1,7 +1,5 @@
-# Created by: arved
-
 PORTNAME=	ccid
-PORTVERSION=	1.4.36
+PORTVERSION=	1.5.0
 CATEGORIES=	devel
 MASTER_SITES=	https://ccid.apdu.fr/files/
 

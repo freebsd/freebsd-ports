@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	txt2man
 DISTVERSIONPREFIX=	txt2man-
 DISTVERSION=	1.7.1
@@ -21,6 +19,8 @@ GH_ACCOUNT=	mvertes
 
 MAKE_ENV=	prefix=${STAGEDIR}${PREFIX}
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^d\.d\.
 
 PLIST_FILES=	bin/bookman \
 		bin/src2man \

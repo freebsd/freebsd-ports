@@ -1,5 +1,3 @@
-# Created by: Franz Klammer <klammer@webonaut.com>
-
 PORTNAME=	png2ico
 PORTVERSION=	2002.12.08
 PORTREVISION=	5

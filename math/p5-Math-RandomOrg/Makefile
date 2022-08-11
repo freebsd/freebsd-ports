@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-RandomOrg
 PORTVERSION=	0.04
 PORTREVISION=	2

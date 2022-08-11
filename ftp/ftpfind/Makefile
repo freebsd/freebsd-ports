@@ -1,5 +1,3 @@
-# Created by: Tomokazu ISHII <t-ishii@tryplanet.com>
-
 PORTNAME=	ftpfind
 PORTVERSION=	0.996
 CATEGORIES=	ftp

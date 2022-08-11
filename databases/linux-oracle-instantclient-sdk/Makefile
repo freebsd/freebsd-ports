@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	instantclient
 PORTVERSION=	${ORACLEVERSION}.${DISTDATE}
 PORTEPOCH=	1

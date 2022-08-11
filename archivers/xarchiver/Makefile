@@ -1,18 +1,16 @@
-# Created by: Andreev Maxim
-
 PORTNAME=	xarchiver
-PORTVERSION=	0.5.4.17
-PORTREVISION=	2
+DISTVERSION=	0.5.4.18
 CATEGORIES=	archivers
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Desktop-agnostic GTK frontend to various archiving tools
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	7zz:archivers/7-zip \
 		gtar:archivers/gtar \
 		gzip:archivers/gzip \
@@ -25,8 +23,10 @@ USES=		autoreconf desktop-file-utils gmake gnome libtool:build pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ib
 
-USE_GNOME=	cairo glib20 intltool
+USE_GNOME=	cairo gdkpixbuf2 glib20 intltool
 GNU_CONFIGURE=	yes
+
+PORTSCOUT=	limit:^\d\.\d\.\d\.\d+$ # avoid tags like identical_to_xfce_git_content
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_GROUP=	FORMATS

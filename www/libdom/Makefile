@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	libdom
 PORTVERSION=	0.4.1
 CATEGORIES=	www

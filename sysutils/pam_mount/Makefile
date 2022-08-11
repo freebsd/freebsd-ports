@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	pam_mount
 PORTVERSION=	2.12
 PORTREVISION=	7

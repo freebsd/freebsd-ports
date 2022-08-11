@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Math-Random-OO
 PORTVERSION=	0.22
 PORTREVISION=	1

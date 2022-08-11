@@ -1,5 +1,3 @@
-# Created by: Jim Pirzyk <pirzyk@uiuc.edu>
-
 PORTNAME=	Config-Objective
 PORTVERSION=	0.9.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: mb@imp.ch
-
 PORTNAME=	jpgtn
 PORTVERSION=	2.06
 PORTREVISION=	4

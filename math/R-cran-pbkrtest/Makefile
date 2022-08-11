@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	pbkrtest
 DISTVERSION=	0.5.1
 CATEGORIES=	math

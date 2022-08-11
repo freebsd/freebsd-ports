@@ -1,5 +1,3 @@
-# Created by: jjachuf@gmail.com
-
 PORTNAME=	plotly
 PORTVERSION=	4.14.3
 CATEGORIES=	graphics python

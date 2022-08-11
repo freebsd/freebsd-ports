@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	HTML-Template-HashWrapper
 PORTVERSION=	1.3
 PORTREVISION=	1

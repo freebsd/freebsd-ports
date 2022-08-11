@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	unidecode
 PORTVERSION=	1.1.1
 CATEGORIES=	converters python

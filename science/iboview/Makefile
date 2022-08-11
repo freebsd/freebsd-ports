@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	iboview
 PORTVERSION=	20150427
 PORTREVISION=	23

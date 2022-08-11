@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	lookat
 PORTVERSION=	1.4.4
 CATEGORIES=	sysutils

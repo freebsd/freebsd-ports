@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sassc
 PORTVERSION=	2.2.1
 CATEGORIES=	textproc rubygems

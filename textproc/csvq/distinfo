@@ -1,5 +1,5 @@
-TIMESTAMP = 1646319145
-SHA256 (go/textproc_csvq/csvq-v1.16.0/v1.16.0.mod) = 474251e5321c8b304e2a2ba8b00c14a052a4456db4a3a34c295b1d845a8d3ce8
-SIZE (go/textproc_csvq/csvq-v1.16.0/v1.16.0.mod) = 397
-SHA256 (go/textproc_csvq/csvq-v1.16.0/v1.16.0.zip) = 215e3fbe44c7e6c8201cc62aadc2e93079efe9ff29c79575e2469d10d856871e
-SIZE (go/textproc_csvq/csvq-v1.16.0/v1.16.0.zip) = 1520077
+TIMESTAMP = 1659114254
+SHA256 (go/textproc_csvq/csvq-v1.17.8/v1.17.8.mod) = fb66b57f7cc7760a1f7dd9ce7078e476f5c48ed1ee0e469fee6f5118af9de41c
+SIZE (go/textproc_csvq/csvq-v1.17.8/v1.17.8.mod) = 687
+SHA256 (go/textproc_csvq/csvq-v1.17.8/v1.17.8.zip) = 8f9464e7348cabc7c759234e84ce8f17c6d0651186310a7363e46e054786a84a
+SIZE (go/textproc_csvq/csvq-v1.17.8/v1.17.8.zip) = 1548605

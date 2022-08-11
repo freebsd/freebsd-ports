@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	rauth
 PORTVERSION=	0.7.2
 CATEGORIES=	devel www python
@@ -12,19 +10,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.2.3:www/py-requests@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.2.1:devel/py-nose@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:security/py-pycrypto@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycryptodome>0:security/py-pycryptodome@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_GITHUB=	yes
-USE_PYTHON=	distutils autoplist
-
 GH_ACCOUNT=	litl
+USE_PYTHON=	autoplist distutils nose
 
 NO_ARCH=	yes
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

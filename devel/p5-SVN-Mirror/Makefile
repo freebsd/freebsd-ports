@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	SVN-Mirror
 PORTVERSION=	0.75
 PORTREVISION=	3

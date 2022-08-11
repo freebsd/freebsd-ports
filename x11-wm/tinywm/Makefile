@@ -1,5 +1,3 @@
-# Created by: Florent Thoumie <flz@xbsd.org>
-
 PORTNAME=	tinywm
 PORTVERSION=	1.3
 PORTREVISION=	2

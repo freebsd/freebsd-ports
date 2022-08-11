@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	gltron
 PORTVERSION=	0.70
 PORTREVISION=	19

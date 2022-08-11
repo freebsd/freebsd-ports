@@ -1,5 +1,3 @@
-# Created by: Jeremy Chadwick <koitsu@FreeBSD.org>
-
 PORTNAME=	Markup-Perl
 PORTVERSION=	0.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	URI-Escape-XS
 PORTVERSION=	0.14
 CATEGORIES=	www perl5

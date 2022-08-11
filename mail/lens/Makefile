@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@rtfm.jp>
-
 PORTNAME=	lens
 PORTVERSION=	0.2
 PORTREVISION=	2

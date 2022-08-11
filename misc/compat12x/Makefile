@@ -20,8 +20,8 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSREL:R} < 13
-IGNORE=		is for FreeBSD 13.x and newer
+.if ${OSREL:R} < 12
+IGNORE=		is for FreeBSD 12.x and newer
 .endif
 
 .if ${ARCH} == amd64

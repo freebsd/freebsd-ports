@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	phpserialize
 PORTVERSION=	1.3
 CATEGORIES=	devel python

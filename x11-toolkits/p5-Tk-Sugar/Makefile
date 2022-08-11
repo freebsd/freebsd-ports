@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Tk-Sugar
 PORTVERSION=	1.093190
 PORTREVISION=	1

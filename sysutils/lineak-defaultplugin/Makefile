@@ -1,5 +1,3 @@
-# Created by: Kay Lehmann <kay_lehmann@web.de>
-
 PORTNAME=	lineak-defaultplugin
 PORTVERSION=	0.9
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	Spreadsheet_Excel_Writer
 PORTVERSION=	0.9.4
 CATEGORIES=	textproc www pear

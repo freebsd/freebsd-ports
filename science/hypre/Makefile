@@ -1,8 +1,6 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	hypre
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.24.0
+DISTVERSION=	2.25.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org

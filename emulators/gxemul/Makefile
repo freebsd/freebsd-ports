@@ -1,5 +1,3 @@
-# Created by: Janni
-
 PORTNAME=	gxemul
 PORTVERSION=	0.7.0
 CATEGORIES=	emulators

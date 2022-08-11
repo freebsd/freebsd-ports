@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	libmatroska
 DISTVERSION=	1.6.3
 CATEGORIES=	multimedia audio

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	humanzip
 PORTVERSION=	0.5
 CATEGORIES=	textproc archivers

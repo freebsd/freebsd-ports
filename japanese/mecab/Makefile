@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	mecab
 PORTVERSION=	0.996
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Piotr Florczyk <pf@itwf.pl>
-
 PORTNAME=	lualdap
 PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v

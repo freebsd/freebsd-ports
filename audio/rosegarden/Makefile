@@ -1,5 +1,3 @@
-# Created by: shanee@augusta.de
-
 PORTNAME=	rosegarden
 DISTVERSION=	21.06.1
 CATEGORIES=	audio

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	contextlib2
 DISTVERSION=	0.6.0.post1
 CATEGORIES=	devel python

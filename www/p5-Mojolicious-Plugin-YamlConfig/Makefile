@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	Mojolicious-Plugin-YamlConfig
 PORTVERSION=	0.2.1
 CATEGORIES=	www perl5

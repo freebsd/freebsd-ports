@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Apache-AuthCookie
 PORTVERSION=	3.31
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	XML-Bare
 PORTVERSION=	0.53
 PORTREVISION=	2

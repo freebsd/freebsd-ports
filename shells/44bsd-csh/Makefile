@@ -1,5 +1,3 @@
-# Created by: David O'Brien <obrien@NUXI.com>
-
 PORTNAME=	44bsd-csh
 PORTVERSION=	20001106
 PORTREVISION=	5

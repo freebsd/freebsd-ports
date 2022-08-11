@@ -1,5 +1,3 @@
-# Created by: swallace
-
 PORTNAME=	xpipeman
 PORTVERSION=	1.5
 CATEGORIES=	games

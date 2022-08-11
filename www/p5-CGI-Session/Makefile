@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	CGI-Session
 PORTVERSION=	4.48
 PORTREVISION=	1

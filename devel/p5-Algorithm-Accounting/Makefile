@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.idv.tw>
-
 PORTNAME=	Algorithm-Accounting
 PORTVERSION=	0.08
 PORTREVISION=	7

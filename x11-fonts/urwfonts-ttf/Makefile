@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	urwfonts-ttf
 PORTVERSION=	1.0.7b18
 PORTREVISION=	8

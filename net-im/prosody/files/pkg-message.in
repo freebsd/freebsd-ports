@@ -1,0 +1,30 @@
+[
+{ type: install
+  message: <<EOM
+If you're running Prosody in a jail and experience problems, please add
+the following to the global section of your prosody.cfg.lua:
+
+interfaces = { 'x.x.x.x' }
+
+where 'x.x.x.x' is the public IP you wish Prosody to bind to.
+EOM
+},
+{ type: remove
+  message: <<EOM
+===> post-deinstallation information for %%PORTNAME%%:"
+
+     Note:
+     Prosody related user accounts and groups were not removed.
+
+     To remove the user and group which were created by 
+     the installation of this package, run:
+
+     pw userdel -n %%USERS%%
+     pw groupdel -n %%GROUPS%%
+
+     and to remove all server data:
+     rm -rf /var/db/prosody"
+     rm -rf /var/run/prosody"
+EOM
+}
+]

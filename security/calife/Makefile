@@ -1,5 +1,3 @@
-# Created by: Thomas Quinot <thomas@cuivre.fr.eu.org>
-
 PORTNAME=	calife
 PORTVERSION=	3.0.6
 PORTREVISION=	1

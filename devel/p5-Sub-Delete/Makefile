@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Sub-Delete
 PORTVERSION=	1.00002
 PORTREVISION=	1

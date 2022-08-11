@@ -1,5 +1,3 @@
-# Created by: wosch
-
 PORTNAME=	uk-phone
 PORTVERSION=	2.7
 CATEGORIES=	misc

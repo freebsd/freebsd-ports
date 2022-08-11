@@ -1,7 +1,5 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.6.0
+PORTVERSION=	3.7.2
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -22,7 +20,12 @@ USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes
 
-SHEBANG_FILES=	tools/*
+SHEBANG_FILES=	tools/* \
+		translate/convert/odfxml \
+		translate/convert/roundtrip-OOo \
+		translate/convert/roundtrip-gaia \
+		translate/convert/roundtrip-mozilla \
+		translate/lang/test-language-teams.sh
 
 MANPAGES=	csv2po csv2tbx dtd2po flatxml2po html2po idml2po json2po moz2po mozlang2po odf2xliff oo2po oo2xliff po2csv po2dtd po2flatxml po2html po2idml po2json po2moz po2mozlang po2oo po2prop po2resx po2sub po2symb po2tiki po2tmx po2ts po2txt po2web2py po2wordfast po2xliff pot2po prop2po resx2po sub2po symb2po tbx2po tiki2po ts2po txt2po web2py2po xliff2odf xliff2oo
 
@@ -43,7 +46,7 @@ TMSERVER_DESC=	Tmserver backend support
 TRADOS_DESC=	Trados format support
 YAML_DESC=	YAML format support
 
-ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=2.0.12:textproc/py-charset-normalizer@${PY_FLAVOR}
+ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=2.1.0:textproc/py-charset-normalizer@${PY_FLAVOR}
 FLUENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fluent.syntax>=0.18.1:textproc/py-fluent.syntax@${PY_FLAVOR}
 ICAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1:deskutils/py-vobject@${PY_FLAVOR}
 ICAL_VARS=		MANPAGES+="ical2po po2ical"

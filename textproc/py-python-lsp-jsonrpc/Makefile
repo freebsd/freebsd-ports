@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	python-lsp-jsonrpc
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc python

@@ -1,5 +1,3 @@
-# Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
-
 PORTNAME=	leptonica
 DISTVERSION=	1.82.0
 CATEGORIES=	graphics

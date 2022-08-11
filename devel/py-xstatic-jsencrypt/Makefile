@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-jsencrypt
 PORTVERSION=	2.3.1.1
 PORTREVISION=	2

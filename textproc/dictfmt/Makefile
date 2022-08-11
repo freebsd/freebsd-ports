@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	dictfmt
 PORTVERSION=	1.13.1
 CATEGORIES=	textproc

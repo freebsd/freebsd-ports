@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rinku
 PORTVERSION=	2.0.6
 CATEGORIES=	www rubygems

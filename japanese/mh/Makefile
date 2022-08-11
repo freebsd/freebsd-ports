@@ -1,5 +1,3 @@
-# Created by: Akito FUJITA <fujita@zoo.ncl.omron.co.jp>
-
 PORTNAME=	mh
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 PORTREVISION=	5

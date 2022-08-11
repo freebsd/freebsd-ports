@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	repeater
 PORTVERSION=	0.17
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Clone-Choose
 PORTVERSION=	0.010
 CATEGORIES=	devel perl5

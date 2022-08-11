@@ -23,17 +23,14 @@ LDFLAGS+=	-lpoly
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
+TEST_WRKSRC=	${WRKSRC}/test/python
+
+TEST_ENV=      ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/polypy*.so
 
-do-build:
-	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS}
-
-do-install:
-	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS}
-
-do-test: install
-	@cd ${WRKSRC}/test/python && ${PYTHON_CMD} ${WRKSRC}/test/python/check.py
+do-test:
+	@cd ${WRKSRC}/test/python && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ./check.py
 
 .include <bsd.port.mk>

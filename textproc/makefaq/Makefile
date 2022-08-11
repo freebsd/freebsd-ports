@@ -1,5 +1,3 @@
-# Created by: king@v2project.com
-
 PORTNAME=	makefaq
 PORTVERSION=	2.5
 PORTREVISION=	1

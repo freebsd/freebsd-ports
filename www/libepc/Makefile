@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libepc
 PORTVERSION=	0.4.6
 CATEGORIES=	www

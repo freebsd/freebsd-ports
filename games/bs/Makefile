@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	bs
 PORTVERSION=	2.11
 CATEGORIES=	games

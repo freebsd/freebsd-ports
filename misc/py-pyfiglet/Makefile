@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pyfiglet
 PORTVERSION=	0.7.6
 CATEGORIES=	misc python

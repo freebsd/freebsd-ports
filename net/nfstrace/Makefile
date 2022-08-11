@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	nfstrace
 PORTVERSION=	0.4.3.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: brett@peloton.physics.montana.edu
-
 PORTNAME=	asmail
 PORTVERSION=	2.1
 PORTREVISION=	4

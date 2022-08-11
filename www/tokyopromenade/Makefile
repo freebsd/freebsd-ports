@@ -1,5 +1,3 @@
-# Created by: Qing Feng <qingfeng@douban.com>
-
 PORTNAME=	tokyopromenade
 PORTVERSION=	0.9.25
 CATEGORIES=	www

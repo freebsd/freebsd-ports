@@ -1,5 +1,3 @@
-# Created by: David Naylor <naylor.b.david@gmail.com>
-
 PORTNAME=	soundkonverter
 PORTVERSION=	3.0.1
 DISTVERSIONPREFIX=	v

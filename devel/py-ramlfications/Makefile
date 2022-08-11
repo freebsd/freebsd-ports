@@ -1,5 +1,3 @@
-# Created by: Michael Gmelin <grembo@FreeBSD.org>
-
 PORTNAME=	ramlfications
 PORTVERSION=	0.1.9
 CATEGORIES=	devel python

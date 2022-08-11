@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	PDF-API3
 PORTVERSION=	3.001
 PORTREVISION=	1

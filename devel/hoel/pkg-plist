@@ -2,5 +2,5 @@ include/hoel-cfg.h
 include/hoel.h
 lib/libhoel.so
 lib/libhoel.so.1.4
-lib/libhoel.so.1.4.18
+lib/libhoel.so.%%PORTVERSION%%
 libdata/pkgconfig/libhoel.pc

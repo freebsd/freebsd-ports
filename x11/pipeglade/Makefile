@@ -1,5 +1,3 @@
-# Created by: Bert Burgemeister <trebbu@googlemail.com>
-
 PORTNAME=	pipeglade
 PORTVERSION=	4.7.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	getopt
 PORTVERSION=	1.1.6
 CATEGORIES=	misc

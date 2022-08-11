@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-Parser-encodings
 PORTVERSION=	1.03
 PORTREVISION=	1

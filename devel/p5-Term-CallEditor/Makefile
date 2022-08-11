@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Term-CallEditor
 PORTVERSION=	1.01
 CATEGORIES=	devel perl5

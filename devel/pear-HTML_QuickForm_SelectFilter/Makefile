@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	HTML_QuickForm_SelectFilter
 PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear

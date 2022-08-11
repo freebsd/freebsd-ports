@@ -1,7 +1,6 @@
-# Created by: Carlos Eduardo G. Carvalho <cartola@openit.com.br>
-
 PORTNAME=	hugin
 DISTVERSION=	2021.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 

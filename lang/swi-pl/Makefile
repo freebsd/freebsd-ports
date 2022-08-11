@@ -1,5 +1,3 @@
-# Created by: Michael Butschky <butsch@computi.erols.com>
-
 PORTNAME=	swi-pl
 DISTVERSION=	8.2.3
 PORTREVISION=	3

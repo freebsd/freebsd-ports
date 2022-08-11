@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	ethon
 PORTVERSION=	0.15.0
 CATEGORIES=	www rubygems

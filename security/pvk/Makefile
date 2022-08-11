@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	pvk
 PORTVERSION=	20070406
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	pgsphere
 PORTVERSION=	1.1.5
 PORTREVISION=	4

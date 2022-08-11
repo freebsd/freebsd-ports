@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-sakuracloud
 PORTVERSION=	1.7.5
 CATEGORIES=	net rubygems

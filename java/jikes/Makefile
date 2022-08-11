@@ -1,5 +1,3 @@
-# Created by: Matthew Dillon <dillon@backplane.com>
-
 PORTNAME=	jikes
 PORTVERSION=	1.22
 PORTREVISION=	2

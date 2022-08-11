@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@FreeBSD.org>
-
 PORTNAME=	t-prot
 PORTVERSION=	3.4
 CATEGORIES=	mail

@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Precise
 PORTVERSION=	1.05
 PORTREVISION=	1

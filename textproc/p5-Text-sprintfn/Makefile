@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Text-sprintfn
 PORTVERSION=	0.090
 CATEGORIES=	textproc perl5

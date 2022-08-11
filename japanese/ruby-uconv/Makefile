@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	uconv
 PORTVERSION=	0.5.3
 CATEGORIES=	japanese converters ruby

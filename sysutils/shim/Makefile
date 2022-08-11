@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	shim
 PORTVERSION=	0.9
 PORTREVISION=	4

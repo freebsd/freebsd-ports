@@ -1,5 +1,3 @@
-# Created by: Dan Langille
-
 PORTNAME=	gixy
 PORTVERSION=	0.1.20
 CATEGORIES=	security www python

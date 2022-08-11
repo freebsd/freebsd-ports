@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Acme-Steganography-Image-Png
 PORTVERSION=	0.06
 PORTREVISION=	6

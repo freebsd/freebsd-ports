@@ -1,5 +1,3 @@
-# Created by: Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
-
 PORTNAME=	xmangekyou
 PORTVERSION=	2.0.1
 PORTREVISION=	3

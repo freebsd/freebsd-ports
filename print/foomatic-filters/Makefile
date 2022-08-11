@@ -1,5 +1,3 @@
-# Created by: Michael Nottebrock <lofi@FreeBSD.org>
-
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.17
 PORTREVISION=	9

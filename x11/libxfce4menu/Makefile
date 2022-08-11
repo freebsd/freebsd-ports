@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	libxfce4menu
 PORTVERSION=	4.16.1
 CATEGORIES=	x11 xfce

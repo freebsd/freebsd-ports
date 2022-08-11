@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich
-
 PORTNAME=	pyaxo
 DISTVERSION=	0.8.2
 PORTREVISION=	2

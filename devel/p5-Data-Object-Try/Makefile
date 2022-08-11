@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Data-Object-Try
 PORTVERSION=	2.02
 CATEGORIES=	devel perl5

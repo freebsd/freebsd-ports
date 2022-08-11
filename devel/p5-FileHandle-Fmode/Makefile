@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	FileHandle-Fmode
 PORTVERSION=	0.14
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Ryan T. Dean <rtdean@cytherianage.net>
-
 PORTNAME=	Unicode-Map
 PORTVERSION=	0.112
 PORTREVISION=	2

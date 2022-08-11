@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	libublio
 PORTVERSION=	20070103
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@FreeBSD.org)
-
 PORTNAME=	raidtest
 PORTVERSION=	1.3
 CATEGORIES=	benchmarks

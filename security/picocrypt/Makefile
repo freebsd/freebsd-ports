@@ -1,7 +1,6 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	picocrypt
 PORTVERSION=	1.25
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	danfe@FreeBSD.org

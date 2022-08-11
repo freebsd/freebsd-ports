@@ -1,5 +1,3 @@
-# Created by: Rob Evers <rob@debank.tv>
-
 PORTNAME=	postfixadmin
 DISTVERSIONPREFIX=	postfixadmin-
 DISTVERSION=	3.4.dev.20211018

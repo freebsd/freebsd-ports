@@ -1,5 +1,3 @@
-# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-
 CATEGORIES=	mail
 PKGNAMESUFFIX=	26-sharp
 

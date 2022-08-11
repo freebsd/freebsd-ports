@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pry-remote
 PORTVERSION=	0.1.8
 CATEGORIES=	devel rubygems

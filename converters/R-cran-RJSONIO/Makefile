@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	RJSONIO
 DISTVERSION=	1.3-1.6
 CATEGORIES=	converters

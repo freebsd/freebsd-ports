@@ -1,5 +1,3 @@
-# Created by: Jim Riggs <ports@christianserving.org>
-
 PORTNAME=	libestr
 PORTVERSION=	0.1.11
 PORTREVISION=	1

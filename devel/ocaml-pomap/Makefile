@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	pomap
 PORTVERSION=	4.1.1
 CATEGORIES=	devel

@@ -1,11 +1,9 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	headsetcontrol
-PORTVERSION=	2.6
+DISTVERSION=	2.6.1
 CATEGORIES=	audio
 
 MAINTAINER=	Alexander88207@protonmail.com
-COMMENT=	Tool to setup sidetone for various gaming headsets
+COMMENT=	Tool to control certain aspects of USB-connected headsets
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license
@@ -18,6 +16,7 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	Sapd
 GH_PROJECT=	HeadsetControl
+GH_TAGNAME=	5deb75a
 
 PLIST_FILES=	${LOCALBASE}/bin/headsetcontrol
 

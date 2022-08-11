@@ -1,5 +1,3 @@
-# Created by: Henrik Motakef <henrik.motakef@web.de>
-
 PORTNAME=	asdf
 DISTVERSION=	3.3.4.7
 PORTEPOCH=	2

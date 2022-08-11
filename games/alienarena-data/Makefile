@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	alienarena
 PORTVERSION=	2013.766
 PORTREVISION=	2

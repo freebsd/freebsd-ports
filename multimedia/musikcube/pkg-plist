@@ -61,6 +61,7 @@ include/musikcube/musikcore/sdk/constants.h
 %%DATADIR%%/plugins/libhttpdatastream.so
 %%DATADIR%%/plugins/libnullout.so
 %%DATADIR%%/plugins/libopenmptdecoder.so
+%%DATADIR%%/plugins/libpulseout.so
 %%DATADIR%%/plugins/libserver.so
 %%DATADIR%%/plugins/libsndioout.so
 %%DATADIR%%/plugins/libstockencoders.so

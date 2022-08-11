@@ -1,5 +1,3 @@
-# Created by: Roman Shterenzon <roman@xpert.com>
-
 PORTNAME=	gq
 PORTVERSION=	1.3.4
 PORTREVISION=	17

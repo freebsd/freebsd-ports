@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	cpuburn
 DISTVERSION=	1_4
 PORTREVISION=	3

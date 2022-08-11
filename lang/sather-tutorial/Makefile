@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	tutorial
 PORTVERSION=	000328
 PORTREVISION=	1

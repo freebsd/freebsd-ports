@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	muffin
 PORTVERSION=	4.8.0
 PORTREVISION=	1

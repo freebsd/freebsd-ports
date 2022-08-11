@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	nuoveXT2
 PORTVERSION=	2.2.2
 MASTER_SITES=	https://BSDforge.com/projects/source/x11-themes/kde-icons-nuovext2/

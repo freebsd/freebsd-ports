@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-
 PORTNAME=	YAML-Tiny
 PORTVERSION=	1.73
 CATEGORIES=	textproc perl5

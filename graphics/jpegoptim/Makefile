@@ -1,5 +1,3 @@
-# Created by: Devaux Fabien <fab@gcu.info>
-
 PORTNAME=	jpegoptim
 PORTVERSION=	1.4.7
 DISTVERSIONPREFIX=	v

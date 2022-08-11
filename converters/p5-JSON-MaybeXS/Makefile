@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	JSON-MaybeXS
 PORTVERSION=	1.004003
 CATEGORIES=	converters perl5

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	persepolis
 PORTVERSION=	3.2.0
 CATEGORIES=	www net ftp python

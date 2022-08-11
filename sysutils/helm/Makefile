@@ -1,9 +1,7 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	helm
 PORTVERSION=	3.7.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org

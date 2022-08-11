@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	pear
 PORTVERSION=	1.10.12
 PORTREVISION=	0
@@ -20,6 +18,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 USE_PHP=	pcre:build xml:build zlib:build
+IGNORE_WITH_PHP=82
 
 PEARDIR=	${PREFIX}/share/pear
 

@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@cs.ucdavis.edu)
-
 PORTNAME=	netcat
 PORTVERSION=	1.10
 PORTREVISION=	3

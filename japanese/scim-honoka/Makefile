@@ -1,5 +1,3 @@
-# Created by: Masashi CHIBA
-
 PORTNAME=	scim-honoka
 PORTVERSION=	0.9.1
 PORTREVISION=	13

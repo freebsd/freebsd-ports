@@ -1,5 +1,3 @@
-# Created by: pauls@utdallas.edu
-
 PORTNAME=	CIF-Client
 PORTVERSION=	0.21
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	html5lib
 PORTVERSION=	1.0.1
 CATEGORIES=	www python
@@ -16,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webencodings>0:converters/py-webencodings@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		cpe python:2.7+
+USES=		cpe python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

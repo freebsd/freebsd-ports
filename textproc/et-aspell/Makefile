@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	${DICT}-aspell
 SPELLVERSION=	6-et-0.1.21-1
 PORTREVISION=	1

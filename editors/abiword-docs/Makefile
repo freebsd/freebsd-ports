@@ -1,6 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-#   $MCom: ports/editors/abiword-docs/Makefile,v 1.1 2009/11/10 14:08:20 kwm Exp $
-
 PORTNAME=	abiword-docs
 PORTVERSION=	3.0.1
 CATEGORIES=	editors

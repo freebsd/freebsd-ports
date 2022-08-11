@@ -1,5 +1,3 @@
-# Created by: Attila Nagy <bra@fsn.hu>
-
 PORTNAME=	easyzone
 PORTVERSION=	1.2.2
 PORTREVISION=	2

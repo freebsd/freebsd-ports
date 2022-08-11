@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTREVISION=	2
 CATEGORIES=	multimedia
 
@@ -9,9 +7,6 @@ GST_PLUGIN=	good
 GST_PLUGIN_SUFFIX=	-good
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-BUILD_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:multimedia/gstreamer1-plugins
-RUN_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:multimedia/gstreamer1-plugins
 
 DIST=	good
 GOOD_GST_DIRS=	gst sys po

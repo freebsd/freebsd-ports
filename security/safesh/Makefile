@@ -1,5 +1,3 @@
-# Created by: eivind
-
 PORTNAME=	safesh
 PORTVERSION=	1.5
 CATEGORIES=	security

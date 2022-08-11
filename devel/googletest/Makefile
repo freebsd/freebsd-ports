@@ -1,8 +1,6 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	googletest
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.11.0
+DISTVERSION=	1.12.1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org

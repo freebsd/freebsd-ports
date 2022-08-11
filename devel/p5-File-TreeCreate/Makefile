@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	File-TreeCreate
 PORTVERSION=	0.0.1
 CATEGORIES=	devel perl5

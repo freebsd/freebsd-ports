@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	xdg
-PORTVERSION=	6.3.2
+PORTVERSION=	6.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

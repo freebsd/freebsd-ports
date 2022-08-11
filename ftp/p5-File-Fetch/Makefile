@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	File-Fetch
 PORTVERSION=	1.04
 CATEGORIES=	ftp www perl5

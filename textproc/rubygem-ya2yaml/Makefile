@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	ya2yaml
 PORTVERSION=	0.31
 CATEGORIES=	textproc rubygems

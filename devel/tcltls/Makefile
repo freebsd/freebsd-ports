@@ -1,5 +1,3 @@
-# Created by: mi@aldan.algebra.com
-
 PORTNAME=	tcltls
 PORTVERSION=	1.7.18
 CATEGORIES=	devel security tcl

@@ -1,5 +1,3 @@
-# Created by: Karsten Pedersen <kpedersen@disroot.org>
-
 PORTNAME=	gamenetworkingsockets
 PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v

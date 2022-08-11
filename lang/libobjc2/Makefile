@@ -1,5 +1,3 @@
-# Created by: Pete French <pete@twisted.org.uk>
-
 PORTNAME=	libobjc2
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.1

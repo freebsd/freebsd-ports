@@ -1,5 +1,3 @@
-# Created by: Ralf Gebhart <gebhart@secnetix.de>
-
 PORTNAME=	mod_umask
 PORTVERSION=	0.1.0
 CATEGORIES=	www

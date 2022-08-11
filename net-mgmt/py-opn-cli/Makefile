@@ -1,5 +1,3 @@
-# Created by: Frank Wall <freebsd@moov.de>
-
 PORTNAME=	opn-cli
 DISTVERSION=	0.8.1
 CATEGORIES=	net-mgmt python

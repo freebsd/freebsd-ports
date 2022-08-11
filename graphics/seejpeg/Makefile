@@ -1,5 +1,3 @@
-# Created by: Donn Miller <dmmiller@cvzoom.net>
-
 PORTNAME=	seejpeg
 PORTVERSION=	1.10
 PORTREVISION=	5

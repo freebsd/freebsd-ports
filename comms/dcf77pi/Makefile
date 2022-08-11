@@ -1,12 +1,10 @@
-# Created by: rene@FreeBSD.org
-
 PORTNAME=	dcf77pi
 PORTVERSION=	3.7.1.1
 DISTVERSIONPREFIX=v
 PORTREVISION=	1
 CATEGORIES=	comms
 
-MAINTAINER=	rene0@freedom.nl
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	DCF77 receiver/logger/analyzer and library for the Raspberry Pi
 
 LICENSE=	BSD2CLAUSE

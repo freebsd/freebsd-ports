@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	uthash
 PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	v

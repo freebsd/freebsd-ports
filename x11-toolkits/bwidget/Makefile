@@ -1,5 +1,3 @@
-# Created by: Alexander Kabaev <ak03@gte.com>
-
 PORTNAME=	bwidget
 PORTVERSION=	1.9.14
 CATEGORIES=	x11-toolkits

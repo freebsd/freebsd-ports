@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	rej
 PORTVERSION=	0.16
 PORTREVISION=	1

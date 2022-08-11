@@ -1,5 +1,3 @@
-# Created by: Alexander Novitsky
-
 PORTNAME=		instantclient
 PORTVERSION=		${ORACLEVERSION}.${DISTDATE}
 PORTREVISION=		5

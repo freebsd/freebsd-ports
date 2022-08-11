@@ -4,6 +4,8 @@ bin/ros
 %%ETCDIR%%/build-ros.lisp
 %%ETCDIR%%/build.ros
 %%ETCDIR%%/checkout.ros
+%%ETCDIR%%/client-swank.lisp
+%%ETCDIR%%/client.ros
 %%ETCDIR%%/compile-file.ros
 %%ETCDIR%%/config.ros
 %%ETCDIR%%/delete-asdf.lisp
@@ -57,7 +59,9 @@ bin/ros
 %%ETCDIR%%/install-allegro.lisp
 %%ETCDIR%%/install-asdf.lisp
 %%ETCDIR%%/install-ccl-bin.lisp
+%%ETCDIR%%/install-clasp-bin.lisp
 %%ETCDIR%%/install-clasp.lisp
+%%ETCDIR%%/install-clisp-head.lisp
 %%ETCDIR%%/install-clisp.lisp
 %%ETCDIR%%/install-cmu-bin.lisp
 %%ETCDIR%%/install-ecl.lisp
@@ -66,6 +70,7 @@ bin/ros
 %%ETCDIR%%/install-npt.lisp
 %%ETCDIR%%/install-quicklisp.lisp
 %%ETCDIR%%/install-sbcl-bin.lisp
+%%ETCDIR%%/install-sbcl-head.lisp
 %%ETCDIR%%/install-sbcl-source.lisp
 %%ETCDIR%%/install-sbcl.lisp
 %%ETCDIR%%/install-slime.lisp
@@ -85,6 +90,9 @@ bin/ros
 %%ETCDIR%%/patch/sbcl-1.3.11.patch
 %%ETCDIR%%/patch/sbcl-posix-tests.patch
 %%ETCDIR%%/run.ros
+%%ETCDIR%%/serve-default.lisp
+%%ETCDIR%%/serve-swank.lisp
+%%ETCDIR%%/serve.ros
 %%ETCDIR%%/setup.ros
 %%ETCDIR%%/shell.ros
 %%ETCDIR%%/system.lisp
@@ -112,6 +120,7 @@ bin/ros
 man/man1/ros-asdf.1.gz
 man/man1/ros-build.1.gz
 man/man1/ros-checkout.1.gz
+man/man1/ros-client.1.gz
 man/man1/ros-config.1.gz
 man/man1/ros-delete.1.gz
 man/man1/ros-dump.1.gz
@@ -121,6 +130,7 @@ man/man1/ros-init.1.gz
 man/man1/ros-install.1.gz
 man/man1/ros-list.1.gz
 man/man1/ros-run.1.gz
+man/man1/ros-serve.1.gz
 man/man1/ros-setup.1.gz
 man/man1/ros-template.1.gz
 man/man1/ros-update.1.gz

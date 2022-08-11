@@ -1,5 +1,3 @@
-# Created by: jsellens
-
 PORTNAME=	lc
 PORTVERSION=	1.0
 CATEGORIES=	misc

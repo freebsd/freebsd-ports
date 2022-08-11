@@ -1,5 +1,3 @@
-# Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-
 PORTNAME=	netperfmeter
 PORTVERSION=	1.9.0
 CATEGORIES=	benchmarks

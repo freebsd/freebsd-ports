@@ -1,5 +1,5 @@
 PORTNAME=	Package-Stash-XS
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +11,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
-		p5-Test-Requires>=0:devel/p5-Test-Requires
+		p5-Test-Needs>=0:devel/p5-Test-Needs
 
 USES=		perl5
 USE_PERL5=	configure

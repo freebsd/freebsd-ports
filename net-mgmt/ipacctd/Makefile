@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	ipacctd
 PORTVERSION=	1.47
 CATEGORIES=	net-mgmt

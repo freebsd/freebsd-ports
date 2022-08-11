@@ -1,5 +1,3 @@
-# Created by: Olli Hauer
-
 PORTNAME=	pulledpork
 PORTVERSION=	0.7.4
 DISTVERSIONPREFIX=	v

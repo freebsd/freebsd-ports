@@ -1,5 +1,3 @@
-# Created by: ports
-
 PORTNAME=	tnftpd
 PORTVERSION=	20200704
 CATEGORIES=	ftp

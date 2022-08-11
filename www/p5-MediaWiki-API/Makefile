@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	MediaWiki-API
 PORTVERSION=	0.52
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Petr Holub <hopet@ics.muni.cz>
-
 PORTNAME=	bbftp-server
 PORTVERSION=	3.2.1
 CATEGORIES=	ftp

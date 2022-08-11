@@ -1,5 +1,3 @@
-# Created by: Winston Weinert <winstonw@lavabit.com>
-
 PORTNAME=	roboto-fonts-ttf
 PORTVERSION=	2.134
 PORTREVISION=	1

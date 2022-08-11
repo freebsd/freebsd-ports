@@ -1,5 +1,3 @@
-# Created by: jasone
-
 PORTNAME=	cook
 PORTVERSION=	2.30
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	XML-SAXDriver-Excel
 PORTVERSION=	0.06
 PORTREVISION=	1

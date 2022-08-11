@@ -1,5 +1,3 @@
-# Created by: mstowe@chicago.us.mensa.org
-
 PORTNAME=	heyu2
 PORTVERSION=	2.10
 PORTREVISION=	1

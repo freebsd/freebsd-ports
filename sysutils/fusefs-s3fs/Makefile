@@ -1,9 +1,6 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	s3fs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.90
-PORTREVISION=	2
+DISTVERSION=	1.91
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 

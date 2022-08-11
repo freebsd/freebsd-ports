@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Authen-SCRAM
 PORTVERSION=	0.011
 CATEGORIES=	security perl5

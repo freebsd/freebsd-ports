@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-
 PORTNAME=	emacs
 DISTVERSION=	28.1
 PORTREVISION=	1
@@ -42,6 +40,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
 			--localstatedir=/var \
 			--without-libsystemd \
+			--without-gconf \
 			--without-selinux
 .if ${FLAVOR:U} == canna
 CONFIGURE_ARGS+=	--with-canna
@@ -51,7 +50,6 @@ CONFIGURE_ARGS+=	--with-sound=no \
 			--with-x-toolkit=no \
 			--without-cairo \
 			--without-dbus \
-			--without-gconf \
 			--without-gif \
 			--without-gsettings \
 			--without-imagemagick \
@@ -96,7 +94,7 @@ PLIST_FILES+=	${DATADIR}/${DISTVERSION}/lisp/canna.el.gz \
 PLIST_SUB=	EMACS_VER=${DISTVERSION} \
 		GNU_HOST=${CONFIGURE_TARGET}
 
-OPTIONS_DEFINE=			ACL DBUS FCITXPATCH GCONF GNUTLS GSETTINGS \
+OPTIONS_DEFINE=			ACL DBUS FCITXPATCH GNUTLS GSETTINGS \
 				HARFBUZZ JSON LCMS2 M17N MAILUTILS MODULES \
 				NATIVECOMP OTF SCROLLBARS SOURCES THREADS XFT \
 				XIM XML XWIDGETS
@@ -111,7 +109,7 @@ OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
 OPTIONS_RADIO_SOUND=		ALSA OSS
 OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
 .if ${FLAVOR:U} == nox
-OPTIONS_EXCLUDE=		ALSA CAIRO DBUS FCITXPATCH GCONF GFILE GIF \
+OPTIONS_EXCLUDE=		ALSA CAIRO DBUS FCITXPATCH GFILE GIF \
 				GSETTINGS GTK2 GTK3 HARFBUZZ JPEG LCMS2 M17N \
 				MAGICK MOTIF OSS OTF PNG SCROLLBARS SVG TIFF \
 				XAW XAW3D XFT XIM XPM XWIDGETS
@@ -151,8 +149,6 @@ CAIRO_CONFIGURE_WITH=		cairo
 DBUS_LIB_DEPENDS=		libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_WITH=		dbus
 FCITXPATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_xfns.c
-GCONF_USE=			GNOME=gconf2
-GCONF_CONFIGURE_WITH=		gconf
 GFILE_USE=			GNOME=glib20
 GFILE_CONFIGURE_ON=		--with-file-notification=gfile
 GIF_LIB_DEPENDS=		libgif.so:graphics/giflib

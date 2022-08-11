@@ -1,5 +1,3 @@
-# Created by: gordon@FreeBSD.org
-
 PORTNAME=	logfury
 PORTVERSION=	0.1.2
 CATEGORIES=	devel python

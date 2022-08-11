@@ -1,5 +1,3 @@
-# Created by: JunSeon Oh <hollywar@mail.holywar.net>
-
 PORTNAME=	mod_fastcgi
 PORTVERSION=	2.4.7.1
 CATEGORIES=	www

@@ -1,5 +1,3 @@
-# Created by: Frederic Cambus
-
 PORTNAME=	huc
 PORTVERSION=	3.21
 DISTVERSIONSUFFIX=	-src

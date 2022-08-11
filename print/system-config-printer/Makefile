@@ -1,8 +1,6 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	system-config-printer
 PORTVERSION=	1.5.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -33,6 +31,7 @@ USE_GNOME=	intlhack pygobject3
 
 CONFIGURE_ARGS=	--without-udev-rules \
 		--without-systemdsystemunitdir
+NO_ARCH=	yes
 
 PLIST_SUB=	PYTHON_VER=${PYTHON_VERSION:S/python//}
 

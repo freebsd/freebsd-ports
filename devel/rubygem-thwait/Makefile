@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	thwait
 PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems

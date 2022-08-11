@@ -1,5 +1,3 @@
-# Created by: dominik karczmarski <dominik@karczmarski.com>
-
 PORTNAME=	fswatch
 DISTVERSION=	0.02beta5
 PORTREVISION=	1

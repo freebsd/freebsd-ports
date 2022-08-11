@@ -1,0 +1,8 @@
+Tools to ease creating larger test libraries for Robot Framework using Python.
+The Robot Framework hybrid and dynamic library API gives more flexibility for
+library than the static library API, but they also sets requirements for
+libraries which needs to be implemented in the library side. PythonLibCore eases
+the problem by providing simpler interface and handling all the requirements
+towards the Robot Framework library APIs.
+
+WWW: https://github.com/robotframework/PythonLibCore

@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	sigar
 PORTVERSION=	1.7.3
 PORTREVISION=	2

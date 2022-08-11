@@ -43,6 +43,7 @@ lib/knot-resolver/kres_modules/dns64.lua
 lib/knot-resolver/kres_modules/edns_keepalive.so
 lib/knot-resolver/kres_modules/etcd.lua
 lib/knot-resolver/kres_modules/experimental_dot_auth.lua
+lib/knot-resolver/kres_modules/extended_error.so
 lib/knot-resolver/kres_modules/graphite.lua
 lib/knot-resolver/kres_modules/hints.so
 lib/knot-resolver/kres_modules/http.lua

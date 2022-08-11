@@ -1,8 +1,5 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gtksourceview
-PORTVERSION=	5.4.0
-PORTREVISION=	2
+PORTVERSION=	5.4.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	5

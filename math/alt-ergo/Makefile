@@ -1,5 +1,3 @@
-# Created by: b.f. <bf@FreeBSD.org>
-
 PORTNAME=	alt-ergo
 PORTVERSION=	0.95.2
 PORTREVISION=	3

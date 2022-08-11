@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	noto
 PORTVERSION=	2.034
 CATEGORIES=	x11-fonts

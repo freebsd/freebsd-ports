@@ -1,5 +1,3 @@
-# Created by: mi
-
 PORTNAME=	Mowitz
 PORTVERSION=	0.2.1
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Jonathan Weiss (<jw@innerewut.de>)
-
 PORTNAME=	activesupport
 PORTVERSION=	5.1.7
 PORTREVISION=	1

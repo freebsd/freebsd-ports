@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	furnace
 PORTVERSION=	0.5.8
 PORTREVISION=	1

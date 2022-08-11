@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Email
 PORTVERSION=	0.09
 CATEGORIES=	www perl5

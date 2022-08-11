@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	txrequests
 PORTVERSION=	0.9.6
 CATEGORIES=	www python

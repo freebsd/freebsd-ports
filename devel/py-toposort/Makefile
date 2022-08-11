@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@FreeBSD.org>
-
 PORTNAME=	toposort
 PORTVERSION=	1.5
 CATEGORIES=	devel python

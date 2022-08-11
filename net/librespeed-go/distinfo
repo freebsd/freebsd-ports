@@ -1,5 +1,5 @@
-TIMESTAMP = 1632048939
-SHA256 (go/net_librespeed-go/librespeed-go-v1.1.4/v1.1.4.mod) = 4b8b82ecf25d90c7d9ba9560487be6f9a4be3bcba2c8409c74f6fe816da4b57a
-SIZE (go/net_librespeed-go/librespeed-go-v1.1.4/v1.1.4.mod) = 952
-SHA256 (go/net_librespeed-go/librespeed-go-v1.1.4/v1.1.4.zip) = 75a82716b0cec884145a491c53ba9a8b28f3a872fd5b17aaca458158bc042f6d
-SIZE (go/net_librespeed-go/librespeed-go-v1.1.4/v1.1.4.zip) = 2262145
+TIMESTAMP = 1657306990
+SHA256 (go/net_librespeed-go/librespeed-go-v1.1.5/v1.1.5.mod) = aaaaa4b204e0b72fce3edc5b83d5180fa8e980a32f152b241f3600983763672f
+SIZE (go/net_librespeed-go/librespeed-go-v1.1.5/v1.1.5.mod) = 856
+SHA256 (go/net_librespeed-go/librespeed-go-v1.1.5/v1.1.5.zip) = b2640d3cc90f82a7656cfd7fe1d3c4edf560bcf7b83c13303245f7675a1c7850
+SIZE (go/net_librespeed-go/librespeed-go-v1.1.5/v1.1.5.zip) = 2293935

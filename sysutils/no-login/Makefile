@@ -1,5 +1,3 @@
-# Created by: Donald Burr <dburr@FreeBSD.org>
-
 PORTNAME=	nologin
 PORTVERSION=	1.0
 PORTREVISION=	1

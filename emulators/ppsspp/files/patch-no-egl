@@ -1,9 +1,9 @@
 EGL hangs on X11 and doesn't build without GLESv2.
 https://github.com/hrydgard/ppsspp/issues/10626
 
---- CMakeLists.txt.orig	2019-03-14 08:00:50 UTC
+--- CMakeLists.txt.orig	2022-07-08 09:11:27 UTC
 +++ CMakeLists.txt
-@@ -65,12 +65,6 @@ if(MINGW AND NOT DEFINED USE_SYSTEM_FFMPEG)
+@@ -77,12 +77,6 @@ endif()
  	set(USE_SYSTEM_FFMPEG ON)
  endif()
  
@@ -13,6 +13,6 @@ https://github.com/hrydgard/ppsspp/issues/10626
 -	endif()
 -endif()
 -
- if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" AND NOT USE_LIBNX)
  	set(LINUX ON)
  	add_definitions(-D__STDC_CONSTANT_MACROS)

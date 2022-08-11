@@ -1,7 +1,6 @@
-# Created by: rfarmer@predatorlabs.net
-
 PORTNAME=	matio
 PORTVERSION=	1.5.23
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF
 

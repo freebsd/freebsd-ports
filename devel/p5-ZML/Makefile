@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	ZML
 PORTVERSION=	1.0.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: genserg@hotmail.com
-
 PORTNAME=	spawn-fcgi
 PORTVERSION=	1.6.4
 PORTREVISION=	2

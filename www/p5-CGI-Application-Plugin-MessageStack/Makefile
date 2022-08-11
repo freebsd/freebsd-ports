@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Plugin-MessageStack
 PORTVERSION=	0.34
 PORTREVISION=	1

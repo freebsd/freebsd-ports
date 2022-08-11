@@ -1,5 +1,3 @@
-# Created by: James Howard <howardj@wam.umd.edu>
-
 PORTNAME=	orville-write
 PORTVERSION=	2.55
 PORTREVISION=	1

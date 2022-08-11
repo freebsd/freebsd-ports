@@ -1,5 +1,3 @@
-# Created by: Richard Neese
-
 PORTNAME=	pocketsphinx
 PORTVERSION=	0.8
 PORTREVISION=	1

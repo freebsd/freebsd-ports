@@ -1,5 +1,3 @@
-# Created by: Rodrigo Graeff <delphus@gmail.com>
-
 PORTNAME=	gdmap
 PORTVERSION=	0.8.1
 PORTREVISION=	1

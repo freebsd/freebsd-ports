@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	totd
 PORTVERSION=	1.5.1
 PORTREVISION=	2

@@ -1,8 +1,6 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	colord
 PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.freedesktop.org/software/colord/releases/
 
@@ -70,6 +68,8 @@ post-patch:
 		${WRKSRC}/src/cd-main.c \
 		${WRKSRC}/lib/colord/cd-icc-store.c \
 		${WRKSRC}/src/cd-profile.c
+	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|g' \
+		${WRKSRC}/lib/colord/cd-edid.c
 .if ! ${PORT_OPTIONS:MMANPAGES}
 	@${REINPLACE_CMD} -e "s|2MAN_TRUE=$$|2MAN_TRUE='#'|g ; \
 		s|2MAN_FALSE='#'|2MAN_FALSE=|g" ${WRKSRC}/configure

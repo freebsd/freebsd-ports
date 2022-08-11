@@ -1,5 +1,3 @@
-# Created by: Motomichi Matsuzaki <mzaki@e-mail.ne.jp>
-
 PORTNAME=	fastdnaml
 PORTVERSION=	1.2.2
 PORTREVISION=	2

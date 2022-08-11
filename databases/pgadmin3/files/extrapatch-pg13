@@ -1,0 +1,11 @@
+--- pgadmin/db/keywords.c.orig	2015-02-25 10:44:26 UTC
++++ pgadmin/db/keywords.c
+@@ -28,7 +28,7 @@
+ /*
+  * List of (keyword-name, keyword-token-value) pairs.
+  */
+-#define PG_KEYWORD(a,b,c) {a,c},
++#define PG_KEYWORD(a,b,c,d) {a,c},
+ const ScanKeyword ScanKeywords[] = {
+ #include <parser/kwlist.h>
+ };

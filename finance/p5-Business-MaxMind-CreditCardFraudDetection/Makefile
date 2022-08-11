@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	Business-MaxMind-CreditCardFraudDetection
 PORTVERSION=	1.57
 PORTREVISION=	1

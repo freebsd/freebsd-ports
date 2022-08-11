@@ -1,5 +1,3 @@
-# Created by: Hakisho Nukama <nukama@gmail.com>
-
 PORTNAME=	scalpel
 PORTVERSION=	2.0
 CATEGORIES=	sysutils

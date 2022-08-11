@@ -1,5 +1,3 @@
-# Created by: Wes Peters <wes@FreeBSD.org>
-
 PORTNAME=	obliterate
 PORTVERSION=	0.5
 CATEGORIES=	sysutils

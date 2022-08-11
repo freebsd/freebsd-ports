@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	io-like
 PORTVERSION=	0.3.0.20130301
 CATEGORIES=	devel rubygems

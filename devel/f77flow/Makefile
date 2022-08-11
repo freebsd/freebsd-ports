@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	f77flow
 PORTVERSION=	0.12
 PORTREVISION=	1

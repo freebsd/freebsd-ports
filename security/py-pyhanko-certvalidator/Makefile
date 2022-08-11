@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyhanko-certvalidator
 PORTVERSION=	0.19.4
 CATEGORIES=	security python

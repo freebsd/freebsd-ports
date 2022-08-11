@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	webshot
 DISTVERSION=	0.5.3
 CATEGORIES=	www

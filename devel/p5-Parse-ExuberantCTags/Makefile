@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Parse-ExuberantCTags
 PORTVERSION=	1.02
 PORTREVISION=	1

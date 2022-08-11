@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	File-MMagic-XS
 PORTVERSION=	0.09008
 PORTREVISION=	1

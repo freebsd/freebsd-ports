@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	libgrss
 PORTVERSION=	0.7.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	webcopy
 PORTVERSION=	0.98b7
 CATEGORIES=	www

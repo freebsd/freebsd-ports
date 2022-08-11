@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Config-JFDI
 PORTVERSION=	0.065
 PORTREVISION=	1

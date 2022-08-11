@@ -40,6 +40,10 @@ COMPONENTS=	conf \
 		man \
 		man/man4
 
+post-patch-PROFILE-off:
+	@${ECHO_MSG} '=> Patching Makefiles to disable profiled libraries'
+	@${REINPLACE_CMD} -e '/^MK_FILES/s, [a-z]*_p.mk,,' ${WRKSRC}/*/Makefile
+
 post-build-NLS-on:
 	${SETENV} LC_ALL=de_DE.ISO8859-1 msgfmt -o ${WRKDIR}/SCHILY_utils.mo ${WRKSRC}/SCHILY_utils.po
 
@@ -57,8 +61,5 @@ post-install-NLS-on:
 	${LN} ${STAGEDIR}${PREFIX}/share/locale/de/LC_MESSAGES/SCHILY_utils.mo \
 	    ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/SCHILY_utils.mo
 .endfor
-
-post-install-PROFILE-off:
-	${RM} -r ${STAGEDIR}${PREFIX}/lib/profiled
 
 .include "Makefile.master"

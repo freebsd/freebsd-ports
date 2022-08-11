@@ -1,5 +1,3 @@
-# Created by: Marwan BURELLE <marwan.burelle@lri.fr>
-
 PORTNAME=	ocurl
 PORTVERSION=	0.8.2
 CATEGORIES=	ftp

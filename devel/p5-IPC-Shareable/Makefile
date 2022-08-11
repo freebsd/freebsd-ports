@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	IPC-Shareable
 PORTVERSION=	1.12
 CATEGORIES=	devel perl5

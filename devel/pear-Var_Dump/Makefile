@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Var_Dump
 PORTVERSION=	1.0.4
 PORTREVISION=	1

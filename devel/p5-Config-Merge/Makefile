@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Config-Merge
 PORTVERSION=	1.04
 PORTREVISION=	1

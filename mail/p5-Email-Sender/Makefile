@@ -1,5 +1,3 @@
-# Created by: Bill Brinzer <bill.brinzer@gmail.com>
-
 PORTNAME=	Email-Sender
 PORTVERSION=	1.300031
 PORTREVISION=	2

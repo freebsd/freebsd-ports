@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Thrift-XS
 PORTVERSION=	1.04
 PORTREVISION=	2

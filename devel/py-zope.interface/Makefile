@@ -1,5 +1,3 @@
-# Created by: Neal Nelson <neal@nelson.name>
-
 PORTNAME=	zope.interface
 PORTVERSION=	5.3.0
 CATEGORIES=	devel python zope

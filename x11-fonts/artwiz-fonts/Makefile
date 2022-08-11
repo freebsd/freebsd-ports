@@ -1,5 +1,3 @@
-# Created by: Dominic Marks <dominic.marks@btinternet.com>
-
 PORTNAME=	artwiz-fonts
 PORTVERSION=	1.0
 PORTREVISION=	5

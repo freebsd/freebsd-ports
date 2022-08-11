@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Encoding-FixLatin
 PORTVERSION=	1.04
 CATEGORIES=	converters perl5

@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	unmakeself
 PORTVERSION=	1.1
 PORTREVISION=	1

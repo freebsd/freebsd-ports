@@ -1,5 +1,3 @@
-# Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
-
 PORTNAME=	Net-Google-AuthSub
 PORTVERSION=	0.5
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-
 PORTNAME=	sctplib
 PORTVERSION=	1.0.26
 CATEGORIES=	net

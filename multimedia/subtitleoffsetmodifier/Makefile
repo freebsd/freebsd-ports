@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	subtitleoffsetmodificator
 PORTVERSION=	0.1
 PORTREVISION=	1

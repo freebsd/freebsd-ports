@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	super
 PORTVERSION=	3.30.3
 PORTREVISION=	1

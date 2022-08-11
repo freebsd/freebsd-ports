@@ -1,13 +1,12 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	forms
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
+MASTER_SITES=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DIST_SUBDIR=	nextcloud/${PORTNAME}-${DISTVERSION}
+DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	nextcloud/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Forms app for Nextcloud
@@ -18,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=22:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=81
+IGNORE_WITH_PHP=	82
 NO_BUILD=	yes
 NO_ARCH=	yes
 

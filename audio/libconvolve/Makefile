@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	libconvolve
 PORTVERSION=	0.0.8
 PORTREVISION=	7

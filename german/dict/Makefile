@@ -1,5 +1,3 @@
-# Created by: wosch
-
 PORTNAME=	dict
 PORTVERSION=	1.2
 CATEGORIES=	german

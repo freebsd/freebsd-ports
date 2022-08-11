@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+
+You need the proper GStreamer plugin depending on what format you want to play:
+
+gstreamer1-plugins-ogg:     OGG
+gstreamer1-plugins-mpg123:  MP3
+gstreamer1-plugins-flac:    FLAC
+gstreamer1-plugins-all:     Meta-port of all GStreamer 1.x plugins
+EOM
+}
+]

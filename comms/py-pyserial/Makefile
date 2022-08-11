@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@fallin.lv>
-
 PORTNAME=	pyserial
 PORTVERSION=	3.5
 PORTREVISION=	2

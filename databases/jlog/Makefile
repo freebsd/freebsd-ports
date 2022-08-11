@@ -1,5 +1,3 @@
-# Created by: alfred
-
 PORTNAME=	jlog
 # version is YYYYMMDDxx <- xx is 00, 01 as needed per day
 PORTVERSION=	1.2.2.s2015012200
@@ -10,7 +8,7 @@ COMMENT=	Journaled log library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213
+BUILD_DEPENDS=	autoconf2.13:devel/autoconf2.13
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	omniti-labs
@@ -31,6 +29,6 @@ PERL_CONFIGURE_ON=	--with-perl-lib=site
 PERL_CONFIGURE_WITH=	perl
 
 pre-configure:
-	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf-2.13)
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf2.13)
 
 .include <bsd.port.mk>

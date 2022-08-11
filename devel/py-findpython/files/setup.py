@@ -27,8 +27,7 @@ setup_kwargs = {
     'url': '',
     'packages': [
         'findpython',
-        'findpython._vendor',
-        'findpython._vendor.pep514tools',
+        'findpython.pep514tools',
         'findpython.providers',
     ],
     'package_dir': {'': 'src'},

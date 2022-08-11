@@ -1,5 +1,3 @@
-# Created by: jamundsen
-
 PORTNAME=	shmux
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.3

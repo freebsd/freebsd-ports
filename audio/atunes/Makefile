@@ -1,5 +1,3 @@
-# Created by: Lars Engels <lme@FreeBSD.org>
-
 PORTNAME=	atunes
 PORTVERSION=	3.1.2
 PORTREVISION=	4

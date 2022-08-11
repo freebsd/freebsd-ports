@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	cycler
 PORTVERSION=	0.11.0
 CATEGORIES=	devel python

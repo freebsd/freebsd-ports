@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	Redis-hiredis
 PORTVERSION=	0.11.0
 PORTREVISION=	2

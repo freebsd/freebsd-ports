@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	trailblazer-option
 PORTVERSION=	0.1.2
 CATEGORIES=	devel rubygems

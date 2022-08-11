@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	vera-fpw
 PORTVERSION=	${VERA_VER}.${VERAFPW_VER}
 PORTREVISION=	0

@@ -1,5 +1,3 @@
-# Created by: Dmitry Liakh <dliakh@ukr.net>
-
 PORTNAME=	Cache-Memcached-libmemcached
 PORTVERSION=	0.02011
 PORTREVISION=	2

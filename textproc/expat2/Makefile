@@ -1,5 +1,3 @@
-# Created by: Dirk Froemberg <dirk@FreeBSD.org>
-
 PORTNAME=	expat
 DISTVERSION=	2.4.8
 CATEGORIES=	textproc

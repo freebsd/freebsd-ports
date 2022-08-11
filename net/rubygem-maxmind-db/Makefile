@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	maxmind-db
 PORTVERSION=	1.1.1
 CATEGORIES=	net rubygems

@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni <giffunip@asme.org>
-
 PORTNAME=	z88
 DISTVERSIONPREFIX=	v
 DISTVERSION=	15

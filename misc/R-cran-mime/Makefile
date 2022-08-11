@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	mime
 PORTVERSION=	0.12
 CATEGORIES=	misc

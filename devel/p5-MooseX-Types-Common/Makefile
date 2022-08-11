@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@tandon.net>
-
 PORTNAME=	MooseX-Types-Common
 PORTVERSION=	0.001014
 CATEGORIES=	devel perl5

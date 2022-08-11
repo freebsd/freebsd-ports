@@ -1,5 +1,3 @@
-# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-
 PORTNAME=	Sys-HostIP
 PORTVERSION=	1.9.3
 PORTREVISION=	1

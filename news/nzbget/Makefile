@@ -1,5 +1,3 @@
-# Created by: Lewis Thompson <purple@lewiz.net>
-
 PORTNAME=	nzbget
 PORTVERSION=	21.1
 PORTREVISION=	2

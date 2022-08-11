@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	Gtk2-Ex-PodViewer
 PORTVERSION=	0.18
 PORTREVISION=	5
@@ -14,7 +12,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${P5_POD_PARSER}
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser
 RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 		p5-Locale-gettext>=0:devel/p5-Locale-gettext \

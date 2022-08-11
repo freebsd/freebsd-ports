@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	sdl_lopan
 PORTVERSION=	10
 PORTREVISION=	5

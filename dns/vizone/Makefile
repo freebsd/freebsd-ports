@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	vizone
 PORTVERSION=	0.1
 CATEGORIES=	dns

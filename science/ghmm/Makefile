@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	ghmm
 DISTVERSION=	0.9-rc3
 PORTREVISION=	2

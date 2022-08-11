@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	htmlise
 PORTVERSION=	0.2
 CATEGORIES=	textproc

@@ -1,5 +1,3 @@
-# Created by: Nosov Artem <chip-set@mail.ru>
-
 PORTNAME=	fix-mime-charset
 PORTVERSION=	0.5.3
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libv4l
 PORTVERSION=	0.9.5
 DISTVERSIONSUFFIX=	-4.el7

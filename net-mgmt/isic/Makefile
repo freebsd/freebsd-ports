@@ -1,8 +1,6 @@
-# Created by: Brad Hendrickse <bradh@uunet.co.za>
-
 PORTNAME=	isic
 PORTVERSION=	0.07
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ISIC%20v${PORTVERSION}
 

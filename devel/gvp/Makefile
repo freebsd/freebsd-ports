@@ -1,9 +1,7 @@
-# Created by: Luke Jee <lukejee@gmail.com>
-
 PORTNAME=	gvp
 PORTVERSION=	0.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	lukejee@gmail.com

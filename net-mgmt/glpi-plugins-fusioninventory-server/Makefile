@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	server
 PORTVERSION=	${GLPI_VER}.${FUNV_VER}
 PORTEPOCH=	1
@@ -19,7 +17,7 @@ GH_ACCOUNT=	fusioninventory
 GH_PROJECT=	fusioninventory-for-glpi
 GH_TAGNAME=	glpi090+${FUNV_VER}
 USE_PHP=	fileinfo simplexml
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 GLPI_VER=	9.5.0
 FUNV_VER=	1.5

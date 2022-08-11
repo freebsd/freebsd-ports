@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	XML-Compile-Tester
 PORTVERSION=	0.91
 CATEGORIES=	devel perl5

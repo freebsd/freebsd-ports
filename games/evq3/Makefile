@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	evq3
 PORTVERSION=	1.3.20080810
 PORTREVISION=	11

@@ -11,6 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	error: unknown type name '__m128'
+BROKEN_armv7=	error: unknown type name '__m128'
 
 BUILD_DEPENDS=	fftw3>0:math/fftw3
 LIB_DEPENDS=	libao.so:audio/libao \

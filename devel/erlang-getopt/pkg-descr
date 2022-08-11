@@ -1,4 +1,0 @@
-Command line parsing module that uses a syntax similar to that of
-GNU getopt.
-
-WWW: https://github.com/jcomellas/getopt

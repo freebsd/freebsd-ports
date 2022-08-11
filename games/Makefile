@@ -182,6 +182,7 @@
     SUBDIR += cursive
     SUBDIR += cutemaze
     SUBDIR += cuyo
+    SUBDIR += cxxmatrix
     SUBDIR += d2x
     SUBDIR += dMagnetic
     SUBDIR += dangen
@@ -226,6 +227,7 @@
     SUBDIR += eif
     SUBDIR += eights
     SUBDIR += einstein
+    SUBDIR += eksanos
     SUBDIR += el
     SUBDIR += el-data
     SUBDIR += emptyepsilon
@@ -248,6 +250,7 @@
     SUBDIR += exhaust-doc
     SUBDIR += exhaust-ma
     SUBDIR += exult
+    SUBDIR += exult-devel
     SUBDIR += ezquake
     SUBDIR += f1spirit-remake
     SUBDIR += fairymax
@@ -258,7 +261,6 @@
     SUBDIR += fightorperish
     SUBDIR += fillets-ng
     SUBDIR += filters
-    SUBDIR += fishfight
     SUBDIR += fishsupper
     SUBDIR += five-or-more
     SUBDIR += fkiss
@@ -415,6 +417,7 @@
     SUBDIR += jtans
     SUBDIR += julius
     SUBDIR += jumpnbump
+    SUBDIR += jumpy
     SUBDIR += jutils
     SUBDIR += jvgs
     SUBDIR += jzip
@@ -1007,6 +1010,7 @@
     SUBDIR += urbanterror-data
     SUBDIR += valyriatear
     SUBDIR += vamos
+    SUBDIR += vanilla-conquer
     SUBDIR += vavoom
     SUBDIR += vavoom-extras
     SUBDIR += vectoroids

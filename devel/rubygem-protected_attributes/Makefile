@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	protected_attributes
 PORTVERSION=	1.1.4
 CATEGORIES=	devel rubygems

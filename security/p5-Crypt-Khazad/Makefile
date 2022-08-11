@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-Khazad
 PORTVERSION=	1.0.3
 PORTREVISION=	1

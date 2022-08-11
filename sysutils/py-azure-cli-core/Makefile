@@ -1,5 +1,5 @@
 PORTNAME=	azure-cli-core
-PORTVERSION=	2.35.0
+PORTVERSION=	2.39.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,12 +10,12 @@ COMMENT=	Microsoft Azure Command-Line Tools Core Module
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=1.8:devel/py-argcomplete@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-cli-telemetry>=1.0.6:sysutils/py-azure-cli-telemetry@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-cli-telemetry>=1.0.7:sysutils/py-azure-cli-telemetry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanfriendly>=10.0:textproc/py-humanfriendly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0:devel/py-jmespath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}knack>=0.9.0:devel/py-knack@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msal>=1.17.0<2.0.0:devel/py-msal@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msal-extensions>=0.3.1<0.4:devel/py-msal-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msal>=1.18.0.b1<2.0.0:devel/py-msal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msal-extensions>=1.0.0:devel/py-msal-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=2.0.8<3.0.0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.1.0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=17.1.0:security/py-openssl@${PY_FLAVOR} \

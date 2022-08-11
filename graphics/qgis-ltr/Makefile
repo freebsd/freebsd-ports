@@ -1,7 +1,6 @@
-# Created by: Laurent Courty
-
 PORTNAME=	qgis
-DISTVERSION=	3.22.6
+DISTVERSION=	3.22.9
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
@@ -52,7 +51,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libqwt6.so:x11-toolkits/qwt6 \
 		libspatialindex.so:devel/spatialindex \
 		libspatialite.so:databases/spatialite \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libxerces-c.so:textproc/xerces-c3 \
 		libzip.so:archivers/libzip \
 		libzstd.so:archivers/zstd
@@ -110,7 +109,7 @@ USE_PYQT=	pyqt5 qscintilla2 pysip sip
 USE_QT=		3d buildtools_build core concurrent dbus declarative \
 		designer_build qdoc_build gamepad gui linguist_build location \
 		network printsupport qmake_build script serialport \
-		sql sql-pgsql sql-sqlite3 svg testlib uitools_build \
+		sql sql-pgsql sql-sqlite3 svg uitools_build \
 		webengine webkit widgets xml
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
@@ -123,11 +122,12 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DPYUIC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
 		-DQSCI_SIP_DIR:PATH=${PYQT_SIPDIR}/Qsci \
 		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
-		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt6.so
-CMAKE_ON=	BUILD_TESTING ENABLE_TESTS USE_OPENCL WITH_3D WITH_ASTYLE \
+		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt6.so \
+		-DQGIS_MANUAL_SUBDIR:PATH=share/man
+CMAKE_ON=	USE_OPENCL WITH_3D WITH_ASTYLE \
 		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_EPT WITH_POSTGRESQL \
 		WITH_PDAL
-CMAKE_OFF=	WITH_QWTPOLAR
+CMAKE_OFF=	ENABLE_TESTS WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis
 

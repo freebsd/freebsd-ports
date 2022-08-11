@@ -1,0 +1,10 @@
+--- MDAnalysis.egg-info/requires.txt.orig	2022-06-02 18:49:39 UTC
++++ MDAnalysis.egg-info/requires.txt
+@@ -7,7 +7,6 @@ joblib>=0.12
+ scipy>=1.5.0
+ matplotlib>=1.5.1
+ tqdm>=4.43.0
+-threadpoolctl
+ packaging
+ fasteners
+ gsd>=1.9.3

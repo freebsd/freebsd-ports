@@ -1,5 +1,3 @@
-# Created by: Marco Broeder <marco.broeder@posteo.eu>
-
 PORTNAME=	trojita
 PORTVERSION=	0.7
 PORTREVISION=	9

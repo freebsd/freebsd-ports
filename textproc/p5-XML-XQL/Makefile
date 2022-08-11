@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	XML-XQL
 PORTVERSION=	0.68
 PORTREVISION=	1

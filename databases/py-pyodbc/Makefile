@@ -1,5 +1,3 @@
-# Created by: Robert Kruus <rob.kruus@gmail.com>
-
 PORTNAME=	pyodbc
 PORTVERSION=	4.0.32
 CATEGORIES=	databases python

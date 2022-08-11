@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	fusepak
 PORTVERSION=	0.5
 CATEGORIES=	sysutils games

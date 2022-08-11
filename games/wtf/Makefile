@@ -1,5 +1,3 @@
-# Created by: Maxime Henrion <mux@FreeBSD.org>
-
 PORTNAME=	wtf
 PORTVERSION=	20220320
 CATEGORIES=	games

@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	dc3dd
 PORTVERSION=	7.2.646
 CATEGORIES=	sysutils

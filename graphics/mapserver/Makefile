@@ -1,5 +1,3 @@
-# Created by: Douglas K. Rand <rand@meridian-enviro.com>
-
 PORTNAME=		mapserver
 PORTVERSION=		7.6.4
 CATEGORIES=		graphics www geography

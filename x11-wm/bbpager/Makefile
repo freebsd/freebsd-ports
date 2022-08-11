@@ -1,5 +1,3 @@
-# Created by: Patrick Seal <patseal@hyperhost.net>
-
 PORTNAME=	bbpager
 DISTVERSION=	0.4.7
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: gmarco@giovannelli.it
-
 PORTNAME=	delay
 PORTVERSION=	1.6
 CATEGORIES=	misc

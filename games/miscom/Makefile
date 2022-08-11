@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	miscom
 PORTVERSION=	1.0
 CATEGORIES=	games

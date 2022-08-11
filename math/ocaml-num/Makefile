@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	num
 PORTVERSION=	1.4
 DISTVERSIONPREFIX=	v

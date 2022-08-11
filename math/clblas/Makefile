@@ -1,9 +1,7 @@
-# Created by: Johannes Dieterich <dieterich@ogolem.org>
-
 PORTNAME=	clblas
 PORTVERSION=	2.10
 DISTVERSIONPREFIX=	v
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org

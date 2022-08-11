@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	datamapper
 PORTVERSION=	1.2.0
 PORTREVISION=	1

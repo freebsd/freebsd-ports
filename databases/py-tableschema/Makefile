@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tableschema
 PORTVERSION=	1.20.2
 CATEGORIES=	databases python

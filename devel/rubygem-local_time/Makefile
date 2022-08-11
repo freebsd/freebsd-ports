@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	local_time
 PORTVERSION=	2.1.0
 PORTREVISION=	1

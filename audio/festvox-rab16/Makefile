@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	festvox-rab16
 PORTVERSION=	1.4.1
 PORTREVISION=	2

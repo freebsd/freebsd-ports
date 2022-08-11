@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libpciaccess
 PORTVERSION=	0.14
 DISTVERSIONSUFFIX=	-1.el7

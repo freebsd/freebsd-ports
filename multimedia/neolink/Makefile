@@ -2,7 +2,7 @@ PORTNAME=	neolink
 PORTVERSION=	0.3.0
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	g20210903
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	multimedia
 
 MAINTAINER=	kevans@FreeBSD.org
@@ -13,9 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgstrtspserver-1.0.so:multimedia/gstreamer1-rtsp-server
 
-USES=	cargo gnome
+USES=	cargo gnome gstreamer
 USE_GNOME=	glib20
-USE_GSTREAMER1=	yes
 USE_RC_SUBR=	neolink
 
 USERS=	${PORTNAME}

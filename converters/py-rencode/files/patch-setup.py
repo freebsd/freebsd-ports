@@ -27,9 +27,11 @@
          sources=["rencode/rencode" + source_ext],
      ),
  ]
-@@ -93,4 +88,5 @@ setup(
+@@ -92,5 +87,6 @@ setup(
+   url="https://github.com/aresch/rencode",
    cmdclass={'build_ext': optional_build_ext},
    ext_modules=ext_modules,
-   setup_requires=['setuptools', 'wheel'],
+-  setup_requires=['setuptools', 'wheel'],
++  setup_requires=['setuptools'],
 +  test_suite='tests',
  )

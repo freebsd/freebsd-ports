@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	openssl-signature_algorithm
 PORTVERSION=	1.0.0
 CATEGORIES=	security rubygems

@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	Config-JSON
 PORTVERSION=	1.5202
 CATEGORIES=	devel perl5

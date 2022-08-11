@@ -1,5 +1,3 @@
-# Created by: Bob Zimmermann <rpz@cse.wustl.edu>
-
 PORTNAME=	gmap
 PORTVERSION=	2020.09.12
 CATEGORIES=	biology

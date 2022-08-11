@@ -1,5 +1,3 @@
-# Created by: Glenn Johnson
-
 PORTNAME=	libimg
 PORTVERSION=	1.4.12
 CATEGORIES?=	graphics tk tcl

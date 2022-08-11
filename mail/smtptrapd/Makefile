@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	smtptrapd
 PORTVERSION=	1.6
 PORTREVISION=	1

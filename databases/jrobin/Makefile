@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	jrobin
 PORTVERSION=	1.5.14
 CATEGORIES=	databases java

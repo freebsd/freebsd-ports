@@ -1,5 +1,3 @@
-# Created by: alexander smishlajev
-
 PORTNAME=	decoratortools
 PORTVERSION=	1.8
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Simun Mikecin <numisemis@yahoo.com>
-
 PORTNAME=	Net-SCP-Expect
 PORTVERSION=	0.16
 PORTREVISION=	2

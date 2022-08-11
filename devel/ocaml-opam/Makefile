@@ -1,5 +1,3 @@
-# Created by: J. Giovannangeli
-
 PORTNAME=	opam
 PORTVERSION=	2.1.2
 CATEGORIES=	devel
@@ -33,6 +31,8 @@ DARCS_RUN_DEPENDS=	darcs:devel/hs-darcs
 GIT_RUN_DEPENDS=	git:devel/git
 MERCURIAL_RUN_DEPENDS=	${PY_MERCURIAL}
 RSYNC_RUN_DEPENDS=	rsync:net/rsync
+
+NOPRECIOUSMAKEVARS=	yes
 
 pre-configure:
 	cd ${WRKSRC} && ${MAKE_CMD} compiler

@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	gdbm
 DISTVERSION=	${PYTHON_DISTVERSION}
 PORTREVISION=	6

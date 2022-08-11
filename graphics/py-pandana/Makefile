@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pandana
 PORTVERSION=	0.6.1
 PORTREVISION=	1
@@ -12,6 +10,10 @@ COMMENT=	Python library for network analysis
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.25.2:lang/cython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.8,1:math/py-numpy@${PY_FLAVOR}

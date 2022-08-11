@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	jruby-rack
 PORTVERSION=	1.1.21
 CATEGORIES=	www rubygems

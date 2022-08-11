@@ -1,5 +1,3 @@
-# Created by: Ulrich Spoerlein <q@uni.de>
-
 PORTNAME=	eggdrop
 PORTVERSION=	1.9.2
 DISTVERSIONPREFIX=	v

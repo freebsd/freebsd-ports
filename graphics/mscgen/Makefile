@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@FreeBSD.org>
-
 PORTNAME=	mscgen
 PORTVERSION=	0.20
 PORTREVISION=	6

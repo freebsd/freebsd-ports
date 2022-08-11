@@ -1,9 +1,6 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-#    $MCom: ports/editors/poedit/Makefile,v 1.2 2006/10/05 07:03:09 mezz Exp $
-
 PORTNAME=	poedit
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/vslavik/${PORTNAME}/releases/download/v${PORTVERSION}-oss/
 

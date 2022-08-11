@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	libsemigroups
 PORTVERSION=	1.3.7
 DISTVERSIONPREFIX=	v

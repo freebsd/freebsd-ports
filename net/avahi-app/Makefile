@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	avahi
 PORTVERSION=	0.8
 CATEGORIES?=	net dns

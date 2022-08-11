@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	clojure
 PORTVERSION=	1.10.3.1058
 CATEGORIES=	lang lisp java

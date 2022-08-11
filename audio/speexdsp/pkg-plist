@@ -7,5 +7,5 @@ include/speex/speexdsp_types.h
 lib/libspeexdsp.a
 lib/libspeexdsp.so
 lib/libspeexdsp.so.1
-lib/libspeexdsp.so.1.5.1
+lib/libspeexdsp.so.1.5.2
 libdata/pkgconfig/speexdsp.pc

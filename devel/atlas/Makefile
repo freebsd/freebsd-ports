@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <lehmann@ans-netz.de>
-
 PORTNAME=	Atlas
 PORTVERSION=	0.5.2
 PORTREVISION=	2

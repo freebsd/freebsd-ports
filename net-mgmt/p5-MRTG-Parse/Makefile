@@ -1,5 +1,3 @@
-# Created by: gslin <gslin@gslin.org>
-
 PORTNAME=	MRTG-Parse
 PORTVERSION=	0.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@bsd.hu
-
 PORTNAME=	tcpreen
 PORTVERSION=	1.4.4
 PORTREVISION=	3

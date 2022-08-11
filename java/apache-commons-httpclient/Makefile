@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	commons-httpclient
 DISTVERSION=	3.1
 PORTREVISION=	2

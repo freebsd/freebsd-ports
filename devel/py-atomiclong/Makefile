@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 
-USES=		python:3.6+ pytest
-USE_PYTHON=	autoplist distutils
+USES=		python:3.6+
+USE_PYTHON=	autoplist distutils pytest
 
 post-patch:
 	@${REINPLACE_CMD} '/setup_requires/d' ${WRKSRC}/${PYSETUP}

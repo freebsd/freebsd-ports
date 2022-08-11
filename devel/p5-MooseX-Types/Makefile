@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	MooseX-Types
 PORTVERSION=	0.50
 CATEGORIES=	devel perl5

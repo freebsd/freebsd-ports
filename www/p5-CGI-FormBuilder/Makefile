@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero
-
 PORTNAME=	CGI-FormBuilder
 PORTVERSION=	3.1000
 CATEGORIES=	www perl5

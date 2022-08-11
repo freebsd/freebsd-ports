@@ -1,5 +1,3 @@
-# Created by: Matt Lancereau <matt@rimasec.net>
-
 PORTNAME=	artwiz-aleczapka-en
 PORTVERSION=	1.3
 PORTREVISION=	4

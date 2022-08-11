@@ -1,9 +1,6 @@
-# Created by Markus Mann, CTS - FreeBSD Team <de-freebsd@ctseuro.com>
-
 PORTNAME=	owncast
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.10
-PORTREVISION=	1
+DISTVERSION=	0.0.12
 CATEGORIES=	www
 DIST_SUBDIR=	${PORTNAME}
 

@@ -1,5 +1,3 @@
-# Created by: shane@freebsdhackers.net aka modsix@gmail.com
-
 PORTNAME=	destroy
 PORTVERSION=	20130926
 CATEGORIES=	security

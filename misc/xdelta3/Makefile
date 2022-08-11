@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	xdelta
 PORTVERSION=	3.1.0
 PORTREVISION=	3

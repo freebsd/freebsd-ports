@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@bsd.hu
-
 PORTNAME=	bozohttpd
 PORTVERSION=	20210227
 CATEGORIES=	www

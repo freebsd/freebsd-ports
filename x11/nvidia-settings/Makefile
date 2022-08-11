@@ -1,5 +1,3 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	nvidia-settings
 PORTVERSION=	470.86
 CATEGORIES=	x11

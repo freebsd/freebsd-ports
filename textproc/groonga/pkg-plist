@@ -1,6 +1,5 @@
 %%RUBY%%bin/grndb
 bin/groonga
-bin/groonga-benchmark
 %%SUGGEST%%bin/groonga-suggest-create-dataset
 %%SUGGEST%%bin/groonga-suggest-httpd
 %%SUGGEST%%bin/groonga-suggest-learner
@@ -35,6 +34,7 @@ include/groonga/groonga/cache.h
 include/groonga/groonga/cast.h
 include/groonga/groonga/column.h
 include/groonga/groonga/command.h
+include/groonga/groonga/command_arguments.hpp
 include/groonga/groonga/config.h
 include/groonga/groonga/dat.h
 include/groonga/groonga/db.h
@@ -63,6 +63,7 @@ include/groonga/groonga/plugin.h
 include/groonga/groonga/portability.h
 include/groonga/groonga/posting.h
 include/groonga/groonga/proc.h
+include/groonga/groonga/progress.h
 include/groonga/groonga/raw_string.h
 include/groonga/groonga/request_canceler.h
 include/groonga/groonga/request_timer.h
@@ -104,9 +105,12 @@ lib/groonga/plugins/functions/time.so
 lib/groonga/plugins/functions/vector.so
 lib/groonga/plugins/query_expanders/tsv.a
 lib/groonga/plugins/query_expanders/tsv.so
-%%RUBY%%lib/groonga/plugins/sharding/dynamic_columns.rb
-%%RUBY%%lib/groonga/plugins/sharding/keys_parsable.rb
 %%RUBY%%lib/groonga/plugins/ruby/eval.rb
+%%RUBY%%lib/groonga/plugins/sharding/dynamic_columns.rb
+%%RUBY%%lib/groonga/plugins/sharding/stream_execute_context.rb
+%%RUBY%%lib/groonga/plugins/sharding/stream_executor.rb
+%%RUBY%%lib/groonga/plugins/sharding/stream_shard_executor.rb
+%%RUBY%%lib/groonga/plugins/sharding/keys_parsable.rb
 %%RUBY%%lib/groonga/plugins/sharding.rb
 %%RUBY%%lib/groonga/plugins/sharding/logical_count.rb
 %%RUBY%%lib/groonga/plugins/sharding/logical_enumerator.rb
@@ -291,6 +295,7 @@ sbin/groonga-httpd-restart
 %%RUBY%%%%DATADIR%%/mruby/LEGAL
 %%DATADIR%%/munin/plugins/groonga_cpu_load_
 %%DATADIR%%/munin/plugins/groonga_cpu_time_
+%%DATADIR%%/munin/plugins/groonga_delta_
 %%DATADIR%%/munin/plugins/groonga_disk_
 %%DATADIR%%/munin/plugins/groonga_memory_
 %%DATADIR%%/munin/plugins/groonga_n_records_

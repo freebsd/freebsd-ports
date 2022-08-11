@@ -1,5 +1,3 @@
-# Created by: Alex "lissyara" Keda <admin@lissyara.su>
-
 PORTNAME=	xneur
 PORTVERSION=	0.20.0
 PORTREVISION=	1

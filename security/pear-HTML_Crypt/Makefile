@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	HTML_Crypt
 PORTVERSION=	1.3.4
 CATEGORIES=	security www pear

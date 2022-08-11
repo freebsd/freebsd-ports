@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	tagpy
 PORTVERSION=	2013.1
 PORTREVISION=	21

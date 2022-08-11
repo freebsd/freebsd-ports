@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	csmash
 PORTVERSION=	0.6.6
 PORTREVISION=	22

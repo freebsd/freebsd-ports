@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	libsysstat
 PORTVERSION=	0.4.6
 CATEGORIES=	sysutils

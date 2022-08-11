@@ -1,5 +1,3 @@
-# Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-
 PORTNAME=	ods2reader
 PORTVERSION=	19930601
 PORTREVISION=	1

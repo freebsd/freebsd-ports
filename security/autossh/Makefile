@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	autossh
 PORTVERSION=	1.4g
 CATEGORIES=	security

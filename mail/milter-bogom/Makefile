@@ -1,5 +1,3 @@
-# Created by: Victor Balada Diaz <victor@bsdes.net>
-
 PORTNAME=	bogom
 PORTVERSION=	1.9.2
 PORTREVISION=	4

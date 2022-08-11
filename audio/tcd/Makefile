@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	tcd
 PORTVERSION=	2.2.0
 PORTREVISION=	8

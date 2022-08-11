@@ -1,5 +1,3 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	spicetrade
 PORTVERSION=	1.2
 PORTREVISION=	4

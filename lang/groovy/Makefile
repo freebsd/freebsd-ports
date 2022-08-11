@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
-
 PORTNAME=	groovy
 DISTVERSION=	2.4.21
 CATEGORIES=	lang java

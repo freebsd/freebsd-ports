@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	xorsearch
 DISTVERSION=	1_11_1
 CATEGORIES=	security textproc

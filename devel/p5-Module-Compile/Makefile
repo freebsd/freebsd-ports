@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Module-Compile
 PORTVERSION=	0.23
 PORTREVISION=	1

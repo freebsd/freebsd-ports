@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Graphics-Primitive
 PORTVERSION=	0.67
 CATEGORIES=	graphics perl5

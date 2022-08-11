@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	cretan-hubris
 PORTVERSION=	0.2
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	libzvbi
 PORTVERSION=	0.2.35
 PORTREVISION=	3

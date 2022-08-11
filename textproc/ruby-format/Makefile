@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	format
 PORTVERSION=	1.09
 CATEGORIES=	textproc ruby

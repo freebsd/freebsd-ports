@@ -1,20 +1,11 @@
---- services/video_capture/broadcasting_receiver.cc.orig	2022-02-28 16:54:41 UTC
+--- services/video_capture/broadcasting_receiver.cc.orig	2022-06-17 14:20:10 UTC
 +++ services/video_capture/broadcasting_receiver.cc
-@@ -28,7 +28,7 @@ void CloneSharedBufferHandle(const mojo::ScopedSharedB
- void CloneSharedBufferToRawFileDescriptorHandle(
-     const mojo::ScopedSharedBufferHandle& source,
-     media::mojom::VideoBufferHandlePtr* target) {
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   // |source| is unwrapped to a |PlatformSharedMemoryRegion|, from whence a file
-   // descriptor can be extracted which is then mojo-wrapped.
-   base::subtle::PlatformSharedMemoryRegion platform_region =
-@@ -240,7 +240,7 @@ void BroadcastingReceiver::BufferContext::
-     ConvertRawFileDescriptorToSharedBuffer() {
+@@ -234,7 +234,7 @@ void BroadcastingReceiver::BufferContext::
+     ConvertRawFileDescriptorToUnsafeShmemRegion() {
    DCHECK(buffer_handle_->is_shared_memory_via_raw_file_descriptor());
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   // The conversion unwraps the descriptor from its mojo handle to the raw file
-   // descriptor (ie, an int). This is used to create a
-   // PlatformSharedMemoryRegion which is then wrapped as a
+   const size_t handle_size =
+       buffer_handle_->get_shared_memory_via_raw_file_descriptor()
+           ->shared_memory_size_in_bytes;

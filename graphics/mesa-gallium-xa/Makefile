@@ -1,5 +1,3 @@
-# Created by: johalun
-
 PORTNAME=	mesa-gallium-xa
 PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics

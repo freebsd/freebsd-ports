@@ -1,5 +1,3 @@
-# Created by: Simon Barner <barner@gmx.de>
-
 PORTNAME=	Ogg-Vorbis-Header
 PORTVERSION=	0.11
 CATEGORIES=	audio perl5

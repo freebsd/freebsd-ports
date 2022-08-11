@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	zoo
 DISTVERSION=	1.8-10
 CATEGORIES=	math

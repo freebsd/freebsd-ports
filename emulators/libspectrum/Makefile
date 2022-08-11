@@ -1,5 +1,3 @@
-# Created by: Alexey V. Antipovsky <kemm@in-line.ru>
-
 PORTNAME=	libspectrum
 PORTVERSION=	1.5.0
 CATEGORIES=	emulators devel

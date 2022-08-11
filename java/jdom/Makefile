@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	jdom
 PORTVERSION=	1.1.1
 PORTEPOCH=	1

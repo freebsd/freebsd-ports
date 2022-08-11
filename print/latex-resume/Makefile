@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	resume
 PORTVERSION=	20010823
 PORTREVISION=	3

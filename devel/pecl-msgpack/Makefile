@@ -1,5 +1,3 @@
-# Created by: John Chen <johnpupu@gmail.com>
-
 PORTNAME=	msgpack
 PORTVERSION=	2.1.2
 CATEGORIES=	devel

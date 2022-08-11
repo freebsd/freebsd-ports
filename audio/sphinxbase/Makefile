@@ -1,5 +1,3 @@
-# Created by: r.neese
-
 PORTNAME=	sphinxbase
 PORTVERSION=	0.8
 PORTREVISION=	2

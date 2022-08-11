@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	asyncpg
 PORTVERSION=	0.25.0
 CATEGORIES=	databases python

@@ -15,13 +15,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=	fails to compile: Fatal error: exception Invalid_argument("index out of bounds")
 BROKEN_armv7=	fails to compile: Fatal error: exception Invalid_argument("index out of bounds")
-BROKEN_powerpc=	fails to link
 
 BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
 		ocamlfind:devel/ocaml-findlib \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
+RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/stublibs/dllnums.so:math/ocaml-num
 
 USES=		emacs gettext-runtime gmake gnome
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 gtksourceview2 pango

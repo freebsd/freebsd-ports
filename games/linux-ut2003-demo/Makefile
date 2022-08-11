@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	ut2003-demo
 PORTVERSION=	2206
 PORTREVISION=	2

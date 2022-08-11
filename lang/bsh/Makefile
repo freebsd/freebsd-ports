@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	bsh
 DISTVERSION=	2.1.0
 CATEGORIES=	lang java

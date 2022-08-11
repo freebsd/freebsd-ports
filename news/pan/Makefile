@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	pan
 PORTVERSION=	0.145
 PORTREVISION=	1

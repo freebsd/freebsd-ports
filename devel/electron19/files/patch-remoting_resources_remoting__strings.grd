@@ -1,0 +1,20 @@
+--- remoting/resources/remoting_strings.grd.orig	2022-05-25 04:01:06 UTC
++++ remoting/resources/remoting_strings.grd
+@@ -955,7 +955,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
+       <message name="IDS_URL_FORWARDER_INCORRECTLY_CONFIGURED" desc="Message shown when the Chrome Remote Desktop URL forwarder is incorrectly configured.">
+         <ph name="URL_FORWARDER_NAME">%s<ex>Chrome Remote Desktop URL Forwarder</ex></ph> is not configured correctly. Please choose a different default web browser and then enable URL forwarding again.
+       </message>
+-      <if expr="is_linux">
++      <if expr="is_posix">
+         <message name="IDS_SESSION_DIALOG_MESSAGE" desc="The message to show at the top of the session-selection dialog.">
+           Select a session to launch within your Chrome Remote Desktop environment. (Note that some session types may not support running within Chrome Remote Desktop and on the local console simultaneously.)
+         </message>
+@@ -971,7 +971,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
+         <message name="IDS_SESSION_DIALOG_DEFAULT_SESSION_COMMENT" desc="The comment for the entry to launch the default session.">
+           Launch the default XSession
+         </message>
+-      </if> <!-- is_linux -->
++      </if> <!-- is_posix -->
+     </messages>
+   </release>
+ </grit>

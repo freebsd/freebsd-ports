@@ -1,5 +1,3 @@
-# Created by: Joel Sutton <jsutton@bbcon.com.au>
-
 PORTNAME=	oonsoo
 PORTVERSION=	1.2
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Slava Shwartsman <slavash@FreeBSD.org>
-
 PORTNAME=	perftest
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4-0.7

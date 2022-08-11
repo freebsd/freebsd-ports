@@ -1,7 +1,5 @@
-# Created by: Kenneth Vestergaard Schmidt <kvs@pil.dk>
-
 PORTNAME=	emacs
-DISTVERSION=	29.0.50.20220416
+DISTVERSION=	29.0.50.20220731
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -25,13 +23,14 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	1fed6e7
+GH_TAGNAME=	3d6af11
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
 			--localstatedir=/var \
 			--without-libsystemd \
-			--without-selinux
+			--without-selinux \
+			--without-gconf
 .if ${FLAVOR:U} == nox
 CONFIGURE_ARGS+=	--with-sound=no \
 			--with-x-toolkit=no \
@@ -80,7 +79,7 @@ INFO_PATH=	${DATADIR_REL}/info
 PLIST_SUB=	EMACS_VER=${DISTVERSION:R} \
 		GNU_HOST=${CONFIGURE_TARGET}
 
-OPTIONS_DEFINE=			ACL DBUS GCONF GNUTLS GSETTINGS HARFBUZZ JSON \
+OPTIONS_DEFINE=			ACL DBUS GNUTLS GSETTINGS HARFBUZZ JSON \
 				LCMS2 M17N MAILUTILS MODULES NATIVECOMP OTF \
 				PGTK SCROLLBARS SOURCES SQLITE3 THREADS XFT XIM \
 				XML XWIDGETS
@@ -95,7 +94,7 @@ OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
 OPTIONS_RADIO_SOUND=		ALSA OSS
 OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 XAW XAW3D
 .if ${FLAVOR:U} == nox
-OPTIONS_EXCLUDE=		ALSA CAIRO DBUS GCONF GFILE GIF GSETTINGS GTK2 \
+OPTIONS_EXCLUDE=		ALSA CAIRO DBUS GFILE GIF GSETTINGS GTK2 \
 				GTK3 HARFBUZZ JPEG LCMS2 M17N MAGICK OSS OTF \
 				PGTK PNG SCROLLBARS SVG TIFF WEBP XAW XAW3D XFT \
 				XIM XPM XWIDGETS
@@ -135,8 +134,6 @@ CAIRO_USE=			GNOME=cairo
 CAIRO_CONFIGURE_WITH=		cairo
 DBUS_LIB_DEPENDS=		libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_WITH=		dbus
-GCONF_USE=			GNOME=gconf2
-GCONF_CONFIGURE_WITH=		gconf
 GFILE_USE=			GNOME=glib20
 GFILE_CONFIGURE_ON=		--with-file-notification=gfile
 GIF_LIB_DEPENDS=		libgif.so:graphics/giflib
@@ -240,7 +237,8 @@ _GCC_PORT!=	${BSDMAKE} -V_GCC_PORT USE_GCC=11+ _GCC_PORT_CHOSEN=yes
 USES+=		desktop-file-utils gnome
 .if !${PORT_OPTIONS:MPGTK}
 USES+=		xorg
-USE_XORG+=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xrender xt
+USE_XORG+=	ice sm x11 xcb xcomposite xext xfixes xi xinerama xmu xrandr \
+		xrender xt
 .endif
 .endif
 

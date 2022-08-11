@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Proc-FastSpawn
 PORTVERSION=	1.2
 CATEGORIES=	devel perl5

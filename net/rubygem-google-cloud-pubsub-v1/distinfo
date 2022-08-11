@@ -1,3 +1,3 @@
-TIMESTAMP = 1649423946
-SHA256 (rubygem/google-cloud-pubsub-v1-0.8.0.gem) = 9a3464f27afff7fe38577002b6a502fbbc8925dc308ed4daa1e9b0d91f87d831
-SIZE (rubygem/google-cloud-pubsub-v1-0.8.0.gem) = 75776
+TIMESTAMP = 1657292542
+SHA256 (rubygem/google-cloud-pubsub-v1-0.11.0.gem) = 176bc9c4f4c5d7f72d2e1706575b7364c02fb325f55a7e5179175ea6e2e6e3c4
+SIZE (rubygem/google-cloud-pubsub-v1-0.11.0.gem) = 78848

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	matplotlib
 DISTVERSION=	2.2.4
 PORTREVISION=	3

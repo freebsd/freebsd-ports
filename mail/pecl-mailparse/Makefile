@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	mailparse
 PORTVERSION=	3.1.3
 CATEGORIES=	mail www

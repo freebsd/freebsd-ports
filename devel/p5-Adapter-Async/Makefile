@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Adapter-Async
 PORTVERSION=	0.019
 CATEGORIES=	devel perl5

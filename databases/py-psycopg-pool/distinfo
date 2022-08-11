@@ -1,3 +1,3 @@
-TIMESTAMP = 1642102239
-SHA256 (psycopg-pool-3.0.3.tar.gz) = 862cd9109069b05ba972e13202d3d1231c889c16bccb3f8af8f9e9cf6f1aa1db
-SIZE (psycopg-pool-3.0.3.tar.gz) = 17676
+TIMESTAMP = 1651316611
+SHA256 (psycopg-pool-3.1.1.tar.gz) = bc579078dc8209f1ce280228460f96770756f24babb5d8ab2418800e9082a973
+SIZE (psycopg-pool-3.1.1.tar.gz) = 19258

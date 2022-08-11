@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	shoulda-matchers
 PORTVERSION=	4.5.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Rick Elrod <codeblock@eighthbit.net>
-
 PORTNAME=	callsign
 PORTVERSION=	2.2.0
 CATEGORIES=	comms rubygems hamradio

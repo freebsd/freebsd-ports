@@ -108,10 +108,10 @@ sbin/cluster-user-manager
 sbin/cluster-useradd
 sbin/cluster-usermod
 sbin/cluster-users
+sbin/cluster-web-setup
 sbin/cluster-wip-checkout
 sbin/cluster-wip-update
 sbin/compute-node-set-arc-max
-sbin/ganglia-web-setup
 sbin/node-iftop
 sbin/node-set-type
 sbin/node-sync-all-users
@@ -135,8 +135,6 @@ sbin/slurm-usage-report
 sbin/spcm-banner
 sbin/spcm-update-from-wip
 %%DATADIR%%/WWW/global_styles.css
-%%DATADIR%%/WWW/gmetad.conf.template
-%%DATADIR%%/WWW/gmond.conf.template
 %%DATADIR%%/WWW/index.php
 %%DATADIR%%/WWW/patch-apache.awk
 %%DATADIR%%/WWW/pkgsrc.jpg

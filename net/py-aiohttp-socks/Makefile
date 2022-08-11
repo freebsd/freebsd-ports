@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	aiohttp-socks
 PORTVERSION=	0.7.1
 DISTVERSIONPREFIX=	v

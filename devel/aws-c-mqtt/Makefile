@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	aws-c-mqtt
 PORTVERSION=	0.7.10
 DISTVERSIONPREFIX=	v

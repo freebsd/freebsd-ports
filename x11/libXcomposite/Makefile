@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXcomposite
 PORTVERSION=	0.4.5
 PORTEPOCH=	1

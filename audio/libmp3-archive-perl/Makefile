@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	libmp3-archive-perl
 PORTVERSION=	0.9
 PORTREVISION=	1

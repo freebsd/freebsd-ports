@@ -1,5 +1,3 @@
-# Created by: Kawaguti Ginga <ginga@athena.club.ne.jp>
-
 PORTNAME=	kappa20
 PORTVERSION=	0.396
 PORTREVISION=	4

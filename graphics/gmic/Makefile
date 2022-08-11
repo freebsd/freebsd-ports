@@ -1,5 +1,6 @@
 PORTNAME=	gmic
-DISTVERSION=	3.0.1
+DISTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://gmic.eu/files/source/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -9,11 +10,15 @@ COMMENT=	Framework for image processing
 
 LICENSE=	CeCILL
 LICENSE_NAME=	CeCILL
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/../COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_i386=	error: "c++ crashes, clang-5 and 6 fail: undefined reference to `__atomic_load'"
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
+BUILD_DEPENDS=	gimptool-2.0:graphics/gimp-app
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
 		libGraphicsMagick++.so:graphics/GraphicsMagick \
@@ -23,24 +28,21 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++11-lang jpeg localbase:ldflags pkgconfig
+USES=		compiler:c++11-lang gettext-runtime gmake jpeg localbase:ldflags pkgconfig xorg
 USE_LDCONFIG=	yes
-
-CMAKE_OFF=	BUILD_LIB_STATIC
-CMAKE_ON=	ENABLE_DYNAMIC_LINKING
+USE_XORG=	x11 xau xcb xdmcp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS_DEFINE=		OPENMP X11
-OPTIONS_DEFAULT=	OPENMP X11
-OPTIONS_SUB=		yes
+WRKSRC_SUBDIR=	src # because of makefile issues, see https://github.com/dtschump/gmic/issues/405
 
-OPENMP_CMAKE_BOOL=	ENABLE_OPENMP
+MAKE_JOBS_UNSAFE=	yes # see https://github.com/dtschump/gmic/issues/406
 
-X11_CMAKE_BOOL=		ENABLE_X
-X11_USES=		xorg
-X11_USE=		XORG=ice,sm,x11,xext
+ALL_TARGET=	lib cli # cli is bundled here until https://github.com/dtschump/gmic/issues/407 is fixed, afvter which is would be moved to gmic-cli
 
 PORTSCOUT=	limit:[0-9]\..* # not v.220 and similar
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgmic.so.*
 
 .include <bsd.port.mk>

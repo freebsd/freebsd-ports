@@ -1,5 +1,3 @@
-# Created by: David Kalliecharan <dave@dal.ca>
-
 PORTNAME=	llvmlite
 DISTVERSION=	0.34.0
 CATEGORIES=	devel python

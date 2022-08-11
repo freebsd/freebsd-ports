@@ -9,6 +9,8 @@ COMMENT=	Reverse search algorithm for vertex enumeration/convex hull problems
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=	error: __int128 is not supported on this target
+BROKEN_armv7=	error: __int128 is not supported on this target
 BROKEN_i386=	error: __int128 is not supported on this target
 BROKEN_powerpc=	error: __int128 is not supported on this target
 

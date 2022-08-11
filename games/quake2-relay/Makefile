@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	relay
 PORTVERSION=	0.4
 PORTREVISION=	1

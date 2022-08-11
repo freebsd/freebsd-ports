@@ -28,13 +28,13 @@ The work, log, and run directories are located at:
 
 Documentation
 =============
-Further documentation can be found in the official Nexus Book at:
-  https://books.sonatype.com/nexus-book/%%BOOKVERSION%%/reference/index.html
+Further documentation can be found at:
+  https://help.sonatype.com/repomanager2
 EOM
 },
 { type: remove
   message: <<EOM
-Consider deleting %%RUNDIR%%, %%LOGDIR%% and %%WORKDIR%% manually!"
+Consider deleting %%ETCDIR%%, %%RUNDIR%%, %%LOGDIR%% and %%WORKDIR%% manually!"
 EOM
 }
 ]

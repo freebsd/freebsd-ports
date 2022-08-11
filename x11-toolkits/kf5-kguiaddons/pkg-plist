@@ -35,7 +35,6 @@ lib/libKF5GuiAddons.so
 lib/libKF5GuiAddons.so.5
 lib/libKF5GuiAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KGuiAddons.pri
-%%QT_PLUGINDIR%%/kf5/kguiaddons/kmodifierkey/kmodifierkey_xcb.so
 share/applications/google-maps-geo-handler.desktop
 share/applications/openstreetmap-geo-handler.desktop
 share/applications/qwant-maps-geo-handler.desktop

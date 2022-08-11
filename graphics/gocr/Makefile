@@ -1,5 +1,3 @@
-# Created by: Kay Lehmann
-
 PORTNAME=	gocr
 PORTVERSION=	0.52
 CATEGORIES=	graphics

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	URI-imap
 PORTVERSION=	1.01
 PORTREVISION=	1

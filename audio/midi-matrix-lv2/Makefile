@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	midi-matrix
 DISTVERSION=	0.28.0
 PORTREVISION=	1

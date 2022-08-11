@@ -1,5 +1,3 @@
-# Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-
 PORTNAME=	rxtx
 PORTVERSION=	2.2p2
 PORTREVISION=	4

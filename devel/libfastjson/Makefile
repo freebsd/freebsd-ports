@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	libfastjson
 PORTVERSION=	0.99.9
 DISTVERSIONPREFIX=	v

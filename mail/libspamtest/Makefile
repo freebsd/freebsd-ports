@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	libspamtest
 PORTVERSION=	20080808
 CATEGORIES=	mail

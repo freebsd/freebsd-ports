@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-08-03 13:38:33 UTC
+--- CMakeLists.txt.orig	2022-05-11 09:27:30 UTC
 +++ CMakeLists.txt
-@@ -123,7 +123,7 @@ if(${heyoka_VERSION} VERSION_LESS ${_HEYOKA_PY_MIN_HEY
+@@ -136,7 +136,7 @@ if(${heyoka_VERSION} VERSION_LESS ${_HEYOKA_PY_MIN_HEY
  endif()
  
  # Python.
@@ -8,4 +8,4 @@
 +find_package(Python3 ${FREEBSD_PYTHON_DISTVERSION} REQUIRED EXACT COMPONENTS Interpreter Development)
  message(STATUS "Python3 interpreter: ${Python3_EXECUTABLE}")
  message(STATUS "Python3 installation directory: ${Python3_SITEARCH}")
- set(HEYOKA_PY_INSTALL_PATH "" CACHE STRING "heyoka module installation path")
+ if(${Python3_VERSION_MINOR} LESS 5)

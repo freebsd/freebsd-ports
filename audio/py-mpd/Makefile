@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	mpd
 PORTVERSION=	0.3.0
 PORTREVISION=	1

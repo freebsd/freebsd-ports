@@ -1,9 +1,6 @@
-# Created by: Julien Laffaye <kimelto@gmail.com>
-
 PORTNAME=	discount
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.7b
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	textproc devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -29,6 +26,8 @@ TEST_TARGET=	test
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	markdown
+
+PORTSCOUT=	skipv:2.2.7
 
 OPTIONS_DEFINE=	EXTRA SAMPLES TAB8
 OPTIONS_DEFAULT=EXTRA TAB8

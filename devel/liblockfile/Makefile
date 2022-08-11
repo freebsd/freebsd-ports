@@ -1,5 +1,3 @@
-# Created by: Yasuhiro KIMURA <yasu@utahime.org>
-
 PORTNAME=	liblockfile
 PORTVERSION=	1.17
 DISTVERSIONPREFIX=	v

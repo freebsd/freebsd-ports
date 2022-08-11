@@ -1,5 +1,3 @@
-# Created by: Rick van der Zwet <info@rickvanderzwet.nl>
-
 PORTNAME=	XML-TinyXML
 PORTVERSION=	0.34
 PORTREVISION=	2

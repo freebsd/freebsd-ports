@@ -1,5 +1,3 @@
-# Created by: michael johnson <ahze@ahze.net>
-
 PORTNAME=	acidrip
 PORTVERSION=	0.14
 PORTREVISION=	11

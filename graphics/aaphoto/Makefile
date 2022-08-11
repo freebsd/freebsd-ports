@@ -1,5 +1,3 @@
-# Created by: Andras Horvath <han@log69.com>
-
 PORTNAME=	aaphoto
 PORTVERSION=	0.43.1
 DISTVERSIONPREFIX=	v

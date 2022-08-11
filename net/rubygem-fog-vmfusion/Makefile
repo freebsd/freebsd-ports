@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-vmfusion
 PORTVERSION=	0.1.0
 CATEGORIES=	net rubygems

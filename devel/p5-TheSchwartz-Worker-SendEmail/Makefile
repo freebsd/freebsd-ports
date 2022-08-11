@@ -1,5 +1,3 @@
-# Created by: Kurt Lidl <kurt.lidl@cello.com>
-
 PORTNAME=	TheSchwartz-Worker-SendEmail
 PORTVERSION=	1.00
 PORTREVISION=	3

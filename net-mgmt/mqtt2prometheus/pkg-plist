@@ -1,0 +1,2 @@
+bin/mqtt2prometheus
+@sample %%ETCDIR%%/config.yaml.dist %%ETCDIR%%/config.yaml

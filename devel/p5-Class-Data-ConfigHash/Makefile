@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	Class-Data-ConfigHash
 PORTVERSION=	0.00002
 PORTREVISION=	1

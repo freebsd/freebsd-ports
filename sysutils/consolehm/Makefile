@@ -1,5 +1,3 @@
-# Created by: Mike Muir <mmuir@es.co.nz>
-
 PORTNAME=	consolehm
 PORTVERSION=	1.31
 PORTREVISION=	1

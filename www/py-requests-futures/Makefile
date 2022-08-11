@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	requests-futures
 PORTVERSION=	1.0.0
 CATEGORIES=	www python

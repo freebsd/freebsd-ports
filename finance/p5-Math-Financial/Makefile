@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Math-Financial
 PORTVERSION=	0.76
 PORTREVISION=	1

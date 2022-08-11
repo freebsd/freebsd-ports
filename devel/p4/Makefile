@@ -1,5 +1,3 @@
-# Created by: gordon@FreeBSD.org
-
 PORTNAME=	p4
 PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}
 PORTREVISION=	3

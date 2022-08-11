@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME=	notify-sharp
 PORTVERSION=	3.0.3
 CATEGORIES=	devel

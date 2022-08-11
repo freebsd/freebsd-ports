@@ -1,6 +1,6 @@
---- include/config.h.orig	2022-03-07 23:57:15 UTC
+--- include/config.h.orig	2022-05-26 12:31:08 UTC
 +++ include/config.h
-@@ -303,11 +303,11 @@
+@@ -312,11 +312,11 @@
  
  #if defined(UNIX) && !defined(ZLIB_COMP) && !defined(COMPRESS)
  /* path and file name extension for compression program */
@@ -16,7 +16,7 @@
  #endif
  
  #ifndef COMPRESS
-@@ -392,7 +392,7 @@
+@@ -401,7 +401,7 @@
   * otherwise it will be the current directory.
   */
  #ifndef HACKDIR
@@ -25,7 +25,7 @@
  #endif
  
  /*
-@@ -653,7 +653,7 @@ typedef unsigned char uchar;
+@@ -662,7 +662,7 @@ typedef unsigned char uchar;
  #ifdef DUMPLOG
  
  #ifndef DUMPLOG_FILE
@@ -34,3 +34,12 @@
  /* DUMPLOG_FILE allows following placeholders:
     %% literal '%'
     %v version (eg. "3.6.3-0")
+@@ -697,7 +697,7 @@ typedef unsigned char uchar;
+ 
+ /* TEMPORARY - MAKE UNCONDITIONAL BEFORE RELEASE */
+ /* undef this to check if sandbox breaks something */
+-#define NHL_SANDBOX
++/* #define NHL_SANDBOX */
+ 
+ /* End of Section 4 */
+ 

@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	ratmen
 PORTVERSION=	2.2.3
 PORTREVISION=	1

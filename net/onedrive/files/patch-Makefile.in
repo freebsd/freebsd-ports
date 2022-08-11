@@ -1,4 +1,4 @@
---- Makefile.in.orig	2021-02-19 08:37:34 UTC
+--- Makefile.in.orig	2022-06-02 08:24:26 UTC
 +++ Makefile.in
 @@ -25,6 +25,7 @@ systemdsystemunitdir = @systemdsystemunitdir@
  curl_LIBS = @curl_LIBS@
@@ -25,7 +25,7 @@
  	src/itemdb.d \
  	src/log.d \
  	src/main.d \
-@@ -102,14 +104,15 @@ onedrive: $(SOURCES)
+@@ -103,14 +105,15 @@ onedrive: $(SOURCES)
  	else \
  		echo $(version) > version ; \
  	fi
@@ -34,10 +34,10 @@
  
  install: all
 -	$(INSTALL) -D onedrive $(DESTDIR)$(bindir)/onedrive
--	$(INSTALL) -D onedrive.1 $(DESTDIR)$(mandir)/man1/onedrive.1
+-	$(INSTALL) -D -m 644 onedrive.1 $(DESTDIR)$(mandir)/man1/onedrive.1
 -	$(INSTALL) -D -m 644 contrib/logrotate/onedrive.logrotate $(DESTDIR)$(sysconfdir)/logrotate.d/onedrive
 +	$(INSTALL) -s onedrive $(DESTDIR)$(bindir)/onedrive
-+	$(INSTALL) onedrive.1 $(DESTDIR)$(mandir)/man1/onedrive.1
++	$(INSTALL) -m 644 onedrive.1 $(DESTDIR)$(mandir)/man1/onedrive.1
 +	mkdir -p $(DESTDIR)$(sysconfdir)/logrotate.d
 +	$(INSTALL) -m 644 contrib/logrotate/onedrive.logrotate $(DESTDIR)$(sysconfdir)/logrotate.d/onedrive
  	mkdir -p $(DESTDIR)$(docdir)
@@ -46,8 +46,8 @@
  ifeq ($(HAVE_SYSTEMD),yes)
  	$(INSTALL) -d -m 0755 $(DESTDIR)$(systemduserunitdir) $(DESTDIR)$(systemdsystemunitdir)
  ifeq ($(RHEL),1)
-@@ -126,9 +129,12 @@ ifeq ($(RHEL_VERSION),6)
- endif	
+@@ -127,9 +130,12 @@ ifeq ($(RHEL_VERSION),6)
+ endif
  endif
  ifeq ($(COMPLETIONS),yes)
 -	$(INSTALL) -D -m 644 contrib/completions/complete.zsh $(DESTDIR)$(ZSH_COMPLETION_DIR)/_onedrive

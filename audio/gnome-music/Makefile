@@ -1,10 +1,8 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-music
-PORTVERSION=	42.0
+PORTVERSION=	42.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME music playing application
@@ -26,11 +24,11 @@ RUN_DEPENDS=	grilo-plugins>0:net/grilo-plugins
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gnome localbase meson pkgconfig \
+USES=		desktop-file-utils gettext gnome gstreamer localbase meson pkgconfig \
 		python:3.4+ shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo gtk40 introspection pygobject3
-USE_GSTREAMER1=	mpg123 ogg
+USE_GSTREAMER=	mpg123 ogg
 SHEBANG_FILES=	gnome-music.in
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 

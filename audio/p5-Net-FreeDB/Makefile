@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	Net-FreeDB
 PORTVERSION=	0.10
 PORTREVISION=	1

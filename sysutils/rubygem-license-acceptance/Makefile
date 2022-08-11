@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	license-acceptance
 PORTVERSION=	2.1.13
 CATEGORIES=	sysutils rubygems

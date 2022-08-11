@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	phpdoc
 PORTVERSION=	20120214
 CATEGORIES=	devel www pear

@@ -1,32 +1,15 @@
 - Detect system shaderc on BSDs
-- Add missing glslang dependencies for shaderc_combined
 
---- cargo-crates/shaderc-sys-0.6.3/build/build.rs.orig
-+++ cargo-crates/shaderc-sys-0.6.3/build/build.rs
-@@ -224,7 +224,7 @@ fn main() {
+--- cargo-crates/shaderc-sys-0.8.0/build/build.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/shaderc-sys-0.8.0/build/build.rs
+@@ -287,10 +287,13 @@ fn main() {
              }
          } {
              match (target_os.as_str(), target_env.as_str()) {
 -                ("linux", _) => {
 +                ("linux", _) | ("dragonfly", _) | ("freebsd", _) | ("netbsd", _) | ("openbsd", _) => {
                      println!("cargo:rustc-link-search=native={}", search_dir_str);
- 
-                     // Libraries from the SPIRV-Tools project
-@@ -238,6 +238,10 @@ fn main() {
-                         (Some(spirv_tools), Some(spirv_tools_opt), Some(spirv), Some(glslang)) => {
-                             println!("cargo:warning=Found and linking system installed Glslang and SPIRV-Tools libraries.");
-                             println!("cargo:rustc-link-lib={}=glslang", glslang);
-+                            println!("cargo:rustc-link-lib={}=MachineIndependent", glslang);
-+                            println!("cargo:rustc-link-lib={}=GenericCodeGen", glslang);
-+                            println!("cargo:rustc-link-lib={}=OSDependent", glslang);
-+                            println!("cargo:rustc-link-lib={}=OGLCompiler", glslang);
-                             println!("cargo:rustc-link-lib={}=SPIRV", spirv);
-                             println!("cargo:rustc-link-lib={}=SPIRV-Tools", spirv_tools);
-                             println!("cargo:rustc-link-lib={}=SPIRV-Tools-opt", spirv_tools_opt);
-@@ -251,7 +255,10 @@ fn main() {
-                         }
-                     }
-                     println!("cargo:rustc-link-lib={}={}", kind, lib_name);
+                     println!("cargo:rustc-link-lib={}={}", lib_kind, lib_name);
 -                    println!("cargo:rustc-link-lib=dylib=stdc++");
 +                    println!("cargo:rustc-link-lib=dylib={}", match target_os.as_str() {
 +                        "freebsd" | "openbsd" => "c++",
@@ -35,7 +18,7 @@
                      return;
                  }
                  ("windows", "msvc") => {
-@@ -326,8 +333,8 @@ fn emit_std_cpp_link() {
+@@ -373,8 +376,8 @@ fn emit_std_cpp_link() {
      let target_env = env::var("CARGO_CFG_TARGET_ENV").unwrap();
  
      match (target_os.as_str(), target_env.as_str()) {

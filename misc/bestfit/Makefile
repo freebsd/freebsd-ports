@@ -1,5 +1,3 @@
-# Created by: Steven Enderle <enderle@mdn.de>
-
 PORTNAME=	bestfit
 PORTVERSION=	0.2.0
 CATEGORIES=	misc

@@ -1,2 +1,3 @@
-SHA256 (hiredis-0.2.0.tar.gz) = ca958e13128e49674aa4a96f02746f5de5973f39b57297b84d59fd44d314d5b5
-SIZE (hiredis-0.2.0.tar.gz) = 46113
+TIMESTAMP = 1651161094
+SHA256 (hiredis-2.0.0.tar.gz) = 81d6d8e39695f2c37954d1011c0480ef7cf444d4e3ae24bc5e89ee5de360139a
+SIZE (hiredis-2.0.0.tar.gz) = 75807

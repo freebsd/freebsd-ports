@@ -1,7 +1,6 @@
-# Created by: Goran Tal
-
 PORTNAME=	dico
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	net textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu-

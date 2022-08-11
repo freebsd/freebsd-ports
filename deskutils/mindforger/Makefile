@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	mindforger
 PORTVERSION=	1.54.0
 CATEGORIES=	deskutils

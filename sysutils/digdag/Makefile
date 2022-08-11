@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	digdag
 DISTVERSION=	0.10.4
 PORTREVISION=	1

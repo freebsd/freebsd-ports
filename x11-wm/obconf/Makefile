@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	obconf
 PORTVERSION=	2.0.4
 PORTREVISION=	4

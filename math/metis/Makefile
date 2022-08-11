@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <giffunip@asme.org>
-
 PORTNAME=	metis
 PORTVERSION=	5.1.0
 PORTREVISION=	9

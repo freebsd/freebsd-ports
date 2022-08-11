@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	scanmem
 PORTVERSION=	0.17
 DISTVERSIONPREFIX=	v

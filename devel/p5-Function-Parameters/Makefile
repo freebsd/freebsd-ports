@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Function-Parameters
 PORTVERSION=	2.001003
 CATEGORIES=	devel perl5

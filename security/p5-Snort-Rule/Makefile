@@ -1,5 +1,3 @@
-# Created by: Paul Schmehl <pauls@utdallas.edu>
-
 PORTNAME=	Snort-Rule
 PORTVERSION=	1.07
 PORTREVISION=	1

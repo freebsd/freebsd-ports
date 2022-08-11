@@ -1,5 +1,6 @@
     COMMENT = Domain Name Service tools
 
+    SUBDIR += acme-dns
     SUBDIR += adns
     SUBDIR += adsuck
     SUBDIR += amass
@@ -69,7 +70,6 @@
     SUBDIR += dsp
     SUBDIR += dynip
     SUBDIR += encrypted-dns-server
-    SUBDIR += erlang-idna
     SUBDIR += fastresolve
     SUBDIR += firedns
     SUBDIR += flamethrower
@@ -244,6 +244,7 @@
     SUBDIR += whoseip
     SUBDIR += wrapsrv
     SUBDIR += yadifa
+    SUBDIR += yandex-ddns
     SUBDIR += zkt
     SUBDIR += zonenotify
 

@@ -1,5 +1,3 @@
-# Created by: pauls
-
 PORTNAME=	afterglow
 PORTVERSION=	1.6.2
 PORTREVISION=	2

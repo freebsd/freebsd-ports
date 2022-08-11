@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libntlm
 PORTVERSION=	1.6
 CATEGORIES=	security

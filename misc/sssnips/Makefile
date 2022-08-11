@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	sssnips
 PORTVERSION=	0.05
 CATEGORIES=	misc

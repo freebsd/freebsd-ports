@@ -1,5 +1,3 @@
-# Created by: jessekempf@gmail.com
-
 PORTNAME=	daemon
 PORTVERSION=	2.3.0
 CATEGORIES=	devel python

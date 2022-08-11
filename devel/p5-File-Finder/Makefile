@@ -1,5 +1,3 @@
-# Created by: lth@FreeBSD.org
-
 PORTNAME=	File-Finder
 PORTVERSION=	0.53
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net> et al
-
 PORTNAME=	wmtimer
 PORTVERSION=	2.92
 PORTREVISION=	11

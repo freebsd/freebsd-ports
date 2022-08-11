@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	RcppEigen
 PORTVERSION=	0.3.3.9.2
 CATEGORIES=	math

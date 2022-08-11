@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	libbraiding
 PORTVERSION=	1.1
 CATEGORIES=	math

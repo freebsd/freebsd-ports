@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <babak@farrokhi.net>
-
 PORTNAME=	farsifonts
 PORTVERSION=	0.4
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Patrick Dung (patrick_dkt@yahoo.com.hk)
-
 PORTNAME=	pdftk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.2

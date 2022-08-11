@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	File-PathConvert
 PORTVERSION=	0.9
 PORTREVISION=	1

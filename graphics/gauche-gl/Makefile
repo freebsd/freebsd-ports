@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	gl
 PORTVERSION=	0.6
 PORTREVISION=	5

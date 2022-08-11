@@ -1,3 +1,3 @@
-TIMESTAMP = 1646057966
-SHA256 (jupyter_server_mathjax-0.2.5.tar.gz) = 64d96c8e6dfe6edba737902b2dc3a2dc058f17516776c25f4d30ca24617ee7b3
-SIZE (jupyter_server_mathjax-0.2.5.tar.gz) = 2634856
+TIMESTAMP = 1657835435
+SHA256 (jupyter_server_mathjax-0.2.6.tar.gz) = bb1e6b6dc0686c1fe386a22b5886163db548893a99c2810c36399e9c4ca23943
+SIZE (jupyter_server_mathjax-0.2.6.tar.gz) = 2648665

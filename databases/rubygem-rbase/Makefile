@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	rbase
 PORTVERSION=	0.1.3
 CATEGORIES=	databases rubygems

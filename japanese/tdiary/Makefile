@@ -1,5 +1,3 @@
-# Created by: Fumihiko Kimura <jfkimura@yahoo.co.jp>
-
 CATEGORIES=	japanese www ruby
 
 MAINTAINER=	tota@FreeBSD.org

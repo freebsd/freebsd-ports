@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-
 PORTNAME=	ezmlm
 PORTVERSION=	0.53
 PORTREVISION=	1

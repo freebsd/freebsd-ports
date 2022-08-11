@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pylast
 PORTVERSION=	5.0.0
 CATEGORIES=	audio python

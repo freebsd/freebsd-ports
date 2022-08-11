@@ -1,5 +1,6 @@
 PORTNAME=	pytest
 PORTVERSION=	4.6.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atomicwrites>=1.0:devel/py-atomicwrites@${PY
 		${PYTHON_PKGNAMEPREFIX}attrs>=17.4.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>=4.0.0:devel/py-more-itertools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pluggy>=0.12<1.0:devel/py-pluggy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pluggy0>=0.12<1.0:devel/py-pluggy0@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}py>=1.5.0:devel/py-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wcwidth>=0:devel/py-wcwidth@${PY_FLAVOR}

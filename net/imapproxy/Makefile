@@ -1,5 +1,3 @@
-# Created by: Lasse L. Johnsen (lasse@freebsdcluster.org)
-
 PORTNAME=	imapproxy
 PORTVERSION=	1.0
 PORTREVISION=	1

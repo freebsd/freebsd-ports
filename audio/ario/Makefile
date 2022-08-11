@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	ario
 PORTVERSION=	1.6
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: minoura@netbsd.org
-
 PORTNAME=	xcruiser
 PORTVERSION=	0.30
 PORTREVISION=	3

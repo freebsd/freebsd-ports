@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	ucommon
 PORTVERSION=	7.0.0
 PORTREVISION=	5

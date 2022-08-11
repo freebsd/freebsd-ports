@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	CGI-XMLApplication
 PORTVERSION=	1.1.5
 CATEGORIES=	www perl5

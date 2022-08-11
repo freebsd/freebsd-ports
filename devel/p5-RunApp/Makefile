@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	RunApp
 PORTVERSION=	0.13
 PORTREVISION=	1

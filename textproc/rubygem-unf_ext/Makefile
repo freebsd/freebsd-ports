@@ -1,5 +1,3 @@
-# Created by: MIHIRA Yoshiro <sanpei@FreeBSD.org>
-
 PORTNAME=	unf_ext
 PORTVERSION=	0.0.7.7
 CATEGORIES=	textproc rubygems

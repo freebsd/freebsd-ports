@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	tcpxtract
 PORTVERSION=	1.0.1
 CATEGORIES=	net

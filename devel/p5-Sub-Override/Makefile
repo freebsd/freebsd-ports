@@ -1,5 +1,3 @@
-# Created by: Lars Eggert <lars.eggert@gmx.net>
-
 PORTNAME=	Sub-Override
 PORTVERSION=	0.09
 PORTREVISION=	1

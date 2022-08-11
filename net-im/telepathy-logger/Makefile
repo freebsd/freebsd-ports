@@ -1,6 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-#    $MCom: ports/trunk/net-im/telepathy-logger/Makefile 19955 2014-10-15 10:15:00Z gusi $
-
 PORTNAME=	telepathy-logger
 PORTVERSION=	0.8.2
 PORTREVISION=	3

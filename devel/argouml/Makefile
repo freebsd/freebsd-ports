@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	argouml
 PORTVERSION=	0.34
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: <dmagda+libsamplerate@ee.ryerson.ca>
-
 PORTNAME=	libsamplerate
 DISTVERSION=	0.2.2
 CATEGORIES=	audio

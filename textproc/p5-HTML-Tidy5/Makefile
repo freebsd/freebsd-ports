@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	HTML-Tidy5
 PORTVERSION=	1.06
 CATEGORIES=	textproc perl5

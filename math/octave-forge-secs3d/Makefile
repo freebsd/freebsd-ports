@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-
 PORTNAME=	octave-forge-secs3d
 PORTVERSION=	0.0.1
 PORTREVISION=	23

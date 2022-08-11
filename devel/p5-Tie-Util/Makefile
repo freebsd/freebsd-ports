@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Tie-Util
 PORTVERSION=	0.04
 CATEGORIES=	devel perl5

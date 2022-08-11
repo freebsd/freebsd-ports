@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	WWW-DHL
 PORTVERSION=	0.03
 PORTREVISION=	2

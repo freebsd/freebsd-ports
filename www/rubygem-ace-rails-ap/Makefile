@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	ace-rails-ap
 PORTVERSION=	4.1.5
 CATEGORIES=	www rubygems

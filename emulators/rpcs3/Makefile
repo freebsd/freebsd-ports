@@ -1,8 +1,8 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.21-13526 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-ge0d3a3b0e
-CATEGORIES=	emulators
+DISTVERSION=	0.0.23-14034 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gc51d3b5465
+CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
@@ -12,7 +12,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_ISCL=	${WRKSRC_cubeb}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
-BUILD_DEPENDS=	flatbuffers>0:devel/flatbuffers
+BUILD_DEPENDS=	flatc:devel/flatbuffers
 LIB_DEPENDS=	libxxhash.so:devel/xxhash \
 		libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
@@ -24,16 +24,16 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
-GH_TUPLE=	RPCS3:hidapi:hidapi-0.11.2-4-g6cf1336:hidapi/3rdparty/hidapi/hidapi \
-		RPCS3:llvm-mirror:509d31ad8967:llvm/llvm \
+GH_TUPLE=	RPCS3:hidapi:hidapi-0.12.0-2-gc2aa9dd:hidapi/3rdparty/hidapi/hidapi \
+		RPCS3:llvm-mirror:5521155be5c8:llvm/llvm \
 		RPCS3:soundtouch:2.3.1-16-g83cfba6:soundtouch/3rdparty/SoundTouch/soundtouch \
-		asmjit:asmjit:fc2a5d8:asmjit/3rdparty/asmjit/asmjit \
+		asmjit:asmjit:06d0bad:asmjit/3rdparty/asmjit/asmjit \
 		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
-		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
-		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
-		KhronosGroup:glslang:11.9.0:glslang/3rdparty/glslang/glslang \
+		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-152-g4995a2f:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
+		KhronosGroup:SPIRV-Tools:v2022.2:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
+		KhronosGroup:glslang:11.10.0:glslang/3rdparty/glslang/glslang \
 		kinetiknz:cubeb:cubeb-0.2-1381-g708f52c:cubeb/3rdparty/cubeb/cubeb \
-		wolfSSL:wolfssl:v5.2.0-stable-245-gdcaa218ed:wolfssl/3rdparty/wolfssl/wolfssl
+		wolfSSL:wolfssl:v5.4.0-stable:wolfssl/3rdparty/wolfssl/wolfssl
 
 USES=		cmake compiler:c++17-lang elfctl gl iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig python:3.4+,build qt:5 xorg

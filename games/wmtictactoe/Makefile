@@ -1,5 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-
 PORTNAME=	wmtictactoe
 DISTVERSION=	1.1-1
 CATEGORIES=	games windowmaker afterstep

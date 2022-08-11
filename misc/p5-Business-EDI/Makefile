@@ -1,5 +1,3 @@
-# Created by: Martin Neubauer <m.ne@gmx.net>
-
 PORTNAME=	Business-EDI
 PORTVERSION=	0.05
 PORTREVISION=	1

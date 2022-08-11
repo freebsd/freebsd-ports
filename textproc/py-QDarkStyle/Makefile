@@ -1,7 +1,5 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	QDarkStyle
-PORTVERSION=	3.0.3
+PORTVERSION=	3.1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

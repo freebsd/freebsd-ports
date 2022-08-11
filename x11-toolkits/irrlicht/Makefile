@@ -1,5 +1,3 @@
-# Created by: Simon Barner <barner@gmx.de>
-
 PORTNAME=	irrlicht
 PORTVERSION=	1.8.5
 CATEGORIES=	x11-toolkits graphics

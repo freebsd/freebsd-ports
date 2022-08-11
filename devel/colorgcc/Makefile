@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbrabez@gmail.com>
-
 PORTNAME=	colorgcc
 PORTVERSION=	1.4.5
 CATEGORIES=	devel misc

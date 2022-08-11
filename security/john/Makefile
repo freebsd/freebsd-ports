@@ -1,5 +1,3 @@
-# Created by: David O'Brien <obrien@FreeBSD.org>
-
 PORTNAME=	john
 # NB: starting from the next version, community-enhanced (jumbo) patch
 # should be offered as an option (suggested by Solar Designer himself).
@@ -47,12 +45,6 @@ OPENCL_USES=		perl5
 OPENCL_USE=		PERL5=build
 
 OPENMP_CONFIGURE_OFF=	--disable-openmp
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
-CONFIGURE_ARGS+=	--disable-simd
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/params.h

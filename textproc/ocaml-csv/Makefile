@@ -1,5 +1,3 @@
-# Created by: Jaap Boender <jaapb@kerguelen.org>
-
 PORTNAME=	ocaml-csv
 PORTVERSION=	1.2.1
 PORTREVISION=	2

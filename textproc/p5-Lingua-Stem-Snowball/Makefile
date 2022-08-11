@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Lingua-Stem-Snowball
 PORTVERSION=	0.952
 PORTREVISION=	2

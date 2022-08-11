@@ -1,5 +1,3 @@
-# Created by: jhs@berklix.com / asami (original)
-
 PORTNAME=	hexcalc
 PORTVERSION=	1.11
 PORTREVISION=	3

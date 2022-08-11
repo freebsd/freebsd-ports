@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	cryptofs
 PORTVERSION=	0.6.0
 PORTREVISION=	7

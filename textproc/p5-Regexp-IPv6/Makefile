@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Regexp-IPv6
 PORTVERSION=	0.03
 PORTREVISION=	1

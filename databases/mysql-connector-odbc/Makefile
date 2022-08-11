@@ -1,5 +1,3 @@
-# Created by: sergey@migsoft.com.ua
-
 PORTNAME=	mysql-connector-odbc
 PORTVERSION=	5.3.13
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	kaputa
 DISTVERSION=	1.000
 PORTREVISION=	3

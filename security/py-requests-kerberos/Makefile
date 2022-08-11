@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	requests-kerberos
 PORTVERSION=	0.14.0
 CATEGORIES=	security python

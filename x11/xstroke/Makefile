@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	xstroke
 PORTVERSION=	0.5.12
 PORTREVISION=	8

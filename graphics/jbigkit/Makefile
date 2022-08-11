@@ -1,5 +1,3 @@
-# Created by: mi
-
 PORTNAME=	jbigkit
 PORTVERSION=	2.1
 PORTREVISION=	1

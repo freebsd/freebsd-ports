@@ -1,5 +1,3 @@
-# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-
 PORTNAME=	check-quota
 PORTVERSION=	2.2
 PORTREVISION=	3

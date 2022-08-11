@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pylons-sphinx-themes
 PORTVERSION=	1.0.13
 CATEGORIES=	textproc python

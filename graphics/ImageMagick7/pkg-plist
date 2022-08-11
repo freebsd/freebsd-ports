@@ -203,8 +203,6 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/debug.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/dib.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/dib.so
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/ftxt.la
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/ftxt.so
 %%DJVU%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/djvu.la
 %%DJVU%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/djvu.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/dng.la
@@ -227,6 +225,8 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fl32.so
 %%FPX%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fpx.la
 %%FPX%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fpx.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/ftxt.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/ftxt.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/gif.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/gif.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/gradient.la
@@ -261,10 +261,10 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%JPEG2000%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/jp2.so
 %%JPEG%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/jpeg.la
 %%JPEG%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/jpeg.so
-%%JXL%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/jxl.la
-%%JXL%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/jxl.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/json.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/json.so
+%%JXL%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/jxl.la
+%%JXL%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/jxl.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/kernel.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/kernel.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/label.la

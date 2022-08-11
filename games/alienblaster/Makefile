@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	alienblaster
 PORTVERSION=	1.1.0
 PORTREVISION=	7

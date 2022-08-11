@@ -1,7 +1,6 @@
-# Created by: Yuri Victorovich <yuri@FreeBSD.org>
-
 PORTNAME=	SoPlex
-DISTVERSION=	5.0.2
+DISTVERSION=	6.0.0
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://soplex.zib.de/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -17,7 +16,7 @@ LICENSE_PERMS=	no-dist-mirror no-pkg-mirror no-auto-accept
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libgmp.so:math/gmp
 
-USES=		cmake compiler:c++11-lang tar:tgz
+USES=		cmake compiler:c++14-lang tar:tgz
 USE_LDCONFIG=	yes
 
 TEST_TARGET=	test

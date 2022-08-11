@@ -1,5 +1,3 @@
-# Created by: lukin
-
 PORTNAME=	filerunner
 PORTVERSION=	19.07.08.17
 CATEGORIES=	x11-fm tk

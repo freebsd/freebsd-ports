@@ -1,0 +1,34 @@
+[
+{ type: install
+  message: <<EOM
+In order to use `ykman otp` commands, you need to make sure the uhid(4)
+driver attaches to the USB device:
+
+  # usbconfig ugenX.Y add_quirk UQ_KBD_IGNORE
+  # usbconfig ugenX.Y reset
+
+The correct device to operate on (ugenX.Y) can be determined using
+`usbconfig list`.
+
+When using FreeBSD 13 or higher, you can switch to the more modern
+hidraw(4) driver. This allows YubiKey Manager to access OTP HID in a
+non-exclusive way, so that the key will still function as a USB keyboard:
+
+  # sysrc kld_list+="hidraw hkbd"
+  # cat >>/boot/loader.conf<<EOF
+  hw.usb.usbhid.enable="1"
+  hw.usb.quirk.0="0x1050 0x0010 0 0xffff UQ_KBD_IGNORE"  # YKS_OTP
+  hw.usb.quirk.1="0x1050 0x0110 0 0xffff UQ_KBD_IGNORE"  # NEO_OTP
+  hw.usb.quirk.2="0x1050 0x0111 0 0xffff UQ_KBD_IGNORE"  # NEO_OTP_CCID
+  hw.usb.quirk.3="0x1050 0x0114 0 0xffff UQ_KBD_IGNORE"  # NEO_OTP_FIDO
+  hw.usb.quirk.4="0x1050 0x0116 0 0xffff UQ_KBD_IGNORE"  # NEO_OTP_FIDO_CCID
+  hw.usb.quirk.5="0x1050 0x0401 0 0xffff UQ_KBD_IGNORE"  # YK4_OTP
+  hw.usb.quirk.6="0x1050 0x0403 0 0xffff UQ_KBD_IGNORE"  # YK4_OTP_FIDO
+  hw.usb.quirk.7="0x1050 0x0405 0 0xffff UQ_KBD_IGNORE"  # YK4_OTP_CCID
+  hw.usb.quirk.8="0x1050 0x0407 0 0xffff UQ_KBD_IGNORE"  # YK4_OTP_FIDO_CCID
+  hw.usb.quirk.9="0x1050 0x0410 0 0xffff UQ_KBD_IGNORE"  # YKP_OTP_FIDO
+  EOF
+  # reboot
+EOM
+}
+]

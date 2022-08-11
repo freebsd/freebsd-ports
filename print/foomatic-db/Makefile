@@ -1,5 +1,3 @@
-# Created by: Dima Dorfman <dima@unixfreak.org>
-
 PORTNAME=	foomatic-db
 PORTVERSION=	20220113
 CATEGORIES=	print

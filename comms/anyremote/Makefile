@@ -1,5 +1,3 @@
-# Created by: Alex Samorukov <samm@freebsd.org>
-
 PORTNAME=	anyremote
 PORTVERSION=	6.7.3
 CATEGORIES=	comms

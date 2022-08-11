@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	dact
 PORTVERSION=	0.8.42
 PORTREVISION=	2

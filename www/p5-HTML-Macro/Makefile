@@ -1,5 +1,3 @@
-# Created by: Groovis <groovis@groovis.net>
-
 PORTNAME=	HTML-Macro
 PORTVERSION=	1.30
 CATEGORIES=	www perl5

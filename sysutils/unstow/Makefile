@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	unstow
 PORTVERSION=	0.1.1
 CATEGORIES=	sysutils

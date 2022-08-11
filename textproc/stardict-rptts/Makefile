@@ -1,5 +1,3 @@
-# Created by: Shen Chun-Hsing <statue@freebsd.netlab.cse.yzu.edu.tw>
-
 PORTNAME=	stardict-rptts
 PORTVERSION=	2.1.0
 CATEGORIES=	textproc

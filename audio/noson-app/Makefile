@@ -1,5 +1,5 @@
 PORTNAME=	noson-app
-DISTVERSION=	5.2.1
+DISTVERSION=	5.2.2
 CATEGORIES=	audio net
 
 MAINTAINER=	tcberner@FreeBSD.org

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	srecord
 PORTVERSION=	1.64
 PORTREVISION=	17

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure-storage-blob
 PORTVERSION=	2.0.3
 CATEGORIES=	devel rubygems

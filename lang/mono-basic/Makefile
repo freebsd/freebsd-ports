@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME=	mono-basic
 PORTVERSION=	4.7
 CATEGORIES=	lang

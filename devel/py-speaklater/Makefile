@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-
 PORTNAME=	speaklater
 PORTVERSION=	1.3
 PORTREVISION=	1

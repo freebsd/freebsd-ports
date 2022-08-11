@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	Gzip-Faster
 PORTVERSION=	0.21
 CATEGORIES=	archivers perl5

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Structures_DataGrid_DataSource_Array
 PORTVERSION=	0.1.4
 CATEGORIES=	databases www pear

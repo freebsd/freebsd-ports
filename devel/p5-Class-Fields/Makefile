@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski
-
 PORTNAME=	Class-Fields
 PORTVERSION=	0.204
 CATEGORIES=	devel perl5

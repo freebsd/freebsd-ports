@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-lexmodelbuildingservice
 PORTVERSION=	1.57.0
 CATEGORIES=	devel rubygems

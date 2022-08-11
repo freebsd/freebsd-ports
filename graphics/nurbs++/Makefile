@@ -1,5 +1,3 @@
-# Created by: R Joseph Wright <rjoseph@mammalia.org>
-
 PORTNAME=	nurbs++
 PORTVERSION=	3.0.11
 PORTREVISION=	9

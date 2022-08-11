@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	sspir
 PORTVERSION=	0.2.10
 PORTREVISION=	8

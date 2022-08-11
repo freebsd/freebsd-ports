@@ -1,9 +1,9 @@
-This module provides regular expressions according to `RFC 3986 "Uniform
-Resource Identifier (URI): Generic Syntax" and `RFC 3987 "Internationalized
-Resource Identifiers (IRIs)" and utilities for composition and relative
-resolution of references.
+This module provides regular expressions according to RFC 3986 "Uniform Resource
+Identifier (URI): Generic Syntax" [1] and RFC 3987 "Internationalized Resource
+Identifiers (IRIs)" [2], and utilities for composition and relative resolution
+of references.
 
- * http://tools.ietf.org/html/rfc3986
- * http://tools.ietf.org/html/rfc3987
+[1] https://datatracker.ietf.org/doc/html/rfc3986
+[2] https://datatracker.ietf.org/doc/html/rfc3987
 
-WWW: https://pypi.org/project/rfc3987/
+WWW: https://github.com/dgerber/rfc3987

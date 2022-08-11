@@ -1,5 +1,3 @@
-# Created by: Alex Deiter <Alex.Deiter@Gmail.COM>
-
 PORTNAME=	WWW-Mechanize-TreeBuilder
 PORTVERSION=	1.20000
 CATEGORIES=	www perl5

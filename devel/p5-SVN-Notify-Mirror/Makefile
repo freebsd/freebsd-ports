@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	SVN-Notify-Mirror
 PORTVERSION=	0.040
 PORTREVISION=	1

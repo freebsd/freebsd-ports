@@ -1,8 +1,7 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	freefem++
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.11
+PORTREVISION=	2
 CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +27,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5		\
 		libcmumps.so:math/mumps		\
 		libnlopt.so:math/nlopt		\
 		libsuperlu.so:math/superlu	\
-		libsz.so:science/szip
+		libsz.so:science/libaec
 RUN_DEPENDS=	bash:shells/bash		\
 		pipe:misc/pipe
 

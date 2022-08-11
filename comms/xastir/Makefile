@@ -1,5 +1,3 @@
-# Created by: Carl Makin <carl@stagecraft.cx>
-
 PORTNAME=	xastir
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	2.1.8

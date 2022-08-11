@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	with_env
 PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems

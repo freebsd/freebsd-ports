@@ -1,5 +1,3 @@
-# Created by: Joerg Wunsch <joerg@FreeBSD.org>
-
 PORTNAME=	avr-libc
 PORTVERSION=	2.0.0
 PORTREVISION=	4

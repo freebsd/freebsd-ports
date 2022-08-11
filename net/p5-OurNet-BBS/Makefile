@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	OurNet-BBS
 PORTVERSION=	1.66
 PORTREVISION=	6

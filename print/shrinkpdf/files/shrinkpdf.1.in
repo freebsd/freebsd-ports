@@ -24,7 +24,7 @@
 .\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 .\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 .\"
-.Dd December 21, 2019
+.Dd July 13, 2022
 .Dt SHRINKPDF 1
 .Os
 .Sh NAME
@@ -32,9 +32,10 @@
 .Nd A simple wrapper around Ghostscript to reduce the file size of PDFs
 .Sh SYNOPSIS
 .Nm
+.Op Fl gh
+.Op Fl o Ar outfile
+.Op Fl r Ar res
 .Ar infile
-.Op outfile
-.Op resolution_in_dpi
 .Sh DESCRIPTION
 Inspired by some code found in an OpenOffice Python script,
 .Nm
@@ -42,12 +43,17 @@ feeds a PDF through Ghostscript, which performs lossy recompression
 by such methods as downsampling the images to a lower resolution.
 The result should be (but not always is) a much smaller file.
 .Pp
-If invoked without
-.Op outfile ,
-the shrunk file is written to standard output.
-If invoked without
-.Op resolution_in_dpi ,
-a default resolution of 72 dpi is used.
+The following options are available:
+.Bl -tag -width Fl
+.It Fl g
+Enable grayscale conversion which can further reduce output size.
+.It Fl h
+Show help screen.
+.It Fl o Ar outfile
+Output file, default is standard output.
+.It Fl r Ar res
+Resolution in DPI, default is 72.
+.El
 .Pp
 If both
 .Op infile
@@ -61,11 +67,11 @@ Reduce PDF resolution to 72 dpi:
 .Dl $ shrinkpdf myfile.pdf >myfile-72dpi.pdf
 .Pp
 Reduce PDF resolution to 300 dpi:
-.Dl $ shrinkpdf myfile.pdf - 300 >myfile-300dpi.pdf
+.Dl $ shrinkpdf -r 300 myfile.pdf >myfile-300dpi.pdf
 .Pp
 Reduce PDF resolution to 150 dpi, specify
 .Op outfile :
-.Dl $ shrinkpdf myfile.pdf myfile-150dpi.pdf 150
+.Dl $ shrinkpdf -o myfile-150dpi.pdf -r 150 myfile.pdf
 .Sh SEE ALSO
 .Xr gs 1
 .Sh AUTHORS

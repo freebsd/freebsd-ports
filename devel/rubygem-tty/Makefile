@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tty
 PORTVERSION=	0.10.0
 PORTREVISION=	10

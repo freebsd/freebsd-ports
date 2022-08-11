@@ -1,5 +1,3 @@
-# Created by: dikshie <dikshie@lapi.itb.ac.id>
-
 PORTNAME=	IP-Country
 PORTVERSION=	2.28
 PORTREVISION=	1
@@ -15,5 +13,7 @@ RUN_DEPENDS=	p5-Geography-Countries>=0:misc/p5-Geography-Countries
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

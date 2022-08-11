@@ -1,5 +1,5 @@
 bin/ballerburg
-man/man6/ballerburg.6.gz
+share/man/man6/ballerburg.6.gz
 share/pixmaps/ballerburg.png
 %%DATADIR%%/baller.dat
 %%DATADIR%%/baller.mus

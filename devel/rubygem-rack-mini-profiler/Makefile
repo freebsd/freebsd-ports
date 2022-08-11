@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rack-mini-profiler
 PORTVERSION=	0.10.7
 CATEGORIES=	devel rubygems

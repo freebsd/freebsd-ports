@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	runelite
 PORTVERSION=	2.2.0
 CATEGORIES=	games java

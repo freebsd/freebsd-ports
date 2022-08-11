@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	b612
 PORTVERSION=	1.008
 CATEGORIES=	x11-fonts

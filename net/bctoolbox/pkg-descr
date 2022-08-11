@@ -1,3 +1,4 @@
-Belledonne Communications utility library.
+Utilities library used by Belledonne Communications softwares like
+belle-sip, mediastreamer2 and liblinphone.
 
-WWW: https://www.linphone.org/
+WWW: https://gitlab.linphone.org/BC/public/bctoolbox

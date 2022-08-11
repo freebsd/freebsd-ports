@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	spelling
 DISTVERSION=	2.2
 CATEGORIES=	textproc

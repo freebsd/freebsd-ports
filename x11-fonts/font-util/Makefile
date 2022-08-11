@@ -1,5 +1,3 @@
-# Created by: Pawel Worach
-
 PORTNAME=	font-util
 PORTVERSION=	1.3.2
 CATEGORIES=	x11-fonts

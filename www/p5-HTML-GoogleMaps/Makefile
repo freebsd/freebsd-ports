@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	HTML-GoogleMaps
 PORTVERSION=	10
 PORTREVISION=	1

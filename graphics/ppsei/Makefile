@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@FreeBSD.org>
-
 PORTNAME=	ppsei
 PORTVERSION=	0.3
 CATEGORIES=	graphics

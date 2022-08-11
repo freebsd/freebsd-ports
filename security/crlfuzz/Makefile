@@ -1,9 +1,7 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	crlfuzz
 PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	0xdutra@gmail.com

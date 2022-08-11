@@ -1,5 +1,3 @@
-# Created by: Fukang Chen <loader@FreeBSD.org>
-
 PORTNAME=	pytest4-cache
 PORTVERSION=	1.0
 CATEGORIES=	devel python

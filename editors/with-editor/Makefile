@@ -1,5 +1,3 @@
-# Created by: KIMURA Yasuhiro <yasu@utahime.org>
-
 PORTNAME=	with-editor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.0
@@ -18,6 +16,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
 ALL_TARGET=	lisp info
+
+CONFLICTS_INSTALL=	with-editor-devel-emacs*
 
 NO_ARCH=	yes
 

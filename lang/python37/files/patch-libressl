@@ -1,0 +1,13 @@
+Fix build with LibreSSL 3.5.*
+
+--- Modules/_hashopenssl.c.orig	2022-03-16 13:27:21 UTC
++++ Modules/_hashopenssl.c
+@@ -42,7 +42,7 @@ module _hashlib
+ #define HASH_OBJ_CONSTRUCTOR 0
+ #endif
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
+ /* OpenSSL < 1.1.0 */
+ #define EVP_MD_CTX_new EVP_MD_CTX_create
+ #define EVP_MD_CTX_free EVP_MD_CTX_destroy

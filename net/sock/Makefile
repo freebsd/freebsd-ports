@@ -1,5 +1,3 @@
-# Created by: Steve Jacobson <sjac@cs.stanford.edu>
-
 PORTNAME=	sock
 PORTVERSION=	0.4.2
 CATEGORIES=	net

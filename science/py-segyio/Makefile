@@ -18,7 +18,7 @@ BUILD_DEPENDS=	cmake:devel/cmake \
 LIB_DEPENDS=	libsegyio.so:science/segyio
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++11-lang python:3.6+
+USES=		compiler:c++11-lang python:3.6+ pytest
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
@@ -31,9 +31,7 @@ post-install:
 	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 
-do-test: # tests fail: https://github.com/equinor/segyio/issues/511
-	@cd ${WRKSRC} && \
-		${PYTHON_CMD} ${PYSETUP} build_ext --inplace && \
-		${PYTHON_CMD} ${PYSETUP} test
+pre-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext --inplace
 
 .include <bsd.port.mk>

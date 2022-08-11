@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	Graphics-ColorNames-WWW
 PORTVERSION=	1.14
 CATEGORIES=	graphics perl5

@@ -1,9 +1,8 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	apib
 DISTVERSIONPREFIX=	${PORTNAME:tu}_
 DISTVERSION=	1_2_1
 DISTVERSIONSUFFIX=	_RC1
+PORTREVISION=	2
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	danfe@FreeBSD.org

@@ -1,5 +1,3 @@
-# Created by: uwe.pierau@tu-clausthal.de
-
 PORTNAME=	mysqlphp2postgres
 PORTVERSION=	0.95
 CATEGORIES=	www

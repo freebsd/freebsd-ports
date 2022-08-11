@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	open-beagle
 PORTVERSION=	3.0.3
 PORTREVISION=	1

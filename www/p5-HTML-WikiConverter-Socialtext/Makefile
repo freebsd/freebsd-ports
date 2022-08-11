@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	HTML-WikiConverter-Socialtext
 PORTVERSION=	0.03
 PORTREVISION=	1

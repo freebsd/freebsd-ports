@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	microbenchmark
 PORTREVISION=	5
 DISTVERSION=	1.4-2

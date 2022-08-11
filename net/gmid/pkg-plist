@@ -3,3 +3,4 @@ bin/gg
 bin/gmid
 man/man1/gg.1.gz
 man/man1/gmid.1.gz
+man/man5/gmid.conf.5.gz

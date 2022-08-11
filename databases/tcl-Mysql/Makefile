@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	${TCL_NODOT}-sql
 PORTVERSION=	20000114
 PORTREVISION=	7

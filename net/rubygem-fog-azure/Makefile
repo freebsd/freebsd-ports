@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	fog-azure
 PORTVERSION=	0.0.2
 PORTREVISION=	2

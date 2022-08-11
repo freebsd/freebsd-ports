@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	id3tool
 PORTVERSION=	1.2a
 CATEGORIES=	audio

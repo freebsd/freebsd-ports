@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Flickr-API
 PORTVERSION=	1.28
 CATEGORIES=	www perl5

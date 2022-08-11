@@ -1,5 +1,3 @@
-# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-
 PORTNAME=	kmfl-sil-ezra
 PORTVERSION=	2.4
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: jasone
-
 PORTNAME=	onyx
 PORTVERSION=	5.1.2
 PORTREVISION=	6

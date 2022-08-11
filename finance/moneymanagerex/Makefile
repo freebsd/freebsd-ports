@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	mmex
 PORTVERSION=	1.2.7
 DISTVERSIONPREFIX=	v

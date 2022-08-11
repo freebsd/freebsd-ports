@@ -1,5 +1,3 @@
-# Created by: Dan Siercks <dsiercks@uwm.edu>
-
 PORTNAME=	trimmomatic
 DISTVERSION=	0.39
 CATEGORIES=	biology java

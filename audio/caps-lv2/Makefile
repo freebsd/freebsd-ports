@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	caps-lv2
 PORTVERSION=	g20200529
 CATEGORIES=	audio

@@ -1,5 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	data
 PORTVERSION=	2.5
 PORTREVISION=	1

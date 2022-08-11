@@ -1,5 +1,3 @@
-# Created by: Yonatan <onatan@gmail.com>
-
 PORTNAME=	foldingathome
 DISTVERSION=	7.6.21
 CATEGORIES=	biology linux

@@ -1,5 +1,3 @@
-# Created by: Erik Olson <erikolson@olsonexpress.com>
-
 PORTNAME=	nwndata
 PORTVERSION=	${NWNVER}
 PORTREVISION=	${NWNREV}

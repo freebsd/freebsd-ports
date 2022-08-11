@@ -1,5 +1,3 @@
-# Created by: Mike Meyer <mwm@mired.org>
-
 PORTNAME=	mixer
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

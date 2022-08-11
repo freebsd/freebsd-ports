@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	tidy-html5
 PORTVERSION=	5.8.0
 PORTREVISION=	2

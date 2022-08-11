@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	jump
 PORTVERSION=	0.5
 PORTREVISION=	2

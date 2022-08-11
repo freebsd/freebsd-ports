@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	mimalloc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.6

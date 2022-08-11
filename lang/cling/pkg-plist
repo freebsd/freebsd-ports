@@ -2903,7 +2903,7 @@ llvm%%LLVM_SUFFIX%%/lib/libclingUtils.so.5
 llvm%%LLVM_SUFFIX%%/lib/libclingUtils.so.%%LLVM_RELEASE%%
 llvm%%LLVM_SUFFIX%%/libexec/c++-analyzer
 llvm%%LLVM_SUFFIX%%/libexec/ccc-analyzer
-llvm%%LLVM_SUFFIX%%/man/man1/scan-build.1
+llvm%%LLVM_SUFFIX%%/share/man/man1/scan-build.1
 llvm%%LLVM_SUFFIX%%/share/clang/bash-autocomplete.sh
 llvm%%LLVM_SUFFIX%%/share/clang/clang-format-bbedit.applescript
 llvm%%LLVM_SUFFIX%%/share/clang/clang-format-diff.py

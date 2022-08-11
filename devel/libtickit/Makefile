@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libtickit
 PORTVERSION=	0.4.2a
 CATEGORIES=	devel

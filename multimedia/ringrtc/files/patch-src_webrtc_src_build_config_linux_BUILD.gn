@@ -1,0 +1,11 @@
+--- ../../src/webrtc/src/build/config/linux/BUILD.gn.orig	2021-10-13 07:49:03 UTC
++++ ../../src/webrtc/src/build/config/linux/BUILD.gn
+@@ -39,7 +39,7 @@ config("runtime_library") {
+ 
+   if ((!(is_chromeos_ash || is_chromeos_lacros) ||
+        default_toolchain != "//build/toolchain/cros:target") &&
+-      (!use_custom_libcxx || current_cpu == "mipsel")) {
++      (!use_custom_libcxx || current_cpu == "mipsel") && !is_bsd) {
+     libs = [ "atomic" ]
+   }
+ }

@@ -1,8 +1,6 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	mp3plot
 DISTVERSION=	0.6.0
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	audio
 MASTER_SITES=	http://p.outlyer.net/mp3plot/files/
 

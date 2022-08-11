@@ -31,6 +31,7 @@ share/icons/hicolor/128x128/apps/kubrick.png
 %%DATADIR%%/p333X6.kbk
 %%DATADIR%%/themes/default.svgz
 share/kxmlgui5/kubrick/kubrickui.rc
+share/locale/bg/LC_MESSAGES/kubrick.mo
 share/locale/bs/LC_MESSAGES/kubrick.mo
 share/locale/ca/LC_MESSAGES/kubrick.mo
 share/locale/ca@valencia/LC_MESSAGES/kubrick.mo

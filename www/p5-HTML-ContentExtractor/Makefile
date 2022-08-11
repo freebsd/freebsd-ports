@@ -1,5 +1,3 @@
-# Created by: Oleg Mamontov <oleg@mamontov.net>
-
 PORTNAME=	HTML-ContentExtractor
 PORTVERSION=	0.03
 PORTREVISION=	1

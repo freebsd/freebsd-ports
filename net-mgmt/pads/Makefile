@@ -1,5 +1,3 @@
-# Created by: Andrew Thompson <andy@fud.org.nz>
-
 PORTNAME=	pads
 PORTVERSION=	1.2
 PORTREVISION=	6

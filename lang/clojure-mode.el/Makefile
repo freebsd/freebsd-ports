@@ -1,5 +1,3 @@
-# Created by: Peter Schuller <peter.schuller@infidyne.com>
-
 PORTNAME=	clojure-mode.el
 PORTVERSION=	5.11.0
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: David Le Brun <david@dyn-ns.net>
-
 PORTNAME=	Filesys-DiskFree
 PORTVERSION=	0.06
 PORTREVISION=	2

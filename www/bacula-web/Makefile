@@ -1,8 +1,6 @@
-# Created by: Dan Langille <dan@langille.org>
-
 PORTNAME=	bacula-web
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.5.3
+DISTVERSION=	8.5.5
 PORTREVISION=	0
 CATEGORIES=	www sysutils
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}

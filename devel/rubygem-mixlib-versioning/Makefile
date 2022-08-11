@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	mixlib-versioning
 PORTVERSION=	1.2.12
 CATEGORIES=	devel rubygems

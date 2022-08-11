@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	libfpx
 DISTVERSION=	1.3.1-10
 CATEGORIES=	graphics

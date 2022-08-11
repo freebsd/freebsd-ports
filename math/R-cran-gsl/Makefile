@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	gsl
 DISTVERSION=	2.1-7.1
 PORTREVISION=	1

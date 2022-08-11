@@ -1,5 +1,3 @@
-# Created by: glarkin@
-
 PORTNAME=	SVN-Notify-Filter-AuthZMail
 PORTVERSION=	1.01
 PORTREVISION=	3

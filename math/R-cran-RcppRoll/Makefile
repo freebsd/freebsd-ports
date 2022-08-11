@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	RcppRoll
 DISTVERSION=	0.3.0
 PORTREVISION=	3

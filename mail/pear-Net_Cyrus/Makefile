@@ -1,5 +1,3 @@
-# Created by: Attila Nagy <bra@fsn.hu>
-
 PORTNAME=	Net_Cyrus
 PORTVERSION=	0.3.1
 CATEGORIES=	mail net pear

@@ -2146,8 +2146,12 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/com
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/beginner_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/deflam_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/deflam_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/image_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/image_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/record_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/record_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/universe_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/universe_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/vanilla-reader_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/vanilla-reader_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/compiled/vanilla_rkt.dep
@@ -7184,6 +7188,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/plot-lib/plot/private/no-gui/comp
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/plot-lib/plot/private/no-gui/compiled/utils_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/compiled/arrows_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/compiled/arrows_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/compiled/box-and-whisker_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/compiled/box-and-whisker_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/compiled/clip_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/compiled/clip_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/compiled/color-field_rkt.dep
@@ -8616,6 +8622,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racklog/tests/compiled/england_rk
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racklog/tests/compiled/england_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racklog/tests/compiled/fac_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racklog/tests/compiled/fac_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racklog/tests/compiled/frozen_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racklog/tests/compiled/frozen_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racklog/tests/compiled/games_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racklog/tests/compiled/games_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racklog/tests/compiled/holland_rkt.dep
@@ -10224,12 +10232,10 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/source-syntax/compiled/info_rkt.d
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/source-syntax/compiled/info_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/source-syntax/compiled/source-syntax_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/source-syntax/compiled/source-syntax_rkt.zo
-lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/srfi-doc-nonfree/srfi/scribblings/compiled/info_rkt.dep
-lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/srfi-doc-nonfree/srfi/scribblings/compiled/info_rkt.zo
-lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/srfi-doc-nonfree/srfi/scribblings/compiled/srfi-nf_scrbl.dep
-lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/srfi-doc-nonfree/srfi/scribblings/compiled/srfi-nf_scrbl.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/compiled/info_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/compiled/info_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/compiled/srfi-5-doc-free_scrbl.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/compiled/srfi-5-doc-free_scrbl.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/compiled/srfi_scrbl.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/compiled/srfi_scrbl.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/compiled/util_rkt.dep
@@ -10900,8 +10906,6 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/bas
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/base-types-extra_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/base-types_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/base-types_rkt.zo
-lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/case-lambda_rkt.dep
-lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/case-lambda_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/class-clauses_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/class-clauses_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/class-prims_rkt.dep
@@ -10918,6 +10922,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/bas
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/for-clauses_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/prims-contract_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/prims-contract_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/prims-lambda_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/prims-lambda_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/prims-struct_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/prims-struct_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/compiled/prims_rkt.dep
@@ -11414,6 +11420,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/compiled/
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/compiled/openssl_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/compiled/pict_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/compiled/pict_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/compiled/xml_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/compiled/xml_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/db/compiled/base_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/db/compiled/base_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/db/compiled/sqlite3_rkt.dep
@@ -11548,6 +11556,10 @@ lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/web-serve
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/web-server/compiled/http_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/web-server/configuration/compiled/responders_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/web-server/configuration/compiled/responders_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/xml/compiled/path_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/xml/compiled/path_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/xml/compiled/plist_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/typed-racket-more/typed/xml/compiled/plist_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/unix-socket-doc/scribblings/socket/compiled/info_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/unix-socket-doc/scribblings/socket/compiled/info_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/unix-socket-doc/scribblings/socket/compiled/unix-socket_scrbl.dep
@@ -12280,7 +12292,6 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Eigenschaften.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Konstruktionsanleitungen.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Pattern-Matching.html
-%%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Record-Typ-Definition__alte_Form.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Record-Typ-Definitionen.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Signaturen.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Testf_lle.html
@@ -14084,6 +14095,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_244.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_245.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_246.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_247.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_25.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_26.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_27.png
@@ -14248,6 +14260,8 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/plot/pict_100.png
 %%PORTDOCS%%%%DOCSDIR%%/plot/pict_101.png
 %%PORTDOCS%%%%DOCSDIR%%/plot/pict_102.png
+%%PORTDOCS%%%%DOCSDIR%%/plot/pict_103.png
+%%PORTDOCS%%%%DOCSDIR%%/plot/pict_104.png
 %%PORTDOCS%%%%DOCSDIR%%/plot/pict_11.png
 %%PORTDOCS%%%%DOCSDIR%%/plot/pict_12.png
 %%PORTDOCS%%%%DOCSDIR%%/plot/pict_13.png
@@ -15391,17 +15405,6 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/source-syntax/provides.sxref
 %%PORTDOCS%%%%DOCSDIR%%/source-syntax/stamp.sxref
 %%PORTDOCS%%%%DOCSDIR%%/source-syntax/synced.rktd
-%%PORTDOCS%%%%DOCSDIR%%/srfi-nf/blueboxes.rktd
-%%PORTDOCS%%%%DOCSDIR%%/srfi-nf/doc-index.html
-%%PORTDOCS%%%%DOCSDIR%%/srfi-nf/in.sxref
-%%PORTDOCS%%%%DOCSDIR%%/srfi-nf/index.html
-%%PORTDOCS%%%%DOCSDIR%%/srfi-nf/out0.sxref
-%%PORTDOCS%%%%DOCSDIR%%/srfi-nf/out1.sxref
-%%PORTDOCS%%%%DOCSDIR%%/srfi-nf/provides.sxref
-%%PORTDOCS%%%%DOCSDIR%%/srfi-nf/srfi-5.html
-%%PORTDOCS%%%%DOCSDIR%%/srfi-nf/srfi-std/srfi-5.html
-%%PORTDOCS%%%%DOCSDIR%%/srfi-nf/stamp.sxref
-%%PORTDOCS%%%%DOCSDIR%%/srfi-nf/synced.rktd
 %%PORTDOCS%%%%DOCSDIR%%/srfi/blueboxes.rktd
 %%PORTDOCS%%%%DOCSDIR%%/srfi/doc-index.html
 %%PORTDOCS%%%%DOCSDIR%%/srfi/in.sxref
@@ -15436,6 +15439,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-43.html
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-45.html
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-48.html
+%%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-5.html
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-54.html
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-57.html
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-59.html
@@ -15458,6 +15462,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-9.html
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-98.html
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-std/index.html
+%%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-std/racket-srfi.css
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-std/srfi-1.html
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-std/srfi-11.html
 %%PORTDOCS%%%%DOCSDIR%%/srfi/srfi-std/srfi-13.html
@@ -16175,6 +16180,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/LICENSE-LGPL.txt
 %%DATADIR%%/LICENSE-MIT.txt
 %%DATADIR%%/LICENSE-libscheme.txt
+%%DATADIR%%/LICENSE.txt
 %%DATADIR%%/collects/acks/acks.rkt
 %%DATADIR%%/collects/compiler/cm-accomplice.rkt
 %%DATADIR%%/collects/compiler/cm.rkt
@@ -17170,6 +17176,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/datalog/tests/examples/fac.txt
 %%DATADIR%%/pkgs/datalog/tests/examples/hello.rkt
 %%DATADIR%%/pkgs/datalog/tests/examples/hello.txt
+%%DATADIR%%/pkgs/datalog/tests/examples/idpath.rkt
+%%DATADIR%%/pkgs/datalog/tests/examples/idpath.txt
 %%DATADIR%%/pkgs/datalog/tests/examples/laps.rkt
 %%DATADIR%%/pkgs/datalog/tests/examples/laps.txt
 %%DATADIR%%/pkgs/datalog/tests/examples/long.rkt
@@ -17199,6 +17207,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/datalog/tests/paren-examples/bidipath.txt
 %%DATADIR%%/pkgs/datalog/tests/paren-examples/empty.rkt
 %%DATADIR%%/pkgs/datalog/tests/paren-examples/empty.txt
+%%DATADIR%%/pkgs/datalog/tests/paren-examples/idpath.rkt
+%%DATADIR%%/pkgs/datalog/tests/paren-examples/idpath.txt
 %%DATADIR%%/pkgs/datalog/tests/paren-examples/laps.rkt
 %%DATADIR%%/pkgs/datalog/tests/paren-examples/laps.txt
 %%DATADIR%%/pkgs/datalog/tests/paren-examples/long.rkt
@@ -17369,6 +17379,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/beginner.rkt
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/beginner/lang/reader.rkt
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/deflam.rkt
+%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/image.rkt
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/lang/reader.rkt
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/private/convert-explicit.rkt
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/private/module-begin.rkt
@@ -17387,6 +17398,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/tests/run-signature-tests.rkt
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/tests/signature.rkt
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/tests/test-docs-complete.rkt
+%%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/universe.rkt
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/vanilla-reader.rkt
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/vanilla.rkt
 %%DATADIR%%/pkgs/deinprogramm/deinprogramm/sdp/vanilla/lang/reader.rkt
@@ -20888,6 +20900,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/plot-lib/plot/private/no-gui/untyped-utils.rkt
 %%DATADIR%%/pkgs/plot-lib/plot/private/no-gui/utils.rkt
 %%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/arrows.rkt
+%%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/box-and-whisker.rkt
 %%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/clip.rkt
 %%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/color-field.rkt
 %%DATADIR%%/pkgs/plot-lib/plot/private/plot2d/contour.rkt
@@ -21856,6 +21869,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racklog/tests/england.rkt
 %%DATADIR%%/pkgs/racklog/tests/england2.rkt
 %%DATADIR%%/pkgs/racklog/tests/fac.rkt
+%%DATADIR%%/pkgs/racklog/tests/frozen.rkt
 %%DATADIR%%/pkgs/racklog/tests/games.rkt
 %%DATADIR%%/pkgs/racklog/tests/holland.rkt
 %%DATADIR%%/pkgs/racklog/tests/houses.rkt
@@ -22840,13 +22854,11 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/snip/info.rkt
 %%DATADIR%%/pkgs/source-syntax/info.rkt
 %%DATADIR%%/pkgs/source-syntax/source-syntax.rkt
-%%DATADIR%%/pkgs/srfi-doc-nonfree/info.rkt
-%%DATADIR%%/pkgs/srfi-doc-nonfree/srfi/scribblings/info.rkt
-%%DATADIR%%/pkgs/srfi-doc-nonfree/srfi/scribblings/srfi-nf.scrbl
-%%DATADIR%%/pkgs/srfi-doc-nonfree/srfi/scribblings/srfi-std/srfi-5.html
 %%DATADIR%%/pkgs/srfi-doc/info.rkt
 %%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/info.rkt
+%%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/srfi-5-doc-free.scrbl
 %%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/srfi-std/index.html
+%%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/srfi-std/racket-srfi.css
 %%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/srfi-std/srfi-1.html
 %%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/srfi-std/srfi-11.html
 %%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/srfi-std/srfi-13.html
@@ -23284,7 +23296,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/base-structs.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/base-types-extra.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/base-types.rkt
-%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/case-lambda.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/class-clauses.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/class-prims.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/colon.rkt
@@ -23293,6 +23304,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/extra-procs.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/for-clauses.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/prims-contract.rkt
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/prims-lambda.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/prims-struct.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/prims.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/signature-prims.rkt
@@ -23611,6 +23623,9 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-more/typed/syntax/stx.rkt
 %%DATADIR%%/pkgs/typed-racket-more/typed/web-server/configuration/responders.rkt
 %%DATADIR%%/pkgs/typed-racket-more/typed/web-server/http.rkt
+%%DATADIR%%/pkgs/typed-racket-more/typed/xml.rkt
+%%DATADIR%%/pkgs/typed-racket-more/typed/xml/path.rkt
+%%DATADIR%%/pkgs/typed-racket-more/typed/xml/plist.rkt
 %%DATADIR%%/pkgs/typed-racket/LICENSE
 %%DATADIR%%/pkgs/typed-racket/info.rkt
 %%DATADIR%%/pkgs/unix-socket-doc/info.rkt

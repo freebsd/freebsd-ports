@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	mined
 PORTVERSION=	2015.25
 CATEGORIES=	editors

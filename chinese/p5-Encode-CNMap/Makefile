@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Encode-CNMap
 PORTVERSION=	0.32
 PORTREVISION=	2

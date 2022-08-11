@@ -1,6 +1,6 @@
 PORTNAME=	jamulus
 DISTVERSIONPREFIX=	r
-DISTVERSION=	3_8_2
+DISTVERSION=	3_9_0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,13 +16,14 @@ FLAVOR?=	${FLAVORS:[1]}
 server_PKGNAMESUFFIX=	-server
 
 USES=		compiler:c++11-lang gl pkgconfig qmake qt:5
-USE_QT=		concurrent core network xml buildtools_build linguisttools_build
+USE_QT=		concurrent core multimedia network xml buildtools_build linguisttools_build
 USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jamulussoftware
 
 .if ${FLAVOR:U} == desktop
+USES+=		desktop-file-utils
 USE_QT+=	gui widgets
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \

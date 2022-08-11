@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	IO-CaptureOutput
 PORTVERSION=	1.1105
 CATEGORIES=	devel perl5

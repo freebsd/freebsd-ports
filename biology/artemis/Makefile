@@ -1,5 +1,3 @@
-# Created by: camson@bilateral.com.au
-
 PORTNAME=	artemis
 DISTVERSIONPREFIX=	v
 DISTVERSION=	17.0.1-11

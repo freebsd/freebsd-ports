@@ -1,5 +1,3 @@
-# Created by: Sean McLaughlin <sigma.zx@gmail.com>
-
 PORTNAME=	z80asm
 PORTVERSION=	1.8
 CATEGORIES=	devel

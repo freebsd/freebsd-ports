@@ -1,6 +1,6 @@
---- src/tds/tls.c.orig	2017-11-30 09:00:01 UTC
+--- src/tds/tls.c.orig	2022-05-31 06:46:53 UTC
 +++ src/tds/tls.c
-@@ -50,6 +50,10 @@
+@@ -53,6 +53,10 @@
  #include <sys/socket.h>
  #endif
  
@@ -9,12 +9,13 @@
 +#endif
 +
  #include <freetds/tds.h>
- #include <freetds/string.h>
+ #include <freetds/utils/string.h>
  #include <freetds/tls.h>
-@@ -72,6 +76,15 @@
+@@ -74,6 +78,15 @@
+ #define SSL_PUSH_ARGS gnutls_transport_ptr_t ptr, const void *data, size_t len
  #define SSL_PTR ptr
  #else
- 
++
 +#ifdef LIBRESSL_VERSION_NUMBER
 +#if LIBRESSL_VERSION_NUMBER < 0x2070000FL
 +static pthread_mutex_t *openssllocks;
@@ -23,7 +24,6 @@
 +#endif
 +#define TLS_ST_OK SSL_ST_OK
 +#endif
-+
+ 
  /* some compatibility layer */
- #if OPENSSL_VERSION_NUMBER < 0x1010000FL
- static inline void
+ #if !HAVE_BIO_GET_DATA

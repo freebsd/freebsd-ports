@@ -1,5 +1,3 @@
-# Created by: Yonatan <onatan@gmail.com>
-
 PORTNAME=	mac-robber
 PORTVERSION=	1.02
 CATEGORIES=	security

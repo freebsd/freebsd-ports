@@ -1,5 +1,3 @@
-# Created by: Sander Vesik <sander@haldjas.folklore.ee>
-
 PORTNAME=	tkcron
 PORTVERSION=	2.12
 PORTREVISION=	3

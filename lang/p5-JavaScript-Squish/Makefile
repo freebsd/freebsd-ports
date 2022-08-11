@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	JavaScript-Squish
 PORTVERSION=	0.07
 PORTREVISION=	1

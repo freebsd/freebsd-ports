@@ -1,5 +1,3 @@
-# Created by: Zach Zurflu <zach@pabst.bendnet.com>
-
 PORTNAME=	libshout
 PORTVERSION=	2.4.6
 CATEGORIES=	audio net

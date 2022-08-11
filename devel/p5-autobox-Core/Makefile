@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	autobox-Core
 PORTVERSION=	1.33
 CATEGORIES=	devel perl5

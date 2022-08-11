@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns.company>
-
 PORTNAME=	dsp
 PORTVERSION=	2.0.1
 CATEGORIES=	dns

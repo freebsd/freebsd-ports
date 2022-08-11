@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	SWF-Chart
 PORTVERSION=	1.4
 PORTREVISION=	1

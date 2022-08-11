@@ -1,5 +1,3 @@
-# Created by: Christopher Boumenot <boumenot@gmail.com>
-
 PORTNAME=	Algorithm-Bucketizer
 PORTVERSION=	0.13
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	Visio
 PORTVERSION=	1.010
 PORTREVISION=	2

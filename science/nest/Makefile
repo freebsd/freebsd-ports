@@ -1,6 +1,7 @@
 PORTNAME=	nest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2
+DISTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	science biology # NEST is used in neuroscience
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,18 +35,16 @@ PYTHON_CMAKE_ON=	-DFREEBSD_PYTHON_VER:STRING=${PYTHON_VER} -DCYTHON_EXECUTABLE:S
 
 PORTDOCS=		*
 
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang
+.endif
+
 # 2 tests are known to fail, see https://github.com/nest/nest-simulator/issues/2190
 # tests require the port to be installed with DOCS=ON, see https://github.com/nest/nest-simulator/issues/2191
 
 post-install:
 	@${REINPLACE_CMD} -i '' -e 's|^python3 |${PYTHON_CMD} |' ${STAGEDIR}${PREFIX}/share/nest/testsuite/do_tests.sh
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++11-lang
-.endif
 
 .include <bsd.port.mk>

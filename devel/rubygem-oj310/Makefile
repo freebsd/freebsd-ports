@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	oj
 PORTVERSION=	3.10.18
 CATEGORIES=	devel rubygems

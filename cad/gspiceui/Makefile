@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	gspiceui
 PORTVERSION=	1.1.00
 PORTREVISION=	6

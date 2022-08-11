@@ -1,5 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	libdparse
 PORTVERSION=	0.11.4
 DISTVERSIONPREFIX=	v

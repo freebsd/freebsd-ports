@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	vi
 PORTVERSION=	050325
 PORTREVISION=	2
@@ -8,7 +6,7 @@ MASTER_SITES=	SF/ex-${PORTNAME}/ex-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	2bsd-
 DISTNAME=	ex-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	The original vi editor, updated to run on modern OSes
 
 LICENSE=	BSD4CLAUSE

@@ -1,5 +1,3 @@
-# Created by: Andrey Slusar <anray@FreeBSD.org>
-
 PORTNAME=	libpcd
 PORTVERSION=	1.0.1
 CATEGORIES=	graphics

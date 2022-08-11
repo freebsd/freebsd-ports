@@ -1,5 +1,3 @@
-# Created by: Stefan Walter <sw@gegenunendlich.de>
-
 PORTNAME=	fcrackzip
 PORTVERSION=	1.0
 PORTREVISION=	1

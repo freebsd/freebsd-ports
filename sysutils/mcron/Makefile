@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	mcron
 PORTVERSION=	1.2.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Gabriel Ambuehl <gabriel_ambuehl@buz.ch>
-
 PORTNAME=	easysoap
 PORTVERSION=	0.8.0
 PORTREVISION=	6

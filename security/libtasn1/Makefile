@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	libtasn1
 PORTVERSION=	4.18.0
 CATEGORIES=	security

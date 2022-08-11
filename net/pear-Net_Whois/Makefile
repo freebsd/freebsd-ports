@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Net_Whois
 PORTVERSION=	1.0.6
 CATEGORIES=	net pear

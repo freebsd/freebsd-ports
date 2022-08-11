@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	jquery-ui-themes
 PORTVERSION=	0.0.12
 CATEGORIES=	devel rubygems

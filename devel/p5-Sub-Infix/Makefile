@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Sub-Infix
 PORTVERSION=	0.004
 PORTREVISION=	1

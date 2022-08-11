@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	uglifier
 PORTVERSION=	4.2.0
 CATEGORIES=	www rubygems

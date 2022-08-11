@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <kappa@rambler-co.ru>
-
 PORTNAME=	Set-Array
 PORTVERSION=	0.30
 PORTREVISION=	1

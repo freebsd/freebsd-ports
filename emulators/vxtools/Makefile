@@ -1,5 +1,3 @@
-# Created by: Martin Hinner
-
 PORTNAME=	vxtools
 PORTVERSION=	0.2
 PORTREVISION=	1

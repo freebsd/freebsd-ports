@@ -1,5 +1,3 @@
-# Created by: Max V. Kostikov <max@kostikov.co>
-
 PORTNAME=	megatools
 PORTVERSION=	1.10.3
 CATEGORIES=	net

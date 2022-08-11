@@ -1,5 +1,3 @@
-# Created by: Sir l33tname <sirl33tname@gmail.com>
-
 PORTNAME=	mustache-sinatra
 DISTVERSION=	1.0.1
 CATEGORIES=	devel rubygems

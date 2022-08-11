@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	downloader
 PORTVERSION=	0.4
 PORTREVISION=	4

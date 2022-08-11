@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	mboxstats
 PORTVERSION=	3.1
 CATEGORIES=	mail

@@ -1,5 +1,3 @@
-# Created by: Roderick van Domburg <r.s.a.vandomburg@student.utwente.nl>
-
 PORTNAME=	net-sftp
 PORTVERSION=	2.1.2
 CATEGORIES=	security rubygems

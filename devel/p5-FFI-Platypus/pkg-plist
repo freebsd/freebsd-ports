@@ -33,6 +33,7 @@
 %%SITE_ARCH%%/FFI/Platypus/TypeParser.pm
 %%SITE_ARCH%%/FFI/Platypus/TypeParser/Version0.pm
 %%SITE_ARCH%%/FFI/Platypus/TypeParser/Version1.pm
+%%SITE_ARCH%%/FFI/Platypus/TypeParser/Version2.pm
 %%SITE_ARCH%%/FFI/Probe.pm
 %%SITE_ARCH%%/FFI/Probe/Runner.pm
 %%SITE_ARCH%%/FFI/Probe/Runner/Builder.pm
@@ -85,6 +86,7 @@
 %%PERL5_MAN3%%/FFI::Platypus::TypeParser.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::TypeParser::Version0.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::TypeParser::Version1.3.gz
+%%PERL5_MAN3%%/FFI::Platypus::TypeParser::Version2.3.gz
 %%PERL5_MAN3%%/FFI::Probe.3.gz
 %%PERL5_MAN3%%/FFI::Probe::Runner.3.gz
 %%PERL5_MAN3%%/FFI::Probe::Runner::Builder.3.gz

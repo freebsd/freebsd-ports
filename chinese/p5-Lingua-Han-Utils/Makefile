@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Lingua-Han-Utils
 PORTVERSION=	0.13
 CATEGORIES=	chinese perl5

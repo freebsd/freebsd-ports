@@ -1,5 +1,3 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	pngrewrite
 PORTVERSION=	1.4.0
 PORTREVISION=	2

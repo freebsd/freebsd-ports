@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	ttyrec
 PORTVERSION=	1.0.8
 PORTREVISION=	3

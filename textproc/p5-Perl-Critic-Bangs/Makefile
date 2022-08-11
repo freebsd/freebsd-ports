@@ -1,5 +1,3 @@
-# Created by: Vany <ivan@serezhkin.com>
-
 PORTNAME=	Perl-Critic-Bangs
 PORTVERSION=	1.08
 PORTREVISION=	1

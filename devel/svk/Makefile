@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	svk
 PORTVERSION=	2.2.3
 PORTREVISION=	6

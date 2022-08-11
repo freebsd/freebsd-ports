@@ -1,0 +1,30 @@
+- patch from upstream received through the ML for latest Boost version issues.
+
+diff --git src/PluginInterface.cpp src/PluginInterface.cpp
+index 60f4008..953ad0e 100644
+--- src/PluginInterface.cpp
++++ src/PluginInterface.cpp
+@@ -13,6 +13,14 @@
+ #include <boost/dll/import.hpp>
+ #include <boost/filesystem.hpp>
+ 
++// Boost 1.76 and newer avoid the C++20 import keyword
++// RATIONALE: Using preprocessor as isolated to this compilation unit
++#if BOOST_VERSION >= 107600
++#define dakota_boost_dll_import boost::dll::import_symbol
++#else
++#define dakota_boost_dll_import boost::dll::import
++#endif
++
+ 
+ namespace Dakota {
+ 
+@@ -111,7 +119,7 @@ void PluginInterface::load_plugin()
+ {
+   if (pluginInterface) return;
+   try {
+-    pluginInterface = boost::dll::import<DakotaPlugins::DakotaInterfaceAPI>
++    pluginInterface = dakota_boost_dll_import<DakotaPlugins::DakotaInterfaceAPI>
+       (pluginPath,
+ 	 "dakota_interface_plugin"  // name of the symbol to import
+ 	 // TODO: append .dll, .so, .dylib via

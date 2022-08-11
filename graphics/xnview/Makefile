@@ -1,5 +1,3 @@
-# Created by: Serge Negodyuck <petr@petrovich.kiev.ua>
-
 PORTNAME=	xnview
 PORTVERSION=	1.70
 PORTREVISION=	2

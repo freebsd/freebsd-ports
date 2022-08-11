@@ -1,5 +1,3 @@
-# Created by: Michael Gmelin <grembo@FreeBSD.org>
-
 PORTNAME=	jsonref
 PORTVERSION=	0.2
 CATEGORIES=	devel python

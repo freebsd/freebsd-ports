@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Apache-Admin-Config
 PORTVERSION=	0.95
 PORTREVISION=	1

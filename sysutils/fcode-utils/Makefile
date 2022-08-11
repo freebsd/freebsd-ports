@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@FreeBSD.org>
-
 PORTNAME=	fcode-utils
 PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	v

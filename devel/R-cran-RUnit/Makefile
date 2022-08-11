@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	RUnit
 PORTVERSION=	0.4.28
 PORTREVISION=	4

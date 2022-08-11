@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
-
 PORTNAME=	osdclock
 PORTVERSION=	0.5
 PORTREVISION=	10

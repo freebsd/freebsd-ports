@@ -1,5 +1,3 @@
-# Created by: Ken Moore <ken@pcbsd.org>
-
 PORTNAME=	lumina-mediaplayer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.2
@@ -11,11 +9,9 @@ COMMENT=	Streaming media player from the Lumina Desktop
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 
-RUN_DEPENDS=	gstreamer1-qt5>=0:multimedia/gstreamer1-qt \
-		gstreamer1-plugins-gl>=0:graphics/gstreamer1-plugins-gl
-
-USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5
+USES=		compiler:c++11-lang desktop-file-utils gl gstreamer qmake qt:5
 USE_GL=		gl
+USE_GSTREAMER=	gl
 USE_QT=		buildtools_build core concurrent gui \
 		multimedia network svg widgets x11extras
 USE_GITHUB=	yes

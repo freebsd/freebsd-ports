@@ -1,7 +1,4 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	bsfilter
-PORTREVISION=	0
 
 COMMENT=	Spam filtering, bsfilter based plugin for Claws Mail
 

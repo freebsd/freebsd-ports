@@ -1,5 +1,3 @@
-# Created by: Matthew Hunt <mph@pobox.com>
-
 PORTNAME=	xfrisk
 PORTVERSION=	1.2
 PORTREVISION=	6

@@ -1,9 +1,7 @@
-# Created by: Sofian Brabez <sbz@FreeBSD.org>
-
 PORTNAME=	jid
 PORTVERSION=	0.7.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	textproc
 
 MAINTAINER=	sbz@FreeBSD.org

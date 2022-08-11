@@ -1,5 +1,3 @@
-# Created by: Rahul Siddharthan <rsidd@online.fr>
-
 PORTNAME=	vsound
 PORTVERSION=	0.6
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: NAKATA, Maho <maho@FreeBSD.org>
-
 PORTNAME=	blacs
 PORTVERSION=	1.7
 PORTREVISION=	38

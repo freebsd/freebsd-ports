@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	jlj
 PORTVERSION=	2.12
 CATEGORIES=	deskutils net

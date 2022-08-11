@@ -1,102 +1,581 @@
-@info(root,ossec,0750) /var/ossec/active-response/bin/default-firewall-drop.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/disable-account.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/firewalld-drop.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/host-deny.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/ip-customblock.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/ipfw.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/ipfw_mac.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/kaspersky.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/npf.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/ossec-slack.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/ossec-tweeter.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/pf.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/restart-ossec.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/restart.sh
-@info(root,ossec,0750) /var/ossec/active-response/bin/route-null.sh
-@info(root,ossec,0750) /var/ossec/agentless/main.exp
-@info(root,ossec,0750) /var/ossec/agentless/register_host.sh
-@info(root,ossec,0750) /var/ossec/agentless/ssh.exp
-@info(root,ossec,0750) /var/ossec/agentless/ssh_asa-fwsmconfig_diff
-@info(root,ossec,0750) /var/ossec/agentless/ssh_foundry_diff
-@info(root,ossec,0750) /var/ossec/agentless/ssh_generic_diff
-@info(root,ossec,0750) /var/ossec/agentless/ssh_integrity_check_bsd
-@info(root,ossec,0750) /var/ossec/agentless/ssh_integrity_check_linux
-@info(root,ossec,0750) /var/ossec/agentless/ssh_nopass.exp
-@info(root,ossec,0750) /var/ossec/agentless/ssh_pixconfig_diff
-@info(root,ossec,0750) /var/ossec/agentless/sshlogin.exp
-@info(root,ossec,0750) /var/ossec/agentless/su.exp
-@info(root,root,0750) /var/ossec/bin/agent-auth
-@info(root,root,0750) /var/ossec/bin/manage_agents
-@info(root,root,0750) /var/ossec/bin/ossec-agentd
-@info(root,root,0750) /var/ossec/bin/ossec-control
-@info(root,root,0750) /var/ossec/bin/ossec-execd
-@info(root,root,0750) /var/ossec/bin/ossec-logcollector
-@info(root,root,0750) /var/ossec/bin/ossec-syscheckd
-@info(root,root,0750) /var/ossec/bin/util.sh
-@info(root,root,0750) /var/ossec/bin/wazuh-modulesd
-@info(root,ossec,0640) /var/ossec/etc/client.keys
-@info(root,ossec,0640) /var/ossec/etc/internal_options.conf
-@info(root,ossec,0640) /var/ossec/etc/local_internal_options.conf
-@info(root,ossec,0640) /var/ossec/etc/ossec.conf.sample
-@info(root,ossec,0640) /var/ossec/etc/ossec.conf
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_apache2224_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_debian_linux_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_mysql5-6_community_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_mysql5-6_enterprise_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_rhel5_linux_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_rhel6_linux_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_rhel7_linux_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_rhel_linux_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_sles11_linux_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_sles12_linux_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_win2012r2_domainL1_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_win2012r2_domainL2_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_win2012r2_memberL1_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/cis_win2012r2_memberL2_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/rootkit_files.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/rootkit_trojans.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/system_audit_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/system_audit_ssh.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/win_applications_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/win_audit_rcl.txt
-@info(root,ossec,0660) /var/ossec/etc/shared/win_malware_rcl.txt
-@info(root,ossec,0640) /var/ossec/etc/wpk_root.pem
-@info(root,ossec,0750) /var/ossec/lib/libwazuhext.so
-@info(ossec,ossec,0666) /var/ossec/logs/active-responses.log
-@info(ossec,ossec,0666) /var/ossec/logs/ossec.json
-@info(ossec,ossec,0666) /var/ossec/logs/ossec.log
-@info(root,ossec,0750) /var/ossec/wodles/oscap/oscap.py
-@info(root,ossec,0750) /var/ossec/wodles/oscap/template_oval.xsl
-@info(root,ossec,0750) /var/ossec/wodles/oscap/template_xccdf.xsl
-@dir(root,ossec,0770) /var/ossec/.ssh
-@dir(root,ossec,0750) /var/ossec/active-response/bin
-@dir(root,ossec,0750) /var/ossec/active-response
-@dir(root,ossec,0750) /var/ossec/agentless
-@dir(root,ossec,0750) /var/ossec/backup
-@dir(root,wheel,0750) /var/ossec/bin
-@dir(root,ossec,0770) /var/ossec/etc/shared
-@dir(ossec,ossec,0770) /var/ossec/etc
-@dir(root,ossec,0750) /var/ossec/lib
-@dir(ossec,ossec,0750) /var/ossec/logs/ossec
-@dir(ossec,ossec,0770) /var/ossec/logs
-@dir(ossec,ossec,0770) /var/ossec/queue/alerts
-@dir(ossec,ossec,0750) /var/ossec/queue/diff
-@dir(ossec,ossec,0770) /var/ossec/queue/fim/db
-@dir(ossec,ossec,0770) /var/ossec/queue/fim
-@dir(ossec,ossec,0770) /var/ossec/queue/ossec/fim/db
-@dir(ossec,ossec,0770) /var/ossec/queue/ossec/fim
-@dir(ossec,ossec,0770) /var/ossec/queue/ossec
-@dir(ossec,ossec,0750) /var/ossec/queue/rids
-@dir(root,ossec,0750) /var/ossec/queue
-@dir(root,ossec,0750) /var/ossec/ruleset/sca
-@dir(root,ossec,0750) /var/ossec/ruleset
-@dir(root,ossec,1770) /var/ossec/tmp
-@dir(root,ossec,0770) /var/ossec/var/incoming
-@dir(root,ossec,0770) /var/ossec/var/run
-@dir(root,ossec,0770) /var/ossec/var/upgrade
-@dir(root,ossec,0770) /var/ossec/var/wodles
-@dir(root,ossec,0750) /var/ossec/var
-@dir(root,ossec,0750) /var/ossec/wodles/oscap/content
-@dir(root,ossec,0750) /var/ossec/wodles/oscap
-@dir(root,ossec,0750) /var/ossec/wodles
-@dir(root,ossec,0750) /var/ossec
+@mode 750
+@owner root
+@group wazuh
+/var/ossec/active-response/bin/default-firewall-drop
+/var/ossec/active-response/bin/disable-account
+/var/ossec/active-response/bin/firewall-drop
+/var/ossec/active-response/bin/firewalld-drop
+/var/ossec/active-response/bin/host-deny
+/var/ossec/active-response/bin/ip-customblock
+/var/ossec/active-response/bin/ipfw
+/var/ossec/active-response/bin/kaspersky
+/var/ossec/active-response/bin/kaspersky.py
+/var/ossec/active-response/bin/npf
+/var/ossec/active-response/bin/pf
+/var/ossec/active-response/bin/restart-wazuh
+/var/ossec/active-response/bin/restart.sh
+/var/ossec/active-response/bin/route-null
+/var/ossec/active-response/bin/wazuh-slack
+@mode 750
+@owner root
+@group wazuh
+/var/ossec/agentless/main.exp
+/var/ossec/agentless/register_host.sh
+/var/ossec/agentless/ssh.exp
+/var/ossec/agentless/ssh_asa-fwsmconfig_diff
+/var/ossec/agentless/ssh_foundry_diff
+/var/ossec/agentless/ssh_generic_diff
+/var/ossec/agentless/ssh_integrity_check_bsd
+/var/ossec/agentless/ssh_integrity_check_linux
+/var/ossec/agentless/ssh_nopass.exp
+/var/ossec/agentless/ssh_pixconfig_diff
+/var/ossec/agentless/sshlogin.exp
+/var/ossec/agentless/su.exp
+/var/ossec/bin/agent-auth
+/var/ossec/bin/manage_agents
+/var/ossec/bin/wazuh-agentd
+/var/ossec/bin/wazuh-control
+/var/ossec/bin/wazuh-execd
+/var/ossec/bin/wazuh-logcollector
+/var/ossec/bin/wazuh-modulesd
+/var/ossec/bin/wazuh-syscheckd
+@mode 640
+@owner root
+@group wazuh
+/var/ossec/etc/client.keys
+/var/ossec/etc/internal_options.conf
+/var/ossec/etc/local_internal_options.conf
+/var/ossec/etc/localtime
+@mode 660
+@owner root
+@group wazuh
+/var/ossec/etc/ossec.conf
+/var/ossec/etc/shared/cis_apache2224_rcl.txt
+/var/ossec/etc/shared/cis_debian_linux_rcl.txt
+/var/ossec/etc/shared/cis_mysql5-6_community_rcl.txt
+/var/ossec/etc/shared/cis_mysql5-6_enterprise_rcl.txt
+/var/ossec/etc/shared/cis_rhel5_linux_rcl.txt
+/var/ossec/etc/shared/cis_rhel6_linux_rcl.txt
+/var/ossec/etc/shared/cis_rhel7_linux_rcl.txt
+/var/ossec/etc/shared/cis_rhel_linux_rcl.txt
+/var/ossec/etc/shared/cis_sles11_linux_rcl.txt
+/var/ossec/etc/shared/cis_sles12_linux_rcl.txt
+/var/ossec/etc/shared/cis_win2012r2_domainL1_rcl.txt
+/var/ossec/etc/shared/cis_win2012r2_domainL2_rcl.txt
+/var/ossec/etc/shared/cis_win2012r2_memberL1_rcl.txt
+/var/ossec/etc/shared/cis_win2012r2_memberL2_rcl.txt
+/var/ossec/etc/shared/default/cis_apache2224_rcl.txt
+/var/ossec/etc/shared/default/cis_debian_linux_rcl.txt
+/var/ossec/etc/shared/default/cis_mysql5-6_community_rcl.txt
+/var/ossec/etc/shared/default/cis_mysql5-6_enterprise_rcl.txt
+/var/ossec/etc/shared/default/cis_rhel5_linux_rcl.txt
+/var/ossec/etc/shared/default/cis_rhel6_linux_rcl.txt
+/var/ossec/etc/shared/default/cis_rhel7_linux_rcl.txt
+/var/ossec/etc/shared/default/cis_rhel_linux_rcl.txt
+/var/ossec/etc/shared/default/cis_sles11_linux_rcl.txt
+/var/ossec/etc/shared/default/cis_sles12_linux_rcl.txt
+/var/ossec/etc/shared/default/cis_win2012r2_domainL1_rcl.txt
+/var/ossec/etc/shared/default/cis_win2012r2_domainL2_rcl.txt
+/var/ossec/etc/shared/default/cis_win2012r2_memberL1_rcl.txt
+/var/ossec/etc/shared/default/cis_win2012r2_memberL2_rcl.txt
+/var/ossec/etc/shared/default/rootkit_files.txt
+/var/ossec/etc/shared/default/rootkit_trojans.txt
+/var/ossec/etc/shared/default/system_audit_rcl.txt
+/var/ossec/etc/shared/default/system_audit_ssh.txt
+/var/ossec/etc/shared/default/win_applications_rcl.txt
+/var/ossec/etc/shared/default/win_audit_rcl.txt
+/var/ossec/etc/shared/default/win_malware_rcl.txt
+/var/ossec/etc/shared/rootkit_files.txt
+/var/ossec/etc/shared/rootkit_trojans.txt
+/var/ossec/etc/shared/system_audit_rcl.txt
+/var/ossec/etc/shared/system_audit_ssh.txt
+/var/ossec/etc/shared/win_applications_rcl.txt
+/var/ossec/etc/shared/win_audit_rcl.txt
+/var/ossec/etc/shared/win_malware_rcl.txt
+/var/ossec/etc/wpk_root.pem
+@mode 750
+@owner root
+@group wazuh
+/var/ossec/lib/libdbsync.so
+/var/ossec/lib/librsync.so
+/var/ossec/lib/libsyscollector.so
+/var/ossec/lib/libsysinfo.so
+/var/ossec/lib/libwazuhext.so
+/var/ossec/lib/libwazuhshared.so
+@mode 660
+@owner root
+@group wazuh
+/var/ossec/packages_files/agent_installation_scripts/add_localfiles.sh
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/HP-UX/localfile-commands.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/HP-UX/wodle-syscollector.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/README.md
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/aix/localfile-commands.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/aix/wodle-syscollector.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn/1/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn/2/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/bsd/localfile-commands.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/bsd/wodle-syscollector.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/5/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/5/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/5/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/6/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/6/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/6/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/7/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/7/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/7/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/8/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/8/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/8/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/15/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/16/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/17/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/18/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/19/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/20/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/21/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/localfile-commands.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/sca.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/syscheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/syscheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/wodle-syscollector.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/7/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/8/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/9/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/29/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/30/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/31/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/32/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/33/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/34/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/alerts.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/ar-commands.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/ar-definitions.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/auth.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/cluster.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/global-ar.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/global.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/header-comments.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/localfile-commands.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/localfile-logs/apache-logs.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/localfile-logs/audit-logs.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/localfile-logs/ossec-logs.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/localfile-logs/pgsql-logs.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/localfile-logs/snort-logs.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/localfile-logs/syslog-logs.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/logging.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/osquery.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/remote-secure.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/rule_test.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/rules.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/sca.manager.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/sca.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/syscheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/syscheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/wodle-ciscat.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/wodle-syscollector.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/wodle-vulnerability-detector.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/5/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/5/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/5/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/6/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/6/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/6/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/7/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/7/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/7/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/8/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/8/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/8/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/11/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/11/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/11/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/12/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/12/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/12/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/15/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/15/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/15/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sunos/5/11.4/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sunos/5/11/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sunos/wodle-syscollector.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/11/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/11/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/11/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/12/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/12/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/12/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/15/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/15/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/15/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/12/04/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/14/04/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/16/04/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/18/04/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/20/04/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/22/04/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/rootcheck.agent.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/rootcheck.manager.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/10/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2003/localfile-events.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2003/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2003/syscheck.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2008/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2008R2/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2012/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2012R2/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2016/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2019/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/7/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/8.1/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/8/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/Vista/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/xp/localfile-events.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/xp/profile.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/xp/syscheck.template
+/var/ossec/packages_files/agent_installation_scripts/gen_ossec.sh
+/var/ossec/packages_files/agent_installation_scripts/sca/amazon/cis_amazon_linux_1.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/amazon/cis_amazon_linux_2.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_apache_24.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_iis_10.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_mysql5-6_community.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_mysql5-6_enterprise.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_postgre-sql-13.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_sqlserver_2012.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_sqlserver_2014.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_sqlserver_2016.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_sqlserver_2017.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_sqlserver_2019.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/applications/web_vulnerabilities.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/centos/6/cis_centos6_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/centos/7/cis_centos7_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/centos/8/cis_centos8_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/darwin/15/cis_apple_macOS_10.11.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/darwin/16/cis_apple_macOS_10.12.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/darwin/17/cis_apple_macOS_10.13.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/darwin/18/cis_apple_macOS_10.14.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/darwin/19/cis_apple_macOS_10.15.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/darwin/20/cis_apple_macOS_11.1.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/darwin/21/cis_apple_macOS_12.0.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian10.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian7.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian8.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian9.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/generic/sca_unix_audit.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/mongodb/cis_mongodb_36.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/nginx/cis_nginx_1.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/oracledb/cis_oracle_database_19c.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/rhel/5/cis_rhel5_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/rhel/6/cis_rhel6_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/rhel/7/cis_rhel7_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/rhel/8/cis_rhel8_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/sles/11/cis_sles11_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/sles/12/cis_sles12_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/sles/15/cis_sles15_linux.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/sunos/cis_solaris11.4.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/sunos/cis_solaris11.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/ubuntu/cis_ubuntu14-04.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/ubuntu/cis_ubuntu16-04.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/ubuntu/cis_ubuntu18-04.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/ubuntu/cis_ubuntu20-04.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/ubuntu/cis_ubuntu22-04.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win10_enterprise.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2012r2.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2016.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2019.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/windows/sca_win_audit.yml
+/var/ossec/packages_files/agent_installation_scripts/src/init/adduser.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/darwin-addusers.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/darwin-delete-oldusers.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/darwin-init.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/delete-oldusers.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/dist-detect.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/functions.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/fw-check.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/init.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/inst-functions.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/language.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/pkg_installer.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/pkg_installer_mac.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/register_configure_agent.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/replace_manager_ip.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/shared.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/template-select.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/templates/ossec-hids-aix.init
+/var/ossec/packages_files/agent_installation_scripts/src/init/templates/ossec-hids-debian.init
+/var/ossec/packages_files/agent_installation_scripts/src/init/templates/ossec-hids-gentoo.init
+/var/ossec/packages_files/agent_installation_scripts/src/init/templates/ossec-hids-hpux.init
+/var/ossec/packages_files/agent_installation_scripts/src/init/templates/ossec-hids-rh.init
+/var/ossec/packages_files/agent_installation_scripts/src/init/templates/ossec-hids-solaris.init
+/var/ossec/packages_files/agent_installation_scripts/src/init/templates/ossec-hids-suse.init
+/var/ossec/packages_files/agent_installation_scripts/src/init/templates/ossec-hids.init
+/var/ossec/packages_files/agent_installation_scripts/src/init/templates/wazuh-agent.service
+/var/ossec/packages_files/agent_installation_scripts/src/init/templates/wazuh-manager.service
+/var/ossec/packages_files/agent_installation_scripts/src/init/update.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/wazuh-client.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/wazuh-local.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/wazuh-server.sh
+/var/ossec/packages_files/agent_installation_scripts/src/init/wazuh/deprecated_ruleset.txt
+/var/ossec/packages_files/agent_installation_scripts/src/init/wazuh/wazuh.sh
+@mode 640
+@owner root
+@group wazuh
+/var/ossec/queue/syscollector/norm_config.json
+/var/ossec/ruleset/sca/cis_amazon_linux_1.yml
+/var/ossec/ruleset/sca/cis_amazon_linux_2.yml
+/var/ossec/ruleset/sca/cis_apache_24.yml
+/var/ossec/ruleset/sca/cis_apple_macOS_10.11.yml
+/var/ossec/ruleset/sca/cis_apple_macOS_10.12.yml
+/var/ossec/ruleset/sca/cis_apple_macOS_10.13.yml
+/var/ossec/ruleset/sca/cis_apple_macOS_10.14.yml
+/var/ossec/ruleset/sca/cis_apple_macOS_10.15.yml
+/var/ossec/ruleset/sca/cis_apple_macOS_11.1.yml
+/var/ossec/ruleset/sca/cis_apple_macOS_12.0.yml
+/var/ossec/ruleset/sca/cis_centos6_linux.yml
+/var/ossec/ruleset/sca/cis_centos7_linux.yml
+/var/ossec/ruleset/sca/cis_centos8_linux.yml
+/var/ossec/ruleset/sca/cis_debian10.yml
+/var/ossec/ruleset/sca/cis_debian7.yml
+/var/ossec/ruleset/sca/cis_debian8.yml
+/var/ossec/ruleset/sca/cis_debian9.yml
+/var/ossec/ruleset/sca/cis_iis_10.yml
+/var/ossec/ruleset/sca/cis_mongodb_36.yml
+/var/ossec/ruleset/sca/cis_mysql5-6_community.yml
+/var/ossec/ruleset/sca/cis_mysql5-6_enterprise.yml
+/var/ossec/ruleset/sca/cis_nginx_1.yml
+/var/ossec/ruleset/sca/cis_oracle_database_19c.yml
+/var/ossec/ruleset/sca/cis_postgre-sql-13.yml
+/var/ossec/ruleset/sca/cis_rhel5_linux.yml
+/var/ossec/ruleset/sca/cis_rhel6_linux.yml
+/var/ossec/ruleset/sca/cis_rhel7_linux.yml
+/var/ossec/ruleset/sca/cis_rhel8_linux.yml
+/var/ossec/ruleset/sca/cis_sles11_linux.yml
+/var/ossec/ruleset/sca/cis_sles12_linux.yml
+/var/ossec/ruleset/sca/cis_sles15_linux.yml
+/var/ossec/ruleset/sca/cis_solaris11.4.yml
+/var/ossec/ruleset/sca/cis_solaris11.yml
+/var/ossec/ruleset/sca/cis_sqlserver_2012.yml
+/var/ossec/ruleset/sca/cis_sqlserver_2014.yml
+/var/ossec/ruleset/sca/cis_sqlserver_2016.yml
+/var/ossec/ruleset/sca/cis_sqlserver_2017.yml
+/var/ossec/ruleset/sca/cis_sqlserver_2019.yml
+/var/ossec/ruleset/sca/cis_ubuntu14-04.yml
+/var/ossec/ruleset/sca/cis_ubuntu16-04.yml
+/var/ossec/ruleset/sca/cis_ubuntu18-04.yml
+/var/ossec/ruleset/sca/cis_ubuntu20-04.yml
+/var/ossec/ruleset/sca/cis_ubuntu22-04.yml
+/var/ossec/ruleset/sca/cis_win10_enterprise.yml
+/var/ossec/ruleset/sca/cis_win2012r2.yml
+/var/ossec/ruleset/sca/cis_win2016.yml
+/var/ossec/ruleset/sca/cis_win2019.yml
+/var/ossec/ruleset/sca/sca_unix_audit.yml
+/var/ossec/ruleset/sca/sca_win_audit.yml
+/var/ossec/ruleset/sca/web_vulnerabilities.yml
+@mode 750
+@owner root
+@group wazuh
+/var/ossec/wodles/__init__.py
+/var/ossec/wodles/aws/aws-s3
+/var/ossec/wodles/aws/aws-s3.py
+/var/ossec/wodles/azure/azure-logs
+/var/ossec/wodles/azure/azure-logs.py
+/var/ossec/wodles/docker/DockerListener
+/var/ossec/wodles/docker/DockerListener.py
+/var/ossec/wodles/gcloud/buckets/access_logs.py
+/var/ossec/wodles/gcloud/buckets/bucket.py
+/var/ossec/wodles/gcloud/gcloud
+/var/ossec/wodles/gcloud/gcloud.py
+/var/ossec/wodles/gcloud/integration.py
+/var/ossec/wodles/gcloud/pubsub/subscriber.py
+/var/ossec/wodles/gcloud/tools.py
+/var/ossec/wodles/utils.py
+@mode 750
+@owner root
+@group wazuh
+@dir /var/ossec/active-response/bin
+@dir /var/ossec/active-response
+@dir /var/ossec/agentless
+@dir /var/ossec/backup
+@dir /var/ossec/bin
+@dir /var/ossec/etc/shared/default
+@dir /var/ossec/etc/shared
+@dir(wazuh,wazuh,770) /var/ossec/etc
+@dir(root,wazuh,750) /var/ossec/lib
+@dir(wazuh,wazuh,750) /var/ossec/logs/wazuh
+@dir(wazuh,wazuh,770) /var/ossec/logs
+@mode 750
+@owner root
+@group wazuh
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/HP-UX
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/aix
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn/1
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn/2
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/bsd
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/5
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/6
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/7
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/8
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/15
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/16
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/17
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/18
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/19
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/20
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/21
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/7
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/8
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/9
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/29
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/30
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/31
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/32
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/33
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/34
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/localfile-logs
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/5
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/6
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/7
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/8
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/11
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/12
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles/15
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sles
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sunos/5/11
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sunos/5/11.4
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sunos/5
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/sunos
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/11
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/12
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse/15
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/suse
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/12/04
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/12
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/14/04
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/14
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/16/04
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/16
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/18/04
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/18
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/20/04
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/20
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/22/04
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/22
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/10
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2003
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2008
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2008R2
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2012
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2012R2
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2016
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2019
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/7
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/8
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/8.1
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/Vista
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/xp
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates
+@dir /var/ossec/packages_files/agent_installation_scripts/etc
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/amazon
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/applications
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/centos/6
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/centos/7
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/centos/8
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/centos
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/15
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/16
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/17
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/18
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/19
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/20
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/21
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/debian
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/generic
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/mongodb
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/nginx
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/oracledb
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/rhel/5
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/rhel/6
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/rhel/7
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/rhel/8
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/rhel
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/sles/11
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/sles/12
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/sles/15
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/sles
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/sunos
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/ubuntu
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/windows
+@dir /var/ossec/packages_files/agent_installation_scripts/sca
+@dir /var/ossec/packages_files/agent_installation_scripts/src/init/templates
+@dir /var/ossec/packages_files/agent_installation_scripts/src/init/wazuh
+@dir /var/ossec/packages_files/agent_installation_scripts/src/init
+@dir /var/ossec/packages_files/agent_installation_scripts/src
+@dir /var/ossec/packages_files/agent_installation_scripts
+@dir /var/ossec/packages_files
+@mode 750
+@owner wazuh
+@group wazuh
+@dir /var/ossec/queue/alerts
+@dir /var/ossec/queue/diff
+@dir /var/ossec/queue/fim/db
+@dir /var/ossec/queue/fim
+@dir /var/ossec/queue/logcollector
+@dir /var/ossec/queue/rids
+@dir /var/ossec/queue/sockets
+@dir /var/ossec/queue/syscollector/db
+@dir /var/ossec/queue/syscollector
+@dir /var/ossec/queue
+@dir /var/ossec/ruleset/sca
+@dir /var/ossec/ruleset
+@dir /var/ossec/tmp
+@dir /var/ossec/var/incoming
+@dir /var/ossec/var/run
+@dir /var/ossec/var/selinux
+@dir /var/ossec/var/upgrade
+@dir(root,wazuh,770) /var/ossec/var/wodles
+@dir /var/ossec/var
+@dir /var/ossec/wodles/aws
+@dir /var/ossec/wodles/azure
+@dir /var/ossec/wodles/docker
+@dir /var/ossec/wodles/gcloud/buckets
+@dir /var/ossec/wodles/gcloud/pubsub
+@dir /var/ossec/wodles/gcloud
+@dir /var/ossec/wodles
+@dir /var/ossec
+@mode
+@owner
+@group

@@ -1,8 +1,5 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	sqlite3
-DISTVERSION=	3.37.2
-PORTREVISION=	1
+DISTVERSION=	3.39.0
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${YEAR}/ https://www2.sqlite.org/${YEAR}/ https://www3.sqlite.org/${YEAR}/
@@ -29,9 +26,7 @@ LICENSE=	PD
 FLAVORS=	default icu tcl
 FLAVOR?=	${FLAVORS:[1]}
 icu_PKGNAMESUFFIX=	-${FLAVOR}	# databases/p5-DBD-SQLite with ICU support
-icu_CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-tcl
 tcl_PKGNAMESUFFIX=	-${FLAVOR}	# lang/tcl* support
-tcl_CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-icu
 .endif
 
 USES=	libtool pathfix zip
@@ -40,6 +35,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=	yes
+ALL_TARGET+=	sqldiff
 .if defined(TEA)
 INSTALL_TARGET=	tcl_install
 .endif
@@ -51,6 +47,8 @@ TEST_TARGET=	test
 .ifdef DEFAULT_FILE_PERMISSIONS
 CPPFLAGS+=	-DSQLITE_DEFAULT_FILE_PERMISSIONS=${DEFAULT_FILE_PERMISSIONS}
 .endif
+
+CONFLICTS_INSTALL=	sqlite3 sqlite3-icu sqlite3-tcl tcl-sqlite3 # include/sqlite3.h share/examples/sqlite3/example.tcl
 
 SUB_FILES=	example.tcl
 SUB_LIST=	TCLSH_CMD="${TCLSH}"
@@ -75,7 +73,7 @@ OPTIONS_DEFINE+=	ARMOR DBPAGE DBSTAT DIRECT_READ DQS EXTENSION FTS3_TOKEN \
 			SORT_REF STATIC STMT TRUSTED_SCHEMA UNKNOWN_SQL UNLOCK_NOTIFY \
 			UPDATE_LIMIT URI URI_AUTHORITY
 .endif
-OPTIONS_DEFAULT=	DBPAGE DBSTAT DQS EXTENSION FTS3_TOKEN FTS4 FTS5 JSON1 LIBEDIT METADATA \
+OPTIONS_DEFAULT=	DBPAGE DBSTAT DQS EXTENSION FTS3_TOKEN FTS4 FTS5 LIBEDIT METADATA \
 			RTREE SECURE_DELETE STRIP THREADS TS1 UNICODE61 UNLOCK_NOTIFY URI
 # SECURE_DELETE, UNLOCK_NOTIFY, DBSTAT (since 41.0) used by www/firefox et al.
 # RTREE used by graphics/mapnik, databases/spatialite
@@ -87,7 +85,7 @@ OPTIONS_DEFAULT=	DBPAGE DBSTAT DQS EXTENSION FTS3_TOKEN FTS4 FTS5 JSON1 LIBEDIT 
 .if !defined(TEA)
 OPTIONS_GROUP=		OPT_EXT OPT_FUNC RTREEG UNICODE
 .endif
-OPTIONS_GROUP_OPT_EXT=	JSON1 SESSION
+OPTIONS_GROUP_OPT_EXT=	SESSION
 OPTIONS_GROUP_OPT_FUNC=	OFFSET SOUNDEX
 OPTIONS_GROUP_RTREEG=	GEOPOLY RTREE RTREE_INT
 OPTIONS_GROUP_UNICODE=	ICU UNICODE61
@@ -119,7 +117,6 @@ FTS3_TOKEN_DESC=	Enable two-args version fts3_tokenizer # https://www.sqlite.org
 FTS4_DESC=		Enable FTS3/4 (Full Text Search) module # https://www.sqlite.org/fts3.html, https://www.sqlite.org/compile.html#enable_fts3_parenthesis
 FTS5_DESC=		Enable version 5 full-text search engine # https://www.sqlite.org/fts5.html
 GEOPOLY_DESC=		Uses the GeoJSON notation (RFC-7946) # https://www.sqlite.org/geopoly.html
-JSON1_DESC=		Enable the JSON1 extension # https://www.sqlite.org/json1.html
 LIKENOTBLOB_DESC=	LIKE does not match blobs # https://sqlite.org/compile.html#like_doesnt_match_blobs
 MEMMAN_DESC=		Allow it to release unused memory
 METADATA_DESC=		Enable column metadata
@@ -173,7 +170,6 @@ ICU_BUILD_DEPENDS=	${LOCALBASE}/bin/icu-config:devel/icu
 ICU_LIB_DEPENDS=	libicudata.so:devel/icu
 ICU_CPPFLAGS=	`${LOCALBASE}/bin/icu-config --cppflags` -DSQLITE_ENABLE_ICU=1
 ICU_LIBS=	`${LOCALBASE}/bin/icu-config --ldflags`
-JSON1_CONFIGURE_ENABLE=	json1
 LIBEDIT_USES=	libedit
 LIBEDIT_CONFIGURE_ENABLE=	editline
 LIKENOTBLOB_CPPFLAGS=	-DSQLITE_LIKE_DOESNT_MATCH_BLOBS=1
@@ -254,6 +250,10 @@ post-configure:
 	@${ECHO_MSG} "===> CPPFLAGS=${CPPFLAGS}"
 	@${ECHO_MSG} "===> LDFLAGS=${LDFLAGS}"
 	@${ECHO_MSG} "===> LIBS=${LIBS}"
+	@${ECHO_MSG} "===> TCL_VER=${TCL_VER}"
+	@${ECHO_MSG} "===> TCLSH=${TCLSH}"
+	@${ECHO_MSG} "===> TCL_INCLUDEDIR=${TCL_INCLUDEDIR}"
+	@${ECHO_MSG} "===> TCL_LIBDIR=${TCL_LIBDIR}"
 
 post-install:
 .if !defined(TEA)
@@ -262,6 +262,7 @@ post-install:
 .if ${ARCH} != aarch64c && ${ARCH} != riscv64c
 	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
 .endif
+	${INSTALL_PROGRAM} "${WRKSRC}/sqldiff" "${STAGEDIR}${PREFIX}/bin"
 .else
 	${RM} "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0.8.6" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.a"
 .endif

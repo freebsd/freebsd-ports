@@ -1,5 +1,3 @@
-# Created by: John Chen <johnpupu@gmail.com>
-
 PORTNAME=	uv
 PORTVERSION=	0.2.4
 PORTREVISION=	1
@@ -14,6 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libuv.so:devel/libuv
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 .include <bsd.port.mk>

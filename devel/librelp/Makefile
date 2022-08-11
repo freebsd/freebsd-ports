@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	librelp
 PORTVERSION=	1.10.0
 CATEGORIES=	devel

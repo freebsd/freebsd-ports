@@ -1,5 +1,3 @@
-# Created by: Mario S F Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	Math-FFT
 PORTVERSION=	1.36
 CATEGORIES=	math perl5

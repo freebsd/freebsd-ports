@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	ferret
 PORTVERSION=	0.11.8.7
 CATEGORIES=	textproc rubygems

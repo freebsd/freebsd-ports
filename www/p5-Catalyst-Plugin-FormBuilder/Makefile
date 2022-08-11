@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero
-
 PORTNAME=	Catalyst-Plugin-FormBuilder
 PORTVERSION=	1.07
 PORTREVISION=	2

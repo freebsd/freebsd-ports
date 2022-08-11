@@ -1,5 +1,5 @@
 PORTNAME=	pydantic
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4.3:devel/py-typing-e
 
 USES=		cpe python:3.7+
 USE_PYTHON=	distutils cython autoplist
+
 CPE_VENDOR=	pydantic_project
 
 .include <bsd.port.mk>

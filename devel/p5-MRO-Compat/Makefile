@@ -1,5 +1,3 @@
-# Created by: lbr
-
 PORTNAME=	MRO-Compat
 PORTVERSION=	0.15
 CATEGORIES=	devel perl5

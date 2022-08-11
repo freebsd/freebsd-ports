@@ -1,5 +1,3 @@
-# Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-
 PORTNAME=	socketapi
 PORTVERSION=	2.2.19
 CATEGORIES=	net

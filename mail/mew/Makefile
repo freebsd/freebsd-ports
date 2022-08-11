@@ -1,5 +1,3 @@
-# Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-
 PORTNAME=	mew
 PORTVERSION=	6.8
 PORTREVISION=	8

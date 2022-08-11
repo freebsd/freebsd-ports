@@ -1,5 +1,3 @@
-# Created by: Alex Pesternikov <apesternikov@page2rss.com>
-
 PORTNAME=	cog
 PORTVERSION=	3.1.0
 CATEGORIES=	devel python

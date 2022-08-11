@@ -1,5 +1,3 @@
-# Created by: Alex Samorukov <samm@os2.kiev.ua>
-
 PORTNAME=	rawstudio
 PORTVERSION=	2.0
 PORTREVISION=	22

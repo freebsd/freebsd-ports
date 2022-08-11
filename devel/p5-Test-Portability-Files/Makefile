@@ -1,5 +1,3 @@
-# Created by: lippe
-
 PORTNAME=	Test-Portability-Files
 PORTVERSION=	0.10
 CATEGORIES=	devel perl5

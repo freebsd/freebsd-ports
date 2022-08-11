@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@inerd.com>
-
 PORTNAME=	knock
 PORTVERSION=	0.5
 PORTREVISION=	1

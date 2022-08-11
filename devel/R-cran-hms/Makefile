@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	hms
 PORTVERSION=	1.1.1
 CATEGORIES=	devel

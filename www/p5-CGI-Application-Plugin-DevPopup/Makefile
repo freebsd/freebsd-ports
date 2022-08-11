@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Plugin-DevPopup
 PORTVERSION=	1.08
 PORTREVISION=	2

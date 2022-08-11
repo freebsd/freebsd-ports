@@ -1,5 +1,3 @@
-# Created by: Pavel Andreev
-
 PORTNAME=	icqlib
 PORTVERSION=	1.0.0
 PORTREVISION=	3

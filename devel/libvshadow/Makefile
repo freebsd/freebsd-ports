@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	libvshadow
 PORTVERSION=	20210425
 CATEGORIES=	devel

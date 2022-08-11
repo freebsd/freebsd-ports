@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+
+1) Add the following to your Apache configuration file
+   httpd.conf, and restart the server:
+
+   Alias /tcexam %%PREFIX%%/%%TCDIR%%/
+   AcceptPathInfo On
+   <Directory %%PREFIX%%/%%TCDIR%%/>
+      AllowOverride None
+      Require all granted
+   </Directory>
+
+2) Visit your TCExam site with a browser (i.e.,
+   http://your.server.com/tcexam/install/install.php), 
+
+For more information, see the INSTALL DOCUMENTATION:
+
+   https://tcexam.org/docs/installation/
+EOM
+}
+]

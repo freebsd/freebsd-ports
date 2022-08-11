@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	HTTP-Date
 PORTVERSION=	6.05
 CATEGORIES=	www perl5

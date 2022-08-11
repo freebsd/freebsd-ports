@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	autovivification
 PORTVERSION=	0.18
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-
 PORTNAME=	fv
 PORTVERSION=	1.03
 PORTREVISION=	7

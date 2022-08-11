@@ -1,5 +1,3 @@
-# Created by: aturetta@commit.it
-
 PORTNAME=	Test-LongString
 PORTVERSION=	0.17
 CATEGORIES=	devel perl5

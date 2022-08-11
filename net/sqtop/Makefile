@@ -1,5 +1,3 @@
-# Created by: Marco Steinbach <coco@webdev.c0c0.intra>
-
 PORTNAME=	sqtop
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2015-02-08

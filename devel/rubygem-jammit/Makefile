@@ -1,5 +1,3 @@
-# Created by: rpsfa@rit.edu
-
 PORTNAME=	jammit
 PORTVERSION=	0.7.0
 CATEGORIES=	devel rubygems

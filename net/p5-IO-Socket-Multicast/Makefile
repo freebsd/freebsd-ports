@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@dante.org.uk
-
 PORTNAME=	IO-Socket-Multicast
 PORTVERSION=	1.12
 PORTREVISION=	2

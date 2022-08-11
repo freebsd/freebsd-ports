@@ -1,7 +1,5 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	tesseract
-PORTVERSION=	5.1.0
+PORTVERSION=	5.2.0
 PORTREVISION=	1
 CATEGORIES=	graphics
 
@@ -47,6 +45,10 @@ TOOLS_DESC=	Include training tools
 TOOLS_LIB_DEPENDS=libicui18n.so:devel/icu \
 		libfontconfig.so:x11-fonts/fontconfig
 TOOLS_USE=	GNOME=cairo,glib20,pango
+
+.if exists(/usr/include/omp.h)
+CMAKE_ON=	OPENMP_BUILD
+.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Devel-Events
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

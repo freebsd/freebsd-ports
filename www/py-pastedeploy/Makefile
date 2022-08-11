@@ -1,5 +1,3 @@
-# Created by: Dryice Liu	<dryice@dryice.name>
-
 PORTNAME=	pastedeploy
 PORTVERSION=	2.1.1
 CATEGORIES=	www python

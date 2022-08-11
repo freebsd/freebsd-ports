@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	festvox-ked16
 PORTVERSION=	1.4.0
 PORTREVISION=	1

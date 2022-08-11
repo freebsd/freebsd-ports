@@ -103,7 +103,7 @@ libexec/sonarqube/lib/extensions/sonar-php-plugin-%%SONARPHP_VER%%.jar
 libexec/sonarqube/lib/extensions/sonar-python-plugin-%%SONARPYTHON_VER%%.jar
 libexec/sonarqube/lib/extensions/sonar-ruby-plugin-1.9.0.3429.jar
 libexec/sonarqube/lib/extensions/sonar-scala-plugin-1.9.0.3429.jar
-libexec/sonarqube/lib/extensions/sonar-text-plugin-1.0.0.120.jar
+libexec/sonarqube/lib/extensions/sonar-text-plugin-1.1.0.282.jar
 libexec/sonarqube/lib/extensions/sonar-vbnet-plugin-%%SONARVBNET_VER%%.jar
 libexec/sonarqube/lib/extensions/sonar-xml-plugin-2.5.0.3376.jar
 libexec/sonarqube/lib/jdbc/h2/h2-2.1.210.jar
@@ -218,10 +218,10 @@ libexec/sonarqube/web/images/tutorials/jenkins.svg
 libexec/sonarqube/web/images/tutorials/manual.svg
 libexec/sonarqube/web/images/tutorials/refresh.svg
 libexec/sonarqube/web/index.html
-libexec/sonarqube/web/js/out3HYJVQVO.css
-libexec/sonarqube/web/js/out3HYJVQVO.css.map
-libexec/sonarqube/web/js/outEG4XZBCS.js
-libexec/sonarqube/web/js/outEG4XZBCS.js.map
+libexec/sonarqube/web/js/outBKCBG2LZ.js
+libexec/sonarqube/web/js/outBKCBG2LZ.js.map
+libexec/sonarqube/web/js/outDH7NTWCG.css
+libexec/sonarqube/web/js/outDH7NTWCG.css.map
 libexec/sonarqube/web/mstile-512x512.png
 libexec/sonarqube/web/robots.txt
 @owner sonarqube

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	wipeclean
 PORTVERSION=	1.1.2
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	GD-Graph
 PORTVERSION=	1.54
 CATEGORIES=	graphics perl5

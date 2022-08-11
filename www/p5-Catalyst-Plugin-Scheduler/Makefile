@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	Catalyst-Plugin-Scheduler
 PORTVERSION=	0.10
 PORTREVISION=	2

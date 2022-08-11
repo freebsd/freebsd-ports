@@ -1,5 +1,3 @@
-# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-
 PORTNAME=	Mail-DeliveryStatus-BounceParser
 PORTVERSION=	1.543
 CATEGORIES=	mail perl5

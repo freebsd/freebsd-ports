@@ -1,5 +1,3 @@
-# Created by: Jeremy Shaffner <jeremy@external.org>
-
 PORTNAME=	ipsc
 PORTVERSION=	0.4.3
 CATEGORIES=	sysutils

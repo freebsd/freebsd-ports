@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung	<clsung@dragon2.net>
-
 PORTNAME=	Algorithm-SVM
 PORTVERSION=	0.13
 PORTREVISION=	1

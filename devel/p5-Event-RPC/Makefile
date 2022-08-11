@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	Event-RPC
 PORTVERSION=	1.03
 PORTREVISION=	3

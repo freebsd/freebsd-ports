@@ -1,5 +1,3 @@
-# Created by: Nosov Artem <chip-set@mail.ru>
-
 PORTNAME=	wput
 PORTVERSION=	0.6.2
 PORTREVISION=	7

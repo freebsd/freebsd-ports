@@ -1,5 +1,3 @@
-# Created by: andrey@kostenko.name
-
 PORTNAME=	Catalyst-Authentication-Credential-OpenID
 PORTVERSION=	0.19
 PORTREVISION=	1

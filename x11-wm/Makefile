@@ -19,11 +19,11 @@
     SUBDIR += compiz-plugins-extra
     SUBDIR += compiz-plugins-main
     SUBDIR += compiz-plugins-unsupported
-    SUBDIR += compizconfig-backend-gconf
     SUBDIR += compton
     SUBDIR += ctwm
     SUBDIR += cwm
     SUBDIR += devilspie
+    SUBDIR += devilspie2
     SUBDIR += durden
     SUBDIR += dwl
     SUBDIR += dwm
@@ -60,7 +60,6 @@
     SUBDIR += libwraster
     SUBDIR += lwm
     SUBDIR += lxappearance-obconf
-    SUBDIR += lxmed
     SUBDIR += lxqt
     SUBDIR += lxqt-panel
     SUBDIR += lxqt-session
@@ -100,6 +99,7 @@
     SUBDIR += stumpwm
     SUBDIR += subtle
     SUBDIR += sway
+    SUBDIR += sway-devel
     SUBDIR += tinywm
     SUBDIR += transset
     SUBDIR += treewm

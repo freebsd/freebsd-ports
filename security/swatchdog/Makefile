@@ -1,5 +1,3 @@
-# Created by: jfitz
-
 PORTNAME=	swatchdog
 PORTVERSION=	3.2.4
 CATEGORIES=	security sysutils

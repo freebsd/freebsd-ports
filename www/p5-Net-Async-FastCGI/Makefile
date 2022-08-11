@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Net-Async-FastCGI
 PORTVERSION=	0.25
 PORTREVISION=	1

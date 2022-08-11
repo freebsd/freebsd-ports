@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libasyncns
 PORTVERSION=	0.8
 DISTVERSIONSUFFIX=	-7.el7

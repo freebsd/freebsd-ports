@@ -1,5 +1,3 @@
-# Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
-
 PORTNAME=	opendmarc
 PORTVERSION=	1.4.2
 CATEGORIES=	mail security

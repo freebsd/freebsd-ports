@@ -1,5 +1,3 @@
-# Created by: hrkfrd@googlemail.com
-
 PORTNAME=	mpdas
 PORTVERSION=	0.4.5
 PORTREVISION=	3

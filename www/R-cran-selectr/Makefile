@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	selectr
 DISTVERSION=	0.4-2
 PORTREVISION=	1

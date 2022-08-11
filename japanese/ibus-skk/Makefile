@@ -1,5 +1,3 @@
-# Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
-
 PORTNAME=	ibus-skk
 DISTVERSIONPREFIX=	ibus-skk-
 DISTVERSION=	1.4.3

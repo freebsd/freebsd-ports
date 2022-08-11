@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	nesty
 PORTVERSION=	1.0.2
 CATEGORIES=	devel rubygems

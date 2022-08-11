@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	XML-Smart
 PORTVERSION=	1.79
 PORTREVISION=	1

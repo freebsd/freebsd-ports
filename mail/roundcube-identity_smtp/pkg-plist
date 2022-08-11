@@ -10,3 +10,4 @@
 %%RCDIR_REL%%/plugins/identity_smtp/localization/es_ES.inc
 %%RCDIR_REL%%/plugins/identity_smtp/localization/fr_FR.inc
 %%RCDIR_REL%%/plugins/identity_smtp/localization/ja_JP.inc
+%%RCDIR_REL%%/plugins/identity_smtp/localization/pl_PL.inc

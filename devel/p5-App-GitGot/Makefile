@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	App-GitGot
 PORTVERSION=	1.339
 CATEGORIES=	devel perl5

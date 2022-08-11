@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Class-Measure
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

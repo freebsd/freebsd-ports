@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Object-Tiny-RW
 PORTVERSION=	1.07
 CATEGORIES=	devel perl5

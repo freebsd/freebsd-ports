@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	aggregate6
 PORTVERSION=	1.0.12
 CATEGORIES=	net-mgmt python

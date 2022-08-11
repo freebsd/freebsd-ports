@@ -1,0 +1,42 @@
+--- arbtt.cabal.orig	2001-09-09 01:46:40 UTC
++++ arbtt.cabal
+@@ -43,7 +43,7 @@ executable arbtt-capture
+                 base >= 4.7 && < 5,
+                 filepath, directory, transformers, utf8-string, strict,
+                 containers >= 0.5 && < 0.7,
+-                aeson >= 0.10  && < 1.6,
++                aeson >= 0.10,
+                 binary >= 0.5,
+                 bytestring, deepseq
+ 
+@@ -107,7 +107,7 @@ executable arbtt-stats
+         binary >= 0.5,
+         deepseq, bytestring, utf8-string, strict,
+         transformers, directory, filepath,
+-        aeson >= 0.10  && < 1.6,
++        aeson >= 0.10,
+         array == 0.4.* || == 0.5.*,
+         terminal-progress-bar >= 0.4 && < 0.5,
+         bytestring-progress,
+@@ -152,7 +152,7 @@ executable arbtt-dump
+         base >= 4.7 && < 5,
+         parsec == 3.*,
+         containers >= 0.5 && < 0.7,
+-        aeson >= 0.10  && < 1.6,
++        aeson >= 0.10,
+         array == 0.4.* || == 0.5.*,
+         binary >= 0.5,
+         deepseq, bytestring, utf8-string, strict,
+@@ -191,10 +191,10 @@ executable arbtt-import
+         parsec == 3.*,
+         containers >= 0.5 && < 0.7,
+         binary >= 0.5,
+-        aeson >= 0.10  && < 1.6,
++        aeson >= 0.10,
+         conduit >= 1.2 && < 1.4,
+         exceptions >= 0.8,
+-        attoparsec == 0.13.*,
++        attoparsec >= 0.13,
+         deepseq, bytestring, utf8-string, strict,
+         transformers, directory, filepath
+ 

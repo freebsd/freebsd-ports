@@ -1,5 +1,3 @@
-# Created by: Christopher Elkins <chrise@scardini.com>
-
 PORTNAME=	nickle
 PORTVERSION=	2.90
 CATEGORIES=	lang

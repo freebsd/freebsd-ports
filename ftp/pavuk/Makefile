@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	pavuk
 PORTVERSION=	0.9.35
 PORTREVISION=	5

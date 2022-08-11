@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	upx
 PORTVERSION=	3.96
 MASTER_SITES=	https://github.com/upx/upx/releases/download/v${PORTVERSION}/

@@ -16,4 +16,6 @@ RUN_DEPENDS=	p5-HTTP-Headers-ActionPack>0:www/p5-HTTP-Headers-ActionPack \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

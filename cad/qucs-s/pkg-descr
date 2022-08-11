@@ -1,0 +1,21 @@
+Qucs-S is a spin-off of the Qucs cross-platform circuit simulator.
+"S" letter indicates SPICE.
+
+Qucs-S project uses free SPICE circuit simulation kernels to sumulate
+circuits. It merges the power of SPICE and the simplicity of the Qucs
+GUI.
+
+Backends:
+* Ngspice is the default backend recommended for use in Qucs-S.
+  Ngspice is powerful mixed-level/mixed-signal circuit simulator. Most
+  of industrial SPICE models are compatible with Ngspice. It has an
+  excellent performance for time-domain simulation of switching
+  circuits and powerful postprocessor.
+* XYCE is a new SPICE-compatible circuit simulator written by Sandia
+  from scratch. It supports basic SPICE simulation types and has
+  advanced RF simulation features such as Harmonic balance simulation.
+* SpiceOpus is developed by the Faculty of Electrical Engineering of
+  the Ljubljana University. It based on the SPICE-3f5 code.
+* Qucsator as backward compatible.
+
+WWW: https://ra3xdh.github.io/

@@ -1,5 +1,3 @@
-# Created by: ismail@enderunix.org
-
 PORTNAME=	eps
 PORTVERSION=	1.7
 PORTREVISION=	2

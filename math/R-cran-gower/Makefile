@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	gower
 DISTVERSION=	1.0.0
 CATEGORIES=	math

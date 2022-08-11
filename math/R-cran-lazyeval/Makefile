@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	lazyeval
 DISTVERSION=	0.2.2
 PORTREVISION=	2

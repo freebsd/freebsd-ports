@@ -1,8 +1,6 @@
-# Created by: se
-
 PORTNAME=	yersinia
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 # MASTER_SITES=	http://www.yersinia.net/download/
 PKGNAMESUFFIX=	-gtk

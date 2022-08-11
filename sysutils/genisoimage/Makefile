@@ -1,5 +1,3 @@
-# Created by: Nikolai Lifanov
-
 PKGNAMESUFFIX=	-genisoimage
 
 COMMENT=	Standalone genisoimage from cdrkit

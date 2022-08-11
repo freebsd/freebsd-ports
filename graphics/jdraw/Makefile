@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale	<nivit@email.it>
-
 PORTNAME=	jdraw
 PORTVERSION=	1.1.5
 PORTREVISION=	4

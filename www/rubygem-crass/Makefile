@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	crass
 PORTVERSION=	1.0.6
 CATEGORIES=	www rubygems

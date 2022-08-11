@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	fusefs-ext2
 PORTVERSION=	0.0.10
 DISTVERSIONPREFIX=	v

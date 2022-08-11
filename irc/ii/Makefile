@@ -1,5 +1,3 @@
-# Created by: Julien Laffaye <kimelto@gmail.com>
-
 PORTNAME=	ii
 PORTVERSION=	1.9
 CATEGORIES=	irc

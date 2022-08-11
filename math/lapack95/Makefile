@@ -1,5 +1,3 @@
-# Created by: NAKATA, Maho <maho@FreeBSD.org>
-
 PORTNAME=	lapack95
 PORTVERSION=	1.0
 PORTREVISION=	19

@@ -1,9 +1,0 @@
-MultiGet is an easy-to-use GUI file downloader for Linux/Unix/BSDs/Windows.
-It's programmed by C++ and GUI is based on wxWidgets. It supports http/ftp
-protocol which covers most user's requirement. It supports multi-task with
-multi-thread on multi-server. It supports resume download if server side have
-resume feature, and if you like, you can reconfig the thread number without
-stopping the going task. It's also support SOCKS 4, 4a, 5 proxy, ftp proxy,
-http proxy.
-
-WWW: http://multiget.sourceforge.net/

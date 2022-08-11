@@ -1,5 +1,3 @@
-# Created by: Andy Pavlo <amp0928@rit.edu>
-
 PORTNAME=	hotkeys
 PORTVERSION=	0.5.7.1
 PORTREVISION=	20

@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	blockrage
 PORTVERSION=	0.2.3
 PORTREVISION=	6

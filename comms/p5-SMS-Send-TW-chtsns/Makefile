@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	SMS-Send-TW-chtsns
 PORTVERSION=	0.03
 PORTREVISION=	1

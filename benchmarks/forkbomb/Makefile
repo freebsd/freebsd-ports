@@ -1,5 +1,3 @@
-# Created by: Radim Kolar
-
 PORTNAME=	forkbomb
 PORTVERSION=	1.4
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: rpsfa@rit.edu
-
 PORTNAME=	yui-compressor
 PORTVERSION=	0.12.0
 CATEGORIES=	devel rubygems

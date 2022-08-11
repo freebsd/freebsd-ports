@@ -1,5 +1,3 @@
-# Created by: Andrey Ignatov <rdna@rdna.ru>
-
 PORTNAME=	Multiplex-CMD
 PORTVERSION=	0.03
 DISTVERSIONPREFIX=	v

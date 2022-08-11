@@ -1,5 +1,3 @@
-# Created by: johans@stack.nl
-
 PORTNAME=	nfsshell
 PORTVERSION=	20130510
 PORTREVISION=	4

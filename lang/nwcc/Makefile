@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.org)
-
 PORTNAME=	nwcc
 PORTVERSION=	0.8.3
 CATEGORIES=	lang

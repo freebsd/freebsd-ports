@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	lxsession
 PORTVERSION=	0.5.4
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Geoffrey Mainland <mainland@apeiron.net>
-
 PORTNAME=	latex
 PORTVERSION=	1.0
 PORTREVISION=	10

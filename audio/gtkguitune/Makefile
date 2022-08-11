@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	gtkguitune
 PORTVERSION=	0.8
 DISTVERSIONPREFIX=	gtk2-

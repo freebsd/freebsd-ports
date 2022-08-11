@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	firmware
 PORTVERSION=	20140418
 PORTREVISION=	2
@@ -9,7 +7,7 @@ PKGNAMEPREFIX=	sigrok-
 PKGNAMESUFFIX=	-utils
 DISTFILES=	#none
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sigrok firmware extraction utilities
 
 LICENSE=	GPLv3+

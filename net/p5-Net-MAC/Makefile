@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Net-MAC
 PORTVERSION=	2.103622
 PORTREVISION=	1

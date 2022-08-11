@@ -1,8 +1,6 @@
-# Created by: ruslan@shevchenko.kiev.ua
-
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	24.3.3
+DISTVERSION=	24.3.4.2
 PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java

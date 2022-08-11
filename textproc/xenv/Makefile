@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	xenv
 PORTVERSION=	1.2
 CATEGORIES=	textproc

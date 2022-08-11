@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	File-Assets
 PORTVERSION=	0.064
 PORTREVISION=	3

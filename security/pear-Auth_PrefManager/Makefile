@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Auth_PrefManager
 PORTVERSION=	1.2.2
 CATEGORIES=	security www pear

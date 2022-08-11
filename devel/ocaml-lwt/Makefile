@@ -1,5 +1,3 @@
-# Created by: jaapb@kerguelen.org
-
 PORTNAME=	lwt
 PORTVERSION=	2.5.2
 CATEGORIES=	devel

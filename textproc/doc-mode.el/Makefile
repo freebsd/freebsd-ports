@@ -1,5 +1,3 @@
-# Created by: Peter Schuller <peter.schuller@infidyne.com>
-
 PORTNAME=	doc-mode.el
 PORTVERSION=	1.1
 PORTREVISION=	22

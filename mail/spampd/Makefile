@@ -1,5 +1,3 @@
-# Created by: chris
-
 PORTNAME=	spampd
 PORTVERSION=	2.61
 PORTREVISION=	2

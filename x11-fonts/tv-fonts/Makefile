@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <lehmann@ans-netz.de>
-
 PORTNAME=	tv-fonts
 PORTVERSION=	1.1
 PORTREVISION=	6

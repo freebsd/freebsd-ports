@@ -1,5 +1,3 @@
-# Created by: Massimiliano Stucchi <mstucchi@ripe.net>
-
 PORTNAME=	ripe.atlas.sagan
 PORTVERSION=	1.3.0
 CATEGORIES=	net python

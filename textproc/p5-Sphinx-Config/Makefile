@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Sphinx-Config
 PORTVERSION=	0.10
 CATEGORIES=	textproc perl5

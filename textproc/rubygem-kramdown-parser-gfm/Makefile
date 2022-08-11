@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	kramdown-parser-gfm
 PORTVERSION=	1.1.0
 CATEGORIES=	textproc rubygems

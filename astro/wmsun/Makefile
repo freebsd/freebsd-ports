@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	wmsun
 PORTVERSION=	1.05
 PORTEPOCH=	1

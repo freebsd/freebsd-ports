@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	momepy
 PORTVERSION=	0.5.3
 CATEGORIES=	graphics python

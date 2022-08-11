@@ -1,5 +1,5 @@
 PORTNAME=	edflib
-DISTVERSION=	1.21
+DISTVERSION=	1.22
 CATEGORIES=	misc # medicine
 MASTER_SITES=	https://www.teuniz.net/edflib/
 DISTNAME=	${PORTNAME}_${DISTVERSION:S/.//}

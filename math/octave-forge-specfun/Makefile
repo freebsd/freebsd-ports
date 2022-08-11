@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-specfun
 PORTVERSION=	1.1.0
 PORTREVISION=	22

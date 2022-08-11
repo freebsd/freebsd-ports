@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	tkpng
 PORTVERSION=	0.9
 PORTREVISION=	1

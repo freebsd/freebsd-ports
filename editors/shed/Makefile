@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	shed
 PORTVERSION=	1.15
 CATEGORIES=	editors

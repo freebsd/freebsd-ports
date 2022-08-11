@@ -1,5 +1,3 @@
-# Created by: Gary Hayers <Gary@Hayers.net>
-
 PORTNAME=	SAVI-Perl
 PORTVERSION=	0.30
 PORTREVISION=	6

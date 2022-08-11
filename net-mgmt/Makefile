@@ -128,6 +128,7 @@
     SUBDIR += midpoint
     SUBDIR += mk-livestatus
     SUBDIR += monitoring-plugins
+    SUBDIR += mqtt2prometheus
     SUBDIR += mrtg
     SUBDIR += mrtg-ping-probe
     SUBDIR += mtrace
@@ -137,6 +138,7 @@
     SUBDIR += nagios
     SUBDIR += nagios-certexp-plugin
     SUBDIR += nagios-check_bacula11
+    SUBDIR += nagios-check_bacula13
     SUBDIR += nagios-check_bacula9
     SUBDIR += nagios-check_clamav
     SUBDIR += nagios-check_cpu_usage
@@ -280,6 +282,7 @@
     SUBDIR += php74-snmp
     SUBDIR += php80-snmp
     SUBDIR += php81-snmp
+    SUBDIR += php82-snmp
     SUBDIR += phpfpm_exporter
     SUBDIR += phpipam
     SUBDIR += phpweathermap
@@ -308,7 +311,7 @@
     SUBDIR += py-napalm
     SUBDIR += py-napalm-logs
     SUBDIR += py-ncclient
-    SUBDIR += py-netbox-plugin-extensions
+    SUBDIR += py-netutils
     SUBDIR += py-nxapi-plumbing
     SUBDIR += py-opn-cli
     SUBDIR += py-pdagent
@@ -320,6 +323,7 @@
     SUBDIR += py-pyeapi
     SUBDIR += py-pynetbox
     SUBDIR += py-pynxos
+    SUBDIR += py-pypowerwall
     SUBDIR += py-pysmi
     SUBDIR += py-pysnmp
     SUBDIR += py-pysnmp-mibs
@@ -379,7 +383,6 @@
     SUBDIR += torrus
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
-    SUBDIR += unifi6
     SUBDIR += unifi7
     SUBDIR += victoria-metrics
     SUBDIR += virt-viewer
@@ -401,15 +404,15 @@
     SUBDIR += zabbix5-java
     SUBDIR += zabbix5-proxy
     SUBDIR += zabbix5-server
-    SUBDIR += zabbix54-agent
-    SUBDIR += zabbix54-frontend
-    SUBDIR += zabbix54-java
-    SUBDIR += zabbix54-proxy
-    SUBDIR += zabbix54-server
     SUBDIR += zabbix6-agent
     SUBDIR += zabbix6-frontend
     SUBDIR += zabbix6-java
     SUBDIR += zabbix6-proxy
     SUBDIR += zabbix6-server
+    SUBDIR += zabbix62-agent
+    SUBDIR += zabbix62-frontend
+    SUBDIR += zabbix62-java
+    SUBDIR += zabbix62-proxy
+    SUBDIR += zabbix62-server
 
 .include <bsd.port.subdir.mk>

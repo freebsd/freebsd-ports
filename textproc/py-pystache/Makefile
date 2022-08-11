@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	pystache
 PORTVERSION=	0.6.0
 PORTREVISION=	0

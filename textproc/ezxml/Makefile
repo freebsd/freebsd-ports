@@ -1,5 +1,3 @@
-# Created by: Marcin Jessa <yazzy@yazzy.org>
-
 PORTNAME=	ezxml
 PORTVERSION=	0.8.6
 CATEGORIES=	textproc devel

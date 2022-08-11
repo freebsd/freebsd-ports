@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libcwd
 PORTVERSION=	1.0.6
 PORTREVISION=	5

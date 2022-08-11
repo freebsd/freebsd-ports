@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	MatrixModels
 DISTVERSION=	0.5-0
 CATEGORIES=	math

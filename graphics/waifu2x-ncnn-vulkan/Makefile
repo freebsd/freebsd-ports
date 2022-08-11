@@ -1,5 +1,5 @@
 PORTNAME=	waifu2x-ncnn-vulkan
-DISTVERSION=	20220419
+DISTVERSION=	20220728
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,8 +15,8 @@ LIB_DEPENDS=	libwebp.so:graphics/webp \
 USES=		cmake compiler:${OPENMP}c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	nihui
-GH_TUPLE=	KhronosGroup:glslang:11.1.0-44-g4afd6917:glslang/src/ncnn/glslang \
-		Tencent:ncnn:20220419:ncnn/src/ncnn
+GH_TUPLE=	KhronosGroup:glslang:11.9.0-19-g86ff4bca:glslang/src/ncnn/glslang \
+		Tencent:ncnn:20220721-10-gb4ba207c:ncnn/src/ncnn
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ON=	USE_SYSTEM_WEBP
 PLIST_FILES=	bin/${PORTNAME}

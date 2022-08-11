@@ -67,9 +67,9 @@ lib/scribus/plugins/libuniconvertorplugin.so
 lib/scribus/plugins/libwmfimplugin.so
 lib/scribus/plugins/libxpsexplugin.so
 lib/scribus/scribus.css
-man/de/man1/scribus.1.gz
-man/man1/scribus.1.gz
-man/pl/man1/scribus.1.gz
+share/man/de/man1/scribus.1.gz
+share/man/man1/scribus.1.gz
+share/man/pl/man1/scribus.1.gz
 share/applications/scribus.desktop
 share/icons/hicolor/1024x1024/apps/scribus.png
 share/icons/hicolor/128x128/apps/scribus.png
@@ -3560,4 +3560,3 @@ share/pixmaps/scribus.png
 %%PORTDOCS%%%%DOCSDIR%%/ru/toolbox8.html
 %%PORTDOCS%%%%DOCSDIR%%/ru/toolbox9.html
 %%PORTDOCS%%%%DOCSDIR%%/ru/topten.html
-@dir share/man/man1

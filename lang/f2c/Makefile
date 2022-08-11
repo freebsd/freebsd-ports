@@ -1,5 +1,3 @@
-# Created by: Steven G. Kargl
-
 PORTNAME=	f2c
 PORTVERSION=	20200916
 CATEGORIES=	lang

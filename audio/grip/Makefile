@@ -1,5 +1,3 @@
-# Created by: kbyanc@posi.net
-
 PORTNAME=	grip
 DISTVERSION=	4.2.2
 CATEGORIES=	audio

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rack-openid
 PORTVERSION=	1.4.2
 PORTREVISION=	4

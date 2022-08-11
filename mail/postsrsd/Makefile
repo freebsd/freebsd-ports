@@ -1,5 +1,3 @@
-# Created by: Krzysztof Stryjek <ports@bsdserwis.com>
-
 PORTNAME=	postsrsd
 PORTVERSION=	1.10
 CATEGORIES=	mail

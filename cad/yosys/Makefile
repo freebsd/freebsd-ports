@@ -1,8 +1,6 @@
-# Created by: Johnny Sorocil <jsorocil@gmail.com>
-
 PORTNAME=	yosys
 DISTVERSIONPREFIX=	yosys-
-DISTVERSION=	0.16
+DISTVERSION=	0.20
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org

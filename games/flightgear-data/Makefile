@@ -1,5 +1,3 @@
-# Created by: Brian Buchanan <brian@CSUA.Berkeley.EDU>
-
 PORTNAME=	flightgear-data
 PORTVERSION=	2020.3.13
 CATEGORIES=	games

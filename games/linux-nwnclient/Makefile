@@ -1,5 +1,3 @@
-# Created by: Erik Olson <erikolson@olsonexpress.com>
-
 PORTNAME=	nwnclient
 PORTVERSION=	1.69
 PORTREVISION=	5

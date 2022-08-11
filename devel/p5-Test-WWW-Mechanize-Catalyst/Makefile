@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Test-WWW-Mechanize-Catalyst
 PORTVERSION=	0.62
 CATEGORIES=	devel perl5

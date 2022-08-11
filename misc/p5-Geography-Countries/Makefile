@@ -1,5 +1,3 @@
-# Created by: dikshie <dikshie@lapi.itb.ac.id>
-
 PORTNAME=	Geography-Countries
 PORTVERSION=	2009041301
 PORTREVISION=	1

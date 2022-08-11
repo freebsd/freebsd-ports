@@ -1,5 +1,3 @@
-# Created by: Yinghong Liu <relaxbsd@gmail.com>
-
 PORTNAME=	belooted
 PORTVERSION=	0.1.4.1
 PORTREVISION=	7

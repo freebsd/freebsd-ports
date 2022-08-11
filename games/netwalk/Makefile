@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	netwalk
 PORTVERSION=	0.4.11
 PORTREVISION=	3

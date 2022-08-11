@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	File-Flock-Retry
 PORTVERSION=	0.632
 CATEGORIES=	devel perl5

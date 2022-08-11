@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	pdepend
 PORTVERSION=	20100520
 CATEGORIES=	devel www pear

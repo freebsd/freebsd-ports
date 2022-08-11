@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@missouri.edu>
-
 PORTNAME=	octave-forge-dataframe
 PORTVERSION=	1.2.0
 PORTREVISION=	13

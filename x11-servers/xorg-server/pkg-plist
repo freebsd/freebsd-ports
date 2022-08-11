@@ -1,11 +1,6 @@
 bin/X
 bin/Xorg
-%%SUID%%@(,,4555) bin/Xorg.wrap
-bin/cvt
 bin/gtf
-include/xorg/BT.h
-include/xorg/IBM.h
-include/xorg/TI.h
 include/xorg/XIstubs.h
 include/xorg/Xprintf.h
 include/xorg/callback.h
@@ -109,7 +104,6 @@ include/xorg/servermd.h
 include/xorg/shadow.h
 include/xorg/shadowfb.h
 include/xorg/shmint.h
-include/xorg/site.h
 include/xorg/syncsdk.h
 include/xorg/validate.h
 include/xorg/vbe.h
@@ -137,7 +131,6 @@ include/xorg/xf86Pci.h
 include/xorg/xf86PciInfo.h
 include/xorg/xf86Priv.h
 include/xorg/xf86Privstr.h
-include/xorg/xf86RamDac.h
 include/xorg/xf86RandR12.h
 %%SPARC64%%include/xorg/xf86Sbus.h
 include/xorg/xf86VGAarbiter.h
@@ -165,33 +158,37 @@ include/xorg/xserver-properties.h
 include/xorg/xserver_poll.h
 include/xorg/xvdix.h
 include/xorg/xvmcext.h
+include/xorg/xf86-input-inputtest-protocol.h
 lib/xorg/modules/drivers/modesetting_drv.so
 lib/xorg/modules/extensions/.xorg/libglx.so
+lib/xorg/modules/input/inputtest_drv.so
 lib/xorg/modules/libexa.so
-lib/xorg/modules/libfb.so
-lib/xorg/modules/libfbdevhw.so
 lib/xorg/modules/libglamoregl.so
 lib/xorg/modules/libint10.so
 lib/xorg/modules/libshadow.so
 lib/xorg/modules/libshadowfb.so
-lib/xorg/modules/libvbe.so
+lib/xorg/modules/libfbdevhw.so
 lib/xorg/modules/libvgahw.so
 lib/xorg/modules/libwfb.so
 lib/xorg/protocol.txt
 libdata/pkgconfig/xorg-server.pc
+libexec/Xorg
+@(,,4555) libexec/Xorg.wrap
 man/man1/Xorg.1.gz
-%%SUID%%man/man1/Xorg.wrap.1.gz
+man/man1/Xorg.wrap.1.gz
 man/man1/Xserver.1.gz
-man/man1/cvt.1.gz
 man/man1/gtf.1.gz
 man/man4/exa.4.gz
 man/man4/fbdevhw.4.gz
+man/man4/inputtestdrv.4.gz
 man/man4/modesetting.4.gz
-%%SUID%%man/man5/Xwrapper.config.5.gz
+man/man5/Xwrapper.config.5.gz
 man/man5/xorg.conf.5.gz
 man/man5/xorg.conf.d.5.gz
-%%UDEV%%share/X11/xorg.conf.d/10-quirks.conf
+share/X11/xorg.conf.d/10-quirks.conf
 share/X11/xorg.conf.d/20-evdev-kbd.conf
 share/aclocal/xorg-server.m4
 @dir etc/X11/xorg.conf.d
 @dir %%FONTPATHD%%
+@dir /var/lib/xkb
+@dir /var/lib

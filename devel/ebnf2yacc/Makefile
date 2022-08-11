@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ebnf2yacc
 PORTVERSION=	0.1.1
 CATEGORIES=	devel

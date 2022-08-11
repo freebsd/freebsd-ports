@@ -1,5 +1,3 @@
-# Created by: Bob Eager <bob@eager.cx>
-
 PORTNAME=	regutil
 PORTVERSION=	1.26
 PORTREVISION=	2

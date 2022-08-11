@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-quick
 DISTVERSION=	g20190120
 CATEGORIES=	chinese textproc

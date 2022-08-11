@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_sdk
 PORTVERSION=	0.73.0
 CATEGORIES=	devel rubygems

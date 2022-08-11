@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	pulseaudio
 PORTVERSION=	10.0
 DISTVERSIONSUFFIX=	-6.el7_9

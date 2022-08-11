@@ -1,5 +1,3 @@
-# Created by: ugen
-
 PORTNAME=	s3mod
 PORTVERSION=	1.09
 DISTVERSIONPREFIX=	v

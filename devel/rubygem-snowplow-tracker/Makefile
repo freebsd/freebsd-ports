@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	snowplow-tracker
 PORTVERSION=	0.8.0
 CATEGORIES=	devel rubygems

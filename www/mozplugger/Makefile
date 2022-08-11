@@ -1,5 +1,3 @@
-# Created by: Loren M. Lang <loren@north-winds.org>
-
 PORTNAME=	mozplugger
 PORTVERSION=	2.1.6
 CATEGORIES=	www

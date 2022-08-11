@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	pager
 PORTVERSION=	3.3
 PORTREVISION=	1

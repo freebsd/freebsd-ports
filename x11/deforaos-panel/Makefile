@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	deforaos-panel
 PORTVERSION=	0.3.6
 PORTREVISION=	1

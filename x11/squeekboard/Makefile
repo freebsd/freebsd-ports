@@ -1,7 +1,8 @@
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17.1
-CATEGORIES=	x11
+PORTREVISION=	3
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	On-screen keyboard for Wayland

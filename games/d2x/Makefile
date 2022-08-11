@@ -1,5 +1,3 @@
-# Created by: Radim Kolar
-
 PORTNAME=	d2x
 PORTVERSION=	0.2.5
 PORTREVISION=	15

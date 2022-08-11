@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gtkmathview
 PORTVERSION=	0.8.0
 PORTREVISION=	12

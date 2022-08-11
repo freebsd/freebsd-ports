@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libdevq
 PORTVERSION=	0.0.4
 CATEGORIES=	devel

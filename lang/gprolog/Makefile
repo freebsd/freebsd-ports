@@ -1,5 +1,3 @@
-# Created by: Douglas Anestad <yotta@dougdidit.com>
-
 PORTNAME=	gprolog
 PORTVERSION=	1.5.0
 CATEGORIES=	lang

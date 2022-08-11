@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	packaging
 PORTVERSION=	21.3
 CATEGORIES=	devel python

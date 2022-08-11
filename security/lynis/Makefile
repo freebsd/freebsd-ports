@@ -1,5 +1,3 @@
-# Created by: Cory McIntire (loon@noncensored.com)
-
 PORTNAME=	lynis
 PORTVERSION=	3.0.7
 CATEGORIES=	security

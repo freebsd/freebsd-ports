@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	xatrix
 PORTVERSION=	3.20
 CATEGORIES=	games

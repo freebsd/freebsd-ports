@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	swftools
 PORTVERSION=	0.9.2
 PORTREVISION=	11

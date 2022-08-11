@@ -1,5 +1,3 @@
-# Created by: vanhu
-
 # TODO: - libipsec issue ?
 #       - cleanup...
 #       - SYSCONFDIR

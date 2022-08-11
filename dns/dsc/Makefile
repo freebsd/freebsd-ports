@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns.company>
-
 PORTNAME=	dsc
 PORTVERSION=	2.13.0
 CATEGORIES=	dns

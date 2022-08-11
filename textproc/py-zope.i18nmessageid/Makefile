@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	zope.i18nmessageid
 PORTVERSION=	5.0.1
 CATEGORIES=	textproc www python

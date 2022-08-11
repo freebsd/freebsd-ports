@@ -1,5 +1,3 @@
-# Created by: Marc Lagrange <rhaamo@gruik.at>
-
 PORTNAME=	hwstat
 PORTVERSION=	0.5.1
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: bf@FreeBSD.org
-
 PORTNAME=	spblas
 DISTVERSION=	1_02
 PORTREVISION=	8

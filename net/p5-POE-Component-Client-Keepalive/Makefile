@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-Client-Keepalive
 PORTVERSION=	0.2720
 CATEGORIES=	net perl5

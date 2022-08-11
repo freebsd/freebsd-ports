@@ -1,5 +1,3 @@
-# Created by: nbm
-
 PORTNAME=	criticalmass
 PORTVERSION=	1.5.0
 PORTREVISION=	3

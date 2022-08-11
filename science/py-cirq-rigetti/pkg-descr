@@ -1,0 +1,4 @@
+cirq-ionq provides everything you'll need to run Cirq quantum algorithms
+on Rigetti quantum computers.
+
+WWW: https://github.com/quantumlib/cirq

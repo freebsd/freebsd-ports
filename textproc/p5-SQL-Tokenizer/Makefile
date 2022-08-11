@@ -1,5 +1,3 @@
-# Created by: milki <milki@rescomp.berkeley.edu>
-
 PORTNAME=	SQL-Tokenizer
 PORTVERSION=	0.24
 PORTREVISION=	1

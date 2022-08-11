@@ -1,0 +1,12 @@
+--- share/mk/src.libnames.mk.orig	2022-04-26 00:33:13.464870000 +0000
++++ share/mk/src.libnames.mk	2022-04-26 00:34:36.615330000 +0000
+@@ -265,6 +265,9 @@
+ # 2nd+ order consumers.  Auto-generating this would be better.
+ _DP_80211=	sbuf bsdxml
+ _DP_9p=		sbuf
++.if ${MK_CASPER} != "no"
++_DP_9p+=       casper cap_pwd cap_grp
++.endif
+ # XXX: Not bootstrapped so uses host version on non-FreeBSD, so don't use a
+ # FreeBSD-specific dependency list
+ .if ${.MAKE.OS} == "FreeBSD" || !defined(BOOTSTRAPPING)

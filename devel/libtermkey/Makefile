@@ -1,5 +1,3 @@
-# Created by: Anton Tornqvist <antont@inbox.lv>
-
 PORTNAME=	libtermkey
 PORTVERSION=	0.22
 CATEGORIES=	devel

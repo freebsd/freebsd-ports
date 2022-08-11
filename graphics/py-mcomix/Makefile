@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-
 PORTNAME=	mcomix
 PORTVERSION=	1.2.1g20210526
 PORTREVISION=	1

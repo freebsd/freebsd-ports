@@ -1,7 +1,6 @@
 PORTNAME=	photoflare
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.8
-PORTREVISION=	1
+DISTVERSION=	1.6.10
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,12 +21,13 @@ LDFLAGS+=	`pkg-config --libs GraphicsMagick++` ${LDFLAGS_${CHOSEN_COMPILER_TYPE}
 LDFLAGS_clang=	-lomp
 LDFLAGS_gcc=	-fopenmp
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == armv7 || ${ARCH} == powerpc
+.if !exists(/usr/include/omp.h)
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++17-lang
 .endif
+
+post-install: # delete ecp.* files with random extensions
+	@${FIND} ${STAGEDIR}${PREFIX} -name "ecp.*" -delete
 
 .include <bsd.port.mk>

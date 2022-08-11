@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/nobutaka:skkdic
 PKGNAMESUFFIX=	-dict

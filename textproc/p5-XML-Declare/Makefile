@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	XML-Declare
 PORTVERSION=	0.06
 PORTREVISION=	1

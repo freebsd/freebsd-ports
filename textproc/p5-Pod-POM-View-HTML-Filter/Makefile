@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Pod-POM-View-HTML-Filter
 PORTVERSION=	0.09
 PORTREVISION=	1

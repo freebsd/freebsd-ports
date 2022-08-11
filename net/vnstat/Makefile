@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	vnstat
 PORTVERSION=	2.9
 CATEGORIES=	net

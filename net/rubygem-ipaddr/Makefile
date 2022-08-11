@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ipaddr
 PORTVERSION=	1.2.4
 CATEGORIES=	net rubygems

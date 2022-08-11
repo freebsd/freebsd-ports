@@ -1,5 +1,3 @@
-# Created by: Meno Abels <meno.abels@adviser.com>
-
 PORTNAME=	fakeroot
 PORTVERSION=	1.23
 CATEGORIES=	security

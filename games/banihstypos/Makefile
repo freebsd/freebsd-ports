@@ -1,5 +1,3 @@
-# Created by: Philippe Audeoud <jadawin@tuxaco.net>
-
 PORTNAME=	banihstypos
 PORTVERSION=	0.2
 CATEGORIES=	games

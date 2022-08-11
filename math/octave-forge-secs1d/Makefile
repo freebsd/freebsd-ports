@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-secs1d
 PORTVERSION=	0.0.9
 PORTREVISION=	21

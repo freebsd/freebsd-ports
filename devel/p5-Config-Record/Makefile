@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Config-Record
 PORTVERSION=	1.1.2
 PORTREVISION=	1

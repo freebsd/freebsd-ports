@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Curses
 PORTVERSION=	1.38
 CATEGORIES=	devel perl5

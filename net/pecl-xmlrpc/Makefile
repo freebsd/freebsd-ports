@@ -1,5 +1,3 @@
-# Created by: Derek Schrock <dereks@lifeofadishwasher.com>
-
 PORTNAME=	xmlrpc
 DISTVERSION=	1.0.0RC3
 PORTREVISION=	2

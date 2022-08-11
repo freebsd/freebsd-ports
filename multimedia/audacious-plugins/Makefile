@@ -1,8 +1,5 @@
-# Created by: Zastupov Stepan [RedChrom] <redchrom@mail.ru>
-
 PORTNAME=	audacious-plugins
-PORTVERSION=	4.1
-PORTREVISION=	5
+PORTVERSION=	4.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -32,17 +29,18 @@ qt5_BUILD_DEPENDS=	audacious:multimedia/audacious@qt5
 
 gtk2_PKGNAMESUFFIX=	-gtk2
 gtk2_CONFLICTS_INSTALL=	audacious-plugins
+gtk2_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 gtk2_RUN_DEPENDS=	audacious:multimedia/audacious@gtk2
 gtk2_BUILD_DEPENDS=	audacious:multimedia/audacious@gtk2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-console --disable-soxr \
+CONFIGURE_ARGS=	--disable-console --disable-mms --disable-soxr \
 		--enable-gnomeshortcuts
 
 .if ${FLAVOR} == qt5
 CONFIGURE_ARGS+=	--enable-qt --disable-gtk
 USES+=			qt:5
-USE_QT=			core gui widgets
+USE_QT=			core gui multimedia network widgets x11extras
 PLIST_SUB=		QT5="" GTK2="@comment "
 .elif ${FLAVOR} == gtk2
 CONFIGURE_ARGS+=	--disable-qt --enable-gtk --enable-hotkey
@@ -51,17 +49,17 @@ PLIST_SUB=		QT5="@comment " GTK2=""
 .endif
 
 OPTIONS_DEFINE=	AAC ADPLUG AMIDI BS2B CDDA CUE FFMPEG FLAC LAME LIRC \
-		MMS MODPLUG MPRIS NEON NLS NOTIFY OPENMPT SAMPLERATE \
+		MODPLUG MPRIS NEON NLS NOTIFY OPENGL OPENMPT SAMPLERATE \
 		SCROBBLER SID SNDFILE SPEEDPITCH VORBIS WAVPACK
 OPTIONS_MULTI=		OUTPUT
 OPTIONS_MULTI_OUTPUT=	ALSA FILEWRITER JACK OSS PULSEAUDIO SDL SNDIO
-OPTIONS_DEFAULT=	AAC ADPLUG CDDA CUE FILEWRITER FFMPEG FLAC MMS MPRIS \
+OPTIONS_DEFAULT=	AAC ADPLUG CDDA CUE FILEWRITER FFMPEG FLAC MPRIS \
 			NEON NLS NOTIFY OPENMPT OSS PULSEAUDIO SCROBBLER \
 			SID VORBIS WAVPACK
 OPTIONS_SUB=	yes
 
 .if ${FLAVOR} == gtk2
-OPTIONS_DEFINE+=	AOSD OPENGL
+OPTIONS_DEFINE+=	AOSD
 OPTIONS_DEFAULT+=	AOSD
 .endif
 
@@ -111,8 +109,6 @@ LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=	filewriter_mp3
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_CONFIGURE_ENABLE=	lirc
-MMS_LIB_DEPENDS=	libmms.so:net/libmms
-MMS_CONFIGURE_ENABLE=	mms
 MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 MODPLUG_CONFIGURE_ENABLE=	modplug
 MPRIS_CONFIGURE_ENABLE=	mpris2
@@ -122,9 +118,14 @@ NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=notify
-OPENGL_USES=		gl xorg
-OPENGL_USE=		xorg=x11 gl=gl
+OPENGL_USES=		gl
+OPENGL_USE=		gl=gl
+.if ${FLAVOR} == qt5
+OPENGL_USE+=		qt=opengl
+OPENGL_CONFIGURE_ENABLE=qtglspectrum
+.elif ${FLAVOR} == gtk2
 OPENGL_CONFIGURE_ENABLE=glspectrum
+.endif
 OPENMPT_LIB_DEPENDS=	libopenmpt.so:audio/libopenmpt
 OPENMPT_CONFIGURE_ENABLE=	openmpt
 OSS_CONFIGURE_ENABLE=	oss4

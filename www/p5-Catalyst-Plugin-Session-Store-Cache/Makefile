@@ -1,5 +1,3 @@
-# Created by: lbr@FreeBSD.org
-
 PORTNAME=	Catalyst-Plugin-Session-Store-Cache
 PORTVERSION=	0.01
 PORTREVISION=	1

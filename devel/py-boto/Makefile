@@ -1,5 +1,3 @@
-# Created by: Peter Schuller <peter.schuller@infidyne.com>
-
 PORTNAME=	boto
 PORTVERSION=	2.49.0
 PORTREVISION=	1

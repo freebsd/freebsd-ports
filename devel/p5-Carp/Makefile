@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Carp
 PORTVERSION=	1.50
 CATEGORIES=	devel perl5

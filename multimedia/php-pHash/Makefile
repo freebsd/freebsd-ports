@@ -1,5 +1,3 @@
-# Created by: Naram Qashat <cyberbotx@cyberbotx.com>
-
 PORTNAME=	pHash
 PORTVERSION=	0.9.6
 PORTREVISION=	5
@@ -21,7 +19,7 @@ LIB_DEPENDS=	libpHash.so:multimedia/pHash
 
 USES=		compiler:c++11-lang php:ext
 # Does not build for PHP 8.0 and later
-IGNORE_WITH_PHP=	80 81
+IGNORE_WITH_PHP=	80 81 82
 
 WRKSRC_SUBDIR=	bindings/php
 

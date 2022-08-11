@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Config-Versioned
 PORTVERSION=	1.01
 PORTREVISION=	1

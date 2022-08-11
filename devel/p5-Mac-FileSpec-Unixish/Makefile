@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Mac-FileSpec-Unixish
 PORTVERSION=	1.12
 PORTREVISION=	1

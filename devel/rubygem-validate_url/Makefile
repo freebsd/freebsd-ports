@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	validate_url
 PORTVERSION=	1.0.13
 CATEGORIES=	devel rubygems

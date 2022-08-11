@@ -1,5 +1,3 @@
-# Created by: alfred@FreeBSD.org
-
 PORTNAME=	devel-replay
 PORTVERSION=	1.0.4
 CATEGORIES=	devel

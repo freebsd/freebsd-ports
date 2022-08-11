@@ -1,6 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-#    $MCom: ports/misc/gnome-mime-data/Makefile,v 1.14 2007/05/22 04:59:18 marcus Exp $
-
 PORTNAME=	gnome-mime-data
 PORTVERSION=	2.18.0
 PORTREVISION=	5

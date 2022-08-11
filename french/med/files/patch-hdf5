@@ -1,0 +1,68 @@
+--- configure.orig	2018-12-10 10:32:28 UTC
++++ configure
+@@ -7633,13 +7633,13 @@ _ACEOF
+ 
+ #      AC_CHECK_LIB([m],[sin],[],[AC_MSG_ERROR([Can't find C math library.])],[])
+ #      AC_CHECK_LIB([z],[compress],[],[AC_MSG_ERROR([Can't find z library.])],[])
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for H5open in -lhdf5" >&5
+-$as_echo_n "checking for H5open in -lhdf5... " >&6; }
++      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for H5open in -lhdf5-110" >&5
++$as_echo_n "checking for H5open in -lhdf5-110... " >&6; }
+ if ${ac_cv_lib_hdf5_H5open+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lhdf5 -lm -lz $LIBS"
++LIBS="-lhdf5-110 -lm -lz $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -7674,10 +7674,10 @@ if test "x$ac_cv_lib_hdf5_H5open" = xyes; then :
+ #define HAVE_LIBHDF5 1
+ _ACEOF
+ 
+-  LIBS="-lhdf5 $LIBS"
++  LIBS="-lhdf5-110 $LIBS"
+ 
+ else
+-  as_fn_error $? "Can't find hdf5 library, either use HDF5HOME env. var. , --with-hdf5=<path> or --with-hdf5-lib=<libpath>" "$LINENO" 5
++  as_fn_error $? "Can't find hdf5-110 library, either use HDF5HOME env. var. , --with-hdf5=<path> or --with-hdf5-lib=<libpath>" "$LINENO" 5
+ fi
+ 
+       test "x$mpi_wanted_test" = "xyes" &&  for ac_func in H5Pset_fapl_mpio
+@@ -7696,7 +7696,7 @@ done
+ 
+       if test "x$with_hdf5_include" = "xno"; then
+         # Extract the first word of "h5dump", so it can be a program name with args.
+-set dummy h5dump; ac_word=$2
++set dummy h5dump-110; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+ if ${ac_cv_path_H5DUMP+:} false; then :
+@@ -7738,7 +7738,7 @@ fi
+ 
+       else
+         # Extract the first word of "h5dump", so it can be a program name with args.
+-set dummy h5dump; ac_word=$2
++set dummy h5dump-110; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+ if ${ac_cv_path_H5DUMP+:} false; then :
+@@ -7780,7 +7780,7 @@ fi
+ 
+       fi
+       if test "X$H5DUMP" = "Xno"; then
+-         as_fn_error $? "Can't find h5dump, please verify your env. var. PATH or use of --with-hdf5bin=<binpath>." "$LINENO" 5
++         as_fn_error $? "Can't find h5dump-110, please verify your env. var. PATH or use of --with-hdf5bin=<binpath>." "$LINENO" 5
+       fi
+ 
+ 
+@@ -7797,7 +7797,7 @@ fi
+ #La ligne suivante est inutile car effectuée par AC_CHECK_PROG
+ #      AC_SUBST(H5DUMP)
+ 
+-      HDF5_LIBS="-lhdf5"
++      HDF5_LIBS="-lhdf5-110"
+ 
+ 
+ 

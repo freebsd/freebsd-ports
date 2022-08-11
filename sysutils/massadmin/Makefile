@@ -1,5 +1,3 @@
-# Created by: Sascha Klauder <sklauder@trimind.de>
-
 PORTNAME=	massadmin
 PORTVERSION=	2.3
 PORTREVISION=	1

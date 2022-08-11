@@ -39,7 +39,7 @@ _MLT_NODEPEND=	yes
 
 # Library dependencies
 _MLT6_VERSION=	6.26.1
-_MLT7_VERSION=	7.4.0
+_MLT7_VERSION=	7.8.0
 _MLT6_PORTNAME=	mlt6
 _MLT7_PORTNAME=	mlt7
 _MLT6_LIB=	libmlt.so

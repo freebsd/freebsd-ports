@@ -1,5 +1,3 @@
-# Created by: Jeroen Ruigrok van der Werven <asmodai@FreeBSD.org>
-
 PORTNAME=	tuxnes
 PORTVERSION=	0.75
 PORTREVISION=	6

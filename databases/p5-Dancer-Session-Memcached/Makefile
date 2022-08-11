@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	Dancer-Session-Memcached
 PORTVERSION=	0.202
 CATEGORIES=	databases perl5

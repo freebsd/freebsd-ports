@@ -1,5 +1,3 @@
-# Created by: Frank Wall <fw@moov.de>
-
 PORTNAME=	AuthCAS
 PORTVERSION=	1.6
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	cups
 PORTVERSION=	1.6.3
 DISTVERSIONSUFFIX=	-51.el7

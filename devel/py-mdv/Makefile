@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	mdv
 PORTVERSION=	1.7.4
 PORTREVISION=	1

@@ -1,6 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-#   $MCom: ports/x11-themes/gtk-engines2/Makefile,v 1.82 2010/04/19 10:51:27 kwm Exp $
-
 PORTNAME=	gtk-engines2
 PORTVERSION=	2.20.2
 PORTREVISION=	3

@@ -1,8 +1,6 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gdm
 PORTVERSION=	42.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome

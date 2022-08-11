@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	mini_histogram
 PORTVERSION=	0.3.1
 CATEGORIES=	devel rubygems

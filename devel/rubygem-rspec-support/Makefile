@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rspec-support
 PORTVERSION=	3.11.0
 CATEGORIES=	devel rubygems

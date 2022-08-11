@@ -1,5 +1,3 @@
-# Created by: Stephon Chen <stephon@pixnet.tw>
-
 PORTNAME=	SES
 PORTVERSION=	1.01
 PORTREVISION=	2

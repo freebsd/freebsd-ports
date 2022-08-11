@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	libnspsl
 PORTVERSION=	0.1.6
 CATEGORIES=	dns

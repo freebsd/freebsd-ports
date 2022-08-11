@@ -1,5 +1,3 @@
-# Created by: Armin Pirkovitsch <armin@frozen-zone.org>
-
 PORTNAME=	libg19
 PORTVERSION=	1.1.1
 PORTREVISION=	1

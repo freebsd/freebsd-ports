@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	mimetex
 PORTVERSION=	20120331.1.74
 CATEGORIES=	www math

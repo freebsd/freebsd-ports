@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_synapse
 PORTVERSION=	0.17.4
 CATEGORIES=	devel rubygems

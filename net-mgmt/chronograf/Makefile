@@ -1,7 +1,7 @@
 PORTNAME=	chronograf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES+=	https://nodejs.org/download/release/v${NODEJS_VERSION}/:node
 DISTFILES=	yarn-cache-${PKGNAME}.tar.xz:prefetch \
@@ -20,8 +20,6 @@ BUILD_DEPENDS=	go-bindata:devel/go-bindata \
 		yarn:www/yarn-node${NODEJS_VERSION_MAJOR}
 
 USES=		gmake go:modules python:build
-
-EXTRACT_ONLY:=	${DISTFILES:C/:[^:]+$//}
 
 GO_MODULE=	github.com/influxdata/${PORTNAME}
 GO_TARGET=	./cmd/chronograf/main.go:chronograf \
@@ -91,6 +89,6 @@ pre-build:
 		npm_config_tarball=${DISTDIR}/${DIST_SUBDIR}/node-v${NODEJS_VERSION}-headers.tar.gz \
 		yarn --frozen-lockfile --offline --no-progress --no-emoji
 	cd ${WRKSRC}/ui && ${SETENV} ${YARN_ENV} yarn run build
-	cd ${WRKSRC} && ${GMAKE} .bindata
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} .bindata
 
 .include <bsd.port.post.mk>

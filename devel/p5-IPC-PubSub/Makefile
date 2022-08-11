@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	IPC-PubSub
 PORTVERSION=	0.29
 PORTREVISION=	2

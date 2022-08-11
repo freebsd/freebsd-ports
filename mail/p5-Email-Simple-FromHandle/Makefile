@@ -1,5 +1,3 @@
-# Created by: <ashish@FreeBSD.org>
-
 PORTNAME=	Email-Simple-FromHandle
 PORTVERSION=	0.054
 PORTREVISION=	1

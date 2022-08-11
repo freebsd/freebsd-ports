@@ -1,5 +1,3 @@
-# Created by: clive
-
 PORTNAME=	Tie-DBI
 PORTVERSION=	1.08
 CATEGORIES=	databases perl5

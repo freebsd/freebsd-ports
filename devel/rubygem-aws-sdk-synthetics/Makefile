@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-synthetics
-PORTVERSION=	1.26.0
+PORTVERSION=	1.28.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

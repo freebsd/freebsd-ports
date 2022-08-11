@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	CGI-Tiny
 PORTVERSION=	1.002
 CATEGORIES=	www perl5

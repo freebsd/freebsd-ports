@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Mail-Webmail-Gmail
 PORTVERSION=	1.09
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	modplug-tools
 PORTVERSION=	0.5.6
 CATEGORIES=	audio

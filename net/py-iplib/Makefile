@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	iplib
 PORTVERSION=	1.2.1
 CATEGORIES=	net python

@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	GentiumBasic
 PORTVERSION=	1102
 PORTREVISION=	1

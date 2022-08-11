@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Exporter
 PORTVERSION=	5.68
 PORTREVISION=	1

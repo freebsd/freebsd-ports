@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_History
 PORTVERSION=	2.3.6
 CATEGORIES=	devel www pear

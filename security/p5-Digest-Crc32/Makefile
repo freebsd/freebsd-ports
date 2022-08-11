@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-Crc32
 PORTVERSION=	0.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: roam@orbitel.bg
-
 PORTNAME=	pslist
 PORTVERSION=	1.4.0
 CATEGORIES=	sysutils

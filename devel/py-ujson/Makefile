@@ -1,5 +1,3 @@
-# Created by: Xin Li <delphij@FreeBSD.org>
-
 PORTNAME=	ujson
 PORTVERSION=	5.0.0
 CATEGORIES=	devel python

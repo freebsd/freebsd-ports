@@ -1,5 +1,3 @@
-# Created by: Vladimir Ermakov <samflanker@gmail.com>
-
 PORTNAME=	netxms
 PORTVERSION=	2.2.2
 CATEGORIES=	net-mgmt

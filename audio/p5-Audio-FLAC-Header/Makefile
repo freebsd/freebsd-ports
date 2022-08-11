@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Audio-FLAC-Header
 PORTVERSION=	2.4
 PORTREVISION=	3

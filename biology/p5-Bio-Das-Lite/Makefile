@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Bio-Das-Lite
 PORTVERSION=	2.11
 PORTREVISION=	1

@@ -1,5 +1,5 @@
 PORTNAME=	gnome-pomodoro
-PORTVERSION=	0.20.0
+PORTVERSION=	0.21.1
 CATEGORIES=	deskutils gnome
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -14,16 +14,12 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libgom-1.0.so:databases/gom \
 		libpeas-1.0.so:devel/libpeas
 
-USES=		desktop-file-utils gettext-tools gmake gnome libtool meson \
+USES=		desktop-file-utils gettext-tools gmake gnome gstreamer libtool meson \
 		pkgconfig sqlite
 
 USE_GITHUB=	yes
 
-# clang fails to compile a C source (gnome-shell-extension.c) generated
-# from vala source. USE_GCC=yes is a temporary workaround to this issue.
-USE_GCC=	yes
 USE_GNOME=	cairo glib20 gtk30 introspection
-USE_GSTREAMER1=	yes
 
 GLIB_SCHEMAS=	org.gnome.pomodoro.gschema.xml \
 		org.gnome.pomodoro.plugins.actions.gschema.xml \

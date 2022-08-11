@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	idea
 PORTVERSION=	1.2
 PORTREVISION=	1

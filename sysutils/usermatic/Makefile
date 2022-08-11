@@ -1,5 +1,3 @@
-# Created by: Andreas Fehlner (fehlner@gmx.de)
-
 PORTNAME=	usermatic
 PORTVERSION=	0.6.1
 CATEGORIES=	sysutils

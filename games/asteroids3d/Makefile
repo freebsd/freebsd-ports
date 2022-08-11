@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	asteroids3d
 PORTVERSION=	0.5.1
 PORTREVISION=	9

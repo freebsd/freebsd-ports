@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Bio-MAGETAB
 PORTVERSION=	1.31
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	arclog
 PORTVERSION=	3.04
 PORTREVISION=	3

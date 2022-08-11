@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Complete-Util
 PORTVERSION=	0.611
 CATEGORIES=	devel perl5

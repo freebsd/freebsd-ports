@@ -1,5 +1,3 @@
-# Created by: Lars Köller <Lars.Koeller@Uni-Bielefeld.DE>
-
 PORTNAME=	apcupsd
 PORTVERSION=	3.14.14
 PORTREVISION=	4

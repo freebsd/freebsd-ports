@@ -1,5 +1,3 @@
-# Created by: Richard Gallamore <ultima@FreeBSD.org>
-
 PORTNAME=	guacamole-server
 DISTVERSION=	1.4.0
 CATEGORIES=	net

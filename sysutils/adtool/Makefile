@@ -1,5 +1,3 @@
-# Created by: joseph@randomnetworks.com
-
 PORTNAME=	adtool
 PORTVERSION=	1.3.3
 PORTREVISION=	3

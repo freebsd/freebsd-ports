@@ -1,5 +1,3 @@
-# Created by: Lars Engels <lme@FreeBSD.org>
-
 PORTNAME=	fcheck
 PORTVERSION=	2.07.59
 PORTREVISION=	1

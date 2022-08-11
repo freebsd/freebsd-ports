@@ -12,14 +12,14 @@ COMMENT=	Cross GNU Compiler Collection for ${TARGETARCH}
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH} \
+BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${BU_FLAVOR} \
 		objdump:devel/binutils
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
-RUN_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH}
+RUN_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${BU_FLAVOR}
 
-FLAVORS=	aarch64 amd64 i386 mips mips64 powerpc powerpc64 riscv64 sparc64
+FLAVORS=	aarch64 amd64 armv6 armv7 i386 mips mips64 powerpc powerpc64 riscv64 sparc64
 TARGETARCH=	${FLAVOR}
 
 USES=		compiler:c++11-lang cpe gmake iconv libtool makeinfo tar:xz
@@ -32,12 +32,11 @@ PLIST_SUB=	OPSYS=${OPSYS:tl} \
 		GCC_VERSION=${PORTVERSION}
 
 SUB_FILES=	xtoolchain.mk
-SUB_LIST=	GCC_TARGET=${GCC_TARGET} \
+SUB_LIST=	BU_PREFIX=${BU_PREFIX} \
+		GCC_TARGET=${GCC_TARGET} \
 		SUFFIX=${SUFFIX}
 
-GCC_TARGET=	${FLAVOR:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
-BU_PREFIX=	${GCC_TARGET}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
@@ -60,6 +59,17 @@ INSTALL_TARGET=	install-gcc
 
 .include <bsd.port.pre.mk>
 
+.if ${TARGETARCH:Marm*}
+TARGET_ABI=	gnueabi
+BU_FLAVOR=	arm_${TARGET_ABI}
+BU_PREFIX=	arm-${TARGET_ABI}-${OPSYS:tl}${OSREL}
+.else
+TARGET_ABI=	unknown
+BU_FLAVOR=	${TARGETARCH}
+BU_PREFIX=	${GCC_TARGET}
+.endif
+GCC_TARGET=	${TARGETARCH:S/amd64/x86_64/}-${TARGET_ABI}-${OPSYS:tl}${OSREL}
+
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBSTDCXX/ s/stdc\+\+/c\+\+/g ' \
 		${WRKSRC}//gcc/cp/g++spec.c
@@ -72,7 +82,7 @@ CONFIGURE_TARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 
-.if ${TARGETARCH} == "armv6" || ${TARGETARCH} == "aarch64"
+.if ${TARGETARCH:Marm*} || ${TARGETARCH} == "aarch64"
 . if ${COMPILER_TYPE} == clang
 MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
 . endif
@@ -101,6 +111,9 @@ PLIST+=		${.CURDIR}/pkg-plist.aarch64
 .endif
 .if ${TARGETARCH} == "aarch64" || ${TARGETARCH:Marm*}
 PLIST+=		${.CURDIR}/pkg-plist.arm
+.endif
+.if ${TARGETARCH:Marm*}
+PLIST+=		${.CURDIR}/pkg-plist.arm_gnueabi
 .endif
 .if ${TARGETARCH} == "amd64"
 PLIST+=		${.CURDIR}/pkg-plist.amd64

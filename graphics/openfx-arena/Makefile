@@ -1,11 +1,8 @@
 PORTNAME=	openfx-arena
-PORTVERSION=	2.3.14
+PORTVERSION=	2.4.3
 DISTVERSIONPREFIX=	Natron-
-PORTREVISION=	51
+PORTREVISION=	2
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	bc06a46bb1ccef8f7da6caf17faf165fbac662db.diff:-p1
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Extra OpenFX plugins for Natron
@@ -16,6 +13,7 @@ ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 BUILD_DEPENDS=	opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 		libfontconfig.so:x11-fonts/fontconfig \
+		libfribidi.so:converters/fribidi \
 		libcdr-0.1.so:graphics/libcdr01 \
 		librevenge-0.0.so:textproc/librevenge \
 		libpoppler-glib.so:graphics/poppler-glib \
@@ -33,21 +31,23 @@ LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 		liblqr-1.so:graphics/liblqr-1 \
 		libfftw3.so:math/fftw3 \
 		libltdl.so:devel/libltdl \
-		libpoppler.so:graphics/poppler
+		libpoppler.so:graphics/poppler \
+		libraqm.so:print/libraqm
 
-USES=		gl gmake gnome iconv magick:6 xorg
+USES=		gl gmake gnome iconv magick:6 ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	NatronGitHub
-GH_TUPLE=	NatronGitHub:openfx-supportext:e600cae:openfx_supportext/SupportExt \
-		NatronGitHub:openfx:a85dc34:openfx/OpenFX \
-		NatronGitHub:openfx-io:Natron-2.3.12:OpenFX_IO/OpenFX-IO \
-		NatronGitHub:SequenceParsing:9e8b77a:SequenceParsing/OpenFX-IO/IOSupport/SequenceParsing \
-		NatronGitHub:tinydir:3aae922:tinydir/OpenFX-IO/IOSupport/SequenceParsing/tinydir
+GH_TUPLE=	NatronGitHub:openfx-supportext:79d8c22:openfx_supportext/SupportExt \
+		NatronGitHub:openfx:d5db5d0:openfx/OpenFX \
+		NatronGitHub:openfx-io:c6ad47b:OpenFX_IO/OpenFX-IO \
+		lvandeve:lodepng:5601b82:dummy/lodepng \
+		NatronGitHub:SequenceParsing:3c93fcc:SequenceParsing/OpenFX-IO/IOSupport/SequenceParsing \
+		NatronGitHub:tinydir:64fb1d4:tinydir/OpenFX-IO/IOSupport/SequenceParsing/tinydir
 
 MAKE_ENV+=	CONFIG=release
 USE_GL=	gl
 USE_GNOME=	libxml2 pango cairo librsvg2
-USE_XORG+=	x11 xcb xau xdamage xfixes xxf86vm xrender xext xdmcp pixman sm ice xt
+USE_XORG+=	x11 xcb xau xdamage xfixes xft xxf86vm xrender xext xdmcp pixman sm ice xt
 MAKE_ENV+=	CONFIG=release
 
 post-extract:

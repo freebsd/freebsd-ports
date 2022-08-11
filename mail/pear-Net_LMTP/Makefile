@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Net_LMTP
 PORTVERSION=	1.0.2
 CATEGORIES=	mail www pear

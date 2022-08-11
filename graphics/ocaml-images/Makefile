@@ -1,8 +1,6 @@
-# Created by: ijliao
-
 PORTNAME=	images
 PORTVERSION=	4.0.1
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/camlspotter/camlimages/get/
@@ -12,6 +10,8 @@ DIST_SUBDIR=	ocaml-images
 
 MAINTAINER=	michael.grunewald@laposte.net
 COMMENT=	Objective Caml image processing library
+
+BROKEN=		does not build: broken plist
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ocaml.m4:lang/ocaml-autoconf
 BUILD_DEPENDS+=	omake:devel/omake
@@ -33,8 +33,8 @@ WRKSRC=		${WRKDIR}/camlspotter-camlimages-c803efa9d5d3
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	PNG JPEG TIFF XPM GIF FREETYPE GHOSTSCRIPT GTK2 DOCS
-OPTIONS_DEFAULT=PNG JPEG TIFF XPM GIF FREETYPE GHOSTSCRIPT
+OPTIONS_DEFINE=	PNG JPEG TIFF XPM GIF GHOSTSCRIPT GTK2 DOCS
+OPTIONS_DEFAULT=PNG JPEG TIFF XPM GIF GHOSTSCRIPT
 OPTIONS_SUB=	yes
 
 PNG_CONFIGURE_WITH=	png
@@ -53,8 +53,7 @@ GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 
 FREETYPE_USES=		pkgconfig
 FREETYPE_CONFIGURE_WITH=freetype
-FREETYPE_LIB_DEPENDS=	libttf.so:print/freetype \
-			libfreetype.so:print/freetype2
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 GHOSTSCRIPT_CONFIGURE_WITH=	gs
 GHOSTSCRIPT_USES=	ghostscript

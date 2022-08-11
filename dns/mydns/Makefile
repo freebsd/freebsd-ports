@@ -1,5 +1,3 @@
-# Created by: Simon Dick <simond@irrelevant.org>
-
 PORTNAME=	mydns
 PORTVERSION=	1.1.0
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	timers
 PORTVERSION=	4.3.3
 CATEGORIES=	devel rubygems

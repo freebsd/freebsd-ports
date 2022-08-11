@@ -1,2 +1,5 @@
-SHA256 (libmad-0.15.1b.tar.gz) = bbfac3ed6bfbc2823d3775ebb931087371e142bb0e9bb1bee51a76a6e0078690
-SIZE (libmad-0.15.1b.tar.gz) = 502379
+TIMESTAMP = 1657548905
+SHA256 (tenacityteam-libmad-0.16.2_GH0.tar.gz) = 6c14c2f4dcf7fd32e447eef99d6c53faded52e22f95e223e6f58844030851b99
+SIZE (tenacityteam-libmad-0.16.2_GH0.tar.gz) = 207357
+SHA256 (9ec2efa6ba4bfaed7805867077d3a67daa022331.patch) = fb51a0778828a7f662ffdf0a231cf4812608c19db71a2447d81b7c65df403bc8
+SIZE (9ec2efa6ba4bfaed7805867077d3a67daa022331.patch) = 984

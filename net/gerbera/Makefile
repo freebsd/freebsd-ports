@@ -1,10 +1,7 @@
 PORTNAME=	gerbera
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.0
+DISTVERSION=	1.11.0
 CATEGORIES=	net multimedia
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	97c5a5fbc27452ee5970f9c7be946d3819a79d05.patch:-p1
 
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	Media server compatible with DLNA and UPnP

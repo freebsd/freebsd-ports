@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	spc2it
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0

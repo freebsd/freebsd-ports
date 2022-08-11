@@ -1,6 +1,6 @@
 PORTNAME=	cdk
 DISTVERSIONPREFIX=	cdk-
-DISTVERSION=	2.3
+DISTVERSION=	2.7.1
 CATEGORIES=	science java
 PKGNAMESUFFIX=	-chemistry
 
@@ -14,6 +14,8 @@ BUILD_DEPENDS=	mvn:devel/maven
 
 USE_JAVA=	yes
 USE_GITHUB=	yes
+
+JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=68892, tid=0x000000000002b995 guarantee(val < (1U << nbits)) failed: Field too big for insn
 
 NO_ARCH=	yes
 
@@ -41,7 +43,7 @@ MVN_ARGS=	--offline
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${LOCALBASE}/bin/mvn ${MVN_ARGS} \
-		-fae install \
+		-fae \
 		-Dmaven.test.skip=true \
 		-Duser.home=${WRKDIR} \
 		install

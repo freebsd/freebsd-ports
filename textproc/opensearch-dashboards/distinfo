@@ -1,3 +1,3 @@
-TIMESTAMP = 1647637494
-SHA256 (opensearch-dashboards-1.3.0-linux-x64.tar.gz) = b73e7862fe560125a96a82b91098cab1702d8519f61a301cd3cd936a6b51328e
-SIZE (opensearch-dashboards-1.3.0-linux-x64.tar.gz) = 208745115
+TIMESTAMP = 1657299734
+SHA256 (opensearch-dashboards-2.1.0-linux-x64.tar.gz) = 47b062e880372368b096abecd2f255d96ce8861dd87ada1ca5eaf052e72b17b7
+SIZE (opensearch-dashboards-2.1.0-linux-x64.tar.gz) = 227733934

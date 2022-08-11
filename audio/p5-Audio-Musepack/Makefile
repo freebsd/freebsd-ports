@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Audio-Musepack
 PORTVERSION=	1.0.1
 PORTREVISION=	1

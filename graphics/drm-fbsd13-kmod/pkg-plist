@@ -2232,6 +2232,7 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/pm_qos.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/pnp.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/proc_fs.h
+%%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/random.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/reboot.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/relay.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/resource_ext.h
@@ -2241,6 +2242,7 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/stacktrace.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/stat.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/stddef.h
+%%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/suspend.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/swiotlb.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/sysrq.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/tracepoint.h

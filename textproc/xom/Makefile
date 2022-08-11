@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
-
 PORTNAME=	xom
 PORTVERSION=	1.2.11
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Lars Eggert <larse@isi.edu>
-
 PORTNAME=	jdb
 PORTVERSION=	1.14
 PORTREVISION=	3

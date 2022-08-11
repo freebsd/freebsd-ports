@@ -1,5 +1,3 @@
-# Created by: Paul Schmehl <pauls@utdallas.edu>
-
 PORTNAME=	Gtk2-Ex-Utils
 PORTVERSION=	0.09
 PORTREVISION=	8

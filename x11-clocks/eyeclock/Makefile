@@ -1,5 +1,3 @@
-# Created by: KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
-
 PORTNAME=	eyeclock
 PORTVERSION=	2.0
 PORTREVISION=	4

@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: buildkite
+# REQUIRE: LOGIN NETWORKING SERVERS
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# buildkite_enable  (bool):   Set to NO by default.
+# Set it to YES to enable buildkite.
+#
+# buildkite_config  (string): Optional full path for buildkite config file
+# buildkite_token   (args):   Optional buildkite token
+# buildkite_account (user):   Set to nobody by default.
+# buildkite_vars    (env):    Pass in environment variables, "" by default
+# buildkite_options (string): Pass in additional flags to agent
+# buildkite_flags   (string): Pass in additional flags to daemon(8)
+
+. /etc/rc.subr
+
+name=buildkite
+rcvar=buildkite_enable
+
+load_rc_config $name
+
+: ${buildkite_enable:=NO}
+: ${buildkite_logfile:=/var/log/buildkite.log}
+: ${buildkite_account:=nobody}
+: ${buildkite_config:="%%ETCDIR%%/buildkite-agent.cfg"}
+: ${buildkite_flags:=""}
+: ${buildkite_options:=""}
+: ${buildkite_vars:=""}
+
+pidfile=/var/run/buildkite.pid
+command=/usr/sbin/daemon
+command_args="-t ${name} \
+    -u ${buildkite_account} \
+    -r -P ${pidfile} \
+    /usr/bin/env ${buildkite_vars} \
+      HOME=`pw usershow ${buildkite_account} | cut -d: -f9` \
+      BUILDKITE_AGENT_TOKEN=${buildkite_token} \
+    %%PREFIX%%/bin/buildkite-agent start \
+    --config ${buildkite_config} \
+    ${buildkite_options}"
+
+required_files="${buildkite_config}"
+
+run_rc_command "$1"

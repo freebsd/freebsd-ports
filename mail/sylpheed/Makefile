@@ -1,5 +1,3 @@
-# Created by: shigeri <shigeri@m10.alpha-net.ne.jp>
-
 PORTNAME=	sylpheed
 PORTVERSION=	3.7.0
 PORTREVISION=	5

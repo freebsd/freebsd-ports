@@ -1,0 +1,11 @@
+include/getar/Archive.hpp
+include/getar/DirArchive.hpp
+include/getar/GTAR.hpp
+include/getar/Record.hpp
+include/getar/SharedArray.hpp
+include/getar/SqliteArchive.hpp
+include/getar/TarArchive.hpp
+include/getar/ZipArchive.hpp
+include/getar/miniz.h
+include/getar/sqlite3.h
+lib/libgetar.so

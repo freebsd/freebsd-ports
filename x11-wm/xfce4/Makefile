@@ -1,5 +1,3 @@
-# Created by: James Earl <jdearl@telus.net>
-
 PORTNAME=	xfce
 PORTVERSION=	4.16
 CATEGORIES=	x11-wm xfce

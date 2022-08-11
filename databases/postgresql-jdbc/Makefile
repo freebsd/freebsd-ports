@@ -1,7 +1,5 @@
-# Created by: Palle Girgensohn <girgen@partitur.se>
-
 PORTNAME=	postgresql
-PORTVERSION=	42.3.4
+PORTVERSION=	42.4.0
 CATEGORIES=	databases java
 MASTER_SITES=	http://jdbc.postgresql.org/download/
 PKGNAMESUFFIX=	-jdbc

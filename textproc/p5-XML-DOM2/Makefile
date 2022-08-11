@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	XML-DOM2
 PORTVERSION=	0.06
 PORTREVISION=	2

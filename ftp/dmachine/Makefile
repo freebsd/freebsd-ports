@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	dmachine
 PORTVERSION=	0.25
 CATEGORIES=	ftp java

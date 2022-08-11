@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	MDB_QueryTool
 PORTVERSION=	1.2.3
 CATEGORIES=	databases www pear

@@ -1,8 +1,5 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	sushi
-PORTVERSION=	41.2
-PORTREVISION=	1
+PORTVERSION=	42.0
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -31,12 +28,11 @@ RUN_DEPENDS=	nautilus:x11-fm/nautilus
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 gettext gl gnome localbase meson \
+USES=		compiler:c11 gettext gl gnome gstreamer localbase meson \
 		pkgconfig tar:xz xorg
 USE_CSTD=	c11
 USE_GNOME=	cairo gtksourceview4 intlhack introspection
 USE_GL=		egl
-USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xcomposite xdamage xext xi xfixes xrandr
 

@@ -1,5 +1,3 @@
-# Created by: Jan-Peter Koopmann <Jan-Peter.Koopmann@seceidos.de>
-
 PORTNAME=	File-Scan-ClamAV
 PORTVERSION=	1.95
 CATEGORIES=	security perl5

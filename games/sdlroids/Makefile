@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	sdlroids
 PORTVERSION=	1.3.4
 PORTREVISION=	18

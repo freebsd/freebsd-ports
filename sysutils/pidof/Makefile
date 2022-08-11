@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	pidof
 PORTVERSION=	20050501
 CATEGORIES=	sysutils

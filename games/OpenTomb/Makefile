@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@FreeBSD.org>
-
 PORTNAME=	OpenTomb
 DISTVERSIONPREFIX=	win32-
 DISTVERSION=	2018-02-03_alpha

@@ -1,13 +1,11 @@
-# Created by: gahr
-
 PORTNAME=	mpir
 PORTVERSION=	3.0.0
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://mpir.org/
+MASTER_SITES=	https://mpir.org/
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	Multiprecision integer library
+COMMENT=	Multiprecision integer, rational, floating point numbers library
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

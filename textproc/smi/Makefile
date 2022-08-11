@@ -1,5 +1,3 @@
-# Created by: Chris Hutchinson <portmaster@bsdforge.com>
-
 PORTNAME=	smi
 PORTVERSION=	1.4
 PORTREVISION=	2

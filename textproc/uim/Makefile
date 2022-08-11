@@ -1,8 +1,5 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	uim
-PORTVERSION=	1.8.9.b.20210104
-PORTREVISION=	1
+PORTVERSION=	1.8.9.b.${SNAPDATE}
 CATEGORIES?=	textproc
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
@@ -17,14 +14,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_riscv64=		fails to configure: ./include/private/gcconfig.h:492:5: The collector has not been ported to this machine/OS combination
 
-USES+=		autoreconf:build gettext gmake gnome iconv libedit libtool pathfix pkgconfig sqlite
+USES+=		autoreconf:build,2.69 gettext gmake gnome iconv libedit \
+		libtool pathfix pkgconfig sqlite
 USE_LDCONFIG=	yes
 USE_GNOME+=	glib20 intltool
 
 USE_GITHUB=	yes
-GH_TAGNAME=	d1ac9d9
+GH_TAGNAME=	6d8fcc8
 GH_TUPLE=	uim:sigscheme:beb8fbd:sigscheme \
 		uim:libgcroots:d362356:libgcroots
+
+SNAPDATE=	20220318
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-maintainer-mode
@@ -50,8 +50,9 @@ RUBY_NO_RUN_DEPENDS=	yes
 .if ${PORT_OPTIONS:MX11}
 USE_GNOME+=	cairo gdkpixbuf2 gtk30
 LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
-		libfontconfig.so:x11-fonts/fontconfig
-CONFIGURE_ARGS+=	--with-gtk3
+		libfontconfig.so:x11-fonts/fontconfig \
+		libharfbuzz.so:print/harfbuzz
+CONFIGURE_ARGS+=	--with-gtk3 --enable-default-toolkit=gtk3
 .endif
 CONFIGURE_ARGS+=	--enable-emacs --with-sj3 --with-canna --with-prime
 .endif
@@ -95,11 +96,8 @@ post-extract:
 	${MKDIR} ${WRKSRC}/sigscheme/libgcroots
 	${CP} -R ${WRKSRC_libgcroots}/* ${WRKSRC}/sigscheme/libgcroots
 
-post-patch:
-	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/scm/skk-custom.scm
-
 pre-configure:
-	cd ${WRKSRC} && ./autogen.sh
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh
 
 do-build:
 .if !defined(UIM_SLAVE)
@@ -114,11 +112,12 @@ do-build:
 do-install:
 .if !defined(UIM_SLAVE)
 	cd ${WRKSRC} && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-data-am
-.for d in sigscheme uim scm xim po fep emacs pixmaps tables
-	cd ${WRKSRC}/${d} && ${MAKE_CMD} DESTDIR=${STAGEDIR} install
+.for d in sigscheme uim scm xim fep emacs pixmaps tables
+	cd ${WRKSRC}/${d} && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip
 .endfor
+	cd ${WRKSRC}/po && ${MAKE_CMD} DESTDIR=${STAGEDIR} install
 .if ${PORT_OPTIONS:MX11}
-	cd ${WRKSRC}/gtk3/candwin && ${MAKE_CMD} DESTDIR=${STAGEDIR} install
+	cd ${WRKSRC}/gtk3/candwin && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip
 .endif
 .endif
 

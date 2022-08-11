@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	Hatena-Keyword
 PORTVERSION=	0.05
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Ilya A. Arkhipov <rum1cro@yandex.ru>
-
 PORTNAME=	Inconsolata-LGC
 PORTVERSION=	20131024
 PORTREVISION=	2

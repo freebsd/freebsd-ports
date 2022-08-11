@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	subversive
 PORTVERSION=	2.0.0
 PORTREVISION=	1

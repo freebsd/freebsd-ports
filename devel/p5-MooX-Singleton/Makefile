@@ -1,5 +1,3 @@
-# Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-
 PORTNAME=	MooX-Singleton
 PORTVERSION=	1.20
 CATEGORIES=	devel perl5

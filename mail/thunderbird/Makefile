@@ -1,8 +1,6 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	thunderbird
-DISTVERSION=	91.8.1
-CATEGORIES=	mail news net-im
+DISTVERSION=	91.12.0
+CATEGORIES=	mail news net-im wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
@@ -21,7 +19,7 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		libvpx>=1.8.2:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
-		autoconf-2.13:devel/autoconf213 \
+		autoconf2.13:devel/autoconf2.13 \
 		nasm:devel/nasm \
 		yasm:devel/yasm \
 		zip:archivers/zip
@@ -59,9 +57,9 @@ post-patch:
 		${WRKSRC}/comm/mail/app/nsMailApp.cpp
 
 pre-configure:
-	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf-2.13)
-	(cd ${MOZSRC} && ${LOCALBASE}/bin/autoconf-2.13)
-	(cd ${MOZSRC}/js/src/ && ${LOCALBASE}/bin/autoconf-2.13)
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf2.13)
+	(cd ${MOZSRC} && ${LOCALBASE}/bin/autoconf2.13)
+	(cd ${MOZSRC}/js/src/ && ${LOCALBASE}/bin/autoconf2.13)
 
 port-pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/defaults

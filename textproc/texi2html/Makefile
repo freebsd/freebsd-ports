@@ -1,5 +1,3 @@
-# Created by: Ian Vaudrey <i.vaudrey@bigfoot.com>
-
 PORTNAME=	texi2html
 PORTVERSION=	5.0
 PORTREVISION=	2

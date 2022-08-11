@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Sys-RunAlways
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

@@ -1,6 +1,6 @@
---- chrome/updater/util.cc.orig	2022-05-19 14:06:27 UTC
+--- chrome/updater/util.cc.orig	2022-06-17 14:20:10 UTC
 +++ chrome/updater/util.cc
-@@ -266,7 +266,7 @@ GURL AppendQueryParameter(const GURL& url,
+@@ -261,7 +261,7 @@ GURL AppendQueryParameter(const GURL& url,
    return url.ReplaceComponents(replacements);
  }
  

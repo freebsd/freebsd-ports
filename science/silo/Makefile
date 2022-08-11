@@ -1,9 +1,7 @@
-# Created by: Pedro F. Giffuni <giffunip@tutopia.com>
-
 PORTNAME=	silo
 PORTVERSION=	4.10.2
 DISTVERSIONSUFFIX=	-bsd
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	science
 MASTER_SITES=	http://wci.llnl.gov/content/assets/docs/simulation/computer-codes/${PORTNAME}/silo-${PORTVERSION}/
 
@@ -30,6 +28,7 @@ FORTRAN_CONFIGURE_ENABLE=	fortran
 FORTRAN_USES=			fortran
 
 HDF5_LIB_DEPENDS=		libhdf5.so:science/hdf5
+HDF5_CFLAGS=			-DH5_USE_110_API=1
 HDF5_CONFIGURE_ON=		--with-hdf5=${LOCALBASE}/include,${LOCALBASE}/lib
 HDF5_PLIST_SUB=			SUFX_HDF5="h5"
 HDF5_PLIST_SUB_OFF=		SUFX_HDF5=""

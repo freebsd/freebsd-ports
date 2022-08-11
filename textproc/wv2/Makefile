@@ -1,5 +1,3 @@
-# Created by: lofi@FreeBSD.org
-
 PORTNAME=	wv2
 PORTVERSION=	0.4.2
 PORTREVISION=	10

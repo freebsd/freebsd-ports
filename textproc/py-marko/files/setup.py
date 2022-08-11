@@ -12,13 +12,6 @@ EXTRAS_REQUIRE = {
     'codehilite': [
         'pygments',
     ],
-    'benchmark': [
-        'commonmark~=0.9',
-        'markdown~=3.3',
-        'markdown-it-py~=2.0',
-        'mistune~=2.0',
-        'mistletoe~=0.7',
-    ],
 }
 ENTRY_POINTS = {
     'console_scripts': [
@@ -60,6 +53,5 @@ setup_kwargs = {
     'entry_points': ENTRY_POINTS,
 
 }
-
 
 setup(**setup_kwargs)

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	face_recognition
 PORTVERSION=	1.3.0
 PORTREVISION=	1

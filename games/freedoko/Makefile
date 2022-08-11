@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	freedoko
 PORTVERSION=	0.7.19
 PORTREVISION=	3

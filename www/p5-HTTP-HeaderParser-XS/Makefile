@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	HTTP-HeaderParser-XS
 PORTVERSION=	0.20
 PORTREVISION=	1

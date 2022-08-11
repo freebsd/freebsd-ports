@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	utf8proc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.0

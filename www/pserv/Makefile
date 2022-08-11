@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <sysadmin@alexdupre.com>
-
 PORTNAME=	pserv
 PORTVERSION=	3.4
 CATEGORIES=	www

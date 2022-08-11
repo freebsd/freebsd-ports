@@ -1,3 +1,5 @@
 %%SITE_ARCH%%/XML/LibXSLT.pm
+%%SITE_ARCH%%/XML/LibXSLT/Quick.pm
 %%SITE_ARCH%%/auto/XML/LibXSLT/LibXSLT.so
 %%PERL5_MAN3%%/XML::LibXSLT.3.gz
+%%PERL5_MAN3%%/XML::LibXSLT::Quick.3.gz

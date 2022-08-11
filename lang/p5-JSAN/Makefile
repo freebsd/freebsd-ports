@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	JSAN
 PORTVERSION=	0.07
 PORTREVISION=	8

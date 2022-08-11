@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	cerealizer
 PORTVERSION=	0.7
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-
 PORTNAME=	batv-milter
 PORTVERSION=	0.5.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: petef@FreeBSD.org
-
 PORTNAME=	peps
 PORTVERSION=	2.0
 PORTREVISION=	7

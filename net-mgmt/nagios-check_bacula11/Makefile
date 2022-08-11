@@ -1,5 +1,3 @@
-# Created by: Anders Troback
-
 PORTNAME=	bacula
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	nagios-check_

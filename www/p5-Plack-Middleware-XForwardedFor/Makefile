@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Plack-Middleware-XForwardedFor
 PORTVERSION=	0.172050
 CATEGORIES=	www perl5

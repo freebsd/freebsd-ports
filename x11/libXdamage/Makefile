@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXdamage
 PORTVERSION=	1.1.5
 CATEGORIES=	x11

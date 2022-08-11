@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Text-AsciiTeX
 PORTVERSION=	0.05
 PORTREVISION=	2

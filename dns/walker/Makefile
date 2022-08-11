@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	walker
 PORTVERSION=	3.8
 PORTREVISION=	1

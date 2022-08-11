@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Eval-Context
 PORTVERSION=	0.09.11
 PORTREVISION=	3

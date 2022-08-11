@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	Net-Rendezvous-Publish
 PORTVERSION=	0.04
 PORTREVISION=	2

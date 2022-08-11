@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	File_Archive
 PORTVERSION=	1.5.5
 CATEGORIES=	archivers www pear

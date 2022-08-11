@@ -1,5 +1,3 @@
-# Created by: Stephen Weeks <sweeks@sweeks.com>
-
 # Previously maintained by Jesper Louis Andersen
 # (jesper.louis.andersen@gmail.com) and Geoffrey Mainland
 # (mainland@apeiron.net)

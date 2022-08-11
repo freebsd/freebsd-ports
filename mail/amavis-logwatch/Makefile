@@ -1,5 +1,3 @@
-# Created by: Masaki TAGAWA <masaki@club.kyutech.ac.jp>
-
 PORTNAME=	amavis-logwatch
 PORTVERSION=	1.51.03
 PORTREVISION=	1

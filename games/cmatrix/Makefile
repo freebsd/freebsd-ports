@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	cmatrix
 PORTVERSION=	2.0
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Melvyn Sopacua <melvyn@magemana.nl>
-
 PORTNAME=	n98-magerun
 PORTVERSION=	1.98.0
 CATEGORIES=	sysutils www

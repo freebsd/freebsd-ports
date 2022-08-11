@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	GD-Graph-ohlc
 PORTVERSION=	0.9703
 PORTREVISION=	1

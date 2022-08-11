@@ -1,5 +1,3 @@
-# Created by: Anton Lysenok <bart@tapolsky.net.ua>
-
 PORTNAME=	smfsav
 PORTVERSION=	1.4.0
 PORTREVISION=	4

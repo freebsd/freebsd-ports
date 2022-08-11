@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Rose-DateTime
 PORTVERSION=	0.540
 PORTREVISION=	1

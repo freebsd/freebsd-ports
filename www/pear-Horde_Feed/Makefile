@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Feed
 PORTVERSION=	2.0.4
 CATEGORIES=	www pear

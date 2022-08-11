@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	bloodfrontier
 DISTVERSION=	B2
 PORTREVISION=	12

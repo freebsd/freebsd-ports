@@ -1,9 +1,7 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	gnudatalanguage
 PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	science lang
 .if defined(BUILD_PYTHON_MODULE)
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +18,7 @@ LIB_DEPENDS+=	libgeotiff.so:graphics/libgeotiff\
 		libtiff.so:graphics/tiff	\
 		libshp.so:devel/shapelib	\
 		libpng.so:graphics/png		\
-		libsz.so:science/szip		\
+		libsz.so:science/libaec		\
 		libps.so:print/pslib		\
 		libgsl.so:math/gsl
 

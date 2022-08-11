@@ -1,4 +1,4 @@
---- chrome/app/google_chrome_strings.grd.orig	2022-05-19 14:06:27 UTC
+--- chrome/app/google_chrome_strings.grd.orig	2022-06-17 14:20:10 UTC
 +++ chrome/app/google_chrome_strings.grd
 @@ -301,7 +301,7 @@ chromium_strings.grd. -->
            Welcome to Chrome; new browser window opened
@@ -9,12 +9,12 @@
          <message name="IDS_FIRST_RUN_DIALOG_WINDOW_TITLE" desc="Window title of First Run dialog on Mac and Linux, displayed in title bar">
            Welcome to Google Chrome
          </message>
-@@ -1048,7 +1048,7 @@ Permissions you've already given to websites and apps 
-       </message>
- 
-       <!-- ProcessSingleton -->
--      <if expr="is_linux or is_macosx">
-+      <if expr="is_posix or is_macosx">
-         <message name="IDS_PROFILE_IN_USE_POSIX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
-           The profile appears to be in use by another Google Chrome process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>).  Chrome has locked the profile so that it doesn't get corrupted.  If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chrome.
+@@ -438,7 +438,7 @@ chromium_strings.grd. -->
+           This computer will no longer receive Google Chrome updates because Windows XP and Windows Vista are no longer supported
+         </message>
+       </if>
+-      <if expr="is_linux">
++      <if expr="is_posix">
+         <message name="IDS_LINUX_OBSOLETE" desc="A message displayed on an at-launch infobar and about:help warning the user that the OS version they are using is no longer supported.">
+           Google Chrome may not function correctly because it is no longer supported on this Linux distribution
          </message>

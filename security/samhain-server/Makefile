@@ -1,5 +1,3 @@
-# Created by: Nikola Kolev <koue@chaosophia.net>
-
 # This port recognizes the following non-boolean tunables:
 #
 # WITH_RUNAS_USER:

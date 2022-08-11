@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	fistgen
 PORTVERSION=	0.2.1
 CATEGORIES=	devel

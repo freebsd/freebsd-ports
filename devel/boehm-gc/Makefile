@@ -1,5 +1,3 @@
-# Created by: Mike McGaughey <mmcg@cs.monash.edu.au>
-
 PORTNAME=	gc
 PORTVERSION=	8.0.6
 CATEGORIES=	devel

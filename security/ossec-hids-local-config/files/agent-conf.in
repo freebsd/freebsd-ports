@@ -8,7 +8,7 @@ agent_conf_files="${agent_conf_dir}/*.conf"
 
 select_elements() {
     local element="$1"
-    sed -n "/<${element}.*>/,/<\/${element}>/p"
+    sed -En "/<${element}.*>/,/<\/${element}>/p"
 }
 
 remove_comments() {
@@ -17,7 +17,7 @@ remove_comments() {
 }
 
 remove_empty_lines() {
-    sed '/^\s*$/d'
+    sed -E '/^[[:space:]]*$/d'
 }
 
 agent_conf() {

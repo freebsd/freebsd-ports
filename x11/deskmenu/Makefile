@@ -1,5 +1,3 @@
-# Created by: Matt Peterson <matt@peterson.org>
-
 PORTNAME=	deskmenu
 PORTVERSION=	1.4.5
 CATEGORIES=	x11

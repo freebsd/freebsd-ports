@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Data-Serializer
 PORTVERSION=	0.65
 CATEGORIES=	devel perl5

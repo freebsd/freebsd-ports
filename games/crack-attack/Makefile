@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	crack-attack
 PORTVERSION=	1.1.14
 PORTREVISION=	17

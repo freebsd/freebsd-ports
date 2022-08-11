@@ -1,5 +1,3 @@
-# Created by: Boris Lytochkin (lytboris@gmail.com)
-
 PORTNAME=	mongoose
 PORTVERSION=	5.6
 CATEGORIES=	www

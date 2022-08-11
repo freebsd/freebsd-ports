@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	distilator
 PORTVERSION=	1.4
 CATEGORIES=	ports-mgmt

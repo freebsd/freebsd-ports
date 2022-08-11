@@ -1,10 +1,8 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	redshift
 PORTVERSION=	1.12
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
-CATEGORIES=	accessibility
+CATEGORIES=	accessibility wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	60f45972a543.patch:-p1 # avoid patch conflict

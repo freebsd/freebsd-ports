@@ -1,4 +1,7 @@
 include/ensmallen.hpp
+include/ensmallen_bits/ada_belief/ada_belief.hpp
+include/ensmallen_bits/ada_belief/ada_belief_impl.hpp
+include/ensmallen_bits/ada_belief/ada_belief_update.hpp
 include/ensmallen_bits/ada_bound/ada_bound.hpp
 include/ensmallen_bits/ada_bound/ada_bound_impl.hpp
 include/ensmallen_bits/ada_bound/ada_bound_update.hpp
@@ -9,6 +12,9 @@ include/ensmallen_bits/ada_delta/ada_delta_update.hpp
 include/ensmallen_bits/ada_grad/ada_grad.hpp
 include/ensmallen_bits/ada_grad/ada_grad_impl.hpp
 include/ensmallen_bits/ada_grad/ada_grad_update.hpp
+include/ensmallen_bits/ada_sqrt/ada_sqrt.hpp
+include/ensmallen_bits/ada_sqrt/ada_sqrt_impl.hpp
+include/ensmallen_bits/ada_sqrt/ada_sqrt_update.hpp
 include/ensmallen_bits/adam/adam.hpp
 include/ensmallen_bits/adam/adam_impl.hpp
 include/ensmallen_bits/adam/adam_update.hpp
@@ -27,6 +33,8 @@ include/ensmallen_bits/bigbatch_sgd/bigbatch_sgd.hpp
 include/ensmallen_bits/bigbatch_sgd/bigbatch_sgd_impl.hpp
 include/ensmallen_bits/callbacks/callbacks.hpp
 include/ensmallen_bits/callbacks/early_stop_at_min_loss.hpp
+include/ensmallen_bits/callbacks/grad_clip_by_norm.hpp
+include/ensmallen_bits/callbacks/grad_clip_by_value.hpp
 include/ensmallen_bits/callbacks/print_loss.hpp
 include/ensmallen_bits/callbacks/progress_bar.hpp
 include/ensmallen_bits/callbacks/query_front.hpp
@@ -43,6 +51,10 @@ include/ensmallen_bits/cne/cne_impl.hpp
 include/ensmallen_bits/config.hpp
 include/ensmallen_bits/de/de.hpp
 include/ensmallen_bits/de/de_impl.hpp
+include/ensmallen_bits/demon_adam/demon_adam.hpp
+include/ensmallen_bits/demon_adam/demon_adam_update.hpp
+include/ensmallen_bits/demon_sgd/demon_sgd.hpp
+include/ensmallen_bits/demon_sgd/demon_sgd_update.hpp
 include/ensmallen_bits/ens_version.hpp
 include/ensmallen_bits/eve/eve.hpp
 include/ensmallen_bits/eve/eve_impl.hpp
@@ -242,6 +254,9 @@ include/ensmallen_bits/utility/indicators/igd_plus.hpp
 include/ensmallen_bits/wn_grad/wn_grad.hpp
 include/ensmallen_bits/wn_grad/wn_grad_impl.hpp
 include/ensmallen_bits/wn_grad/wn_grad_update.hpp
+include/ensmallen_bits/yogi/yogi.hpp
+include/ensmallen_bits/yogi/yogi_impl.hpp
+include/ensmallen_bits/yogi/yogi_update.hpp
 lib/cmake/ensmallen/ensmallen-config-version.cmake
 lib/cmake/ensmallen/ensmallen-config.cmake
 lib/cmake/ensmallen/ensmallen-targets.cmake

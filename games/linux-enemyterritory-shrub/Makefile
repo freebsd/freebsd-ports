@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	shrub
 PORTVERSION=	1.2
 PORTREVISION=	1

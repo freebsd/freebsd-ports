@@ -1,5 +1,3 @@
-# Created by: Gergely Nagy <8@free.bsd.hu>
-
 PORTNAME=	ratpoison
 PORTVERSION=	1.4.9
 PORTREVISION=	3

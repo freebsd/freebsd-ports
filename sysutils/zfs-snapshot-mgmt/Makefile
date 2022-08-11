@@ -1,5 +1,3 @@
-# Created by: Marcin Simonides <marcin@studio4plus.com>
-
 PORTNAME=	zfs-snapshot-mgmt
 PORTVERSION=	20090201
 PORTREVISION=	3

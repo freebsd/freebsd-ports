@@ -1,5 +1,3 @@
-# Created by: Frank Wall <fw@moov.de>
-
 PORTNAME=	Sys-Virt
 PORTVERSION=	1.1.1
 PORTREVISION=	5

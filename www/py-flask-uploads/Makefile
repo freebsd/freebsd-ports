@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-
 PORTNAME=	Flask-Uploads
 PORTVERSION=	0.2.1
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni
-
 PORTNAME=	devisor
 PORTVERSION=	2.1
 PORTREVISION=	3

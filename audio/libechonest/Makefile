@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	libechonest
 PORTVERSION=	2.3.1
 PORTREVISION=	6

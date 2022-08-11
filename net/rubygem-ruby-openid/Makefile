@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	ruby-openid
 PORTVERSION=	2.9.2
 CATEGORIES=	net rubygems

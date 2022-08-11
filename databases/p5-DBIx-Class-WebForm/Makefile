@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-WebForm
 PORTVERSION=	0.02
 PORTREVISION=	2

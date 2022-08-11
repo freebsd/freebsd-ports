@@ -1,5 +1,3 @@
-# Created by: Jean-Marc Zucconi <jmz@FreeBSD.org>
-
 PORTNAME=	doom
 PORTVERSION=	1.10
 PORTREVISION=	7

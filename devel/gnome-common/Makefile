@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-common
 PORTVERSION=	3.18.0
 CATEGORIES=	devel

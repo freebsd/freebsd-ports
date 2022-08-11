@@ -1,5 +1,3 @@
-# Created by: Elisey Savateev <b3k@mail.ru>
-
 PORTNAME=	c-icap
 PORTVERSION=	0.5.10
 PORTEPOCH=	2

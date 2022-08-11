@@ -1,5 +1,3 @@
-# Created by: Dmitry Liakh <dliakh@ukr.net>
-
 PORTNAME=	Text-xSV
 PORTVERSION=	0.21
 PORTREVISION=	1

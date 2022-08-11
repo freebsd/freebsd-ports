@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-securityhub
-PORTVERSION=	1.63.0
+PORTVERSION=	1.68.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

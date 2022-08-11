@@ -1,5 +1,3 @@
-# Created by: HONDA Yasuhiro <honda@kashio.info.mie-u.ac.jp>
-
 PORTNAME=	yc.el
 PORTVERSION=	5.2.1
 PORTREVISION=	20

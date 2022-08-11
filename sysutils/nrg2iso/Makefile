@@ -1,5 +1,3 @@
-# Created by: dieringe
-
 PORTNAME=	nrg2iso
 PORTVERSION=	0.4
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Dan Phillips <dan-ports@dp.id.au>
-
 PORTNAME=	verbiste
 PORTVERSION=	0.1.47
 PORTREVISION=	2

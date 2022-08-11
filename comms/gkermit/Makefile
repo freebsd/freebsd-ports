@@ -1,5 +1,3 @@
-# Created by: dom@happygiraffe.net
-
 PORTNAME=	gkermit
 PORTVERSION=	1.0
 CATEGORIES=	comms

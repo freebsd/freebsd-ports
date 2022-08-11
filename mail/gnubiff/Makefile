@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	gnubiff
 PORTVERSION=	2.2.13
 PORTREVISION=	12

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pluggy
 PORTVERSION=	1.0.0
 CATEGORIES=	devel python
@@ -13,10 +11,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 
@@ -25,8 +22,5 @@ NO_ARCH=	yes
 .if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0.12:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
 
 .include <bsd.port.post.mk>

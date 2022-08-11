@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	esecanna-module-vje25
 PORTVERSION=	0.14.6
 PORTREVISION=	2

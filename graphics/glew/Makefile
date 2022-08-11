@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	glew
 PORTVERSION=	2.2.0
 PORTREVISION?=	3
@@ -11,7 +9,7 @@ PATCH_SITES=	https://github.com/nigels-com/${PORTNAME}/commit/
 PATCHFILES+=	8e2e31e69bb6.patch:-p1 # https://github.com/nigels-com/glew/pull/329
 PATCHFILES+=	062067f2bad8.patch:-p1 # https://github.com/nigels-com/glew/pull/330
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	x11@FreeBSD.org
 COMMENT=	OpenGL Extension Wrangler Library
 
 LICENSE=	MIT BSD3CLAUSE

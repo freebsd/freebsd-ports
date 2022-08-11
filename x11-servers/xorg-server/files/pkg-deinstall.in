@@ -1,9 +1,0 @@
-#!/bin/sh
-
-PREFIX="${PKG_PREFIX-/usr/local}"
-
-case $2 in
-DEINSTALL)
-	/bin/rm -rf ${PREFIX}/lib/xorg/modules/extensions/libglx.so*
-	;;
-esac

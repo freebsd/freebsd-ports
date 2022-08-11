@@ -1,5 +1,3 @@
-# Created by: torstenb
-
 PORTNAME=	ircii
 PORTVERSION=	20210314
 CATEGORIES=	irc

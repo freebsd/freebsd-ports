@@ -1,0 +1,11 @@
+--- airborne.gemspec.orig	2022-07-08 13:00:17 UTC
++++ airborne.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+   if s.respond_to? :add_runtime_dependency then
+     s.add_runtime_dependency(%q<rspec>.freeze, ["~> 3.8"])
+     s.add_runtime_dependency(%q<rest-client>.freeze, [">= 2.0.2", "< 3.0"])
+-    s.add_runtime_dependency(%q<rack-test>.freeze, [">= 1.1.0", "< 2.0"])
++    s.add_runtime_dependency(%q<rack-test>.freeze, [">= 1.1.0", "< 3.0"])
+     s.add_runtime_dependency(%q<rack>.freeze, [">= 0"])
+     s.add_runtime_dependency(%q<activesupport>.freeze, [">= 0"])
+     s.add_development_dependency(%q<webmock>.freeze, ["~> 3"])

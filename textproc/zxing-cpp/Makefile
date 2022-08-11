@@ -1,8 +1,6 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	zxing-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	textproc
 
 MAINTAINER=	kde@FreeBSD.org

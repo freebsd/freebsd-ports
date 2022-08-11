@@ -1,5 +1,3 @@
-# Created by: tmartin@andrew.cmu.edu
-
 PORTNAME=	senken
 PORTVERSION=	0.3.0
 PORTREVISION=	15

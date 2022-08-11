@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Test-UseAllModules
 PORTVERSION=	0.17
 PORTREVISION=	1

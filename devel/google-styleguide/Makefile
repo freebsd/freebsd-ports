@@ -1,7 +1,5 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	styleguide
-PORTVERSION=	20220210
+PORTVERSION=	20220608
 CATEGORIES=	devel
 PKGNAMEPREFIX=	google-
 
@@ -21,7 +19,7 @@ NO_BUILD=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	e6233c7
+GH_TAGNAME=	25bd352
 
 SHEBANG_FILES=	cpplint/cpplint.py cpplint/cpplint_unittest.py
 

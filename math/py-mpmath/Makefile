@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	mpmath
 PORTVERSION=	1.2.1
 CATEGORIES=	math python

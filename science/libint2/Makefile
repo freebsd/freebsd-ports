@@ -1,8 +1,6 @@
-# Created by: NAKATA, Maho <maho@FreeBSD.org>
-
 PORTNAME=	libint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.1
+DISTVERSION=	2.7.2
 CATEGORIES=	science
 PKGNAMESUFFIX=	2
 

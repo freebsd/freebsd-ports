@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	gh
 DISTVERSION=	1.3.0
 CATEGORIES=	www

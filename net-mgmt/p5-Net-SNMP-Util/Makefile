@@ -1,5 +1,3 @@
-# Created by: Hsin-Han You <hhyou@cs.nctu.edu.tw>
-
 PORTNAME=	Net-SNMP-Util
 PORTVERSION=	1.04
 PORTREVISION=	2

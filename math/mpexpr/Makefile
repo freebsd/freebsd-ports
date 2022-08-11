@@ -1,5 +1,3 @@
-# Created by: Chuck Hein <geekdude@pacbell.net>
-
 PORTNAME=	mpexpr
 PORTVERSION=	1.2
 PORTREVISION=	1

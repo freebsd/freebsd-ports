@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	wmblueclock
 PORTVERSION=	0.0
 PORTREVISION=	3

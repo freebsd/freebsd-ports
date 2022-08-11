@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	malint
 DISTVERSION=	0.2
 CATEGORIES=	audio

@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Net-Flow
 PORTVERSION=	1.003
 CATEGORIES=	net perl5

@@ -1,7 +1,5 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	sandwich
-DISTVERSION=	3.0-1
+DISTVERSION=	3.0-2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

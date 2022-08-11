@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	xminehunter
 PORTVERSION=	0.4
 PORTREVISION=	5

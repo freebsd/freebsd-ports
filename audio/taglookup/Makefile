@@ -1,5 +1,3 @@
-# Created by: Alex Allan <alex@kamaz.org.uk>
-
 PORTNAME=	taglookup
 PORTVERSION=	0.2
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
-
 PORTNAME=	stone
 PORTVERSION=	2.4
 CATEGORIES=	net

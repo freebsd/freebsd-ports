@@ -1,5 +1,3 @@
-# Created by: nadav@libagent.org
-
 PORTNAME=	he2
 PORTVERSION=	0.61
 PORTREVISION=	3

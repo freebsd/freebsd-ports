@@ -29,6 +29,6 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/endlessh.newsyslog.conf \
 		${FILESDIR}/endlessh.conf.sample ${STAGEDIR}${PREFIX}/etc/
-	${STRIP} ${STAGEDIR}${PREFIX}/bin/endlessh
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/endlessh
 
 .include <bsd.port.mk>

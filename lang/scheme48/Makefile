@@ -1,5 +1,3 @@
-# Created by: jmacd
-
 PORTNAME=	scheme48
 PORTVERSION=	1.9.2
 CATEGORIES=	lang scheme

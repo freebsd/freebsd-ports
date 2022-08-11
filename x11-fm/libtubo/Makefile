@@ -1,5 +1,3 @@
-# Created by: Rodrigo Osorio <rodrigo@freebsd.org>
-
 PORTNAME=	libtubo
 PORTVERSION=	5.0.14
 CATEGORIES=	x11-fm

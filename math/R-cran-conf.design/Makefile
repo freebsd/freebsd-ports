@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	conf.design
 DISTVERSION=	2.0.0
 PORTREVISION=	4

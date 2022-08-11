@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	bearssl
 PORTVERSION=	0.6
 CATEGORIES=	security devel

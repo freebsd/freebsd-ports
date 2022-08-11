@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Devel-Symdump
 PORTVERSION=	2.1800
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	libyaml
 PORTVERSION=	0.1.6
 PORTREVISION=	2

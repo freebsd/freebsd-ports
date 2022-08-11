@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	fldiff
 PORTVERSION=	1.1
 PORTREVISION=	10

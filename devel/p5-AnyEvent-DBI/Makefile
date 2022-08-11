@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	AnyEvent-DBI
 PORTVERSION=	3.04
 CATEGORIES=	devel perl5

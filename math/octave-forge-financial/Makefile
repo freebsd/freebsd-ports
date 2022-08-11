@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-financial
 PORTVERSION=	0.5.3
 PORTREVISION=	7

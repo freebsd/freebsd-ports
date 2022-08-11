@@ -1,5 +1,3 @@
-# Created by: Craig Manley
-
 PORTNAME=	Log-Dispatch-FileShared
 PORTVERSION=	1.02
 PORTREVISION=	1

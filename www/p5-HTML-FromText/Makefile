@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	HTML-FromText
 PORTVERSION=	2.07
 PORTREVISION=	1

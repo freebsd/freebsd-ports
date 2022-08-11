@@ -1,5 +1,3 @@
-# Created by: milki <milki@rescomp.berkeley.edu>
-
 PORTNAME=	edavis10-object_daddy
 PORTVERSION=	0.4.3
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-Trac
 PORTVERSION=	0.16
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	mod_cloudflare
 PORTVERSION=	2016.10.0
 CATEGORIES=	www

@@ -1,5 +1,5 @@
 PORTNAME=	mandelbulber
-PORTVERSION=	2.27
+PORTVERSION=	2.28
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org

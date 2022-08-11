@@ -1,6 +1,0 @@
-lib/elixir/lib/nimble_csv/ebin/Elixir.NimbleCSV.ParseError.beam
-lib/elixir/lib/nimble_csv/ebin/Elixir.NimbleCSV.RFC4180.beam
-lib/elixir/lib/nimble_csv/ebin/Elixir.NimbleCSV.beam
-lib/elixir/lib/nimble_csv/ebin/nimble_csv.app
-lib/elixir/lib/nimble_csv/lib/nimble_csv.ex
-%%PORTDOCS%%%%DOCSDIR%%/README.md

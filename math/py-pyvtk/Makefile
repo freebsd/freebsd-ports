@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	pyVTK
 PORTVERSION=	0.5.18
 CATEGORIES=	math python

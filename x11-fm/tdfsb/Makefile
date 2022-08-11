@@ -1,8 +1,6 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	tdfsb
 PORTVERSION=	0.0.10
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.determinate.net/webdata/data/
 

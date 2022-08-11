@@ -1,5 +1,3 @@
-# Created by: G. Adam Stanislav <adam@whizkidtech.net>
-
 PORTNAME=	libutf-8
 PORTVERSION=	1.0
 PORTEPOCH=	1

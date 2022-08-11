@@ -17,9 +17,6 @@ include/guile-gnome-2/guile-gnome-gobject/gvalue.h
 %%CANVAS%%lib/guile-gnome-2/libgw-guile-gnome-canvas.so
 %%CANVAS%%lib/guile-gnome-2/libgw-guile-gnome-canvas.so.0
 %%CANVAS%%lib/guile-gnome-2/libgw-guile-gnome-canvas.so.0.0.0
-%%GCONF%%lib/guile-gnome-2/libgw-guile-gnome-gconf.so
-%%GCONF%%lib/guile-gnome-2/libgw-guile-gnome-gconf.so.0
-%%GCONF%%lib/guile-gnome-2/libgw-guile-gnome-gconf.so.0.0.0
 %%GTK2%%lib/guile-gnome-2/libgw-guile-gnome-gdk.so
 %%GTK2%%lib/guile-gnome-2/libgw-guile-gnome-gdk.so.0
 %%GTK2%%lib/guile-gnome-2/libgw-guile-gnome-gdk.so.0.0.0
@@ -97,8 +94,6 @@ libdata/pkgconfig/guile-gnome-glib-2.pc
 %%DATADIR%%/gnome/defs/printui.defs
 %%DATADIR%%/gnome/defs/vte-overrides.defs
 %%DATADIR%%/gnome/defs/vte.defs
-%%GCONF%%%%DATADIR%%/gnome/gconf.scm
-%%GLADE%%%%DATADIR%%/gnome/glade.scm
 %%DATADIR%%/gnome/glib.scm
 %%DATADIR%%/gnome/gobject.scm
 %%DATADIR%%/gnome/gobject/config.scm
@@ -123,8 +118,6 @@ libdata/pkgconfig/guile-gnome-glib-2.pc
 %%CAIRO%%%%DATADIR%%/gnome/gw/cairo.scm
 %%CANVAS%%%%DATADIR%%/gnome/gw/canvas-spec.scm
 %%CANVAS%%%%DATADIR%%/gnome/gw/canvas.scm
-%%GCONF%%%%DATADIR%%/gnome/gw/gconf-spec.scm
-%%GCONF%%%%DATADIR%%/gnome/gw/gconf.scm
 %%GTK2%%%%DATADIR%%/gnome/gw/gdk-spec.scm
 %%GTK2%%%%DATADIR%%/gnome/gw/gdk.scm
 %%DATADIR%%/gnome/gw/generics.scm

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	gdata
 PORTVERSION=	1.1.2
 CATEGORIES=	devel rubygems

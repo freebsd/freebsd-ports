@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	ExifRead
 PORTVERSION=	2.1.2
 CATEGORIES=	graphics python
@@ -14,5 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

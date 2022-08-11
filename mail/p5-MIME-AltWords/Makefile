@@ -1,5 +1,3 @@
-# Created by: Dmitry Liakh <dliakh@ukr.net>
-
 PORTNAME=	MIME-AltWords
 PORTVERSION=	0.12
 PORTREVISION=	1

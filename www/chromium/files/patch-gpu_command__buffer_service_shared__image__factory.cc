@@ -1,29 +1,29 @@
---- gpu/command_buffer/service/shared_image_factory.cc.orig	2022-05-19 14:06:27 UTC
+--- gpu/command_buffer/service/shared_image_factory.cc.orig	2022-07-22 17:30:31 UTC
 +++ gpu/command_buffer/service/shared_image_factory.cc
-@@ -46,7 +46,7 @@
- #include "ui/ozone/public/ozone_platform.h"
+@@ -50,7 +50,7 @@
+ #endif
  #endif
  
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_WIN)) && \
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)) && \
      BUILDFLAG(ENABLE_VULKAN)
  #include "gpu/command_buffer/service/external_vk_image_factory.h"
- #elif BUILDFLAG(IS_ANDROID) && BUILDFLAG(ENABLE_VULKAN)
-@@ -81,7 +81,7 @@
+ #include "gpu/command_buffer/service/shared_image_backing_factory_ozone.h"
+@@ -86,7 +86,7 @@ namespace gpu {
  
- namespace gpu {
+ namespace {
  
--#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) &&          \
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && !BUILDFLAG(IS_CHROMEOS_ASH) &&          \
-     !BUILDFLAG(IS_CHROMEOS_LACROS) && !BUILDFLAG(IS_CHROMECAST) && \
-     BUILDFLAG(ENABLE_VULKAN)
+-#if defined(USE_OZONE) && BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS)
++#if defined(USE_OZONE) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && !BUILDFLAG(IS_CASTOS)
  
-@@ -325,7 +325,7 @@ SharedImageFactory::SharedImageFactory(
+ bool ShouldUseExternalVulkanImageFactory() {
+ #if BUILDFLAG(ENABLE_VULKAN)
+@@ -381,7 +381,7 @@ SharedImageFactory::SharedImageFactory(
      factories_.push_back(std::move(external_vk_image_factory));
    }
  #elif defined(USE_OZONE)
--#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
-     !BUILDFLAG(IS_CHROMEOS_LACROS) && !BUILDFLAG(IS_CHROMECAST)
+-#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && !BUILDFLAG(IS_CASTOS)
    // Desktop Linux, not ChromeOS.
-   if (gr_context_type_ == GrContextType::kVulkan &&
+   if (ShouldUseOzoneFactory()) {
+     auto ozone_factory =

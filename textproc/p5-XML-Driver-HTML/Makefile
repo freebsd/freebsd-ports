@@ -1,5 +1,3 @@
-# Created by: Dmitry Morozovsky <marck@FreeBSD.org>
-
 PORTNAME=	XML-Driver-HTML
 PORTVERSION=	0.06
 PORTREVISION=	1

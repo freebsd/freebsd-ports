@@ -1,5 +1,3 @@
-# Created by: Alan Somers <asomers@FreeBSD.org>
-
 PORTNAME=	lutok
 PORTVERSION=	0.4
 PORTREVISION=	7

@@ -1,4 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
 # NOTE: please keep zeitgeist in sysutils/qzeitgeist in sync
 
 PORTNAME=	zeitgeist

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tty-prompt
 PORTVERSION=	0.23.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	xclip
 PORTVERSION=	0.13
 CATEGORIES=	x11

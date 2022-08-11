@@ -1,5 +1,3 @@
-# Created by: Anton Shterenlikht
-
 PORTNAME=	slatec
 PORTVERSION=	4.1
 PORTREVISION=	12

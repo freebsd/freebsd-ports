@@ -1,5 +1,3 @@
-# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-
 PORTNAME=	tlslite
 PORTVERSION=	0.4.9
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Plucene
 PORTVERSION=	1.25
 PORTREVISION=	5

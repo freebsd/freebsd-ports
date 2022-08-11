@@ -1,5 +1,3 @@
-# Created by: Vladimir Gorelov <virtual.lark@gmail.com>
-
 PORTNAME=	art
 PORTVERSION=	0.9.02
 CATEGORIES=	devel

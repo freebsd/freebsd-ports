@@ -1,5 +1,3 @@
-# Created by: Matthieu BOUTHORS <matthieu@labs.fr>
-
 PORTNAME=	sslscan
 DISTVERSION=	1.11.12
 DISTVERSIONSUFFIX=	-${GH_ACCOUNT}

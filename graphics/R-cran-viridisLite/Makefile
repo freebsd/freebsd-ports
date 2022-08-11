@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	viridisLite
 PORTVERSION=	0.4.0
 CATEGORIES=	graphics

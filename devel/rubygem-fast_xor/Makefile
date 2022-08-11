@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	fast_xor
 PORTVERSION=	1.1.3
 CATEGORIES=	devel rubygems

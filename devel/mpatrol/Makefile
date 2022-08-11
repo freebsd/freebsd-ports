@@ -1,5 +1,3 @@
-# Created by: Patrick MARIE <mycroft@virgaria.org>
-
 PORTNAME=	mpatrol
 PORTVERSION=	1.4.8
 PORTREVISION=	4

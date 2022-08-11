@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	DateTime-Cron-Simple
 PORTVERSION=	0.2
 PORTREVISION=	1

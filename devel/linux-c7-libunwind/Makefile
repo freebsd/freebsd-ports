@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
-
 PORTNAME=	libunwind
 PORTVERSION=	1.2
 DISTVERSIONSUFFIX=	-2.el7

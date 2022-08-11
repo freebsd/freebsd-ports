@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	subtools
 PORTVERSION=	20081026
 CATEGORIES=	multimedia

@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	open4
 PORTVERSION=	1.3.4
 CATEGORIES=	devel rubygems

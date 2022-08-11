@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Net-TCLink
 PORTVERSION=	3.4
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: jupengfei <jupengfei@gmail.com>
-
 PORTNAME=	Paranoid
 PORTVERSION=	2.10
 CATEGORIES=	devel perl5

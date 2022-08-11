@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Crypt
 DISTVERSION=	2.7.12
 CATEGORIES=	security www pear

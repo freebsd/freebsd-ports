@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	jpmobile-terminfo
 PORTVERSION=	0.0.3
 CATEGORIES=	japanese www rubygems

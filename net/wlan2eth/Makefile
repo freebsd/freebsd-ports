@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	wlan2eth
 PORTVERSION=	1.3
 PORTREVISION=	1

@@ -1,8 +1,6 @@
-# Created by: elvstone@gmail.com
-
 PORTNAME=	znc
 PORTVERSION=	1.8.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc
 MASTER_SITES=	https://znc.in/releases/ \
 		https://znc.in/releases/archive/

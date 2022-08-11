@@ -1,5 +1,3 @@
-# Created by: obrien@cs.ucdavis.edu
-
 PORTNAME=	minicom
 PORTVERSION=	2.8
 CATEGORIES=	comms

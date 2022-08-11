@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	xcb-util-keysyms
 PORTVERSION=	0.4.0
 DISTVERSIONSUFFIX=	-1.el7

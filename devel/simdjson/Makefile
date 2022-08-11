@@ -1,6 +1,6 @@
 PORTNAME=	simdjson
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.6
+DISTVERSION=	2.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	olevole@olevole.ru
@@ -16,6 +16,9 @@ USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_ON=	SIMDJSON_JUST_LIBRARY
+CMAKE_TESTING_TARGET=	all_tests
+
+CMAKE_ON=	SIMDJSON_JUST_LIBRARY \
+		BUILD_SHARED_LIBS
 
 .include <bsd.port.mk>

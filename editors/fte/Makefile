@@ -1,5 +1,3 @@
-# Created by: gelf
-
 PORTNAME=	fte
 PORTVERSION=	20110708
 CATEGORIES=	editors

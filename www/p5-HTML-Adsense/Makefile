@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	HTML-Adsense
 PORTVERSION=	0.2
 PORTREVISION=	1

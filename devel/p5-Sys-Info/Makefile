@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Sys-Info
 PORTVERSION=	0.7811
 CATEGORIES=	devel sysutils perl5

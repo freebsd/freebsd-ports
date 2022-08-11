@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	extras
 PORTVERSION=	1.0
 CATEGORIES=	games

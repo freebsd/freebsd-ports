@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	qmidiarp
 DISTVERSIONPREFIX=	qmidiarp-
 DISTVERSION=	0.6.5

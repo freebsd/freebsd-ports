@@ -1,8 +1,5 @@
-# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-
 PORTNAME=	Flask
-DISTVERSION=	2.1.1
-PORTREVISION=	1
+DISTVERSION=	2.2.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +10,7 @@ COMMENT=	Micro web framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>=2.0:www/py-werkzeug@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>=2.2.0:www/py-werkzeug@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}itsdangerous>=2.0:security/py-itsdangerous@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.0:devel/py-click@${PY_FLAVOR}

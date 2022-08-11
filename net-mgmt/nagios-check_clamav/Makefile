@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	check_clamav
 PORTVERSION=	1.2
 PORTREVISION=	2

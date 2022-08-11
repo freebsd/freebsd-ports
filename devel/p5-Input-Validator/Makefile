@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Input-Validator
 PORTVERSION=	0.001005
 CATEGORIES=	devel perl5

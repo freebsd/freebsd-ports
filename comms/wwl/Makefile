@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	wwl
 PORTVERSION=	1.3
 CATEGORIES=	comms hamradio astro geography

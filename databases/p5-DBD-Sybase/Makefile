@@ -1,5 +1,3 @@
-# Created by: Sheldon Hearn <sheldonh@FreeBSD.org>
-
 PORTNAME=	DBD-Sybase
 PORTVERSION=	1.19
 CATEGORIES=	databases perl5
@@ -13,6 +11,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	freetds>=1.3.10:databases/freetds
 LIB_DEPENDS=	libct.so:databases/freetds
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 

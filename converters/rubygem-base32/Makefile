@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-
 PORTNAME=	base32
 PORTVERSION=	0.3.4
 CATEGORIES=	converters rubygems

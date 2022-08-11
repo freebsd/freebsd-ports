@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+Run
+tuifeed -c
+to open up the configuration file.
+You can add RSS feeds, one per line in the format
+"Name" = "RSS URL"
+EOM
+}
+]

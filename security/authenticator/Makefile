@@ -1,6 +1,6 @@
 PORTNAME=	authenticator
 DISTVERSION=	4.0.3
-PORTREVISION=	8
+PORTREVISION=	11
 CATEGORIES=	security
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -19,10 +19,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgraphene-1.0.so:graphics/graphene \
 		libzbar.so:graphics/zbar
 
-USES=		cargo gettext gnome meson pkgconfig python:build shebangfix sqlite ssl
+USES=		cargo gettext gnome gstreamer meson pkgconfig python:build shebangfix sqlite ssl
 USE_GITLAB=	yes
 USE_GNOME=	gtk40 libadwaita
-USE_GSTREAMER1=	gl gtk4 zbar
+USE_GSTREAMER=	gl gtk4 zbar
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_PROJECT=	Authenticator

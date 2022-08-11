@@ -1,7 +1,5 @@
-# Created by: Joe Horn <joehorn@gmail.com>
-
 PORTNAME=	wordpress
-DISTVERSION=	5.9.3
+DISTVERSION=	6.0
 DISTVERSIONSUFFIX=	-zh_CN
 CATEGORIES=	chinese www
 MASTER_SITES=	https://cn.wordpress.org/
@@ -20,6 +18,10 @@ USES=		cpe php:web
 CPE_VERSION=	${DISTVERSION}.0
 .endif
 USE_PHP=	curl exif fileinfo ftp gd hash json mysqli pcre tokenizer xml zip zlib
+
+CONFLICTS_INSTALL=	de-wordpress fr-wordpress ru-wordpress wordpress \
+			zh-wordpress-zh_TW # share/doc/wordpress/readme.html
+
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 NO_ARCH=	yes
 NO_BUILD=	yes

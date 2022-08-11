@@ -1,5 +1,3 @@
-# Created by: matt@bdd.net
-
 PORTNAME=	xtacy
 PORTVERSION=	1.14
 PORTREVISION=	2

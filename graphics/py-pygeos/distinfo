@@ -1,3 +1,3 @@
-TIMESTAMP = 1632037180
-SHA256 (pygeos-0.10.2.tar.gz) = 08cd7fe047a7d7f9f94eaa9a65e0b4fd4057ffebc15e6179a0290a9576a0bbbc
-SIZE (pygeos-0.10.2.tar.gz) = 127320
+TIMESTAMP = 1655208286
+SHA256 (pygeos-0.12.0.tar.gz) = 3c41542ef67c66015f443ae3e6e683503a8a221f9c24fb2380f6ae42aed1600a
+SIZE (pygeos-0.12.0.tar.gz) = 141393

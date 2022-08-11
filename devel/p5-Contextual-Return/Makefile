@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Contextual-Return
 PORTVERSION=	0.004014
 CATEGORIES=	devel perl5

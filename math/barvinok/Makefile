@@ -1,6 +1,5 @@
 PORTNAME=	barvinok
-DISTVERSION=	0.41.5
-PORTREVISION=	1
+DISTVERSION=	0.41.6
 CATEGORIES=	math
 MASTER_SITES=	https://barvinok.sourceforge.io/
 
@@ -23,5 +22,6 @@ CONFIGURE_ARGS=	--disable-static --enable-shared --enable-shared-barvinok \
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

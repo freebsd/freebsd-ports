@@ -25,7 +25,7 @@
 # nginx_http_accept_enable (bool): Set to "NO" by default.
 #				Set to yes to check for accf_http kernel module
 #				on start-up and load if not loaded.
-# nginx_sig_stop (str):		Default to "-TERM"
+# nginx_sig_stop (str):		Default to "TERM"
 
 . /etc/rc.subr
 
@@ -133,7 +133,7 @@ nginx_upgrade()
 	run_rc_command ${rc_prefix}reload $rc_extra_args || return 1
 }
 
-nginx_prestart() 
+nginx_prestart()
 {
 	if checkyesno nginx_http_accept_enable
 	then

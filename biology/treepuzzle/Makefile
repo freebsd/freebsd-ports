@@ -1,5 +1,3 @@
-# Created by: lentferj
-
 PORTNAME=	treepuzzle
 PORTVERSION=	5.2
 CATEGORIES=	biology

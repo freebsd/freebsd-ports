@@ -1,5 +1,3 @@
-# Created by: vsevolod
-
 PORTNAME=	mcabber
 PORTVERSION=	1.1.2
 CATEGORIES=	net-im

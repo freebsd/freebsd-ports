@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	Array-Utils
 PORTVERSION=	0.5
 CATEGORIES=	misc perl5

@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@FreeBSD.org>
-
 PORTNAME=	argdata
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7

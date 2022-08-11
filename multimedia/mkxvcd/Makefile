@@ -1,5 +1,3 @@
-# Created by: michael johnson <ahze@ahze.net>
-
 PORTNAME=	mkxvcd
 PORTVERSION=	2.0.2
 PORTREVISION=	13

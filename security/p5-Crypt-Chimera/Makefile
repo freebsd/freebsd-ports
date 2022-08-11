@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-Chimera
 PORTVERSION=	1.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Travis Campbell <hcoyote@ghostar.org>
-
 PORTNAME=	Text-Textile
 PORTVERSION=	2.12
 PORTREVISION=	1

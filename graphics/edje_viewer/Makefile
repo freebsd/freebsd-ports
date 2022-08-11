@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	edje_viewer
 PORTVERSION=	20130520
 PORTREVISION=	5

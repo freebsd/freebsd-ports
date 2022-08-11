@@ -33,8 +33,8 @@ index 661c902..a41b32f 100644
        addon.version = String(aEntry.current_version.version);
        if (Array.isArray(aEntry.current_version.files)) {
          for (let file of aEntry.current_version.files) {
--          if (file.platform == "all" || file.platform == PLATFORM) {
-+          if (file.platform == "all" || file.platform == "linux" || file.platform == PLATFORM) {
+-          if (file.platform == "all" || file.platform == lazy.PLATFORM) {
++          if (file.platform == "all" || file.platform == "linux" || file.platform == lazy.PLATFORM) {
              if (file.url) {
                addon.sourceURI = NetUtil.newURI(file.url);
              }

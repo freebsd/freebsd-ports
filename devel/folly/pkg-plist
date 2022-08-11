@@ -18,7 +18,7 @@ include/folly/ConcurrentLazy.h
 include/folly/ConcurrentSkipList-inl.h
 include/folly/ConcurrentSkipList.h
 include/folly/ConstexprMath.h
-include/folly/ConstructorCallback.h
+include/folly/ConstructorCallbackList.h
 include/folly/Conv.h
 include/folly/CppAttributes.h
 include/folly/CpuId.h
@@ -66,6 +66,7 @@ include/folly/Memory.h
 include/folly/MicroLock.h
 include/folly/MicroSpinLock.h
 include/folly/MoveWrapper.h
+include/folly/ObserverContainer.h
 include/folly/Optional.h
 include/folly/Overload.h
 include/folly/PackedSyncPtr.h
@@ -108,6 +109,7 @@ include/folly/Uri.h
 include/folly/Utility.h
 include/folly/Varint.h
 include/folly/VirtualExecutor.h
+include/folly/base64.h
 include/folly/chrono/Conv.h
 include/folly/chrono/Hardware.h
 include/folly/compression/Compression.h
@@ -184,6 +186,15 @@ include/folly/detail/ThreadLocalDetail.h
 include/folly/detail/TurnSequencer.h
 include/folly/detail/TypeList.h
 include/folly/detail/UniqueInstance.h
+include/folly/detail/base64_detail/Base64Api.h
+include/folly/detail/base64_detail/Base64Common.h
+include/folly/detail/base64_detail/Base64Constants.h
+include/folly/detail/base64_detail/Base64HiddenConstants.h
+include/folly/detail/base64_detail/Base64SWAR.h
+include/folly/detail/base64_detail/Base64Scalar.h
+include/folly/detail/base64_detail/Base64Simd.h
+include/folly/detail/base64_detail/Base64_SSE4_2.h
+include/folly/detail/base64_detail/Base64_SSE4_2_Platform.h
 include/folly/dynamic-inl.h
 include/folly/dynamic.h
 include/folly/executors/Async.h
@@ -274,6 +285,8 @@ include/folly/experimental/channels/Channel-fwd.h
 include/folly/experimental/channels/Channel-inl.h
 include/folly/experimental/channels/Channel.h
 include/folly/experimental/channels/ChannelCallbackHandle.h
+include/folly/experimental/channels/ChannelProcessor-inl.h
+include/folly/experimental/channels/ChannelProcessor.h
 include/folly/experimental/channels/ConsumeChannel-inl.h
 include/folly/experimental/channels/ConsumeChannel.h
 include/folly/experimental/channels/FanoutChannel-inl.h
@@ -289,6 +302,8 @@ include/folly/experimental/channels/MultiplexChannel.h
 include/folly/experimental/channels/OnClosedException.h
 include/folly/experimental/channels/Producer-inl.h
 include/folly/experimental/channels/Producer.h
+include/folly/experimental/channels/ProxyChannel-inl.h
+include/folly/experimental/channels/ProxyChannel.h
 include/folly/experimental/channels/RateLimiter.h
 include/folly/experimental/channels/Transform-inl.h
 include/folly/experimental/channels/Transform.h
@@ -298,6 +313,7 @@ include/folly/experimental/channels/detail/FunctionTraits.h
 include/folly/experimental/channels/detail/MultiplexerTraits.h
 include/folly/experimental/channels/detail/PointerVariant.h
 include/folly/experimental/channels/detail/Utility.h
+include/folly/experimental/channels/detail/IntrusivePtr.h
 include/folly/experimental/coro/Accumulate-inl.h
 include/folly/experimental/coro/Accumulate.h
 include/folly/experimental/coro/AsyncGenerator.h
@@ -368,9 +384,9 @@ include/folly/experimental/flat_combining/FlatCombining.h
 include/folly/experimental/io/AsyncBase.h
 include/folly/experimental/io/AsyncIO.h
 include/folly/experimental/io/FsUtil.h
+include/folly/experimental/io/HugePages.h
 include/folly/experimental/io/IoUring.h
 include/folly/experimental/io/IoUringBackend.h
-include/folly/experimental/io/HugePages.h
 include/folly/experimental/io/SimpleAsyncIO.h
 include/folly/experimental/observer/Observable-inl.h
 include/folly/experimental/observer/Observable.h
@@ -650,6 +666,7 @@ include/folly/net/NetOps.h
 include/folly/net/NetOpsDispatcher.h
 include/folly/net/NetworkSocket.h
 include/folly/net/TcpInfo.h
+include/folly/net/TcpInfoDispatcher.h
 include/folly/net/TcpInfoTypes.h
 include/folly/net/detail/SocketFileDescriptorMap.h
 include/folly/poly/Nullable.h
@@ -699,6 +716,7 @@ include/folly/python/coro.h
 include/folly/python/error.h
 include/folly/python/executor.h
 include/folly/python/futures.h
+include/folly/python/import.h
 include/folly/python/iobuf.h
 include/folly/small_vector.h
 include/folly/sorted_vector_types.h
@@ -723,6 +741,8 @@ include/folly/stats/MultiLevelTimeSeries-inl.h
 include/folly/stats/MultiLevelTimeSeries.h
 include/folly/stats/QuantileEstimator-inl.h
 include/folly/stats/QuantileEstimator.h
+include/folly/stats/QuantileHistogram-inl.h
+include/folly/stats/QuantileHistogram.h
 include/folly/stats/StreamingStats.h
 include/folly/stats/TDigest.h
 include/folly/stats/TimeseriesHistogram-inl.h
@@ -734,7 +754,7 @@ include/folly/stats/detail/DoubleRadixSort.h
 include/folly/stats/detail/SlidingWindow-inl.h
 include/folly/stats/detail/SlidingWindow.h
 include/folly/stop_watch.h
-include/folly/synchronization/AsymmetricMemoryBarrier.h
+include/folly/synchronization/AsymmetricThreadFence.h
 include/folly/synchronization/AtomicNotification-inl.h
 include/folly/synchronization/AtomicNotification.h
 include/folly/synchronization/AtomicRef.h
@@ -763,7 +783,6 @@ include/folly/synchronization/NativeSemaphore.h
 include/folly/synchronization/ParkingLot.h
 include/folly/synchronization/PicoSpinLock.h
 include/folly/synchronization/RWSpinLock.h
-include/folly/synchronization/Rcu-inl.h
 include/folly/synchronization/Rcu.h
 include/folly/synchronization/RelaxedAtomic.h
 include/folly/synchronization/SanitizeThread.h
@@ -777,9 +796,9 @@ include/folly/synchronization/detail/HazptrUtils.h
 include/folly/synchronization/detail/InlineFunctionRef.h
 include/folly/synchronization/detail/Sleeper.h
 include/folly/synchronization/detail/Spin.h
-include/folly/synchronization/detail/ThreadCachedInts.h
 include/folly/synchronization/detail/ThreadCachedLists.h
 include/folly/synchronization/detail/ThreadCachedReaders.h
+include/folly/synchronization/detail/ThreadCachedTag.h
 include/folly/synchronization/example/HazptrLockFreeLIFO.h
 include/folly/synchronization/example/HazptrSWMRSet.h
 include/folly/synchronization/example/HazptrWideCAS.h

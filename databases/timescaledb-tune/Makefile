@@ -1,9 +1,6 @@
-# Created by Kevin Bowling <kbowling@FreeBSD.org>
-
 PORTNAME=	timescaledb-tune
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
-PORTREVISION=	1
+DISTVERSION=	0.13.1
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org

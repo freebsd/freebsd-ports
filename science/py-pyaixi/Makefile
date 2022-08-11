@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	pyaixi
 PORTVERSION=	1.0.4
 DISTVERSIONSUFFIX=	.post1

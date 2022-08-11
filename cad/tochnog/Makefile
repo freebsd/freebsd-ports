@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <giffunip@asme.org>
-
 PORTNAME=	tochnog
 PORTVERSION=	20140100
 PORTREVISION=	10

@@ -3,7 +3,7 @@ PORTVERSION=	0.10.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@michael-fausten.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Proxy email (gmail) from IMAP to a delivery method
 
 LICENSE=	MIT

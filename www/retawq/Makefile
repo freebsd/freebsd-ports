@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	retawq
 DISTVERSION=	0.2.6c
 PORTREVISION=	11

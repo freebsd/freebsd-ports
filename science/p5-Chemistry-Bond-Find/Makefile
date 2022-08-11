@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	Chemistry-Bond-Find
 PORTVERSION=	0.23
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Tree-Nary
 PORTVERSION=	1.30
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Florian Smeets <flo@smeets.im>
-
 PORTNAME=	proctitle
 PORTVERSION=	0.1.2
 PORTREVISION=	2

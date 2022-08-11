@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Sendmail-Milter
 PORTVERSION=	0.18
 PORTREVISION=	2

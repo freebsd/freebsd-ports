@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	doom3-demo
 PORTVERSION=	1.1.1286
 PORTREVISION=	4

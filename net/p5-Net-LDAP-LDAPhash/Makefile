@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Net-LDAP-LDAPhash
 PORTVERSION=	1.0.3
 PORTREVISION=	1

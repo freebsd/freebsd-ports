@@ -1,5 +1,3 @@
-# Created by: John Merryweather Cooper et al
-
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-regexpr
 

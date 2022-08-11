@@ -1,5 +1,3 @@
-# Created by: Aaron Straup Cope <ascope@cpan.org>
-
 PORTNAME=	RDF-Simple
 PORTVERSION=	0.421
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Rich Neswold <rneswold@mcs.net>
-
 PORTNAME=	wmnet
 PORTVERSION=	1.2
 PORTREVISION=	3

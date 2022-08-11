@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Finance-QuoteHist
 PORTVERSION=	1.32
 CATEGORIES=	finance perl5

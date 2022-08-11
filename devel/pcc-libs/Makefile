@@ -1,5 +1,3 @@
-# Created by: lightside <lightside@gmx.com>
-
 PORTNAME=	pcc-libs
 PORTVERSION=	1.1.0
 CATEGORIES=	devel

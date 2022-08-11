@@ -1,5 +1,3 @@
-# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
-
 PORTNAME=	backuppc
 DISTVERSION=	4.3.3.20200531
 CATEGORIES=	sysutils

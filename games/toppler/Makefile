@@ -1,5 +1,3 @@
-# Created by: Dom Mitchell <dom@happygiraffe.net>
-
 PORTNAME=	toppler
 PORTVERSION=	1.3
 CATEGORIES=	games

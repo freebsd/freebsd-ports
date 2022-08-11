@@ -1,5 +1,3 @@
-# Created by: Greg Lewis <glewis@FreeBSD.org>
-
 PORTNAME=	rpm
 PORTVERSION=	4.17.0
 PORTREVISION=	2

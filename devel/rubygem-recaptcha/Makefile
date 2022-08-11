@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	recaptcha
 PORTVERSION=	4.14.0
 CATEGORIES=	devel rubygems

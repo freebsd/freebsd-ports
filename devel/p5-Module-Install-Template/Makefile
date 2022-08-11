@@ -1,5 +1,3 @@
-# Created by: gugu
-
 PORTNAME=	Module-Install-Template
 PORTVERSION=	0.08
 PORTREVISION=	1

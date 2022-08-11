@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	daemon-runner
 PORTVERSION=	0.0.15
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: James E Keenan <jkeenan@cpan.org>
-
 PORTNAME=	App-cpanminus-reporter
 PORTVERSION=	0.17
 CATEGORIES=	devel perl5

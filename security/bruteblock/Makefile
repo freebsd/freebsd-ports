@@ -27,7 +27,7 @@ do-install:
 .for file in ssh proftpd
 	${INSTALL_DATA} ${WRKSRC}/etc/${file}.conf ${STAGEDIR}${CONFDIR}/${file}.conf.sample
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/doc/bruteblock.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/doc/bruteblock.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}/

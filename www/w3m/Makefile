@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-
 PORTNAME=	w3m
 PORTVERSION=	0.5.3.${SNAPDATE}
 PORTREVISION=	1
@@ -24,10 +22,10 @@ CPE_VENDOR=	w3m_project
 
 GH_ACCOUNT=	tats
 GH_PROJECT=	w3m
-GH_TAGNAME=	2b59b9e
+GH_TAGNAME=	c515ea8
 
 MAKE_JOBS_UNSAFE=	yes
-SNAPDATE=	20211026
+SNAPDATE=	20220429
 
 CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-img-0.5.*
 GNU_CONFIGURE=	yes
@@ -52,7 +50,7 @@ KEY_LYNX_DESC=		Keymap like lynx browser
 OPTIONS_SUB=	yes
 
 INLINE_IMAGE_USES=	gnome xorg
-INLINE_IMAGE_USE=	xorg=x11 gnome=gtk20,gdkpixbuf2
+INLINE_IMAGE_USE=	xorg=x11 gnome=gtk20,gdkpixbuf2,gdkpixbuf2xlib
 INLINE_IMAGE_CONFIGURE_ON=	--with-imagelib=gtk2 --enable-image=fb,x11
 INLINE_IMAGE_CONFIGURE_OFF=	--enable-image=fb
 

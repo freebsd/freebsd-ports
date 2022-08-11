@@ -88,7 +88,7 @@ lib/mlt/libmltcore.so
 %%XML%%lib/mlt/libmltxml.so
 libdata/pkgconfig/mlt++.pc
 libdata/pkgconfig/mlt-framework.pc
-man/man1/melt.1.gz
+share/man/man1/melt.1.gz
 %%AVFORMAT%%%%DATADIR%%/avformat/blacklist.txt
 %%AVFORMAT%%%%DATADIR%%/avformat/consumer_avformat.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/producer_avformat.yml

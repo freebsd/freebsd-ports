@@ -1,5 +1,3 @@
-# Created by: Brad Huntting <huntting@glarp.com>
-
 PORTNAME=	qcl
 PORTVERSION=	0.6.4
 PORTREVISION=	2

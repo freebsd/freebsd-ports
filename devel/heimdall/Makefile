@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	heimdall
 PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	v

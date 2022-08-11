@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	cln
 PORTVERSION=	1.3.6
 CATEGORIES=	math devel

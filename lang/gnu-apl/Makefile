@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	apl
 PORTVERSION=	1.8
 PORTREVISION=	2

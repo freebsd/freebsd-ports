@@ -1,7 +1,5 @@
-# Created by: Thierry Thomas <thierry@FreeBSD.org>
-
 PORTNAME=	kicad
-PORTVERSION=	6.0.4
+PORTVERSION=	6.0.7
 PORTEPOCH=	2
 CATEGORIES=	cad
 MASTER_SITES=	https://gitlab.com/${PORTNAME}/code/${PORTNAME}/-/archive/${DISTVERSION}/
@@ -30,7 +28,7 @@ USES=		cmake:noninja compiler:c++11-lib desktop-file-utils gl \
 SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
 
 USE_XORG=	ice x11 xext
-USE_GL=		gl glew glu glut
+USE_GL=		gl glu glut
 USE_WX=		3.1
 WX_COMPS=	python:lib wx
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
@@ -41,7 +39,7 @@ CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}	\
 		-DKICAD_SCRIPTING_WXPYTHON=ON			\
 		-DKICAD_USE_OCC=ON				\
 		-DKICAD_USE_EGL=ON				\
-		-DKICAD_USE_BUNDLED_GLEW=OFF 			\
+		-DKICAD_USE_BUNDLED_GLEW=ON 			\
 		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE
 USE_LDCONFIG=	yes
 

@@ -1,8 +1,6 @@
-# Created by: Andrew Thompson <thompsa@FreeBSD.org>
-
 PORTNAME=	webcamd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.17.1.0
+DISTVERSION=	5.17.1.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	hselasky@FreeBSD.org

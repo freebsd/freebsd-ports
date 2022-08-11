@@ -1,5 +1,3 @@
-# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
-
 PORTNAME=	free-sa
 PORTVERSION=	2.0.0b6.7
 CATEGORIES=	www

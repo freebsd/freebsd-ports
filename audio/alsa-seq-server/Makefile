@@ -1,5 +1,3 @@
-# Created by: Hans Petter Selasky <hselasky@FreeBSD.org>
-
 PORTNAME=	alsa-seq-server
 DISTVERSIONPREFIX=	v
 PORTVERSION=		1.0.8

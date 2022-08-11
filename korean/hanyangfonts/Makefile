@@ -1,5 +1,3 @@
-# Created by: Junho CHOI <junho.choi@gmail.com>
-
 PORTNAME=	hanyangfonts
 PORTVERSION=	1.0
 PORTREVISION=	5

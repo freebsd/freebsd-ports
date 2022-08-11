@@ -1,5 +1,3 @@
-# Created by: Dominique Goncalves <dominique.goncalves@gmail.com>
-
 PORTNAME=	squidanalyzer
 PORTVERSION=	6.5
 DISTVERSIONPREFIX=	v

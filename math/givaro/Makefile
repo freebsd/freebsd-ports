@@ -23,7 +23,7 @@ TEST_TARGET=	check
 USE_GITHUB=	yes
 GH_ACCOUNT=	linbox-team
 
-OPTIONS_DEFINE=	DOCS
+#OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \

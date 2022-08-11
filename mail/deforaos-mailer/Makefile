@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	mailer
 PORTVERSION=	0.1.7
 CATEGORIES=	mail

@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	PHP_CodeCoverage
 DISTVERSION=	5.2.2
 CATEGORIES=	devel pear

@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME=	libfreefare
 PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	${PORTNAME}-

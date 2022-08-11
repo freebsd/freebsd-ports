@@ -1,7 +1,5 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	arouteserver
-PORTVERSION=	1.14.1
+PORTVERSION=	1.15.1
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

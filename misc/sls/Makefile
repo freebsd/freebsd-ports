@@ -1,5 +1,3 @@
-# Created by: sec@42.org
-
 PORTNAME=	sls
 PORTVERSION=	1.00
 CATEGORIES=	misc

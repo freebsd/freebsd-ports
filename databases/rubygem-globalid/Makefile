@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	globalid
 PORTVERSION=	0.4.2
 CATEGORIES=	databases rubygems
@@ -17,5 +15,7 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^0\.
 
 .include <bsd.port.mk>

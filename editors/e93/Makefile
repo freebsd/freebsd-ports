@@ -1,5 +1,3 @@
-# Created by: Satoshi Asami (asami)
-
 PORTNAME=	e93
 PORTVERSION=	1.4.3
 CATEGORIES=	editors tcl

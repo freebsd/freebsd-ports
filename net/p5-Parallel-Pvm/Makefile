@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Parallel-Pvm
 PORTVERSION=	1.4.0
 PORTREVISION=	4

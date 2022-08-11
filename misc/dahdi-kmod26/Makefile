@@ -1,5 +1,3 @@
-# Created by: Maxim Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	dahdi-kmod26
 PORTVERSION=	${DAHDI_VERSION:S/-/./g}
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	plank
 PORTVERSION=	0.11.89
 PORTREVISION=	2

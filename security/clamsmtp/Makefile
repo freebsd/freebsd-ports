@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	clamsmtp
 PORTVERSION=	1.10
 PORTREVISION=	4

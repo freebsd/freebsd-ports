@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	codeigniter
 PORTVERSION=	3.1.13
 CATEGORIES=	www

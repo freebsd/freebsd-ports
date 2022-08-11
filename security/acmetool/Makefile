@@ -1,7 +1,7 @@
 PORTNAME=	acmetool
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	samm@FreeBSD.org
@@ -9,7 +9,7 @@ COMMENT=	CLI tool for automatically acquiring certificates from ACME servers
 
 LICENSE=	MIT
 
-USES=		go
+USES=		go:1.18
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hlandau

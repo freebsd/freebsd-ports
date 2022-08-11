@@ -1,5 +1,3 @@
-# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-
 PORTNAME=	Services_W3C_CSSValidator
 PORTVERSION=	0.2.3
 CATEGORIES=	www pear

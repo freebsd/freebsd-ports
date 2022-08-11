@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# PROVIDE: pypowerwall_proxy
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pypowerwall_proxy_enable (bool):          Set to NO by default.
+#               Set it to YES to enable pypowerwall_proxy.
+# pypowerwall_proxy_user (string):          Set user that pypowerwall_proxy will run under
+#               Default is "nobody".
+# pypowerwall_proxy_listen (string):        Set IP that pypowerwall_proxy will listen on
+#               Default is "127.0.0.1".
+# pypowerwall_proxy_host (string):          Set IP that pypowerwall_proxy will connect to
+#               Default is "127.0.0.1".
+# pypowerwall_proxy_port (string):          Set port that pypowerwall_proxy listen on
+#               Default is "8675".
+# pypowerwall_proxy_email (string):         Set email that pypowerwall_proxy use to login
+#               Default is "no@body.com".
+# pypowerwall_proxy_password (string):      Set password that pypowerwall_proxy use to login
+#               Default is "".
+# pypowerwall_proxy_timezone (string):      Set timezone that pypowerwall_proxy will use
+#               Default is "America/New_York".
+
+. /etc/rc.subr
+
+name=pypowerwall_proxy
+rcvar=pypowerwall_proxy_enable
+
+load_rc_config $name
+
+: ${pypowerwall_proxy_enable:="NO"}
+: ${pypowerwall_proxy_username:="nobody"}
+: ${pypowerwall_proxy_group:="nobody"}
+: ${pypowerwall_proxy_listen:="127.0.0.1"}
+: ${pypowerwall_proxy_host:="127.0.0.1"}
+: ${pypowerwall_proxy_email:="no@body.com"}
+: ${pypowerwall_proxy_timezone:="America/New_York"}
+: ${pypowerwall_proxy_password:=""}
+: ${pypowerwall_proxy_port:="8675"}
+
+pidfile=/var/run/pypowerwall_proxy.pid
+command="/usr/sbin/daemon"
+pypowerwall_proxy_command="%%DATADIR%%/server.py"
+command_args="-u ${pypowerwall_proxy_username} -rP ${pidfile} -S -t ${name} -T ${name} /usr/bin/env PW_EMAIL=${pypowerwall_proxy_email} PW_PASSWORD=${pypowerwall_proxy_password} PW_TIMEZONE=${pypowerwall_proxy_timezone} PW_HOST=${pypowerwall_proxy_host} PW_BIND_ADDRESS=${pypowerwall_proxy_listen} PW_PORT=${pypowerwall_proxy_port} ${pypowerwall_proxy_command}"
+
+load_rc_config $name
+run_rc_command "$1"

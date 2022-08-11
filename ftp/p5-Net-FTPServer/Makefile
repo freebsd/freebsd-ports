@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Net-FTPServer
 PORTVERSION=	1.125
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: nork@cityfujisawa.ne.jp
-
 PORTNAME=	HTML-Template-Expr
 PORTVERSION=	0.07
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-
 PORTNAME=	scim-tomoe
 PORTVERSION=	0.6.0
 PORTREVISION=	12

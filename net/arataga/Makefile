@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	arataga
 PORTVERSION=	0.5.1
 DISTVERSIONPREFIX=	v
@@ -37,7 +35,7 @@ GH_ACCOUNT=	Stiffstream
 GH_PROJECT=	noexcept-ctcheck:nectc restinio:rinio so5extra:so5e
 GH_TAGNAME=	v.1.0.0:nectc v.0.6.13:rinio v.1.4.1:so5e
 
-_SO5_LIBVER=	5.7.3
+_SO5_LIBVER=	5.7.4.1
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*.md

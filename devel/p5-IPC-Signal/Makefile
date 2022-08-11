@@ -1,5 +1,3 @@
-# Created by: Rouslan Iskhakov <rouslan@rshell.net>
-
 PORTNAME=	IPC-Signal
 PORTVERSION=	1.00
 PORTREVISION=	1

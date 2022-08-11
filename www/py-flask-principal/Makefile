@@ -1,5 +1,3 @@
-# Created by: Kyle Evans <kevans@FreeBSD.org>
-
 PORTNAME=	Flask-Principal
 PORTVERSION=	0.4.0
 CATEGORIES=	www python

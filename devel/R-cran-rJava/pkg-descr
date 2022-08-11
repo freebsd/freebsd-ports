@@ -1,0 +1,11 @@
+rJava is a simple R-to-Java interface. It is comparable to the .C/.Call C
+interface. rJava provides a low-level bridge between R and Java (via JNI). It
+allows to create objects, call methods and access fields of Java objects from R.
+
+In a sense the inverse of rJava is JRI (Java/R Interface) which provides the
+opposite direction - calling R from Java. JRI is now shipped as a part of the
+rJava package, although it still can be used as a separate entity (especially
+for development).
+
+WWW: https://cran.r-project.org/package=rJava
+WWW: https://rforge.net/rJava/

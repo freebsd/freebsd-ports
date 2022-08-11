@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	openbox
 PORTVERSION=	3.6
 PORTREVISION=	9

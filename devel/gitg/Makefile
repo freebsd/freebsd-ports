@@ -1,5 +1,3 @@
-# Created by: kipz <somicide@gmail.com>
-
 PORTNAME=	gitg
 PORTVERSION=	3.32.1
 PORTREVISION=	6

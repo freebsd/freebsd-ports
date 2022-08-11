@@ -24,7 +24,6 @@
     SUBDIR += drg2sbg
     SUBDIR += dumpasn1
     SUBDIR += enca
-    SUBDIR += erlang-base64url
     SUBDIR += fconv
     SUBDIR += fix-mime-charset
     SUBDIR += fondu
@@ -33,7 +32,9 @@
     SUBDIR += gbase
     SUBDIR += gbsdconv
     SUBDIR += hs-aeson-pretty
-    SUBDIR += htx
+    SUBDIR += hs-dhall-bash
+    SUBDIR += hs-dhall-json
+    SUBDIR += hs-dhall-yaml
     SUBDIR += i18ntools
     SUBDIR += ical2html
     SUBDIR += iconv
@@ -141,6 +142,8 @@
     SUBDIR += php80-mbstring
     SUBDIR += php81-iconv
     SUBDIR += php81-mbstring
+    SUBDIR += php82-iconv
+    SUBDIR += php82-mbstring
     SUBDIR += psiconv
     SUBDIR += py-bencode.py
     SUBDIR += py-bencoder

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	pwntools
 PORTVERSION=	4.8.0
 CATEGORIES=	security python
@@ -32,7 +30,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}capstone>=3.0.5rc2:devel/py-capstone@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>0:devel/py-sortedcontainers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unicorn>=1.0.2rc1:emulators/py-unicorn@${PY_FLAVOR}
 
-USES=		python
+USES=		python cpe
 USE_PYTHON=	autoplist concurrent distutils
+
+CPE_VENDOR=	pwntools_project
 
 .include <bsd.port.mk>

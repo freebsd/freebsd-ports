@@ -1,5 +1,3 @@
-# Created by: John Chen <johnpupu@gmail.com>
-
 PORTNAME=	ev
 PORTVERSION=	1.1.5
 CATEGORIES=	devel

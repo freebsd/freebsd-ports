@@ -1,5 +1,3 @@
-# Created by: Wen Heping<wen@FreeBSD.org>
-
 PORTNAME=	BibTeX-Parser
 PORTVERSION=	1.03
 CATEGORIES=	textproc perl5

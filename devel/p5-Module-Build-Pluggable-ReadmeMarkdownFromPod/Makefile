@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Module-Build-Pluggable-ReadmeMarkdownFromPod
 PORTVERSION=	0.04
 CATEGORIES=	devel perl5

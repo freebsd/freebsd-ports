@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Tie-Array-Pack
 PORTVERSION=	0.02
 PORTREVISION=	1

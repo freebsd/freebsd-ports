@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	vectoroids
 PORTVERSION=	1.1.0
 PORTREVISION=	17

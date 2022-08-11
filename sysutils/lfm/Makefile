@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	lfm
 PORTVERSION=	3.1
 CATEGORIES=	sysutils

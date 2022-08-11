@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	et-orbi
 PORTVERSION=	1.2.7
 CATEGORIES=	devel rubygems

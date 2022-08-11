@@ -1,5 +1,3 @@
-# Created by: itojun@itojun.org
-
 PORTNAME=	rblcheck
 PORTVERSION=	1.5
 PORTREVISION=	2

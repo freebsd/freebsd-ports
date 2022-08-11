@@ -1,15 +1,13 @@
-# Created by: jrhett@netconsonance.com
-
 PORTNAME=	cfengine
-PORTVERSION=	3.18.1
-PORTREVISION=	2
+PORTVERSION=	3.18.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
 
 MAINTAINER=	cy@FreeBSD.org
-#		gjb@FreeBSD.org is also committer for this port
-#		skreuzer@FreeBSD.org is also committer for this port
 COMMENT=	Systems administration tool for networks
+
+DEPRECATED=		Expire one year after cfengine 3.19.0 released
+EXPIRATION_DATE=	2023-07-02
 
 LICENSE=	GPLv3
 

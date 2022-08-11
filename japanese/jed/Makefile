@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	jed
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 PORTREVISION=	6

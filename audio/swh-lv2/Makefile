@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	swh
 DISTVERSION=	1.0.16-4
 DISTVERSIONSUFFIX=	-g1aa77e5

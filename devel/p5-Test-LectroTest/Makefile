@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <alex@kapranoff.ru>
-
 PORTNAME=	Test-LectroTest
 PORTVERSION=	0.5001
 PORTREVISION=	1

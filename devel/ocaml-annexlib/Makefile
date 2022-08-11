@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	annexlib
 PORTVERSION=	0.13.2
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Phil Maker <pjm@gnu.org>
-
 PORTNAME=	nana
 PORTVERSION=	2.5
 PORTREVISION=	1

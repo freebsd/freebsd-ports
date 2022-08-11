@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	umix
 PORTVERSION=	1.0.2
 PORTREVISION=	3

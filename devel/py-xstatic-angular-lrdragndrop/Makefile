@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-angular-lrdragndrop
 PORTVERSION=	1.0.2.4
 CATEGORIES=	devel python

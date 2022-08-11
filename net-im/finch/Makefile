@@ -1,6 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-#   $MCom: ports-stable/net-im/gaim-consoleui-devel/Makefile,v 1.2 2006/10/29 18:55:28 marcus Exp $
-
 PORTNAME=	finch
 
 MAINTAINER=	marcus@FreeBSD.org
@@ -23,6 +20,7 @@ CPE_PRODUCT=	pidgin
 CPPFLAGS+=	-DNCURSES_WIDECHAR -D_XOPEN_SOURCE_EXTENDED
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtkui \
+		--disable-schemas-install \
 		--disable-nm \
 		--with-dynamic_prpls=${PRPL_MODULES:S/,$//}
 

@@ -1,5 +1,3 @@
-# Created by: renchap@cocoa-x.com
-
 PORTNAME=	bunny
 PORTVERSION=	2.9.0
 CATEGORIES=	net rubygems

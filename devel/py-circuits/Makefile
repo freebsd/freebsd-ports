@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	circuits
 PORTVERSION=	3.2
 CATEGORIES=	devel python

@@ -1,5 +1,5 @@
 PORTNAME=	mysqlclient
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ COMMENT=	MySQL database connector for Python
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 iconv mysql python:3.6+ ssl
+USES=		compiler:c11 iconv mysql python:3.7+ ssl
 USE_PYTHON=	autoplist concurrent distutils
 
 PORTDOCS=	*

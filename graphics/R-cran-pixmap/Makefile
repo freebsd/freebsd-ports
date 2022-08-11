@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	pixmap
 DISTVERSION=	0.4-12
 CATEGORIES=	graphics

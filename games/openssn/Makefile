@@ -1,5 +1,3 @@
-# Created by: Jesse Smith <jessefrgsmith@yahoo.ca>
-
 PORTNAME=	openssn
 PORTVERSION=	1.4
 PORTREVISION=	6

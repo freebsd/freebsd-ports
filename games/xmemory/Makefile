@@ -1,5 +1,3 @@
-# Created by: Dave Chapeskie <dchapes@ddm.on.ca>
-
 PORTNAME=	xmemory
 PORTVERSION=	3.7
 PORTREVISION=	3

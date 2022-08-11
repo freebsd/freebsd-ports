@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-Symbolic-Custom-CCompiler
 PORTVERSION=	1.04
 PORTREVISION=	2

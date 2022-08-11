@@ -1,5 +1,3 @@
-# Created by: Samy Al Bahra <samy@kerneled.org>
-
 PORTNAME=	docker
 PORTVERSION=	1.5
 PORTREVISION=	8

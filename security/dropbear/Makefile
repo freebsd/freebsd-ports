@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-
 PORTNAME=	dropbear
 PORTVERSION=	2022.82
 CATEGORIES=	security

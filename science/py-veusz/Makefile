@@ -1,5 +1,3 @@
-# Created by: Stas Timokhin <devel@stasyan.com>
-
 PORTNAME=	veusz
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	3.4

@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	Net-Z3950-SimpleServer
 PORTVERSION=	1.20
 PORTREVISION=	1

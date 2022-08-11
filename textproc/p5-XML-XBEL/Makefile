@@ -1,5 +1,3 @@
-# Created by: Aaron Straup Cope <ascope@cpan.org>
-
 PORTNAME=	XML-XBEL
 PORTVERSION=	1.4
 PORTREVISION=	1

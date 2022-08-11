@@ -1,5 +1,3 @@
-# Created by: Lars Koeller <lkoeller@cc.fh-lippe.de>
-
 PORTNAME=	tclock
 PORTVERSION=	1.0.1
 PORTREVISION=	3

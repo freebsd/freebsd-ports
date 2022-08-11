@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	DBIx-DataSource
 PORTVERSION=	0.02
 PORTREVISION=	1

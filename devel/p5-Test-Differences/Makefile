@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Test-Differences
 PORTVERSION=	0.650
 PORTEPOCH=	1

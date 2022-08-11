@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Tk-DKW
 PORTVERSION=	0.03
 PORTREVISION=	5

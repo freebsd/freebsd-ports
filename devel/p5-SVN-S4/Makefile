@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	SVN-S4
 PORTVERSION=	1.062
 CATEGORIES=	devel perl5

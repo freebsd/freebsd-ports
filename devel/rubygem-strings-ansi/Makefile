@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	strings-ansi
 PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems

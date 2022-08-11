@@ -5,7 +5,6 @@ bin/chrome
 %%DATADIR%%/chrome_200_percent.pak
 %%DATADIR%%/headless_lib_data.pak
 %%DATADIR%%/headless_lib_strings.pak
-%%DATADIR%%/icudtl.dat
 %%DATADIR%%/libEGL.so
 %%DATADIR%%/libGLESv2.so
 %%DATADIR%%/libVkICD_mock_icd.so

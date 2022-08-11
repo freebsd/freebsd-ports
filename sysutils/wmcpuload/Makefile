@@ -1,5 +1,3 @@
-# Created by: Soeren Boll Overgaard <boll@tolkien.dk>
-
 PORTNAME=	wmcpuload
 DISTVERSION=	1.1.1
 

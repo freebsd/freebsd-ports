@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	stdlib
 PORTVERSION=	41.2.2
 DISTVERSIONPREFIX=	release-v

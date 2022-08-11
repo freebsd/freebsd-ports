@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-SymbolicX-Statistics-Distributions
 PORTVERSION=	1.02
 PORTREVISION=	1

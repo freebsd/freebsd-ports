@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	flvtool2
 PORTVERSION=	1.0.6
 CATEGORIES=	multimedia rubygems

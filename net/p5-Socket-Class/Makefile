@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Socket-Class
 PORTVERSION=	2.258
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Sulev-Madis Silber <madis555@hot.ee>
-
 PORTNAME=	Number-Bytes-Human
 PORTVERSION=	0.11
 PORTREVISION=	1

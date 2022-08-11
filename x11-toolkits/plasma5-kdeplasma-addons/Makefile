@@ -16,7 +16,7 @@ USE_KDE=	activities archive attica auth bookmarks codecs completion \
 		ecm_build
 USE_QT=		concurrent core dbus declarative graphicaleffects gui location \
 		network printsupport script webchannel widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools_build qmake_build testlib_build
 
 OPTIONS_DEFINE=	PURPOSE QTWEBENGINE
 OPTIONS_DEFAULT=	PURPOSE

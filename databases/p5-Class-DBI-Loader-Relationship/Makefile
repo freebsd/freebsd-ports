@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Class-DBI-Loader-Relationship
 PORTVERSION=	1.3
 PORTREVISION=	1

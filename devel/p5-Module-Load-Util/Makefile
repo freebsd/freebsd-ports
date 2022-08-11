@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Module-Load-Util
 PORTVERSION=	0.008
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	gomoku
 PORTVERSION=	1.2.9
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	libdrizzle
 PORTVERSION=	0.8
 PORTREVISION=	7
@@ -22,6 +20,8 @@ USES=		gmake libtool pathfix
 CONFIGURE_ARGS+=--enable-libsqlite3
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+
+CONFLICTS_INSTALL=	libdrizzle-redux # lib/libdrizzle.so
 
 SAMPLE_PROGS=	client pipe_query proxy server simple \
 		simple_multi sqlite_server

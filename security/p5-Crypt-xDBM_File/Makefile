@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Crypt-xDBM_File
 PORTVERSION=	1.02
 PORTREVISION=	1

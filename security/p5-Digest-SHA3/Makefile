@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Digest-SHA3
 PORTVERSION=	1.04
 CATEGORIES=	security perl5

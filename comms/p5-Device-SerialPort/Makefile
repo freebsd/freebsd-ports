@@ -1,5 +1,3 @@
-# Created by: Nick Sayer <nsayer@FreeBSD.org>
-
 PORTNAME=	Device-SerialPort
 PORTVERSION=	1.040000
 PORTREVISION=	2

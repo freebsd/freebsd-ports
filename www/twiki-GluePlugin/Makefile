@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	GluePlugin
 SVNREV=		15708
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \

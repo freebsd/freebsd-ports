@@ -1,5 +1,3 @@
-# Created by: Sergey Velichkevych <serg@cad.kiev.ua>
-
 PORTNAME=	wmping
 PORTVERSION=	0.2.1
 PORTREVISION=	1

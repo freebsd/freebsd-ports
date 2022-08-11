@@ -1,5 +1,3 @@
-# Created by: Alex Deiter <tiamat@komi.mts.ru>
-
 PORTNAME=	imapsync
 PORTVERSION=	2.178
 DISTVERSIONPREFIX=	imapsync-

@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	xtrader
 PORTVERSION=	0.99.9
 PORTREVISION=	10

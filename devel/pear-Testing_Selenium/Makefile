@@ -1,5 +1,3 @@
-# Created by: Martin Wilke (miwi@FreeBSD.org)
-
 PORTNAME=	Testing_Selenium
 PORTVERSION=	0.4.4
 CATEGORIES=	devel pear

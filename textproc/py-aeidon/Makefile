@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aeidon
 PORTVERSION=	1.11
 CATEGORIES=	textproc python

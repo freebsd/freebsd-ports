@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	grafx2
 PORTVERSION=	2.8
 DISTVERSIONSUFFIX=	.3091-HEAD-src

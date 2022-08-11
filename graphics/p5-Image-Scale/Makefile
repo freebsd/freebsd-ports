@@ -1,5 +1,3 @@
-# Created by: Mark Atkinson <atkin901@gmail.com>
-
 PORTNAME=	Image-Scale
 PORTVERSION=	0.12
 CATEGORIES=	graphics perl5

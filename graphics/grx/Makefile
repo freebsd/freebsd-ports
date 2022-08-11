@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	grx
 PORTVERSION=	2.4.9
 PORTREVISION=	4

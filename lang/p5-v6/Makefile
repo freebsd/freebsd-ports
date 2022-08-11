@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	v6
 PORTVERSION=	0.047
 CATEGORIES=	lang perl5

@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Text-Reform
 PORTVERSION=	1.20
 PORTREVISION=	1

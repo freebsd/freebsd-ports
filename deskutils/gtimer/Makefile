@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	gtimer
 PORTVERSION=	2.0.0
 PORTREVISION=	3

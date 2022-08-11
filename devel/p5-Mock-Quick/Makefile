@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Mock-Quick
 PORTVERSION=	1.111
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-iotanalytics
 PORTVERSION=	1.49.0
 CATEGORIES=	devel rubygems

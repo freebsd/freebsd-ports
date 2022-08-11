@@ -1,5 +1,3 @@
-# Created by: Konstantin Reznichenko <kot@premierbank.dp.ua>
-
 PORTNAME=	fileschanged
 PORTVERSION=	0.6.5
 PORTREVISION=	2

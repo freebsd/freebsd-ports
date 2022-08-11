@@ -1,5 +1,3 @@
-# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
-
 PORTNAME=	sendsms
 PORTVERSION=	0.2.4
 CATEGORIES=	net perl5

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	activemessaging
 PORTVERSION=	0.13.1
 CATEGORIES=	devel rubygems

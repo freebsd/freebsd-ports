@@ -1,6 +1,7 @@
 bin/use-devel-assertos
 %%SITE_PERL%%/Devel/AssertOS.pm
 %%SITE_PERL%%/Devel/AssertOS/AIX.pm
+%%SITE_PERL%%/Devel/AssertOS/Alias/MacOS.pm
 %%SITE_PERL%%/Devel/AssertOS/Amiga.pm
 %%SITE_PERL%%/Devel/AssertOS/Android.pm
 %%SITE_PERL%%/Devel/AssertOS/Apple.pm
@@ -51,6 +52,7 @@ bin/use-devel-assertos
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_8.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_9.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v11.pm
+%%SITE_PERL%%/Devel/AssertOS/MacOSX/v12.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSclassic.pm
 %%SITE_PERL%%/Devel/AssertOS/MachTen.pm
 %%SITE_PERL%%/Devel/AssertOS/MicrosoftWindows.pm
@@ -89,6 +91,7 @@ bin/use-devel-assertos
 %%PERL5_MAN1%%/use-devel-assertos.1.gz
 %%PERL5_MAN3%%/Devel::AssertOS.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::AIX.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::Alias::MacOS.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Amiga.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Apple.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::BSDOS.3.gz
@@ -138,6 +141,7 @@ bin/use-devel-assertos
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v10_8.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v10_9.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v11.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v12.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSclassic.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MachTen.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MicrosoftWindows.3.gz

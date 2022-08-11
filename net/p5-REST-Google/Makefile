@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	REST-Google
 PORTVERSION=	1.0.8
 PORTREVISION=	2

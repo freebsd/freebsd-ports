@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	layout_yullio_generator
 PORTVERSION=	0.9.0
 CATEGORIES=	www rubygems

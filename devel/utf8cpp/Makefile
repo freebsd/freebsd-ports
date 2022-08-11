@@ -1,5 +1,3 @@
-# Created by: Keith Gaughan <k@stereochro.me>
-
 PORTNAME=	utf8cpp
 PORTVERSION=	3.1.2
 DISTVERSIONPREFIX=	v
@@ -14,6 +12,8 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	nemtrif
 GH_PROJECT=	utfcpp
+
+NO_ARCH=	yes
 
 PLIST_FILES=	include/utf8cpp/utf8.h \
 		include/utf8cpp/utf8/checked.h \

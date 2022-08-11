@@ -1,5 +1,3 @@
-# Created by: Jan Stocker <Jan.Stocker@t-online.de>
-
 PORTNAME=	egoboo
 PORTVERSION=	2.8.1
 PORTREVISION=	1

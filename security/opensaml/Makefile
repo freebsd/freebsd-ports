@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi
-
 PORTNAME=	opensaml
 PORTVERSION=	3.2.1
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Sutra Zhou <zhoushuqun@gmail.com>
-
 PORTNAME=	ShellEd
 PORTVERSION=	1.0.2a
 PORTREVISION=	4

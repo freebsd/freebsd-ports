@@ -1,5 +1,3 @@
-# Created by: Tobias Gion
-
 PORTNAME=	manaplus
 DISTVERSION=	2.1.3.17
 PORTREVISION=	3

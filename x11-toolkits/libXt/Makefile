@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXt
 DISTVERSION=	1.2.1
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	XML-Toolkit
 PORTVERSION=	0.15
 PORTREVISION=	2

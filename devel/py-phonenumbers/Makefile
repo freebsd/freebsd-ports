@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	phonenumbers
 PORTVERSION=	8.4.1
 CATEGORIES=	devel python

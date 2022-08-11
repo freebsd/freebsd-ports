@@ -1,5 +1,3 @@
-# Created by: Nikolai Lifanov <lifanov@mail.lifanov.com>
-
 PORTNAME=	alex4
 PORTVERSION=	1.1
 PORTREVISION=	1

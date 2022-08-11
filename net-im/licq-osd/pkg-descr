@@ -1,9 +1,0 @@
-This is a small licq-plugin, which uses libxosd2 to display new arriving
-messages as OSD (On Screen Display) text on your desktop.  I wrote this, as I
-saw this feature in sim and wanted to have the same functionality in licq.
-
-Martin Maurer, martinmaurer@gmx.at
-
-LICENSE: GPL2 or later with execption to link with OpenSSL
-
-WWW: https://sourceforge.net/projects/licq-osd/

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	train-winrm
 PORTVERSION=	0.2.11
 CATEGORIES=	net rubygems

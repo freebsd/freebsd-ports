@@ -1,5 +1,3 @@
-# Created by: pgf
-
 PORTNAME=	vile
 PORTVERSION=	9.8v
 CATEGORIES=	editors

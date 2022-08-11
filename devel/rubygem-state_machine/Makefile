@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	state_machine
 PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems

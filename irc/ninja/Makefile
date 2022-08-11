@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	ninja
 PORTVERSION=	1.5.8.1
 CATEGORIES=	irc

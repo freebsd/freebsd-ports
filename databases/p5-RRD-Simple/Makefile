@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	RRD-Simple
 PORTVERSION=	1.44
 PORTREVISION=	7

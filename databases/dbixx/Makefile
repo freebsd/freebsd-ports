@@ -1,5 +1,3 @@
-# Created by: Mohammad S. Babaei <info@babaei.net>
-
 PORTNAME=	dbixx
 PORTVERSION=	0.0.4
 PORTREVISION=	3

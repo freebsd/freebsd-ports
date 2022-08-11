@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Getopt-Long-Descriptive
 PORTVERSION=	0.110
 CATEGORIES=	devel perl5

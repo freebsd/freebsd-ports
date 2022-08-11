@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	fmars
 PORTVERSION=	0.0.207
 PORTREVISION=	3

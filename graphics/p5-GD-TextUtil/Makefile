@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	GD-TextUtil
 PORTVERSION=	0.86
 PORTREVISION=	5

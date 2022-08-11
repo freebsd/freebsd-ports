@@ -1,5 +1,3 @@
-# Created by: max
-
 PORTNAME=	nkf
 PORTVERSION=	2.1.4
 PORTEPOCH=	1

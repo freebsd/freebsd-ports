@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Data-Lock
 PORTVERSION=	1.03
 CATEGORIES=	devel perl5

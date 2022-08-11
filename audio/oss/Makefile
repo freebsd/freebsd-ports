@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	oss
 DISTVERSION=	4.2-build2019
 PORTREVISION=	2

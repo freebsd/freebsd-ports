@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-qldb
 PORTVERSION=	1.25.0
 CATEGORIES=	devel rubygems

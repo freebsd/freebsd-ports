@@ -1,11 +1,9 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.34.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
-CATEGORIES=	multimedia audio
+CATEGORIES=	multimedia audio wayland
 MASTER_SITES=	https://waf.io/:waf
 DISTFILES=	${WAF_RELEASE}${EXTRACT_SUFX}:waf
 

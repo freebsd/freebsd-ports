@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	freecol
 PORTVERSION=	0.11.6
 CATEGORIES=	games java

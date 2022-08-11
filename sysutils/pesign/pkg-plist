@@ -1,8 +1,0 @@
-bin/efikeygen
-bin/pesign
-include/libdpe/libdpe.h
-include/libdpe/pe.h
-lib/libdpe.so
-man/man1/efikeygen.1.gz
-man/man1/pesign-client.1.gz
-man/man1/pesign.1.gz

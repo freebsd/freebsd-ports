@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	ddrescue
 PORTVERSION=	1.25
 CATEGORIES=	sysutils

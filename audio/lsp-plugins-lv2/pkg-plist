@@ -125,7 +125,7 @@
 %%JACK%%lib/liblsp-r3d-glx-lib-1.0.1.so
 %%JACK%%lib/liblsp-r3d-glx-lib.a
 %%JACK%%lib/liblsp-r3d-glx-lib.so
-%%JACK%%lib/lsp-plugins/liblsp-plugins-jack-1.2.0.so
+%%JACK%%lib/lsp-plugins/liblsp-plugins-jack-1.2.1.so
 lib/lv2/lsp-plugins.lv2/art_delay_mono.ttl
 lib/lv2/lsp-plugins.lv2/art_delay_stereo.ttl
 lib/lv2/lsp-plugins.lv2/comp_delay_mono.ttl
@@ -168,8 +168,8 @@ lib/lv2/lsp-plugins.lv2/limiter_mono.ttl
 lib/lv2/lsp-plugins.lv2/limiter_stereo.ttl
 lib/lv2/lsp-plugins.lv2/loud_comp_mono.ttl
 lib/lv2/lsp-plugins.lv2/loud_comp_stereo.ttl
-lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2-1.2.0.so
-lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2ui-1.2.0.so
+lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2-1.2.1.so
+lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2ui-1.2.1.so
 lib/lv2/lsp-plugins.lv2/manifest.ttl
 lib/lv2/lsp-plugins.lv2/mb_compressor_lr.ttl
 lib/lv2/lsp-plugins.lv2/mb_compressor_mono.ttl
@@ -294,7 +294,7 @@ lib/lv2/lsp-plugins.lv2/trigger_stereo.ttl
 %%VST2%%lib/vst/lsp-plugins/limiter-stereo.so
 %%VST2%%lib/vst/lsp-plugins/loud-comp-mono.so
 %%VST2%%lib/vst/lsp-plugins/loud-comp-stereo.so
-%%VST2%%lib/vst/lsp-plugins/lsp-plugins-vst2-1.2.0.so
+%%VST2%%lib/vst/lsp-plugins/lsp-plugins-vst2-1.2.1.so
 %%VST2%%lib/vst/lsp-plugins/mb-compressor-lr.so
 %%VST2%%lib/vst/lsp-plugins/mb-compressor-mono.so
 %%VST2%%lib/vst/lsp-plugins/mb-compressor-ms.so

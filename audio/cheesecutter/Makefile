@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	cheesecutter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9-beta-3-25

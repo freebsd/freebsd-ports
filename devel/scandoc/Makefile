@@ -1,5 +1,3 @@
-# Created by: Christopher Elkins <chrise@scardini.com>
-
 PORTNAME=	scandoc
 PORTVERSION=	0.14
 CATEGORIES=	devel perl5

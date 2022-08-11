@@ -1,7 +1,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.12.3
-PORTREVISION?=	0
+DISTVERSION?=	1.13.1
+PORTREVISION?=	1
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -28,7 +28,7 @@ GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	hrydgard:glslang:8.13.3743-339-gdc11adde:glslang/ext/glslang \
 		hrydgard:miniupnp:miniupnpd_2_1-502-g3a87be3:miniupnp/ext/miniupnp \
 		facebook:zstd:v1.5.0:zstd/ext/zstd \
-		unknownbrackets:ppsspp-debugger:36ad6b1:debugger/assets/debugger \
+		unknownbrackets:ppsspp-debugger:9776332:debugger/assets/debugger \
 		KhronosGroup:SPIRV-Cross:2021-01-15:SPIRV/ext/SPIRV-Cross \
 		Kingcom:armips:v0.10.0-28-g7885552:armips/ext/armips
 

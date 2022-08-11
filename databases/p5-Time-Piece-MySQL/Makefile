@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	Time-Piece-MySQL
 PORTVERSION=	0.06
 PORTREVISION=	2

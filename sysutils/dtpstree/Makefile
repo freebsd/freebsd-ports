@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift
-
 PORTNAME=	dtpstree
 PORTVERSION=	1.0.3
 CATEGORIES=	sysutils

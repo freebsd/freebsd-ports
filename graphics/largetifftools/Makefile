@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	largetifftools
 PORTVERSION=	1.4.1
 CATEGORIES=	graphics

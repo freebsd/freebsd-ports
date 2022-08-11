@@ -1,5 +1,3 @@
-# Created by: Kan Sasaki <sasaki@fcc.ad.jp>
-
 PORTNAME=	Getopt-Compact-WithCmd
 PORTVERSION=	0.22
 PORTREVISION=	1

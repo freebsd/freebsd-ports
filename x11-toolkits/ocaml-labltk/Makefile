@@ -1,5 +1,3 @@
-# Created by: Michael Grünewald <michipili@gmail.com>
-
 PORTNAME=	labltk
 PORTVERSION=	8.06.5
 CATEGORIES=	x11-toolkits

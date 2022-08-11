@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	Crypt-SSSS
 PORTVERSION=	0.3
 CATEGORIES=	security perl5

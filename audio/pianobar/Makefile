@@ -1,5 +1,3 @@
-# Created by: John Hixson <john@pcbsd.org>
-
 PORTNAME=	pianobar
 PORTVERSION=	2020.11.28
 CATEGORIES=	audio

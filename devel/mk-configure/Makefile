@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-
 PORTNAME=	mk-configure
 PORTVERSION=	0.37.0
 CATEGORIES=	devel

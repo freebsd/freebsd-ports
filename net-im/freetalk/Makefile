@@ -1,5 +1,3 @@
-# Created by: Oleg Ginzburg  (olevole@olevole.ru)
-
 PORTNAME=	freetalk
 PORTVERSION=	4.1
 DISTVERSIONPREFIX=	v

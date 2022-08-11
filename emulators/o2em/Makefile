@@ -1,5 +1,3 @@
-# Created by: Gunter Wambaugh <techgunter@yahoo.com>
-
 PORTNAME=	o2em
 PORTVERSION=	1.17
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	tcpdump
 PORTVERSION=	4.99.1
 CATEGORIES=	net

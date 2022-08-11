@@ -1,5 +1,3 @@
-# Created by: gahr@FreeBSD.org
-
 PORTNAME=	tclvfs
 PORTVERSION=	20080503
 CATEGORIES=	devel

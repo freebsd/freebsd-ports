@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	Module-Versions-Report
 PORTVERSION=	1.06
 PORTREVISION=	1
@@ -12,5 +10,7 @@ COMMENT=	Report versions of all modules in memory
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

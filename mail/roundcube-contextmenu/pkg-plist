@@ -4,6 +4,7 @@
 %%RCDIR_REL%%/plugins/contextmenu/composer.json
 %%RCDIR_REL%%/plugins/contextmenu/contextmenu.js
 %%RCDIR_REL%%/plugins/contextmenu/contextmenu.php
+%%RCDIR_REL%%/plugins/contextmenu/localization/ar.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/bg_BG.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/ca_ES.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/cs_CZ.inc

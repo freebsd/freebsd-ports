@@ -1,5 +1,3 @@
-# Created by: Karl Dietz (Karl.Dietz@frankfurt.netsurf.de)
-
 PORTNAME=	dnsutl
 PORTVERSION=	1.12
 PORTREVISION=	2

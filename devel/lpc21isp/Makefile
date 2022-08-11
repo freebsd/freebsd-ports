@@ -1,5 +1,3 @@
-# Created by: Steve Franks <stevefranks@ieee.org>
-
 PORTNAME=	lpc21isp
 PORTVERSION=	1.97
 CATEGORIES=	devel

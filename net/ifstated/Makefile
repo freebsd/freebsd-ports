@@ -1,5 +1,3 @@
-# Created by: Matthew George <mdg@secureworks.net>
-
 PORTNAME=	ifstated
 PORTVERSION=	5.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	bin_utils
 PORTVERSION=	0.0.7
 CATEGORIES=	devel rubygems

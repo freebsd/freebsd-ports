@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	file-tail
 PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems

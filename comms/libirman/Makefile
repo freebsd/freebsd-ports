@@ -1,5 +1,3 @@
-# Created by: Douglas K. Rand <rand@meridian-enviro.com>
-
 PORTNAME=	libirman
 PORTVERSION=	0.5.2
 CATEGORIES=	comms

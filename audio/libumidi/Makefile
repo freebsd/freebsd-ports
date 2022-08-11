@@ -1,5 +1,3 @@
-# Created by: Hans Petter Selasky <hselasky@FreeBSD.org>
-
 PORTNAME=	libumidi
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.1.5

@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <dhn@FreeBSD.org>
-
 PORTNAME=	termtter
 PORTVERSION=	2.2.9
 PORTREVISION=	1

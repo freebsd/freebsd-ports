@@ -1,7 +1,7 @@
---- third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig	2022-04-21 18:48:31 UTC
+--- third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig	2022-06-17 14:20:10 UTC
 +++ third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
 @@ -18,7 +18,7 @@
- #include "third_party/base/cxx17_backports.h"
+ #include "third_party/base/check.h"
  
  #if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !defined(OS_FUCHSIA) && \
 -    !defined(OS_ASMJS)

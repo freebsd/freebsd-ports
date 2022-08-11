@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	curry
 PORTVERSION=	2.000001
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Thomas M. Hermann <tmh.public@gmail.com>
-
 PORTNAME=	gbemol
 PORTVERSION=	0.3.2
 PORTREVISION=	15

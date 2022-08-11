@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	pystemmer
 PORTVERSION=	2.0.1
 CATEGORIES=	textproc python

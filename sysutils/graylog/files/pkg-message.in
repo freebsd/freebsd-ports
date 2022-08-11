@@ -20,6 +20,11 @@ EOM
 }
 { type: upgrade
   message: <<EOM
+Graylog v4.3.0+ will not start up, unless the internal stats collector
+is disabled with disable_native_system_stats_collector=true
+
+See https://github.com/Graylog2/graylog2-server/issues/12542 for details.
+
 graylog now has a *minimum* dependency of elasticsearch6 or higher. You
 may need to re-index after upgrading to ES6, please refer to graylog
 docs for more details.

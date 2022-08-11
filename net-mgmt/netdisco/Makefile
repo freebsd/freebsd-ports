@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@inerd.com>
-
 PORTNAME=	netdisco
 DISTVERSION=	2.047002
 CATEGORIES=	net-mgmt perl5

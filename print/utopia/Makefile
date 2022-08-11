@@ -1,5 +1,3 @@
-# Created by: James Bailie <jimmy@mammothcheese.ca>
-
 PORTNAME=	utopia
 PORTVERSION=	1.1
 CATEGORIES=	print

@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	spread4
 PORTVERSION=	4.2.0
 CATEGORIES=	net perl5

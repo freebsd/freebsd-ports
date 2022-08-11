@@ -1,5 +1,3 @@
-# Created by: Thomas Quinot <thomas@cuivre.fr.eu.org>
-
 PORTNAME=	proxy-suite
 PORTVERSION=	1.9.2.4
 PORTREVISION=	3

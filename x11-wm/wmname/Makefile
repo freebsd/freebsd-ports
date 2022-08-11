@@ -1,5 +1,3 @@
-# Created by: V. Jahns <vj562001@yahoo.de>
-
 PORTNAME=	wmname
 PORTVERSION=	0.1
 PORTREVISION=	2

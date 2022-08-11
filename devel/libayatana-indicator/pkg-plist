@@ -1,0 +1,13 @@
+include/libayatana-indicator3-0.4/libayatana-indicator/indicator-desktop-shortcuts.h
+include/libayatana-indicator3-0.4/libayatana-indicator/indicator-image-helper.h
+include/libayatana-indicator3-0.4/libayatana-indicator/indicator-ng.h
+include/libayatana-indicator3-0.4/libayatana-indicator/indicator-object.h
+include/libayatana-indicator3-0.4/libayatana-indicator/indicator-service-manager.h
+include/libayatana-indicator3-0.4/libayatana-indicator/indicator-service.h
+include/libayatana-indicator3-0.4/libayatana-indicator/indicator.h
+lib/libayatana-indicator3.so
+lib/libayatana-indicator3.so.7
+lib/libayatana-indicator3.so.7.0.0
+libdata/pkgconfig/ayatana-indicator3-0.4.pc
+libexec/libayatana-indicator/ayatana-indicator-loader3
+%%DATADIR%%/80indicator-debugging

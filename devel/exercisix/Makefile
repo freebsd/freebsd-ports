@@ -1,5 +1,3 @@
-# Created by: Alexander Churannov <churanov.port.maintainer@gmail.com>
-
 PORTNAME=	exercisix
 PORTVERSION=	1.2
 CATEGORIES=	devel

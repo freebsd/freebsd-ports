@@ -12,7 +12,6 @@ COMMENT=	LuaJIT library for TeXLive
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LuaJIT-src/COPYRIGHT
 
-BROKEN_aarch64=	Does not configure: error: Sorry, cannot preprocess lj_arch.h
 BROKEN_mips=	Does not configure: error: Sorry, cannot preprocess lj_arch.h
 BROKEN_mips64=	Does not configure: error: Sorry, cannot preprocess lj_arch.h
 BROKEN_powerpc64=	Does not build: uninitialized constant Config (NameError)

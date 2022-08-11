@@ -1,5 +1,3 @@
-# Created by: Martin Matuska (mm@FreeBSD.org)
-
 PORTNAME=	gollem
 PORTVERSION=	3.0.13
 CATEGORIES=	ftp www pear

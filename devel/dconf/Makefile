@@ -1,12 +1,10 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	dconf
 PORTVERSION=	0.40.0
 PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DISTNAME=	dconf-${PORTVERSION}
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Configuration database system for GNOME

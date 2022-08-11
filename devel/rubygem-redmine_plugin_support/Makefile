@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	redmine_plugin_support
 PORTVERSION=	0.0.5
 CATEGORIES=	devel rubygems

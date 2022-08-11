@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	Fuzzy
 DISTVERSION=	1.2.2
 CATEGORIES=	misc python

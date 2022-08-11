@@ -1,5 +1,3 @@
-# Created by: Jonathan Pater <cowboyneal@gmail.com>
-
 PORTNAME=	WWW-Shorten-Googl
 PORTVERSION=	1.02
 PORTREVISION=	1

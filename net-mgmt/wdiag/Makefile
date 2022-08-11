@@ -1,5 +1,3 @@
-# Created by: Josh Carroll <josh.carroll@gmail.com>
-
 PORTNAME=	wdiag
 PORTVERSION=	0.10.2
 CATEGORIES=	net-mgmt

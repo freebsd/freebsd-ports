@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	polyglot
 DISTVERSION=	1.4.70b
 PORTREVISION=	1

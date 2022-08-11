@@ -1,5 +1,3 @@
-# Created by: mike
-
 PORTNAME=	xp
 PORTVERSION=	0.5
 PORTREVISION=	4

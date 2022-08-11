@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	whichwayisup
 PORTVERSION=	0.7.9
 PORTREVISION=	11

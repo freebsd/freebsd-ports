@@ -1,5 +1,3 @@
-# Created by: Christopher Key <cjk32@cam.ac.uk>
-
 PORTNAME=	UUID-Tiny
 PORTVERSION=	1.04
 PORTREVISION=	1

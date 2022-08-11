@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Class-Null
 PORTVERSION=	2.110730
 PORTREVISION=	1

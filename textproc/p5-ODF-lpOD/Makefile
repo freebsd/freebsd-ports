@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	ODF-lpOD
 PORTVERSION=	1.126
 PORTREVISION=	1

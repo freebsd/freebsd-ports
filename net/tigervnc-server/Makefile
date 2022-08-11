@@ -1,13 +1,17 @@
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMESUFFIX=	-server
 
 COMMENT=	TigerVNC Server
+
+EXTRA_PATCHES=	${FILESDIR}/xorg-1.21.patch:-p1 \
+		${FILESDIR}/xvnc-adapt-xorg-1.21.patch:-p1
 
 PATCH_DEPENDS+=	${NONEXISTENT}:x11-servers/xorg-server:patch
 BUILD_DEPENDS+=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri \
 		${LOCALBASE}/libdata/pkgconfig/fontutil.pc:x11-fonts/font-util \
 		bash:shells/bash
-LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence
+LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence \
+		libxcvt.so:x11/libxcvt
 # almost equivalent to x11-servers/xorg-server's
 RUN_DEPENDS+=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
@@ -34,7 +38,7 @@ GNUTLS_LIB_DEPENDS=	libtasn1.so:security/libtasn1 \
 PAM_CMAKE_BOOL=	ENABLE_PAM
 
 CONFIGURE_ARGS+=	\
-		--prefix=${PREFIX} --mandir=${PREFIX}/man/ \
+		--prefix=${PREFIX} --mandir=${PREFIX}/share/man/ \
 		--docdir=${PREFIX}/share/doc/${PORTNAME}/ --with-pic --without-dtrace \
 		--disable-static --disable-dri --disable-unit-tests \
 		--disable-xinerama --disable-xvfb --disable-xnest --disable-xorg \
@@ -65,7 +69,7 @@ pre-patch:
 post-patch:
 	# do not build tests
 	@${REINPLACE_CMD} -e 's|add_subdirectory(tests)||' ${WRKSRC}/CMakeLists.txt
-	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver$$(${TIGERVNC_XORG_PATCH_VER}).patch
+	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${FILESDIR}/xserver$$(${TIGERVNC_XORG_PATCH_VER}).patch
 
 post-configure:
 	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${AUTORECONF} -fiv

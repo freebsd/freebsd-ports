@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	HTML-TableLayout
 PORTVERSION=	1.001008
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Espen Volden aka voldern <voldern@hoeggen.net>
-
 PORTNAME=	ruby_parser
 PORTVERSION=	3.15.0
 CATEGORIES=	devel rubygems

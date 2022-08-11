@@ -1,5 +1,3 @@
-# Created by: Peter Ankerstal <peter@pean.org>
-
 PORTNAME=	npretty
 DISTVERSIONPREFIX=	n
 DISTVERSION=	0.9.3-1

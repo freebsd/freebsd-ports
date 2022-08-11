@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Text-Autoformat
 PORTVERSION=	1.670.000
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	tempest_for_eliza
 PORTVERSION=	1.0.5
 PORTREVISION=	8

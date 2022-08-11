@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	black-box
 PORTVERSION=	1.4.8
 PORTREVISION=	3

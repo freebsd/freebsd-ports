@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	CPAN-Changes
 PORTVERSION=	0.400002
 CATEGORIES=	devel perl5

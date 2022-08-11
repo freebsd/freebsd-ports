@@ -1,5 +1,3 @@
-# Created by: lbr@FreeBSD.org
-
 PORTNAME=	Task-Weaken
 PORTVERSION=	1.06
 CATEGORIES=	devel perl5

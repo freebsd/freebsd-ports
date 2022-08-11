@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Lexical-Var
 PORTVERSION=	0.009
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	keepkey
 PORTVERSION=	7.2.1
 DISTVERSIONPREFIX=	v

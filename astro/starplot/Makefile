@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	starplot
 PORTVERSION=	0.95.5
 PORTREVISION=	9

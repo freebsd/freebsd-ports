@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@FreeBSD.org>
-
 PORTNAME=	graphy
 PORTVERSION=	1.0
 CATEGORIES=	graphics python

@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@FreeBSD.org>
-
 PORTNAME=	dig_rb
 PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems

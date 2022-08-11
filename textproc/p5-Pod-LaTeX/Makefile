@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Pod-LaTeX
 PORTVERSION=	0.61
 CATEGORIES=	textproc perl5

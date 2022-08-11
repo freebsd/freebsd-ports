@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	apipkg
 PORTVERSION=	1.5
 CATEGORIES=	devel python

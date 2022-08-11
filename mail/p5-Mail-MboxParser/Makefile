@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	Mail-MboxParser
 PORTVERSION=	0.55
 PORTREVISION=	2

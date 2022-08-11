@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	r18n-desktop
 PORTVERSION=	5.0.1
 CATEGORIES=	devel rubygems

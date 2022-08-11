@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	noia
 PORTVERSION=	1.00
 MASTER_SITES=	GENTOO

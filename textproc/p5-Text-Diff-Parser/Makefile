@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Text-Diff-Parser
 PORTVERSION=	0.1001
 PORTREVISION=	1

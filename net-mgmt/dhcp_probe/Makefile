@@ -1,8 +1,6 @@
-# Created by: Kevin Hung <khung@nullaxiom.com>
-
 PORTNAME=	dhcp_probe
 PORTVERSION=	1.3.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.net.princeton.edu/software/dhcp_probe/
 

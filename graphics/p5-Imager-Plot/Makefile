@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Imager-Plot
 PORTVERSION=	0.09
 PORTREVISION=	7

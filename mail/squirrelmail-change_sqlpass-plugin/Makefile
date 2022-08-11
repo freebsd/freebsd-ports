@@ -1,5 +1,3 @@
-# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-
 PORTNAME=	change-sqlpass
 PORTVERSION=	3.3
 PORTREVISION=	3
@@ -9,6 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}-1.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows users to change their passwords stored in a SQL database
 
+IGNORE_WITH_PHP=	82
 USE_SM_COMPAT=	yes
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:databases/pear-DB@${PHP_FLAVOR}

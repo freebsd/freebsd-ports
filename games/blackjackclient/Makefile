@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	BlackjackClient
 PORTVERSION=	0.1
 PORTREVISION=	1

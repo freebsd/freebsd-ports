@@ -1,5 +1,3 @@
-# Created by: Peter Schuller <peter.schuller@infidyne.com>
-
 PORTNAME=	jekyll
 PORTVERSION=	3.9.2
 CATEGORIES=	www rubygems

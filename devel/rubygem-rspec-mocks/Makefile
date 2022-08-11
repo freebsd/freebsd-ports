@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rspec-mocks
 PORTVERSION=	3.11.1
 CATEGORIES=	devel rubygems

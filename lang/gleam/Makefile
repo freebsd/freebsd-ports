@@ -1,6 +1,6 @@
 PORTNAME=	gleam
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.1
+DISTVERSION=	0.22.1
 PORTREVISION=	1
 CATEGORIES=	lang
 
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-build:
 	(cd ${WRKSRC} && cargo build --release)
-	(cd ${WRKSRC}/compiler-cli && cargo install --path . --force --locked)
+	(cd ${WRKSRC}/compiler-cli && env HOME=${WRKDIR} cargo install --path . --force --locked)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin/

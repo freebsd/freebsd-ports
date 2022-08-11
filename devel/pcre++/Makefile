@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pcre++
 PORTVERSION=	0.9.5
 PORTREVISION=	5

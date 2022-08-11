@@ -1,5 +1,3 @@
-# Created by: Marcin Jessa <yazzy@yazzy.org>
-
 PORTNAME=	pcapy
 PORTVERSION=	0.11.1
 CATEGORIES=	net python

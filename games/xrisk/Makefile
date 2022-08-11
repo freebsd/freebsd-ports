@@ -1,5 +1,3 @@
-# Created by: swallace
-
 PORTNAME=	xrisk
 PORTVERSION=	2.15
 PORTREVISION=	2

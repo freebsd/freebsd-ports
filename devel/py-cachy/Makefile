@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cachy
 PORTVERSION=	0.3.0
 PORTREVISION=	1

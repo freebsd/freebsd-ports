@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	GSSAPI
 PORTVERSION=	0.28
 PORTREVISION=	2

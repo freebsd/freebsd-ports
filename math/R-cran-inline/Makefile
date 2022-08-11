@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	inline
 PORTVERSION=	0.3.19
 CATEGORIES=	math

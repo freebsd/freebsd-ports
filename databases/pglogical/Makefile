@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	pglogical
 DISTVERSIONPREFIX=	REL
 DISTVERSION=	2_4_1

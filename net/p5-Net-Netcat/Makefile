@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Net-Netcat
 PORTVERSION=	0.05
 CATEGORIES=	net perl5

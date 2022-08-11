@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-irsa
 PORTVERSION=	1.0.7
 PORTREVISION=	27

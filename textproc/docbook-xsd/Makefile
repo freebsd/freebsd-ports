@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	docbook-xsd
 DISTVERSION=	1.0b1
 CATEGORIES=	textproc

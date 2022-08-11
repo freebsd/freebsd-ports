@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	Test-WWW-Mechanize-CGIApp
 PORTVERSION=	0.05
 PORTREVISION=	1

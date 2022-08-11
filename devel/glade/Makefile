@@ -1,11 +1,9 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	glade
 PORTVERSION=	3.38.2
 PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
 PATCHFILES+=	04ba6f96.patch:-p1 \

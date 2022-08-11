@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Color-RGB-Util
 PORTVERSION=	0.606
 CATEGORIES=	devel perl5

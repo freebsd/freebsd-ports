@@ -1,5 +1,3 @@
-# Created by: michael johnson <ahze@ahze.net>
-
 PORTNAME=	flac123
 PORTVERSION=	0.0.12
 DISTVERSIONSUFFIX=	-release

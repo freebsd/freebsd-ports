@@ -1,8 +1,6 @@
-# Created by: Petteri Valkonen <petteri.valkonen@iki.fi>
-
 PORTNAME=	ripgrep
 DISTVERSION=	13.0.0
-PORTREVISION=	9
+PORTREVISION=	12
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi

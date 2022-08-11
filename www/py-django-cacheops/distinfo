@@ -1,3 +1,3 @@
-TIMESTAMP = 1626791653
-SHA256 (django-cacheops-6.0.tar.gz) = 78e161ebd96a32e28e19ec7da31f2afed9e62a79726b8b5f0ed12dd16c2e5841
-SIZE (django-cacheops-6.0.tar.gz) = 70280
+TIMESTAMP = 1655031005
+SHA256 (django-cacheops-6.1.tar.gz) = b684ef39fd434189d3cbb7d85417cd972af635289a032447982473b4a89f727d
+SIZE (django-cacheops-6.1.tar.gz) = 65308

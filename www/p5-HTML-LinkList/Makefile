@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	HTML-LinkList
 PORTVERSION=	0.1701
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
-
 PORTNAME=	wdiff
 PORTVERSION=	1.2.2
 PORTREVISION=	2

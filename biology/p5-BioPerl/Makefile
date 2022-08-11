@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	BioPerl
 PORTVERSION=	1.007007
 PORTREVISION=	1

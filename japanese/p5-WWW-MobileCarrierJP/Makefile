@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	WWW-MobileCarrierJP
 PORTVERSION=	0.65
 CATEGORIES=	japanese www perl5

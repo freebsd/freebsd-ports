@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	fnt
 PORTVERSION=	1.4.1
 PORTREVISION=	1

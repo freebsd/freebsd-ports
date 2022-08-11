@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	virtuoso
 PORTVERSION=	7.2.5
 PORTREVISION=	3

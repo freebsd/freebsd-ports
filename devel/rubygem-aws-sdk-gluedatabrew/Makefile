@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-gluedatabrew
 PORTVERSION=	1.22.0
 CATEGORIES=	devel rubygems

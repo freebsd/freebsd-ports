@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	sherlock
 DISTVERSION=	0.28.0
 PORTREVISION=	1

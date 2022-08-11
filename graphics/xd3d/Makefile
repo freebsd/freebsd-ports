@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	xd3d
 PORTVERSION=	8.3.1
 PORTREVISION=	19

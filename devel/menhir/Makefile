@@ -1,5 +1,3 @@
-# Created by: Jaap Boender <jaapb@kerguelen.org>
-
 PORTNAME=	menhir
 PORTVERSION=	20170712
 CATEGORIES=	devel

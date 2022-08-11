@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	ubuntu-font
 PORTVERSION=	0.83
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	php-mode.el
 PORTVERSION=	1.24.0
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Kelly Cochran <kcochran@trolans.net>
-
 PORTNAME=	Net-OSCAR
 PORTVERSION=	1.928
 PORTREVISION=	1

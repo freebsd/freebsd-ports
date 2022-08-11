@@ -1,8 +1,6 @@
-# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-
 PORTNAME=	opendkim
 PORTVERSION=	2.10.3
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	mail security
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/Previous%20Releases \

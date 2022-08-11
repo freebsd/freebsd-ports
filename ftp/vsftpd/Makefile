@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner
-
 PORTNAME=	vsftpd
 PORTVERSION=	3.0.5
 CATEGORIES=	ftp

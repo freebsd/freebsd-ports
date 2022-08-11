@@ -9,4 +9,4 @@ copying ("copy"), deleting ("delete"), executing other programs
 ("java", "exec", "execon", etc.), stylesheet transformations
 ("style") and so on.
 
-WWW: http://ant.apache.org/
+WWW: https://ant.apache.org/

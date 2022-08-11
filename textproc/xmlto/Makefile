@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	xmlto
 PORTVERSION=	0.0.28
 CATEGORIES=	textproc

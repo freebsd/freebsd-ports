@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_network
 PORTVERSION=	0.26.1
 CATEGORIES=	devel rubygems

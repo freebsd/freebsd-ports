@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	rlwrap
 DISTVERSION=	0.45.2
 CATEGORIES=	devel

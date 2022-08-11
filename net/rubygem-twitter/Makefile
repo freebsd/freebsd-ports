@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	twitter
 PORTVERSION=	7.0.0
 PORTREVISION=	3

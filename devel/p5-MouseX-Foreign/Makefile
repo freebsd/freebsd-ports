@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MouseX-Foreign
 PORTVERSION=	1.000
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	terminology
 DISTVERSION=	1.12.1
 CATEGORIES=	x11 enlightenment

@@ -1,5 +1,3 @@
-# Created by: nobu@rd.isac.co.jp
-
 PORTNAME=	ngraph
 PORTVERSION=	6.3.54
 PORTREVISION=	1

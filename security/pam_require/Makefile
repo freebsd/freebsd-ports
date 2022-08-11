@@ -1,5 +1,3 @@
-# Created by: Chris Cowart <ccowart@rescomp.berkeley.edu>
-
 PORTNAME=	pam_require
 PORTVERSION=	0.7
 CATEGORIES=	security

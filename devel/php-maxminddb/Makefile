@@ -1,5 +1,3 @@
-# Created by: Daniel Gerzo <danger@FreeBSD.org>
-
 PORTNAME=	maxminddb
 PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v

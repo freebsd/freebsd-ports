@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	CGI-Kwiki
 PORTVERSION=	0.18
 PORTREVISION=	4

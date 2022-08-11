@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	libmspack
 PORTVERSION=	0.10.1
 DISTVERSIONSUFFIX=	alpha

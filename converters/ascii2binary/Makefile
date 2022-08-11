@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	ascii2binary
 PORTVERSION=	2.14
 PORTREVISION=	1

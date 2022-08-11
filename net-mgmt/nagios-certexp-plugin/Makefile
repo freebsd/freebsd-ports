@@ -1,5 +1,3 @@
-# Created by: ecronin@gizmolabs.org
-
 PORTNAME=	nagios-certexp-plugin
 PORTVERSION=	1.9
 CATEGORIES=	net-mgmt

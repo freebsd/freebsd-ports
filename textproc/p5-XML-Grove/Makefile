@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	XML-Grove
 DISTVERSION=	0.46alpha
 PORTREVISION=	1

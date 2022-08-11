@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	cyclocomp
 DISTVERSION=	1.1.0
 CATEGORIES=	devel

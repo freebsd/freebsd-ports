@@ -1,5 +1,3 @@
-# Created by: bf <bf@FreeBSD.org>
-
 PORTNAME=	checkheaders
 PORTVERSION=	1.0.1
 PORTREVISION=	1

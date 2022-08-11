@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Net-DNS-Resolver-Mock
 PORTVERSION=	1.20200215
 CATEGORIES=	dns perl5

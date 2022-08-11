@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	httperf
 PORTVERSION=	0.9.1
 CATEGORIES=	benchmarks www

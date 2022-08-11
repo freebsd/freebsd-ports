@@ -277,6 +277,16 @@ OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mandelbrottr
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/medianfilter.frag.glsl
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/medianfilter-natron.frag.glsl
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mipmapblur.frag.glsl
+OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mergeabsminus.frag.glsl
+OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mergein.frag.glsl
+OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mergematte.frag.glsl
+OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mergemax.frag.glsl
+OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mergemin.frag.glsl
+OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mergemultiply.frag.glsl
+OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mergeout.frag.glsl
+OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mergeover.frag.glsl
+OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mergeplus.frag.glsl
+OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mergescreen.frag.glsl
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/mipmapblur-natron.frag.glsl
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/moneyfilter.frag.glsl
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/moneyfilter-natron.frag.glsl
@@ -311,7 +321,6 @@ OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/startunnel.f
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/star nest-natron.frag.glsl
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/stellar.frag.glsl
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/stripes-natron.frag.glsl
-OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/test.frag.glsl
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/tvsnow.frag.glsl
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/vangogh.frag.glsl
 OFX/Plugins/Shadertoy.ofx.bundle/Contents/Resources/presets/default/venus.frag.glsl

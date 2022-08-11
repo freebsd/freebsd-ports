@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Locale-XGettext
 PORTVERSION=	0.7
 CATEGORIES=	devel perl5

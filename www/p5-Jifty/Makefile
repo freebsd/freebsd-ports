@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Jifty
 PORTVERSION=	1.50430
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	colord-gtk
 PORTVERSION=	0.3.0
 CATEGORIES=	graphics

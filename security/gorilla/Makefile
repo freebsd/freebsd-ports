@@ -1,5 +1,3 @@
-# Created by: Kay Lehmann <kay_lehmann@web.de>
-
 PORTNAME=	gorilla
 PORTVERSION=	1.5.3.6
 DISTVERSIONSUFFIX=	a72f9d7

@@ -1,0 +1,35 @@
+PORTNAME=	qiskit
+DISTVERSION=	0.37.1-4
+DISTVERSIONSUFFIX=	-gf178fcc98
+PORTREVISION=	3
+CATEGORIES=	science python # quantum-computing
+#MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Qiskit meta-package: SDK for working with quantum computers
+
+LICENSE=	BSD2CLAUSE
+
+# required submodules
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qiskit-aer>0:science/py-qiskit-aer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-terra>0:science/py-qiskit-terra@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-ibmq-provider>0:science/py-qiskit-ibmq-provider@${PY_FLAVOR}
+# optional submodules (list: https://github.com/Qiskit/qiskit#optional-components)
+OPT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qiskit-optimization>0:science/py-qiskit-optimization@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-machine-learning>0:misc/py-qiskit-machine-learning@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-nature>0:science/py-qiskit-nature@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-experiments>0:science/py-qiskit-experiments@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_DEPENDS}
+RUN_DEPENDS=	${PY_DEPENDS} \
+		${OPT_DEPENDS}
+
+USES=		python:3.7+
+USE_PYTHON=	distutils autoplist pytest
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Qiskit
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

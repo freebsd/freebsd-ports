@@ -1,5 +1,3 @@
-# Created by: Valerio Daelli <valerio.daelli@gmail.com>
-
 PORTNAME=	geteltorito
 PORTVERSION=	0.6
 PORTEPOCH=	1

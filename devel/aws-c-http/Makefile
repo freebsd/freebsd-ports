@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	aws-c-http
 PORTVERSION=	0.6.8
 DISTVERSIONPREFIX=	v

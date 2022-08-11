@@ -1,7 +1,7 @@
 PORTNAME=	openems
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.35-71
-DISTVERSIONSUFFIX=	-g4c24b6e
+DISTVERSION=	0.0.35-76
+DISTVERSIONSUFFIX=	-gd4448fa
 PORTREVISION=	1
 CATEGORIES=	science
 
@@ -14,17 +14,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	upstream only supports amd64 and powerpc64
 
-# many dependencies below are induced by vtk8, but not vtk9
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libCSXCAD.so:cad/csxcad \
 		libexpat.so:textproc/expat2 \
 		libfparser-4.5.so:math/fparser \
 		libhdf5.so:science/hdf5 \
 		libpng16.so:graphics/png \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff \
 		libtinyxml.so:textproc/tinyxml \
-		libvtkCommonCore-8.2.so:math/vtk8 # some related packages don't support vtk9 yet, see https://github.com/thliebig/QCSXCAD/issues/6#issuecomment-901633240
+		libvtkCommonCore-9.1.so:math/vtk9
 
 USES=		cmake jpeg pkgconfig
 USE_LDCONFIG=	yes
@@ -33,7 +32,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	thliebig
 GH_PROJECT=	openEMS
 
-CMAKE_ARGS=	-DVTK_DIR=${LOCALBASE}/lib/vtk-8.2/cmake/vtk-8.2
+CMAKE_ARGS=	-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.1 \
+		-DLOCALBASE=${LOCALBASE}
 
 CXXFLAGS+=	-I${LOCALBASE}/include/fparser # fparser.pc probably returns a wrong value
 

@@ -1,5 +1,3 @@
-# Created by: Matt Peterson <matt@peterson.org>
-
 PORTNAME=	gsnmp
 PORTVERSION=	0.2.0
 PORTREVISION=	3

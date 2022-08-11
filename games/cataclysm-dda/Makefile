@@ -1,5 +1,3 @@
-# Created by: Vladimir Kondratiev <wulf@cicgroup.ru>
-
 PORTNAME=	cataclysm-dda
 DISTVERSION=	0.F
 PORTREVISION?=	0

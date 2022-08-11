@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	loook
 PORTVERSION=	0.9.0
 CATEGORIES=	textproc

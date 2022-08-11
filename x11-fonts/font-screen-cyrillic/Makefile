@@ -1,5 +1,3 @@
-# Created by: Pawel Worach
-
 PORTNAME=	font-screen-cyrillic
 PORTVERSION=	1.0.4
 PORTREVISION=	4

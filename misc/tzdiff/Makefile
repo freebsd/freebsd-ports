@@ -1,5 +1,3 @@
-# Created by: Naito Yuichiro <naito.yuichiro@gmail.com>
-
 PORTNAME=	tzdiff
 PORTVERSION=	1.1.1
 CATEGORIES=	misc

@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	cairomm
 PORTVERSION=	1.12.2
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	DBD-Multi
 PORTVERSION=	0.16
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Nadelyaev Stanislav <funkblaster@n11.bmstu.ru>
-
 PORTNAME=		icegenerator
 DISTVERSION=		0.5.5-pre2
 PORTREVISION=		2

@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	c2html
 PORTVERSION=	0.9.6
 CATEGORIES=	textproc www

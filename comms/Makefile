@@ -2,6 +2,7 @@
 
     SUBDIR += acfax
     SUBDIR += airspy
+    SUBDIR += airspyhf
     SUBDIR += aldo
     SUBDIR += amtterm
     SUBDIR += anyremote
@@ -24,6 +25,7 @@
     SUBDIR += cutecom
     SUBDIR += cwdaemon
     SUBDIR += cwstudio
+    SUBDIR += cyclonedds
     SUBDIR += dcf77pi
     SUBDIR += deforaos-phone
     SUBDIR += dfu-programmer
@@ -64,6 +66,7 @@
     SUBDIR += hidapi
     SUBDIR += hylafax
     SUBDIR += ibp
+    SUBDIR += iceoryx
     SUBDIR += inspectrum
     SUBDIR += iwmbt-firmware
     SUBDIR += java-simple-serial-connector
@@ -156,6 +159,7 @@
     SUBDIR += rxtx
     SUBDIR += scmxx
     SUBDIR += scrcpy
+    SUBDIR += sdr++
     SUBDIR += sdr-wspr
     SUBDIR += ser2net
     SUBDIR += serialoverip

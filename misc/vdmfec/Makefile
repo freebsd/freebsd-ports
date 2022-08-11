@@ -1,5 +1,3 @@
-# Created by: Harald Schmalzbauer <freebsd@omnilan.de>
-
 PORTNAME=	vdmfec
 PORTVERSION=	1.0
 CATEGORIES=	misc archivers

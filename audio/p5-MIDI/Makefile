@@ -1,5 +1,3 @@
-# Created by: Alexandr Kovalenko <never@nevermind.kiev.ua>
-
 PORTNAME=	MIDI
 PORTVERSION=	0.83
 PORTREVISION=	1

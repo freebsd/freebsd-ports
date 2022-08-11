@@ -1,5 +1,3 @@
-# Created by: Stefan A. Deutscher (sad@mailaps.org)
-
 PORTNAME=	ndiff
 PORTVERSION=	2.00
 PORTREVISION=	4

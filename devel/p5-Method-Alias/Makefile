@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Method-Alias
 PORTVERSION=	1.03
 PORTREVISION=	1

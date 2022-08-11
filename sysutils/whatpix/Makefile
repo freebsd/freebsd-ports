@@ -1,5 +1,3 @@
-# Created by: Philippe Casidy <pcasidy@casidy.com>
-
 PORTNAME=	whatpix
 PORTVERSION=	1.2
 PORTREVISION=	2

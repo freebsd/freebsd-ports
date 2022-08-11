@@ -1,5 +1,3 @@
-# Created by: Frank Steinborn <steinex@nognu.de>
-
 PORTNAME=	SMS-SMS77
 PORTVERSION=	0.01
 PORTREVISION=	2

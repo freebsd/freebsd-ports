@@ -1,5 +1,3 @@
-# Created by: mike@binghamton.edu
-
 PORTNAME=	tf
 PORTVERSION=	5.0b8
 PORTREVISION=	4

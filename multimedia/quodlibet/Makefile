@@ -1,5 +1,3 @@
-# Created by: Byung-Hee HWANG <bh@izb.knu.ac.kr>
-
 PORTNAME=	quodlibet
 DISTVERSION=	4.3.0
 CATEGORIES=	multimedia audio python
@@ -19,11 +17,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		${LOCALBASE}/libexec/notification-daemon:deskutils/notification-daemon
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
-USES=		desktop-file-utils gettext gnome python:3.6+ shebangfix
+USES=		desktop-file-utils gettext gnome gstreamer python:3.6+ shebangfix
 SHEBANG_FILES=	exfalso.py operon.py quodlibet.py
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	gtk30 pygobject3
-USE_GSTREAMER1=	good
+USE_GSTREAMER=	good
 
 NO_ARCH=	yes
 CONFLICTS_INSTALL=	${PORTNAME}
@@ -31,6 +29,6 @@ CONFLICTS_INSTALL=	${PORTNAME}
 OPTIONS_DEFINE=		PULSEAUDIO
 
 PULSEAUDIO_DESC=	Support PulseAudio
-PULSEAUDIO_USE=		GSTREAMER1=pulse
+PULSEAUDIO_USE=		GSTREAMER=pulse
 
 .include <bsd.port.mk>

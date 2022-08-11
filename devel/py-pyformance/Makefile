@@ -1,5 +1,3 @@
-# Created by: Waitman Gobble <waitman@waitman.net>
-
 PORTNAME=	pyformance
 PORTVERSION=	0.4
 CATEGORIES=	devel python

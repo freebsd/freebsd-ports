@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	pam_mysql
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2

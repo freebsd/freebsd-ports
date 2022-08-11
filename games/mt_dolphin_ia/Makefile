@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=		mt_dolphin_ia
 PORTVERSION=		0.1.98
 PORTREVISION=		7

@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	pdfbox
 PORTVERSION=	2.0.14
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-SSLify
 PORTVERSION=	1.012
 CATEGORIES=	security perl5

@@ -1,5 +1,3 @@
-# Created by: Alexandros Kosiaris <akosiaris+ports@gmail.com>
-
 PORTNAME=	celery
 PORTVERSION=	4.4.7
 CATEGORIES=	devel python

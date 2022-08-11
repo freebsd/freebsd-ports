@@ -11,11 +11,9 @@ CommitDate: Wed Oct 13 11:49:25 2021 +0000
     
       We have to manually patch this command to remove bundler installation.
 
-diff --git lib/rubygems/commands/setup_command.rb lib/rubygems/commands/setup_command.rb
-index 2f7f29575..8fef1c539 100644
---- lib/rubygems/commands/setup_command.rb
+--- lib/rubygems/commands/setup_command.rb.orig	2022-07-27 18:12:33 UTC
 +++ lib/rubygems/commands/setup_command.rb
-@@ -180,8 +180,6 @@ def execute
+@@ -171,8 +171,6 @@ By default, this RubyGems will install gem as:
      # Can be removed one we drop support for bundler 2.2.3 (the last version installing man files to man_dir)
      remove_old_man_files man_dir if man_dir && File.exist?(man_dir)
  
@@ -24,19 +22,19 @@ index 2f7f29575..8fef1c539 100644
      if mode = options[:dir_mode]
        @mkdirs.uniq!
        File.chmod(mode, @mkdirs)
-@@ -311,7 +309,6 @@ def shebang
+@@ -306,7 +304,6 @@ By default, this RubyGems will install gem as:
  
    def install_lib(lib_dir)
-     libs = { 'RubyGems' => 'lib' }
--    libs['Bundler'] = 'bundler/lib'
+     libs = { "RubyGems" => "lib" }
+-    libs["Bundler"] = "bundler/lib"
      libs.each do |tool, path|
        say "Installing #{tool}" if @verbose
  
-@@ -520,7 +517,6 @@ def remove_old_bin_files(bin_dir)
+@@ -504,7 +501,6 @@ abort "#{deprecation_message}"
  
    def remove_old_lib_files(lib_dir)
-     lib_dirs = { File.join(lib_dir, 'rubygems') => 'lib/rubygems' }
--    lib_dirs[File.join(lib_dir, 'bundler')] = 'bundler/lib/bundler'
+     lib_dirs = { File.join(lib_dir, "rubygems") => "lib/rubygems" }
+-    lib_dirs[File.join(lib_dir, "bundler")] = "bundler/lib/bundler"
      lib_dirs.each do |old_lib_dir, new_lib_dir|
        lib_files = files_in(new_lib_dir)
  

@@ -1,5 +1,3 @@
-# Created by: Simon Barner <barner@gmx.de>
-
 PORTNAME=	xcheckers
 PORTVERSION=	2.2.3
 PORTREVISION=	2

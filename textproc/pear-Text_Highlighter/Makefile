@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Text_Highlighter
 PORTVERSION=	0.8.0
 CATEGORIES=	textproc pear

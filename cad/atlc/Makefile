@@ -1,5 +1,3 @@
-# Created by: Marc Fonvieille <blackend@FreeBSD.org>
-
 PORTNAME=	atlc
 PORTVERSION=	4.6.1
 PORTREVISION=	1

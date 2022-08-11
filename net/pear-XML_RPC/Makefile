@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	XML_RPC
 PORTVERSION=	1.5.5
 CATEGORIES=	net devel pear

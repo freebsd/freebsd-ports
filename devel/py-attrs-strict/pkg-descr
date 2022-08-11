@@ -1,0 +1,4 @@
+attrs-strict is a Python package which contains runtime validation for attrs
+data classes based on the types existing in the typing module.
+
+WWW: https://github.com/bloomberg/attrs-strict

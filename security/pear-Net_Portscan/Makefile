@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Net_Portscan
 PORTVERSION=	1.0.3
 CATEGORIES=	security pear

@@ -1,5 +1,3 @@
-# Created by: se@freebsd.org
-
 PORTNAME=	hexpeek
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.20200804

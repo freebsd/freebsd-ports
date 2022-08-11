@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	greybird
 PORTVERSION=	3.23.1
 DISTVERSIONPREFIX=	v

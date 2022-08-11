@@ -1,5 +1,3 @@
-# Created by: Dryice Dong Liu <dryice@dryice.name>
-
 PORTNAME=	sqlalchemy
 PORTVERSION=	1.0.14
 CATEGORIES=	databases python
@@ -23,7 +21,7 @@ PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
 PY2TO3_ARGS=	--no-diffs --nobackups --verbose --write
 TEST_TARGET=	do-test
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlalchemy0[6789]* ${PYTHON_PKGNAMEPREFIX}sqlalchemy1[12]
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlalchemy[0-9][0-9] # lib/python3.8/site-packages/sqlalchemy/__init__.py
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_MULTI=		BACKEND

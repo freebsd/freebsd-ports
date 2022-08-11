@@ -1,5 +1,3 @@
-# Created by: Paul Schmehl <pauls@utdallas.edu>
-
 PORTNAME=	Gtk2-GladeXML
 PORTVERSION=	1.008
 PORTREVISION=	2

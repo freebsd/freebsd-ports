@@ -1,5 +1,3 @@
-# Created by: Oliver Breuninger <ob@breuninger.org>
-
 PORTNAME=	xcmd
 PORTVERSION=	1.8
 PORTREVISION=	2

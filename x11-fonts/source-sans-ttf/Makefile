@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	source-sans
 PORTVERSION=	3.046
 MASTER_SITES=	https://github.com/adobe-fonts/source-sans/releases/download/${PORTVERSION}R/

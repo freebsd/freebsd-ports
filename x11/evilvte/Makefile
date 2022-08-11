@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	evilvte
 DISTVERSION=	0.5.2~pre1
 PORTREVISION=	3

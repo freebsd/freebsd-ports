@@ -1,5 +1,3 @@
-# Created by: Marc Fournier <scrappy@FreeBSD.org>
-
 PORTNAME=	Convert-ASN1
 PORTVERSION=	0.33
 CATEGORIES=	converters perl5

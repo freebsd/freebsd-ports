@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine (<tux@pinguru.net>)
-
 PORTNAME=	Image_Color
 PORTVERSION=	1.0.4
 CATEGORIES=	graphics www pear

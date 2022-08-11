@@ -1,5 +1,3 @@
-# Created by: Cristiano Rolim Pereira <cristianorolim@outlook.com>
-
 PORTNAME=	vera++
 PORTVERSION=	1.3.0
 PORTREVISION=	15

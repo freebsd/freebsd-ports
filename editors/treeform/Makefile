@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	treeform
 PORTVERSION=	1.0.3
 CATEGORIES=	editors java

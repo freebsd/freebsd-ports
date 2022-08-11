@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.idv.tw>
-
 PORTNAME=	Log-Accounting-SVK
 PORTVERSION=	0.05
 PORTREVISION=	10

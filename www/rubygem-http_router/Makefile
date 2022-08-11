@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	http_router
 PORTVERSION=	0.11.2
 PORTREVISION=	2

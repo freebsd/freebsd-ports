@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	at-spi2-core
 PORTVERSION=	2.36.0
 CATEGORIES=	accessibility x11-toolkits

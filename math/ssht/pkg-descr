@@ -1,0 +1,13 @@
+The SSHT code provides functionality to perform fast and exact spin spherical
+harmonic transforms based on the sampling theorem on the sphere derived in
+McEwen & Wiaux (2011).
+
+SSHT can also interface with ducc0 and use it as a backend for the forward,
+inverse and inverse adjoint transforms.
+
+In some applications adjoint forward and inverse spherical harmonic transforms
+are also required (for example, when solving convex optimisation problems).
+Functionality is also provided to perform fast and exact adjoint transforms,
+based on the fast algorithms derived in McEwen et al. (2013).
+
+WWW: https://astro-informatics.github.io/ssht/

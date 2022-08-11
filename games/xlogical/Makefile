@@ -1,5 +1,3 @@
-# Created by: Aaron Baugher
-
 PORTNAME=	xlogical
 DISTVERSION=	1.0-8
 CATEGORIES=	games

@@ -1,5 +1,3 @@
-# Created by: Dereckson <dereckson@gmail.com>
-
 PORTNAME=	binclock
 DISTVERSION=	1.5
 CATEGORIES=	misc

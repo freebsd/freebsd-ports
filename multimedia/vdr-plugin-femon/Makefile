@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-femon
 PORTVERSION=	1.7.17
 PORTREVISION=	5

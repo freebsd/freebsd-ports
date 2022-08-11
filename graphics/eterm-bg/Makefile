@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	eterm-bg
 PORTVERSION=	0.9.6
 CATEGORIES=	graphics

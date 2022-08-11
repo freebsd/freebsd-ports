@@ -37,5 +37,16 @@ Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable this ser
 
             man 8 pksclient
 EOM
+},
+{ type: remove
+  message: <<EOM
+===========================================================================
+If you won't be using %%PORTNAME%% any longer, you may want to remove the
+following directories and files:
+
+        %%PREFIX%%/etc/pksd.conf
+	/var/pks
+===========================================================================
+EOM
 }
 ]

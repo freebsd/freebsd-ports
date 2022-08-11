@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Class-Closure
 PORTVERSION=	0.302
 CATEGORIES=	devel perl5

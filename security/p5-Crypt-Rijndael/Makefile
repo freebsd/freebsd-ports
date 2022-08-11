@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Crypt-Rijndael
 PORTVERSION=	1.15
 PORTREVISION=	1

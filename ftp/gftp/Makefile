@@ -1,5 +1,3 @@
-# Created by: Damjan Marion <dmarion@open.hr>
-
 PORTNAME=	gftp
 PORTVERSION=	2.7.0b
 CATEGORIES=	ftp

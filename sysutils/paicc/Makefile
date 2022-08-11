@@ -1,5 +1,3 @@
-# Created by: peter
-
 PORTNAME=	paicc
 PORTVERSION=	1.4
 CATEGORIES=	sysutils

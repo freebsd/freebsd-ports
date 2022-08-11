@@ -212,7 +212,6 @@ libexec/cfengine/libpromises.so.3.0.6
 %%DOCSDIR%%/examples/multiple_outcomes.cf
 %%DOCSDIR%%/examples/mustache_classes.cf
 %%DOCSDIR%%/examples/mustache_template_motd.cf
-%%DOCSDIR%%/examples/namespace_class1.cf
 %%DOCSDIR%%/examples/namespace_classes.cf
 %%DOCSDIR%%/examples/namespace_var_meta.cf
 %%DOCSDIR%%/examples/namespace_var_meta2.cf

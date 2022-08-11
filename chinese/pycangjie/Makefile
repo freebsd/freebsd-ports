@@ -1,5 +1,3 @@
-# Created by: blubee <hello@blubee.me>
-
 PORTNAME=	pycangjie
 PORTVERSION=	1.3
 DISTVERSIONPREFIX=	v

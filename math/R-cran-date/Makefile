@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	date
 DISTVERSION=	1.2-39
 CATEGORIES=	math

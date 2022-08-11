@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	ssldump
 PORTVERSION=	0.9b3
 PORTREVISION=	5

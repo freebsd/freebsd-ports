@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libtasn1
 PORTVERSION=	4.10
 DISTVERSIONSUFFIX=	-1.el7

@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	LiveUser_Admin
 PORTVERSION=	0.4.0
 PORTREVISION=	1

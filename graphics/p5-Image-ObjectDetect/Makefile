@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Image-ObjectDetect
 PORTVERSION=	0.12
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-kinesis
 PORTVERSION=	1.41.0
 CATEGORIES=	devel rubygems

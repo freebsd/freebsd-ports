@@ -1,5 +1,3 @@
-# Created by: Tobias Roth <ports@fsck.ch>
-
 PORTNAME=	treeline
 PORTVERSION=	3.1.4
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Pod-Stripper
 PORTVERSION=	0.22
 PORTREVISION=	5

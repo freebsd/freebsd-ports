@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	offtrac
 PORTVERSION=	0.1.0
 CATEGORIES=	devel python

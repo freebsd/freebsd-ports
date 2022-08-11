@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-
 PORTNAME=	qmail-contrib
 PORTVERSION=	0.1
 PORTREVISION=	2

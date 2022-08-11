@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	xist
 PORTVERSION=	5.34
 CATEGORIES=	www python

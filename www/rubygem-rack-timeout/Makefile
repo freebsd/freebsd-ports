@@ -1,5 +1,5 @@
 PORTNAME=	rack-timeout
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,9 @@ COMMENT=	Abort requests that are taking too long
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-# Created by: Vasil Dimov <vd@FreeBSD.org>
-
 PORTNAME=	mysqlwsrep
 PORTVERSION?=	5.7.35
 DISTVERSIONPREFIX?=	wsrep_
@@ -50,7 +48,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_INFODIR="info" \
 		-DINSTALL_LDCONFIGDIR="${LOCALBASE}/libdata/ldconfig" \
 		-DINSTALL_LIBDIR="lib/mysql" \
-		-DINSTALL_MANDIR="man" \
+		-DINSTALL_MANDIR="share/man" \
 		-DINSTALL_MYSQLDATADIR="${MY_DBDIR}" \
 		-DINSTALL_MYSQLKEYRINGDIR="etc/mysql/keyring" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \

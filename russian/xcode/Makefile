@@ -1,5 +1,3 @@
-# Created by: Michael Vasilenko <acid@stu.cn.ua>
-
 PORTNAME=	xcode
 PORTVERSION=	4.1
 CATEGORIES=	russian converters

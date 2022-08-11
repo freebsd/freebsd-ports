@@ -1,5 +1,3 @@
-# Created by: mharo@FreeBSD.org
-
 PORTNAME=	ttcp
 PORTVERSION=	1.12
 PORTREVISION=	2

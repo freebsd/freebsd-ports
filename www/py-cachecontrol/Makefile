@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	CacheControl
 DISTVERSION=	0.12.11
 CATEGORIES=	www python

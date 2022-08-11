@@ -1,5 +1,3 @@
-# Created by: bf <bf2006a@yahoo.com>
-
 PORTNAME?=	distorm
 DISTVERSION=	20121220-r230
 PORTREVISION?=	2

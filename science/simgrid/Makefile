@@ -1,5 +1,5 @@
 PORTNAME=	SimGrid
-DISTVERSION=	3.28
+DISTVERSION=	3.31
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,12 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-LGPL-2.1
 LIB_DEPENDS=	libboost_context.so:devel/boost-libs \
 		libcgraph.so:graphics/graphviz \
 		${LIB_DEPENDS_${ARCH}}
-LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
-LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
-LIB_DEPENDS_armv7=	libunwind.so:devel/libunwind
-LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
-LIB_DEPENDS_powerpc64=	libunwind.so:devel/libunwind
-LIB_DEPENDS_powerpc64le=	libunwind.so:devel/libunwind
 
 USES=		cmake:noninja compiler:c++14-lang perl5 python:3.6+ shebangfix
 SHEBANG_FILES=	tools/simgrid_convert_TI_traces.py
@@ -26,7 +20,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://framagit.org/
 GL_ACCOUNT=	simgrid
 GL_PROJECT=	simgrid
-GL_COMMIT=	04e3ca46dcefdd19f2f1fee3e75c27fb2f7fc2ec
+GL_COMMIT=	fcfdefe62e01e5353377ebe3573782ba4d368eeb
 
 CMAKE_OFF=	enable_python
 

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Catalyst-Action-REST
 PORTVERSION=	1.21
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Hash-NoRef
 PORTVERSION=	0.03
 PORTREVISION=	2

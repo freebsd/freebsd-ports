@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	pingr
 DISTVERSION=	2.0.1
 CATEGORIES=	net

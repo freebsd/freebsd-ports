@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	escape
 PORTVERSION=	0.2
 CATEGORIES=	textproc ruby

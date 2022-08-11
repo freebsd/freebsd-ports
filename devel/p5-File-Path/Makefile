@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	File-Path
 PORTVERSION=	2.18
 CATEGORIES=	devel perl5

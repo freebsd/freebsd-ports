@@ -1,5 +1,3 @@
-# Created by: Michael Ranner
-
 PORTNAME=	KVIrc
 DISTVERSION=	5.0.0-73
 DISTVERSIONSUFFIX=	-gbdeac0429
@@ -27,7 +25,7 @@ USE_XORG=	ice sm x11 xext xrender xscrnsaver
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
-CMAKE_ARGS=	-DMANDIR:STRING=man
+CMAKE_ARGS=	-DMANDIR:STRING=share/man
 
 PLIST_SUB=	VER=5.0
 

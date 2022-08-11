@@ -1,5 +1,3 @@
-# Created by: krion
-
 PORTNAME=	dnsflood
 PORTVERSION=	1.20
 CATEGORIES=	dns

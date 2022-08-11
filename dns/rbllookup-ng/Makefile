@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	rbllookup-ng
 PORTVERSION=	1.1
 PORTREVISION=	3

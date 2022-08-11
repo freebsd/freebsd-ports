@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <wjv@FreeBSD.org>
-
 PORTNAME=	since
 PORTVERSION=	1.1
 CATEGORIES=	misc

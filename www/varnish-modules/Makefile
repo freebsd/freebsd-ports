@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	varnish-modules
 PORTVERSION=	0.20.0
 CATEGORIES=	www

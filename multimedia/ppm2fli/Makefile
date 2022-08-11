@@ -1,5 +1,3 @@
-# Created by: giffunip@asme.org
-
 PORTNAME=	ppm2fli
 PORTVERSION=	2.1
 CATEGORIES=	multimedia graphics

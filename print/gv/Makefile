@@ -1,5 +1,3 @@
-# Created by: tg@FreeBSD.org
-
 PORTNAME=	gv
 PORTVERSION=	3.7.4
 PORTREVISION=	5

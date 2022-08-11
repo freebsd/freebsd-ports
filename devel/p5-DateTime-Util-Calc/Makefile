@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	DateTime-Util-Calc
 PORTVERSION=	0.13002
 PORTREVISION=	4

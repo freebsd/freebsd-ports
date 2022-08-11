@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	List-Regexp
 PORTVERSION=	1.04
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	sysctl
 PORTVERSION=	0.3.3.20210928
 CATEGORIES=	devel python

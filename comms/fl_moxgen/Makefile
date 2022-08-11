@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	fl_moxgen
 PORTVERSION=	1.00
 PORTREVISION=	2

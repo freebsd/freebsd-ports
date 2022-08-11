@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-
 PORTNAME=	NetAddr-IP-Lite
 PORTVERSION=	1.01
 PORTREVISION=	1

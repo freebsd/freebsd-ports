@@ -1,5 +1,3 @@
-# Created by: Dima Sivachenko <dima@chg.ru>
-
 PORTNAME=	flwm
 PORTVERSION=	1.16
 PORTREVISION=	1

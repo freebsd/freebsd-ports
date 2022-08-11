@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	CGI-ArgChecker
 PORTVERSION=	0.02
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
-
 PORTNAME=	qemu
 PORTVERSION=	6.2.0
 CATEGORIES=	emulators

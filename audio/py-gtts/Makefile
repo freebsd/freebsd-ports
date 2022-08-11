@@ -1,10 +1,10 @@
 PORTNAME=	gtts
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.1
+DISTVERSION=	2.2.4
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library/CLI tool to interface with Google Translate text-to-speech API
 
 LICENSE=	MIT
@@ -18,7 +18,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.9:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}testfixtures>0:devel/py-testfixtures@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_GITHUB=	yes
 GH_ACCOUNT=	pndurette
 GH_PROJECT=	gTTS

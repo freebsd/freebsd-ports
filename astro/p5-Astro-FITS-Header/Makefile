@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Astro-FITS-Header
 PORTVERSION=	3.08
 CATEGORIES=	astro perl5

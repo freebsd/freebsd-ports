@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Inline-Files
 PORTVERSION=	0.71
 CATEGORIES=	devel perl5

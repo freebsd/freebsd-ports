@@ -1,5 +1,3 @@
-# Created by: Frank Laszlo <laszlof@vonostingroup.com>
-
 PORTNAME=	quftp
 PORTVERSION=	1.0.7
 PORTREVISION=	6

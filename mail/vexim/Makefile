@@ -1,5 +1,3 @@
-# Created by: John Oxley <john@yoafrica.com>
-
 PORTNAME=	vexim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3

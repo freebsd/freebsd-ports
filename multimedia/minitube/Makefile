@@ -1,5 +1,5 @@
 PORTNAME=	minitube
-DISTVERSION=	3.9.2
+DISTVERSION=	3.9.3
 CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov <vsevolod@FreeBSD.org>
-
 PORTNAME=	minisat
 PORTVERSION=	2.2.1
 PORTREVISION=	2

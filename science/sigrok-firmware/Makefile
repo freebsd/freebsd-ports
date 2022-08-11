@@ -1,11 +1,9 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	firmware
 PORTVERSION=	20150123
 CATEGORIES=	science
 PKGNAMEPREFIX=	sigrok-
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sigrok firmware
 
 RUN_DEPENDS=	parseelf.py:science/sigrok-firmware-utils \

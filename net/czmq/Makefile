@@ -1,5 +1,3 @@
-# Created by: Andrew Thompson <thompsa@FreeBSD.org>
-
 PORTNAME=	czmq
 PORTVERSION=	4.1.1
 CATEGORIES=	net

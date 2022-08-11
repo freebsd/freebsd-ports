@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	stringr
 PORTVERSION=	1.4.0
 PORTREVISION=	2

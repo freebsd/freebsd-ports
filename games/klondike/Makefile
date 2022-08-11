@@ -1,5 +1,3 @@
-# Created by: johnh@isi.edu
-
 PORTNAME=	klondike
 PORTVERSION=	1.9
 PORTREVISION=	4

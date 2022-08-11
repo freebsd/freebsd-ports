@@ -2270,7 +2270,7 @@ lib/libclangToolingRefactor.so.5
 lib/libclangToolingRefactor.so.5.0.0svn
 libexec/c++-analyzer
 libexec/ccc-analyzer
-man/man1/scan-build.1.gz
+share/man/man1/scan-build.1.gz
 share/clang/bash-autocomplete.sh
 share/clang/clang-format-bbedit.applescript
 share/clang/clang-format-diff.py

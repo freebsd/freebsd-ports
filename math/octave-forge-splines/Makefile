@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-splines
 PORTVERSION=	1.3.4
 PORTREVISION=	2

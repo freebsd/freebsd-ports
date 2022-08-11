@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	stevedore
 PORTVERSION=	3.5.0
 CATEGORIES=	devel

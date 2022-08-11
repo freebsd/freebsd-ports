@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	craft
 PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v

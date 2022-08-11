@@ -1,5 +1,3 @@
-# Created by: Leland Wang <llwang@infor.org>
-
 PORTNAME=	buddy
 PORTVERSION=	2.4
 PORTREVISION=	2

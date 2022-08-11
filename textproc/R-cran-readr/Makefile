@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	readr
 PORTVERSION=	2.1.2
 CATEGORIES=	textproc

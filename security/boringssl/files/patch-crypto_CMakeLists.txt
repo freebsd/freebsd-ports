@@ -1,6 +1,18 @@
---- crypto/CMakeLists.txt.orig	2022-01-21 15:36:31 UTC
-+++ crypto/CMakeLists.txt
-@@ -462,6 +462,7 @@ if(FIPS_DELOCATE OR FIPS_SHARED)
+--- crypto/CMakeLists.txt.orig	2022-07-25 14:53:51.000000000 -0400
++++ crypto/CMakeLists.txt	2022-07-26 12:18:36.169803000 -0400
+@@ -264,9 +264,11 @@
+   cipher_extra/tls_cbc.c
+   conf/conf.c
+   cpu_aarch64_apple.c
++  cpu_aarch64_freebsd.c
+   cpu_aarch64_fuchsia.c
+   cpu_aarch64_linux.c
+   cpu_aarch64_win.c
++  cpu_arm_freebsd.c
+   cpu_arm_linux.c
+   cpu_arm.c
+   cpu_intel.c
+@@ -464,6 +466,7 @@
  endif()
  
  SET_TARGET_PROPERTIES(crypto PROPERTIES LINKER_LANGUAGE C)

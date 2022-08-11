@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	netifaces
 PORTVERSION=	0.11.0
 CATEGORIES=	net python

@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2022-04-21 18:48:31 UTC
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2022-06-17 14:20:10 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.cc
 @@ -49,11 +49,11 @@
  
@@ -23,7 +23,7 @@
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -268,7 +268,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -277,7 +277,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
                                             IsVisibleOnAllWorkspaces());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -32,7 +32,7 @@
    // If the window was sent to a different workspace, prioritize it if
    // it was sent to the current workspace and deprioritize it
    // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()
-@@ -389,7 +389,7 @@ void BrowserFrame::SelectNativeTheme() {
+@@ -398,7 +398,7 @@ void BrowserFrame::SelectNativeTheme() {
      return;
    }
  
@@ -41,7 +41,7 @@
    const views::LinuxUI* linux_ui = views::LinuxUI::instance();
    // Ignore GTK+ for web apps with window-controls-overlay as the
    // display_override so the web contents can blend with the overlay by using
-@@ -408,7 +408,7 @@ bool BrowserFrame::RegenerateFrameOnThemeChange(
+@@ -417,7 +417,7 @@ bool BrowserFrame::RegenerateFrameOnThemeChange(
    bool need_regenerate = false;
    // TODO(crbug.com/1052397): Revisit the macro expression once build flag
    // switch of lacros-chrome is complete.

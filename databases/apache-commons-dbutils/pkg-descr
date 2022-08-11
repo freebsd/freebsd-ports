@@ -3,4 +3,4 @@ JDBC resource cleanup code is mundane, error prone work so these classes
 abstract out all of the cleanup tasks from your code leaving you with what
 you really wanted to do with JDBC in the first place: query and update data.
 
-WWW: http://jakarta.apache.org/commons/dbutils/
+WWW: https://commons.apache.org/proper/commons-dbutils/

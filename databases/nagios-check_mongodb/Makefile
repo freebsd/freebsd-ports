@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	check_mongodb
 PORTVERSION=	0.1
 CATEGORIES=	databases python

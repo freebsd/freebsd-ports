@@ -1,4 +1,3 @@
-# Created by: Gilbert Morgan <gmm@tutanota.com>
 #
 
 PORTNAME=	cachelib

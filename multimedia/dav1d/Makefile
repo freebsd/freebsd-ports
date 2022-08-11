@@ -1,5 +1,6 @@
 PORTNAME=	dav1d
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org

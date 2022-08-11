@@ -1,5 +1,3 @@
-# Created by: Massimiliano Stucchi <mstucchi@ripe.net>
-
 PORTNAME=	socketio-client
 PORTVERSION=	0.6.7
 CATEGORIES=	net devel python

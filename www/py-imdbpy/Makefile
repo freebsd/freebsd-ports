@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	imdbpy
 PORTVERSION=	2021.4.18
 CATEGORIES=	www python

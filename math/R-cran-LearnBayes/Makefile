@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	LearnBayes
 PORTVERSION=	2.15.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	execjs
 PORTVERSION=	2.8.1
 PORTREVISION=	2

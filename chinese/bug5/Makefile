@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	bug5
 PORTVERSION=	1.18
 CATEGORIES=	chinese converters

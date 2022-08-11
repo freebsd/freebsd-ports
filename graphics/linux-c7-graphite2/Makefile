@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	graphite2
 PORTVERSION=	1.3.10
 DISTVERSIONSUFFIX=	-1.el7_3

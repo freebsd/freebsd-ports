@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	Net_Sieve
 PORTVERSION=	1.4.5
 CATEGORIES=	net www pear

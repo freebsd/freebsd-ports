@@ -1,5 +1,3 @@
-# Created by: Timur Bakeyev <timur@FreeBSD.org>
-
 PORTNAME=	Encode-Punycode
 PORTVERSION=	1.002
 CATEGORIES=	converters perl5

@@ -74,6 +74,7 @@ include/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/find_blas.cmake
 include/dlib/cmake_utils/find_libjpeg.cmake
 include/dlib/cmake_utils/find_libpng.cmake
+include/dlib/cmake_utils/find_libwebp.cmake
 include/dlib/cmake_utils/set_compiler_specific_options.cmake
 include/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
 include/dlib/cmake_utils/use_cpp_11.cmake
@@ -175,7 +176,6 @@ include/dlib/dnn/layers.h
 include/dlib/dnn/layers_abstract.h
 include/dlib/dnn/loss.h
 include/dlib/dnn/loss_abstract.h
-include/dlib/dnn/misc.h
 include/dlib/dnn/solvers.h
 include/dlib/dnn/solvers_abstract.h
 include/dlib/dnn/trainer.h
@@ -183,6 +183,8 @@ include/dlib/dnn/trainer_abstract.h
 include/dlib/dnn/utilities.h
 include/dlib/dnn/utilities_abstract.h
 include/dlib/dnn/validation.h
+include/dlib/dnn/visitors.h
+include/dlib/dnn/visitors_abstract.h
 include/dlib/enable_if.h
 include/dlib/entropy_decoder.h
 include/dlib/entropy_decoder/entropy_decoder_kernel_1.h
@@ -399,6 +401,8 @@ include/dlib/image_loader/load_image.h
 include/dlib/image_loader/load_image_abstract.h
 include/dlib/image_loader/png_loader.h
 include/dlib/image_loader/png_loader_abstract.h
+include/dlib/image_loader/webp_loader.h
+include/dlib/image_loader/webp_loader_abstract.h
 include/dlib/image_processing.h
 include/dlib/image_processing/box_overlap_testing.h
 include/dlib/image_processing/box_overlap_testing_abstract.h
@@ -442,6 +446,8 @@ include/dlib/image_saver/save_jpeg.h
 include/dlib/image_saver/save_jpeg_abstract.h
 include/dlib/image_saver/save_png.h
 include/dlib/image_saver/save_png_abstract.h
+include/dlib/image_saver/save_webp.h
+include/dlib/image_saver/save_webp_abstract.h
 include/dlib/image_transforms.h
 include/dlib/image_transforms/assign_image.h
 include/dlib/image_transforms/assign_image_abstract.h
@@ -483,6 +489,7 @@ include/dlib/interfaces/cmd_line_parser_option.h
 include/dlib/interfaces/enumerable.h
 include/dlib/interfaces/map_pair.h
 include/dlib/interfaces/remover.h
+include/dlib/invoke.h
 include/dlib/iomanip
 include/dlib/iosfwd
 include/dlib/iosockstream.h
@@ -530,6 +537,8 @@ include/dlib/matlab/call_matlab.h
 include/dlib/matlab/subprocess_stream.h
 include/dlib/matrix.h
 include/dlib/matrix/cblas_constants.h
+include/dlib/matrix/fft_size.h
+include/dlib/matrix/kiss_fft.h
 include/dlib/matrix/lapack/fortran_id.h
 include/dlib/matrix/lapack/gees.h
 include/dlib/matrix/lapack/geev.h
@@ -542,8 +551,6 @@ include/dlib/matrix/lapack/pbtrf.h
 include/dlib/matrix/lapack/potrf.h
 include/dlib/matrix/lapack/syev.h
 include/dlib/matrix/lapack/syevr.h
-include/dlib/matrix/fft_size.h
-include/dlib/matrix/kiss_fft.h
 include/dlib/matrix/matrix.h
 include/dlib/matrix/matrix_abstract.h
 include/dlib/matrix/matrix_assign.h
@@ -1021,6 +1028,7 @@ include/dlib/unicode.h
 include/dlib/unicode/unicode.h
 include/dlib/unicode/unicode_abstract.h
 include/dlib/unordered_pair.h
+include/dlib/utility.h
 include/dlib/vectorstream.h
 include/dlib/vectorstream/unserialize.h
 include/dlib/vectorstream/unserialize_abstract.h
@@ -1036,7 +1044,7 @@ lib/cmake/dlib/dlib.cmake
 lib/cmake/dlib/dlibConfig.cmake
 lib/cmake/dlib/dlibConfigVersion.cmake
 lib/libdlib.so
-lib/libdlib.so.19.22.0
+lib/libdlib.so.19.24.0
 libdata/pkgconfig/dlib-1.pc
 @dir include/dlib/all
 @dir include/dlib/appveyor

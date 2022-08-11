@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	Net-Amazon-Signature
 PORTVERSION=	0.03
 PORTREVISION=	1

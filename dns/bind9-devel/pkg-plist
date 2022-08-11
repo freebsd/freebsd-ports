@@ -59,7 +59,6 @@ include/dns/keytable.h
 include/dns/keyvalues.h
 include/dns/librpz.h
 include/dns/log.h
-include/dns/lookup.h
 include/dns/master.h
 include/dns/masterdump.h
 include/dns/message.h
@@ -208,6 +207,7 @@ include/isc/types.h
 include/isc/url.h
 include/isc/utf8.h
 include/isc/util.h
+include/isc/uv.h
 include/isccc/alist.h
 include/isccc/base64.h
 include/isccc/cc.h
@@ -241,19 +241,19 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/libbind9.so
-lib/libbind9-9.19.1-dev.so
+lib/libbind9-9.19.3-dev.so
 lib/libdns.so
-lib/libdns-9.19.1-dev.so
+lib/libdns-9.19.3-dev.so
 lib/libirs.so
-lib/libirs-9.19.1-dev.so
+lib/libirs-9.19.3-dev.so
 lib/libisc.so
-lib/libisc-9.19.1-dev.so
+lib/libisc-9.19.3-dev.so
 lib/libisccc.so
-lib/libisccc-9.19.1-dev.so
+lib/libisccc-9.19.3-dev.so
 lib/libisccfg.so
-lib/libisccfg-9.19.1-dev.so
+lib/libisccfg-9.19.3-dev.so
 lib/libns.so
-lib/libns-9.19.1-dev.so
+lib/libns-9.19.3-dev.so
 @comment man/man1/arpaname.1.gz
 @comment man/man1/delv.1.gz
 @comment man/man1/dig.1.gz

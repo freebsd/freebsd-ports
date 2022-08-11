@@ -1,5 +1,5 @@
---- src/utils/dsptools.c.orig	2013-01-14 16:13:45.000000000 +0100
-+++ src/utils/dsptools.c	2014-07-11 10:34:30.000000000 +0200
+--- src/utils/dsptools.c.orig	2022-06-10 12:50:07 UTC
++++ src/utils/dsptools.c
 @@ -61,7 +61,7 @@
  #ifdef HAVE_ALLOCA_H
  #include <alloca.h>

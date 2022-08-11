@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyexcel-io
 PORTVERSION=	0.6.6
 CATEGORIES=	textproc python

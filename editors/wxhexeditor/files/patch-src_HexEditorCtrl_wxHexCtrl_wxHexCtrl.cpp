@@ -18,3 +18,12 @@
  					chrC |= atoh( chr );
  					//chrC = (atoh( RenderedHexByte.ToAscii()[0] ) << 4) | atoh( RenderedHexByte.ToAscii()[1] );
  
+@@ -2365,7 +2365,7 @@ cpformat(a)
+ 			else if(i==0x7E)
+ 				newCP += wxChar(0x203E);//Overline
+ 			else if(i<0x80)
+-				newCP += ((i<0x20 || i==0x7F)	? '.' : wxChar(i));
++				newCP += ((i<0x20 || i==0x7F) ? L'.' : wxChar(i));
+ 			else if( i>=0xA1 && i<0xE0)
+ 				newCP += wxChar(i-0xA0+0xFF60);
+ 			else

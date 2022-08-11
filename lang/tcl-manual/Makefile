@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis (edwin@mavetju.org)
-
 PORTNAME=	tcl-manual
 PORTVERSION=	20131001
 CATEGORIES=	lang

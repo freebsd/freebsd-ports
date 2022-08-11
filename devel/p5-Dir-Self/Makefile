@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Dir-Self
 PORTVERSION=	0.11
 PORTREVISION=	1

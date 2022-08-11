@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	gtkballs
 PORTVERSION=	3.1.5
 PORTREVISION=	13

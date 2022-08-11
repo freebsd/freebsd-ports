@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Alien-Gimp
 PORTVERSION=	0.10
 CATEGORIES=	graphics perl5

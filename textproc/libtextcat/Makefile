@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	libtextcat
 PORTVERSION=	2.2
 PORTREVISION=	6

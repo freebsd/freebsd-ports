@@ -1,5 +1,3 @@
-# Created by: Serhii (Sergey) Kozlov <skozlov@FreeBSD.org>
-
 PORTNAME=	ohmyzsh
 PORTVERSION=	20220305
 CATEGORIES=	shells

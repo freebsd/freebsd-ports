@@ -1,0 +1,22 @@
+PORTNAME=	django-filter
+DISTVERSION=	22.1
+CATEGORIES=	www python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
+
+MAINTAINER=	kai@FreeBSD.org
+COMMENT=	Dynamic filtering for querysets with Django
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=3.2:www/py-django40@${PY_FLAVOR}
+
+USES=		python:3.7+
+USE_PYTHON=	distutils autoplist
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
+
+NO_ARCH=		yes
+
+.include <bsd.port.mk>

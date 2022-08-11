@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnet
 PORTVERSION=	2.0.8
 PORTREVISION=	3

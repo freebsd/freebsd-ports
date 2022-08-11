@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	CACertOrg-CA
 PORTVERSION=	20210114.001
 CATEGORIES=	security perl5

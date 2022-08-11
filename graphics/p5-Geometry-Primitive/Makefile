@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Geometry-Primitive
 PORTVERSION=	0.24
 PORTREVISION=	1

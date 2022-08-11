@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	xcompmgr
 PORTVERSION=	1.1.8
 CATEGORIES=	x11-wm

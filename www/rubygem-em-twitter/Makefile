@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	em-twitter
 PORTVERSION=	0.3.5
 CATEGORIES=	www rubygems

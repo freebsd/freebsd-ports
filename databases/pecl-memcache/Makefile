@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <tux@pinguru.net>
-
 PORTNAME=	memcache
 PORTVERSION=	8.0
 CATEGORIES=	databases

@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	gnome-2048
 PORTVERSION=	3.38.2
 PORTREVISION=	1

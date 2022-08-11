@@ -1,5 +1,3 @@
-# Created by: gpalmer
-
 PORTNAME=	tvtwm
 PORTVERSION=	pl11
 PORTREVISION=	1

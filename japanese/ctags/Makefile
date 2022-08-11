@@ -1,5 +1,3 @@
-# Created by: issei
-
 PORTNAME=	ctags
 PORTVERSION=	5.8j2
 CATEGORIES=	japanese devel

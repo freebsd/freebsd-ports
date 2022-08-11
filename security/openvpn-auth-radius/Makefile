@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <m.tsatsenko@gmail.com>
-
 PORTNAME=	openvpn-auth-radius
 PORTVERSION=	2.1
 PORTREVISION=	4

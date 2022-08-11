@@ -1,5 +1,3 @@
-# Created by: Yuri <yuri@tsoft.com>
-
 PORTNAME=	telepathy-sofiasip
 PORTVERSION=	0.4.5
 PORTREVISION=	2

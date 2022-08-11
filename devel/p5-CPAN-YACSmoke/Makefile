@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	CPAN-YACSmoke
 PORTVERSION=	0.03
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Marwan Burelle <marwan.burelle@lri.fr
-
 PORTNAME=	expat
 PORTVERSION=	0.9.1
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Robert Schlotterbeck <robert@rs.tarrant.tx.us>
-
 PORTNAME=	vstr
 PORTVERSION=	1.0.15
 PORTREVISION=	1

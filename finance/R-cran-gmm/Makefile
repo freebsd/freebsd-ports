@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	gmm
 DISTVERSION=	1.6-6
 CATEGORIES=	finance

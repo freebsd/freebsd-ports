@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	XML-Filter-DetectWS
 PORTVERSION=	0.01
 PORTREVISION=	1

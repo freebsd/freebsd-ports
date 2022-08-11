@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	frotz
 PORTVERSION=	2.51
 CATEGORIES=	games

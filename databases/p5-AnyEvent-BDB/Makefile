@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	AnyEvent-BDB
 PORTVERSION=	1.1
 PORTREVISION=	1

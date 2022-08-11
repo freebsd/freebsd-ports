@@ -1,7 +1,5 @@
-# Created by: Palle Girgensohn <girgen@pingpong.net>
-
 PORTNAME=	postgresql
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER=	pgsql@FreeBSD.org

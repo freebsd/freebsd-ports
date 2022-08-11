@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Forest
 PORTVERSION=	0.10
 PORTREVISION=	1

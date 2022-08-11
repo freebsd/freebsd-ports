@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-Loader
 PORTVERSION=	0.21
 PORTREVISION=	2

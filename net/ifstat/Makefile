@@ -1,5 +1,3 @@
-# Created by: spf@xslt.cs.nccu.edu.tw
-
 PORTNAME=	ifstat
 PORTVERSION=	1.1
 PORTREVISION=	5

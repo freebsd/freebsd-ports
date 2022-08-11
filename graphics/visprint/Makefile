@@ -1,5 +1,3 @@
-# Created by: stas
-
 PORTNAME=	visprint
 PORTVERSION=	2.1
 PORTREVISION=	3

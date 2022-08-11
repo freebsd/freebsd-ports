@@ -1,8 +1,6 @@
-# Created by: Martin Dieringer <martin.dieringe@gmx.de>
-
 PORTNAME=	pdf2svg
 PORTVERSION=	0.2.3
-PORTREVISION=	37
+PORTREVISION=	42
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 

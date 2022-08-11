@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	hw-probe
 PORTVERSION=	1.6.4
 CATEGORIES=	sysutils perl5

@@ -1,5 +1,3 @@
-# Created by: Stefan Pauly <stefan@fh-mainz.de>
-
 PORTNAME=	XML-DOMHandler
 PORTVERSION=	1.0
 PORTREVISION=	1

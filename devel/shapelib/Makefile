@@ -1,5 +1,3 @@
-# Created by: Randall Hopper <aa8vb@nc.rr.com>
-
 PORTNAME=	shapelib
 PORTVERSION=	1.5.0
 CATEGORIES=	devel geography

@@ -1,5 +1,3 @@
-# Created by: Nik Clayton <nik@FreeBSD.org>
-
 PORTNAME=	libtap
 PORTVERSION=	1.12.0
 CATEGORIES=	devel

@@ -1,6 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-#   $MCom: ports/net-im/pidgin/Makefile,v 1.17 2007/09/17 19:53:06 marcus Exp $
-
 PORTNAME=	pidgin
 
 MAINTAINER=	marcus@FreeBSD.org
@@ -25,6 +22,7 @@ USE_XORG=	xscrnsaver sm
 CONFIGURE_ARGS=	--disable-consoleui \
 		--disable-nm \
 		--enable-screensaver \
+		--disable-schemas-install \
 		--with-dynamic_prpls=${PRPL_MODULES:S/,$//}
 
 post-install-PERL-on:

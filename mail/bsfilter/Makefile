@@ -1,5 +1,3 @@
-# Created by: Masafumi Otsune <info@otsune.com>
-
 PORTNAME=	bsfilter
 PORTVERSION=	1.0.19
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: toni.viemero@iki.fi
-
 PORTNAME=	W3C-LogValidator
 PORTVERSION=	1.4
 PORTREVISION=	1

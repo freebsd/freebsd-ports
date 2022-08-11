@@ -1,9 +1,8 @@
 PORTNAME=	jitsi
-PORTVERSION=	1.0.4048
-PORTREVISION=	2
+PORTVERSION=	1.0.6155
+DISTVERSIONPREFIX=	meet-
 CATEGORIES=	www net-im
 MASTER_SITES=	https://download.jitsi.org/jitsi-meet/src/
-DISTVERSIONPREFIX=	meet-
 PKGNAMESUFFIX=	-meet
 
 MAINTAINER=	acm@FreeBSD.org
@@ -13,6 +12,7 @@ LICENSE=	APACHE20
 
 USES=		cpe tar:bzip2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 CPE_VENDOR=	jitsi
 CPE_PRODUCT=	meet
@@ -25,9 +25,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 post-extract:
 	@${MV} ${WRKSRC}/config.js ${WRKSRC}/config.js.sample
 	@${MV} ${WRKSRC}/interface_config.js ${WRKSRC}/interface_config.js.sample
+	${INSTALL_DATA} ${FILESDIR}/nginx.conf.in \
+		${WRKDIR}/nginx.conf
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKDIR}/nginx.conf
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/nginx.conf \
+		${STAGEDIR}${EXAMPLESDIR}/nginx.conf
 
 .include <bsd.port.mk>

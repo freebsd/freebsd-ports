@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	crawl
 PORTVERSION=	0.4
 PORTREVISION=	14

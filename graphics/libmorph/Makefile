@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	libmorph
 PORTVERSION=	0.1.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OnlinePayment-MerchantCommerce
 PORTVERSION=	0.01
 PORTREVISION=	2

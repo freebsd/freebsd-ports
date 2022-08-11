@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	libapreq2
 PORTVERSION=	2.13
 PORTREVISION=	5

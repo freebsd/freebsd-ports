@@ -1,5 +1,3 @@
-# Created by: Takuya Tsuchida <tsucchi@cpan.org>
-
 PORTNAME=	Test-Module-Used
 PORTVERSION=	0.2.3
 PORTREVISION=	3

@@ -1,8 +1,6 @@
-# Created by: Craig Leres <leres@FreeBSD.org>
-
 PORTNAME=	hostapd
 PORTVERSION=	2.10
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	https://w1.fi/releases/
 

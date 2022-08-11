@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	linear-tsv
 PORTVERSION=	1.1.0
 CATEGORIES=	devel python

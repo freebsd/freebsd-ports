@@ -1,5 +1,3 @@
-# Created by: Quinton Dolan <q@onthenet.com.au>
-
 PORTNAME=	frontbase
 PORTVERSION=	2.5.6
 CATEGORIES=	databases java

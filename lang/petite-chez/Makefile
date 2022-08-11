@@ -1,5 +1,3 @@
-# Created by: Vitaly Magerya <vmagerya@gmail.com>
-
 PORTNAME=	petite-chez
 PORTVERSION=	8.4
 PORTREVISION=	1

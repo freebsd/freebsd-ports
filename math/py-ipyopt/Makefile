@@ -1,5 +1,5 @@
 PORTNAME=	ipyopt
-DISTVERSION=	0.12.3
+DISTVERSION=	0.12.4
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,10 +22,12 @@ USE_PYTHON=	distutils autoplist
 
 CXXFLAGS+=	$(pkg-config --cflags ipopt)
 
+TEST_ENV=      ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/${PORTNAME}.cpython-*.so
 
-do-test: # tests fail: https://gitlab.com/g-braeunlich/ipyopt/-/issues/6
-	@cd ${WRKSRC} && pytest
+do-test:
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} pytest
 
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	chklinks
 PORTVERSION=	3.09
 PORTREVISION=	1

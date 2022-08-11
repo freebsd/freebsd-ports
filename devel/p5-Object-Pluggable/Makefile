@@ -1,5 +1,3 @@
-# Created by: Jase Thew <freebsd@beardz.net>
-
 PORTNAME=	Object-Pluggable
 PORTVERSION=	1.29
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	asio
 DISTVERSION=	1.16.0
 CATEGORIES=	net devel

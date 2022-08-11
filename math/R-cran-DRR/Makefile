@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	DRR
 PORTVERSION=	0.0.4
 PORTREVISION=	1

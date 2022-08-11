@@ -1,5 +1,3 @@
-# Created by: Mykola Dzham <i@levsha.me>
-
 PORTNAME=	pdsh
 PORTVERSION=	2.34
 DISTVERSIONPREFIX=	${PORTNAME}-

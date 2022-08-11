@@ -1,8 +1,6 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	darktable
 PORTVERSION=	3.8.1
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -15,7 +13,7 @@ ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	uses 64-bit address space
 
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
-		${P5_POD_PARSER} \
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		po4a-translate:textproc/po4a \
 		xsltproc:textproc/libxslt \
 		bash:shells/bash
@@ -24,7 +22,6 @@ LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
 		libcurl.so:ftp/curl \
 		libexiv2.so:graphics/exiv2 \
 		libharfbuzz.so:print/harfbuzz \
-		libheif.so:graphics/libheif \
 		libicui18n.so:devel/icu \
 		libjasper.so:graphics/jasper \
 		libjson-glib-1.0.so:devel/json-glib \
@@ -35,14 +32,8 @@ LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff
 
-# Fix build against cmake-3.21: the ninja generator in 3.21 suffers a
-# regression (see https://gitlab.kitware.com/cmake/cmake/-/issues/22487)
-# appending an invalid "-Wl,--no-as-needed" to the linker arguments for static
-# libraries.  Once this regression has been fixed upstream, this can be
-# switched back to USES=cmake, and LTO can be re-enabled.
 USES=		cmake compiler:c++14-lang desktop-file-utils gl gnome jpeg \
 		perl5 pkgconfig sdl shebangfix sqlite tar:xz xorg
-OPTIONS_EXCLUDE=LTO
 USE_GL=		gl
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
@@ -62,7 +53,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.rc/~rc/}
 
 OPTIONS_DEFINE=		AVIF DOCS GEO GPHOTO GMIC GRAPHMAGICK HEIF LIBSECRET LTO \
 			LUA NLS OPENEXR OPENJPEG PRINT TOOLS WEBP
-OPTIONS_DEFAULT=	AVIF GEO GPHOTO HEIF LUA OPENEXR OPENJPEG PRINT WEBP
+OPTIONS_DEFAULT=	AVIF GEO GPHOTO HEIF LTO LUA OPENEXR OPENJPEG PRINT WEBP
 OPTIONS_SUB=		yes
 
 GEO_DESC=		Support geotagging
@@ -83,6 +74,9 @@ GRAPHMAGICK_CMAKE_BOOL=	USE_GRAPHICSMAGICK
 
 AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
 AVIF_CMAKE_BOOL=	USE_AVIF
+
+HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
+HEIF_CMAKE_BOOL=	USE_HEIF
 
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CMAKE_BOOL=	USE_LIBSECRET
@@ -138,6 +132,8 @@ CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
 LD=		${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
 BINARY_ALIAS+=	ld.lld=${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
 BINARY_ALIAS+=	llvm-objcopy=${LOCALBASE}/bin/llvm-objcopy${LLVM_DEFAULT}
+BINARY_ALIAS+=	llvm-ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT}
+BINARY_ALIAS+=	llvm-ranlib=${LOCALBASE}/bin/llvm-ranlib${LLVM_DEFAULT}
 .endif
 
 # work around CMAKE/CCACHE flaw (cmake stomps over ccache)

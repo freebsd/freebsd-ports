@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-
 PORTNAME=	cgiirc
 PORTVERSION=	0.5.12
 CATEGORIES=	irc www perl5

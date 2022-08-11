@@ -1,5 +1,3 @@
-# Created by: Thomas Zander <riggs@FreeBSD.org>
-
 PORTNAME=	embb
 PORTVERSION=	1.0.0
 PORTREVISION=	5

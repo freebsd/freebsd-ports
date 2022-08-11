@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	stowES
 PORTVERSION=	0.5.7
 CATEGORIES=	sysutils

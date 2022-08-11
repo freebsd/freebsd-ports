@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	gkrellflynn
 PORTVERSION=	0.8
 PORTREVISION=	8

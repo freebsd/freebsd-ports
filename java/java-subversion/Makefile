@@ -1,5 +1,3 @@
-# Created by: Lev Serebryakov <lev@FreeBSD.org>
-
 PKGNAMEPREFIX=	java-
 CATEGORIES=	java
 

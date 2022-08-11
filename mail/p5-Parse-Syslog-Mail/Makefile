@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Parse-Syslog-Mail
 PORTVERSION=	0.17
 PORTREVISION=	1

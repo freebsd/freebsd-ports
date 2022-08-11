@@ -1,5 +1,3 @@
-# Created by: James E Keenan <jkeenan@cpan.org>
-
 PORTNAME=	CPAN-Testers-Common-Client
 PORTVERSION=	0.14
 CATEGORIES=	devel perl5

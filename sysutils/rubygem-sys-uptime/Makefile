@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	sys-uptime
 PORTVERSION=	0.7.5
 CATEGORIES=	sysutils rubygems

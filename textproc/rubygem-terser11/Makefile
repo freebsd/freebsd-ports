@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	terser
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.12
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	11

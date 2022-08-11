@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	vamps
 PORTVERSION=	0.99.2
 PORTREVISION=	10

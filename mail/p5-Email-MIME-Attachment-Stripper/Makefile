@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Email-MIME-Attachment-Stripper
 PORTVERSION=	1.317
 CATEGORIES=	mail perl5

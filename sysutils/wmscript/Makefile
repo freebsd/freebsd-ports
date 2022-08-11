@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <ip@unixway.org>
-
 PORTNAME=	wmscript
 DISTVERSION=	1.0
 CATEGORIES=	sysutils windowmaker

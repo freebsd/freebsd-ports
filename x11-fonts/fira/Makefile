@@ -1,5 +1,3 @@
-# Created by: Horia Racoviceanu <horia@racoviceanu.com>
-
 PORTNAME=	fira
 PORTVERSION=	4.301
 PORTREVISION=	1

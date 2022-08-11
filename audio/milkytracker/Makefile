@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	milkytracker
 PORTVERSION=	1.03.00
 PORTREVISION=	1

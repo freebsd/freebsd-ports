@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	libmswstr
 PORTVERSION=	0.0.1
 CATEGORIES=	databases

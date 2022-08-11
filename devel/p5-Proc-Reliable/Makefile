@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Proc-Reliable
 PORTVERSION=	1.16
 PORTREVISION=	1

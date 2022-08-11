@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	python-geohash
 DISTVERSION=	0.8.5
 PORTREVISION=	2

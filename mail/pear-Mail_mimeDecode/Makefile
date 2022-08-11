@@ -1,7 +1,6 @@
-# Created by: Zhen REN <bg1tpt@gmail.com>
-
 PORTNAME=	Mail_mimeDecode
 PORTVERSION=	1.5.6
+PORTREVISION=	1
 CATEGORIES=	mail www pear
 
 MAINTAINER=	dbaio@FreeBSD.org

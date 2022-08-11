@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	vpnc-scripts
 PORTVERSION=	20210402
 CATEGORIES=	sysutils net-vpn

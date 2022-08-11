@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	firmware
 PORTVERSION=	0.1.7
 CATEGORIES=	science
@@ -8,7 +6,7 @@ PKGNAMEPREFIX=	sigrok-
 PKGNAMESUFFIX=	-fx2lafw
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-bin-${PORTVERSION}
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Cypress FX2 firmware for hardware logic analyzers
 
 LICENSE=	GPLv2

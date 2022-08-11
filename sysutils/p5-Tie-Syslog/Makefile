@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Tie-Syslog
 PORTVERSION=	2.04.03
 PORTREVISION=	1

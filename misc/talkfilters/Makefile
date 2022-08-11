@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	talkfilters
 PORTVERSION=	2.3.8
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	WWW-NicoVideo-Download
 PORTVERSION=	0.06
 PORTREVISION=	1

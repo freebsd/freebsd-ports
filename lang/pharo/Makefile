@@ -1,5 +1,3 @@
-# Created by: mutoh@openedu.org
-
 PORTNAME=	pharo
 DISTVERSION=	1.4
 PORTREVISION=	2

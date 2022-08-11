@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Cisco-Reconfig
 PORTVERSION=	0.912
 CATEGORIES=	net-mgmt perl5

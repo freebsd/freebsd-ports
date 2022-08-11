@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	slapd-cyrus
 PORTVERSION=	1.00
 PORTREVISION=	2
@@ -21,6 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 PLIST_SUB=	SITE_PERL_REL=${SITE_PERL_REL} \
 		DOCS_DIR_REL=${DOCSDIR_REL}

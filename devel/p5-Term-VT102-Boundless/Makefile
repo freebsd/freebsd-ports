@@ -1,5 +1,3 @@
-# Created by: Andrey Chernov <ache@FreeBSD.org>
-
 PORTNAME=	Term-VT102-Boundless
 PORTVERSION=	0.05
 CATEGORIES=	devel perl5

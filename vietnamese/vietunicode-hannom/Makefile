@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	vietunicode-hannom
 PORTVERSION=	2005.02.06
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	mac_nonet
 DISTVERSION=	g20150821
 CATEGORIES=	sysutils

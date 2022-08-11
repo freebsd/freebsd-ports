@@ -1,5 +1,5 @@
-TIMESTAMP = 1648330915
-SHA256 (leo-arch-clifm-v1.5.1_GH0.tar.gz) = c615fbf52a0f701b3c509437d3edf0bbdcb6645712f08cdf745fac38b23a087b
-SIZE (leo-arch-clifm-v1.5.1_GH0.tar.gz) = 1217409
-SHA256 (leo-arch-clifm-colors-v0.1.0_GH0.tar.gz) = 147573aa1e83c286488fdf45c3673e6b417957fb3c5a7f70eba0021cc1f3aa70
-SIZE (leo-arch-clifm-colors-v0.1.0_GH0.tar.gz) = 875324
+TIMESTAMP = 1656397054
+SHA256 (leo-arch-clifm-v1.6_GH0.tar.gz) = 303f0ee2c6b19d3612de623c3ae0ee3ac110dcacfc348ec0f1d80015fc5f26e1
+SIZE (leo-arch-clifm-v1.6_GH0.tar.gz) = 1268633
+SHA256 (leo-arch-clifm-colors-e9ee1c4_GH0.tar.gz) = 697e1af046d55cb819ae76034a2c648705b1061525832d80384ac3d5e4530137
+SIZE (leo-arch-clifm-colors-e9ee1c4_GH0.tar.gz) = 993233

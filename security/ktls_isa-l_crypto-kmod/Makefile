@@ -1,5 +1,3 @@
-# Created by: Michal Bielicki <m.bielicki@llizardfs.com>
-
 PORTNAME=	isa-l_crypto
 PORTVERSION=	2.21.0
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Allan Jude <allanjude@freebsd.org>
-
 PORTNAME=	gdnsd
 PORTVERSION=	3.7.0
 PORTREVISION=	1

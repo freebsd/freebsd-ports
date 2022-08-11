@@ -1,5 +1,3 @@
-# Created by: jkh
-
 PORTNAME=	python
 PORTVERSION=	${PYTHON_DEFAULT}
 PORTREVISION=	3

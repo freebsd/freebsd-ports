@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXxf86dga
 PORTVERSION=	1.1.5
 CATEGORIES=	x11

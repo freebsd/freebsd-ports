@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>)
-
 PORTNAME=	Net_Vpopmaild
 PORTVERSION=	0.3.2
 CATEGORIES=	net mail pear

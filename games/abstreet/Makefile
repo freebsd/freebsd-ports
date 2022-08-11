@@ -1,7 +1,7 @@
 PORTNAME=	abstreet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.64
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/yuri:data
 DISTFILES=	${PORTNAME}-data-${DISTVERSION}.tgz:data # updated by the update-data target
@@ -11,6 +11,8 @@ COMMENT=	Game exploring how changes to city affect drivers/cyclists/pedestrians
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		fails to build with rust 1.61.0+ # also see the WIP https://github.com/a-b-street/abstreet/issues/959 why it can't be updated yet
 
 BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib
 

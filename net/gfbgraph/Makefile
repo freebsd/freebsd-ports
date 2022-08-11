@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gfbgraph
 DISTVERSION=	0.2.4
 PORTREVISION=	2

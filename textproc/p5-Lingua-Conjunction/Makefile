@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-Conjunction
 PORTVERSION=	2.5
 CATEGORIES=	textproc perl5

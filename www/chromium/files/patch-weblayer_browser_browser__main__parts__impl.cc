@@ -1,4 +1,4 @@
---- weblayer/browser/browser_main_parts_impl.cc.orig	2022-04-21 18:48:31 UTC
+--- weblayer/browser/browser_main_parts_impl.cc.orig	2022-06-17 14:20:10 UTC
 +++ weblayer/browser/browser_main_parts_impl.cc
 @@ -79,7 +79,7 @@
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -198,7 +198,7 @@ int BrowserMainPartsImpl::PreEarlyInitialization() {
+@@ -195,7 +195,7 @@ int BrowserMainPartsImpl::PreEarlyInitialization() {
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

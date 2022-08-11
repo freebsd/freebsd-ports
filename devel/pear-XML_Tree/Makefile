@@ -1,5 +1,3 @@
-# Created by: Alex Miller (<asm@asm.kiev.ua>)
-
 PORTNAME=	XML_Tree
 PORTVERSION=	1.1
 PORTREVISION=	2

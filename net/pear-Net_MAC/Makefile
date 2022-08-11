@@ -1,5 +1,3 @@
-# Created by: Zhen REN <bg1tpt@gmail.com>
-
 PORTNAME=	Net_MAC
 PORTVERSION=	0.1.5
 PORTREVISION=	1

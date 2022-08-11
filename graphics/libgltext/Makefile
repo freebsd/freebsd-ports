@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	libgltext
 PORTVERSION=	0.3.1
 PORTREVISION=	9

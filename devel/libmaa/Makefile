@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	libmaa
 PORTVERSION=	1.4.7
 PORTEPOCH=	1

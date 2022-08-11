@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	qccx
 PORTVERSION=	1.0.0
 CATEGORIES=	games devel

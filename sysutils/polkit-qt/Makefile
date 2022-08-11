@@ -1,5 +1,3 @@
-# Created by: Dima Panov <fluffy@Fluffy.Khv.RU>
-
 PORTNAME=	polkit-qt-1
 DISTVERSION=	0.114.0
 CATEGORIES=	sysutils

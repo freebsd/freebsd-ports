@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	WebDriver-Tiny
 PORTVERSION=	0.105
 CATEGORIES=	www perl5

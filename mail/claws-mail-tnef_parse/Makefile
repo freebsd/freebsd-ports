@@ -1,7 +1,4 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	tnef_parse
-PORTREVISION=	0
 
 COMMENT=	TNEF attachment format parser plugin for Claws Mail
 

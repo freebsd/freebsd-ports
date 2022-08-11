@@ -1,5 +1,3 @@
-# Created by: Stephane Legrand <stephane@FreeBSD.org>
-
 PORTNAME=	gnocl
 DISTVERSION=	${BASE_VERSION}-${NIGHTLY_BUILD}
 PORTREVISION=	3

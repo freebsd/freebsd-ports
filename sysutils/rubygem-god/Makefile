@@ -1,5 +1,3 @@
-# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
-
 PORTNAME=	god
 PORTVERSION=	0.13.7
 CATEGORIES=	sysutils rubygems

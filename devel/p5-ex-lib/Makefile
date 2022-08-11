@@ -1,5 +1,3 @@
-# Created by: Mons Anderson <mons@cpan.org>
-
 PORTNAME=	ex-lib
 PORTVERSION=	0.90
 PORTREVISION=	1

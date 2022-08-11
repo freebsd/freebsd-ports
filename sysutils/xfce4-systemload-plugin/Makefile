@@ -1,5 +1,3 @@
-# Created by: Thorsten Greiner <thorsten.greiner@web.de>
-
 PORTNAME=	xfce4-systemload-plugin
 PORTVERSION=	1.3.1
 CATEGORIES=	sysutils xfce

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Parse-Method-Signatures
 PORTVERSION=	1.003019
 CATEGORIES=	devel perl5

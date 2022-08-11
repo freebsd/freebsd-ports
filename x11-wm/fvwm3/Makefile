@@ -1,13 +1,11 @@
-# Created by: Felix Palmen <felix@palmen-it.de>
-
 PORTNAME=	fvwm3
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${PORTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/:icons
 
-MAINTAINER=	felix@palmen-it.de
+MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	F? Virtual Window Manager
 
 LICENSE=	GPLv2
@@ -26,7 +24,6 @@ CPE_VENDOR=	fvwm
 CPE_PRODUCT=	fvwm
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-PORTREVISION=	1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_path_PYTHON=${PYTHON_CMD}

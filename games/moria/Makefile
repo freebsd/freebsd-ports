@@ -1,5 +1,3 @@
-# Created by: glewis@FreeBSD.org
-
 PORTNAME=	moria
 PORTVERSION=	5.5.2
 CATEGORIES=	games

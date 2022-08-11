@@ -1,5 +1,3 @@
-# Created by: Keith J. Jones <kjones@antihackertoolkit.com>
-
 PORTNAME=	srm
 PORTVERSION=	1.2.15
 CATEGORIES=	security sysutils

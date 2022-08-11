@@ -1,5 +1,3 @@
-# Created by: Blaz Zupan <blaz@amis.net>
-
 PORTNAME=	Convert-UUlib
 PORTVERSION=	1.70
 PORTEPOCH=	1

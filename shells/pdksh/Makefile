@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	pdksh
 PORTVERSION=	5.2.14p2
 PORTREVISION=	6

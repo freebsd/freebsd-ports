@@ -1,5 +1,3 @@
-# Created by: Dmitri Nikulin <setagllib@optusnet.com.au>
-
 PORTNAME=	stress
 PORTVERSION=	1.0.4
 PORTREVISION=	1

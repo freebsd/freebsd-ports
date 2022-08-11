@@ -1,5 +1,3 @@
-# Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
-
 PORTNAME=	Exception-Class-TryCatch
 PORTVERSION=	1.13
 CATEGORIES=	devel perl5

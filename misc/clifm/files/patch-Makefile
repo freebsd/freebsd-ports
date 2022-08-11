@@ -1,18 +1,15 @@
---- Makefile.orig	2021-08-29 04:14:33 UTC
+--- Makefile.orig	2022-06-28 06:17:34 UTC
 +++ Makefile
-@@ -22,9 +22,9 @@ SRCDIR = src
- SRC = $(SRCDIR)/*.c
- HEADERS = $(SRCDIR)/*.h
+@@ -24,7 +24,7 @@ LIBS_Linux ?= -lreadline -lacl -lcap -lmagic
  
--CFLAGS ?= -O3 -fstack-protector-strong -march=native -Wall -DCLIFM_DATADIR=$(DATADIR)
-+CFLAGS += -Wall -DCLIFM_DATADIR=$(DATADIR)
+ CFLAGS ?= -O3 -fstack-protector-strong -march=native -Wall
  LIBS_Linux ?= -lreadline -lacl -lcap -lmagic
 -LIBS_FreeBSD ?= -I/usr/local/include -L/usr/local/lib -lreadline -lintl -lmagic
 +LIBS_FreeBSD ?= -I$(LOCALBASE)/include -L$(LOCALBASE)/lib -lreadline -lintl -lmagic
  LIBS_NetBSD ?= -I/usr/pkg/include -L/usr/pkg/lib -Wl,-R/usr/pkg/lib -lreadline -lintl -lmagic
  LIBS_OpenBSD ?= -I/usr/local/include -L/usr/local/lib -lereadline -lintl -lmagic
- 
-@@ -36,7 +36,7 @@ clean:
+ LIBS_Darwin ?= -I/opt/local/include -L/opt/local/lib -lreadline -lintl -lmagic
+@@ -39,7 +39,7 @@ clean:
  	$(RM) -- $(BIN)
  	$(RM) -f -- $(SRCDIR)/*.o
  

@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	ppmcaption
 PORTVERSION=	1.1
 CATEGORIES=	graphics

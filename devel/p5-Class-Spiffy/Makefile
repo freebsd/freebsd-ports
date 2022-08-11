@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Class-Spiffy
 PORTVERSION=	0.15
 PORTREVISION=	2

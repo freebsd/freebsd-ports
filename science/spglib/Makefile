@@ -1,6 +1,6 @@
 PORTNAME=	spglib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.3
+DISTVERSION=	1.16.5
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,5 +12,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+.if !exists(/usr/include/omp.h)
+CMAKE_ARGS+=	-DUSE_OMP:BOOL=OFF
+.endif
 
 .include <bsd.port.mk>

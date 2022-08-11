@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Tie-NetAddr-IP
 PORTVERSION=	1.51
 PORTREVISION=	1

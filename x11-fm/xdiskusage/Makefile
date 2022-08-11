@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	xdiskusage
 PORTVERSION=	1.54
 CATEGORIES=	x11-fm

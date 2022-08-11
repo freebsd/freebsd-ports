@@ -1,5 +1,3 @@
-# Created by: David Sze <dsze@alumni.uwaterloo.ca>
-
 PORTNAME=	rl
 PORTVERSION=	0.2.7
 CATEGORIES=	textproc

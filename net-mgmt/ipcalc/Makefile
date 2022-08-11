@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ipcalc
 PORTVERSION=	0.41
 PORTREVISION=	3

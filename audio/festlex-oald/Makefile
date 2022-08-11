@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	festlex-oald
 PORTVERSION=	1.4.1
 PORTREVISION=	1

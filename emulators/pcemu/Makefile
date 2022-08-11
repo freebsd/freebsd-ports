@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	pcemu
 PORTVERSION=	1.01b
 PORTREVISION=	6

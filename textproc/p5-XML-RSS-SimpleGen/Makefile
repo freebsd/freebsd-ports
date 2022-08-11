@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	XML-RSS-SimpleGen
 PORTVERSION=	11.11
 PORTREVISION=	1

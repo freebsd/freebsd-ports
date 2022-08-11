@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	UniversalFeedCreator
 PORTVERSION=	1.8.4.1
 DISTVERSIONPREFIX=	v

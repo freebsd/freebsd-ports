@@ -1,4 +1,4 @@
---- base/rand_util_posix.cc.orig	2022-02-28 16:54:41 UTC
+--- base/rand_util_posix.cc.orig	2022-07-22 17:30:31 UTC
 +++ base/rand_util_posix.cc
 @@ -17,7 +17,7 @@
  #include "base/posix/eintr_wrapper.h"
@@ -33,7 +33,7 @@
  #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && !BUILDFLAG(IS_NACL)
    // We have to call `getrandom` via Linux Syscall Support, rather than through
    // the libc wrapper, because we might not have an up-to-date libc (e.g. on
-@@ -93,11 +96,16 @@ void RandBytes(void* output, size_t output_length) {
+@@ -91,11 +94,16 @@ void RandBytes(void* output, size_t output_length) {
    const bool success =
        ReadFromFD(urandom_fd, static_cast<char*>(output), output_length);
    CHECK(success);

@@ -1,5 +1,16 @@
---- CMakeLists.txt.orig	2019-01-29 23:00:07 UTC
+--- CMakeLists.txt.orig	2019-03-25 17:40:02 UTC
 +++ CMakeLists.txt
+@@ -341,8 +341,8 @@ cuda_include_directories(${CMAKE_SOURCE_DIR})
+ # Add targets
+ 
+ # thrust target
+-install(DIRECTORY ${CMAKE_SOURCE_DIR}/thrust/ DESTINATION thrust COMPONENT thrust)
+-install(FILES ${CMAKE_SOURCE_DIR}/CHANGELOG DESTINATION thrust COMPONENT thrust)
++install(DIRECTORY ${CMAKE_SOURCE_DIR}/thrust/ DESTINATION include/thrust COMPONENT thrust)
++#install(FILES ${CMAKE_SOURCE_DIR}/CHANGELOG DESTINATION thrust COMPONENT thrust)
+ add_custom_target(install-thrust
+   COMMAND
+       "${CMAKE_COMMAND}" -DCMAKE_INSTALL_COMPONENT=thrust
 @@ -350,9 +350,15 @@ add_custom_target(install-thrust
  )
  

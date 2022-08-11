@@ -1,7 +1,7 @@
 PORTNAME=	wtype
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Programmatically simulate keyboard input on Wayland

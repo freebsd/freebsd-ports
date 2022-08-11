@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	LWP-UserAgent-POE
 PORTVERSION=	0.05
 CATEGORIES=	www perl5

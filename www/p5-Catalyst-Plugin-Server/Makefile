@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Catalyst-Plugin-Server
 PORTVERSION=	0.28
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Tie-Hash-Sorted
 PORTVERSION=	0.10
 PORTREVISION=	1

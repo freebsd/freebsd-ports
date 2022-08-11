@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	XML-GDOME
 PORTVERSION=	0.86
 PORTREVISION=	5

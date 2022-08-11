@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	exiv2
 DISTVERSION=	0.27.5
 DISTVERSIONSUFFIX=	-Source
@@ -45,7 +43,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-Source
 
 .include <bsd.port.options.mk>
 
-LDFLAGS_powerpc=	-lintl
 LDFLAGS_mips=		-lintl
 LDFLAGS_mips64=		-lintl
 

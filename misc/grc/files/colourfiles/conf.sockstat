@@ -1,0 +1,112 @@
+# Root user
+regexp=^(root)\s+
+colors=default,"\033[41m"
+======
+# Program, PID, FD
+regexp=^(?:\w+)\s+([-\w]+)\s+(\d+)\s+(\d+)
+colors=unchanged,bright_green,"\033[38;5;245m","\033[38;5;240m"
+======
+# TCP 4
+regexp=\s+(tcp)(4)\s+
+colors=unchanged,"\033[38;5;140m","\033[38;5;220m"
+======
+# TCP 6
+regexp=\s+(tcp)(6)\s+
+colors=unchanged,"\033[38;5;140m","\033[38;5;39m"
+======
+# TCP 46
+regexp=\s+(tcp)(4)(6)\s+
+colors=unchanged,"\033[38;5;140m","\033[38;5;220m","\033[38;5;39m"
+======
+# UDP 4
+regexp=\s+(udp)(4)\s+
+colors=unchanged,"\033[38;5;120m","\033[38;5;220m"
+======
+# UDP 6
+regexp=\s+(udp)(6)\s+
+colors=unchanged,"\033[38;5;120m","\033[38;5;39m"
+======
+# UDP 46
+regexp=\s+(udp)(4)(6)\s+
+colors=unchanged,"\033[38;5;120m","\033[38;5;220m","\033[38;5;39m"
+======
+# All Interfaces
+regexp=\s+(\*):\d+
+colors=unchanged,bright_red
+======
+# Foreign Address for Listen only
+regexp=\s+(\*:\*)
+colors=unchanged,"\033[38;5;240m"
+======
+# Port #
+regexp=:(\d+)(?:\s+|$)
+colors=unchanged,bright_magenta
+======
+# IPv4
+regexp=\s+(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,33})
+colors=unchanged,"\033[38;5;220m"
+======
+# IPv4 Loopback
+regexp=\s+((?:127\.\d{1,3}\.\d{1,3}\.\d{1,33})|::1)
+colors=unchanged,"\033[38;5;238m"
+======
+# IP v6
+regexp=\s+(\w+:\w+:\w+:\w+:\w+:\w+:\w+:\w+):
+colors=unchanged,"\033[38;5;214m"
+======
+# IP v6 link local
+regexp=\s+(\w+::\w+:\w+:\w+:\w+)%(\w+):
+colors=unchanged,"\033[38;5;238m",red
+======
+# IPv6 Loopback
+regexp=\s+(fe80::1%lo0):
+colors=unchanged,"\033[38;5;238m"
+======
+# IPv6 Loopback
+regexp=^USER\s+COMMAND\s+PID\s+FD\s+PROTO\s+LOCAL\s+ADDRESS\s+FOREIGN\s+ADDRESS
+colors=bright_white
+=======
+# status
+regexp=FIN_WAIT.*
+colours=red
+=======
+# status
+regexp=SYN.*?
+colours=bold red
+=======
+# status
+regexp=LISTEN(ING)?
+colours=bold blue
+=======
+# status
+regexp=TIME_WAIT
+colours=bold red
+=======
+# status
+regexp=CLOS(E(_WAIT)?|ING)
+colours=red
+skip=yes
+=======
+# status
+regexp=LAST_ACK
+colours=red
+=======
+# status
+regexp=ESTAB.*?\b|CONNECTED
+colours=bold yellow
+=======
+# status
+regexp=FREE
+colours=bold green
+=======
+# status
+regexp=DISCONNECTING
+colours=red
+=======
+# status
+regexp=CONNECTING
+colours=green
+=======
+# status
+regexp=UNKNOWN
+colours=blink bold red

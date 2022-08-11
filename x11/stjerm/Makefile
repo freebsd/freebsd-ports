@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	stjerm
 PORTVERSION=	0.18
 DISTVERSIONPREFIX=	v

@@ -1444,6 +1444,10 @@ share/ppd/HP/hp-laserjet_p4515n.ppd.gz
 share/ppd/HP/hp-laserjet_p4515tn.ppd.gz
 share/ppd/HP/hp-laserjet_p4515x.ppd.gz
 share/ppd/HP/hp-laserjet_p4515xm.ppd.gz
+share/ppd/HP/hp-laserjet_pro_4001-ps.ppd.gz
+share/ppd/HP/hp-laserjet_pro_4002-ps.ppd.gz
+share/ppd/HP/hp-laserjet_pro_4003-ps.ppd.gz
+share/ppd/HP/hp-laserjet_pro_4004-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_m118-m119-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_m148-m149-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_m148f-m149f-ps.ppd.gz
@@ -1459,6 +1463,10 @@ share/ppd/HP/hp-laserjet_pro_m501dn-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_m501n-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_m701-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_m706-ps.ppd.gz
+share/ppd/HP/hp-laserjet_pro_mfp_4101-ps.ppd.gz
+share/ppd/HP/hp-laserjet_pro_mfp_4102-ps.ppd.gz
+share/ppd/HP/hp-laserjet_pro_mfp_4103-ps.ppd.gz
+share/ppd/HP/hp-laserjet_pro_mfp_4104-ps.ppd.gz
 share/ppd/HP/hp-laserjet_pro_mfp_m125a.ppd.gz
 share/ppd/HP/hp-laserjet_pro_mfp_m125nr.ppd.gz
 share/ppd/HP/hp-laserjet_pro_mfp_m125nw.ppd.gz

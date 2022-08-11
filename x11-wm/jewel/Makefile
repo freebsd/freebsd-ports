@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	jewel
 PORTVERSION=	0.12.41
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: David O'Brien <obrien@cs.ucdavis.edu>
-
 PORTNAME=	xcpustate
 PORTVERSION=	2.9
 PORTREVISION=	3

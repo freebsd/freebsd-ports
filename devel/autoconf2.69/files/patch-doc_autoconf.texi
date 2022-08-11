@@ -1,0 +1,30 @@
+--- doc/autoconf.texi.orig	2012-04-25 02:14:19 UTC
++++ doc/autoconf.texi
+@@ -5,9 +5,6 @@
+ @include version.texi
+ @settitle Autoconf
+ @setchapternewpage odd
+-@ifnothtml
+-@setcontentsaftertitlepage
+-@end ifnothtml
+ @finalout
+ 
+ @c @ovar(ARG)
+@@ -15,7 +12,7 @@
+ @c The ARG is an optional argument.  To be used for macro arguments in
+ @c their documentation (@defmac).
+ @macro ovar{varname}
+-@r{[}@var{\varname\}@r{]}@c
++@r{[}@var{\varname\}@r{]}
+ @end macro
+ 
+ @c @dvar(ARG, DEFAULT)
+@@ -23,7 +20,7 @@
+ @c The ARG is an optional argument, defaulting to DEFAULT.  To be used
+ @c for macro arguments in their documentation (@defmac).
+ @macro dvar{varname, default}
+-@r{[}@var{\varname\} = @samp{\default\}@r{]}@c
++@r{[}@var{\varname\} = @samp{\default\}@r{]}
+ @end macro
+ 
+ @c Handling the indexes with Texinfo yields several different problems.

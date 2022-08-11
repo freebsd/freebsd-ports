@@ -1,5 +1,3 @@
-# Created by: Alex Povolotsky <tarkhil@over.ru>
-
 PORTNAME=	cadaver
 PORTVERSION=	0.23.3
 PORTREVISION=	4

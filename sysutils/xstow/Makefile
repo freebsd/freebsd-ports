@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@geeksrus.net>
-
 PORTNAME=	xstow
 PORTVERSION=	1.0.2
 CATEGORIES=	sysutils

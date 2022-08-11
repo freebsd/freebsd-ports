@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	PerlIO-via-dynamic
 PORTVERSION=	0.14
 PORTREVISION=	1

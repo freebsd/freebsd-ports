@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	Apache-ParseLog
 PORTVERSION=	1.02
 PORTREVISION=	1

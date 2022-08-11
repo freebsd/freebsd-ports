@@ -50,6 +50,7 @@
 %%SITE_ARCH%%/Imager/Threads.pod
 %%SITE_ARCH%%/Imager/Transform.pm
 %%SITE_ARCH%%/Imager/Transformations.pod
+%%SITE_ARCH%%/Imager/TrimColorList.pm
 %%SITE_ARCH%%/Imager/Tutorial.pod
 %%SITE_ARCH%%/Imager/include/draw.h
 %%SITE_ARCH%%/Imager/include/dynaload.h
@@ -144,6 +145,7 @@
 %%PERL5_MAN3%%/Imager::Threads.3.gz
 %%PERL5_MAN3%%/Imager::Transform.3.gz
 %%PERL5_MAN3%%/Imager::Transformations.3.gz
+%%PERL5_MAN3%%/Imager::TrimColorList.3.gz
 %%PERL5_MAN3%%/Imager::Tutorial.3.gz
 %%PERL5_MAN3%%/Imager::interface.3.gz
 %%PERL5_MAN3%%/Imager::regmach.3.gz

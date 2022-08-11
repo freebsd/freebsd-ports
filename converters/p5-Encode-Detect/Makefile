@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Encode-Detect
 PORTVERSION=	1.01
 PORTREVISION=	1

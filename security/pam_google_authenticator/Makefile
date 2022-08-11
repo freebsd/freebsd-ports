@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	pam_google_authenticator
 PORTVERSION=	1.09
 PORTEPOCH=	1

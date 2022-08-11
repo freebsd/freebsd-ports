@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	eijiro-fpw
 PORTVERSION=	1.0b
 PORTREVISION=	6

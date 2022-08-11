@@ -1,5 +1,3 @@
-# Created by: Scot Hetzel <swhetzel@gmail.com>
-
 PORTNAME=	b43-fwcutter
 PORTVERSION=	019
 CATEGORIES=	sysutils

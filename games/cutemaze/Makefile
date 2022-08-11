@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	cutemaze
 PORTVERSION=	1.3.0
 CATEGORIES=	games

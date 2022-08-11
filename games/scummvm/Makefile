@@ -1,14 +1,12 @@
-#_ Created by: Alex Trull <freebsd.alex@trull.org>
-
 PORTNAME=	scummvm
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.0
 CATEGORIES=	games emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Interpreter for several adventure games
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liba52.so:audio/liba52 \
@@ -22,7 +20,7 @@ LIB_DEPENDS=	liba52.so:audio/liba52 \
 		libtheoradec.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis
 
-USES=		cpe gl gmake gnome iconv jpeg pkgconfig sdl tar:xz
+USES=		compiler:c++11-lang cpe gl gmake gnome iconv jpeg pkgconfig sdl tar:xz
 USE_GL=		gl glew
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl2

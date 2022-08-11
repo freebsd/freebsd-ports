@@ -1,5 +1,3 @@
-# Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-
 PORTNAME=	man-doc
 PORTVERSION=	5.4.20050911
 PORTREVISION=	3

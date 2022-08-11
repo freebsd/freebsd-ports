@@ -1,5 +1,3 @@
-# Created by: Stéphane D'Alu <sdalu@sdalu.com>
-
 PORTNAME=	ddmemoize
 PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems

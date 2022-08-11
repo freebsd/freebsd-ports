@@ -1,5 +1,5 @@
-TIMESTAMP = 1620468301
-SHA256 (go/net_librespeed-cli/librespeed-cli-v1.0.9/v1.0.9.mod) = a39dd790e6d85d6b751cc0c02da7183f94ac18a72c7727e4f2062190e0ca82c3
-SIZE (go/net_librespeed-cli/librespeed-cli-v1.0.9/v1.0.9.mod) = 603
-SHA256 (go/net_librespeed-cli/librespeed-cli-v1.0.9/v1.0.9.zip) = e8f8c94f59aa7f7df1b6bee883b776f66ce217344ee72d77bbdace2076065a1d
-SIZE (go/net_librespeed-cli/librespeed-cli-v1.0.9/v1.0.9.zip) = 30681
+TIMESTAMP = 1657306529
+SHA256 (go/net_librespeed-cli/librespeed-cli-v1.0.10/v1.0.10.mod) = 0564307c5ba5746b08372cf21d82f91a50af3a5aa5f463ec849c8e9cf7eadc1e
+SIZE (go/net_librespeed-cli/librespeed-cli-v1.0.10/v1.0.10.mod) = 624
+SHA256 (go/net_librespeed-cli/librespeed-cli-v1.0.10/v1.0.10.zip) = b8015d4d63ca2a0660255b85ec22a39c9d09386f784c6713316a120435ee4487
+SIZE (go/net_librespeed-cli/librespeed-cli-v1.0.10/v1.0.10.zip) = 31726

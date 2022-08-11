@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Mail-Message
 PORTVERSION=	3.012
 CATEGORIES=	mail perl5

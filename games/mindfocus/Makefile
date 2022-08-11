@@ -1,5 +1,3 @@
-# Created by: Sugimoto Sadahiro <ixtl@utmc.or.jp>
-
 PORTNAME=	mindfocus
 PORTVERSION=	0.88
 PORTREVISION=	2

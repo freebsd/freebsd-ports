@@ -1,5 +1,3 @@
-# Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-
 PORTNAME=	ruby-saml
 PORTVERSION=	1.13.0
 CATEGORIES=	security rubygems

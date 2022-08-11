@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	pysaml2
 PORTVERSION=	7.1.2
 CATEGORIES=	security devel python
@@ -43,6 +41,5 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=0:devel/py-importlib-r
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
-
 
 .include <bsd.port.post.mk>

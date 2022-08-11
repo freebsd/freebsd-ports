@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	HTML-Pager
 PORTVERSION=	0.03
 PORTREVISION=	1

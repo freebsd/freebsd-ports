@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	PPIx-Utilities
 PORTVERSION=	1.001000
 PORTREVISION=	1

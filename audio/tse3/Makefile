@@ -1,5 +1,3 @@
-# Created by: Mathew Kanner <mat@hak.cnd.mcgill.ca>
-
 PORTNAME=	tse3
 PORTVERSION=	0.3.1
 PORTREVISION=	2

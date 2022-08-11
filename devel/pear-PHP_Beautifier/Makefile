@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	PHP_Beautifier
 PORTVERSION=	0.1.15
 PORTREVISION=	1

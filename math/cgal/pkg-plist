@@ -3485,7 +3485,7 @@ lib/cmake/CGAL/process_dependencies.cmake
 lib/cmake/CGAL/run_cmd_redirection_cerr.cmake
 lib/cmake/CGAL/run_test_with_cin.cmake
 lib/cmake/CGAL/test_MPFI.cpp
-man/man1/cgal_create_cmake_script.1.gz
+share/man/man1/cgal_create_cmake_script.1.gz
 share/doc/CGAL/AUTHORS
 share/doc/CGAL/CHANGES.md
 share/doc/CGAL/LICENSE

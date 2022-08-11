@@ -1,5 +1,3 @@
-# Created by: Anish Mistry <amistry@am-productions.biz>
-
 PORTNAME=	List-Permutor
 PORTVERSION=	0.022
 PORTREVISION=	1

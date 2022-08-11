@@ -1,8 +1,6 @@
-# Created by: Sascha Klauder <sklauder@trimind.de>
-
 PORTNAME=	gogglesmm
 PORTVERSION=	1.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org

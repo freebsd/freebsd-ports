@@ -83,7 +83,6 @@
     SUBDIR += pisg
     SUBDIR += polari
     SUBDIR += pounce
-    SUBDIR += py-fishcrypt
     SUBDIR += py-irc
     SUBDIR += py-limnoria
     SUBDIR += quassel
@@ -108,7 +107,6 @@
     SUBDIR += thales
     SUBDIR += tircproxy
     SUBDIR += undernet-ircu
-    SUBDIR += unreal
     SUBDIR += weechat
     SUBDIR += weechat-otr
     SUBDIR += znc

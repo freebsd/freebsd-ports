@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Algorithm-Diff
 PORTVERSION=	1.1903
 CATEGORIES=	devel perl5

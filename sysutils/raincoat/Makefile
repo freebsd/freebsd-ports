@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@fxq.nl>
-
 PORTNAME=	raincoat
 PORTVERSION=	0.11
 PORTREVISION=	1

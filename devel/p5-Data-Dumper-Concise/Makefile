@@ -1,5 +1,3 @@
-# Created by: Christopher Key <cjk32@cam.ac.uk>
-
 PORTNAME=	Data-Dumper-Concise
 PORTVERSION=	2.023
 CATEGORIES=	devel perl5

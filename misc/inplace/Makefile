@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	inplace
 PORTVERSION=	1.2.3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ragel
 PORTVERSION=	6.10
 PORTREVISION=	1

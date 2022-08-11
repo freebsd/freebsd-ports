@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Scope-Upper
 PORTVERSION=	0.33
 CATEGORIES=	devel perl5

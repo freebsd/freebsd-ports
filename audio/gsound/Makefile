@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gsound
 PORTVERSION=	1.0.3
 CATEGORIES=	audio

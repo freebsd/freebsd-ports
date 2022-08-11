@@ -1,5 +1,3 @@
-# Created by: Sean Chittenden <seanc@FreeBSD.org>
-
 PORTNAME=	tla
 PORTVERSION=	1.3.5
 PORTREVISION=	1

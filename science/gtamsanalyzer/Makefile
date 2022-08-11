@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	gtamsanalyzer
 PORTVERSION=	0.42
 PORTREVISION=	11

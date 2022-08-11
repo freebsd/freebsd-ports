@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-FormValidator
 PORTVERSION=	0.094
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Aldis Berjoza <graudeejs@gmail.com>
-
 PORTNAME=	sql-workbench
 PORTVERSION=	127
 PORTEPOCH=	1

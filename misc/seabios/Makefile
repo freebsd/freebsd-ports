@@ -15,6 +15,7 @@ ONLY_FOR_ARCHS_REASON=	specific to x86
 USES=	gmake python:build
 
 MAKE_ARGS=	HOSTCC="${CC}" LD="${LD}" PYTHON="${PYTHON_CMD}"
+NO_ARCH=	yes
 USE_GCC=	yes:build
 USE_BINUTILS=	yes
 

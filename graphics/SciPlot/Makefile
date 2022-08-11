@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	SciPlot
 PORTVERSION=	1.36
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	ir
 DISTVERSION=	1.3.4
 PORTREVISION=	2

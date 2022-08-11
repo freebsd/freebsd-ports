@@ -1,3 +1,7 @@
 TIMESTAMP = 1630527073
 SHA256 (flask-restx-0.5.1.tar.gz) = 63c69a61999a34f1774eaccc6fc8c7f504b1aad7d56a8ec672264e52d9ac05f4
 SIZE (flask-restx-0.5.1.tar.gz) = 5282772
+SHA256 (82f7340ebb51.patch) = d0cc0bab25931aefa342f737f9fc26c834bf12bb5425fea9a99f16e32332610f
+SIZE (82f7340ebb51.patch) = 2819
+SHA256 (09e57b8af6ca.patch) = 6a9ca61f8726b921cb80b26c608c08c7e4106db68dbc80858dc889e326944cc0
+SIZE (09e57b8af6ca.patch) = 1050

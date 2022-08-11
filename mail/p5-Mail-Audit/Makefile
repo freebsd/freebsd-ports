@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Mail-Audit
 PORTVERSION=	2.228
 CATEGORIES=	mail perl5

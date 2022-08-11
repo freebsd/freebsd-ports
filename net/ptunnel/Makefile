@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	ptunnel
 PORTVERSION=	0.72
 PORTREVISION=	1

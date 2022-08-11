@@ -1,7 +1,5 @@
-# Created by: Clemens Zauner <czauner+ports@onlineloop.com>
-
 PORTNAME=	wbxml2
-PORTVERSION=	0.11.7
+PORTVERSION=	0.11.8
 DISTVERSIONPREFIX=	libwbxml-
 CATEGORIES=	textproc devel
 

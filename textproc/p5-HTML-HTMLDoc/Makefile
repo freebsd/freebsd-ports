@@ -1,5 +1,3 @@
-# Created by: Konstantin Menshikov <kostjnspb@yandex.ru>
-
 PORTNAME=	HTML-HTMLDoc
 PORTVERSION=	0.10
 PORTREVISION=	2

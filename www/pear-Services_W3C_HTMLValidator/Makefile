@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Services_W3C_HTMLValidator
 PORTVERSION=	1.0.0
 PORTEPOCH=	1

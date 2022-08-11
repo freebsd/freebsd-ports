@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <alex@kapranoff.ru>
-
 PORTNAME=	Test-Deep
 PORTVERSION=	1.130
 CATEGORIES=	devel perl5

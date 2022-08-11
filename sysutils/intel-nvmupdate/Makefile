@@ -1,5 +1,3 @@
-# Created by: Sergey Kozlov <sergey.kozlov@intel.com>
-
 PORTNAME=	nvmupdate
 DISTVERSION=	8_00
 CATEGORIES=	sysutils

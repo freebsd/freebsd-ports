@@ -1,5 +1,3 @@
-# Created by: Dereckson <dereckson@gmail.com>
-
 PORTNAME=	malbolge
 PORTVERSION=	0.1.1
 CATEGORIES=	lang

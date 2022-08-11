@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	fasteners
 PORTVERSION=	0.17.3
 CATEGORIES=	devel python

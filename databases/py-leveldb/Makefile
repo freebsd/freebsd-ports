@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	leveldb
 PORTVERSION=	0.201
 CATEGORIES=	databases python

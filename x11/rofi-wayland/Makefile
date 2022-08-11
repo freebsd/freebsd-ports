@@ -15,3 +15,4 @@ GH_ACCOUNT=	lbonn
 CONFLICTS_INSTALL=	${PORTNAME}
 
 .include "${MASTERDIR}/Makefile"
+CATEGORIES+=	wayland

@@ -1,5 +1,3 @@
-# Created by: Xiaoding Liu <xiaoding+freebsd@xiaoding.org>
-
 PORTNAME=	shadowsocks-libev
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.5

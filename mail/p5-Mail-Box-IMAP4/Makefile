@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Mail-Box-IMAP4
 PORTVERSION=	3.007
 CATEGORIES=	mail perl5

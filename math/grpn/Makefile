@@ -1,5 +1,3 @@
-# Created by: Chris D. Faulhaber <jedgar@fxp.org>
-
 PORTNAME=	grpn
 PORTVERSION=	1.5.2
 DISTVERSIONPREFIX=	v

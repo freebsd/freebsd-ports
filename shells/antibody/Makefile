@@ -1,9 +1,7 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	antibody
 PORTVERSION=	6.1.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	shells
 
 MAINTAINER=	ports@FreeBSD.org

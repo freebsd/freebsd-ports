@@ -1,5 +1,3 @@
-# Created by: Mita Yoshio <mita@FreeBSD.org>
-
 PORTNAME=	ghostscript
 PORTVERSION=	7.07
 PORTREVISION=	13

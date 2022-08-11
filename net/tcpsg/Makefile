@@ -1,11 +1,9 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	tcpsg
 PORTVERSION=	0.0.2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Simple TCP port forwarder
 
 OPTIONS_DEFINE=	DOCS

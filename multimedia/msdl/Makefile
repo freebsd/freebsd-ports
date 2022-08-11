@@ -1,5 +1,3 @@
-# Created by: Ashish Shukla <wahjava@gmail.com>
-
 PORTNAME=	msdl
 PORTVERSION=	1.2.7r2
 CATEGORIES=	multimedia

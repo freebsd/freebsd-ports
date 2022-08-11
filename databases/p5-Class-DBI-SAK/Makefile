@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Class-DBI-SAK
 PORTVERSION=	1.4
 PORTREVISION=	1

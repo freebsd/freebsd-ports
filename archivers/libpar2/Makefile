@@ -1,5 +1,3 @@
-# Created by: Jeff Burchell <toxic@doobie.com>
-
 PORTNAME=	libpar2
 PORTVERSION=	0.4
 PORTREVISION=	6

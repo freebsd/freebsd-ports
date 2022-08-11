@@ -109,10 +109,16 @@ static struct rtc_softc *
 rtc_attach(struct cdev *dev)
 {
 	struct rtc_softc *sc;
+/* Clang 13+ realises that "unit" below isn't actually used if we */
+/* aren't running with DEBUG set. The warning is treated as a     */
+/* fatal error by FreeBSD's kmod build system, so wrap its usage  */
+/* within DEBUG pre-processor conditionals. - Jamie Landeg-Jones  */
+#if DEBUG
 	int unit;
 
 	unit = dev2unit(dev);
 	DLog(Lenter, "%d %p", unit, dev);
+#endif /* DEBUG */
 	if (dev->si_drv1) {
 		DLog(Lexit, "old %p, %p", dev, dev->si_drv1);
 		return dev->si_drv1;

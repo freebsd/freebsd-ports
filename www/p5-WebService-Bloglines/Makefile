@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	WebService-Bloglines
 PORTVERSION=	0.12
 PORTREVISION=	1

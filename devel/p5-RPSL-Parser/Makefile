@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	RPSL-Parser
 PORTVERSION=	0.04000
 PORTREVISION=	2

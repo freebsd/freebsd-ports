@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	IO-Pager
 PORTVERSION=	2.10
 CATEGORIES=	devel perl5

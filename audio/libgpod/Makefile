@@ -1,5 +1,3 @@
-# Created by: Devon Ryan <dpryan@dpryan.com>
-
 PORTNAME=	libgpod
 PORTVERSION=	0.8.3
 PORTREVISION=	11

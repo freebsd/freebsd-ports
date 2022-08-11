@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	golddig
 PORTVERSION=	3.1
 PORTREVISION=	2

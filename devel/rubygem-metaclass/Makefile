@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	metaclass
 PORTVERSION=	0.0.4
 CATEGORIES=	devel rubygems

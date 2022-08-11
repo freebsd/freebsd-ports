@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libsmdev
 DISTVERSION=	alpha-20210418
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	zeep
 PORTVERSION=	4.1.0
 CATEGORIES=	net python

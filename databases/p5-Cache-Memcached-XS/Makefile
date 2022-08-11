@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Cache-Memcached-XS
 PORTVERSION=	0.01
 PORTREVISION=	3

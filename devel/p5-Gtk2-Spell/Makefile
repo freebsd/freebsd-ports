@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	Gtk2-Spell
 PORTVERSION=	1.04
 PORTREVISION=	3

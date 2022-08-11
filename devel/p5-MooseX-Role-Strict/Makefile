@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MooseX-Role-Strict
 PORTVERSION=	0.05
 PORTREVISION=	1

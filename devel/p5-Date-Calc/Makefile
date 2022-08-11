@@ -1,5 +1,3 @@
-# Created by: Brad Hendrickse <bradh@uunet.co.za>
-
 PORTNAME=	Date-Calc
 PORTVERSION=	6.4
 CATEGORIES=	devel perl5

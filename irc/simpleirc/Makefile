@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	simpleirc
 PORTVERSION=	1.2
 CATEGORIES=	irc

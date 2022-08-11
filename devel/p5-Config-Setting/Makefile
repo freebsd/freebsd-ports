@@ -1,5 +1,3 @@
-# Created by: petef@FreeBSD.org
-
 PORTNAME=	Config-Setting
 PORTVERSION=	0.04
 PORTREVISION=	2

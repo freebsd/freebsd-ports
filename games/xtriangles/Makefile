@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	xtriangles
 PORTVERSION=	5.5.2
 PORTREVISION=	2

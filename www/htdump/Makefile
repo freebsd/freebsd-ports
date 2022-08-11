@@ -1,5 +1,3 @@
-# Created by: Maxime Henrion (mux@FreeBSD.org)
-
 PORTNAME=	htdump
 PORTVERSION=	0.9y
 CATEGORIES=	www

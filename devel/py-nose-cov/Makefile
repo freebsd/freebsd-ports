@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	nose-cov
 PORTVERSION=	1.6
 CATEGORIES=	devel python

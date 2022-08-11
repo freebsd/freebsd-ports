@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	WWW-Baseball-NPB
 PORTVERSION=	0.03
 PORTREVISION=	1

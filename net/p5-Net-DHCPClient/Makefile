@@ -1,5 +1,3 @@
-# Created by: Sergey Matveychuk <sem@FreeBSD.org>
-
 PORTNAME=	Net-DHCPClient
 PORTVERSION=	1.0
 PORTREVISION=	1

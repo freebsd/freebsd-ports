@@ -1,5 +1,3 @@
-# Created by: 
-
 PORTNAME=	django-hierarkey
 PORTVERSION=	1.0.3
 CATEGORIES=	www python

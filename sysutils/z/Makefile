@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	z
 PORTVERSION=	1.11
 DISTVERSIONPREFIX=	v

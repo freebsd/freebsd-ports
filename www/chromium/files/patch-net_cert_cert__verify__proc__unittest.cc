@@ -1,4 +1,4 @@
---- net/cert/cert_verify_proc_unittest.cc.orig	2022-05-19 14:06:27 UTC
+--- net/cert/cert_verify_proc_unittest.cc.orig	2022-07-22 17:30:31 UTC
 +++ net/cert/cert_verify_proc_unittest.cc
 @@ -232,7 +232,7 @@ const std::vector<CertVerifyProcType> kAllCertVerifier
      CERT_VERIFY_PROC_MAC, CERT_VERIFY_PROC_BUILTIN

@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTREVISION=	0
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

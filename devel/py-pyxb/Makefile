@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	pyxb
 PORTVERSION=	1.2.6
 PORTREVISION=	1

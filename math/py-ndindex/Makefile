@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ndindex
 PORTVERSION=	1.6
 CATEGORIES=	math python

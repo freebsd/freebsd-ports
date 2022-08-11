@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <m.tsatsenko@gmail.com>
-
 PORTNAME=	structured_warnings
 PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems

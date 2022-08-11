@@ -1,5 +1,3 @@
-# Created by: Jeroen Schot <schot@a-eskwadraat.nl>
-
 PORTNAME=	dmenu
 DISTVERSION=	5.1
 CATEGORIES=	x11

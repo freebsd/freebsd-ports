@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-Schema-PopulateMore
 PORTVERSION=	0.19
 CATEGORIES=	databases perl5

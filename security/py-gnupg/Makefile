@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gnupg
 PORTVERSION=	3.1.1
 CATEGORIES=	security python

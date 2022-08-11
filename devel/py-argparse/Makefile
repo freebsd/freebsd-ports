@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-
 PORTNAME=	argparse
 PORTVERSION=	1.4.0
 CATEGORIES=	devel python

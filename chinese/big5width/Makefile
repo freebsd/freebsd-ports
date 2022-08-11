@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	big5width
 PORTVERSION=	1.0
 CATEGORIES=	chinese

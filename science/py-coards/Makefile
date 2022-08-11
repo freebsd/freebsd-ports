@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	coards
 PORTVERSION=	1.0.5
 PORTREVISION=	3

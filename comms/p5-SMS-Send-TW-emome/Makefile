@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	SMS-Send-TW-emome
 PORTVERSION=	0.04
 PORTREVISION=	1

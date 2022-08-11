@@ -1,5 +1,3 @@
-# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-
 PORTNAME=	kmfl-varamozhi-malayalam
 PORTVERSION=	1.1.1
 PORTREVISION=	5

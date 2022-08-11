@@ -1,7 +1,6 @@
-# Created by: ijliao
-
 PORTNAME=	mpb
 DISTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/NanoComp/mpb/releases/download/v${DISTVERSION}/
 

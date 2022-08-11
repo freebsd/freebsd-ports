@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	repng2jpeg
 PORTVERSION=	1.0.5
 PORTREVISION=	2

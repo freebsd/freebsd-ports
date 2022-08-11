@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Font-TTFMetrics
 PORTVERSION=	0.1
 PORTREVISION=	1

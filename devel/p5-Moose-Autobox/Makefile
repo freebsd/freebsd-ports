@@ -1,5 +1,3 @@
-# Created by: Bill Brinzer <bill.brinzer@gmail.com>
-
 PORTNAME=	Moose-Autobox
 PORTVERSION=	0.15
 PORTREVISION=	1

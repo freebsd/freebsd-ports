@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	xstream
 PORTVERSION=	1.4.3
 CATEGORIES=	textproc java

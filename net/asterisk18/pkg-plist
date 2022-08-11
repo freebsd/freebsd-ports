@@ -1,5 +1,6 @@
 @sample %%ETCDIR%%/acl.conf.sample
 @sample %%ETCDIR%%/adsi.conf.sample
+@sample %%ETCDIR%%/aeap.conf.sample
 @sample %%ETCDIR%%/agents.conf.sample
 @sample %%ETCDIR%%/alarmreceiver.conf.sample
 @sample %%ETCDIR%%/alsa.conf.sample
@@ -257,6 +258,8 @@ include/asterisk/poll-compat.h
 include/asterisk/presencestate.h
 include/asterisk/privacy.h
 include/asterisk/pval.h
+include/asterisk/res_aeap.h
+include/asterisk/res_aeap_message.h
 include/asterisk/res_audiosocket.h
 include/asterisk/res_fax.h
 include/asterisk/res_hep.h

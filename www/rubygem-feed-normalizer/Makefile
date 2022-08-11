@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	feed-normalizer
 PORTVERSION=	1.5.2
 PORTREVISION=	1

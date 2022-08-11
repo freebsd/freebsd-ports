@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	xlhtml
 PORTVERSION=	0.5
 PORTREVISION=	5

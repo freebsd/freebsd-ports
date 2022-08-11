@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <dhn@FreeBSD.org>
-
 PORTNAME=	XML-Fast
 PORTVERSION=	0.17
 CATEGORIES=	net

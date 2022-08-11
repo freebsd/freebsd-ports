@@ -1,6 +1,6 @@
 bin/opendungeons
 %%ETCDIR%%/plugins.cfg
-man/man6/opendungeons.6.gz
+share/man/man6/opendungeons.6.gz
 share/appdata/opendungeons.appdata.xml
 share/applications/opendungeons.desktop
 %%DOCSDIR%%/AUTHORS

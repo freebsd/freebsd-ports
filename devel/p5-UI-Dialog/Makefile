@@ -1,5 +1,3 @@
-# Created by: Dmitry Karasik <dmitry@karasik.eu.org>
-
 PORTNAME=	UI-Dialog
 PORTVERSION=	1.21
 CATEGORIES=	devel perl5

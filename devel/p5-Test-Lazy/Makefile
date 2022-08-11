@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Test-Lazy
 PORTVERSION=	0.061
 PORTREVISION=	1

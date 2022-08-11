@@ -1,5 +1,3 @@
-# Created by: Andrey Cherkashin <andoriyu@gmail.com>
-
 PORTNAME=	reptyr
 PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	reptyr-

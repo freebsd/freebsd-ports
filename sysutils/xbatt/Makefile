@@ -1,5 +1,3 @@
-# Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-
 PORTNAME=	xbatt
 PORTVERSION=	1.2.1
 PORTREVISION=	4

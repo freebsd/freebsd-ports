@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@FreeBSD.org>
-
 PORTNAME=	uriparser
 DISTVERSION=	0.9.6
 CATEGORIES=	net

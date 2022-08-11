@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	easygit
 PORTVERSION=	0.98
 CATEGORIES=	devel

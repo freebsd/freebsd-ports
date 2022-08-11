@@ -1,0 +1,4 @@
+Functions for viewing 2-D and 3-D data, including perspective plots, slice
+plots, surface plots, scatter plots, etc. Includes data sets from oceanography.
+
+WWW: https://cran.r-project.org/package=plot3D

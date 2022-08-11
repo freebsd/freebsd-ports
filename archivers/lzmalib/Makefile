@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	lzmalib
 PORTVERSION=	0.0.1
 PORTREVISION=	1

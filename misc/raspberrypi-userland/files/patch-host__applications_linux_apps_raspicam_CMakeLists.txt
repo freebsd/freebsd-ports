@@ -1,0 +1,11 @@
+--- host_applications/linux/apps/raspicam/CMakeLists.txt.orig	2016-10-24 19:59:54 UTC
++++ host_applications/linux/apps/raspicam/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ 
+ # raspistill/raspivid/raspiyuv
+ 
+-SET(COMPILE_DEFINITIONS -Werror)
++SET(COMPILE_DEFINITIONS)
+ 
+ include_directories(${PROJECT_SOURCE_DIR}/host_applications/linux/libs/bcm_host/include)
+ include_directories(${PROJECT_SOURCE_DIR}/host_applications/linux/apps/raspicam/)

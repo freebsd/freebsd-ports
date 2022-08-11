@@ -1,5 +1,3 @@
-# Created by: demon@FreeBSD.org
-
 PORTNAME=	glm
 PORTVERSION=	0.9.9.8
 PORTEPOCH=	1

@@ -1,0 +1,19 @@
+--- samples/source/Makefile.in.orig	2022-07-29 09:33:18 UTC
++++ samples/source/Makefile.in
+@@ -129,7 +129,6 @@ noinst_PROGRAMS = xmpcoverage$(EXEEXT) xmpfilescoverag
+ 	dumpxmp$(EXEEXT) dumpmainxmp$(EXEEXT) customschema$(EXEEXT) \
+ 	modifyingxmp$(EXEEXT) readingxmp$(EXEEXT) \
+ 	xmpcommandtool$(EXEEXT)
+-@UNIX_ENV_TRUE@am__append_1 = -lrt
+ subdir = samples/source
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_append_compile_flags.m4 \
+@@ -438,7 +437,7 @@ XMPLIBS = $(top_builddir)/XMPCore/source/libXMPCore.la
+ XMPLIBS = $(top_builddir)/XMPCore/source/libXMPCore.la \
+ 	$(top_builddir)/XMPFiles/source/libXMPFiles.la \
+ 	$(top_builddir)/source/libxmpcommon.la -lexpat -lz \
+-	$(top_builddir)/third-party/zuid/interfaces/libmd5.la -ldl \
++	$(top_builddir)/third-party/zuid/interfaces/libmd5.la \
+ 	$(am__append_1)
+ noinst_LTLIBRARIES = libsamplescommon.la
+ libsamplescommon_la_SOURCES = common/DumpFile.cpp common/DumpFile.h \

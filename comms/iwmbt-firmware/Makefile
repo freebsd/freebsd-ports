@@ -1,5 +1,3 @@
-# Created by: Vladimir Kondratyev <wulf@FreeBSD.org>
-
 PORTNAME=	iwmbt-firmware
 PORTVERSION=	20210315
 DEB_REVISION=	3

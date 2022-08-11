@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Net-FS-Gmail
 PORTVERSION=	0.2
 PORTREVISION=	1

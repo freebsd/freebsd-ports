@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Url
 PORTVERSION=	2.2.6
 CATEGORIES=	net www pear

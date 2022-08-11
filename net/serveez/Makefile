@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	serveez
 PORTVERSION=	0.2.2
 PORTREVISION=	3

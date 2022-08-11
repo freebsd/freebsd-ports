@@ -1,8 +1,6 @@
-# Created by: bart <lbartoletti@FreeBSD.org>
-
 PORTNAME=	pdal
 DISTVERSION=	2.3.0
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	math databases graphics
 MASTER_SITES=	https://github.com/PDAL/PDAL/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -59,7 +57,7 @@ BASH_RUN_DEPENDS=	bash:shells/bash
 
 ICEBRIDGE_CMAKE_BOOL=	BUILD_PLUGIN_ICEBRIDGE
 ICEBRIDGE_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
-			libsz.so:science/szip
+			libsz.so:science/libaec
 
 LAZPERF_CMAKE_BOOL=	WITH_LAZPERF
 LAZPERF_LIB_DEPENDS=	liblazperf.so:archivers/lazperf

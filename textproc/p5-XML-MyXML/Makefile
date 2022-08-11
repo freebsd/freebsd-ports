@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	XML-MyXML
 PORTVERSION=	1.08
 PORTEPOCH=	1

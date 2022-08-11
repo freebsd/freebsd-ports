@@ -1,5 +1,3 @@
-# Created by: lofi@FreeBSD.org
-
 PORTNAME=	libpaper
 DISTVERSION=	1.1.28
 CATEGORIES=	print

@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	gflags
 PORTVERSION=	2.2.2
 PORTREVISION=	2

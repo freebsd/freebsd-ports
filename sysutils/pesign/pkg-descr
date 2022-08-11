@@ -1,4 +1,0 @@
-Signing tool for PE-COFF binaries, hopefully at least vaguely compliant
-with the PE and Authenticode specifications.
-
-WWW: https://github.com/rhinstaller/pesign

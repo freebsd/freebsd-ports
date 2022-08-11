@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	mxml
 DISTVERSION=	3.1
 CATEGORIES=	textproc

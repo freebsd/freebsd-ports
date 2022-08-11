@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	CGI-Untaint
 PORTVERSION=	1.26
 PORTREVISION=	2

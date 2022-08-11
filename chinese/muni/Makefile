@@ -1,5 +1,3 @@
-# Created by: G. Adam Stanislav <adam@whizkidtech.net>
-
 PORTNAME=	muni
 PORTVERSION=	1.0
 CATEGORIES=	chinese

@@ -2,15 +2,8 @@ bin/ephoto
 lib/ephoto/ephoto_thumbnail
 share/applications/ephoto.desktop
 %%DATADIR%%/AUTHORS
-%%DATADIR%%/COPYING
 %%DATADIR%%/images/ephoto.png
 %%DATADIR%%/images/grid.png
 %%DATADIR%%/images/single.png
 %%DATADIR%%/themes/ephoto.edj
-%%NLS%%share/locale/cs/LC_MESSAGES/ephoto.mo
-%%NLS%%share/locale/de/LC_MESSAGES/ephoto.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/ephoto.mo
-%%NLS%%share/locale/it/LC_MESSAGES/ephoto.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/ephoto.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/ephoto.mo
-share/pixmaps/ephoto.png
+share/icons/ephoto.png

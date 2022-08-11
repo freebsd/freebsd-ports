@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	goose
 PORTVERSION=	0.5
 PORTREVISION=	3

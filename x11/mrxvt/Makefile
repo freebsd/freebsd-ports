@@ -1,5 +1,3 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	mrxvt
 PORTVERSION=	0.4.2
 PORTREVISION=	10

@@ -1,5 +1,3 @@
-# Created by: Dejan Lesjak <lesi@FreeBSD.org>
-
 PORTNAME=	xtrans
 PORTVERSION=	1.4.0
 CATEGORIES=	x11

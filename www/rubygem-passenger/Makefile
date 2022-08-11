@@ -1,5 +1,3 @@
-# Created by: Jacob Atzen <jatzen@gmail.com>
-
 PORTNAME=	passenger
 PORTVERSION=	6.0.12
 PORTREVISION=	2

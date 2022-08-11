@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@FreeBSD.org>
-
 PORTNAME=	rawgl
 PORTVERSION=	g20180321
 PORTREVISION=	1

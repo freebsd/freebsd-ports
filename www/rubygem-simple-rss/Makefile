@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	simple-rss
 PORTVERSION=	1.3.1
 CATEGORIES=	www textproc rubygems

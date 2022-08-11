@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	nwreckdum
 PORTVERSION=	0.0.6
 PORTREVISION=	2

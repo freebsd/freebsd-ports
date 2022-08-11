@@ -1,5 +1,3 @@
-# Created by: Green Dog <fiziologus@gmail.com>
-
 PORTNAME=	fifechan
 PORTVERSION=	0.1.5
 PORTREVISION=	1

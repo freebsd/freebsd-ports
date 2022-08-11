@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cert-human
 PORTVERSION=	1.0.7
 CATEGORIES=	security python

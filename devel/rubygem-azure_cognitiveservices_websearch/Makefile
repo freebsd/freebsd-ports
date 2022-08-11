@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_cognitiveservices_websearch
 PORTVERSION=	0.18.2
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Ashish Shukla <wahjava@gmail.com>
-
 PORTNAME=	inconsolata-ttf
 PORTVERSION=	2.001
 PORTREVISION=	1

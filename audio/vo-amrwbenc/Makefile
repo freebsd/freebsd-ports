@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	vo-amrwbenc
 PORTVERSION=	0.1.3
 PORTREVISION=	1

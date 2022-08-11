@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-
 PORTNAME=	softflowd
 PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	softflowd-

@@ -1,10 +1,7 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Net_IPv6
-DISTVERSION=	1.3.0.b2
-PORTREVISION=	2
+DISTVERSION=	1.3.0.b4
 CATEGORIES=	net pear
-DISTNAME=	${PORTNAME}-1.3.0b2
+DISTNAME=	${PORTNAME}-1.3.0b4
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Check and validate IPv6 addresses

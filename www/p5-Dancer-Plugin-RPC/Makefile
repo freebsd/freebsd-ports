@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	Dancer-Plugin-RPC
 PORTVERSION=	1.10
 CATEGORIES=	www perl5

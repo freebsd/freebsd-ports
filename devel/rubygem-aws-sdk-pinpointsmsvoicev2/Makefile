@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-pinpointsmsvoicev2
 PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems

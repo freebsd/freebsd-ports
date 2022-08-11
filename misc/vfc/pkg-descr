@@ -1,0 +1,9 @@
+Vertex Format Convert (VFC) is a simple library and utility for
+converting vertex formats. This is intended to aid in converting from
+raw model formats, such as from interchange formats (e.g. OBJ,
+COLLADA), into formats that are suitable for usage at runtime. This
+may include interleaving vertex data, re-mapping indices (e.g. from
+separate indices to a single combined index), and converting to packed
+formats.
+
+WWW: https://github.com/akb825/VertexFormatConvert

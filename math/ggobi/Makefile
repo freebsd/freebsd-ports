@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	ggobi
 PORTVERSION=	2.1.11
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Stephen Roome <steve@pepcross.com>
-
 PORTNAME=	xglurbules
 PORTVERSION=	3.3
 PORTREVISION=	1

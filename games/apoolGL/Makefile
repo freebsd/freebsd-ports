@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-
 PORTNAME=	apoolGL
 PORTVERSION=	0.99.22
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	ptoc
 PORTVERSION=	3.58
 PORTREVISION=	1

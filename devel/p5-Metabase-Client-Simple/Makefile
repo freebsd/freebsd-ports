@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Metabase-Client-Simple
 PORTVERSION=	0.012
 CATEGORIES=	devel perl5

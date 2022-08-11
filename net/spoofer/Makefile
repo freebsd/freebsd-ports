@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	spoofer
 DISTVERSION=	1.4.7
 PORTREVISION=	5

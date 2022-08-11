@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	NetAddr-MAC
 PORTVERSION=	0.97
 CATEGORIES=	net perl5

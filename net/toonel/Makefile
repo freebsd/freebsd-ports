@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	toonel
 PORTVERSION=	0.0.50.50
 PORTREVISION=	1

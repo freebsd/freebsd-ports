@@ -1,0 +1,27 @@
+Reference:	https://cgit.freebsd.org/ports/commit/?id=f08b67611f0b19c0ee8d9053ee4d22e09b03f2b1
+
+--- aws-crt-ffi/crt/aws-lc/CMakeLists.txt.orig	2022-07-30 03:57:26 UTC
++++ aws-crt-ffi/crt/aws-lc/CMakeLists.txt
+@@ -623,7 +623,7 @@ elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^arm*")
+ elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "mips")
+   # Just to avoid the “unknown processor” error.
+   set(ARCH "generic")
+-elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "ppc64le")
++elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "powerpc64le|ppc64le")
+   set(ARCH "ppc64le")
+ else()
+   message(FATAL_ERROR "Unknown processor:" ${CMAKE_SYSTEM_PROCESSOR})
+--- aws-crt-ffi/crt/aws-lc/crypto/fipsmodule/cpucap/cpu_ppc64le.c.orig	2022-07-30 03:57:26 UTC
++++ aws-crt-ffi/crt/aws-lc/crypto/fipsmodule/cpucap/cpu_ppc64le.c
+@@ -25,7 +25,11 @@
+ #endif
+ 
+ void OPENSSL_cpuid_setup(void) {
++#if defined(__linux__)
+   OPENSSL_ppc64le_hwcap2 = getauxval(AT_HWCAP2);
++#elif defined(__FreeBSD__)
++  elf_aux_info(AT_HWCAP2, &OPENSSL_ppc64le_hwcap2, sizeof(OPENSSL_ppc64le_hwcap2));
++#endif
+ }
+ 
+ int CRYPTO_is_PPC64LE_vcrypto_capable(void) {

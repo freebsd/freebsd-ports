@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ijson
 PORTVERSION=	3.1.4
 CATEGORIES=	devel python

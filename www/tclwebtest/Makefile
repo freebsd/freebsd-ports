@@ -1,5 +1,3 @@
-# Created by: Aldert Nooitgedagt
-
 PORTNAME=	tclwebtest
 PORTVERSION=	1.0
 PORTREVISION=	3

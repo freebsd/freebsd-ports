@@ -1,5 +1,3 @@
-# Created by: alan <Alan@Wave2.org>
-
 PORTNAME=	MooseX-Attribute-ENV
 PORTVERSION=	0.02
 PORTREVISION=	2

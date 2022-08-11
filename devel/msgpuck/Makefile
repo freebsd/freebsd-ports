@@ -1,9 +1,9 @@
 PORTNAME=	msgpuck
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	balaev@tarantool.org
 COMMENT=	Lightweight MessagePack library
 
 LICENSE=	BSD2CLAUSE
@@ -17,6 +17,6 @@ CPE_VENDOR=	tarantool
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tarantool
-GH_TAGNAME=	06e6308
+GH_TAGNAME=	234f305
 
 .include <bsd.port.mk>

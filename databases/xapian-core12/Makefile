@@ -1,5 +1,3 @@
-# Created by: J.F. Dockes
-
 PORTNAME=	xapian-core
 PORTVERSION=	1.2.25
 PORTEPOCH=	1
@@ -22,7 +20,7 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-CONFLICTS_INSTALL=	xapian-core xapian-core10
+CONFLICTS_INSTALL=	xapian-core # include/xapian.h
 
 PORTSCOUT=	limitw:1,even
 

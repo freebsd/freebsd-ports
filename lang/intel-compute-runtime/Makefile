@@ -1,5 +1,5 @@
 PORTNAME=	compute-runtime
-DISTVERSION=	22.16.22992
+DISTVERSION=	22.24.23453
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
 LIB_DEPENDS=	libigc.so:devel/intel-graphics-compiler@${FLAVOR} \
 		libigdgmm.so:multimedia/gmmlib
 
-FLAVORS=	${12 11:L:S/^/llvm/}
+FLAVORS=	${14 13 12 11:L:S/^/llvm/}
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
 

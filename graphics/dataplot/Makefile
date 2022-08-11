@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni
-
 PORTNAME=	dataplot
 DISTVERSION=	20200619
 CATEGORIES=	graphics

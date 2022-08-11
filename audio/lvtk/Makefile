@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	lvtk
 DISTVERSION=	2.0.0rc1-14
 DISTVERSIONSUFFIX=	-g1028f69

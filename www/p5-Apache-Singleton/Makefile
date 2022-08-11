@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	Apache-Singleton
 PORTVERSION=	0.17
 CATEGORIES=	www devel perl5

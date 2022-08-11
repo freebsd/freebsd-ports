@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	zita-convolver
 DISTVERSION=	4.0.3
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Alexey Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	mysqlbackup
 PORTVERSION=	2.8
 CATEGORIES=	databases

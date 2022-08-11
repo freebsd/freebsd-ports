@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	tcpwatch
 PORTVERSION=	1.3
 PORTREVISION=	4

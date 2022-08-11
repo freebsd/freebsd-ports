@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	lha
 PORTVERSION=	1.14i
 PORTREVISION=	8

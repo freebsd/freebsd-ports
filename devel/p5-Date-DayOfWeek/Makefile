@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Date-DayOfWeek
 PORTVERSION=	1.22
 PORTREVISION=	1

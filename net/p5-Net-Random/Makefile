@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Net-Random
 PORTVERSION=	2.32
 CATEGORIES=	net perl5

@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	vdesk
 PORTVERSION=	1.2
 PORTREVISION=	4

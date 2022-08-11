@@ -1,5 +1,3 @@
-# Created by: Jonathan Weiss (<jw@innerewut.de>)
-
 PORTNAME=	rake
 PORTVERSION=	13.0.6
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	galaxis
 PORTVERSION=	1.10
 CATEGORIES=	games

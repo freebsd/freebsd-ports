@@ -1,9 +1,7 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	tasks
 PORTVERSION=	0.14.4
-CATEGORIES=	www
 DISTVERSIONPREFIX=	v
+CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -19,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=20:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=81
+IGNORE_WITH_PHP=	82
 NO_BUILD=	yes
 NO_ARCH=	yes
 

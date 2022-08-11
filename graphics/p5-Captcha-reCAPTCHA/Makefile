@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Captcha-reCAPTCHA
 PORTVERSION=	0.99
 CATEGORIES=	graphics perl5

@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	safecat
 PORTVERSION=	1.13
 CATEGORIES=	sysutils mail

@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	gitlab-license_finder
 PORTVERSION=	6.14.2.1
 CATEGORIES=	devel rubygems

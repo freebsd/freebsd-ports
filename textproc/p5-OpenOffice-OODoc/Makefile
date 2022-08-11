@@ -1,5 +1,3 @@
-# Created by: meyser@xenet.de
-
 PORTNAME=	OpenOffice-OODoc
 PORTVERSION=	2.125
 PORTREVISION=	1

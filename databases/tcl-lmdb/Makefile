@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	tcl-lmdb
 PORTVERSION=	0.4.2
 CATEGORIES=	databases

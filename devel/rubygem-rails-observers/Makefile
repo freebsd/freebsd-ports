@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rails-observers
 PORTVERSION=	0.1.5
 CATEGORIES=	devel rubygems

@@ -1,10 +1,12 @@
-# Created by: Kay Lehmann <kay_lehmann@web.de>
-
 PORTNAME=	labplot
 DISTVERSION=	2.8.2
-PORTREVISION=	13
+PORTREVISION=	20
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
+
+PATCH_SITES=	https://invent.kde.org/education/labplot/-/commit/
+PATCHFILES=	375786ca124a1a6773c609236f8341890f23e1d8.diff:-p1 \
+		9e77b593030fdae0fbbad113415483b3ca51a654.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Data plotting and function analysis tool by KDE
@@ -15,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		liblz4.so:archivers/liblz4 \
 		libspectre.so:print/libspectre \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		bison cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 \
 		shared-mime-info tar:xz

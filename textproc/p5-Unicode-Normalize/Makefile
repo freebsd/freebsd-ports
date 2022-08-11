@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Unicode-Normalize
 PORTVERSION=	1.26
 CATEGORIES=	textproc perl5

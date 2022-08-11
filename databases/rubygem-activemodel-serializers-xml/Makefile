@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	activemodel-serializers-xml
 PORTVERSION=	1.0.2
 CATEGORIES=	databases rubygems

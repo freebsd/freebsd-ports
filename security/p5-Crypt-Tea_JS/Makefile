@@ -1,5 +1,3 @@
-# Created by: adamw
-
 PORTNAME=	Crypt-Tea_JS
 PORTVERSION=	2.23
 PORTREVISION=	3

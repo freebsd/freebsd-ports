@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	videogen
 PORTVERSION=	0.33
 PORTREVISION=	1

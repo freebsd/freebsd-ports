@@ -1,5 +1,3 @@
-# Created by: kuriyama
-
 PORTNAME=	Search-Namazu
 PORTVERSION=	0.96
 PORTREVISION=	5

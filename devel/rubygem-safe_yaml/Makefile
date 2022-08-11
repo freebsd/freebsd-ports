@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	safe_yaml
 PORTVERSION=	1.0.5
 CATEGORIES=	devel rubygems

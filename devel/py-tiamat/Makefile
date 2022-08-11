@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarev <krion@FreeBSD.org>
-
 PORTNAME=	tiamat
 PORTVERSION=	7.10.3
 CATEGORIES=	devel python

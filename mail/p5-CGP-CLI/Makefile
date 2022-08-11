@@ -1,5 +1,3 @@
-# Created by: Alexander Kriventsov <avk@vl.ru>
-
 PORTNAME=	CGP-CLI
 PORTVERSION=	2.7.5
 PORTREVISION=	1

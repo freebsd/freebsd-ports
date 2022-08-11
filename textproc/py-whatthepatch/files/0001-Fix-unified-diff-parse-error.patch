@@ -1,0 +1,144 @@
+From 4d6629d4617fa94ee907145c00dcb6b7852f674e Mon Sep 17 00:00:00 2001
+From: Kai Zhang <kylerzhang11@gmail.com>
+Date: Thu, 4 Feb 2021 12:01:44 +0800
+Subject: [PATCH 1/2] Fix unified diff parse error
+
+
+diff --git a/tests/casefiles/abc b/tests/casefiles/abc
+new file mode 100644
+index 0000000..5b4d7c6
+--- /dev/null
++++ b/tests/casefiles/abc
+@@ -0,0 +1 @@
++The Nameless is the origin of Heaven and Earth;
+diff --git a/tests/casefiles/diff-unified2.diff b/tests/casefiles/diff-unified2.diff
+new file mode 100644
+index 0000000..168410b
+--- /dev/null
++++ b/tests/casefiles/diff-unified2.diff
+@@ -0,0 +1,5 @@
++--- abc	2013-01-05 16:56:19.000000000 -0600
+++++ efg	2013-01-05 16:56:35.000000000 -0600
++@@ -1 +1,2 @@
++ The Nameless is the origin of Heaven and Earth;
+++The named is the mother of all things.
+diff --git a/tests/casefiles/efg b/tests/casefiles/efg
+new file mode 100644
+index 0000000..9e0843b
+--- /dev/null
++++ b/tests/casefiles/efg
+@@ -0,0 +1,2 @@
++The Nameless is the origin of Heaven and Earth;
++The named is the mother of all things.
+diff --git a/tests/test_apply.py b/tests/test_apply.py
+index 0f94d2a..38a39db 100644
+--- a/tests/test_apply.py
++++ b/tests/test_apply.py
+@@ -28,6 +28,12 @@ class ApplyTestSuite(unittest.TestCase):
+         with open("tests/casefiles/tzu") as f:
+             self.tzu = f.read().splitlines()
+ 
++        with open("tests/casefiles/abc") as f:
++            self.abc = f.read().splitlines()
++
++        with open("tests/casefiles/efg") as f:
++            self.efg = f.read().splitlines()
++
+     def test_truth(self):
+         self.assertEqual(type(self.lao), list)
+         self.assertEqual(type(self.tzu), list)
+@@ -55,6 +61,13 @@ class ApplyTestSuite(unittest.TestCase):
+         self.assertEqual(_apply(self.lao, diff_text), self.tzu)
+         self.assertEqual(_apply_r(self.tzu, diff_text), self.lao)
+ 
++    def test_diff_unified2(self):
++        with open("tests/casefiles/diff-unified2.diff") as f:
++            diff_text = f.read()
++
++        self.assertEqual(_apply(self.abc, diff_text), self.efg)
++        self.assertEqual(_apply_r(self.efg, diff_text), self.abc)
++
+     def test_diff_unified_bad(self):
+         with open("tests/casefiles/diff-unified-bad.diff") as f:
+             diff_text = f.read()
+@@ -129,6 +142,22 @@ class ApplyTestSuite(unittest.TestCase):
+         with pytest.raises(exceptions.ApplyException):
+             _apply([""] + self.lao, diff_text, use_patch=True)
+ 
++    def test_diff_unified2_patchutil(self):
++        with open("tests/casefiles/diff-unified2.diff") as f:
++            diff_text = f.read()
++
++        if not which("patch"):
++            raise SkipTest()
++
++        self.assertEqual(_apply(self.abc, diff_text, use_patch=True),
++                         (self.efg, None))
++        self.assertEqual(_apply(self.abc, diff_text, use_patch=True),
++                         (_apply(self.abc, diff_text), None))
++        self.assertEqual(_apply_r(self.efg, diff_text, use_patch=True),
++                         (self.abc, None))
++        self.assertEqual(_apply_r(self.efg, diff_text, use_patch=True),
++                         (_apply_r(self.efg, diff_text), None))
++
+     def test_diff_rcs(self):
+         with open("tests/casefiles/diff-rcs.diff") as f:
+             diff_text = f.read()
+diff --git a/tests/test_patch.py b/tests/test_patch.py
+index b50cd00..bd4b961 100644
+--- a/tests/test_patch.py
++++ b/tests/test_patch.py
+@@ -857,6 +857,34 @@ class PatchTestSuite(unittest.TestCase):
+         results_main = next(wtp.patch.parse_patch(text))
+         self.assert_diffs_equal(results_main, expected_main)
+ 
++    def test_unified2_diff(self):
++        with open(datapath("diff-unified2.diff")) as f:
++            text = f.read()
++
++        # off with your head!
++        text_diff = "\n".join(text.splitlines()[2:]) + "\n"
++
++        expected = [
++            (None, 2, "The named is the mother of all things."),
++        ]
++
++        results = list(wtp.patch.parse_unified_diff(text_diff))
++        self.assert_diffs_equal(results, expected)
++
++        expected_main = diffobj(
++            header=headerobj(
++                index_path=None,
++                old_path="abc",
++                old_version="2013-01-05 16:56:19.000000000 -0600",
++                new_path="efg",
++                new_version="2013-01-05 16:56:35.000000000 -0600",
++            ),
++            changes=expected,
++            text=text,
++        )
++        results_main = next(wtp.patch.parse_patch(text))
++        self.assert_diffs_equal(results_main, expected_main)
++
+     def test_diff_unified_with_does_not_include_extra_lines(self):
+         with open("tests/casefiles/diff-unified-blah.diff") as f:
+             text = f.read()
+diff --git a/whatthepatch/patch.py b/whatthepatch/patch.py
+index 9b592a2..3d58df6 100644
+--- a/whatthepatch/patch.py
++++ b/whatthepatch/patch.py
+@@ -622,8 +622,9 @@ def parse_unified_diff(text):
+                 elif kind == "+" and (i != new_len or i == 0):
+                     changes.append(Change(None, new + i, line, hunk_n))
+                     i += 1
+-                elif kind == " " and r != old_len and i != new_len:
+-                    changes.append(Change(old + r, new + i, line, hunk_n))
++                elif kind == " ":
++                    if r != old_len and i != new_len:
++                        changes.append(Change(old + r, new + i, line, hunk_n))
+                     r += 1
+                     i += 1
+ 
+-- 
+2.37.0
+

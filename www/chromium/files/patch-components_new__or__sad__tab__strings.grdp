@@ -1,11 +1,11 @@
---- components/new_or_sad_tab_strings.grdp.orig	2022-05-19 14:06:27 UTC
+--- components/new_or_sad_tab_strings.grdp.orig	2022-07-22 17:30:31 UTC
 +++ components/new_or_sad_tab_strings.grdp
 @@ -66,7 +66,7 @@
            Close other tabs or apps
          </message>
        </if>
--      <if expr="is_linux and not chromeos_ash and not chromeos_lacros">
-+      <if expr="is_posix and not chromeos_ash and not chromeos_lacros">
+-      <if expr="is_linux">
++      <if expr="is_posix">
          <message name="IDS_SAD_TAB_RELOAD_CLOSE_TABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other Chrome tabs or programs running on their computer.">
            Close other tabs or programs
          </message>
@@ -13,8 +13,8 @@
            Close other apps
          </message>
        </if>
--      <if expr="is_linux and not chromeos_ash and not chromeos_lacros">
-+      <if expr="is_posix and not chromeos_ash and not chromeos_lacros">
+-      <if expr="is_linux">
++      <if expr="is_posix">
          <message name="IDS_SAD_TAB_RELOAD_CLOSE_NOTABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other programs running on their computer (Linux).">
            Close other programs
          </message>

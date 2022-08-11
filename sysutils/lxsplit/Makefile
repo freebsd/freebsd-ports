@@ -1,5 +1,3 @@
-# Created by: kiesel@schlund.de
-
 PORTNAME=	lxsplit
 PORTVERSION=	0.2.4
 PORTREVISION=	3

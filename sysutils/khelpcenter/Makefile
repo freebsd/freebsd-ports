@@ -1,7 +1,6 @@
 PORTNAME=	khelpcenter
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
-CATEGORIES=	sysutils kde kde-applications # kde kde-applications-plasma
+CATEGORIES=	sysutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 application to show KDE application documentation

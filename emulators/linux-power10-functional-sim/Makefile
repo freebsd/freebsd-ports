@@ -1,5 +1,3 @@
-# Created by: Kevin Bowling <kbowling@FreeBSD.org>
-
 PORTNAME=	power10-functional-sim
 PORTVERSION=	1.1
 DISTVERSIONSUFFIX=	-0.rhel7

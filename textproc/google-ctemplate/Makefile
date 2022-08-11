@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ctemplate
 PORTVERSION=	2.4
 DISTVERSIONPREFIX=	${PORTNAME}-

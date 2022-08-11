@@ -5,5 +5,23 @@ Please read the installation instructions in:
 
 	%%DOCSDIR%%/README.FreeBSD
 EOM
+},
+{ type: remove
+  message: <<EOM
+The Flyspray program has been deleted but the bug tracking database has
+not been touched. To delete all the bug tracking information, execute the
+following commands:
+
+  # rm -rf /var/db/flyspray
+  # mysqladmin -u root -p drop flyspray
+
+or
+
+  # dropdb -U pgsql flyspray
+
+if you are using PostgreSQL backend
+
+Thanks for using Flyspray!
+EOM
 }
 ]

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	spktype01
 PORTVERSION=	1.0.0
 PORTREVISION=	1

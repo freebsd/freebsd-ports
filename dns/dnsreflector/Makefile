@@ -1,5 +1,3 @@
-# Created by: ismail.yenigul@endersys.com.tr
-
 PORTNAME=	dnsreflector
 PORTVERSION=	1.02
 CATEGORIES=	dns

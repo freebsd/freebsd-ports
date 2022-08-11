@@ -1,5 +1,3 @@
-# Created by: heiner Eichmann <h.eichmann@gmx.de>
-
 PORTNAME=	manu-gothica
 DISTVERSION=	0
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Diane Bruce <db@db.net>
-
 PORTNAME=	chu
 PORTVERSION=	0.1.29
 CATEGORIES=	comms hamradio

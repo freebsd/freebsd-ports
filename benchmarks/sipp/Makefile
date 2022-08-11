@@ -1,5 +1,3 @@
-# Created by: jesper@jdn.dk
-
 PORTNAME=	sipp
 PORTVERSION=	3.5.1
 PORTREVISION=	6

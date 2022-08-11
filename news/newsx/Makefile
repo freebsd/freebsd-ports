@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <tthomas@mail.dotcom.fr>
-
 PORTNAME=	newsx
 PORTVERSION=	1.6
 PORTREVISION=	4

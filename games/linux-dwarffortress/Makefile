@@ -1,5 +1,3 @@
-# Created by: Michael Williams <ports@mgwsoftware.com>
-
 PORTNAME=	dwarffortress
 DISTVERSION=	0.47.05
 CATEGORIES=	games linux

@@ -1,5 +1,3 @@
-# Created by: Domas Mituzas <midom@dammit.lt>
-
 PORTNAME=	freetds
 PORTVERSION=	1.3.40
 PORTEPOCH=	1
@@ -29,6 +27,8 @@ INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+CONFLICTS_INSTALL=	freetds # etc/freetds/freetds.conf.sample
 
 PORTSCOUT=	limit:^\d+\.\d+\.\d{3}$
 SUB_FILES=	pkg-message

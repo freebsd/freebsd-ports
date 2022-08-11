@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Time-Clock
 PORTVERSION=	1.03
 PORTREVISION=	1

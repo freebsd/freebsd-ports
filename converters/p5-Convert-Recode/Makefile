@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	Convert-Recode
 PORTVERSION=	1.04
 PORTREVISION=	2

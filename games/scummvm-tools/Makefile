@@ -1,14 +1,12 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	scummvm-tools
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	games emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Tools for use with the SCUMMVM game emulator
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	lame:audio/lame \

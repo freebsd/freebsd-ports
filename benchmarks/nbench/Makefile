@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov <andy@FreeBSD.org>
-
 PORTNAME=	nbench
 PORTVERSION=	2.2.3
 CATEGORIES=	benchmarks

@@ -1,5 +1,3 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	tclxml
 PORTVERSION=	3.3
 PORTREVISION=	5

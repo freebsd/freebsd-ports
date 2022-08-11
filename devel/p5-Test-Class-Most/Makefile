@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
-
 PORTNAME=	Test-Class-Most
 PORTVERSION=	0.08
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	xrubik
 PORTVERSION=	5.5.2
 PORTREVISION=	1

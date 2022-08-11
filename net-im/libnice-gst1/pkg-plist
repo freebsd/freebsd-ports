@@ -20,6 +20,6 @@
 lib/gstreamer-1.0/libgstnice.so
 @comment lib/libnice.so
 @comment lib/libnice.so.10
-@comment lib/libnice.so.10.11.0
+@comment lib/libnice.so.10.12.0
 @comment libdata/pkgconfig/nice.pc
 @comment share/gir-1.0/Nice-0.1.gir

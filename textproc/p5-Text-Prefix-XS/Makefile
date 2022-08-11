@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-Prefix-XS
 PORTVERSION=	0.15
 PORTREVISION=	3

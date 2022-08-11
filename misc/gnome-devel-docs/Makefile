@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	gnome-devel-docs
 PORTVERSION=	40.3
 CATEGORIES=	misc gnome

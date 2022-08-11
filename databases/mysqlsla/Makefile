@@ -1,5 +1,3 @@
-# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-
 PORTNAME=	mysqlsla
 PORTVERSION=	2.03
 PORTREVISION=	3

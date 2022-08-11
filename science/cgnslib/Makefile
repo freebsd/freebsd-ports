@@ -1,8 +1,7 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	cgnslib
 PORTVERSION=	4.3.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	science
 
@@ -37,7 +36,8 @@ TOOLS_DESC=		Build the CGNSTools package
 FORTRAN_USES=		fortran
 FORTRAN_CMAKE_BOOL=	CGNS_ENABLE_FORTRAN
 
-HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 libsz.so:science/szip
+HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5	\
+			libsz.so:science/libaec
 HDF5_CMAKE_BOOL=	CGNS_ENABLE_HDF5
 HDF5_CMAKE_ON=		-DHDF5_INCLUDE_PATH:PATH="${LOCALBASE}/include"
 

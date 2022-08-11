@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Hash-AsObject
 PORTVERSION=	0.13
 PORTREVISION=	1

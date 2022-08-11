@@ -14,4 +14,4 @@ release:
   * Support for the X session management protocol.
   * Support for the www.freedesktop.org system tray proposal.
 
-WWW: https://launchpad.net/xpad
+WWW: https://launchpad.net/xpad/trunk

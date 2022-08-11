@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	commandlines
 PORTVERSION=	0.4.1
 CATEGORIES=	devel python

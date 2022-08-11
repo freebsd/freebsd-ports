@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	darkice
 PORTVERSION=	1.4
 PORTREVISION=	2

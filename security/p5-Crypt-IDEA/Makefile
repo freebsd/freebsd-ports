@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Crypt-IDEA
 PORTVERSION=	1.10
 PORTREVISION=	1

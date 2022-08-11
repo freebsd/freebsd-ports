@@ -1,5 +1,3 @@
-# Created by: philip@FreeBSD.org
-
 PORTNAME=	threema-msgapi
 PORTVERSION=	3.0.6
 DISTVERSIONPREFIX=	v
@@ -24,5 +22,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>0:devel/py-wrapt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libnacl>0:security/py-libnacl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR}
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-# Created by: David Gardner
-
 PORTNAME=	gkrelltop
 PORTVERSION=	2.2.13
 PORTREVISION=	1

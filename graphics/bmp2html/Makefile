@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	bmp2html
 PORTVERSION=	0.1
 PORTREVISION=	6

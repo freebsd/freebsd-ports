@@ -1,5 +1,3 @@
-# Created by: Patrick Gardella <patrick@FreeBSD.org>
-
 PORTNAME=	sash
 PORTVERSION=	3.8
 CATEGORIES=	shells

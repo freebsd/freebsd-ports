@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ColorThemes-Standard
 PORTVERSION=	0.003
 CATEGORIES=	devel perl5

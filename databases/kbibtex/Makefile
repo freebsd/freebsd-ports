@@ -1,8 +1,6 @@
-# Created by: Markus Brueffer <markus@FreeBSD.org>
-
 PORTNAME=	kbibtex
 DISTVERSION=	0.9.2
-PORTREVISION=	28
+PORTREVISION=	33
 CATEGORIES=	databases kde
 MASTER_SITES=	KDE/stable/KBibTeX/${DISTVERSION}
 

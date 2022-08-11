@@ -1,5 +1,3 @@
-# Created by: Russell A. Jackson <rjackson@cserv62.csub.edu>
-
 PORTNAME=	sdig
 PORTVERSION=	0.45
 PORTREVISION=	2

@@ -1,5 +1,6 @@
 PORTNAME=	rmf
 DISTVERSION=	1.4
+PORTREVISION=	3
 CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		compiler:c++17-lang cmake python:build shebangfix
 USE_LDCONFIG=	yes

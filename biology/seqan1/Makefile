@@ -1,5 +1,3 @@
-# Created by: h2
-
 PORTNAME=	seqan
 PORTVERSION=	1.3.1
 PORTREVISION=	4

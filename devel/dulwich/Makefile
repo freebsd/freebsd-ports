@@ -1,5 +1,3 @@
-# Created by: Marco Broeder <marco.broeder@posteo.eu>
-
 PORTNAME=	dulwich
 PORTVERSION=	0.19.16
 CATEGORIES=	devel python

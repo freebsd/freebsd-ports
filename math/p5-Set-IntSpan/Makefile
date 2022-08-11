@@ -1,5 +1,3 @@
-# Created by: Don Croyle <croyle@gelemna.org>
-
 PORTNAME=	Set-IntSpan
 PORTVERSION=	1.19
 PORTREVISION=	1

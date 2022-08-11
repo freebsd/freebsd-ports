@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	Data-ClearSilver-HDF
 PORTVERSION=	0.04
 PORTREVISION=	2

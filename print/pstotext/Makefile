@@ -1,5 +1,3 @@
-# Created by: Oliver Breuninger <ob@seicom.NET>
-
 PORTNAME=	pstotext
 PORTVERSION=	1.9
 PORTREVISION=	6

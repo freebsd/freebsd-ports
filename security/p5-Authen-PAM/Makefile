@@ -1,5 +1,3 @@
-# Created by: Matt Behrens <matt@zigg.com>
-
 PORTNAME=	Authen-PAM
 PORTVERSION=	0.16
 PORTREVISION=	2

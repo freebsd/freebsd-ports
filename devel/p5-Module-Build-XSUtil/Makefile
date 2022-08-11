@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Module-Build-XSUtil
 PORTVERSION=	0.19
 CATEGORIES=	devel perl5

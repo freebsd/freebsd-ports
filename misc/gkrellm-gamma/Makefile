@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@oook.cz>
-
 PORTNAME=	gkrellm-gamma
 PORTVERSION=	2.03
 PORTREVISION=	14

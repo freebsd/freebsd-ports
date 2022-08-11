@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	cstore_fdw
 PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v

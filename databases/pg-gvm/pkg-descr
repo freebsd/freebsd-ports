@@ -1,0 +1,4 @@
+Greenbone Library for helper functions in PostgreSQL. This library contains
+functionality for ical object manipulation.
+
+WWW: https://github.com/greenbone/pg-gvm

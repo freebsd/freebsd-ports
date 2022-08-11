@@ -3,7 +3,6 @@
 #
 # bsd.destdir.mk - Support for chrooted installation
 #
-# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
 #
 # Please make sure all changes to this file are passed through the maintainer.
 

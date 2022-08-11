@@ -11,4 +11,4 @@ and bidirectional character handling. Profiles for iSCSI,
 Kerberos 5, Nameprep, SASL, and XMPP are included. Punycode and
 ASCII Compatible Encoding (ACE) via IDNA are supported.
 
-WWW: http://www.gnu.org/software/libidn
+WWW: https://www.gnu.org/software/libidn/

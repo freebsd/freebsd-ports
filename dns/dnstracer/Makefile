@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	dnstracer
 DISTVERSION=	1.10
 CATEGORIES=	dns

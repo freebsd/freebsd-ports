@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	impact
 PORTVERSION=	0.7.06.038
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	Mojolicious-Plugin-Mongodb
 PORTVERSION=	1.16
 PORTREVISION=	1

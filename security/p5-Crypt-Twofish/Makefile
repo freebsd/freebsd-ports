@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Crypt-Twofish
 PORTVERSION=	2.18
 CATEGORIES=	security perl5

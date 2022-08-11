@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	jlint
 PORTVERSION=	3.1.2
 PORTREVISION=	5

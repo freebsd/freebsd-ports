@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OnlinePayment-TCLink
 PORTVERSION=	1.03
 PORTREVISION=	2

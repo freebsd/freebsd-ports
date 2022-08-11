@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Kolab_Server
 DISTVERSION=	2.0.5
 CATEGORIES=	net www pear

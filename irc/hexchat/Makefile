@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	hexchat
 DISTVERSION=	2.16.1
 PORTREVISION=	2

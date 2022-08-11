@@ -1,6 +1,3 @@
-# Created by: Alexander Nedotsukov <bland@mail.ru>
-#   $MCom: ports-stable/devel/gconfmm26/Makefile,v 1.1 2010/06/24 07:51:01 kwm Exp $
-
 PORTNAME=	gconfmm
 PORTVERSION=	2.28.3
 PORTREVISION=	3

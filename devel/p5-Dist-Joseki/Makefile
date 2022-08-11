@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Dist-Joseki
 PORTVERSION=	0.20
 PORTREVISION=	1

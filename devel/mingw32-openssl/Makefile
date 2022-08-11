@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	openssl
 PORTVERSION=	1.0.2d
 PORTREVISION=	2

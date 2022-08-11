@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Test-POE-Server-TCP
 PORTVERSION=	1.20
 CATEGORIES=	devel perl5

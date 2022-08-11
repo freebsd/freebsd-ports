@@ -1,5 +1,3 @@
-# Created by: UMENO Takashi <umeno@rr.iij4u.or.jp>
-
 PORTNAME=	klish
 PORTVERSION=	2.1.4
 CATEGORIES=	shells

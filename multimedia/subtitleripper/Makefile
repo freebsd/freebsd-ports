@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	subtitleripper
 DISTVERSION=	0.3-4
 PORTREVISION=	11

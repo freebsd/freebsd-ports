@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	MooseX-Daemonize
 PORTVERSION=	0.22
 CATEGORIES=	devel perl5

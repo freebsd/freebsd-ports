@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Mail-Tools
 PORTVERSION=	2.21
 CATEGORIES=	mail perl5

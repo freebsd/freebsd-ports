@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	libixp
 PORTVERSION=	0.5
 PORTREVISION=	1

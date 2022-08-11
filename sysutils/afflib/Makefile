@@ -1,5 +1,3 @@
-# Created by: Chris Calvey <chris@securityforensics.co.uk>
-
 PORTNAME=	afflib
 PORTVERSION=	3.7.16
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Mario S F Ferreira <lioux@linf.unb.br> et al.
-
 PORTNAME=	Math-Expr
 PORTVERSION=	0.4
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>
-
 PORTNAME=	xoops
 PORTVERSION=	2.5.10
 CATEGORIES=	www

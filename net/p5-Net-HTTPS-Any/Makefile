@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Net-HTTPS-Any
 PORTVERSION=	0.12
 CATEGORIES=	net perl5 www

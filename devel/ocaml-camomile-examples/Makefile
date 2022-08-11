@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	camomile
 PORTVERSION=	0.4.1
 CATEGORIES=	devel

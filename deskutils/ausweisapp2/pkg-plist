@@ -1,5 +1,5 @@
 bin/AusweisApp2
-man/man1/AusweisApp2.1.gz
+share/man/man1/AusweisApp2.1.gz
 share/applications/com.governikus.ausweisapp2.desktop
 %%DATADIR%%/AusweisApp2/AusweisApp2.rcc
 %%DATADIR%%/AusweisApp2/config.json

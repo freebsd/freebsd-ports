@@ -1,5 +1,3 @@
-# Created by: Vladimir Timofeev <vovkasm@gmail.com>
-
 PORTNAME=	Devel-NYTProf
 DISTVERSION=	6.10
 CATEGORIES=	devel perl5

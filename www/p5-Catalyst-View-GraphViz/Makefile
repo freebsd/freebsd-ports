@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Catalyst-View-GraphViz
 PORTVERSION=	0.05
 PORTREVISION=	7

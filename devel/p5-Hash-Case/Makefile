@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin
-
 PORTNAME=	Hash-Case
 PORTVERSION=	1.030
 CATEGORIES=	devel perl5

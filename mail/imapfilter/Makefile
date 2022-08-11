@@ -1,5 +1,3 @@
-# Created by: Lefteris Chatzibarbas <lefcha@hellug.gr>
-
 PORTNAME=	imapfilter
 PORTVERSION=	2.7.5
 DISTVERSIONPREFIX=	v

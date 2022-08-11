@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	ptiger
 PORTVERSION=	2.2
 PORTREVISION=	3

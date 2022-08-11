@@ -1,5 +1,3 @@
-# Created by: Edson Brandi <ebrandi@fugspbr.org>
-
 PORTNAME=	wipe
 PORTVERSION=	2.3.1
 PORTREVISION=	1

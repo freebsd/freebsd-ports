@@ -1,5 +1,3 @@
-# Created by: jrhett@netconsonance.com
-
 PORTNAME=	iichid
 DISTVERSION=	0.0.6
 CATEGORIES=	sysutils

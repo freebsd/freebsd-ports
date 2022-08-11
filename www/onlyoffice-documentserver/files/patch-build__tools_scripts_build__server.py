@@ -1,4 +1,4 @@
---- build_tools/scripts/build_server.py.orig	2021-11-16 08:07:24 UTC
+--- build_tools/scripts/build_server.py.orig	2022-04-29 20:25:52 UTC
 +++ build_tools/scripts/build_server.py
 @@ -17,7 +17,7 @@ def make():
      branding_dir = git_dir + '/' + config.option("branding") + '/server'
@@ -9,7 +9,7 @@
  
      #env variables
    product_version = base.get_env('PRODUCT_VERSION')
-@@ -41,22 +41,26 @@ def make():
+@@ -41,8 +41,12 @@ def make():
    if(base.is_exist(custom_public_key)):
        base.copy_file(custom_public_key, server_build_dir + '/Common/sources')
  
@@ -22,7 +22,8 @@
 +
    if ("linux" == base.host_platform()):
      pkg_target += "-linux"
- 
+     if (-1 != config.option("platform").find("linux_arm64")):
+@@ -51,14 +55,14 @@ def make():
    if ("windows" == base.host_platform()):
      pkg_target += "-win"
  

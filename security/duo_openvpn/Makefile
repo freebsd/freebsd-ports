@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	duo_openvpn
 PORTVERSION=	2.4
 PORTREVISION=	2

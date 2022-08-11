@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	Bit-Vector-Minimal
 PORTVERSION=	1.3
 PORTREVISION=	1

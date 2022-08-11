@@ -1,10 +1,8 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	doctrine
 PORTVERSION=	20130618
 CATEGORIES=	devel www pear
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
 
 PEAR_CHANNEL_HOST=	pear.doctrine-project.org

@@ -23,6 +23,7 @@
 # This file can be linted with Tools/scripts/MOVEDlint.awk
 #
 # Port|Moved to|Date|Why
+deskutils/planner|deskutils/gnome-planner|2020-05-31|Revive in more appropriate port name
 audio/polypaudio|audio/pulseaudio|2008-01-01|Project renamed
 audio/akode-plugins-polypaudio||2008-01-01|Polypaudio is obsolete in favor of Pulseaudio
 audio/teknap|net-p2p/teknap|2008-01-09|Moved to net-p2p category
@@ -4528,7 +4529,6 @@ math/fung-calc||2013-07-26|Has expired: Depends on Qt 3.x
 math/koctave||2013-07-26|Has expired: Depends on Qt 3.x
 math/kseg||2013-07-26|Has expired: Depends on Qt 3.x
 math/pgcalc||2013-07-26|Has expired: Depends on Qt 3.x
-math/rkward||2013-07-26|Has expired: Depends on Qt 3.x
 math/xgfe||2013-07-26|Has expired: Depends on Qt 3.x
 misc/gwenview-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 misc/k3b-i18n||2013-07-26|Has expired: Depends on Qt 3.x
@@ -4916,7 +4916,6 @@ www/libghttp||2013-10-07|Component of the obsolete gnome1
 deskutils/gworkspace-clipbook||2013-10-07|Replaced by tabbed shelf in GWorkspace
 audio/yamt||2013-10-07|Depends on EOLed gnome1 libraries
 astro/nova||2013-10-07|Development ceased 8 years ago, depends on some gnome1 libraries
-textproc/libxml++||2013-10-07|Component of the obsolete gnome1
 devel/linux-f10-libglade|devel/linux-f10-libglade2|2013-10-07|Unused
 textproc/linux-f10-libxml|textproc/linux-f10-libxml2|2013-10-07|Unused
 www/moodle23||2013-10-08|Has expired: Unmaintained upstream
@@ -6962,7 +6961,6 @@ net/libnet10||2014-09-30|Has expired: Superseded by net/libnet
 net/despoof||2014-09-30|Has expired: Depends on expired net/libnet10
 sysutils/gpkgdep||2014-09-30|Has expired: Requires old pkg_info
 security/vida||2014-09-30|Has expired: Depends on expired net/libnet10
-net/nemesis||2014-09-30|Has expired: Depends on expired net/libnet10
 net-mgmt/sing||2014-09-30|Has expired: Depends on expired net/libnet10
 net-mgmt/gps||2014-09-30|Has expired: Depends on expired net/libnet10
 net/ttlscan||2014-09-30|Has expired: Depends on expired net/libnet10
@@ -10611,7 +10609,6 @@ net/g2ipmsg||2018-12-11|Has expired: GNOME 2 application
 net/grdesktop||2018-12-11|Has expired: GNOME 2 application
 textproc/gnome-spell||2018-12-11|Has expired: GNOME 2 application
 textproc/sagasu||2018-12-11|Has expired: GNOME 2 application
-deskutils/planner||2018-12-11|Has expired: GNOME 2 application
 deskutils/multisync||2018-12-11|Has expired: GNOME 2 application
 deskutils/drivel||2018-12-11|Has expired: GNOME 2 application
 deskutils/notecase||2018-12-11|Has expired: GNOME 2 application
@@ -13647,7 +13644,6 @@ games/xtris||2020-01-10|Has expired: Broken for more than 3 months
 graphics/mapnik||2020-01-10|Has expired: Broken for more than 8 months
 lang/js_of_ocaml||2020-01-10|Has expired: Depends on broken and expiring devel/ocaml-deriving-ocsigen
 lang/rubinius||2020-01-10|Has expired: Broken for more than 7 months
-science/meep||2020-01-10|Has expired: Broken for more than 6 months
 sysutils/hfm||2020-01-10|Has expired: Broken for more than 4 months
 sysutils/u-boot-zedboard||2020-01-10|Has expired: Broken for more than 6 months
 sysutils/u-boot-zybo||2020-01-10|Has expired: Broken for more than 6 months
@@ -15480,7 +15476,6 @@ news/rawdog||2020-09-19|Has expired: Uses deprecated version of python
 ports-mgmt/portell||2020-09-19|Has expired: Uses deprecated version of python
 print/biblio-py||2020-09-19|Has expired: Uses deprecated version of python
 science/brian||2020-09-19|Has expired: Uses deprecated version of python
-science/paraview||2020-09-19|Has expired: Uses deprecated version of python
 security/arm||2020-09-19|Has expired: Uses deprecated version of python
 security/ismtp||2020-09-19|Has expired: Uses deprecated version of python
 security/py-halberd||2020-09-19|Has expired: Uses deprecated version of python
@@ -15701,7 +15696,6 @@ devel/pythk||2020-12-12|Has expired: Uses deprecated version of python
 mail/py-spambayes||2020-12-12|Has expired: Uses deprecated version of python
 math/py-numeric|math/py-numpy|2020-12-12|Has expired: Uses deprecated version of python
 math/py-scientific||2020-12-12|Has expired: Uses deprecated version of python
-net/py-suds||2020-12-12|Has expired: Uses deprecated version of python
 net/pynids||2020-12-12|Has expired: Uses deprecated version of python
 security/py-obfsproxy-tor||2020-12-12|Has expired: Uses deprecated version of python
 sysutils/syslog-ng324||2020-12-12|Has expired: Agreed upon upstream one year deprecation policy
@@ -15991,7 +15985,6 @@ www/p5-RT-Extension-MandatoryOnTransition@rt42||2021-02-02|Removed, currently on
 www/p5-RT-Extension-RepeatTicket@rt42||2021-02-02|Removed, currently only supported with www/rt44
 www/p5-RT-Extension-RepeatTicket@rt44|www/p5-RT-Extension-RepeatTicket|2021-02-02|Unflavor, currently only supported with www/rt44
 www/p5-RTx-Calendar@rt42||2021-02-02|Removed, currently only supported with www/rt44
-www/p5-RTx-Calendar@rt44|www/p5-RTx-Calendar|2021-02-02|Unflavor, currently only supported with www/rt44
 www/rt42|www/rt44|2021-02-02|Has expired: Upstream support is ending; please migrate to RT-5.0 (www/rt50)
 www/opera||2021-02-04|Abandonware since 2013
 www/opera-linuxplugins||2021-02-04|Depends on opera browser
@@ -16962,7 +16955,7 @@ textproc/rarian||2022-03-15|Abandonware
 devel/ORBit2||2022-03-15|Gnome2 library unused anymore
 games/pushover|games/domino-chain|2022-03-17|Chase upstream rename
 graphics/darktable38|graphics/darktable|2022-03-19|Darktable was upgraded to 3.8, separate port no longer needed
-security/1password-client-devel|security/1password-client2|2022-03-19|cli version 2 is now released.
+security/1password-client-devel|security/1password-client2|2022-03-19|cli version 2 is now released
 x11-toolkits/pangoxsl||2022-03-20|Has expired: Abandonware and not used by any port
 print/lgrind||2022-03-22|Has expired: Abandonware as last release was in 2001
 devel/py-decorator4||2022-03-22|Has expired: Legacy version, use devel/py-decorator instead
@@ -17009,7 +17002,7 @@ security/vinetto||2022-03-31|Has expired: Obsolete, targets deprecated Windows o
 security/pbnj||2022-03-31|Has expired: Abandonware, last release in 2006 and reported broken upstream in 2017 upstream
 databases/jasperreports||2022-03-31|Has expired: Unsupported by upstream, released in 2013
 security/retranslator||2022-03-31|Has expired: Deprecated upstream (EOL)
-security/cp2fwb||2022-03-31|Has expired: Abandonware, used with deprecated software Firewall Builder.
+security/cp2fwb||2022-03-31|Has expired: Abandonware, used with deprecated software Firewall Builder
 security/webscarab||2022-03-31|Has expired: Deprecated by upstream in 2014
 security/pscan||2022-03-31|Has expired: Abandonware, last release in 2000
 security/vnccrack||2022-03-31|Has expired: Outdated and abandoned, last release in 2008. Upstream is at 2.1 while version in ports is 1.0.0
@@ -17129,6 +17122,7 @@ devel/grpc134|devel/grpc|2022-04-16|Remove obsoleted port. Use devel/grpc instea
 devel/py-trollius||2022-04-16|Remove obsoleted port. The asyncio package has been included in the standard library since Python 3.4
 graphics/py-pyglet150|graphics/py-pyglet|2022-04-16|Has expired: No longer needed, use graphics/py-pyglet instead
 games/critterding||2022-04-16|Has expired: Abandonware with last release in 2013, newer version bundles depends and requires Qt4
+devel/glibmm268||2022-04-16|port was added by accident
 lang/gcc10-devel||2022-04-17|Has expired: Not serving its purpose any longer due to lack of maintenance
 devel/py-installer03|devel/py-installer|2022-04-17|Remove obsoleted port. Use devel/py-installer instead
 games/cultivation||2022-04-18|Has expired: Abandonware with last release in 2010, non-portable build system
@@ -17136,3 +17130,412 @@ devel/ros-rosinstall||2022-04-20|Has expired: Upstream has archived the project 
 devel/py-aiorpcX-legacy|devel/py-aiorpcX|2022-04-20|Has expired: Legacy port is no longer required, please use devel/py-aiorpcX instead
 net/kalarmcal|deskutils/kalarm|2022-04-21|Packages were merged
 math/py-gmpy2-devel|math/py-gmpy2|2022-04-22|No more need for the -devel port, py-gmpy2 is at latest
+net/google-cloud-sdk-app-engine-go||2022-04-27|Obsolete, not supported by the current GCP SDK
+www/py-dj32-django-modelcluster|www/py-django-modelcluster|2022-04-30|Remove obsoleted port. Use www/py-django-modelcluster instead
+www/rubygem-rack-proxy06|www/rubygem-rack-proxy|2022-04-30|Remove obsoleted port. Use www/rubygem-rack-proxy instead
+security/py-ssh|security/py-paramiko|2022-04-30|Remove obsoleted port. Use security/py-paramiko instead
+security/pinentry-gnome3|security/pinentry-gnome|2022-04-30|De-versioned due to new GNOME versioning scheme
+www/shttpd||2022-04-30|Has expired: Abandonware, last release over 12+ years ago
+mail/p5-Email-Sender-Transport-SMTPS|mail/p5-Email-Sender|2022-04-30|Has expired: Deprecated by upstream. Use Email::Sender::Transport::SMTP in mail/p5-Email-Sender instead
+net/gogoc||2022-04-30|Has expired: Services were discontinued in 2016
+graphics/drm-current-kmod||2022-05-01|Switched to a Linux version based naming scheme. Use graphics/drm-510-kmod
+graphics/drm-devel-kmod||2022-05-01|Switched to a Linux version based naming scheme. Use graphics/drm-510-kmod
+math/rkward-kde|math/rkward|2022-05-06|Switched to the name used by upstream
+graphics/photoflow||2022-05-06|Unmaintainer upstream, has been broken for months, particularly this issue isn't answered: https://github.com/aferrero2707/PhotoFlow/issues/220
+textproc/redisearch16||2022-05-09|Has expired. Use textproc/redisearch or textproc/redisearch20
+devel/git-arc|devel/freebsd-git-devtools|2022-05-13|Renamed because more tools are now included
+graphics/magnum-examples||2022-05-17|Has expired: Depends on broken graphics/magnum
+graphics/magnum||2022-05-17|Has expired: Broken for more than a year
+graphics/magnum-plugins||2022-05-17|Has expired: Depends on broken graphics/magnum
+graphics/magnum-extras||2022-05-17|Has expired: Depends on broken graphics/magnum
+math/pantheon-calculator|math/elementary-calculator|2022-05-18|Switch to reverse domain name notation
+mail/p5-MIME-Fast||2022-05-19|Depends on long deprecated gmime-2.2
+mail/gmime2-sharp|mail/gmime26-sharp|2022-05-19|Depends on long deprecated gmime-2.2
+mail/gmime2|mail/gmime26|2022-05-19|Not used anymore overcome by gnime26
+graphics/p5-Geo-GDAL||2022-05-22|Remove obsoleted port. GDAL removed deprecated SWIG Perl bindings since 3.5.0
+devel/py-gitdb2|devel/py-gitdb|2022-05-22|Remove obsoleted port. Use devel/py-gitdb instead
+devel/py-smmap2|devel/py-smmap|2022-05-22|Remove obsoleted port. Use devel/py-smmap instead
+devel/rubygem-cucumber-create-meta|devel/rubygem-cucumber-ci-environment|2022-05-22|Remove obsoleted port. Use devel/rubygem-cucumber-ci-environment instead
+devel/rubygem-cucumber-cucumber-expressions14|devel/rubygem-cucumber-cucumber-expressions|2022-05-22|Remove obsoleted port. Use devel/rubygem-cucumber-cucumber-expressions instead
+devel/rubygem-cucumber-formatter-dots|textproc/rubygem-cucumber-html-formatter|2022-05-22|Remove obsoleted port. Use textproc/rubygem-cucumber-html-formatter instead
+devel/rubygem-cucumber-messages4|devel/rubygem-cucumber-messages|2022-05-22|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
+devel/rubygem-cucumber-messages17|devel/rubygem-cucumber-messages|2022-05-22|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
+textproc/rubygem-cucumber-gherkin22|textproc/rubygem-cucumber-gherkin|2022-05-22|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
+textproc/rubygem-cucumber-html-formatter17|textproc/rubygem-cucumber-html-formatter|2022-05-22|Remove obsoleted port. Use textproc/rubygem-cucumber-html-formatter instead
+security/greenbone-security-assistant|security/gsa|2022-05-22|It was splitted into security/gsad and security/gsa
+security/py-ospd|security/py-ospd-openvas|2022-05-22|It was merged into security/py-ospd-openvas
+lang/perl5.30||2022-05-23|Has expired: Support ends three years after .0 release. Please upgrade to a more recent version of Perl
+sysutils/ansible2||2022-05-23|Has expired: Upstream support ceases
+java/jdk12-doc||2022-05-24|Only useful for removed java/openjdk12
+java/openjdk12||2022-05-24|Has expired: EOLed since 30 september 2019
+java/openjdk13||2022-05-24|Has expired: EOLed since 31 march 2020
+java/openjdk14||2022-05-24|Has expired: EOLed since 30 september 2020
+java/openjdk15||2022-05-24|Has expired: EOLed since 31 march 2021
+java/openjdk16||2022-05-24|Has expired: EOLed since 30 September 2021
+sysutils/uefi-edk2-bhyve|sysutils/edk2@bhyve|2022-05-24|No more need for this port: please use sysutils/edk2 FLAVOR bhyve instead
+archivers/p7zip|archivers/7-zip|2022-05-25|Unmaintained for years and has known vulnerabilities. Use 7-Zip instead
+graphics/blender-lts28|graphics/blender-lts29|2022-05-26|Has expired: EOLed
+devel/autoconf-wrapper|devel/autoconf-switch|2022-05-27|Autoconf restructuring
+devel/autoconf213|devel/autoconf2.13|2022-05-27|Autoconf restructuring
+math/py-cdecimal||2022-05-27|Has expired: upstream does not support it after Python-3.2
+devel/py-meliae||2022-05-27|Has expired: does not build against Python-3.9
+databases/R-cran-RSQLite.extfuns|databases/R-cran-RSQLite|2022-05-31|Has expired: RSQLite incorporates RSQLite.extfuns
+net/mpich2|net/mpich|2022-05-31|Has been deprecrated for a long time and build fails with GCC 11
+net-im/jabber.el||2022-06-01|Has expired: is marked as broken: fails to build: jabber-chat.el:25:1: Error: Wrong number of arguments: (3 . 3), 2
+x11-fm/Arqiver|x11-fm/arqiver|2022-06-01|Convert PORTNATE to lowercase
+net/py-suds-community|net/py-suds|2022-06-03|Remove obsoleted port. Use net/py-suds instead
+net/py-suds-jurko|net/py-suds|2022-06-03|Remove obsoleted port. Use net/py-suds instead
+www/rubygem-faraday110|www/rubygem-faraday|2022-06-03|Obsolete, please use www/rubygem-faraday instead
+www/npm-node17|www/npm-node18|2022-06-03|Renamed for www/node update to v18
+www/yarn-node17|www/yarn-node18|2022-06-03|Renamed for www/node update to v18
+security/keepassx-devel||2022-06-05|Has expired: KeePassX had been stopped development/maintenance, please consider using security/keepassxc instead
+sysutils/uefi-edk2-qemu|sysutils/edk2@qemu|2022-06-05|No more need for this port: please use sysutils/edk2 FLAVOR qemu instead
+graphics/gltt||2022-06-08|Abdonware, depends on freetype1
+print/ttftot42||2022-06-08|Abdonware, depends on freetype1
+print/freetype|print/freetype2|2022-06-08|Has been replaced long ago by freetype2
+net/libgnetwork||2022-06-08|Gnome2 library unused anymore
+x11-wm/compizconfig-backend-gconf||2022-06-08|gconf support has been removed from compiz
+devel/android-tools-adb|devel/android-tools|2022-06-09|Port has been updated, unbroken and consolidated into devel/android-tools
+devel/android-tools-fastboot|devel/android-tools|2022-06-09|Port has been updated and consolidated into devel/android-tools
+devel/py-lark-parser|devel/py-lark|2022-06-09|Remove obsoleted port. Use devel/py-lark instead
+deskutils/egroupware|deskutils/egroupware@php74|2022-06-12|Merge into flavorized version
+databases/py-arrow|databases/py-apache-arrow|2022-06-12|Rename to avoid conflict with devel/py-arrow and to match the project name
+science/szip|science/libaec|2022-06-16|Remove obsoleted port. Use science/libaec instead
+net/pfinger||2022-06-17|Has expired: Unmaintained and dead upstream, consider base fingerd
+biology/mopac|science/mopac|2022-06-19|Move to a proper category
+devel/liblas12||2022-06-21|Has expired: Previously only required by math/saga (now superseeded by math/pdal)
+net-im/licq||2022-06-21|Has expired: Abandonware, project is dead
+net-im/licq-icq||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-jabber||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-osd||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-qt-gui||2022-06-21|Removed, part of expired net-im/licq
+x11-toolkits/py-xlib|x11-toolkits/py-python-xlib|2022-06-21|Use registered upstream (PyPI) name (Python ports compliance)
+www/openarc|mail/openarc|2022-06-21|Move to a proper category
+textproc/rubygem-elasticsearch-model6|textproc/rubygem-elasticsearch-model|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-model instead
+textproc/rubygem-elasticsearch6|textproc/rubygem-elasticsearch|2022-06-24|Obsolete use textproc/rubygem-elasticsearch instead
+textproc/rubygem-elasticsearch-transport6|textproc/rubygem-elasticsearch-transport|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-transport instead
+textproc/rubygem-elasticsearch-api6|textproc/rubygem-elasticsearch-api|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-api instead
+textproc/rubygem-elasticsearch-rails6|textproc/rubygem-elasticsearch-rails|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-rails instead
+devel/p5-Goo-Canvas|devel/p5-Goo-Canvas2|2022-06-24|Obsolete use devel/p5-Goo-Canvas2 instead
+graphics/goocanvas|graphics/goocanvas3|2022-06-24|Obsolete use graphics/goocanvas3
+x11-toolkits/tepl|x11-toolkits/tepl6|2022-06-25|Obsolete use x11-toolkits/tepl6
+lang/cmucl||2022-06-27|Has expired: Not supported upstream since 2017 and broken since FreeBSD 12.1
+devel/qbs||2022-06-27|Has expired: Abandoned and not working with modern clang
+lang/cmucl-extra||2022-06-27|Has expired: lang/cmucl is not supported upstream since 2017 and broken since FreeBSD 12.1
+security/protonvpn-cli||2022-06-27|Has expired: This version is deprecated and unsupported upstream. The port needs an update, which would require a fair amount of effort. Use OpenVPN or Wireguard with configuration files provided by ProtonVPN instead.
+sysutils/firstboot-growfs||2022-06-27|Has expired: A better version is available on all FreeBSD version
+security/modsecurity3-apache||2022-06-27|Has expired: The project was not developed further
+net-mgmt/zabbix54-frontend||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-server||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-agent||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-java||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-proxy||2022-06-27|Has expired: Unsupported by upstream
+archivers/erlang-snappy||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+converters/erlang-base64url||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+databases/elixir-calecto||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+databases/elixir-db_connection||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+databases/elixir-ecto||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+databases/elixir-geo||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+databases/elixir-mariaex||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+databases/elixir-postgrex||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+databases/elixir-timex_ecto||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+databases/erlang-couchbeam||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+databases/erlang-epgsql||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+databases/erlang-eredis||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-apex||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-bson||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-cachex||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-calendar||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-combine||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-conform||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-connection||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-coverex||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-crontab||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-csv||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-decimal||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-deppie||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-dialyze||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-distillery||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-estree||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-eternal||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-exactor||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-excoveralls||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-exjsx||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-exprotobuf||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-gen_stage||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-gettext||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-inflex||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-libring||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-math||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-msgpax||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-nadia||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-nats||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-nimble_csv||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-paratize||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-plug||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-poison||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-quantum||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-smppex||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-timex||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-trailing_format_plug||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-tzdata||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/elixir-unsafe||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-bbmustache||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-certifi||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-cuttlefish||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-erlware_commons||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-gen_smtp||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-getopt||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-goldrush||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-hut||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-jobs||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-jsx||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-katana||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-lager||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-lager_syslog||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-meck||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-metrics||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-parse_trans||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-providers||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-ssl_verify_fun||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-unicode_util_compat||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+dns/erlang-idna||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+misc/elixir-mime||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+misc/elixir-uuid||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+misc/erlang-mimerl||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+misc/erlang-mimetypes||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+net/elixir-kafka_ex||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+net/elixir-oauth2||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+net/erlang-ranch||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+security/elixir-comeonin||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+security/elixir-comeonin_i18n||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+security/elixir-jose||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+security/erlang-fast_tls||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+security/erlang-jose||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+textproc/elixir-earmark||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+textproc/elixir-funnel||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+textproc/elixir-sweet_xml||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+textproc/erlang-edown||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+textproc/erlang-fast_xml||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+textproc/erlang-p1_utils||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+textproc/erlang-yamerl||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/elixir-html_entities||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/elixir-html_sanitize_ex||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/elixir-httpoison||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/elixir-httpotion||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/elixir-joken||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/elixir-maru||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/elixir-phoenix||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/elixir-phoenix_ecto||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/elixir-phoenix_html||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/elixir-phoenix_pubsub||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/elixir-webassembly||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/erlang-cowboy||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/erlang-cowlib||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/erlang-hackney||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/erlang-ibrowse||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/erlang-mochiweb||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/erlang-mochiweb-basho||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/erlang-webmachine||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-backoff||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-bear||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-cf||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-common_lib||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-esdl||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-folsom||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-gen_leader||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-gpb||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-gproc||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-jsxd||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-neotoma||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-poolboy||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-pooler||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-sbroker||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+devel/erlang-syslog||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/py-graphite-web||2022-06-30|Has expired: No support for newer versions of Django
+databases/percona56-server||2022-06-30|Has expired: EOL since February 2021
+databases/percona56-client||2022-06-30|Has expired: EOL since February 2021
+databases/mysql55-server||2022-06-30|Has expired: Upstream support ended on December 2018
+databases/mysql55-client||2022-06-30|Has expired: Upstream support ended on December 2018
+multimedia/schroedinger||2022-06-30|Has expired: Abandoned legacy video codec, upstream is dead and last release was back in 2012.
+emulators/kcemu||2022-06-30|Has expired: Depends on expired multimedia/schroedinger
+multimedia/ccextractor||2022-06-30|Has expired: Depends on expired multimedia/schroedinger
+security/libgringotts||2022-06-30|Has expired: Abandonware, upstream dead and last release in 2008
+deskutils/osmo||2022-06-30|Has expired: Depends on expired security/libgringotts
+devel/itext||2022-06-30|Has expired: Outdated version and deprecated by upstream
+audio/tuxguitar||2022-06-30|Has expired: Depends on expired devel/itext
+security/ruby-bitwarden||2022-06-30|Has expired: Broken with all supported versions of Ruby
+mail/rubygem-tmail||2022-06-30|Has expired: Broken with all supported versions of Ruby
+www/redmine4|www/redmine42|2022-06-30|Has expired: Deprecated by upstream. Please consider using www/redmine42
+www/py-django-common-helpers||2022-06-30|Has expired: No longer maintained, doesn't work with newer versions of Django
+www/py-django||2022-06-30|Has expired: Was used as a metaport, no longer required
+www/py-django-sudo||2022-06-30|Has expired: Abandoned upstream, not compatible with newer versions of Django
+www/py-django-bootstrap-form||2022-06-30|Has expired: No longer maintained, not compatible with newer versions of Django
+www/py-django-babel||2022-06-30|Has expired: Upstream no longer maintained, please use www/py-enmerkar instead
+www/py-django-bulk-update||2022-06-30|Has expired: No longer maintained, not compatible with newer versions of Django
+www/py-django-happenings-update||2022-06-30|Has expired: Upstream no longer maintained, not compatible with newer versions of Django
+www/py-django-compat||2022-06-30|Has expired: No longer maintained, doesn't work with newer versions of Django
+www/py-django-modern-rpc||2022-06-30|Has expired: Not compatible with newer versions of Django
+www/py-django22||2022-06-30|Has expired: Django 2.2 is now in Extended Support, receives security fixes only and will reach End-Of-Life on 2022-04-01. Upgrade to a later Django version. See https://www.djangoproject.com/download/
+www/py-jsonfield2|www/py-jsonfield|2022-06-30|Has expired: Obsolete, please use www/py-jsonfield instead
+www/py-dj32-django-filter|www/py-django-filter|2022-06-30|Has expired: Obsolete, please use www/py-django-filter instead
+www/py-dj32-djangorestframework|www/py-djangorestframework|2022-06-30|Has expired: Obsolete, please use www/py-djangorestframework instead
+www/py-dj32-drf-yasg|www/py-drf-yasg|2022-06-30|Has expired: Obsolete, please use www/py-drf-yasg instead
+www/py-dj32-django-cacheops|www/py-django-cacheops|2022-06-30|Has expired: Obsolete, please use www/py-django-cacheops instead
+www/py-dj32-django-graphiql-debug-toolbar|www/py-django-graphiql-debug-toolbar|2022-06-30|Has expired: Obsolete, please use www/py-django-graphiql-debug-toolbar instead
+devel/py-dj32-django-rq|devel/py-django-rq|2022-06-30|Has expired: Obsolete, please use devel/py-django-rq instead
+www/py-dj32-django-tables2|www/py-django-tables2|2022-06-30|Has expired: Obsolete, please use www/py-django-tables2 instead
+www/py-dj32-django-prometheus|www/py-django-prometheus|2022-06-30|Has expired: Obsolete, please use www/py-django-prometheus instead
+www/py-dj32-django-treebeard|www/py-django-treebeard |2022-06-30|Has expired: Obsolete, please use www/py-django-treebeard instead
+www/py-dj32-django-mptt|www/py-django-mptt|2022-06-30|Has expired: Obslete, please use www/py-django-mptt instead
+devel/py-dj32-graphene-django|devel/py-graphene-django|2022-06-30|Has expired: Obsolete, please use devel/py-graphene-django instead
+www/py-dj32-django-taggit|www/py-django-taggit|2022-06-30|Has expired: Obsolete, please use www/py-django-taggit instead
+www/py-dj32-django-auth-ldap|www/py-django-auth-ldap|2022-06-30|Has expired: Obsolete, please use www/py-django-auth-ldap instead
+www/py-dj32-django-cors-headers|www/py-django-cors-headers|2022-06-30|Has expired: Obsolete, please use www/py-django-cors-headers instead
+www/py-dj32-django-debug-toolbar|www/py-django-debug-toolbar|2022-06-30|Has expired: Obsolete, please use www/py-django-debug-toolbar instead
+www/py-dj32-django-redis|www/py-django-redis|2022-06-30|Has expired: Obsolete, please use www/py-django-redis instead
+www/py-dj32-django-timezone-field|www/py-django-timezone-field|2022-06-30|Has expired: Obsolete, please use www/py-django-timezone-field instead
+www/py-dj32-django-js-asset|www/py-django-js-asset|2022-06-30|Has expired: Obsolete, please use www/py-django-js-asset instead
+www/py-rackspace-monitoring||2022-06-30|Has expired: Python compatibility upto 3.2 and last release was 3 years ago
+devel/py-apns2|devel/py-aioapns|2022-06-30|Has expired: Use devel/py-aioapns
+www/py-hyper|www/py-httpx|2022-06-30|Has expired: Project abandoned use www/py-httpx
+irc/py-fishcrypt||2022-06-30|Has expired: Abandoned, unmaintained, requires Python 2 and depends on deprecated pycrypto
+devel/py-stsci.distutils||2022-06-30|Has expired: Upstream abandoned in 2013
+devel/py-docker-py|devel/py-docker|2022-06-30|Has expired: Use devel/py-docker
+net-im/py-slackclient|net-im/py-slack-sdk|2022-06-30|Has expired: Use net-im/py-slack-sdk
+multimedia/mpeg2codec||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
+multimedia/livestreamer||2022-06-30|Has expired: Abandoned upstream, please consider using www/yt-dlp or multimedia/streamlink
+net/kissd||2022-06-30|Has expired: Obsolete, target hardware was released 19 years ago
+www/gecko-mediaplayer||2022-06-30|Has expired: Uses incompatible plugin interface NPAPI
+multimedia/snappy||2022-06-30|Has expired: Deprecated upstream, please consider multimedia/mpv or multimedia/vlc
+multimedia/gnome-twitch||2022-06-30|Has expired: Unmaintained, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/clive||2022-06-30|Has expired: Last release in 2012, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/imagination||2022-06-30|Has expired: Obsolete, majority of DVD players made in the last 15+ years have been able to do image slideshows
+multimedia/m2tstoavi||2022-06-30|Has expired: Marked obsolete by upstream in 2010, please consider using multimedia/ffmpeg or multimedia/handbrake
+multimedia/mps-youtube||2022-06-30|Has expired: Abandoned upstream
+multimedia/umph||2022-06-30|Has expired: Last release in 2012 and abandoned upstream, please consider using www/yt-dlp
+multimedia/quvi09||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/quvi||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/libquvi09||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/libquvi||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/libquvi-scripts09||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/libquvi-scripts||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/cclive||2022-06-30|Has expired: Last release in 2013, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/p5-Umph-Prompt||2022-06-30|Has expired: Last release in 2011 and abandoned upstream
+sysutils/xvidcap||2022-06-30|Has expired: Abandoned upstream, depends on deprecated GTK2 and only supports legacy video codecs. Please consider using multimedia/obs-studio
+audio/gmpc-lastfm||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-magnatune||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-shout||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-alarm||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-lyricsplugin||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-mdcover||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-albumview||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-extraplaylist||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-libnotify||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-lyrics||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-discogs||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-mserver||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+multimedia/ffmpeg2theora||2022-06-30|Has expired: Legacy video format, superseded by AV1/H.264/H.265/VP8/VP9
+multimedia/grake||2022-06-30|Has expired: Dead upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/iriverter||2022-06-30|Has expired: Obsolete and unmaintained for 15+ years, please consider using multimedia/handbrake
+multimedia/libmpeg3||2022-06-30|Has expired: Deprecated upstream
+multimedia/mmsrip||2022-06-30|Has expired: Obsolete, Microsoft deprecated MMS in 2003
+multimedia/mpeg2play||2022-06-30|Has expired: Obsolete, please consider using multimedia/mpv or multimedia/vlc
+multimedia/mpeg_play||2022-06-30|Has expired: Obsolete, please consider using multimedia/mpv or multimedia/vlc
+multimedia/mpeg_stat||2022-06-30|Has expired: Obsolete, please consider using multimedia/mediainfo or multimedia/ffmpeg
+multimedia/qt-faststart||2022-06-30|Has expired: Obsolete, please consider using multimedia/Bento4, multimedia/gpac-mp4box or multimedia/ffmpeg
+multimedia/spigot||2022-06-30|Has expired: Deprecated hardware, released in the early 90s
+audio/forked-daapd||2022-06-30|Has expired: Deprecated upstream, project is now called OwnTone
+multimedia/tstools||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
+multimedia/sabbu||2022-06-30|Has expired: please consider using multimedia/aegisub
+multimedia/avinfo||2022-06-30|Has expired: Last release in 2008, please consider using multimedia/mediainfo or multimedia/ffmpeg instead
+multimedia/mpgtx||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
+devel/psptoolchain||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-binutils||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-newlib||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-gdb||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-gcc-stage1||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-pspsdk-stage1||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-pspsdk-stage2||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-gcc-stage2||2022-06-30|Has expired: Security issues for multiple years
+databases/pgpool-II-36||2022-06-30|Has expired: Upstream support ended use databases/pgpool-II-43
+ftp/multiget||2022-06-30|Has expired: Last release in 2007, doesn't support https, depends on deprecated wxgtk28 and dead upstream. Please consider using net/uget
+devel/electron13||2022-06-30|Has expired: EOLed upstream, switch to newer version
+ftp/puf||2022-06-30|Has expired: Last release in 2006, doesn't support https and upstream is dead. Please consider using www/aria2
+security/gss||2022-06-30|Has expired: Abandonware, last release in 2014 and no development since
+security/shishi||2022-06-30|Has expired: Abandonware, last release in 2013 and no development since
+ftp/urlgfe||2022-06-30|Has expired
+www/nspluginwrapper||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead. NPAPI plugins are now obsolete and depends on deprecated library GTK 2
+devel/govendor||2022-06-30|Has expired: Use Go modules
+devel/racer||2022-06-30|Has expired: Racer is not actively developped now. Please consider using newer software such as devel/rust-analyzer.
+net-mgmt/unifi6||2022-06-30|Has expired: No longer maintained by upstream
+devel/dep||2022-06-30|Has expired: Use Go modules
+databases/libgda5-bdb||2022-06-30|Has expired: Depends on deprecated databases/db5
+emulators/qemu5||2022-06-30|Has expired: Use emulators/qemu6 or emulators/qemu
+deskutils/bitcollider||2022-06-30|Has expired: bitzi.com is no longer available, closed down in 2013
+converters/htx||2022-06-30|Has expired: XHTML is considered obsolete in favor of HTML5
+www/getleft||2022-06-30|Has expired: Abandonware last updated on 2008
+ftp/wxdfast||2022-06-30|Has expired: Last release in 2009, doesn't support https, depends on deprecated wxgtk28 and dead upstream. Please consider using net/uget
+x11/dmenu-wayland|deskutils/dmenu-wayland|2022-07-01|move desktop utility to its right category
+x11/i3lock|deskutils/i3lock|2022-07-01|move desktop utility to its right category
+x11/i3status|deskutils/i3status|2022-07-01|move desktop utility to its right category
+x11/xcbautolock|deskutils/xcbautolock|2022-07-01|move desktop utility to its right category
+x11/havoc|deskutils/havoc|2022-07-01|move desktop utility to its right category
+devel/go-glide||2022-07-01|Has expired: use go mod instead of glide
+irc/unreal||2022-07-01|Has expired: Very outdated, listed as end of life in 2016 and has known security issues
+sysutils/go-btfs||2022-07-01|Has expired: Requires go 1.15
+sysutils/pesign||2022-07-01|Has expired: Unmaintaned since 2016, very much out of date, does not build with GCC 11 (PR #263544)
+sysutils/cfengine316||2022-07-06|Has expired: Expire one year after cfengine 3.18.0 released
+sysutils/cfengine-masterfiles316||2022-07-06|Has expired: Expire one year after cfengine 3.18.0 released
+devel/hs-hls-install||2022-07-06|Removed: was a build dependency and not needed anymore
+devel/hs-haddock||2022-07-06|Removed: Haddock is shipped as part of lang/ghc
+x11/gsynaptics||2022-07-08|Has expired: Abandonware using old gnome2 libs
+x11/alltray||2022-07-08|Has expired: abandonware
+x11/simdock||2022-07-08|Has expired: Abandonware using deprecated gnome2 libs
+misc/cxxmatrix|games/cxxmatrix|2022-07-10|Move to a more appropriate category
+devel/ChipmunkPhysics|science/ChipmunkPhysics|2022-07-13|Move to a more appropriate category
+textproc/rubygem-escape_utils12|textproc/rubygem-escape_utils|2022-07-13|Remove obsoleted port. Use textproc/rubygem-escape_utils instead
+net/rubygem-omniauth-oauth2-v1|net/rubygem-omniauth-oauth2|2022-07-13|Remove obsoleted port. Use net/rubygem-omniauth-oauth2 instead
+devel/rubygem-execjs-node16|devel/rubygem-execjs|2022-07-13|Remove obsoleted port. Use devel/rubygem-execjs instead
+devel/rubygem-webpacker-rails61-node16|devel/rubygem-webpacker-rails61|2022-07-13|Remove obsoleted port. Use devel/rubygem-webpacker-rails61 instead
+textproc/rubygem-autoprefixer-rails-node16|textproc/rubygem-autoprefixer-rails|2022-07-13|Remove obsoleted port. Use textproc/rubygem-autoprefixer-rails instead
+www/rubygem-rails61-node16|www/rubygem-rails61|2022-07-13|Remove obsoleted port. Use www/rubygem-rails61 instead
+www/rubygem-uglifier-node16|www/rubygem-uglifier|2022-07-13|Remove obsoleted port. Use www/rubygem-uglifier instead
+audio/espeak|audio/espeak-ng|2022-07-15|Switch to fork of (stale) original repository
+misc/ngraph||2022-07-15|Software is discontinued because its developer Nervana Systems is defunct
+math/hipmcl||2022-07-16|Discontinued: old versions aren't compatible with new combblas-2.0, latest versions require CUDA that is not available on FreeBSD
+security/base-audit|ports-mgmt/pkg|2022-07-17|Merged into ports-mgmt/pkg
+net/py-pyroute2.core|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream moves back to single package layout (net/py-pyroute2)
+net/py-pyroute2.ethtool|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream moves back to single package layout (net/py-pyroute2)
+net/py-pyroute2.ipset|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream moves back to single package layout (net/py-pyroute2)
+net/py-pyroute2.ndb|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream moves back to single package layout (net/py-pyroute2)
+net/py-pyroute2.nftables|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream moves back to single package layout (net/py-pyroute2)
+net/py-pyroute2.nslink|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream moves back to single package layout (net/py-pyroute2)
+math/intervaltree||2022-07-27|Has expired: Dependent ports now use GH_TUPLE
+security/gnomint||2022-07-27|Has expired: Abandonware, depending on gconf2
+japanese/im-ja||2022-07-27|Has expired: Abandonware, depending on gconf2
+sysutils/mgeupsd||2022-07-27|Has expired: Last release is 23 years old. It is not clear what devices are supported.
+x11-wm/lxmed||2022-07-27|Removed, depends on expired sysutils/gksu
+sysutils/gksu||2022-07-27|Has expired: Abandonware, depending on gconf2
+sysutils/libgksu||2022-07-27|Has expired: Abandonware, depending on gconf2
+multimedia/webvfx-qt5||2022-07-29|Abandoned upstream, multimedia/shotcut no longer supports/uses
+textproc/rubygem-rouge312|textproc/rubygem-rouge|2022-07-30|Remove obsoleted port. Use textproc/rubygem-rouge instead
+textproc/rubygem-rouge327|textproc/rubygem-rouge|2022-07-30|Remove obsoleted port. Use textproc/rubygem-rouge instead
+net-mgmt/py-netbox-plugin-extensions||2022-07-31|Has expired: No longer required for net-mgmt/netbox 3.2+
+deskutils/gnome-system-log||2022-08-01|Has expired: Did not survive gnome 3
+deskutils/gnome-documents||2022-08-01|Has expired: Archived upstream
+deskutils/gnome-search-tool||2022-08-01|Has expired: Did not survive gnome3
+security/nextcloud-twofactor_u2f|security/nextcloud-twofactor_webauthn|2022-08-01|Has expired: Upstream deprecated this port in favor of twofactor_webauthn. Check https://github.com/nextcloud/twofactor_webauthn#migration-from-two-factor-u2f for migration instructions
+editors/codelite||2022-08-01|Has expired: Has been broken for over a year.
+x11-servers/xephyr|x11-servers/xorg-server@xephyr|2022-08-02|Merged into flavorized version
+x11-servers/xorg-nestserver|x11-servers/xorg-server@xnest|2022-08-02|Merged into the flavorized version
+x11-servers/xorg-vfbserver|x11-servers/xorg-server@xvfb|2022-08-02|Merged into the flavorized version
+x11-servers/xorg-dmx||2022-08-02|Discontinued upstream
+lang/go117||2022-08-02|Upstream support ended
+games/fishfight|games/jumpy|2022-08-02|Project renamed
+mail/roundcube-mobilecube||2022-08-05|Removed, broken and no upstream updates
+mail/roundcube-mvision2||2022-08-05|Removed, broken and no upstream updates
+mail/roundcube-umich||2022-08-05|Removed, broken and no upstream updates
+games/exult|games/exult-devel|2022-08-06|Follow 1.9.x devel snapshots
+science/openkim|science/openkim-models|2022-08-07|Retire obsolete science/openkim, users should install science/openkim-models instead

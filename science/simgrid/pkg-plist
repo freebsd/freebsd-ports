@@ -19,12 +19,11 @@ include/simgrid/exec.h
 include/simgrid/forward.h
 include/simgrid/host.h
 include/simgrid/instr.h
+include/simgrid/kernel/ProfileBuilder.hpp
 include/simgrid/kernel/Timer.hpp
-include/simgrid/kernel/future.hpp
 include/simgrid/kernel/resource/Action.hpp
 include/simgrid/kernel/resource/Model.hpp
 include/simgrid/kernel/resource/NetworkModelIntf.hpp
-include/simgrid/kernel/resource/Resource.hpp
 include/simgrid/kernel/routing/ClusterZone.hpp
 include/simgrid/kernel/routing/DijkstraZone.hpp
 include/simgrid/kernel/routing/DragonflyZone.hpp
@@ -67,10 +66,8 @@ include/simgrid/s4u/NetZone.hpp
 include/simgrid/s4u/Semaphore.hpp
 include/simgrid/s4u/VirtualMachine.hpp
 include/simgrid/semaphore.h
-include/simgrid/simdag.h
 include/simgrid/simix.h
 include/simgrid/simix.hpp
-include/simgrid/smpi/smpi_replay.hpp
 include/simgrid/version.h
 include/simgrid/vm.h
 include/simgrid/zone.h
@@ -121,7 +118,7 @@ include/xbt/utility.hpp
 include/xbt/virtu.h
 include/xbt/xbt_os_time.h
 lib/libsimgrid.so
-lib/libsimgrid.so.3.28
+lib/libsimgrid.so.3.31
 lib/simgrid/smpimain
 lib/simgrid/smpireplaymain
 libdata/pkgconfig/simgrid.pc

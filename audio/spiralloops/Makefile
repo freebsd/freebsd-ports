@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	spiralloops
 PORTVERSION=	2.0.0
 PORTREVISION=	9

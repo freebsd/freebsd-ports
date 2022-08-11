@@ -1,5 +1,3 @@
-# Created by: Adrian Chadd
-
 PORTNAME=	intel-pcm
 PORTVERSION=	202112
 CATEGORIES=	sysutils

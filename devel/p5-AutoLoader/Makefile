@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	AutoLoader
 PORTVERSION=	5.74
 CATEGORIES=	devel perl5

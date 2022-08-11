@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-EN-MatchNames
 PORTVERSION=	1.36
 CATEGORIES=	textproc perl5

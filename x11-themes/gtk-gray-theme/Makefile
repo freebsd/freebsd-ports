@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <babak@farrokhi.net>
-
 PORTNAME=	gtk-gray-theme
 PORTVERSION=	1.7
 PORTREVISION=	7

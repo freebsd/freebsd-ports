@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	deltarpm
 PORTVERSION=	3.6
 PORTREVISION=	1

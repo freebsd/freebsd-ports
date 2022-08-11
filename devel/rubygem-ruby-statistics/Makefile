@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	ruby-statistics
 PORTVERSION=	2.1.2
 CATEGORIES=	devel rubygems

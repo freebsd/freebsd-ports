@@ -1,5 +1,3 @@
-# Created by: Jeremy Norris <ishmael27@home.com>
-
 PORTNAME=	scrot
 DISTVERSION=	1.7
 CATEGORIES=	graphics

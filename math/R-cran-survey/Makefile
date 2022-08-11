@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	survey
 DISTVERSION=	4.1-1
 CATEGORIES=	math

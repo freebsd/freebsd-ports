@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Algorithm-Interval2Prefix
 PORTVERSION=	0.02
 PORTREVISION=	1

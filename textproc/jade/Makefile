@@ -1,5 +1,3 @@
-# Created by: jfieber
-
 PORTNAME=	jade
 PORTVERSION=	1.2.1
 PORTREVISION=	10

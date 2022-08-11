@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Class-DBI-Plugin-Type
 PORTVERSION=	0.02
 PORTREVISION=	1

@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	googleauth
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

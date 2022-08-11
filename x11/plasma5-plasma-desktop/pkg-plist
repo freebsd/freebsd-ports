@@ -554,6 +554,8 @@ share/doc/HTML/ru/kcontrol/joystick/joystick-calibration.png
 share/doc/HTML/ru/kcontrol/joystick/joystick-main.png
 share/doc/HTML/ru/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kcmaccess/index.docbook
+share/doc/HTML/ru/kcontrol/kcmactivities/index.cache.bz2
+share/doc/HTML/ru/kcontrol/kcmactivities/index.docbook
 share/doc/HTML/ru/kcontrol/kcmlaunchfeedback/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/ru/kcontrol/kcmsmserver/index.cache.bz2
@@ -582,6 +584,10 @@ share/doc/HTML/ru/kcontrol/splashscreen/get-new-theme.png
 share/doc/HTML/ru/kcontrol/splashscreen/index.cache.bz2
 share/doc/HTML/ru/kcontrol/splashscreen/index.docbook
 share/doc/HTML/ru/kcontrol/splashscreen/splash-main.png
+share/doc/HTML/ru/kcontrol/workspaceoptions/index.cache.bz2
+share/doc/HTML/ru/kcontrol/workspaceoptions/index.docbook
+share/doc/HTML/ru/kfontview/index.cache.bz2
+share/doc/HTML/ru/kfontview/index.docbook
 share/doc/HTML/ru/knetattach/index.cache.bz2
 share/doc/HTML/ru/knetattach/index.docbook
 share/doc/HTML/ru/plasma-desktop/index.cache.bz2

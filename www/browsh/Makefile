@@ -1,6 +1,6 @@
 PORTNAME=	browsh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.4
+DISTVERSION=	1.8.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/browsh-org/browsh/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	browsh_${DISTVERSION}_freebsd_${ARCH:S/i386/386/}
@@ -30,7 +30,7 @@ _ALL_DISTFILES=	browsh_${DISTVERSION}_freebsd_386 \
 		browsh_${DISTVERSION}_freebsd_armv6 \
 		browsh_${DISTVERSION}_freebsd_armv7
 
-.if make(makesum)
+.if make(makesum) || make(distclean)
 DISTFILES:=	${_ALL_DISTFILES}
 .endif
 

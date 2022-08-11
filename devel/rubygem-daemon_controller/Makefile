@@ -1,5 +1,3 @@
-# Created by: Jacob Atzen <jatzen@gmail.com>
-
 PORTNAME=	daemon_controller
 PORTVERSION=	1.2.0
 PORTREVISION=	2

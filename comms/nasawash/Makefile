@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	nasawash
 PORTVERSION=	0.50
 CATEGORIES=	comms hamradio

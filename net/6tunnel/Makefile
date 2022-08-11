@@ -1,5 +1,3 @@
-# Created by: Vassili Tchersky <vt@bsdjeunz.org>
-
 PORTNAME=	6tunnel
 DISTVERSION=	0.13
 CATEGORIES=	net

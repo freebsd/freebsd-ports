@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME=	libnfc
 PORTVERSION=	1.7.1
 PORTREVISION=	5

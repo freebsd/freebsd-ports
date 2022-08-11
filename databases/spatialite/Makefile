@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	spatialite
 PORTVERSION=	5.0.1
 PORTREVISION=	2

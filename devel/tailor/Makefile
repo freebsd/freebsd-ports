@@ -1,5 +1,3 @@
-# Created by: Rui Lopes <rgl ruilopes com>
-
 PORTNAME=	tailor
 DISTVERSION=	0.9.37
 CATEGORIES=	devel python

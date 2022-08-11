@@ -1,5 +1,3 @@
-# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-
 PORTNAME=	milter-manager
 DISTVERSION=	2.1.6
 CATEGORIES=	mail ruby

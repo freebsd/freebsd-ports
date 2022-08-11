@@ -1,5 +1,3 @@
-# Created by: Jing-Tang Keith Jang <keith@FreeBSD.org>
-
 PORTNAME=	moettf
 PORTVERSION=	2.0
 PORTREVISION=	7

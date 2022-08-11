@@ -1,5 +1,3 @@
-# Created by: pb@FreeBSD.org
-
 PORTNAME=	dvdauthor
 PORTVERSION=	0.7.2.20211105
 PORTREVISION=	2

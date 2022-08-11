@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Clipboard
 PORTVERSION=	0.28
 CATEGORIES=	x11 perl5

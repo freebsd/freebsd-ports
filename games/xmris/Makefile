@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	xmris
 PORTVERSION=	4.04
 PORTREVISION=	5

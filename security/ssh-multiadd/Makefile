@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	ssh-multiadd
 PORTVERSION=	1.3.2
 CATEGORIES=	security

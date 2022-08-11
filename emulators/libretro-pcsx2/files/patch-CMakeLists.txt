@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2020-10-29 23:31:05 UTC
++++ CMakeLists.txt
+@@ -44,7 +44,10 @@ if (LIBRETRO)
+    set(BUILD_REPLAY_LOADERS FALSE)
+ #   add_definitions(-D__LIBRETRO__ -DDISABLE_RECORDING)
+ #add_definitions(-D__LIBRETRO__ -DDISABLE_RECORDING -DwxUSE_UNICODE=0)
+-add_definitions(-D__LIBRETRO__ -DDISABLE_RECORDING -DwxUSE_GUI=0)
++message("wxWidgets_INCLUDE_DIRS: ${wxWidgets_INCLUDE_DIRS}")
++include_directories(${wxWidgets_INCLUDE_DIRS})
++#include_directories(${gdk_INCLUDE_DIRS})
++add_definitions(-D__LIBRETRO__ -DDISABLE_RECORDING -DwxUSE_GUI=0 -I${gtk_INCLUDE_DIR} -D__USE_ISOC11)
+ endif()
+ 
+ if(NOT NO_TRANSLATION)

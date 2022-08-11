@@ -1,7 +1,10 @@
-SeleniumLibrary is a web testing library for Robot Framework that utilizes
-the Selenium tool internally.
+SeleniumLibrary is a web testing library for Robot Framework that utilizes the
+Selenium tool internally. The project is hosted on GitHub and downloads can be
+found from PyPI.
 
-SeleniumLibrary is based on the old SeleniumLibrary that was forked
-to Selenium2Library and then later renamed back to SeleniumLibrary.
+SeleniumLibrary is based on the old SeleniumLibrary that was forked to
+Selenium2Library and then later renamed back to SeleniumLibrary. See the
+Versions and History sections below for more information about different
+versions and the overall project history.
 
 WWW: https://github.com/robotframework/SeleniumLibrary

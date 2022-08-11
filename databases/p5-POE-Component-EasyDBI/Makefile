@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <lin-chi@lastamericanempire.com>
-
 PORTNAME=	POE-Component-EasyDBI
 PORTVERSION=	1.28
 CATEGORIES=	databases perl5

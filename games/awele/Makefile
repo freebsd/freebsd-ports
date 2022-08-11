@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	awele
 PORTVERSION=	1.0
 PORTREVISION=	4

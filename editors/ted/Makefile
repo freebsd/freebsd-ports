@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	ted
 PORTVERSION=	2.23
 PORTREVISION=	5

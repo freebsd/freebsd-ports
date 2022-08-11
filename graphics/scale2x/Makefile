@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	scale2x
 PORTVERSION=	3.1
 PORTREVISION=	1

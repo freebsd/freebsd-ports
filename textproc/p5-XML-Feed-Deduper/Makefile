@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	XML-Feed-Deduper
 PORTVERSION=	0.06
 PORTREVISION=	2

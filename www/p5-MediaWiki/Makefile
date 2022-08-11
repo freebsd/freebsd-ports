@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	MediaWiki
 PORTVERSION=	1.13
 PORTREVISION=	1

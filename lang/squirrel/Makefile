@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	squirrel
 DISTVERSION=	3_1
 PORTREVISION=	3

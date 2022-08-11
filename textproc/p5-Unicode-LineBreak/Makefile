@@ -1,5 +1,3 @@
-# Created by: Olivier Girard <Olivier.Girard@univ-angers.fr>
-
 PORTNAME=	Unicode-LineBreak
 PORTVERSION=	2019.001
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	zonefile
 PORTVERSION=	1.06
 CATEGORIES=	dns rubygems

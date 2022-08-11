@@ -1,0 +1,4 @@
+Class::Data::Lite is a minimalistic implement for class accessors. There is no
+inheritance and fast.
+
+WWW: https://metacpan.org/dist/Class-Data-Lite

@@ -1,5 +1,3 @@
-# Created by: Niels Heinen
-
 PORTNAME=	whatweb
 DISTVERSION=	0.4.8-${GH_TAGNAME}
 PORTREVISION=	2

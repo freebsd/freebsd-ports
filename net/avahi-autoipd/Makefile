@@ -1,6 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-#   $MCom: ports/net/avahi-autoipd/Makefile,v 1.1 2007/07/31 18:24:12 ahze Exp $
-
 PORTREVISION=	0
 CATEGORIES=	net
 PKGNAMESUFFIX=	-autoipd

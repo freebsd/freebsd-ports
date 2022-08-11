@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	unpaper
 PORTVERSION=	6.1
 CATEGORIES=	graphics

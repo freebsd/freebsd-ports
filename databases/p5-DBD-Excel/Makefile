@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	DBD-Excel
 PORTVERSION=	0.06
 PORTREVISION=	1

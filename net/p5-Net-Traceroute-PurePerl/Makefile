@@ -1,5 +1,3 @@
-# Created by: jupengfei <jupengfei@gmail.com>
-
 PORTNAME=	Net-Traceroute-PurePerl
 PORTVERSION=	0.10
 PORTREVISION=	1

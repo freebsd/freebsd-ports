@@ -1,5 +1,3 @@
-# Created by: elfrink@introcom.nl
-
 PORTNAME=	tractorgen
 PORTVERSION=	0.31.7
 PORTREVISION=	2

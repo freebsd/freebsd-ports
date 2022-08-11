@@ -1,0 +1,13 @@
+include/ssht/ssht.h
+include/ssht/ssht_adjoint.h
+include/ssht/ssht_core.h
+include/ssht/ssht_dl.h
+include/ssht/ssht_error.h
+include/ssht/ssht_sampling.h
+include/ssht/ssht_types.h
+include/ssht/ssht_version.h
+lib/cmake/ssht/sshtConfig.cmake
+lib/cmake/ssht/sshtConfigVersion.cmake
+lib/cmake/ssht/sshtTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ssht/sshtTargets.cmake
+lib/libssht.so

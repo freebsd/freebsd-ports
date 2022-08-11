@@ -1,7 +1,7 @@
 PORTNAME=	sway-audio-idle-inhibit
 DISTVERSIONPREFIX=	v
 PORTVERSION=	0.1.1
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Disable swayidle during audio playback/recording

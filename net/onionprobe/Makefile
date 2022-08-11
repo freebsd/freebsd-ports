@@ -1,0 +1,45 @@
+PORTNAME=	onionprobe
+PORTVERSION=	1.0.0
+CATEGORIES=	net python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	egypcio@FreeBSD.org
+COMMENT=	Test and monitor the status of Tor Onion Services
+
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}poetry-core>=0:devel/py-poetry-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0:net-mgmt/py-prometheus-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}stem>=0:security/py-stem@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
+		tor:security/tor
+
+USES=		python:3.6+ shebangfix
+USE_PYTHON=	autoplist distutils
+
+SHEBANG_FILES=	packages/*.py \
+		packages/onionprobe/*.py
+
+OPTIONS_DEFINE=		MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+
+MANPAGES_PLIST_FILES=	share/man/man1/onionprobe.1.md.gz
+
+post-patch:
+	${REINPLACE_CMD} "s|%%ETCDIR%%|${ETCDIR}|g" \
+	  ${WRKSRC}/docs/man/onionprobe.1.md \
+	  ${WRKSRC}/packages/onionprobe/config.py
+	${CP} ${FILESDIR}/extras-setup.py ${WRKSRC}/setup.py \
+	  && ${REINPLACE_CMD} "s|%%NAME%%|${PORTNAME}|g; s|%%VERSION%%|${PORTVERSION}|g" ${WRKSRC}/setup.py
+
+post-install-MANPAGES-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1 \
+	  && ${INSTALL_MAN} ${WRKSRC}/docs/man/onionprobe.1.md ${STAGEDIR}${PREFIX}/share/man/man1/.
+
+.include <bsd.port.mk>

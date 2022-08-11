@@ -1,5 +1,3 @@
-# Created by: b.f. <bf@FreeBSD.org>
-
 PORTNAME=	lrng
 PORTVERSION=	20130314
 CATEGORIES=	math

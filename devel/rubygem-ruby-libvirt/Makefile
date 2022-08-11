@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	ruby-libvirt
 PORTVERSION=	0.8.0
 CATEGORIES=	devel rubygems

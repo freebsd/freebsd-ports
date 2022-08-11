@@ -3,7 +3,7 @@
   message: <<EOM
 Suyimazu was created for the gui usage in the first place,
 the gui can be opened via the commandline by typing Suyimazu
-but also via a shortcut (if you have Homura allowed to create one).
+but also via a shortcut (if you have allowed to create one).
 
 For terminal fans there are also some fast commands:
 

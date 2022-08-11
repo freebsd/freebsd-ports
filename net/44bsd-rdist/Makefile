@@ -1,5 +1,3 @@
-# Created by: David O'Brien <obrien@NUXI.com>
-
 PORTNAME=	44bsd-rdist
 PORTVERSION=	20001111
 PORTREVISION=	2

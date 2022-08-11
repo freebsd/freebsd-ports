@@ -1,6 +1,6 @@
---- CMakeGlobals.txt.orig	2022-02-16 19:26:03 UTC
+--- CMakeGlobals.txt.orig	2022-07-06 19:59:49 UTC
 +++ CMakeGlobals.txt
-@@ -159,7 +159,7 @@ endif()
+@@ -168,7 +168,7 @@ endif()
  
  # record git revision hash (cache it since we don't use this in development
  # mode and we don't want it to force rebuilds there)
@@ -9,7 +9,7 @@
     find_program(GIT_EXECUTABLE git)
     if(GIT_EXECUTABLE)
        execute_process(
-@@ -170,6 +170,7 @@ if(NOT RSTUDIO_SESSION_WIN32 AND NOT RSTUDIO_GIT_REVIS
+@@ -179,6 +179,7 @@ if(NOT RSTUDIO_SESSION_WIN32 AND NOT RSTUDIO_GIT_REVIS
        SET(RSTUDIO_GIT_REVISION_HASH "${RSTUDIO_GIT_REVISION_HASH}" CACHE STRING "Git Revision Hash")
     endif()
  endif()
@@ -17,7 +17,7 @@
  
  # record these from Jenkins if available
  if("$ENV{GIT_COMMIT}" STREQUAL "")
-@@ -223,7 +224,7 @@ if(LINUX AND UNAME_M STREQUAL aarch64)
+@@ -254,7 +255,7 @@ elseif(IS_CENTOS7)
     set(QUARTO_ENABLED FALSE CACHE INTERNAL "")
  else()
     # enable by default
@@ -26,7 +26,7 @@
     add_definitions(-DQUARTO_ENABLED)
  endif()
  
-@@ -298,14 +299,14 @@ else()
+@@ -341,14 +342,14 @@ else()
  endif()
  
  # if the install prefix is /usr/local then tweak as appropriate
@@ -35,7 +35,7 @@
     if(APPLE)
        set(CMAKE_INSTALL_PREFIX "/Applications")
     elseif(UNIX)
-       if(RSTUDIO_DESKTOP)
+       if(RSTUDIO_DESKTOP OR RSTUDIO_ELECTRON)
 -         set(CMAKE_INSTALL_PREFIX "/usr/local/lib/rstudio")
 +         set(CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}/lib/rstudio")
        else()

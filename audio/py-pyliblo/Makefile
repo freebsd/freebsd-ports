@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	pyliblo
 DISTVERSION=	0.10.0
 PORTREVISION=	2

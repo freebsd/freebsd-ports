@@ -1,5 +1,3 @@
-# Created by: Lars Eggert <lars.eggert@gmx.net>
-
 PORTNAME=	MP4-Info
 PORTVERSION=	1.13
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mypy-protobuf
 PORTVERSION=	3.2.0
 PORTREVISION=	1

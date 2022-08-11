@@ -1,0 +1,13 @@
+#!/bin/sh
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+# Always add lines in /etc/services
+grep -q "bacula-dir" /etc/services
+if [ "$?" != "0" ]; then
+    echo "# Bacula port start
+bacula-dir      9101/tcp   #Bacula director daemon
+bacula-fd       9102/tcp   #Bacula file daemon
+bacula-sd       9103/tcp   #Bacula storage daemon
+# Bacula port end" >> /etc/services
+fi

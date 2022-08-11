@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Text-Bastardize
 DISTVERSION=	0.08
 PORTREVISION=	1

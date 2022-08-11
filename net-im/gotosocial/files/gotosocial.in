@@ -34,7 +34,7 @@ load_rc_config "$name"
 
 procname="%%PREFIX%%/bin/${name}"
 command=/usr/sbin/daemon
-command_args="-c -T ${name} ${procname} --config-path ${gotosocial_config} server start"
+command_args="-c -S -T ${name} ${procname} --config-path ${gotosocial_config} server start"
 
 start_precmd="${name}_prestart"
 

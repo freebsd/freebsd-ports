@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	httpcore
 DISTVERSION=	4.4.13
 CATEGORIES=	www java

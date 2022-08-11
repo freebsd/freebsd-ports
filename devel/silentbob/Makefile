@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@rtfm.jp>
-
 PORTNAME=	silentbob
 PORTVERSION=	3.0
 PORTREVISION=	1

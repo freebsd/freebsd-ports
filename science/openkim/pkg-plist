@@ -1,8 +1,0 @@
-include/KIM_API/KIM_API.h
-include/KIM_API/KIM_API_C.h
-include/KIM_API/KIM_API_status.h
-include/KIM_API/KIM_AUX.h
-include/KIM_API/Unit_Handling.h
-include/KIM_API/model_init_include.h
-include/KIM_API/model_kim_str_include.h
-lib/libkim.a

@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	commons-collections
 PORTVERSION=	3.2.2
 CATEGORIES=	java devel
@@ -18,6 +16,7 @@ JAVA_VERSION=	8+
 USE_ANT=	yes
 
 ALL_TARGET=	jar
+NO_ARCH=	yes
 PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar
 OTHERDOCS=	DEVELOPERS-GUIDE.html PROPOSAL.html README.txt RELEASE-NOTES.txt
 PORTDOCS=	apidocs ${OTHERDOCS}

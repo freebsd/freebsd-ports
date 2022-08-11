@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	retcl
 PORTVERSION=	0.4.0
 CATEGORIES=	databases

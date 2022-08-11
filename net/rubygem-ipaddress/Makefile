@@ -1,5 +1,3 @@
-# Created by: Boris Lytochkin <lytboris@gmail.com>
-
 PORTNAME=	ipaddress
 PORTVERSION=	0.8.3
 CATEGORIES=	net rubygems

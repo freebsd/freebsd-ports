@@ -1,5 +1,3 @@
-# Created by: Valery Komarov <komarov@valerka.net>
-
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
 PORTEPOCH=	1

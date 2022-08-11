@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	mod_sql_mysql
 CATEGORIES=	databases ftp
 PKGNAMEPREFIX=	proftpd-

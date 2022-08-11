@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	mutter
 PORTVERSION=	0.5.3
 PORTREVISION=	0

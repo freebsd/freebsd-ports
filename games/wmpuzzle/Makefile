@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	wmpuzzle
 PORTVERSION=	0.5.2
 CATEGORIES=	games windowmaker afterstep

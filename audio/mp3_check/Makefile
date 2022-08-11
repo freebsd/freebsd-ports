@@ -1,5 +1,3 @@
-# Created by: ericb@thedeepsky.com
-
 PORTNAME=	mp3_check
 PORTVERSION=	1.98
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	MKDoc-XML
 PORTVERSION=	0.75
 PORTREVISION=	2

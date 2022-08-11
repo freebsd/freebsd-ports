@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	cpan-upload
 PORTVERSION=	2.2
 PORTREVISION=	2

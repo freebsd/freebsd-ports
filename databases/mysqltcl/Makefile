@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <martin@matuska.org>
-
 PORTNAME=	mysqltcl
 PORTVERSION=	3.052
 CATEGORIES=	databases tcl

@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	pkg_cleanup
 PORTVERSION=	2.1
 CATEGORIES=	ports-mgmt

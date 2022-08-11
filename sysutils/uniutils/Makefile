@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	uniutils
 PORTVERSION=	2.27
 PORTREVISION=	2

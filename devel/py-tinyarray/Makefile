@@ -1,5 +1,3 @@
-# Created by: Wen Heping<wenheping@gmail.com>
-
 PORTNAME=	tinyarray
 PORTVERSION=	1.2.4
 CATEGORIES=	devel python

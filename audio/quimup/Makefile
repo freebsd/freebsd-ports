@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	quimup
 PORTVERSION=	1.4.4
 PORTREVISION=	2

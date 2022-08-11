@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	icalendar
 PORTVERSION=	4.0.3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	CGI-SSI
 PORTVERSION=	0.92
 PORTREVISION=	2

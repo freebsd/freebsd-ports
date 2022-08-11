@@ -1,5 +1,3 @@
-# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-
 PORTNAME=	simplejson
 PORTVERSION=	3.17.6
 CATEGORIES=	devel python
@@ -15,12 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cpe python:3.6+
 CPE_VENDOR=	simplejson_project
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils unittest
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
-do-test:
-	cd ${WRKSRC} && ${PYTHON_CMD} -m unittest -v
 
 .include <bsd.port.mk>

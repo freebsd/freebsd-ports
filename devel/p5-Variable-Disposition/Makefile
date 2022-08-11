@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Variable-Disposition
 PORTVERSION=	0.004
 PORTREVISION=	1

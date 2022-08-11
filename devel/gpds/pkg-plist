@@ -1,0 +1,16 @@
+include/gpds/archiver.hpp
+include/gpds/archiver_xml.hpp
+include/gpds/attributes.hpp
+include/gpds/container.hpp
+include/gpds/gpds_export.hpp
+include/gpds/serialize.hpp
+include/gpds/spdlog_sink.hpp
+include/gpds/utils.hpp
+include/gpds/value.hpp
+lib/cmake/gpds/gpds-config-version.cmake
+lib/cmake/gpds/gpds-config.cmake
+lib/cmake/gpds/gpds-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/gpds/gpds-targets.cmake
+lib/libgpds.a
+lib/libgpds.so
+lib/libgpds.so.1.5.0

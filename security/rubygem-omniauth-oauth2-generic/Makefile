@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	omniauth-oauth2-generic
 PORTVERSION=	0.2.8
 CATEGORIES=	security rubygems

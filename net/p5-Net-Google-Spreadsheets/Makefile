@@ -1,5 +1,3 @@
-# Created by: Gunter Wambaugh <gunter@six-two.net>
-
 PORTNAME=	Net-Google-Spreadsheets
 PORTVERSION=	0.15.01
 PORTREVISION=	1

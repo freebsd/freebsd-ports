@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-Requires-Git
 PORTVERSION=	1.008
 CATEGORIES=	devel perl5

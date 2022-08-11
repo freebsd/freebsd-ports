@@ -1,0 +1,11 @@
+diff -ruN ledger-3.2.1/src/system.hh.in ledger-3.2.1-patched/src/system.hh.in
+--- src/system.hh.in.orig	2020-05-18 00:30:10.000000000 -0500
++++ src/system.hh.in	2022-05-29 08:49:10.857528000 -0500
+@@ -153,6 +153,7 @@
+ #include <boost/function.hpp>
+ 
+ #include <boost/intrusive_ptr.hpp>
++#include <boost/smart_ptr/scoped_ptr.hpp>
+ 
+ #include <boost/iostreams/stream.hpp>
+ #include <boost/iostreams/write.hpp>

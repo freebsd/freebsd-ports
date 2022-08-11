@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	magic
 PORTVERSION=	0.7.3
 PORTREVISION=	3

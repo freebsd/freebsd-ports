@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	cloog
 PORTVERSION=	0.20.0
 PORTREVISION=	1

@@ -1,10 +1,7 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	3.0.2
+DISTVERSION=	3.1.4
 PORTEPOCH=	3
-PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	thierry@FreeBSD.org

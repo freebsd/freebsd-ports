@@ -1,5 +1,3 @@
-# Created by: Mateusz Piotrowski <0mp@FreeBSD.org>
-
 PORTNAME=	meh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3-27

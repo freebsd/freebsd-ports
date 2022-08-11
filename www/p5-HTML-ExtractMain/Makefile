@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	HTML-ExtractMain
 PORTVERSION=	0.62
 PORTREVISION=	1

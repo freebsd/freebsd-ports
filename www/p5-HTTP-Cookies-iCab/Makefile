@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	HTTP-Cookies-iCab
 PORTVERSION=	1.132
 CATEGORIES=	www perl5

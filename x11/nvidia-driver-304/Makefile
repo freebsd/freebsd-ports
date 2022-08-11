@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 DISTVERSION=	304.137
 # Explicitly set PORTREVISION as it can be overridden by the master port
 PORTREVISION=	9

@@ -1,0 +1,12 @@
+ContaiNERD CTL - Docker-compatible CLI for containerd
+- Same UI/UX as docker
+- Supports Docker Compose (nerdctl compose up)
+- [Optional] Supports rootless mode, without slirp overhead (bypass4netns)
+- [Optional] Supports lazy-pulling (Stargz, Nydus, OverlayBD)
+- [Optional] Supports encrypted images (ocicrypt)
+- [Optional] Supports P2P image distribution (IPFS)
+- [Optional] Supports container image signing and verifying (cosign)
+
+nerdctl is a non-core sub-project of containerd.
+
+WWW: https://github.com/containerd/nerdctl

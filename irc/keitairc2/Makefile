@@ -1,5 +1,3 @@
-# Created by: Makoto Matsushita <matusita@FreeBSD.org>
-
 PORTNAME=	keitairc
 PORTVERSION=	2.0
 CATEGORIES=	irc

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Test-Without-Module
 PORTVERSION=	0.20
 CATEGORIES=	devel perl5

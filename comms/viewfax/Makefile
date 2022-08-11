@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	viewfax
 PORTVERSION=	2.6
 PORTREVISION=	1

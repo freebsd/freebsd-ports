@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	fcitx-hangul
 PORTVERSION=	0.3.0
 PORTREVISION=	1

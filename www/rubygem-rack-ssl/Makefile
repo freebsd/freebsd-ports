@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rack-ssl
 PORTVERSION=	1.4.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-
 PORTNAME=	Net-CUPS
 PORTVERSION=	0.64
 CATEGORIES=	print perl5

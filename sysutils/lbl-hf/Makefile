@@ -1,5 +1,3 @@
-# Created by: Craig Leres <leres@FreeBSD.org>
-
 PORTNAME=	hf
 PORTVERSION=	1.9
 CATEGORIES=	sysutils

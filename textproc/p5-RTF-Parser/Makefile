@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	RTF-Parser
 PORTVERSION=	1.12
 PORTREVISION=	1

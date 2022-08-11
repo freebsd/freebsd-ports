@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	pacpl
 PORTVERSION=	6.1.3
 CATEGORIES=	audio

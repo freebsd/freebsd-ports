@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@php.net>)
-
 PORTNAME=	DB_DataObject_FormBuilder
 PORTVERSION=	1.0.2
 CATEGORIES=	databases www pear

@@ -1,5 +1,3 @@
-# Created by: andrew@scoop.co.nz
-
 PORTNAME=	Module-Reload
 PORTVERSION=	1.11
 CATEGORIES=	devel perl5

@@ -1,8 +1,8 @@
 PORTNAME=	softether
-DISTVERSION=	4.37-9758-beta
+DISTVERSION=	4.39-9772-beta
 PORTREVISION=	0
 CATEGORIES=	security net-vpn
-MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2021.08.16-tree/Source_Code/
+MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2022.04.26-tree/Source_Code/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le riscv64
-IGNORE=		no beta version available right now, use security/softether instead
+#IGNORE=		no beta version available right now, use security/softether instead
 
 USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
 		readline ssl

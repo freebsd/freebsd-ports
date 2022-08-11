@@ -1,8 +1,6 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org

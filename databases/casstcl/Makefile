@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	casstcl
 PORTVERSION=	2.16.1
 DISTVERSIONPREFIX=v

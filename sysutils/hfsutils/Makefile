@@ -1,5 +1,3 @@
-# Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
-
 PORTNAME=	hfsutils
 PORTVERSION=	3.2.6
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	Data-JavaScript
 PORTVERSION=	1.13
 PORTREVISION=	1

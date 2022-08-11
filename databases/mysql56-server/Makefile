@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME?=	mysql
 PORTVERSION=	5.6.51
 PORTREVISION?=	0
@@ -39,7 +37,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_INCLUDEDIR="include/mysql" \
 		-DINSTALL_INFODIR="${INFO_PATH}" \
 		-DINSTALL_LIBDIR="lib/mysql" \
-		-DINSTALL_MANDIR="man" \
+		-DINSTALL_MANDIR="share/man" \
 		-DINSTALL_MYSQLDATADIR="${MY_DBDIR}" \
 		-DINSTALL_MYSQLKEYRINGDIR="etc/mysql/keyring" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \

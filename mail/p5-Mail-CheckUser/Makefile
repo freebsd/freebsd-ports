@@ -1,5 +1,3 @@
-# Created by: Attila Nagy <bra@fsn.hu>
-
 PORTNAME=	Mail-CheckUser
 PORTVERSION=	1.21
 PORTREVISION=	2

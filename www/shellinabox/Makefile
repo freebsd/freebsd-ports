@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	shellinabox
 PORTVERSION=	2.20
 DISTVERSIONPREFIX=	v

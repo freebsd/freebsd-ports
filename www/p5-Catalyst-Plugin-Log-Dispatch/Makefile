@@ -1,5 +1,3 @@
-# Created by: Oleg Mamontov <oleg@mamontov.net>
-
 PORTNAME=	Catalyst-Plugin-Log-Dispatch
 PORTVERSION=	0.121
 PORTREVISION=	1

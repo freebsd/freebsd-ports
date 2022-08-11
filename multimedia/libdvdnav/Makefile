@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-
 PORTNAME=	libdvdnav
 PORTVERSION=	6.1.1
 CATEGORIES=	multimedia

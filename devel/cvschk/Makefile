@@ -1,5 +1,3 @@
-# Created by: Matthias Andree <matthias.andree@gmx.de>
-
 PORTNAME=	cvschk
 PORTVERSION=	1.12
 CATEGORIES=	devel

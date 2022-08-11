@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	htmlpurifier
 PORTVERSION=	4.9.2
 PORTREVISION=	1

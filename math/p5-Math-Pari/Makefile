@@ -1,5 +1,3 @@
-# Created by: Michael Haro <mharo@FreeBSD.org>
-
 PORTNAME=	Math-Pari
 PORTVERSION=	2.01080900
 CATEGORIES=	math perl5

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	icewm-extra-themes
 PORTVERSION=	1.2
 CATEGORIES=	x11-themes

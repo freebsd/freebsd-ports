@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	rtc
 PORTVERSION=	2020.07.07.1
 CATEGORIES=	emulators linux

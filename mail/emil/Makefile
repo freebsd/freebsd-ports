@@ -1,5 +1,3 @@
-# Created by: Josh Gilliam <josh@quick.net>
-
 PORTNAME=	emil
 PORTVERSION=	2.1b9
 PORTREVISION=	1

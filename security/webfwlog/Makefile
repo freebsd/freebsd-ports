@@ -1,5 +1,3 @@
-# Created by: Bob Hockney <zeus@ix.netcom.com>
-
 PORTNAME=	webfwlog
 PORTVERSION=	1.1.1
 CATEGORIES=	security

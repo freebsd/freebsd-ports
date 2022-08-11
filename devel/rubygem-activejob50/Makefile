@@ -1,5 +1,3 @@
-# Created by: Johannes Jost Meixner <xmj@FreeBSD.org>
-
 PORTNAME=	activejob
 PORTVERSION=	5.0.7.2
 CATEGORIES=	devel rubygems

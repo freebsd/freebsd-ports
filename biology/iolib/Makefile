@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	io_lib
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1-14-10

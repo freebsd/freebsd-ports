@@ -1,5 +1,3 @@
-# Created by: niels <niels@FreeBSD.org>
-
 PORTNAME=	robots
 PORTVERSION=	0.10.1
 PORTREVISION=	1

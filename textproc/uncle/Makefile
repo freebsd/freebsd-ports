@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	uncle
 PORTVERSION=	0.2
 PORTREVISION=	1

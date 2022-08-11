@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-nurbs
 PORTVERSION=	1.4.3
 PORTREVISION=	2

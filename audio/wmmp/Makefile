@@ -1,5 +1,3 @@
-# Created by: Nicolas Herry <nicolasherry@gmail.com>
-
 PORTNAME=	wmmp
 PORTVERSION=	0.12.6
 CATEGORIES=	audio windowmaker

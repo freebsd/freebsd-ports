@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	Log-Syslog-Fast
 PORTVERSION=	0.67
 CATEGORIES=	sysutils perl5

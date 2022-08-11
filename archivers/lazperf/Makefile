@@ -1,5 +1,3 @@
-# Created by: lbartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	lazperf
 DISTVERSION=	2.0.0
 CATEGORIES=	archivers databases geography

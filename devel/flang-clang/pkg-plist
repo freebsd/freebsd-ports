@@ -716,7 +716,7 @@ flang/lib/libclangToolingInclusions.a
 flang/lib/libclangToolingRefactor.a
 flang/libexec/c++-analyzer
 flang/libexec/ccc-analyzer
-flang/man/man1/scan-build.1.gz
+flang/share/man/man1/scan-build.1.gz
 flang/share/clang/bash-autocomplete.sh
 flang/share/clang/clang-format-bbedit.applescript
 flang/share/clang/clang-format-diff.py

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich
-
 PORTNAME=	txtorcon
 DISTVERSION=	22.0.0
 CATEGORIES=	security python

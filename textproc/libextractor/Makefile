@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	libextractor
 PORTVERSION=	1.11
 PORTREVISION=	2
@@ -59,7 +57,7 @@ GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CONFIGURE_ENV_OFF=	ac_cv_lib_gif_DGifOpen=no
 GSF_USE=		gnome=libgsf
 GSF_CONFIGURE_ENV_OFF=	ac_cv_lib_gsf_1_gsf_init=no
-GSTREAMER_USE=		gstreamer1=yes
+GSTREAMER_USES=		gstreamer
 GSTREAMER_CONFIGURE_WITH=	gstreamer
 MP4_LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
 MP4_CONFIGURE_ENV_OFF=	ac_cv_lib_mp4v2_MP4ReadProvider=no

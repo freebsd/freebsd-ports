@@ -1,5 +1,3 @@
-# Created by: Warner Losh <imp@FreeBSD.org>
-
 PORTNAME=	Acme-Damn
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

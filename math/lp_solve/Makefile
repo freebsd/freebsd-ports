@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni
-
 PORTNAME=	lp_solve
 PORTVERSION=	5.5.2.5
 CATEGORIES=	math

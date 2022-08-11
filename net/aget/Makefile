@@ -1,5 +1,3 @@
-# Created by: Aaron Zauner <az_mail@gmx.at>
-
 PORTNAME=	aget
 PORTVERSION=	0.4.1
 PORTREVISION=	1

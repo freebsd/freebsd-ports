@@ -1,5 +1,3 @@
-# Created by: mzaki@biol.s.u-tokyo.ac.jp
-
 PORTNAME=	mrbayes
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.7

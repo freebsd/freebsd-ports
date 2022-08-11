@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	composer
 DISTVERSION=	1.10.26
 CATEGORIES=	devel

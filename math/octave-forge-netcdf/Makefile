@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-
 PORTNAME=	octave-forge-netcdf
 PORTVERSION=	1.0.14
 PORTREVISION=	5
@@ -17,6 +15,7 @@ OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 
 LIB_DEPENDS+=	libnetcdf.so:science/netcdf
 

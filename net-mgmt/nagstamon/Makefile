@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	nagstamon
 PORTVERSION=	3.8.0
 PORTREVISION=	1

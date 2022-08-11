@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Lingua-ZH-Wrap
 PORTVERSION=	0.03
 PORTREVISION=	1

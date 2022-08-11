@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	cosmosmash
 DISTVERSION=	1.4.8
 CATEGORIES=	games

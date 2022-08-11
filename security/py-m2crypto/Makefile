@@ -1,5 +1,3 @@
-# Created by: Peter Haight <peterh@sapros.com>
-
 PORTNAME=	m2crypto
 PORTVERSION=	0.38.0
 CATEGORIES=	security python

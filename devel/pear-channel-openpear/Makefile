@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	openpear
 PORTVERSION=	20111203
 CATEGORIES=	devel www pear

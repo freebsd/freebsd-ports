@@ -1,5 +1,3 @@
-# Created by: Aragon Gouveia <aragon@phat.za.net>
-
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.2.2
 PORTREVISION=	8

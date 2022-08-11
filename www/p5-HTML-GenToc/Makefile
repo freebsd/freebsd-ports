@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	HTML-GenToc
 PORTVERSION=	3.20
 PORTREVISION=	2

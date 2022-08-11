@@ -1,4 +1,3 @@
-# Created by: Harshavardhana
 #
 
 PORTNAME=	cmockery2

@@ -1,0 +1,9 @@
+This is a small and simple to use C++ library for playing various
+audio formats. It is a thin (-ish) wrapper around existing resampling
+(like SRC or SoX) and decoding libraries (like libmpg123 or libvorbis.)
+
+It was written as a replacement for SDL_mixer, due to SDL_mixer's
+lack of multiple music streams, limited audio format support and
+poor resampling quality.
+
+WWW: https://github.com/realnc/SDL_audiolib

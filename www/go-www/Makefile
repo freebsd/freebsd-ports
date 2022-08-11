@@ -1,8 +1,6 @@
-# Created by: Nicolas de Bari Embriz Garcia Rojas <nbari@tequila.io>
-
 PORTNAME=	www
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	www
 PKGNAMEPREFIX=	go-
 

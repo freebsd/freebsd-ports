@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	scimark2
 PORTVERSION=	2.0
 PORTREVISION=	2

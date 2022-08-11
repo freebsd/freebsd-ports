@@ -16,6 +16,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fmang
 
 PLIST_FILES=	bin/opustags \
-		man/man1/opustags.1.gz
+		share/man/man1/opustags.1.gz
 
 .include <bsd.port.mk>

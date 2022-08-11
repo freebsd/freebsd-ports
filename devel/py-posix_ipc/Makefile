@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	posix_ipc
 PORTVERSION=	1.0.5
 CATEGORIES=	devel python

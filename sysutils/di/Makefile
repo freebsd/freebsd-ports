@@ -1,5 +1,3 @@
-# Created by: Brad Lanam <bll@gentoo.com>
-
 PORTNAME=	di
 PORTVERSION=	4.50
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Class-Base
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

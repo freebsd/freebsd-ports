@@ -1,0 +1,5 @@
+Arm(C) Adaptive Scalable Texture Compression (ASTC) Encoder, astcenc,
+a command-line tool for compressing and decompressing images using the
+ASTC texture compression standard.
+
+WWW: https://github.com/ARM-software/astc-encoder

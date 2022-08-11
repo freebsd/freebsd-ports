@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	libpbl
 PORTVERSION=	1.04.04
 CATEGORIES=	databases

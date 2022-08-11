@@ -1,5 +1,3 @@
-# Created by: jkoshy
-
 PORTNAME=	siod
 PORTVERSION=	3.6.2
 CATEGORIES=	lang scheme

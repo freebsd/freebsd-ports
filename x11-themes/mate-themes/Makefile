@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	mate-themes
 PORTVERSION=	3.22.23
 CATEGORIES=	x11-themes mate

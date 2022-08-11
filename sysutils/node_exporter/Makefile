@@ -1,9 +1,7 @@
-# Created by: Jev Björsell <ports@ecadlabs.com>
-
 PORTNAME=	node_exporter
 PORTVERSION=	1.3.1
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	dor.bsd@xm0.uk

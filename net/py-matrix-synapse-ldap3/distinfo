@@ -1,3 +1,3 @@
-TIMESTAMP = 1647264614
-SHA256 (matrix-synapse-ldap3-0.2.0.tar.gz) = 91a0715b43a41ec3033244174fca20846836da98fda711fb01687f7199eecd2e
-SIZE (matrix-synapse-ldap3-0.2.0.tar.gz) = 20185
+TIMESTAMP = 1657199039
+SHA256 (matrix-synapse-ldap3-0.2.1.tar.gz) = bfb4390f4a262ffb0d6f057ff3aeb1e46d4e52ff420a064d795fb4f555f00285
+SIZE (matrix-synapse-ldap3-0.2.1.tar.gz) = 20326

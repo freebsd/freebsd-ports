@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	bitkeeper
 PORTVERSION=	7.3.3
 PORTREVISION=	6

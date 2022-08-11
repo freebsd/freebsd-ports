@@ -1,6 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-#   $MCom$
-
 PORTNAME=	libwnck
 PORTVERSION=	2.30.7
 PORTREVISION?=	2

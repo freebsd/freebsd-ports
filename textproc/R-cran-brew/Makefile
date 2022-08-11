@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	brew
 DISTVERSION=	1.0-7
 CATEGORIES=	textproc

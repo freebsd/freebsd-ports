@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-sesv2
 PORTVERSION=	1.27.0
 CATEGORIES=	devel rubygems

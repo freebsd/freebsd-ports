@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-SAX
 PORTVERSION=	1.02
 CATEGORIES=	textproc perl5

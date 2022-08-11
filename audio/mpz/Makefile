@@ -1,7 +1,5 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	mpz
-PORTVERSION=	1.0.19
+PORTVERSION=	1.0.20
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -15,10 +13,12 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 USE_GITHUB=	yes
 GH_ACCOUNT=	olegantonyan
 
-USES=		compiler:c++11-lang desktop-file-utils qmake qt:5
-USE_GSTREAMER1=	flac libav mpg123 ogg opus vorbis
+USES=		compiler:c++11-lang desktop-file-utils gstreamer qmake qt:5
+USE_GSTREAMER=	flac libav mpg123 ogg opus vorbis
 USE_QT=		buildtools_build concurrent core dbus gui multimedia \
 		network widgets x11extras
+
+QMAKE_ARGS=	DEFINES+=USE_SYSTEM_TAGLIB DEFINES+=USE_SYSTEM_YAMLCPP
 
 post-extract:
 	@${RM} -r ${WRKSRC}/libs/taglib ${WRKSRC}/libs/yaml-cpp

@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libunique
 PORTVERSION=	3.0.2
 PORTREVISION=	3

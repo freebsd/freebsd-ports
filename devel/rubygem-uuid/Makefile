@@ -1,5 +1,3 @@
-# Created by: Wen Heping<wenheping@gmail.com>
-
 PORTNAME=	uuid
 PORTVERSION=	2.3.9
 CATEGORIES=	devel rubygems

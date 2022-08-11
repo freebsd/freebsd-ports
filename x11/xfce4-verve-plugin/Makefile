@@ -1,5 +1,3 @@
-# Created by: Martin Wilke (miwi@FreeBSD.org)
-
 PORTNAME=	verve-plugin
 PORTVERSION=	2.0.1
 PORTREVISION=	1

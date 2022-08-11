@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	maxLik
 DISTVERSION=	1.5-2
 CATEGORIES=	math

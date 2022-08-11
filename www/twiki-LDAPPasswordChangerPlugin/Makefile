@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	LDAPPasswordChangerPlugin
 PORTVERSION=	0.0.${SVNREV}
 CATEGORIES=	www

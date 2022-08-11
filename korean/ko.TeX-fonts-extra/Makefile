@@ -1,5 +1,3 @@
-# Created by: Hyogeol Lee <hyogeollee@gmail.com>
-
 PORTNAME=	ko.TeX-fonts-extra
 PORTVERSION=	0.1.0
 PORTREVISION=	6

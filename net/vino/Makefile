@@ -1,5 +1,3 @@
-# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-
 PORTNAME=	vino
 PORTVERSION=	3.22.0
 CATEGORIES=	net gnome

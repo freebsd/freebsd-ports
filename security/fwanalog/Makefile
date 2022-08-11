@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	fwanalog
 PORTVERSION=	0.6.9
 PORTREVISION=	6

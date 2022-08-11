@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-Table-TinyBorderStyle
 PORTVERSION=	0.005
 CATEGORIES=	textproc perl5

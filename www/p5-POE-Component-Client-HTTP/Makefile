@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-Client-HTTP
 PORTVERSION=	0.9490
 CATEGORIES=	www perl5

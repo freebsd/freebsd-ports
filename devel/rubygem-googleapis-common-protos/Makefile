@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	googleapis-common-protos
 PORTVERSION=	1.3.12
 CATEGORIES=	devel rubygems

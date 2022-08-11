@@ -1,6 +1,6 @@
 PORTNAME=	clingo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.5.1
+DISTVERSION=	5.5.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	re2c:devel/re2c
 USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	potassco
-GH_TUPLE=	potassco:clasp:da10954:potassco_clasp/clasp
+GH_TUPLE=	potassco:clasp:17c4e46:potassco_clasp/clasp
 
 USE_LDCONFIG=	yes
 

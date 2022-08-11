@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	ddate
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2-6

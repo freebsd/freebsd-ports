@@ -1,5 +1,3 @@
-# Created by: janek@gaja.ipan.lublin.pl
-
 PORTNAME=	xmix
 PORTVERSION=	2.1
 PORTREVISION=	3

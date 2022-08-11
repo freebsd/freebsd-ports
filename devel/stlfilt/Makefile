@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	stlfilt
 PORTVERSION=	20080203
 CATEGORIES=	devel

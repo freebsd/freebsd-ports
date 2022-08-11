@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	POE-Loop-AnyEvent
 PORTVERSION=	0.004
 CATEGORIES=	devel perl5

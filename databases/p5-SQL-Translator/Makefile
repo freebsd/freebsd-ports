@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	SQL-Translator
 PORTVERSION=	1.62
 CATEGORIES=	databases perl5

@@ -1,6 +1,6 @@
 PORTNAME=	dfshow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.5-beta
+DISTVERSION=	0.9.6-beta
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	roberthawdon
 
 GNU_CONFIGURE=	yes
+
+CONFLICTS_INSTALL=	ja-mh mmh nmh nmh-devel # man/man1/show.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} 's/-lncursesw/${NCURSESLIBS}/g' ${WRKSRC}/Makefile.am

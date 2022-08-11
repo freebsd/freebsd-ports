@@ -1,5 +1,3 @@
-# Created by: gerard
-
 PORTNAME=	Captcha-reCAPTCHA-Mailhide
 PORTVERSION=	0.94
 PORTREVISION=	1

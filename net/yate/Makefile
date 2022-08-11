@@ -1,5 +1,3 @@
-# Created by: Valery Komarov <komarov@valerka.net>
-
 PORTNAME=	yate
 PORTVERSION=	6.4.0
 PORTREVISION=	1

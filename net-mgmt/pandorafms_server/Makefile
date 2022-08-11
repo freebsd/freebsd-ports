@@ -1,5 +1,3 @@
-# Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
-
 PORTNAME=	pandora_server
 PORTREVISION=	1
 CATEGORIES=	net-mgmt

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	jalv
 DISTVERSION=	1.6.6
 PORTREVISION=	3

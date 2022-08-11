@@ -1,8 +1,6 @@
-# Created by Kevin Bowling <kbowling@FreeBSD.org>
-
 PORTNAME=	timescaledb-backup
 DISTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org

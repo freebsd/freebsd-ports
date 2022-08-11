@@ -1,5 +1,3 @@
-# Created by: Douglas Carmichael <dcarmich@mcs.com>
-
 PORTNAME=	amiwm
 PORTVERSION=	0.21.pl2
 PORTREVISION=	1

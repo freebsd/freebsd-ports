@@ -1,5 +1,3 @@
-# Created by: dd
-
 PORTNAME=	jarl
 PORTVERSION=	0.5001
 PORTREVISION=	5

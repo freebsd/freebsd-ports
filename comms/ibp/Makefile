@@ -1,5 +1,3 @@
-# Created by: Diane Bruce <db@db.net>
-
 PORTNAME=	ibp
 PORTVERSION=	0.21
 PORTREVISION=	2

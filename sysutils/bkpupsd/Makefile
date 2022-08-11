@@ -1,5 +1,3 @@
-# Created by: Yoshifumi Watanabe <mwatts@edu1.tokyo-med.ac.jp>
-
 PORTNAME=	bkpupsd
 PORTVERSION=	1.0a
 CATEGORIES=	sysutils

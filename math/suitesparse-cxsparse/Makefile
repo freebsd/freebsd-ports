@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	3.2.0
 CATEGORIES=	math

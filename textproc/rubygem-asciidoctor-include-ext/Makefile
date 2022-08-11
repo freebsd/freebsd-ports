@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	asciidoctor-include-ext
 PORTVERSION=	0.4.0
 CATEGORIES=	textproc rubygems

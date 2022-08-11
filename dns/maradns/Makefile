@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	maradns
 PORTVERSION=	2.0.15
 CATEGORIES=	dns

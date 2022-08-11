@@ -1,5 +1,3 @@
-# Created by: Brian Buchanan <brian@CSUA.Berkeley.EDU>
-
 PORTNAME=	plib
 PORTVERSION=	1.8.5
 PORTREVISION=	8

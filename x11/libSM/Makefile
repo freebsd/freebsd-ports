@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libSM
 PORTVERSION=	1.2.3
 PORTEPOCH=	1

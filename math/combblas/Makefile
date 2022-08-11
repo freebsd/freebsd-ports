@@ -1,9 +1,9 @@
 PORTNAME=	CombBLAS
-DISTVERSION=	1.6.2
-PORTREVISION=	5
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.0
+MASTER_SITES=	https://portal.nersc.gov/project/m1982/CombBLAS/:test_data
 CATEGORIES=	math
-MASTER_SITES=	https://people.eecs.berkeley.edu/~aydin/${PORTNAME}_FILES/
-DISTNAME=	${PORTNAME}_beta_${DISTVERSION:S/.//:S/./_/}
+DISTFILES=	testdata_combblas1.6.1.tgz:test_data
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Combinatorial BLAS library: an extensible parallel graph library
@@ -17,14 +17,22 @@ ONLY_FOR_ARCHS_REASON=	fails to build: uses x86 asm
 LIB_DEPENDS=	libmpi.so:net/mpich
 RUN_DEPENDS=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so.1:lang/gcc${GCC_DEFAULT} # because of the link flags induced by mpich
 
-USES=		cmake compiler:c++14-lang localbase:ldflags tar:tgz
+USES=		cmake:testing compiler:c++14-lang localbase:ldflags tar:tgz
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	PASSIONLab
+
 CMAKE_ON=	BUILD_SHARED_LIBS
-EXTRA_PATCHES=	${EXTRA_PATCHES_${CHOSEN_COMPILER_TYPE}}
-EXTRA_PATCHES_clang=	${FILESDIR}/extra-patch-CMakeLists.txt
+
+# many tests fail, see https://github.com/PASSIONLab/CombBLAS/issues/15
 
 post-extract:
 	@cd ${WRKSRC}/include && ${RM} .DS_Store ._.DS_Store CombBLAS/._CombBLAS.h
+
+pre-test:
+	@if [ ! -L ${TEST_WRKSRC}TESTDATA ]; then \
+		${RLN} ${WRKDIR}/TESTDATA ${TEST_WRKSRC}/; \
+	fi
 
 .include <bsd.port.mk>

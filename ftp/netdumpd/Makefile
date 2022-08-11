@@ -1,5 +1,3 @@
-# Created by: Mark Johnston <markj@FreeBSD.org>
-
 PORTNAME=	netdumpd
 PORTVERSION=	20220406
 PORTREVISION=	0

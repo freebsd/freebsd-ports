@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mailboxer
 PORTVERSION=	0.15.1
 CATEGORIES=	mail rubygems

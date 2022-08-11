@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale	<nivit@email.it>
-
 PORTNAME=	geogebra
 PORTVERSION=	5.0.625.0
 PORTREVISION=	1

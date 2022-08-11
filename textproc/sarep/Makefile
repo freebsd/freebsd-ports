@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	sarep
 PORTVERSION=	1.1
 CATEGORIES=	textproc

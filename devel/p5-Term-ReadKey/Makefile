@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Term-ReadKey
 PORTVERSION=	2.38
 PORTREVISION=	1

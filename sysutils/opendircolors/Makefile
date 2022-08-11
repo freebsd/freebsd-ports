@@ -1,5 +1,3 @@
-# Created by: Cameron Katri <me@cameronkatri.com>
-
 PORTNAME=	opendircolors
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.2

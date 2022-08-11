@@ -1,5 +1,3 @@
-# Created by: christian
-
 PORTNAME=	Text-LevenshteinXS
 PORTVERSION=	0.03
 PORTREVISION=	2

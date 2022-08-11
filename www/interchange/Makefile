@@ -1,5 +1,3 @@
-# Created by: Seth Kingsley <sethk@meowfishies.com>
-
 PORTNAME=	interchange
 PORTVERSION=	5.6.3
 CATEGORIES=	www perl5

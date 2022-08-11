@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	savelogs
 PORTVERSION=	1.98
 PORTREVISION=	1

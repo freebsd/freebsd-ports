@@ -1,5 +1,3 @@
-# Created by: Matthias Andree <matthias.andree@gmx.de>
-
 PORTNAME=	cone
 PORTVERSION=	1.5
 PORTREVISION=	2

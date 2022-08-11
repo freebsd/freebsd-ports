@@ -1,5 +1,3 @@
-# Created by: Richard Gallamore <ultima@FreeBSD.org>
-
 PORTNAME=	portest
 PORTVERSION=	0.1.9
 PORTREVISION=	1

@@ -1,7 +1,5 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	diffy
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

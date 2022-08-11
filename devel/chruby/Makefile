@@ -1,5 +1,3 @@
-# Created by: Ross Timson <ross@rosstimson.com>
-
 PORTNAME=	chruby
 PORTVERSION=	0.3.9
 DISTVERSIONPREFIX=	v

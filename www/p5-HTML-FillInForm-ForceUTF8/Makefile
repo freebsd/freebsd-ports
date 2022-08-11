@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	HTML-FillInForm-ForceUTF8
 PORTVERSION=	0.03
 PORTREVISION=	1

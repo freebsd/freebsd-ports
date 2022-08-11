@@ -6,8 +6,9 @@
 
 PKG_BATCH=${BATCH:=NO}
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+SASLDB_DIR=%%SASLDB_DIR%%
 SASLDB_NAME=%%SASLDB_NAME%%
-SASLDB_NAME=${SASLDB_NAME:+${PKG_PREFIX}/etc/%%SASLDB_NAME%%}
+SASLDB_NAME=${SASLDB_NAME:+%%SASLDB_DIR%%/%%SASLDB_NAME%%}
 CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
 CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
 
@@ -19,6 +20,9 @@ delete_sasldb() {
 			rm ${SASLDB_NAME}
 			if [ -f ${SASLDB_NAME}-lock ] ; then
 				rm ${SASLDB_NAME}-lock
+			fi
+			if [ ${SASLDB_DIR} = '/var/db/sasl2' ]; then
+				rmdir ${SASLDB_DIR}
 			fi
 		else
 			echo "WARNING: Users SASL passwords are in ${SASLDB_NAME}, keeping this file"

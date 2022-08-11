@@ -1,5 +1,6 @@
 PORTNAME=	vm-bhyve
-PORTVERSION=	1.4.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	churchers@gmail.com
@@ -12,6 +13,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	churchers
+
+CONFLICTS_INSTALL=	vm-bhyve-devel
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -42,6 +42,8 @@ share/icons/hicolor/scalable/apps/rocs.svgz
 share/kxmlgui5/rocs/rocsui.rc
 share/locale/ar/LC_MESSAGES/libgraphtheory.mo
 share/locale/ar/LC_MESSAGES/rocs.mo
+share/locale/bg/LC_MESSAGES/libgraphtheory.mo
+share/locale/bg/LC_MESSAGES/rocs.mo
 share/locale/bs/LC_MESSAGES/libgraphtheory.mo
 share/locale/bs/LC_MESSAGES/rocs.mo
 share/locale/ca/LC_MESSAGES/libgraphtheory.mo

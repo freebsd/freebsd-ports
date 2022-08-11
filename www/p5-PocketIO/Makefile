@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	PocketIO
 PORTVERSION=	0.17000
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Sutra Zhou <zhoushuqun@gmail.com>
-
 PORTNAME=	mod_auth_openid
 PORTVERSION=	0.8
 DISTVERSIONPREFIX=	v

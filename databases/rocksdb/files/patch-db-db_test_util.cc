@@ -1,6 +1,6 @@
---- db/db_test_util.cc.orig	2021-06-25 21:15:04 UTC
+--- db/db_test_util.cc.orig	2022-06-08 21:08:16 UTC
 +++ db/db_test_util.cc
-@@ -95,9 +95,11 @@ DBTestBase::DBTestBase(const std::string path, bool en
+@@ -104,9 +104,11 @@ DBTestBase::DBTestBase(const std::string path, bool en
  }
  
  DBTestBase::~DBTestBase() {
@@ -12,7 +12,7 @@
    Close();
    Options options;
    options.db_paths.emplace_back(dbname_, 0);
-@@ -347,6 +349,7 @@ Options DBTestBase::GetOptions(
+@@ -356,6 +358,7 @@ Options DBTestBase::GetOptions(
    Options options = default_options;
    BlockBasedTableOptions table_options;
    bool set_block_based_table_factory = true;
@@ -20,15 +20,15 @@
  #if !defined(OS_MACOSX) && !defined(OS_WIN) && !defined(OS_SOLARIS) && \
      !defined(OS_AIX)
    ROCKSDB_NAMESPACE::SyncPoint::GetInstance()->ClearCallBack(
-@@ -354,6 +357,7 @@ Options DBTestBase::GetOptions(
+@@ -363,6 +366,7 @@ Options DBTestBase::GetOptions(
    ROCKSDB_NAMESPACE::SyncPoint::GetInstance()->ClearCallBack(
        "NewWritableFile:O_DIRECT");
  #endif
 +#endif
- 
-   bool can_allow_mmap = IsMemoryMappedAccessSupported();
-   switch (option_config) {
-@@ -408,7 +412,9 @@ Options DBTestBase::GetOptions(
+   // kMustFreeHeapAllocations -> indicates ASAN build
+   if (kMustFreeHeapAllocations && !options_override.full_block_cache) {
+     // Detecting block cache use-after-free is normally difficult in unit
+@@ -428,7 +432,9 @@ Options DBTestBase::GetOptions(
          options.use_direct_reads = true;
          options.use_direct_io_for_flush_and_compaction = true;
          options.compaction_readahead_size = 2 * 1024 * 1024;
@@ -38,15 +38,15 @@
          break;
        }
  #endif  // ROCKSDB_LITE
-@@ -1124,6 +1130,7 @@ std::string DBTestBase::FilesPerLevel(int cf) {
+@@ -1149,6 +1155,7 @@ std::string DBTestBase::FilesPerLevel(int cf) {
  
  #endif  // !ROCKSDB_LITE
  
 +#ifndef NDEBUG
  std::vector<uint64_t> DBTestBase::GetBlobFileNumbers() {
-   VersionSet* const versions = dbfull()->TEST_GetVersionSet();
+   VersionSet* const versions = dbfull()->GetVersionSet();
    assert(versions);
-@@ -1148,6 +1155,7 @@ std::vector<uint64_t> DBTestBase::GetBlobFileNumbers()
+@@ -1174,6 +1181,7 @@ std::vector<uint64_t> DBTestBase::GetBlobFileNumbers()
  
    return result;
  }
@@ -54,7 +54,7 @@
  
  size_t DBTestBase::CountFiles() {
    size_t count = 0;
-@@ -1230,6 +1238,7 @@ void DBTestBase::FillLevels(const std::string& smalles
+@@ -1256,6 +1264,7 @@ void DBTestBase::FillLevels(const std::string& smalles
  }
  
  void DBTestBase::MoveFilesToLevel(int level, int cf) {
@@ -62,7 +62,7 @@
    for (int l = 0; l < level; ++l) {
      if (cf > 0) {
        EXPECT_OK(dbfull()->TEST_CompactRange(l, nullptr, nullptr, handles_[cf]));
-@@ -1237,13 +1246,16 @@ void DBTestBase::MoveFilesToLevel(int level, int cf) {
+@@ -1263,13 +1272,16 @@ void DBTestBase::MoveFilesToLevel(int level, int cf) {
        EXPECT_OK(dbfull()->TEST_CompactRange(l, nullptr, nullptr));
      }
    }
@@ -79,7 +79,7 @@
    for (int level = 0; level < db_->NumberLevels(); level++) {
      int num = NumTableFilesAtLevel(level);
      if (num > 0) {
-@@ -1284,10 +1296,12 @@ void DBTestBase::GenerateNewFile(int cf, Random* rnd, 
+@@ -1310,10 +1322,12 @@ void DBTestBase::GenerateNewFile(int cf, Random* rnd, 
      ASSERT_OK(Put(cf, Key(*key_idx), rnd->RandomString((i == 99) ? 1 : 990)));
      (*key_idx)++;
    }
@@ -92,7 +92,7 @@
  }
  
  // this will generate non-overlapping files since it keeps increasing key_idx
-@@ -1296,10 +1310,12 @@ void DBTestBase::GenerateNewFile(Random* rnd, int* key
+@@ -1322,10 +1336,12 @@ void DBTestBase::GenerateNewFile(Random* rnd, int* key
      ASSERT_OK(Put(Key(*key_idx), rnd->RandomString((i == 99) ? 1 : 990)));
      (*key_idx)++;
    }
@@ -105,7 +105,7 @@
  }
  
  const int DBTestBase::kNumKeysByGenerateNewRandomFile = 51;
-@@ -1309,10 +1325,12 @@ void DBTestBase::GenerateNewRandomFile(Random* rnd, bo
+@@ -1335,10 +1351,12 @@ void DBTestBase::GenerateNewRandomFile(Random* rnd, bo
      ASSERT_OK(Put("key" + rnd->RandomString(7), rnd->RandomString(2000)));
    }
    ASSERT_OK(Put("key" + rnd->RandomString(7), rnd->RandomString(200)));

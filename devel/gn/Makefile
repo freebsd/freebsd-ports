@@ -1,5 +1,3 @@
-# Created by: Oleh Hushchenkov <o.hushchenkov@gmail.com>
-
 PORTNAME=	gn
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1962

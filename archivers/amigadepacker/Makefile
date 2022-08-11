@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	amigadepacker
 PORTVERSION=	0.04
 CATEGORIES=	archivers

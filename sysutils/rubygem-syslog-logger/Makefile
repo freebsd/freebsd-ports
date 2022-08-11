@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	syslog-logger
 PORTVERSION=	1.6.8
 CATEGORIES=	sysutils rubygems

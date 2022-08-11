@@ -1,5 +1,3 @@
-# Created by: Andreas Kohn <andreas@syndrom23.de>
-
 PORTNAME=	transset
 PORTVERSION=	1.0.2
 PORTREVISION=	2

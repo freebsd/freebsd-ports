@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	parrot
 PORTVERSION=	8.1.0
 PORTREVISION=	17
@@ -13,7 +11,7 @@ COMMENT=	Virtual machine for dynamic languages
 LICENSE=	ART20
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
-		${P5_POD_PARSER} \
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		pcre-config:devel/pcre
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libicudata.so:devel/icu

@@ -1,5 +1,3 @@
-# Created by: nemysis <nemysis@gmx.ch>
-
 PORTNAME=	alure
 PORTVERSION=	1.2
 PORTREVISION=	11

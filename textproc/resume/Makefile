@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	resume
 DISTVERSION=	1_5_1
 PORTREVISION=	2

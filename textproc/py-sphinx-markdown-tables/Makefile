@@ -1,8 +1,5 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	sphinx-markdown-tables
-PORTVERSION=	0.0.15
-PORTREVISION=	1
+PORTVERSION=	0.0.17
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

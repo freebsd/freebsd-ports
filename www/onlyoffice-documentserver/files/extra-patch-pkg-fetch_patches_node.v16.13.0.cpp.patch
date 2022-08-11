@@ -1,3 +1,7 @@
+https://github.com/vercel/pkg-fetch/blob/main/patches/node.v16.14.2.cpp.patch
++ local FreeBSD patches
+
+
 --- server/node_modules/pkg-fetch/patches/node.v16.13.0.cpp.patch.orig	2021-12-30 20:04:18.203959000 +0100
 +++ server/node_modules/pkg-fetch/patches/node.v16.13.0.cpp.patch	2021-12-30 20:09:53.210319000 +0100
 @@ -521,3 +521,171 @@ index 0000000000..fb2d47f52b

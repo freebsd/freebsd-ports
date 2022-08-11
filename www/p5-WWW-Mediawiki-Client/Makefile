@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	WWW-Mediawiki-Client
 PORTVERSION=	0.31
 PORTREVISION=	4

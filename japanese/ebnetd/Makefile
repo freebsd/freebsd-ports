@@ -1,5 +1,3 @@
-# Created by: Motoyuki Kasahara <m-kasahr@sra.co.jp>
-
 PORTNAME=	ebnetd
 PORTVERSION=	1.0
 PORTREVISION=	12

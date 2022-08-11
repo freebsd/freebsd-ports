@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	credis
 PORTVERSION=	0.2.3
 DISTVERSIONPREFIX=	v

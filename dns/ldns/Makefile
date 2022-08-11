@@ -1,5 +1,3 @@
-# Created by: Konstantin Saurbier <saurbier@math.uni-bielefeld.de>
-
 PORTNAME=	ldns
 DISTVERSION=	1.8.1
 CATEGORIES=	dns

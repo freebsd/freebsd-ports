@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	parslet
 PORTVERSION=	2.0.0
 CATEGORIES=	textproc rubygems

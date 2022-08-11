@@ -1,5 +1,3 @@
-# Created by: Vladimir Timofeev <vovkasm@gmail.com>
-
 PORTNAME=	DBIx-RetryOverDisconnects
 PORTVERSION=	0.08
 PORTREVISION=	1

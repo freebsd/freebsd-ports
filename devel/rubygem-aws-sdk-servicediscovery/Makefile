@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-servicediscovery
 PORTVERSION=	1.46.0
 CATEGORIES=	devel rubygems

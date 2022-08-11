@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	yuicompressor
 PORTVERSION=	2.4.8
 PORTREVISION=	3

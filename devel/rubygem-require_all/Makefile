@@ -1,5 +1,3 @@
-# Created by: rpsfa@rit.edu
-
 PORTNAME=	require_all
 PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems

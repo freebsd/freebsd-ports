@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	diffstat
 PORTVERSION=	1.64
 CATEGORIES=	textproc devel

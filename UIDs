@@ -251,10 +251,10 @@ netdata:*:302:302::0:0:NetData Daemon:/var/cache/netdata:/usr/sbin/nologin
 onlyoffice:*:303:303::0:0:Onlyoffice pseudo-user:/usr/local/www/onlyoffice/documentserver:/usr/sbin/nologin
 glewlwyd:*:304:304::0:0:Glewlwyd SSO server:/nonexistent:/usr/sbin/nologin
 nats:*:305:305::0:0:NATS Daemon:/nonexistent:/usr/sbin/nologin
-# free: 306
-# free: 307
-# free: 308
-# free: 309
+jitsi:*:306:306::0:0:Jitsi Meet Owner:/nonexistent:/usr/sbin/nologin
+jicofo:*:307:307::0:0:Jitsi Conference Focus Owner:/nonexistent:/usr/sbin/nologin
+jvb:*:308:308::0:0:Jitsi VideoBridge Owner:/nonexistent:/usr/sbin/nologin
+wazuh:*:309:309::0:0:Wazuh Owner:/var/ossec:/usr/sbin/nologin
 # free: 310
 # free: 311
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
@@ -862,7 +862,7 @@ _sj3:*:912:912::0:0:SJ3 Daemon:/nonexistent:/usr/sbin/nologin
 _relayd:*:913:913::0:0:Relay Daemon:/var/empty:/usr/sbin/nologin
 bitlbee:*:914:914::0:0:Bitlbee pseudo-user:/var/db/bitlbee:/usr/sbin/nologin
 logcheck:*:915:915::0:0:Logcheck system account:/var/lib/logcheck:/usr/local/bin/bash
-# free: 916
+loki:*:916:967::0:0:Loki:/var/db/loki:/usr/sbin/nologin
 _prayer:*:917:917::0:0:Prayer Account:/nonexistent:/usr/sbin/nologin
 nefu:*:918:918::0:0:Nefu daemon:/var/db/nefu:/usr/sbin/nologin
 couchdb:*:919:919::0:0:CouchDB Account:/var/empty:/usr/sbin/nologin
@@ -892,6 +892,7 @@ teamspeak:*:942:942::0:0:TeamSpeak user:/nonexistent:/usr/sbin/nologin
 dnetfold:*:943:943::0:0:& user:/nonexistent:/usr/sbin/nologin
 bbs:*:944:944::0:0:& user:/nonexistent:/usr/sbin/nologin
 dbxml:*:945:945::0:0:& user:/nonexistent:/usr/sbin/nologin
+pgagroal:*:946:946::0:0:Pgagroal user:/nonexistent:/usr/sbin/nologin
 mapred:*:947:955::0:0:Hadoop MapReduce user:/nonexistent:/usr/sbin/nologin
 dnrd:*:948:948::0:0:& user:/nonexistent:/usr/sbin/nologin
 _lldpd:*:949:949::0:0:lldpd user:/nonexistent:/usr/sbin/nologin

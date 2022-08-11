@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <dieterich@ogolem.org>
-
 PORTNAME=	clpeak
 DISTVERSION=	1.1.2
 CATEGORIES=	benchmarks

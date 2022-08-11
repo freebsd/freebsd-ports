@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Chemistry-MacroMol
 PORTVERSION=	0.06
 PORTREVISION=	1

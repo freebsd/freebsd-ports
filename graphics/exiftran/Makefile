@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	exiftran
 PORTVERSION=	2.14
 CATEGORIES=	graphics

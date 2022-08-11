@@ -1,5 +1,3 @@
-# Created by: Travis Poppe <tlp@liquidx.org>
-
 PORTNAME=	alienwave
 PORTVERSION=	0.4.0
 CATEGORIES=	games

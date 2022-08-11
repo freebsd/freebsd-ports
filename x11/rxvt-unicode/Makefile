@@ -1,5 +1,3 @@
-# Created by: gpalmer@FreeBSD.org
-
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.30
 CATEGORIES=	x11

@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	cliff
 PORTVERSION=	3.10.1
 CATEGORIES=	devel python

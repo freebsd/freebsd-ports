@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	sqlmap
 PORTVERSION=	1.3.12
 CATEGORIES=	security python

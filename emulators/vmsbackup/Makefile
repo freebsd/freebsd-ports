@@ -1,5 +1,3 @@
-# Created by: Jonathan M. Bresler (jmb)
-
 PORTNAME=	vmsbackup
 PORTVERSION=	4.1.1
 CATEGORIES=	emulators sysutils

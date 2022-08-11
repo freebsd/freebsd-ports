@@ -1,5 +1,3 @@
-# Created by: Clement Laforet
-
 PORTNAME=	haproxy
 DISTVERSION=	1.8.30
 CATEGORIES=	net www
@@ -12,7 +10,7 @@ COMMENT=	Reliable, high performance TCP/HTTP load balancer
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-CONFLICTS_INSTALL=	haproxy haproxy-devel haproxy17 haproxy19 haproxy20 haproxy21
+CONFLICTS_INSTALL=	haproxy haproxy-devel haproxy17 haproxy20
 
 USES=		cpe gmake
 USE_RC_SUBR=	haproxy

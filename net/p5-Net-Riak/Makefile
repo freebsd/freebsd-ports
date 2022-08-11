@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-Riak
 PORTVERSION=	0.1702
 CATEGORIES=	net perl5

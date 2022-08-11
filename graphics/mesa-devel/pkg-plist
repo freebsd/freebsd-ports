@@ -1,5 +1,6 @@
 %%VKLAYERS%%bin/mesa-overlay-control.py
 %%COINST%%@sample etc/libmap.d/mesa%%SUFFIX%%.conf.sample
+%%NO_COINST%%include/EGL/eglext_angle.h
 %%NO_COINST%%include/EGL/eglextchromium.h
 %%NO_COINST%%include/EGL/eglmesaext.h
 %%NO_COINST%%include/GL/internal/dri_interface.h

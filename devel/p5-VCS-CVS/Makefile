@@ -1,5 +1,3 @@
-# Created by: Anatoliy Dmytriyev <tolid@plab.ku.dk>
-
 PORTNAME=	VCS-CVS
 PORTVERSION=	2.06
 PORTREVISION=	1

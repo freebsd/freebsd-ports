@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	liblogging
 PORTVERSION=	1.0.6
 CATEGORIES=	devel

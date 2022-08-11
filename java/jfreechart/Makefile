@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	jfreechart
 PORTVERSION=	1.0.17
 CATEGORIES=	java graphics

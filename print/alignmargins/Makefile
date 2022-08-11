@@ -1,5 +1,3 @@
-# Created by: Michael Nottebrock <lofi@FreeBSD.org>
-
 PORTNAME=	alignmargins
 PORTVERSION=	1.0
 PORTREVISION=	1

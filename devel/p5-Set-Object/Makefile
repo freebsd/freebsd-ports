@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Set-Object
 PORTVERSION=	1.42
 CATEGORIES=	devel perl5

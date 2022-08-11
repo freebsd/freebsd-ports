@@ -1,5 +1,3 @@
-# Created by: Christopher Hall <hsw@bitmark.com>
-
 PORTNAME=	libargon2
 PORTVERSION=	20190702
 CATEGORIES=	security devel

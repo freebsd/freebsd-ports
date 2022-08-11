@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	amalgalite
 PORTVERSION=	1.7.0
 CATEGORIES=	databases rubygems

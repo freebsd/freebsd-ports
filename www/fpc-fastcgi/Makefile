@@ -1,5 +1,3 @@
-# Created by: Christopher Key <cjk32@cam.ac.uk>
-
 CATEGORIES=	www lang
 PKGNAMESUFFIX=	-fastcgi
 

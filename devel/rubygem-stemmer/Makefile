@@ -1,5 +1,3 @@
-# Created by: Peter Schuller <peter.schuller@infidyne.com>
-
 PORTNAME=	stemmer
 PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems

@@ -1,8 +1,6 @@
-# Created by: Luca Pizzamiglio <pizzamig@FreeBSD.org>
-
 PKGNAMESUFFIX=	-node16
 
-CONFLICTS_INSTALL=	yarn yarn-node14 yarn-node17
+CONFLICTS_INSTALL=	yarn yarn-node14 yarn-node18
 
 USES=		nodejs:16,run
 

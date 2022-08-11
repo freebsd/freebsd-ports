@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	sisc
 PORTVERSION=	1.16.6
 PORTREVISION=	3

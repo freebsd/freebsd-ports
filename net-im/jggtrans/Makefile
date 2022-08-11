@@ -1,5 +1,3 @@
-# Created by: Bartek Rutkowski <r@robakdesign.com>
-
 PORTNAME=	jggtrans
 PORTVERSION=	2.2.6
 PORTREVISION=	3

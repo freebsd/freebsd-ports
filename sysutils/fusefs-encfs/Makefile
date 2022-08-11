@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	encfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.5

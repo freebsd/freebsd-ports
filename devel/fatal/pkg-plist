@@ -37,6 +37,7 @@ include/fatal/string/tokenizer.h
 include/fatal/test/args.h
 include/fatal/test/compatibility.h
 include/fatal/test/driver.h
+include/fatal/test/env.h
 include/fatal/test/random_data.h
 include/fatal/test/ref_counter.h
 include/fatal/test/string.h

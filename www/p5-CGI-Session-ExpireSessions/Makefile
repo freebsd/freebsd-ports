@@ -1,5 +1,3 @@
-# Created by: Gerard Seibert <gerard@seibercom.net>
-
 PORTNAME=	CGI-Session-ExpireSessions
 PORTVERSION=	1.12
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	libcdaudio
 PORTVERSION=	0.99.12p2
 PORTREVISION=	3

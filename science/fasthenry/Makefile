@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <giffunip@asme.org>
-
 PORTNAME=	fasthenry
 DISTVERSION=	3.0wr-021113
 CATEGORIES=	science cad

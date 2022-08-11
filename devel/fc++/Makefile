@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	fc++
 PORTVERSION=	1.5
 CATEGORIES=	devel

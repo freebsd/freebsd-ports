@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz
-
 PORTNAME=	check_hp_bladechassis
 PORTVERSION=	1.0.1
 CATEGORIES=	net-mgmt

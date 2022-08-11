@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	obconf-qt
 PORTVERSION=	0.16.1
 PORTREVISION=	2

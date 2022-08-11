@@ -1,5 +1,3 @@
-# Created by: sten@blinkenlights.nl
-
 PORTNAME=	ffs2recov
 PORTVERSION=	1.0
 PORTREVISION=	1

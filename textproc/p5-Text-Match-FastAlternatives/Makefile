@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	Text-Match-FastAlternatives
 PORTVERSION=	1.05
 CATEGORIES=	textproc perl5

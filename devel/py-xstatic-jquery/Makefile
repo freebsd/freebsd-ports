@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-jquery
 PORTVERSION=	3.5.1.1
 CATEGORIES=	devel python

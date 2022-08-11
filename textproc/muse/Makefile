@@ -1,5 +1,3 @@
-# Created by: Dryice Liu <dryice@dryice.name>
-
 PORTNAME=	muse
 PORTVERSION=	3.20
 PORTREVISION=	20

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-Table-ASV
 PORTVERSION=	0.002
 CATEGORIES=	textproc perl5

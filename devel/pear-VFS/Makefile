@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@FreeBSD.org>)
-
 PORTNAME=	VFS
 PORTVERSION=	0.3.0
 CATEGORIES=	devel pear

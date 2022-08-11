@@ -1,13 +1,11 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-
 PORTNAME=	zint
-PORTVERSION=	2.10.0
+PORTVERSION=	2.11.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Zint Barcode Generator
+COMMENT=	Barcode generator (library and utilities)
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

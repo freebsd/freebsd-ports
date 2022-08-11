@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	rversions
 DISTVERSION=	2.1.1
 CATEGORIES=	devel

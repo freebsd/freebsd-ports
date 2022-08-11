@@ -1,5 +1,3 @@
-# Created by: andrey@kostenko.name
-
 PORTNAME=	Test-Pod-Coverage-Permissive
 PORTVERSION=	0.05
 PORTREVISION=	2

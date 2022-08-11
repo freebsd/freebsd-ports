@@ -1,5 +1,3 @@
-# Created by: Henrik Hodne <henrik@hodne.io>
-
 PORTNAME=	URI-Nested
 PORTVERSION=	0.10
 CATEGORIES=	net perl5

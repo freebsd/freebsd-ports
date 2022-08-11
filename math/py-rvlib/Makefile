@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rvlib
 PORTVERSION=	0.0.6
 CATEGORIES=	math python

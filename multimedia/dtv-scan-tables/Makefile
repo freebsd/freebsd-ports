@@ -1,5 +1,3 @@
-# Created by: Dreamcat4 <dreamcat4@gmail.com>
-
 PORTNAME=	dtv-scan-tables
 PORTVERSION=	20220307
 CATEGORIES=	multimedia

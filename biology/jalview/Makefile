@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	jalview
 DISTVERSION=	2.11.1.4
 CATEGORIES=	biology java

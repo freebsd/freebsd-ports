@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	disco
 PORTVERSION=	1.2
 PORTREVISION=	2

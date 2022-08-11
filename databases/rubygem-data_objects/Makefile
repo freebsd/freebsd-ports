@@ -1,5 +1,3 @@
-# Created by: Espen Volden aka voldern <voldern@hoeggen.net>
-
 PORTNAME=	data_objects
 PORTVERSION=	0.10.17
 CATEGORIES=	databases rubygems

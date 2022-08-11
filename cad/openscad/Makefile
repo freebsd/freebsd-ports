@@ -1,8 +1,6 @@
-# Created by: Michael Reifenberger <mr@FreeBSD.org>
-
 PORTNAME=	openscad
 PORTVERSION=	2021.01.01
-PORTREVISION=	11
+PORTREVISION=	13
 CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

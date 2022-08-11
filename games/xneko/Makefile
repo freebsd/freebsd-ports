@@ -1,5 +1,3 @@
-# Created by: markm
-
 PORTNAME=	xneko
 PORTVERSION=	1.0
 PORTREVISION=	1

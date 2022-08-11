@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Web-Scraper
 PORTVERSION=	0.38
 CATEGORIES=	www perl5

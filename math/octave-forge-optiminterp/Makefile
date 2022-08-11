@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-optiminterp
 PORTVERSION=	0.3.7
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	bitlbee-facebook
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=v

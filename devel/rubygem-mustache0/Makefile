@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	mustache
 PORTVERSION=	0.99.8
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Getopt-Euclid
 PORTVERSION=	0.4.5
 PORTREVISION=	1

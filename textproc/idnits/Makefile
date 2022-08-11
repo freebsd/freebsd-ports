@@ -1,5 +1,3 @@
-# Created by: fenner@FreeBSD.org
-
 PORTNAME=	idnits
 PORTVERSION=	2.17.00
 CATEGORIES=	textproc

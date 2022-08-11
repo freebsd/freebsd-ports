@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	jplephem
 PORTVERSION=	2.17
 CATEGORIES=	astro python

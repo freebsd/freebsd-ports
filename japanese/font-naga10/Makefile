@@ -1,5 +1,3 @@
-# Created by: Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
-
 PORTNAME=	naga10
 PORTVERSION=	1.1
 PORTREVISION=	4

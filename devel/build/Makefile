@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	build
 PORTVERSION=	0.3.10
 CATEGORIES=	devel

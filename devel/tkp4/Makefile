@@ -1,5 +1,3 @@
-# Created by: mi@aldan.algebra.com
-
 PORTNAME=	tkp4
 PORTVERSION=	1.12
 PORTREVISION=	2

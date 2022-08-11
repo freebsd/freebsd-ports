@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Text-Glob
 PORTVERSION=	0.11
 CATEGORIES=	textproc perl5

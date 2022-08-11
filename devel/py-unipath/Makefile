@@ -1,12 +1,10 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	Unipath
 PORTVERSION=	1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Object-oriented alternative to os/os.path/shutil
 
 LICENSE=	PSFL

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Devel-ebug
 PORTVERSION=	0.64
 CATEGORIES=	devel perl5

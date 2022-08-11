@@ -1,5 +1,3 @@
-# Created by: Sue Blake <sue@FreeBSD.org>
-
 PORTNAME=	abcselect
 PORTVERSION=	1.5
 CATEGORIES=	audio

@@ -1,8 +1,5 @@
-# Created by: chuckr@FreeBSD.org
-
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -117,9 +114,9 @@ pre-configure:
 	${REINPLACE_CMD} 's+"makeinfo"+"${LOCALBASE}/bin/makeinfo"+' ${WRKSRC}/libinterp/corefcn/help.cc
 	${REINPLACE_CMD} 's/"-qt=$$qt_version"/"-qt=qt$$qt_version"/' ${WRKSRC}/configure
 
-post-install:
-	(cd ${STAGEDIR}${DATADIR} && ${LN} -s ${PORTVERSION}/imagelib  .)
-	${RM} -r ${STAGEDIR}${DATADIR}/${PORTVERSION}/etc/tests/fixed/${WRKDIR:C+/++:C+/.*++}
+#post-install:
+#	(cd ${STAGEDIR}${DATADIR} && ${LN} -s ${PORTVERSION}/imagelib  .)
+#	${RM} -r ${STAGEDIR}${DATADIR}/${PORTVERSION}/etc/tests/fixed/${WRKDIR:C+/++:C+/.*++}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

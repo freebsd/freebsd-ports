@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	jruby
 PORTVERSION=	9.2.17.0
 DISTVERSIONPREFIX=	bin-

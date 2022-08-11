@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	lasso
 PORTVERSION=	2.8.0
 PORTREVISION=	2

@@ -1,9 +1,8 @@
-# Created by: Nikolai Lifanov <lifanov@FreeBSD.org> and Ben Woods <woodsb02@FreeBSD.org>
-
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.5.0-8
+PORTREVISION=	3
+DISTVERSIONSUFFIX=	-g19b2deb
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_RC_SUBR=	zrepl
 
-GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
+GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}@v0.5.1-0.20220507195951-19b2deb2cfe5
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w\
 		-X ${GO_MODULE}/version.${PORTNAME}Version=${DISTVERSIONFULL}"

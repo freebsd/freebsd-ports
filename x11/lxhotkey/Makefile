@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	lxhotkey
 PORTVERSION=	0.1.1
 CATEGORIES=	x11

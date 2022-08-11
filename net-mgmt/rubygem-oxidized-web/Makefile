@@ -1,8 +1,6 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	oxidized-web
 PORTVERSION=	0.13.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Games-Dissociate
 PORTVERSION=	1
 CATEGORIES=	textproc games perl5

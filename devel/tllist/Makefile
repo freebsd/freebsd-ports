@@ -1,5 +1,5 @@
 PORTNAME=	tllist
-DISTVERSION=	1.0.5
+DISTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 

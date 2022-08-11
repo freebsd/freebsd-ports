@@ -1,8 +1,6 @@
-# Created by: GreenDog <fiziologus@gmail.com>
-
 PORTNAME=	fife
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

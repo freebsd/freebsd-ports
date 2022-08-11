@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Moose-Policy
 PORTVERSION=	0.05
 PORTREVISION=	1

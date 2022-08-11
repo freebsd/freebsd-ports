@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	Class-Date
 PORTVERSION=	1.1.17
 CATEGORIES=	devel perl5

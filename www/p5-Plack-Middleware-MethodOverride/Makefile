@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Plack-Middleware-MethodOverride
 PORTVERSION=	0.20
 CATEGORIES=	www perl5

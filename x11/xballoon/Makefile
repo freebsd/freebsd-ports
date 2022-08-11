@@ -1,5 +1,3 @@
-# Created by: Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
-
 PORTNAME=	xballoon
 PORTVERSION=	1.0
 PORTREVISION=	3

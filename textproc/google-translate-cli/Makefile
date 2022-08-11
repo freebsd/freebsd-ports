@@ -1,9 +1,7 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	google-translate-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -39,7 +37,7 @@ FRIBIDI_RUN_DEPENDS=	fribidi:converters/fribidi
 
 READLINE_RUN_DEPENDS=	rlwrap:devel/rlwrap
 
-TEXT2SPEECH_RUN_DEPENDS=	espeak:audio/espeak
+TEXT2SPEECH_RUN_DEPENDS=	espeak-ng:audio/espeak-ng
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/build/trans ${STAGEDIR}${PREFIX}/bin/trans

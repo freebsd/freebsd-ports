@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Sort-Tree
 PORTVERSION=	1.09
 PORTREVISION=	1

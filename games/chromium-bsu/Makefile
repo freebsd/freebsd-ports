@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	chromium-bsu
 PORTVERSION=	0.9.16.1
 PORTREVISION=	2

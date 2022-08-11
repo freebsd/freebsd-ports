@@ -1,5 +1,3 @@
-# Created by: n-shigemura@ensure.jp
-
 PORTNAME=	mime_pls
 PORTVERSION=	2.02
 PORTREVISION=	2

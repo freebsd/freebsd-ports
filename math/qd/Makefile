@@ -1,5 +1,3 @@
-# Created by: Nakata Maho <maho@FreeBSD.org>
-
 PORTNAME=	qd
 DISTVERSION=	2.3.23
 CATEGORIES=	math

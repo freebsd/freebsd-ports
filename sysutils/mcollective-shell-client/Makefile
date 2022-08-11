@@ -1,5 +1,3 @@
-# Created by: Bartek Rutkowski <robak@FreeBSD.org>
-
 PORTNAME=	mcollective-shell-client
 PORTVERSION=	0.0.2
 CATEGORIES=	sysutils

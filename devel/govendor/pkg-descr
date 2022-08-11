@@ -1,4 +1,0 @@
-Govendor is a tool that fetches dependencies for Go projects and records them
-in the standard vendor.json file.
-
-WWW: https://github.com/kardianos/govendor

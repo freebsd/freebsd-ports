@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	gkrellkam
 PORTVERSION=	2.0.0
 PORTREVISION=	12

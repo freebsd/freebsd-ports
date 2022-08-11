@@ -8,6 +8,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima.pm
 %%SITE_ARCH%%/Prima/Application.pm
 %%SITE_ARCH%%/Prima/Buttons.pm
+%%SITE_ARCH%%/Prima/CORE/Drawable_private.h
 %%SITE_ARCH%%/Prima/CORE/apricot.h
 %%SITE_ARCH%%/Prima/CORE/generic/AbstractMenu.h
 %%SITE_ARCH%%/Prima/CORE/generic/AccelTable.h
@@ -102,6 +103,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Outlines.pm
 %%SITE_ARCH%%/Prima/PS/CFF.pm
 %%SITE_ARCH%%/Prima/PS/Drawable.pm
+%%SITE_ARCH%%/Prima/PS/Format.pm
 %%SITE_ARCH%%/Prima/PS/Glyphs.pm
 %%SITE_ARCH%%/Prima/PS/PDF.pm
 %%SITE_ARCH%%/Prima/PS/PostScript.pm
@@ -158,7 +160,6 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/detailedoutline.gif
 %%SITE_ARCH%%/Prima/edit.gif
 %%SITE_ARCH%%/Prima/examples/Hand.gif
-%%SITE_ARCH%%/Prima/examples/amba.pl
 %%SITE_ARCH%%/Prima/examples/animate.pl
 %%SITE_ARCH%%/Prima/examples/antialias.pl
 %%SITE_ARCH%%/Prima/examples/async.pl
@@ -168,11 +169,11 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/buttons2.pl
 %%SITE_ARCH%%/Prima/examples/calendar.pl
 %%SITE_ARCH%%/Prima/examples/canvas.pl
+%%SITE_ARCH%%/Prima/examples/chess_puzzle.pl
 %%SITE_ARCH%%/Prima/examples/cv.pl
 %%SITE_ARCH%%/Prima/examples/detailedoutline.pl
 %%SITE_ARCH%%/Prima/examples/dock.pl
 %%SITE_ARCH%%/Prima/examples/drivecombo.pl
-%%SITE_ARCH%%/Prima/examples/e.pl
 %%SITE_ARCH%%/Prima/examples/edit.pl
 %%SITE_ARCH%%/Prima/examples/editor.pl
 %%SITE_ARCH%%/Prima/examples/extlist.pl
@@ -204,6 +205,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/outline.pl
 %%SITE_ARCH%%/Prima/examples/ownerchange.pl
 %%SITE_ARCH%%/Prima/examples/palette.pl
+%%SITE_ARCH%%/Prima/examples/pbrush.pl
 %%SITE_ARCH%%/Prima/examples/periodic.pl
 %%SITE_ARCH%%/Prima/examples/pitch.pl
 %%SITE_ARCH%%/Prima/examples/pointers.pl
@@ -211,9 +213,10 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/progressbar.pl
 %%SITE_ARCH%%/Prima/examples/ps_fonts.pl
 %%SITE_ARCH%%/Prima/examples/ps_setup.pl
-%%SITE_ARCH%%/Prima/examples/rot.pl
-%%SITE_ARCH%%/Prima/examples/rtc.pl
+%%SITE_ARCH%%/Prima/examples/rotation.pl
 %%SITE_ARCH%%/Prima/examples/scrollbar.pl
+%%SITE_ARCH%%/Prima/examples/scrollbar2.pl
+%%SITE_ARCH%%/Prima/examples/scrollgroup.pl
 %%SITE_ARCH%%/Prima/examples/sheet.pl
 %%SITE_ARCH%%/Prima/examples/socket.pl
 %%SITE_ARCH%%/Prima/examples/socket_anyevent.pl
@@ -290,6 +293,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/auto/Prima/Prima.so
 %%SITE_ARCH%%/auto/Prima/SlibPrima.a
 %%SITE_ARCH%%/prima-gencls.pod
+%%SITE_ARCH%%/vb-large.png
 %%PERL5_MAN1%%/VB.1.gz
 %%PERL5_MAN1%%/podview.1.gz
 %%PERL5_MAN1%%/prima-cfgmaint.1.gz
@@ -353,6 +357,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Outlines.3.gz
 %%PERL5_MAN3%%/Prima::PS::CFF.3.gz
 %%PERL5_MAN3%%/Prima::PS::Drawable.3.gz
+%%PERL5_MAN3%%/Prima::PS::Format.3.gz
 %%PERL5_MAN3%%/Prima::PS::Glyphs.3.gz
 %%PERL5_MAN3%%/Prima::PS::PDF.3.gz
 %%PERL5_MAN3%%/Prima::PS::PostScript.3.gz

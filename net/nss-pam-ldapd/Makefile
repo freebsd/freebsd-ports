@@ -1,5 +1,3 @@
-# Created by: melifaro@ipfw.ru
-
 PORTNAME=		nss-pam-ldapd
 PORTVERSION=		0.9.12
 CATEGORIES=		net

@@ -1,6 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-#    $MCom: ports-stable/textproc/hyperestraier/Makefile,v 1.3 2006/10/17 11:45:45 ahze Exp $
-
 PORTNAME=	hyperestraier
 PORTVERSION=	1.4.13
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	arp-scan
 PORTVERSION=	1.9.7
 CATEGORIES=	net

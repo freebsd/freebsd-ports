@@ -1,5 +1,3 @@
-# Created by: lightside <lightside@gmx.com>
-
 PORTNAME=	focuswriter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.6

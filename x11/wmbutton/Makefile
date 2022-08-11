@@ -1,5 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-
 PORTNAME=	wmbutton
 PORTVERSION=	0.6.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	photivo
 PORTVERSION=	0.0.2015.03.21
 PORTREVISION=	12

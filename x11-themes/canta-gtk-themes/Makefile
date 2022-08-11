@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	canta-gtk-themes
 DISTVERSION=	2021-09-08
 CATEGORIES=	x11-themes

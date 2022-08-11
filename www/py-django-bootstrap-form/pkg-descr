@@ -1,6 +1,0 @@
-Generate twitter-bootstrap form output for django form
-
-A simple Django template tag to work with twitter bootstrap (
-http://twitter.github.com/bootstrap/ )
-
-WWW: https://pypi.org/project/django-bootstrap-form/

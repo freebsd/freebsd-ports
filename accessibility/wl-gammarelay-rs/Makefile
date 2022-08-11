@@ -1,7 +1,8 @@
 PORTNAME=	wl-gammarelay-rs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2
-CATEGORIES=	accessibility
+PORTREVISION=	3
+CATEGORIES=	accessibility wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Adjust color temperature/brightness under Wayland via DBus

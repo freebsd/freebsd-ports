@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-
 PORTNAME=	gnome_subr
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

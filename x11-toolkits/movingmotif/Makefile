@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	movingmotif
 PORTVERSION=	2.3.0
 PORTREVISION=	3

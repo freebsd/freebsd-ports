@@ -1,5 +1,3 @@
-# Created by: Daniel Harris <dannyboy@subdimension.com>
-
 PORTNAME=	whowatch
 PORTVERSION=	1.4
 PORTREVISION=	1

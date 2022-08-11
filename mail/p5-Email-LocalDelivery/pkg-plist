@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Email::LocalDelivery.3.gz
-%%PERL5_MAN3%%/Email::LocalDelivery::Maildir.3.gz
-%%PERL5_MAN3%%/Email::LocalDelivery::Mbox.3.gz
 %%SITE_PERL%%/Email/LocalDelivery.pm
 %%SITE_PERL%%/Email/LocalDelivery/Maildir.pm
 %%SITE_PERL%%/Email/LocalDelivery/Mbox.pm
+%%PERL5_MAN3%%/Email::LocalDelivery.3.gz
+%%PERL5_MAN3%%/Email::LocalDelivery::Maildir.3.gz
+%%PERL5_MAN3%%/Email::LocalDelivery::Mbox.3.gz

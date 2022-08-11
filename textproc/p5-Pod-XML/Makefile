@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	Pod-XML
 PORTVERSION=	0.99
 PORTREVISION=	4

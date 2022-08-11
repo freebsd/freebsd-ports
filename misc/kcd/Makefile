@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	kcd
 PORTVERSION=	7.15.0
 PORTREVISION=	1

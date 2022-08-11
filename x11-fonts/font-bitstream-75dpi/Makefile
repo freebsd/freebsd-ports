@@ -1,5 +1,3 @@
-# Created by: Pawel Worach
-
 PORTNAME=	font-bitstream-75dpi
 PORTVERSION=	1.0.3
 PORTREVISION=	4

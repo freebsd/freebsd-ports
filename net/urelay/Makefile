@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	urelay
 PORTVERSION=	1.0
 CATEGORIES=	net

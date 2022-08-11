@@ -1,4 +1,4 @@
---- gtk2/toolbar/Makefile.am.orig	2021-04-29 16:11:47 UTC
+--- gtk2/toolbar/Makefile.am.orig	2022-05-04 18:55:24 UTC
 +++ gtk2/toolbar/Makefile.am
 @@ -6,9 +6,7 @@ if GNOME_APPLET
  libexec_PROGRAMS =  uim-toolbar-applet
@@ -11,7 +11,7 @@
  uim_toolbar_applet_CPPFLAGS = $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
  uim_toolbar_applet_CFLAGS = @GTK2_CFLAGS@ @GNOME_APPLET_CFLAGS@
  if GCC
-@@ -41,9 +39,7 @@ bin_PROGRAMS = uim-toolbar-gtk uim-toolbar-gtk-systray
+@@ -45,9 +43,7 @@ bin_PROGRAMS = uim-toolbar-gtk uim-toolbar-gtk-systray
  endif
  
  uim_toolbar_gtk_SOURCES  = standalone-gtk.c common-gtk.c
@@ -22,7 +22,7 @@
  uim_toolbar_gtk_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)
  uim_toolbar_gtk_CFLAGS   = @GTK2_CFLAGS@
  
-@@ -51,8 +47,6 @@ uim_toolbar_gtk_systray_SOURCES  = systray-gtk.c commo
+@@ -55,8 +51,6 @@ uim_toolbar_gtk_systray_SOURCES  = systray-gtk.c commo
  				   eggtrayicon.c eggtrayicon.h
  uim_toolbar_gtk_systray_LDADD    = @GTK2_LIBS@ \
  				   @X11_LIBS@ \

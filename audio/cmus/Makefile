@@ -1,12 +1,10 @@
-# Created by: Adam Weinberger
-
 PORTNAME=	cmus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.1
-PORTREVISION=	2
+DISTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Console-based music player with really cool features
 
 LICENSE=	GPLv2+

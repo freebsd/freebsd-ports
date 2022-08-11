@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	result
 PORTVERSION=	1.5
 CATEGORIES=	devel

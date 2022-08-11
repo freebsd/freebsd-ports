@@ -1,5 +1,3 @@
-# Created by: dlowe
-
 PORTNAME=	bulk_mailer
 PORTVERSION=	1.13
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXau
 PORTVERSION=	1.0.9
 CATEGORIES=	x11

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-08-06 19:21:48 UTC
++++ CMakeLists.txt
+@@ -42,7 +42,7 @@ elseif(NOT CONAN_EXPORTED)
+ endif()
+ 
+ # only run documentation if this is not a sub-project
+-if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
++if(FREEBSD_BUILD_DOCS AND CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+     find_package(Doxygen)
+     if(DOXYGEN_FOUND)
+         set(DOXYGEN_OPTIMIZE_OUTPUT_FOR_C "YES")

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	flruler
 PORTVERSION=	1.05
 CATEGORIES=	x11

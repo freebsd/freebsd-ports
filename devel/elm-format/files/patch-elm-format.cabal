@@ -1,22 +1,11 @@
---- elm-format.cabal.orig	2020-02-25 17:08:42 UTC
+--- elm-format.cabal.orig	2021-02-09 02:18:35 UTC
 +++ elm-format.cabal
-@@ -76,7 +76,6 @@ library
-         AST.Json
-         AST.MapExpr
-         AST.MapNamespace
--        Build_elm_format
-         Cheapskate.Inlines
-         Cheapskate.Parse
-         Cheapskate.ParserCombinators
-@@ -122,9 +121,9 @@ library
-         filepath >= 1.4.2.1 && < 2,
-         free >= 5.1.1 && < 6,
-         indents >= 0.3.3 && < 0.4,
--        json >= 0.9.3 && < 0.10,
-+        json >= 0.9.3 && <= 0.10,
-         mtl >= 2.2.2 && < 3,
--        optparse-applicative >= 0.14.3.0 && < 0.15,
-+        optparse-applicative >= 0.14.3.0 && <= 0.15.1.0,
-         parsec >= 3.1.13.0 && < 4,
-         process >= 1.6.5.0 && < 2,
-         split >= 0.2.3.3 && < 0.3,
+@@ -58,7 +58,7 @@ common common-options
+         containers >= 0.6.0.1 && < 0.7,
+         json >= 0.10 && < 0.11,
+         optparse-applicative >= 0.15.1.0 && < 0.16,
+-        relude >= 0.7 && < 0.8,
++        relude,
+         text >= 1.2.3.1 && < 2,
+         avh4-lib,
+         elm-format-lib

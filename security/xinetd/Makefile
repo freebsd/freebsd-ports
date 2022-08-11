@@ -1,5 +1,3 @@
-# Created by: markm
-
 PORTNAME=	xinetd
 PORTVERSION=	2.3.15
 PORTREVISION=	2

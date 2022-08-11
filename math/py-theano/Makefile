@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	theano
 DISTVERSION=	1.0.5
 PORTREVISION=	1

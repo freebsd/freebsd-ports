@@ -1,8 +1,6 @@
-# Created by: Horance Chou <horance@freedom.ie.cycu.edu.tw>
-
 PORTNAME=	libffi
 PORTVERSION=	3.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/${PORTNAME}
 PKGNAMESUFFIX=	321

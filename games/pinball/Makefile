@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	pinball
 PORTVERSION=	0.3.20201218
 PORTREVISION=	1

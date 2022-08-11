@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@exit2shell.com>
-
 PORTNAME=	stringencoders
 PORTVERSION=	3.10.3
 DISTVERSIONPREFIX=	v

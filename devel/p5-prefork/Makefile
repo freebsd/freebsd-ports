@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	prefork
 PORTVERSION=	1.05
 CATEGORIES=	devel perl5

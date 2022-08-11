@@ -1,5 +1,3 @@
-# Created by: Aaron Zauner <az_mail@gmx.at>
-
 PORTNAME=	ipgrab
 PORTVERSION=	0.9.10
 PORTREVISION=	1

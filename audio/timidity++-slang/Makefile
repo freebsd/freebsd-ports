@@ -1,5 +1,3 @@
-# Created by: Yoichi Asai <yatt@msc.biglobe.ne.jp>
-
 PKGNAMESUFFIX=	-slang
 
 MAINTAINER=	ports@FreeBSD.org

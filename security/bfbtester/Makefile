@@ -1,5 +1,3 @@
-# Created by: Mike Heffner <mheffner@vt.edu>
-
 PORTNAME=	bfbtester
 PORTVERSION=	2.0.1
 PORTREVISION=	1

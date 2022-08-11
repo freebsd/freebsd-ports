@@ -1,8 +1,5 @@
-# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
-
 PORTNAME=	gcc
-PORTVERSION=	9.4.0
-PORTREVISION=	1
+PORTVERSION=	9.5.0
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -12,6 +9,9 @@ COMMENT=	GNU Compiler Collection 9
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
+
+DEPRECATED=	Unsupported by upstream. Use GCC 10 or newer instead.
+EXPIRATION_DATE=2024-06-30
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 powerpc powerpc64 powerpc64le sparc64
 

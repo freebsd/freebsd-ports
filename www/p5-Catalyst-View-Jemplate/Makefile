@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Catalyst-View-Jemplate
 PORTVERSION=	0.06
 PORTREVISION=	1

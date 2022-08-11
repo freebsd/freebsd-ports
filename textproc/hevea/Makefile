@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	hevea
 PORTVERSION=	2.34
 CATEGORIES=	textproc

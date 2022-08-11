@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	pkgmaker
 PORTVERSION=	0.32.2
 CATEGORIES=	devel

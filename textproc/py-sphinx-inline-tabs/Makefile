@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sphinx-inline-tabs
 PORTVERSION=	2022.1.2b11
 CATEGORIES=	textproc python

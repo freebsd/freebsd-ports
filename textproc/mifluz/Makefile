@@ -1,5 +1,3 @@
-# Created by: Frederic Dubuy <fdubuy@free.fr>
-
 PORTNAME=	mifluz
 PORTVERSION=	0.26.0
 PORTREVISION=	1

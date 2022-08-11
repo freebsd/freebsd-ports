@@ -1,5 +1,3 @@
-# Created by: Aron Schlesinger <as@bsdgroup.de>
-
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
 DISTVERSION=	6.6.58

@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pyral
 PORTVERSION=	1.5.2
 CATEGORIES=	devel python

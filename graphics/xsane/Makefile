@@ -1,5 +1,3 @@
-# Created by: Dominik Brettnacher <domi@nonsensss.de>
-
 PORTNAME=	xsane
 PORTVERSION=	0.999
 PORTREVISION=	6

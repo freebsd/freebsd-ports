@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	LWP-UserAgent-Determined
 PORTVERSION=	1.07
 PORTREVISION=	1

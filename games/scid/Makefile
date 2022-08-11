@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	scid
 PORTVERSION=	4.7.0
 DISTVERSIONPREFIX=	code-

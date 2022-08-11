@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Test-FailWarnings
 PORTVERSION=	0.008
 PORTREVISION=	1

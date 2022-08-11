@@ -1,5 +1,3 @@
-# Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-
 PORTNAME=	xar
 PORTVERSION=	1.6.1
 PORTREVISION=	2

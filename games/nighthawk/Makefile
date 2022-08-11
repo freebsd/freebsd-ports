@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	nighthawk
 PORTVERSION=	3.0.0
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Masafumi NAKANE <max@FreeBSD.org>
-
 PORTNAME=	WWW-Shorten-Bitly
 PORTVERSION=	2.001
 CATEGORIES=	www perl5

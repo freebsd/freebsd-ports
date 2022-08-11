@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@tandon.net>
-
 PORTNAME=	HTML-Field
 PORTVERSION=	1.19
 PORTREVISION=	1

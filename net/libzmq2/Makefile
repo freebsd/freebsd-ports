@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	libzmq2
 PORTVERSION=	2.2.0
 PORTREVISION=	3

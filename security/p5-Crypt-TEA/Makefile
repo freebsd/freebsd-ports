@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-TEA
 PORTVERSION=	1.26
 CATEGORIES=	security perl5

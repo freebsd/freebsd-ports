@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Editor
 PORTVERSION=	2.0.5
 CATEGORIES=	www pear

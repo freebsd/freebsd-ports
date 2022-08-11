@@ -1,5 +1,3 @@
-# Created by: Bjorn Lindstrom <bkhl@elektrubadur.se>
-
 PORTNAME=	dtach
 PORTVERSION=	0.9
 CATEGORIES=	misc

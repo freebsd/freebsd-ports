@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	mpc
 PORTVERSION=	1.2.1
 CATEGORIES=	math devel

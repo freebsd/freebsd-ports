@@ -1,5 +1,3 @@
-# Created by: pypt
-
 PORTNAME=	quake3
 PORTVERSION=	1.32c
 PORTREVISION=	6

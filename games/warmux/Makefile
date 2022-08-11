@@ -1,5 +1,3 @@
-# Created by: Anton Yudin <toha@FreeBSD.org>
-
 PORTNAME=	warmux
 DISTVERSION=	11.04.1
 PORTREVISION=	10

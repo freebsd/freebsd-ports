@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	urbansim
 PORTVERSION=	3.2
 CATEGORIES=	graphics python

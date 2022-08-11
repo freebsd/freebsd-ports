@@ -1,5 +1,3 @@
-# Created by: Christopher Nehren <apeiron+ports@coitusmentis.info>
-
 PORTNAME=	nant
 PORTVERSION=	0.92
 DISTVERSIONSUFFIX=	-src

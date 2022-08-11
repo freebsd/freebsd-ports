@@ -1,5 +1,3 @@
-# Created by: Toshihiko SHIMOKAWA <toshi@tea.forus.or.jp> & ELISA Font Project
-
 PORTNAME=	elisa8
 PORTVERSION=	1.0
 PORTREVISION=	4

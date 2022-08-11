@@ -1,6 +1,6 @@
 PORTNAME=	xorg-drivers
 PORTVERSION=	7.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -28,7 +28,6 @@ VIDEO_DRIVERS=		apm \
 			chips \
 			cirrus \
 			dummy \
-			glint \
 			i128 \
 			i740 \
 			mach64 \
@@ -38,14 +37,12 @@ VIDEO_DRIVERS=		apm \
 			openchrome \
 			r128 \
 			rendition \
-			s3 \
 			s3virge \
 			savage \
 			scfb \
 			siliconmotion \
 			sis \
 			tdfx \
-			trident \
 			tseng \
 			vesa \
 			voodoo

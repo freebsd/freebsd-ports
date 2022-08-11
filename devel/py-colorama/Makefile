@@ -1,7 +1,5 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	colorama
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +10,8 @@ COMMENT=	Cross-platform API to print colored terminal text from Python applicati
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USES=		python:3.7+
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 

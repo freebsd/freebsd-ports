@@ -1,19 +1,19 @@
---- src/core/global/qglobal.h.orig	2022-02-26 11:39:19 UTC
+--- src/core/global/qglobal.h.orig	2022-06-04 14:31:11 UTC
 +++ src/core/global/qglobal.h
-@@ -118,6 +118,16 @@
+@@ -101,13 +101,13 @@
  
- #   endif
+ #   define Q_PROCESSOR_ARM_32
  
-+#elif defined(__powerpc64__)
-+// 64-bit POWER
-+
-+#  define Q_PROCESSOR_PPC_64
-+
-+#elif defined(__powerpc__)
-+// 32-bit POWER
-+
-+#  define Q_PROCESSOR_PPC
-+
- #else
- #   error Unable to detect system architecture, contact CopperSpice development
+-#   if defined(__ARM_ARCH_7__)
++#   if defined(__ARM_ARCH_7__) || defined(__ARM_ARCH_7A__)
+ #      define Q_PROCESSOR_ARM      7
+ #      define Q_PROCESSOR_ARM_V7
  
+-#   elif defined(__ARM_ARCH_6__)
++#   elif defined(__ARM_ARCH_6__) || defined(__ARM_ARCH_6KZ__)
+ #      define Q_PROCESSOR_ARM      6
+-#      define Q_PROCESSOR_ARM_V8
++#      define Q_PROCESSOR_ARM_V6
+ 
+ #   elif defined(__ARM_ARCH_5__)
+ #      define Q_PROCESSOR_ARM      5

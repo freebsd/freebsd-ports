@@ -1,5 +1,3 @@
-# Created by: Timur I. Bakeyev <timur@gnome.org>
-
 PORTNAME=	stardict-dictd_mova
 PORTVERSION=	2.4.2
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: tobez@tobez.org
-
 PORTNAME=	libesmtp
 PORTVERSION=	1.0.6
 PORTREVISION=	2

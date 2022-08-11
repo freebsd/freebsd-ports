@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Algorithm-Combinatorics
 PORTVERSION=	0.27
 PORTREVISION=	1

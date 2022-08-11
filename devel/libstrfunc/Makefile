@@ -1,5 +1,3 @@
-# Created by: Lev Walkin <vlm@lionet.info>
-
 PORTNAME=	libstrfunc
 PORTVERSION=	8.3
 PORTREVISION=	2

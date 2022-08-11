@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Sane
 PORTVERSION=	0.05
 PORTREVISION=	1

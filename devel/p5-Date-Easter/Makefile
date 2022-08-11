@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Date-Easter
 PORTVERSION=	1.22
 CATEGORIES=	devel perl5

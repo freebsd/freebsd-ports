@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Plugin-HTMLPrototype
 PORTVERSION=	0.20
 PORTREVISION=	1

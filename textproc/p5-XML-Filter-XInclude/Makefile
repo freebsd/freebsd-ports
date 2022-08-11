@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	XML-Filter-XInclude
 PORTVERSION=	1.0
 PORTREVISION=	2

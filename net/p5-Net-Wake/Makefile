@@ -1,5 +1,3 @@
-# Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
-
 PORTNAME=	Net-Wake
 PORTVERSION=	0.02
 PORTREVISION=	1

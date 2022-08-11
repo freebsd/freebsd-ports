@@ -1,10 +1,10 @@
 PORTNAME=	go-git
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.4.2
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Highly extensible git library in pure Go
 
 LICENSE=	APACHE20

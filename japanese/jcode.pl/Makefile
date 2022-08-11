@@ -1,5 +1,3 @@
-# Created by: sada
-
 PORTNAME=	jcode.pl
 PORTVERSION=	2.13
 PORTREVISION=	2

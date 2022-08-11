@@ -1,5 +1,3 @@
-# Created by: Jose Rodriguez <king@v2project.com>
-
 PORTNAME=	jbidwatcher
 PORTVERSION=	2.5.6
 PORTREVISION=	1

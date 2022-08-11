@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Getargs-Long
 PORTVERSION=	1.1012
 CATEGORIES=	devel perl5

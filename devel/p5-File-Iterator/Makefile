@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	File-Iterator
 PORTVERSION=	0.14
 PORTREVISION=	1

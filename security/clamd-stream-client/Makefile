@@ -1,5 +1,3 @@
-# Created by: glen.j.barber@gmail.com
-
 PORTNAME=	clamd-stream-client
 DISTVERSION=	1.3
 CATEGORIES=	security

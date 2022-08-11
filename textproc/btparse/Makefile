@@ -1,5 +1,3 @@
-# Created by: Kay Lehmann <kay_lehmann@web.de>
-
 PORTNAME=	btparse
 PORTVERSION=	0.35
 PORTREVISION=	1

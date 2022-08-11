@@ -25,4 +25,6 @@ USES=		pyqt:5 python:3.7+
 USE_PYQT=	sip pyqt5
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

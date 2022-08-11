@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	HTML-HTML5-Entities
 PORTVERSION=	0.004
 PORTREVISION=	1

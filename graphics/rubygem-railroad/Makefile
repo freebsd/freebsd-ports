@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	railroad
 PORTVERSION=	0.5.0
 CATEGORIES=	graphics devel rubygems

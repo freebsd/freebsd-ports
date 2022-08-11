@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	heroics
 PORTVERSION=	0.1.2
 CATEGORIES=	www rubygems

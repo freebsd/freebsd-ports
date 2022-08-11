@@ -1,5 +1,3 @@
-# Created by: The Anarcat <anarcat@anarcat.ath.cx>
-
 PORTNAME=	mls
 PORTVERSION=	1.3
 PORTREVISION=	1

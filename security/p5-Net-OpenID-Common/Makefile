@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Net-OpenID-Common
 PORTVERSION=	1.20
 CATEGORIES=	security net perl5

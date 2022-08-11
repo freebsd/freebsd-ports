@@ -1,5 +1,3 @@
-# Created by: Dmitry N Fomin <fdn@okbire.ru>
-
 PORTNAME=	gdisk
 PORTVERSION=	1.0.9
 CATEGORIES=	sysutils

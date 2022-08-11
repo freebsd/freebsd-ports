@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	regexx
 PORTVERSION=	0.98.1
 PORTREVISION=	6

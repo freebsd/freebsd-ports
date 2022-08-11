@@ -1,5 +1,3 @@
-# Created by: kbyanc
-
 PORTNAME=	mmencode
 PORTVERSION=	2.7
 CATEGORIES=	converters

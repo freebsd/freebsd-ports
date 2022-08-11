@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	PHP_Timer
 PORTVERSION=	2.1.2
 CATEGORIES=	devel pear

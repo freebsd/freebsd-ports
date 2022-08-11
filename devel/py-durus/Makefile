@@ -1,5 +1,3 @@
-# Created by: Dryice Liu <dryice@dryice.name>
-
 PORTNAME=	durus
 PORTVERSION=	3.9
 PORTREVISION=	1

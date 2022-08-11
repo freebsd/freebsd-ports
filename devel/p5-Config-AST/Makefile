@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	Config-AST
 PORTVERSION=	1.07
 CATEGORIES=	devel perl5

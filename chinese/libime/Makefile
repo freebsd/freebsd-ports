@@ -1,7 +1,6 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	libime
 DISTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:opengram_lm,opengram_dict,table_dict
 DISTFILES=	${OPENGRAM_LM_TAR}:opengram_lm \

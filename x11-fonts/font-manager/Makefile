@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	font-manager
 PORTVERSION=	0.8.8
 PORTREVISION=	2

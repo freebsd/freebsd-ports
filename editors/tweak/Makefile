@@ -1,5 +1,3 @@
-# Created by: Jille Timmermans (jille@quis.cx)
-
 PORTNAME=	tweak
 PORTVERSION=	3.02
 CATEGORIES=	editors

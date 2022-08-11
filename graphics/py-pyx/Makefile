@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	pyx
 PORTVERSION=	0.15
 CATEGORIES=	graphics python

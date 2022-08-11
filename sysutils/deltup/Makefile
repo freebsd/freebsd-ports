@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	deltup
 PORTVERSION=	0.4.4
 PORTREVISION=	1

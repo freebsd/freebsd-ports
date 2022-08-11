@@ -1,5 +1,3 @@
-# Created by: torstenb
-
 PORTNAME=	mirror
 PORTVERSION=	2.9
 PORTREVISION=	2

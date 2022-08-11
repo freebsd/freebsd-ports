@@ -11,7 +11,8 @@ AMR_NB_CONFIGURE_ENABLE=libopencore_amrnb
 AMR_WB_LIB_DEPENDS=	libopencore-amrwb.so:audio/opencore-amr
 AMR_WB_CONFIGURE_ENABLE=libopencore_amrwb
 
-ASS_LIB_DEPENDS=	libass.so:multimedia/libass
+ASS_LIB_DEPENDS=	libass.so:multimedia/libass \
+			libharfbuzz.so:print/harfbuzz
 ASS_CONFIGURE_OFF=	--disable-ass
 
 BLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
@@ -26,7 +27,8 @@ CDIO_CONFIGURE_OFF=	--disable-libcdio
 DV_LIB_DEPENDS=		libdv.so:multimedia/libdv
 DV_CONFIGURE_ENABLE=	libdv
 
-DVDNAV_LIB_DEPENDS=	libdvdnav.so:multimedia/libdvdnav
+DVDNAV_LIB_DEPENDS=	libdvdnav.so:multimedia/libdvdnav \
+			libdvdread.so:multimedia/libdvdread
 DVDNAV_CONFIGURE_OFF=	--disable-dvdnav
 
 ENCA_LIB_DEPENDS=	libenca.so:converters/enca
@@ -51,15 +53,18 @@ GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 GSM_CONFIGURE_OFF=	--disable-libgsm
 
 GUI_CONFIGURE_ENABLE=	gui
-GUI_USE=		GNOME=gtk20
+GUI_USE=		GNOME=cairo,gdkpixbuf2,gtk20
 GUI_USES=		gnome
 GUI_DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "mplayer" "gmplayer" "" false
-GUI_IMPLIES=		ASS X11
+GUI_IMPLIES=		ASS JPEG X11
 
 IPV6_CONFIGURE_OFF=	--disable-inet6
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_OFF=	--disable-jack
+
+JPEG_USES=		jpeg
+JPEG_CONFIGURE_OFF=	--disable-jpeg
 
 LADSPA_RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/amp.so:audio/ladspa
 LADSPA_CONFIGURE_OFF=	--disable-ladspa
@@ -122,7 +127,8 @@ SPEEX_CONFIGURE_OFF=	--disable-speex
 SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib
 SVGALIB_CONFIGURE_OFF=	--disable-svga
 
-THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
+THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora \
+			libogg.so:audio/libogg
 THEORA_CONFIGURE_OFF=	--disable-theora
 
 TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame

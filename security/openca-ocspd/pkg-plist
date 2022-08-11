@@ -1,0 +1,18 @@
+bin/ocspd-genreq.sh
+@sample etc/ocspd/ocspd.xml.sample
+libdata/pkgconfig/openca-ocspd.pc
+sbin/ocspd
+share/man/man3/ocspd.3.gz
+share/man/man3/ocspd.conf.3.gz
+%%DATADIR%%/etc/ocspd/pki/token.d/etoken.xml.sample
+%%DATADIR%%/etc/ocspd/pki/token.d/software.xml.sample
+%%DATADIR%%/etc/ocspd/pki/token.d/eracom.xml.sample
+%%DATADIR%%/etc/ocspd/ca.d/collegeca.xml.sample
+%%DATADIR%%/etc/ocspd/ca.d/self-certs.xml.sample
+@dir etc/ocspd/ca.d
+@dir etc/ocspd/certs
+@dir etc/ocspd/crls
+@dir etc/ocspd/pki/hsm.d
+@dir etc/ocspd/pki/profile.d
+@dir etc/ocspd/pki/token.d
+@dir etc/ocspd/private

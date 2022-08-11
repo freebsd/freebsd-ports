@@ -1,5 +1,3 @@
-# Created by: Julian Jenkins <kaveman@magna.com.au>
-
 PORTNAME=	spice
 PORTVERSION=	3f5.2
 PORTREVISION=	13

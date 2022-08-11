@@ -1,6 +1,5 @@
 PORTNAME=	art
-DISTVERSION=	1.12.1
-PORTREVISION=	2
+DISTVERSION=	1.15
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
 PKGNAMESUFFIX=	-raw-image-editor
@@ -12,6 +11,7 @@ COMMENT=	Raw image processing program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_armv7=	compilation fails: use of overloaded operator '[]' is ambiguous, see https://bitbucket.org/agriggio/art/issues/256/build-fails-on-32-bit-architectures-use-of
 BROKEN_i386=	ld: error: undefined symbol: __atomic_load
 
 EXTRACT_DEPENDS=	gtar:archivers/gtar # bsdtar(1) complains about hard links to itself
@@ -33,11 +33,17 @@ USE_XORG=	x11
 
 EXTRACT_CMD=	gtar
 
+LDFLAGS+=	-lpthread # otherwise build breaks on some systems: error: undefined symbol: pthread_create
+
+.if exists(/usr/include/omp.h)
 OPTIONS_DEFINE=		OPENMP
 #OPTIONS_DEFAULT=	OPENMP
 
 OPENMP_CMAKE_BOOL=	OPTION_OMP
 OPENMP_BROKEN=		OpenMP causes asserts, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=261360
+.else
+CMAKE_ARGS=	-DOPTION_OMP:BOOL=OFF
+.endif
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/ART

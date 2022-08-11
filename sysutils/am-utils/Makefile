@@ -1,5 +1,3 @@
-# Created by: Jon Wilson <jon@phuq.co.uk>
-
 PORTNAME=	am-utils
 PORTVERSION=	6.2
 PORTREVISION=	11

@@ -1,9 +1,8 @@
 PORTNAME=	waylandpp
-DISTVERSION=	0.2.8
-PORTREVISION=	1
+DISTVERSION=	1.0.0
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Wayland C++ bindings
 
 LICENSE=	MIT

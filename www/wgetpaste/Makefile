@@ -1,5 +1,3 @@
-# Created by: Anonymous
-
 PORTNAME=	wgetpaste
 PORTVERSION=	2.30
 CATEGORIES=	www

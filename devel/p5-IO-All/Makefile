@@ -1,5 +1,3 @@
-# Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-
 PORTNAME=	IO-All
 PORTVERSION=	0.87
 CATEGORIES=	devel perl5

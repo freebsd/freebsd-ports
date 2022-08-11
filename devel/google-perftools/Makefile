@@ -1,9 +1,7 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	google-perftools
 DISTVERSIONPREFIX=	gperftools-
-DISTVERSION=	2.9.1
-PORTREVISION=	4
+DISTVERSION=	2.10
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/gperftools/gperftools/releases/download/gperftools-${PORTVERSION}/
 DISTNAME=	gperftools-${PORTVERSION}
@@ -14,8 +12,8 @@ COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to compile: src/stacktrace.cc:230:2: Cannot calculate stack trace: will need to write for your environment
-BROKEN_riscv64=		fails to compile: src/base/basictypes.h:387:5: Could not determine cache line length - unknown architecture
+BROKEN_armv7=	error: use of undeclared identifier '_URC_NO_REASON', see https://github.com/gperftools/gperftools/issues/1360
+BROKEN_riscv64=	error: Cannot calculate stack trace: will need to write for your environment, see https://github.com/gperftools/gperftools/issues/1359
 
 USES=		compiler:c11 gmake libtool localbase:ldflags
 GNU_CONFIGURE=	yes
@@ -26,11 +24,24 @@ LIBS+=		-lexecinfo
 
 DOCSDIR=	${PREFIX}/share/doc/gperftools
 
-OPTIONS_DEFINE=		DOCS
-OPTIONS_SINGLE=		PAGESIZE ALIGN
-OPTIONS_SINGLE_ALIGN=	ALIGN8 ALIGN16
+OPTIONS_DEFINE=			DOCS PROFILER
+OPTIONS_SINGLE=			PAGESIZE ALIGN
+OPTIONS_SINGLE_ALIGN=		ALIGN8 ALIGN16
 OPTIONS_SINGLE_PAGESIZE=	PAGE8K PAGE32K PAGE64K
-OPTIONS_DEFAULT=	PAGE8K ALIGN16
+OPTIONS_DEFAULT=		PAGE8K ALIGN16
+OPTIONS_DEFAULT_aarch64=	# PROFILER  is disabled: WARNING: Could not find the PC. Will not try to compile libprofiler, see https://github.com/gperftools/gperftools/issues/1362
+OPTIONS_DEFAULT_amd64=		PROFILER
+OPTIONS_DEFAULT_armv6=		# PROFILER is disabled: WARNING: Could not find the PC. Will not try to compile libprofiler.
+OPTIONS_DEFAULT_armv7=		# PROFILER is disabled: WARNING: Could not find the PC. Will not try to compile libprofiler.
+OPTIONS_DEFAULT_i386=		PROFILER
+OPTIONS_DEFAULT_powerpc=	PROFILER
+OPTIONS_DEFAULT_powerpc64=	PROFILER
+OPTIONS_DEFAULT_powerpc64le=	PROFILER
+OPTIONS_DEFAULT_riscv64=	PROFILER
+OPTIONS_SUB=		yes
+
+PROFILER_DESC=		Enable CPU profiler
+PROFILER_CONFIGURE_ENABLE=	cpu-profiler
 
 ALIGN_DESC=	The tcmalloc allocation alignment
 ALIGN8_DESC=	8 bytes allocation alignment
@@ -60,7 +71,7 @@ CONFIGURE_ARGS+=--enable-frame-pointers
 .endif
 
 # keep in sync with all platforms where libunwind is available
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 LIBS+=		-lunwind
 .endif

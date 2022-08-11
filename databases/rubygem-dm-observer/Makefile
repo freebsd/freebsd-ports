@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <rpsfa@rit.edu>
-
 PORTNAME=	dm-observer
 PORTVERSION=	1.2.0
 CATEGORIES=	databases rubygems

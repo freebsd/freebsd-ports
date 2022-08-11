@@ -1,5 +1,3 @@
-# Created by: Peter Avalos <pavalos@theshell.com>
-
 PORTNAME=	DBIx-DBSchema
 PORTVERSION=	0.45
 CATEGORIES=	databases perl5
@@ -15,12 +13,14 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 PORTDOCS=	Changes README
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

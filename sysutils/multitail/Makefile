@@ -1,5 +1,3 @@
-# Created by: Oliver Braun <obraun@FreeBSD.org>
-
 PORTNAME=	multitail
 PORTVERSION=	6.5.0
 CATEGORIES=	sysutils

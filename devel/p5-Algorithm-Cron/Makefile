@@ -1,5 +1,3 @@
-# Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-
 PORTNAME=	Algorithm-Cron
 PORTVERSION=	0.10
 CATEGORIES=	devel perl5

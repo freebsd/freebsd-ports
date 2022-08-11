@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	oidentd
 DISTVERSION=	2.5.1
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Oleg Pudeyev <oleg@bsdpower.com>
-
 PORTNAME=	Frozen-Flask
 PORTVERSION=	0.11
 CATEGORIES=	www python

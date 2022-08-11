@@ -1,0 +1,6 @@
+Computes polychoric and polyserial correlations by quick "two-step" methods or
+ML, optionally with standard errors; tetrachoric and biserial correlations are
+special cases.
+
+WWW: https://cran.r-project.org/package=polycor
+WWW: https://polycor.r-forge.r-project.org/

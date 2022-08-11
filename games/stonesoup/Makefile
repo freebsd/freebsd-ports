@@ -1,5 +1,3 @@
-# Created by: Tobias Rehbein <tobias.rehbein@web.de>
-
 PORTNAME=	stonesoup
 DISTVERSION=	0.28.0
 CATEGORIES=	games

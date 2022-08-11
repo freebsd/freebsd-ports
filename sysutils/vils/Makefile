@@ -1,5 +1,3 @@
-# Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-
 PORTNAME=	vils
 PORTVERSION=	20020228
 PORTREVISION=	1

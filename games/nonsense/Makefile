@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	nonsense
 PORTVERSION=	0.6
 PORTREVISION=	2

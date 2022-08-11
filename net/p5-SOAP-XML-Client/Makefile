@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	SOAP-XML-Client
 PORTVERSION=	2.8
 PORTREVISION=	1

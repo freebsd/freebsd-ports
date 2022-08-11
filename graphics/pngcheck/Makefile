@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	pngcheck
 PORTVERSION=	3.0.2
 CATEGORIES=	graphics

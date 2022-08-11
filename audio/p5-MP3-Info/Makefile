@@ -1,5 +1,3 @@
-# Created by: Leo Kim <leo@florida.sarang.net>
-
 PORTNAME=	MP3-Info
 PORTVERSION=	1.24
 PORTREVISION=	1

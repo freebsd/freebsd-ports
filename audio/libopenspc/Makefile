@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libopenspc
 PORTVERSION=	0.3.99a
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	IPC-MM
 PORTVERSION=	0.03
 PORTREVISION=	1

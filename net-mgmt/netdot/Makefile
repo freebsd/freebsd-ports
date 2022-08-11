@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard
-
 PORTNAME=	netdot
 PORTVERSION=	1.0.7
 DISTVERSIONPREFIX=	${PORTNAME}-

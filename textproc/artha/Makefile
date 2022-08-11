@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	artha
 PORTVERSION=	1.0.3
 PORTREVISION=	2

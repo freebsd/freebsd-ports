@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	schedutils
 PORTVERSION=	0.7.2
 CATEGORIES=	sysutils

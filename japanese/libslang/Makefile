@@ -1,5 +1,3 @@
-# Created by: IWASHITA Yoji <shuna@pop16.odn.ne.jp>
-
 PORTNAME=	libslang
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 PORTREVISION=	1

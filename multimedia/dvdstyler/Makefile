@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	dvdstyler
 PORTVERSION=	3.2.1
 PORTEPOCH=	2

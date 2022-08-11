@@ -19,15 +19,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flaky>=3.5.0:devel/py-flaky@${PY_FLAVOR} \
 
 NO_ARCH=	yes
 USES=		python:3.7+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils pytest
 
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
-
-do-test:
-	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.post.mk>

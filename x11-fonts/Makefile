@@ -192,6 +192,7 @@
     SUBDIR += nucleus
     SUBDIR += office-code-pro
     SUBDIR += ohsnap
+    SUBDIR += ohsnap-otb
     SUBDIR += oldschool-pc-fonts
     SUBDIR += open-sans
     SUBDIR += orbitron
@@ -214,6 +215,7 @@
     SUBDIR += psftools
     SUBDIR += py-QtAwesome
     SUBDIR += py-afdko
+    SUBDIR += py-axisregistry
     SUBDIR += py-babelfont
     SUBDIR += py-bdflib
     SUBDIR += py-booleanOperations
@@ -223,6 +225,7 @@
     SUBDIR += py-defcon
     SUBDIR += py-fontMath
     SUBDIR += py-fontmake
+    SUBDIR += py-gflanguages
     SUBDIR += py-glyphsLib
     SUBDIR += py-opentype-sanitizer
     SUBDIR += py-opentypespec

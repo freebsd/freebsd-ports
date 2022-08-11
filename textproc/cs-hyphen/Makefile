@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	hyphen
 PORTVERSION=	2.0
 CATEGORIES=	textproc

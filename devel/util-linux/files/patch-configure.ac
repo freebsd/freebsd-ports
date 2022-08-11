@@ -1,0 +1,12 @@
+--- configure.ac.orig	2020-07-23 09:23:58 UTC
++++ configure.ac
+@@ -204,7 +204,8 @@ PKG_INSTALLDIR(['${usrlib_execdir}/pkgconfig'])
+ PKG_PROG_PKG_CONFIG
+ PKG_INSTALLDIR(['${usrlib_execdir}/pkgconfig'])
+ 
+-GTK_DOC_CHECK([1.10])
++AM_CONDITIONAL([ENABLE_GTK_DOC], false)
++AM_CONDITIONAL([GTK_DOC_USE_LIBTOOL], true)
+ AC_PATH_PROG([XSLTPROC], [xsltproc])
+ 
+ linux_os=no

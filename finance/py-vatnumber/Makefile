@@ -1,5 +1,3 @@
-# Created by: Qian Jin <eric.siroh@gmail.com>
-
 PORTNAME=	vatnumber
 PORTVERSION=	1.2
 PORTREVISION=	1

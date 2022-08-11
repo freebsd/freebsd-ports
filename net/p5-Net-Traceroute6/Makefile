@@ -1,5 +1,3 @@
-# Created by: petef
-
 PORTNAME=	Net-Traceroute6
 PORTVERSION=	0.03
 PORTREVISION=	2

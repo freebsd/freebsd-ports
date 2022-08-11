@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	Sockets
 PORTVERSION=	2.3.9.9
 PORTREVISION=	3

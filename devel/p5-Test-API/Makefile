@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	Test-API
 PORTVERSION=	0.010
 CATEGORIES=	devel perl5

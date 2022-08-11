@@ -1,5 +1,5 @@
 PORTNAME=	ghostscript
-PORTVERSION=	9.55.0
+PORTVERSION=	9.56.1
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//g}/
 PKGNAMESUFFIX=	9-agpl-x11

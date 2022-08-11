@@ -1,5 +1,3 @@
-# Created by: Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
-
 PORTNAME=	sj3
 PORTVERSION=	2.0.1.20
 PORTREVISION=	8

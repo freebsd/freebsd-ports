@@ -1,0 +1,9 @@
+The DrumGizmo drumkit editor DGEdit is currently in a functioning, but very
+early phase of development. All of the essentials for importing, editing and
+exporting the raw drumkit recordings are there. Editor is certainly a huge help
+when creating the individual drumkit instruments (snare, kickdrum, toms,
+crashes and so on). The entire process of taking a bunch of wav files that
+you've recorded using, for instance, 16 microphones and then converting them
+into working instruments with hit energy levels is fully supported.
+
+WWW: https://www.drumgizmo.org/

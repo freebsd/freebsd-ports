@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pagerduty
 PORTVERSION=	4.0.0
 CATEGORIES=	www rubygems

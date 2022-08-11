@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	sokobano
 DISTVERSION=	1.0.3
 CATEGORIES=	games java

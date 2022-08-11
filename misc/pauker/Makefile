@@ -1,5 +1,3 @@
-# Created by: Alex Stangl <alex@stangl.us>
-
 PORTNAME=	pauker
 DISTVERSION=	1.8
 CATEGORIES=	misc education java

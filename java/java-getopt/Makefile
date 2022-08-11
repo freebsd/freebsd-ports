@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	java-getopt
 PORTVERSION=	1.0.14
 CATEGORIES=	java devel

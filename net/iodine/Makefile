@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	iodine
 PORTVERSION=	0.7.0
 PORTREVISION=	1

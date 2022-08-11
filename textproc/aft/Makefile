@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@FreeBSD.org>
-
 PORTNAME=	aft
 PORTVERSION=	5.098
 PORTREVISION=	1

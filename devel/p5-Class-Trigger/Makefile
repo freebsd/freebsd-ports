@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	Class-Trigger
 PORTVERSION=	0.15
 PORTREVISION=	1

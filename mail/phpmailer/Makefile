@@ -1,5 +1,3 @@
-# Created by: Zhen REN <bg1tpt@gmail.com>
-
 PORTNAME=	phpmailer
 PORTVERSION=	5.2.28
 DISTVERSIONPREFIX=	v

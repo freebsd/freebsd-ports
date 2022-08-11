@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rss
 PORTVERSION=	0.2.9
 CATEGORIES=	www rubygems

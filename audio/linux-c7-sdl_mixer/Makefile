@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.12
 DISTVERSIONSUFFIX=	-4.el7

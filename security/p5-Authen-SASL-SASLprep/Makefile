@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Authen-SASL-SASLprep
 PORTVERSION=	1.100
 CATEGORIES=	security perl5

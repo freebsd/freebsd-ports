@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	ucpp
 PORTVERSION=	1.3.2
 PORTEPOCH=	1

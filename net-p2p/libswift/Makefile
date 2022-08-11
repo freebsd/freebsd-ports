@@ -1,5 +1,3 @@
-# Created by: Dave Cottlehuber <dch@skunkwerks.at>
-
 PORTNAME=		libswift
 PORTVERSION=		20190302
 PORTREVISION=		1

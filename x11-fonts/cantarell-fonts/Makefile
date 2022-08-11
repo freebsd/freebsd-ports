@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	cantarell-fonts
 DISTVERSION=	0.301
 CATEGORIES=	x11-fonts gnome

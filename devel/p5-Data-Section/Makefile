@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	Data-Section
 PORTVERSION=	0.200007
 CATEGORIES=	devel perl5

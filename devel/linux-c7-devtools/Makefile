@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
 CATEGORIES=	devel

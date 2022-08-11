@@ -89,6 +89,9 @@ dkim_prepcmd()
 {
     dkim_cleansockets
     dkim_get_pidfile
+    if [ ! -d "$(dirname "$pidfile")" ]; then
+        mkdir "$(dirname "$pidfile")"
+    fi
     case ${milteropendkim_socket%:*} in
     local|unix)
 	socketfile=${milteropendkim_socket#*:}
@@ -202,6 +205,7 @@ else
 	if [ -n "${milteropendkim_alg}" ];then
 	    milteropendkim_alg="-S ${milteropendkim_alg}"
 	fi
+	dkim_get_pidfile
 	command_args="-l ${_socket_prefix} ${milteropendkim_socket} ${_uid_prefix} ${milteropendkim_uid} -P ${pidfile} ${milteropendkim_cfgfile} ${milteropendkim_domain} ${milteropendkim_key} ${milteropendkim_selector} ${milteropendkim_alg}"
     fi
 fi

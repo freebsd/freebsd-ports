@@ -20,4 +20,4 @@ Main advantages over other tar implementations:
 	true incremental	- star uses the same method as dump(8)/restore(8)
 	dump/restore features	  but acts OS and FS independent
 
-WWW: https://sourceforge.net/projects/s-tar/
+WWW: https://codeberg.org/schilytools/schilytools

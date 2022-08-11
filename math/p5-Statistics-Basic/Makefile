@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Statistics-Basic
 PORTVERSION=	1.6611
 CATEGORIES=	math perl5

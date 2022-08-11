@@ -1,5 +1,3 @@
-# Created by: Frank Fenor <frank@fenor.de>
-
 PORTNAME=	tclsyslog
 PORTVERSION=	2.1
 PORTREVISION=	1

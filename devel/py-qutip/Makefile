@@ -14,7 +14,8 @@ PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS}
+BUILD_DEPENDS=	${PY_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 # the optional graphics/py-mayavi dependency is omitted because it is python-2.7 -only

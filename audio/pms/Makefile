@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <wahjava@gmail.com>
-
 PORTNAME=	pms
 PORTVERSION=	0.42
 PORTREVISION=	14

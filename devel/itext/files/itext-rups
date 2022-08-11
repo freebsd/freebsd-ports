@@ -1,2 +1,0 @@
-#!/bin/sh
-java -cp `classpath` com.lowagie.rups.Rups &

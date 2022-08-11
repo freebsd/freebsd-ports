@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	XML-Node
 PORTVERSION=	0.11
 PORTREVISION=	1

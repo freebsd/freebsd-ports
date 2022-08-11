@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	libptytty
 PORTVERSION=	2.0
 CATEGORIES=	sysutils

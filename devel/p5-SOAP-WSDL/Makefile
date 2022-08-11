@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	SOAP-WSDL
 PORTVERSION=	3.004
 PORTREVISION=	1

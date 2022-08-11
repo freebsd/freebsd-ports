@@ -1,5 +1,3 @@
-# Created by: Tuc <freebsd-ports@t-b-o-h.net>
-
 PORTNAME=	MIME-Lite-TT-HTML
 PORTVERSION=	0.04
 PORTREVISION=	1

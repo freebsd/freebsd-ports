@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	librsync
 PORTVERSION=	2.3.2
 CATEGORIES=	net devel

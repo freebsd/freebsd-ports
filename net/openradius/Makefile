@@ -1,5 +1,3 @@
-# Created by: Adam Jette <jettea46@yahoo.com>
-
 PORTNAME=	openradius
 PORTVERSION=	0.9.12c
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	HTTP-Request-AsCGI
 PORTVERSION=	1.2
 PORTREVISION=	1

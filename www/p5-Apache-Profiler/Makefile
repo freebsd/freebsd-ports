@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Apache-Profiler
 PORTVERSION=	0.10
 PORTREVISION=	2

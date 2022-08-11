@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	libmowgli
 PORTVERSION=	1.0.0
 CATEGORIES=	devel

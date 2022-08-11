@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pybtex
 PORTVERSION=	0.24.0
 PORTREVISION=	1

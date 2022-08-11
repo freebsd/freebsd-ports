@@ -1,5 +1,3 @@
-# Created by: Leland Wang <llwang@infor.org>
-
 PORTNAME=	sgflib
 PORTVERSION=	1.0
 PORTREVISION=	1

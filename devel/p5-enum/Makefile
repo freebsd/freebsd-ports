@@ -1,5 +1,3 @@
-# Created by: Maxim Maximov (mcsi@agava.com)
-
 PORTNAME=	enum
 PORTVERSION=	1.110
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	symphytum
 PORTVERSION=	2.6
 DISTVERSIONPREFIX=	v

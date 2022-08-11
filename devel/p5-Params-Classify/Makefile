@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Params-Classify
 PORTVERSION=	0.015
 CATEGORIES=	devel perl5

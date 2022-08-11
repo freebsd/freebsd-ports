@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	libzrtpcpp
 PORTVERSION=	2.3.4
 PORTREVISION=	8

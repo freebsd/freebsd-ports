@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	sympy
 PORTVERSION=	1.10.1
 CATEGORIES=	math python

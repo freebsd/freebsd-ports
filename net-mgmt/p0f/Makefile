@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	p0f
 PORTVERSION=	3.09b
 PORTREVISION=	1

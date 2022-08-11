@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	pyWeather
 PORTVERSION=	0.1b
 CATEGORIES=	astro python geography

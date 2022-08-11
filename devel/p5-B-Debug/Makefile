@@ -1,5 +1,3 @@
-# Created by: James E Keenan <jkeenan@cpan.org>
-
 PORTNAME=	B-Debug
 PORTVERSION=	1.26
 CATEGORIES=	devel perl5

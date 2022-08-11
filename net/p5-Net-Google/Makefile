@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Net-Google
 PORTVERSION=	1.0.1
 PORTREVISION=	1

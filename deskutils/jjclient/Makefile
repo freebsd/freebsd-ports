@@ -1,5 +1,3 @@
-# Created by: Lucas Holt <luke@justjournal.com>
-
 PORTNAME=	jjclient
 PORTVERSION=	1.0.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	FrontISTR
 PORTVERSION=	5.2
 DISTVERSIONPREFIX=	v

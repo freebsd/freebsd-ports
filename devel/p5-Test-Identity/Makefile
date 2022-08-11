@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-Identity
 PORTVERSION=	0.01
 PORTREVISION=	1

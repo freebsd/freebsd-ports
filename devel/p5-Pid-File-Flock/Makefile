@@ -1,5 +1,3 @@
-# Created by: Oleg Mamontov <oleg@mamontov.net>
-
 PORTNAME=	Pid-File-Flock
 PORTVERSION=	0.08
 PORTREVISION=	1

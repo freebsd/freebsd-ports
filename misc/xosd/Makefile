@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@python.or.kr>
-
 PORTNAME=	xosd
 PORTVERSION=	2.2.14
 PORTREVISION=	3

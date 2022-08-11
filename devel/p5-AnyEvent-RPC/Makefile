@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	AnyEvent-RPC
 PORTVERSION=	0.05
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	aubio
 PORTVERSION=	0.4.9
 PORTREVISION?=	1

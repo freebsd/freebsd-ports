@@ -1,5 +1,3 @@
-# Created by: bf@FreeBSD.org
-
 PORTNAME=	xblas
 PORTVERSION=	1.0.248
 CATEGORIES=	math

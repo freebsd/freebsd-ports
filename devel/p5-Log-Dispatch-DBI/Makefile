@@ -1,5 +1,3 @@
-# Created by: Ralf Gebhart <gebhart@secnetix.de>
-
 PORTNAME=	Log-Dispatch-DBI
 PORTVERSION=	0.02
 PORTREVISION=	1

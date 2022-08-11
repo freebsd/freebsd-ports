@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	Net-Server-SS-PreFork
 PORTVERSION=	0.05
 PORTREVISION=	1

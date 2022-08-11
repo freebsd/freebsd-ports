@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Iterator-Simple
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5

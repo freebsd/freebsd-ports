@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	DBIx-Class-ResultSet-HashRef
 PORTVERSION=	1.002
 PORTREVISION=	1

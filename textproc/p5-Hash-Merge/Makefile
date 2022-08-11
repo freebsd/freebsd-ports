@@ -1,5 +1,3 @@
-# Created by: snowchyld
-
 PORTNAME=	Hash-Merge
 PORTVERSION=	0.302
 CATEGORIES=	textproc perl5

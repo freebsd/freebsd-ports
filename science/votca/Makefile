@@ -1,6 +1,7 @@
 PORTNAME=	votca
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2022
+PORTREVISION=	3
 CATEGORIES=	science
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
@@ -26,7 +27,7 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libgromacs_d.so:science/gromacs \
 		libhdf5.so:science/hdf5 \
 		libint2.so:science/libint2 \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libxc.so:science/libxc
 RUN_DEPENDS=	bash:shells/bash \
 		${PYNUMPY} \
@@ -46,7 +47,7 @@ SHEBANG_FILES=	csg/scripts/csg_call.in csg/scripts/csg_inverse.in \
 		xtp/scripts/xtp_qmmm2qm.in
 
 CMAKE_ON=	BUILD_XTP
-CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
+CMAKE_ARGS=	-DLOCALBASE=${LOCALBASE} -DPython_EXECUTABLE=${PYTHON_CMD}
 
 OPTIONS_DEFINE=		APPS
 OPTIONS_DEFAULT=	APPS

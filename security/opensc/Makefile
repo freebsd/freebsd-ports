@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson
-
 PORTNAME=	opensc
 DISTVERSION=	0.22.0
 CATEGORIES=	security devel

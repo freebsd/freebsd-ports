@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	pstree
 PORTVERSION=	2.39
 CATEGORIES=	sysutils

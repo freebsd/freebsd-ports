@@ -1,5 +1,3 @@
-# Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-
 PORTNAME=	fractgen
 PORTVERSION=	2.1.11
 CATEGORIES=	graphics

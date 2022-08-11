@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>
-
 PORTNAME=	HTML_TagCloud
 PORTVERSION=	1.0.0
 CATEGORIES=	www devel pear

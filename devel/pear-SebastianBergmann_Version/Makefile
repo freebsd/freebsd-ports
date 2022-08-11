@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	Version
 DISTVERSION=	2.0.1
 CATEGORIES=	devel pear

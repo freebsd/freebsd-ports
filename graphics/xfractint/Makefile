@@ -1,5 +1,3 @@
-# Created by: cacho@mexicano.gdl.iteso.mx
-
 PORTNAME=	xfractint
 PORTVERSION=	20.04p16
 CATEGORIES=	graphics

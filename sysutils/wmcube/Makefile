@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	wmcube
 PORTVERSION=	0.98
 PORTREVISION=	4

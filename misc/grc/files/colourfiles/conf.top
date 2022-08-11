@@ -1,0 +1,93 @@
+# Disk and Partition
+regexp=^\s*(\d+)\s+(\w+)
+colors=default,bright_magenta,bright_green
+======
+# Size
+regexp=\s(\d+G)
+colors=unchanged,"\033[38;5;214m"
+======
+# Size
+regexp=\s(\d{4,}M)
+#colors=unchanged,"\033[38;5;214m"
+colors=unchanged,bright_red
+======
+# Size
+regexp=\s(\d{3}?M)
+colors=unchanged,"\033[38;5;221m"
+======
+# Size
+regexp=\s(\d{1,2}M)
+colors=unchanged,"\033[38;5;223m"
+======
+# Size
+regexp=\s(\d+K)
+colors=unchanged,"\033[38;5;223m"
+======
+# Size
+regexp=\s([2-9]\d(?:\.\d+)?%)
+colors=unchanged,bright_red
+======
+# Size
+regexp=\s(1\d(?:\.\d+)?%)
+colors=unchanged,"\033[38;5;221m"
+======
+# Size
+regexp=\s(\d(?:\.\d+)?%)
+colors=unchanged,"\033[38;5;223m"
+======
+# Size
+regexp=\s(\d+(?:\.\d+)H)
+colors=unchanged,bright_red
+======
+# Size
+regexp=\s(\d{3,}(?::\d+))
+colors=unchanged,bright_red
+======
+# Size
+regexp=\s(\d{2}(?::\d+))
+colors=unchanged,"\033[38;5;221m"
+======
+# Size
+regexp=\s(\d(?::\d+))
+colors=unchanged,"\033[38;5;223m"
+======
+# Size
+regexp=\s(\d+(?:K|M|G)\s+Active)
+colors=default,bright_blue
+======
+# Size
+regexp=\s(\d+(?:K|M|G)\s+Inact(?:ive)?)
+colors=default,bright_yellow
+======
+# Size
+regexp=\s(\d+(?:K|M|G)\s+Laundry)
+colors=default,bright_magenta
+======
+# Size
+regexp=\s(\d+(?:K|M|G)\s+Wired)
+colors=default,bright_red
+======
+# Size
+regexp=\s(\d+(?:K|M|G)\s+Free)
+colors=default,bright_green
+======
+# Size
+regexp=\s(\d+(?:\.\d+)%\s+idle)
+colors=default,bright_green
+======
+# Size
+regexp=^(\d+\s+processes)
+colors=default,bright_blue
+======
+# Size
+regexp=\s(\d+\s+running)
+colors=default,bright_green
+======
+# Size
+regexp=\s(\d+\s+sleeping)
+colors=default,bright_yellow
+======
+# Size
+regexp=\s(\d+\s+zombie)
+colors=default,bright_red
+======

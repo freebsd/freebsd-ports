@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	camera
 PORTVERSION=	0.8
 PORTREVISION=	15

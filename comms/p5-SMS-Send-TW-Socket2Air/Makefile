@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	SMS-Send-TW-Socket2Air
 PORTVERSION=	0.01
 PORTREVISION=	1

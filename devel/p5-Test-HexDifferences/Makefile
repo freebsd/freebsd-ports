@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-HexDifferences
 PORTVERSION=	1.001
 CATEGORIES=	devel perl5

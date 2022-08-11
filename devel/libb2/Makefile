@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	libb2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.98.1

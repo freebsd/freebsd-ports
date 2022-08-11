@@ -1,5 +1,3 @@
-# Created by: Matt Peterson <matt@peterson.org>
-
 PORTNAME=	liboping
 PORTVERSION=	1.8.0
 PORTREVISION=	2

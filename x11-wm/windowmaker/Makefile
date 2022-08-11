@@ -1,5 +1,3 @@
-# Created by: Brian Handy <handy@physics.montana.edu>
-
 PORTNAME=	windowmaker
 PORTVERSION=	0.95.9
 PORTREVISION=	1

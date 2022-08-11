@@ -1,4 +1,4 @@
---- content/zygote/zygote_main_linux.cc.orig	2022-02-07 13:39:41 UTC
+--- content/zygote/zygote_main_linux.cc.orig	2022-06-17 14:20:10 UTC
 +++ content/zygote/zygote_main_linux.cc
 @@ -11,7 +11,9 @@
  #include <stddef.h>
@@ -10,7 +10,7 @@
  #include <sys/socket.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -40,7 +42,9 @@
+@@ -41,7 +43,9 @@
  #include "sandbox/linux/services/thread_helpers.h"
  #include "sandbox/linux/suid/client/setuid_sandbox_client.h"
  #include "sandbox/policy/linux/sandbox_debug_handling_linux.h"
@@ -20,7 +20,7 @@
  #include "sandbox/policy/sandbox.h"
  #include "sandbox/policy/switches.h"
  #include "third_party/icu/source/i18n/unicode/timezone.h"
-@@ -49,6 +53,7 @@ namespace content {
+@@ -50,6 +54,7 @@ namespace content {
  
  namespace {
  
@@ -28,7 +28,7 @@
  void CloseFds(const std::vector<int>& fds) {
    for (const auto& it : fds) {
      PCHECK(0 == IGNORE_EINTR(close(it)));
-@@ -66,9 +71,11 @@ base::OnceClosure ClosureFromTwoClosures(base::OnceClo
+@@ -67,9 +72,11 @@ base::OnceClosure ClosureFromTwoClosures(base::OnceClo
        },
        std::move(one), std::move(two));
  }
@@ -40,7 +40,7 @@
  // This function triggers the static and lazy construction of objects that need
  // to be created before imposing the sandbox.
  static void ZygotePreSandboxInit() {
-@@ -173,9 +180,11 @@ static void EnterLayerOneSandbox(sandbox::policy::Sand
+@@ -174,9 +181,11 @@ static void EnterLayerOneSandbox(sandbox::policy::Sand
      CHECK(!using_layer1_sandbox);
    }
  }
@@ -52,7 +52,7 @@
    sandbox::SetAmZygoteOrRenderer(true, GetSandboxFD());
  
    auto* linux_sandbox = sandbox::policy::SandboxLinux::GetInstance();
-@@ -240,6 +249,9 @@ bool ZygoteMain(
+@@ -241,6 +250,9 @@ bool ZygoteMain(
  
    // This function call can return multiple times, once per fork().
    return zygote.ProcessRequests();

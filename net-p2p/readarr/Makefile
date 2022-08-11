@@ -1,6 +1,5 @@
 PORTNAME=	readarr
-PORTVERSION=	0.1.0.1248
-PORTREVISION=	1
+PORTVERSION=	0.1.1.1320
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Readarr/Readarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Readarr.develop.${PORTVERSION}.freebsd-core-x64
@@ -32,10 +31,10 @@ SUB_LIST=	DATADIR=${DATADIR} \
 		PORTNAME=${PORTNAME} \
 		USERS=${USERS}
 
+WRKSRC=		${WRKDIR}/Readarr
+
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
-
-WRKSRC=		${WRKDIR}/Readarr
 
 .include <bsd.port.options.mk>
 

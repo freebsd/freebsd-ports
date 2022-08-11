@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	funktrackergold
 DISTVERSION=	1.5-2
 PORTREVISION=	8

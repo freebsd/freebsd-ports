@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	mesa-demos
 PORTVERSION=	8.4.0
 PORTREVISION=	3

@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-pricing
-PORTVERSION=	1.37.0
+PORTVERSION=	1.40.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

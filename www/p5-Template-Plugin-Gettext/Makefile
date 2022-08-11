@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Template-Plugin-Gettext
 PORTVERSION=	0.7
 CATEGORIES=	www perl5

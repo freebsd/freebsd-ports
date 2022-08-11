@@ -1,5 +1,3 @@
-# Created by: torstenb
-
 PORTNAME=	cricket
 PORTVERSION=	1.0.5
 PORTREVISION=	12

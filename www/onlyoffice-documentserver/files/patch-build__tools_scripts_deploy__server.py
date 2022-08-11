@@ -9,15 +9,6 @@
        base.copy_file(core_dir + "/Common/3dParty/icu/" + platform + "/build/libicudata.so.58", converter_dir + "/libicudata.so.58")
        base.copy_file(core_dir + "/Common/3dParty/icu/" + platform + "/build/libicuuc.so.58", converter_dir + "/libicuuc.so.58")
  
-@@ -102,6 +102,8 @@ def make():
- 
-     if (0 == platform.find("win")):
-       base.copy_files(core_dir + "/Common/3dParty/v8/v8/out.gn/" + platform + "/release/icudt*.dat", converter_dir + "/")
-+    elif (0 == platform.find("freebsd")):
-+      pass
-     elif (-1 == config.option("config").find("use_javascript_core")):
-       base.copy_file(core_dir + "/Common/3dParty/v8/v8/out.gn/" + platform + "/icudtl.dat", converter_dir + "/icudtl.dat")
- 
 @@ -119,9 +121,13 @@ def make():
      base.copy_sdkjs_plugins(js_dir + "/sdkjs-plugins", False, True)
      base.copy_sdkjs_plugins_server(js_dir + "/sdkjs-plugins", False, True)

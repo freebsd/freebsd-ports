@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-Interface
 PORTVERSION=	1.016
 CATEGORIES=	net perl5

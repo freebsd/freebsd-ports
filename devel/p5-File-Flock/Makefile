@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	File-Flock
 PORTVERSION=	2014.01
 PORTREVISION=	1

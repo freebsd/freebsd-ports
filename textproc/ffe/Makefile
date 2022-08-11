@@ -1,7 +1,6 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	ffe
 DISTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/ff-extractor/ff-extractor/${DISTVERSION}
 
@@ -14,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		makeinfo localbase
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-std=gnu89	# Requires GNU89 inline semantics.
 
 INFO=		ffe
 PORTDOCS=	ffe.html

@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	intltool
 PORTVERSION=	0.51.0
 PORTREVISION=	1

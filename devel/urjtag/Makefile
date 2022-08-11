@@ -1,5 +1,3 @@
-# Created by: Bruce M. Simpson <bms@FreeBSD.org>
-
 PORTNAME=	urjtag
 DISTVERSION=	2021.03
 CATEGORIES=	devel

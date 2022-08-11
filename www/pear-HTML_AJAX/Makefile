@@ -1,5 +1,3 @@
-# Created by: Simun Mikecin <numisemis at yahoo.com>
-
 PORTNAME=	HTML_AJAX
 PORTVERSION=	0.5.8
 CATEGORIES=	www devel pear

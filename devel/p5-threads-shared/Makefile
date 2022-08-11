@@ -1,5 +1,3 @@
-# Created by: Ruben van Staveren
-
 PORTNAME=	threads-shared
 PORTVERSION=	1.59
 CATEGORIES=	devel perl5

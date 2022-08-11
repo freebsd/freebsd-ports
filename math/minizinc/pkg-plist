@@ -479,14 +479,18 @@ lib/libmzn.so
 %%DATADIR%%/std/fzn_global_cardinality_closed.mzn
 %%DATADIR%%/std/fzn_global_cardinality_closed_opt.mzn
 %%DATADIR%%/std/fzn_global_cardinality_closed_reif.mzn
+%%DATADIR%%/std/fzn_global_cardinality_closed_set.mzn
 %%DATADIR%%/std/fzn_global_cardinality_low_up.mzn
 %%DATADIR%%/std/fzn_global_cardinality_low_up_closed.mzn
 %%DATADIR%%/std/fzn_global_cardinality_low_up_closed_opt.mzn
 %%DATADIR%%/std/fzn_global_cardinality_low_up_closed_reif.mzn
+%%DATADIR%%/std/fzn_global_cardinality_low_up_closed_set.mzn
 %%DATADIR%%/std/fzn_global_cardinality_low_up_opt.mzn
 %%DATADIR%%/std/fzn_global_cardinality_low_up_reif.mzn
+%%DATADIR%%/std/fzn_global_cardinality_low_up_set.mzn
 %%DATADIR%%/std/fzn_global_cardinality_opt.mzn
 %%DATADIR%%/std/fzn_global_cardinality_reif.mzn
+%%DATADIR%%/std/fzn_global_cardinality_set.mzn
 %%DATADIR%%/std/fzn_if_then_else_bool.mzn
 %%DATADIR%%/std/fzn_if_then_else_float.mzn
 %%DATADIR%%/std/fzn_if_then_else_int.mzn
@@ -643,7 +647,6 @@ lib/libmzn.so
 %%DATADIR%%/std/fzn_table_int.mzn
 %%DATADIR%%/std/fzn_table_int_opt.mzn
 %%DATADIR%%/std/fzn_table_int_reif.mzn
-%%DATADIR%%/std/fzn_transitive_closure.mzn
 %%DATADIR%%/std/fzn_tree_enum.mzn
 %%DATADIR%%/std/fzn_tree_enum_reif.mzn
 %%DATADIR%%/std/fzn_tree_int.mzn
@@ -769,7 +772,6 @@ lib/libmzn.so
 %%DATADIR%%/std/redefinitions-2.2.1.mzn
 %%DATADIR%%/std/redefinitions-2.3.3.mzn
 %%DATADIR%%/std/redefinitions-2.5.2.mzn
-%%DATADIR%%/std/redefinitions-2.5.6.mzn
 %%DATADIR%%/std/redefinitions.mzn
 %%DATADIR%%/std/regular.mzn
 %%DATADIR%%/std/regular_nfa.mzn

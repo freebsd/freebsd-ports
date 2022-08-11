@@ -1,5 +1,3 @@
-# Created by: johnh@isi.edu
-
 PORTNAME=	dontspace
 PORTVERSION=	1.2
 PORTREVISION=	4

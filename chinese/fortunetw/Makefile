@@ -1,5 +1,3 @@
-# Created by: Shen Chuan-Hsing
-
 PORTNAME=	fortunetw
 PORTVERSION=	1.4
 CATEGORIES=	chinese

@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	xjump
 PORTVERSION=	2.7.5
 PORTREVISION=	3

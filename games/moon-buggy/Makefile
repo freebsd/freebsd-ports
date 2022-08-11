@@ -1,5 +1,3 @@
-# Created by: Ralf Becker <ralf@akk.org>
-
 PORTNAME=	moon-buggy
 PORTVERSION=	1.0.51
 PORTREVISION=	4

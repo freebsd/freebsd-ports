@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Template-Timer
 PORTVERSION=	1.00
 PORTREVISION=	2

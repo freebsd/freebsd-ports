@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	asm-xml
 PORTVERSION=	1.4
 CATEGORIES=	textproc

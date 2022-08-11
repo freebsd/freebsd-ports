@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	gnaural
 PORTVERSION=	1.0.20110606
 PORTREVISION=	7

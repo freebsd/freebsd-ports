@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	fspclient
 PORTVERSION=	0.93.1
 CATEGORIES=	net

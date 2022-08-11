@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	fpdns
 PORTVERSION=	20190131
 CATEGORIES=	dns net perl5

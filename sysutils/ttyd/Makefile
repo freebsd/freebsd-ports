@@ -1,6 +1,5 @@
 PORTNAME=	ttyd
-DISTVERSION=	1.6.3
-PORTREVISION=	2
+DISTVERSION=	1.7.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	nc@FreeBSD.org
@@ -19,6 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tsl0922
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/ttyd.1.gz
+		share/man/man1/ttyd.1.gz
 
 .include <bsd.port.mk>

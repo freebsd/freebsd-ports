@@ -1,5 +1,3 @@
-# Created by: Marcel Kaiser <mk@nic-nac-project.org>
-
 PORTNAME=	dsbdriverd
 PORTVERSION=	1.1
 CATEGORIES=	sysutils

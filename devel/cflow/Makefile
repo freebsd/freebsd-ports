@@ -1,5 +1,3 @@
-# Created by: dchapes@zeus.leitch.com
-
 PORTNAME=	cflow
 PORTVERSION=	2.0
 PORTREVISION=	1

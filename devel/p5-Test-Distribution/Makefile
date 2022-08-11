@@ -1,5 +1,3 @@
-# Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
-
 PORTNAME=	Test-Distribution
 PORTVERSION=	2.00
 PORTREVISION=	2

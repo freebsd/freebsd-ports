@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	psh
 PORTVERSION=	1.8.1
 PORTREVISION=	4

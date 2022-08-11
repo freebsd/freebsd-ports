@@ -1,5 +1,3 @@
-# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-
 PORTNAME=	HTTP_FloodControl
 PORTVERSION=	0.1.1
 CATEGORIES=	www pear

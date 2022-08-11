@@ -1,5 +1,3 @@
-# Created by: Andreas Kohout <shanee@augusta.de>
-
 PORTNAME=	asedit
 PORTVERSION=	1.3.2
 PORTREVISION=	5

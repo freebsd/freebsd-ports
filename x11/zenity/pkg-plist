@@ -919,11 +919,6 @@ share/locale/xh/LC_MESSAGES/zenity.mo
 share/locale/zh_CN/LC_MESSAGES/zenity.mo
 share/locale/zh_HK/LC_MESSAGES/zenity.mo
 share/locale/zh_TW/LC_MESSAGES/zenity.mo
-%%DATADIR%%/clothes/gnome-tshirt.png
-%%DATADIR%%/clothes/hawaii-shirt.png
-%%DATADIR%%/clothes/monk.png
-%%DATADIR%%/clothes/sunglasses.png
-%%DATADIR%%/clothes/surfboard.png
 %%DATADIR%%/zenity-calendar.png
 %%DATADIR%%/zenity-entry.png
 %%DATADIR%%/zenity-file.png

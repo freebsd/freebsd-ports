@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Git-PurePerl
 PORTVERSION=	0.53
 CATEGORIES=	devel perl5

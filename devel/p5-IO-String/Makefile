@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	IO-String
 PORTVERSION=	1.08
 PORTREVISION=	1

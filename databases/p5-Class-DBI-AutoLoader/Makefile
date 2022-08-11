@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Class-DBI-AutoLoader
 PORTVERSION=	0.12
 PORTREVISION=	1

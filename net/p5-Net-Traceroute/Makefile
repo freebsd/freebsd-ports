@@ -1,5 +1,3 @@
-# Created by: kuriyama
-
 PORTNAME=	Net-Traceroute
 PORTVERSION=	1.15
 PORTREVISION=	1

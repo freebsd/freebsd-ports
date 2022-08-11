@@ -1,6 +1,6 @@
 PORTNAME=	ncbi-blast+
 DISTVERSION=	2.12.0
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	biology perl5 python
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
@@ -52,15 +52,15 @@ CONFLICTS_INSTALL=	ncbi-cxx-toolkit
 
 WRKSRC_SUBDIR=	c++
 
+.if !exists(/usr/include/omp.h)
+CONFIGURE_ARGS+=	--without-openmp
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 # In case of problems: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=220822
 LDFLAGS+=	-latomic # Only exists in gcc libs
-.endif
-
-.if ${ARCH} == powerpc
-CONFIGURE_ARGS+=	--without-openmp
 .endif
 
 post-install:

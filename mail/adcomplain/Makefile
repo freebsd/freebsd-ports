@@ -1,5 +1,3 @@
-# Created by: ache@FreeBSD.org
-
 PORTNAME=	adcomplain
 PORTVERSION=	3.52
 CATEGORIES=	mail news

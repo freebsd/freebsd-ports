@@ -586,7 +586,10 @@ lib/libmythupnp-31.so.31.0.0
 %%BINDINGS%%%%SITE_PERL%%/MythTV/Program.pm
 %%BINDINGS%%%%SITE_PERL%%/MythTV/Recording.pm
 %%BINDINGS%%%%SITE_PERL%%/MythTV/StorageGroup.pm
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV-31.0._1-py%%PYTHON_VER%%.egg-info
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV-31.0._1-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV-31.0._1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV-31.0._1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV-31.0._1-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/__init__.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/__pycache__/_conn_mysqldb.cpython-%%PYTHON_SUFFIX%%.pyc

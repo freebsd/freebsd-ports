@@ -1,5 +1,3 @@
-# Created by: Andrew T. Bennett <potatosaladx@gmail.com>
-
 PORTNAME=	mod_xsendfile
 PORTVERSION=	0.12
 PORTREVISION=	3

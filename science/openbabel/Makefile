@@ -1,8 +1,6 @@
-# Created by: ijliao
-
 PORTNAME=	openbabel
 DISTVERSION=	3.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/openbabel/openbabel/releases/download/openbabel-${PORTVERSION:C/\./-/g}/

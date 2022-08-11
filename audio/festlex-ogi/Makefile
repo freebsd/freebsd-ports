@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	festlex-ogi
 PORTVERSION=	2.2
 PORTREVISION=	2

@@ -1,7 +1,5 @@
-# Created by: Moggie <moggie@elasticmind.net>
-
 PORTNAME=	werkzeug
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +11,7 @@ COMMENT=	Python utilities collection for building WSGI applications
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=16.0:security/py-openssl@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=2.1.1:textproc/py-markupsafe@${PY_FLAVOR}
 
 USES=		cpe python:3.7+
 USE_PYTHON=	autoplist concurrent distutils

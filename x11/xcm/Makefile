@@ -3,7 +3,7 @@ PORTVERSION=	0.5.4
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Color Management tools
 
 LICENSE=	MIT

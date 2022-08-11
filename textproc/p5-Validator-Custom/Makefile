@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	Validator-Custom
 PORTVERSION=	1.0201
 CATEGORIES=	textproc perl5

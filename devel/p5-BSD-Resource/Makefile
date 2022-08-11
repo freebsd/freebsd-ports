@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	BSD-Resource
 PORTVERSION=	1.2911
 CATEGORIES=	devel perl5

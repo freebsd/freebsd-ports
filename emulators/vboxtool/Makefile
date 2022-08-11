@@ -1,5 +1,3 @@
-# Created by: pjm
-
 PORTNAME=	vboxtool
 PORTVERSION=	0.5
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Auth_RADIUS
 PORTVERSION=	1.1.0
 CATEGORIES=	net security pear

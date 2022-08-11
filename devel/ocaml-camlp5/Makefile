@@ -1,5 +1,3 @@
-# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-
 PORTNAME=	camlp5
 PORTVERSION=	7.14
 CATEGORIES=	devel

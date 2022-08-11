@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@FreeBSD.org>
-
 PORTNAME=	mariadb
 PKGNAMESUFFIX=	103-client
 

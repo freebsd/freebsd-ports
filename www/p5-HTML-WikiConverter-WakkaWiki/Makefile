@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	HTML-WikiConverter-WakkaWiki
 PORTVERSION=	0.50
 PORTREVISION=	1

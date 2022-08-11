@@ -1,5 +1,3 @@
-# Created by: patrick
-
 PORTNAME=	ample
 PORTVERSION=	0.5.7
 CATEGORIES=	audio

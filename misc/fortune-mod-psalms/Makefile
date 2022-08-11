@@ -1,5 +1,3 @@
-# Created by: pfg
-
 PORTNAME=	fortune-mod-psalms
 PORTVERSION=	1.0
 CATEGORIES=	misc

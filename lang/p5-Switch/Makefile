@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Switch
 PORTVERSION=	2.17
 PORTREVISION=	1

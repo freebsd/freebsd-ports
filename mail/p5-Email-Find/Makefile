@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Email-Find
 PORTVERSION=	0.10
 PORTREVISION=	1

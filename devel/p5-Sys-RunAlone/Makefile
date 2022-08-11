@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Sys-RunAlone
 PORTVERSION=	0.13
 CATEGORIES=	devel perl5

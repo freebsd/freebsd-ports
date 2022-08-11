@@ -1,5 +1,3 @@
-# Created by: Johan Strom <johna@stromnet.se>
-
 PORTNAME=	openzwave
 PORTVERSION=	1.6.${VERSION_REV}
 PORTREVISION=	1

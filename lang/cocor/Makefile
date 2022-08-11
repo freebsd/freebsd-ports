@@ -1,5 +1,3 @@
-# Created by: Guy Antony Halse <guy@rucus.ru.za.za>
-
 PORTNAME=	cocor
 PORTVERSION=	1.7
 PORTREVISION=	3

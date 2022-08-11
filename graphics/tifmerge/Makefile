@@ -1,5 +1,3 @@
-# Created by: G. Adam Stanislav <adam@whizkidtech.net>
-
 PORTNAME=	tifmerge
 PORTVERSION=	1.0
 PORTREVISION=	1

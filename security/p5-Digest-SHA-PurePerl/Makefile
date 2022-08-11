@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-
 PORTNAME=	Digest-SHA-PurePerl
 PORTVERSION=	5.96
 CATEGORIES=	security perl5

@@ -1,5 +1,3 @@
-# Created by: rpsfa@rit.edu
-
 PORTNAME=	simple_form
 PORTVERSION=	4.0.0
 CATEGORIES=	devel rubygems

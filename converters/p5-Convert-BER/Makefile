@@ -1,5 +1,3 @@
-# Created by: Marc Fournier <scrappy@FreeBSD.org>
-
 PORTNAME=	Convert-BER
 PORTVERSION=	1.32
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	Gearman-Server
 PORTVERSION=	1.11
 PORTREVISION=	2

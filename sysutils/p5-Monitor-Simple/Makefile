@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Monitor-Simple
 PORTVERSION=	0.2.8
 PORTREVISION=	1

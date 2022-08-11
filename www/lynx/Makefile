@@ -1,5 +1,3 @@
-# Created by: Andrey Chernov <ache@FreeBSD.org>
-
 PORTNAME=	lynx
 PORTVERSION=	2.8.9.1
 PORTREVISION=	1

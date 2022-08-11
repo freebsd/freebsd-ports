@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	File-BackupCopy
 PORTVERSION=	1.02
 CATEGORIES=	sysutils perl5

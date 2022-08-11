@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	longhorninspirat
 PORTVERSION=	1.0
 PORTREVISION=	9

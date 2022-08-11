@@ -1,11 +1,9 @@
-# Created by: Paul Traina <pst@FreeBSD.org>
-
 PORTNAME=	kermit
-PORTVERSION=	9.0.305.06
+DISTVERSION=	10.0-beta04
 CATEGORIES=	comms ftp net
-MASTER_SITES=	http://www.kermitproject.org/ftp/kermit/test/tar/ \
+MASTER_SITES=	https://www.kermitproject.org/ftp/kermit/test/tar/ \
 		ftp://ftp.kermitproject.org/kermit/test/tar/
-DISTNAME=	cku${PORTVERSION:R:E}-alpha${PORTVERSION:E}
+DISTNAME=	cku${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Portable scriptable network and serial communication program

@@ -11,6 +11,7 @@
     SUBDIR += cpipe
     SUBDIR += dbench
     SUBDIR += dbs
+    SUBDIR += ddosify
     SUBDIR += dhrystone
     SUBDIR += dkftpbench
     SUBDIR += fhourstones
@@ -42,6 +43,7 @@
     SUBDIR += linux-gputest
     SUBDIR += linux-unigine-heaven
     SUBDIR += linux-unigine-sanctuary
+    SUBDIR += linux-unigine-superposition
     SUBDIR += linux-unigine-tropics
     SUBDIR += linux-unigine-valley
     SUBDIR += linux-vdbench
@@ -87,6 +89,7 @@
     SUBDIR += rubygem-railsbench
     SUBDIR += scimark2
     SUBDIR += scimark2c
+    SUBDIR += scimark4c
     SUBDIR += shellbench
     SUBDIR += siege
     SUBDIR += sipp
@@ -103,6 +106,7 @@
     SUBDIR += ttcp
     SUBDIR += typometer
     SUBDIR += ubench
+    SUBDIR += uica
     SUBDIR += unixbench
     SUBDIR += uperf
     SUBDIR += vegeta

@@ -1,5 +1,3 @@
-# Created by: Hannes Hauswedell <h2+fbsdports@fsfe.org>
-
 PORTNAME=	unigine-heaven
 PORTVERSION=	4.0
 PORTREVISION=	4

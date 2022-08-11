@@ -1,5 +1,5 @@
 PORTNAME=	azure-data-tables
-DISTVERSION=	12.2.0
+DISTVERSION=	12.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ COMMENT=	Microsoft Azure Data Tables Client Library for Python
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msrest>=0.6.21:net-mgmt/py-msrest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-core>=1.14.0<2.0.0:devel/py-azure-core@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}azure-core>=1.15.0<2.0.0:devel/py-azure-core@${PY_FLAVOR}
 
 USES=		azurepy python:3.6+ zip
 USE_PYTHON=	autoplist concurrent distutils

@@ -1,5 +1,3 @@
-# Created by: Roman Shterenzon <roman@xpert.com>
-
 PORTNAME=	pdnsd
 PORTVERSION=	1.2.9a
 CATEGORIES=	dns

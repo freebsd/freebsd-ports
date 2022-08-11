@@ -1,0 +1,51 @@
+videobridge {
+  http-servers {
+      public {
+          port = 9090
+      }
+  }
+  websockets {
+      enabled = true
+      domain = "jitsi.example.com:443"
+      tls = true
+      server-id = "default-id"
+  }
+  sctp {
+       enabled = false
+  }
+
+  stats {
+    # Enable broadcasting stats/presence in a MUC
+    enabled = true
+    transports = [
+      { type = "colibri" }
+    ]
+  }
+
+  apis {
+    xmpp-client {
+      configs {
+        xmpp-server-1 {
+          hostname="localhost"
+          domain = "auth.jitsi.example.com"
+          username = "jvb"
+          password = "supersecret"
+          muc_jids = "JvbBrewery@internal.auth.jitsi.example.com"
+          muc_nickname = "unique-instance-id"
+          # disable_certificate_verification = true
+        }
+      }
+    }
+  }
+
+  ice {
+    tcp {
+      enabled = true
+      port = 4443
+    }
+
+    udp {
+      port = 10000
+    }      
+  }
+}

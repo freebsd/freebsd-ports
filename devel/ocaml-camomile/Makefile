@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	camomile
 PORTVERSION=	1.0.2
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Marcus Alves Grando <mnag@FreeBSD.org>
-
 PORTNAME=	timezonedb
 PORTVERSION=	2021.5
 CATEGORIES=	misc

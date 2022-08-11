@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	File-Cache
 PORTVERSION=	0.16
 PORTREVISION=	1

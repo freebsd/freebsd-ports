@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	Mail
 DISTVERSION=	1.4.1
 PORTEPOCH=	1

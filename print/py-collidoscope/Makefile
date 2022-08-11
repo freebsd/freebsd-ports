@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	collidoscope
 PORTVERSION=	0.4.1
 CATEGORIES=	print python

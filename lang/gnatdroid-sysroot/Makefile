@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	sysroot
 PORTVERSION=	23
 CATEGORIES=	lang

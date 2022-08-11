@@ -1,5 +1,3 @@
-# Created by: Frerich Raabe <frerich.raabe@gmx.de>
-
 PORTNAME=	bnf
 PORTVERSION=	1.6.10
 PORTREVISION=	1

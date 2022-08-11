@@ -1,5 +1,3 @@
-# Created by: David Wolfskill
-
 PORTNAME=	gpsman
 PORTVERSION=	6.4.4.2
 CATEGORIES=	astro tk geography

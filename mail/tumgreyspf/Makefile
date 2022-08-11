@@ -1,5 +1,3 @@
-# Created by: Marcus Alves Grando <mnag@FreeBSD.org>
-
 PORTNAME=	tumgreyspf
 PORTVERSION=	1.38
 PORTREVISION=	3

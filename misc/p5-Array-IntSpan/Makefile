@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Array-IntSpan
 PORTVERSION=	2.004
 CATEGORIES=	misc perl5

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	hsflowd
 PORTVERSION=	1.24.1
 CATEGORIES=	net

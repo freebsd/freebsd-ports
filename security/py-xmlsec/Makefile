@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	xmlsec
 PORTVERSION=	1.3.12
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	tokyotyrant
 PORTVERSION=	1.1.41
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Daisuke Aoyama <aoyama@peach.ne.jp>
-
 PORTNAME=	istgt
 PORTVERSION=	20150713
 CATEGORIES=	net

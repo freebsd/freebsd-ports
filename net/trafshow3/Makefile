@@ -1,5 +1,3 @@
-# Created by: igor@zynaps.ru
-
 PORTNAME=	trafshow
 PORTVERSION=	3.1
 PORTREVISION=	8

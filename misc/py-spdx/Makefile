@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	spdx
 PORTVERSION=	2.5.1
 CATEGORIES=	misc python

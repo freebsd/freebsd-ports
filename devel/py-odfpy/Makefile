@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	odfpy
 PORTVERSION=	1.4.1
 PORTREVISION=	1

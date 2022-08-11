@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	JSON-Tiny
 PORTVERSION=	0.58
 CATEGORIES=	converters perl5

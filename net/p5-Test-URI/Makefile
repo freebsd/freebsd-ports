@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Test-URI
 PORTVERSION=	1.084
 CATEGORIES=	net perl5

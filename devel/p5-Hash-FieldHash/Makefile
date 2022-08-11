@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Hash-FieldHash
 PORTVERSION=	0.15
 CATEGORIES=	devel perl5

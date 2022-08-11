@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Complete-Path
 PORTVERSION=	0.251
 CATEGORIES=	devel perl5

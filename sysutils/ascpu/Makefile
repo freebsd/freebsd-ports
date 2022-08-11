@@ -1,5 +1,3 @@
-# Created by: Dima Sivachenko <dima@chg.ru>
-
 PORTNAME=	ascpu
 PORTVERSION=	1.11
 PORTREVISION=	6

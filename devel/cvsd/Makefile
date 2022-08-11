@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cvsd
 PORTVERSION=	1.0.24
 CATEGORIES=	devel

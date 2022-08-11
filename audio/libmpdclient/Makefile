@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	libmpdclient
 PORTVERSION=	2.20
 CATEGORIES=	audio

@@ -1,5 +1,3 @@
-# Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-
 PORTNAME=	Path-Class
 PORTVERSION=	0.37
 CATEGORIES=	devel perl5

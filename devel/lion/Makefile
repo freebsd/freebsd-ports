@@ -1,5 +1,3 @@
-# Created by: Marco Molteni <molterSPAM@gufiSPAM.org>
-
 PORTNAME=	lion
 DISTVERSION=	20060630
 CATEGORIES=	devel net

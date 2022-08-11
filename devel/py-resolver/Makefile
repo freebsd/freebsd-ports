@@ -1,5 +1,3 @@
-# Created by: Trevor Caira <trevor@bitba.se>
-
 PORTNAME=	resolver
 PORTVERSION=	0.2.1
 PORTREVISION=	1

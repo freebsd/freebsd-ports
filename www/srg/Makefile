@@ -1,5 +1,3 @@
-# Created by: Dmitry Semkin <lslarry@gmail.com>
-
 PORTNAME=	srg
 PORTVERSION=	1.3.6
 CATEGORIES=	www

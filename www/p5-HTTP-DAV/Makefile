@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	HTTP-DAV
 PORTVERSION=	0.49
 CATEGORIES=	www perl5

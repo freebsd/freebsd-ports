@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jaconv
 PORTVERSION=	0.3
 CATEGORIES=	japanese python

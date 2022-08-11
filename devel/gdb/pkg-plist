@@ -21,6 +21,8 @@ man/man1/gdb%%VER%%.1.gz
 %%PYTHON%%%%DATADIR%%/python/gdb/prompt.py
 %%PYTHON%%%%DATADIR%%/python/gdb/prompt.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/printing.pyc
+%%PYTHON%%%%DATADIR%%/python/gdb/styling.py
+%%PYTHON%%%%DATADIR%%/python/gdb/styling.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/types.py
 %%PYTHON%%%%DATADIR%%/python/gdb/types.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/unwinder.py

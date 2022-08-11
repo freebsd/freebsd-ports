@@ -1,5 +1,3 @@
-# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-
 PORTNAME=	Data-Validate-Email
 PORTVERSION=	0.04
 PORTREVISION=	1

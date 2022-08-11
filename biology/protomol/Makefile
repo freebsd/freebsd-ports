@@ -1,5 +1,3 @@
-# Created by: Sangwoo Shim <sangwoos@gmail.com>
-
 PORTNAME=	protomol
 PORTVERSION=	2.0.3
 PORTREVISION=	14

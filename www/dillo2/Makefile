@@ -1,8 +1,6 @@
-# Created by: bf <bf2006a@yahoo.com>
-
 PORTNAME=	dillo
 PORTVERSION=	3.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.dillo.org/download/ \
 		LOCAL/bf/dillo/ \
@@ -11,7 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Fast, small graphical Web browser built upon fltk
 
 LICENSE=	GPLv3+
@@ -37,7 +35,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=		COOKIES DEBUG DOCS HYPHENATION IPV6 JPEG PNG SSL \
 			THREADS
-OPTIONS_DEFAULT=	COOKIES HYPHENATION IPV6 JPEG PNG SSL THREADS
+OPTIONS_DEFAULT=	COOKIES IPV6 JPEG PNG SSL THREADS
 
 COOKIES_DESC=		Cookie support
 HYPHENATION_DESC=	Hyphenation file(s) for HYPHENATION_LANGS
@@ -64,6 +62,7 @@ THREADS_CONFIGURE_ENABLE=	threaded-dns
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MHYPHENATION}
+BROKEN=		HYPHENATION master sites no longer available
 ALL_HYPHENATION_LANGS=	af as bg bn ca cop cs cy da de-1901 de-1996 de-ch-1901 \
 			el-monoton el-polyton en-gb en-us eo es et eu fi fr fur \
 			ga gl grc gu hi hr hsb hu hy ia id is it ka kmr kn la \

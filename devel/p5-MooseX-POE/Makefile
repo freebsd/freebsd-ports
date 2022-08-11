@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	MooseX-POE
 PORTVERSION=	0.215
 PORTREVISION=	1

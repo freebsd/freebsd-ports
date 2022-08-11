@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	priority
 PORTVERSION=	1.3.0
 CATEGORIES=	www python

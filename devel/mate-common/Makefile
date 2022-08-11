@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	mate-common
 PORTVERSION=	1.26.0
 CATEGORIES=	devel mate

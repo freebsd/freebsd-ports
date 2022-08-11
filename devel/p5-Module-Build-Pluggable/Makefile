@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Module-Build-Pluggable
 PORTVERSION=	0.10
 CATEGORIES=	devel perl5

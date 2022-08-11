@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	NetApp
 PORTVERSION=	500.002
 PORTREVISION=	1

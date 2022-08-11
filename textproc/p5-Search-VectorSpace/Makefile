@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Search-VectorSpace
 PORTVERSION=	0.02
 PORTREVISION=	13

@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
-
 PORTNAME?=	dotnet-sdk
 DISTVERSION?=	2.1.201
 DISTVERSIONSUFFIX=	-linux-x64

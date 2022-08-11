@@ -1,5 +1,3 @@
-# Created by: sumikawa
-
 PORTNAME=	racoon2
 PORTVERSION=	${RACOON2_COMMIT_DATE}
 PORTREVISION=	1

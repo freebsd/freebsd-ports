@@ -1,8 +1,6 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	mp3splt-gtk
 PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -21,8 +19,7 @@ LIB_DEPENDS=	libmp3splt.so:audio/libmp3splt \
 		libid3tag.so:audio/libid3tag \
 		libltdl.so:devel/libltdl
 
-USES=		desktop-file-utils gmake gnome pkgconfig
-USE_GSTREAMER1=	yes
+USES=		desktop-file-utils gmake gnome gstreamer pkgconfig
 USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
 

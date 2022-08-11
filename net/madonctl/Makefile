@@ -1,9 +1,7 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	madonctl
 PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	12
+PORTREVISION=	15
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org

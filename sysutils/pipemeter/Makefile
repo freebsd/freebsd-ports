@@ -1,5 +1,3 @@
-# Created by: Len Sassama
-
 PORTNAME=	pipemeter
 PORTVERSION=	1.1.5
 CATEGORIES=	sysutils

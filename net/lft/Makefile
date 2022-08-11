@@ -1,5 +1,3 @@
-# Created by: Marco P. Rodrigues <drkangel@drkangel.org>
-
 PORTNAME=	lft
 PORTVERSION=	3.91
 PORTEPOCH=	2

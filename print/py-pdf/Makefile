@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	pdf
 PORTVERSION=	1.13
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	Goo-Canvas
 PORTVERSION=	0.06
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: rea-fbsd@codelabs.ru
-
 PORTNAME=	pnp
 PORTVERSION=	0.6.26
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	wcd
 PORTVERSION=	6.0.3
 CATEGORIES=	shells

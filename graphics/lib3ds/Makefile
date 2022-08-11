@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	lib3ds
 PORTVERSION=	1.3.0
 PORTREVISION=	7

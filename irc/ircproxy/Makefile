@@ -1,5 +1,3 @@
-# Created by: Jonas Kvinge <jonas@night-light.net>
-
 PORTNAME=	ircproxy
 PORTVERSION=	1.3.6
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	qmail-conf
 PORTVERSION=	0.60
 PORTREVISION=	4

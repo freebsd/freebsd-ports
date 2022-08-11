@@ -1,5 +1,3 @@
-# Created by: <intron@intron.ac>
-
 PORTNAME=	fandol
 PORTVERSION=	0.3
 PORTREVISION=	1

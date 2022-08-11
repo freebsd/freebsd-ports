@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	locator
 PORTVERSION=	0.1
 CATEGORIES=	comms hamradio astro geography

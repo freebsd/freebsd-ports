@@ -1,5 +1,3 @@
-# Created by: michaelnottebrock@gmx.net and lioux@FreeBSD.org
-
 PORTNAME=	portaudio
 PORTVERSION=	19.6.0
 PORTREVISION=	6
@@ -14,8 +12,8 @@ COMMENT=	Portable cross-platform Audio API
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		autoreconf cpe dos2unix gmake libtool localbase:ldflags pathfix \
-		pkgconfig tar:tgz
+USES=		autoreconf:2.69 cpe dos2unix gmake libtool localbase:ldflags \
+		pathfix pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	portaudio_project
 

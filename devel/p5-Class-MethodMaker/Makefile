@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	Class-MethodMaker
 PORTVERSION=	2.24
 PORTREVISION=	1

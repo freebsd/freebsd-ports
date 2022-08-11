@@ -158,6 +158,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/arm_features.xml
 %%DATADIR%%/cpu_map/arm_vendors.xml
 %%DATADIR%%/cpu_map/index.xml
+%%DATADIR%%/cpu_map/ppc64_POWER10.xml
 %%DATADIR%%/cpu_map/ppc64_POWER6.xml
 %%DATADIR%%/cpu_map/ppc64_POWER7.xml
 %%DATADIR%%/cpu_map/ppc64_POWER8.xml
@@ -268,6 +269,7 @@ share/augeas/lenses/virtvboxd.aug
 %%NLS%%share/locale/id/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/libvirt.mo

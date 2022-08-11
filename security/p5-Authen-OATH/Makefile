@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	Authen-OATH
 PORTVERSION=	1.0.0
 PORTREVISION=	1

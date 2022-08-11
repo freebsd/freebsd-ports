@@ -1,5 +1,3 @@
-# Created by: Tilman Linneweh <arved@FreeBSD.org>
-
 PORTNAME=	ladspa
 PORTVERSION=	1.17
 CATEGORIES=	audio

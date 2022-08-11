@@ -1,23 +1,6 @@
---- CMakeLists.txt.orig	2020-07-29 02:24:40 UTC
+--- CMakeLists.txt.orig	2022-04-25 04:00:03 UTC
 +++ CMakeLists.txt
-@@ -6,6 +6,7 @@ SET(SEAFILE_CLIENT_VERSION_MINOR 0)
- SET(SEAFILE_CLIENT_VERSION_PATCH 9)
- SET(PROJECT_VERSION "${SEAFILE_CLIENT_VERSION_MAJOR}.${SEAFILE_CLIENT_VERSION_MINOR}.${SEAFILE_CLIENT_VERSION_PATCH}")
- ADD_DEFINITIONS(-DSEAFILE_CLIENT_VERSION=${PROJECT_VERSION})
-+ADD_DEFINITIONS(-DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_26)
- INCLUDE(FindPkgConfig)
- 
- ## Build crash repoter on release build as default
-@@ -109,7 +110,7 @@ IF (WIN32)
-       SET(SPARKLE_LIBS ${CMAKE_SOURCE_DIR}/WinSparkle.lib)
-     ENDIF()
- 
--ELSEIF (LINUX)
-+ELSEIF (LINUX OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
-     INCLUDE_DIRECTORIES(${QT_QTDBUS_INCLUDE_DIR})
-     LINK_DIRECTORIES(${QT_QTDBUS_LIBRARIES})
-     SET(EXTRA_LIBS ${EXTRA_LIBS} ${QT_QTDBUS_LIBRARIES})
-@@ -185,7 +186,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
+@@ -171,7 +171,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
      ADD_DEFINITIONS(-DHAVE_SHIBBOLETH_SUPPORT)
  ENDIF()
  
@@ -26,7 +9,7 @@
      SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "DBus")
  ENDIF()
  
-@@ -372,7 +373,7 @@ PKG_CHECK_MODULES(JANSSON REQUIRED jansson>=2.0)
+@@ -383,7 +383,7 @@ PKG_CHECK_MODULES(JANSSON REQUIRED jansson>=2.0)
  
  PKG_CHECK_MODULES(LIBSEARPC REQUIRED libsearpc>=1.0)
  
@@ -35,21 +18,21 @@
  
  PKG_CHECK_MODULES(LIBSEAFILE REQUIRED libseafile>=1.7)
  
-@@ -583,7 +584,7 @@ IF (WIN32)
-         src/utils/registry.cpp
-         src/utils/utils-win.cpp
-         )
--ELSEIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
-+ELSEIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
+@@ -601,7 +601,7 @@ LIST(APPEND utils_sources
+     src/utils/stl.cpp
+     src/utils/seafile-error.cpp
+     )
+-IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
++IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
      LIST(APPEND utils_sources
          src/utils/process-linux.cpp
          )
-@@ -794,7 +795,7 @@ target_link_libraries(seafile-applet Qt5::${WEBKIT_NAM
+@@ -797,7 +797,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
  ENDIF()
  
  ## QtBus
 -IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
 +IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
-   target_link_libraries(seafile-applet Qt5::DBus)
- ENDIF()
- 
+   IF(QT_VERSION_MAJOR EQUAL 6)
+     target_link_libraries(seafile-applet Qt6::DBus)
+   ELSE()

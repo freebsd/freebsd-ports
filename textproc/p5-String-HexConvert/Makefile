@@ -1,5 +1,3 @@
-# Created by: Alexandre Biancalana <ale@biancalanas.net>
-
 PORTNAME=	String-HexConvert
 PORTVERSION=	0.01
 PORTREVISION=	1

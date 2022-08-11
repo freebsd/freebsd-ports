@@ -1,5 +1,3 @@
-# Created by: Lars Eggert <lars.eggert@gmx.net>
-
 PORTNAME=	Net-XMPP
 PORTVERSION=	1.05
 PORTREVISION=	1

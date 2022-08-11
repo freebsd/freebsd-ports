@@ -1,5 +1,3 @@
-# Created by: Dirk Froemberg <dirk@FreeBSD.org>
-
 PORTNAME=	ddclient
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.9.1

@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	Gtk2-Notify
 PORTVERSION=	0.05
 PORTREVISION=	3

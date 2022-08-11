@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	inifile
 PORTVERSION=	3.0.0
 CATEGORIES=	textproc rubygems

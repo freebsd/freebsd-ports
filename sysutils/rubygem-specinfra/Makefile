@@ -1,5 +1,3 @@
-# Created by: Yuichiro NAITO <naito.yuichiro@gmail.com>
-
 PORTNAME=	specinfra
 PORTVERSION=	2.82.16
 CATEGORIES=	sysutils rubygems

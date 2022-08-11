@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	Data-Stream-Bulk
 PORTVERSION=	0.11
 PORTREVISION=	1

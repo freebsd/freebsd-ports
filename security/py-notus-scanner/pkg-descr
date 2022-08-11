@@ -1,0 +1,17 @@
+Notus Scanner detects vulnerable products in a system environment. The scanning
+method is to evaluate internal system information. It does this very fast and
+even detects currently inactive products because it does not need to interact
+with each of the products.
+
+To report about vulnerabilities, Notus Scanner receives collected system
+information on the one hand and accesses the vulnerability information from the
+feed service on the other. Both input elements are in table form: the system
+information is specific to each environment and the vulnerability information
+is specific to each system type.
+
+Notus Scanner integrates into the Greenbone Vulnerability Management framework
+which allows to let it scan entire networks within a single task. Any
+vulnerability test in the format of .notus files inside the Greenbone Feed will
+be considered and automatically matched with the scanned environments.
+
+WWW: https://github.com/greenbone/notus-scanner

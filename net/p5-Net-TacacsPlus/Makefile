@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	Net-TacacsPlus
 PORTVERSION=	1.10
 CATEGORIES=	net perl5

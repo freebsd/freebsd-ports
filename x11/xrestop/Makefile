@@ -1,5 +1,3 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	xrestop
 PORTVERSION=	0.4
 PORTREVISION=	5

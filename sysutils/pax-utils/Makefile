@@ -1,7 +1,5 @@
-# Created by: Timothy Redaelli
-
 PORTNAME=	pax-utils
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 

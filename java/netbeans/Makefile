@@ -1,5 +1,3 @@
-# Created by: olgeni@FreeBSD.org
-
 PORTNAME=	netbeans
 DISTVERSION=	12.6
 CATEGORIES=	java devel

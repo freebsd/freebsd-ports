@@ -1,5 +1,3 @@
-# Created by: Matt Mills <matt_mills@btopenworld.com>
-
 PORTNAME=	ipbt
 DISTVERSION=	r8765
 CATEGORIES=	misc

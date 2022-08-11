@@ -1,5 +1,3 @@
-# Created by: Garrett A. Wollman
-
 PORTNAME=	HTML-Element-Extended
 PORTVERSION=	1.18
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ovirt-engine-sdk
 PORTVERSION=	4.4.1
 PORTREVISION=	2

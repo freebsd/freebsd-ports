@@ -1,8 +1,6 @@
-# Created by: kris@FreeBSD.org
-
 PORTNAME=	libnids
 PORTVERSION=	1.24
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net security
 MASTER_SITES=	SF
 

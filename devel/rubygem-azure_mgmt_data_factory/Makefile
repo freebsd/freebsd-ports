@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_data_factory
 PORTVERSION=	0.18.7
 CATEGORIES=	devel rubygems

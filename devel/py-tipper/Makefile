@@ -1,5 +1,3 @@
-# Created by: Alfred Perlstein <alfred@freebsd.org>
-
 PORTNAME=	tipper
 PORTVERSION=	0.1
 CATEGORIES=	devel python

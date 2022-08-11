@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	urweb
 PORTVERSION=	20150520
 PORTREVISION=	3

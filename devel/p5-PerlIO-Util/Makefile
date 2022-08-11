@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	PerlIO-Util
 PORTVERSION=	0.72
 PORTREVISION=	3

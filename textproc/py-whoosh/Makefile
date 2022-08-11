@@ -1,5 +1,3 @@
-# Created by: gugabsd <gugabsd@mundounix.com.br>
-
 PORTNAME=	whoosh
 PORTVERSION=	2.7.4
 CATEGORIES=	textproc www python

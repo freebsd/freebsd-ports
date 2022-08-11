@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	kzip
 DISTVERSION=	20200115
 PORTREVISION=	1

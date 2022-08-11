@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	amqp
 PORTVERSION=	1.8.0
 CATEGORIES=	net rubygems

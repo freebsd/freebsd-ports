@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	gpstk
 PORTVERSION=	8.0.0
 DISTVERSIONPREFIX=	v

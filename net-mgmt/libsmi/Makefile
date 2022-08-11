@@ -1,5 +1,3 @@
-# Created by: Marcin Cieslak <saper@system.pl>
-
 PORTNAME=	libsmi
 PORTVERSION=	0.4.8
 PORTREVISION=	1

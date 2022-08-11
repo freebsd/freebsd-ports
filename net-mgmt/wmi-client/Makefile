@@ -1,5 +1,3 @@
-# Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
-
 PORTNAME=	wmi
 PORTVERSION=	1.3.16
 PORTREVISION=	4

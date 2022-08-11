@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	mod_sql_sqlite
 PORTREVISION=	3
 CATEGORIES=	databases ftp

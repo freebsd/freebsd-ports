@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	List-Util-WeightedRoundRobin
 PORTVERSION=	0.4
 PORTREVISION=	1

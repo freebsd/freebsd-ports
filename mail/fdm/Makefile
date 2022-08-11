@@ -1,7 +1,5 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	fdm
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	mail
 
 MAINTAINER=	dinoex@FreeBSD.org

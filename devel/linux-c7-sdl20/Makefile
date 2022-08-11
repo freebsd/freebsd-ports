@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	sdl20
 PORTVERSION=	2.0.14
 DISTVERSIONSUFFIX=	-2.el7

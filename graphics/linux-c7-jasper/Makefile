@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	jasper
 PORTVERSION=	1.900.1
 DISTVERSIONSUFFIX=	-33.el7

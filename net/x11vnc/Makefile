@@ -1,5 +1,3 @@
-# Created by: Loren M. Lang
-
 PORTNAME=	x11vnc
 PORTVERSION=	0.9.16
 PORTREVISION=	2

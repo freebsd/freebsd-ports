@@ -1,7 +1,5 @@
-# Created by: Domas Mituzas <midom@dammit.lt>
-
 PORTNAME=	freetds
-PORTVERSION=	1.3.10
+PORTVERSION=	1.3.12
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/stable/ \
@@ -75,7 +73,8 @@ post-patch:
 		 ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|/pool.conf|/pool.conf.sample|g' \
 		 ${WRKSRC}/src/pool/Makefile.am
-	@${REINPLACE_CMD} -e 's|\($$with_iodbc/include\)|\1/libiodbc|g' \
+	@${REINPLACE_CMD} -e 's|\($$with_iodbc/include\)|\1/libiodbc|g ; \
+		 s| odbcss.h||g' \
 		${WRKSRC}/configure.ac
 
 post-install:

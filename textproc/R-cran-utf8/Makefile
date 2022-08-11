@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	utf8
 PORTVERSION=	1.2.2
 CATEGORIES=	textproc

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	bugwarrior
 PORTVERSION=	1.8.0
 CATEGORIES=	deskutils python
@@ -52,6 +50,10 @@ TRAC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}offtrac>0:devel/py-offtrac@${PY_FLAVOR
 
 .if ${PYTHON_VER} <= 3.7
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} > 30900
+BROKEN=		python-3.9 is not supported
 .endif
 
 do-test:

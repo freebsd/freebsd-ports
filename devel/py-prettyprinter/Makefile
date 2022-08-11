@@ -1,5 +1,3 @@
-# Created by: Patrice Clement <monsieurp@gentoo.org>
-
 PORTNAME=	prettyprinter
 PORTVERSION=	0.18.0
 PORTREVISION=	1

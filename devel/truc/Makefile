@@ -1,5 +1,3 @@
-# Created by: Jan Siml <jsi@jules.de>
-
 PORTNAME=	truc
 PORTVERSION=	0.12.0
 PORTREVISION=	3

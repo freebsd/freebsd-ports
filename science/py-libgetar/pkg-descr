@@ -1,0 +1,5 @@
+libgetar is a library to read and write GEneric Trajectory ARchives,
+a binary data format designed for efficient, extensible storage of
+trajectory data.
+
+WWW: https://github.com/glotzerlab/libgetar

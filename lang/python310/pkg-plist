@@ -2179,8 +2179,8 @@ lib/python%%XYDOT%%/ensurepip/_bundled/__init__.py
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-22.0.4-py3-none-any.whl
-lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-58.1.0-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-22.2.1-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-63.2.0-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
 lib/python%%XYDOT%%/filecmp.py
@@ -3624,6 +3624,9 @@ lib/python%%XYDOT%%/test/__pycache__/dis_module.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/doctest_aliases.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/doctest_aliases.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/doctest_aliases.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/doctest_lineno.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/doctest_lineno.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/doctest_lineno.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/double_const.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/double_const.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/double_const.cpython-%%XY%%.pyc
@@ -5267,6 +5270,7 @@ lib/python%%XYDOT%%/test/decimaltestdata/tointegralx.decTest
 lib/python%%XYDOT%%/test/decimaltestdata/xor.decTest
 lib/python%%XYDOT%%/test/dis_module.py
 lib/python%%XYDOT%%/test/doctest_aliases.py
+lib/python%%XYDOT%%/test/doctest_lineno.py
 lib/python%%XYDOT%%/test/double_const.py
 lib/python%%XYDOT%%/test/dtracedata/__pycache__/call_stack.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/dtracedata/__pycache__/call_stack.cpython-%%XY%%.opt-2.pyc

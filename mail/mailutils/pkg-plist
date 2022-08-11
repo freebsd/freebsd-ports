@@ -91,6 +91,7 @@ include/mailutils/md5.h
 include/mailutils/message.h
 include/mailutils/mh.h
 include/mailutils/mime.h
+include/mailutils/mimetypes.h
 include/mailutils/monitor.h
 include/mailutils/msgset.h
 include/mailutils/mu_auth.h
@@ -146,6 +147,7 @@ include/mailutils/sys/memory_stream.h
 include/mailutils/sys/message.h
 include/mailutils/sys/message_stream.h
 include/mailutils/sys/mime.h
+include/mailutils/sys/mimetypes.h
 include/mailutils/sys/monitor.h
 include/mailutils/sys/msgset.h
 include/mailutils/sys/nullstream.h
@@ -164,8 +166,8 @@ include/mailutils/sys/temp_file_stream.h
 include/mailutils/sys/temp_stream.h
 include/mailutils/sys/tls-stream.h
 include/mailutils/sys/url.h
-include/mailutils/sys/xscript-stream.h
 include/mailutils/sys/wordsplit.h
+include/mailutils/sys/xscript-stream.h
 include/mailutils/syslog.h
 include/mailutils/tls.h
 include/mailutils/types.h
@@ -355,6 +357,7 @@ share/aclocal/mailutils.m4
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/mailutils.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/mailutils.mo

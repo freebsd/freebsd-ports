@@ -1,5 +1,3 @@
-# Created by: Matthew Fuller <fullermd@over-yonder.net>
-
 PORTNAME=		Text-WikiCreole
 PORTVERSION=		0.07
 PORTREVISION=	1

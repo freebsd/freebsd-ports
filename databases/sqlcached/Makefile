@@ -1,5 +1,3 @@
-# Created by: ivoras
-
 PORTNAME=	sqlcached
 PORTVERSION=	r6
 PORTREVISION=	4

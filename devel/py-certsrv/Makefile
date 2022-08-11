@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	certsrv
 PORTVERSION=	2.1.1
 CATEGORIES=	devel python

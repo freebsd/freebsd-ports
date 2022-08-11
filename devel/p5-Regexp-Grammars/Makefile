@@ -1,5 +1,3 @@
-# Created by: Dan Rench <citric@cubicone.tmetic.com>
-
 PORTNAME=	Regexp-Grammars
 PORTVERSION=	1.057
 CATEGORIES=	devel perl5

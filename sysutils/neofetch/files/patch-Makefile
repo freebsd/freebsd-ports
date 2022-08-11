@@ -1,9 +1,0 @@
---- Makefile.orig	2018-05-19 21:56:46 UTC
-+++ Makefile
-@@ -1,5 +1,5 @@
--PREFIX ?= /usr
-+PREFIX ?= /usr/local
- MANDIR ?= $(PREFIX)/share/man
- 
- all:
- 	@echo Run \'make install\' to install Neofetch.

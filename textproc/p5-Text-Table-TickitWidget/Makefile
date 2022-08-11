@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-Table-TickitWidget
 PORTVERSION=	0.001
 CATEGORIES=	textproc perl5

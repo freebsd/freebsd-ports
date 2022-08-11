@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	wrapper
 PORTVERSION=	2.4
 CATEGORIES=	lang

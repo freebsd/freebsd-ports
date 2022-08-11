@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	coercible
 PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems

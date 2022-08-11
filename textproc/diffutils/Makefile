@@ -1,5 +1,3 @@
-# Created by: Garrett Rooney <rooneg@electricjellyfish.net>
-
 PORTNAME=	diffutils
 PORTVERSION=	3.8
 CATEGORIES=	textproc

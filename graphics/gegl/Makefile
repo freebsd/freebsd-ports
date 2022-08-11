@@ -1,8 +1,6 @@
-# Created by: Pietro Cerutti <gahr@FreeBSD.org>
-
 PORTNAME=	gegl
-PORTVERSION=	0.4.34
-PORTREVISION=	2
+PORTVERSION=	0.4.38
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
@@ -35,7 +33,7 @@ MESON_ARGS=	-Ddocs=false \
 		-Dpygobject=disabled \
 		-Dlua=disabled
 
-GEGL_SHLIB=	0.433.1
+GEGL_SHLIB=	0.437.1
 GEGL_VER=	0.4
 PLIST_SUB+=	GEGL_SHLIB=${GEGL_SHLIB} GEGL_VER=${GEGL_VER}
 
@@ -130,6 +128,14 @@ PLIST_SUB+=	PANGOCAIRO="@comment "
 
 .if defined(WITH_DEBUG)
 LDFLAGS+=	-lexecinfo
+.endif
+
+.if ${ARCH} == "amd64"
+PLIST_SUB+=	AMD64="" ARM="@comment "
+.elif ${ARCH} == "armv6" || ${ARCH} == "armv7"
+PLIST_SUB+=	AMD64="@comment " ARM=""
+.else
+PLIST_SUB+=	AMD64="@comment " ARM="@comment "
 .endif
 
 post-patch:

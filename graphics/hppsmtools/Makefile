@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	hppsmtools
 PORTVERSION=	1.1
 PORTEPOCH=	1

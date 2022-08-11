@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	matcha-gtk-themes
 DISTVERSION=	2021-11-29
 CATEGORIES=	x11-themes

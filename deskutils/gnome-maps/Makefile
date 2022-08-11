@@ -1,14 +1,11 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-maps
-DISTVERSION=	42.0
-PORTREVISION=	2
+DISTVERSION=	42.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Map application for GNOME 3
+COMMENT=	Map application for GNOME
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -22,6 +19,7 @@ LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
 		libgeocode-glib.so:net/geocode-glib \
 		libgfbgraph-0.2.so:net/gfbgraph \
 		libgjs.so:lang/gjs \
+		libgweather-4.so:net/libgweather4 \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libjson-glib-1.0.so:devel/json-glib \
 		librest-0.7.so:devel/librest \

@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	tuxmath
 PORTVERSION=	2.0.3
 PORTREVISION=	10

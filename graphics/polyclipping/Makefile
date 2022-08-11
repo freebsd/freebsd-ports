@@ -1,5 +1,3 @@
-# Created by: Nikolay Korotkiy <sikmir@gmail.com>
-
 PORTNAME=	polyclipping
 PORTVERSION=	6.4.2
 CATEGORIES=	graphics

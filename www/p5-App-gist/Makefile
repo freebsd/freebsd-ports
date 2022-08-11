@@ -1,5 +1,3 @@
-# Created by: Denny Lin <dennylin93@hs.ntnu.edu.tw>
-
 PORTNAME=	App-gist
 PORTVERSION=	0.16
 PORTREVISION=	1

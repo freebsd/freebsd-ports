@@ -1,5 +1,3 @@
-# Created by: Alex Samorukov <samm@freebsd.org>
-
 PORTNAME=	xtrabackup
 DISTVERSION=	2.4.21
 CATEGORIES=	databases

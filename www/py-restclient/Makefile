@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	restclient
 PORTVERSION=	0.11.0
 PORTREVISION=	1

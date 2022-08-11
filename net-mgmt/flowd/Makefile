@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-
 PORTNAME=	flowd
 PORTVERSION=	0.9.1
 PORTREVISION=	4

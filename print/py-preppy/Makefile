@@ -1,5 +1,3 @@
-# Created by: Kozlov Sergey <kozlov.sergey.404@gmail.com>
-
 PORTNAME=	preppy
 PORTVERSION=	2.4.1
 CATEGORIES=	print python

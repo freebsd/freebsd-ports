@@ -1,5 +1,3 @@
-# Created by: Dylan Bridgman
-
 PORTNAME=	dae
 PORTVERSION=	0.9
 CATEGORIES=	sysutils

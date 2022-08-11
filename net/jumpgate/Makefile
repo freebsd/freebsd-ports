@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	jumpgate
 PORTVERSION=	0.7
 PORTREVISION=	1

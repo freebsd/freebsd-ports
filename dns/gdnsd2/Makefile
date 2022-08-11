@@ -1,5 +1,3 @@
-# Created by: Allan Jude <allanjude@freebsd.org>
-
 PORTNAME=	gdnsd
 PORTVERSION=	2.4.3
 CATEGORIES=	dns

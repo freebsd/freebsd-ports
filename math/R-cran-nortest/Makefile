@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	nortest
 DISTVERSION=	1.0-4
 PORTREVISION=	4

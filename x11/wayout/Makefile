@@ -1,6 +1,6 @@
 PORTNAME=	wayout
 DISTVERSION=	0.1.2
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~proycon/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	jbeich@FreeBSD.org

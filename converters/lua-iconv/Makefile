@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	iconv
 PORTVERSION=	7
 PORTREVISION=	4

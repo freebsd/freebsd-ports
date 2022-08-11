@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	dgen-sdl
 PORTVERSION=	1.33
 PORTREVISION=	5

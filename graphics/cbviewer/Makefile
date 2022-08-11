@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	cbviewer
 PORTVERSION=	0.8
 PORTREVISION=	3

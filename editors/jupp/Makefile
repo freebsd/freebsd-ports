@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	jupp
 PORTVERSION=	3.1.38
 CATEGORIES=	editors

@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	Data-Throttler-Memcached
 PORTVERSION=	0.00003
 PORTREVISION=	3

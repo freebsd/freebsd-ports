@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	spice-protocol
 PORTVERSION=	0.14.4
 CATEGORIES=	devel
@@ -15,5 +13,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 USES=		meson ninja pathfix pkgconfig python tar:xz
 
 MESON_ARGS=	-Ddatadir=libdata
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,6 @@
+%%GEM_LIB_DIR%%/aws-crt-ffi/crt/s2n/tests/cbmc/include/README.md
+%%GEM_LIB_DIR%%/aws-crt-ffi/crt/s2n/tests/cbmc/proofs/Makefile.common
+%%GEM_LIB_DIR%%/aws-crt-ffi/crt/s2n/tests/cbmc/proofs/README.md
+%%GEM_LIB_DIR%%/aws-crt-ffi/crt/s2n/tests/cbmc/proofs/run-cbmc-proofs.py
+%%GEM_LIB_DIR%%/aws-crt-ffi/crt/s2n/tests/cbmc/sources/README.md
+%%GEM_LIB_DIR%%/aws-crt-ffi/crt/s2n/tests/cbmc/stubs/README.md

@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	crypto
 PORTVERSION=	0.3.2
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-
 PORTNAME=	apel
 PORTVERSION=	10.8.${SNAPDATE}
 PORTREVISION=	4

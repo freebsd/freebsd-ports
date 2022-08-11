@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	bitop
 PORTVERSION=	1.0.2
 PORTREVISION=	2
@@ -14,10 +12,11 @@ COMMENT=	Bitwise operations on numbers
 
 LICENSE=	MIT
 
+USES=		gmake lua:module
+
 CFLAGS+=	-I${LUA_INCDIR}
 MAKE_ARGS=	CC="${CC}" LUA="${LUA_CMD}"
 TEST_TARGET=	test
-USES=		gmake lua:module
 
 PLIST_FILES=	${LUA_MODLIBDIR}/bit.so
 

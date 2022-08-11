@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	srd-fpw-package
 PORTVERSION=	1.0.8
 PORTREVISION=	6

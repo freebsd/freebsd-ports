@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	VCS-Lite
 PORTVERSION=	0.12
 CATEGORIES=	devel perl5

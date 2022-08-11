@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	WWW-Mechanize-GZip
 PORTVERSION=	0.14
 CATEGORIES=	www perl5

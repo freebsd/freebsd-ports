@@ -1,5 +1,3 @@
-# Created by: pvh@egenetics.com
-
 PORTNAME=	zthread
 PORTVERSION=	2.3.2
 PORTREVISION=	2

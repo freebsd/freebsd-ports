@@ -1,5 +1,5 @@
 PORTNAME=	fennel
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1.0
 CATEGORIES=	lang
 MASTER_SITES=	https://git.sr.ht/~technomancy/${PORTNAME}/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 

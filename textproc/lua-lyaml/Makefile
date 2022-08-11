@@ -1,5 +1,3 @@
-# Created by: Yarema <yds@Necessitu.de>
-
 PORTNAME=	lyaml
 PORTVERSION=	6.2.4
 DISTVERSIONPREFIX=v

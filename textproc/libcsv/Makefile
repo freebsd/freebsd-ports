@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	libcsv
 PORTVERSION=	3.0.3
 PORTREVISION=	3

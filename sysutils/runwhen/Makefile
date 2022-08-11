@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	runwhen
 PORTVERSION=	2021.04.30
 CATEGORIES=	sysutils
@@ -9,6 +7,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for running commands at particular times
 
 LICENSE=	GPLv2
+
+BROKEN=		does not build: error: use of undeclared identifier 'localtmn_t'
 
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 

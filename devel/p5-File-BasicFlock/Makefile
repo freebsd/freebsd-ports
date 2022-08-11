@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	File-BasicFlock
 PORTVERSION=	98.1202
 PORTREVISION=	1

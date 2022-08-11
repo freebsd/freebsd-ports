@@ -1,7 +1,5 @@
-# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-
 PORTNAME=	stream
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

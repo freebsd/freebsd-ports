@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	dfdatetime
 PORTVERSION=	20210509
 CATEGORIES=	security devel python

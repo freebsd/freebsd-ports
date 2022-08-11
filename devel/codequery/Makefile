@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	codequery
 PORTVERSION=	0.25.0
 DISTVERSIONPREFIX=	v

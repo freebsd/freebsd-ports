@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	POE-Component-Logger
 PORTVERSION=	1.10
 PORTREVISION=	1

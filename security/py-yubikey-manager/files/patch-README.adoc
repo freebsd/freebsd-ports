@@ -1,0 +1,47 @@
+See https://github.com/Yubico/yubikey-manager/commit/ecd7897b3f02054
+--- README.adoc.orig	2022-05-27 13:02:44 UTC
++++ README.adoc
+@@ -106,8 +106,43 @@ installed on FreeBSD. It's available via its ports tre
+ Should you opt to install and use YubiKey Manager on this platform, please be aware
+ that it's **NOT** maintained by Yubico.
+ 
++To install the binary package, use `pkg install pyXY-yubikey-manager`, with `pyXY`
++specifying the version of Python the package was built for, so in order to install
++YubiKey Manager for Python 3.8, use:
++
++  # pkg install py38-yubikey-manager
++
+ For more information about how to install packages or ports on FreeBSD, please refer
+ to its official documentation: https://docs.freebsd.org/en/books/handbook/ports[FreeBSD Handbook].
++
++In order to use `ykman otp` commands, you need to make sure the _uhid(4)_ driver
++attaches to the USB device:
++
++  # usbconfig ugenX.Y add_quirk UQ_KBD_IGNORE
++  # usbconfig ugenX.Y reset
++
++The correct device to operate on _(ugenX.Y)_ can be determined using
++`usbconfig list`.
++
++When using FreeBSD 13 or higher, you can switch to the more modern _hidraw(4)_
++driver. This allows YubiKey Manager to access OTP HID in a non-exclusive way,
++so that the key will still function as a USB keyboard:
++
++  # sysrc kld_list+="hidraw hkbd"
++  # cat >>/boot/loader.conf<<EOF
++  hw.usb.usbhid.enable="1"
++  hw.usb.quirk.0="0x1050 0x0010 0 0xffff UQ_KBD_IGNORE"  # YKS_OTP
++  hw.usb.quirk.1="0x1050 0x0110 0 0xffff UQ_KBD_IGNORE"  # NEO_OTP
++  hw.usb.quirk.2="0x1050 0x0111 0 0xffff UQ_KBD_IGNORE"  # NEO_OTP_CCID
++  hw.usb.quirk.3="0x1050 0x0114 0 0xffff UQ_KBD_IGNORE"  # NEO_OTP_FIDO
++  hw.usb.quirk.4="0x1050 0x0116 0 0xffff UQ_KBD_IGNORE"  # NEO_OTP_FIDO_CCID
++  hw.usb.quirk.5="0x1050 0x0401 0 0xffff UQ_KBD_IGNORE"  # YK4_OTP
++  hw.usb.quirk.6="0x1050 0x0403 0 0xffff UQ_KBD_IGNORE"  # YK4_OTP_FIDO
++  hw.usb.quirk.7="0x1050 0x0405 0 0xffff UQ_KBD_IGNORE"  # YK4_OTP_CCID
++  hw.usb.quirk.8="0x1050 0x0407 0 0xffff UQ_KBD_IGNORE"  # YK4_OTP_FIDO_CCID
++  hw.usb.quirk.9="0x1050 0x0410 0 0xffff UQ_KBD_IGNORE"  # YKP_OTP_FIDO
++  EOF
++  # reboot
+ 
+ ==== Source
+ To install from source, see the link:doc/Development.adoc[development]

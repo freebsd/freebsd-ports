@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	editor
 PORTVERSION=	0.4.0
 CATEGORIES=	editors

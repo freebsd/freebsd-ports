@@ -1,5 +1,3 @@
-# Created by: Sergey Kandaurov <pluknet@gmail.com>
-
 PORTNAME=	randomio
 PORTVERSION=	1.4
 CATEGORIES=	benchmarks

@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	jvmtop
 DISTVERSION=	0.8.0-27
 PORTREVISION=	1

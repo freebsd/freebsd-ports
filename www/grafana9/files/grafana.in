@@ -1,0 +1,77 @@
+#!/bin/sh
+
+# PROVIDE: grafana
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable grafana
+# grafana_enable="YES"
+#
+# grafana_enable (bool):
+#     Set it to YES to enable grafana
+#     Set to NO by default
+# grafana_user (string):
+#     Set user that grafana will run under
+#     Default is "%%GRAFANA_USER%%"
+# grafana_group (string):
+#     Set group that own grafana files
+#     Default is "%%GRAFANA_GROUP%%"
+# grafana_config (string)
+#     Set full path to config file
+#     Default is "%%ETCDIR%%/grafana.ini"
+# grafana_homepath (string)
+#     Set full path to homepath dir
+#     Default is "%%GRAFANA_HOMEDIR%%"
+# grafana_syslog_output_enable (bool)
+#     Set it to YES to enable stdout/stderr syslog output
+#     Set to NO by default
+# grafana_syslog_output_tag (str)
+#     Set syslog tag if syslog enabled
+#     Default is "grafana"
+# grafana_args (string)
+#     Set additional command line arguments
+#     Default is ""
+
+. /etc/rc.subr
+
+name=grafana
+rcvar=grafana_enable
+
+load_rc_config $name
+
+: ${grafana_enable:="NO"}
+: ${grafana_user:="%%GRAFANA_USER%%"}
+: ${grafana_group:="%%GRAFANA_GROUP%%"}
+: ${grafana_config:="%%ETCDIR%%/grafana.ini"}
+: ${grafana_homepath:="%%GRAFANA_HOMEDIR%%"}
+: ${grafana_syslog_output_enable:="NO"}
+
+if checkyesno grafana_syslog_output_enable; then
+	if [ -n "${grafana_syslog_output_tag}" ]; then
+		grafana_syslog_output_flags="-T ${grafana_syslog_output_tag}"
+	else
+		grafana_syslog_output_flags="-T ${name}"
+	fi
+fi
+
+pidfile="/var/run/${name}/${name}.pid"
+required_files="${grafana_config}"
+
+procname="%%PREFIX%%/bin/grafana-server"
+command="/usr/sbin/daemon"
+command_args="-f ${grafana_syslog_output_flags} -p ${pidfile} -t ${name} \
+	/usr/bin/env ${grafana_env} ${procname} \
+	-config=${grafana_config} \
+	-homepath=${grafana_homepath} \
+	${grafana_args}"
+
+start_precmd="grafana_start_precmd"
+
+grafana_start_precmd()
+{
+	if [ ! -d "/var/run/${name}" ]; then
+		install -d -m 0750 -o ${grafana_user} -g ${grafana_group} "/var/run/${name}"
+	fi
+}
+
+run_rc_command "$1"

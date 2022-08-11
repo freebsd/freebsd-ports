@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	libchk
 PORTVERSION=	1.10.3
 CATEGORIES=	sysutils

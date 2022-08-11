@@ -1,5 +1,3 @@
-# Created by: Domas Mituzas <midom@dammit.lt>
-
 PORTNAME=	sqsh
 PORTVERSION=	2.5.16.1
 PORTREVISION=	2

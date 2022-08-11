@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tool
 PORTVERSION=	0.2.3
 CATEGORIES=	devel rubygems

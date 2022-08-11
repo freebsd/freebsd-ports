@@ -1,5 +1,3 @@
-# Created by: sten@blinkenlights.nl
-
 PORTNAME=	ladvd
 PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=v

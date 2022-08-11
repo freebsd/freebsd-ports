@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	sdlpop
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.22

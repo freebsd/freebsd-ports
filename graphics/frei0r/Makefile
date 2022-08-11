@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	frei0r
 PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=	plugins-

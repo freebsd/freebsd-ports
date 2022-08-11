@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Sub-Current
 PORTVERSION=	0.03
 CATEGORIES=	devel perl5

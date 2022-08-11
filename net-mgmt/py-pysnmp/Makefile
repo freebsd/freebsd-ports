@@ -1,5 +1,3 @@
-# Created by: Martin Jackson <mhjacks@swbell.net>
-
 PORTNAME=	pysnmp
 PORTVERSION=	4.4.9
 PORTREVISION=	2

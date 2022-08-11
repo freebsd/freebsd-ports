@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	repr
 PORTVERSION=	1.1.4
 CATEGORIES=	devel

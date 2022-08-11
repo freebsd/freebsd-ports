@@ -1,8 +1,6 @@
-# Created by: John Hixson <john@pcbsd.org>
-
 PORTNAME=	mtpfs
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org

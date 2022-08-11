@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	DBIx-Class-UUIDColumns
 PORTVERSION=	0.02006
 PORTREVISION=	1

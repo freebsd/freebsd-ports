@@ -1,5 +1,3 @@
-# Created by: refugee
-
 PORTNAME=	typespeed
 PORTVERSION=	0.6.5
 PORTREVISION=	3

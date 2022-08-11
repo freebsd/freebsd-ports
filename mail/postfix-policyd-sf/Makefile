@@ -1,5 +1,3 @@
-# Created by: Xavier Beaudouin <kiwi@oav.net>
-
 PORTNAME=	policyd
 PORTVERSION=	1.82
 PORTREVISION=	1

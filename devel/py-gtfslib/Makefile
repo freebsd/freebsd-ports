@@ -1,5 +1,3 @@
-# Created by: Loïc BARTOLETTI <lbartoletti@FreeBSD.org>
-
 PORTNAME=	gtfslib
 PORTVERSION=	1.0.0
 CATEGORIES=	devel python databases geography

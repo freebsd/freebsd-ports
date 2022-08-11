@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	promise
 PORTVERSION=	2.3
 CATEGORIES=	devel python

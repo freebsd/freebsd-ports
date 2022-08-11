@@ -1,5 +1,3 @@
-# Created by: Peter Wemm <peter@netplex.com.au>
-
 PORTNAME=	transproxy
 PORTVERSION=	1.6
 CATEGORIES=	www

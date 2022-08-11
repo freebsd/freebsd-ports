@@ -1,5 +1,3 @@
-# Created by: ismail.yenigul@endersys.com.tr
-
 PORTNAME=	filetype
 PORTVERSION=	0.1.3
 CATEGORIES=	sysutils

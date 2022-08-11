@@ -2,8 +2,10 @@ include/CombBLAS/BFSFriends.h
 include/CombBLAS/BitMap.h
 include/CombBLAS/BitMapCarousel.h
 include/CombBLAS/BitMapFringe.h
+include/CombBLAS/BlockSpGEMM.h
 include/CombBLAS/CombBLAS.h
 include/CombBLAS/CommGrid.h
+include/CombBLAS/CommGrid3D.h
 include/CombBLAS/Compare.h
 include/CombBLAS/Deleter.h
 include/CombBLAS/DenseParMat.cpp
@@ -15,6 +17,7 @@ include/CombBLAS/FileHeader.h
 include/CombBLAS/Friends.h
 include/CombBLAS/FullyDist.h
 include/CombBLAS/FullyDistSpVec.cpp
+include/CombBLAS/FullyDistSpVec.cpp.orig
 include/CombBLAS/FullyDistSpVec.h
 include/CombBLAS/FullyDistVec.cpp
 include/CombBLAS/FullyDistVec.h
@@ -61,6 +64,8 @@ include/CombBLAS/SpParHelper.cpp
 include/CombBLAS/SpParHelper.h
 include/CombBLAS/SpParMat.cpp
 include/CombBLAS/SpParMat.h
+include/CombBLAS/SpParMat3D.cpp
+include/CombBLAS/SpParMat3D.h
 include/CombBLAS/SpTuples.cpp
 include/CombBLAS/SpTuples.h
 include/CombBLAS/StackEntry.h

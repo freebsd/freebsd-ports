@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	starlanes
 PORTVERSION=	1.2.2
 CATEGORIES=	games

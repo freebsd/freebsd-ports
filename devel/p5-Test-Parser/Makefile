@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Test-Parser
 PORTVERSION=	1.9
 PORTREVISION=	11

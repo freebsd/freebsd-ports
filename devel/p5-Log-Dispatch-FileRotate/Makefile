@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Log-Dispatch-FileRotate
 PORTVERSION=	1.38
 CATEGORIES=	devel perl5

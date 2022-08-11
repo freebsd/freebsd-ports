@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	springframework
 PORTVERSION=	3.1.4
 PORTREVISION=	1

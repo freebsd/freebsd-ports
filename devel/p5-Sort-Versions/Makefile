@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Sort-Versions
 PORTVERSION=	1.62
 CATEGORIES=	devel perl5

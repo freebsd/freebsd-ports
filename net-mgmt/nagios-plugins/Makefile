@@ -1,5 +1,3 @@
-# Created by: Blaz Zupan <blaz@si.FreeBSD.org>
-
 PORTNAME=	nagios-plugins
 DISTVERSION=	2.4.0
 PORTEPOCH=	1

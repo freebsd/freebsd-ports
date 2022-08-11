@@ -1,5 +1,3 @@
-# Created by: Brian Somers <brian@FreeBSD.org>
-
 PORTNAME=	AddressBook
 PORTVERSION=	0.16
 PORTREVISION=	1

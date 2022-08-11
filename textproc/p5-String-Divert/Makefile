@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	String-Divert
 PORTVERSION=	0.96
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Brian Handy <handy@physics.montana.edu>
-
 PORTNAME=	bclock
 PORTVERSION=	1.0
 PORTREVISION=	2

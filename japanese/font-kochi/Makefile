@@ -1,5 +1,3 @@
-# Created by: KANOU Hiroki <kanou@mil.allnet.ne.jp>
-
 PORTNAME=	kochi
 PORTVERSION=	20030809
 PORTREVISION=	6

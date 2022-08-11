@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
-
 PORTNAME=	launchy
 PORTVERSION=	2.5.0
 CATEGORIES=	devel rubygems

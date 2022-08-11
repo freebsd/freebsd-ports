@@ -1,8 +1,6 @@
-# Created by: Emmanuel Vadot <manu@FreeBSD.org>
-
 PORTNAME=	opensmtpd-filter-senderscore
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	mail
 
 MAINTAINER=	manu@FreeBSD.Org

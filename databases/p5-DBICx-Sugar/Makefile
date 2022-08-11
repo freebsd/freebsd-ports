@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	DBICx-Sugar
 PORTVERSION=	0.0200
 CATEGORIES=	databases perl5

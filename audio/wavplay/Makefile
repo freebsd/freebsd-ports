@@ -1,5 +1,3 @@
-# Created by: greg
-
 PORTNAME=	wavplay
 PORTVERSION=	2.0
 CATEGORIES=	audio

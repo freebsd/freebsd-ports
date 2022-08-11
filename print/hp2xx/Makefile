@@ -1,5 +1,3 @@
-# Created by: Lars Koeller
-
 PORTNAME=	hp2xx
 PORTVERSION=	3.4.4
 PORTREVISION=	8

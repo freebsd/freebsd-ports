@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Google-SAML-Request
 PORTVERSION=	0.05
 CATEGORIES=	net perl5

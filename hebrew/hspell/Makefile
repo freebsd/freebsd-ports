@@ -1,5 +1,3 @@
-# Created by: Yonatan <onatan@gmail.com>
-
 PORTNAME=	hspell
 PORTVERSION=	1.4
 CATEGORIES=	hebrew

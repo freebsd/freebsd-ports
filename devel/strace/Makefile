@@ -1,5 +1,3 @@
-# Created by: Alex Semenyaka <alex@rinet.ru>
-
 PORTNAME=	strace
 PORTVERSION=	4.5.18
 PORTREVISION=	1

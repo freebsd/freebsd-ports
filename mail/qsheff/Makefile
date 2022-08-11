@@ -1,5 +1,3 @@
-# Created by: Ozkan KIRIK <ozkan@enderunix.org>
-
 PORTNAME=	qsheff-II
 DISTVERSION=	2.1-r3
 PORTREVISION=	9

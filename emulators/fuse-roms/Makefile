@@ -1,5 +1,3 @@
-# Created by: Vladimir Kondratiev <wulf@mail.mipt.ru>
-
 PORTNAME=	fuse-roms
 PORTVERSION=	0.9.0
 PORTREVISION=	3

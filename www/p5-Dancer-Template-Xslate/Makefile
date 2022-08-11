@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	Dancer-Template-Xslate
 PORTVERSION=	0.03
 PORTREVISION=	2

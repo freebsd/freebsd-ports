@@ -1,5 +1,3 @@
-# Created by: SASAKI Shunsuke <ele@pop17.odn.ne.jp>
-
 PORTNAME=	ne
 PORTVERSION=	3.05
 CATEGORIES=	japanese editors

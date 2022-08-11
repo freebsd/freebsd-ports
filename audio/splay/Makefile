@@ -1,5 +1,3 @@
-# Created by: Choi Jun Ho <junker@moderato.snu.ac.kr>
-
 PORTNAME=	splay
 PORTVERSION=	0.9.5.2
 PORTREVISION=	1

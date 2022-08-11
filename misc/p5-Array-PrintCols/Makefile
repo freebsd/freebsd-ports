@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Array-PrintCols
 PORTVERSION=	2.6
 PORTREVISION=	1

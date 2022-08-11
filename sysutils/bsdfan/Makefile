@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	bsdfan
 PORTVERSION=	g20180112
 CATEGORIES=	sysutils

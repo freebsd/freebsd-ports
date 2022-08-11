@@ -1,5 +1,3 @@
-# Created by: Christopher Boumenot <boumenot@gmail.com>
-
 PORTNAME=	Sysadm-Install
 PORTVERSION=	0.48
 PORTREVISION=	1

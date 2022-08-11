@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Data-HexDump
 PORTVERSION=	0.04
 CATEGORIES=	devel perl5

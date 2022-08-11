@@ -1,5 +1,3 @@
-# Created by: Takefu
-
 PORTNAME=	POE-Quickie
 PORTVERSION=	0.18
 PORTREVISION=	1

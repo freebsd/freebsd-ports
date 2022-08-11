@@ -1,5 +1,3 @@
-# Created by: Lewis Thompson <purple@lewiz.net>
-
 PORTNAME=	HTML_BBCodeParser
 PORTVERSION=	1.2.3
 CATEGORIES=	devel www pear

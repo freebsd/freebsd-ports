@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	l18n
 PORTVERSION=	2021.3
 CATEGORIES=	devel python

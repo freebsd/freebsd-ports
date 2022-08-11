@@ -1,5 +1,3 @@
-# Created by: nsayer@quack.kfu.com
-
 PORTNAME=	identify
 PORTVERSION=	0.7
 CATEGORIES=	security

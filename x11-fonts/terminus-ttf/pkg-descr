@@ -1,7 +1,4 @@
-Terminus TTF is a TrueType version of the great Terminus Font, a
-fixed-width bitmap font optimized for long work with computers.
+Terminus TTF is a TrueType version of Terminus Font, a fixed-width bitmap font
+optimized for long work with computers.
 
-It is useful for applications that don't support bitmap fonts
-e.g. Java applications.
-
-WWW: http://files.ax86.net/terminus-ttf/
+WWW: https://files.ax86.net/terminus-ttf/

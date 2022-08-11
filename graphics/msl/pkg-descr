@@ -1,0 +1,24 @@
+The Modular Shader Language (MSL) is a pre-compiled shader language
+with multiple targets. It is effectively a wrapper around GLSL and
+relies on external tools to handle the main work of the compilation.
+
+The primary goals are:
+* Provide an environment more similar to other compiled languages,
+  such as access to a preprocessor and compile-time errors that point
+  to the file.
+* Allow targeting multiple platforms with different capabilities with
+  the same source.
+* Relies on official and external tools as much as possible. This
+  makes the language easier to extend and maintain and allows other
+  third party tools, such as optimizers, to be used.
+* Allows all stages of the pipeline to be specified in the same
+  source. This gives more flexibility in how you organize your source.
+* Allows for render states and sampler states to be declared in the
+  shader. This gives more flexibility in client applications by
+  allowing these to be set in the shader without hard-coding them in
+  the application.
+* Pipeline is linked when compiling the shader modules, allowing for
+  earlier checks and easier loading of shaders in the final
+  application.
+
+WWW: https://github.com/akb825/ModularShaderLanguage

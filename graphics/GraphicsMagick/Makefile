@@ -1,8 +1,6 @@
-# Created by: Ron van Daal
-
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.38
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
@@ -12,11 +10,11 @@ COMMENT=	Fast image processing tools based on ImageMagick
 
 LICENSE=	MIT
 
-USES=		cpe libtool localbase pathfix tar:bzip2
+USES=		cpe libtool localbase pathfix pkgconfig tar:zst
 
 CONFIGURE_ARGS=	--enable-shared --enable-static \
 		--with-windows-font-dir=${WINDOWS_FONT_DIR} \
-		--without-perl --without-trio
+		--without-dps --without-gdi32 --without-perl --without-trio
 CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -28,7 +26,6 @@ WINDOWS_FONT_DIR?=	${LOCALBASE}/share/fonts/webfonts
 
 OPTIONS_DEFINE=	BZIP2 DOCS FPX FREETYPE HEIF JASPER JBIG JPEG JXL LCMS2 LZMA OPENMP Q8BIT PNG SSE TEST TIFF UMEM WEBP WMF X11 XML ZLIB ZSTD
 OPTIONS_DEFAULT=BZIP2 FREETYPE JASPER JBIG JPEG LCMS2 LZMA OPENMP PNG TIFF WEBP WMF X11 XML ZLIB
-HEIF_DESC=	HEIF support via libheif library
 JXL_DESC=	JPEG XL image format via libjxl (BROKEN now)
 Q8BIT_DESC=	Use 8-bit pixels (speed) instead of 16-bit (quality)
 UMEM_DESC=	UMEM memory allocation library support
@@ -47,9 +44,9 @@ JBIG_CONFIGURE_WITH=	jbig
 JBIG_LIB_DEPENDS=	libjbig.so:graphics/jbigkit
 JPEG_CONFIGURE_WITH=	jpeg
 JPEG_USES=		jpeg
+JXL_BROKEN=		does not build: use of undeclared identifier 'JxlEncoderFrameSettings'
 JXL_CONFIGURE_WITH=	jxl
 JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
-JXL_BROKEN=		does not build: use of undeclared identifier 'JxlEncoderFrameSettings'
 LCMS2_CONFIGURE_WITH=	lcms2
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 LZMA_CONFIGURE_WITH=	lzma

@@ -1,5 +1,3 @@
-# Created by: Martin Tournoij <carpetsmoker@gmail.com>
-
 PORTNAME=	Config-ApacheFormat
 PORTVERSION=	1.2
 PORTREVISION=	2

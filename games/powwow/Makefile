@@ -1,5 +1,3 @@
-# Created by: Juraj Lutter <otis@sk.freebsd.org>
-
 PORTNAME=	powwow
 PORTVERSION=	1.2.23
 CATEGORIES=	games

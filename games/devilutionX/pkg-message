@@ -4,8 +4,9 @@
 This game requires a datafile from the original Diablo(tm) CD or the GOG release.
 If you don't own it yet, you can buy it at https://www.gog.com/game/diablo
 
-Copy DIABDAT.MPQ to ~/.local/share/diasurgical/devilution/diabdat.mpq
-Pay attention to the case, the resulting file needs to be entirely lowercase!
+Copy DIABDAT.MPQ to ~/.local/share/diasurgical/devilution/
+
+For the Hellfire expansion you will also need to copy hellfire.mpq, hfmonk.mpq, hfmusic.mpq and hfvoice.mpq files.
 
 If you have any issues with this game, please file a bug report on the GitHub page:
 https://github.com/diasurgical/devilutionX/issues

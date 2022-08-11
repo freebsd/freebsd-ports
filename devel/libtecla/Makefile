@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	libtecla
 PORTVERSION=	1.6.3
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	setup.rb
 PORTVERSION=	3.4.1
 PORTREVISION=	1

@@ -1,5 +1,5 @@
 PORTNAME=	rslsync
-PORTVERSION=	2.7.2
+DISTVERSION=	2.7.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://download-cdn.resilio.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/ \
 		http://download-cdn.resilio.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/
@@ -17,17 +17,21 @@ LICENSE_PERMS=	auto-accept
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	binary-only program, source code not available
 
+USE_RC_SUBR=	rslsync
+
 CONFLICTS_INSTALL=	rslsync-beta
+
+SUB_FILES=	pkg-message
+SUB_LIST=	GROUP=${GROUPS} \
+		USER=${USERS}
 
 NO_WRKSUBDIR=	yes
 
-PLIST_SUB=	USER=${USERS} GROUP=${GROUPS}
-SUB_LIST=	USER=${USERS} GROUP=${GROUPS}
-SUB_FILES=	pkg-message
-USE_RC_SUBR=	rslsync
-
 USERS=		rslsync
 GROUPS=		${USERS}
+
+PLIST_SUB=	GROUP=${GROUPS} \
+		USER=${USERS}
 
 .include <bsd.port.pre.mk>
 

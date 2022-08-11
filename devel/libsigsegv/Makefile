@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	libsigsegv
 PORTVERSION=	2.14
 CATEGORIES=	devel

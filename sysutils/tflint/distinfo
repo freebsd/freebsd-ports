@@ -1,5 +1,5 @@
-TIMESTAMP = 1650673171
-SHA256 (go/sysutils_tflint/tflint-v0.35.0/v0.35.0.mod) = f0dd7b251872b80a2782ccd1e1e688face447b2ea9da08d136daa0aefe24c901
-SIZE (go/sysutils_tflint/tflint-v0.35.0/v0.35.0.mod) = 3930
-SHA256 (go/sysutils_tflint/tflint-v0.35.0/v0.35.0.zip) = 7a757b17ec4ed28eb794b7c5b2831787d7a6335677a508dd2928ad1cdc6b128d
-SIZE (go/sysutils_tflint/tflint-v0.35.0/v0.35.0.zip) = 1585413
+TIMESTAMP = 1656038360
+SHA256 (go/sysutils_tflint/tflint-v0.38.1/v0.38.1.mod) = c64e23afb2019fba3400da772fb5ca004395657901a4402b12b435ab26462ed1
+SIZE (go/sysutils_tflint/tflint-v0.38.1/v0.38.1.mod) = 3814
+SHA256 (go/sysutils_tflint/tflint-v0.38.1/v0.38.1.zip) = 523bd6fc758fbd1d517d846190d4a5918dc11e96bf2ccd107e0932dbd52348bb
+SIZE (go/sysutils_tflint/tflint-v0.38.1/v0.38.1.zip) = 1601084

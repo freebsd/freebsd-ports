@@ -1,5 +1,3 @@
-# Created by: shige
-
 PORTNAME=	dtd-catalogs
 PORTVERSION=	1.2
 CATEGORIES=	textproc

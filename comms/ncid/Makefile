@@ -1,5 +1,3 @@
-# Created by: David
-
 PORTNAME=	ncid
 PORTVERSION=	1.11
 CATEGORIES=	comms

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	HTML_QuickForm_Livesearch
 PORTVERSION=	0.4.1
 CATEGORIES=	devel www pear

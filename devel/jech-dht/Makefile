@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	dht
 PORTVERSION=	0.26
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Sander Vesik <sander@haldjas.folklore.ee>
-
 PORTNAME=	tclcheck
 DISTVERSION=	1.1.14
 CATEGORIES=	devel

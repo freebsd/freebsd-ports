@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	trackballs
 PORTVERSION=	1.3.3
 DISTVERSIONPREFIX=	v
@@ -27,7 +25,7 @@ LICENSE_PERMS_ETHYMONICS=	dist-mirror dist-sell pkg-mirror pkg-sell \
 USE_GITHUB=	yes
 
 CMAKE_ARGS+=	-DTRACKBALLS_DOC_DIR=${DOCSDIR} \
-		-DTRACKBALLS_MAN_DIR=${PREFIX}/man
+		-DTRACKBALLS_MAN_DIR=${PREFIX}/share/man
 
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes

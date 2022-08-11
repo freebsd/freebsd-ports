@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	WWW-HatenaLogin
 PORTVERSION=	0.03
 PORTREVISION=	1

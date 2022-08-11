@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	SecretStorage
 PORTVERSION=	3.3.1
 CATEGORIES=	security python

@@ -183,7 +183,7 @@ static const struct frame_unwind arm_fbsd_trapframe_unwind = {
 static void
 arm_fbsd_kernel_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
 {
-  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
+  arm_gdbarch_tdep *tdep = (arm_gdbarch_tdep *) gdbarch_tdep (gdbarch);
 
   frame_unwind_prepend_unwinder (gdbarch, &arm_fbsd_trapframe_unwind);
 

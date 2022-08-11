@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	Device-Gsm
 PORTVERSION=	1.61
 CATEGORIES=	comms perl5

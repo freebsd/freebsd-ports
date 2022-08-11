@@ -1,5 +1,3 @@
-# Created by: Thomas Hurst <tom@hur.st>
-
 PORTNAME=	lnav
 DISTVERSION=	0.10.1
 CATEGORIES=	sysutils

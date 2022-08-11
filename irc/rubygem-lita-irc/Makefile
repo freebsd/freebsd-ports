@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	lita-irc
 PORTVERSION=	2.2.0
 PORTREVISION=	2

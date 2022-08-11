@@ -1,5 +1,3 @@
-# Created by: Brent J. Nordquist <bjn@visi.com>
-
 PORTNAME=	cgiwrap
 PORTVERSION=	4.1
 CATEGORIES=	www security

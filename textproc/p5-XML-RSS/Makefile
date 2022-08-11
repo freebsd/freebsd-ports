@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	XML-RSS
 PORTVERSION=	1.62
 CATEGORIES=	textproc perl5

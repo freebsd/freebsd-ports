@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	msktutil
 PORTVERSION=	1.2
 DISTVERSIONPREFIX=	v

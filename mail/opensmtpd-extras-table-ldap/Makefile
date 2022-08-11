@@ -1,5 +1,3 @@
-# Created by: fluffy
-
 PKGNAMESUFFIX=		-table-ldap
 PORTREVISION=		1
 

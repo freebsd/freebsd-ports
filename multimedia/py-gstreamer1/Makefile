@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@rainbow-runner.nl>
-
 PORTNAME=	gstreamer
 DISTVERSION=	1.16.3
 CATEGORIES=	multimedia python
@@ -16,11 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cpe gnome meson pkgconfig python:3.6+ tar:xz
+USES=		cpe gnome gstreamer meson pkgconfig python:3.6+ tar:xz
 CPE_VENDOR=	${PORTNAME}_project
 USE_GNOME=	pygobject3
 USE_PYTHON=	flavors py3kplist
-USE_GSTREAMER1=	yes
 PLIST_SUB=	VERSION="${GST_VERSION}"
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 

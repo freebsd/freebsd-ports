@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	freedink
 PORTVERSION=	108.4
 CATEGORIES=	games

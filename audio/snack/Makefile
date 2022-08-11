@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	snack
 PORTVERSION=	2.2.10
 PORTREVISION=	7

@@ -1,8 +1,5 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	xonotic
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.8.5
 CATEGORIES=	games
 MASTER_SITES=	http://nl.dl.xonotic.org/ \
 		http://mirror.bitmissile.com/xonotic/releases/
@@ -23,14 +20,12 @@ BUILD_WRKSRC=	${WRKSRC}/source/darkplaces
 MAKEFILE=	makefile
 MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" \
 		DP_PRELOAD_DEPENDENCIES=yes \
-		OPTIM_RELEASE="${CFLAGS}" \
 		STRIP="${STRIP_CMD}"
 MAKE_JOBS_UNSAFE=yes
 ALL_TARGET=	# empty
 
 PORTDATA=	*
 
-OPTIONS_DEFINE=		OPTIMIZED_CFLAGS
 OPTIONS_MULTI=		COMPONENTS
 OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED
 OPTIONS_DEFAULT=	CLIENT DEDICATED
@@ -55,8 +50,6 @@ CLIENT_DESKTOP_ENTRIES=	"Xonotic" \
 DEDICATED_DESC=		Build dedicated server
 DEDICATED_ALL_TARGET=	sv-release
 DEDICATED_PLIST_FILES=	bin/${PORTNAME}-dedicated
-
-OPTIMIZED_CFLAGS_CFLAGS=	-O3 -fno-strict-aliasing -fno-math-errno -ffinite-math-only -fno-rounding-math -fno-signaling-nans -fno-trapping-math
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \

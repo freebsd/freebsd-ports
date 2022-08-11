@@ -1,5 +1,3 @@
-# Created by: milki <milki@rescomp.berkeley.edy>
-
 PORTNAME=	Class-DBI-Plugin-DeepAbstractSearch
 PORTVERSION=	0.08
 PORTREVISION=	1

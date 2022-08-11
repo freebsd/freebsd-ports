@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	pkcrack
 PORTVERSION=	1.2.2
 CATEGORIES=	security

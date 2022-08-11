@@ -1,5 +1,3 @@
-# Created by: M. L. Dodson, <bdodson@scms.utmb.edu>
-
 PORTNAME=	gri
 PORTVERSION=	2.12.23
 PORTREVISION=	11

@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	mlclock
 PORTVERSION=	1.1
 PORTREVISION=	3

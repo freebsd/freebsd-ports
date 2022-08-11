@@ -1,5 +1,3 @@
-# Created by: Li-Lun Wang <llwang@infor.org>
-
 PORTNAME=	hugo
 PORTVERSION=	2.12
 PORTREVISION=	16

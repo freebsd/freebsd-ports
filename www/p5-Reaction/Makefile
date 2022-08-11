@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Reaction
 PORTVERSION=	0.002005
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Miklos Niedermayer <mico@bsd.hu>
-
 PORTNAME=	smssend
 PORTVERSION=	3.6
 CATEGORIES=	misc

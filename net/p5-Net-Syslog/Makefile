@@ -1,5 +1,3 @@
-# Created by: Maksym Sobolyev <sobomax@pbxpress.it>
-
 PORTNAME=	Net-Syslog
 PORTVERSION=	0.04
 PORTREVISION=	1

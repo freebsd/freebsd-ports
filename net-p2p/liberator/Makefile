@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	liberator
 PORTVERSION=	2.0.2
 PORTREVISION=	1

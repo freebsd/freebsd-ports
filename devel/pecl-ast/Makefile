@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ast
 PORTVERSION=	1.0.16
 CATEGORIES=	devel

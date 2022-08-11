@@ -67,7 +67,7 @@ include/hydrogen/timehelper.h
 include/hydrogen/timeline.h
 include/hydrogen/version.h
 lib/libhydrogen-core-1.0.1.so
-man/man1/hydrogen.1.gz
+share/man/man1/hydrogen.1.gz
 share/appdata/org.hydrogenmusic.Hydrogen.appdata.xml
 share/applications/org.hydrogenmusic.Hydrogen.desktop
 share/icons/hicolor/scalable/apps/org.hydrogenmusic.Hydrogen.svg

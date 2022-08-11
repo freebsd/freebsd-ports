@@ -1,5 +1,3 @@
-# Created by: ats (original)
-
 PORTNAME=	gopher
 PORTVERSION=	3.0.6
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Devel-Modlist
 PORTVERSION=	0.801
 PORTREVISION=	1

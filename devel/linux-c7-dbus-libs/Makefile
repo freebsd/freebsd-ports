@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	dbus
 PORTVERSION=	1.10.24
 DISTVERSIONSUFFIX=	-15.el7

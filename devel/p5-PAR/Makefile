@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	PAR
 PORTVERSION=	1.017
 CATEGORIES=	devel perl5

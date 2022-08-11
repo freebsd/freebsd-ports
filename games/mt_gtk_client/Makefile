@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=		mt_gtk_client
 PORTVERSION=		0.1.98
 PORTREVISION=		14

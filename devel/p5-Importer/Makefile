@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Importer
 PORTVERSION=	0.026
 CATEGORIES=	devel perl5

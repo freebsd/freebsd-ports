@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Chess-PGN-Parse
 PORTVERSION=	0.20
 CATEGORIES=	textproc games perl5

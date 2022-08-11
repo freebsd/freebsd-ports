@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	umodunpack
 PORTVERSION=	0.4
 CATEGORIES=	misc

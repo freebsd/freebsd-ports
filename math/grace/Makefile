@@ -1,5 +1,3 @@
-# Created by: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
-
 PORTNAME=	grace
 PORTVERSION=	5.1.25
 PORTREVISION=	8

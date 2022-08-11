@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	wmpal
 PORTVERSION=	0.6.1
 CATEGORIES=	misc windowmaker

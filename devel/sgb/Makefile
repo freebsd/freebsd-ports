@@ -1,5 +1,3 @@
-# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
-
 PORTNAME=	sgb
 PORTVERSION=	20090810
 PORTREVISION=	1

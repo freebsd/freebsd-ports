@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	libopentracing
 PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v

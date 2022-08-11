@@ -1,5 +1,3 @@
-# Created by: Michael Haro <mharo@area51.fremont.ca.us>
-
 PORTNAME=	libmikmod
 PORTVERSION=	3.3.11.1
 PORTREVISION=	1

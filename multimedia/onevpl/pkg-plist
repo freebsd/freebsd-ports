@@ -1,7 +1,4 @@
 bin/decvpp_tool
-bin/hello-decode
-bin/hello-encode
-bin/hello-vpp
 bin/sample_decode
 bin/sample_encode
 bin/sample_multi_transcode
@@ -41,6 +38,8 @@ include/vpl/preview/frame_surface.hpp
 include/vpl/preview/future.hpp
 include/vpl/preview/impl_caps.hpp
 include/vpl/preview/impl_selector.hpp
+include/vpl/preview/legacy/README.txt
+include/vpl/preview/legacy/mfxvideo++.h
 include/vpl/preview/option_tree.hpp
 include/vpl/preview/options.hpp
 include/vpl/preview/payload.hpp

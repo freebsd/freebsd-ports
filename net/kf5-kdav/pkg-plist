@@ -50,6 +50,7 @@ lib/libKF5DAV.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KDAV.pri
 share/locale/ar/LC_MESSAGES/libkdav.mo
 share/locale/az/LC_MESSAGES/libkdav.mo
+share/locale/bg/LC_MESSAGES/libkdav.mo
 share/locale/ca/LC_MESSAGES/libkdav.mo
 share/locale/ca@valencia/LC_MESSAGES/libkdav.mo
 share/locale/cs/LC_MESSAGES/libkdav.mo
@@ -66,6 +67,7 @@ share/locale/hi/LC_MESSAGES/libkdav.mo
 share/locale/ia/LC_MESSAGES/libkdav.mo
 share/locale/it/LC_MESSAGES/libkdav.mo
 share/locale/ja/LC_MESSAGES/libkdav.mo
+share/locale/ka/LC_MESSAGES/libkdav.mo
 share/locale/ko/LC_MESSAGES/libkdav.mo
 share/locale/lt/LC_MESSAGES/libkdav.mo
 share/locale/nb/LC_MESSAGES/libkdav.mo

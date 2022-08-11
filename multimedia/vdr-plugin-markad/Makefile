@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-markad
 PORTVERSION=	0.1.4
 PORTREVISION=	10
@@ -16,6 +14,8 @@ LICENSE_NAME_LOGOS=	Station logos
 LICENSE_TEXT_LOGOS=	Installs station logos
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_PERMS_LOGOS=	auto-accept
+
+BROKEN=		does not fetch
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 

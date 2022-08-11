@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	BSD-stat
 PORTVERSION=	1.35
 PORTREVISION=	1

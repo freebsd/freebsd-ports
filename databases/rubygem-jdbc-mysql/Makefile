@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov,com>
-
 PORTNAME=	jdbc-mysql
 PORTVERSION=	5.1.44
 CATEGORIES=	databases rubygems java

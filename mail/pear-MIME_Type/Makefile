@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	MIME_Type
 PORTVERSION=	1.4.1
 CATEGORIES=	mail www pear

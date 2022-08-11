@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	WWW-Search-MSN
 PORTVERSION=	0.0202
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Jeremy Norris <ishmael27@home.com>
-
 PORTNAME=	gliv
 PORTVERSION=	1.9.7
 PORTREVISION=	7

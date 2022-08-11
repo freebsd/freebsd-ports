@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	tintfu
 PORTVERSION=	0.0.4
 PORTREVISION=	3

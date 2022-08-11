@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Bit-Vector
 PORTVERSION=	7.4
 PORTREVISION=	1

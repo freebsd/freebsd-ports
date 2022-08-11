@@ -1,5 +1,3 @@
-# Created by: Tobias Rehbein <tobias.rehbein@web.de>
-
 PORTNAME=	nanoblogger-extra
 PORTVERSION=	3.4.2
 PORTREVISION=	1

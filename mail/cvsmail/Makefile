@@ -1,5 +1,3 @@
-# Created by: Ben Smithurst <ben@FreeBSD.org>
-
 PORTNAME=	cvsmail
 PORTVERSION=	2.2
 CATEGORIES=	mail

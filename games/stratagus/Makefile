@@ -1,5 +1,3 @@
-# Created by: Travis Poppe <tlp@liquidx.org>
-
 PORTNAME=	stratagus
 PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	v
@@ -45,9 +43,7 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 			libogg.so:audio/libogg
 VORBIS_CMAKE_BOOL=	WITH_OGGVORBIS
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
+.if !exists(/usr/include/omp.h)
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++17-lang

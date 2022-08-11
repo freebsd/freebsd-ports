@@ -1,7 +1,5 @@
-# Created by: Christoph Moench-Tegeder <cmt@FreeBSD.org>
-
 PORTNAME=	kicad
-PORTVERSION=	6.0.4
+PORTVERSION=	6.0.7
 CATEGORIES=	cad
 MASTER_SITES=	https://kicad-downloads.s3.cern.ch/docs/
 PKGNAMESUFFIX=	-doc

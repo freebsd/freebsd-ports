@@ -1,5 +1,3 @@
-# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-
 PORTNAME=	jvim
 PORTVERSION=	3.0.j2.1b
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Michael Schout <mschout@gkg.net>
-
 PORTNAME=	RT-Extension-Gravatar
 PORTVERSION=	2.01
 PORTREVISION=	2

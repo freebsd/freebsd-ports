@@ -1,5 +1,3 @@
-# Created by: Robert Schlotterbeck <robert@rs.tarrant.tx.us>
-
 PORTNAME=	xxl
 PORTVERSION=	1.0.1
 PORTREVISION=	3

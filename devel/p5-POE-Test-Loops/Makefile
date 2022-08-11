@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	POE-Test-Loops
 PORTVERSION=	1.360
 PORTREVISION=	1

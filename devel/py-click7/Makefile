@@ -1,5 +1,3 @@
-# Created by: Bartek Rutkowski <ports@robakdesign.com>
-
 PORTNAME=	click
 PORTVERSION=	7.1.2
 CATEGORIES=	devel python
@@ -13,16 +11,13 @@ COMMENT=	Python package for creating command line interfaces
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
-
 USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
+TEST_ARGS=	-p no:warnings
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 PORTSCOUT=	limit:^7\.
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -p no:warnings
 
 .include <bsd.port.mk>

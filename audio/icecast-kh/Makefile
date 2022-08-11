@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	icecast
 DISTVERSIONPREFIX=	icecast-
 DISTVERSION=	2.4.0-kh15

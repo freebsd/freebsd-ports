@@ -1,5 +1,3 @@
-# Created by: rpsfa@rit.edu
-
 PORTNAME=	devise
 PORTVERSION=	4.7.3
 CATEGORIES=	devel rubygems

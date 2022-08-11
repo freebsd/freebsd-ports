@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	tidyselect
 PORTVERSION=	1.1.2
 CATEGORIES=	devel

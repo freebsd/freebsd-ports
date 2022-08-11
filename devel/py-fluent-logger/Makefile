@@ -1,5 +1,3 @@
-# Created by: Edward Chuang <edwardchuang@gmail.com>
-
 PORTNAME=	fluent-logger
 PORTVERSION=	0.9.2
 PORTREVISION=	1

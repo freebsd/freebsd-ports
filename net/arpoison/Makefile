@@ -1,5 +1,6 @@
 PORTNAME=	arpoison
 DISTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.arpoison.net/
 

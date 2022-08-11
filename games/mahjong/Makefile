@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	mahjong
 PORTVERSION=	1.16
 CATEGORIES=	games net

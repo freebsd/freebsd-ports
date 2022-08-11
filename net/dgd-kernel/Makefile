@@ -1,5 +1,3 @@
-# Created by: glewis
-
 PORTNAME=	dgd-kernel
 PORTVERSION=	1.3.4
 PORTREVISION=	2

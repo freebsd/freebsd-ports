@@ -1,7 +1,6 @@
 PORTNAME=	espeak
-PORTVERSION=	4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+DISTVERSION=	5.0-rc1
 CATEGORIES=	audio
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -9,29 +8,24 @@ COMMENT=	Espeak dialplan application for Asterisk
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Depends on deprecated audio/espeaak
-EXPIRATION_DATE=2022-06-30
-
-LIB_DEPENDS=	libespeak.so:audio/espeak \
+LIB_DEPENDS=	libespeak-ng.so:audio/espeak-ng \
 		libsamplerate.so:audio/libsamplerate
 
-FLAVORS=			asterisk18 asterisk16
-FLAVOR?=			${FLAVORS:[1]}
+FLAVORS=	asterisk18 asterisk16
+FLAVOR?=	${FLAVORS:[1]}
 
 asterisk16_PKGNAMEPREFIX=	asterisk16-
-asterisk16_CONFLICTS_INSTALL=	asterisk13-espeak asterisk18-espeak
 asterisk16_BUILD_DEPENDS=	asterisk:net/asterisk16
 asterisk16_RUN_DEPENDS=		asterisk:net/asterisk16
 
-asterisk18_PKGNAMEPREFIX=	asterisk18-
-asterisk18_CONFLICTS_INSTALL=	asterisk13-espeak asterisk16-espeak
-asterisk18_BUILD_DEPENDS=	asterisk:net/asterisk18
-asterisk18_RUN_DEPENDS=		asterisk:net/asterisk18
+asterisk18_PKGNAMEPREFIX=       asterisk18-
+asterisk18_BUILD_DEPENDS=       asterisk:net/asterisk18
+asterisk18_RUN_DEPENDS=         asterisk:net/asterisk18
 
 USES=		compiler:c11 gmake localbase
 INSTALL_TARGET=	install samples
 
-CONFLICTS_INSTALL=	asterisk*-espeak # etc/asterisk/espeak.conf.sample
+CONFLICTS_INSTALL=	asterisk[0-9][0-9]-espeak # etc/asterisk/espeak.conf.sample
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zaf

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=		aseprite
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.2.9

@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	darkplaces
 DISTVERSION=	20180412beta1
 CATEGORIES=	games

@@ -1,11 +1,9 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	libgdamm
 PORTVERSION=	4.99.11
 PORTREVISION=	2
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgda5 library

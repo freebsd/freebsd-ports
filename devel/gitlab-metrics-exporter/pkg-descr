@@ -1,0 +1,3 @@
+A Prometheus exporter for the GitLab application written in Go.
+
+WWW: https://gitlab.com/gitlab-org/gitlab-metrics-exporter

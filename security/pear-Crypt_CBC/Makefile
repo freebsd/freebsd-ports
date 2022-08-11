@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	Crypt_CBC
 PORTVERSION=	1.0.1
 CATEGORIES=	security www pear

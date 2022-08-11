@@ -48,7 +48,7 @@ lib/cado-nfs-3.0.0/sieve/las
 lib/cado-nfs-3.0.0/sieve/las_descent
 lib/cado-nfs-3.0.0/sieve/makefb
 lib/cado-nfs-3.0.0/sqrt/sqrt
-lib/cado-nfs-3.0.0/utils/badideals
+lib/cado-nfs-3.0.0/utils/numbertheory_tool
 %%DATADIR%%-3.0.0/dlp/Joux-Lercier/params.p100
 %%DATADIR%%-3.0.0/dlp/Joux-Lercier/params.p30
 %%DATADIR%%-3.0.0/dlp/Joux-Lercier/params.p35

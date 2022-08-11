@@ -1,5 +1,3 @@
-# Created by: Jouke Witteveen <j.witteveen@gmail.com>
-
 PORTNAME=	respond
 PORTVERSION=	1.3
 CATEGORIES=	sysutils

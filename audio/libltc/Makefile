@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	libltc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1

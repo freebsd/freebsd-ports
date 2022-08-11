@@ -1,5 +1,3 @@
-# Created by: krion@FreeBSD.org
-
 PORTNAME=	openmortal
 PORTVERSION=	0.7
 PORTREVISION=	13

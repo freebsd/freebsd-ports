@@ -2,15 +2,15 @@
 %%DATADIR%%/LICENSE
 %%DATADIR%%/NOTICE
 %%DATADIR%%/README.txt
-%%DATADIR%%/bin/m2.conf
+@sample %%DATADIR%%/bin/m2.conf.sample
 %%DATADIR%%/bin/mvn
 %%DATADIR%%/bin/mvnDebug
 %%DATADIR%%/bin/mvnyjp
 %%DATADIR%%/boot/plexus-classworlds-2.6.0.jar
 %%DATADIR%%/boot/plexus-classworlds.license
-%%DATADIR%%/conf/logging/simplelogger.properties
-%%DATADIR%%/conf/settings.xml
-%%DATADIR%%/conf/toolchains.xml
+@sample %%DATADIR%%/conf/logging/simplelogger.properties.sample
+@sample %%DATADIR%%/conf/settings.xml.sample
+@sample %%DATADIR%%/conf/toolchains.xml.sample
 %%DATADIR%%/lib/commons-cli-1.4.jar
 %%DATADIR%%/lib/commons-cli.license
 %%DATADIR%%/lib/commons-io-2.6.jar
@@ -28,7 +28,7 @@
 %%DATADIR%%/lib/javax.annotation-api.license
 %%DATADIR%%/lib/javax.inject-1.jar
 %%DATADIR%%/lib/javax.inject.license
-%%DATADIR%%/lib/jcl-over-slf4j-1.7.32.jar
+%%DATADIR%%/lib/jcl-over-slf4j-1.7.36.jar
 %%DATADIR%%/lib/jcl-over-slf4j.license
 %%DATADIR%%/lib/maven-artifact-%%PORTVERSION%%.jar
 %%DATADIR%%/lib/maven-builder-support-%%PORTVERSION%%.jar
@@ -62,9 +62,9 @@
 %%DATADIR%%/lib/plexus-interpolation.license
 %%DATADIR%%/lib/plexus-sec-dispatcher-2.0.jar
 %%DATADIR%%/lib/plexus-sec-dispatcher.license
-%%DATADIR%%/lib/plexus-utils-3.3.0.jar
+%%DATADIR%%/lib/plexus-utils-3.3.1.jar
 %%DATADIR%%/lib/plexus-utils.license
-%%DATADIR%%/lib/slf4j-api-1.7.32.jar
+%%DATADIR%%/lib/slf4j-api-1.7.36.jar
 %%DATADIR%%/lib/slf4j-api.license
 %%DATADIR%%/lib/wagon-file-3.5.1.jar
 %%DATADIR%%/lib/wagon-http-3.5.1-shaded.jar

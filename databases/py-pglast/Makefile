@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pglast
 PORTVERSION=	1.2
 CATEGORIES=	databases python

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Proc-PID-File
 PORTVERSION=	1.29
 CATEGORIES=	devel perl5

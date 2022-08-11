@@ -1,0 +1,11 @@
+--- tools/gn/build/build_linux.ninja.template.orig	2022-02-15 03:23:13 UTC
++++ tools/gn/build/build_linux.ninja.template
+@@ -5,7 +5,7 @@ rule cxx
+   deps = gcc
+ 
+ rule alink_thin
+-  command = rm -f $out && $ar rcsT $out $in
++  command = rm -f $out && $ar rcs $out $in
+   description = AR $out
+ 
+ rule link

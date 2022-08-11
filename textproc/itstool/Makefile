@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	itstool
 PORTVERSION=	2.0.7
 CATEGORIES=	textproc

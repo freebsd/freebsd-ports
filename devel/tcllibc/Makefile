@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PKGNAMESUFFIX=	c
 
 COMMENT=	Compiled implementations of some of the modules of Tcllib

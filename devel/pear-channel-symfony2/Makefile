@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	symfony2
 PORTVERSION=	20110826
 PORTREVISION=	2

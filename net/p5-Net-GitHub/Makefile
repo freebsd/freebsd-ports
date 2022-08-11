@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Net-GitHub
 PORTVERSION=	1.03
 CATEGORIES=	net perl5

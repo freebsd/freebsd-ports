@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Locale-Codes
 PORTVERSION=	3.64
 CATEGORIES=	misc perl5

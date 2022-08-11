@@ -1,5 +1,3 @@
-# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-
 PORTNAME=	unsafe_image_rules
 PORTVERSION=	0.8
 PORTREVISION=	3

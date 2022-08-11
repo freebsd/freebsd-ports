@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv@kvedulv.de>
-
 PORTNAME=	table_print
 PORTVERSION=	1.5.7
 CATEGORIES=	devel ruby

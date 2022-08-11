@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	flowdock
 PORTVERSION=	0.7.1
 CATEGORIES=	www rubygems

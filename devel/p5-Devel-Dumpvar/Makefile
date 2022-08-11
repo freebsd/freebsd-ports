@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Devel-Dumpvar
 PORTVERSION=	1.06
 PORTREVISION=	3

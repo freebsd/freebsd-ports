@@ -1,5 +1,3 @@
-# Created by: Aldis Berjoza <aldis@bsdroot.lv>
-
 PORTNAME=	ditaa
 DISTVERSION=	0_9
 CATEGORIES=	graphics java

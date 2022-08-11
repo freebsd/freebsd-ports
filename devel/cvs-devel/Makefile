@@ -1,5 +1,3 @@
-# Created by: Balwinder S Dheeman <bdheeman@gmail.com>
-
 PORTNAME=	cvs
 PORTVERSION=	1.12.13
 PORTREVISION=	13

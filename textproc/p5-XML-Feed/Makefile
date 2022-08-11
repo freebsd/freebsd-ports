@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	XML-Feed
 PORTVERSION=	0.63
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	Date-Calc-XS
 PORTVERSION=	6.4
 CATEGORIES=	devel perl5

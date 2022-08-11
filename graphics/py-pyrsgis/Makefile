@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	pyrsgis
 PORTVERSION=	0.4.1
 CATEGORIES=	graphics python

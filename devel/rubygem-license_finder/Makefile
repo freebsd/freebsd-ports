@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	license_finder
 PORTVERSION=	6.14.2
 CATEGORIES=	devel rubygems

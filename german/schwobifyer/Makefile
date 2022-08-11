@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	schwobifyer
 PORTVERSION=	20050730
 CATEGORIES=	german

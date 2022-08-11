@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	secp256k1
 PORTVERSION=	0.1.20220126
 CATEGORIES=	math security java

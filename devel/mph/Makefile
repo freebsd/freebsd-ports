@@ -1,5 +1,3 @@
-# Created by: Chuck Swiger <chuck@pkix.net>
-
 PORTNAME=	mph
 PORTVERSION=	1.2
 CATEGORIES=	devel

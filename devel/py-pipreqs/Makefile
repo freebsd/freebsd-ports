@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	pipreqs
 PORTVERSION=	0.4.11
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	nazghul
 PORTVERSION=	0.7.1
 PORTREVISION=	5

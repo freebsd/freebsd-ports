@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-Shark
 PORTVERSION=	1.0.1
 PORTREVISION=	1

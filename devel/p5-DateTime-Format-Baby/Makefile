@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Format-Baby
 PORTVERSION=	1.0200
 CATEGORIES=	devel perl5

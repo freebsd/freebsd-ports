@@ -1,5 +1,3 @@
-# Created by: Dave Cottlehuber <dch@skunkwerks.at>
-
 PORTNAME=	firacode
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.2

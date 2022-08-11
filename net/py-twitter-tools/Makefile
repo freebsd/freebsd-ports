@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	twitter
 PORTVERSION=	1.19.3
 DISTVERSIONPREFIX=	${PORTNAME}-

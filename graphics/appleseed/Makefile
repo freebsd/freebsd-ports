@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	appleseed
 DISTVERSION=	2.1.0-beta
 PORTREVISION=	8
@@ -23,6 +21,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}hq
+
+BROKEN=		cannot build with recent Boost and OCIO libs
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	not ported to it yet

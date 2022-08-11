@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	ua_parser
 PORTVERSION=	0.5.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: The Anarcat <anarcat@anarcat.ath.cx>
-
 PORTNAME=	bksh
 PORTVERSION=	1.7
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Igor Vinokurov <igor@zynaps.ru>
-
 PORTNAME=	tac_plus
 PORTVERSION=	F4.0.4.28
 CATEGORIES=	net security

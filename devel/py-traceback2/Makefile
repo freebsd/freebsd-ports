@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	traceback2
 PORTVERSION=	1.4.0
 PORTREVISION=	2

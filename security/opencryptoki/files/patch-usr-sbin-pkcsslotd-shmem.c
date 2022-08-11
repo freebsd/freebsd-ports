@@ -1,6 +1,6 @@
---- usr/sbin/pkcsslotd/shmem.c.orig	2018-11-16 14:53:03 UTC
+--- usr/sbin/pkcsslotd/shmem.c.orig	2022-04-25 11:04:51 UTC
 +++ usr/sbin/pkcsslotd/shmem.c
-@@ -54,9 +54,9 @@ int CreateSharedMemory(void)
+@@ -58,9 +58,9 @@ int CreateSharedMemory(void)
      }
      // SAB  Get the group information for the PKCS#11 group... fail if
      // it does not exist
@@ -12,7 +12,7 @@
          return FALSE;           // Group does not exist... setup is wrong..
      }
  
-@@ -136,9 +136,9 @@ int CreateSharedMemory(void)
+@@ -141,9 +141,9 @@ int CreateSharedMemory(void)
          int i;
          char *buffer;
  
@@ -24,7 +24,7 @@
                     "Opencryptoki setup is incorrect.");
              return FALSE;       // Group does not exist... setup is wrong..
          }
-@@ -160,8 +160,8 @@ int CreateSharedMemory(void)
+@@ -165,8 +165,8 @@ int CreateSharedMemory(void)
                      return FALSE;
                  }
                  if (fchown(fd, 0, grp->gr_gid) == -1) {

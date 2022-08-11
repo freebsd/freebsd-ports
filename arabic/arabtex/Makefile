@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	arabtex
 PORTVERSION=	3.11
 PORTREVISION=	6

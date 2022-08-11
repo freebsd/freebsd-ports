@@ -1,25 +1,25 @@
---- CMakeLists.txt.orig	2022-04-07 02:26:42 UTC
+--- CMakeLists.txt.orig	2022-05-25 12:38:19 UTC
 +++ CMakeLists.txt
-@@ -54,9 +54,6 @@ if (OJPH_CODE_COVERAGE AND NOT MSVC)
- 	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
+@@ -59,9 +59,6 @@ if (OJPH_CODE_COVERAGE AND NOT MSVC)
+ 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
  endif()
  
 -set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
 -set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
 -
- ############################################################
- if( OJPH_ENABLE_TIFF_SUPPORT )
+ include_directories(src/core/common)
+ include_directories(src/apps/common)
  
-@@ -103,7 +100,7 @@ file(GLOB AVX2_SOURCES "src/core/transform/*_avx2.cpp"
+@@ -96,7 +93,7 @@ source_group("transform"         FILES ${TRANSFORM})
  
- CONFIGURE_FILE(
+ configure_file(
    "${CMAKE_CURRENT_SOURCE_DIR}/src/pkg-config.pc.cmake"
 -  "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${PROJECT_NAME}.pc"
 +  "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc"
  )
  
- if (OJPH_DISABLE_INTEL_SIMD)
-@@ -124,7 +121,7 @@ if (OPENJPH_VERSION)
+ if(EMSCRIPTEN)
+@@ -133,7 +130,7 @@ if (OPENJPH_VERSION)
    else()
      set_target_properties(openjph
        PROPERTIES
@@ -28,14 +28,14 @@
          VERSION "${OPENJPH_VERSION}")
    endif()
  else()
-@@ -172,8 +169,8 @@ INSTALL (DIRECTORY src/core/common/
+@@ -243,8 +240,8 @@ install (DIRECTORY src/core/common/
    FILES_MATCHING
    PATTERN "*.h")
  
--INSTALL(FILES "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${PROJECT_NAME}.pc"
--        DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
-+INSTALL(FILES "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc"
-+        DESTINATION libdata/pkgconfig)
+-install(FILES "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${PROJECT_NAME}.pc"
+-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
++install(FILES "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc"
++  DESTINATION libdata/pkgconfig)
  
  ################################################################################################
- # Testing
+ # Testing (OJPH_BUILD_TEST)

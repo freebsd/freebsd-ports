@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-XMLRPC
 PORTVERSION=	2.01
 PORTREVISION=	2

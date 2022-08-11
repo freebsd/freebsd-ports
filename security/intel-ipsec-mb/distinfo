@@ -1,5 +1,3 @@
-TIMESTAMP = 1641389422
-SHA256 (intel-intel-ipsec-mb-v1.1_GH0.tar.gz) = 0eed29151f57c98ed30fb899fab81438264bc5578bd7cc11d23ccc619af9beac
-SIZE (intel-intel-ipsec-mb-v1.1_GH0.tar.gz) = 1227915
-SHA256 (3a1c8c1c2c24a9d6cb56439c6aa6bea4d4fb1093.patch) = 076d4069033ace59c3508f249cac095c09c6bffb449f6d0fc0772372e5803a17
-SIZE (3a1c8c1c2c24a9d6cb56439c6aa6bea4d4fb1093.patch) = 1811
+TIMESTAMP = 1657579704
+SHA256 (intel-intel-ipsec-mb-v1.2_GH0.tar.gz) = f680b28369d02dc0978eb9b4bee6da9a132d66c666298e087a2b3e247548d99e
+SIZE (intel-intel-ipsec-mb-v1.2_GH0.tar.gz) = 1251965

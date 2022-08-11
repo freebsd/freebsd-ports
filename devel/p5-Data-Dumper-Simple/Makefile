@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Data-Dumper-Simple
 PORTVERSION=	0.11
 PORTREVISION=	1

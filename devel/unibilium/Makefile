@@ -1,5 +1,3 @@
-# Created by: Anton Tornqvist <antont@inbox.lv>
-
 PORTNAME=	unibilium
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0

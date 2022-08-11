@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <liouxFreeBSD.org>
-
 PORTNAME=	rp-pppoe
 PORTVERSION=	3.15
 PORTREVISION=	0

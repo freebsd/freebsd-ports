@@ -1,9 +1,7 @@
-# Created by: Hugo Saro <hugo@barafranca.com>
-
 PORTNAME=	haproxy
-DISTVERSION=	2.5.5
+DISTVERSION=	2.6.2
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/2.5/src/
+MASTER_SITES=	http://www.haproxy.org/download/2.6/src/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Reliable, high performance TCP/HTTP load balancer
@@ -21,7 +19,7 @@ default_CONFLICTS_INSTALL=	haproxy-lua
 lua_CONFLICTS_INSTALL=		haproxy
 lua_PKGNAMESUFFIX=		-lua
 
-CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy19 haproxy20 haproxy21 haproxy22 haproxy23 haproxy24
+CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy20 haproxy22 haproxy23 haproxy24 haproxy25
 
 ALL_TARGET=	all admin/halog/halog
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
@@ -41,7 +39,7 @@ SPCRE_DESC=		Link pcre(1) statically
 SPCRE2_DESC=		Link pcre2 statically
 DEVICEATLAS_DESC=	DeviceAtlas Device Detection support
 PROMEX_DESC=		Enable Prometheus exporter
-OPTIONS_DEFAULT=	DPCRE2 OPENSSL
+OPTIONS_DEFAULT=	DPCRE2 OPENSSL PROMEX
 
 DPCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 DPCRE_MAKE_ARGS=	USE_PCRE=1 USE_PCRE_JIT=1

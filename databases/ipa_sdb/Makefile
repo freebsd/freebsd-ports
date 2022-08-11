@@ -1,5 +1,3 @@
-# Created by: Andrey Simonenko
-
 PORTNAME=	ipa_sdb
 PORTVERSION=	1.1.1
 PORTREVISION=	3

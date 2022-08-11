@@ -1,7 +1,5 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Module-Find
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

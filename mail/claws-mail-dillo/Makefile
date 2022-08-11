@@ -1,7 +1,4 @@
-# Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
-
 PORTNAME=	dillo
-PORTREVISION=	0
 
 COMMENT=	Viewing of html messages using the Dillo web browser
 

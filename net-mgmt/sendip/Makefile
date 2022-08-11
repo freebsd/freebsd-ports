@@ -1,5 +1,3 @@
-# Created by: joseph@randomnetworks.com
-
 PORTNAME=	sendip
 PORTVERSION=	2.5
 PORTREVISION=	4

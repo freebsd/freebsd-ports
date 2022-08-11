@@ -1,9 +1,7 @@
-# Created by: Jev Björsell <ports@ecadlabs.com>
-
 PORTNAME=	prometheus
 PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	1
 

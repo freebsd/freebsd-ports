@@ -1,11 +1,9 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-themes-extra
 PORTVERSION=	3.28
 PORTREVISION=	3
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Standard themes for GNOME

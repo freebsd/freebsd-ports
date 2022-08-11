@@ -1,5 +1,3 @@
-# Created by: Matthew Luckie <mjl@luckie.org.nz>
-
 PORTNAME=	cuttlefish
 PORTVERSION=	1.3
 PORTREVISION=	4

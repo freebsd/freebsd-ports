@@ -1,5 +1,5 @@
 PORTNAME=	puremagic
-PORTVERSION=	1.12
+DISTVERSION=	1.14
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.7-3.10
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 do-test:

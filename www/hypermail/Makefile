@@ -1,5 +1,3 @@
-# Created by: mjhsieh
-
 PORTNAME=	hypermail
 PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	v

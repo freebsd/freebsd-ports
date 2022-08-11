@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	led
 PORTVERSION=	2.0
 PORTREVISION=	1

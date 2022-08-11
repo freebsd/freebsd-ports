@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libafterbase
 PORTVERSION=	0.92
 PORTREVISION=	3

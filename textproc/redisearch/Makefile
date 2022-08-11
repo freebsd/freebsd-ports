@@ -1,8 +1,6 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.7
+DISTVERSION=	2.2.10
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,7 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
 
-CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION}
+CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION} \
+		-DOS=freebsd
 
 PLIST_FILES=	lib/redisearch.so
 

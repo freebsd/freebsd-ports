@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	nanoblogger
 PORTVERSION=	3.4.2
 PORTREVISION=	1

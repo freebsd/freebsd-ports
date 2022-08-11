@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	numerizer
 PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems

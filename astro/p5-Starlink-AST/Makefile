@@ -1,5 +1,3 @@
-# Created by: Wen Heping<wen@FreeBSD.org>
-
 PORTNAME=	Starlink-AST
 PORTVERSION=	1.05
 CATEGORIES=	astro perl5

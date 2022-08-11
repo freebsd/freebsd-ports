@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	som
 DISTVERSION=	0.3-5.1
 PORTREVISION=	4

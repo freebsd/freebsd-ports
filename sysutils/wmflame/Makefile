@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	wmflame
 PORTVERSION=	0.60
 PORTREVISION=	3

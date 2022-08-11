@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	MathMod
 PORTVERSION=	11.1
 PORTREVISION=	1

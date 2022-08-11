@@ -1,5 +1,3 @@
-# Created by: kris@FreeBSD.org
-
 PORTNAME=	tads
 PORTVERSION=	2.5.9
 CATEGORIES=	games lang

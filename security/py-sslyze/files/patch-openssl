@@ -1,0 +1,230 @@
+--- sslyze/connection_helpers/tls_connection.py.orig	2022-05-14 11:12:33 UTC
++++ sslyze/connection_helpers/tls_connection.py
+@@ -2,8 +2,6 @@ import socket
+ from pathlib import Path
+ from typing import Optional, TYPE_CHECKING
+ 
+-from nassl.legacy_ssl_client import LegacySslClient
+-
+ from sslyze.server_setting import (
+     ServerNetworkLocation,
+     ServerNetworkConfiguration,
+@@ -170,7 +168,7 @@ class SslConnection:
+         ):
+             raise ValueError("Cannot use modern OpenSSL with SSL 2.0 or 3.0")
+ 
+-        ssl_client_cls = LegacySslClient if final_should_use_legacy_openssl else SslClient
++        ssl_client_cls = SslClient
+ 
+         if network_configuration.tls_client_auth_credentials:
+             # A client certificate and private key were provided
+--- sslyze/mozilla_tls_profile/mozilla_config_checker.py.orig	2022-05-14 10:32:13 UTC
++++ sslyze/mozilla_tls_profile/mozilla_config_checker.py
+@@ -79,10 +79,6 @@ class ServerScanResultIncomplete(Exception):
+ 
+ 
+ SCAN_COMMANDS_NEEDED_BY_MOZILLA_CHECKER: Set[ScanCommand] = {
+-    ScanCommand.SSL_2_0_CIPHER_SUITES,
+-    ScanCommand.SSL_3_0_CIPHER_SUITES,
+-    ScanCommand.TLS_1_0_CIPHER_SUITES,
+-    ScanCommand.TLS_1_1_CIPHER_SUITES,
+     ScanCommand.TLS_1_2_CIPHER_SUITES,
+     ScanCommand.TLS_1_3_CIPHER_SUITES,
+     ScanCommand.HEARTBLEED,
+@@ -223,10 +219,6 @@ def _check_tls_versions_and_ciphers(
+     smallest_ecdh_param_size = 100000
+     smallest_dh_param_size = 100000
+     for field_name, tls_version_name in [
+-        ("ssl_2_0_cipher_suites", "SSLv2"),
+-        ("ssl_3_0_cipher_suites", "SSLv3"),
+-        ("tls_1_0_cipher_suites", "TLSv1"),
+-        ("tls_1_1_cipher_suites", "TLSv1.1"),
+         ("tls_1_2_cipher_suites", "TLSv1.2"),
+         ("tls_1_3_cipher_suites", "TLSv1.3"),
+     ]:
+--- sslyze/plugins/compression_plugin.py.orig	2022-05-14 09:12:21 UTC
++++ sslyze/plugins/compression_plugin.py
+@@ -1,7 +1,7 @@
+ from dataclasses import dataclass
+ 
+ import pydantic
+-from nassl.legacy_ssl_client import LegacySslClient
++from nassl.ssl_client import SslClient
+ from nassl.ssl_client import ClientCertificateRequested
+ 
+ from sslyze.json.scan_attempt_json import ScanCommandAttemptAsJson
+@@ -89,9 +89,9 @@ def _test_compression_support(server_info: ServerConne
+ 
+     ssl_connection = server_info.get_preconfigured_tls_connection(
+         override_tls_version=tls_version_to_use,
+-        should_use_legacy_openssl=True,  # Only the legacy SSL client has methods to check for compression support
++        should_use_legacy_openssl=False,
+     )
+-    if not isinstance(ssl_connection.ssl_client, LegacySslClient):
++    if not isinstance(ssl_connection.ssl_client, SslClient):
+         raise RuntimeError("Should never happen")
+ 
+     # Make sure OpenSSL was built with support for compression to avoid false negatives
+--- sslyze/plugins/fallback_scsv_plugin.py.orig	2022-05-14 09:12:21 UTC
++++ sslyze/plugins/fallback_scsv_plugin.py
+@@ -3,7 +3,6 @@ from typing import List, Optional
+ 
+ import pydantic
+ from nassl import _nassl
+-from nassl.legacy_ssl_client import LegacySslClient
+ 
+ from sslyze.json.scan_attempt_json import ScanCommandAttemptAsJson
+ from sslyze.plugins.plugin_base import (
+--- sslyze/plugins/openssl_cipher_suites/_test_cipher_suite.py.orig	2022-05-14 09:12:21 UTC
++++ sslyze/plugins/openssl_cipher_suites/_test_cipher_suite.py
+@@ -2,7 +2,6 @@ from dataclasses import dataclass
+ from typing import Optional, Union
+ 
+ from nassl.ephemeral_key_info import EphemeralKeyInfo
+-from nassl.legacy_ssl_client import LegacySslClient
+ from nassl.ssl_client import ClientCertificateRequested, SslClient, BaseSslClient
+ 
+ from sslyze.errors import (
+@@ -12,7 +11,6 @@ from sslyze.errors import (
+ )
+ from sslyze.plugins.openssl_cipher_suites.cipher_suites import CipherSuite
+ from sslyze.server_connectivity import ServerConnectivityInfo, TlsVersionEnum
+-from sslyze.plugins.openssl_cipher_suites._tls12_workaround import WorkaroundForTls12ForCipherSuites
+ 
+ 
+ @dataclass(frozen=True)
+@@ -36,15 +34,10 @@ def connect_with_cipher_suite(
+     server_connectivity_info: ServerConnectivityInfo, tls_version: TlsVersionEnum, cipher_suite: CipherSuite
+ ) -> Union[CipherSuiteAcceptedByServer, CipherSuiteRejectedByServer]:
+     """Initiates a SSL handshake with the server using the SSL version and the cipher suite specified."""
+-    requires_legacy_openssl = True
+-    if tls_version == TlsVersionEnum.TLS_1_2:
+-        # For TLS 1.2, we need to pick the right version of OpenSSL depending on which cipher suite
+-        requires_legacy_openssl = WorkaroundForTls12ForCipherSuites.requires_legacy_openssl(cipher_suite.openssl_name)
+-    elif tls_version == TlsVersionEnum.TLS_1_3:
+-        requires_legacy_openssl = False
++    requires_legacy_openssl = False
+ 
+     ssl_connection = server_connectivity_info.get_preconfigured_tls_connection(
+-        override_tls_version=tls_version, should_use_legacy_openssl=requires_legacy_openssl
++        override_tls_version=tls_version, should_use_legacy_openssl=False
+     )
+     _set_cipher_suite_string(tls_version, cipher_suite.openssl_name, ssl_connection.ssl_client)
+ 
+--- sslyze/plugins/openssl_cipher_suites/cipher_suites.py.orig	2022-06-25 23:42:22 UTC
++++ sslyze/plugins/openssl_cipher_suites/cipher_suites.py
+@@ -3,7 +3,6 @@ from typing import Dict, Set
+ 
+ from dataclasses import dataclass
+ 
+-from nassl.legacy_ssl_client import LegacySslClient
+ from nassl.ssl_client import OpenSslVersionEnum, SslClient
+ 
+ from sslyze.server_connectivity import TlsVersionEnum
+@@ -571,44 +570,14 @@ _TLS_1_3_CIPHER_SUITES = [
+ ]
+ 
+ 
+-def _parse_all_cipher_suites_with_legacy_openssl(tls_version: TlsVersionEnum) -> Set[str]:
+-    ssl_client = LegacySslClient(ssl_version=OpenSslVersionEnum(tls_version.value))
+-    # Disable SRP and PSK cipher suites as they need a special setup in the client and are never used
+-    ssl_client.set_cipher_list("ALL:COMPLEMENTOFALL:-PSK:-SRP")
+-    return set(ssl_client.get_cipher_list())
+-
+-
+ def _parse_all_cipher_suites() -> Dict[TlsVersionEnum, Set[CipherSuite]]:
+     tls_version_to_cipher_suites: Dict[TlsVersionEnum, Set[CipherSuite]] = {}
+ 
+-    for tls_version in [
+-        TlsVersionEnum.SSL_2_0,
+-        TlsVersionEnum.SSL_3_0,
+-        TlsVersionEnum.TLS_1_0,
+-        TlsVersionEnum.TLS_1_1,
+-    ]:
+-        openssl_cipher_strings = _parse_all_cipher_suites_with_legacy_openssl(tls_version)
+-        tls_version_to_cipher_suites[tls_version] = set()
+-        for cipher_suite_openssl_name in openssl_cipher_strings:
+-            cipher_suite_rfc_name = _OPENSSL_TO_RFC_NAMES_MAPPING[tls_version][cipher_suite_openssl_name]
+-            tls_version_to_cipher_suites[tls_version].add(
+-                CipherSuite(
+-                    name=cipher_suite_rfc_name,
+-                    openssl_name=cipher_suite_openssl_name,
+-                    is_anonymous=True if "anon" in cipher_suite_rfc_name else False,
+-                    key_size=_RFC_NAME_TO_KEY_SIZE_MAPPING[cipher_suite_rfc_name],
+-                )
+-            )
+-
+-    # For TLS 1.2, we have to use both the legacy and modern OpenSSL to cover all cipher suites
+-    cipher_suites_from_legacy_openssl = _parse_all_cipher_suites_with_legacy_openssl(TlsVersionEnum.TLS_1_2)
+-
+     ssl_client_modern = SslClient(ssl_version=OpenSslVersionEnum(TlsVersionEnum.TLS_1_2.value))
+     ssl_client_modern.set_cipher_list("ALL:COMPLEMENTOFALL:-PSK:-SRP")
+     cipher_suites_from_modern_openssl = set(ssl_client_modern.get_cipher_list())
+ 
+-    # Combine the two sets of cipher suites
+-    openssl_cipher_strings = cipher_suites_from_legacy_openssl.union(cipher_suites_from_modern_openssl)
++    openssl_cipher_strings = cipher_suites_from_modern_openssl
+     tls_version_to_cipher_suites[TlsVersionEnum.TLS_1_2] = set()
+     for cipher_suite_openssl_name in openssl_cipher_strings:
+         # Ignore TLS 1.3 cipher suites
+--- sslyze/plugins/scan_commands.py.orig	2022-03-12 09:56:30 UTC
++++ sslyze/plugins/scan_commands.py
+@@ -12,12 +12,8 @@ from sslyze.plugins.heartbleed_plugin import Heartblee
+ from sslyze.plugins.http_headers_plugin import HttpHeadersImplementation
+ from sslyze.plugins.openssl_ccs_injection_plugin import OpenSslCcsInjectionImplementation
+ from sslyze.plugins.openssl_cipher_suites.implementation import (
+-    Sslv20ScanImplementation,
+-    Sslv30ScanImplementation,
+-    Tlsv10ScanImplementation,
+     Tlsv13ScanImplementation,
+     Tlsv12ScanImplementation,
+-    Tlsv11ScanImplementation,
+ )
+ from sslyze.plugins.robot.implementation import RobotImplementation
+ from sslyze.plugins.session_renegotiation_plugin import SessionRenegotiationImplementation
+@@ -60,10 +56,6 @@ class ScanCommandsRepository:
+ _IMPLEMENTATION_CLASSES: Dict[ScanCommand, Type["ScanCommandImplementation"]] = {
+     ScanCommand.CERTIFICATE_INFO: CertificateInfoImplementation,
+     ScanCommand.SESSION_RESUMPTION: SessionResumptionSupportImplementation,
+-    ScanCommand.SSL_2_0_CIPHER_SUITES: Sslv20ScanImplementation,
+-    ScanCommand.SSL_3_0_CIPHER_SUITES: Sslv30ScanImplementation,
+-    ScanCommand.TLS_1_0_CIPHER_SUITES: Tlsv10ScanImplementation,
+-    ScanCommand.TLS_1_1_CIPHER_SUITES: Tlsv11ScanImplementation,
+     ScanCommand.TLS_1_2_CIPHER_SUITES: Tlsv12ScanImplementation,
+     ScanCommand.TLS_1_3_CIPHER_SUITES: Tlsv13ScanImplementation,
+     ScanCommand.TLS_COMPRESSION: CompressionImplementation,
+--- sslyze/plugins/session_renegotiation_plugin.py.orig	2022-05-14 09:12:21 UTC
++++ sslyze/plugins/session_renegotiation_plugin.py
+@@ -5,7 +5,7 @@ from typing import List, Optional, Tuple
+ 
+ import pydantic
+ from nassl._nassl import OpenSSLError
+-from nassl.legacy_ssl_client import LegacySslClient
++from nassl.ssl_client import SslClient
+ 
+ from sslyze.json.scan_attempt_json import ScanCommandAttemptAsJson
+ from sslyze.errors import ServerRejectedTlsHandshake
+@@ -124,9 +124,9 @@ def _test_secure_renegotiation(server_info: ServerConn
+ 
+     ssl_connection = server_info.get_preconfigured_tls_connection(
+         override_tls_version=tls_version_to_use,
+-        should_use_legacy_openssl=True,  # Only the legacy SSL client has methods to check for secure reneg
++        should_use_legacy_openssl=False,
+     )
+-    if not isinstance(ssl_connection.ssl_client, LegacySslClient):
++    if not isinstance(ssl_connection.ssl_client, SslClient):
+         raise RuntimeError("Should never happen")
+ 
+     try:
+@@ -159,9 +159,9 @@ def _test_client_renegotiation(server_info: ServerConn
+ 
+     ssl_connection = server_info.get_preconfigured_tls_connection(
+         override_tls_version=tls_version_to_use,
+-        should_use_legacy_openssl=True,  # Only the legacy SSL client has methods to trigger a reneg
++        should_use_legacy_openssl=False,
+     )
+-    if not isinstance(ssl_connection.ssl_client, LegacySslClient):
++    if not isinstance(ssl_connection.ssl_client, SslClient):
+         raise RuntimeError("Should never happen")
+ 
+     try:

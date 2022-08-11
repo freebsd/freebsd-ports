@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	cdk
 DISTVERSION=	5.0-20161210
 PORTEPOCH=	1

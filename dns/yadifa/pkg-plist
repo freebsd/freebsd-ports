@@ -156,7 +156,6 @@ include/dnsdb/btree.h
 include/dnsdb/chain-replay.h
 include/dnsdb/dictionary-node.h
 include/dnsdb/dictionary.h
-include/dnsdb/dnsdb-config.h
 include/dnsdb/dnsrdata.h
 include/dnsdb/dnssec-keystore.h
 include/dnsdb/dnssec.h

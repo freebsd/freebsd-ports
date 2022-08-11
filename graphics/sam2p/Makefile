@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	sam2p
 PORTVERSION=	0.49.4
 PORTREVISION=	2

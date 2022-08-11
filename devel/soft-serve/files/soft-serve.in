@@ -87,7 +87,7 @@ soft_serve_start() {
 		"SOFT_SERVE_INITIAL_ADMIN_KEY=${soft_serve_initial_admin_key}" \
 		"PATH=%%LOCALBASE%%/bin:${PATH}" \
 		"USER=${soft_serve_user}" \
-		$command
+		$command serve
 }
 
 run_rc_command "$1"

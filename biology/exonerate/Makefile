@@ -1,5 +1,3 @@
-# Created by: Motomichi Matsuzaki <mzaki@niid.go.jp>
-
 PORTNAME=	exonerate
 PORTVERSION=	2.4.0
 CATEGORIES=	biology

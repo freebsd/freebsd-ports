@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	IRC-Bot-Hangman
 PORTVERSION=	0.1
 PORTREVISION=	2

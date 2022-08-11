@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine (<gerrit.beine@gmx.de>)
-
 PORTNAME=	Image_GraphViz
 PORTVERSION=	1.3.0
 CATEGORIES=	graphics www pear

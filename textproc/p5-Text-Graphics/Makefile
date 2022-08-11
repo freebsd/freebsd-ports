@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Text-Graphics
 PORTVERSION=	1.0001
 PORTREVISION=	2

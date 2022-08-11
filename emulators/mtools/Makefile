@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	mtools
 PORTVERSION=	4.0.26
 PORTREVISION=	1

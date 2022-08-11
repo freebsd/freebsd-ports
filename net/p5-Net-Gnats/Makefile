@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Net-Gnats
 PORTVERSION=	0.22
 CATEGORIES=	net databases perl5

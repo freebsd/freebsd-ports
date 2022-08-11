@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	tardy
 PORTVERSION=	1.28
 DISTVERSIONSUFFIX=	.D001.orig

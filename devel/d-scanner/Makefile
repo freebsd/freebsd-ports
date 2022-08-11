@@ -1,5 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	d-scanner
 PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v

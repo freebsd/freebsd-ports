@@ -1,5 +1,3 @@
-# Created by: Alexander Koch <fbsd@meersau.de>
-
 PORTNAME=	HTML-Chunks
 PORTVERSION=	1.55.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Kyle Evans <kevans@FreeBSD.org>
-
 PORTNAME=	sarge
 PORTVERSION=	0.1.6
 CATEGORIES=	devel python

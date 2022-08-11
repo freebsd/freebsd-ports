@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	taskd
 PORTVERSION=	1.1.0
 PORTREVISION=	8

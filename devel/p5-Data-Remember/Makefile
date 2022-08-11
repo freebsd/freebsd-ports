@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Data-Remember
 PORTVERSION=	0.140490
 CATEGORIES=	devel perl5

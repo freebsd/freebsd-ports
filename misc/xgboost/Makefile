@@ -1,6 +1,6 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org

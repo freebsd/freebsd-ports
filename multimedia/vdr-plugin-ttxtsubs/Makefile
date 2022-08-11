@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-ttxtsubs
 PORTVERSION=	0.2.4
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	script4rss
 PORTVERSION=	0.4b
 CATEGORIES=	www

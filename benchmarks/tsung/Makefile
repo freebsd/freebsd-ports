@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	tsung
 DISTVERSION=	1.7.0
 CATEGORIES=	benchmarks sysutils

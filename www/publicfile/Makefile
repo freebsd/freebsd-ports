@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner
-
 PORTNAME=	publicfile
 PORTVERSION=	0.52
 PORTREVISION=	3

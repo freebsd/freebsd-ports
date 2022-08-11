@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Sys-Hostname-FQDN
 PORTVERSION=	0.11
 PORTREVISION=	1

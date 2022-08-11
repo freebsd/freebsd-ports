@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Redis
 PORTVERSION=	1.9950
 CATEGORIES=	databases perl5

@@ -1,5 +1,3 @@
-# Created by: dirkx@webweaving.org
-
 PORTNAME=	bluegps-linux
 PORTVERSION=	2.0
 CATEGORIES=	comms

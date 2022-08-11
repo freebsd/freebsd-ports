@@ -1,0 +1,11 @@
+--- libcanberra-gtk.pc.in.orig	2022-05-19 16:04:44 UTC
++++ libcanberra-gtk.pc.in
+@@ -1,7 +1,7 @@ libdir=@libdir@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+ libdir=@libdir@
+-includedir=@includedir@
++includedir=@includedir@/canberra-gtk2
+ 
+ Name: libcanberra-gtk
+ Description: Gtk Event Sound API

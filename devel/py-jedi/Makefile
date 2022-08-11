@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	jedi
 PORTVERSION=	0.18.0
 PORTREVISION=	1

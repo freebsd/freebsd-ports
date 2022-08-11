@@ -1,5 +1,3 @@
-# Created by: adam
-
 PORTNAME=	cnews
 PORTVERSION=	cr.g
 PORTREVISION=	18

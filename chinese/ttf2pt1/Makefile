@@ -1,5 +1,3 @@
-# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-
 PORTNAME=	ttf2pt1
 PORTVERSION=	3.4.0
 CATEGORIES=	chinese print

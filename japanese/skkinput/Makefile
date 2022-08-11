@@ -1,5 +1,3 @@
-# Created by: Murata Shuuichirou <mrt@mickey.ai.kyutech.ac.jp>
-
 PORTNAME=	skkinput
 PORTVERSION=	2.06.4
 PORTREVISION=	2

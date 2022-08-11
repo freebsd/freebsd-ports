@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	Auth_SASL
 PORTVERSION=	1.1.0
 PORTREVISION=	1

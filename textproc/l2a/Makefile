@@ -1,5 +1,3 @@
-# Created by: James Flemer <jflemer@alum.rpi.edu>
-
 PORTNAME=	l2a
 PORTVERSION=	1.2
 CATEGORIES=	textproc

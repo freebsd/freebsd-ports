@@ -2,7 +2,7 @@ PORTNAME=	openicc-config
 PORTVERSION=	0.1.0
 CATEGORIES=	graphics
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color configuration data base management
 
 LICENSE=	MIT

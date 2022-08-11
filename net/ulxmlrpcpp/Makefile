@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ulxmlrpcpp
 PORTVERSION=	1.7.5
 PORTREVISION=	3

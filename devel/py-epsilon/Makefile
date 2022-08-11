@@ -1,5 +1,3 @@
-# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-
 PORTNAME=	epsilon
 PORTVERSION=	0.8.0
 CATEGORIES=	devel python

@@ -1,6 +1,0 @@
-Calendar is a date and time library for Elixir.
-
-The Olson/Eggert "Time Zone Database" is used. Years 1 through 9999
-are supported.
-
-WWW: https://github.com/lau/calendar

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Music-Audioscrobbler-Submit
 PORTVERSION=	0.05
 PORTREVISION=	2

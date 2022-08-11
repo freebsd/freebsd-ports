@@ -1,0 +1,24 @@
+--- media/audio/BUILD.gn.orig	2022-05-20 04:30:53 UTC
++++ media/audio/BUILD.gn
+@@ -251,9 +251,20 @@ source_set("audio") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !use_sndio) {
+     sources += [ "linux/audio_manager_linux.cc" ]
+   }
++
++  if (use_sndio) {
++    libs += [ "sndio" ]
++    sources += [
++      "sndio/audio_manager_sndio.cc",
++      "sndio/sndio_input.cc",
++      "sndio/sndio_input.h",
++      "sndio/sndio_output.cc",
++      "sndio/sndio_output.h"
++    ]
++   }
+ 
+   if (use_alsa) {
+     libs += [ "asound" ]

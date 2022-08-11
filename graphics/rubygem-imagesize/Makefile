@@ -1,5 +1,3 @@
-# Created by: Rick Elrod <codeblock@eighthbit.net>
-
 PORTNAME=	imagesize
 PORTVERSION=	0.1.1
 CATEGORIES=	graphics rubygems

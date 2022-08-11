@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	spdlog
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.0

@@ -1,5 +1,3 @@
-# Created by: Raymond Pasco <ray@cultofray.net>
-
 PORTNAME=	kevedit
 PORTVERSION=	0.5.1
 PORTREVISION=	4

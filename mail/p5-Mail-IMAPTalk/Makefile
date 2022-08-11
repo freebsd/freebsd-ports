@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Mail-IMAPTalk
 PORTVERSION=	4.04
 CATEGORIES=	mail perl5

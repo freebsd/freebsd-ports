@@ -1,5 +1,3 @@
-# Created by: se
-
 PORTNAME=	xblast
 PORTVERSION=	2.10.4
 PORTREVISION=	18

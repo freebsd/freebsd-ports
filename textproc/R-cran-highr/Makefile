@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	highr
 PORTVERSION=	0.9
 CATEGORIES=	textproc

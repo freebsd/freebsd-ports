@@ -1,8 +1,6 @@
-# Created by: Yen-Ming Lee <leeym@leeym.com>
-
 PORTNAME=	upnp
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.14.12
+DISTVERSION=	1.14.13
 PORTEPOCH=	1
 CATEGORIES=	devel
 

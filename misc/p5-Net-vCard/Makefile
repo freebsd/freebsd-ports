@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Net-vCard
 PORTVERSION=	0.5
 PORTREVISION=	1

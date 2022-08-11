@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Exporter-Tiny
 PORTVERSION=	1.002002
 CATEGORIES=	devel perl5

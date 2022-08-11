@@ -1,0 +1,22 @@
+--- Makefile.am.orig	2020-05-05 08:36:21 UTC
++++ Makefile.am
+@@ -19,13 +19,16 @@ ACLOCAL_AMFLAGS = -I m4
+ EXTRA_DIST = README.md LICENSE VERSION bgpd.conf
+ 
+ install-data-hook:
+-	@if [ ! -d "$(DESTDIR)$(runstatedir)" ]; then \
++	if [ ! -d "$(DESTDIR)$(runstatedir)" ]; then \
+ 		$(INSTALL) -m 755 -d "$(DESTDIR)$(runstatedir)"; \
+ 	fi
+-	@if [ ! -d "$(DESTDIR)$(sysconfdir)" ]; then \
++	if [ ! -d "$(DESTDIR)$(sysconfdir)" ]; then \
+ 		$(INSTALL) -m 755 -d "$(DESTDIR)$(sysconfdir)"; \
+ 	fi
+-	@if [ ! -f "$(DESTDIR)$(sysconfdir)/bgpd.conf" ]; then \
++	if [ ! -f "$(DESTDIR)$(sysconfdir)/bgpd.conf.sample" ]; then \
++		$(INSTALL) -m 644 "$(srcdir)/bgpd.conf" "$(DESTDIR)$(sysconfdir)/bgpd.conf.sample"; \
++	fi
++	if [ ! -f "$(DESTDIR)$(sysconfdir)/bgpd.conf" ]; then \
+ 		$(INSTALL) -m 644 "$(srcdir)/bgpd.conf" "$(DESTDIR)$(sysconfdir)/bgpd.conf"; \
+ 	else \
+ 		echo; \

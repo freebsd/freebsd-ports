@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	griffith
 PORTVERSION=	0.15
 CATEGORIES=	deskutils

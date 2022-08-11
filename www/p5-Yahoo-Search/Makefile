@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Yahoo-Search
 PORTVERSION=	1.11.3
 PORTREVISION=	1

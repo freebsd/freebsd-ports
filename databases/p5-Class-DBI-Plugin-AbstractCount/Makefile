@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Class-DBI-Plugin-AbstractCount
 PORTVERSION=	0.08
 PORTREVISION=	1

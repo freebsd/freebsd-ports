@@ -1,5 +1,3 @@
-# Created by: Erik Greenwald <erik@smluc.org>
-
 PORTNAME=	readline
 PORTVERSION=	0.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libinjection
 PORTVERSION=	3.10.0
 DISTVERSIONPREFIX=	v

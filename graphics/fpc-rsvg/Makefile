@@ -1,6 +1,4 @@
-# Created by: Christopher Key <cjk32@cam.ac.uk>
-
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-rsvg
 

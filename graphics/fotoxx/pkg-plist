@@ -143,6 +143,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/color-mode2.jpg
 %%DATADIR%%/images/color.png
 %%DATADIR%%/images/comb.png
+%%DATADIR%%/images/copy-complex.jpg
 %%DATADIR%%/images/copy-from-image.jpg
 %%DATADIR%%/images/copy-from-image2.jpg
 %%DATADIR%%/images/copy-in-image.jpg
@@ -315,7 +316,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/search-images2.jpg
 %%DATADIR%%/images/select-area-finish.jpg
 %%DATADIR%%/images/select-area.jpg
-%%DATADIR%%/images/select-hairy.jpg
 %%DATADIR%%/images/select.png
 %%DATADIR%%/images/sharpen.jpg
 %%DATADIR%%/images/shift-colors.jpg

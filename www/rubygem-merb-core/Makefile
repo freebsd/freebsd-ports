@@ -1,5 +1,3 @@
-# Created by: Scott Sanders <scott@jssjr.com>
-
 PORTNAME=	merb-core
 PORTVERSION=	1.1.3
 PORTREVISION=	3

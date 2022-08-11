@@ -1,9 +1,7 @@
-# Created by: Michal Hanula <michal@hanu.la>
-
 PORTNAME=	alertmanager
 PORTVERSION=	0.23.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	michal@hanu.la

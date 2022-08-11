@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	mftrace
 PORTVERSION=	1.2.18
 PORTREVISION=	2

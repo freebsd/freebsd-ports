@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	cinnamon-screensaver
 PORTVERSION=	4.8.1
 PORTREVISION=	2

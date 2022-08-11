@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	iohexperimenter
 PORTVERSION=	0.2.9.2
 PORTREVISION=	1

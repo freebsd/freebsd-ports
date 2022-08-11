@@ -1,5 +1,3 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
-
 PORTNAME=	lxde-icon-theme
 PORTVERSION=	0.5.1
 CATEGORIES=	x11-themes

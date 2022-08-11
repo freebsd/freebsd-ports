@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Devel-Diagram
 PORTVERSION=	1.00
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Winston Weinert <winstonw@lavabit.com>
-
 PORTNAME=	drawterm
 PORTVERSION=	20140106
 PORTREVISION=	1

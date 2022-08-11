@@ -1,8 +1,6 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	checkmol
 PORTVERSION=	0.5
-PORTREVISION=	12
+PORTREVISION=	14
 CATEGORIES=	science
 MASTER_SITES=	https://homepage.univie.ac.at/norbert.haider/download/chemistry/checkmol/
 DISTFILES=	${PORTNAME}

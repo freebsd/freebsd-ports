@@ -1,7 +1,4 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-PORTREVISION=	1
 
 UNIT_MODNAME=	php${PHP_VER}
 
@@ -12,6 +9,7 @@ PLIST_FILES=	libexec/unit/modules/${UNIT_MODNAME}.unit.so
 RUN_DEPENDS=	unitd:www/unit
 
 USES=		php:build,embed,flavors
+IGNORE_WITH_PHP=	82
 
 USE_RC_SUBR=	# reset to empty
 

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	readline-ext
 PORTVERSION=	0.1.4
 CATEGORIES=	devel rubygems

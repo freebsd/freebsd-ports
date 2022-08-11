@@ -1,5 +1,3 @@
-# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-
 PORTNAME=	ibus-m17n
 DISTVERSION=	1.4.9
 CATEGORIES=	textproc

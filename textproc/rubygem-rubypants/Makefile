@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	rubypants
 PORTVERSION=	0.7.1
 CATEGORIES=	textproc rubygems

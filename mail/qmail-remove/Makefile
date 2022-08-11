@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-
 PORTNAME=	qmail-remove
 PORTVERSION=	0.95
 PORTREVISION=	1

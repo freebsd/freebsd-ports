@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	poetry-core
 PORTVERSION=	1.0.8
 CATEGORIES=	devel python

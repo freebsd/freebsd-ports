@@ -1,14 +1,14 @@
 filemagic provides a Python API for libmagic, the library behind Unix file
-command. It enables the Python developer to easilty test for file types from
-the extensive identification library that is shipped with libmagic.
+command. It enables the Python developer to easilty test for file types from the
+extensive identification library that is shipped with libmagic.
 
 Features:
+- Simple, Python API.
+- Identifies named files or strings.
+- Return a textual description, mime type or mime encoding.
+- Provide custom magic files to customize file detection.
+- Support for both Python2 and Python3.
+- Support for both CPython and PyPy.
 
-  * Simple, Python API
-  * Identifies named files or strings
-  * Return a textual description, mime type or mime encoding
-  * Provide custom magic files to customize file detection
-  * Support for both Python2 and Python3
-  * Support for both CPython and PyPy
-
-WWW: https://filemagic.readthedocs.org
+WWW: https://filemagic.readthedocs.io/en/latest/
+WWW: https://github.com/aliles/filemagic

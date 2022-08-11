@@ -1,5 +1,3 @@
-# Created by: Glenn Johnson
-
 PORTNAME=	libproplist
 PORTVERSION=	0.10.1
 PORTREVISION=	3

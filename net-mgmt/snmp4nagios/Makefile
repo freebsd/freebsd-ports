@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz
-
 PORTNAME=	SNMP4Nagios
 PORTVERSION=	0.4
 PORTREVISION=	4

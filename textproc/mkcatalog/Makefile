@@ -1,5 +1,3 @@
-# Created by: shige
-
 PORTNAME=	mkcatalog
 PORTVERSION=	1.1
 CATEGORIES=	textproc

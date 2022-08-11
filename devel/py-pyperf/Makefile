@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyperf
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,15 +10,12 @@ COMMENT=	Run and analyze benchmarks
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=		python:3.4+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils unittest
 
 NO_ARCH=	yes
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} ${PYTHON_CMD} -m nose -d -v
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>

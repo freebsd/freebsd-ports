@@ -1,5 +1,3 @@
-# Created by: Dima Dorfman <dima@unixfreak.org>
-
 PORTNAME=	mg
 PORTVERSION=	7.0
 PORTEPOCH=	1

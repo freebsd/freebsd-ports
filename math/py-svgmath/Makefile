@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	svgmath
 PORTVERSION=	0.3.3
 CATEGORIES=	math python

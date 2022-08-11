@@ -1,5 +1,3 @@
-# Created by: dikshie <dikshie@lapi.itb.ac.id>
-
 PORTNAME=	pathload
 PORTVERSION=	1.3.2
 CATEGORIES=	benchmarks

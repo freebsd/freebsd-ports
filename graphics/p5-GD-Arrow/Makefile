@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	GD-Arrow
 PORTVERSION=	0.01
 PORTREVISION=	5

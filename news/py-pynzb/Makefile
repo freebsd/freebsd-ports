@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	pynzb
 PORTVERSION=	0.1.0
 PORTREVISION=	2

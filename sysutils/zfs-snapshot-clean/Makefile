@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	zfs-snapshot-clean
 PORTVERSION=	0.2.0
 DISTVERSIONPREFIX=	v

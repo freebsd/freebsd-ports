@@ -68,3 +68,7 @@ lib/cmake/ThermoFun/ThermoFunConfigVersion.cmake
 lib/cmake/ThermoFun/ThermoFunTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ThermoFun/ThermoFunTargets.cmake
 lib/libThermoFun.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/thermofun/PyThermoFun%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/thermofun/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/thermofun/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/thermofun-0.4.0-py%%PYTHON_VER%%.egg-info

@@ -58,7 +58,7 @@ SFCGAL_LIB_DEPENDS=		libSFCGAL.so:databases/sfcgal
 TOPOLOGY_CONFIGURE_WITH=	topology
 WAGYU_CONFIGURE_WITH=		wagyu
 
-CONFLICTS_INSTALL=	postgis24 postgis25 postgis30 postgis31
+CONFLICTS_INSTALL=	postgis[0-9][0-9] # lib/postgresql/address_standardizer-3.so
 
 VER=		${PORTVERSION:R}
 

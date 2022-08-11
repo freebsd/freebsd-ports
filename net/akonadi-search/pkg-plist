@@ -53,6 +53,7 @@ lib/libKF5AkonadiSearchXapian.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/akonadi/agents/akonadiindexingagent.desktop
 share/locale/ar/LC_MESSAGES/akonadi_search.mo
 share/locale/az/LC_MESSAGES/akonadi_search.mo
+share/locale/bg/LC_MESSAGES/akonadi_search.mo
 share/locale/ca/LC_MESSAGES/akonadi_search.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_search.mo
 share/locale/cs/LC_MESSAGES/akonadi_search.mo

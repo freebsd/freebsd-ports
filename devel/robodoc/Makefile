@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	robodoc
 PORTVERSION=	4.99.44
 CATEGORIES=	devel

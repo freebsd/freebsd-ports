@@ -1,5 +1,3 @@
-# Created by: Andrey Slusar <anray@FreeBSD.org>
-
 PORTNAME=	mknmz-wwwoffle
 PORTVERSION=	0.7.2
 PORTREVISION=	2

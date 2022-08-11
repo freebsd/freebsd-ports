@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	liba52
 PORTVERSION=	0.7.4
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Alex de Kruijff
-
 PORTNAME=	samesame
 PORTVERSION=	1.10
 PORTREVISION=	2

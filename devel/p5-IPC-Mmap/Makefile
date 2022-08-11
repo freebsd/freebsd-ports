@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	IPC-Mmap
 PORTVERSION=	0.21
 PORTREVISION=	1

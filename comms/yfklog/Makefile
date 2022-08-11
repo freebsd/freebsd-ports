@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	yfklog
 PORTVERSION=	0.6.0
 PORTREVISION=	1

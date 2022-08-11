@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Class-STL-Containers
 PORTVERSION=	0.37
 CATEGORIES=	devel perl5

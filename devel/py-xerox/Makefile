@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	xerox
 PORTVERSION=	0.4.1
 PORTREVISION=	0

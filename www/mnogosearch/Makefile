@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	mnogosearch
 PORTVERSION=	3.4.1
 CATEGORIES=	www databases

@@ -1,5 +1,3 @@
-# Created by: Martin Waschbuesch <martin@waschbuesch.de>
-
 PORTNAME=	Plack-Middleware-ExtDirect
 PORTVERSION=	3.20
 CATEGORIES=	www perl5

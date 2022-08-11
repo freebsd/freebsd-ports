@@ -1,5 +1,3 @@
-# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-
 PORTNAME=	geda
 PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=gaf-

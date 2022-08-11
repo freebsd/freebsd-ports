@@ -16,12 +16,3 @@
  //// Uncomment the above line if you have SuperLU.
  //// SuperLU is used for solving sparse linear systems via spsolve()
  //// Caveat: only SuperLU version 5.2 can be used!
-@@ -76,7 +76,7 @@
- //// Uncomment the above line if you want to use Intel MKL mkl_malloc() and mkl_free() instead of standard malloc() and free()
- 
- // #define ARMA_USE_ATLAS
--// #define ARMA_ATLAS_INCLUDE_DIR /usr/include/
-+#define ARMA_ATLAS_INCLUDE_DIR /usr/local/include/
- //// If you're using ATLAS and the compiler can't find cblas.h and/or clapack.h
- //// uncomment the above define and specify the appropriate include directory.
- //// Make sure the directory has a trailing /

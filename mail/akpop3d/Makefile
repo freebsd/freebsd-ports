@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	akpop3d
 PORTVERSION=	0.7.7
 CATEGORIES=	mail

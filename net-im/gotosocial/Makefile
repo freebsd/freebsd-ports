@@ -1,7 +1,10 @@
 PORTNAME=	gotosocial
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
+DISTVERSION=	0.3.7
+PORTREVISION=	2
 CATEGORIES=	net-im
+MASTER_SITES?=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${DISTVERSION}/:web
+DISTFILES?=	${PORTNAME}_${DISTVERSION}_web-assets.tar.gz:web
 
 MAINTAINER=	me+freebsd@igalic.co
 COMMENT=	Golang fediverse server
@@ -14,20 +17,20 @@ ONLY_FOR_ARCHS=	amd64
 # Note: we don't use go:modules, because this project vendors all deps
 USES=		go
 USE_RC_SUBR=	${PORTNAME}
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	superseriousbusiness
-# When rebuilding yourself, please set this:
-#GH_TAGNAME=	40be88ec609c9b5352cbb7d38fd70ff7c6a233a5
+
+SUB_LIST=	DBDIR="${DBDIR}" \
+		GROUP="${GROUPS}" \
+		USER="${USERS}" \
+		WWWDIR="${WWWDIR}"
 
 USERS=		gotosocial
 GROUPS=		gotosocial
 
 DBDIR=		/var/db/${PORTNAME}
 
-SUB_LIST=	DBDIR="${DBDIR}" \
-		GROUP="${GROUPS}" \
-		USER="${USERS}" \
-		WWWDIR="${WWWDIR}"
 PLIST_SUB=	WWWDIR="${WWWDIR}"
 
 # patch sample config for people who set a custom prefix
@@ -38,7 +41,7 @@ post-patch:
 .endif
 
 do-build:
-	@(cd ${WRKSRC} && ${SETENV} \
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		VERSION=${DISTVERSION} COMMIT=${GH_TAGNAME} scripts/build.sh )
 
 do-install:
@@ -52,7 +55,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/config.yaml \
 		${STAGEDIR}${ETCDIR}/config.yaml.sample
-	(cd ${WRKSRC}/web && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/ \
-		"! ( -path */gotosocial-styling* )")
+	(cd ${WRKSRC}/../web && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/ )
 
 .include <bsd.port.mk>

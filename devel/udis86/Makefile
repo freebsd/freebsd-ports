@@ -1,5 +1,3 @@
-# Created by: Lutz Boehne <lboehne@damogran.de>
-
 PORTNAME=	udis86
 PORTVERSION=	1.7.2
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Daniel Morante <daniel@morante.net>
-
 PORTNAME=	zetacoin
 PORTVERSION=	0.13.2.1
 DISTVERSIONPREFIX=	v
@@ -13,6 +11,8 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libevent.so:devel/libevent
+
+BROKEN=		error: use of undeclared identifier '_1'
 
 USES=		autoreconf compiler:c++11-lib gmake libtool pkgconfig shebangfix ssl
 

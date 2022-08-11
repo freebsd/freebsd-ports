@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-ecloud
 PORTVERSION=	0.3.0
 CATEGORIES=	net rubygems

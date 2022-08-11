@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	prance
 PORTVERSION=	0.21.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	mplayer-skins
 PORTVERSION=	1.1.5
 CATEGORIES=	multimedia

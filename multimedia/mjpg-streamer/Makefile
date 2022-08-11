@@ -1,5 +1,3 @@
-# Created by: Kozlov Sergey <kozlov.sergey.404@gmail.com>
-
 PORTNAME=	mjpg-streamer
 PORTVERSION=	g2021081601
 PORTEPOCH=	1

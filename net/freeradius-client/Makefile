@@ -1,5 +1,3 @@
-# Created by: netch@netch.kiev.ua
-
 PORTNAME=	freeradius-client
 PORTVERSION=	1.1.7
 PORTREVISION=	0

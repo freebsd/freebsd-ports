@@ -1,5 +1,3 @@
-# Created by: Oliver Breuninger <ob@seicom.NET>
-
 PORTNAME=	xmx
 PORTVERSION=	1.1
 PORTREVISION=	3

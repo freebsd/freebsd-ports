@@ -1,5 +1,3 @@
-# Created by: Travis Poppe <tlp@liquidx.org>
-
 PORTNAME=	gens
 PORTVERSION=	2.15.5
 PORTREVISION=	4

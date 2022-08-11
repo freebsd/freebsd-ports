@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Chart-Math-Axis
 PORTVERSION=	1.06
 PORTREVISION=	1

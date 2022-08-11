@@ -1,5 +1,3 @@
-# Created by: vfom@narod.ru
-
 PORTNAME=	TkTopNetFlows
 PORTVERSION=	0.4
 PORTREVISION=	8

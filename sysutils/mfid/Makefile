@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	mfid
 PORTVERSION=	0.03
 PORTREVISION=	1

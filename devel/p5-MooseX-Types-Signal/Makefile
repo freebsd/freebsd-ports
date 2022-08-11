@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	MooseX-Types-Signal
 PORTVERSION=	1.101932
 PORTREVISION=	1

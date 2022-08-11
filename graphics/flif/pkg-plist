@@ -13,6 +13,6 @@ lib/libflif.so
 lib/libflif.so.0
 lib/libflif_dec.so
 lib/libflif_dec.so.0
-man/man1/flif.1.gz
+share/man/man1/flif.1.gz
 share/FLIF/flif.magic
 share/mime/packages/flif-mime.xml

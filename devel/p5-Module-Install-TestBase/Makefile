@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Module-Install-TestBase
 PORTVERSION=	0.86
 PORTREVISION=	1

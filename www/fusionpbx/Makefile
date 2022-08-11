@@ -1,5 +1,3 @@
-# Created by: Richard Neese <r.neese@gmail.com>
-
 PORTNAME=	fusionpbx
 PORTVERSION=	4.4.1
 CATEGORIES=	www

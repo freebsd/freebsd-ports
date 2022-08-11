@@ -1,5 +1,3 @@
-# Created by: Pawel Worach
-
 PORTNAME=	font-sun-misc
 PORTVERSION=	1.0.3
 PORTREVISION=	4

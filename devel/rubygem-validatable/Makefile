@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	validatable
 PORTVERSION=	1.6.7
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	perwindowlayoutd
 PORTVERSION=	0.6
 CATEGORIES=	x11

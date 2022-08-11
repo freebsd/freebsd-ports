@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni <giffunip@asme.org>
-
 PORTNAME=	feappv
 PORTVERSION=	4.1i
 PORTREVISION=	4

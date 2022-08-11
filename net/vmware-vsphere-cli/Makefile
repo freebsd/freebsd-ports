@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <rpsfa@rit.edu>
-
 PORTNAME=		vmware-vsphere-cli
 PORTVERSION=		6.7.0
 CATEGORIES=		net perl5

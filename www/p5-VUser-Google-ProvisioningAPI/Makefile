@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	VUser-Google-ProvisioningAPI
 PORTVERSION=	0.24
 PORTREVISION=	2

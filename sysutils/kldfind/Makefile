@@ -1,5 +1,3 @@
-# Created by: Ricardo A. Reis <ricardo.areis@gmail.com>
-
 PORTNAME=	kldfind
 PORTVERSION=	0.61
 CATEGORIES=	sysutils

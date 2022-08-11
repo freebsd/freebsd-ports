@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@FreeBSD.org>
-
 PORTNAME=	portshaker-config
 PORTREVISION=	4
 CATEGORIES=	ports-mgmt

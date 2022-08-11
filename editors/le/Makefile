@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	le
 PORTVERSION=	1.16.8
 CATEGORIES=	editors

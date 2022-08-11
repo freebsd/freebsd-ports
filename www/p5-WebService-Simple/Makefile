@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	WebService-Simple
 PORTVERSION=	0.24
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	q4m
 PORTVERSION=	0.9.14
 PORTREVISION=	5

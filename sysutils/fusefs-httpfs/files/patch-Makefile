@@ -1,5 +1,5 @@
---- Makefile.orig	2012-09-03 16:58:02.000000000 +0200
-+++ Makefile	2013-02-19 18:03:41.000000000 +0100
+--- Makefile.orig	2012-09-03 14:58:02 UTC
++++ Makefile
 @@ -1,5 +1,5 @@
  MAIN_CFLAGS :=  -g -Os -Wall $(shell pkg-config fuse --cflags)
 -MAIN_CPPFLAGS := -Wall -Wno-unused-function -Wconversion -Wtype-limits -DUSE_AUTH -D_XOPEN_SOURCE=700 -D_ISOC99_SOURCE
@@ -7,19 +7,41 @@
  THR_CPPFLAGS := -DUSE_THREAD
  THR_LDFLAGS := -lpthread
  MAIN_LDFLAGS := $(shell pkg-config fuse --libs | sed -e s/-lrt// -e s/-ldl// -e s/-pthread// -e "s/  / /g")
-@@ -45,7 +45,7 @@
+@@ -10,7 +10,7 @@ ifeq ($(shell pkg-config --atleast-version 2.10 gnutls
+ 
+     variants += -ssl -ssl-mt
+ 
+-    CERT_STORE := /etc/ssl/certs/ca-certificates.crt
++#   CERT_STORE := /etc/ssl/certs/ca-certificates.crt
+     SSL_CPPFLAGS := -DUSE_SSL $(shell pkg-config gnutls --cflags) -DCERT_STORE=\"$(CERT_STORE)\"
+     SSL_LDFLAGS := $(shell pkg-config gnutls --libs)
+ endif
+@@ -23,7 +23,8 @@ manpages = $(addsuffix .1,$(binaries))
+ 
+ intermediates += $(addsuffix .xml,$(manpages))
+ 
+-targets = $(binaries) $(manpages)
++#targets = $(binaries) $(manpages)
++targets = $(binaries)
+ 
+ full:
+ 	$(MAKE) all $(addprefix all,$(variants))
+@@ -44,8 +45,8 @@ clean-recursive:
+ %-full:
  	$(MAKE) $* $(addprefix $*,$(variants))
  
- %.1: %.1.txt
+-%.1: %.1.txt
 -	a2x -f manpage $<
-+	a2x -L -f manpage $<
++#%.1: %.1.txt
++#	a2x -f manpage $<
  
  %-ssl: $*
  	$(MAKE) CPPFLAGS='$(CPPFLAGS) $(SSL_CPPFLAGS)' LDFLAGS='$(LDFLAGS) $(SSL_LDFLAGS)' binsuffix=-ssl$(binsuffix) $*
-@@ -61,20 +61,6 @@
+@@ -60,20 +61,6 @@ clean-recursive:
+ 	$(MAKE) CPPFLAGS='$(CPPFLAGS) -DRETRY_ON_RESET' binsuffix=-rst$(binsuffix) $*
  
  # Rules to automatically make a Debian package
- 
+-
 -package = $(shell dpkg-parsechangelog | grep ^Source: | sed -e s,'^Source: ',,)
 -version = $(shell dpkg-parsechangelog | grep ^Version: | sed -e s,'^Version: ',, -e 's,-.*,,')
 -revision = $(shell dpkg-parsechangelog | grep ^Version: | sed -e -e 's,.*-,,')
@@ -33,7 +55,6 @@
 -pkg_deb_bin = $(pkg_deb_dir)/$(package)_$(version)-$(revision)_$(architecture).changes
 -
 -deb_pkg_key = CB8C5858
--
+ 
  debclean:
  	rm -rf $(pkg_deb_dir)
- 

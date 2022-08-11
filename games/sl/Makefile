@@ -1,5 +1,3 @@
-# Created by: HIYAMA Takeshi <th@cis.ibaraki.ac.jp>
-
 PORTNAME=	sl
 PORTVERSION=	5.02
 CATEGORIES=	games

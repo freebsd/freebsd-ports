@@ -1,5 +1,3 @@
-# Created by: David O'Brien <obrien@FreeBSD.org>
-
 PORTNAME=	lprps
 PORTVERSION=	2.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	rottdc
 DISTVERSION=	1.0-2
 PORTREVISION=	8

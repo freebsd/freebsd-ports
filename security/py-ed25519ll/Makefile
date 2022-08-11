@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	ed25519ll
 PORTVERSION=	0.6
 PORTREVISION=	2

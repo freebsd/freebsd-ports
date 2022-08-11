@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	evilwm
 PORTVERSION=	1.1.1
 CATEGORIES=	x11-wm

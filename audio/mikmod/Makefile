@@ -1,5 +1,3 @@
-# Created by: Yoshiaki Uchikawa
-
 PORTNAME=	mikmod
 PORTVERSION=	3.2.8
 CATEGORIES=	audio

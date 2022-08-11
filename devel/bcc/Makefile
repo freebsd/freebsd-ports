@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	bcc
 PORTVERSION=	1995.03.12
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	Template-Provider-FromDATA
 PORTVERSION=	0.13
 PORTREVISION=	1

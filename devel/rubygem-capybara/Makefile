@@ -1,7 +1,5 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	capybara
-PORTVERSION=	3.36.0
+PORTVERSION=	3.37.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	pgreplay
 DISTVERSIONPREFIX=	${PORTNAME:tu}_
 DISTVERSION=	1_3_0

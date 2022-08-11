@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	leproxy
 PORTVERSION=	0.2.2
 CATEGORIES=	net

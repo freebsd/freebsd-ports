@@ -1,7 +1,5 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	calendar
-PORTVERSION=	3.2.2
+PORTVERSION=	3.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
@@ -14,10 +12,10 @@ COMMENT=	Calendar app for Nextcloud
 
 LICENSE=	AGPLv3
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=20:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=22:www/nextcloud@${PHP_FLAVOR}
 
 USES=		cpe php:flavors
-IGNORE_WITH_PHP=81
+IGNORE_WITH_PHP=	82
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

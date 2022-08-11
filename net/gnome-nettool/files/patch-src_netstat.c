@@ -1,6 +1,6 @@
---- src/netstat.c.orig	2012-01-03 10:38:09.000000000 +0100
-+++ src/netstat.c	2015-08-28 16:21:17.101757000 +0200
-@@ -114,7 +114,7 @@ netstat_get_active_option (Netinfo * net
+--- src/netstat.c.orig	2022-04-06 01:52:01 UTC
++++ src/netstat.c
+@@ -114,7 +114,7 @@ netstat_get_active_option (Netinfo * netinfo)
  	g_return_val_if_fail (netinfo != NULL, NULL);
  	
  	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (netinfo->routing))) {

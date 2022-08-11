@@ -77,6 +77,7 @@
     SUBDIR += jalview
     SUBDIR += jellyfish
     SUBDIR += kallisto
+    SUBDIR += kmcp
     SUBDIR += lamarc
     SUBDIR += libbigwig
     SUBDIR += libgff
@@ -92,7 +93,6 @@
     SUBDIR += minimap2
     SUBDIR += mmseqs2
     SUBDIR += molden
-    SUBDIR += mopac
     SUBDIR += mothur
     SUBDIR += mrbayes
     SUBDIR += mummer
@@ -161,6 +161,7 @@
     SUBDIR += py-libsedml
     SUBDIR += py-loompy
     SUBDIR += py-macs2
+    SUBDIR += py-mrcfile
     SUBDIR += py-multiqc
     SUBDIR += py-ont-fast5-api
     SUBDIR += py-orange3-bioinformatics

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Data-Validator
 PORTVERSION=	1.07
 PORTREVISION=	1

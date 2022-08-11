@@ -1,5 +1,3 @@
-# Created by: Ben Woods <woodsb02@FreeBSD.org>
-
 PORTNAME=	gstreamer1-transcoder
 PORTVERSION=	1.16.0
 CATEGORIES=	multimedia
@@ -10,9 +8,9 @@ COMMENT=	GStreamer Transcoding API
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler gnome meson pkgconfig python:3.3+ #shebangfix
+USES=		compiler gnome gstreamer meson pkgconfig python:3.3+ #shebangfix
 USE_GNOME=	introspection
-USE_GSTREAMER1=	core
+USE_GSTREAMER=	core
 USE_LDCONFIG=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

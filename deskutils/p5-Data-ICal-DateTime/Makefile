@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	Data-ICal-DateTime
 PORTVERSION=	0.82
 CATEGORIES=	deskutils perl5

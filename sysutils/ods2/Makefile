@@ -1,5 +1,3 @@
-# Created by: Thierry Dussuet <dussuett@wigwam.ethz.ch>
-
 PORTNAME=	ods2
 PORTVERSION=	1.3
 PORTREVISION=	1

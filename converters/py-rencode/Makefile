@@ -11,8 +11,6 @@ COMMENT=	Web safe object pickling/unpickling
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-
 USES=		cpe python:3.6+
 CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils

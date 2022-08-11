@@ -1,5 +1,3 @@
-# Created by: Thomas Lotterer <thomas.lotterer@cw.com>
-
 PORTNAME=	lmtp2nntp
 PORTVERSION=	1.4.1
 CATEGORIES=	mail news

@@ -1,5 +1,3 @@
-# Created by: Nobuhiro Yasutomi
-
 PORTNAME=	emiclock
 PORTVERSION=	2.0.2
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: lance@evitel.net
-
 PORTNAME=	gnu-radius
 PORTVERSION=	1.6.1
 PORTREVISION=	13

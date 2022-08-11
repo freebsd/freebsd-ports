@@ -1,8 +1,6 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	flatbuffers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.5
+DISTVERSION=	2.0.6
 PORTEPOCH=	1
 CATEGORIES=	devel
 

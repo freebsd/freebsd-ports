@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@tandon.net>
-
 PORTNAME=	namebench
 PORTVERSION=	1.3.1
 PORTREVISION=	1

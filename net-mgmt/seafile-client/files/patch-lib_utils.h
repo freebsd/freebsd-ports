@@ -1,16 +1,17 @@
---- lib/utils.h.orig	2015-09-21 03:42:11 UTC
+--- lib/utils.h.orig	2022-04-25 10:27:18 UTC
 +++ lib/utils.h
-@@ -3,6 +3,9 @@
- #ifndef CCNET_UTILS_H
- #define CCNET_UTILS_H
+@@ -11,6 +11,10 @@
+ #include <windows.h>
+ #endif
  
 +#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +#include <netinet/in.h>
 +#endif
++
+ #ifndef WIN32
  #include <sys/time.h>
- #include <time.h>
- #include <stdint.h>
-@@ -13,7 +16,9 @@
+ #include <unistd.h>
+@@ -23,7 +27,9 @@
  #include <stdlib.h>
  #include <sys/stat.h>
  
@@ -21,3 +22,12 @@
  #include <event2/util.h>
  #else
  #include <evutil.h>
+@@ -33,7 +39,7 @@
+ #include <endian.h>
+ #endif
+ 
+-#ifdef __OpenBSD__
++#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <machine/endian.h>
+ #endif
+ 

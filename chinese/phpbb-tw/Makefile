@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	phpbb
 PORTVERSION=	2.0.23
 CATEGORIES=	chinese www
@@ -18,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 
 CONFLICTS_INSTALL=	phpbb phpbb3 zh-phpbb3-tw # share/doc/phpbb/AUTHORS share/doc/phpbb/CHANGELOG.html
 USES=		dos2unix php
+IGNORE_WITH_PHP=	82
 
 # Get HOSTNAME
 .if exists(/sbin/sysctl)

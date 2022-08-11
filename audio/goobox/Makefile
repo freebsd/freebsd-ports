@@ -1,10 +1,8 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	goobox
 PORTVERSION=	3.6.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD player and ripper for GNOME Desktop environment
@@ -18,11 +16,10 @@ LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
 		libbrasero-media3.so:sysutils/brasero \
 		libunique-1.0.so:x11-toolkits/unique
 
-USES=		desktop-file-utils gettext gnome meson pkgconfig \
+USES=		desktop-file-utils gettext gnome gstreamer meson pkgconfig \
 		python:3.5+,build tar:xz xorg
 USE_GNOME=	glib20 gtk30 intlhack
 USE_XORG=	x11
-USE_GSTREAMER1=	yes
 INSTALL_TARGET=	install-strip
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

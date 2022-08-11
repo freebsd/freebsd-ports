@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	Module-Starter-Plugin-SimpleStore
 PORTVERSION=	0.144
 PORTREVISION=	1

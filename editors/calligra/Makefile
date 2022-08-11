@@ -1,9 +1,14 @@
 PORTNAME=	calligra
 DISTVERSION=	3.2.1
-PORTREVISION=	34
+PORTREVISION=	40
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
+
+PATCH_SITES=	https://invent.kde.org/office/calligra/-/commit/
+# Poppler 22.03
+PATCHFILES=	236bacbe13739414e919de868283b0caf2df5d8a.diff:-p1 \
+		6b75bec784c9835c78993349845d8c2ef22ec3de.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE office suite

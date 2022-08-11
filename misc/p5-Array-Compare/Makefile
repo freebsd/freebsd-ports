@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Array-Compare
 PORTVERSION=	3.0.8
 DISTVERSIONPREFIX=	v

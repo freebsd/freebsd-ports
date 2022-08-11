@@ -1,5 +1,3 @@
-# Created by: Volker Stolz <vs@FreeBSD.org>
-
 PORTNAME=	jasmin
 PORTVERSION=	2.4
 PORTREVISION=	1

@@ -1,8 +1,6 @@
-# Created by: Eugene Grosbein <eugen@FreeBSD.org>
-
 PORTNAME=	fusefs-webdavfs
 DISTVERSION=	g20200520
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	eugen@FreeBSD.org

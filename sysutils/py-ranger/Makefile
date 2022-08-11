@@ -1,5 +1,3 @@
-# Created by: Jin-Sih Lin <linpct@gmail.com>
-
 PORTNAME=	ranger
 PORTVERSION=	1.9.3
 CATEGORIES=	sysutils python

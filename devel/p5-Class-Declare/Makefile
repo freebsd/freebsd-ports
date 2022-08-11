@@ -1,5 +1,3 @@
-# Created by: kevit
-
 PORTNAME=	Class-Declare
 PORTVERSION=	0.19
 CATEGORIES=	devel perl5

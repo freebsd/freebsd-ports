@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	fontconfig
 PORTVERSION=	2.13.0
 DISTVERSIONSUFFIX=	-4.3.el7

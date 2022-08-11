@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	res
 PORTVERSION=	5.0.1
 CATEGORIES=	devel

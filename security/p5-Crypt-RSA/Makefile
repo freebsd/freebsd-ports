@@ -1,5 +1,3 @@
-# Created by: Michael Haro <mharo@FreeBSD.org>
-
 PORTNAME=	Crypt-RSA
 PORTVERSION=	1.99
 PORTREVISION=	2

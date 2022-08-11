@@ -1,5 +1,3 @@
-# Created by: HSIN-HSIUNG CHANG
-
 PORTNAME=	scr_ipfm
 PORTVERSION=	0.64
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: kamikaze@bsdforen.de
-
 PORTNAME=	libaacs
 DISTVERSION=	0.11.1
 CATEGORIES=	multimedia

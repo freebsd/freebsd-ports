@@ -1,8 +1,5 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	chron
-DISTVERSION=	2.3-43
-PORTREVISION=	12
+DISTVERSION=	2.3-57
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

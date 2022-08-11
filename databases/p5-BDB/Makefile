@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	BDB
 PORTVERSION=	1.92
 CATEGORIES=	databases perl5

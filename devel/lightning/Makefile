@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	lightning
 PORTVERSION=	2.1.3
 CATEGORIES=	devel

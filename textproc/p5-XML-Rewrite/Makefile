@@ -1,5 +1,3 @@
-# Created by: Patrick Powell <papowell@astart.com>
-
 PORTNAME=	XML-Rewrite
 PORTVERSION=	0.10
 PORTREVISION=	2

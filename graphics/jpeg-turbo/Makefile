@@ -1,5 +1,3 @@
-# Created by: Denis Podolskiy <bytestore@yandex.ru>
-
 PORTNAME=	jpeg-turbo
 DISTVERSION=	2.1.3
 PORTREVISION?=	0

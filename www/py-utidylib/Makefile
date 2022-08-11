@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	utidylib
 PORTVERSION=	0.8
 CATEGORIES=	www python

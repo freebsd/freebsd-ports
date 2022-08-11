@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	sol
 PORTVERSION=	1.0.8
 CATEGORIES=	games

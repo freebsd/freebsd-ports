@@ -1,5 +1,3 @@
-# Created by: Vladimir Kondratiev <wulf@mail.mipt.ru>
-
 PORTNAME=	smpeg2
 PORTVERSION=	2.0.0
 PORTREVISION=	4

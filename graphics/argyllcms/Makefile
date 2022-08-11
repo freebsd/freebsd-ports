@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	argyllcms
 PORTVERSION=	1.9.2
 PORTREVISION=	5

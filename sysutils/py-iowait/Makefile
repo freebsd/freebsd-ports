@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau <olivierd@FreeBSD.org>
-
 PORTNAME=	iowait
 PORTVERSION=	0.2
 CATEGORIES=	sysutils python

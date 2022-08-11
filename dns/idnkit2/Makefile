@@ -1,5 +1,3 @@
-# Created by: Rafal Lesniak <fbsd@grid.einherjar.de>
-
 PORTNAME=	idnkit
 PORTVERSION=	2.3
 PORTREVISION=	2

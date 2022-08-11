@@ -20,9 +20,9 @@
 -         H5_VER_MAJOR=`  grep '#define *H5_VERS_MAJOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MAJOR[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
 -         H5_VER_MINOR=`  grep '#define *H5_VERS_MINOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MINOR[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
 -         H5_VER_RELEASE=`grep '#define *H5_VERS_RELEASE' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_RELEASE[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
-+         H5_VER_MAJOR=`  grep '#define *H5_VERS_MAJOR' $HDF5_ABS_PATH | gsed  's/^.*H5_VERS_MAJOR[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
-+         H5_VER_MINOR=`  grep '#define *H5_VERS_MINOR' $HDF5_ABS_PATH | gsed  's/^.*H5_VERS_MINOR[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
-+         H5_VER_RELEASE=`grep '#define *H5_VERS_RELEASE' $HDF5_ABS_PATH | gsed  's/^.*H5_VERS_RELEASE[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
++         H5_VER_MAJOR=`  grep '#define *H5_VERS_MAJOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MAJOR *\([0-9]*\).*$/\1/' `
++         H5_VER_MINOR=`  grep '#define *H5_VERS_MINOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MINOR *\([0-9]*\).*$/\1/' `
++         H5_VER_RELEASE=`grep '#define *H5_VERS_RELEASE' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_RELEASE *\([0-9]*\).*$/\1/' `
           HDF5_VERSION=`  expr 10000 \* ${H5_VER_MAJOR} + 100 \* ${H5_VER_MINOR} + ${H5_VER_RELEASE} `
           test "0${HDF5_VERSION}" -gt "11100" || test "0${HDF5_VERSION}" -lt "11002" && as_fn_error $? "
  This HDF5 version ${H5_VER_MAJOR}.${H5_VER_MINOR}.${H5_VER_RELEASE} must not be used with med-fichier${MED_NUM_MAJEUR}.${MED_NUM_MINEUR}.${MED_NUM_RELEASE}.

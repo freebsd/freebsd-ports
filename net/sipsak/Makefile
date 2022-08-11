@@ -1,5 +1,3 @@
-# Created by: jesusr
-
 PORTNAME=	sipsak
 PORTVERSION=	0.9.6
 CATEGORIES=	net

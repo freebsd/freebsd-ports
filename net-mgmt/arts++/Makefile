@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	arts++
 PORTVERSION=	1.1.a13
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	sqlitestudio
 DISTVERSION=	3.3.3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Class-Accessor-Lite
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

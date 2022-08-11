@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Archive-Extract-Libarchive
 PORTVERSION=	0.38
 PORTREVISION=	4

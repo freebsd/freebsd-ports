@@ -1,5 +1,3 @@
-# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-
 PORTNAME=	librcc
 PORTVERSION=	0.2.12
 PORTREVISION=	13

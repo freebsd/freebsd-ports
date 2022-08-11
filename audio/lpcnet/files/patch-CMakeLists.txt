@@ -1,0 +1,86 @@
+--- CMakeLists.txt.orig	2021-06-29 09:04:36 UTC
++++ CMakeLists.txt
+@@ -87,15 +87,32 @@ message(STATUS "Host system arch is: ${CMAKE_SYSTEM_PR
+ # Detection of available CPU optimizations
+ if(NOT DISABLE_CPU_OPTIMIZATION)
+     if(UNIX AND NOT APPLE)
+-        message(STATUS "Looking for available CPU optimizations on Linux/BSD system...")
+-        execute_process(COMMAND grep -c "avx2" /proc/cpuinfo
+-            OUTPUT_VARIABLE AVX2)
+-        execute_process(COMMAND grep -c "avx " /proc/cpuinfo
+-            OUTPUT_VARIABLE AVX)
+-        execute_process(COMMAND grep -c "sse4_1 " /proc/cpuinfo
+-            OUTPUT_VARIABLE SSE)
+-        execute_process(COMMAND grep -c "neon" /proc/cpuinfo
+-            OUTPUT_VARIABLE NEON)
++        if ( ${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++            message(STATUS "Looking for available CPU optimizations on FreeBSD system...")
++	    message (STATUS "MACHINE_CPU = ${MACHINE_CPU}")
++            if (MACHINE_CPU MATCHES  "avx")
++                set(AVX TRUE)
++           endif()
++           if (MACHINE_CPU MATCHES "avx2")
++               set(AVX2 TRUE)
++           endif()
++           if (MACHINE_CPU MATCHES "sse")
++	       set(SSE TRUE)
++           endif()
++           if (MACHINE_CPU MATCHES  "neon")
++               set(NEON TRUE)
++           endif()
++        else()
++            message(STATUS "Looking for available CPU optimizations on Linux system...")
++            execute_process(COMMAND grep -c "avx2" /proc/cpuinfo
++                OUTPUT_VARIABLE AVX2)
++            execute_process(COMMAND grep -c "avx " /proc/cpuinfo
++                OUTPUT_VARIABLE AVX)
++            execute_process(COMMAND grep -c "sse4_1 " /proc/cpuinfo
++                OUTPUT_VARIABLE SSE)
++            execute_process(COMMAND grep -c "neon" /proc/cpuinfo
++                OUTPUT_VARIABLE NEON)
++        endif()
+     elseif(APPLE)
+         if(BUILD_OSX_UNIVERSAL)
+             # Presume AVX/AVX2 are enabled on the x86 side. The ARM side will auto-enable
+@@ -140,36 +157,12 @@ if(${NEON} OR ${NEON} GREATER 0)
+ endif()
+ 
+ # grab latest NN model (or substitute your own)
+-set(LPCNET_ROOT http://rowetel.com/downloads/deep/)
+-set(LPCNET_FILE lpcnet_191005_v1.0.tgz)
+-set(LPCNET_URL ${LPCNET_ROOT}${LPCNET_FILE})
++# retrieved by port
++#set(LPCNET_ROOT http://rowetel.com/downloads/deep/)
++#set(LPCNET_FILE lpcnet_191005_v1.0.tgz)
++#set(LPCNET_URL ${LPCNET_ROOT}${LPCNET_FILE})
+ 
+-if(EXISTS ${CMAKE_BINARY_DIR}/${LPCNET_FILE})
+-    set(lpcnet_SOURCE_DIR ${CMAKE_BINARY_DIR}/src)
+-    file(MAKE_DIRECTORY ${lpcnet_SOURCE_DIR})
+-    execute_process(COMMAND tar -xzf ${CMAKE_BINARY_DIR}/${LPCNET_FILE} -C ${CMAKE_BINARY_DIR}/src)
+-
+-# Work around not having the FetchContent module.
+-elseif(CMAKE_VERSION VERSION_LESS 3.11.4)
+-    set(lpcnet_SOURCE_DIR ${CMAKE_BINARY_DIR}/src)
+-    if(NOT EXISTS ${lpcnet_SOURCE_DIR})
+-        file(DOWNLOAD ${LPCNET_URL}
+-            ${CMAKE_BINARY_DIR}/${LPCNET_FILE}
+-            SHOW_PROGRESS
+-        )
+-        file(MAKE_DIRECTORY ${lpcnet_SOURCE_DIR})
+-        execute_process(COMMAND tar -xzf ${CMAKE_BINARY_DIR}/${LPCNET_FILE} -C ${CMAKE_BINARY_DIR}/src)
+-    endif()
+-else()
+-    include(FetchContent)
+-    FetchContent_Declare(
+-        lpcnet
+-        URL ${LPCNET_URL})
+-    FetchContent_GetProperties(lpcnet)
+-    if(NOT lpcnet_POPULATED)
+-        FetchContent_Populate(lpcnet)
+-    endif()
+-endif()
++set(lpcnet_SOURCE_DIR ${WRKDIR})
+ 
+ # Find codec2
+ if(CODEC2_BUILD_DIR)

@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	libgphoto2
 PORTVERSION=	2.5.26
 PORTREVISION=	2

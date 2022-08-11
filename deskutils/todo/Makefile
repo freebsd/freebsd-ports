@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	todo
 PORTVERSION=	2.12.0
 CATEGORIES=	deskutils

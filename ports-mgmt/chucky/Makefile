@@ -1,5 +1,3 @@
-# Created by: "Waitman Gobble" <uzimac@da3m0n8t3r.com>
-
 PORTNAME=	chucky
 PORTVERSION=	1.0
 PORTREVISION=	1
@@ -12,6 +10,9 @@ LICENSE=	CHUCKY
 LICENSE_NAME=	CHUCKY BSD LICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=		Uses the obsoleted $FreeBSD tag
+EXPIRATION_DATE=	2023-01-01
 
 LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN} \
 		libsqlite3.so:databases/sqlite3

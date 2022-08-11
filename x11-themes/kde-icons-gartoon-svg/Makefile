@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	gartoon
 PORTVERSION=	1.3
 MASTER_SITES=	LOCAL/fluffy \

@@ -1,5 +1,3 @@
-# Created by: nox@jelal.kn-bremen.de
-
 PORTNAME=	gramofile
 PORTVERSION=	1.6P
 PORTREVISION=	14

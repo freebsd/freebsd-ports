@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	openldap
 PORTVERSION=	2.4.44
 DISTVERSIONSUFFIX=	-22.el7

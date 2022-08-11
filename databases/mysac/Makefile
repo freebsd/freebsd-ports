@@ -1,5 +1,3 @@
-# Created by: Jake Smith <jake@xz.cx>
-
 PORTNAME=	mysac
 PORTVERSION=	1.1.2
 CATEGORIES=	databases

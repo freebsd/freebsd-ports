@@ -1,5 +1,3 @@
-# Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
-
 PORTNAME=	wmsmixer
 PORTVERSION=	0.5.1
 PORTREVISION=	1

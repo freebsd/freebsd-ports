@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	ccrtp
 PORTVERSION=	2.1.2
 CATEGORIES=	devel

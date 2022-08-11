@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Algorithm-Evolutionary
 PORTVERSION=	0.82.1
 CATEGORIES=	devel perl5

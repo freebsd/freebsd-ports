@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	Devel-LeakGuard-Object
 PORTVERSION=	0.06
 PORTREVISION=	2

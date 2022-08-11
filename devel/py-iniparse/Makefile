@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-
 PORTNAME=	iniparse
 PORTVERSION=	0.5
 CATEGORIES=	devel python

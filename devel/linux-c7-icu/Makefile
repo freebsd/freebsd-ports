@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
-
 PORTNAME=	icu
 PORTVERSION=	50.2
 DISTVERSIONSUFFIX=	-4.el7_7

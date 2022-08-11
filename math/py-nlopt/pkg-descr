@@ -1,0 +1,4 @@
+Python bindings for NLOpt that contains various routines for
+non-linear optimization.
+
+WWW: https://github.com/DanielBok/nlopt-python

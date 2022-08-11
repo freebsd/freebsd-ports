@@ -1,5 +1,3 @@
-# Created by: nsayer@FreeBSD.org
-
 PORTNAME=	libmcrypt
 PORTVERSION=	2.5.8
 PORTREVISION=	3

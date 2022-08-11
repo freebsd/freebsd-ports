@@ -1,5 +1,3 @@
-# Created by: Dominic Mitchell <dom@happygiraffe.net>
-
 PORTNAME=	Apache-MP3
 PORTVERSION=	4.00
 PORTREVISION=	4

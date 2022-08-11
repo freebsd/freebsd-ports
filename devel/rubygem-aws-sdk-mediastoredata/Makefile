@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-mediastoredata
 PORTVERSION=	1.38.0
 CATEGORIES=	devel rubygems

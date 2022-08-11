@@ -1,7 +1,6 @@
 PORTNAME=	labwc
-DISTVERSION=	0.5.1
-PORTREVISION=	1
-CATEGORIES=	x11-wm
+DISTVERSION=	0.5.3
+CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland stacking compositor

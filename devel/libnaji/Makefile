@@ -1,5 +1,3 @@
-# Created by: NECDET COKYAZICI <cokyazici@yahoo.co.uk>
-
 PORTNAME=	libnaji
 PORTVERSION=	0.6.4
 DISTVERSIONSUFFIX=	.src

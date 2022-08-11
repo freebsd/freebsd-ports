@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Log-Dispatch-ArrayWithLimits
 PORTVERSION=	0.050
 CATEGORIES=	devel perl5

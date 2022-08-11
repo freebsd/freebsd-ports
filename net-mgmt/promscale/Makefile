@@ -1,8 +1,6 @@
-# Created by Kevin Bowling <kbowling@FreeBSD.org>
-
 PORTNAME=	promscale
 DISTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	kbowling@FreeBSD.org

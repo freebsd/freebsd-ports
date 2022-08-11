@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	jishyo
 PORTVERSION=	0.1
 PORTREVISION=	11

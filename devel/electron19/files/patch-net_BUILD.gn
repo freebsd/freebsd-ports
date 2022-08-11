@@ -1,0 +1,91 @@
+--- net/BUILD.gn.orig	2022-05-25 04:01:05 UTC
++++ net/BUILD.gn
+@@ -104,7 +104,7 @@ net_configs = [
+   "//build/config/compiler:wexit_time_destructors",
+ ]
+ 
+-if (is_linux || is_chromeos) {
++if ((is_linux || is_chromeos) && !is_bsd) {
+   net_configs += [ "//build/config/linux:libresolv" ]
+ }
+ 
+@@ -1081,6 +1081,7 @@ component("net") {
+     "//net/dns:mdns_client",
+     "//net/dns/public",
+     "//net/third_party/quiche",
++    "//sandbox/policy",
+   ]
+ 
+   allow_circular_includes_from = [
+@@ -1207,6 +1208,15 @@ component("net") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "base/address_tracker_linux.cc",
++      "base/address_tracker_linux.h",
++      "base/network_change_notifier_linux.cc",
++      "base/network_interfaces_linux.cc",
++    ]
++  }   
++
+   if (is_mac) {
+     sources += [
+       "base/network_notification_thread_mac.cc",
+@@ -1337,7 +1347,7 @@ component("net") {
+     }
+   }
+ 
+-  if (is_android || is_chromeos_ash) {
++  if (is_android || is_chromeos_ash || is_bsd) {
+     sources += [
+       "base/network_change_notifier_posix.cc",
+       "base/network_change_notifier_posix.h",
+@@ -1370,7 +1380,7 @@ component("net") {
+   }
+ 
+   # Use getifaddrs() on POSIX platforms, except Linux.
+-  if (is_posix && !is_linux && !is_chromeos) {
++  if ((is_posix && !is_linux && !is_chromeos) || is_bsd) {
+     sources += [
+       "base/network_interfaces_getifaddrs.cc",
+       "base/network_interfaces_getifaddrs.h",
+@@ -4358,7 +4368,7 @@ test("net_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "base/address_tracker_linux_unittest.cc",
+       "base/network_interfaces_linux_unittest.cc",
+@@ -4432,6 +4442,10 @@ test("net_unittests") {
+     "//url:buildflags",
+   ]
+ 
++  if (is_bsd) {
++    deps += [ "//sandbox/policy" ]
++  }
++
+   allow_circular_includes_from = [ "//net/third_party/quiche:quiche_tests" ]
+ 
+   if (enable_websockets) {
+@@ -4502,7 +4516,7 @@ test("net_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "quic/platform/impl/quic_flags_test.cc",
+       "tools/quic/quic_http_proxy_backend_stream_test.cc",
+@@ -4649,7 +4663,7 @@ test("net_unittests") {
+   }
+ 
+   # Use getifaddrs() on POSIX platforms, except Linux.
+-  if (is_posix && !is_linux && !is_chromeos) {
++  if (is_posix && !is_linux && !is_chromeos && !is_bsd) {
+     sources += [ "base/network_interfaces_getifaddrs_unittest.cc" ]
+   }
+ 

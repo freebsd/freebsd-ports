@@ -1,5 +1,3 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-
 PORTNAME=	dmg2img
 PORTVERSION=	1.6.7
 CATEGORIES=	sysutils

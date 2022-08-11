@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Type-Tiny-Signatures
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

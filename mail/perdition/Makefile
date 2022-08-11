@@ -1,5 +1,3 @@
-# Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
-
 PORTNAME=	perdition
 PORTVERSION=	2.2
 PORTREVISION=	1

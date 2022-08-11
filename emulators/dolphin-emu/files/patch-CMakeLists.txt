@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-07-04 04:19:59 UTC
+--- CMakeLists.txt.orig	2022-07-06 07:23:55 UTC
 +++ CMakeLists.txt
-@@ -97,7 +97,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+@@ -133,7 +133,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
  # Set up paths
  set(bindir  ${CMAKE_INSTALL_PREFIX}/bin               CACHE PATH "bindir")
  set(datadir ${CMAKE_INSTALL_PREFIX}/share/dolphin-emu CACHE PATH "datadir")

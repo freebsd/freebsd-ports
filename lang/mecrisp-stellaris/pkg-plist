@@ -3,7 +3,7 @@ bin/mecrisp-stellaris
 %%DOCSDIR%%/README
 %%DATADIR%%/VIS/VIS-README
 %%DATADIR%%/VIS/vis-0.8.4-disassembler-m3.fs
-%%DATADIR%%/VIS/vis-0.8.4-mecrisp-stellaris.fs
+%%DATADIR%%/VIS/vis-0.8.4.1-mecrisp-stellaris.fs
 %%DATADIR%%/VIS/vis-conditional-200x.txt
 %%DATADIR%%/accept-replacement.txt
 %%DATADIR%%/ansification-tester.txt

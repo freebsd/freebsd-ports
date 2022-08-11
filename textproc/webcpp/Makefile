@@ -1,5 +1,3 @@
-# Created by: Nosov Artem <chip-set@mail.ru>
-
 PORTNAME=	webcpp
 PORTVERSION=	0.8.4
 CATEGORIES=	textproc

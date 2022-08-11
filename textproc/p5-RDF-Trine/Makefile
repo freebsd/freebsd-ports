@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	RDF-Trine
 PORTVERSION=	1.019
 PORTREVISION=	1

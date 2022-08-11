@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	Net-TcpDumpLog
 PORTVERSION=	0.11
 PORTREVISION=	1

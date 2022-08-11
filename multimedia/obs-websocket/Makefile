@@ -1,5 +1,5 @@
-PORTNAME=	obs-websocket
-DISTVERSION=	4.8.0
+PORTNAME=	obs-websocket # will be included in obs-studio-28.x - port should be removed then
+DISTVERSION=	5.0.1
 CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,20 +11,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	websocketpp>0:devel/websocketpp
 LIB_DEPENDS=	libobs.so:multimedia/obs-studio
 
-USES=		cmake compiler:c++17-lang localbase:ldflags qt:5
-USE_GITHUB=	yes
-GH_ACCOUNT=	Palakis
-GH_TUPLE=	chriskohlhoff:asio:b73dc1d2c0ecb9452a87c26544d7f71e24342df6:chriskohlhoff_asio/deps/asio
+USES=		cmake:insource compiler:c++17-lang localbase:ldflags qt:5 # insource because of https://github.com/obsproject/obs-websocket/issues/973
 USE_QT=		core gui widgets buildtools_build concurrent_build qmake_build
 
-OPTIONS_DEFINE=		IPV4 # with devel/websocketpp it's either IPv4 or IPv6, but not both
-OPTIONS_DEFAULT=	IPV4 # project defaults to IPv6 but the port defaults to IPv4 because IPv4 is currently more common
+USE_GITHUB=	yes
+GH_ACCOUNT=	obsproject
+GH_TUPLE=	chriskohlhoff:asio:b73dc1d2c0ecb9452a87c26544d7f71e24342df6:chriskohlhoff_asio/deps/asio \
+		nlohmann:json:a34e011:json/deps/json \
+		nayuki:QR-Code-generator:8518684:qr/deps/qr
 
-post-patch-IPV4-on:
-	@${REINPLACE_CMD} -e 's|ip::tcp::v6|ip::tcp::v4|g' ${WRKSRC}/deps/asio/asio/src/tests/unit/ip/tcp.cpp
-	@${REINPLACE_CMD} -e 's|_server.listen(|_server.listen(asio::ip::tcp::v4(), |g' ${WRKSRC}/src/WSServer.cpp
-
-post-install: # see https://github.com/Palakis/obs-websocket/issues/457
-	@${RM} -r ${STAGEDIR}${PREFIX}/lib/amd64-linux-gnu
+PLIST_FILES=	lib/obs-plugins/obs-websocket.so \
+		share/obs/obs-plugins/obs-websocket/locale/en-US.ini
 
 .include <bsd.port.mk>

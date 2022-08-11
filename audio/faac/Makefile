@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	faac
 PORTVERSION=	1.30
 CATEGORIES=	audio

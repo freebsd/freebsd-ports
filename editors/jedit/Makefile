@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	jedit
 PORTVERSION=	5.6.0
 PORTEPOCH=	1

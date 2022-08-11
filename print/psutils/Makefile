@@ -1,5 +1,3 @@
-# Created by: Jean-Marc Zucconi <jmz@FreeBSD.org> and David O'Brien <obrien@FreeBSD.org>
-
 PORTNAME=	psutils
 PORTVERSION=	1.17
 PORTREVISION=	5

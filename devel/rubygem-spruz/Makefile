@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	spruz
 PORTVERSION=	0.2.13
 CATEGORIES=	devel rubygems

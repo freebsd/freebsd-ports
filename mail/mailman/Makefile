@@ -1,5 +1,3 @@
-# Created by: n_hibma@qubesoft.com
-
 PORTNAME=	mailman
 DISTVERSION=	2.1.39
 PORTREVISION=	1

@@ -1,8 +1,6 @@
-# Created by: ijliao
-
 PORTNAME=	dumpmpeg
 PORTVERSION=	0.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	SF
 

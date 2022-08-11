@@ -1,5 +1,3 @@
-# Created by: "Choe, Cheng-Dae" whitekid
-
 PORTNAME=	sqlobject
 PORTVERSION=	1.6.0
 PORTREVISION=	1
@@ -8,7 +6,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLObject-${PORTVERSION}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python object for manipulation with SQL table row
 
 LICENSE=	LGPL21

@@ -1,0 +1,3 @@
+bin/fccf
+%%DATADIR%%/fccfConfig.cmake
+%%DATADIR%%/fccfConfigVersion.cmake

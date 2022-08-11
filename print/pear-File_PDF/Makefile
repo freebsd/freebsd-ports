@@ -1,5 +1,3 @@
-# Created by: Anish Mistry <amistry@am-productions.biz>
-
 PORTNAME=	File_PDF
 PORTVERSION=	0.3.3
 CATEGORIES=	print pear

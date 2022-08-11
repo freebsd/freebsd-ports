@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Text-Greeking-zh_TW
 PORTVERSION=	1.0
 PORTREVISION=	1

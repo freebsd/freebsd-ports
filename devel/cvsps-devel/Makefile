@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cvsps
 DISTVERSION=	2.2b1
 CATEGORIES=	devel

@@ -1,12 +1,15 @@
 PORTNAME=	mesa
-DISTVERSION=	22.1-branchpoint-436
-DISTVERSIONSUFFIX=	-g2ca8b014d11
+DISTVERSION=	22.2-branchpoint-406
+DISTVERSIONSUFFIX=	-g4e9cce39d3f
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	700efacda59c.patch:-p1
 PATCHFILES+=	50433886a3e3.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/6881
+PATCHFILES+=	4356e7185193.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/16987
+PATCHFILES+=	b2a22acce617.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/16987
+PATCHFILES+=	19eb2c30bff0.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/16987
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bleeding edge Mesa drivers (OpenGL, Vulkan)
@@ -71,12 +74,14 @@ ${j}_VARS+=		${i}_DRIVERS+=${j:S/anv/intel/:S/radv/amd/}
 GALLIUM_DESC=		Unified OpenGL drivers
 crocus_DESC=		Broadwater, Eaglelake, Ironlake, Sandybridge, Ivybridge, Haswell
 iris_DESC=		Broadwell and newer
+panfrost_DESC=		Midgard, Bifrost
 r600_DESC=		R600, R700, Evergreen, Northern Islands (implies LLVM)
 radeonsi_DESC=		Southern Islands and newer (implies LLVM)
 
 VULKAN_DESC=		Vulkan drivers
 anv_DESC=		Haswell and newer
 radv_DESC=		Southern Islands and newer (implies LLVM)
+radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 
 COINST_DESC=		Allow co-installation with another Mesa port
 COINST_MESON_ON=	-Degl-lib-suffix=${PKGNAMESUFFIX}
@@ -111,7 +116,7 @@ VDPAU_IMPLIES=		X11
 VKLAYERS_DESC=		Vulkan layers: ${VKLAYERS_MESON_ON:C/.*=//} (implies ${VKLAYERS_IMPLIES})
 VKLAYERS_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 VKLAYERS_MESON_ON=	-Dvulkan-layers=device-select,overlay
-VKLAYERS_IMPLIES=	${"${PORT_OPTIONS:Mradv}":?radv:anv} # any from OPTIONS_GROUP_VULKAN
+VKLAYERS_IMPLIES=	${"${PORT_OPTIONS:Manv}":?anv:radv} # any from OPTIONS_GROUP_VULKAN
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-server.so:graphics/wayland

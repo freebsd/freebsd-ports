@@ -1,0 +1,11 @@
+--- configure.ac.orig	2020-11-26 23:20:59 UTC
++++ configure.ac
+@@ -842,7 +842,7 @@ save_LIBS="$LIBS"
+ AM_CONDITIONAL(BUILD_SPHINX, test "x$have_glib" = "xyes" -a "x$have_windows" = "xno" -a "x$have_png" = "xyes")
+ 
+ save_LIBS="$LIBS"
+-AC_CHECK_LIB(rt, shm_open, shm_LIBS="-lrt")
++AC_CHECK_LIB(c, shm_open, shm_LIBS="")
+ AC_SUBST(shm_LIBS)
+ LIBS="$save_LIBS"
+ 

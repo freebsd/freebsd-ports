@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	zeronet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1

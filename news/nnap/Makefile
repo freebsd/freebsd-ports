@@ -1,5 +1,3 @@
-# Created by: Lasse L. Johnsen (lasse@freebsdcluster.org)
-
 PORTNAME=	nnap
 PORTVERSION=	1.1
 CATEGORIES=	news

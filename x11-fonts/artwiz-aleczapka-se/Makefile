@@ -1,5 +1,3 @@
-# Created by: Herbert J. Skuhra <herbert.skuhra@gmx.at>
-
 PORTNAME=	artwiz-aleczapka-se
 PORTVERSION=	1.3
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	uhexen
 PORTVERSION=	0.601
 PORTREVISION=	11

@@ -1,5 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-
 PORTNAME=	wmpinboard
 PORTVERSION=	1.0
 PORTREVISION=	5

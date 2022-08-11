@@ -1,5 +1,3 @@
-# Created by: Slaven Rezic <eserte@cs.tu-berlin.de>
-
 PORTNAME=	BBBike
 PORTVERSION=	3.18
 PORTREVISION=	4

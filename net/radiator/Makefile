@@ -1,5 +1,3 @@
-# Created by: shan
-
 PORTNAME=	Radiator
 PORTVERSION=	4.24
 CATEGORIES=	net

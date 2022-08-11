@@ -1,5 +1,3 @@
-# Created by: Oleg Mamontov <oleg@mamontov.net>
-
 PORTNAME=	WWW-Mechanize-Meta
 PORTVERSION=	0.07
 PORTREVISION=	1

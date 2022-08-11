@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@geeksrus.net>
-
 PORTNAME=	sa
 PORTVERSION=	1.2.6
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	m2vrequantiser
 PORTVERSION=	1.1
 CATEGORIES=	multimedia

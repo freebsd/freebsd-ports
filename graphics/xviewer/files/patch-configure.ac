@@ -1,0 +1,21 @@
+--- configure.ac.orig	2021-12-31 13:12:10 UTC
++++ configure.ac
+@@ -43,7 +43,6 @@ PKG_PROG_PKG_CONFIG
+ 
+ PKG_PROG_PKG_CONFIG
+ 
+-GTK_DOC_CHECK(1.16)
+ 
+ AC_CHECK_FUNCS(strptime)
+ 
+@@ -350,10 +349,6 @@ data/icons/scalable/Makefile
+ data/icons/32x32/Makefile
+ data/icons/48x48/Makefile
+ data/icons/scalable/Makefile
+-doc/Makefile
+-doc/reference/Makefile
+-doc/reference/version.xml
+-doc/reference/xviewer-docs.xml
+ ])
+ 
+ AC_OUTPUT

@@ -2,8 +2,8 @@ bin/keepassxc
 bin/keepassxc-cli
 %%BROWSER%%bin/keepassxc-proxy
 %%AUTOTYPE%%lib/keepassxc/libkeepassxc-autotype-xcb.so
-man/man1/keepassxc-cli.1.gz
-man/man1/keepassxc.1.gz
+share/man/man1/keepassxc-cli.1.gz
+share/man/man1/keepassxc.1.gz
 share/applications/org.keepassxc.KeePassXC.desktop
 share/icons/hicolor/256x256/apps/keepassxc.png
 share/icons/hicolor/scalable/apps/keepassxc-locked.svg

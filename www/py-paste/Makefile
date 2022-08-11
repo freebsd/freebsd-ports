@@ -1,5 +1,3 @@
-# Created by: Dryice Liu	<dryice@dryice.name>
-
 PORTNAME=	Paste
 PORTVERSION=	3.4.6
 PORTREVISION=	0

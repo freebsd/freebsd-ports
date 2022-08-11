@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	qelectrotech
 DISTVERSION=	0.7.0
 PORTREVISION=	1

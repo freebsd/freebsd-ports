@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	filelock
 DISTVERSION=	1.0.2
 CATEGORIES=	devel

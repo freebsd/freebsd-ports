@@ -1,7 +1,5 @@
-# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	e16
-PORTVERSION=	1.0.24
+PORTVERSION=	1.0.25
 PORTREVISION=	0
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}/
@@ -14,10 +12,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		autoreconf gettext-tools gmake iconv libtool gnome perl5 \
-		pkgconfig shebangfix xorg
+		pkgconfig python shebangfix xorg
 
 INSTALL_TARGET=	install-strip
 
@@ -69,8 +68,6 @@ CONFIGURE_ARGS+=--enable-sound=no --with-sndldr=none
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|$$(USER)|${SHAREOWN}:${SHAREGRP}|g' \
-	    ${WRKSRC}/themes/Makefile.am ${WRKSRC}/themes/Makefile.in
 	${REINPLACE_CMD} -e '/dl, dlopen/d' ${WRKSRC}/configure.ac
 
 post-patch-DOCS-off:

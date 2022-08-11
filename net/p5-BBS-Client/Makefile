@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng, Lin <yzlin@cs.nctu.edu.tw>
-
 PORTNAME=	BBS-Client
 PORTVERSION=	0.03
 PORTREVISION=	1

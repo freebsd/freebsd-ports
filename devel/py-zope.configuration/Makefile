@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	zope.configuration
 PORTVERSION=	4.1.0
 PORTREVISION=	0

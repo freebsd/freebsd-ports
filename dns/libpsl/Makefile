@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libpsl
 PORTVERSION=	0.21.1
 PORTREVISION=	4

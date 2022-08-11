@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	File-Stream
 PORTVERSION=	2.30
 PORTREVISION=	1

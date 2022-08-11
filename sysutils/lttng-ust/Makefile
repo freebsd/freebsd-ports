@@ -1,5 +1,3 @@
-# Created by: Mahdi Mokhtari <mokhi64@gmail.com>
-
 PORTNAME=	lttng-ust
 PORTVERSION=	2.9.0
 PORTREVISION=	2
@@ -14,6 +12,8 @@ LICENSE_COMB=		dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 LICENSE_FILE_MIT=	${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+
+BROKEN=		fails to configure: Cannot find liburcu-bp lib. Use LDFLAGS=-Ldir to specify its location
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		xmlto:textproc/xmlto

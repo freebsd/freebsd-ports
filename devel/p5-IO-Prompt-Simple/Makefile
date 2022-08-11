@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	IO-Prompt-Simple
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5

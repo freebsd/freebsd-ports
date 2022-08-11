@@ -1,5 +1,3 @@
-# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-
 PORTNAME=	nexfontsel
 PORTVERSION=	3.0.1
 PORTREVISION=	4

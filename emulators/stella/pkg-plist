@@ -41,6 +41,8 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_options_snapshots.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_override.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/logs.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/navigation_buttons.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/open_help.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_audio.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer.png
@@ -66,6 +68,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_video_tv.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/pacman.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/qwertz.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/reload_list.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/resources/debugger_main.pdn
 %%PORTDOCS%%%%DOCSDIR%%/graphics/resources/default_snapshot.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/romaudit.png
@@ -73,6 +76,10 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rominfo_1x_small.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rominfo_2x_small.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/secret_quest.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/show_all.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/show_current_dir.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/show_roms.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/show_sub_dirs.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/space_invaders.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/timemachine.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html

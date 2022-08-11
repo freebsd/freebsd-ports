@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Tie-IxHash
 PORTVERSION=	1.23
 PORTREVISION=	1

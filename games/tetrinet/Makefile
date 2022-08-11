@@ -1,5 +1,3 @@
-# Created by: Fredrik Carlsson <fredrik@wasadata.com>
-
 PORTNAME=	tetrinet
 PORTVERSION=	0.11
 PORTREVISION=	1

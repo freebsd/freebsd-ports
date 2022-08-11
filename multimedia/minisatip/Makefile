@@ -1,7 +1,5 @@
-# Created by: Bernhard Froehlich <decke@FreeBSD.org>
-
 PORTNAME=	minisatip
-PORTVERSION=	1.1.91
+PORTVERSION=	1.2.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia
 

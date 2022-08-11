@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PKGNAMESUFFIX=	-client
 
 MAINTAINER=	mm@FreeBSD.org

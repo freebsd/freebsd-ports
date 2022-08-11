@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@rainbow-runner.nl>
-
 PORTNAME=	gstreamer1-libav
 PORTVERSION=	1.16.2
 CATEGORIES=	multimedia
@@ -20,10 +18,9 @@ LIB_DEPENDS=	liborc-0.4.so:devel/orc
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:features gettext-runtime gmake gnome libtool localbase \
+USES=		compiler:features gettext-runtime gmake gnome gstreamer libtool localbase \
 		pkgconfig python:build tar:xz
 USE_LDCONFIG=	yes
-USE_GSTREAMER1=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

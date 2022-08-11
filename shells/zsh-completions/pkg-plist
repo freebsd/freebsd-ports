@@ -11,7 +11,6 @@ share/zsh/site-functions/_cap
 share/zsh/site-functions/_cask
 share/zsh/site-functions/_ccache
 share/zsh/site-functions/_cf
-share/zsh/site-functions/_cheat
 share/zsh/site-functions/_choc
 share/zsh/site-functions/_chromium
 share/zsh/site-functions/_cmake
@@ -52,6 +51,7 @@ share/zsh/site-functions/_golang
 share/zsh/site-functions/_google
 share/zsh/site-functions/_gpgconf
 share/zsh/site-functions/_gtk-launch
+share/zsh/site-functions/_hello
 share/zsh/site-functions/_hledger
 share/zsh/site-functions/_homestead
 share/zsh/site-functions/_httpie
@@ -81,6 +81,7 @@ share/zsh/site-functions/_nftables
 share/zsh/site-functions/_node
 share/zsh/site-functions/_nvm
 share/zsh/site-functions/_openssl
+share/zsh/site-functions/_openvpn3
 share/zsh/site-functions/_optirun
 share/zsh/site-functions/_opustools
 share/zsh/site-functions/_patool
@@ -95,11 +96,13 @@ share/zsh/site-functions/_pm2
 share/zsh/site-functions/_port
 share/zsh/site-functions/_protoc
 share/zsh/site-functions/_pygmentize
+share/zsh/site-functions/_qmk
 share/zsh/site-functions/_rails
 share/zsh/site-functions/_ralio
 share/zsh/site-functions/_redis-cli
 share/zsh/site-functions/_rfkill
 share/zsh/site-functions/_rkt
+share/zsh/site-functions/_rmlint
 share/zsh/site-functions/_rslsync
 share/zsh/site-functions/_rspec
 share/zsh/site-functions/_rsvm
@@ -124,6 +127,7 @@ share/zsh/site-functions/_thor
 share/zsh/site-functions/_tmuxinator
 share/zsh/site-functions/_tmuxp
 share/zsh/site-functions/_tox
+share/zsh/site-functions/_trash
 share/zsh/site-functions/_trash-empty
 share/zsh/site-functions/_trash-list
 share/zsh/site-functions/_trash-put

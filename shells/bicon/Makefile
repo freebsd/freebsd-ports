@@ -1,5 +1,3 @@
-# Created by: Carlos Jacobo Puga Medina <cpm@FreeBSD.org>
-
 PORTNAME=	bicon
 PORTVERSION=	0.5
 CATEGORIES=	shells

@@ -1,5 +1,3 @@
-# Created by: William Ward <William.Ward@ericsson.com>
-
 PORTNAME=	nylon
 PORTVERSION=	1.21
 PORTREVISION=	10

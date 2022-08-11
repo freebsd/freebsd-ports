@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@mu.org>
-
 PORTNAME=	tshark
 
 CONFLICTS_INSTALL?=	tshark-lite wireshark-lite wireshark

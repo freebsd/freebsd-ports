@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	adzap
 PORTVERSION=	20110915
 PORTREVISION=	2

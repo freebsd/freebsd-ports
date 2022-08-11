@@ -1,5 +1,3 @@
-# Created by: Roman Shterenzon <roman@xpert.com>
-
 PORTNAME=	id3lib
 PORTVERSION=	3.8.3
 PORTREVISION=	10

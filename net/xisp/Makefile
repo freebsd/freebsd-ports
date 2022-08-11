@@ -1,5 +1,3 @@
-# Created by: tm@onepost.net
-
 PORTNAME=	xisp
 PORTVERSION=	2.7p4
 PORTREVISION=	9

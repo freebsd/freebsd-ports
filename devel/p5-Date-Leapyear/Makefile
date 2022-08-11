@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Date-Leapyear
 PORTVERSION=	1.72
 PORTREVISION=	1

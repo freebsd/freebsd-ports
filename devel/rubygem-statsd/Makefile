@@ -1,5 +1,3 @@
-# Created by: Evan Sarmiento <bsdports@wayfair.com>
-
 PORTNAME=	statsd
 PORTVERSION=	0.5.4
 CATEGORIES=	devel rubygems

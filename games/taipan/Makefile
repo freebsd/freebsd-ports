@@ -1,5 +1,3 @@
-# Created by: Dave Walton <dwalton@acm.org>
-
 PORTNAME=	taipan
 PORTVERSION=	0.9
 PORTREVISION=	2

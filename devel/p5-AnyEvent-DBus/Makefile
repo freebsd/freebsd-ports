@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@FreeBSD.org>
-
 PORTNAME=	AnyEvent-DBus
 PORTVERSION=	0.31
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alexander Kuehn <freebsd@nagilum.org>
-
 PORTNAME=	zopfli
 PORTVERSION=	1.0.3
 DISTVERSIONPREFIX=	zopfli-

@@ -1,5 +1,3 @@
-# Created by: andreas
-
 PORTNAME=	ntp
 PORTVERSION=	4.2.8p15
 PORTREVISION=	5

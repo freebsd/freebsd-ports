@@ -1,9 +1,7 @@
-# Created by: Hugo Saro <hugo@barafranca.com>
-
 PORTNAME=	haproxy
-DISTVERSION=	2.6-dev3
+DISTVERSION=	2.7-dev2
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/2.6/src/devel/
+MASTER_SITES=	http://www.haproxy.org/download/2.7/src/devel/
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -23,7 +21,7 @@ default_CONFLICTS_INSTALL=	haproxy-devel-lua
 lua_CONFLICTS_INSTALL=		haproxy-devel
 lua_PKGNAMESUFFIX=		devel-lua
 
-CONFLICTS_INSTALL=	haproxy haproxy17 haproxy18 haproxy19 haproxy20 haproxy21 haproxy22 haproxy23 haproxy24
+CONFLICTS_INSTALL=	haproxy haproxy17 haproxy18 haproxy20 haproxy22 haproxy23 haproxy24 haproxy25
 
 ALL_TARGET=	all admin/halog/halog
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
@@ -44,7 +42,7 @@ SPCRE_DESC=		Link pcre(1) statically
 SPCRE2_DESC=		Link pcre2 statically
 DEVICEATLAS_DESC=	DeviceAtlas Device Detection support
 PROMEX_DESC=		Enable Prometheus exporter
-OPTIONS_DEFAULT=	DPCRE2 OPENSSL
+OPTIONS_DEFAULT=	DPCRE2 OPENSSL PROMEX
 
 DPCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 DPCRE_MAKE_ARGS=	USE_PCRE=1 USE_PCRE_JIT=1

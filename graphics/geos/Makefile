@@ -1,10 +1,8 @@
-# Created by: Leonardo Martins <lmartins@nepe.eee.ufg.br>
-
 PORTNAME=	geos
-PORTVERSION=	3.10.2
+PORTVERSION=	3.11.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/geos/ \
-		LOCAL/sunpoet
+		https://github.com/libgeos/geos/releases/download/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Geometry Engine, Open Source

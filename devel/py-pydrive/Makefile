@@ -1,5 +1,3 @@
-# Created by: Paul Mather <paul@gromit.dlib.vt.edu>
-
 PORTNAME=	pydrive
 PORTVERSION=	1.3.1
 PORTREVISION=	1

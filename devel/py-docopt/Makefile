@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	docopt
 PORTVERSION=	0.6.2
 PORTREVISION=	1

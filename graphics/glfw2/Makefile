@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	glfw
 PORTVERSION=	2.7.9
 PORTREVISION=	3
@@ -12,6 +10,8 @@ COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
+
+CONFLICTS_INSTALL=	glfw
 
 USES=		gl tar:bzip2 xorg
 HAS_CONFIGURE=	yes

@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	Text-Format+NWrap
 PORTVERSION=	0.52
 PORTREVISION=	1

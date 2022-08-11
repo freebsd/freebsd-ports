@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	keyring
 PORTVERSION=	18.0.1
 PORTEPOCH=	1

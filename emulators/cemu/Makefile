@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	cemu
 PORTVERSION=	1.3
 DISTVERSIONPREFIX=	v

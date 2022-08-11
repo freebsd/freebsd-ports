@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	virtualenvwrapper
 PORTVERSION=	4.8.4
 PORTREVISION=	1

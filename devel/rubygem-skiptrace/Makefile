@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	skiptrace
 PORTVERSION=	0.8.1
 CATEGORIES=	devel rubygems

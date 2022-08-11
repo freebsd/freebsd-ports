@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Astro-SIMBAD-Client
 PORTVERSION=	0.046
 CATEGORIES=	astro perl5

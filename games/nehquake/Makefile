@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	nehquake
 PORTVERSION=	1.0
 PORTREVISION=	9

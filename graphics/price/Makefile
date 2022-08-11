@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	price
 PORTVERSION=	1.3.0
 PORTREVISION=	7

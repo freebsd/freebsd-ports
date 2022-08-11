@@ -1,5 +1,3 @@
-# Created by: Florent Thoumie <flz@xbsd.org>
-
 PORTNAME=	Crypt-SmbHash
 PORTVERSION=	0.12
 PORTREVISION=	1

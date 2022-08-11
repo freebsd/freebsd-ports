@@ -1,5 +1,3 @@
-# Created by: Zhen REN <bg1tpt@gmail.com>
-
 PORTNAME=	Services_Digg
 PORTVERSION=	0.4.7
 PORTREVISION=	1

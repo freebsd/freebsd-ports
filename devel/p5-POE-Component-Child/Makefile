@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	POE-Component-Child
 PORTVERSION=	1.39
 PORTREVISION=	1

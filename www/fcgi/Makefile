@@ -1,5 +1,3 @@
-# Created by: kbyanc
-
 PORTNAME=	fcgi
 PORTVERSION=	2.4.0
 PORTREVISION=	5

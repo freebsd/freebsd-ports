@@ -1,5 +1,3 @@
-# Created by: Alexander Churanov <churanov.port.maintainer@gmail.com>
-
 PORTNAME=	boost-all
 
 USES=		metaport

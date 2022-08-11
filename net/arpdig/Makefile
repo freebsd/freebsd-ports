@@ -1,5 +1,3 @@
-# Created by: marck@FreeBSD.org
-
 PORTNAME=	arpdig
 PORTVERSION=	0.5.6
 CATEGORIES=	net

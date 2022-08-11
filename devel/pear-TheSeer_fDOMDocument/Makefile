@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	fDOMDocument
 PORTVERSION=	1.6.7
 CATEGORIES=	devel www pear

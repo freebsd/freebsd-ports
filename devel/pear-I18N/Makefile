@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	I18N
 PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear

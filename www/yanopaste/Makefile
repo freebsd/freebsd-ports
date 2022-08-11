@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	yanopaste
 PORTVERSION=	1.3.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Authen-Simple-DBI
 PORTVERSION=	0.2
 PORTREVISION=	1

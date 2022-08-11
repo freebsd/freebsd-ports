@@ -1,7 +1,6 @@
 PORTNAME=	octopus
-DISTVERSION=	11.3
-PORTREVISION=	1
-CATEGORIES=	science
+DISTVERSION=	11.4
+CATEGORIES=	science # chemistry
 MASTER_SITES=	https://octopus-code.org/download/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +8,7 @@ COMMENT=	Scientific program aimed at the ab initio virtual experimentation
 
 LICENSE=	GPLv2
 
-BROKEN_aarch64=	undefined reference to `__aarch64_cas8_acq_rel' #'
+BROKEN_aarch64=	undefined reference to `__aarch64_cas8_acq_rel' #'`
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libarpack.so:math/arpack-ng \
@@ -31,8 +30,8 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libxc.so:science/libxc \
 		libyaml.so:textproc/libyaml
 
-USES=		compiler:c++11-lang fortran gmake jpeg libtool localbase:ldflags perl5 python shebangfix
-USE_CXXSTD=	c++11
+USES=		compiler:c++14-lang fortran gmake jpeg libtool localbase:ldflags perl5 python shebangfix
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/fdep/fortran_dependencies.pl testsuite/performance/create_combinations.py
@@ -45,7 +44,7 @@ LDFLAGS+=	-lsymspg
 FCFLAGS+=	-I${LOCALBASE}/include -ffree-line-length-none
 
 INSTALL_TARGET=	install-strip
-TEST_TARGET=	check-short # some tests fail
+TEST_TARGET=	check-short # some tests fail, see https://gitlab.com/octopus-code/octopus/-/issues/558
 
 OPTIONS_DEFINE=			OPENMP
 OPTIONS_DEFAULT=		OPENMP

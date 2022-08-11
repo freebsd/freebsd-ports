@@ -1,5 +1,3 @@
-# Created by: Oleg R. Muhutdinov <mor@WhiteLuna.com>
-
 PORTNAME=	Net-BitTorrent-File
 PORTVERSION=	1.02
 DISTVERSIONSUFFIX=	-fix

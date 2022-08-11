@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@FreeBSD.org>
-
 PORTNAME=	djbdns
 PORTVERSION=	1.05
 CATEGORIES=	dns

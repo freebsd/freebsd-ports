@@ -1,5 +1,3 @@
-# Created by: Alexander Timoshenko <gonzo@univ.kiev.ua>
-
 PORTNAME=	libpri
 PORTVERSION=	1.6.0
 CATEGORIES=	misc

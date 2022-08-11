@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	wheel
 PORTVERSION=	0.36.2
 CATEGORIES=	devel

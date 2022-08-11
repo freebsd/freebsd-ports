@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	File-Copy-Recursive
 PORTVERSION=	0.45
 CATEGORIES=	devel perl5

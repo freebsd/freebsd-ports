@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	libdkim
 PORTVERSION=	1.0.21
 CATEGORIES=	mail

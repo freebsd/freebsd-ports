@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xtron
 PORTVERSION=	1.1a
 PORTREVISION=	3

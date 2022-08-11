@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	mysql-connector-c
 PORTVERSION=	6.1.11
 PORTREVISION=	1

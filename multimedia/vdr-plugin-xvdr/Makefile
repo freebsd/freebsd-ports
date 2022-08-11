@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-xvdr
 PORTVERSION=	0.9.5
 PORTREVISION=	8

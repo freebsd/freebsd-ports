@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	gettext_i18n_rails_js
 PORTVERSION=	1.3.1
 CATEGORIES=	devel rubygems

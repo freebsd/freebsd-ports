@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	gd2
 PORTVERSION=	1.1.1
 PORTREVISION=	7

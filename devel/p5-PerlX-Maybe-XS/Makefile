@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	PerlX-Maybe-XS
 PORTVERSION=	1.001
 CATEGORIES=	devel perl5

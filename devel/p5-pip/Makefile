@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	pip
 PORTVERSION=	1.19
 PORTREVISION=	1

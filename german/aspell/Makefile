@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	aspell
 MASTER_SITES=	https://j3e.de/ispell/igerman98/dict/
 PORTVERSION=	20161207

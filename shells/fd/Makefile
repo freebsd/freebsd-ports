@@ -1,5 +1,3 @@
-# Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-
 PORTNAME=	fd
 PORTVERSION=	3.01j
 CATEGORIES=	shells net

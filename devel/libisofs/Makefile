@@ -1,5 +1,3 @@
-# Created by: J.R. Oldroyd <fbsd@opal.com>
-
 PORTNAME=	libisofs
 PORTVERSION=	1.5.4
 CATEGORIES=	devel

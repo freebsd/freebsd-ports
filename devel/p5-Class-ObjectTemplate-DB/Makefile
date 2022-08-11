@@ -1,5 +1,3 @@
-# Created by: Tony Maher <tonym@biolateral.com.au>
-
 PORTNAME=	Class-ObjectTemplate-DB
 PORTVERSION=	0.27
 PORTREVISION=	1

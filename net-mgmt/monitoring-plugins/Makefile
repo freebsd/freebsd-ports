@@ -1,5 +1,3 @@
-# Created by: Blaz Zupan <blaz@si.FreeBSD.org>
-
 PORTNAME=	monitoring-plugins
 PORTVERSION=	2.3.1
 CATEGORIES=	net-mgmt

@@ -1,0 +1,14 @@
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codec.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cssencodings.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/customlog.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imports.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minify.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/properties_with_same_name.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/selectors_tolower.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serialize.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/style.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styledeclaration.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testutil.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website.py

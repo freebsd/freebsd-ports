@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	Net-UPS
 PORTVERSION=	0.16
 PORTREVISION=	1

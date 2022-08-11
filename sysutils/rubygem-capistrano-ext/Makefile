@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	capistrano-ext
 PORTVERSION=	1.2.1
 CATEGORIES=	sysutils rubygems

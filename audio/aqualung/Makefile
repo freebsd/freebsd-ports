@@ -1,8 +1,6 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	aqualung
 PORTVERSION=	1.0
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	audio
 MASTER_SITES=	SF
 

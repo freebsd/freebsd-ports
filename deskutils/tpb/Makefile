@@ -1,5 +1,3 @@
-# Created by: Markus Brueffer <markus@FreeBSD.org>
-
 PORTNAME=	tpb
 PORTVERSION=	0.6.4
 PORTREVISION=	13

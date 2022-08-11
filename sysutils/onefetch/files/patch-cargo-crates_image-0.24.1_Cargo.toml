@@ -1,0 +1,11 @@
+--- cargo-crates/image-0.24.1/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/image-0.24.1/Cargo.toml
+@@ -59,7 +59,7 @@ optional = true
+ version = "0.4.0"
+ optional = true
+ 
+-[dependencies.exr]
++[target.'cfg(target_endian = "little")'.dependencies.exr]
+ version = "1.4.1"
+ optional = true
+ 

@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Chen
-
 PORTNAME=	Devel-Caller
 PORTVERSION=	2.06
 PORTREVISION=	1

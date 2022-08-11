@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	qonk
 PORTVERSION=	0.3.1
 PORTREVISION=	15

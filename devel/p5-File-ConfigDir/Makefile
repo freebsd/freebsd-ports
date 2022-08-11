@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	File-ConfigDir
 PORTVERSION=	0.021
 CATEGORIES=	devel perl5

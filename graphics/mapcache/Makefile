@@ -1,5 +1,3 @@
-# Created by: Ryan Melcer <rmelcer@iteris.com>
-
 PORTNAME=		mapcache
 DISTVERSION=		1.12.1
 CATEGORIES=		graphics

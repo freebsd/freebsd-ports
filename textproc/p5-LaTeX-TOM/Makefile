@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	LaTeX-TOM
 PORTVERSION=	1.03
 PORTREVISION=	1

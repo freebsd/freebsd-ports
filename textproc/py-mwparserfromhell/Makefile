@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	mwparserfromhell
 DISTVERSION=	0.6.4
 CATEGORIES=	textproc python

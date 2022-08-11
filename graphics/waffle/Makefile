@@ -1,5 +1,3 @@
-# Created by: Jean-Sébastien Pédron <dumbbell@FreeBSD.org>
-
 PORTNAME=	waffle
 DISTVERSION=	1.6.1-15
 PORTREVISION=	3

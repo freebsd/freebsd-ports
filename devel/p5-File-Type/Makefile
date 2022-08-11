@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	File-Type
 PORTVERSION=	0.22
 PORTREVISION=	1

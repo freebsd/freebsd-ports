@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@tandon.net>
-
 PORTNAME=	postfwd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.03

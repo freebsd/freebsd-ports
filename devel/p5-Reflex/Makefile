@@ -1,5 +1,3 @@
-# Created by: Jase Thew <freebsd@beardz.net>
-
 PORTNAME=	Reflex
 PORTVERSION=	0.100
 CATEGORIES=	devel perl5

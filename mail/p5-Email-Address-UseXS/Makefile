@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	Email-Address-UseXS
 PORTVERSION=	1.000
 CATEGORIES=	mail perl5

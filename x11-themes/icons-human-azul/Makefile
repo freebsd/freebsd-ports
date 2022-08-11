@@ -1,5 +1,3 @@
-# Created by: Phillip Neumann <pneumann@gmail.com>
-
 PORTNAME=	icons-human-azul
 PORTVERSION=	0.1
 PORTREVISION=	1

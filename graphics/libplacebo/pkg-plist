@@ -27,5 +27,5 @@ include/libplacebo/utils/libav_internal.h
 include/libplacebo/utils/upload.h
 %%VULKAN%%include/libplacebo/vulkan.h
 lib/libplacebo.so
-lib/libplacebo.so.192
+lib/libplacebo.so.208
 libdata/pkgconfig/libplacebo.pc

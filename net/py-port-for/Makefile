@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	port-for
 PORTVERSION=	0.4
 CATEGORIES=	net devel python

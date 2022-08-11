@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	giflib
 PORTVERSION=	5.2.1
 PORTREVISION=	0

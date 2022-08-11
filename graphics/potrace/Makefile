@@ -1,5 +1,3 @@
-# Created by: Piotr Smyrak <smyru@heron.pl>
-
 PORTNAME=	potrace
 DISTVERSION=	1.16
 CATEGORIES=	graphics

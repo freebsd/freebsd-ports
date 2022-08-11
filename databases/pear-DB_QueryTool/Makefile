@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	DB_QueryTool
 PORTVERSION=	1.1.2
 CATEGORIES=	databases www pear

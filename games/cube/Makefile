@@ -1,5 +1,3 @@
-# Created by: Arjan van Leeuwen <avleeuwen@piwebs.com>
-
 PORTNAME=	cube
 DISTVERSION=	2005_08_29
 PORTREVISION=	19

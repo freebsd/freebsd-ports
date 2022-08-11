@@ -1,5 +1,3 @@
-# Created by: Martin Blapp <mbr@FreeBSD.org>
-
 PORTNAME=	uade
 PORTVERSION=	2.13
 PORTREVISION=	2

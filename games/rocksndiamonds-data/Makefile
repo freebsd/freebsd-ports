@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	rocksndiamonds-data
 PORTVERSION=	20131106
 PORTREVISION=	2

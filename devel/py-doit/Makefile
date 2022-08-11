@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	doit
 PORTVERSION=	0.36.0
 CATEGORIES=	devel python

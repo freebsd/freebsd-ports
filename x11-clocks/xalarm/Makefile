@@ -1,5 +1,3 @@
-# Created by: desmo@bandwidth.org
-
 PORTNAME=	xalarm
 PORTVERSION=	3.06
 CATEGORIES=	x11-clocks

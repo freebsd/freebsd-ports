@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	WebService-Google-Reader
 PORTVERSION=	0.23
 CATEGORIES=	www perl5

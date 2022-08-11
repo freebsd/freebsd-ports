@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	bio
 PORTVERSION=	1.5.1
 CATEGORIES=	biology ruby

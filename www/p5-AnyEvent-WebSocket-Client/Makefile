@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	AnyEvent-WebSocket-Client
 PORTVERSION=	0.44
 PORTREVISION=	1

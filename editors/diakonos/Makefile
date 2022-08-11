@@ -1,5 +1,3 @@
-# Created by: Chris Petrik <chris@officialunix.com>
-
 PORTNAME=	diakonos
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.7

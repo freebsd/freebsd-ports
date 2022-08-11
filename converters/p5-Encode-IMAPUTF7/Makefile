@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Encode-IMAPUTF7
 PORTVERSION=	1.05
 PORTREVISION=	1

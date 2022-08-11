@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	Graph
 PORTVERSION=	0.9725
 PORTEPOCH=	1

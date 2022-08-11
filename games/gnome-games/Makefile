@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-games
 PORTVERSION=	3.24.0
 CATEGORIES=	games gnome

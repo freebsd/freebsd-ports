@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	iniparser
 PORTVERSION=	4.1
 DISTVERSIONPREFIX=	v

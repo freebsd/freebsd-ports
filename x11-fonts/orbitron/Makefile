@@ -1,5 +1,3 @@
-# Created by: Florian Limberger <flo@snakeoilproductions.net>
-
 PORTNAME=	orbitron
 DISTVERSION=	g20110525
 CATEGORIES=	x11-fonts

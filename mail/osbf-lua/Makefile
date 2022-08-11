@@ -1,5 +1,3 @@
-# Created by: RicardoSSP <ricardo.katz@gmail.com>
-
 PORTNAME=	osbf-lua
 PORTVERSION=	2.0.4
 CATEGORIES=	mail

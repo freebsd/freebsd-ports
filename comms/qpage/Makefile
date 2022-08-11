@@ -1,5 +1,3 @@
-# Created by: joes@seaport.net
-
 PORTNAME=	qpage
 PORTVERSION=	3.3
 PORTREVISION=	8

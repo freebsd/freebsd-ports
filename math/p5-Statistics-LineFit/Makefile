@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Statistics-LineFit
 PORTVERSION=	0.07
 PORTREVISION=	1

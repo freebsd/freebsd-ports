@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	GIS-Distance-Fast
 PORTVERSION=	0.15
 CATEGORIES=	math perl5

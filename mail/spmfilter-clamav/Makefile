@@ -1,5 +1,3 @@
-# Created by: Axel Steiner <ast@treibsand.com>
-
 PORTNAME=	spmfilter-clamav
 PORTVERSION=	0.2.3
 CATEGORIES=	mail
@@ -23,10 +21,6 @@ OPTIONS_DEFINE=	DEBUG DOCS
 DEBUG_CMAKE_ON=	-DENABLE_DEBUG=TRUE
 
 PORTDOCS=	*
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|' \
-		${WRKSRC}/cmake/Modules/SMFMacros.cmake
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib

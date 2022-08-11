@@ -1,5 +1,3 @@
-# Created by: lwhsu@FreeBSD.org
-
 PORTNAME=	daemonlogger
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=	V

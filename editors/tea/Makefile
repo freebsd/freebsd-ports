@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	tea
 PORTVERSION=	60.7.0
 CATEGORIES=	editors

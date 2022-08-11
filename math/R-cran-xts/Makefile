@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	xts
 DISTVERSION=	0.12.1
 CATEGORIES=	math

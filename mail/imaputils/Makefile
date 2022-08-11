@@ -1,5 +1,3 @@
-# Created by: Mikhail T. (m.tsatsenko@gmail.com)
-
 PORTNAME=	imaputils
 DISTVERSION=	1.0.5
 CATEGORIES=	mail

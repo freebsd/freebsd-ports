@@ -1,5 +1,3 @@
-# Created by: Michael Nottebrock <lofi@FreeBSD.org>
-
 PORTNAME=	foomatic-db-hpijs
 PORTVERSION=	1.4
 DISTVERSIONSUFFIX=	-1

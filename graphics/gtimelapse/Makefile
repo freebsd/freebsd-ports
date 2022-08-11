@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	gtimelapse
 DISTVERSION=	0.1
 PORTREVISION=	17

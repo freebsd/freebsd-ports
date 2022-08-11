@@ -1,5 +1,3 @@
-# Created by: kappa@FreeBSD.org.ua
-
 PORTNAME=	JavaScript-SpiderMonkey
 PORTVERSION=	0.25
 CATEGORIES=	lang perl5

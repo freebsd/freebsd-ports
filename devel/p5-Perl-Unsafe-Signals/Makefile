@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Perl-Unsafe-Signals
 PORTVERSION=	0.03
 CATEGORIES=	devel perl5

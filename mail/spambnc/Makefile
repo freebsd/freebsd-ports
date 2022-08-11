@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	spambnc
 DISTVERSION=	30-final
 PORTEPOCH=	1

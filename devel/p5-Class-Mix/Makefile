@@ -1,5 +1,3 @@
-# Created by: brix@FreeBSD.org
-
 PORTNAME=	Class-Mix
 PORTVERSION=	0.006
 CATEGORIES=	devel perl5

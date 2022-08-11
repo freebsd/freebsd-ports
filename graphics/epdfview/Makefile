@@ -1,8 +1,6 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	epdfview
 PORTVERSION=	0.1.8
-PORTREVISION=	50
+PORTREVISION=	55
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	FRUGALWARE/xapps-extra/${PORTNAME} \
 		ftp://ftp.slackware.com/.1/blfs/conglomeration/${PORTNAME}/ \

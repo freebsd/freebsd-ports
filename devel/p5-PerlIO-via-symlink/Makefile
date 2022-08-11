@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	PerlIO-via-symlink
 PORTVERSION=	0.05
 PORTREVISION=	1

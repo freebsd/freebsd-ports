@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	FAQ-OMatic
 PORTVERSION=	2.719
 PORTREVISION=	1

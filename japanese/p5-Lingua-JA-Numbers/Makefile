@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Lingua-JA-Numbers
 PORTVERSION=	0.05
 CATEGORIES=	japanese perl5

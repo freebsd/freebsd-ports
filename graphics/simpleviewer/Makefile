@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	simpleviewer
 PORTVERSION=	3.1.7
 PORTREVISION=	14

@@ -1,11 +1,11 @@
---- tools/greenbone-nvt-sync.in	2021-04-15 09:39:00.000000000 -0500
-+++ tools/greenbone-nvt-sync.in	2021-06-15 16:41:18.698165000 -0500
-@@ -87,10 +87,10 @@
- LOG_CMD="logger -t $SCRIPT_NAME"
+--- tools/greenbone-nvt-sync.in	2022-07-18 04:07:38.000000000 -0500
++++ tools/greenbone-nvt-sync.in	2022-07-31 19:51:15.176021000 -0500
+@@ -98,10 +98,10 @@
+ [ -z "$RSYNC_DOMAIN" ] && RSYNC_DOMAIN=feed.community.greenbone.net
  
  check_logger () {
 -  logger --socket-error=on -p daemon.info -t $SCRIPT_NAME "Checking logger" --no-act 1>/dev/null 2>&1
-+  logger -p daemon.info -t $SCRIPT_NAME "Checking logger"  1>/dev/null 2>&1
++  logger -p daemon.info -t $SCRIPT_NAME "Checking logger" 1>/dev/null 2>&1
    if [ $? -gt 0 ]
    then
 -    LOG_CMD="logger --socket-error=off -s -t $SCRIPT_NAME"
@@ -13,38 +13,16 @@
      $LOG_CMD -p daemon.warning "The log facility is not working as expected. All messages will be written to the standard error stream."
    fi
  }
-@@ -202,7 +202,7 @@
-   SYNC_TMP_DIR=/tmp
-   # If we have mktemp, create a temporary dir (safer)
-   if [ -n "`which mktemp`" ]; then
--    SYNC_TMP_DIR=`mktemp -t -d greenbone-nvt-sync.XXXXXXXXXX` || { echo "ERROR: Cannot create temporary directory for file download" >&2; exit 1 ; }
-+    SYNC_TMP_DIR=`mktemp -d /tmp/greenbone-nvt-sync.XXXXXXXXXX` || { echo "ERROR: Cannot create temporary directory for file download" >&2; exit 1 ; }
-     trap "rm -rf $SYNC_TMP_DIR" EXIT HUP INT TRAP TERM
-   fi
- else
-@@ -437,7 +437,7 @@
+@@ -448,7 +448,7 @@
          log_err "rsync failed, aborting synchronization."
          exit 1
        fi
--      eval "cd \"$NVT_DIR\" ; md5sum -c --status \"$NVT_DIR/md5sums\""
-+      eval "cd \"$NVT_DIR\" ; xargs -n 2 md5 -c < \"$NVT_DIR/md5sums\" > /dev/null"
+-      eval "cd \"$NVT_DIR\" ; sha256sum -c --status \"$NVT_DIR/sha256sums\""
++      eval "cd \"$NVT_DIR\" ; xargs -n 2 sha256sum -c < \"$NVT_DIR/sha256sums\" > /dev/null"
        if [ $? -ne 0 ]  ; then
          if [ -n "$retried" ]
          then
-@@ -471,10 +471,10 @@
- 
- do_self_test ()
- {
--  MD5SUM_AVAIL=`command -v md5sum`
-+  MD5SUM_AVAIL=`command -v md5`
-   if [ $? -ne 0 ] ; then
-     SELFTEST_FAIL=1
--    stderr_write "The md5sum binary could not be found."
-+    stderr_write "The md5 binary could not be found."
-   fi
- 
-   RSYNC_AVAIL=`command -v rsync`
-@@ -512,7 +512,7 @@
+@@ -523,7 +523,7 @@
      log_write "Feed is already current, skipping synchronization."
    else
      (

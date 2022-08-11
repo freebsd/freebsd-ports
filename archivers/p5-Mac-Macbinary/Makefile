@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Mac-Macbinary
 PORTVERSION=	0.06
 PORTREVISION=	1

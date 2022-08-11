@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	smc
 PORTVERSION=	4.3.0
 PORTREVISION=	2

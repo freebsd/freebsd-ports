@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	PHP_TokenStream
 PORTVERSION=	1.4.11
 CATEGORIES=	devel pear

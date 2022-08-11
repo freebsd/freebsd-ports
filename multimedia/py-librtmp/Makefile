@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	librtmp
 PORTVERSION=	0.3.0
 PORTREVISION=	1
@@ -8,7 +6,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python bindings for librtmp, built with cffi
 
 LICENSE=	BSD2CLAUSE

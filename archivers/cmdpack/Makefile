@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	cmdpack
 DISTVERSION=	1.06
 CATEGORIES=	archivers

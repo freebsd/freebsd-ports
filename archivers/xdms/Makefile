@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	xdms
 PORTVERSION=	1.3.2
 CATEGORIES=	archivers

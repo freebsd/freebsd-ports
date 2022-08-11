@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	libgig
 DISTVERSION=	4.3.0
 CATEGORIES=	audio

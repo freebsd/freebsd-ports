@@ -1,5 +1,3 @@
-# Created by: dchapes@zeus.leitch.com
-
 PORTNAME=	xbuffy
 PORTVERSION=	3.3.3
 PORTREVISION=	4

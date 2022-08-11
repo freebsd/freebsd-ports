@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	mini_sendmail
 PORTVERSION=	1.3.9
 CATEGORIES+=	mail

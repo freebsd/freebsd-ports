@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	vban
 DISTVERSION=	g20201011
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org
-
 PORTNAME=	POE-Component-IRC-Plugin-CoreList
 PORTVERSION=	1.06
 CATEGORIES=	irc perl5 devel

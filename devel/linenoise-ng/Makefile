@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@freebsd.org>
-
 PORTNAME=	linenoise-ng
 PORTVERSION=	1.0.0
 PORTREVISION=	2

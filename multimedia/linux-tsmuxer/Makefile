@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	tsmuxer
 PORTVERSION=	1.10.6
 CATEGORIES=	multimedia linux

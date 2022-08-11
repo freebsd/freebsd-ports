@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	liquid-tag-parser
 PORTVERSION=	1.9.0
 PORTREVISION=	4

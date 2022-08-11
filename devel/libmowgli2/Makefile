@@ -1,5 +1,3 @@
-# Created by: tdb
-
 PORTNAME=	libmowgli2
 PORTVERSION=	2.1.3
 DISTVERSIONPREFIX=	v

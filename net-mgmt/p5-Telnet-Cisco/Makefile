@@ -1,5 +1,3 @@
-# Created by: Michael Lyngbøl <lyngbol@wheel.dk>
-
 PORTNAME=	Net-Telnet-Cisco
 PORTVERSION=	1.11
 CATEGORIES=	net-mgmt perl5

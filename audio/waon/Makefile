@@ -1,5 +1,3 @@
-# Created by: Kengo Ichiki <kichiki@users.sourceforge.net>
-
 PORTNAME=	waon
 PORTVERSION=	0.10
 PORTREVISION=	4

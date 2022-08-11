@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	soapui
 PORTVERSION=	5.5.0
 CATEGORIES=	devel java www

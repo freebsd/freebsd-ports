@@ -13,4 +13,4 @@ The Apache Xerces2 parser is the reference implementation of XNI but other
 parser components, configurations, and parsers can be written using the Xerces
 Native Interface.
 
-WWW: http://xerces.apache.org/xerces2-j/
+WWW: https://xerces.apache.org/xerces2-j/

@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	DB_Table
 PORTVERSION=	1.5.6
 PORTREVISION=	1

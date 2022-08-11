@@ -1,5 +1,3 @@
-# Created by: Kyle Evans <kevans@FreeBSD.org>
-
 PORTNAME=	chainmap
 PORTVERSION=	1.0.3
 CATEGORIES=	devel python

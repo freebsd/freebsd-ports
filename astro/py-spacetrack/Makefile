@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	spacetrack
 PORTVERSION=	0.16.0
 CATEGORIES=	astro python

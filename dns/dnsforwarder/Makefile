@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	dnsforwarder
 PORTVERSION=	6.1.15
 PORTEPOCH=	1

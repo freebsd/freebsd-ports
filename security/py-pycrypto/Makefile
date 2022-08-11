@@ -1,5 +1,3 @@
-# Created by: nbm
-
 PORTNAME=	pycrypto
 PORTVERSION=	2.6.1
 PORTREVISION=	3
@@ -13,10 +11,13 @@ COMMENT=	Python Cryptography Toolkit
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pycryptodome
+DEPRECATED=	Unmaintained, obsolete, and contains security vulnerabilities. Use security/py-pycryptodome instead
+EXPIRATION_DATE=2022-06-30
 
 USES=		cpe python:3.6-3.10
 USE_PYTHON=	distutils autoplist
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pycryptodome
 
 CPE_VENDOR=	dlitz
 
@@ -37,7 +38,7 @@ pre-patch:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Crypto/*/*.so
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

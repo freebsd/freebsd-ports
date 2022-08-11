@@ -1,5 +1,3 @@
-# Created by: Jose Marques
-
 PORTNAME=	javamail
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
 DISTVERSION=	1_6_2
@@ -19,7 +17,7 @@ GH_ACCOUNT=	javaee
 
 CPE_VENDOR=	sun
 USE_JAVA=	YES
-JAVA_VERSION=	8+
+JAVA_VERSION=	8
 USE_ANT=	YES
 NO_ARCH=	yes
 

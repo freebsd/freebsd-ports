@@ -1,5 +1,3 @@
-# Created by: glewis@FreeBSD.org
-
 PORTNAME=	ldmud
 PORTVERSION=	3.3.720
 PORTREVISION=	5

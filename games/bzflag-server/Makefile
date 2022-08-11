@@ -1,5 +1,3 @@
-# Created by: Kevin Zheng <kevinz5000@gmail.com>
-
 PKGNAMESUFFIX=	-server
 CONFLICTS=	bzflag
 

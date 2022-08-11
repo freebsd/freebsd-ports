@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Module-CheckDeps
 PORTVERSION=	0.08
 PORTREVISION=	1

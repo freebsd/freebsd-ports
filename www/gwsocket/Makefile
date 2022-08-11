@@ -1,5 +1,3 @@
-# Created by: Daniel Morante <daniel@morante.net>
-
 PORTNAME=	gwsocket
 PORTVERSION=	0.3
 CATEGORIES=	www

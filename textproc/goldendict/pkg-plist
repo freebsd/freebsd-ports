@@ -1,6 +1,6 @@
 bin/goldendict
-share/applications/goldendict.desktop
-share/metainfo/goldendict.appdata.xml
+share/applications/org.goldendict.GoldenDict.desktop
+share/metainfo/org.goldendict.GoldenDict.metainfo.xml
 share/pixmaps/goldendict.png
 %%DATADIR%%/help/gdhelp_en.qch
 %%DATADIR%%/help/gdhelp_ru.qch
@@ -19,6 +19,7 @@ share/pixmaps/goldendict.png
 %%DATADIR%%/locale/fa_IR.qm
 %%DATADIR%%/locale/fi_FI.qm
 %%DATADIR%%/locale/fr_FR.qm
+%%DATADIR%%/locale/hi_IN.qm
 %%DATADIR%%/locale/ie_001.qm
 %%DATADIR%%/locale/it_IT.qm
 %%DATADIR%%/locale/ja_JP.qm

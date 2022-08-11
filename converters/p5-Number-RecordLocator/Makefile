@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Number-RecordLocator
 PORTVERSION=	0.005
 PORTREVISION=	1

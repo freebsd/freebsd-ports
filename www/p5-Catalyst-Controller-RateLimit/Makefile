@@ -1,5 +1,3 @@
-# Created by: andrey@kostenko.name
-
 PORTNAME=	Catalyst-Controller-RateLimit
 PORTVERSION=	0.28
 PORTREVISION=	2

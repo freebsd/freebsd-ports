@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTREVISION=	2
 PKGNAMESUFFIX=	-video-rice
 

@@ -1,5 +1,3 @@
-# Created by: Patrick Gardella <patrick@FreeBSD.org>
-
 PORTNAME=	xlog
 DISTVERSION=	2.0.24
 CATEGORIES=	comms hamradio

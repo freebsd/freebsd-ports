@@ -1,6 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-#   $MCom: ports/devel/libIDL/Makefile,v 1.7 2010/04/02 17:27:42 kwm Exp $
-
 PORTNAME=	libIDL
 PORTVERSION=	0.8.14
 PORTREVISION=	5

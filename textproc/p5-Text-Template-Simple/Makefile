@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-Template-Simple
 PORTVERSION=	0.91
 CATEGORIES=	textproc perl5

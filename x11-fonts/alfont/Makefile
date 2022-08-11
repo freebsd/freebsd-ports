@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	alfont
 PORTVERSION=	2.0.9
 PORTREVISION=	1

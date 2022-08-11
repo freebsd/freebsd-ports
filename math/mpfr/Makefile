@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	mpfr
 PORTVERSION=	4.1.0
 PORTREVISION=	1

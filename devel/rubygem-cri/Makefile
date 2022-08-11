@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	cri
 PORTVERSION=	2.15.11
 CATEGORIES=	devel rubygems

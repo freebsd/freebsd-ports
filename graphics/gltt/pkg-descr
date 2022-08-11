@@ -1,5 +1,0 @@
-Gltt is a library that allows you to read and draw TrueType fonts
-in any OpenGL application. It supports bitmapped and anti-aliased
-font drawing as well as vectorized and polygonized drawing.
-
-WWW: http://gltt.sourceforge.net/

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	PDF-WebKit
 PORTVERSION=	1.2
 CATEGORIES=	textproc perl5

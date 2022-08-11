@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-
 PORTNAME=	mod_auth_pgsql
 PORTVERSION=	2.0.3
 PORTREVISION=	4

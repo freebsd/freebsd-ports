@@ -1,7 +1,7 @@
 PORTNAME=	snmp_exporter
 PORTVERSION=	0.20.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de
@@ -50,6 +50,6 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/snmp_exporter/
-	${INSTALL_DATA} ${FILESDIR}/generator.yml ${STAGEDIR}${PREFIX}/etc/snmp_exporter/generator.yml
+	${INSTALL_DATA} ${FILESDIR}/generator.yml ${STAGEDIR}${PREFIX}/etc/snmp_exporter/generator.yml.sample
 
 .include <bsd.port.mk>

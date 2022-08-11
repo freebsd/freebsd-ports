@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	XML-RAI
 PORTVERSION=	1.3031
 PORTEPOCH=	2

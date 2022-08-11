@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	vit
 PORTVERSION=	1.2
 PORTREVISION=	1

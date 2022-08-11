@@ -1,5 +1,3 @@
-# Created by: Vaida Bogdan
-
 PORTNAME=	netleak
 PORTVERSION=	0.1a
 PORTREVISION=	2

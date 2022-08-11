@@ -1,5 +1,3 @@
-# Created by: Oleg Mamontov <oleg@mamontov.net>
-
 PORTNAME=	URI-SmartURI
 PORTVERSION=	0.032
 PORTREVISION=	1

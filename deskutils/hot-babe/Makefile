@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
-
 PORTNAME=	hot-babe
 PORTVERSION=	0.2.2
 PORTREVISION=	9

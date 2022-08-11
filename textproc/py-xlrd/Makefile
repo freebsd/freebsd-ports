@@ -1,5 +1,3 @@
-# Created by: Dikshie <dikshie@sfc.wide.ad.jp>
-
 PORTNAME=	xlrd
 PORTVERSION=	2.0.1
 CATEGORIES=	textproc python

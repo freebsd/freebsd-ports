@@ -1,6 +1,6 @@
---- xim/convdisp.cpp.orig	2013-06-30 04:26:09 UTC
+--- xim/convdisp.cpp.orig	2022-03-18 00:54:17 UTC
 +++ xim/convdisp.cpp
-@@ -87,14 +87,14 @@ init_default_xftfont() {
+@@ -81,14 +81,14 @@ init_default_xftfont() {
      gXftFont = XftFontOpen(XimServer::gDpy, DefaultScreen(XimServer::gDpy),
  		    XFT_FAMILY, XftTypeString, fontname,
  		    XFT_PIXEL_SIZE, XftTypeDouble, (double)DEFAULT_FONT_SIZE,
@@ -17,7 +17,7 @@
      }
  }
  
-@@ -112,7 +112,7 @@ update_default_xftfont() {
+@@ -106,7 +106,7 @@ update_default_xftfont() {
  			DefaultScreen(XimServer::gDpy),
  			XFT_FAMILY, XftTypeString, fontname,
  			XFT_PIXEL_SIZE, XftTypeDouble, (double)DEFAULT_FONT_SIZE,
@@ -26,7 +26,7 @@
  	if (xftfont) {
  	    if (gXftFont)
  		XftFontClose(XimServer::gDpy, gXftFont);
-@@ -387,7 +387,7 @@ PeWin::PeWin(Window pw, const char *im_l
+@@ -385,7 +385,7 @@ PeWin::PeWin(Window pw, const char *im_lang, const cha
  			    DefaultScreen(XimServer::gDpy),
  			    XFT_FAMILY, XftTypeString, gXftFontName,
  			    XFT_PIXEL_SIZE, XftTypeDouble, (double)mXftFontSize,
@@ -35,7 +35,7 @@
  	}
  	mXftDraw = XftDrawCreate(XimServer::gDpy, mPixmap,
  			DefaultVisual(XimServer::gDpy, scr_num),
-@@ -557,7 +557,7 @@ void PeWin::set_xftfont(const char *xfld
+@@ -555,7 +555,7 @@ void PeWin::set_xftfont(const char *xfld)
  			    DefaultScreen(XimServer::gDpy),
  			    XFT_FAMILY, XftTypeString, gXftFontName,
  			    XFT_PIXEL_SIZE, XftTypeDouble, (double)size,

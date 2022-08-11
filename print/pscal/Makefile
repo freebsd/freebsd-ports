@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	pscal
 PORTVERSION=	1.16
 CATEGORIES=	print

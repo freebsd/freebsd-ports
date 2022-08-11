@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Class-DBI-AbstractSearch
 PORTVERSION=	0.07
 PORTREVISION=	1

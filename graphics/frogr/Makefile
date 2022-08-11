@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-
 PORTNAME=	frogr
 PORTVERSION=	1.6
 PORTREVISION=	2

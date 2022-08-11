@@ -1,5 +1,3 @@
-# Created by: Chao Shin <quakelee@cn.freebsd.org>
-
 PORTNAME=	apetag
 PORTVERSION=	1.2
 PORTREVISION=	1

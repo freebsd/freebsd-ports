@@ -1,5 +1,3 @@
-# Created by: Torsten Zühlsdorff <ports@toco-domains.de>
-
 PORTNAME=	dddbl
 PORTVERSION=	2.0.1
 CATEGORIES=	www

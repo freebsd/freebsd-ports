@@ -1,5 +1,3 @@
-# Created by: lightside <lightside@gmx.com>
-
 PORTNAME=	treesheets
 PORTVERSION=	1.0.2
 PORTREVISION=	2

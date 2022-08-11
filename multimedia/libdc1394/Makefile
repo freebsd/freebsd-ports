@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	libdc1394
 DISTVERSION=	2.2.6
 CATEGORIES=	multimedia

@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	DB_File-Lock
 PORTVERSION=	0.05
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: antoine@FreeBSD.org
-
 PORTNAME=	rifiuti2
 PORTVERSION=	0.7.0
 CATEGORIES=	security

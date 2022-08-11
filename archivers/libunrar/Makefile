@@ -1,5 +1,3 @@
-# Created by: samm@freebsd.org
-
 PORTNAME=	libunrar
 PORTVERSION=	3.9.10
 PORTEPOCH=	1

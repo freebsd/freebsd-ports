@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	XML-Handler-Dtd2Html
 PORTVERSION=	0.42
 PORTREVISION=	1

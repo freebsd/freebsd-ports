@@ -1,5 +1,3 @@
-# Created by: Amarendra Godbole <amarendra.godbole@gmail.com>
-
 PORTNAME=	wcalc
 PORTVERSION=	2.5
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-ANSITable
 PORTVERSION=	0.608
 CATEGORIES=	textproc perl5

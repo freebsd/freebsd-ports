@@ -10,7 +10,7 @@ COMMENT=	Improved Python library to control i3wm and sway
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>0:x11-toolkits/py-xlib@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>0:x11-toolkits/py-python-xlib@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:3.4+

@@ -1,8 +1,6 @@
-# Created by: Hans Petter Selasky <hselasky@freebsd.org>
-
 PORTNAME=	rshim-user-space
 DISTVERSIONPREFIX=	rshim-
-DISTVERSION=		2.0.6-8
+DISTVERSION=		2.0.6-12
 PORTEPOCH=		1
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -12,7 +10,7 @@ LICENSE=	BSD3CLAUSE
 
 CATEGORIES=	sysutils
 
-LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
+LIB_DEPENDS=	libepoll-shim-interpose.so:devel/libepoll-shim \
 		libpci.so:devel/libpci \
 		libpciaccess.so:devel/libpciaccess
 

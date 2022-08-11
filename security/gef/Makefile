@@ -1,5 +1,6 @@
 PORTNAME=	gef
 DISTVERSION=	2022.01
+PORTREVISION=	1
 CATEGORIES=	security python
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -33,6 +34,9 @@ OPTIONALDEPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}capstone>0:devel/py-capstone@${
 				${PYTHON_PKGNAMEPREFIX}unicorn>0:emulators/py-unicorn@${PY_FLAVOR}
 
 _UTILITY_NAME=	gef.py
+
+post-patch:
+	${REINPLACE_CMD} 's|%%PYTHON%%|${PYTHON_CMD:T}|g' ${WRKSRC}/${_UTILITY_NAME}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

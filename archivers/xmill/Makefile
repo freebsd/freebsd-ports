@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	xmill
 DISTVERSION=	0.8
 CATEGORIES=	archivers

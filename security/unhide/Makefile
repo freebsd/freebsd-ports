@@ -1,5 +1,3 @@
-# Created by: ntarmos@cs.uoi.gr
-
 PORTNAME=	unhide
 DISTVERSION=	20210124
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Ganael LAPLANCHE <ganael.laplanche@martymac.org>
-
 PORTNAME=	evtViewer
 PORTVERSION=	0.6
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Bob Eager <bob@eager.cx>
-
 PORTNAME=	ecce
 DISTVERSION=	2.9d
 CATEGORIES=	editors

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Log-Trace
 PORTVERSION=	1.070
 PORTREVISION=	1

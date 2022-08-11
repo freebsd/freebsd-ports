@@ -1,5 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-
 PORTNAME=	tnef2txt
 PORTVERSION=	1.4
 CATEGORIES=	textproc converters

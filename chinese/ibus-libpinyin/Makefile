@@ -1,5 +1,3 @@
-# Created by: Henry Hu <henry.hu.sh@gmail.com>
-
 PORTNAME=	ibus-libpinyin
 PORTVERSION=	1.11.1
 CATEGORIES=	chinese

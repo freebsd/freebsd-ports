@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	beets
 DISTVERSION=	1.6.0
 CATEGORIES=	audio python

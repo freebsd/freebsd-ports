@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	antipolix
 PORTVERSION=	2.1
 PORTREVISION=	2

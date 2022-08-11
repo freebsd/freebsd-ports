@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	XML-FOAF
 PORTVERSION=	0.04
 PORTREVISION=	2

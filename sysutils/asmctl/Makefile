@@ -1,5 +1,3 @@
-# Created by: Yuichiro NAITO <naito.yuichiro@gmail.com>
-
 PORTNAME=	asmctl
 PORTVERSION=	1.9
 CATEGORIES=	sysutils

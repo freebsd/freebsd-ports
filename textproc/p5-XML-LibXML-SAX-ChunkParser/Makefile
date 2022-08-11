@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	XML-LibXML-SAX-ChunkParser
 PORTVERSION=	0.00008
 CATEGORIES=	textproc perl5

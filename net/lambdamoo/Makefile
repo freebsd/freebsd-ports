@@ -1,5 +1,3 @@
-# Created by: Seiichirou Hiraoka
-
 PORTNAME=	lambdamoo
 PORTVERSION=	1.8.1
 PORTREVISION=	1

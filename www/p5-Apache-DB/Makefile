@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Apache-DB
 PORTVERSION=	0.18
 PORTREVISION=	1

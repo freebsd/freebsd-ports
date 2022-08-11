@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	spreadsheet
 PORTVERSION=	1.3.0
 CATEGORIES=	textproc rubygems

@@ -1,0 +1,10 @@
+The asynchronous RPC client-server framework and message specification
+for Rigetti Quantum Cloud Services (QCS).
+
+Implements an efficient transport protocol by using ZeroMQ (ZMQ)
+sockets and MessagePack (msgpack) serialization.
+
+Not intended to be a full-featured replacement for other frameworks
+like gRPC or Apache Thrift.
+
+WWW: https://github.com/rigetti/rpcq

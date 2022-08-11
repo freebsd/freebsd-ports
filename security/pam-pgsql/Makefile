@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	pam-pgsql
 PORTVERSION=	0.7.3.2
 PORTREVISION=	2

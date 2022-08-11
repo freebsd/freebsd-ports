@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	PerlIO-Layers
 PORTVERSION=	0.012
 CATEGORIES=	devel perl5

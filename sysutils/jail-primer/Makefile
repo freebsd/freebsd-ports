@@ -1,5 +1,3 @@
-# Created by: Joe Barbish <jail-primer1@a1poweruser.com>
-
 PORTNAME=	jail-primer
 PORTVERSION=	0.2
 CATEGORIES=	sysutils

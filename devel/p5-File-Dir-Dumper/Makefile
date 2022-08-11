@@ -1,5 +1,3 @@
-# Created by: Anatoliy Dmytriyev <tolid@tolid.eu.org>
-
 PORTNAME=	File-Dir-Dumper
 PORTVERSION=	0.0.8
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Christopher Boumenot <boumenot@gmail.com>
-
 PORTNAME=	Net-Write
 PORTVERSION=	1.05
 PORTREVISION=	1

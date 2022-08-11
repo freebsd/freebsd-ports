@@ -1,5 +1,3 @@
-# Created by: andrej@ebert.su
-
 PORTNAME=	safe
 PORTVERSION=	0.4
 CATEGORIES=	security python

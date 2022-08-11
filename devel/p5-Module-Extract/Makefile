@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Module-Extract
 PORTVERSION=	0.01
 PORTREVISION=	2

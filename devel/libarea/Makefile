@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	libarea
 PORTVERSION=	20191031
 CATEGORIES=	devel cad

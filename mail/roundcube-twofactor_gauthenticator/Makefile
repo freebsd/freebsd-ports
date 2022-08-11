@@ -1,7 +1,5 @@
-# Created by: Bernard Spil <brnrd@FreeBSD.org>
-
 PORTNAME=	twofactor_gauthenticator
-PORTVERSION=	g20210816
+PORTVERSION=	g20220403
 CATEGORIES=	mail security
 PKGNAMEPREFIX=	roundcube-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -15,11 +13,11 @@ BUILD_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=81
+IGNORE_WITH_PHP=81 82
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexandregz
-GH_TAGNAME=	a3944c4
+GH_TAGNAME=	06e21b0
 
 NO_BUILD=	yes
 NO_ARCH=	yes

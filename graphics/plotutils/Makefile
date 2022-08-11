@@ -1,5 +1,3 @@
-# Created by: Chuck Robey <chuckr@FreeBSD.org>
-
 PORTNAME=	plotutils
 PORTVERSION=	2.6
 PORTREVISION=	9

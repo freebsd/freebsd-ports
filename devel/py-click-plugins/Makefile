@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	click-plugins
 PORTVERSION=	1.1.1
 CATEGORIES=	devel python

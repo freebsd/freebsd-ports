@@ -1,5 +1,3 @@
-# Created by: Ilia Chipitsine <ilia@jane.cgu.chel.su>
-
 PORTNAME=	Unicode-Map8
 PORTVERSION=	0.13
 PORTREVISION=	1

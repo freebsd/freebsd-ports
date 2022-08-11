@@ -1,5 +1,3 @@
-# Created by: Hyogeol Lee <hyogeollee@gmail.com>
-
 PORTNAME=	ko.TeX
 PORTVERSION=	0.1.1.20080329
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	symlinks
 PORTVERSION=	1.4
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	physfs
 PORTVERSION=	3.0.2
 CATEGORIES=	devel

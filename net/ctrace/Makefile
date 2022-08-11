@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org
-
 PORTNAME=	ctrace
 PORTVERSION=	0.9
 PORTREVISION=	1

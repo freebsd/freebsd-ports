@@ -1,5 +1,3 @@
-# Created by: Mij <mij@bitchx.it>
-
 PORTNAME=	sshguard
 PORTVERSION=	2.4.2
 PORTREVISION=	2

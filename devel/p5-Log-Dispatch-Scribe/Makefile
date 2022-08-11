@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Log-Dispatch-Scribe
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Jakub Lach <jakub_lach@mailplus.pl>
-
 PORTNAME=	mcwm
 PORTVERSION=	20130209
 CATEGORIES=	x11-wm

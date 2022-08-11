@@ -1,5 +1,3 @@
-# Created by: Hardy Schumacher <lowmaster@web.de>
-
 PORTNAME=	rudeconfig
 PORTVERSION=	5.0.5
 PORTREVISION=	3

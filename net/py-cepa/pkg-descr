@@ -1,0 +1,7 @@
+Cepa (short for allium cepa) is a fork of stem that adds support for v3 onion
+client authentication. Stem is a Python controller library for Tor.
+
+With it you can use Tor's control protocol to script against the Tor process,
+or build things such as Nyx.
+
+WWW: https://github.com/onionshare/cepa

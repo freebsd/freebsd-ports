@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	orca
 PORTVERSION=	1.6
 PORTREVISION=	1

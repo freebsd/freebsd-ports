@@ -1,15 +1,25 @@
---- src/CMakeLists.txt	2020-08-11 10:05:36.000000000 -0500
-+++ src/CMakeLists.txt	2021-01-04 19:53:06.893137000 -0500
-@@ -227,7 +227,7 @@
+--- src/CMakeLists.txt	2022-07-21 02:20:24.000000000 -0500
++++ src/CMakeLists.txt	2022-07-31 19:00:06.378204000 -0500
+@@ -32,7 +32,9 @@
+ pkg_check_modules (LIBGVM_GMP REQUIRED libgvm_gmp>=22.4)
+ pkg_check_modules (GNUTLS REQUIRED gnutls>=3.2.15)
+ pkg_check_modules (GLIB REQUIRED glib-2.0>=2.42)
++if (NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+ pkg_check_modules (LIBBSD REQUIRED libbsd)
++endif()
+ pkg_check_modules (LIBICAL REQUIRED libical>=1.00)
+ 
+ message (STATUS "Looking for PostgreSQL...")
+@@ -271,7 +273,7 @@
                         ${GNUTLS_LDFLAGS} ${GPGME_LDFLAGS} ${CMAKE_THREAD_LIBS_INIT} ${LINKER_HARDENING_FLAGS} ${LINKER_DEBUG_FLAGS}
-                        ${PostgreSQL_LIBRARIES} ${GLIB_LDFLAGS} ${GTHREAD_LDFLAGS}
+                        ${PostgreSQL_LIBRARIES} ${LIBBSD_LDFLAGS} ${GLIB_LDFLAGS} ${GTHREAD_LDFLAGS}
                         ${LIBGVM_BASE_LDFLAGS} ${LIBGVM_UTIL_LDFLAGS} ${LIBGVM_OSP_LDFLAGS} ${LIBGVM_GMP_LDFLAGS}
--                       ${LIBICAL_LDFLAGS} ${LINKER_HARDENING_FLAGS})
-+                       ${LIBICAL_LDFLAGS} ${LINKER_HARDENING_FLAGS} -lexecinfo)
+-                       ${LIBICAL_LDFLAGS} ${LINKER_HARDENING_FLAGS} ${OPT_THEIA_TGT})
++                       ${LIBICAL_LDFLAGS} ${LINKER_HARDENING_FLAGS} ${OPT_THEIA_TGT} -lexecinfo)
  target_link_libraries (manage-test cgreen m
                         ${GNUTLS_LDFLAGS} ${GPGME_LDFLAGS} ${CMAKE_THREAD_LIBS_INIT} ${LINKER_HARDENING_FLAGS} ${LINKER_DEBUG_FLAGS}
-                        ${PostgreSQL_LIBRARIES} ${GLIB_LDFLAGS} ${GTHREAD_LDFLAGS}
-@@ -441,5 +441,7 @@
+                        ${PostgreSQL_LIBRARIES} ${LIBBSD_LDFLAGS} ${GLIB_LDFLAGS} ${GTHREAD_LDFLAGS}
+@@ -489,5 +491,7 @@
                     COMMAND ctags ${C_FILES})
  add_custom_target (tags COMMENT "Building tags files...")
  add_dependencies (tags etags ctags)

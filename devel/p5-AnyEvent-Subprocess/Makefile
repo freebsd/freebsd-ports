@@ -1,8 +1,6 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	AnyEvent-Subprocess
 PORTVERSION=	1.102912
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

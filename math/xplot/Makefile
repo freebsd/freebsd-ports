@@ -1,5 +1,3 @@
-# Created by: fenner
-
 PORTNAME=	xplot
 PORTVERSION=	0.90.7.1
 PORTREVISION=	3

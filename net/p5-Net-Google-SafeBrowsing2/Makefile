@@ -1,5 +1,3 @@
-# Created by: Alexandre Biancalana <ale@biancalanas.net>
-
 PORTNAME=	Net-Google-SafeBrowsing2
 PORTVERSION=	1.09
 PORTREVISION=	2

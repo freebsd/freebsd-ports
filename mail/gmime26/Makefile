@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	gmime
 PORTVERSION=	2.6.23
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	HTML-WikiConverter-PbWiki
 PORTVERSION=	0.01
 PORTREVISION=	1

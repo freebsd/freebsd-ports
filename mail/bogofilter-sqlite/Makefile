@@ -1,5 +1,3 @@
-# Created by: Matthias Andree <mandree@FreeBSD.org>
-
 PORTNAME=	bogofilter
 PORTREVISION=	3
 CATEGORIES=	mail

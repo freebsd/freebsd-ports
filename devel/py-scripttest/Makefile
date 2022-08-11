@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	scripttest
 PORTVERSION=	1.3.0
 CATEGORIES=	devel python

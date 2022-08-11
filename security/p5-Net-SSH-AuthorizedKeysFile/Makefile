@@ -1,5 +1,3 @@
-# Created by: Stephon Chen <stephon@gmail.com>
-
 PORTNAME=	Net-SSH-AuthorizedKeysFile
 PORTVERSION=	0.18
 CATEGORIES=	security perl5

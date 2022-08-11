@@ -1,5 +1,3 @@
-# Created by: Amar Takhar <verm@drunkmonk.net>
-
 PORTNAME=	kobodeluxe
 PORTVERSION=	0.5.1
 PORTREVISION=	14

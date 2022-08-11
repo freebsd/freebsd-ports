@@ -1,5 +1,3 @@
-# Created by: gno@yahoo-inc.com
-
 PORTNAME=	json-c
 PORTVERSION=	0.16
 CATEGORIES=	devel

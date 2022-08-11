@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	gemdropx
 PORTVERSION=	0.9
 PORTREVISION=	12

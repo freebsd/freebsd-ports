@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	freedink-dfarc
 PORTVERSION=	3.14
 PORTREVISION=	4

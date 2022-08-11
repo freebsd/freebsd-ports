@@ -1,5 +1,3 @@
-# Created by: koshy@india.hp.com
-
 PORTNAME=	mhonarc
 PORTVERSION=	2.6.24
 CATEGORIES=	www mail

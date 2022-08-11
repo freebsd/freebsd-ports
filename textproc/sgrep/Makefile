@@ -1,5 +1,3 @@
-# Created by: <koshy@india.hp.com>
-
 PORTNAME=	sgrep
 PORTVERSION=	0.99
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	jailutils
 PORTVERSION=	1.7
 CATEGORIES=	sysutils

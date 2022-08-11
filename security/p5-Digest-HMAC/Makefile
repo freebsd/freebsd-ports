@@ -1,5 +1,3 @@
-# Created by: nork@cityfujisawa.ne.jp
-
 PORTNAME=	Digest-HMAC
 PORTVERSION=	1.04
 CATEGORIES=	security perl5

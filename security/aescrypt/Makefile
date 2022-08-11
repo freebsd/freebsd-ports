@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	aescrypt
 PORTVERSION=	0.7
 PORTREVISION=	1

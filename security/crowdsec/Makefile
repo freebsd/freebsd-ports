@@ -1,6 +1,6 @@
 PORTNAME=	crowdsec
-PORTVERSION=	1.3.2	# NOTE: change BUILD_VERSION and BUILD_TAG as well
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4.1
 CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net
@@ -9,33 +9,30 @@ COMMENT=	CrowdSec lightweight and collaborative security engine
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	git:devel/git@lite \
-		go:lang/go \
-		jq:textproc/jq
+BUILD_DEPENDS=	git:devel/git@lite
 
-USES=		gmake
-ALL_TARGET=	build
+USES=		gmake go:no_targets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crowdsecurity
 GH_PROJECT=	crowdsec
-GH_TAGNAME=	v1.3.2-freebsd-wip
-#GH_TAGNAME is automatically set from DISTVERSION
+GH_TAGNAME=	${DISTVERSIONFULL}-freebsd
+_BUILD_TAG=	527995f
+USE_RC_SUBR=	crowdsec
+
+MAKE_ENV=	BUILD_VERSION="${DISTVERSIONFULL}" \
+		BUILD_TAG="${_BUILD_TAG}" \
+		DEFAULT_CONFIGDIR="${PREFIX}/etc/crowdsec" \
+		DEFAULT_DATADIR="/var/db/crowdsec/data"
+ALL_TARGET=	build
+
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
 
 OPTIONS_DEFINE=	FIREWALL_BOUNCER
 OPTIONS_DEFAULT=
 
 FIREWALL_BOUNCER_DESC=	Depend on security/crowdsec-firewall-bouncer
 FIREWALL_BOUNCER_RUN_DEPENDS=	crowdsec-firewall-bouncer>=0.0.23.r2:security/crowdsec-firewall-bouncer
-
-USE_RC_SUBR=	crowdsec
-
-SUB_FILES=	pkg-deinstall pkg-install pkg-message
-
-MAKE_ENV=	BUILD_VERSION="v1.3.2" \
-		BUILD_TAG="716251323da59f1ce04fb1fc38af0a72629b5d78" \
-		DEFAULT_CONFIGDIR="${PREFIX}/etc/crowdsec" \
-		DEFAULT_DATADIR="/var/db/crowdsec/data"
 
 PLUGIN_DIR=	${PREFIX}/lib/crowdsec/plugins
 STAGE_PLUGINS=	${STAGEDIR}${PLUGIN_DIR}
@@ -132,6 +129,9 @@ do-install:
 	@${RM} ${STAGEDIR}${ETCDIR}/crowdsec.service
 	@${RM} ${STAGEDIR}${ETCDIR}/dev.yaml
 	@${RM} ${STAGEDIR}${ETCDIR}/user.yaml
+	@${RM} ${STAGEDIR}${ETCDIR}/acquis_win.yaml
+	@${RM} ${STAGEDIR}${ETCDIR}/config_win.yaml
+	@${RM} ${STAGEDIR}${ETCDIR}/config_win_no_lapi.yaml
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/email
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/http
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/slack

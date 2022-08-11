@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	milter-regex
 PORTVERSION=	2.7
 PORTREVISION=	2

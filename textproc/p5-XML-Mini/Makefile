@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	XML-Mini
 PORTVERSION=	1.38
 PORTREVISION=	1

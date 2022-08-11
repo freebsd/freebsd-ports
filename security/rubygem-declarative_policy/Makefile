@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	declarative_policy
 PORTVERSION=	1.1.0
 CATEGORIES=	security rubygems

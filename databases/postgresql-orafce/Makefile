@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=		orafce
 DISTVERSIONPREFIX=	VERSION_
 DISTVERSION=		3_13_4

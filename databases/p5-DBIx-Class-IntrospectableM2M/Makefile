@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-IntrospectableM2M
 PORTVERSION=	0.001002
 CATEGORIES=	databases perl5

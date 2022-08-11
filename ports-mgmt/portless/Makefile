@@ -1,5 +1,3 @@
-# Created by: Martin Kammerhofer
-
 PORTNAME=	portless
 PORTVERSION=	0.2.7
 PORTREVISION=	1

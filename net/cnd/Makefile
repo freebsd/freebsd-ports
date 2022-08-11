@@ -1,5 +1,3 @@
-# Created by: Daniel Bryan <sisko@bsdmail.com>
-
 PORTNAME=	cnd
 PORTVERSION=	0.7
 PORTREVISION=	1

@@ -1,0 +1,23 @@
+# Interface Name
+regexp=^\s([-\w]+):
+colors=default,bright_green
+======
+# Dates
+regexp=(\d{4}-\d{2}(?:-\d{2})?)
+colors=unchanged,bright_magenta
+======
+# Numbers
+regexp=(\d+\.\d+)
+colors=unchanged,bright_cyan
+======
+# MiB
+regexp=(MiB)
+colors=unchanged,bright_yellow
+======
+# MiB
+regexp=(GiB)
+colors=unchanged,bright_red
+======
+# No data
+regexp=(Not enough data available yet)
+colors=unchanged,"\033[38;5;242m"

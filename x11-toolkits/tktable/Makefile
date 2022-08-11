@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	tktable
 PORTVERSION=	2.10
 PORTREVISION=	1

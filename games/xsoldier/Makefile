@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	xsoldier
 PORTVERSION=	1.8
 PORTREVISION=	1

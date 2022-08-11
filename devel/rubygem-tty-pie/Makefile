@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tty-pie
 PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems

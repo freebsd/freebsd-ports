@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Lvalue
 PORTVERSION=	0.21
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	Chemistry-Pattern
 PORTVERSION=	0.27
 PORTREVISION=	1

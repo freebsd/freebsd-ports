@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	setuptools-pkg
 PORTVERSION=	0.9
 CATEGORIES=	devel python

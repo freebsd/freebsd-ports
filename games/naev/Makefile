@@ -1,8 +1,6 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	naev
 PORTVERSION=	0.7.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 

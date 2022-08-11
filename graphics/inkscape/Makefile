@@ -1,10 +1,8 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	inkscape
-DISTVERSION=	1.1.2
-PORTREVISION=	3
+DISTVERSION=	1.2.1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
-MASTER_SITES=	https://inkscape.org/gallery/item/31668/
+MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
@@ -42,17 +40,22 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scour>0:textproc/py-scour@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cssselect>0:www/py-cssselect@${PY_FLAVOR} \
 		ps2pdf:print/ghostscript9-agpl-base \
 		fig2dev:print/fig2dev
 
-USES=		compiler:c++11-lib cmake cpe desktop-file-utils gnome \
-		iconv:wchar_t jpeg pathfix pkgconfig python:3.6+ \
+USES=		compiler:c++17-lang cmake cpe desktop-file-utils gnome \
+		iconv:wchar_t jpeg pathfix pkgconfig python:3.7+ \
 		shebangfix tar:xz xorg
 USE_GNOME=	gtkmm30 libxml2 libxslt
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_2022-02-04_0a00cf5339
+CXXSTD=		gnu++17
+
+DATETAG=	2022-07-14_9c6d41e410
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_${DATETAG}
 
 SHEBANG_FILES=	share/extensions/*.py share/extensions/genpofiles.sh \
 		share/templates/*.py man/fix-roff-punct

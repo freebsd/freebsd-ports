@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Test-Fatal
 PORTVERSION=	0.016
 CATEGORIES=	devel perl5

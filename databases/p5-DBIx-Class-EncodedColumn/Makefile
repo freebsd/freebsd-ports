@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-EncodedColumn
 PORTVERSION=	0.00020
 CATEGORIES=	databases perl5

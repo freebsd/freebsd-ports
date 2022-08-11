@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-
 PORTNAME=	hastmon
 PORTVERSION=	0.3.4
 CATEGORIES=	net-mgmt

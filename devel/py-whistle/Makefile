@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	whistle
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Miguel Mendez <flynn@energyhq.homeip.net>
-
 PORTNAME=	newfile
 PORTVERSION=	1.0.14
 PORTREVISION=	6

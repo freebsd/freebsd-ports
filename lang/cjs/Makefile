@@ -1,7 +1,6 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	cjs
 PORTVERSION=	4.8.2
+PORTREVISION=	1
 CATEGORIES=	lang gnome
 DIST_SUBDIR=	gnome
 

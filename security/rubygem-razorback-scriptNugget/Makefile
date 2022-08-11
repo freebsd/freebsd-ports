@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tom@tomjudge.com>
-
 PORTNAME=	razorback-scriptNugget
 PORTVERSION=	0.5.0
 PORTREVISION=	1

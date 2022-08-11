@@ -1,5 +1,3 @@
-# Created by: Alex Bakhtin <Alex.Bakhtin@gmail.com>
-
 PORTNAME=	AnyEvent-MQTT
 PORTVERSION=	1.142640
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Dan Smith <dan@algenta.com>
-
 PORTNAME=	dnsmax-perl
 PORTVERSION=	1.0.1
 CATEGORIES=	dns

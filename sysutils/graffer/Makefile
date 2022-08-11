@@ -1,5 +1,3 @@
-# Created by: Nikola Kolev <koue@chaosophia.net>
-
 PORTNAME=	graffer
 PORTVERSION=	1.1
 PORTREVISION=	1

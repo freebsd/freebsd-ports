@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Net-Domain-ExpireDate
 PORTVERSION=	1.20
 CATEGORIES=	dns net perl5

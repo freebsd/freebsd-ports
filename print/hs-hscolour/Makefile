@@ -1,8 +1,6 @@
-# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-
 PORTNAME=	hscolour
 PORTVERSION=	1.24.4
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	print haskell
 
@@ -13,6 +11,6 @@ LICENSE=	GPLv2
 
 USES=		cabal
 
-EXECUTABLES=	HsColour
+CABAL_EXECUTABLES=	HsColour
 
 .include <bsd.port.mk>

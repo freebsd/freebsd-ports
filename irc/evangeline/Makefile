@@ -1,5 +1,3 @@
-# Created by: Edini <ports@edini.net>
-
 PORTNAME=	evangeline
 PORTVERSION=	1.1.4
 CATEGORIES=	irc tcl

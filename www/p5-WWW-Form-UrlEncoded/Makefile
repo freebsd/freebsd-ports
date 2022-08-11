@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	WWW-Form-UrlEncoded
 PORTVERSION=	0.26
 CATEGORIES=	www perl5

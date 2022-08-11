@@ -1,4 +1,0 @@
-Parse cron format strings, write cron format strings and calculate
-execution dates in Elixir.
-
-WWW: https://github.com/jshmrtn/crontab

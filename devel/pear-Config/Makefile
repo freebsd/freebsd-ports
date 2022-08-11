@@ -1,5 +1,3 @@
-# Created by: Alex Miller (<asm@asm.kiev.ua>)
-
 PORTNAME=	Config
 PORTVERSION=	1.10.12
 CATEGORIES=	devel www pear

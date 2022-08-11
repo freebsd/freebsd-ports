@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilogondolfo@gmail.com>
-
 PORTNAME=	xfce4-diskperf-plugin
 PORTVERSION=	2.7.0
 CATEGORIES=	sysutils xfce

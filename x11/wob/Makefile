@@ -1,6 +1,6 @@
 PORTNAME=	wob
 DISTVERSION=	0.13
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight overlay volume (or anything) bar for Wayland

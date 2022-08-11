@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	aws-c-s3
 PORTVERSION=	0.1.31
 DISTVERSIONPREFIX=	v

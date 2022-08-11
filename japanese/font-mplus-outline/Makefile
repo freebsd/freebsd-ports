@@ -1,5 +1,3 @@
-# Created by: The 244th namelessness at 2ch.net
-
 PORTNAME=	mplus
 PORTVERSION=	0.6.3
 CATEGORIES=	japanese x11-fonts

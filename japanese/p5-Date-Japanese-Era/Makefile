@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	Date-Japanese-Era
 PORTVERSION=	0.08
 CATEGORIES=	japanese perl5

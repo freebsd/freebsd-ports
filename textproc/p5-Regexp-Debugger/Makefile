@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Regexp-Debugger
 PORTVERSION=	0.002006
 CATEGORIES=	textproc perl5

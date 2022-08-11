@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	W3C-LinkChecker
 PORTVERSION=	4.81
 PORTREVISION=	2

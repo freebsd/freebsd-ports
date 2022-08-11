@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	jzintv
 PORTVERSION=	1.0.20200712
 PORTEPOCH=	1

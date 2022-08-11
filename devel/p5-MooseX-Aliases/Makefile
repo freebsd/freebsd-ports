@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	MooseX-Aliases
 PORTVERSION=	0.11
 PORTREVISION=	1

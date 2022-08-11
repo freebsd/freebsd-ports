@@ -1,5 +1,3 @@
-# Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
-
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	Net_CDDB
 PORTVERSION=	0.3.0
 CATEGORIES=	net audio www pear

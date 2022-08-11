@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	prompt-toolkit
 PORTVERSION=	1.0.18
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	cookiejar
 PORTVERSION=	0.3.3
 CATEGORIES=	www rubygems

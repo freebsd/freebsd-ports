@@ -1,5 +1,3 @@
-# Created by: Matthias Schmidt
-
 PORTNAME=	pkg_search
 PORTVERSION=	1.3
 CATEGORIES=	ports-mgmt

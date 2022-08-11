@@ -1,5 +1,3 @@
-# Created by: mi
-
 PORTNAME=	qtawesome
 PORTVERSION=	20150319
 PORTREVISION=	4

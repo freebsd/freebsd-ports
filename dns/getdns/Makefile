@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	getdns
 PORTVERSION=	1.5.2
 PORTREVISION=	4

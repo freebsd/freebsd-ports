@@ -1,5 +1,3 @@
-# Created by: rtdean@cytherianage.net
-
 PORTNAME=	phpeclipse
 PORTVERSION=	1.2.3
 PORTREVISION=	6

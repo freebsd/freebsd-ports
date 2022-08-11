@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	tcl-mmap
 PORTVERSION=	1.1
 CATEGORIES=	devel

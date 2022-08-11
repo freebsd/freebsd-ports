@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	pd
 DISTVERSION=	0.47-1
 PORTREVISION=	1

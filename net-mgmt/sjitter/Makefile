@@ -1,5 +1,3 @@
-# Created by: babak@farrokhi.net
-
 PORTNAME=	sjitter
 PORTVERSION=	0.18.1b
 CATEGORIES=	net-mgmt net

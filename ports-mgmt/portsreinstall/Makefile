@@ -1,5 +1,3 @@
-# Created by: Mamoru Sakaue / MwGhennndo
-
 PORTNAME=	portsreinstall
 PORTVERSION=	4.1.0
 CATEGORIES=	ports-mgmt

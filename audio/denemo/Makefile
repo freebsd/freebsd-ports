@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	denemo
 PORTVERSION=	2.0.6
 PORTREVISION=	15

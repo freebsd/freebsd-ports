@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	sieve-connect
 DISTVERSION=	0.90
 CATEGORIES=	mail

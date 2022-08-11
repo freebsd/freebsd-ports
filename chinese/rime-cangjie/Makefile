@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-cangjie
 DISTVERSION=	g20210223
 CATEGORIES=	chinese textproc

@@ -37,3 +37,5 @@ post-install:
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/${PKGBASE}.pc
 
 .include "${MASTERDIR}/Makefile"
+
+CATEGORIES+=	wayland

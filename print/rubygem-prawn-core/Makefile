@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	prawn-core
 PORTVERSION=	0.8.4
 CATEGORIES=	print rubygems

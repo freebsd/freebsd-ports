@@ -1,5 +1,3 @@
-# Created by: Miroslav Lachman
-
 PORTNAME=	ratelimit-policyd
 PORTVERSION=	1.0.4
 CATEGORIES=	mail

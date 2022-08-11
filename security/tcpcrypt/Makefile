@@ -1,5 +1,3 @@
-# Created by: John-Mark Gurney <jmg@FreeBSD.org>
-
 PORTNAME=	tcpcrypt
 PORTVERSION=	0.5
 DISTVERSIONPREFIX=	v

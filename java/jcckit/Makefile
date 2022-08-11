@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	jcckit
 PORTVERSION=	1.1
 PORTREVISION=	2

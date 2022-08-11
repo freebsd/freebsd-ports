@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Test-WWW-Declare
 PORTVERSION=	0.02
 PORTREVISION=	1

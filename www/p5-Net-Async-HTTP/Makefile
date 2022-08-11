@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Net-Async-HTTP
 PORTVERSION=	0.48
 CATEGORIES=	www perl5

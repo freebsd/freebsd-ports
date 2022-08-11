@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	polyglot
 PORTVERSION=	0.3.5
 CATEGORIES=	devel rubygems

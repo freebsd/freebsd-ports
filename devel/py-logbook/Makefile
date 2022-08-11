@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	logbook
 PORTVERSION=	1.1.0
 CATEGORIES=	devel python
@@ -14,5 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 USES?=	python:3.6+
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

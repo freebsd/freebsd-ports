@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	fbg2
 PORTVERSION=	0.4
 PORTREVISION=	7

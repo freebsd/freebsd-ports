@@ -1,7 +1,7 @@
 PORTNAME=	doggo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.2
-PORTREVISION=	1
+DISTVERSION=	0.5.4
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	dns
 
@@ -11,7 +11,7 @@ COMMENT=	Modern command-line DNS client (like dig)
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.18,modules
 
 GO_MODULE=	github.com/mr-karan/doggo
 GO_TARGET=	./cmd/${PORTNAME}

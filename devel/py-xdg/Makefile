@@ -1,8 +1,5 @@
-# Created by: michael johnson <ahze@ahze.net>
-#   $MCom: ports/devel/py-xdg/Makefile,v 1.4 2007/09/10 05:35:05 mezz Exp $
-
 PORTNAME=	xdg
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

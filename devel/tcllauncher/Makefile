@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	tcllauncher
 PORTVERSION=	1.10
 DISTVERSIONPREFIX=	v

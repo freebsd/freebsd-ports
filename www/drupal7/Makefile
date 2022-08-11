@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	drupal7
 DISTVERSION=	7.89
 CATEGORIES=	www

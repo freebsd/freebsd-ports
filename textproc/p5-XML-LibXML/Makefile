@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-LibXML
 PORTVERSION=	2.0207
 PORTREVISION=	2

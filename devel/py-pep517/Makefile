@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pep517
 PORTVERSION=	0.12.0
 CATEGORIES=	devel python

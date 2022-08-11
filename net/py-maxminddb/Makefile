@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbé <olivier@FreeBSD.org>
-
 PORTNAME=	maxminddb
 PORTVERSION=	2.0.3
 DISTVERSIONPREFIX=	v

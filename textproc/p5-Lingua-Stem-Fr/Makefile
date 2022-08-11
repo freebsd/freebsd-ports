@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Lingua-Stem-Fr
 PORTVERSION=	0.02
 PORTREVISION=	1

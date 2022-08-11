@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	GraphViz2-Data-Grapher
 PORTVERSION=	2.51
 CATEGORIES=	graphics perl5

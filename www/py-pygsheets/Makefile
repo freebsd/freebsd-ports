@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pygsheets
 PORTVERSION=	2.0.5
 CATEGORIES=	www python

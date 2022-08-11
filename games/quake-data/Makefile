@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	data
 PORTVERSION=	1.0.6
 PORTREVISION=	2

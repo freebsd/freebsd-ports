@@ -1,5 +1,3 @@
-# Created by: Jerry Hicks
-
 PORTNAME=	bison
 PORTVERSION=	3.8.2
 PORTEPOCH=	1

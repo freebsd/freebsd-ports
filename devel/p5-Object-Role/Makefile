@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Object-Role
 PORTVERSION=	0.001
 PORTREVISION=	1

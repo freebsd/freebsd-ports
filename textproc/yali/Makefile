@@ -1,5 +1,3 @@
-# Created by: Tom Sparks <tsparks@appliedops.net>
-
 PORTNAME=	yali
 PORTVERSION=	1.1
 PORTREVISION=	1

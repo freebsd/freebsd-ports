@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Injector
 PORTVERSION=	2.0.5
 CATEGORIES=	devel www pear

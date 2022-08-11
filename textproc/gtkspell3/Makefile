@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gtkspell3
 PORTVERSION=	3.0.10
 CATEGORIES=	textproc gnome

@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Image_Barcode
 PORTVERSION=	1.1.3
 CATEGORIES=	graphics www pear

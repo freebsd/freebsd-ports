@@ -1,5 +1,3 @@
-# Created by: Gerhard Häring <gh@ghaering.de>
-
 PORTNAME=	rdiff-backup
 DISTVERSION=	2.0.5
 CATEGORIES=	sysutils python

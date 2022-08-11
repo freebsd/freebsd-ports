@@ -1,5 +1,3 @@
-# Created by: eric
-
 PORTNAME=	stardict
 PORTVERSION=	3.0.6
 PORTREVISION=	5

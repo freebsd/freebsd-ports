@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@rubick>
-
 PORTNAME=	posix-spawn
 PORTVERSION=	0.3.15
 CATEGORIES=	devel rubygems

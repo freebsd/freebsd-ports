@@ -1,5 +1,3 @@
-# Created by: Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
-
 PORTNAME=	ddskk
 DISTVERSION=	16.2
 PORTREVISION=	10

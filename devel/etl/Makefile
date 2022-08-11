@@ -1,5 +1,3 @@
-# Created by: Yinghong Liu <relaxbsd@gmail.com>
-
 PORTNAME=	etl
 PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	v

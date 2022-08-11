@@ -5,4 +5,4 @@ This package contains just htdigest, renamed as apache-htdigest to avoid
 conflicts.  It means that the htdigest utility is available without installing
 the entire Apache distribution.
 
-WWW: http://httpd.apache.org/
+WWW: https://httpd.apache.org/

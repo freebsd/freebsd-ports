@@ -19,7 +19,7 @@ load_rc_config $name 	# Loads the config file, if relevant.
 
 : ${wazuh_agent_enable:="NO"}
 
-command="/var/ossec/bin/ossec-control"
+command="/var/ossec/bin/wazuh-control"
 extra_commands="status"
 
 start_cmd="wazuh_agent_start"
@@ -27,7 +27,7 @@ stop_cmd="wazuh_agent_stop"
 status_cmd="wazuh_agent_status"
 
 wazuh_agent_start() {
-	echo -n "Starting Wazuh: "
+	echo -n "Starting Wazuh Agent: "
 	${command} start > /dev/null
 	RETVAL=$?
 	if [ $RETVAL -eq 0 ]; then
@@ -40,7 +40,7 @@ wazuh_agent_start() {
 }
 
 wazuh_agent_stop() {
-	echo -n "Stopping Wazuh: "
+	echo -n "Stopping Wazuh Agent: "
 	${command} stop > /dev/null
 	RETVAL=$?
 	if [ $RETVAL -eq 0 ]; then

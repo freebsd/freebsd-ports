@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	IO-Capture
 PORTVERSION=	0.05
 PORTREVISION=	1

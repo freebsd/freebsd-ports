@@ -1,5 +1,3 @@
-# Created by: Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
-
 CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org

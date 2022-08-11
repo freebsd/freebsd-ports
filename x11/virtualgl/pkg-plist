@@ -34,4 +34,3 @@ VirtualGL/lib/libgefaker.so
 VirtualGL/lib/libvglfaker-nodl.so
 %%OPENCL%%VirtualGL/lib/libvglfaker-opencl.so
 VirtualGL/lib/libvglfaker.so
-libdata/ldconfig/virtualgl

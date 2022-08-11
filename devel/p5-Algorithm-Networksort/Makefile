@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Algorithm-Networksort
 PORTVERSION=	2.02
 CATEGORIES=	devel perl5

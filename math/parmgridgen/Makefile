@@ -1,5 +1,3 @@
-# Created by: Stas Timokhin <devel@stasyan.com>
-
 PORTNAME=	parmgridgen
 PORTVERSION=	1.0
 PORTREVISION=	15

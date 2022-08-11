@@ -1,5 +1,3 @@
-# Created by: Christopher Boumenot <boumenot@gmail.com>
-
 PORTNAME=	CPAN-SQLite
 PORTVERSION=	0.199
 PORTREVISION=	2

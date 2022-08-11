@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	FSM
 PORTVERSION=	1.4.0
 CATEGORIES=	devel www pear

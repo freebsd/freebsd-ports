@@ -1,0 +1,9 @@
+TIMESTAMP = 1658429663
+SHA256 (instructions_Apr2022.xml) = 5f495e61df55443f06de73b7567d29ec3f3d097db135ee55b9ab89fcae75d4fc
+SIZE (instructions_Apr2022.xml) = 109323644
+SHA256 (andreas-abel-uiCA-g20220630+2022.04-ba6ad5557ebd96a10fa0d0e076c9961ec5024574_GH0.tar.gz) = 93d78e9d380eed1a7f8828b762e60e371898a8b3d6bc0cf3cfca8d3bed199872
+SIZE (andreas-abel-uiCA-g20220630+2022.04-ba6ad5557ebd96a10fa0d0e076c9961ec5024574_GH0.tar.gz) = 46859
+SHA256 (andreas-abel-XED-to-XML-c71679ee893ae91db677056d542f305fcc433cb1_GH0.tar.gz) = b610897d541cf808cfbf53c5a9abe384e7ca2cac25939e994a737d3bcfa00c35
+SIZE (andreas-abel-XED-to-XML-c71679ee893ae91db677056d542f305fcc433cb1_GH0.tar.gz) = 1286967
+SHA256 (intelxed-mbuild-09b6654be0c52bf1df44e88c88b411a67b624cbd_GH0.tar.gz) = 5af6b3f0394df1332dd2f09d842719bd2ece1037c09cd042f18e417dddf1e54e
+SIZE (intelxed-mbuild-09b6654be0c52bf1df44e88c88b411a67b624cbd_GH0.tar.gz) = 81598

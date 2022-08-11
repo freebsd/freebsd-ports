@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	bdelta
 PORTVERSION=	0.3.1
 DISTVERSIONPREFIX=v

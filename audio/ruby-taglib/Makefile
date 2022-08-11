@@ -1,5 +1,3 @@
-# Created by: TOMIDA, Hiroaki <t.hiroaki.209 at gmail.com>
-
 PORTNAME=	taglib
 PORTVERSION=	1.1
 PORTREVISION=	1

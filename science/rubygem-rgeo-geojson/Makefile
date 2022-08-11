@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rgeo-geojson
 PORTVERSION=	2.1.1
 CATEGORIES=	science rubygems

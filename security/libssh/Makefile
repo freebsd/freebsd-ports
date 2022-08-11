@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	libssh
 PORTVERSION=	0.9.6
 CATEGORIES=	security devel

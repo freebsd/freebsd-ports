@@ -1,5 +1,3 @@
-# Created by: <jkoshy@FreeBSD.org>
-
 PORTNAME=	fhist
 PORTVERSION=	1.21
 DISTVERSIONSUFFIX=	.D001

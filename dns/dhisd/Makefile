@@ -1,5 +1,3 @@
-# Created by: Bas Kruit <baskruit@bsltwr.dhis.org>
-
 PORTNAME=	dhisd
 PORTVERSION=	5.5
 CATEGORIES=	dns

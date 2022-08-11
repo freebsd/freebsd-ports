@@ -1,4 +1,4 @@
---- configure.ac.orig	2021-05-19 11:38:53 UTC
+--- configure.ac.orig	2022-06-08 15:50:20 UTC
 +++ configure.ac
 @@ -5,11 +5,11 @@
  AC_PREREQ(2.60)
@@ -27,7 +27,6 @@
 +registrydir="%%NETDATA_PERST%%/registry"
 +cachedir="%%NETDATA_CACHE%%"
  chartsdir="${libexecdir}/netdata/charts.d"
- nodedir="${libexecdir}/netdata/node.d"
  pythondir="${libexecdir}/netdata/python.d"
 -configdir="${sysconfdir}/netdata"
 +configdir="%%ETCDIR%%"

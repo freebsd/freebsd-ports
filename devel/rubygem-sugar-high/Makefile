@@ -1,5 +1,3 @@
-# Created by: rpsfa@rit.edu
-
 PORTNAME=	sugar-high
 PORTVERSION=	0.7.3
 PORTREVISION=	1

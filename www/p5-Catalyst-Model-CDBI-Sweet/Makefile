@@ -1,5 +1,3 @@
-# Created by: Travis Campbell <hcoyote@ghostar.org>
-
 PORTNAME=	Catalyst-Model-CDBI-Sweet
 PORTVERSION=	0.06
 PORTREVISION=	1

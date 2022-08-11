@@ -1,9 +1,6 @@
-# Created by: Craig Edwards <brain@mail1.chatspike.net>
-
 PORTNAME=	inspircd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.0
-PORTREVISION=	1
+DISTVERSION=	3.13.0
 CATEGORIES=	irc
 
 MAINTAINER=	driesm@FreeBSD.org

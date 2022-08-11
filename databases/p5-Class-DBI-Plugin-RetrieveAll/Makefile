@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Class-DBI-Plugin-RetrieveAll
 PORTVERSION=	1.04
 PORTREVISION=	1

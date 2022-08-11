@@ -1,5 +1,3 @@
-# Created by: Jaap Boender <jaapb@kerguelen.org>
-
 PORTNAME=	bz2
 PORTVERSION=	0.6.0
 PORTREVISION=	2

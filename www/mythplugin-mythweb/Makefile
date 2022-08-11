@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@bluelife.at>
-
 PORTNAME=	mythweb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	31.0

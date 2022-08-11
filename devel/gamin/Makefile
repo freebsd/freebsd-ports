@@ -1,6 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-#    $MCom: ports/trunk/devel/gamin/Makefile 18634 2013-07-26 10:42:35Z kwm $
-
 PORTNAME=	gamin
 PORTVERSION=	0.1.10
 PORTREVISION?=	10

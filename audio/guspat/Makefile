@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	guspat
 PORTVERSION=	20000706
 PORTREVISION=	2

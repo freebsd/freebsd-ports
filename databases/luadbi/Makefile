@@ -1,5 +1,3 @@
-# Created by: Olexander Melnyk <olexander.v.melnyk@gmail.com>
-
 PORTNAME=	luadbi
 PORTVERSION=	0.7.2
 DISTVERSIONPREFIX=	v

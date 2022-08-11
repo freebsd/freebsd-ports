@@ -1,7 +1,5 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	freebsd
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 DISTVERSIONPREFIX=v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,18 +11,16 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		python:3.6+
-USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils unittest
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	sobomax
-GH_PROJECT=	py-${PORTNAME}
+GH_PROJECT=	py-freebsd
 
 PYDISTUTILS_BUILD_TARGET=build_ext -i
+TEST_ARGS=	discover -s tests
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/freebsd*.so
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m unittest discover tests -v
 
 .include <bsd.port.mk>

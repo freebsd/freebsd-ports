@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-LeakTrace
 PORTVERSION=	0.17
 CATEGORIES=	devel perl5

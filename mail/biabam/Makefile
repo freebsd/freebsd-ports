@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	biabam
 PORTVERSION=	0.9.7
 PORTREVISION=	2

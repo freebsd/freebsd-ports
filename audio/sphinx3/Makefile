@@ -1,5 +1,3 @@
-# Created by: Richard Neese
-
 PORTNAME=	sphinx3
 PORTVERSION=	0.8
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	redasm
 PORTVERSION=	2.1.1
 PORTREVISION=	1

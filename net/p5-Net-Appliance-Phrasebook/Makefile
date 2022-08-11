@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Net-Appliance-Phrasebook
 PORTVERSION=	2.103642
 CATEGORIES=	net perl5

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	ssddiff
 PORTVERSION=	0.2
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	Chemistry-File-Mopac
 PORTVERSION=	0.15
 PORTREVISION=	1

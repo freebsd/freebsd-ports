@@ -1,7 +1,6 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aioh2
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,7 @@ COMMENT=	HTTP/2 implementation with hyper-h2 on Python 3 asyncio
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-xRUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=3:www/py-h2@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=3:www/py-h2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}priority>=1.3.0:www/py-priority@${PY_FLAVOR}
 
 USES=		python:3.4+

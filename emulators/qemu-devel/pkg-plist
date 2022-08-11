@@ -1,6 +1,6 @@
 bin/elf2dmp
+bin/qemu-arm
 bin/qemu-edid
-bin/qemu-ga
 bin/qemu-i386
 bin/qemu-img
 bin/qemu-io
@@ -14,6 +14,7 @@ bin/qemu-storage-daemon
 %%NO_X86_TARGETS%%bin/qemu-system-cris
 %%NO_X86_TARGETS%%bin/qemu-system-hppa
 bin/qemu-system-i386
+%%NO_X86_TARGETS%%bin/qemu-system-loongarch64
 %%NO_X86_TARGETS%%bin/qemu-system-m68k
 %%NO_X86_TARGETS%%bin/qemu-system-microblaze
 %%NO_X86_TARGETS%%bin/qemu-system-microblazeel
@@ -43,8 +44,6 @@ man/man1/qemu.1.gz
 man/man1/qemu-img.1.gz
 man/man7/qemu-block-drivers.7.gz
 man/man7/qemu-cpu-models.7.gz
-man/man8/qemu-ga.8.gz
-man/man7/qemu-ga-ref.7.gz
 man/man8/qemu-nbd.8.gz
 man/man8/qemu-pr-helper.8.gz
 man/man7/qemu-qmp-ref.7.gz
@@ -118,15 +117,14 @@ man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/keymaps/tr
 %%DATADIR%%/linuxboot.bin
 %%LINUXBOOT_DMA%%%%DATADIR%%/linuxboot_dma.bin
+%%DATADIR%%/multiboot_dma.bin
 %%DATADIR%%/multiboot.bin
 %%DATADIR%%/npcm7xx_bootrom.bin
 %%DATADIR%%/openbios-ppc
 %%DATADIR%%/openbios-sparc32
 %%DATADIR%%/openbios-sparc64
 %%DATADIR%%/opensbi-riscv32-generic-fw_dynamic.bin
-%%DATADIR%%/opensbi-riscv32-generic-fw_dynamic.elf
 %%DATADIR%%/opensbi-riscv64-generic-fw_dynamic.bin
-%%DATADIR%%/opensbi-riscv64-generic-fw_dynamic.elf
 %%DATADIR%%/palcode-clipper
 %%DATADIR%%/petalogix-ml605.dtb
 %%DATADIR%%/pxe-e1000.rom
@@ -159,6 +157,8 @@ man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/pvh.bin
 %%DATADIR%%/vgabios-bochs-display.bin
 %%DATADIR%%/vgabios-ramfb.bin
+%%DATADIR%%/vof-nvram.bin
+%%DATADIR%%/vof.bin
 share/icons/hicolor/128x128/apps/qemu.png
 share/icons/hicolor/16x16/apps/qemu.png
 share/icons/hicolor/24x24/apps/qemu.png
@@ -177,4 +177,5 @@ share/applications/qemu.desktop
 %%GTK3%%share/locale/it/LC_MESSAGES/qemu.mo
 %%GTK3%%share/locale/sv/LC_MESSAGES/qemu.mo
 %%GTK3%%share/locale/tr/LC_MESSAGES/qemu.mo
+%%GTK3%%share/locale/uk/LC_MESSAGES/qemu.mo
 %%GTK3%%share/locale/zh_CN/LC_MESSAGES/qemu.mo

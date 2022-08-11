@@ -1,5 +1,3 @@
-TIMESTAMP = 1608802624
-SHA256 (bambootracker-extras-2.tar.gz) = 72f9994ea329bc6bd3f8855262209aa827b66f880e5734fc1486e9709546c9ce
-SIZE (bambootracker-extras-2.tar.gz) = 8321
-SHA256 (rerrahkr-BambooTracker-v0.4.5_GH0.tar.gz) = b31221353f54e81edbeb301c125efc84c69deb2c943be305601310bf5cc3cc0e
-SIZE (rerrahkr-BambooTracker-v0.4.5_GH0.tar.gz) = 3288468
+TIMESTAMP = 1658579875
+SHA256 (BambooTracker-src-v0.5.1.tar.gz) = 84ebbf7b6dc633eb8184b42dfdbd3890b759303f26fd30f94c40d49ae238700d
+SIZE (BambooTracker-src-v0.5.1.tar.gz) = 1295589

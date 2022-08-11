@@ -1,5 +1,3 @@
-# Created by: Will Andrews <will@FreeBSD.org>
-
 PORTNAME=	LockFile-Simple
 PORTVERSION=	0.208
 CATEGORIES=	devel perl5

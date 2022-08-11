@@ -559,10 +559,10 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/qmldesigner/newprojectdialog/image/style-universal_system@2x.png
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/Details.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/DialogValues.qml
-%%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/NewProjectView.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/PopupDialog.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/PopupDialogButton.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/PopupDialogButtonBox.qml
+%%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/PresetView.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/Styles.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/qmldir
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/ProjectType/DefaultProject.qml
@@ -684,6 +684,7 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/TextInputSpecifics.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/TextSpecifics.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/Window/WindowSpecifics.qml
+%%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/WindowSpecifics.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/emptyPane.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/project.qmlproject
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick3D/Object3DPane.qml
@@ -787,6 +788,7 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ComboBox.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ComboBoxInput.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ContextMenu.qml
+%%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/FilterComboBox.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/InfinityLoopIndicator.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ItemDelegate.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/LinkIndicator2D.qml
@@ -809,6 +811,7 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SectionLayout.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Slider.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SliderPopup.qml
+%%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SortFilterModel.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBox.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBoxIndicator.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBoxInput.qml
@@ -831,6 +834,7 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/qmldesigner/qt4mcu/qul-18.qml
 %%DATADIR%%/qmldesigner/qt4mcu/qul-19.qml
 %%DATADIR%%/qmldesigner/qt4mcu/qul-20.qml
+%%DATADIR%%/qmldesigner/qt4mcu/qul-21.qml
 %%DATADIR%%/qmldesigner/statesEditorQmlSources/StatesDelegate.qml
 %%DATADIR%%/qmldesigner/statesEditorQmlSources/StatesList.qml
 %%DATADIR%%/qmldesigner/statesEditorQmlSources/images/checkers.png

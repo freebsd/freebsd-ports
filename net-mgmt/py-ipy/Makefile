@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ipy
 PORTVERSION=	1.01
 CATEGORIES=	net-mgmt python

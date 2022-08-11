@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	DBA_Relational
 PORTVERSION=	0.2.0
 PORTREVISION=	1

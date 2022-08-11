@@ -1,5 +1,3 @@
-# Created by: b.f. <bf@FreeBSD.org>
-
 PORTNAME=	frama-c
 DISTVERSIONPREFIX=	Phosphorus-
 DISTVERSION=	20170501

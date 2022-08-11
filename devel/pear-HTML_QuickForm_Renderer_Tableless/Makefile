@@ -1,5 +1,3 @@
-# Created by: Chris St Denis <chris@smartt.com>
-
 PORTNAME=	HTML_QuickForm_Renderer_Tableless
 PORTVERSION=	0.6.2
 CATEGORIES=	devel www pear

@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <mitya@yandex-team.ru>
-
 PORTNAME=	openfst
 PORTVERSION=	1.8.1
 CATEGORIES=	math

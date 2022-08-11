@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	redeclipse-data
 PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v

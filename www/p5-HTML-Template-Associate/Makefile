@@ -1,5 +1,3 @@
-# Created by: Manuel Rábade <mig@mig-29.net>
-
 PORTNAME=	HTML-Template-Associate
 PORTVERSION=	2.01
 PORTREVISION=	1

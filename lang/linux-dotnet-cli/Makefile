@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
-
 PORTNAME=	dotnet-cli
 DISTNAME=	dotnet-runtime-${DISTVERSION}-linux-x64
 

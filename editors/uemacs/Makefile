@@ -1,5 +1,3 @@
-# Created by: tg
-
 PORTNAME=	uemacs
 PORTVERSION=	4.0
 CATEGORIES=	editors

@@ -1,5 +1,3 @@
-# Created by: uminac
-
 PORTNAME=	cpipe
 PORTVERSION=	3.0.2
 CATEGORIES=	benchmarks

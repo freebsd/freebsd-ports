@@ -1,5 +1,3 @@
-# Created by: crow
-
 PORTNAME=	bcwipe
 PORTVERSION=	1.9.13
 CATEGORIES=	security

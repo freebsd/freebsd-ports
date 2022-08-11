@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	layan-gtk-themes
 DISTVERSION=	2021-06-30
 CATEGORIES=	x11-themes

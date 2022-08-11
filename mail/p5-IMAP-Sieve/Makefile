@@ -1,5 +1,3 @@
-# Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
-
 PORTNAME=	IMAP-Sieve
 PORTVERSION=	0.4.9
 PORTREVISION=	3

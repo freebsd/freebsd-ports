@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+      To setup "%%PORTNAME%%" you need to edit the configuration file:
+      %%PREFIX%%/etc/%%PORTNAME%%.conf
+
+      To run redis from startup, add %%PORTNAME%%_enable="YES"
+      in your /etc/rc.conf.
+EOM
+}
+]

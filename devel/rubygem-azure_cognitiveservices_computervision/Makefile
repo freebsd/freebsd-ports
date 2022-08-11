@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_cognitiveservices_computervision
 PORTVERSION=	0.20.2
 CATEGORIES=	devel rubygems

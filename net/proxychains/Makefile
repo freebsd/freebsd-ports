@@ -1,5 +1,3 @@
-# Created by: Patrick MARIE <mycroft@virgaria.org>
-
 PORTNAME=	proxychains
 PORTVERSION=	3.1
 PORTREVISION=	3

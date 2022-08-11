@@ -12,7 +12,6 @@ bin/lm-solve
 %%SITE_PERL%%/Games/LMSolve/Tilt/RedBlue.pm
 %%SITE_PERL%%/Games/LMSolve/Tilt/Single.pm
 %%SITE_PERL%%/Games/LMSolve.pm
-%%SITE_PERL%%/Games/get-version.pl
 %%PERL5_MAN1%%/lm-solve.1.gz
 %%PERL5_MAN3%%/Games::LMSolve.3.gz
 %%PERL5_MAN3%%/Games::LMSolve::Alice.3.gz

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	rabbirack
 PORTVERSION=	2.0.0
 CATEGORIES=	www rubygems

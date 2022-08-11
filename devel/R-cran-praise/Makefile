@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	praise
 DISTVERSION=	1.0.0
 PORTREVISION=	4

@@ -1,16 +1,12 @@
-# Created by: jrhett@netconsonance.com
-
 PORTNAME=	cfengine
 PORTVERSION=	3.${CFENGINE_COMMIT_DATE}
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
-CFENGINE_HASH=		77ae2447f
-LIBNTECH_HASH=		5882865
-CFENGINE_COMMIT_DATE=	2022.04.25
+CFENGINE_HASH=		e03b29185
+LIBNTECH_HASH=		3967412
+CFENGINE_COMMIT_DATE=	2022.08.02
 
 MAINTAINER=	cy@FreeBSD.org
-#		gjb@FreeBSD.org is also committer for this port
-#		skreuzer@FreeBSD.org is also committer for this port
 COMMENT=	Systems administration tool for networks
 
 LICENSE=	GPLv3

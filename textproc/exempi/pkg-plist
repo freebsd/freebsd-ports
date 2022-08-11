@@ -6,6 +6,6 @@ include/exempi-2.0/exempi/xmperrors.h
 lib/libexempi.a
 lib/libexempi.so
 lib/libexempi.so.8
-lib/libexempi.so.8.0.2
+lib/libexempi.so.8.1.2
 libdata/pkgconfig/exempi-2.0.pc
 man/man1/exempi.1.gz

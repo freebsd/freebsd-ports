@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	qogir-icon-themes
 DISTVERSION=	2021-10-14
 CATEGORIES=	x11-themes

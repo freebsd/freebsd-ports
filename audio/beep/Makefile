@@ -1,5 +1,3 @@
-# Created by: Tyler Spivey
-
 PORTNAME=	beep
 PORTVERSION=	1.0
 PORTREVISION=	1

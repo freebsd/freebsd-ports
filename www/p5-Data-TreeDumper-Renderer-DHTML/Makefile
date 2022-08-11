@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Data-TreeDumper-Renderer-DHTML
 PORTVERSION=	0.09
 PORTREVISION=	1

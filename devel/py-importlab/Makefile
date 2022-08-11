@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	importlab
 PORTVERSION=	0.7
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	hexter
 PORTVERSION=	1.0.3
 PORTREVISION=	1

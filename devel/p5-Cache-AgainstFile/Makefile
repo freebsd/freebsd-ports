@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	Cache-AgainstFile
 PORTVERSION=	1.016
 PORTREVISION=	2

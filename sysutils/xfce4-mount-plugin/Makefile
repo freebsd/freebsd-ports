@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-
 PORTNAME=	xfce4-mount-plugin
 PORTVERSION=	1.1.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	info2man
 PORTVERSION=	20040717
 PORTREVISION=	1

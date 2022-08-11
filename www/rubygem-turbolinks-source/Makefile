@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	turbolinks-source
 PORTVERSION=	5.2.0
 CATEGORIES=	www rubygems

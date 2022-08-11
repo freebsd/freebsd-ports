@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	IO-Event
 PORTVERSION=	0.813
 PORTREVISION=	1

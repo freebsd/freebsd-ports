@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	atomic
 PORTVERSION=	1.1.101
 CATEGORIES=	devel rubygems

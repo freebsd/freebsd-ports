@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	tiny-network-utilities
 PORTVERSION=	1.0
 CATEGORIES=	net

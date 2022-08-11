@@ -1,5 +1,3 @@
-# Created by: markm
-
 PORTNAME=	gnuchess
 PORTVERSION=	6.2.9
 CATEGORIES=	games

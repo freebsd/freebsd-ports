@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Games-Tournament-RoundRobin
 PORTVERSION=	0.03
 CATEGORIES=	games perl5

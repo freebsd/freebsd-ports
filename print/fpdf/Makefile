@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	fpdf
 PORTVERSION=	1.81
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	zhlt
 PORTVERSION=	3.4
 CATEGORIES=	games devel

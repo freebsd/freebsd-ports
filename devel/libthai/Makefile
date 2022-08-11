@@ -1,5 +1,3 @@
-# Created by: Thawatchai Piyawat <piyawat@usablelabs.com>
-
 PORTNAME=	libthai
 DISTVERSION=	0.1.29
 CATEGORIES=	devel

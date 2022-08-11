@@ -1,21 +1,22 @@
 PORTNAME=	belr
-PORTVERSION=	0.1.3
-PORTREVISION=	2
+PORTVERSION=	5.1.32
 CATEGORIES=	textproc
-MASTER_SITES=	https://www.linphone.org/releases/sources/belr/
+MASTER_SITES=	https://gitlab.linphone.org/BC/public/${PORTNAME}/-/archive/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Language recognition library
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox
 
 USES=		cmake compiler:c++11-lib
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DENABLE_STATIC=NO -DENABLE_STRICT=NO
-WRKSRC=		${WRKDIR}/${DISTNAME}-0
+CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
+		-DCMAKE_SKIP_INSTALL_RPATH=ON \
+		-DENABLE_STATIC=NO \
+		-DENABLE_STRICT=NO
 
 .include <bsd.port.mk>

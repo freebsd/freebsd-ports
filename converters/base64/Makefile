@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	base64
 PORTVERSION=	1.5
 PORTREVISION=	1

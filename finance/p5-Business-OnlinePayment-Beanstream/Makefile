@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OnlinePayment-Beanstream
 PORTVERSION=	0.02
 PORTREVISION=	1

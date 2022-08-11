@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	springgraph
 PORTVERSION=	0.88
 PORTREVISION=	3

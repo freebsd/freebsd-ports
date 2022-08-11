@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Math-Currency
 PORTVERSION=	0.52
 CATEGORIES=	math perl5

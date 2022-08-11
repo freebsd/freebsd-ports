@@ -1,5 +1,3 @@
-# Created by: Charlie & <root@dev2.rambler.ru>
-
 PORTNAME=	Catalyst-Component-InstancePerContext
 PORTVERSION=	0.001001
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Image-Imlib2
 PORTVERSION=	2.03
 PORTREVISION=	6

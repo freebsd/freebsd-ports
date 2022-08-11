@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	sqlite3
 DISTVERSION=	${PYTHON_DISTVERSION}
 PORTREVISION=	7

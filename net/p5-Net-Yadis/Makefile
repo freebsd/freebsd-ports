@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Net-Yadis
 PORTVERSION=	1.0
 PORTREVISION=	2

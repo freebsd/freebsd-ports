@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	capitalization
 PORTVERSION=	0.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Joseph Scott <joseph@randomnetworks.com>
-
 PORTNAME=	activitymail
 PORTVERSION=	1.26
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni
-
 PORTNAME=	jspice3
 DISTVERSION=	2.5-110615
 CATEGORIES=	cad

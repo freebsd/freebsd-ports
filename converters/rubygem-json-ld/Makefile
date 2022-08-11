@@ -1,5 +1,5 @@
 PORTNAME=	json-ld
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	converters rubygems
 MASTER_SITES=	RG
 

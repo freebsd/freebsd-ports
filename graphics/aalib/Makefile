@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	aalib
 DISTVERSION=	1.4rc5
 PORTREVISION=	13

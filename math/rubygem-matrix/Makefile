@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	matrix
 PORTVERSION=	0.4.2
 CATEGORIES=	math rubygems

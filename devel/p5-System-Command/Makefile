@@ -1,5 +1,3 @@
-# Created by: Wen Heping<wen@FreeBSD.org>
-
 PORTNAME=	System-Command
 PORTVERSION=	1.121
 CATEGORIES=	devel perl5

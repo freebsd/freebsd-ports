@@ -1,8 +1,6 @@
-# Created by: Christian Laursen <xi@borderworlds.dk>
-
 PORTNAME=	mlmmj
 PORTVERSION=	1.3.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.org/releases/
 

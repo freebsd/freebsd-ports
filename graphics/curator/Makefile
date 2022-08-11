@@ -1,5 +1,3 @@
-# Created by: Stefan Walter <sw@gegenunendlich.de>
-
 PORTNAME=	curator
 PORTVERSION=	2.1
 PORTREVISION=	7

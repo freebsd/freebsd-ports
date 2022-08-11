@@ -1,8 +1,6 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
-
 PORTNAME=	phoronix-test-suite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.8.2
+DISTVERSION=	10.8.3
 CATEGORIES=	benchmarks
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 

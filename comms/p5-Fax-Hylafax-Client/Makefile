@@ -1,5 +1,3 @@
-# Created by: Tony Shadwick <tshadwick@oss-solutions.com>
-
 PORTNAME=	Fax-Hylafax-Client
 PORTVERSION=	1.02
 PORTREVISION=	2

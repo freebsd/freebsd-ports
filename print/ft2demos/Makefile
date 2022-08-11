@@ -1,5 +1,3 @@
-# Created by: KANOU Hiroki <kanou@khdd.net>
-
 PORTNAME=	ft2demos
 PORTVERSION=	2.11.1
 CATEGORIES=	print

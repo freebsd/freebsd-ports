@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Mail-Folder
 PORTVERSION=	0.07
 PORTREVISION=	1

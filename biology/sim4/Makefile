@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	sim4
 PORTVERSION=	2003.09.21
 PORTREVISION=	1

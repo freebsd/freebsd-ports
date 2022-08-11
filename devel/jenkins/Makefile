@@ -1,7 +1,7 @@
 PORTNAME=	jenkins
-PORTVERSION=	2.344
+PORTVERSION=	2.363
 CATEGORIES=	devel java
-MASTER_SITES=	http://mirrors.jenkins.io/war/${PORTVERSION}/
+MASTER_SITES=	https://get.jenkins.io/war/${PORTVERSION}/
 DISTNAME=	jenkins
 EXTRACT_SUFX=	.war
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	Open-source continuous integration server
 LICENSE=	MIT
 
 USES=		cpe
-USE_JAVA=	yes
+USE_JAVA=	11+
 USE_RC_SUBR=	jenkins
 
 CONFLICTS=	jenkins-lts

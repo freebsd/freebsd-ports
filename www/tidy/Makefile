@@ -1,5 +1,3 @@
-# Created by: Abel Chow <achow@transoft.net>
-
 PORTNAME=	tidy4
 PORTVERSION=	20000804
 PORTREVISION=	3

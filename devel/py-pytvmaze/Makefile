@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pytvmaze
 PORTVERSION=	2.0.8
 CATEGORIES=	devel python

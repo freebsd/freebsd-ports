@@ -1,5 +1,3 @@
-# Created by: Martin Pala <martinp@tildeslash.com>
-
 PORTNAME=	monit
 DISTVERSION=	5.32.0
 CATEGORIES=	sysutils

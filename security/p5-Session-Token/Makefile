@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	Session-Token
 PORTVERSION=	1.503
 CATEGORIES=	security perl5

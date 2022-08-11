@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-infosatepg
 PORTVERSION=	0.0.11
 PORTREVISION=	21

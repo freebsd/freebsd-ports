@@ -1,5 +1,3 @@
-# Created by: Keith Gaughan <k@stereochro.me>
-
 PORTNAME=	cheroot
 PORTVERSION=	8.6.0
 CATEGORIES=	www python

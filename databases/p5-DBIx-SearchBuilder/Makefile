@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	DBIx-SearchBuilder
 PORTVERSION=	1.68
 CATEGORIES=	databases perl5

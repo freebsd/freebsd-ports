@@ -1,5 +1,3 @@
-# Created by: glarkin
-
 PORTNAME=	MooseX-StrictConstructor
 PORTVERSION=	0.21
 CATEGORIES=	devel perl5

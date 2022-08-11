@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	pev
 PORTVERSION=	0.80
 PORTREVISION=	1

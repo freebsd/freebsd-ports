@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	LaTeX-Encode
 PORTVERSION=	0.092.0
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Lexical-Persistence
 PORTVERSION=	1.023
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Meikel Brandmeyer <ocaml-ounit-port@kotka.de>
-
 PORTNAME=	ounit
 PORTVERSION=	1.0.3
 PORTREVISION=	2

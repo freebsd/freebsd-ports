@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-d3
 PORTVERSION=	3.5.17.0
 PORTREVISION=	2

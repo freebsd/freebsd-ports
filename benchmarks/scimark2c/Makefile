@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	scimark2c
 DISTVERSION=	2_1
 CATEGORIES=	benchmarks

@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	nc
 PORTVERSION=	1.0.1
 PORTREVISION=	1

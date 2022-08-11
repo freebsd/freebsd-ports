@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbrabez@gmail.com>
-
 PORTNAME=	django-formtools
 PORTVERSION=	2.3
 CATEGORIES=	www python

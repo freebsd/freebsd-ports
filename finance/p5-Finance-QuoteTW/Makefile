@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Finance-QuoteTW
 PORTVERSION=	0.09
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	jtiger
 PORTVERSION=	2.1.0376
 CATEGORIES=	java devel

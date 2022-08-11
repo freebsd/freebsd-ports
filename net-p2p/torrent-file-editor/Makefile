@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	torrent-file-editor
 PORTVERSION=	0.3.17
 DISTVERSIONPREFIX=	v

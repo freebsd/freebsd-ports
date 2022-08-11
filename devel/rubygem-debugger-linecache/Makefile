@@ -1,5 +1,3 @@
-# Created by: Vladimir Kondratiev <wulf@mail.mipt.ru>
-
 PORTNAME=	debugger-linecache
 PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems

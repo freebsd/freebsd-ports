@@ -1,5 +1,3 @@
-# Created by: Oleg Pudeyev <oleg@bsdpower.com>
-
 PORTNAME=	gtk-theme-switch
 DISTVERSION=	2.0.0rc2
 PORTREVISION=	6

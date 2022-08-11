@@ -1,5 +1,3 @@
-# Created by: kungfuftr <scott@surreytech.co.uk>
-
 PORTNAME=	SOAP-Data-Builder
 PORTVERSION=	1
 PORTREVISION=	1

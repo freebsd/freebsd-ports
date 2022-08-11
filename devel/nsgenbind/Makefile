@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	nsgenbind
 PORTVERSION=	0.8
 CATEGORIES=	devel

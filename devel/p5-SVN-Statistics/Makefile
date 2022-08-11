@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-
 PORTNAME=	SVN-Statistics
 PORTVERSION=	0.041
 PORTREVISION=	8

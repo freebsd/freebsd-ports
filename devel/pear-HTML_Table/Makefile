@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine (<tux@pinguru.net>)
-
 PORTNAME=	HTML_Table
 PORTVERSION=	1.8.4
 CATEGORIES=	devel www pear

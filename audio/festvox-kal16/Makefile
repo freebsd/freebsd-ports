@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	festvox-kal16
 PORTVERSION=	1.4.0
 CATEGORIES=	audio accessibility

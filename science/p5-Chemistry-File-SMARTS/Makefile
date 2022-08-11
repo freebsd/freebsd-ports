@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	Chemistry-File-SMARTS
 PORTVERSION=	0.22
 PORTREVISION=	1

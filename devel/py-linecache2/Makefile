@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	linecache2
 PORTVERSION=	1.0.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	HTTP-BrowserDetect
 PORTVERSION=	3.35
 CATEGORIES=	www perl5
@@ -24,10 +22,4 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503102
-TEST_DEPENDS+=	p5-JSON-PP>=4.04:converters/p5-JSON-PP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

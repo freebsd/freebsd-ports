@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Digest
 PORTVERSION=	1.20
 CATEGORIES=	security perl5

@@ -1,5 +1,3 @@
-# Created by: Meno Abels <meno.abels@adviser.com>
-
 PORTNAME=	crm114
 PORTVERSION=	20100106
 PORTREVISION=	6

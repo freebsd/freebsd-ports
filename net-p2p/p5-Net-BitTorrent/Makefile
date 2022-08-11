@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-BitTorrent
 PORTVERSION=	0.052
 PORTREVISION=	5

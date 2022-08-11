@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	MooX-Aliases
 PORTVERSION=	0.001006
 PORTREVISION=	1

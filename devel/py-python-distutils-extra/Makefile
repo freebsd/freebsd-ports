@@ -1,7 +1,5 @@
-# Created by: Ju Pengfei <jupengfei@gmail.com>
-
 PORTNAME=	python-distutils-extra
-PORTVERSION=	2.45
+PORTVERSION=	2.47
 CATEGORIES=	devel python
 MASTER_SITES=	DEBIAN
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

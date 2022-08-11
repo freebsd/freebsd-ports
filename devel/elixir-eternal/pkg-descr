@@ -1,4 +1,0 @@
-Keep your ETS tables running forever using bouncing GenServers in
-Elixir.
-
-WWW: https://github.com/whitfin/eternal

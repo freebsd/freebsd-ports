@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cpuid
 PORTVERSION=	3.3
 PORTREVISION=	7

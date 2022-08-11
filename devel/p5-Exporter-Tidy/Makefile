@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Exporter-Tidy
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

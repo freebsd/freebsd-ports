@@ -1,5 +1,3 @@
-# Created by: Matt Emmerton <matt@gsicomp.on.ca>
-
 PORTNAME=	vlogin
 PORTVERSION=	3.10.2
 PORTREVISION=	2

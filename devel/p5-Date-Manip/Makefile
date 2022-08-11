@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Date-Manip
 PORTVERSION=	6.86
 CATEGORIES=	devel perl5

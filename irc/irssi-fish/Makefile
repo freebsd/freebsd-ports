@@ -1,5 +1,3 @@
-# Created by: Jens Holmqvist <zparta@hispan.se>
-
 PORTNAME=	irssi-fish
 DISTVERSION=	1.6.20200629
 CATEGORIES=	irc security

@@ -1,5 +1,3 @@
-# Created by: Peter Wemm <peter@FreeBSD.org>
-
 PORTNAME=	hexpert
 PORTVERSION=	2.4.1
 CATEGORIES=	editors

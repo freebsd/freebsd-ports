@@ -1,5 +1,3 @@
-# Created by: snowchyld
-
 PORTNAME=	libsrs2
 PORTVERSION=	1.0.18
 PORTREVISION=	4

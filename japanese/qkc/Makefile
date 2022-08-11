@@ -1,5 +1,3 @@
-# Created by: Masafumi NAKANE <max@FreeBSD.org>
-
 PORTNAME=	qkc
 PORTVERSION=	1.0
 CATEGORIES=	japanese

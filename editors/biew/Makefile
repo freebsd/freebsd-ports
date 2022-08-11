@@ -1,5 +1,3 @@
-# Created by: Michael Vasilenko <acid@stu.cn.ua>
-
 PORTNAME=	biew
 PORTVERSION=	6.1.0
 PORTREVISION=	4
@@ -12,8 +10,6 @@ COMMENT=	Binary file viewer and editor
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc=		Does not compile
-BROKEN_sparc64=		Does not compile
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	no targets defined in Makefile
 

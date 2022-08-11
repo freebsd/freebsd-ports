@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Authen-TacacsPlus
 PORTVERSION=	0.28
 CATEGORIES=	security perl5

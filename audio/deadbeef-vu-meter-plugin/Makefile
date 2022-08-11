@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	deadbeef-vu-meter-plugin
 DISTVERSION=	0.0.2014.09.14
 CATEGORIES=	audio

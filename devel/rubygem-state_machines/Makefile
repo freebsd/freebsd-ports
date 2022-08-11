@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	state_machines
 PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems

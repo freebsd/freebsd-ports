@@ -1,5 +1,3 @@
-# Created by: Arjan van Leeuwen <avleeuwen@piwebs.com>
-
 PORTNAME=	dcraw
 PORTVERSION=	9.28
 PORTREVISION=	2

@@ -39,6 +39,7 @@
     SUBDIR += c-sig
     SUBDIR += cclient
     SUBDIR += claws-mail
+    SUBDIR += claws-mail-acpi_notifier
     SUBDIR += claws-mail-address_keeper
     SUBDIR += claws-mail-archive
     SUBDIR += claws-mail-att_remover
@@ -49,6 +50,7 @@
     SUBDIR += claws-mail-dillo
     SUBDIR += claws-mail-fetchinfo
     SUBDIR += claws-mail-gdata
+    SUBDIR += claws-mail-keyword_warner
     SUBDIR += claws-mail-libravatar
     SUBDIR += claws-mail-litehtml_viewer
     SUBDIR += claws-mail-mailmbox
@@ -94,6 +96,7 @@
     SUBDIR += dma
     SUBDIR += dot-forward
     SUBDIR += dovecot
+    SUBDIR += dovecot-coi
     SUBDIR += dovecot-fts-elastic
     SUBDIR += dovecot-fts-flatcurve
     SUBDIR += dovecot-fts-xapian
@@ -135,8 +138,6 @@
     SUBDIR += geary
     SUBDIR += gensig
     SUBDIR += getmail6
-    SUBDIR += gmime2
-    SUBDIR += gmime2-sharp
     SUBDIR += gmime26
     SUBDIR += gmime26-sharp
     SUBDIR += gmime30
@@ -191,6 +192,7 @@
     SUBDIR += lmtp2nntp
     SUBDIR += lookout
     SUBDIR += lurker
+    SUBDIR += mail-expire
     SUBDIR += mail2sms
     SUBDIR += mailagent
     SUBDIR += maildrop
@@ -235,6 +237,7 @@
     SUBDIR += minimalist
     SUBDIR += missey
     SUBDIR += mlmmj
+    SUBDIR += mlmmj-archiver
     SUBDIR += mlmmj-webview
     SUBDIR += mls
     SUBDIR += mmh
@@ -260,6 +263,7 @@
     SUBDIR += notmuch-emacs
     SUBDIR += notmuch-mutt
     SUBDIR += nullmailer
+    SUBDIR += openarc
     SUBDIR += opendkim
     SUBDIR += opendmarc
     SUBDIR += opensmtpd
@@ -315,7 +319,6 @@
     SUBDIR += p5-Email-Send
     SUBDIR += p5-Email-Sender
     SUBDIR += p5-Email-Sender-Transport-SMTP-TLS
-    SUBDIR += p5-Email-Sender-Transport-SMTPS
     SUBDIR += p5-Email-Sender-Transport-SQLite
     SUBDIR += p5-Email-Simple
     SUBDIR += p5-Email-Simple-FromHandle
@@ -334,7 +337,6 @@
     SUBDIR += p5-MIME-EcoEncode
     SUBDIR += p5-MIME-EncWords
     SUBDIR += p5-MIME-Explode
-    SUBDIR += p5-MIME-Fast
     SUBDIR += p5-MIME-Lite
     SUBDIR += p5-MIME-Lite-HTML
     SUBDIR += p5-MIME-Lite-TT
@@ -454,6 +456,7 @@
     SUBDIR += php74-imap
     SUBDIR += php80-imap
     SUBDIR += php81-imap
+    SUBDIR += php82-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += phpmailer6
@@ -561,12 +564,9 @@
     SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-identity_smtp
     SUBDIR += roundcube-login_info
-    SUBDIR += roundcube-mobilecube
-    SUBDIR += roundcube-mvision2
     SUBDIR += roundcube-sauserprefs
     SUBDIR += roundcube-thunderbird_labels
     SUBDIR += roundcube-twofactor_gauthenticator
-    SUBDIR += roundcube-umich
     SUBDIR += roundcube-veximaccountadmin
     SUBDIR += roundcube-yubikey_auth
     SUBDIR += rspamd
@@ -608,7 +608,6 @@
     SUBDIR += rubygem-roadie-rails-rails52
     SUBDIR += rubygem-roadie3
     SUBDIR += rubygem-ruby-qmail
-    SUBDIR += rubygem-tmail
     SUBDIR += rubygem-valid_email
     SUBDIR += rubygem-vmail
     SUBDIR += s-nail
@@ -636,6 +635,7 @@
     SUBDIR += smtprc
     SUBDIR += smtprelay
     SUBDIR += smtptrapd
+    SUBDIR += snappymail
     SUBDIR += sortmail
     SUBDIR += spamass-ixhash
     SUBDIR += spamass-milter

@@ -1,6 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-#   $MCom$
-
 PORTNAME=	gnome-icon-theme
 PORTVERSION=	3.12.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	epos
 PORTVERSION=	2.5.37
 PORTREVISION=	1

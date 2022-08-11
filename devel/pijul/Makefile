@@ -1,8 +1,6 @@
-# Created by: Carlo Strub
-
 PORTNAME=	pijul
 PORTVERSION=	1.0.0.b
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	cs@FreeBSD.org

@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	Parse-BooleanLogic
 PORTVERSION=	0.09
 PORTREVISION=	1

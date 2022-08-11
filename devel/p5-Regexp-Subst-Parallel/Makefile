@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	Regexp-Subst-Parallel
 PORTVERSION=	0.11
 PORTREVISION=	1

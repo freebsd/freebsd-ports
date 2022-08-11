@@ -1,5 +1,3 @@
-# Created by: Christopher Key <cjk32@cam.ac.uk>
-
 PORTNAME=	WebService-IMDB
 PORTVERSION=	0.05
 PORTREVISION=	1

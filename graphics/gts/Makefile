@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gts
 PORTVERSION=	0.7.6
 PORTREVISION=	5

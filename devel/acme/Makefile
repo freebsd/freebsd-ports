@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	acme
 DISTVERSION=	0.97.${SVN_REV}
 PORTEPOCH=	1

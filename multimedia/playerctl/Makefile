@@ -1,5 +1,3 @@
-# Created by: Aaron LI <aly@aaronly.me>
-
 PORTNAME=	playerctl
 DISTVERSION=	2.3.1
 PORTREVISION=	1

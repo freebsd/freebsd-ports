@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Filter-CBC
 PORTVERSION=	0.10
 PORTREVISION=	2

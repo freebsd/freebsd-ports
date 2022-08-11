@@ -1,5 +1,3 @@
-# Created by: Juli Mallett
-
 PORTNAME=	gtk-sharp
 PORTVERSION=	2.99.3
 PORTREVISION=	3

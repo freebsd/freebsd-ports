@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tty-spinner
 PORTVERSION=	0.9.3
 CATEGORIES=	devel rubygems

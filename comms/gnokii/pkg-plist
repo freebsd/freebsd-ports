@@ -1,6 +1,6 @@
-bin/gnokii
-bin/sendsms
-%%X11%%bin/xgnokii
+@(,gnokii,0750) bin/gnokii
+@(,gnokii,0755) bin/sendsms
+%%X11%%@(,gnokii,0750) bin/xgnokii
 etc/gnokiirc.sample
 include/gnokii.h
 include/gnokii/bitmaps.h
@@ -29,9 +29,9 @@ man/man1/xgnokii.1.gz
 man/man8/gnokiid.8.gz
 man/man8/mgnokiidev.8.gz
 %%SMSD%%man/man8/smsd.8.gz
-sbin/gnokiid
-sbin/mgnokiidev
-%%SMSD%%sbin/smsd
+@(,gnokii,4750) sbin/gnokiid
+@(,gnokii,4750) sbin/mgnokiidev
+%%SMSD%%@(,gnokii,0750) sbin/smsd
 share/locale/de/LC_MESSAGES/gnokii.mo
 share/locale/fi/LC_MESSAGES/gnokii.mo
 share/locale/fr/LC_MESSAGES/gnokii.mo

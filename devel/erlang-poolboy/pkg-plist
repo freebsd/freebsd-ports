@@ -1,9 +1,0 @@
-lib/erlang/lib/poolboy-%%VERSION%%/ebin/poolboy.app
-lib/erlang/lib/poolboy-%%VERSION%%/ebin/poolboy.beam
-lib/erlang/lib/poolboy-%%VERSION%%/ebin/poolboy_sup.beam
-lib/erlang/lib/poolboy-%%VERSION%%/ebin/poolboy_worker.beam
-lib/erlang/lib/poolboy-%%VERSION%%/src/poolboy.app.src
-lib/erlang/lib/poolboy-%%VERSION%%/src/poolboy.erl
-lib/erlang/lib/poolboy-%%VERSION%%/src/poolboy_sup.erl
-lib/erlang/lib/poolboy-%%VERSION%%/src/poolboy_worker.erl
-%%PORTDOCS%%%%DOCSDIR%%/README.md

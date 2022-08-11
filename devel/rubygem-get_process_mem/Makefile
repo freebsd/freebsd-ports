@@ -1,9 +1,9 @@
 PORTNAME=	get_process_mem
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@michael-fausten.de
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get memory usage of a process in Ruby
 
 LICENSE=	MIT

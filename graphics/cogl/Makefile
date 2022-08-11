@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	cogl
 PORTVERSION=	1.22.8
 PORTREVISION=	1

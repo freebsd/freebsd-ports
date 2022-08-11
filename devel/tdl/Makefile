@@ -1,5 +1,3 @@
-# Created by: petef
-
 PORTNAME=	tdl
 PORTVERSION=	1.5.2
 PORTREVISION=	2

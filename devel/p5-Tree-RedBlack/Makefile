@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Tree-RedBlack
 PORTVERSION=	0.5
 PORTREVISION=	1

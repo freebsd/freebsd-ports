@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	smf
 PORTVERSION=	0.15.15
 PORTREVISION=	1

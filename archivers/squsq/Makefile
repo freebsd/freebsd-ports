@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	squsq
 PORTVERSION=	3.3
 CATEGORIES=	archivers

@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-
 PORTNAME=	icon-slicer
 PORTVERSION=	0.3
 PORTREVISION=	10

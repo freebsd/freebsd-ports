@@ -12,12 +12,12 @@ rcvar=selenium_enable
 load_rc_config "${name}"
 
 : ${selenium_enable="NO"}
-: ${selenium_args=""}
+: ${selenium_args="standalone"}
 : ${selenium_java_home="%%JAVA_HOME%%"}
 : ${selenium_java_opts=""}
 : ${selenium_user="selenium"}
 : ${selenium_group="selenium"}
-: ${selenium_jar="%%DATADIR%%/selenium-server-standalone-%%SELENIUM_VERSION%%.jar"}
+: ${selenium_jar="%%DATADIR%%/selenium-server-%%SELENIUM_VERSION%%.jar"}
 : ${selenium_log_file="/var/log/selenium.log"}
 
 pidfile="/var/run/selenium/selenium.pid"

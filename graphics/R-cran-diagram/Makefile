@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	diagram
 PORTVERSION=	1.6.5
 CATEGORIES=	graphics

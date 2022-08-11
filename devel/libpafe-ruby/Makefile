@@ -1,5 +1,3 @@
-# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-
 PORTNAME=	libpafe-ruby
 PORTVERSION=	0.0.8
 PORTREVISION=	1

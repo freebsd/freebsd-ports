@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao
-
 PORTNAME=	hte
 PORTVERSION=	2.1.1.g20161206
 PORTREVISION=	3

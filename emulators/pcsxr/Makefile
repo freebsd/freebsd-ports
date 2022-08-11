@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	pcsxr
 PORTVERSION=	1.9.95.20180604
 PORTREVISION=	5

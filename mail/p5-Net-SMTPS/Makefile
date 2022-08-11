@@ -1,5 +1,3 @@
-# Created by: Alexandre Biancalana <ale@biancalanas.net>
-
 PORTNAME=	Net-SMTPS
 PORTVERSION=	0.03
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	wmanager-addons
 PORTVERSION=	0.02
 CATEGORIES=	x11-wm

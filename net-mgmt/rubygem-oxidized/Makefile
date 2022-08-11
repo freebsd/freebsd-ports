@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	oxidized
 PORTVERSION=	0.28.0
 PORTREVISION=	1

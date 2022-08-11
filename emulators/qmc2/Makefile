@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	qmc2
 PORTVERSION=	0.195
 PORTREVISION=	4

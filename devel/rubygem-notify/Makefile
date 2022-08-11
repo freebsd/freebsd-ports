@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net <ports@c0decafe.net>
-
 PORTNAME=	notify
 PORTVERSION=	0.5.2
 CATEGORIES=	devel rubygems

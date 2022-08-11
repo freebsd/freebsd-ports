@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	id3ed
 PORTVERSION=	1.10.4
 CATEGORIES=	audio

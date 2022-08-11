@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Mail-Procmailrc
 PORTVERSION=	1.09
 PORTREVISION=	1

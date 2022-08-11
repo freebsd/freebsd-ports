@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	gollum-lib
 PORTVERSION=	5.1.3
 PORTREVISION=	2

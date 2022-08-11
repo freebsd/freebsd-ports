@@ -1,5 +1,3 @@
-# Created by: olevole@olevole.ru
-
 PORTNAME=	phpLiteAdmin
 DISTVERSION=	1-9-8-2
 CATEGORIES=	databases www

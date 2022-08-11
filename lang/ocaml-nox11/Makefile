@@ -1,5 +1,3 @@
-# Created by: Eugene Ossintsev
-
 PORTNAME=	ocaml-nox11
 CATEGORIES=	lang
 

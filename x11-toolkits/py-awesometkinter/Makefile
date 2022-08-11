@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	AwesomeTkinter
 PORTVERSION=	2021.11.8
 CATEGORIES=	x11-toolkits python

@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	egl
 PORTVERSION=	0.3.1
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: David W. Chapman Jr. (dwcjr@FreeBSD.org)
-
 PORTNAME=	diskcheckd
 PORTVERSION=	20150220
 CATEGORIES=	sysutils

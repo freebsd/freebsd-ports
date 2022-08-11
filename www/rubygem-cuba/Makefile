@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	cuba
 PORTVERSION=	3.9.3
 CATEGORIES=	www rubygems

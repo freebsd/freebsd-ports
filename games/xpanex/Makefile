@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xpanex
 PORTVERSION=	5.5.2
 PORTREVISION=	2

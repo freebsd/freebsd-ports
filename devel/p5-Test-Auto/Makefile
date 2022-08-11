@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-Auto
 PORTVERSION=	0.12
 CATEGORIES=	devel perl5

@@ -20,7 +20,8 @@ bash_CMD=	/bin/sh
 OPTIONS_DEFINE=	SOUND
 OPTIONS_DEFAULT=SOUND
 
-SOUND_USE=	GSTREAMER1=mm,good,ogg,vorbis
+SOUND_USES=	gstreamer
+SOUND_USE=	GSTREAMER=mm,good,ogg,vorbis
 SOUND_CONFIGURE_ENABLE=	sound
 
 post-patch:

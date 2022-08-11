@@ -1,5 +1,3 @@
-# Created by: Max Khon
-
 PORTNAME=	golded+
 PORTVERSION=	1.1.5.a${SNAPDATE}
 CATEGORIES=	news mail

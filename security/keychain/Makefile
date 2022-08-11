@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <wjv@FreeBSD.org>
-
 PORTNAME=	keychain
 PORTVERSION=	2.8.5
 CATEGORIES=	security

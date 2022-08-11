@@ -15,11 +15,11 @@ man/man1/spd-conf.1.gz
 %%PYTHON_SITELIBDIR%%/speechd_config/__init__.py
 %%PYTHON_SITELIBDIR%%/speechd_config/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/speechd_config/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/speechd_config/__pycache__/buildconfig.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/speechd_config/__pycache__/buildconfig.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/speechd_config/__pycache__/config.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/speechd_config/__pycache__/config.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/speechd_config/__pycache__/paths.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/speechd_config/__pycache__/paths.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/speechd_config/buildconfig.py
 %%PYTHON_SITELIBDIR%%/speechd_config/config.py
-%%PYTHON_SITELIBDIR%%/speechd_config/paths.py
 share/sounds/speech-dispatcher/test.wav
 %%DATADIR%%/conf/desktop/speechd.desktop

@@ -1,5 +1,3 @@
-# Created by: cartola (Carlos E. G. Carvalho)
-
 PORTNAME=	freemind
 PORTVERSION=	1.0.1
 PORTREVISION=	1

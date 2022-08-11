@@ -1,5 +1,3 @@
-# Created by: stast
-
 PORTNAME=	dimes
 PORTVERSION=	0.5.2
 CATEGORIES=	net java

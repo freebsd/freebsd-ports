@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	SVN-Notify-Filter-Markdown
 PORTVERSION=	0.05
 PORTREVISION=	1

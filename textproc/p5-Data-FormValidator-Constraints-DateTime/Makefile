@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Data-FormValidator-Constraints-DateTime
 PORTVERSION=	1.11
 PORTREVISION=	1

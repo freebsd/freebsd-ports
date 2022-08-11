@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	HTTP_Request2
 PORTVERSION=	2.5.1
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Devel-Leak-Cb
 PORTVERSION=	0.04
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
-
 PORTNAME=	projectx
 PORTVERSION=	0.91.0
 PORTREVISION=	1

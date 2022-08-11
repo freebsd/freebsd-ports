@@ -1,5 +1,6 @@
 PORTNAME=	domino-chain
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

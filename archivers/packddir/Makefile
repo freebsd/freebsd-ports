@@ -1,5 +1,3 @@
-# Created by: Ayumi M <ayu@commun.jp>
-
 PORTNAME=	packddir
 PORTVERSION=	0.0.6
 CATEGORIES=	archivers

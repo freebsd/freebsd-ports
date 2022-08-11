@@ -1,5 +1,3 @@
-# Created by: lon_kamikaze@gmx.de
-
 PORTNAME=	veditor
 PORTVERSION=	1.2.2
 PORTREVISION=	3

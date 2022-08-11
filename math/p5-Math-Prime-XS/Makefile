@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Math-Prime-XS
 PORTVERSION=	0.27
 CATEGORIES=	math perl5

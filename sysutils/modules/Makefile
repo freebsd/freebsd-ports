@@ -1,5 +1,3 @@
-# Created by: Hokan
-
 PORTNAME=	modules
 PORTVERSION=	4.6.0
 CATEGORIES=	sysutils tcl

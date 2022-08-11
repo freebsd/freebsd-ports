@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
-
 PORTNAME=	zsync
 PORTVERSION=	0.6.2
 PORTREVISION=	2

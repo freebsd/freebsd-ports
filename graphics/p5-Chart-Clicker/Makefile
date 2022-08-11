@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	Chart-Clicker
 PORTVERSION=	2.90
 PORTREVISION=	1

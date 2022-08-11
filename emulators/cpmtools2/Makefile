@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	cpmtools2
 PORTVERSION=	2.22
 CATEGORIES=	emulators sysutils

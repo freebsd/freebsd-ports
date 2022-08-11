@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	huepy
 PORTVERSION=	1.2.1
 PORTREVISION=	1

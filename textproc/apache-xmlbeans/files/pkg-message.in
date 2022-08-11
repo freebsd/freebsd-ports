@@ -1,0 +1,3 @@
+To use XMLBeans you might have to define the following variables:
+export XMLBEANS_HOME=%%JAVAJARDIR%%
+export CLASSPATH=%%JAVAJARDIR%%/xmlbeans.jar:$CLASSPATH

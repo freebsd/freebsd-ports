@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	liblscp
 DISTVERSION=	0.9.6
 CATEGORIES=	audio

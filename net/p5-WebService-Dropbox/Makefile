@@ -1,5 +1,3 @@
-# Created by: Lung-Pin Chang <changlp@cs.nctu.edu.tw>
-
 PORTNAME=	WebService-Dropbox
 PORTVERSION=	2.09
 CATEGORIES=	net perl5

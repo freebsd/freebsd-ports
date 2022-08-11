@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	importmap-rails
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

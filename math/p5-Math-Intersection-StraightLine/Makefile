@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-Intersection-StraightLine
 PORTVERSION=	0.05
 CATEGORIES=	math perl5

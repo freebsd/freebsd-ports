@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	fwlogwatch
 PORTVERSION=	1.5
 CATEGORIES=	security

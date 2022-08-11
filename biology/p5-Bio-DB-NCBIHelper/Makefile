@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Bio-DB-NCBIHelper
 PORTVERSION=	1.7.7
 CATEGORIES=	biology perl5

@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-shell-extra-extensions
 PORTVERSION=	3.28
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	App-Trace
 PORTVERSION=	0.50
 PORTREVISION=	2

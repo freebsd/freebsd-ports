@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	redcarpet
 PORTVERSION=	3.5.1
 CATEGORIES=	textproc rubygems

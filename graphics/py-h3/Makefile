@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	h3
 PORTVERSION=	3.7.4
 CATEGORIES=	graphics python

@@ -1,4 +1,4 @@
---- src/lay/lay/lay.pro.orig	2021-07-23 08:00:26 UTC
+--- src/lay/lay/lay.pro.orig	2022-04-24 08:12:38 UTC
 +++ src/lay/lay/lay.pro
 @@ -181,13 +181,13 @@ RESOURCES = layBuildInMacros.qrc \
  
@@ -26,7 +26,7 @@
 -    LIBS += -lklayout_QtXml
 +    LIBS += $$DESTDIR/libklayout_QtXml.so
    }
-   equals(HAVE_QT5, "1") {
+   greaterThan(QT_MAJOR_VERSION, 4) {
 -    LIBS += -lklayout_QtWidgets
 +    LIBS += $$DESTDIR/libklayout_QtWidgets.so
    }

@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	nut
 PORTVERSION=	20.1
 PORTREVISION=	1

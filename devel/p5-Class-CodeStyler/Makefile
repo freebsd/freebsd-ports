@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Class-CodeStyler
 PORTVERSION=	0.27
 PORTREVISION=	1

@@ -23,6 +23,7 @@
     SUBDIR += R-cran-gridBase
     SUBDIR += R-cran-gridExtra
     SUBDIR += R-cran-jpeg
+    SUBDIR += R-cran-latticeExtra
     SUBDIR += R-cran-munsell
     SUBDIR += R-cran-pROC
     SUBDIR += R-cran-pixmap
@@ -76,7 +77,6 @@
     SUBDIR += blend2d
     SUBDIR += blender
     SUBDIR += blender-doc
-    SUBDIR += blender-lts28
     SUBDIR += blender-lts29
     SUBDIR += bmeps
     SUBDIR += bmp2html
@@ -118,6 +118,7 @@
     SUBDIR += curtail
     SUBDIR += cuttlefish
     SUBDIR += darktable
+    SUBDIR += darktable40
     SUBDIR += dataplot
     SUBDIR += dbow2
     SUBDIR += dc20pack
@@ -139,8 +140,8 @@
     SUBDIR += dmtx-utils
     SUBDIR += drawing
     SUBDIR += drawpile
-    SUBDIR += drm-current-kmod
-    SUBDIR += drm-devel-kmod
+    SUBDIR += drm-510-kmod
+    SUBDIR += drm-54-kmod
     SUBDIR += drm-fbsd12.0-kmod
     SUBDIR += drm-fbsd13-kmod
     SUBDIR += drm-kmod
@@ -232,6 +233,7 @@
     SUBDIR += gdal
     SUBDIR += gdchart
     SUBDIR += gdk-pixbuf2
+    SUBDIR += gdk-pixbuf2-xlib
     SUBDIR += gdtclft
     SUBDIR += geeqie
     SUBDIR += gegl
@@ -274,7 +276,6 @@
     SUBDIR += glosm
     SUBDIR += glpng
     SUBDIR += glslang
-    SUBDIR += gltt
     SUBDIR += glx-utils
     SUBDIR += gmic
     SUBDIR += gmic-qt
@@ -285,7 +286,6 @@
     SUBDIR += gnome-color-manager
     SUBDIR += gnome-video-effects
     SUBDIR += gocr
-    SUBDIR += goocanvas
     SUBDIR += goocanvas2
     SUBDIR += goocanvas3
     SUBDIR += goocanvasmm2
@@ -295,7 +295,10 @@
     SUBDIR += gphoto2
     SUBDIR += gpicview
     SUBDIR += gpsmanshp
+    SUBDIR += gpu-firmware-amd-kmod
+    SUBDIR += gpu-firmware-intel-kmod
     SUBDIR += gpu-firmware-kmod
+    SUBDIR += gpu-firmware-radeon-kmod
     SUBDIR += gpxsee
     SUBDIR += gracula
     SUBDIR += grads
@@ -411,6 +414,7 @@
     SUBDIR += kontrast
     SUBDIR += kooka
     SUBDIR += kphotoalbum
+    SUBDIR += kplot
     SUBDIR += kqtquickcharts
     SUBDIR += kquickimageeditor
     SUBDIR += krita
@@ -501,6 +505,7 @@
     SUBDIR += libspng
     SUBDIR += libsvg
     SUBDIR += libsvg-cairo
+    SUBDIR += libsvgtiny
     SUBDIR += libvisual
     SUBDIR += libvisual04
     SUBDIR += libvisual04-plugins
@@ -533,16 +538,13 @@
     SUBDIR += luminance-qt5
     SUBDIR += lux
     SUBDIR += lximage-qt
-    SUBDIR += magnum
-    SUBDIR += magnum-examples
-    SUBDIR += magnum-extras
-    SUBDIR += magnum-plugins
     SUBDIR += mahotas
     SUBDIR += maim
     SUBDIR += mandelbulber
     SUBDIR += mapcache
     SUBDIR += mapserver
     SUBDIR += mapyrus
+    SUBDIR += matplotlib-cpp
     SUBDIR += matplotplusplus
     SUBDIR += megapov
     SUBDIR += meh
@@ -562,6 +564,7 @@
     SUBDIR += movit
     SUBDIR += mozjpeg
     SUBDIR += mscgen
+    SUBDIR += msl
     SUBDIR += mtpaint
     SUBDIR += multican
     SUBDIR += mupdf
@@ -606,6 +609,7 @@
     SUBDIR += openjpeg15
     SUBDIR += openjph
     SUBDIR += openjump
+    SUBDIR += openmvs
     SUBDIR += opennurbs
     SUBDIR += openorienteering-mapper
     SUBDIR += openrm
@@ -655,7 +659,6 @@
     SUBDIR += p5-GD-TextUtil
     SUBDIR += p5-GD-Thumbnail
     SUBDIR += p5-Geo-EOP
-    SUBDIR += p5-Geo-GDAL
     SUBDIR += p5-Geo-GDAL-FFI
     SUBDIR += p5-Geo-GML
     SUBDIR += p5-Geo-Gpx
@@ -759,7 +762,6 @@
     SUBDIR += pho
     SUBDIR += photivo
     SUBDIR += photoflare
-    SUBDIR += photoflow
     SUBDIR += photopc
     SUBDIR += photoqt
     SUBDIR += phototonic
@@ -771,6 +773,8 @@
     SUBDIR += php80-gd
     SUBDIR += php81-exif
     SUBDIR += php81-gd
+    SUBDIR += php82-exif
+    SUBDIR += php82-gd
     SUBDIR += phplot
     SUBDIR += picpuz
     SUBDIR += piddle
@@ -851,6 +855,7 @@
     SUBDIR += py-glfw
     SUBDIR += py-glooey
     SUBDIR += py-gphoto2
+    SUBDIR += py-graphlib-backport
     SUBDIR += py-graphviz
     SUBDIR += py-graphy
     SUBDIR += py-gvgen
@@ -883,6 +888,7 @@
     SUBDIR += py-plotly
     SUBDIR += py-png
     SUBDIR += py-pointpats
+    SUBDIR += py-projpicker
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
@@ -907,7 +913,9 @@
     SUBDIR += py-pytesseract
     SUBDIR += py-python-poppler-qt5
     SUBDIR += py-pyvips
+    SUBDIR += py-pyvista
     SUBDIR += py-pyx
+    SUBDIR += py-qpageview
     SUBDIR += py-qrencode
     SUBDIR += py-railroad-diagrams
     SUBDIR += py-rasterio

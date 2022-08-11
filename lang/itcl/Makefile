@@ -1,5 +1,3 @@
-# Created by: chuckr
-
 PORTNAME=	itcl
 PORTVERSION=	3.4.1
 PORTREVISION=	1

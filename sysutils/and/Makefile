@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	and
 PORTVERSION=	1.2.2
 PORTREVISION=	1

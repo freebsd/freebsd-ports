@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	IO-Interactive
 PORTVERSION=	1.023
 PORTEPOCH=	1

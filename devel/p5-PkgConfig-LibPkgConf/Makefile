@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	PkgConfig-LibPkgConf
 PORTVERSION=	0.11
 CATEGORIES=	devel perl5

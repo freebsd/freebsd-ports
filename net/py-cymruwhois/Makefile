@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	cymruwhois
 PORTVERSION=	1.6
 CATEGORIES=	net python

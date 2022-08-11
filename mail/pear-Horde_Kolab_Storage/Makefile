@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Kolab_Storage
 DISTVERSION=	2.2.4
 CATEGORIES=	mail www pear

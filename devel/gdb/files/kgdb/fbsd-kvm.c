@@ -30,7 +30,7 @@
 #include "filenames.h"
 #include "gdbcore.h"
 #include "gdbthread.h"
-#include "gdb_obstack.h"
+#include "gdbsupport/gdb_obstack.h"
 #include "inferior.h"
 #include "objfiles.h"
 #include "osabi.h"
@@ -39,6 +39,7 @@
 #include "target.h"
 #include "value.h"
 #include "readline/tilde.h"
+#include "gdbsupport/buildargv.h"
 #include "gdbsupport/pathstuff.h"
 
 #include <sys/user.h>
@@ -479,7 +480,7 @@ fbsd_kvm_target::files_info()
 {
 
 	printf_filtered ("\t`%s', ", vmcore);
-	wrap_here ("        ");
+	gdb_stdout->wrap_here (8);
 	printf_filtered ("file type %s.\n", "FreeBSD kernel vmcore");
 }
 

@@ -1,5 +1,3 @@
-# Created by: shurd@FreeBSD.org
-
 PORTNAME=	simsmith
 PORTVERSION=	9.9
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	aws-c-auth
 PORTVERSION=	0.6.10
 DISTVERSIONPREFIX=	v

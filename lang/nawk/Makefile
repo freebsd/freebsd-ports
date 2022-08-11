@@ -1,5 +1,3 @@
-# Created by: Josh Gilliam <josh@quick.net>
-
 PORTNAME=	nawk
 PORTVERSION=	20121220
 PORTREVISION=	1

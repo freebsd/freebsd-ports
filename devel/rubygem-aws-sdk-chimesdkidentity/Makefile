@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-chimesdkidentity
 PORTVERSION=	1.9.0
 CATEGORIES=	devel rubygems

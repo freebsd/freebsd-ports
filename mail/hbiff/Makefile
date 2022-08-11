@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	hbiff
 PORTVERSION=	1.2
 PORTREVISION=	2

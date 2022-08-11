@@ -1,5 +1,3 @@
-# Created by: Michael Schout <mschout@gkg.net>
-
 PORTNAME=	HTML_Select
 PORTVERSION=	1.3.1
 CATEGORIES=	devel www pear

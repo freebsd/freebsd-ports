@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Net-OpenSSH-Parallel
 PORTVERSION=	0.14
 CATEGORIES=	net security perl5

@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	jack-keyboard
 DISTVERSION=	2.7.2
 PORTREVISION=	1

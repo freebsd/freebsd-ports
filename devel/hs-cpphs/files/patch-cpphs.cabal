@@ -1,0 +1,20 @@
+--- cpphs.cabal.orig	2001-09-09 01:46:40 UTC
++++ cpphs.cabal
+@@ -52,7 +52,7 @@ Library
+       Hs-Source-Dirs: . old
+ 
+     else
+-      Build-Depends: time >=1.5 && <1.11
++      Build-Depends: time >=1.5
+       Hs-Source-Dirs: . new
+ 
+     Exposed-Modules:
+@@ -81,7 +81,7 @@ Executable cpphs
+       Hs-Source-Dirs: . old
+ 
+     else
+-      Build-Depends: time >=1.5 && <1.11
++      Build-Depends: time >=1.5
+       Hs-Source-Dirs: . new
+ 
+     Other-Modules:

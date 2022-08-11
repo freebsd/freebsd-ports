@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gl-117
 PORTVERSION=	1.3.2
 DISTVERSIONSUFFIX=	-src

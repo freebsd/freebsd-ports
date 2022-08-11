@@ -1,5 +1,3 @@
-# Created by: Malte Lance <malte.lance@gmx.net>
-
 PORTNAME=	4va
 PORTVERSION=	1.21
 PORTREVISION=	2

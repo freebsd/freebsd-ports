@@ -1,5 +1,3 @@
-# Created by: Dmitry Afanasiev <KOT@MATPOCKuH.Ru>
-
 PORTNAME=	autocd
 PORTVERSION=	3.02.12b
 PORTREVISION=	3

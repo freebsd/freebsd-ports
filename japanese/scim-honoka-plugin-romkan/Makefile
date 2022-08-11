@@ -1,5 +1,3 @@
-# Created by: Masashi CHIBA
-
 PORTNAME=	scim-honoka-plugin-romkan
 PORTVERSION=	0.9.0
 PORTREVISION=	12

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-dynect
 PORTVERSION=	0.5.0
 CATEGORIES=	net rubygems

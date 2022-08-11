@@ -1,5 +1,3 @@
-# Created by: Peter Bozarov (kingofgib@users.sourceforge.net)
-
 PORTNAME=	libds
 PORTVERSION=	2.2
 CATEGORIES=	devel

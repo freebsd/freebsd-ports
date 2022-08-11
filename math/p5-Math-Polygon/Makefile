@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Math-Polygon
 PORTVERSION=	1.10
 CATEGORIES=	math perl5

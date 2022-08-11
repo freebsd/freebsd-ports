@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Fuse
 PORTVERSION=	0.16.1
 PORTREVISION=	2

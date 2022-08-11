@@ -1,8 +1,6 @@
-# Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-
 PORTNAME=	doomsday
 PORTVERSION=	2.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/deng/Doomsday%20Engine/${PORTVERSION}
 

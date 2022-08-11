@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	diffsplit
 PORTVERSION=	1.0
 CATEGORIES=	textproc devel

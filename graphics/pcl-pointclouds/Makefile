@@ -1,15 +1,18 @@
 PORTNAME=	pcl
 DISTVERSION=	1.12.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics math
 MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	-pointclouds
 DISTNAME=	source
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}/${DISTVERSION}
 
-# backport of patches fixing tests
 PATCH_SITES=	https://github.com/PointCloudLibrary/pcl/commit/
-PATCHFILES=	ba388061b0f9ed9584e57d6019c30b044a657c3e.patch:-p1 \
+# backport of patches fixing build
+PATCHFILES=	d253f645f0bfbcd2c818fa5d0a6970c61f39c6b5.patch:-p1 \
+		b220d4b3e259dba0686d0b7cdbff10c668176ded.patch:-p1
+# backport of patches fixing tests
+PATCHFILES+=	ba388061b0f9ed9584e57d6019c30b044a657c3e.patch:-p1 \
 		614e19d96bd8415dbfb52d86df0f3774a9f462fe.patch:-p1 \
 		09c76582b5ff0f2b942609f5c85744f1ce96e332.patch:-p1 \
 		5be6766fbb8f5e9b2fe97a077dd5be53e5fc6983.patch:-p1 \
@@ -69,12 +72,15 @@ QHULL_DESC=		Include convex-hull operations
 QHULL_CMAKE_BOOL=	WITH_QHULL
 QHULL_LIB_DEPENDS=	libqhull_r.so:math/qhull8
 
-QT5_CMAKE_BOOL=		WITH_QT
+QT5_CMAKE_ON=		-DWITH_QT=QT5
+QT5_CMAKE_OFF=		-DWITH_QT=NO
 QT5_BROKEN=		WITH_QT doesn't do anything, should be used by apps, but apps is also broken: see https://github.com/PointCloudLibrary/pcl/issues/2642
 
-VTK_DESC=		Build VTK-Visualizations
+VTK_DESC=		Build VTK visualizations
+VTK_USES=		gl qt:5
+VTK_USE=		GL=gl,glu QT=core,gui,opengl,widgets,buildtools_build,qmake_build
 VTK_CMAKE_BOOL=		WITH_VTK
-VTK_LIB_DEPENDS=	libvtkCommonCore-8.2.so:math/vtk8
-VTK_BROKEN=		VTK has missing ompxx symbols: https://gitlab.kitware.com/vtk/vtk/issues/17444
+VTK_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.1
+VTK_LIB_DEPENDS=	libvtkCommonCore-9.1.so:math/vtk9
 
 .include <bsd.port.mk>

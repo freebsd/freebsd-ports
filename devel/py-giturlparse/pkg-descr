@@ -1,0 +1,4 @@
+giturlparse parses & rewrites git urls (supports GitHub, Bitbucket, FriendCode,
+Assembla, Gitlab ...). This is a fork of giturlparse.py with updated parsers.
+
+WWW: https://github.com/nephila/giturlparse

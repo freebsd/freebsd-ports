@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Module-Starter
 PORTVERSION=	1.77
 CATEGORIES=	devel perl5

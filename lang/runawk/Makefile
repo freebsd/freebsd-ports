@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@tandon.net>
-
 PORTNAME=	runawk
 DISTVERSION=	1.6.1
 CATEGORIES=	lang

@@ -1,0 +1,20 @@
+--- configure.ac.orig	2021-11-05 16:03:23.000000000 +0100
++++ configure.ac	2022-04-15 16:15:06.250117000 +0200
+@@ -404,9 +404,14 @@
+     AC_CHECK_HEADERS([mysql.h mysql/mysql.h])
+     CFLAGS="$_save_CFLAGS"
+ 
+-    AC_CHECK_LIB([numa], [numa_bind], [], [AC_MSG_ERROR([
+-      ERROR: missing libnuma. Requirement for building MySQL.
+-    ])])
++    case "$host_os" in
++    linux*)
++      AC_CHECK_LIB([numa], [numa_bind], [], [AC_MSG_ERROR([
++        ERROR: missing libnuma. Requirement for building MySQL.
++      ])])
++    ;;
++    esac
++
+     ;;
+   no)
+     AC_MSG_RESULT(no)

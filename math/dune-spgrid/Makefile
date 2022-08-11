@@ -1,7 +1,6 @@
 PORTNAME=	dune-spgrid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0rc1.20200105
-PORTREVISION=	1
+DISTVERSION=	2.8.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DUNE_DEPENDS=	dune-common>0:math/dune-common \
 		dune-grid>0:math/dune-grid \
-		dune-geometry>0:math/dune-geometry
+		dune-geometry>0:math/dune-geometry \
+		dune-uggrid>0:math/dune-uggrid
 BUILD_DEPENDS=	${DUNE_DEPENDS} \
 		openmpi>0:net/openmpi \
 		vc>0:devel/vc
@@ -23,7 +23,7 @@ USE_GITLAB=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	extensions
-GL_COMMIT=	3977013bee93d1b113b155cc5b881d28d3ee37f5
+GL_COMMIT=	0e5a3b234d885ac566c9622421ab4eab97c8a50e
 
 NO_ARCH=	yes
 

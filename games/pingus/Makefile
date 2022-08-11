@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	pingus
 PORTVERSION=	0.7.6
 PORTREVISION=	23

@@ -25,6 +25,7 @@ share/kconf_update/klickety.upd
 %%DATADIR%%/themes/ksame_old.svg
 %%DATADIR%%/themes/ksame_old_preview.png
 %%DATADIR%%/themes/ksame_preview.png
+share/locale/bg/LC_MESSAGES/klickety.mo
 share/locale/bs/LC_MESSAGES/klickety.mo
 share/locale/ca/LC_MESSAGES/klickety.mo
 share/locale/ca@valencia/LC_MESSAGES/klickety.mo

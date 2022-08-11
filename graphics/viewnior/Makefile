@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	viewnior
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1.8

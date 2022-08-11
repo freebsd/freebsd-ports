@@ -1,11 +1,29 @@
---- cmake/build_helpers.cmake.orig	2022-01-31 13:39:30 UTC
+--- cmake/build_helpers.cmake.orig	2022-08-05 10:52:34 UTC
 +++ cmake/build_helpers.cmake
-@@ -176,7 +176,7 @@ macro(createPackage)
-                 endif ()
-             endif ()
- 
--            add_dependencies(imhex ${plugin})
-+            add_dependencies(main ${plugin})
+@@ -352,17 +352,9 @@ function(downloadImHexPatternsFiles dest)
+             set(PATTERNS_BRANCH ImHex-v${IMHEX_VERSION})
          endif ()
-     endforeach()
  
+-        FetchContent_Declare(
+-            imhex_patterns
+-            GIT_REPOSITORY https://github.com/WerWolv/ImHex-Patterns.git
+-            GIT_TAG master
+-        )
+-
+-        FetchContent_Populate(imhex_patterns)
+-
+         set(PATTERNS_FOLDERS_TO_INSTALL constants encodings includes patterns magic)
+         foreach (FOLDER ${PATTERNS_FOLDERS_TO_INSTALL})
+-            install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION ${dest})
++            install(DIRECTORY "${CMAKE_BINARY_DIR}/_deps/imhex_patterns_src/${FOLDER}" DESTINATION "share/imhex/")
+         endforeach ()
+     endif ()
+ 
+@@ -370,7 +362,6 @@ endfunction()
+ 
+ macro(setupCompilerWarnings target)
+     set(IMHEX_COMMON_FLAGS "-Wall -Wextra -Werror")
+-    set(IMHEX_C_FLAGS "${IMHEX_COMMON_FLAGS} -Wno-restrict -Wno-stringop-overread")
+ 
+     set(CMAKE_C_FLAGS    "${CMAKE_C_FLAGS}    ${IMHEX_C_FLAGS}")
+     set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS}  ${IMHEX_C_FLAGS}")

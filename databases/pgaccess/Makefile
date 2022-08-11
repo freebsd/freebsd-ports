@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@pingpong.net>
-
 PORTNAME=	pgaccess
 PORTVERSION=	1.00.20140902
 PORTREVISION=	3

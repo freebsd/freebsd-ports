@@ -1,5 +1,3 @@
-# Created by: Xin LI <delphij@FreeBSD.org>
-
 PORTNAME=	hgsvn
 PORTVERSION=	0.6.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	RPC-Simple
 PORTVERSION=	1.002
 PORTREVISION=	1

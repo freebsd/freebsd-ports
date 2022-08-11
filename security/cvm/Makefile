@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@FreeBSD.org>
-
 PORTNAME=	cvm
 PORTVERSION=	0.97
 CATEGORIES=	security

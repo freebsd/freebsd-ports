@@ -1,8 +1,0 @@
-#!/bin/sh
-
-cat<<EOF
-If you really want to remove this package completely
-remove what is left in %%LOCALBASE%%/etc/aprsd /var/log/aprsd.
-Also be sure to remove user and groups aprsd and tnc 
-and remember to remove aprsd from dialer group.
-EOF

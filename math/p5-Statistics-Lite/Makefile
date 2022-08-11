@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	Statistics-Lite
 PORTVERSION=	3.62
 CATEGORIES=	math perl5

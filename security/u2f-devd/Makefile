@@ -1,5 +1,3 @@
-# Created by: Greg V <greg@unrelenting.technology>
-
 PORTNAME=	u2f-devd
 PORTVERSION=	1.1.10
 PORTREVISION=	6

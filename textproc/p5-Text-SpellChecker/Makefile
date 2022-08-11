@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Text-SpellChecker
 PORTVERSION=	0.14
 CATEGORIES=	textproc perl5

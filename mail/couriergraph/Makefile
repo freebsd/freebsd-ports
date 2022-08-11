@@ -1,5 +1,3 @@
-# Created by: Xavier Beaudouin <kiwi@oav.net>
-
 PORTNAME=	couriergraph
 PORTVERSION=	20060202
 PORTREVISION=	6

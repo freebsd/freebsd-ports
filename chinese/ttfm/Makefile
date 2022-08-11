@@ -1,5 +1,3 @@
-# Created by: Jing-Tang Keith Jang <keith@FreeBSD.org>
-
 PORTNAME=	ttfm
 PORTVERSION=	0.9.5
 PORTREVISION=	7

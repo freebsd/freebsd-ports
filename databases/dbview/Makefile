@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	dbview
 PORTVERSION=	1.0.4
 CATEGORIES=	databases

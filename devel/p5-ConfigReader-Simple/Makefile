@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	ConfigReader-Simple
 PORTVERSION=	1.295
 CATEGORIES=	devel perl5

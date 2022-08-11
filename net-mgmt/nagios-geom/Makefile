@@ -1,5 +1,3 @@
-# Created by: rea-fbsd@codelabs.ru
-
 PORTNAME=	geom
 PORTVERSION=	1.3
 CATEGORIES=	net-mgmt

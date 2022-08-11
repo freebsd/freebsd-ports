@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	rst2html5
 PORTVERSION=	1.9.5
 PORTREVISION=	2

@@ -11,6 +11,9 @@ LICENSE_FILE=	${WRKDIR}/STAR-${DISTVERSION}/LICENSE
 
 NOT_FOR_ARCHS=	i386 powerpc
 NOT_FOR_ARCHS_REASON=Needs 16+ GiB RAM for typical eukaryotic genome
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 LIB_DEPENDS=	libhts.so:biology/htslib
 

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Makefile-Parser
 PORTVERSION=	0.216
 CATEGORIES=	textproc perl5

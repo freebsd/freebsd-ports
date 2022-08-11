@@ -1,5 +1,3 @@
-# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-
 PORTNAME=	kmfl-european-latin
 PORTVERSION=	1.6
 PORTREVISION=	1

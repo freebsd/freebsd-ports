@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	xin
 PORTVERSION=	1.0.0
 PORTREVISION=	1

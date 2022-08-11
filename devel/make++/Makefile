@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	make++
 PORTVERSION=	2.0
 CATEGORIES=	devel perl5

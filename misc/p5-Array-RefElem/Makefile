@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Array-RefElem
 PORTVERSION=	1.00
 PORTREVISION=	1

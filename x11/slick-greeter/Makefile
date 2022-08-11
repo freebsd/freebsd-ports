@@ -1,5 +1,3 @@
-# Created by: Eric Turgeon <ericbsd@FreeBSD.org>
-
 PORTNAME=	slick-greeter
 PORTVERSION=	1.5.3
 CATEGORIES=	x11

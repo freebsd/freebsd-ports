@@ -1,5 +1,3 @@
-# Created by: Erik Greenwald <erik@smluc.org>
-
 PORTNAME=	x86info
 DISTVERSION=	1.31snap03
 CATEGORIES=	sysutils

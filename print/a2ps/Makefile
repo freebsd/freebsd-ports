@@ -1,5 +1,3 @@
-# Created by: Chuck Robey <chuckr@FreeBSD.org>
-
 PORTNAME=	a2ps
 PORTVERSION=	4.13b
 PORTREVISION=	16

@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	gkrellmlaunch
 PORTVERSION=	0.5
 PORTREVISION=	9

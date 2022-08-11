@@ -10,10 +10,12 @@ lib/X11/xephem/auxil/classicfigs.csf
 lib/X11/xephem/auxil/dearth.gif
 lib/X11/xephem/auxil/favorites.fav
 lib/X11/xephem/auxil/jupiter.1020
+lib/X11/xephem/auxil/jupiter.2040
 lib/X11/xephem/auxil/jupiter.9910
 lib/X11/xephem/auxil/jupitermap.gif
 lib/X11/xephem/auxil/logo.gif
 lib/X11/xephem/auxil/mars.1020
+lib/X11/xephem/auxil/mars.2040
 lib/X11/xephem/auxil/mars.9910
 lib/X11/xephem/auxil/mars_db
 lib/X11/xephem/auxil/marsmap.jpg
@@ -28,14 +30,15 @@ lib/X11/xephem/auxil/saturn16.gif
 lib/X11/xephem/auxil/saturn20.gif
 lib/X11/xephem/auxil/saturn24.gif
 lib/X11/xephem/auxil/saturne.1020
+lib/X11/xephem/auxil/saturne.2040
 lib/X11/xephem/auxil/saturne.9910
 lib/X11/xephem/auxil/starcensus.txt
 lib/X11/xephem/auxil/uranus.1020
+lib/X11/xephem/auxil/uranus.2040
 lib/X11/xephem/auxil/uranus.9910
 lib/X11/xephem/auxil/wmm.cof
 lib/X11/xephem/auxil/xephem_sites
 lib/X11/xephem/auxil/xephem_skyhist
-lib/X11/xephem/auxil/._wmm.cof
 lib/X11/xephem/catalogs/Messier.edb
 lib/X11/xephem/catalogs/SKY2k65.edb
 lib/X11/xephem/fifos/Makefile
@@ -167,5 +170,4 @@ lib/X11/xephem/help/png/valid-html401.png
 lib/X11/xephem/help/png/wcssolver.png
 lib/X11/xephem/help/xephem.html
 lib/X11/xephem/lo/lodb.xml
-lib/X11/xephem/lo/._lodb.xml
 man/man1/xephem.1.gz

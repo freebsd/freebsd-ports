@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: dtcms
+# REQUIRE: rpcbind
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable dtcms:
+#
+# dtcms_enable=YES
+
+. /etc/rc.subr
+
+name=dtcms
+rcvar=dtcms_enable
+desc="CDE calendar manager service daemon"
+
+load_rc_config $name
+
+: ${dtcms_enable:=NO}
+
+start_precmd="force_depend rpcbind || exit 1"
+pidfile=/var/run/dtcms.pid
+command=/usr/sbin/daemon
+command_args="-P $pidfile %%PREFIX%%/dt/bin/rpc.cmsd"
+
+run_rc_command $1

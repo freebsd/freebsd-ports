@@ -1,5 +1,3 @@
-# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
-
 PORTNAME=	pty
 DISTVERSION=	1.26
 CATEGORIES=	devel

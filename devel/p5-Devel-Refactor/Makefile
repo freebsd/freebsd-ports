@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Devel-Refactor
 PORTVERSION=	0.05
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Nosov Artem <chip-set@mail.ru>
-
 PORTNAME=	zisofs-tools
 PORTVERSION=	1.0.8
 PORTREVISION=	1

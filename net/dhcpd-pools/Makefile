@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	dhcpd-pools
 PORTVERSION=	3.1
 CATEGORIES=	net

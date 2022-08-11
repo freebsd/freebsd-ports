@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	HTML-Tree
 PORTVERSION=	5.07
 CATEGORIES=	www perl5

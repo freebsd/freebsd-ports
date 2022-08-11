@@ -1,5 +1,3 @@
-# Created by: Michael Beer <beerml@sigma6audio.de>
-
 PORTNAME=	lilv
 PORTVERSION=	0.24.12
 CATEGORIES=	audio

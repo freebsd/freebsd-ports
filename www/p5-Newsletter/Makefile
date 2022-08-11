@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Newsletter
 PORTVERSION=	0.033
 CATEGORIES=	www textproc perl5

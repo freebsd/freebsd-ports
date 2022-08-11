@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	asmutils
 PORTVERSION=	0.18
 PORTREVISION=	9

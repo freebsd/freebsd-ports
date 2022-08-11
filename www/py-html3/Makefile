@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	html3
 PORTVERSION=	1.18
 CATEGORIES=	www python

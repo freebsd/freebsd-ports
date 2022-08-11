@@ -1,8 +1,6 @@
-# Created by: Palle Girgensohn <girgen@FreeBSD.org>
-
 PORTNAME=	pg_stat_kcache
 DISTVERSIONPREFIX=	REL
-DISTVERSION=	2_2_0
+DISTVERSION=	2_2_1
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org

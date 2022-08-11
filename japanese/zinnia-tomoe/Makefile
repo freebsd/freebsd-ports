@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	zinnia
 PORTVERSION=	0.6.0
 CATEGORIES=	japanese

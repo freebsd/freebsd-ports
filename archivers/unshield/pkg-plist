@@ -4,4 +4,4 @@ lib/libunshield.so
 lib/libunshield.so.0
 lib/libunshield.so.0.0.0
 libdata/pkgconfig/libunshield.pc
-man/man1/unshield.1.gz
+share/man/man1/unshield.1.gz

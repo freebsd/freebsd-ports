@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <william88@gmail.com>
-
 PORTNAME=	qtile
 PORTVERSION=	0.18.1
 PORTREVISION=	1

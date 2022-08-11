@@ -1,5 +1,3 @@
-# Created by: mandree@FreeBSD.org
-
 PORTNAME=	wiggle
 PORTVERSION=	1.3
 CATEGORIES=	textproc

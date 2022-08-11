@@ -79,7 +79,7 @@ cells_stop()
         kill -TERM ${_pid}
     done
 
-    wait_for_pids ${rc_pid} ${children_pids}
+    wait_for_pids ${rc_pid} ${_children_pids}
 }
 
 run_rc_command "$1"

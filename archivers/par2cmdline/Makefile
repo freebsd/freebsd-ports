@@ -1,5 +1,3 @@
-# Created by: Chris Larsen <darth@vader.dk>
-
 PORTNAME=	par2cmdline
 PORTVERSION=	0.8.1
 DISTVERSIONPREFIX=	v

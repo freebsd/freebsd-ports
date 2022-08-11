@@ -1,5 +1,3 @@
-# Created by: Dmitri Goutnik <dg@syrec.org>
-
 PORTNAME=	hhpc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1

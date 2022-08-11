@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Tee
 PORTVERSION=	0.14
 PORTREVISION=	2

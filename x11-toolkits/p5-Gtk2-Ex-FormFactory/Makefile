@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Gtk2-Ex-FormFactory
 PORTVERSION=	0.67
 PORTREVISION=	3

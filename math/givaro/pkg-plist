@@ -1,4 +1,4 @@
-%%PORTDOCS%%%%DOCSDIR%%/givaro.html
+@comment %%PORTDOCS%%%%DOCSDIR%%/givaro.html
 bin/givaro-config
 bin/givaro-makefile
 include/givaro-config.h

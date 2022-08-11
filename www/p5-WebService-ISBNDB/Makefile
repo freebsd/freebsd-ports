@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	WebService-ISBNDB
 PORTVERSION=	0.34
 PORTREVISION=	1

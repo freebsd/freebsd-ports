@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@FreeBSD.org>
-
 PORTNAME=	pvr.hts
 DISTVERSION=	19.0.6
 DISTVERSIONSUFFIX=	-Matrix

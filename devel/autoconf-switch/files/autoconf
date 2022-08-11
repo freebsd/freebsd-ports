@@ -1,0 +1,4 @@
+#! /bin/sh
+${DEFAULT_AUTOCONF:+exec "$0${DEFAULT_AUTOCONF}" "$@"}
+c=$(ls -d "$0"[0-9]* 2>/dev/null | sort -Vr | head -n1)
+exec "${c:?$0: not installed}" "$@"

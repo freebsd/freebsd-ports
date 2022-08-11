@@ -1,9 +1,7 @@
-# Created by: Daniel Morante <daniel@morante.net>
-
 PORTNAME=	navidrome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.40.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.pacyworld.com/morante.net/freebsd/ports/distfiles/navidrome/:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -14,6 +12,8 @@ COMMENT=	Modern Music Server and Streamer compatible with Subsonic/Airsonic
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		react-scripts: not found
 
 BUILD_DEPENDS+=	npm>0:www/npm \
 				go-bindata:devel/go-bindata

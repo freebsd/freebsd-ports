@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXext
 PORTVERSION=	1.3.4
 PORTEPOCH=	1

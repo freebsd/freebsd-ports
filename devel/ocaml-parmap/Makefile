@@ -1,5 +1,3 @@
-# Created by: Jean-Sébastien Pédron <dumbbell@FreeBSD.org>
-
 PORTNAME=	parmap
 DISTVERSION=	1.0-rc9
 CATEGORIES=	devel

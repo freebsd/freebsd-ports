@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	zmap
 PORTVERSION=	2.1.1
 DISTVERSIONPREFIX=	v

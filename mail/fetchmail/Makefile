@@ -1,7 +1,5 @@
-# Created by: Ville Eerola <ve@sci.fi>
-
 PORTNAME?=	fetchmail
-DISTVERSION=	6.4.28
+DISTVERSION=	6.4.31
 PORTREVISION?=	0
 CATEGORIES=	mail
 # The next line is inherited by the fetchmailconf dependent port,
@@ -80,6 +78,7 @@ WOLFSSL_CONFIGURE_ON=	WOLFSSL_TRUST_FILE=${LOCALBASE}/share/certs/ca-root-nss.cr
 WOLFSSL_CONFIGURE_WITH=	wolfssl=${LOCALBASE}
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,krb5_des_string_to_key,krb5int_des_init_state,g' ${WRKSRC}/configure
 .if !exists(/usr/lib/libcom_err.so)
 	@${REINPLACE_CMD} -e "s,-lcom_err,,g" ${WRKSRC}/configure
 .endif

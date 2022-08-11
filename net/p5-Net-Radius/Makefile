@@ -1,5 +1,3 @@
-# Created by: Kelly Yancey <kbyanc@FreeBSD.org>
-
 PORTNAME=	Net-Radius
 PORTVERSION=	2.103
 PORTREVISION=	1

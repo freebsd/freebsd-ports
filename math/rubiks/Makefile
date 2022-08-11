@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	rubiks
 PORTVERSION=	20070912
 CATEGORIES=	math games

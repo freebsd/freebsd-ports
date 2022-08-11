@@ -1,0 +1,19 @@
+libsignal contains platform-agnostic APIs used by the official Signal clients
+and servers, exposed as a Java, Swift, or TypeScript library.
+The underlying implementations are written in Rust:
+
+ - libsignal-protocol: Implements the Signal protocol, including the
+   Double Ratchet algorithm. A replacement for libsignal-protocol-java and
+   libsignal-metadata-java.
+ - signal-crypto: Cryptographic primitives such as AES-GCM. We use RustCrypto's
+   where we can but sometimes have differing needs.
+ - device-transfer: Support logic for Signal's device-to-device transfer
+   feature.
+ - attest: Functionality for remote attestation of SGX enclaves and
+   server-side HSMs.
+ - zkgroup: Functionality for zero-knowledge groups and related features
+   available in Signal.
+ - poksho: Utilities for implementing zero-knowledge proofs (such as those used
+   by zkgroup); stands for "proof-of-knowledge, stateful-hash-object".
+
+WWW: https://github.com/signalapp/libsignal

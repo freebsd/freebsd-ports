@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	PEAR_PackageFileManager
 PORTVERSION=	1.7.2
 CATEGORIES=	devel www pear

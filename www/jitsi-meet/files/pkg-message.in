@@ -7,12 +7,13 @@ Jitsi Meet was installed
 
    www/nginx
    net-im/prosody
+   net-im/jitsi-prosody-plugins
    net-im/jicofo
    net-im/jitsi-videobridge
 
-2) You can look a basic configuration at the following url:
+2) You can find a basic configuration example here:
 
-   https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-manual
+   %%EXAMPLESDIR%%/nginx.conf
 
 3) Configuration and interface options files are installed like 
 

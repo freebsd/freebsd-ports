@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	sig2dot
 PORTVERSION=	0.35
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Maksym Sobolyev <sobomax@pbxpress.it>
-
 PORTNAME=	Asterisk-FastAGI
 PORTVERSION=	0.02
 PORTREVISION=	2

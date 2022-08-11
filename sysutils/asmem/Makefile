@@ -1,5 +1,3 @@
-# Created by: jack
-
 PORTNAME=	asmem
 PORTVERSION=	1.12
 PORTREVISION=	1

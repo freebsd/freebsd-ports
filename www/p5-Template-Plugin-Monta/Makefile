@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Template-Plugin-Monta
 PORTVERSION=	0.03
 PORTREVISION=	1

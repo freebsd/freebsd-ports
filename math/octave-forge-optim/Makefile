@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-optim
 PORTVERSION=	1.6.2
 CATEGORIES=	math

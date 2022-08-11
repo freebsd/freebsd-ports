@@ -1,8 +1,6 @@
-# Created by: Roland Jesse <roland.jesse@gmx.net>
-
 PORTNAME=	squeak
 PORTVERSION=	4.10.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	lang
 MASTER_SITES=	http://www.squeakvm.org/unix/release/:vmsrc \
 		http://ftp.squeak.org/${IMAGE_VERSION}/:src \

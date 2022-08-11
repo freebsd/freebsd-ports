@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Email-Simple
 PORTVERSION=	2.216
 CATEGORIES=	mail perl5

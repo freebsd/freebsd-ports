@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	htmlentities
 PORTVERSION=	4.3.4
 CATEGORIES=	textproc rubygems

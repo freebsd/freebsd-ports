@@ -1,8 +1,7 @@
-# Created by: Martin Tournoij <carpetsmoker@rwxrwxrwx.net>
-
 PORTNAME=	geeqie
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.3
+PORTREVISION=	6
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -43,7 +42,6 @@ TOOLKIT_DESC=	Graphical user interface toolkit
 FORMATS_DESC=	Image formats support
 GTK2_DESC=	Use GTK 2
 GTK3_DESC=	Use GTK 3
-HEIF_DESC=	HEIF image format support
 
 EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_CONFIGURE_ENABLE=	exiv2

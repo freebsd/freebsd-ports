@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	sync
 PORTVERSION=	1.1.2
 CATEGORIES=	devel

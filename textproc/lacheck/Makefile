@@ -1,5 +1,3 @@
-# Created by: Uwe Pierau <uwe.pierau@tu-clausthal.de>
-
 PORTNAME=	lacheck
 PORTVERSION=	1.26
 PORTREVISION=	1

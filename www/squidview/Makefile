@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <stas@FreeBSD.org>
-
 PORTNAME=	squidview
 PORTVERSION=	0.86
 CATEGORIES=	www

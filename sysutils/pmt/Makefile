@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	pmt
 PORTVERSION=	0.2
 CATEGORIES=	sysutils

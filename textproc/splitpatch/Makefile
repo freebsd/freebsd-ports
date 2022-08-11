@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	splitpatch
 PORTVERSION=	1.1
 DISTVERSIONPREFIX=	release/

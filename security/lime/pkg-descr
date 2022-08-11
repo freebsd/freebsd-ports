@@ -1,0 +1,16 @@
+LIME is an end-to-end encryption library for one-to-one and group
+instant messaging, allowing users to exchange messages privately and
+asynchronously. It uses modern ciphering curve X448 and double ratchet
+algorithm for perfect forward secrecy.
+
+LIME is composed of a portable client library coupled with a public key
+server developed by Belledonne Communications to allow end-to-end
+encryption for messaging, without having to exchange cryptographic keys
+simultaneously.
+
+The library exposes a C, C++, Python and Java API for easy integration
+in mobile and desktop environments.
+
+LIME supports multiple devices per user and multiple users per device.
+
+WWW: https://www.linphone.org/technical-corner/lime

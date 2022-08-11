@@ -1,5 +1,3 @@
-# Created by: Frank W. Josellis <frank@dynamical-systems.org>
-
 PORTNAME=	xmoontool
 PORTVERSION=	3.0.3
 PORTREVISION=	8

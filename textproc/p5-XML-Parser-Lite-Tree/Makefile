@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	XML-Parser-Lite-Tree
 PORTVERSION=	0.14
 PORTREVISION=	1

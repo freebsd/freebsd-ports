@@ -1,5 +1,3 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
-
 PORTNAME=	florence
 PORTVERSION=	0.6.3
 PORTREVISION=	4
@@ -14,10 +12,9 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify
 
-USES=		gmake gnome iconv libtool pathfix pkgconfig tar:bzip2 xorg
+USES=		gmake gnome gstreamer iconv libtool pathfix pkgconfig tar:bzip2 xorg
 USE_XORG=	xtst xext
 USE_GNOME=	gtk30 cairo intlhack librsvg2
-USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --without-docs
 USE_LDCONFIG=	yes

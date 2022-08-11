@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-
 PORTNAME=	paida
 PORTVERSION=	3.2.1.2.10
 PORTREVISION=	1

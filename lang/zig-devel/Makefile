@@ -4,6 +4,8 @@ CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
 PKGNAMESUFFIX=	-devel
+# fetch prebuilt platform-independent docs
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} zig-freebsd-x86_64-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Language designed for robustness, optimality, and maintainability
@@ -20,10 +22,10 @@ CONFLICTS=	zig
 
 USES=		cmake compiler:c++11-lang localbase:ldflags tar:xz
 
-OPTIONS_DEFINE=		STATIC
-OPTIONS_DEFAULT=	STATIC
+OPTIONS_DEFINE=		STATIC DOCS
+OPTIONS_DEFAULT=	STATIC DOCS
 
-STATIC_DESC=	sets ZIG_STATIC to avoid 800MiB LLVM dependencies
+STATIC_DESC=	sets ZIG_STATIC to avoid 800MiB LLVM runtime dependency
 
 STATIC_RUN_DEPENDS_OFF=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 STATIC_CMAKE_BOOL=	CMAKE_SKIP_INSTALL_RPATH ZIG_STATIC
@@ -35,30 +37,15 @@ _ZIG_BIN=	${STAGEDIR}${PREFIX}/bin/zig
 post-configure-STATIC-on:
 	@${REINPLACE_CMD} 's/-Wl,-Bdynamic//' ${BUILD_WRKSRC}/build.ninja
 
-post-build:
-# Produce the experimental std lib documentation.
-	${MKDIR}  ${WRKDIR}/cache ${WRKDIR}/doc
-	${WRKDIR}/.build/zig test ${WRKSRC}/lib/std/std.zig \
-		--cache-dir ${WRKDIR}/cache \
-		--global-cache-dir ${WRKDIR}/cache \
-		--zig-lib-dir ${WRKSRC}/lib \
-		-femit-docs=${WRKDIR}/doc \
-		-fno-emit-bin
-	${RM} ${WRKSRC}/lib/zig/std/zig-cache
-
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/std
-# langref cannot be generated until after install target has run
-	(cd ${WRKSRC} && ${_ZIG_BIN} run \
-		./doc/docgen.zig -- ${_ZIG_BIN} \
-		./doc/langref.html.in ${STAGEDIR}${DOCSDIR}/langref.html \
-		&& ${RM} ${STAGEDIR}/lib/zig/std/zig-cache)
-	${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' ${STAGEDIR}${DOCSDIR}/langref.html
-.for f in data.js main.js index.html
-	${INSTALL_MAN} ${WRKDIR}/doc/${f} ${STAGEDIR}${DOCSDIR}/std/
+.for f in langref.html std/data.js std/main.js std/index.html
+	${INSTALL_MAN} ${WRKDIR}/zig-freebsd-x86_64-${DISTVERSION}/doc/${f} \
+		${STAGEDIR}${DOCSDIR}/${f}
 .endfor
 
 do-test:
+	mkdir ${WRKDIR}/cache
 	(cd ${WRKSRC} && ${_ZIG_BIN} build test-behavior \
 		--cache-dir ${WRKDIR}/cache \
 		--global-cache-dir ${WRKDIR}/cache \

@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	r1q2
 PORTVERSION=	8012
 PORTREVISION=	5

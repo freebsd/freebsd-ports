@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	pytest-django
 PORTVERSION=	4.5.2
 CATEGORIES=	devel python

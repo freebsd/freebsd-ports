@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	xpired
 PORTVERSION=	1.22
 PORTREVISION=	24

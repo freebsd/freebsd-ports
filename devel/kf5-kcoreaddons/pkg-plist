@@ -17,6 +17,7 @@ include/KF5/KCoreAddons/KJsonUtils
 include/KF5/KCoreAddons/KLibexec
 include/KF5/KCoreAddons/KListOpenFilesJob
 include/KF5/KCoreAddons/KMacroExpander
+include/KF5/KCoreAddons/KMemoryInfo
 include/KF5/KCoreAddons/KMessage
 include/KF5/KCoreAddons/KNetworkMounts
 include/KF5/KCoreAddons/KOSRelease
@@ -27,6 +28,7 @@ include/KF5/KCoreAddons/KProcess
 include/KF5/KCoreAddons/KProcessList
 include/KF5/KCoreAddons/KRandom
 include/KF5/KCoreAddons/KRandomSequence
+include/KF5/KCoreAddons/KSandbox
 include/KF5/KCoreAddons/KSharedDataCache
 include/KF5/KCoreAddons/KShell
 include/KF5/KCoreAddons/KSignalHandler
@@ -60,6 +62,7 @@ include/KF5/KCoreAddons/kjsonutils.h
 include/KF5/KCoreAddons/klibexec.h
 include/KF5/KCoreAddons/klistopenfilesjob.h
 include/KF5/KCoreAddons/kmacroexpander.h
+include/KF5/KCoreAddons/kmemoryinfo.h
 include/KF5/KCoreAddons/kmessage.h
 include/KF5/KCoreAddons/knetworkmounts.h
 include/KF5/KCoreAddons/kosrelease.h
@@ -70,6 +73,7 @@ include/KF5/KCoreAddons/kprocess.h
 include/KF5/KCoreAddons/kprocesslist.h
 include/KF5/KCoreAddons/krandom.h
 include/KF5/KCoreAddons/krandomsequence.h
+include/KF5/KCoreAddons/ksandbox.h
 include/KF5/KCoreAddons/kshareddatacache.h
 include/KF5/KCoreAddons/kshell.h
 include/KF5/KCoreAddons/ksignalhandler.h

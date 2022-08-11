@@ -1,5 +1,3 @@
-# Created by: liamfoy@sepulcrum.org
-
 PORTNAME=	qsf
 PORTVERSION=	1.2.15
 CATEGORIES=	mail

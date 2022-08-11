@@ -1,5 +1,3 @@
-# Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
-
 PORTNAME=	gnatsweb
 PORTVERSION=	4.00
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	gtkimageview
 PORTVERSION=	1.6.4
 PORTREVISION=	5

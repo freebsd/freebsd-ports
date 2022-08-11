@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ttyload
 PORTVERSION=	0.5.3
 PORTREVISION=	1

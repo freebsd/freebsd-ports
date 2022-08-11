@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Crypt-DES
 PORTVERSION=	2.07
 PORTREVISION=	2

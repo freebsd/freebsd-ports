@@ -1,8 +1,6 @@
-# Created by: Lev Serebryakov <lev@FreeBSD.org>
-
 PORTNAME=	vips
 PORTVERSION=	8.12.2
-PORTREVISION=	5
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -40,7 +38,6 @@ OPTIONS_RADIO_MAGICK=	IMAGEMAGICK GRAPHMAGICK
 OPTIONS_DEFAULT=CFITSIO FFTW GIF GSF HEIF IMAGEMAGICK JPEG JXL LCMS2 LIBEXIF LIBRSVG2 MATIO OPENEXR ORC PANGO PNG POPPLER TIFF WEBP X11
 GSF_DESC=	Structured file formats support
 ORC_DESC=	ORC language support
-HEIF_DESC=	HEIF image format support
 MATIO_DESC=	Matlab MAT format support
 
 CFITSIO_CONFIGURE_WITH=	cfitsio

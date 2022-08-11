@@ -1,5 +1,3 @@
-# Created by: Yasuhiro Fukuma <yasuf@big.or.jp>
-
 PORTNAME=	ftpmirror
 PORTVERSION=	1.96
 PORTREVISION=	5

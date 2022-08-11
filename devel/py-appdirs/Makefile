@@ -1,5 +1,3 @@
-# Created by: Thomas Zander <riggs@FreeBSD.org>
-
 PORTNAME=	appdirs
 PORTVERSION=	1.4.4
 CATEGORIES=	devel python

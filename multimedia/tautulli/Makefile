@@ -1,8 +1,6 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	tautulli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.7
+DISTVERSION=	2.10.2
 CATEGORIES=	multimedia python
 
 MAINTAINER=	christer.edwards@gmail.com

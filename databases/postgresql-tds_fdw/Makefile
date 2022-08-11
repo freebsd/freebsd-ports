@@ -1,5 +1,3 @@
-# Created by: Jov amutu@amutu.com
-
 PORTNAME=	tds_fdw
 DISTVERSIONPREFIX=	v
 PORTVERSION=	2.0.2

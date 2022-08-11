@@ -1,5 +1,3 @@
-# Created by: lonewolf@flame.org
-
 PORTNAME=	ccdoc
 PORTVERSION=	0.8r41
 CATEGORIES=	devel textproc

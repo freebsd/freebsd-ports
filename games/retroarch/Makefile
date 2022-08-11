@@ -1,9 +1,7 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	RetroArch
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.3
 DISTVERSIONPREFIX=	v
-CATEGORIES=	games emulators
+CATEGORIES=	games emulators wayland
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Cross-platform entertainment system based on libretro API

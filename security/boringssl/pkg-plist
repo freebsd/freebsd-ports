@@ -21,6 +21,7 @@ include/openssl/cmac.h
 include/openssl/conf.h
 include/openssl/cpu.h
 include/openssl/crypto.h
+include/openssl/ctrdrbg.h
 include/openssl/curve25519.h
 include/openssl/des.h
 include/openssl/dh.h
@@ -42,6 +43,7 @@ include/openssl/hmac.h
 include/openssl/hpke.h
 include/openssl/hrss.h
 include/openssl/is_boringssl.h
+include/openssl/kdf.h
 include/openssl/lhash.h
 include/openssl/md4.h
 include/openssl/md5.h
@@ -64,6 +66,7 @@ include/openssl/rc4.h
 include/openssl/ripemd.h
 include/openssl/rsa.h
 include/openssl/safestack.h
+include/openssl/service_indicator.h
 include/openssl/sha.h
 include/openssl/siphash.h
 include/openssl/span.h

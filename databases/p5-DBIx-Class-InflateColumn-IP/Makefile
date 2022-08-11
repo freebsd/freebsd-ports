@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-InflateColumn-IP
 PORTVERSION=	0.02003
 PORTREVISION=	1

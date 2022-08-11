@@ -1,6 +1,6 @@
 PORTNAME=	wayland
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
-CATEGORIES=	graphics
+CATEGORIES=	graphics wayland
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org

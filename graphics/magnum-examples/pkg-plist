@@ -1,9 +1,0 @@
-bin/magnum-audio
-bin/magnum-box2d
-bin/magnum-mouseinteraction
-bin/magnum-primitives
-bin/magnum-text
-bin/magnum-triangle
-bin/magnum-triangle-plain-glfw
-bin/magnum-viewer
-share/magnum/examples/viewer/scene.glb

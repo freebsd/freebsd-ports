@@ -1,5 +1,3 @@
-# Created by: Kuan-Chung Chiu <buganini@gmail.com>
-
 PORTNAME=	padauk
 PORTVERSION=	2.8
 DISTVERSIONSUFFIX=	0

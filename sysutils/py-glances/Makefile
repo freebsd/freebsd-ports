@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	glances
 PORTVERSION=	3.2.4.2
 DISTVERSIONPREFIX=	v

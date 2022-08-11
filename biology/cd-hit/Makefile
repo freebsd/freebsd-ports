@@ -18,9 +18,7 @@ SHEBANG_FILES=	${WRKSRC}/*.pl
 
 MAKE_FLAGS=	openmp=yes
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == armv7 || ${ARCH} == powerpc
+.if !exists(/usr/include/omp.h)
 USES+=		compiler:gcc-c++11-lib
 .endif
 

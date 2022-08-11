@@ -1,5 +1,3 @@
-# Created by: Jaap Boender <jaapb@kerguelen.org>
-
 PORTNAME=	calendar
 PORTVERSION=	2.03.2
 CATEGORIES=	devel

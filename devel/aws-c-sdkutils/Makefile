@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	aws-c-sdkutils
 PORTVERSION=	0.1.1
 DISTVERSIONPREFIX=	v

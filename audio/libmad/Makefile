@@ -1,35 +1,37 @@
-# Created by: Sergey Akifyev <asa@gascom.ru>
-
 PORTNAME=	libmad
-PORTVERSION=	0.15.1b
-PORTREVISION=	7
+PORTVERSION=	0.16.2
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION}
+
+PATCH_SITES=	https://github.com/tenacityteam/libmad/commit/
+PATCHFILES=	9ec2efa6ba4bfaed7805867077d3a67daa022331.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool
+USES=		cmake cpe pathfix
 
-CONFIGURE_ARGS=	--disable-debugging --enable-sso
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+CMAKE_OFF=	MADD_ASM MADD16_ASM
+CMAKE_ON=	ASO BUILD_SHARED_LIBS
 USE_LDCONFIG=	yes
 
-SUB_LIST=	VERSION=${PORTVERSION}
-SUB_FILES=	mad.pc
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 CPE_VENDOR=	underbit
 
-OPTIONS_DEFINE=	SPEED
+USE_GITHUB=	yes
+GH_ACCOUNT=	tenacityteam
+
+OPTIONS_SINGLE=	OPTIMIZE
+OPTIONS_SINGLE_OPTIMIZE=ACCURACY SPEED
+OPTIONS_DEFAULT=SPEED
+ACCURACY_DESC=	Optimize for accuracy over speed
 SPEED_DESC=	Optimize for speed over accuracy
 
-SPEED_CONFIGURE_ON=	--enable-speed
-SPEED_CONFIGURE_OFF=	--enable-accuracy
-
-post-install:
-	${INSTALL_DATA} ${WRKDIR}/mad.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
+ACCURACY_CMAKE_ON=	-DOPTIMIZE=ACCURACY
+SPEED_CMAKE_ON=		-DOPTIMIZE=SPEED
 
 .include <bsd.port.mk>

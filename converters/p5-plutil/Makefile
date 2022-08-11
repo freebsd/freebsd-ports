@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	plutil
 PORTVERSION=	1.7
 CATEGORIES=	converters perl5

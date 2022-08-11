@@ -1,5 +1,3 @@
-# Created by: markm
-
 PORTNAME=	xroach
 PORTVERSION=	4.4
 PORTREVISION=	2

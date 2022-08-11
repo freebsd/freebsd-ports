@@ -1,5 +1,3 @@
-# Created by: Helmut Ritter <freebsd-ports@charlieroot.de>
-
 PORTNAME=	typo3
 PORTVERSION=	${PORT_V_MAJOR}.${PORT_V_MINOR}.${PORT_V_PATCH}
 CATEGORIES=	www
@@ -16,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 DEPRECATED=	Requires php 7.4 which is set to expire on 2022-11-29
 EXPIRATION_DATE=2022-11-28
 
-IGNORE_WITH_PHP=	80 81
+IGNORE_WITH_PHP=	80 81 82
 IGNORE_WITH_MYSQL=	101m
 
 USES=		cpe php:web,flavors shebangfix
@@ -31,7 +29,7 @@ PORTSCOUT=	limit:^${PORT_V_MAJOR}\.${PORT_V_MINOR}\.
 
 PORT_V_MAJOR=	10
 PORT_V_MINOR=	4
-PORT_V_PATCH=	26
+PORT_V_PATCH=	31
 
 TYPO3WWW=	www
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}

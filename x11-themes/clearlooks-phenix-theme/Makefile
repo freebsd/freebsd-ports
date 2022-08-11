@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	clearlooks-phenix
 PORTVERSION=	7.0.1
 CATEGORIES=	x11-themes xfce

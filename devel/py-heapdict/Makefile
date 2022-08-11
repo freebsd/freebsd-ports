@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	heapdict
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python
@@ -14,11 +12,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils unittest
 
 NO_ARCH=	yes
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} test_heap.py
 
 .include <bsd.port.mk>

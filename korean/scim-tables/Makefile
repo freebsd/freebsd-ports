@@ -1,5 +1,3 @@
-# Created by: Jie Gao	<gaoj@cpsc.ucalgary.ca>
-#    $MCom: ports/korean/scim-tables/Makefile,v 1.1 2006/09/30 03:44:11 ahze Exp $
 PORTNAME=	scim-tables
 PORTVERSION=	0.5.10
 PORTREVISION=	1

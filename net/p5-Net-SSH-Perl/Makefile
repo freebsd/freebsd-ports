@@ -1,5 +1,3 @@
-# Created by: Jesper Skriver <jesper@FreeBSD.org>
-
 PORTNAME=	Net-SSH-Perl
 PORTVERSION=	2.14
 PORTREVISION=	2

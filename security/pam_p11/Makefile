@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	pam_p11
 PORTVERSION=	0.3.1
 PORTREVISION=	1

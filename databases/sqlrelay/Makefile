@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
 CATEGORIES=	databases

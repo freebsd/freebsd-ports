@@ -1,66 +1,6 @@
---- configure.orig	2021-09-27 07:44:02 UTC
+--- configure.orig	2022-04-04 13:48:49 UTC
 +++ configure
-@@ -5539,7 +5539,7 @@ if test "${enable_threadsafe+set}" = set; then :
- fi
- 
- if test x$enable_threadsafe = xyes ; then
--    CFLAGS="-DGS_THREADSAFE"
-+    CFLAGS="$CFLAGS -DGS_THREADSAFE"
- fi
- 
- 
-@@ -11352,42 +11352,42 @@ if test x$enable_threadsafe = xyes; then
- 
-   for ntsdev in $NTS_DEVS ; do
-     NTS_EXCLUDES="$(echo \"$P_DEVS0{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
--    P_DEVS0=`echo $P_DEVS0 | sed "s/\b$ntsdev\b//g"`
-+    P_DEVS0=`echo $P_DEVS0 | sed "s/[[:<:]]$ntsdev[[:>:]]//g"`
-   done
- 
-   for ntsdev in $NTS_DEVS ; do
-     NTS_EXCLUDES="$(echo \"$F_DEVS0{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
--    F_DEVS0=`echo $F_DEVS0 | sed "s/\b$ntsdev\b//g"`
-+    F_DEVS0=`echo $F_DEVS0 | sed "s/[[:<:]]$ntsdev[[:>:]]//g"`
-   done
- 
-   for ntsdev in $NTS_DEVS ; do
-     NTS_EXCLUDES="$(echo \"$CUPS_DEVS0{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
--    CUPS_DEVS0=`echo $CUPS_DEVS0 | sed "s/\b$ntsdev\b//g"`
-+    CUPS_DEVS0=`echo $CUPS_DEVS0 | sed "s/[[:<:]]$ntsdev[[:>:]]//g"`
-   done
- 
-   for ntsdev in $NTS_DEVS ; do
-     NTS_EXCLUDES="$(echo \"$XPS_DEVS0{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
--    XPS_DEVS0=`echo $XPS_DEVS0 | sed "s/\b$ntsdev\b//g"`
-+    XPS_DEVS0=`echo $XPS_DEVS0 | sed "s/[[:<:]]$ntsdev[[:>:]]//g"`
-   done
- 
-   for ntsdev in $NTS_DEVS ; do
-     NTS_EXCLUDES="$(echo \"$IJS_DEVS0{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
--    IJS_DEVS0=`echo $IJS_DEVS0 | sed "s/\b$ntsdev\b//g"`
-+    IJS_DEVS0=`echo $IJS_DEVS0 | sed "s/[[:<:]]$ntsdev[[:>:]]//g"`
-   done
- 
-   for ntsdev in $NTS_DEVS ; do
-     NTS_EXCLUDES="$(echo \"$PNG_DEVS0{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
--    PNG_DEVS0=`echo $PNG_DEVS0 | sed "s/\b$ntsdev\b//g"`
-+    PNG_DEVS0=`echo $PNG_DEVS0 | sed "s/[[:<:]]$ntsdev[[:>:]]//g"`
-   done
- 
-   for ntsdev in $NTS_DEVS ; do
-     NTS_EXCLUDES="$(echo \"$X11_DEVS0{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
--    X11_DEVS0=`echo $X11_DEVS0 | sed "s/\b$ntsdev\b//g"`
-+    X11_DEVS0=`echo $X11_DEVS0 | sed "s/[[:<:]]$ntsdev[[:>:]]//g"`
-   done
- 
-   for ntsdev in $NTS_DEVS ; do
-     NTS_EXCLUDES="$(echo \"$JBIG2_DEVS{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
--    JBIG2_DEVS=`echo $JBIG2_DEVS | sed "s/\b$ntsdev\b//g"`
-+    JBIG2_DEVS=`echo $JBIG2_DEVS | sed "s/[[:<:]]$ntsdev[[:>:]]//g"`
-   done
- 
-   NTS_EXCLUDES=`echo "$NTS_EXCLUDES" | tr " " "\n" | sort | uniq | tr "\n" " "`
-@@ -11686,7 +11686,12 @@ if test "${enable_dynamic+set}" = set; then :
+@@ -11629,7 +11629,12 @@ if test "${enable_dynamic+set}" = set; then :
          DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
        ;;
        *bsd*)

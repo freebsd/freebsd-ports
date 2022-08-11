@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	MD5
 PORTVERSION=	2.03
 PORTREVISION=	1

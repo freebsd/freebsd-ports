@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	codeworker
 PORTVERSION=	4.5.3
 CATEGORIES=	devel

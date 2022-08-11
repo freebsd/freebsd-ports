@@ -1,5 +1,3 @@
-# Created by: gebhart@secnetix.de
-
 PORTNAME=	Term-Bash-Completion-Generator
 PORTVERSION=	0.02.8
 PORTREVISION=	2

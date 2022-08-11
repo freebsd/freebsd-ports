@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	File-chdir
 PORTVERSION=	0.1010
 CATEGORIES=	devel perl5

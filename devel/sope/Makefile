@@ -1,6 +1,5 @@
 PORTNAME=		sope
-PORTVERSION=		5.5.1
-PORTREVISION=	2
+PORTVERSION=		5.7.0
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOPE-${PORTVERSION}

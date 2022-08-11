@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	astunparse
 PORTVERSION=	1.6.3
 CATEGORIES=	devel python

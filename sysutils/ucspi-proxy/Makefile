@@ -1,5 +1,3 @@
-# Created by: Dale Woolridge <dale.woolridge@gmail.com>
-
 PORTNAME=	ucspi-proxy
 PORTVERSION=	1.1
 CATEGORIES=	sysutils

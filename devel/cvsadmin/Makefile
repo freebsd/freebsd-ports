@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cvsadmin
 PORTVERSION=	1.0.3
 PORTREVISION=	2

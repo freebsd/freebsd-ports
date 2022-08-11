@@ -1,0 +1,13 @@
+TIMESTAMP = 1659459886
+SHA256 (go1.19.src.tar.gz) = 9419cc70dc5a2523f29a77053cafff658ed21ef3561d9b6b020280ebceab28b9
+SIZE (go1.19.src.tar.gz) = 26521849
+SHA256 (go-freebsd-arm64-go1.17.9.tar.xz) = d9e9180bdc5ad0eec1654679a50084ebb31ecbe9bef24f0bd8ba917db8d1830c
+SIZE (go-freebsd-arm64-go1.17.9.tar.xz) = 38572776
+SHA256 (go-freebsd-amd64-go1.17.9.tar.xz) = fd439ad091ed57d0ad728c05fc60465aad2e46e98da96e2d5b60b0c470f2efec
+SIZE (go-freebsd-amd64-go1.17.9.tar.xz) = 41951936
+SHA256 (go-freebsd-arm6-go1.17.9.tar.xz) = ba24590b8cec761207eafc5a39c71b5b5041320c6fb0c95d35c123f6054f8d1c
+SIZE (go-freebsd-arm6-go1.17.9.tar.xz) = 38938596
+SHA256 (go-freebsd-arm7-go1.17.9.tar.xz) = 9dc039278e174757962d100a227959037d4d7af18094af6433fa4d57cfa57e5f
+SIZE (go-freebsd-arm7-go1.17.9.tar.xz) = 38862156
+SHA256 (go-freebsd-386-go1.17.9.tar.xz) = 74854fd9e7d596c6abb1ecd55707c58a2f4d6ee875376e26bb5519889507291b
+SIZE (go-freebsd-386-go1.17.9.tar.xz) = 40566908

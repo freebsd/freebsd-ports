@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	fex
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v

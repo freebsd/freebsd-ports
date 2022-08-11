@@ -1,5 +1,3 @@
-# Created by: Archie Cobbs
-
 PORTNAME=	suckblow
 PORTVERSION=	1.1
 CATEGORIES=	net

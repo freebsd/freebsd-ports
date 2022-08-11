@@ -1,5 +1,3 @@
-# Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-
 PORTNAME=	numru-misc
 PORTVERSION=	0.1.2
 CATEGORIES=	math rubygems

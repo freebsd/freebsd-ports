@@ -1,5 +1,3 @@
-# Created by: verm
-
 PORTNAME=	sed
 PORTVERSION=	3.62
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Alexander Novitsky <alecn2002@yandex.ru>
-
 PORTNAME=	fxscintilla
 PORTVERSION=	2.28.0
 PORTREVISION=	8

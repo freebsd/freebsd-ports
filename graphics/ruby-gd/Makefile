@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	gd
 PORTVERSION=	0.8.0
 PORTREVISION=	8

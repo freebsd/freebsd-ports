@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	oftpd
 PORTVERSION=	0.3.7
 CATEGORIES=	ftp

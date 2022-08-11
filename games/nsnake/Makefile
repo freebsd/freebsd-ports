@@ -1,5 +1,3 @@
-# Created by: markand
-
 PORTNAME=	nsnake
 PORTVERSION=	2.2.0
 CATEGORIES=	games

@@ -33,6 +33,7 @@ share/avidemux6/qt5/i18n/avidemux_sk.qm
 share/avidemux6/qt5/i18n/avidemux_sr.qm
 share/avidemux6/qt5/i18n/avidemux_sr@latin.qm
 share/avidemux6/qt5/i18n/avidemux_tr.qm
+share/avidemux6/qt5/i18n/avidemux_uk.qm
 share/avidemux6/qt5/i18n/avidemux_zh_CN.qm
 share/avidemux6/qt5/i18n/avidemux_zh_TW.qm
 share/avidemux6/qt5/i18n/qtbase_ar.qm
@@ -54,6 +55,7 @@ share/avidemux6/qt5/i18n/qtbase_lv.qm
 share/avidemux6/qt5/i18n/qtbase_pl.qm
 share/avidemux6/qt5/i18n/qtbase_ru.qm
 share/avidemux6/qt5/i18n/qtbase_sk.qm
+share/avidemux6/qt5/i18n/qtbase_tr.qm
 share/avidemux6/qt5/i18n/qtbase_uk.qm
 share/avidemux6/qt5/i18n/qtbase_zh_CN.qm
 share/avidemux6/qt5/i18n/qtbase_zh_TW.qm

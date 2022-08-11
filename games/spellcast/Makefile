@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	spellcast
 PORTVERSION=	1.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Dima Dorfman <dima@unixfreak.org>
-
 PORTNAME=	shuffle
 PORTVERSION=	20010603
 CATEGORIES=	misc

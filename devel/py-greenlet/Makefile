@@ -1,5 +1,3 @@
-# Created by: Peter Schuller <peter.schuller@infidyne.com>
-
 PORTNAME=	greenlet
 PORTVERSION=	1.1.2
 CATEGORIES=	devel python

@@ -101,6 +101,11 @@
 %%DYNLIST%%libexec/openldap/dynlist.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%DYNLIST%%libexec/openldap/dynlist.la
 %%DYNLIST%%libexec/openldap/dynlist.so
+%%EMPTYDS%%libexec/openldap/emptyds.la
+%%EMPTYDS%%libexec/openldap/emptyds.so
+%%EMPTYDS%%libexec/openldap/emptyds.so.0
+%%EMPTYDS%%libexec/openldap/emptyds.so.0.0.0
+%%EMPTYDS%%man/man5/slapo-emptyds.5.gz
 %%HOMEDIR%%libexec/openldap/homedir.so.%%SHLIB_MAJOR%%
 %%HOMEDIR%%libexec/openldap/homedir.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%HOMEDIR%%libexec/openldap/homedir.la
@@ -138,8 +143,8 @@
 %%PASSWD%%libexec/openldap/back_passwd.so
 %%PBKDF2%%libexec/openldap/pw-pbkdf2.la
 %%PBKDF2%%libexec/openldap/pw-pbkdf2.so
-%%PBKDF2%%libexec/openldap/pw-pbkdf2.so.%%SHLIB_MAJOR%%
-%%PBKDF2%%libexec/openldap/pw-pbkdf2.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
+%%PBKDF2%%libexec/openldap/pw-pbkdf2.so.0
+%%PBKDF2%%libexec/openldap/pw-pbkdf2.so.0.0.0
 %%PBKDF2%%man/man5/slapd-pw-pbkdf2.5.gz
 %%PERL%%libexec/openldap/back_perl.so.%%SHLIB_MAJOR%%
 %%PERL%%libexec/openldap/back_perl.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%

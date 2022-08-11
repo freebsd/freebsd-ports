@@ -4,7 +4,7 @@
 You installed AdGuardHome: Network-wide ads & trackers blocking DNS server.
 
 In order to use it please start the service 'adguardhome' and
-then access the URL http://0.0.0.0:3010/ in your favorite browser.
+then access the URL http://0.0.0.0:3000/ in your favorite browser.
 
 EOM
 }

@@ -1,5 +1,3 @@
-# Created by: Daniel Wijnands <daniel@itxl.nl>
-
 PORTNAME=	Class-DBI-DDL
 PORTVERSION=	1.02
 PORTREVISION=	1

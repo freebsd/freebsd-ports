@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@python.or.kr>
-
 PORTNAME=	bsddb3
 PORTVERSION=	6.2.9
 CATEGORIES=	databases python

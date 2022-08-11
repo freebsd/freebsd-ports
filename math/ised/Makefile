@@ -1,5 +1,3 @@
-# Created by: Charlie Kester <corky1951@comcast.net>
-
 PORTNAME=	ised
 PORTVERSION=	2.7.1
 PORTREVISION=	7

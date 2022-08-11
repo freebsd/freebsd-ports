@@ -1,0 +1,21 @@
+--- rainloop/v/1.16.0/app/libraries/MailSo/Base/HtmlUtils.php.orig	2021-05-06 11:04:36 UTC
++++ rainloop/v/1.16.0/app/libraries/MailSo/Base/HtmlUtils.php
+@@ -239,7 +239,8 @@ class HtmlUtils
+ 				$oWrapHtml->setAttribute($sKey, $sValue);
+ 			}
+ 
+-			$oWrapDom = $oDom->createElement('div', '___xxx___');
++			$rand_str = base64_encode(random_bytes(32));
++			$oWrapDom = $oDom->createElement('div', $rand_str);
+ 			$oWrapDom->setAttribute('data-x-div-type', 'body');
+ 			foreach ($aBodylAttrs as $sKey => $sValue)
+ 			{
+@@ -250,7 +251,7 @@ class HtmlUtils
+ 
+ 			$sWrp = $oDom->saveHTML($oWrapHtml);
+ 
+-			$sResult = \str_replace('___xxx___', $sResult, $sWrp);
++			$sResult = \str_replace($rand_str, $sResult, $sWrp);
+ 		}
+ 
+ 		$sResult = \str_replace(\MailSo\Base\HtmlUtils::$KOS, ':', $sResult);

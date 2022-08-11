@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	xml2
 PORTVERSION=	1.3.3
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Andrej Zverev <az@inec.ru>
-
 PORTNAME=	mdf2iso
 PORTVERSION=	0.3.1
 CATEGORIES=	sysutils

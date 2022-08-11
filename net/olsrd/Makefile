@@ -1,8 +1,7 @@
-# Created by: dave@dogwood.com
-
 PORTNAME=	olsrd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	decke@FreeBSD.org

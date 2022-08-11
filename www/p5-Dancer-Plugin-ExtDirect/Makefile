@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	Dancer-Plugin-ExtDirect
 PORTVERSION=	1.03
 PORTREVISION=	1

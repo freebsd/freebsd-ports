@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
-
 PORTNAME=	super-smack
 PORTVERSION=	1.3
 PORTREVISION=	4

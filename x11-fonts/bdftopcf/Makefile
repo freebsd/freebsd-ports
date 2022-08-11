@@ -1,5 +1,3 @@
-# Created by: Pawel Worach
-
 PORTNAME=	bdftopcf
 PORTVERSION=	1.1
 PORTREVISION=	2

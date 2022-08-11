@@ -1,22 +1,23 @@
---- Makefile.orig	2020-05-30 22:17:26 UTC
+--- Makefile.orig	2022-04-18 16:47:28 UTC
 +++ Makefile
 @@ -1,8 +1,8 @@
  # Makefile for The PCI Utilities
- # (c) 1998--2020 Martin Mares <mj@ucw.cz>
+ # (c) 1998--2022 Martin Mares <mj@ucw.cz>
  
 -OPT=-O2
 -CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
-+# OPT=-O2
++#OPT=-O2
 +CFLAGS+=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
  
- VERSION=3.7.0
- DATE=2020-05-31
-@@ -32,10 +32,10 @@ HWDB=
+ VERSION=3.8.0
+ DATE=2022-04-18
+@@ -32,11 +32,11 @@ HWDB=
  ABI_VERSION=.3
  
  # Installation directories
 -PREFIX=/usr/local
-+# PREFIX=/usr/local
++#PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
  SBINDIR=$(PREFIX)/sbin
  SHAREDIR=$(PREFIX)/share
 -IDSDIR=$(SHAREDIR)
@@ -24,41 +25,49 @@
  MANDIR:=$(shell if [ -d $(PREFIX)/share/man ] ; then echo $(PREFIX)/share/man ; else echo $(PREFIX)/man ; fi)
  INCDIR=$(PREFIX)/include
  LIBDIR=$(PREFIX)/lib
-@@ -45,7 +45,7 @@ PKGCFDIR=$(LIBDIR)/pkgconfig
+@@ -46,11 +46,11 @@ PKGCFDIR=$(LIBDIR)/pkgconfig
  INSTALL=install
  DIRINSTALL=install -d
  STRIP=-s
+-ifdef CROSS_COMPILE
 -CC=$(CROSS_COMPILE)gcc
-+# CC=$(CROSS_COMPILE)gcc
+-else
+-CC=cc
+-endif
++#ifdef CROSS_COMPILE
++#CC=$(CROSS_COMPILE)gcc
++#else
++#CC=cc
++#endif
  AR=$(CROSS_COMPILE)ar
  RANLIB=$(CROSS_COMPILE)ranlib
  
-@@ -59,7 +59,7 @@ PCIINC_INS=lib/config.h lib/header.h lib/pci.h lib/typ
+@@ -64,7 +64,7 @@ PCIINC_INS=lib/config.h lib/header.h lib/pci.h lib/typ
  
  export
  
--all: lib/$(PCILIB) lspci setpci example lspci.8 setpci.8 pcilib.7 pci.ids.5 update-pciids update-pciids.8 $(PCI_IDS)
-+all: lspci setpci example lspci.8 setpci.8 pcilib.7 pci.ids.5 update-pciids update-pciids.8 $(PCI_IDS)
+-all: lib/$(PCILIB) lspci$(EXEEXT) setpci$(EXEEXT) example$(EXEEXT) lspci.8 setpci.8 pcilib.7 pci.ids.5 update-pciids update-pciids.8 $(PCI_IDS)
++all: lspci$(EXEEXT) setpci$(EXEEXT) example$(EXEEXT) lspci.8 setpci.8 pcilib.7 pci.ids.5 update-pciids update-pciids.8 $(PCI_IDS)
  
  lib/$(PCILIB): $(PCIINC) force
  	$(MAKE) -C lib all
-@@ -69,8 +69,8 @@ force:
- lib/config.h lib/config.mk:
- 	cd lib && ./configure
+@@ -80,8 +80,8 @@ PCIINC+=compat/getopt.h
+ COMMON+=compat/getopt.o
+ endif
  
--lspci: lspci.o ls-vpd.o ls-caps.o ls-caps-vendor.o ls-ecaps.o ls-kernel.o ls-tree.o ls-map.o common.o lib/$(PCILIB)
--setpci: setpci.o common.o lib/$(PCILIB)
-+lspci: lspci.o ls-vpd.o ls-caps.o ls-caps-vendor.o ls-ecaps.o ls-kernel.o ls-tree.o ls-map.o common.o
-+setpci: setpci.o common.o
+-lspci$(EXEEXT): lspci.o ls-vpd.o ls-caps.o ls-caps-vendor.o ls-ecaps.o ls-kernel.o ls-tree.o ls-map.o $(COMMON) lib/$(PCILIB)
+-setpci$(EXEEXT): setpci.o $(COMMON) lib/$(PCILIB)
++lspci$(EXEEXT): lspci.o ls-vpd.o ls-caps.o ls-caps-vendor.o ls-ecaps.o ls-kernel.o ls-tree.o ls-map.o $(COMMON)
++setpci$(EXEEXT): setpci.o $(COMMON)
  
  LSPCIINC=lspci.h pciutils.h $(PCIINC)
  lspci.o: lspci.c $(LSPCIINC)
-@@ -92,7 +92,7 @@ update-pciids: update-pciids.sh
+@@ -104,7 +104,7 @@ update-pciids: update-pciids.sh
  	chmod +x $@
  
  # The example of use of libpci
--example: example.o lib/$(PCILIB)
-+example: example.o
+-example$(EXEEXT): example.o lib/$(PCILIB)
++example$(EXEEXT): example.o
  example.o: example.c $(PCIINC)
  
- %: %.o
+ %$(EXEEXT): %.o

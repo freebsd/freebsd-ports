@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	gyoku
 PORTVERSION=	1.3.1
 PORTREVISION=	1

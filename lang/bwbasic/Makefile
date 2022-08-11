@@ -1,5 +1,3 @@
-# Created by: msmith@gsoft.com.au
-
 PORTNAME=	bwbasic
 PORTVERSION=	3.20
 CATEGORIES=	lang

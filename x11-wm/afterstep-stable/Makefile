@@ -1,5 +1,3 @@
-# Created by: Brett Taylor <brett@peloton.physics.montana.edu>
-
 PORTNAME=	afterstep
 PORTVERSION=	2.2.12
 PORTREVISION=	7

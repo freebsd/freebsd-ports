@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Keyword-Pluggable
 PORTVERSION=	1.04
 CATEGORIES=	devel perl5

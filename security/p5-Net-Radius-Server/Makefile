@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-Radius-Server
 PORTVERSION=	1.116
 PORTREVISION=	1

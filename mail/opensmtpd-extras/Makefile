@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	opensmtpd-extras
 PORTVERSION?=	6.7.1
 PORTREVISION?=	0

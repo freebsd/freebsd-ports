@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	mypaint
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.0.1

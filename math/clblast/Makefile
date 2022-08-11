@@ -1,5 +1,3 @@
-# Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	clblast
 PORTVERSION=	1.1.0
 PORTREVISION=	3

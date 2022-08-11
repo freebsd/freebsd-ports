@@ -1,5 +1,3 @@
-# Created by: b.f. <bf@FreeBSD.org>
-
 PORTNAME=	fflas-ffpack
 PORTVERSION=	2.4.3
 PORTREVISION=	2
@@ -23,6 +21,8 @@ USES=		autoreconf blaslapack:openblas compiler:c++11-lang gmake	\
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	fflas-ffpack-config.in
 TEST_TARGET=	check
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOXYGEN
 

@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	bbmail
 PORTVERSION=	0.9.3
 CATEGORIES=	mail

@@ -1,5 +1,3 @@
-# Created by: Romain Tartière <romain@blogreen.org>
-
 PORTNAME=	pavumeter
 PORTVERSION=	0.9.3
 PORTREVISION=	12

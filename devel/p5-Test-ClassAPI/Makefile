@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Test-ClassAPI
 PORTVERSION=	1.07
 CATEGORIES=	devel perl5

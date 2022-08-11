@@ -1,5 +1,3 @@
-# Created by: Johannes Jost Meixner <johannes@perceivon.net>
-
 PORTNAME=	pyganim
 PORTVERSION=	0.9.2
 PORTREVISION=	3

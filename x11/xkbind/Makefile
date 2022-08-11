@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	xkbind
 PORTVERSION=	2010.05.20
 CATEGORIES=	x11

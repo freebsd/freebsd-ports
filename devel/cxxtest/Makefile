@@ -1,5 +1,3 @@
-# Created by: andrew morton
-
 PORTNAME=	cxxtest
 PORTVERSION=	4.4
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Devel-Events-Objects
 PORTVERSION=	0.05
 PORTREVISION=	3

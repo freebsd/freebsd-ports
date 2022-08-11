@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Mail-AuthenticationResults
 PORTVERSION=	2.20210915
 CATEGORIES=	mail perl5

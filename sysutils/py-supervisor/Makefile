@@ -1,5 +1,3 @@
-# Created by: Hizbulin Ildar <hizel@vyborg.ru>
-
 PORTNAME=	supervisor
 PORTVERSION=	4.2.4
 PORTEPOCH=	1

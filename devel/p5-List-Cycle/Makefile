@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	List-Cycle
 PORTVERSION=	1.04
 CATEGORIES=	devel perl5

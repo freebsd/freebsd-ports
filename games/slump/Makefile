@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	slump
 PORTVERSION=	0.003.02
 CATEGORIES=	games

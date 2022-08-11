@@ -1,5 +1,3 @@
-# Created by: Conor McDermottroe <ports@mcdermottroe.com>
-
 PORTNAME=	TestGen4Web-Runner
 PORTVERSION=	0.11
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	File_Gettext
 PORTVERSION=	0.4.2
 CATEGORIES=	sysutils devel pear

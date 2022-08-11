@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	Data-Throttler
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

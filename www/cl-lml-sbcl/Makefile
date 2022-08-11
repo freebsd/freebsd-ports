@@ -1,8 +1,6 @@
-# Created by: Henrik Motakef <henrik.motakef@web.de>
-
 PORTNAME=	lml
 PORTVERSION=	2.5.7
-PORTREVISION=	66
+PORTREVISION=	69
 CATEGORIES=	www textproc
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none

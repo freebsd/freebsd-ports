@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	curio
 PORTVERSION=	1.5
 CATEGORIES=	devel python

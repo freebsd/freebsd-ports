@@ -11,10 +11,10 @@ lib/girepository-1.0/GnomeAutoar-0.1.typelib
 lib/girepository-1.0/GnomeAutoarGtk-0.1.typelib
 lib/libgnome-autoar-0.so
 lib/libgnome-autoar-0.so.0
-lib/libgnome-autoar-0.so.0.1.1
+lib/libgnome-autoar-0.so.0.1.2
 lib/libgnome-autoar-gtk-0.so
 lib/libgnome-autoar-gtk-0.so.0
-lib/libgnome-autoar-gtk-0.so.0.1.1
+lib/libgnome-autoar-gtk-0.so.0.1.2
 libdata/pkgconfig/gnome-autoar-0.pc
 libdata/pkgconfig/gnome-autoar-gtk-0.pc
 share/gir-1.0/GnomeAutoar-0.1.gir

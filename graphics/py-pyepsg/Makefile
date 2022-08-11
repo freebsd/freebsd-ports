@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyepsg
 PORTVERSION=	0.4.0
 CATEGORIES=	graphics python

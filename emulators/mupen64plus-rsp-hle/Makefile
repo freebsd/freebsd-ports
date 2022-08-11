@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PKGNAMESUFFIX=	-rsp-hle
 
 COMMENT=	RSP plugin for Mupen64plus

@@ -1,5 +1,3 @@
-# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-
 PORTNAME=	innate
 PORTVERSION=	2015.10.28
 CATEGORIES=	www rubygems

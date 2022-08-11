@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	wxhexeditor
 PORTVERSION=	0.24
 PORTREVISION=	4

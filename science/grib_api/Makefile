@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	grib_api
 PORTVERSION=	1.28.0
 DISTVERSIONSUFFIX=	-Source

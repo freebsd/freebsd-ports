@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	rpsl2acl
 PORTVERSION=	1.01
 CATEGORIES=	dns perl5

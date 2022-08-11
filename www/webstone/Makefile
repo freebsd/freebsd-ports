@@ -1,5 +1,3 @@
-# Created by: Soren Dossing <sauber@netcom.com>
-
 PORTNAME=	webstone
 PORTVERSION=	2.5
 PORTREVISION=	2

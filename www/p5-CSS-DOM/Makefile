@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	CSS-DOM
 PORTVERSION=	0.17
 CATEGORIES=	www perl5

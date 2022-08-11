@@ -1,5 +1,3 @@
-# Created by: jmacd
-
 PORTNAME=	xpilot
 PORTVERSION=	4.5.5
 CATEGORIES=	games

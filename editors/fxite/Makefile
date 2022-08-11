@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	fxite
 DISTVERSIONPREFIX=	FXITE-
 DISTVERSION=	0_92

@@ -1,5 +1,3 @@
-# Created by: nox@FreeBSD.org
-
 PORTNAME=	uartlirc
 PORTVERSION=	0.3
 PORTREVISION=	2

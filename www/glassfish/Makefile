@@ -1,5 +1,3 @@
-# Created by: cjr@cruwe.de
-
 PORTNAME=	glassfish
 PORTVERSION=	5.1.0
 PORTREVISION=	1

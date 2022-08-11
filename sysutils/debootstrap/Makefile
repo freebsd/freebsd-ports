@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	debootstrap
 PORTVERSION=	1.0.123
 PORTREVISION=	6
@@ -7,7 +5,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Install Debian or Ubuntu base system into a directory
 
 LICENSE=	MIT

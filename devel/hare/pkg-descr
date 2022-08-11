@@ -1,0 +1,9 @@
+This is the Hare build driver and standard library.
+
+Hare is a systems programming language designed to be simple, stable,
+and robust. Hare uses a static type system, manual memory management,
+and a minimal runtime. It is well-suited to writing operating systems,
+system tools, compilers, networking software, and other low-level,
+high performance tasks.
+
+WWW: https://harelang.org/

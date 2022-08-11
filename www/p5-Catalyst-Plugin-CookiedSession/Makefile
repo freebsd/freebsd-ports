@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	Catalyst-Plugin-CookiedSession
 PORTVERSION=	0.35
 PORTREVISION=	2

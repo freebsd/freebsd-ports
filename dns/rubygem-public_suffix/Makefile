@@ -1,7 +1,5 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	public_suffix
-PORTVERSION=	4.0.7
+PORTVERSION=	5.0.0
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 

@@ -1,5 +1,3 @@
-# Created by: Carlo Strub
-
 PORTNAME=	fastimport
 PORTVERSION=	0.9.14
 CATEGORIES=	devel python

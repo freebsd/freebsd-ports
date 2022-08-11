@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Ref-Util-XS
 PORTVERSION=	0.117
 CATEGORIES=	devel perl5

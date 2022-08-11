@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <clement@FreeBSD.org>
-
 PORTNAME=	mod_auth_mysql
 PORTVERSION=	1.11
 CATEGORIES=	www

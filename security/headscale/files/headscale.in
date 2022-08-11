@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# PROVIDE: headscale
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name=headscale
+rcvar=headscale_enable
+
+load_rc_config $name
+
+: ${headscale_enable:="NO"}
+: ${headscale_syslog_output_enable:="NO"}
+: ${headscale_syslog_output_priority:="info"}
+: ${headscale_syslog_output_facility:="daemon"}
+
+if checkyesno headscale_syslog_output_enable; then
+	headscale_syslog_output_flags="-t ${name} -T ${name}"
+
+	if [ -n "${headscale_syslog_output_priority}" ]; then
+		headscale_syslog_output_flags="${headscale_syslog_output_flags} -s ${headscale_syslog_output_priority}"
+	fi
+
+	if [ -n "${headscale_syslog_output_facility}" ]; then
+		headscale_syslog_output_flags="${headscale_syslog_output_flags} -l ${headscale_syslog_output_facility}"
+	fi
+fi
+
+pidfile=/var/run/${name}.pid
+procname="%%PREFIX%%/bin/${name}"
+
+start_cmd="${name}_start"
+
+headscale_start() {
+	/usr/sbin/daemon -f ${headscale_syslog_output_flags} -p ${pidfile} ${procname} serve
+}
+
+run_rc_command "$1"

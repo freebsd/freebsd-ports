@@ -1,5 +1,3 @@
-# Created by: samm
-
 PORTNAME=	o3read
 PORTVERSION=	0.0.4
 CATEGORIES=	converters

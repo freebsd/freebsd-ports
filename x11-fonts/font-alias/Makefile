@@ -1,5 +1,3 @@
-# Created by: Pawel Worach
-
 PORTNAME=	font-alias
 PORTVERSION=	1.0.4
 CATEGORIES=	x11-fonts

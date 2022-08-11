@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	rebar
 PORTVERSION=	2.6.4
 PORTEPOCH=	1

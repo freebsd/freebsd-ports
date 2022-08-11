@@ -1,5 +1,3 @@
-# Created by: Mij <mij@bitchx.it>
-
 PORTNAME=	vmailmgr
 PORTVERSION=	0.97
 PORTREVISION=	2

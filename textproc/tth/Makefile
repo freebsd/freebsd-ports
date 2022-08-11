@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	tth
 PORTVERSION=	4.03
 PORTREVISION=	3

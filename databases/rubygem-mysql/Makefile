@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	mysql
 PORTVERSION=	2.9.1
 CATEGORIES=	databases rubygems

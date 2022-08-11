@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	chems
 DISTVERSION=	0x04
 PORTREVISION=	1

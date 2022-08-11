@@ -1,12 +1,10 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gtkhtml
 PORTVERSION=	4.10.0
 PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight HTML rendering/printing/editing engine

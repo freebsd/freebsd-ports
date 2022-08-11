@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	bdf2sfd
 PORTVERSION=	1.1.7
 CATEGORIES=	x11-fonts
@@ -17,6 +15,6 @@ USE_CSTD=	c99
 GH_ACCOUNT=	fcambus
 
 PLIST_FILES=	bin/bdf2sfd \
-		man/man1/bdf2sfd.1.gz
+		share/man/man1/bdf2sfd.1.gz
 
 .include <bsd.port.mk>

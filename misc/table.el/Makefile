@@ -1,5 +1,3 @@
-# Created by: Denis Shaposhnikov <dsh@vlink.ru>
-
 PORTNAME=	table.el
 PORTVERSION=	1.5.54
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Locale-Maketext-Fuzzy
 PORTVERSION=	0.11
 PORTREVISION=	1
@@ -12,5 +10,7 @@ COMMENT=	Maketext from already interpolated strings
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

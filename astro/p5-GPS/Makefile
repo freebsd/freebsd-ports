@@ -1,5 +1,3 @@
-# Created by: Jeremy Shaffner <jeremy@external.org>
-
 PORTNAME=	GPS
 PORTVERSION=	0.17
 PORTREVISION=	1

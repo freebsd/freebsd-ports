@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-Hashcash
 PORTVERSION=	0.04
 PORTREVISION=	1

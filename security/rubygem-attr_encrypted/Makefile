@@ -1,5 +1,3 @@
-# Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-
 PORTNAME=	attr_encrypted
 PORTVERSION=	3.1.0
 CATEGORIES=	security rubygems

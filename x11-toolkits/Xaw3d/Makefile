@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	Xaw3d
 PORTVERSION=	1.5E
 PORTREVISION=	8

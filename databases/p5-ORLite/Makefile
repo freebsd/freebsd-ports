@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	ORLite
 PORTVERSION=	1.98
 PORTREVISION=	1

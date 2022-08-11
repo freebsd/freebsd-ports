@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	phototonic
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1

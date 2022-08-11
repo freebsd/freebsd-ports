@@ -1,8 +1,5 @@
-# Created by: tundra
-
 PORTNAME=	ot-recorder
-PORTVERSION=	0.8.4
-PORTREVISION=	3
+PORTVERSION=	0.9.1
 CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -11,14 +8,17 @@ COMMENT=	Store and access data published by OwnTracks apps
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	curl>0:ftp/curl \
+		libconfig>0:devel/libconfig \
+		lmdb>0:databases/lmdb \
+		mosquitto>0:net/mosquitto
+
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libconfig.so:devel/libconfig \
+		liblmdb.so:databases/lmdb \
+		libmosquitto.so:net/mosquitto
+
 USES=		gmake
-
-SUB_FILES=	ot-recorder
-
-LIB_DEPENDS+=	libcurl.so:ftp/curl
-LIB_DEPENDS+=	libconfig.so:devel/libconfig
-LIB_DEPENDS+=	liblmdb.so:databases/lmdb
-LIB_DEPENDS+=	libmosquitto.so:net/mosquitto
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	owntracks
@@ -27,7 +27,9 @@ GH_PROJECT=	recorder
 USERS=		ot-recorder
 GROUPS=		ot-recorder
 
-pre-patch:
+SUB_FILES=	ot-recorder
+
+post-patch:
 	${CP} ${WRKSRC}/config.mk.in ${WRKSRC}/config.mk
 
 .include <bsd.port.pre.mk>

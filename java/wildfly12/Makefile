@@ -1,5 +1,3 @@
-# Created by: Simeo Reig <reig.simeo@gmail.com>
-
 PORTNAME=	wildfly12
 PORTVERSION=	12.0.0
 PORTREVISION=	1

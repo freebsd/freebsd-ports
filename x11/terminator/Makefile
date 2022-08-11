@@ -1,5 +1,3 @@
-# Created by: Thomas Hurst <tom@hur.st>
-
 PORTNAME=	terminator
 PORTVERSION=	2.1.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	HTTP-ProxyPAC
 PORTVERSION=	0.31
 CATEGORIES=	www perl5

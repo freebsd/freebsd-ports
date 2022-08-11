@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Moose
 PORTVERSION=	2.2201
 PORTEPOCH=	1

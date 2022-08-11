@@ -1,5 +1,3 @@
-# Created by: Konstantin Reznichenko <kot@premierbank.dp.ua>
-
 PORTNAME=	arj
 PORTVERSION=	3.10.22
 PORTREVISION=	8

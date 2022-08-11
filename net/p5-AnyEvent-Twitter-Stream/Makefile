@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@FreeBSD.org>
-
 PORTNAME=	AnyEvent-Twitter-Stream
 PORTVERSION=	0.28
 CATEGORIES=	net perl5

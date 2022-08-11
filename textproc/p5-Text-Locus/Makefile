@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	Text-Locus
 PORTVERSION=	1.04
 CATEGORIES=	textproc perl5

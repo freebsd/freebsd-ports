@@ -37,6 +37,7 @@ share/icons/hicolor/256x256/apps/kontact-import-wizard.png
 share/importwizard/pics/step1.png
 share/locale/ar/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/az/LC_MESSAGES/akonadiimportwizard.mo
+share/locale/bg/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/bs/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/ca/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadiimportwizard.mo

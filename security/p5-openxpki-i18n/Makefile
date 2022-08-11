@@ -1,8 +1,6 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	openxpki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.18.0
+DISTVERSION=	3.20.0
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-i18n

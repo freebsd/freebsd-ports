@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 # devel/hadoop2 needs version 2.5.0
 PORTNAME=	protobuf
 PORTVERSION=	2.5.0

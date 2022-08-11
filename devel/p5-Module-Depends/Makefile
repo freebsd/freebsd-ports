@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	Module-Depends
 PORTVERSION=	0.16
 PORTREVISION=	1

@@ -1,0 +1,20 @@
+--- meson.build.orig	2021-05-27 10:36:45 UTC
++++ meson.build
+@@ -44,7 +44,7 @@ is_msvc = cpp_compiler.get_id() == 'msvc'
+ 
+ cpp_compiler = meson.get_compiler('cpp')
+ is_msvc = cpp_compiler.get_id() == 'msvc'
+-python3 = import('python').find_installation('python3')
++python3 = import('python').find_installation()
+ 
+ python_version = python3.language_version()
+ python_version_req = '>= 3.5'
+@@ -290,7 +290,7 @@ configure_file(
+   install_dir: install_pkgconfigdir,
+ )
+ 
+-install_includeconfigdir = install_libdir / xmlxx_pcname / 'include'
++install_includeconfigdir = install_includedir / xmlxx_pcname / 'include'
+ xmlxxconfig_h = configure_file(
+   input: 'libxml++config.h.meson',
+   output: 'libxml++config.h',

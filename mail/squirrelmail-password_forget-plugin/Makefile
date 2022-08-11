@@ -1,5 +1,3 @@
-# Created by: Neil Darlow <neil@darlow.co.uk>
-
 PORTNAME=	password_forget
 PORTVERSION=	2.3
 CATEGORIES=	mail www

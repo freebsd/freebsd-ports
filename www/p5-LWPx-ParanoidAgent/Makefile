@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	LWPx-ParanoidAgent
 PORTVERSION=	1.12
 CATEGORIES=	www security perl5

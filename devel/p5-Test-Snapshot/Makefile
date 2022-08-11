@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-Snapshot
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

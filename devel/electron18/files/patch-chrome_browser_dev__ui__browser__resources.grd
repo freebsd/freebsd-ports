@@ -1,0 +1,11 @@
+--- chrome/browser/dev_ui_browser_resources.grd.orig	2022-05-19 05:17:36 UTC
++++ chrome/browser/dev_ui_browser_resources.grd
+@@ -46,7 +46,7 @@ This file specifies browser resources for developer-fa
+       <include name="IDR_PREDICTORS_RESOURCE_PREFETCH_PREDICTOR_JS" file="resources\predictors\resource_prefetch_predictor.js" type="BINDATA" />
+       <include name="IDR_MEDIA_SESSION_MOJOM_WEBUI_JS" file="${root_gen_dir}\mojom-webui\services\media_session\public\mojom\media_session.mojom-webui.js" use_base_dir="false" type="BINDATA" />
+ 
+-      <if expr="is_android or is_linux">
++      <if expr="is_android or is_posix">
+         <include name="IDR_SANDBOX_INTERNALS_HTML" file="resources\sandbox_internals\sandbox_internals.html" preprocess="true" type="BINDATA" />
+         <include name="IDR_SANDBOX_INTERNALS_JS" file="resources\sandbox_internals\sandbox_internals.js" preprocess="true" type="BINDATA" />
+       </if>

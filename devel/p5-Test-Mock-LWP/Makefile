@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Test-Mock-LWP
 PORTVERSION=	0.08
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Nicklas Johnson <freebsd@spatula.net>
-
 PORTNAME=	speak
 PORTVERSION=	1.2
 CATEGORIES=	games

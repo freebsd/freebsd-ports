@@ -1,5 +1,3 @@
-# Created by: Valerio Daelli <valerio.daelli@gmail.com>
-
 PORTNAME=	sqlninja
 DISTVERSION=	0.2.6
 CATEGORIES=	security

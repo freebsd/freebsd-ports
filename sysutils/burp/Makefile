@@ -1,5 +1,3 @@
-# Created by: Loic Pefferkorn <loic-freebsd@loicp.eu>
-
 PORTNAME=	burp
 PORTVERSION=	2.4.0
 CATEGORIES=	sysutils

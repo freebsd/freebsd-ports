@@ -1,5 +1,3 @@
-# Created by: Josh Tiefenbach <josh@zipperup.org>
-
 PORTNAME=	Tie-DB_FileLock
 PORTVERSION=	0.11
 PORTREVISION=	1

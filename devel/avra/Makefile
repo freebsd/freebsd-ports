@@ -1,5 +1,3 @@
-# Created by: Wes Peters <@FreeBSD.org>
-
 PORTNAME=	avra
 PORTVERSION=	1.4.2
 CATEGORIES=	devel

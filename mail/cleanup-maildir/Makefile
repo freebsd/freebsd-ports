@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	cleanup-maildir
 PORTVERSION=	0.3.1
 DISTVERSIONPREFIX=	v

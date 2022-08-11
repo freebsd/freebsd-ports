@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	sphinxcontrib-bitbucket
 PORTVERSION=	1.0
 PORTREVISION=	2

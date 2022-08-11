@@ -1,5 +1,3 @@
-# Created by: Jeremy Chadwick <koitsu@FreeBSD.org>
-
 PORTNAME=	rrdbot
 PORTVERSION=	0.9.7.d20200312
 CATEGORIES=	net-mgmt

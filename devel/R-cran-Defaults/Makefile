@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	Defaults
 DISTVERSION=	1.1-1
 PORTREVISION=	13

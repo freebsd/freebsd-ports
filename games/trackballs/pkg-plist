@@ -1,5 +1,5 @@
 bin/trackballs
-man/man6/trackballs.6.gz
+share/man/man6/trackballs.6.gz
 share/applications/trackballs.desktop
 share/icons/hicolor/128x128/apps/trackballs.png
 share/icons/hicolor/32x32/apps/trackballs.png

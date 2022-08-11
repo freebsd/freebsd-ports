@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cli-helpers
 PORTVERSION=	2.2.1
 CATEGORIES=	devel python

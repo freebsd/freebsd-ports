@@ -1,5 +1,3 @@
-# Created by: chuynh@biolateral.com.au
-
 PORTNAME=	tRNAscan-SE
 PORTVERSION=	2.0.5
 CATEGORIES=	biology

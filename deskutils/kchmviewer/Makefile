@@ -1,8 +1,7 @@
-# Created by: Markus Brueffer <markus@FreeBSD.org>
-
 PORTNAME=	kchmviewer
 DISTVERSIONPREFIX=	RELEASE_
 DISTVERSION=	8_0
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 
 MAINTAINER=	kde@FreeBSD.org

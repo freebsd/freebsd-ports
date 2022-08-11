@@ -1,0 +1,11 @@
+Eclipse Paho C Client Library for the MQTT Protocol
+
+The Paho C client comprises four variant libraries, shared or static:
+
+paho-mqtt3a - asynchronous (MQTTAsync)
+paho-mqtt3as - asynchronous with SSL (MQTTAsync)
+paho-mqtt3c - "classic" / synchronous (MQTTClient)
+paho-mqtt3cs - "classic" / synchronous with SSL (MQTTClient)
+Which Paho C API to use, with some history, for context
+
+WWW: https://github.com/eclipse/paho.mqtt.c

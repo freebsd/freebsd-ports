@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	histogram
 PORTVERSION=	0.2.4.1
 CATEGORIES=	graphics rubygems

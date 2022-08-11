@@ -1,5 +1,3 @@
-# Created by: Reed A. Cartwright <cartwright@asu.edu>
-
 PORTNAME=	htslib
 DISTVERSION=	1.15
 CATEGORIES=	biology devel

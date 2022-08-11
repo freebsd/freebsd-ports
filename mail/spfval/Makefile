@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	spfval
 PORTVERSION=	0.0.1
 CATEGORIES=	mail

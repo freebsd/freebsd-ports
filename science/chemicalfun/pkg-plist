@@ -13,3 +13,7 @@ lib/cmake/ChemicalFun/ChemicalFunConfigVersion.cmake
 lib/cmake/ChemicalFun/ChemicalFunTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ChemicalFun/ChemicalFunTargets.cmake
 lib/libChemicalFun.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/chemicalfun/PyChemicalFun%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/chemicalfun/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/chemicalfun/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/chemicalfun-0.1.3-py%%PYTHON_VER%%.egg-info

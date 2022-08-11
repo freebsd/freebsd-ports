@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	pcmanx
 PORTVERSION=	1.3
 PORTREVISION=	2

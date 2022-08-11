@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis (edwin@mavetju.org)
-
 PORTNAME=	dhcping
 PORTVERSION=	1.2
 CATEGORIES=	net

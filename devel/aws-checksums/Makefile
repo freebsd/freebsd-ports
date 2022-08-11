@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	aws-checksums
 PORTVERSION=	0.1.12
 DISTVERSIONPREFIX=	v

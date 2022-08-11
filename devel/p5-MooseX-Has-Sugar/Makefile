@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	MooseX-Has-Sugar
 PORTVERSION=	1.000006
 CATEGORIES=	devel perl5

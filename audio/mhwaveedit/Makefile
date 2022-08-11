@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	mhwaveedit
 PORTVERSION=	1.4.24
 PORTREVISION=	3

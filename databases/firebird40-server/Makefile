@@ -7,6 +7,9 @@ PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
 DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.2496-0
 DIST_SUBDIR=	${PORTNAME}
 
+PATCH_SITES=	https://github.com/FirebirdSQL/firebird/commit/
+PATCHFILES=	96931200340c8e0abcd3529b8e443d5ab62adfa5.patch:-p1
+
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Firebird-4 relational database (server)
 
@@ -63,7 +66,7 @@ LD=	${CC}
 # Don't strip binary files
 STRIP=
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 powerpc64le
 # sparc64 fails due to lack of valid AtomicCounter implementation in
 # src/common/classes/fb_atomic.h; presumably other tier-2s would as well
 

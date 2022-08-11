@@ -1,5 +1,3 @@
-# Created by: rene
-
 PORTNAME=	fuse-utils
 DISTVERSION=	1.4.3
 PORTREVISION=	1

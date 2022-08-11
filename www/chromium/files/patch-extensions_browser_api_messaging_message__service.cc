@@ -1,4 +1,4 @@
---- extensions/browser/api/messaging/message_service.cc.orig	2022-03-25 21:59:56 UTC
+--- extensions/browser/api/messaging/message_service.cc.orig	2022-07-22 17:30:31 UTC
 +++ extensions/browser/api/messaging/message_service.cc
 @@ -74,7 +74,7 @@ namespace {
  const char kReceivingEndDoesntExistError[] =
@@ -9,7 +9,7 @@
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -447,7 +447,7 @@ void MessageService::OpenChannelToNativeApp(
+@@ -437,7 +437,7 @@ void MessageService::OpenChannelToNativeApp(
      return;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

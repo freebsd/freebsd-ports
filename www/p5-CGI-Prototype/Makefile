@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	CGI-Prototype
 PORTVERSION=	0.9054
 PORTREVISION=	1

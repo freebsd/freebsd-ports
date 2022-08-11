@@ -1,5 +1,3 @@
-# Created by: mnag@FreeBSD.org
-
 PORTNAME=	gnupg
 PORTVERSION=	1.5.1
 CATEGORIES=	security

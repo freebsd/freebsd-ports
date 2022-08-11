@@ -1,5 +1,3 @@
-# Created by: johans
-
 PORTNAME=	paps
 PORTVERSION=	0.7.1
 DISTVERSIONPREFIX=	v

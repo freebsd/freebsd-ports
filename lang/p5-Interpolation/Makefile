@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Interpolation
 PORTVERSION=	0.74
 PORTREVISION=	1

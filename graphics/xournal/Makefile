@@ -1,8 +1,6 @@
-# Created by: Jan Henrik Sylvester <me@janh.de>
-
 PORTNAME=	xournal
 PORTVERSION=	0.4.8.2016
-PORTREVISION=	35
+PORTREVISION=	40
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 

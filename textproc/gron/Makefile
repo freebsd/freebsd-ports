@@ -1,7 +1,6 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	gron
 PORTVERSION=	0.6.1
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 

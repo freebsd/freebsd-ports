@@ -1,5 +1,3 @@
-# Created by: Mirko Zinn <mail@derzinn.de>
-
 PORTNAME=	minimongo
 PORTVERSION=	0.2.7
 PORTREVISION=	1

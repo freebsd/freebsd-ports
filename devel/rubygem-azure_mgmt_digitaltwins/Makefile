@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_digitaltwins
 PORTVERSION=	0.18.0
 CATEGORIES=	devel rubygems

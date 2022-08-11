@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	pysimdjson
 PORTVERSION=	4.0.3
 CATEGORIES=	devel python

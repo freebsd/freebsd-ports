@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	daemonize
 PORTVERSION=	2.5.0
 CATEGORIES=	devel python

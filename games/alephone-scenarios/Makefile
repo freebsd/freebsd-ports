@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	scenarios
 PORTVERSION=	1.0
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng Lin <yzlin@FreeBSD.org>
-
 PORTNAME=	bpython
 PORTVERSION=	0.22.1
 CATEGORIES=	devel python

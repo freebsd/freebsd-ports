@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	lights
 PORTVERSION=	1
 CATEGORIES=	games

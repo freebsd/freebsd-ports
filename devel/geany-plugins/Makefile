@@ -1,5 +1,3 @@
-# Created by: Aldis Berjoza <aldis@bsdroot.lv>
-
 PORTNAME=	geany-plugins
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel

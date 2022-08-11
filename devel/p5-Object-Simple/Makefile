@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	Object-Simple
 PORTVERSION=	3.1600
 CATEGORIES=	devel perl5

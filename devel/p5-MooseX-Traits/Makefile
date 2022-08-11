@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	MooseX-Traits
 PORTVERSION=	0.13
 CATEGORIES=	devel perl5

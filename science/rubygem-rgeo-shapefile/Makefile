@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rgeo-shapefile
 PORTVERSION=	3.0.0
 CATEGORIES=	science rubygems

@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	pcsc-tools
 PORTVERSION=	1.6.0
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	po_to_json
 PORTVERSION=	1.0.1
 CATEGORIES=	converters rubygems

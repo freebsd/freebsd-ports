@@ -1,8 +1,6 @@
-# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-
 PORTNAME=	uim-tomoe-gtk
 PORTVERSION=	0.6.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	japanese
 MASTER_SITES=	SF/tomoe/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 

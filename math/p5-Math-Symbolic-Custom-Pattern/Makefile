@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-Symbolic-Custom-Pattern
 PORTVERSION=	2.01
 PORTREVISION=	2

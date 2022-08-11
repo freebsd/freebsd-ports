@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	iterators
 PORTVERSION=	1.0.14
 CATEGORIES=	devel

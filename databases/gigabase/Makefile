@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org.ru>
-
 PORTNAME=	gigabase
 PORTVERSION=	3.91
 PORTREVISION=	8

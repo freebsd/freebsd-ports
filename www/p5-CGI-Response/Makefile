@@ -1,5 +1,3 @@
-# Created by: Guy P.
-
 PORTNAME=	CGI-Response
 PORTVERSION=	0.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sevan Janiyan <venture37@geeklan.co.uk>
-
 PORTNAME=	iplike
 PORTVERSION=	2.2.0
 CATEGORIES=	databases

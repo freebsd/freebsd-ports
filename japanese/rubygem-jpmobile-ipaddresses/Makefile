@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	jpmobile-ipaddresses
 PORTVERSION=	0.0.2
 CATEGORIES=	japanese www rubygems

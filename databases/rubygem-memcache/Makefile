@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <michael@fun-box.ru>
-
 PORTNAME=	memcache
 PORTVERSION=	1.5.1
 PORTREVISION=	1

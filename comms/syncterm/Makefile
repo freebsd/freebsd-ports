@@ -1,5 +1,3 @@
-# Created by: shurd
-
 PORTNAME=	syncterm
 PORTVERSION=	1.0
 CATEGORIES=	comms

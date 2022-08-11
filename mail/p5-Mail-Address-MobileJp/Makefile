@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	Mail-Address-MobileJp
 PORTVERSION=	0.09
 PORTREVISION=	1

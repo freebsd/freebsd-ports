@@ -1,8 +1,6 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	glogg
 DISTVERSION=	1.1.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://glogg.bonnefon.org/files/
 

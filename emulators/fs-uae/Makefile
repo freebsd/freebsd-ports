@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	fs-uae
 PORTVERSION=	3.1.35
 CATEGORIES=	emulators

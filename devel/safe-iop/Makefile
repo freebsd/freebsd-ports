@@ -1,5 +1,3 @@
-# Created by: stas
-
 PORTNAME=	safe-iop
 DISTVERSION=	0.3.2
 CATEGORIES=	devel

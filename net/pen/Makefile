@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pen
 PORTVERSION=	0.34.1
 CATEGORIES=	net

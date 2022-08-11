@@ -1,8 +1,6 @@
-# Created by: Carlo Strub <cs@FreeBSD.org>
-
 PORTNAME=	bapu
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	https://bitbucket.org/carlostrub/bapu/get/
 PKGNAMEPREFIX=	go-

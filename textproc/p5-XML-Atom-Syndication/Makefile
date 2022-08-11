@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	XML-Atom-Syndication
 PORTVERSION=	0.942
 PORTEPOCH=	1

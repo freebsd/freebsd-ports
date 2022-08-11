@@ -1,0 +1,5 @@
+GCC, the GNU Compiler Collection, supports a number of languages.
+This port installs the C, C++, and Fortran front ends as gcc13, g++13,
+and gfortran13, respectively.
+
+WWW: https://gcc.gnu.org

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-accessanalyzer
 PORTVERSION=	1.29.0
 CATEGORIES=	devel rubygems

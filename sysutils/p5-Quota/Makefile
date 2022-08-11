@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Quota
 PORTVERSION=	1.8.2
 CATEGORIES=	sysutils perl5

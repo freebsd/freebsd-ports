@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	pycadf
 PORTVERSION=	3.1.1
 CATEGORIES=	devel python
@@ -20,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}debtcollector>=1.2.0:devel/py-debtcollector@
 		${PYTHON_PKGNAMEPREFIX}pytz>=2013.6,1:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR}
 
-USES=		cpe python:3.6+
+USES=		cpe python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

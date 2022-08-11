@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@rtfm.jp>
-
 PORTNAME=	rubyinlineaccel
 PORTVERSION=	0.0.1
 PORTREVISION=	1

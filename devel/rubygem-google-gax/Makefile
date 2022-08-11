@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-gax
 PORTVERSION=	1.8.2
 PORTREVISION=	1

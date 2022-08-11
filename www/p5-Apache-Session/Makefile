@@ -1,5 +1,3 @@
-# Created by: Frank Mayhar <frank@exit.com>
-
 PORTNAME=	Apache-Session
 PORTVERSION=	1.94
 CATEGORIES=	www perl5

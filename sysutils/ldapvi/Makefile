@@ -1,5 +1,3 @@
-# Created by: Joerg Pulz <Joerg.Pulz@frm2.tum.de>
-
 PORTNAME=	ldapvi
 PORTVERSION=	1.7
 PORTREVISION=	6

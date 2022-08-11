@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Format-Epoch
 PORTVERSION=	0.16
 CATEGORIES=	devel perl5

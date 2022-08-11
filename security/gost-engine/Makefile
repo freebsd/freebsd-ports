@@ -1,5 +1,3 @@
-# Created by: Eugene Grosbein <eugen@FreeBSD.org>
-
 PORTNAME=	gost-engine
 DISTVERSION=	g20190421
 CATEGORIES=	security
@@ -37,7 +35,7 @@ post-install:
 	( cd ${STAGEDIR}${PREFIX}/lib/engines-1.1 && ${MV} gost.so libgost.so )
 
 post-install-DOCS-off:
-	( cd ${STAGEDIR}${PREFIX}/man/man1 && ${RM} gost12sum.1 gostsum.1 )
+	( cd ${STAGEDIR}${PREFIX}/share/man/man1 && ${RM} gost12sum.1 gostsum.1 )
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,5 +1,3 @@
-# Created by: sunghyuk
-
 PORTNAME=	luajava
 PORTVERSION=	1.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Alex Miller (<asm@asm.kiev.ua>)
-
 PORTNAME=	XML_Parser
 PORTVERSION=	1.3.8
 CATEGORIES=	devel pear

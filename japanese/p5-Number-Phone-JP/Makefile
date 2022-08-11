@@ -1,5 +1,3 @@
-# Created by: n-shigemura@ensure.jp
-
 PORTNAME=	Number-Phone-JP
 PORTVERSION=	0.20190521
 CATEGORIES=	japanese perl5

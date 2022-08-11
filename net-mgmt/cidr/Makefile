@@ -1,5 +1,3 @@
-# Created by: Domas Mituzas <midom@dammit.lt>
-
 PORTNAME=	cidr
 PORTVERSION=	2.3.2
 PORTREVISION=	1

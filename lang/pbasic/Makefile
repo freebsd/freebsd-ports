@@ -1,5 +1,3 @@
-# Created by: Julian H. Stacey <jhs@FreeBSD.org>
-
 PORTNAME=	pbasic
 PORTVERSION=	2.1
 CATEGORIES=	lang

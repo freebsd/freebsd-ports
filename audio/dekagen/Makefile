@@ -1,5 +1,3 @@
-# Created by: Martin Kraft <martin.kraft@fal.de>
-
 PORTNAME=	dekagen
 PORTVERSION=	1.0.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-directconnect
 PORTVERSION=	1.54.0
 CATEGORIES=	devel rubygems

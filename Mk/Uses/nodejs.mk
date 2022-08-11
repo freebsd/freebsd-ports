@@ -3,7 +3,7 @@
 # Feature:      nodejs
 # Usage:        USES=nodejs or USES=nodejs:args
 # Valid ARGS:	build and/or run <version>
-# version:      lts, current, 14, 16, 17
+# version:      lts, current, 14, 16, 18
 # Default is:   build,run
 # Note:			if you define a version, you must provide run and/or build
 #
@@ -12,7 +12,7 @@
 .if !defined(_INCLUDE_USES_NODEJS_MK)
 _INCLUDE_USES_NODEJS_MK=	yes
 
-_VALID_NODEJS_VERSION=	14 16 17 lts current
+_VALID_NODEJS_VERSION=	14 16 18 lts current
 _NODEJS_VERSION_SUFFIX=	${NODEJS_DEFAULT}
 
 .  if ! ${_VALID_NODEJS_VERSION:M${_NODEJS_VERSION_SUFFIX}}
@@ -29,18 +29,18 @@ _NODEJS_VERSION_SUFFIX=	14
 _NODEJS_VERSION_SUFFIX=	16
 .  elif ${nodejs_ARGS:Mlts}
 _NODEJS_VERSION_SUFFIX=	lts
-.  elif ${nodejs_ARGS:M17}
-_NODEJS_VERSION_SUFFIX=	17
+.  elif ${nodejs_ARGS:M18}
+_NODEJS_VERSION_SUFFIX=	18
 .  elif ${nodejs_ARGS:Mcurrent}
 _NODEJS_VERSION_SUFFIX=	current
 .  elif defined(NODEJS_DEFAULT)
 .  endif
 
-# The nodejs 17 version is named www/node
+# The nodejs 18 version is named www/node
 .  if ${_NODEJS_VERSION_SUFFIX:Mcurrent}
 _NODEJS_VERSION_SUFFIX=
 .  endif
-.  if ${_NODEJS_VERSION_SUFFIX:M17}
+.  if ${_NODEJS_VERSION_SUFFIX:M18}
 _NODEJS_VERSION_SUFFIX=
 .  endif
 # The nodejs LTS is version 16

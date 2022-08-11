@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Module-ExtractUse
 PORTVERSION=	0.344
 CATEGORIES=	devel perl5

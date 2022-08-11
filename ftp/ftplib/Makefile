@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ftplib
 PORTVERSION=	4.0.1
 CATEGORIES=	ftp

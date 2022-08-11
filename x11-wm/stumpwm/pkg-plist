@@ -21,6 +21,7 @@
 %%ASDF_PATHNAME%%/keytrans.lisp
 %%ASDF_PATHNAME%%/kmap.lisp
 %%ASDF_PATHNAME%%/load-stumpwm.lisp
+%%ASDF_PATHNAME%%/main.lisp
 %%ASDF_PATHNAME%%/make-image.lisp
 %%ASDF_PATHNAME%%/manual.lisp
 %%ASDF_PATHNAME%%/menu-declarations.lisp
@@ -55,6 +56,7 @@
 %%ASDF_PATHNAME%%/sbclfasl/keysyms.fasl
 %%ASDF_PATHNAME%%/sbclfasl/keytrans.fasl
 %%ASDF_PATHNAME%%/sbclfasl/kmap.fasl
+%%ASDF_PATHNAME%%/sbclfasl/manual.fasl
 %%ASDF_PATHNAME%%/sbclfasl/menu-declarations.fasl
 %%ASDF_PATHNAME%%/sbclfasl/menu-definitions.fasl
 %%ASDF_PATHNAME%%/sbclfasl/message-window.fasl

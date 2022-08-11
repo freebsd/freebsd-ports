@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Time-modules
 PORTVERSION=	2013.0912
 PORTREVISION=	1

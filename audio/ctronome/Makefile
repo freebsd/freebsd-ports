@@ -1,5 +1,3 @@
-# Created by: Charles Mercadal <mercadal@diablonet.net>
-
 PORTNAME=	ctronome
 PORTVERSION=	0.5.6
 CATEGORIES=	audio

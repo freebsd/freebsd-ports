@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	fcitx5-hangul
 DISTVERSION=	5.0.2
 CATEGORIES=	korean textproc

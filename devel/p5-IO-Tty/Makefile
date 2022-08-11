@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	IO-Tty
 PORTVERSION=	1.16
 CATEGORIES=	devel perl5

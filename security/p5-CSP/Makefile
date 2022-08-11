@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	CSP
 PORTVERSION=	0.34
 PORTREVISION=	1

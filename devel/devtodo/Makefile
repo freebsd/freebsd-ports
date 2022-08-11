@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	devtodo
 PORTVERSION=	0.1.20
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	RT-Extension-MandatoryOnTransition
 DISTVERSION=	0.21
 CATEGORIES=	www net perl5

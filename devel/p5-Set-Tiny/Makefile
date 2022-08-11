@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	Set-Tiny
 PORTVERSION=	0.04
 CATEGORIES=	devel perl5

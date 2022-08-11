@@ -1,5 +1,3 @@
-# Created by: roberto
-
 PORTNAME=	getline
 PORTVERSION=	3.9
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	gtkmmorse
 PORTVERSION=	0.9.27
 PORTREVISION=	6

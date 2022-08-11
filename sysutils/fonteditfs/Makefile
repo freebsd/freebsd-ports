@@ -1,5 +1,3 @@
-# Created by: uri@keves.org
-
 PORTNAME=	fonteditfs
 PORTVERSION=	1.2
 CATEGORIES=	sysutils

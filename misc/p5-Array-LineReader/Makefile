@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Array-LineReader
 PORTVERSION=	1.01
 PORTREVISION=	2

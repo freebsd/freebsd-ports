@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	Object-Realize-Later
 PORTVERSION=	0.21
 CATEGORIES=	devel perl5

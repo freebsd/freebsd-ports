@@ -1,5 +1,3 @@
-# Created by: Wei-chun Chao
-
 PORTNAME=	File-CounterFile
 PORTVERSION=	1.04
 PORTREVISION=	1

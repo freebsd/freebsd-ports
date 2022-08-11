@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	qwinff
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1-22

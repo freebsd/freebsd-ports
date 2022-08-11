@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	pkcs11-gateway
 PORTVERSION=	1.4
 CATEGORIES=	security devel linux

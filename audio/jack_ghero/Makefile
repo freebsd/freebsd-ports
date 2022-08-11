@@ -1,5 +1,3 @@
-# Created by: Hans Petter Selasky <hselasky@FreeBSD.org>
-
 PORTNAME=	jack_ghero
 DISTVERSIONPREFIX=	v
 PORTVERSION=		1.0.4

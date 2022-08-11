@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	icu-utils
 DISTVERSION=	0.0-20220329
 PORTREVISION=	1

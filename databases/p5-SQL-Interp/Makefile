@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	SQL-Interp
 PORTVERSION=	1.27
 CATEGORIES=	databases perl5

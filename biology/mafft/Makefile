@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	mafft
 PORTVERSION=	7.267
 CATEGORIES=	biology

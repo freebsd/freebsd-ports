@@ -1,5 +1,5 @@
 PORTNAME=	cardinal
-DISTVERSION=	22.02
+DISTVERSION=	22.05
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/DISTRHO/Cardinal/releases/download/${DISTVERSION}/
 
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/FuzzySearchDatabase.hpp:textproc/fuzzysearchdatabase \
 		bash:shells/bash
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libfftw3f.so:math/fftw3-float \
 		libjansson.so:devel/jansson \
 		liblo.so:audio/liblo \
 		libpffft.so:math/pffft \

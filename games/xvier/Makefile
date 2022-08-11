@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xvier
 PORTVERSION=	1.0
 PORTREVISION=	3

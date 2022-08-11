@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	cmprsk
 DISTVERSION=	2.2-11
 CATEGORIES=	science

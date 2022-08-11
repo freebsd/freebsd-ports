@@ -1,5 +1,3 @@
-# Created by: Rozhuk Ivan rozhuk.im@gmail.com
-
 PORTNAME=		aravis
 DISTVERSION=		0.8.20
 CATEGORIES=		multimedia
@@ -13,9 +11,8 @@ LICENSE_FILE=		${WRKSRC}/COPYING
 LIB_DEPENDS=		libaravis-0.8.so:devel/libaravis \
 			libnotify.so:devel/libnotify
 
-USES=			gettext gnome meson pkgconfig
+USES=			gettext gnome gstreamer meson pkgconfig
 USE_GNOME=		cairo glib20 intltool gtk30
-USE_GSTREAMER1=		yes
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		AravisProject

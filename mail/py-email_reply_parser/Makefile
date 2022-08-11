@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	email_reply_parser
 PORTVERSION=	0.5.9
 CATEGORIES=	mail python

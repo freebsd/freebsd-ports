@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	mp3mover
 PORTVERSION=	2.1.1
 PORTREVISION=	1

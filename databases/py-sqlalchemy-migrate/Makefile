@@ -1,5 +1,3 @@
-# Created by: elvstone@gmail.com
-
 PORTNAME=	sqlalchemy-migrate
 PORTVERSION=	0.13.0
 PORTREVISION=	1

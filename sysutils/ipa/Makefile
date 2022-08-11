@@ -1,5 +1,3 @@
-# Created by: Andrey Simonenko
-
 PORTNAME=	ipa
 PORTVERSION=	2.1.2
 PORTREVISION=	1

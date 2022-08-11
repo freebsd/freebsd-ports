@@ -1,5 +1,3 @@
-# Created by: Corey Smith <corsmith@gmail.com>
-
 PORTNAME=	freeswitch
 PORTVERSION=	1.10.3
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	update_checker
 PORTVERSION=	0.18.0
 CATEGORIES=	devel python

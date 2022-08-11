@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	tilem
 PORTVERSION=	2.0
 PORTREVISION=	4

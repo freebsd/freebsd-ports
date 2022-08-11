@@ -1,5 +1,3 @@
-# Created by: Chris St Denis <chris@smartt.com>
-
 PORTNAME=	nagiosql
 PORTVERSION=	3.4.1
 CATEGORIES=	net-mgmt www
@@ -15,6 +13,7 @@ RUN_DEPENDS=	nagios:net-mgmt/nagios \
 
 USES=		cpe gettext mysql php:web tar:bzip2
 USE_PHP=	filter gettext mysqli session simplexml
+IGNORE_WITH_PHP=	82
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	wizonet

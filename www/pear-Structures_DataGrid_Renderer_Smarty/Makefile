@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	Structures_DataGrid_Renderer_Smarty
 PORTVERSION=	0.1.5
 CATEGORIES=	www pear

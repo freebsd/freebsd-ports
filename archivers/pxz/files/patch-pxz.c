@@ -1,4 +1,4 @@
---- pxz.c.orig	2014-10-18 17:06:27 UTC
+--- pxz.c.orig	2022-05-09 09:16:27 UTC
 +++ pxz.c
 @@ -23,11 +23,17 @@
  
@@ -29,17 +29,17 @@
  #ifndef XZ_BINARY
  #define XZ_BINARY "xz"
  #endif
-@@ -121,6 +131,13 @@ const struct option long_opts[] = {
+@@ -131,6 +141,13 @@ const struct option long_opts[] = {
+ 	{ "version",        no_argument,       NULL,  'V' },
  	{ NULL,             0,                 NULL,   0 }
  };
- 
++
 +#ifdef __FreeBSD__
 +static size_t __fpending (FILE *fp)
 +{
 +	return (fp->_p - fp->_bf._base);
 +}
 +#endif
-+
- void __attribute__((noreturn)) run_xz( char **argv ) {
- 	execvp(XZ_BINARY, argv);
- 	error(0, errno, "execution of "XZ_BINARY" binary failed");
+ 
+ void __attribute__((noreturn)) run_xz( char **argv, char **envp ) {
+ 	execve(XZ_BINARY, argv, envp);

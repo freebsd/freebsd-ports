@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	ninja
 PORTVERSION=	1.10.2
 DISTVERSIONPREFIX=	v

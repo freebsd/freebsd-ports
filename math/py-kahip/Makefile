@@ -1,0 +1,40 @@
+PORTNAME=	kahip
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.14-19
+DISTVERSIONSUFFIX=	-g5956007
+CATEGORIES=	math
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Karlsruhe high quality graph partitioning
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	pybind11>0:devel/pybind11
+LIB_DEPENDS=	libkahip.so:math/kahip
+
+USES=		cmake localbase:ldflags python
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	KaHIP
+GH_PROJECT=	KaHIP
+
+CMAKE_SOURCE_PATH=	${FILESDIR}/CMakeLists.txt
+CMAKE_ARGS=	-DFREEBSD_WRKSRC=${WRKSRC}
+
+CXXFLAGS+=	-I${WRKSRC}
+
+PLIST_FILES=	${PYTHON_SITELIBDIR}/${PORTNAME}${PYTHON_EXT_SUFFIX}.so
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_LIB} ${BUILD_WRKSRC}/${PORTNAME}${PYTHON_EXT_SUFFIX}.so ${STAGEDIR}${PYTHON_SITELIBDIR}
+
+do-test:
+	@cd ${WRKSRC} && \
+		${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${WRKSRC}/misc/pymodule/callkahipfrompython.py && \
+		${ECHO} "Tests succeeded."
+
+.include <bsd.port.mk>

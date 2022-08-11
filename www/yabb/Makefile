@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	yabb
 PORTVERSION=	2.6.11
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	xidle
 PORTVERSION=	26052015
 CATEGORIES=	x11

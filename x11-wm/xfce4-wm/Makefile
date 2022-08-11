@@ -1,5 +1,3 @@
-# Created by: James Earl <jdearl@telus.net>
-
 PORTNAME=	xfce4-wm
 PORTVERSION=	4.16.1
 PORTREVISION=	1

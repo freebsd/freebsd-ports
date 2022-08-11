@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	Module-Signature
 PORTVERSION=	0.88
 CATEGORIES=	security perl5

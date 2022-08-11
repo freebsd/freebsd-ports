@@ -1,5 +1,3 @@
-# Created by: Jan Jungnickel <jan@jungnickel.com>
-
 PORTNAME=	crimson
 PORTVERSION=	0.5.3
 PORTREVISION=	5

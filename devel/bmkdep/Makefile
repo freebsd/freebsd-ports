@@ -1,5 +1,3 @@
-# Created by: trociny
-
 PORTNAME=	bmkdep
 PORTVERSION=	20140112
 CATEGORIES=	devel

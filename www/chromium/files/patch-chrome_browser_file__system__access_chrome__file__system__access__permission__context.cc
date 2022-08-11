@@ -1,6 +1,6 @@
---- chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc.orig	2022-07-22 17:30:31 UTC
 +++ chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc
-@@ -217,7 +217,7 @@ const struct {
+@@ -224,7 +224,7 @@ const struct {
      {base::DIR_HOME, FILE_PATH_LITERAL("Library/Mobile Documents"),
       kDontBlockChildren},
  #endif

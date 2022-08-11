@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rx
 PORTVERSION=	1.6.1
 CATEGORIES=	devel python

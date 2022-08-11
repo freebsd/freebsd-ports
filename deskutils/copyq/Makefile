@@ -1,7 +1,6 @@
 PORTNAME=	copyq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.1.0
-PORTREVISION=	1
+DISTVERSION=	6.2.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -38,6 +37,8 @@ USE_QT=		core declarative gui network script svg wayland widgets \
 USE_XORG=	x11 xau xcb xdmcp xtst
 
 LDFLAGS+=	-Wl,--as-needed
+
+PORTSCOUT=	limit:^d\.d\.
 
 OPTIONS_DEFINE=		PLUGINS WEBKIT
 OPTIONS_DEFAULT=	PLUGINS WEBKIT

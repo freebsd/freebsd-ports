@@ -1,5 +1,3 @@
-# Created by: Ulrich Spoerlein <uqs@FreeBSD.org>
-
 PORTNAME=	groff
 PORTVERSION=	1.22.4
 PORTREVISION=	4

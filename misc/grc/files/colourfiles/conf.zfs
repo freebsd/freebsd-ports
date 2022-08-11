@@ -1,0 +1,55 @@
+# Size
+regexp=(\d+(?:\.\d+)?G)
+colors=default,"\033[38;5;214m"
+======
+# Size
+regexp=(\d+(?:\.\d+)?M)
+colors=default,"\033[38;5;221m"
+======
+# Size
+regexp=(\d+(?:\.\d+)?K)
+colors=default,"\033[38;5;223m"
+======
+# Size
+regexp=\s(\d%)
+colors=default,bright_green
+======
+# Size
+regexp=\s([123]\d%)
+colors=default,bright_yellow
+======
+# Size
+regexp=\s([4-9]\d%)
+colors=default,bright_red
+======
+# Headers
+regexp=(\w+):\s+(\w+)
+colors=default,bright_white, bright_yellow
+======
+# Headers
+regexp=(errors):\s+(.*)
+colors=default,bright_red, white
+======
+# Status
+regexp=(ONLINE)
+colors=default,bright_green
+======
+# Headers
+regexp=^(NAME.*)
+colors=default,bright_white
+======
+# Headers
+regexp=(-)
+colors=default,"\033[38;5;243m"
+======
+# History
+regexp=^(\d{4}-\d{2}-\d{2})\.(\d{2}:\d{2}:\d{2})
+colors=default,bright_magenta,bright_cyan
+======
+# Headers
+regexp=(?:(create)|(destroy)|(set))
+colors=default,bright_green,bright_red,bright_yellow
+======
+# Headers
+regexp=\s+(\w+)=([^\s]+)
+colors=default,blue,bright_blue

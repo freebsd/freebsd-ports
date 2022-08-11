@@ -1,5 +1,3 @@
-# Created by: Heiner <h.eichmann@gmx.de>
-
 PORTNAME=	portdowngrade
 PORTVERSION=	1.7
 CATEGORIES=	ports-mgmt

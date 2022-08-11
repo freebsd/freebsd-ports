@@ -1,5 +1,3 @@
-# Created by: Anton Tornqvist <antont@inbox.lv>
-
 PORTNAME=	bspwm
 DISTVERSION=	0.9.10
 CATEGORIES=	x11-wm

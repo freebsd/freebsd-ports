@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj
-
 PORTNAME=	linux-c7
 PORTVERSION=	${LINUX_DIST_VER}
 CATEGORIES=	emulators linux

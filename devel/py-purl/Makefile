@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	purl
 PORTVERSION=	1.6
 CATEGORIES=	devel python

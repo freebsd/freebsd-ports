@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@tandon.net>
-
 PORTNAME=	Log-Handler
 PORTVERSION=	0.90
 CATEGORIES=	devel perl5

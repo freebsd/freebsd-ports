@@ -1,5 +1,3 @@
-# Created by: Don Croyle <croyle@gelemna.org>
-
 PORTNAME=	xconq
 DISTVERSION=	7.5.0-0pre.0.20050612
 PORTREVISION=	2

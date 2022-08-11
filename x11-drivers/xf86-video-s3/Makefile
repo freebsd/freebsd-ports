@@ -1,10 +1,14 @@
 PORTNAME=	xf86-video-s3
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org s3 display driver
+
+BROKEN=		Does not work with recent xorg
+DEPRECATED=	Broken with recent xorg, no fixes upstream
+EXPIRATION_DATE=	2022-09-04
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

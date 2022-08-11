@@ -1,5 +1,3 @@
-# Created by: Alfred Perlstein <alfred@freebsd.org>
-
 PORTNAME=	django-countries
 PORTVERSION=	5.3
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <wahjava@gmail.com>
-
 PORTNAME=	PPIx-Regexp
 DISTVERSION=	0.085
 CATEGORIES=	textproc perl5

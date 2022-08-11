@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Math-GMPz
 PORTVERSION=	0.54
 CATEGORIES=	math perl5

@@ -1,7 +1,6 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	fcitx5-chinese-addons
 DISTVERSION=	5.0.8
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:py_stroke,py_table
 DISTFILES=	${PY_STROKE_TAR}:py_stroke \

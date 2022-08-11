@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	Net-ZooKeeper
 PORTVERSION=	0.41
 CATEGORIES=	devel perl5

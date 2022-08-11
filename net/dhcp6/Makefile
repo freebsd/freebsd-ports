@@ -1,5 +1,3 @@
-# Created by: Munechika SUMIKAWA <sumikawa@FreeBSD.org>
-
 PORTNAME=	dhcp6
 PORTVERSION=	20080615.2
 DISTVERSIONPREFIX=	v

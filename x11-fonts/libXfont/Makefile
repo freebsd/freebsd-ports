@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXfont
 PORTVERSION=	1.5.4
 PORTREVISION=	2

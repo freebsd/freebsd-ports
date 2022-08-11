@@ -1,5 +1,3 @@
-# Created by: Stefan Bethke <stb@lassitu.de>
-
 PORTNAME=	firmware-utils
 PORTVERSION=	20111222
 CATEGORIES=	devel

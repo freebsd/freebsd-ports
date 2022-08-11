@@ -1,5 +1,3 @@
-# Created by: Hannes Hauswedell <h2+fbsdports@fsfe.org>
-
 PORTNAME=	seqan-apps
 DISTVERSIONPREFIX=	seqan-v
 DISTVERSION=	2.4.0

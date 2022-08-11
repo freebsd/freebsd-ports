@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	App-Control
 PORTVERSION=	1.02
 PORTREVISION=	1

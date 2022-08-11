@@ -1,5 +1,3 @@
-# Created by: b.f. <bf@FreeBSD.org>
-
 PORTNAME=	ltl2ba
 PORTVERSION=	1.3
 CATEGORIES=	math

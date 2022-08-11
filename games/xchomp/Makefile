@@ -1,5 +1,3 @@
-# Created by: swallace
-
 PORTNAME=	xchomp
 PORTVERSION=	pl1
 PORTREVISION=	2

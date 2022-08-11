@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Date
 PORTVERSION=	2.4.1
 CATEGORIES=	devel www pear

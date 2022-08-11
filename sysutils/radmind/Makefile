@@ -1,5 +1,3 @@
-# Created by: Paul Dlug <paul@aps.org>
-
 PORTNAME=	radmind
 PORTVERSION=	1.15.4
 PORTREVISION=	2021062801

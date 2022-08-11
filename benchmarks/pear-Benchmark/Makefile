@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Benchmark
 PORTVERSION=	1.2.9
 CATEGORIES=	benchmarks devel www pear

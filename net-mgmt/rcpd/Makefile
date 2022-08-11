@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	rcpd
 PORTVERSION=	1.3
 CATEGORIES=	net-mgmt net

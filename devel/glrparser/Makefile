@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	glrparser
 PORTVERSION=	1.4
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Daichi GOTO <daichi@FreeBSD.org>
-
 PORTNAME=	mozc
 PORTVERSION=	2.23.2815.102.01
 DISTVERSIONPREFIX=	v

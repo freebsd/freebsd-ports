@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	grape-route-helpers
 PORTVERSION=	2.1.0
 CATEGORIES=	devel rubygems

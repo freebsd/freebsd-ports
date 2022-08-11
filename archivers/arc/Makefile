@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	arc
 PORTVERSION=	5.21p
 CATEGORIES=	archivers

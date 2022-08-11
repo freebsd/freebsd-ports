@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	almostti
 PORTVERSION=	1.3
 CATEGORIES=	emulators

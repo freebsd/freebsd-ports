@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-EN-Numbers
 PORTVERSION=	2.03
 CATEGORIES=	textproc perl5

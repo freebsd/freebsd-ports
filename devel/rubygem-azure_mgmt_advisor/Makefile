@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_advisor
 PORTVERSION=	0.17.2
 CATEGORIES=	devel rubygems

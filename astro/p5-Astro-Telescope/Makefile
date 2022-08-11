@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Astro-Telescope
 PORTVERSION=	0.71
 PORTREVISION=	1

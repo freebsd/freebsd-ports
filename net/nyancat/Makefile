@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	nyancat
 PORTVERSION=	1.5.2
 PORTEPOCH=	1
@@ -12,6 +10,8 @@ LICENSE=	NCSA
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	klange
+
+PORTSCOUT=	ignore:1 # tags are bogus
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/nyancat

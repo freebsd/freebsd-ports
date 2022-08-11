@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gob2
 PORTVERSION=	2.0.18
 CATEGORIES=	devel

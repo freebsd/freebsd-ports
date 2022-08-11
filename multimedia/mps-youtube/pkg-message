@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-  Note that to see videos you have to enable the relative option in the program
-
-    set show_video True
-EOM
-}
-]

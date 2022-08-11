@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	dnsdiag
 PORTVERSION=	2.0.2
 PORTREVISION=	1

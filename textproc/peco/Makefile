@@ -1,9 +1,7 @@
-# Created by: Akinori MUSHA aka knu <knu@FreeBSD.org>
-
 PORTNAME=	peco
 PORTVERSION=	0.4.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/knu
 

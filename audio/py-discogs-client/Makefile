@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	discogs-client
 PORTVERSION=	2.2.1
 CATEGORIES=	audio python

@@ -1,5 +1,3 @@
-# Created by: Slaven Rezic <slaven@rezic.de>
-
 PORTNAME=	lesspipe
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.02

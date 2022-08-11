@@ -1,5 +1,3 @@
-# Created by: Mike Bristow <mike@urgle.com>
-
 PORTNAME=	XML-TokeParser
 PORTVERSION=	0.05
 PORTREVISION=	1

@@ -1,4 +1,3 @@
-# Created by: Corey Smith <corsmith@gmail.com>
 #
 # To update the port:
 # The stable libyuv version follows the chromium browser:

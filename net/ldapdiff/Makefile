@@ -1,5 +1,3 @@
-# Created by: Christian Brueffer <chris@unixpages.org)
-
 PORTNAME=	ldapdiff
 PORTVERSION=	1.4.1
 PORTREVISION=	4

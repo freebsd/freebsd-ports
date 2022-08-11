@@ -1,5 +1,3 @@
-# Created by: Damian Gerow <dgerow@afflictions.org>
-
 PORTNAME=	openconnect
 PORTVERSION=	8.20
 PORTREVISION=	2

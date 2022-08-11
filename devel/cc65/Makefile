@@ -1,5 +1,3 @@
-# Created by: Tim Vanderhoek <hoek@FreeBSD.org>
-
 PORTNAME=	cc65
 PORTVERSION=	2.19
 DISTVERSIONPREFIX=	V

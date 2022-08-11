@@ -1,7 +1,5 @@
-# Created by: Pawel Worach <pawel.worach@gmail.com>
-
 PORTNAME=	gjs
-PORTVERSION=	1.72.0
+PORTVERSION=	1.72.1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -14,6 +12,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_MPL11=	${WRKSRC}/LICENSES/MPL-1.1.txt
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 
+BUILD_DEPENDS=	dbus-run-session:devel/dbus
 LIB_DEPENDS=	libmozjs-91.so:lang/spidermonkey91 \
 		libffi.so:devel/libffi
 

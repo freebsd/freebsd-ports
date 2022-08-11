@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Test-Prereq
 PORTVERSION=	2.003
 CATEGORIES=	devel perl5

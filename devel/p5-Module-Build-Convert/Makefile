@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Module-Build-Convert
 PORTVERSION=	0.49
 PORTREVISION=	3

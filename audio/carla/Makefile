@@ -1,7 +1,10 @@
 PORTNAME=	Carla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.3
+DISTVERSION=	2.5.0
 CATEGORIES=	audio
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	5aba957f3cf0fb4dcef4d2add679603e6c048fb4.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio plugin host for Jack and PulseAudio
@@ -14,13 +17,14 @@ LIB_DEPENDS=	liblo.so:audio/liblo \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyliblo>0:audio/py-pyliblo@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib desktop-file-utils gl gmake gnome localbase \
-		pkgconfig pyqt:5 python:3.4+ qt:5 shared-mime-info shebangfix \
+		pkgconfig pyqt:5 python:3.4+ qt:5 sdl shared-mime-info shebangfix \
 		tar:bz2 xorg
 USE_PYQT=	pyqt5 sip
 USE_GNOME=	gtk20 gtk30
 USE_QT=		core gui widgets buildtools_build
 USE_GL=		gl
 USE_XORG=	x11
+USE_SDL=	sdl2
 USE_LDCONFIG=	${PREFIX}/lib/carla
 
 CONFLICTS_BUILD=	rtaudio rtmidi
@@ -61,6 +65,10 @@ JACK_MAKE_ARGS_OFF=		HAVE_JACK=false
 
 PULSEAUDIO_LIB_DEPENDS=		libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_MAKE_ARGS_OFF=	HAVE_PULSEAUDIO=false
+
+CFLAGS_powerpc64le=	-DEEL_TARGET_PORTABLE
+CFLAGS_powerpc64=	-DEEL_TARGET_PORTABLE
+CFLAGS_powerpc=	-DEEL_TARGET_PORTABLE
 
 post-install:
 	@${REINPLACE_CMD} -i '' -e ' \

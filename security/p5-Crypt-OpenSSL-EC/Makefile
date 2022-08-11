@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Crypt-OpenSSL-EC
 PORTVERSION=	1.32
 CATEGORIES=	security perl5

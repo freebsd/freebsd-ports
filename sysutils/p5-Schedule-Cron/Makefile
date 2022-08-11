@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Schedule-Cron
 PORTVERSION=	1.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Variable-Magic
 PORTVERSION=	0.62
 CATEGORIES=	devel perl5

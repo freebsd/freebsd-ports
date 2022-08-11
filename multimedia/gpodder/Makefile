@@ -1,8 +1,6 @@
-# Created by: Chess Griffin <chess@chessgriffin.com>
-
 PORTNAME=	gpodder
 DISTVERSION=	3.10.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia python
 
 MAINTAINER=	rm@FreeBSD.org

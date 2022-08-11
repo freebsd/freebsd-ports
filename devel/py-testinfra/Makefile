@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbz@FreeBSD.org>
-
 PORTNAME=	testinfra
 PORTVERSION=	3.2.0
 CATEGORIES=	devel python

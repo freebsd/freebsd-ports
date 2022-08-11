@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	tokyodystopia
 PORTVERSION=	0.9.15
 CATEGORIES=	textproc

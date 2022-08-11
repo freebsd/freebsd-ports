@@ -1,5 +1,3 @@
-# Created by: stas
-
 PORTNAME=	mod_proctitle
 PORTVERSION=	0.4.1
 PORTREVISION=	1

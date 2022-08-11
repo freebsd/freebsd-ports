@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	DateTimeX-Easy
 PORTVERSION=	0.089
 PORTREVISION=	1

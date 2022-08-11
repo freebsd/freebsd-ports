@@ -1,5 +1,3 @@
-# Created by: mwest@uct.ac.za
-
 PORTNAME=	lbdb
 PORTVERSION=	0.42.1
 CATEGORIES=	mail

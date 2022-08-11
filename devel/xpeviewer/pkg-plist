@@ -17,8 +17,10 @@ share/icons/hicolor/48x48/apps/xpeviewer.png
 %%DATADIR%%/lang/xpeviewer_ko.qm
 %%DATADIR%%/lang/xpeviewer_pl.qm
 %%DATADIR%%/lang/xpeviewer_pt_BR.qm
+%%DATADIR%%/lang/xpeviewer_pt_PT.qm
 %%DATADIR%%/lang/xpeviewer_ru.qm
 %%DATADIR%%/lang/xpeviewer_tr.qm
+%%DATADIR%%/lang/xpeviewer_uk.qm
 %%DATADIR%%/lang/xpeviewer_vi.qm
 %%DATADIR%%/lang/xpeviewer_zh.qm
 %%DATADIR%%/lang/xpeviewer_zh_TW.qm

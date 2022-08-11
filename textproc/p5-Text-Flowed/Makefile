@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Text-Flowed
 DISTVERSION=	0.14
 PORTREVISION=	1

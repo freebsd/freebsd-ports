@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Astro-FITS-CFITSIO
 PORTVERSION=	1.15
 PORTREVISION=	2

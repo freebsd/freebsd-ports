@@ -1,8 +1,6 @@
-# Created by: Waitman Gobble <waitman@waitman.net>
-
 PORTNAME=	double-conversion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

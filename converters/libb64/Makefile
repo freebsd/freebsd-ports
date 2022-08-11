@@ -1,5 +1,3 @@
-# Created by: Ismail Yenigul <ismail.yenigul@surgate.com>
-
 PORTNAME=	libb64
 PORTVERSION=	1.2.1
 CATEGORIES=	converters mail

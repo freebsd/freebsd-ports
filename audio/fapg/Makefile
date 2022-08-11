@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	fapg
 PORTVERSION=	0.43
 CATEGORIES=	audio

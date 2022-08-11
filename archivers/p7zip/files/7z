@@ -1,6 +1,0 @@
-#!/bin/sh
-
-PROGNAME=${0##*/}
-BINPATH=$(dirname $(realpath $0))/../libexec/p7zip
-
-exec "$BINPATH/$PROGNAME" "$@"

@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	csoap
 PORTVERSION=	1.1.0
 PORTREVISION=	5

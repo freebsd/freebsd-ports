@@ -1,5 +1,3 @@
-# Created by: Alexander Kriventsov <avk@vl.ru>
-
 PORTNAME=	IPC-Session
 PORTVERSION=	0.05
 PORTREVISION=	1

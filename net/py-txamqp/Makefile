@@ -1,5 +1,3 @@
-# Created by: Bruce Simpson
-
 PORTNAME=	txamqp
 PORTVERSION=	0.8.2
 CATEGORIES=	net python

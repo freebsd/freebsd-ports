@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Business-ISSN
 PORTVERSION=	1.005
 CATEGORIES=	misc perl5

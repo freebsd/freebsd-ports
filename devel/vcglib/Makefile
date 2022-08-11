@@ -14,6 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cnr-isti-vclab
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}

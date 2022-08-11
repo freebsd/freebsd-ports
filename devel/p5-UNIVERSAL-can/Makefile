@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	UNIVERSAL-can
 PORTVERSION=	1.20140328
 PORTREVISION=	1

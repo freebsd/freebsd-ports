@@ -1,5 +1,3 @@
-# Created by: Michael Haro <mharo@FreeBSD.org>
-
 PORTNAME=	Crypt-Primes
 PORTVERSION=	0.50
 PORTREVISION=	2

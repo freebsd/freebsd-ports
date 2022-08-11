@@ -1,27 +1,23 @@
 * Skip the detection of root rights requirement, the assumption that presence
 * of KMS drivers removes the root requirement is only valid for Linux
 *
---- hw/xfree86/xorg-wrapper.c.orig	2017-03-15 18:05:25 UTC
-+++ hw/xfree86/xorg-wrapper.c
-@@ -188,9 +188,6 @@ static int on_console(int fd)
+--- hw/xfree86/xorg-wrapper.c.orig	2022-01-02 23:41:56.000000000 +0100
++++ hw/xfree86/xorg-wrapper.c	2022-06-29 16:28:24.797008000 +0200
+@@ -191,7 +191,7 @@ int main(int argc, char *argv[])
  
  int main(int argc, char *argv[])
  {
 -#ifdef WITH_LIBDRM
--    struct drm_mode_card_res res;
--#endif
++#if defined(WITH_LIBDRM) && defined(__linux__)
+     struct drm_mode_card_res res;
+ #endif
      char buf[PATH_MAX];
-     int i, r, fd;
-     int kms_cards = 0;
-@@ -227,9 +224,10 @@ int main(int argc, char *argv[])
+@@ -230,7 +230,7 @@ int main(int argc, char *argv[])
          }
      }
  
 -#ifdef WITH_LIBDRM
 +#if defined(WITH_LIBDRM) && defined(__linux__)
-     /* Detect if we need root rights, except when overriden by the config */
+     /* Detect if we need root rights, except when overridden by the config */
      if (needs_root_rights == -1) {
-+        struct drm_mode_card_res res;
          for (i = 0; i < 16; i++) {
-             snprintf(buf, sizeof(buf), DRM_DEV_NAME, DRM_DIR_NAME, i);
-             fd = open(buf, O_RDWR);

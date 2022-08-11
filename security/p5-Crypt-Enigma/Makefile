@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-Enigma
 PORTVERSION=	1.4
 PORTREVISION=	1

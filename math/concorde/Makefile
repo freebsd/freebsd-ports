@@ -1,5 +1,3 @@
-# Created by: dbader@ece.unm.edu
-
 PORTNAME=	concorde
 PORTVERSION=	20031219
 CATEGORIES=	math parallel

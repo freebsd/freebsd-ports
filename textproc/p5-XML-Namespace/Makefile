@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	XML-Namespace
 PORTVERSION=	0.02
 PORTREVISION=	1

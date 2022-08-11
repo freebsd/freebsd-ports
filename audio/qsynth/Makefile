@@ -1,5 +1,3 @@
-# Created by: lazyklimm <lazyklimm@gmail.com>
-
 PORTNAME=	qsynth
 PORTVERSION=	0.9.7
 CATEGORIES=	audio

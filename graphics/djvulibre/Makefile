@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.28
 PORTREVISION=	1

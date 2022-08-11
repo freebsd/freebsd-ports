@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-
 PORTNAME=	bsnmp-ucd
 PORTVERSION=	0.4.5
 CATEGORIES=	net-mgmt

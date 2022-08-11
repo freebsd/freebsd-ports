@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	proxifier
 PORTVERSION=	1.0.3
 CATEGORIES=	net rubygems

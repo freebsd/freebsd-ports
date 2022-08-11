@@ -1,0 +1,34 @@
+--- usr.sbin/bhyvectl/Makefile.orig	2022-04-26 00:35:36.192928000 +0000
++++ usr.sbin/bhyvectl/Makefile	2022-04-26 00:36:35.181368000 +0000
+@@ -10,7 +10,8 @@
+ 
+ MAN=	bhyvectl.8
+ 
+-LIBADD=	vmmapi util
++LIBADD=	util
++LDADD= ../../lib/libvmmapi/libvmmapi.so.5.1
+ 
+ WARNS?=	3
+ 
+--- usr.sbin/bhyveload/Makefile.orig	2022-04-26 00:36:44.251099000 +0000
++++ usr.sbin/bhyveload/Makefile	2022-04-26 00:37:15.919627000 +0000
+@@ -5,7 +5,7 @@
+ MAN=	bhyveload.8
+ PACKAGE=	bhyve
+ 
+-LIBADD=	vmmapi
++LDADD= ../../lib/libvmmapi/libvmmapi.so.5.1
+ 
+ WARNS?=	3
+ 
+--- lib/libvmmapi/Makefile.orig	2022-04-26 00:37:35.557718000 +0000
++++ lib/libvmmapi/Makefile	2022-04-26 00:38:23.135897000 +0000
+@@ -5,6 +5,8 @@
+ SRCS=	vmmapi.c vmmapi_freebsd.c
+ INCS=	vmmapi.h
+ 
++SHLIB_MAJOR?=	5.1
++
+ LIBADD=	util
+ 
+ CFLAGS+= -I${.CURDIR}

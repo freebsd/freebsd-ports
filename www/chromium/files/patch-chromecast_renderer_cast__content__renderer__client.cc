@@ -1,6 +1,6 @@
---- chromecast/renderer/cast_content_renderer_client.cc.orig	2022-03-25 21:59:56 UTC
+--- chromecast/renderer/cast_content_renderer_client.cc.orig	2022-07-22 17:30:31 UTC
 +++ chromecast/renderer/cast_content_renderer_client.cc
-@@ -194,7 +194,7 @@ void CastContentRendererClient::RenderFrameCreated(
+@@ -191,7 +191,7 @@ void CastContentRendererClient::RenderFrameCreated(
    dispatcher->OnRenderFrameCreated(render_frame);
  #endif
  

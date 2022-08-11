@@ -1,0 +1,7 @@
+%%PYTHON_SITELIBDIR%%/nlopt/__init__.py
+%%PYTHON_SITELIBDIR%%/nlopt/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/nlopt/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/nlopt/__pycache__/nlopt%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/nlopt/__pycache__/nlopt%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/nlopt/_nlopt.so
+%%PYTHON_SITELIBDIR%%/nlopt/nlopt.py

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Pod-Strip
 PORTVERSION=	1.100
 CATEGORIES=	textproc perl5

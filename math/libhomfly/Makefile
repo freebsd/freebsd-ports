@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	libhomfly
 DISTVERSION=	1.02r6
 CATEGORIES=	math

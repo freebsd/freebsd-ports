@@ -1,5 +1,3 @@
-# Created by: kuriyama
-
 PORTNAME=	OpenSP
 PORTVERSION=	1.5.2
 PORTREVISION=	3

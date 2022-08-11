@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Vimana
 PORTVERSION=	2010.09303
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Package-MoreUtil
 PORTVERSION=	0.592
 CATEGORIES=	devel perl5

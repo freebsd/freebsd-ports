@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2022-06-17 14:20:10 UTC
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc
-@@ -77,7 +77,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -76,7 +76,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
      ui::SimpleMenuModel* model) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
    model->AddItemWithStringId(IDC_MINIMIZE_WINDOW, IDS_MINIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_MAXIMIZE_WINDOW, IDS_MAXIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_RESTORE_WINDOW, IDS_RESTORE_WINDOW_MENU);
-@@ -93,7 +93,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -92,7 +92,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -17,8 +17,8 @@
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
    model->AddSeparator(ui::NORMAL_SEPARATOR);
    bool supports_server_side_decorations = true;
- #if defined(USE_OZONE) && \
-@@ -148,7 +148,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
+ #if defined(USE_OZONE) && !BUILDFLAG(IS_CHROMEOS)
+@@ -146,7 +146,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

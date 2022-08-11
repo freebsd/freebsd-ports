@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	gpclib
 DISTVERSION=	1.5-6
 PORTREVISION=	1

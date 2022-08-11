@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	defendguin
 PORTVERSION=	0.0.12
 PORTREVISION=	6

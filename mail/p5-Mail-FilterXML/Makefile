@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Mail-FilterXML
 PORTVERSION=	0.3
 PORTREVISION=	2

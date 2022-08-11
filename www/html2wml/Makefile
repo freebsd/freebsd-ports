@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	html2wml
 PORTVERSION=	0.4.11
 CATEGORIES=	www

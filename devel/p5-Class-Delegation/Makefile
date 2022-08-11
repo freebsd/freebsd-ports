@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Class-Delegation
 PORTVERSION=	1.9.0
 CATEGORIES=	devel perl5

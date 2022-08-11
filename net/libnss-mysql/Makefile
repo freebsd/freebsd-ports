@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-
 PORTNAME=	libnss-mysql
 PORTVERSION=	1.5
 PORTREVISION=	5

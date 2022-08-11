@@ -1,5 +1,3 @@
-# Created by: argv[0] (Iouri V. Ivliev)
-
 PORTNAME=	panoglview
 PORTVERSION=	0.2.2
 PORTREVISION=	10

@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Mock-MonkeyPatch
 PORTVERSION=	1.02
 CATEGORIES=	devel perl5

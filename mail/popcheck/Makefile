@@ -1,5 +1,3 @@
-# Created by: Radim Kolar
-
 PORTNAME=	popcheck
 PORTVERSION=	1.3
 CATEGORIES=	mail

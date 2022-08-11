@@ -1,5 +1,3 @@
-# Created by: Herbert J. Skuhra <h.skuhra@gmail.com>
-
 PORTNAME=	pal
 PORTVERSION=	0.4.3
 PORTREVISION=	3

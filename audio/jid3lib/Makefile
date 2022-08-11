@@ -1,5 +1,3 @@
-# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-
 PORTNAME=	jid3lib
 PORTVERSION=	0.5.4
 PORTREVISION=	2

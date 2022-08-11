@@ -1,5 +1,3 @@
-# Created by: Alex Keda <admin@lissyara.su>
-
 PORTNAME=	rcctools
 PORTVERSION=	0.1.1
 PORTREVISION=	4

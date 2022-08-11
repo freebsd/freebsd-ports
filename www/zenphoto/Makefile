@@ -1,5 +1,3 @@
-# Created by: Philippe Audeoud <jadawin@tuxaco.net>
-
 PORTNAME=	zenphoto
 PORTVERSION=	1.5.9
 DISTVERSIONPREFIX=	v

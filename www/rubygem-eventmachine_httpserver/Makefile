@@ -1,5 +1,3 @@
-# Created by: Kimo <kimor79@yahoo.com>
-
 PORTNAME=	eventmachine_httpserver
 PORTVERSION=	0.2.1
 CATEGORIES=	www rubygems

@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Time-Local
 PORTVERSION=	1.30
 CATEGORIES=	devel perl5

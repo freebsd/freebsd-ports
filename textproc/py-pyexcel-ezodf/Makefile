@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyexcel-ezodf
 PORTVERSION=	0.3.4
 CATEGORIES=	textproc python

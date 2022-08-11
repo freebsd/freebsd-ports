@@ -1,7 +1,5 @@
-# Created by: Yuri Victorovich <yuri@FreeBSD.org>
-
 PORTNAME=	faust
-DISTVERSION=	2.40.0
+DISTVERSION=	2.41.1
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,13 +11,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++11-lang cmake ncurses python pkgconfig shebangfix
+USES=		compiler:c++14-lang cmake ncurses python pkgconfig shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	\
-		grame-cncm:faustlibraries:9082369:grame_cncm_faustlibraries/libraries \
+		grame-cncm:faustlibraries:9b05121:grame_cncm_faustlibraries/libraries \
 		google:oboe:7146098:google_oboe/architecture/android/app/oboe \
 		google:oboe:7146098:google_oboe/architecture/smartKeyboard/android/app/oboe
 
@@ -33,6 +31,7 @@ CMAKE_ARGS=	-C ${FILESDIR}/backends.cmake -DLLVM_CONFIG=${LOCALBASE}/bin/llvm-co
 
 CXXFLAGS+=	-I${WRKSRC}/compiler/generator/cpp # fatal error: 'cpp_code_container.hh' file not found WHEN INCLUDE_STATIC=TRUE
 CXXFLAGS+=	`llvm-config${LLVM_VERSION} --cflags` -DLLVM_${LLVM_VERSION}0 # for the llvm backend
+CXXFLAGS_riscv64=	-fPIC # attempt to fix failure: can't create dynamic relocation R_RISCV_HI20 against symbol: vtable for LV2UI in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
 LDFLAGS+=	-lexecinfo
 
 OPTIONS_DEFINE=		EXAMPLES HIGHLIGHT HTTPD_LIB

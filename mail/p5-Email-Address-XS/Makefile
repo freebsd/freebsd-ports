@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Email-Address-XS
 PORTVERSION=	1.04
 CATEGORIES=	mail perl5

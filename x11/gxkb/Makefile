@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	gxkb
 PORTVERSION=	0.9.3
 CATEGORIES=	x11

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	HTML_Select_Common
 PORTVERSION=	1.2.0
 PORTREVISION=	1

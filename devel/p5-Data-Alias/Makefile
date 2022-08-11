@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Data-Alias
 PORTVERSION=	1.25
 CATEGORIES=	devel perl5

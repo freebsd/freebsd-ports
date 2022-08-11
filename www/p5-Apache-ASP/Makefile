@@ -1,5 +1,3 @@
-# Created by: Igor Vinokurov <igor@zynaps.ru>
-
 PORTNAME=	Apache-ASP
 PORTVERSION=	2.63
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Patrick MARIE <mycroft@virgaria.org>
-
 PORTNAME=	yaph
 PORTVERSION=	0.91
 CATEGORIES=	net

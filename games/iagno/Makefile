@@ -1,11 +1,9 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	iagno
 PORTVERSION=	3.38.1
 PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Iagno

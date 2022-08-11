@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-xineliboutput
 PORTVERSION=	1.0.90s20120511
 PORTREVISION=	32

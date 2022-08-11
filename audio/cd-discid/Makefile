@@ -1,5 +1,3 @@
-# Created by: Munish Chopra <mchopra@engmail.uwaterloo.ca>
-
 PORTNAME=	cd-discid
 PORTVERSION=	0.9
 CATEGORIES=	audio

@@ -1,26 +1,19 @@
 PORTNAME=	sfsexp
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1-18
-DISTVERSIONSUFFIX=	-gc11b849
+DISTVERSION=	1.4.0
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/mjsottile/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Small Fast S-Expression Library
 
 LICENSE=	LGPL21+
-LICENSE_FILE=	${WRKSRC}/LICENSE_LGPL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	mjsottile
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pc \
-	  ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>

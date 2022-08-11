@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	vanitygen
 PORTVERSION=	0.22
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	HTTP-Response-Encoding
 PORTVERSION=	0.06
 PORTREVISION=	3

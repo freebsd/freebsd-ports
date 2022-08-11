@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-
 PORTNAME=	flightgear-mb339-pan
 PORTVERSION=	2.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	Dancer2-Plugin-Path-Class
 PORTVERSION=	0.08
 CATEGORIES=	www perl5

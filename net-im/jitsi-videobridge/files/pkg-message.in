@@ -3,27 +3,27 @@
   message: <<EOM
 Jitsi Video Bridge was installed
 
-1) The configuration file is used by the startup rcfile and located at:
+1) Edit the configuration file located at:
    
    %%ETCDIR%%/jitsi-videobridge.conf
 
-2) Add jitsi_videobridge_enable="YES" to /etc/rc.conf.
+2) Enable the service:
+
+   # service jitsi-videobridge enable
 
 3) Additional jitsi-videobridge properties to control the TCP-related 
    functionality can be defined at:
 
    %%ETCDIR%%/sip-communicator.properties
 
-   This file not exists by default
-
 4) If jitsi-videobridge server is running behind NAT, you must add the 
-   following lines to sip-comunnicator.properties file
+   following lines to the sip-comunnicator.properties file
 
    org.ice4j.ice.harvest.NAT_HARVESTER_LOCAL_ADDRESS=Local_IP_Address
    org.ice4j.ice.harvest.NAT_HARVESTER_PUBLIC_ADDRESS=Public_IP_Address
 
    Also, you must redirect TCP/4443 and UDP/10000 ports to jitsi-videobridge 
-   server
+   server.
 
 5) More about jitsi-videobridge properties at:
 

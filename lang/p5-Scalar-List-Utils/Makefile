@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Scalar-List-Utils
 PORTVERSION=	1.62
 PORTEPOCH=	1

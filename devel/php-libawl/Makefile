@@ -1,5 +1,3 @@
-# Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
-
 PORTNAME=	libawl
 DISTVERSIONPREFIX=	r
 DISTVERSION=	0.62

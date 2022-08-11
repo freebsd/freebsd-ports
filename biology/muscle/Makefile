@@ -1,5 +1,3 @@
-# Created by: Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
-
 PORTNAME=	muscle
 PORTVERSION=	3.8.1551
 CATEGORIES=	biology

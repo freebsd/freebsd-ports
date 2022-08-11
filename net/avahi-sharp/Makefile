@@ -1,5 +1,3 @@
-# Created by: Tom McLaughlin <tmclaugh@FreeBSD.org>
-
 PORTREVISION=	0
 CATEGORIES=	net dns
 PKGNAMESUFFIX=	-sharp

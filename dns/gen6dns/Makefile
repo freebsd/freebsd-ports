@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	gen6dns
 PORTVERSION=	1.3
 CATEGORIES=	dns

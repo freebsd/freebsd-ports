@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	engrampa
 PORTVERSION=	1.26.0
 CATEGORIES=	archivers mate

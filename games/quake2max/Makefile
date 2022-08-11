@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	quake2max
 PORTVERSION=	0.45
 PORTREVISION=	14

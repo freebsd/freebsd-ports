@@ -1,5 +1,3 @@
-# Created by: Matt Emmerton <matt@gsicomp.on.ca>
-
 PORTNAME=	lifelines
 PORTVERSION=	3.1.1
 PORTREVISION=	1

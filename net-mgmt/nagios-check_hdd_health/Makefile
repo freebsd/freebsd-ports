@@ -1,5 +1,3 @@
-# Created by: jamrich.majo@gmail.com
-
 PORTNAME=	nagios-check_hdd_health
 PORTVERSION=	1.1
 CATEGORIES=	net-mgmt

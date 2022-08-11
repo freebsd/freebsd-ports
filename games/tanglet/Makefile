@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	tanglet
 PORTVERSION=	1.6.1
 DISTVERSIONSUFFIX=	-src

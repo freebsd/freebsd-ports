@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	Glade
 PORTVERSION=	1.007
 PORTREVISION=	7

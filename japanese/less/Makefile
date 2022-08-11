@@ -1,5 +1,3 @@
-# Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-
 PORTNAME=	less
 PORTVERSION=	382.262.03.01
 DISTVERSIONPREFIX=	v

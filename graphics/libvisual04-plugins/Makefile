@@ -1,5 +1,3 @@
-# Created by: Björn König <bkoenig@alpha-tierchen.de>
-
 PORTNAME=	libvisual
 PORTVERSION=	0.4.0
 PORTREVISION=	6

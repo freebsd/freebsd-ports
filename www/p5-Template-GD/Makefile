@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	Template-GD
 PORTVERSION=	2.66
 PORTREVISION=	1

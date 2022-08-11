@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	DBIx-Safe
 PORTVERSION=	1.2.5
 PORTREVISION=	3

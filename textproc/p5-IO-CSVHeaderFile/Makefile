@@ -1,5 +1,3 @@
-# Created by: Vasek Balcar <vasek@ti.cz>
-
 PORTNAME=	IO-CSVHeaderFile
 PORTVERSION=	0.04
 PORTREVISION=	1

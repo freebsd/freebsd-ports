@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	String-Escape
 PORTVERSION=	2010.002
 PORTREVISION=	1

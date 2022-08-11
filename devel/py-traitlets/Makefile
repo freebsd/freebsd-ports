@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	traitlets
 PORTVERSION=	5.1.1
 CATEGORIES=	devel python

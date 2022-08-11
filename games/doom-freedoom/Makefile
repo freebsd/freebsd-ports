@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	freedoom
 DISTVERSION=	0.12.1
 CATEGORIES=	games

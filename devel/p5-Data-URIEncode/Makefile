@@ -1,5 +1,3 @@
-# Created by: Ben Woods <woodsb02@FreeBSD.org>
-
 PORTNAME=	Data-URIEncode
 PORTVERSION=	0.11
 CATEGORIES=	devel perl5

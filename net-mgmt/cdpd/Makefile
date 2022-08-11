@@ -1,5 +1,3 @@
-# Created by: Alexandre Snarskii <snar@paranoia.ru>
-
 PORTNAME=	cdpd
 PORTVERSION=	1.0.4.1
 PORTREVISION=	1

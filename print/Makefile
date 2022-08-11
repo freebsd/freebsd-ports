@@ -53,7 +53,6 @@
     SUBDIR += foomatic-filters
     SUBDIR += fpc-libcups
     SUBDIR += fpdf
-    SUBDIR += freetype
     SUBDIR += freetype2
     SUBDIR += ft2demos
     SUBDIR += ghostscript7-base
@@ -255,7 +254,6 @@
     SUBDIR += trueprint
     SUBDIR += ttf2pt1
     SUBDIR += ttfautohint
-    SUBDIR += ttftot42
     SUBDIR += txtbdf2ps
     SUBDIR += typetools
     SUBDIR += utopia

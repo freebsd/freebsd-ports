@@ -1,5 +1,3 @@
-# Created by: Andrey V. Pevnev <andrey@mgul.ac.ru>
-
 PORTNAME=	mimedefang
 PORTVERSION=	2.84
 PORTREVISION=	1

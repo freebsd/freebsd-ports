@@ -1,8 +1,6 @@
-# Created by: Valery Komarov <komarov@valerka.net>
-
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/thrift/${PORTVERSION}

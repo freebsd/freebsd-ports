@@ -1,6 +1,6 @@
---- vendor/github.com/docker/docker/pkg/system/mknod.go.orig	2020-01-04 11:57:57 UTC
+--- vendor/github.com/docker/docker/pkg/system/mknod.go.orig	2022-04-27 13:48:34 UTC
 +++ vendor/github.com/docker/docker/pkg/system/mknod.go
-@@ -9,7 +9,7 @@ import (
+@@ -9,7 +9,7 @@ func Mknod(path string, mode uint32, dev int) error {
  // Mknod creates a filesystem node (file, device special file or named pipe) named path
  // with attributes specified by mode and dev.
  func Mknod(path string, mode uint32, dev int) error {

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	http-parser
 PORTVERSION=	2.9.4
 DISTVERSIONPREFIX=	v

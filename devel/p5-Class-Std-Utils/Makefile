@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Class-Std-Utils
 PORTVERSION=	0.0.3
 DISTVERSIONPREFIX=	v

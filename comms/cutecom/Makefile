@@ -1,5 +1,3 @@
-# Created by: Markus Brueffer <markus@FreeBSD.org>
-
 PORTNAME=		cutecom
 DISTVERSION=		0.51.0
 PORTREVISION=	1

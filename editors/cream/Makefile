@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-
 PORTNAME=	cream
 PORTVERSION=	0.43
 CATEGORIES=	editors

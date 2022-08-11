@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	xine
 PORTVERSION=	1.0.2
 PORTREVISION=	13

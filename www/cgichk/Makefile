@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	cgichk
 PORTVERSION=	2.60
 PORTREVISION=	1

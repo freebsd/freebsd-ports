@@ -1,5 +1,3 @@
-# Created by: Oddbjorn Steffensen <oddbjorn@tricknology.org>
-
 PORTNAME=	web2ldap
 PORTVERSION=	1.7.7
 CATEGORIES=	www python

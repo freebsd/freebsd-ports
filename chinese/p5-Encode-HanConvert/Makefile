@@ -1,5 +1,3 @@
-# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-
 PORTNAME=	Encode-HanConvert
 PORTVERSION=	0.35
 PORTREVISION=	2

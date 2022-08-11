@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	Font-AFM
 PORTVERSION=	1.20
 PORTREVISION=	1

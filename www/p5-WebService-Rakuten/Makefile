@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	WebService-Rakuten
 PORTVERSION=	0.05
 PORTREVISION=	1

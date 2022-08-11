@@ -1,5 +1,3 @@
-# Created by: Don Croyle <croyle@gelemna.org>
-
 PORTNAME=	PGP-Sign
 PORTVERSION=	1.04
 CATEGORIES=	security perl5

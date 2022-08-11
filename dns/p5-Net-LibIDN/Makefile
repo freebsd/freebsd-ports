@@ -1,5 +1,3 @@
-# Created by: Dominik Brettnacher <domi@saargate.de>
-
 PORTNAME=	Net-LibIDN
 PORTVERSION=	0.12
 PORTREVISION=	5

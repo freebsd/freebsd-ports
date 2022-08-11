@@ -1,5 +1,3 @@
-# Created by: mahonmesr@googlemail.com
-
 PORTNAME=	libdssialsacompat
 PORTVERSION=	1.0.8a
 PORTREVISION=	2

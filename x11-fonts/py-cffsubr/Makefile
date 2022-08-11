@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cffsubr
 PORTVERSION=	0.2.9.post1
 CATEGORIES=	x11-fonts python

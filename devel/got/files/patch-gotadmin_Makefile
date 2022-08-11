@@ -1,6 +1,6 @@
---- gotadmin/Makefile.orig	2021-10-04 10:08:55 UTC
+--- gotadmin/Makefile.orig	2022-07-03 11:08:45 UTC
 +++ gotadmin/Makefile
-@@ -24,8 +24,4 @@ DPADD = ${LIBZ} ${LIBUTIL}
+@@ -25,8 +25,4 @@ DPADD = ${LIBZ} ${LIBUTIL}
  NOMAN = Yes
  .endif
  

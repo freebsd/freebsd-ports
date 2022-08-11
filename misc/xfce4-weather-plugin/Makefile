@@ -1,5 +1,3 @@
-# Created by: Filippo Natali <filippo@widestore.net>
-
 PORTNAME=	xfce4-weather-plugin
 PORTVERSION=	0.11.0
 PORTREVISION=	2

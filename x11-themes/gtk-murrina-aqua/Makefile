@@ -1,5 +1,3 @@
-# Created by: Phillip Neumann <pneumann@gmail.com>
-
 PORTNAME=	gtk-murrina-aqua
 PORTVERSION=	0.1
 PORTREVISION=	6

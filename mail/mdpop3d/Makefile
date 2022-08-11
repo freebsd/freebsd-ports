@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <info@logvinov.com>
-
 PORTNAME=	mdpop3d
 PORTVERSION=	0.97
 CATEGORIES=	mail

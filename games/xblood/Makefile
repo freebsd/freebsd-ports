@@ -1,5 +1,3 @@
-# Created by: Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
-
 PORTNAME=	xblood
 PORTVERSION=	2.0
 PORTREVISION=	2

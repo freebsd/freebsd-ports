@@ -1,5 +1,3 @@
-# Created by: tremere@cainites.net
-
 PORTNAME=	opendbx
 PORTVERSION=	1.4.6
 PORTREVISION=	6

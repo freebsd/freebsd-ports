@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	netstiff
 PORTVERSION=	20080331
 CATEGORIES=	www

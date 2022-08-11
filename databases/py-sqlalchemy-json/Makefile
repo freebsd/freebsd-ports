@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sqlalchemy-json
 PORTVERSION=	0.5.0
 CATEGORIES=	databases python

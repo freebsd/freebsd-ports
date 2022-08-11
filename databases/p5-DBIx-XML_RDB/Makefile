@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	DBIx-XML_RDB
 PORTVERSION=	0.05
 PORTREVISION=	2

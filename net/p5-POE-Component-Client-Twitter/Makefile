@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	POE-Component-Client-Twitter
 PORTVERSION=	0.01
 PORTREVISION=	3

@@ -1,7 +1,6 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	privatebin
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	www security
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -11,6 +10,9 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cpe php
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME}
 
 NO_BUILD=	yes
 NO_ARCH=	yes

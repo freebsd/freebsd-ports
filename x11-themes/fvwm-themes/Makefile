@@ -1,5 +1,3 @@
-# Created by: Oyvind Albrigtsen
-
 PORTNAME=	fvwm-themes
 PORTVERSION=	0.7.0
 PORTREVISION=	6

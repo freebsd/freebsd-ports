@@ -1,5 +1,3 @@
-# Created by: David O'Brien <obrien@NUXI.org>
-
 PORTNAME=	pcc
 PORTVERSION=	1.1.0
 PORTREVISION=	1

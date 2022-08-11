@@ -1,5 +1,3 @@
-# Created by: Martin Kammerhofer
-
 PORTNAME=		java2html
 PORTVERSION=		0.9.2
 PORTREVISION=		1

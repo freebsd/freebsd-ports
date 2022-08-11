@@ -1,5 +1,3 @@
-# Created by: shurd
-
 PORTNAME=	qtel
 
 COMMENT=	Qtel Echolink client

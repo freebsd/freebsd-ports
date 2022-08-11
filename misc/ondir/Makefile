@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net <ports@c0decafe.net>
-
 PORTNAME=	ondir
 PORTVERSION=	0.2.4
 PORTREVISION=	1

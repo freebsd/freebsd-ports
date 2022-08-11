@@ -1,5 +1,3 @@
-# Created by: Satoshi Asami <asami@FreeBSD.org>
-
 PORTNAME=	xli
 PORTVERSION=	1.17.0
 PORTREVISION=	17

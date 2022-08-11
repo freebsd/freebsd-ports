@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Crypt-Cracklib
 PORTVERSION=	1.7
 PORTREVISION=	6

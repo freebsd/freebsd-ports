@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	ftjam
 PORTVERSION=	2.5.2
 CATEGORIES=	devel

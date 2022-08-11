@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Text-Bind
 PORTVERSION=	0.04
 PORTREVISION=	1

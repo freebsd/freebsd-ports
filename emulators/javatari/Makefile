@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	javatari
 PORTVERSION=	4.1
 PORTREVISION=	1

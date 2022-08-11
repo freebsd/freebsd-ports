@@ -1,6 +1,6 @@
 PORTNAME=	cluster-glue
 PORTVERSION=	1.0.12
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hg.linux-ha.org/glue/archive/
 DISTNAME=	0a7add1d9996

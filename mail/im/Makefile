@@ -1,5 +1,3 @@
-# Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-
 PORTNAME=	im
 PORTVERSION=	153
 CATEGORIES=	mail

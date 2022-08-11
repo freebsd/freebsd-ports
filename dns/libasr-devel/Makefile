@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-
 PORTNAME=	libasr
 PORTVERSION=	201602131606
 PORTREVISION=	3

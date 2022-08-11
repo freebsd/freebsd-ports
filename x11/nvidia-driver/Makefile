@@ -1,4 +1,3 @@
-# Created by: Stijn Hoop <stijn@win.tue.nl>
 #
 # For those wondering why this port is not under `x11-drivers' category,
 # have a look at https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=121930.
@@ -64,7 +63,8 @@ SUB_FILES+=	nvidia.conf
 SUB_FILES+=	pkg-deinstall pkg-install
 .endif
 SUB_PATCHES=	extra-patch-src-Makefile \
-		extra-patch-src-nv-freebsd.h
+		extra-patch-src-nv-freebsd.h \
+		extra-patch-src-nvidia_subr.c
 .if ${NVVERSION} < 510.03901
 SUB_PATCHES+=	extra-patch-src-nvidia_dev.c \
 		extra-patch-src-nvidia_pci.c
@@ -225,6 +225,16 @@ post-patch: .SILENT
 	prefix="${PREFIX}" ; padding=$$(($${#prefix}+3)) ; \
 	gsed ${REINPLACE_ARGS} -E "s,/etc/egl/egl_external_platform\.d.{$$padding},${EGL_JSON_PATH}\x00," \
 		${WRKSRC}/obj/libEGL_nvidia.so.0
+.endif
+# Unbreak the build against -Werror,-Wunused-but-set-variable CFLAGS
+.if ${NVVERSION} < 450.51
+	${REINPLACE_CMD} -e '/void nvidia_dev_dtor/,+8s,.*status.*,,' \
+		${WRKSRC}/src/${NVSRC}/nvidia_dev.c
+.endif
+# After src 2a99dd30dfaa, DRIVER_MODULE should not include nvidia_devclass
+.if ${OSVERSION} >= 1400058
+	${REINPLACE_CMD} -e '/^DRIVER_MODULE/s/, nvidia_devclass//' \
+		${WRKSRC}/src/${NVSRC}/nvidia_pci.c
 .endif
 # Finally, process OPTIONS
 .if ${PORT_OPTIONS:MFREEBSD_AGP}

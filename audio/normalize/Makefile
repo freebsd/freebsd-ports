@@ -1,8 +1,6 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	normalize
 PORTVERSION=	0.7.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 

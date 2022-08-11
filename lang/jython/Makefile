@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@python.or.kr>
-
 PORTNAME=	jython
 PORTVERSION=	2.7.0
 DISTVERSIONPREFIX=	installer-

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	goto-file
 PORTVERSION=	0.005
 CATEGORIES=	devel perl5

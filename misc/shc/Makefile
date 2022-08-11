@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	shc
 PORTVERSION=	4.0.3
 CATEGORIES=	misc

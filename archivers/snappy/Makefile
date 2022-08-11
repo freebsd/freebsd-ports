@@ -1,5 +1,3 @@
-# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-
 PORTNAME=	snappy
 PORTVERSION=	1.1.9
 PORTREVISION=	1

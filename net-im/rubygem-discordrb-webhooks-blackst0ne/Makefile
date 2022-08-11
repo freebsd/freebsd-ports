@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	discordrb-webhooks-blackst0ne
 PORTVERSION=	3.3.0
 CATEGORIES=	net-im rubygems

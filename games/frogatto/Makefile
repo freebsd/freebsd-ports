@@ -1,8 +1,6 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	frogatto
 PORTVERSION=	1.3.1
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com

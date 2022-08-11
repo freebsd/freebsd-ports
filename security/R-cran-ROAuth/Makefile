@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	ROAuth
 PORTVERSION=	0.9.6
 PORTREVISION=	4

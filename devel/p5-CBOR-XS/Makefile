@@ -1,5 +1,3 @@
-# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
-
 PORTNAME=	CBOR-XS
 PORTVERSION=	1.30
 CATEGORIES=	devel perl5

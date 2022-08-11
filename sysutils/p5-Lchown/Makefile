@@ -1,5 +1,3 @@
-# Created by: Jeffrey Goldberg <jeffrey@goldmark.org>
-
 PORTNAME=	Lchown
 PORTVERSION=	1.01
 PORTREVISION=	2

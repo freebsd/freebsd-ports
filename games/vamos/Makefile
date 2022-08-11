@@ -1,8 +1,6 @@
-# Created by: ijliao
-
 PORTNAME=	vamos
 PORTVERSION=	0.7.1
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

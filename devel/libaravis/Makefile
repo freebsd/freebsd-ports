@@ -1,5 +1,3 @@
-# Created by: Rozhuk Ivan
-
 PORTNAME=		libaravis
 DISTVERSION=		0.8.20
 PORTREVISION=	2

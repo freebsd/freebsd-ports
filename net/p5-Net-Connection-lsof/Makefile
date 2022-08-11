@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Net-Connection-lsof
 PORTVERSION=	0.2.0
 CATEGORIES=	net perl5

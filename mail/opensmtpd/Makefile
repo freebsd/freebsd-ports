@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-
 PORTNAME=	opensmtpd
 PORTVERSION=	6.8.0
 DISTVERSIONSUFFIX=	p2

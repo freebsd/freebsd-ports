@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	Tk-Getopt
 PORTVERSION=	0.51
 CATEGORIES=	x11-toolkits perl5

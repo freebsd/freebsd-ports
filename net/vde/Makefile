@@ -1,5 +1,3 @@
-# Created by: Craig Boston <craig@yekse.gank.org>
-
 PORTNAME=	vde
 PORTVERSION=	1.5.7
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Tony Narlock <tony@git-pull.com>
-
 PORTNAME=	libtmux
 PORTVERSION=	0.11.0
 CATEGORIES=	devel python

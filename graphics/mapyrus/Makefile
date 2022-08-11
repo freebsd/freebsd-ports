@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	mapyrus
 PORTVERSION=	1.802
 PORTREVISION=	0

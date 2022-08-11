@@ -1,5 +1,3 @@
-# Created by: Nicolas de Bari Embriz <nbari@dalmp.com>
-
 PORTNAME=	dalmp
 PORTVERSION=	3.1.0
 CATEGORIES=	databases

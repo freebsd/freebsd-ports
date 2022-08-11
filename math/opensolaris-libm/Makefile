@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	opensolaris-libm
 PORTVERSION=	2006.01.31
 PORTREVISION=	5

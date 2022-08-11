@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	uhttpmock
 PORTVERSION=	0.5.3
 PORTREVISION=	1

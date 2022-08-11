@@ -1,7 +1,5 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	IO-Compress-Lzma
-PORTVERSION=	2.103
+PORTVERSION=	2.201
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +13,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Compress-Raw-Lzma>=${PORTVERSION}:archivers/p5-Compress-Raw-Lzma \
 		p5-IO-Compress>=${PORTVERSION}:archivers/p5-IO-Compress
-TEST_DEPENDS=	7zz:archivers/7-zip \
+TEST_DEPENDS=	7z:archivers/7-zip \
 		lzip:archivers/lzip \
 		p5-IO-String>=0:devel/p5-IO-String \
 		p5-Test-CPAN-Meta>=0:devel/p5-Test-CPAN-Meta \

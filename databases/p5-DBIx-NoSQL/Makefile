@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	DBIx-NoSQL
 PORTVERSION=	0.0021
 CATEGORIES=	databases perl5

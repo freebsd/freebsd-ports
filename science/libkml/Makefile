@@ -1,8 +1,6 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	libkml
 PORTVERSION=	1.3.0
-PORTREVISION=	18
+PORTREVISION=	21
 CATEGORIES=	science
 
 MAINTAINER=	sunpoet@FreeBSD.org

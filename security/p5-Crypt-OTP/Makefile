@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Crypt-OTP
 PORTVERSION=	2.00
 PORTREVISION=	1

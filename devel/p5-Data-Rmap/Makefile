@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Data-Rmap
 PORTVERSION=	0.65
 CATEGORIES=	devel perl5

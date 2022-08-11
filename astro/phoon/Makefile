@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	phoon
 PORTVERSION=	2014
 CATEGORIES=	astro

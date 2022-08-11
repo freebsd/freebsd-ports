@@ -18,6 +18,7 @@ share/icons/hicolor/128x128/apps/kcachegrind.png
 %%DATADIR%%/tips
 share/locale/ar/LC_MESSAGES/kcachegrind.mo
 share/locale/be/LC_MESSAGES/kcachegrind.mo
+share/locale/bg/LC_MESSAGES/kcachegrind.mo
 share/locale/bs/LC_MESSAGES/kcachegrind.mo
 share/locale/ca/LC_MESSAGES/kcachegrind.mo
 share/locale/ca@valencia/LC_MESSAGES/kcachegrind.mo

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Data-Range-Compare
 PORTVERSION=	1.031
 CATEGORIES=	devel perl5

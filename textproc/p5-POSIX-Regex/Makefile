@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	POSIX-Regex
 PORTVERSION=	1.0003
 PORTREVISION=	1

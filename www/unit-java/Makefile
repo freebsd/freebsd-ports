@@ -1,5 +1,3 @@
-# Created by: Sergey Osokin <osa@FreeBSD.org>
-
 MASTER_SITES=	https://unit.nginx.org/download/:unit \
 	https://repo1.maven.org/maven2/io/github/classgraph/classgraph/${CLASSGRAPH_VERSION}/:classgraph \
 	https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-api/${TOMCAT_VERSION}/:api \
@@ -16,7 +14,6 @@ MASTER_SITES=	https://unit.nginx.org/download/:unit \
 	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-server/${JETTY_VERSION}/:server \
 	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/${JETTY_VERSION}/:jutil
 PKGNAMESUFFIX=	-${UNIT_MODNAME}
-PORTREVISION=	1
 DISTFILES=	unit-${UNIT_VERSION}.tar.gz:unit \
 	classgraph-${CLASSGRAPH_VERSION}.jar:classgraph \
 	ecj-${ECJ_VERSION}.jar:ecj \

@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	libdbusmenu
 PORTVERSION=	16.04.0
 PORTREVISION=	6

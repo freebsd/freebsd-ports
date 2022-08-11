@@ -1,5 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	dlib
 PORTVERSION=	0.19.0
 DISTVERSIONPREFIX=	v

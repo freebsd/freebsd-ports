@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Text-Unaccent
 PORTVERSION=	1.08
 PORTREVISION=	3

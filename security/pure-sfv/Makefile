@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	pure-sfv
 PORTVERSION=	0.3
 CATEGORIES=	security

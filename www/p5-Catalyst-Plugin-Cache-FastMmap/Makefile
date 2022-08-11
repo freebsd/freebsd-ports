@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Cache-FastMmap
 PORTVERSION=	0.9
 PORTREVISION=	2

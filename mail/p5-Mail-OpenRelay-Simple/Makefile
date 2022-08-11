@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Mail-OpenRelay-Simple
 PORTVERSION=	0.02
 PORTREVISION=	1

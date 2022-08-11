@@ -14,9 +14,7 @@ GH_TAGNAME=	2f5c97c0c21a
 
 PLIST_FILES=	bin/ebsynth
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
+.if !exists(/usr/include/omp.h)
 USES=		compiler:gcc-c++11-lib
 .else
 USES=		compiler:c++11-lang

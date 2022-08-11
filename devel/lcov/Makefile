@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@FreeBSD.org>
-
 PORTNAME=	lcov
 PORTVERSION=	1.15
 CATEGORIES=	devel

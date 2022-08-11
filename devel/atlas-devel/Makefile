@@ -1,5 +1,3 @@
-# Created by: Janni <jannisan@t-online.de>
-
 PORTNAME=	Atlas
 PORTVERSION=	0.6.4
 PORTREVISION=	2
@@ -19,8 +17,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	docdir=${DOCSDIR}
 
-CXXFLAGS_powerpc=	-Wno-error=deprecated
-CXXFLAGS_powerpcspe=	-Wno-error=deprecated
 CXXFLAGS_mips=		-Wno-error=deprecated
 CXXFLAGS_mips64=	-Wno-error=deprecated
 CXXFLAGS_sparc64=	-Wno-error=deprecated

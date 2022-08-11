@@ -1,5 +1,3 @@
-# Created by: swills@
-
 PORTNAME=	Net-LDAP-Server-Test
 PORTVERSION=	0.22
 CATEGORIES=	net perl5

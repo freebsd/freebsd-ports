@@ -1,8 +1,6 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	sweep
 PORTVERSION=	0.9.3
-PORTREVISION=	12
+PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	SF

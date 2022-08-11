@@ -1,6 +1,6 @@
---- services/tracing/public/cpp/perfetto/perfetto_config.cc.orig	2022-02-28 16:54:41 UTC
+--- services/tracing/public/cpp/perfetto/perfetto_config.cc.orig	2022-06-17 14:20:10 UTC
 +++ services/tracing/public/cpp/perfetto/perfetto_config.cc
-@@ -124,7 +124,7 @@ void AddDataSourceConfigs(
+@@ -125,7 +125,7 @@ void AddDataSourceConfigs(
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if BUILDFLAG(IS_CHROMEOS_ASH) || \

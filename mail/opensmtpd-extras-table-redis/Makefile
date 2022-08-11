@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PKGNAMESUFFIX=	-table-redis
 PORTREVISION=	0
 

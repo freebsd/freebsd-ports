@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	IPC-DirQueue
 PORTVERSION=	1.0
 PORTREVISION=	1

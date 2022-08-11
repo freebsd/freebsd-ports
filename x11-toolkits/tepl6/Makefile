@@ -1,6 +1,5 @@
 PORTNAME=	tepl
-DISTVERSION=	6.00.0
-PORTREVISION=	4
+DISTVERSION=	6.0.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	6
@@ -12,6 +11,7 @@ COMMENT=	Text editor product line
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-3.0-or-later.txt
 
+BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 LIB_DEPENDS=	libamtk-5.so:x11-toolkits/amtk \
 		libicuuc.so:devel/icu \
 		libuchardet.so:textproc/uchardet

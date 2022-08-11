@@ -1,7 +1,5 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-Trap
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	glog
 PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v

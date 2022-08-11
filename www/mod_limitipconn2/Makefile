@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
-
 PORTNAME=	mod_limitipconn
 PORTVERSION=	0.24
 PORTREVISION=	1

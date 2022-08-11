@@ -1,5 +1,3 @@
-# Created by: Michael Nottebrock <michaelnottebrock@gmx.net>
-
 PORTNAME=	dvdrip
 PORTVERSION=	0.98.11
 PORTREVISION=	12

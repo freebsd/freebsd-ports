@@ -1,5 +1,3 @@
-# Created by: Jeremy Norris <ishmael27@home.com>
-
 PORTNAME=	libast
 PORTVERSION=	0.7
 PORTREVISION=	13

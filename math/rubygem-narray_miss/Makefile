@@ -1,5 +1,3 @@
-# Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-
 PORTNAME=	narray_miss
 PORTVERSION=	1.4.0
 CATEGORIES=	math rubygems

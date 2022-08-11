@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	podlators
 PORTVERSION=	4.14
 CATEGORIES=	textproc perl5

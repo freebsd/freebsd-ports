@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	uchardet
 DISTVERSION=	0.0.7
 CATEGORIES=	textproc

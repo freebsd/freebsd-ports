@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Text-Xslate
 PORTVERSION=	3.4.0
 CATEGORIES=	textproc perl5

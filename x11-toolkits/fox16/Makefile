@@ -1,5 +1,3 @@
-# Created by: Alexander Novitsky <alecn2002@yandex.ru>
-
 PORTNAME=	fox
 PORTVERSION=	1.6.57
 PORTREVISION=	1

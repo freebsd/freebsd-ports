@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Audio-MPD
 PORTVERSION=	2.004
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	whatmask
 PORTVERSION=	1.2
 PORTREVISION=	2

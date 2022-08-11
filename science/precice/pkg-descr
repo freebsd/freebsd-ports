@@ -1,0 +1,5 @@
+preCICE is an open-source coupling library for partitioned
+multi-physics simulations, including, but not restricted to
+fluid-structure interaction and conjugate heat transfer simulations.
+
+WWW: https://precice.org/

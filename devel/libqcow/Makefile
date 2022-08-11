@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libqcow
 DISTVERSION=	alpha-20210419
 CATEGORIES=	devel

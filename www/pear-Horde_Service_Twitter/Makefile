@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Service_Twitter
 DISTVERSION=	2.1.6
 CATEGORIES=	www pear

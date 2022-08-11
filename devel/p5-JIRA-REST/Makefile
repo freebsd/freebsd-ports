@@ -1,5 +1,3 @@
-# Created by: Brad Davis <brd@FreeBSD.org>
-
 PORTNAME=	JIRA-REST
 PORTVERSION=	0.023
 CATEGORIES=	devel perl5

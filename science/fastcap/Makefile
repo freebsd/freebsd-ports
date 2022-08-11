@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <giffunip@asme.org>
-
 PORTNAME=	fastcap
 DISTVERSION=	2.0wr-011109
 CATEGORIES=	science cad

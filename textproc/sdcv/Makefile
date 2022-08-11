@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	sdcv
 PORTVERSION=	0.5.2
 PORTREVISION=	4

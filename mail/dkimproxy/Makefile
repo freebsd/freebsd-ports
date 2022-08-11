@@ -1,5 +1,3 @@
-# Created by: Yoshisato YANAGISAWA
-
 PORTNAME=	dkimproxy
 PORTVERSION=	1.4.1
 PORTREVISION=	1

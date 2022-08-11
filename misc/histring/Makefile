@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	histring
 DISTVERSION=	1.1.1-1
 CATEGORIES=	misc

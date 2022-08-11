@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Text-Affixes
 PORTVERSION=	0.09
 CATEGORIES=	textproc perl5

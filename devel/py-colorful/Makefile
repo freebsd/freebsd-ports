@@ -1,5 +1,3 @@
-# Created by: Patrice Clement <monsieurp@gentoo.org>
-
 PORTNAME=	colorful
 PORTVERSION=	0.5.4
 CATEGORIES=	devel python

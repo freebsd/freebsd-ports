@@ -1,5 +1,3 @@
-# Created by: torstenb
-
 PORTNAME=	irc
 PORTVERSION=	2.11.2p3
 CATEGORIES=	irc

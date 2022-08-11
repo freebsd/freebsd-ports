@@ -1,5 +1,3 @@
-# Created by: nivit@email.it
-
 PORTNAME=	slimeforest
 PORTVERSION=	158
 PORTREVISION=	0

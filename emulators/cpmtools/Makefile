@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	cpmtools
 PORTVERSION=	1.1
 PORTREVISION=	1

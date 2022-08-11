@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	rendercheck
 PORTVERSION=	1.5
 CATEGORIES=	x11

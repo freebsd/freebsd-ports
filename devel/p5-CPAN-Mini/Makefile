@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	CPAN-Mini
 PORTVERSION=	1.111016
 CATEGORIES=	devel perl5

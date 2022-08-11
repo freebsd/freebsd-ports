@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	libebml
 DISTVERSION=	1.4.2
 CATEGORIES=	textproc

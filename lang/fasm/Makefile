@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	fasm
 PORTVERSION=	1.73.30
 CATEGORIES=	lang devel

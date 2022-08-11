@@ -1,5 +1,3 @@
-# Created by: Daniel B. Hemmerich
-
 PORTNAME=	CGI-Upload
 PORTVERSION=	1.11
 PORTREVISION=	2

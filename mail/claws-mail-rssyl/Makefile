@@ -1,7 +1,4 @@
-# Created by: v.velox@vvelox.net
-
 PORTNAME=	rssyl
-PORTREVISION=	0
 PORTEPOCH=	4
 
 COMMENT=	RSS/Atom feed reader plugin for Claws Mail

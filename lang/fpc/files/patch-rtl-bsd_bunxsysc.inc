@@ -1,6 +1,6 @@
---- rtl/bsd/bunxsysc.inc.orig	2015-07-14 16:58:27.000000000 -0500
-+++ rtl/bsd/bunxsysc.inc	2021-07-31 02:57:36.924782000 -0500
-@@ -374,39 +374,11 @@
+--- rtl/bsd/bunxsysc.inc	2015-07-14 16:58:27.000000000 -0500
++++ rtl/bsd/bunxsysc.inc	2022-05-27 11:25:13.139710000 -0500
+@@ -374,40 +374,12 @@
   FPutime:=do_syscall(syscall_nr_utimes,TSysParam(path),TSysParam(tvp));
  end;
  
@@ -33,12 +33,30 @@
 -    movl %edx, b
 -  {$endif}
 -  end;
--
+ 
 -  fpPipe := a; // eax is in a, no matter if it worked or not
 -  fildes[0] := a;
 -  fildes[1] := b;
 -end;
 -{$endif}
- 
+-
  function FPfcntl(fildes:cint;Cmd:cint;Arg:cint):cint;
  
+ begin
+@@ -497,9 +469,15 @@
+ {
+   Get all information on a link (the link itself), and return it in info.
+ }
+-
++const
++  AT_FDCWD=-100;
++  AT_SYMLINK_NOFOLLOW=$0200;
+ begin
++{$ifdef freebsd}
++ fpLStat:=do_syscall(syscall_nr_fstatat,AT_FDCWD,TSysParam(path),TSysParam(Info),AT_SYMLINK_NOFOLLOW);
++{$else}
+  fpLStat:=do_syscall(syscall_nr_lstat,TSysParam(path),TSysParam(info));
++{$endif}
+ end;
+ 
+ function fpNice(N:cint):cint;

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Statistics-Contingency
 PORTVERSION=	0.09
 PORTREVISION=	1

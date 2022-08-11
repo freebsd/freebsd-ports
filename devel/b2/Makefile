@@ -1,5 +1,3 @@
-# Created by: Bartek Rutkowski <robak@FreeBSD.org>
-
 PORTNAME=	b2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.8

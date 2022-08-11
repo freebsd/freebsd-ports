@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Net-Frame-Dump
 PORTVERSION=	1.18
 CATEGORIES=	net perl5

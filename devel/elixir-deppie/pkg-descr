@@ -1,5 +1,0 @@
-Deppie is a minimal deprecation logger for Elixir. The intent is
-to provide a very fast way to emit a deprecation message the first
-time a function is called.
-
-WWW: https://github.com/whitfin/deppie

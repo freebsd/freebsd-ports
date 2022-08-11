@@ -22,7 +22,7 @@ LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxcb-icccm.so:x11/xcb-util-wm
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xlib>0:x11-toolkits/py-xlib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}xlib>0:x11-toolkits/py-python-xlib@${PY_FLAVOR}
 
 USES=		compiler:c++17-lang meson localbase pkgconfig python:3.3+ xorg
 USE_GITHUB=	yes

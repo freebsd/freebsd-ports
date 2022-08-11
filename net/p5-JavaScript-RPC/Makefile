@@ -1,5 +1,3 @@
-# Created by: Tony Shadwick <tshadwick@oss-solutions.com>
-
 PORTNAME=	JavaScript-RPC
 PORTVERSION=	0.3
 PORTREVISION=	1

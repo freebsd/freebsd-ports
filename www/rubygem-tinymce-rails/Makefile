@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	tinymce-rails
 PORTVERSION=	4.7.13
 CATEGORIES=	www rubygems

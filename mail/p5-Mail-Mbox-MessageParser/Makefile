@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Mail-Mbox-MessageParser
 PORTVERSION=	1.5111
 CATEGORIES=	mail perl5

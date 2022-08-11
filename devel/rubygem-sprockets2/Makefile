@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <m.tsatsenko@gmail.com>
-
 PORTNAME=	sprockets
 PORTVERSION=	2.12.5
 CATEGORIES=	devel rubygems

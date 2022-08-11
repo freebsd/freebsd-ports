@@ -1,5 +1,3 @@
-# Created by: renchap@cocoa-x.com
-
 PORTNAME=	mixlib-authentication
 PORTVERSION=	3.0.7
 CATEGORIES=	devel rubygems

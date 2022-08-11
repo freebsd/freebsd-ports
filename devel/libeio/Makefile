@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	libeio
 PORTVERSION=	4.18
 DISTVERSIONPREFIX=	${PORTNAME}-

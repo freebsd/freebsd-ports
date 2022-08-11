@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Cairo-GObject
 PORTVERSION=	1.005
 PORTREVISION=	1

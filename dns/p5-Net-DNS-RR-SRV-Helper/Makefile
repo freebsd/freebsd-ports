@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Net-DNS-RR-SRV-Helper
 PORTVERSION=	0.0.0
 PORTREVISION=	2

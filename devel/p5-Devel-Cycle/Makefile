@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Devel-Cycle
 PORTVERSION=	1.12
 CATEGORIES=	devel perl5

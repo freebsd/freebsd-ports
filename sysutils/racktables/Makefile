@@ -1,7 +1,6 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	racktables
 DISTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES?=	sysutils www
 MASTER_SITES=	SF/${PORTNAME}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}

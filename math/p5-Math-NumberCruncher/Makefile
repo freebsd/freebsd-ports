@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Math-NumberCruncher
 PORTVERSION=	5.00
 PORTREVISION=	2

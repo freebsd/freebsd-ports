@@ -1,10 +1,10 @@
---- setup.py	2021-06-01 04:03:35.971744800 -0500
-+++ setup.py	2021-06-14 23:12:32.397135000 -0500
-@@ -9,64 +9,7 @@
-  'gvm.protocols.gmpv208.system',
-  'gvm.protocols.gmpv214',
-  'gvm.protocols.gmpv214.entities',
-- 'gvm.protocols.gmpv214.system',
+--- setup.py	2022-07-29 05:48:30.961574300 -0500
++++ setup.py	2022-08-01 00:25:33.168450000 -0500
+@@ -12,75 +12,7 @@
+  'gvm.protocols.gmpv214.system',
+  'gvm.protocols.gmpv224',
+  'gvm.protocols.gmpv224.entities',
+- 'gvm.protocols.gmpv224.system',
 - 'tests',
 - 'tests.connections',
 - 'tests.protocols',
@@ -58,11 +58,22 @@
 - 'tests.protocols.gmpv214.enums',
 - 'tests.protocols.gmpv214.system',
 - 'tests.protocols.gmpv214.system.versions',
+- 'tests.protocols.gmpv224',
+- 'tests.protocols.gmpv224.entities',
+- 'tests.protocols.gmpv224.entities.notes',
+- 'tests.protocols.gmpv224.entities.overrides',
+- 'tests.protocols.gmpv224.entities.scan_configs',
+- 'tests.protocols.gmpv224.entities.scanners',
+- 'tests.protocols.gmpv224.entities.targets',
+- 'tests.protocols.gmpv224.entities.users',
+- 'tests.protocols.gmpv224.enums',
+- 'tests.protocols.gmpv224.system',
+- 'tests.protocols.gmpv224.system.versions',
 - 'tests.protocols.osp',
 - 'tests.transforms',
 - 'tests.utils',
 - 'tests.xml']
-+ 'gvm.protocols.gmpv214.system']
++ 'gvm.protocols.gmpv224.system']
  
  package_data = \
  {'': ['*']}

@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Authen-Bitcard
 PORTVERSION=	0.90
 PORTREVISION=	1

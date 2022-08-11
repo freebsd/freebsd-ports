@@ -1,17 +1,17 @@
 # We follow the stable channel on https://omahaproxy.appspot.com/
-# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.9-lkgr
+# https://chromium.googlesource.com/v8/v8/+/refs/heads/10.3-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	10.0.139.15
+PORTVERSION=	10.3.174.20
 CATEGORIES=	lang
-MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
-DISTFILES=	build-${BUILD_REV}.tar.gz \
-		buildtools-${BUILDTOOLS_REV}.tar.gz \
-		clang-${CLANG_REV}.tar.gz \
-		common-${COMMON_REV}.tar.gz \
-		googletest-${GOOGLETEST_REV}.tar.gz \
-		icu-${ICU_REV}.tar.gz \
-		zlib-${ZLIB_REV}.tar.gz
+MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}:local
+DISTFILES=	build-${BUILD_REV}.tar.gz:local \
+		buildtools-${BUILDTOOLS_REV}.tar.gz:local \
+		clang-${CLANG_REV}.tar.gz:local \
+		common-${COMMON_REV}.tar.gz:local \
+		googletest-${GOOGLETEST_REV}.tar.gz:local \
+		icu-${ICU_REV}.tar.gz:local \
+		zlib-${ZLIB_REV}.tar.gz:local
 DIST_SUBDIR=	v8/${PORTVERSION:R:R}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
@@ -43,13 +43,13 @@ CPE_VENDOR=	google
 
 CONFLICTS_INSTALL=	v8-beta
 
-BUILD_REV=	62a6377648eb82cff75e3a12f689400694fbbb63
-BUILDTOOLS_REV=	169eef5b952dea9b285bf1a0a7aff7518a3ed907
-CLANG_REV=	62e2cd966f93a27aab0953ce7c2d83ffd6bdfdcc
+BUILD_REV=	1c34f36484f43be915b48b090527d87356c72ce8
+BUILDTOOLS_REV=	7208eddba161d85108097c3c5975264c04e3cad8
+CLANG_REV=	9da95105864734ee87f47e0de638a09eb088338b
 COMMON_REV=	d115b033c4e53666b535cbd1985ffe60badad082
-GOOGLETEST_REV=	ea55f1f52c489535f0d3b583c81529762c9cb5ea
-ICU_REV=	b867f209e4b56b0a8c01aaaba3882ad41e438c4f
-ZLIB_REV=	9538f4194f6e5eff1bd59f2396ed9d05b1a8d801
+GOOGLETEST_REV=	af29db7ec28d6df1c7f0f745186884091e602e07
+ICU_REV=	585942f33d939a11f4600bd5042649b7ca189008
+ZLIB_REV=	9979c19f11314156490b53da91df08c934a3c0d4
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
@@ -59,11 +59,15 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		extra_cxxflags="${CXXFLAGS}" \
 		extra_ldflags="${LDFLAGS}" \
 		is_clang=true \
+		is_component_build=true \
+		is_debug=false \
 		treat_warnings_as_errors=false \
 		use_aura=true \
 		use_lld=true \
 		use_custom_libcxx=false \
 		v8_use_external_startup_data=false
+
+OPTIONS_DEFINE=	EXAMPLES
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/base/trace_event/common ${WRKSRC}/build ${WRKSRC}/buildtools ${WRKSRC}/third_party/googletest/src ${WRKSRC}/third_party/icu ${WRKSRC}/third_party/zlib ${WRKSRC}/tools/clang
@@ -95,6 +99,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/Release/d8 ${STAGEDIR}${PREFIX}/bin/d8
 	${INSTALL_PROGRAM} ${WRKSRC}/out/Release/mkgrokdump ${STAGEDIR}${PREFIX}/bin/mkgrokdump
 	${INSTALL_PROGRAM} ${WRKSRC}/out/Release/mksnapshot ${STAGEDIR}${PREFIX}/bin/mksnapshot
+	${INSTALL_PROGRAM} ${WRKSRC}/out/Release/v8_shell ${STAGEDIR}${PREFIX}/bin/v8_shell
 	${INSTALL_LIB} ${WRKSRC}/out/Release/libchrome_zlib.so ${STAGEDIR}${PREFIX}/lib/libchrome_zlib.so
 	${INSTALL_LIB} ${WRKSRC}/out/Release/libcppgc.so ${STAGEDIR}${PREFIX}/lib/libcppgc.so
 	${INSTALL_LIB} ${WRKSRC}/out/Release/libv8.so ${STAGEDIR}${PREFIX}/lib/libv8.so
@@ -104,5 +109,9 @@ do-install:
 	cd ${WRKSRC}/include/cppgc && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/cppgc '-name *\.h'
 	${INSTALL_DATA} ${WRKSRC}/include/libplatform/*.h ${STAGEDIR}${PREFIX}/include/libplatform/
 	${INSTALL_DATA} ${WRKDIR}/v8*.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
+
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/Release/v8_simple_* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

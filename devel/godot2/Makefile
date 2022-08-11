@@ -1,5 +1,3 @@
-# Created by: Shane Ambler <FreeBSD@Shaneware.biz>
-
 PORTNAME=	godot
 DISTVERSION=	2.1.6
 DISTVERSIONSUFFIX=	-stable

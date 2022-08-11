@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <wjv@FreeBSD.org>
-
 PORTNAME=	lamarc
 PORTVERSION=	2.1.8
 DISTVERSIONSUFFIX=	-src

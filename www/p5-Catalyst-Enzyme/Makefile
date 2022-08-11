@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Enzyme
 PORTVERSION=	0.11
 PORTREVISION=	2

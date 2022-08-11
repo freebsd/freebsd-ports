@@ -1,5 +1,3 @@
-# Created by: Florent Thoumie <flz@xbsd.org>
-
 PORTNAME=	libbt
 DISTVERSION=	1.06
 CATEGORIES=	net-p2p devel

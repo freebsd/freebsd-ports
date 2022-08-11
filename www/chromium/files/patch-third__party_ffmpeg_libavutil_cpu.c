@@ -1,6 +1,6 @@
---- third_party/ffmpeg/libavutil/cpu.c.orig	2022-02-07 13:39:41 UTC
+--- third_party/ffmpeg/libavutil/cpu.c.orig	2022-07-22 17:30:31 UTC
 +++ third_party/ffmpeg/libavutil/cpu.c
-@@ -36,10 +36,7 @@
+@@ -38,10 +38,7 @@
  #if HAVE_GETPROCESSAFFINITYMASK || HAVE_WINRT
  #include <windows.h>
  #endif

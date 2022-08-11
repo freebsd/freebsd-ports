@@ -1,5 +1,3 @@
-# Created by: Eijiro Shibusawa <ej-sib@ice.uec.ac.jp>
-
 PORTNAME=	openblas
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.20

@@ -1,5 +1,3 @@
-# Created by: Dave Cottlehuber <dch@FreeBSD.org>
-
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.6
@@ -57,13 +55,6 @@ MRUBY_CMAKE_BOOL=	WITH_MRUBY
 MRUBY_USES=		bison
 MRUBY_USE=		ruby=yes
 MRUBY_VARS=		RUBY_NO_RUN_DEPENDS=yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMRUBY}
-BROKEN_RUBY30=	yes
-BROKEN_RUBY31=	yes
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|exec perl|exec ${LOCALBASE}/bin/perl|' \

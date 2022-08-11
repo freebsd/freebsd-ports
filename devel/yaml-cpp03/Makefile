@@ -1,5 +1,3 @@
-# Created by: Tim Niemueller <tim@niemueller.de>
-
 PORTNAME=	yaml-cpp
 PORTVERSION=	0.3.0
 PORTREVISION=	2

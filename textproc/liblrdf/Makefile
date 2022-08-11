@@ -1,5 +1,3 @@
-# Created by: Tilman Linneweh <arved@FreeBSD.org>
-
 PORTNAME=	liblrdf
 DISTVERSION=	0.6.1
 CATEGORIES=	textproc

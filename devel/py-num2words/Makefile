@@ -1,5 +1,3 @@
-# Created by: Jonas Palm <jonaspalm@posteo.de>
-
 PORTNAME=	num2words
 PORTVERSION=	0.5.9
 CATEGORIES=	devel python

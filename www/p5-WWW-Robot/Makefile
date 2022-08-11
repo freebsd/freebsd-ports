@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	WWW-Robot
 PORTVERSION=	0.026
 PORTREVISION=	1

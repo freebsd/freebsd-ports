@@ -1,5 +1,3 @@
-# Created by: Paolo Pisati <flag@gufi.org>
-
 PORTNAME=	wmnd
 PORTVERSION=	0.4.18
 CATEGORIES=	net

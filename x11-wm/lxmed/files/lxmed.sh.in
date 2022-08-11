@@ -1,4 +1,0 @@
-#!/bin/sh
-
-cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" \
--jar "%%DATADIR%%/LXMenuEditor.jar" "${@}"

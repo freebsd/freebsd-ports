@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	IO-Socket-IP
 PORTVERSION=	0.41
 CATEGORIES=	net perl5

@@ -276,8 +276,6 @@ share/help/C/gnome-help/mouse-touchpad-click.page
 share/help/C/gnome-help/mouse-wakeup.page
 share/help/C/gnome-help/mouse.page
 share/help/C/gnome-help/music-cantplay-drm.page
-share/help/C/gnome-help/music-player-ipodtransfer.page
-share/help/C/gnome-help/music-player-newipod.page
 share/help/C/gnome-help/nautilus-behavior.page
 share/help/C/gnome-help/nautilus-bookmarks-edit.page
 share/help/C/gnome-help/nautilus-connect.page
@@ -770,8 +768,6 @@ share/help/as/gnome-help/mouse-touchpad-click.page
 share/help/as/gnome-help/mouse-wakeup.page
 share/help/as/gnome-help/mouse.page
 share/help/as/gnome-help/music-cantplay-drm.page
-share/help/as/gnome-help/music-player-ipodtransfer.page
-share/help/as/gnome-help/music-player-newipod.page
 share/help/as/gnome-help/nautilus-behavior.page
 share/help/as/gnome-help/nautilus-bookmarks-edit.page
 share/help/as/gnome-help/nautilus-connect.page
@@ -1207,8 +1203,6 @@ share/help/ca/gnome-help/mouse-touchpad-click.page
 share/help/ca/gnome-help/mouse-wakeup.page
 share/help/ca/gnome-help/mouse.page
 share/help/ca/gnome-help/music-cantplay-drm.page
-share/help/ca/gnome-help/music-player-ipodtransfer.page
-share/help/ca/gnome-help/music-player-newipod.page
 share/help/ca/gnome-help/nautilus-behavior.page
 share/help/ca/gnome-help/nautilus-bookmarks-edit.page
 share/help/ca/gnome-help/nautilus-connect.page
@@ -1701,8 +1695,6 @@ share/help/cs/gnome-help/mouse-touchpad-click.page
 share/help/cs/gnome-help/mouse-wakeup.page
 share/help/cs/gnome-help/mouse.page
 share/help/cs/gnome-help/music-cantplay-drm.page
-share/help/cs/gnome-help/music-player-ipodtransfer.page
-share/help/cs/gnome-help/music-player-newipod.page
 share/help/cs/gnome-help/nautilus-behavior.page
 share/help/cs/gnome-help/nautilus-bookmarks-edit.page
 share/help/cs/gnome-help/nautilus-connect.page
@@ -2195,8 +2187,6 @@ share/help/da/gnome-help/mouse-touchpad-click.page
 share/help/da/gnome-help/mouse-wakeup.page
 share/help/da/gnome-help/mouse.page
 share/help/da/gnome-help/music-cantplay-drm.page
-share/help/da/gnome-help/music-player-ipodtransfer.page
-share/help/da/gnome-help/music-player-newipod.page
 share/help/da/gnome-help/nautilus-behavior.page
 share/help/da/gnome-help/nautilus-bookmarks-edit.page
 share/help/da/gnome-help/nautilus-connect.page
@@ -2632,8 +2622,6 @@ share/help/de/gnome-help/mouse-touchpad-click.page
 share/help/de/gnome-help/mouse-wakeup.page
 share/help/de/gnome-help/mouse.page
 share/help/de/gnome-help/music-cantplay-drm.page
-share/help/de/gnome-help/music-player-ipodtransfer.page
-share/help/de/gnome-help/music-player-newipod.page
 share/help/de/gnome-help/nautilus-behavior.page
 share/help/de/gnome-help/nautilus-bookmarks-edit.page
 share/help/de/gnome-help/nautilus-connect.page
@@ -3126,8 +3114,6 @@ share/help/el/gnome-help/mouse-touchpad-click.page
 share/help/el/gnome-help/mouse-wakeup.page
 share/help/el/gnome-help/mouse.page
 share/help/el/gnome-help/music-cantplay-drm.page
-share/help/el/gnome-help/music-player-ipodtransfer.page
-share/help/el/gnome-help/music-player-newipod.page
 share/help/el/gnome-help/nautilus-behavior.page
 share/help/el/gnome-help/nautilus-bookmarks-edit.page
 share/help/el/gnome-help/nautilus-connect.page
@@ -3563,8 +3549,6 @@ share/help/es/gnome-help/mouse-touchpad-click.page
 share/help/es/gnome-help/mouse-wakeup.page
 share/help/es/gnome-help/mouse.page
 share/help/es/gnome-help/music-cantplay-drm.page
-share/help/es/gnome-help/music-player-ipodtransfer.page
-share/help/es/gnome-help/music-player-newipod.page
 share/help/es/gnome-help/nautilus-behavior.page
 share/help/es/gnome-help/nautilus-bookmarks-edit.page
 share/help/es/gnome-help/nautilus-connect.page
@@ -4057,8 +4041,6 @@ share/help/fa/gnome-help/mouse-touchpad-click.page
 share/help/fa/gnome-help/mouse-wakeup.page
 share/help/fa/gnome-help/mouse.page
 share/help/fa/gnome-help/music-cantplay-drm.page
-share/help/fa/gnome-help/music-player-ipodtransfer.page
-share/help/fa/gnome-help/music-player-newipod.page
 share/help/fa/gnome-help/nautilus-behavior.page
 share/help/fa/gnome-help/nautilus-bookmarks-edit.page
 share/help/fa/gnome-help/nautilus-connect.page
@@ -4494,8 +4476,6 @@ share/help/fi/gnome-help/mouse-touchpad-click.page
 share/help/fi/gnome-help/mouse-wakeup.page
 share/help/fi/gnome-help/mouse.page
 share/help/fi/gnome-help/music-cantplay-drm.page
-share/help/fi/gnome-help/music-player-ipodtransfer.page
-share/help/fi/gnome-help/music-player-newipod.page
 share/help/fi/gnome-help/nautilus-behavior.page
 share/help/fi/gnome-help/nautilus-bookmarks-edit.page
 share/help/fi/gnome-help/nautilus-connect.page
@@ -4931,8 +4911,6 @@ share/help/fr/gnome-help/mouse-touchpad-click.page
 share/help/fr/gnome-help/mouse-wakeup.page
 share/help/fr/gnome-help/mouse.page
 share/help/fr/gnome-help/music-cantplay-drm.page
-share/help/fr/gnome-help/music-player-ipodtransfer.page
-share/help/fr/gnome-help/music-player-newipod.page
 share/help/fr/gnome-help/nautilus-behavior.page
 share/help/fr/gnome-help/nautilus-bookmarks-edit.page
 share/help/fr/gnome-help/nautilus-connect.page
@@ -5368,8 +5346,6 @@ share/help/gl/gnome-help/mouse-touchpad-click.page
 share/help/gl/gnome-help/mouse-wakeup.page
 share/help/gl/gnome-help/mouse.page
 share/help/gl/gnome-help/music-cantplay-drm.page
-share/help/gl/gnome-help/music-player-ipodtransfer.page
-share/help/gl/gnome-help/music-player-newipod.page
 share/help/gl/gnome-help/nautilus-behavior.page
 share/help/gl/gnome-help/nautilus-bookmarks-edit.page
 share/help/gl/gnome-help/nautilus-connect.page
@@ -5862,8 +5838,6 @@ share/help/gu/gnome-help/mouse-touchpad-click.page
 share/help/gu/gnome-help/mouse-wakeup.page
 share/help/gu/gnome-help/mouse.page
 share/help/gu/gnome-help/music-cantplay-drm.page
-share/help/gu/gnome-help/music-player-ipodtransfer.page
-share/help/gu/gnome-help/music-player-newipod.page
 share/help/gu/gnome-help/nautilus-behavior.page
 share/help/gu/gnome-help/nautilus-bookmarks-edit.page
 share/help/gu/gnome-help/nautilus-connect.page
@@ -6299,8 +6273,6 @@ share/help/he/gnome-help/mouse-touchpad-click.page
 share/help/he/gnome-help/mouse-wakeup.page
 share/help/he/gnome-help/mouse.page
 share/help/he/gnome-help/music-cantplay-drm.page
-share/help/he/gnome-help/music-player-ipodtransfer.page
-share/help/he/gnome-help/music-player-newipod.page
 share/help/he/gnome-help/nautilus-behavior.page
 share/help/he/gnome-help/nautilus-bookmarks-edit.page
 share/help/he/gnome-help/nautilus-connect.page
@@ -6736,8 +6708,6 @@ share/help/hi/gnome-help/mouse-touchpad-click.page
 share/help/hi/gnome-help/mouse-wakeup.page
 share/help/hi/gnome-help/mouse.page
 share/help/hi/gnome-help/music-cantplay-drm.page
-share/help/hi/gnome-help/music-player-ipodtransfer.page
-share/help/hi/gnome-help/music-player-newipod.page
 share/help/hi/gnome-help/nautilus-behavior.page
 share/help/hi/gnome-help/nautilus-bookmarks-edit.page
 share/help/hi/gnome-help/nautilus-connect.page
@@ -7173,8 +7143,6 @@ share/help/hr/gnome-help/mouse-touchpad-click.page
 share/help/hr/gnome-help/mouse-wakeup.page
 share/help/hr/gnome-help/mouse.page
 share/help/hr/gnome-help/music-cantplay-drm.page
-share/help/hr/gnome-help/music-player-ipodtransfer.page
-share/help/hr/gnome-help/music-player-newipod.page
 share/help/hr/gnome-help/nautilus-behavior.page
 share/help/hr/gnome-help/nautilus-bookmarks-edit.page
 share/help/hr/gnome-help/nautilus-connect.page
@@ -7610,8 +7578,6 @@ share/help/hu/gnome-help/mouse-touchpad-click.page
 share/help/hu/gnome-help/mouse-wakeup.page
 share/help/hu/gnome-help/mouse.page
 share/help/hu/gnome-help/music-cantplay-drm.page
-share/help/hu/gnome-help/music-player-ipodtransfer.page
-share/help/hu/gnome-help/music-player-newipod.page
 share/help/hu/gnome-help/nautilus-behavior.page
 share/help/hu/gnome-help/nautilus-bookmarks-edit.page
 share/help/hu/gnome-help/nautilus-connect.page
@@ -8104,8 +8070,6 @@ share/help/id/gnome-help/mouse-touchpad-click.page
 share/help/id/gnome-help/mouse-wakeup.page
 share/help/id/gnome-help/mouse.page
 share/help/id/gnome-help/music-cantplay-drm.page
-share/help/id/gnome-help/music-player-ipodtransfer.page
-share/help/id/gnome-help/music-player-newipod.page
 share/help/id/gnome-help/nautilus-behavior.page
 share/help/id/gnome-help/nautilus-bookmarks-edit.page
 share/help/id/gnome-help/nautilus-connect.page
@@ -8598,8 +8562,6 @@ share/help/it/gnome-help/mouse-touchpad-click.page
 share/help/it/gnome-help/mouse-wakeup.page
 share/help/it/gnome-help/mouse.page
 share/help/it/gnome-help/music-cantplay-drm.page
-share/help/it/gnome-help/music-player-ipodtransfer.page
-share/help/it/gnome-help/music-player-newipod.page
 share/help/it/gnome-help/nautilus-behavior.page
 share/help/it/gnome-help/nautilus-bookmarks-edit.page
 share/help/it/gnome-help/nautilus-connect.page
@@ -9035,8 +8997,6 @@ share/help/ja/gnome-help/mouse-touchpad-click.page
 share/help/ja/gnome-help/mouse-wakeup.page
 share/help/ja/gnome-help/mouse.page
 share/help/ja/gnome-help/music-cantplay-drm.page
-share/help/ja/gnome-help/music-player-ipodtransfer.page
-share/help/ja/gnome-help/music-player-newipod.page
 share/help/ja/gnome-help/nautilus-behavior.page
 share/help/ja/gnome-help/nautilus-bookmarks-edit.page
 share/help/ja/gnome-help/nautilus-connect.page
@@ -9472,8 +9432,6 @@ share/help/kn/gnome-help/mouse-touchpad-click.page
 share/help/kn/gnome-help/mouse-wakeup.page
 share/help/kn/gnome-help/mouse.page
 share/help/kn/gnome-help/music-cantplay-drm.page
-share/help/kn/gnome-help/music-player-ipodtransfer.page
-share/help/kn/gnome-help/music-player-newipod.page
 share/help/kn/gnome-help/nautilus-behavior.page
 share/help/kn/gnome-help/nautilus-bookmarks-edit.page
 share/help/kn/gnome-help/nautilus-connect.page
@@ -9909,8 +9867,6 @@ share/help/ko/gnome-help/mouse-touchpad-click.page
 share/help/ko/gnome-help/mouse-wakeup.page
 share/help/ko/gnome-help/mouse.page
 share/help/ko/gnome-help/music-cantplay-drm.page
-share/help/ko/gnome-help/music-player-ipodtransfer.page
-share/help/ko/gnome-help/music-player-newipod.page
 share/help/ko/gnome-help/nautilus-behavior.page
 share/help/ko/gnome-help/nautilus-bookmarks-edit.page
 share/help/ko/gnome-help/nautilus-connect.page
@@ -10403,8 +10359,6 @@ share/help/lt/gnome-help/mouse-touchpad-click.page
 share/help/lt/gnome-help/mouse-wakeup.page
 share/help/lt/gnome-help/mouse.page
 share/help/lt/gnome-help/music-cantplay-drm.page
-share/help/lt/gnome-help/music-player-ipodtransfer.page
-share/help/lt/gnome-help/music-player-newipod.page
 share/help/lt/gnome-help/nautilus-behavior.page
 share/help/lt/gnome-help/nautilus-bookmarks-edit.page
 share/help/lt/gnome-help/nautilus-connect.page
@@ -10840,8 +10794,6 @@ share/help/lv/gnome-help/mouse-touchpad-click.page
 share/help/lv/gnome-help/mouse-wakeup.page
 share/help/lv/gnome-help/mouse.page
 share/help/lv/gnome-help/music-cantplay-drm.page
-share/help/lv/gnome-help/music-player-ipodtransfer.page
-share/help/lv/gnome-help/music-player-newipod.page
 share/help/lv/gnome-help/nautilus-behavior.page
 share/help/lv/gnome-help/nautilus-bookmarks-edit.page
 share/help/lv/gnome-help/nautilus-connect.page
@@ -11277,8 +11229,6 @@ share/help/mr/gnome-help/mouse-touchpad-click.page
 share/help/mr/gnome-help/mouse-wakeup.page
 share/help/mr/gnome-help/mouse.page
 share/help/mr/gnome-help/music-cantplay-drm.page
-share/help/mr/gnome-help/music-player-ipodtransfer.page
-share/help/mr/gnome-help/music-player-newipod.page
 share/help/mr/gnome-help/nautilus-behavior.page
 share/help/mr/gnome-help/nautilus-bookmarks-edit.page
 share/help/mr/gnome-help/nautilus-connect.page
@@ -11714,8 +11664,6 @@ share/help/nl/gnome-help/mouse-touchpad-click.page
 share/help/nl/gnome-help/mouse-wakeup.page
 share/help/nl/gnome-help/mouse.page
 share/help/nl/gnome-help/music-cantplay-drm.page
-share/help/nl/gnome-help/music-player-ipodtransfer.page
-share/help/nl/gnome-help/music-player-newipod.page
 share/help/nl/gnome-help/nautilus-behavior.page
 share/help/nl/gnome-help/nautilus-bookmarks-edit.page
 share/help/nl/gnome-help/nautilus-connect.page
@@ -12151,8 +12099,6 @@ share/help/pa/gnome-help/mouse-touchpad-click.page
 share/help/pa/gnome-help/mouse-wakeup.page
 share/help/pa/gnome-help/mouse.page
 share/help/pa/gnome-help/music-cantplay-drm.page
-share/help/pa/gnome-help/music-player-ipodtransfer.page
-share/help/pa/gnome-help/music-player-newipod.page
 share/help/pa/gnome-help/nautilus-behavior.page
 share/help/pa/gnome-help/nautilus-bookmarks-edit.page
 share/help/pa/gnome-help/nautilus-connect.page
@@ -12588,8 +12534,6 @@ share/help/pl/gnome-help/mouse-touchpad-click.page
 share/help/pl/gnome-help/mouse-wakeup.page
 share/help/pl/gnome-help/mouse.page
 share/help/pl/gnome-help/music-cantplay-drm.page
-share/help/pl/gnome-help/music-player-ipodtransfer.page
-share/help/pl/gnome-help/music-player-newipod.page
 share/help/pl/gnome-help/nautilus-behavior.page
 share/help/pl/gnome-help/nautilus-bookmarks-edit.page
 share/help/pl/gnome-help/nautilus-connect.page
@@ -13025,8 +12969,6 @@ share/help/pt/gnome-help/mouse-touchpad-click.page
 share/help/pt/gnome-help/mouse-wakeup.page
 share/help/pt/gnome-help/mouse.page
 share/help/pt/gnome-help/music-cantplay-drm.page
-share/help/pt/gnome-help/music-player-ipodtransfer.page
-share/help/pt/gnome-help/music-player-newipod.page
 share/help/pt/gnome-help/nautilus-behavior.page
 share/help/pt/gnome-help/nautilus-bookmarks-edit.page
 share/help/pt/gnome-help/nautilus-connect.page
@@ -13462,8 +13404,6 @@ share/help/pt_BR/gnome-help/mouse-touchpad-click.page
 share/help/pt_BR/gnome-help/mouse-wakeup.page
 share/help/pt_BR/gnome-help/mouse.page
 share/help/pt_BR/gnome-help/music-cantplay-drm.page
-share/help/pt_BR/gnome-help/music-player-ipodtransfer.page
-share/help/pt_BR/gnome-help/music-player-newipod.page
 share/help/pt_BR/gnome-help/nautilus-behavior.page
 share/help/pt_BR/gnome-help/nautilus-bookmarks-edit.page
 share/help/pt_BR/gnome-help/nautilus-connect.page
@@ -13956,8 +13896,6 @@ share/help/ro/gnome-help/mouse-touchpad-click.page
 share/help/ro/gnome-help/mouse-wakeup.page
 share/help/ro/gnome-help/mouse.page
 share/help/ro/gnome-help/music-cantplay-drm.page
-share/help/ro/gnome-help/music-player-ipodtransfer.page
-share/help/ro/gnome-help/music-player-newipod.page
 share/help/ro/gnome-help/nautilus-behavior.page
 share/help/ro/gnome-help/nautilus-bookmarks-edit.page
 share/help/ro/gnome-help/nautilus-connect.page
@@ -14393,8 +14331,6 @@ share/help/ru/gnome-help/mouse-touchpad-click.page
 share/help/ru/gnome-help/mouse-wakeup.page
 share/help/ru/gnome-help/mouse.page
 share/help/ru/gnome-help/music-cantplay-drm.page
-share/help/ru/gnome-help/music-player-ipodtransfer.page
-share/help/ru/gnome-help/music-player-newipod.page
 share/help/ru/gnome-help/nautilus-behavior.page
 share/help/ru/gnome-help/nautilus-bookmarks-edit.page
 share/help/ru/gnome-help/nautilus-connect.page
@@ -14830,8 +14766,6 @@ share/help/sl/gnome-help/mouse-touchpad-click.page
 share/help/sl/gnome-help/mouse-wakeup.page
 share/help/sl/gnome-help/mouse.page
 share/help/sl/gnome-help/music-cantplay-drm.page
-share/help/sl/gnome-help/music-player-ipodtransfer.page
-share/help/sl/gnome-help/music-player-newipod.page
 share/help/sl/gnome-help/nautilus-behavior.page
 share/help/sl/gnome-help/nautilus-bookmarks-edit.page
 share/help/sl/gnome-help/nautilus-connect.page
@@ -15267,8 +15201,6 @@ share/help/sr/gnome-help/mouse-touchpad-click.page
 share/help/sr/gnome-help/mouse-wakeup.page
 share/help/sr/gnome-help/mouse.page
 share/help/sr/gnome-help/music-cantplay-drm.page
-share/help/sr/gnome-help/music-player-ipodtransfer.page
-share/help/sr/gnome-help/music-player-newipod.page
 share/help/sr/gnome-help/nautilus-behavior.page
 share/help/sr/gnome-help/nautilus-bookmarks-edit.page
 share/help/sr/gnome-help/nautilus-connect.page
@@ -15704,8 +15636,6 @@ share/help/sr@latin/gnome-help/mouse-touchpad-click.page
 share/help/sr@latin/gnome-help/mouse-wakeup.page
 share/help/sr@latin/gnome-help/mouse.page
 share/help/sr@latin/gnome-help/music-cantplay-drm.page
-share/help/sr@latin/gnome-help/music-player-ipodtransfer.page
-share/help/sr@latin/gnome-help/music-player-newipod.page
 share/help/sr@latin/gnome-help/nautilus-behavior.page
 share/help/sr@latin/gnome-help/nautilus-bookmarks-edit.page
 share/help/sr@latin/gnome-help/nautilus-connect.page
@@ -16141,8 +16071,6 @@ share/help/sv/gnome-help/mouse-touchpad-click.page
 share/help/sv/gnome-help/mouse-wakeup.page
 share/help/sv/gnome-help/mouse.page
 share/help/sv/gnome-help/music-cantplay-drm.page
-share/help/sv/gnome-help/music-player-ipodtransfer.page
-share/help/sv/gnome-help/music-player-newipod.page
 share/help/sv/gnome-help/nautilus-behavior.page
 share/help/sv/gnome-help/nautilus-bookmarks-edit.page
 share/help/sv/gnome-help/nautilus-connect.page
@@ -16635,8 +16563,6 @@ share/help/ta/gnome-help/mouse-touchpad-click.page
 share/help/ta/gnome-help/mouse-wakeup.page
 share/help/ta/gnome-help/mouse.page
 share/help/ta/gnome-help/music-cantplay-drm.page
-share/help/ta/gnome-help/music-player-ipodtransfer.page
-share/help/ta/gnome-help/music-player-newipod.page
 share/help/ta/gnome-help/nautilus-behavior.page
 share/help/ta/gnome-help/nautilus-bookmarks-edit.page
 share/help/ta/gnome-help/nautilus-connect.page
@@ -17072,8 +16998,6 @@ share/help/te/gnome-help/mouse-touchpad-click.page
 share/help/te/gnome-help/mouse-wakeup.page
 share/help/te/gnome-help/mouse.page
 share/help/te/gnome-help/music-cantplay-drm.page
-share/help/te/gnome-help/music-player-ipodtransfer.page
-share/help/te/gnome-help/music-player-newipod.page
 share/help/te/gnome-help/nautilus-behavior.page
 share/help/te/gnome-help/nautilus-bookmarks-edit.page
 share/help/te/gnome-help/nautilus-connect.page
@@ -17509,8 +17433,6 @@ share/help/tr/gnome-help/mouse-touchpad-click.page
 share/help/tr/gnome-help/mouse-wakeup.page
 share/help/tr/gnome-help/mouse.page
 share/help/tr/gnome-help/music-cantplay-drm.page
-share/help/tr/gnome-help/music-player-ipodtransfer.page
-share/help/tr/gnome-help/music-player-newipod.page
 share/help/tr/gnome-help/nautilus-behavior.page
 share/help/tr/gnome-help/nautilus-bookmarks-edit.page
 share/help/tr/gnome-help/nautilus-connect.page
@@ -18003,8 +17925,6 @@ share/help/uk/gnome-help/mouse-touchpad-click.page
 share/help/uk/gnome-help/mouse-wakeup.page
 share/help/uk/gnome-help/mouse.page
 share/help/uk/gnome-help/music-cantplay-drm.page
-share/help/uk/gnome-help/music-player-ipodtransfer.page
-share/help/uk/gnome-help/music-player-newipod.page
 share/help/uk/gnome-help/nautilus-behavior.page
 share/help/uk/gnome-help/nautilus-bookmarks-edit.page
 share/help/uk/gnome-help/nautilus-connect.page
@@ -18497,8 +18417,6 @@ share/help/vi/gnome-help/mouse-touchpad-click.page
 share/help/vi/gnome-help/mouse-wakeup.page
 share/help/vi/gnome-help/mouse.page
 share/help/vi/gnome-help/music-cantplay-drm.page
-share/help/vi/gnome-help/music-player-ipodtransfer.page
-share/help/vi/gnome-help/music-player-newipod.page
 share/help/vi/gnome-help/nautilus-behavior.page
 share/help/vi/gnome-help/nautilus-bookmarks-edit.page
 share/help/vi/gnome-help/nautilus-connect.page
@@ -18934,8 +18852,6 @@ share/help/zh_CN/gnome-help/mouse-touchpad-click.page
 share/help/zh_CN/gnome-help/mouse-wakeup.page
 share/help/zh_CN/gnome-help/mouse.page
 share/help/zh_CN/gnome-help/music-cantplay-drm.page
-share/help/zh_CN/gnome-help/music-player-ipodtransfer.page
-share/help/zh_CN/gnome-help/music-player-newipod.page
 share/help/zh_CN/gnome-help/nautilus-behavior.page
 share/help/zh_CN/gnome-help/nautilus-bookmarks-edit.page
 share/help/zh_CN/gnome-help/nautilus-connect.page

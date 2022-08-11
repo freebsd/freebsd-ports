@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	SVN-Simple
 PORTVERSION=	0.28
 PORTREVISION=	3

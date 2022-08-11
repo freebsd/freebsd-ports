@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	drjava
 PORTVERSION=	0.9.8
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Eric Turgeon <ericbsd@FreeBSD.org>
-
 PORTNAME=	mate-user-guide
 PORTVERSION=	1.26.0
 CATEGORIES=	misc mate

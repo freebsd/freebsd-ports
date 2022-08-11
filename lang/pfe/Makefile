@@ -1,5 +1,3 @@
-# Created by: patrick
-
 PORTNAME=	pfe
 PORTVERSION=	0.33.71
 PORTREVISION=	2

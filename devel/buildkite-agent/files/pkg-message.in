@@ -1,0 +1,28 @@
+[
+{ type: install
+  message: <<EOM
+buildkite-agent requires minimal configuration in rc.conf, to allow hiding the
+the agent token from casual prying eyes, and to specify the user account to run
+the agent under, as its home directory is needed for ssh keys and agents, source
+code repositories, and temporary build worksapces.
+
+The %%PREFIX%%/rc.conf.d/buildkite file should be protected via
+owner/group root:wheel and 0600 permissions, to ensure the API token is
+not left exposed to non-privileged users and to any processes the agent
+itself may launch.
+
+Note: the supplied user must have full filesystems permissions over its homedir.
+
+# %%PREFIX%%/rc.conf.d/buildkite
+# mandatory parameters
+buildkite_enable=YES
+buildkite_token=abc123456def
+buildkite_account=sudo_make_me_a_user
+# optional parameters
+buildkite_config=%%ETCDIR%%/buildkite-agent.cfg
+buildkite_vars="KEY=value MORE=values"
+
+See https://buildkite.com/docs/agent for further details.
+EOM
+}
+]

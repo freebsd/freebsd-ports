@@ -1,5 +1,3 @@
-# Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-
 PORTNAME=	App-local-lib-helper
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5

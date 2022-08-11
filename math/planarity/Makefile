@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	planarity
 PORTVERSION=	3.0.2.0
 DISTVERSIONPREFIX=	Version_

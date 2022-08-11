@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-configservice
-PORTVERSION=	1.77.0
+PORTVERSION=	1.80.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

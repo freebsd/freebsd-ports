@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-kms
-PORTVERSION=	1.55.0
+PORTVERSION=	1.58.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

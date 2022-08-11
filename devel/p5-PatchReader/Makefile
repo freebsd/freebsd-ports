@@ -1,5 +1,3 @@
-# Created by: Toni Viemerö <toni.viemero@iki.fi>
-
 PORTNAME=	PatchReader
 PORTVERSION=	0.9.6
 PORTREVISION=	3

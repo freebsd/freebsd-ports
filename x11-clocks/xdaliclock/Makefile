@@ -1,5 +1,3 @@
-# Created by: gpalmer
-
 PORTNAME=	xdaliclock
 PORTVERSION=	2.44
 CATEGORIES=	x11-clocks

@@ -1,5 +1,3 @@
-# Created by: pixel
-
 PORTNAME=	libdsk
 PORTVERSION=	1.4.2
 CATEGORIES=	emulators devel

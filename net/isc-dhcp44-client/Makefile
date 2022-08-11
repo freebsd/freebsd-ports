@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 COMMENT=	The ISC Dynamic Host Configuration Protocol client
 
 SUBSYS=		client

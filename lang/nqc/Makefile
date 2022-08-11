@@ -1,5 +1,3 @@
-# Created by: kbyanc
-
 PORTNAME=	nqc
 PORTVERSION=	3.1.r6
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	png
 DISTVERSION=	0.1-7
 PORTREVISION=	8

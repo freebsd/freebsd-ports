@@ -1,5 +1,3 @@
-# Created by: Hung-Yi Chen <gaod@hychen.org>
-
 PORTNAME=	Net-SNMPTrapd
 PORTVERSION=	0.17
 CATEGORIES=	net-mgmt perl5

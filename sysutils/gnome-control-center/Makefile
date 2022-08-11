@@ -1,8 +1,5 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-control-center
-PORTVERSION=	42.0
-PORTREVISION=	2
+PORTVERSION=	42.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -38,17 +35,15 @@ LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
 		libudisks2.so:sysutils/libudisks \
 		libupower-glib.so:sysutils/upower
 RUN_DEPENDS=	cantarell-fonts>=0:x11-fonts/cantarell-fonts \
-		gcm-import:graphics/gnome-color-manager \
 		gnome-settings-daemon>=3.4.0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>=3.2.2:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c++11-lib gettext gnome localbase:ldflags meson \
+USES=		compiler:c++11-lib gettext gnome gstreamer localbase:ldflags meson \
 		pkgconfig python:3.6+,build samba:lib tar:xz xorg
 USE_GNOME=	cairo gnomedesktop3 gsound libxml2
 USE_XORG=	x11 xi
-#USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 

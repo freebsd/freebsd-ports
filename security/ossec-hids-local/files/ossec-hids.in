@@ -486,7 +486,7 @@ ossec_hids_fetch_config() {
             echo "${ossec_rc_path} reset_counter"
             echo "${ossec_rc_path} fetch_config"
             echo
-            echo "If this does't help, you need to reset counter on the server."
+            echo "If this doesn't help, you need to reset counter on the server."
             echo "If the server runs FreeBSD port of OSSEC, run:"
             echo "On the agent:"
             echo "${ossec_rc_path} reset_counter"

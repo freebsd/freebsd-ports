@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Array-Unique
 PORTVERSION=	0.08
 PORTREVISION=	1

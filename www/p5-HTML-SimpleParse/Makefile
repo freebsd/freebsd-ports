@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	HTML-SimpleParse
 PORTVERSION=	0.12
 PORTREVISION=	1

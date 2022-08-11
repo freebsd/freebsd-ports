@@ -1,5 +1,3 @@
-# Created by: Peter Schmiedeskamp <pschmied@qwest.net>
-
 PORTNAME=	libexif
 PORTVERSION=	0.6.24
 CATEGORIES=	graphics

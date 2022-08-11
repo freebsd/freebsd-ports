@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	paperclip
 PORTVERSION=	6.1.0
 CATEGORIES=	devel rubygems

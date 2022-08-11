@@ -65,3 +65,6 @@
 +	error_message_count++;
 +}
 +
+ /* Definitions for error fallback functions.
+    Copyright (C) 2021 Google, Inc.
+    This file is part of elfutils.

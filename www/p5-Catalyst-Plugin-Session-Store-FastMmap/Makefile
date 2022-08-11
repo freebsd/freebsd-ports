@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Session-Store-FastMmap
 PORTVERSION=	0.16
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Pod-Escapes
 PORTVERSION=	1.07
 CATEGORIES=	textproc devel perl5

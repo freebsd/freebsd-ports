@@ -1,5 +1,3 @@
-# Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
-
 PORTNAME=	file2pcap
 PORTVERSION=	1.29
 CATEGORIES=	net

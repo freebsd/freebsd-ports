@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Net-IMAP-Simple-SSL
 PORTVERSION=	1.3
 PORTREVISION=	1

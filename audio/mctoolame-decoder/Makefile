@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	mctoolame
 PORTVERSION=	0.1.a
 PORTREVISION=	2
@@ -10,6 +8,9 @@ DISTNAME=	${PORTNAME}d-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG Layer II audio decoder with multi-channel support
+
+DEPRECATED=	Legacy and obscure audio format that never gained any traction
+EXPIRATION_DATE=2022-09-30
 
 USES=		gmake tar:tgz
 ALL_TARGET=	#

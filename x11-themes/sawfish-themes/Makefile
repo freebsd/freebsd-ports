@@ -1,5 +1,3 @@
-# Created by: Alexey Mikhailov <karma@ez.pereslavl.ru>
-
 PORTNAME=	sawfish-themes
 PORTVERSION=	0.13
 CATEGORIES=	x11-themes

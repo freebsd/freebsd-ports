@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	python-bugzilla
 PORTVERSION=	3.2.0
 CATEGORIES=	devel python

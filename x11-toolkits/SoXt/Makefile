@@ -1,5 +1,3 @@
-# Created by: roland.jesse@gmx.net
-
 PORTNAME=	SoXt
 PORTVERSION=	1.3.0
 PORTREVISION=	8

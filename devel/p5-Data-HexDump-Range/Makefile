@@ -1,5 +1,3 @@
-# Created by: gebhart@secnetix.de
-
 PORTNAME=	Data-HexDump-Range
 PORTVERSION=	0.13.59
 PORTREVISION=	1

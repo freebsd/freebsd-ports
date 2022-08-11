@@ -1,5 +1,3 @@
-# Created by: Johannes Jost Meixner <xmj@FreeBSD.org>
-
 PORTNAME=	rails-dom-testing
 PORTVERSION=	2.0.3
 PORTREVISION=	1

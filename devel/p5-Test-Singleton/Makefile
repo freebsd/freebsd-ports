@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Test-Singleton
 PORTVERSION=	1.03
 PORTREVISION=	2

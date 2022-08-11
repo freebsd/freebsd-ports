@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	tk
 PORTVERSION=	8.5.13
 DISTVERSIONSUFFIX=	-6.el7

@@ -1,5 +1,3 @@
-# Created by: gmarco@giovannelli.it
-
 PORTNAME=	xtet42
 PORTVERSION=	2.21
 PORTREVISION=	5

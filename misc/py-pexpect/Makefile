@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pexpect
 PORTVERSION=	4.8.0
 PORTREVISION=	1

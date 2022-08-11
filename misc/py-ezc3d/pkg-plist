@@ -1,0 +1,15 @@
+%%PYTHON_SITELIBDIR%%/ezc3d/__init__.py
+%%PYTHON_SITELIBDIR%%/ezc3d/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ezc3d/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ezc3d/__pycache__/_version%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ezc3d/__pycache__/_version%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ezc3d/__pycache__/ezc3d%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ezc3d/__pycache__/ezc3d%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ezc3d/_ezc3d.so
+%%PYTHON_SITELIBDIR%%/ezc3d/_version.py
+%%PYTHON_SITELIBDIR%%/ezc3d/cmake/ezc3d/ezc3dConfig.cmake
+%%PYTHON_SITELIBDIR%%/ezc3d/cmake/ezc3d/ezc3dConfigVersion.cmake
+%%PYTHON_SITELIBDIR%%/ezc3d/cmake/ezc3d/ezc3dTargets-release.cmake
+%%PYTHON_SITELIBDIR%%/ezc3d/cmake/ezc3d/ezc3dTargets.cmake
+%%PYTHON_SITELIBDIR%%/ezc3d/ezc3d.py
+%%PYTHON_SITELIBDIR%%/ezc3d/libezc3d.so

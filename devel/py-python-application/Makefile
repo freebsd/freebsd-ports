@@ -1,5 +1,3 @@
-# Created by: Eugene Grosbein <ports@grosbein.net>
-
 PORTNAME=	python-application
 PORTVERSION=	2.8.0
 CATEGORIES=	devel python

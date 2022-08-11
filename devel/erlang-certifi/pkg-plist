@@ -1,7 +1,0 @@
-lib/erlang/lib/certifi-%%VERSION%%/ebin/certifi.app
-lib/erlang/lib/certifi-%%VERSION%%/ebin/certifi.beam
-lib/erlang/lib/certifi-%%VERSION%%/ebin/certifi_cacerts.beam
-lib/erlang/lib/certifi-%%VERSION%%/src/certifi.app.src
-lib/erlang/lib/certifi-%%VERSION%%/src/certifi.erl
-lib/erlang/lib/certifi-%%VERSION%%/src/certifi_cacerts.erl
-%%PORTDOCS%%%%DOCSDIR%%/README.md

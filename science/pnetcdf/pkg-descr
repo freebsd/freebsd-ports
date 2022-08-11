@@ -5,4 +5,5 @@ However, it does so in a serial manner, making it difficult to achieve high I/O
 performance. By making some small changes to the API specified by NetCDF, we can
 use MPI-IO and its collective operations.
 
-WWW: https://trac.mcs.anl.gov/projects/parallel-netcdf
+WWW: https://parallel-netcdf.github.io/
+WWW: https://github.com/Parallel-NetCDF/PnetCDF

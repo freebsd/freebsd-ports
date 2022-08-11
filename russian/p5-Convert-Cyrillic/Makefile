@@ -1,5 +1,3 @@
-# Created by: Sergey Kandaurov <pluknet@gmail.com>
-
 PORTNAME=	Convert-Cyrillic
 PORTVERSION=	1.05
 PORTREVISION=	1

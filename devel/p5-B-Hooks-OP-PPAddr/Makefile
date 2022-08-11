@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	B-Hooks-OP-PPAddr
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

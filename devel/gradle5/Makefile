@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	gradle
 PORTVERSION=	5.0
 CATEGORIES=	devel java

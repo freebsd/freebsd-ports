@@ -1,5 +1,3 @@
-# Created by: rpsfa@rit.edu
-
 PORTNAME=	ezprint
 PORTVERSION=	1.0.1
 CATEGORIES=	graphics rubygems

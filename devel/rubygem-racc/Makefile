@@ -1,5 +1,3 @@
-# Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-
 PORTNAME=	racc
 PORTVERSION=	1.6.0
 CATEGORIES=	devel ruby

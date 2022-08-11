@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/../license.txt
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
+BROKEN=		error: performing pointer subtraction with a null pointer may have undefined behavior
+
 USES=		cmake compiler:c++11-lang pkgconfig ssl
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes

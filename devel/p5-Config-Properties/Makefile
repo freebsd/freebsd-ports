@@ -1,5 +1,3 @@
-# Created by: Craig Manley
-
 PORTNAME=	Config-Properties
 PORTVERSION=	1.80
 CATEGORIES=	devel perl5

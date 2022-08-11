@@ -1,5 +1,3 @@
-# Created by: Richard Gallamore <ultima@FreeBSD.org>
-
 PORTNAME=	PyHamcrest
 DISTVERSIONPREFIX=	V
 DISTVERSION=	2.0.3

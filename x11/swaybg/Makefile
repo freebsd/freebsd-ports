@@ -1,7 +1,7 @@
 PORTNAME=	swaybg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.1
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wallpaper tool for Wayland compositors

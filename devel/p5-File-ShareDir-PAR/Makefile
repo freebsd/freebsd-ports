@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	File-ShareDir-PAR
 PORTVERSION=	0.06
 PORTREVISION=	1

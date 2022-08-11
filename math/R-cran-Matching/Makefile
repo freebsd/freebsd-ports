@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Matching
 DISTVERSION=	4.10-2
 CATEGORIES=	math

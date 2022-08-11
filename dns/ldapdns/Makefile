@@ -1,5 +1,3 @@
-# Created by: Paul Dlug <paul@aps.org>
-
 PORTNAME=	ldapdns
 PORTVERSION=	2.07
 PORTREVISION=	4

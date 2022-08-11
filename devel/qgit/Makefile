@@ -1,5 +1,3 @@
-# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-
 PORTNAME=	qgit
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	2.9

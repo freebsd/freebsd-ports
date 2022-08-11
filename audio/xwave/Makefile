@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	xwave
 PORTVERSION=	2.2
 PORTREVISION=	3

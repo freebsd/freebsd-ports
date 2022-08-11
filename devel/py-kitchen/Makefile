@@ -14,4 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fedora-infra
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

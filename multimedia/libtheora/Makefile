@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@rainbow-runner.nl>
-
 PORTNAME=	libtheora
 PORTVERSION=	1.1.1
 PORTREVISION=	7

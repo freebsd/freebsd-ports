@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	multidimensional
 PORTVERSION=	0.014
 CATEGORIES=	devel perl5

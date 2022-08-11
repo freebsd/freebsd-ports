@@ -1,5 +1,3 @@
-# Created by: Daniel Walter <sahne@0x90.at>
-
 PORTNAME=	lxde-meta
 PORTVERSION=	1.0
 PORTREVISION=	8

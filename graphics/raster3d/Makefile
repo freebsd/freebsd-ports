@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@inerd.com>
-
 PORTNAME=	raster3d
 DISTVERSION=	3.0.7
 CATEGORIES=	graphics biology

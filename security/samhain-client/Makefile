@@ -1,5 +1,3 @@
-# Created by: Nikola Kolev <koue@chaosophia.net>
-
 PKGNAMESUFFIX=	-client
 
 COMMENT=	Client daemon for the Samhain IDS

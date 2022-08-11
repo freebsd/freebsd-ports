@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	bitstream-vera
 PORTVERSION=	1.10
 PORTREVISION=	8

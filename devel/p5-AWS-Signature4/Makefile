@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	AWS-Signature4
 PORTVERSION=	1.02
 CATEGORIES=	devel perl5

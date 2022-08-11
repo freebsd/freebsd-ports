@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	acts
 PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	v

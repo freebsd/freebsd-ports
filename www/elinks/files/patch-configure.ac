@@ -1,6 +1,14 @@
---- configure.ac.orig	2022-01-29 19:43:50 UTC
+--- configure.ac.orig	2021-12-24 19:53:43 UTC
 +++ configure.ac
-@@ -1861,7 +1861,7 @@ if test "x$ac_cv_c_compiler_gnu" = "xyes"; then
+@@ -531,6 +531,7 @@ else
+ 	if $PKG_CONFIG $pkg_config_static libbrotlidec; then
+ 		BROTLI_CFLAGS=`$PKG_CONFIG $pkg_config_static --cflags libbrotlidec`
+ 		BROTLI_LIBS=`$PKG_CONFIG $pkg_config_static --libs libbrotlidec`
++		CFLAGS="$BROTLI_CFLAGS $CFLAGS"
+ 		LIBS="$BROTLI_LIBS $LIBS"
+ 		CONFIG_BROTLI=yes
+ 		AC_DEFINE([CONFIG_BROTLI], [1], [Define as 1 to use the libbrotli library.])
+@@ -1861,7 +1862,7 @@ if test "x$ac_cv_c_compiler_gnu" = "xyes"; then
        ;;
      10|10.*|11|11.*)
        # gettext

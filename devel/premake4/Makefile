@@ -1,5 +1,3 @@
-# Created by: Vitaly Magerya <vmagerya@gmail.com>
-
 PORTNAME=	premake4
 PORTVERSION=	4.4.b5
 CATEGORIES=	devel

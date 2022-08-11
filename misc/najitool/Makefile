@@ -1,5 +1,3 @@
-# Created by: NECDET COKYAZICI <cokyazici@yahoo.co.uk>
-
 PORTNAME=	najitool
 PORTVERSION=	0.8.4
 DISTVERSIONSUFFIX=	.src

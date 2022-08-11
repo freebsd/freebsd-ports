@@ -1,5 +1,3 @@
-# Created by: Martin Jackson <mhjacks@swbell.net>
-
 PORTNAME=	pyasn1
 PORTVERSION=	0.4.8
 CATEGORIES=	devel python

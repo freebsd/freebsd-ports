@@ -1,10 +1,8 @@
-# Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
-
 PORTNAME=	gnome-tetravex
 PORTVERSION=	3.38.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
 PATCHFILES+=	80912d06f5e5.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-tetravex/-/merge_requests/20

@@ -1,5 +1,3 @@
-# Created by: Marc G. Fournier
-
 PORTNAME=	Maypole-Authentication-UserSessionCookie
 PORTVERSION=	1.4
 PORTREVISION=	1

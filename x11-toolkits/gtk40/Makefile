@@ -1,5 +1,5 @@
 PORTNAME=	gtk
-PORTVERSION=	4.6.2
+PORTVERSION=	4.6.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -35,7 +35,7 @@ LDFLAGS+=	-lexecinfo
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-LIBVERSION=	1.600.2
+LIBVERSION=	1.600.3
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo4.gschema.xml \
@@ -66,7 +66,8 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 GSTREAMER_DESC=		GStreamer multimedia backend
 GSTREAMER_MESON_ENABLED=media-gstreamer
-GSTREAMER_USE=		GSTREAMER1=bad,gl
+GSTREAMER_USES=		gstreamer
+GSTREAMER_USE=		GSTREAMER=bad,gl
 
 VULKAN_DESC=		GDK Vulkan renderer backend
 VULKAN_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers

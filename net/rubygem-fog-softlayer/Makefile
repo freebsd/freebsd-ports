@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	fog-softlayer
 PORTVERSION=	1.1.4
 CATEGORIES=	net rubygems

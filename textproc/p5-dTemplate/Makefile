@@ -1,5 +1,3 @@
-# Created by: Jeremy Shaffner <jeremy@external.org>
-
 PORTNAME=	dTemplate
 PORTVERSION=	2.5
 PORTREVISION=	1

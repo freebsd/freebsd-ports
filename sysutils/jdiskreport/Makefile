@@ -1,5 +1,3 @@
-# Created by: jon@witchspace.com
-
 PORTNAME=	jdiskreport
 DISTVERSION=	1_4_1
 CATEGORIES=	sysutils java

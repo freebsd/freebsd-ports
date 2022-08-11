@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner <nbm@FreeBSD.org>
-
 PORTNAME=	mod_scgi
 PORTVERSION=	2.0
 CATEGORIES=	www

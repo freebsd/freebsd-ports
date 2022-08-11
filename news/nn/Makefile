@@ -1,5 +1,3 @@
-# Created by: adam
-
 PORTNAME=	nn
 PORTVERSION=	6.7.3
 PORTREVISION=	1

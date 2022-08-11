@@ -1,5 +1,3 @@
-# Created by: Tatsuki Makino <tatsuki_makino@hotmail.com>
-
 PORTNAME=	geographiclib
 DISTVERSION=	1.52
 CATEGORIES=	astro

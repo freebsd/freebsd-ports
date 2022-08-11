@@ -1,8 +1,5 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libgdata
-PORTVERSION=	0.17.13
-PORTREVISION=	3
+PORTVERSION=	0.18.1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 

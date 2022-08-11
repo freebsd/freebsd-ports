@@ -1,5 +1,3 @@
-# Created by: Nicolas Embriz <nbari@tequila.io>
-
 PORTNAME=	gitflow
 PORTVERSION=	1.12.3
 CATEGORIES=	devel

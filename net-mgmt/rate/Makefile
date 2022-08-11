@@ -1,12 +1,10 @@
-# Created by: mich@FreeBSD.org
-
 PORTNAME=	rate
 PORTVERSION=	0.9
 PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://s-tech.elsat.net.pl/bmtools/
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Traffic analysis command-line utility
 
 LICENSE=	GPLv2

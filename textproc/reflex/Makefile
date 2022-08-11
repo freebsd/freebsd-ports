@@ -1,5 +1,3 @@
-# Created by: bf@FreeBSD.org
-
 PORTNAME=	reflex
 PORTVERSION=	20210808
 CATEGORIES=	textproc

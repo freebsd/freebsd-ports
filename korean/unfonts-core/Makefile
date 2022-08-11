@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@FreeBSD.org>
-
 PORTNAME=	unfonts
 PORTVERSION=	1.0.2.080608
 PORTREVISION?=	4

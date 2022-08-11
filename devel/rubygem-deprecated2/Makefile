@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	deprecated
 PORTVERSION=	2.0.1
 CATEGORIES=	devel rubygems

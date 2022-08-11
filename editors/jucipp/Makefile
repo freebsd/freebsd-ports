@@ -1,5 +1,3 @@
-# Created by: Mohammad S. Babaei <info@babaei.net>
-
 PORTNAME=	jucipp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.1
@@ -19,6 +17,8 @@ LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 		uctags:devel/universal-ctags
+
+BROKEN=		error: implicit instantiation of undefined template 'std::basic_ifstream<char>'
 
 USES=		cmake compiler:c++14-lang desktop-file-utils gnome pkgconfig
 USE_GITLAB=	yes

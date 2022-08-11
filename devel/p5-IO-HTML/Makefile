@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	IO-HTML
 PORTVERSION=	1.004
 CATEGORIES=	devel perl5

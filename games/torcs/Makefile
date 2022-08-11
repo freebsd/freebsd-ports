@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	torcs
 DISTVERSION=	1.3.7
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mycli
 PORTVERSION=	1.25.0
 CATEGORIES=	databases python

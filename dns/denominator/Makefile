@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@freebsd.org>
-
 PORTNAME=	denominator
 PORTVERSION=	4.7.1
 CATEGORIES=	dns java

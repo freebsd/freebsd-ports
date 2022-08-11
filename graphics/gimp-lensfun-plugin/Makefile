@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	lensfun
 DISTVERSION=	0.2.5-dev
 CATEGORIES=	graphics

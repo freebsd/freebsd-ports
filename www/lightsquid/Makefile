@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <info@logvinov.com>
-
 PORTNAME=	lightsquid
 PORTVERSION=	1.8
 PORTREVISION=	4

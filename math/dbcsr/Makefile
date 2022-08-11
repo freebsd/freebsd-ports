@@ -1,6 +1,6 @@
 PORTNAME=	dbcsr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
+DISTVERSION=	2.3.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,6 +8,10 @@ COMMENT=	Distributed Block Compressed Sparse Row matrix library
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 BUILD_DEPENDS=	fypp:devel/py-fypp@${PY_FLAVOR}
 

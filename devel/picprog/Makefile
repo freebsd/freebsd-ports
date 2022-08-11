@@ -1,5 +1,3 @@
-# Created by: Johan Kerckaert <kirk@bricsnet.com>
-
 PORTNAME=	picprog
 PORTVERSION=	1.9.1
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	metalock
 PORTVERSION=	0.8.0
 PORTREVISION=	4

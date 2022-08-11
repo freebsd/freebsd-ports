@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	gtkglext
 PORTVERSION=	1.2.0
 PORTREVISION=	20

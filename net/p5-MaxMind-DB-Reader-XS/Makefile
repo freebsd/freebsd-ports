@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MaxMind-DB-Reader-XS
 PORTVERSION=	1.000009
 CATEGORIES=	net perl5

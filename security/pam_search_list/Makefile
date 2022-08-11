@@ -1,5 +1,3 @@
-# Created by: Victor Popov
-
 PORTNAME=	pam_search_list
 PORTVERSION=	0.1
 PORTREVISION=	1

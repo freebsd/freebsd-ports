@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ply
 PORTVERSION=	3.11
 CATEGORIES=	devel python
@@ -11,7 +9,7 @@ COMMENT=	Python Lex-Yacc
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:2.7+
+USES=		python
 USES+=		shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes

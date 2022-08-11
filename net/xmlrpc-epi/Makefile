@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	xmlrpc-epi
 PORTVERSION=	0.54.2
 PORTREVISION=	4

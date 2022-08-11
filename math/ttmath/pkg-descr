@@ -1,0 +1,5 @@
+TTMath is a small library which allows one to perform arithmetic
+operations with big unsigned integer, big signed integer and big
+floating point numbers.
+
+WWW: https://ttmath.org

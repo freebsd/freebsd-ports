@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	XML-Parser-Lite
 PORTVERSION=	0.722
 CATEGORIES=	textproc perl5

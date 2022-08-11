@@ -1,5 +1,3 @@
-# Created by: Mark Blackman <tmb_ports@maddog.u-net.com>
-
 PORTNAME=	cronolog
 PORTVERSION=	1.6.2
 PORTREVISION=	6

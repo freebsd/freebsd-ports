@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	IO-Multiplex
 PORTVERSION=	1.16
 CATEGORIES=	devel perl5

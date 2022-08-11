@@ -1,12 +1,10 @@
-# Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-
 PORTNAME=	gtkmm
 PORTVERSION=	3.24.2
 PORTREVISION?=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	30
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+3

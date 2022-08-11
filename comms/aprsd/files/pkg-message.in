@@ -9,5 +9,13 @@ logs are kept in /var/log/aprsd
 To enable aprsd you need to add: aprsd_enable="YES" to /etc/rc.conf
 to run aprsd as UID aprsd   add: aprsd_root="NO" to /etc/rc.conf
 EOM
+},
+{ type: remove
+  message: <<EOM
+If you really want to remove this package completely
+remove what is left in %%LOCALBASE%%/etc/aprsd /var/log/aprsd.
+Also be sure to remove user and groups aprsd and tnc 
+and remember to remove aprsd from dialer group.
+EOM
 }
 ]

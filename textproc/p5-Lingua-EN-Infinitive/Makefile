@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-EN-Infinitive
 PORTVERSION=	1.14
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	dircproxy
 DISTVERSION=	1.2.0-RC1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Craig Leres <leres@FreeBSD.org>
-
 PORTNAME=	arduino-mk
 PORTVERSION=	0.10
 PORTREVISION=	4

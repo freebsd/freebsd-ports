@@ -1,5 +1,3 @@
-# Created by: rooneg@electricjellyfish.net
-
 PORTNAME?=	subversion
 PORTVERSION=	1.14.2
 PORTREVISION?=	0

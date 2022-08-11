@@ -11,6 +11,8 @@ COMMENT=	Visualization toolkit
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_FreeBSD_14_aarch64=	clang-14 crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264834
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \

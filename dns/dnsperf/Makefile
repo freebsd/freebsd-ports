@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis (edwin@mavetju.org)
-
 PORTNAME=	dnsperf
 PORTVERSION=	2.7.0
 DISTVERSIONPREFIX=v

@@ -1,5 +1,3 @@
-# Created by: Oliver Eikemeier
-
 PORTNAME=	miau
 PORTVERSION=	0.6.6
 PORTREVISION=	3

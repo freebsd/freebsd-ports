@@ -33,6 +33,7 @@ libdata/pkgconfig/fishsound.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.svg
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/html/encode_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/encode_8h.html
@@ -58,9 +59,9 @@ libdata/pkgconfig/fishsound.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/group__install.html
 %%PORTDOCS%%%%DOCSDIR%%/html/group__win32.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%DOXYGEN%%%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/jquery.js
-%%DOXYGEN%%%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/menu.js
-%%DOXYGEN%%%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/menudata.js
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/jquery.js
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/menu.js
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/menudata.js
 %%PORTDOCS%%%%DOCSDIR%%/html/modules.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_f.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/nav_g.png
@@ -86,13 +87,19 @@ libdata/pkgconfig/fishsound.pc
 %%PORTDOCS%%%%DOCSDIR%%/latex/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/latex/annotated.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/comments_8h.tex
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/latex/comments_8h_source.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/constants_8h.tex
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/latex/constants_8h_source.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/decode_8h.tex
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/latex/decode_8h_source.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/deprecated_8h.tex
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/latex/deprecated_8h_source.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/doxygen.sty
 %%PORTDOCS%%%%DOCSDIR%%/latex/encode_8h.tex
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/latex/encode_8h_source.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/files.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/fishsound_8h.tex
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/latex/fishsound_8h_source.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/group__about.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/group__building.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/group__configuration.tex
@@ -101,6 +108,7 @@ libdata/pkgconfig/fishsound.pc
 %%PORTDOCS%%%%DOCSDIR%%/latex/group__install.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/group__win32.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/index.tex
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/latex/longtable_doxygen.sty
 %%PORTDOCS%%%%DOCSDIR%%/latex/modules.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/refman.tex
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/latex/structFS__DecEnc.tex
@@ -108,3 +116,4 @@ libdata/pkgconfig/fishsound.pc
 %%PORTDOCS%%%%DOCSDIR%%/latex/structFishSoundComment.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/structFishSoundFormat.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/structFishSoundInfo.tex
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/latex/tabu_doxygen.sty

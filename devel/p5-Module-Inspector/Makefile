@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Module-Inspector
 PORTVERSION=	1.05
 PORTREVISION=	2

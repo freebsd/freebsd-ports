@@ -1,5 +1,3 @@
-# Created by: Meno Abels <meno.abels@adviser.com>
-
 PORTNAME=	spreadlogd
 PORTVERSION=	1.4.2
 CATEGORIES=	www net

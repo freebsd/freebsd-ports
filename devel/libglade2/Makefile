@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@lovett.com>
-
 PORTNAME=	libglade2
 PORTVERSION=	2.6.4
 PORTREVISION?=	12

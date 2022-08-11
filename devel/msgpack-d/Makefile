@@ -1,5 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	msgpack-d
 DISTVERSION=	1.0.0-beta8
 CATEGORIES=	devel

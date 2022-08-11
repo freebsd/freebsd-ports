@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Class-Accessor-Fast-XS
 PORTVERSION=	0.04
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	vtk
 PORTVERSION=	6.2.0
 PORTREVISION=	15

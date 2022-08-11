@@ -1,5 +1,3 @@
-# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-
 PORTNAME=	Role-HasMessage
 PORTVERSION=	0.006
 CATEGORIES=	devel perl5

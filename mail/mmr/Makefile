@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	mmr
 PORTVERSION=	1.6.0
 PORTREVISION=	1

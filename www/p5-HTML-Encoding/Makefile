@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	HTML-Encoding
 PORTVERSION=	0.61
 PORTREVISION=	1

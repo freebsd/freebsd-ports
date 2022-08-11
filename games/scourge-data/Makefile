@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	scourge-data
 PORTVERSION=	0.21.1
 CATEGORIES=	games

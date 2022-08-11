@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	plman
 PORTVERSION=	2.5.1
 PORTREVISION=	2

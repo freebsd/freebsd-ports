@@ -1,6 +1,6 @@
 PORTNAME=	primesieve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.8
+DISTVERSION=	8.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,17 +9,13 @@ COMMENT=	Fast prime number generator
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang
-USE_GITHUB=	yes
-GH_ACCOUNT=	kimwalisch
+USES=		cmake:testing compiler:c++11-lang
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	BUILD_STATIC_LIBS
+USE_GITHUB=	yes
+GH_ACCOUNT=	kimwalisch
 
-do-test:
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+CMAKE_OFF=	BUILD_STATIC_LIBS
+CMAKE_TESTING_ON=	BUILD_TESTS
 
 .include <bsd.port.mk>

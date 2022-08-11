@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	topkg
 PORTVERSION=	1.0.3
 CATEGORIES=	devel

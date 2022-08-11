@@ -1,6 +1,9 @@
-%%EXECUTABLE%%bin/frobby
-%%EXEDOCS%%%%DOCSDIR%%/manual.pdf
-%%EXEDOCS%%%%DOCSDIR%%/manual.ps
+bin/frobby
+lib/libfrobby.so
+lib/libfrobby.so.1
+lib/libfrobby.so.1.0.0
+%%DOCS%%%%DOCSDIR%%/manual.pdf
+%%DOCS%%%%DOCSDIR%%/manual.ps
 %%LIBDOCS%%%%DOCSDIR%%/develDoc.pdf
 %%LIBDOCS%%%%DOCSDIR%%/develDoc.ps
 %%LIBDOCS%%%%DOCSDIR%%/html/Action_8cpp_source.html
@@ -757,8 +760,7 @@
 %%LIBDOCS%%%%DOCSDIR%%/html/doxygen_8cpp_source.html
 %%LIBDOCS%%%%DOCSDIR%%/html/doxygen_8cpp.html
 %%LIBDOCS%%%%DOCSDIR%%/html/doxygen.css
-%%LIBDOCS%%%%DOCSDIR%%/html/doxygen.png
-%%LIBDOCS%%%%DOCSDIR%%/html/doxygen.png
+%%LIBDOCS%%%%DOCSDIR%%/html/doxygen.svg
 %%LIBDOCS%%%%DOCSDIR%%/html/DynamicFrobeniusAction_8cpp_source.html
 %%LIBDOCS%%%%DOCSDIR%%/html/DynamicFrobeniusAction_8cpp.html
 %%LIBDOCS%%%%DOCSDIR%%/html/DynamicFrobeniusAction_8h_source.html
@@ -927,8 +929,6 @@
 %%LIBDOCS%%%%DOCSDIR%%/html/FrobeniusAction_8cpp.html
 %%LIBDOCS%%%%DOCSDIR%%/html/FrobeniusAction_8h_source.html
 %%LIBDOCS%%%%DOCSDIR%%/html/FrobeniusAction_8h.html
-%%LIBDOCS%%%%DOCSDIR%%/html/functions_0x7e.html
-%%LIBDOCS%%%%DOCSDIR%%/html/functions_0x7e.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_a.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_b.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_c.html
@@ -937,8 +937,6 @@
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_enum.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_eval.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_f.html
-%%LIBDOCS%%%%DOCSDIR%%/html/functions_func_0x7e.html
-%%LIBDOCS%%%%DOCSDIR%%/html/functions_func_0x7e.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_func_a.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_func_b.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_func_c.html
@@ -964,6 +962,8 @@
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_func_x.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_func_z.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_func.html
+%%LIBDOCS%%%%DOCSDIR%%/html/functions_func_~.html
+%%LIBDOCS%%%%DOCSDIR%%/html/functions_~.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_g.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_h.html
 %%LIBDOCS%%%%DOCSDIR%%/html/functions_i.html
@@ -1270,7 +1270,6 @@
 %%LIBDOCS%%%%DOCSDIR%%/html/NameFactory_8h_source.html
 %%LIBDOCS%%%%DOCSDIR%%/html/NameFactory_8h.html
 %%LIBDOCS%%%%DOCSDIR%%/html/namespace____gnu__cxx.html
-%%LIBDOCS%%%%DOCSDIR%%/html/namespaceconstants.html
 %%LIBDOCS%%%%DOCSDIR%%/html/namespacefourti2.html
 %%LIBDOCS%%%%DOCSDIR%%/html/namespacefplll.html
 %%LIBDOCS%%%%DOCSDIR%%/html/namespaceFrobby.html
@@ -1288,7 +1287,6 @@
 %%LIBDOCS%%%%DOCSDIR%%/html/namespacemembers.html
 %%LIBDOCS%%%%DOCSDIR%%/html/namespaces.html
 %%LIBDOCS%%%%DOCSDIR%%/html/namespaceSquareFreeTermOps.html
-%%LIBDOCS%%%%DOCSDIR%%/html/namespacestd.html
 %%LIBDOCS%%%%DOCSDIR%%/html/namespaceTestInternal.html
 %%LIBDOCS%%%%DOCSDIR%%/html/nav_f.png
 %%LIBDOCS%%%%DOCSDIR%%/html/nav_g.png
@@ -1472,11 +1470,7 @@
 %%LIBDOCS%%%%DOCSDIR%%/html/StatisticsStrategy_8cpp.html
 %%LIBDOCS%%%%DOCSDIR%%/html/StatisticsStrategy_8h_source.html
 %%LIBDOCS%%%%DOCSDIR%%/html/StatisticsStrategy_8h.html
-%%LIBDOCS%%%%DOCSDIR%%/html/stdinc_8cpp_source.html
-%%LIBDOCS%%%%DOCSDIR%%/html/stdinc_8cpp.html
 %%LIBDOCS%%%%DOCSDIR%%/html/stdinc_8h_source.html
-%%LIBDOCS%%%%DOCSDIR%%/html/stdinc_8h_source.html
-%%LIBDOCS%%%%DOCSDIR%%/html/stdinc_8h.html
 %%LIBDOCS%%%%DOCSDIR%%/html/stdinc_8h.html
 %%LIBDOCS%%%%DOCSDIR%%/html/StringParameter_8cpp_source.html
 %%LIBDOCS%%%%DOCSDIR%%/html/StringParameter_8cpp.html
@@ -1588,8 +1582,6 @@
 %%LIBDOCS%%%%DOCSDIR%%/html/TermTranslatorTest_8cpp_source.html
 %%LIBDOCS%%%%DOCSDIR%%/html/TermTranslatorTest_8cpp.html
 %%LIBDOCS%%%%DOCSDIR%%/html/test_2stdinc_8h_source.html
-%%LIBDOCS%%%%DOCSDIR%%/html/test_2stdinc_8h_source.html
-%%LIBDOCS%%%%DOCSDIR%%/html/test_2stdinc_8h.html
 %%LIBDOCS%%%%DOCSDIR%%/html/test_2stdinc_8h.html
 %%LIBDOCS%%%%DOCSDIR%%/html/Test_8cpp_source.html
 %%LIBDOCS%%%%DOCSDIR%%/html/Test_8cpp.html
@@ -1662,5 +1654,3 @@
 %%LIBDOCS%%%%DOCSDIR%%/html/VarSorter_8h.html
 %%LIBRARY%%include/frobby.h
 %%STATIC%%lib/libfrobby.a
-%%SHARED%%lib/libfrobby.so
-%%SHARED%%lib/libfrobby.so.0

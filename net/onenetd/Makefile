@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	onenetd
 PORTVERSION=	12
 CATEGORIES=	net

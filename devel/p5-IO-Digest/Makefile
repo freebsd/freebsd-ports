@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	IO-Digest
 PORTVERSION=	0.11
 PORTREVISION=	2

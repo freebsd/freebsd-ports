@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <kappa@FreeBSD.org.ua>
-
 PORTNAME=	Devel-ptkdb
 PORTVERSION=	1.1091
 PORTREVISION=	5

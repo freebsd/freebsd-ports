@@ -1,8 +1,7 @@
 PORTNAME=	xpra
-PORTVERSION=	4.3
-PORTREVISION=	1
+PORTVERSION=	4.3.4
 CATEGORIES=	x11
-MASTER_SITES=	http://xpra.org/src/
+MASTER_SITES=	https://xpra.org/src/
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Persistent remote applications for X
@@ -30,7 +29,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		ssh-askpass:security/openssh-askpass \
 		xauth:x11/xauth \
 		xkbcomp:x11/xkbcomp \
-		Xvfb:x11-servers/xorg-vfbserver
+		Xvfb:x11-servers/xorg-server@xvfb
 
 USES=		desktop-file-utils gettext-runtime gnome pkgconfig \
 		python:3.6+ shared-mime-info shebangfix tar:xz xorg
@@ -71,10 +70,10 @@ CUPS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pycups>1:print/py-pycups@${PY_FLAVOR}
 CUPS_VARS=			XPRA_OPTIONS+=printing
 FFMPEG_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg
 FFMPEG_VARS=			XPRA_OPTIONS+=enc_ffmpeg
+GSTREAMER_USES=			gstreamer
 GSTREAMER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR}
-GSTREAMER_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR} \
-				gstreamer1-plugins-pulse>1:audio/gstreamer1-plugins-pulse
-GSTREAMER_USE=			GSTREAMER1=flac,lame,mpg123,ogg,opus,vorbis,wavpack
+GSTREAMER_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR}
+GSTREAMER_USE=			GSTREAMER=flac,lame,mpg123,ogg,opus,pulse,vorbis,wavpack
 GSTREAMER_VARS=			XPRA_OPTIONS+=sound
 LIBYUV_LIB_DEPENDS=		libyuv.so:graphics/libyuv
 LIBYUV_VARS=			XPRA_OPTIONS+=csc_libyuv

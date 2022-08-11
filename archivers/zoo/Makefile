@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	zoo
 PORTVERSION=	2.10.1
 PORTREVISION=	4

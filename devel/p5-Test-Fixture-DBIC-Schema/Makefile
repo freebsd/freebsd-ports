@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Test-Fixture-DBIC-Schema
 PORTVERSION=	0.04
 PORTREVISION=	1

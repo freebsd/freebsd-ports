@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	libmpeg2
 PORTVERSION=	0.5.1
 PORTREVISION=	6

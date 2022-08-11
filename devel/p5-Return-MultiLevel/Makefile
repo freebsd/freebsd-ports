@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Return-MultiLevel
 PORTVERSION=	0.05
 CATEGORIES=	devel perl5

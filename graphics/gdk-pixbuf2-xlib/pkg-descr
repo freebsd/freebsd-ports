@@ -1,0 +1,4 @@
+GdkPixbuf-Xlib contains the deprecated API for integrating GdkPixbuf with
+Xlib data types.
+
+WWW: https://developer.gnome.org/gdk-pixbuf/

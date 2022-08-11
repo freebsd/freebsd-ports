@@ -1,5 +1,3 @@
-# Created by: Jacques Vidrine <nectar@FreeBSD.org>
-
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
 PORTREVISION=	14

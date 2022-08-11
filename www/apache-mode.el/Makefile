@@ -1,5 +1,3 @@
-# Created by: Max N. Boyarov <m.boyarov@bsd.by>
-
 PORTNAME=	apache-mode.el
 PORTVERSION=	2.0
 PORTREVISION=	1

@@ -1,7 +1,7 @@
 PORTNAME=	openrct2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.5.1
-PORTREVISION=	2
+DISTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -16,6 +16,8 @@ NOT_FOR_ARCHS_REASON=	Only for little-endian architectures
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libzip.so:archivers/libzip \
+		libFLAC.so:audio/flac \
+		libvorbisfile.so:audio/libvorbis \
 		libspeexdsp.so:audio/speexdsp \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libcurl.so:ftp/curl \
@@ -29,8 +31,8 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gnome gl iconv \
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenRCT2
 GH_PROJECT=	OpenRCT2
-GH_TUPLE=	OpenRCT2:objects:v1.2.2:objects \
-		OpenRCT2:title-sequences:v0.1.2c:title_sequences
+GH_TUPLE=	OpenRCT2:objects:v1.3.2:objects \
+		OpenRCT2:title-sequences:v0.4.0:title_sequences
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2

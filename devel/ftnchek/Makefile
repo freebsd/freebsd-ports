@@ -1,5 +1,3 @@
-# Created by: kargl@apl.washington.edu
-
 PORTNAME=	ftnchek
 PORTVERSION=	3.3.1
 CATEGORIES=	devel

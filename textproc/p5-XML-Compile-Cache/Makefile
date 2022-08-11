@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	XML-Compile-Cache
 PORTVERSION=	1.06
 CATEGORIES=	textproc perl5

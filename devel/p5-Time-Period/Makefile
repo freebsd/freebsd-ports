@@ -1,5 +1,3 @@
-# Created by: Nicholas Esborn <nick@netdot.net>
-
 PORTNAME=	Time-Period
 PORTVERSION=	1.20
 PORTREVISION=	1

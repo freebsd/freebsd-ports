@@ -1,5 +1,3 @@
-# Created by: Dave Grochowski <malus.x@gmail.com>
-
 PORTNAME=	libdlna
 PORTVERSION=	0.2.3
 PORTREVISION=	12

@@ -1,5 +1,3 @@
-# Created by: John W. O'Brien <john@saltant.com>
-
 PORTNAME=	Flask-Kerberos
 PORTVERSION=	1.0.4
 CATEGORIES=	security www python

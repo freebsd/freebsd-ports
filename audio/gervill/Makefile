@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	gervill
 PORTVERSION=	1.0
 CATEGORIES=	audio java

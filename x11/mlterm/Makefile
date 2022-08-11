@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-
 PORTNAME=	mlterm
 PORTVERSION=	3.9.2
 CATEGORIES=	x11

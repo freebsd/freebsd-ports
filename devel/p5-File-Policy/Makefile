@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	File-Policy
 PORTVERSION=	1.005
 PORTREVISION=	2

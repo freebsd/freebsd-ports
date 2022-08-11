@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	DBIx-Class-QueryLog
 PORTVERSION=	1.005.001
 CATEGORIES=	databases perl5

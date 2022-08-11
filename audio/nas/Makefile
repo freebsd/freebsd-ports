@@ -1,5 +1,3 @@
-# Created by: jkh
-
 PORTNAME=	nas
 PORTVERSION=	1.9.4
 PORTREVISION=	3

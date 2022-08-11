@@ -1,5 +1,3 @@
-# Created by: Rodrigo OSORIO <rodrigo@FreeBSD.org>
-
 PORTNAME=	libibuddy
 PORTVERSION=	0.0.2
 CATEGORIES=	devel

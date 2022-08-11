@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	File-Next
 PORTVERSION=	1.18
 CATEGORIES=	sysutils perl5

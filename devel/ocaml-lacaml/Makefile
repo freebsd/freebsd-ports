@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	lacaml
 PORTVERSION=	8.0.7
 PORTREVISION=	9

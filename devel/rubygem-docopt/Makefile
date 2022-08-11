@@ -1,0 +1,19 @@
+PORTNAME=	docopt
+DISTVERSION=	0.6.1
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	salvadore@FreeBSD.org
+COMMENT=	Parse command line arguments based on nothing more than a usage message
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gem python:env shebangfix
+USE_RUBY=	yes
+
+SHEBANG_FILES=	test/language_agnostic_tester.py
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

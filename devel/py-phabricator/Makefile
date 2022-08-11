@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbz@FreeBSD.org>
-
 PORTNAME=	phabricator
 PORTVERSION=	0.8.1
 CATEGORIES=	devel python

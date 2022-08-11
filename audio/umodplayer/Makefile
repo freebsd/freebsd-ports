@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	umodplayer
 PORTVERSION=	0.b5.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	ipv6calc
 PORTVERSION=	3.2.0
 CATEGORIES=	net-mgmt

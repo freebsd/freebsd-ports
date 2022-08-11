@@ -1,5 +1,3 @@
-# Created by: Stephane Legrand
-
 PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
 PORTVERSION?=	${PROFTPD_VERSION}

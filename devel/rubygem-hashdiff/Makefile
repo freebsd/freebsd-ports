@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	hashdiff
 PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	sgp4
 PORTVERSION=	2.21
 CATEGORIES=	astro python

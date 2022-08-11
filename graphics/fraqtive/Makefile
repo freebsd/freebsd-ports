@@ -1,5 +1,3 @@
-# Created by: Markus Brueffer <markus@FreeBSD.org>
-
 PORTNAME=	fraqtive
 PORTVERSION=	0.4.8
 DISTVERSIONPREFIX=	v

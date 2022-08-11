@@ -1,5 +1,3 @@
-# Created by: pat
-
 PORTNAME=	wmapmload
 PORTVERSION=	0.3.4
 PORTREVISION=	2

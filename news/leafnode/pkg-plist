@@ -2,10 +2,6 @@ bin/leafnode-version
 bin/newsq
 %%ETCDIR%%/config.example
 %%ETCDIR%%/filters.example
-%%ETCDIR%%/nntp.rules.dist
-%%ETCDIR%%/run.tcpd.dist
-%%ETCDIR%%/run.tcpserver.dist
-%%ETCDIR%%/Makefile.dist
 %%ETCDIR%%/UNINSTALL-daemontools
 man/man1/leafnode-version.1.gz
 man/man1/newsq.1.gz
@@ -26,7 +22,6 @@ sbin/fetchnews
 sbin/texpire
 sbin/checkgroups
 sbin/applyfilter
-sbin/setup-daemontools.sh
 @dir %%ETCDIR%%
 @comment only remove these when empty:
 @comment we don't want to kill the news spool across updates

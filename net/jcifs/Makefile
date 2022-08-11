@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	jcifs
 PORTVERSION=	1.3.19
 PORTEPOCH=	1

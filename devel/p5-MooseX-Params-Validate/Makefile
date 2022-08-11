@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	MooseX-Params-Validate
 PORTVERSION=	0.21
 CATEGORIES=	devel perl5

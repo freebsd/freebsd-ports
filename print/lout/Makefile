@@ -1,7 +1,5 @@
-# Created by: oly@world.std.com
-
 PORTNAME=	lout
-PORTVERSION=	3.42
+PORTVERSION=	3.42.1
 CATEGORIES=	print
 
 MAINTAINER=	kbowling@FreeBSD.org

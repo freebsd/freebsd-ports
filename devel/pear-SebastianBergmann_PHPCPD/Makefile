@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	PHPCPD
 DISTVERSION=	2.0.0
 CATEGORIES=	devel pear

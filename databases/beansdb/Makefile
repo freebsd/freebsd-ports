@@ -1,5 +1,3 @@
-# Created by: Qing Feng <qingfeng@douban.com>
-
 PORTNAME=	beansdb
 PORTVERSION=	0.7.1.4
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Math-Calc-Units
 PORTVERSION=	1.07
 PORTREVISION=	1

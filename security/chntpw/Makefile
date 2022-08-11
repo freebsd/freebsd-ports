@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	chntpw
 PORTVERSION=	140201
 CATEGORIES=	security sysutils

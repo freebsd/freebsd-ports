@@ -1,5 +1,3 @@
-# Created by: erich@rrnet.com
-
 PORTNAME=	xcoral
 PORTVERSION=	3.47
 PORTREVISION=	4

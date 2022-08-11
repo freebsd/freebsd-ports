@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	News-Article-NoCeM
 PORTVERSION=	0.09
 CATEGORIES=	news perl5

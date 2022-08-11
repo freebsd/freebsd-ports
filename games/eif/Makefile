@@ -1,5 +1,3 @@
-# Created by: johans
-
 PORTNAME=	eif
 PORTVERSION=	1.3.4
 PORTREVISION=	4

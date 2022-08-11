@@ -1,5 +1,3 @@
-# Created by: James Earl
-
 PORTNAME=	xmlroff
 PORTVERSION=	0.6.3
 PORTREVISION=	2

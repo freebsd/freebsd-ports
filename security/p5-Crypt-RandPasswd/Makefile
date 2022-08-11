@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Crypt-RandPasswd
 PORTVERSION=	0.04
 PORTREVISION=	2

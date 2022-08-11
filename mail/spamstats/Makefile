@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	spamstats
 PORTVERSION=	0.6c
 PORTREVISION=	2

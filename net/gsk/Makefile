@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gsk
 PORTVERSION=	1.0.63
 PORTREVISION=	2

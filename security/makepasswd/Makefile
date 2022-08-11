@@ -1,5 +1,3 @@
-# Created by: Toni Viemerö <toni.viemero@iki.fi>
-
 PORTNAME=	makepasswd
 PORTVERSION=	1.10
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: Henrik Hodne <henrik@hodne.io>
-
 PORTNAME=	App-Sqitch
 PORTVERSION=	0.9994
 PORTREVISION=	1

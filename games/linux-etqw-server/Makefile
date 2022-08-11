@@ -1,5 +1,3 @@
-# Created by: Ayumi M <ayu@commun.jp>
-
 PORTNAME=	etqw
 PORTVERSION=	1.5
 CATEGORIES=	games linux

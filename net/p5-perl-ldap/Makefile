@@ -1,5 +1,3 @@
-# Created by: scrappy@FreeBSD.org
-
 PORTNAME=	perl-ldap
 PORTVERSION=	0.6800
 CATEGORIES=	net perl5

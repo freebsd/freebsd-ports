@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	libdmapsharing
 PORTVERSION=	2.9.41
 CATEGORIES=	net gnome
@@ -16,9 +14,8 @@ BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgee-0.8.so:devel/libgee
 
-USES=		gettext gnome gmake libtool pathfix pkgconfig
+USES=		gettext gnome gmake gstreamer libtool pathfix pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 introspection:build
-USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-gtk-doc \

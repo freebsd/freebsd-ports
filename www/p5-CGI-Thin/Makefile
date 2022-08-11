@@ -1,5 +1,3 @@
-# Created by: Phil Phillips
-
 PORTNAME=	CGI-Thin
 PORTVERSION=	0.52
 PORTREVISION=	1

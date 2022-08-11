@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Graph-SocialMap
 PORTVERSION=	0.13
 CATEGORIES=	graphics perl5

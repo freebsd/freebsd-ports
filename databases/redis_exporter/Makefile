@@ -1,9 +1,7 @@
-# Created by: Jev Björsell <ports@ecadlabs.com>
-
 PORTNAME=	redis_exporter
 PORTVERSION=	1.33.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	databases
 
 MAINTAINER=	arcade@b1t.name

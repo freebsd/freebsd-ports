@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Acme-HTTP
 PORTVERSION=	0.10
 CATEGORIES=	net www perl5

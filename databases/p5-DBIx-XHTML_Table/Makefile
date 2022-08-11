@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	DBIx-XHTML_Table
 PORTVERSION=	1.49
 CATEGORIES=	databases www perl5

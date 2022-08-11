@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Config-Options
 PORTVERSION=	0.08
 PORTREVISION=	1

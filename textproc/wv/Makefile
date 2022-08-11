@@ -1,5 +1,3 @@
-# Created by: sumikawa@kame.net
-
 PORTNAME=	wv
 PORTVERSION=	1.2.9
 PORTREVISION=	7

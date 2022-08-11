@@ -1,5 +1,3 @@
-# Created by: Henry Hu <henry.hu.sh@gmail.com>
-
 PORTNAME=	pyzy
 PORTVERSION=	0.1.0
 PORTREVISION=	9

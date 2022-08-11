@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	MDB2_Schema
 PORTVERSION=	0.8.6
 CATEGORIES=	databases www pear

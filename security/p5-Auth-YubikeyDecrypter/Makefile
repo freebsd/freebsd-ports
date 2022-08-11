@@ -1,5 +1,3 @@
-# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
-
 PORTNAME=	Auth-YubikeyDecrypter
 PORTVERSION=	0.07
 PORTREVISION=	1

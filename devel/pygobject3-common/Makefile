@@ -1,8 +1,5 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gobject
-PORTVERSION=	3.38.0
-PORTREVISION=	0
+PORTVERSION=	3.42.2
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME/sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX?=	py

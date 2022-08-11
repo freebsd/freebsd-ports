@@ -1,5 +1,3 @@
-# Created by: George V. Neville-Neil
-
 PORTNAME=	pypcap
 DISTVERSION=	1.2.3
 CATEGORIES=	net python

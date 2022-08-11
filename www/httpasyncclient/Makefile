@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	httpasyncclient
 DISTVERSION=	4.1.5
 CATEGORIES=	www java

@@ -1,5 +1,3 @@
-# Created by: Philippe Audeoud <jadawin@tuxaco.net>
-
 PORTNAME=	wapiti
 PORTVERSION=	3.0.3
 CATEGORIES=	security

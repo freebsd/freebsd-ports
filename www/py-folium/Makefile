@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	folium
 PORTVERSION=	0.12.1
 DISTVERSIONSUFFIX=	.post1

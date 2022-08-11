@@ -1,5 +1,3 @@
-# Created by: Rob Evers <rob@debank.tv>
-
 PORTNAME=	moregroupware
 PORTVERSION=	0.7.4
 PORTREVISION=	3

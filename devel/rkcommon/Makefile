@@ -1,6 +1,6 @@
 PORTNAME=	rkcommon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
+DISTVERSION=	1.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,6 +8,8 @@ COMMENT=	Intel RenderKit common C++/CMake infrastructure
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN_armv6=	error: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'
 
 LIB_DEPENDS=	libtbb.so:devel/onetbb
 

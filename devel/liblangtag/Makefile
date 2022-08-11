@@ -1,6 +1,5 @@
 PORTNAME=	liblangtag
-PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTVERSION=	0.6.4
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://bitbucket.org/tagoh/liblangtag/downloads/ \
 		LOCAL/jkim

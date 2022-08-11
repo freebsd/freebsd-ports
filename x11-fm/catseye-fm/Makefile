@@ -1,5 +1,3 @@
-# Created by: Geyer Klaus
-
 PORTNAME=	catseye-fm
 PORTVERSION=	4.2.0.0
 PORTREVISION=	2

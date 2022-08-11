@@ -1,5 +1,3 @@
-# Created by: June-Yen Huang <jihuang@gate.sinica.edu.tw>
-
 PORTNAME=	VCP-Source-cvsbk
 PORTVERSION=	0.11
 PORTREVISION=	1

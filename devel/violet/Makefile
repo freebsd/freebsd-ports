@@ -1,5 +1,3 @@
-# Created by: Aldis Berjoza <aldis@bsdroot.lv>
-
 PORTNAME=	violet
 PORTVERSION=	2.1.0
 CATEGORIES=	devel editors java

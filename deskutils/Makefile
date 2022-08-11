@@ -17,7 +17,6 @@
     SUBDIR += bigyear
     SUBDIR += bijiben
     SUBDIR += birdtray
-    SUBDIR += bitcollider
     SUBDIR += bookworm
     SUBDIR += cairo-dock
     SUBDIR += cairo-dock-plugins
@@ -43,6 +42,7 @@
     SUBDIR += dailystrips
     SUBDIR += deforaos-todo
     SUBDIR += dfshow
+    SUBDIR += dmenu-wayland
     SUBDIR += docear
     SUBDIR += dosage
     SUBDIR += dstask
@@ -67,14 +67,13 @@
     SUBDIR += gnome-clocks
     SUBDIR += gnome-contacts
     SUBDIR += gnome-dictionary
-    SUBDIR += gnome-documents
     SUBDIR += gnome-font-viewer
     SUBDIR += gnome-initial-setup
     SUBDIR += gnome-maps
     SUBDIR += gnome-photos
+    SUBDIR += gnome-planner
     SUBDIR += gnome-pomodoro
     SUBDIR += gnome-screenshot
-    SUBDIR += gnome-search-tool
     SUBDIR += gnome-shell-extension-audio-output-switcher
     SUBDIR += gnome-shell-extension-coverflow
     SUBDIR += gnome-shell-extension-dashtodock
@@ -91,7 +90,6 @@
     SUBDIR += gnome-shell-extension-windowoverlay-icons
     SUBDIR += gnome-shell-extra-extensions
     SUBDIR += gnome-sound-recorder
-    SUBDIR += gnome-system-log
     SUBDIR += gnome-todo
     SUBDIR += gnome-tweaks
     SUBDIR += gnome-utils
@@ -112,6 +110,7 @@
     SUBDIR += gworkspace-gwmetadata
     SUBDIR += gxmessage
     SUBDIR += gxneur
+    SUBDIR += havoc
     SUBDIR += hebcal
     SUBDIR += helpviewer
     SUBDIR += horde-groupware
@@ -121,6 +120,8 @@
     SUBDIR += hot-babe
     SUBDIR += howm
     SUBDIR += hs-arbtt
+    SUBDIR += i3lock
+    SUBDIR += i3status
     SUBDIR += ical
     SUBDIR += itinerary
     SUBDIR += jjclient
@@ -184,7 +185,6 @@
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
     SUBDIR += orage
-    SUBDIR += osmo
     SUBDIR += owncloudclient
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Data-ICal-DateTime
@@ -231,6 +231,7 @@
     SUBDIR += rubygem-taskjuggler
     SUBDIR += semantik
     SUBDIR += showdown
+    SUBDIR += sigi
     SUBDIR += simpleagenda
     SUBDIR += sliderule
     SUBDIR += solanum
@@ -257,10 +258,12 @@
     SUBDIR += ultralist
     SUBDIR += virt-manager
     SUBDIR += vit
+    SUBDIR += walld
     SUBDIR += when
     SUBDIR += wmpinboard
     SUBDIR += x026
     SUBDIR += xcalendar
+    SUBDIR += xcbautolock
     SUBDIR += xchm
     SUBDIR += xdg-desktop-portal
     SUBDIR += xfce4-generic-slider

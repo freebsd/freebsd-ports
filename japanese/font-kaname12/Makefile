@@ -1,5 +1,3 @@
-# Created by: Mita Yoshio <mita@jp.FreeBSD.org>
-
 PORTNAME=	kaname12
 PORTVERSION=	1.1
 PORTREVISION=	3

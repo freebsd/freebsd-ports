@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	FusionInventory-Agent
 PORTVERSION=	2.5.2
 CATEGORIES=	net-mgmt

@@ -1,5 +1,3 @@
-# Created by: niels <niels@FreeBSD.org>
-
 PORTNAME=	anemone
 PORTVERSION=	0.7.2
 CATEGORIES=	www rubygems

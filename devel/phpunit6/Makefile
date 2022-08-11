@@ -1,5 +1,3 @@
-# Created by: Jochen Neumeister (<joneum@bsdproject.de>)
-
 PORTNAME=	phpunit
 DISTVERSION=	6.5.14
 CATEGORIES=	devel www

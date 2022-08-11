@@ -1,0 +1,11 @@
+--- components/storage_monitor/BUILD.gn.orig	2022-05-19 05:17:41 UTC
++++ components/storage_monitor/BUILD.gn
+@@ -174,7 +174,7 @@ source_set("unit_tests") {
+         "mtp_manager_client_chromeos_unittest.cc",
+         "storage_monitor_chromeos_unittest.cc",
+       ]
+-    } else if (is_linux || is_chromeos_lacros) {
++    } else if ((is_linux || is_chromeos_lacros) && !is_bsd) {
+       sources += [ "storage_monitor_linux_unittest.cc" ]
+     }
+   }

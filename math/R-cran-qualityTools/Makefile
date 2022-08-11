@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	qualityTools
 DISTVERSION=	1.55
 PORTREVISION=	4

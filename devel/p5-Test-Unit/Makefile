@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Test-Unit
 PORTVERSION=	0.25
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Maxim Ignatenko <gelraen.ua@gmail.com>
-
 PORTNAME=	acpi_call
 PORTVERSION=	1.0.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-
 PORTNAME=	octave-forge-mvn
 PORTVERSION=	1.1.0
 PORTREVISION=	19

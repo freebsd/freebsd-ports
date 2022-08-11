@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <mitya@yandex-team.ru>
-
 PORTNAME=	haproxy-log-analysis
 PORTVERSION=	2.0
 CATEGORIES=	net python

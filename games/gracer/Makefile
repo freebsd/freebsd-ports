@@ -1,5 +1,3 @@
-# Created by: nox@jelal.kn-bremen.de
-
 PORTNAME=	gracer
 PORTVERSION=	0.1.5
 PORTREVISION=	23

@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru
-
 PORTNAME=	leafrogue
 PORTVERSION=	0.72
 PORTREVISION=	3

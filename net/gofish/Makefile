@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gofish
 PORTVERSION=	1.1
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	WebService-Linode
 PORTVERSION=	0.29
 CATEGORIES=	www

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	requests-oauthlib
 PORTVERSION=	1.3.1
 CATEGORIES=	www python
@@ -18,11 +16,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-mock>=0:www/py-requests-mock@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils unittest
 
 NO_ARCH=	yes
-
-do-test:
-	cd ${WRKSRC} && ${PYTHON_CMD} -m unittest -v
 
 .include <bsd.port.mk>

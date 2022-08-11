@@ -1,5 +1,3 @@
-# Created by: Ayumi Mitsui <ayu@commun.jp>
-
 PORTNAME=	umurmur
 DISTVERSION=	0.2.17
 PORTREVISION=	2

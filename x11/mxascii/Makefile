@@ -1,5 +1,3 @@
-# Created by: Cy SChubert <cy@FreeBSD.org>
-
 PORTNAME=	mxascii
 PORTVERSION=	1.1
 CATEGORIES=	x11

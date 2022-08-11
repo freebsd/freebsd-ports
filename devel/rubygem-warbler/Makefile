@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	warbler
 PORTVERSION=	2.0.5
 PORTREVISION=	1

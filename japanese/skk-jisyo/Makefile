@@ -1,5 +1,3 @@
-# Created by: Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
-
 PORTNAME=	skk-jisyo
 PORTVERSION=	201409
 PORTREVISION=	0

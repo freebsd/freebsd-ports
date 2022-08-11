@@ -1,7 +1,5 @@
-# Created by: Hugo Saro <hugo@barafranca.com>
-
 PORTNAME=	haproxy
-DISTVERSION=	2.4.15
+DISTVERSION=	2.4.18
 CATEGORIES=	net www
 PKGNAMESUFFIX=	24
 MASTER_SITES=	http://www.haproxy.org/download/2.4/src/
@@ -19,7 +17,7 @@ default_CONFLICTS_INSTALL=	haproxy-lua
 lua_CONFLICTS_INSTALL=		haproxy
 lua_PKGNAMESUFFIX=		24-lua
 
-CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy19 haproxy20 haproxy21
+CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy20
 
 USES=		compiler:c++11-lang cpe gmake
 USE_RC_SUBR=	haproxy
@@ -38,7 +36,7 @@ DPCRE_DESC=		Link dynamically
 SPCRE_DESC=		Link statically
 DEVICEATLAS_DESC=	DeviceAtlas Device Detection support
 PROMEX_DESC=		Enable Prometheus exporter
-OPTIONS_DEFAULT=	SPCRE OPENSSL
+OPTIONS_DEFAULT=	SPCRE OPENSSL PROMEX
 
 DPCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 DPCRE_MAKE_ARGS=	USE_PCRE=1 USE_PCRE_JIT=1

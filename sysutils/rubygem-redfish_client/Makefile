@@ -1,5 +1,3 @@
-# Created by: Frank Wall <fw@moov.de>
-
 PORTNAME=	redfish_client
 PORTVERSION=	0.5.4
 CATEGORIES=	sysutils rubygems

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	libmrss
 PORTVERSION=	0.19.2
 PORTREVISION=	8

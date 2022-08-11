@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	flpsed
 DISTVERSION=	0.7.3
 CATEGORIES=	print

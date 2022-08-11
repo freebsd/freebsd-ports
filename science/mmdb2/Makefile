@@ -1,5 +1,5 @@
 PORTNAME=	mmdb2
-DISTVERSION=	2.0.20
+DISTVERSION=	2.0.22
 CATEGORIES=	science
 MASTER_SITES=	https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/
 
@@ -12,8 +12,11 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LESSER
 
 USES=		gmake libtool
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
-USE_LDCONFIG=	yes
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

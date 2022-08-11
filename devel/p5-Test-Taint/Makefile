@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Test-Taint
 PORTVERSION=	1.08
 CATEGORIES=	devel perl5

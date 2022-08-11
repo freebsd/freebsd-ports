@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libX11
 DISTVERSION=	1.7.2
 PORTEPOCH=	1

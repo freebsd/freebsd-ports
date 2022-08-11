@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	savon
 PORTVERSION=	2.11.2
 CATEGORIES=	www rubygems

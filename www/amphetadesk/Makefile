@@ -1,5 +1,3 @@
-# Created by: kstailey
-
 PORTNAME=	amphetadesk
 PORTVERSION=	0.93.1
 PORTREVISION=	7

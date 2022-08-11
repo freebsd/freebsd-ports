@@ -1,5 +1,3 @@
-# Created by: Christopher Key <cjk32@cam.ac.uk>
-
 PORTNAME=	Devel-ArgNames
 PORTVERSION=	0.03
 PORTREVISION=	2

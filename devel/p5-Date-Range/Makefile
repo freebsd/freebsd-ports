@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Date-Range
 PORTVERSION=	1.41
 PORTREVISION=	1

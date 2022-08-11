@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	crcmod
 PORTVERSION=	1.7
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	Sendmail-AccessDB
 PORTVERSION=	1.04
 CATEGORIES=	mail perl5

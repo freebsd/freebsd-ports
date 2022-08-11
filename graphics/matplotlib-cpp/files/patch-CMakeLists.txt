@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2022-08-09 00:24:38 UTC
++++ CMakeLists.txt
+@@ -37,6 +37,7 @@ install(
+ 
+ 
+ # Examples
++if (FREEBSD_BUILD_EXAMPLES)
+ add_executable(minimal examples/minimal.cpp)
+ target_link_libraries(minimal PRIVATE matplotlib_cpp)
+ set_target_properties(minimal PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+@@ -101,6 +102,7 @@ if(Python3_NumPy_FOUND)
+   target_link_libraries(spy PRIVATE matplotlib_cpp)
+   set_target_properties(spy PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+ endif()
++endif(FREEBSD_BUILD_EXAMPLES)
+ 
+ 
+ # Install headers

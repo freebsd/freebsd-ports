@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	incremental
 PORTVERSION=	21.3.0
 CATEGORIES=	devel python

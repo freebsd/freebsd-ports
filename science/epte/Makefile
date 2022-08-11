@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	epte
 PORTVERSION=	2.0.8
 PORTREVISION=	1

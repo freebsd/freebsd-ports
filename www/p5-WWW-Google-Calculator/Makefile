@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	WWW-Google-Calculator
 PORTVERSION=	0.07
 PORTREVISION=	1

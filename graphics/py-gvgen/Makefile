@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbrabez@gmail.com>
-
 PORTNAME=	gvgen
 PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v

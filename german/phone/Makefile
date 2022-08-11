@@ -1,5 +1,3 @@
-# Created by: wosch
-
 PORTNAME=	phone
 PORTVERSION=	1.20170802
 CATEGORIES=	german

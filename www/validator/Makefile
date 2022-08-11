@@ -1,5 +1,3 @@
-# Created by: Naram Qashat <cyberbotx@cyberbotx.com>
-
 PORTNAME=	validator
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1_3

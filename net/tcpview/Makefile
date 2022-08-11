@@ -1,5 +1,3 @@
-# Created by: Chung-Kie Tung <tung@turtle.ee.ncku.edu.tw>
-
 PORTNAME=	tcpview
 PORTVERSION=	1.0
 PORTREVISION=	7

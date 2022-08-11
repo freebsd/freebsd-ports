@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	curb
 PORTVERSION=	0.9.11
 CATEGORIES=	ftp rubygems

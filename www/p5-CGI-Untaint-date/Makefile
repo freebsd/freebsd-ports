@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	CGI-Untaint-date
 PORTVERSION=	1.00
 PORTREVISION=	1

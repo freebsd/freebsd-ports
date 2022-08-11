@@ -1,0 +1,28 @@
+--- Makefile.orig	2022-03-30 19:58:30.000000000 -0500
++++ Makefile	2022-04-30 15:52:35.521899000 -0500
+@@ -8,10 +8,11 @@
+ .PHONY: clean clobber help
+ 
+ # build flags common to all options and architectures
+-CXXFLAGS = -IArduinoLib -I. -g -O2 -Wall -DARDUINO=100 -pthread -std=c++0x
++CXXFLAGS ?= -g -O2 -Wall
++CXXFLAGS += -IArduinoLib -I. -DARDUINO=100 -std=c++0x
+ LDXXFLAGS = -LArduinoLib -g -pthread
+ LIBS = -lpthread -larduino
+-CXX = g++
++CXX ?= g++
+ 
+ 
+ # macOS does not have X11 by default; this assumes XQuartz has been installed
+@@ -20,6 +21,11 @@
+     LDXXFLAGS += -L/opt/X11/lib
+ endif
+ 
++ifeq ($(shell uname -s), FreeBSD)
++    CXXFLAGS += -I$(LOCALBASE)/include
++    LDXXFLAGS += -L$(LOCALBASE)/lib
++    LIBS = -pthread -larduino -lexecinfo
++endif
+ 
+ # FreeBSD needs libgpio
+ ifeq ($(shell [ -r /usr/include/libgpio.h ]; echo $$?), 0)

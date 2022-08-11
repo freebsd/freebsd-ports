@@ -1,0 +1,170 @@
+-- Place this file in %%LOCALBASE%%/etc/prosody/prosody.cfg.lua
+--
+-- Then run
+--
+--    prosodyctl cert generate jitsi.example.com
+--    prosodyctl cert generate auth.jitsi.example.com
+--    keytool -noprompt -keystore %%ETCDIR%%/jicofo/truststore.jks -importcert \
+--      -alias prosody -file /var/db/prosody/auth.jitsi.example.com.crt
+--
+--    prosodyctl register jvb auth.jitsi.example.com "supersecret"
+--    prosodyctl register focus auth.jitsi.example.com "supersecret"
+--    prosodyctl mod_roster_command subscribe focus.jitsi.example.com focus@auth.jitsi.example.com "supersecret"
+
+plugin_paths = { "%%LOCALBASE%%/lib/jitsi-prosody-plugins/" }
+
+log = {
+  -- Log files (change ‘info’ to ‘debug’ for debug logs):
+  info = "/var/log/prosody.log";
+  error = "/var/log/prosody.err";
+  -- Syslog:
+  --debug = "*syslog";
+}
+
+-- domain mapper options, must at least have domain base set to use the mapper
+muc_mapper_domain_base = "jitsi.example.com";
+
+-- external_service_secret = "__turnSecret__";
+-- external_services = {
+--     { type = "stun", host = "jitsi.example.com", port = 3478 },
+--     { type = "turn", host = "jitsi.example.com", port = 3478, transport = "udp", secret = true, ttl = 86400, algorithm = "turn" },
+--     { type = "turns", host = "jitsi.example.com", port = 5349, transport = "tcp", secret = true, ttl = 86400, algorithm = "turn" }
+--};
+
+--cross_domain_bosh = true;
+consider_bosh_secure = true;
+https_ports = { }; -- Remove this line to prevent listening on port 5284
+
+-- by default prosody 0.12 sends cors headers, if you want to disable it uncomment the following (the config is available on 0.12.1)
+--http_cors_override = {
+--    bosh = {
+--        enabled = false;
+--    };
+--    websocket = {
+--        enabled = false;
+--    };
+--}
+
+-- https://ssl-config.mozilla.org/#server=haproxy&version=2.1&config=intermediate&openssl=1.1.0g&guideline=5.4
+ssl = {
+    protocol = "tlsv1_2+";
+    ciphers = "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384"
+}
+
+unlimited_jids = {
+    "focus@auth.jitsi.example.com",
+    "jvb@auth.jitsi.example.com"
+}
+
+VirtualHost "jitsi.example.com"
+    -- enabled = false -- Remove this line to enable this host
+    authentication = "anonymous"
+    -- Properties below are modified by jitsi-meet-tokens package config
+    -- and authentication above is switched to "token"
+    --app_id="example_app_id"
+    --app_secret="example_app_secret"
+    -- Assign this host a certificate for TLS, otherwise it would use the one
+    -- set in the global section (if any).
+    -- Note that old-style SSL on port 5223 only supports one certificate, and will always
+    -- use the global one.
+    ssl = {
+        key = "/var/db/prosody/jitsi.example.com.key";
+        certificate = "/var/db/prosody/jitsi.example.com.crt";
+    }
+    av_moderation_component = "avmoderation.jitsi.example.com"
+    speakerstats_component = "speakerstats.jitsi.example.com"
+    conference_duration_component = "conferenceduration.jitsi.example.com"
+    -- we need bosh
+    modules_enabled = {
+        "bosh";
+        "pubsub";
+        "ping"; -- Enable mod_ping
+        "speakerstats";
+        "external_services";
+        "conference_duration";
+        "muc_lobby_rooms";
+        "muc_breakout_rooms";
+        "av_moderation";
+        "saslauth";
+    }
+    c2s_require_encryption = false
+    lobby_muc = "lobby.jitsi.example.com"
+    breakout_rooms_muc = "breakout.jitsi.example.com"
+    main_muc = "conference.jitsi.example.com"
+    -- muc_lobby_whitelist = { "recorder.jitsi.example.com" } -- Here we can whitelist jibri to enter lobby enabled rooms
+
+Component "conference.jitsi.example.com" "muc"
+    restrict_room_creation = true
+    storage = "memory"
+    modules_enabled = {
+        "muc_meeting_id";
+        "muc_domain_mapper";
+        "polls";
+        --"token_verification";
+        "muc_rate_limit";
+        "saslauth";
+    }
+    admins = { "focus@auth.jitsi.example.com" }
+    muc_room_locking = false
+    muc_room_default_public_jids = true
+    c2s_require_encryption = false
+
+Component "breakout.jitsi.example.com" "muc"
+    restrict_room_creation = true
+    storage = "memory"
+    modules_enabled = {
+        "muc_meeting_id";
+        "muc_domain_mapper";
+        --"token_verification";
+        "muc_rate_limit";
+        "polls";
+        "saslauth";
+    }
+    admins = { "focus@auth.jitsi.example.com" }
+    muc_room_locking = false
+    muc_room_default_public_jids = true
+
+-- internal muc component
+Component "internal.auth.jitsi.example.com" "muc"
+    storage = "memory"
+    modules_enabled = {
+        "ping";
+    }
+    admins = { "focus@auth.jitsi.example.com", "jvb@auth.jitsi.example.com" }
+    muc_room_locking = false
+    muc_room_default_public_jids = true
+    c2s_require_encryption = false
+
+VirtualHost "auth.jitsi.example.com"
+    modules_enabled = {
+        "limits_exception";
+        "saslauth";
+    }
+    -- authentication = "internal_plain" 
+    c2s_require_encryption = false
+    authentication = "internal_hashed"
+
+-- Proxy to jicofo's user JID, so that it doesn't have to register as a component.
+Component "focus.jitsi.example.com" "client_proxy"
+    target_address = "focus@auth.jitsi.example.com"
+
+Component "speakerstats.jitsi.example.com" "speakerstats_component"
+    muc_component = "conference.jitsi.example.com"
+
+Component "conferenceduration.jitsi.example.com" "conference_duration_component"
+    muc_component = "conference.jitsi.example.com"
+
+Component "avmoderation.jitsi.example.com" "av_moderation_component"
+    muc_component = "conference.jitsi.example.com"
+
+Component "lobby.jitsi.example.com" "muc"
+    storage = "memory"
+    restrict_room_creation = true
+    muc_room_locking = false
+    muc_room_default_public_jids = true
+    modules_enabled = {
+        "muc_rate_limit";
+        "polls";
+        "saslauth";
+    }
+    c2s_require_encryption = false

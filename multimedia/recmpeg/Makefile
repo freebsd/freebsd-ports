@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	recmpeg
 PORTVERSION=	1.0.5
 PORTREVISION=	1

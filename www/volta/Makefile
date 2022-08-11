@@ -1,5 +1,3 @@
-# Created by: mahlon
-
 PORTNAME=	volta
 PORTVERSION=	0.3.0
 PORTREVISION=	1

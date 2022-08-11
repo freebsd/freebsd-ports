@@ -1,5 +1,3 @@
-# Created by: andrew@scoop.co.nz
-
 PORTNAME=	Algorithm-Numerical-Shuffle
 PORTVERSION=	2009110301
 PORTREVISION=	1

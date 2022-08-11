@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	xa65
 PORTVERSION=	2.3.13
 CATEGORIES=	devel

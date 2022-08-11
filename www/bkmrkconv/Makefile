@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	bkmrkconv
 PORTVERSION=	1.12
 CATEGORIES=	www

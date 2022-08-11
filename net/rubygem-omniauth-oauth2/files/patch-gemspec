@@ -1,0 +1,15 @@
+Fix runtime of www/gitlab-ce
+
+Allow omniauth 1.9.* to fix bundler check when gitlab starts.
+
+--- omniauth-oauth2.gemspec.orig	2022-07-11 15:00:59 UTC
++++ omniauth-oauth2.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+ 
+   if s.respond_to? :add_runtime_dependency then
+     s.add_runtime_dependency(%q<oauth2>.freeze, [">= 1.4", "< 3"])
+-    s.add_runtime_dependency(%q<omniauth>.freeze, ["~> 2.0"])
++    s.add_runtime_dependency(%q<omniauth>.freeze, [">= 1.9", "< 3"])
+     s.add_development_dependency(%q<bundler>.freeze, ["~> 2.0"])
+   else
+     s.add_dependency(%q<oauth2>.freeze, [">= 1.4", "< 3"])

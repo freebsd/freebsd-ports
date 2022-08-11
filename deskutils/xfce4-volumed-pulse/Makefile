@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	xfce4-volumed-pulse
 PORTVERSION=	0.2.3
 PORTREVISION=	4

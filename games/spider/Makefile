@@ -1,5 +1,3 @@
-# Created by: se
-
 PORTNAME=	spider
 PORTVERSION=	1.1
 PORTREVISION=	4

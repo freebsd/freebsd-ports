@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	python-Levenshtein
 PORTVERSION=	0.12.2
 CATEGORIES=	devel python

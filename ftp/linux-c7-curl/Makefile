@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	curl
 PORTVERSION=	7.29.0
 DISTVERSIONSUFFIX=	-59.el7_9.1

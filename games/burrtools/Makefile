@@ -1,8 +1,6 @@
-# Created by: ijliao
-
 PORTNAME=	burrtools
 PORTVERSION=	0.6.3
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	games
 MASTER_SITES=	SF
 

@@ -2,6 +2,7 @@
 
     SUBDIR += 2d-rewriter
     SUBDIR += ALPSCore
+    SUBDIR += ChipmunkPhysics
     SUBDIR += InsightToolkit
     SUBDIR += PETSc
     SUBDIR += R-cran-AMORE
@@ -16,6 +17,7 @@
     SUBDIR += R-cran-etm
     SUBDIR += R-cran-fastICA
     SUBDIR += R-cran-kernlab
+    SUBDIR += R-cran-ks
     SUBDIR += R-cran-snow
     SUBDIR += R-cran-som
     SUBDIR += R-cran-udunits2
@@ -66,6 +68,7 @@
     SUBDIR += devisor
     SUBDIR += dftbplus
     SUBDIR += dftd4
+    SUBDIR += dirac
     SUBDIR += dkh
     SUBDIR += dlib-cpp
     SUBDIR += drawxtl
@@ -90,6 +93,7 @@
     SUBDIR += fvcom-mpi
     SUBDIR += gabedit
     SUBDIR += gamess-us
+    SUBDIR += gbtolib
     SUBDIR += gchemutils
     SUBDIR += gdma
     SUBDIR += getdp
@@ -107,6 +111,7 @@
     SUBDIR += harminv
     SUBDIR += hdf
     SUBDIR += hdf5
+    SUBDIR += hdf5-110
     SUBDIR += hdf5-18
     SUBDIR += healpix
     SUBDIR += helfem
@@ -120,6 +125,7 @@
     SUBDIR += jstrack
     SUBDIR += kalzium
     SUBDIR += kim-api
+    SUBDIR += kplib
     SUBDIR += kst2
     SUBDIR += lammps
     SUBDIR += lamprop
@@ -131,6 +137,7 @@
     SUBDIR += libecpint
     SUBDIR += libefp
     SUBDIR += libgeodecomp
+    SUBDIR += libgetar
     SUBDIR += libghemical
     SUBDIR += libgridxc
     SUBDIR += libint
@@ -145,6 +152,7 @@
     SUBDIR += libssm
     SUBDIR += libsvm
     SUBDIR += libsvm-python
+    SUBDIR += libtensorflow1
     SUBDIR += libvdwxc
     SUBDIR += libxc
     SUBDIR += liggghts
@@ -161,6 +169,7 @@
     SUBDIR += mcxtrace-comps
     SUBDIR += mdynamix
     SUBDIR += medit
+    SUBDIR += meep
     SUBDIR += metaphysicl
     SUBDIR += minc2
     SUBDIR += mmdb2
@@ -169,6 +178,7 @@
     SUBDIR += molgif
     SUBDIR += molscript
     SUBDIR += molsketch
+    SUBDIR += mopac
     SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += msms
@@ -186,9 +196,9 @@
     SUBDIR += octopus
     SUBDIR += openbabel
     SUBDIR += openems
-    SUBDIR += openkim
     SUBDIR += openkim-models
     SUBDIR += openmc
+    SUBDIR += openmolcas
     SUBDIR += openmx
     SUBDIR += opensim-core
     SUBDIR += opensph
@@ -231,11 +241,13 @@
     SUBDIR += packmol
     SUBDIR += pagmo2
     SUBDIR += paje
+    SUBDIR += paraview
     SUBDIR += pastix
     SUBDIR += pcmsolver
     SUBDIR += phonopy
     SUBDIR += plumed
     SUBDIR += pnetcdf
+    SUBDIR += precice
     SUBDIR += pulseview
     SUBDIR += py-DendroPy
     SUBDIR += py-GPy
@@ -250,6 +262,7 @@
     SUBDIR += py-SimpleSpectral
     SUBDIR += py-abipy
     SUBDIR += py-access
+    SUBDIR += py-asap3
     SUBDIR += py-asdf
     SUBDIR += py-asdf-standard
     SUBDIR += py-asdf-transform-schemas
@@ -264,6 +277,7 @@
     SUBDIR += py-cirq-google
     SUBDIR += py-cirq-ionq
     SUBDIR += py-cirq-pasqal
+    SUBDIR += py-cirq-rigetti
     SUBDIR += py-coards
     SUBDIR += py-dipy
     SUBDIR += py-dlib
@@ -285,7 +299,9 @@
     SUBDIR += py-kim-query
     SUBDIR += py-kinematics
     SUBDIR += py-kliff
+    SUBDIR += py-kpLib
     SUBDIR += py-liac-arff
+    SUBDIR += py-libgetar
     SUBDIR += py-libpysal
     SUBDIR += py-lifelines
     SUBDIR += py-mdp
@@ -304,6 +320,7 @@
     SUBDIR += py-phono3py
     SUBDIR += py-phonopy
     SUBDIR += py-pupynere
+    SUBDIR += py-py3Dmol
     SUBDIR += py-pyaixi
     SUBDIR += py-pyberny
     SUBDIR += py-pycsw
@@ -313,13 +330,24 @@
     SUBDIR += py-pygmo2
     SUBDIR += py-pyked
     SUBDIR += py-pymatgen
+    SUBDIR += py-pymbd
     SUBDIR += py-pymol
     SUBDIR += py-pyosf
+    SUBDIR += py-pyprecice
     SUBDIR += py-pysal
     SUBDIR += py-pyscf
     SUBDIR += py-pyteomics
     SUBDIR += py-qcelemental
     SUBDIR += py-qcengine
+    SUBDIR += py-qiskit
+    SUBDIR += py-qiskit-aer
+    SUBDIR += py-qiskit-experiments
+    SUBDIR += py-qiskit-ibm-experiment
+    SUBDIR += py-qiskit-ibm-provider
+    SUBDIR += py-qiskit-ibmq-provider
+    SUBDIR += py-qiskit-nature
+    SUBDIR += py-qiskit-optimization
+    SUBDIR += py-qiskit-terra
     SUBDIR += py-qspin
     SUBDIR += py-quantities
     SUBDIR += py-rmf
@@ -339,17 +367,21 @@
     SUBDIR += py-spaghetti
     SUBDIR += py-spglib
     SUBDIR += py-tensorflow
+    SUBDIR += py-thewalrus
     SUBDIR += py-tobler
     SUBDIR += py-trainstation
+    SUBDIR += py-tweedledum
     SUBDIR += py-veusz
     SUBDIR += pybrain
     SUBDIR += pynn
+    SUBDIR += q
     SUBDIR += qbox
     SUBDIR += qcl
     SUBDIR += qiskit-aer
     SUBDIR += qmcpack
     SUBDIR += quantum-espresso
     SUBDIR += quantum-espresso-pseudopotentials
+    SUBDIR += quantum-jet
     SUBDIR += qwalk
     SUBDIR += rdkit
     SUBDIR += rmf
@@ -382,14 +414,16 @@
     SUBDIR += spglib
     SUBDIR += step
     SUBDIR += svmlight
-    SUBDIR += szip
     SUBDIR += tblite
     SUBDIR += teem
     SUBDIR += tfel
     SUBDIR += tfel-edf
     SUBDIR += thermofun
     SUBDIR += tinker
+    SUBDIR += trilinos
+    SUBDIR += tweedledum
     SUBDIR += udunits
+    SUBDIR += ukrmol+
     SUBDIR += v_sim
     SUBDIR += vipster
     SUBDIR += vmd

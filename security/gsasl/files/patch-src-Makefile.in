@@ -1,20 +1,20 @@
---- src/Makefile.in.orig	2021-01-01 16:32:54 UTC
+--- src/Makefile.in.orig	2022-06-20 15:55:18 UTC
 +++ src/Makefile.in
-@@ -234,7 +234,7 @@ am_gsasl_OBJECTS = gsasl.$(OBJEXT) imap.$(OBJEXT) smtp
+@@ -238,7 +238,7 @@ am_gsasl_OBJECTS = gsasl.$(OBJEXT) imap.$(OBJEXT) smtp
  	callbacks.$(OBJEXT)
  gsasl_OBJECTS = $(am_gsasl_OBJECTS)
  am__DEPENDENCIES_1 =
--gsasl_DEPENDENCIES = ../lib/src/libgsasl.la ../gl/libgl.la \
-+gsasl_DEPENDENCIES = ../gl/libgl.la \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-gsasl_DEPENDENCIES = ../lib/src/libgsasl.la ../lib/gl/liblgl.la \
++gsasl_DEPENDENCIES = \
+ 	../gl/libgl.la $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) libgsasl_cmd.la
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -1560,7 +1560,7 @@ gsasl_SOURCES = gsasl.c \
+@@ -1835,7 +1835,7 @@ gsasl_SOURCES = gsasl.c \
  	imap.c imap.h smtp.c smtp.h \
  	callbacks.h callbacks.c internal.h
  
--gsasl_LDADD = ../lib/src/libgsasl.la ../gl/libgl.la \
-+gsasl_LDADD = -lgsasl ../gl/libgl.la \
+-gsasl_LDADD = ../lib/src/libgsasl.la ../lib/gl/liblgl.la ../gl/libgl.la \
++gsasl_LDADD = -lgsasl $(LOCALBASE)/lib/liblgl.a ../gl/libgl.la \
  	$(LTLIBREADLINE) $(LTLIBGNUTLS) $(LIBSOCKET) $(LTLIBINTL) \
  	libgsasl_cmd.la
  

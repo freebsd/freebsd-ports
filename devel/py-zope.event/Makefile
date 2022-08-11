@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	zope.event
 PORTVERSION=	4.1.0
 CATEGORIES=	devel python zope

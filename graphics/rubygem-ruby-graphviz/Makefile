@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	ruby-graphviz
 PORTVERSION=	1.2.5
 CATEGORIES=	graphics ruby rubygems

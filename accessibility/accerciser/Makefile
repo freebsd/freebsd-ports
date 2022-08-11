@@ -1,10 +1,8 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	accerciser
 PORTVERSION=	3.38.0
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Interactive Python accessibility explorer for GNOME

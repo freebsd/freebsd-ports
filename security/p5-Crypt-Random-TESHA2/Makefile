@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Crypt-Random-TESHA2
 PORTVERSION=	0.01
 CATEGORIES=	security perl5

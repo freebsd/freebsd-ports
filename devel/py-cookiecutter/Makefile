@@ -25,8 +25,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}poyo>=0:devel/py-poyo@${PY_FLAVOR} \
 		git:devel/git
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
+
+CPE_VENDOR=	cookiecutter_project
 
 NO_ARCH=	yes
 

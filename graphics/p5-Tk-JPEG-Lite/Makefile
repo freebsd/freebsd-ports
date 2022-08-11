@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	Tk-JPEG-Lite
 PORTVERSION=	2.01500
 PORTREVISION=	2

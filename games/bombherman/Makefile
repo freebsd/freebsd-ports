@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	bomb-her-man
 PORTVERSION=	0.3
 PORTREVISION=	7

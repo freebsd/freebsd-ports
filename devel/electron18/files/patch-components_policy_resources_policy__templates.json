@@ -1,0 +1,191 @@
+--- components/policy/resources/policy_templates.json.orig	2022-05-19 05:17:40 UTC
++++ components/policy/resources/policy_templates.json
+@@ -1430,7 +1430,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'pastarmovj@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.win7:11-', 'chrome.mac:11-', 'chrome.linux:11-'],
++      'supported_on': ['chrome.win7:11-', 'chrome.mac:11-', 'chrome.linux:11-', 'chrome.openbsd:11-', 'chrome.freebsd:11-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -2534,7 +2534,7 @@
+       'owners': ['file://remoting/OWNERS', 'jamiewalch@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.linux:25-', 'chrome.mac:25-'],
++      'supported_on': ['chrome.linux:25-', 'chrome.mac:25-', 'chrome.openbsd:25-', 'chrome.freebsd:25-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -4300,7 +4300,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'pastarmovj@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.win:57-', 'chrome.mac:88-', 'chrome.linux:88-'],
++      'supported_on': ['chrome.win:57-', 'chrome.mac:88-', 'chrome.linux:88-', 'chrome.openbsd:88-', 'chrome.freebsd:88-'],
+       'features': {
+         'dynamic_refresh': False,
+         'per_profile': False,
+@@ -4329,7 +4329,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'pastarmovj@chromium.org'],
+       'type': 'string',
+       'schema': { 'type': 'string' },
+-      'supported_on': ['chrome.win:57-', 'chrome.mac:88-', 'chrome.linux:88-'],
++      'supported_on': ['chrome.win:57-', 'chrome.mac:88-', 'chrome.linux:88-', 'chrome.openbsd:88-', 'chrome.freebsd:88-'],
+       'features': {
+         'dynamic_refresh': False,
+         'per_profile': False,
+@@ -5262,7 +5262,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.linux:74-','chrome.mac:74-','chrome_os:74-'],
++      'supported_on': ['chrome.linux:74-','chrome.mac:74-','chrome_os:74-','chrome.openbsd:74-','chrome.freebsd:74-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -5323,7 +5323,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
+       'type': 'string',
+       'schema': { 'type': 'string' },
+-      'supported_on': ['chrome.linux:9-'],
++      'supported_on': ['chrome.linux:9-','chrome.openbsd:9-','chrome.freebsd:9-'],
+       'features': {
+         'dynamic_refresh': False,
+         'per_profile': False,
+@@ -5389,7 +5389,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.linux:63-','chrome.mac:63-','chrome_os:63-','android:63-','webview_android:63-'],
++      'supported_on': ['chrome.linux:63-','chrome.mac:63-','chrome_os:63-','android:63-','webview_android:63-','chrome.openbsd:63-','chrome.freebsd:63-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -10460,7 +10460,7 @@
+       'owners': ['file://net/cert/OWNERS', 'rsleevi@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome_os:30-', 'chrome.linux:30-', 'chrome.win:30-'],
++      'supported_on': ['chrome_os:30-', 'chrome.linux:30-', 'chrome.win:30-', 'chrome.openbsd:30-', 'chrome.freebsd:30-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -10554,7 +10554,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'pmarko@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome_os:77-83', 'chrome.linux:79-83', 'chrome.mac:83-'],
++      'supported_on': ['chrome_os:77-83', 'chrome.linux:79-83', 'chrome.mac:83-', 'chrome.openbsd:79-83', 'chrome.freebsd:79-83'],
+       'features': {
+         'dynamic_refresh': False,
+         'per_profile': False,
+@@ -12551,7 +12551,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'pmarko@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.win:19-', 'chrome.linux:19-'],
++      'supported_on': ['chrome.win:19-', 'chrome.linux:19-', 'chrome.openbsd:19-', 'chrome.freebsd:19-'],
+       'features': {
+         'can_be_recommended': True,
+         'dynamic_refresh': True,
+@@ -13409,7 +13409,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'bartfab@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.win:31-', 'chrome.linux:31-', 'chrome_os:31-'],
++      'supported_on': ['chrome.win:31-', 'chrome.linux:31-', 'chrome_os:31-', 'chrome.openbsd:31-', 'chrome.freebsd:31-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': True,
+@@ -20284,7 +20284,7 @@
+         'items': { 'type': 'string' }
+       },
+       # Spell checking is provided by macOS, so can't be controlled on Mac.
+-      'supported_on': ['chrome.win:65-', 'chrome.linux:65-', 'chrome_os:65-'],
++      'supported_on': ['chrome.win:65-', 'chrome.linux:65-', 'chrome_os:65-', 'chrome.openbsd:65-', 'chrome.freebsd:65-'],
+       'features': {
+         'can_be_recommended': False,
+         'dynamic_refresh': True,
+@@ -20315,7 +20315,7 @@
+         'items': { 'type': 'string' }
+       },
+       # Spell checking is provided by macOS, so can't be controlled on Mac.
+-      'supported_on': ['chrome.win:75-', 'chrome.linux:75-', 'chrome_os:75-'],
++      'supported_on': ['chrome.win:75-', 'chrome.linux:75-', 'chrome_os:75-', 'chrome.openbsd:75-', 'chrome.freebsd:75-'],
+       'deprecated': True,
+       'features': {
+         'can_be_recommended': False,
+@@ -20349,7 +20349,7 @@
+         'items': { 'type': 'string' }
+       },
+       # Spell checking is provided by macOS, so can't be controlled on Mac.
+-      'supported_on': ['chrome.win:86-', 'chrome.linux:86-', 'chrome_os:86-'],
++      'supported_on': ['chrome.win:86-', 'chrome.linux:86-', 'chrome_os:86-', 'chrome.openbsd:86-', 'chrome.freebsd:86-'],
+       'features': {
+         'can_be_recommended': False,
+         'dynamic_refresh': True,
+@@ -21087,7 +21087,7 @@
+       'owners': ['fbeaufort@chromium.org', 'beccahughes@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.win:66-', 'chrome.linux:66-', 'chrome.mac:66-', 'chrome_os:66-'],
++      'supported_on': ['chrome.win:66-', 'chrome.linux:66-', 'chrome.mac:66-', 'chrome_os:66-', 'chrome.openbsd:66-', 'chrome.freebsd:66-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': True,
+@@ -25361,7 +25361,7 @@
+       'owners': ['file://services/audio/OWNERS', 'dalecurtis@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.win:79-', 'chrome.linux:79-', 'chrome.mac:79-'],
++      'supported_on': ['chrome.win:79-', 'chrome.linux:79-', 'chrome.mac:79-', 'chrome.openbsd:79-', 'chrome.freebsd:79-'],
+       'features': {
+         'dynamic_refresh': False,
+         'per_profile': False,
+@@ -26703,7 +26703,7 @@ If this policy is left unset, privacy screen is disabl
+       'owners': ['file://chrome/browser/notifications/OWNERS', 'knollr@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.linux:83-'],
++      'supported_on': ['chrome.linux:83-','chrome.openbsd:83-','chrome.freebsd:83-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': True,
+@@ -26727,7 +26727,7 @@ If set to False, <ph name="PRODUCT_NAME">$1<ex>Google 
+       'owners': ['file://chrome/browser/notifications/OWNERS'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.linux:90-'],
++      'supported_on': ['chrome.linux:90-','chrome.openbsd:90-','chrome.freebsd:90-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': True,
+@@ -27796,7 +27796,7 @@ If you disable this policy, web page scrolling to spec
+       'owners': ['asumaneev@google.com'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.linux:91-92', 'chrome_os:91-'],
++      'supported_on': ['chrome.linux:91-92', 'chrome_os:91-', 'chrome.openbsd:91-', 'chrome.freebsd:91-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -29032,7 +29032,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2
+         },
+       ],
+       'default': True,
+-      'supported_on': ['chrome.win:93-', 'chrome.linux:93-', 'chrome.mac:93-'],
++      'supported_on': ['chrome.win:93-', 'chrome.linux:93-', 'chrome.mac:93-', 'chrome.openbsd:93-', 'chrome.freebsd:93-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': True,
+@@ -29165,7 +29165,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2
+       'owners': ['mattm@chromium.org'],
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'future_on': ['chrome.win', 'chrome.mac', 'chrome.linux'],
++      'future_on': ['chrome.win', 'chrome.mac', 'chrome.linux', 'chrome.openbsd', 'chrome.freebsd'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': True,

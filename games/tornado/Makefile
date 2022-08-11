@@ -1,5 +1,3 @@
-# Created by: minter@lunenburg.org
-
 PORTNAME=	tornado
 PORTVERSION=	1.4
 PORTREVISION=	3

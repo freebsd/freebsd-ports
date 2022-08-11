@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Bio-Phylo
 PORTVERSION=	2.0.1
 DISTVERSIONPREFIX=	v

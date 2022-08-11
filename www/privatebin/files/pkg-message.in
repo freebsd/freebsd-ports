@@ -1,0 +1,14 @@
+[
+{ type: remove
+  message: <<EOM
+------------------------------------------------------------------------------
+
+If you are no longer using the %%PORTNAME%% port, then manually delete
+the following directory and all its contents:
+
+	/var/db/%%PORTNAME%%
+
+------------------------------------------------------------------------------
+EOM
+}
+]

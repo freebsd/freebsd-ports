@@ -7,6 +7,7 @@
 # Configuration settings for jitsi-videobridge in /etc/rc.conf:
 #
 # jitsi_videobridge_enable:	run jitsi_videobridge server (default=NO)
+# jitsi_videobridge_maxmem:	maximum memory used (default=3072m)
 # jitsi_videobridge_flags:	additional flags for jitsi_videobridge server (default="")
 #
 
@@ -15,19 +16,21 @@
 name="jitsi_videobridge"
 rcvar=${name}_enable
 
-jitsi_videobridge_env_file="%%ETCDIR%%/jitsi-videobridge.conf"
+jitsi_videobridge_config="%%ETCDIR%%/jitsi-videobridge.conf"
 jitsi_videobridge_jar="%%JAVAJARDIR%%/jitsi-videobridge.jar"
 jitsi_videobridge_logging_config="%%DATADIR%%/lib/logging.properties"
+jitsi_videobridge_user="jvb"
 
 load_rc_config "${name}"
 
 : ${jitsi_videobridge_enable="NO"}
+: ${jitsi_videobridge_maxmem="3072m"}
 : ${jitsi_videobridge_flags=""}
 
 command="%%JAVA%%"
 
 pidfile="/var/run/jitsi-videobridge.pid"
-required_files="${jitsi_videobridge_env_file}"
+required_files="${jitsi_videobridge_config}"
 start_cmd=${name}_start
 stop_cmd=${name}_stop
 status_cmd=${name}_status
@@ -35,48 +38,47 @@ restart_cmd=${name}_restart
 
 jitsi_videobridge_start()
 {
-	daemon -p ${pidfile} -o /var/log/jitsi-videobridge.log \
-		${command} -Xmx${VIDEOBRIDGE_MAX_MEMORY} \
-                -XX:+UseConcMarkSweepGC \
-                -XX:+HeapDumpOnOutOfMemoryError \
-                -XX:HeapDumpPath=/tmp \
-                -Djava.util.logging.config.file=${jitsi_videobridge_logging_config} \
-                -Dnet.java.sip.communicator.SC_HOME_DIR_LOCATION=%%LOCALBASE%%/etc/jitsi \
-                -Dnet.java.sip.communicator.SC_HOME_DIR_NAME=videobridge \
-                -Dnet.java.sip.communicator.SC_LOG_DIR_LOCATION=/var/log/ \
-                -cp ${jitsi_videobridge_jar} \
-                org.jitsi.videobridge.Main \
-                --host=${JVB_XMPP_HOST} \
-                --domain=${JVB_XMPP_DOMAIN} \
-                --port=${JVB_XMPP_PORT} \
-                --secret=${JVB_XMPP_SECRET} ${jitsi_videobridge_flags}
-                echo "Started"
+	daemon -u ${jitsi_videobridge_user} -p ${pidfile} -o /var/log/jitsi-videobridge.log \
+		${command} -Xmx${jitsi_videobridge_maxmem} \
+		-XX:+UseConcMarkSweepGC \
+		-XX:+HeapDumpOnOutOfMemoryError \
+		-XX:HeapDumpPath=/tmp \
+		-Djava.util.logging.config.file=${jitsi_videobridge_logging_config} \
+		-Dnet.java.sip.communicator.SC_HOME_DIR_LOCATION=%%LOCALBASE%%/etc/jitsi \
+		-Dnet.java.sip.communicator.SC_HOME_DIR_NAME=videobridge \
+		-Dnet.java.sip.communicator.SC_LOG_DIR_LOCATION=/var/log/ \
+		-Dconfig.file=${jitsi_videobridge_config} \
+		-cp ${jitsi_videobridge_jar} \
+		org.jitsi.videobridge.MainKt \
+		${jitsi_videobridge_flags}
+
+		echo "Starting ${name}"
 }
 
 jitsi_videobridge_stop()
 {
-        if [ -f ${pidfile} ]
-        then
-                kill `cat ${pidfile}`
-                rm ${pidfile}
-		echo "Stopped"
-        fi
+	if [ -f ${pidfile} ]
+	then
+		kill `cat ${pidfile}`
+		rm ${pidfile}
+		echo "Stopping ${name}"
+	fi
 }
 
 jitsi_videobridge_status()
 {
-        # If running, show pid
-        if [ -f ${pidfile} ]
-        then
-                echo "${name} is running as pid" `cat ${pidfile}`
-        else
-                echo "${name} is not running"
-        fi
+	# If running, show pid
+	if [ -f ${pidfile} ]
+	then
+		echo "${name} is running as pid" `cat ${pidfile}`
+	else
+		echo "${name} is not running"
+	fi
 }
 
 jitsi_videobridge_restart()
 {
-	echo "Performing restart"
+	echo "Performing restart ${name}"
 	jitsi_videobridge_stop
 	sleep 5
 	jitsi_videobridge_start

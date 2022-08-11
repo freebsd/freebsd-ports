@@ -1,7 +1,6 @@
 PORTNAME=	digital
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27
-PORTREVISION=	1
+DISTVERSION=	0.29
 CATEGORIES=	cad java
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,10 +13,12 @@ BUILD_DEPENDS=	mvn:devel/maven
 
 USES=		desktop-file-utils
 
-USE_JAVA=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	hneemann
 GH_PROJECT=	Digital
+
+USE_JAVA=	yes
+JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=76025, tid=0x000000000006e359 guarantee(val < (1U << nbits)) failed: Field too big for insn
 
 NO_ARCH=	yes
 

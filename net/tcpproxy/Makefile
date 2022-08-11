@@ -1,5 +1,3 @@
-# Created by: Alexander Hausner <alex@hugo.bmg.gv.at>
-
 PORTNAME=	tcpproxy
 PORTVERSION=	1.2
 CATEGORIES=	net

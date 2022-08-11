@@ -1,5 +1,3 @@
-# Created by: Yuichiro NAITO <naito.yuichiro@gmail.com>
-
 PORTNAME=	itamae
 PORTVERSION=	1.10.7
 CATEGORIES=	sysutils rubygems

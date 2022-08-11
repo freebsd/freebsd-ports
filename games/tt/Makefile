@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	tt
 PORTVERSION=	15.1
 CATEGORIES=	games

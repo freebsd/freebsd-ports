@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	wbar
 PORTVERSION=	2.3.4
 PORTREVISION=	5

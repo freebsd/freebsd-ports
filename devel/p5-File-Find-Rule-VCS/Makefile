@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	File-Find-Rule-VCS
 PORTVERSION=	1.08
 PORTREVISION=	1

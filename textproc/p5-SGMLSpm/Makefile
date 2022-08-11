@@ -1,5 +1,3 @@
-# Created by: Brian Candler <B.Candler@pobox.com>
-
 PORTNAME=	SGMLSpm
 PORTVERSION=	1.03
 DISTVERSIONSUFFIX=	ii

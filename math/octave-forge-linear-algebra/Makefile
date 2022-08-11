@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-linear-algebra
 PORTVERSION=	2.2.3
 PORTREVISION=	3

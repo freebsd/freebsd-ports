@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	dump1090
 PORTVERSION=	20200718
 CATEGORIES=	comms

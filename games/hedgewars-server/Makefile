@@ -1,18 +1,19 @@
 PORTNAME=	hedgewars
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.hedgewars.org/download/releases/ \
 		http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-server
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Server part of free Worms-like turn based strategy game
 
 LICENSE=	GPLv2
+
+BUILD_DEPENDS=	ghc-8.10.7:lang/ghc810
 
 USES=		cabal:nodefault tar:bzip2
 
@@ -66,6 +67,6 @@ USE_CABAL=	ConfigFile-1.1.4 \
 		yaml-0.11.4.0 \
 		zlib-0.6.2.1_1
 
-EXECUTABLES=	hedgewars-server checker
+CABAL_EXECUTABLES=	hedgewars-server checker
 
 .include <bsd.port.mk>

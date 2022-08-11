@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Test-Base
 PORTVERSION=	0.89
 CATEGORIES=	devel perl5

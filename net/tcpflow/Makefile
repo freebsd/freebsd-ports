@@ -1,5 +1,3 @@
-# Created by: Jose M. Alcaide <jose@we.lc.ehu.es>
-
 PORTNAME=	tcpflow
 PORTVERSION=	1.5.0
 PORTREVISION=	5

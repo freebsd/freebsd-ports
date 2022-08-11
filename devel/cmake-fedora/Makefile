@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	cmake-fedora
 PORTVERSION=	2.9.2
 DISTVERSIONSUFFIX=	-modules-only

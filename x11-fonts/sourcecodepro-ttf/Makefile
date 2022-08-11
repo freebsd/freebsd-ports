@@ -1,5 +1,3 @@
-# Created by: Masaki TAGAWA <masaki@club.kyutech.ac.jp>
-
 PORTNAME=	sourcecodepro
 PORTVERSION=	2.038
 CATEGORIES=	x11-fonts

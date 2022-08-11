@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	MooseX-Getopt
 PORTVERSION=	0.75
 CATEGORIES=	devel perl5

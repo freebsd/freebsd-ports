@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	notify
 PORTVERSION=	1.3
 PORTREVISION=	3

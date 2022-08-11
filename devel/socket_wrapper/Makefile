@@ -18,6 +18,7 @@ CFLAGS_powerpc=		-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
 CFLAGS_powerpc64=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
 CFLAGS_powerpc64le=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
 CFLAGS_powerpcspe=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
+CFLAGS_riscv64=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
 CFLAGS_sparc64=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
 CMAKE_ARGS=		-DMAN_INSTALL_DIR:PATH="${PREFIX}/man"
 

@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Data-ShowTable
 PORTVERSION=	4.6
 PORTREVISION=	1

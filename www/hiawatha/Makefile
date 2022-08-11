@@ -1,5 +1,3 @@
-# Created by: Hugo Leisink
-
 PORTNAME=	hiawatha
 PORTVERSION=	10.12
 PORTREVISION=	3

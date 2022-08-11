@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	gitlab_emoji
 PORTVERSION=	0.3.1
 PORTREVISION=	1

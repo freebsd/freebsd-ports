@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann (oliver@FreeBSD.org)
-
 PORTNAME=	xfce4-dict
 PORTVERSION=	0.8.4
 PORTREVISION=	1

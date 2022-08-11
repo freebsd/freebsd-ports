@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	chameleon
 PORTVERSION=	0.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	oak
 PORTVERSION=	1.5.0
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Matt Dawson <matt@mattsnetwork.co.uk>
-
 PORTNAME=	xdx
 PORTVERSION=	2.4
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: Christian Geier <geier@lostpackets.de>
-
 PORTNAME=	click-threading
 DISTVERSION=	0.5.0
 CATEGORIES=	devel python

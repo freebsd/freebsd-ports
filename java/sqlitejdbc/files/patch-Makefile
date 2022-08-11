@@ -1,6 +1,6 @@
---- Makefile.orig	2008-06-18 01:39:02.000000000 +0200
-+++ Makefile	2008-06-23 16:12:40.000000000 +0200
-@@ -16,6 +16,7 @@
+--- Makefile.orig	2009-06-09 10:54:22 UTC
++++ Makefile
+@@ -16,6 +16,7 @@ include Makefile.common
  #
  
  include Makefile.common
@@ -8,7 +8,7 @@
  
  default: test
  
-@@ -29,13 +30,15 @@
+@@ -29,13 +30,15 @@ build/$(sqlitejdbc)-native.jar: $(native_classes)
  build/$(sqlitejdbc)-native.jar: $(native_classes)
  	cd build && jar cf $(sqlitejdbc)-native.jar $(java_classlist)
  
@@ -17,12 +17,21 @@
  	@mkdir -p build/$(target)
  	$(JAVAH) -classpath build -jni -o build/NativeDB.h org.sqlite.NativeDB
  	$(CC) $(CFLAGS) -c -o build/$(target)/NativeDB.o \
-+		-I%%LOCALBASE%%/include \
++		-I$(LOCALBASE)/include \
  		src/org/sqlite/NativeDB.c
  	$(CC) $(CFLAGS) $(LINKFLAGS) -o build/$(target)/$(LIBNAME) \
 -		build/$(target)/NativeDB.o build/$(sqlite)-$(target)/*.o
 +		build/$(target)/NativeDB.o \
-+		-L%%LOCALBASE%%/lib -lsqlite3
++		-L$(LOCALBASE)/lib -lsqlite3
  	$(STRIP) build/$(target)/$(LIBNAME)
  
  build/$(sqlite)-%/sqlite3.o: dl/$(sqlite)-amal.zip
+@@ -51,7 +54,7 @@ build/org/%.class: src/org/%.java
+ 
+ build/org/%.class: src/org/%.java
+ 	@mkdir -p build
+-	$(JAVAC) -source 1.2 -target 1.2 -sourcepath src -d build $<
++	$(JAVAC) -source 1.6 -target 1.6 -sourcepath src -d build $<
+ 
+ build/test/%.class: src/test/%.java
+ 	@mkdir -p build

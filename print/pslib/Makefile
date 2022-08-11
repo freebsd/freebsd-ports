@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pslib
 PORTVERSION=	0.4.6
 CATEGORIES=	print

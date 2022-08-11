@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	commons-logging
 PORTVERSION=	1.2
 CATEGORIES=	java devel
@@ -17,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OPTIONS_DEFINE=	DOCS
 
 USE_JAVA=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 JARFILE=	${PORTNAME}-${PORTVERSION}.jar

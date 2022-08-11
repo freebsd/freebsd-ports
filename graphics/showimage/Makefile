@@ -1,5 +1,3 @@
-# Created by: Rusty Nejdl <rnejdl@ringofsaturn.com>
-
 PORTNAME=	showimage
 PORTVERSION=	1.10
 PORTREVISION=	4

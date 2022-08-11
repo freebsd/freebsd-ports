@@ -1,5 +1,3 @@
-# Created by: Volker Stolz <vs@FreeBSD.org>
-
 PORTNAME=	ncc
 PORTVERSION=	2.8
 PORTREVISION=	3

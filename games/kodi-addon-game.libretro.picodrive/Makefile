@@ -1,5 +1,3 @@
-# Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
-
 PORTNAME=	game.libretro.picodrive
 PORTVERSION=	1.98.0.26
 DISTVERSIONSUFFIX=	-Matrix

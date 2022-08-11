@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@rainbow-runner.nl>
-
 PORTNAME=	gstreamer1-vaapi
 PORTVERSION=	1.16.2
 PORTREVISION=	2
@@ -16,11 +14,11 @@ LIB_DEPENDS=	libva.so:multimedia/libva
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		compiler:c11 gettext-runtime gl gmake gnome libtool \
+USES=		compiler:c11 gettext-runtime gl gmake gnome gstreamer libtool \
 		pkgconfig tar:xz xorg
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
-USE_GSTREAMER1=	bad gl
+USE_GSTREAMER=	bad gl
 USE_GL=		gl
 USE_XORG=	x11 xrandr xrender xorgproto
 

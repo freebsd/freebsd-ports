@@ -1,5 +1,3 @@
-# Created by: Sakai Hiroaki <sakai@seki.ee.kagu.sut.ac.jp>
-
 PORTNAME=	xkeywrap
 PORTVERSION=	1.1
 PORTREVISION=	3

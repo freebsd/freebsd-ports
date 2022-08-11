@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	fXSL
 PORTVERSION=	1.1.0
 CATEGORIES=	devel pear

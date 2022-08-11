@@ -15,6 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion \
 		${PEARDIR}/Text/Diff.php:devel/pear-Text_Diff@${PHP_FLAVOR}
 
 USES=		php:flavors cpe
+IGNORE_WITH_PHP=	82
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}php
 

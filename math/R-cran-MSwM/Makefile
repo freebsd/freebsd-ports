@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	MSwM
 PORTVERSION=	1.5
 CATEGORIES=	math

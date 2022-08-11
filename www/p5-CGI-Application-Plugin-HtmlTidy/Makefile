@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Plugin-HtmlTidy
 PORTVERSION=	1.05
 PORTREVISION=	1

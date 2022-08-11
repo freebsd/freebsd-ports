@@ -1393,6 +1393,7 @@
 %%WWWDIR%%/tools/del_orphans/lang/english.php
 %%WWWDIR%%/tools/file2title/file2title.php
 %%WWWDIR%%/tools/keyw_conv/keyw_conv.php
+%%WWWDIR%%/tools/re_key/re_key.php
 %%WWWDIR%%/tools/refresh/refresh.php
 %%WWWDIR%%/tools/reset_views/reset_views.php
 %%WWWDIR%%/tools/upd_thumbs/upd_thumbs.php

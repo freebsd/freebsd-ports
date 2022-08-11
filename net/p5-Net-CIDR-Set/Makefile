@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Net-CIDR-Set
 PORTVERSION=	0.13
 PORTREVISION=	1

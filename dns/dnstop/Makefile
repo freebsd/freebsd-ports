@@ -1,5 +1,3 @@
-# Created by: fenner
-
 PORTNAME=	dnstop
 PORTVERSION=	20140915
 CATEGORIES=	dns

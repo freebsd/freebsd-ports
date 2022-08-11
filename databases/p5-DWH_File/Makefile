@@ -1,5 +1,3 @@
-# Created by: mharo@FreeBSD.org
-
 PORTNAME=	DWH_File
 PORTVERSION=	0.24
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Class-ArrayObjects
 PORTVERSION=	1.03
 PORTREVISION=	1

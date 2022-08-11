@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	LWP-MediaTypes
 PORTVERSION=	6.04
 CATEGORIES=	www perl5

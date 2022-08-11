@@ -1,5 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-
 PORTNAME=	libworkman
 PORTVERSION=	1.4
 PORTREVISION=	3

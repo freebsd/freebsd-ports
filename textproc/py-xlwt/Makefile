@@ -1,5 +1,3 @@
-# Created by: Dikshie
-
 PORTNAME=	xlwt
 PORTVERSION=	1.3.0
 CATEGORIES=	textproc python

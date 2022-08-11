@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	MP3-Find
 PORTVERSION=	0.07
 PORTREVISION=	1

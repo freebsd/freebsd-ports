@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Sort-ArrayOfArrays
 PORTVERSION=	1.00
 PORTREVISION=	1

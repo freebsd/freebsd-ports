@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	IMAP-Client
 PORTVERSION=	0.13
 PORTREVISION=	1

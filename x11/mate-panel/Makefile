@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	mate-panel
 PORTVERSION=	1.26.2
 PORTEPOCH=	1

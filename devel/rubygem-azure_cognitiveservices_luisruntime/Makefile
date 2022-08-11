@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_cognitiveservices_luisruntime
 PORTVERSION=	0.18.1
 CATEGORIES=	devel rubygems

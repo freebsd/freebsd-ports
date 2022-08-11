@@ -1,5 +1,3 @@
-# Created by: Jeremy Chadwick <koitsu@FreeBSD.org>
-
 PORTNAME=	rrdtool
 PORTVERSION=	1.2.30
 PORTREVISION=	8
@@ -14,7 +12,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libart_lgpl_2.so:graphics/libart_lgpl \
 		libpng.so:graphics/png
 
-CONFLICTS=	rrdtool-1.*
+CONFLICTS_INSTALL=	rrdtool # include/rrd.h
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

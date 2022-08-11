@@ -1,5 +1,3 @@
-# Created by: Shinsuke Matsui <smatsui@karashi.org>
-
 PORTNAME=	HTML-Entities-ImodePictogram
 PORTVERSION=	0.06
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	netcdf-fortran
 PORTVERSION=	4.5.4
 CATEGORIES=	science

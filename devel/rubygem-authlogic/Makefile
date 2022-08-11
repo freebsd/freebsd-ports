@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <avl@FreeBSD.org>
-
 PORTNAME=	authlogic
 PORTVERSION=	6.4.2
 CATEGORIES=	devel rubygems

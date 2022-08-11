@@ -1,5 +1,3 @@
-# Created by: Yanhui Shen <shen.elf@gmail.com>
-
 PORTNAME=	mous
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.1

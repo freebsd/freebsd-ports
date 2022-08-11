@@ -1,5 +1,3 @@
-# Created by: Sean Farley <sean-freebsd@farley.org>
-
 PORTNAME=	linux-ut
 PORTVERSION=	${UTVERSION}
 PORTREVISION=	5

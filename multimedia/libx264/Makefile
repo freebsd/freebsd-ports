@@ -1,4 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
 #
 # Updating notes: see multimedia/x264/Makefile.
 

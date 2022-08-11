@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	gitlab_chronic_duration
 PORTVERSION=	0.10.6.2
 CATEGORIES=	devel rubygems

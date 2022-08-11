@@ -1,5 +1,3 @@
-# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-
 PORTNAME=	x-face-e21
 PORTVERSION=	20070306
 PORTREVISION=	23

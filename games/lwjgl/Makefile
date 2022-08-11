@@ -1,5 +1,3 @@
-# Created by: loader <loader@freebsdmall.com>
-
 PORTNAME=	lwjgl
 DISTVERSION=	2.9.4.20161208
 CATEGORIES=	games java

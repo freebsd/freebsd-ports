@@ -8276,6 +8276,8 @@
 %%DATADIR%%/3dmodels/Fuse.3dshapes/Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open.wrl
 %%DATADIR%%/3dmodels/Fuse.3dshapes/Fuseholder_Cylinder-6.3x32mm_Schurter_0031-8002_Horizontal_Open.step
 %%DATADIR%%/3dmodels/Fuse.3dshapes/Fuseholder_Cylinder-6.3x32mm_Schurter_0031-8002_Horizontal_Open.wrl
+%%DATADIR%%/3dmodels/Fuse.3dshapes/Fuseholder_Schurter_0031.7701.xx.step
+%%DATADIR%%/3dmodels/Fuse.3dshapes/Fuseholder_Schurter_0031.7701.xx.wrl
 %%DATADIR%%/3dmodels/Fuse.3dshapes/Fuseholder_TR5_Littelfuse_No560_No460.step
 %%DATADIR%%/3dmodels/Fuse.3dshapes/Fuseholder_TR5_Littelfuse_No560_No460.wrl
 %%DATADIR%%/3dmodels/Heatsink.3dshapes/Heatsink_125x35x50mm_3xFixationM3.step
@@ -8516,6 +8518,8 @@
 %%DATADIR%%/3dmodels/Inductor_THT.3dshapes/L_CommonMode_Toroid_Vertical_L41.9mm_W20.3mm_Px15.24mm_Py22.86mm_Bourns_8100.wrl
 %%DATADIR%%/3dmodels/Inductor_THT.3dshapes/L_CommonMode_Toroid_Vertical_L43.2mm_W22.9mm_Px17.78mm_Py30.48mm_Bourns_8100.step
 %%DATADIR%%/3dmodels/Inductor_THT.3dshapes/L_CommonMode_Toroid_Vertical_L43.2mm_W22.9mm_Px17.78mm_Py30.48mm_Bourns_8100.wrl
+%%DATADIR%%/3dmodels/Inductor_THT.3dshapes/L_CommonMode_Vertical_L22mm_W20mm_Px10.5mm_Py13.5mm_ProdTech_PDUUAT16.step
+%%DATADIR%%/3dmodels/Inductor_THT.3dshapes/L_CommonMode_Vertical_L22mm_W20mm_Px10.5mm_Py13.5mm_ProdTech_PDUUAT16.wrl
 %%DATADIR%%/3dmodels/Inductor_THT.3dshapes/L_Radial_D10.0mm_P5.00mm_Fastron_07M.step
 %%DATADIR%%/3dmodels/Inductor_THT.3dshapes/L_Radial_D10.0mm_P5.00mm_Fastron_07M.wrl
 %%DATADIR%%/3dmodels/Inductor_THT.3dshapes/L_Radial_D10.0mm_P5.00mm_Fastron_07P.step

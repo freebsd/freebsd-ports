@@ -1,6 +1,6 @@
 PORTNAME=	converseen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.9.5
+DISTVERSION=	0.9.9.6
 CATEGORIES=	graphics
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -16,10 +16,6 @@ USE_QT=		core gui network widgets \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Faster3ck
 GH_PROJECT=	Converseen
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^install(FILES converseen.appdata.xml/s|/usr|$${CMAKE_INSTALL_PREFIX}|' \
-		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/converseen

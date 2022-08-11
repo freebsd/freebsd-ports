@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Engine-Apache
 PORTVERSION=	1.16
 PORTREVISION=	1

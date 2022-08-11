@@ -1,5 +1,3 @@
-# Created by: arensb@ooblick.com
-
 PORTNAME=	gensig
 PORTVERSION=	2.3
 PORTREVISION=	1

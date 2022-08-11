@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# PROVIDE: dtlogin
+# REQUIRE: LOGIN dbus dtspc
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable dtlogin:
+# dtlogin_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=dtlogin
+rcvar=dtlogin_enable
+desc="Display manager for CDE"
+
+load_rc_config dtlogin
+
+: ${dtlogin_enable:=NO}
+
+command=%%PREFIX%%/dt25/bin/dtlogin
+command_args=-daemon
+
+start_precmd=dtlogin_prestart
+
+dtlogin_prestart()
+{
+	if ! [ -f "%%PREFIX%%/etc/X11/Xwrapper.config" ]; then
+		echo "If dtlogin fails to start:"
+		echo "# echo allowed_users=anybody >> %%PREFIX%%/etc/X11/Xwrapper.config"
+	fi
+}
+
+run_rc_command $1

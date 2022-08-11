@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	SVN-Dumpfile
 PORTVERSION=	0.13.107
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Class-Tiny-Chained
 PORTVERSION=	0.004
 CATEGORIES=	devel perl5

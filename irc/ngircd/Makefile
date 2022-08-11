@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	ngircd
 PORTVERSION=	26.1
 PORTEPOCH=	1

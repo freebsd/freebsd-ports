@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	CGI-Expand
 PORTVERSION=	2.05
 PORTREVISION=	1

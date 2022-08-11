@@ -1,5 +1,3 @@
-# Created by: sumikawa
-
 PORTNAME=	xbattbar
 PORTVERSION=	1.4.2
 PORTREVISION=	8

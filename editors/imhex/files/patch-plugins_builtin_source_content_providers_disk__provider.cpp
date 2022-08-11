@@ -1,6 +1,6 @@
---- plugins/builtin/source/content/providers/disk_provider.cpp.orig	2022-02-15 12:57:57 UTC
+--- plugins/builtin/source/content/providers/disk_provider.cpp.orig	2022-03-03 13:32:30 UTC
 +++ plugins/builtin/source/content/providers/disk_provider.cpp
-@@ -15,7 +15,9 @@
+@@ -17,7 +17,9 @@
      #include <sys/stat.h>
      #include <sys/types.h>
  

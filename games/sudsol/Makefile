@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@fxq.nl>
-
 PORTNAME=	sudsol
 PORTVERSION=	0.1
 CATEGORIES=	games

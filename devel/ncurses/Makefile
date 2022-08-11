@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	ncurses
 DISTVERSION=	6.3
 CATEGORIES=	devel
@@ -42,7 +40,7 @@ CONFIGURE_ARGS=		--datadir=${PREFIX}/share \
 			--with-termlib \
 			--without-manpage-renames
 
-OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES MANPAGES PROFILE TRACE
+OPTIONS_DEFINE=		DOCS EXAMPLES MANPAGES PROFILE TRACE
 OPTIONS_DEFAULT=	DOCS EXAMPLES MANPAGES
 
 TRACE_DESC=	Add trace() function to all models of ncurses
@@ -76,9 +74,15 @@ EXAMPLES_CPP=	cursesapp.cc cursesapp.h cursesf.cc cursesf.h cursesm.cc \
 TRACE_CONFIGURE_ON=		--with-trace
 PROFILE_CONFIGURE_WITH=		profile
 MANPAGES_CONFIGURE_WITH=	manpages
-DEBUG_CONFIGURE_WITH=		debug
 
 OPTIONS_SUB=	yes
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--with-debug
+PLIST_SUB+=	DEBUG=""
+.else
+PLIST_SUB+=	DEBUG="@comment "
+.endif
 
 .include <bsd.port.options.mk>
 

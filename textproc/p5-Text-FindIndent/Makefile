@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Text-FindIndent
 PORTVERSION=	0.10
 PORTREVISION=	1

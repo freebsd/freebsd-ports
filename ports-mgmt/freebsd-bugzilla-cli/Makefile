@@ -1,5 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
-
 PORTNAME=	freebsd-bugzilla-cli
 PORTVERSION=	0.15.1
 CATEGORIES=	ports-mgmt

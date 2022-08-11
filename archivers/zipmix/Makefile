@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	zipmix
 DISTVERSION=	20070221
 CATEGORIES=	archivers

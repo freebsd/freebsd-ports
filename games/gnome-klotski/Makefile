@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	gnome-klotski
 PORTVERSION=	3.38.2
 CATEGORIES=	games gnome

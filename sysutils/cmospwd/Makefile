@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	cmospwd
 PORTVERSION=	5.1
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	tbclock
 PORTVERSION=	1.10
 CATEGORIES=	games

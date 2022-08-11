@@ -1,5 +1,3 @@
-# Created by: Aragon Gouveia <aragon@phat.za.net>
-
 PORTNAME=	volman
 PORTVERSION=	0.7
 PORTREVISION=	2

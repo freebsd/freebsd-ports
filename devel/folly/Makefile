@@ -1,7 +1,6 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.03.28.00
-PORTREVISION=	2
+DISTVERSION=	2022.08.08.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,11 +27,12 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 RUN_DEPENDS=	elfutils>0:devel/elfutils # workaround for missing symbols like DW_UT_compile: https://github.com/facebook/folly/issues/1654
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake compiler:c++17-lang cpe ssl
+USES=		cmake compiler:c++17-lang cpe localbase ssl
+USE_LDCONFIG=	yes
+
 CPE_VENDOR=	facebook
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
-USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	FREEBSD_BUILD_EXAMPLES FREEBSD_FOLLY_USE_SYMBOLIZER # enabling symbolizer causes undefined symbol _r_debug, see https://github.com/facebook/folly/issues/1373

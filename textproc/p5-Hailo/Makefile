@@ -1,5 +1,3 @@
-# Created by: milki <milki@rescomp.berkeley.edu>
-
 PORTNAME=	Hailo
 PORTVERSION=	0.75
 CATEGORIES=	textproc perl5

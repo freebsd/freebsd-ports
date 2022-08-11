@@ -1,8 +1,6 @@
-# Created by: Anton Karpov <toxa@toxahost.ru>
-
 PORTNAME=	graveman
 DISTVERSION=	0.3.12-5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://graveman.tuxfamily.org/sources/
 

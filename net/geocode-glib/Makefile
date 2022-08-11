@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	geocode-glib
 PORTVERSION=	3.26.2
 CATEGORIES=	net devel gnome

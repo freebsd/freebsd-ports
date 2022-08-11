@@ -1,5 +1,3 @@
-# Created by: Martin Sugioarto <martin.sugioarto@udo.edu>
-
 PORTNAME=	iiview
 PORTVERSION=	0.31
 DISTVERSIONPREFIX=	v

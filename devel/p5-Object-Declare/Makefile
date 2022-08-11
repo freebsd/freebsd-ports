@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Object-Declare
 PORTVERSION=	0.25
 CATEGORIES=	devel perl5

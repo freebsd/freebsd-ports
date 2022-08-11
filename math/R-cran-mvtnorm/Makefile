@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	mvtnorm
 DISTVERSION=	1.1-3
 CATEGORIES=	math

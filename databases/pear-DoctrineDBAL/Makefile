@@ -1,11 +1,9 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	DoctrineDBAL
 PORTVERSION=	2.3.4
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pear.doctrine-project.org/get/
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Database abstraction layer used to power the ORM package
 
 LICENSE=	MIT

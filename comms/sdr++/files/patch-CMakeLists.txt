@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2021-10-17 22:38:02 UTC
++++ CMakeLists.txt
+@@ -1,11 +1,11 @@ project(sdrpp)
+ cmake_minimum_required(VERSION 3.13)
+ project(sdrpp)
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
++#if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+     set(CMAKE_INSTALL_PREFIX "/usr/local")
+-else()
+-    set(CMAKE_INSTALL_PREFIX "/usr")
+-endif()
++#else()
++#    set(CMAKE_INSTALL_PREFIX "/usr")
++#endif()
+ 
+ # Compatibility Options
+ option(OPT_OVERRIDE_STD_FILESYSTEM "Use a local version of std::filesystem on systems that don't have it yet" OFF)
+@@ -206,8 +206,8 @@ configure_file(${CMAKE_SOURCE_DIR}/sdrpp.desktop ${CMA
+ install(DIRECTORY ${CMAKE_SOURCE_DIR}/root/res/themes DESTINATION share/sdrpp)
+ configure_file(${CMAKE_SOURCE_DIR}/sdrpp.desktop ${CMAKE_CURRENT_BINARY_DIR}/sdrpp.desktop @ONLY)
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/sdrpp.desktop DESTINATION /usr/share/applications)
++if (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/sdrpp.desktop DESTINATION share/applications)
+ endif ()
+ 
+ # Create uninstall target

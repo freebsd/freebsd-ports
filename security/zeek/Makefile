@@ -1,7 +1,6 @@
-# Created by: David O'Brien <obrien@FreeBSD.org>
-
 PORTNAME=	zeek
-PORTVERSION=	4.0.6
+PORTVERSION=	5.0.0
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -11,16 +10,20 @@ COMMENT=	System for detecting network intruders in real-time
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_FreeBSD_12_powerpc64=	Does not build: error: zero-size array 'names'
+BROKEN_FreeBSD_12_powerpc64=	does not build: error: zero-size array 'names'
 
-USES=		bison cmake compiler:c++11-lang cpe gettext-runtime \
+BUILD_DEPENDS=	cmake>=3.15.0:devel/cmake
+
+USES=		bison cmake compiler cpe gettext-runtime \
 		ninja perl5 python shebangfix ssl
+
 USE_LDCONFIG=	yes
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 PORTSCOUT=	limit:0,even
 
 CXXFLAGS_powerpc64=	-mpower8-vector
-CMAKE_ARGS+=		-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
 
 SHEBANG_FILES=	auxil/zeekctl/auxil/trace-summary/trace-summary
 
@@ -28,18 +31,19 @@ SUB_FILES=	pkg-message
 NO_MTREE=	yes
 
 CMAKE_ARGS+=	-GNinja \
-		-D CMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
-		-D ZEEK_ROOT_DIR:PATH=${PREFIX} \
-		-D PY_MOD_INSTALL_DIR:PATH=${PREFIX}/lib/zeekctl \
-		-D ZEEK_SCRIPT_INSTALL_PATH:PATH=${PREFIX}/share/zeek \
-		-D ZEEK_ETC_INSTALL_DIR:PATH=${PREFIX}/etc \
-		-D ZEEK_MAN_INSTALL_PATH=${MANPREFIX}/man \
-		-D ENABLE_PERFTOOLS_DEBUG:BOOL=false \
-		-D BinPAC_SKIP_INSTALL:BOOL=true \
-		-D INSTALL_AUX_TOOLS:BOOL=true \
 		-D BUILD_SHARED_LIBS:BOOL=true \
 		-D BUILD_STATIC_BROKER:BOOL=true \
-		-D CMAKE_EXE_LINKER_FLAGS="${OPENSSL_LDFLAGS}"
+		-D BinPAC_SKIP_INSTALL:BOOL=true \
+		-D CMAKE_EXE_LINKER_FLAGS="${OPENSSL_LDFLAGS}" \
+		-D CMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
+		-D ENABLE_PERFTOOLS_DEBUG:BOOL=false \
+		-D INSTALL_AUX_TOOLS:BOOL=true \
+		-D PYTHON_EXECUTABLE:PATH=${PYTHON_CMD} \
+		-D PY_MOD_INSTALL_DIR:PATH=${PREFIX}/lib/zeekctl \
+		-D ZEEK_ETC_INSTALL_DIR:PATH=${PREFIX}/etc \
+		-D ZEEK_MAN_INSTALL_PATH=${MANPREFIX}/man \
+		-D ZEEK_ROOT_DIR:PATH=${PREFIX} \
+		-D ZEEK_SCRIPT_INSTALL_PATH:PATH=${PREFIX}/share/zeek
 
 ZEEKUSER?=	zeek
 ZEEKGROUP?=	zeek
@@ -52,13 +56,18 @@ USERS=		${ZEEKUSER}
 GROUPS=		${ZEEKGROUP}
 
 OPTIONS_DEFINE=	BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP PERFTOOLS \
-		ZEEKCTL ZKG
+		SPICY ZEEKCTL ZKG
 
 OPTIONS_SINGLE=			BUILD_TYPE
 OPTIONS_SINGLE_BUILD_TYPE=	DEBUG MINSIZEREL RELEASE RELWITHDEBINFO
 
 OPTIONS_DEFAULT=	BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP RELEASE \
 			ZEEKCTL ZKG
+OPTIONS_DEFAULT_aarch64=	SPICY
+OPTIONS_DEFAULT_amd64=	SPICY
+OPTIONS_DEFAULT_armv6=	SPICY
+OPTIONS_DEFAULT_armv7=	SPICY
+OPTIONS_DEFAULT_i386=	SPICY
 OPTIONS_SUB=		yes
 
 BROKER_DESC=		Enable the Broker communication library
@@ -72,6 +81,7 @@ NETMAP_DESC=		Native Netmap Packet IOSource for Zeek
 PERFTOOLS_DESC=		Use Perftools to improve memory & CPU usage
 RELEASE_DESC=		Optimizations on, debug symbols/flags off
 RELWITHDEBINFO_DESC=	Optimizations/debug symbols on, debug flags off
+SPICY_DESC=		Enable the Spicy parser generator
 ZEEKCTL_DESC=		ZeekControl support (implies BROKER and IPSUMDUMP)
 ZKG_DESC=		Zeek package manager support
 
@@ -90,6 +100,9 @@ PERFTOOLS_BUILD_DEPENDS=${LOCALBASE}/bin/perftools-pprof:devel/google-perftools
 PERFTOOLS_CMAKE_BOOL=	ENABLE_PERFTOOLS
 PERFTOOLS_RUN_DEPENDS=${LOCALBASE}/bin/perftools-pprof:devel/google-perftools
 PYTHON_BUILD_DEPENDS=	swig:devel/swig
+SPICY_CMAKE_OFF=	-DDISABLE_SPICY=ON
+SPICY_BUILD_DEPENDS=	bison>=3.3:devel/bison \
+			flex>=2.6:textproc/flex
 ZEEKCTL_BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 			swig:devel/swig
@@ -151,6 +164,7 @@ post-install-NETMAP-on:
 
 .include <bsd.port.pre.mk>
 
+# Would like to use ARCH (uname -p) but it's not always correct (e.g. arm64)
 UNAME_M!=	${UNAME} -m
 
 .include <bsd.port.post.mk>

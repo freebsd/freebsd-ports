@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jf-openhuninn
 PORTVERSION=	1.1
 MASTER_SITES=	https://github.com/justfont/open-huninn-font/releases/download/v${PORTVERSION}/

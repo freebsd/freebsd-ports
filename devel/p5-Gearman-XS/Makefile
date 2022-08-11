@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <ka@nadoby.ru>
-
 PORTNAME=	Gearman-XS
 PORTVERSION=	0.12
 PORTREVISION=	2

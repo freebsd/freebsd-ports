@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	String-Random
 PORTVERSION=	0.32
 PORTEPOCH=	1

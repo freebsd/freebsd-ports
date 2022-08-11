@@ -2,7 +2,7 @@ PORTNAME=	imv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.1
 PORTREVISION=	2
-CATEGORIES=	graphics
+CATEGORIES=	graphics wayland
 MASTER_SITES=	https://git.sr.ht/~exec64/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -33,7 +33,6 @@ OPTIONS_SUB=		yes
 
 ALL_DESC=	Both Wayland and X11 support
 FREEIMAGE_DESC=	FreeImage backend (support for many image formats)
-HEIF_DESC=	HEIF backend
 NSGIF_DESC=	NetSurf GIF backend (support for animated GIF)
 WIN_DESC=	Windowing system
 

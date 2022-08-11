@@ -5,7 +5,6 @@
 %%DATADIR%%/bin/FluentMigrator.dll
 %%DATADIR%%/bin/FluentValidation.dll
 %%DATADIR%%/bin/ICSharpCode.SharpZipLib.dll
-%%DATADIR%%/bin/Ical.Net.Collections.dll
 %%DATADIR%%/bin/Ical.Net.dll
 %%DATADIR%%/bin/LogentriesCore.dll
 %%DATADIR%%/bin/LogentriesCore.dll.mdb
@@ -26,6 +25,7 @@
 %%DATADIR%%/bin/MimeKit.dll
 %%DATADIR%%/bin/Mono.Nat.dll
 %%DATADIR%%/bin/MonoTorrent.dll
+%%DATADIR%%/bin/NLog.Targets.Syslog.dll
 %%DATADIR%%/bin/NLog.dll
 %%DATADIR%%/bin/Nancy.Authentication.Basic.dll
 %%DATADIR%%/bin/Nancy.Authentication.Forms.dll
@@ -127,6 +127,7 @@
 %%DATADIR%%/bin/System.ObjectModel.dll
 %%DATADIR%%/bin/System.Reflection.Extensions.dll
 %%DATADIR%%/bin/System.Reflection.Primitives.dll
+%%DATADIR%%/bin/System.Reflection.TypeExtensions.dll
 %%DATADIR%%/bin/System.Reflection.dll
 %%DATADIR%%/bin/System.Resources.Reader.dll
 %%DATADIR%%/bin/System.Resources.ResourceManager.dll
@@ -212,7 +213,6 @@
 %%DATADIR%%/bin/UI/vendors.js
 %%DATADIR%%/bin/UI/vendors.js.LICENSE.txt
 %%DATADIR%%/bin/UI/vendors.js.map
-%%DATADIR%%/bin/antlr.runtime.dll
 %%DATADIR%%/bin/netstandard.dll
 %%DATADIR%%/bin/release_info
 %%DATADIR%%/package_info

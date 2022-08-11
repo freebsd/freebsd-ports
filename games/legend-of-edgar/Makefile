@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	edgar
 DISTVERSION=	1.35
 CATEGORIES=	games

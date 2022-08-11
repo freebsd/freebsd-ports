@@ -1,5 +1,3 @@
-# Created by: Hung-Yi Chen <gaod@hychen.org>
-
 PORTNAME=	solr
 PORTVERSION=	2.5.1
 PORTREVISION=	2

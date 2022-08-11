@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-shell-extension-dashtodock
 PORTVERSION=	65
 PORTREVISION=	1

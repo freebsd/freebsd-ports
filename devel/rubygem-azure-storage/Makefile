@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure-storage
 PORTVERSION=	0.15.0.preview
 PORTREVISION=	1

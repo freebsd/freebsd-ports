@@ -1,5 +1,3 @@
-# Created by: Wu Chin-Hao <wchunhao@cs.nctu.edu.tw>
-
 PORTNAME=	snap
 DISTVERSION=	1.01
 PORTEPOCH=	1

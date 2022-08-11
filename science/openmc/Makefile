@@ -1,7 +1,7 @@
 PORTNAME=	openmc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.2
-PORTREVISION=	1
+DISTVERSION=	0.13.0
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	xtensor>0:math/xtensor
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libhdf5.so:science/hdf5 \
+		libpng16.so:graphics/png \
 		libpugixml.so:textproc/pugixml \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		cmake:noninja eigen:3 pkgconfig
 

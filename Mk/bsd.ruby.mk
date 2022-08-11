@@ -1,6 +1,5 @@
 # bsd.ruby.mk - Utility definitions for Ruby related ports.
 #
-# Created by: Akinori MUSHA <knu@FreeBSD.org>
 
 .if !defined(Ruby_Include)
 
@@ -71,8 +70,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #
 # RUBY_MODNAME		- Set to the module name (default: ${PORTNAME}).
 #
-# RUBY_RDOC		- Full path of rdoc executable.
-#
 # RUBY_BASE_PORT	- Port path of base ruby without PORTSDIR, without
 #			  suffix except version.
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
@@ -136,35 +133,31 @@ RUBY?=			${LOCALBASE}/bin/ruby${RUBY_SUFFIX}
 # Ruby 2.7
 #
 RUBY_DISTVERSION=	2.7.6
-RUBY_PORTREVISION=	1
+RUBY_PORTREVISION=	2
 RUBY_PORTEPOCH=		1
-RUBY27=			""	# PLIST_SUB helpers
 
 .      elif ${RUBY_VER} == 3.0
 #
 # Ruby 3.0
 #
 RUBY_DISTVERSION=	3.0.4
-RUBY_PORTREVISION=	1
+RUBY_PORTREVISION=	2
 RUBY_PORTEPOCH=		1
-RUBY30=			""	# PLIST_SUB helpers
 .      elif ${RUBY_VER} == 3.1
 #
 # Ruby 3.1
 #
 RUBY_DISTVERSION=	3.1.2
-RUBY_PORTREVISION=	0
+RUBY_PORTREVISION=	1
 RUBY_PORTEPOCH=		1
-RUBY31=			""	# PLIST_SUB helpers
 
 .      elif ${RUBY_VER} == 3.2
 #
 # Ruby 3.2
 #
 RUBY_DISTVERSION=	3.2.0-preview1
-RUBY_PORTREVISION=	1
+RUBY_PORTREVISION=	2
 RUBY_PORTEPOCH=		1
-RUBY32=			""	# PLIST_SUB helpers
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
@@ -242,9 +235,6 @@ RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 
 RUBY_MODNAME?=		${PORTNAME}
 
-# Commands
-RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
-
 # Ports
 RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}
 RUBY_PORT?=		${RUBY_BASE_PORT}
@@ -286,11 +276,7 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_SHLIBVER="${RUBY_SHLIBVER}" \
 			RUBY_ARCH="${RUBY_ARCH}" \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
-			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
-			RUBY27=${RUBY27} \
-			RUBY30=${RUBY30} \
-			RUBY31=${RUBY31} \
-			RUBY32=${RUBY32}
+			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}"
 
 .    if ${PORT_OPTIONS:MDEBUG}
 RUBY_FLAGS+=	-d

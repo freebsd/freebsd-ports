@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/first_run_dialog.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/ui/views/first_run_dialog.cc.orig	2022-06-17 14:20:10 UTC
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -38,7 +38,7 @@
+@@ -34,7 +34,7 @@
  
  namespace {
  
@@ -15,6 +15,6 @@
    ChangeMetricsReportingState(report_crashes_->GetChecked());
 -#else
 +#elif !BUILDFLAG(IS_BSD)
- #if BUILDFLAG(IS_CHROMEOS_ASH)
-   metrics::structured::NeutrinoDevicesLog(
-       metrics::structured::NeutrinoDevicesLocation::kFirstRunDialog);
+   ChangeMetricsReportingStateWithReply(
+       report_crashes_->GetChecked(),
+       base::BindOnce(&InitCrashReporterIfEnabled));

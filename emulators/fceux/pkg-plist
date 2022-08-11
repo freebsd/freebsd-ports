@@ -1,6 +1,7 @@
 bin/fceux
-man/man6/fceux.6.gz
 share/applications/fceux.desktop
+share/man/man6/fceux.6.gz
+share/man/man6/fceux-net-server.6.gz
 %%PORTDOCS%%%%DATADIR%%/fceux.qch
 %%PORTDOCS%%%%DATADIR%%/fceux.qhc
 %%PORTDOCS%%%%DATADIR%%/fceux.qhp

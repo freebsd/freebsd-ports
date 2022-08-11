@@ -1,0 +1,4 @@
+exactRankTests computes exact conditional p-values and quantiles using an
+implementation of the Shift-Algorithm by Streitberg & Roehmel.
+
+WWW: https://cran.r-project.org/package=exactRankTests

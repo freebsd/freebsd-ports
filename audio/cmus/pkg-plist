@@ -17,6 +17,7 @@
 %%DATADIR%%/rc
 %%DATADIR%%/solarized-dark.theme
 %%DATADIR%%/solarized-light.theme
+%%DATADIR%%/spotify.theme
 %%DATADIR%%/xterm-white.theme
 %%DATADIR%%/zenburn.theme
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cmus-status-display

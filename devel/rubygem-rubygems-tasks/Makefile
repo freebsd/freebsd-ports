@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rubygems-tasks
 PORTVERSION=	0.2.5
 CATEGORIES=	devel rubygems

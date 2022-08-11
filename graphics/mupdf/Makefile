@@ -1,5 +1,3 @@
-# Created by: Martin Dieringer <martin.dieringer@gmx.de>
-
 PORTNAME=	mupdf
 DISTVERSION=	1.18.0
 DISTVERSIONSUFFIX=	-source

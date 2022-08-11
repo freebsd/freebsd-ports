@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libtheora
 PORTVERSION=	1.1.1
 DISTVERSIONSUFFIX=	-8.el7

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Net-Pcap
 PORTVERSION=	0.18
 CATEGORIES=	net perl5

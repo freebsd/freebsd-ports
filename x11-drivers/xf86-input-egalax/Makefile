@@ -1,8 +1,6 @@
-# Created by: Gleb Smirnoff <glebius@FreeBSD.org>
-
 PORTNAME=	xf86-input-egalax
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	glebius@FreeBSD.org

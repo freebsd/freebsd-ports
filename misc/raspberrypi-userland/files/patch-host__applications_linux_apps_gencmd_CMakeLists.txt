@@ -1,0 +1,11 @@
+--- host_applications/linux/apps/gencmd/CMakeLists.txt.orig	2016-10-24 19:59:54 UTC
++++ host_applications/linux/apps/gencmd/CMakeLists.txt
+@@ -4,7 +4,7 @@ if (WIN32)
+    set(VCOS_PLATFORM win32)
+ else ()
+    set(VCOS_PLATFORM pthreads)
+-   add_definitions(-Wall -Werror)
++   add_definitions(-Wall)
+ endif ()
+ 
+ include_directories( ../../../.. 

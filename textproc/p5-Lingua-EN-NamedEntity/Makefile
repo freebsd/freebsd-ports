@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Lingua-EN-NamedEntity
 PORTVERSION=	1.93
 CATEGORIES=	textproc perl5

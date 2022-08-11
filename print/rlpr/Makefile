@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin
-
 PORTNAME=	rlpr
 PORTVERSION=	2.06
 PORTREVISION=	2

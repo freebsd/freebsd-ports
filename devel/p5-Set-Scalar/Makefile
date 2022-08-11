@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Set-Scalar
 PORTVERSION=	1.29
 CATEGORIES=	devel perl5

@@ -1,8 +1,6 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	opencascade
 PORTVERSION=	7.6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 

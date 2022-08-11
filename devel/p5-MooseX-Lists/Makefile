@@ -1,5 +1,3 @@
-# Created by: andrey@kostenko.name
-
 PORTNAME=	MooseX-Lists
 PORTVERSION=	0.05
 PORTREVISION=	1

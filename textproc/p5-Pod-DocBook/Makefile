@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Pod-DocBook
 PORTVERSION=	1.2
 PORTREVISION=	3

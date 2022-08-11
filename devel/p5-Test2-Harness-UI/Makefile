@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test2-Harness-UI
-PORTVERSION=	0.000119
+PORTVERSION=	0.000124
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -51,11 +49,4 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503200
-BUILD_DEPENDS+=	p5-Test-Simple>=1.302166:devel/p5-Test-Simple
-RUN_DEPENDS+=	p5-Test-Simple>=1.302166:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

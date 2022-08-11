@@ -1,5 +1,3 @@
-# Created by: Manuel Kreutz <mk@nomtec.net>
-
 PORTNAME=	sysmon
 PORTVERSION=	0.93
 PORTREVISION=	1

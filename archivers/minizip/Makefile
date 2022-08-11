@@ -1,5 +1,3 @@
-# Created by: lbartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	minizip
 PORTVERSION=	1.2.11
 CATEGORIES=	archivers

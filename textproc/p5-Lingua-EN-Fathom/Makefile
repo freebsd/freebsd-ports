@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Lingua-EN-Fathom
 PORTVERSION=	1.22
 CATEGORIES=	textproc perl5

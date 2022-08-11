@@ -1,11 +1,9 @@
-# Created by: Steve Woodford <scw@netbsd.hut.fi>
-
 PORTNAME=	tits
 PORTVERSION=	1.3.0
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mctavish.co.uk/tits/
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server which provides telnet(1) access to one or more tty ports
 
 LICENSE=	BSD4CLAUSE

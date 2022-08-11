@@ -1,5 +1,3 @@
-# Created by: Alexey Zelkin <phantom@FreeBSD.org>
-
 PORTNAME=	posixtestsuite
 PORTVERSION=	1.5.2
 PORTREVISION=	1

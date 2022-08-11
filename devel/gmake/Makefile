@@ -1,5 +1,3 @@
-# Created by: jkh
-
 PORTNAME=	gmake
 PORTVERSION=	4.3
 PORTREVISION=	2

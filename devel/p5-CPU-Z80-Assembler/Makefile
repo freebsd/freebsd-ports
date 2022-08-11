@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	CPU-Z80-Assembler
 PORTVERSION=	2.18
 CATEGORIES=	devel perl5

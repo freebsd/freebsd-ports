@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-spin
 PORTVERSION=	1.2.5.3
 CATEGORIES=	devel python

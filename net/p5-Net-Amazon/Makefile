@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Net-Amazon
 PORTVERSION=	0.62
 PORTREVISION=	1

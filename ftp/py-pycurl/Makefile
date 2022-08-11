@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	pycurl
 PORTVERSION=	7.45.1
 CATEGORIES=	ftp python

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	flit
 PORTVERSION=	3.7.1
 CATEGORIES=	devel python

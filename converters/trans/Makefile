@@ -1,5 +1,3 @@
-# Created by: Andrey A. Chernov <ache@FreeBSD.org>
-
 PORTNAME=	trans
 PORTVERSION=	1.20
 CATEGORIES=	converters

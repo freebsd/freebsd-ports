@@ -1,12 +1,10 @@
-# Created by: Alexander Logvinov <avl@FreeBSD.org>
-
 PORTNAME=	freerdp
-DISTVERSION=	2.6.1
-CATEGORIES=	net comms
+DISTVERSION=	2.8.0
+CATEGORIES=	net comms wayland
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 
-PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
+#PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Free implementation of Remote Desktop Protocol
@@ -80,8 +78,8 @@ GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 GSM_CMAKE_BOOL=		WITH_GSM
 
 GSTREAMER_CMAKE_BOOL=	WITH_GSTREAMER_1_0 CHANNEL_TSMF
-GSTREAMER_USES=		gnome xorg
-GSTREAMER_USE=		gnome=glib20 gstreamer1=yes xorg=x11,xext,xorgproto,xrandr
+GSTREAMER_USES=		gnome gstreamer xorg
+GSTREAMER_USE=		gnome=glib20 xorg=x11,xext,xorgproto,xrandr
 GSTREAMER_LIB_DEPENDS=	libgstbase-1.0.so:multimedia/gstreamer1
 
 ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
@@ -144,20 +142,6 @@ X11_USES=		xorg
 X11_USE=		xorg=x11,xcursor,xext,xorgproto,xfixes,xi,xinerama,xkbfile,xrandr,xrender,xv
 
 post-patch:
-	@${REINPLACE_CMD} -e '/CMAKE_INSTALL_RPATH /d' \
-		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's/Linux/Linux|FreeBSD/' \
-		${WRKSRC}/winpr/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's/NetBSD__)/NetBSD__) || defined(__FreeBSD__)/' \
-		${WRKSRC}/winpr/libwinpr/utils/trio/triodef.h
-	@${RM} ${WRKSRC}/cmake/FindOpenSSL.cmake
-	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/cmake|$${CMAKE_INSTALL_PREFIX}/share/cmake/Modules|' \
-		${WRKSRC}/client/CMakeLists.txt \
-		${WRKSRC}/winpr/CMakeLists.txt \
-		${WRKSRC}/uwac/CMakeLists.txt \
-		${WRKSRC}/server/CMakeLists.txt \
-		${WRKSRC}/server/shadow/CMakeLists.txt \
-		${WRKSRC}/libfreerdp/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|gsm/gsm.h|gsm.h|' \
 		${WRKSRC}/cmake/FindGSM.cmake \
 		${WRKSRC}/libfreerdp/codec/dsp.c

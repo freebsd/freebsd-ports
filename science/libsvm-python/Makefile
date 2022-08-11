@@ -1,5 +1,3 @@
-# Created by: rafan@infor.org
-
 PORTREVISION=	1
 PKGNAMESUFFIX=	-python
 

@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	xapian
-PORTVERSION=	1.4.19
+PORTVERSION=	1.4.20
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -38,7 +36,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--without-tcl
 CONFIGURE_ENV=	PHP_CONFIG=${LOCALBASE}/bin/php-config
 GNU_CONFIGURE=	yes
-IGNORE_WITH_PHP=80 81
+IGNORE_WITH_PHP=80 81 82	# https://trac.xapian.org/ticket/817
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
 

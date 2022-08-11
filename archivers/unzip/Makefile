@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	unzip
 PORTVERSION=	6.0
 PORTREVISION=	8

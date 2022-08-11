@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	python-consul2
 PORTVERSION=	0.1.5
 CATEGORIES=	sysutils python

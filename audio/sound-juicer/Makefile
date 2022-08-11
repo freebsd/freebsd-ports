@@ -1,10 +1,8 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	sound-juicer
 PORTVERSION=	3.38.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
 PATCHFILES+=	9f97ca1faca3.patch:-p1 # https://gitlab.gnome.org/GNOME/sound-juicer/-/merge_requests/27
@@ -24,9 +22,9 @@ LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext gnome meson \
+USES=		compiler:c11 desktop-file-utils gettext gnome gstreamer meson \
 		pkgconfig tar:xz
-USE_GSTREAMER1=	cdparanoia flac good vorbis
+USE_GSTREAMER=	cdparanoia flac good vorbis
 USE_GNOME=	gtk30
 INSTALL_TARGET=	install-strip
 

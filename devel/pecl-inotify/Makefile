@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	inotify
 PORTVERSION=	3.0.0
 CATEGORIES=	devel

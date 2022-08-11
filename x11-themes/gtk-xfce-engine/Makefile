@@ -1,5 +1,3 @@
-# Created by: olgeni@FreeBSD.org
-
 PORTNAME=	gtk-xfce-engine
 PORTVERSION=	3.2.0
 CATEGORIES=	x11-themes xfce

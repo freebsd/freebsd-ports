@@ -1,5 +1,3 @@
-# Created by: Ilia Chipitsine <ilia@jane.cgu.chel.su>
-
 PORTNAME=	Unicode-String
 PORTVERSION=	2.10
 PORTREVISION=	1

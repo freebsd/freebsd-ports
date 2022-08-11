@@ -1,5 +1,3 @@
-# Created by: ehaupt@FreeBSD.org
-
 PORTNAME=	ipcalc
 PORTVERSION=	1.99.0
 CATEGORIES=	net-mgmt python

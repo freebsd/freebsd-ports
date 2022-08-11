@@ -1,5 +1,3 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	glademm
 PORTVERSION=	2.6.0
 PORTREVISION=	3

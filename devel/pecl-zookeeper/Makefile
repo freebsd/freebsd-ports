@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	zookeeper
 PORTVERSION=	1.0.0
 CATEGORIES=	devel
@@ -15,6 +13,8 @@ LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 
 USES=		php:pecl
 USE_PHP=	session:build
+
+IGNORE_WITH_PHP=82
 
 PORTDATA=	zookeeper-api.php
 

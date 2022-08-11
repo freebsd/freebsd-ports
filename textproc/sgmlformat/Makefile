@@ -1,5 +1,3 @@
-# Created by: jfieber
-
 PORTNAME=	sgmlformat
 PORTVERSION=	1.7
 PORTREVISION=	7

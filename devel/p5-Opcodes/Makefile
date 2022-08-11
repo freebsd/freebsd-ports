@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Opcodes
 PORTVERSION=	0.14
 PORTREVISION=	1

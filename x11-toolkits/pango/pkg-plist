@@ -606,6 +606,10 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/Pango/pango_fonts.html
 %%PORTDOCS%%share/doc/Pango/pango_markup.html
 %%PORTDOCS%%share/doc/Pango/pango_rendering.html
+%%PORTDOCS%%share/doc/Pango/property.FontFamily.item-type.html
+%%PORTDOCS%%share/doc/Pango/property.FontFamily.n-items.html
+%%PORTDOCS%%share/doc/Pango/property.FontMap.item-type.html
+%%PORTDOCS%%share/doc/Pango/property.FontMap.n-items.html
 %%PORTDOCS%%share/doc/Pango/pipeline-dark.png
 %%PORTDOCS%%share/doc/Pango/pipeline-light.png
 %%PORTDOCS%%share/doc/Pango/rects1.png

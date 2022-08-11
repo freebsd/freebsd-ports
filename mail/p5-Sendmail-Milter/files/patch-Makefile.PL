@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Wed Sep 19 12:42:17 2001
-+++ Makefile.PL	Tue Apr  1 14:28:44 2003
-@@ -5,30 +5,16 @@
+--- Makefile.PL.orig	2001-09-19 09:42:17 UTC
++++ Makefile.PL
+@@ -5,31 +5,17 @@ use strict;
  use ExtUtils::MakeMaker;
  use Config;
  
@@ -23,18 +23,19 @@
  
 -my $SENDMAIL_PATH = MM->canonpath($ARGV[0]);
 -my $SENDMAIL_OBJ_PATH = MM->canonpath($ARGV[1]);
--
++my $MILTER_LIB = "/usr/lib";
++my $MILTER_INCLUDE = "/usr/include/libmilter";
+ 
 -my $MILTER_LIB = MM->catdir($SENDMAIL_OBJ_PATH, "libmilter");
 -my $SMUTIL_LIB = MM->catdir($SENDMAIL_OBJ_PATH, "libsmutil");
 -my $SM_LIB = MM->catdir($SENDMAIL_OBJ_PATH, "libsm");
 -my $MILTER_INCLUDE = MM->catdir($SENDMAIL_PATH, "include");
 -my $SENDMAIL_INCLUDE = MM->catdir($SENDMAIL_PATH, "sendmail");
-+my $MILTER_LIB = "/usr/lib";
-+my $MILTER_INCLUDE = "/usr/include/libmilter";
- 
+-
  sub milter_configure
  {
-@@ -37,7 +23,7 @@
+ 	my $hash_ref = {};
+@@ -37,7 +23,7 @@ sub milter_configure
  	my $ccflags;
  
  	# Standard milter libraries
@@ -43,7 +44,7 @@
  
  	# POSIX threads support.
  	if ($Config{libs} =~ /-lpthread/)
-@@ -82,6 +68,6 @@
+@@ -82,6 +68,6 @@ WriteMakefile(
      'CONFIGURE'		=> \&milter_configure,
      'OBJECT'		=> '$(BASEEXT)$(OBJ_EXT) intpools$(OBJ_EXT) callbacks$(OBJ_EXT)',
      'DEFINE'		=> '',

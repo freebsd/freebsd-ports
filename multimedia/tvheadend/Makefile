@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@FreeBSD.org>
-
 PORTNAME=	tvheadend
 PORTVERSION=	4.2.8
 DISTVERSIONPREFIX=	v

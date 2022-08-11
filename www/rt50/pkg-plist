@@ -205,6 +205,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/REST2.pm
 %%SITE_PERL%%/RT/REST2/Dispatcher.pm
 %%SITE_PERL%%/RT/REST2/Middleware/Auth.pm
+%%SITE_PERL%%/RT/REST2/Middleware/CleanupRequest.pm
 %%SITE_PERL%%/RT/REST2/Middleware/ErrorAsJSON.pm
 %%SITE_PERL%%/RT/REST2/Middleware/Log.pm
 %%SITE_PERL%%/RT/REST2/Resource.pm
@@ -692,6 +693,8 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/4.4.2/schema.SQLite
 %%DOCSDIR%%/upgrade/4.4.2/schema.mysql
 %%DOCSDIR%%/upgrade/4.4.5/content
+%%DOCSDIR%%/upgrade/4.4.6/indexes
+%%DOCSDIR%%/upgrade/4.4.6/schema.Pg
 %%DOCSDIR%%/upgrade/4.5.0/schema.Oracle
 %%DOCSDIR%%/upgrade/4.5.0/schema.Pg
 %%DOCSDIR%%/upgrade/4.5.0/schema.mysql
@@ -716,6 +719,8 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/4.5.7/schema.mysql
 %%DOCSDIR%%/upgrade/4.5.8/content
 %%DOCSDIR%%/upgrade/5.0.2/content
+%%DOCSDIR%%/upgrade/5.0.3/indexes
+%%DOCSDIR%%/upgrade/5.0.3/schema.Pg
 %%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%DOCSDIR%%/upgrade/reset-sequences
 %%DOCSDIR%%/upgrade/sanity-check-stylesheets
@@ -1036,6 +1041,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/CryptStatus
 %%DATADIR%%/html/Elements/Dashboards
 %%DATADIR%%/html/Elements/DoAuth
+%%DATADIR%%/html/Elements/DropdownMenu
 %%DATADIR%%/html/Elements/EditCustomDateRanges
 %%DATADIR%%/html/Elements/EditCustomField
 %%DATADIR%%/html/Elements/EditCustomFieldAutocomplete
@@ -1046,6 +1052,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/EditCustomFieldDateTime
 %%DATADIR%%/html/Elements/EditCustomFieldDisplay
 %%DATADIR%%/html/Elements/EditCustomFieldFreeform
+%%DATADIR%%/html/Elements/EditCustomFieldHTML
 %%DATADIR%%/html/Elements/EditCustomFieldIPAddress
 %%DATADIR%%/html/Elements/EditCustomFieldIPAddressRange
 %%DATADIR%%/html/Elements/EditCustomFieldImage
@@ -1117,6 +1124,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/RefreshHomepage
 %%DATADIR%%/html/Elements/SavedSearches
 %%DATADIR%%/html/Elements/ScrubHTML
+%%DATADIR%%/html/Elements/ShowCustomFieldHTML
 %%DATADIR%%/html/Elements/Section
 %%DATADIR%%/html/Elements/SelectArticle
 %%DATADIR%%/html/Elements/SelectArticleAutocomplete
@@ -1486,6 +1494,8 @@ sbin/standalone_httpd
 %%DATADIR%%/html/index.html
 %%DATADIR%%/html/l
 %%DATADIR%%/html/l_unsafe
+
+
 %%DATADIR%%/html/m/_elements/footer
 %%DATADIR%%/html/m/_elements/full_site_link
 %%DATADIR%%/html/m/_elements/header
@@ -1978,9 +1988,9 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/Chart.min.js
 %%DATADIR%%/static/js/assets.js
 %%DATADIR%%/static/js/autocomplete.js
+%%DATADIR%%/static/js/bootstrap.bundle.min.js
 %%DATADIR%%/static/js/bootstrap-combobox.js
 %%DATADIR%%/static/js/bootstrap-select.min.js
-%%DATADIR%%/static/js/bootstrap.min.js
 %%DATADIR%%/static/js/cascaded.js
 %%DATADIR%%/static/js/chartjs-plugin-colorschemes.min.js
 %%DATADIR%%/static/js/chosen.jquery.min.js
@@ -1992,7 +2002,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/forms.js
 %%DATADIR%%/static/js/history-folding.js
 %%DATADIR%%/static/js/i18n.js
-%%DATADIR%%/static/js/jquery-3.4.1.min.js
+%%DATADIR%%/static/js/jquery-3.6.0.min.js
 %%DATADIR%%/static/js/jquery-ui-patch-datepicker.js
 %%DATADIR%%/static/js/jquery-ui-timepicker-addon.js
 %%DATADIR%%/static/js/jquery-ui.min.js
@@ -2006,7 +2016,6 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/lifecycleui-editor.js
 %%DATADIR%%/static/js/lifecycleui-model.js
 %%DATADIR%%/static/js/mousetrap.min.js
-%%DATADIR%%/static/js/popper.min.js
 %%DATADIR%%/static/js/quoteselection.js
 %%DATADIR%%/static/js/rights-inspector.js
 %%DATADIR%%/static/js/selectize.min.js

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	drumpiler
 PORTVERSION=	0.9.0
 PORTREVISION=	7

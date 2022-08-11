@@ -1,6 +1,6 @@
 bin/qjackctl
-man/fr/man1/qjackctl.1.gz
-man/man1/qjackctl.1.gz
+share/man/fr/man1/qjackctl.1.gz
+share/man/man1/qjackctl.1.gz
 share/applications/org.rncbc.qjackctl.desktop
 share/icons/hicolor/32x32/apps/org.rncbc.qjackctl.png
 share/icons/hicolor/scalable/apps/org.rncbc.qjackctl.svg

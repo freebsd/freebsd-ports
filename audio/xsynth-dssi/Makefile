@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	xsynth-dssi
 PORTVERSION=	0.9.4
 PORTREVISION=	5

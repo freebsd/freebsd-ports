@@ -1,5 +1,3 @@
-# Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-
 PORTNAME=	website
 PORTVERSION=	2.6.0
 CATEGORIES=	textproc www

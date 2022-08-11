@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fontpens
 PORTVERSION=	0.2.4
 CATEGORIES=	print python

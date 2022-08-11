@@ -1,5 +1,3 @@
-# Created by: Gruen Christian <kiki@bsdro.org>
-
 PORTNAME=	Catalyst-View-HTML-Template
 PORTVERSION=	0.03
 PORTREVISION=	1

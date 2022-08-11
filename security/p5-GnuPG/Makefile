@@ -1,5 +1,3 @@
-# Created by: Marcello Coutinho
-
 PORTNAME=	GnuPG
 PORTVERSION=	0.19
 PORTREVISION=	1

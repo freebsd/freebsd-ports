@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	moonlander
 PORTVERSION=	1.0
 PORTREVISION=	14

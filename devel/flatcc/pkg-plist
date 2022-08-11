@@ -2,6 +2,7 @@ bin/flatcc%%SUFFIX%%
 include/flatcc/flatcc.h
 include/flatcc/flatcc_accessors.h
 include/flatcc/flatcc_alloc.h
+include/flatcc/flatcc_assert.h
 include/flatcc/flatcc_builder.h
 include/flatcc/flatcc_emitter.h
 include/flatcc/flatcc_endian.h
@@ -31,7 +32,9 @@ include/flatcc/portable/include/std/stdalign.h
 include/flatcc/portable/include/std/stdbool.h
 include/flatcc/portable/include/std/stdint.h
 include/flatcc/portable/paligned_alloc.h
+include/flatcc/portable/pattributes.h
 include/flatcc/portable/pbase64.h
+include/flatcc/portable/pcrt.h
 include/flatcc/portable/pdiagnostic.h
 include/flatcc/portable/pdiagnostic_pop.h
 include/flatcc/portable/pdiagnostic_push.h

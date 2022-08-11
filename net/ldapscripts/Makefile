@@ -1,5 +1,3 @@
-# Created by: Ganael LAPLANCHE <ganael.laplanche@martymac.org>
-
 PORTNAME=	ldapscripts
 PORTVERSION=	2.0.8
 PORTREVISION=	1

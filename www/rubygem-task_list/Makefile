@@ -1,5 +1,3 @@
-# Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-
 PORTNAME=	task_list
 PORTVERSION=	1.0.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	iml
 PORTVERSION=	1.0.5
 PORTREVISION=	1

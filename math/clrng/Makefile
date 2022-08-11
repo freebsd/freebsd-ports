@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <dieterich@ogolem.org>
-
 PORTNAME=	clrng
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-beta

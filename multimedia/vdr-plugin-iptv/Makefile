@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-iptv
 PORTVERSION=	1.0.1
 PORTREVISION=	4

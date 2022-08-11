@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv@kvedulv.de>
-
 PORTNAME=	hammer_cli_foreman_salt
 PORTVERSION=	0.1.0
 CATEGORIES=	sysutils ruby

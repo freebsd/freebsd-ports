@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-RegExp
 PORTVERSION=	0.04
 PORTREVISION=	1

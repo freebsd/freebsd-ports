@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Object-Tiny
 PORTVERSION=	1.09
 CATEGORIES=	devel perl5

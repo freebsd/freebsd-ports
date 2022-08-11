@@ -1,5 +1,3 @@
-# Created by: Rui Paulo <rpaulo@FreeBSD.org>
-
 PORTNAME=	App-SVN-Bisect
 PORTVERSION=	1.1
 PORTREVISION=	3

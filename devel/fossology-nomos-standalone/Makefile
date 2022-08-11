@@ -1,5 +1,5 @@
 PORTNAME=	fossology
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-nomos-standalone
 
@@ -26,5 +26,8 @@ PLIST_FILES=	bin/nomossa
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nomos/agent/nomossa ${STAGEDIR}${PREFIX}/bin
+
+do-test:
+	@${STAGEDIR}${PREFIX}/bin/nomossa ${WRKSRC}/src/nomos/agent/nomos.c | ${GREP} GPL-2.0
 
 .include <bsd.port.mk>

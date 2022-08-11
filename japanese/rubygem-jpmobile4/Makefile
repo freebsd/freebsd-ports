@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@rtfm.jp>
-
 PORTNAME=	jpmobile
 PORTVERSION=	4.2.5
 CATEGORIES=	japanese www rubygems

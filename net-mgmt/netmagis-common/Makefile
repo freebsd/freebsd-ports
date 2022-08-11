@@ -1,5 +1,3 @@
-# Created by: Pierre David <pdagog@gmail.com>, Jean Benoit <jean@unistra.fr>
-
 PORTNAME?=	netmagis
 PORTVERSION?=	2.3.4
 PORTREVISION=	2

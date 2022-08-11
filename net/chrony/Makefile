@@ -1,5 +1,3 @@
-# Created by: Masaki TAGAWA <masaki@club.kyutech.ac.jp>
-
 PORTNAME=	chrony
 DISTVERSION=	4.2
 CATEGORIES=	net

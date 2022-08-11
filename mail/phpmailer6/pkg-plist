@@ -9,7 +9,6 @@
 %%DATADIR%%/language/phpmailer.lang-be.php
 %%DATADIR%%/language/phpmailer.lang-bg.php
 %%DATADIR%%/language/phpmailer.lang-ca.php
-%%DATADIR%%/language/phpmailer.lang-ch.php
 %%DATADIR%%/language/phpmailer.lang-cs.php
 %%DATADIR%%/language/phpmailer.lang-da.php
 %%DATADIR%%/language/phpmailer.lang-de.php
@@ -35,6 +34,7 @@
 %%DATADIR%%/language/phpmailer.lang-lt.php
 %%DATADIR%%/language/phpmailer.lang-lv.php
 %%DATADIR%%/language/phpmailer.lang-mg.php
+%%DATADIR%%/language/phpmailer.lang-mn.php
 %%DATADIR%%/language/phpmailer.lang-ms.php
 %%DATADIR%%/language/phpmailer.lang-nb.php
 %%DATADIR%%/language/phpmailer.lang-nl.php

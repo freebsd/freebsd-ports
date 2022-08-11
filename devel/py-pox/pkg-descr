@@ -1,0 +1,10 @@
+pox provides a collection of utilities for navigating and manipulating
+filesystems. This module is designed to facilitate some of the low level
+operating system interactions that are useful when exploring a filesystem on a
+remote host, where queries such as "what is the root of the filesystem?", "what
+is the user's name?", and "what login shell is preferred?" become essential in
+allowing a remote user to function as if they were logged in locally. While pox
+is in the same vein of both the os and shutil builtin modules, the majority of
+its functionality is unique and compliments these two modules.
+
+WWW: https://github.com/uqfoundation/pox

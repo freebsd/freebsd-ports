@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libecc
 PORTVERSION=	0.14.0
 PORTREVISION=	2

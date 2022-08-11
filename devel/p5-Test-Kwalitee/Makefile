@@ -1,5 +1,3 @@
-# Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
-
 PORTNAME=	Test-Kwalitee
 PORTVERSION=	1.28
 CATEGORIES=	devel perl5

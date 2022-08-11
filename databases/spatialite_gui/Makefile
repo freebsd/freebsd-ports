@@ -1,5 +1,3 @@
-# Created by: lbartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	spatialite_gui
 DISTVERSION=	2.1.0
 PORTREVISION=	2

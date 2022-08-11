@@ -1,5 +1,3 @@
-# Created by: José García Juanino <jjuanino@gmail.com>
-
 PORTNAME=	bup
 PORTVERSION=	0.32
 CATEGORIES=	archivers python

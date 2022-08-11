@@ -1,5 +1,3 @@
-# Created by: Don Owens <don@regexguy.com>
-
 PORTNAME=	DBIx-Wrapper
 PORTVERSION=	0.29
 CATEGORIES=	databases perl5

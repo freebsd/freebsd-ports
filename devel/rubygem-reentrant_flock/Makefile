@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	reentrant_flock
 PORTVERSION=	0.1.1
 CATEGORIES=	devel rubygems

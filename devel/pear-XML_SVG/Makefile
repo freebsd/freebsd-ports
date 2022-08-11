@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@FreeBSD.org>)
-
 PORTNAME=	XML_SVG
 PORTVERSION=	1.1.0
 CATEGORIES=	devel www pear

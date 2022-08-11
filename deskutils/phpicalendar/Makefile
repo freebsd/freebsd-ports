@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	phpicalendar
 PORTVERSION=	2.4
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Crypt-Random-Seed
 PORTVERSION=	0.03
 CATEGORIES=	security perl5

@@ -1,5 +1,3 @@
-# Created by: Peter Hollaubek <fifteen@inext.hu>
-
 PORTNAME=	sentinel
 PORTVERSION=	1.7b
 PORTREVISION=	5

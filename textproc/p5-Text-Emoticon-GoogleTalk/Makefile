@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	Text-Emoticon-GoogleTalk
 PORTVERSION=	0.01
 PORTREVISION=	2

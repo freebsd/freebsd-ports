@@ -1,7 +1,7 @@
 PORTNAME=	usd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	21.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -13,7 +13,7 @@ COMMENT=	Universal Scene Description is a scene description management system
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NOT_FOR_ARCHS=	i386 # CMakeLists.txt fails for non-64-bit architectures
+NOT_FOR_ARCHS=	armv6 armv7 i386 # CMakeLists.txt fails for non-64-bit architectures: Compiler does not support 64-bit builds
 
 LIB_DEPENDS=	libtbb.so:devel/tbb
 

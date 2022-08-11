@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	dm-chunked_query
 PORTVERSION=	0.3.1
 CATEGORIES=	databases rubygems

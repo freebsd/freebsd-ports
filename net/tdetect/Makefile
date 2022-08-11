@@ -1,5 +1,3 @@
-# Created by: shipley@dis.org
-
 PORTNAME=	tdetect
 PORTVERSION=	0.2
 CATEGORIES=	net

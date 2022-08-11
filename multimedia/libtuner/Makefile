@@ -1,5 +1,3 @@
-# Created by: Jason Harmening <jason.harmening@gmail.com>
-
 PORTNAME=	libtuner
 PORTVERSION=	1.1.5
 CATEGORIES=	multimedia

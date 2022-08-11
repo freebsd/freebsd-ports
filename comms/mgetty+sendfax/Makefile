@@ -1,5 +1,3 @@
-# Created by: rkw
-
 PORTNAME=	mgetty
 PORTVERSION=	1.1.37
 PORTREVISION=	2

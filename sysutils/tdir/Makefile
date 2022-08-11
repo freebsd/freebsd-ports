@@ -1,5 +1,3 @@
-# Created by: tundra
-
 PORTNAME=	tdir
 PORTVERSION=	1.73
 CATEGORIES=	sysutils

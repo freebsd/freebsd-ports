@@ -1,8 +1,6 @@
-# Created by: Sergey Akifyev <asa@gascom.ru>
-
 PORTNAME=	madplay
 PORTVERSION=	0.15.2b
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.mars.org/pub/mpeg/

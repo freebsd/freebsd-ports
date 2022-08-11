@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-SaltedHash
 PORTVERSION=	0.09
 CATEGORIES=	security perl5

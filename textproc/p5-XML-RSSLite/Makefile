@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	XML-RSSLite
 PORTVERSION=	0.17
 CATEGORIES=	textproc perl5

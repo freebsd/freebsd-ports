@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	GraphViz-Data-Structure
 PORTVERSION=	0.20
 CATEGORIES=	graphics perl5

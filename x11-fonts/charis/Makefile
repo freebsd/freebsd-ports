@@ -1,5 +1,3 @@
-# Created by: bf <bf@FreeBSD.org>
-
 PORTNAME=	CharisSIL
 PORTVERSION=	6.101
 CATEGORIES=	x11-fonts

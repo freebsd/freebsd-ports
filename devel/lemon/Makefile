@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin
-
 PORTNAME=	lemon
 PORTVERSION=	3.34
 CATEGORIES=	devel

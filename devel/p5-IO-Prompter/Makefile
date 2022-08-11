@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	IO-Prompter
 PORTVERSION=	0.004015
 CATEGORIES=	devel perl5

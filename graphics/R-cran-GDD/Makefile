@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	GDD
 DISTVERSION=	0.1-13.1
 PORTREVISION=	15

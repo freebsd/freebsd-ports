@@ -169,7 +169,7 @@ static const struct frame_unwind aarch64_fbsd_trapframe_unwind = {
 static void
 aarch64_fbsd_kernel_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
 {
-  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
+  aarch64_gdbarch_tdep *tdep = (aarch64_gdbarch_tdep *) gdbarch_tdep (gdbarch);
 
   frame_unwind_prepend_unwinder (gdbarch, &aarch64_fbsd_trapframe_unwind);
 

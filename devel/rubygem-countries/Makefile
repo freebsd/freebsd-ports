@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	countries
 PORTVERSION=	3.0.1
 CATEGORIES=	devel rubygems

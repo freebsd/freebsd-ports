@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-lakeformation
 PORTVERSION=	1.26.0
 CATEGORIES=	devel rubygems

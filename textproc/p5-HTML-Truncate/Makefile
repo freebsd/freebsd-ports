@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	HTML-Truncate
 PORTVERSION=	0.20
 PORTREVISION=	1

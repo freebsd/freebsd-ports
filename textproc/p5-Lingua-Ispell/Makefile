@@ -1,5 +1,3 @@
-# Created by: -
-
 PORTNAME=	Lingua-Ispell
 PORTVERSION=	0.07
 PORTREVISION=	3

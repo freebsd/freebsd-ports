@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@rtfm.jp>
-
 PORTNAME=	ptreloaded
 PORTVERSION=	0.0.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	XML-SAX-Base
 PORTVERSION=	1.09
 CATEGORIES=	textproc perl5

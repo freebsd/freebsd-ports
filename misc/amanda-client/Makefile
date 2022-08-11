@@ -1,5 +1,3 @@
-# Created by: gpalmer
-
 PKGNAMESUFFIX=	-client
 
 COMMENT=	Advanced Maryland Automatic Network Disk Archiver (client)

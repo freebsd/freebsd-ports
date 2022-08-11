@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	ip2location
 PORTVERSION=	1.0.3
 PORTREVISION=	1

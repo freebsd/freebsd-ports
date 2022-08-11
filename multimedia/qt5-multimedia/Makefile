@@ -45,7 +45,8 @@ ALSA_VARS_OFF=		QT_CONFIG+=-alsa \
 			QMAKE_CONFIGURE_ARGS+=-no-alsa
 
 GSTREAMER_BUILD_DEPENDS=${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-GSTREAMER_USE=		GSTREAMER1=bad
+GSTREAMER_USES=		gstreamer
+GSTREAMER_USE=		GSTREAMER=bad
 GSTREAMER_VARS=		QT_CONFIG+=gstreamer-1.0 \
 			QMAKE_CONFIGURE_ARGS+=-gstreamer 1.0
 GSTREAMER_VARS_OFF=	QT_CONFIG+=-gstreamer-1.0 \

@@ -1,5 +1,3 @@
-# Created by: Manuel Kasper <mk@neon1.net>
-
 PORTNAME=	mod_auth_pubtkt
 PORTVERSION=	0.13
 CATEGORIES=	www

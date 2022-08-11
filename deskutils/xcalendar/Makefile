@@ -1,5 +1,3 @@
-# Created by: MITA Yoshio <mita@iis.u-tokyo.ac.jp>
-
 PORTNAME=	xcalendar
 PORTVERSION=	4.0.2008
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Rodrigo Nicola Lombardo <rodnic@gmail.com>
-
 PORTNAME=	url_mount
 PORTVERSION=	0.2.1
 CATEGORIES=	www rubygems

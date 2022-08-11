@@ -1,5 +1,3 @@
-# Created by: Liam J. Foy <liamfoy@sepulcrum.org>
-
 PORTNAME=	gtick
 PORTVERSION=	0.5.5
 PORTREVISION=	1

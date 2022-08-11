@@ -1,8 +1,6 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME?=	nginx
-PORTVERSION=	1.21.6
-PORTREVISION=	8
+PORTVERSION=	1.23.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -17,7 +15,7 @@ LICENSE_FILE?=	${WRKSRC}/LICENSE
 
 CONFLICTS_INSTALL=	nginx
 
-PORTSCOUT=	limit:^1\.21\.[0-9]*
+PORTSCOUT=	limit:^1\.23\.[0-9]*
 
 USES=		cpe
 
@@ -225,6 +223,11 @@ CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
 .endif
 
+# Fix build failure on clang >= 12
+.if ${PORT_OPTIONS:MHTTP_PERL} && ${OSVERSION} >= 1301000
+CFLAGS+=	-Wno-compound-token-split-by-macro
+.endif
+
 .if empty(PORT_OPTIONS:MPCRE_ONE) && empty(PORT_OPTIONS:MPCRE_TWO)
 IGNORE=		required at least PCRE_ONE or PCRE_TWO \
 		to be defined. Please do 'make config' again
@@ -250,10 +253,6 @@ pre-everything::
 .endif
 	@${ECHO_MSG}
 
-post-extract-GRIDFS-on:
-	@${RMDIR} ${WRKSRC_gridfs}/mongo-c-driver/
-	@${MV} ${WRKSRC_mongo_c} ${WRKSRC_gridfs}/mongo-c-driver
-
 pre-patch-HTTPV3-on:
 	@${MV} ${WRKSRC}/README ${WRKSRC}/README.1st
 
@@ -274,9 +273,9 @@ post-patch-FASTDFS-on:
 		's!%%PREFIX%%!${PREFIX}!g;s!%%LOCALBASE%%!${LOCALBASE}!g' \
 		${WRKSRC_fastdfs}/src/config
 
-# Respect CFLAGS by remove needless --std=c99 flag
 post-patch-GRIDFS-on:
-	@${REINPLACE_CMD} 's!--std=c99!-DMONGO_HAVE_STDINT!' ${WRKSRC_gridfs}/config
+	@${REINPLACE_CMD} 's!\/usr!${LOCALBASE}!g' \
+		${WRKSRC_gridfs}/nginx-gridfs/config
 
 post-patch-HTTP_AUTH_KRB5-on:
 	@${REINPLACE_CMD} 's!%%GSSAPILIBS%%!${GSSAPILIBS}!g; \

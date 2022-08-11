@@ -1,5 +1,3 @@
-# Created by: Yonatan <onatan@gmail.com>
-
 PORTNAME=	bsdtris
 PORTVERSION=	1.1
 PORTREVISION=	2

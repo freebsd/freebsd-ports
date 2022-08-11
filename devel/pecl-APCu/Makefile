@@ -1,5 +1,3 @@
-# Created by: John Chen <johnpupu@gmail.com>
-
 PORTNAME=	APCu
 PORTVERSION=	5.1.21
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	rgenoud
 DISTVERSION=	5.9-0.3
 CATEGORIES=	math

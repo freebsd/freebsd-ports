@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-EN-Inflect
 PORTVERSION=	1.905
 CATEGORIES=	textproc perl5

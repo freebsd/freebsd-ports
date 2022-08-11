@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	Template-Toolkit-Simple
 PORTVERSION=	0.31
 CATEGORIES=	www textproc perl5

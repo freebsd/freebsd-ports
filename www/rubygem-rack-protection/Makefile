@@ -1,7 +1,5 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rack-protection
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

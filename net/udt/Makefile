@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin
-
 PORTNAME=	udt
 PORTVERSION=	4.11
 PORTREVISION=	1

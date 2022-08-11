@@ -25,4 +25,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=16.3.0:devel/py-attrs@${PY_FLAVOR} \
 USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

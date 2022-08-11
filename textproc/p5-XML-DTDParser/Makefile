@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	XML-DTDParser
 PORTVERSION=	2.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: refugee
-
 PORTNAME=	dungeoncrawl
 PORTVERSION=	4.0.0.b26
 CATEGORIES=	games

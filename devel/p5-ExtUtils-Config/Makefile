@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ExtUtils-Config
 PORTVERSION=	0.008
 PORTREVISION=	1

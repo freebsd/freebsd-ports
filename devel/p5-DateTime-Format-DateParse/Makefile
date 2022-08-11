@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
-
 PORTNAME=	DateTime-Format-DateParse
 PORTVERSION=	0.05
 PORTREVISION=	2

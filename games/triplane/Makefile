@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	triplane
 PORTVERSION=	1.08.r20130224
 PORTREVISION=	3

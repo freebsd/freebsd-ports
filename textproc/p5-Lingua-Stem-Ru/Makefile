@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Lingua-Stem-Ru
 PORTVERSION=	0.04
 CATEGORIES=	textproc perl5

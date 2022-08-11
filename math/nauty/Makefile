@@ -1,5 +1,3 @@
-# Created by: bremner@unb.ca
-
 PORTNAME=	nauty
 PORTVERSION=	2.7r3
 PORTEPOCH=	1

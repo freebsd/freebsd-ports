@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Geo-METAR
 PORTVERSION=	1.15
 PORTREVISION=	1

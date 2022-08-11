@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Regexp-Lexer
 PORTVERSION=	0.05
 CATEGORIES=	devel perl5

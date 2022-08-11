@@ -1,8 +1,0 @@
-umph is a command line tool for parsing Youtube playlists. It prints
-playlist video links, each separated with a newline, to the standard
-output stream, while everything else gets printed to the standard
-error stream. umph can be run with a simple interactive prompt to
-select the printed video links.
-
-WWW: http://code.google.com/p/umph/
-WWW: http://repo.or.cz/w/umph.git

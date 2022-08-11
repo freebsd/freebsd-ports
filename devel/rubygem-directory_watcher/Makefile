@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
-
 PORTNAME=	directory_watcher
 PORTVERSION=	1.5.1
 CATEGORIES=	devel rubygems

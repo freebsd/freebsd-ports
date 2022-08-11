@@ -33,6 +33,7 @@ bin/s6-permafailon
 bin/s6-setlock
 bin/s6-setsid
 bin/s6-setuidgid
+bin/s6-socklog
 bin/s6-softlimit
 bin/s6-sudo
 bin/s6-sudoc
@@ -41,6 +42,7 @@ bin/s6-supervise
 bin/s6-svc
 bin/s6-svdt
 bin/s6-svdt-clear
+bin/s6-svlink
 bin/s6-svlisten
 bin/s6-svlisten1
 bin/s6-svok
@@ -49,6 +51,7 @@ bin/s6-svscan
 bin/s6-svscanboot
 bin/s6-svscanctl
 bin/s6-svstat
+bin/s6-svunlink
 bin/s6-svwait
 bin/s6-tai64n
 bin/s6-tai64nlocal
@@ -61,15 +64,15 @@ bin/ucspilogd
 include/s6/accessrules.h
 include/s6/compat.h
 include/s6/config.h
+include/s6/fdholder.h
 include/s6/ftrigr.h
 include/s6/ftrigw.h
-include/s6/s6-fdholder.h
-include/s6/s6-supervise.h
+include/s6/lock.h
 include/s6/s6.h
-include/s6/s6lock.h
+include/s6/supervise.h
 lib/libs6.so
-lib/libs6.so.2.10
-lib/libs6.so.2.10.0.3
+lib/libs6.so.2.11
+lib/libs6.so.2.11.1.1
 lib/s6/libs6.a
 libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -115,6 +118,7 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/s6-setlock.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-setsid.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-setuidgid.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-socklog.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-softlimit.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-sudo.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-sudoc.html
@@ -123,6 +127,7 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/s6-svc.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svdt-clear.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svdt.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-svlink.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svlisten.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svlisten1.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svok.html
@@ -132,6 +137,7 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/s6-svscan.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svscanctl.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svstat.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-svunlink.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svwait.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-tai64n.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-tai64nlocal.html

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MooseX-TraitFor-Meta-Class-BetterAnonClassNames
 PORTVERSION=	0.002003
 CATEGORIES=	devel perl5

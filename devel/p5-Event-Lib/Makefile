@@ -1,5 +1,3 @@
-# Created by: Fabian Keil <fk@fabiankeil.de>
-
 PORTNAME=	Event-Lib
 PORTVERSION=	1.03
 PORTREVISION=	7

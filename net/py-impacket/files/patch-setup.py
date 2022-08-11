@@ -1,6 +1,6 @@
---- setup.py.orig	2018-08-31 08:58:06.065718000 -0300
-+++ setup.py	2018-08-31 08:58:06.065524000 -0300
-@@ -10,11 +10,6 @@
+--- setup.py.orig	2022-05-21 20:29:42 UTC
++++ setup.py
+@@ -10,11 +10,6 @@ from setuptools import setup
  
  PACKAGE_NAME = "impacket"
  
@@ -12,7 +12,7 @@
  def read(fname):
      return open(os.path.join(os.path.dirname(__file__), fname)).read()
  
-@@ -36,7 +31,6 @@
+@@ -36,7 +31,6 @@ setup(name = PACKAGE_NAME,
                  'impacket.examples.ntlmrelayx.servers.socksplugins', 'impacket.examples.ntlmrelayx.utils',
                  'impacket.examples.ntlmrelayx.attacks'],
        scripts = glob.glob(os.path.join('examples', '*.py')),

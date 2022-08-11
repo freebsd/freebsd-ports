@@ -5,9 +5,9 @@ that is only really needed on Windows.
 
 --- src/bootstrap/native.rs.orig	2020-08-24 15:00:49 UTC
 +++ src/bootstrap/native.rs
-@@ -517,26 +522,9 @@ impl Step for Lld {
+@@ -634,22 +634,6 @@ impl Step for Lld {
          let mut cfg = cmake::Config::new(builder.src.join("src/llvm-project/lld"));
-         configure_cmake(builder, target, &mut cfg, true);
+         configure_cmake(builder, target, &mut cfg, true, LdFlags::default());
  
 -        // This is an awful, awful hack. Discovered when we migrated to using
 -        // clang-cl to compile LLVM/LLD it turns out that LLD, when built out of
@@ -25,8 +25,13 @@ that is only really needed on Windows.
 -        // there's probably a lot of reasons you can't do that other than this.
 -        let llvm_config_shim = env::current_exe().unwrap().with_file_name("llvm-config-wrapper");
 -
+         // Re-use the same flags as llvm to control the level of debug information
+         // generated for lld.
+         let profile = match (builder.config.llvm_optimize, builder.config.llvm_release_debuginfo) {
+@@ -660,8 +644,7 @@ impl Step for Lld {
+ 
          cfg.out_dir(&out_dir)
-             .profile("Release")
+             .profile(profile)
 -            .env("LLVM_CONFIG_REAL", &llvm_config)
 -            .define("LLVM_CONFIG_PATH", llvm_config_shim)
 +            .define("LLVM_CONFIG_PATH", &llvm_config)

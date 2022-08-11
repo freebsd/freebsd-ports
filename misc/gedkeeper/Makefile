@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	gedkeeper
 PORTVERSION=	2.19.1
 DISTVERSIONPREFIX=	v

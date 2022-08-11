@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	activeresource
 PORTVERSION=	4.1.0
 CATEGORIES=	www rubygems

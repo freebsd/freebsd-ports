@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	clint
 PORTVERSION=	0.5.1
 PORTREVISION=	0
@@ -16,5 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}args>=0.1.0:devel/py-args@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

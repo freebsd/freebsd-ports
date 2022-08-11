@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	File-Slurp-Tree
 PORTVERSION=	1.24
 PORTREVISION=	1

@@ -1,24 +1,24 @@
---- GNUmakefile.orig	2021-10-13 09:17:02.000000000 -0700
-+++ GNUmakefile	2021-10-21 14:35:08.340353000 -0700
-@@ -13,7 +13,7 @@
- # in README and source code (see src/options.h) if you do.
+--- GNUmakefile.orig	2022-08-02 10:17:33 UTC
++++ GNUmakefile
+@@ -9,7 +9,7 @@
+ # Basic internal definitios. For a customizable variables and options see below.
  #
- 
--SHELL   := env bash
-+SHELL   := env sh
- 
- # install sandbox
- DESTDIR ?=
-@@ -54,7 +54,7 @@
-     *) echo so;;
+ $(info // The GNU Make $(MAKE_VERSION))
+-SHELL         := $(shell env bash -c 'echo $$BASH')
++SHELL         := sh
+ MAKE_VERx3    := $(shell printf "%3s%3s%3s" $(subst ., ,$(MAKE_VERSION)))
+ make_lt_3_81  := $(shell expr "$(MAKE_VERx3)" "<" "  3 81")
+ ifneq ($(make_lt_3_81),0)
+@@ -117,7 +117,7 @@ define uname2libs
    esac
  endef
+ 
 -SO_SUFFIX  := $(shell $(uname2sosuffix))
-+SO_SUFFIX  := so.0.11.2
++SO_SUFFIX  := so.0.11.9
  HEADERS    := mdbx.h mdbx.h++
  LIBRARIES  := libmdbx.a libmdbx.$(SO_SUFFIX)
  TOOLS      := mdbx_stat mdbx_copy mdbx_dump mdbx_load mdbx_chk mdbx_drop
-@@ -209,16 +209,11 @@
+@@ -284,16 +284,11 @@ mdbx_%.static-lto: mdbx_%.c config.h mdbx.c mdbx.h
  
  install: $(LIBRARIES) $(TOOLS) $(HEADERS)
  	@echo '  INSTALLING...'

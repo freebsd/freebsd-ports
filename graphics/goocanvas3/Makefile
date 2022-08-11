@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	goocanvas
 PORTVERSION=	3.0.0
 CATEGORIES=	graphics

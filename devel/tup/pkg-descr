@@ -1,0 +1,8 @@
+Tup is a file-based build system for Unix and Windows.  It takes as input
+a list of file changes and a directed acyclic graph (DAG).  It then
+processes the DAG to execute the appropriate commands required to update
+dependent files.  Updates are performed with very little overhead since
+tup implements powerful build algorithms to avoid doing unnecessary work,
+so you can stay focused on your project rather than on your build system.
+
+WWW: https://gittup.org/tup/

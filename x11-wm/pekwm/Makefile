@@ -1,5 +1,3 @@
-# Created by: anders@hack.org
-
 PORTNAME=	pekwm
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.2.0

@@ -5,6 +5,251 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220807:
+  AFFECTS: users of news/inn
+  AUTHOR: kbowling@FreeBSD.org
+
+  The inn port has been updated to 2.7 release.  Users upgrading from
+  prior versions should read through the announcement for any manual
+  upgrading steps that apply to your environment.
+
+  https://lists.isc.org/pipermail/inn-announce/2022-July/000015.html
+
+20220711:
+  AFFECTS: users of security/stunnel
+  AUTHOR: zi@FreeBSD.org
+
+  The stunnel port has been updated to drop privileges to the stunnel
+  user by default.
+
+  As a result of this change, the pid file location has changed.  If
+  you have a running copy of stunnel, you should stop the process
+  before performing the upgrade.  Alternatively, you will need to
+  # pkill stunnel;service stunnel start
+  after the upgrade has been completed.
+
+202207XYZ:
+  AFFECTS: users of devel/maven-wrapper and devel/maven
+  AUTHOR: michaelo@apache.org
+
+  The environment variable M2_HOME has been replaced with more common
+  MAVEN_HOME which can be used to pass a custom Maven home directory.
+
+20220629:
+  AFFECTS: updating x11-servers/xorg-server from a port
+  AUTHOR: se@FreeBSD.org
+
+  The xorg-server port now has a library dependency on x11/libxcvt,
+  which cannot be installed when the previous version of xorg-server
+  is present.  To be able to update xorg-server from a port, the
+  previous version needs to be manually deinstalled to allow libxcvt
+  to be installed.
+
+20220628:
+  AFFECTS: users of Erlang and Elixir
+  AUTHOR: dch@FreeBSD.org
+
+  For more than a decade, the Elixir Mix tool and the Erlang rebar
+  or erlang.mk build tools have been the defacto way of installing
+  and managing packages for specific applications.
+
+  All main-stream applications, from Riak, CouchDB, RabbitMQ, Phoenix,
+  and Elixir, expect that packages are fetched and compiled into an OTP
+  Release, with in-built version locking, external package management.
+
+  There is no point in maintaining a large number of libraries, that
+  are used neither for development, nor operations.
+
+  Users are directed to https://rebar3.org/ https://erlang.mk/ or
+  https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
+  to fetch custom packages.
+
+  https://www.freebsd.org/status/report-2021-07-2021-09/#_freebsd_erlang_ecosystem_ports_update
+
+20220626:
+  AFFECTS: users of python
+  AUTHOR: thierry@FreeBSD.org
+
+  The default version of python3 and python was switched to 3.9.
+
+  For ports users wanting to keep version 3.8 as default,
+  add DEFAULT_VERSIONS+= python=3.8 python3=3.8 to make.conf
+
+  Following procedures may ease the upgrade:
+
+  For users of pre-build packages:
+  # sh
+  # for i in $(pkg query -g %n 'py38-*'); do pkg set -yn ${i}:py39-${i#py38-}; done
+  # pkg upgrade
+
+  For portmaster users:
+  # sh
+  # portmaster -o lang/python39 python38
+  # REINSTALL="$(pkg info -o "*py38*" | awk '{printf "%s ", $2}')"
+  # pkg delete -f "*py38*"
+  # portmaster $REINSTALL
+  # REBUILD=$(pkg query -g "%n:%dn" '*' | grep py3 | grep -v py39 | cut -d : -f 1 | sort -u)
+  # portmaster $REBUILD
+  # REBUILD2=$(pkg list | grep python-38 | xargs pkg which | awk '{print $6}' | sort -u)
+  # portmaster $REBUILD2
+
+  Final steps (for pre-built packages & portmaster):
+
+  If no longer required, Python 3.8 can be removed via
+  "pkg remove python38" and the directory /usr/local/lib/python3.8 can
+  then be deleted afterwards, if not empty.
+
+20220625:
+AFFECTS: users of sysutils/fusefs-bindfs
+  AUTHOR: doralitze@chaotikum.org
+
+  Bindfs defaults to use direct I/O since version 1.16. While this results
+  in major performance improvements as well as several bug fixes, this also
+  breaks direct legacy calls to mmap. If your application still uses them
+  consider these two options:
+
+  1. Mount using `--no-direct-io`
+  2. Upgrade your application in order to query mapping guards
+
+20220623:
+AFFECTS: users of science/gramps
+  AUTHOR: fernape@FreeBSD.org
+
+  databases/py-bsddb3 is deprecated and will be removed in the future. With that
+  gramps will lose the ability to load family trees using Berkeley DB.
+  It is suggested to migrate all family trees using Berkeley DB by exporting
+  them to gramps xml and import that gramps xml into a family tree using sqlite
+  as database.
+
+20220620:
+AFFECTS: users of www/selenium
+  AUTHOR: fernape@FreeBSD.org
+
+  The port has changed startup args so if you are using selenium_args= in
+  rc.conf you need to add the parameter "standalone" manually.
+
+20220616:
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  /!\ WARNING /!\
+
+  The NetBox 3.2 release contains major changes, so at least items 1.), 2.)
+  and 3.) must be checked before proceeding with the upgrade!
+
+  /!\ WARNING /!\
+
+  1. This release includes a database migration that will remove the "asn",
+     "contact_name", "contact_phone", and "contact_email" fields from the
+     site model.  (These fields have been superseded by the ASN and contact
+     models introduced in NetBox v3.1.)
+
+     To protect against the accidental destruction of data, the upgrade
+     process will fail if any sites still have data in any of these fields.
+
+     To bypass this safeguard, set the NETBOX_DELETE_LEGACY_DATA environment
+     variable when running the upgrade script, which will permit the
+     destruction of legacy data.
+
+     A set of migration scripts is available to assist with the migration of
+     legacy site data:
+
+     https://github.com/netbox-community/migration-scripts
+
+  2. NetBox v3.2 requires Python 3.8 or later.
+
+  3. If the NetBox Plugin "net-mgmt/py-netbox-plugin-extension" is used,
+     please disable it before the migrations are applied.  This can be done
+     by removing the entry "netbox_plugin_extensions" from the "PLUGINS"
+     section in the NetBox configuration.
+
+     Once the upgrade is done, this port/package can be safely removed as
+     it's no longer required.
+
+  4. Please also check the pkg-message and the changelogs for further info.
+
+20220608:
+  AFFECTS: devel/autoconf-wrapper, devel/autoconf213
+  AUTHOR: tijl@FreeBSD.org
+
+  These ports have been renamed to devel/autoconf-switch and devel/autoconf2.13
+  respectively.  If your favourite port updating tool cannot handle that then
+  just remove the packages with "pkg delete" and then install the new port.
+
+20220607:
+  AFFECTS: security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  OpenSSH has been updated to 9.0p1 with incompatible changes.
+  See https://www.openssh.com/txt/release-9.0 for details.
+
+20220602:
+  AFFECTS: sysutils/graylog
+  AUTHOR: dch@FreeBSD.org
+
+  Graylog 4.3.0+ fails to start if graylog's internal collector for
+  system statistics is enabled. This will eventually be addressed
+  upstream.
+
+  Add disable_native_system_stats_collector=true to your graylog.conf.
+
+20220513:
+  AFFECTS: devel/nexus2-oss
+  AUTHOR: michael.osipov@siemens.com
+
+  Nexus 2.15.x introduces incompatible configuration changes. You
+  must review changes in ETCDIR/wrapper.conf and ETCDIR/jetty*.xml
+  with updated samples as well as NEXUS_WORKDIR/conf/logback-nexus.xml
+  with its origin from
+  DATADIR/nexus/WEB-INF/lib/nexus-core-VERSION.jar!/META-INF/log/logback-nexus.xml,
+  grant write access to files in ETCDIR since Nexus itself might
+  update files in place otherwise your instance will not properly
+  work after the update.
+
+20220510
+  AFFECTS: sysutils/zrepl
+  AUTHOR: monwarez@gmail.com
+
+  The zrepl update to 0.5.0.8 includes the following breaking changes:
+  - The Prometheus metric zrepl_version_daemon was converted to zrepl_start_time
+  The metric still reports the zrepl version in a label.
+  But the metric *value* is now the Unix timestamp at the time the daemon was started.
+  The Grafana dashboard in zrepl examples directory has been updated.
+
+20220502:
+  AFFECTS: mail/mutt
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  Default header cache option has been changed to the new option LMDB using
+  databases/lmdb. The BDB option still exists but now uses databases/db18 due
+  to the EOL of databases/db5.
+
+20220501:
+  AFFECTS: users of drm-current-kmod and drm-devel-kmod
+  AUTHOR: manu@FreeBSD.org
+
+  Both ports where removed.
+  If you were using either one of them directly (i.e. without using
+  graphics/drm-kmod metaport) use graphics/drm-510-kmod.
+  If you have some problems with this one try drm-54-kmod and report
+  a bug on https://github.com/freebsd/drm-kmod.
+
+20220428:
+  AFFECTS: users of databases/redis
+  AUTHOR: yasu@FreeBSD.org
+
+  The databases/redis port has been updated to 7.0. Users wanting to
+  stay on 6.2 can replace databases/redis with databases/redis62 with
+  one of the following commands.
+
+  If you use pkg with binary packages:
+    # pkg set -o databases/redis:databases/redis62
+    # pkg upgrade
+  If you use portmaster:
+    # portmaster -o databases/redis62 databases/redis
+  If you use portupgrade:
+    # portupgrade -o databases/redis62 databases/redis
+
 20220426:
   AFFECTS: users of deskutils/grantleetheme
   AUTHOR: kde@FreeBSD.org
@@ -770,7 +1015,7 @@ reinstall the new ones without using the pkg upgrade facility.
   /!\ WARNING /!\
 
   1. Please ensure that your local installation of net-mgmt/netbox is at
-     the 2.11 release before attemping to upgrade to NetBox 3.0 or later.
+     the 2.11 release before attempting to upgrade to NetBox 3.0 or later.
 
   2. Please also note that the previously deprecated secrets functionality
      has been removed with NetBox 3.0.  This means, all of the secrets still

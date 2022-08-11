@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	TraceFuncs
 PORTVERSION=	0.1
 PORTREVISION=	1

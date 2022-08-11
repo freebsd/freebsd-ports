@@ -1,5 +1,3 @@
-# Created by: Bartek Rutkowski robak@FreeBSD.org
-
 PORTNAME=	pyvmomi
 DISTVERSION=	7.0.3
 CATEGORIES=	net python

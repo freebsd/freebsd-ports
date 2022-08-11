@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	miscTools
 DISTVERSION=	0.6-26
 PORTREVISION=	1

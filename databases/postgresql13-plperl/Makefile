@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@partitur.se>
-
 PORTNAME=	postgresql
 # Keep the ?=, this port is used as master by the other plperl.
 PORTREVISION?=	0

@@ -1,5 +1,3 @@
-# Created by: Alexandre Biancalana <ale@biancalanas.net>
-
 PORTNAME=	Email-Sender-Transport-SMTP-TLS
 PORTVERSION=	0.15
 CATEGORIES=	mail perl5

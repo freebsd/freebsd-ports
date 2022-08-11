@@ -1,5 +1,3 @@
-# Created by: Alex Pesternikov <ap@page2rss.com>
-
 PORTNAME=	ctemplate
 PORTVERSION=	0.5
 CATEGORIES=	www textproc

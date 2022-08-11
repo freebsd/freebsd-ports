@@ -1,5 +1,3 @@
-# Created by: peter.schuller@infidyne.com
-
 PORTNAME=	liquid
 PORTVERSION=	4.0.3
 CATEGORIES=	textproc rubygems

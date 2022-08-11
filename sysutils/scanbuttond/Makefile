@@ -1,5 +1,3 @@
-# Created by: Daniel Thiele
-
 PORTNAME=	scanbuttond
 PORTVERSION=	0.2.3
 PORTREVISION=	2

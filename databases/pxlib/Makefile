@@ -1,5 +1,3 @@
-# Created by: Sergey Matveychuk <sem@FreeBSD.org>
-
 PORTNAME=	pxlib
 PORTVERSION=	0.6.8
 CATEGORIES=	databases

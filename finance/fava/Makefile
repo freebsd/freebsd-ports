@@ -1,6 +1,5 @@
 PORTNAME=	fava
-PORTVERSION=	1.20.1
-PORTREVISION=	0
+PORTVERSION=	1.22
 CATEGORIES=	finance
 MASTER_SITES=	CHEESESHOP
 
@@ -30,5 +29,9 @@ USE_PYTHON=	autoplist distutils noflavors
 
 # Upstream archive contains files with UTF-8 names
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+
+post-patch:
+	@${ECHO_CMD} "from setuptools import setup" > ${WRKSRC}/setup.py
+	@${ECHO_CMD} "setup()" >> ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

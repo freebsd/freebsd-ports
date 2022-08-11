@@ -1,5 +1,3 @@
-# Created by: Sarod Yatawatta <sarod@cs.pdn.ac.lk>
-
 PORTNAME=	pdnmesh
 PORTVERSION=	0.2.2
 PORTREVISION=	19

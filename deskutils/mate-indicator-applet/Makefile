@@ -1,4 +1,3 @@
-# Created by: Eric Turgeon <ericbsd@FreeBSD.org>
 PORTNAME=	mate-indicator-applet
 PORTVERSION=	1.26.0
 CATEGORIES=	deskutils mate

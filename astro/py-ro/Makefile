@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	ro
 PORTVERSION=	3.6.9
 PORTREVISION=	4

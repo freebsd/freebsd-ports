@@ -1,5 +1,3 @@
-# Created by: krion
-
 PORTNAME=	xbraitenberg
 PORTVERSION=	0.9
 PORTREVISION=	2

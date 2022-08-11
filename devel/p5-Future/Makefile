@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Future
 PORTVERSION=	0.48
 CATEGORIES=	devel perl5

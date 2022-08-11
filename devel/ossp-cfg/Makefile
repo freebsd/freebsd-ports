@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@geeksrus.net>
-
 PORTNAME=	cfg
 PORTVERSION=	0.9.11
 PORTREVISION=	1

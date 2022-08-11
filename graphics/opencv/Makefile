@@ -1,6 +1,6 @@
 PORTNAME=	opencv
 DISTVERSION=	4.5.5
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	graphics
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -109,7 +109,7 @@ PYTHON_CMAKE_ON=	-DOPENCV_PYTHON3_INSTALL_PATH=${PYTHON_SITELIBDIR}
 
 TBB_DESC=		Add Intel Threading Building Blocks Support
 TBB_CMAKE_BOOL=		WITH_TBB
-TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
+TBB_LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 TESSERACT_DESC=		Add Tesseract-based OCR
 TESSERACT_LIB_DEPENDS=	libtesseract.so:graphics/tesseract
@@ -161,7 +161,7 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 GSTREAMER_DESC=		Add GSTREAMER Support
 GSTREAMER_CMAKE_BOOL=	WITH_GSTREAMER
-GSTREAMER_USE=		GSTREAMER1=yes
+GSTREAMER_USES=		gstreamer
 
 V4L_DESC=		Enable support for Video for Linux
 V4L_CMAKE_BOOL=		WITH_V4L WITH_LIBV4L

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	click-default-group
 PORTVERSION=	1.2.2
 CATEGORIES=	devel python

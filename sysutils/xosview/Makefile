@@ -1,5 +1,3 @@
-# Created by: Brian Handy <handy@physics.montana.edu>
-
 PORTNAME=	xosview
 DISTVERSION=	1.23
 PORTREVISION=	1

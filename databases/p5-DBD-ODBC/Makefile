@@ -1,5 +1,3 @@
-# Created by: clive@FreeBSD.org
-
 PORTNAME=	DBD-ODBC
 PORTVERSION=	1.61
 CATEGORIES=	databases perl5

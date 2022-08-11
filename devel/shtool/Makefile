@@ -1,5 +1,3 @@
-# Created by: Ralf S. Engelschall
-
 PORTNAME=	shtool
 PORTVERSION=	2.0.8
 CATEGORIES=	devel

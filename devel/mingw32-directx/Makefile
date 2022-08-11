@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@fxq.nl>
-
 PORTNAME=	directx
 PORTVERSION=	20020518
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	HTML-Element-Library
 PORTVERSION=	5.220000
 CATEGORIES=	www perl5

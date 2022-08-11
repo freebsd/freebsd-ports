@@ -1,5 +1,3 @@
-# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-
 PORTNAME=	Net-INET6Glue
 PORTVERSION=	0.604
 PORTREVISION=	0

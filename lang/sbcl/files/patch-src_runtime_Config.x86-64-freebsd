@@ -1,0 +1,20 @@
+From 9de74a0d4d0f1f38db5ae7e891480d8a4b4ad8d9 Mon Sep 17 00:00:00 2001
+From: Douglas Katzman <dougk@google.com>
+Date: Tue, 2 Aug 2022 14:40:28 -0400
+Subject: [PATCH] Add /usr/local/include for freebsd
+
+https://wiki.freebsd.org/WarnerLosh/UsrLocal says something about it.
+
+Should fix lp#1981112.
+--- src/runtime/Config.x86-64-freebsd.orig	2022-07-29 14:39:18 UTC
++++ src/runtime/Config.x86-64-freebsd
+@@ -15,7 +15,8 @@ include Config.x86-64-bsd
+ # worked fine for most things, but LOAD-FOREIGN & friends require
+ # dlopen() etc., which in turn depend on dynamic linking of the
+ # runtime.
+-OS_LIBS += -lutil
++OS_LIBS += -lutil -L/usr/local/lib
++CPPFLAGS += -isystem/usr/local/include
+ 
+ # use libthr (1:1 threading).  libpthread (m:n threading) does not work.
+ ifdef LISP_FEATURE_SB_THREAD

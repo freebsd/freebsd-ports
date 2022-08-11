@@ -1,0 +1,16 @@
+--- deps/mruby/Rakefile.orig	2022-04-27 17:08:45 UTC
++++ deps/mruby/Rakefile
+@@ -33,10 +33,9 @@ def install_D(src, dst)
+ load "#{MRUBY_ROOT}/tasks/gitlab.rake"
+ 
+ def install_D(src, dst)
+-  opts = { :verbose => $verbose }
+-  FileUtils.rm_f dst, opts
+-  FileUtils.mkdir_p File.dirname(dst), opts
+-  FileUtils.cp src, dst, opts
++  FileUtils.rm_f dst, verbose: $verbose
++  FileUtils.mkdir_p File.dirname(dst), verbose: $verbose
++  FileUtils.cp src, dst, verbose: $verbose
+ end
+ 
+ ##############################

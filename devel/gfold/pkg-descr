@@ -1,0 +1,16 @@
+CLI tool to help keep track of your Git repositories, written in Rust
+
+This app displays relevant information for multiple Git repositories
+in one to many directories. While this tool might seem limited in scope
+and purpose, that is by design.
+
+By default, gfold looks at every Git repository via traversal from
+the current working directory. If you would like to target another directory,
+you can pass its path (relative or absolute) as the first argument
+or change the default path in the config file.
+
+After traversal, gfold leverages rayon to perform concurrent,
+read-only analysis of all Git repositories detected.
+Analysis is performed by leveraging the git2-rs library.
+
+WWW: https://github.com/nickgerace/gfold

@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	pxe
 PORTVERSION=	1.4.2
 PORTREVISION=	2

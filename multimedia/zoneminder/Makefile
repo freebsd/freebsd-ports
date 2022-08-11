@@ -74,7 +74,7 @@ CMAKE_ARGS+=	-DZM_PERL_MM_PARMS=INSTALLDIRS=site \
 		-DZM_WEBDIR=${WWWDIR} \
 		-DZM_CGIDIR=${WWWDIR}/cgi-bin \
 		-DZM_CONTENTDIR=/var/db/zoneminder \
-		-DZM_MANPAGE_DEST_PREFIX=${PREFIX}/man \
+		-DZM_MANPAGE_DEST_PREFIX=${PREFIX}/share/man \
 		-DHAVE_SENDFILE=0 \
 		-DZM_NO_CURL=ON \
 		-DZM_NO_LIBVLC=ON \
@@ -113,6 +113,6 @@ post-install: # zmsystemctl.pl is only for systend-based systems
 	@cd ${STAGEDIR}${PREFIX} && \
 		${RM} \
 			bin/zmsystemctl.pl \
-			man/man8/zmsystemctl.pl.8.gz
+			share/man/man8/zmsystemctl.pl.8.gz
 
 .include <bsd.port.post.mk>

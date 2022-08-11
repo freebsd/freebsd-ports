@@ -1,5 +1,3 @@
-# Created by: Boris Samorodov <bsam@FreeBSD.org>
-
 .include "${.CURDIR}/../../devel/eric6/bsd.eric6.mk"
 
 PKGNAMESUFFIX=	-qt5-${FLAVOR:U:S/_/-/}

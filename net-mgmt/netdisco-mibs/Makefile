@@ -1,5 +1,3 @@
-# Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-
 PORTNAME=	netdisco-mibs
 DISTVERSION=	4.010
 CATEGORIES=	net-mgmt

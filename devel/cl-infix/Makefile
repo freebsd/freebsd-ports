@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni
-
 PORTNAME=	infix
 PORTVERSION=	19960628
 PORTREVISION=	3

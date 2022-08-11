@@ -1,5 +1,3 @@
-# Created by: Simon Olofsson <simon@olofsson.de>
-
 PORTNAME=	Weather-Underground
 PORTVERSION=	3.03
 PORTREVISION=	1

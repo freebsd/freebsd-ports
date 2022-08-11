@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	Catalyst-Plugin-Session-Store-Memcached-Fast
 PORTVERSION=	0.02
 PORTREVISION=	2

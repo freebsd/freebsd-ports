@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	dvisvg
 DISTVERSION=	0.7.1d
 PORTREVISION=	8

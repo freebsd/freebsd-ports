@@ -1,5 +1,3 @@
-# Created by: dhagan@cs.vt.edu
-
 PORTNAME=	elm
 PORTVERSION=	2.5.8
 PORTREVISION=	5

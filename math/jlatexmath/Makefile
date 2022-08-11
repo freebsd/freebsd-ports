@@ -1,5 +1,3 @@
-# Created by: rfarmer@predatorlabs.net
-
 PORTNAME=	jlatexmath
 PORTVERSION=	1.0.7
 CATEGORIES=	math java

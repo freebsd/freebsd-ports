@@ -1,5 +1,3 @@
-# Created by: Foxfair Hu <foxfair@FreeBSD.org>
-
 PORTNAME=	Crypt-Anubis
 PORTVERSION=	1.0.4
 PORTREVISION=	1

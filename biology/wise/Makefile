@@ -1,5 +1,3 @@
-# Created by: Tony Maher <tonym@biolateral.com.au>
-
 PORTNAME=	wise
 PORTVERSION=	2.4.1
 PORTREVISION=	1

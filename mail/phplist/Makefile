@@ -1,7 +1,5 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	phplist
-DISTVERSION=	3.6.7
+DISTVERSION=	3.6.8
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -16,6 +14,7 @@ RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 
 USES=		cpe tar:tgz php:web,flavors
 USE_PHP=	curl gd gettext hash iconv imap json mbstring mysqli pcre session xml zlib
+IGNORE_WITH_PHP=	82
 
 NO_ARCH=	yes
 NO_BUILD=	yes

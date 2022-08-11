@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MooX-StrictConstructor
 PORTVERSION=	0.011
 CATEGORIES=	devel perl5

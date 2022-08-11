@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	hydrogen
 DISTVERSION=	1.0.1
 PORTREVISION=	1

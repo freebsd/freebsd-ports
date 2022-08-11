@@ -1,7 +1,5 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	django
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.7
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION}/
@@ -32,8 +30,8 @@ PORTDOCS=	*
 
 SHEBANG_FILES=	django/conf/project_template/manage.py-tpl
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django22 \
-			${PYTHON_PKGNAMEPREFIX}django31
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django32 \
+			${PYTHON_PKGNAMEPREFIX}django41
 
 CPE_VENDOR=	djangoproject
 
@@ -46,14 +44,15 @@ OPTIONS_GROUP_DATABASE=	PGSQL MYSQL SQLITE
 OPTIONS_DEFAULT=SQLITE
 HTMLDOCS_DESC=	Install HTML documentation (requires Sphinx)
 
-HTMLDOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
+HTMLDOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=4.5.0,1:textproc/py-sphinx@${PY_FLAVOR}
 HTMLDOCS_IMPLIES=	DOCS
+HTMLDOCS_USES=		gmake
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR}
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mysqlclient>=1.3.13:databases/py-mysqlclient@${PY_FLAVOR}
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 post-build-HTMLDOCS-on:
-	cd ${WRKSRC}/docs && ${MAKE} html SPHINXBUILD=sphinx-build-${PYTHON_VER}
+	cd ${WRKSRC}/docs && ${GMAKE} html SPHINXBUILD=sphinx-build-${PYTHON_VER}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}/${MAN1PREFIX}/man/man1

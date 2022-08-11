@@ -1,0 +1,69 @@
+(pulled from the PR)
+
+commit 27ceebbc2402e4c98203c7eef9696f4bd3d326f8
+Author: Ed Maste <emaste@FreeBSD.org>
+Date:   Tue Aug 31 15:30:50 2021 -0400
+
+    openssh: simplify login class restrictions
+
+    Login class-based restrictions were introduced in 5b400a39b8ad.  The
+    code was adapted for sshd's Capsicum sandbox and received many changes
+    over time, including at least fc3c19a9fcee, bd393de91cc3, and
+    e8c56fba2926.
+
+    During an attempt to upstream the work a much simpler approach was
+    suggested.  Adopt it now in the in-tree OpenSSH to reduce conflicts with
+    future updates.
+
+    Submitted by:   Yuchiro Naito (against OpenSSH-portable on GitHub)
+    Obtained from:  https://github.com/openssh/openssh-portable/pull/262
+    Reviewed by:    allanjude, kevans
+    MFC after:      2 weeks
+    Differential Revision:  https://reviews.freebsd.org/D31760
+
+
+--- auth.c
++++ auth.c
+@@ -566,6 +566,9 @@ getpwnamallow(struct ssh *ssh, const char *user)
+ {
+ #ifdef HAVE_LOGIN_CAP
+ 	extern login_cap_t *lc;
++#ifdef HAVE_AUTH_HOSTOK
++	const char *from_host, *from_ip;
++#endif
+ #ifdef BSD_AUTH
+ 	auth_session_t *as;
+ #endif
+@@ -611,6 +614,21 @@ getpwnamallow(struct ssh *ssh, const char *user)
+ 		debug("unable to get login class: %s", user);
+ 		return (NULL);
+ 	}
++#ifdef HAVE_AUTH_HOSTOK
++	from_host = auth_get_canonical_hostname(ssh, options.use_dns);
++	from_ip = ssh_remote_ipaddr(ssh);
++	if (!auth_hostok(lc, from_host, from_ip)) {
++		debug("Denied connection for %.200s from %.200s [%.200s].",
++		      pw->pw_name, from_host, from_ip);
++		return (NULL);
++	}
++#endif /* HAVE_AUTH_HOSTOK */
++#ifdef HAVE_AUTH_TIMEOK
++	if (!auth_timeok(lc, time(NULL))) {
++		debug("LOGIN %.200s REFUSED (TIME)", pw->pw_name);
++		return (NULL);
++	}
++#endif /* HAVE_AUTH_TIMEOK */
+ #ifdef BSD_AUTH
+ 	if ((as = auth_open()) == NULL || auth_setpwd(as, pw) != 0 ||
+ 	    auth_approval(as, lc, pw->pw_name, "ssh") <= 0) {
+--- configure.ac
++++ configure.ac
+@@ -1784,6 +1784,8 @@ AC_SUBST([PICFLAG])
+ 
+ dnl    Checks for library functions. Please keep in alphabetical order
+ AC_CHECK_FUNCS([ \
++	auth_hostok \
++	auth_timeok \
+ 	Blowfish_initstate \
+ 	Blowfish_expandstate \
+ 	Blowfish_expand0state \

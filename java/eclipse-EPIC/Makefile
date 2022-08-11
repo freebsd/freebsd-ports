@@ -1,5 +1,3 @@
-# Created by: tux@pinguru.net
-
 PORTNAME=	EPIC
 PORTVERSION=	0.6.35
 PORTREVISION=	3

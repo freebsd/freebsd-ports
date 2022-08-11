@@ -1,5 +1,3 @@
-# Created by: Andrea Sozzi <as@g-cows.org>
-
 PORTNAME=	g-cows
 PORTVERSION=	1.12
 CATEGORIES=	www

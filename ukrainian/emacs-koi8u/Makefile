@@ -1,5 +1,3 @@
-# Created by: Andrey Slusar <anray@FreeBSD.org>
-
 PORTNAME=	koi8u
 PORTVERSION=	1.0
 PORTREVISION=	1

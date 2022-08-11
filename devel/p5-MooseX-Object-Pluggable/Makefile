@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <wahjava@gmail.com>
-
 PORTNAME=	MooseX-Object-Pluggable
 PORTVERSION=	0.0014
 PORTREVISION=	1

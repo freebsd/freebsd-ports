@@ -1,5 +1,3 @@
-# Created by: Jeremy Shaffner <jeremy@external.org>
-
 PORTNAME=	gwhich
 PORTVERSION=	2.21
 PORTREVISION=	1

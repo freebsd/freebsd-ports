@@ -1,5 +1,3 @@
-# Created by: wghicks@bellsouth.net
-
 PORTNAME=	tkcon
 PORTVERSION=	2.5
 CATEGORIES=	devel

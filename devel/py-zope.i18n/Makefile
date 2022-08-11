@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	zope.i18n
 PORTVERSION=	3.8.0
 PORTREVISION=	1

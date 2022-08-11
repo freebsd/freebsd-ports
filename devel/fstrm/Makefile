@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns.company>
-
 PORTNAME=		fstrm
 DISTVERSION=		0.6.1
 CATEGORIES=		devel

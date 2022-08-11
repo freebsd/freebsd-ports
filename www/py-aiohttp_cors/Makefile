@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aiohttp_cors
 PORTVERSION=	0.7.0
 CATEGORIES=	www python

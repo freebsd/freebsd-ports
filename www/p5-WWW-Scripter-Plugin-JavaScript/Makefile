@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	WWW-Scripter-Plugin-JavaScript
 PORTVERSION=	0.009
 CATEGORIES=	www perl5

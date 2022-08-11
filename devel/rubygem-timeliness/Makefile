@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	timeliness
 PORTVERSION=	0.4.4
 CATEGORIES=	devel rubygems

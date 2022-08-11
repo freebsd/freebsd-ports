@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	fast_gettext
 PORTVERSION=	2.2.0
 CATEGORIES=	devel rubygems

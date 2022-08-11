@@ -1,5 +1,5 @@
 PORTNAME=	cbsd
-DISTVERSION=	13.0.28
+DISTVERSION=	13.1.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -21,7 +21,7 @@ USE_RC_SUBR=	cbsdd cbsdrsyncd cbsd-statsd-bhyve cbsd-statsd-hoster \
 		cbsd-statsd-jail
 MAKE_JOBS_UNSAFE=	yes
 
-SUB_FILES=	pkg-deinstall pkg-message
+SUB_FILES=	pkg-message
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
@@ -30,10 +30,18 @@ CBSD_HOME?=	${PREFIX}/cbsd
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == x86_64
 PLIST_SUB=	X86=""
 .else
 PLIST_SUB=	X86="@comment "
+.endif
+
+.if ${OPSYS} != FreeBSD
+PLIST_SUB+=	FBSD="@comment "
+LIB_DEPENDS+=	libelf.so:devel/libelf
+RUN_DEPENDS+=	sysrc:sysutils/sysrc
+.else
+PLIST_SUB+=	FBSD=""
 .endif
 
 do-install:

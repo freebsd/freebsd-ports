@@ -1,6 +1,6 @@
 PORTNAME=	xbyak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.041
+DISTVERSION=	6.61.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +28,10 @@ PLIST_FILES=	include/xbyak/xbyak.h \
 		lib/cmake/xbyak/xbyak-config.cmake \
 		lib/cmake/xbyak/xbyak-targets.cmake
 
-do-test: install
+post-patch:
+	@${REINPLACE_CMD} -e 's|sed |gsed |g' ${WRKSRC}/gen/Makefile
+
+do-test:
 	@cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} test
 
 .include <bsd.port.mk>

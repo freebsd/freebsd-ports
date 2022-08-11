@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Mail-RBL
 PORTVERSION=	1.10
 PORTREVISION=	2

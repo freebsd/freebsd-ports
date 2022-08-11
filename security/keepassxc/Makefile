@@ -1,7 +1,8 @@
 PORTNAME=	keepassxc
-DISTVERSION=	2.7.0
+DISTVERSION=	2.7.1
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/${PORTNAME}-${DISTVERSION}-src.tar.xz?dummy=/
+MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	KeePass Cross-platform Community Edition
@@ -24,6 +25,7 @@ USE_QT=		concurrent core dbus gui network svg widgets buildtools_build \
 		linguisttools_build qmake_build testlib_build x11extras
 USE_XORG=	x11
 
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 CMAKE_OFF=	WITH_XC_UPDATECHECK
 
 CONFLICTS_INSTALL=	keepassx-0.* keepassx2 keepassx
@@ -44,7 +46,7 @@ FDOSECRETS_DESC=	freedesktop.org secrets service support
 
 KEESHARE_CMAKE_BOOL=	WITH_XC_KEESHARE
 KEESHARE_DESC=		Sharing integration with KeeShare
-KEESHARE_LIB_DEPENDS=	libminizip.so:archivers/minizip
+KEESHARE_USES=		minizip
 
 # Legacy/Deprecated.
 NETWORKING_CMAKE_BOOL=	WITH_XC_NETWORKING

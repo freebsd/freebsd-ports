@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Perl-Critic-Deprecated
 PORTVERSION=	1.119
 PORTREVISION=	1

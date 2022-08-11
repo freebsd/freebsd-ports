@@ -1,5 +1,3 @@
-# Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-
 PORTNAME=	gtklp
 DISTVERSION=	1.3.4
 DISTVERSIONSUFFIX=	.src

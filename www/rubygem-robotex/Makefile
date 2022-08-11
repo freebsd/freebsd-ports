@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	robotex
 PORTVERSION=	1.0.0
 CATEGORIES=	www rubygems

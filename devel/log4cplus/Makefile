@@ -1,5 +1,3 @@
-# Created by: Petri Totterman <petri.totterman@hmv.fi>
-
 PORTNAME=	log4cplus
 PORTVERSION=	1.1.2
 PORTREVISION=	3

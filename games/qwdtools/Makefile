@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	qwdtools
 CATEGORIES=	games converters
 COMMENT=	Convert QuakeWorld demos from QWD format to MVD format

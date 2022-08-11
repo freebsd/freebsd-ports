@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	Mathics_Scanner
 PORTVERSION=	1.2.4
 CATEGORIES=	math python

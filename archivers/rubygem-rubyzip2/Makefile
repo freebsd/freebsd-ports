@@ -1,5 +1,3 @@
-# Created by: Hsin-Han You <hhyou@cs.nctu.edu.tw>
-
 PORTNAME=	rubyzip2
 PORTVERSION=	2.0.2
 CATEGORIES=	archivers rubygems

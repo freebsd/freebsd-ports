@@ -1,5 +1,3 @@
-# Created by: Eric van Gyzen <vangyzen@stat.duke.edu>
-
 PORTNAME=	mcmc-jags
 DISTVERSION=	4.3.1
 CATEGORIES=	math

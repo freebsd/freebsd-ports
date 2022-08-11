@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	jsMath-fonts
 PORTVERSION=	1.3
 CATEGORIES=	math www

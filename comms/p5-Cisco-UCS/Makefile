@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Cisco-UCS
 PORTVERSION=	0.51
 PORTREVISION=	1

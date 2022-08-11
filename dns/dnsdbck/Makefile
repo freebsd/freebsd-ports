@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	dnsdbck
 PORTVERSION=	1.01
 CATEGORIES=	dns perl5

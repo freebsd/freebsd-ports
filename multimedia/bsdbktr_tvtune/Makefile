@@ -1,5 +1,3 @@
-# Created by: Mina Naguib <webmaster@topfx.com>
-
 PORTNAME=	bsdbktr_tvtune
 PORTVERSION=	0.02
 CATEGORIES=	multimedia

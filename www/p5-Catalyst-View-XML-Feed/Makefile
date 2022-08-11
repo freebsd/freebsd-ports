@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Catalyst-View-XML-Feed
 PORTVERSION=	0.09
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	ffproxy
 PORTVERSION=	1.6
 CATEGORIES=	www

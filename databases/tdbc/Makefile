@@ -1,5 +1,3 @@
-# Created by: Pietro Cerutti <gahr@FreeBSD.org>
-
 PORTNAME=	tdbc
 DISTVERSION=	1.1.3
 PORTREVISION=	0

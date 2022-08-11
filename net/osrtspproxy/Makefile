@@ -1,5 +1,3 @@
-# Created by: Volker Stolz <stolz@i2.informatik.rwth-aachen.de>
-
 PORTNAME=	osrtspproxy
 PORTVERSION=	2.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	mdns-repeater
 PORTVERSION=	1.11
 CATEGORIES=	net dns

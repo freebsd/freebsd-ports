@@ -1,8 +1,6 @@
-# Created by: Hans Petter Selasky <hselasky@FreeBSD.org>
-
 PORTNAME=	midipp
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.1.3
+DISTVERSION=		2.1.4
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org

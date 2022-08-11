@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Getopt-Attribute
 PORTVERSION=	2.101700
 PORTREVISION=	1

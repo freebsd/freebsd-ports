@@ -1,5 +1,3 @@
-# Created by: Alex Semenyaka <alex@rinet.ru>
-
 PORTNAME=	proguard
 PORTVERSION=	7.0.0
 CATEGORIES=	java devel

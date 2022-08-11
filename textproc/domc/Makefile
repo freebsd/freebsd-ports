@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	domc
 PORTVERSION=	0.8.0
 PORTREVISION=	4

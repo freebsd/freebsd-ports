@@ -1,5 +1,3 @@
-# Created by: chris@shagged.org
-
 PORTNAME=	tpop3d
 PORTVERSION=	1.5.5
 PORTREVISION=	5

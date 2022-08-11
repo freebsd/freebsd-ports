@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	limesurvey
 PORTVERSION=	3.24.3
 CATEGORIES=	www

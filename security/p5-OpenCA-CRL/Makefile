@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	OpenCA-CRL
 PORTVERSION=	0.9.6
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Perl-Lint
 PORTVERSION=	0.25
 CATEGORIES=	textproc perl5

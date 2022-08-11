@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	nspr
 PORTVERSION=	4.25.0
 DISTVERSIONSUFFIX=	-2.el7_9

@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	sierra-gtk-themes
 DISTVERSION=	2019-12-16
 CATEGORIES=	x11-themes

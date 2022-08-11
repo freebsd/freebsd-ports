@@ -17,6 +17,8 @@ GH_ACCOUNT=	magit
 
 ALL_TARGET=	lisp info
 
+CONFLICTS_INSTALL=	transient-devel-emacs*
+
 NO_ARCH=	yes
 
 INFO=		transient

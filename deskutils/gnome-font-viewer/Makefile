@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-font-viewer
 PORTVERSION=	42.0
 CATEGORIES=	deskutils gnome
@@ -7,7 +5,7 @@ MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME 3 font viewer utility
+COMMENT=	GNOME font viewer utility
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

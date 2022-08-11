@@ -1,5 +1,3 @@
-# Created by: Michal Bielicki <m.bielicki@llizardfs.com>
-
 PORTNAME=	isa-l
 PORTVERSION=	2.30.0
 DISTVERSIONPREFIX=	v

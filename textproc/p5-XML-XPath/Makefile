@@ -1,7 +1,5 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-XPath
-PORTVERSION=	1.44
+PORTVERSION=	1.47
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Tangram
 PORTVERSION=	2.12
 CATEGORIES=	databases perl5

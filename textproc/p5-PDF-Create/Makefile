@@ -1,5 +1,3 @@
-# Created by: petef@databits.net
-
 PORTNAME=	PDF-Create
 PORTVERSION=	1.46
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <trociny@FreeBSD.org>
-
 PORTNAME=	leo_center
 PORTVERSION=	0.4.70
 PORTREVISION=	1

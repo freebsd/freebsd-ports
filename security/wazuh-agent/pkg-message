@@ -1,7 +1,0 @@
-************************************************************************************
-*                                                                                  *
-* You must edit /var/ossec/etc/ossec.conf.sample for your setup, and               *
-* follow the other directions for wazuh client configuration at:                   *
-* https://documentation.wazuh.com/3.12/user-manual/reference/ossec-conf/index.html *
-*                                                                                  *
-************************************************************************************

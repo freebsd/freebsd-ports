@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	qmail-notify
 PORTVERSION=	0.93
 PORTREVISION=	1

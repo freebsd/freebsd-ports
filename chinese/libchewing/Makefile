@@ -1,5 +1,3 @@
-# Created by: Kuang-che Wu <kcwu@csie.org>
-
 PORTNAME=	libchewing
 PORTVERSION=	0.5.1
 DISTVERSIONPREFIX=	v

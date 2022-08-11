@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE
 PORTVERSION=	1.370
 CATEGORIES=	devel perl5

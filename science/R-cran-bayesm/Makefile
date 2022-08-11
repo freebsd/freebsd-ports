@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	bayesm
 DISTVERSION=	3.1-4
 PORTREVISION=	1

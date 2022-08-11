@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	autogen
 PORTVERSION=	5.18.16
 PORTREVISION=	3

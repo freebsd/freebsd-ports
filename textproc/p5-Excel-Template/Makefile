@@ -1,5 +1,3 @@
-# Created by: Espen Tagestad <espen@tagestad.no>
-
 PORTNAME=	Excel-Template
 PORTVERSION=	0.34
 PORTREVISION=	2

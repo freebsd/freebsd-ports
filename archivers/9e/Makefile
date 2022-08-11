@@ -1,5 +1,3 @@
-# Created by: Jerry Hicks
-
 PORTNAME=	9e
 PORTVERSION=	1.0
 CATEGORIES=	archivers

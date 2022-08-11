@@ -1,5 +1,3 @@
-# Created by: Jose Jachuf <jjachuf@gmail.com>
-
 PORTNAME=	rope
 DISTVERSION=	0.18.0
 CATEGORIES=	devel python

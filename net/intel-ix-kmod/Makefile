@@ -1,5 +1,3 @@
-# Created by: Sergey Kozlov <skozlov@FreeBSD.org>
-
 PORTNAME=	ix
 PORTVERSION=	3.3.24
 PORTEPOCH=	0
@@ -21,6 +19,7 @@ MANPAGELINKS=	ix if_ix if_ixgbe
 MAX_NETMAP_OSVERSION=	9999999
 
 MASTERDIR=	${.CURDIR}/../intel-ixl-kmod
+PATCHDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}
 DISTINFO_FILE=	${.CURDIR}/distinfo
 

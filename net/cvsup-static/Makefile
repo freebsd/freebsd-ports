@@ -1,5 +1,3 @@
-# Created by: Xin Li <delphij@FreeBSD.org>
-
 PORTNAME=	cvsup-static
 PORTVERSION=	16.1h
 CATEGORIES=	net devel

@@ -1,14 +1,11 @@
-# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
-
 PORTNAME=	gcc
-PORTVERSION=	12.0.1.s20220306
-PORTREVISION=	2
+PORTVERSION=	12.1.1.s20220806
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
 DISTNAME=	gcc-${DIST_VERSION}
 
-MAINTAINER=	toolchain@FreeBSD.org
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	GNU Compiler Collection 12
 
 LICENSE=	GPLv3 GPLv3RLE
@@ -28,6 +25,8 @@ BUILD_DEPENDS+=	runtest:misc/dejagnu
 USES=		compiler:c++11-lang cpe gmake iconv libtool makeinfo perl5 tar:xz
 USE_BINUTILS=	yes
 USE_PERL5=	build
+
+CONFLICTS=	gcc12
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
@@ -71,15 +70,9 @@ CONFIGURE_ARGS+=	--disable-multilib
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 
-.elif ${ARCH} == powerpc64
-CONFIGURE_ENV+=	UNAME_m="powerpc64"
-. if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+.elif defined(PPC_ABI) && ${PPC_ABI} == ELFv2
 CONFIGURE_ARGS+=	--with-abi=elfv2
-. endif
-USE_GCC=	yes
 
-.elif ${ARCH} == powerpc64le
-USE_GCC=	yes
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran,jit

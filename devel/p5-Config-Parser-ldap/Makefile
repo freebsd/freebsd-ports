@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	Config-Parser-ldap
 PORTVERSION=	1.02
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	xmltv
 PORTVERSION=	0.5.70
 PORTREVISION=	1

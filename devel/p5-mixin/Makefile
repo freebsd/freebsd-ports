@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	mixin
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

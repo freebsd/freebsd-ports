@@ -1,5 +1,5 @@
 PORTNAME=	mpfrcx
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.3
 CATEGORIES=	math
 MASTER_SITES=	http://www.multiprecision.org/downloads/
 
@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 INFO=		mpfrcx
 
@@ -26,6 +27,6 @@ PLIST_FILES=	include/mpfrcx.h \
 		lib/libmpfrcx.a \
 		lib/libmpfrcx.so \
 		lib/libmpfrcx.so.1 \
-		lib/libmpfrcx.so.1.2.2
+		lib/libmpfrcx.so.1.2.3
 
 .include <bsd.port.mk>

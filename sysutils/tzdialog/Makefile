@@ -1,5 +1,3 @@
-# Created by: Devin Teske <dteske@vicor.com>
-
 PORTNAME=	tzdialog
 PORTVERSION=	1.2
 CATEGORIES=	sysutils

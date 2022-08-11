@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	hatch
 PORTVERSION=	0.23.1
 CATEGORIES=	devel python

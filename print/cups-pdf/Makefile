@@ -1,5 +1,3 @@
-# Created by: Mark Reidel <ports@mark.reidel.info>
-
 PORTNAME=	cups-pdf
 DISTVERSION=	3.0.1
 PORTREVISION=	2

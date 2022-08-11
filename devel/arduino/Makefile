@@ -1,5 +1,3 @@
-# Created by: Warren Block <wblock@wonkity.com>
-
 PORTNAME=	arduino
 PORTVERSION=	1.0.6
 PORTREVISION=	3

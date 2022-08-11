@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	django-markwhat
 PORTVERSION=	1.6.2
 CATEGORIES=	www python textproc

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pycsw
 PORTVERSION=	2.6.1
 CATEGORIES=	science python

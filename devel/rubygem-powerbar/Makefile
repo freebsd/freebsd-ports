@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	powerbar
 PORTVERSION=	1.0.18
 CATEGORIES=	devel ruby

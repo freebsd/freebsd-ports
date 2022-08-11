@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	python-socks
 PORTVERSION=	2.0.3
 PORTREVISION=	1

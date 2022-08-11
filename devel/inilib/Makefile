@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	inilib
 PORTVERSION=	1.0.7b3
 CATEGORIES=	devel

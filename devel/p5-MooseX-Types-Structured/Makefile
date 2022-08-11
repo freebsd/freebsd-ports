@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	MooseX-Types-Structured
 PORTVERSION=	0.36
 CATEGORIES=	devel perl5

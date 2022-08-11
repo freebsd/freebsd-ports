@@ -1,8 +1,6 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	electricsheep
 DISTVERSION=	3.0.2.20191005 # configure.ac though says that the version is 2.7b33
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics
 

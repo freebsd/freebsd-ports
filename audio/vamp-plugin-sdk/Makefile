@@ -1,5 +1,3 @@
-# Created by: mathias.picker@gmx.de
-
 PORTNAME=	vamp-plugin-sdk
 DISTVERSION=	2.9.0
 PORTREVISION=	1

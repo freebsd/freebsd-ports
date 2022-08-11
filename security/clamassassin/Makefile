@@ -1,5 +1,3 @@
-# Created by: Matt <matt@xtaz.net>
-
 PORTNAME=	clamassassin
 PORTVERSION=	1.2.4
 PORTREVISION=	6

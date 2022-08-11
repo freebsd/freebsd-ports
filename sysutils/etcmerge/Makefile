@@ -1,5 +1,3 @@
-# Created by: eivind
-
 PORTNAME=	etcmerge
 PORTVERSION=	0.4
 CATEGORIES=	sysutils

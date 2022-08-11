@@ -1,5 +1,3 @@
-# Created by: Daniel J. O'Connor <darius@dons.net.au>
-
 PORTNAME=	quakeforge
 PORTVERSION=	0.7.2
 PORTREVISION=	9

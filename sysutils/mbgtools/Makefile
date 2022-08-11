@@ -1,5 +1,3 @@
-# Created by: George Neville-Neil gnn@freebsd.org
-
 PORTNAME=	mbgtools
 DISTVERSION=	fbsd-1.0.0
 CATEGORIES=	sysutils

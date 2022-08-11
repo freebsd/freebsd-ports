@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	X11-Protocol
 PORTVERSION=	0.56
 PORTREVISION=	1

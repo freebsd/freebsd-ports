@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	HTTP-Server-Simple
 PORTVERSION=	0.52
 CATEGORIES=	www perl5

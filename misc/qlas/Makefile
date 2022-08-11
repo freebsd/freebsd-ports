@@ -1,5 +1,3 @@
-# Created by: Denis Shaposhnikov <dsh@vlink.ru>
-
 PORTNAME=	qlas
 PORTVERSION=	1.93
 CATEGORIES=	misc

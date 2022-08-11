@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Dancer2-Plugin-Deferred
 PORTVERSION=	0.008000
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: mr
-
 PORTNAME=	tcpblast
 PORTVERSION=	1.1
 PORTREVISION=	1

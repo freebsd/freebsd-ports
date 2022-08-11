@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <kappa@FreeBSD.org.ua>
-
 PORTNAME=	NetAddr-IP-Find
 PORTVERSION=	0.03
 PORTREVISION=	1

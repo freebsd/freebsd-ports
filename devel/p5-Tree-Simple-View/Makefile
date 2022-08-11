@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Tree-Simple-View
 PORTVERSION=	0.20
 CATEGORIES=	devel perl5

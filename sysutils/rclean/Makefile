@@ -1,5 +1,3 @@
-# Created by: Lapo Luchini <lapo@lapo.it>
-
 PORTNAME=	rclean
 PORTVERSION=	1.14
 CATEGORIES=	sysutils

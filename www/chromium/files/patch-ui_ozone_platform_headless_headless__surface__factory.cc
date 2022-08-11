@@ -1,4 +1,4 @@
---- ui/ozone/platform/headless/headless_surface_factory.cc.orig	2022-05-19 14:06:27 UTC
+--- ui/ozone/platform/headless/headless_surface_factory.cc.orig	2022-07-22 17:30:31 UTC
 +++ ui/ozone/platform/headless/headless_surface_factory.cc
 @@ -34,7 +34,7 @@
  #include "ui/ozone/platform/headless/headless_window_manager.h"
@@ -9,7 +9,7 @@
  #include "ui/ozone/platform/headless/vulkan_implementation_headless.h"
  #endif
  
-@@ -280,7 +280,7 @@ void HeadlessSurfaceFactory::CheckBasePath() const {
+@@ -274,7 +274,7 @@ void HeadlessSurfaceFactory::CheckBasePath() const {
      PLOG(FATAL) << "Unable to write to output location";
  }
  

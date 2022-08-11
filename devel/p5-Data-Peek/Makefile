@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Data-Peek
 PORTVERSION=	0.51
 CATEGORIES=	devel perl5

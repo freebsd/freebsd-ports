@@ -1,5 +1,3 @@
-# Created by: jagapen@home.com
-
 PORTNAME=	libffcall
 PORTVERSION=	2.4
 PORTREVISION=	1

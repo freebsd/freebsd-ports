@@ -1,8 +1,7 @@
-# Created by: Adam David <adam@FreeBSD.org>
-
 PORTNAME=	procmail
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.24
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-bgrb
 

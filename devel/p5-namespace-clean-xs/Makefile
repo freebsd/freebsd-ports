@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	namespace-clean-xs
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

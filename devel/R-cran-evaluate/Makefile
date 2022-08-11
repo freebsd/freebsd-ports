@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	evaluate
 PORTVERSION=	0.15
 CATEGORIES=	devel

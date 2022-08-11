@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	log4sh
 PORTVERSION=	1.4.2
 CATEGORIES=	devel

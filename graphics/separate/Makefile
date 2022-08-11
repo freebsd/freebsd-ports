@@ -1,5 +1,3 @@
-# Created by: Pietro Cerutti <gahr@gahr.ch>
-
 PORTNAME=	separate
 PORTVERSION=	0.5.8
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Tillman Hodgson <tillman@seekingfire.com>
-
 PORTNAME=	List-Group
 PORTVERSION=	1.3
 PORTREVISION=	1

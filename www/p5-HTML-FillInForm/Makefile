@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <kapr@crosswinds.net>
-
 PORTNAME=	HTML-FillInForm
 PORTVERSION=	2.22
 CATEGORIES=	www perl5

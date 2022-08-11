@@ -1,11 +1,11 @@
---- Makefile.PL.orig	2021-05-13 16:03:15 UTC
+--- Makefile.PL.orig	2022-05-03 17:53:35 UTC
 +++ Makefile.PL
-@@ -25,7 +25,7 @@ if ($^O ne 'MSWin32' and my $prefix = `brew --prefix -
-   libs '-L/usr/local/opt/openssl/lib -L/usr/local/lib -L/usr/lib -L/usr/local/ssl/lib -lcrypto -lssl';
+@@ -22,7 +22,7 @@ my $api_ver = '0x10100000L';  # (version 1.1.0)
+ my $cc_option_flags = " -DOPENSSL_API_COMPAT=$api_ver -O2 -g";
+ 
+ if ($Config::Config{cc} =~ /gcc/i) {
+-  $cc_option_flags .= $ENV{AUTHOR_TESTING} ? ' -Wall -Werror' : ' -Wall';
++  $cc_option_flags .= $ENV{AUTHOR_TESTING} ? ' -Wall' : ' -Wall';
+ } else {
+   $cc_option_flags .= '';
  }
- 
--my $cc_option_flags = '-O2 -g -Wall -Werror';
-+my $cc_option_flags = '-O2 -g -Wall';
- 
- if ($Config::Config{gccversion} =~ /llvm/i) {
-   if ($Config::Config{perl_version} <= 20) {

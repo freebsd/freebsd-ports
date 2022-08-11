@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	DBICx-Deploy
 PORTVERSION=	0.02
 PORTREVISION=	4

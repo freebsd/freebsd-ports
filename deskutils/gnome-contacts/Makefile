@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gnome-contacts
 PORTVERSION=	41.0
 PORTREVISION=	2

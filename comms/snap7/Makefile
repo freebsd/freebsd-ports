@@ -1,5 +1,3 @@
-# Created by: Vladimir Grebenschikov
-
 PORTNAME=	snap7
 PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	full-
@@ -23,7 +21,7 @@ MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LinkerName="${CXX}" SharedObjectLinkerName="$
 
 PLIST_FILES=	lib/libsnap7.so include/snap7.h share/examples/snap7/c-cpp/snap7.cpp
 
-SNAP_ARCH=	${ARCH:S/amd64/x86_64/:S/armv6/arm_v6/}
+SNAP_ARCH=	${ARCH:S/amd64/x86_64/:S/armv/arm_v/}
 MAKEFILE=	${SNAP_ARCH}_bsd.mk
 
 post-install:

@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@FreeBSD.org)
-
 PORTNAME=	c2t
 PORTVERSION=	1.0
 CATEGORIES=	chinese

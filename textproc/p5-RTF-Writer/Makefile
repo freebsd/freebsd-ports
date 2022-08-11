@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	RTF-Writer
 PORTVERSION=	1.11
 PORTREVISION=	1

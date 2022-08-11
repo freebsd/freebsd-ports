@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	swfmill
 PORTVERSION=	0.3.6
 PORTREVISION=	5

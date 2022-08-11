@@ -1,5 +1,3 @@
-# Created by: Johnny Sorocil <jsorocil@gmail.com>
-
 PORTNAME=	lattice-ice40-examples-hx1k
 PORTVERSION=	g20180310
 CATEGORIES=	devel

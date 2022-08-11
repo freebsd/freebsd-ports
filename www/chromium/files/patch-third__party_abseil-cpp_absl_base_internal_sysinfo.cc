@@ -1,4 +1,4 @@
---- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2022-02-07 13:39:41 UTC
+--- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2022-06-17 14:20:10 UTC
 +++ third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 @@ -30,7 +30,7 @@
  #include <sys/syscall.h>
@@ -9,7 +9,7 @@
  #include <sys/sysctl.h>
  #endif
  
-@@ -308,9 +308,11 @@ static double GetNominalCPUFrequency() {
+@@ -307,9 +307,11 @@ static double GetNominalCPUFrequency() {
    // a new mode (turbo mode). Essentially, those frequencies cannot
    // always be relied upon. The same reasons apply to /proc/cpuinfo as
    // well.

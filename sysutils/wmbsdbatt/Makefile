@@ -1,5 +1,3 @@
-# Created by: Josef El-Rayes <josef@FreeBSD.org>
-
 PORTNAME=	wmbsdbatt
 PORTVERSION=	0.1
 PORTREVISION=	5

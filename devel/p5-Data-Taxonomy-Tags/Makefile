@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Data-Taxonomy-Tags
 PORTVERSION=	0.05
 PORTREVISION=	1

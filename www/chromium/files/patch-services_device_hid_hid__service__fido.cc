@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_fido.cc.orig	2022-02-07 13:39:41 UTC
+--- services/device/hid/hid_service_fido.cc.orig	2022-06-17 14:20:10 UTC
 +++ services/device/hid/hid_service_fido.cc
-@@ -0,0 +1,328 @@
+@@ -0,0 +1,327 @@
 +// Copyright 2020 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -38,7 +38,6 @@
 +#include "base/strings/string_util.h"
 +#include "base/strings/stringprintf.h"
 +#include "base/strings/sys_string_conversions.h"
-+#include "base/task/post_task.h"
 +#include "base/threading/scoped_blocking_call.h"
 +#include "base/threading/thread_task_runner_handle.h"
 +#include "components/device_event_log/device_event_log.h"

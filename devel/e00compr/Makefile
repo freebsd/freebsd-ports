@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	e00compr
 PORTVERSION=	1.0.1
 CATEGORIES=	devel

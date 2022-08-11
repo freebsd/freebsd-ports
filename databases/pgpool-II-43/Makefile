@@ -1,5 +1,5 @@
 PORTNAME=	pgpool-II
-PORTVERSION=	4.3.1
+PORTVERSION=	4.3.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	-43
@@ -16,7 +16,7 @@ USE_RC_SUBR=	pgpool
 
 GNU_CONFIGURE=	yes
 
-CONFLICTS=	pgpool-II
+CONFLICTS_INSTALL=	pgpool-II-[0-9][0-9] pgpool-II[0-9][0-9] # etc/escalation.sh.sample etc/failover.sh.sample etc/pcp.conf.sample
 
 PORTSCOUT=	limit:^4.3.[0-9]*
 

@@ -7,6 +7,7 @@
 # Configuration settings for jicofo in /etc/rc.conf:
 #
 # jicofo_enable:	run jicofo server (default=NO)
+# jicofo_maxmem:	maximum memory used (default=3072m)
 # jicofo_flags:		additional flags for jicofo server (default="")
 #
 
@@ -15,19 +16,21 @@
 name="jicofo"
 rcvar=${name}_enable
 
-jicofo_env_file="%%ETCDIR%%/jicofo.conf"
+jicofo_config="%%ETCDIR%%/jicofo.conf"
 jicofo_jar="%%JAVAJARDIR%%/jicofo.jar"
 jicofo_logging_config="%%DATADIR%%/lib/logging.properties"
 jicofo_trust_store="%%ETCDIR%%/truststore.jks"
+jicofo_user="${name}"
 
 load_rc_config "${name}"
 
 : ${jicofo_enable="NO"}
+: ${jicofo_maxmem="3072m"}
 : ${jicofo_flags=""}
 
 command="%%JAVA%%"
 pidfile="/var/run/jicofo.pid"
-required_files="${jicofo_env_file} ${jicofo_trust_store}"
+required_files="${jicofo_config} ${jicofo_trust_store}"
 
 start_cmd=${name}_start
 stop_cmd=${name}_stop
@@ -36,51 +39,47 @@ restart_cmd=${name}_restart
 
 jicofo_start()
 {
-	daemon -p ${pidfile} -o /var/log/${name}.log \
-		${command} -Xmx${MAX_MEMORY} \
+	daemon -u ${jicofo_user} -p ${pidfile} -o /var/log/${name}.log \
+		${command} -Xmx${jicofo_maxmem} \
                 -XX:+HeapDumpOnOutOfMemoryError \
                 -XX:HeapDumpPath=/tmp \
                 -Djava.util.logging.config.file=${jicofo_logging_config} \
                 -Dnet.java.sip.communicator.SC_HOME_DIR_LOCATION=%%LOCALBASE%%/etc/jitsi \
                 -Dnet.java.sip.communicator.SC_HOME_DIR_NAME=jicofo \
                 -Dnet.java.sip.communicator.SC_LOG_DIR_LOCATION=/var/log/ \
+		-Dconfig.file=${jicofo_config} \
 		-Djavax.net.ssl.trustStore=${jicofo_trust_store} \
                 -cp ${jicofo_jar} \
                 org.jitsi.jicofo.Main \
-                --host=${JVB_XMPP_HOST} \
-                --domain=${JVB_XMPP_DOMAIN} \
-                --port=${JVB_XMPP_PORT} \
-                --secret=${JVB_XMPP_SECRET} \
-		--user_domain=${JVB_XMPP_USER_DOMAIN} \
-		--user_name=${JVB_XMPP_USER_NAME} \
-		--user_password=${JVB_XMPP_USER_SECRET} ${jicofo_flags}
-		echo "Started"
+		${jicofo_flags}
+
+		echo "Starting ${name}"
 }
 
 jicofo_stop()
 {
-        if [ -f ${pidfile} ]
-        then
-                kill `cat ${pidfile}`
-                rm ${pidfile}
-		echo "Stopped"
-        fi
+	if [ -f ${pidfile} ]
+	then
+		kill `cat ${pidfile}`
+		rm ${pidfile}
+		echo "Stopping ${name}"
+	fi
 }
 
 jicofo_status()
 {
-        # If running, show pid
-        if [ -f ${pidfile} ]
-        then
-                echo "${name} is running as pid" `cat ${pidfile}`
-        else
-                echo "${name} is not running"
-        fi
+	# If running, show pid
+	if [ -f ${pidfile} ]
+	then
+		echo "${name} is running as pid" `cat ${pidfile}`
+	else
+		echo "${name} is not running"
+	fi
 }
 
 jicofo_restart()
 {
-	echo "Performing restart"
+	echo "Performing restart: ${name}"
 	jicofo_stop
 	sleep 5
 	jicofo_start

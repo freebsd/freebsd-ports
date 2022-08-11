@@ -1,5 +1,3 @@
-# Created by: joerg@FreeBSD.org
-
 PORTNAME=	xmahjongg
 PORTVERSION=	3.7
 PORTREVISION=	3

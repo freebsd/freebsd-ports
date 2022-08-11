@@ -1,4 +1,3 @@
-# Created by: rflynn@acsalaska.net
 # Observium version can be found by looking at ${WRKSRC}/includes/definitions/version.inc.php
 
 PORTNAME=	observium
@@ -21,6 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		cpe php:cli,flavors python:3.5+ shebangfix
+IGNORE_WITH_PHP=	82
 SHEBANG_FILES=	\
 		poller-wrapper.py \
 		poller.php \
@@ -124,7 +124,7 @@ do-install-EXAMPLES-on:
 .endfor
 
 post-install:
-	@${ECHO}  "@sample ${APACHEETCDIR}/Includes/observium.conf.sample" >> ${TMPPLIST}
+	@${ECHO_CMD}  "@sample ${APACHEETCDIR}/Includes/observium.conf.sample" >> ${TMPPLIST}
 	@${FIND} -s ${STAGEDIR}${WWWDIR} -type f '(' -name '*.orig' -or -name '*.bak' ')' -delete
 	@${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}

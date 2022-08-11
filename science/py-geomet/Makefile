@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	geomet
 PORTVERSION=	0.3.0
 CATEGORIES=	science python

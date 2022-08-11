@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	MogileFS-Client
 PORTVERSION=	1.17
 PORTREVISION=	2

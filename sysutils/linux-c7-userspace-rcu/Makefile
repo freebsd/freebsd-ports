@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
-
 PORTNAME=	userspace-rcu
 PORTVERSION=	0.7.16
 DISTVERSIONSUFFIX=	-1.el7

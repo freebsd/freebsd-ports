@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Business-CreditCard
 PORTVERSION=	0.36
 CATEGORIES=	finance perl5

@@ -1,5 +1,3 @@
-# Created by: Craig Rodrigues <rodrigc@FreeBSD.org>
-
 PORTNAME=	xfsprogs
 PORTVERSION=	3.2.4
 PORTREVISION=	2

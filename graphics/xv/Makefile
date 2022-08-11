@@ -1,5 +1,3 @@
-# Created by: smace
-
 PORTNAME=	xv
 PORTVERSION=	3.10a
 PORTREVISION=	19

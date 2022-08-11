@@ -1,5 +1,3 @@
-# Created by: Daniel O'Connor <darius@dons.net.au>
-
 PORTNAME=	qstat
 PORTVERSION=	2.17
 DISTVERSIONPREFIX=	v

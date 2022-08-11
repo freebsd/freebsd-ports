@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	python-digitalocean
 PORTVERSION=	1.16.0
 CATEGORIES=	www python

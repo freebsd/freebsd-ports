@@ -1,5 +1,5 @@
 PORTNAME=	erlang
-PORTVERSION=	24.2
+PORTVERSION=	24.3
 PORTREVISION=	0
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/

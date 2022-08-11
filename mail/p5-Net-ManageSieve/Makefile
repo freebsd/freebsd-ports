@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Net-ManageSieve
 PORTVERSION=	0.13
 CATEGORIES=	mail perl5

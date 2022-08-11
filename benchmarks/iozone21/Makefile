@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	iozone
 PORTVERSION=	2.01
 CATEGORIES=	benchmarks

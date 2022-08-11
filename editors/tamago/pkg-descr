@@ -3,5 +3,4 @@ written in only Emacs-Lisp.  It supports the following translating servers:
 jserver, cserver, tserver, Wnn6, SJ3 ver 1 and ver 2, cannaserver, wxgserver,
 and anthy.
 
-WWW: http://git.chise.org/gitweb/?p=elisp/tamago.git;a=summary
 WWW: https://github.com/hrs-allbsd/tamago

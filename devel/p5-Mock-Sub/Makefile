@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Mock-Sub
 PORTVERSION=	1.09
 CATEGORIES=	devel perl5

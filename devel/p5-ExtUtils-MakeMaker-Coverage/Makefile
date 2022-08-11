@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	ExtUtils-MakeMaker-Coverage
 PORTVERSION=	0.05
 PORTREVISION=	2

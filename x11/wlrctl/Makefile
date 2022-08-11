@@ -1,7 +1,7 @@
 PORTNAME=	wlrctl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~brocellous/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 PATCH_SITES=	https://git.sr.ht/~brocellous/${PORTNAME}/commit/

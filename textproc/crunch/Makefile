@@ -1,5 +1,3 @@
-# Created by: Vidar Karlsen <vidar@karlsen.tech>
-
 PORTNAME=	crunch
 PORTVERSION=	3.6
 CATEGORIES=	textproc

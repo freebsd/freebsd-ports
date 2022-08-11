@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	CPAN-Testers-Report
 PORTVERSION=	1.999003
 CATEGORIES=	devel perl5

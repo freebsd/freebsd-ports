@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	RMySQL
 DISTVERSION=	0.10.23
 CATEGORIES=	databases

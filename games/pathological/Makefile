@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-
 PORTNAME=	pathological
 PORTVERSION=	1.1.3
 PORTREVISION=	14

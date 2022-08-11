@@ -1,5 +1,3 @@
-# Created by: Christoph Mallon <christoph.mallon@gmx.de>
-
 PORTNAME=	libfirm
 PORTVERSION=	1.21.0
 PORTREVISION=	2

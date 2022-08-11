@@ -1,5 +1,3 @@
-# Created by: Lars Köller <Lars.Koeller@Uni-Bielefeld.DE>
-
 PORTNAME=	apcctrl
 PORTVERSION=	0.8.21
 PORTREVISION=	1

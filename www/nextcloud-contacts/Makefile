@@ -1,7 +1,5 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	contacts
-DISTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
@@ -9,22 +7,20 @@ PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DIST_SUBDIR=	nextcloud
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Contacts app for Nextcloud
 
 LICENSE=	AGPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=20:www/nextcloud@${PHP_FLAVOR}
 
 USES=		cpe php:flavors
-IGNORE_WITH_PHP=81
+IGNORE_WITH_PHP=	82
 CPE_VENDOR=	nextcloud
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
 
 do-install:

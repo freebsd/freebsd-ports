@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <trociny@FreeBSD.org>
-
 PORTNAME=	mogilefs-client
 PORTVERSION=	3.12.2
 CATEGORIES=	sysutils

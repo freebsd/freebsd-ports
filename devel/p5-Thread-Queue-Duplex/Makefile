@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Thread-Queue-Duplex
 PORTVERSION=	0.92
 PORTREVISION=	1

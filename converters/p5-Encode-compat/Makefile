@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@lansing.dk>
-
 PORTNAME=	Encode-compat
 PORTVERSION=	0.07
 PORTREVISION=	1

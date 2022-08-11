@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-FreshBooks-API
 PORTVERSION=	0.24
 CATEGORIES=	www perl5

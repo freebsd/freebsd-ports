@@ -1,6 +1,6 @@
 PORTNAME=	fb303
-DISTVERSION=	g20210709
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2022.08.08.00
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libfolly.so:devel/folly \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
+		libicuuc.so:devel/icu \
 		liblz4.so:archivers/liblz4 \
 		libsnappy.so:archivers/snappy \
 		libsodium.so:security/libsodium \
@@ -25,12 +26,11 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libwangle.so:net/wangle \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang ssl
+USES=		cmake compiler:c++17-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
-GH_TAGNAME=	83ae662219660d30b49ad8474f5c63bbfc6d5f6f
 
 CXXFLAGS+=	-fPIC
 

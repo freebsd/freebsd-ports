@@ -1,5 +1,3 @@
-# Created by: Choe, Cheng-Dae <whitekid@gmail.com>
-
 PORTNAME=	freeimage
 PORTVERSION=	3.18.0
 PORTREVISION=	3

@@ -1,9 +1,0 @@
-bin/mpgcat
-bin/mpgdemux
-bin/mpginfo
-bin/mpgjoin
-bin/mpgsplit
-bin/mpgtx
-bin/tagmp3
-man/man1/mpgtx.1.gz
-man/man1/tagmp3.1.gz

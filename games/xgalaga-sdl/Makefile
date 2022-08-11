@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	xgalaga-sdl
 PORTVERSION=	2.1.1.0
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	xstrp4
 PORTVERSION=	1.8.2
 CATEGORIES=	devel

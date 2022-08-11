@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Syntax-Keyword-Gather
 PORTVERSION=	1.003002
 CATEGORIES=	devel perl5

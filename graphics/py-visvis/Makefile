@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	visvis
 PORTVERSION=	1.13.0
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	sst
 PORTVERSION=	1.23
 CATEGORIES=	security

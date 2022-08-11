@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Astro-Catalog
 PORTVERSION=	4.36
 CATEGORIES=	astro perl5

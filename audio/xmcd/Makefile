@@ -1,5 +1,3 @@
-# Created by: Gennady Sorokopud <gena@NetVision.net.il>
-
 PORTNAME=	xmcd
 PORTVERSION=	3.3.2
 PORTREVISION=	20

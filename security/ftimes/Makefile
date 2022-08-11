@@ -1,5 +1,3 @@
-# Created by: Klayton Monroe <klm@uidzero.org>
-
 PORTNAME=		ftimes
 PORTVERSION=		3.11.0
 PORTREVISION=	2

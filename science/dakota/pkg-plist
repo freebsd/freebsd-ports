@@ -31,6 +31,7 @@ include/APPSOptimizer.hpp
 include/ActiveKey.hpp
 include/ActiveSubspaceModel.hpp
 include/AdaptedBasisModel.hpp
+include/AdapterModel.hpp
 include/AlgorithmConfig.hpp
 include/AlgorithmConfig.hpp.inl
 include/AllOperators.hpp
@@ -136,6 +137,7 @@ include/DakotaConstraints.hpp
 include/DakotaEnvironment.hpp
 include/DakotaGraphics.hpp
 include/DakotaInterface.hpp
+include/DakotaInterfaceAPI.hpp
 include/DakotaIterator.hpp
 include/DakotaLeastSq.hpp
 include/DakotaMinimizer.hpp
@@ -219,6 +221,7 @@ include/EffGlobalMinimizer.hpp
 include/ElitistSelector.hpp
 include/ElitistSelector.hpp.inl
 include/EmbedHybridMetaIterator.hpp
+include/EnsembleSurrModel.hpp
 include/EqConstrainedLSQSolver.hpp
 include/EqualityConstraintType.hpp
 include/EqualityConstraintType.hpp.inl
@@ -476,6 +479,7 @@ include/MetricTrackerConvergerBase.hpp
 include/MetricTrackerConvergerBase.hpp.inl
 include/MinimizeObjectiveFunctionType.hpp
 include/MinimizeObjectiveFunctionType.hpp.inl
+include/MinimizerAdapterModel.hpp
 include/MixedVarConstraints.hpp
 include/MixedVariables.hpp
 include/MorseSmaleComplex.hpp
@@ -659,6 +663,7 @@ include/PecosApproximation.hpp
 include/PenaltyFitnessAssessorBase.hpp
 include/PenaltyFitnessAssessorBase.hpp.inl
 include/PiecewiseInterpPolynomial.hpp
+include/PluginInterface.hpp
 include/PluginParallelDirectApplicInterface.hpp
 include/PluginSerialDirectApplicInterface.hpp
 include/PoissonRandomVariable.hpp
@@ -2578,7 +2583,11 @@ lib/libutilities.so
 %%DATADIR%%/LICENSE
 %%DATADIR%%/LICENSE_HOPSPACK
 %%DATADIR%%/Python/dakota/__init__.py
+%%DATADIR%%/Python/dakota/__pycache__/__init__.cpython-36.pyc
 %%DATADIR%%/Python/dakota/interfacing/__init__.py
+%%DATADIR%%/Python/dakota/interfacing/__pycache__/__init__.cpython-36.pyc
+%%DATADIR%%/Python/dakota/interfacing/__pycache__/dprepro.cpython-36.pyc
+%%DATADIR%%/Python/dakota/interfacing/__pycache__/interfacing.cpython-36.pyc
 %%DATADIR%%/Python/dakota/interfacing/dprepro.py
 %%DATADIR%%/Python/dakota/interfacing/interfacing.py
 %%DATADIR%%/Python/dakota/interfacing/parallel.py
@@ -2596,3 +2605,10 @@ lib/libutilities.so
 %%DATADIR%%/examples/hopspack/5-multi-start/example5_params.txt
 %%DATADIR%%/examples/hopspack/5-multi-start/multi_start
 %%DATADIR%%/examples/hopspack/README.txt
+%%DATADIR%%/plugins/CMakeLists.txt
+%%DATADIR%%/plugins/DakotaInterfaceAPI.hpp
+%%DATADIR%%/plugins/DakotaPythonPlugin.cpp
+%%DATADIR%%/plugins/DakotaPythonPlugin.hpp
+%%DATADIR%%/plugins/PluginIdentityMap.cpp
+%%DATADIR%%/plugins/PluginIdentityMap.hpp
+%%DATADIR%%/plugins/dakota_symbol_visibility.hpp

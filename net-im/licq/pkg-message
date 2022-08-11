@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-In order to actually use licq, at least one plugin port needs to be installed.
-Currently they include: licq-qt-gui, licq-kde-gui and several others.
-Check the net category to find them.
-EOM
-}
-]

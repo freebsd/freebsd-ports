@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson
-
 PORTNAME=	ficl
 PORTVERSION=	4.1.0
 PORTREVISION=	4

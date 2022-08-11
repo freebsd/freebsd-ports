@@ -1,11 +1,13 @@
 PORTNAME=	wx
-PORTVERSION=	3.0.5.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.0.5.1
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
+MASTER_SITES=	https://github.com/wxWidgets/wxWidgets/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	${_SHORT_WX_VER}-${FLAVOR}
+DISTNAME=	wxWidgets-${DISTVERSION}
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit with GTK+ bindings
 
 LICENSE=	GPLv2+
@@ -19,12 +21,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	wxWidgets
-GH_PROJECT=	wxWidgets
-
 USES=		compiler:c++11-lib gl gmake gnome iconv jpeg localbase \
-		pkgconfig xorg
+		pkgconfig tar:bz2 xorg
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2
@@ -58,8 +56,8 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 
+GSTREAMER_USES=		gstreamer
 GSTREAMER_CONFIGURE_ENABLE=	mediactrl
-GSTREAMER_USE=	GSTREAMER1=yes
 
 NOTIFY_CONFIGURE_WITH=	libnotify
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
@@ -86,7 +84,7 @@ PLIST_SUB+=	GTK2="" WEBKIT="@comment "
 .endif
 PLIST_SUB+=	GTKVER=${FLAVOR}
 
-_SHORT_WX_VER=	${PORTVERSION:S/./ /g:[1..2]:ts}
+_SHORT_WX_VER=	${DISTVERSION:S/./ /g:[1..2]:ts}
 
 gtk3_CONFLICTS_INSTALL=	${PORTNAME}${_SHORT_WX_VER}-gtk2
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}${_SHORT_WX_VER}-gtk3

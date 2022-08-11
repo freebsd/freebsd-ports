@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	DBIx-Password
 PORTVERSION=	1.9
 PORTREVISION=	1

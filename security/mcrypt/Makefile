@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	mcrypt
 PORTVERSION=	2.6.8
 PORTREVISION=	3

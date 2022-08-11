@@ -1,5 +1,3 @@
-# Created by: Marcin Cieslak <saper@SYSTEM.PL>
-
 PORTNAME=	mtasc
 PORTVERSION=	1.14
 PORTREVISION=	1

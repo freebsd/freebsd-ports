@@ -1,5 +1,3 @@
-# Created by: milki <milki@rescomp.berkeley.edu>
-
 PORTNAME=	MooseX-Types-JSON
 PORTVERSION=	1.00
 CATEGORIES=	devel perl5

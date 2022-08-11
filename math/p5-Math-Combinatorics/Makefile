@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Math-Combinatorics
 PORTVERSION=	0.09
 PORTREVISION=	1

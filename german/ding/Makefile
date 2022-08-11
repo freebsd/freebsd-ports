@@ -1,5 +1,3 @@
-# Created by: n@nectar.com
-
 PORTNAME=	ding
 PORTVERSION=	1.9
 CATEGORIES=	german tk

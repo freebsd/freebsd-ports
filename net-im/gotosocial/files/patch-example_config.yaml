@@ -1,6 +1,6 @@
---- example/config.yaml.orig	2022-02-03 11:30:06 UTC
+--- example/config.yaml.orig	2022-06-20 12:11:36 UTC
 +++ example/config.yaml
-@@ -151,12 +151,12 @@ db-tls-ca-cert: ""
+@@ -158,12 +158,12 @@ db-tls-ca-cert: ""
  # String. Directory from which gotosocial will attempt to load html templates (.tmpl files).
  # Examples: ["/some/absolute/path/", "./relative/path/", "../../some/weird/path/"]
  # Default: "./web/template/"
@@ -15,7 +15,7 @@
  
  ###########################
  ##### ACCOUNTS CONFIG #####
-@@ -222,7 +222,7 @@ storage-backend: "local"
+@@ -240,7 +240,7 @@ storage-backend: "local"
  # this directory, and create new subdirectories and files within it.
  # Examples: ["/home/gotosocial/storage", "/opt/gotosocial/datastorage"]
  # Default: "/gotosocial/storage"
@@ -24,7 +24,7 @@
  
  ###########################
  ##### STATUSES CONFIG #####
-@@ -288,7 +288,7 @@ letsencrypt-port: 80
+@@ -306,7 +306,7 @@ letsencrypt-port: 80
  # In any case, make sure GoToSocial has permissions to write to / read from this directory.
  # Examples: ["/home/gotosocial/storage/certs", "/acmecerts"]
  # Default: "/gotosocial/storage/certs"

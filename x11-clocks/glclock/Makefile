@@ -1,5 +1,3 @@
-# Created by: Randall Hopper <aa8vb@ipass.net>
-
 PORTNAME=	glclock
 DISTVERSION=	6.0b6.0
 PORTREVISION=	7

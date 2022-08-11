@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	xorg-fonts-miscbitmaps
 PORTVERSION=	7.7
 CATEGORIES=	x11-fonts

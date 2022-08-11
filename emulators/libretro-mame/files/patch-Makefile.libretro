@@ -1,0 +1,11 @@
+--- Makefile.libretro.orig	2022-01-24 21:33:37 UTC
++++ Makefile.libretro
+@@ -61,6 +61,8 @@ endif
+ 
+ ifeq ($(ARCH),x86)
+ 	PTR64 := 0
++else ifeq ($(ARCH),i386)
++	PTR64 := 0
+ endif
+ 
+ ###########################################################################

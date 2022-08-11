@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Lingua-EN-Numbers-Easy
 PORTVERSION=	2014120401
 CATEGORIES=	textproc perl5

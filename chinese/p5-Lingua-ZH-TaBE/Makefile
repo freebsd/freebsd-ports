@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Lingua-ZH-TaBE
 PORTVERSION=	0.07
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	radius-engine
 PORTVERSION=	1.1
 PORTREVISION=	6

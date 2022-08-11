@@ -1,8 +1,6 @@
-# Created by: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
-
 PORTNAME=	sssd
 PORTVERSION=	1.16.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 

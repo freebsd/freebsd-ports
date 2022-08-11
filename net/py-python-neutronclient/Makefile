@@ -1,7 +1,5 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	python-neutronclient
-PORTVERSION=	7.8.0
+PORTVERSION=	8.0.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cliff>=3.4.0:devel/py-cliff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.14.2:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=3.5.1:devel/py-simplejson@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		python:3.8+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

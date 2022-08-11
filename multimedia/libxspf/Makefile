@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@FreeBSD.org>
-
 PORTNAME=	libxspf
 PORTVERSION=	1.2.0
 PORTREVISION=	2

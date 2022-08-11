@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	IO-AIO
 PORTVERSION=	4.76
 CATEGORIES=	devel perl5

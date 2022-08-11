@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Test-SubCalls
 PORTVERSION=	1.10
 CATEGORIES=	devel perl5

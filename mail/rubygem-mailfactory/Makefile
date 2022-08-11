@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	mailfactory
 PORTVERSION=	1.4.0
 CATEGORIES=	mail rubygems

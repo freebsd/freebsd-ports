@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	snortsnarf
 PORTVERSION=	1.0
 PORTEPOCH=	1

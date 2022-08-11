@@ -1,5 +1,3 @@
-# Created by: Dan Rue <drue@therub.org>
-
 PORTNAME=	psych
 PORTVERSION=	1.2.1
 PORTREVISION=	12

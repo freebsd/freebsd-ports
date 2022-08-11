@@ -1,7 +1,6 @@
-# Created by: Matt Lancereau <matt@rimasec.net>
-
 PORTNAME=	xfce4-session
 PORTVERSION=	4.16.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -13,7 +12,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	iceauth:x11/iceauth
 RUN_DEPENDS=	iceauth:x11/iceauth \
-		console-kit-daemon:sysutils/consolekit2
+		console-kit-daemon:sysutils/consolekit2 \
+		xrdb:x11/xrdb
 LIB_DEPENDS=	libupower-glib.so:sysutils/upower \
 		libpolkit-gobject-1.so:sysutils/polkit
 

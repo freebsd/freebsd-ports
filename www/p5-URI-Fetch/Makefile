@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	URI-Fetch
 PORTVERSION=	0.130
 CATEGORIES=	www perl5

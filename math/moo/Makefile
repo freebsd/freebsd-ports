@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@f2o.org>
-
 PORTNAME=	moo
 PORTVERSION=	1.5
 PORTREVISION=	1

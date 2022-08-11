@@ -1,5 +1,3 @@
-# Created by: Bob Eager <rde@ml1.org.uk>
-
 PORTNAME=	ml1
 PORTVERSION=	4.12
 PORTREVISION=	1

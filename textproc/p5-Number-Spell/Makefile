@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Number-Spell
 PORTVERSION=	0.04
 PORTREVISION=	1

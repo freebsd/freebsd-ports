@@ -1,5 +1,3 @@
-# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-
 PORTNAME=	ekhtml
 PORTVERSION=	0.3.2
 PORTREVISION=	2

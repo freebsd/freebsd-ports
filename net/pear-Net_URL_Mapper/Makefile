@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Net_URL_Mapper
 PORTVERSION=	0.9.1
 CATEGORIES=	net www pear

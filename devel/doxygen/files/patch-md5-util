@@ -8,13 +8,13 @@
  #include "md5.h"
  
  #include "regex.h"
-@@ -3638,24 +3639,18 @@ QCString convertNameToFile(const QCString &name,bool a
+@@ -3633,26 +3634,18 @@ QCString convertNameToFile(const QCString &name,bool a
      if (resultLen>=128) // prevent names that cannot be created!
      {
        // third algorithm based on MD5 hash
 -      uchar md5_sig[16];
 -      char sigStr[33];
--      MD5Buffer((const unsigned char *)result.data(),resultLen,md5_sig);
+-      MD5Buffer(result.data(),resultLen,md5_sig);
 -      MD5SigToString(md5_sig,sigStr);
 +      QCString sigStr(33);
 +      MD5Data((const unsigned char *)result.data(),resultLen,sigStr.rawData());
@@ -24,12 +24,14 @@
    if (createSubdirs)
    {
 -    int l1Dir=0,l2Dir=0;
+-    int createSubdirsLevel = Config_getInt(CREATE_SUBDIRS_LEVEL);
+-    int createSubdirsBitmaskL2 = (1<<createSubdirsLevel)-1;
 -
      // compute md5 hash to determine sub directory to use
 -    uchar md5_sig[16];
--    MD5Buffer((const unsigned char *)result.data(),result.length(),md5_sig);
--    l1Dir = md5_sig[14]&0xf;
--    l2Dir = md5_sig[15];
+-    MD5Buffer(result.data(),result.length(),md5_sig);
+-    l1Dir = md5_sig[14] & 0xf;
+-    l2Dir = md5_sig[15] & createSubdirsBitmaskL2;
 +    char md5[33];
 +    MD5Data((const unsigned char *)result.data(),result.length(),md5);
  
@@ -38,7 +40,7 @@
    }
    //printf("*** convertNameToFile(%s)->%s\n",qPrint(name),qPrint(result));
    return result;
-@@ -7251,6 +7246,11 @@ QCString selectBlock(const QCString& s,const QCString 
+@@ -7269,6 +7262,11 @@ QCString removeEmptyLines(const QCString &s)
  QCString removeEmptyLines(const QCString &s)
  {
    BufStr out(s.length()+1);

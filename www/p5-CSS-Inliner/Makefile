@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	CSS-Inliner
 PORTVERSION=	4003
 CATEGORIES=	www perl5

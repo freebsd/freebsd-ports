@@ -1,5 +1,3 @@
-# Created by: Dario Freni <saturnero@gufi.org>
-
 PORTNAME=	proxsmtp
 PORTVERSION=	1.10
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Masafumi NAKANE <max@FreeBSD.org>
-
 PORTNAME=	cdrom2
 PORTVERSION=	1996.06.16
 PORTREVISION=	1

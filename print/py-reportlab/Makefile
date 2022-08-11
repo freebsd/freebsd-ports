@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	reportlab
 PORTVERSION=	3.5.68
 PORTREVISION=	1

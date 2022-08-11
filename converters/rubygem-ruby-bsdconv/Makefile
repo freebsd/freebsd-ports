@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	ruby-bsdconv
 PORTVERSION=	11.3.1
 CATEGORIES=	converters rubygems

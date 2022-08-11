@@ -1,5 +1,3 @@
-# Created by: Carlos J Puga Medina <cpm@fbsd.es>
-
 PORTNAME=	sphinxcontrib-programoutput
 PORTVERSION=	0.11
 CATEGORIES=	textproc

@@ -1,5 +1,3 @@
-# Created by: petef@FreeBSD.org
-
 PORTNAME=	File-Rsync
 PORTVERSION=	0.49
 CATEGORIES=	net perl5

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	wav2cdr
 PORTVERSION=	2.3.4
 DISTVERSIONSUFFIX=	.orig

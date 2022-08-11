@@ -1,5 +1,3 @@
-# Created by: antoine@FreeBSD.org
-
 PORTNAME=	pyelftools
 PORTVERSION=	0.27
 CATEGORIES=	devel python

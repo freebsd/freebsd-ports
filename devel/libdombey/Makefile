@@ -1,5 +1,3 @@
-# Created by: James Bailie <jimmy@mammothcheese.ca>
-
 PORTNAME=	libdombey
 PORTVERSION=	5.56
 CATEGORIES=	devel

@@ -1,12 +1,13 @@
-# Created by: Lev Serebryakov <lev@FreeBSD.org>
-
 PORTNAME=	nip2
 PORTVERSION=	8.7.1
 PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/${PORTNAME}/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	danilo@FreeBSD.org
+PATCH_SITES=	https://github.com/libvips/${PORTNAME}/commit/
+PATCHFILES+=	8bdb1459bc2.patch:-p1 # https://github.com/libvips/nip2/pull/96
+
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical user interface for VIPS
 
 LICENSE=	GPLv2

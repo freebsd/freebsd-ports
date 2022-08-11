@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Authen-Ticket
 PORTVERSION=	0.02
 PORTREVISION=	1

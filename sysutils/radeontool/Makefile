@@ -1,5 +1,3 @@
-# Created by: takawata@jp.FreeBSD.org
-
 PORTNAME=	radeontool
 PORTVERSION=	1.5
 CATEGORIES=	sysutils

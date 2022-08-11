@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	maec
 PORTVERSION=	4.1.0.17
 DISTVERSIONPREFIX=	v

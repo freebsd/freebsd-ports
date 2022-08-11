@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	szap_s2
 PORTVERSION=	20100129s
 PORTREVISION=	1

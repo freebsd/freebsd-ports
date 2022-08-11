@@ -1,5 +1,3 @@
-# Created by: gmarco@scotty.masternet.it
-
 PORTNAME=	minimalist
 PORTVERSION=	2.5.3
 CATEGORIES=	mail

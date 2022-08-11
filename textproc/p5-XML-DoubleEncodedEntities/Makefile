@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	XML-DoubleEncodedEntities
 PORTVERSION=	1.1
 CATEGORIES=	textproc perl5

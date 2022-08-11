@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	etcd
 PORTVERSION=	1.0.1
 PORTREVISION=	3

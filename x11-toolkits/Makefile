@@ -23,6 +23,7 @@
     SUBDIR += gnustep-back
     SUBDIR += gnustep-gui
     SUBDIR += granite
+    SUBDIR += granite7
     SUBDIR += gstreamer1-plugins-gtk
     SUBDIR += gstreamer1-plugins-gtk4
     SUBDIR += gstreamer1-plugins-pango
@@ -154,11 +155,11 @@
     SUBDIR += py-easygui
     SUBDIR += py-fltk
     SUBDIR += py-guietta
+    SUBDIR += py-python-xlib
     SUBDIR += py-qt5-chart
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
     SUBDIR += py-wxPython4
-    SUBDIR += py-xlib
     SUBDIR += qml-box2d
     SUBDIR += qt5-charts
     SUBDIR += qt5-datavis3d
@@ -197,7 +198,6 @@
     SUBDIR += skinlf
     SUBDIR += soqt
     SUBDIR += swt
-    SUBDIR += tepl
     SUBDIR += tepl6
     SUBDIR += termit
     SUBDIR += tix
@@ -216,6 +216,7 @@
     SUBDIR += vte
     SUBDIR += vte3
     SUBDIR += wlroots
+    SUBDIR += wlroots-devel
     SUBDIR += wmapp
     SUBDIR += wxgtk28
     SUBDIR += wxgtk28-common

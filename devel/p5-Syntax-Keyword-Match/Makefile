@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Syntax-Keyword-Match
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

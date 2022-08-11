@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@fxq.nl>
-
 PORTNAME=	pthreads
 PORTVERSION=	2.8.0
 PORTREVISION=	2

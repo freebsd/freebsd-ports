@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-
 PORTNAME=	babosa
 PORTVERSION=	1.0.4
 CATEGORIES=	textproc rubygems
@@ -11,7 +9,9 @@ COMMENT=	Ruby library for creating slugs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

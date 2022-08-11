@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	PerformanceAnalytics
 PORTVERSION=	2.0.4
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Kyle Evans <kevans@FreeBSD.org>
-
 PORTNAME=	zdoom
 PORTVERSION=	2.8.1
 PORTREVISION=	8

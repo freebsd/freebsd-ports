@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	error_highlight
 PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems

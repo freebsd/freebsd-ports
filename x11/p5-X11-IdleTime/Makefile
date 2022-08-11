@@ -1,5 +1,3 @@
-# Created by: Sean Farley <sean-freebsd@farley.org>
-
 PORTNAME=	X11-IdleTime
 PORTVERSION=	0.09
 CATEGORIES=	x11 perl5

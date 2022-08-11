@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	yarg
 PORTVERSION=	0.1.9
 PORTREVISION=	1

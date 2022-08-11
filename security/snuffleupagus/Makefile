@@ -1,11 +1,11 @@
 PORTNAME=	snuffleupagus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.2
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	franco@opnsense.org
-COMMENT=	Security module for PHP 7+
+COMMENT=	Security module for PHP
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/../LICENSE
@@ -16,6 +16,7 @@ USES=		localbase:ldflags php:ext
 USE_GITHUB=	yes
 GH_ACCOUNT=	jvoisin
 USE_PHP=	hash:build session:build
+IGNORE_WITH_PHP=	82
 
 CONFIGURE_ARGS=	--enable-snuffleupagus
 

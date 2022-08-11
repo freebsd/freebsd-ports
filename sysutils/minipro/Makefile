@@ -1,5 +1,3 @@
-# Created by: Hondareyte <lhondareyte@laposte.net>
-
 PORTNAME=	minipro
 PORTVERSION=	0.5
 CATEGORIES=	sysutils

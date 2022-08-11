@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	clinfo
 PORTVERSION=	3.0.21.02.21
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-
 PORTNAME=	mysql
 PORTVERSION=	1.2.4
 CATEGORIES=	databases

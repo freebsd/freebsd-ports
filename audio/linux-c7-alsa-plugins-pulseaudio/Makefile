@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.1.6
 DISTVERSIONSUFFIX=	-1.el7

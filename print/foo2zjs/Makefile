@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	foo2zjs
 PORTVERSION=	20161203
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Danny Warren <danny@dannywarren.com>
-
 PORTNAME=	CatalystX-AppBuilder
 PORTVERSION=	0.00011
 PORTREVISION=	1

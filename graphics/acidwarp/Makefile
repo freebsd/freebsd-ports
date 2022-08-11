@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	acidwarp
 PORTVERSION=	1.0
 CATEGORIES=	graphics

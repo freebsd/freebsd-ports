@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
-
 PORTNAME=	tcmplex-panteltje
 PORTVERSION=	0.4.7
 PORTREVISION=	1

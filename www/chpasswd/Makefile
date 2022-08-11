@@ -1,5 +1,3 @@
-# Created by: Jean Milanez Melo <jmelo@FreeBSD.org>
-
 PORTNAME=	chpasswd
 PORTVERSION=	2.2.4
 PORTREVISION=	1

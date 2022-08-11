@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ruby-oembed
 PORTVERSION=	0.16.1
 CATEGORIES=	www rubygems

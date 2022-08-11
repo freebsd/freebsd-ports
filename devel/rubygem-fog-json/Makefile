@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-json
 PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems

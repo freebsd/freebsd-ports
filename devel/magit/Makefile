@@ -1,5 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
-
 PORTNAME=	magit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.0

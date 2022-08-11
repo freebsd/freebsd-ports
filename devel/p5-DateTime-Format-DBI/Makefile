@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Format-DBI
 PORTVERSION=	0.041
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	RT-Extension-RepeatTicket
 PORTVERSION=	1.11
 PORTREVISION=	1

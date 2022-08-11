@@ -1,5 +1,3 @@
-# Created by: Erik Greenwald <erik@smluc.org>
-
 PORTNAME=	diskscrub
 PORTVERSION=	2.6.1
 CATEGORIES=	sysutils

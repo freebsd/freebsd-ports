@@ -1,5 +1,3 @@
-# Created by: Chih-Hsin Chang <chihhsin@cs.nctu.edu.tw>
-
 PORTNAME=	gydict
 PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v

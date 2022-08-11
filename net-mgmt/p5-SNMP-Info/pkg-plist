@@ -131,6 +131,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer7/Arbor.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/CiscoIPS.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/Gigamon.pm
+%%SITE_PERL%%/SNMP/Info/Layer7/HWGroup.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/Liebert.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/Neoteris.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/Netscaler.pm
@@ -273,6 +274,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer7::Arbor.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::CiscoIPS.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::Gigamon.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer7::HWGroup.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::Liebert.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::Neoteris.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::Netscaler.3.gz

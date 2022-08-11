@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Proc-Daemon
 PORTVERSION=	0.23
 CATEGORIES=	devel perl5
@@ -16,5 +14,7 @@ TEST_DEPENDS=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

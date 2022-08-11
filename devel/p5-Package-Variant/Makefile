@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Package-Variant
 PORTVERSION=	1.003002
 PORTREVISION=	1

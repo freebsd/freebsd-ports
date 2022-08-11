@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	OOTools
 PORTVERSION=	2.40
 CATEGORIES=	devel perl5

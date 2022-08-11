@@ -1,5 +1,3 @@
-# Created by: Alex Deiter <tiamat@komi.mts.ru>
-
 PORTNAME=	Filesys-DiskUsage
 PORTVERSION=	0.13
 CATEGORIES=	sysutils perl5

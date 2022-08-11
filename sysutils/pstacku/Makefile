@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	pstacku
 PORTVERSION=	0.9.2
 CATEGORIES=	sysutils

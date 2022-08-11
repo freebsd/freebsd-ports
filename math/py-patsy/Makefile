@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	patsy
 PORTVERSION=	0.5.2
 CATEGORIES=	math python

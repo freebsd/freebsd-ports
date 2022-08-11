@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	fs
 PORTVERSION=	0.5.4
 PORTREVISION=	1

@@ -1,4 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # heavily modified by: Matthias Andree <mandree@FreeBSD.org>
 #
 # supported FLAVORS=	default nobootfsck roothardlinks
@@ -14,7 +13,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.46.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 

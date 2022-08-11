@@ -1,5 +1,3 @@
-# Created by: Gautam Mani <execve@gmail.com>
-
 PORTNAME=	stockfish
 DISTVERSIONPREFIX=	sf_
 DISTVERSION=	14

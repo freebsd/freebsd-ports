@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	ophcrack
 PORTVERSION=	3.8.0
 PORTREVISION=	1

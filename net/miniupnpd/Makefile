@@ -1,5 +1,3 @@
-# Created by: Daniel O'Connor <darius@dons.net.au>
-
 PORTNAME=	miniupnpd
 PORTVERSION=	2.1.20200510
 PORTEPOCH=	1

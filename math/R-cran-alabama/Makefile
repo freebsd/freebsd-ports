@@ -1,5 +1,3 @@
-# Created by: Devin Teske <dteske@FreeBSD.org>
-
 PORTNAME=	alabama
 DISTVERSION=	2015.3-1
 PORTREVISION=	1

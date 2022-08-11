@@ -1,5 +1,3 @@
-# Created by: David Shane Holden <dpejesh@yahoo.com>
-
 PORTNAME=		parallax
 PORTVERSION=		1.0.6
 CATEGORIES=		devel python

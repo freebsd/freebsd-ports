@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	unrealgold
 PORTVERSION=	436
 PORTREVISION=	2

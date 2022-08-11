@@ -1,8 +1,0 @@
-bin/simdock
-share/applications/simdock.desktop
-share/pixmaps/simdock.png
-%%DATADIR%%/bg.png
-%%DATADIR%%/bg2.png
-%%DATADIR%%/bg5.png
-%%DATADIR%%/mark.png
-%%DATADIR%%/question.png

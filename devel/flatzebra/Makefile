@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin2mavetju.org>
-
 PORTNAME=	flatzebra
 PORTVERSION=	0.1.7
 CATEGORIES=	devel games

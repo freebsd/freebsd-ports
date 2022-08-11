@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	Trf
 PORTVERSION=	2.1.4
 PORTREVISION=	3

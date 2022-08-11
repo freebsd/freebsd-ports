@@ -1,5 +1,3 @@
-# Created by: Espen Skoglund <esk@ira.uka.de>
-
 PORTNAME=	binutils
 PORTVERSION=	2.37
 CATEGORIES=	devel

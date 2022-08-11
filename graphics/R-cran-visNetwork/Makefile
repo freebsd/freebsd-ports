@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	visNetwork
 PORTVERSION=	2.1.0
 CATEGORIES=	graphics

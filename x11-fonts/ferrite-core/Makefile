@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	ferrite-core
 PORTVERSION=	2.02
 CATEGORIES=	x11-fonts

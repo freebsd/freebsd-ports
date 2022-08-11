@@ -24,6 +24,8 @@ LIB_DEPENDS=	libbenchmark.so:devel/benchmark \
 RUN_DEPENDS=	ethash>0:net-p2p/ethash \
 		intx>0:math/intx
 
+BROKEN=		Fails to compile: Cannot find GMP module
+
 USES=		cmake
 
 CMAKE_OFF=	HUNTER_ENABLED

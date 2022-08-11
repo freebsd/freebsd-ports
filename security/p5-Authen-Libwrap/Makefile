@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Authen-Libwrap
 PORTVERSION=	0.23
 CATEGORIES=	security perl5

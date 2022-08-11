@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Time-Interval
 PORTVERSION=	1.234
 CATEGORIES=	devel perl5

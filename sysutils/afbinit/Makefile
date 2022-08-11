@@ -1,5 +1,3 @@
-# Created by: marius@alchemy.franken.de
-
 PORTNAME=		afbinit
 PORTVERSION=		1.0
 PORTREVISION=		4

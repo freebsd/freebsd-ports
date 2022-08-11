@@ -1,5 +1,3 @@
-# Created by: brix@FreeBSD.org
-
 PORTNAME=	Crypt-UnixCrypt_XS
 PORTVERSION=	0.11
 CATEGORIES=	security perl5

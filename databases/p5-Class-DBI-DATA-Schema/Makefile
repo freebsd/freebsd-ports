@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Class-DBI-DATA-Schema
 PORTVERSION=	1.00
 PORTREVISION=	1

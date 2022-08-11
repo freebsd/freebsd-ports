@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	PHPUnit_MockObject
 PORTVERSION=	4.0.1
 CATEGORIES=	devel pear

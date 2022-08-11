@@ -1,5 +1,3 @@
-# Created by: Ken Moore <ken@pcbsd.org>
-
 PORTNAME=	lumina
 PORTVERSION=	1.6.2
 PORTEPOCH=	3

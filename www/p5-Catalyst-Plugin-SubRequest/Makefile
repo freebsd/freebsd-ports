@@ -1,5 +1,3 @@
-# Created by: Travis Campbell <hcoyote@ghostar.org>
-
 PORTNAME=	Catalyst-Plugin-SubRequest
 PORTVERSION=	0.21
 CATEGORIES=	www perl5

@@ -1,8 +1,6 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	flyspray
 PORTVERSION=	0.9.9.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel www
 MASTER_SITES=	http://flyspray.org/packed/
 

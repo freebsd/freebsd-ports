@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	x2vnc
 PORTVERSION=	1.7.2
 PORTEPOCH=	1

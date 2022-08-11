@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	backup
 PORTVERSION=	4.4.1
 PORTREVISION=	2

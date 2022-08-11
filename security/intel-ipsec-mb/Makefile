@@ -1,10 +1,7 @@
 PORTNAME=	intel-ipsec-mb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1
+DISTVERSION=	1.2
 CATEGORIES=	security
-
-PATCH_SITES=	https://github.com/intel/intel-ipsec-mb/commit/
-PATCHFILES=	3a1c8c1c2c24a9d6cb56439c6aa6bea4d4fb1093.patch:-p1
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Intel(R) Multi-Buffer Crypto for IPsec Library
@@ -32,6 +29,13 @@ PLIST_FILES=	include/intel-ipsec-mb.h \
 # While parallel compiling works it can easily eat up 8+ Gb of RAM which will
 # result in unnecessary OOM errors
 MAKE_JOBS_UNSAFE=	yes
+
+OPTIONS_DEFINE=	AESNIEMU
+OPTIONS_DEFAULT=AESNIEMU
+
+AESNIEMU_DESC=	Enable AESI-NI Emulation
+
+AESNIEMU_MAKE_ARGS=	AESNI_EMU=y
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/intel-ipsec-mb.h ${STAGEDIR}${PREFIX}/include/

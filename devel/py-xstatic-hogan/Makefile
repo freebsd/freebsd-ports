@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-hogan
 PORTVERSION=	2.0.0.3
 CATEGORIES=	devel python

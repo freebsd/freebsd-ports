@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	LaTeX-Pod
 PORTVERSION=	0.21
 PORTREVISION=	2

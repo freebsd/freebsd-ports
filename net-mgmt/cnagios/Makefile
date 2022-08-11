@@ -1,5 +1,3 @@
-# Created by: Alexander Y. Grigoryev <alexander.4mail@gmail.com>
-
 PORTNAME=	cnagios
 PORTVERSION=	0.33
 PORTREVISION=	1

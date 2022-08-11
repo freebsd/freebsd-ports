@@ -1,5 +1,3 @@
-# Created by: Jonathan Weiss (<jw@innerewut.de>)
-
 PORTNAME=	actionpack
 PORTVERSION=	5.0.7.2
 PORTREVISION=	1

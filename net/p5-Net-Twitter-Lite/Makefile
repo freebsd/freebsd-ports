@@ -1,5 +1,3 @@
-# Created by: Masafumi NAKANE <max@FreeBSD.org>
-
 PORTNAME=	Net-Twitter-Lite
 PORTVERSION=	0.12008
 CATEGORIES=	net perl5

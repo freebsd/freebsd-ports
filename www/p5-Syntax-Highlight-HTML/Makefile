@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Syntax-Highlight-HTML
 PORTVERSION=	0.04
 PORTREVISION=	1

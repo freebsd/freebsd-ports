@@ -1,6 +1,6 @@
---- base/threading/platform_thread.h.orig	2022-05-19 14:06:27 UTC
+--- base/threading/platform_thread.h.orig	2022-07-22 17:30:31 UTC
 +++ base/threading/platform_thread.h
-@@ -211,7 +211,7 @@ class BASE_EXPORT PlatformThread {
+@@ -213,7 +213,7 @@ class BASE_EXPORT PlatformThread {
    // Returns a realtime period provided by `delegate`.
    static TimeDelta GetRealtimePeriod(Delegate* delegate);
  

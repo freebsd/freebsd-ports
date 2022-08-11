@@ -1,5 +1,3 @@
-# Created by: pusto@web.de
-
 PORTNAME=	qhull
 DISTVERSION=	8.0.2
 PORTREVISION=	1

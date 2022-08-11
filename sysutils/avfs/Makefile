@@ -1,5 +1,3 @@
-# Created by: Evgeny Zhirnov <jirnov@gmail.com>
-
 PORTNAME=	avfs
 PORTVERSION=	1.1.4
 CATEGORIES=	sysutils

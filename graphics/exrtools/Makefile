@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	exrtools
 PORTVERSION=	0.4
 PORTREVISION=	29

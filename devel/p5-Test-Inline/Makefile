@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Test-Inline
 PORTVERSION=	2.214
 CATEGORIES=	devel perl5

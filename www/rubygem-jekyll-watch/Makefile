@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv@kvedulv.de>
-
 PORTNAME=	jekyll-watch
 PORTVERSION=	2.2.1
 CATEGORIES=	www rubygems

@@ -1,5 +1,3 @@
-# Created by: Matt Dawson <matt@mattsnetwork.co.uk>
-
 PORTNAME=	grig
 PORTVERSION=	0.9.0
 #DISTNAME=	Grig

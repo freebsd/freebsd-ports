@@ -1,5 +1,3 @@
-# Created by: Chris D. Faulhaber <jedgar@fxp.org>
-
 PORTNAME=	webfs
 PORTVERSION=	1.21
 CATEGORIES=	www

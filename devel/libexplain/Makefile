@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	libexplain
 PORTVERSION=	1.3.${PATCHLEVEL}
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Remington Lang <MrL0L@charter.net>
-
 # Port logic stolen from x11-themes/kde-icons-noia by
 # lioux@.
 

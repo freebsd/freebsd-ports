@@ -1,5 +1,6 @@
 PORTNAME=	hiera-eyaml
-PORTVERSION=	3.2.2
+PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ COMMENT=	Backend for Hiera that provides encryption/decryption for properties
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-highline1>=0:devel/rubygem-highline1 \
+RUN_DEPENDS=	rubygem-highline>=0:devel/rubygem-highline \
 		rubygem-optimist>=0:devel/rubygem-optimist
 
 USES=		gem

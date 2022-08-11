@@ -1,5 +1,3 @@
-# Created by: Anatoly Borodin <anatoly.borodin@gmail.com>
-
 PORTNAME=	cfdg
 PORTVERSION=	3.3
 PORTREVISION=	2

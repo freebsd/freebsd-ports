@@ -20,7 +20,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.8.1<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.11.2<5.0:misc/py-tqdm@${PY_FLAVOR} \
 
-USES=		python:3.7+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

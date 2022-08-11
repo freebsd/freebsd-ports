@@ -84,6 +84,7 @@
     <include>kesl_rules.xml</include>
     <include>mhn_dionaea_rules.xml</include>
     <include>mhn_cowrie_rules.xml</include>
+    <include>lighttpd_rules.xml</include>
     <include>local_rules.xml</include>
 
     <!-- Files not included by default -->

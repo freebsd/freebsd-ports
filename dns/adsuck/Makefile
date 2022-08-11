@@ -1,5 +1,3 @@
-# Created by: Philippe Pepiot <phil@philpep.org>
-
 PORTNAME=	adsuck
 PORTVERSION=	2.3
 PORTREVISION=	9

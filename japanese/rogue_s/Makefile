@@ -1,5 +1,3 @@
-# Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
-
 PORTNAME=	rogue_s
 PORTVERSION=	1.3a
 PORTREVISION=	2

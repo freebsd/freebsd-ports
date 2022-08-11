@@ -1,5 +1,3 @@
-# Created by: Peter Vereshagin <peter@vereshagin.org>
-
 PORTNAME=	Parse-PlainConfig
 PORTVERSION=	3.05
 CATEGORIES=	devel perl5

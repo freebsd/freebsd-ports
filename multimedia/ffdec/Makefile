@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	ffdec
 DISTVERSION=	14.4.0
 CATEGORIES=	multimedia java

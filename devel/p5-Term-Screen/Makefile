@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-
 PORTNAME=	Term-Screen
 PORTVERSION=	1.06
 CATEGORIES=	devel perl5

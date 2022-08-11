@@ -65,12 +65,12 @@ libsystemd is Linux-only, so replace with basu
  
  namespace sdbus
  {
---- src/IConnection.h.orig	2021-10-25 07:02:37 UTC
+--- src/IConnection.h.orig	2022-08-09 07:50:33 UTC
 +++ src/IConnection.h
-@@ -27,7 +27,7 @@
- #ifndef SDBUS_CXX_INTERNAL_ICONNECTION_H_
+@@ -28,7 +28,7 @@
  #define SDBUS_CXX_INTERNAL_ICONNECTION_H_
  
+ #include <sdbus-c++/IConnection.h>
 -#include <systemd/sd-bus.h>
 +#include <basu/sd-bus.h>
  #include <string>
@@ -165,6 +165,17 @@ libsystemd is Linux-only, so replace with basu
  #include <cassert>
  
  namespace sdbus {
+--- src/Utils.h.orig	2022-08-09 07:50:33 UTC
++++ src/Utils.h
+@@ -28,7 +28,7 @@
+ #define SDBUS_CXX_INTERNAL_UTILS_H_
+ 
+ #include <sdbus-c++/Error.h>
+-#include <systemd/sd-bus.h>
++#include <basu/sd-bus.h>
+ 
+ #if LIBSYSTEMD_VERSION>=246
+ #define SDBUS_CHECK_OBJECT_PATH(_PATH)                                                                                              \
 --- src/VTableUtils.c.orig	2021-10-25 07:02:37 UTC
 +++ src/VTableUtils.c
 @@ -25,7 +25,7 @@

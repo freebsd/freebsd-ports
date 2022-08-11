@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	xawtv
 PORTVERSION=	3.107
 CATEGORIES=	multimedia

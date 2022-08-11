@@ -1,13 +1,3 @@
-%%PERL5_MAN3%%/Convert::Color.3.gz
-%%PERL5_MAN3%%/Convert::Color::CMY.3.gz
-%%PERL5_MAN3%%/Convert::Color::CMYK.3.gz
-%%PERL5_MAN3%%/Convert::Color::HSL.3.gz
-%%PERL5_MAN3%%/Convert::Color::HSV.3.gz
-%%PERL5_MAN3%%/Convert::Color::RGB.3.gz
-%%PERL5_MAN3%%/Convert::Color::RGB16.3.gz
-%%PERL5_MAN3%%/Convert::Color::RGB8.3.gz
-%%PERL5_MAN3%%/Convert::Color::VGA.3.gz
-%%PERL5_MAN3%%/Convert::Color::X11.3.gz
 %%SITE_PERL%%/Convert/Color.pm
 %%SITE_PERL%%/Convert/Color/CMY.pm
 %%SITE_PERL%%/Convert/Color/CMYK.pm
@@ -19,3 +9,13 @@
 %%SITE_PERL%%/Convert/Color/RGB8.pm
 %%SITE_PERL%%/Convert/Color/VGA.pm
 %%SITE_PERL%%/Convert/Color/X11.pm
+%%PERL5_MAN3%%/Convert::Color.3.gz
+%%PERL5_MAN3%%/Convert::Color::CMY.3.gz
+%%PERL5_MAN3%%/Convert::Color::CMYK.3.gz
+%%PERL5_MAN3%%/Convert::Color::HSL.3.gz
+%%PERL5_MAN3%%/Convert::Color::HSV.3.gz
+%%PERL5_MAN3%%/Convert::Color::RGB.3.gz
+%%PERL5_MAN3%%/Convert::Color::RGB16.3.gz
+%%PERL5_MAN3%%/Convert::Color::RGB8.3.gz
+%%PERL5_MAN3%%/Convert::Color::VGA.3.gz
+%%PERL5_MAN3%%/Convert::Color::X11.3.gz

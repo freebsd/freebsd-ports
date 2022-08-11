@@ -1,0 +1,12 @@
+Pure C asynchronous HTTP framework with support for websockets,
+client/server, TLS 1.2 (SSL), routing.
+
+  - Fast asynchronous HTTP server (iwn_http_server.h)
+  - Web framework based on HTTP server (iwn_wf.h)
+  - Websocket client and server (iwn_ws_server.h, iwn_ws_client.h)
+  - Poller reactor (iwn_poller.h)
+  - SSL layer is based on BearSSL (iwn_brssl_poller_adapter.h)
+  - Manager of child processes (iwn_proc.h)
+  - Timer (iwn_scheduler.h)
+
+WWW: https://github.com/Softmotions/iwnet

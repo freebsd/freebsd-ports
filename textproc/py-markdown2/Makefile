@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	markdown2
 PORTVERSION=	2.3.6
 CATEGORIES=	textproc python

@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	xdemineur
 PORTVERSION=	2.1.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	artifacts
 PORTVERSION=	20210620
 CATEGORIES=	security python

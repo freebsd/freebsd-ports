@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	q3cellshading
 PORTVERSION=	1.0
 PORTREVISION=	4

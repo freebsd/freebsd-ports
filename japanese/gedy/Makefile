@@ -1,5 +1,3 @@
-# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-
 PORTNAME=	gedy
 PORTVERSION=	0.9.0
 PORTREVISION=	3

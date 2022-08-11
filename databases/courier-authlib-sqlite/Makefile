@@ -1,5 +1,3 @@
-# Created by: Yarema <yds@CoolRat.org>
-
 PORTREVISION=	0
 PKGNAMESUFFIX=	-sqlite
 

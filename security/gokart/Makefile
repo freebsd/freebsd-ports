@@ -1,9 +1,7 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	gokart
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	0xdutra@gmail.com

@@ -1,5 +1,3 @@
-# Created by: gebhart@secnetix.de
-
 PORTNAME=	Kafka
 PORTVERSION=	0.8010
 PORTREVISION=	2

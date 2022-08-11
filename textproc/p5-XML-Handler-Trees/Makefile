@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-Handler-Trees
 PORTVERSION=	0.02
 PORTREVISION=	1

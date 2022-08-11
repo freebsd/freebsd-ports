@@ -1,5 +1,3 @@
-# Created by: SriSaiGanesh
-
 PORTNAME=	hpacucli
 PORTVERSION=	7.50
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	afternoonstalker
 PORTVERSION=	1.1.6
 CATEGORIES=	games

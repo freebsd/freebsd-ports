@@ -1,5 +1,3 @@
-# Created by: Olivier Girard <Olivier.Girard@univ-angers.fr>
-
 PORTNAME=	MIME-EncWords
 PORTVERSION=	1.014.3
 CATEGORIES=	mail perl5

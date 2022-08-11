@@ -1,5 +1,3 @@
-# Created by: Helmut Ritter <freebsd-ports@charlieroot.de>
-
 PORTNAME=	typo3
 PORTVERSION=	${PORT_V_MAJOR}.${PORT_V_MINOR}.${PORT_V_PATCH}
 CATEGORIES=	www
@@ -13,7 +11,6 @@ COMMENT=	Typo3 content management system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-IGNORE_WITH_PHP=       73
 IGNORE_WITH_MYSQL=     55 56 101m
 
 USES=		cpe php:web,flavors shebangfix
@@ -32,7 +29,7 @@ SUB_LIST+=	PREFIX=${PREFIX} \
 
 PORT_V_MAJOR=	11
 PORT_V_MINOR=	5
-PORT_V_PATCH=	8
+PORT_V_PATCH=	13
 
 TYPO3WWW=	www
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}

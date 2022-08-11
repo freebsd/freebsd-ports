@@ -1,5 +1,3 @@
-# Created by: Andreas Fehlner <fehlner@gmx.de>
-
 PORTNAME=	cmdftp
 PORTVERSION=	0.9.8
 CATEGORIES=	ftp

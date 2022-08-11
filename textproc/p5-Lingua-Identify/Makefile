@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Lingua-Identify
 PORTVERSION=	0.56
 PORTREVISION=	1

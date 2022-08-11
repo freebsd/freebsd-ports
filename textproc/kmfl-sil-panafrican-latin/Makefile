@@ -1,5 +1,3 @@
-# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-
 PORTNAME=	kmfl-sil-panafrican-latin
 PORTVERSION=	20090831
 PORTREVISION=	4

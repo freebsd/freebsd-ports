@@ -1,5 +1,3 @@
-# Created by: Alex Semenyaka <alex@rinet.ru>
-
 PORTNAME=	opencyc
 PORTVERSION=	0.7.0
 PORTREVISION=	3

@@ -1,10 +1,10 @@
 PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.15.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://dr-download.ti.com/software-development/driver-or-library/MD-4vnqcP1Wk4/${PORTVERSION}/ \
-		http://www.ti.com/lit/ug/slau320aj/:doc1 \
-		http://www.ti.com/lit/ug/slau656d/:doc2
+		LOCAL/lev:doc1 \
+		LOCAL/lev:doc2
 DISTFILES=	MSPDebugStack_OS_Package_${PORTVERSION:S/./_/g}.zip \
 		slau320aj.pdf:doc1 \
 		slau656d.pdf:doc2

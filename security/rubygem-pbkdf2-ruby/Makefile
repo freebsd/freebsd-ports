@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pbkdf2-ruby
 PORTVERSION=	0.2.1
 CATEGORIES=	security rubygems

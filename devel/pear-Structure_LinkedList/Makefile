@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
-
 PORTNAME=	Structures_LinkedList
 PORTVERSION=	0.2.2
 CATEGORIES=	devel pear

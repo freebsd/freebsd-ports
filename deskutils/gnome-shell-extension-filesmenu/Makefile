@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-shell-extension-filesmenu
 PORTVERSION=	0.0.0.20171125
 PORTREVISION=	1

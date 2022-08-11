@@ -1,11 +1,11 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	asymptote
-PORTVERSION=	2.67
-PORTREVISION=	8
+PORTVERSION=	2.81
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
+
+PATCH_SITES=	https://github.com/vectorgraphics/asymptote/commit/
+PATCHFILES+=	fa28442195bd99b9bac87e3ff752953ac57ee172.patch:-p1 # backport fix for https://github.com/vectorgraphics/asymptote/issues/328
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Powerful script-based vector graphics language
@@ -14,8 +14,10 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
 ONLY_FOR_ARCHS=	amd64 i386
+BROKEN_FreeBSD_12_i386=	./base/plain_filldraw.asy: 21.5: runtime: gmake[2]: *** [Makefile:42: makepen.pdf] Floating point exception (core dumped)
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
+		libcurl.so:ftp/curl \
 		libsigsegv.so:devel/libsigsegv
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cson>=0.8:devel/py-cson@${PY_FLAVOR} \
 		${PY_PILLOW}
@@ -31,9 +33,10 @@ USE_PYQT=	pyqt5_run
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-lsp # disable the module with Boost-related errors
 
 MAKE_ENV=	ASYMPTOTE_HOME=${WRKDIR} HOME=${WRKDIR}
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_UNSAFE=	yes # see https://github.com/vectorgraphics/asymptote/issues/331
 
 ALL_TARGET=	asy asy-keywords.el
 INSTALL_TARGET=	install-asy
@@ -74,6 +77,8 @@ READLINE_USES=	readline
 
 TEST_TARGET=	test
 TEST_WRKSRC=	${WRKSRC}/tests
+
+PORTEXAMPLES=	*
 
 post-patch:
 	@${REINPLACE_CMD} 's/-lgc/-lgc-threaded/' ${WRKSRC}/configure

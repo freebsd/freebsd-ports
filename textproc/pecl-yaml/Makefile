@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	yaml
 PORTVERSION=	2.2.2
 CATEGORIES=	textproc pear

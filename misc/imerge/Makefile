@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	imerge
 PORTVERSION=	0.2.4
 CATEGORIES=	misc

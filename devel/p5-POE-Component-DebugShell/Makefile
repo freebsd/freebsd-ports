@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-DebugShell
 PORTVERSION=	1.412
 PORTREVISION=	1

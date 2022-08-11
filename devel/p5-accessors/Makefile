@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	accessors
 PORTVERSION=	1.01
 PORTREVISION=	1

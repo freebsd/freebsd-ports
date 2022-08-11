@@ -1,5 +1,3 @@
-# Created by: Marc G. Fournier
-
 PORTNAME=	Maypole-Component
 PORTVERSION=	0.03
 PORTREVISION=	1

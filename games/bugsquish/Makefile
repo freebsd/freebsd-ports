@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	bugsquish
 PORTVERSION=	0.0.6
 PORTREVISION=	13

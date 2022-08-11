@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	naludump
 PORTVERSION=	0.1.1
 PORTREVISION=	1

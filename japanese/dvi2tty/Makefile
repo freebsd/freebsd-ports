@@ -1,5 +1,3 @@
-# Created by: Masafumi NAKANE <max@FreeBSD.org>
-
 PORTNAME=	dvi2tty
 PORTVERSION=	5.0
 PORTREVISION=	2

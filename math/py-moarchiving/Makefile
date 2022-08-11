@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	moarchiving
 PORTVERSION=	0.6.0
 CATEGORIES=	math python

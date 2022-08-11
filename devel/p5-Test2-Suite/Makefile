@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test2-Suite
 PORTVERSION=	0.000145
 CATEGORIES=	devel perl5

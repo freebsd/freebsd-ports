@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	repoze.tm2
 PORTVERSION=	2.1
 PORTEPOCH=	2

@@ -1,5 +1,3 @@
-# Created by: joris
-
 PORTNAME=	SNMP-Trapinfo
 PORTVERSION=	1.02
 PORTREVISION=	1

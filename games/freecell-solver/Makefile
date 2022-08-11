@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	freecell-solver
 PORTVERSION=	6.2.0
 CATEGORIES=	games

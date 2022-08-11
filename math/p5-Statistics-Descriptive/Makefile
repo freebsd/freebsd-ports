@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Statistics-Descriptive
 PORTVERSION=	3.0800
 CATEGORIES=	math perl5

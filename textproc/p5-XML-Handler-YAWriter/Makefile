@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-Handler-YAWriter
 PORTVERSION=	0.23
 PORTREVISION=	1

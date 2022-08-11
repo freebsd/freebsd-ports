@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	String-Checker
 PORTVERSION=	0.03
 PORTREVISION=	1

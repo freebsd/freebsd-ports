@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	texmaker
 PORTVERSION=	5.0.3
 PORTREVISION=	4

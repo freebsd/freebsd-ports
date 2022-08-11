@@ -1,5 +1,3 @@
-# Created by: dikshie
-
 PORTNAME=	networkx
 DISTVERSION=	2.6.3
 PORTEPOCH=	1

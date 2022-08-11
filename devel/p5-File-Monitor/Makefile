@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	File-Monitor
 PORTVERSION=	1.00
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Email-MIME-CreateHTML
 PORTVERSION=	1.042
 CATEGORIES=	mail www perl5

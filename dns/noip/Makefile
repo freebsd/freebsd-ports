@@ -1,5 +1,3 @@
-# Created by: Eyal Soha <esoha@attbi.com>
-
 PORTNAME=	noip
 PORTVERSION=	2.1.9
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pystorm
 PORTVERSION=	3.1.4
 PORTREVISION=	1

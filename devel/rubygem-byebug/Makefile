@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	byebug
 PORTVERSION=	11.1.3
 CATEGORIES=	devel ruby

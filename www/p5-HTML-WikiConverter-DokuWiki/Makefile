@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	HTML-WikiConverter-DokuWiki
 PORTVERSION=	0.53
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: grog
-
 PORTNAME=	x2x
 PORTVERSION=	1.30.20180709
 CATEGORIES=	x11-servers

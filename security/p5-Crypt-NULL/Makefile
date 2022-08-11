@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Crypt-NULL
 PORTVERSION=	1.02
 PORTREVISION=	1

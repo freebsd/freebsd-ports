@@ -9,7 +9,7 @@ COMMENT=	Character encoding aliases for legacy web content
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

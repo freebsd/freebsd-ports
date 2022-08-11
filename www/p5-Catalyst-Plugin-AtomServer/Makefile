@@ -1,5 +1,3 @@
-# Created by: Oleg Mamontov <oleg@mamontov.net>
-
 PORTNAME=	Catalyst-Plugin-AtomServer
 PORTVERSION=	0.04
 PORTREVISION=	1

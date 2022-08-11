@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	bitset
 PORTVERSION=	3.0.1
 CATEGORIES=	math

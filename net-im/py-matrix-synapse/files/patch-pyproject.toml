@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2022-08-02 13:44:01 UTC
++++ pyproject.toml
+@@ -149,7 +149,7 @@ bleach = ">=1.4.3"
+ typing-extensions = ">=3.10.0.1"
+ # We enforce that we have a `cryptography` version that bundles an `openssl`
+ # with the latest security patches.
+-cryptography = ">=3.4.7"
++cryptography = "*"
+ # ijson 3.1.4 fixes a bug with "." in property names
+ ijson = ">=3.1.4"
+ matrix-common = "^1.2.1"

@@ -1,5 +1,3 @@
-# Created by: Henry Hu <henry.hu.sh@gmail.com>
-
 PORTNAME=	ibus-pinyin
 PORTVERSION=	1.5.0
 PORTREVISION=	9

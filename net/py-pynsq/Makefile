@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pynsq
 PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=	v

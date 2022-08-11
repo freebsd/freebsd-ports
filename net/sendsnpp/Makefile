@@ -1,5 +1,3 @@
-# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
-
 PORTNAME=	sendSNPP
 DISTVERSION=	v1.03
 PORTREVISION=	1

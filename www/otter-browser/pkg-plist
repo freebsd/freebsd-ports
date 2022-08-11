@@ -1,5 +1,5 @@
 bin/otter-browser
-man/man1/otter-browser.1.gz
+share/man/man1/otter-browser.1.gz
 share/applications/otter-browser.desktop
 share/icons/hicolor/128x128/apps/otter-browser.png
 share/icons/hicolor/16x16/apps/otter-browser.png

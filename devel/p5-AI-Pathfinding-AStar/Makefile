@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	AI-Pathfinding-AStar
 PORTVERSION=	0.10
 PORTREVISION=	1

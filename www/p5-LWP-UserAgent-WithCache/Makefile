@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	LWP-UserAgent-WithCache
 PORTVERSION=	0.13
 CATEGORIES=	www perl5

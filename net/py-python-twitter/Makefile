@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	python-twitter
 PORTVERSION=	3.4.2
 CATEGORIES=	net python

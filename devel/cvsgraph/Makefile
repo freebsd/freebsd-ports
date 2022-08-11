@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	cvsgraph
 PORTVERSION=	1.7.0
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	vietunicode-trichlor
 PORTVERSION=	2004.04.30
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	biorythm
 PORTVERSION=	1.1.4
 CATEGORIES=	games

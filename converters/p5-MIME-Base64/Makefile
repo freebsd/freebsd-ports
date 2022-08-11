@@ -1,5 +1,3 @@
-# Created by: ache@FreeBSD.org
-
 PORTNAME=	MIME-Base64
 PORTVERSION=	3.16
 CATEGORIES=	converters perl5

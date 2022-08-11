@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	wininfo
 PORTVERSION=	0.7
 PORTREVISION=	11

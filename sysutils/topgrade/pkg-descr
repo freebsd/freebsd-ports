@@ -1,0 +1,9 @@
+Upgrade tool for OS and package repositories
+
+Keeping your system up to date usually involves invoking multiple
+package managers.
+This results in big, non-portable shell one-liners saved in your shell.
+To remedy this, topgrade detects which tools you use and runs the
+appropriate commands to update them
+
+WWW: https://github.com/r-darwish/topgrade

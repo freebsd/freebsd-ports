@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	hpricot
 PORTVERSION=	0.8.6
 CATEGORIES=	www rubygems

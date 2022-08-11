@@ -1,5 +1,3 @@
-# Created by: Denis Shaposhnikov <dsh@bamus.cz>
-
 PORTNAME=	Protocol-CassandraCQL
 PORTVERSION=	0.11
 PORTREVISION=	2

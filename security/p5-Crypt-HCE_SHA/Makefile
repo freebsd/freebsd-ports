@@ -1,5 +1,3 @@
-# Created by: Gregory Neil Shapiro <gshapiro@FreeBSD.org>
-
 PORTNAME=	Crypt-HCE_SHA
 PORTVERSION=	0.70
 PORTREVISION=	1

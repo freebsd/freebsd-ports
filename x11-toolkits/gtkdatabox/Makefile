@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gtkdatabox
 PORTVERSION=	0.9.3.1
 CATEGORIES=	x11-toolkits

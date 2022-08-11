@@ -1,6 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-#   $MCom: ports/textproc/gtkspell/Makefile,v 1.2 2006/09/10 00:51:13 mezz Exp $
-
 PORTNAME=	gtkspell
 PORTVERSION=	2.0.16
 PORTREVISION?=	6

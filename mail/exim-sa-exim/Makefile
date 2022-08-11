@@ -1,5 +1,3 @@
-# Created by: Oliver Eikemeier <eik@FreeBSD.org>
-
 PKGNAMESUFFIX=	-sa-exim
 MASTERDIR=	${.CURDIR}/../exim
 

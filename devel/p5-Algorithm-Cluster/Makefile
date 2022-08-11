@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Algorithm-Cluster
 PORTVERSION=	1.59
 CATEGORIES=	devel perl5

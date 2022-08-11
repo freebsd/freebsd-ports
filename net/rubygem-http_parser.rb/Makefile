@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	http_parser.rb
 PORTVERSION=	0.8.0
 CATEGORIES=	net rubygems

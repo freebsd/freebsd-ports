@@ -1,5 +1,3 @@
-# Created by: Yonatan <onatan@gmail.com>
-
 PORTNAME=	memfetch
 PORTVERSION=	0.05b
 CATEGORIES=	sysutils

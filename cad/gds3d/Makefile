@@ -1,5 +1,5 @@
 PORTNAME=	gds3d
-DISTVERSION=	g20210503
+DISTVERSION=	g20220203
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,10 +12,14 @@ USES=		gl gmake localbase:ldflags xorg
 USE_XORG=	x11
 USE_GL=		gl
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	trilomix
 GH_PROJECT=	${PORTNAME:tu}
-GH_TAGNAME=	bcdb97a
+GH_TAGNAME=	173da0c
 
 WRKSRC_SUBDIR=	linux
 

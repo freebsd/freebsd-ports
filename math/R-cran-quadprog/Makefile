@@ -1,5 +1,3 @@
-# Created by: David Naylor <naylor.b.david@gmail.com>
-
 PORTNAME=	quadprog
 DISTVERSION=	1.5-8
 PORTREVISION=	1

@@ -1,7 +1,6 @@
-# Created by: Julian Stecklina
-
 PORTNAME=	ecl
 PORTVERSION=	21.2.1
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	https://common-lisp.net/project/ecl/static/files/release/
 

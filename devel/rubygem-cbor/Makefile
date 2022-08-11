@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	cbor
 PORTVERSION=	0.5.9.6
 CATEGORIES=	devel rubygems

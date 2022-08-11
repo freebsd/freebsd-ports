@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Exception
 PORTVERSION=	2.0.8
 CATEGORIES=	devel www pear

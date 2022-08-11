@@ -1,4 +1,4 @@
---- Makefile.PL.orig	2008-06-08 13:27:50 UTC
+--- Makefile.PL.orig	2008-10-02 15:11:55 UTC
 +++ Makefile.PL
 @@ -8,10 +8,6 @@ WriteMakefile(
                VERSION_FROM        => 'lib/Net/eBay.pm',
@@ -10,4 +10,4 @@
 -                                     ],
                PREREQ_PM => {
                              'Test::More' => 0,
-                             'XML::Simple' => 0,
+                             'Text::Format' => 0,

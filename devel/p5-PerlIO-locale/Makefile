@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	PerlIO-locale
 PORTVERSION=	0.10
 PORTREVISION=	1

@@ -1,7 +1,9 @@
 man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/abbreviations
 %%NO_EMBED_DATA%%%%DATADIR%%/data/bash_completion.tpl
+%%NO_EMBED_DATA%%%%DATADIR%%/data/creole.lua
 %%NO_EMBED_DATA%%%%DATADIR%%/data/default.csl
+%%NO_EMBED_DATA%%%%DATADIR%%/data/docbook-entities.txt
 %%NO_EMBED_DATA%%%%DATADIR%%/data/docx/[Content_Types].xml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/docx/_rels/.rels
 %%NO_EMBED_DATA%%%%DATADIR%%/data/docx/docProps/app.xml
@@ -30,8 +32,6 @@ man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/odt/mimetype
 %%NO_EMBED_DATA%%%%DATADIR%%/data/odt/settings.xml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/odt/styles.xml
-%%NO_EMBED_DATA%%%%DATADIR%%/data/pandoc.List.lua
-%%NO_EMBED_DATA%%%%DATADIR%%/data/pandoc.lua
 %%NO_EMBED_DATA%%%%DATADIR%%/data/pptx/[Content_Types].xml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/pptx/_rels/.rels
 %%NO_EMBED_DATA%%%%DATADIR%%/data/pptx/docProps/app.xml
@@ -107,6 +107,7 @@ man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.latex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.man
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.markdown
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.markua
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.mediawiki
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.ms
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.muse

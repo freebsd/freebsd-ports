@@ -1,5 +1,3 @@
-# Created by: Andrew Stevenson <andrew@ugh.net.au>
-
 PORTNAME=	poppwd
 PORTVERSION=	2.0
 CATEGORIES=	mail

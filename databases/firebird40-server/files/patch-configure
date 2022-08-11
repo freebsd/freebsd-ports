@@ -1,0 +1,23 @@
+--- configure.orig	2022-07-28 00:58:22 UTC
++++ configure
+@@ -2985,6 +2985,20 @@ $as_echo "#define AMD64 1" >>confdefs.h
+     SHRLIB_EXT=so
+     ;;
+ 
++  powerpc64le-*-freebsd*)
++    MAKEFILE_PREFIX=freebsd_powerpc64el
++    PLATFORM=FREEBSD
++    INSTALL_PREFIX=freebsd
++
++$as_echo "#define FREEBSD 1" >>confdefs.h
++
++
++$as_echo "#define PPC64EL 1" >>confdefs.h
++
++    EDITLINE_FLG=Y
++    SHRLIB_EXT=so
++    ;;
++
+   *-gentoo-freebsd*)
+     MAKEFILE_PREFIX=freebsd
+     PLATFORM=GENTOOFREEBSD

@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	cryptopp
 PORTVERSION=	8.6.0
 CATEGORIES=	security

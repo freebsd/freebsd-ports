@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Term-Encoding
 PORTVERSION=	0.03
 CATEGORIES=	devel perl5

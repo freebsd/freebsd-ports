@@ -1,9 +1,7 @@
-# Created by: Pavel Timofeev <timp87@gmail.com>
-
 PORTNAME=	helmfile
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.142.0
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	timp87@gmail.com

@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	jiic
 PORTVERSION=	20120110
 CATEGORIES=	devel multimedia java

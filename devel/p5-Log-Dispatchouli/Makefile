@@ -1,5 +1,3 @@
-# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-
 PORTNAME=	Log-Dispatchouli
 PORTVERSION=	2.012
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: wen@FreeBSD.org
-
 PORTNAME=	markupsafe
 PORTVERSION=	2.1.1
 CATEGORIES=	textproc python

@@ -1,7 +1,5 @@
-# Created by: Craig Leres <leres@FreeBSD.org>
-
 PORTNAME=	arduino-bsd-mk
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	devel
 MASTER_SITES=	https://xse.com/leres/arduino/arduino-bsd-mk/ \
 		LOCAL/leres/arduino-bsd-mk

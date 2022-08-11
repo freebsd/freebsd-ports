@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	App-CLI
 PORTVERSION=	0.500
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	jpeg
 PORTVERSION=	1.2.90
 DISTVERSIONSUFFIX=	-8.el7

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	HTML-Fraction
 PORTVERSION=	0.50
 PORTREVISION=	1

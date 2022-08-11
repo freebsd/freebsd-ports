@@ -18,6 +18,7 @@ USE_JAVA=	yes
 
 JAR_NAME=	${PORTNAME}.jar
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${JAR_NAME} \

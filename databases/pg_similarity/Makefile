@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	pg_similarity
 PORTVERSION=	20160917
 PORTREVISION=	2

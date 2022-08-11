@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	three-merge
 PORTVERSION=	0.1.1
 CATEGORIES=	textproc python

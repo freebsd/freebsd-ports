@@ -1,9 +1,7 @@
-# Created by: Jev Björsell <ports@ecadlabs.com>
-
 PORTNAME=	nginx-prometheus-exporter
 PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	www
 
 MAINTAINER=	arcade@b1t.name

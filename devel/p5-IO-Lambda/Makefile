@@ -1,5 +1,3 @@
-# Created by: Vany Serezhkin <ivan@serezhkin.com>
-
 PORTNAME=	IO-Lambda
 PORTVERSION=	1.23
 PORTREVISION=	1

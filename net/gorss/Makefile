@@ -1,9 +1,7 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	gorss
 PORTVERSION=	0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org

@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	pgplot
 PORTVERSION=	5.2.2
 PORTREVISION=	29

@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-
 PORTNAME=	WWW-Scraper-ISBN
 PORTVERSION=	1.05
 CATEGORIES=	www perl5

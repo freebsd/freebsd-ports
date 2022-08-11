@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	edict-fpw
 PORTVERSION=	1.2.2
 PORTREVISION=	0

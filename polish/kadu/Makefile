@@ -1,5 +1,3 @@
-# Created by: Jacek Pelka <jacek@combit.com.pl>
-
 PORTNAME=	kadu
 PORTVERSION=	4.3
 PORTREVISION=	23

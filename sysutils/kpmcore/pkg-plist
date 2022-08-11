@@ -93,6 +93,7 @@ share/dbus-1/system.d/org.kde.kpmcore.helperinterface.conf
 share/locale/ar/LC_MESSAGES/kpmcore.mo
 share/locale/ast/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/ast/LC_MESSAGES/kpmcore.mo
+share/locale/bg/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/bg/LC_MESSAGES/kpmcore.mo
 share/locale/bs/LC_MESSAGES/kpmcore.mo
 share/locale/ca/LC_MESSAGES/kpmcore._policy_.mo

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	thin
 PORTVERSION=	1.8.1
 CATEGORIES=	www rubygems

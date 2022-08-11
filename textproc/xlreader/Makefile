@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	xlreader
 PORTVERSION=	0.9.0
 CATEGORIES=	textproc

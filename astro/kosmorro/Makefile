@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	kosmorro
 PORTVERSION=	0.10.10
 CATEGORIES=	astro python

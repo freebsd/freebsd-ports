@@ -7,6 +7,7 @@ lib/magic/doc/copyright.ps
 lib/magic/doc/html/Makefile
 lib/magic/doc/html/addcommandentry.html
 lib/magic/doc/html/addpath.html
+lib/magic/doc/html/antennacheck.html
 lib/magic/doc/html/array.html
 lib/magic/doc/html/box.html
 lib/magic/doc/html/calma.html
@@ -38,9 +39,11 @@ lib/magic/doc/html/def.html
 lib/magic/doc/html/delete.html
 lib/magic/doc/html/deletecommandentry.html
 lib/magic/doc/html/direction.html
+lib/magic/doc/html/display.html
 lib/magic/doc/html/distance.html
 lib/magic/doc/html/down.html
 lib/magic/doc/html/drc.html
+lib/magic/doc/html/drop.html
 lib/magic/doc/html/dump.html
 lib/magic/doc/html/edit.html
 lib/magic/doc/html/element.html
@@ -89,6 +92,7 @@ lib/magic/doc/html/irsim.html
 lib/magic/doc/html/label.html
 lib/magic/doc/html/lef.html
 lib/magic/doc/html/load.html
+lib/magic/doc/html/locking.html
 lib/magic/doc/html/logcommands.html
 lib/magic/doc/html/macro.html
 lib/magic/doc/html/maketoolbar.html
@@ -116,6 +120,7 @@ lib/magic/doc/html/netlist/verify.html
 lib/magic/doc/html/netlist/writeall.html
 lib/magic/doc/html/openwindow.html
 lib/magic/doc/html/openwrapper.html
+lib/magic/doc/html/orient.html
 lib/magic/doc/html/paint.html
 lib/magic/doc/html/path.html
 lib/magic/doc/html/peekbox.html
@@ -132,6 +137,8 @@ lib/magic/doc/html/pushbox.html
 lib/magic/doc/html/pushbutton.html
 lib/magic/doc/html/pushstack.html
 lib/magic/doc/html/quit.html
+lib/magic/doc/html/random.html
+lib/magic/doc/html/readspice.html
 lib/magic/doc/html/redo.html
 lib/magic/doc/html/redraw.html
 lib/magic/doc/html/render3d.html
@@ -145,6 +152,7 @@ lib/magic/doc/html/scroll.html
 lib/magic/doc/html/search.html
 lib/magic/doc/html/see.html
 lib/magic/doc/html/select.html
+lib/magic/doc/html/setlabel.html
 lib/magic/doc/html/setpoint.html
 lib/magic/doc/html/shell.html
 lib/magic/doc/html/sideways.html
@@ -204,6 +212,7 @@ lib/magic/doc/html/wizard/winddebug.html
 lib/magic/doc/html/wizard/winddump.html
 lib/magic/doc/html/writeall.html
 lib/magic/doc/html/xload.html
+lib/magic/doc/html/xor.html
 lib/magic/doc/html/xview.html
 lib/magic/doc/html/zoom.html
 lib/magic/doc/introduction.ps

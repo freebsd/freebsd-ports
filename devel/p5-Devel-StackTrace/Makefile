@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Devel-StackTrace
 PORTVERSION=	2.04
 CATEGORIES=	devel perl5

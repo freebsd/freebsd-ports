@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	langid
 DISTVERSION=	1.1.6-20170715
 CATEGORIES=	textproc devel python

@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	mecab
 PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
@@ -21,7 +19,7 @@ USES=		php:ext
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsky
 GH_PROJECT=	php-${PORTNAME}
-IGNORE_WITH_PHP=	80 81
+IGNORE_WITH_PHP=	80 81 82
 
 WRKSRC_SUBDIR=	mecab
 CONFIGURE_ARGS=	--with-mecab=${LOCALBASE}/bin/mecab-config

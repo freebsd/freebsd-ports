@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libmustache
 PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v

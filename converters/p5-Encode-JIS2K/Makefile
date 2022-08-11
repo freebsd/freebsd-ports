@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	Encode-JIS2K
 PORTVERSION=	0.03
 CATEGORIES=	converters perl5

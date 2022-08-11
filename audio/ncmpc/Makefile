@@ -1,7 +1,6 @@
-# Created by: Mark Reidel <ports@mark.reidel.info>
-
 PORTNAME=	ncmpc
 PORTVERSION=	0.41
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/ncmpc/0/
 

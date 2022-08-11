@@ -1,5 +1,3 @@
-# Created by: Joe Barbish
-
 PORTNAME=	dns2blackhole
 PORTVERSION=	0.1
 CATEGORIES=	dns

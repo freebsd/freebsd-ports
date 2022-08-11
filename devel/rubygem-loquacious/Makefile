@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
-
 PORTNAME=	loquacious
 PORTVERSION=	1.9.1
 PORTREVISION=	1

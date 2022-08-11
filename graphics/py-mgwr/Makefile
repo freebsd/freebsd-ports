@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mgwr
 PORTVERSION=	2.1.2
 CATEGORIES=	graphics python

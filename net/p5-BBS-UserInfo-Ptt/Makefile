@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	BBS-UserInfo-Ptt
 PORTVERSION=	0.06
 PORTREVISION=	1

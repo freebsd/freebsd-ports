@@ -1,5 +1,3 @@
-# Created by: Richard Gallamore <ultima@FreeBSD.org>
-
 PORTNAME=	rcssmin
 PORTVERSION=	1.1.0
 CATEGORIES=	archivers python

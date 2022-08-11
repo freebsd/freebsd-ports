@@ -1,5 +1,3 @@
-# Created by: Loren M. Lang
-
 PORTNAME=	dirvish
 PORTVERSION=	1.2.1
 PORTREVISION=	2

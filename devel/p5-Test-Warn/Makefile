@@ -1,5 +1,3 @@
-# Created by: Brian Minard <bminard@flatfoot.ca>
-
 PORTNAME=	Test-Warn
 PORTVERSION=	0.36
 CATEGORIES=	devel perl5

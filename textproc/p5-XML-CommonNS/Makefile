@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	XML-CommonNS
 PORTVERSION=	0.06
 PORTREVISION=	2

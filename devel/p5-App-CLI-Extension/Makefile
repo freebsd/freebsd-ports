@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	App-CLI-Extension
 PORTVERSION=	1.421
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@bsd.hu
-
 PORTNAME=	mad_fcl
 PORTVERSION=	1.7
 CATEGORIES=	net

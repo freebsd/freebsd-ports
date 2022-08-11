@@ -11,6 +11,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=	error: use of undeclared identifier '__builtin_ia32_packssdw'
+BROKEN_armv6=	emmintrin.h:14:2: error: "This header is only meant to be used on x86 and x64, see https://github.com/surge-synthesizer/surge/issues/6418
+BROKEN_armv7=	emmintrin.h:14:2: error: "This header is only meant to be used on x86 and x64, see https://github.com/surge-synthesizer/surge/issues/6418
+BROKEN_riscv64=	error: functions that differ only in their return type cannot be overloaded - simde-related, see https://github.com/simd-everywhere/simde/issues/962
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/nanosvg.h:graphics/nanosvg \
@@ -52,7 +55,7 @@ LDFLAGS+=	-lexecinfo
 
 BINARY_ALIAS=	python=${PYTHON_CMD} # git=false
 
-PORTSCOUT=	limit:^\d+\. # prevent alpha-numeric strings
+PORTSCOUT=	ignore:1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr/share/Surge/"|"${DATADIR}/"|' ${WRKSRC}/src/common/SurgeStorage.cpp

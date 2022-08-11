@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	unicode
 PORTVERSION=	0.4.4.4
 CATEGORIES=	devel rubygems

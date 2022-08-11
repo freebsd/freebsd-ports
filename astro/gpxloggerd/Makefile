@@ -1,5 +1,3 @@
-# Created by: Gleb Smirnoff <glebius@FreeBSD.org>
-
 PORTNAME=	gpxloggerd
 PORTVERSION=	0.2.5
 CATEGORIES=	astro

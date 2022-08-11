@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	fcitx-configtool
 PORTVERSION=	0.4.9
 CATEGORIES=	chinese x11

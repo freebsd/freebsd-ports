@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tdb@FreeBSD.org>
-
 PORTNAME=	dynamicplaylist
 PORTVERSION=	2.9.3853
 CATEGORIES=	audio

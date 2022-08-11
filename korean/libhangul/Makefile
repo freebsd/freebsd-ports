@@ -1,5 +1,3 @@
-# Created by: Hyogeol, Lee <hyogeollee@gmail.com>
-
 PORTNAME=	libhangul
 PORTVERSION=	0.1.0
 PORTREVISION=	3

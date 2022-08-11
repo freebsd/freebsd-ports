@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	pwhois
 PORTVERSION=	2.2.1.0
 CATEGORIES=	net

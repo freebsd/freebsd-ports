@@ -1,5 +1,3 @@
-# Created by: Jun-ichiro Hagino <itojun@itojun.org>
-
 PORTNAME=	smtpfeed
 PORTVERSION=	1.23
 CATEGORIES=	mail

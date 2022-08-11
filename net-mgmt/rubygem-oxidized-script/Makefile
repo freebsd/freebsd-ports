@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	oxidized-script
 PORTVERSION=	0.6.0
 CATEGORIES=	net-mgmt rubygems

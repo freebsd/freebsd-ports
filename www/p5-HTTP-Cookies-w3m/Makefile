@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	HTTP-Cookies-w3m
 PORTVERSION=	0.01
 PORTREVISION=	2

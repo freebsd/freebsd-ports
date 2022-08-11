@@ -1,5 +1,3 @@
-# Created by: Niek Bergboer <niek@bergboer.net>
-
 PORTNAME=	birthday
 PORTVERSION=	1.6.2
 CATEGORIES=	misc

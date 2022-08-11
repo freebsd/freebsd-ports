@@ -1,5 +1,3 @@
-# Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-
 PORTNAME=	codesearch-py
 DISTVERSION=	g20190528
 PORTEPOCH=	1

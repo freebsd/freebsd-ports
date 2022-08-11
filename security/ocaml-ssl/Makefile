@@ -1,5 +1,3 @@
-# Created by: Jaap Boender <jaapb@kerguelen.org>
-
 PORTNAME=	ssl
 PORTVERSION=	0.5.9
 CATEGORIES=	security devel

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pytest-xdist
 PORTVERSION=	2.5.0
 PORTEPOCH=	1

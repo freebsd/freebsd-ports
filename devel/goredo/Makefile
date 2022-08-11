@@ -1,9 +1,8 @@
 PORTNAME=	goredo
-DISTVERSION=	1.24.0
-PORTREVISION=	1
+DISTVERSION=	1.25.0
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.goredo.cypherpunks.ru/download/
-EXTRACT_SUFX=	.tar.zst
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Go implementation of djb's redo, Makefile replacement that sucks less
@@ -11,7 +10,7 @@ COMMENT=	Go implementation of djb's redo, Makefile replacement that sucks less
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-USES=		go
+USES=		go tar:zst
 
 WRKSRC_SUBDIR=	src
 

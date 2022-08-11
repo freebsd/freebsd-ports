@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	typing-inspect
 PORTVERSION=	0.7.1
 CATEGORIES=	devel python

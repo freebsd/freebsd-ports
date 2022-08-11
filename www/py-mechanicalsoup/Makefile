@@ -1,5 +1,3 @@
-# Created by: Thomas Zander <riggs@FreeBSD.org>
-
 PORTNAME=	mechanicalsoup
 PORTVERSION=	1.1.0
 CATEGORIES=	www python

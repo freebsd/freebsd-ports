@@ -1,5 +1,3 @@
-# Created by: bf <bf2006a@yahoo.com>
-
 PORTNAME=	dieharder
 PORTVERSION=	3.31.1
 PORTREVISION=	9

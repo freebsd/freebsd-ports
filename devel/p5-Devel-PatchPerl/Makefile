@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Devel-PatchPerl
 PORTVERSION=	2.08
 CATEGORIES=	devel perl5

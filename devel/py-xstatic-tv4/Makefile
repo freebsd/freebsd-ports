@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-tv4
 PORTVERSION=	1.2.7.0
 PORTREVISION=	2

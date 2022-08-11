@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	python-editor
 PORTVERSION=	1.0.4
 CATEGORIES=	devel python

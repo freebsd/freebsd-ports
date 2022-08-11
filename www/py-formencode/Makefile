@@ -1,5 +1,3 @@
-# Created by: Choe, Cheng-Dae
-
 PORTNAME=	formencode
 PORTVERSION=	1.3.0
 CATEGORIES=	www python
@@ -7,7 +5,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FormEncode-${PORTVERSION}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	HTML form validation, generation, and conversion package
 
 LICENSE=	PSFL

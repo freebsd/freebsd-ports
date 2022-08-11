@@ -1,5 +1,3 @@
-# Created by: Michael Haro <mharo@FreeBSD.org>
-
 PORTNAME=	Data-Buffer
 PORTVERSION=	0.04
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Kurt Lidl <kurt.lidl@cello.com>
-
 PORTNAME=	Template-Mustache
 PORTVERSION=	v0.5.1
 PORTREVISION=	2

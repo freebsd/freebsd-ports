@@ -1,4 +1,4 @@
 rubygem-openssl-cmac is an implementation of RFC 4493, 4494, 4615 - AES-CMAC
 Algorithm.
 
-WWW: https://github.com/smalllars/openssl-cmac
+WWW: https://github.com/SmallLars/openssl-cmac

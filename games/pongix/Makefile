@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	pongix
 PORTVERSION=	0.4
 PORTREVISION=	13

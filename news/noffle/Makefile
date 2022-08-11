@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	noffle
 PORTVERSION=	1.1.5
 PORTREVISION=	3

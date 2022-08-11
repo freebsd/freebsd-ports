@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	qmls
 PORTVERSION=	0.2
 CATEGORIES=	cad

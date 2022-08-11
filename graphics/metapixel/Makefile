@@ -1,5 +1,3 @@
-# Created by: Tilman Linneweh <arved@FreeBSD.org>
-
 PORTNAME=	metapixel
 PORTVERSION=	1.0.2
 PORTREVISION=	11

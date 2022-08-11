@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Router-Simple
 PORTVERSION=	0.17
 CATEGORIES=	www net perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_stor_simple8000_series
 PORTVERSION=	0.17.3
 CATEGORIES=	devel rubygems

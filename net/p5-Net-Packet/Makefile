@@ -1,5 +1,3 @@
-# Created by: GomoR <netpkt@gomor.org>
-
 PORTNAME=	Net-Packet
 DISTVERSION=	3.27
 PORTREVISION=	1

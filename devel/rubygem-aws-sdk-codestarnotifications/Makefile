@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-codestarnotifications
 PORTVERSION=	1.19.0
 CATEGORIES=	devel rubygems

@@ -1,7 +1,5 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	sm
-DISTVERSION=	2.2-5.7
+DISTVERSION=	2.2-5.7.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

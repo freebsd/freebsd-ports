@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Geo-Coordinates-Converter
 PORTVERSION=	0.13
 PORTREVISION=	1

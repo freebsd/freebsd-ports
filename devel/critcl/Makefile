@@ -1,5 +1,3 @@
-# Created by: gahr@FreeBSD.org
-
 PORTNAME=	critcl
 PORTVERSION=	3.1.18.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: ru
-
 PORTNAME=	tcpmssd
 PORTVERSION=	1.1
 CATEGORIES=	net

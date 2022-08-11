@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	flexmock
 PORTVERSION=	0.11.3
 CATEGORIES=	devel python

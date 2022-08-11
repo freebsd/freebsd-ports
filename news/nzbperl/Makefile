@@ -1,5 +1,3 @@
-# Created by: Tim Welch <ports@thepentagon.org>
-
 PORTNAME=	nzbperl
 PORTVERSION=	0.6.8
 PORTREVISION=	1

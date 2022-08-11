@@ -1,5 +1,3 @@
-# Created by: andy@fud.org.nz
-
 PORTNAME=	pamtester
 PORTVERSION=	0.1.2
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-
 PORTNAME=	saxon-he
 PORTVERSION=	9.5.1.5
 CATEGORIES=	textproc java
@@ -15,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/notices/LICENSE.txt
 USES=		zip
 USE_JAVA=	yes
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 JARFILES=	saxon9-unpack.jar \

@@ -1,5 +1,3 @@
-# Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	scudcloud
 PORTVERSION=	1.65
 DISTVERSIONPREFIX=	v

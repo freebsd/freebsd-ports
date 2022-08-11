@@ -1,5 +1,3 @@
-# Created by: Fotis Zabaras <fotis@zabaras.eu>
-
 PORTNAME=	pyzabbix
 PORTVERSION=	1.0.0
 CATEGORIES=	net-mgmt python

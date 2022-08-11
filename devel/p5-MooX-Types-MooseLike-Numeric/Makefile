@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	MooX-Types-MooseLike-Numeric
 PORTVERSION=	1.03
 CATEGORIES=	devel perl5

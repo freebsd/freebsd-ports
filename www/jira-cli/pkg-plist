@@ -1,4 +1,5 @@
 bin/jira
+man/man7/jira-board-list.7.gz
 man/man7/jira-board.7.gz
 man/man7/jira-completion.7.gz
 man/man7/jira-epic-add.7.gz
@@ -12,15 +13,18 @@ man/man7/jira-issue-clone.7.gz
 man/man7/jira-issue-comment-add.7.gz
 man/man7/jira-issue-comment.7.gz
 man/man7/jira-issue-create.7.gz
+man/man7/jira-issue-delete.7.gz
 man/man7/jira-issue-edit.7.gz
 man/man7/jira-issue-link.7.gz
 man/man7/jira-issue-list.7.gz
 man/man7/jira-issue-move.7.gz
+man/man7/jira-issue-unlink.7.gz
 man/man7/jira-issue-view.7.gz
 man/man7/jira-issue.7.gz
 man/man7/jira-man.7.gz
 man/man7/jira-me.7.gz
 man/man7/jira-open.7.gz
+man/man7/jira-project-list.7.gz
 man/man7/jira-project.7.gz
 man/man7/jira-sprint-add.7.gz
 man/man7/jira-sprint-list.7.gz

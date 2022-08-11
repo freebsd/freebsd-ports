@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	odt2txt
 PORTVERSION=	0.5
 DISTVERSIONPREFIX=	v

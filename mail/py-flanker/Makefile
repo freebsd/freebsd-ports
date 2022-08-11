@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	flanker
 PORTVERSION=	0.9.11
 CATEGORIES=	mail python

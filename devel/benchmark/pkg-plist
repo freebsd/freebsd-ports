@@ -1,12 +1,13 @@
 include/benchmark/benchmark.h
+include/benchmark/export.h
 lib/cmake/benchmark/benchmarkConfig.cmake
 lib/cmake/benchmark/benchmarkConfigVersion.cmake
 lib/cmake/benchmark/benchmarkTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/benchmark/benchmarkTargets.cmake
 lib/libbenchmark.so
 lib/libbenchmark.so.1
-lib/libbenchmark.so.1.6.1
+lib/libbenchmark.so.1.7.0
 lib/libbenchmark_main.so
 lib/libbenchmark_main.so.1
-lib/libbenchmark_main.so.1.6.1
+lib/libbenchmark_main.so.1.7.0
 libdata/pkgconfig/benchmark.pc

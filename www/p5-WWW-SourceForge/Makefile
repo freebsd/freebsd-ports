@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.idv.tw>
-
 PORTNAME=	WWW-SourceForge
 PORTVERSION=	0.70
 PORTREVISION=	3

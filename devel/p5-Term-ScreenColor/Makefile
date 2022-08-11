@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Term-ScreenColor
 PORTVERSION=	1.20
 PORTREVISION=	1

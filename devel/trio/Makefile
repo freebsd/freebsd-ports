@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	trio
 PORTVERSION=	1.16
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	wsaccel
 PORTVERSION=	0.6.3
 CATEGORIES=	www python

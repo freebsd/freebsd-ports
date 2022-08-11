@@ -1,7 +1,7 @@
---- chrome/browser/ui/webui/connectors_internals/zero_trust_utils.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/ui/webui/connectors_internals/zero_trust_utils.cc.orig	2022-06-17 14:20:10 UTC
 +++ chrome/browser/ui/webui/connectors_internals/zero_trust_utils.cc
-@@ -9,7 +9,7 @@
- #include "base/strings/string_util.h"
+@@ -6,7 +6,7 @@
+ 
  #include "build/build_config.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
@@ -9,17 +9,17 @@
  #include "chrome/browser/browser_process.h"
  #include "chrome/browser/policy/chrome_browser_policy_connector.h"
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
-@@ -66,7 +66,7 @@ void TrySetSignal(base::flat_map<std::string, std::str
-       std::vector<base::StringPiece>(values.begin(), values.end()), ", ");
- }
+@@ -22,7 +22,7 @@ namespace utils {
+ 
+ namespace {
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
  
  connectors_internals::mojom::KeyTrustLevel ParseTrustLevel(
      BPKUR::KeyTrustLevel trust_level) {
-@@ -171,7 +171,7 @@ base::flat_map<std::string, std::string> SignalsToMap(
- }
+@@ -53,7 +53,7 @@ connectors_internals::mojom::KeyType AlgorithmToType(
+ }  // namespace
  
  connectors_internals::mojom::KeyInfoPtr GetKeyInfo() {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)

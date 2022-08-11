@@ -1,5 +1,3 @@
-# Created by: rene@FreeBSD.org
-
 PORTNAME=	owl-lisp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.23

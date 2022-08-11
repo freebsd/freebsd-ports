@@ -1,5 +1,3 @@
-# Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
-
 PORTNAME=	XML-LibXML-Iterator
 PORTVERSION=	1.06
 CATEGORIES=	textproc perl5

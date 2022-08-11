@@ -1,5 +1,3 @@
-# Created by: James Elstone <james@elstone.net>
-
 PORTNAME=	stomp.py
 PORTVERSION=	4.1.17
 CATEGORIES=	net python

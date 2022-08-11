@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	ghex
 PORTVERSION=	3.41.1
 CATEGORIES=	editors gnome

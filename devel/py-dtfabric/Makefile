@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	dtfabric
 PORTVERSION=	20200621
 CATEGORIES=	devel python

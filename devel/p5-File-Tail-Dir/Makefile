@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	File-Tail-Dir
 PORTVERSION=	0.14
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	Archive-SimpleExtractor
 PORTVERSION=	0.11
 PORTREVISION=	2

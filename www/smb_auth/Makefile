@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	smb_auth
 PORTVERSION=	0.05
 PORTREVISION=	10

@@ -1,5 +1,3 @@
-# Created by: Johannes Jost Meixner <johannes@FreeBSD.org>
-
 PORTNAME=	msrestazure
 DISTVERSION=	0.6.4
 CATEGORIES=	net-mgmt python

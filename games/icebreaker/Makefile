@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	icebreaker
 PORTVERSION=	1.9.8
 PORTREVISION=	2

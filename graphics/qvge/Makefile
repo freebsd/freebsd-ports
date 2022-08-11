@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	qvge
 PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v

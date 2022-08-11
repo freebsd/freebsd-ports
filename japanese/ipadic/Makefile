@@ -1,5 +1,3 @@
-# Created by: kuriyama
-
 PORTNAME=	ipadic
 PORTVERSION=	2.7.0
 PORTREVISION=	2

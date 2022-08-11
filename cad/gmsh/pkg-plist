@@ -1,6 +1,6 @@
 bin/gmsh
 bin/onelab.py
-man/man1/gmsh.1.gz
+share/man/man1/gmsh.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt

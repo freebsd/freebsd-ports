@@ -4,6 +4,7 @@ bin/mbdepth
 bin/mbgsets
 bin/mbhonodes
 bin/mbmem
+bin/mbmerge
 bin/mbquality
 bin/mbsize
 bin/mbskin
@@ -11,8 +12,7 @@ bin/mbslavepart
 bin/mbsurfplot
 bin/mbtagprop
 bin/mbumr
-%%MPI%%include/Coupler.hpp
-%%MPI%%include/ElemUtil.hpp
+bin/spheredecomp
 include/MBCN.h
 include/MBCN_protos.h
 include/MBEntityType.h
@@ -28,6 +28,8 @@ include/iMesh.h
 include/iMesh_extensions.h
 include/iMesh_f.h
 include/iMesh_protos.h
+%%MPI%%include/mbcoupler/Coupler.hpp
+%%MPI%%include/mbcoupler/ElemUtil.hpp
 include/moab/AdaptiveKDTree.hpp
 include/moab/BSPTree.hpp
 include/moab/BSPTreePoly.hpp
@@ -38,6 +40,8 @@ include/moab/CartVect.hpp
 include/moab/Compiler.hpp
 include/moab/Core.hpp
 include/moab/CpuTimer.hpp
+include/moab/DiscreteGeometry/DGMSolver.hpp
+include/moab/DiscreteGeometry/HiReconstruction.hpp
 include/moab/DualTool.hpp
 include/moab/ElemEvaluator.hpp
 include/moab/EntityHandle.hpp
@@ -76,10 +80,11 @@ include/moab/NestedRefine.hpp
 include/moab/NestedRefineTemplates.hpp
 include/moab/OrientedBox.hpp
 include/moab/OrientedBoxTreeTool.hpp
-include/moab/ParCommGraph.hpp
+%%MPI%%include/moab/ParCommGraph.hpp
 %%MPI%%include/moab/ParallelComm.hpp
 %%MPI%%include/moab/ParallelData.hpp
 %%MPI%%include/moab/ParallelMergeMesh.hpp
+include/moab/PartitionerBase.hpp
 %%MPI%%include/moab/ProcConfig.hpp
 include/moab/ProgOptions.hpp
 include/moab/Range.hpp
@@ -105,6 +110,7 @@ include/moab/WriteUtilIface.hpp
 include/moab/WriterIface.hpp
 %%MPI%%include/moab/gs.hpp
 include/moab/iMOAB.h
+include/moab/imoab_protos.h
 include/moab/mhdf_public.h
 include/moab/point_locater/element_maps/linear_hex_map.hpp
 include/moab/point_locater/element_maps/linear_tet_map.hpp
@@ -118,6 +124,8 @@ include/moab/point_locater/tree/common_tree.hpp
 include/moab/point_locater/tree/element_tree.hpp
 include/moab/verdict.h
 include/moab/verdict/VerdictWrapper.hpp
+include/moab/win32_config.h
+include/moab_export.h
 %%MPI%%include/moab_mpi.h
 %%MPI%%include/moab_mpi_config.h
 lib/cmake/MOAB/MOABConfig.cmake
@@ -127,9 +135,11 @@ lib/cmake/MOAB/ResolveCompilerPaths.cmake
 lib/iMesh-Defs.inc
 lib/libMOAB.so
 lib/libMOAB.so.5
-lib/libMOAB.so.5.1.0
+lib/libMOAB.so.5.3.1
 lib/libiMesh.so
 lib/libiMesh.so.5
-lib/libiMesh.so.5.1.0
+lib/libiMesh.so.5.3.1
 %%MPI%%lib/libmbcoupler.so
 lib/moab.make
+libdata/pkgconfig/MOAB.pc
+share/man/man1/mbconvert.1.gz

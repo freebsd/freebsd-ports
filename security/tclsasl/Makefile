@@ -1,5 +1,3 @@
-# Created by: Denis Shaposhnikov <dsh@vlink.ru>
-
 PORTNAME=	tclsasl
 PORTVERSION=	1.0
 PORTREVISION=	3

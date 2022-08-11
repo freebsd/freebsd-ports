@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	ipcalc
 PORTVERSION=	1.0.1
 PORTREVISION=	1

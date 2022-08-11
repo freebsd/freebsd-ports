@@ -1,5 +1,6 @@
 PORTNAME=	std
 PORTVERSION=	0.0.20191230
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	ja-font-
@@ -15,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/ipa/ipam.otf:japanese/font-ipa \
 		${LOCALBASE}/share/fonts/mplus-ipa/fonts/ipam.ttf:japanese/font-mplus-ipa \
 		${LOCALBASE}/share/fonts/mplus-ipa/fonts/ipag.ttf:japanese/font-mplus-ipa
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 PLIST_FILES=	${STD:S,^,${FONTSDIR}/std.ja_JP/,}
 DATADIR=	${PREFIX}/share/font-${PORTNAME}

@@ -1,6 +1,15 @@
---- host_applications/linux/apps/dtoverlay/CMakeLists.txt.orig	2016-10-30 UTC
+--- host_applications/linux/apps/dtoverlay/CMakeLists.txt.orig	2016-10-24 19:59:54 UTC
 +++ host_applications/linux/apps/dtoverlay/CMakeLists.txt
-@@ -22,12 +22,4 @@ add_custom_command(TARGET dtoverlay POST
+@@ -4,7 +4,7 @@ get_filename_component (VIDEOCORE_ROOT ../../../.. ABS
+ include (${VIDEOCORE_ROOT}/makefiles/cmake/global_settings.cmake)
+ 
+ if (NOT WIN32)
+-   add_definitions(-Wall -Werror)
++   add_definitions(-Wall)
+ endif ()
+ 
+ include_directories (
+@@ -22,12 +22,4 @@ add_custom_command(TARGET dtoverlay POST_BUILD COMMAND
  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/dtparam DESTINATION bin)
  
  set(DTOVERLAY_SCRIPTS dtoverlay-pre dtoverlay-post)

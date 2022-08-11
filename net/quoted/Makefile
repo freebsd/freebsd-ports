@@ -1,5 +1,3 @@
-# Created by: Bob Frazier
-
 PORTNAME=	quoted
 PORTVERSION=	1.01
 PORTREVISION=	3

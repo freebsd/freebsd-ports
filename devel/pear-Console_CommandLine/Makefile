@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Console_CommandLine
 PORTVERSION=	1.2.2
 CATEGORIES=	devel www pear

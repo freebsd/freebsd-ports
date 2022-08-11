@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	geokit
 PORTVERSION=	1.13.1
 CATEGORIES=	graphics rubygems

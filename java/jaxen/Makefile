@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-
 PORTNAME=	jaxen
 PORTVERSION=	1.0
 PORTREVISION=	4

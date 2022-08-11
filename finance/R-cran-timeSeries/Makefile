@@ -1,7 +1,5 @@
-# Created by: David Naylor <naylor.b.david@gmail.com>
-
 PORTNAME=	timeSeries
-DISTVERSION=	3062.100
+DISTVERSION=	4021.104
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

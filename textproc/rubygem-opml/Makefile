@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	opml
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc rubygems

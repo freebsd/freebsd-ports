@@ -1,13 +1,7 @@
-# Created by: lbartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	pointcloud
-PORTVERSION=	1.2.1
-PORTREVISION=	4
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.2
 CATEGORIES=	databases geography
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	270f3e112519.patch:-p1
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	LIDAR types for PostgreSQL
@@ -15,19 +9,19 @@ COMMENT=	LIDAR types for PostgreSQL
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libght.so:devel/libght \
-		liblazperf.so:archivers/lazperf
+LIB_DEPENDS=	liblazperf.so:archivers/lazperf
 
 USES=		autoreconf compiler:c++0x gmake gnome pgsql
-WANT_PGSQL=	server
-USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-lazperf=${LOCALBASE}
-USE_LDCONFIG=	yes
+WANT_PGSQL=	server
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgpointcloud
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS=	--with-lazperf=${LOCALBASE}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/postgresql/pointcloud-${PORTVERSION:R}.so
+	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/postgresql/pointcloud-${DISTVERSION:R}.so
 
 .include <bsd.port.mk>

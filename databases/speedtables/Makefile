@@ -1,9 +1,7 @@
-# Created by: gahr
-
 PORTNAME=	speedtables
 PORTVERSION=	1.13.18
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org

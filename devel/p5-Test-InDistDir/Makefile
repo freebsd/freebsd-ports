@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Test-InDistDir
 PORTVERSION=	1.112071
 PORTREVISION=	1

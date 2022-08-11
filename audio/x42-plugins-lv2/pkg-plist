@@ -31,6 +31,7 @@ lib/lv2/fat1.lv2/fat1.so
 lib/lv2/fat1.lv2/fat1.ttl
 lib/lv2/fat1.lv2/fat1UI_gl.so
 lib/lv2/fat1.lv2/manifest.ttl
+lib/lv2/fat1.lv2/presets.ttl
 lib/lv2/fil4.lv2/fil4.so
 lib/lv2/fil4.lv2/fil4.ttl
 lib/lv2/fil4.lv2/fil4UI_gl.so

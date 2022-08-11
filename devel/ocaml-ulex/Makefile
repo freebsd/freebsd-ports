@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ulex
 PORTVERSION=	1.1
 PORTREVISION=	1

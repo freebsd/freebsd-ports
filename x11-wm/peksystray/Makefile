@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	peksystray
 PORTVERSION=	0.4.0
 PORTREVISION=	2

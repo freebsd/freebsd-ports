@@ -1,5 +1,3 @@
-# Created by: Pakhom Golynga <pg@pakhom.spb.ru>
-
 PORTNAME=	zabbix4
 PORTVERSION=	4.0.30
 PORTREVISION?=	0

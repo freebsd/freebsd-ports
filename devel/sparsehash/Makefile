@@ -1,5 +1,3 @@
-# Created by: Vasil Dimov <vd@datamax.bg>
-
 PORTNAME=	sparsehash
 PORTVERSION=	2.0.4
 DISTVERSIONPREFIX=	${PORTNAME}-

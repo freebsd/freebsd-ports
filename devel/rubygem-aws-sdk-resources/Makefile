@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.128.0
+PORTVERSION=	3.136.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -46,6 +46,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-budgets>=1<2:devel/rubygem-aws-sdk-budgets \
 		rubygem-aws-sdk-chime>=1<2:devel/rubygem-aws-sdk-chime \
 		rubygem-aws-sdk-chimesdkidentity>=1<2:devel/rubygem-aws-sdk-chimesdkidentity \
+		rubygem-aws-sdk-chimesdkmediapipelines>=1<2:devel/rubygem-aws-sdk-chimesdkmediapipelines \
 		rubygem-aws-sdk-chimesdkmeetings>=1<2:devel/rubygem-aws-sdk-chimesdkmeetings \
 		rubygem-aws-sdk-chimesdkmessaging>=1<2:devel/rubygem-aws-sdk-chimesdkmessaging \
 		rubygem-aws-sdk-cloud9>=1<2:devel/rubygem-aws-sdk-cloud9 \
@@ -81,6 +82,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-computeoptimizer>=1<2:devel/rubygem-aws-sdk-computeoptimizer \
 		rubygem-aws-sdk-configservice>=1<2:devel/rubygem-aws-sdk-configservice \
 		rubygem-aws-sdk-connect>=1<2:devel/rubygem-aws-sdk-connect \
+		rubygem-aws-sdk-connectcampaignservice>=1<2:devel/rubygem-aws-sdk-connectcampaignservice \
 		rubygem-aws-sdk-connectcontactlens>=1<2:devel/rubygem-aws-sdk-connectcontactlens \
 		rubygem-aws-sdk-connectparticipant>=1<2:devel/rubygem-aws-sdk-connectparticipant \
 		rubygem-aws-sdk-connectwisdomservice>=1<2:devel/rubygem-aws-sdk-connectwisdomservice \
@@ -119,6 +121,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-elastictranscoder>=1<2:devel/rubygem-aws-sdk-elastictranscoder \
 		rubygem-aws-sdk-emr>=1<2:devel/rubygem-aws-sdk-emr \
 		rubygem-aws-sdk-emrcontainers>=1<2:devel/rubygem-aws-sdk-emrcontainers \
+		rubygem-aws-sdk-emrserverless>=1<2:devel/rubygem-aws-sdk-emrserverless \
 		rubygem-aws-sdk-eventbridge>=1<2:devel/rubygem-aws-sdk-eventbridge \
 		rubygem-aws-sdk-finspace>=1<2:devel/rubygem-aws-sdk-finspace \
 		rubygem-aws-sdk-finspacedata>=1<2:devel/rubygem-aws-sdk-finspacedata \
@@ -164,6 +167,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-iottwinmaker>=1<2:devel/rubygem-aws-sdk-iottwinmaker \
 		rubygem-aws-sdk-iotwireless>=1<2:devel/rubygem-aws-sdk-iotwireless \
 		rubygem-aws-sdk-ivs>=1<2:devel/rubygem-aws-sdk-ivs \
+		rubygem-aws-sdk-ivschat>=1<2:devel/rubygem-aws-sdk-ivschat \
 		rubygem-aws-sdk-kafka>=1<2:devel/rubygem-aws-sdk-kafka \
 		rubygem-aws-sdk-kafkaconnect>=1<2:devel/rubygem-aws-sdk-kafkaconnect \
 		rubygem-aws-sdk-kendra>=1<2:devel/rubygem-aws-sdk-kendra \
@@ -192,6 +196,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-machinelearning>=1<2:devel/rubygem-aws-sdk-machinelearning \
 		rubygem-aws-sdk-macie>=1<2:devel/rubygem-aws-sdk-macie \
 		rubygem-aws-sdk-macie2>=1<2:devel/rubygem-aws-sdk-macie2 \
+		rubygem-aws-sdk-mainframemodernization>=1<2:devel/rubygem-aws-sdk-mainframemodernization \
 		rubygem-aws-sdk-managedblockchain>=1<2:devel/rubygem-aws-sdk-managedblockchain \
 		rubygem-aws-sdk-managedgrafana>=1<2:devel/rubygem-aws-sdk-managedgrafana \
 		rubygem-aws-sdk-marketplacecatalog>=1<2:devel/rubygem-aws-sdk-marketplacecatalog \
@@ -247,11 +252,13 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-recyclebin>=1<2:devel/rubygem-aws-sdk-recyclebin \
 		rubygem-aws-sdk-redshift>=1<2:devel/rubygem-aws-sdk-redshift \
 		rubygem-aws-sdk-redshiftdataapiservice>=1<2:devel/rubygem-aws-sdk-redshiftdataapiservice \
+		rubygem-aws-sdk-redshiftserverless>=1<2:devel/rubygem-aws-sdk-redshiftserverless \
 		rubygem-aws-sdk-rekognition>=1<2:devel/rubygem-aws-sdk-rekognition \
 		rubygem-aws-sdk-resiliencehub>=1<2:devel/rubygem-aws-sdk-resiliencehub \
 		rubygem-aws-sdk-resourcegroups>=1<2:devel/rubygem-aws-sdk-resourcegroups \
 		rubygem-aws-sdk-resourcegroupstaggingapi>=1<2:devel/rubygem-aws-sdk-resourcegroupstaggingapi \
 		rubygem-aws-sdk-robomaker>=1<2:devel/rubygem-aws-sdk-robomaker \
+		rubygem-aws-sdk-rolesanywhere>=1<2:devel/rubygem-aws-sdk-rolesanywhere \
 		rubygem-aws-sdk-route53>=1<2:devel/rubygem-aws-sdk-route53 \
 		rubygem-aws-sdk-route53domains>=1<2:devel/rubygem-aws-sdk-route53domains \
 		rubygem-aws-sdk-route53recoverycluster>=1<2:devel/rubygem-aws-sdk-route53recoverycluster \

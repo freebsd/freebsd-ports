@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	piewm
 PORTVERSION=	1.04
 PORTREVISION=	4

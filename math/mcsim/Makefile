@@ -1,8 +1,6 @@
-# Created by: Alessando Sagratini <ale_sagra@hotmail.com>
-
 PORTNAME=	mcsim
 PORTVERSION=	6.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	GNU
 

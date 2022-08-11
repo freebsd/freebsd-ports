@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	xfce4-netload-plugin
 PORTVERSION=	1.4.0
 CATEGORIES=	sysutils xfce

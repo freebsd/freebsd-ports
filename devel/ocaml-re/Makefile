@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	re
 PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=	${PKGNAMEPREFIX}${PORTNAME}-

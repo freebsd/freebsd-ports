@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	File-Find-Rule
 PORTVERSION=	0.34
 CATEGORIES=	devel perl5

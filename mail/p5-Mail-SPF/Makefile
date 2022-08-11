@@ -1,5 +1,3 @@
-# Created by: gmc@sonologic.nl
-
 PORTNAME=	Mail-SPF
 PORTVERSION=	2.9.0
 DISTVERSIONPREFIX=	v

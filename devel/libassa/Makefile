@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libassa
 DISTVERSION=	3.5.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Parse-CPAN-Packages
 PORTVERSION=	2.40
 PORTREVISION=	1

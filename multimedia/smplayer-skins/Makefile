@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	smplayer-skins
 DISTVERSION=	20.11.0
 PORTREVISION=	1

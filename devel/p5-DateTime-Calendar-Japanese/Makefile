@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	DateTime-Calendar-Japanese
 PORTVERSION=	0.06001
 PORTREVISION=	2

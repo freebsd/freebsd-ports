@@ -1,5 +1,3 @@
-# Created by: David O'Brien <obrien@NUXI.com>
-
 PORTNAME=	libviet
 PORTVERSION=	20010210
 PORTREVISION=	1

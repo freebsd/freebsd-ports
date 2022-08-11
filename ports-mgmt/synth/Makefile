@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	synth
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.12
@@ -10,6 +8,8 @@ COMMENT=	Custom package repository builder for FreeBSD and DragonFly
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/License.txt
+
+EXPIRATION_DATE=2022-09-30
 
 BUILD_DEPENDS=	${GPR}/ini_file_manager.gpr:misc/ini_file_manager \
 		${GPR}/adacurses.gpr:devel/adacurses

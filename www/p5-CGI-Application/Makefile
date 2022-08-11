@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	CGI-Application
 PORTVERSION=	4.61
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Bruce M. Simpson
-
 PORTNAME=	boost_build
 DISTVERSION=	4.8.2.20220318
 CATEGORIES=	devel

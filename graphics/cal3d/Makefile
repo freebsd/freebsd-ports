@@ -1,5 +1,3 @@
-# Created by: Stefan Walter <sw@gegenunendlich.de>
-
 PORTNAME=	cal3d
 PORTVERSION=	0.11.1	# see note below
 CATEGORIES=	graphics devel

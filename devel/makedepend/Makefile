@@ -1,5 +1,3 @@
-# Created by: Ian Vaudrey <i.vaudrey@bigfoot.com>
-
 PORTNAME=	makedepend
 PORTVERSION=	1.0.6
 PORTEPOCH=	1

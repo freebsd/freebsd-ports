@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	xml-lite.el
 PORTVERSION=	1.1
 PORTREVISION=	17

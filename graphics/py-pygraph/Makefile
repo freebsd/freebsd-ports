@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-
 PORTNAME=	pygraph
 DISTVERSION=	0.2.1-4
 DISTVERSIONSUFFIX=	-g037bb2f

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	String-ShellQuote
 PORTVERSION=	1.04
 PORTREVISION=	1

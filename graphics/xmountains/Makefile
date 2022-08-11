@@ -1,5 +1,3 @@
-# Created by: proff@iq.org
-
 PORTNAME=	xmountains
 PORTVERSION=	2.10
 CATEGORIES=	graphics x11

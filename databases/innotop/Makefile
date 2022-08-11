@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	innotop
 PORTVERSION=	1.13.0
 DISTVERSIONPREFIX=	v

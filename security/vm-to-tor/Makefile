@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	vm-to-tor
 PORTVERSION=	1.0
 CATEGORIES=	security net

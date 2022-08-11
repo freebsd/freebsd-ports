@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	phalanx
 PORTVERSION=	25
 CATEGORIES=	games

@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	mumps
 DISTVERSION=	5.1.2-aster7
 PORTREVISION=	3

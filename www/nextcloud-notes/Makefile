@@ -1,7 +1,5 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	notes
-PORTVERSION=	4.3.1
+PORTVERSION=	4.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www editors
 MASTER_SITES=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
@@ -16,10 +14,10 @@ COMMENT=	Notes app for Nextcloud
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=20:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=22:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=81
+IGNORE_WITH_PHP=	82
 NO_BUILD=	yes
 NO_ARCH=	yes
 

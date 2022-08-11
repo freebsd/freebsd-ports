@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	smtube
 DISTVERSION=	21.10.0
 PORTREVISION=	1

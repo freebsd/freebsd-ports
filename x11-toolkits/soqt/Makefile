@@ -1,5 +1,3 @@
-# Created by: roland.jesse@gmx.net
-
 PORTNAME=	SoQt
 PORTVERSION=	1.6.0
 PORTREVISION=	1

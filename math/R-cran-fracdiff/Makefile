@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	fracdiff
 DISTVERSION=	1.5-1
 PORTREVISION=	1

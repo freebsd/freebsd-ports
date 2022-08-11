@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	libtool-ltdl
 PORTVERSION=	2.4.2
 DISTVERSIONSUFFIX=	-22.el7_3

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	faraday-em_synchrony
 PORTVERSION=	1.0.0
 CATEGORIES=	www rubygems

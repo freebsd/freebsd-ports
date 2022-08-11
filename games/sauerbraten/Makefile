@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	sauerbraten
 PORTVERSION=	20201221
 PORTREVISION=	1

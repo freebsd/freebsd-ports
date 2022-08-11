@@ -1,5 +1,3 @@
-# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
-
 PORTNAME=	dbs
 PORTVERSION=	1.1.5
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: jfieber
-
 PORTNAME=	iso8879
 PORTVERSION=	1986
 PORTREVISION=	3

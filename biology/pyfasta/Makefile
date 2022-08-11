@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	pyfasta
 PORTVERSION=	0.5.2
 PORTREVISION=	4

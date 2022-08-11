@@ -1,5 +1,3 @@
-# Created by: Rudolf Polzer <freebsd-dr@durchnull.de>
-
 PORTNAME=	treewm
 PORTVERSION=	0.4.5
 PORTREVISION=	6

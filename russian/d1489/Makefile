@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	d1489
 PORTVERSION=	1.5.1
 CATEGORIES=	russian converters

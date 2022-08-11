@@ -1,5 +1,3 @@
-# Created by: lbartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	libght
 PORTVERSION=	0.1.0
 PORTREVISION=	5

@@ -1,8 +1,6 @@
-# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
-
 PORTNAME=	guile
 PORTVERSION=	2.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	2

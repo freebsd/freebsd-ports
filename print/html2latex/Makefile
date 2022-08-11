@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	html2latex
 PORTVERSION=	0.9c
 CATEGORIES=	print

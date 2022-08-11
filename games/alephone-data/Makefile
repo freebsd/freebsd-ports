@@ -1,5 +1,3 @@
-# Created by: Michael Alyn Miller <malyn@strangeGizmo.com>
-
 PORTNAME=	data
 PORTVERSION=	1.0
 PORTREVISION=	10

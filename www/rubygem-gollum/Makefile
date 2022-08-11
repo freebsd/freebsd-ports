@@ -1,5 +1,3 @@
-# Created by: Sir l33tname <sirl33tname@gmail.com>
-
 PORTNAME=	gollum
 PORTVERSION=	5.2.3
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Carlo Strub
-
 PORTNAME=	wemux
 PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	v

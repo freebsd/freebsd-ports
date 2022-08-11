@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	please
 PORTVERSION=	2.8
 CATEGORIES=	security

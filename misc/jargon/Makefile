@@ -1,5 +1,3 @@
-# Created by: moeding
-
 PORTNAME=	jargon
 PORTVERSION=	4.4.7
 CATEGORIES=	misc

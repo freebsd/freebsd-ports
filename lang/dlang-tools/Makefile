@@ -1,5 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	tools
 PORTVERSION=	2.085.0
 DISTVERSIONPREFIX=	v

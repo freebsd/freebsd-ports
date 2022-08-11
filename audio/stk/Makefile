@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	stk
 PORTVERSION=	4.6.2
 CATEGORIES=	audio

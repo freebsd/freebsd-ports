@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-Algebra-Symbols
 PORTVERSION=	1.27
 CATEGORIES=	math perl5

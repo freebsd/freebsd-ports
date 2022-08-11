@@ -1,5 +1,3 @@
-# Created by: Josh Gilliam <josh@quick.net>
-
 PORTNAME=	dict
 PORTVERSION=	1.13.1
 CATEGORIES=	textproc

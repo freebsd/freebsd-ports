@@ -1,5 +1,3 @@
-# Created by: Marc Fonvieille <blackend@FreeBSD.org>
-
 PORTNAME=	figurine
 PORTVERSION=	1.0.5
 PORTREVISION=	5

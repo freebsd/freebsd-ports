@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Bigtop
 PORTVERSION=	0.38
 PORTREVISION=	3

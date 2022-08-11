@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Sub-Exporter-Progressive
 PORTVERSION=	0.001013
 CATEGORIES=	devel perl5

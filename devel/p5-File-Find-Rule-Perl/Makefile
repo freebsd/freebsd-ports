@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	File-Find-Rule-Perl
 PORTVERSION=	1.16
 CATEGORIES=	devel perl5

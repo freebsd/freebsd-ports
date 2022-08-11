@@ -1,5 +1,3 @@
-# Created by: jkh
-
 PORTNAME=	jove
 PORTVERSION=	4.16
 PORTREVISION=	2

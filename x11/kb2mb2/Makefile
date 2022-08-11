@@ -1,5 +1,3 @@
-# Created by: Tatsumi Hosokawa
-
 PORTNAME=	kb2mb2
 PORTVERSION=	1.0
 PORTREVISION=	3

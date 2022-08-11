@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Web-Query
 PORTVERSION=	0.39
 PORTREVISION=	1

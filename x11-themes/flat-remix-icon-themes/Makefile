@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	flat-remix
 PORTVERSION=	20220304
 CATEGORIES=	x11-themes

@@ -1,5 +1,3 @@
-# Created by: Kentaro Inagaki <JBD01226@niftyserve.ne.jp>
-
 PORTNAME=	xdvik
 PORTVERSION=	22.87.06
 CATEGORIES=	print

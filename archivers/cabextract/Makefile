@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	cabextract
 PORTVERSION=	1.9.1
 CATEGORIES=	archivers

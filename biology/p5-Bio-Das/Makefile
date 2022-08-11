@@ -1,5 +1,3 @@
-# Created by: Razi Khaja <razi@genet.sickkids.on.ca>
-
 PORTNAME=	Bio-Das
 PORTVERSION=	1.17
 PORTREVISION=	4

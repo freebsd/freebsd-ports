@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	Image-Sane
 PORTVERSION=	5
 PORTREVISION=	1

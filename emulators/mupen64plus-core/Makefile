@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	mupen64plus
 PORTVERSION?=	2.5
 PORTREVISION?=	2

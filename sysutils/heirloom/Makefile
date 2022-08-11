@@ -1,5 +1,3 @@
-# Created by: Cyrille Lefevre <Cyrille.Lefevre@laposte.net>
-
 PORTNAME=	heirloom
 PORTVERSION=	070715
 PORTREVISION=	4

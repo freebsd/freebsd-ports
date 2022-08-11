@@ -1,8 +1,6 @@
-# Created by: Seiya Yanagita <s_yanagita@ybb.ne.jp>
-
 PORTNAME=	scim-uim
 PORTVERSION=	0.2.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	japanese
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION} \
 		http://freedesktop.org/~suzhe/sources/

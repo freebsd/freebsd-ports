@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	gmp
 PORTVERSION=	6.2.1
 CATEGORIES=	math devel

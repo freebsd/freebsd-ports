@@ -1,5 +1,3 @@
-# Created by: Dan Pelleg <dpelleg+unison@cs.cmu.edu>
-
 PORTNAME=	unison
 PORTVERSION=	2.51.5
 DISTVERSIONPREFIX=	v

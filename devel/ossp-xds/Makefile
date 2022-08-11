@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@nigredo.org>
-
 PORTNAME=	xds
 PORTVERSION=	0.9.3
 PORTREVISION=	1

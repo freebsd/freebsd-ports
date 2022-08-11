@@ -1,5 +1,3 @@
-# Created by: Alexander Leidinger <netchild@FreeBSD.org>
-
 PORTNAME=	ssh2
 PORTVERSION=	1.3.1
 CATEGORIES=	security pear

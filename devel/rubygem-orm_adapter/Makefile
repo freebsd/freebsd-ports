@@ -1,5 +1,3 @@
-# Created by: rpsfa@rit.edu
-
 PORTNAME=	orm_adapter
 PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems

@@ -1,8 +1,6 @@
-# Created by: Mahdi Mokhtari <mokhi64@gmail.com>
-
 PORTNAME?=		mysql
-PORTVERSION=		8.0.28
-PORTREVISION?=		4
+PORTVERSION=		8.0.29
+PORTREVISION?=		0
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server
@@ -12,6 +10,8 @@ MAINTAINER=		joneum@FreeBSD.org
 COMMENT?=		Multithreaded SQL database (server)
 
 LICENSE=		GPLv2
+
+BROKEN_i386=	--yplg_out: protoc-gen-yplg: Plugin killed by signal 11.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
@@ -65,7 +65,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_INCLUDEDIR="include/mysql" \
 		-DINSTALL_INFODIR="${INFO_PATH}" \
 		-DINSTALL_LIBDIR="lib/mysql" \
-		-DINSTALL_MANDIR="man" \
+		-DINSTALL_MANDIR="share/man" \
 		-DINSTALL_MYSQLDATADIR="${MY_DBDIR}" \
 		-DINSTALL_MYSQLKEYRINGDIR="etc/mysql/keyring" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \

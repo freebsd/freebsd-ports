@@ -1,10 +1,8 @@
-# Created by: Frank Laszlo <laszlof@vonostingroup.com>
-
 PORTNAME=	readline
 PORTVERSION=	8.1.${PATCHLEVEL}
 CATEGORIES=	devel
 MASTER_SITES=	GNU
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+#DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 PATCH_SITES=	GNU/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-patches
 
@@ -31,9 +29,9 @@ PATCHES=	1 2
 .if defined(PATCHES)
 CPE_UPDATE=	${PATCHLEVEL}
 PATCHLEVEL=	${PATCHES:O:[-1]}
-.for patch in ${PATCHES}
-PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
-.endfor
+#.for patch in ${PATCHES}
+#PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
+#.endfor
 .else
 PATCHLEVEL=	0
 .endif

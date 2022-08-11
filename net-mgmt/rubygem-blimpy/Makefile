@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	blimpy
 PORTVERSION=	0.6.7
 CATEGORIES=	net-mgmt rubygems

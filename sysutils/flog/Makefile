@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	flog
 PORTVERSION=	1.8
 CATEGORIES=	sysutils

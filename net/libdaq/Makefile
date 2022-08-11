@@ -1,8 +1,6 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	libdaq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.6
+DISTVERSION=	3.0.8
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org

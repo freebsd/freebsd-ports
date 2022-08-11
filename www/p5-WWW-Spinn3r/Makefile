@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	WWW-Spinn3r
 PORTVERSION=	3.00700001
 PORTREVISION=	1

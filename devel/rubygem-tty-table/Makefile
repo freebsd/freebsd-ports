@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tty-table
 PORTVERSION=	0.12.0
 CATEGORIES=	devel rubygems

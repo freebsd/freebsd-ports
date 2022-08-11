@@ -1,6 +1,6 @@
 PORTNAME=	opensbi
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.0
+DISTVERSION=	1.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	mhorne@FreeBSD.org
@@ -8,7 +8,11 @@ COMMENT=	RISC-V SBI bootloader and firmware
 
 LICENSE=	BSD2CLAUSE
 
-USES=		gmake
+BUILD_DEPENDS=	bash:shells/bash
+
+USES=		gmake shebangfix
+SHEBANG_FILES=	scripts/*.sh
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	riscv
 

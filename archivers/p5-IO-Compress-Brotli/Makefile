@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	IO-Compress-Brotli
 PORTVERSION=	0.004001
 CATEGORIES=	archivers perl5

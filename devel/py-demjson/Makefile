@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	demjson
 PORTVERSION=	2.2.4
 PORTREVISION=	1

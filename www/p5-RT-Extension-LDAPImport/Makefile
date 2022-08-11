@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	RT-Extension-LDAPImport
 PORTVERSION=	0.36
 PORTREVISION=	4

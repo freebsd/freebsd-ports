@@ -1,5 +1,3 @@
-# Created by: Marcin Cieslak <saper@SYSTEM.PL>
-
 PORTNAME=	jericho-html
 PORTVERSION=	3.2
 CATEGORIES=	www java

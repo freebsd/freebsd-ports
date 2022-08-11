@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	hexcurse
 PORTVERSION=	1.60.0
 DISTVERSIONPREFIX=	v

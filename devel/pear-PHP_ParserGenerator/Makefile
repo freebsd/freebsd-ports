@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	PHP_ParserGenerator
 PORTVERSION=	0.1.7
 CATEGORIES=	devel www pear

@@ -1,5 +1,3 @@
-# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-
 PORTNAME=	mark_read
 PORTVERSION=	1.4.2
 PORTREVISION=	4

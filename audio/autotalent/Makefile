@@ -1,5 +1,3 @@
-# Created by: Rich Neese <r.neese@gmail.com>
-
 PORTNAME=	autotalent
 PORTVERSION=	0.2
 CATEGORIES=	audio

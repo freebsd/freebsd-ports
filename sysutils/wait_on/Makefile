@@ -1,5 +1,3 @@
-# Created by: Andrew Stevenson <andrew@ugh.net.au>
-
 PORTNAME=	wait_on
 DISTVERSION=	1.1-2
 DISTVERSIONSUFFIX=	-g2fb6f24

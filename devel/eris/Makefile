@@ -1,5 +1,3 @@
-# Created by: Janni
-
 PORTNAME=	eris
 PORTVERSION=	1.3.23
 PORTREVISION=	10

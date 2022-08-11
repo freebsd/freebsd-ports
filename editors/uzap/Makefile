@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	uzap
 PORTVERSION=	1.0
 CATEGORIES=	editors

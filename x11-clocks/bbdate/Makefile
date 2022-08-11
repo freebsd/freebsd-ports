@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	bbdate
 PORTVERSION=	0.2.4
 PORTREVISION=	3

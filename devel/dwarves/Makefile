@@ -1,5 +1,3 @@
-# Created by: Conrad Meyer <cem@FreeBSD.org>
-
 PORTNAME=	dwarves
 DISTVERSION=	1.19
 CATEGORIES=	devel

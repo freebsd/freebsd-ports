@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Bio-Coordinate
 PORTVERSION=	1.007001
 CATEGORIES=	biology perl5

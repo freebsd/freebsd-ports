@@ -18,6 +18,8 @@ RUN_DEPENDS=	bash:shells/bash \
 USES=		perl5
 USE_PERL5=	configure
 
+CONFLICTS_INSTALL=	p5-Pipeline # lib/perl5/site_perl/Pipeline.pm
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Crypt-OFB
 PORTVERSION=	0.01
 PORTREVISION=	1

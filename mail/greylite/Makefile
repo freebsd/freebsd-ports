@@ -1,5 +1,3 @@
-# Created by: Mij <mij@bitchx.it>
-
 PORTNAME=	greylite
 PORTVERSION=	2.3
 PORTREVISION=	5

@@ -1,8 +1,13 @@
 PORTNAME=	flask-restx
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/${PORTNAME:S,flask,python,}/${PORTNAME}/commit/
+PATCHFILES+=	82f7340ebb51.patch:-p1 # https://github.com/python-restx/flask-restx/pull/463
+PATCHFILES+=	09e57b8af6ca.patch:-p1 # https://github.com/python-restx/flask-restx/pull/463
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Extension for Flask that adds support for quickly building REST APIs

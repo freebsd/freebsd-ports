@@ -1,5 +1,3 @@
-# Created by: Fukang Chen <loader@FreeBSD.org>
-
 PORTNAME=	cov-core
 PORTVERSION=	1.15.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	SVN-Notify-Filter-Watchers
 PORTVERSION=	0.10
 PORTREVISION=	1

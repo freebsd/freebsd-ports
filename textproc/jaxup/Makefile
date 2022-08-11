@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
-
 PORTNAME=	jaxup
 PORTVERSION=	1.01
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	twemproxy
 PORTVERSION=	0.5.0
 CATEGORIES=	databases

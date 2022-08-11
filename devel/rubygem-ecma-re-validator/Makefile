@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	ecma-re-validator
 PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems

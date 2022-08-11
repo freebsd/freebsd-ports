@@ -1,5 +1,3 @@
-# Created by: Alex Samorukov <samm@freebsd.org>
-
 PORTNAME=	exfat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0

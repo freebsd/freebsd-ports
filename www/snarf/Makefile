@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	snarf
 PORTVERSION=	7.0
 CATEGORIES=	www

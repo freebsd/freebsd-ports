@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	PerlIO-eol
 PORTVERSION=	0.17
 CATEGORIES=	devel perl5

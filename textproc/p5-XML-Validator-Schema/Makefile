@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	XML-Validator-Schema
 PORTVERSION=	1.10
 PORTREVISION=	2

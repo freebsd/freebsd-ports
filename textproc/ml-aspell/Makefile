@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	${DICT}-aspell
 MASTER_SITES=	http://gnu.mirrors.pair.com/savannah/savannah/smc/Spellchecker/
 SPELLVERSION=	6-ml-0.04-1

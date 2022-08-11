@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=		sokoban
 PORTVERSION=		1.0
 PORTREVISION=		2

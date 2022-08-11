@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	gnustep-make
 PORTVERSION=	2.8.0
 CATEGORIES=	devel gnustep

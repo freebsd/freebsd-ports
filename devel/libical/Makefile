@@ -1,5 +1,3 @@
-# Created by: Joe Kelsey
-
 PORTNAME=	libical
 DISTVERSION=	3.0.8
 PORTREVISION=	6

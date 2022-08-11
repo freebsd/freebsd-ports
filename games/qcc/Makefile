@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	qcc
 PORTVERSION=	1.01
 CATEGORIES=	games devel

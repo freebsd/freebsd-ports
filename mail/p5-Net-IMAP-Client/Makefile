@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Net-IMAP-Client
 PORTVERSION=	0.9505
 PORTREVISION=	1

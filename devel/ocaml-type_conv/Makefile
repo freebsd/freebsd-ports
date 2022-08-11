@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <stas@FreeBSD.org>
-
 PORTNAME=	type_conv
 PORTVERSION=	113.00.02
 CATEGORIES=	devel

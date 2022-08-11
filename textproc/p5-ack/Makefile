@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	ack
 PORTVERSION=	3.5.0
 DISTVERSIONPREFIX=	v

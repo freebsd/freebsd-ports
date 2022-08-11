@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	rgbpaint
 PORTVERSION=	0.8.7
 PORTREVISION=	8

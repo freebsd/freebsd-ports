@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	zope.exceptions
 PORTVERSION=	4.0.0.1
 PORTREVISION=	1

@@ -1,7 +1,5 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	mroonga
-PORTVERSION=	12.02
+PORTVERSION=	12.06
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/mroonga/
 

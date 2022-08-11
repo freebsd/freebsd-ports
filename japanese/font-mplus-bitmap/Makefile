@@ -1,5 +1,3 @@
-# Created by: The 244th namelessness at 2ch.net
-
 PORTNAME=	mplus
 PORTVERSION=	2.2.4
 PORTREVISION=	3

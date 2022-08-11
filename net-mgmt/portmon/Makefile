@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	portmon
 PORTVERSION=	2.0
 PORTREVISION=	1

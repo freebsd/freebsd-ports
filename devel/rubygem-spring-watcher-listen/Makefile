@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	spring-watcher-listen
 PORTVERSION=	2.0.1
 PORTREVISION=	1

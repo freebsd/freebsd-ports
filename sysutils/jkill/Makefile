@@ -1,5 +1,3 @@
-# Created by: Pavel Novikov
-
 PORTNAME=	jkill
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

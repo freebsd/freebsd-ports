@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	stixfonts
 PORTVERSION=	2.13
 DISTVERSIONPREFIX=	v

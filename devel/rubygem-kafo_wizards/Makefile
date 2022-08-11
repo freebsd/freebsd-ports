@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	kafo_wizards
 PORTVERSION=	0.0.2
 CATEGORIES=	devel rubygems

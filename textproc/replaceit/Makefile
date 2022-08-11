@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	replaceit
 PORTVERSION=	1.0.1
 CATEGORIES=	textproc

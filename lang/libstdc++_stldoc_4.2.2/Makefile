@@ -1,5 +1,3 @@
-# Created by: Bruce M. Simpson
-
 PORTNAME=	libstdc++_stldoc_4.2.2
 PORTVERSION=	20071101
 PORTREVISION=	1

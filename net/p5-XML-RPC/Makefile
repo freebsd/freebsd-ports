@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	XML-RPC
 PORTVERSION=	1.1
 CATEGORIES=	net perl5

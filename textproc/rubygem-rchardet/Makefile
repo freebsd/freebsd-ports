@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	rchardet
 PORTVERSION=	1.8.0
 CATEGORIES=	textproc rubygems

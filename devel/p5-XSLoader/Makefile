@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XSLoader
 PORTVERSION=	0.24
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	atlassian-jwt
 PORTVERSION=	0.2.1
 CATEGORIES=	www rubygems

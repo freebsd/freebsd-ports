@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Object-AUTHORITY
 PORTVERSION=	0.004
 PORTREVISION=	1

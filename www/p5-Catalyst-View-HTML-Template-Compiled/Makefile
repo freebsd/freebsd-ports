@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Catalyst-View-HTML-Template-Compiled
 PORTVERSION=	0.16
 PORTREVISION=	1

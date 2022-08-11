@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	graphql-client
 PORTVERSION=	0.16.0
 PORTREVISION=	1

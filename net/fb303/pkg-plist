@@ -10,6 +10,7 @@ include/fb303/ExportedStatMapImpl.h
 include/fb303/FollyLoggingHandler.h
 include/fb303/HistogramExporter.h
 include/fb303/LegacyClock.h
+include/fb303/LimitUtils.h
 include/fb303/MutexWrapper.h
 include/fb303/QuantileStat-inl.h
 include/fb303/QuantileStat.h

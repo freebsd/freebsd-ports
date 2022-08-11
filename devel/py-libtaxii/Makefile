@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	libtaxii
 PORTVERSION=	1.1.119
 CATEGORIES=	devel python

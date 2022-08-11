@@ -1,0 +1,3 @@
+Native libraries required to speed-up Jitsi SRTP.
+
+WWW: https://github.com/jitsi/jitsi-srtp/tree/master/src/main/native

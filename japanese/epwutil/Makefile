@@ -1,5 +1,3 @@
-# Created by: Kazutoki TAKAMUNE <takamune@avrl.mei.co.jp>
-
 PORTNAME=	epwutil
 PORTVERSION=	1.1
 PORTREVISION=	1

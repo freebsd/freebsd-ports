@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	libcss
 PORTVERSION=	0.9.1
 CATEGORIES=	textproc

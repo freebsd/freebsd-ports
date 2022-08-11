@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	blockenspiel
 PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems

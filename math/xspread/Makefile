@@ -1,5 +1,3 @@
-# Created by: janek@gaja.ipan.lublin.pl
-
 PORTNAME=	xspread
 PORTVERSION=	3.1.1c
 PORTREVISION=	4

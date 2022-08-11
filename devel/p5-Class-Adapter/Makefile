@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Class-Adapter
 PORTVERSION=	1.08
 PORTREVISION=	1

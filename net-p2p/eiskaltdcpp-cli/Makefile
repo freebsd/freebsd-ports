@@ -1,5 +1,3 @@
-# Created by: Maxim Ignatenko <gelraen.ua@gmail.com>
-
 PORTNAME=	eiskaltdcpp
 PORTREVISION=	20
 CATEGORIES=	net-p2p

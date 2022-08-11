@@ -2,4 +2,4 @@ colorize is a perl script to add color to your logs (system logs, apache
 logs, squid logs, and many other formats).  colorize can also output a
 colorized version of your logs as HTML.
 
-WWW: http://colorize.raszi.hu/
+WWW: https://github.com/raszi/colorize

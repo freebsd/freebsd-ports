@@ -1,5 +1,3 @@
-# Created by: David Shane Holden <dpejesh@yahoo.com>
-
 PORTNAME=		libqb
 DISTVERSION=		2.0.4
 PORTREVISION=	2

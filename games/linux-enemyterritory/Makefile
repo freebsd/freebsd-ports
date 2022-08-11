@@ -1,5 +1,3 @@
-# Created by: benlutz@datacomm.ch
-
 PORTNAME=	enemyterritory
 PORTVERSION=	2.60b
 PORTREVISION=	5

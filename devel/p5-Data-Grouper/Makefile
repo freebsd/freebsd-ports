@@ -1,5 +1,3 @@
-# Created by: Kurt Lidl <kurt.lidl@cello.com>
-
 PORTNAME=	Data-Grouper
 PORTVERSION=	0.06
 PORTREVISION=	1

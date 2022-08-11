@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	zbar-py
 PORTVERSION=	1.0.4
 CATEGORIES=	graphics python
