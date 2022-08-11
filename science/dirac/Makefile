@@ -38,4 +38,6 @@ BINARY_ALIAS=	make=${GMAKE} \
 		python=${PYTHON_CMD} \
 		python3=${PYTHON_CMD}
 
+# 2 tests are known to fail, see https://gitlab.com/dirac/dirac/-/issues/35
+
 .include <bsd.port.mk>
