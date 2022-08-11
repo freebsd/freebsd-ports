@@ -1,7 +1,7 @@
 PORTNAME=	jenkins
-PORTVERSION=	2.346.2
+PORTVERSION=	2.346.3
 CATEGORIES=	devel java
-MASTER_SITES=	http://mirrors.jenkins.io/war-stable/${PORTVERSION}/
+MASTER_SITES=	https://get.jenkins.io/war-stable/${PORTVERSION}/
 PKGNAMESUFFIX=	-lts
 DISTNAME=	jenkins
 EXTRACT_SUFX=	.war
