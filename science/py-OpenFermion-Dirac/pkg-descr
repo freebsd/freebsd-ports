@@ -1,0 +1,4 @@
+OpenFermion-Dirac is an interface between Openfermion and Dirac to perform
+relativistic quantum chemistry calculations simulated on a quantum computer.
+
+WWW: https://github.com/bsenjean/Openfermion-Dirac
