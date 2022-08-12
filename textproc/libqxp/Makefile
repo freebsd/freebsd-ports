@@ -1,6 +1,6 @@
 PORTNAME=	libqxp
 PORTVERSION=	0.0.0
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	textproc
 MASTER_SITES=	https://dev-www.libreoffice.org/src/${PORTNAME}/
 

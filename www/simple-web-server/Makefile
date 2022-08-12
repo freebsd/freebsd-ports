@@ -1,5 +1,6 @@
 PORTNAME=	simple-web-server
 DISTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org

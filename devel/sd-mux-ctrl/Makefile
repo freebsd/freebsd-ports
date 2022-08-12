@@ -1,5 +1,6 @@
 PORTNAME=	sd-mux-ctrl
 DISTVERSION=	g20200217
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://git.tizen.org/cgit/tools/testlab/sd-mux/snapshot/sd-mux-9dd189d973da64e033a0c5c2adb3d94b23153d94.tar.bz2?/
 

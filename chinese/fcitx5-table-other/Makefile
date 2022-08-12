@@ -1,5 +1,6 @@
 PORTNAME=	fcitx5-table-other
 DISTVERSION=	5.0.6
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org

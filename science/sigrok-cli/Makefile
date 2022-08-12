@@ -1,5 +1,6 @@
 PORTNAME=	sigrok-cli
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	science cad
 MASTER_SITES=	http://sigrok.org/download/source/sigrok-cli/
 

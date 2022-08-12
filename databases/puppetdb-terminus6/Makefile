@@ -1,5 +1,6 @@
 PORTNAME=	puppetdb-terminus
 PORTVERSION=	6.22.0
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	https://downloads.puppetlabs.com/puppetdb/
 PKGNAMESUFFIX=	6

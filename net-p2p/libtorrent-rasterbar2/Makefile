@@ -1,6 +1,7 @@
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 #MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	2

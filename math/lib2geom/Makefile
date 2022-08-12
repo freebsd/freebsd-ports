@@ -1,6 +1,6 @@
 PORTNAME=	lib2geom
 DISTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math gnome
 MASTER_SITES=	https://gitlab.com/inkscape/${PORTNAME}/-/archive/${DISTVERSION}/
 

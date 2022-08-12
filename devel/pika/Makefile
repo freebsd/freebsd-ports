@@ -1,5 +1,6 @@
 PORTNAME=	pika
 DISTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/pika-org/pika/commit/

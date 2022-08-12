@@ -1,5 +1,6 @@
 PORTNAME=	rime-array
 DISTVERSION=	g20210824
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org

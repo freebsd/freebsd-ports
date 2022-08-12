@@ -1,5 +1,6 @@
 PORTNAME=	rime-stenotype
 DISTVERSION=	g20191007
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com

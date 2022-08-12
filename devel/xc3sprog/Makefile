@@ -1,5 +1,6 @@
 PORTNAME=	xc3sprog
 PORTVERSION=	r769
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://opsec.eu/src/xc3sprog/
 

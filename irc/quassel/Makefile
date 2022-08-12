@@ -1,5 +1,6 @@
 PORTNAME=	quassel
 DISTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSION}/
 

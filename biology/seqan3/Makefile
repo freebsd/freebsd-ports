@@ -1,5 +1,6 @@
 PORTNAME=	seqan3
 DISTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	biology devel math
 
 MAINTAINER=	yuri@FreeBSD.org

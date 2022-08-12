@@ -1,5 +1,6 @@
 PORTNAME=	qiskit-machine-learning
 DISTVERSION=	0.4.0-30
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g149a2ef
 CATEGORIES=	misc python # quantum-computing, machine-learning
 #MASTER_SITES=	CHEESESHOP

@@ -1,5 +1,6 @@
 PORTNAME=	kapitonov-plugins-pack
 DISTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
