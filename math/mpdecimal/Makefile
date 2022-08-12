@@ -22,9 +22,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${CHOSEN_COMPILER_TYPE} == gcc
 CONFIGURE_ARGS=	LD="${CC}" LDXX="${CXX}"
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpdec.so.${DISTVERSION}
