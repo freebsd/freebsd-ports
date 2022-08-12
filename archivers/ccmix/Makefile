@@ -26,6 +26,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/ccmix program usage/s,/n,\\n, ; \
 		/gmd_dir/s,/usr/share/ccmix,${DATADIR},' \
 			${WRKSRC}/src/ccmix.cpp
+	@${REINPLACE_CMD} -e '/char2num/s,const static,& signed,' \
+		${WRKSRC}/src/mixkey/mix_dexoder.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/build/* \
