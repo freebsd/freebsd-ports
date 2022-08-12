@@ -1,15 +1,15 @@
 PORTNAME=	runwhen
 PORTVERSION=	2021.04.30
+PORTREVISION=   1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://code.dogmap.org/runwhen/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	crest@rlwinm.de
 COMMENT=	Tools for running commands at particular times
 
 LICENSE=	GPLv2
 
-BROKEN=		does not build: error: use of undeclared identifier 'localtmn_t'
-
+BUILD_DEPENDS=  skalibs>=2.12.0.0:devel/skalibs
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 
 USES=		tar:bzip2
