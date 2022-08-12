@@ -1,5 +1,5 @@
 PORTNAME=	unix-selfauth-helper
-PORTVERSION=	1.0
+DISTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
