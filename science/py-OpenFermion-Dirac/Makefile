@@ -10,7 +10,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}OpenFermion>0:science/py-OpenFermion@${PY_FLAVOR} \
-		dirac-quantum-chemistry-software>0>0:science/dirac
+		dirac-quantum-chemistry-software>0:science/dirac
 
 USES=		python
 USE_PYTHON=	distutils autoplist
