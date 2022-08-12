@@ -7,6 +7,7 @@ MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	Python libzfs bindings
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	truenas
@@ -23,7 +24,11 @@ MAKE_ENV=	freebsd_src=${SRC_BASE}
 .include <bsd.port.options.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=	requires kernel source files in ${SRC_BASE}
+IGNORE=		requires kernel source files in ${SRC_BASE}
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1301000
+BROKEN=		does not build on FreeBSD <13.1
 .endif
 
 .include <bsd.port.mk>
