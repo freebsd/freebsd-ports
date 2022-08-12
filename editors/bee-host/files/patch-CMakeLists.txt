@@ -1,0 +1,73 @@
+--- CMakeLists.txt.orig	2022-04-07 09:03:56 UTC
++++ CMakeLists.txt
+@@ -33,27 +33,7 @@ endif()
+ 
+ set(EXTERNAL_DIR ${CMAKE_CURRENT_BINARY_DIR}/external)
+ 
+-# cJSON and cJSONUtils
+-ExternalProject_Add(cjson
+-  GIT_REPOSITORY "https://github.com/DaveGamble/cJSON"
+-  GIT_TAG "v1.7.14"
+-  PREFIX "${EXTERNAL_DIR}/cJSON"
+-  BUILD_IN_SOURCE 1
+-  TEST_COMMAND ""
+-  INSTALL_COMMAND ""
+-  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
+-    -DBUILD_SHARED_AND_STATIC_LIBS=On
+-    -DBUILD_SHARED_LIBS=Off
+-    -DENABLE_CJSON_TEST=Off
+-    -DENABLE_CJSON_UTILS=On
+-    -DENABLE_TARGET_EXPORT=On
+-  )
+-ExternalProject_Get_Property(cjson source_dir)
+-ExternalProject_Get_Property(cjson binary_dir)
+-ExternalProject_Get_Property(cjson download_dir)
+-set(CJSON_SOURCE_DIR "${source_dir}")
+-set(CJSON_BINARY_DIR "${binary_dir}")
+-set(CJSON_DOWNLOAD_DIR "${download_dir}")
++# cJSON and cJSONUtils installed from devel/libcjson
+ 
+ # beectl
+ set(BEECTL_SRCS
+@@ -64,21 +44,13 @@ set(BEECTL_SRCS
+   src/mkstemps.c
+   # This is nasty, but I couldn't find a way to use CMAKE_TOOLCHAIN_FILE
+   # for the external project (see comments below.)
+-  "${CJSON_SOURCE_DIR}/cJSON.c"
+   )
+ 
+ add_executable(beectl ${BEECTL_SRCS})
+ 
+-# Workaround for CMake versions which require the cJSON.c file to exist before
+-# downloading the external project.
+-add_custom_command(TARGET beectl PRE_BUILD
+-    BYPRODUCTS "${CJSON_SOURCE_DIR}/cJSON.c"
+-    COMMAND touch "${CJSON_SOURCE_DIR}/cJSON.c")
+-
+ target_compile_features(beectl PRIVATE c_variadic_macros)
+ target_include_directories(beectl PRIVATE "${CJSON_DOWNLOAD_DIR}")
+ set_property(TARGET beectl PROPERTY C_STANDARD 11) # C11
+-add_dependencies(beectl cjson)
+ 
+ # The following would be better approach than including cJSON files in our
+ # source list. But the build fails when cross-compiling, since
+@@ -103,8 +75,8 @@ set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURC
+ 
+ message(STATUS "CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
+ set(BEECTL_MANIFEST_TARGET_PATH "${CMAKE_INSTALL_PREFIX}/bin/beectl")
+-set(BEECTL_CHROME_MANIFEST_DIR "etc/opt/chrome/native-messaging-hosts")
+-set(BEECTL_FIREFOX_MANIFEST_DIR "usr/lib/mozilla/native-messaging-hosts")
++set(BEECTL_CHROME_MANIFEST_DIR "etc/chrome/native-messaging-hosts")
++set(BEECTL_FIREFOX_MANIFEST_DIR "lib/mozilla/native-messaging-hosts")
+ 
+ # RPM package properties
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/beectl.spec.in"
+@@ -226,7 +198,7 @@ elseif(uppercase_CMAKE_SYSTEM_NAME MATCHES DARWIN)
+         COMPONENT config)
+ else(uppercase_CMAKE_SYSTEM_NAME MATCHES WINDOWS)
+     # Install host app
+-    install(TARGETS beectl RUNTIME DESTINATION usr/local/bin COMPONENT applications)
++    install(TARGETS beectl RUNTIME DESTINATION bin COMPONENT applications)
+ 
+     configure_file(
+         chrome-com.ruslan_osmanov.bee.json.in
