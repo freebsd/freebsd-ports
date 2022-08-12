@@ -1,5 +1,5 @@
 PORTNAME=	OpenFermion-Dirac
-DISTVERSION=	g20200831
+DISTVERSION=	g20220812
 CATEGORIES=	science python # chemistry, quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +18,7 @@ USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsenjean
 GH_PROJECT=	Openfermion-Dirac
-GH_TAGNAME=	cc08a66
+GH_TAGNAME=	2770eb1
 
 NO_ARCH=	yes
 
