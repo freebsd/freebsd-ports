@@ -1,3 +1,30 @@
+  <vuln vid="75c073cc-1a1d-11ed-bea0-48ee0c739857">
+    <topic>XFCE tumbler -- Vulnerability in the GStreamer plugin</topic>
+    <affects>
+      <package>
+	<name>xfce4-tumbler</name>
+	<range><lt>4.16.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The XFCE project reports:</p>
+	<blockquote cite="https://mail.xfce.org/pipermail/xfce-announce/2022-August/001133.html">
+	  <p>Added mime type check to the gst-thumbnailer plugin
+	  to fix an undisclosed vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://mail.xfce.org/pipermail/xfce-announce/2022-August/001133.html</url>
+      <url>https://gitlab.xfce.org/xfce/tumbler/-/commit/a0fc191e8ab41fe579f3333085d649fdacb2daa5</url>
+    </references>
+    <dates>
+      <discovery>2022-08-02</discovery>
+      <entry>2022-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c3610f39-18f1-11ed-9854-641c67a117d8">
     <topic>varnish -- Denial of Service Vulnerability</topic>
     <affects>
