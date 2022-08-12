@@ -11,8 +11,8 @@ COMMENT=	Common Desktop Environment
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	cdesktopenv-code
-GH_TAGNAME=	47cc5d4a7
-COMMIT_DATE=	2022.07.31
+GH_TAGNAME=	dcee51c15
+COMMIT_DATE=	2022.08.07
 
 LICENSE=	LGPL21
 
@@ -119,7 +119,7 @@ post-install:
 	@${ECHO_CMD} MANPATH /usr/local/dt/share/man >  ${STAGEDIR}/${PREFIX}/etc/man.d/cde${DT_ID}.conf
 	@${FIND} ${STAGEDIR}/${DT_PREFIX} -type f -exec ${SH} -c '${STRIP_CMD} {} > /dev/null 2>&1' \;
 	@cd ${WRKSRC}/examples && @${FIND} . | ${CPIO} -pd ${STAGEDIR}/${DT_PREFIX}/share
-	@cd ${STAGEDIR}/${DT_PREFIX}; ${LN} -s share/examples
+	@cd ${STAGEDIR}/${DT_PREFIX}; ${LN} -sf share/examples
 	# Only a problem on armv7 so far
 	${FIND} ${STAGEDIR}/${DT_PREFIX} -type f -name 'ecp.*' -delete
 
