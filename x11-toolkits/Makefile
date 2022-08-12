@@ -176,6 +176,10 @@
     SUBDIR += qt5-virtualkeyboard
     SUBDIR += qt5-widgets
     SUBDIR += qt5pas
+    SUBDIR += qt6-declarative
+    SUBDIR += qt6-quick3d
+    SUBDIR += qt6-quicktimeline
+    SUBDIR += qt6-shadertools
     SUBDIR += qtermwidget
     SUBDIR += qwt5-qt5
     SUBDIR += qwt6

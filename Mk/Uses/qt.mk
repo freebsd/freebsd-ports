@@ -21,8 +21,9 @@
 _QT_MK_INCLUDED=	qt.mk
 
 # Qt versions currently supported by the framework.
-_QT_SUPPORTED?=		5
+_QT_SUPPORTED?=		5 6
 QT5_VERSION?=		5.15.5
+QT6_VERSION?=		6.3.1
 
 # We accept the Qt version to be passed by either or all of the three mk files.
 .  if empty(qt_ARGS) && empty(qmake_ARGS) && empty(qt-dist_ARGS)
@@ -54,12 +55,12 @@ IGNORE?=		cannot decide what Qt version to use: specify one via qt:[${_QT_SUPPOR
 _QT_RELNAME=		qt${_QT_VER}
 _QT_VERSION=		${QT${_QT_VER}_VERSION}
 
-# A wrapper (qtchooser) is used to invoke binaries.
 QT_BINDIR_REL?=		${QT_ARCHDIR_REL}/bin
 QT_INCDIR_REL?=		include/${_QT_RELNAME}
 QT_LIBDIR_REL?=		lib/${_QT_RELNAME}
 QT_ARCHDIR_REL?=	${QT_LIBDIR_REL}
 QT_PLUGINDIR_REL?=	${QT_ARCHDIR_REL}/plugins
+QT_DESCRIPTIONSDIR_REL?=${QT_DATADIR_REL}/modules
 QT_LIBEXECDIR_REL?=	libexec/${_QT_RELNAME}
 QT_IMPORTDIR_REL?=	${QT_ARCHDIR_REL}/imports
 QT_QMLDIR_REL?=		${QT_ARCHDIR_REL}/qml
@@ -107,7 +108,6 @@ PLIST_SUB+=		QT_${dir}DIR="${QT_${dir}DIR_REL}"
 .    endif
 .  endfor
 
-# Pass the chosen Qt version to the environment for qtchooser.
 CONFIGURE_ENV+=		QT_SELECT=${_QT_RELNAME}
 MAKE_ENV+=		QT_SELECT=${_QT_RELNAME}
 
@@ -138,16 +138,28 @@ _USE_QT_ALL+=	sql-ibase
 .  endif
 
 _USE_QT5_ONLY=		3d buildtools charts concurrent connectivity \
-			core datavis3d diag examples gamepad \
-			graphicaleffects location networkauth paths phonon4 plugininfo printsupport \
+			core datavis3d diag examples gamepad graphicaleffects \
+			location networkauth paths phonon4 plugininfo printsupport \
 			qdbus qdoc qdoc-data qev quick3d quickcontrols quickcontrols2 \
-			quicktimeline remoteobjects scxml sensors serialbus serialport speech \
-			sql-tds uiplugin uitools virtualkeyboard wayland webchannel webglplugin \
-			webengine websockets websockets-qml webview widgets x11extras
+			quicktimeline remoteobjects scxml sensors serialbus serialport \
+			speech sql-tds uiplugin uitools virtualkeyboard wayland \
+			webchannel webglplugin 	webengine websockets websockets-qml \
+			webview widgets x11extras assistant dbus declarative designer \
+			doc gui help imageformats l10n linguist linguisttools \
+			multimedia network opengl pixeltool qdbusviewer qmake script \
+			scripttools sql sql-mysql sql-odbc sql-pgsql sql-sqlite2 \
+			sql-sqlite3 svg testlib webkit xml xmlpatterns
+
+_USE_QT6_ONLY=		3d 5compat base declarative doc imageformats quick3d \
+			quickcontrols2 quicktimeline networkauth shadertools \
+			svg tools translations wayland
 
 # Dependency tuples: _LIB should be preferred if possible.
 qt-3d_PORT=		graphics/${_QT_RELNAME}-3d
 qt-3d_LIB=		libQt${_QT_LIBVER}3DCore.so
+
+qt-5compat_PORT=	devel/${_QT_RELNAME}-5compat
+qt-5compat_LIB=		libQt${_QT_LIBVER}Core5Compat.so
 
 qt-assistant_PORT=	devel/${_QT_RELNAME}-assistant
 qt-assistant_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/assistant
@@ -155,6 +167,9 @@ qt-assistant_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/assistant
 # Always build with *this* version's buildtools
 qt-buildtools_PORT=	devel/${_QT_RELNAME}-buildtools
 qt-buildtools_PATH=	${_QT_RELNAME}-buildtools>=${_QT_VERSION:R}
+
+qt-base_PORT=		devel/${_QT_RELNAME}-base
+qt-base_LIB=		libQt${_QT_LIBVER}Core.so
 
 qt-charts_PORT=		x11-toolkits/${_QT_RELNAME}-charts
 qt-charts_LIB=		libQt${_QT_LIBVER}Charts.so
@@ -298,6 +313,9 @@ qt-serialbus_LIB=	libQt${_QT_LIBVER}SerialBus.so
 qt-serialport_PORT=	comms/${_QT_RELNAME}-serialport
 qt-serialport_LIB=	libQt${_QT_LIBVER}SerialPort.so
 
+qt-shadertools_PORT=	x11-toolkits/${_QT_RELNAME}-shadertools
+qt-shadertools_LIB=	libQt${_QT_LIBVER}ShaderTools.so
+
 qt-speech_PORT=		accessibility/${_QT_RELNAME}-speech
 qt-speech_LIB=		libQt${_QT_LIBVER}TextToSpeech.so
 
@@ -318,6 +336,12 @@ qt-svg_LIB=		libQt${_QT_LIBVER}Svg.so
 
 qt-testlib_PORT=	devel/${_QT_RELNAME}-testlib
 qt-testlib_LIB=		libQt${_QT_LIBVER}Test.so
+
+qt-tools_PORT=		devel/${_QT_RELNAME}-tools
+qt-tools_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/lupdate
+
+qt-translations_PORT=	devel/${_QT_RELNAME}-translations
+qt-translations_PATH=	${LOCALBASE}/${QT_DATADIR_REL}/translations
 
 qt-uiplugin_PORT=	x11-toolkits/${_QT_RELNAME}-uiplugin
 qt-uiplugin_PATH=	${LOCALBASE}/${QT_INCDIR_REL}/QtUiPlugin/QtUiPlugin
