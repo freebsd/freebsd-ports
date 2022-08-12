@@ -1,5 +1,5 @@
 PORTNAME=	dwatch-json
-DISTVERSION=	0.4.1
+DISTVERSION=	0.6.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
