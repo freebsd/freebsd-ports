@@ -12,7 +12,7 @@ LIB_DEPENDS=	libcjson.so:devel/libcjson
 USE_GITHUB=	yes
 GH_ACCOUNT=	rosmanov
 
-USES=		cmake:noninja localbase:ldflags python shebangfix
+USES=		cmake:noninja localbase:ldflags shebangfix
 SHEBANG_GLOB=	*.sh
 LDFLAGS+=	-lcjson -lcjson_utils
 CMAKE_ARGS=	-DCMAKE_DOC_DIR:PATH=${DOCSDIR_REL}
