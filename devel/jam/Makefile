@@ -10,6 +10,11 @@ USES=		zip
 
 OPTIONS_DEFINE=	DOCS
 
+.ifdef AR
+# jam requires to include the ru flags in a custom AR command.
+AR+=ru
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
