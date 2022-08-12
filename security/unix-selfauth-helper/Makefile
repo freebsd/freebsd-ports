@@ -1,7 +1,7 @@
 # Created by: Felix Palmen <felix@palmen-it.de>
 
 PORTNAME=	unix-selfauth-helper
-PORTVERSION=	1.0
+DISTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
