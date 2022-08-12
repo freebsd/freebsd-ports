@@ -256,6 +256,7 @@
     SUBDIR += py-MDAnalysisTests
     SUBDIR += py-OpenFermion
     SUBDIR += py-OpenFermion-Dirac
+    SUBDIR += py-OpenFermion-PySCF
     SUBDIR += py-OpenMC
     SUBDIR += py-PubChemPy
     SUBDIR += py-PyFR
