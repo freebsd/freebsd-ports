@@ -1,17 +1,18 @@
 PORTNAME=	boost-libs
-PORTREVISION=	1
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PATCHDIR=	../boost-libs/files
 
 COMMENT=	Framework for interfacing Python and C++
 
 LICENSE=	BSL
+LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
+
+PATCHDIR=	${.CURDIR}/../boost-libs/files
 
 BUILD_DEPENDS=	bjam:devel/boost-jam \
 		${PYNUMPY}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		python:3.8-3.10  # upper bound inherited from math/py-numpy
+USES=		python:3.8-3.11  # upper bound inherited from math/py-numpy
 USE_PYTHON=	flavors
 
 OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS
