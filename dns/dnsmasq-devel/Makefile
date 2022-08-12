@@ -1,9 +1,9 @@
 # Created by: Steven Honson
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.87test8
+DISTVERSION=	2.87test9
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
-PORTREVISION=	1
+PORTREVISION=	0
 PORTEPOCH=	4 # attn - different between -devel and dnsmasq ports!
 CATEGORIES=	dns
 #MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
