@@ -1,8 +1,4 @@
 bin/dm-tool
-etc/apparmor.d/abstractions/lightdm
-etc/apparmor.d/abstractions/lightdm_chromium-browser
-etc/apparmor.d/lightdm-guest-session
-etc/dbus-1/system.d/org.freedesktop.DisplayManager.conf
 %%ETCDIR%%/Xsession
 @sample %%ETCDIR%%/keys.conf.sample
 @sample %%ETCDIR%%/lightdm.conf.sample
@@ -32,6 +28,7 @@ share/accountsservice/interfaces/org.freedesktop.DisplayManager.AccountsService.
 share/bash-completion/completions/dm-tool
 share/bash-completion/completions/lightdm
 share/dbus-1/interfaces/org.freedesktop.DisplayManager.AccountsService.xml
+share/dbus-1/system.d/org.freedesktop.DisplayManager.conf
 %%VAPI%%share/gir-1.0/LightDM-1.gir
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/LightDMGreeter.html
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/LightDMLanguage.html
