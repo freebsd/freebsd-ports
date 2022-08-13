@@ -5,8 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220903:
+  AFFECTS: users of archivers/py-borgbackup
+  AUTHOR: mandree@FreeBSD.org
+
+  Borgbackup has been upgraded to version 1.2.  For users who you wish to
+  continue using version 1.1, use either of these commands for upgrading:
+
+  With binary packages through pkg:
+    pkg set -o archivers/py-borgbackup:archivers/py-borgbackup11
+    pkg upgrade
+  With portmaster or portupgrade (replace the command accordingly):
+    portmaster -o archivers/py-borgbackup11 archivers/py-borgbackup
+
 20220901:
-  AFFECTS: user of mail/rainloop-community
+  AFFECTS: users of mail/rainloop-community
   AUTHOR: yasu@FreeBSD.org
 
   Since 1.17.0 upstream distributes only one edition "lagacy" under MIT license

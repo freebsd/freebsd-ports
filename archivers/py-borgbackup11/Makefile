@@ -1,8 +1,10 @@
 PORTNAME=	borgbackup
-DISTVERSION=	1.2.2
+DISTVERSION=	1.1.18
+PORTREVISION=	2
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	11
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Deduplicating backup program
@@ -10,13 +12,11 @@ COMMENT=	Deduplicating backup program
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.7:devel/py-setuptools_scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.7:devel/py-setuptools_scm@${PY_FLAVOR}
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \
 		libxxhash.so:devel/xxhash
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=19.0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=19.0:devel/py-packaging@${PY_FLAVOR}
 MAKE_ENV=	BORG_OPENSSL_PREFIX=${OPENSSLBASE}
 TEST_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}tox>3.2:devel/py-tox@${PY_FLAVOR} \
@@ -24,7 +24,7 @@ TEST_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}pkgconfig>=0:devel/py-pkgconfig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		fakeroot:security/fakeroot
-USES=		pkgconfig python:3.8+ ssl
+USES=		pkgconfig python ssl
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=		FUSE
@@ -52,7 +52,6 @@ post-install:
 	${SETENV} ${_BORGENV} ${STAGEDIR}${PREFIX}/bin/borg check --verify-data ${WRKDIR}/borgrepo
 	${ECHO_CMD} YES \
 	| ${SETENV} ${_BORGENV} ${STAGEDIR}${PREFIX}/bin/borg check --repair ${WRKDIR}/borgrepo
-	${SETENV} ${_BORGENV} ${STAGEDIR}${PREFIX}/bin/borg compact --progress ${WRKDIR}/borgrepo
 	${SETENV} ${_BORGENV} ${STAGEDIR}${PREFIX}/bin/borg check --verify-data ${WRKDIR}/borgrepo
 	${SETENV} ${_BORGENV} ${STAGEDIR}${PREFIX}/bin/borg extract --dry-run --progress ${WRKDIR}/borgrepo::test2
 	${SETENV} ${_BORGENV} ${STAGEDIR}${PREFIX}/bin/borg export-tar ${WRKDIR}/borgrepo::test2 - >/dev/null
