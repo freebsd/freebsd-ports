@@ -2,7 +2,7 @@
 
 PORTNAME=	slack
 PORTVERSION=	0.15.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.sundell.net/~alan/projects/slack/
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	rsyncbackup
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/rsyncbackup/
 

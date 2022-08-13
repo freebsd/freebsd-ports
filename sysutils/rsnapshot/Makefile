@@ -2,6 +2,7 @@
 
 PORTNAME=	rsnapshot
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 
