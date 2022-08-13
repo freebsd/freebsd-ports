@@ -1,6 +1,5 @@
 PORTNAME=	kitty
-DISTVERSION=	0.25.0
-PORTREVISION=	1
+DISTVERSION=	0.25.2
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://github.com/kovidgoyal/${PORTNAME}/releases/download/v${DISTVERSION}/
 
