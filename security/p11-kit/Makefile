@@ -1,6 +1,6 @@
 PORTNAME=	p11-kit
 DISTVERSION=	0.24.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/p11-glue/p11-kit/releases/download/${DISTVERSION}/
 
@@ -11,9 +11,7 @@ WWW=		https://p11-glue.freedesktop.org/p11-kit.html
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
-		bash-completion>=0:shells/bash-completion
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+BUILD_DEPENDS=	bash-completion>=0:shells/bash-completion
 LIB_DEPENDS=	libffi.so:devel/libffi \
 		libtasn1.so:security/libtasn1
 
@@ -26,7 +24,7 @@ MESON_ARGS=	-Dbash_completion=enabled \
 		-Dlibffi=enabled \
 		-Dnls=false \
 		-Dtrust_module=enabled \
-		-Dtrust_paths=${LOCALBASE}/share/certs/ca-root-nss.crt
+		-Dtrust_paths=${DATADIR}/certs
 
 OPTIONS_DEFINE=		DOCS MANPAGES TEST
 OPTIONS_SUB=		yes
@@ -43,9 +41,18 @@ MANPAGES_MESON_TRUE=	man
 
 TEST_MESON_TRUE=	test
 
+.include <bsd.port.options.mk>
+
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${MV} ${STAGEDIR}${PREFIX}/etc/pkcs11/pkcs11.conf.example ${STAGEDIR}${EXAMPLESDIR}
 	${RMDIR} ${STAGEDIR}${PREFIX}/etc/pkcs11
+	${MKDIR} ${STAGEDIR}${DATADIR}/certs
+	${LN} -s /usr/share/certs/trusted ${STAGEDIR}${DATADIR}/certs/anchors
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400024
+	${LN} -s /usr/share/certs/blacklisted ${STAGEDIR}${DATADIR}/certs/blocklist
+.else
+	${LN} -s /usr/share/certs/untrusted ${STAGEDIR}${DATADIR}/certs/blocklist
+.endif
 
 .include <bsd.port.mk>

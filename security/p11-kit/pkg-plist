@@ -61,5 +61,7 @@ share/bash-completion/completions/trust
 %%DOCS%%share/gtk-doc/html/p11-kit/trust.html
 %%DOCS%%share/gtk-doc/html/p11-kit/up-insensitive.png
 %%DOCS%%share/gtk-doc/html/p11-kit/up.png
+%%DATADIR%%/certs/anchors
+%%DATADIR%%/certs/blocklist
 %%DATADIR%%/modules/p11-kit-trust.module
 %%EXAMPLESDIR%%/pkcs11.conf.example
