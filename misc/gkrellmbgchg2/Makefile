@@ -1,5 +1,6 @@
 PORTNAME=	gkrellmbgchg2
-PORTVERSION=	0.1.13
+PORTVERSION=	0.1.11
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.bender-suhl.de/stefan/comp/sources/
 
