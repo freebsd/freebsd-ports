@@ -1,6 +1,4 @@
 bin/xc-info
-bin/xc-threshold
-include/libxc.bib
 include/xc.h
 include/xc_f03_lib_m.mod
 include/xc_f90_lib_m.mod
@@ -10,13 +8,16 @@ include/xc_funcs_worker.h
 include/xc_version.h
 lib/libxc.so
 lib/libxc.so.9
-lib/libxc.so.9.2.3
 lib/libxcf03.so
 lib/libxcf03.so.9
-lib/libxcf03.so.9.2.3
 lib/libxcf90.so
 lib/libxcf90.so.9
-lib/libxcf90.so.9.2.3
 libdata/pkgconfig/libxc.pc
 libdata/pkgconfig/libxcf03.pc
 libdata/pkgconfig/libxcf90.pc
+share/cmake/Libxc/LibxcConfig.cmake
+share/cmake/Libxc/LibxcConfigVersion.cmake
+share/cmake/Libxc/LibxcTargets-C-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/Libxc/LibxcTargets-C.cmake
+share/cmake/Libxc/LibxcTargets-Fortran-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/Libxc/LibxcTargets-Fortran.cmake
