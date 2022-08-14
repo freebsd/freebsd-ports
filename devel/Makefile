@@ -4597,6 +4597,7 @@
     SUBDIR += py-hgtools
     SUBDIR += py-hidraw
     SUBDIR += py-holidays
+    SUBDIR += py-homebase
     SUBDIR += py-http-prompt
     SUBDIR += py-humanize
     SUBDIR += py-hvac
