@@ -135,7 +135,7 @@ ZSTD_MESON_ENABLED=	zstd
 
 # Ignore Mk/bsd.default-versions.mk but respect make.conf(5)
 .if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*}
-LLVM_DEFAULT=	13 # bump if not latest release
+LLVM_DEFAULT=	13 # chase mesa-dri
 .endif
 
 post-extract:
