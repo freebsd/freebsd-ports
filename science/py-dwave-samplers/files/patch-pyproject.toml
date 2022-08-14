@@ -1,0 +1,14 @@
+--- pyproject.toml.orig	2022-08-14 01:10:52 UTC
++++ pyproject.toml
+@@ -3,9 +3,9 @@ requires = [
+     "setuptools>=46.4.0",       # PEP-420 support, PEP-517/518 support, setup.cfg attr: support
+     "wheel>=0.30.0",            # limited python api support
+     "cython>=0.29.24,<3.0",
+-    'dimod==0.11.3',
++    'dimod>=0.11.3',
+     'numpy==1.19.0;python_version<"3.9"',  # C API for numpy.random
+-    'oldest-supported-numpy;python_version>="3.9"',
++    #'oldest-supported-numpy;python_version>="3.9"',
+ ]
+ build-backend = "setuptools.build_meta"
+ 

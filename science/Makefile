@@ -285,6 +285,7 @@
     SUBDIR += py-dimod
     SUBDIR += py-dipy
     SUBDIR += py-dlib
+    SUBDIR += py-dwave-samplers
     SUBDIR += py-eccodes
     SUBDIR += py-esda
     SUBDIR += py-fresnel
