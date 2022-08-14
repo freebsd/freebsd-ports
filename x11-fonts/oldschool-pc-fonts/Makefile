@@ -1,11 +1,11 @@
 PORTNAME=	oldschool-pc-fonts
 DISTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://int10h.org/${PORTNAME}/download/
 DISTNAME=	oldschool_pc_font_pack_v${DISTVERSION}_linux
 
-MAINTAINER=	evgeniy@khramtsov.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultimate Oldschool PC Font Pack
 
 LICENSE=	CC-BY-SA-4.0
