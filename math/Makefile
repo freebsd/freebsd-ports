@@ -899,6 +899,7 @@
     SUBDIR += py-matplotlib-inline
     SUBDIR += py-matplotlib-scalebar
     SUBDIR += py-matplotlib2
+    SUBDIR += py-minorminer
     SUBDIR += py-mip
     SUBDIR += py-mixsimulator
     SUBDIR += py-moarchiving
