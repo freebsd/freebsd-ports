@@ -250,7 +250,7 @@ jitsi:*:306:
 jicofo:*:307:jitsi
 jvb:*:308:jitsi
 wazuh:*:309:
-# free: 310
+cardano:*:310:
 # free: 311
 _sphinx:*:312:
 _fastdfs:*:313:

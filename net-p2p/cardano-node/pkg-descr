@@ -1,0 +1,9 @@
+Cardano is a proof-of-stake blockchain platform built by a decentralized
+community of scientists, engineers, and thought leaders. Cardano is based on
+Ouroboros, an environmentally sustainable, verifiably secure consensus protocol
+with rigorous security guarantees.
+
+This package provides a daemon program to run the Cardano node and a CLI
+management tool.
+
+WWW: https://cardano.org/

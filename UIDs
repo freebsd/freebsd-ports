@@ -255,7 +255,7 @@ jitsi:*:306:306::0:0:Jitsi Meet Owner:/nonexistent:/usr/sbin/nologin
 jicofo:*:307:307::0:0:Jitsi Conference Focus Owner:/nonexistent:/usr/sbin/nologin
 jvb:*:308:308::0:0:Jitsi VideoBridge Owner:/nonexistent:/usr/sbin/nologin
 wazuh:*:309:309::0:0:Wazuh Owner:/var/ossec:/usr/sbin/nologin
-# free: 310
+cardano:*:310:310::0:0:Cardano Node Daemon:/nonexistent:/usr/sbin/nologin
 # free: 311
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 _fastdfs:*:313:313::0:0:FastDFS Owner:/nonexistent:/usr/sbin/nologin
