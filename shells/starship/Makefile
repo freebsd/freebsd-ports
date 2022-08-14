@@ -1,6 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	1.9.1
-PORTREVISION=	1
+DISTVERSION=	1.10.0
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -19,10 +18,14 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 
 USES=		cargo ssl
 
-CARGO_CRATES=	ahash-0.7.6 \
+CARGO_CRATES=	adler-1.0.2 \
+		ahash-0.7.6 \
 		aho-corasick-0.7.18 \
+		android_system_properties-0.1.4 \
 		ansi_term-0.12.1 \
 		anyhow-1.0.58 \
+		arc-swap-1.5.1 \
+		arrayvec-0.7.2 \
 		async-broadcast-0.4.0 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
@@ -31,44 +34,55 @@ CARGO_CRATES=	ahash-0.7.6 \
 		async-recursion-0.3.2 \
 		async-task-4.2.0 \
 		async-trait-0.1.56 \
+		atoi-1.0.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		base64-0.13.0 \
 		bitflags-1.3.2 \
 		block-0.1.6 \
-		block-buffer-0.7.3 \
 		block-buffer-0.9.0 \
 		block-buffer-0.10.2 \
-		block-padding-0.1.5 \
-		byte-tools-0.3.1 \
+		bstr-0.2.17 \
+		btoi-0.4.2 \
+		bumpalo-3.10.0 \
+		byte-unit-4.0.14 \
 		byteorder-1.4.3 \
 		bytes-1.1.0 \
 		bytesize-1.1.0 \
 		cache-padded-1.2.0 \
+		castaway-0.2.2 \
 		cc-1.0.73 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
-		chrono-0.4.19 \
-		clap-3.2.6 \
-		clap_complete-3.2.2 \
-		clap_derive-3.2.6 \
+		chrono-0.4.20 \
+		clap-3.2.16 \
+		clap_complete-3.2.3 \
+		clap_derive-3.2.15 \
 		clap_lex-0.2.3 \
+		clru-0.5.0 \
+		cmake-0.1.48 \
 		combine-4.6.4 \
+		compact_str-0.4.1 \
 		concurrent-queue-1.2.2 \
+		const_fn-0.4.9 \
 		const_format-0.2.25 \
 		const_format_proc_macros-0.2.22 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
+		core-foundation-sys-0.8.3 \
 		cpufeatures-0.2.2 \
+		crc32fast-1.3.2 \
+		crossbeam-0.8.2 \
 		crossbeam-channel-0.5.5 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.9 \
+		crossbeam-queue-0.3.6 \
 		crossbeam-utils-0.8.10 \
 		crypto-common-0.1.3 \
+		dashmap-5.3.4 \
 		deelevate-0.2.0 \
 		derivative-2.2.0 \
 		difflib-0.4.0 \
-		digest-0.8.1 \
 		digest-0.9.0 \
 		digest-0.10.3 \
 		dirs-2.0.2 \
@@ -87,9 +101,10 @@ CARGO_CRATES=	ahash-0.7.6 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		event-listener-2.5.2 \
-		fake-simd-0.1.2 \
 		fastrand-1.7.0 \
 		filedescriptor-0.8.2 \
+		filetime-0.2.17 \
+		flate2-1.0.24 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
@@ -100,48 +115,80 @@ CARGO_CRATES=	ahash-0.7.6 \
 		futures-sink-0.3.21 \
 		futures-task-0.3.21 \
 		futures-util-0.3.21 \
-		generic-array-0.12.4 \
 		generic-array-0.14.5 \
 		gethostname-0.2.3 \
 		getrandom-0.1.16 \
 		getrandom-0.2.7 \
-		git2-0.14.4 \
+		git-actor-0.11.0 \
+		git-attributes-0.3.0 \
+		git-bitmap-0.1.0 \
+		git-chunk-0.3.0 \
+		git-config-0.6.0 \
+		git-date-0.0.2 \
+		git-diff-0.17.0 \
+		git-discover-0.3.0 \
+		git-features-0.22.0 \
+		git-glob-0.3.1 \
+		git-hash-0.9.6 \
+		git-index-0.4.0 \
+		git-lock-2.1.0 \
+		git-object-0.20.0 \
+		git-odb-0.31.0 \
+		git-pack-0.21.0 \
+		git-path-0.4.0 \
+		git-quote-0.2.0 \
+		git-ref-0.15.0 \
+		git-repository-0.20.0 \
+		git-revision-0.3.0 \
+		git-sec-0.3.0 \
+		git-tempfile-2.0.2 \
+		git-traverse-0.16.0 \
+		git-url-0.7.0 \
+		git-validate-0.5.4 \
+		git-worktree-0.4.0 \
 		guess_host_triple-0.1.3 \
+		hash_hasher-2.0.3 \
 		hashbrown-0.12.1 \
 		heck-0.3.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		hex-0.4.3 \
 		home-0.5.3 \
+		human_format-1.0.3 \
+		iana-time-zone-0.1.44 \
 		idna-0.2.3 \
 		indexmap-1.9.1 \
 		instant-0.1.12 \
+		io-close-0.3.7 \
+		io-lifetimes-0.7.2 \
 		is_debug-1.0.1 \
 		itertools-0.10.3 \
 		itoa-1.0.2 \
-		jobserver-0.1.24 \
+		js-sys-0.3.58 \
+		jwalk-0.6.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		libc-0.2.126 \
-		libgit2-sys-0.13.4+1.4.2 \
 		libz-sys-1.1.8 \
 		linked-hash-map-0.5.6 \
+		linux-raw-sys-0.0.46 \
 		local_ipaddress-0.1.3 \
 		lock_api-0.4.7 \
 		log-0.4.17 \
 		mac-notification-sys-0.5.2 \
 		mach-0.3.2 \
 		malloc_buf-0.0.6 \
-		maplit-1.0.2 \
 		matches-0.1.9 \
 		memchr-2.5.0 \
+		memmap2-0.5.5 \
 		memmem-0.1.1 \
 		memoffset-0.6.5 \
 		minimal-lexical-0.2.1 \
-		mockall-0.11.1 \
-		mockall_derive-0.11.1 \
+		miniz_oxide-0.5.3 \
+		mockall-0.11.2 \
+		mockall_derive-0.11.2 \
 		nix-0.23.1 \
-		nix-0.24.1 \
+		nix-0.24.2 \
 		nom-5.1.2 \
 		nom-7.1.1 \
 		normalize-line-endings-0.3.0 \
@@ -154,30 +201,33 @@ CARGO_CRATES=	ahash-0.7.6 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
-		once_cell-1.12.0 \
-		opaque-debug-0.2.3 \
+		once_cell-1.13.0 \
 		opaque-debug-0.3.0 \
-		open-3.0.1 \
+		open-3.0.2 \
 		ordered-float-2.10.0 \
 		ordered-multimap-0.4.3 \
 		ordered-stream-0.0.1 \
-		os_info-3.4.0 \
+		os_info-3.5.0 \
 		os_str_bytes-6.1.0 \
 		parking-2.0.0 \
 		parking_lot-0.11.2 \
+		parking_lot-0.12.1 \
 		parking_lot_core-0.8.5 \
-		path-slash-0.1.4 \
+		parking_lot_core-0.9.3 \
+		path-slash-0.2.1 \
 		pathdiff-0.2.1 \
 		pathsearch-0.2.0 \
 		percent-encoding-2.1.0 \
-		pest-2.1.3 \
-		pest_derive-2.1.0 \
-		pest_generator-2.1.3 \
-		pest_meta-2.1.3 \
+		pest-2.2.1 \
+		pest_derive-2.2.1 \
+		pest_generator-2.2.1 \
+		pest_meta-2.2.1 \
 		phf-0.8.0 \
+		phf-0.11.1 \
 		phf_codegen-0.8.0 \
 		phf_generator-0.8.0 \
 		phf_shared-0.8.0 \
+		phf_shared-0.11.1 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.25 \
@@ -191,6 +241,8 @@ CARGO_CRATES=	ahash-0.7.6 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.40 \
 		process_control-3.5.1 \
+		prodash-19.0.1 \
+		quick-error-2.0.1 \
 		quick-xml-0.23.0 \
 		quote-1.0.20 \
 		rand-0.7.3 \
@@ -205,28 +257,31 @@ CARGO_CRATES=	ahash-0.7.6 \
 		rayon-core-1.9.3 \
 		redox_syscall-0.2.13 \
 		redox_users-0.4.3 \
-		regex-1.5.6 \
-		regex-syntax-0.6.26 \
+		regex-1.6.0 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.27 \
 		remove_dir_all-0.5.3 \
 		rust-ini-0.18.0 \
+		rustix-0.35.7 \
+		rustversion-1.0.8 \
 		ryu-1.0.10 \
+		same-file-1.0.6 \
 		schemars-0.8.10 \
 		schemars_derive-0.8.10 \
 		scopeguard-1.1.0 \
 		semver-0.11.0 \
-		semver-1.0.10 \
+		semver-1.0.13 \
 		semver-parser-0.10.2 \
-		serde-1.0.137 \
-		serde_derive-1.0.137 \
+		serde-1.0.143 \
+		serde_derive-1.0.143 \
 		serde_derive_internals-0.26.0 \
-		serde_json-1.0.81 \
+		serde_json-1.0.83 \
 		serde_repr-0.1.8 \
-		sha-1-0.8.2 \
 		sha-1-0.10.0 \
 		sha1-0.6.1 \
 		sha1_smol-1.0.0 \
 		sha2-0.9.9 \
-		shadow-rs-0.11.0 \
+		shadow-rs-0.16.2 \
 		shared_library-0.1.9 \
 		shell-words-1.1.0 \
 		signal-hook-0.1.17 \
@@ -234,7 +289,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		signal-hook-registry-1.4.0 \
 		siphasher-0.3.10 \
 		slab-0.4.6 \
-		smallvec-1.8.1 \
+		smallvec-1.9.0 \
 		socket2-0.4.4 \
 		starship-battery-0.7.9 \
 		static_assertions-1.1.0 \
@@ -245,7 +300,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		systemstat-0.1.11 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
-		terminal_size-0.1.17 \
+		terminal_size-0.2.1 \
 		terminfo-0.7.3 \
 		termios-0.3.3 \
 		termtree-0.2.4 \
@@ -263,10 +318,14 @@ CARGO_CRATES=	ahash-0.7.6 \
 		tracing-attributes-0.1.21 \
 		tracing-core-0.1.28 \
 		typenum-1.15.0 \
+		tz-rs-0.6.12 \
+		tzdb-0.4.3 \
 		ucd-trie-0.1.3 \
 		uds_windows-1.0.2 \
+		uluru-3.0.0 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.8 \
+		unicode-bom-1.1.4 \
 		unicode-ident-1.0.1 \
 		unicode-normalization-0.1.20 \
 		unicode-segmentation-1.9.0 \
@@ -275,15 +334,23 @@ CARGO_CRATES=	ahash-0.7.6 \
 		uom-0.30.0 \
 		url-2.2.2 \
 		urlencoding-2.1.0 \
+		utcnow-0.2.0 \
+		utf8-width-0.1.6 \
 		utf8parse-0.2.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		versions-4.1.0 \
 		vtparse-0.6.1 \
 		waker-fn-1.1.0 \
+		walkdir-2.3.2 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.81 \
+		wasm-bindgen-backend-0.2.81 \
+		wasm-bindgen-macro-0.2.81 \
+		wasm-bindgen-macro-support-0.2.81 \
+		wasm-bindgen-shared-0.2.81 \
 		wepoll-ffi-0.1.2 \
 		which-4.2.5 \
 		winapi-0.3.9 \
@@ -291,22 +358,28 @@ CARGO_CRATES=	ahash-0.7.6 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.24.0 \
-		windows-0.38.0 \
+		windows-0.37.0 \
+		windows-0.39.0 \
 		windows-sys-0.36.1 \
 		windows_aarch64_msvc-0.36.1 \
-		windows_aarch64_msvc-0.38.0 \
+		windows_aarch64_msvc-0.37.0 \
+		windows_aarch64_msvc-0.39.0 \
 		windows_i686_gnu-0.24.0 \
 		windows_i686_gnu-0.36.1 \
-		windows_i686_gnu-0.38.0 \
+		windows_i686_gnu-0.37.0 \
+		windows_i686_gnu-0.39.0 \
 		windows_i686_msvc-0.24.0 \
 		windows_i686_msvc-0.36.1 \
-		windows_i686_msvc-0.38.0 \
+		windows_i686_msvc-0.37.0 \
+		windows_i686_msvc-0.39.0 \
 		windows_x86_64_gnu-0.24.0 \
 		windows_x86_64_gnu-0.36.1 \
-		windows_x86_64_gnu-0.38.0 \
+		windows_x86_64_gnu-0.37.0 \
+		windows_x86_64_gnu-0.39.0 \
 		windows_x86_64_msvc-0.24.0 \
 		windows_x86_64_msvc-0.36.1 \
-		windows_x86_64_msvc-0.38.0 \
+		windows_x86_64_msvc-0.37.0 \
+		windows_x86_64_msvc-0.39.0 \
 		winres-0.1.12 \
 		winrt-notification-0.5.1 \
 		xml-rs-0.8.4 \
