@@ -1,0 +1,7 @@
+D-Wave NetworkX is an extension of NetworkX - a Python language package for
+exploration and analysis of networks and network algorithms - for users of
+D-Wave Systems. It provides tools for working with Chimera graphs and
+implementations of graph-theory algorithms on the D-Wave system and other
+binary quadratic model samplers.
+
+WWW: https://github.com/dwavesystems/dwave-networkx

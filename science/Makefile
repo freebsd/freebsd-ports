@@ -285,6 +285,7 @@
     SUBDIR += py-dipy
     SUBDIR += py-dlib
     SUBDIR += py-dwave-neal
+    SUBDIR += py-dwave-networkx
     SUBDIR += py-dwave-samplers
     SUBDIR += py-dwave-tabu
     SUBDIR += py-eccodes
