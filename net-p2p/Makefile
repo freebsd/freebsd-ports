@@ -64,6 +64,7 @@
     SUBDIR += namecoin-daemon
     SUBDIR += namecoin-utils
     SUBDIR += ncdc
+    SUBDIR += ogmios
     SUBDIR += opendchub
     SUBDIR += openethereum
     SUBDIR += p5-Net-BitTorrent
