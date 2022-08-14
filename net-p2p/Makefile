@@ -17,6 +17,7 @@
     SUBDIR += btcheck
     SUBDIR += btpd
     SUBDIR += c-lightning
+    SUBDIR += cardano-db-sync
     SUBDIR += cardano-node
     SUBDIR += cpuminer
     SUBDIR += createtorrent

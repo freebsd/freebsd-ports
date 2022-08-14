@@ -1,0 +1,9 @@
+The purpose of Cardano DB Sync is to follow the Cardano chain and take
+information from the chain and an internally maintained copy of ledger state.
+Data is then extracted from the chain and inserted into a PostgreSQL database.
+Queries can then be written directly against the database schema or as queries
+embedded in any language with libraries for interacting with an SQL database.
+This package provides a daemon program to run the Cardano DB Sync and a CLI
+DB management tool.
+
+WWW: https://cardano.org/
