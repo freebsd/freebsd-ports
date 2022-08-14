@@ -1,9 +1,12 @@
 PORTNAME=	leiningen
-PORTVERSION=	2.9.10
+DISTVERSION=	2.9.10
+PORTREVISION=	1
 CATEGORIES=	devel lisp java
-MASTER_SITES=	https://github.com/technomancy/leiningen/releases/download/${PORTVERSION}/:standalone
-DISTFILES=	${PORTNAME}-${PORTVERSION}-standalone.jar:standalone
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://codeber.org/technomancy/leiningen/releases/download/${PORTVERSION}/:standalone \
+		https://codeberg.org/leiningen/leiningen/archive/:DEFAULT
+DISTFILES=	${DISTVERSION}${EXTRACT_SUFX} ${PORTNAME}-${PORTVERSION}-standalone.jar:standalone
+EXTRACT_ONLY=	${DISTVERSION}${EXTRACT_SUFX}
+
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automate Clojure projects
@@ -11,8 +14,8 @@ COMMENT=	Automate Clojure projects
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	technomancy
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
