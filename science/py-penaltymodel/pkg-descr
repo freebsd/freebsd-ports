@@ -1,0 +1,7 @@
+penaltymodel is a set of utilities and interfaces for using penalty models.
+
+One approach to solve a constraint satisfaction problem (CSP) using an Ising
+model or a QUBO, is to map each individual constraint in the CSP to a 'small'
+Ising model or QUBO. This mapping is called a penalty model.
+
+WWW: https://docs.ocean.dwavesys.com/projects/penaltymodel/en/latest/

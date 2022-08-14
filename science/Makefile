@@ -328,6 +328,7 @@
     SUBDIR += py-openpiv
     SUBDIR += py-paida
     SUBDIR += py-paramz
+    SUBDIR += py-penaltymodel
     SUBDIR += py-phono3py
     SUBDIR += py-phonopy
     SUBDIR += py-pupynere
