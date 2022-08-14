@@ -1,9 +1,9 @@
 PORTNAME=	pspp
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data
 
 LICENSE=	GPLv3
