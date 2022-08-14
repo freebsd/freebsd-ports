@@ -1,3 +1,48 @@
+  <vuln vid="e2e7faf9-1b51-11ed-ae46-002b67dfc673">
+    <topic>Tomcat -- XSS in examples web application</topic>
+    <affects>
+      <package>
+	<name>tomcat</name>
+	<range><ge>8.5.50</ge><lt>8.5.81</lt></range>
+	<range><ge>9.0.30</ge><lt>9.0.64</lt></range>
+	<range><ge>10.0.0-M1</ge><lt>10.0.22</lt></range>
+	<range><ge>10.1.0-M1</ge><lt>10.1.0-M16</lt></range>
+      </package>
+      <package>
+	<name>tomcat85</name>
+	<range><ge>8.5.50</ge><lt>8.5.81</lt></range>
+      </package>
+      <package>
+	<name>tomcat9</name>
+	<range><ge>9.0.30</ge><lt>9.0.64</lt></range>
+      </package>
+      <package>
+	<name>tomcat10</name>
+	<range><ge>10.0.0-M1</ge><lt>10.0.22</lt></range>
+      </package>
+      <package>
+	<name>tomcat-devel</name>
+	<range><ge>10.1.0-M1</ge><lt>10.1.0-M16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache Tomcat reports:</p>
+	<blockquote cite="https://lists.apache.org/thread/k04zk0nq6w57m72w5gb0r6z9ryhmvr4k">
+	  <p>The Form authentication example in the examples web application displayed user provided data without filtering, exposing a XSS vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-34305</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-34305</url>
+    </references>
+    <dates>
+      <discovery>2022-06-22</discovery>
+      <entry>2022-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="75c073cc-1a1d-11ed-bea0-48ee0c739857">
     <topic>XFCE tumbler -- Vulnerability in the GStreamer plugin</topic>
     <affects>
