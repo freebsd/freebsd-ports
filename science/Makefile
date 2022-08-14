@@ -248,6 +248,7 @@
     SUBDIR += plumed
     SUBDIR += pnetcdf
     SUBDIR += precice
+    SUBDIR += psi4
     SUBDIR += pulseview
     SUBDIR += py-DendroPy
     SUBDIR += py-GPy
@@ -281,6 +282,7 @@
     SUBDIR += py-cirq-pasqal
     SUBDIR += py-cirq-rigetti
     SUBDIR += py-coards
+    SUBDIR += py-dimod
     SUBDIR += py-dipy
     SUBDIR += py-dlib
     SUBDIR += py-eccodes
