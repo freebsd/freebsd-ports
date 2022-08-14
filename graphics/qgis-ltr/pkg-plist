@@ -39,6 +39,7 @@ include/qgis/qgis_customwidgets.h
 include/qgis/qgis_gui.h
 include/qgis/qgis_native.h
 include/qgis/qgis_sip.h
+include/qgis/qgis_test.h
 include/qgis/qgiscustomwidgets.h
 include/qgis/qgisinterface.h
 include/qgis/qgisplugin.h
