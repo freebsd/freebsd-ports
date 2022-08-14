@@ -5656,6 +5656,7 @@
     SUBDIR += rkcommon
     SUBDIR += rlog
     SUBDIR += rlwrap
+    SUBDIR += robin-hood-hashing
     SUBDIR += robin-map
     SUBDIR += roboctl
     SUBDIR += robodoc
