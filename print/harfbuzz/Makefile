@@ -46,7 +46,7 @@ GLIB_DESC=		Depend on glib
 OPTIONS_EXCLUDE_aarch64c=	GOBJECT GLIB
 OPTIONS_EXCLUDE_riscv64c=	GOBJECT GLIB
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} != aarch64c && ${ARCH} != riscv64c
 USES+=			gnome
@@ -67,4 +67,4 @@ LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
 USE_GNOME+=	cairo
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
