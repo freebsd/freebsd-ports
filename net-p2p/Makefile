@@ -19,6 +19,7 @@
     SUBDIR += c-lightning
     SUBDIR += cardano-db-sync
     SUBDIR += cardano-node
+    SUBDIR += cncli
     SUBDIR += cpuminer
     SUBDIR += createtorrent
     SUBDIR += ctcs
