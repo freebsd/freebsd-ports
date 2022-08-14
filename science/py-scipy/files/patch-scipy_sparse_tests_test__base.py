@@ -1,6 +1,6 @@
---- scipy/sparse/tests/test_base.py.orig	2022-03-02 10:42:47 UTC
+--- scipy/sparse/tests/test_base.py.orig	1970-01-01 00:00:00 UTC
 +++ scipy/sparse/tests/test_base.py
-@@ -4758,19 +4758,19 @@ class TestCSCNonCanonical(_NonCanonicalCSMixin, TestCS
+@@ -4774,19 +4774,19 @@ class TestCSCNonCanonical(_NonCanonicalCSMixin, TestCS
      pass
  
  
