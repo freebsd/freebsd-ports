@@ -1,6 +1,6 @@
 PORTNAME=	dwave-networkx
 DISTVERSION=	0.8.12
-CATEGORIES=	science graphics # quantum-computing
+CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 

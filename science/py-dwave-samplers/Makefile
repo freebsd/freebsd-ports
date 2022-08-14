@@ -1,6 +1,6 @@
 PORTNAME=	dwave-samplers
 DISTVERSION=	1.0.0.dev1
-CATEGORIES=	science graphics # quantum-computing
+CATEGORIES=	science python # quantum-computing
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

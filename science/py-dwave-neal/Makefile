@@ -1,6 +1,6 @@
 PORTNAME=	dwave-neal
 DISTVERSION=	0.6.0.dev0
-CATEGORIES=	science graphics # quantum-computing
+CATEGORIES=	science python # quantum-computing
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

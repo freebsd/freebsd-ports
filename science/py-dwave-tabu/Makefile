@@ -1,6 +1,6 @@
 PORTNAME=	dwave-tabu
 DISTVERSION=	0.4.5
-CATEGORIES=	science graphics # quantum-computing
+CATEGORIES=	science python # quantum-computing
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
