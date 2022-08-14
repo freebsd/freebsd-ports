@@ -1,0 +1,102 @@
+#!/bin/sh
+
+# PROVIDE: oura
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# oura_enable:          Set to YES to enable oura.
+#                               Default: "NO"
+#
+# oura_home:            An absolute path to the daemon home directory.
+#                               The directory will be created if not exists.
+#                               Default: "/var/db/oura"
+#
+# oura_config:          An absolute path to the oura configuration TOML file.
+#                               Default: "${oura_home}/daemon.toml"
+#
+# oura_flags:           Any additional command line flags to pass to oura.
+#                       "daemon" and "--config" flags are already included.
+#                       See: https://txpipe.github.io/oura/usage/daemon.html
+#                               Default: ""
+#
+
+. /etc/rc.subr
+
+name=oura
+desc="oura daemon"
+rcvar=oura_enable
+command=%%PREFIX%%/bin/oura
+
+start_cmd="${name}_start"
+start_precmd="${name}_prestart"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+
+extra_commands="status"
+
+load_rc_config $name
+: ${oura_enable:=NO}
+: ${oura_home:="/var/db/oura"}
+: ${oura_config:="${oura_home}/daemon.toml"}
+: ${oura_flags:=""}
+
+pidfile="/var/run/oura.pid"
+flags=" daemon --config ${oura_config} ${oura_flags}"
+
+sanity_check()
+{
+    if [ ! -f ${oura_config} ]
+    then
+        echo "Invalid value for oura_config: missing file ${oura_config}"
+        echo "See: https://txpipe.github.io/oura/usage/daemon.html"
+        exit 1
+    fi
+    return 0
+}
+
+oura_prestart()
+{
+    # Create oura home directory, if not exists
+    if [ ! -d "${oura_home}" ]; then
+        mkdir -p "${oura_home}"
+    fi
+
+    sanity_check
+}
+
+oura_start()
+{
+    check_startmsgs && echo "Starting ${name}."
+    cd $oura_home && /usr/sbin/daemon -p $pidfile -S -T oura \
+        ${command} ${flags} 2>&1 > /dev/null
+}
+
+oura_stop()
+{
+    pid=$(check_pidfile "${pidfile}" "${command}")
+    if [ -z "${pid}" ]
+    then
+        echo "${name} is not running"
+        return 1
+    else
+        echo "Stopping ${name}."
+        /bin/kill -INT "$pid"
+        wait_for_pids "$pid"
+    fi
+}
+
+oura_status()
+{
+    pid=$(check_pidfile "${pidfile}" "${command}")
+    if [ -z "${pid}" ]
+    then
+      echo "${name} is not running"
+      return 1
+    else
+      echo ${name} is running as pid $pid
+    fi
+}
+
+run_rc_command "$1"
