@@ -4,7 +4,7 @@ DISTVERSION=	2.0.1-81
 DISTVERSIONSUFFIX=	-gd1c86db
 CATEGORIES=	x11-themes
 
-MAINTAINER=	evgeniy@khramtsov.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic Redmond theme
 
 LICENSE=	GPLv3+ MIT
