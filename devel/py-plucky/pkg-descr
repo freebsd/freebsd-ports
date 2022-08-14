@@ -1,0 +1,6 @@
+plucky.pluckable happily wraps any Python object and allows for chained soft
+plucking with attribute- and item- getters (e.g. .attr, ["key"], [idx], [::2],
+or a combination: ["key1", "key2"], and [0, 3:7, ::-1];
+even: ["length", 0:5, 7]).
+
+WWW: https://github.com/randomir/plucky
