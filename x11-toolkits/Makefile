@@ -99,6 +99,7 @@
     SUBDIR += ocaml-lablgtk2
     SUBDIR += ocaml-labltk
     SUBDIR += open-motif
+    SUBDIR += open-motif-devel
     SUBDIR += osm-gps-map
     SUBDIR += otk
     SUBDIR += p5-Alien-wxWidgets
