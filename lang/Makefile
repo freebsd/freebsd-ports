@@ -368,6 +368,7 @@
     SUBDIR += yap
     SUBDIR += yorick
     SUBDIR += ypsilon
+    SUBDIR += zephir
     SUBDIR += zig
     SUBDIR += zig-devel
 
