@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	5.0.10
+PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -23,9 +24,14 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
 		${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+LIB_DEPENDS=	libboost_log.so:devel/boost-libs \
+		libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
-		libsnappy.so:archivers/snappy
+		libsnappy.so:archivers/snappy \
+		libstemmer.so:textproc/snowballstemmer \
+		libunwind.so:devel/libunwind \
+		libyaml-cpp.so:devel/yaml-cpp \
+		libzstd.so:archivers/zstd
 
 USES=		compiler:c++17-lang cpe python:3.5+,build scons shebangfix
 USE_RC_SUBR=	mongod
@@ -37,9 +43,14 @@ MAKE_ARGS=	--cxx-std=17 \
 		--disable-warnings-as-errors \
 		--libc++ \
 		--runtime-hardening=on \
+		--use-system-boost \
 		--use-system-pcre \
 		--use-system-snappy \
+		--use-system-stemmer \
+		--use-system-libunwind \
+		--use-system-yaml \
 		--use-system-zlib \
+		--use-system-zstd \
 		-j ${MAKE_JOBS_NUMBER} \
 		AR=${PREFIX}/bin/ar \
 		VERBOSE=on
@@ -78,6 +89,15 @@ CPE_PRODUCT=	mongodb
 
 pre-patch:
 	${MV} ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.sx ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.S
+
+post-patch:
+	${RM} -rf ${WRKSRC}/src/third_party/boost
+	${RM} -rf ${WRKSRC}/src/third_party/pcre-*
+	${RM} -rf ${WRKSRC}/src/third_party/snappy-*
+	${RM} -rf ${WRKSRC}/src/third_party/unwind
+	${RM} -rf ${WRKSRC}/src/third_party/yaml-cpp
+	${RM} -rf ${WRKSRC}/src/third_party/zlib-*
+	${RM} -rf ${WRKSRC}/src/third_party/zstandard-*
 
 do-build:
 	${WRKSRC}/buildscripts/scons.py	-C ${WRKSRC} ${MAKE_ARGS}
