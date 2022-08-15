@@ -1,5 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	1.10.0
+DISTVERSION=	1.10.1
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -54,10 +54,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		cc-1.0.73 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
-		chrono-0.4.20 \
-		clap-3.2.16 \
-		clap_complete-3.2.3 \
-		clap_derive-3.2.15 \
+		chrono-0.4.22 \
+		clap-3.2.17 \
+		clap_complete-3.2.4 \
+		clap_derive-3.2.17 \
 		clap_lex-0.2.3 \
 		clru-0.5.0 \
 		cmake-0.1.48 \
@@ -127,9 +127,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		git-date-0.0.2 \
 		git-diff-0.17.0 \
 		git-discover-0.3.0 \
-		git-features-0.22.0 \
+		git-features-0.22.1 \
 		git-glob-0.3.1 \
-		git-hash-0.9.6 \
+		git-hash-0.9.7 \
 		git-index-0.4.0 \
 		git-lock-2.1.0 \
 		git-object-0.20.0 \
@@ -168,7 +168,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		jwalk-0.6.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.126 \
+		libc-0.2.131 \
 		libz-sys-1.1.8 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.0.46 \
@@ -188,7 +188,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		mockall-0.11.2 \
 		mockall_derive-0.11.2 \
 		nix-0.23.1 \
-		nix-0.24.2 \
+		nix-0.25.0 \
 		nom-5.1.2 \
 		nom-7.1.1 \
 		normalize-line-endings-0.3.0 \
