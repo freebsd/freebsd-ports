@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.0
+DISTVERSION=	1.24.3
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -22,7 +22,7 @@ GH_TUPLE=       tinycc:tinycc:afc136262e93a:deno/ext/ffi/tinycc
 
 USE_GNOME=	glib20
 
-V8_VERS=	0.47.0
+V8_VERS=	0.47.1
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -121,9 +121,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		data-url-0.1.1 \
 		debug_unreachable-0.1.1 \
 		deno_ast-0.17.0 \
-		deno_doc-0.38.0 \
-		deno_emit-0.4.0 \
-		deno_graph-0.29.0 \
+		deno_doc-0.40.0 \
+		deno_emit-0.5.0 \
+		deno_graph-0.30.0 \
 		deno_lint-0.32.0 \
 		deno_task_shell-0.5.0 \
 		der-0.6.0 \
@@ -136,9 +136,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dlopen_derive-0.1.4 \
 		dotenv-0.15.0 \
 		dprint-core-0.58.3 \
-		dprint-plugin-json-0.15.3 \
-		dprint-plugin-markdown-0.13.3 \
-		dprint-plugin-typescript-0.71.1 \
+		dprint-plugin-json-0.15.5 \
+		dprint-plugin-markdown-0.14.0 \
+		dprint-plugin-typescript-0.71.2 \
 		dprint-swc-ext-0.3.0 \
 		dyn-clone-1.0.5 \
 		ecdsa-0.14.1 \
@@ -153,10 +153,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		error-code-2.3.1 \
-		eszip-0.22.0 \
+		eszip-0.23.0 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
-		fancy-regex-0.9.0 \
+		fancy-regex-0.10.0 \
 		fastrand-1.7.0 \
 		fd-lock-3.0.5 \
 		ff-0.12.0 \
@@ -215,7 +215,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		idna-0.1.5 \
 		idna-0.2.3 \
 		if_chain-1.0.2 \
-		import_map-0.11.0 \
 		import_map-0.12.1 \
 		indexmap-1.9.1 \
 		inotify-0.9.6 \
@@ -232,7 +231,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		itoa-1.0.2 \
 		jobserver-0.1.24 \
 		js-sys-0.3.58 \
-		jsonc-parser-0.19.0 \
+		jsonc-parser-0.21.0 \
 		kernel32-sys-0.2.2 \
 		khronos-egl-4.1.0 \
 		kqueue-1.0.6 \
@@ -304,7 +303,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pem-rfc7468-0.6.0 \
 		percent-encoding-1.0.1 \
 		percent-encoding-2.1.0 \
-		pest-2.1.3 \
 		petgraph-0.6.2 \
 		phf-0.10.1 \
 		phf_generator-0.10.0 \
@@ -330,7 +328,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		proc-macro2-1.0.39 \
 		profiling-1.0.6 \
 		pty-0.2.2 \
-		pulldown-cmark-0.9.1 \
+		pulldown-cmark-0.9.2 \
 		quick-error-1.2.3 \
 		quote-0.6.13 \
 		quote-1.0.18 \
@@ -342,9 +340,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		range-alloc-0.1.2 \
 		raw-window-handle-0.4.3 \
 		redox_syscall-0.2.13 \
-		regex-1.5.6 \
+		regex-1.6.0 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.26 \
+		regex-syntax-0.6.27 \
 		relative-path-1.7.0 \
 		remove_dir_all-0.5.3 \
 		renderdoc-sys-0.7.1 \
@@ -377,13 +375,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		security-framework-2.6.1 \
 		security-framework-sys-2.6.1 \
 		semver-0.9.0 \
-		semver-1.0.10 \
+		semver-1.0.13 \
 		semver-parser-0.7.0 \
-		semver-parser-0.10.2 \
-		serde-1.0.139 \
+		serde-1.0.141 \
 		serde_bytes-0.11.6 \
-		serde_derive-1.0.139 \
-		serde_json-1.0.81 \
+		serde_derive-1.0.141 \
+		serde_json-1.0.82 \
 		serde_repr-0.1.8 \
 		serde_urlencoded-0.7.1 \
 		sha-1-0.9.8 \
@@ -438,6 +435,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		syn-0.15.44 \
 		syn-1.0.96 \
 		sys-info-0.9.1 \
+		tar-0.4.38 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
 		text-size-1.1.0 \
@@ -453,6 +451,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tokio-1.19.2 \
 		tokio-macros-1.8.0 \
 		tokio-rustls-0.23.4 \
+		tokio-socks-0.5.1 \
 		tokio-stream-0.1.9 \
 		tokio-tungstenite-0.16.1 \
 		tokio-util-0.7.2 \
@@ -474,7 +473,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		twox-hash-1.6.2 \
 		typed-arena-2.0.1 \
 		typenum-1.15.0 \
-		ucd-trie-0.1.3 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
 		unic-common-0.9.0 \
@@ -498,7 +496,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.0 \
 		uuid-1.0.0 \
-		v8-0.47.0 \
+		v8-0.47.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		void-1.0.2 \
@@ -541,6 +539,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winreg-0.7.0 \
 		winreg-0.10.1 \
 		winres-0.1.12 \
+		xattr-0.2.3 \
 		yup-oauth2-6.7.0 \
 		zeroize-1.5.5 \
 		zstd-0.11.1+zstd.1.5.2 \
