@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220815:
+  AFFECTS: users of net/keycloak
+  AUTHOR: fernape@FreeBSD.org
+
+  The flavors -mysql and -postgres were removed, the necessary configuration
+  for those database backends was rolled into the base release by upstream.
+  The configuration files changed completely, so they need to be rebuilt from
+  scratch.
+
 20220807:
   AFFECTS: users of news/inn
   AUTHOR: kbowling@FreeBSD.org
