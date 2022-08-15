@@ -1,6 +1,6 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.36.0
+DISTVERSION=	1.36.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://github.com/forkbomb9/netdata/commit/:dashboard
@@ -71,6 +71,7 @@ FREEIPMI_LIB_DEPENDS=		libfreeipmi.so:sysutils/freeipmi
 FREEIPMI_CONFIGURE_ENABLE=	plugin-freeipmi
 GOPLUGIN_RUN_DEPENDS=		${LOCALBASE}/libexec/netdata/plugins.d/god.plugin:net-mgmt/netdata-go
 LTO_USES=			compiler:c11
+LTO_LIB_DEPENDS=		libJudy.so:devel/judy
 LTO_CONFIGURE_ENABLE=		lto
 
 .include <bsd.port.options.mk>
