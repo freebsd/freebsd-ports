@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	archivers
 DISTFILES=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Extract Makeself archives
 
 USES=		libarchive
