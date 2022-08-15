@@ -346,6 +346,7 @@
     SUBDIR += py-pymol
     SUBDIR += py-pyosf
     SUBDIR += py-pyprecice
+    SUBDIR += py-pyqubo
     SUBDIR += py-pysal
     SUBDIR += py-pyscf
     SUBDIR += py-pyteomics
