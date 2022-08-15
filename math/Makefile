@@ -218,6 +218,7 @@
     SUBDIR += chaco
     SUBDIR += chryzodus
     SUBDIR += chuffed
+    SUBDIR += cimod
     SUBDIR += clasp
     SUBDIR += clblas
     SUBDIR += clblast

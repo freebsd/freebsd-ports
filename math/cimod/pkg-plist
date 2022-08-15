@@ -1,0 +1,8 @@
+include/cimod/binary_polynomial_model.hpp
+include/cimod/binary_quadratic_model.hpp
+include/cimod/binary_quadratic_model_dict.hpp
+include/cimod/disable_eigen_warning.hpp
+include/cimod/hash.hpp
+include/cimod/json.hpp
+include/cimod/utilities.hpp
+include/cimod/vartypes.hpp
