@@ -9,6 +9,9 @@ COMMENT=	Accurate metagenomic profiling & fast large-scale genome searching
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	undefined: andInplaceFuncs, undefined: andFuncs, see https://github.com/shenwei356/pand/issues/4
+BROKEN_i386=	undefined: andInplaceFuncs, undefined: andFuncs, see https://github.com/shenwei356/pand/issues/4
+
 USES=		go:modules
 
 USE_GITHUB=	yes
