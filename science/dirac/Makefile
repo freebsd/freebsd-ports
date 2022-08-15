@@ -11,6 +11,8 @@ COMMENT=	Program for atomic & molecular relativistic all-electron calculations
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	error: Type mismatch in argument 'dsetid' at (1); passed INTEGER(8) to INTEGER(4), see https://gitlab.com/dirac/dirac/-/issues/36
+
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libblas.so:math/blas \
 		libhdf5.so:science/hdf5 \
