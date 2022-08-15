@@ -30,6 +30,8 @@ CONFIGURE_ARGS+=	--enable-icu-6x
 
 INSTALL_TARGET=	install-strip
 
+PORTSCOUT=	limit:[0-9\.]+
+
 OPTIONS_DEFINE=	DEBUG SNMP
 OPTIONS_SUB=	yes
 
