@@ -1,3 +1,31 @@
+  <vuln vid="d658042c-1c98-11ed-95f8-901b0e9408dc">
+    <topic>dendrite -- Incorrect parsing of the event default power level in event auth</topic>
+    <affects>
+      <package>
+	<name>dendrite</name>
+	<range><lt>0.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dendrite team reports:</p>
+	<blockquote cite="https://github.com/matrix-org/gomatrixserverlib/security/advisories/GHSA-grvv-h2f9-7v9c">
+	  <p>The power level parsing within gomatrixserverlib was failing to parse the "events_default"
+	  key of the m.room.power_levels event, defaulting the event default power level to zero in all cases.</p>
+	  <p> In rooms where the "events_default" power level had been changed, this could result in
+	  events either being incorrectly authorised or rejected by Dendrite servers.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/matrix-org/gomatrixserverlib/security/advisories/GHSA-grvv-h2f9-7v9c</url>
+    </references>
+    <dates>
+      <discovery>2022-08-15</discovery>
+      <entry>2022-08-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e2e7faf9-1b51-11ed-ae46-002b67dfc673">
     <topic>Tomcat -- XSS in examples web application</topic>
     <affects>
