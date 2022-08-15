@@ -1,6 +1,6 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.1
+DISTVERSION=	0.19.2
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:yarn
 PKGNAMESUFFIX=	-node
@@ -12,12 +12,15 @@ COMMENT=	Platform-agnostic APIs used by the official Signal clients and servers
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	protoc:devel/protobuf \
+BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
+		protoc:devel/protobuf \
 		yarn:www/yarn-node16
 
 USES=		cargo gmake python:3.7+,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
+GH_TUPLE=	google:boringssl:f1c75347daa2ea81a941e953f2263e0a4d970c8d:boringssl \
+		google:boringssl:ae223d6138807a13006342edfeef32e813246b39:boringssl_fips
 
 CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
@@ -28,14 +31,15 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		aho-corasick-0.7.18 \
 		anyhow-1.0.56 \
 		arrayref-0.3.6 \
+		asn1-0.9.1 \
+		asn1_derive-0.9.1 \
 		async-trait-0.1.52 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		backtrace-0.3.64 \
-		base16ct-0.1.1 \
 		base64-0.13.0 \
-		base64ct-1.5.0 \
 		bincode-1.3.3 \
+		bindgen-0.60.1 \
 		bitflags-1.3.2 \
 		blake2-0.9.2 \
 		block-buffer-0.9.0 \
@@ -48,14 +52,16 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		cast-0.2.7 \
 		cc-1.0.73 \
 		cesu8-1.1.0 \
+		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		chacha20-0.7.3 \
 		chacha20poly1305-0.8.2 \
 		chrono-0.4.19 \
 		cipher-0.3.0 \
+		clang-sys-1.3.2 \
 		clap-2.34.0 \
+		cmake-0.1.48 \
 		combine-4.6.3 \
-		const-oid-0.7.1 \
 		cpufeatures-0.2.2 \
 		criterion-0.3.5 \
 		criterion-plot-0.4.4 \
@@ -63,23 +69,19 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.8 \
 		crossbeam-utils-0.8.8 \
-		crypto-bigint-0.3.2 \
 		crypto-mac-0.8.0 \
 		crypto-mac-0.11.1 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
 		ctr-0.8.0 \
-		der-0.5.1 \
 		digest-0.9.0 \
 		displaydoc-0.2.3 \
-		ecdsa-0.13.4 \
 		either-1.6.1 \
-		elliptic-curve-0.11.12 \
 		fastrand-1.7.0 \
-		ff-0.11.0 \
 		fixedbitset-0.4.1 \
-		foreign-types-0.3.2 \
-		foreign-types-shared-0.1.1 \
+		foreign-types-0.5.0 \
+		foreign-types-macros-0.2.2 \
+		foreign-types-shared-0.3.1 \
 		futures-core-0.3.21 \
 		futures-macro-0.3.21 \
 		futures-task-0.3.21 \
@@ -89,7 +91,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		getrandom-0.2.5 \
 		ghash-0.4.4 \
 		gimli-0.26.1 \
-		group-0.11.0 \
+		glob-0.3.0 \
 		half-1.8.2 \
 		hashbrown-0.11.2 \
 		heck-0.3.3 \
@@ -106,50 +108,39 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		jni-0.19.0 \
 		jni-sys-0.3.0 \
 		js-sys-0.3.56 \
-		keccak-0.1.0 \
 		lazy_static-1.4.0 \
+		lazycell-1.3.0 \
 		libc-0.2.121 \
 		libloading-0.6.7 \
-		libm-0.2.2 \
+		libloading-0.7.3 \
 		linkme-0.2.10 \
 		linkme-impl-0.2.10 \
 		log-0.4.14 \
-		log-panics-2.0.0 \
+		log-panics-2.1.0 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \
+		minimal-lexical-0.2.1 \
 		miniz_oxide-0.4.4 \
 		multimap-0.8.3 \
 		neon-0.10.0 \
 		neon-build-0.10.0 \
 		neon-macros-0.10.0 \
 		neon-runtime-0.10.0 \
-		num-bigint-0.4.3 \
-		num-integer-0.1.44 \
-		num-iter-0.1.42 \
+		nom-7.1.1 \
+		num-integer-0.1.45 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.1 \
 		num_enum-0.5.7 \
 		num_enum_derive-0.5.7 \
 		object-0.27.1 \
-		oid-0.2.1 \
-		once_cell-1.10.0 \
 		oorandom-11.1.3 \
 		opaque-debug-0.3.0 \
-		openssl-0.10.38 \
-		openssl-sys-0.9.72 \
-		p256-0.10.1 \
 		paste-1.0.6 \
-		pem-0.8.3 \
+		peeking_take_while-0.1.2 \
 		pest-2.1.3 \
 		petgraph-0.6.0 \
-		picky-6.3.0 \
-		picky-asn1-0.3.3 \
-		picky-asn1-der-0.2.5 \
-		picky-asn1-x509-0.6.1 \
 		pin-project-lite-0.2.8 \
 		pin-utils-0.1.0 \
-		pkcs8-0.8.0 \
-		pkg-config-0.3.24 \
 		plotters-0.3.1 \
 		plotters-backend-0.3.2 \
 		plotters-svg-0.3.1 \
@@ -177,35 +168,28 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		rfc6979-0.1.0 \
-		rsa-0.4.1 \
 		rustc-demangle-0.1.21 \
+		rustc-hash-1.1.0 \
 		rustc_version-0.3.3 \
 		rustc_version-0.4.0 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		sec1-0.2.1 \
 		semver-0.9.0 \
 		semver-0.11.0 \
 		semver-1.0.6 \
 		semver-parser-0.7.0 \
 		semver-parser-0.10.2 \
 		serde-1.0.136 \
-		serde_bytes-0.11.5 \
 		serde_cbor-0.11.2 \
 		serde_derive-1.0.136 \
 		serde_json-1.0.79 \
 		sha-1-0.9.8 \
 		sha2-0.9.9 \
-		sha3-0.9.1 \
-		signature-1.4.0 \
-		simple_asn1-0.5.4 \
+		shlex-1.1.0 \
 		slab-0.4.5 \
 		smallvec-1.8.0 \
 		snow-0.8.0 \
-		spin-0.5.2 \
-		spki-0.5.4 \
 		static_assertions-1.1.0 \
 		subtle-2.4.1 \
 		syn-1.0.80 \
@@ -215,7 +199,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		textwrap-0.11.0 \
 		thiserror-1.0.30 \
 		thiserror-impl-1.0.30 \
-		time-0.1.43 \
+		time-0.1.44 \
 		tinytemplate-1.2.1 \
 		toml-0.5.8 \
 		typenum-1.15.0 \
@@ -225,13 +209,12 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		unicode-xid-0.2.2 \
 		universal-hash-0.4.1 \
 		unzip3-1.0.0 \
-		uuid-0.8.2 \
+		uuid-1.1.2 \
 		variant_count-1.1.0 \
-		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		walkdir-2.3.2 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.79 \
 		wasm-bindgen-backend-0.2.79 \
 		wasm-bindgen-macro-0.2.79 \
@@ -246,14 +229,14 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		x25519-dalek-1.1.1 \
 		zeroize-1.3.0 \
 		zeroize_derive-1.3.2 \
-		num-bigint-dig@git+https://github.com/dignifiedquire/num-bigint?rev=56576b592fea6341b7e1711a1629e4cc1bfc419c\#56576b592fea6341b7e1711a1629e4cc1bfc419c \
+		boring,boring-sys@git+https://github.com/signalapp/boring?branch=libsignal\#e1c719c0964ba37e6935355e9bf19821b072797e \
 		curve25519-dalek@git+https://github.com/signalapp/curve25519-dalek?branch=lizard2\#4f0aa6653c51598daa0a2f53b8ba54ce0eedfbdd
 
 MAKE_ENV=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron18 \
 		ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
 		HOME=${WRKDIR} \
 		PYTHON=${PYTHON_CMD} \
-		XDG_CACHE_HOME=${WRKDIR}/.cache
+		XDG_CACHE_HOME=${WRKDIR}/.cache 
 
 MAKE_ENV+=	RUSTC_BOOTSTRAP=aes,polyval
 
@@ -274,10 +257,15 @@ post-patch:
 	${REINPLACE_CMD} "s#python3#${PYTHON_CMD}#" \
 		${WRKSRC}/node/binding.gyp
 
+# Check hash here: https://github.com/signalapp/boring/tree/libsignal/boring-sys/deps
+post-extract:
+	${MV} ${WRKDIR}/boringssl-f1c75347daa2ea81a941e953f2263e0a4d970c8d/* ${WRKDIR}/boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl
+	${MV} ${WRKDIR}/boringssl-ae223d6138807a13006342edfeef32e813246b39/* ${WRKDIR}/boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl-fips
+
 do-build:
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-cache"' > ${WRKSRC}/.yarnrc
 	cd ${WRKSRC}/node && \
-		${SETENV} ${MAKE_ENV} yarn install --frozen-lockfile --ignore-optional --offline
+		${SETENV} ${MAKE_ENV} yarn install --frozen-lockfile --ignore-optional #--offline
 	cd ${WRKSRC}/node && \
 		${SETENV} ${MAKE_ENV} yarn tsc
 
