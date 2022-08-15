@@ -293,6 +293,7 @@
     SUBDIR += py-dwave-samplers
     SUBDIR += py-dwave-system
     SUBDIR += py-dwave-tabu
+    SUBDIR += py-dwavebinarycsp
     SUBDIR += py-eccodes
     SUBDIR += py-esda
     SUBDIR += py-fresnel
