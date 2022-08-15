@@ -1,5 +1,5 @@
 PORTNAME=	firefox
-DISTVERSION=	103.0.2
+DISTVERSION=	104.0
 PORTEPOCH=	2
 CATEGORIES=	www wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}${DISTVERSIONSUFFIX}/source \
@@ -10,14 +10,14 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.80:security/nss \
+		nss>=3.81:security/nss \
 		icu>=71.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=4.3.0:print/harfbuzz \
+		harfbuzz>=4.4.1:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
 		png>=1.6.37:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
-		libvpx>=1.11.0:multimedia/libvpx \
+		libvpx>=1.12.0:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf2.13:devel/autoconf2.13 \
