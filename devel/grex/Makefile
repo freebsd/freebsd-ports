@@ -1,7 +1,6 @@
 PORTNAME=	grex
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
-PORTREVISION=	8
+DISTVERSION=	1.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -14,48 +13,89 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pemistahl
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		ansi_term-0.11.0 \
-		assert_cmd-2.0.1 \
+		assert_cmd-2.0.4 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bit-set-0.5.2 \
 		bit-vec-0.6.3 \
 		bitflags-1.2.1 \
 		bstr-0.2.15 \
+		bumpalo-3.9.1 \
 		byteorder-1.3.4 \
+		cast-0.2.7 \
+		cast-0.3.0 \
 		cfg-if-1.0.0 \
-		clap-2.33.3 \
+		clap-2.34.0 \
+		clap-3.2.15 \
+		clap_derive-3.2.15 \
+		clap_lex-0.2.2 \
+		console_error_panic_hook-0.1.7 \
+		criterion-0.3.6 \
+		criterion-plot-0.4.4 \
+		crossbeam-channel-0.5.4 \
+		crossbeam-deque-0.8.1 \
+		crossbeam-epoch-0.9.8 \
+		crossbeam-utils-0.8.8 \
+		csv-1.1.6 \
+		csv-core-0.1.10 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
+		fastrand-1.6.0 \
 		fixedbitset-0.4.0 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
+		futures-0.3.21 \
+		futures-channel-0.3.21 \
+		futures-core-0.3.21 \
+		futures-executor-0.3.21 \
+		futures-io-0.3.21 \
+		futures-macro-0.3.21 \
+		futures-sink-0.3.21 \
+		futures-task-0.3.21 \
+		futures-timer-3.0.2 \
+		futures-util-0.3.21 \
 		getrandom-0.2.2 \
+		half-1.8.2 \
 		hashbrown-0.11.2 \
-		heck-0.3.2 \
+		heck-0.4.0 \
 		hermit-abi-0.1.17 \
 		indexmap-1.7.0 \
-		indoc-1.0.3 \
-		itertools-0.10.1 \
+		indoc-1.0.6 \
+		instant-0.1.12 \
+		itertools-0.10.3 \
+		itoa-0.4.8 \
+		itoa-1.0.1 \
+		js-sys-0.3.58 \
 		lazy_static-1.4.0 \
-		libc-0.2.81 \
+		libc-0.2.125 \
+		log-0.4.17 \
 		matches-0.1.8 \
-		matrixmultiply-0.3.0 \
+		matrixmultiply-0.3.2 \
 		memchr-2.4.0 \
-		ndarray-0.15.3 \
+		memoffset-0.6.5 \
+		ndarray-0.15.4 \
 		normalize-line-endings-0.3.0 \
 		num-complex-0.4.0 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
-		petgraph-0.6.0 \
+		num_cpus-1.13.1 \
+		once_cell-1.12.0 \
+		oorandom-11.1.3 \
+		os_str_bytes-6.0.0 \
+		petgraph-0.6.2 \
+		pin-project-lite-0.2.9 \
+		pin-utils-0.1.0 \
+		plotters-0.3.1 \
+		plotters-backend-0.3.2 \
+		plotters-svg-0.3.1 \
 		ppv-lite86-0.2.10 \
-		predicates-2.0.2 \
+		predicates-2.1.1 \
 		predicates-core-1.0.1 \
 		predicates-tree-1.0.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.27 \
+		proc-macro2-1.0.36 \
 		proptest-1.0.0 \
 		quick-error-1.2.3 \
 		quick-error-2.0.0 \
@@ -63,46 +103,68 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		rand-0.8.3 \
 		rand_chacha-0.3.0 \
 		rand_core-0.6.2 \
-		rand_hc-0.3.0 \
 		rand_xorshift-0.3.0 \
 		rawpointer-0.2.1 \
-		redox_syscall-0.2.5 \
-		regex-1.5.4 \
+		rayon-1.5.2 \
+		rayon-core-1.9.2 \
+		redox_syscall-0.2.10 \
+		regex-1.6.0 \
 		regex-automata-0.1.9 \
-		regex-syntax-0.6.25 \
+		regex-syntax-0.6.27 \
 		remove_dir_all-0.5.3 \
-		rstest-0.11.0 \
+		rstest-0.15.0 \
+		rstest_macros-0.14.0 \
 		rustc_version-0.4.0 \
 		rusty-fork-0.3.0 \
+		ryu-1.0.9 \
+		same-file-1.0.6 \
+		scoped-tls-1.0.0 \
+		scopeguard-1.1.0 \
 		semver-1.0.4 \
-		strsim-0.8.0 \
-		structopt-0.3.23 \
-		structopt-derive-0.4.16 \
-		syn-1.0.73 \
-		tempfile-3.2.0 \
+		serde-1.0.137 \
+		serde_cbor-0.11.2 \
+		serde_derive-1.0.136 \
+		serde_json-1.0.80 \
+		slab-0.4.6 \
+		strsim-0.10.0 \
+		syn-1.0.86 \
+		tempfile-3.3.0 \
+		termcolor-1.1.2 \
+		terminal_size-0.1.17 \
 		textwrap-0.11.0 \
+		textwrap-0.15.0 \
+		tinytemplate-1.2.1 \
 		treeline-0.1.0 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
 		unic-common-0.9.0 \
 		unic-ucd-category-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-segmentation-1.8.0 \
-		unicode-width-0.1.8 \
+		unicode-segmentation-1.9.0 \
+		unicode-width-0.1.9 \
 		unicode-xid-0.2.1 \
-		unindent-0.1.7 \
-		vec_map-0.8.2 \
 		version_check-0.9.2 \
 		wait-timeout-0.2.0 \
+		walkdir-2.3.2 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.81 \
+		wasm-bindgen-backend-0.2.81 \
+		wasm-bindgen-futures-0.4.31 \
+		wasm-bindgen-macro-0.2.81 \
+		wasm-bindgen-macro-support-0.2.81 \
+		wasm-bindgen-shared-0.2.81 \
+		wasm-bindgen-test-0.3.31 \
+		wasm-bindgen-test-macro-0.3.31 \
+		web-sys-0.3.57 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/grex
+PORTDOCS=	README.md RELEASE_NOTES.md
 
 OPTIONS_DEFINE=	DOCS
-PORTDOCS=	README.md RELEASE_NOTES.md
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/grex
