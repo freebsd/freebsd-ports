@@ -1,8 +1,11 @@
---- hw/xfree86/os-support/meson.build.orig	2022-07-12 13:27:57 UTC
-+++ hw/xfree86/os-support/meson.build
-@@ -113,7 +113,7 @@ elif host_machine.system().endswith('bsd')
+--- hw/xfree86/os-support/meson.build.orig	2022-07-12 13:27:57.000000000 +0000
++++ hw/xfree86/os-support/meson.build	2022-08-08 23:22:53.349353000 +0000
+@@ -111,9 +111,9 @@
+         if host_machine.system() == 'netbsd' or host_machine.system() == 'openbsd'
+             os_dep += cc.find_library('i386')
          endif
-     elif host_machine.cpu_family() == 'arm'
+-    elif host_machine.cpu_family() == 'arm'
++    elif host_machine.cpu_family() == 'arm' or host_machine.cpu_family() == 'aarch64'
          srcs_xorg_os_support += 'bsd/arm_video.c'
 -    elif host_machine.cpu_family() == 'powerpc'
 +    elif host_machine.cpu_family() == 'ppc' or host_machine.cpu_family() == 'ppc64'
