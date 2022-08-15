@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.7
+DISTVERSION=	3.2.8
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -22,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj40-django-tables2
 # - www/py-dj40-djangorestframework (in conjunction with www/py-dj40-drf-yasg)
 #
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=4.0.6<4.1:www/py-django40@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=4.0.7<4.1:www/py-django40@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-cors-headers>=3.13.0<4:www/py-dj40-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-debug-toolbar>=3.5.0<4:www/py-dj40-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-filter>=22.1<23:www/py-dj40-django-filter@${PY_FLAVOR} \
@@ -35,7 +35,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=4.0.6<4.1:www/py-django40@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj40-django-taggit>=2.1.0<3:www/py-dj40-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-timezone-field>=5.0<6:www/py-dj40-django-timezone-field@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-djangorestframework>=3.13.1<3.14.0:www/py-dj40-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj40-drf-yasg>=1.20.0<1.21:www/py-dj40-drf-yasg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj40-drf-yasg>=1.20.0<1.22:www/py-dj40-drf-yasg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-graphene-django>=2.15.0<3:devel/py-dj40-graphene-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=5.0.1<6:www/py-bleach@${PY_FLAVOR} \
@@ -50,7 +50,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=4.0.6<4.1:www/py-django40@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}sentry-sdk>=1.5.12<2:devel/py-sentry-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-app-django>=5.0.0<6:www/py-social-auth-app-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-core>=4.2.0<5:security/py-social-auth-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.2<2:graphics/py-svgwrite@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3<2:graphics/py-svgwrite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.2.1<4:textproc/py-tablib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzdata>=2022.1:devel/py-tzdata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1<7:devel/py-yaml@${PY_FLAVOR} \
