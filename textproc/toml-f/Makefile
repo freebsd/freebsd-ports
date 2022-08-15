@@ -9,6 +9,8 @@ COMMENT=	TOML parser for data serialization and deserialization in Fortran
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
+BROKEN_aarch64=	cannot find an intrinsic module named 'ieee_arithmetic'
+
 USES=		cmake:testing fortran
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
