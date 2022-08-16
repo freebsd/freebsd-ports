@@ -1,12 +1,11 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.0.2
-PORTREVISION=	2
+DISTVERSION=	4.1.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	glebius@FreeBSD.org
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Telegram Desktop messaging app
 
 LICENSE=	GPLv3
