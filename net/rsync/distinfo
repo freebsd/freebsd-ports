@@ -1,5 +1,9 @@
-TIMESTAMP = 1650365056
-SHA256 (rsync-3.2.4.tar.gz) = 6f761838d08052b0b6579cf7f6737d93e47f01f4da04c5d24d3447b7f2a5fad1
-SIZE (rsync-3.2.4.tar.gz) = 1114853
-SHA256 (rsync-patches-3.2.4.tar.gz) = 70a597590af6c61cf3d05d663429ff9f60ffe24e44f9c73a4cdc69ebdc1322a4
-SIZE (rsync-patches-3.2.4.tar.gz) = 133580
+TIMESTAMP = 1660557599
+SHA256 (rsync-3.2.5.tar.gz) = 2ac4d21635cdf791867bc377c35ca6dda7f50d919a58be45057fd51600c69aba
+SIZE (rsync-3.2.5.tar.gz) = 1129957
+SHA256 (rsync-patches-3.2.5.tar.gz) = e7b1fdf1fc0fca68fd254246c2dc04f6ac90241e665dcf9dfc21dccd8270b6bb
+SIZE (rsync-patches-3.2.5.tar.gz) = 141521
+SHA256 (rsync-patches-3.2.5.tar.gz) = e7b1fdf1fc0fca68fd254246c2dc04f6ac90241e665dcf9dfc21dccd8270b6bb
+SIZE (rsync-patches-3.2.5.tar.gz) = 141521
+SHA256 (rsync-patches-3.2.5.tar.gz) = e7b1fdf1fc0fca68fd254246c2dc04f6ac90241e665dcf9dfc21dccd8270b6bb
+SIZE (rsync-patches-3.2.5.tar.gz) = 141521
