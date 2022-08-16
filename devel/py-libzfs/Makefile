@@ -1,5 +1,5 @@
 PORTNAME=	libzfs
-PORTVERSION=	1.1.2022071900
+PORTVERSION=	1.1.2022081600
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	truenas
 GH_PROJECT=	py-libzfs
-GH_TAGNAME=	18fc26c
+GH_TAGNAME=	077cf6d
 
 HAS_CONFIGURE=	yes
 USES=		compiler:c11 python
@@ -25,10 +25,6 @@ MAKE_ENV=	freebsd_src=${SRC_BASE}
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files in ${SRC_BASE}
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1301000
-BROKEN=		does not build on FreeBSD <13.1
 .endif
 
 .include <bsd.port.mk>
