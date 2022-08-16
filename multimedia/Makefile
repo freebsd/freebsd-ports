@@ -124,6 +124,7 @@
     SUBDIR += gstreamer1-vaapi
     SUBDIR += gstreamer1-validate
     SUBDIR += gstreamermm
+    SUBDIR += gtk-pipe-viewer
     SUBDIR += gtk-youtube-viewer
     SUBDIR += handbrake
     SUBDIR += haruna
