@@ -2,6 +2,7 @@
 
 PORTNAME=	milter-manager
 DISTVERSION=	2.1.6
+PORTREVISION=	1
 CATEGORIES=	mail ruby
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -13,7 +14,8 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	rubygem-gio2>0:devel/rubygem-gio2
 LIB_DEPENDS=	libev.so:devel/libev
-RUN_DEPENDS=	rubygem-gio2>0:devel/rubygem-gio2
+RUN_DEPENDS=	rubygem-gio2>0:devel/rubygem-gio2 \
+		rubygem-rexml>0:textproc/rubygem-rexml
 
 USES=		compiler:c++11-lang gettext gmake gnome libtool pathfix \
 		pkgconfig
@@ -43,6 +45,5 @@ post-patch:
 	${REINPLACE_CMD} -e "s#\$$(datadir)/@PACKAGE@#${DATADIR}#" \
 			 -e "s#\$$(datarootdir)/\$$(PACKAGE)#${DATADIR}#" {} +
 	@${REINPLACE_CMD} -e "s#\\\\\$$(pkgdatadir)/sample#${EXAMPLESDIR}#" ${WRKSRC}/configure
-	@${RM} -r ${WRKSRC}/binding/ruby/glib-2.2.5
 
 .include <bsd.port.mk>
