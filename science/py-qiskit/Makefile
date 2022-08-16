@@ -1,9 +1,8 @@
 PORTNAME=	qiskit
 DISTVERSION=	0.37.1-4
 DISTVERSIONSUFFIX=	-gf178fcc98
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science python # quantum-computing
-#MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +15,8 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qiskit-aer>0:science/py-qiskit-aer@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}qiskit-terra>0:science/py-qiskit-terra@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qiskit-ibmq-provider>0:science/py-qiskit-ibmq-provider@${PY_FLAVOR}
 # optional submodules (list: https://github.com/Qiskit/qiskit#optional-components)
-OPT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qiskit-optimization>0:science/py-qiskit-optimization@${PY_FLAVOR} \
+OPT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qiskit-finance>0:science/py-qiskit-finance@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-optimization>0:science/py-qiskit-optimization@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qiskit-machine-learning>0:misc/py-qiskit-machine-learning@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qiskit-nature>0:science/py-qiskit-nature@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qiskit-experiments>0:science/py-qiskit-experiments@${PY_FLAVOR}
