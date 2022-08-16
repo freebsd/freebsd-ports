@@ -1,4 +1,4 @@
---- Gemfile.orig	2022-06-21 10:16:23 UTC
+--- Gemfile.orig	2022-08-01 14:56:36 UTC
 +++ Gemfile
 @@ -2,7 +2,7 @@
  
@@ -9,17 +9,65 @@
  
  gem 'bootsnap', '~> 1.12.0', require: false
  
-@@ -92,7 +92,7 @@ gem 'gpgme', '~> 2.0.19'
+@@ -29,35 +29,35 @@ gem 'marginalia', '~> 1.10.0'
+ gem 'declarative_policy', '~> 1.1.0'
+ 
+ # Authentication libraries
+-gem 'devise', '~> 4.7.2'
++gem 'devise', '~> 4.7'
+ gem 'devise-pbkdf2-encryptable', '~> 0.0.0', path: 'vendor/gems/devise-pbkdf2-encryptable'
+ gem 'bcrypt', '~> 3.1', '>= 3.1.14'
+ gem 'doorkeeper', '~> 5.5.0.rc2'
+ gem 'doorkeeper-openid_connect', '~> 1.7.5'
+ gem 'rexml', '~> 3.2.5'
+ gem 'ruby-saml', '~> 1.13.0'
+-gem 'omniauth', '~> 1.8'
+-gem 'omniauth-auth0', '~> 2.0.0'
++gem 'omniauth', '>= 1.8'
++gem 'omniauth-auth0', '~> 3.0.0'
+ gem 'omniauth-azure-activedirectory-v2', '~> 1.0'
+ gem 'omniauth-azure-oauth2', '~> 0.0.9' # Deprecated v1 version
+ gem 'omniauth-cas3', '~> 1.1.4'
+ gem 'omniauth-dingtalk-oauth2', '~> 1.0'
+ gem 'omniauth-alicloud', '~> 1.0.1'
+-gem 'omniauth-facebook', '~> 4.0.0'
+-gem 'omniauth-github', '~> 1.4'
++gem 'omniauth-facebook', '>= 4.0.0'
++gem 'omniauth-github', '>= 1.4'
+ gem 'omniauth-gitlab', '~> 4.0.0', path: 'vendor/gems/omniauth-gitlab' # See vendor/gems/omniauth-gitlab/README.md
+ gem 'omniauth-google-oauth2', '~> 0.6.0'
+ gem 'omniauth-oauth2-generic', '~> 0.2.2'
+-gem 'omniauth-saml', '~> 1.10'
++gem 'omniauth-saml', '~> 2.1.0'
+ gem 'omniauth-shibboleth', '~> 1.3.0'
+ gem 'omniauth-twitter', '~> 1.4'
+ gem 'omniauth_crowd', '~> 2.4.0', path: 'vendor/gems/omniauth_crowd' # See vendor/gems/omniauth_crowd/README.md
+ gem 'omniauth-authentiq', '~> 0.3.3'
+-gem 'gitlab-omniauth-openid-connect', '~> 0.9.0', require: 'omniauth_openid_connect'
++gem 'gitlab-omniauth-openid-connect', '~> 0.10.0', require: 'omniauth_openid_connect'
+ gem 'omniauth-salesforce', '~> 1.0.5'
+ gem 'omniauth-atlassian-oauth2', '~> 0.2.0'
+ gem 'rack-oauth2', '~> 1.19.0'
+-gem 'jwt', '~> 2.1.0'
++gem 'jwt', '~> 2.1'
+ 
+ # Kerberos authentication. EE-only
+ gem 'gssapi', group: :kerberos
+@@ -93,7 +93,7 @@ gem 'gpgme', '~> 2.0.19'
  # GitLab fork with several improvements to original library. For full list of changes
  # see https://github.com/intridea/omniauth-ldap/compare/master...gitlabhq:master
- gem 'gitlab_omniauth-ldap', '~> 2.1.1', require: 'omniauth-ldap'
+ gem 'gitlab_omniauth-ldap', '~> 2.2.0', require: 'omniauth-ldap'
 -gem 'net-ldap', '~> 0.16.3'
 +gem 'net-ldap', '~> 0.16'
  
  # API
  gem 'grape', '~> 1.5.2'
-@@ -207,7 +207,7 @@ gem 'gitlab-sidekiq-fetcher', '0.8.0', require: 'sidek
- gem 'fugit', '~> 1.2.1'
+@@ -205,10 +205,10 @@ gem 'redis-namespace', '~> 1.8.1'
+ gem 'gitlab-sidekiq-fetcher', '0.8.0', require: 'sidekiq-reliable-fetch'
+ 
+ # Cron Parser
+-gem 'fugit', '~> 1.2.1'
++gem 'fugit', '~> 1.2'
  
  # HTTP requests
 -gem 'httparty', '~> 0.16.4'
@@ -27,7 +75,16 @@
  
  # Colored output to console
  gem 'rainbow', '~> 3.0'
-@@ -334,89 +334,19 @@ gem 'batch-loader', '~> 2.0.1'
+@@ -233,7 +233,7 @@ gem 'js_regex', '~> 3.7'
+ gem 'device_detector'
+ 
+ # Redis
+-gem 'redis', '~> 4.4.0'
++gem 'redis', '~> 4.4'
+ gem 'connection_pool', '~> 2.0'
+ 
+ # Redis session store
+@@ -335,89 +335,19 @@ gem 'batch-loader', '~> 2.0.1'
  gem 'peek', '~> 1.1'
  
  # Snowplow events tracking
@@ -38,12 +95,12 @@
  gem 'method_source', '~> 1.0', require: false
 -gem 'webrick', '~> 1.6.1', require: false
 +gem 'webrick', '~> 1.6', require: false
- gem 'prometheus-client-mmap', '~> 0.15.0', require: 'prometheus/client'
+ gem 'prometheus-client-mmap', '~> 0.16', require: 'prometheus/client'
  
- gem 'warning', '~> 1.2.0'
+ gem 'warning', '~> 1.3.0'
  
 -group :development do
--  gem 'lefthook', '~> 0.8.0', require: false
+-  gem 'lefthook', '~> 1.0.0', require: false
 -  gem 'rubocop'
 -  gem 'solargraph', '~> 0.44.3', require: false
 -
@@ -106,7 +163,7 @@
 -end
 -
  group :development, :test, :danger do
-   gem 'gitlab-dangerfiles', '~> 3.4.0', require: false
+   gem 'gitlab-dangerfiles', '~> 3.4.3', require: false
  end
  
 -group :development, :test, :coverage do
@@ -119,7 +176,7 @@
  # Gems required in omnibus-gitlab pipeline
  group :development, :test, :omnibus do
    # Using a fork until https://github.com/pivotal/LicenseFinder/pull/816 is
-@@ -425,30 +355,6 @@ group :development, :test, :omnibus do
+@@ -426,30 +356,6 @@ group :development, :test, :omnibus do
    gem 'gitlab-license_finder', '~> 6.0', require: false
  end
  
@@ -134,7 +191,7 @@
 -  gem 'capybara-screenshot', '~> 1.0.22'
 -  gem 'selenium-webdriver', '~> 3.142'
 -
--  gem 'shoulda-matchers', '~> 4.0.1', require: false
+-  gem 'shoulda-matchers', '~> 5.1.0', require: false
 -  gem 'email_spec', '~> 2.2.0'
 -  gem 'webmock', '~> 3.9.1'
 -  gem 'rails-controller-testing'
@@ -150,12 +207,19 @@
  gem 'octokit', '~> 4.15'
  
  # Updating this gem version here is deprecated. See:
-@@ -547,5 +453,8 @@ gem 'ipaddress', '~> 0.8.3'
- gem 'parslet', '~> 1.8'
+@@ -534,7 +440,7 @@ gem 'lockbox', '~> 0.6.2'
+ gem 'valid_email', '~> 0.1'
  
- gem 'ipynbdiff', '0.4.7'
+ # JSON
+-gem 'json', '~> 2.5.1'
++gem 'json', '~> 2.5'
+ gem 'json_schemer', '~> 0.2.18'
+ gem 'oj', '~> 3.13.19'
+ gem 'multi_json', '~> 1.14.1'
+@@ -554,3 +460,6 @@ gem 'ed25519', '~> 1.3.0'
+ # Error Tracking OpenAPI client
+ # See https://gitlab.com/gitlab-org/gitlab/-/blob/master/doc/development/rake_tasks.md#update-openapi-client-for-error-tracking-feature
+ gem 'error_tracking_open_api', path: 'vendor/gems/error_tracking_open_api'
 +
 +gem 'parser'
 +
- 
- gem 'ed25519', '~> 1.3.0'
