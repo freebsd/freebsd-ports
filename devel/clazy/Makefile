@@ -1,6 +1,5 @@
 PORTNAME=	clazy
-DISTVERSION=	1.5
-PORTREVISION=	2
+DISTVERSION=	1.11
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src/
 
@@ -13,10 +12,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING-LGPL2.txt
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
-USES=		cmake compiler:c++11-lang tar:xz
+USES=		cmake compiler:c++17-lang tar:xz
 
 CMAKE_ARGS=	-DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_DEFAULT}
 
 OPTIONS_DEFINE=	DOCS
+
+DOCS_CMAKE_BOOL=	CLAZY_MAN_PAGE
 
 .include <bsd.port.mk>
