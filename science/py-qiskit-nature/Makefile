@@ -1,8 +1,6 @@
 PORTNAME=	qiskit-nature
-DISTVERSION=	0.4.3
-PORTREVISION=	1
+DISTVERSION=	0.4.4
 CATEGORIES=	science python # quantum-computing, quantum-chemistry
-#MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qiskit-terra>=0.20.0:science/py-qiskit-terra@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-terra>=0.21.0:science/py-qiskit-terra@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rustworkx>=0.10.1:math/py-rustworkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.20.0:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.4:science/py-scipy@${PY_FLAVOR} \
@@ -23,6 +21,7 @@ QC_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyscf>0:science/py-pyscf@${PY_FLAVOR} # quant
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS} \
 		${QC_DEPENDS}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}joblib>0:devel/py-joblib@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	distutils autoplist pytest # several tests fail with "No module named 'threadpoolctl'", see https://reviews.freebsd.org/D35513
