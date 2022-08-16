@@ -93,6 +93,7 @@
     SUBDIR += p5-PayflowPro
     SUBDIR += pear_Payment_DTA
     SUBDIR += prestashop
+    SUBDIR += py-Nasdaq-Data-Link
     SUBDIR += py-backtrader
     SUBDIR += py-bitcoin
     SUBDIR += py-ebaysdk
