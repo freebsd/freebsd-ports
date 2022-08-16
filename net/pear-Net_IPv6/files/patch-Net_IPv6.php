@@ -1,6 +1,26 @@
 --- Net/IPv6.php.orig	2022-08-11 20:00:46 UTC
 +++ Net/IPv6.php
-@@ -224,6 +224,27 @@ class Net_IPv6
+@@ -117,6 +117,19 @@ define("NET_IPV6_UNKNOWN_TYPE", 1001);
+ define("NET_IPV6_UNKNOWN_TYPE", 1001);
+ 
+ // }}}
++// {{{ compatability
++
++/* define str_ends_with() for php < 8 */
++if (! function_exists('str_ends_with')) {
++    function str_ends_with(string $haystack, string $needle): bool
++    {
++        $needle_len = strlen($needle);
++        return ($needle_len === 0 ||
++                substr_compare($haystack, $needle, - $needle_len) === 0);
++    }
++}
++
++// }}}
+ // {{{ Net_IPv6
+ 
+ /**
+@@ -224,6 +237,27 @@ class Net_IPv6
      }
  
      // }}}
@@ -28,7 +48,7 @@
      // {{{ getNetmaskSpec()
  
      /**
-@@ -324,6 +345,33 @@ class Net_IPv6
+@@ -324,6 +358,33 @@ class Net_IPv6
      }
  
      // }}}
@@ -62,7 +82,7 @@
      // {{{ isInNetmask()
  
      /**
-@@ -549,6 +597,8 @@ class Net_IPv6
+@@ -549,6 +610,8 @@ class Net_IPv6
  
          }
  
@@ -71,7 +91,7 @@
          $netmask = Net_IPv6::getNetmaskSpec($ip);
          $uip     = Net_IPv6::removeNetmaskSpec($ip);
  
-@@ -639,6 +689,12 @@ class Net_IPv6
+@@ -639,6 +702,12 @@ class Net_IPv6
              $uip = implode(':', $uipT);
          }
  
@@ -84,7 +104,7 @@
          if ('' != $netmask) {
  
                  $uip = $uip.'/'.$netmask;
-@@ -696,6 +752,9 @@ class Net_IPv6
+@@ -696,6 +765,9 @@ class Net_IPv6
  
          }
  
@@ -94,7 +114,7 @@
          $prefix = Net_IPv6::getPrefixLength($ip);
  
          if (false === $prefix) {
-@@ -709,7 +768,7 @@ class Net_IPv6
+@@ -709,7 +781,7 @@ class Net_IPv6
  
          }
          
@@ -103,7 +123,7 @@
          $ip = $split[0];
  
          $netmask = Net_IPv6::getNetmaskSpec($ip);
-@@ -750,9 +809,20 @@ class Net_IPv6
+@@ -750,9 +822,20 @@ class Net_IPv6
          }
  
          if ('' != $split[1]) { // add ipv4 part is available
@@ -126,7 +146,7 @@
          if ('' != $netmask) {
  
              $cip = $cip.'/'.$netmask;
-@@ -807,7 +877,7 @@ class Net_IPv6
+@@ -807,7 +890,7 @@ class Net_IPv6
      public static function isCompressible($ip)
      {
  
@@ -135,7 +155,7 @@
  
      }
  
-@@ -820,6 +890,9 @@ class Net_IPv6
+@@ -820,6 +903,9 @@ class Net_IPv6
       * RFC 2373 allows you to note the last two parts of an IPv6 address as
       * an IPv4 compatible address
       *
@@ -145,7 +165,7 @@
       * Example:  0:0:0:0:0:0:13.1.68.3
       *           0:0:0:0:0:FFFF:129.144.52.38
       *
-@@ -837,6 +910,7 @@ class Net_IPv6
+@@ -837,6 +923,7 @@ class Net_IPv6
       */
      public static function SplitV64($ip, $uncompress = true)
      {
@@ -153,7 +173,7 @@
          $ip = Net_IPv6::removeNetmaskSpec($ip);
  
          if ($uncompress) {
-@@ -853,10 +927,10 @@ class Net_IPv6
+@@ -853,10 +940,10 @@ class Net_IPv6
                  return array("", $ip);
              }
  
@@ -166,7 +186,7 @@
                  $ipPart[0] .= ":";
              }
  
-@@ -885,7 +959,6 @@ class Net_IPv6
+@@ -885,7 +972,6 @@ class Net_IPv6
       */
      public static function checkIPv6($ip)
      {
@@ -174,7 +194,7 @@
          $elements = Net_IPv6::separate($ip);
  
          $ip = $elements[0];
-@@ -1057,13 +1130,13 @@ class Net_IPv6
+@@ -1057,13 +1143,13 @@ class Net_IPv6
      protected static function _ip2Bin($ip)
      {
          $binstr = '';
