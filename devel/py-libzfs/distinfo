@@ -1,3 +1,3 @@
-TIMESTAMP = 1654807325
-SHA256 (truenas-py-libzfs-1.1.2022060900-d98f5fe_GH0.tar.gz) = defc9db7559f4b3760dc4697cc24a00c524562ac0c441f1004b646f26c9b8a30
-SIZE (truenas-py-libzfs-1.1.2022060900-d98f5fe_GH0.tar.gz) = 94222
+TIMESTAMP = 1660645925
+SHA256 (truenas-py-libzfs-1.1.2022081600-077cf6d_GH0.tar.gz) = 6a9ed2e7c54d08179d0199320aac9ccb6d641e8a0f40a325628ebd93e55a1bab
+SIZE (truenas-py-libzfs-1.1.2022081600-077cf6d_GH0.tar.gz) = 95427
