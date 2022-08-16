@@ -393,6 +393,8 @@ USE_CABAL=	Diff-0.4.1 \
 CABAL_PROJECT=		append
 CABAL_EXECUTABLES=	cardano-node cardano-cli cardano-submit-api cardano-tracer
 
+NOT_FOR_ARCHS=		i386
+
 post-patch:
 	${REINPLACE_CMD} -e 's/$$(gitRevFromGit)/"${CARDANO_NODE_HASH}"/' \
 			 -e '/Cardano.Git.RevFromGit/d' \
