@@ -1,6 +1,6 @@
---- config_gram.y.orig	2014-05-06 16:30:17.040722949 -0700
-+++ config_gram.y	2014-05-06 16:32:22.614815187 -0700
-@@ -106,7 +106,7 @@
+--- config_gram.y.orig	2005-11-14 17:17:53 UTC
++++ config_gram.y
+@@ -106,7 +106,7 @@ Setting		:	W_SPREAD W_EQUALS W_STRING
  			  SPIT("Setting Group: %s\n", Spread_group); }
  		|	W_LOG     W_EQUALS W_STRING
  		|	W_CONTROL W_EQUALS W_STRING
