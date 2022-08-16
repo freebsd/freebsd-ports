@@ -1,5 +1,5 @@
 PORTNAME=	Connector
-DISTVERSION=	1.44
+DISTVERSION=	1.45
 CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
 
@@ -8,6 +8,7 @@ COMMENT=	Generic connection to a hierarchical-structured data set
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	bash:shells/bash \
@@ -31,7 +32,7 @@ TEST_DEPENDS=	p5-Config-Merge>=0:devel/p5-Config-Merge \
 
 USES=		perl5
 USE_GITHUB=	yes
-GH_ACCOUNT=	mrscotty
+GH_ACCOUNT=	whiterabbitsecurity
 GH_PROJECT=	${PORTNAME:tl}
 USE_PERL5=	modbuildtiny
 NO_ARCH=	yes
