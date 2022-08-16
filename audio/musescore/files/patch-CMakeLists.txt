@@ -10,7 +10,7 @@ up with the dependency loop; make handles this without complaint)
  
  # Print Qt version or fail the build if Qt (qmake) is not in PATH.
 -fn__require_program(QMAKE Qt --version "https://musescore.org/en/handbook/developers-handbook/compilation" qmake)
-+fn__require_program(QMAKE Qt --version "https://musescore.org/en/handbook/developers-handbook/compilation" qmake qmake-qt5)
++fn__require_program(QMAKE Qt --version "https://musescore.org/en/handbook/developers-handbook/compilation" qmake-qt5)
  
  # Libraries linked via full path no longer produce linker search paths.
  cmake_policy(SET CMP0003 NEW)
