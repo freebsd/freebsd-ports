@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	15.2.0
+PORTVERSION=	15.2.2
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -249,7 +249,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
 	rubygem-json>=2.5.1<3:devel/rubygem-json \
 	rubygem-json_schemer>=0.2.18<0.3:devel/rubygem-json_schemer \
-	rubygem-oj>=3.13.16<3.14:devel/rubygem-oj \
+	rubygem-oj>=3.13.19<3.14:devel/rubygem-oj \
 	rubygem-multi_json114>=1.14.1<1.15:devel/rubygem-multi_json114 \
 	rubygem-yajl-ruby>=1.4.1<1.5:devel/rubygem-yajl-ruby \
 	rubygem-webauthn>=2.3<3:security/rubygem-webauthn \
@@ -277,7 +277,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	a876afc5fd85a4ccae6947941884f3913f472ab0
+GL_COMMIT=	4ecb014a9353d25d25249cceb268ee34eab0c96b
 
 USERS=	git
 GROUPS=	git
