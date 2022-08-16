@@ -2,6 +2,7 @@
 
 PORTNAME=	omniauth-azure-activedirectory-v2
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ COMMENT=	OAuth 2 authentication with the Azure ActiveDirectory V2 API
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.7<2:net/rubygem-omniauth-oauth2
+RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.7<3:net/rubygem-omniauth-oauth2
 
 USES=		gem
 USE_RUBY=	yes
