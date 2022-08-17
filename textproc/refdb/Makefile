@@ -5,7 +5,7 @@ PORTREVISION=	11
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-${PORTVERSION}-1
 
-MAINTAINER=	ohartman@zedat.fu-berlin.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bibliographic reference database
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: thecommandlist
