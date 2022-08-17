@@ -56,7 +56,7 @@ IGNORE=	Incorrect 'USES+= cmake:${cmake_ARGS}' usage: argument [${arg}] is not r
 .    endif
 .  endfor
 
-CMAKE_CMD_RUN=		${LOCALBASE}/bin/cmake
+CMAKE_CMD_RUN=		cmake
 .if defined(CMAKE_CMD)
 _CMAKE_PORT=		/nonexistent
 .else
