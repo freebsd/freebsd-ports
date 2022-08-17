@@ -221,6 +221,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  variables of the later stages using ${WRKDIR}/Makefile.inc
 #				  generated on the fly.
 #				  Default: not set.
+# USE_PKG64		- Set this if you want the port to be only installed with pkg64,
+#				  and not built from source, when it is required by a CheriABI
+#				  port and USE_PACKAGE_64_DEPENDS_ONLY is enabled.
+#				  Default: 0 (do not install the port with pkg64).
 #
 # NO_ARCH			- Set this if port is architecture neutral.
 #
@@ -413,6 +417,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # LOCALBASE		- Where ports install things.
 #				  Default: /usr/local
+# LOCALBASE64	  Where hybrid ABI programs are installed.
+#				  Default: /usr/local64
 # LINUXBASE		- Where Linux ports install things.
 #				  Default: /compat/linux
 # PREFIX		- Where *this* port installs its files.
@@ -986,6 +992,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- When USE_PACKAGE_DEPENDS{,_ONLY} is enabled, try to use
 #				  a remote repository if a local package does not exist.
 #				  Default: 0 (no effect).
+# USE_PACKAGE_64_DEPENDS_ONLY
+#				- Install dependencies marked with USE_PKG64 using their
+#				  replacement hybrid ABI packages with pkg64 instead of building
+#				  them from scratch.
+#				  Do not fallback on source if a replacement package is not
+#				  present.
+#				  Default: 0 (no effect).
 # INSTALL_AS_USER
 #				- Define this to install as the current user, intended
 #				  for systems where you have no root access.
@@ -1018,6 +1031,7 @@ _LIST_OF_WITH_FEATURES=	debug lto ssp
 _DEFAULT_WITH_FEATURES=	ssp
 PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
+LOCALBASE64?=	/usr/local64
 LINUXBASE?=		/compat/linux
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
@@ -1371,6 +1385,7 @@ PKGVERSION=	${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PKGVERSION}
 DISTVERSIONFULL=	${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
 DISTNAME?=	${PORTNAME}-${DISTVERSIONFULL}
+USE_PKG64?=	0
 
 INDEXFILE?=		INDEX-${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}
 
@@ -4016,10 +4031,15 @@ ${deptype:tl}-depends:
 		dp_USE_PACKAGE_DEPENDS="${USE_PACKAGE_DEPENDS}" \
 		dp_USE_PACKAGE_DEPENDS_ONLY="${USE_PACKAGE_DEPENDS_ONLY}" \
 		dp_USE_PACKAGE_DEPENDS_REMOTE="${USE_PACKAGE_DEPENDS_REMOTE}" \
+		dp_USE_PACKAGE_64_DEPENDS_ONLY="${USE_PACKAGE_64_DEPENDS_ONLY}" \
 		dp_PKG_ADD="${PKG_ADD}" \
 		dp_PKG_INFO="${PKG_INFO}" \
 		dp_PKG_INSTALL="${PKG_INSTALL}" \
 		dp_PKG_RQUERY="${PKG_RQUERY}" \
+		dp_PKG64_INFO="${PKG64_INFO}" \
+		dp_PKG64_INSTALL="${PKG64_INSTALL}" \
+		dp_PKG64_QUERY="${PKG64_QUERY}" \
+		dp_PKG64_RQUERY="${PKG64_RQUERY}" \
 		dp_WRKDIR="${WRKDIR}" \
 		dp_PKGNAME="${PKGNAME}" \
 		dp_STRICT_DEPENDS="${STRICT_DEPENDS}" \

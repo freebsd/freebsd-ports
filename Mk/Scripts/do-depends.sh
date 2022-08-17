@@ -12,7 +12,9 @@ validate_env dp_RAWDEPENDS dp_DEPTYPE dp_DEPENDS_TARGET dp_DEPENDS_PRECLEAN \
 	dp_USE_PACKAGE_DEPENDS_ONLY dp_USE_PACKAGE_DEPENDS_REMOTE dp_PKG_ADD \
 	dp_PKG_INFO dp_PKG_INSTALL dp_PKG_RQUERY dp_WRKDIR dp_PKGNAME \
 	dp_STRICT_DEPENDS dp_LOCALBASE dp_LIB_DIRS dp_SH dp_SCRIPTSDIR \
-	PORTSDIR dp_MAKE dp_MAKEFLAGS dp_OVERLAYS
+	PORTSDIR dp_MAKE dp_MAKEFLAGS dp_OVERLAYS \
+	dp_USE_PACKAGE_64_DEPENDS_ONLY dp_PKG64_INFO dp_PKG64_INSTALL \
+	dp_PKG64_QUERY dp_PKG64_RQUERY
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DO_DEPENDS}" ] && set -x
 
@@ -23,15 +25,36 @@ install_depends()
 	origin=$1
 	target=$2
 	depends_args=$3
-	if [ -z "${dp_USE_PACKAGE_DEPENDS}" -a -z "${dp_USE_PACKAGE_DEPENDS_ONLY}" ]; then
-		MAKEFLAGS="${dp_MAKEFLAGS}" ${dp_MAKE} -C ${origin} -DINSTALLS_DEPENDS ${target} ${depends_args}
-		return 0
-	fi
 
 	port_var_fetch "${origin}" "${depends_args}" \
 	    PKGFILE pkgfile \
 	    PKGBASE pkgbase \
-	    PKGNAME pkgname
+	    PKGNAME pkgname \
+	    USE_PKG64 usepkg64
+
+	if [ "${target}" = "${dp_DEPENDS_TARGET}"  -a \
+	    "${usepkg64}" -eq 1 -a \
+	    -n "${dp_USE_PACKAGE_64_DEPENDS_ONLY}" ];  then
+		if ${dp_PKG64_QUERY} %n "${pkgname}" 2>&1 >/dev/null; then
+			# Don't do anything.
+			# A dependency is already installed as a hybrid ABI
+			# package.
+			return
+		elif ${dp_PKG64_RQUERY} %n "${pkgname}" 2>&1 >/dev/null; then
+			echo "===>   Installing existing package ${pkgname} from a remote hybrid ABI repository"
+			${dp_PKG64_INSTALL} -qy "${pkgname}"
+			return
+		else
+			echo "===>   ${dp_PKGNAME} depends on package: ${pkgfile} - not found" >&2
+			echo "===>   USE_PACKAGE_64_DEPENDS_ONLY set - not building missing dependency from source" >&2
+			exit 1
+		fi
+	fi
+
+	if [ -z "${dp_USE_PACKAGE_DEPENDS}" -a -z "${dp_USE_PACKAGE_DEPENDS_ONLY}" ]; then
+		MAKEFLAGS="${dp_MAKEFLAGS}" ${dp_MAKE} -C ${origin} -DINSTALLS_DEPENDS ${target} ${depends_args}
+		return 0
+	fi
 
 	if [ -r "${pkgfile}" -a "${target}" = "${dp_DEPENDS_TARGET}" ]; then
 		echo "===>   Installing existing package ${pkgfile}"
@@ -59,9 +82,16 @@ install_depends()
 
 find_package()
 {
-	if ${dp_PKG_INFO} "$1" >/dev/null 2>&1; then
-		echo "===>   ${dp_PKGNAME} depends on package: $1 - found"
-		return 0
+	if [ -n "${dp_USE_PACKAGE_64_DEPENDS_ONLY}" -a $2 -eq 1 ]; then
+		if ${dp_PKG64_INFO} "$1" >/dev/null 2>&1; then
+			echo "===>   ${dp_PKGNAME} depends on package: $1 - found"
+			return 0
+		fi
+	else
+		if ${dp_PKG_INFO} "$1" >/dev/null 2>&1; then
+			echo "===>   ${dp_PKGNAME} depends on package: $1 - found"
+			return 0
+		fi
 	fi
 	echo "===>   ${dp_PKGNAME} depends on package: $1 - not found"
 	return 1
@@ -171,6 +201,9 @@ for _line in ${dp_RAWDEPENDS} ; do
 		fi
 	fi
 
+	port_var_fetch "${origin}" "${depends_args}" \
+	    USE_PKG64 usepkg64
+
 	case ${dp_DEPTYPE} in
 	  LIB_DEPENDS)
 	    case ${pattern} in
@@ -189,7 +222,7 @@ for _line in ${dp_RAWDEPENDS} ; do
 	      *)             fct=find_file_path ;;
 	    esac ;;
 	esac
-	if ${fct} "${pattern}" ; then
+	if ${fct} "${pattern}" "${usepkg64}" ; then
 		continue
 	fi
 	[ ${pattern} = "/nonexistent" ] || anynotfound=1
@@ -207,7 +240,7 @@ for _line in ${dp_RAWDEPENDS} ; do
 	# Now actually install the dependencies
 	install_depends "${origin}" "${target}" "${depends_args}"
 	# Recheck if the installed dependency validates the pattern except for /nonexistent
-	[ "${fct}" = "false" ] || ${fct} "${pattern}"
+	[ "${fct}" = "false" ] || ${fct} "${pattern}" "${usepkg64}"
 	echo "===>   Returning to build of ${dp_PKGNAME}"
 done
 
