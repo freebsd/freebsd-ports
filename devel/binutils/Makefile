@@ -1,6 +1,5 @@
 PORTNAME=	binutils
-PORTVERSION=	2.37
-PORTREVISION=	4
+PORTVERSION=	2.39
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -22,7 +21,7 @@ FLAVORS=	native aarch64 aarch64_none_elf amd64 arm_gnueabi arm_none_eabi \
 		riscv64_none_elf s390x sparc64 riscv32_unknown_elf
 FLAVOR?=	native
 
-USES=		bison:alias compiler:env cpe gmake libtool makeinfo perl5 tar:xz
+USES=		bison:alias compiler:env cpe gmake libtool makeinfo perl5 tar:lz
 USE_PERL5=	build
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
@@ -96,8 +95,11 @@ CONFIGURE_ARGS+=	--with-system-zlib \
 			--with-mpfr=${LOCALBASE} \
 			--enable-targets=all \
 			--enable-threads=yes
+# XXX Needed to support gcc10 and earlier:
+CONFIGURE_ARGS+=	--with-isa-spec=2.2
 INFO=		as \
 		binutils \
+		ctf-spec \
 		gprof \
 		bfd \
 		ld

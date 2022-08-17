@@ -100,6 +100,7 @@ man/man1/strip.1.gz
 %%NLS%%share/locale/ja/LC_MESSAGES/gas.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ld.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/opcodes.mo
