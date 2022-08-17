@@ -1,6 +1,6 @@
 PORTNAME=	sysroot
 PORTVERSION=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${PUB_FREEBSD}/releases/arm64/aarch64/11.3-RELEASE/
 PKGNAMEPREFIX=	gnatcross-
@@ -16,13 +16,14 @@ ONLY_FOR_ARCHS=		amd64 i386
 
 USES=		tar:txz
 
+BUNDLE_LIBS=	yes
+EXTRACT_AFTER_ARGS=	lib/ usr/include/ usr/lib/
+
 NO_BUILD=	yes
 NO_MTREE=	yes
 
 PUB_FREEBSD=	ftp://ftp.freebsd.org/pub/FreeBSD
 PREFIX=		${LOCALBASE}/FreeBSD_ARM64
-
-EXTRACT_AFTER_ARGS=	lib/ usr/include/ usr/lib/
 
 post-extract:
 	/bin/chflags -R noschg ${WRKDIR}
