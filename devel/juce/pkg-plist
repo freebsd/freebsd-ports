@@ -446,7 +446,6 @@ include/JUCE-%%VERSION%%/modules/juce_audio_formats/sampler/juce_Sampler.h
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/AAX/juce_AAX_Modifier_Injector.h
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/AAX/juce_AAX_Wrapper.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/ARA/juce_ARA_Wrapper.cpp
-include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/ARA/juce_ARA_Wrapper.h
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/AU/CoreAudioUtilityClasses/AUBase.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/AU/CoreAudioUtilityClasses/AUBase.h
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/AU/CoreAudioUtilityClasses/AUBaseHelper.h
@@ -539,6 +538,7 @@ include/JUCE-%%VERSION%%/modules/juce_audio_processors/format/juce_AudioPluginFo
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/README.md
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/generate_lv2_bundle_sources.py
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/juce_lv2_config.h
+include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/juce_lv2_config.h.orig
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/lilv/COPYING
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/lilv/lilv/lilv.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/lilv/lilv/lilvmm.hpp
@@ -852,6 +852,7 @@ include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/pslextension
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/pslextensions/pslauextensions.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/pslextensions/pslvst2extensions.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/juce_audio_processors.cpp
+include/JUCE-%%VERSION%%/modules/juce_audio_processors/juce_audio_processors.cpp.orig
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/juce_audio_processors.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/juce_audio_processors.mm
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/juce_audio_processors_ara.cpp
@@ -880,6 +881,7 @@ include/JUCE-%%VERSION%%/modules/juce_audio_processors/scanning/juce_PluginDirec
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/scanning/juce_PluginDirectoryScanner.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/scanning/juce_PluginListComponent.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/scanning/juce_PluginListComponent.h
+include/JUCE-%%VERSION%%/modules/juce_audio_processors/utilities/ARA/juce_ARADebug.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/utilities/ARA/juce_ARADocumentController.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/utilities/ARA/juce_ARADocumentController.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/utilities/ARA/juce_ARADocumentControllerCommon.cpp
@@ -1203,6 +1205,7 @@ include/JUCE-%%VERSION%%/modules/juce_core/network/juce_URL.cpp
 include/JUCE-%%VERSION%%/modules/juce_core/network/juce_URL.h
 include/JUCE-%%VERSION%%/modules/juce_core/network/juce_WebInputStream.cpp
 include/JUCE-%%VERSION%%/modules/juce_core/network/juce_WebInputStream.h
+include/JUCE-%%VERSION%%/modules/juce_core/streams/juce_AndroidDocumentInputSource.h
 include/JUCE-%%VERSION%%/modules/juce_core/streams/juce_BufferedInputStream.cpp
 include/JUCE-%%VERSION%%/modules/juce_core/streams/juce_BufferedInputStream.h
 include/JUCE-%%VERSION%%/modules/juce_core/streams/juce_FileInputSource.cpp
@@ -2123,7 +2126,7 @@ include/JUCE-%%VERSION%%/modules/juce_product_unlocking/marketplace/juce_OnlineU
 include/JUCE-%%VERSION%%/modules/juce_product_unlocking/marketplace/juce_OnlineUnlockStatus.h
 include/JUCE-%%VERSION%%/modules/juce_product_unlocking/marketplace/juce_TracktionMarketplaceStatus.cpp
 include/JUCE-%%VERSION%%/modules/juce_product_unlocking/marketplace/juce_TracktionMarketplaceStatus.h
-include/JUCE-%%VERSION%%/modules/juce_product_unlocking/native/javaopt/app/com/rmsl/juce/JuceBillingClient.java
+include/JUCE-%%VERSION%%/modules/juce_product_unlocking/native/java/app/com/rmsl/juce/JuceBillingClient.java
 include/JUCE-%%VERSION%%/modules/juce_product_unlocking/native/juce_android_InAppPurchases.cpp
 include/JUCE-%%VERSION%%/modules/juce_product_unlocking/native/juce_ios_InAppPurchases.cpp
 include/JUCE-%%VERSION%%/modules/juce_video/capture/juce_CameraDevice.cpp
