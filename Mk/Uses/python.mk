@@ -303,6 +303,14 @@ _PYTHON_FEATURE_${var:C/=.*$//:tu}=	${var:C/.*=//:S/,/ /g}
 IGNORE=		uses either USE_PYTHON=pytest or USE_PYTHON=pytest4, not both of them
 .  endif
 
+.  if defined(_PYTHON_FEATURE_DISTUTILS)
+# Currently, only hybrid ABI Python is available on CheriBSD.
+# A port dependency that is installed in the Python site-packages tree can be
+# installed with the hybrid ABI Python.
+BROKEN_purecap=	requires missing CheriABI Python
+USE_PKG64=	1
+.  endif
+
 # distutils automatically generates flavors depending on the supported
 # versions.
 .  if defined(_PYTHON_FEATURE_DISTUTILS)
