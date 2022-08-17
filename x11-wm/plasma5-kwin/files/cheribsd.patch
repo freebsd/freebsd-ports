@@ -1,0 +1,201 @@
+diff -ru CMakeLists.txt CMakeLists.txt
+--- CMakeLists.txt	2022-07-11 11:52:25.000000000 +0100
++++ CMakeLists.txt	2022-08-18 14:38:06.611747000 +0100
+@@ -194,11 +194,14 @@
+     TYPE REQUIRED
+     PURPOSE "Required for building KWin with Wayland support"
+ )
+-add_feature_info("Wayland::EGL" Wayland_Egl_FOUND "Enable building of Wayland backend.")
++option(KWIN_BUILD_DRM_BACKEND "Enable building of KWin DRM backend" ON)
++option(KWIN_BUILD_WAYLAND_EGL "Enable building of KWin Wayland EGL output" ON)
++
+ set(HAVE_WAYLAND_EGL FALSE)
+-if (Wayland_Egl_FOUND)
++if (KWIN_BUILD_WAYLAND_EGL AND Wayland_Egl_FOUND)
+     set(HAVE_WAYLAND_EGL TRUE)
+ endif()
++add_feature_info("Wayland::EGL" HAVE_WAYLAND_EGL "Enable building of Wayland EGL backend.")
+ 
+ find_package(XKB 0.7.0)
+ set_package_properties(XKB PROPERTIES
+@@ -219,15 +222,17 @@
+     PURPOSE "Required for input handling on Wayland."
+ )
+ 
+-find_package(Libdrm 2.4.62)
+-set_package_properties(Libdrm PROPERTIES TYPE REQUIRED PURPOSE "Required for drm output on Wayland.")
++if (KWIN_BUILD_DRM_BACKEND OR HAVE_WAYLAND_EGL)
++    find_package(Libdrm 2.4.62)
++    set_package_properties(Libdrm PROPERTIES TYPE REQUIRED PURPOSE "Required for drm output on Wayland.")
+ 
+-find_package(gbm)
+-set_package_properties(gbm PROPERTIES TYPE REQUIRED PURPOSE "Required for egl output of drm backend.")
+-if (${gbm_VERSION} GREATER_EQUAL 21.1)
+-    set(HAVE_GBM_BO_GET_FD_FOR_PLANE 1)
+-else()
+-    set(HAVE_GBM_BO_GET_FD_FOR_PLANE 0)
++    find_package(gbm)
++    set_package_properties(gbm PROPERTIES TYPE REQUIRED PURPOSE "Required for egl output of drm backend.")
++    if ("${gbm_VERSION}" GREATER_EQUAL 21.1)
++        set(HAVE_GBM_BO_GET_FD_FOR_PLANE 1)
++    else()
++        set(HAVE_GBM_BO_GET_FD_FOR_PLANE 0)
++    endif()
+ endif()
+ 
+ find_package(X11)
+diff -ru src/appmenu.cpp src/appmenu.cpp
+--- src/appmenu.cpp	2022-07-11 11:51:26.000000000 +0100
++++ src/appmenu.cpp	2022-08-18 14:38:06.612274000 +0100
+@@ -48,7 +48,8 @@
+                 Q_EMIT applicationMenuEnabledChanged(false);
+             });
+ 
+-    m_applicationMenuEnabled = QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.kappmenu"));
++    m_applicationMenuEnabled =
++        QDBusConnection::sessionBus().interface() && QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.kappmenu"));
+ }
+ 
+ ApplicationMenu::~ApplicationMenu()
+@@ -63,6 +64,8 @@
+ 
+ void ApplicationMenu::setViewEnabled(bool enabled)
+ {
++    if (!QDBusConnection::sessionBus().interface())
++        return;
+     if (enabled) {
+         QDBusConnection::sessionBus().interface()->registerService(s_viewService,
+                     QDBusConnectionInterface::QueueService,
+diff -ru src/backends/CMakeLists.txt src/backends/CMakeLists.txt
+--- src/backends/CMakeLists.txt	2022-07-11 11:51:26.000000000 +0100
++++ src/backends/CMakeLists.txt	2022-08-18 14:37:51.877968000 +0100
+@@ -1,4 +1,6 @@
+-add_subdirectory(drm)
++if (KWIN_BUILD_DRM_BACKEND)
++    add_subdirectory(drm)
++endif()
+ add_subdirectory(fakeinput)
+ if (HAVE_LINUX_FB_H)
+     add_subdirectory(fbdev)
+diff -ru src/effects/startupfeedback/startupfeedback.cpp src/effects/startupfeedback/startupfeedback.cpp
+--- src/effects/startupfeedback/startupfeedback.cpp	2022-07-11 11:51:26.000000000 +0100
++++ src/effects/startupfeedback/startupfeedback.cpp	2022-08-18 14:38:06.612795000 +0100
+@@ -111,7 +111,8 @@
+     });
+     reconfigure(ReconfigureAll);
+ 
+-    m_splashVisible = QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.KSplash"));
++    m_splashVisible =
++        QDBusConnection::sessionBus().interface() && QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.KSplash"));
+     auto serviceWatcher = new QDBusServiceWatcher(QStringLiteral("org.kde.KSplash"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
+     connect(serviceWatcher, &QDBusServiceWatcher::serviceRegistered, this, [this] {
+         m_splashVisible = true;
+diff -ru src/plugins/colord-integration/colordintegration.cpp src/plugins/colord-integration/colordintegration.cpp
+--- src/plugins/colord-integration/colordintegration.cpp	2022-07-11 11:51:26.000000000 +0100
++++ src/plugins/colord-integration/colordintegration.cpp	2022-08-18 14:38:06.613131000 +0100
+@@ -31,7 +31,7 @@
+     connect(watcher, &QDBusServiceWatcher::serviceUnregistered, this, &ColordIntegration::teardown);
+ 
+     QDBusConnectionInterface *interface = QDBusConnection::systemBus().interface();
+-    if (interface->isServiceRegistered(QStringLiteral("org.freedesktop.ColorManager"))) {
++    if (interface && interface->isServiceRegistered(QStringLiteral("org.freedesktop.ColorManager"))) {
+         initialize();
+     }
+ }
+diff -ru src/session_consolekit.cpp src/session_consolekit.cpp
+--- src/session_consolekit.cpp	2022-07-11 11:51:26.000000000 +0100
++++ src/session_consolekit.cpp	2022-08-18 14:38:06.613763000 +0100
+@@ -110,7 +110,7 @@
+ 
+ ConsoleKitSession *ConsoleKitSession::create(QObject *parent)
+ {
+-    if (!QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
++    if (!QDBusConnection::systemBus().interface() || !QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
+         return nullptr;
+     }
+ 
+diff -ru src/session_logind.cpp src/session_logind.cpp
+--- src/session_logind.cpp	2022-07-11 11:51:26.000000000 +0100
++++ src/session_logind.cpp	2022-08-18 14:38:06.614305000 +0100
+@@ -108,7 +108,7 @@
+ 
+ LogindSession *LogindSession::create(QObject *parent)
+ {
+-    if (!QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
++    if (!QDBusConnection::systemBus().interface() || !QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
+         return nullptr;
+     }
+ 
+diff -ru src/session_noop.cpp src/session_noop.cpp
+--- src/session_noop.cpp	2022-07-11 11:51:26.000000000 +0100
++++ src/session_noop.cpp	2022-08-18 14:38:06.614685000 +0100
+@@ -6,6 +6,11 @@
+ 
+ #include "session_noop.h"
+ 
++#include "utils/common.h"
++#include <QFile>
++#include <fcntl.h>
++#include <unistd.h>
++
+ namespace KWin
+ {
+ 
+@@ -45,12 +50,18 @@
+ 
+ int NoopSession::openRestricted(const QString &fileName)
+ {
++
++	return open(QFile::encodeName(fileName).data(), O_RDWR | O_CLOEXEC);
++
+     Q_UNUSED(fileName)
+     return -1;
+ }
+ 
+ void NoopSession::closeRestricted(int fileDescriptor)
+ {
++
++	close(fileDescriptor);
++
+     Q_UNUSED(fileDescriptor)
+ }
+ 
+diff -ru src/tabletmodemanager.cpp src/tabletmodemanager.cpp
+--- src/tabletmodemanager.cpp	2022-07-11 11:51:26.000000000 +0100
++++ src/tabletmodemanager.cpp	2022-08-18 14:38:06.615049000 +0100
+@@ -16,6 +16,11 @@
+ 
+ #include <QDBusConnection>
+ 
++#include "utils/common.h"
++#include <QFile>
++#include <fcntl.h>
++#include <unistd.h>
++
+ namespace KWin
+ {
+ 
+diff -ru src/backends/drm/drm_buffer.cpp src/backends/drm/drm_buffer.cpp
+--- src/backends/drm/drm_buffer.cpp	2022-07-11 11:51:26.000000000 +0100
++++ src/backends/drm/drm_buffer.cpp	2022-08-23 23:13:55.079283000 +0100
+@@ -121,7 +121,7 @@
+     if (drmIoctl(m_gpu->fd(), DRM_IOCTL_MODE_MAP_DUMB, &mapArgs) != 0) {
+         return false;
+     }
+-    void *address = mmap(nullptr, m_bufferSize, PROT_WRITE, MAP_SHARED, m_gpu->fd(), mapArgs.offset);
++    void *address = mmap(nullptr, m_bufferSize, PROT_READ | PROT_WRITE, MAP_SHARED, m_gpu->fd(), mapArgs.offset);
+     if (address == MAP_FAILED) {
+         return false;
+     }
+diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
+--- src/backends/fbdev/fb_backend.cpp	2022-07-11 11:51:26.000000000 +0100
++++ src/backends/fbdev/fb_backend.cpp	2022-08-23 23:13:43.727961000 +0100
+@@ -191,7 +191,7 @@
+         // not valid
+         return;
+     }
+-    void *mem = mmap(nullptr, m_bufferLength, PROT_WRITE, MAP_SHARED, m_fd, 0);
++    void *mem = mmap(nullptr, m_bufferLength, PROT_READ | PROT_WRITE, MAP_SHARED, m_fd, 0);
+     if (mem == MAP_FAILED) {
+         qCWarning(KWIN_FB) << "Failed to mmap frame buffer";
+         return;
