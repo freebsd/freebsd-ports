@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.7
+DISTVERSION=	5.0.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yamafaktory
 
 CARGO_CRATES=	ansi_term-0.12.1 \
-		anyhow-1.0.60 \
+		anyhow-1.0.61 \
 		async-attributes-1.1.2 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
@@ -40,7 +40,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
-		clap-3.2.16 \
+		clap-3.2.17 \
 		clap_lex-0.2.3 \
 		colored_json-2.1.0 \
 		concurrent-queue-1.2.2 \
