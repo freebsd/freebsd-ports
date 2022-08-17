@@ -2,8 +2,7 @@
 
 PORTNAME=	jucipp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
-PORTREVISION=	3
+DISTVERSION=	1.7.2
 CATEGORIES=	editors
 
 MAINTAINER=	info@babaei.net
@@ -20,14 +19,12 @@ LIB_DEPENDS=	libaspell.so:textproc/aspell \
 RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 		uctags:devel/universal-ctags
 
-BROKEN=		error: implicit instantiation of undefined template 'std::basic_ifstream<char>'
-
 USES=		cmake compiler:c++14-lang desktop-file-utils gnome pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	cppit
-GL_COMMIT=	b3b5182258b25835e7c5f683623ab774d8e34c75
-GL_TUPLE=	cppit:libclangmm:0df7169ddc918d80a95e50f04813be82fff7ce24:libclangmm/lib/libclangmm \
-		eidheim:tiny-process-library:15e4f77f8254e4b093f6be128db50fe4b6bee120:tinyprocesslibrary/lib/tiny-process-library
+GL_COMMIT=	692f3de1f0aad00051096579975e515bccc3802a
+GL_TUPLE=	cppit:libclangmm:9704b9b6de0982a588fa41741157d5640afedf30:libclangmm/lib/libclangmm \
+		eidheim:tiny-process-library:839ff806dc447ff49af80f9a9eaa7949f770f8e5:tinyprocesslibrary/lib/tiny-process-library
 USE_GNOME=	gdkpixbuf2 gtkmm30 gtksourceviewmm3
 
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH=${LOCALBASE}/llvm${LLVM_DEFAULT}/include \
