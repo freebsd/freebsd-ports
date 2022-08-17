@@ -2318,6 +2318,7 @@
     SUBDIR += w3m
     SUBDIR += w3m-img
     SUBDIR += w3mir
+    SUBDIR += wabt
     SUBDIR += web2ldap
     SUBDIR += webalizer
     SUBDIR += webbrowser

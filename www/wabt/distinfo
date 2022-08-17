@@ -1,0 +1,11 @@
+TIMESTAMP = 1660702795
+SHA256 (WebAssembly-wabt-1.0.29_GH0.tar.gz) = f770e2a68822d6f42441a911983d231e8637c17162415f599fd3f3415ef35d42
+SIZE (WebAssembly-wabt-1.0.29_GH0.tar.gz) = 1150946
+SHA256 (WebAssembly-testsuite-d42da0117f7a93c6a9127e2b9eec64749152c4c1_GH0.tar.gz) = 7fe2b4c620372bc5804671c6e88c02291d24c11f8721ad9535f0fcd4ca25becc
+SIZE (WebAssembly-testsuite-d42da0117f7a93c6a9127e2b9eec64749152c4c1_GH0.tar.gz) = 639216
+SHA256 (dabeaz-ply-d776a2ece6c12bf8f8b6a0e65b48546ac6078765_GH0.tar.gz) = d9c0be0a3bd2ac09f81700bc808526f91e6e80d87ff619a8cab47c9417c4180d
+SIZE (dabeaz-ply-d776a2ece6c12bf8f8b6a0e65b48546ac6078765_GH0.tar.gz) = 149974
+SHA256 (WebAssembly-wasm-c-api-d9a80099d496b5cdba6f3fe8fc77586e0e505ddc_GH0.tar.gz) = aea8cd095e9937f1e14f2c93e026317b197eb2345e7a817fe3932062eb7b792c
+SIZE (WebAssembly-wasm-c-api-d9a80099d496b5cdba6f3fe8fc77586e0e505ddc_GH0.tar.gz) = 56423
+SHA256 (nodejs-uvwasi-55eff19f4c7e69ec151424a037f951e0ad006ed6_GH0.tar.gz) = 34010745593cfb395fd483a0f65688dcd61e3f16de574edb5d43ea2cfbd57131
+SIZE (nodejs-uvwasi-55eff19f4c7e69ec151424a037f951e0ad006ed6_GH0.tar.gz) = 56469
