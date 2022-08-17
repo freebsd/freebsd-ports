@@ -3,9 +3,13 @@
 # OPTIONS_DEFINE		- List of options this port accepts
 # OPTIONS_DEFINE_${ARCH}	- List of options this port accepts and are
 #				  specific to ${ARCH}
+# OPTIONS_DEFINE_${ABI}		- List of options this port accepts and are
+#				  specific to ${ABI}
 # OPTIONS_DEFAULT		- List of options activated by default
 # OPTIONS_DEFAULT_${ARCH}	- List of options activated by default for a
 #				  given arch
+# OPTIONS_DEFAULT_${ABI}	- List of options activated by default for a
+#				  given ABI
 #
 # ${OPTION}_DESC		- Description of the ${OPTION}
 #
@@ -33,6 +37,7 @@
 #
 # OPTIONS_EXCLUDE		- List of options unsupported (useful for slave ports)
 # OPTIONS_EXCLUDE_${ARCH}	- List of options unsupported on a given ${ARCH}
+# OPTIONS_EXCLUDE_${ABI}	- List of options unsupported for a given ${ABI}
 # OPTIONS_EXCLUDE_${OPSYS}	- List of options unsupported on a given ${OPSYS}
 # OPTIONS_EXCLUDE_${OPSYS}_${OSREL:R} - List of options unsupported on a given
 #				  ${OPSYS} and major version (11/12/13...)
@@ -211,18 +216,29 @@ _OPTIONS_TARGETS=	fetch:300:pre fetch:500:do fetch:700:post \
 			package:300:pre package:500:do package:700:post \
 			stage:800:post
 
-# Add per arch options
-.  for opt in ${OPTIONS_DEFINE_${ARCH}}
+# Add per architecture and ABI options
+_OPTIONS_DEFINE=	${OPTIONS_DEFINE_${ARCH}}
+.  for _abi in ${ABI}
+_OPTIONS_DEFINE+=	${OPTIONS_DEFINE_${_abi}}
+.  endfor
+.  for opt in ${_OPTIONS_DEFINE}
 .    if empty(OPTIONS_DEFINE:M${opt})
 OPTIONS_DEFINE+=	${opt}
 .    endif
 .  endfor
 
-# Add per arch defaults
+# Add per architecture and ABI defaults
 OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${ARCH}}
+.  for _abi in ${ABI}
+OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${_abi}}
+.  endfor
 
-_ALL_EXCLUDE=	${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE} \
-		${OPTIONS_SLAVE} ${OPTIONS_EXCLUDE_${OPSYS}} \
+_ALL_EXCLUDE=	${OPTIONS_EXCLUDE_${ARCH}}
+.  for _abi in ${ABI}
+_ALL_EXCLUDE+=	${OPTIONS_EXCLUDE_${_abi}}
+.  endfor
+_ALL_EXCLUDE+=	${OPTIONS_EXCLUDE} ${OPTIONS_SLAVE} \
+		${OPTIONS_EXCLUDE_${OPSYS}} \
 		${OPTIONS_EXCLUDE_${OPSYS}_${OSREL:R}}
 
 .  for opt in ${OPTIONS_DEFINE:O:u}

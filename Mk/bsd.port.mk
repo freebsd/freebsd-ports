@@ -173,6 +173,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # BROKEN_${ARCH} - Port is believed to be broken on ${ARCH}. Package builds
 #				  can still be attempted using TRYBROKEN to
 #				  test this assumption.
+# BROKEN_${ABI}  - Port is believed to be broken for ${ABI}.  Package builds can
+#				  still be attempted using TRYBROKEN to test this assumption.
 # BROKEN_${OPSYS} - Port is believed to be broken on ${OPSYS}. Package builds
 #				  can still be attempted using TRYBROKEN to
 #				  test this assumption.
@@ -1140,6 +1142,13 @@ PPC_ABI=	ELFv1
 .        endif
 .      endif
 _EXPORTED_VARS+=	PPC_ABI
+.    endif
+
+# Get the ABI
+.    if !defined(ABI)
+.      if (${ARCH:Maarch64*c*} || ${ARCH:Mriscv*c*})
+ABI+=	purecap
+.      endif
 .    endif
 
 # Get operating system versions for a cross build
@@ -2796,6 +2805,11 @@ IGNORE+= "${${f}_IGNORE_${OPSYS}_${v}}"
 .          endif
 .        endfor
 .      endfor
+.      for _abi in ${ABI}
+.        if defined(BROKEN_${_abi})
+_BROKEN_ABI=	yes
+.        endif
+.      endfor
 .      if (defined(IS_INTERACTIVE) && defined(BATCH))
 IGNORE=		is an interactive port
 .      elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
@@ -2822,6 +2836,14 @@ IGNORE=		is marked as broken: ${BROKEN}
 .        if !defined(TRYBROKEN)
 IGNORE=		is marked as broken on ${ARCH}: ${BROKEN_${ARCH}}
 .        endif
+.      elif defined(_BROKEN_ABI)
+.        for _abi in ${ABI}
+.          if defined(BROKEN_${_abi})
+.            if !defined(TRYBROKEN)
+IGNORE=		is marked as broken for ${_abi}: ${BROKEN_${_abi}}
+.            endif
+.          endif
+.        endfor
 .      elif defined(BROKEN_${OPSYS}_${OSREL:R}_${ARCH})
 .        if !defined(TRYBROKEN)
 IGNORE=		is marked as broken on ${OPSYS} ${OSREL} ${ARCH}: ${BROKEN_${OPSYS}_${OSREL:R}_${ARCH}}
