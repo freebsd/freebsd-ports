@@ -1,7 +1,6 @@
-# Created by: Gleb Kurtsou <gleb@FreeBSD.org>
-
 PORTNAME=	pefs
 DISTVERSION=	g20220816
+PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-kmod
 
