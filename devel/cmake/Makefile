@@ -5,6 +5,9 @@ CATEGORIES=	devel
 MASTER_SITES=	https://github.com/Kitware/CMake/releases/download/v${DISTVERSION}/ \
 		https://www.cmake.org/files/v${PORTVERSION}/
 
+BROKEN_purecap=	requires missing CheriABI Python
+USE_PKG64=	1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform Makefile generator
 

@@ -4,6 +4,9 @@ DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
 
+BROKEN_purecap=	requires missing CheriABI Python
+USE_PKG64=	1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Small build system closest in spirit to Make
 
