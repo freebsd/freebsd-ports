@@ -1,11 +1,11 @@
 PORTNAME=	binutils
 PORTVERSION=	2.37
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 
-MAINTAINER?=	jflopezfernandez@gmail.com
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	GNU binary tools
 
 LICENSE=	GPLv3 LGPL3
