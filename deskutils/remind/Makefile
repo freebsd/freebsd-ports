@@ -1,7 +1,7 @@
 # Created by: Lewis Thompson <purple@lewiz.net>
 
 PORTNAME=	remind
-DISTVERSION=	04.00.02
+DISTVERSION=	04.00.03
 CATEGORIES=	deskutils
 # upstream moves distfiles to OLD once a new release appears
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
