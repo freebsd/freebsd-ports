@@ -126,5 +126,7 @@ PKG_VERSION?=		${PKG_BIN} version
 PKG_CREATE?=		${PKG_BIN} create
 PKG_ADD?=		${PKG_BIN} add
 PKG_QUERY?=		${PKG_BIN} query
+PKG_INSTALL?=		${PKG_BIN} install
+PKG_RQUERY?=		${PKG_BIN} rquery
 
 .endif

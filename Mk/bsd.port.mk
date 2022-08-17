@@ -982,6 +982,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  if an existing package is not present.
 # USE_PACKAGE_DEPENDS_ONLY
 #				- Like USE_PACKAGE_DEPENDS, but do not fallback on source.
+# USE_PACKAGE_DEPENDS_REMOTE
+#				- When USE_PACKAGE_DEPENDS{,_ONLY} is enabled, try to use
+#				  a remote repository if a local package does not exist.
+#				  Default: 0 (no effect).
 # INSTALL_AS_USER
 #				- Define this to install as the current user, intended
 #				  for systems where you have no root access.
@@ -4011,8 +4015,11 @@ ${deptype:tl}-depends:
 		dp_DEPENDS_ARGS="${DEPENDS_ARGS}" \
 		dp_USE_PACKAGE_DEPENDS="${USE_PACKAGE_DEPENDS}" \
 		dp_USE_PACKAGE_DEPENDS_ONLY="${USE_PACKAGE_DEPENDS_ONLY}" \
+		dp_USE_PACKAGE_DEPENDS_REMOTE="${USE_PACKAGE_DEPENDS_REMOTE}" \
 		dp_PKG_ADD="${PKG_ADD}" \
 		dp_PKG_INFO="${PKG_INFO}" \
+		dp_PKG_INSTALL="${PKG_INSTALL}" \
+		dp_PKG_RQUERY="${PKG_RQUERY}" \
 		dp_WRKDIR="${WRKDIR}" \
 		dp_PKGNAME="${PKGNAME}" \
 		dp_STRICT_DEPENDS="${STRICT_DEPENDS}" \

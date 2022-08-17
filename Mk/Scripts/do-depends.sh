@@ -9,9 +9,10 @@ set -o pipefail
 
 validate_env dp_RAWDEPENDS dp_DEPTYPE dp_DEPENDS_TARGET dp_DEPENDS_PRECLEAN \
 	dp_DEPENDS_CLEAN dp_DEPENDS_ARGS dp_USE_PACKAGE_DEPENDS \
-	dp_USE_PACKAGE_DEPENDS_ONLY dp_PKG_ADD dp_PKG_INFO dp_WRKDIR \
-	dp_PKGNAME dp_STRICT_DEPENDS dp_LOCALBASE dp_LIB_DIRS dp_SH \
-	dp_SCRIPTSDIR PORTSDIR dp_MAKE dp_MAKEFLAGS dp_OVERLAYS
+	dp_USE_PACKAGE_DEPENDS_ONLY dp_USE_PACKAGE_DEPENDS_REMOTE dp_PKG_ADD \
+	dp_PKG_INFO dp_PKG_INSTALL dp_PKG_RQUERY dp_WRKDIR dp_PKGNAME \
+	dp_STRICT_DEPENDS dp_LOCALBASE dp_LIB_DIRS dp_SH dp_SCRIPTSDIR \
+	PORTSDIR dp_MAKE dp_MAKEFLAGS dp_OVERLAYS
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DO_DEPENDS}" ] && set -x
 
@@ -29,7 +30,8 @@ install_depends()
 
 	port_var_fetch "${origin}" "${depends_args}" \
 	    PKGFILE pkgfile \
-	    PKGBASE pkgbase
+	    PKGBASE pkgbase \
+	    PKGNAME pkgname
 
 	if [ -r "${pkgfile}" -a "${target}" = "${dp_DEPENDS_TARGET}" ]; then
 		echo "===>   Installing existing package ${pkgfile}"
@@ -41,6 +43,11 @@ install_depends()
 		else
 			${dp_PKG_ADD} -A ${pkgfile}
 		fi
+	elif [ -n "${dp_USE_PACKAGE_DEPENDS_REMOTE}" ] &&
+	    ${dp_PKG_RQUERY} %n "${pkgname}" &&
+	    [ "${target}" = "${dp_DEPENDS_TARGET}" ]; then
+		echo "===>   Installing existing package ${pkgname} from a remote repository"
+		${dp_PKG_INSTALL} -qy "${pkgname}"
 	elif [ -n "${dp_USE_PACKAGE_DEPENDS_ONLY}" -a "${target}" = "${dp_DEPENDS_TARGET}" ]; then
 		echo "===>   ${dp_PKGNAME} depends on package: ${pkgfile} - not found" >&2
 		echo "===>   USE_PACKAGE_DEPENDS_ONLY set - not building missing dependency from source" >&2
