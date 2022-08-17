@@ -1,3 +1,50 @@
+  <vuln vid="f12368a8-1e05-11ed-a1ef-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>104.0.5112.101</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/08/stable-channel-update-for-desktop_16.html">
+	  <p>This release contains 11 security fixes, including:</p>
+	  <ul>
+	    <li>[1349322] Critical CVE-2022-2852: Use after free in FedCM. Reported by Sergei Glazunov of Google Project Zero on 2022-08-02</li>
+	    <li>[1337538] High CVE-2022-2854: Use after free in SwiftShader. Reported by Cassidy Kim of Amber Security Lab, OPPO Mobile Telecommunications Corp. Ltd. on 2022-06-18</li>
+	    <li>[1345042] High CVE-2022-2855: Use after free in ANGLE. Reported by Cassidy Kim of Amber Security Lab, OPPO Mobile Telecommunications Corp. Ltd. on 2022-07-16</li>
+	    <li>[1338135] High CVE-2022-2857: Use after free in Blink. Reported by Anonymous on 2022-06-21</li>
+	    <li>[1341918] High CVE-2022-2858: Use after free in Sign-In Flow. Reported by raven at KunLun lab on 2022-07-05</li>
+	    <li>[1350097] High CVE-2022-2853: Heap buffer overflow in Downloads. Reported by Sergei Glazunov of Google Project Zero on 2022-08-04</li>
+	    <li>[1345630] High CVE-2022-2856: Insufficient validation of untrusted input in Intents. Reported by Ashley Shen and Christian Resell of Google Threat Analysis Group on 2022-07-19</li>
+	    <li>[1338412] Medium CVE-2022-2859: Use after free in Chrome OS Shell. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-06-22</li>
+	    <li>[1345193] Medium CVE-2022-2860: Insufficient policy enforcement in Cookies. Reported by Axel Chong on 2022-07-18</li>
+	    <li>[1346236] Medium CVE-2022-2861: Inappropriate implementation in Extensions API. Reported by Rong Jian of VRI on 2022-07-21</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2852</cvename>
+      <cvename>CVE-2022-2853</cvename>
+      <cvename>CVE-2022-2854</cvename>
+      <cvename>CVE-2022-2855</cvename>
+      <cvename>CVE-2022-2856</cvename>
+      <cvename>CVE-2022-2857</cvename>
+      <cvename>CVE-2022-2858</cvename>
+      <cvename>CVE-2022-2859</cvename>
+      <cvename>CVE-2022-2860</cvename>
+      <cvename>CVE-2022-2861</cvename>
+      <url>https://chromereleases.googleblog.com/2022/08/stable-channel-update-for-desktop_16.html</url>
+    </references>
+    <dates>
+      <discovery>2022-08-16</discovery>
+      <entry>2022-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d658042c-1c98-11ed-95f8-901b0e9408dc">
     <topic>dendrite -- Incorrect parsing of the event default power level in event auth</topic>
     <affects>
