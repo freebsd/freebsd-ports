@@ -1068,6 +1068,7 @@
     SUBDIR += py-hared
     SUBDIR += py-hcloud
     SUBDIR += py-honcho
+    SUBDIR += py-howdoi
     SUBDIR += py-hpilo
     SUBDIR += py-iowait
     SUBDIR += py-ioztat
