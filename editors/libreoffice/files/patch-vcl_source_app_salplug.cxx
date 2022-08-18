@@ -1,6 +1,6 @@
---- vcl/source/app/salplug.cxx.orig	2020-05-27 12:17:53 UTC
+--- vcl/source/app/salplug.cxx.orig	2022-05-12 13:26:05 UTC
 +++ vcl/source/app/salplug.cxx
-@@ -152,6 +152,7 @@ SalInstance* autodetect_plugin()
+@@ -202,6 +202,7 @@ const char* const* autodetect_plugin_list()
  #if ENABLE_KF5
          "kf5",
  #endif
@@ -8,12 +8,11 @@
  #if ENABLE_GTK3_KDE5
          "gtk3_kde5",
  #endif
-@@ -160,7 +161,7 @@ SalInstance* autodetect_plugin()
+@@ -216,6 +217,7 @@ const char* const* autodetect_plugin_list()
  
      static const char* const pStandardFallbackList[] =
      {
--        "gtk3", "gen", nullptr
-+        "gtk3", "qt5", "gen", nullptr
-     };
- 
- #ifdef HEADLESS_VCLPLUG
++        "qt5",
+ #if ENABLE_GTK3
+         "gtk3",
+ #endif
