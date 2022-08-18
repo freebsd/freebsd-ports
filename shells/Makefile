@@ -9,6 +9,7 @@
     SUBDIR += bash-static
     SUBDIR += bashc
     SUBDIR += bicon
+    SUBDIR += bosh
     SUBDIR += ch
     SUBDIR += dash
     SUBDIR += elvish

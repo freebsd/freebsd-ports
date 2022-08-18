@@ -2,9 +2,7 @@ PORTNAME=	rscsi
 CATEGORIES=	net
 
 COMMENT=	Remote SCSI transport server program (daemon)
-WWW=		https://codeberg.org/schilytools/schilytools
-
-CONFLICTS=	cdrtools-devel
+WWW=		http://cdrtools.sourceforge.net/private/cdrecord.html
 
 USERS=		rscsi
 GROUPS=		rscsi

@@ -1,0 +1,16 @@
+PORTNAME=	bosh
+CATEGORIES=	shells
+
+COMMENT=	Bourne Shell extended by J. Schilling
+MAINTAINER=	fuz@fuz.su
+WWW=		http://schilytools.sourceforge.net/bosh.html
+
+# bin/bosh
+CONFLICTS_INSTALL=	bosh-cli
+
+MASTERDIR=	${.CURDIR}/../../devel/schilybase
+COMPONENTS=	obosh \
+		pbosh \
+		sh
+
+.include "${MASTERDIR}/Makefile.master"
