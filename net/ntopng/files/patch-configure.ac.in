@@ -1,18 +1,131 @@
---- configure.ac.in.orig	2022-03-14 16:15:57 UTC
+--- configure.ac.in.orig	2022-07-19 08:13:10 UTC
 +++ configure.ac.in
-@@ -236,8 +236,8 @@ PKG_CHECK_MODULES([NDPI], [libndpi >= 2.0], [
- PKG_CHECK_MODULES([NDPI], [libndpi >= 2.0], [
-    NDPI_INC=`echo $NDPI_CFLAGS | sed -e "s/[ ]*$//"`
-    # Use static libndpi library as building against the dynamic library fails
--   NDPI_LIB="-Wl,-Bstatic $NDPI_LIBS -Wl,-Bdynamic"
--   #NDPI_LIB="$NDPI_LIBS"
-+   #NDPI_LIB="-Wl,-Bstatic $NDPI_LIBS -Wl,-Bdynamic"
+@@ -86,56 +86,8 @@ LIBPCAP=-lpcap
+ MAKE=make
+ BIN_PATH=/usr/bin
+ LIBPCAP=-lpcap
++OS=`uname -or | cut -d '-' -f 1`
+ 
+-if test $SYSTEM = "FreeBSD" || test $SYSTEM = "Darwin"; then
+-   CFLAGS="${CFLAGS} -I/usr/local/include"
+-   LDFLAGS="${LDFLAGS} -L/usr/local/lib"
+-
+-   dnl> https://github.com/google/sanitizers/wiki/AddressSanitizerFlags
+-   CC=clang
+-   CXX="clang++ -fPIE"
+-   if test $SYSTEM = "FreeBSD"; then
+-    MAKE=gmake
+-    BIN_PATH=/usr/local/bin
+-   else
+-     dnl> Adds /opt if MacPorts is installed
+-     if [ test -f /opt/local/bin/port ]; then
+-       CFLAGS="${CFLAGS} -I/opt/local/include"
+-       LDFLAGS="${LDFLAGS} -L/opt/local/lib"
+-     fi
+-   fi
+-   dnl> CXX=clang++ -fsanitize=address -fsanitize-address-use-after-scope
+-   OSXV=`sw_vers -productVersion`
+-   if test $SYSTEM = "Darwin"; then
+-     OS="MacOSX $OSXV"
+-   else
+-     OS=`uname -or | cut -d '-' -f 1`
+-   fi
+-   if test $MACHINE = "x86_64"; then
+-      LDFLAGS="${LDFLAGS} -L/usr/local/opt/ntopng"
+-      RES=`g++ -Wall -fno-color-diagnostics Prefs.cpp 2>&1 | grep "unrecognized command line option "|wc -l`
+-      if test $RES -eq 0; then
+-            CFLAGS="-fno-color-diagnostics $CFLAGS"
+-      fi
+-   fi
+-else
+-  if test $SYSTEM = "Linux"; then
+-    if [ test -f /usr/bin/clang++ ]; then
+-      CC=clang
+-      CXX="clang++ -fPIE"
+-      AC_MSG_RESULT(Using clang++ compiler)
+-    fi
+-
+-    if [ test -f /etc/redhat-release ]; then
+-      OS=`cat /etc/redhat-release`
+-    else
+-      if [ test -f /usr/bin/lsb_release ]; then
+-        OS=`/usr/bin/lsb_release -d|cut -d ':' -f 2`
+-      fi
+-    fi
+-  fi
+-fi
+-
+ dnl> Remove spaces
+ OS="${OS#"${OS%%[![:space:]]*}"}"
+ 
+@@ -176,15 +128,6 @@ fi
+   LIBS="${LIBS} -lnetfilter_queue -lnfnetlink -lnetfilter_conntrack"
+ fi
+ 
+-if test -d "/usr/local/include"; then
+-  CFLAGS="${CFLAGS} -I/usr/local/include"
+-  CPPFLAGS="${CPPFLAGS} -I/usr/local/include"
+-fi
+-
+-if test -d "/usr/local/lib"; then
+-  LIBS="${LIBS} -L/usr/local/lib"
+-fi
+-
+ if test -d /opt/local/include; then :
+   CFLAGS="${CFLAGS} -I/opt/local/include"
+   CPPFLAGS="${CPPFLAGS} -I/opt/local/include"
+@@ -238,15 +181,12 @@ AC_ARG_WITH(ndpi-includes,
+       NDPI_CUST_INC="-I$withval -I$withval/../lib/third_party/include"
+    ])
+ 
+-if test -d /usr/local/include/ndpi ; then :
+-   echo "WARNING: /usr/local/include/ndpi is present and might lead to compile errors"
+-fi
+-
+-NDPI_INC=`echo $NDPI_CFLAGS | sed -e "s/[ ]*$//"`
+-NDPI_LIB=
+-NDPI_LIB_DEP=
+-
+-AC_MSG_CHECKING(for nDPI source)
++PKG_CHECK_MODULES([NDPI], [libndpi >= 2.0], [
++   NDPI_INC=`echo $NDPI_CFLAGS | sed -e "s/[ ]*$//"`
 +   NDPI_LIB="$NDPI_LIBS"
-    NDPI_LIB_DEP=
-    ], [
-       AC_MSG_CHECKING(for nDPI source)
-@@ -444,7 +444,7 @@ if test "${with_nedge+set}" != set; then
-  PF_RING_HOME=${HOME}/PF_RING
++   NDPI_LIB_DEP=
++   ], [
++      AC_MSG_CHECKING(for nDPI source)
+       if test -d "./nDPI" ; then :
+          NDPI_HOME=./nDPI
+       elif test -d "../nDPI" ; then :
+@@ -271,8 +211,8 @@ AC_MSG_CHECKING(for nDPI source)
+       else
+          AC_MSG_RESULT(not found)
+       fi
++  ])
+ 
+-
+ if test ! -z "$NDPI_CUST_INC" ; then :
+   NDPI_INC=$NDPI_CUST_INC
+ fi
+@@ -290,7 +230,7 @@ if test $SYSTEM = "FreeBSD"; then
+ dnl finish: nDPI handling
+ 
+ if test $SYSTEM = "FreeBSD"; then
+-   JSON_LIB=/usr/local/lib/libjson-c.a
++   JSON_LIB=%%LOCALBASE%%/lib/libjson-c.a
+    JSON_INC=`pkg-config --cflags json-c`
+ else
+    pkg-config --exists json-c
+@@ -446,7 +386,7 @@ if test "$?" -ne 1; then
+ if test "$?" -ne 1; then
+   HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
+   if test $SYSTEM = "FreeBSD"; then
+-     HIREDIS_LIB="/usr/local/lib/libhiredis.a"
++     HIREDIS_LIB="%%LOCALBASE%%/lib/libhiredis.a"
+    else
+      HIREDIS_LIB="`pkg-config --libs hiredis`"
+   fi
+@@ -467,14 +407,14 @@ if test "${with_nedge+set}" != set; then
+   fi
  
    if test $SYSTEM = "FreeBSD"; then
 -     LIBPCAP="${PF_RING_HOME}/userland/libpcap/libpcap.a"
@@ -20,3 +133,47 @@
    else
      if test -d ${PF_RING_HOME}; then
        AC_MSG_CHECKING(for PF_RING source installed in $PF_RING_HOME)
+     fi
+   fi
+ 
+- if test -f "/usr/local/lib/libpfring.a" || test -f "/opt/pfring/lib/libpfring.a" || test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
++ if test -f "%%LOCALBASE%%/lib/libpfring.a" || test -f "/opt/pfring/lib/libpfring.a" || test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
+   AC_DEFINE_UNQUOTED(HAVE_PF_RING, 1, [Native PF_RING support])
+   if test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
+      echo "${PF_RING_HOME}/userland/libpcap/libpcap.a"
+@@ -494,18 +434,18 @@ if test "${with_nedge+set}" != set; then
+          CPPFLAGS="${CPPFLAGS} -I/opt/pfring/include"
+          echo "Using PF_RING installed in /opt/pfring"
+       else
+-       if test -f "/usr/local/lib/libpfring.a"; then
+-        if test -f "/usr/local/lib/libpcap.a"; then
+-    	  LIBS="${LIBS} /usr/local/lib/libpfring.a"
+-          echo "Using PF_RING installed in /usr/local/lib"
++       if test -f "%%LOCALBASE%%/lib/libpfring.a"; then
++        if test -f "%%LOCALBASE%%/lib/libpcap.a"; then
++    	  LIBS="${LIBS} %%LOCALBASE%%/lib/libpfring.a"
++          echo "Using PF_RING installed in %%LOCALBASE%%/lib"
+ 	  AC_CHECK_LIB([pcap], [pcap_open_live], pcap=true)
+ 	  if test x$pcap = x
+ 	  then
+-	    echo "Found /usr/local/lib/libpfring.a but missing header files."
++	    echo "Found %%LOCALBASE%%/lib/libpfring.a but missing header files."
+ 	    exit 1
+ 	  fi
+ 	else
+-	  echo "Found /usr/local/lib/libpfring.a  but missing libpcap.a in the same directory"
++	  echo "Found %%LOCALBASE%%/lib/libpfring.a  but missing libpcap.a in the same directory"
+ 	  echo "Please make sure you have installed your PF_RING libraries and try again"
+ 	  exit 1
+         fi
+@@ -654,8 +594,8 @@ if test $SYSTEM = "FreeBSD"; then
+ fi
+ 
+ if test $SYSTEM = "FreeBSD"; then
+-   MYSQL_LIB=/usr/local/lib/mysql/libmysqlclient.a
+-    MYSQL_INC="-I /usr/local/include/mysql/"
++   MYSQL_LIB=%%LOCALBASE%%/lib/mysql/libmysqlclient.a
++    MYSQL_INC="-I %%LOCALBASE%%/include/mysql/"
+    AC_DEFINE_UNQUOTED(HAVE_MYSQL, 1, [use mysql])
+ else
+  if test "${with_nedge+set}" != set; then
