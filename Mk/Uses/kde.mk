@@ -709,7 +709,7 @@ kde-kdav_PORT=			net/kf5-kdav
 kde-kdav_LIB=			libKF5DAV.so
 
 kde-kdepim-addons_PORT=	deskutils/kdepim-addons
-kde-kdepim-addons_PATH=	${KDE_PREFIX}/lib/contacteditor/editorpageplugins/cryptopageplugin.so
+kde-kdepim-addons_PATH=	${QT_PLUGINDIR}/pim5/contacteditor/editorpageplugins/cryptopageplugin.so
 
 kde-kdepim-runtime5_PORT=	deskutils/kdepim-runtime
 kde-kdepim-runtime5_PATH=	${KDE_PREFIX}/bin/gidmigrator
