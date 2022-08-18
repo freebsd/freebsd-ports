@@ -1,3 +1,5 @@
 TIMESTAMP = 1659645131
 SHA256 (KhronosGroup-Vulkan-Loader-v1.3.224_GH0.tar.gz) = 702a974c460c668a9469a4614aed0b06602e5031154a67bc195429f4604bf51e
 SIZE (KhronosGroup-Vulkan-Loader-v1.3.224_GH0.tar.gz) = 1595042
+SHA256 (KhronosGroup-Vulkan-Headers-v1.3.224_GH0.tar.gz) = 8829272058455c6ba393df66b9fac3ae3617eb0df48c860e225ceb1622fa7700
+SIZE (KhronosGroup-Vulkan-Headers-v1.3.224_GH0.tar.gz) = 1521224

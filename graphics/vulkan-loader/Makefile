@@ -18,6 +18,11 @@ GH_PROJECT=	Vulkan-Loader
 CMAKE_ON=	CMAKE_SKIP_RPATH
 CMAKE_OFF=	BUILD_TESTS
 
+.if ${DISTVERSION:E} < 225
+GH_TUPLE+=	KhronosGroup:Vulkan-Headers:v1.3.224:vkheaders/external/Vulkan-Headers
+CFLAGS+=	-isystem${LOCALBASE}/include
+.endif
+
 OPTIONS_DEFINE=	WAYLAND XCB XLIB
 OPTIONS_DEFAULT=WAYLAND XCB XLIB
 
