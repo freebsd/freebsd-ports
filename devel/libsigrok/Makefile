@@ -1,6 +1,6 @@
 PORTNAME=	libsigrok
 PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libsigrok/
 
@@ -11,12 +11,15 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	doxygen:devel/doxygen
-LIB_DEPENDS=	libftdi1.so:devel/libftdi1 \
+LIB_DEPENDS=	libhidapi.so:comms/hidapi \
+		libcheck.so:devel/check \
+		libftdi1.so:devel/libftdi1 \
 		libserialport.so:devel/libserialport \
 		libvisa.so:devel/librevisa \
 		libzip.so:archivers/libzip
 
-USES=		compiler:c11 gnome pathfix libtool pkgconfig
+USES=		compiler:c11 gnome pathfix libtool pkgconfig \
+		python:-3.9,build shared-mime-info
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
