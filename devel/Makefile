@@ -1632,6 +1632,7 @@
     SUBDIR += onetbb
     SUBDIR += oniguruma
     SUBDIR += open-beagle
+    SUBDIR += open62541
     SUBDIR += opencl
     SUBDIR += opencl-clang
     SUBDIR += opencvs

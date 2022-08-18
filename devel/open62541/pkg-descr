@@ -1,0 +1,8 @@
+open62541 is an open source and free implementation of OPC UA (OPC
+Unified Architecture) written in the common subset of the C99 and
+C++98 languages. The library implements the OPC UA binary protocol
+stack as well as a client and server SDK. The final server binaries
+can be well under 100kb, depending on the selected features and the
+size of the information model.
+
+WWW: http://open62541.org/
