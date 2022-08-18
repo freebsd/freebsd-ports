@@ -23,6 +23,8 @@
 _INCLUDE_USES_LINUX_MK=	yes
 _USES_POST+=		linux
 
+IGNORE=	Linux compatibility is not supported on CheriBSD yet
+
 .  if empty(linux_ARGS)
 .    if exists(${LINUXBASE}/etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7)
 linux_ARGS=		c7
