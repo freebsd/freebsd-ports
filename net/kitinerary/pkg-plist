@@ -48,6 +48,7 @@ include/KPim/KItinerary/ScriptExtractor
 include/KPim/KItinerary/SortUtil
 include/KPim/KItinerary/Taxi
 include/KPim/KItinerary/Ticket
+include/KPim/KItinerary/Token
 include/KPim/KItinerary/TrainTrip
 include/KPim/KItinerary/Uic9183Block
 include/KPim/KItinerary/Uic9183Header
@@ -112,6 +113,7 @@ include/KPim/kitinerary/ssbv2ticket.h
 include/KPim/kitinerary/ssbv3ticket.h
 include/KPim/kitinerary/taxi.h
 include/KPim/kitinerary/ticket.h
+include/KPim/kitinerary/token.h
 include/KPim/kitinerary/traintrip.h
 include/KPim/kitinerary/uic9183block.h
 include/KPim/kitinerary/uic9183header.h
@@ -160,6 +162,7 @@ share/locale/ru/LC_MESSAGES/kitinerary.mo
 share/locale/sk/LC_MESSAGES/kitinerary.mo
 share/locale/sl/LC_MESSAGES/kitinerary.mo
 share/locale/sv/LC_MESSAGES/kitinerary.mo
+share/locale/tr/LC_MESSAGES/kitinerary.mo
 share/locale/uk/LC_MESSAGES/kitinerary.mo
 share/locale/zh_CN/LC_MESSAGES/kitinerary.mo
 share/locale/zh_TW/LC_MESSAGES/kitinerary.mo

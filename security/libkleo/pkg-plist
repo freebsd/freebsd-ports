@@ -21,7 +21,6 @@ include/KF5/Libkleo/Libkleo/Formatting
 include/KF5/Libkleo/Libkleo/GnuPG
 include/KF5/Libkleo/Libkleo/Hex
 include/KF5/Libkleo/Libkleo/KConfigBasedKeyFilter
-include/KF5/Libkleo/Libkleo/KDHorizontalLine
 include/KF5/Libkleo/Libkleo/KeyApprovalDialog
 include/KF5/Libkleo/Libkleo/KeyCache
 include/KF5/Libkleo/Libkleo/KeyFilter
@@ -34,6 +33,7 @@ include/KF5/Libkleo/Libkleo/KeyList
 include/KF5/Libkleo/Libkleo/KeyListModel
 include/KF5/Libkleo/Libkleo/KeyListModelInterface
 include/KF5/Libkleo/Libkleo/KeyListSortFilterProxyModel
+include/KF5/Libkleo/Libkleo/KeyListView
 include/KF5/Libkleo/Libkleo/KeyRearrangeColumnsProxyModel
 include/KF5/Libkleo/Libkleo/KeyRequester
 include/KF5/Libkleo/Libkleo/KeyResolver
@@ -53,6 +53,7 @@ include/KF5/Libkleo/Libkleo/SCDaemon
 include/KF5/Libkleo/Libkleo/Stl_Util
 include/KF5/Libkleo/Libkleo/StringUtils
 include/KF5/Libkleo/Libkleo/SubkeyListModel
+include/KF5/Libkleo/Libkleo/SystemInfo
 include/KF5/Libkleo/Libkleo/Test
 include/KF5/Libkleo/Libkleo/UniqueLock
 include/KF5/Libkleo/Libkleo/UserIDListModel
@@ -78,7 +79,6 @@ include/KF5/Libkleo/libkleo/formatting.h
 include/KF5/Libkleo/libkleo/gnupg.h
 include/KF5/Libkleo/libkleo/hex.h
 include/KF5/Libkleo/libkleo/kconfigbasedkeyfilter.h
-include/KF5/Libkleo/libkleo/kdhorizontalline.h
 include/KF5/Libkleo/libkleo/keyapprovaldialog.h
 include/KF5/Libkleo/libkleo/keycache.h
 include/KF5/Libkleo/libkleo/keyfilter.h
@@ -91,6 +91,7 @@ include/KF5/Libkleo/libkleo/keylist.h
 include/KF5/Libkleo/libkleo/keylistmodel.h
 include/KF5/Libkleo/libkleo/keylistmodelinterface.h
 include/KF5/Libkleo/libkleo/keylistsortfilterproxymodel.h
+include/KF5/Libkleo/libkleo/keylistview.h
 include/KF5/Libkleo/libkleo/keyrearrangecolumnsproxymodel.h
 include/KF5/Libkleo/libkleo/keyrequester.h
 include/KF5/Libkleo/libkleo/keyresolver.h
@@ -111,6 +112,7 @@ include/KF5/Libkleo/libkleo/scdaemon.h
 include/KF5/Libkleo/libkleo/stl_util.h
 include/KF5/Libkleo/libkleo/stringutils.h
 include/KF5/Libkleo/libkleo/subkeylistmodel.h
+include/KF5/Libkleo/libkleo/systeminfo.h
 include/KF5/Libkleo/libkleo/test.h
 include/KF5/Libkleo/libkleo/uniquelock.h
 include/KF5/Libkleo/libkleo/useridlistmodel.h

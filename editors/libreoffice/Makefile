@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -99,7 +99,8 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
-DISTFILES+=	skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz:src
+DISTFILES+=	dragonbox-1.1.0.tar.gz:src
+DISTFILES+=	skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -214,7 +215,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-4699.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-5058.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -236,7 +237,7 @@ SDK_CONFIGURE_ON=	--with-doxygen=${LOCALBASE}/bin/doxygen
 SDK_DISTFILES=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
 
 TEST_ALL_TARGET=	build
-TEST_ALL_TARGET_OFF=	build-nocheck
+TEST_ALL_TARGET_OFF=	build
 TEST_CONFIGURE_ENABLE=	cve-tests
 
 WEBDAV_CONFIGURE_ON=	--with-webdav=neon
@@ -269,7 +270,9 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-cuckoo \
 		--with-system-curl \
 		--with-system-dicts \
+		--with-system-dragonbox=no \
 		--with-system-gpgmepp \
+		--with-system-libfixmath=no \
 		--with-system-libs \
 		--with-system-libxml \
 		--with-system-mdds \
@@ -293,7 +296,8 @@ CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		ICU_LIBS="`icu-config --ldflags`" \
 		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`" \
-		ZXING_CFLAGS=-I/usr/local/include/ZXing \
+		ZXING_CFLAGS="-I${LOCALBASE}/include/ZXing \
+		CPLUS_INCLUDE_PATH="-I${LOCALBASE}/include \
 		ac_cv_path_SED=${LOCALBASE}/bin/gsed
 
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
@@ -305,6 +309,8 @@ MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
 MAKE_ENV+=	verbose=1
 
+#MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
@@ -313,7 +319,7 @@ MAKE_ENV+=	verbose=1
     (${OSVERSION} >= 1300525 && ${OSVERSION} < 1301000) || \
     (${OSVERSION} >= 1301500 && ${OSVERSION} < 1301502) || \
     (${OSVERSION} >= 1400051 && ${OSVERSION} < 1400057))
-BROKEN= please update FreeBSD base system first to fix an ABI incompatibility
+BROKEN=	please update FreeBSD base system first to fix an ABI incompatibility
 .endif
 
 .if ${ARCH:Mpowerpc*}

@@ -3,7 +3,6 @@ include/KF5/CalendarSupport/CalendarSupport/CalPrintDefaultPlugins
 include/KF5/CalendarSupport/CalendarSupport/CalPrintPluginBase
 include/KF5/CalendarSupport/CalendarSupport/CalPrinter
 include/KF5/CalendarSupport/CalendarSupport/CalendarSingleton
-include/KF5/CalendarSupport/CalendarSupport/CategoryConfig
 include/KF5/CalendarSupport/CalendarSupport/CategoryHierarchyReader
 include/KF5/CalendarSupport/CalendarSupport/CellItem
 include/KF5/CalendarSupport/CalendarSupport/CollectionSelection
@@ -15,10 +14,8 @@ include/KF5/CalendarSupport/CalendarSupport/FreePeriodModel
 include/KF5/CalendarSupport/CalendarSupport/IdentityManager
 include/KF5/CalendarSupport/CalendarSupport/IncidenceViewer
 include/KF5/CalendarSupport/CalendarSupport/KCalPrefs
-include/KF5/CalendarSupport/CalendarSupport/KDatePickerPopup
 include/KF5/CalendarSupport/CalendarSupport/MessageWidget
 include/KF5/CalendarSupport/CalendarSupport/NoteEditDialog
-include/KF5/CalendarSupport/CalendarSupport/Plugin
 include/KF5/CalendarSupport/CalendarSupport/PrintPlugin
 include/KF5/CalendarSupport/CalendarSupport/UriHandler
 include/KF5/CalendarSupport/CalendarSupport/Utils
@@ -28,7 +25,6 @@ include/KF5/CalendarSupport/calendarsupport/calendarsupport_export.h
 include/KF5/CalendarSupport/calendarsupport/calprintdefaultplugins.h
 include/KF5/CalendarSupport/calendarsupport/calprinter.h
 include/KF5/CalendarSupport/calendarsupport/calprintpluginbase.h
-include/KF5/CalendarSupport/calendarsupport/categoryconfig.h
 include/KF5/CalendarSupport/calendarsupport/categoryhierarchyreader.h
 include/KF5/CalendarSupport/calendarsupport/cellitem.h
 include/KF5/CalendarSupport/calendarsupport/collectionselection.h
@@ -41,10 +37,8 @@ include/KF5/CalendarSupport/calendarsupport/identitymanager.h
 include/KF5/CalendarSupport/calendarsupport/incidenceviewer.h
 include/KF5/CalendarSupport/calendarsupport/kcalprefs.h
 include/KF5/CalendarSupport/calendarsupport/kcalprefs_base.h
-include/KF5/CalendarSupport/calendarsupport/kdatepickerpopup.h
 include/KF5/CalendarSupport/calendarsupport/messagewidget.h
 include/KF5/CalendarSupport/calendarsupport/noteeditdialog.h
-include/KF5/CalendarSupport/calendarsupport/plugin.h
 include/KF5/CalendarSupport/calendarsupport/printplugin.h
 include/KF5/CalendarSupport/calendarsupport/ui_calprintdayconfig_base.h
 include/KF5/CalendarSupport/calendarsupport/ui_calprintincidenceconfig_base.h
@@ -62,7 +56,6 @@ lib/libKF5CalendarSupport.so
 lib/libKF5CalendarSupport.so.5
 lib/libKF5CalendarSupport.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_CalendarSupport.pri
-share/kservicetypes5/calendarplugin.desktop
 share/locale/ar/LC_MESSAGES/calendarsupport.mo
 share/locale/az/LC_MESSAGES/calendarsupport.mo
 share/locale/be/LC_MESSAGES/calendarsupport.mo

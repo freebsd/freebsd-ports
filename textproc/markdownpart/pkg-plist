@@ -27,6 +27,9 @@ share/locale/ru/LC_MESSAGES/markdownpart.mo
 share/locale/sk/LC_MESSAGES/markdownpart.mo
 share/locale/sl/LC_MESSAGES/markdownpart.mo
 share/locale/sv/LC_MESSAGES/markdownpart.mo
+share/locale/tr/LC_MESSAGES/markdownpart.mo
 share/locale/uk/LC_MESSAGES/markdownpart.mo
+share/locale/vi/LC_MESSAGES/markdownpart.mo
 share/locale/zh_CN/LC_MESSAGES/markdownpart.mo
+share/locale/zh_TW/LC_MESSAGES/markdownpart.mo
 share/metainfo/org.kde.markdownpart.metainfo.xml

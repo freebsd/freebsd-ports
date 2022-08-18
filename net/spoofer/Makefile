@@ -1,6 +1,5 @@
 PORTNAME=	spoofer
-DISTVERSION=	1.4.7
-PORTREVISION=	5
+DISTVERSION=	1.4.11
 CATEGORIES=	net
 MASTER_SITES=	https://www.caida.org/projects/spoofer/downloads/
 
@@ -15,8 +14,8 @@ RUN_DEPENDS=	scamper:net/scamper
 
 USES=		compiler:c++11-lib
 
-CONFIGURE_ARGS=	--disable-development --with-protobuf=${LOCALBASE}
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-development --with-protobuf=${LOCALBASE}
 
 PORTDOCS=	README
 
@@ -24,9 +23,9 @@ OPTIONS_DEFINE=	DOCS GUI
 OPTIONS_DEFAULT=GUI
 OPTIONS_SUB=	yes
 
-GUI_CONFIGURE_ENABLE=	manager
-GUI_USE=	GL=gl QT=buildtools_build,qmake_build,core,network,gui,widgets
 GUI_USES=	gl qt:5
+GUI_USE=	GL=gl QT=buildtools_build,qmake_build,core,network,gui,widgets
+GUI_CONFIGURE_ENABLE=	manager
 GUI_VARS=	USE_RC_SUBR=${PORTNAME}
 
 do-install-DOCS-on:

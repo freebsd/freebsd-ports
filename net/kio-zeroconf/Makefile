@@ -1,4 +1,4 @@
-PORTNAME=	zeroconf-ioslave
+PORTNAME=	kio-zeroconf
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	net kde kde-applications
 

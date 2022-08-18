@@ -24,7 +24,7 @@ share/kde4/services/khelpcenter.desktop
 %%DATADIR%%/plugins/info.desktop
 %%DATADIR%%/plugins/kcontrolmodules.desktop
 %%DATADIR%%/plugins/kicmodules.desktop
-%%DATADIR%%/plugins/kioslaves.desktop
+%%DATADIR%%/plugins/kioworkers.desktop
 %%DATADIR%%/plugins/konquerorcontrolmodules.desktop
 %%DATADIR%%/plugins/onlinehelp.desktop
 %%DATADIR%%/plugins/othercontrolmodules.desktop
