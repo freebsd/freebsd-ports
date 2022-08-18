@@ -1073,6 +1073,7 @@
     SUBDIR += py-iowait
     SUBDIR += py-ioztat
     SUBDIR += py-jailconf
+    SUBDIR += py-keep
     SUBDIR += py-leviathan
     SUBDIR += py-liquidctl
     SUBDIR += py-mitogen
