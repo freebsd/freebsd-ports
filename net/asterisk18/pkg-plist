@@ -54,6 +54,7 @@
 @sample %%ETCDIR%%/festival.conf.sample
 @sample %%ETCDIR%%/followme.conf.sample
 @sample %%ETCDIR%%/func_odbc.conf.sample
+@sample %%ETCDIR%%/geolocation.conf.sample
 @sample %%ETCDIR%%/hep.conf.sample
 @sample %%ETCDIR%%/http.conf.sample
 @sample %%ETCDIR%%/iax.conf.sample
@@ -262,6 +263,7 @@ include/asterisk/res_aeap.h
 include/asterisk/res_aeap_message.h
 include/asterisk/res_audiosocket.h
 include/asterisk/res_fax.h
+include/asterisk/res_geolocation.h
 include/asterisk/res_hep.h
 include/asterisk/res_mwi_external.h
 include/asterisk/res_odbc.h
