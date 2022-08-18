@@ -1,4 +1,4 @@
-bin/ck-unlock-session
+%%CONSOLEKIT%%bin/ck-unlock-session
 include/KScreenLocker/KScreenLocker/KsldApp
 include/KScreenLocker/KScreenLocker/kscreenlocker_export.h
 include/KScreenLocker/KScreenLocker/ksldapp.h

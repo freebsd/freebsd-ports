@@ -7,11 +7,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 secure lock screen architecture
 WWW=		https://www.kde.org/plasma-desktop
 
-BUILD_DEPENDS=	ck-list-sessions:sysutils/consolekit2
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
-RUN_DEPENDS=	ck-list-sessions:sysutils/consolekit2\
-		dbus-send:devel/dbus
+RUN_DEPENDS=	dbus-send:devel/dbus
 
 USES=		cmake compiler:c++11-lib cpe gettext kde:5 pkgconfig qt:5 \
 		shebangfix tar:xz xorg
@@ -29,4 +27,18 @@ CPE_VENDOR=	kde
 
 SHEBANG_FILES=	updaters/ksreenlocker_5_3_separate_autologin.pl
 
-.include <bsd.port.mk>
+OPTIONS_DEFINE=		CONSOLEKIT
+OPTIONS_DEFAULT=	CONSOLEKIT
+OPTIONS_SUB=		yes
+CONSOLEKIT_DESC=	Depend on Console Kit
+
+OPTIONS_EXCLUDE_purecap=	CONSOLEKIT
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MCONSOLEKIT}
+BUILD_DEPENDS=	ck-list-sessions:sysutils/consolekit2
+RUN_DEPENDS+=	ck-list-sessions:sysutils/consolekit2
+.endif
+
+.include <bsd.port.post.mk>
