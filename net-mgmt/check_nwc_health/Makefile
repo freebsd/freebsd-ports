@@ -1,5 +1,5 @@
 PORTNAME=	check_nwc_health
-PORTVERSION=	10.2.1
+PORTVERSION=	10.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
@@ -21,6 +21,10 @@ NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios
 USERS=		${NAGIOSUSER}
 GROUPS=		${NAGIOSGROUP}
+
+RUN_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
+		p5-JSON-XS>=4.0:converters/p5-JSON-XS \
+		p5-JSON>=4.0:converters/p5-JSON
 
 PLIST_FILES=	libexec/check_nwc_health
 
