@@ -1,5 +1,5 @@
 PORTNAME=	recog
-PORTVERSION=	2.3.21
+PORTVERSION=	2.3.23
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ USES=		gem python:env shebangfix
 USE_RUBY=	yes
 
 NO_ARCH=	yes
-SHEBANG_FILES=	update_cpes.py
+SHEBANG_FILES=	update_cpes.py .vscode/bin/monitor-recog-fingerprints.sh
 PLIST_FILES=	bin/recog_cleanup \
 		bin/recog_export \
 		bin/recog_match \
