@@ -1,0 +1,31 @@
+https://github.com/google/boringssl/commit/387f82054c8ffa7d2b9e31d908586fbd47f34039
+
+Limit _XOPEN_SOURCE to Linux.
+
+POSIX feature macros are a mess. Reportedly, FreeBSD also breaks with
+_XOPEN_SOURCE, so try leaving it unset by default.
+
+Update-Note: It's possible this will break yet another obscure UNIX.
+Hopefully we can eventually find a combination that works?
+
+Bug: 471
+Change-Id: I103f8093110d343789b9c5a22eb056ab78d9cd14
+Reviewed-on: https://boringssl-review.googlesource.com/c/boringssl/+/51145
+Reviewed-by: Adam Langley <agl@google.com>
+
+
+--- ../boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl/CMakeLists.txt.orig	2022-08-19 10:54:32.212105000 +0200
++++ ../boring-e1c719c0964ba37e6935355e9bf19821b072797e/boring-sys/deps/boringssl/CMakeLists.txt	2022-08-19 10:55:12.577991000 +0200
+@@ -21,8 +21,11 @@ endif()
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden -fno-common -std=c11")
+ endif()
+ 
+-# pthread_rwlock_t requires a feature flag.
+-if(NOT WIN32)
++# pthread_rwlock_t on Linux requires a feature flag. We limit this to Linux
++# because, on Apple platforms, it instead disables APIs we use. See compat(5)
++# and sys/cdefs.h. Reportedly, FreeBSD also breaks when this is set. See
++# https://crbug.com/boringssl/471.
++if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_XOPEN_SOURCE=700")
+ endif()
