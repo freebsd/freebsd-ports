@@ -7,8 +7,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Platform Theme integration plugins for the Plasma workspaces
 WWW=		https://www.kde.org/plasma-desktop
 
-RUN_DEPENDS=	hack-font>=0:x11-fonts/hack-font
-
 USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 \
 		shebangfix tar:xz xorg
 USE_KDE=	auth bookmarks breeze codecs completion config configwidgets \
@@ -36,4 +34,12 @@ BIG_DESC=	Use complete noto
 LIGHT_RUN_DEPENDS=	noto-basic>=0:x11-fonts/noto-basic
 BIG_RUN_DEPENDS=	noto>=0:x11-fonts/noto
 
-.include <bsd.port.mk>
+OPTIONS_EXCLUDE_purecap=	LIGHT BIG
+
+.include <bsd.port.pre.mk>
+
+.if !${ABI:Mpurecap}
+RUN_DEPENDS=	hack-font>=0:x11-fonts/hack-font
+.endif
+
+.include <bsd.port.post.mk>
