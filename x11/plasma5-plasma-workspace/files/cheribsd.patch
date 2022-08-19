@@ -1,0 +1,66 @@
+diff -ru CMakeLists.txt CMakeLists.txt
+--- CMakeLists.txt	2022-07-11 12:04:40.000000000 +0100
++++ CMakeLists.txt	2022-08-19 15:52:03.056321000 +0100
+@@ -37,10 +37,11 @@
+ include(ECMGenerateExportHeader)
+ 
+ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+-                    Plasma DocTools Runner Notifications NotifyConfig Su NewStuff Wallet IdleTime
++                    Plasma Runner Notifications NotifyConfig Su NewStuff Wallet IdleTime
+                     Declarative I18n KCMUtils TextWidgets Crash GlobalAccel DBusAddons Wayland
+                     CoreAddons People ActivitiesStats Activities KIO Prison PlasmaQuick Package
+-                    GuiAddons Archive ItemModels IconThemes UnitConversion ItemModels Init TextEditor)
++                    GuiAddons Archive ItemModels IconThemes UnitConversion ItemModels Init TextEditor
++                    OPTIONAL_COMPONENTS DocTools)
+ 
+ find_package(KDED CONFIG REQUIRED)
+ 
+@@ -70,7 +71,7 @@
+                        TYPE RECOMMENDED
+                        PURPOSE "Needed for the File Search runner."
+                       )
+-find_package(Qalculate REQUIRED)
++find_package(Qalculate)
+ set_package_properties(Qalculate PROPERTIES DESCRIPTION "Qalculate Library"
+                        URL "https://qalculate.github.io/"
+                        PURPOSE "Needed for precise computation in the calculator runner."
+@@ -229,7 +230,9 @@
+ 
+ option(PLASMA_WAYLAND_DEFAULT_SESSION "Use Wayland session by default for Plasma" FALSE)
+ 
+-add_subdirectory(doc)
++if(KF5DocTools_FOUND)
++  add_subdirectory(doc)
++endif()
+ add_subdirectory(libkworkspace)
+ add_subdirectory(libdbusmenuqt)
+ add_subdirectory(appmenu)
+diff -ru runners/CMakeLists.txt runners/CMakeLists.txt
+--- runners/CMakeLists.txt	2022-07-11 12:02:54.000000000 +0100
++++ runners/CMakeLists.txt	2022-08-19 15:54:00.410883000 +0100
+@@ -2,7 +2,9 @@
+  add_subdirectory(baloo)
+ endif()
+ add_subdirectory(bookmarks)
+-add_subdirectory(calculator)
++if (QALCULATE_FOUND)
++    add_subdirectory(calculator)
++endif()
+ add_subdirectory(helprunner)
+ add_subdirectory(locations)
+ add_subdirectory(places)
+diff -ru shell/main.cpp shell/main.cpp
+--- shell/main.cpp	2022-07-11 12:02:54.000000000 +0100
++++ shell/main.cpp	2022-08-19 16:03:07.072224000 +0100
+@@ -55,9 +55,11 @@
+ 
+ int main(int argc, char *argv[])
+ {
++#if QT_CONFIG(qml_debug)
+     if (qEnvironmentVariableIsSet("PLASMA_ENABLE_QML_DEBUG")) {
+         QQmlDebuggingEnabler debugger;
+     }
++#endif
+     // Plasma scales itself to font DPI
+     // on X, where we don't have compositor scaling, this generally works fine.
+     // also there are bugs on older Qt, especially when it comes to fractional scaling
