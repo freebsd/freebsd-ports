@@ -187,6 +187,7 @@
     SUBDIR += feh
     SUBDIR += fig2sxd
     SUBDIR += figurine
+    SUBDIR += filament
     SUBDIR += filmulator
     SUBDIR += flam3
     SUBDIR += flasm
