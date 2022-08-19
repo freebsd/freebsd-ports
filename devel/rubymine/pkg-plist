@@ -444,7 +444,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/lib/asm-tree-9.2.jar
 %%DATADIR%%/lib/asm-util-9.2.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-RM-222.3345.111
+%%DATADIR%%/lib/build-marker-RM-222.3739.56
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/dbus-java-3.2.1.jar
@@ -1066,6 +1066,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/bin/xkbcomp
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/fontconfig/fonts.conf
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/fontconfig/fonts/DejaVuLGCSans.ttf
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libEGL.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libGL.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libGLX.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libGLdispatch.so.0
@@ -1093,6 +1094,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libavahi-client.so.3
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libavahi-common.so.3
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libbz2.so.1
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libcairo.so.2
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libcap.so.2
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libcom_err.so.2
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libcrypto.so.10
@@ -1109,6 +1111,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libfreebl3.so
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libfreeblpriv3.so
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libfreetype.so.6
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libfribidi.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libgbm.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libgcrypt.so.11
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libgio-2.0.so.0
@@ -1129,6 +1132,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libnssckbi.so
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libnssdbm3.so
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libnssutil3.so
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libpango-1.0.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libpci.so.3
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libpcre.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libpixman-1.so.0
@@ -1143,8 +1147,11 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libssl3.so
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libstdc++.so.6
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libsystemd.so.0
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libthai.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libuuid.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libwayland-server.so.0
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libxcb-render.so.0
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libxcb-shm.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libxcb.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libxkbcommon.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libxkbfile.so.1
@@ -1163,7 +1170,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rb/cov_starter.rb
 %%DATADIR%%/plugins/ruby/rb/gems/debase-0.2.5.beta2.gem
 %%DATADIR%%/plugins/ruby/rb/gems/debase-2.3.8.gem
-%%DATADIR%%/plugins/ruby/rb/gems/debase-3.0.0.beta.4.gem
+%%DATADIR%%/plugins/ruby/rb/gems/debase-3.0.0.beta.5.gem
 %%DATADIR%%/plugins/ruby/rb/gems/debug_preloader.rb
 %%DATADIR%%/plugins/ruby/rb/gems/rcov-0.9.9.jb-java.gem
 %%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-base-0.10.5.jb2-x86-mswin32.gem
@@ -1173,7 +1180,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-base19x-0.11.32.gem
 %%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-ide-0.7.3.gem
 %%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-ide-2.3.8.gem
-%%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-ide-3.0.0.beta.4.gem
+%%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-ide-3.0.0.beta.5.gem
 %%DATADIR%%/plugins/ruby/rb/gems/rubymine_debug_anything.rb
 %%DATADIR%%/plugins/ruby/rb/gems/rubymine_jruby_debug.rb
 %%DATADIR%%/plugins/ruby/rb/gems/rubymine_passenger_debug.rb
