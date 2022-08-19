@@ -1,7 +1,3 @@
-TIMESTAMP = 1657035129
-SHA256 (cboxdoerfer-fsearch-0.1.4_GH0.tar.gz) = 289c19136f89712100ff8f6ad4e7cbbdfbd2938a7c076c85c45658f5c36fc7fd
-SIZE (cboxdoerfer-fsearch-0.1.4_GH0.tar.gz) = 506441
-SHA256 (7f602118e0de9f524e71.diff) = e8450734c460fc837dbde12e15f97dcb4fb4af376516acbae9cf7874bc07f531
-SIZE (7f602118e0de9f524e71.diff) = 695
-SHA256 (f0ee01b40156ddb36651.diff) = ce12c4b2212189abe2d8a8839c81d3105be71781aa7fce30851dcac7f9ef9beb
-SIZE (f0ee01b40156ddb36651.diff) = 1747
+TIMESTAMP = 1660758625
+SHA256 (cboxdoerfer-fsearch-0.2.1_GH0.tar.gz) = 5fb8f8280ea4417d949b055bbd576161a42d360727abea3d7e9c9300c978a650
+SIZE (cboxdoerfer-fsearch-0.2.1_GH0.tar.gz) = 675832
