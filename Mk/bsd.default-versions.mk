@@ -51,7 +51,7 @@ FPC_DEFAULT?=		3.2.2
 .  if ${ARCH} == "powerpcspe"
 GCC_DEFAULT?=		8
 .  else
-GCC_DEFAULT?=		11
+GCC_DEFAULT?=		12
 .  endif
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
