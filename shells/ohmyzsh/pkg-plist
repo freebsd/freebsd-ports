@@ -29,6 +29,8 @@
 %%DATADIR%%/oh-my-zsh.sh
 %%DATADIR%%/plugins/1password/1password.plugin.zsh
 %%DATADIR%%/plugins/1password/README.md
+%%DATADIR%%/plugins/1password/_opswd
+%%DATADIR%%/plugins/1password/opswd
 %%DATADIR%%/plugins/adb/README.md
 %%DATADIR%%/plugins/adb/_adb
 %%DATADIR%%/plugins/ag/README.md
@@ -71,8 +73,6 @@
 %%DATADIR%%/plugins/bedtools/_bedtools
 %%DATADIR%%/plugins/bgnotify/README.md
 %%DATADIR%%/plugins/bgnotify/bgnotify.plugin.zsh
-%%DATADIR%%/plugins/boot2docker/README.md
-%%DATADIR%%/plugins/boot2docker/_boot2docker
 %%DATADIR%%/plugins/bower/README.md
 %%DATADIR%%/plugins/bower/_bower
 %%DATADIR%%/plugins/bower/bower.plugin.zsh
@@ -92,8 +92,6 @@
 %%DATADIR%%/plugins/capistrano/README.md
 %%DATADIR%%/plugins/capistrano/_capistrano
 %%DATADIR%%/plugins/capistrano/capistrano.plugin.zsh
-%%DATADIR%%/plugins/cargo/README.md
-%%DATADIR%%/plugins/cargo/cargo.plugin.zsh
 %%DATADIR%%/plugins/cask/README.md
 %%DATADIR%%/plugins/cask/cask.plugin.zsh
 %%DATADIR%%/plugins/catimg/README.md
@@ -102,6 +100,8 @@
 %%DATADIR%%/plugins/catimg/colors.png
 %%DATADIR%%/plugins/celery/README.md
 %%DATADIR%%/plugins/celery/_celery
+%%DATADIR%%/plugins/charm/README.md
+%%DATADIR%%/plugins/charm/charm.plugin.zsh
 %%DATADIR%%/plugins/chruby/README.md
 %%DATADIR%%/plugins/chruby/chruby.plugin.zsh
 %%DATADIR%%/plugins/chucknorris/.gitignore
@@ -134,8 +134,6 @@
 %%DATADIR%%/plugins/composer/composer.plugin.zsh
 %%DATADIR%%/plugins/copybuffer/README.md
 %%DATADIR%%/plugins/copybuffer/copybuffer.plugin.zsh
-%%DATADIR%%/plugins/copydir/README.md
-%%DATADIR%%/plugins/copydir/copydir.plugin.zsh
 %%DATADIR%%/plugins/copyfile/README.md
 %%DATADIR%%/plugins/copyfile/copyfile.plugin.zsh
 %%DATADIR%%/plugins/copypath/README.md
@@ -170,6 +168,7 @@
 %%DATADIR%%/plugins/docker-machine/docker-machine.plugin.zsh
 %%DATADIR%%/plugins/docker/README.md
 %%DATADIR%%/plugins/docker/_docker
+%%DATADIR%%/plugins/docker/docker.plugin.zsh
 %%DATADIR%%/plugins/doctl/README.md
 %%DATADIR%%/plugins/doctl/doctl.plugin.zsh
 %%DATADIR%%/plugins/dotenv/README.md
@@ -228,7 +227,6 @@
 %%DATADIR%%/plugins/firewalld/README.md
 %%DATADIR%%/plugins/firewalld/firewalld.plugin.zsh
 %%DATADIR%%/plugins/flutter/README.md
-%%DATADIR%%/plugins/flutter/_flutter
 %%DATADIR%%/plugins/flutter/flutter.plugin.zsh
 %%DATADIR%%/plugins/fnm/README.md
 %%DATADIR%%/plugins/fnm/fnm.plugin.zsh
@@ -246,8 +244,6 @@
 %%DATADIR%%/plugins/gas/_gas
 %%DATADIR%%/plugins/gatsby/README.md
 %%DATADIR%%/plugins/gatsby/_gatsby
-%%DATADIR%%/plugins/gb/README.md
-%%DATADIR%%/plugins/gb/_gb
 %%DATADIR%%/plugins/gcloud/README.md
 %%DATADIR%%/plugins/gcloud/gcloud.plugin.zsh
 %%DATADIR%%/plugins/geeknote/README.md
@@ -342,7 +338,6 @@
 %%DATADIR%%/plugins/homestead/homestead.plugin.zsh
 %%DATADIR%%/plugins/httpie/README.md
 %%DATADIR%%/plugins/httpie/_httpie
-%%DATADIR%%/plugins/httpie/httpie.plugin.zsh
 %%DATADIR%%/plugins/invoke/README.md
 %%DATADIR%%/plugins/invoke/invoke.plugin.zsh
 %%DATADIR%%/plugins/ionic/README.md
@@ -472,8 +467,6 @@
 %%DATADIR%%/plugins/nomad/_nomad
 %%DATADIR%%/plugins/npm/README.md
 %%DATADIR%%/plugins/npm/npm.plugin.zsh
-%%DATADIR%%/plugins/npx/README.md
-%%DATADIR%%/plugins/npx/npx.plugin.zsh
 %%DATADIR%%/plugins/nvm/README.md
 %%DATADIR%%/plugins/nvm/_nvm
 %%DATADIR%%/plugins/nvm/nvm.plugin.zsh
@@ -483,8 +476,6 @@
 %%DATADIR%%/plugins/octozen/octozen.plugin.zsh
 %%DATADIR%%/plugins/operator-sdk/README.md
 %%DATADIR%%/plugins/operator-sdk/operator-sdk.plugin.zsh
-%%DATADIR%%/plugins/osx/README.md
-%%DATADIR%%/plugins/osx/osx.plugin.zsh
 %%DATADIR%%/plugins/otp/README.md
 %%DATADIR%%/plugins/otp/otp.plugin.zsh
 %%DATADIR%%/plugins/pass/README.md
@@ -573,8 +564,6 @@
 %%DATADIR%%/plugins/rust/README.md
 %%DATADIR%%/plugins/rust/_rustc
 %%DATADIR%%/plugins/rust/rust.plugin.zsh
-%%DATADIR%%/plugins/rustup/README.md
-%%DATADIR%%/plugins/rustup/rustup.plugin.zsh
 %%DATADIR%%/plugins/rvm/README.md
 %%DATADIR%%/plugins/rvm/rvm.plugin.zsh
 %%DATADIR%%/plugins/safe-paste/README.md
@@ -602,6 +591,7 @@
 %%DATADIR%%/plugins/sfdx/_sfdx
 %%DATADIR%%/plugins/sfffe/README.md
 %%DATADIR%%/plugins/sfffe/sfffe.plugin.zsh
+%%DATADIR%%/plugins/shell-proxy/.editorconfig
 %%DATADIR%%/plugins/shell-proxy/README.md
 %%DATADIR%%/plugins/shell-proxy/proxy.py
 %%DATADIR%%/plugins/shell-proxy/shell-proxy.plugin.zsh
@@ -681,6 +671,8 @@
 %%DATADIR%%/plugins/tmuxinator/README.md
 %%DATADIR%%/plugins/tmuxinator/_tmuxinator
 %%DATADIR%%/plugins/tmuxinator/tmuxinator.plugin.zsh
+%%DATADIR%%/plugins/toolbox/README.md
+%%DATADIR%%/plugins/toolbox/toolbox.plugin.zsh
 %%DATADIR%%/plugins/torrent/README.md
 %%DATADIR%%/plugins/torrent/torrent.plugin.zsh
 %%DATADIR%%/plugins/transfer/README.md
