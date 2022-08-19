@@ -1,6 +1,5 @@
 PORTNAME=	pms-devel
-PORTVERSION=	0.0.20211015
-PORTREVISION=	4
+PORTVERSION=	0.0.20220819
 CATEGORIES=	audio
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -14,37 +13,45 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	ambientsound
 GH_PROJECT=	pms
-GH_TAGNAME=	c94e3c6
+GH_TAGNAME=	ecc72e8
 
 GH_TUPLE=	\
-		RoaringBitmap:roaring:v0.4.16:roaringbitmap_roaring/vendor/github.com/RoaringBitmap/roaring \
-		Smerity:govarint:7265e41f48f1:smerity_govarint/vendor/github.com/Smerity/govarint \
-		ambientsound:gompd:b065d40b8238:ambientsound_gompd/vendor/github.com/ambientsound/gompd \
-		blevesearch:bleve:v0.7.0:blevesearch_bleve/vendor/github.com/blevesearch/bleve \
-		blevesearch:go-porterstemmer:v1.0.1:blevesearch_go_porterstemmer/vendor/github.com/blevesearch/go-porterstemmer \
-		blevesearch:segment:762005e7a34f:blevesearch_segment/vendor/github.com/blevesearch/segment \
-		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
-		couchbase:vellum:35d9e7346a69:couchbase_vellum/vendor/github.com/couchbase/vellum \
+		RoaringBitmap:roaring:v0.9.4:roaringbitmap_roaring/vendor/github.com/RoaringBitmap/roaring \
+		bits-and-blooms:bitset:v1.2.0:bits_and_blooms_bitset/vendor/github.com/bits-and-blooms/bitset \
+		blevesearch:bleve:v2.3.4:blevesearch_bleve_v2/vendor/github.com/blevesearch/bleve/v2 \
+		blevesearch:bleve_index_api:v1.0.3:blevesearch_bleve_index_api/vendor/github.com/blevesearch/bleve_index_api \
+		blevesearch:geo:v0.1.13:blevesearch_geo/vendor/github.com/blevesearch/geo \
+		blevesearch:go-porterstemmer:v1.0.3:blevesearch_go_porterstemmer/vendor/github.com/blevesearch/go-porterstemmer \
+		blevesearch:gtreap:v0.1.1:blevesearch_gtreap/vendor/github.com/blevesearch/gtreap \
+		blevesearch:mmap-go:v1.0.4:blevesearch_mmap_go/vendor/github.com/blevesearch/mmap-go \
+		blevesearch:scorch_segment_api:v2.1.2:blevesearch_scorch_segment_api_v2/vendor/github.com/blevesearch/scorch_segment_api/v2 \
+		blevesearch:segment:v0.9.0:blevesearch_segment/vendor/github.com/blevesearch/segment \
+		blevesearch:snowballstem:v0.9.0:blevesearch_snowballstem/vendor/github.com/blevesearch/snowballstem \
+		blevesearch:upsidedown_store_api:v1.0.1:blevesearch_upsidedown_store_api/vendor/github.com/blevesearch/upsidedown_store_api \
+		blevesearch:vellum:v1.0.8:blevesearch_vellum/vendor/github.com/blevesearch/vellum \
+		blevesearch:zapx:v11.3.5:blevesearch_zapx_v11/vendor/github.com/blevesearch/zapx/v11 \
+		blevesearch:zapx:v12.3.5:blevesearch_zapx_v12/vendor/github.com/blevesearch/zapx/v12 \
+		blevesearch:zapx:v13.3.5:blevesearch_zapx_v13/vendor/github.com/blevesearch/zapx/v13 \
+		blevesearch:zapx:v14.3.5:blevesearch_zapx_v14/vendor/github.com/blevesearch/zapx/v14 \
+		blevesearch:zapx:v15.3.5:blevesearch_zapx_v15/vendor/github.com/blevesearch/zapx/v15 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		edsrzf:mmap-go:0bce6a688712:edsrzf_mmap_go/vendor/github.com/edsrzf/mmap-go \
+		etcd-io:bbolt:v1.3.5:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
+		fhs:gompd:v2.0.0:fhs_gompd/vendor/github.com/fhs/gompd \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:v1.3.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
-		glycerine:go-unsnap-stream:9f0cb55181dd:glycerine_go_unsnap_stream/vendor/github.com/glycerine/go-unsnap-stream \
-		golang:net:161cd47e91fd:golang_net/vendor/golang.org/x/net \
-		golang:protobuf:v1.2.0:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:snappy:2e65f85255db:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:ac6580df4449:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		jessevdk:go-flags:v1.4.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
+		gdamore:tcell:v1.4.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
+		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		golang:geo:740aa86cb551:golang_geo/vendor/github.com/golang/geo \
+		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
+		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
+		jessevdk:go-flags:v1.5.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
+		json-iterator:go:f7279a603ede:json_iterator_go/vendor/github.com/json-iterator/go \
 		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mschoch:smat:90eadee771ae:mschoch_smat/vendor/github.com/mschoch/smat \
-		philhofer:fwd:v1.0.0:philhofer_fwd/vendor/github.com/philhofer/fwd \
+		mschoch:smat:v0.2.0:mschoch_smat/vendor/github.com/mschoch/smat \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		steveyen:gtreap:0abe01ef9be2:steveyen_gtreap/vendor/github.com/steveyen/gtreap \
-		stretchr:testify:v1.3.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		tinylib:msgp:v1.0.2:tinylib_msgp/vendor/github.com/tinylib/msgp \
-		willf:bitset:v1.1.9:willf_bitset/vendor/github.com/willf/bitset
+		stretchr:testify:v1.7.1:stretchr_testify/vendor/github.com/stretchr/testify
 
 GO_BUILDFLAGS=	-ldflags "-X main.buildVersion=${DISTVERSION}"
 GO_TARGET=	:pms-devel
