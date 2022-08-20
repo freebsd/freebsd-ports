@@ -39,6 +39,7 @@
 %%CACTIDIR%%/cli/apply_automation_rules.php
 %%CACTIDIR%%/cli/audit_database.php
 %%CACTIDIR%%/cli/batchgapfix.php
+%%CACTIDIR%%/cli/change_device.php
 %%CACTIDIR%%/cli/convert_tables.php
 %%CACTIDIR%%/cli/copy_user.php
 %%CACTIDIR%%/cli/fix_mediumint.php
@@ -69,6 +70,7 @@
 %%CACTIDIR%%/cli/splice_rrd.php
 %%CACTIDIR%%/cli/sqltable_to_php.php
 %%CACTIDIR%%/cli/structure_rra_paths.php
+%%CACTIDIR%%/cli/update_heartbeat.php
 %%CACTIDIR%%/cli/upgrade_database.php
 %%CACTIDIR%%/clog.php
 %%CACTIDIR%%/clog_user.php
@@ -631,6 +633,7 @@
 %%CACTIDIR%%/graphs.php
 %%CACTIDIR%%/graphs_items.php
 %%CACTIDIR%%/graphs_new.php
+%%CACTIDIR%%/help.php
 %%CACTIDIR%%/host.php
 %%CACTIDIR%%/host_templates.php
 %%CACTIDIR%%/images/accept.png
@@ -644,6 +647,7 @@
 %%CACTIDIR%%/images/cacti_backdrop2.gif
 %%CACTIDIR%%/images/cacti_error_image.png
 %%CACTIDIR%%/images/cacti_logo.gif
+%%CACTIDIR%%/images/cacti_logo.png
 %%CACTIDIR%%/images/cacti_logo.svg
 %%CACTIDIR%%/images/cacti_logo_new.gif
 %%CACTIDIR%%/images/calendar.gif
@@ -2732,6 +2736,8 @@
 %%CACTIDIR%%/include/themes/midwinter/css/media/compact-portrait.css
 %%CACTIDIR%%/include/themes/midwinter/css/media/compact.css
 %%CACTIDIR%%/include/themes/midwinter/css/media/core.css
+%%CACTIDIR%%/include/themes/midwinter/css/media/core-landscape.css
+%%CACTIDIR%%/include/themes/midwinter/css/media/core-portrait.css
 %%CACTIDIR%%/include/themes/midwinter/css/media/print.css
 %%CACTIDIR%%/include/themes/midwinter/css/media/standard-landscape.css
 %%CACTIDIR%%/include/themes/midwinter/css/media/standard-portrait.css
@@ -3929,6 +3935,7 @@
 %%CACTIDIR%%/install/install.js
 %%CACTIDIR%%/install/install.php
 %%CACTIDIR%%/install/step_json.php
+%%CACTIDIR%%/install/templates/Apache_Webserver.xml.gz
 %%CACTIDIR%%/install/templates/Cacti_Stats.xml.gz
 %%CACTIDIR%%/install/templates/Cisco_Router.xml.gz
 %%CACTIDIR%%/install/templates/Citrix_NetScaler_VPX.xml.gz
@@ -3985,6 +3992,7 @@
 %%CACTIDIR%%/install/upgrades/1_2_19.php
 %%CACTIDIR%%/install/upgrades/1_2_20.php
 %%CACTIDIR%%/install/upgrades/1_2_21.php
+%%CACTIDIR%%/install/upgrades/1_2_22.php
 %%CACTIDIR%%/install/upgrades/1_2_2.php
 %%CACTIDIR%%/install/upgrades/1_2_3.php
 %%CACTIDIR%%/install/upgrades/1_2_5.php
@@ -4056,6 +4064,7 @@
 %%CACTIDIR%%/locales/LC_MESSAGES/it-IT.mo
 %%CACTIDIR%%/locales/LC_MESSAGES/ja-JP.mo
 %%CACTIDIR%%/locales/LC_MESSAGES/ko-KR.mo
+%%CACTIDIR%%/locales/LC_MESSAGES/lv-LV.mo
 %%CACTIDIR%%/locales/LC_MESSAGES/nl-NL.mo
 %%CACTIDIR%%/locales/LC_MESSAGES/pl-PL.mo
 %%CACTIDIR%%/locales/LC_MESSAGES/pt-BR.mo
@@ -4081,6 +4090,7 @@
 %%CACTIDIR%%/locales/po/it-IT.po
 %%CACTIDIR%%/locales/po/ja-JP.po
 %%CACTIDIR%%/locales/po/ko-KR.po
+%%CACTIDIR%%/locales/po/lv-LV.po
 %%CACTIDIR%%/locales/po/nl-NL.po
 %%CACTIDIR%%/locales/po/pl-PL.po
 %%CACTIDIR%%/locales/po/pt-BR.po
