@@ -1,6 +1,6 @@
---- lib/libimhex/source/helpers/file.cpp.orig	2022-07-04 19:53:18 UTC
+--- lib/libimhex/source/helpers/file.cpp.orig	2022-08-17 21:25:52 UTC
 +++ lib/libimhex/source/helpers/file.cpp
-@@ -16,12 +16,12 @@ namespace hex::fs {
+@@ -17,12 +17,12 @@ namespace hex::fs {
                  this->m_file = _wfopen(path.c_str(), L"w+b");
          #else
              if (mode == File::Mode::Read)
@@ -16,7 +16,7 @@
          #endif
      }
  
-@@ -49,7 +49,7 @@ namespace hex::fs {
+@@ -50,7 +50,7 @@ namespace hex::fs {
  
  
      void File::seek(u64 offset) {
@@ -25,7 +25,7 @@
      }
  
      void File::close() {
-@@ -134,10 +134,10 @@ namespace hex::fs {
+@@ -135,10 +135,10 @@ namespace hex::fs {
      size_t File::getSize() const {
          if (!isValid()) return 0;
  
@@ -40,7 +40,7 @@
  
          if (size < 0)
              return 0;
-@@ -148,7 +148,7 @@ namespace hex::fs {
+@@ -149,7 +149,7 @@ namespace hex::fs {
      void File::setSize(u64 size) {
          if (!isValid()) return;
  

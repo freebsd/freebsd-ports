@@ -1,5 +1,5 @@
 PORTNAME=	imhex
-PORTVERSION=	1.20.0
+PORTVERSION=	1.21.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg
@@ -24,7 +24,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		WerWolv-PatternLanguage-${GH_TAG_PATTERN_LANGUAGE}_GH0${EXTRACT_SUFX}
 
 BUILD_DEPENDS=	glm>0:math/glm \
-		nlohmann-json>0:devel/nlohmann-json
+		nlohmann-json>0:devel/nlohmann-json \
+		${LOCALBASE}/include/range/v3/range.hpp:devel/range-v3
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libglfw.so:graphics/glfw \
@@ -50,14 +51,13 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 
 GH_TAG_CAPSTONE=	d5141c0
 GH_TAG_FMT=	c4ee726
-GH_TAG_IMHEX_PATTERNS=	eda13b2
-GH_TAG_LIBROMFS=	58757f6
-GH_TAG_NATIVEFILEDIALOG=	3311592
-GH_TAG_PATTERN_LANGUAGE=	a8c4479
+GH_TAG_IMHEX_PATTERNS=	15548b9
+GH_TAG_LIBROMFS=	8c8556d
+GH_TAG_NATIVEFILEDIALOG=	6967d28
+GH_TAG_PATTERN_LANGUAGE=	fd6bb38
 GH_TAG_YARA=	d5a7565
 
 CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_NLOHMANN_JSON=ON -DIMHEX_STRIP_RELEASE=OFF -DIMHEX_PLUGINS_IN_SHARE=ON
-CXXFLAGS+=	-fPIC
 
 PORTDOCS=	README.md
 

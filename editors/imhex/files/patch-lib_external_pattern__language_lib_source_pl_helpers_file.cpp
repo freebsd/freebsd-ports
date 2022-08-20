@@ -1,6 +1,6 @@
---- lib/external/pattern_language/lib/source/helpers/file.cpp.orig	2022-07-05 14:00:57 UTC
-+++ lib/external/pattern_language/lib/source/helpers/file.cpp
-@@ -20,12 +20,12 @@ namespace pl::fs {
+--- lib/external/pattern_language/lib/source/pl/helpers/file.cpp.orig	2022-08-14 15:37:26 UTC
++++ lib/external/pattern_language/lib/source/pl/helpers/file.cpp
+@@ -19,12 +19,12 @@ namespace pl::hlp::fs {
                  this->m_file = _wfopen(path.c_str(), L"w+b");
          #else
              if (mode == File::Mode::Read)
@@ -16,7 +16,7 @@
          #endif
      }
  
-@@ -53,7 +53,7 @@ namespace pl::fs {
+@@ -52,7 +52,7 @@ namespace pl::hlp::fs {
  
  
      void File::seek(u64 offset) {
@@ -25,7 +25,7 @@
      }
  
      void File::close() {
-@@ -138,10 +138,10 @@ namespace pl::fs {
+@@ -137,10 +137,10 @@ namespace pl::hlp::fs {
      size_t File::getSize() const {
          if (!isValid()) return 0;
  
@@ -40,12 +40,12 @@
  
          if (size < 0)
              return 0;
-@@ -152,7 +152,7 @@ namespace pl::fs {
+@@ -151,7 +151,7 @@ namespace pl::hlp::fs {
      void File::setSize(u64 size) {
          if (!isValid()) return;
  
 -        auto result = ftruncate64(fileno(this->m_file), size);
 +        auto result = ftruncate(fileno(this->m_file), size);
-         pl::unused(result);
+         hlp::unused(result);
      }
  
