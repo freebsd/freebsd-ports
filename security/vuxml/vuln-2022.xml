@@ -1,3 +1,30 @@
+  <vuln vid="03bb8373-2026-11ed-9d70-080027240888">
+    <topic>drupal9 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal9</name>
+	<range><lt>9.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal reports:</p>
+	<blockquote cite="https://www.drupal.org/project/drupal/releases/9.4.5">
+	  <p>CVE-2022-31175: Cross-site scripting (XSS) caused by the editor
+	     instance destroying process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31175</cvename>
+      <url>https://www.drupal.org/project/drupal/releases/9.4.5</url>
+    </references>
+    <dates>
+      <discovery>2022-08-01</discovery>
+      <entry>2022-08-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f12368a8-1e05-11ed-a1ef-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
