@@ -1,6 +1,4 @@
 bin/openmc
-include/faddeeva/Faddeeva.cc
-include/faddeeva/Faddeeva.hh
 include/gsl-lite/gsl-lite.hpp
 include/gsl/gsl-lite.hpp
 include/openmc/angle_energy.h
@@ -24,6 +22,7 @@ include/openmc/eigenvalue.h
 include/openmc/endf.h
 include/openmc/error.h
 include/openmc/event.h
+include/openmc/external/Faddeeva.hh
 include/openmc/external/quartic_solver.h
 include/openmc/file_utils.h
 include/openmc/finalize.h
@@ -104,6 +103,7 @@ include/openmc/tallies/trigger.h
 include/openmc/thermal.h
 include/openmc/timer.h
 include/openmc/track_output.h
+include/openmc/universe.h
 include/openmc/urr.h
 include/openmc/vector.h
 include/openmc/version.h
@@ -120,7 +120,6 @@ lib/cmake/OpenMC/OpenMCTargets.cmake
 lib/cmake/gsl-lite/gsl-lite-config-version.cmake
 lib/cmake/gsl-lite/gsl-lite-config.cmake
 lib/cmake/gsl-lite/gsl-lite-targets.cmake
-lib/libfaddeeva.a
 lib/libopenmc.so
 share/man/man1/openmc.1.gz
 %%DATADIR%%/relaxng/cross_sections.rnc
