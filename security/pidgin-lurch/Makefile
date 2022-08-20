@@ -6,17 +6,18 @@ MASTER_SITES=	https://research.ngportal.com/lurch/
 PKGNAMEPREFIX=	pidgin-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	micadeyeye@gmail.com
 COMMENT=	Implement OMEMO encryption in  Pidgin
 
-LICENSE=	GPLv2 # only
+LICENSE=	GPLv2 
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # explicitly use libpurple and mxml
 BUILD_DEPENDS=	pidgin:net-im/pidgin
-LIB_DEPENDS=	libpurple.so:net-im/libpurple
+LIB_DEPENDS=	liblurch.so:security/liblurch \
+		libpurple.so:net-im/libpurple
 
-USES=		mxml cpe gmake gnome libtool pkgconfig
+USES=		cpe gmake gnome libtool pkgconfig
 CPE_VENDOR=	maoshin
 CPE_PRODUCT=	${PKGNAMEPREFIX}${PORTNAME}
 USE_GNOME=	gtk20 intltool
