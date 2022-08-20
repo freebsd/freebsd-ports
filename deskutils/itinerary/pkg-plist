@@ -1,6 +1,19 @@
 bin/itinerary
 lib/libSolidExtras.so
 %%QT_PLUGINDIR%%/itinerarythumbnail.so
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/ClockElement.qml
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/ClockFace.qml
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/DateInput.qml
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/DatePicker.qml
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/DatePopup.qml
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/DesktopDateInput.qml
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/Hand.qml
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/MobileDateInput.qml
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/TimeInput.qml
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/TimeLabel.qml
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/TimePicker.qml
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/libitinerary-dateandtimeplugin.so
+%%QT_QMLDIR%%/org/kde/itinerary/kirigamiaddons/dateandtime/qmldir
 %%QT_QMLDIR%%/org/kde/solidextras/libsolidextrasqmlplugin.so
 %%QT_QMLDIR%%/org/kde/solidextras/qmldir
 share/applications/org.kde.itinerary.desktop
@@ -54,6 +67,7 @@ share/locale/uk/LC_MESSAGES/kde-itinerary-android.mo
 share/locale/uk/LC_MESSAGES/kde-itinerary.mo
 share/locale/zh_CN/LC_MESSAGES/kde-itinerary-android.mo
 share/locale/zh_CN/LC_MESSAGES/kde-itinerary.mo
+share/locale/zh_TW/LC_MESSAGES/kde-itinerary-android.mo
 share/locale/zh_TW/LC_MESSAGES/kde-itinerary.mo
 share/metainfo/org.kde.itinerary.appdata.xml
 share/qlogging-categories5/org_kde_itinerary.categories

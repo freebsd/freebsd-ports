@@ -46,6 +46,7 @@ lib/libkdeconnectpluginkcm.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_sms.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_systemvolume.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_telephony.so
+%%QT_PLUGINDIR%%/kdeconnect/kdeconnect_virtualmonitor.so
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/kdeconnectfileitemaction.so
 %%QT_PLUGINDIR%%/kf5/kio/kdeconnect.so
 %%QT_QMLDIR%%/org/kde/kdeconnect/libkdeconnectdeclarativeplugin.so
@@ -731,6 +732,7 @@ share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/RemoteCommands.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/SMS.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Sftp.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Share.qml
+share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/VirtualMonitor.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.kdeconnect/metadata.desktop
 share/plasma/plasmoids/org.kde.kdeconnect/metadata.json

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-12-14 18:54:00 UTC
+--- CMakeLists.txt.orig	2022-08-17 14:32:16 UTC
 +++ CMakeLists.txt
-@@ -25,27 +25,27 @@ ENDIF(NOT SHARED_LIBS)
+@@ -25,28 +25,28 @@ ENDIF(NOT SHARED_LIBS)
  #
  # Various things that must be configured by the user or packager ...
  #
@@ -29,6 +29,8 @@
 +OPTION(ENABLE_MSSQLSERVER "Build Microsoft SQL Server backend for Wt::Dbo" OFF) # Microsoft Windows only option
 +OPTION(ENABLE_QT4 "Build Qt4 interworking library (libwtwithqt)" OFF) # QT4 is no longer available in FreeBSD Ports
  OPTION(ENABLE_QT5 "Build Qt5 interworking library (libwtwithqt5)" ON)
+-OPTION(ENABLE_QT6 "Build Qt6 interworking library (libwtwithqt6)" ON)
++OPTION(ENABLE_QT6 "Build Qt6 interworking library (libwtwithqt6)" OFF) # QT6 is not yet available in FreeBSD Ports
  OPTION(ENABLE_SAML "Build built-in SAML service provider for Wt::Auth" OFF)
 -OPTION(ENABLE_LIBWTTEST "Build Wt::Test" ON)
 -OPTION(ENABLE_LIBWTDBO "Build Wt::Dbo" ON)

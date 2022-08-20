@@ -2716,11 +2716,6 @@ lib/webmin/authentic-theme/images/right.gif
 lib/webmin/authentic-theme/images/screenshot.png
 lib/webmin/authentic-theme/images/search.gif
 lib/webmin/authentic-theme/images/smallicon.gif
-lib/webmin/authentic-theme/images/sort_asc.png
-lib/webmin/authentic-theme/images/sort_asc_disabled.png
-lib/webmin/authentic-theme/images/sort_both.png
-lib/webmin/authentic-theme/images/sort_desc.png
-lib/webmin/authentic-theme/images/sort_desc_disabled.png
 lib/webmin/authentic-theme/images/sortasc.gif
 lib/webmin/authentic-theme/images/sortascgrey.gif
 lib/webmin/authentic-theme/images/sortdesc.gif
@@ -26456,6 +26451,7 @@ lib/webmin/lvm/lang/cs
 lib/webmin/lvm/lang/cs.auto
 lib/webmin/lvm/lang/da.auto
 lib/webmin/lvm/lang/de
+lib/webmin/lvm/lang/de.auto
 lib/webmin/lvm/lang/el.auto
 lib/webmin/lvm/lang/en
 lib/webmin/lvm/lang/es
@@ -26464,6 +26460,7 @@ lib/webmin/lvm/lang/eu.auto
 lib/webmin/lvm/lang/fa.auto
 lib/webmin/lvm/lang/fi.auto
 lib/webmin/lvm/lang/fr
+lib/webmin/lvm/lang/fr.auto
 lib/webmin/lvm/lang/he.auto
 lib/webmin/lvm/lang/hr.auto
 lib/webmin/lvm/lang/hu.auto
@@ -26477,6 +26474,7 @@ lib/webmin/lvm/lang/mt.auto
 lib/webmin/lvm/lang/nl
 lib/webmin/lvm/lang/nl.auto
 lib/webmin/lvm/lang/no
+lib/webmin/lvm/lang/no.auto
 lib/webmin/lvm/lang/pl.auto
 lib/webmin/lvm/lang/pt.auto
 lib/webmin/lvm/lang/pt_BR.auto
@@ -53678,7 +53676,6 @@ lib/webmin/time/module.info.ur.auto
 lib/webmin/time/module.info.vi
 lib/webmin/time/module.info.vi.auto
 lib/webmin/time/module.info.zh
-lib/webmin/time/module.info.zh.auto
 lib/webmin/time/module.info.zh_TW
 lib/webmin/time/module.info.zh_TW.auto
 lib/webmin/time/postinstall.pl
@@ -57271,7 +57268,6 @@ lib/webmin/webmin/module.info.ur.auto
 lib/webmin/webmin/module.info.vi
 lib/webmin/webmin/module.info.vi.auto
 lib/webmin/webmin/module.info.zh
-lib/webmin/webmin/module.info.zh.auto
 lib/webmin/webmin/module.info.zh_TW
 lib/webmin/webmin/module.info.zh_TW.auto
 lib/webmin/webmin/newcsr.cgi

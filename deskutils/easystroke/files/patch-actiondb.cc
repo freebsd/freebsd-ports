@@ -1,13 +1,13 @@
---- actiondb.cc.orig	2013-03-27 15:52:38 UTC
+--- actiondb.cc.orig	2016-07-05 18:32:44 UTC
 +++ actiondb.cc
-@@ -118,14 +118,9 @@ template<class Archive> void StrokeInfo::serialize(Arc
+@@ -119,14 +119,9 @@ void Command::run() {
  using namespace std;
  
  void Command::run() {
 -	pid_t pid = fork();
 -	switch (pid) {
 -		case 0:
--			execlp("/bin/sh", "sh", "-c", cmd.c_str(), NULL);
+-			execlp("/bin/sh", "sh", "-c", cmd.c_str(), nullptr);
 -			exit(1);
 -		case -1:
 -			printf(_("Error: can't execute command \"%s\": fork() failed\n"), cmd.c_str());

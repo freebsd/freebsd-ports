@@ -1,10 +1,9 @@
 PORTNAME=	easystroke
-PORTVERSION=	0.6.0
-PORTREVISION=	26
+DISTVERSION=	0.6.0-9
+DISTVERSIONSUFFIX=	-gf7c1614
 CATEGORIES=	deskutils
-MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Gesture-recognition application for X11
 
 LICENSE=	ISCL
@@ -18,15 +17,18 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libboost_serialization.so:devel/boost-libs
 
-USES=		compiler:c++11-lang gettext gmake gnome pkgconfig xorg
-USE_GNOME=	gtkmm30
+USES=		compiler:c++11-lang gettext-tools gmake gnome pkgconfig xorg
+USE_GNOME=	gtkmm30 intltool
 USE_XORG=	x11 xext xfixes xi xtst
 USE_CXXSTD=	c++11
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	thjaeger
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_BUILD_DEPENDS=	intltool-merge:textproc/intltool
+NLS_USES=	gettext-runtime
 NLS_ALL_TARGET=		easystroke.desktop all man
 # This builds easystroke without translations
 NLS_ALL_TARGET_OFF=	man
@@ -39,6 +41,8 @@ pre-build-NLS-off:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.appdata.xml ${STAGEDIR}${PREFIX}/share/metainfo/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.svg ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 

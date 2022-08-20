@@ -1,5 +1,5 @@
 PORTNAME=	rubymine
-PORTVERSION=	2022.2
+PORTVERSION=	2022.2.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download.jetbrains.com/ruby/ \
 		http://download.jetbrains.com/ruby/

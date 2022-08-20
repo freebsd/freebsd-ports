@@ -311,6 +311,7 @@
     SUBDIR += c4core
     SUBDIR += caf
     SUBDIR += calibrator
+    SUBDIR += caliper
     SUBDIR += capnproto
     SUBDIR += capnproto080
     SUBDIR += capstone3
@@ -1020,6 +1021,7 @@
     SUBDIR += kde-dev-scripts
     SUBDIR += kde-dev-utils
     SUBDIR += kdesdk
+    SUBDIR += kdesdk-kio
     SUBDIR += kdesdk-thumbnailers
     SUBDIR += kdesvn
     SUBDIR += kdev-php

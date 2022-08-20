@@ -4,8 +4,8 @@
 In order to use `ykman otp` commands, you need to make sure the uhid(4)
 driver attaches to the USB device:
 
-  # usbconfig ugenX.Y add_quirk UQ_KBD_IGNORE
-  # usbconfig ugenX.Y reset
+  # usbconfig -d ugenX.Y add_quirk UQ_KBD_IGNORE
+  # usbconfig -d ugenX.Y reset
 
 The correct device to operate on (ugenX.Y) can be determined using
 `usbconfig list`.

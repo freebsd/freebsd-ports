@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-PORTVERSION=	16.27.0
+PORTVERSION=	16.28.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -27,7 +27,7 @@ USE_GITHUB=	nodefault
 
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
-PJSIP_VERSION=	2.12
+PJSIP_VERSION=	2.12.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--with-ilbc=internal \

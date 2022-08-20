@@ -1,3 +1,3 @@
-TIMESTAMP = 1657013344
-SHA256 (KDE/release-service/22.04.3/ktimer-22.04.3.tar.xz) = bf157a7c754029220c13169dfdfb67def42717335c12b9d2a3de54c6b9f36fd7
-SIZE (KDE/release-service/22.04.3/ktimer-22.04.3.tar.xz) = 394548
+TIMESTAMP = 1660628532
+SHA256 (KDE/release-service/22.08.0/ktimer-22.08.0.tar.xz) = 5a44ed466d2419a6b6a92eadef66dc91c244427f8059a7f7101447e7158142b5
+SIZE (KDE/release-service/22.08.0/ktimer-22.08.0.tar.xz) = 395136

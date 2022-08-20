@@ -1,5 +1,5 @@
 PORTNAME=	clion
-PORTVERSION=	2022.2
+PORTVERSION=	2022.2.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/cpp/
 PKGNAMEPREFIX=	jetbrains-
@@ -20,7 +20,7 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 USES=		cpe python:run shebangfix
 
 USE_JAVA=	yes
-JAVA_VERSION=	11+
+JAVA_VERSION=	17+
 
 CPE_VENDOR=	jetbrains
 

@@ -240,6 +240,7 @@
     SUBDIR += mc
     SUBDIR += mc-nox11
     SUBDIR += mdp
+    SUBDIR += meshoptimizer
     SUBDIR += metalink-checker
     SUBDIR += metalink-tools
     SUBDIR += mime-support

@@ -18,7 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	oprecomp
 GH_TAGNAME=	ac67200de13ed9584500832a2d38a29c79331c1c
 
-CFLAGS_powerpc64le=	-mfloat128
 CFLAGS_powerpc64=	-mfloat128 -mvsx
 CFLAGS_powerpc=	-mfloat128 -mvsx
 CMAKE_OFF=	BUILD_TESTS BUILD_EXAMPLES

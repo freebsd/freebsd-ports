@@ -1,3 +1,3 @@
-TIMESTAMP = 1657013360
-SHA256 (KDE/release-service/22.04.3/kubrick-22.04.3.tar.xz) = 6983d285f646da119ba9a5ac626059f95f58962b18d27f63e0fdeec95ecc1d26
-SIZE (KDE/release-service/22.04.3/kubrick-22.04.3.tar.xz) = 343184
+TIMESTAMP = 1660628550
+SHA256 (KDE/release-service/22.08.0/kubrick-22.08.0.tar.xz) = d995aa6a425836348e0cbfa08bddd75cc2e81198eb1304827899c1622e39f705
+SIZE (KDE/release-service/22.08.0/kubrick-22.08.0.tar.xz) = 343432

@@ -1,5 +1,5 @@
 PORTNAME=	maltrail
-DISTVERSION=	0.47
+DISTVERSION=	0.48
 CATEGORIES=	security python
 
 MAINTAINER=	m.muenz@gmail.com
@@ -21,6 +21,7 @@ NO_BUILD=	yes
 
 do-install:
 		${MKDIR} ${STAGEDIR}${DATADIR} && \
+		${MV} ${WRKSRC}/maltrail.conf ${WRKSRC}/maltrail.conf.sample
 		(cd ${WRKSRC} && ${COPYTREE_SHARE} "*" ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

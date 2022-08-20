@@ -720,6 +720,7 @@
 %%DATADIR%%/templates/dcim/device/consoleserverports.html
 %%DATADIR%%/templates/dcim/device/devicebays.html
 %%DATADIR%%/templates/dcim/device/frontports.html
+%%DATADIR%%/templates/dcim/device/inc/interface_table_controls.html
 %%DATADIR%%/templates/dcim/device/interfaces.html
 %%DATADIR%%/templates/dcim/device/inventory.html
 %%DATADIR%%/templates/dcim/device/lldp_neighbors.html

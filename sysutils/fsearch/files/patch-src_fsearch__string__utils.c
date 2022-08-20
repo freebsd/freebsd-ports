@@ -1,8 +1,8 @@
---- src/fsearch_string_utils.c.orig	2022-01-29 18:56:49 UTC
+--- src/fsearch_string_utils.c.orig	2022-08-17 17:50:25 UTC
 +++ src/fsearch_string_utils.c
-@@ -214,3 +214,91 @@ fs_str_split(const char *src) {
- 
-     return (char **)g_ptr_array_free(new, FALSE);
+@@ -164,3 +164,91 @@ fsearch_string_starts_with_interval(char *str, char **
+     *end_ptr = str;
+     return false;
  }
 +
 +/* Compare strings while treating digits characters numerically.

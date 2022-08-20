@@ -13,11 +13,7 @@ man/uk/man1/spectacle.1.gz
 share/applications/org.kde.spectacle.desktop
 share/dbus-1/interfaces/org.kde.Spectacle.xml
 share/dbus-1/services/org.kde.Spectacle.service
-share/icons/hicolor/16x16/apps/spectacle.png
-share/icons/hicolor/22x22/apps/spectacle.png
-share/icons/hicolor/32x32/apps/spectacle.png
-share/icons/hicolor/48x48/apps/spectacle.png
-share/icons/hicolor/scalable/apps/spectacle.svgz
+share/icons/hicolor/scalable/apps/spectacle.svg
 share/kconf_update/50-clipboard_settings_change.py
 share/kconf_update/spectacle_clipboard.upd
 share/kconf_update/spectacle_newConfig.upd

@@ -1,3 +1,3 @@
-TIMESTAMP = 1657013469
-SHA256 (KDE/release-service/22.04.3/krdc-22.04.3.tar.xz) = 99b656431d2b8e6306b1561c07e0fe0c37602d970898a272b59488a4ecc0482f
-SIZE (KDE/release-service/22.04.3/krdc-22.04.3.tar.xz) = 1582516
+TIMESTAMP = 1660628681
+SHA256 (KDE/release-service/22.08.0/krdc-22.08.0.tar.xz) = 8cf3feab48df179ecd6ead20fc10de4c27cf8a833617258ff1c064ac1f295c67
+SIZE (KDE/release-service/22.08.0/krdc-22.08.0.tar.xz) = 1576880

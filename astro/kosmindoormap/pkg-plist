@@ -45,10 +45,10 @@ lib/cmake/KOSMIndoorMap/KOSMIndoorMapTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KOSMIndoorMap/KOSMIndoorMapTargets.cmake
 lib/libKOSM.so
 lib/libKOSM.so.1
-lib/libKOSM.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKOSM.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libKOSMIndoorMap.so
 lib/libKOSMIndoorMap.so.1
-lib/libKOSMIndoorMap.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKOSMIndoorMap.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kosmindoormap/IndoorMap.qml
 %%QT_QMLDIR%%/org/kde/kosmindoormap/IndoorMapAttributionLabel.qml
 %%QT_QMLDIR%%/org/kde/kosmindoormap/IndoorMapScale.qml
@@ -75,6 +75,8 @@ share/locale/pt_BR/LC_MESSAGES/kosmindoormap.mo
 share/locale/sk/LC_MESSAGES/kosmindoormap.mo
 share/locale/sl/LC_MESSAGES/kosmindoormap.mo
 share/locale/sv/LC_MESSAGES/kosmindoormap.mo
+share/locale/tr/LC_MESSAGES/kosmindoormap.mo
 share/locale/uk/LC_MESSAGES/kosmindoormap.mo
 share/locale/zh_CN/LC_MESSAGES/kosmindoormap.mo
+share/locale/zh_TW/LC_MESSAGES/kosmindoormap.mo
 share/qlogging-categories5/org_kde_kosmindoormap.categories
