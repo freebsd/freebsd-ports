@@ -4,7 +4,7 @@ CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
 
-MAINTAINER=	toolchain@FreeBSD.org
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	GNU Compiler Collection 10
 
 LICENSE=	GPLv3 GPLv3RLE
