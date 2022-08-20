@@ -1,12 +1,16 @@
+%%SITE_PERL%%/URI/_ado.pm
 %%SITE_PERL%%/URI/_db.pm
 %%SITE_PERL%%/URI/_odbc.pm
 %%SITE_PERL%%/URI/cassandra.pm
+%%SITE_PERL%%/URI/cockroach.pm
+%%SITE_PERL%%/URI/cockroachdb.pm
 %%SITE_PERL%%/URI/couch.pm
 %%SITE_PERL%%/URI/couchdb.pm
 %%SITE_PERL%%/URI/cubrid.pm
 %%SITE_PERL%%/URI/db.pm
 %%SITE_PERL%%/URI/db2.pm
 %%SITE_PERL%%/URI/derby.pm
+%%SITE_PERL%%/URI/exasol.pm
 %%SITE_PERL%%/URI/firebird.pm
 %%SITE_PERL%%/URI/hive.pm
 %%SITE_PERL%%/URI/impala.pm
@@ -31,6 +35,8 @@
 %%SITE_PERL%%/URI/postgres.pm
 %%SITE_PERL%%/URI/postgresql.pm
 %%SITE_PERL%%/URI/postgresxc.pm
+%%SITE_PERL%%/URI/redshift.pm
+%%SITE_PERL%%/URI/snowflake.pm
 %%SITE_PERL%%/URI/sqlite.pm
 %%SITE_PERL%%/URI/sqlite3.pm
 %%SITE_PERL%%/URI/sqlserver.pm
@@ -38,5 +44,8 @@
 %%SITE_PERL%%/URI/teradata.pm
 %%SITE_PERL%%/URI/unify.pm
 %%SITE_PERL%%/URI/vertica.pm
+%%SITE_PERL%%/URI/yugabyte.pm
+%%SITE_PERL%%/URI/yugabytedb.pm
 %%PERL5_MAN3%%/URI::db.3.gz
 %%PERL5_MAN3%%/URI::ldapdb.3.gz
+%%PERL5_MAN3%%/URI::mssql.3.gz
