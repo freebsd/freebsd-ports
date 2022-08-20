@@ -1,0 +1,8 @@
+include/H5Zzfp.h
+include/H5Zzfp_lib.h
+include/H5Zzfp_plugin.h
+include/H5Zzfp_props.h
+lib/cmake/h5z_zfp/h5z_zfp-config-version.cmake
+lib/cmake/h5z_zfp/h5z_zfp-config.cmake
+lib/libh5zzfp.a
+lib/libh5zzfp.so

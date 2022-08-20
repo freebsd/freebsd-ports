@@ -1,0 +1,13 @@
+--- src/CMakeLists.txt.orig	2022-08-20 16:23:47 UTC
++++ src/CMakeLists.txt
+@@ -46,8 +46,8 @@ target_include_directories(h5z_zfp_shared
+ target_link_libraries(h5z_zfp_shared PUBLIC zfp::zfp ${HDF5_LIBRARIES})
+ set_target_properties(h5z_zfp_shared PROPERTIES OUTPUT_NAME h5zzfp)
+ install(TARGETS h5z_zfp_shared
+-  ARCHIVE DESTINATION plugin
+-  LIBRARY DESTINATION plugin)
++  ARCHIVE DESTINATION lib
++  LIBRARY DESTINATION lib)
+ 
+ #------------------------------------------------------------------------------#
+ # Install header and module files.
