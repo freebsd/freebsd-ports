@@ -6,7 +6,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Terminal utility to interactively filter text
 
-LICENSE=	GPLv2
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=	localbase ncurses
