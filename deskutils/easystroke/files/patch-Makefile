@@ -1,6 +1,6 @@
---- Makefile.orig	2013-03-27 15:52:38 UTC
+--- Makefile.orig	2016-07-05 18:32:44 UTC
 +++ Makefile
-@@ -12,19 +12,15 @@
+@@ -12,23 +12,15 @@
  #  OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  #  CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  
@@ -10,29 +10,29 @@
  ICONDIR  = $(PREFIX)/share/icons/hicolor/scalable/apps
  MENUDIR  = $(PREFIX)/share/applications
  LOCALEDIR= $(PREFIX)/share/locale
- DFLAGS   =
+-DFLAGS   =
 -OFLAGS   = -O2
 -AOFLAGS  = -O3
--STROKEFLAGS  = -Wall -std=c99 $(DFLAGS)
--CXXFLAGS = -Wall $(DFLAGS) -DLOCALEDIR=\"$(LOCALEDIR)\" `pkg-config gtkmm-3.0 dbus-glib-1 --cflags`
--CFLAGS   = -Wall $(DFLAGS) -DLOCALEDIR=\"$(LOCALEDIR)\" `pkg-config gtk+-3.0 --cflags` -DGETTEXT_PACKAGE='"easystroke"'
+-STROKEFLAGS  = -Wall -std=c11 $(DFLAGS)
+-CXXSTD = -std=c++11
+ INCLUDES = $(shell pkg-config gtkmm-3.0 dbus-glib-1 --cflags)
+-CXXFLAGS = $(CXXSTD) -Wall $(DFLAGS) -DLOCALEDIR=\"$(LOCALEDIR)\" $(INCLUDES)
+-CFLAGS   = -std=c11 -Wall $(DFLAGS) -DLOCALEDIR=\"$(LOCALEDIR)\" $(INCLUDES) -DGETTEXT_PACKAGE='"easystroke"'
 -LDFLAGS  = $(DFLAGS)
-+STROKEFLAGS  = -Wall -std=c99 $(CFLAGS)
-+CXXFLAGS += -Wall $(DFLAGS) -DLOCALEDIR=\"$(LOCALEDIR)\" `pkg-config gtkmm-3.0 dbus-glib-1 --cflags`
-+CFLAGS   += -Wall $(DFLAGS) -DLOCALEDIR=\"$(LOCALEDIR)\" `pkg-config gtk+-3.0 --cflags` -DGETTEXT_PACKAGE='"easystroke"'
-+LDFLAGS  += $(DFLAGS)
++CXXFLAGS += -std=c++11 -Wall -DLOCALEDIR=\"$(LOCALEDIR)\" $(INCLUDES)
++CFLAGS   += -std=c11 -Wall -DLOCALEDIR=\"$(LOCALEDIR)\" $(INCLUDES) -DGETTEXT_PACKAGE='"easystroke"'
  
- LIBS     = $(DFLAGS) -lboost_serialization -lX11 -lXext -lXi -lXfixes -lXtst `pkg-config gtkmm-3.0 dbus-glib-1 --libs`
+-LIBS     = $(DFLAGS) -lboost_serialization -lX11 -lXext -lXi -lXfixes -lXtst `pkg-config gtkmm-3.0 dbus-glib-1 --libs`
++LIBS     = -lboost_serialization -lX11 -lXext -lXi -lXfixes -lXtst $(shell pkg-config gtkmm-3.0 dbus-glib-1 --libs)
  
-@@ -82,9 +78,9 @@ gui.c: gui.glade
- easystroke.desktop: easystroke.desktop.in $(MOFILES)
- 	intltool-merge po/ -d -u $< $@
+ BINARY   = easystroke
+ ICON     = easystroke.svg
+@@ -65,7 +57,7 @@ stroke.o: stroke.c
+ 	$(CXX) $(LDFLAGS) -o $@ $(OFILES) $(LIBS)
  
--desktop.c: easystroke.desktop
-+desktop.c:
- 	echo "const char *desktop_file = \"\\" > $@
--	sed 's/Exec=easystroke/Exec=%1$$s/' $< | sed 's/"/\\"/g' | sed 's/.*/&\\n\\/' >> $@
-+	sed 's/Exec=easystroke/Exec=%1$$s/' easystroke.desktop | sed 's/"/\\"/g' | sed 's/.*/&\\n\\/' >> $@
- 	echo "\";" >> $@
+ stroke.o: stroke.c
+-	$(CC) $(STROKEFLAGS) $(AOFLAGS) -MT $@ -MMD -MP -MF $*.Po -o $@ -c $<
++	$(CC) $(CFLAGS) $(AOFLAGS) -MT $@ -MMD -MP -MF $*.Po -o $@ -c $<
  
- po/POTFILES.in: $(CCFILES) $(HFILES)
+ %.o: %.c
+ 	$(CC) $(CFLAGS) $(OFLAGS) -MT $@ -MMD -MP -MF $*.Po -o $@ -c $<

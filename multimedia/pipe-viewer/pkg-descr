@@ -1,0 +1,7 @@
+pipe-viewer is a lightweight application (fork of straw-viewer) for
+searching and playing videos from YouTube.
+
+This fork parses the YouTube website directly and relies on the
+invidious instances only as a fallback method.
+
+WWW: https://github.com/trizen/pipe-viewer

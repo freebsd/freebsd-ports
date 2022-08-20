@@ -1,5 +1,5 @@
-TIMESTAMP = 1660582665
-SHA256 (go/biology_kmcp/kmcp-v0.8.3/v0.8.3.mod) = 2a051ec54bcad49a952ac04393b9915b81e30ff13a580c4787411fbf721154f1
-SIZE (go/biology_kmcp/kmcp-v0.8.3/v0.8.3.mod) = 1746
-SHA256 (go/biology_kmcp/kmcp-v0.8.3/v0.8.3.zip) = dfa5b35d2c69cfcd499ebb18f4c86d40499f5e0ed815ed7318ee6156abce6f96
-SIZE (go/biology_kmcp/kmcp-v0.8.3/v0.8.3.zip) = 17074942
+TIMESTAMP = 1660846903
+SHA256 (go/biology_kmcp/kmcp-v0.8.4/v0.8.4.mod) = 2a051ec54bcad49a952ac04393b9915b81e30ff13a580c4787411fbf721154f1
+SIZE (go/biology_kmcp/kmcp-v0.8.4/v0.8.4.mod) = 1746
+SHA256 (go/biology_kmcp/kmcp-v0.8.4/v0.8.4.zip) = 882652e4522a4737d91fc921e93075fab647bb8d48456672283150c1690c3998
+SIZE (go/biology_kmcp/kmcp-v0.8.4/v0.8.4.zip) = 17075036

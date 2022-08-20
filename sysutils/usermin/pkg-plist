@@ -271,6 +271,7 @@ lib/usermin/authentic-theme/extensions/file-manager/http_download.cgi
 lib/usermin/authentic-theme/extensions/file-manager/list-images.cgi
 lib/usermin/authentic-theme/extensions/file-manager/list.cgi
 lib/usermin/authentic-theme/extensions/file-manager/paste.cgi
+lib/usermin/authentic-theme/extensions/file-manager/purge_trash.cgi
 lib/usermin/authentic-theme/extensions/file-manager/rename.cgi
 lib/usermin/authentic-theme/extensions/file-manager/search.cgi
 lib/usermin/authentic-theme/extensions/file-manager/tree.cgi
@@ -1262,11 +1263,6 @@ lib/usermin/authentic-theme/images/right.gif
 lib/usermin/authentic-theme/images/screenshot.png
 lib/usermin/authentic-theme/images/search.gif
 lib/usermin/authentic-theme/images/smallicon.gif
-lib/usermin/authentic-theme/images/sort_asc.png
-lib/usermin/authentic-theme/images/sort_asc_disabled.png
-lib/usermin/authentic-theme/images/sort_both.png
-lib/usermin/authentic-theme/images/sort_desc.png
-lib/usermin/authentic-theme/images/sort_desc_disabled.png
 lib/usermin/authentic-theme/images/sortasc.gif
 lib/usermin/authentic-theme/images/sortascgrey.gif
 lib/usermin/authentic-theme/images/sortdesc.gif
@@ -1375,6 +1371,7 @@ lib/usermin/authentic-theme/modules/filemin/config.info.de
 lib/usermin/authentic-theme/navigation-lib.pl
 lib/usermin/authentic-theme/pam_login.cgi
 lib/usermin/authentic-theme/password_form.cgi
+lib/usermin/authentic-theme/postinstall-usermin.pl
 lib/usermin/authentic-theme/postinstall.pl
 lib/usermin/authentic-theme/service-worker.js
 lib/usermin/authentic-theme/session_login.cgi
@@ -1385,6 +1382,7 @@ lib/usermin/authentic-theme/settings-editor_favorites_write.cgi
 lib/usermin/authentic-theme/settings-editor_read.cgi
 lib/usermin/authentic-theme/settings-editor_write.cgi
 lib/usermin/authentic-theme/settings-favorites_save.cgi
+lib/usermin/authentic-theme/settings-lib.pl
 lib/usermin/authentic-theme/settings-logos.cgi
 lib/usermin/authentic-theme/settings-logos_save.cgi
 lib/usermin/authentic-theme/stats.cgi
@@ -1742,6 +1740,7 @@ lib/usermin/authentic-theme/unauthenticated/js/photoswipe.min.js.gz
 lib/usermin/authentic-theme/unauthenticated/js/quill.min.js
 lib/usermin/authentic-theme/unauthenticated/js/quill.min.js.gz
 lib/usermin/authentic-theme/unauthenticated/js/service-worker.js
+lib/usermin/authentic-theme/uninstall-usermin.pl
 lib/usermin/authentic-theme/uninstall.pl
 lib/usermin/authentic-theme/xhr-lib.pl
 lib/usermin/authentic-theme/xhr.cgi
@@ -3251,10 +3250,12 @@ lib/usermin/cron/lang/be.auto
 lib/usermin/cron/lang/bg
 lib/usermin/cron/lang/bg.auto
 lib/usermin/cron/lang/ca
+lib/usermin/cron/lang/ca.auto
 lib/usermin/cron/lang/cs
 lib/usermin/cron/lang/cs.auto
 lib/usermin/cron/lang/da.auto
 lib/usermin/cron/lang/de
+lib/usermin/cron/lang/de.auto
 lib/usermin/cron/lang/el.auto
 lib/usermin/cron/lang/en
 lib/usermin/cron/lang/es
@@ -3271,6 +3272,7 @@ lib/usermin/cron/lang/hr
 lib/usermin/cron/lang/hr.auto
 lib/usermin/cron/lang/hu
 lib/usermin/cron/lang/hu.UTF-8
+lib/usermin/cron/lang/hu.auto
 lib/usermin/cron/lang/it
 lib/usermin/cron/lang/it.auto
 lib/usermin/cron/lang/ja
@@ -3285,6 +3287,7 @@ lib/usermin/cron/lang/mt.auto
 lib/usermin/cron/lang/nl
 lib/usermin/cron/lang/nl.auto
 lib/usermin/cron/lang/no
+lib/usermin/cron/lang/no.auto
 lib/usermin/cron/lang/pl
 lib/usermin/cron/lang/pl.auto
 lib/usermin/cron/lang/pt
@@ -4721,10 +4724,12 @@ lib/usermin/filter/lang/ar.auto
 lib/usermin/filter/lang/be.auto
 lib/usermin/filter/lang/bg.auto
 lib/usermin/filter/lang/ca
+lib/usermin/filter/lang/ca.auto
 lib/usermin/filter/lang/cs
 lib/usermin/filter/lang/cs.auto
 lib/usermin/filter/lang/da.auto
 lib/usermin/filter/lang/de
+lib/usermin/filter/lang/de.auto
 lib/usermin/filter/lang/el
 lib/usermin/filter/lang/el.auto
 lib/usermin/filter/lang/en
@@ -4748,6 +4753,7 @@ lib/usermin/filter/lang/mt.auto
 lib/usermin/filter/lang/nl
 lib/usermin/filter/lang/nl.auto
 lib/usermin/filter/lang/no
+lib/usermin/filter/lang/no.auto
 lib/usermin/filter/lang/pl
 lib/usermin/filter/lang/pl.auto
 lib/usermin/filter/lang/pt.auto
@@ -7736,7 +7742,8 @@ lib/usermin/mysql/config-aix
 lib/usermin/mysql/config-cobalt-linux
 lib/usermin/mysql/config-coherent-linux
 lib/usermin/mysql/config-debian-linux
-lib/usermin/mysql/config-debian-linux-2.2-ALL
+lib/usermin/mysql/config-debian-linux-10.0-ALL
+lib/usermin/mysql/config-debian-linux-2.2-9.0
 lib/usermin/mysql/config-freebsd
 lib/usermin/mysql/config-gentoo-linux
 lib/usermin/mysql/config-mandrake-linux
@@ -11674,6 +11681,7 @@ lib/usermin/procmail/lang/cs
 lib/usermin/procmail/lang/cs.auto
 lib/usermin/procmail/lang/da.auto
 lib/usermin/procmail/lang/de
+lib/usermin/procmail/lang/de.auto
 lib/usermin/procmail/lang/el.auto
 lib/usermin/procmail/lang/en
 lib/usermin/procmail/lang/es
@@ -11686,6 +11694,7 @@ lib/usermin/procmail/lang/fr.auto
 lib/usermin/procmail/lang/he.auto
 lib/usermin/procmail/lang/hr.auto
 lib/usermin/procmail/lang/hu
+lib/usermin/procmail/lang/hu.auto
 lib/usermin/procmail/lang/it
 lib/usermin/procmail/lang/it.auto
 lib/usermin/procmail/lang/ja.auto
@@ -11696,7 +11705,9 @@ lib/usermin/procmail/lang/lv.auto
 lib/usermin/procmail/lang/ms.auto
 lib/usermin/procmail/lang/mt.auto
 lib/usermin/procmail/lang/nl
+lib/usermin/procmail/lang/nl.auto
 lib/usermin/procmail/lang/no
+lib/usermin/procmail/lang/no.auto
 lib/usermin/procmail/lang/pl
 lib/usermin/procmail/lang/pl.auto
 lib/usermin/procmail/lang/pt.auto
@@ -13765,6 +13776,7 @@ lib/usermin/ulang/vi.auto
 lib/usermin/ulang/zh.auto
 lib/usermin/ulang/zh_TW.auto
 lib/usermin/update-from-repo.sh
+lib/usermin/updateboot.pl
 lib/usermin/updown/CHANGELOG
 lib/usermin/updown/cancel.cgi
 lib/usermin/updown/config
@@ -13917,11 +13929,11 @@ lib/usermin/updown/updown-lib.pl
 lib/usermin/updown/upload.cgi
 lib/usermin/uptracker.cgi
 lib/usermin/user_chooser.cgi
-lib/usermin/usermin-daemon
 lib/usermin/usermin-debian-pam
 lib/usermin/usermin-init
 lib/usermin/usermin-pam
 lib/usermin/usermin-pam-osx
+lib/usermin/usermin-systemd
 lib/usermin/usermount/CHANGELOG
 lib/usermin/usermount/config
 lib/usermin/usermount/config.info

@@ -69,7 +69,7 @@
     SUBDIR += font-genjyuugothic
     SUBDIR += font-genshingothic
     SUBDIR += font-hackgen
-    SUBDIR += font-hackgen-nerd
+    SUBDIR += font-hackgen-nf
     SUBDIR += font-ipa
     SUBDIR += font-ipa-uigothic
     SUBDIR += font-ipaex

@@ -1,6 +1,6 @@
---- autogen.sh.orig	2020-11-02 21:27:19 UTC
+--- autogen.sh.orig	2022-07-19 08:13:10 UTC
 +++ autogen.sh
-@@ -8,31 +8,6 @@ LIBTOOLIZE=$(command -v libtoolize)
+@@ -8,31 +8,6 @@ PKG_CONFIG=$(command -v pkg-config)
  AUTORECONF=$(command -v autoreconf)
  PKG_CONFIG=$(command -v pkg-config)
  
@@ -32,10 +32,15 @@
  ##########################################
  
  TODAY=`date +%y%m%d`
-@@ -73,8 +48,3 @@ cat configure.seed | sed \
+@@ -74,13 +49,3 @@ rm -f config.h config.h.in *~ #*
      > configure.ac
  
  rm -f config.h config.h.in *~ #*
+-
+-git submodule init
+-git submodule update --remote
+-
+-# git submodule update --init --recursive
 -
 -echo "Wait please..."
 -autoreconf -if

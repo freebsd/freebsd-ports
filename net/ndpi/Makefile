@@ -1,5 +1,5 @@
 PORTNAME=	ndpi
-PORTVERSION=	4.2.d20220608
+PORTVERSION=	4.4.d20220714
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ USES=		autoreconf compiler:c++11-lang cpe libtool localbase:ldflags pathfix \
 CPE_VENDOR=	ntop
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--with-pic
+CONFIGURE_ARGS=	--with-pic --with-local-libgcrypt
 CPPFLAGS+=	-I${LOCALBASE}/include/json-c
 LIBS+=		-ljson-c
 MAKE_ENV+=	EXAMPLESDIR="${EXAMPLESDIR_REL}"
@@ -29,7 +29,7 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
 GH_PROJECT=	nDPI
-GH_TAGNAME=	bb59f2e
+GH_TAGNAME=	dd8953c
 
 PLIST_SUB=	MAJOR_VER=${PORTVERSION:R:R} VER=${PORTVERSION:R}
 

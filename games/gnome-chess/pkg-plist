@@ -215,6 +215,7 @@ share/help/uk/gnome-chess/timer.page
 share/help/uk/gnome-chess/translate.page
 share/icons/hicolor/scalable/apps/org.gnome.Chess.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Chess-symbolic.svg
+share/locale/ab/LC_MESSAGES/gnome-chess.mo
 share/locale/af/LC_MESSAGES/gnome-chess.mo
 share/locale/am/LC_MESSAGES/gnome-chess.mo
 share/locale/ar/LC_MESSAGES/gnome-chess.mo

@@ -1,6 +1,7 @@
 PORTNAME=	apachetop
-PORTVERSION=	0.19.7
+DISTVERSION=	0.19.7
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/tessus/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Apache realtime log stats
@@ -8,12 +9,11 @@ COMMENT=	Apache realtime log stats
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf cpe ncurses readline
-USE_GITHUB=	yes
-GH_ACCOUNT=	tessus
+USES=		cpe ncurses readline
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ENV+=	NCURSES_CFLAGS="-I${NCURSESINC}" NCURSES_LIBS="-lncursesw"
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 

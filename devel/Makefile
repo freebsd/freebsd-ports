@@ -311,6 +311,7 @@
     SUBDIR += c4core
     SUBDIR += caf
     SUBDIR += calibrator
+    SUBDIR += caliper
     SUBDIR += capnproto
     SUBDIR += capnproto080
     SUBDIR += capstone3
