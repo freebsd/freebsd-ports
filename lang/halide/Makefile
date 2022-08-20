@@ -40,6 +40,8 @@ OPTIONS_DEFAULT=
 
 NATIVE_DESC=	Build with native optimizations (-march=native)
 
+PORTSCOUT=	limit:^.*\. # prevent release_NNNN_NN_NN
+
 post-patch-NATIVE-off:
 	@${REINPLACE_CMD} -e 's| -march=native | |' ${WRKSRC}/apps/linear_algebra/Makefile
 
