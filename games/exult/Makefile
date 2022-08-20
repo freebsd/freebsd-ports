@@ -9,7 +9,7 @@ COMMENT=	Engine for Ultima VII (BG, FOV, SI, SS)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS?=	libfreetype.so:print/freetype2 \
 		libogg.so:audio/libogg \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
