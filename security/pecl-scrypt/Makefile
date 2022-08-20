@@ -1,10 +1,6 @@
 PORTNAME=	scrypt
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	security pear
-
-# https://github.com/DomBlack/php-scrypt/pull/56/
-PATCH_SITES=	https://github.com/DomBlack/php-scrypt/commit/
-PATCHFILES=	5010f9fa0743518d149d994728ca930503adde1e.patch:-p1
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PHP wrapper to Colin Percival's scrypt implementation
