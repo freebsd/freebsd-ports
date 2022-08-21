@@ -1,9 +1,9 @@
 PORTNAME=	aws-c-http
-PORTVERSION=	0.6.8
+PORTVERSION=	0.6.19
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C99 implementation of the HTTP/1.1 and HTTP/2 specifications
 
 LICENSE=	APACHE20
