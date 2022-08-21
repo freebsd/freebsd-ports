@@ -1,0 +1,16 @@
+Swiss army knife for backup and disaster recovery
+
+Features:
+
+* Like 7z or RAR on steroids, with deduplicated "snapshots" (versions).
+* Conceptually similar to Mac time machine, but much more efficient.
+* Keeps backup always-to-always, no need to ever prune (CryptoLocker).
+* Easily handles millions of files and TBs of data, non-latin support.
+* Cloud backups with full encryption, minimal data transfer / bandwith.
+* Data integrity check CRC32+XXHASH,SHA-1,SHA-2,SHA-3,MD5,XXH3,BLAKE3.
+* Thorough data verification, multithread support (real world 1GB+/s).
+* Specific zfs handling functions, full multiplatform interoperability.
+* Particularly suitable for minimal space storage of virtual machines.
+* Full backwards compatibility with ZPAQ [archivers/paq].
+
+WWW: https://github.com/fcorbelli/zpaqfranz

@@ -270,6 +270,7 @@
     SUBDIR += zlib-ng
     SUBDIR += zoo
     SUBDIR += zopfli
+    SUBDIR += zpaqfranz
     SUBDIR += zstd
     SUBDIR += zstr
     SUBDIR += zutils
