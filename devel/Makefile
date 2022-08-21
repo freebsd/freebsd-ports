@@ -2824,6 +2824,7 @@
     SUBDIR += p5-Module-Version
     SUBDIR += p5-Module-Versions
     SUBDIR += p5-Module-Versions-Report
+    SUBDIR += p5-Mojo-Base-XS
     SUBDIR += p5-Mojolicious-Plugin-NYTProf
     SUBDIR += p5-Moo
     SUBDIR += p5-MooX-Aliases
