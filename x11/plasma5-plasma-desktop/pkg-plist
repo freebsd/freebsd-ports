@@ -46,8 +46,8 @@ lib/libexec/kauth/kcmdatetimehelper
 %%QT_QMLDIR%%/org/kde/activities/settings/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/activityswitcher/libactivityswitcherextensionplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/activityswitcher/qmldir
-%%ACCOUNTS%%%%QT_QMLDIR%%/org/kde/plasma/emoji/libEmojierDeclarativePlugin.so
-%%ACCOUNTS%%%%QT_QMLDIR%%/org/kde/plasma/emoji/qmldir
+%%IBUS%%%%QT_QMLDIR%%/org/kde/plasma/emoji/libEmojierDeclarativePlugin.so
+%%IBUS%%%%QT_QMLDIR%%/org/kde/plasma/emoji/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/private/kimpanel/libkimpanelplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/private/kimpanel/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/private/pager/libpagerplugin.so
@@ -86,7 +86,7 @@ share/applications/kcm_tablet.desktop
 share/applications/kcm_workspace.desktop
 share/applications/kcmspellchecking.desktop
 share/applications/org.kde.knetattach.desktop
-%%ACCOUNTS%%share/applications/org.kde.plasma.emojier.desktop
+%%IBUS%%share/applications/org.kde.plasma.emojier.desktop
 share/config.kcfg/kactivitymanagerd_plugins_settings.kcfg
 share/config.kcfg/kactivitymanagerd_settings.kcfg
 share/config.kcfg/kcmaccessibilitybell.kcfg
@@ -755,7 +755,7 @@ share/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab/ActivitiesView.
 share/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab/main.qml
 share/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog/GeneralTab.qml
 share/kf5/kactivitymanagerd/workspace/settings/qml/privacyTab/BlacklistApplicationView.qml
-%%ACCOUNTS%%share/kglobalaccel/org.kde.plasma.emojier.desktop
+%%IBUS%%share/kglobalaccel/org.kde.plasma.emojier.desktop
 share/knotifications5/kaccess.notifyrc
 share/knotifications5/kcm_touchpad.notifyrc
 share/knsrcfiles/krunner.knsrc

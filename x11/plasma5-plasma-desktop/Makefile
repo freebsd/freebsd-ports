@@ -67,7 +67,8 @@ IBUS_DESC=		Enable IBUS backend for input dialog
 SCIM_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_SCIM
 SCIM_LIB_DEPENDS=	libscim-1.0.so:textproc/scim
 SCIM_DESC=		Enable SCIM backend for input dialog
-ACCOUNTS_LIB_DEPENDS=	libkaccounts.so:net-im/kaccounts-integration
+ACCOUNTS_LIB_DEPENDS=	libkaccounts.so:net-im/kaccounts-integration \
+			libaccounts-qt5.so:net-im/libaccounts-qt5
 ACCOUNTS_USE=		gnome=intltool
 ACCOUNTS_DESC=		Accounts management library support
 FEEDBACK_LIB_DEPENDS=	libKUserFeedbackCore.so:deskutils/kuserfeedback
