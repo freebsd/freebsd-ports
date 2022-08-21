@@ -3,7 +3,7 @@ PORTVERSION=	0.2.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C99 implementation of compression algorithms
 
 LICENSE=	APACHE20
