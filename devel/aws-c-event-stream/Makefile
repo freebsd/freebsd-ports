@@ -1,10 +1,10 @@
 PORTNAME=	aws-c-event-stream
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.13
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C99 implementation of the vnd.amazon.eventstream content-type
 
 LICENSE=	APACHE20
