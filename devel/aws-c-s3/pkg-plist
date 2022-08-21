@@ -1,4 +1,3 @@
-bin/s3
 include/aws/s3/exports.h
 include/aws/s3/s3.h
 include/aws/s3/s3_client.h

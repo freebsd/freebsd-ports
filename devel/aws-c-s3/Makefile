@@ -1,14 +1,15 @@
 PORTNAME=	aws-c-s3
-PORTVERSION=	0.1.31
+PORTVERSION=	0.1.45
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C99 library implementation for communicating with the S3 service
 
 LICENSE=	APACHE20
 
 LIB_DEPENDS=	libaws-c-common.so:devel/aws-c-common \
+		libaws-checksums.so:devel/aws-checksums \
 		libaws-c-cal.so:security/aws-c-cal \
 		libaws-c-io.so:devel/aws-c-io \
 		libaws-c-compression.so:devel/aws-c-compression \
