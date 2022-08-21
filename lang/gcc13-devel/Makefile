@@ -1,5 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	13.0.0.s20220731
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -105,6 +106,7 @@ CONFIGURE_ARGS+=--disable-nls \
 		--with-as=${LOCALBASE}/bin/as \
 		--with-gmp=${LOCALBASE} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
+		--with-gxx-libcxx-include-dir=/usr/include/c++/v1 \
 		--with-ld=${LOCALBASE}/bin/ld \
 		${ICONV_CONFIGURE_ARG} \
 		--with-pkgversion="FreeBSD Ports Collection" \
