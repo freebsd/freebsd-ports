@@ -1,9 +1,9 @@
 PORTNAME=	aws-c-io
-PORTVERSION=	0.10.17
+PORTVERSION=	0.13.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Event driven framework for implementing application protocols
 
 LICENSE=	APACHE20
