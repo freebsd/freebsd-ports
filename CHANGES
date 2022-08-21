@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20220821:
+AUTHOR: kde@FreeBSD.org
+
+  qt.mk now supports both Qt 5 and Qt 6.
+
+  To make use of Qt6 write:
+
+        USES=qt:6
+        USE_QT=list of Qt6 components
+
+  Please take a look at qt.mk to see the available components.
+
 20220722:
 AUTHOR: portmgr@FreeBSD.org
 
