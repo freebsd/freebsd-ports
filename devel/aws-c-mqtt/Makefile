@@ -1,9 +1,9 @@
 PORTNAME=	aws-c-mqtt
-PORTVERSION=	0.7.10
+PORTVERSION=	0.7.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C99 implementation of the MQTT 3.1.1 specification
 
 LICENSE=	APACHE20
