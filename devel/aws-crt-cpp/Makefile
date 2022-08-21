@@ -1,9 +1,9 @@
 PORTNAME=	aws-crt-cpp
-PORTVERSION=	0.17.14
+PORTVERSION=	0.18.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper around the aws-c libraries
 
 LICENSE=	APACHE20
