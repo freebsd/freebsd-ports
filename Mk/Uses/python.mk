@@ -103,6 +103,9 @@
 #	distutils	- Use distutils as do-configure, do-build and
 #			  do-install targets. implies flavors.
 #
+#	build		- Use build/installer as do-build and
+#			  do-install targets. implies flavors.
+#
 #	autoplist	- Automatically generates the packaging list for a
 #			  port that uses distutils when defined.
 #			  requires: distutils
@@ -281,7 +284,7 @@ _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python
 
 # List all valid USE_PYTHON features here
-_VALID_PYTHON_FEATURES=	allflavors autoplist concurrent cython cython_run \
+_VALID_PYTHON_FEATURES=	allflavors autoplist build concurrent cython cython_run \
 			distutils flavors noegginfo noflavors nose nose2 \
 			optsuffix py3kplist pytest pytest4 pythonprefix \
 			unittest unittest2
@@ -306,6 +309,12 @@ IGNORE=		uses either USE_PYTHON=pytest or USE_PYTHON=pytest4, not both of them
 # distutils automatically generates flavors depending on the supported
 # versions.
 .  if defined(_PYTHON_FEATURE_DISTUTILS)
+_PYTHON_FEATURE_FLAVORS=	yes
+.  endif
+
+# build automatically generates flavors depending on the supported
+# versions.
+.  if defined(_PYTHON_FEATURE_BUILD)
 _PYTHON_FEATURE_FLAVORS=	yes
 .  endif
 
@@ -595,6 +604,26 @@ RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${P
 .    endif
 .  endif
 
+.  if defined(_PYTHON_FEATURE_BUILD)
+.    if ${PYTHON_VER} == 2.7
+DEV_ERROR+=		"USES=python:2.7 is incompatible with USE_PYTHON=build"
+.    endif
+.    if defined(_PYTHON_FEATURE_DISTUTILS)
+DEV_ERROR+=		"USE_PYTHON=distutils is incompatible with USE_PYTHON=build"
+.    endif
+.    if defined(_PYTHON_FEATURE_AUTOPLIST)
+DEV_ERROR+=		"USE_PYTHON=autoplist is incompatible with USE_PYTHON=build"
+.    endif
+.    if defined(_PYTHON_FEATURE_PY3KPLIST)
+DEV_ERROR+=		"USE_PYTHON=py3kplist is incompatible with USE_PYTHON=build"
+.    endif
+.    if defined(_PYTHON_FEATURE_NOEGGINFO)
+DEV_ERROR+=		"USE_PYTHON=noegginfo is incompatible with USE_PYTHON=build"
+.    endif
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}build>0:devel/py-build@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}installer>0:devel/py-installer@${PY_FLAVOR}
+.  endif
+
 # distutils support
 PYSETUP?=		setup.py
 PYDISTUTILS_SETUP?=	-c \
@@ -789,6 +818,23 @@ do-install:
 	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
 .    endif
 .  endif # defined(_PYTHON_FEATURE_DISTUTILS)
+
+.  if defined(_PYTHON_FEATURE_BUILD)
+.    if !target(do-configure)
+do-configure:
+	@${DO_NADA}
+.    endif
+
+.    if !target(do-build)
+do-build:
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -m build --wheel --no-isolation --outdir ${WRKDIR}
+.    endif
+
+.    if !target(do-install)
+do-install:
+	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -m installer ${WRKDIR}/*.whl --destdir ${STAGEDIR}
+.    endif
+.  endif # defined(_PYTHON_FEATURE_BUILD)
 
 .  if defined(_PYTHON_FEATURE_NOSE)
 .    if !target(do-test)
