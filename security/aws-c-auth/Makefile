@@ -1,9 +1,9 @@
 PORTNAME=	aws-c-auth
-PORTVERSION=	0.6.10
+PORTVERSION=	0.6.15
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C99 library implementation of AWS client-side authentication
 
 LICENSE=	APACHE20
