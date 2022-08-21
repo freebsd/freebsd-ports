@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-Platform HW accelerated CRC32c and CRC32
 
 LICENSE=	APACHE20
@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 # clang is crashing on CURRENT due an assertion
 # see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=234232
 # and https://bugs.llvm.org/show_bug.cgi?id=40985
-.if ${OSVERSION} >= 1300000
+.if ${OSVERSION} >= 1400000
 USE_GCC=	yes
 .endif
 
