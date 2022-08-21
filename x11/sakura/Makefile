@@ -1,7 +1,7 @@
 PORTNAME=	sakura
-PORTVERSION=	3.8.4
+PORTVERSION=	3.8.5
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://launchpadlibrarian.net/564547954/
+MASTER_SITES=	http://launchpadlibrarian.net/593981610/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Terminal emulator based on GTK and VTE
