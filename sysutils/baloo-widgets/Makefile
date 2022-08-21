@@ -1,6 +1,10 @@
 PORTNAME=	baloo-widgets
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-applications
+
+PATCH_SITES=	https://invent.kde.org/libraries/baloo-widgets/commit/
+PATCHFILES=	7ff54ae9b68ca0edf3d6cd57c3eefb6cf072b6f8.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	BalooWidgets library
