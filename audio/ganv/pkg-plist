@@ -1,4 +1,3 @@
-bin/ganv_bench
 include/ganv-1/ganv/Box.hpp
 include/ganv-1/ganv/Canvas.hpp
 include/ganv-1/ganv/Circle.hpp
@@ -23,7 +22,9 @@ include/ganv-1/ganv/types.h
 include/ganv-1/ganv/types.hpp
 include/ganv-1/ganv/widget.h
 include/ganv-1/ganv/wrap.hpp
+lib/girepository-1.0/Ganv-1.0.typelib
 lib/libganv-1.so
 lib/libganv-1.so.1
-lib/libganv-1.so.1.8.0
+lib/libganv-1.so.1.8.2
 libdata/pkgconfig/ganv-1.pc
+share/gir-1.0/Ganv-1.0.gir
