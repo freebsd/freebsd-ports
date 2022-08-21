@@ -1,6 +1,5 @@
 PORTNAME=	gdcm
 PORTVERSION=	${GDCM_MAJOR}.${GDCM_MINOR}.${GDCM_PATCH}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/gdcm/gdcm%20${GDCM_MAJOR}.x/GDCM%20${PORTVERSION}
 
@@ -30,7 +29,7 @@ VTK_BROKEN=		Fails to compile with VTK-9.1, see https://sourceforge.net/p/gdcm/b
 # Change this when updating the port
 GDCM_MAJOR=	3
 GDCM_MINOR=	0
-GDCM_PATCH=	14
+GDCM_PATCH=	15
 
 # Change this whenever VTK is updated
 VTK_VERSION=	9.1
