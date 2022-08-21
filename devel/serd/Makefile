@@ -1,5 +1,5 @@
 PORTNAME=	serd
-PORTVERSION=	0.30.12
+DISTVERSION=	0.30.14
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -9,11 +9,13 @@ COMMENT=	C library for RDF syntax
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig tar:bzip2 waf
+USES=		meson pkgconfig python:test tar:xz
 USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/serdi
