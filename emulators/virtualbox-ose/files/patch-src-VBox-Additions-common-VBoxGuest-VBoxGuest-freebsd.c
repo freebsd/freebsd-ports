@@ -1,4 +1,4 @@
---- src/VBox/Additions/common/VBoxGuest/VBoxGuest-freebsd.c.orig	2019-01-25 18:12:28 UTC
+--- src/VBox/Additions/common/VBoxGuest/VBoxGuest-freebsd.c.orig	2022-03-22 23:37:46 UTC
 +++ src/VBox/Additions/common/VBoxGuest/VBoxGuest-freebsd.c
 @@ -45,6 +45,7 @@
  #include <sys/uio.h>
@@ -202,7 +202,7 @@
   * I/O control request.
   *
   * @returns depends...
-@@ -316,8 +227,12 @@ static int vgdrvFreeBSDClose(struct cdev *pDev, int fF
+@@ -316,8 +227,12 @@ static int vgdrvFreeBSDIOCtl(struct cdev *pDev, u_long
  static int vgdrvFreeBSDIOCtl(struct cdev *pDev, u_long ulCmd, caddr_t pvData, int fFile, struct thread *pTd)
  {
      PVBOXGUESTSESSION pSession;
@@ -216,7 +216,7 @@
      /*
       * Deal with the fast ioctl path first.
       */
-@@ -512,12 +427,14 @@ int VBOXCALL VBoxGuestIDC(void *pvSession, uintptr_t u
+@@ -512,12 +427,14 @@ static int vgdrvFreeBSDPoll(struct cdev *pDev, int fEv
  
  static int vgdrvFreeBSDPoll(struct cdev *pDev, int fEvents, struct thread *td)
  {
@@ -275,3 +275,16 @@
                      vgdrvFreeBSDRemoveIRQ(pDevice, pState);
                  }
                  else
+@@ -782,8 +699,12 @@ static driver_t vgdrvFreeBSDDriver =
+     sizeof(struct VBoxGuestDeviceState),
+ };
+ 
++#if __FreeBSD_version >= 1400058
++DRIVER_MODULE(vboxguest, pci, vgdrvFreeBSDDriver, 0, 0);
++#else
+ static devclass_t vgdrvFreeBSDClass;
+ 
+ DRIVER_MODULE(vboxguest, pci, vgdrvFreeBSDDriver, vgdrvFreeBSDClass, 0, 0);
++#endif
+ MODULE_VERSION(vboxguest, 1);
+ 
