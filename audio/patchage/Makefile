@@ -1,5 +1,5 @@
 PORTNAME=	patchage
-DISTVERSION=	1.0.6
+DISTVERSION=	1.0.8
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libganv-1.so:audio/ganv \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		compiler:c++14-lang gettext-runtime gnome localbase pkgconfig python:build tar:bz2 waf
+USES=		compiler:c++14-lang gettext-runtime gnome localbase meson pkgconfig python:build tar:xz
 USE_GNOME=	atk cairo cairomm glib20 glibmm gdkpixbuf2 gtk20 gtkmm24 libsigc++20 pango pangomm
 
 post-install:
