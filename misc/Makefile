@@ -373,7 +373,6 @@
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
     SUBDIR += py-alive-progress
-    SUBDIR += py-anndata
     SUBDIR += py-boost-histogram
     SUBDIR += py-cinder
     SUBDIR += py-colorbrewer
@@ -389,7 +388,6 @@
     SUBDIR += py-gluoncv
     SUBDIR += py-gluonnlp
     SUBDIR += py-halo
-    SUBDIR += py-hist
     SUBDIR += py-histoprint
     SUBDIR += py-huepy
     SUBDIR += py-kartograph
