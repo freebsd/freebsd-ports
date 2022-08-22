@@ -1,5 +1,5 @@
 PORTNAME=	intellij-ultimate
-DISTVERSION=	2021.3.2
+DISTVERSION=	2022.2.1
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cf.jetbrains.com/idea/
 DISTNAME=	ideaIU-${DISTVERSION}-no-jbr
@@ -22,10 +22,7 @@ USES=		python:run shebangfix ssl
 USE_JAVA=	yes
 JAVA_VERSION=	11+
 
-SHEBANG_FILES=	bin/printenv.py bin/restart.py \
-		plugins/spy-js/server/node_modules/node-uuid/benchmark/bench.sh \
-		plugins/spy-js/server/proxy-nix.sh \
-		plugins/spy-js/server/proxy-osx.sh
+SHEBANG_FILES=	bin/restart.py
 
 CONFLICTS=	idea intellij
 
@@ -35,7 +32,7 @@ NO_BUILD=	yes
 SUB_FILES=	idea idea.desktop pkg-message
 
 BUILD_TYPE=	IU
-BUILD_VERSION=	213.6777.52
+BUILD_VERSION=	222.3739.54
 BUILD_MARKER=	${BUILD_TYPE}-${BUILD_VERSION}
 PLIST_SUB=	BUILD_MARKER=${BUILD_MARKER}
 WRKSRC=		${WRKDIR}/idea-${BUILD_MARKER}
@@ -46,7 +43,9 @@ post-patch:
 	@${RM} -r \
 		${WRKSRC}/bin/fsnotifier \
 		${WRKSRC}/bin/fsnotifier64 \
+		${WRKSRC}/bin/libdbm.so \
 		${WRKSRC}/lib/pty4j-native/ \
+		${WRKSRC}/plugins/android/resources/native/ \
 		${WRKSRC}/plugins/cwm-plugin/quiche-native/ \
 		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/linux32/ \
 		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/linux64/ \
