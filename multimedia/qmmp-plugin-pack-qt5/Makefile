@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libqmmpui-1.so:multimedia/qmmp-qt5
 BUILD_DEPENDS=	qmmp-qt5>=1.5.0:multimedia/qmmp-qt5
 
-CONFLICTS=	${PORTNAME}-0.*
+CONFLICTS=	${PORTNAME}-qt6
 PORTSCOUT=	limit:^1\..*
 
 USES=		cmake pkgconfig qt:5 tar:bzip2
