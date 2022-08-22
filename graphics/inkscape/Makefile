@@ -1,6 +1,6 @@
 PORTNAME=	inkscape
 DISTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
@@ -38,6 +38,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libdouble-conversion.so:devel/double-conversion \
 		lib2geom.so:math/lib2geom
 RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scour>0:textproc/py-scour@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cssselect>0:www/py-cssselect@${PY_FLAVOR} \
