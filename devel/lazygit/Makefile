@@ -1,7 +1,6 @@
 PORTNAME=	lazygit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.34
-PORTREVISION=	4
+DISTVERSION=	0.35
 CATEGORIES=	devel
 
 MAINTAINER=	meta@FreeBSD.org
@@ -24,30 +23,32 @@ GH_TUPLE=	\
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
+		fsmiamoto:git-todo-parser:v0.0.2:fsmiamoto_git_todo_parser/vendor/github.com/fsmiamoto/git-todo-parser \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:2a1a1b586447:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
-		go-errors:errors:v1.4.1:go_errors_errors/vendor/github.com/go-errors/errors \
+		gdamore:tcell:v2.5.1:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
+		go-errors:errors:v1.4.2:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
 		go-git:go-billy:v5.0.0:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-logfmt:logfmt:v0.5.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
-		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
-		golang-collections:collections:604e922904d3:golang_collections_collections/vendor/github.com/golang-collections/collections \
 		golang:crypto:7f63de1d35b0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:exp:8dddf5d87bd8:golang_exp/vendor/golang.org/x/exp \
 		golang:net:0a1ea396d57c:golang_net/vendor/golang.org/x/net \
-		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:1d35b9e2eb4e:golang_sys/vendor/golang.org/x/sys \
-		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
+		golang:sys:33da011f77ad:golang_sys/vendor/golang.org/x/sys \
+		golang:term:e5f449aeb171:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
 		gookit:color:v1.4.2:gookit_color/vendor/github.com/gookit/color \
 		imdario:mergo:v0.3.11:imdario_mergo/vendor/github.com/imdario/mergo \
 		integrii:flaggy:v1.4.0:integrii_flaggy/vendor/github.com/integrii/flaggy \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
+		jesseduffield:generics:727e535cbe68:jesseduffield_generics/vendor/github.com/jesseduffield/generics \
 		jesseduffield:go-git:341962be15a4:jesseduffield_go_git_v5/vendor/github.com/jesseduffield/go-git/v5 \
-		jesseduffield:gocui:1945d7b9ed8b:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
+		jesseduffield:gocui:bce22fd599f6:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
+		jesseduffield:kill:bfbe04675d10:jesseduffield_kill/vendor/github.com/jesseduffield/kill \
 		jesseduffield:minimal:9cde264e6b1e:jesseduffield_minimal_gitignore/vendor/github.com/jesseduffield/minimal \
 		jesseduffield:yaml:v2.1.0:jesseduffield_yaml/vendor/github.com/jesseduffield/yaml \
 		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
@@ -68,6 +69,7 @@ GH_TUPLE=	\
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		sahilm:fuzzy:v0.1.0:sahilm_fuzzy/vendor/github.com/sahilm/fuzzy \
+		samber:lo:v1.10.1:samber_lo/vendor/github.com/samber/lo \
 		sanity-io:litter:v1.5.2:sanity_io_litter/vendor/github.com/sanity-io/litter \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
