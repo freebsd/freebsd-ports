@@ -1,7 +1,7 @@
 PORTNAME=	mfem
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +29,7 @@ MPICH_CMAKE_ON=		-DMFEM_USE_MPI=ON \
 MPICH_BUILD_DEPENDS=	mpich>0:net/mpich
 MPICH_LIB_DEPENDS=	libHYPRE.so:science/hypre \
 			libmetis.so:math/metis
-OPENMPI_RUN_DEPENDS=	mpich>0:net/mpich
+MPICH_RUN_DEPENDS=	mpich>0:net/mpich
 
 OPENMPI_CMAKE_ON=	-DMFEM_USE_MPI=ON \
 			-DMPI_HOME=${LOCALBASE}/mpi/openmpi
