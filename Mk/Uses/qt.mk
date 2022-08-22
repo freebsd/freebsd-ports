@@ -127,33 +127,25 @@ _USES_POST+=		qt
 _QT_MK_POST_INCLUDED=	qt.mk
 
 # The Qt components supported by qt.mk: list of shared, and version specific ones
-_USE_QT_ALL=		assistant dbus declarative declarative-test designer doc gui help \
-			imageformats l10n linguist linguisttools multimedia \
-			network opengl pixeltool qdbusviewer qmake script \
-			scripttools sql sql-mysql sql-odbc sql-pgsql \
-			sql-sqlite2 sql-sqlite3 svg testlib webkit \
-			xml xmlpatterns
+_USE_QT_COMMON=		3d charts datavis3d declarative doc imageformats multimedia \
+			networkauth quick3d quicktimeline remoteobjects scxml \
+			sensors serialbus serialport svg virtualkeyboard wayland \
+			webchannel websockets
+
+_USE_QT5_ONLY=		assistant buildtools concurrent connectivity core dbus \
+			declarative-test designer diag examples gamepad \
+			graphicaleffects gui help l10n linguist linguisttools location \
+			network opengl paths phonon4 pixeltool plugininfo printsupport \
+			qdbus qdbusviewer qdoc qdoc-data qev qmake quickcontrols \
+			quickcontrols2 script scripttools speech sql sql-mysql sql-odbc \
+			sql-pgsql sql-sqlite2 sql-sqlite3 sql-tds testlib uiplugin \
+			uitools webengine webglplugin webkit websockets-qml webview \
+			widgets x11extras xml xmlpatterns
 .  if ${ARCH} == amd64 || ${ARCH} == i386
-_USE_QT_ALL+=	sql-ibase
+_USE_QT5_ONLY+=		sql-ibase
 .  endif
 
-_USE_QT5_ONLY=		3d buildtools charts concurrent connectivity \
-			core datavis3d diag examples gamepad graphicaleffects \
-			location networkauth paths phonon4 plugininfo printsupport \
-			qdbus qdoc qdoc-data qev quick3d quickcontrols quickcontrols2 \
-			quicktimeline remoteobjects scxml sensors serialbus serialport \
-			speech sql-tds uiplugin uitools virtualkeyboard wayland \
-			webchannel webglplugin 	webengine websockets websockets-qml \
-			webview widgets x11extras assistant dbus declarative designer \
-			doc gui help imageformats l10n linguist linguisttools \
-			multimedia network opengl pixeltool qdbusviewer qmake script \
-			scripttools sql sql-mysql sql-odbc sql-pgsql sql-sqlite2 \
-			sql-sqlite3 svg testlib webkit xml xmlpatterns
-
-_USE_QT6_ONLY=		3d 5compat base charts datavis3d declarative doc languageserver lottie imageformats quick3d \
-			quickcontrols2 quicktimeline networkauth remoteobjects scxml sensors \
-			serialbus serialport shadertools \
-			svg tools translations wayland webchannel websockets
+_USE_QT6_ONLY=		5compat base languageserver lottie shadertools tools translations
 
 # Dependency tuples: _LIB should be preferred if possible.
 qt-3d_PORT=		graphics/${_QT_RELNAME}-3d
@@ -390,7 +382,8 @@ qt-xmlpatterns_PORT=	textproc/${_QT_RELNAME}-xmlpatterns
 qt-xmlpatterns_LIB=	libQt${_QT_LIBVER}XmlPatterns.so
 
 # Actually add the dependencies to the proper lists.
-_USE_QT_ALL+=		${_USE_QT${_QT_VER}_ONLY}
+_USE_QT_ALL=		${_USE_QT_COMMON} \
+			${_USE_QT${_QT_VER}_ONLY}
 _USE_QT=		${USE_QT}
 # Iterate through components deprived of suffix.
 .  for component in ${_USE_QT:O:u:C/_(build|run)$//}
