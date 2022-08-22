@@ -333,6 +333,7 @@
     SUBDIR += qmmp-qt5
     SUBDIR += qpwgraph
     SUBDIR += qt5-multimedia
+    SUBDIR += qt6-multimedia
     SUBDIR += quodlibet
     SUBDIR += qwinff
     SUBDIR += rage
