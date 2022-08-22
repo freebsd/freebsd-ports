@@ -382,7 +382,7 @@ libdata/pkgconfig/Qt6Help.pc
 libdata/pkgconfig/Qt6Linguist.pc
 libdata/pkgconfig/Qt6UiPlugin.pc
 libdata/pkgconfig/Qt6UiTools.pc
-%%QT_LIBEXECDIR%%/l%%CMAKE_BUILD_TYPE%%-pro
+%%QT_LIBEXECDIR%%/lrelease-pro
 %%QT_LIBEXECDIR%%/lprodump
 %%QT_LIBEXECDIR%%/lupdate-pro
 %%QT_LIBEXECDIR%%/qhelpgenerator
