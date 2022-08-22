@@ -21,19 +21,17 @@ qmake_ARGS?=	# empty
 .include "${USESDIR}/qmake.mk"
 
 # Supported distribution arguments
-_QT5_DISTS=		3d activeqt androidextras base charts connectivity datavis3d \
-			declarative doc gamepad graphicaleffects imageformats location \
-			lottie macextras multimedia networkauth purchasing quick3d quickcontrols \
-			quickcontrols2 quicktimeline remoteobjects script scxml sensors serialbus \
-			serialport speech svg tools translations virtualkeyboard wayland \
-			webchannel webengine webglplugin websockets webview winextras \
+_COMMON_DISTS=		3d base charts datavis3d declarative imageformats multimedia \
+			networkauth quick3d quicktimeline remoteobjects scxml sensors \
+			serialbus serialport svg tools translations virtualkeyboard \
+			wayland webchannel websockets
+_QT5_DISTS=		connectivity gamepad graphicaleffects location quickcontrols \
+			quickcontrols2 script speech webengine webglplugin webview \
 			x11extras xmlpatterns
-_QT6_DISTS=		3d 5compat base charts datavis3d declarative doc imageformats languageserver lottie multimedia quick3d quickcontrols2 \
-			quicktimeline networkauth remoteobjects scxml sensors serialbus serialport shadertools svg tools \
-			translations virtualkeyboard webchannel webengine \
-			websockets webview wayland
+_QT6_DISTS=		5compat doc languageserver lottie shadertools
 
-_QT_DISTS=		${_QT${_QT_VER}_DISTS}
+_QT_DISTS=		${_COMMON_DISTS} \
+			${_QT${_QT_VER}_DISTS}
 
 # We only accept one item as an argument. The fetch target further below works
 # around this.
