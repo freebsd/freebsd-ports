@@ -23,13 +23,17 @@ GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	glvnd
 GL_COMMIT=	8f3c5b17a21e2222ab3e5fd38870b915815aca49
 
-OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=X11
+OPTIONS_DEFINE=	X11 ASM
+OPTIONS_DEFAULT=X11 ASM
 OPTIONS_SUB=	yes
+
+OPTIONS_EXCLUDE_purecap=	ASM
 
 X11_USES=		xorg
 X11_USE=		XORG=x11,xext,xorgproto
 X11_MESON_ENABLED=	x11 glx
+
+ASM_MESON_ENABLED=	asm
 
 .include <bsd.port.options.mk>
 
