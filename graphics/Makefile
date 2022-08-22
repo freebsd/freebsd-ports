@@ -960,6 +960,7 @@
     SUBDIR += qt5-wayland
     SUBDIR += qt6-3d
     SUBDIR += qt6-imageformats
+    SUBDIR += qt6-lottie
     SUBDIR += qt6-svg
     SUBDIR += qt6-wayland
     SUBDIR += qtawesome
