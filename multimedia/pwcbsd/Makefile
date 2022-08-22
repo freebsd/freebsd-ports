@@ -26,12 +26,6 @@ MMAP_DESC=	Enable mmap support (MAY CRASH YOUR SYSTEM)
 
 .include <bsd.port.options.mk>
 
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.kld \
-		${FILESDIR}/extra-patch-pwc-ctrl.c \
-		${FILESDIR}/extra-patch-pwc-v4l.c \
-		${FILESDIR}/extra-patch-pwc.c \
-		${FILESDIR}/extra-patch-pwc.h
-
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files
 .endif

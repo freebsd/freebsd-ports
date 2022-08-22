@@ -1,6 +1,6 @@
---- ./pwcview.c.orig	2009-10-03 20:45:17.711703547 +0200
-+++ ./pwcview.c	2009-10-03 20:46:00.814254980 +0200
-@@ -837,6 +837,8 @@
+--- pwcview.c.orig	2007-10-09 07:03:10 UTC
++++ pwcview.c
+@@ -837,6 +837,8 @@ void jpeg_write(int height, JSAMPIMAGE jimage, struct 
  	jdata[1] = jimage[1];
  	jdata[2] = jimage[2];
  	

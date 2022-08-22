@@ -1,6 +1,6 @@
---- pwc-v4l.c.orig	2006-06-07 22:15:52.000000000 +0200
-+++ pwc-v4l.c	2009-05-27 20:22:49.137318240 +0200
-@@ -67,7 +67,7 @@
+--- pwc-v4l.c.orig	2006-06-07 20:15:52 UTC
++++ pwc-v4l.c
+@@ -67,7 +67,7 @@ int pwc_video_do_ioctl(struct pwc_softc *pdev, unsigne
  		{
  			struct video_capability *caps = arg;
  
