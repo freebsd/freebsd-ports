@@ -7,7 +7,7 @@ MASTER_SITES=	LOCAL/nc/mirror/ \
 		https://neel.my.to/mirror/arbitrum/
 DISTNAME=	arbitrum-${PORTVERSION}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrum Virtual Machine
 
 LICENSE=	APACHE20
