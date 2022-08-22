@@ -1,0 +1,4 @@
+pytest-mpl is a plugin to facilitate image comparison for Matplotlib figures
+in pytest.
+
+WWW: https://github.com/matplotlib/pytest-mpl
