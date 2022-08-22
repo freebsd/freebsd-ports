@@ -1,5 +1,5 @@
---- ./pwc.c.orig	2007-10-09 09:14:01.000000000 +0200
-+++ ./pwc.c	2010-10-01 23:03:54.190935331 +0200
+--- ./pwc.c.orig	2007-10-09 00:14:01.000000000 -0700
++++ ./pwc.c	2022-07-26 09:44:50.872775000 -0700
 @@ -28,7 +28,8 @@
  #include "pwc-dec1.h"
  #include "pwc-dec23.h"
@@ -10,7 +10,7 @@
  static void pwc_reset_buffers(struct pwc_softc *sc);
  static void pwc_free_buffers(struct pwc_softc *sc, int detach);
  
-@@ -57,55 +58,70 @@
+@@ -57,55 +58,68 @@
  	.d_mmap		= pwc_mmap,
  	.d_name		= "pwc",
  };
@@ -113,15 +113,15 @@
  static device_attach_t pwc_attach;
  static device_detach_t pwc_detach;
  
- static devclass_t pwc_devclass;
- 
+-static devclass_t pwc_devclass;
+-
  static device_method_t pwc_methods[] = {
 -	DEVMETHOD(device_probe, pwc_match),
 +	DEVMETHOD(device_probe, pwc_probe),
  	DEVMETHOD(device_attach, pwc_attach),
  	DEVMETHOD(device_detach, pwc_detach),
  	{0,0},
-@@ -120,41 +136,25 @@
+@@ -120,41 +134,25 @@
  MODULE_DEPEND(pwc, usb, 1, 1, 1);
  
  static int
@@ -137,9 +137,6 @@
 -	if(pwc_lookup(uaa->vendor, uaa->product) == NULL)
 -		return UMATCH_NONE;
 +	Trace(TRACE_PROBE,"pwc_probe:\n");
-+
-+	if (uaa->usb_mode != USB_MODE_HOST)
-+		return (ENXIO);
  
 -	/* Driver loaded when device was already plugged in, we have to claim all interfaces or get none... */
 -	if(uaa->usegeneric)
@@ -157,6 +154,9 @@
 -	
 -        Trace(TRACE_PROBE,"pwc_match: iface=%d\n",id->bInterfaceNumber);
 -	
++	if (uaa->usb_mode != USB_MODE_HOST)
++		return (ENXIO);
++
  	/* Interface 0 is the video interface
  	 * Interface 1 is supposed to be audiocontrol
  	 * Interface 2 is supposed to be audio
@@ -175,7 +175,7 @@
  }
  
  static int
-@@ -162,43 +162,26 @@
+@@ -162,43 +160,26 @@
  {
  	struct pwc_softc *sc = device_get_softc(self);
  	struct usb_attach_arg *uaa = device_get_ivars(self);
@@ -199,13 +199,13 @@
  	sc->sc_dev = self;
 -	device_set_desc_copy(self, devinfo);
 -	device_printf(self, "%s\n", devinfo);
--
+ 
 -	err = usbd_device2interface_handle(uaa->device,0,&sc->sc_iface);
 -	if(err) {
 -		printf("%s: failed to get interface handle\n",device_get_nameunit(sc->sc_dev));
 -		return ENXIO;
 -	}
- 
+-
  	sc->udev = uaa->device;
 -	sc->type = info->type;
 -	sc->name = info->name;
@@ -228,7 +228,7 @@
  		
  			/* Logitech QuickCam Orbit */
  			sc->features |= FEATURE_MOTOR_PANTILT;
-@@ -215,6 +198,8 @@
+@@ -215,6 +196,8 @@
  	resource_string_value("pwc",device_get_unit(self),"devname",&tmpstr);
  	sc->sc_dev_t = make_dev(&pwc_cdevsw, device_get_unit(self),UID_ROOT, GID_OPERATOR,
  				0666, "%s%d",tmpstr,device_get_unit(self));
@@ -237,7 +237,7 @@
  	
  	resource_int_value("pwc",device_get_unit(self),"power_save",&sc->power_save);
  
-@@ -273,7 +258,6 @@
+@@ -273,7 +256,6 @@
  	resource_int_value("pwc",device_get_unit(self),"pad",&sc->pwc_pad);
  
  	pwc_construct(sc);
@@ -245,7 +245,7 @@
  
  	if(pwc_get_cmos_sensor(sc, &i) >= 0) {
  	
-@@ -299,7 +283,6 @@
+@@ -299,7 +281,6 @@
  	if(sc->power_save)
  		pwc_camera_power(sc, 0);
  
@@ -253,7 +253,7 @@
  	return 0;
  }
  
-@@ -309,12 +292,8 @@
+@@ -309,13 +290,9 @@
  	struct pwc_softc *sc = device_get_softc(self);
  
  	Trace(TRACE_PROBE,"pwc_detach: sc=%p\n",sc);
@@ -263,12 +263,13 @@
 -		usbd_close_pipe(sc->sc_videopipe);
 -		sc->sc_videopipe = NULL;
 -	}
-+
-+	usbd_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
  
++	usbd_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
++
  	sc->error_status = EPIPE;
  
-@@ -334,21 +313,17 @@
+ 	if(sc->vopen) {
+@@ -334,21 +311,17 @@
  	
  	mtx_destroy(&sc->ptrlock);
  	pwc_free_buffers(sc,1);
@@ -294,7 +295,7 @@
  	Trace(TRACE_OPEN,"pwc_open: flag=%d, mode=%d, unit=%d\n",flag, mode, unit);
  
  	if(sc->error_status == EPIPE)
-@@ -419,23 +394,6 @@
+@@ -419,23 +392,6 @@
  	for (i = 0; i < sc->pwc_mbufs; i++)
  		sc->image_used[i] = 0;
  
@@ -318,7 +319,7 @@
  	sc->state = 0;
  	sc->vframe_count = 0;
  	sc->vframes_dumped = 0;
-@@ -476,10 +434,10 @@
+@@ -476,10 +432,10 @@
  int
  pwc_close(struct cdev *dev, int flag, int mode, struct thread *p)
  {
@@ -333,7 +334,7 @@
  	Trace(TRACE_OPEN,"pwc_close: flag=%d, mode=%d, unit=%d\n", flag, mode, unit);
  
  	/* Dump statistics, but only if a reasonable amount of frames were
-@@ -495,19 +453,14 @@
+@@ -495,19 +451,14 @@
  		pwc_dec1_exit();
  	else
  		pwc_dec23_exit();	/* Timon & Kiara */
@@ -356,7 +357,7 @@
  		pwc_set_leds(sc,0,0);
  		
  		if(sc->power_save) {
-@@ -523,15 +476,16 @@
+@@ -523,15 +474,16 @@
  int
  pwc_read(struct cdev *dev, struct uio *uio, int flag)
  {
@@ -376,7 +377,7 @@
  	if (sc->error_status)
  		return sc->error_status;
  
-@@ -565,7 +519,7 @@
+@@ -565,7 +517,7 @@
  	if(count + sc->image_read_pos > bytes_to_read)
  		count = bytes_to_read - sc->image_read_pos;
  	
@@ -385,7 +386,7 @@
  
  	err = uiomove(sc->images[sc->fill_image].bufmem + sc->image_read_pos,count,uio);
  	if(err)
-@@ -583,10 +537,9 @@
+@@ -583,10 +535,9 @@
  int
  pwc_ioctl(struct cdev *dev, u_long cmd, caddr_t addr, int flag, struct thread *p)
  {
@@ -398,7 +399,7 @@
  	if (sc->error_status)
  		return sc->error_status;
  	
-@@ -596,11 +549,9 @@
+@@ -596,11 +547,9 @@
  int
  pwc_poll(struct cdev *dev, int events, struct thread *p)
  {
@@ -411,7 +412,7 @@
  	if(sc->error_status)
  		return sc->error_status;
  
-@@ -625,16 +576,17 @@
+@@ -625,16 +574,17 @@
  }
  
  int
@@ -435,7 +436,7 @@
  	if (sc->error_status)
  		return sc->error_status;
  
-@@ -652,16 +604,10 @@
+@@ -652,16 +602,10 @@
  int
  pwc_try_video_mode(struct pwc_softc *sc, int width, int height, int new_fps, int new_compression, int new_snapshot)
  {
@@ -443,8 +444,6 @@
 -	u_int8_t nendpt;
 -	int i, j, err, ret;
 +	int i, err, ret;
-+
-+	usbd_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
  
 -	if(sc->sc_videopipe != NULL) {
 -		usbd_abort_pipe(sc->sc_videopipe);
@@ -452,10 +451,12 @@
 -		sc->sc_videopipe = NULL;
 -	}
 -	
++	usbd_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
++
  	pwc_reset_buffers(sc);
  	
  	/* Try to set video mode... if that fails fallback to previous mode  */
-@@ -678,52 +624,21 @@
+@@ -678,52 +622,21 @@
  	sc->drop_frames++; /* try to avoid garbage during switch */
  	sc->vsync = 0;
  
@@ -470,8 +471,12 @@
 -	err = usbd_endpoint_count(sc->sc_iface, &nendpt);
 -        if(err != USBD_NORMAL_COMPLETION) {
 -		printf("%s: Failed to get endpoint count (%d)\n",device_get_nameunit(sc->sc_dev),err);
--		return -err;
--	}
++	/* Allocate iso transfers */
++	if (usbd_transfer_setup(sc->udev, &sc->sc_iface_index, sc->sc_xfer,
++	    pwc_config, MAX_ISO_BUFS, sc, &Giant)) {
++		printf("%s: Failed to setup USB transfers\n", device_get_nameunit(sc->sc_dev));
+ 		return -err;
+ 	}
 -	for (i = 0; i < nendpt; i++) {
 -		edesc = usbd_interface2endpoint_descriptor(sc->sc_iface, i);
 -		if(edesc != NULL && UE_GET_ADDR(edesc->bEndpointAddress) == sc->vendpoint)
@@ -492,12 +497,8 @@
 -	err = usbd_open_pipe(sc->sc_iface,edesc->bEndpointAddress, 0, &sc->sc_videopipe);
 -	if(err != USBD_NORMAL_COMPLETION) {
 -		printf("%s: Failed to open videopipe (%d)\n",device_get_nameunit(sc->sc_dev),err);
-+	/* Allocate iso transfers */
-+	if (usbd_transfer_setup(sc->udev, &sc->sc_iface_index, sc->sc_xfer,
-+	    pwc_config, MAX_ISO_BUFS, sc, &Giant)) {
-+		printf("%s: Failed to setup USB transfers\n", device_get_nameunit(sc->sc_dev));
- 		return -err;
- 	}
+-		return -err;
+-	}
  
  	for (i = 0; i < MAX_ISO_BUFS; i++) {
 -		
@@ -515,7 +516,7 @@
  	}
  	
  	if(sc->state & PWC_INIT)
-@@ -767,37 +682,41 @@
+@@ -767,38 +680,42 @@
  }
  
  static void
@@ -568,7 +569,7 @@
 +		break;
  	}
 +}
-+
+ 
 +static void
 +pwc_isoc_handler(struct usb_xfer *xfer, void *addr)
 +{
@@ -579,10 +580,11 @@
 +	int i;
 +
 +	Trace(TRACE_ISOC_VERBOSE, "pwc_isoc_handler: count=%u\n", xfer->actlen);
- 
++
  	/* Reset ISOC error counter. We did get here, after all. */
  	sc->visoc_errors = 0;
-@@ -816,8 +735,8 @@
+ 
+@@ -816,8 +733,8 @@
  		/* XXX there is no individual framestatus in FreeBSD usbstack
  		 * so just assume all frames are good
  		 */
@@ -593,7 +595,7 @@
  
  		if (flen > 0) { /* if valid data... */
  			if(sc->vsync > NOCOPY) { /* ...and we are not sync-hunting... */
-@@ -830,7 +749,7 @@
+@@ -830,7 +747,7 @@
  					sc->vframes_error++;
  				}
  				else {
@@ -602,7 +604,7 @@
  					fillptr += flen;
  				}
  			}
-@@ -943,7 +862,6 @@
+@@ -943,7 +860,6 @@
  		sc->vlast_packet_size = flen;
  
  	}
@@ -610,7 +612,7 @@
  	if(awake) {
  		if(sc->state & PWC_ASLEEP) {
  			wakeup(sc);
-@@ -953,16 +871,6 @@
+@@ -953,16 +869,6 @@
  			selwakeuppri(&sc->rsel, PZERO);
  		}
  	}
@@ -627,7 +629,7 @@
  }
  
  int
-@@ -1050,6 +958,9 @@
+@@ -1050,6 +956,9 @@
  {
  	int i;
  	Trace(TRACE_MEMORY, "Entering free_buffers(%p).\n", sc);
@@ -637,7 +639,7 @@
  	if (sc->fbuf != NULL) {
  		for (i = 0; i < sc->pwc_fbufs; i++) {
  			if (sc->fbuf[i].data != NULL) {
-@@ -1074,13 +985,6 @@
+@@ -1074,13 +983,12 @@
  		free(sc->image_data,M_USBDEV);
  		sc->image_data = NULL;
  	}
@@ -651,4 +653,10 @@
  }
  
 -DRIVER_MODULE(pwc, uhub, pwc_driver, pwc_devclass, usbd_driver_load, 0);
++#if __FreeBSD_version >= 1400058
++DRIVER_MODULE(pwc, uhub, pwc_driver, NULL, NULL);
++#else
++static devclass_t pwc_devclass;
++
 +DRIVER_MODULE(pwc, uhub, pwc_driver, pwc_devclass, NULL, 0);
++#endif
