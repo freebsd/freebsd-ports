@@ -1,5 +1,5 @@
 PORTNAME=	fomp
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.4
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 PKGNAMESUFFIX=	-lv2
@@ -10,9 +10,10 @@ COMMENT=	LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	lv2>0:audio/lv2
+BUILD_DEPENDS=	lv2>0:audio/lv2 \
+		lv2lint:audio/lv2lint
 
-USES=		pkgconfig tar:bz2 waf
+USES=		meson pkgconfig tar:xz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/fomp.lv2/*.so
