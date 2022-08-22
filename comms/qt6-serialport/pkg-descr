@@ -1,0 +1,11 @@
+Qt Serial Port provides the basic functionality, which includes configuring,
+I/O operations, getting and setting the control signals of the RS-232 pinouts.
+
+The following items are not supported by this module:
+
+  *  Terminal features, such as echo, control CR/LF, and so on.
+  *  Text mode.
+  *  Configuring timeouts and delays while reading or writing.
+  *  Pinout signal change notification.
+
+WWW: https://qt.io
