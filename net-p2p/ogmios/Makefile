@@ -1,5 +1,5 @@
 PORTNAME=	ogmios
-PORTVERSION=	5.5.4
+PORTVERSION=	5.5.5
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-p2p
 
@@ -75,7 +75,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
 		assoc-1.0.2_3 \
-		async-2.2.4_1 \
+		async-2.2.4_2 \
 		async-timer-0.2.0.0 \
 		attoparsec-0.13.2.5_2 \
 		attoparsec-iso8601-1.0.2.0_3 \
@@ -90,7 +90,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		base64-0.4.2.3_2 \
 		base64-bytestring-1.2.1.0 \
 		base64-bytestring-type-1.0.1_14 \
-		basement-0.0.12_1 \
+		basement-0.0.12_2 \
 		bech32-1.1.2 \
 		bifunctors-5.5.11_1 \
 		bimap-0.4.0_1 \
@@ -98,7 +98,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		binary-orphans-1.0.2_1 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
-		blaze-markup-0.8.2.8_2 \
+		blaze-markup-0.8.2.8_3 \
 		bsb-http-chunked-0.0.0.4_3 \
 		byteorder-1.0.4 \
 		bytestring-builder-0.10.8.2.0 \
@@ -150,7 +150,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		either-5.0.1.1_1 \
 		ekg-0.4.0.15_8 \
 		ekg-core-0.1.1.7_2 \
-		entropy-0.4.1.7 \
+		entropy-0.4.1.7_1 \
 		erf-2.0.0.0 \
 		extra-1.7.10 \
 		fast-logger-3.1.1 \
@@ -164,7 +164,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		formatting-6.3.7_2 \
 		foundation-0.0.26.1_1 \
 		free-5.1.7_1 \
-		generic-data-0.9.2.1 \
+		generic-data-0.9.2.1_1 \
 		generic-deriving-1.14.1 \
 		generic-lens-2.2.1.0_1 \
 		generic-lens-core-2.2.1.0_1 \
@@ -200,8 +200,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 		int-cast-0.2.0.0_4 \
 		integer-logarithms-1.0.3.1_3 \
 		invariant-0.5.5 \
-		io-streams-1.5.2.1_2 \
-		io-streams-haproxy-1.0.1.0_5 \
+		io-streams-1.5.2.1_3 \
+		io-streams-haproxy-1.0.1.0_6 \
 		iproute-1.7.12 \
 		js-chart-2.9.4.1 \
 		kan-extensions-5.2.3 \
@@ -224,7 +224,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		mersenne-random-pure64-0.2.2.0_1 \
 		microlens-0.4.12.0 \
 		microlens-mtl-0.2.0.1 \
-		microlens-th-0.4.3.10 \
+		microlens-th-0.4.3.10_1 \
 		microstache-1.0.2_3 \
 		mime-types-0.1.0.9 \
 		mmorph-1.1.5_1 \
