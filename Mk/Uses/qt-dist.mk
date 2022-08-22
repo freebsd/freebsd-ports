@@ -293,6 +293,13 @@ PLIST_SUB+=		QT_${dir}DIR="${QT_${dir}DIR_REL}"
 .  endfor
 
 .  if ${_QT_VER:M5}
+.    for dir in CMAKE
+# Export QT_CMAKEDIR.
+PLIST_SUB+=		QT_${dir}DIR="${QT_${dir}DIR_REL}"
+.    endfor
+.  endif
+
+.  if ${_QT_VER:M5}
 .    if ${_QT_DIST} == "base"
 # qtbase requires some tools to be symlinked to the build directory.
 _QT_TOOLS=		# empty
