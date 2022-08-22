@@ -4,8 +4,6 @@ PORTREVISION=	4
 CATEGORIES=	security net-im net
 MASTER_SITES=	https://research.ngportal.com/lurch/
 PKGNAMESUFFIX=	3
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	micadeyeye@gmail.com
 COMMENT=	Portable OMEMO Encryption Library
