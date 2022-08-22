@@ -71,6 +71,9 @@ QT_ETCDIR_REL?=		etc/xdg
 QT_EXAMPLEDIR_REL?=	share/examples/${_QT_RELNAME}
 QT_TESTDIR_REL?=	${QT_DATADIR_REL}/tests
 QT_CMAKEDIR_REL?=	lib/cmake
+_QT5_TOOLDIR_REL=	${QT_BINDIR_REL}
+_QT6_TOOLDIR_REL=	${QT_LIBEXECDIR_REL}
+QT_TOOLDIR_REL=		${_QT${_QT_VER}_TOOLDIR_REL}
 
 # Not customizable.
 QT_MKSPECDIR_REL=	${QT_ARCHDIR_REL}/mkspecs
@@ -79,12 +82,12 @@ _QT_LIBVER=		${_QT_VERSION:R:R}
 LCONVERT?=		${QT_BINDIR}/lconvert
 LRELEASE?=		${QT_BINDIR}/lrelease
 LUPDATE?=		${QT_BINDIR}/lupdate
-MOC?=			${QT_BINDIR}/moc
-RCC?=			${QT_BINDIR}/rcc
-UIC?=			${QT_BINDIR}/uic
+MOC?=			${QT_TOOLDIR}/moc
+RCC?=			${QT_TOOLDIR}/rcc
+UIC?=			${QT_TOOLDIR}/uic
 QMAKE?=			${QT_BINDIR}/qmake
-QCOLLECTIONGENERATOR?=	${QT_BINDIR}/qcollectiongenerator
-QHELPGENERATOR?=	${QT_BINDIR}/qhelpgenerator
+QCOLLECTIONGENERATOR?=	${QT_TOOLDIR}/qcollectiongenerator
+QHELPGENERATOR?=	${QT_TOOLDIR}/qhelpgenerator
 
 # Needed to redefine the qmake target for internal Qt configuration.
 _QMAKE?=		${QMAKE}
@@ -99,7 +102,7 @@ QMAKE_COMPILER=	$$(ccver="$$(${CXX} --version)"; case "$$ccver" in *clang*) echo
 
 .  for dir in BIN INC LIB ARCH PLUGIN LIBEXEC IMPORT \
 	QML DATA DOC L10N ETC EXAMPLE TEST MKSPEC \
-	CMAKE
+	CMAKE TOOL
 QT_${dir}DIR=	${PREFIX}/${QT_${dir}DIR_REL}
 # Export all directories to the plist substituion for QT_DIST ports.
 # For the others, exclude QT_CMAKEDIR and QT_ETCDIR.
