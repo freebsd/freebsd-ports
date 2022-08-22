@@ -3,7 +3,7 @@ include/iddawc-cfg.h
 include/iddawc.h
 lib/libiddawc.so
 lib/libiddawc.so.1.1
-lib/libiddawc.so.1.1.4
+lib/libiddawc.so.%%DISTVERSION%%
 libdata/pkgconfig/libiddawc.pc
 share/idwcc/webapp/callback.html
 share/idwcc/webapp/css/bootstrap.css
@@ -33,3 +33,4 @@ share/idwcc/webapp/js/jquery.min.js
 share/idwcc/webapp/js/popper.js
 share/idwcc/webapp/js/popper.min.js
 share/idwcc/webapp/js/qrcode.js
+share/man/man1/idwcc.1.gz
