@@ -76,12 +76,3 @@ libdata/pkgconfig/Qt6Svg.pc
 libdata/pkgconfig/Qt6SvgWidgets.pc
 %%QT_DATADIR%%/modules/Svg.json
 %%QT_DATADIR%%/modules/SvgWidgets.json
-@dir %%QT_CMAKEDIR%%/Qt6BuildInternals/StandaloneTests
-@dir %%QT_CMAKEDIR%%/Qt6Gui
-@dir %%QT_CMAKEDIR%%/Qt6Svg
-@dir %%QT_CMAKEDIR%%/Qt6SvgWidgets
-@dir %%QT_LIBDIR%%/cmake/Qt6BuildInternals/StandaloneTests
-@dir %%QT_LIBDIR%%/cmake/Qt6Gui
-@dir %%QT_LIBDIR%%/cmake/Qt6Svg
-@dir %%QT_LIBDIR%%/cmake/Qt6SvgWidgets
-@dir %%QT_LIBDIR%%/pkgconfig

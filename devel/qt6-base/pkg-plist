@@ -3743,4 +3743,3 @@ libdata/pkgconfig/Qt6Xml.pc
 @dir lib/cmake/Qt6/QtBuildInternals/QtStandaloneTestTemplateProject
 @dir lib/cmake/Qt6/ios
 @dir lib/cmake/Qt6/macos
-@dir %%QT_LIBDIR%%/pkgconfig

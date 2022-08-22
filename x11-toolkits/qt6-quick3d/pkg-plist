@@ -900,32 +900,3 @@ libdata/pkgconfig/Qt6Quick3DUtils.pc
 %%QT_DATADIR%%/modules/Quick3DParticles.json
 %%QT_DATADIR%%/modules/Quick3DRuntimeRender.json
 %%QT_DATADIR%%/modules/Quick3DUtils.json
-@dir %%QT_CMAKEDIR%%/Qt6BuildInternals/StandaloneTests
-@dir %%QT_CMAKEDIR%%/Qt6Qml/QmlPlugins
-@dir %%QT_CMAKEDIR%%/Qt6Quick3D
-@dir %%QT_CMAKEDIR%%/Qt6Quick3DAssetImport
-@dir %%QT_CMAKEDIR%%/Qt6Quick3DAssetUtils
-@dir %%QT_CMAKEDIR%%/Qt6Quick3DEffects
-@dir %%QT_CMAKEDIR%%/Qt6Quick3DGlslParserPrivate
-@dir %%QT_CMAKEDIR%%/Qt6Quick3DHelpers
-@dir %%QT_CMAKEDIR%%/Qt6Quick3DIblBaker
-@dir %%QT_CMAKEDIR%%/Qt6Quick3DParticleEffects
-@dir %%QT_CMAKEDIR%%/Qt6Quick3DParticles
-@dir %%QT_CMAKEDIR%%/Qt6Quick3DRuntimeRender
-@dir %%QT_CMAKEDIR%%/Qt6Quick3DTools
-@dir %%QT_CMAKEDIR%%/Qt6Quick3DUtils
-@dir %%QT_LIBDIR%%/cmake/Qt6BuildInternals/StandaloneTests
-@dir %%QT_LIBDIR%%/cmake/Qt6Qml/QmlPlugins
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3D
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3DAssetImport
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3DAssetUtils
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3DEffects
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3DGlslParserPrivate
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3DHelpers
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3DIblBaker
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3DParticleEffects
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3DParticles
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3DRuntimeRender
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3DTools
-@dir %%QT_LIBDIR%%/cmake/Qt6Quick3DUtils
-@dir %%QT_LIBDIR%%/pkgconfig

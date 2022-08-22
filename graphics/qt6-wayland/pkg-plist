@@ -598,24 +598,3 @@ libdata/pkgconfig/Qt6WaylandCompositor.pc
 %%QT_DATADIR%%/modules/WaylandEglCompositorHwIntegrationPrivate.json
 %%QT_DATADIR%%/modules/WaylandGlobalPrivate.json
 %%QT_DATADIR%%/modules/WlShellIntegrationPrivate.json
-@dir %%QT_CMAKEDIR%%/Qt6BuildInternals/StandaloneTests
-@dir %%QT_CMAKEDIR%%/Qt6Gui
-@dir %%QT_CMAKEDIR%%/Qt6Qml/QmlPlugins
-@dir %%QT_CMAKEDIR%%/Qt6WaylandClient
-@dir %%QT_CMAKEDIR%%/Qt6WaylandCompositor
-@dir %%QT_CMAKEDIR%%/Qt6WaylandEglClientHwIntegrationPrivate
-@dir %%QT_CMAKEDIR%%/Qt6WaylandEglCompositorHwIntegrationPrivate
-@dir %%QT_CMAKEDIR%%/Qt6WaylandGlobalPrivate
-@dir %%QT_CMAKEDIR%%/Qt6WaylandScannerTools
-@dir %%QT_CMAKEDIR%%/Qt6WlShellIntegrationPrivate
-@dir %%QT_LIBDIR%%/cmake/Qt6BuildInternals/StandaloneTests
-@dir %%QT_LIBDIR%%/cmake/Qt6Gui
-@dir %%QT_LIBDIR%%/cmake/Qt6Qml/QmlPlugins
-@dir %%QT_LIBDIR%%/cmake/Qt6WaylandClient
-@dir %%QT_LIBDIR%%/cmake/Qt6WaylandCompositor
-@dir %%QT_LIBDIR%%/cmake/Qt6WaylandEglClientHwIntegrationPrivate
-@dir %%QT_LIBDIR%%/cmake/Qt6WaylandEglCompositorHwIntegrationPrivate
-@dir %%QT_LIBDIR%%/cmake/Qt6WaylandGlobalPrivate
-@dir %%QT_LIBDIR%%/cmake/Qt6WaylandScannerTools
-@dir %%QT_LIBDIR%%/cmake/Qt6WlShellIntegrationPrivate
-@dir %%QT_LIBDIR%%/pkgconfig

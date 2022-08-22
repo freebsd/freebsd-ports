@@ -1427,32 +1427,3 @@ libdata/pkgconfig/Qt63DRender.pc
 %%QT_DATADIR%%/modules/3DQuickRender.json
 %%QT_DATADIR%%/modules/3DQuickScene2D.json
 %%QT_DATADIR%%/modules/3DRender.json
-@dir %%QT_CMAKEDIR%%/Qt63DAnimation
-@dir %%QT_CMAKEDIR%%/Qt63DCore
-@dir %%QT_CMAKEDIR%%/Qt63DExtras
-@dir %%QT_CMAKEDIR%%/Qt63DInput
-@dir %%QT_CMAKEDIR%%/Qt63DLogic
-@dir %%QT_CMAKEDIR%%/Qt63DQuick
-@dir %%QT_CMAKEDIR%%/Qt63DQuickAnimation
-@dir %%QT_CMAKEDIR%%/Qt63DQuickExtras
-@dir %%QT_CMAKEDIR%%/Qt63DQuickInput
-@dir %%QT_CMAKEDIR%%/Qt63DQuickRender
-@dir %%QT_CMAKEDIR%%/Qt63DQuickScene2D
-@dir %%QT_CMAKEDIR%%/Qt63DRender
-@dir %%QT_CMAKEDIR%%/Qt6BuildInternals/StandaloneTests
-@dir %%QT_CMAKEDIR%%/Qt6Qml/QmlPlugins
-@dir %%QT_LIBDIR%%/cmake/Qt63DAnimation
-@dir %%QT_LIBDIR%%/cmake/Qt63DCore
-@dir %%QT_LIBDIR%%/cmake/Qt63DExtras
-@dir %%QT_LIBDIR%%/cmake/Qt63DInput
-@dir %%QT_LIBDIR%%/cmake/Qt63DLogic
-@dir %%QT_LIBDIR%%/cmake/Qt63DQuick
-@dir %%QT_LIBDIR%%/cmake/Qt63DQuickAnimation
-@dir %%QT_LIBDIR%%/cmake/Qt63DQuickExtras
-@dir %%QT_LIBDIR%%/cmake/Qt63DQuickInput
-@dir %%QT_LIBDIR%%/cmake/Qt63DQuickRender
-@dir %%QT_LIBDIR%%/cmake/Qt63DQuickScene2D
-@dir %%QT_LIBDIR%%/cmake/Qt63DRender
-@dir %%QT_LIBDIR%%/cmake/Qt6BuildInternals/StandaloneTests
-@dir %%QT_LIBDIR%%/cmake/Qt6Qml/QmlPlugins
-@dir %%QT_LIBDIR%%/pkgconfig

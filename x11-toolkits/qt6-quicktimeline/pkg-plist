@@ -37,10 +37,3 @@ lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick/Timeline/qmldir
 libdata/pkgconfig/Qt6QuickTimeline.pc
 %%QT_DATADIR%%/modules/QuickTimeline.json
-@dir %%QT_CMAKEDIR%%/Qt6BuildInternals/StandaloneTests
-@dir %%QT_CMAKEDIR%%/Qt6Qml/QmlPlugins
-@dir %%QT_CMAKEDIR%%/Qt6QuickTimeline
-@dir %%QT_LIBDIR%%/cmake/Qt6BuildInternals/StandaloneTests
-@dir %%QT_LIBDIR%%/cmake/Qt6Qml/QmlPlugins
-@dir %%QT_LIBDIR%%/cmake/Qt6QuickTimeline
-@dir %%QT_LIBDIR%%/pkgconfig
