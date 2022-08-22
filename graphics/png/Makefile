@@ -37,6 +37,10 @@ SIMD_CONFIGURE_ON=	--enable-hardware-optimizations=yes
 
 .include <bsd.port.options.mk>
 
+.if ${ABI:Mpurecap}
+CFLAGS+=	-DPNG_ARM_NEON_OPT=0
+.endif
+
 .if ${ARCH} == powerpc64 && ${PORT_OPTIONS:MSIMD}
 USES+=		compiler:c11
 CFLAGS+=	-maltivec -mvsx
