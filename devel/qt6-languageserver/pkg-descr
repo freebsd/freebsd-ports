@@ -1,0 +1,4 @@
+Qt Language Server: implements the Language Server Protocol Specification and
+the JsonRpc 2.0 protocol. The module does not contain a public API.
+
+WWW: https://qt.io
