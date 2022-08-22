@@ -152,7 +152,7 @@ _USE_QT5_ONLY=		3d buildtools charts concurrent connectivity \
 
 _USE_QT6_ONLY=		3d 5compat base declarative doc imageformats quick3d \
 			quickcontrols2 quicktimeline networkauth shadertools \
-			svg tools translations wayland
+			svg tools translations wayland webchannel websockets
 
 # Dependency tuples: _LIB should be preferred if possible.
 qt-3d_PORT=		graphics/${_QT_RELNAME}-3d
