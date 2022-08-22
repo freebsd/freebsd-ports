@@ -215,10 +215,10 @@ qt-help_LIB=		libQt${_QT_LIBVER}Help.so
 qt-imageformats_PORT=	graphics/${_QT_RELNAME}-imageformats
 qt-imageformats_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/imageformats/libqtiff.so
 
-qt-languageserver_PORT=	devel/qt${_QT_RELNAME}-languageserver
+qt-languageserver_PORT=	devel/${_QT_RELNAME}-languageserver
 qt-languageserver_LIB=	libQt${_QT_LIBVER}LanguageServer.so
 
-qt-lottie_PORT=		graphics/qt${_QT_RELNAME}-lottie
+qt-lottie_PORT=		graphics/${_QT_RELNAME}-lottie
 qt-lottie_LIB=		libQt${_QT_LIBVER}Bodymovin.so
 
 qt-linguist_PORT=	devel/${_QT_RELNAME}-linguist

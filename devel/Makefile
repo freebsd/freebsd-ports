@@ -5614,6 +5614,7 @@
     SUBDIR += qt5-scxml
     SUBDIR += qt5-testlib
     SUBDIR += qt5-uitools
+    SUBDIR += qt6
     SUBDIR += qt6-5compat
     SUBDIR += qt6-base
     SUBDIR += qt6-languageserver
