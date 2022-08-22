@@ -330,7 +330,9 @@
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer
     SUBDIR += qmmp-plugin-pack-qt5
+    SUBDIR += qmmp-plugin-pack-qt6
     SUBDIR += qmmp-qt5
+    SUBDIR += qmmp-qt6
     SUBDIR += qpwgraph
     SUBDIR += qt5-multimedia
     SUBDIR += qt6-multimedia
