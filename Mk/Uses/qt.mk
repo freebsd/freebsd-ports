@@ -151,7 +151,7 @@ _USE_QT5_ONLY=		3d buildtools charts concurrent connectivity \
 			sql-sqlite3 svg testlib webkit xml xmlpatterns
 
 _USE_QT6_ONLY=		3d 5compat base declarative doc imageformats quick3d \
-			quickcontrols2 quicktimeline networkauth scxml sensors \
+			quickcontrols2 quicktimeline networkauth remoteobjects scxml sensors \
 			serialbus serialport shadertools \
 			svg tools translations wayland webchannel websockets
 
