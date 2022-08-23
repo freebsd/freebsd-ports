@@ -17187,47 +17187,9 @@ www/rubygem-faraday110|www/rubygem-faraday|2022-06-03|Obsolete, please use www/r
 www/npm-node17|www/npm-node18|2022-06-03|Renamed for www/node update to v18
 www/yarn-node17|www/yarn-node18|2022-06-03|Renamed for www/node update to v18
 security/keepassx-devel||2022-06-05|Has expired: KeePassX had been stopped development/maintenance, please consider using security/keepassxc instead
-sysutils/uefi-edk2-qemu|sysutils/edk2@qemu|2022-06-05|No more need for this port: please use sysutils/edk2 FLAVOR qemu instead
+sysutils/uefi-edk2-qemu|sysutils/edk2@qemu_x64|2022-06-05|No more need for this port: please use sysutils/edk2 FLAVOR qemu instead
 graphics/gltt||2022-06-08|Abdonware, depends on freetype1
 print/ttftot42||2022-06-08|Abdonware, depends on freetype1
-print/freetype|print/freetype2|2022-06-08|Has been replaced long ago by freetype2
-net/libgnetwork||2022-06-08|Gnome2 library unused anymore
-x11-wm/compizconfig-backend-gconf||2022-06-08|gconf support has been removed from compiz
-devel/android-tools-adb|devel/android-tools|2022-06-09|Port has been updated, unbroken and consolidated into devel/android-tools
-devel/android-tools-fastboot|devel/android-tools|2022-06-09|Port has been updated and consolidated into devel/android-tools
-devel/py-lark-parser|devel/py-lark|2022-06-09|Remove obsoleted port. Use devel/py-lark instead
-deskutils/egroupware|deskutils/egroupware@php74|2022-06-12|Merge into flavorized version
-databases/py-arrow|databases/py-apache-arrow|2022-06-12|Rename to avoid conflict with devel/py-arrow and to match the project name
-science/szip|science/libaec|2022-06-16|Remove obsoleted port. Use science/libaec instead
-net/pfinger||2022-06-17|Has expired: Unmaintained and dead upstream, consider base fingerd
-biology/mopac|science/mopac|2022-06-19|Move to a proper category
-devel/liblas12||2022-06-21|Has expired: Previously only required by math/saga (now superseeded by math/pdal)
-net-im/licq||2022-06-21|Has expired: Abandonware, project is dead
-net-im/licq-icq||2022-06-21|Removed, part of expired net-im/licq
-net-im/licq-jabber||2022-06-21|Removed, part of expired net-im/licq
-net-im/licq-osd||2022-06-21|Removed, part of expired net-im/licq
-net-im/licq-qt-gui||2022-06-21|Removed, part of expired net-im/licq
-x11-toolkits/py-xlib|x11-toolkits/py-python-xlib|2022-06-21|Use registered upstream (PyPI) name (Python ports compliance)
-www/openarc|mail/openarc|2022-06-21|Move to a proper category
-textproc/rubygem-elasticsearch-model6|textproc/rubygem-elasticsearch-model|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-model instead
-textproc/rubygem-elasticsearch6|textproc/rubygem-elasticsearch|2022-06-24|Obsolete use textproc/rubygem-elasticsearch instead
-textproc/rubygem-elasticsearch-transport6|textproc/rubygem-elasticsearch-transport|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-transport instead
-textproc/rubygem-elasticsearch-api6|textproc/rubygem-elasticsearch-api|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-api instead
-textproc/rubygem-elasticsearch-rails6|textproc/rubygem-elasticsearch-rails|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-rails instead
-devel/p5-Goo-Canvas|devel/p5-Goo-Canvas2|2022-06-24|Obsolete use devel/p5-Goo-Canvas2 instead
-graphics/goocanvas|graphics/goocanvas3|2022-06-24|Obsolete use graphics/goocanvas3
-x11-toolkits/tepl|x11-toolkits/tepl6|2022-06-25|Obsolete use x11-toolkits/tepl6
-lang/cmucl||2022-06-27|Has expired: Not supported upstream since 2017 and broken since FreeBSD 12.1
-devel/qbs||2022-06-27|Has expired: Abandoned and not working with modern clang
-lang/cmucl-extra||2022-06-27|Has expired: lang/cmucl is not supported upstream since 2017 and broken since FreeBSD 12.1
-security/protonvpn-cli||2022-06-27|Has expired: This version is deprecated and unsupported upstream. The port needs an update, which would require a fair amount of effort. Use OpenVPN or Wireguard with configuration files provided by ProtonVPN instead.
-sysutils/firstboot-growfs||2022-06-27|Has expired: A better version is available on all FreeBSD version
-security/modsecurity3-apache||2022-06-27|Has expired: The project was not developed further
-net-mgmt/zabbix54-frontend||2022-06-27|Has expired: Unsupported by upstream
-net-mgmt/zabbix54-server||2022-06-27|Has expired: Unsupported by upstream
-net-mgmt/zabbix54-agent||2022-06-27|Has expired: Unsupported by upstream
-net-mgmt/zabbix54-java||2022-06-27|Has expired: Unsupported by upstream
-net-mgmt/zabbix54-proxy||2022-06-27|Has expired: Unsupported by upstream
 archivers/erlang-snappy||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 converters/erlang-base64url||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 databases/elixir-calecto||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
@@ -17350,12 +17312,49 @@ devel/erlang-poolboy||2022-06-08|Remove expired ports. Use mix or rebar3 build t
 devel/erlang-pooler||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 devel/erlang-sbroker||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 devel/erlang-syslog||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+print/freetype|print/freetype2|2022-06-08|Has been replaced long ago by freetype2
+net/libgnetwork||2022-06-08|Gnome2 library unused anymore
+x11-wm/compizconfig-backend-gconf||2022-06-08|gconf support has been removed from compiz
+devel/android-tools-adb|devel/android-tools|2022-06-09|Port has been updated, unbroken and consolidated into devel/android-tools
+devel/android-tools-fastboot|devel/android-tools|2022-06-09|Port has been updated and consolidated into devel/android-tools
+devel/py-lark-parser|devel/py-lark|2022-06-09|Remove obsoleted port. Use devel/py-lark instead
+databases/py-arrow|databases/py-apache-arrow|2022-06-12|Rename to avoid conflict with devel/py-arrow and to match the project name
+science/szip|science/libaec|2022-06-16|Remove obsoleted port. Use science/libaec instead
+net/pfinger||2022-06-17|Has expired: Unmaintained and dead upstream, consider base fingerd
+biology/mopac|science/mopac|2022-06-19|Move to a proper category
+devel/liblas12||2022-06-21|Has expired: Previously only required by math/saga (now superseeded by math/pdal)
+net-im/licq||2022-06-21|Has expired: Abandonware, project is dead
+net-im/licq-icq||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-jabber||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-osd||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-qt-gui||2022-06-21|Removed, part of expired net-im/licq
+x11-toolkits/py-xlib|x11-toolkits/py-python-xlib|2022-06-21|Use registered upstream (PyPI) name (Python ports compliance)
+www/openarc|mail/openarc|2022-06-21|Move to a proper category
+textproc/rubygem-elasticsearch-model6|textproc/rubygem-elasticsearch-model|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-model instead
+textproc/rubygem-elasticsearch6|textproc/rubygem-elasticsearch|2022-06-24|Obsolete use textproc/rubygem-elasticsearch instead
+textproc/rubygem-elasticsearch-transport6|textproc/rubygem-elasticsearch-transport|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-transport instead
+textproc/rubygem-elasticsearch-api6|textproc/rubygem-elasticsearch-api|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-api instead
+textproc/rubygem-elasticsearch-rails6|textproc/rubygem-elasticsearch-rails|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-rails instead
+devel/p5-Goo-Canvas|devel/p5-Goo-Canvas2|2022-06-24|Obsolete use devel/p5-Goo-Canvas2 instead
+graphics/goocanvas|graphics/goocanvas3|2022-06-24|Obsolete use graphics/goocanvas3
+x11-toolkits/tepl|x11-toolkits/tepl6|2022-06-25|Obsolete use x11-toolkits/tepl6
+lang/cmucl||2022-06-27|Has expired: Not supported upstream since 2017 and broken since FreeBSD 12.1
+devel/qbs||2022-06-27|Has expired: Abandoned and not working with modern clang
+lang/cmucl-extra||2022-06-27|Has expired: lang/cmucl is not supported upstream since 2017 and broken since FreeBSD 12.1
+security/protonvpn-cli||2022-06-27|Has expired: This version is deprecated and unsupported upstream. The port needs an update, which would require a fair amount of effort. Use OpenVPN or Wireguard with configuration files provided by ProtonVPN instead
+sysutils/firstboot-growfs||2022-06-27|Has expired: A better version is available on all FreeBSD version
+security/modsecurity3-apache||2022-06-27|Has expired: The project was not developed further
+net-mgmt/zabbix54-frontend||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-server||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-agent||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-java||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-proxy||2022-06-27|Has expired: Unsupported by upstream
 www/py-graphite-web||2022-06-30|Has expired: No support for newer versions of Django
 databases/percona56-server||2022-06-30|Has expired: EOL since February 2021
 databases/percona56-client||2022-06-30|Has expired: EOL since February 2021
 databases/mysql55-server||2022-06-30|Has expired: Upstream support ended on December 2018
 databases/mysql55-client||2022-06-30|Has expired: Upstream support ended on December 2018
-multimedia/schroedinger||2022-06-30|Has expired: Abandoned legacy video codec, upstream is dead and last release was back in 2012.
+multimedia/schroedinger||2022-06-30|Has expired: Abandoned legacy video codec, upstream is dead and last release was back in 2012
 emulators/kcemu||2022-06-30|Has expired: Depends on expired multimedia/schroedinger
 multimedia/ccextractor||2022-06-30|Has expired: Depends on expired multimedia/schroedinger
 security/libgringotts||2022-06-30|Has expired: Abandonware, upstream dead and last release in 2008
@@ -17399,7 +17398,6 @@ devel/py-apns2|devel/py-aioapns|2022-06-30|Has expired: Use devel/py-aioapns
 www/py-hyper|www/py-httpx|2022-06-30|Has expired: Project abandoned use www/py-httpx
 irc/py-fishcrypt||2022-06-30|Has expired: Abandoned, unmaintained, requires Python 2 and depends on deprecated pycrypto
 devel/py-stsci.distutils||2022-06-30|Has expired: Upstream abandoned in 2013
-devel/py-docker-py|devel/py-docker|2022-06-30|Has expired: Use devel/py-docker
 net-im/py-slackclient|net-im/py-slack-sdk|2022-06-30|Has expired: Use net-im/py-slack-sdk
 multimedia/mpeg2codec||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
 multimedia/livestreamer||2022-06-30|Has expired: Abandoned upstream, please consider using www/yt-dlp or multimedia/streamlink
@@ -17466,7 +17464,7 @@ security/shishi||2022-06-30|Has expired: Abandonware, last release in 2013 and n
 ftp/urlgfe||2022-06-30|Has expired
 www/nspluginwrapper||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead. NPAPI plugins are now obsolete and depends on deprecated library GTK 2
 devel/govendor||2022-06-30|Has expired: Use Go modules
-devel/racer||2022-06-30|Has expired: Racer is not actively developped now. Please consider using newer software such as devel/rust-analyzer.
+devel/racer||2022-06-30|Has expired: Racer is not actively developped now. Please consider using newer software such as devel/rust-analyzer
 net-mgmt/unifi6||2022-06-30|Has expired: No longer maintained by upstream
 devel/dep||2022-06-30|Has expired: Use Go modules
 databases/libgda5-bdb||2022-06-30|Has expired: Depends on deprecated databases/db5
@@ -17513,7 +17511,7 @@ net/py-pyroute2.nslink|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstrea
 math/intervaltree||2022-07-27|Has expired: Dependent ports now use GH_TUPLE
 security/gnomint||2022-07-27|Has expired: Abandonware, depending on gconf2
 japanese/im-ja||2022-07-27|Has expired: Abandonware, depending on gconf2
-sysutils/mgeupsd||2022-07-27|Has expired: Last release is 23 years old. It is not clear what devices are supported.
+sysutils/mgeupsd||2022-07-27|Has expired: Last release is 23 years old. It is not clear what devices are supported
 x11-wm/lxmed||2022-07-27|Removed, depends on expired sysutils/gksu
 sysutils/gksu||2022-07-27|Has expired: Abandonware, depending on gconf2
 sysutils/libgksu||2022-07-27|Has expired: Abandonware, depending on gconf2
@@ -17525,7 +17523,7 @@ deskutils/gnome-system-log||2022-08-01|Has expired: Did not survive gnome 3
 deskutils/gnome-documents||2022-08-01|Has expired: Archived upstream
 deskutils/gnome-search-tool||2022-08-01|Has expired: Did not survive gnome3
 security/nextcloud-twofactor_u2f|security/nextcloud-twofactor_webauthn|2022-08-01|Has expired: Upstream deprecated this port in favor of twofactor_webauthn. Check https://github.com/nextcloud/twofactor_webauthn#migration-from-two-factor-u2f for migration instructions
-editors/codelite||2022-08-01|Has expired: Has been broken for over a year.
+editors/codelite||2022-08-01|Has expired: Has been broken for over a year
 x11-servers/xephyr|x11-servers/xorg-server@xephyr|2022-08-02|Merged into flavorized version
 x11-servers/xorg-nestserver|x11-servers/xorg-server@xnest|2022-08-02|Merged into the flavorized version
 x11-servers/xorg-vfbserver|x11-servers/xorg-server@xvfb|2022-08-02|Merged into the flavorized version
@@ -17539,4 +17537,3 @@ science/openkim|science/openkim-models|2022-08-07|Retire obsolete science/openki
 net/zeroconf-ioslave|net/kio-zeroconf|2022-08-18|Renamed upstream
 japanese/font-hackgen-nerd|japanese/font-hackgen-nf|2022-08-20|Renamed upstream
 x11-themes/adwaita-qt|x11-themes/adwaita-qt5|2022-08-23|Renamed to make space for x11-themes/adwaita-qt6
-devel/libdbusmenu-qt|devel/libdbusmenu-qt@qt5|2022-08-22|Flavor has been readded
