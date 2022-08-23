@@ -84,6 +84,18 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
     next
 }
 
+$1 ~ /[ \t]/ {
+	printf "%5d: '%s' contains spaces\n", NR, $1 | sort
+	error[NR] = 1
+	next
+}
+
+$2 ~ /[ \t]/ {
+	printf "%5d: '%s' contains spaces\n", NR, $2 | sort
+	error[NR] = 1
+	next
+}
+
 {
     if ($1 in srcs) {
         printf "%5d: %s has duplicate entries\n", NR, $1 | sort
