@@ -115,7 +115,11 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
             # No else because the port is there but does not have the flavor,
             # so it should be ok.
         } else {
-            printf "%5d: %s must be marked as resurrected\n", NR, $1 | sort
+	    if ($2 ~ $1 "@") {
+                printf "%5d: %s is a flavor of %s, the line should be removed\n", NR, $2, $1 | sort
+	    } else {
+                printf "%5d: %s must be marked as resurrected\n", NR, $1 | sort
+            }
         }
     }
 
