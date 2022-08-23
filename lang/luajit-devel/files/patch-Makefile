@@ -1,6 +1,6 @@
---- Makefile.orig	2019-06-26 21:12:49 UTC
-+++ Makefile
-@@ -25,7 +25,7 @@ ABIVER=  5.1
+--- Makefile.orig	2022-08-15 08:16:58.000000000 -0400
++++ Makefile	2022-08-23 10:24:42.806504000 -0400
+@@ -25,7 +25,7 @@
  # Change the installation path as needed. This automatically adjusts
  # the paths in src/luaconf.h, too. Note: PREFIX must be an absolute path!
  #
@@ -9,15 +9,15 @@
  export MULTILIB= lib
  ##############################################################################
  
-@@ -34,6 +34,7 @@ INSTALL_BIN=   $(DPREFIX)/bin
- INSTALL_LIB=   $(DPREFIX)/$(MULTILIB)
+@@ -35,6 +35,7 @@
  INSTALL_SHARE= $(DPREFIX)/share
- INSTALL_INC=   $(DPREFIX)/include/luajit-$(MAJVER).$(MINVER)
+ INSTALL_DEFINC= $(DPREFIX)/include/luajit-$(MAJVER).$(MINVER)
+ INSTALL_INC=   $(INSTALL_DEFINC)
 +INSTALL_LIBD=  $(DPREFIX)/libdata
  
  INSTALL_LJLIBD= $(INSTALL_SHARE)/luajit-$(VERSION)
  INSTALL_JITLIB= $(INSTALL_LJLIBD)/jit
-@@ -41,8 +42,7 @@ INSTALL_LMODD= $(INSTALL_SHARE)/lua
+@@ -42,8 +43,7 @@
  INSTALL_LMOD= $(INSTALL_LMODD)/$(ABIVER)
  INSTALL_CMODD= $(INSTALL_LIB)/lua
  INSTALL_CMOD= $(INSTALL_CMODD)/$(ABIVER)
@@ -27,7 +27,7 @@
  
  INSTALL_TNAME= luajit-$(VERSION)
  INSTALL_TSYMNAME= luajit
-@@ -63,8 +63,8 @@ INSTALL_T= $(INSTALL_BIN)/$(INSTALL_TNAME)
+@@ -64,8 +64,8 @@
  INSTALL_TSYM= $(INSTALL_BIN)/$(INSTALL_TSYMNAME)
  INSTALL_PC= $(INSTALL_PKGCONFIG)/$(INSTALL_PCNAME)
  
@@ -38,7 +38,7 @@
  UNINSTALL_DIRS= $(INSTALL_JITLIB) $(INSTALL_LJLIBD) $(INSTALL_INC) \
    $(INSTALL_LMOD) $(INSTALL_LMODD) $(INSTALL_CMOD) $(INSTALL_CMODD)
  
-@@ -121,10 +121,8 @@ install: $(INSTALL_DEP)
+@@ -125,10 +125,8 @@
  	$(RM) $(INSTALL_DYN) $(INSTALL_SHORT1) $(INSTALL_SHORT2)
  	cd src && test -f $(FILE_SO) && \
  	  $(INSTALL_X) $(FILE_SO) $(INSTALL_DYN) && \
@@ -49,7 +49,7 @@
  	cd etc && $(SED_PC) $(FILE_PC) > $(FILE_PC).tmp && \
  	  $(INSTALL_F) $(FILE_PC).tmp $(INSTALL_PC) && \
  	  $(RM) $(FILE_PC).tmp
-@@ -143,7 +141,6 @@ uninstall:
+@@ -152,7 +150,6 @@
  	for file in $(FILES_INC); do \
  	  $(UNINSTALL) $(INSTALL_INC)/$$file; \
  	  done
