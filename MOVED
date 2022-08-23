@@ -15714,7 +15714,6 @@ www/py-flexget|www/flexget|2020-12-28|Dropped py- prefix due to be a standalone 
 textproc/py-hypua2jamo||2020-12-29|Has expired: Uses deprecated version of python
 devel/py-delfick_error||2020-12-29|Has expired: Uses deprecated version of python
 devel/py-fusefs||2020-12-29|Has expired: Uses deprecated version of python
-devel/py-noseofyeti||2020-12-29|Has expired: Uses deprecated version of python
 databases/py-bsddb||2020-12-29|Has expired: Uses deprecated version of python
 www/py-webhelpers||2020-12-29|Has expired: Uses deprecated version of python
 security/py-pyptlib||2020-12-29|Has expired: Uses deprecated version of python
