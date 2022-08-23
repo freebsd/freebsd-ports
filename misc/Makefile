@@ -537,6 +537,7 @@
     SUBDIR += visp
     SUBDIR += viz
     SUBDIR += vxl
+    SUBDIR += wego
     SUBDIR += whichman
     SUBDIR += window
     SUBDIR += with
