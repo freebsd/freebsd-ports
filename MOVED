@@ -9926,11 +9926,11 @@ audio/amp||2018-03-02|Has expired: No more upstream
 devel/alf||2018-03-02|Has expired: Abandonware, unused in the ports tree
 net/remmina-plugin-gnome|net/remmina-plugin-secret|2018-03-04|Renamed upstream
 databases/php71-memcache|databases/php-memcache@php71|2018-03-08|Merge into a flavorized version
-databases/php72-memcache|databases/php-memcache@php72|2018-03-08|Merge into a flavorized version
-ftp/php71-fastdfs|ftp/php-fastdfs@php72|2018-03-08|Merge into flavorized version
-ftp/php72-fastdfs|ftp/php-fastdfs@php72|2018-03-08|Merge into flavorized version
-www/unit-php71|www/unit-php@php72|2018-03-08|Merge into flavorized version
-www/unit-php72|www/unit-php@php72|2018-03-08|Merge into flavorized version
+databases/php72-memcache|databases/php-memcache|2018-03-08|Merge into a flavorized version
+ftp/php71-fastdfs|ftp/php-fastdfs|2018-03-08|Merge into flavorized version
+ftp/php72-fastdfs|ftp/php-fastdfs|2018-03-08|Merge into flavorized version
+www/unit-php71|www/unit-php|2018-03-08|Merge into flavorized version
+www/unit-php72|www/unit-php|2018-03-08|Merge into flavorized version
 databases/php70-memcached|databases/php-memcached|2018-03-08|Move to flavorized version
 www/openxmldir||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user
 www/hastymail2||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user
@@ -13478,7 +13478,7 @@ net/php71-xmlrpc|net/php72-xmlrpc|2019-12-17|Has expired: upstream security supp
 net-mgmt/php71-snmp|net-mgmt/php72-snmp|2019-12-17|Has expired: upstream security support ended
 security/php71-filter|security/php72-filter|2019-12-17|Has expired: upstream security support ended
 security/php71-hash|security/php72-hash|2019-12-17|Has expired: upstream security support ended
-security/php71-mcrypt|security/pecl-mcrypt@php72|2019-12-17|Has expired: upstream security support ended
+security/php71-mcrypt|security/pecl-mcrypt|2019-12-17|Has expired: upstream security support ended
 security/php71-openssl|security/php72-openssl|2019-12-17|Has expired: upstream security support ended
 sysutils/php71-fileinfo|sysutils/php72-fileinfo|2019-12-17|Has expired: upstream security support ended
 sysutils/php71-posix|sysutils/php72-posix|2019-12-17|Has expired: upstream security support ended
