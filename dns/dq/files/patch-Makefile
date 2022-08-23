@@ -1,0 +1,17 @@
+--- Makefile.orig	2022-08-23 15:51:28 UTC
++++ Makefile
+@@ -457,10 +457,10 @@ dqcache-start: dqcache-start.o $(OBJECTS)
+ 
+ 
+ install: dq dqcache dqcache-makekey dqcache-start
+-	install -D -m 0755 dq $(DESTDIR)/usr/bin/dq
+-	install -D -m 0755 dqcache $(DESTDIR)/usr/sbin/dqcache
+-	install -D -m 0755 dqcache-makekey $(DESTDIR)/usr/sbin/dqcache-makekey
+-	install -D -m 0755 dqcache-start $(DESTDIR)/usr/sbin/dqcache-start
++	install -m 0755 dq $(DESTDIR)${PREFIX}/bin/dq
++	install -m 0755 dqcache $(DESTDIR)${PREFIX}/sbin/dqcache
++	install -m 0755 dqcache-makekey $(DESTDIR)${PREFIX}/sbin/dqcache-makekey
++	install -m 0755 dqcache-start $(DESTDIR)${PREFIX}/sbin/dqcache-start
+ 
+ clean:
+ 	rm -f *.o *.out $(BINARIES)
