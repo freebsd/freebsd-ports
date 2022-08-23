@@ -1,6 +1,6 @@
 PORTNAME=	wayland
 DISTVERSION=	${QT6_VERSION}
-CATEGORIES=	graphics
+CATEGORIES=	graphics wayland
 PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
