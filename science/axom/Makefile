@@ -1,6 +1,7 @@
 PORTNAME=	axom
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.1-1671
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g88cac2607
 CATEGORIES=	science
 
@@ -41,8 +42,10 @@ WRKSRC_SUBDIR=	src
 
 CONFLICTS_INSTALL=	libfmt # bundles and installs an incompatible libfmt version: https://github.com/LLNL/axom/issues/561, axom headers include fmt unnecessarily
 
-OPTIONS_DEFINE=		LUA MFEM MPI OPENMP
-OPTIONS_DEFAULT=	LUA MFEM MPI #OPENMP     LUA,MFEM,MPI are required for LLNL/serac
+OPTIONS_DEFINE=		LUA MFEM OPENMP
+OPTIONS_SINGLE=		MPI
+OPTIONS_SINGLE_MPI=	NOMPI MPICH OPENMPI
+OPTIONS_DEFAULT=	LUA MFEM MPICH #OPENMP     LUA,MFEM,MPI are required for LLNL/serac
 OPTIONS_SUB=		yes
 
 LUA_USES=		lua:54
@@ -54,9 +57,14 @@ MFEM_DESC=		Use mfem - library for finite element methods
 MFEM_CMAKE_ON=		-DMFEM_DIR=${LOCALBASE}
 MFEM_LIB_DEPENDS=	libmfem.so:math/mfem
 
-MPI_CMAKE_BOOL=		ENABLE_MPI
-MPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
-MPI_RUN_DEPENDS=	openmpi>0:net/openmpi
+NOMPI_DESC=		Build without parallel processing support
+NOMPI_BROKEN=		https://github.com/LLNL/axom/issues/913
+
+MPICH_USES=		mpi:mpich
+MPICH_CMAKE_ON=		-DENABLE_MPI=ON
+
+OPENMPI_USES=		mpi:openmopi
+OPENMPI_CMAKE_ON=	-DENABLE_MPI=ON
 
 OPENMP_CMAKE_BOOL=	ENABLE_OPENMP
 OPENMP_BROKEN=		https://github.com/LLNL/axom/issues/911
@@ -65,5 +73,6 @@ post-install: # installs headers of a third party library sparsehash: https://gi
 	@${RM} -r ${STAGEDIR}${PREFIX}/include/sparsehash
 
 # 2 tests are known to fail, see https://github.com/LLNL/axom/issues/912
+# tests don't run in newer revisions, see https://github.com/LLNL/axom/issues/915
 
 .include <bsd.port.mk>
