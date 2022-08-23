@@ -1,5 +1,6 @@
 PORTNAME=	lxqt-panel
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT
 
@@ -9,7 +10,7 @@ COMMENT=	Panel for the LXQt desktop
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt \
+LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxcb-util.so:x11/xcb-util \
 		libsysstat-qt5.so:sysutils/libsysstat \

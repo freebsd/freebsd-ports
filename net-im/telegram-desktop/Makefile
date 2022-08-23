@@ -1,5 +1,6 @@
 PORTNAME=	telegram-desktop
 DISTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -26,7 +27,7 @@ BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib \
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libavformat.so:multimedia/ffmpeg \
 		libdbus-1.so:devel/dbus \
-		libdbusmenu-qt5.so:devel/libdbusmenu-qt \
+		libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
 		libenchant-2.so:textproc/enchant2 \
 		libevent.so:devel/libevent \
 		libhunspell-1.7.so:textproc/hunspell \
