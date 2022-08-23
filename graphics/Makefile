@@ -808,6 +808,7 @@
     SUBDIR += poppler-data
     SUBDIR += poppler-glib
     SUBDIR += poppler-qt5
+    SUBDIR += poppler-qt6
     SUBDIR += poppler-utils
     SUBDIR += potrace
     SUBDIR += povray-meta
