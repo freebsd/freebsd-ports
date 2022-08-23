@@ -3,7 +3,7 @@ PORTVERSION=	1.1.3
 PORTREVISION=	3
 CATEGORIES=	print
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple FB2 format book reader
 
 LICENSE=	GPLv3+
