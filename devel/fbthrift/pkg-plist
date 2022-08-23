@@ -530,8 +530,8 @@ include/thrift/lib/cpp2/type/Type.h
 include/thrift/lib/cpp2/type/TypeRegistry.h
 include/thrift/lib/cpp2/type/UniversalHashAlgorithm.h
 include/thrift/lib/cpp2/type/UniversalName.h
-include/thrift/lib/cpp2/type/detail/AnyData.h
 include/thrift/lib/cpp2/type/detail/AnyType.h
+include/thrift/lib/cpp2/type/detail/AnyValue.h
 include/thrift/lib/cpp2/type/detail/Name.h
 include/thrift/lib/cpp2/type/detail/NativeType.h
 include/thrift/lib/cpp2/type/detail/Runtime.h
