@@ -173,4 +173,6 @@ END {
     }
 
     close(sort)
+    if (length(error) > 0)
+	    exit(1)
 }
