@@ -36,11 +36,13 @@ BEGIN {
     portsdir = ENVIRON["PORTSDIR"] ? ENVIRON["PORTSDIR"] : "/usr/ports"
     if (ARGC == 1) {
         ARGV[ARGC++] = portsdir "/MOVED"
-        if (ENVIRON["BLAME"]) {
-	    if (!system("test -r " portsdir "/.git")) {
-                blame = "cd " portsdir "; git blame MOVED 2>/dev/null"
-            }
-
+    }
+    if (ENVIRON["BLAME"]) {
+        blame=1
+    }
+    if (blame) {
+	if (!system("test -r " portsdir "/.git")) {
+            blame = "cd " portsdir "; git blame MOVED 2>/dev/null"
         }
     }
     sort = "/usr/bin/sort -n"
