@@ -7,7 +7,7 @@ MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}16/${PORTVERSION} \
 PATCH_SITES=	SF/apng/lib${PORTNAME}/lib${PORTNAME}16/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	portmgr@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
 LICENSE=	Libpng

@@ -5,7 +5,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/${DISTVERSION}
 DISTNAME=	lib${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	portmgr@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	SIMD-accelerated JPEG codec which replaces libjpeg
 
 LICENSE=	BSD3CLAUSE IJG ZLIB
