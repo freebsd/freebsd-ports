@@ -44,11 +44,24 @@ BEGIN {
         }
     }
     sort = "/usr/bin/sort -n"
-    lastdate="1999-12-31"
+    if (!lastdate) {
+        lastdate="1999-12-31"
+    } else if (lastdate !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/) {
+	    printf "Invalid date format '%s' expecting YYYY-MM-DD\n", lastdate
+	    exit(1)
+    }
 }
 
 /^(#|$)/ {
     next
+}
+
+!started && $3 < lastdate {
+	next
+}
+
+!started && $3 >= lastdate {
+	started = 1
 }
 
 NF != 4 {
