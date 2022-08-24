@@ -1,5 +1,5 @@
 PORTNAME=	fsearch
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
