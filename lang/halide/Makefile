@@ -10,6 +10,7 @@ COMMENT=	Language for fast and portable data-parallel computation
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_aarch64=		fails to build: unhandled exception: Error: No arm support for this OS, see https://github.com/halide/Halide/issues/6972
 BROKEN_riscv64=		fails to build: /usr/include/c++/v1/__config:1141:6: No thread API
 
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} # because halide expects LLVMConfig.cmake
