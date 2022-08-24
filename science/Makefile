@@ -38,6 +38,7 @@
     SUBDIR += bodr
     SUBDIR += buddy
     SUBDIR += cantera
+    SUBDIR += cardioid
     SUBDIR += cdcl
     SUBDIR += cdf
     SUBDIR += cdk
