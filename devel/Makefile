@@ -5572,6 +5572,7 @@
     SUBDIR += pycount
     SUBDIR += pydbus-common
     SUBDIR += pydio-packr
+    SUBDIR += pyenv
     SUBDIR += pygobject3-common
     SUBDIR += pylint
     SUBDIR += pyobfuscate
