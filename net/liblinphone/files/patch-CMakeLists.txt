@@ -1,0 +1,15 @@
+Fix compilation error:
+
+src/core/core.cpp:428:2: error: void function 'doLater' should not return a
+value [-Wreturn-type]
+--- CMakeLists.txt.orig	2022-08-24 08:22:37 UTC
++++ CMakeLists.txt
+@@ -320,7 +320,7 @@ else()
+ 	list(APPEND STRICT_OPTIONS_CPP
+ 		"-Wall"
+ 		"-Wconversion"
+-		"-Werror=return-type"
++		"-Wno-error=return-type"
+ 		"-Winit-self"
+ 		"-Wno-error=deprecated-declarations"
+ 		"-Wpointer-arith"
