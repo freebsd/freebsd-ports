@@ -18,6 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.6:devel/py-dateutil@${PY_FLAVOR}
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
+PORTSCOUT=	skipv:2.1.2
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pendulum/_extensions/_helpers*.so
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pendulum/parsing/_iso8601*.so
