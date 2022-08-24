@@ -1,6 +1,5 @@
 PORTNAME=	libslang2
-PORTVERSION=	2.3.2
-PORTREVISION=	2
+PORTVERSION=	2.3.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.jedsoft.org/releases/slang/
 DISTNAME=	slang-${PORTVERSION}
@@ -10,42 +9,42 @@ COMMENT=	Routines for rapid alpha-numeric terminal applications development
 
 LICENSE=	GPLv2
 
-CONFLICTS=	libslang-1.*.j[0-9]
-
 USES=		ncurses tar:bzip2
+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 MAKE_JOBS_UNSAFE=	yes
-PLIST_SUB+=	SHLIB_VERSION=${PORTVERSION}
-
-CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
-LDFLAGS+=	-lncurses
-
 ALL_TARGET=	all static
 INSTALL_TARGET=	install install-static
 
-DOCSDIR=	${PREFIX}/share/doc/slang
-DATADIR=	${PREFIX}/share/slsh
+LDFLAGS+=		-lncurses
 
-OPTIONS_DEFINE=	PCRE PNG ICONV ONIG DOCS
-OPTIONS_DEFAULT=PCRE PNG ICONV
-OPTIONS_SUB=	yes
+CONFLICTS=	libslang-1.*.j[0-9]
+
+DATADIR=	${PREFIX}/share/slsh
+DOCSDIR=	${PREFIX}/share/doc/slang
+
+PLIST_SUB+=	SHLIB_VERSION=${PORTVERSION}
+PORTDOCS=	*
+
+OPTIONS_DEFINE=		DOCS ICONV ONIG PCRE PNG
+OPTIONS_DEFAULT=	ICONV PCRE PNG
+OPTIONS_SUB=		yes
 
 ONIG_DESC=	Oniguruma support
 
-PORTDOCS=	*
-
-PCRE_CONFIGURE_WITH=	pcre
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-PNG_CONFIGURE_WITH=	png
-PNG_LIB_DEPENDS=	libpng.so:graphics/png
 ICONV_USES=		iconv
-ONIG_CONFIGURE_WITH=	onig
 ONIG_LIB_DEPENDS=	libonig.so:devel/oniguruma
+ONIG_CONFIGURE_WITH=	onig
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_CONFIGURE_WITH=	pcre
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_CONFIGURE_WITH=	png
 
 .include <bsd.port.pre.mk>
 
-.if ! ${PORT_OPTIONS:MICONV} || empty(ICONV_LIB)
+.if !${PORT_OPTIONS:MICONV} || empty(ICONV_LIB)
 CONFIGURE_ARGS+=	--without-iconv
 .endif
 
