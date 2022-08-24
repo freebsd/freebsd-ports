@@ -123,7 +123,7 @@ $2 ~ /[ \t]/ {
         delete missing[$1]
     } else {
         if (from_flavor != "") {
-            if (!system("test \"" from_flavor "\" = \"`make -C " portsdir "/" $1 " -VFLAVORS:M" from_flavor "`\"")) {
+            if (!system("test \"" from_flavor "\" = \"`make -C " portsdir "/" $1 " -VFLAVORS:M" from_flavor " __MAKE_CONF=/dev/null`\"")) {
                 printf "%5d: %s still has the %s flavor\n", NR, $1, from_flavor | sort
             }
             # No else because the port is there but does not have the flavor,
@@ -149,7 +149,7 @@ $2 ~ /[ \t]/ {
             missing[$2] = NR
         else
             if (to_flavor != "") {
-                if (system("test \"" to_flavor "\" = \"`make -C " portsdir "/" $2 " -VFLAVORS:M" to_flavor "`\"")) {
+                if (system("test \"" to_flavor "\" = \"`make -C " portsdir "/" $2 " -VFLAVORS:M" to_flavor " __MAKE_CONF=/dev/null`\"")) {
                     printf "%5d: %s does not have the %s flavor\n", NR, $2, to_flavor | sort
                     error[NR] = 1
                 }
