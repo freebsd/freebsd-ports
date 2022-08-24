@@ -1,0 +1,15 @@
+--- udev-device.c.orig	2021-09-04 14:20:25.000000000 +0100
++++ udev-device.c	2022-10-12 16:18:45.525256000 +0100
+@@ -180,6 +180,12 @@
+ {
+ 	struct udev_list_entry *ule;
+ 
++	/*
++	 * TODO: CheriBSD support needed.
++	 * kwin(1) does not start without this hack.
++	 */
++	return (0);
++
+ 	TRC("(%p, %s)", ud, tag);
+ 	ule = udev_list_entry_get_first(udev_device_get_tags_list(ud));
+ 	return (udev_list_entry_get_by_name(ule, tag) != NULL);
