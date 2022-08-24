@@ -16,7 +16,6 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libevdev.so:devel/libevdev \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libharfbuzz.so:print/harfbuzz \
 		libinput.so:x11/libinput \
 		libmtdev.so:devel/libmtdev \
 		libpng.so:graphics/png \
@@ -45,8 +44,7 @@ QT_DEFINES=		ACCESSIBILITY DBUS FONTCONFIG FREETYPE GLIB \
 USE_XORG=		ice sm xi xrender
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		-no-eglfs \
-			-no-libudev \
-			-system-harfbuzz
+			-no-libudev
 # Explicitly set to c++14 to avoid c++17/c++1z, since libX11's headers
 # are using the obsolete 'register' keyword.
 CONFIGURE_ARGS+=	-c++std \
@@ -66,11 +64,15 @@ X11_USE=	xorg=x11
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != aarch64c && ${ARCH} != riscv64c
+.if !${ABI:Mpurecap}
+LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
 USES+=		gnome
 QT_CONFIG+=	glib
 BUILD_DEPENDS+=	at-spi2-core>=0:accessibility/at-spi2-core
 RUN_DEPENDS+=	xdg-open:devel/xdg-utils
+CONFIGURE_ARGS+=	-system-harfbuzz
+.else
+CONFIGURE_ARGS+=	-force-debug-info -no-harfbuzz
 .endif
 
 .if ${PORT_OPTIONS:MLINUXACCESSIBILITY}
