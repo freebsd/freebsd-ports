@@ -1,11 +1,14 @@
 PORTNAME=	iocell
 PORTVERSION=	2.1.2
-DISTVERSIONPREFIX=v
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
-PATCHFILES+=	37.patch:-p1 # https://github.com/bartekrutkowski/iocell/pull/37
+# https://github.com/bartekrutkowski/iocell/pull/37
+# https://github.com/bartekrutkowski/iocell/pull/40
+PATCHFILES+=	37.patch:-p1 \
+		40.patch:-p1
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Feature rich Jail containers manager (iocage fork)
@@ -15,8 +18,6 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	uclcmd:devel/uclcmd
-
-CONFLICTS=	iocage
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bartekrutkowski
