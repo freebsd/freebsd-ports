@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2022-08-24 16:49:50 UTC
++++ CMakeLists.txt
+@@ -333,10 +333,12 @@ if(NOT EMSCRIPTEN)
+   install(TARGETS app
+     RUNTIME DESTINATION .
+     BUNDLE DESTINATION .)
++  if (FALSE)
+   install(CODE [[
+     include (BundleUtilities)
+     fixup_bundle("${CMAKE_INSTALL_PREFIX}/GLVis.app" "" "")
+   ]] COMPONENT RUNTIME)
++  endif()
+ 
+ endif(NOT EMSCRIPTEN)
+ 
