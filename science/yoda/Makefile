@@ -1,5 +1,5 @@
 PORTNAME=	yoda
-DISTVERSION=	1.9.4
+DISTVERSION=	1.9.6
 CATEGORIES=	science
 MASTER_SITES=	https://yoda.hepforge.org/downloads/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -10,7 +10,9 @@ COMMENT=	Particle physics package with classes for data analysis, histogramming
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	bash:shells/bash
+TEST_DEPENDS=	bash:shells/bash \
+		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang gmake libtool python:test shebangfix
 GNU_CONFIGURE=	yes
@@ -26,11 +28,13 @@ OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
-PYTHON_USES=			python shebangfix
+PYTHON_USES=			python
 PYTHON_USE=			PYTHON=cython
 PYTHON_CONFIGURE_ENABLE=	pyext
 PYTHON_MAKE_ENV=		PYTHON_VERSION=${PYTHON_VER} PYTHON=${PYTHON_CMD}
 PYTHON_VARS=			SHEBANG_FILES="bin/${PORTNAME}* bin/aida2yoda bin/aida2flat bin/flat2yoda"
+
+TEST_ENV=	${MAKE_ENV} PATH=${STAGEDIR}${PREFIX}/bin:${PATH} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libYODA.so
