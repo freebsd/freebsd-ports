@@ -9,6 +9,9 @@ COMMENT=		A community-based cardano-node CLI tool
 LICENSE=		APACHE20
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	cryptoxide Rust crate uses AVX2 instructions
+
 USES=		autoreconf:build cargo gmake libtool pkgconfig ssl
 
 USE_GITHUB=	yes
