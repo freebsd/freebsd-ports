@@ -1,5 +1,5 @@
 PORTNAME=	opensips31
-DISTVERSION=	3.1.10
+DISTVERSION=	3.1.11
 CATEGORIES=	net
 MASTER_SITES=	https://opensips.org/pub/opensips/${DISTVERSION}/
 DISTNAME=	opensips-${DISTVERSION}
