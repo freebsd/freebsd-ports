@@ -30,7 +30,6 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libenchant-2.so:textproc/enchant2 \
 		libjpeg.so:graphics/jpeg-turbo \
 		liblz4.so:archivers/liblz4 \
-		librnnoise.so:audio/rnnoise \
 		libopenal.so:audio/openal-soft \
 		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
