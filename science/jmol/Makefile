@@ -1,5 +1,6 @@
 PORTNAME=	Jmol
 DISTVERSION=	14.32.67
+PORTREVISION=	1
 CATEGORIES=	science java
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/Version%20${DISTVERSION:R}/${PORTNAME}%20${DISTVERSION}/
 DISTFILES=	${PORTNAME}-${DISTVERSION}-full${EXTRACT_SUFX}
@@ -12,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes
 USE_ANT=	yes
+JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=91175, tid=0x000000000007cda5 guarantee(val < (1U << nbits)) failed: Field too big for insn
 
 NO_ARCH=	yes
 
