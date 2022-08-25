@@ -1,8 +1,9 @@
 PORTNAME=	liblurch
 PORTVERSION=	0.7.0
 CATEGORIES=	security net-im net
-MASTER_SITES=	https://research.ngportal.com/lurch/
+MASTER_SITES=	https://github.com/gkdr/lurch/releases/download/v0.7.0/ 
 
+DISTNAME=       lurch-${PORTVERSION}-src
 MAINTAINER=	micadeyeye@gmail.com
 COMMENT=	Portable OMEMO Encryption Library
 
