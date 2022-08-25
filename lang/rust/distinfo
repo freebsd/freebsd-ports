@@ -1,4 +1,4 @@
-TIMESTAMP = 1660637971
+TIMESTAMP = 1661465864
 SHA256 (rust/rustc-1.63.0-src.tar.xz) = 8f44af6dc44cc4146634a4dd5e4cc5470b3052a2337019b870c0e025e8987e0c
 SIZE (rust/rustc-1.63.0-src.tar.xz) = 136597192
 SHA256 (rust/2022-08-11/rustc-1.62.0-aarch64-unknown-freebsd.tar.xz) = cc389cc6054c2761b55329f996107d02453187149b3597cbebdc4c7a994e4b9f
@@ -55,8 +55,8 @@ SHA256 (rust/2022-08-11/rust-std-1.62.0-riscv64gc-unknown-freebsd.tar.xz) = 26e3
 SIZE (rust/2022-08-11/rust-std-1.62.0-riscv64gc-unknown-freebsd.tar.xz) = 28966484
 SHA256 (rust/2022-08-11/cargo-1.62.0-riscv64gc-unknown-freebsd.tar.xz) = 4f72f54faebca015d674a53394eda4ec7b07bc70547186dbefca45b71a9c00ea
 SIZE (rust/2022-08-11/cargo-1.62.0-riscv64gc-unknown-freebsd.tar.xz) = 27235120
-SHA256 (rust/2022-08-11/rustc-1.62.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 85282443cc7972af82999c24093a792143a642fb5f32a636c900019e0df30109
-SIZE (rust/2022-08-11/rustc-1.62.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 44366840
+SHA256 (rust/2022-08-11/rustc-1.62.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = b5fba026256b6c2eb73b07a56913bbd29c09c806b28278d342ed291e38c146e8
+SIZE (rust/2022-08-11/rustc-1.62.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 42777080
 SHA256 (rust/2022-08-11/rust-std-1.62.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = eea977e6cbffdb226056091c3ab565c2b3c933d37ab1a30a2baa5eccc47e2c9b
 SIZE (rust/2022-08-11/rust-std-1.62.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 20893088
 SHA256 (rust/2022-08-11/cargo-1.62.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = a36cd48122c84601cf2610d0cb381e3482bc25ef3f37d6d790eaa6a1a5a1e500
