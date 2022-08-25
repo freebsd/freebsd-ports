@@ -164,11 +164,13 @@
       </body>
     </description>
     <references>
+      <cvename>CVE-2022-36009</cvename>
       <url>https://github.com/matrix-org/gomatrixserverlib/security/advisories/GHSA-grvv-h2f9-7v9c</url>
     </references>
     <dates>
       <discovery>2022-08-15</discovery>
       <entry>2022-08-15</entry>
+      <modified>2022-08-25</modified>
     </dates>
   </vuln>
 
