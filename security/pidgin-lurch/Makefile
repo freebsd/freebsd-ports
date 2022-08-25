@@ -1,5 +1,5 @@
 PORTNAME=	lurch
-PORTVERSION=	0.0.2
+PORTVERSION=	4.0.2
 PORTREVISION=	1
 CATEGORIES=	security net-im net
 MASTER_SITES=	https://research.ngportal.com/lurch/
