@@ -1,3 +1,47 @@
+  <vuln vid="36d10af7-248d-11ed-856e-d4c9ef517024">
+    <topic>MariaDB -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mariadb103-server</name>
+	<range><lt>10.3.36</lt></range>
+      </package>
+      <package>
+	<name>mariadb104-server</name>
+	<range><lt>10.4.26</lt></range>
+      </package>
+      <package>
+	<name>mariadb105-server</name>
+	<range><lt>10.5.17</lt></range>
+      </package>
+      <package>
+	<name>mariadb106-server</name>
+	<range><lt>10.6.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MariaDB project reports:</p>
+	<blockquote cite="https://mariadb.com/kb/en/cve/">
+	  <p>Multiple vulnerabilities, mostly segfaults, in
+	    the server component</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-32082</cvename>
+      <cvename>CVE-2022-32089</cvename>
+      <cvename>CVE-2022-32081</cvename>
+      <cvename>CVE-2018-25032</cvename>
+      <cvename>CVE-2022-32091</cvename>
+      <cvename>CVE-2022-32084</cvename>
+      <url>https://mariadb.com/kb/en/cve/</url>
+    </references>
+    <dates>
+      <discovery>2022-08-22</discovery>
+      <entry>2022-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8a0cd618-22a0-11ed-b1e7-001b217b3468">
     <topic>Gitlab -- Remote Code Execution</topic>
     <affects>
