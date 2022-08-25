@@ -1,6 +1,7 @@
 PORTNAME=	veloren
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	games
 .if !make(makesum)
 MASTER_SITES=	LOCAL/jbeich
@@ -409,7 +410,7 @@ CARGO_CRATES=	ab_glyph-0.2.15 \
 		os_str_bytes-6.0.0 \
 		owned_ttf_parser-0.6.0 \
 		owned_ttf_parser-0.15.0 \
-		packed_simd_2-0.3.7 \
+		packed_simd_2-0.3.8 \
 		parking_lot-0.10.2 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.0 \

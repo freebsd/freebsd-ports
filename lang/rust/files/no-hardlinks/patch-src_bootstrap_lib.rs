@@ -15,14 +15,29 @@ links during the build, so let's try that.
 
 --- src/bootstrap/lib.rs.orig	2020-07-23 20:16:43 UTC
 +++ src/bootstrap/lib.rs
-@@ -1173,10 +1173,6 @@ impl Build {
-         if metadata.file_type().is_symlink() {
-             let link = t!(fs::read_link(src));
-             t!(symlink_file(link, dst));
--        } else if let Ok(()) = fs::hard_link(src, dst) {
+@@ -1450,19 +1450,13 @@ impl Build {
+                 return;
+             }
+         }
+-        if let Ok(()) = fs::hard_link(&src, dst) {
 -            // Attempt to "easy copy" by creating a hard link
 -            // (symlinks don't work on windows), but if that fails
 -            // just fall back to a slow `copy` operation.
-         } else {
-             if let Err(e) = fs::copy(src, dst) {
-                 panic!("failed to copy `{}` to `{}`: {}", src.display(), dst.display(), e)
+-        } else {
+-            if let Err(e) = fs::copy(&src, dst) {
+-                panic!("failed to copy `{}` to `{}`: {}", src.display(), dst.display(), e)
+-            }
+-            t!(fs::set_permissions(dst, metadata.permissions()));
+-            let atime = FileTime::from_last_access_time(&metadata);
+-            let mtime = FileTime::from_last_modification_time(&metadata);
+-            t!(filetime::set_file_times(dst, atime, mtime));
++        if let Err(e) = fs::copy(&src, dst) {
++            panic!("failed to copy `{}` to `{}`: {}", src.display(), dst.display(), e)
+         }
++        t!(fs::set_permissions(dst, metadata.permissions()));
++        let atime = FileTime::from_last_access_time(&metadata);
++        let mtime = FileTime::from_last_modification_time(&metadata);
++        t!(filetime::set_file_times(dst, atime, mtime));
+     }
+ 
+     /// Copies the `src` directory recursively to `dst`. Both are assumed to exist
