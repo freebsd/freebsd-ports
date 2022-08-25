@@ -1,5 +1,5 @@
 PORTNAME=	calendar
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
