@@ -13,12 +13,12 @@
 %%WWWDIR%%/backend/AUTH/methode/ldap.php
 %%WWWDIR%%/backend/AUTH/methode/local.php
 %%WWWDIR%%/backend/identity/identity.php
+%%WWWDIR%%/backend/identity/methode/cas.php
 %%WWWDIR%%/backend/identity/methode/ldap.php
 %%WWWDIR%%/backend/identity/methode/local.php
 %%WWWDIR%%/backend/ipdiscover/ipdiscover.php
 %%WWWDIR%%/backend/ipdiscover/methode/local.php
 %%WWWDIR%%/backend/require/auth.manager.php
-@sample %%WWWDIR%%/backend/require/cas.config.php.sample
 %%WWWDIR%%/backend/require/connexion.php
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/composer.lock
@@ -40,6 +40,7 @@
 %%WWWDIR%%/config/teledeploy/interactions/installapplinux.xml
 %%WWWDIR%%/config/teledeploy/interactions/installappmacos.xml
 %%WWWDIR%%/config/teledeploy/interactions/installpkgmacos.xml
+%%WWWDIR%%/config/teledeploy/interactions/installpluginlinux.xml
 %%WWWDIR%%/config/teledeploy/interactions/msiapplication.xml
 %%WWWDIR%%/config/teledeploy/interactions/powershellscript.xml
 %%WWWDIR%%/config/teledeploy/interactions/store.xml
@@ -58,6 +59,7 @@
 %%WWWDIR%%/config/teledeploy/options/installapplinuxopt.xml
 %%WWWDIR%%/config/teledeploy/options/installappmacosopt.xml
 %%WWWDIR%%/config/teledeploy/options/installpkgmacosopt.xml
+%%WWWDIR%%/config/teledeploy/options/installpluginlinuxopt.xml
 %%WWWDIR%%/config/teledeploy/options/msiapplicationopt.xml
 %%WWWDIR%%/config/teledeploy/options/powershellscriptopt.xml
 %%WWWDIR%%/config/teledeploy/options/storeopt.xml
@@ -65,6 +67,7 @@
 %%WWWDIR%%/config/teledeploy/options/uninstallopt.xml
 %%WWWDIR%%/config/teledeploy/options/updateagentopt.xml
 %%WWWDIR%%/config/teledeploy/options/yumrepositoryopt.xml
+%%WWWDIR%%/config/teledeploy/script/installplugin.sh
 %%WWWDIR%%/config/teledeploy/script/removeupdateagent.ps1
 %%WWWDIR%%/config/teledeploy/script/scheduledupdateagent.ps1
 %%WWWDIR%%/config/urls.xml
@@ -143,6 +146,12 @@
 %%WWWDIR%%/files/update/7055.sql
 %%WWWDIR%%/files/update/7056.sql
 %%WWWDIR%%/files/update/7057.sql
+%%WWWDIR%%/files/update/7058.sql
+%%WWWDIR%%/files/update/7059.sql
+%%WWWDIR%%/files/update/7060.sql
+%%WWWDIR%%/files/update/7061.sql
+%%WWWDIR%%/files/update/7062.sql
+%%WWWDIR%%/files/update/7063.sql
 %%WWWDIR%%/image/adjustment.png
 %%WWWDIR%%/image/apple-logo.png
 %%WWWDIR%%/image/binary.png
@@ -865,13 +874,14 @@
 %%WWWDIR%%/plugins/main_sections/ms_groups/ms_group_show.php
 %%WWWDIR%%/plugins/main_sections/ms_groups/ms_groups.php
 %%WWWDIR%%/plugins/main_sections/ms_help/ms_ask.php
-%%WWWDIR%%/plugins/main_sections/ms_help/ms_irc.php
 %%WWWDIR%%/plugins/main_sections/ms_help/ms_offers.php
 %%WWWDIR%%/plugins/main_sections/ms_help/ms_wiki.php
+%%WWWDIR%%/plugins/main_sections/ms_history/ms_history.php
 %%WWWDIR%%/plugins/main_sections/ms_ipdiscover/ms_admin_ipdiscover.php
 %%WWWDIR%%/plugins/main_sections/ms_ipdiscover/ms_custom_info.php
 %%WWWDIR%%/plugins/main_sections/ms_ipdiscover/ms_ipdiscover.php
 %%WWWDIR%%/plugins/main_sections/ms_ipdiscover/ms_ipdiscover_analyse.php
+%%WWWDIR%%/plugins/main_sections/ms_layouts/ms_layouts.php
 %%WWWDIR%%/plugins/main_sections/ms_logs/ms_logs.php
 %%WWWDIR%%/plugins/main_sections/ms_multi_search/ms_custom_lock.php
 %%WWWDIR%%/plugins/main_sections/ms_multi_search/ms_custom_sup.php
@@ -998,8 +1008,10 @@
 %%WWWDIR%%/require/function_users.php
 %%WWWDIR%%/require/function_wol.php
 %%WWWDIR%%/require/header.php
+%%WWWDIR%%/require/history/History.php
 %%WWWDIR%%/require/html_header.php
 %%WWWDIR%%/require/ipdiscover/Ipdiscover.php
+%%WWWDIR%%/require/layouts/Layout.php
 %%WWWDIR%%/require/mail/NotificationMail.php
 %%WWWDIR%%/require/menu/ComputerMenuRenderer.php
 %%WWWDIR%%/require/menu/MainMenuRenderer.php
@@ -1142,7 +1154,6 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-be.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-bg.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ca.php
-%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ch.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-cs.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-da.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-de.php
@@ -1168,6 +1179,7 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-lt.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-lv.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-mg.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-mn.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ms.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-nb.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-nl.php
@@ -1189,6 +1201,7 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh_cn.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/Exception.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/OAuth.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/src/OAuthTokenProvider.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/PHPMailer.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/POP3.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/SMTP.php
