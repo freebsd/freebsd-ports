@@ -1,0 +1,9 @@
+include/erfa.h
+include/erfadatextra.h
+include/erfaextra.h
+include/erfam.h
+lib/liberfa.a
+lib/liberfa.so
+lib/liberfa.so.1
+lib/liberfa.so.1.8.0
+libdata/pkgconfig/erfa.pc

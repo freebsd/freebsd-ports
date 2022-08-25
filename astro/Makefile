@@ -6,6 +6,7 @@
     SUBDIR += celestia
     SUBDIR += celestia-gtk
     SUBDIR += cfitsio
+    SUBDIR += erfa
     SUBDIR += fowsr
     SUBDIR += foxtrotgps
     SUBDIR += geographiclib
