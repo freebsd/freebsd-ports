@@ -1,5 +1,5 @@
 PORTNAME=	liblurch
-PORTVERSION=	0.2.1
+PORTVERSION=	0.7.0
 CATEGORIES=	security net-im net
 MASTER_SITES=	https://research.ngportal.com/lurch/
 
