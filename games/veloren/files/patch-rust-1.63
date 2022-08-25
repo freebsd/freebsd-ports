@@ -1,3 +1,29 @@
+error: expected one of `!` or `::`, found keyword `mod`
+   --> cargo-crates/packed_simd_2-0.3.7/src/lib.rs:347:7
+    |
+347 | crate mod llvm {
+    |       ^^^ expected one of `!` or `::`
+
+error[E0433]: failed to resolve: could not find `OnceCell` in `lazy`
+   --> voxygen/src/scene/terrain.rs:558:32
+    |
+558 |         let init = core::lazy::OnceCell::new();
+    |                                ^^^^^^^^ not found in `core::lazy`
+    |
+help: consider importing one of these items
+    |
+3   | use core::cell::OnceCell;
+    |
+3   | use std::cell::OnceCell;
+    |
+3   | use tokio::sync::OnceCell;
+    |
+help: if you import `OnceCell`, refer to it directly
+    |
+558 -         let init = core::lazy::OnceCell::new();
+558 +         let init = OnceCell::new();
+    |
+
 --- Cargo.lock.orig	2022-08-17 12:36:05 UTC
 +++ Cargo.lock
 @@ -4025,9 +4025,9 @@ name = "packed_simd_2"
