@@ -26,4 +26,6 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON \
 		-DCMAKE_INSTALL_LIBDIR=${LOCALBASE}/lib
 LDFLAGS+=	-lexecinfo -lpthread
 
+PORTSCOUT=	limit:^d\.d\.
+
 .include <bsd.port.mk>

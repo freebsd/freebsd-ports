@@ -21,4 +21,6 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON \
 		-DBUILD_TESTING=OFF \
 		-DCMAKE_PREFIX_PATH=${LOCALBASE}
 
+PORTSCOUT=	limit:^d\.d\.
+
 .include <bsd.port.mk>
