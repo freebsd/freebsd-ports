@@ -82,6 +82,7 @@
     SUBDIR += dynomite
     SUBDIR += e2fsprogs-libblkid
     SUBDIR += e2fsprogs-libuuid
+    SUBDIR += ecflow
     SUBDIR += edfbrowser
     SUBDIR += edflib
     SUBDIR += elki
