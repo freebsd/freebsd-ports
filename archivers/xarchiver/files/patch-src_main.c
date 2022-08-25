@@ -1,15 +1,6 @@
---- src/main.c.orig	2020-12-12 13:32:03 UTC
+--- src/main.c.orig	2022-08-25 20:42:45 UTC
 +++ src/main.c
-@@ -103,7 +103,7 @@ static void xa_check_available_archivers ()
- 
- 	/* (un)compressors that can handle various types */
- 
--	sevenz = g_find_program_in_path("7z");
-+	sevenz = g_find_program_in_path("7zz");
- 
- 	if (!sevenz)
- 	{
-@@ -388,7 +388,7 @@ static void xa_check_available_archivers ()
+@@ -410,7 +410,7 @@ static void xa_check_available_archivers ()
  	/* GNU zip */
  
  	type = XARCHIVETYPE_GZIP;
@@ -18,7 +9,7 @@
  
  	if (path)
  		archiver[type].is_compressor = TRUE;
-@@ -812,11 +812,11 @@ static void xa_check_available_archivers ()
+@@ -906,11 +906,11 @@ static void xa_check_available_archivers ()
  	if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(prefs_window->prefer_unzip)) ||
  	    (!is7za && !lsar))
  	{
