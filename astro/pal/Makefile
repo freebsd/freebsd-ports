@@ -1,6 +1,6 @@
 PORTNAME=	pal
 DISTVERSION=	0.9.8
-CATEGORIES=	astro geography
+CATEGORIES=	astro
 MASTER_SITES=	https://github.com/Starlink/pal/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-astronomical
 

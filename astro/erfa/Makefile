@@ -1,6 +1,6 @@
 PORTNAME=	erfa
 DISTVERSION=	2.0.0
-CATEGORIES=	astro geography
+CATEGORIES=	astro
 MASTER_SITES=	https://github.com/liberfa/erfa/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
