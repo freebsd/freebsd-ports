@@ -1,6 +1,5 @@
 PORTNAME=	krita
-DISTVERSION=	5.0.8
-PORTREVISION=	4
+DISTVERSION=	5.1.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -36,8 +35,8 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 
 # Disable ninja generator for now (with gmake), until the duplicate test targets are resolved upstream.
 USES=		cmake:noninja gmake compiler:c++11-lib desktop-file-utils \
-		eigen:3 gettext jpeg kde:5 pkgconfig python:3.4+ qt:5 \
-		shared-mime-info tar:xz xorg
+		eigen:3 gettext jpeg kde:5 localbase:ldflags pkgconfig \
+		python:3.4+ qt:5 shared-mime-info tar:xz xorg
 USE_KDE=	archive completion config coreaddons crash guiaddons i18n \
 		itemmodels itemviews kio service widgetsaddons windowsystem
 USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \
@@ -58,8 +57,8 @@ OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
 			libKSeExpr.so:graphics/kseexpr
 OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
 
-PLIST_SUB=	SHLIB_VER=17.0.0 \
-		SHLIB_SHVER=17
+PLIST_SUB=	SHLIB_VER=18.0.0 \
+		SHLIB_SHVER=18
 
 .include <bsd.port.options.mk>
 
