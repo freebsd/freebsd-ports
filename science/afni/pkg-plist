@@ -845,9 +845,16 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/afnigui_cursor1030.jpg
 %%DATADIR%%/afnigui_cursor1100.jpg
 %%DATADIR%%/afnigui_logo.jpg
+%%DATADIR%%/afnigui_logo.png
+%%DATADIR%%/afnigui_logo_128sq.jpg
+%%DATADIR%%/afnigui_logo_128sq.png
+%%DATADIR%%/afnigui_logo_905sq.jpg
+%%DATADIR%%/afnigui_logo_905sq.png
+%%DATADIR%%/afnigui_logo_ORIG.jpg
 %%DATADIR%%/funstuff/afnimusic.au
 %%DATADIR%%/funstuff/face_15k_jjlr.jpg
 %%DATADIR%%/funstuff/face_7Tesla.jpg
+%%DATADIR%%/funstuff/face_alexp.jpg
 %%DATADIR%%/funstuff/face_ABtwins.jpg
 %%DATADIR%%/funstuff/face_AuroraRamos.jpg
 %%DATADIR%%/funstuff/face_CassieK.jpg
