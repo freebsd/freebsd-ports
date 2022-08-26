@@ -5,6 +5,10 @@ CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+# Incomplete upstream vala fix
+# PATCH_SITES=	https://gitlab.gnome.org/GNOME/gnome-taquin/-/commit/
+# PATCHFILES=	66be44dc20d114e449fc33156e3939fd05dfbb16.diff:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Move tiles so that they reach their places
 
@@ -22,5 +26,7 @@ USE_GNOME=	cairo gsound gtk30 intlhack librsvg2 libxml2:build
 USE_XORG=	x11
 
 GLIB_SCHEMAS=	org.gnome.Taquin.gschema.xml
+
+BROKEN=		Does not build with current vala
 
 .include <bsd.port.mk>
