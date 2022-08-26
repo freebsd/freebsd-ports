@@ -5,8 +5,6 @@ CATEGORIES=	misc
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Collection of tools and libraries by J. Schilling (metaport)
 
-LICENSE=	PD
-
 RUN_DEPENDS=	schilybase>=2021.05.19:devel/schilybase \
 		schilyutils>=2021.05.19:sysutils/schilyutils \
 		star>=2021.05.19:archivers/star \

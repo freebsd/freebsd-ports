@@ -6,8 +6,6 @@ PKGNAMEPREFIX=	rubygem-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Meta port for gems of Ruby-GNOME project
 
-LICENSE=	LGPL21+
-
 RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 		rubygem-cairo-gobject>=${PORTVERSION}:devel/rubygem-cairo-gobject \
 		rubygem-clutter>=${PORTVERSION}:graphics/rubygem-clutter \

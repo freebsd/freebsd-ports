@@ -7,8 +7,6 @@ PKGNAMEPREFIX=	plasma5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE5 plasma meta port
 
-LICENSE=	LGPL20
-
 USES=		kde:5 metaport qt:5
 # remove:
 #   * bluedevil we do not have bluez at all

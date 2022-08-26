@@ -5,8 +5,6 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Noto Fonts family (meta port)
 
-LICENSE=	OFL11
-
 USES=		metaport
 
 OPTIONS_DEFINE=	BASIC EMOJI EXTRA HK JP KR SC TC
