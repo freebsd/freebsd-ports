@@ -1,3 +1,4 @@
+bin/babl
 include/babl-%%BABL_VER%%/babl/babl-introspect.h
 include/babl-%%BABL_VER%%/babl/babl-macros.h
 include/babl-%%BABL_VER%%/babl/babl-types.h
