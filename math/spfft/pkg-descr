@@ -1,0 +1,4 @@
+SpFFT - A 3D FFT library for sparse frequency domain data written in C++ with
+support for MPI, OpenMP, CUDA and ROCm.
+
+WWW: https://github.com/eth-cscs/SpFFT
