@@ -1,8 +1,14 @@
 bin/converseen
 share/applications/net.fasterland.converseen.desktop
+share/icons/hicolor/128x128/apps/converseen.png
+share/icons/hicolor/16x16/apps/converseen.png
+share/icons/hicolor/256x256/apps/converseen.png
+share/icons/hicolor/32x32/apps/converseen.png
+share/icons/hicolor/48x48/apps/converseen.png
+share/icons/hicolor/512x512/apps/converseen.png
+share/icons/hicolor/64x64/apps/converseen.png
 share/kservices5/ServiceMenus/converseen_import.desktop
 share/metainfo/converseen.appdata.xml
-share/pixmaps/converseen.png
 %%DATADIR%%/loc/converseen_cs_CZ.qm
 %%DATADIR%%/loc/converseen_da_DK.qm
 %%DATADIR%%/loc/converseen_de_DE.qm
