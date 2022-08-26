@@ -21,6 +21,8 @@ USE_GSTREAMER=	mpg123 soup
 
 GLIB_SCHEMAS=	de.haeckerfelix.gradio.gschema.xml
 
+BROKEN=		Does not build against current vala
+
 post-patch:
 	${REINPLACE_CMD} -e "s,python3,${PYTHON_CMD}," ${WRKSRC}/meson_post_install.sh
 
