@@ -21,6 +21,8 @@ GH_ACCOUNT=	teejee2008
 WRKSRC_SUBDIR=	src
 MAKEFILE=	makefile
 
+BROKEN=		Does not build against current vala
+
 post-patch:
 	@${RM} ${WRKSRC}/share/polo/files/gtk-theme/*.orig
 	@${RM} ${WRKSRC}/share/polo/files/install-*.sh
