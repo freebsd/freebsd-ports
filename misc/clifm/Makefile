@@ -1,5 +1,5 @@
 PORTNAME=	clifm
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -15,12 +15,12 @@ USES=		desktop-file-utils gettext-runtime python:run \
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-arch
 GH_PROJECT=	${PORTNAME}-colors:cfmc
-GH_TAGNAME=	e9ee1c4:cfmc
+GH_TAGNAME=	b0e2dea:cfmc
 ALL_TARGET=	build
 SHEBANG_FILES=	misc/tools/manpages_comp_gen.py
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC_cfmc}/colors/*.cfm \
+	${INSTALL_DATA} ${WRKSRC_cfmc}/colors/*.clifm \
 		${STAGEDIR}${DATADIR}/colors
 
 post-stage:
