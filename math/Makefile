@@ -248,6 +248,7 @@
     SUBDIR += convertall
     SUBDIR += coq
     SUBDIR += cosma
+    SUBDIR += costa
     SUBDIR += couenne
     SUBDIR += coxeter3
     SUBDIR += cppad
