@@ -3,7 +3,6 @@ PORTVERSION=	0.60
 PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://cr.yp.to/libtai/ \
-		ftp://ftp.sunsite.auc.dk/disk1/qmail/ \
 		ftp://ftp.task.gda.pl/mirror/mirror.qmail.org/koobera/pub/software/
 
 MAINTAINER=	rodrigo@FreeBSD.org
