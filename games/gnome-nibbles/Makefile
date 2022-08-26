@@ -5,6 +5,10 @@ CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/gnome-nibbles/-/commit/
+PATCHFILES=	1b48446068608aff9b5edf1fdbd4b8c0d9f0be94.diff:-p1 \
+		62964e9256fcac616109af874dbb2bd8342a9853.diff:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome nibbles
 
