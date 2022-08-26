@@ -1,5 +1,5 @@
 PORTNAME=	libgnome-games-support
-PORTVERSION=	1.8.0
+DISTVERSION=	1.8.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
