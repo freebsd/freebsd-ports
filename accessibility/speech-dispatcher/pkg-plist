@@ -14,6 +14,7 @@ bin/speech-dispatcher
 @sample %%ETCDIR%%/modules/flite.conf.sample
 @sample %%ETCDIR%%/modules/llia_phon-generic.conf.sample
 @sample %%ETCDIR%%/modules/mary-generic.conf.sample
+@sample %%ETCDIR%%/modules/mimic3-generic.conf.sample
 @sample %%ETCDIR%%/modules/swift-generic.conf.sample
 %%VOXIN%%@sample %%ETCDIR%%/modules/voxin.conf.sample
 @sample %%ETCDIR%%/speechd.conf.sample
@@ -36,6 +37,7 @@ lib/speech-dispatcher/spd_oss.a
 lib/speech-dispatcher/spd_oss.so
 %%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.a
 %%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.so
+libdata/pkgconfig/speech-dispatcher.pc
 libexec/speech-dispatcher-modules/sd_cicero
 libexec/speech-dispatcher-modules/sd_dummy
 %%ESPEAK%%libexec/speech-dispatcher-modules/sd_espeak
@@ -43,7 +45,6 @@ libexec/speech-dispatcher-modules/sd_festival
 %%FLITE%%libexec/speech-dispatcher-modules/sd_flite
 libexec/speech-dispatcher-modules/sd_generic
 %%VOXIN%%libexec/speech-dispatcher-modules/sd_voxin
-libdata/pkgconfig/speech-dispatcher.pc
 man/man1/spd-say.1.gz
 man/man1/speech-dispatcher.1.gz
 share/locale/cs/LC_MESSAGES/speech-dispatcher.mo
@@ -85,6 +86,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/bn/emojis.dic
 %%DATADIR%%/locale/bn/orca-chars.dic
 %%DATADIR%%/locale/bn/orca.dic
+%%DATADIR%%/locale/bn/symbols.dic
 %%DATADIR%%/locale/bn_IN/orca-chars.dic
 %%DATADIR%%/locale/bn_IN/orca.dic
 %%DATADIR%%/locale/br/emojis.dic
@@ -119,6 +121,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/de_CH/emojis.dic
 %%DATADIR%%/locale/de_CH/symbols.dic
 %%DATADIR%%/locale/doi/emojis.dic
+%%DATADIR%%/locale/dsb/emojis.dic
 %%DATADIR%%/locale/el/emojis.dic
 %%DATADIR%%/locale/el/orca-chars.dic
 %%DATADIR%%/locale/el/orca.dic
@@ -165,6 +168,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/fa/symbols.dic
 %%DATADIR%%/locale/fi/emojis.dic
 %%DATADIR%%/locale/fi/orca-chars.dic
+%%DATADIR%%/locale/fi/orca.dic
 %%DATADIR%%/locale/fi/symbols.dic
 %%DATADIR%%/locale/fil/emojis.dic
 %%DATADIR%%/locale/fo/emojis.dic
@@ -184,16 +188,20 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/gl/symbols.dic
 %%DATADIR%%/locale/gu/emojis.dic
 %%DATADIR%%/locale/ha/emojis.dic
+%%DATADIR%%/locale/ha_NE/emojis.dic
 %%DATADIR%%/locale/he/emojis.dic
+%%DATADIR%%/locale/he/orca.dic
 %%DATADIR%%/locale/he/symbols.dic
 %%DATADIR%%/locale/hi/emojis.dic
 %%DATADIR%%/locale/hi/orca-chars.dic
 %%DATADIR%%/locale/hi/orca.dic
 %%DATADIR%%/locale/hi/symbols.dic
+%%DATADIR%%/locale/hi_Latn/emojis.dic
 %%DATADIR%%/locale/hr/emojis.dic
 %%DATADIR%%/locale/hr/orca-chars.dic
 %%DATADIR%%/locale/hr/orca.dic
 %%DATADIR%%/locale/hr/symbols.dic
+%%DATADIR%%/locale/hsb/emojis.dic
 %%DATADIR%%/locale/hu/emojis.dic
 %%DATADIR%%/locale/hu/orca-chars.dic
 %%DATADIR%%/locale/hu/orca.dic
@@ -240,6 +248,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/mi/emojis.dic
 %%DATADIR%%/locale/mk/emojis.dic
 %%DATADIR%%/locale/mk/orca-chars.dic
+%%DATADIR%%/locale/mk/orca.dic
 %%DATADIR%%/locale/mk/symbols.dic
 %%DATADIR%%/locale/ml/emojis.dic
 %%DATADIR%%/locale/ml/orca-chars.dic
@@ -250,6 +259,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/mr/emojis.dic
 %%DATADIR%%/locale/ms/emojis.dic
 %%DATADIR%%/locale/ms/orca-chars.dic
+%%DATADIR%%/locale/ms/orca.dic
 %%DATADIR%%/locale/mt/emojis.dic
 %%DATADIR%%/locale/my/emojis.dic
 %%DATADIR%%/locale/my/symbols.dic
@@ -302,6 +312,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/ru/symbols.dic
 %%DATADIR%%/locale/rw/emojis.dic
 %%DATADIR%%/locale/sa/emojis.dic
+%%DATADIR%%/locale/sc/emojis.dic
 %%DATADIR%%/locale/sd/emojis.dic
 %%DATADIR%%/locale/si/emojis.dic
 %%DATADIR%%/locale/sk/emojis.dic
@@ -310,6 +321,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/sk/symbols.dic
 %%DATADIR%%/locale/sl/emojis.dic
 %%DATADIR%%/locale/sl/orca-chars.dic
+%%DATADIR%%/locale/sl/orca.dic
 %%DATADIR%%/locale/sl/symbols.dic
 %%DATADIR%%/locale/so/emojis.dic
 %%DATADIR%%/locale/so/symbols.dic
@@ -375,5 +387,6 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/zh_HK/symbols.dic
 %%DATADIR%%/locale/zh_TW/emojis.dic
 %%DATADIR%%/locale/zh_TW/orca-chars.dic
+%%DATADIR%%/locale/zh_TW/orca.dic
 %%DATADIR%%/locale/zh_TW/symbols.dic
 %%DATADIR%%/locale/zu/emojis.dic
