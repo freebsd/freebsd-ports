@@ -5,6 +5,10 @@ CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/geary/-/commit/
+PATCHFILES=	0f75e7a84a39492d0748cec2ba6028e08cae3644.diff:-p1 \
+		9bd4c82952a0a2c3308c5cc86c0b85650c1fb484.diff:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mail client for GNOME
 
