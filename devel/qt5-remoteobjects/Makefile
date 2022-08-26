@@ -4,7 +4,7 @@ CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt5 SXCML module
+COMMENT=	Qt5 Remote Objects module
 
 USES=		compiler:c++11-lang gl qmake qt-dist:5
 USE_GL=		gl
