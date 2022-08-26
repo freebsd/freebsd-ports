@@ -1213,6 +1213,7 @@
     SUBDIR += rsplib
     SUBDIR += rssguard
     SUBDIR += rsync
+    SUBDIR += rsync31
     SUBDIR += rsync-bpc
     SUBDIR += rtg
     SUBDIR += rtpproxy
