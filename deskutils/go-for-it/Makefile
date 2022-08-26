@@ -2,6 +2,9 @@ PORTNAME=	go-for-it
 DISTVERSION=	1.9.6
 CATEGORIES=	deskutils
 
+PATCH_SITES=	https://github.com/JMoerman/Go-For-It/commit/
+PATCHFILES=	6b0f86bd403ece8c2f7813e442258881e11925df.diff:-p1
+
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Stylish to-do list with built-in productivity timer
 
