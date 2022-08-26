@@ -716,42 +716,7 @@ MASTER_SITE_ISC+= \
 # Updated:	2012-10-26
 .if !defined(IGNORE_MASTER_SITE_KDE)
 MASTER_SITE_KDE+= \
-	https://download.kde.org/%SUBDIR%/ \
-	ftp://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/%SUBDIR%/ \
-	http://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
-	http://kde.mirrors.tds.net/pub/kde/%SUBDIR%/ \
-	ftp://ftp.rz.uni-wuerzburg.de/pub/unix/kde/%SUBDIR%/ \
-	https://mirrors.dotsrc.org/kde/%SUBDIR%/ \
-	ftp://mirrors.dotsrc.org/kde/%SUBDIR%/ \
-	ftp://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
-	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
-	ftp://sunsite.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
-	https://sunsite.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
-	http://www-ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
-	https://ftp-stud.hs-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
-	ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/kde/%SUBDIR%/ \
-	ftp://ftp.ntua.gr/pub/X11/kde/%SUBDIR%/ \
-	http://ftp.ntua.gr/pub/X11/kde/%SUBDIR%/ \
-	ftp://ftp.heanet.ie/mirrors/ftp.kde.org/%SUBDIR%/ \
-	https://ftp.heanet.ie/mirrors/ftp.kde.org/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/X11/kde/%SUBDIR%/ \
-	http://ftp.kddlabs.co.jp/pub/X11/kde/%SUBDIR%/ \
-	ftp://ftp.ussg.iu.edu/pub/kde/%SUBDIR%/ \
-	http://ftp.ussg.iu.edu/kde/%SUBDIR%/ \
-	ftp://ftp.sayclub.com/pub/X/KDE/%SUBDIR%/ \
-	http://ftp.sayclub.com/pub/X/KDE/%SUBDIR%/ \
-	http://mirror.cc.columbia.edu/pub/software/kde/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	https://www.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	https://ftp.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
-	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	https://kde.cs.nctu.edu.tw/ftp/%SUBDIR%/
+	https://download.kde.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_LIBREOFFICE_DEV)
