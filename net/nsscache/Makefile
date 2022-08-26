@@ -1,5 +1,5 @@
 PORTNAME=	nsscache
-PORTVERSION=	0.46
+PORTVERSION=	0.47
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	net python
 
@@ -9,12 +9,8 @@ COMMENT=	Python utility to create a local cache of directory services
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on expired databases/py-bsddb3
-EXPIRATION_DATE=2022-09-30
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bsddb3>0:databases/py-bsddb3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ldap>0:net/py-ldap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycurl>0:ftp/py-pycurl@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mox3>0:devel/py-mox3@${PY_FLAVOR} \
