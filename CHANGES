@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20220826:
+AUTHOR: tcberner@FreeBSD.org
+
+  A new Uses for 'vala' has been added.
+
+  To depend on libvala, use
+  	USES=vala:lib
+  to only add a build-time dependency, use
+  	USES=vala:build
+
 20220821:
 AUTHOR: kde@FreeBSD.org
 
