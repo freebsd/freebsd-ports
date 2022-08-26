@@ -17536,3 +17536,4 @@ science/openkim|science/openkim-models|2022-08-07|Retire obsolete science/openki
 net/zeroconf-ioslave|net/kio-zeroconf|2022-08-18|Renamed upstream
 japanese/font-hackgen-nerd|japanese/font-hackgen-nf|2022-08-20|Renamed upstream
 x11-themes/adwaita-qt|x11-themes/adwaita-qt5|2022-08-23|Renamed to make space for x11-themes/adwaita-qt6
+net/gstreamer1-plugins-libmms|2022-08-26|Microsoft deprecated MMS in 2003

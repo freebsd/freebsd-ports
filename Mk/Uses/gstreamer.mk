@@ -52,7 +52,7 @@ _GST1_PLUGINS_multimedia=	aom assrender bad dash dts dv dvdread \
 			editing-services gnonlin good hls kate libav libde265 \
 			mpeg2dec mpeg2enc mplex mm openh264 resindvd rtmp \
 			smoothstreaming theora ttml ugly v4l2 vpx x264 x265
-_GST1_PLUGINS_net=	libmms srtp
+_GST1_PLUGINS_net=	srtp
 _GST1_PLUGINS_security=	dtls
 _GST1_PLUGINS_sysutils=	cdio
 _GST1_PLUGINS_www=	neon
@@ -364,9 +364,6 @@ gst-x265_PORT=		multimedia/gstreamer${_GST_VER}-plugins-x265
 gst-x265_IMPL=		bad
 
 #==== Net Plugins Section
-
-gst-libmms_PORT=	net/gstreamer${_GST_VER}-plugins-libmms
-gst-libmms_IMPL=	bad
 
 gst-srtp_PORT=		net/gstreamer${_GST_VER}-plugins-srtp
 gst-srtp_IMPL=		bad

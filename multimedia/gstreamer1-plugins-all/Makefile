@@ -1,6 +1,6 @@
 PORTNAME=	gstreamer1-plugins-all
 PORTVERSION=	1.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
