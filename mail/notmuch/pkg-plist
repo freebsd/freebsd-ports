@@ -6,6 +6,8 @@
 %%MANPAGES%%man/man1/notmuch-dump.1.gz
 %%MANPAGES%%man/man1/notmuch-insert.1.gz
 %%MANPAGES%%man/man1/notmuch-new.1.gz
+%%MANPAGES%%man/man1/nmbug.1.gz
+%%MANPAGES%%man/man1/notmuch-git.1.gz
 %%MANPAGES%%man/man1/notmuch-reindex.1.gz
 %%MANPAGES%%man/man1/notmuch-reply.1.gz
 %%MANPAGES%%man/man1/notmuch-restore.1.gz
