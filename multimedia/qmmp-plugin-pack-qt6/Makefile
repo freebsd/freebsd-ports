@@ -6,7 +6,7 @@ MASTER_SITES=	http://qmmp.ylsoftware.com/files/${PORTNAME}/${PORTVERSION:R}/ \
 PKGNAMESUFFIX=	-qt6
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	Additional plug-ins for QMMP (Qt5)
+COMMENT=	Additional plug-ins for QMMP (Qt6)
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
