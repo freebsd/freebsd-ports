@@ -5233,7 +5233,7 @@ _SANITY_SEQ=	050:post-chroot 100:pre-everything \
 				210:show-dev-errors 220:show-dev-warnings \
 				250:check-categories 300:check-makevars \
 				350:check-desktop-entries 400:check-depends \
-				450:identify-install-conflicts 500:check-deprecated \
+				500:check-deprecated \
 				550:check-vulnerable 600:check-license 650:check-config \
 				700:buildanyway-message 750:options-message ${_USES_sanity}
 
@@ -5293,6 +5293,7 @@ _TEST_SEQ=		100:test-message 150:test-depends 300:pre-test 500:do-test \
 				${_OPTIONS_test} ${_USES_test}
 _INSTALL_DEP=	stage
 _INSTALL_SEQ=	100:install-message \
+				150:identify-install-conflicts \
 				200:check-already-installed \
 				300:create-manifest
 _INSTALL_SUSEQ=	400:fake-pkg 500:security-check
