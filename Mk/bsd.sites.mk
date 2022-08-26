@@ -164,11 +164,6 @@ MASTER_SITE_DEBIAN_POOL+= \
 	${MASTER_SITE_DEBIAN:C|(/%SUBDIR%/)|/pool/main/${PORTNAME:C/^(.).*$/\1/}/${PORTNAME}/|}
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_EASYSW)
-MASTER_SITE_EASYSW+= \
-	http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_ECLIPSE)
 MASTER_SITE_ECLIPSE+= \
 	https://ftp-stud.hs-esslingen.de/pub/Mirrors/eclipse/%SUBDIR%/ \
@@ -200,16 +195,6 @@ MASTER_SITE_CENTOS_LINUX+= \
 	http://vault.centos.org/%SUBDIR%/:DEFAULT,aarch64,amd64,i386,SOURCE
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_EPEL)
-MASTER_SITE_EPEL+= \
-	https://dl.fedoraproject.org/pub/epel/6/x86_64/Packages/%SUBDIR%/:DEFAULT,amd64 \
-	https://dl.fedoraproject.org/pub/epel/6/i386/Packages/%SUBDIR%/:DEFAULT,i386 \
-	https://dl.fedoraproject.org/pub/epel/6/SRPMS/Packages/%SUBDIR%/:SOURCE \
-	http://dl.fedoraproject.org/pub/epel/6/x86_64/Packages/%SUBDIR%/:DEFAULT,amd64 \
-	http://dl.fedoraproject.org/pub/epel/6/i386/Packages/%SUBDIR%/:DEFAULT,i386 \
-	http://dl.fedoraproject.org/pub/epel/6/SRPMS/Packages/%SUBDIR%/:SOURCE
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_EPEL7)
 MASTER_SITE_EPEL7+= \
 	https://dl.fedoraproject.org/pub/epel/7/aarch64/Packages/%SUBDIR%/:DEFAULT,aarch64 \
@@ -218,13 +203,6 @@ MASTER_SITE_EPEL7+= \
 	http://dl.fedoraproject.org/pub/epel/7/aarch64/Packages/%SUBDIR%/:DEFAULT,aarch64 \
 	http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/%SUBDIR%/:DEFAULT,amd64 \
 	http://dl.fedoraproject.org/pub/epel/7/SRPMS/Packages/%SUBDIR%/:SOURCE
-.endif
-
-.if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
-MASTER_SITE_FEDORA_LINUX+= \
-	https://archives.fedoraproject.org/pub/archive/fedora/linux/%SUBDIR%/:DEFAULT,SOURCE \
-	https://archives.fedoraproject.org/pub/archive/fedora/linux/%SUBDIR%/:DEFAULT,SOURCE \
-	ftp://ftp.pbone.net/vol4/archive.fedoraproject.org/fedora/linux/%SUBDIR%/:DEFAULT,SOURCE
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FARSIGHT)
@@ -694,12 +672,6 @@ MASTER_SITE_GNU_ALPHA+= \
 	https://alpha-gnu-org.ip-connect.vn.ua/%SUBDIR%/
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_GOOGLE_CODE)
-PROJECTHOST?=	${PORTNAME}
-MASTER_SITE_GOOGLE_CODE+= \
-	http://${PROJECTHOST}.googlecode.com/files/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_HORDE)
 MASTER_SITE_HORDE+= \
 	https://ftp.horde.org/pub/%SUBDIR%/ \
@@ -981,17 +953,6 @@ MASTER_SITE_QT+= \
 	https://ftp.jaist.ac.jp/pub/qtproject/%SUBDIR%/
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_REDHAT_LINUX)
-MASTER_SITE_REDHAT_LINUX+= \
-	http://mirrors.usc.edu/pub/linux/distributions/redhat/redhat/linux/%SUBDIR%/ \
-	http://www.gtlib.gatech.edu/pub/redhat/linux/%SUBDIR%/ \
-	ftp://mirror.cs.wisc.edu/pub/mirrors/linux/redhat/%SUBDIR%/ \
-	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/linux/%SUBDIR%/ \
-	ftp://ftp.icm.edu.pl/pub/linux/redhat/linux/%SUBDIR%/ \
-	ftp://ftp.riken.go.jp/pub/Linux/redhat/linux/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/Linux/packages/RedHat/redhat/linux/%SUBDIR%/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_RUBY)
 MASTER_SITE_RUBY+= \
 	https://cache.ruby-lang.org/pub/ruby/%SUBDIR%/ \
@@ -1138,11 +1099,6 @@ MASTER_SITE_TOR+= \
 		http://www.torproject.org.nyud.net/dist/%SUBDIR%/ \
 		http://www.torproject.us/dist/%SUBDIR%/ \
 		https://www.torservers.net/mirrors/torproject.org/dist/%SUBDIR%/
-.endif
-
-.if !defined(IGNORE_MASTER_SITE_TUCOWS)
-MASTER_SITE_TUCOWS+= \
-	http://iinets.linux.tucows.com/files/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_WINDOWMAKER)
