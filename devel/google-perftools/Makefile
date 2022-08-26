@@ -61,7 +61,7 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == "clang" && !defined(USE_GCC)
+.if ${CHOSEN_COMPILER_TYPE} == "clang" && !defined(USE_GCC)
 # clang cannot disable builtins individually
 CXXFLAGS+=	-fno-builtin
 .endif

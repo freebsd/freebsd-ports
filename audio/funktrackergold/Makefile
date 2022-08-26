@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE:Mgcc}
+.if ${CHOSEN_COMPILER_TYPE:Mgcc}
 CFLAGS+=	-fnested-functions
 .endif
 

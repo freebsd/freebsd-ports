@@ -87,7 +87,7 @@ CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${TARGETARCH:Marm*} || ${TARGETARCH} == "aarch64"
-. if ${COMPILER_TYPE} == clang
+. if ${CHOSEN_COMPILER_TYPE} == clang
 MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
 . endif
 .endif
