@@ -32,13 +32,15 @@ ALL_GALLIUM_DRIVERS=	CROCUS IRIS PANFROST R300 R600 RADEONSI SVGA SWRAST
 ALL_VULKAN_DRIVERS=	INTEL AMD SWRAST
 
 GALLIUM_DRIVERS+=	SWRAST	# llvmpipe
+.if ${ARCH} != aarch64c
 VULKAN_DRIVERS+=	SWRAST	# lavapipe
+.endif
 
 .if ${ARCH:Marm*}
 DRI_DRIVERS+=	R100
 .endif
 
-.if ${ARCH} == aarch64
+.if ${ARCH} == aarch64 || ${ARCH} == aarch64c
 GALLIUM_DRIVERS+=	PANFROST
 .endif
 
@@ -84,9 +86,15 @@ MESON_ARGS+=	-Dgallium-xa=disabled \
 		-Dgles1=disabled \
 		-Dgles2=disabled \
 		-Dglx=disabled \
-		-Degl=disabled \
 		-Dosmesa=false \
 		-Dtools=""
+
+.if ${ABI:Mpurecap}
+MESON_ARGS+=	-Degl=enabled \
+		-Dllvm=disabled
+.else
+MESON_ARGS+=	-Degl=disabled
+.endif
 
 .for _d in ${ALL_DRI_DRIVERS}
 . if defined(DRI_DRIVERS) && ${DRI_DRIVERS:M${_d}}

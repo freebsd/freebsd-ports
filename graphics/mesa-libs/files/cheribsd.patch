@@ -1,0 +1,910 @@
+diff --git include/EGL/eglplatform.h include/EGL/eglplatform.h
+index 939539e640e..febc55a1368 100644
+--- include/EGL/eglplatform.h
++++ include/EGL/eglplatform.h
+@@ -135,8 +135,13 @@ typedef khronos_uintptr_t EGLNativeWindowType;
+ #include <X11/Xutil.h>
+ 
+ typedef Display *EGLNativeDisplayType;
++#ifdef __CHERI_PURE_CAPABILITY__
++typedef khronos_uintptr_t EGLNativePixmapType;
++typedef khronos_uintptr_t EGLNativeWindowType;
++#else
+ typedef Pixmap   EGLNativePixmapType;
+ typedef Window   EGLNativeWindowType;
++#endif
+ 
+ #elif defined(__APPLE__)
+ 
+diff --git include/KHR/khrplatform.h include/KHR/khrplatform.h
+index ba47c26319b..0f08139e6dd 100644
+--- include/KHR/khrplatform.h
++++ include/KHR/khrplatform.h
+@@ -155,6 +155,20 @@ typedef int64_t                 khronos_int64_t;
+ typedef uint64_t                khronos_uint64_t;
+ #define KHRONOS_SUPPORT_INT64   1
+ #define KHRONOS_SUPPORT_FLOAT   1
++/*
++ * To support platform where unsigned long cannot be used interchangeably with
++ * inptr_t (e.g. CHERI-extended ISAs), we can use the stdint.h intptr_t.
++ * Ideally, we could just use (u)intptr_t everywhere, but this could result in
++ * ABI breakage if khronos_uintptr_t is changed from unsigned long to
++ * unsigned long long or similar (this results in different C++ name mangling).
++ * To avoid changes for existing platforms, we restrict usage of intptr_t to
++ * platforms where the size of a pointer is larger than the size of long.
++ */
++#if defined(__SIZEOF_LONG__) && defined(__SIZEOF_POINTER__)
++#if __SIZEOF_POINTER__ > __SIZEOF_LONG__
++#define KHRONOS_USE_INTPTR_T
++#endif
++#endif
+ 
+ #elif defined(__VMS ) || defined(__sgi)
+ 
+@@ -237,14 +251,21 @@ typedef unsigned short int     khronos_uint16_t;
+  * pointers are 64 bits, but 'long' is still 32 bits. Win64 appears
+  * to be the only LLP64 architecture in current use.
+  */
+-#ifdef _WIN64
++#ifdef KHRONOS_USE_INTPTR_T
++typedef intptr_t               khronos_intptr_t;
++typedef uintptr_t              khronos_uintptr_t;
++#elif defined(_WIN64)
+ typedef signed   long long int khronos_intptr_t;
+ typedef unsigned long long int khronos_uintptr_t;
+-typedef signed   long long int khronos_ssize_t;
+-typedef unsigned long long int khronos_usize_t;
+ #else
+ typedef signed   long  int     khronos_intptr_t;
+ typedef unsigned long  int     khronos_uintptr_t;
++#endif
++
++#if defined(_WIN64)
++typedef signed   long long int khronos_ssize_t;
++typedef unsigned long long int khronos_usize_t;
++#else
+ typedef signed   long  int     khronos_ssize_t;
+ typedef unsigned long  int     khronos_usize_t;
+ #endif
+diff --git include/drm-uapi/amdgpu_drm.h include/drm-uapi/amdgpu_drm.h
+index 0cbd1540aea..2aa8c90079c 100644
+--- include/drm-uapi/amdgpu_drm.h
++++ include/drm-uapi/amdgpu_drm.h
+@@ -180,7 +180,7 @@ struct drm_amdgpu_bo_list_in {
+ 	/** Size of each element describing BO */
+ 	__u32 bo_info_size;
+ 	/** Pointer to array describing BOs */
+-	__u64 bo_info_ptr;
++	drm_uptr_t bo_info_ptr;
+ };
+ 
+ struct drm_amdgpu_bo_list_entry {
+@@ -317,7 +317,7 @@ union drm_amdgpu_sched {
+ #define AMDGPU_GEM_USERPTR_REGISTER	(1 << 3)
+ 
+ struct drm_amdgpu_gem_userptr {
+-	__u64		addr;
++	drm_uptr_t 	addr;
+ 	__u64		size;
+ 	/* AMDGPU_GEM_USERPTR_* */
+ 	__u32		flags;
+@@ -454,7 +454,7 @@ struct drm_amdgpu_fence {
+ 
+ struct drm_amdgpu_wait_fences_in {
+ 	/** This points to uint64_t * which points to fences */
+-	__u64 fences;
++	drm_uptr_t fences;
+ 	__u32 fence_count;
+ 	__u32 wait_all;
+ 	__u64 timeout_ns;
+@@ -480,7 +480,7 @@ struct drm_amdgpu_gem_op {
+ 	/** AMDGPU_GEM_OP_* */
+ 	__u32	op;
+ 	/** Input or return value */
+-	__u64	value;
++	drm_uptr_t	value;
+ };
+ 
+ #define AMDGPU_VA_OP_MAP			1
+@@ -557,7 +557,7 @@ struct drm_amdgpu_gem_va {
+ struct drm_amdgpu_cs_chunk {
+ 	__u32		chunk_id;
+ 	__u32		length_dw;
+-	__u64		chunk_data;
++	drm_uptr_t	chunk_data;
+ };
+ 
+ struct drm_amdgpu_cs_in {
+@@ -568,7 +568,7 @@ struct drm_amdgpu_cs_in {
+ 	__u32		num_chunks;
+ 	__u32		flags;
+ 	/** this points to __u64 * which point to cs chunks */
+-	__u64		chunks;
++	drm_uptr_t	chunks;
+ };
+ 
+ struct drm_amdgpu_cs_out {
+@@ -846,7 +846,7 @@ struct drm_amdgpu_query_fw {
+ /* Input structure for the INFO ioctl */
+ struct drm_amdgpu_info {
+ 	/* Where the return value will be stored */
+-	__u64 return_pointer;
++	drm_uptr_t return_pointer;
+ 	/* The size of the return value. Just like "size" in "snprintf",
+ 	 * it limits how many bytes the kernel can write. */
+ 	__u32 return_size;
+diff --git include/drm-uapi/drm.h include/drm-uapi/drm.h
+index 5e54c3aa4c3..e1a90cc854a 100644
+--- include/drm-uapi/drm.h
++++ include/drm-uapi/drm.h
+@@ -40,6 +40,7 @@
+ #include <linux/types.h>
+ #include <asm/ioctl.h>
+ typedef unsigned int drm_handle_t;
++typedef __u64 drm_uptr_t;
+ 
+ #else /* One of the BSDs */
+ 
+@@ -55,6 +56,15 @@ typedef uint32_t __u32;
+ typedef int64_t  __s64;
+ typedef uint64_t __u64;
+ typedef size_t   __kernel_size_t;
++/*
++ * When targeting pure-capability kernels we must pass capabilities, but for
++ * non-purecap we use u64 to avoid the need for 32-bit compat code
++ */
++#ifdef __CHERI_PURE_CAPABILITY__
++typedef uintcap_t drm_uptr_t;
++#else
++typedef uint64_t drm_uptr_t;
++#endif
+ typedef unsigned long drm_handle_t;
+ 
+ #endif
+@@ -882,7 +892,7 @@ struct drm_syncobj_transfer {
+ #define DRM_SYNCOBJ_WAIT_FLAGS_WAIT_FOR_SUBMIT (1 << 1)
+ #define DRM_SYNCOBJ_WAIT_FLAGS_WAIT_AVAILABLE (1 << 2) /* wait for time point to become available */
+ struct drm_syncobj_wait {
+-	__u64 handles;
++	drm_uptr_t handles;
+ 	/* absolute timeout */
+ 	__s64 timeout_nsec;
+ 	__u32 count_handles;
+@@ -892,9 +902,9 @@ struct drm_syncobj_wait {
+ };
+ 
+ struct drm_syncobj_timeline_wait {
+-	__u64 handles;
++	drm_uptr_t handles;
+ 	/* wait on specific timeline point for every handles*/
+-	__u64 points;
++	drm_uptr_t points;
+ 	/* absolute timeout */
+ 	__s64 timeout_nsec;
+ 	__u32 count_handles;
+@@ -905,15 +915,15 @@ struct drm_syncobj_timeline_wait {
+ 
+ 
+ struct drm_syncobj_array {
+-	__u64 handles;
++	drm_uptr_t handles;
+ 	__u32 count_handles;
+ 	__u32 pad;
+ };
+ 
+ #define DRM_SYNCOBJ_QUERY_FLAGS_LAST_SUBMITTED (1 << 0) /* last available point on timeline syncobj */
+ struct drm_syncobj_timeline_array {
+-	__u64 handles;
+-	__u64 points;
++	drm_uptr_t handles;
++	drm_uptr_t points;
+ 	__u32 count_handles;
+ 	__u32 flags;
+ };
+@@ -938,7 +948,7 @@ struct drm_crtc_queue_sequence {
+ 	__u32 crtc_id;
+ 	__u32 flags;
+ 	__u64 sequence;		/* on input, target sequence. on output, actual sequence */
+-	__u64 user_data;	/* user data passed to event */
++	drm_uptr_t user_data;	/* user data passed to event */
+ };
+ 
+ #if defined(__cplusplus)
+@@ -1126,7 +1136,7 @@ struct drm_event {
+ 
+ struct drm_event_vblank {
+ 	struct drm_event base;
+-	__u64 user_data;
++	drm_uptr_t user_data;
+ 	__u32 tv_sec;
+ 	__u32 tv_usec;
+ 	__u32 sequence;
+@@ -1138,7 +1148,7 @@ struct drm_event_vblank {
+  */
+ struct drm_event_crtc_sequence {
+ 	struct drm_event	base;
+-	__u64			user_data;
++	drm_uptr_t			user_data;
+ 	__s64			time_ns;
+ 	__u64			sequence;
+ };
+diff --git include/drm-uapi/drm_mode.h include/drm-uapi/drm_mode.h
+index 90c55383f1e..8cf980ecb93 100644
+--- include/drm-uapi/drm_mode.h
++++ include/drm-uapi/drm_mode.h
+@@ -260,10 +260,10 @@ struct drm_mode_modeinfo {
+ };
+ 
+ struct drm_mode_card_res {
+-	__u64 fb_id_ptr;
+-	__u64 crtc_id_ptr;
+-	__u64 connector_id_ptr;
+-	__u64 encoder_id_ptr;
++	drm_uptr_t fb_id_ptr;
++	drm_uptr_t crtc_id_ptr;
++	drm_uptr_t connector_id_ptr;
++	drm_uptr_t encoder_id_ptr;
+ 	__u32 count_fbs;
+ 	__u32 count_crtcs;
+ 	__u32 count_connectors;
+@@ -275,7 +275,7 @@ struct drm_mode_card_res {
+ };
+ 
+ struct drm_mode_crtc {
+-	__u64 set_connectors_ptr;
++	drm_uptr_t set_connectors_ptr;
+ 	__u32 count_connectors;
+ 
+ 	__u32 crtc_id; /**< Id */
+@@ -354,11 +354,11 @@ struct drm_mode_get_plane {
+ 	 * @format_type_ptr: Pointer to ``__u32`` array of formats that are
+ 	 * supported by the plane. These formats do not require modifiers.
+ 	 */
+-	__u64 format_type_ptr;
++	drm_uptr_t format_type_ptr;
+ };
+ 
+ struct drm_mode_get_plane_res {
+-	__u64 plane_id_ptr;
++	drm_uptr_t plane_id_ptr;
+ 	__u32 count_planes;
+ };
+ 
+@@ -457,13 +457,13 @@ enum drm_mode_subconnector {
+  */
+ struct drm_mode_get_connector {
+ 	/** @encoders_ptr: Pointer to ``__u32`` array of object IDs. */
+-	__u64 encoders_ptr;
++	drm_uptr_t encoders_ptr;
+ 	/** @modes_ptr: Pointer to struct drm_mode_modeinfo array. */
+-	__u64 modes_ptr;
++	drm_uptr_t modes_ptr;
+ 	/** @props_ptr: Pointer to ``__u32`` array of property IDs. */
+-	__u64 props_ptr;
++	drm_uptr_t props_ptr;
+ 	/** @prop_values_ptr: Pointer to ``__u64`` array of property values. */
+-	__u64 prop_values_ptr;
++	drm_uptr_t prop_values_ptr;
+ 
+ 	/** @count_modes: Number of modes. */
+ 	__u32 count_modes;
+@@ -586,9 +586,9 @@ struct drm_mode_property_enum {
+  */
+ struct drm_mode_get_property {
+ 	/** @values_ptr: Pointer to a ``__u64`` array. */
+-	__u64 values_ptr;
++	drm_uptr_t values_ptr;
+ 	/** @enum_blob_ptr: Pointer to a struct drm_mode_property_enum array. */
+-	__u64 enum_blob_ptr;
++	drm_uptr_t enum_blob_ptr;
+ 
+ 	/**
+ 	 * @prop_id: Object ID of the property which should be retrieved. Set
+@@ -629,8 +629,8 @@ struct drm_mode_connector_set_property {
+ #define DRM_MODE_OBJECT_ANY 0
+ 
+ struct drm_mode_obj_get_properties {
+-	__u64 props_ptr;
+-	__u64 prop_values_ptr;
++	drm_uptr_t props_ptr;
++	drm_uptr_t prop_values_ptr;
+ 	__u32 count_props;
+ 	__u32 obj_id;
+ 	__u32 obj_type;
+@@ -646,7 +646,7 @@ struct drm_mode_obj_set_property {
+ struct drm_mode_get_blob {
+ 	__u32 blob_id;
+ 	__u32 length;
+-	__u64 data;
++	drm_uptr_t data;
+ };
+ 
+ struct drm_mode_fb_cmd {
+@@ -738,7 +738,7 @@ struct drm_mode_fb_dirty_cmd {
+ 	__u32 flags;
+ 	__u32 color;
+ 	__u32 num_clips;
+-	__u64 clips_ptr;
++	drm_uptr_t clips_ptr;
+ };
+ 
+ struct drm_mode_mode_cmd {
+@@ -793,9 +793,9 @@ struct drm_mode_crtc_lut {
+ 	__u32 gamma_size;
+ 
+ 	/* pointers to arrays */
+-	__u64 red;
+-	__u64 green;
+-	__u64 blue;
++	drm_uptr_t red;
++	drm_uptr_t green;
++	drm_uptr_t blue;
+ };
+ 
+ struct drm_color_ctm {
+@@ -942,7 +942,7 @@ struct drm_mode_crtc_page_flip {
+ 	__u32 fb_id;
+ 	__u32 flags;
+ 	__u32 reserved;
+-	__u64 user_data;
++	drm_uptr_t user_data;
+ };
+ 
+ /*
+@@ -970,7 +970,7 @@ struct drm_mode_crtc_page_flip_target {
+ 	__u32 fb_id;
+ 	__u32 flags;
+ 	__u32 sequence;
+-	__u64 user_data;
++	drm_uptr_t user_data;
+ };
+ 
+ /* create a dumb scanout buffer */
+@@ -1017,12 +1017,12 @@ struct drm_mode_destroy_dumb {
+ struct drm_mode_atomic {
+ 	__u32 flags;
+ 	__u32 count_objs;
+-	__u64 objs_ptr;
+-	__u64 count_props_ptr;
+-	__u64 props_ptr;
+-	__u64 prop_values_ptr;
+-	__u64 reserved;
+-	__u64 user_data;
++	drm_uptr_t objs_ptr;
++	drm_uptr_t count_props_ptr;
++	drm_uptr_t props_ptr;
++	drm_uptr_t prop_values_ptr;
++	drm_uptr_t reserved;
++	drm_uptr_t user_data;
+ };
+ 
+ struct drm_format_modifier_blob {
+@@ -1083,7 +1083,7 @@ struct drm_format_modifier {
+  */
+ struct drm_mode_create_blob {
+ 	/** @data: Pointer to data to copy. */
+-	__u64 data;
++	drm_uptr_t data;
+ 	/** @length: Length of data to copy. */
+ 	__u32 length;
+ 	/** @blob_id: Return: new property ID. */
+@@ -1113,7 +1113,7 @@ struct drm_mode_destroy_blob {
+  */
+ struct drm_mode_create_lease {
+ 	/** @object_ids: Pointer to array of object ids (__u32) */
+-	__u64 object_ids;
++	drm_uptr_t object_ids;
+ 	/** @object_count: Number of object ids */
+ 	__u32 object_count;
+ 	/** @flags: flags for new FD (O_CLOEXEC, etc) */
+@@ -1149,7 +1149,7 @@ struct drm_mode_list_lessees {
+ 	 *
+ 	 * Pointer to __u64 array of lessee ids
+ 	 */
+-	__u64 lessees_ptr;
++	drm_uptr_t lessees_ptr;
+ };
+ 
+ /**
+@@ -1176,7 +1176,7 @@ struct drm_mode_get_lease {
+ 	 *
+ 	 * Pointer to __u32 array of object ids.
+ 	 */
+-	__u64 objects_ptr;
++	drm_uptr_t objects_ptr;
+ };
+ 
+ /**
+diff --git include/drm-uapi/i915_drm.h include/drm-uapi/i915_drm.h
+index c788a1ab423..1e695261c26 100644
+--- include/drm-uapi/i915_drm.h
++++ include/drm-uapi/i915_drm.h
+@@ -2209,7 +2209,7 @@ struct drm_i915_gem_userptr {
+ 	 *
+ 	 * Needs to be aligned to PAGE_SIZE.
+ 	 */
+-	__u64 user_ptr;
++	drm_uptr_t user_ptr;
+ 
+ 	/**
+ 	 * @user_size:
+diff --git src/compiler/glsl_types.cpp src/compiler/glsl_types.cpp
+index 334c05e73bb..c71f809afb9 100644
+--- src/compiler/glsl_types.cpp
++++ src/compiler/glsl_types.cpp
+@@ -1317,12 +1317,12 @@ unsigned
+ glsl_type::record_key_hash(const void *a)
+ {
+    const glsl_type *const key = (glsl_type *) a;
+-   uintptr_t hash = key->length;
++   size_t hash = key->length;
+    unsigned retval;
+ 
+    for (unsigned i = 0; i < key->length; i++) {
+       /* casting pointer to uintptr_t */
+-      hash = (hash * 13 ) + (uintptr_t) key->fields.structure[i].type;
++      hash = (hash * 13 ) + (size_t) key->fields.structure[i].type;
+    }
+ 
+    if (sizeof(hash) == 8)
+diff --git src/compiler/nir/nir_opt_copy_prop_vars.c src/compiler/nir/nir_opt_copy_prop_vars.c
+index e85e18a648b..cacd78dd2fc 100644
+--- src/compiler/nir/nir_opt_copy_prop_vars.c
++++ src/compiler/nir/nir_opt_copy_prop_vars.c
+@@ -239,14 +239,14 @@ gather_vars_written(struct copy_prop_var_state *state,
+             /* Destination in all of store_deref, copy_deref and the atomics is src[0]. */
+             nir_deref_instr *dst = nir_src_as_deref(intrin->src[0]);
+ 
+-            uintptr_t mask = intrin->intrinsic == nir_intrinsic_store_deref ?
++            size_t mask = intrin->intrinsic == nir_intrinsic_store_deref ?
+                nir_intrinsic_write_mask(intrin) : (1 << glsl_get_vector_elements(dst->type)) - 1;
+ 
+             struct hash_entry *ht_entry = _mesa_hash_table_search(written->derefs, dst);
+             if (ht_entry)
+                ht_entry->data = (void *)(mask | (uintptr_t)ht_entry->data);
+             else
+-               _mesa_hash_table_insert(written->derefs, dst, (void *)mask);
++               _mesa_hash_table_insert(written->derefs, dst, (void *)(uintptr_t)mask);
+ 
+             break;
+          }
+@@ -297,8 +297,8 @@ gather_vars_written(struct copy_prop_var_state *state,
+                _mesa_hash_table_search_pre_hashed(written->derefs, new_entry->hash,
+                                                   new_entry->key);
+             if (old_entry) {
+-               nir_component_mask_t merged = (uintptr_t) new_entry->data |
+-                                             (uintptr_t) old_entry->data;
++               nir_component_mask_t merged = (size_t) new_entry->data |
++                                             (size_t) old_entry->data;
+                old_entry->data = (void *) ((uintptr_t) merged);
+             } else {
+                _mesa_hash_table_insert_pre_hashed(written->derefs, new_entry->hash,
+diff --git src/compiler/nir/nir_range_analysis.c src/compiler/nir/nir_range_analysis.c
+index 8cdefb8fe3d..1447ae87976 100644
+--- src/compiler/nir/nir_range_analysis.c
++++ src/compiler/nir/nir_range_analysis.c
+@@ -53,7 +53,7 @@ pack_data(const struct ssa_result_range r)
+ static struct ssa_result_range
+ unpack_data(const void *p)
+ {
+-   const uintptr_t v = (uintptr_t) p;
++   const size_t v = (size_t) p;
+ 
+    return (struct ssa_result_range){
+       .range       = v & 0xff,
+@@ -66,7 +66,7 @@ unpack_data(const void *p)
+ static void *
+ pack_key(const struct nir_alu_instr *instr, nir_alu_type type)
+ {
+-   uintptr_t type_encoding;
++   size_t type_encoding;
+    uintptr_t ptr = (uintptr_t) instr;
+ 
+    /* The low 2 bits have to be zero or this whole scheme falls apart. */
+diff --git src/egl/main/eglapi.c src/egl/main/eglapi.c
+index 437865df0fe..3dc218ebfc8 100644
+--- src/egl/main/eglapi.c
++++ src/egl/main/eglapi.c
+@@ -1024,7 +1024,7 @@ _fixupNativeWindow(_EGLDisplay *disp, void *native_window)
+        * `Window*`.  Convert `Window*` to `Window` because that's what
+        * dri2_x11_create_window_surface() expects.
+        */
+-      return (void *)(* (Window*) native_window);
++      return (void *)(uintptr_t)(* (Window*) native_window);
+    }
+ #endif
+    return native_window;
+@@ -1079,7 +1079,7 @@ _fixupNativePixmap(_EGLDisplay *disp, void *native_pixmap)
+     * dri2_x11_create_pixmap_surface() expects.
+     */
+    if (disp && disp->Platform == _EGL_PLATFORM_X11 && native_pixmap != NULL)
+-      return (void *)(* (Pixmap*) native_pixmap);
++      return (void *)(uintptr_t)(* (Pixmap*) native_pixmap);
+ #endif
+    return native_pixmap;
+ }
+diff --git src/gallium/auxiliary/util/u_pointer.h src/gallium/auxiliary/util/u_pointer.h
+index 4f7a27ca61d..c51aaf990d1 100644
+--- src/gallium/auxiliary/util/u_pointer.h
++++ src/gallium/auxiliary/util/u_pointer.h
+@@ -82,10 +82,14 @@ uintptr_to_pointer( uintptr_t u )
+  * Return a pointer aligned to next multiple of N bytes.
+  */
+ static inline void *
+-align_pointer( const void *unaligned, uintptr_t alignment )
++align_pointer( void *unaligned, uintptr_t alignment )
+ {
++#if defined(__has_builtin) && __has_builtin(__builtin_align_up)
++    return __builtin_align_up(unaligned, alignment);
++#else
+    uintptr_t aligned = (pointer_to_uintptr( unaligned ) + alignment - 1) & ~(alignment - 1);
+    return uintptr_to_pointer( aligned );
++#endif
+ }
+ 
+ 
+diff --git src/gallium/auxiliary/util/u_threaded_context.c src/gallium/auxiliary/util/u_threaded_context.c
+index 6cbe2567cb0..9fa7d30a506 100644
+--- src/gallium/auxiliary/util/u_threaded_context.c
++++ src/gallium/auxiliary/util/u_threaded_context.c
+@@ -2992,10 +2992,11 @@ is_next_call_a_mergeable_draw(struct tc_draw_single *first,
+ 
+    simplify_draw_info(&next->info);
+ 
++#define DRAW_INFO_SIZE_PADDING MAX(0, sizeof(void*) - 2 * sizeof(int))
+    STATIC_ASSERT(offsetof(struct pipe_draw_info, min_index) ==
+-                 sizeof(struct pipe_draw_info) - 8);
+-   STATIC_ASSERT(offsetof(struct pipe_draw_info, max_index) ==
+-                 sizeof(struct pipe_draw_info) - 4);
++                      sizeof(struct pipe_draw_info) - DRAW_INFO_SIZE_PADDING - 8);
++    STATIC_ASSERT(offsetof(struct pipe_draw_info, max_index) ==
++                      sizeof(struct pipe_draw_info) - DRAW_INFO_SIZE_PADDING - 4);
+    /* All fields must be the same except start and count. */
+    /* u_threaded_context stores start/count in min/max_index for single draws. */
+    return memcmp((uint32_t*)&first->info, (uint32_t*)&next->info,
+diff --git src/mesa/main/dlist.c src/mesa/main/dlist.c
+index f038f112f8c..9ca613f95e1 100644
+--- src/mesa/main/dlist.c
++++ src/mesa/main/dlist.c
+@@ -704,7 +704,11 @@ union pointer
+ static inline void
+ save_pointer(Node *dest, void *src)
+ {
+-   union pointer p;
++#ifdef __CHERI_PURE_CAPABILITY__
++    /* Hopefully dest is aligned to pointer alignment */
++    *(void**)dest = src;
++#else
++    union pointer p;
+    unsigned i;
+ 
+    STATIC_ASSERT(POINTER_DWORDS == 1 || POINTER_DWORDS == 2);
+@@ -714,6 +718,7 @@ save_pointer(Node *dest, void *src)
+ 
+    for (i = 0; i < POINTER_DWORDS; i++)
+       dest[i].ui = p.dwords[i];
++#endif
+ }
+ 
+ 
+@@ -723,6 +728,10 @@ save_pointer(Node *dest, void *src)
+ static inline void *
+ get_pointer(const Node *node)
+ {
++#ifdef __CHERI_PURE_CAPABILITY__
++    /* Hopefully node is aligned to pointer alignment */
++    return *(void**)node;
++#else
+    union pointer p;
+    unsigned i;
+ 
+@@ -730,6 +739,7 @@ get_pointer(const Node *node)
+       p.dwords[i] = node[i].ui;
+ 
+    return p.ptr;
++#endif
+ }
+ 
+ 
+diff --git src/mesa/main/image.c src/mesa/main/image.c
+index 4358503e3ca..9aa439c583f 100644
+--- src/mesa/main/image.c
++++ src/mesa/main/image.c
+@@ -151,8 +151,8 @@ _mesa_image_offset( GLuint dimensions,
+ 
+    if (type == GL_BITMAP) {
+       /* BITMAP data */
+-      GLintptr bytes_per_row;
+-      GLintptr bytes_per_image;
++      GLsizeiptr bytes_per_row;
++      GLsizeiptr bytes_per_image;
+       /* components per pixel for color or stencil index: */
+       const GLint comp_per_pixel = 1;
+ 
+@@ -170,8 +170,8 @@ _mesa_image_offset( GLuint dimensions,
+    }
+    else {
+       /* Non-BITMAP data */
+-      GLintptr bytes_per_pixel, bytes_per_row, remainder, bytes_per_image;
+-      GLintptr topOfImage;
++      GLsizeiptr bytes_per_pixel, bytes_per_row, remainder, bytes_per_image;
++      GLsizeiptr topOfImage;
+ 
+       bytes_per_pixel = _mesa_bytes_per_pixel( format, type );
+ 
+diff --git src/mesa/main/texgetimage.c src/mesa/main/texgetimage.c
+index 0b8a031fbf0..c31cc275ed6 100644
+--- src/mesa/main/texgetimage.c
++++ src/mesa/main/texgetimage.c
+@@ -1722,7 +1722,7 @@ getcompressedteximage_error_check(struct gl_context *ctx,
+    if (ctx->Pack.BufferObj) {
+       /* do bounds checking on PBO write */
+       if ((GLubyte *) pixels + totalBytes >
+-          (GLubyte *) ctx->Pack.BufferObj->Size) {
++          (GLubyte *) ctx->Pack.BufferObj->Data + ctx->Pack.BufferObj->Size) {
+          _mesa_error(ctx, GL_INVALID_OPERATION,
+                      "%s(out of bounds PBO access)", caller);
+          return true;
+diff --git src/util/hash_table.c src/util/hash_table.c
+index 9be605d4312..2432eca387b 100644
+--- src/util/hash_table.c
++++ src/util/hash_table.c
+@@ -673,7 +673,7 @@ _mesa_hash_string(const void *_key)
+ uint32_t
+ _mesa_hash_pointer(const void *pointer)
+ {
+-   uintptr_t num = (uintptr_t) pointer;
++   size_t num = (size_t) (uintptr_t) pointer;
+    return (uint32_t) ((num >> 2) ^ (num >> 6) ^ (num >> 10) ^ (num >> 14));
+ }
+ 
+diff --git src/util/rb_tree.c src/util/rb_tree.c
+index a86fa31a809..12509ecfa50 100644
+--- src/util/rb_tree.c
++++ src/util/rb_tree.c
+@@ -67,13 +67,13 @@ rb_node_set_red(struct rb_node *n)
+ static void
+ rb_node_copy_color(struct rb_node *dst, struct rb_node *src)
+ {
+-    dst->parent = (dst->parent & ~1ull) | (src->parent & 1);
++    dst->parent = (dst->parent & ~1ull) | (size_t)(src->parent & 1);
+ }
+ 
+ static void
+ rb_node_set_parent(struct rb_node *n, struct rb_node *p)
+ {
+-    n->parent = (n->parent & 1) | (uintptr_t)p;
++    n->parent = (size_t)(n->parent & 1) | (uintptr_t)p;
+ }
+ 
+ static struct rb_node *
+diff --git src/util/sparse_array.c src/util/sparse_array.c
+index 38b0431461b..92a2035a91d 100644
+--- src/util/sparse_array.c
++++ src/util/sparse_array.c
+@@ -45,8 +45,8 @@ util_sparse_array_init(struct util_sparse_array *arr,
+    assert(node_size >= 2 && node_size == (1ull << arr->node_size_log2));
+ }
+ 
+-#define NODE_PTR_MASK (~((uintptr_t)NODE_ALLOC_ALIGN - 1))
+-#define NODE_LEVEL_MASK ((uintptr_t)NODE_ALLOC_ALIGN - 1)
++#define NODE_PTR_MASK (~((size_t)NODE_ALLOC_ALIGN - 1))
++#define NODE_LEVEL_MASK ((size_t)NODE_ALLOC_ALIGN - 1)
+ #define NULL_NODE 0
+ 
+ static inline uintptr_t
+diff --git include/drm-uapi/panfrost_drm.h include/drm-uapi/panfrost_drm.h
+index 061e700dd06..f314992d3a1 100644
+--- include/drm-uapi/panfrost_drm.h
++++ include/drm-uapi/panfrost_drm.h
+@@ -52,7 +52,7 @@ struct drm_panfrost_submit {
+ 	__u64 jc;
+ 
+ 	/** An optional array of sync objects to wait on before starting this job. */
+-	__u64 in_syncs;
++	uintptr_t in_syncs;
+ 
+ 	/** Number of sync objects to wait on before starting this job. */
+ 	__u32 in_sync_count;
+@@ -61,7 +61,7 @@ struct drm_panfrost_submit {
+ 	__u32 out_sync;
+ 
+ 	/** Pointer to a u32 array of the BOs that are referenced by the job. */
+-	__u64 bo_handles;
++	uintptr_t bo_handles;
+ 
+ 	/** Number of BO handles passed in (size is that times 4). */
+ 	__u32 bo_handle_count;
+diff --git src/gallium/drivers/panfrost/pan_job.c src/gallium/drivers/panfrost/pan_job.c
+index ebf42cbfc82..a127bc55949 100644
+--- src/gallium/drivers/panfrost/pan_job.c
++++ src/gallium/drivers/panfrost/pan_job.c
+@@ -580,7 +580,7 @@ panfrost_batch_submit_ioctl(struct panfrost_batch *batch,
+         submit.jc = first_job_desc;
+         submit.requirements = reqs;
+         if (in_sync) {
+-                submit.in_syncs = (u64)(uintptr_t)(&in_sync);
++                submit.in_syncs = (uintptr_t)(&in_sync);
+                 submit.in_sync_count = 1;
+         }
+ 
+@@ -626,7 +626,7 @@ panfrost_batch_submit_ioctl(struct panfrost_batch *batch,
+         /* Always used on Bifrost, occassionally used on Midgard */
+         bo_handles[submit.bo_handle_count++] = dev->sample_positions->gem_handle;
+ 
+-        submit.bo_handles = (u64) (uintptr_t) bo_handles;
++        submit.bo_handles = (uintptr_t) bo_handles;
+         if (ctx->is_noop)
+                 ret = 0;
+         else
+diff --git src/gallium/drivers/panfrost/pan_screen.c src/gallium/drivers/panfrost/pan_screen.c
+index 8d39cac21c8..2c19fb676f7 100644
+--- src/gallium/drivers/panfrost/pan_screen.c
++++ src/gallium/drivers/panfrost/pan_screen.c
+@@ -851,6 +851,7 @@ panfrost_create_screen(int fd, struct renderonly *ro)
+         case 0x860: /* T860 */
+         case 0x6221: /* G72 */
+         case 0x7093: /* G31 */
++        case 0x7211: /* G76 */
+         case 0x7212: /* G52 */
+         case 0x7402: /* G52r1 */
+                 break;
+diff --git src/panfrost/include/panfrost-quirks.h src/panfrost/include/panfrost-quirks.h
+index cede8254dc0..2f516005872 100644
+--- src/panfrost/include/panfrost-quirks.h
++++ src/panfrost/include/panfrost-quirks.h
+@@ -113,6 +113,7 @@ panfrost_get_quirks(unsigned gpu_id, unsigned gpu_revision)
+                         | (gpu_revision >= 0x30 ? HAS_ANISOTROPIC : 0);
+ 
+         case 0x7093: /* G31 */
++        case 0x7211: /* G76 */
+         case 0x7212: /* G52 */
+         case 0x7402: /* G52r1 */
+                 return BIFROST_QUIRKS | HAS_ANISOTROPIC;
+diff --git src/panfrost/lib/pan_props.c src/panfrost/lib/pan_props.c
+index 44d626fd6ff..a7ef43e6328 100644
+--- src/panfrost/lib/pan_props.c
++++ src/panfrost/lib/pan_props.c
+@@ -207,6 +207,7 @@ panfrost_model_name(unsigned gpu_id)
+         case 0x880: return "Mali-T880 (Panfrost)";
+         case 0x6221: return "Mali-G72 (Panfrost)";
+         case 0x7093: return "Mali-G31 (Panfrost)";
++        case 0x7211: return "Mali-G76 (Panfrost)";
+         case 0x7212: return "Mali-G52 (Panfrost)";
+         case 0x7402: return "Mali-G52 r1 (Panfrost)";
+         default:
+diff --git src/panfrost/perf/pan_perf.c src/panfrost/perf/pan_perf.c
+index f20a81b2238..8b42329bff5 100644
+--- src/panfrost/perf/pan_perf.c
++++ src/panfrost/perf/pan_perf.c
+@@ -67,6 +67,7 @@ get_perf_config(unsigned int gpu_id)
+       return &panfrost_perf_config_thex;
+    case 0x7093:
+       return &panfrost_perf_config_tdvx;
++   case 0x7211:
+    case 0x7212:
+    case 0x7402:
+       return &panfrost_perf_config_tgox;
+diff --git src/util/ralloc.c src/util/ralloc.c
+index 705614478b6..c5cdcaacf43 100644
+--- src/util/ralloc.c
++++ src/util/ralloc.c
+@@ -46,12 +46,12 @@ struct
+ #if _WIN64
+ __declspec(align(16))
+ #else
+- __declspec(align(8))
++ __declspec(align(16))
+ #endif
+ #elif defined(__LP64__)
+  __attribute__((aligned(16)))
+ #else
+- __attribute__((aligned(8)))
++ __attribute__((aligned(16)))
+ #endif
+    ralloc_header
+ {
+@@ -551,16 +551,16 @@ ralloc_vasprintf_rewrite_tail(char **str, size_t *start, const char *fmt,
+  */
+ 
+ #define MIN_LINEAR_BUFSIZE 2048
+-#define SUBALLOC_ALIGNMENT 8
++#define SUBALLOC_ALIGNMENT 16
+ #define LMAGIC 0x87b9c7d3
+ 
+ struct
+ #ifdef _MSC_VER
+- __declspec(align(8))
++ __declspec(align(16))
+ #elif defined(__LP64__)
+  __attribute__((aligned(16)))
+ #else
+- __attribute__((aligned(8)))
++ __attribute__((aligned(16)))
+ #endif
+    linear_header {
+ #ifndef NDEBUG
+@@ -589,6 +589,8 @@ struct
+ struct linear_size_chunk {
+    unsigned size; /* for realloc */
+    unsigned _padding;
++   unsigned _padding1;
++   unsigned _padding2;
+ };
+ 
+ typedef struct linear_header linear_header;
+diff --git src/mesa/main/dlist.c src/mesa/main/dlist.c
+index 9ca613f95e1..7618b6d7615 100644
+--- src/mesa/main/dlist.c
++++ src/mesa/main/dlist.c
+@@ -1563,27 +1563,26 @@ memdup(const void *src, GLsizei bytes)
+  * Allocate space for a display list instruction (opcode + payload space).
+  * \param opcode  the instruction opcode (OPCODE_* value)
+  * \param bytes   instruction payload size (not counting opcode)
+- * \param align8  does the payload need to be 8-byte aligned?
++ * \param align16  does the payload need to be 8-byte aligned?
+  *                This is only relevant in 64-bit environments.
+  * \return pointer to allocated memory (the payload will be at pointer+1)
+  */
+ static Node *
+-dlist_alloc(struct gl_context *ctx, OpCode opcode, GLuint bytes, bool align8)
++dlist_alloc(struct gl_context *ctx, OpCode opcode, GLuint bytes, bool align16)
+ {
+    const GLuint numNodes = 1 + (bytes + sizeof(Node) - 1) / sizeof(Node);
+    const GLuint contNodes = 1 + POINTER_DWORDS;  /* size of continue info */
+-   GLuint nopNode;
++   GLuint nopNode, j;
+    Node *n;
+ 
+    assert(bytes <= BLOCK_SIZE * sizeof(Node));
+ 
+-   if (sizeof(void *) > sizeof(Node) && align8
+-       && ctx->ListState.CurrentPos % 2 == 0) {
++   if (sizeof(void *) > sizeof(Node) && align16) {
+       /* The opcode would get placed at node[0] and the payload would start
+        * at node[1].  But the payload needs to be at an even offset (8-byte
+        * multiple).
+        */
+-      nopNode = 1;
++      nopNode = 3 - ctx->ListState.CurrentPos % 4;
+    }
+    else {
+       nopNode = 0;
+@@ -1594,6 +1593,14 @@ dlist_alloc(struct gl_context *ctx, OpCode opcode, GLuint bytes, bool align8)
+       /* This block is full.  Allocate a new block and chain to it */
+       Node *newblock;
+       n = ctx->ListState.CurrentBlock + ctx->ListState.CurrentPos;
++
++      nopNode = 3 - ctx->ListState.CurrentPos % 4;
++      for (j = 0; j < nopNode; j++) {
++        n[0].opcode = OPCODE_NOP;
++        n[0].InstSize = 1;
++        n++;
++      }
++
+       n[0].opcode = OPCODE_CONTINUE;
+       newblock = malloc(sizeof(Node) * BLOCK_SIZE);
+       if (!newblock) {
+@@ -1615,15 +1622,17 @@ dlist_alloc(struct gl_context *ctx, OpCode opcode, GLuint bytes, bool align8)
+        *   node[1] = OPCODE_x;
+        *   node[2] = start of payload
+        */
+-      nopNode = sizeof(void *) > sizeof(Node) && align8;
++      if (sizeof(void *) > sizeof(Node) && align16)
++        nopNode = 3;
+    }
+ 
+    n = ctx->ListState.CurrentBlock + ctx->ListState.CurrentPos;
+    if (nopNode) {
+-      assert(ctx->ListState.CurrentPos % 2 == 0); /* even value */
+-      n[0].opcode = OPCODE_NOP;
+-      n[0].InstSize = 1;
+-      n++;
++      for (j = 0; j < nopNode; j++) {
++        n[0].opcode = OPCODE_NOP;
++        n[0].InstSize = 1;
++        n++;
++      }
+       /* The "real" opcode will now be at an odd location and the payload
+        * will be at an even location.
+        */

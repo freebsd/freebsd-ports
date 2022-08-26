@@ -30,8 +30,7 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
 COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
 
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs \
-		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 .if ${COMPONENT} != clover
 .if ${PORT_OPTIONS:MPLATFORM_X11}
@@ -59,7 +58,6 @@ USE_LDCONFIG=	yes
 .if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
 # --build-id isn't supported by old GNU ld.bfd in base
 # Also ld.bfd have problems that seems related to --as-needed
-USE_BINUTILS=		yes
 LDFLAGS+=		-B${LOCALBASE}/bin
 .endif
 
@@ -86,6 +84,9 @@ PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
 .include <bsd.port.pre.mk>
 
+.if !${ABI:Mpurecap}
+BUILD_DEPENDS+= ${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+USE_BINUTILS=		yes
 BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
 LLVM_DEFAULT=	13
@@ -97,3 +98,4 @@ RUN_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 MESON_ARGS+=	--native-file="${WRKSRC}/llvm.ini"
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib
 MESON_ARGS+=	-Dllvm=enabled
+.endif

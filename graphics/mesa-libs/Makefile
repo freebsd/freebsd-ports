@@ -29,6 +29,15 @@ ZSTD_MESON_ENABLED=	zstd
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
+.if ${ABI:Mpurecap}
+DRI_DRIVERS=
+GALLIUM_DRIVERS=	PANFROST SWRAST
+.else
+# Building EGL and GBM requires a dri driver so add r100
+DRI_DRIVERS=		R100
+GALLIUM_DRIVERS=
+.endif
+
 MESON_ARGS+=	-Dgallium-drivers="" \
 		-Dgallium-vdpau=disabled \
 		-Dgallium-xvmc=disabled \
@@ -43,8 +52,10 @@ MESON_ARGS+=	-Dgallium-drivers="" \
 		-Dvulkan-drivers="" \
 		-Dglvnd=true \
 		-Dprefer-iris=true
-# Building EGL and GBM requires a dri driver so add r100
-MESON_ARGS+=	-Ddri-drivers="r100"
+
+.if ${ABI:Mpurecap}
+MESON_ARGS+= -Dgles1=enabled -Dgles2=enabled -Dllvm=disabled
+.endif
 
 .if ${PORT_OPTIONS:MPLATFORM_X11}
 MESA_PLATFORMS+=	x11
@@ -60,7 +71,9 @@ PLIST_SUB+=	GLX="@comment "
 MESA_PLATFORMS+=	wayland
 .endif
 
-MESON_ARGS+=	-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
+MESON_ARGS+=	-Dplatforms="${MESA_PLATFORMS:ts,:tl}" \
+		-Ddri-drivers="${DRI_DRIVERS:ts,:tl}" \
+		-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}"
 
 .if ${ARCH} == "i386"
 # PR230239 Fix the build for i386 when WITH_LLD_IS_LD is set
