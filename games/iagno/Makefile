@@ -5,6 +5,10 @@ CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+# Incomplete upstream vala fixes
+#PATCH_SITES=	https://gitlab.gnome.org/GNOME/iagno/-/commit/
+#PATCHFILES=	e8a0aeec350ea80349582142c0e8e3cd3f1bce38.diff:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Iagno
 
@@ -25,5 +29,7 @@ USE_GNOME=	cairo gsound gtk30 intlhack librsvg2 libxml2:build
 USE_XORG=	x11
 
 GLIB_SCHEMAS=	org.gnome.Reversi.gschema.xml
+
+BROKEN=		Does not build against current vala
 
 .include <bsd.port.mk>
