@@ -1,0 +1,6 @@
+Qt Multimedia is an essential module that provides a rich set of QML types and
+C++ classes to handle multimedia content. It also provides necessary APIs to
+access the camera and radio functionality. The included Qt Audio Engine
+provides types for 3D positional audio playback and content management.
+
+WWW: https://qt.io

@@ -1,0 +1,4 @@
+dwavebinarycsp is a library to construct a binary quadratic model from a
+constraint satisfaction problem with small constraints over binary variables.
+
+WWW: https://docs.ocean.dwavesys.com/projects/binarycsp/en/latest/

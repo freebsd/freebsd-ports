@@ -11,6 +11,7 @@ lib/libexec/kauth/kcmdatetimehelper
 %%IBUS%%lib/libexec/kimpanel-ibus-panel
 %%IBUS%%lib/libexec/kimpanel-ibus-panel-launcher
 %%SCIM%%lib/libexec/kimpanel-scim-panel
+%%ACCOUNTS%%%%QT_PLUGINDIR%%/attica_kde.so
 %%QT_PLUGINDIR%%/kf5/kded/device_automounter.so
 %%QT_PLUGINDIR%%/kf5/kded/kded_touchpad.so
 %%QT_PLUGINDIR%%/kf5/kded/keyboard.so
@@ -45,6 +46,8 @@ lib/libexec/kauth/kcmdatetimehelper
 %%QT_QMLDIR%%/org/kde/activities/settings/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/activityswitcher/libactivityswitcherextensionplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/activityswitcher/qmldir
+%%IBUS%%%%QT_QMLDIR%%/org/kde/plasma/emoji/libEmojierDeclarativePlugin.so
+%%IBUS%%%%QT_QMLDIR%%/org/kde/plasma/emoji/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/private/kimpanel/libkimpanelplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/private/kimpanel/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/private/pager/libpagerplugin.so
@@ -59,6 +62,8 @@ lib/libexec/kauth/kcmdatetimehelper
 %%QT_QMLDIR%%/org/kde/private/desktopcontainment/desktop/qmldir
 %%QT_QMLDIR%%/org/kde/private/desktopcontainment/folder/libfolderplugin.so
 %%QT_QMLDIR%%/org/kde/private/desktopcontainment/folder/qmldir
+%%ACCOUNTS%%share/accounts/providers/kde/opendesktop.provider
+%%ACCOUNTS%%share/accounts/services/kde/opendesktop-rating.service
 share/applications/kcm_touchpad.desktop
 share/applications/kcm_access.desktop
 share/applications/kcm_activities.desktop
@@ -81,12 +86,14 @@ share/applications/kcm_tablet.desktop
 share/applications/kcm_workspace.desktop
 share/applications/kcmspellchecking.desktop
 share/applications/org.kde.knetattach.desktop
+%%IBUS%%share/applications/org.kde.plasma.emojier.desktop
 share/config.kcfg/kactivitymanagerd_plugins_settings.kcfg
 share/config.kcfg/kactivitymanagerd_settings.kcfg
 share/config.kcfg/kcmaccessibilitybell.kcfg
 share/config.kcfg/kcmaccessibilitykeyboard.kcfg
 share/config.kcfg/kcmaccessibilitymouse.kcfg
 share/config.kcfg/kcmaccessibilityscreenreader.kcfg
+%%FEEDBACK%%share/config.kcfg/landingpage_feedbacksettings.kcfg
 share/config.kcfg/landingpage_kdeglobalssettings.kcfg
 share/config.kcfg/launchfeedbacksettingsbase.kcfg
 share/config.kcfg/splashscreensettings.kcfg
@@ -748,6 +755,7 @@ share/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab/ActivitiesView.
 share/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab/main.qml
 share/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog/GeneralTab.qml
 share/kf5/kactivitymanagerd/workspace/settings/qml/privacyTab/BlacklistApplicationView.qml
+%%IBUS%%share/kglobalaccel/org.kde.plasma.emojier.desktop
 share/knotifications5/kaccess.notifyrc
 share/knotifications5/kcm_touchpad.notifyrc
 share/knsrcfiles/krunner.knsrc

@@ -1,5 +1,6 @@
 PORTNAME=	librecad
 DISTVERSION=	2.2.0-rc3
+PORTREVISION=	1
 CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

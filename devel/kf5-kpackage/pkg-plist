@@ -20,6 +20,7 @@ lib/libKF5Package.so
 lib/libKF5Package.so.5
 lib/libKF5Package.so.%%KDE_FRAMEWORKS_VERSION%%
 man/ca/man1/kpackagetool5.1.gz
+man/ca@valencia/man1/kpackagetool5.1.gz
 man/de/man1/kpackagetool5.1.gz
 man/es/man1/kpackagetool5.1.gz
 man/fr/man1/kpackagetool5.1.gz

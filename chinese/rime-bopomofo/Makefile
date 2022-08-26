@@ -1,5 +1,6 @@
 PORTNAME=	rime-bopomofo
 DISTVERSION=	g20210131
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com

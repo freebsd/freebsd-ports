@@ -1,7 +1,7 @@
 PORTNAME=	bat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.0
-PORTREVISION=	4
+DISTVERSION=	0.21.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -34,7 +34,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
-		bugreport-0.4.1 \
+		bugreport-0.5.0 \
 		bytemuck-1.7.3 \
 		bytesize-1.1.0 \
 		cc-1.0.72 \
@@ -59,14 +59,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		encoding_index_tests-0.1.4 \
 		fancy-regex-0.7.1 \
 		fastrand-1.7.0 \
-		flate2-1.0.22 \
+		flate2-1.0.24 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
 		getrandom-0.2.3 \
 		git-version-0.3.5 \
 		git-version-macro-0.3.5 \
-		git2-0.13.25 \
+		git2-0.14.1 \
 		glob-0.3.0 \
 		globset-0.4.8 \
 		grep-cli-0.1.6 \
@@ -80,9 +80,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		itoa-1.0.1 \
 		jobserver-0.1.24 \
 		lazy_static-1.4.0 \
-		lazycell-1.3.0 \
-		libc-0.2.112 \
-		libgit2-sys-0.12.26+1.3.0 \
+		libc-0.2.121 \
+		libgit2-sys-0.13.2+1.4.2 \
 		libz-sys-1.1.3 \
 		line-wrap-0.1.1 \
 		linked-hash-map-0.5.4 \
@@ -90,12 +89,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		log-0.4.14 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
-		memoffset-0.6.5 \
-		miniz_oxide-0.4.4 \
-		nix-0.23.1 \
+		miniz_oxide-0.5.1 \
+		nix-0.24.1 \
 		normalize-line-endings-0.3.0 \
 		num-traits-0.2.14 \
-		once_cell-1.9.0 \
+		once_cell-1.12.0 \
 		onig-6.3.1 \
 		onig_sys-69.7.1 \
 		parking_lot-0.11.2 \
@@ -104,37 +102,40 @@ CARGO_CRATES=	adler-1.0.2 \
 		percent-encoding-2.1.0 \
 		pkg-config-0.3.24 \
 		plist-1.3.1 \
-		predicates-2.1.0 \
+		predicates-2.1.1 \
 		predicates-core-1.0.2 \
 		predicates-tree-1.0.4 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.36 \
+		proc-macro2-1.0.39 \
 		quote-1.0.14 \
 		redox_syscall-0.2.10 \
 		redox_users-0.4.0 \
-		regex-1.5.4 \
+		regex-1.5.6 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.25 \
+		regex-syntax-0.6.26 \
 		remove_dir_all-0.5.3 \
 		rgb-0.8.31 \
+		rustversion-1.0.6 \
 		ryu-1.0.9 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		semver-1.0.4 \
-		serde-1.0.136 \
-		serde_derive-1.0.136 \
+		semver-1.0.11 \
+		serde-1.0.137 \
+		serde_derive-1.0.137 \
 		serde_json-1.0.74 \
-		serde_yaml-0.8.23 \
-		serial_test-0.5.1 \
-		serial_test_derive-0.5.1 \
+		serde_yaml-0.8.24 \
+		serial_test-0.6.0 \
+		serial_test_derive-0.6.0 \
 		shell-escape-0.1.5 \
-		shell-words-1.0.0 \
+		shell-words-1.1.0 \
 		smallvec-1.7.0 \
 		std_prelude-0.2.12 \
 		strsim-0.8.0 \
-		syn-1.0.85 \
-		syntect-4.6.0 \
+		syn-1.0.95 \
+		syntect-5.0.0 \
 		sys-info-0.9.1 \
 		tempfile-3.3.0 \
 		term_size-0.3.2 \
@@ -142,18 +143,19 @@ CARGO_CRATES=	adler-1.0.2 \
 		terminal_size-0.1.17 \
 		termtree-0.2.3 \
 		textwrap-0.11.0 \
-		thiserror-1.0.30 \
-		thiserror-impl-1.0.30 \
+		thiserror-1.0.31 \
+		thiserror-impl-1.0.31 \
 		time-0.3.5 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
 		unicode-bidi-0.3.7 \
+		unicode-ident-1.0.0 \
 		unicode-normalization-0.1.19 \
 		unicode-width-0.1.9 \
-		unicode-xid-0.2.2 \
 		url-2.2.2 \
 		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
+		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \
 		wasi-0.10.2+wasi-snapshot-preview1 \

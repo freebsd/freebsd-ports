@@ -59,6 +59,7 @@ include/libknot/rrtype/opt.h
 include/libknot/rrtype/rdname.h
 include/libknot/rrtype/rrsig.h
 include/libknot/rrtype/soa.h
+include/libknot/rrtype/svcb.h
 include/libknot/rrtype/tsig.h
 include/libknot/rrtype/zonemd.h
 include/libknot/tsig-op.h
@@ -66,6 +67,7 @@ include/libknot/tsig.h
 include/libknot/version.h
 include/libknot/wire.h
 include/libknot/xdp.h
+include/libknot/xdp/tcp_iobuf.h
 include/libknot/yparser/yparser.h
 include/libknot/yparser/ypformat.h
 include/libknot/yparser/ypschema.h
@@ -75,12 +77,12 @@ include/libzscanner/scanner.h
 include/libzscanner/version.h
 lib/libdnssec.a
 lib/libdnssec.so
-lib/libdnssec.so.8
-lib/libdnssec.so.8.0.0
+lib/libdnssec.so.9
+lib/libdnssec.so.9.0.0
 lib/libknot.a
 lib/libknot.so
-lib/libknot.so.12
-lib/libknot.so.12.0.0
+lib/libknot.so.13
+lib/libknot.so.13.0.0
 lib/libzscanner.a
 lib/libzscanner.so
 lib/libzscanner.so.4

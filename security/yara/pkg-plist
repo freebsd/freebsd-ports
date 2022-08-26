@@ -35,8 +35,8 @@ include/yara/types.h
 include/yara/utils.h
 lib/libyara.a
 lib/libyara.so
-lib/libyara.so.8
-lib/libyara.so.8.0.0
+lib/libyara.so.9
+lib/libyara.so.9.0.1
 libdata/pkgconfig/yara.pc
 man/man1/yara.1.gz
 man/man1/yarac.1.gz

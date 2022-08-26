@@ -311,6 +311,7 @@
     SUBDIR += c4core
     SUBDIR += caf
     SUBDIR += calibrator
+    SUBDIR += caliper
     SUBDIR += capnproto
     SUBDIR += capnproto080
     SUBDIR += capstone3
@@ -682,6 +683,7 @@
     SUBDIR += frama-c
     SUBDIR += freebsd-gcc6
     SUBDIR += freebsd-gcc9
+    SUBDIR += freebsd-gcc12
     SUBDIR += freebsd-git-devtools
     SUBDIR += freebsd-sysroot
     SUBDIR += frink
@@ -805,6 +807,7 @@
     SUBDIR += gitg
     SUBDIR += github-backup-utils
     SUBDIR += gitinspector
+    SUBDIR += gitklient
     SUBDIR += gitlab-metrics-exporter
     SUBDIR += gitlab-runner
     SUBDIR += gitlab-shell
@@ -1019,6 +1022,7 @@
     SUBDIR += kde-dev-scripts
     SUBDIR += kde-dev-utils
     SUBDIR += kdesdk
+    SUBDIR += kdesdk-kio
     SUBDIR += kdesdk-thumbnailers
     SUBDIR += kdesvn
     SUBDIR += kdev-php
@@ -1629,6 +1633,7 @@
     SUBDIR += onetbb
     SUBDIR += oniguruma
     SUBDIR += open-beagle
+    SUBDIR += open62541
     SUBDIR += opencl
     SUBDIR += opencl-clang
     SUBDIR += opencvs
@@ -2822,6 +2827,7 @@
     SUBDIR += p5-Module-Version
     SUBDIR += p5-Module-Versions
     SUBDIR += p5-Module-Versions-Report
+    SUBDIR += p5-Mojo-Base-XS
     SUBDIR += p5-Mojolicious-Plugin-NYTProf
     SUBDIR += p5-Moo
     SUBDIR += p5-MooX-Aliases
@@ -4435,6 +4441,7 @@
     SUBDIR += py-diazo
     SUBDIR += py-dill
     SUBDIR += py-dirspec
+    SUBDIR += py-diskcache
     SUBDIR += py-distlib
     SUBDIR += py-distributed
     SUBDIR += py-dj40-django-rq
@@ -4597,6 +4604,7 @@
     SUBDIR += py-hgtools
     SUBDIR += py-hidraw
     SUBDIR += py-holidays
+    SUBDIR += py-homebase
     SUBDIR += py-http-prompt
     SUBDIR += py-humanize
     SUBDIR += py-hvac
@@ -4939,6 +4947,7 @@
     SUBDIR += py-platformdirs
     SUBDIR += py-plette
     SUBDIR += py-plex
+    SUBDIR += py-plucky
     SUBDIR += py-pluggy
     SUBDIR += py-pluggy0
     SUBDIR += py-pluginbase
@@ -5100,6 +5109,7 @@
     SUBDIR += py-pytest-markdown
     SUBDIR += py-pytest-metadata
     SUBDIR += py-pytest-mock
+    SUBDIR += py-pytest-mpl
     SUBDIR += py-pytest-mutagen
     SUBDIR += py-pytest-mypy
     SUBDIR += py-pytest-nunit
@@ -5563,6 +5573,7 @@
     SUBDIR += pycount
     SUBDIR += pydbus-common
     SUBDIR += pydio-packr
+    SUBDIR += pyenv
     SUBDIR += pygobject3-common
     SUBDIR += pylint
     SUBDIR += pyobfuscate
@@ -5606,6 +5617,14 @@
     SUBDIR += qt5-scxml
     SUBDIR += qt5-testlib
     SUBDIR += qt5-uitools
+    SUBDIR += qt6
+    SUBDIR += qt6-5compat
+    SUBDIR += qt6-base
+    SUBDIR += qt6-languageserver
+    SUBDIR += qt6-remoteobjects
+    SUBDIR += qt6-scxml
+    SUBDIR += qt6-tools
+    SUBDIR += qt6-translations
     SUBDIR += qtcreator
     SUBDIR += quantum
     SUBDIR += quickcheck++
@@ -5653,6 +5672,7 @@
     SUBDIR += rkcommon
     SUBDIR += rlog
     SUBDIR += rlwrap
+    SUBDIR += robin-hood-hashing
     SUBDIR += robin-map
     SUBDIR += roboctl
     SUBDIR += robodoc
@@ -6417,6 +6437,7 @@
     SUBDIR += rubygem-fog-core
     SUBDIR += rubygem-fog-core1
     SUBDIR += rubygem-fog-core210
+    SUBDIR += rubygem-fog-core220
     SUBDIR += rubygem-fog-json
     SUBDIR += rubygem-font-awesome-rails
     SUBDIR += rubygem-font-awesome-rails-rails5

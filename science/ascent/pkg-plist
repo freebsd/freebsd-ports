@@ -21,6 +21,7 @@ include/ascent/ascent_expressions_tokens.hpp
 include/ascent/ascent_file_system.hpp
 include/ascent/ascent_flow_runtime.hpp
 include/ascent/ascent_hola.hpp
+%%NO_NOMPI%%include/ascent/ascent_hola_mpi.hpp
 include/ascent/ascent_insertion_ordered_set.hpp
 include/ascent/ascent_jit_array.hpp
 include/ascent/ascent_jit_field.hpp
@@ -40,6 +41,7 @@ include/ascent/ascent_resources_cinema_web.hpp
 include/ascent/ascent_runtime.hpp
 include/ascent/ascent_runtime_blueprint_filters.hpp
 include/ascent/ascent_runtime_filters.hpp
+%%NO_NOMPI%%include/ascent/ascent_runtime_hola_filters.hpp
 include/ascent/ascent_runtime_param_check.hpp
 include/ascent/ascent_runtime_query_filters.hpp
 include/ascent/ascent_runtime_relay_filters.hpp
@@ -69,6 +71,7 @@ lib/cmake/ascent/ascent_setup_targets.cmake
 lib/libascent.so
 lib/libascent_flow.so
 lib/libascent_lodepng.so
+%%NO_NOMPI%%lib/libascent_mpi.so
 %%DATADIR%%/ascent_config.mk
 %%DATADIR%%/web_clients/ascent/index.html
 %%DATADIR%%/web_clients/ascent/resources/ascent_style.css

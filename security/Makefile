@@ -844,6 +844,7 @@
     SUBDIR += py-certbot-dns-luadns
     SUBDIR += py-certbot-dns-nsone
     SUBDIR += py-certbot-dns-ovh
+    SUBDIR += py-certbot-dns-powerdns
     SUBDIR += py-certbot-dns-rfc2136
     SUBDIR += py-certbot-dns-route53
     SUBDIR += py-certbot-dns-sakuracloud
@@ -1079,6 +1080,7 @@
     SUBDIR += rubygem-omniauth-bitbucket
     SUBDIR += rubygem-omniauth-cas
     SUBDIR += rubygem-omniauth-cas3
+    SUBDIR += rubygem-omniauth-cas3-oauth2
     SUBDIR += rubygem-omniauth-dingtalk-oauth2
     SUBDIR += rubygem-omniauth-gitlab
     SUBDIR += rubygem-omniauth-jwt

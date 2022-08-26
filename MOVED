@@ -23,7 +23,6 @@
 # This file can be linted with Tools/scripts/MOVEDlint.awk
 #
 # Port|Moved to|Date|Why
-deskutils/planner|deskutils/gnome-planner|2020-05-31|Revive in more appropriate port name
 audio/polypaudio|audio/pulseaudio|2008-01-01|Project renamed
 audio/akode-plugins-polypaudio||2008-01-01|Polypaudio is obsolete in favor of Pulseaudio
 audio/teknap|net-p2p/teknap|2008-01-09|Moved to net-p2p category
@@ -9520,148 +9519,148 @@ devel/buildbot-waterfall-view|devel/py-buildbot-waterfall-view|2017-11-29|Rename
 devel/buildbot-worker|devel/py-buildbot-worker|2017-11-29|Rename to comply with PyPI scheme
 devel/buildbot-www|devel/py-buildbot-www|2017-11-29|Rename to comply with PyPI scheme
 audio/shairport|audio/shairport-sync|2017-11-29|Has expired: Officially unmaintained upstream. Use audio/shairport-sync instead
-accessibility/py3-speech-dispatcher|accessibility/py-speech-dispatcher@py36|2017-11-30|Moved to a flavored, generic, version
-accessibility/py3-atspi|accessibility/py-atspi@py36|2017-11-30|Moved to a flavored, generic, version
-archivers/py3-libarchive-c|archivers/py-libarchive-c@py36|2017-11-30|Moved to a flavored, generic, version
-audio/py3-mutagen|audio/py-mutagen@py36|2017-11-30|Moved to a flavored, generic, version
-audio/py3-pylast|audio/py-pylast@py36|2017-11-30|Moved to a flavored, generic, version
-databases/py3-apsw|databases/py-apsw@py36|2017-11-30|Moved to a flavored, generic, version
-databases/py3-bsddb3|databases/py-bsddb3@py36|2017-11-30|Moved to a flavored, generic, version
-databases/py3-mysqlclient|databases/py-mysqlclient@py36|2017-11-30|Moved to a flavored, generic, version
-databases/py3-psycopg2|databases/py-psycopg2@py36|2017-11-30|Moved to a flavored, generic, version
-databases/py35-gdbm|databases/py-gdbm@py35|2017-11-30|Moved to a flavored, generic, version
-databases/py35-sqlite3|databases/py-sqlite3@py35|2017-11-30|Moved to a flavored, generic, version
-databases/py36-gdbm|databases/py-gdbm@py36|2017-11-30|Moved to a flavored, generic, version
-databases/py36-sqlite3|databases/py-sqlite3@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py27-setuptools|devel/py-setuptools@py27|2017-11-30|Moved to a flavored, generic, version
-devel/py3-threema-msgapi|devel/py-threema-msgapi@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-Jinja2|devel/py-Jinja2@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-apipkg|devel/py-apipkg@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-asttokens|devel/py-asttokens@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-babel|devel/py-babel@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-cffi|devel/py-cffi@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-click-log|devel/py-click-log@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-click-threading|devel/py-click-threading@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-click|devel/py-click@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-colorama|devel/py-colorama@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-coloredlogs|devel/py-coloredlogs@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-dateutil|devel/py-dateutil@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-dbus|devel/py-dbus@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-defusedxml|devel/py-defusedxml@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-docopt|devel/py-docopt@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-flake8-builtins|devel/py-flake8-builtins@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-flake8-docstrings|devel/py-flake8-docstrings@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-flake8-import-order|devel/py-flake8-import-order@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-flake8-polyfill|devel/py-flake8-polyfill@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-flake8-quotes|devel/py-flake8-quotes@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-flake8|devel/py-flake8@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-freezegun|devel/py-freezegun@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-gobject3|devel/py-gobject3@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-hgtools|devel/py-hgtools@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-icalendar|devel/py-icalendar@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-jedi|devel/py-jedi@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-jsonschema|devel/py-jsonschema@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-libpeas|devel/py-libpeas@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-libzfs|devel/py-libzfs@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-llfuse|devel/py-llfuse@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-lxml|devel/py-lxml@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-mccabe|devel/py-mccabe@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-mock|devel/py-mock@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-nose|devel/py-nose@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pbr|devel/py-pbr@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pip|devel/py-pip@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pluggy|devel/py-pluggy@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-ply|devel/py-ply@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pretend|devel/py-pretend@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-prompt_toolkit|devel/py-prompt_toolkit@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-protobuf|devel/py-protobuf@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-py|devel/py-py@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pyasn1|devel/py-pyasn1@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pycodestyle|devel/py-pycodestyle@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pycparser|devel/py-pycparser@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pydocstyle|devel/py-pydocstyle@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pyflakes|devel/py-pyflakes@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pygit2|devel/py-pygit2@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pyicu|devel/py-pyicu@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pylru-cache|devel/py-pylru-cache@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pytest-capturelog|devel/py-pytest-capturelog@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pytest-runner|devel/py-pytest-runner@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pytest-timeout|devel/py-pytest-timeout@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pytest-xdist|devel/py-pytest-xdist@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pytest|devel/py-pytest@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-python-magic|devel/py-python-magic@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-pytz|devel/py-pytz@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-rubymarshal|devel/py-rubymarshal@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-scripttest|devel/py-scripttest@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-setproctitle|devel/py-setproctitle@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-setuptools_scm|devel/py-setuptools_scm@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-simplejson|devel/py-simplejson@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-six|devel/py-six@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-tabulate|devel/py-tabulate@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-toposort|devel/py-toposort@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-tox|devel/py-tox@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-tzlocal|devel/py-tzlocal@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-urwid|devel/py-urwid@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-vcversioner|devel/py-vcversioner@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-verboselogs|devel/py-verboselogs@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-virtualenv|devel/py-virtualenv@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-voluptuous|devel/py-voluptuous@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-wcwidth|devel/py-wcwidth@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-xdg|devel/py-xdg@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py3-yaml|devel/py-yaml@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py35-setuptools|devel/py-setuptools@py35|2017-11-30|Moved to a flavored, generic, version
-devel/py36-setuptools|devel/py-setuptools@py36|2017-11-30|Moved to a flavored, generic, version
-dns/py3-dnspython|dns/py-dnspython@py36|2017-11-30|Moved to a flavored, generic, version
-dns/py3-idna|dns/py-idna@py36|2017-11-30|Moved to a flavored, generic, version
-graphics/py3-cairo|graphics/py-cairo@py36|2017-11-30|Moved to a flavored, generic, version
-graphics/py3-imagesize|graphics/py-imagesize@py36|2017-11-30|Moved to a flavored, generic, version
-graphics/py3-pillow|graphics/py-pillow@py36|2017-11-30|Moved to a flavored, generic, version
-graphics/py3-pygraphviz|graphics/py-pygraphviz@py36|2017-11-30|Moved to a flavored, generic, version
-lang/cython3|lang/cython@py36|2017-11-30|Moved to a flavored, generic, version
-misc/py3-pexpect|misc/py-pexpect@py36|2017-11-30|Moved to a flavored, generic, version
-misc/py3-tqdm|misc/py-tqdm@py36|2017-11-30|Moved to a flavored, generic, version
-multimedia/py3-gstreamer1|multimedia/py-gstreamer1@py36|2017-11-30|Moved to a flavored, generic, version
-net-mgmt/py3-dnsdiag|net-mgmt/py-dnsdiag@py36|2017-11-30|Moved to a flavored, generic, version
-net/py3-netifaces|net/py-netifaces@py36|2017-11-30|Moved to a flavored, generic, version
-net/py3-pysocks|net/py-pysocks@py36|2017-11-30|Moved to a flavored, generic, version
-net/py3-urllib3|net/py-urllib3@py36|2017-11-30|Moved to a flavored, generic, version
-print/py3-fonttools|print/py-fonttools@py36|2017-11-30|Moved to a flavored, generic, version
-print/py3-pycups|print/py-pycups@py36|2017-11-30|Moved to a flavored, generic, version
-security/py3-certifi|security/py-certifi@py36|2017-11-30|Moved to a flavored, generic, version
-security/py3-cryptography|security/py-cryptography@py36|2017-11-30|Moved to a flavored, generic, version
-security/py3-ecdsa|security/py-ecdsa@py36|2017-11-30|Moved to a flavored, generic, version
-security/py3-libnacl|security/py-libnacl@py36|2017-11-30|Moved to a flavored, generic, version
-security/py3-openssl|security/py-openssl@py36|2017-11-30|Moved to a flavored, generic, version
-security/py3-pbkdf2|security/py-pbkdf2@py36|2017-11-30|Moved to a flavored, generic, version
-security/py3-pyaes|security/py-pyaes@py36|2017-11-30|Moved to a flavored, generic, version
-security/py3-pycrypto|security/py-pycrypto@py36|2017-11-30|Moved to a flavored, generic, version
-sysutils/py3-execnet|sysutils/py-execnet@py36|2017-11-30|Moved to a flavored, generic, version
-sysutils/py3-pkginfo|sysutils/py-pkginfo@py36|2017-11-30|Moved to a flavored, generic, version
-sysutils/py3-ptyprocess|sysutils/py-ptyprocess@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-asciinema|textproc/py-asciinema@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-pager|textproc/py-pager@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-MarkupSafe|textproc/py-MarkupSafe@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-alabaster|textproc/py-alabaster@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-chardet|textproc/py-chardet@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-docutils|textproc/py-docutils@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-feedparser|textproc/py-feedparser@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-humanfriendly|textproc/py-humanfriendly@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-hunspell|textproc/py-hunspell@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-libxml2|textproc/py-libxml2@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-numpydoc|textproc/py-numpydoc@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-pyPEG2|textproc/py-pyPEG2@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-pygments|textproc/py-pygments@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-pystemmer|textproc/py-pystemmer@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-qrcode|textproc/py-qrcode@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-snowballstemmer|textproc/py-snowballstemmer@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-sphinx|textproc/py-sphinx@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-sphinx_rtd_theme|textproc/py-sphinx_rtd_theme@py36|2017-11-30|Moved to a flavored, generic, version
-textproc/py3-texttable|textproc/py-texttable@py36|2017-11-30|Moved to a flavored, generic, version
-www/py3-cssutils|www/py-cssutils@py36|2017-11-30|Moved to a flavored, generic, version
-www/py3-httplib2|www/py-httplib2@py36|2017-11-30|Moved to a flavored, generic, version
-www/py3-requests|www/py-requests@py36|2017-11-30|Moved to a flavored, generic, version
-x11-toolkits/py35-tkinter|x11-toolkits/py-tkinter@py35|2017-11-30|Moved to a flavored, generic, version
-x11-toolkits/py36-tkinter|x11-toolkits/py-tkinter@py36|2017-11-30|Moved to a flavored, generic, version
+accessibility/py3-speech-dispatcher|accessibility/py-speech-dispatcher|2017-11-30|Moved to a flavored, generic, version
+accessibility/py3-atspi|accessibility/py-atspi|2017-11-30|Moved to a flavored, generic, version
+archivers/py3-libarchive-c|archivers/py-libarchive-c|2017-11-30|Moved to a flavored, generic, version
+audio/py3-mutagen|audio/py-mutagen|2017-11-30|Moved to a flavored, generic, version
+audio/py3-pylast|audio/py-pylast|2017-11-30|Moved to a flavored, generic, version
+databases/py3-apsw|databases/py-apsw|2017-11-30|Moved to a flavored, generic, version
+databases/py3-bsddb3|databases/py-bsddb3|2017-11-30|Moved to a flavored, generic, version
+databases/py3-mysqlclient|databases/py-mysqlclient|2017-11-30|Moved to a flavored, generic, version
+databases/py3-psycopg2|databases/py-psycopg2|2017-11-30|Moved to a flavored, generic, version
+databases/py35-gdbm|databases/py-gdbm|2017-11-30|Moved to a flavored, generic, version
+databases/py35-sqlite3|databases/py-sqlite3|2017-11-30|Moved to a flavored, generic, version
+databases/py36-gdbm|databases/py-gdbm|2017-11-30|Moved to a flavored, generic, version
+databases/py36-sqlite3|databases/py-sqlite3|2017-11-30|Moved to a flavored, generic, version
+devel/py27-setuptools|devel/py-setuptools|2017-11-30|Moved to a flavored, generic, version
+devel/py3-threema-msgapi|devel/py-threema-msgapi|2017-11-30|Moved to a flavored, generic, version
+devel/py3-Jinja2|devel/py-Jinja2|2017-11-30|Moved to a flavored, generic, version
+devel/py3-apipkg|devel/py-apipkg|2017-11-30|Moved to a flavored, generic, version
+devel/py3-asttokens|devel/py-asttokens|2017-11-30|Moved to a flavored, generic, version
+devel/py3-babel|devel/py-babel|2017-11-30|Moved to a flavored, generic, version
+devel/py3-cffi|devel/py-cffi|2017-11-30|Moved to a flavored, generic, version
+devel/py3-click-log|devel/py-click-log|2017-11-30|Moved to a flavored, generic, version
+devel/py3-click-threading|devel/py-click-threading|2017-11-30|Moved to a flavored, generic, version
+devel/py3-click|devel/py-click|2017-11-30|Moved to a flavored, generic, version
+devel/py3-colorama|devel/py-colorama|2017-11-30|Moved to a flavored, generic, version
+devel/py3-coloredlogs|devel/py-coloredlogs|2017-11-30|Moved to a flavored, generic, version
+devel/py3-dateutil|devel/py-dateutil|2017-11-30|Moved to a flavored, generic, version
+devel/py3-dbus|devel/py-dbus|2017-11-30|Moved to a flavored, generic, version
+devel/py3-defusedxml|devel/py-defusedxml|2017-11-30|Moved to a flavored, generic, version
+devel/py3-docopt|devel/py-docopt|2017-11-30|Moved to a flavored, generic, version
+devel/py3-flake8-builtins|devel/py-flake8-builtins|2017-11-30|Moved to a flavored, generic, version
+devel/py3-flake8-docstrings|devel/py-flake8-docstrings|2017-11-30|Moved to a flavored, generic, version
+devel/py3-flake8-import-order|devel/py-flake8-import-order|2017-11-30|Moved to a flavored, generic, version
+devel/py3-flake8-polyfill|devel/py-flake8-polyfill|2017-11-30|Moved to a flavored, generic, version
+devel/py3-flake8-quotes|devel/py-flake8-quotes|2017-11-30|Moved to a flavored, generic, version
+devel/py3-flake8|devel/py-flake8|2017-11-30|Moved to a flavored, generic, version
+devel/py3-freezegun|devel/py-freezegun|2017-11-30|Moved to a flavored, generic, version
+devel/py3-gobject3|devel/py-gobject3|2017-11-30|Moved to a flavored, generic, version
+devel/py3-hgtools|devel/py-hgtools|2017-11-30|Moved to a flavored, generic, version
+devel/py3-icalendar|devel/py-icalendar|2017-11-30|Moved to a flavored, generic, version
+devel/py3-jedi|devel/py-jedi|2017-11-30|Moved to a flavored, generic, version
+devel/py3-jsonschema|devel/py-jsonschema|2017-11-30|Moved to a flavored, generic, version
+devel/py3-libpeas|devel/py-libpeas|2017-11-30|Moved to a flavored, generic, version
+devel/py3-libzfs|devel/py-libzfs|2017-11-30|Moved to a flavored, generic, version
+devel/py3-llfuse|devel/py-llfuse|2017-11-30|Moved to a flavored, generic, version
+devel/py3-lxml|devel/py-lxml|2017-11-30|Moved to a flavored, generic, version
+devel/py3-mccabe|devel/py-mccabe|2017-11-30|Moved to a flavored, generic, version
+devel/py3-mock|devel/py-mock|2017-11-30|Moved to a flavored, generic, version
+devel/py3-nose|devel/py-nose|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pbr|devel/py-pbr|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pip|devel/py-pip|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pluggy|devel/py-pluggy|2017-11-30|Moved to a flavored, generic, version
+devel/py3-ply|devel/py-ply|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pretend|devel/py-pretend|2017-11-30|Moved to a flavored, generic, version
+devel/py3-prompt_toolkit|devel/py-prompt_toolkit|2017-11-30|Moved to a flavored, generic, version
+devel/py3-protobuf|devel/py-protobuf|2017-11-30|Moved to a flavored, generic, version
+devel/py3-py|devel/py-py|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pyasn1|devel/py-pyasn1|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pycodestyle|devel/py-pycodestyle|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pycparser|devel/py-pycparser|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pydocstyle|devel/py-pydocstyle|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pyflakes|devel/py-pyflakes|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pygit2|devel/py-pygit2|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pyicu|devel/py-pyicu|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pylru-cache|devel/py-pylru-cache|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pytest-capturelog|devel/py-pytest-capturelog|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pytest-runner|devel/py-pytest-runner|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pytest-timeout|devel/py-pytest-timeout|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pytest-xdist|devel/py-pytest-xdist|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pytest|devel/py-pytest|2017-11-30|Moved to a flavored, generic, version
+devel/py3-python-magic|devel/py-python-magic|2017-11-30|Moved to a flavored, generic, version
+devel/py3-pytz|devel/py-pytz|2017-11-30|Moved to a flavored, generic, version
+devel/py3-rubymarshal|devel/py-rubymarshal|2017-11-30|Moved to a flavored, generic, version
+devel/py3-scripttest|devel/py-scripttest|2017-11-30|Moved to a flavored, generic, version
+devel/py3-setproctitle|devel/py-setproctitle|2017-11-30|Moved to a flavored, generic, version
+devel/py3-setuptools_scm|devel/py-setuptools_scm|2017-11-30|Moved to a flavored, generic, version
+devel/py3-simplejson|devel/py-simplejson|2017-11-30|Moved to a flavored, generic, version
+devel/py3-six|devel/py-six|2017-11-30|Moved to a flavored, generic, version
+devel/py3-tabulate|devel/py-tabulate|2017-11-30|Moved to a flavored, generic, version
+devel/py3-toposort|devel/py-toposort|2017-11-30|Moved to a flavored, generic, version
+devel/py3-tox|devel/py-tox|2017-11-30|Moved to a flavored, generic, version
+devel/py3-tzlocal|devel/py-tzlocal|2017-11-30|Moved to a flavored, generic, version
+devel/py3-urwid|devel/py-urwid|2017-11-30|Moved to a flavored, generic, version
+devel/py3-vcversioner|devel/py-vcversioner|2017-11-30|Moved to a flavored, generic, version
+devel/py3-verboselogs|devel/py-verboselogs|2017-11-30|Moved to a flavored, generic, version
+devel/py3-virtualenv|devel/py-virtualenv|2017-11-30|Moved to a flavored, generic, version
+devel/py3-voluptuous|devel/py-voluptuous|2017-11-30|Moved to a flavored, generic, version
+devel/py3-wcwidth|devel/py-wcwidth|2017-11-30|Moved to a flavored, generic, version
+devel/py3-xdg|devel/py-xdg|2017-11-30|Moved to a flavored, generic, version
+devel/py3-yaml|devel/py-yaml|2017-11-30|Moved to a flavored, generic, version
+devel/py35-setuptools|devel/py-setuptools|2017-11-30|Moved to a flavored, generic, version
+devel/py36-setuptools|devel/py-setuptools|2017-11-30|Moved to a flavored, generic, version
+dns/py3-dnspython|dns/py-dnspython|2017-11-30|Moved to a flavored, generic, version
+dns/py3-idna|dns/py-idna|2017-11-30|Moved to a flavored, generic, version
+graphics/py3-cairo|graphics/py-cairo|2017-11-30|Moved to a flavored, generic, version
+graphics/py3-imagesize|graphics/py-imagesize|2017-11-30|Moved to a flavored, generic, version
+graphics/py3-pillow|graphics/py-pillow|2017-11-30|Moved to a flavored, generic, version
+graphics/py3-pygraphviz|graphics/py-pygraphviz|2017-11-30|Moved to a flavored, generic, version
+lang/cython3|lang/cython|2017-11-30|Moved to a flavored, generic, version
+misc/py3-pexpect|misc/py-pexpect|2017-11-30|Moved to a flavored, generic, version
+misc/py3-tqdm|misc/py-tqdm|2017-11-30|Moved to a flavored, generic, version
+multimedia/py3-gstreamer1|multimedia/py-gstreamer1|2017-11-30|Moved to a flavored, generic, version
+net-mgmt/py3-dnsdiag|net-mgmt/py-dnsdiag|2017-11-30|Moved to a flavored, generic, version
+net/py3-netifaces|net/py-netifaces|2017-11-30|Moved to a flavored, generic, version
+net/py3-pysocks|net/py-pysocks|2017-11-30|Moved to a flavored, generic, version
+net/py3-urllib3|net/py-urllib3|2017-11-30|Moved to a flavored, generic, version
+print/py3-fonttools|print/py-fonttools|2017-11-30|Moved to a flavored, generic, version
+print/py3-pycups|print/py-pycups|2017-11-30|Moved to a flavored, generic, version
+security/py3-certifi|security/py-certifi|2017-11-30|Moved to a flavored, generic, version
+security/py3-cryptography|security/py-cryptography|2017-11-30|Moved to a flavored, generic, version
+security/py3-ecdsa|security/py-ecdsa|2017-11-30|Moved to a flavored, generic, version
+security/py3-libnacl|security/py-libnacl|2017-11-30|Moved to a flavored, generic, version
+security/py3-openssl|security/py-openssl|2017-11-30|Moved to a flavored, generic, version
+security/py3-pbkdf2|security/py-pbkdf2|2017-11-30|Moved to a flavored, generic, version
+security/py3-pyaes|security/py-pyaes|2017-11-30|Moved to a flavored, generic, version
+security/py3-pycrypto|security/py-pycrypto|2017-11-30|Moved to a flavored, generic, version
+sysutils/py3-execnet|sysutils/py-execnet|2017-11-30|Moved to a flavored, generic, version
+sysutils/py3-pkginfo|sysutils/py-pkginfo|2017-11-30|Moved to a flavored, generic, version
+sysutils/py3-ptyprocess|sysutils/py-ptyprocess|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-asciinema|textproc/py-asciinema|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-pager|textproc/py-pager|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-MarkupSafe|textproc/py-MarkupSafe|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-alabaster|textproc/py-alabaster|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-chardet|textproc/py-chardet|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-docutils|textproc/py-docutils|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-feedparser|textproc/py-feedparser|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-humanfriendly|textproc/py-humanfriendly|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-hunspell|textproc/py-hunspell|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-libxml2|textproc/py-libxml2|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-numpydoc|textproc/py-numpydoc|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-pyPEG2|textproc/py-pyPEG2|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-pygments|textproc/py-pygments|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-pystemmer|textproc/py-pystemmer|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-qrcode|textproc/py-qrcode|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-snowballstemmer|textproc/py-snowballstemmer|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-sphinx|textproc/py-sphinx|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-sphinx_rtd_theme|textproc/py-sphinx_rtd_theme|2017-11-30|Moved to a flavored, generic, version
+textproc/py3-texttable|textproc/py-texttable|2017-11-30|Moved to a flavored, generic, version
+www/py3-cssutils|www/py-cssutils|2017-11-30|Moved to a flavored, generic, version
+www/py3-httplib2|www/py-httplib2|2017-11-30|Moved to a flavored, generic, version
+www/py3-requests|www/py-requests|2017-11-30|Moved to a flavored, generic, version
+x11-toolkits/py35-tkinter|x11-toolkits/py-tkinter|2017-11-30|Moved to a flavored, generic, version
+x11-toolkits/py36-tkinter|x11-toolkits/py-tkinter|2017-11-30|Moved to a flavored, generic, version
 security/py-rekall_gui||2017-11-30|Has expired: PoC that is no longer supported
 security/webshag||2017-12-01|Has expired: Abandoned
 www/p5-Yahoo-Lifestyle||2017-12-01|Has expired: This service has been shut down
@@ -9838,7 +9837,7 @@ devel/pear-channel-htmlpurifier|devel/pear-channel-htmlpurifier.org|2018-02-13|R
 net-mgmt/prometheus|net-mgmt/prometheus1|2018-02-14|Rename to include major version number in the portname
 textproc/rubygem-tidy||2018-02-14|Has expired: No longer needed and not maintained
 www/rubygem-scrapi||2018-02-14|Has expired: No longer maintained upstream
-devel/boost-python3-libs|devel/boost-python-libs@py36|2018-02-15|Flavorize
+devel/boost-python3-libs|devel/boost-python-libs|2018-02-15|Flavorize
 net/quagga-esr|net/quagga|2018-02-15|Fixes available, go back to the regular quagga
 sysutils/krename-kde4|sysutils/krename|2018-02-16|Renamed to sysutils/krename
 net/grive|net/grive2|2018-02-17|Has expired: Unmaintained by upstream, use net/grive2 instead
@@ -9927,11 +9926,11 @@ audio/amp||2018-03-02|Has expired: No more upstream
 devel/alf||2018-03-02|Has expired: Abandonware, unused in the ports tree
 net/remmina-plugin-gnome|net/remmina-plugin-secret|2018-03-04|Renamed upstream
 databases/php71-memcache|databases/php-memcache@php71|2018-03-08|Merge into a flavorized version
-databases/php72-memcache|databases/php-memcache@php72|2018-03-08|Merge into a flavorized version
-ftp/php71-fastdfs|ftp/php-fastdfs@php72|2018-03-08|Merge into flavorized version
-ftp/php72-fastdfs|ftp/php-fastdfs@php72|2018-03-08|Merge into flavorized version
-www/unit-php71|www/unit-php@php72|2018-03-08|Merge into flavorized version
-www/unit-php72|www/unit-php@php72|2018-03-08|Merge into flavorized version
+databases/php72-memcache|databases/php-memcache|2018-03-08|Merge into a flavorized version
+ftp/php71-fastdfs|ftp/php-fastdfs|2018-03-08|Merge into flavorized version
+ftp/php72-fastdfs|ftp/php-fastdfs|2018-03-08|Merge into flavorized version
+www/unit-php71|www/unit-php|2018-03-08|Merge into flavorized version
+www/unit-php72|www/unit-php|2018-03-08|Merge into flavorized version
 databases/php70-memcached|databases/php-memcached|2018-03-08|Move to flavorized version
 www/openxmldir||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user
 www/hastymail2||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user
@@ -11592,7 +11591,6 @@ devel/qca@qt5|devel/qca|2019-03-16|Flavor has been removed
 x11-themes/adwaita@qt4||2019-03-16|Qt4 deprecation
 x11-themes/adwaita@qt5|x11-themes/adwaita-qt|2019-03-16|Flavor has been removed
 devel/libdbusmenu-qt@qt4||2019-03-16|Qt4 deprecation
-devel/libdbusmenu-qt@qt5|devel/libdbusmenu-qt|2019-03-16|Flavor has been removed
 multimedia/gstreamer1-qt@qt4||2019-03-16|Qt4 deprecation
 multimedia/gstreamer1-qt@qt5|multimedia/gstreamer1-qt|2019-03-16|Flavor has been removed
 x11-toolkits/qwt6@qt4||2019-03-16|Qt4 deprecation
@@ -13480,7 +13478,7 @@ net/php71-xmlrpc|net/php72-xmlrpc|2019-12-17|Has expired: upstream security supp
 net-mgmt/php71-snmp|net-mgmt/php72-snmp|2019-12-17|Has expired: upstream security support ended
 security/php71-filter|security/php72-filter|2019-12-17|Has expired: upstream security support ended
 security/php71-hash|security/php72-hash|2019-12-17|Has expired: upstream security support ended
-security/php71-mcrypt|security/pecl-mcrypt@php72|2019-12-17|Has expired: upstream security support ended
+security/php71-mcrypt|security/pecl-mcrypt|2019-12-17|Has expired: upstream security support ended
 security/php71-openssl|security/php72-openssl|2019-12-17|Has expired: upstream security support ended
 sysutils/php71-fileinfo|sysutils/php72-fileinfo|2019-12-17|Has expired: upstream security support ended
 sysutils/php71-posix|sysutils/php72-posix|2019-12-17|Has expired: upstream security support ended
@@ -13669,7 +13667,6 @@ audio/dir2ogg||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 audio/jokosher||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 audio/mpdbrowser||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 audio/nekobee||2020-01-27|Has expired: Unmaintained, uses EOLed python27
-audio/patchage||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 audio/py-ao||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 audio/py-id3||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 audio/py-shout||2020-01-27|Has expired: Unmaintained, uses EOLed python27
@@ -14908,7 +14905,7 @@ net-p2p/parity-ethereum|net-p2p/openethereum|2020-05-13|Renamed upstream for tra
 net-im/linux-telegram-desktop|net-im/telegram-desktop|2020-05-13|Has expired: Broken for more than 6 months, use native version
 devel/libphutil||2020-05-15|Has expired: Upstream merged functionality into downstream projects
 print/frescobaldi|print/py-frescobaldi|2020-05-16|Renamed to comply with Python Ports Policy
-sysutils/rdiff-backup|sysutils/py-rdiff-backup@py37|2020-05-16|Renamed comply with Python Ports Policy and flavored
+sysutils/rdiff-backup|sysutils/py-rdiff-backup|2020-05-16|Renamed comply with Python Ports Policy and flavored
 www/py-django-happenings|www/py-django-happenings-update|2020-05-17|Has expired: Doesn't work with Django 2.2+, please use www/py-django-happenings-update instead
 devel/py-django-tastypie-mongoengine||2020-05-17|Has expired: Not necessary anymore, and project unmaintained
 sysutils/py-cpuinfo|sysutils/py-py-cpuinfo|2020-05-18|Rename to match PyPI name
@@ -15717,7 +15714,6 @@ www/py-flexget|www/flexget|2020-12-28|Dropped py- prefix due to be a standalone 
 textproc/py-hypua2jamo||2020-12-29|Has expired: Uses deprecated version of python
 devel/py-delfick_error||2020-12-29|Has expired: Uses deprecated version of python
 devel/py-fusefs||2020-12-29|Has expired: Uses deprecated version of python
-devel/py-noseofyeti||2020-12-29|Has expired: Uses deprecated version of python
 databases/py-bsddb||2020-12-29|Has expired: Uses deprecated version of python
 www/py-webhelpers||2020-12-29|Has expired: Uses deprecated version of python
 security/py-pyptlib||2020-12-29|Has expired: Uses deprecated version of python
@@ -17181,6 +17177,7 @@ math/py-cdecimal||2022-05-27|Has expired: upstream does not support it after Pyt
 devel/py-meliae||2022-05-27|Has expired: does not build against Python-3.9
 databases/R-cran-RSQLite.extfuns|databases/R-cran-RSQLite|2022-05-31|Has expired: RSQLite incorporates RSQLite.extfuns
 net/mpich2|net/mpich|2022-05-31|Has been deprecrated for a long time and build fails with GCC 11
+deskutils/planner|deskutils/gnome-planner|2022-05-31|Revive in more appropriate port name
 net-im/jabber.el||2022-06-01|Has expired: is marked as broken: fails to build: jabber-chat.el:25:1: Error: Wrong number of arguments: (3 . 3), 2
 x11-fm/Arqiver|x11-fm/arqiver|2022-06-01|Convert PORTNATE to lowercase
 net/py-suds-community|net/py-suds|2022-06-03|Remove obsoleted port. Use net/py-suds instead
@@ -17189,47 +17186,9 @@ www/rubygem-faraday110|www/rubygem-faraday|2022-06-03|Obsolete, please use www/r
 www/npm-node17|www/npm-node18|2022-06-03|Renamed for www/node update to v18
 www/yarn-node17|www/yarn-node18|2022-06-03|Renamed for www/node update to v18
 security/keepassx-devel||2022-06-05|Has expired: KeePassX had been stopped development/maintenance, please consider using security/keepassxc instead
-sysutils/uefi-edk2-qemu|sysutils/edk2@qemu|2022-06-05|No more need for this port: please use sysutils/edk2 FLAVOR qemu instead
+sysutils/uefi-edk2-qemu|sysutils/edk2@qemu_x64|2022-06-05|No more need for this port: please use sysutils/edk2 FLAVOR qemu instead
 graphics/gltt||2022-06-08|Abdonware, depends on freetype1
 print/ttftot42||2022-06-08|Abdonware, depends on freetype1
-print/freetype|print/freetype2|2022-06-08|Has been replaced long ago by freetype2
-net/libgnetwork||2022-06-08|Gnome2 library unused anymore
-x11-wm/compizconfig-backend-gconf||2022-06-08|gconf support has been removed from compiz
-devel/android-tools-adb|devel/android-tools|2022-06-09|Port has been updated, unbroken and consolidated into devel/android-tools
-devel/android-tools-fastboot|devel/android-tools|2022-06-09|Port has been updated and consolidated into devel/android-tools
-devel/py-lark-parser|devel/py-lark|2022-06-09|Remove obsoleted port. Use devel/py-lark instead
-deskutils/egroupware|deskutils/egroupware@php74|2022-06-12|Merge into flavorized version
-databases/py-arrow|databases/py-apache-arrow|2022-06-12|Rename to avoid conflict with devel/py-arrow and to match the project name
-science/szip|science/libaec|2022-06-16|Remove obsoleted port. Use science/libaec instead
-net/pfinger||2022-06-17|Has expired: Unmaintained and dead upstream, consider base fingerd
-biology/mopac|science/mopac|2022-06-19|Move to a proper category
-devel/liblas12||2022-06-21|Has expired: Previously only required by math/saga (now superseeded by math/pdal)
-net-im/licq||2022-06-21|Has expired: Abandonware, project is dead
-net-im/licq-icq||2022-06-21|Removed, part of expired net-im/licq
-net-im/licq-jabber||2022-06-21|Removed, part of expired net-im/licq
-net-im/licq-osd||2022-06-21|Removed, part of expired net-im/licq
-net-im/licq-qt-gui||2022-06-21|Removed, part of expired net-im/licq
-x11-toolkits/py-xlib|x11-toolkits/py-python-xlib|2022-06-21|Use registered upstream (PyPI) name (Python ports compliance)
-www/openarc|mail/openarc|2022-06-21|Move to a proper category
-textproc/rubygem-elasticsearch-model6|textproc/rubygem-elasticsearch-model|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-model instead
-textproc/rubygem-elasticsearch6|textproc/rubygem-elasticsearch|2022-06-24|Obsolete use textproc/rubygem-elasticsearch instead
-textproc/rubygem-elasticsearch-transport6|textproc/rubygem-elasticsearch-transport|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-transport instead
-textproc/rubygem-elasticsearch-api6|textproc/rubygem-elasticsearch-api|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-api instead
-textproc/rubygem-elasticsearch-rails6|textproc/rubygem-elasticsearch-rails|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-rails instead
-devel/p5-Goo-Canvas|devel/p5-Goo-Canvas2|2022-06-24|Obsolete use devel/p5-Goo-Canvas2 instead
-graphics/goocanvas|graphics/goocanvas3|2022-06-24|Obsolete use graphics/goocanvas3
-x11-toolkits/tepl|x11-toolkits/tepl6|2022-06-25|Obsolete use x11-toolkits/tepl6
-lang/cmucl||2022-06-27|Has expired: Not supported upstream since 2017 and broken since FreeBSD 12.1
-devel/qbs||2022-06-27|Has expired: Abandoned and not working with modern clang
-lang/cmucl-extra||2022-06-27|Has expired: lang/cmucl is not supported upstream since 2017 and broken since FreeBSD 12.1
-security/protonvpn-cli||2022-06-27|Has expired: This version is deprecated and unsupported upstream. The port needs an update, which would require a fair amount of effort. Use OpenVPN or Wireguard with configuration files provided by ProtonVPN instead.
-sysutils/firstboot-growfs||2022-06-27|Has expired: A better version is available on all FreeBSD version
-security/modsecurity3-apache||2022-06-27|Has expired: The project was not developed further
-net-mgmt/zabbix54-frontend||2022-06-27|Has expired: Unsupported by upstream
-net-mgmt/zabbix54-server||2022-06-27|Has expired: Unsupported by upstream
-net-mgmt/zabbix54-agent||2022-06-27|Has expired: Unsupported by upstream
-net-mgmt/zabbix54-java||2022-06-27|Has expired: Unsupported by upstream
-net-mgmt/zabbix54-proxy||2022-06-27|Has expired: Unsupported by upstream
 archivers/erlang-snappy||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 converters/erlang-base64url||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 databases/elixir-calecto||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
@@ -17352,12 +17311,49 @@ devel/erlang-poolboy||2022-06-08|Remove expired ports. Use mix or rebar3 build t
 devel/erlang-pooler||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 devel/erlang-sbroker||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 devel/erlang-syslog||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+print/freetype|print/freetype2|2022-06-08|Has been replaced long ago by freetype2
+net/libgnetwork||2022-06-08|Gnome2 library unused anymore
+x11-wm/compizconfig-backend-gconf||2022-06-08|gconf support has been removed from compiz
+devel/android-tools-adb|devel/android-tools|2022-06-09|Port has been updated, unbroken and consolidated into devel/android-tools
+devel/android-tools-fastboot|devel/android-tools|2022-06-09|Port has been updated and consolidated into devel/android-tools
+devel/py-lark-parser|devel/py-lark|2022-06-09|Remove obsoleted port. Use devel/py-lark instead
+databases/py-arrow|databases/py-apache-arrow|2022-06-12|Rename to avoid conflict with devel/py-arrow and to match the project name
+science/szip|science/libaec|2022-06-16|Remove obsoleted port. Use science/libaec instead
+net/pfinger||2022-06-17|Has expired: Unmaintained and dead upstream, consider base fingerd
+biology/mopac|science/mopac|2022-06-19|Move to a proper category
+devel/liblas12||2022-06-21|Has expired: Previously only required by math/saga (now superseeded by math/pdal)
+net-im/licq||2022-06-21|Has expired: Abandonware, project is dead
+net-im/licq-icq||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-jabber||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-osd||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-qt-gui||2022-06-21|Removed, part of expired net-im/licq
+x11-toolkits/py-xlib|x11-toolkits/py-python-xlib|2022-06-21|Use registered upstream (PyPI) name (Python ports compliance)
+www/openarc|mail/openarc|2022-06-21|Move to a proper category
+textproc/rubygem-elasticsearch-model6|textproc/rubygem-elasticsearch-model|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-model instead
+textproc/rubygem-elasticsearch6|textproc/rubygem-elasticsearch|2022-06-24|Obsolete use textproc/rubygem-elasticsearch instead
+textproc/rubygem-elasticsearch-transport6|textproc/rubygem-elasticsearch-transport|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-transport instead
+textproc/rubygem-elasticsearch-api6|textproc/rubygem-elasticsearch-api|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-api instead
+textproc/rubygem-elasticsearch-rails6|textproc/rubygem-elasticsearch-rails|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-rails instead
+devel/p5-Goo-Canvas|devel/p5-Goo-Canvas2|2022-06-24|Obsolete use devel/p5-Goo-Canvas2 instead
+graphics/goocanvas|graphics/goocanvas3|2022-06-24|Obsolete use graphics/goocanvas3
+x11-toolkits/tepl|x11-toolkits/tepl6|2022-06-25|Obsolete use x11-toolkits/tepl6
+lang/cmucl||2022-06-27|Has expired: Not supported upstream since 2017 and broken since FreeBSD 12.1
+devel/qbs||2022-06-27|Has expired: Abandoned and not working with modern clang
+lang/cmucl-extra||2022-06-27|Has expired: lang/cmucl is not supported upstream since 2017 and broken since FreeBSD 12.1
+security/protonvpn-cli||2022-06-27|Has expired: This version is deprecated and unsupported upstream. The port needs an update, which would require a fair amount of effort. Use OpenVPN or Wireguard with configuration files provided by ProtonVPN instead
+sysutils/firstboot-growfs||2022-06-27|Has expired: A better version is available on all FreeBSD version
+security/modsecurity3-apache||2022-06-27|Has expired: The project was not developed further
+net-mgmt/zabbix54-frontend||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-server||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-agent||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-java||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-proxy||2022-06-27|Has expired: Unsupported by upstream
 www/py-graphite-web||2022-06-30|Has expired: No support for newer versions of Django
 databases/percona56-server||2022-06-30|Has expired: EOL since February 2021
 databases/percona56-client||2022-06-30|Has expired: EOL since February 2021
 databases/mysql55-server||2022-06-30|Has expired: Upstream support ended on December 2018
 databases/mysql55-client||2022-06-30|Has expired: Upstream support ended on December 2018
-multimedia/schroedinger||2022-06-30|Has expired: Abandoned legacy video codec, upstream is dead and last release was back in 2012.
+multimedia/schroedinger||2022-06-30|Has expired: Abandoned legacy video codec, upstream is dead and last release was back in 2012
 emulators/kcemu||2022-06-30|Has expired: Depends on expired multimedia/schroedinger
 multimedia/ccextractor||2022-06-30|Has expired: Depends on expired multimedia/schroedinger
 security/libgringotts||2022-06-30|Has expired: Abandonware, upstream dead and last release in 2008
@@ -17386,7 +17382,7 @@ www/py-dj32-django-graphiql-debug-toolbar|www/py-django-graphiql-debug-toolbar|2
 devel/py-dj32-django-rq|devel/py-django-rq|2022-06-30|Has expired: Obsolete, please use devel/py-django-rq instead
 www/py-dj32-django-tables2|www/py-django-tables2|2022-06-30|Has expired: Obsolete, please use www/py-django-tables2 instead
 www/py-dj32-django-prometheus|www/py-django-prometheus|2022-06-30|Has expired: Obsolete, please use www/py-django-prometheus instead
-www/py-dj32-django-treebeard|www/py-django-treebeard |2022-06-30|Has expired: Obsolete, please use www/py-django-treebeard instead
+www/py-dj32-django-treebeard|www/py-django-treebeard|2022-06-30|Has expired: Obsolete, please use www/py-django-treebeard instead
 www/py-dj32-django-mptt|www/py-django-mptt|2022-06-30|Has expired: Obslete, please use www/py-django-mptt instead
 devel/py-dj32-graphene-django|devel/py-graphene-django|2022-06-30|Has expired: Obsolete, please use devel/py-graphene-django instead
 www/py-dj32-django-taggit|www/py-django-taggit|2022-06-30|Has expired: Obsolete, please use www/py-django-taggit instead
@@ -17401,7 +17397,6 @@ devel/py-apns2|devel/py-aioapns|2022-06-30|Has expired: Use devel/py-aioapns
 www/py-hyper|www/py-httpx|2022-06-30|Has expired: Project abandoned use www/py-httpx
 irc/py-fishcrypt||2022-06-30|Has expired: Abandoned, unmaintained, requires Python 2 and depends on deprecated pycrypto
 devel/py-stsci.distutils||2022-06-30|Has expired: Upstream abandoned in 2013
-devel/py-docker-py|devel/py-docker|2022-06-30|Has expired: Use devel/py-docker
 net-im/py-slackclient|net-im/py-slack-sdk|2022-06-30|Has expired: Use net-im/py-slack-sdk
 multimedia/mpeg2codec||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
 multimedia/livestreamer||2022-06-30|Has expired: Abandoned upstream, please consider using www/yt-dlp or multimedia/streamlink
@@ -17468,7 +17463,7 @@ security/shishi||2022-06-30|Has expired: Abandonware, last release in 2013 and n
 ftp/urlgfe||2022-06-30|Has expired
 www/nspluginwrapper||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead. NPAPI plugins are now obsolete and depends on deprecated library GTK 2
 devel/govendor||2022-06-30|Has expired: Use Go modules
-devel/racer||2022-06-30|Has expired: Racer is not actively developped now. Please consider using newer software such as devel/rust-analyzer.
+devel/racer||2022-06-30|Has expired: Racer is not actively developped now. Please consider using newer software such as devel/rust-analyzer
 net-mgmt/unifi6||2022-06-30|Has expired: No longer maintained by upstream
 devel/dep||2022-06-30|Has expired: Use Go modules
 databases/libgda5-bdb||2022-06-30|Has expired: Depends on deprecated databases/db5
@@ -17515,7 +17510,7 @@ net/py-pyroute2.nslink|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstrea
 math/intervaltree||2022-07-27|Has expired: Dependent ports now use GH_TUPLE
 security/gnomint||2022-07-27|Has expired: Abandonware, depending on gconf2
 japanese/im-ja||2022-07-27|Has expired: Abandonware, depending on gconf2
-sysutils/mgeupsd||2022-07-27|Has expired: Last release is 23 years old. It is not clear what devices are supported.
+sysutils/mgeupsd||2022-07-27|Has expired: Last release is 23 years old. It is not clear what devices are supported
 x11-wm/lxmed||2022-07-27|Removed, depends on expired sysutils/gksu
 sysutils/gksu||2022-07-27|Has expired: Abandonware, depending on gconf2
 sysutils/libgksu||2022-07-27|Has expired: Abandonware, depending on gconf2
@@ -17527,7 +17522,7 @@ deskutils/gnome-system-log||2022-08-01|Has expired: Did not survive gnome 3
 deskutils/gnome-documents||2022-08-01|Has expired: Archived upstream
 deskutils/gnome-search-tool||2022-08-01|Has expired: Did not survive gnome3
 security/nextcloud-twofactor_u2f|security/nextcloud-twofactor_webauthn|2022-08-01|Has expired: Upstream deprecated this port in favor of twofactor_webauthn. Check https://github.com/nextcloud/twofactor_webauthn#migration-from-two-factor-u2f for migration instructions
-editors/codelite||2022-08-01|Has expired: Has been broken for over a year.
+editors/codelite||2022-08-01|Has expired: Has been broken for over a year
 x11-servers/xephyr|x11-servers/xorg-server@xephyr|2022-08-02|Merged into flavorized version
 x11-servers/xorg-nestserver|x11-servers/xorg-server@xnest|2022-08-02|Merged into the flavorized version
 x11-servers/xorg-vfbserver|x11-servers/xorg-server@xvfb|2022-08-02|Merged into the flavorized version
@@ -17537,5 +17532,7 @@ games/fishfight|games/jumpy|2022-08-02|Project renamed
 mail/roundcube-mobilecube||2022-08-05|Removed, broken and no upstream updates
 mail/roundcube-mvision2||2022-08-05|Removed, broken and no upstream updates
 mail/roundcube-umich||2022-08-05|Removed, broken and no upstream updates
-games/exult|games/exult-devel|2022-08-06|Follow 1.9.x devel snapshots
 science/openkim|science/openkim-models|2022-08-07|Retire obsolete science/openkim, users should install science/openkim-models instead
+net/zeroconf-ioslave|net/kio-zeroconf|2022-08-18|Renamed upstream
+japanese/font-hackgen-nerd|japanese/font-hackgen-nf|2022-08-20|Renamed upstream
+x11-themes/adwaita-qt|x11-themes/adwaita-qt5|2022-08-23|Renamed to make space for x11-themes/adwaita-qt6

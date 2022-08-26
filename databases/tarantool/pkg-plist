@@ -72,6 +72,7 @@ share/man/man1/tarantoolctl.1.gz
 %%DATADIR%%/luarocks/fetch/sscm.lua
 %%DATADIR%%/luarocks/fetch/svn.lua
 %%DATADIR%%/luarocks/fs.lua
+%%DATADIR%%/luarocks/fs/freebsd.lua
 %%DATADIR%%/luarocks/fs/lua.lua
 %%DATADIR%%/luarocks/fs/tools.lua
 %%DATADIR%%/luarocks/fs/unix.lua

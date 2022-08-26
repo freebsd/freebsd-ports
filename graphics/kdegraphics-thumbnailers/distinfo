@@ -1,3 +1,3 @@
-TIMESTAMP = 1657013400
-SHA256 (KDE/release-service/22.04.3/kdegraphics-thumbnailers-22.04.3.tar.xz) = 3fb892a96978bd6198cd9a4b04f8b74205917401b915dca722d945a820ca9c36
-SIZE (KDE/release-service/22.04.3/kdegraphics-thumbnailers-22.04.3.tar.xz) = 48468
+TIMESTAMP = 1660628599
+SHA256 (KDE/release-service/22.08.0/kdegraphics-thumbnailers-22.08.0.tar.xz) = f0b4f25c514332af9bf912cdc787b17138f6c532dcef5609b3688ceb6bd3b474
+SIZE (KDE/release-service/22.08.0/kdegraphics-thumbnailers-22.08.0.tar.xz) = 49004

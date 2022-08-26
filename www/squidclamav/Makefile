@@ -1,5 +1,5 @@
 PORTNAME=	squidclamav
-PORTVERSION=	7.1
+PORTVERSION=	7.2
 CATEGORIES=	www security
 MASTER_SITES=	SF
 
@@ -12,12 +12,13 @@ LIB_DEPENDS=	libicapapi.so:www/c-icap
 
 USES=		cpe libtool shebangfix
 
+CPE_VENDOR=	darold
+
+SHEBANG_FILES=	cgi-bin/clwarn.cgi*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static \
 		--sysconfdir="${PREFIX}/etc/c-icap" \
 		--with-c-icap=${LOCALBASE}
-SHEBANG_FILES=	cgi-bin/clwarn.cgi*
-CPE_VENDOR=	darold
 INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-DHAVE_STRNSTR

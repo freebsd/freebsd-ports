@@ -90,6 +90,8 @@ bin/sftpgo
 %%DATADIR%%/static/vendor/pdfobject/pdfobject.min.js
 %%DATADIR%%/static/vendor/tempusdominus/css/tempusdominus-bootstrap-4.min.css
 %%DATADIR%%/static/vendor/tempusdominus/js/tempusdominus-bootstrap-4.min.js
+%%DATADIR%%/static/vendor/video-js/video-js.min.css
+%%DATADIR%%/static/vendor/video-js/video.min.js
 %%DATADIR%%/templates/common/forgot-password.html
 %%DATADIR%%/templates/common/reset-password.html
 %%DATADIR%%/templates/common/sftpgo.css

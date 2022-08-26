@@ -1,12 +1,12 @@
 PORTNAME=	scipy
-DISTVERSION=	1.8.1
+DISTVERSION=	1.9.0
 CATEGORIES=	science python
-MASTER_SITES=	https://docs.scipy.org/doc/scipy-${PORTVERSION}/:doc \
+MASTER_SITES=	https://docs.scipy.org/doc/scipy-1.8.1/:doc \
 		CHEESESHOP:source \
 		SF:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
-		scipy-ref-${PORTVERSION}.pdf:doc
+		scipy-ref-1.8.1.pdf:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -31,7 +31,7 @@ LDFLAGS+=	-shared
 PYDISTUTILS_BUILDARGS=	--fcompiler=gnu95
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
 
-PORTDOCS=	scipy-ref-${PORTVERSION}.pdf
+PORTDOCS=	scipy-ref-1.8.1.pdf
 
 OPTIONS_DEFINE=	DOCS
 

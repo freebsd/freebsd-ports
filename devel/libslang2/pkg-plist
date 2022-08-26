@@ -37,9 +37,9 @@ man/man1/slsh.1.gz
 %%DATADIR%%/cmaps/copper.map
 %%DATADIR%%/cmaps/cubicl.map
 %%DATADIR%%/cmaps/cubicyf.map
+%%DATADIR%%/cmaps/drywet.map
 %%DATADIR%%/cmaps/ds9b.map
 %%DATADIR%%/cmaps/ds9sls.map
-%%DATADIR%%/cmaps/drywet.map
 %%DATADIR%%/cmaps/edge.map
 %%DATADIR%%/cmaps/gebco.map
 %%DATADIR%%/cmaps/globe.map
@@ -89,6 +89,7 @@ man/man1/slsh.1.gz
 %%DATADIR%%/help/sockfuns.hlp
 %%DATADIR%%/help/statsfuns.hlp
 %%DATADIR%%/help/structfuns.hlp
+%%DATADIR%%/help/timestamp.hlp
 %%DATADIR%%/histogram.sl
 %%DATADIR%%/iconv.sl
 %%DATADIR%%/json.sl
@@ -112,6 +113,7 @@ man/man1/slsh.1.gz
 %%DATADIR%%/rline/vikeys.sl
 %%DATADIR%%/scripts/jpegsize
 %%DATADIR%%/scripts/lsrpm
+%%DATADIR%%/scripts/slcov
 %%DATADIR%%/scripts/sldb
 %%DATADIR%%/scripts/slprof
 %%DATADIR%%/scripts/slstkchk
@@ -133,6 +135,7 @@ man/man1/slsh.1.gz
 %%DATADIR%%/structfuns.sl
 %%DATADIR%%/sysconf.sl
 %%DATADIR%%/termios.sl
+%%DATADIR%%/timestamp.sl
 %%DATADIR%%/varray.sl
 %%DATADIR%%/zlib.sl
 @dir %%DATADIR%%/local-packages

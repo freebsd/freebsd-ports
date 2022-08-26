@@ -1,0 +1,13 @@
+--- gcc/configure.orig	2019-11-29 16:01:46.850423000 -0800
++++ gcc/configure	2019-11-29 16:05:09.818243000 -0800
+@@ -3673,7 +3673,9 @@ if test x${gcc_gxx_include_dir} = x; then
+   fi
+ elif test "${with_sysroot+set}" = set; then
+   gcc_gxx_without_sysroot=`expr "${gcc_gxx_include_dir}" : "${with_sysroot}"'\(.*\)'`
+-  if test "${gcc_gxx_without_sysroot}"; then
++  if test "${with_sysroot}" = "/"; then
++    gcc_gxx_include_dir_add_sysroot=1
++  elif test "${gcc_gxx_without_sysroot}"; then
+     gcc_gxx_include_dir="${gcc_gxx_without_sysroot}"
+     gcc_gxx_include_dir_add_sysroot=1
+   fi

@@ -1,5 +1,5 @@
 PORTNAME=	metasploit-model
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.6
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

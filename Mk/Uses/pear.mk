@@ -22,43 +22,51 @@ IGNORE=	Incorrect 'USES+= pear:${pear_ARGS}' usage: argument [${arg}] is not rec
 .    endif
 .  endfor
 
-IGNORE_WITH_PHP?=	82
+_pear_IGNORE_WITH_PHP=	82
+IGNORE_WITH_PHP?=	${_pear_IGNORE_WITH_PHP}
 php_ARGS+=	flavors
 .include "${USESDIR}/php.mk"
 
-.  if empty(pear_ARGS:Menv)
+# Mark the port ignored if it wants pear for an unsupported flavor
+.  if ${_pear_IGNORE_WITH_PHP:tw:S/^/php/:M${PHP_FLAVOR}}
+IGNORE=		devel/pear does not support flavor ${PHP_FLAVOR}
+_pear_INVALID=	yes
+.  endif
+
+.  if !defined(_pear_INVALID)
+.    if empty(pear_ARGS:Menv)
 MASTER_SITES?=	http://pear.php.net/get/
 
 EXTRACT_SUFX?=	.tgz
 DIST_SUBDIR?=	PEAR
 
-.    if empty(php_ARGS:Mphpize)
+.      if empty(php_ARGS:Mphpize)
 NO_BUILD=	yes
+.      endif
 .    endif
-.  endif
 
 BUILD_DEPENDS+=	pear:devel/pear@${PHP_FLAVOR}
 RUN_DEPENDS+=	pear:devel/pear@${PHP_FLAVOR}
 
 PEAR_PKGNAMEPREFIX=	php${PHP_VER}-pear-
 
-.  if defined(PEAR_CHANNEL) && ${PEAR_CHANNEL} != ""
+.    if defined(PEAR_CHANNEL) && ${PEAR_CHANNEL} != ""
 PEAR_${PEAR_CHANNEL:tu}_PKGNAMEPREFIX=	php${PHP_VER}-pear-${PEAR_CHANNEL}-
 PKGNAMEPREFIX?=	${PEAR_${PEAR_CHANNEL:tu}_PKGNAMEPREFIX}
 PEARPKGREF=	${PEAR_CHANNEL}/${PORTNAME}
 PEAR_CHANNEL_VER?=	>=0
 BUILD_DEPENDS+=	${PEAR_PKGNAMEPREFIX}channel-${PEAR_CHANNEL}${PEAR_CHANNEL_VER}:devel/pear-channel-${PEAR_CHANNEL}@${PHP_FLAVOR}
 RUN_DEPENDS+=	${PEAR_PKGNAMEPREFIX}channel-${PEAR_CHANNEL}${PEAR_CHANNEL_VER}:devel/pear-channel-${PEAR_CHANNEL}@${PHP_FLAVOR}
-.  else
+.    else
 PKGNAMEPREFIX?=	${PEAR_PKGNAMEPREFIX}
 PEARPKGREF=	${PORTNAME}
-.  endif
+.    endif
 
-.  if exists(${LOCALBASE}/bin/php-config)
+.    if exists(${LOCALBASE}/bin/php-config)
 PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
-.  else
+.    else
 PHP_BASE=	${LOCALBASE}
-.  endif
+.    endif
 PEAR=		${LOCALBASE}/bin/pear
 LPEARDIR=	share/pear
 LPKGREGDIR=	${LPEARDIR}/packages/${PKGNAME}
@@ -76,29 +84,31 @@ EXAMPLESDIR=	${PHP_BASE}/${LEXAMPLESDIR}
 SQLSDIR=	${PHP_BASE}/${LSQLSDIR}
 SCRIPTFILESDIR=	${LOCALBASE}/bin
 TESTSDIR=	${PHP_BASE}/${LTESTSDIR}
-.  if defined(CATEGORY) && !empty(CATEGORY)
+.    if defined(CATEGORY) && !empty(CATEGORY)
 LINSTDIR=	${LPEARDIR}/${CATEGORY}
-.  else
+.    else
 LINSTDIR=	${LPEARDIR}
-.  endif
+.    endif
 INSTDIR=	${PHP_BASE}/${LINSTDIR}
 
 SUB_LIST+=	PKG_NAME=${PEARPKGREF}
 
-.  if empty(pear_ARGS:Menv)
-.    if empty(php_ARGS:Mphpize) && !exists(${.CURDIR}/pkg-plist)
+.    if empty(pear_ARGS:Menv)
+.      if empty(php_ARGS:Mphpize) && !exists(${.CURDIR}/pkg-plist)
 PLIST=		${WRKDIR}/PLIST
-.    endif
+.      endif
 PKGINSTALL?=	${PORTSDIR}/devel/pear/pear-install
 PKGDEINSTALL?=	${WRKDIR}/pear-deinstall
-.  endif
+.    endif
 
 PLIST_SUB+=	PEARDIR=${LPEARDIR} PKGREGDIR=${LPKGREGDIR} \
 		TESTSDIR=${LTESTSDIR} INSTDIR=${LINSTDIR} SQLSDIR=${LSQLSDIR} \
 		SCRIPTFILESDIR=${LCRIPTSDIR}
 
+.  endif # !defined(_pear_INVALID)
 .endif
-.if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_PEAR_POST_MK)
+
+.if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_PEAR_POST_MK) && !defined(_pear_INVALID)
 _INCLUDE_USES_PEAR_POST_MK=	yes
 
 .  if empty(pear_ARGS:Menv)

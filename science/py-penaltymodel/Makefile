@@ -1,0 +1,32 @@
+PORTNAME=	penaltymodel
+DISTVERSION=	1.0.2
+CATEGORIES=	science python # quantum-computing
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	DWave: Utilities and interfaces for using penalty models
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.10.10:science/py-dimod@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}homebase>=1.0.1:devel/py-homebase@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}networkx>=2.4:math/py-networkx@${PY_FLAVOR} \
+		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}reno>0:textproc/py-reno@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.7.3:science/py-scipy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_DEPENDS}
+RUN_DEPENDS=	${PY_DEPENDS}
+
+USES=		python:3.7+
+USE_PYTHON=	distutils cython autoplist unittest
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dwavesystems
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/tests
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

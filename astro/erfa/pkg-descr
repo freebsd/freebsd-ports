@@ -1,0 +1,10 @@
+ERFA (Essential Routines for Fundamental Astronomy) is a C library containing
+key algorithms for astronomy, and is based on the SOFA library published by the
+International Astronomical Union (IAU).
+
+ERFA is intended to replicate the functionality of SOFA (aside from possible
+bugfixes in ERFA that have not yet been included in SOFA), but is licensed under
+a three-clause BSD license to enable its compatibility with a wide range of open
+source licenses.
+
+WWW: https://github.com/liberfa/erfa

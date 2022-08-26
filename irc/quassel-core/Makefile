@@ -1,5 +1,6 @@
 MASTERDIR=	${.CURDIR}/../quassel
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-core
 
 COMMENT=	Qt 5 based distributed IRC client (core/server only)

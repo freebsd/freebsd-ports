@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	lesstif
+CONFLICTS_INSTALL=	open-motif-devel
 
 USES=		autoreconf gmake iconv jpeg libtool:keepla pkgconfig xorg
 USE_XORG=	x11 xaw xbitmaps xext xft xt xmu xrender sm ice

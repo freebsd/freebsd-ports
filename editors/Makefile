@@ -9,6 +9,7 @@
     SUBDIR += apel
     SUBDIR += asedit
     SUBDIR += beav
+    SUBDIR += bee-host
     SUBDIR += biew
     SUBDIR += bitedit
     SUBDIR += boiling-egg

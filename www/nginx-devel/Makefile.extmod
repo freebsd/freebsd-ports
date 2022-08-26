@@ -98,6 +98,7 @@ HTTP_AUTH_KRB5_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-mod
 HTTP_AUTH_KRB5_USES=		gssapi:mit
 
 HTTP_AUTH_LDAP_GH_TUPLE=	kvspb:nginx-auth-ldap:83c059b:http_auth_ldap
+HTTP_AUTH_LDAP_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_auth_ldap_module.c
 HTTP_AUTH_LDAP_VARS=		DSO_EXTMODS+=http_auth_ldap
 HTTP_AUTH_LDAP_USE=		openldap=yes
 
@@ -156,7 +157,7 @@ HTTP_NOTICE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c \
 				${PATCHDIR}/extra-patch-nginx-notice-config
 HTTP_NOTICE_VARS=		DSO_EXTMODS+=notice
 
-HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.3.0:push
+HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.3.1:push
 HTTP_PUSH_VARS=			DSO_EXTMODS+=push
 
 HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:8c02220:pushstream

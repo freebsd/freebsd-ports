@@ -1,0 +1,8 @@
+Qt is a cross-platform application and UI framework for developers
+using C++ or QML, a CSS/JavaScript-like language.
+
+The Qt 5 Core Compat module contains the Qt Core APIs which will be no longer
+supported in Qt 6 and therefore were removed from Qt 6. The module is provided
+to facilitate the transition to Qt 6.
+
+WWW: http://qt-project.org

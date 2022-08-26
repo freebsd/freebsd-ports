@@ -30,6 +30,8 @@ lib/cmake/KF5KCMUtils/KF5KCMUtilsConfigVersion.cmake
 lib/cmake/KF5KCMUtils/KF5KCMUtilsMacros.cmake
 lib/cmake/KF5KCMUtils/KF5KCMUtilsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5KCMUtils/KF5KCMUtilsTargets.cmake
+lib/cmake/KF5KCMUtils/KF5KCMUtilsToolingTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF5KCMUtils/KF5KCMUtilsToolingTargets.cmake
 lib/cmake/KF5KCMUtils/kcmutilsgeneratemoduledata.cpp.in
 lib/cmake/KF5KCMUtils/kcmutilsgeneratemoduledata.h.in
 lib/libKF5KCMUtils.so
@@ -38,6 +40,7 @@ lib/libKF5KCMUtils.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5KCMUtilsCore.so
 lib/libKF5KCMUtilsCore.so.5
 lib/libKF5KCMUtilsCore.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libexec/kf5/kcmdesktopfilegenerator
 %%QT_MKSPECDIR%%/modules/qt_KCMUtils.pri
 %%QT_QMLDIR%%/org/kde/kcmutils/components/KPluginDelegate.qml
 %%QT_QMLDIR%%/org/kde/kcmutils/components/KPluginSelector.qml

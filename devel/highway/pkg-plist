@@ -1,6 +1,9 @@
 include/hwy/aligned_allocator.h
 include/hwy/base.h
 include/hwy/cache_control.h
+include/hwy/contrib/algo/copy-inl.h
+include/hwy/contrib/algo/find-inl.h
+include/hwy/contrib/algo/transform-inl.h
 include/hwy/contrib/dot/dot-inl.h
 include/hwy/contrib/image/image.h
 include/hwy/contrib/math/math-inl.h
@@ -36,13 +39,13 @@ include/hwy/tests/test_util-inl.h
 include/hwy/tests/test_util.h
 lib/libhwy.so
 lib/libhwy.so.1
-lib/libhwy.so.1.0.0
+lib/libhwy.so.1.0.1
 lib/libhwy_contrib.so
 lib/libhwy_contrib.so.1
-lib/libhwy_contrib.so.1.0.0
+lib/libhwy_contrib.so.1.0.1
 lib/libhwy_test.so
 lib/libhwy_test.so.1
-lib/libhwy_test.so.1.0.0
+lib/libhwy_test.so.1.0.1
 libdata/pkgconfig/libhwy-contrib.pc
 libdata/pkgconfig/libhwy-test.pc
 libdata/pkgconfig/libhwy.pc

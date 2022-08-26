@@ -1,0 +1,5 @@
+Ogmios is a lightweight bridge interface for cardano-node. It offers a
+WebSocket API that enables local clients to speak Ouroboros' mini-protocols
+via JSON/RPC.
+
+WWW: https://ogmios.dev/

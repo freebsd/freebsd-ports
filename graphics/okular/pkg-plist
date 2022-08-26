@@ -104,12 +104,12 @@ share/config.kcfg/gssettings.kcfg
 share/config.kcfg/okular.kcfg
 share/config.kcfg/okular_core.kcfg
 share/config.kcfg/pdfsettings.kcfg
+share/icons/hicolor/128x128/apps/okular.png
 share/icons/hicolor/16x16/apps/okular.png
 share/icons/hicolor/22x22/apps/okular.png
 share/icons/hicolor/32x32/apps/okular.png
 share/icons/hicolor/48x48/apps/okular.png
 share/icons/hicolor/64x64/apps/okular.png
-share/icons/hicolor/128x128/apps/okular.png
 share/kconf_update/okular.upd
 share/kservices5/okularChm.desktop
 share/kservices5/okularComicbook.desktop
@@ -987,6 +987,7 @@ share/locale/ta/LC_MESSAGES/okular_kimgio.mo
 share/locale/ta/LC_MESSAGES/okular_markdown.mo
 share/locale/ta/LC_MESSAGES/okular_plucker.mo
 share/locale/ta/LC_MESSAGES/okular_poppler.mo
+share/locale/ta/LC_MESSAGES/okular_tiff.mo
 share/locale/ta/LC_MESSAGES/okular_txt.mo
 share/locale/ta/LC_MESSAGES/okular_xps.mo
 share/locale/ta/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -1106,6 +1107,7 @@ share/locale/zh_TW/LC_MESSAGES/okular_markdown.mo
 share/locale/zh_TW/LC_MESSAGES/okular_mobi.mo
 share/locale/zh_TW/LC_MESSAGES/okular_plucker.mo
 share/locale/zh_TW/LC_MESSAGES/okular_poppler.mo
+share/locale/zh_TW/LC_MESSAGES/okular_tiff.mo
 share/locale/zh_TW/LC_MESSAGES/okular_txt.mo
 share/locale/zh_TW/LC_MESSAGES/okular_xps.mo
 share/locale/zh_TW/LC_MESSAGES/org.kde.active.documentviewer.mo

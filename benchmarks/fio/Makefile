@@ -1,6 +1,5 @@
 PORTNAME=	fio
-PORTVERSION=	3.30
-PORTREVISION=	1
+PORTVERSION=	3.31
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://brick.kernel.dk/snaps/
 
@@ -24,7 +23,7 @@ LIBNFS_DESC=	Enable NFS support using libnfs
 GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:math/gnuplot
 LIBNFS_LIB_DEPENDS=	libnfs.so:net/libnfs
 
-LIBNFS_CONFIGURE_OFF=	--disable-nfs
+LIBNFS_CONFIGURE_ENABLE=	libnfs
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fio ${STAGEDIR}${PREFIX}/bin

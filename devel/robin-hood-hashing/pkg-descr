@@ -1,0 +1,6 @@
+robin-hood-hashing provides classes robin_hood::unordered_map and
+robin_hood::unordered_set. It is a platform independent replacement for
+std::unordered_map and std::unordered_set which is both faster and more memory
+efficient for real-world use cases.
+
+WWW: https://github.com/martinus/robin-hood-hashing

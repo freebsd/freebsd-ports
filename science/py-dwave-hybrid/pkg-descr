@@ -1,0 +1,12 @@
+dwave-hybrid is a general, minimal Python framework for building hybrid
+asynchronous decomposition samplers for quadratic unconstrained binary
+optimization (QUBO) problems.
+
+dwave-hybrid facilitates three aspects of solution development:
+* Hybrid approaches to combining quantum and classical compute resources
+* Evaluating a portfolio of algorithmic components and problem-decomposition
+  strategies
+* Experimenting with workflow structures and parameters to obtain the best
+  application results
+
+WWW: https://docs.ocean.dwavesys.com/projects/hybrid/en/stable/

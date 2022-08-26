@@ -34,7 +34,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/asm-tree-9.2.jar
 %%DATADIR%%/lib/asm-util-9.2.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-PS-222.3345.135
+%%DATADIR%%/lib/build-marker-PS-222.3739.61
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/dbus-java-3.2.1.jar
@@ -372,8 +372,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/php-markdown/lib/php-markdown.jar
 %%DATADIR%%/plugins/php/lib/php-openapi-src.jar
 %%DATADIR%%/plugins/php/lib/php.jar
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-5abeeaeea21b.ijx
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-5abeeaeea21b.txt
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-427b2baf7257.ijx
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-427b2baf7257.txt
 %%DATADIR%%/plugins/phpspec/lib/phpspec.jar
 %%DATADIR%%/plugins/phpstan/lib/phpstan.jar
 %%DATADIR%%/plugins/phpstorm-docker/lib/phpstorm-docker.jar

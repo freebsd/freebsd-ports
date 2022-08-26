@@ -1,5 +1,5 @@
 PORTNAME=	windows_error
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

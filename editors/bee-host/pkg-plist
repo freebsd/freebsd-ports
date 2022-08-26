@@ -1,0 +1,5 @@
+bin/beectl
+etc/chrome/native-messaging-hosts/com.ruslan_osmanov.bee.json
+lib/mozilla/native-messaging-hosts/com.ruslan_osmanov.bee.json
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.md

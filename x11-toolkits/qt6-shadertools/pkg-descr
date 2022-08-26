@@ -1,0 +1,8 @@
+Qt is a cross-platform application and UI framework for developers
+using C++ or QML, a CSS/JavaScript-like language.
+
+Provides tools for the cross-platform Qt shader pipeline.
+These enable processing graphics and compute shaders to make them usable for
+Qt Quick and other components in the Qt ecosystem.
+
+WWW: http://qt-project.org

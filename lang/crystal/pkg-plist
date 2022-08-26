@@ -80,6 +80,7 @@ lib/crystal/compiler/crystal/interpreter/c.cr
 lib/crystal/compiler/crystal/interpreter/cast.cr
 lib/crystal/compiler/crystal/interpreter/class_vars.cr
 lib/crystal/compiler/crystal/interpreter/closure.cr
+lib/crystal/compiler/crystal/interpreter/closure_context.cr
 lib/crystal/compiler/crystal/interpreter/compiled_block.cr
 lib/crystal/compiler/crystal/interpreter/compiled_def.cr
 lib/crystal/compiler/crystal/interpreter/compiled_instructions.cr
@@ -103,11 +104,13 @@ lib/crystal/compiler/crystal/interpreter/repl.cr
 lib/crystal/compiler/crystal/interpreter/to_bool.cr
 lib/crystal/compiler/crystal/interpreter/value.cr
 lib/crystal/compiler/crystal/loader.cr
+lib/crystal/compiler/crystal/loader/msvc.cr
 lib/crystal/compiler/crystal/loader/unix.cr
 lib/crystal/compiler/crystal/macros.cr
 lib/crystal/compiler/crystal/macros/interpreter.cr
 lib/crystal/compiler/crystal/macros/macros.cr
 lib/crystal/compiler/crystal/macros/methods.cr
+lib/crystal/compiler/crystal/macros/types.cr
 lib/crystal/compiler/crystal/program.cr
 lib/crystal/compiler/crystal/progress_tracker.cr
 lib/crystal/compiler/crystal/semantic.cr
@@ -140,6 +143,7 @@ lib/crystal/compiler/crystal/semantic/normalizer.cr
 lib/crystal/compiler/crystal/semantic/path_lookup.cr
 lib/crystal/compiler/crystal/semantic/recursive_struct_checker.cr
 lib/crystal/compiler/crystal/semantic/restrictions.cr
+lib/crystal/compiler/crystal/semantic/restrictions_augmenter.cr
 lib/crystal/compiler/crystal/semantic/semantic_visitor.cr
 lib/crystal/compiler/crystal/semantic/suggestions.cr
 lib/crystal/compiler/crystal/semantic/to_s.cr
@@ -151,6 +155,7 @@ lib/crystal/compiler/crystal/semantic/type_guess_visitor.cr
 lib/crystal/compiler/crystal/semantic/type_intersect.cr
 lib/crystal/compiler/crystal/semantic/type_lookup.cr
 lib/crystal/compiler/crystal/semantic/type_merge.cr
+lib/crystal/compiler/crystal/semantic/type_to_restriction.cr
 lib/crystal/compiler/crystal/semantic/warnings.cr
 lib/crystal/compiler/crystal/syntax.cr
 lib/crystal/compiler/crystal/syntax/ast.cr
@@ -277,6 +282,7 @@ lib/crystal/crystal/compiler_rt/fixint.cr
 lib/crystal/crystal/compiler_rt/float.cr
 lib/crystal/crystal/compiler_rt/mul.cr
 lib/crystal/crystal/compiler_rt/multi3.cr
+lib/crystal/crystal/compiler_rt/shift.cr
 lib/crystal/crystal/datum.cr
 lib/crystal/crystal/digest/md5.cr
 lib/crystal/crystal/digest/sha1.cr
@@ -375,6 +381,7 @@ lib/crystal/crystal/system/win32/file.cr
 lib/crystal/crystal/system/win32/file_descriptor.cr
 lib/crystal/crystal/system/win32/file_info.cr
 lib/crystal/crystal/system/win32/hostname.cr
+lib/crystal/crystal/system/win32/library_archive.cr
 lib/crystal/crystal/system/win32/mime.cr
 lib/crystal/crystal/system/win32/path.cr
 lib/crystal/crystal/system/win32/process.cr
@@ -1089,6 +1096,7 @@ lib/crystal/llvm/builder.cr
 lib/crystal/llvm/context.cr
 lib/crystal/llvm/di_builder.cr
 lib/crystal/llvm/enums.cr
+lib/crystal/llvm/enums/atomic.cr
 lib/crystal/llvm/ext/find-llvm-config
 lib/crystal/llvm/ext/llvm-versions.txt
 lib/crystal/llvm/ext/llvm_ext.cc
@@ -1107,6 +1115,7 @@ lib/crystal/llvm/module.cr
 lib/crystal/llvm/module_pass_manager.cr
 lib/crystal/llvm/operand_bundle_def.cr
 lib/crystal/llvm/parameter_collection.cr
+lib/crystal/llvm/pass_builder_options.cr
 lib/crystal/llvm/pass_manager_builder.cr
 lib/crystal/llvm/pass_registry.cr
 lib/crystal/llvm/phi_table.cr
@@ -1171,11 +1180,7 @@ lib/crystal/openssl/digest.cr
 lib/crystal/openssl/error.cr
 lib/crystal/openssl/hmac.cr
 lib/crystal/openssl/lib_crypto.cr
-lib/crystal/openssl/lib_crypto.cr.bak
-lib/crystal/openssl/lib_crypto.cr.orig
 lib/crystal/openssl/lib_ssl.cr
-lib/crystal/openssl/lib_ssl.cr.bak
-lib/crystal/openssl/lib_ssl.cr.orig
 lib/crystal/openssl/md5.cr
 lib/crystal/openssl/pkcs5.cr
 lib/crystal/openssl/sha1.cr

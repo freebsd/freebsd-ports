@@ -53,6 +53,7 @@ MAKE_ENV+=	DB_INC_LOC="-I${LOCALBASE}/news/include -I${LOCALBASE}/news/include/i
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
 BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:news/inn
 CONFLICTS+=	suck-cnews-4.*
+BROKEN=		type conflict in include/inn/portable-stdbool.h
 .endif
 
 .if ${PORT_OPTIONS:MSSL}

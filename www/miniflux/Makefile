@@ -1,6 +1,5 @@
 PORTNAME=	miniflux
-DISTVERSION=	2.0.37
-PORTREVISION=	2
+DISTVERSION=	2.0.38
 CATEGORIES=	www
 
 MAINTAINER=	krion@FreeBSD.org
@@ -25,28 +24,29 @@ GH_TUPLE=	PuerkitoBio:goquery:v1.8.0:puerkitobio_goquery/vendor/github.com/Puerk
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:gddo:721e228c7686:golang_gddo/vendor/github.com/golang/gddo \
-		golang:net:12bc252f5db8:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:f6687ab2804c:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:net:27dd8689420f:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:ee480838109b:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:da31bd327af9:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		lib:pq:v1.10.6:lib_pq/vendor/github.com/lib/pq \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		mitchellh:go-server-timing:feb680ab92c2:mitchellh_go_server_timing/vendor/github.com/mitchellh/go-server-timing \
 		mvdan:xurls:v2.4.0:mvdan_xurls/vendor/mvdan.cc/xurls/v2 \
 		pquerna:cachecontrol:1555304b9b35:pquerna_cachecontrol/vendor/github.com/pquerna/cachecontrol \
-		prometheus:client_golang:v1.12.2:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_golang:v1.13.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.32.1:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:v0.7.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		prometheus:common:v0.37.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.8.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.28.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rylans:getlang:4c3188ff8a2d:rylans_getlang/vendor/github.com/rylans/getlang \
 		square:go-jose:v2.5.0:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
-		tdewolff:minify:v2.11.5:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
-		tdewolff:parse:v2.5.31:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
-		technoweenie:multipartstreamer:v1.0.1:technoweenie_multipartstreamer/vendor/github.com/technoweenie/multipartstreamer
+		tdewolff:minify:v2.12.0:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
+		tdewolff:parse:v2.6.1:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
+		technoweenie:multipartstreamer:v1.0.1:technoweenie_multipartstreamer/vendor/github.com/technoweenie/multipartstreamer \
+		yuin:goldmark:v1.4.13:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 USE_RC_SUBR=	miniflux
 

@@ -1,15 +1,15 @@
---- Makefile.orig	2022-06-21 10:12:22 UTC
+--- Makefile.orig	2022-07-21 13:59:14 UTC
 +++ Makefile
-@@ -235,7 +235,7 @@ TEST_REPO_GIT     := ${TEST_REPO_DIR}/gitlab-git-test.
+@@ -247,7 +247,7 @@ TEST_REPO_GIT     := ${TEST_REPO_DIR}/gitlab-git-test.
  BENCHMARK_REPO    := ${TEST_REPO_DIR}/benchmark.git
  
- # All executables provided by Gitaly
--GITALY_EXECUTABLES    = $(addprefix ${BUILD_DIR}/bin/,$(notdir $(shell find ${SOURCE_DIR}/cmd -mindepth 1 -maxdepth 1 -type d -print)) gitaly-git2go-v14)
-+GITALY_EXECUTABLES    = $(addprefix ${BUILD_DIR}/bin/,$(notdir $(shell find ${SOURCE_DIR}/cmd -mindepth 1 -maxdepth 1 -type d -print)) )
+ # All executables provided by Gitaly.
+-GITALY_EXECUTABLES        = $(addprefix ${BUILD_DIR}/bin/,$(notdir $(shell find ${SOURCE_DIR}/cmd -mindepth 1 -maxdepth 1 -type d -print)) gitaly-git2go-v14)
++GITALY_EXECUTABLES        = $(addprefix ${BUILD_DIR}/bin/,$(notdir $(shell find ${SOURCE_DIR}/cmd -mindepth 1 -maxdepth 1 -type d -print)) )
+ # All executables packed inside the Gitaly binary.
+ GITALY_PACKED_EXECUTABLES = $(filter %gitaly-hooks %gitaly-git2go-v15 %gitaly-ssh %gitaly-lfs-smudge, ${GITALY_EXECUTABLES})
  # Find all Go source files.
- find_go_sources       = $(shell find ${SOURCE_DIR} -type d \( -name ruby -o -name vendor -o -name testdata -o -name '_*' -o -path '*/proto/go/gitalypb' \) -prune -o -type f -name '*.go' -not -name '*.pb.go' -print | sort -u)
- 
-@@ -497,7 +497,6 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+@@ -533,7 +533,6 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
@@ -17,7 +17,7 @@
  	${Q}touch $@
  
  ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
-@@ -548,7 +547,7 @@ ${BUILD_DIR}/bin/%: ${BUILD_DIR}/intermediate/% | ${BU
+@@ -584,7 +583,7 @@ ${BUILD_DIR}/bin/%: ${BUILD_DIR}/intermediate/% | ${BU
  	@ # This fallback is unique but non-deterministic, making it sufficient to avoid generating the
  	@ # GNU build-id from the empty string and causing guaranteed collisions.
  	${Q}GO_BUILD_ID=$$(go tool buildid "$<" || openssl rand -hex 32) && \
@@ -26,8 +26,8 @@
  	if test "${OS}" = "Linux"; then \
  		go run "${SOURCE_DIR}"/tools/replace-buildid \
  			-input "$<" -input-build-id "${TEMPORARY_BUILD_ID}" \
-@@ -560,22 +559,11 @@ ${BUILD_DIR}/bin/%: ${BUILD_DIR}/intermediate/% | ${BU
- ${BUILD_DIR}/intermediate/gitaly:            GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
+@@ -597,22 +596,11 @@ ${BUILD_DIR}/intermediate/gitaly:            GO_BUILD_
+ ${BUILD_DIR}/intermediate/gitaly:            ${GITALY_PACKED_EXECUTABLES}
  ${BUILD_DIR}/intermediate/praefect:          GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
  ${BUILD_DIR}/intermediate/gitaly-git2go-v15: GO_BUILD_TAGS = ${GIT2GO_BUILD_TAGS}
 -${BUILD_DIR}/intermediate/gitaly-git2go-v15: libgit2

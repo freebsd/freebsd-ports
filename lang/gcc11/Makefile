@@ -1,10 +1,11 @@
 PORTNAME=	gcc
 PORTVERSION=	11.3.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
 
-MAINTAINER=	toolchain@FreeBSD.org
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	GNU Compiler Collection 11
 
 LICENSE=	GPLv3 GPLv3RLE
@@ -96,6 +97,7 @@ CONFIGURE_ARGS+=--disable-nls \
 		--with-as=${LOCALBASE}/bin/as \
 		--with-gmp=${LOCALBASE} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
+		--with-gxx-libcxx-include-dir=/usr/include/c++/v1 \
 		--with-ld=${LOCALBASE}/bin/ld \
 		${ICONV_CONFIGURE_ARG} \
 		--with-pkgversion="FreeBSD Ports Collection" \

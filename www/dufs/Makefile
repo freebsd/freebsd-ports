@@ -1,0 +1,229 @@
+PORTNAME=	dufs
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.29.0
+PORTREVISION=	1
+CATEGORIES=	www
+
+MAINTAINER=	ashish@FreeBSD.org
+COMMENT=	HTTP File Server
+
+LICENSE=	MIT APACHE20
+LICENSE_COMB=	dual
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	sigoden
+CARGO_CRATES=	adler-1.0.2 \
+		aho-corasick-0.7.18 \
+		assert_cmd-2.0.4 \
+		assert_fs-1.0.7 \
+		async-compression-0.3.14 \
+		async-stream-0.3.3 \
+		async-stream-impl-0.3.3 \
+		async-trait-0.1.57 \
+		async_io_utilities-0.1.3 \
+		async_zip-0.0.8 \
+		autocfg-1.1.0 \
+		base64-0.13.0 \
+		bitflags-1.3.2 \
+		block-buffer-0.9.0 \
+		block-buffer-0.10.2 \
+		bstr-0.2.17 \
+		bumpalo-3.10.0 \
+		bytes-1.2.1 \
+		cc-1.0.73 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		clap-3.2.16 \
+		clap_complete-3.2.3 \
+		clap_lex-0.2.4 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.3 \
+		cpufeatures-0.2.2 \
+		crc32fast-1.3.2 \
+		crossbeam-utils-0.8.11 \
+		crypto-common-0.1.6 \
+		difflib-0.4.0 \
+		digest-0.9.0 \
+		digest-0.10.3 \
+		digest_auth-0.3.0 \
+		diqwest-1.0.1 \
+		doc-comment-0.3.3 \
+		either-1.7.0 \
+		encoding_rs-0.8.31 \
+		fastrand-1.8.0 \
+		flate2-1.0.24 \
+		float-cmp-0.9.0 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.0.1 \
+		futures-0.3.21 \
+		futures-channel-0.3.21 \
+		futures-core-0.3.21 \
+		futures-executor-0.3.21 \
+		futures-io-0.3.21 \
+		futures-macro-0.3.21 \
+		futures-sink-0.3.21 \
+		futures-task-0.3.21 \
+		futures-timer-3.0.2 \
+		futures-util-0.3.21 \
+		generic-array-0.14.6 \
+		getrandom-0.2.7 \
+		globset-0.4.9 \
+		globwalk-0.8.1 \
+		h2-0.3.13 \
+		hashbrown-0.12.3 \
+		headers-0.3.7 \
+		headers-core-0.2.0 \
+		hermit-abi-0.1.19 \
+		hex-0.4.3 \
+		http-0.2.8 \
+		http-body-0.4.5 \
+		httparse-1.7.1 \
+		httpdate-1.0.2 \
+		hyper-0.14.20 \
+		hyper-rustls-0.23.0 \
+		hyper-tls-0.5.0 \
+		idna-0.2.3 \
+		if-addrs-0.7.0 \
+		ignore-0.4.18 \
+		indexmap-1.9.1 \
+		instant-0.1.12 \
+		ipnet-2.5.0 \
+		itertools-0.10.3 \
+		itoa-1.0.2 \
+		js-sys-0.3.59 \
+		lazy_static-1.4.0 \
+		libc-0.2.126 \
+		log-0.4.17 \
+		matches-0.1.9 \
+		md-5-0.9.1 \
+		md5-0.7.0 \
+		memchr-2.5.0 \
+		mime-0.3.16 \
+		mime_guess-2.0.4 \
+		miniz_oxide-0.5.3 \
+		mio-0.8.4 \
+		native-tls-0.2.10 \
+		normalize-line-endings-0.3.0 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
+		num_cpus-1.13.1 \
+		once_cell-1.13.0 \
+		opaque-debug-0.3.0 \
+		openssl-0.10.41 \
+		openssl-macros-0.1.0 \
+		openssl-probe-0.1.5 \
+		openssl-sys-0.9.75 \
+		os_str_bytes-6.2.0 \
+		percent-encoding-2.1.0 \
+		pin-project-lite-0.2.9 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.25 \
+		port_check-0.1.5 \
+		ppv-lite86-0.2.16 \
+		predicates-2.1.1 \
+		predicates-core-1.0.3 \
+		predicates-tree-1.0.5 \
+		proc-macro2-1.0.42 \
+		quote-1.0.20 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.3 \
+		redox_syscall-0.2.16 \
+		regex-1.6.0 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.27 \
+		remove_dir_all-0.5.3 \
+		reqwest-0.11.11 \
+		ring-0.16.20 \
+		rstest-0.15.0 \
+		rstest_macros-0.14.0 \
+		rustc_version-0.4.0 \
+		rustls-0.20.6 \
+		rustls-pemfile-1.0.1 \
+		ryu-1.0.10 \
+		same-file-1.0.6 \
+		schannel-0.1.20 \
+		sct-0.7.0 \
+		security-framework-2.6.1 \
+		security-framework-sys-2.6.1 \
+		semver-1.0.12 \
+		serde-1.0.141 \
+		serde_derive-1.0.141 \
+		serde_json-1.0.82 \
+		serde_urlencoded-0.7.1 \
+		sha-1-0.10.0 \
+		sha2-0.9.9 \
+		signal-hook-registry-1.4.0 \
+		slab-0.4.7 \
+		socket2-0.4.4 \
+		spin-0.5.2 \
+		syn-1.0.98 \
+		tempfile-3.3.0 \
+		terminal_size-0.1.17 \
+		termtree-0.2.4 \
+		textwrap-0.15.0 \
+		thiserror-1.0.31 \
+		thiserror-impl-1.0.31 \
+		thread_local-1.1.4 \
+		time-0.1.44 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.20.1 \
+		tokio-macros-1.8.0 \
+		tokio-native-tls-0.3.0 \
+		tokio-rustls-0.23.4 \
+		tokio-util-0.7.3 \
+		tower-service-0.3.2 \
+		tracing-0.1.36 \
+		tracing-core-0.1.29 \
+		try-lock-0.2.3 \
+		typenum-1.15.0 \
+		unicase-2.6.0 \
+		unicode-bidi-0.3.8 \
+		unicode-ident-1.0.2 \
+		unicode-normalization-0.1.21 \
+		untrusted-0.7.1 \
+		url-2.2.2 \
+		urlencoding-2.1.0 \
+		uuid-1.1.2 \
+		vcpkg-0.2.15 \
+		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.2 \
+		want-0.3.0 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.82 \
+		wasm-bindgen-backend-0.2.82 \
+		wasm-bindgen-futures-0.4.32 \
+		wasm-bindgen-macro-0.2.82 \
+		wasm-bindgen-macro-support-0.2.82 \
+		wasm-bindgen-shared-0.2.82 \
+		web-sys-0.3.59 \
+		webpki-0.22.0 \
+		webpki-roots-0.22.4 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.36.1 \
+		winreg-0.10.1 \
+		xml-rs-0.8.4
+PLIST_FILES=	bin/${PORTNAME}	\
+		${DOCSDIR_REL}/README.md
+
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

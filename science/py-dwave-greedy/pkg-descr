@@ -1,0 +1,9 @@
+dwave-greedy is an implementation of a steepest descent solver for binary
+quadratic models.
+
+Steepest descent is the discrete analogue of gradient descent, but the best move
+is computed using a local minimization rather rather than computing a gradient.
+At each step, we determine the dimension along which to descend based on the
+highest energy drop caused by a variable flip.
+
+WWW: https://docs.ocean.dwavesys.com/projects/greedy/en/latest/

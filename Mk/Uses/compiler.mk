@@ -187,12 +187,7 @@ CHOSEN_COMPILER_TYPE=	clang
 USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .    if ${COMPILER_FEATURES:Mlibc++}
-CXXFLAGS+=	-nostdinc++ -isystem /usr/include/c++/v1
-LDFLAGS+=	-L${WRKDIR}
-
-_USES_configure+=	200:gcc-libc++-configure
-gcc-libc++-configure:
-	@${LN} -fs /usr/lib/libc++.so ${WRKDIR}/libstdc++.so
+CXXFLAGS+=	-stdlib=libc++
 .    endif
 .  endif
 

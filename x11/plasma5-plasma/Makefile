@@ -1,12 +1,11 @@
 PORTNAME=	plasma
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 PKGNAMEPREFIX=	plasma5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE5 plasma meta port
-
-LICENSE=	LGPL20
 
 USES=		kde:5 metaport qt:5
 # remove:

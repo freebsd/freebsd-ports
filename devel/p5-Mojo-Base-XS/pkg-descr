@@ -1,0 +1,9 @@
+Mojo::Base::XS implements fast XS-based accessors using the Mojolicious
+interface. The accessors are based on Class::XSAccessor.
+
+It can monkey-patch itself into Mojo::Base, or be used as a standalone
+inclusion. The same limitations from Mojo::Base apply here, namely that
+it doesn't support BUILD/before/after wrappers or roles. Use p5-Moo if
+you want those features.
+
+WWW: https://metacpan.org/pod/Mojo::Base::XS

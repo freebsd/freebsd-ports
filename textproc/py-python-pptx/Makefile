@@ -1,0 +1,23 @@
+PORTNAME=	python-pptx
+PORTVERSION=	0.6.21
+CATEGORIES=	textproc python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	DtxdF@riseup.net
+COMMENT=	Generate and manipulate Open XML PowerPoint (.pptx) files
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.1.0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=3.3.2:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=0.5.7:textproc/py-xlsxwriter@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}behave>0:devel/py-behave@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:devel/py-pyparsing@${PY_FLAVOR}
+
+USES=		python:3.8+
+USE_PYTHON=	autoplist distutils pytest
+
+.include <bsd.port.mk>

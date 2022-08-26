@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_web_contents.cc.orig	2022-08-03 15:31:58 UTC
+--- electron/shell/browser/api/electron_api_web_contents.cc.orig	2022-08-17 15:33:41 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.cc
 @@ -150,11 +150,11 @@
  #include "ui/base/cocoa/defaults_utils.h"
@@ -14,7 +14,7 @@
  #include "ui/gfx/font_render_params.h"
  #endif
  
-@@ -395,7 +395,7 @@ absl::optional<base::TimeDelta> GetCursorBlinkInterval
+@@ -396,7 +396,7 @@ absl::optional<base::TimeDelta> GetCursorBlinkInterval
        ui::TextInsertionCaretBlinkPeriodFromDefaults());
    if (system_value)
      return *system_value;
@@ -23,7 +23,7 @@
    if (auto* linux_ui = views::LinuxUI::instance())
      return linux_ui->GetCursorBlinkInterval();
  #elif BUILDFLAG(IS_WIN)
-@@ -847,7 +847,7 @@ void WebContents::InitWithSessionAndOptions(
+@@ -848,7 +848,7 @@ void WebContents::InitWithSessionAndOptions(
    accept_languages.pop_back();
    prefs->accept_languages = accept_languages;
  
@@ -32,7 +32,7 @@
    // Update font settings.
    static const gfx::FontRenderParams params(
        gfx::GetFontRenderParams(gfx::FontRenderParamsQuery(), nullptr));
-@@ -2372,7 +2372,7 @@ void WebContents::ForcefullyCrashRenderer() {
+@@ -2373,7 +2373,7 @@ void WebContents::ForcefullyCrashRenderer() {
  
    content::RenderProcessHost* rph = rwh->GetProcess();
    if (rph) {
@@ -41,7 +41,7 @@
      // A generic |CrashDumpHungChildProcess()| is not implemented for Linux.
      // Instead we send an explicit IPC to crash on the renderer's IO thread.
      rph->ForceCrash();
-@@ -2933,7 +2933,7 @@ void WebContents::CopyImageAt(int x, int y) {
+@@ -2942,7 +2942,7 @@ void WebContents::CopyImageAt(int x, int y) {
  void WebContents::Focus() {
    // Focusing on WebContents does not automatically focus the window on macOS
    // and Linux, do it manually to match the behavior on Windows.
@@ -50,7 +50,7 @@
    if (owner_window())
      owner_window()->Focus(true);
  #endif
-@@ -3774,7 +3774,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
+@@ -3783,7 +3783,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
  }
  #endif
  

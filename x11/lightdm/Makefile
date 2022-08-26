@@ -1,8 +1,7 @@
 PORTNAME=	lightdm
-PORTVERSION=	1.30.0
-PORTREVISION=	3
+PORTVERSION=	1.32.0
 CATEGORIES=	x11
-MASTER_SITES=	https://github.com/CanonicalLtd/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+MASTER_SITES=	https://github.com/canonical/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Lightweight Display Manager

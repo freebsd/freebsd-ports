@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-qt5
 
 COMMENT=	Secure password generator with a true RNG (Qt5 GUI)

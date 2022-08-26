@@ -737,6 +737,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/mmgr/slab.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/resowner/resowner.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/sort/logtape.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/utils/sort/qsort_interruptible.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/sort/sharedtuplestore.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/sort/sortsupport.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/sort/tuplesort.bc

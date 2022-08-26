@@ -1,5 +1,6 @@
 PORTNAME=	lxqt-qtplugin
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LXQT
 
@@ -8,7 +9,7 @@ COMMENT=	LXQt system integration plugin for Qt
 
 LICENSE=	LGPL21+
 
-LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt \
+LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
 		libexif.so:graphics/libexif
 
 USES=	cmake compiler:c++14-lang gnome kde:5 lxqt pkgconfig tar:xz qt:5 \

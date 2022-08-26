@@ -6,9 +6,6 @@ CATEGORIES=	net-p2p
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Meta-port for Transmission BitTorrent client
 
-LICENSE=	GPLv2+ MIT
-LICENSE_COMB=	multi
-
 USES=		metaport
 
 OPTIONS_DEFINE=		CLI DAEMON GTK QT UTILS WEB

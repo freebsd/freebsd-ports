@@ -1,0 +1,38 @@
+--- include/imp/util/Endian.orig	2018-08-24 09:23:34 UTC
++++ include/imp/util/Endian
+@@ -10,7 +10,7 @@
+ # define BIG_ENDIAN 0x1234
+ # define LITTLE_ENDIAN 0x4321
+ # define BYTE_ORDER LITTLE_ENDIAN
+-#elif defined(__APPLE__)
++#elif defined(__APPLE__) || defined(__FreeBSD__)
+ # include <machine/endian.h>
+ #else
+ # include <endian.h>
+@@ -57,6 +57,26 @@ namespace imp {
+ 
+     inline uint64 swap_bytes(uint64 x) noexcept
+     { return OSSwapInt64(x); }
++}
++#elif defined(__FreeBSD__)
++namespace imp {
++  inline int16 swap_bytes(int16 x) noexcept
++  { return bswap16(x); }
++
++  inline uint16 swap_bytes(uint16 x) noexcept
++  { return bswap16(x); }
++
++  inline int32 swap_bytes(int32 x) noexcept
++  { return bswap32(x); }
++
++  inline uint32 swap_bytes(uint32 x) noexcept
++  { return bswap32(x); }
++
++  inline int64 swap_bytes(int64 x) noexcept
++  { return bswap64(x); }
++
++  inline uint64 swap_bytes(uint64 x) noexcept
++  { return bswap64(x); }
+ }
+ #elif defined(__GNUC__) || defined(__clang__)
+ namespace imp {

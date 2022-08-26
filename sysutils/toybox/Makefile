@@ -1,5 +1,5 @@
 PORTNAME=	toybox
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://landley.net/toybox/downloads/
 
@@ -30,7 +30,7 @@ BIN_LINKS=	[ cat chgrp chmod chown cksum cpio crc32 date dos2unix echo \
 		mknod mktemp mountpoint nice pidof printenv pwd rm rmdir sed \
 		sleep sync touch true uname unix2dos usleep vmstat
 SBIN_LINKS=	killall5 lsmod mkswap modinfo sysctl
-USRBIN_LINKS=	acpi ascii base64 basename bunzip2 bzcat cal catv chrt chvt \
+USRBIN_LINKS=	acpi ascii base64 basename bunzip2 bzcat cal chrt chvt \
 		clear cmp comm count cut dirname du expand factor fallocate \
 		file find flock fmt groups head hexedit iconv id killall link \
 		logger logname lspci lsusb makedevs mkfifo mkpasswd nl nohup \
@@ -39,7 +39,6 @@ USRBIN_LINKS=	acpi ascii base64 basename bunzip2 bzcat cal catv chrt chvt \
 		time timeout truncate tty uniq unlink uudecode uuencode \
 		uuidgen w watch wc which who whoami xargs xxd yes
 USRSBIN_LINKS=	chroot
-
 
 post-patch:
 	${REINPLACE_CMD} -e 's|<sys/inotify.h>|"${LOCALBASE}/include/sys/inotify.h"|' \

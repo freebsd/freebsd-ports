@@ -1,5 +1,5 @@
 PORTNAME=	bazel
-DISTVERSION=	5.2.0
+DISTVERSION=	5.3.0
 CATEGORIES=	devel java
 MASTER_SITES=	https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=	bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -40,7 +40,7 @@ NO_WRKSUBDIR=	YES
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=	3
+FINALRC=	2
 
 .include <bsd.port.pre.mk>
 

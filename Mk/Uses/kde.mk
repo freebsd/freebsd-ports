@@ -79,14 +79,14 @@ KDE_PLASMA_VERSION?=		5.24.6
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
-KDE_FRAMEWORKS_VERSION?=	5.96.0
+KDE_FRAMEWORKS_VERSION?=	5.97.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	22.04.3
-KDE_APPLICATIONS_SHLIB_VER?=	5.20.3
+KDE_APPLICATIONS_VERSION?=	22.08.0
+KDE_APPLICATIONS_SHLIB_VER?=	5.21.0
 # G as in KDE Gear, and as in "don't make the variable name longer than required"
-KDE_APPLICATIONS_SHLIB_G_VER?=	22.04.3
+KDE_APPLICATIONS_SHLIB_G_VER?=	22.8.0
 KDE_APPLICATIONS_BRANCH?=	stable
 
 # Extended KDE universe applications.
@@ -709,7 +709,7 @@ kde-kdav_PORT=			net/kf5-kdav
 kde-kdav_LIB=			libKF5DAV.so
 
 kde-kdepim-addons_PORT=	deskutils/kdepim-addons
-kde-kdepim-addons_PATH=	${KDE_PREFIX}/lib/contacteditor/editorpageplugins/cryptopageplugin.so
+kde-kdepim-addons_PATH=	${QT_PLUGINDIR}/pim5/contacteditor/editorpageplugins/cryptopageplugin.so
 
 kde-kdepim-runtime5_PORT=	deskutils/kdepim-runtime
 kde-kdepim-runtime5_PATH=	${KDE_PREFIX}/bin/gidmigrator

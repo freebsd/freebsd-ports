@@ -1,6 +1,7 @@
 bin/an-fitstopnm
 bin/an-pnmtofits
 bin/astrometry-engine
+bin/augment-xylist
 bin/build-astrometry-index
 bin/degtohms
 bin/downsample-fits
@@ -27,6 +28,7 @@ bin/modhead
 bin/new-wcs
 bin/pad-file
 bin/plot-constellations
+bin/plotann.py
 bin/plotquad
 bin/plotxy
 bin/query-starkd
@@ -197,7 +199,9 @@ lib/libqfits.a
 %%PYTHON_LIBDIR%%/astrometry/libkd/spherematch.py
 %%PYTHON_LIBDIR%%/astrometry/libkd/spherematch_c%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_LIBDIR%%/astrometry/net/client/client.py
+%%PYTHON_LIBDIR%%/astrometry/plot/__init__.py
 %%PYTHON_LIBDIR%%/astrometry/plot/_plotstuff_c%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_LIBDIR%%/astrometry/plot/plotann.py
 %%PYTHON_LIBDIR%%/astrometry/plot/plotstuff.py
 %%PYTHON_LIBDIR%%/astrometry/plot/plotstuff_c.py
 %%PYTHON_LIBDIR%%/astrometry/sdss/__init__.py
@@ -220,6 +224,7 @@ lib/libqfits.a
 %%PYTHON_LIBDIR%%/astrometry/solver/__init__.py
 %%PYTHON_LIBDIR%%/astrometry/util/EXIF.py
 %%PYTHON_LIBDIR%%/astrometry/util/__init__.py
+%%PYTHON_LIBDIR%%/astrometry/util/_util%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_LIBDIR%%/astrometry/util/addpath.py
 %%PYTHON_LIBDIR%%/astrometry/util/file.py
 %%PYTHON_LIBDIR%%/astrometry/util/filetype.py

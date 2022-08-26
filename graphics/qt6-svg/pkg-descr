@@ -1,0 +1,8 @@
+Qt is a cross-platform application and UI framework for developers
+using C++ or QML, a CSS/JavaScript-like language.
+
+Classes for displaying the contents of SVG files. Supports a subset of the
+SVG 1.2 Tiny standard. A separate library of Qt SVG Widgets C++ Classes provides
+support for rendering SVG files in a widget UI.
+
+WWW: http://qt-project.org

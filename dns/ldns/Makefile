@@ -1,5 +1,5 @@
 PORTNAME=	ldns
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.3
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/ldns/ \
 		LOCAL/ehaupt
@@ -32,7 +32,7 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 HTMLDOCS=		doc/html/*
 
 OPTIONS_DEFINE+=	DANETAUSAGE GOST RRTYPEAMTRELAY RRTYPEAVC RRTYPENINFO \
-			RRTYPERKEY RRTYPETA RRTYPESVCBHTTPS
+			RRTYPERKEY RRTYPETA
 
 DANETAUSAGE_DESC=	Enable ta usage, requires openssl >= 1.1.0
 GOST_DESC=		GOST signatures enabled, requires openssl >= 1.0.0
@@ -41,7 +41,6 @@ RRTYPERKEY_DESC=	Enable draft RR type rkey.
 RRTYPETA_DESC=		Enable draft RR type ta.
 RRTYPEAVC_DESC=		Enable draft RR type avc.
 RRTYPEAMTRELAY_DESC=	Enable draft RR type amtrelay.
-RRTYPESVCBHTTPS_DESC= 	Enable SVCB and HTTPS draft RR types.
 
 OPTIONS_SUB=	yes
 
@@ -53,7 +52,6 @@ RRTYPERKEY_CONFIGURE_ENABLE=		rrtype-rkey
 RRTYPETA_CONFIGURE_ENABLE=		rrtype-ta
 RRTYPEAVC_CONFIGURE_ENABLE=		rrtype-avc
 RRTYPEAMTRELAY_CONFIGURE_ENABLE=	rrtype-amtrelay
-RRTYPESVCBHTTPS_CONFIGURE_ENABLE=	rrtype-svcb-https
 EXAMPLES_CONFIGURE_WITH=		examples
 DRILL_CONFIGURE_WITH=			drill
 DRILL_INSTALL_TARGET=			install-drill
@@ -138,5 +136,11 @@ post-install:
 .endif
 
 .endif # BUILD_PYLDNS || BUILD_P5PERL
+
+.if (defined(BUILD_PYLDNS))
+post-install:
+# file /usr/local/lib/python3.9/site-packages/_ldns.so.3.5.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages/_ldns.so.3.5.0
+.endif # BUILD_PYLDNS
 
 .include <bsd.port.post.mk>

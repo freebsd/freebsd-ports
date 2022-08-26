@@ -1,5 +1,5 @@
 bin/imhex
-lib/libimhex.so.1.20.0
+lib/libimhex.so.1.21.2
 share/applications/imhex.desktop
 %%DATADIR%%/constants/_schema.json
 %%DATADIR%%/constants/crc16.json
@@ -31,6 +31,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/encodings/jis_x_0211.tbl
 %%DATADIR%%/encodings/jis_x_0213.tbl
 %%DATADIR%%/encodings/macintosh.tbl
+%%DATADIR%%/encodings/pokegen1_en.tbl
 %%DATADIR%%/encodings/shiftjis.tbl
 %%DATADIR%%/encodings/thai.tbl
 %%DATADIR%%/encodings/turkish_iso.tbl
@@ -40,6 +41,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/includes/cstdint.pat
 %%DATADIR%%/includes/std/bit.pat
 %%DATADIR%%/includes/std/cint.pat
+%%DATADIR%%/includes/std/core.pat
 %%DATADIR%%/includes/std/ctype.pat
 %%DATADIR%%/includes/std/file.pat
 %%DATADIR%%/includes/std/fxpt.pat
@@ -60,6 +62,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/includes/type/ip.pat
 %%DATADIR%%/includes/type/leb128.pat
 %%DATADIR%%/includes/type/mac.pat
+%%DATADIR%%/includes/type/path.pat
 %%DATADIR%%/includes/type/time.pat
 %%DATADIR%%/magic/nintendo_switch_magic
 %%DATADIR%%/magic/portable_executable_magic
@@ -69,6 +72,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/bmp.hexpat
 %%DATADIR%%/patterns/dds.hexpat
 %%DATADIR%%/patterns/elf.hexpat
+%%DATADIR%%/patterns/fs.hexpat
 %%DATADIR%%/patterns/ico.hexpat
 %%DATADIR%%/patterns/intel_hex.hexpat
 %%DATADIR%%/patterns/ip.hexpat

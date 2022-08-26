@@ -1,2 +1,4 @@
+bin/textile
+%%PERL5_MAN1%%/textile.1.gz
 %%PERL5_MAN3%%/Text::Textile.3.gz
 %%SITE_PERL%%/Text/Textile.pm

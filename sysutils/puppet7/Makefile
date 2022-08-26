@@ -1,6 +1,8 @@
 PORTNAME=	puppet
 PORTVERSION=	7.18.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
+MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	7
 
 MAINTAINER=	puppet@FreeBSD.org
@@ -16,6 +18,7 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-locale>=2.1:devel/rubygem-locale \
 		rubygem-multi_json>=1.10:devel/rubygem-multi_json \
 		rubygem-puppet-resource_api>=1.5:devel/rubygem-puppet-resource_api \
+		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas \
 		rubygem-scanf>=1:devel/rubygem-scanf \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 
@@ -49,6 +52,23 @@ RFACTER_RUN_DEPENDS=	rubygem-facter>=4.0:sysutils/rubygem-facter
 
 CFACTER_BUILD_DEPENDS=	facter>=3.0:sysutils/facter
 CFACTER_RUN_DEPENDS=	facter>=3.0:sysutils/facter
+
+# Get versions from
+# https://github.com/puppetlabs/puppet-agent/tree/main/configs/components
+FORGE_MODULES=	augeas_core=1.2.0 \
+		cron_core=1.0.5 \
+		host_core=1.0.3 \
+		mount_core=1.0.4 \
+		scheduled_task=1.0.0 \
+		selinux_core=1.1.0 \
+		sshkeys_core=2.2.0 \
+		yumrepo_core=1.0.7 \
+		zfs_core=1.2.0 \
+		zone_core=1.0.3
+
+.for module in ${FORGE_MODULES}
+DISTFILES+=	puppetlabs-${module:C/=.*//}-${module:C/.*=//}.tar.gz:forge
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppetlabs/puppet|${ETCDIR}|" \
@@ -90,6 +110,10 @@ do-install:
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/manifests
 	${MKDIR} ${STAGEDIR}${ETCDIR}/modules
+	${MKDIR} ${STAGEDIR}${ETCDIR}/vendor_modules
+.for module in ${FORGE_MODULES}
+	(cd ${WRKDIR}/puppetlabs-${module:C/=.*//}-${module:C/.*=//} && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/vendor_modules/${module:C/=.*//})
+.endfor
 	${MKDIR} ${STAGEDIR}/var/puppet
 	${SETENV} LC_ALL=C.UTF-8 ${RUBY} -I ${STAGEDIR}/${RUBY_SITELIBDIR} ${STAGEDIR}${PREFIX}/bin/puppet agent --genconfig \
 		--confdir=${ETCDIR} \

@@ -1,0 +1,12 @@
+An implementation of a simulated annealing sampler.
+
+A simulated annealing sampler can be used for approximate Boltzmann sampling or
+heuristic optimization. This implementation approaches the equilibrium
+distribution by performing updates at a sequence of increasing beta values,
+beta_schedule, terminating at the target beta. Each spin is updated once in a
+fixed order per point in the beta_schedule according to a Metropolis- Hastings
+update. When beta is large the target distribution concentrates, at equilibrium,
+over ground states of the model. Samples are guaranteed to match the equilibrium
+for long 'smooth' beta schedules.
+
+WWW: https://github.com/dwavesystems/dwave-neal

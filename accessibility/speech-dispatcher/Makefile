@@ -1,6 +1,5 @@
 PORTNAME=	speech-dispatcher
-DISTVERSION=	0.11.1
-PORTREVISION=	1
+DISTVERSION=	0.11.2
 CATEGORIES?=	accessibility audio
 MASTER_SITES=	https://github.com/brailcom/speechd/releases/download/${PORTVERSION}/
 
@@ -36,7 +35,7 @@ ETCFILES=	clients/emacs.conf modules/cicero.conf modules/dtk-generic.conf \
 		modules/espeak-ng-mbrola-generic.conf modules/espeak-ng-mbrola.conf \
 		modules/espeak-ng.conf modules/espeak.conf modules/festival.conf \
 		modules/flite.conf modules/llia_phon-generic.conf modules/mary-generic.conf \
-		modules/swift-generic.conf speechd.conf
+		modules/mimic3-generic.conf modules/swift-generic.conf speechd.conf
 
 PORTDOCS=	ANNOUNCE AUTHORS FAQ NEWS README TODO
 

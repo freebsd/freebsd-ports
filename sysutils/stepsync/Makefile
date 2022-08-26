@@ -5,7 +5,7 @@ CATEGORIES=	sysutils gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	StepSync-${PORTVERSION}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File and folder synchronization tool
 
 LICENSE=	GPLv2+

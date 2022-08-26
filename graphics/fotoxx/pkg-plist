@@ -2,6 +2,7 @@ bin/fotoxx
 share/applications/fotoxx.desktop
 %%DATADIR%%/data/KB_shortcuts_D
 %%DATADIR%%/data/README
+%%DATADIR%%/data/capskeys
 %%DATADIR%%/data/colorwheel.jpg
 %%DATADIR%%/data/custom_kernel/blur5
 %%DATADIR%%/data/custom_kernel/brighten3
@@ -82,6 +83,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/data/widgets.css
 %%DATADIR%%/icons/fotoxx.png
 %%DATADIR%%/images/HDF-paint.jpg
+%%DATADIR%%/images/HDF.jpg
 %%DATADIR%%/images/HDR-adjust.jpg
 %%DATADIR%%/images/HDR.jpg
 %%DATADIR%%/images/KB-shortcuts.jpg
@@ -98,7 +100,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/album-mass-update.jpg
 %%DATADIR%%/images/album-replace-file.jpg
 %%DATADIR%%/images/albums-popmenu.jpg
-%%DATADIR%%/images/albums.png
 %%DATADIR%%/images/alien-colors1.jpg
 %%DATADIR%%/images/alien-colors2.jpg
 %%DATADIR%%/images/all-folders.jpg
@@ -110,6 +111,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/batch-delete-trash.jpg
 %%DATADIR%%/images/batch-geotags.jpg
 %%DATADIR%%/images/batch-move-meta.jpg
+%%DATADIR%%/images/batch-overlay.jpg
 %%DATADIR%%/images/batch-photo-date1.jpg
 %%DATADIR%%/images/batch-photo-date2.jpg
 %%DATADIR%%/images/batch-raw.jpg
@@ -130,7 +132,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/broken.png
 %%DATADIR%%/images/burn-DVD.jpg
 %%DATADIR%%/images/calibrate-printer.jpg
-%%DATADIR%%/images/cancel.png
 %%DATADIR%%/images/cartoon.jpg
 %%DATADIR%%/images/choose-captions.jpg
 %%DATADIR%%/images/chromatic1.jpg
@@ -141,8 +142,8 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/color-depth2.jpg
 %%DATADIR%%/images/color-mode.jpg
 %%DATADIR%%/images/color-mode2.jpg
-%%DATADIR%%/images/color.png
 %%DATADIR%%/images/comb.png
+%%DATADIR%%/images/convert-adobe.jpg
 %%DATADIR%%/images/copy-complex.jpg
 %%DATADIR%%/images/copy-from-image.jpg
 %%DATADIR%%/images/copy-from-image2.jpg
@@ -155,7 +156,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/custom-kernel.jpg
 %%DATADIR%%/images/custom-widgets.jpg
 %%DATADIR%%/images/custom.png
-%%DATADIR%%/images/dead-pixels.jpg
 %%DATADIR%%/images/defog.jpg
 %%DATADIR%%/images/defog2.jpg
 %%DATADIR%%/images/delete-trash.jpg
@@ -176,7 +176,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/edit-dist.jpg
 %%DATADIR%%/images/edit-metadata.jpg
 %%DATADIR%%/images/edit-plugins.jpg
-%%DATADIR%%/images/edit-xxx.png
 %%DATADIR%%/images/edit.png
 %%DATADIR%%/images/effects.png
 %%DATADIR%%/images/emboss.jpg
@@ -185,8 +184,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/escher_spiralA.jpg
 %%DATADIR%%/images/export-file-list.jpg
 %%DATADIR%%/images/export-files.jpg
-%%DATADIR%%/images/file-save-as.jpg
-%%DATADIR%%/images/file-save.jpg
 %%DATADIR%%/images/file.png
 %%DATADIR%%/images/find-dups.jpg
 %%DATADIR%%/images/first-startup.jpg
@@ -206,7 +203,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/gallery.png
 %%DATADIR%%/images/global-retx.jpg
 %%DATADIR%%/images/global-retx2.jpg
-%%DATADIR%%/images/goto.png
 %%DATADIR%%/images/gradients.jpg
 %%DATADIR%%/images/gradients2.jpg
 %%DATADIR%%/images/greenball.png
@@ -222,7 +218,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/inside-out2.jpg
 %%DATADIR%%/images/interpolation.jpg
 %%DATADIR%%/images/jpeg-quality.jpg
-%%DATADIR%%/images/list-view.jpg
 %%DATADIR%%/images/local-retx.jpg
 %%DATADIR%%/images/local-retx2.jpg
 %%DATADIR%%/images/localcon.jpg
@@ -234,7 +229,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/manage-albums.jpg
 %%DATADIR%%/images/manage-tags.jpg
 %%DATADIR%%/images/map-click.jpg
-%%DATADIR%%/images/map-pixel-bias.jpg
 %%DATADIR%%/images/maps.png
 %%DATADIR%%/images/markup.jpg
 %%DATADIR%%/images/mashup.jpg
@@ -258,16 +252,8 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/mosaic1.jpg
 %%DATADIR%%/images/mosaic2.jpg
 %%DATADIR%%/images/netmap-locs.jpg
+%%DATADIR%%/images/number-keys.jpg
 %%DATADIR%%/images/outboard-programs.jpg
-%%DATADIR%%/images/overlayBC.png
-%%DATADIR%%/images/overlayBL.png
-%%DATADIR%%/images/overlayBR.png
-%%DATADIR%%/images/overlayCC.png
-%%DATADIR%%/images/overlayCL.png
-%%DATADIR%%/images/overlayCR.png
-%%DATADIR%%/images/overlayTC.png
-%%DATADIR%%/images/overlayTL.png
-%%DATADIR%%/images/overlayTR.png
 %%DATADIR%%/images/paint-edits.jpg
 %%DATADIR%%/images/paint-image.jpg
 %%DATADIR%%/images/paint-transp.jpg
@@ -282,7 +268,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/permissions.jpg
 %%DATADIR%%/images/perspective1.jpg
 %%DATADIR%%/images/perspective2.jpg
-%%DATADIR%%/images/phone-home.jpg
 %%DATADIR%%/images/plugins.jpg
 %%DATADIR%%/images/preferences.jpg
 %%DATADIR%%/images/prev-next.png
@@ -336,7 +321,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/stack-split.jpg
 %%DATADIR%%/images/stack-split2.jpg
 %%DATADIR%%/images/stretch.jpg
-%%DATADIR%%/images/sync.png
 %%DATADIR%%/images/texture.jpg
 %%DATADIR%%/images/texture2.jpg
 %%DATADIR%%/images/timeline-report.jpg
@@ -350,6 +334,8 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/ug-custom.png
 %%DATADIR%%/images/ug-edit.png
 %%DATADIR%%/images/ug-effects.png
+%%DATADIR%%/images/ug-file-save-as.jpg
+%%DATADIR%%/images/ug-file-save.jpg
 %%DATADIR%%/images/ug-file.png
 %%DATADIR%%/images/ug-gallery.png
 %%DATADIR%%/images/ug-help.png
@@ -357,7 +343,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/ug-meta.png
 %%DATADIR%%/images/ug-refine.png
 %%DATADIR%%/images/ug-repair.png
-%%DATADIR%%/images/ug-save.png
 %%DATADIR%%/images/ug-select.png
 %%DATADIR%%/images/ug-tools.png
 %%DATADIR%%/images/ug-undo.png
@@ -374,7 +359,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/unwarp-closeup2.jpg
 %%DATADIR%%/images/upright.jpg
 %%DATADIR%%/images/userguide.jpg
-%%DATADIR%%/images/versions.jpg
 %%DATADIR%%/images/view-metadata.jpg
 %%DATADIR%%/images/vignette.jpg
 %%DATADIR%%/images/vignette2.jpg

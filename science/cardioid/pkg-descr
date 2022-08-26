@@ -1,0 +1,6 @@
+Cardioid is a cardiac multiscale simulation suite spanning from subcellular
+mechanisms up to simulations of organ-level clinical phenomena. The suite
+contains tools for simulating cardiac electrophysiology, cardiac mechanics,
+torso-ECGs, cardiac meshing and fiber generation tools.
+
+WWW: https://github.com/LLNL/cardioid

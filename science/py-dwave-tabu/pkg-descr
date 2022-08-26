@@ -1,0 +1,5 @@
+dwave-tabu is a C/C++ implementation of the MST2 multistart tabu search
+algorithm for quadratic unconstrained binary optimization (QUBO) problems with a
+dimod sampler Python interface.
+
+WWW: https://github.com/dwavesystems/dwave-tabu

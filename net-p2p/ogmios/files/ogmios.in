@@ -1,0 +1,185 @@
+#!/bin/sh
+
+# PROVIDE: ogmios
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# ogmios_enable:      Set to YES to enable ogmios.
+#                           Default: "NO"
+#
+# ogmios_home:        An absolute path to the daemon home directory.
+#                           The directory will be created if not exists.
+#                           Default: "/var/db/ogmios"
+#
+# ogmios_port:        Port to listen for connections on.
+#                           Default: "1337"
+#
+#
+# ogmios_host:        Host address to bind to.
+#                           Default: "0.0.0.0"
+#
+#
+# ogmios_cnode_socket:      An absolute path to the cardano-node socket file.
+#                           Default: "/var/db/cardano_node/jail/socket/cardano-node.sock"
+#
+# ogmios_cnode_config:      An absolute path to the cardano-node config.json file.
+#                           Default: "/var/db/cardano_node/mainnet-configs/config.json"
+#
+# ogmios_flags:       Any additional command line flags to pass to ogmios.
+#                           Default: ""
+#
+
+. /etc/rc.subr
+
+name=ogmios
+desc="Ogmios daemon"
+rcvar=ogmios_enable
+command=%%PREFIX%%/bin/ogmios
+
+start_cmd="${name}_start"
+start_precmd="${name}_prestart"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+
+extra_commands="status"
+
+load_rc_config $name
+: ${ogmios_enable:=NO}
+: ${ogmios_home:="/var/db/ogmios"}
+: ${ogmios_host:="0.0.0.0"}
+: ${ogmios_port:="1337"}
+: ${ogmios_cnode_socket:="/var/db/cardano_node/jail/socket/cardano-node.sock"}
+: ${ogmios_cnode_config:="/var/db/cardano_node/mainnet-configs/config.json"}
+: ${ogmios_flags:=""}
+
+ogmios_jail="${ogmios_home}/jail"
+jail_config="/config_dir/`basename ${ogmios_cnode_config}`"
+jail_socket="/socket/`basename ${ogmios_cnode_socket}`"
+jail_cmd="jail -c name=${name}_jail path=${ogmios_jail} exec.jail_user=cardano exec.system_jail_user ip4=inherit ip6=inherit host=inherit"
+
+pidfile="/var/run/ogmios.pid"
+flags=" --host ${ogmios_host} \
+        --port ${ogmios_port} \
+        --node-socket ${jail_socket} \
+        --node-config ${jail_config} \
+        ${ogmios_flags}"
+
+sanity_check()
+{
+    if [ ! -f "${ogmios_home}/${ogmios_cnode_config}" -a ! -f "/${ogmios_cnode_config}" ]
+    then
+        echo "Invalid value for ogmios_cnode_config: missing file ${ogmios_cnode_config}"
+        echo "You might want to add correct path to cardano-node config file"
+        exit 1
+    fi
+    return 0
+}
+
+_jail_dirs="/bin /etc /lib /libexec"
+_jail_mount_points="/config_dir /socket"
+
+create_jail()
+{
+    destroy_jail
+
+    for d in ${_jail_dirs} ${_jail_mount_points}
+    do
+        mkdir -p "${ogmios_jail}${d}"
+    done
+
+    cp /etc/resolv.conf "${ogmios_jail}/etc/"
+    cp /etc/services "${ogmios_jail}/etc/"
+
+    cp "$command" "${ogmios_jail}/bin/"
+    ldd "$command" | cut -s -d " " -f 3 | grep -E '^(/lib|/usr)' | sort -u | xargs -I % cp % "${ogmios_jail}/lib/"
+#    TODO: we have to set suid because of the same chmod call in the cardano_node rc script
+    chmod +s "${ogmios_jail}/bin/ogmios"
+    cp /libexec/ld-elf.so.1 "${ogmios_jail}/libexec"
+
+    mount_nullfs -o ro `dirname ${ogmios_cnode_config}` "${ogmios_jail}/config_dir"
+    mount_nullfs `dirname ${ogmios_cnode_socket}` "${ogmios_jail}/socket"
+}
+
+destroy_jail()
+{
+    for d in ${_jail_mount_points}
+    do
+        if [ -d "${ogmios_jail}${d}" ]; then
+            umount -f "${ogmios_jail}${d}" 2> /dev/null
+        fi
+    done
+    for d in ${_jail_dirs}
+    do
+        rm -rf "${ogmios_jail}${d}"
+    done
+    for d in ${_jail_mount_points}
+    do
+        rmdir "${ogmios_jail}${d}" 2> /dev/null
+    done
+
+    rmdir "${ogmios_jail}" 2> /dev/null
+}
+
+ogmios_prestart()
+{
+    # Create Ogmios home directory, if not exists
+    if [ ! -d "${ogmios_home}" ]; then
+        mkdir -p "${ogmios_home}"
+    fi
+
+    sanity_check
+}
+
+ogmios_start()
+{
+    check_startmsgs && echo "Starting ${name}."
+
+
+    while ! nc -NU ${ogmios_cnode_socket} < /dev/null > /dev/null
+    do
+        echo "Waiting for cardano-node socket to appear in ${ogmios_cnode_socket}"
+        sleep 10s
+    done
+
+    create_jail
+    if [ "$?" != "0" ]
+    then
+        echo "Failed to start ${name}: jail creation error"
+        return 1
+    fi
+    cd $ogmios_home && /usr/sbin/daemon -p $pidfile -S -T ogmios \
+        ${jail_cmd} command=/bin/ogmios ${flags} 2>&1 > /dev/null
+}
+
+ogmios_stop()
+{
+    pid=$(check_pidfile "${pidfile}" jail)
+    if [ -z "${pid}" ]
+    then
+        echo "${name} is not running"
+        destroy_jail
+        return 1
+    else
+        echo "Stopping ${name}."
+        killall -j ${name}_jail -INT
+        wait_for_pids "$pid"
+        destroy_jail
+    fi
+}
+
+ogmios_status()
+{
+    pid=$(check_pidfile "${pidfile}" jail)
+    if [ -z "${pid}" ]
+    then
+        echo "${name} is not running"
+        return 1
+    else
+        echo ${name} is running as pid $pid
+    fi
+}
+
+
+run_rc_command "$1"

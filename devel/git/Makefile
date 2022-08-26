@@ -1,5 +1,5 @@
 PORTNAME=	git
-DISTVERSION=	2.37.1
+DISTVERSION=	2.37.2
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -10,7 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 
 # these patches are required for gitlab (gitaly)
 # without the patches repositories got broken
-PATCH_SITES=	https://gitlab.com/gitlab-org/gitaly/-/raw/master/_support/git-patches/v2.36.0.gl1/
+PATCH_SITES=	https://gitlab.com/gitlab-org/gitaly/-/raw/master/_support/git-patches/v2.37.1.gl1/
 PATCHFILES=	0001-refs-extract-packed_refs_delete_refs-to-allow-contro.patch \
 		0002-refs-allow-passing-flags-when-beginning-transactions.patch \
 		0003-refs-allow-skipping-the-reference-transaction-hook.patch \

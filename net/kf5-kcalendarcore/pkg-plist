@@ -6,6 +6,7 @@ include/KF5/KCalendarCore/KCalCore/CalFormat
 include/KF5/KCalendarCore/KCalCore/CalStorage
 include/KF5/KCalendarCore/KCalCore/Calendar
 include/KF5/KCalendarCore/KCalCore/CalendarPlugin
+include/KF5/KCalendarCore/KCalCore/CalendarPluginLoader
 include/KF5/KCalendarCore/KCalCore/Conference
 include/KF5/KCalendarCore/KCalCore/CustomProperties
 include/KF5/KCalendarCore/KCalCore/Duration
@@ -38,6 +39,7 @@ include/KF5/KCalendarCore/KCalendarCore/CalFormat
 include/KF5/KCalendarCore/KCalendarCore/CalStorage
 include/KF5/KCalendarCore/KCalendarCore/Calendar
 include/KF5/KCalendarCore/KCalendarCore/CalendarPlugin
+include/KF5/KCalendarCore/KCalendarCore/CalendarPluginLoader
 include/KF5/KCalendarCore/KCalendarCore/Conference
 include/KF5/KCalendarCore/KCalendarCore/CustomProperties
 include/KF5/KCalendarCore/KCalendarCore/Duration
@@ -67,6 +69,7 @@ include/KF5/KCalendarCore/kcalcore/attachment.h
 include/KF5/KCalendarCore/kcalcore/attendee.h
 include/KF5/KCalendarCore/kcalcore/calendar.h
 include/KF5/KCalendarCore/kcalcore/calendarplugin.h
+include/KF5/KCalendarCore/kcalcore/calendarpluginloader.h
 include/KF5/KCalendarCore/kcalcore/calfilter.h
 include/KF5/KCalendarCore/kcalcore/calformat.h
 include/KF5/KCalendarCore/kcalcore/calstorage.h
@@ -100,6 +103,7 @@ include/KF5/KCalendarCore/kcalendarcore/attachment.h
 include/KF5/KCalendarCore/kcalendarcore/attendee.h
 include/KF5/KCalendarCore/kcalendarcore/calendar.h
 include/KF5/KCalendarCore/kcalendarcore/calendarplugin.h
+include/KF5/KCalendarCore/kcalendarcore/calendarpluginloader.h
 include/KF5/KCalendarCore/kcalendarcore/calfilter.h
 include/KF5/KCalendarCore/kcalendarcore/calformat.h
 include/KF5/KCalendarCore/kcalendarcore/calstorage.h
@@ -135,9 +139,9 @@ lib/cmake/KF5CalendarCore/KF5CalendarCoreConfigVersion.cmake
 lib/cmake/KF5CalendarCore/KF5CalendarCoreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5CalendarCore/KF5CalendarCoreTargets.cmake
 lib/libKF5CalendarCore.so
-lib/libKF5CalendarCore.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5CalendarCore.so.5
-libdata/pkgconfig/KF5CalendarCore.pc
+lib/libKF5CalendarCore.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KCalendarCore.pri
+libdata/pkgconfig/KF5CalendarCore.pc
 share/qlogging-categories5/kcalendarcore.categories
 share/qlogging-categories5/kcalendarcore.renamecategories

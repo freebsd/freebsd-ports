@@ -124,6 +124,7 @@
     SUBDIR += gstreamer1-vaapi
     SUBDIR += gstreamer1-validate
     SUBDIR += gstreamermm
+    SUBDIR += gtk-pipe-viewer
     SUBDIR += gtk-youtube-viewer
     SUBDIR += handbrake
     SUBDIR += haruna
@@ -294,6 +295,7 @@
     SUBDIR += phonon-vlc
     SUBDIR += photofilmstrip
     SUBDIR += php-pHash
+    SUBDIR += pipe-viewer
     SUBDIR += pipewire
     SUBDIR += pitivi
     SUBDIR += playerctl
@@ -328,9 +330,12 @@
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer
     SUBDIR += qmmp-plugin-pack-qt5
+    SUBDIR += qmmp-plugin-pack-qt6
     SUBDIR += qmmp-qt5
+    SUBDIR += qmmp-qt6
     SUBDIR += qpwgraph
     SUBDIR += qt5-multimedia
+    SUBDIR += qt6-multimedia
     SUBDIR += quodlibet
     SUBDIR += qwinff
     SUBDIR += rage

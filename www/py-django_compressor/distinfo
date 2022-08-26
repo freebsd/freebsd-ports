@@ -1,3 +1,3 @@
-TIMESTAMP = 1651960397
-SHA256 (django_compressor-4.0.tar.gz) = 1db91b6d04293636a68bd1328dc7bb90d636b0295f67b1cc6d4fa102b9fd25f6
-SIZE (django_compressor-4.0.tar.gz) = 123183
+TIMESTAMP = 1660286144
+SHA256 (django_compressor-4.1.tar.gz) = 8ece621d2a98f6c6635480cb8b3701db890a99f793f95ca20cb00abc194d331d
+SIZE (django_compressor-4.1.tar.gz) = 123694

@@ -18,10 +18,8 @@ include/KF5/PimCommon/PimCommon/EmailValidator
 include/KF5/PimCommon/PimCommon/GenericPlugin
 include/KF5/PimCommon/PimCommon/GenericPluginManager
 include/KF5/PimCommon/PimCommon/KActionMenuChangeCase
-include/KF5/PimCommon/PimCommon/KPimPrintPreviewDialog
 include/KF5/PimCommon/PimCommon/LineEditWithAutoCorrection
 include/KF5/PimCommon/PimCommon/LineEditWithCompleterNg
-include/KF5/PimCommon/PimCommon/LogActivitiesManager
 include/KF5/PimCommon/PimCommon/MigrateApplicationFiles
 include/KF5/PimCommon/PimCommon/MigrateFileInfo
 include/KF5/PimCommon/PimCommon/NetworkManager
@@ -58,10 +56,8 @@ include/KF5/PimCommon/pimcommon/genericplugin.h
 include/KF5/PimCommon/pimcommon/genericpluginmanager.h
 include/KF5/PimCommon/pimcommon/imapresourcesettings.h
 include/KF5/PimCommon/pimcommon/kactionmenuchangecase.h
-include/KF5/PimCommon/pimcommon/kpimprintpreviewdialog.h
 include/KF5/PimCommon/pimcommon/lineeditwithautocorrection.h
 include/KF5/PimCommon/pimcommon/lineeditwithcompleterng.h
-include/KF5/PimCommon/pimcommon/logactivitiesmanager.h
 include/KF5/PimCommon/pimcommon/migrateapplicationfiles.h
 include/KF5/PimCommon/pimcommon/migratefileinfo.h
 include/KF5/PimCommon/pimcommon/networkmanager.h

@@ -1,0 +1,16 @@
+Dufs is a distinctive utility file server that supports static
+serving, uploading, searching, accessing control, webdav...
+
+Features:
+
+ o Serve static files
+ o Download folder as zip file
+ o Upload files and folders (Drag & Drop)
+ o Search files
+ o Partial responses (Parallel/Resume download)
+ o Path level access control
+ o Support https
+ o Support webdav
+ o Easy to use with curl
+
+WWW: https://github.com/sigoden/dufs

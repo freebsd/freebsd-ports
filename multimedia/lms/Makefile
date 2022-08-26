@@ -1,6 +1,6 @@
 PORTNAME=	lms
 DISTVERSION=	3.28.0
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	https://github.com/epoupon/lms/archive/refs/tags/v${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 CATEGORIES=	multimedia
 

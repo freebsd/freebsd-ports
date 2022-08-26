@@ -2,7 +2,7 @@ PORTNAME=	jpm
 DISTVERSION=	0.0.2
 CATEGORIES=	lang
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Janet Project Manager tool
 
 LICENSE=	MIT

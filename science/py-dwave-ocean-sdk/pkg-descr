@@ -1,0 +1,4 @@
+dwave-ocean-sdk is a meta-package that installs Ocean, a D-Wave's suite of
+tools for solving hard problems with quantum computers.
+
+WWW: https://docs.ocean.dwavesys.com/en/stable/

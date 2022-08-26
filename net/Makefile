@@ -317,6 +317,7 @@
     SUBDIR += kidentitymanagement
     SUBDIR += kimap
     SUBDIR += kio-gdrive
+    SUBDIR += kio-zeroconf
     SUBDIR += kippo
     SUBDIR += kitinerary
     SUBDIR += kldap
@@ -474,6 +475,7 @@
     SUBDIR += mrouted
     SUBDIR += mrtparse
     SUBDIR += msend
+    SUBDIR += msoak
     SUBDIR += mtr
     SUBDIR += mtr-nox11
     SUBDIR += multicat
@@ -1167,6 +1169,7 @@
     SUBDIR += qoauth-qt5
     SUBDIR += qt5-network
     SUBDIR += qt5-networkauth
+    SUBDIR += qt6-networkauth
     SUBDIR += quagga
     SUBDIR += quiche
     SUBDIR += quiterss
@@ -1603,7 +1606,6 @@
     SUBDIR += yggdrasil
     SUBDIR += yptransitd
     SUBDIR += zebra-server
-    SUBDIR += zeroconf-ioslave
     SUBDIR += zerotier
     SUBDIR += zillion
     SUBDIR += zmap

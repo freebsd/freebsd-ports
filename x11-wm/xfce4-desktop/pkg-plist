@@ -15,6 +15,7 @@ share/icons/hicolor/scalable/apps/org.xfce.xfdesktop.svg
 %%NLS%%share/locale/am/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/az/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/be@tarask/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfdesktop.mo

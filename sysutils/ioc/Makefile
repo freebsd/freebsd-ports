@@ -1,5 +1,6 @@
 PORTNAME=	ioc
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	stefan@gronke.net

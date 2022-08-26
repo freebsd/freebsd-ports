@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: %%PORTNAME%%
 # REQUIRE: NETWORKING SERVERS
 # KEYWORD: shutdown
@@ -9,10 +11,6 @@
 #
 # %%PORTNAME%%_enable (bool):         Set it to YES to enable keycloak on startup.
 #                                 Default: NO
-# %%PORTNAME%%_host_config (string):  Choose the host config if running in domain mode (host-master, host-slave).
-#                                 Default: host-master
-# %%PORTNAME%%_mode (string):         Choose the desired operating mode (standalone, standalone-ha, domain).
-#                                 Default: standalone
 # %%PORTNAME%%_user (string):         User account to run with.
 #                                 Default: www
 # %%PORTNAME%%_flags (string):        Additional flags for the startup script.
@@ -27,8 +25,6 @@ desc="Identity and access management solution"
 load_rc_config $name
 
 : ${%%PORTNAME%%_enable:=NO}
-: ${%%PORTNAME%%_host_config:="host-master"}
-: ${%%PORTNAME%%_mode:=standalone}
 : ${%%PORTNAME%%_user:=%%USER%%}
 : ${%%PORTNAME%%_group:=%%GROUP%%}
 : ${%%PORTNAME%%_flags:=""}
@@ -42,18 +38,6 @@ stop_cmd="%%PORTNAME%%_stop"
 
 %%PORTNAME%%_start()
 {
-        local %%PORTNAME%%_startscript
-
-        if [ ${%%PORTNAME%%_mode} = "domain" ]; then
-		%%PORTNAME%%_flags="--host-config=${%%PORTNAME%%_host_config} ${%%PORTNAME%%_flags}"
-                %%PORTNAME%%_startscript=domain.sh
-	elif [ ${%%PORTNAME%%_mode} = "standalone-ha" ]; then
-		%%PORTNAME%%_flags="--server-config=standalone-ha.xml ${%%PORTNAME%%_flags}"
-                %%PORTNAME%%_startscript=standalone.sh
-	else
-                %%PORTNAME%%_startscript=standalone.sh
-        fi
-
 	if [ ! -d "%%LOG_DIR%%" ]; then
 		install -d -o ${%%PORTNAME%%_user} %%LOG_DIR%%
 	fi
@@ -62,12 +46,10 @@ stop_cmd="%%PORTNAME%%_stop"
 	fi
 
 	chown -R ${%%PORTNAME%%_user} %%LOG_DIR%%
-	chown -R ${%%PORTNAME%%_user} %%JAVASHAREDIR%%/%%PORTNAME%%/domain
-	chown -R ${%%PORTNAME%%_user} %%JAVASHAREDIR%%/%%PORTNAME%%/standalone
 
 	echo "Starting %%PORTNAME%%."
         ${command} ${command_args} \
-                %%JAVASHAREDIR%%/%%PORTNAME%%/bin/${%%PORTNAME%%_startscript} \
+                %%JAVASHAREDIR%%/%%PORTNAME%%/bin/kc.sh start \
                 ${%%PORTNAME%%_flags}
 }
 
@@ -83,8 +65,7 @@ stop_cmd="%%PORTNAME%%_stop"
         kill -TERM ${pid_daemon}
     fi
 
-
-    pid_child=$(pgrep -U ${%%PORTNAME%%_user} -f %%JAVASHAREDIR%%/%%PORTNAME%%/jboss-modules.jar)
+    pid_child=$(pgrep -U ${%%PORTNAME%%_user} -f %%JAVASHAREDIR%%/%%PORTNAME%%/)
     if [ ! -z "${pid_child}" ]; then
         kill -TERM ${pid_child}
     fi

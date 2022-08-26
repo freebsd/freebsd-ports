@@ -17,6 +17,9 @@
     SUBDIR += btcheck
     SUBDIR += btpd
     SUBDIR += c-lightning
+    SUBDIR += cardano-db-sync
+    SUBDIR += cardano-node
+    SUBDIR += cncli
     SUBDIR += cpuminer
     SUBDIR += createtorrent
     SUBDIR += ctcs
@@ -63,8 +66,10 @@
     SUBDIR += namecoin-daemon
     SUBDIR += namecoin-utils
     SUBDIR += ncdc
+    SUBDIR += ogmios
     SUBDIR += opendchub
     SUBDIR += openethereum
+    SUBDIR += oura
     SUBDIR += p5-Net-BitTorrent
     SUBDIR += p5-Net-BitTorrent-File
     SUBDIR += p5-Net-BitTorrent-PeerPacket

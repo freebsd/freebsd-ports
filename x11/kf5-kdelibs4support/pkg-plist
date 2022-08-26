@@ -1008,6 +1008,7 @@ lib/libexec/kf5/fileshareset
 %%QT_PLUGINDIR%%/kf5/kded/networkstatus.so
 %%QT_PLUGINDIR%%/kf5/kio/metainfo.so
 man/ca/man1/kf5-config.1.gz
+man/ca@valencia/man1/kf5-config.1.gz
 man/de/man1/kf5-config.1.gz
 man/es/man1/kf5-config.1.gz
 man/fr/man1/kf5-config.1.gz
@@ -1028,6 +1029,10 @@ share/doc/HTML/ca/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/ca/kcontrol5/kcm_ssl/module.png
 share/doc/HTML/ca/kdebugdialog5/index.cache.bz2
 share/doc/HTML/ca/kdebugdialog5/index.docbook
+share/doc/HTML/ca@valencia/kcontrol5/kcm_ssl/index.cache.bz2
+share/doc/HTML/ca@valencia/kcontrol5/kcm_ssl/index.docbook
+share/doc/HTML/ca@valencia/kdebugdialog5/index.cache.bz2
+share/doc/HTML/ca@valencia/kdebugdialog5/index.docbook
 share/doc/HTML/de/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/de/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/de/kdebugdialog5/index.cache.bz2

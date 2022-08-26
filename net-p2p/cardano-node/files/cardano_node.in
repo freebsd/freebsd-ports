@@ -1,0 +1,309 @@
+#!/bin/sh
+
+# PROVIDE: cardano_node
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# -----------------------------------------------------------------------------
+#
+# This script supports running multiple instances of the daemon.
+# To run additional instances make a symlink to script under different name:
+#
+# % ln -s %%PREFIX%%/etc/rc.d/cardano_node %%PREFIX%%/etc/rc.d/SOMENAME
+#
+# and define corresponding SOMENAME_* variables in /etc/rc.conf
+# For example, if you linked the script to cardano_node_testnet, then each
+# variable listed below should read as cardano_node_testnet_enable, etc.
+#
+# -----------------------------------------------------------------------------
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# cardano_node_enable:      Set to YES to enable cardano-node.
+#                           Default: "NO"
+#
+# cardano_node_home:        An absolute path to the daemon home directory.
+#                           The directory will be created if not exists.
+#                           Default: "/var/db/cardano_node"
+#
+# cardano_node_net:         A network name to connect to.
+#                           Default: "mainnet"
+#
+# cardano_node_port:        Port to listen for connections on.
+#                           Default: "6000"
+#
+# Advanced settings that usually don't need to be changed for simple usage cases:
+#
+# cardano_node_host:        Host address to bind to.
+#                           Default: "0.0.0.0"
+#
+#
+# cardano_node_socket:      An absolute path to the daemon socket file.
+#                           Default: "${cardano_node_home}/cardano-node.sock"
+#
+# cardano_node_db:          An absolute path to the database directory.
+#                           Default: "${cardano_node_home}/${cardano_node_net}-db"
+#
+# cardano_node_topology:    An absolute or a relative to ${cardano_node_home} path
+#                           to the topology JSON file.
+#                           Default: "${cardano_node_net}-configs/topology.json"
+#
+# cardano_node_config:      An absolute or a relative to ${cardano_node_home} path
+#                           to the cardano-node config.json file.
+#                           Default: "${cardano_node_net}-configs/config.json"
+#
+# cardano_node_rts_flags:   GHC runtime flags to be passed between "+RTS" and "-RTS".
+#                           See https://downloads.haskell.org/ghc/latest/docs/html/users_guide/runtime_control.html
+#                           for the meaning of these flags.
+#                           Default: "-N -A64m -n4m -F1.2 -qg1"
+#
+# cardano_node_flags:       Any additional command line flags to pass to cardano-node.
+#                           Default: ""
+#
+
+. /etc/rc.subr
+
+# The following code snippet was taken from security/openvpn/files/openvpn.in rc script.
+
+# service(8) does not create an authentic environment, try to guess,
+# and as of 10.3-RELEASE-p0, it will not find the indented name=
+# assignments below. So give it a default.
+# Trailing semicolon also for service(8)'s benefit:
+name="$file" ;
+
+case "$0" in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name="$_file"
+	;;
+*/service)
+	# do not use this as $0
+	;;
+*)
+	name="$0"
+	;;
+esac
+
+# default name to "cardano_node" if guessing failed
+# Trailing semicolon also for service(8)'s benefit:
+name="${name:-cardano_node}" ;
+name="${name##*/}"
+
+desc="Cardano Node daemon"
+rcvar="${name}_enable"
+command=%%PREFIX%%/bin/cardano-node
+
+cardano_deployment_url="https://raw.githubusercontent.com/cardano-bsd-alliance/freebsd-ports-cardano-artifacts/master/cardano-node"
+cardano_config_files="config byron-genesis shelley-genesis alonzo-genesis topology submit-api-config"
+cardano_networks="mainnet testnet"
+
+start_cmd="cardano_node_start"
+start_precmd="cardano_node_prestart"
+stop_cmd="cardano_node_stop"
+status_cmd="cardano_node_status"
+reload_cmd="cardano_node_reload"
+fetch_cmd="cardano_node_fetch"
+
+extra_commands="status fetch reload"
+
+load_rc_config $name
+eval ": \${${name}_enable:=NO}"
+eval ": \${${name}_home:=\"/var/db/cardano_node\"}"
+eval ": \${${name}_net:=\"mainnet\"}"
+eval ": \${${name}_host:=\"0.0.0.0\"}"
+eval ": \${${name}_port:=\"6000\"}"
+eval ": \${${name}_socket:=\"\${${name}_home}/cardano-node.sock\"}"
+eval ": \${${name}_db:=\"\${${name}_home}/\${${name}_net}-db\"}"
+eval ": \${${name}_topology:=\"\${${name}_net}-configs/topology.json\"}"
+eval ": \${${name}_config:=\"\${${name}_net}-configs/config.json\"}"
+eval ": \${${name}_rts_flags:=\"-N -A64m -n4m -F1.2 -qg1\"}"
+eval ": \${${name}_flags:=\"\"}"
+
+# aliases
+eval "_home=\${${name}_home}"
+eval "_topology=\${${name}_topology}"
+eval "_config=\${${name}_config}"
+eval "_socket=\${${name}_socket}"
+eval "_db=\${${name}_db}"
+eval "_rts_flags=\${${name}_rts_flags}"
+eval "_host=\${${name}_host}"
+eval "_port=\${${name}_port}"
+eval "_flags=\${${name}_flags}"
+
+jail_root="${_home}/jail"
+jail_topology="/topology_dir/`basename ${_topology}`"
+jail_config="/config_dir/`basename ${_config}`"
+jail_socket="/socket/`basename ${_socket}`"
+jail_cmd="jail -c name=${name}_jail path=${jail_root} exec.jail_user=cardano exec.system_jail_user ip4=inherit ip6=inherit host=inherit"
+
+pidfile="/var/run/${name}.pid"
+flags="run +RTS ${_rts_flags} -RTS \
+        --database-path /db \
+        --host-addr ${_host} \
+        --port ${_port} \
+        --socket-path ${jail_socket} \
+        --topology ${jail_topology} \
+        --config ${jail_config} \
+        ${_flags}"
+
+sanity_check()
+{
+    if [ ! -f "${_home}/${_topology}" -a ! -f "/${_topology}" ]
+    then
+        echo "Invalid value for ${name}_topology: missing file ${_topology}"
+        echo "You might want to run service ${name} onefetch"
+        exit 1
+    fi
+    if [ ! -f "${_home}/${_config}" -a ! -f "/${_config}" ]
+    then
+        echo "Invalid value for cardano_node_config: missing file ${_config}"
+        echo "You might want to run service ${name} onefetch"
+        exit 1
+    fi
+    return 0
+}
+
+_jail_dirs="/bin /etc /lib /libexec /socket"
+_jail_mount_points="/dev /config_dir /topology_dir /db /logs"
+
+create_jail()
+{
+    destroy_jail
+
+    for d in ${_jail_dirs} ${_jail_mount_points}
+    do
+        mkdir -p "${jail_root}${d}"
+    done
+
+    cp /etc/resolv.conf "${jail_root}/etc/"
+    cp /etc/services "${jail_root}/etc/"
+
+    cp "$command" "${jail_root}/bin/"
+    ldd "$command" | cut -s -d " " -f 3 | grep -E '^(/lib|/usr)' | sort -u | xargs -I % cp % "${jail_root}/lib/"
+#    TODO: daemon fails with "Network.Socket.bind: permission denied" without suid
+    chmod +s "${jail_root}/bin/cardano-node"
+    cp /usr/sbin/nologin "${jail_root}/bin/"
+    cp /libexec/ld-elf.so.1 "${jail_root}/libexec"
+
+    # change directory because $cardano_node_{config,topology} may be relative paths
+    cd ${_home}
+    mount_nullfs -o ro `dirname ${_config}` "${jail_root}/config_dir"
+    mount_nullfs -o ro `dirname ${_topology}` "${jail_root}/topology_dir"
+    mount_nullfs "${_db}" "${jail_root}/db"
+    mount_nullfs "${_home}/logs" "${jail_root}/logs"
+    mount -o ruleset=4 -t devfs devfs "${jail_root}/dev"
+}
+
+destroy_jail()
+{
+    for d in ${_jail_mount_points}
+    do
+        if [ -d "${jail_root}${d}" ]; then
+            umount -f "${jail_root}${d}" 2> /dev/null
+        fi
+    done
+    for d in ${_jail_dirs}
+    do
+        rm -rf "${jail_root}${d}"
+    done
+    for d in ${_jail_mount_points}
+    do
+        rmdir "${jail_root}${d}" 2> /dev/null
+    done
+
+    rmdir "${jail_root}" 2> /dev/null
+}
+
+cardano_node_prestart()
+{
+    # Create Cardano home directory, if not exists
+    if [ ! -d "${_home}" ]; then
+        mkdir -p "${_home}"
+        chown cardano:cardano "${_home}"
+    fi
+    # Do the same for the logs directory
+    if [ ! -d "${_home}/logs" ]; then
+        mkdir -p "${_home}/logs"
+        chown cardano:cardano "${_home}/logs"
+    fi
+
+    # Remove the symlink to the socket file if there is no pid file
+    if [ -L "${_socket}" -a ! -f $pidfile ]; then
+        rm "${_socket}"
+    fi
+
+    sanity_check
+}
+
+cardano_node_start()
+{
+    check_startmsgs && echo "Starting ${name}."
+
+    create_jail
+    if [ "$?" != "0" ]
+    then
+        echo "Failed to start ${name}: jail creation error"
+        return 1
+    fi
+    cd $_home && /usr/sbin/daemon -p $pidfile -S -T cardano-node \
+        ${jail_cmd} command=/bin/cardano-node ${flags} 2>&1 > /dev/null
+    ln -s "${jail_root}/${jail_socket}" "${_socket}"
+}
+
+cardano_node_stop()
+{
+    pid=$(check_pidfile "${pidfile}" jail)
+    if [ -z "${pid}" ]
+    then
+        echo "${name} is not running"
+        destroy_jail
+        return 1
+    else
+        echo "Stopping ${name}."
+        killall -j ${name}_jail -INT
+        wait_for_pids "$pid"
+        destroy_jail
+        rm ${_socket}
+    fi
+}
+
+cardano_node_status()
+{
+    pid=$(check_pidfile "${pidfile}" jail)
+    if [ -z "${pid}" ]
+    then
+        echo "${name} is not running"
+        return 1
+    else
+        echo ${name} is running as pid $pid
+    fi
+}
+
+cardano_node_reload()
+{
+    pid=$(check_pidfile "${pidfile}" jail)
+    if [ -z "${pid}" ]
+    then
+        echo "${name} is not running"
+        return 1
+    else
+        killall -j ${name}_jail -HUP
+    fi
+}
+
+cardano_node_fetch()
+{
+    for net in ${cardano_networks}
+    do
+        echo "===> Fetching configuration files for ${net}"
+        mkdir -p "${_home}/${net}-configs"
+        mkdir -p "${_home}/${net}-db"
+        /usr/bin/apply "/usr/bin/fetch -a -o \
+        ${_home}/${net}-configs ${cardano_deployment_url}/${net}-configs/%1.json" $cardano_config_files
+        chown -R cardano:cardano "${_home}/${net}-configs"
+        chown -R cardano:cardano "${_home}/${net}-db"
+    done
+}
+
+run_rc_command "$1"

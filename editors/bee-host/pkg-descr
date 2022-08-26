@@ -1,0 +1,8 @@
+BeeCtl, a native messaging host application for Browser's Exernal Editor
+extension (https://github.com/rosmanov/chrome-bee).
+
+When installing the add-on External Editor for Firefox (or Chrome),
+https://addons.mozilla.org/en-US/firefox/addon/external-editor/
+this is the required host part.
+
+WWW: https://github.com/rosmanov/bee-host

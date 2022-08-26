@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	4
 CATEGORIES=	net www
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple RSS/Atom reader written in Go
 
 LICENSE=	MIT

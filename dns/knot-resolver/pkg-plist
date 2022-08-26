@@ -12,7 +12,6 @@ include/libkres/iterate.h
 include/libkres/layer.h
 include/libkres/log.h
 include/libkres/lru.h
-include/libkres/map.h
 include/libkres/module.h
 include/libkres/nsec.h
 include/libkres/nsec3.h

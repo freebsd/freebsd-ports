@@ -1,7 +1,7 @@
 PORTNAME=	wl-gammarelay-rs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
-PORTREVISION=	3
+DISTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	accessibility wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,117 +16,127 @@ GH_ACCOUNT=	MaxVerevkin
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		anyhow-1.0.56 \
-		async-broadcast-0.3.4 \
-		async-channel-1.6.1 \
-		async-executor-1.4.1 \
-		async-lock-2.5.0 \
+		anyhow-1.0.62 \
+		async-broadcast-0.4.1 \
 		async-recursion-0.3.2 \
-		async-task-4.2.0 \
-		async-trait-0.1.53 \
+		async-trait-0.1.57 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		byteorder-1.4.3 \
-		cache-padded-1.2.0 \
+		bytes-1.2.1 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		clap-3.1.8 \
-		clap_derive-3.1.7 \
-		concurrent-queue-1.2.2 \
+		clap-3.2.17 \
+		clap_derive-3.2.17 \
+		clap_lex-0.2.4 \
 		derivative-2.2.0 \
+		dirs-4.0.0 \
+		dirs-sys-0.3.7 \
 		dlib-0.5.0 \
 		downcast-rs-1.2.0 \
-		easy-parallel-3.2.0 \
-		enumflags2-0.7.4 \
+		enumflags2-0.7.5 \
 		enumflags2_derive-0.7.4 \
-		event-listener-2.5.2 \
-		fastrand-1.7.0 \
-		futures-0.3.21 \
-		futures-channel-0.3.21 \
-		futures-core-0.3.21 \
-		futures-executor-0.3.21 \
-		futures-io-0.3.21 \
-		futures-lite-1.12.0 \
-		futures-macro-0.3.21 \
-		futures-sink-0.3.21 \
-		futures-task-0.3.21 \
-		futures-util-0.3.21 \
-		getrandom-0.2.6 \
-		hashbrown-0.11.2 \
+		event-listener-2.5.3 \
+		fastrand-1.8.0 \
+		futures-0.3.23 \
+		futures-channel-0.3.23 \
+		futures-core-0.3.23 \
+		futures-executor-0.3.23 \
+		futures-io-0.3.23 \
+		futures-macro-0.3.23 \
+		futures-sink-0.3.23 \
+		futures-task-0.3.23 \
+		futures-util-0.3.23 \
+		getrandom-0.2.7 \
+		hashbrown-0.12.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		hex-0.4.3 \
-		indexmap-1.8.1 \
+		indexmap-1.9.1 \
 		instant-0.1.12 \
 		lazy_static-1.4.0 \
-		libc-0.2.122 \
+		libc-0.2.132 \
 		libloading-0.7.3 \
-		log-0.4.16 \
-		memchr-2.4.1 \
+		lock_api-0.4.7 \
+		log-0.4.17 \
+		memchr-2.5.0 \
 		memmap-0.7.0 \
 		memoffset-0.6.5 \
-		mio-0.8.2 \
-		miow-0.3.7 \
-		nix-0.23.1 \
-		ntapi-0.3.7 \
-		once_cell-1.10.0 \
+		mio-0.8.4 \
+		nix-0.24.2 \
+		once_cell-1.13.1 \
 		ordered-stream-0.0.1 \
-		os_str_bytes-6.0.0 \
-		parking-2.0.0 \
-		pin-project-lite-0.2.8 \
+		os_str_bytes-6.3.0 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.3 \
+		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.25 \
 		ppv-lite86-0.2.16 \
-		proc-macro-crate-1.1.3 \
+		proc-macro-crate-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.37 \
-		quote-1.0.17 \
+		proc-macro2-1.0.43 \
+		quote-1.0.21 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
-		regex-1.5.5 \
-		regex-syntax-0.6.25 \
+		redox_syscall-0.2.16 \
+		redox_users-0.4.3 \
+		regex-1.6.0 \
+		regex-syntax-0.6.27 \
+		remove_dir_all-0.5.3 \
 		scoped-tls-1.0.0 \
-		serde-1.0.136 \
-		serde_derive-1.0.136 \
-		serde_repr-0.1.7 \
+		scopeguard-1.1.0 \
+		serde-1.0.144 \
+		serde_derive-1.0.144 \
+		serde_repr-0.1.9 \
 		sha1-0.6.1 \
 		sha1_smol-1.0.0 \
-		shmemfdrs-0.1.2 \
-		slab-0.4.6 \
-		smallvec-1.8.0 \
+		shmemfdrs-0.1.3 \
+		slab-0.4.7 \
+		smallvec-1.9.0 \
 		socket2-0.4.4 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
-		syn-1.0.91 \
+		syn-1.0.99 \
+		tempfile-3.3.0 \
 		termcolor-1.1.3 \
 		textwrap-0.15.0 \
-		thiserror-1.0.30 \
-		thiserror-impl-1.0.30 \
-		tokio-1.17.0 \
-		tokio-macros-1.7.0 \
-		toml-0.5.8 \
-		unicode-xid-0.2.2 \
+		thiserror-1.0.32 \
+		thiserror-impl-1.0.32 \
+		tokio-1.20.1 \
+		tokio-macros-1.8.0 \
+		toml-0.5.9 \
+		tracing-0.1.36 \
+		tracing-attributes-0.1.22 \
+		tracing-core-0.1.29 \
+		uds_windows-1.0.2 \
+		unicode-ident-1.0.3 \
 		version_check-0.9.4 \
-		waker-fn-1.1.0 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wayland-backend-0.1.0-alpha9 \
-		wayland-client-0.30.0-alpha9 \
-		wayland-protocols-0.30.0-alpha9 \
-		wayland-scanner-0.30.0-alpha9 \
-		wayland-sys-0.30.0-alpha9 \
+		wayland-backend-0.1.0-beta.8 \
+		wayland-client-0.30.0-beta.8 \
+		wayland-protocols-0.30.0-beta.8 \
+		wayland-protocols-wlr-0.1.0-beta.8 \
+		wayland-scanner-0.30.0-beta.8 \
+		wayland-sys-0.30.0-beta.8 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.36.1 \
 		xml-rs-0.8.4 \
-		zbus-2.1.1 \
-		zbus_macros-2.1.1 \
-		zbus_names-2.1.0 \
-		zvariant-3.1.2 \
-		zvariant_derive-3.1.2
+		zbus-3.0.0 \
+		zbus_macros-3.0.0 \
+		zbus_names-2.2.0 \
+		zvariant-3.6.0 \
+		zvariant_derive-3.6.0
 
 .include <bsd.port.mk>

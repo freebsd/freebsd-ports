@@ -1,6 +1,6 @@
 PORTNAME=	botan
 DISTVERSION=	2.19.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	2
@@ -24,7 +24,7 @@ SHEBANG_FILES=	configure.py src/python/botan2.py src/scripts/install.py
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure.py
-CONFIGURE_ARGS=		--cc=${COMPILER_TYPE} \
+CONFIGURE_ARGS=		--cc=${CHOSEN_COMPILER_TYPE} \
 			--prefix=${PREFIX:Q} \
 			--with-boost \
 			--with-bzip2 \

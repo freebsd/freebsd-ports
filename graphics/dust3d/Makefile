@@ -1,5 +1,6 @@
 PORTNAME=	dust3d
 DISTVERSION=	1.0.0-rc.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/

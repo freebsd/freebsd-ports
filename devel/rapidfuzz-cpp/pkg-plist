@@ -1,4 +1,5 @@
 include/rapidfuzz/details/CharSet.hpp
+include/rapidfuzz/details/GrowingHashmap.hpp
 include/rapidfuzz/details/Matrix.hpp
 include/rapidfuzz/details/PatternMatchVector.hpp
 include/rapidfuzz/details/Range.hpp
@@ -10,6 +11,8 @@ include/rapidfuzz/details/matching_blocks.hpp
 include/rapidfuzz/details/type_traits.hpp
 include/rapidfuzz/details/types.hpp
 include/rapidfuzz/distance.hpp
+include/rapidfuzz/distance/DamerauLevenshtein.hpp
+include/rapidfuzz/distance/DamerauLevenshtein.impl
 include/rapidfuzz/distance/Hamming.hpp
 include/rapidfuzz/distance/Hamming.impl
 include/rapidfuzz/distance/Indel.hpp

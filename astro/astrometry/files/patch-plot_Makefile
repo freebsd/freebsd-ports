@@ -1,6 +1,6 @@
---- plot/Makefile.orig	2020-07-16 20:26:35 UTC
+--- plot/Makefile.orig	2022-08-03 15:04:41 UTC
 +++ plot/Makefile
-@@ -119,23 +119,24 @@ install:
+@@ -105,23 +105,24 @@ install-extra: $(INSTALL_CAIRO_EXECS)
  PYTHON_EXTRA_INSTALL := plotstuff.py plotstuff_c.py _plotstuff_c$(PYTHON_SO_EXT)
  
  install-extra: $(INSTALL_CAIRO_EXECS)
@@ -26,6 +26,6 @@
  		$(CP) $$x '$(PY_INSTALL_DIR)/'$$x; \
  	done
 +	$(BSD_INSTALL_LIB) _plotstuff_c$(PYTHON_SO_EXT) '$(PY_INSTALL_DIR)'
- 
- $(COMMON)/cairoutils.o:
- 	$(MAKE) -C $(COMMON) cairoutils.o
+ 	@for x in $(PYTHON_INSTALL); do \
+ 		echo $(CP) $$x '$(PY_INSTALL_DIR)/'$$x; \
+ 		$(CP) $$x '$(PY_INSTALL_DIR)/'$$x; \

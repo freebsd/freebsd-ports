@@ -39,6 +39,14 @@ share/applications/ibus-setup-table.desktop
 %%DATADIR%%/setup/version.py
 %%DATADIR%%/tables/template.txt
 share/ibus/component/table.xml
+share/icons/hicolor/128x128/apps/ibus-table.png
+share/icons/hicolor/16x16/apps/ibus-table.png
+share/icons/hicolor/22x22/apps/ibus-table.png
+share/icons/hicolor/256x256/apps/ibus-table.png
+share/icons/hicolor/32x32/apps/ibus-table.png
+share/icons/hicolor/48x48/apps/ibus-table.png
+share/icons/hicolor/64x64/apps/ibus-table.png
+share/icons/hicolor/scalable/apps/ibus-table.svg
 %%NLS%%share/locale/ca/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/de/LC_MESSAGES/ibus-table.mo

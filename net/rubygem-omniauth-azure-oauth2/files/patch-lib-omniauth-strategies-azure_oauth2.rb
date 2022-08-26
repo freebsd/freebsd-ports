@@ -1,6 +1,6 @@
---- lib/omniauth/strategies/azure_oauth2.rb.orig	2017-12-06 18:00:39 UTC
+--- lib/omniauth/strategies/azure_oauth2.rb.orig	2022-08-12 07:08:52 UTC
 +++ lib/omniauth/strategies/azure_oauth2.rb
-@@ -61,7 +61,7 @@ module OmniAuth
+@@ -65,7 +65,7 @@ module OmniAuth
  
        def raw_info
          # it's all here in JWT http://msdn.microsoft.com/en-us/library/azure/dn195587.aspx

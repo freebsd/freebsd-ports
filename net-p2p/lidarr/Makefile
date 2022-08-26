@@ -1,26 +1,30 @@
 PORTNAME=	lidarr
-PORTVERSION=	0.8.1.2135
+PORTVERSION=	1.0.2.2592
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/lidarr/Lidarr/releases/download/v${PORTVERSION}/
-DISTNAME=	Lidarr.master.${PORTVERSION}.linux
+DISTNAME=	Lidarr.master.${PORTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Music collection manager for Usenet and BitTorrent users
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
-RUN_DEPENDS=	chromaprint>0:audio/chromaprint \
-		mediainfo>0:multimedia/mediainfo \
-		mono6.8>0:lang/mono6.8 \
+# See https://github.com/radarr/radarr/issues/6668 for x86 support
+ONLY_FOR_ARCHS=	amd64
+
+RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
+		icu>0:devel/icu \
+		libiconv>0:converters/libiconv \
+		libinotify>0:devel/libinotify \
+		libunwind>0:devel/libunwind \
+		chromaprint>0:audio/chromaprint \
 		sqlite3>0:databases/sqlite3
 
-USE_RC_SUBR=	lidarr
+USES=		ssl:run
 
-NO_ARCH=	YES
+USE_RC_SUBR=	${PORTNAME}
+
 NO_BUILD=	YES
-
-WRKSRC=	${WRKDIR}/Lidarr
 
 SUB_FILES=	${PORTNAME} package_info pkg-message
 SUB_LIST=	DATADIR=${DATADIR} \
@@ -30,13 +34,10 @@ SUB_LIST=	DATADIR=${DATADIR} \
 		PORTNAME=${PORTNAME} \
 		USERS=${USERS}
 
-USERS=	lidarr
-GROUPS=	lidarr
+WRKSRC=		${WRKDIR}/Lidarr
 
-OPTIONS_DEFINE=	X11
-
-# Permits image resizing
-X11_LIB_DEPENDS+=libgdiplus.so:x11-toolkits/libgdiplus
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
 
 .include <bsd.port.options.mk>
 
@@ -45,8 +46,8 @@ post-extract:
 
 do-install:
 	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}/bin/
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}/bin/ "! -name Lidarr.exe"
-	${INSTALL_SCRIPT} ${WRKSRC}/Lidarr.exe ${STAGEDIR}/${DATADIR}/bin/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}/bin/ "! -name Lidarr"
+	${INSTALL_PROGRAM} ${WRKSRC}/Lidarr ${STAGEDIR}/${DATADIR}/bin/
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/package_info ${STAGEDIR}/${DATADIR}/

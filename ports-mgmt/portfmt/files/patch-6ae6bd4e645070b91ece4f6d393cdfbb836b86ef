@@ -1,0 +1,18 @@
+From 6ae6bd4e645070b91ece4f6d393cdfbb836b86ef Mon Sep 17 00:00:00 2001
+From: Tobias Kortkamp <tobik@FreeBSD.org>
+Date: Fri, 19 Aug 2022 15:48:12 +0200
+Subject: [PATCH] Replace references to GitHub
+
+diff --git parser/edits/lint/order.c parser/edits/lint/order.c
+index df69f2d..57f610c 100644
+--- parser/edits/lint/order.c
++++ parser/edits/lint/order.c
+@@ -377,7 +377,7 @@ check_variable_order(struct Parser *parser, struct AST *root, bool no_color)
+ 		row(pool, target, "# Portclippy to ignore them.", NULL);
+ 		row(pool, target, "#", NULL);
+ 		row(pool, target, "# If in doubt please report this on portfmt's bug tracker:", NULL);
+-		row(pool, target, "# https://github.com/t6/portfmt/issues", NULL);
++		row(pool, target, "# https://codeberg.org/tobik/portfmt/issues", NULL);
+ 	}
+ 	ARRAY_FOREACH(unknowns, char *, var) {
+ 		struct Set *uses_candidates = NULL;

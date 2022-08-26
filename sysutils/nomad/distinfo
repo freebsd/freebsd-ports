@@ -1,6 +1,6 @@
-TIMESTAMP = 1654817682
-SHA256 (hashicorp-nomad-v1.3.1_GH0.tar.gz) = 55915cd6ff0433b4b6d41d1e023a96cf283c95cb4d55960329a0f77eef939485
-SIZE (hashicorp-nomad-v1.3.1_GH0.tar.gz) = 22246742
+TIMESTAMP = 1657749952
+SHA256 (hashicorp-nomad-v1.3.2_GH0.tar.gz) = 239e76615c17b45a3e92ead8e71ce5e4575beded0874731544a72e2038b5a5fc
+SIZE (hashicorp-nomad-v1.3.2_GH0.tar.gz) = 22298884
 SHA256 (Azure-azure-sdk-for-go-v56.3.0_GH0.tar.gz) = 7ed6cfb811b40f8e2201dc902a77376f342050adbd18c5714dc66ccd08c555e0
 SIZE (Azure-azure-sdk-for-go-v56.3.0_GH0.tar.gz) = 41238155
 SHA256 (Azure-go-ansiterm-d185dfc1b5a1_GH0.tar.gz) = 1a061bad3379d8f955a3c2bd34c2927f2e561e7a11418dda2927eb222e3cbbc5

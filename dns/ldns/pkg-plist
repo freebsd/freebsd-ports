@@ -34,6 +34,7 @@ include/ldns/dnssec_sign.h
 include/ldns/dnssec_verify.h
 include/ldns/dnssec_zone.h
 include/ldns/duration.h
+include/ldns/edns.h
 include/ldns/error.h
 include/ldns/higher.h
 include/ldns/host2str.h
@@ -60,7 +61,7 @@ include/ldns/zone.h
 lib/libldns.a
 lib/libldns.so
 lib/libldns.so.3
-lib/libldns.so.3.2.0
+lib/libldns.so.3.5.0
 libdata/pkgconfig/libldns.pc
 %%DRILL%%man/man1/drill.1.gz
 %%EXAMPLES%%man/man1/ldns-chaos.1.gz

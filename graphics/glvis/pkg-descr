@@ -1,0 +1,11 @@
+GLVis is a lightweight tool for accurate and flexible finite element
+visualization.
+
+Features:
+* Accurate functional representation of many finite elements.
+* Support for arbitrary high-order and NURBS meshes.
+* Desktop, Web and Jupyter versions from the same code base.
+* Server mode accepting multiple socket connections.
+* Visualization of parallel meshes and solutions.
+
+WWW: https://glvis.org/

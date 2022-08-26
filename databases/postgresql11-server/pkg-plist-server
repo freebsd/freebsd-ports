@@ -819,7 +819,6 @@ lib/libpgcommon.a
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_ctl-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_rewind-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pg_archivecleanup-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pg_basebackup-%%PG_VERSION%%.mo

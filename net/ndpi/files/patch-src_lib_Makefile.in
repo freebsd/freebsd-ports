@@ -1,26 +1,40 @@
 -	/bin/rm -f libndpi.a $(OBJECTS)
 new file mode 100644
---- src/lib/Makefile.in.orig	2020-10-19 14:18:25 UTC
+--- src/lib/Makefile.in.orig	2022-07-14 16:13:42 UTC
 +++ src/lib/Makefile.in
-@@ -18,30 +18,17 @@ CFLAGS     += -fPIC -DPIC -I../include -Ithird_party/i
- LDFLAGS    = @LDFLAGS@ @ADDITIONAL_LIBS@ @LIBS@
- RANLIB     = ranlib
+@@ -14,15 +14,12 @@ includedir = ${prefix}/include/ndpi
+ prefix     = @prefix@
+ libdir     = ${prefix}/lib
+ includedir = ${prefix}/include/ndpi
+-ifneq ($(OS),Windows_NT)
+-CFLAGS     += -fPIC -DPIC
+-endif
+-CFLAGS     += -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@
++CFLAGS     += -fPIC -DPIC -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@
+ LDFLAGS    = @LDFLAGS@
+ LIBS       = @ADDITIONAL_LIBS@ @LIBS@ @GPROF_LIBS@
  
 -OBJECTS   = $(patsubst protocols/%.c, protocols/%.o, $(wildcard protocols/*.c)) $(patsubst third_party/src/%.c, third_party/src/%.o, $(wildcard third_party/src/*.c)) $(patsubst ./%.c, ./%.o, $(wildcard ./*.c))
 -HEADERS   = $(wildcard ../include/*.h)
-+OBJECTS != ls protocols/*.c | sed 's/\(.*\)\.c$$/\1.o/' && ls third_party/src/*.c | sed 's/\(.*\)\.c$$/\1.o/' && ls ./*.c | sed 's/\(.*\)\.c$$/\1.o/'
++OBJECTS != ls protocols/*.c | sed 's/\(.*\)\.c$$/\1.o/' && ls third_party/src/*.c | sed -e 's/\(.*\)\.c$$/\1.o/' -e '/gcrypt_light/d' && ls ./*.c | sed 's/\(.*\)\.c$$/\1.o/'
 +HEADERS != ls ../include/*.h
  NDPI_VERSION_MAJOR   = @NDPI_MAJOR@
  NDPI_LIB_STATIC      = libndpi.a
  NDPI_LIB_SHARED_BASE = libndpi.so
- NDPI_LIB_SHARED      = $(NDPI_LIB_SHARED_BASE).@NDPI_VERSION_SHORT@
+@@ -30,27 +27,8 @@ USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
  NDPI_LIBS            = $(NDPI_LIB_STATIC) $(NDPI_LIB_SHARED)
+ USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
  
+-ifneq ($(USE_HOST_LIBGCRYPT),0)
+-TMP_OBJS := $(OBJECTS)
+-OBJECTS   = $(filter-out third_party/src/gcrypt_light.o,$(TMP_OBJS))
+-endif
+-
 -ifneq ($(OS),Windows_NT)
 -OS := $(shell uname)
 -endif
  BUILD_MINGW    		 = @BUILD_MINGW@
- 
+-
 -ifeq ($(OS),Darwin)
 -CC=clang
 -SONAME_FLAG=

@@ -51,7 +51,6 @@ toybox/usr/bin/basename
 toybox/usr/bin/bunzip2
 toybox/usr/bin/bzcat
 toybox/usr/bin/cal
-toybox/usr/bin/catv
 toybox/usr/bin/chrt
 toybox/usr/bin/chvt
 toybox/usr/bin/clear

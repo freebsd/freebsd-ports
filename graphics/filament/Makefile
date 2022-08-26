@@ -1,0 +1,45 @@
+PORTNAME=	filament
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.25.6
+CATEGORIES=	graphics
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Real-time physically based rendering engine
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	compilation breaks: register %r11 is only available in 64-bit mode
+
+BUILD_DEPENDS=	bash:shells/bash \
+		evdev-proto>0:devel/evdev-proto
+
+USES=		cmake compiler:c++17-lang localbase:ldflags sdl xorg
+USE_SDL=	sdl2
+USE_XORG=	x11
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	google
+
+#CMAKE_ON=	BUILD_SHARED_LIBS # not yet supported, see https://github.com/google/filament/issues/1075
+CMAKE_OFF=	USE_STATIC_LIBCXX FILAMENT_ENABLE_JAVA
+CMAKE_ARGS+=	-DDIST_DIR="." # prevent subdirectory for libraries
+
+LDFLAGS+=	-lexecinfo -lSDL2
+
+OPTIONS_DEFINE=		SAMPLES
+OPTIONS_SUB=		yes
+
+SAMPLES_DESC=		Build samples
+SAMPLES_CMAKE_OFF=	-DFILAMENT_SKIP_SAMPLES=ON
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"/proc/self/exe"|"/proc/curproc/file"|' ${WRKSRC}/libs/utils/src/linux/Path.cpp
+
+post-install:
+	# remove unnecessary files
+	@cd ${STAGEDIR}${PREFIX} && ${RM} -r README.md LICENSE docs
+	# remove conflicting file, see https://github.com/google/filament/issues/5957
+	@${RM} ${STAGEDIR}${PREFIX}/lib/libzstd.a
+
+.include <bsd.port.mk>

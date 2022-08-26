@@ -1,28 +1,27 @@
 PORTNAME=	fdupes
-PORTVERSION=	2.1.2
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.2.0
 PORTEPOCH=	1
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/adrianlopezroche/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Program for identifying or deleting duplicate files
 
 LICENSE=	MIT
 
-USES=		autoreconf libtool localbase pkgconfig
+USES=		localbase pkgconfig
 GNU_CONFIGURE=	yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	adrianlopezroche
+PLIST_FILES=	bin/fdupes \
+		man/man1/fdupes.1.gz
 
-OPTIONS_DEFINE=	NCURSES
-OPTIONS_DEFAULT=NCURSES
+OPTIONS_DEFINE=		NCURSES
+OPTIONS_DEFAULT=	NCURSES
 
-NCURSES_USES=	ncurses:base
-NCURSES_CONFIGURE_OFF=	--without-ncurses
 NCURSES_LIB_DEPENDS=	libpcre2-32.so:devel/pcre2
+NCURSES_USES=		ncurses:base
+NCURSES_CONFIGURE_OFF=	--without-ncurses
 
-PLIST_FILES=	bin/fdupes man/man1/fdupes.1.gz
 NCURSES_PLIST_FILES=	man/man7/fdupes-help.7.gz
 
 .include <bsd.port.mk>

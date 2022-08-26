@@ -32,8 +32,8 @@ include/KF5/KPeople/kpeoplebackend/abstractpersonaction.h
 include/KF5/KPeople/kpeoplebackend/allcontactsmonitor.h
 include/KF5/KPeople/kpeoplebackend/basepersonsdatasource.h
 include/KF5/KPeople/kpeoplebackend/contactmonitor.h
-include/KF5/KPeople/kpeopleprivate/personmanager_p.h
 include/KF5/KPeople/kpeoplebackend/kpeoplebackend_export.h
+include/KF5/KPeople/kpeopleprivate/personmanager_p.h
 lib/cmake/KF5People/KF5PeopleConfig.cmake
 lib/cmake/KF5People/KF5PeopleConfigVersion.cmake
 lib/cmake/KF5People/KPeopleTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -47,13 +47,10 @@ lib/libKF5PeopleBackend.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5PeopleWidgets.so
 lib/libKF5PeopleWidgets.so.5
 lib/libKF5PeopleWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
-%%QT_QMLDIR%%/org/kde/people/libKF5PeopleDeclarative.so
-%%QT_QMLDIR%%/org/kde/people/qmldir
 %%QT_MKSPECDIR%%/modules/qt_KPeople.pri
 %%QT_MKSPECDIR%%/modules/qt_KPeopleWidgets.pri
-share/kservicetypes5/kpeople_data_source.desktop
-share/kservicetypes5/kpeople_plugin.desktop
-share/kservicetypes5/persondetailsplugin.desktop
+%%QT_QMLDIR%%/org/kde/people/libKF5PeopleDeclarative.so
+%%QT_QMLDIR%%/org/kde/people/qmldir
 share/locale/ar/LC_MESSAGES/kpeople5.mo
 share/locale/az/LC_MESSAGES/kpeople5.mo
 share/locale/bs/LC_MESSAGES/kpeople5.mo

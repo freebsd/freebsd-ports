@@ -1,15 +1,6 @@
---- CMakeLists.txt.orig	2022-03-28 19:04:00 UTC
+--- CMakeLists.txt.orig	2022-08-22 09:29:31 UTC
 +++ CMakeLists.txt
-@@ -106,7 +106,7 @@ message(STATUS "***** SYSTEM PROCESSOR ${CMAKE_SYSTEM_
- # flavours which are on by default:
- 
- option(FLV_FALLBACK "SETS FALLBACK FLAVOUR" ON)
--option(FLV_SSE42    "SETS SSE42 FLAVOUR"    OFF)
-+option(FLV_SSE42    "SETS SSE42 FLAVOUR"    ON)
- option(FLV_AVX      "SETS AVX FLAVOUR"      ON)
- option(FLV_AVX2     "SETS AVX2 FLAVOUR"     ON)
- option(FLV_AVX512f  "SETS AVX512f FLAVOUR"  ON)
-@@ -115,8 +115,8 @@ option(FLV_NATIVE   "SETS NATIVE FLAVOUR"   OFF)
+@@ -96,8 +96,8 @@ message(STATUS "***** SYSTEM PROCESSOR ${CMAKE_SYSTEM_
  set(i86 FALSE)
  
  if(UNIX OR APPLE)
@@ -20,3 +11,28 @@
  	  set(i86 TRUE)
    endif()
  elseif(WIN32)
+@@ -558,24 +558,6 @@ install(FILES Sansation_Regular.ttf Sansation_1.31_Rea
+ 
+ find_program(LUX_GITVERSION git)
+ set(LUX_PACKAGE_RELEASE "UNDEFINED")
+-if(LUX_GITVERSION)
+-  message(STATUS "${LUX_GITVERSION} describe --match ${pv_major}.${pv_minor}.${pv_patch} --tags")
+-  message(STATUS "WORKING_DIRECTORY = ${CMAKE_SOURCE_DIR}")
+-  execute_process(COMMAND ${LUX_GITVERSION} describe --match ${pv_major}.${pv_minor}.${pv_patch} --tags
+-    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+-    RESULT_VARIABLE tmp_GIT_RESULT
+-    OUTPUT_VARIABLE tmp_LUX_PACKAGE_RELEASE
+-    ERROR_VARIABLE tmp_GIT_ERROR
+-    OUTPUT_STRIP_TRAILING_WHITESPACE)
+-  if (tmp_GIT_RESULT EQUAL 0)
+-    if (tmp_LUX_PACKAGE_RELEASE MATCHES "^${pv_major}.${pv_minor}.${pv_patch}-\([0-9]+\)")
+-      set(LUX_PACKAGE_RELEASE ${CMAKE_MATCH_1})
+-    elseif(tmp_LUX_PACKAGE_RELEASE MATCHES "^${pv_major}.${pv_minor}.${pv_patch}")
+-      set(LUX_PACKAGE_RELEASE 0)
+-    endif()
+-  endif()
+-  message(STATUS "LUX_PACKAGE_RELEASE = ${LUX_PACKAGE_RELEASE}")
+-endif()
+ 
+ set(CPACK_PACKAGE_INSTALL_DIRECTORY ${CMAKE_INSTALL_PREFIX})
+ set(CPACK_SET_DESTDIR "ON")

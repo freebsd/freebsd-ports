@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# Check that newly added MOVED lines are valid
+#
+
+
+moved_changed=$(git diff --name-only --cached --diff-filter=M | grep -E '^MOVED$')
+if [ $? -eq 0 ] ; then
+	# git changes to root directory of the tree to run hooks
+	tree=$(git rev-parse --show-toplevel)
+	# check the last seven days
+	lastdate=$(date -v-7d "+%Y-%m-%d")
+
+	errors=$(PORTSDIR=${tree} Tools/scripts/MOVEDlint.awk -v lastdate="${lastdate}")
+	if [ $? -ne 0 ] ; then
+		echo -e "[pre-commit] ERROR: MOVED contains errors.\n" \
+			"                   Please apply the suggested changes:\n"
+		echo "${errors}"
+		exit 1
+	fi
+fi

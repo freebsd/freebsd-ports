@@ -1,12 +1,12 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.0.2
-PORTREVISION=	1
+DISTVERSION=	4.1.1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	glebius@FreeBSD.org
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Telegram Desktop messaging app
 
 LICENSE=	GPLv3
@@ -27,43 +27,53 @@ BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib \
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libavformat.so:multimedia/ffmpeg \
 		libdbus-1.so:devel/dbus \
-		libdbusmenu-qt5.so:devel/libdbusmenu-qt \
 		libenchant-2.so:textproc/enchant2 \
-		libevent.so:devel/libevent \
-		libhunspell-1.7.so:textproc/hunspell \
 		libjpeg.so:graphics/jpeg-turbo \
 		liblz4.so:archivers/liblz4 \
-		librnnoise.so:audio/rnnoise \
 		libopenal.so:audio/openal-soft \
 		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
 		libpipewire-0.3.so:multimedia/pipewire \
 		libqrcodegencpp.so:graphics/qr-code-generator \
-		libusrsctp.so:net/libusrsctp \
+		librnnoise.so:audio/rnnoise \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxxhash.so:devel/xxhash \
 		libvpx.so:multimedia/libvpx
 
+FLAVORS=	qt5 qt6
+FLAVOR?=	${FLAVORS:[1]}
+qt5_PKGNAMESUFFIX=
+qt6_PKGNAMESUFFIX=	-qt6
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
+qt6_CONFLICTS_INSTALL=	${PORTNAME}
+
 USES=		cmake compiler:c++17-lang desktop-file-utils gl \
-		gnome pkgconfig python:3.7+,build qt:5 ssl xorg
+		gnome pkgconfig python:3.7+,build ssl xorg
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
+
+.if ${FLAVOR} == qt5
+USES+=		qt:5
+USE_QT=		buildtools_build core dbus gui imageformats network qmake_build \
+		svg wayland widgets
+.else
+USES+=		qt:6
+USE_QT=		5compat base imageformats svg wayland
+.endif
+
 USE_GL=		gl
 USE_GNOME=	glib20 glibmm
-USE_QT=		core dbus gui imageformats network widgets buildtools_build \
-		qmake_build wayland svg
-USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xrandr xtst
+USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrandr xrender xtst
 
 CMAKE_ARGS=	-DDESKTOP_APP_SPECIAL_TARGET="" -DTDESKTOP_LAUNCHER_BASENAME="telegramdesktop" \
 		-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH} \
 		-Ddisable_autoupdate=1
 CMAKE_ON=	DESKTOP_APP_USE_PACKAGED DESKTOP_APP_DISABLE_CRASH_REPORTS \
 		DESKTOP_APP_DISABLE_WAYLAND_INTEGRATION
-CMAKE_OFF=	DESKTOP_APP_USE_PACKAGED_FONTS \
-		DESKTOP_APP_QT6
+CMAKE_OFF=	DESKTOP_APP_USE_PACKAGED_FONTS
 
 # Disable DCHECKs, otherwise video calls will crash.
 CXXFLAGS+=	-DNDEBUG

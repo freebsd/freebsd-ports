@@ -1,18 +1,12 @@
---- src/uharfbuzz/_harfbuzz.cpp.orig	2022-03-22 22:30:14 UTC
+--- src/uharfbuzz/_harfbuzz.cpp.orig	2022-07-31 12:40:22 UTC
 +++ src/uharfbuzz/_harfbuzz.cpp
-@@ -30,14 +30,12 @@
-             "-std=c++11"
-         ],
-         "include_dirs": [
--            "harfbuzz/src"
-+            "%%LOCALBASE%%/include/harfbuzz"
-         ],
-         "language": "c++",
+@@ -36,9 +36,6 @@
          "name": "uharfbuzz._harfbuzz",
          "sources": [
              "src/uharfbuzz/_harfbuzz.pyx",
 -            "harfbuzz/src/harfbuzz.cc",
--            "harfbuzz/src/hb-subset-repacker.cc"
+-            "harfbuzz/src/hb-subset-repacker.cc",
+-            "harfbuzz/src/graph/gsubgpos-context.cc",
+             "src/uharfbuzz/_draw_test_funcs.cc"
          ]
      },
-     "module_name": "uharfbuzz._harfbuzz"

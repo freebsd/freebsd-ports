@@ -1,5 +1,6 @@
 PORTNAME=	yuzu
 PORTVERSION=	s20220721
+PORTREVISION=	1
 CATEGORIES=	emulators
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb

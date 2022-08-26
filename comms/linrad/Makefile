@@ -1,6 +1,6 @@
 PORTNAME=	linrad
 PORTVERSION=	4.02
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://www.sm5bsz.com/linuxdsp/archive/

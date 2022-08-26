@@ -1,4 +1,4 @@
---- ui/base/ui_base_features.cc.orig	2022-07-22 17:30:31 UTC
+--- ui/base/ui_base_features.cc.orig	2022-08-17 07:04:17 UTC
 +++ ui/base/ui_base_features.cc
 @@ -180,7 +180,7 @@ const base::Feature kExperimentalFlingAnimation {
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -276,7 +276,7 @@ bool IsForcedColorsEnabled() {
+@@ -278,7 +278,7 @@ bool IsForcedColorsEnabled() {
  // milestones.
  const base::Feature kEyeDropper {
    "EyeDropper",

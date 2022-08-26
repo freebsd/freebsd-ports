@@ -12,6 +12,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dnsdist.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dnsmasq.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dnsmasq_dhcp.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/docker.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/docker_engine.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dockerhub.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/elasticsearch.conf.sample
@@ -37,11 +38,13 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/nginxvts.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/openvpn.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/openvpn_status_log.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/pgbouncer.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/phpdaemon.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/phpfpm.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/pihole.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/pika.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/portcheck.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/postgres.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/powerdns.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/powerdns_recursor.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/prometheus.conf.sample
@@ -63,6 +66,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/vsphere.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/web_log.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/whoisquery.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/wireguard.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/wmi.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/x509check.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/zookeeper.conf.sample

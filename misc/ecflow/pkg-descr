@@ -1,0 +1,13 @@
+ecFlow is a client/server workflow package that enables users to run a large
+number of programs (with dependencies on each other and on time) in a controlled
+environment. It provides reasonable tolerance for hardware and software
+failures, combined with restart capabilities. It is used at ECMWF to run all our
+operational suites across a range of platforms.
+
+ecFlow submits tasks (jobs) and receives acknowledgments from the tasks when
+they change status and when they send events, using child commands embedded in
+your scripts. ecFlow stores the relationships between tasks, and is able to
+submit tasks dependant on triggers, such as when a given task changes its
+status, for example when it finishes.
+
+WWW: https://confluence.ecmwf.int/display/ECFLOW/ecflow+home

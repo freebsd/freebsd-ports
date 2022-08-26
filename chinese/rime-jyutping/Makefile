@@ -1,5 +1,6 @@
 PORTNAME=	rime-jyutping
 DISTVERSION=	g20200809
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com

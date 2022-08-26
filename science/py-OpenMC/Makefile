@@ -1,6 +1,6 @@
 PORTNAME=	OpenMC
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
+DISTVERSION=	0.13.1
 CATEGORIES=	science
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	openmc>0:science/openmc \
 		${PY_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist
+USE_PYTHON=	distutils cython concurrent autoplist pytest # tests fail and abort in the middle, see https://github.com/openmc-dev/openmc/issues/2186
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tl}-dev
@@ -32,10 +32,16 @@ GH_PROJECT=	${PORTNAME:tl}
 
 PLIST_FILES=	${PYTHON_SITELIBDIR}/openmc/lib/libopenmc.so
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
 post-install:
 	# strip
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/openmc/data/*.so
 	# link the library
 	@${LN} -s ${LOCALBASE}/lib/libopenmc.so ${STAGEDIR}${PYTHON_SITELIBDIR}/openmc/lib/libopenmc.so
+
+pre-test:
+	# link the library
+	@if ! [ -e ${WRKSRC}/openmc/lib/libopenmc.so ]; then ${LN} -s ${LOCALBASE}/lib/libopenmc.so ${WRKSRC}/openmc/lib/libopenmc.so; fi
 
 .include <bsd.port.mk>

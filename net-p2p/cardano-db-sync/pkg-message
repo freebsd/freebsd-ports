@@ -1,0 +1,48 @@
+[
+{ type: install
+  message: <<EOM
+/!\ This FreeBSD package REQUIRES postgresql DB to be initialized   /!\
+/!\ as per the following example for the software to function       /!\
+
+If starting with a fresh postgresql install:
+service postgresql initdb
+service postgresql start
+service cardano_db_sync onefetch
+
+To create a new database, this example uses "root" username for Cardano "mainnet".
+Replace all instances of "mainnet" with "testnet" for testnet setup.
+
+su postgres
+createuser --createdb --superuser root
+exit
+
+Next, setup pgpass file:
+export PGPASSFILE=/var/db/cardano_db_sync/mainnet-configs/.pgpass
+or
+setenv PGPASSFILE /var/db/cardano_db_sync/mainnet-configs/.pgpass
+echo "/tmp/:5432:cexplorer:*:*" > $PGPASSFILE
+chmod 0600 $PGPASSFILE
+
+Create the "cexplorer" database:
+cardano-db-sync-pgsql-setup --createdb
+
+Restore the database from a snapshot ( or skip this step to sync from genesis ):
+Mainnet: https://update-cardano-mainnet.iohk.io/cardano-db-sync/index.html#13/
+Testnet: https://updates-cardano-testnet.s3.amazonaws.com/cardano-db-sync/index.html#13/
+aarch64: https://psb-dbsync.s3.amazonaws.com/browser/index.html
+
+cardano-db-sync-pgsql-setup --restore-snapshot db-sync-snapshot-schema-XX-block-XXXXXXX-XXXX.tgz /var/db/cardano_db_sync/mainnet-state/
+
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+If doing a major version upgrade ( ex. 12.0.0 to 13.0.0 ) you should drop
+the current database and re-create it, as there will be breaking changes:
+
+setenv PGPASSFILE /var/db/cardano_db_sync/mainnet-configs/.pgpass
+cardano-db-sync-pgsql-setup --recreatedb
+
+EOM
+}
+]

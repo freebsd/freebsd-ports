@@ -1,5 +1,6 @@
 PORTNAME=	dlib
 DISTVERSION=	19.24
+PORTREVISION=	1
 CATEGORIES=	science devel math python
 MASTER_SITES=	http://dlib.net/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

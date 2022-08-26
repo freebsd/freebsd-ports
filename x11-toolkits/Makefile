@@ -99,6 +99,7 @@
     SUBDIR += ocaml-lablgtk2
     SUBDIR += ocaml-labltk
     SUBDIR += open-motif
+    SUBDIR += open-motif-devel
     SUBDIR += osm-gps-map
     SUBDIR += otk
     SUBDIR += p5-Alien-wxWidgets
@@ -175,6 +176,13 @@
     SUBDIR += qt5-virtualkeyboard
     SUBDIR += qt5-widgets
     SUBDIR += qt5pas
+    SUBDIR += qt6-charts
+    SUBDIR += qt6-datavis3d
+    SUBDIR += qt6-declarative
+    SUBDIR += qt6-quick3d
+    SUBDIR += qt6-quicktimeline
+    SUBDIR += qt6-shadertools
+    SUBDIR += qt6-virtualkeyboard
     SUBDIR += qtermwidget
     SUBDIR += qwt5-qt5
     SUBDIR += qwt6

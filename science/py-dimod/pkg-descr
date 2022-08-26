@@ -1,0 +1,11 @@
+dimod is a part of the software stack for accessing quantum computing hardware
+made by D-Wave company.
+
+dimod is a shared API for samplers. It provides:
+* classes for quadratic models - such as the binary quadratic model (BQM) class
+  that contains Ising and QUBO models used by samplers such as the D-Wave system
+  - and higher-order (non-quadratic) models
+* reference examples of samplers and composed samplers
+* abstract base classes for constructing new samplers and composed samplers
+
+WWW: https://github.com/dwavesystems/dimod

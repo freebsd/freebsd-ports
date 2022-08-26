@@ -15,7 +15,4 @@ USE_QT=		core declarative gui network quick3d \
 
 OPTIONS_DEFINE=	DOCS
 
-# Override shared library version
-KDE_APPLICATIONS_SHLIB_VER=	${KDE_APPLICATIONS_SHLIB_G_VER}
-
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	rime-cangjie
 DISTVERSION=	g20210223
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com

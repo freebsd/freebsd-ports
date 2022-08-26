@@ -47,6 +47,7 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/it.pak
 %%DATADIR%%/locales/ja.pak
 %%DATADIR%%/locales/ka.pak
+%%DATADIR%%/locales/kk.pak
 %%DATADIR%%/locales/km.pak
 %%DATADIR%%/locales/kn.pak
 %%DATADIR%%/locales/ko.pak

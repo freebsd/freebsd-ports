@@ -3,7 +3,7 @@ DISTVERSION=	2021.11.08
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/mawww/kakoune/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modal code editor with a focus on interactivity
 
 LICENSE=	UNLICENSE

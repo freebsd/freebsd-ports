@@ -1,3 +1,2 @@
-%%SITE_PERL%%/Class/boilerplate.pl
 %%SITE_PERL%%/Class/Observable.pm
 %%PERL5_MAN3%%/Class::Observable.3.gz

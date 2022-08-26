@@ -1,5 +1,6 @@
 PORTNAME=	maude
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://maude.cs.illinois.edu/w/images/d/d8/
 DISTNAME=	Maude-${PORTVERSION}

@@ -1,5 +1,6 @@
 PORTNAME=	rime-terra-pinyin
 DISTVERSION=	g20210805
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org

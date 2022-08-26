@@ -1,5 +1,5 @@
 PORTNAME=	zorin-icon-themes
-DISTVERSION=	2.9.7
+DISTVERSION=	2.9.9
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com

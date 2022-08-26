@@ -1,6 +1,7 @@
 PORTNAME=	jumpy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +19,7 @@ USES=		cargo gl localbase:ldflags xorg
 USE_GITHUB=	yes
 USE_GL=		gl
 USE_XORG=	x11 xi
-GH_ACCOUNT=	fishfight
+GH_ACCOUNT=	fishfolks
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 

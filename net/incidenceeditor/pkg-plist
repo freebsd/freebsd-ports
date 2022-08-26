@@ -26,6 +26,7 @@ lib/libKF5IncidenceEditor.so.5
 lib/libKF5IncidenceEditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_IncidenceEditor.pri
 share/locale/ar/LC_MESSAGES/libincidenceeditors.mo
+share/locale/bg/LC_MESSAGES/libincidenceeditors.mo
 share/locale/bs/LC_MESSAGES/libincidenceeditors.mo
 share/locale/ca/LC_MESSAGES/libincidenceeditors.mo
 share/locale/ca@valencia/LC_MESSAGES/libincidenceeditors.mo
@@ -61,6 +62,7 @@ share/locale/ru/LC_MESSAGES/libincidenceeditors.mo
 share/locale/sk/LC_MESSAGES/libincidenceeditors.mo
 share/locale/sl/LC_MESSAGES/libincidenceeditors.mo
 share/locale/sv/LC_MESSAGES/libincidenceeditors.mo
+share/locale/ta/LC_MESSAGES/libincidenceeditors.mo
 share/locale/tr/LC_MESSAGES/libincidenceeditors.mo
 share/locale/ug/LC_MESSAGES/libincidenceeditors.mo
 share/locale/uk/LC_MESSAGES/libincidenceeditors.mo

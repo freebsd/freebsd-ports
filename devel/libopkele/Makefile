@@ -1,6 +1,6 @@
 PORTNAME=	libopkele
 PORTVERSION=	2.0.4
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	devel
 MASTER_SITES=	http://kin.klever.net/dist/
 

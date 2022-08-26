@@ -4,7 +4,7 @@ PORTEPOCH=	1
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/ibara/oksh/releases/download/oksh-${DISTVERSION}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Portable OpenBSD Korn shell
 
 LICENSE=	PD

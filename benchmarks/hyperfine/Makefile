@@ -1,7 +1,7 @@
 PORTNAME=	hyperfine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.0
-PORTREVISION=	4
+DISTVERSION=	1.14.0
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -21,7 +21,7 @@ GH_ACCOUNT=	sharkdp
 PLIST_FILES=	bin/hyperfine
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		anyhow-1.0.55 \
+		anyhow-1.0.57 \
 		approx-0.5.1 \
 		arrayvec-0.7.2 \
 		assert_cmd-2.0.4 \
@@ -31,8 +31,9 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
 		cfg-if-1.0.0 \
-		clap-3.1.5 \
+		clap-3.1.14 \
 		clap_complete-3.1.1 \
+		clap_lex-0.2.0 \
 		cloudabi-0.0.3 \
 		colored-2.0.0 \
 		console-0.15.0 \
@@ -55,8 +56,10 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		itoa-0.4.8 \
 		itoa-1.0.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.119 \
+		libc-0.2.125 \
 		memchr-2.4.1 \
+		memoffset-0.6.5 \
+		nix-0.24.1 \
 		normalize-line-endings-0.3.0 \
 		num-0.2.1 \
 		num-bigint-0.2.6 \
@@ -93,11 +96,11 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		rust_decimal-1.22.0 \
+		rust_decimal-1.23.1 \
 		ryu-1.0.9 \
 		serde-1.0.136 \
 		serde_derive-1.0.136 \
-		serde_json-1.0.79 \
+		serde_json-1.0.80 \
 		shell-words-1.1.0 \
 		statistical-1.0.0 \
 		strsim-0.10.0 \
@@ -107,8 +110,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		terminal_size-0.1.17 \
 		termtree-0.2.4 \
 		textwrap-0.15.0 \
-		thiserror-1.0.30 \
-		thiserror-impl-1.0.30 \
+		thiserror-1.0.31 \
+		thiserror-impl-1.0.31 \
 		unicode-xid-0.2.2 \
 		wait-timeout-0.2.0 \
 		wasi-0.10.2+wasi-snapshot-preview1 \

@@ -52,18 +52,19 @@ lib/xvile/vile-mailcap-filt%%SO_EXT%%
 lib/xvile/vile-make-filt%%SO_EXT%%
 lib/xvile/vile-manfilt
 lib/xvile/vile-mcrl-filt%%SO_EXT%%
+lib/xvile/vile-md-filt%%SO_EXT%%
 lib/xvile/vile-midl-filt%%SO_EXT%%
 lib/xvile/vile-mms-filt%%SO_EXT%%
 lib/xvile/vile-nmake-filt%%SO_EXT%%
 lib/xvile/vile-nr-filt%%SO_EXT%%
 lib/xvile/vile-pas-filt%%SO_EXT%%
 lib/xvile/vile-perl-filt%%SO_EXT%%
-lib/xvile/vile-perl6-filt%%SO_EXT%%
 lib/xvile/vile-php-filt%%SO_EXT%%
 lib/xvile/vile-pot-filt%%SO_EXT%%
 lib/xvile/vile-ps-filt%%SO_EXT%%
 lib/xvile/vile-ps1-filt%%SO_EXT%%
 lib/xvile/vile-py-filt%%SO_EXT%%
+lib/xvile/vile-raku-filt%%SO_EXT%%
 lib/xvile/vile-rc-filt%%SO_EXT%%
 lib/xvile/vile-rcs-filt%%SO_EXT%%
 lib/xvile/vile-rexx-filt%%SO_EXT%%
@@ -181,6 +182,7 @@ share/pixmaps/vile.xpm
 %%DATADIR%%/make.keywords
 %%DATADIR%%/manpage.rc
 %%DATADIR%%/mcrl.keywords
+%%DATADIR%%/md.keywords
 %%DATADIR%%/midl.keywords
 %%DATADIR%%/modes.rc
 %%DATADIR%%/mvn.keywords
@@ -192,7 +194,6 @@ share/pixmaps/vile.xpm
 %%DATADIR%%/pas.keywords
 %%DATADIR%%/pc.keywords
 %%DATADIR%%/perl.keywords
-%%DATADIR%%/perl6.keywords
 %%DATADIR%%/php.keywords
 %%DATADIR%%/pictmode.rc
 %%DATADIR%%/pot.keywords
@@ -200,6 +201,7 @@ share/pixmaps/vile.xpm
 %%DATADIR%%/ps.keywords
 %%DATADIR%%/ps1.keywords
 %%DATADIR%%/py.keywords
+%%DATADIR%%/raku.keywords
 %%DATADIR%%/rb.keywords
 %%DATADIR%%/rc.keywords
 %%DATADIR%%/rcs.keywords

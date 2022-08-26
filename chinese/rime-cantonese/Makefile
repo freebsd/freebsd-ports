@@ -1,5 +1,6 @@
 PORTNAME=	rime-cantonese
 DISTVERSION=	g20211029
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org

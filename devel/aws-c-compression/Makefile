@@ -1,9 +1,9 @@
 PORTNAME=	aws-c-compression
-PORTVERSION=	0.2.14
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.15
 CATEGORIES=	devel
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C99 implementation of compression algorithms
 
 LICENSE=	APACHE20
@@ -15,9 +15,10 @@ USES=		cmake compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
 
-CMAKE_ARGS+=	-DBUILD_TESTING=OFF -DBUILD_SHARED_LIBS=ON \
-		-DCMAKE_PREFIX_PATH=${LOCALBASE}
-
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON \
+		-DBUILD_TESTING=OFF \
+		-DCMAKE_PREFIX_PATH=${LOCALBASE}
 
 .include <bsd.port.mk>

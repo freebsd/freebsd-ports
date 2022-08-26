@@ -12,6 +12,7 @@
     SUBDIR += 90secondportraits
     SUBDIR += CaribbeanStud
     SUBDIR += DDNet
+    SUBDIR += Doom64EX
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += LibreMines

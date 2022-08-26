@@ -4,9 +4,9 @@ include/qzint.h
 include/zint.h
 lib/libQZint.so
 lib/libQZint.so.2.11
-lib/libQZint.so.2.11.0.0
+lib/libQZint.so.2.11.1.0
 lib/libzint.so
 lib/libzint.so.2.11
-lib/libzint.so.2.11.0.0
+lib/libzint.so.2.11.1.0
 share/cmake/Modules/FindZint.cmake
 share/man/man1/zint.1.gz

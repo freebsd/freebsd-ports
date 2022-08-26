@@ -1,0 +1,6 @@
+include/meshoptimizer.h
+lib/cmake/meshoptimizer/meshoptimizerConfig.cmake
+lib/cmake/meshoptimizer/meshoptimizerConfigVersion.cmake
+lib/cmake/meshoptimizer/meshoptimizerTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/meshoptimizer/meshoptimizerTargets.cmake
+lib/libmeshoptimizer.so

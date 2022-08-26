@@ -1,0 +1,10 @@
+SPLA provides specialized functions for linear algebra computations with a C++
+and C interface, which are inspired by requirements in computational material
+science codes.
+
+Currently, SPLA provides functions for distributed matrix multiplications with
+specific matrix distributions, which cannot be used directly with a ScaLAPACK
+interface. All computations can optionally utilize GPUs through CUDA or ROCm,
+where matrices can be located either in host or device memory.
+
+WWW: https://github.com/eth-cscs/spla

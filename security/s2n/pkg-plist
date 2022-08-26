@@ -1,6 +1,8 @@
 include/s2n.h
 lib/libs2n.so
-lib/s2n/cmake/modules/FindLibCrypto.cmake
+lib/libs2n.so.1
+lib/libs2n.so.1.0.0
+lib/s2n/cmake/modules/Findcrypto.cmake
 lib/s2n/cmake/s2n-config.cmake
 lib/s2n/cmake/shared/s2n-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/s2n/cmake/shared/s2n-targets.cmake
@@ -10,6 +12,7 @@ lib/s2n/cmake/shared/s2n-targets.cmake
 %%PORTDOCS%%%%DOCSDIR%%/SAFETY-MACROS.md
 %%PORTDOCS%%%%DOCSDIR%%/STATE-MACHINE.md
 %%PORTDOCS%%%%DOCSDIR%%/USAGE-GUIDE.md
+%%PORTDOCS%%%%DOCSDIR%%/doxygen/Doxyfile
 %%PORTDOCS%%%%DOCSDIR%%/images/s2n-logo-final.pdf
 %%PORTDOCS%%%%DOCSDIR%%/images/s2n-logo-final.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/s2n-logo-github.svg

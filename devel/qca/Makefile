@@ -1,8 +1,9 @@
 PORTNAME=	qca
 DISTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}
-PKGNAMESUFFIX=	-qt5
+PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform crypto API for Qt ${FLAVOR:C/qt//}
@@ -10,10 +11,13 @@ COMMENT=	Cross-platform crypto API for Qt ${FLAVOR:C/qt//}
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+FLAVORS=	qt5 qt6
+FLAVOR?=	qt5
+
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		cmake compiler:c++11-lang qt:5 tar:xz
+USES=		cmake compiler:c++11-lang qt:${FLAVOR:S/qt//} tar:xz
 CMAKE_ARGS=	-DBUILD_PLUGINS=none -DBUILD_TESTS=no \
 		-DPKGCONFIG_INSTALL_PREFIX=${PREFIX}/libdata/pkgconfig \
 		-DQCA_FEATURE_INSTALL_DIR=${QT_MKSPECDIR}/features \
@@ -21,10 +25,17 @@ CMAKE_ARGS=	-DBUILD_PLUGINS=none -DBUILD_TESTS=no \
 CONFIGURE_ENV=	QC_CERTSTORE_PATH=${LOCALBASE}/share/certs/ca-root-nss.crt
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS+=	-DQCA_SUFFIX=qt5
-USE_QT=	core buildtools_build qmake_build
+CMAKE_ARGS+=	-DQCA_SUFFIX=${FLAVOR} \
+		-D${FLAVOR:tu}:BOOL=TRUE
+_USE_QT5=	core buildtools_build qmake_build
+_USE_QT6=	5compat base
+USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
 
-PLIST_SUB=	SHLIB_VER=${PORTVERSION}
+_PLIST_SUB_QT5=	QT5_ONLY=""
+_PLIST_SUB_QT6= QT5_ONLY="@comment "
+PLIST_SUB=	SHLIB_VER=${PORTVERSION} \
+		QCA_QT_VERSION=${FLAVOR} \
+		${_PLIST_SUB_QT${FLAVOR:S/qt//}}
 
 OPTIONS_DEFINE=	BOTAN GNUPG OPENSSL SASL TEST
 OPTIONS_DEFAULT=GNUPG OPENSSL

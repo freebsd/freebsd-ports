@@ -1,0 +1,29 @@
+# On FreeBSD/i386's LLVM, actual alignment for atomic types requires
+# stricter alignment rules, mostly on 8 byte boundaries instead of 4 byte
+# as indicated by max_align_t.
+# Patch for arenastring.cc borrowed from devel/protobuf/files/patch-i386
+
+--- toolkit/components/protobuf/src/google/protobuf/arenastring.cc.orig	2022-08-20 22:07:01.600662000 +0200
++++ toolkit/components/protobuf/src/google/protobuf/arenastring.cc	2022-08-20 22:07:55.969192000 +0200
+@@ -64,7 +64,8 @@
+ #endif
+ constexpr size_t kStringAlign = alignof(std::string);
+ 
+-static_assert((kStringAlign > kNewAlign ? kStringAlign : kNewAlign) >= 8, "");
++// this does not hold with llvm on FreeBSD/i386
++// static_assert((kStringAlign > kNewAlign ? kStringAlign : kNewAlign) >= 8, "");
+ static_assert(alignof(ExplicitlyConstructedArenaString) >= 8, "");
+ 
+ }  // namespace
+
+--- ./toolkit/components/protobuf/src/google/protobuf/arena_impl.h.orig	2022-08-20 20:07:57.096818000 +0200
++++ ./toolkit/components/protobuf/src/google/protobuf/arena_impl.h	2022-08-20 21:40:47.821690000 +0200
+@@ -640,7 +640,7 @@
+ #ifdef _MSC_VER
+ #pragma warning(disable : 4324)
+ #endif
+-  struct alignas(kCacheAlignment) CacheAlignedLifecycleIdGenerator {
++  struct alignas(alignof(std::atomic<LifecycleIdAtomic>)) CacheAlignedLifecycleIdGenerator {
+     std::atomic<LifecycleIdAtomic> id;
+   };
+   static CacheAlignedLifecycleIdGenerator lifecycle_id_generator_;

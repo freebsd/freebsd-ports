@@ -1,6 +1,6 @@
 PORTNAME=	jacktrip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,8 +12,8 @@ BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libjack.so:audio/jack \
 		librtaudio.so:audio/rtaudio
 
-USES=		meson compiler:c++11-lang gl pkgconfig qt:5
-USE_QT=		core declarative gui network networkauth svg widgets buildtools_build
+USES=		meson compiler:c++17-lang gl pkgconfig qt:5
+USE_QT=		core gui network networkauth quickcontrols2 svg websockets widgets buildtools_build
 USE_GL=		gl
 
 USE_GITHUB=	yes

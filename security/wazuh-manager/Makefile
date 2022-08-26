@@ -1,6 +1,5 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.3.6
-PORTREVISION=	2
+DISTVERSION=	4.3.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/16/libraries/sources/:wazuh_sources \
@@ -114,15 +113,35 @@ WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/rootcheck \
 
 WAZUHPREFIX=	/var/ossec
 
+WZPYTHONWHEELS=	aiohttp-3.8.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		cffi-1.14.4-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		cryptography-3.3.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		frozenlist-1.2.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		grpcio-1.38.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		hiredis-1.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		MarkupSafe-1.1.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		multidict-5.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		psutil-5.7.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		PyYAML-5.4.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		SQLAlchemy-1.3.11-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		uvloop-0.15.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
+		yarl-1.6.3-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl
+
+UNAME_r=	${_OSRELEASE:tl}
+FBSD_RELEASE=	freebsd_${UNAME_r:S/./_/g:S/-/_/g}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1200500 && ${OSVERSION} < 1300000
+FBSD_VERSION_BASE=freebsd_12_3_release_p5
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd12-${ARCH}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
+FBSD_VERSION_BASE=freebsd_13_1_release
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1400000
+FBSD_VERSION_BASE=freebsd_14_0_current
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .else
@@ -135,6 +154,9 @@ post-extract:
 .endfor
 	@cd ${WRKSRC}/src && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_CACHEFILE} ${EXTRACT_AFTER_ARGS}
 	@cd ${WRKSRC}/src && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_CACHENAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
+.	for FILE in ${WZPYTHONWHEELS}
+		@${MV} ${WRKSRC}/src/wazuh-cache-${ARCH}/${FILE} ${WRKSRC}/src/wazuh-cache-${ARCH}/${FILE:S/${FBSD_VERSION_BASE}/${FBSD_RELEASE}/}
+.	endfor
 	@${RM} ${WRKSRC}/src/external/cpython/python
 
 post-patch:

@@ -1,5 +1,6 @@
 PORTNAME=	biolibc-tools
 DISTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org

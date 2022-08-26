@@ -21,6 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gnunn1
 USE_GNOME=	cairo gdkpixbuf2 librsvg2 vte3
 USE_XORG=	x11
+SSP_UNSAFE=	yes
 GLIB_SCHEMAS=	com.gexperts.Tilix.gschema.xml
 SHEBANG_FILES=	data/scripts/tilix_int.sh
 

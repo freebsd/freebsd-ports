@@ -1,5 +1,5 @@
 PORTNAME=	notmuch
-DISTVERSION=	0.36
+DISTVERSION=	0.37
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
@@ -64,6 +64,7 @@ OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
 
 DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen
+DOXYGEN_USES=			perl5
 DOXYGEN_CONFIGURE_WITH=		api-docs
 MANPAGES_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
 MANPAGES_CONFIGURE_WITH=	docs

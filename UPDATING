@@ -5,6 +5,42 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220825:
+  AFFECTS: users of net/xrdp or net/xrdp-devel
+  AUTHOR: meta@FreeBSD.org
+
+  After xorg upgrade to 21.1.4, xorgxrdp session doesn't start as before
+  This is because bin/Xorg has been replaced with X server binary wrapper.
+  You must manually edit the Xorg section in etc/xrdp/sesman.ini to get it
+  working again.
+
+  The following is a short example of where, how to modify sesman.ini.
+  Make sure to replace LOCALBASE with your actual path.
+
+   [Xorg]
+   ; Specify the path of non-suid Xorg executable. It might differ depending
+   ; on your distribution and version. Find out the appropreate path for your
+   ; environment. The typical path is known as follows:
+   ;
+   ; Fedora 26 or later    :  param=/usr/libexec/Xorg
+   ; Debian 9 or later     :  param=/usr/lib/xorg/Xorg
+   ; Ubuntu 16.04 or later :  param=/usr/lib/xorg/Xorg
+   ; Arch Linux            :  param=/usr/lib/Xorg
+   ; CentOS 7              :  param=/usr/bin/Xorg or param=Xorg
+   ; CentOS 8              :  param=/usr/libexec/Xorg
+   ;
+  -param=Xorg
+  +param=LOCALBASE/libexec/Xorg
+
+20220815:
+  AFFECTS: users of net/keycloak
+  AUTHOR: fernape@FreeBSD.org
+
+  The flavors -mysql and -postgres were removed, the necessary configuration
+  for those database backends was rolled into the base release by upstream.
+  The configuration files changed completely, so they need to be rebuilt from
+  scratch.
+
 20220807:
   AFFECTS: users of news/inn
   AUTHOR: kbowling@FreeBSD.org

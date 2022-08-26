@@ -1,5 +1,6 @@
 PORTNAME=	hipercontracer
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.uni-due.de/~be0001/hipercontracer/download/
 

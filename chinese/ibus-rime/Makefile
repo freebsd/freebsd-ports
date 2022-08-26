@@ -1,5 +1,6 @@
 PORTNAME=	ibus-rime
 DISTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	chinese
 
 MAINTAINER=	khng300@gmail.com

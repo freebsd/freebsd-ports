@@ -46,18 +46,19 @@ lib/vile/vile-mailcap-filt%%SO_EXT%%
 lib/vile/vile-make-filt%%SO_EXT%%
 lib/vile/vile-manfilt
 lib/vile/vile-mcrl-filt%%SO_EXT%%
+lib/vile/vile-md-filt%%SO_EXT%%
 lib/vile/vile-midl-filt%%SO_EXT%%
 lib/vile/vile-mms-filt%%SO_EXT%%
 lib/vile/vile-nmake-filt%%SO_EXT%%
 lib/vile/vile-nr-filt%%SO_EXT%%
 lib/vile/vile-pas-filt%%SO_EXT%%
 lib/vile/vile-perl-filt%%SO_EXT%%
-lib/vile/vile-perl6-filt%%SO_EXT%%
 lib/vile/vile-php-filt%%SO_EXT%%
 lib/vile/vile-pot-filt%%SO_EXT%%
 lib/vile/vile-ps-filt%%SO_EXT%%
 lib/vile/vile-ps1-filt%%SO_EXT%%
 lib/vile/vile-py-filt%%SO_EXT%%
+lib/vile/vile-raku-filt%%SO_EXT%%
 lib/vile/vile-rc-filt%%SO_EXT%%
 lib/vile/vile-rcs-filt%%SO_EXT%%
 lib/vile/vile-rexx-filt%%SO_EXT%%
@@ -169,6 +170,7 @@ man/man1/vile.1.gz
 %%DATADIR%%/make.keywords
 %%DATADIR%%/manpage.rc
 %%DATADIR%%/mcrl.keywords
+%%DATADIR%%/md.keywords
 %%DATADIR%%/midl.keywords
 %%DATADIR%%/modes.rc
 %%DATADIR%%/mvn.keywords
@@ -180,7 +182,6 @@ man/man1/vile.1.gz
 %%DATADIR%%/pas.keywords
 %%DATADIR%%/pc.keywords
 %%DATADIR%%/perl.keywords
-%%DATADIR%%/perl6.keywords
 %%DATADIR%%/php.keywords
 %%DATADIR%%/pictmode.rc
 %%DATADIR%%/pot.keywords
@@ -188,6 +189,7 @@ man/man1/vile.1.gz
 %%DATADIR%%/ps.keywords
 %%DATADIR%%/ps1.keywords
 %%DATADIR%%/py.keywords
+%%DATADIR%%/raku.keywords
 %%DATADIR%%/rb.keywords
 %%DATADIR%%/rc.keywords
 %%DATADIR%%/rcs.keywords

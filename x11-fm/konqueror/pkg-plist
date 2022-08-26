@@ -23,15 +23,15 @@ lib/libKF5Konq.so.6
 lib/libkdeinit5_kfmclient.so
 lib/libkdeinit5_konqueror.so
 lib/libkonqsidebarplugin.so
-lib/libkonqsidebarplugin.so.5
 lib/libkonqsidebarplugin.so.%%KDE_APPLICATIONS_VERSION%%
-lib/libkonquerorprivate.so.5
+lib/libkonqsidebarplugin.so.5
 lib/libkonquerorprivate.so.%%KDE_APPLICATIONS_VERSION%%
+lib/libkonquerorprivate.so.5
 lib/libkwebenginepart.so
 %%QT_PLUGINDIR%%/akregatorkonqfeedicon.so
 %%QT_PLUGINDIR%%/autorefresh.so
 %%QT_PLUGINDIR%%/babelfishplugin.so
-%%QT_PLUGINDIR%%/dirfilterplugin.so
+%%QT_PLUGINDIR%%/dolphinpart/kpartplugins/dirfilterplugin.so
 %%QT_PLUGINDIR%%/dolphinpart/kpartplugins/kimgallery.so
 %%QT_PLUGINDIR%%/dolphinpart/kpartplugins/konq_shellcmdplugin.so
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/akregatorplugin.so
@@ -41,7 +41,6 @@ lib/libkwebenginepart.so
 %%QT_PLUGINDIR%%/khtml/kpartplugins/akregatorkonqfeediconkhtml_kpartplugins.so
 %%QT_PLUGINDIR%%/khtml/kpartplugins/autorefreshkhtml_kpartplugins.so
 %%QT_PLUGINDIR%%/khtml/kpartplugins/babelfishpluginkhtml_kpartplugins.so
-%%QT_PLUGINDIR%%/khtml/kpartplugins/dirfilterpluginkhtml_kpartplugins.so
 %%QT_PLUGINDIR%%/khtml/kpartplugins/khtmlsettingspluginkhtml_kpartplugins.so
 %%QT_PLUGINDIR%%/khtml/kpartplugins/khtmlttspluginkhtml_kpartplugins.so
 %%QT_PLUGINDIR%%/khtml/kpartplugins/konqueror_kget_browser_integrationkhtml_kpartplugins.so
@@ -67,7 +66,6 @@ lib/libkwebenginepart.so
 %%QT_PLUGINDIR%%/kwebkitpart/kpartplugins/akregatorkonqfeediconkwebkitpart_kpartplugins.so
 %%QT_PLUGINDIR%%/kwebkitpart/kpartplugins/autorefreshkwebkitpart_kpartplugins.so
 %%QT_PLUGINDIR%%/kwebkitpart/kpartplugins/babelfishpluginkwebkitpart_kpartplugins.so
-%%QT_PLUGINDIR%%/kwebkitpart/kpartplugins/dirfilterpluginkwebkitpart_kpartplugins.so
 %%QT_PLUGINDIR%%/kwebkitpart/kpartplugins/khtmlsettingspluginkwebkitpart_kpartplugins.so
 %%QT_PLUGINDIR%%/kwebkitpart/kpartplugins/khtmlttspluginkwebkitpart_kpartplugins.so
 %%QT_PLUGINDIR%%/kwebkitpart/kpartplugins/konqueror_kget_browser_integrationkwebkitpart_kpartplugins.so
@@ -79,7 +77,6 @@ lib/libkwebenginepart.so
 %%QT_PLUGINDIR%%/webenginepart/kpartplugins/akregatorkonqfeediconwebenginepart_kpartplugins.so
 %%QT_PLUGINDIR%%/webenginepart/kpartplugins/autorefreshwebenginepart_kpartplugins.so
 %%QT_PLUGINDIR%%/webenginepart/kpartplugins/babelfishpluginwebenginepart_kpartplugins.so
-%%QT_PLUGINDIR%%/webenginepart/kpartplugins/dirfilterpluginwebenginepart_kpartplugins.so
 %%QT_PLUGINDIR%%/webenginepart/kpartplugins/khtmlsettingspluginwebenginepart_kpartplugins.so
 %%QT_PLUGINDIR%%/webenginepart/kpartplugins/khtmlttspluginwebenginepart_kpartplugins.so
 %%QT_PLUGINDIR%%/webenginepart/kpartplugins/konqueror_kget_browser_integrationwebenginepart_kpartplugins.so
@@ -91,10 +88,13 @@ share/applications/kfmclient_dir.desktop
 share/applications/kfmclient_html.desktop
 share/applications/kfmclient_war.desktop
 share/applications/konqbrowser.desktop
+share/applications/org.kde.konqueror.desktop
 share/config.kcfg/kcreatewebarchive.kcfg
 share/config.kcfg/konqueror.kcfg
 share/dbus-1/interfaces/org.kde.Konqueror.Main.xml
 share/dbus-1/interfaces/org.kde.Konqueror.MainWindow.xml
+share/icons/hicolor/128x128/apps/konqueror.png
+share/icons/hicolor/128x128/apps/webengine.png
 share/icons/hicolor/16x16/actions/babelfish.png
 share/icons/hicolor/16x16/actions/imagegallery.png
 share/icons/hicolor/16x16/actions/webarchiver.png
@@ -113,8 +113,6 @@ share/icons/hicolor/48x48/apps/konqueror.png
 share/icons/hicolor/48x48/apps/webengine.png
 share/icons/hicolor/64x64/apps/konqueror.png
 share/icons/hicolor/64x64/apps/webengine.png
-share/icons/hicolor/128x128/apps/konqueror.png
-share/icons/hicolor/128x128/apps/webengine.png
 share/kcmcss/template.css
 share/kconf_update/webenginepart.upd
 share/kcontrol/pics/onlyone.png
@@ -1418,6 +1416,7 @@ share/locale/zh_TW/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/zh_TW/LC_MESSAGES/libkonq.mo
 share/locale/zh_TW/LC_MESSAGES/searchbarplugin.mo
 share/locale/zh_TW/LC_MESSAGES/uachangerplugin.mo
+share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 share/locale/zh_TW/LC_MESSAGES/webenginepart.mo
 share/metainfo/org.kde.konqueror.appdata.xml
 share/qlogging-categories5/akregatorplugin.categories

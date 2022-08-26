@@ -1,6 +1,6 @@
 bin/fsearch
 man/man1/fsearch.1.gz
-share/applications/fsearch.desktop
+share/applications/io.github.cboxdoerfer.FSearch.desktop
 share/icons/hicolor/scalable/apps/io.github.cboxdoerfer.FSearch.svg
 share/locale/ar/LC_MESSAGES/fsearch.mo
 share/locale/ber/LC_MESSAGES/fsearch.mo
@@ -10,6 +10,7 @@ share/locale/de/LC_MESSAGES/fsearch.mo
 share/locale/el/LC_MESSAGES/fsearch.mo
 share/locale/en_GB/LC_MESSAGES/fsearch.mo
 share/locale/es/LC_MESSAGES/fsearch.mo
+share/locale/eu/LC_MESSAGES/fsearch.mo
 share/locale/fi/LC_MESSAGES/fsearch.mo
 share/locale/fr/LC_MESSAGES/fsearch.mo
 share/locale/gl/LC_MESSAGES/fsearch.mo
@@ -21,6 +22,7 @@ share/locale/it/LC_MESSAGES/fsearch.mo
 share/locale/ja/LC_MESSAGES/fsearch.mo
 share/locale/ko/LC_MESSAGES/fsearch.mo
 share/locale/lt/LC_MESSAGES/fsearch.mo
+share/locale/mr/LC_MESSAGES/fsearch.mo
 share/locale/nb_NO/LC_MESSAGES/fsearch.mo
 share/locale/nl/LC_MESSAGES/fsearch.mo
 share/locale/pl/LC_MESSAGES/fsearch.mo
@@ -34,3 +36,4 @@ share/locale/tr/LC_MESSAGES/fsearch.mo
 share/locale/tzm/LC_MESSAGES/fsearch.mo
 share/locale/uk/LC_MESSAGES/fsearch.mo
 share/locale/zh_CN/LC_MESSAGES/fsearch.mo
+share/metainfo/io.github.cboxdoerfer.FSearch.appdata.xml

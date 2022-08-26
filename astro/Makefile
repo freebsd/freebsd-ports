@@ -6,6 +6,7 @@
     SUBDIR += celestia
     SUBDIR += celestia-gtk
     SUBDIR += cfitsio
+    SUBDIR += erfa
     SUBDIR += fowsr
     SUBDIR += foxtrotgps
     SUBDIR += geographiclib
@@ -71,6 +72,7 @@
     SUBDIR += p5-Net-GPSD3
     SUBDIR += p5-Starlink-AST
     SUBDIR += p5-Weather-Underground
+    SUBDIR += pal
     SUBDIR += phd2
     SUBDIR += phoon
     SUBDIR += pp3

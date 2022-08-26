@@ -1,5 +1,5 @@
 PORTNAME=	tiff
-PORTVERSION=	4.3.0
+DISTVERSION=	4.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.osgeo.org/libtiff/
 
@@ -9,19 +9,18 @@ COMMENT=	Tools and library routines for working with TIFF images
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libjbig.so:graphics/jbigkit
+LIB_DEPENDS=	libdeflate.so:archivers/libdeflate \
+		libjbig.so:graphics/jbigkit \
+		libzstd.so:archivers/zstd
 
-USES=		cpe jpeg libtool pathfix
+USES=		cpe jpeg libtool localbase pathfix tar:xz
 CPE_PRODUCT=	libtiff
 CPE_VERSION=	${DISTVERSION:C/[a-z]+//}
 CPE_UPDATE=	${DISTVERSION:C/[0-9.]+//}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
-			--with-jpeg-lib-dir=${LOCALBASE}/lib \
-			--without-x \
+CONFIGURE_ARGS=		--without-x \
 			--disable-webp \
-			--disable-zstd
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check

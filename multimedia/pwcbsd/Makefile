@@ -24,13 +24,9 @@ OPTIONS_DEFAULT=	PROGRAMS
 PROGRAMS_DESC=	Build the programs
 MMAP_DESC=	Enable mmap support (MAY CRASH YOUR SYSTEM)
 
-.include <bsd.port.options.mk>
+CFLAGS+=	-Wno-unused-but-set-variable
 
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.kld \
-		${FILESDIR}/extra-patch-pwc-ctrl.c \
-		${FILESDIR}/extra-patch-pwc-v4l.c \
-		${FILESDIR}/extra-patch-pwc.c \
-		${FILESDIR}/extra-patch-pwc.h
+.include <bsd.port.options.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files

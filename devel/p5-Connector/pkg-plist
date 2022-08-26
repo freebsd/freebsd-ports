@@ -10,6 +10,7 @@
 %%PERL5_MAN3%%/Connector::Builtin::File::Path.3.gz
 %%PERL5_MAN3%%/Connector::Builtin::File::SCP.3.gz
 %%PERL5_MAN3%%/Connector::Builtin::File::Simple.3.gz
+%%PERL5_MAN3%%/Connector::Builtin::Null.3.gz
 %%PERL5_MAN3%%/Connector::Iterator.3.gz
 %%PERL5_MAN3%%/Connector::Multi.3.gz
 %%PERL5_MAN3%%/Connector::Multi::Merge.3.gz
@@ -44,6 +45,7 @@
 %%SITE_PERL%%/Connector/Builtin/File/SCP.pm
 %%SITE_PERL%%/Connector/Builtin/File/Simple.pm
 %%SITE_PERL%%/Connector/Builtin/Memory.pm
+%%SITE_PERL%%/Connector/Builtin/Null.pm
 %%SITE_PERL%%/Connector/Builtin/Static.pm
 %%SITE_PERL%%/Connector/Iterator.pm
 %%SITE_PERL%%/Connector/Multi.pm

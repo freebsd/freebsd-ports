@@ -5,7 +5,8 @@ CATEGORIES=	graphics kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SANE library interface for KDE
 
-LIB_DEPENDS=	libsane.so:graphics/sane-backends
+LIB_DEPENDS=	libsane.so:graphics/sane-backends \
+		libKSaneCore.so:graphics/ksanecore
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	config i18n sonnet textwidgets wallet widgetsaddons \

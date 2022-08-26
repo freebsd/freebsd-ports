@@ -1,0 +1,5 @@
+dwave-inspector is a tool for visualizing problems submitted to, and answers
+received from, a D-Wave structured solver such as an Advantage(TM) quantum
+computer.
+
+WWW: https://docs.ocean.dwavesys.com/projects/inspector/en/latest/

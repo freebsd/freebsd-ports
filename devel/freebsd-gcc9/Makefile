@@ -1,6 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	9.3.0
-PORTREVISION=	1
+PORTVERSION=	9.5.0
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	${TARGETARCH}-
@@ -49,10 +48,15 @@ CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--with-gmp=${LOCALBASE} \
 		--with-pkgversion="FreeBSD Ports Collection for ${PKGNAMEPREFIX:C/-//g}" \
 		--with-system-zlib \
+		--without-zstd \
 		--with-gxx-include-dir=/usr/include/c++/v1/ \
 		--with-sysroot="/" \
 		--with-as=${LOCALBASE}/bin/${BU_PREFIX}-as \
 		--with-ld=${LOCALBASE}/bin/${BU_PREFIX}-ld
+
+.if ${TARGETARCH:Mpowerpc64*}
+CONFIGURE_ARGS+=--with-abi=elfv2
+.endif
 
 ALL_TARGET=	all-gcc
 INSTALL_TARGET=	install-gcc
@@ -83,7 +87,7 @@ CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${TARGETARCH:Marm*} || ${TARGETARCH} == "aarch64"
-. if ${COMPILER_TYPE} == clang
+. if ${CHOSEN_COMPILER_TYPE} == clang
 MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
 . endif
 .endif

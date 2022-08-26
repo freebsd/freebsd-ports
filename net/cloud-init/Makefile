@@ -1,5 +1,6 @@
 PORTNAME=	cloud-init
-DISTVERSION=	21.4
+DISTVERSION=	22.3
+PORTREVISION=	1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,7 +21,7 @@ RUN_DEPENDS=	sudo>0:security/sudo \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oauthlib>0:security/py-oauthlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpatch>0:devel/py-jsonpatch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema3>0:devel/py-jsonschema3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpointer>0:devel/py-jsonpointer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR}
 
@@ -29,7 +30,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	canonical
 
 SHEBANG_FILES=	tools/validate-yaml.py tools/read-dependencies \
-		tools/read-version
+		tools/read-version tools/hook-hotplug
 USE_PYTHON=	autoplist distutils
 ETCDIR=		${PREFIX}/etc/cloud
 

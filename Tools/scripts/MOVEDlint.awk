@@ -36,19 +36,34 @@ BEGIN {
     portsdir = ENVIRON["PORTSDIR"] ? ENVIRON["PORTSDIR"] : "/usr/ports"
     if (ARGC == 1) {
         ARGV[ARGC++] = portsdir "/MOVED"
-        if (ENVIRON["BLAME"]) {
-	    if (!system("test -r " portsdir "/.git")) {
-                blame = "cd " portsdir "; git blame MOVED 2>/dev/null"
-            }
-
+    }
+    if (ENVIRON["BLAME"]) {
+        blame=1
+    }
+    if (blame) {
+	if (!system("test -r " portsdir "/.git")) {
+            blame = "cd " portsdir "; git blame MOVED 2>/dev/null"
         }
     }
     sort = "/usr/bin/sort -n"
-    lastdate="1999-12-31"
+    if (!lastdate) {
+        lastdate="1999-12-31"
+    } else if (lastdate !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/) {
+	    printf "Invalid date format '%s' expecting YYYY-MM-DD\n", lastdate
+	    exit(1)
+    }
 }
 
 /^(#|$)/ {
     next
+}
+
+!started && $3 < lastdate {
+	next
+}
+
+!started && $3 >= lastdate {
+	started = 1
 }
 
 NF != 4 {
@@ -67,6 +82,18 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
     printf "%5d: missing YYYY-MM-DD date\n", NR | sort
     error[NR] = 1
     next
+}
+
+$1 ~ /[ \t]/ {
+	printf "%5d: '%s' contains spaces\n", NR, $1 | sort
+	error[NR] = 1
+	next
+}
+
+$2 ~ /[ \t]/ {
+	printf "%5d: '%s' contains spaces\n", NR, $2 | sort
+	error[NR] = 1
+	next
 }
 
 {
@@ -96,13 +123,17 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
         delete missing[$1]
     } else {
         if (from_flavor != "") {
-            if (!system("test \"" from_flavor "\" = \"`make -C " portsdir "/" $1 " -VFLAVORS:M" from_flavor "`\"")) {
+            if (!system("test \"" from_flavor "\" = \"`make -C " portsdir "/" $1 " -VFLAVORS:M" from_flavor " __MAKE_CONF=/dev/null`\"")) {
                 printf "%5d: %s still has the %s flavor\n", NR, $1, from_flavor | sort
             }
             # No else because the port is there but does not have the flavor,
             # so it should be ok.
         } else {
-            printf "%5d: %s must be marked as resurrected\n", NR, $1 | sort
+	    if ($2 ~ $1 "@") {
+                printf "%5d: %s is a flavor of %s, the line should be removed\n", NR, $2, $1 | sort
+	    } else {
+                printf "%5d: %s must be marked as resurrected\n", NR, $1 | sort
+            }
         }
     }
 
@@ -118,7 +149,7 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
             missing[$2] = NR
         else
             if (to_flavor != "") {
-                if (system("test \"" to_flavor "\" = \"`make -C " portsdir "/" $2 " -VFLAVORS:M" to_flavor "`\"")) {
+                if (system("test \"" to_flavor "\" = \"`make -C " portsdir "/" $2 " -VFLAVORS:M" to_flavor " __MAKE_CONF=/dev/null`\"")) {
                     printf "%5d: %s does not have the %s flavor\n", NR, $2, to_flavor | sort
                     error[NR] = 1
                 }
@@ -154,4 +185,6 @@ END {
     }
 
     close(sort)
+    if (length(error) > 0)
+	    exit(1)
 }

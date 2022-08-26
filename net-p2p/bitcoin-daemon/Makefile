@@ -23,7 +23,7 @@ PLIST_FILES=	bin/bitcoind \
 
 USE_RC_SUBR=	bitcoind
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/bitcoin.conf ${STAGEDIR}${PREFIX}/etc/bitcoin.conf.sample

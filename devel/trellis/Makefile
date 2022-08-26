@@ -1,6 +1,6 @@
 PORTNAME=	trellis
 PORTVERSION=	g20190422
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 
 # Add Python 3.8 to search list in ${WRKSRC}/libtrellis/CMakeLists.txt

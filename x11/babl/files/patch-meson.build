@@ -1,0 +1,15 @@
+Fix for meson >=0.62.0
+
+Index: meson.build
+--- meson.build.orig	2022-08-23 12:52:30 UTC
++++ meson.build
+@@ -55,9 +55,6 @@ stable = (stability_version_number % 2 == 0)
+ stability_version_number = (major_version != 0 ? minor_version : micro_version)
+ stable = (stability_version_number % 2 == 0)
+ 
+-conf.set10('BABL_UNSTABLE', not stable, description:
+-  'Define to 1 if this is an unstable version of BABL.')
+-
+ conf.set       ('BABL_MAJOR_VERSION',    '@0@'.format(major_version))
+ conf.set       ('BABL_MINOR_VERSION',    '@0@'.format(minor_version))
+ conf.set       ('BABL_MICRO_VERSION',    '@0@'.format(micro_version))

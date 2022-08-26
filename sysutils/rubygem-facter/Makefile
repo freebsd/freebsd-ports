@@ -1,21 +1,25 @@
 PORTNAME=	facter
 PORTVERSION=	4.2.11
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
+
+PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/puppetlabs/facter/pull/
+PATCHFILES=	2497.diff 2510.diff
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Cross-platform Ruby library for retrieving facts from OS
 
 LICENSE=	APACHE20
 
-PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/puppetlabs/facter/pull/
-PATCHFILES=	2497.diff 2510.diff
-PATCH_DIST_STRIP=-p1
-
-# rubygem-ffi is a soft dependency, but is used on FreeBSD to resolve some facts
-RUN_DEPENDS=	rubygem-ffi>=1.0:devel/rubygem-ffi \
-		rubygem-hocon>=1.3<2:devel/rubygem-hocon \
+RUN_DEPENDS=	rubygem-hocon>=1.3<2:devel/rubygem-hocon \
 		rubygem-thor>=1.0.1<2.0:devel/rubygem-thor
+# Soft dependencies that resolve more FreeBSD facts
+RUN_DEPENDS+=	rubygem-ruby-augeas>0:textproc/rubygem-ruby-augeas \
+		rubygem-ffi>=1.0:devel/rubygem-ffi \
+		rubygem-rexml>0:textproc/rubygem-rexml \
+		rubygem-sys-filesystem>0:sysutils/rubygem-sys-filesystem
 
 USES=		cpe gem
 CPE_VENDOR=	puppet

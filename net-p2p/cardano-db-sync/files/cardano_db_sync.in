@@ -1,0 +1,159 @@
+#!/bin/sh
+
+# PROVIDE: cardano_db_sync
+# REQUIRE: DAEMON cardano_node postgresql
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# cardano_db_sync_enable:          Set to YES to enable cardano_db_sync.
+#                               Default: "NO"
+#
+# cardano_db_sync_net:             A network name to connect to.
+#                               Default: "mainnet"
+#
+# cardano_db_sync_home:            An absolute path to the daemon home directory.
+#                               The directory will be created if not exists.
+#                               Default: "/var/db/cardano_db_sync"
+#
+# cardano_db_sync_cnode_socket:    An absolute path to the cardano-node socket file.
+#                               Default: "/var/db/cardano_node/jail/socket/cardano-node.sock"
+#
+# Advanced settings that usually don't need to be changed for simple usage cases:
+#
+# cardano_db_sync_pgpass:          An absolute path to the PostgreSQL ".pgpass" connection file.
+#                               Default: "${cardano_db_sync_home}/${cardano_db_sync_net}-configs/.pgpass"
+#
+# cardano_db_sync_config:          An absolute path to the db-sync configuration JSON file.
+#                               Default: "${cardano_db_sync_home}/${cardano_db_sync_net}-configs/db-sync-config.json"
+#
+# cardano_db_sync_schema:          An absolute path to the db-sync schema directory.
+#                               Default: "%%LOCALBASE%%/share/cardano-db-sync/schema"
+#
+# cardano_db_sync_flags:           Any additional command line flags to pass to cardano_db_sync.
+#                               Default: ""
+#
+
+. /etc/rc.subr
+
+name=cardano_db_sync
+desc="Cardano DB-Sync daemon"
+rcvar=cardano_db_sync_enable
+command=%%PREFIX%%/bin/cardano-db-sync
+
+cardano_deployment_url="https://raw.githubusercontent.com/cardano-bsd-alliance/freebsd-ports-cardano-artifacts/master/cardano-db-sync"
+cardano_config_files="config db-sync-config byron-genesis shelley-genesis alonzo-genesis"
+cardano_networks="mainnet testnet"
+
+start_cmd="${name}_start"
+start_precmd="${name}_prestart"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+fetch_cmd="${name}_fetch"
+
+extra_commands="status fetch"
+
+load_rc_config $name
+: ${cardano_db_sync_enable:=NO}
+: ${cardano_db_sync_net:="mainnet"}
+: ${cardano_db_sync_home:="/var/db/cardano_db_sync"}
+: ${cardano_db_sync_cnode_socket:="/var/db/cardano_node/jail/socket/cardano-node.sock"}
+: ${cardano_db_sync_pgpass:="${cardano_db_sync_home}/${cardano_db_sync_net}-configs/.pgpass"}
+: ${cardano_db_sync_config:="${cardano_db_sync_home}/${cardano_db_sync_net}-configs/db-sync-config.json"}
+: ${cardano_db_sync_schema:="%%LOCALBASE%%/share/cardano-db-sync/schema"}
+: ${cardano_db_sync_flags:=""}
+
+cardano_db_sync_state="${cardano_db_sync_home}/${cardano_db_sync_net}-state"
+export PGPASSFILE=${cardano_db_sync_pgpass}
+pidfile="/var/run/cardano-db-sync.pid"
+logfile="/var/log/cardano-db-sync.log"
+flags=" --schema-dir ${cardano_db_sync_schema} \
+        --state-dir ${cardano_db_sync_state} \
+        --socket-path ${cardano_db_sync_cnode_socket} \
+        --config ${cardano_db_sync_config} \
+        ${cardano_db_sync_flags}"
+
+sanity_check()
+{
+    if [ ! -f ${cardano_db_sync_config} ]
+    then
+        echo "Invalid value for cardano_db_sync_config: missing file ${cardano_db_sync_config}"
+        echo "You might want to run service cardano_db_sync onefetch"
+        exit 1
+    fi
+    if [ ! -f ${cardano_db_sync_pgpass} ]
+    then
+        echo "Invalid value for cardano_db_sync_pgpass: missing file ${cardano_db_sync_pgpass}"
+        echo "Did you setup postgresql database access?"
+        exit 1
+    fi
+    return 0
+}
+
+cardano_db_sync_prestart()
+{
+    # Create cardano_db_sync home directory, if not exists
+    if [ ! -d "${cardano_db_sync_home}" ]; then
+        mkdir -p "${cardano_db_sync_home}"
+    fi
+    # Create cardano_db_sync state directory, if not exists
+    if [ ! -d "${cardano_db_sync_state}" ]; then
+        mkdir -p "${cardano_db_sync_state}"
+    fi
+
+    sanity_check
+}
+
+cardano_db_sync_start()
+{
+    check_startmsgs && echo "Starting ${name}."
+
+    while ! nc -NU ${cardano_db_sync_cnode_socket} < /dev/null > /dev/null
+    do
+        echo "Waiting for cardano-node socket to appear in ${cardano_db_sync_cnode_socket}"
+        sleep 10s
+    done
+
+    cd $cardano_db_sync_home && /usr/bin/env PATH=$PATH:%%LOCALBASE%%/bin /usr/sbin/daemon -p $pidfile -S -T cardano-db-sync \
+        ${command} ${flags} 2>&1 > /dev/null
+}
+
+cardano_db_sync_stop()
+{
+    pid=$(check_pidfile "${pidfile}" "${command}")
+    if [ -z "${pid}" ]
+    then
+        echo "${name} is not running"
+        return 1
+    else
+        echo "Stopping ${name}."
+        /bin/kill -INT "$pid"
+        wait_for_pids "$pid"
+    fi
+}
+
+cardano_db_sync_status()
+{
+    pid=$(check_pidfile "${pidfile}" "${command}")
+    if [ -z "${pid}" ]
+    then
+      echo "${name} is not running"
+      return 1
+    else
+      echo ${name} is running as pid $pid
+    fi
+}
+
+cardano_db_sync_fetch()
+{
+    for net in ${cardano_networks}
+    do
+        echo "Fetching configuration files for ${net}"
+        mkdir -p "${cardano_db_sync_home}/${net}-configs"
+        /usr/bin/apply "/usr/bin/fetch -a -o \
+        ${cardano_db_sync_home}/${net}-configs ${cardano_deployment_url}/${net}-configs/%1.json" $cardano_config_files
+    done
+}
+
+
+run_rc_command "$1"

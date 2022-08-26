@@ -1,5 +1,5 @@
 PORTNAME=	qtcreator
-DISTVERSION=	7.0.2
+DISTVERSION=	8.0.1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -19,32 +19,38 @@ LIB_DEPENDS=	libKF5SyntaxHighlighting.so:textproc/kf5-syntax-highlighting \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
-USES=		compiler:c++14-lang pkgconfig cmake gl python qt:5 shebangfix tar:xz \
+USES=		compiler:c++17-lang pkgconfig cmake gl python qt:5 shebangfix tar:xz \
 		desktop-file-utils
 USE_GL=		gl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 USE_QT=		buildtools concurrent core declarative designer gui help \
 		linguist location network printsupport qdoc qmake \
-		quick3d quickcontrols script serialport sql svg testlib \
+		quick3d quickcontrols quicktimeline script serialport sql svg testlib \
 		webchannel widgets xml xmlpatterns
 
 # Workaround, KF5-5.94 moved header files to subfolder. Instead of using the bundled
 # syntax-highligher, just help it find the proper files.
 CFLAGS+=	-I${LOCALBASE}/include/KF5/KSyntaxHighlighting/KSyntaxHighlighting
 
-SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
-			tests/system/tools/findUnusedObjects.py \
-			share/qtcreator/templates/wizards/files/python/file.py \
+SHEBANG_FILES=		bin/qtcreator.sh \
+			doc/fixnavi.pl \
+			doc/qtcreatordev/examples/aggregation/test.sh \
+			scripts/*.pl \
+			scripts/*.py \
+			scripts/*.sh \
 			share/qtcreator/scripts/openTerminal.py \
+			share/qtcreator/translations/check-ts.pl \
+			share/qtcreator/translations/*.py \
+			src/app/winicons/createicons.sh \
+			src/libs/glsl/make-parser.sh \
 			src/libs/qmljs/parser/changeLicense.py \
+			src/libs/qmljs/parser/gen-parser.sh \
 			src/libs/qt-breakpad/qtbreakpadsymbols \
-			src/tools/icons/export.py \
-			scripts/ninjawrapper.py \
-			scripts/checkInstalledFiles.py \
-			scripts/deployqt.py \
-			scripts/dependencyinfo.py \
-			scripts/uichanges.py \
-			scripts/makedmg.py
+			src/plugins/perfprofiler/tracepoints.sh \
+			src/tools/icons/*.sh \
+			src/tools/icons/*.py \
+			tests/system/tools/findUnusedObjects.py \
+			tests/system/tools/objectsToTable.py
 
 # Provide library paths, default llvm first as a hint to the clang code model.
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH:STRING="${PREFIX}/llvm${LLVM_DEFAULT};${PREFIX}"
@@ -83,7 +89,7 @@ QTWEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngine
 
 .include <bsd.port.pre.mk>
 
-# Force a modern LLVM >= 10
+# Force a modern LLVM >= 13
 .if ${LLVM_DEFAULT:C/[1-5]./&0/:S,-devel,990,} > 80
 LLVM_DEFAULT=	13
 .endif
@@ -98,5 +104,9 @@ do-install-DOCS-on:
 	    --component qch_docs
 	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX} \
 	    --component html_docs
+
+# QmlDesigner needs Qt 6.2, remove its data for now.
+post-install:
+	${RM} -r ${STAGEDIR}${DATADIR}/qmldesigner
 
 .include <bsd.port.post.mk>

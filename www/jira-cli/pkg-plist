@@ -20,6 +20,8 @@ man/man7/jira-issue-list.7.gz
 man/man7/jira-issue-move.7.gz
 man/man7/jira-issue-unlink.7.gz
 man/man7/jira-issue-view.7.gz
+man/man7/jira-issue-worklog-add.7.gz
+man/man7/jira-issue-worklog.7.gz
 man/man7/jira-issue.7.gz
 man/man7/jira-man.7.gz
 man/man7/jira-me.7.gz

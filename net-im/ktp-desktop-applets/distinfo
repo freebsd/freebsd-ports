@@ -1,3 +1,3 @@
-TIMESTAMP = 1657013304
-SHA256 (KDE/release-service/22.04.3/ktp-desktop-applets-22.04.3.tar.xz) = b22511c75a1e389f2da7e9fdcd92f938487c43a0905fdf7ae1bf31f1ba3c620e
-SIZE (KDE/release-service/22.04.3/ktp-desktop-applets-22.04.3.tar.xz) = 43784
+TIMESTAMP = 1660628483
+SHA256 (KDE/release-service/22.08.0/ktp-desktop-applets-22.08.0.tar.xz) = 3add25d3e25fe9cb004c703c793fb3cef476ef4a68ab88e46a4bb8bf53cf125f
+SIZE (KDE/release-service/22.08.0/ktp-desktop-applets-22.08.0.tar.xz) = 43752

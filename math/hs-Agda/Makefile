@@ -1,6 +1,6 @@
 PORTNAME=	Agda
 PORTVERSION=	2.6.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -82,18 +82,15 @@ USE_CABAL=	OneTuple-0.3.1_2 \
 		witherable-0.4.2_2 \
 		zlib-0.6.3.0
 
-EXECUTABLES=		agda-mode agda
-CABAL_WRAPPER_SCRIPTS=	${EXECUTABLES}
+CABAL_EXECUTABLES=	agda-mode agda
+CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
 agda_DATADIR_VARS=	Agda
 agda-mode_DATADIR_VARS=	Agda
 
-post-build:
-#	Do not compile Emacs mode files until https://github.com/agda/agda/issues/4610 is fixed
-#	${SETENV} Agda_datadir=${WRKSRC}/src/data $$(find ${WRKSRC}/dist-newstyle -name agda-mode -type f -perm +111) compile
-
 post-install:
+	${SETENV} Agda_datadir=${WRKSRC}/src/data ${STAGEDIR}${PREFIX}/libexec/cabal/agda-mode compile
+	find ${WRKSRC}/src/data/lib/prim/Agda -name '*.agda' -exec ${SETENV} Agda_datadir=${WRKSRC}/src/data ${STAGEDIR}${PREFIX}/libexec/cabal/agda {} \;
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/prim/Agda
-	find ${WRKSRC}/src/data/lib/prim/Agda -name '*.agda' -exec ${SETENV} ${PORTNAME}_datadir=${WRKSRC}/src/data ${STAGEDIR}${PREFIX}/libexec/cabal/agda {} \;
 	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} lib ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} emacs-mode ${STAGEDIR}${DATADIR}
 

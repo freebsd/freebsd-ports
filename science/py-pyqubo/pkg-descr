@@ -1,0 +1,8 @@
+PyQUBO allows you to create QUBOs or Ising models from flexible mathematical
+expressions easily. Some of the features of PyQUBO:
+* python based (C++ backend)
+* fully integrated with Ocean SDK
+* automatic validation of constraints
+* placeholder for parameter tuning
+
+WWW: https://pyqubo.readthedocs.io/en/latest/

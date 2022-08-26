@@ -1,0 +1,11 @@
+--- configure.ac.orig	2012-10-22 16:50:39.000000000 +0200
++++ configure.ac	2014-01-27 22:38:58.000000000 +0100
+@@ -164,7 +164,7 @@
+ if test x$GCC = xyes
+ then
+     CFLAGS="$CFLAGS -Wall -g -fno-strict-aliasing -Wno-unused -Wno-comment"
+-    if test ` $CC -dumpversion | sed -e 's/\(^.\).*/\1/'` = "4" ; then
++    if ! $CC -v 2>&1 | grep clang > /dev/null && test ` $CC -dumpversion | sed -e 's/\(^.\).*/\1/'` = "4" ; then
+         CFLAGS="$CFLAGS -fno-tree-ter"
+     fi
+ fi

@@ -1,0 +1,15 @@
+TIMESTAMP = 1661218227
+SHA256 (schachmat-wego-2.1_GH0.tar.gz) = cebfa622789aa8e7045657d81754cb502ba189f4b4bebd1a95192528e06969a6
+SIZE (schachmat-wego-2.1_GH0.tar.gz) = 16499
+SHA256 (mattn-go-colorable-v0.1.12_GH0.tar.gz) = 32493594aee411896ffe13aaed14df4a23c3006866c46c1a908af79eacd102b2
+SIZE (mattn-go-colorable-v0.1.12_GH0.tar.gz) = 9801
+SHA256 (mattn-go-runewidth-v0.0.13_GH0.tar.gz) = 9b2aeafa5d95a40b32067ba22accdf42cc83414ec5b433ea7de330791beaa196
+SIZE (mattn-go-runewidth-v0.0.13_GH0.tar.gz) = 17353
+SHA256 (schachmat-ingo-a4bdc0729a3f_GH0.tar.gz) = 2bfcf26de06c432ea4e2e61973d6a3b093efcf7b0f720506893589e332c5e0b4
+SIZE (schachmat-ingo-a4bdc0729a3f_GH0.tar.gz) = 5341
+SHA256 (mattn-go-isatty-v0.0.14_GH0.tar.gz) = e6460325edf600297cf2ef68834938fb1c5b8d5f234b3b24ec7c0a29a2d70b39
+SIZE (mattn-go-isatty-v0.0.14_GH0.tar.gz) = 4710
+SHA256 (rivo-uniseg-v0.2.0_GH0.tar.gz) = 3ad738b5c9162ede110d75b23564b6e40e52dd9150ebbced402f4f70be106197
+SIZE (rivo-uniseg-v0.2.0_GH0.tar.gz) = 44036
+SHA256 (golang-sys-39ccf1dd6fa6_GH0.tar.gz) = 91b6b5c8e7793ebdcbdf014bc1695bbcf1ea171abdcdb56ca0b3f4a9bc3f60ee
+SIZE (golang-sys-39ccf1dd6fa6_GH0.tar.gz) = 1211355

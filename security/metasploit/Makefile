@@ -1,6 +1,6 @@
 PORTNAME=	metasploit
 DISTVERSION=	6.1.24
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -39,9 +39,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=2.0.54:security/rubygem-metasploit-payloads \
+		rubygem-metasploit-payloads>=2.0.66:security/rubygem-metasploit-payloads \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
-		rubygem-metasploit_payloads-mettle>=1.0.10:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit_payloads-mettle>=1.0.17:security/rubygem-metasploit_payloads-mettle \
 		rubygem-mqtt>=0:net/rubygem-mqtt \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-nessus_rest>=0:security/rubygem-nessus_rest \
@@ -165,9 +165,9 @@ NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
 
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
-		/rb-readline/d' \
+		/rb-readline/d ; /win32api/d' \
 		${WRKSRC}/metasploit-framework.gemspec
-	${REINPLACE_CMD} "/concurrent-ruby/s|,'1.0.5'|| ; /reline/s|, '0.2.5'|| ; /pcaprub/s|, '0.12.4'||" \
+	${REINPLACE_CMD} "/concurrent-ruby/s|,'1.0.5'|| ; /reline/s|, '0.2.5'|| ; /pcaprub/s|, '0.12.4'|| ; /io-console/s|, '0.5.9'|| ; /faraday/s|, '1.8.0'||" \
 		${WRKSRC}/metasploit-framework.gemspec
 
 do-build:

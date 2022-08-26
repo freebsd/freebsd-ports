@@ -1,11 +1,11 @@
 PORTNAME=	binutils
 PORTVERSION=	2.37
-PORTREVISION=	2
+PORTREVISION=	4
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 
-MAINTAINER?=	jflopezfernandez@gmail.com
+MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	GNU binary tools
 
 LICENSE=	GPLv3 LGPL3
@@ -130,6 +130,9 @@ post-patch:
 	${REINPLACE_CMD} -e "s/-ldl//g" ${WRKSRC}/gold/testsuite/Makefile.in
 # Force the generation of man pages
 	${RM} ${WRKSRC}/binutils/doc/*.1
+	${RM} ${WRKSRC}/gas/doc/*.1
+	${RM} ${WRKSRC}/gprof/*.1
+	${RM} ${WRKSRC}/ld/*.1
 
 post-install:
 .if ${FLAVOR} == native

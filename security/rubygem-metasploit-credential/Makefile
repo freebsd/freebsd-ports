@@ -1,5 +1,5 @@
 PORTNAME=	metasploit-credential
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.8
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

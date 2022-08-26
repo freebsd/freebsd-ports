@@ -1,4 +1,4 @@
---- Makefile.orig	2022-04-01 11:30:07 UTC
+--- Makefile.orig	2022-08-01 12:52:28 UTC
 +++ Makefile
 @@ -1,40 +1,12 @@
  #  fotoxx Makefile
@@ -23,11 +23,11 @@
 -   endif
 -else                       #  GCC
 -   ifdef DEBUG
--      CXXFLAGS += -Wall -g -rdynamic -O0 -fsanitize=address                      \
+-      CXXFLAGS += -Wall -g2 -rdynamic -O0 -fsanitize=address                      \
 -                           -Wno-format-truncation -Wno-stringop-truncation
 -      LDFLAGS += -fsanitize=address
 -   else
--      CXXFLAGS += -Wall -g -rdynamic -O2 -Wno-format-truncation -Wno-stringop-truncation
+-      CXXFLAGS += -Wall -g2 -rdynamic -O2 -Wno-format-truncation -Wno-stringop-truncation
 -   endif
 -endif
 -
@@ -41,4 +41,4 @@
 +         -lrt -lpthread -llcms2 -ltiff -lpng -ljpeg -lexecinfo \
           -lclutter-1.0 -lclutter-gtk-1.0 -lchamplain-0.12 -lchamplain-gtk-0.12
  
- ALLFILES = fotoxx.o f.widgets.o f.file.o f.gallery.o f.albums.o f.area.o f.meta.o      \
+ ALLFILES = fotoxx.o f.widgets.o f.file.o f.gallery.o f.albums.o f.select.o f.meta.o    \

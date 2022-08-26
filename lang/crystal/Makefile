@@ -1,5 +1,5 @@
 PORTNAME=		crystal
-DISTVERSION=		1.4.1
+DISTVERSION=		1.5.0
 CATEGORIES=		lang
 MASTER_SITES=		https://dl.unrelenting.technology/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
@@ -39,6 +39,8 @@ MAKE_ARGS=	SHELL=sh \
 		CRYSTAL_CACHE_DIR="${WRKDIR}/cache" \
 		CRYSTAL_CONFIG_VERSION="${DISTVERSION}"
 
+TEST_TARGET=	spec
+
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -70,7 +72,7 @@ post-extract:
 
 post-patch:
 .if ${SSL_DEFAULT} == "base" && ${OSREL:R} < 15
-	@${REINPLACE_CMD} \
+	@${REINPLACE_CMD} -i '' \
 		-e 's|CRYSTAL_SSL_VERSION|1.1.1|g' \
 		-e 's|CRYSTAL_SSL_LDFLAGS|${OPENSSLLIB}|g' \
 		${WRKSRC}/src/openssl/lib_ssl.cr \
@@ -101,5 +103,17 @@ do-install-ZSH-on:
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/zsh/site-functions
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/etc/completion.zsh \
 			${STAGEDIR}${LOCALBASE}/share/zsh/site-functions/_crystal
+
+.if !defined(_CRYSTAL_MAKESUM_GUARD)
+makesum:
+	${MAKE} -D_CRYSTAL_MAKESUM_GUARD makesum ARCH=${ONLY_FOR_ARCHS:O:[1]} DISTINFO_FILE=${DISTINFO_FILE}.tmp
+.for arch in ${ONLY_FOR_ARCHS:O:[2..-1]}
+	${MAKE} -D_CRYSTAL_MAKESUM_GUARD makesum ARCH=${arch} DISTINFO_FILE=${DISTINFO_FILE}.${arch}
+	${SED} 1d ${DISTINFO_FILE}.${arch} >> ${DISTINFO_FILE}.tmp
+	${RM} ${DISTINFO_FILE}.${arch}
+.endfor
+	${AWK} '!seen[$$0]++' ${DISTINFO_FILE}.tmp > ${DISTINFO_FILE}
+	${RM} ${DISTINFO_FILE}.tmp
+.endif
 
 .include <bsd.port.mk>

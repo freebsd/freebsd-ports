@@ -1,11 +1,10 @@
 PORTNAME=	debootstrap
-PORTVERSION=	1.0.123
-PORTREVISION=	6
+PORTVERSION=	1.0.127
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Install Debian or Ubuntu base system into a directory
 
 LICENSE=	MIT

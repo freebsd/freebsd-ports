@@ -1,0 +1,5 @@
+rectangle-packer solves the following problem: Given a set of rectangles with
+fixed orientations, find a bounding box of minimum area that contains them all
+with no overlap.
+
+WWW: https://github.com/Penlect/rectangle-packer

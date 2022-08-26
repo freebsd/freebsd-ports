@@ -1,6 +1,6 @@
---- plugins/builtin/source/content/views/view_find.cpp.orig	2022-08-05 19:36:42 UTC
+--- plugins/builtin/source/content/views/view_find.cpp.orig	2022-08-17 21:25:52 UTC
 +++ plugins/builtin/source/content/views/view_find.cpp
-@@ -247,7 +247,7 @@ namespace hex::plugin::builtin {
+@@ -236,7 +236,7 @@ namespace hex::plugin::builtin {
          auto sequence = hex::decodeByteString(settings.sequence);
          auto occurrence = reader.begin();
          while (true) {

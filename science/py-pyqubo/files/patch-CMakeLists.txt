@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2022-01-08 04:45:42 UTC
++++ CMakeLists.txt
+@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.20)
+ 
+ project(cpp_pyqubo)
+ 
++if (FALSE)
+ include(external/boost_assert.cmake)
+ include(external/boost_config.cmake)
+ include(external/boost_container.cmake)
+@@ -17,6 +18,9 @@ include(external/cimod.cmake)
+ include(external/eigen.cmake)
+ include(external/pybind11.cmake)
+ include(external/robin_hood.cmake)
++endif()
++
++find_package(pybind11)
+ 
+ pybind11_add_module(cpp_pyqubo src/main.cpp)
+ 

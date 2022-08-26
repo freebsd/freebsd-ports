@@ -1,0 +1,17 @@
+Ocean software provides a variety of quantum, classical, and quantum-classical
+dimod samplers that run either remotely (for example, in D-Wave's Leap
+environment) or locally on your CPU.
+
+dwave-samplers implements the following classical algorithms for solving binary
+quadratic models (BQM):
+* Random: a sampler that draws uniform random samples.
+* Simulated Annealing: a probabilistic heuristic for optimization and
+  approximate Boltzmann sampling well suited to finding good solutions of large
+  problems.
+* Steepest Descent: a discrete analogue of gradient descent, often used in
+  machine learning, that quickly finds a local minimum.
+* Tabu: a heuristic that employs local search with methods to escape local
+  minima.
+* Tree Decomposition: an exact solver for problems with low treewidth.
+
+WWW: https://github.com/dwavesystems/dwave-samplers

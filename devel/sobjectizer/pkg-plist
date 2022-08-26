@@ -143,5 +143,5 @@ lib/cmake/sobjectizer/sobjectizer-config-version.cmake
 lib/cmake/sobjectizer/sobjectizer-config.cmake
 lib/cmake/sobjectizer/sobjectizer-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/sobjectizer/sobjectizer-targets.cmake
-lib/libso.5.7.4.1.so
-lib/libso_s.5.7.4.1.a
+lib/libso.5.7.4.2.so
+lib/libso_s.5.7.4.2.a

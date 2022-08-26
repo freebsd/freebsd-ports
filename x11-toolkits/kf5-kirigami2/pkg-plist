@@ -100,7 +100,6 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/GlobalDrawerActionItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/PageActionPropertyGroup.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/PrivateActionToolButton.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/private/RefreshableScrollView.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/SwipeItemEventFilter.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/globaltoolbar/AbstractPageHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/globaltoolbar/BreadcrumbControl.qml
@@ -148,7 +147,6 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/IconPropertiesGroup.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/MenuIcon.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/PassiveNotification.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/ScrollView.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/qmldir
 share/kdevappwizard/templates/kirigami.tar.bz2
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm

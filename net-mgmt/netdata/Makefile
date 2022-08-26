@@ -1,6 +1,7 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.36.0
+DISTVERSION=	1.36.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://github.com/forkbomb9/netdata/commit/:dashboard
@@ -28,6 +29,7 @@ USES=		autoreconf cpe gmake pathfix pkgconfig:both python shebangfix \
 		ssl
 USE_RC_SUBR=	${PORTNAME}
 SHEBANG_GLOB=	*
+BINARY_ALIAS=	ar=llvm-ar ranlib=llvm-ranlib
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-unit-tests
@@ -64,8 +66,7 @@ CLOUD_CONFIGURE_ON=		--with-aclk-ng
 CLOUD_CONFIGURE_OFF=		--disable-cloud
 CUPS_LIB_DEPENDS=		libcups.so:print/cups
 CUPS_CONFIGURE_ENABLE=		plugin-cups
-DBENGINE_LIB_DEPENDS=		libJudy.so:devel/judy \
-				liblz4.so:archivers/liblz4
+DBENGINE_LIB_DEPENDS=		liblz4.so:archivers/liblz4
 DBENGINE_CONFIGURE_ENABLE=	dbengine
 FREEIPMI_LIB_DEPENDS=		libfreeipmi.so:sysutils/freeipmi
 FREEIPMI_CONFIGURE_ENABLE=	plugin-freeipmi

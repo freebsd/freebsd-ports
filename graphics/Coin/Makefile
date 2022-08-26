@@ -1,7 +1,7 @@
 PORTNAME=	Coin
 PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=	Coin-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/unrelentingtech/coin/commit/
