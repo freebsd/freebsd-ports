@@ -1011,6 +1011,7 @@
     SUBDIR += randlib
     SUBDIR += rankwidth
     SUBDIR += rapid
+    SUBDIR += readstat
     SUBDIR += reduce
     SUBDIR += reduce-psl
     SUBDIR += reed-solomon

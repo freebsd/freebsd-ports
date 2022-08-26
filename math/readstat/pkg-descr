@@ -1,0 +1,19 @@
+Originally developed for Wizard, ReadStat is a command-line tool and
+MIT-licensed C library for reading files from popular stats packages. Supported
+data formats include:
+
+ * SAS: SAS7BDAT (binary file) and XPORT (transport file)
+ * Stata: DTA (binary file) versions 104-119
+ * SPSS: POR (portable file), SAV (binary file), and ZSAV (compressed binary)
+
+Supported metadata formats include:
+
+ * SAS: SAS7BCAT (catalog file) and .sas (command file)
+ * Stata: .dct (dictionary file)
+ * SPSS: .sps (command file)
+
+There is also write support for all the data formats, but not the metadata
+formats. The produced SAS7BDAT files still cannot be read by SAS, but feel free
+to contribute your binary-format expertise here.
+
+WWW: https://github.com/WizardMac/ReadStat

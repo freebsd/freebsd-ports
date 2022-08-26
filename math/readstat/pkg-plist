@@ -1,0 +1,8 @@
+bin/extract_metadata
+bin/readstat
+include/readstat.h
+lib/libreadstat.so
+lib/libreadstat.so.1
+lib/libreadstat.so.1.1.8
+share/man/man1/extract_metadata.1.gz
+share/man/man1/readstat.1.gz
