@@ -4,7 +4,7 @@ CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt6 SXCML module
+COMMENT=	Qt6 SCXML module
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
