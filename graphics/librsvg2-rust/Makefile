@@ -1,6 +1,5 @@
 PORTNAME=	librsvg
-PORTVERSION=	2.54.1
-PORTREVISION=	4
+PORTVERSION=	2.54.5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2-rust
@@ -12,7 +11,6 @@ COMMENT=	Library for parsing and rendering SVG vector-graphic files
 LICENSE=	LGPL20
 
 BUILD_DEPENDS=	${RUST_DEFAULT}>=1.39.0:lang/${RUST_DEFAULT} \
-		gi-docgen:textproc/py-gi-docgen \
 		rst2man:textproc/py-docutils
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -21,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		compiler:c11 cpe gettext gmake gnome libtool pkgconfig tar:xz vala:build
 CPE_VENDOR=	gnome
-USE_GNOME=	cairo gdkpixbuf2 gnomeprefix libxml2 pango introspection:build
+USE_GNOME=	cairo gdkpixbuf2 libxml2 pango introspection:build
 USE_LDCONFIG=	yes
 
 PORTSCOUT=	limitw:1,even
@@ -41,6 +39,11 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 CONFLICTS_INSTALL=	librsvg2
+
+OPTIONS_DEFINE=	DOCS
+
+DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
+DOCS_CONFIGURE_ENABLE=	gtk-doc
 
 post-patch:
 # Disable vendor checksums
