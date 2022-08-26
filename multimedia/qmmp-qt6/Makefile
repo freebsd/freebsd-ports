@@ -6,7 +6,7 @@ MASTER_SITES=	http://qmmp.ylsoftware.com/files/${PORTNAME}/${PORTVERSION:R}/ \
 PKGNAMESUFFIX=	-qt6
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	Qt5-based multimedia player
+COMMENT=	Qt6-based multimedia player
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
