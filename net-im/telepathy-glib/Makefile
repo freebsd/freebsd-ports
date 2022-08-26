@@ -10,13 +10,11 @@ COMMENT=	GLib utility library for the Telepathy framework
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
-RUN_DEPENDS=	vapigen:lang/vala
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gmake gnome libtool pathfix pkgconfig python:build
+USES=		gmake gnome libtool pathfix pkgconfig python:build vala:lib
 USE_GNOME=	glib20 introspection:build libxslt:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

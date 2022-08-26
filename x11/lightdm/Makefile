@@ -45,7 +45,7 @@ OPTIONS_SUB=	yes
 DOCS_BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc
 DOCS_CONFIGURE_ENABLE=	gtk-doc
 
-VAPI_BUILD_DEPENDS=	vapigen:lang/vala
+VAPI_USES=		vala:build
 VAPI_CONFIGURE_ENABLE=	vala
 VAPI_USE=		gnome=introspection:build
 

@@ -10,15 +10,14 @@ COMMENT=	Event logging framework
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	valac:lang/vala \
-		dee-tool:devel/dee \
+BUILD_DEPENDS=	dee-tool:devel/dee \
 		rapper:textproc/raptor2 \
 		${PYTHON_PKGNAMEPREFIX}rdflib>=4.1.1:textproc/py-rdflib@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus@${PY_FLAVOR}
 
 USES=		autoreconf gettext gmake gnome libtool pathfix pkgconfig python \
-		sqlite tar:xz
+		sqlite tar:xz vala:build
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_COMMIT=	8b89364c077b46734d193c5b8a80f83b0fc917dd

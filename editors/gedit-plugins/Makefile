@@ -11,7 +11,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gedit>=0:editors/gedit \
-		valac:lang/vala \
 		itstool:textproc/itstool \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
 LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas \
@@ -24,7 +23,7 @@ RUN_DEPENDS=	gedit>=0:editors/gedit \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
-		python:3.4+ shebangfix tar:xz
+		python:3.4+ shebangfix tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview4 intlhack introspection \
 		vte3
 USE_CSTD=	c11

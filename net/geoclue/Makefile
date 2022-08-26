@@ -8,12 +8,11 @@ COMMENT=	D-Bus service that provides location information
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup \
 		libnotify.so:devel/libnotify
 
-USES=		gettext gnome meson pkgconfig tar:xz
+USES=		gettext gnome meson pkgconfig tar:xz vala:build
 
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes

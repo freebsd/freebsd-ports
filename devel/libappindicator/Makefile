@@ -29,7 +29,7 @@ OPTIONS_DEFINE=		VAPI
 OPTIONS_DEFAULT=	VAPI
 OPTIONS_SUB=		yes
 
-VAPI_BUILD_DEPENDS=	vala>=0:lang/vala
+VAPI_USES=		vala:build
 VAPI_CONFIGURE_ENV_OFF=	ac_cv_path_VALA_API_GEN= \
 			ac_cv_path_VALAC=
 

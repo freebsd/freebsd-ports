@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	VAPI
 OPTIONS_SUB=	yes
 
-VAPI_BUILD_DEPENDS=	vala>=0.22:lang/vala
+VAPI_USES=		vala:build
 VAPI_MESON_TRUE=	vapi
 
 .include <bsd.port.mk>

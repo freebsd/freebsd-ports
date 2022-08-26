@@ -13,10 +13,9 @@ COMMENT=	Gnome mahjongg
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vala:lang/vala \
-		itstool:textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 
-USES=		gettext gmake gnome localbase meson pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome localbase meson pathfix pkgconfig tar:xz vala:build
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
 GLIB_SCHEMAS=	org.gnome.Mahjongg.gschema.xml
 

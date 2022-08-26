@@ -11,8 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
-		itstool:textproc/itstool \
-		vala>0:lang/vala
+		itstool:textproc/itstool
 LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libcanberra.so:audio/libcanberra \
 		libgee-0.8.so:devel/libgee \
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake gnome localbase meson pathfix pkgconfig tar:xz \
-		xorg
+		vala:build xorg
 USE_GNOME=	cairo gsound gtk30 intlhack librsvg2 libxml2:build
 USE_XORG=	x11
 

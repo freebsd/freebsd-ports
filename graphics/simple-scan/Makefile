@@ -10,13 +10,12 @@ COMMENT=	Simple scanning utility
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala \
-		itstool:textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgusb.so:devel/libgusb \
 		libsane.so:graphics/sane-backends \
 		libhandy-1.so:x11-toolkits/libhandy
 
-USES=		gettext gnome meson pkgconfig python:build shebangfix tar:xz
+USES=		gettext gnome meson pkgconfig python:build shebangfix tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 SHEBANG_FILES=	data/meson_compile_gschema.py
 GLIB_SCHEMAS=	org.gnome.SimpleScan.gschema.xml

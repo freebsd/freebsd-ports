@@ -10,8 +10,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	curl>0:ftp/curl \
-		html2text>0:textproc/html2text \
-		valac:lang/vala
+		html2text>0:textproc/html2text
 LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libgee-0.8.so:devel/libgee \
 		libgranite.so:x11-toolkits/granite \
@@ -25,7 +24,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		unzip:archivers/unzip
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig \
-		python shebangfix sqlite
+		python shebangfix sqlite vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	babluboy
 USE_GNOME=	gdkpixbuf2 glib20 gtk30 libxml2 pango

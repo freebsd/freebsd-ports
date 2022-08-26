@@ -10,8 +10,7 @@ COMMENT=	Gnome ligthsoff
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vala:lang/vala \
-		itstool:textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libclutter-1.0.so:graphics/clutter \
 		libcogl.so:graphics/cogl \
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gl gmake gnome localbase meson \
-		pathfix pkgconfig sqlite tar:xz xorg
+		pathfix pkgconfig sqlite tar:xz vala:build xorg
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 USE_GL=		egl gl

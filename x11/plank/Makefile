@@ -10,12 +10,11 @@ COMMENT=	Elegant, simple, and clean dock
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libbamf3.so:sysutils/bamf \
 		libgee-0.8.so:devel/libgee \
 		libgnome-menu-3.so:x11/gnome-menus
 
-USES=		gmake gnome libtool localbase pathfix pkgconfig tar:xz xorg
+USES=		gmake gnome libtool localbase pathfix pkgconfig tar:xz vala:build xorg
 USE_GNOME=	glib20 gtk30 gdkpixbuf2 cairo intlhack libxml2 libwnck3 dconf
 USE_XORG=	x11 xfixes xi
 

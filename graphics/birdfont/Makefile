@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/GPLv3.txt
 # there's only "NOT_STARTED".
 BROKEN=	build/libbirdfont/TestBirdFont.c:107:46: error: use of undeclared identifier 'BIRD_FONT_TEST_BIRD_FONT_NOT_STARTED'
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}doit>0:devel/py-doit@${PY_FLAVOR} \
-		valac:lang/vala
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}doit>0:devel/py-doit@${PY_FLAVOR}
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgee-0.8.so:devel/libgee \
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libxmlbird.so:textproc/libxmlbird
 
 USES=		compiler:c++11-lang gettext-tools gnome pkgconfig \
-		python:3.7+,build shared-mime-info shebangfix sqlite:3 tar:xz
+		python:3.7+,build shared-mime-info shebangfix sqlite:3 tar:xz vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	johanmattssonm
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30

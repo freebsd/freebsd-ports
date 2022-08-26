@@ -8,7 +8,6 @@ COMMENT=	Code editor designed for elementary OS
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libatk-1.0.so:accessibility/atk \
 		libeditorconfig.so:editors/editorconfig-core-c \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -20,14 +19,13 @@ LIB_DEPENDS=	libatk-1.0.so:accessibility/atk \
 		libpeas-1.0.so:devel/libpeas \
 		libpeas-gtk-1.0.so:devel/libpeas \
 		libsoup-2.4.so:devel/libsoup \
-		libvala-0.48.so:lang/vala \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libzeitgeist-2.0.so:sysutils/zeitgeist
 RUN_DEPENDS=	droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf \
 		pkcheck:sysutils/polkit
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gnome meson \
-		ninja pkgconfig python:3.6+,build xorg
+		ninja pkgconfig python:3.6+,build xorg vala:lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 GH_PROJECT=	code

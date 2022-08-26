@@ -31,7 +31,7 @@ DOCS_CMAKE_BOOL=	ICAL_BUILD_DOCS
 DOCSDIR=		${PREFIX}/share/gtk-doc/html/libical-glib
 
 VALA_DESC=		Build VALA bindings
-VALA_BUILD_DEPENDS=	valac:lang/vala
+VALA_USES=		vala:build
 VALA_CMAKE_BOOL=	ICAL_GLIB_VAPI
 
 INTROSPECTION_DESC=		Build GObject Introspection

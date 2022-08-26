@@ -113,7 +113,7 @@ GEXIV2_MESON_ENABLED=	gexiv2
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_MESON_ENABLED=	libtiff
 
-VAPI_BUILD_DEPENDS=	vapigen:lang/vala
+VAPI_USES=		vala:build
 VAPI_MESON_ENABLED=	vapigen
 
 .include <bsd.port.pre.mk>

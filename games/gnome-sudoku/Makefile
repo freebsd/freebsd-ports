@@ -11,8 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
-		appstream-util:devel/appstream-glib \
-		vala:lang/vala
+		appstream-util:devel/appstream-glib
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libqqwing.so:games/qqwing \
 		libjson-glib-1.0.so:devel/json-glib
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lang gettext gmake gnome meson \
-		python:3.7+ pkgconfig tar:xz
+		python:3.7+ pkgconfig tar:xz vala:build
 USE_GNOME=	cairo gtk30
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}

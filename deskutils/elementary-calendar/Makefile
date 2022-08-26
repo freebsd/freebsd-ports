@@ -9,7 +9,6 @@ COMMENT=	Desktop calendar app designed for elementary OS
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libchamplain-0.12.so:graphics/libchamplain \
 		libclutter-1.0.so:graphics/clutter \
@@ -25,7 +24,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	consolekit2>0:sysutils/consolekit2
 
-USES=		desktop-file-utils gettext gnome meson pkgconfig
+USES=		desktop-file-utils gettext gnome meson pkgconfig vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	gdkpixbuf2 glib20 gtk30 evolutiondataserver3

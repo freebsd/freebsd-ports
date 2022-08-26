@@ -8,7 +8,6 @@ COMMENT=	Photo viewer and organizer designed for elementary OS
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libgee-0.8.so:devel/libgee \
 		libgeocode-glib.so:net/geocode-glib \
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libwebp.so:graphics/webp
 
 USES=			compiler:c11 desktop-file-utils gettext gnome gstreamer meson \
-			pkgconfig sqlite:3 xorg
+			pkgconfig sqlite:3 vala:build xorg
 USE_GITHUB=		yes
 GH_ACCOUNT=		elementary
 GH_PROJECT=		photos

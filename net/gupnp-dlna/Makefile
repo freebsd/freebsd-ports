@@ -10,15 +10,14 @@ COMMENT=	Helpers for DLNA-related tasks using GUPnP
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala \
-		gupnp14>=0.19.0:net/gupnp14
+BUILD_DEPENDS=	gupnp14>=0.19.0:net/gupnp14
 LIB_DEPENDS=	libgupnp-1.2.so:net/gupnp14
 RUN_DEPENDS=	gupnp14>=0.19.0:net/gupnp14
 
 CONFIGURE_ARGS=	--enable-introspection \
 		--enable-gstreamer-metadata-backend
 
-USES=		gmake gnome gstreamer libtool pathfix pkgconfig tar:xz
+USES=		gmake gnome gstreamer libtool pathfix pkgconfig tar:xz vala:build
 USE_GNOME=	glib20 introspection:build libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

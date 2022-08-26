@@ -9,13 +9,12 @@ COMMENT=	Japanese SKK input engine for IBus
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:japanese/skk-jisyo
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libibus-1.0.so:textproc/ibus \
 		libskk.so:japanese/libskk
 
-USES=		autoreconf gettext gmake gnome libtool pkgconfig python
+USES=		autoreconf gettext gmake gnome libtool pkgconfig python vala:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share
 USE_GITHUB=	yes

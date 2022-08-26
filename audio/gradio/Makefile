@@ -9,11 +9,10 @@ COMMENT=	GTK3 app for finding and listening to internet radio stations
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib
 
-USES=		gettext gnome gstreamer meson pkgconfig python:3.4+,env sqlite
+USES=		gettext gnome gstreamer meson pkgconfig python:3.4+,env sqlite vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	haecker-felix
 GH_PROJECT=	Gradio

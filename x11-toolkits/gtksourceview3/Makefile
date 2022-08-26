@@ -12,11 +12,10 @@ COMMENT=	Text widget that adds syntax highlighting to the GtkTextView widget
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 tar:xz
+USES=		compiler:c11 tar:xz vala:build
 
 PORTSCOUT=	limitw:1,even
 
-BUILD_DEPENDS=	vala:lang/vala
 LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
 USES+=		gettext gmake gnome libtool localbase pathfix pkgconfig

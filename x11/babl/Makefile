@@ -9,10 +9,9 @@ COMMENT=	Dynamic pixel format conversion library
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 
-USES=		compiler:c11 gnome libtool localbase meson pathfix pkgconfig tar:xz
+USES=		compiler:c11 gnome libtool localbase meson pathfix pkgconfig tar:xz vala:build
 
 USE_LDCONFIG=	yes
 USE_GNOME=	introspection:build

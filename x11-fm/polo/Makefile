@@ -9,12 +9,11 @@ COMMENT=	Advanced graphical file manager written in Vala
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libharfbuzz.so:print/harfbuzz \
 		libjson-glib-1.0.so:devel/json-glib
 
-USES=		desktop-file-utils gettext-tools gmake gnome pkgconfig
+USES=		desktop-file-utils gettext-tools gmake gnome pkgconfig vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2 vte3
 USE_GITHUB=	yes
 GH_ACCOUNT=	teejee2008

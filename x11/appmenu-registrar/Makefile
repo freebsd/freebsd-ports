@@ -12,9 +12,8 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libbamf3.so:sysutils/bamf
-BUILD_DEPENDS=	valac:lang/vala
 
-USES=	meson gnome pkgconfig gettext
+USES=	meson gnome pkgconfig gettext vala:build
 
 MESON_ARGS=	-Dvalapanel=disabled \
 		-Dxfce=disabled \

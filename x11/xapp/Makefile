@@ -9,11 +9,10 @@ COMMENT=	Cross-desktop libraries and common resources
 LICENSE=	LGPL3
 LICENSE_FILE?=	${WRKSRC}/COPYING.LESSER
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gettext-tools gnome meson pkgconfig python shebangfix xorg
+USES=		gettext-tools gnome meson pkgconfig python shebangfix vala:build xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk-update-icon-cache gtk30 \

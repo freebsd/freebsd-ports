@@ -12,11 +12,10 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libbamf3.so:sysutils/bamf
-BUILD_DEPENDS=	valac:lang/vala
 RUN_DEPENDS=	appmenu-registrar>=0:x11/appmenu-registrar \
 		appmenu-gtk-module>=0:x11/gtk-app-menu
 
-USES=	meson gnome mate pkgconfig gettext
+USES=	meson gnome mate pkgconfig gettext vala:build
 
 MESON_ARGS=	-Dvalapanel=disabled \
 		-Dxfce=disabled \

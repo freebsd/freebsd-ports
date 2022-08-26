@@ -14,10 +14,10 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		liblightdm-gobject-1.so:x11/lightdm
-BUILD_DEPENDS=	valac:lang/vala
 RUN_DEPENDS=	numlockx>=0:x11/numlockx
 
-USES=		autoreconf gettext gmake gnome localbase pkgconfig python:run shebangfix xorg
+USES=		autoreconf gettext gmake gnome localbase pkgconfig python:run shebangfix \
+		vala:build xorg
 USE_GNOME=	cairo dconf gdkpixbuf2 gtk30 intltool pygobject3
 
 USE_XORG=	pixman x11 xext

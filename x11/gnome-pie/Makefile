@@ -10,13 +10,12 @@ COMMENT=	Circular application launcher
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 RUN_DEPENDS=	gnome-settings-daemon>=2.32.1_4:sysutils/gnome-settings-daemon
 LIB_DEPENDS=	libbamf3.so:sysutils/bamf \
 		libgee-0.8.so:devel/libgee \
 		libunique-1.0.so:x11-toolkits/unique
 
-USES=		cmake gnome pkgconfig xorg
+USES=		cmake gnome pkgconfig vala:build xorg
 USE_GITHUB=	yes
 USE_GNOME=	cairo gnomemenus3 gtk30 librsvg2 libwnck3
 USE_XORG=	xtst

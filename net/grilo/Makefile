@@ -10,13 +10,12 @@ COMMENT=	Framework focused on making media discovery and browsing
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		liboauth.so:net/liboauth \
 		libtotem-plparser.so:multimedia/totem-pl-parser
 
 USES=		cpe gettext gnome localbase meson pathfix pkgconfig \
-		python:3.4+,build tar:xz
+		python:3.4+,build tar:xz vala:build
 CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 introspection:build libxml2

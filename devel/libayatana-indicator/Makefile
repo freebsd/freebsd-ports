@@ -8,10 +8,9 @@ COMMENT=	Ayatana Indicators Shared Library
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	vala>=0:lang/vala \
-		lcov>=0:devel/lcov
+BUILD_DEPENDS=	lcov>=0:devel/lcov
 
-USES=	cmake localbase:ldflags gnome pkgconfig
+USES=	cmake localbase:ldflags gnome pkgconfig vala:build
 
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libgtest.so:devel/googletest \

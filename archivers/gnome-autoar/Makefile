@@ -10,10 +10,8 @@ COMMENT=	Glib wrapper around libarchives
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
-
 USES=		cpe gettext-runtime gmake gnome libarchive meson pkgconfig \
-		tar:xz
+		tar:xz vala:build
 
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build

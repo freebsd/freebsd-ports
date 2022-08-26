@@ -8,9 +8,7 @@ COMMENT=	Desktop notifications, the UNIX way
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	valac:lang/vala
-
-USES=		gmake gnome pkgconfig
+USES=		gmake gnome pkgconfig vala:build
 USE_GITHUB=	yes
 USE_GNOME=	glib20
 GH_ACCOUNT=	Sweets

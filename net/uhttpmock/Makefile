@@ -11,10 +11,9 @@ COMMENT=	HTTP web service mocking library for GNOME
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz vala:build
 USE_GNOME=	gnomeprefix glib20 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

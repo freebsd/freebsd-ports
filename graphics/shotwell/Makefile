@@ -9,8 +9,7 @@ COMMENT=	Open source photo manager for GNOME
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vala>=0.20.1:lang/vala \
-		itstool:textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgio-2.0.so:devel/glib20 \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgdata.so:devel/libgdata \
@@ -27,7 +26,7 @@ LIB_DEPENDS=	libgio-2.0.so:devel/glib20 \
 		libxml2.so:textproc/libxml2
 
 USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome gstreamer meson \
-		ninja pkgconfig python:3.4+,build shebangfix sqlite tar:xz xorg
+		ninja pkgconfig python:3.4+,build shebangfix sqlite tar:xz vala:build xorg
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo dconf gtk30
 USE_LDCONFIG=	yes

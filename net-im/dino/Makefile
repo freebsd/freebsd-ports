@@ -10,7 +10,6 @@ COMMENT=		Modern XMPP Chat Client using GTK+/Vala
 LICENSE=		GPLv3
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	vala:lang/vala
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libgee-0.8.so:devel/libgee \
 		libicuuc.so:devel/icu \
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libsrtp2.so:net/libsrtp2
 
 USES=		cmake cpe desktop-file-utils gettext-tools gnome \
-		ninja pkgconfig
+		ninja pkgconfig vala:build
 
 USE_GITHUB=	yes
 

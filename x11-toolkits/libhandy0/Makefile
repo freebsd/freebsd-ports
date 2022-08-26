@@ -11,10 +11,9 @@ LICENSE=	LGPL21
 
 BROKEN=		fails to build with glade >= 3.36
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgladeui-2.so:devel/glade
 
-USES=		compiler:c11 gettext gnome meson pkgconfig
+USES=		compiler:c11 gettext gnome meson pkgconfig vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 
 USE_LDCONFIG=	yes

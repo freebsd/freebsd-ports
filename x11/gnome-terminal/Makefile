@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		itstool:textproc/itstool \
-		vala:lang/vala \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libgnutls.so:security/gnutls \
@@ -24,7 +23,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 PORTSCOUT=	limitw:1,even
 
 USES=		cpe gettext gnome localbase meson pathfix pkgconfig python:3.7+ \
-		tar:xz xorg
+		tar:xz vala:build xorg
 USE_GNOME=	cairo dconf gdkpixbuf2 gtk30 intltool vte3
 USE_XORG=	x11
 CPE_VENDOR=	gnome

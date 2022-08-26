@@ -8,13 +8,12 @@ COMMENT=	Library to deal with Japanese Kana-to-Kanji conversion method
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala \
-		p5-XML-Parser>=0:textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libjson-glib-1.0.so:devel/json-glib \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		autoreconf gmake gnome libtool pathfix pkgconfig
+USES=		autoreconf gmake gnome libtool pathfix pkgconfig vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ueno
 GNU_CONFIGURE=	yes

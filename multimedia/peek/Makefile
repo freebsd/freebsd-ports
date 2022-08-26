@@ -8,11 +8,10 @@ COMMENT=	Simple animated GIF screen recorder with an easy to use interface
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libkeybinder-3.0.so:x11/keybinder-gtk3
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		gettext-tools gnome meson pkgconfig python:build
+USES=		gettext-tools gnome meson pkgconfig python:build vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	phw
 USE_GNOME=	cairo glib20 gtk30 pango

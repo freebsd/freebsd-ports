@@ -30,7 +30,7 @@ OPTIONS_SUB=		yes
 
 DOCS_CONFIGURE_ENABLE=	grk-doc-html
 
-VAPI_BUILD_DEPENDS=	valac:lang/vala
+VAPI_USES=		vala:build
 VAPI_CONFIGURE_ON=	--enable-vala=yes
 VAPI_CONFIGURE_OFF=	--enable-vala=no
 

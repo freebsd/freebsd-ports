@@ -11,7 +11,6 @@ COMMENT=	Object database, tag/metadata database, search tool and indexer
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libicutu.so:devel/icu \
 		libjson-glib-1.0.so:devel/json-glib \
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		compiler:c++11-lib gettext gnome localbase:ldflags meson \
-		pkgconfig python:3.6+,build sqlite tar:xz
+		pkgconfig python:3.6+,build sqlite tar:xz vala:build
 USE_GNOME=	glib20 libxml2 introspection:build
 USE_LDCONFIG=	yes
 

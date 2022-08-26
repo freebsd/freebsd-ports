@@ -10,10 +10,9 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libgtest.so:devel/googletest
-BUILD_DEPENDS=	vala>=0:lang/vala \
-		lcov>=0:devel/lcov
+BUILD_DEPENDS=	lcov>=0:devel/lcov
 
-USES=	cmake localbase:ldflags gnome pkgconfig
+USES=	cmake localbase:ldflags gnome pkgconfig vala:build
 
 USE_GNOME=	introspection glib20 gtk30 pango atk cairo gdkpixbuf2
 

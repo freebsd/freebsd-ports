@@ -15,13 +15,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		UCD>=0:textproc/UCD \
-		${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools \
-		vala>=0.16:lang/vala
+		${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpcre2-8.so:devel/pcre2
 
 USES=		desktop-file-utils gettext-tools gnome localbase meson perl5 pkgconfig \
-		python:build tar:xz
+		python:build tar:xz vala:build
 USE_GNOME=	cairo glib20 gtk30 introspection:build
 USE_PERL5=	build
 BINARY_ALIAS=	python3=${PYTHON_CMD}

@@ -12,7 +12,6 @@ COMMENT=	Library for parsing and rendering SVG vector-graphic files
 LICENSE=	LGPL20
 
 BUILD_DEPENDS=	${RUST_DEFAULT}>=1.39.0:lang/${RUST_DEFAULT} \
-		valac:lang/vala \
 		gi-docgen:textproc/py-gi-docgen \
 		rst2man:textproc/py-docutils
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz \
 		libpng.so:graphics/png
 
-USES=		compiler:c11 cpe gettext gmake gnome libtool pkgconfig tar:xz
+USES=		compiler:c11 cpe gettext gmake gnome libtool pkgconfig tar:xz vala:build
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix libxml2 pango introspection:build
 USE_LDCONFIG=	yes

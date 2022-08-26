@@ -36,7 +36,7 @@ SHEBANG_FILES=	tools/gupnp-binding-tool-1.2
 OPTIONS_DEFINE=	VAPI
 OPTIONS_SUB=	yes
 
-VAPI_BUILD_DEPENDS=	vala>=0.20:lang/vala
+VAPI_USES=		vala:build
 VAPI_MESON_TRUE=	vapi
 
 .include <bsd.port.pre.mk>

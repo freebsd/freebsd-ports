@@ -31,7 +31,7 @@ VALA_DESC=	Install vala binding
 GINTRO_BUILD_DEPENDS=	gobject-introspection>=0.6.8:devel/gobject-introspection
 GINTRO_RUN_DEPENDS=	gobject-introspection>=0.6.8:devel/gobject-introspection
 GINTRO_CONFIGURE_ENABLE=introspection
-VALA_BUILD_DEPENDS=	vala>=0.20:lang/vala
+VALA_USES=		vala:build
 VALA_CONFIGURE_ENABLE=	vala
 VALA_IMPLIES=	GINTRO
 

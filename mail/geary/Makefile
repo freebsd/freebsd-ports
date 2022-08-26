@@ -11,8 +11,7 @@ COMMENT=	Mail client for GNOME
 LICENSE=	BSD2CLAUSE CC-BY-3.0 LGPL21+
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	itstool:textproc/itstool \
-		vapigen:lang/vala
+BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libcanberra.so:audio/libcanberra \
 		libenchant-2.so:textproc/enchant2 \
@@ -35,7 +34,7 @@ LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libytnef.so:converters/ytnef
 
 USES=		compiler:c11 cpe desktop-file-utils gettext gnome meson pkgconfig \
-		python:3.5+,build shebangfix sqlite tar:xz
+		python:3.5+,build shebangfix sqlite tar:xz vala:build
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo gsound gtk30 libxml2
 GLIB_SCHEMAS=	org.gnome.Geary.gschema.xml

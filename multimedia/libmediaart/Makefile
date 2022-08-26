@@ -11,9 +11,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LESSER
 
-BUILD_DEPENDS=	vala>=0:lang/vala
-
-USES=		gnome meson pathfix pkgconfig tar:xz
+USES=		gnome meson pathfix pkgconfig tar:xz vala:build
 USE_GNOME=	gdkpixbuf2 introspection:build
 USE_LDCONFIG=	yes
 

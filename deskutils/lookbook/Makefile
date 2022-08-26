@@ -9,11 +9,10 @@ COMMENT=	Browse and find system icons
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgranite.so:x11-toolkits/granite \
 		libhandy-1.so:x11-toolkits/libhandy
 
-USES=		gettext-tools gnome meson pkgconfig python:3.6+,build
+USES=		gettext-tools gnome meson pkgconfig python:3.6+,build vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	danrabbit
 USE_GNOME=	glib20 gtk30 gtksourceview4

@@ -9,13 +9,12 @@ COMMENT=	GTK+ 3 spell checking component
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:lang/vala \
-		iso-codes>0:misc/iso-codes
+BUILD_DEPENDS=	iso-codes>0:misc/iso-codes
 LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libfribidi.so:converters/fribidi
 RUN_DEPENDS=	iso-codes>0:misc/iso-codes
 
-USES=		gettext gmake gnome localbase libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome localbase libtool pathfix pkgconfig tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

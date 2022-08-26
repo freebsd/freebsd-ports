@@ -51,7 +51,7 @@ MANPAGES_BUILD_DEPENDS=		docbook2html:textproc/docbook-utils \
 				docbook-sgml>0:textproc/docbook-sgml
 PPROFILES_CONFIGURE_ENABLE=	print-profiles
 VALA_CONFIGURE_ENABLE=		vala
-VALA_BUILD_DEPENDS=		vapigen:lang/vala
+VALA_USES=			vala:build
 MAKE_ENV=		PYTHONDONTWRITEBYTECODE=1
 
 .include <bsd.port.options.mk>

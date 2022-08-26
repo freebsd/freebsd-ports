@@ -11,8 +11,7 @@ COMMENT=	Gnome nibbles
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vala:lang/vala \
-		itstool:textproc/itstool \
+BUILD_DEPENDS=	itstool:textproc/itstool \
 		appstream-util:devel/appstream-glib
 LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libcanberra.so:audio/libcanberra \
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gl gnome meson pathfix \
-		pkgconfig tar:xz xorg
+		pkgconfig tar:xz vala:build xorg
 USE_GNOME=	cairo gsound gtk30 librsvg2 libxml2:build
 USE_GL=		gl egl
 USE_XORG=	x11 xcomposite xdamage xext xi xfixes xrandr

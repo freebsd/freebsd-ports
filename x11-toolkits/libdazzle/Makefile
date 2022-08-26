@@ -10,9 +10,7 @@ COMMENT=	Companion library to GObject and Gtk+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
-
-USES=		compiler:c11 gettext gnome meson pkgconfig tar:xz
+USES=		compiler:c11 gettext gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 
 .include <bsd.port.mk>

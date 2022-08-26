@@ -9,14 +9,13 @@ COMMENT=	GUI for setting Sway wallpaper, default apps, GTK themes, etc.
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libgee-0.8.so:devel/libgee \
 		libaccountsservice.so:sysutils/accountsservice \
 		libgranite.so:x11-toolkits/granite \
 		libhandy-1.so:x11-toolkits/libhandy
 
-USES=		compiler:c11 gettext gnome meson pkgconfig python:build shebangfix
+USES=		compiler:c11 gettext gnome meson pkgconfig python:build shebangfix vala:build
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2
 GH_ACCOUNT=	ErikReider

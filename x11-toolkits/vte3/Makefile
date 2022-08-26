@@ -11,8 +11,7 @@ COMMENT=	Terminal widget with improved accessibility and I18N support
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	vapigen:lang/vala \
-		bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libfribidi.so:converters/fribidi \
 		libpcre2-8.so:devel/pcre2 \
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lang gettext gnome localbase meson \
-		pkgconfig python:3.6+ tar:xz
+		pkgconfig python:3.6+ tar:xz vala:build
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 

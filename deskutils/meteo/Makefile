@@ -8,15 +8,14 @@ COMMENT=	Weather forecast application using OpenWeatherMap API
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
-		valac:lang/vala
+BUILD_DEPENDS=	appstream-util:devel/appstream-glib
 LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
 		libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig \
-		python:3.5+,build shebangfix
+		python:3.5+,build shebangfix vala:build
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	bitseater

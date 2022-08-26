@@ -9,10 +9,9 @@ COMMENT=	Cooperative multiplayer graphical RPG and adventure game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vala:lang/vala
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake gnome perl5 pkgconfig sdl
+USES=		cmake gnome perl5 pkgconfig sdl vala:build
 USE_GNOME=	gtk20
 USE_PERL5=	build
 USE_SDL=	sdl image mixer

@@ -10,11 +10,10 @@ COMMENT=	GNOME music playing application
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgee-0.8.so:devel/libgee
 
-USES=		gettext gnome gmake gstreamer libtool pathfix pkgconfig
+USES=		gettext gnome gmake gstreamer libtool pathfix pkgconfig vala:build
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 introspection:build
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-tests \

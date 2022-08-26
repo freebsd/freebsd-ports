@@ -10,12 +10,11 @@ COMMENT=	Library to access the secret service API
 LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR} \
-		docbook-xsl>=0:textproc/docbook-xsl \
-		vala:lang/vala
+		docbook-xsl>=0:textproc/docbook-xsl
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		gnome meson pkgconfig python:3.8+ tar:xz
+USES=		gnome meson pkgconfig python:3.8+ tar:xz vala:build
 USE_GNOME=	glib20 intltool introspection:build libxslt:build
 
 .include <bsd.port.mk>

@@ -81,7 +81,7 @@ NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_ENABLE=	nls
 VALA_IMPLIES=		GINTRO
-VALA_BUILD_DEPENDS=	vala>=0.20:lang/vala
+VALA_USES=		vala:build
 VALA_CONFIGURE_ENABLE=	vala
 WAYLAND_BUILD_DEPENDS=	wayland>1.14:graphics/wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \

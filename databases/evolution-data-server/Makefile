@@ -66,7 +66,7 @@ LDAP_CMAKE_OFF=		-DWITH_OPENLDAP=OFF
 LDAP_USE=		openldap=yes
 
 VALA_DESC=		Build Vala language bindings
-VALA_BUILD_DEPENDS=	vapigen:lang/vala
+VALA_USES=		vala:build
 VALA_CMAKE_BOOL=	ENABLE_VALA_BINDINGS
 
 WEATHER_DESC=	Weather calendar backend

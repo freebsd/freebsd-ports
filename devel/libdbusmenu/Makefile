@@ -14,13 +14,12 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING-GPL3
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.2.1
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libharfbuzz.so:print/harfbuzz
 
 GNU_CONFIGURE=	yes
 USES=		compiler gettext-tools gmake gnome libtool pathfix pkgconfig python:run \
-		shebangfix xorg
+		shebangfix vala:build xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool intlhack libxslt \
 		introspection:build
 USE_XORG=	x11

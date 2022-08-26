@@ -42,7 +42,7 @@ GIR_MESON_ENABLED=	introspection
 MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt
 MANPAGES_MESON_TRUE=	man
 
-VAPI_BUILD_DEPENDS=	vapigen:lang/vala
+VAPI_USES=		vala:build
 VAPI_MESON_TRUE=	vapi
 VAPI_IMPLIES=		GIR
 

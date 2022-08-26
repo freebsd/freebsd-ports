@@ -9,13 +9,12 @@ COMMENT=	GObject-based wrapper around Exiv2 library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR} \
-		vala>=0:lang/vala
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 LIB_DEPENDS= 	libexiv2.so:graphics/exiv2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang gnome libtool:build meson pathfix pkgconfig \
-		python:build tar:xz
+		python:build tar:xz vala:build
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 BINARY_WRAPPERS=	gm4

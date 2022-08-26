@@ -9,14 +9,13 @@ COMMENT=	VNC viewer widget for GTK+
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libsasl2.so:security/cyrus-sasl2
 
 USES=		gettext gnome localbase meson perl5 pkgconfig python \
-		tar:xz xorg
+		tar:xz vala:build xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
