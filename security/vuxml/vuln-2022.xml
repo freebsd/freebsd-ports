@@ -1,3 +1,48 @@
+  <vuln vid="3110b29e-c82d-4287-9f6c-db82bb883b1e">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>5.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v5.0.1">
+	<p> Fix a possible overflow and crash in the ARP analyzer
+	when receiving a specially crafted packet. Due to the
+	possibility of this happening with packets received from
+	the network, this is a potential DoS vulnerability. </p>
+	<p> Fix a possible overflow and crash in the Modbus analyzer
+	when receiving a specially crafted packet. Due to the
+	possibility of this happening with packets received from
+	the network, this is a potential DoS vulnerability. </p>
+	<p> Fix two possible crashes when converting IP headers for
+	output via the raw_packet event. Due to the possibility of
+	this happening with packets received from the network, this
+	is a potential DoS vulnerability. Note that the raw_packet
+	event is not enabled by default so these are likely
+	low-severity issues. </p>
+	<p> Fix an abort related to an error related to the ordering
+	of record fields when processing DNS EDNS headers via events.
+	Due to the possibility of this happening with packets
+	received from the network, this is a potential DoS
+	vulnerability.  Note that the dns_EDNS events are not
+	implemented by default so this is likely a low-severity
+	issue. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v5.0.1</url>
+    </references>
+    <dates>
+      <discovery>2022-08-23</discovery>
+      <entry>2022-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36d10af7-248d-11ed-856e-d4c9ef517024">
     <topic>MariaDB -- Multiple vulnerabilities</topic>
     <affects>
