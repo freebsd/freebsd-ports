@@ -10,7 +10,7 @@ _INCLUDE_USES_METAPORT_MK=	yes
 
 LICENSE=	NA
 LICENSE_NAME=	Non applicable
-LICENSE_TEXT=	No license are applicable to metaports
+LICENSE_TEXT=	No licenses are applicable to metaports
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 MASTER_SITES=	#
 DISTFILES=	#
