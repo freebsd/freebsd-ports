@@ -1725,6 +1725,7 @@
     SUBDIR += py-requests-oauthlib
     SUBDIR += py-requests-toolbelt
     SUBDIR += py-requests-unixsocket
+    SUBDIR += py-requests-wsgi-adapter
     SUBDIR += py-requests_ntlm
     SUBDIR += py-respx
     SUBDIR += py-restclient
