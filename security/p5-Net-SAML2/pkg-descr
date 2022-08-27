@@ -1,0 +1,14 @@
+Net::SAML2 provides support for the Web Browser SSO profile of SAML2.
+
+Net::SAML2 correctly perform the SSO process against numerous SAML Identity
+Providers (IdPs). It has been tested against:
+- GSuite (Google)
+- Azure (Microsoft Office 365)
+- OneLogin
+- Jump
+- Mircosoft ADFS
+- Keycloak
+- Auth0
+- PingIdentity
+
+WWW: https://metacpan.org/dist/Net-SAML2
