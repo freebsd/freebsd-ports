@@ -1,5 +1,5 @@
 PORTNAME=	django-storages
-PORTVERSION=	1.9.1
+PORTVERSION=	1.13.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,11 @@ COMMENT=	Generic storages for Django
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2:www/py-django32@${PY_FLAVOR}
+
+USES=		python:3.7+
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
