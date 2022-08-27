@@ -4,5 +4,5 @@ lib/cmake/llhttp/llhttp-config.cmake
 lib/libllhttp.a
 lib/libllhttp.so
 lib/libllhttp.so.6.0
-lib/libllhttp.so.6.0.5
+lib/libllhttp.so.%%PORTVERSION%%
 libdata/pkgconfig/libllhttp.pc
