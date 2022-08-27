@@ -1,0 +1,6 @@
+Profiling plugin for pytest, with tabular and heat graph output.
+
+Tests are profiled with cProfile and analysed with pstats; heat graphs are
+generated using gprof2dot and dot.
+
+WWW: https://github.com/man-group/pytest-plugins/tree/master/pytest-profiling
