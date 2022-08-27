@@ -1,5 +1,5 @@
 PORTNAME=	active_scaffold
-PORTVERSION=	3.4.43
+PORTVERSION=	3.6.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -7,12 +7,16 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Gem to handle all CRUD user interface needs
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-rails4>=3.2.22.2:www/rubygem-rails4
+RUN_DEPENDS=	rubygem-cow_proxy>=0.3<1:devel/rubygem-cow_proxy \
+		rubygem-ice_nine>=0.11<1:devel/rubygem-ice_nine \
+		rubygem-rails61>=4.2.0<6.2:www/rubygem-rails61 \
+		rubygem-request_store>=1.3<2:devel/rubygem-request_store
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
