@@ -10,7 +10,8 @@ COMMENT=	Streamlined Cython bindings for the harfbuzz shaping engine
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	harfbuzz>=5.1.0:print/harfbuzz \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c++11-lang python:3.6+ zip
