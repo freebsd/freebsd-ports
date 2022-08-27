@@ -1555,6 +1555,7 @@
     SUBDIR += py-typogrify
     SUBDIR += py-ucl
     SUBDIR += py-ufal.udpipe
+    SUBDIR += py-untangle
     SUBDIR += py-wcmatch
     SUBDIR += py-whatthepatch
     SUBDIR += py-whoosh
