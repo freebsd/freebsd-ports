@@ -526,6 +526,7 @@
     SUBDIR += p5-Crypt-OpenSSL-PKCS10
     SUBDIR += p5-Crypt-OpenSSL-RSA
     SUBDIR += p5-Crypt-OpenSSL-Random
+    SUBDIR += p5-Crypt-OpenSSL-Verify
     SUBDIR += p5-Crypt-OpenSSL-X509
     SUBDIR += p5-Crypt-PBKDF2
     SUBDIR += p5-Crypt-PKCS10

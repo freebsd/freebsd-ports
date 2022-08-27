@@ -1,0 +1,8 @@
+Given a CA certificate and another untrusted certificate, will show whether the
+CA signs the certificate. This is a useful thing to have if you're signing with
+X509 certificates, but outside of SSL.
+
+A specific example is where you're working with XML signatures, and need to
+verify that the signing certificate is valid.
+
+WWW: https://metacpan.org/dist/Crypt-OpenSSL-Verify
