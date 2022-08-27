@@ -871,6 +871,7 @@
     SUBDIR += py-imagesize
     SUBDIR += py-img2pdf
     SUBDIR += py-leather
+    SUBDIR += py-lerc
     SUBDIR += py-mapclassify
     SUBDIR += py-mayavi
     SUBDIR += py-mcomix
