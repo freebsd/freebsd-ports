@@ -1,0 +1,44 @@
+% sed -i .orig -e 's|INSTALL_|BSD_&|' programs/Makefile
+
+--- programs/Makefile.orig	2022-01-20 21:17:18 UTC
++++ programs/Makefile
+@@ -391,10 +391,10 @@ else
+   INSTALL ?= install
+ endif
+ 
+-INSTALL_PROGRAM ?= $(INSTALL)
+-INSTALL_SCRIPT  ?= $(INSTALL_PROGRAM)
+-INSTALL_DATA    ?= $(INSTALL) -m 644
+-INSTALL_MAN     ?= $(INSTALL_DATA)
++BSD_INSTALL_PROGRAM ?= $(INSTALL)
++BSD_INSTALL_SCRIPT  ?= $(INSTALL_PROGRAM)
++BSD_INSTALL_DATA    ?= $(INSTALL) -m 644
++BSD_INSTALL_MAN     ?= $(INSTALL_DATA)
+ 
+ .PHONY: install
+ install:
+@@ -403,18 +403,18 @@ install:
+ 	[ -e $(DESTDIR)$(BINDIR) ] || $(INSTALL) -d -m 755 $(DESTDIR)$(BINDIR)/
+ 	[ -e $(DESTDIR)$(MAN1DIR) ] || $(INSTALL) -d -m 755 $(DESTDIR)$(MAN1DIR)/
+ 	@echo Installing binaries
+-	$(INSTALL_PROGRAM) zstd$(EXT) $(DESTDIR)$(BINDIR)/zstd$(EXT)
++	$(BSD_INSTALL_PROGRAM) zstd$(EXT) $(DESTDIR)$(BINDIR)/zstd$(EXT)
+ 	ln -sf zstd$(EXT) $(DESTDIR)$(BINDIR)/zstdcat$(EXT)
+ 	ln -sf zstd$(EXT) $(DESTDIR)$(BINDIR)/unzstd$(EXT)
+ 	ln -sf zstd$(EXT) $(DESTDIR)$(BINDIR)/zstdmt$(EXT)
+-	$(INSTALL_SCRIPT) zstdless $(DESTDIR)$(BINDIR)/zstdless
+-	$(INSTALL_SCRIPT) zstdgrep $(DESTDIR)$(BINDIR)/zstdgrep
++	$(BSD_INSTALL_SCRIPT) zstdless $(DESTDIR)$(BINDIR)/zstdless
++	$(BSD_INSTALL_SCRIPT) zstdgrep $(DESTDIR)$(BINDIR)/zstdgrep
+ 	@echo Installing man pages
+-	$(INSTALL_MAN) zstd.1 $(DESTDIR)$(MAN1DIR)/zstd.1
++	$(BSD_INSTALL_MAN) zstd.1 $(DESTDIR)$(MAN1DIR)/zstd.1
+ 	ln -sf zstd.1 $(DESTDIR)$(MAN1DIR)/zstdcat.1
+ 	ln -sf zstd.1 $(DESTDIR)$(MAN1DIR)/unzstd.1
+-	$(INSTALL_MAN) zstdgrep.1 $(DESTDIR)$(MAN1DIR)/zstdgrep.1
+-	$(INSTALL_MAN) zstdless.1 $(DESTDIR)$(MAN1DIR)/zstdless.1
++	$(BSD_INSTALL_MAN) zstdgrep.1 $(DESTDIR)$(MAN1DIR)/zstdgrep.1
++	$(BSD_INSTALL_MAN) zstdless.1 $(DESTDIR)$(MAN1DIR)/zstdless.1
+ 	@echo zstd installation completed
+ 
+ .PHONY: uninstall

@@ -1,0 +1,55 @@
+% sed -i .orig -e 's|INSTALL_|BSD_&|' lib/Makefile
+
+--- lib/Makefile.orig	2022-01-20 21:17:18 UTC
++++ lib/Makefile
+@@ -292,8 +292,8 @@ else
+   INSTALL ?= install
+ endif
+ 
+-INSTALL_PROGRAM ?= $(INSTALL)
+-INSTALL_DATA    ?= $(INSTALL) -m 644
++BSD_INSTALL_PROGRAM ?= $(INSTALL)
++BSD_INSTALL_DATA    ?= $(INSTALL) -m 644
+ 
+ 
+ libzstd.pc: libzstd.pc.in
+@@ -314,7 +314,7 @@ install: install-pc install-static install-shared inst
+ .PHONY: install-pc
+ install-pc: libzstd.pc
+ 	[ -e $(DESTDIR)$(PKGCONFIGDIR) ] || $(INSTALL) -d -m 755 $(DESTDIR)$(PKGCONFIGDIR)/
+-	$(INSTALL_DATA) libzstd.pc $(DESTDIR)$(PKGCONFIGDIR)/
++	$(BSD_INSTALL_DATA) libzstd.pc $(DESTDIR)$(PKGCONFIGDIR)/
+ 
+ .PHONY: install-static
+ install-static:
+@@ -322,7 +322,7 @@ install-static:
+ 	[ -e libzstd.a ] || $(MAKE) libzstd.a-release
+ 	[ -e $(DESTDIR)$(LIBDIR) ] || $(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)/
+ 	@echo Installing static library
+-	$(INSTALL_DATA) libzstd.a $(DESTDIR)$(LIBDIR)
++	$(BSD_INSTALL_DATA) libzstd.a $(DESTDIR)$(LIBDIR)
+ 
+ .PHONY: install-shared
+ install-shared:
+@@ -330,7 +330,7 @@ install-shared:
+ 	[ -e $(LIBZSTD) ] || $(MAKE) libzstd-release
+ 	[ -e $(DESTDIR)$(LIBDIR) ] || $(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)/
+ 	@echo Installing shared library
+-	$(INSTALL_PROGRAM) $(LIBZSTD) $(DESTDIR)$(LIBDIR)
++	$(BSD_INSTALL_PROGRAM) $(LIBZSTD) $(DESTDIR)$(LIBDIR)
+ 	ln -sf $(LIBZSTD) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT_MAJOR)
+ 	ln -sf $(LIBZSTD) $(DESTDIR)$(LIBDIR)/libzstd.$(SHARED_EXT)
+ 
+@@ -338,9 +338,9 @@ install-shared:
+ install-includes:
+ 	[ -e $(DESTDIR)$(INCLUDEDIR) ] || $(INSTALL) -d -m 755 $(DESTDIR)$(INCLUDEDIR)/
+ 	@echo Installing includes
+-	$(INSTALL_DATA) zstd.h $(DESTDIR)$(INCLUDEDIR)
+-	$(INSTALL_DATA) zstd_errors.h $(DESTDIR)$(INCLUDEDIR)
+-	$(INSTALL_DATA) zdict.h $(DESTDIR)$(INCLUDEDIR)
++	$(BSD_INSTALL_DATA) zstd.h $(DESTDIR)$(INCLUDEDIR)
++	$(BSD_INSTALL_DATA) zstd_errors.h $(DESTDIR)$(INCLUDEDIR)
++	$(BSD_INSTALL_DATA) zdict.h $(DESTDIR)$(INCLUDEDIR)
+ 
+ .PHONY: uninstall
+ uninstall:

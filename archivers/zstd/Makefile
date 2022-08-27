@@ -1,5 +1,6 @@
 PORTNAME=	zstd
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/facebook/zstd/releases/download/v${PORTVERSION}/
 
@@ -8,29 +9,29 @@ COMMENT=	Fast real-time compression algorithm
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
-LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/../../LICENSE
-LICENSE_FILE_GPLv2=	${WRKSRC}/../../COPYING
+LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	gmd5sum:sysutils/coreutils
+LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
-USES=		meson pkgconfig python:3.7+,build shebangfix tar:zst
+USES=		gmake localbase:ldflags tar:zst
 
-MESON_ARGS=	-Ddefault_library=both
+ALL_TARGET=	default
+BINARY_ALIAS=	gmd5sum=md5sum
+TEST_TARGET=	test
 USE_LDCONFIG=	yes
-WRKSRC_SUBDIR=	build/meson
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-SHEBANG_FILES=	*.py
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
-OPTIONS_DEFINE=	LTO LZ4 OPTIMIZED_CFLAGS TEST
-OPTIONS_DEFAULT=LZ4
-
-LTO_MESON_TRUE=		b_lto
-LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
-LZ4_MESON_ENABLED=	lz4
-LZ4_USES=		localbase:ldflags
 OPTIMIZED_CFLAGS_VARS=	CFLAGS+=-O3
-TEST_MESON_TRUE=	bin_tests
+
+post-build:
+	cd ${WRKSRC}/programs && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} zstd-frugal
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/programs/zstd-frugal ${STAGEDIR}${PREFIX}/bin/zstd-frugal
+	${LN} -s zstd.1.gz ${STAGEDIR}${PREFIX}/man/man1/zstdmt.1.gz
 
 .include <bsd.port.mk>
