@@ -1,7 +1,8 @@
---- config.h.in.orig	2018-03-05 15:54:17 UTC
+--- config.h.in.orig	2022-08-25 11:16:02 UTC
 +++ config.h.in
-@@ -1,5 +1,8 @@
- /* config.h.in.  Generated from configure.ac by autoheader.  */
+@@ -3,6 +3,9 @@
+ /* A form that will not confuse apibuild.py */
+ #undef ATTRIBUTE_DESTRUCTOR
  
 +/* XXX */
 +#define HAVE_VFSCANF

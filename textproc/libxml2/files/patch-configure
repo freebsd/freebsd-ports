@@ -1,6 +1,6 @@
---- configure.orig	2019-10-30 19:14:22 UTC
+--- configure.orig	2022-08-25 11:16:02 UTC
 +++ configure
-@@ -15525,6 +15525,8 @@ fi
+@@ -15204,6 +15204,8 @@ fi
  	       fi
  	   fi
         ;;
