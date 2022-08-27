@@ -1,5 +1,5 @@
 PORTNAME=	texstudio
-DISTVERSION=	4.3.0
+DISTVERSION=	4.3.1
 CATEGORIES=	editors
 
 MAINTAINER=	rigoletto@FreeBSD.org
