@@ -1,0 +1,13 @@
+zxing-cpp 1.4.0 startd to only install the headers to the public interface.
+Libreoffice is unfortunately depending on some internal parts.
+
+--- core/CMakeLists.txt.orig	2022-08-27 06:46:09 UTC
++++ core/CMakeLists.txt
+@@ -141,6 +141,7 @@ set (PUBLIC_HEADERS
+ # define subset of public headers that get distributed with the binaries
+ set (PUBLIC_HEADERS
+     src/BarcodeFormat.h
++    src/BitArray.h # expose private header used by Libreoffice
+     src/BitHacks.h
+     src/ByteArray.h
+     src/CharacterSet.h
