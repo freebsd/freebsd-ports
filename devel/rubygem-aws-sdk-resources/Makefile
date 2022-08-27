@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.136.0
+PORTVERSION=	3.137.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -188,6 +188,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-lexmodelsv2>=1<2:devel/rubygem-aws-sdk-lexmodelsv2 \
 		rubygem-aws-sdk-lexruntimev2>=1<2:devel/rubygem-aws-sdk-lexruntimev2 \
 		rubygem-aws-sdk-licensemanager>=1<2:devel/rubygem-aws-sdk-licensemanager \
+		rubygem-aws-sdk-licensemanagerusersubscriptions>=1<2:devel/rubygem-aws-sdk-licensemanagerusersubscriptions \
 		rubygem-aws-sdk-lightsail>=1<2:devel/rubygem-aws-sdk-lightsail \
 		rubygem-aws-sdk-locationservice>=1<2:devel/rubygem-aws-sdk-locationservice \
 		rubygem-aws-sdk-lookoutequipment>=1<2:devel/rubygem-aws-sdk-lookoutequipment \
