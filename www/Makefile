@@ -2181,6 +2181,7 @@
     SUBDIR += sitecopy
     SUBDIR += slowcgi
     SUBDIR += slowhttptest
+    SUBDIR += smarty
     SUBDIR += smarty2
     SUBDIR += smarty3
     SUBDIR += smb_auth
