@@ -19,15 +19,15 @@ CONFLICTS_INSTALL=	hdf-4.*
 
 OPTIONS_SINGLE=	MPI
 OPTIONS_SINGLE_MPI=	OPENMPI MPICH
-OPTIONS_DEFAULT=	OPENMPI
+OPTIONS_DEFAULT=OPENMPI
 OPTIONS_DEFAULT_armv6=	MPICH
 OPTIONS_DEFAULT_armv7=	MPICH
 OPTIONS_DEFAULT_i386=	MPICH
-OPTIONS_DEFAULT_powerpc=	MPICH
+OPTIONS_DEFAULT_powerpc=MPICH
 OPTIONS_EXCLUDE_armv6=	OPENMPI
 OPTIONS_EXCLUDE_armv7=	OPENMPI
 OPTIONS_EXCLUDE_i386=	OPENMPI
-OPTIONS_EXCLUDE_powerpc=	OPENMPI
+OPTIONS_EXCLUDE_powerpc=OPENMPI
 
 MPICH_USES=	mpi:mpich
 OPENMPI_USES=	mpi:openmpi
@@ -35,15 +35,12 @@ OPENMPI_USES=	mpi:openmpi
 .include <bsd.port.pre.mk>
 
 .if ${GCC_DEFAULT} >= 10
-# workaround for Type mismatch between actual argument at (1) and actual argument at (2) (INTEGER(8)/CHARACTER(*)).
+# Workaround for Type mismatch between actual argument at (1) and actual argument at (2) (INTEGER(8)/CHARACTER(*)).
 FCFLAGS+=	-fallow-argument-mismatch
 .endif
 
 .if (${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc) && ${PORT_OPTIONS:MOPENMPI}
 BROKEN=		Use MPICH option instead. PnetCDF requires MPI_Offset >= 8 but Open MPI sets MPI_Offset to 4 on 32-bit architecture regardless of LFS. See https://github.com/open-mpi/ompi/issues/3195 for details
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/$$(INSTALL.*$$(PREFIX)/ s|$$(PREFIX)|$$(DESTDIR)&|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
