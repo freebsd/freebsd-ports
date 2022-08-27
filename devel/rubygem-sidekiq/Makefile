@@ -1,5 +1,5 @@
 PORTNAME=	sidekiq
-PORTVERSION=	6.5.1
+PORTVERSION=	6.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-connection_pool>=2.2.2:net/rubygem-connection_pool \
 		rubygem-rack>=2.0,3<3,3:www/rubygem-rack \
-		rubygem-redis>=4.2.0:databases/rubygem-redis
+		rubygem-redis>=4.5.0:databases/rubygem-redis
 
 USES=		cpe gem
 USE_RUBY=	yes
