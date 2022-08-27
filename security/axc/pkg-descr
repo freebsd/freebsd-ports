@@ -1,0 +1,9 @@
+Client lib for libsignal-c, implementing the needed database and crypto
+interfaces using SQLite and gcrypt. Initially, the library's name was
+libaxolotl, hence the name.
+
+Additionally it provides utility functions for common use cases like
+encrypting and decrypting, ultimately making direct use of libsignal
+unnecessary.
+
+WWW: https://github.com/gkdr/axc

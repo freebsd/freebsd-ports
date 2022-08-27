@@ -1,0 +1,30 @@
+--- Makefile.orig	2022-01-29 17:52:43 UTC
++++ Makefile
+@@ -103,7 +103,7 @@ $(BDIR)/libaxc.so: $(AX_PATH_AS_NEEDED) | $(BDIR)
+ $(BDIR)/libaxc.pc: $(BDIR)
+ 	echo 'prefix='$(PREFIX) > $@
+ 	echo 'exec_prefix=$${prefix}' >> $@
+-	echo 'libdir=$${prefix}/lib/$(ARCH)' >> $@
++	echo 'libdir=$${prefix}/lib' >> $@
+ 	echo 'includedir=$${prefix}/include' >> $@
+ 	echo 'Name: libaxc' >> $@
+ 	echo 'Version: ${VERSION}' >> $@
+@@ -126,12 +126,12 @@ shared: $(BDIR)/libaxc.so $(BDIR)/libaxc.pc
+ 
+ 
+ install: $(BDIR)
+-	install -d $(DESTDIR)/$(PREFIX)/lib/$(ARCH)/pkgconfig/
+-	install -m 644 $(BDIR)/libaxc.a  $(DESTDIR)/$(PREFIX)/lib/$(ARCH)/libaxc.a
+-	install -m 644 $(BDIR)/libaxc.so $(DESTDIR)/$(PREFIX)/lib/$(ARCH)/libaxc.so.$(VERSION)
+-	ln -s libaxc.so.$(VERSION) $(DESTDIR)/$(PREFIX)/lib/$(ARCH)/libaxc.so.$(VER_MAJ)
+-	ln -s libaxc.so.$(VERSION) $(DESTDIR)/$(PREFIX)/lib/$(ARCH)/libaxc.so
+-	install -m 644 $(BDIR)/libaxc.pc $(DESTDIR)/$(PREFIX)/lib/$(ARCH)/pkgconfig/
++	install -d $(DESTDIR)/$(PREFIX)/libdata/pkgconfig/
++	install -m 644 $(BDIR)/libaxc.a  $(DESTDIR)/$(PREFIX)/lib/libaxc.a
++	install -s -m 644 $(BDIR)/libaxc.so $(DESTDIR)/$(PREFIX)/lib/libaxc.so.$(VERSION)
++	ln -s libaxc.so.$(VERSION) $(DESTDIR)/$(PREFIX)/lib/libaxc.so.$(VER_MAJ)
++	ln -s libaxc.so.$(VERSION) $(DESTDIR)/$(PREFIX)/lib/libaxc.so
++	install -m 644 $(BDIR)/libaxc.pc $(DESTDIR)/$(PREFIX)/libdata/pkgconfig/
+ 	install -d $(DESTDIR)/$(PREFIX)/include/axc/
+ 	install -m 644 $(SDIR)/axc.h $(DESTDIR)/$(PREFIX)/include/axc/
+ 	install -m 644 $(SDIR)/axc_crypto.h $(DESTDIR)/$(PREFIX)/include/axc/
