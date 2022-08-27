@@ -1,5 +1,5 @@
 PORTNAME=	lux
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/kfj/pv/get/
 PKGNAMESUFFIX=	-pv	# distinguish from www/lux
@@ -8,49 +8,57 @@ DISTNAME=	${COMMIT}
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Panorama and image viewer
 
-LICENSE=	GPLv3 SANSATION
-LICENSE_COMB=	multi
-LICENSE_NAME_SANSATION=	Sansation freeware font family license
-LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE
-LICENSE_FILE_SANSATION=	${WRKSRC}/Sansation_1.31_ReadMe.txt
-LICENSE_PERMS_SANSATION=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=	address space exhaustion in compiler
 BROKEN_armv7=	address space exhaustion in compiler
 
-LIB_DEPENDS=	libvigraimpex.so:graphics/vigra \
+LIB_DEPENDS=	libhwy.so:devel/highway \
 		libsfml-window.so:devel/sfml \
-		libexiv2.so:graphics/exiv2
+		libexiv2.so:graphics/exiv2 \
+		libvigraimpex.so:graphics/vigra
+RUN_DEPENDS=	${GUIFONT}:x11-fonts/noto-basic
+GUIFONT=	${LOCALBASE}/share/fonts/noto/NotoSans-Regular.ttf
 
-USES=		cmake dos2unix pkgconfig tar:bz2
+USES=		cmake desktop-file-utils dos2unix pkgconfig tar:bz2
 DOS2UNIX_FILES=	tinyfiledialogs.c
+CMAKE_ON=	USE_HWY_LIBRARY
+CXXFLAGS+=	-Wno-deprecated-declarations
 CONFLICTS=	lux
-DESKTOP_ENTRIES=	"Lux Panorama Viewer" \
-			"panorama and image viewer" "lux-pv" "lux" \
-			"Graphics;ImageProcessing;Photography;Viewer;" \
-			false
 
 WRKSRC=		${WRKDIR}/kfj-pv-${COMMIT}
-COMMIT=		9ec3fe36f96a
-PLIST_FILES=	bin/lux \
-		share/icons/hicolor/512x512/apps/lux-pv.png \
-		share/lux/fonts/Sansation_1.31_ReadMe.txt \
-		share/lux/fonts/Sansation_Regular.ttf
+COMMIT=		402942545a06
+
+OPTIONS_DEFINE_amd64=	SSSE3 SSE42 AVX AVX2 AVX512
+OPTIONS_DEFINE_i386=	SSE2 SSSE3 SSE42 AVX AVX2 AVX512
+OPTIONS_DEFAULT_amd64=	SSSE3 SSE42 AVX AVX2 AVX512
+OPTIONS_DEFAULT_i386=	SSSE3 SSE42 AVX AVX2 AVX512
+
+SSE2_DESC=	build port for Pentium 4 or newer
+SSSE3_DESC=	support SSSE3 flavor
+SSE42_DESC=	support SSE4.2 flavor
+AVX_DESC=	support AVX flavor
+AVX2_DESC=	support AVX2 flavor
+AVX512_DESC=	support AVX-512F flavor
+
+SSE2_CXXFLAGS_OFF=	${${OSVERSION}>=1300000:?-march=i686:}
+SSE2_CXXFLAGS=		-march=pentium4
+SSSE3_CMAKE_BOOL=	FLV_SSSE3
+SSE42_CMAKE_BOOL=	FLV_SSE42
+AVX_CMAKE_BOOL=		FLV_AVX
+AVX2_CMAKE_BOOL=	FLV_AVX2
+AVX512_CMAKE_BOOL=	FLV_AVX512f
 
 .include <bsd.port.pre.mk>
 
 # cannot use CMAKE_ON after bsd.port.pre.mk
-.if ${ARCH} == 'amd64' || ${ARCH} == 'i386'
-BUILD_DEPENDS=	vc>0:devel/vc
-CMAKE_ARGS+=	-DFLV_SSSE3=ON -DFLV_SSE42=ON
-.else
-LIB_DEPENDS+=	libhwy.so:devel/highway
-CMAKE_ARGS+=	-DUSE_HWY_LIBRARY=ON -DFLV_NATIVE=ON
+# this disables the flavor dispatch code on non-x86
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CMAKE_ARGS+=	-DFLV_NATIVE=ON
 .endif
 
-post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps
-	${INSTALL_DATA} ${WRKSRC}/scripts/PV_512x512x32.png \
-	    ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps/lux-pv.png
+pre-configure:
+	@${REINPLACE_CMD} -e 's,%%GUIFONT%%,${GUIFONT},' ${WRKSRC}/options.h
 
 .include <bsd.port.post.mk>
