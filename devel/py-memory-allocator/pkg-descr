@@ -7,5 +7,5 @@ It provides a single extension class MemoryAllocator with cdef methods.
 Memory is freed when the instance of MemoryAllocator is deallocated. On failure
 to allocate the memory, a proper error is raised.
 
-WWW: https://github.com/kliem/memory_allocator
+WWW: https://github.com/sagemath/memory_allocator
 WWW: https://pypi.org/project/memory-allocator/
