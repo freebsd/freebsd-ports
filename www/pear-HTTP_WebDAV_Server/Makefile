@@ -14,4 +14,6 @@ NO_ARCH=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	pear
 
+PORTSCOUT=	skipv:1.0.0rc8
+
 .include <bsd.port.mk>
