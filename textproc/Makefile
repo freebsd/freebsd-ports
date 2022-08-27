@@ -1264,7 +1264,6 @@
     SUBDIR += print-n-times
     SUBDIR += pugixml
     SUBDIR += pup
-    SUBDIR += py-Chameleon
     SUBDIR += py-CommonMark
     SUBDIR += py-Morfessor
     SUBDIR += py-QDarkStyle
@@ -1285,6 +1284,7 @@
     SUBDIR += py-bibtexparser
     SUBDIR += py-bracex
     SUBDIR += py-cchardet
+    SUBDIR += py-chameleon
     SUBDIR += py-chardet
     SUBDIR += py-charset-normalizer
     SUBDIR += py-citeproc-py

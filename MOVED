@@ -17537,3 +17537,4 @@ x11-themes/adwaita-qt|x11-themes/adwaita-qt5|2022-08-23|Renamed to make space fo
 net/gstreamer1-plugins-libmms||2022-08-26|Microsoft deprecated MMS in 2003
 mail/py-email_reply_parser|mail/py-email-reply-parser|2022-08-27|Rename to match upstream naming
 print/py-pdf2|print/py-pypdf2|2022-08-27|Rename to match upstream naming
+textproc/py-Chameleon|textproc/py-chameleon|2022-08-27|Rename to match upstream naming
