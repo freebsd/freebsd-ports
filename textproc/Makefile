@@ -1567,6 +1567,7 @@
     SUBDIR += py-xhtml2pdf
     SUBDIR += py-xlmmacrodeobfuscator
     SUBDIR += py-xlrd
+    SUBDIR += py-xlrd2
     SUBDIR += py-xlsxwriter
     SUBDIR += py-xlutils
     SUBDIR += py-xlwt
