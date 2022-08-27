@@ -13,7 +13,8 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libharfbuzz.so:print/harfbuzz \
 		libjson-glib-1.0.so:devel/json-glib
 
-USES=		desktop-file-utils gettext-tools gmake gnome pkgconfig vala:build
+USES=		desktop-file-utils gettext-tools gmake gnome pkgconfig \
+		vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2 vte3
 USE_GITHUB=	yes
 GH_ACCOUNT=	teejee2008
@@ -21,11 +22,13 @@ GH_ACCOUNT=	teejee2008
 WRKSRC_SUBDIR=	src
 MAKEFILE=	makefile
 
-BROKEN=		Does not build against current vala
-
 post-patch:
 	@${RM} ${WRKSRC}/share/polo/files/gtk-theme/*.orig
 	@${RM} ${WRKSRC}/share/polo/files/install-*.sh
 	@${RM} -r ${WRKSRC}/share/polo/files/udisks2
+# Adhere to GLib.Object naming conventions for properties
+	@${REINPLACE_CMD} -e 's,7zip_version,sevenzip_version,g' \
+		${WRKSRC}/Gtk/MainMenubar.vala \
+		${WRKSRC}/Utility/ArchiveTask.vala
 
 .include <bsd.port.mk>
