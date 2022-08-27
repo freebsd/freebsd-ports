@@ -5345,6 +5345,7 @@
     SUBDIR += py-tempora
     SUBDIR += py-tenacity
     SUBDIR += py-termcolor
+    SUBDIR += py-termcolor-whl
     SUBDIR += py-termstyle
     SUBDIR += py-testfixtures
     SUBDIR += py-testinfra
