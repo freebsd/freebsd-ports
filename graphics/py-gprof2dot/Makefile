@@ -1,0 +1,18 @@
+PORTNAME=	gprof2dot
+PORTVERSION=	2022.7.29
+CATEGORIES=	graphics python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Generate a dot graph from the output of several profilers
+
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		python:3.7+
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

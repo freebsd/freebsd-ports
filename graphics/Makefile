@@ -859,6 +859,7 @@
     SUBDIR += py-glfw
     SUBDIR += py-glooey
     SUBDIR += py-gphoto2
+    SUBDIR += py-gprof2dot
     SUBDIR += py-graphlib-backport
     SUBDIR += py-graphviz
     SUBDIR += py-graphy
