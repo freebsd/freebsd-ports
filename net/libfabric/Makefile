@@ -9,6 +9,8 @@ COMMENT=	Open Fabric Interfaces
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_riscv64=	configure fails: WARNING: verbs provider was requested, but cannot be compiled; error: Cannot continue
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 
