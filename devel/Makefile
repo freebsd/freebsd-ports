@@ -6608,6 +6608,7 @@
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-lazy_priority_queue
+    SUBDIR += rubygem-libdatadog
     SUBDIR += rubygem-libddprof
     SUBDIR += rubygem-libddwaf
     SUBDIR += rubygem-librarian
