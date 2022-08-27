@@ -1,5 +1,5 @@
 PORTNAME=	Pithub
-PORTVERSION=	0.01037
+PORTVERSION=	0.01038
 CATEGORIES=	devel
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OALDERS
@@ -13,8 +13,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Array-Iterator>=0:devel/p5-Array-Iterator \
-		p5-Cache-LRU>=0:devel/p5-Cache-LRU \
+RUN_DEPENDS=	p5-Cache-LRU>=0:devel/p5-Cache-LRU \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
