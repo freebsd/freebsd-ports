@@ -429,6 +429,7 @@
     SUBDIR += simlib
     SUBDIR += simple-dftd3
     SUBDIR += simsmith
+    SUBDIR += sirius
     SUBDIR += smoldyn
     SUBDIR += sparta
     SUBDIR += spglib
