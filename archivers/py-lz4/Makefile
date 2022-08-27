@@ -1,5 +1,5 @@
 PORTNAME=	lz4
-PORTVERSION=	2.1.10
+PORTVERSION=	4.0.2
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	liblz4>=1.7.5:archivers/liblz4 \
 LIB_DEPENDS=	liblz4.so:archivers/liblz4
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	distutils pytest
 
 post-install:
