@@ -6316,6 +6316,7 @@
     SUBDIR += rubygem-corefines
     SUBDIR += rubygem-cork
     SUBDIR += rubygem-countries
+    SUBDIR += rubygem-cow_proxy
     SUBDIR += rubygem-crack
     SUBDIR += rubygem-cri
     SUBDIR += rubygem-csv
