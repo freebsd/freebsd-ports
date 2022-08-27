@@ -1,3 +1,5 @@
 include/Lerc_c_api.h
 include/Lerc_types.h
 lib/libLerc.so
+lib/libLerc.so.4
+libdata/pkgconfig/Lerc.pc

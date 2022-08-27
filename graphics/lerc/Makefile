@@ -1,5 +1,5 @@
 PORTNAME=	lerc
-PORTVERSION=	3.0
+PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -9,7 +9,10 @@ COMMENT=	C++ library for Limited Error Raster Compression
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler:c++17-lang dos2unix
+
+CMAKE_ON=	BUILD_SHARED_LIBS
+USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	Esri
 USE_GITHUB=	yes
