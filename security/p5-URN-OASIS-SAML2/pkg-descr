@@ -1,0 +1,4 @@
+URN::OASIS::SAML2 provides constants which are in use by the SAML2
+implementation.
+
+WWW: https://metacpan.org/dist/URN-OASIS-SAML2
