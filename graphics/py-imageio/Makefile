@@ -1,5 +1,5 @@
 PORTNAME=	imageio
-PORTVERSION=	2.20.0
+PORTVERSION=	2.21.0
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/imageio/imageio/releases/download/v${PORTVERSION}/
