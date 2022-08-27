@@ -1,5 +1,6 @@
 PORTNAME=	kokkos
 DISTVERSION=	3.6.01
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +22,14 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	Kokkos_ENABLE_TESTS
 
 LDFLAGS+=	-lexecinfo
+
+OPTIONS_DEFINE=		OPENMP SERIAL
+OPTIONS_DEFAULT=	OPENMP SERIAL # both choices are assumed by science/nlcglib
+
+OPENMP_CMAKE_BOOL=	Kokkos_ENABLE_OPENMP
+
+SERIAL_DESC=		Enable serial backend
+SERIAL_CMAKE_BOOL=	Kokkos_ENABLE_SERIAL
 
 post-install: # workaround for https://github.com/kokkos/kokkos/issues/4983
 	${RM} ${STAGEDIR}${PREFIX}/include/CMakeLists.txt
