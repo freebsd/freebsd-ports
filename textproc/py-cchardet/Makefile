@@ -1,5 +1,6 @@
 PORTNAME=	cchardet
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,5 +16,8 @@ BUILD_DEPENDS=	cmake:devel/cmake
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
