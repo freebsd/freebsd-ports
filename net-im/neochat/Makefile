@@ -1,5 +1,6 @@
 PORTNAME=	neochat
 DISTVERSION=	22.04
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	KDE/stable/plasma-mobile/${DISTVERSION}
 
@@ -10,7 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
 LIB_DEPENDS=	libcmark.so:textproc/cmark \
-		libqt5keychain.so:security/qtkeychain
+		libqt5keychain.so:security/qtkeychain@qt5
 BUILD_DEPENDS=	libquotient>=0.6.11:net-im/libquotient \
 		kquickimageeditor>=0.2.0:graphics/kquickimageeditor \
 		${LOCALBASE}/include/qcoro5/qcoro/qcoro.h:devel/qcoro

@@ -1,6 +1,6 @@
 PORTNAME=	qgis
 DISTVERSION=	3.26.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -45,7 +45,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libprotobuf-lite.so:devel/protobuf \
 		libqjson-qt5.so:devel/qjson \
 		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
-		libqt5keychain.so:security/qtkeychain \
+		libqt5keychain.so:security/qtkeychain@qt5 \
 		libqwt6.so:x11-toolkits/qwt6 \
 		libspatialindex.so:devel/spatialindex \
 		libspatialite.so:databases/spatialite \

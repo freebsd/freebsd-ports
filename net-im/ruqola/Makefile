@@ -1,6 +1,7 @@
 PORTNAME=	ruqola
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 DISTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +10,7 @@ COMMENT=	Rocket.Chat client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain \
+LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
 		libsecret-1.so:security/libsecret
 
 USES=		cmake compiler:c++11-lang gnome kde:5 localbase:ldflags qt:5 tar:xz

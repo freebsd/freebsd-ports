@@ -1,5 +1,6 @@
 PORTNAME=	kstars
 DISTVERSION=	3.6.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	astro kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
@@ -11,7 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libindidriver.so:devel/indi \
-		libqt5keychain.so:security/qtkeychain \
+		libqt5keychain.so:security/qtkeychain@qt5 \
 		libraw.so:graphics/libraw \
 		libsecret-1.so:security/libsecret \
 		libstellarsolver.so:astro/stellarsolver \

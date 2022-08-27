@@ -1,6 +1,6 @@
 PORTNAME=	trojita
 PORTVERSION=	0.7
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/src/
 
@@ -10,7 +10,7 @@ COMMENT=	Fast cross-platform IMAP e-mail client using Qt 5 toolkit
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain
+LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5
 
 USE_LDCONFIG=	yes
 

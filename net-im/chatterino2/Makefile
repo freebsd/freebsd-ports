@@ -1,6 +1,6 @@
 PORTNAME=	chatterino2
 PORTVERSION=	2.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	rapidjson>0:devel/rapidjson \
 		websocketpp>=0:devel/websocketpp
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libqt5keychain.so:security/qtkeychain
+		libqt5keychain.so:security/qtkeychain@qt5
 
 USES=		compiler:c++17-lang gl pkgconfig qmake qt:5 ssl
 USE_QT=		concurrent core gui multimedia network svg widgets \

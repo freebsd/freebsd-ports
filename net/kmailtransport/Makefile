@@ -1,5 +1,6 @@
 PORTNAME=	kmailtransport
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,7 +9,7 @@ COMMENT=	KDE library to managing mail transport
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
-		libqt5keychain.so:security/qtkeychain
+		libqt5keychain.so:security/qtkeychain@qt5
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons i18n \

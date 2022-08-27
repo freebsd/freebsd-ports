@@ -1,6 +1,6 @@
 PORTNAME=	mixxx
 DISTVERSION=	2.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -71,7 +71,7 @@ OPUS_LIB_DEPENDS=	libopus.so:audio/opus \
 			libopusfile.so:audio/opusfile
 OPUS_CMAKE_BOOL=	OPUS
 QTKEYCHAIN_DESC=	Secure credentials storage for Live Broadcasting profiles
-QTKEYCHAIN_LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain
+QTKEYCHAIN_LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5
 QTKEYCHAIN_CMAKE_BOOL=	QTKEYCHAIN
 WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CMAKE_BOOL=	WAVPACK

@@ -1,5 +1,6 @@
 PORTNAME=	kmail
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +13,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgme-cpp \
 		libqgpgme.so:security/gpgme-qt5 \
-		libqt5keychain.so:security/qtkeychain
+		libqt5keychain.so:security/qtkeychain@qt5
 
 RUN_DEPENDS=	accountwizard:deskutils/kmail-account-wizard \
 		akonadiimportwizard:deskutils/akonadi-import-wizard \

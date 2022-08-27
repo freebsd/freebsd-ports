@@ -1,7 +1,7 @@
 PORTNAME=	nheko
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -21,7 +21,7 @@ LIB_DEPENDS=	\
 		liblmdb.so:databases/lmdb \
 		libmatrix_client.so:net-im/mtxclient \
 		libolm.so:security/olm \
-		libqt5keychain.so:security/qtkeychain \
+		libqt5keychain.so:security/qtkeychain@qt5 \
 		libspdlog.so:devel/spdlog
 
 USES=		cmake compiler:c++17-lang desktop-file-utils \
