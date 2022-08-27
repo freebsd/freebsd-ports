@@ -1436,6 +1436,7 @@
     SUBDIR += py-caldav
     SUBDIR += py-cheroot
     SUBDIR += py-cherrypy
+    SUBDIR += py-cinemagoer
     SUBDIR += py-cookies
     SUBDIR += py-crossplane
     SUBDIR += py-css-parser
