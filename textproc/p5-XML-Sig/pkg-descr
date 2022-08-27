@@ -1,0 +1,5 @@
+XML::Sig provides two primary capabilities: given an XML string, create and
+insert digital signatures, or if one is already present in the string verify it
+-- all in accordance with the W3C standard governing XML signatures.
+
+WWW: https://metacpan.org/dist/XML-Sig
