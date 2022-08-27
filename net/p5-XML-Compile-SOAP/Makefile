@@ -1,5 +1,5 @@
 PORTNAME=	XML-Compile-SOAP
-PORTVERSION=	3.27
+PORTVERSION=	3.28
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper \
+		p5-LWP-Protocol-https>=6.00:www/p5-LWP-Protocol-https \
 		p5-Log-Report>=1.05:devel/p5-Log-Report \
 		p5-Net-HTTP>=6.16:net/p5-Net-HTTP \
 		p5-XML-Compile>=1.58:textproc/p5-XML-Compile \
