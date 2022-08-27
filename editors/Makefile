@@ -78,6 +78,7 @@
     SUBDIR += kibi
     SUBDIR += kile
     SUBDIR += komodo-edit
+    SUBDIR += lapce
     SUBDIR += lazarus
     SUBDIR += lazarus-devel
     SUBDIR += lazarus-qt5

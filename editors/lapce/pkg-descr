@@ -1,0 +1,17 @@
+Lapce is written in pure Rust with a UI in Druid. It is designed with
+Rope Science from the Xi-Editor which makes for lightning-fast
+computation, and leverages OpenGL for rendering.
+
+ - Built-in LSP (Language Server Protocol) support to give you
+   intelligent code features such as: completion, diagnostics and code
+   actions
+ - Modal editing support as first class citizen (Vim-like, and
+   toggleable)
+ - Built-in remote development support inspired by VSCode Remote
+   Development.
+ - Plugins can be written in programming languages that can compile to
+   the WASI format (C, Rust, AssemblyScript)
+ - Built-in terminal, so you can execute commands in your workspace,
+   without leaving Lapce.
+
+WWW: https://lapce.dev/
