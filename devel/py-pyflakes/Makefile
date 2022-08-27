@@ -1,5 +1,5 @@
 PORTNAME=	pyflakes
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ COMMENT=	Passive checker of Python programs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.4+
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils unittest
 
 NO_ARCH=	yes
