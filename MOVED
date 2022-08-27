@@ -10505,7 +10505,6 @@ security/ossec-hids-client|security/ossec-hids-agent|2018-11-09|Agent is the nam
 graphics/ImageMagick|graphics/ImageMagick6|2018-11-10|Port renamed
 graphics/ImageMagick-nox11|graphics/ImageMagick6-nox11|2018-11-10|Port renamed
 lang/gcc6-devel|lang/gcc6|2018-11-11|The GCC 6 branch has been closed, use the final release instead (or a later major version)
-mail/py-email-reply-parser|mail/py-email_reply_parser|2018-11-15|Rename to match upstream naming
 net-mgmt/vidalia||2018-11-16|Has expired: outdated and unmaintained
 german/selfhtml||2018-11-16|Has expired: Project migrated to a Wiki
 sysutils/fastest_cvsup||2018-11-16|Has expired: Obsolete, FreeBSD and OpenBSD switched from cvsup to svn and cvsync, NetBSD only have 2 servers left
@@ -17536,3 +17535,4 @@ net/zeroconf-ioslave|net/kio-zeroconf|2022-08-18|Renamed upstream
 japanese/font-hackgen-nerd|japanese/font-hackgen-nf|2022-08-20|Renamed upstream
 x11-themes/adwaita-qt|x11-themes/adwaita-qt5|2022-08-23|Renamed to make space for x11-themes/adwaita-qt6
 net/gstreamer1-plugins-libmms||2022-08-26|Microsoft deprecated MMS in 2003
+mail/py-email_reply_parser|mail/py-email-reply-parser|2022-08-27|Rename to match upstream naming

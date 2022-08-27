@@ -496,8 +496,8 @@
     SUBDIR += py-django-mailbox
     SUBDIR += py-django-mailman3
     SUBDIR += py-dkimpy
+    SUBDIR += py-email-reply-parser
     SUBDIR += py-email-validator
-    SUBDIR += py-email_reply_parser
     SUBDIR += py-flanker
     SUBDIR += py-flask-mail
     SUBDIR += py-flufl.bounce
