@@ -26,14 +26,14 @@ include/libxslt/xsltlocale.h
 include/libxslt/xsltutils.h
 lib/cmake/libxslt/FindGcrypt.cmake
 lib/cmake/libxslt/libxslt-config.cmake
-lib/libexslt.a
+%%STATIC%%lib/libexslt.a
 lib/libexslt.so
 lib/libexslt.so.0
 lib/libexslt.so.0.8.20
-lib/libxslt.a
+%%STATIC%%lib/libxslt.a
 lib/libxslt.so
 lib/libxslt.so.1
-lib/libxslt.so.1.1.35
+lib/libxslt.so.1.1.36
 lib/xsltConf.sh
 libdata/pkgconfig/libexslt.pc
 libdata/pkgconfig/libxslt.pc
