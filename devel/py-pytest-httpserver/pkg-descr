@@ -1,0 +1,6 @@
+This library is designed to help to test http clients without contacting the
+real http server. In other words, it is a fake http server which is accessible
+via localhost can be started with the pre-defined expected http requests and
+their responses.
+
+WWW: https://github.com/csernazs/pytest-httpserver
