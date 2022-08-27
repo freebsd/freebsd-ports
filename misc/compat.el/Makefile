@@ -1,5 +1,5 @@
 PORTNAME=	compat.el
-DISTVERSION=	28.1.2.1
+DISTVERSION=	28.1.2.2
 CATEGORIES=	misc elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -26,7 +26,7 @@ ELISP_FILES=	compat-24.el compat-24.elc compat-25.el compat-25.elc \
 		compat-26.el compat-26.elc compat-27.el compat-27.elc \
 		compat-28.el compat-28.elc compat-font-lock.el \
 		compat-font-lock.elc compat-help.el compat-help.elc \
-		compat-macs.el compat-macs.elc compat.el compat.elc
+		compat-macs.el compat.el compat.elc
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat
