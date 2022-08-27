@@ -1,0 +1,7 @@
+Implements OMEMO (XEP-0384 v0.3.0) in C.
+
+Input and output are XML strings, so it does not force you to use a certain
+XML lib. While the actual protocol functions do not depend on any kind of
+storage, it comes with a basic implementation in SQLite.
+
+WWW: https://github.com/gkdr/libomemo
