@@ -1572,6 +1572,7 @@
     SUBDIR += py-djangorestframework-xml
     SUBDIR += py-draftjs-exporter
     SUBDIR += py-drf-yasg
+    SUBDIR += py-dropbox
     SUBDIR += py-dtflickr
     SUBDIR += py-enmerkar
     SUBDIR += py-fake-useragent
