@@ -69,6 +69,7 @@
     SUBDIR += devisor
     SUBDIR += dftbplus
     SUBDIR += dftd4
+    SUBDIR += dimod
     SUBDIR += dirac
     SUBDIR += dkh
     SUBDIR += dlib-cpp
