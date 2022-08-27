@@ -17536,3 +17536,4 @@ japanese/font-hackgen-nerd|japanese/font-hackgen-nf|2022-08-20|Renamed upstream
 x11-themes/adwaita-qt|x11-themes/adwaita-qt5|2022-08-23|Renamed to make space for x11-themes/adwaita-qt6
 net/gstreamer1-plugins-libmms||2022-08-26|Microsoft deprecated MMS in 2003
 mail/py-email_reply_parser|mail/py-email-reply-parser|2022-08-27|Rename to match upstream naming
+print/py-pdf2|print/py-pypdf2|2022-08-27|Rename to match upstream naming
