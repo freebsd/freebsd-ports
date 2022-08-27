@@ -1,0 +1,13 @@
+pcodedmp.py is a VBA p-code disassembler.
+
+It is not widely known, but macros written in VBA (Visual Basic for
+Applications; the macro programming language used in Microsoft Office) exist in
+three different executable forms, each of which can be what is actually executed
+at run time, depending on the circumstances.
+
+Since most of the time it is the p-code that determines what exactly a macro
+would do (even if neither source code, nor execodes are present), it would make
+sense to have a tool that can display it. This is what prompted us to create
+this VBA p-code disassembler.
+
+WWW: https://github.com/bontchev/pcodedmp

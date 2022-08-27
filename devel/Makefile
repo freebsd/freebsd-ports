@@ -4906,6 +4906,7 @@
     SUBDIR += py-pathtools
     SUBDIR += py-paver
     SUBDIR += py-pbr
+    SUBDIR += py-pcodedmp
     SUBDIR += py-pdm
     SUBDIR += py-pdm-pep517
     SUBDIR += py-pebble
