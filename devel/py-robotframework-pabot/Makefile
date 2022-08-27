@@ -4,7 +4,7 @@ CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parallel test runner for Robot Framework
 
 LICENSE=	APACHE20
