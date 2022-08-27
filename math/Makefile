@@ -481,6 +481,7 @@
     SUBDIR += minizinc
     SUBDIR += minizinc-ide
     SUBDIR += minizinc-solvers
+    SUBDIR += minorminer
     SUBDIR += miracl
     SUBDIR += mlpack
     SUBDIR += moab
