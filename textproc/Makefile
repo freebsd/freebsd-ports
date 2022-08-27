@@ -1565,6 +1565,7 @@
     SUBDIR += py-wtf-peewee
     SUBDIR += py-wtforms
     SUBDIR += py-xhtml2pdf
+    SUBDIR += py-xlmmacrodeobfuscator
     SUBDIR += py-xlrd
     SUBDIR += py-xlsxwriter
     SUBDIR += py-xlutils

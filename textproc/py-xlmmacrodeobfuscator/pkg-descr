@@ -1,0 +1,10 @@
+XLMMacroDeobfuscator can be used to decode obfuscated XLM macros (also known as
+Excel 4.0 macros). It utilizes an internal XLM emulator to interpret the macros,
+without fully performing the code.
+
+It supports both xls, xlsm, and xlsb formats.
+
+It uses xlrd2, pyxlsb2 and its own parser to extract cells and other information
+from xls, xlsb and xlsm files, respectively.
+
+WWW: https://github.com/DissectMalware/XLMMacroDeobfuscator
