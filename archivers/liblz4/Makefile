@@ -1,6 +1,6 @@
 PORTNAME=	lz4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.3
+DISTVERSION=	1.9.4
 PORTEPOCH=	1
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	lib
@@ -19,7 +19,7 @@ CPE_VENDOR=	lz4_project
 SHEBANG_FILES=	meson/*.py \
 		${WRKDIR}/${PORTNAME}-${DISTVERSION}/tests/*.py
 
-MESON_ARGS=	-Ddefault_library=both -Dbin_programs=true
+MESON_ARGS=	-Ddefault_library=both -Dprograms=true
 
 WRKSRC_SUBDIR=	contrib/meson
 
@@ -27,6 +27,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	TEST
 
-TEST_MESON_TRUE=	bin_tests
+TEST_MESON_TRUE=	tests
 
 .include <bsd.port.mk>
