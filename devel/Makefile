@@ -5315,6 +5315,7 @@
     SUBDIR += py-stdlib-list
     SUBDIR += py-stdnum
     SUBDIR += py-stevedore
+    SUBDIR += py-stone
     SUBDIR += py-stopit
     SUBDIR += py-strategies
     SUBDIR += py-streamparse
