@@ -1052,6 +1052,7 @@
     SUBDIR += p5-XML-Driver-HTML
     SUBDIR += p5-XML-Dumper
     SUBDIR += p5-XML-Elemental
+    SUBDIR += p5-XML-Enc
     SUBDIR += p5-XML-Encoding
     SUBDIR += p5-XML-Entities
     SUBDIR += p5-XML-FOAF
