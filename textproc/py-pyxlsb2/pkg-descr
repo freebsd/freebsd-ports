@@ -1,0 +1,17 @@
+pyxlsb2 (a variant of pyxlsb) is an Excel 2007+ Binary Workbook (xlsb) parser
+written in Python.
+
+pyxslb2 offers the following improvements/changes in comparison to pyxlsb:
+- By default, keeps all data in memory instead of creating temporary files. This
+  is mainly to speed up the processing and also not changing the local file
+  system during the processing.
+- relies on both "xl\workbook.bin" and "xl\_rels\workbook.bin.rels" to load
+  locate boundsheets. As a result, it can load all worksheets as well as all
+  macrosheets.
+- extracts macro formulas:
+  - accurately shows the formulas
+  - supports A1 addressing
+  - supports external addressing (partially implemented))
+- extracts defined names such as auto_open
+
+WWW: https://github.com/DissectMalware/pyxlsb2

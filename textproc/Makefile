@@ -1465,6 +1465,7 @@
     SUBDIR += py-pytkdocs
     SUBDIR += py-pytoml
     SUBDIR += py-pyx12
+    SUBDIR += py-pyxlsb2
     SUBDIR += py-qrcode
     SUBDIR += py-rdflib
     SUBDIR += py-readchar
