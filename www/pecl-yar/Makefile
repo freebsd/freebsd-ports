@@ -12,7 +12,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		localbase:ldflags php:pecl
 USE_PHP=	curl json:build
-IGNORE_WITH_PHP=	82
+
+IGNORE_WITH_PHP=82
 
 OPTIONS_DEFINE=	MSGPACK
 OPTIONS_DEFAULT=MSGPACK
