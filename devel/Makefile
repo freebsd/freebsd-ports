@@ -5951,6 +5951,7 @@
     SUBDIR += rubygem-aws-sdk-lexmodelsv2
     SUBDIR += rubygem-aws-sdk-lexruntimev2
     SUBDIR += rubygem-aws-sdk-licensemanager
+    SUBDIR += rubygem-aws-sdk-licensemanagerusersubscriptions
     SUBDIR += rubygem-aws-sdk-lightsail
     SUBDIR += rubygem-aws-sdk-locationservice
     SUBDIR += rubygem-aws-sdk-lookoutequipment
