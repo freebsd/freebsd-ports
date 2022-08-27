@@ -1,9 +1,9 @@
 PORTNAME=	eggdrop
-PORTVERSION=	1.9.3
-DISTVERSIONPREFIX=	v
+DISTVERSION=	1.9.3
 CATEGORIES=	irc
+MASTER_SITES=	https://github.com/eggheads/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Popular Internet Relay Chat (IRC) bot
 
 LICENSE=	GPLv2
@@ -11,21 +11,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tcl ssl
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	eggheads
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_SHLIB_VER}.so \
+CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_SHLIB_VER}.so \
 		--with-tclinc=${LOCALBASE}/include/tcl${TCL_VER}/tcl.h \
 		--with-sslinc=${OPENSSLINC} \
 		--with-ssllib=${OPENSSLLIB}
 
-MAKE_JOBS_UNSAFE=	yes
-LLD_UNSAFE=	yes
-
 SUB_FILES=	pkg-message
-
-CONFLICTS=	eggdrop-devel
 
 OPTIONS_DEFINE=	DOCS
 
