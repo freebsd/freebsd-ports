@@ -1,5 +1,5 @@
 PORTNAME=	suyimazu
-DISTVERSION=	5.8
+DISTVERSION=	5.9
 CATEGORIES=	games
 MASTER_SITES=	https://codeberg.org/Alexander88207/Suyimazu/archive/
 DISTNAME=	${DISTVERSION}
@@ -15,7 +15,6 @@ ONLY_FOR_ARCHS_REASON=	Wine only runs on x86 architecture
 
 RUN_DEPENDS=	7zz:archivers/7-zip \
 		bash:shells/bash \
-		glxinfo:graphics/glx-utils \
 		vulkaninfo:graphics/vulkan-tools \
 		wine-proton>0:emulators/wine-proton \
 		winetricks:emulators/winetricks \
@@ -23,6 +22,17 @@ RUN_DEPENDS=	7zz:archivers/7-zip \
 		zenity:x11/zenity
 
 NO_BUILD=	yes
+
+OPTIONS_SUB=	yes
+OPTIONS_DEFAULT=	GLX-UTILS
+OPTIONS_RADIO=		GLXINFO
+OPTIONS_RADIO_GLXINFO=	GLX-UTILS MESA-DEMOS
+
+GLX-UTILS_DESC=		Use glxinfo from glx-utils
+MESA-DEMOS_DESC=	Use glxinfo from mesa-demos
+
+GLX-UTILS_RUN_DEPENDS=	glxinfo:graphics/glx-utils
+MESA-DEMOS_RUN_DEPENDS=	glxinfo:graphics/mesa-demos
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
