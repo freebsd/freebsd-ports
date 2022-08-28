@@ -1,7 +1,6 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
-PORTREVISION=	1
+DISTVERSION=	1.6.2
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 
 USES=		compiler:c11 python:3.5+ localbase:ldflags
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils pytest # no Python tests are run, see https://github.com/dmlc/xgboost/issues/8208
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -31,15 +30,9 @@ PYDISTUTILS_INSTALLARGS=	--use-system-libxgboost # this is ignored so that setup
 
 NO_ARCH=	yes
 
-POST_PLIST=	fix-plist
-
-fix-plist: # https://github.com/dmlc/xgboost/issues/5705
-	@${REINPLACE_CMD} 's|.*libxgboost${PYTHON_EXT_SUFFIX}.so$$||' ${TMPPLIST}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-
-do-test: # tests fail w/out CUDA: https://github.com/dmlc/xgboost/issues/6881
-	@cd ${WRKSRC}/.. && ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>
