@@ -1,4 +1,4 @@
---- lib/Support/OSCompatPosix.cpp.orig	2020-12-17 02:21:13 UTC
+--- lib/Support/OSCompatPosix.cpp.orig	2022-08-16 18:18:07 UTC
 +++ lib/Support/OSCompatPosix.cpp
 @@ -25,6 +25,11 @@
  #endif
@@ -12,7 +12,16 @@
  #include <sys/types.h>
  #include <unistd.h>
  
-@@ -228,7 +233,7 @@ void vm_unused(void *p, size_t sz) {
+@@ -221,7 +226,7 @@ void vm_free_aligned(void *p, size_t sz) {
+ 
+ static constexpr int kVMReserveProt = PROT_NONE;
+ static constexpr int kVMReserveFlags =
+-    MAP_PRIVATE | MAP_ANONYMOUS | MAP_NORESERVE;
++    MAP_PRIVATE | MAP_ANONYMOUS;
+ 
+ llvh::ErrorOr<void *>
+ vm_reserve_aligned(size_t sz, size_t alignment, void *hint) {
+@@ -269,7 +274,7 @@ void vm_unused(void *p, size_t sz) {
  /// the process's physical footprint.
  #define MADV_UNUSED MADV_FREE
  
@@ -21,7 +30,7 @@
  
  /// On linux, telling the OS that we \p MADV_DONTNEED some pages will cause it
  /// to immediately deduct their size from the process's resident set.
-@@ -554,6 +559,12 @@ uint64_t thread_id() {
+@@ -599,6 +604,12 @@ uint64_t thread_id() {
    return syscall(__NR_gettid);
  }
  
@@ -34,7 +43,7 @@
  #else
  #error "Thread ID not supported on this platform"
  #endif
-@@ -595,7 +606,7 @@ std::chrono::microseconds thread_cpu_time() {
+@@ -640,7 +651,7 @@ std::chrono::microseconds thread_cpu_time() {
    return microseconds(total);
  }
  
@@ -43,7 +52,7 @@
  
  std::chrono::microseconds thread_cpu_time() {
    using namespace std::chrono;
-@@ -632,7 +643,7 @@ bool thread_page_fault_count(int64_t *outMinorFaults, 
+@@ -677,7 +688,7 @@ bool thread_page_fault_count(int64_t *outMinorFaults, 
    return kr == KERN_SUCCESS;
  }
  
