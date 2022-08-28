@@ -11,6 +11,7 @@ include/flatbuffers/detached_buffer.h
 include/flatbuffers/flatbuffer_builder.h
 include/flatbuffers/flatbuffers.h
 include/flatbuffers/flatc.h
+include/flatbuffers/flex_flat_util.h
 include/flatbuffers/flexbuffers.h
 include/flatbuffers/grpc.h
 include/flatbuffers/hash.h
@@ -29,13 +30,13 @@ include/flatbuffers/util.h
 include/flatbuffers/vector.h
 include/flatbuffers/vector_downward.h
 include/flatbuffers/verifier.h
-lib/cmake/flatbuffers/FlatbuffersConfig.cmake
-lib/cmake/flatbuffers/FlatbuffersConfigVersion.cmake
-lib/cmake/flatbuffers/FlatbuffersSharedTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/flatbuffers/FlatbuffersSharedTargets.cmake
+lib/cmake/flatbuffers/FlatBuffersConfig.cmake
+lib/cmake/flatbuffers/FlatBuffersConfigVersion.cmake
+lib/cmake/flatbuffers/FlatBuffersSharedTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/flatbuffers/FlatBuffersSharedTargets.cmake
 lib/cmake/flatbuffers/FlatcTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/flatbuffers/FlatcTargets.cmake
 lib/libflatbuffers.so
 lib/libflatbuffers.so.2
-lib/libflatbuffers.so.2.0.6
+lib/libflatbuffers.so.2.0.7
 libdata/pkgconfig/flatbuffers.pc
