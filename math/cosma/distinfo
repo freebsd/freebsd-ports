@@ -1,7 +1,7 @@
-TIMESTAMP = 1658529939
-SHA256 (eth-cscs-COSMA-v2.6.1_GH0.tar.gz) = e356bae7082895a90657026bd80a50b589cf7f4f1b257625ee6634c73ce25e05
-SIZE (eth-cscs-COSMA-v2.6.1_GH0.tar.gz) = 1647888
-SHA256 (eth-cscs-COSTA-e48f571_GH0.tar.gz) = 254faeaad2a4d1d7e378bf64523afb59cc9bc6f6d6b9a61f97c2818d64e9c4de
-SIZE (eth-cscs-COSTA-e48f571_GH0.tar.gz) = 804692
+TIMESTAMP = 1661720404
+SHA256 (eth-cscs-COSMA-v2.6.2_GH0.tar.gz) = 1f13579ab7e1fab903f7a8a8a76395d8fbbe42012e1a48e207bce3d88064c5a8
+SIZE (eth-cscs-COSMA-v2.6.2_GH0.tar.gz) = 1647903
+SHA256 (eth-cscs-COSTA-5f1ea59_GH0.tar.gz) = dedd4891cbce9bbf40bc5061ad761d6467626cae0635643d8bb0f8d21ebdeabd
+SIZE (eth-cscs-COSTA-5f1ea59_GH0.tar.gz) = 804689
 SHA256 (eth-cscs-Tiled-MM-9e880f9_GH0.tar.gz) = bde0484ec241a393bb0fd82cb1d4ab0421ecbbfa85b50e442bf1c364803070a3
 SIZE (eth-cscs-Tiled-MM-9e880f9_GH0.tar.gz) = 139512

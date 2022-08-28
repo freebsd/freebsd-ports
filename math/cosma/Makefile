@@ -1,6 +1,6 @@
 PORTNAME=	cosma
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.1
+DISTVERSION=	2.6.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	eth-cscs
 GH_PROJECT=	COSMA
-GH_TUPLE=	eth-cscs:COSTA:e48f571:costa/libs/COSTA \
+GH_TUPLE=	eth-cscs:COSTA:5f1ea59:costa/libs/COSTA \
 		eth-cscs:Tiled-MM:9e880f9:tiledmm/libs/Tiled-MM
 
 CMAKE_ON=	BUILD_SHARED_LIBS
