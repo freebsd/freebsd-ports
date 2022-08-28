@@ -1,0 +1,4 @@
+dwave-preprocessing is a package of common preprocessing tools that can aid in
+solving binary quadratic models (BQM).
+
+WWW: https://github.com/dwavesystems/dwave-preprocessing

@@ -75,6 +75,7 @@
     SUBDIR += dlib-cpp
     SUBDIR += drawxtl
     SUBDIR += dvc
+    SUBDIR += dwave-preprocessing
     SUBDIR += dynare
     SUBDIR += eccodes
     SUBDIR += elk
