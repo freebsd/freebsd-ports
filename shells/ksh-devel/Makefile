@@ -36,13 +36,15 @@ GH_TAGNAME=	${HASH}
 #		$PATH.
 KSH_CONFLICTS=		pdksh
 KSH93_CONFLICTS=	ksh2020 ksh93 ast-ksh
+KSH93D_CONFLICTS=	ksh2020 ksh93 ast-ksh
 
 OPTIONS_DEFAULT=	KSH93 EXAMPLES
 OPTIONS_DEFINE=		EXAMPLES STATIC
 OPTIONS_SINGLE=		BIN_KSH
-OPTIONS_SINGLE_BIN_KSH=	KSH KSH93
+OPTIONS_SINGLE_BIN_KSH=	KSH KSH93 KSH93D
 KSH_DESC=		Install to ${PREFIX}/bin/ksh
 KSH93_DESC=		Install to ${PREFIX}/bin/ksh93
+KSH93D_DESC=		Install to ${PREFIX}/bin/ksh93d (development)
 
 CFLAGS+=	-DMAP_TYPE
 LDFLAGS+=	-lm
@@ -52,13 +54,14 @@ STATIC_MAKE_ENV=	LDFLAGS+=-static
 
 KSH_PLIST_SUB=		93=""
 KSH93_PLIST_SUB=	93="93"
+KSH93D_PLIST_SUB=	93="93d"
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MKSH93}
-PNAME=		ksh93
-.else
-PNAME=		ksh
+.if ${PORT_OPTIONS:MKSH93D}
+PSUFFIX=	93d
+.elif ${PORT_OPTIONS:MKSH93}
+PSUFFIX=	93
 .endif
 
 post-patch:
@@ -68,10 +71,10 @@ do-build:
 	@cd ${WRKSRC}/ && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package flat make
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${STAGEDIR}${PREFIX}/bin/${PNAME}
-	${INSTALL_MAN} ${WRKSRC}/man/man1/sh.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${PNAME}.1
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${WRKSRC}/fun/ && ${INSTALL_SCRIPT} dirs popd pushd ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${STAGEDIR}${PREFIX}/bin/ksh${PSUFFIX}
+	${INSTALL_MAN} ${WRKSRC}/man/man1/sh.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/ksh${PSUFFIX}.1
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}${PSUFFIX}/
+	cd ${WRKSRC}/fun/ && ${INSTALL_SCRIPT} dirs popd pushd ${STAGEDIR}${EXAMPLESDIR}${PSUFFIX}/
 
 do-test:
 	cd ${WRKSRC}/src/cmd/ksh93/tests/ && ${SETENV} SHELL=${WRKSRC}/bin/ksh ${WRKSRC}/bin/ksh shtests

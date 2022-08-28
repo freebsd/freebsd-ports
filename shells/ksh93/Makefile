@@ -39,9 +39,10 @@ KSH93_CONFLICTS=	ksh2020 ksh93-devel ast-ksh
 OPTIONS_DEFAULT=	KSH93 EXAMPLES
 OPTIONS_DEFINE=		EXAMPLES STATIC
 OPTIONS_SINGLE=		BIN_KSH
-OPTIONS_SINGLE_BIN_KSH=	KSH KSH93
+OPTIONS_SINGLE_BIN_KSH=	KSH KSH93 KSH93L
 KSH_DESC=		Install to ${PREFIX}/bin/ksh
 KSH93_DESC=		Install to ${PREFIX}/bin/ksh93
+KSH93L_DESC=		Install to ${PREFIX}/bin/ksh93l (legacy)
 
 CFLAGS+=	-DMAP_TYPE
 LDFLAGS+=	-lm
@@ -51,6 +52,7 @@ STATIC_MAKE_ENV=	LDFLAGS+=-static
 
 KSH_PLIST_SUB=		93=""
 KSH93_PLIST_SUB=	93="93"
+KSH93L_PLIST_SUB=	93="93l"
 
 .include <bsd.port.pre.mk>
 
@@ -58,7 +60,10 @@ KSH93_PLIST_SUB=	93="93"
 BROKEN=	GCC 9.1 changes the output of `gcc -E` which breaks the conf.sh script, fixed in shells/ksh93-devel
 .endif
 
-.if ${PORT_OPTIONS:MKSH93}
+.if ${PORT_OPTIONS:MKSH93L}
+PNAME=		ksh93l
+PSUFFIX=	l
+.elif ${PORT_OPTIONS:MKSH93}
 PNAME=		ksh93
 .else
 PNAME=		ksh
@@ -73,8 +78,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${STAGEDIR}${PREFIX}/bin/${PNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/man1/sh.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${PNAME}.1
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${WRKSRC}/fun/ && ${INSTALL_SCRIPT} dirs popd pushd ${STAGEDIR}${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}${PSUFFIX}/
+	cd ${WRKSRC}/fun/ && ${INSTALL_SCRIPT} dirs popd pushd ${STAGEDIR}${EXAMPLESDIR}${PSUFFIX}/
 
 do-test:
 	cd ${WRKSRC}/src/cmd/ksh93/tests/ && ${SETENV} SHELL=${WRKSRC}/bin/ksh ${WRKSRC}/bin/ksh shtests
