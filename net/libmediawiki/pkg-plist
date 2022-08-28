@@ -46,5 +46,5 @@ lib/cmake/KF5MediaWiki/KF5MediaWikiTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5MediaWiki/KF5MediaWikiTargets.cmake
 lib/libKF5MediaWiki.so
 lib/libKF5MediaWiki.so.5
-lib/libKF5MediaWiki.so.5.37.0
+lib/libKF5MediaWiki.so.5.38.0
 lib/qt5/mkspecs/modules/qt_MediaWiki.pri
