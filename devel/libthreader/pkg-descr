@@ -1,0 +1,6 @@
+Libthreadar is a C++ library providing an abstracted set of C++ *classes*
+to manipulate threads in a very simple and efficient way from your C++ code.
+
+It's used to support multithreading in the DAR archiver.
+
+WWW: https://libthreadar.sourceforge.net/
