@@ -25,6 +25,7 @@ include/gcem_incl/floor.hpp
 include/gcem_incl/fmod.hpp
 include/gcem_incl/gcd.hpp
 include/gcem_incl/gcem_options.hpp
+include/gcem_incl/hypot.hpp
 include/gcem_incl/incomplete_beta.hpp
 include/gcem_incl/incomplete_beta_inv.hpp
 include/gcem_incl/incomplete_gamma.hpp
