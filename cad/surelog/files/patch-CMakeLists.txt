@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-01-01 21:16:17 UTC
+--- CMakeLists.txt.orig	2022-08-20 02:45:49 UTC
 +++ CMakeLists.txt
-@@ -45,7 +45,7 @@ set(GENDIR ${CMAKE_CURRENT_BINARY_DIR}/generated)
+@@ -53,7 +53,7 @@ set(GENDIR ${CMAKE_CURRENT_BINARY_DIR}/generated)
  
  # Python
  if (SURELOG_WITH_PYTHON)
@@ -9,3 +9,12 @@
    find_package(SWIG 3.0 REQUIRED)
    message(STATUS "Python3_LIBRARIES = ${Python3_LIBRARIES}")
    message(STATUS "Python3_EXECUTABLE = ${Python3_EXECUTABLE}")
+@@ -140,7 +140,7 @@ add_custom_command(
+           ${FLATBUFFERS_FLATC_EXECUTABLE})
+ 
+ # Java
+-find_package(Java 11 REQUIRED COMPONENTS Runtime)
++find_package(Java ${FREEBSD_JAVA_VERSION} REQUIRED COMPONENTS Runtime)
+ message(STATUS "Java_JAVA_EXECUTABLE = ${Java_JAVA_EXECUTABLE}")
+ set(ANTLR_JAR_LOCATION
+     ${PROJECT_SOURCE_DIR}/third_party/antlr4_bin/antlr-4.10-complete.jar)
