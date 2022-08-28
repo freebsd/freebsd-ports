@@ -16,4 +16,7 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
+do-test:
+	@cd ${WRKSRC} && ${SETENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+
 .include <bsd.port.mk>
