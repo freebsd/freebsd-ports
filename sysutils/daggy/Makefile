@@ -1,29 +1,32 @@
 PORTNAME=	daggy
-DISTVERSION=	2.0.2
-PORTREVISION=	4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.1.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Data Aggregation Utility: runs commands on remote hosts simultaneously
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BUILD_DEPENDS=	mustache>0:devel/mustache
+BUILD_DEPENDS=	${LOCALBASE}/include/kainjow/mustache.hpp:devel/mustache
 LIB_DEPENDS=	libbotan-2.so:security/botan2 \
 		libssh2.so:security/libssh2 \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		compiler:c++17-lang gl localbase:ldflags pkgconfig cmake qt:5
-USE_GITHUB=	yes
-GH_ACCOUNT=	synacker
-USE_QT=		core gui network buildtools_build qmake_build
+USES=		gl cmake compiler:c++17-lang localbase:ldflags pkgconfig qt:6 ssl
+USE_QT=		base tools_build
 USE_GL=		gl
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	CONAN_BUILD
+USE_GITHUB=	yes
+GH_ACCOUNT=	synacker
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|VERSION_STR|"${DISTVERSION}"|' ${WRKSRC}/src/Daggy/CConsoleDaggy.cpp
+CMAKE_ARGS=	-DVERSION=${DISTVERSION}
+CMAKE_ON=	BUILD_SHARED_LIBS
+
+CXXFLAGS+=	-I${LOCALBASE}/include/kainjow
+
+WRKSRC_SUBDIR=	src
 
 .include <bsd.port.mk>

@@ -12,4 +12,4 @@ Daggy is serverless, cross-platform solution and don't require installation on
 remote servers. Commands execution work under SSH transport protocol or via
 local terminal.
 
-WWW: https://docs.daggy.dev/
+WWW: https://daggy.dev/
