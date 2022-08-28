@@ -11,10 +11,9 @@ COMMENT=	QEMU CPU Emulator ${${FLAVOR}_COMMENT}
 LICENSE=	GPLv2
 
 .if ${FLAVOR:U} != tools
-ONLY_FOR_ARCHS=	amd64 powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 # We need to check if it build with other ARCHS
 # For i386 we have unknown type name 'vm_page_t'
-# ONLY_FOR_ARCHS=	powerpc64le
 .endif
 
 BUILD_DEPENDS=	bash:shells/bash
@@ -208,7 +207,7 @@ MAKE_ARGS+=	ARCH=ppc
 USE_GCC=	yes
 .endif
 
-.if ${ARCH} == "powerpc64"
+.if ${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	--disable-bsd-user
 MAKE_ARGS+=	ARCH=ppc64
 PLIST_SUB+=	BSDUSER="@comment "
