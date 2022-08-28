@@ -21,6 +21,7 @@ GH_TAGNAME=	2ce9dfa4a
 NUT_COMMIT_DATE=	2022.08.25
 
 MAKE_JOBS_UNSAFE=	yes
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build compiler:c11 gmake libtool pkgconfig python
 USE_LDCONFIG=	yes
@@ -74,7 +75,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-python=${PYTHON_CMD} \
 		--without-python2 \
 		--with-python3=${PYTHON_CMD} \
-		--with-dev
+		--with-dev \
+		--with-ltdl --with-nut-scanner
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIB_DEPENDS+=	libltdl.so:devel/libltdl
