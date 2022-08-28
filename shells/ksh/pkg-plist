@@ -1,0 +1,6 @@
+@shell bin/ksh%%93%%
+man/man1/ksh%%93%%.1.gz
+share/examples/ksh/dirs
+share/examples/ksh/popd
+share/examples/ksh/pushd
+

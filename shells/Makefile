@@ -23,6 +23,7 @@
     SUBDIR += ion
     SUBDIR += jailkit
     SUBDIR += klish
+    SUBDIR += ksh
     SUBDIR += ksh-devel
     SUBDIR += ksh2020
     SUBDIR += ksh93
