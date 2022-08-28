@@ -79,6 +79,7 @@ include/conduit/conduit_relay_hdf5.hpp
 include/conduit/conduit_relay_io.h
 include/conduit/conduit_relay_io.hpp
 include/conduit/conduit_relay_io_blueprint.hpp
+include/conduit/conduit_relay_io_csv.hpp
 include/conduit/conduit_relay_io_handle.hpp
 include/conduit/conduit_relay_io_handle_api.hpp
 include/conduit/conduit_relay_io_handle_sidre.hpp
