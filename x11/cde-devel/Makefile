@@ -11,7 +11,7 @@ COMMENT=	Common Desktop Environment
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	cdesktopenv-code
-GH_TAGNAME=	3449ea676
+GH_TAGNAME=	3300d665a
 COMMIT_DATE=	2022.08.13
 
 LICENSE=	LGPL21
