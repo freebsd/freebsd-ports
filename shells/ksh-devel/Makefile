@@ -8,11 +8,10 @@
 # program.  If you are really unconvinced, go ahead but do not
 # complain to me about it.
 
-PORTNAME=	ksh93
+PORTNAME=	ksh
 PORTVERSION=	${AST_COMMIT_DATE}
 CATEGORIES=	shells
 PKGNAMESUFFIX=	-devel
-DIST_SUBDIR=	ksh93
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Development branch of AT&T KornShell 93
@@ -22,14 +21,14 @@ LICENSE=	EPL
 BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_riscv64=		Fails to link: missing sbrk
 
-HASH=		cc1bca27
-AST_COMMIT_DATE=	2020.06.30
+HASH=		53669678
+AST_COMMIT_DATE=	2022.08.26
 
 USES=		compiler:c11
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	att
-GH_PROJECT=	ast
+GH_ACCOUNT=	ksh93
+GH_PROJECT=	ksh
 GH_TAGNAME=	${HASH}
 
 # IMPORTANT:	Disabling conflicts, i.e. -DDISABLE_CONFLICTS will result in
@@ -66,7 +65,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' ${WRKSRC}/src/lib/libast/include/sfio*.h ${WRKSRC}/src/lib/libast/sfio/*.c
 
 do-build:
-	@cd ${WRKSRC}/ && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package flat make ksh93
+	@cd ${WRKSRC}/ && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package flat make
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${STAGEDIR}${PREFIX}/bin/${PNAME}
