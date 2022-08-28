@@ -1,6 +1,7 @@
 PORTNAME=	figtree
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.4
+DISTVERSION=	1.4.4-14
+DISTVERSIONSUFFIX=	-gf9085b6
 CATEGORIES=	biology education java
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +11,8 @@ LICENSE=	GPLv2
 
 USE_JAVA=	yes
 USE_ANT=	yes
+JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237) ...
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	rambaut
 
