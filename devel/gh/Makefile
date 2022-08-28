@@ -1,7 +1,6 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.14.3
-PORTREVISION=	1
+DISTVERSION=	2.14.7
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -21,11 +20,11 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.5:alecaivazis_survey_v2/vendor/github.com/Alec
 		alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		briandowns:spinner:v1.18.1:briandowns_spinner/vendor/github.com/briandowns/spinner \
-		charmbracelet:glamour:v0.4.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
+		charmbracelet:glamour:v0.5.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		charmbracelet:lipgloss:v0.5.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
 		cli:browser:v1.1.0:cli_browser/vendor/github.com/cli/browser \
 		cli:crypto:6be313f59b03:cli_crypto/vendor/golang.org/x/crypto \
-		cli:go-gh:79f89db738dc:cli_go_gh/vendor/github.com/cli/go-gh \
+		cli:go-gh:3630ab390fe7:cli_go_gh/vendor/github.com/cli/go-gh \
 		cli:oauth:v0.9.0:cli_oauth/vendor/github.com/cli/oauth \
 		cli:safeexec:v1.0.0:cli_safeexec/vendor/github.com/cli/safeexec \
 		cli:shurcooL-graphql:v0.0.1:cli_shurcool_graphql/vendor/github.com/cli/shurcooL-graphql \
@@ -41,7 +40,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.5:alecaivazis_survey_v2/vendor/github.com/Alec
 		golang:oauth2:6242fa91716a:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:fbc7d0a398ab:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.5.8:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -58,13 +57,13 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.5:alecaivazis_survey_v2/vendor/github.com/Alec
 		joho:godotenv:v1.4.0:joho_godotenv/vendor/github.com/joho/godotenv \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
-		mattn:go-colorable:v0.1.12:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.16:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mgutz:ansi:d51e80ef957d:mgutz_ansi/vendor/github.com/mgutz/ansi \
-		microcosm-cc:bluemonday:v1.0.17:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
+		microcosm-cc:bluemonday:v1.0.19:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		muesli:reflow:v0.3.0:muesli_reflow/vendor/github.com/muesli/reflow \
-		muesli:termenv:5ac8409525e0:muesli_termenv/vendor/github.com/muesli/termenv \
+		muesli:termenv:v0.12.0:muesli_termenv/vendor/github.com/muesli/termenv \
 		muhammadmuzzammil1998:jsonc:615b0916ca38:muhammadmuzzammil1998_jsonc/vendor/github.com/muhammadmuzzammil1998/jsonc \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		opentracing:opentracing-go:v1.1.0:opentracing_opentracing_go/vendor/github.com/opentracing/opentracing-go \
