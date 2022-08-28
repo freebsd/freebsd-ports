@@ -1,8 +1,10 @@
 include/basix/cell.h
+include/basix/docs.h
 include/basix/dof-transformations.h
 include/basix/e-brezzi-douglas-marini.h
 include/basix/e-bubble.h
 include/basix/e-crouzeix-raviart.h
+include/basix/e-hermite.h
 include/basix/e-hhj.h
 include/basix/e-lagrange.h
 include/basix/e-nce-rtc.h
@@ -15,9 +17,9 @@ include/basix/finite-element.h
 include/basix/indexing.h
 include/basix/interpolation.h
 include/basix/lattice.h
-include/basix/log.h
 include/basix/maps.h
 include/basix/math.h
+include/basix/mdspan.hpp
 include/basix/moments.h
 include/basix/polynomials.h
 include/basix/polyset.h
