@@ -38,6 +38,7 @@ libdata/pkgconfig/accounts-qt5.pc
 %%DOCS%%share/doc/accounts-qt/html/auth-data_8cpp_source.html
 %%DOCS%%share/doc/accounts-qt/html/auth-data_8h_source.html
 %%DOCS%%share/doc/accounts-qt/html/bc_s.png
+%%DOCS%%share/doc/accounts-qt/html/bc_sd.png
 %%DOCS%%share/doc/accounts-qt/html/bdwn.png
 %%DOCS%%share/doc/accounts-qt/html/classAccounts_1_1AccountService-members.html
 %%DOCS%%share/doc/accounts-qt/html/classAccounts_1_1AccountService.html
@@ -74,6 +75,7 @@ libdata/pkgconfig/accounts-qt5.pc
 %%DOCS%%share/doc/accounts-qt/html/dir_c3d1d086c816c0518443c9e800634b9c.js
 %%DOCS%%share/doc/accounts-qt/html/dir_e68e8157741866f444e17edd764ebbae.html
 %%DOCS%%share/doc/accounts-qt/html/doc.png
+%%DOCS%%share/doc/accounts-qt/html/docd.png
 %%DOCS%%share/doc/accounts-qt/html/doxygen.css
 %%DOCS%%share/doc/accounts-qt/html/doxygen.svg
 %%DOCS%%share/doc/accounts-qt/html/dynsections.js
@@ -99,8 +101,10 @@ libdata/pkgconfig/accounts-qt5.pc
 %%DOCS%%share/doc/accounts-qt/html/menu.js
 %%DOCS%%share/doc/accounts-qt/html/menudata.js
 %%DOCS%%share/doc/accounts-qt/html/nav_f.png
+%%DOCS%%share/doc/accounts-qt/html/nav_fd.png
 %%DOCS%%share/doc/accounts-qt/html/nav_g.png
 %%DOCS%%share/doc/accounts-qt/html/nav_h.png
+%%DOCS%%share/doc/accounts-qt/html/nav_hd.png
 %%DOCS%%share/doc/accounts-qt/html/navtree.css
 %%DOCS%%share/doc/accounts-qt/html/navtree.js
 %%DOCS%%share/doc/accounts-qt/html/navtreedata.js
@@ -115,12 +119,17 @@ libdata/pkgconfig/accounts-qt5.pc
 %%DOCS%%share/doc/accounts-qt/html/service_8cpp_source.html
 %%DOCS%%share/doc/accounts-qt/html/service_8h_source.html
 %%DOCS%%share/doc/accounts-qt/html/splitbar.png
+%%DOCS%%share/doc/accounts-qt/html/splitbard.png
 %%DOCS%%share/doc/accounts-qt/html/sync_off.png
 %%DOCS%%share/doc/accounts-qt/html/sync_on.png
 %%DOCS%%share/doc/accounts-qt/html/tab_a.png
+%%DOCS%%share/doc/accounts-qt/html/tab_ad.png
 %%DOCS%%share/doc/accounts-qt/html/tab_b.png
+%%DOCS%%share/doc/accounts-qt/html/tab_bd.png
 %%DOCS%%share/doc/accounts-qt/html/tab_h.png
+%%DOCS%%share/doc/accounts-qt/html/tab_hd.png
 %%DOCS%%share/doc/accounts-qt/html/tab_s.png
+%%DOCS%%share/doc/accounts-qt/html/tab_sd.png
 %%DOCS%%share/doc/accounts-qt/html/tabs.css
 %%DOCS%%share/doc/accounts-qt/html/utils_8cpp_source.html
 %%DOCS%%share/doc/accounts-qt/html/utils_8h_source.html
