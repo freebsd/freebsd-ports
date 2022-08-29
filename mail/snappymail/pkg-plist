@@ -456,14 +456,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Files/FileStorage.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Files/IFiles.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Filters.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/Classes/Filter.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/Classes/FilterCondition.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/Enumerations/ActionType.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/Enumerations/ConditionField.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/Enumerations/ConditionType.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/Enumerations/ConditionsType.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/FiltersInterface.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/Sieve.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/SieveStorage.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Identities.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Identities/FileIdentities.php
@@ -913,6 +906,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/static/js/sieve.js.br
 %%WWWDIR%%/snappymail/v/%%VER%%/static/js/sieve.js.gz
 %%WWWDIR%%/snappymail/v/%%VER%%/static/logo-512.png
+%%WWWDIR%%/snappymail/v/%%VER%%/static/logo-text.png
 %%WWWDIR%%/snappymail/v/%%VER%%/static/manifest.json
 %%WWWDIR%%/snappymail/v/%%VER%%/static/sounds/alert.mp3
 %%WWWDIR%%/snappymail/v/%%VER%%/static/sounds/alert.ogg
