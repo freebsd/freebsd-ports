@@ -1,5 +1,5 @@
 PORTNAME=	opencart
-PORTVERSION=	4.0.1.0
+PORTVERSION=	4.0.1.1
 CATEGORIES=	www misc
 
 MAINTAINER=	wen@FreeBSD.org
