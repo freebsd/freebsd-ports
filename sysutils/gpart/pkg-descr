@@ -6,4 +6,4 @@ Supported (guessable) filesystem or partition types: DOS/Windows FAT, Linux
 ext2 and swap, OS/2 HPFS, Windows NTFS, FreeBSD and Solaris/x86 disklabels,
 Minix FS, Reiser FS
 
-WWW: http://brzitwa.de/mb/gpart/index.html (outdated)
+WWW: https://github.com/baruch/gpart/
