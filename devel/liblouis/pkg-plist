@@ -73,17 +73,17 @@
 %%DATADIR%%/tables/de-chardefs6.cti
 %%DATADIR%%/tables/de-chardefs8.cti
 %%DATADIR%%/tables/de-chess.ctb
+%%DATADIR%%/tables/de-comp6.utb
 %%DATADIR%%/tables/de-de-comp8.ctb
 %%DATADIR%%/tables/de-de.dis
 %%DATADIR%%/tables/de-eurobrl6.dis
 %%DATADIR%%/tables/de-eurobrl6u.dis
 %%DATADIR%%/tables/de-g0-core.uti
-%%DATADIR%%/tables/de-g0-bidi-core.uti
-%%DATADIR%%/tables/de-g0-bidi.utb
-%%DATADIR%%/tables/de-g1-bidi-core.cti
-%%DATADIR%%/tables/de-g1-bidi.ctb
+%%DATADIR%%/tables/de-g0-detailed.utb
 %%DATADIR%%/tables/de-g1-core.cti
+%%DATADIR%%/tables/de-g1-detailed.ctb
 %%DATADIR%%/tables/de-g2-core.cti
+%%DATADIR%%/tables/de-g2-detailed.ctb
 %%DATADIR%%/tables/de-g0.utb
 %%DATADIR%%/tables/de-g1-core-patterns.dic
 %%DATADIR%%/tables/de-g1.ctb
@@ -173,6 +173,7 @@
 %%DATADIR%%/tables/hr-g1.tbl
 %%DATADIR%%/tables/hr-translation.cti
 %%DATADIR%%/tables/hu-backtranslate-correction.dis
+%%DATADIR%%/tables/hu-backtranslate-word-corrections.cti
 %%DATADIR%%/tables/hu-chardefs.cti
 %%DATADIR%%/tables/hu-exceptionwords.cti
 %%DATADIR%%/tables/hu-hu-comp8.ctb
@@ -233,6 +234,7 @@
 %%DATADIR%%/tables/ks-in-g1.utb
 %%DATADIR%%/tables/latinLetterDef6Dots.uti
 %%DATADIR%%/tables/latinLetterDef8Dots.uti
+%%DATADIR%%/tables/latinLowercase.uti
 %%DATADIR%%/tables/latinUppercaseComp6.uti
 %%DATADIR%%/tables/litdigits6DotsPlusDot6.uti
 %%DATADIR%%/tables/litdigits6Dots.uti
@@ -286,7 +288,6 @@
 %%DATADIR%%/tables/no-no-generic.ctb
 %%DATADIR%%/tables/no-no-generic.dis
 %%DATADIR%%/tables/no-no-latinLetterDef6Dots_diacritics.uti
-%%DATADIR%%/tables/no.tbl
 %%DATADIR%%/tables/nso-za-g1.utb
 %%DATADIR%%/tables/nso-za-g2.ctb
 %%DATADIR%%/tables/np-in-g1.utb
@@ -323,12 +324,9 @@
 %%DATADIR%%/tables/si-in-g1.utb
 %%DATADIR%%/tables/sin.cti
 %%DATADIR%%/tables/sin.utb
-%%DATADIR%%/tables/sk-chardefs.cti
 %%DATADIR%%/tables/sk-g1.ctb
 %%DATADIR%%/tables/sk-sk-g1.utb
 %%DATADIR%%/tables/sk-sk.utb
-%%DATADIR%%/tables/sk.tbl
-%%DATADIR%%/tables/sk-translation.cti
 %%DATADIR%%/tables/sl-si-comp8.ctb
 %%DATADIR%%/tables/sl-si-g1.utb
 %%DATADIR%%/tables/sl.tbl
@@ -418,7 +416,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.8
+lib/liblouis.so.20.0.10
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
