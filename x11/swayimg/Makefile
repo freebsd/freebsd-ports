@@ -1,12 +1,7 @@
 PORTNAME=	swayimg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8
-PORTREVISION=	1
+DISTVERSION=	1.9
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	2a07af9d2362.patch:-p1 # https://github.com/artemsen/swayimg/issues/37
-PATCHFILES+=	2e885eadec15.patch:-p1 # https://github.com/artemsen/swayimg/pull/36
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Image viewer for Sway/Wayland
@@ -33,12 +28,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/64x64/apps/${PORTNAME}.png \
 		${NULL}
 
-OPTIONS_DEFINE=	AVIF BASH GIF JPEG JXL LIBEXIF LIBRSVG2 PNG TIFF WEBP
-OPTIONS_DEFAULT=AVIF BASH GIF JPEG JXL LIBEXIF LIBRSVG2 PNG TIFF WEBP
+OPTIONS_DEFINE=	BASH GIF HEIF JPEG JXL LIBEXIF LIBRSVG2 PNG TIFF WEBP ZSH
+OPTIONS_DEFAULT=BASH GIF HEIF JPEG JXL LIBEXIF LIBRSVG2 PNG TIFF WEBP ZSH
 OPTIONS_EXCLUDE=${LIBRSVG2_DEFAULT:Mlegacy:C/.+/LIBRSVG2/}
-
-AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
-AVIF_MESON_ENABLED=	avif
 
 BASH_BUILD_DEPENDS=	bash-completion>0:shells/bash-completion
 BASH_MESON_ENABLED=	bash
@@ -47,6 +39,9 @@ BASH_PLIST_FILES=	share/bash-completion/completions/${PORTNAME}
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_USES=		localbase:ldflags
 GIF_MESON_ENABLED=	gif
+
+HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
+HEIF_MESON_ENABLED=	heif
 
 JPEG_USES=		jpeg
 JPEG_MESON_ENABLED=	jpeg
@@ -67,7 +62,10 @@ PNG_MESON_ENABLED=	png
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_MESON_ENABLED=	tiff
 
-WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
+WEBP_LIB_DEPENDS=	libwebpdemux.so:graphics/webp
 WEBP_MESON_ENABLED=	webp
+
+ZSH_MESON_ENABLED=	zsh
+ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
 
 .include <bsd.port.mk>
