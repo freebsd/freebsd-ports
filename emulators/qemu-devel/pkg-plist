@@ -1,7 +1,7 @@
 bin/elf2dmp
-bin/qemu-arm
+%%BSDUSER%%bin/qemu-arm
 bin/qemu-edid
-bin/qemu-i386
+%%BSDUSER%%bin/qemu-i386
 bin/qemu-img
 bin/qemu-io
 %%GTK3%%bin/qemu-keymap
@@ -35,10 +35,10 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-sparc
 %%NO_X86_TARGETS%%bin/qemu-system-sparc64
 %%NO_X86_TARGETS%%bin/qemu-system-tricore
-bin/qemu-system-x86_64
+%%BSDUSER%%bin/qemu-system-x86_64
 %%NO_X86_TARGETS%%bin/qemu-system-xtensa
 %%NO_X86_TARGETS%%bin/qemu-system-xtensaeb
-bin/qemu-x86_64
+%%BSDUSER%%bin/qemu-x86_64
 include/qemu-plugin.h
 man/man1/qemu.1.gz
 man/man1/qemu-img.1.gz
