@@ -2,6 +2,9 @@ PORTNAME=	highway
 DISTVERSION=	1.0.1
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	6a822e2a9ae3.patch:-p1 # https://github.com/google/highway/issues/946
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Performance-portable, length-agnostic SIMD with runtime dispatch
 
