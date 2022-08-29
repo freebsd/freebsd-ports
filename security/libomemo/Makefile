@@ -1,25 +1,25 @@
-PORTNAME=	libomemo
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
-CATEGORIES=	security
+PORTNAME=       libomemo
+DISTVERSIONPREFIX=      v
+DISTVERSION=    0.8.1
+CATEGORIES=     security
 
-MAINTAINER=	micadeyeye@gmail.com
-COMMENT=	Implements OMEMO in C
+MAINTAINER=     micadeyeye@gmail.com
+COMMENT=        Implements OMEMO in C
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=        MIT
+LICENSE_FILE=   ${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libmxml.so:textproc/mxml
+LIB_DEPENDS=    libgcrypt.so:security/libgcrypt \
+                libmxml.so:textproc/mxml
 
-USES=		cmake gnome pkgconfig sqlite
-USE_GITHUB=	yes
-USE_GNOME=	glib20
-USE_LDCONFIG=	yes
-GH_ACCOUNT=	gkdr
+USES=           cmake gnome pkgconfig sqlite
+USE_GITHUB=     yes
+USE_GNOME=      glib20
+USE_LDCONFIG=   yes
+GH_ACCOUNT=     gkdr
 
-CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	OMEMO_WITH_TESTS
-LDFLAGS+=	-L${LOCALBASE}/lib
+CMAKE_ON=       BUILD_SHARED_LIBS
+CMAKE_OFF=      OMEMO_WITH_TESTS
+LDFLAGS+=       -L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
