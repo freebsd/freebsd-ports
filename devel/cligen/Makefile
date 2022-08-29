@@ -1,5 +1,5 @@
 PORTNAME=	cligen
-PORTVERSION=	5.6.0
+PORTVERSION=	5.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
@@ -15,5 +15,8 @@ GH_ACCOUNT=	clicon
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+
+PLIST_SUB=	LIBMAJORVERSION=${PORTVERSION:R:R} \
+		LIBVERSION=${PORTVERSION:R}
 
 .include <bsd.port.mk>
