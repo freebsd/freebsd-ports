@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 # explicitly use libpurple and mxml
 BUILD_DEPENDS=	pidgin:net-im/pidgin
-LIB_DEPENDS=	liblurch.so:security/liblurch \
+LIB_DEPENDS=	liblurch.so:security/lurch \
 		libpurple.so:net-im/libpurple
 
 USES=		cpe gmake gnome libtool pkgconfig
