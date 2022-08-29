@@ -10,7 +10,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
-#USE_GCC=	yes
+USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	aristocratos
 
