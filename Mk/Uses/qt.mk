@@ -148,7 +148,8 @@ _USE_QT5_ONLY=		assistant buildtools concurrent connectivity core dbus \
 _USE_QT5_ONLY+=		sql-ibase
 .  endif
 
-_USE_QT6_ONLY=		5compat base languageserver lottie shadertools tools translations
+_USE_QT6_ONLY=		5compat base languageserver lottie positioning shadertools \
+			tools translations
 
 # Dependency tuples: _LIB should be preferred if possible.
 qt-3d_PORT=		graphics/${_QT_RELNAME}-3d
@@ -256,6 +257,9 @@ qt-pixeltool_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/pixeltool
 
 qt-phonon4_PORT=	multimedia/phonon
 qt-phonon4_LIB=		libphonon4${_QT_RELNAME}.so
+
+qt-positioning_PORT=	devel/${_QT_RELNAME}-positioning
+qt-positioning_LIB=	libQt${_QT_LIBVER}Positioning.so
 
 qt-plugininfo_PORT=	sysutils/${_QT_RELNAME}-qtplugininfo
 qt-plugininfo_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/qtplugininfo

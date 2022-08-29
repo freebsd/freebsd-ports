@@ -28,7 +28,7 @@ _COMMON_DISTS=		3d base charts datavis3d declarative imageformats multimedia \
 _QT5_DISTS=		connectivity gamepad graphicaleffects location quickcontrols \
 			quickcontrols2 script speech webengine webglplugin webview \
 			x11extras xmlpatterns
-_QT6_DISTS=		5compat doc languageserver lottie shadertools
+_QT6_DISTS=		5compat doc languageserver lottie positioning shadertools
 
 _QT_DISTS=		${_COMMON_DISTS} \
 			${_QT${_QT_VER}_DISTS}
