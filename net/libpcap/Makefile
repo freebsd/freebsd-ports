@@ -11,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
-USES=		bison cpe gmake
+USES=		bison cpe gmake ssl
 
 CPE_VENDOR=	tcpdump
 
