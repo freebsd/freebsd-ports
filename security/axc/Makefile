@@ -19,4 +19,7 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	gkdr
 
+post-install:
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaxc.so
+
 .include <bsd.port.mk>
