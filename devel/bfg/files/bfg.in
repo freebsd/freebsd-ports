@@ -1,0 +1,2 @@
+#!/bin/sh
+%%JAVA%% -jar %%DATADIR%%/%%DISTNAME%%.jar "$@"

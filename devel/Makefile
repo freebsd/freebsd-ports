@@ -268,6 +268,7 @@
     SUBDIR += benchmark
     SUBDIR += bennugd-core
     SUBDIR += bennugd-modules
+    SUBDIR += bfg
     SUBDIR += bglibs
     SUBDIR += binaryen
     SUBDIR += bingrep
