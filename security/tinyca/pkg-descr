@@ -18,4 +18,4 @@ Currently TinyCA supports the following features:
     * Certificate Revocation List
           o CRLs can be exported as: PEM, DER and TXT
 
-WWW: http://tinyca.sm-zone.net/ (no longer available)
+WWW: https://opsec.eu/src/tinyca/
