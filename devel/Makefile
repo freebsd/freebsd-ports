@@ -1348,7 +1348,7 @@
     SUBDIR += libtextstyle
     SUBDIR += libthai
     SUBDIR += libthmap
-    SUBDIR += libthreader
+    SUBDIR += libthreadar
     SUBDIR += libtickit
     SUBDIR += libtifiles2
     SUBDIR += libtool
