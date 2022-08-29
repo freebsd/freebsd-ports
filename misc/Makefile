@@ -411,6 +411,7 @@
     SUBDIR += py-pyEDFlib
     SUBDIR += py-pyfiglet
     SUBDIR += py-pykml
+    SUBDIR += py-pypatent
     SUBDIR += py-pyprind
     SUBDIR += py-python-geohash
     SUBDIR += py-python-utils
