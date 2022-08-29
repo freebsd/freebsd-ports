@@ -17540,3 +17540,4 @@ print/py-pdf2|print/py-pypdf2|2022-08-27|Rename to match upstream naming
 textproc/py-Chameleon|textproc/py-chameleon|2022-08-27|Rename to match upstream naming
 print/py-pdf|print/py-pypdf|2022-08-27|Rename to match upstream naming
 shells/ksh93-devel|shells/ksh-devel|2022-08-28|Development has resumed under a new GH account
+devel/boehm-gc-redirect||2022-08-29|No consumer in ports tree

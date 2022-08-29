@@ -283,7 +283,6 @@
     SUBDIR += bmkdep
     SUBDIR += bnf
     SUBDIR += boehm-gc
-    SUBDIR += boehm-gc-redirect
     SUBDIR += boehm-gc-threaded
     SUBDIR += boost-all
     SUBDIR += boost-docs

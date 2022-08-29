@@ -62,10 +62,6 @@ PLIST_FILES=		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 			${GCTBALIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.5.0,} \
 			libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 RUN_DEPENDS+=		${LOCALBASE}/include/gc/gc.h:devel/boehm-gc
-. if ${GC_VARIANT} == "redirect"
-CONFIGURE_ARGS+=	--disable-threads \
-			--enable-redirect-malloc
-. endif
 . if ${GC_VARIANT} == "threaded"
 CONFIGURE_ARGS+=	--disable-redirect-malloc \
 			--enable-threads=posix
