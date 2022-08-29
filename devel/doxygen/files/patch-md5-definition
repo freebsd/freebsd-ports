@@ -1,14 +1,14 @@
---- src/definition.cpp.orig	2021-08-17 14:04:29 UTC
+--- src/definition.cpp.orig	2022-08-23 13:47:08 UTC
 +++ src/definition.cpp
-@@ -5,6 +5,7 @@
- #include <string>
- 
- #include <ctype.h>
-+#include <sys/types.h>
- #include "md5.h"
+@@ -7,6 +7,7 @@
  #include <stdio.h>
  #include <stdlib.h>
-@@ -414,13 +415,11 @@ bool DefinitionImpl::_docsAlreadyAdded(const QCString 
+ #include <assert.h>
++#include <sys/types.h>
+ 
+ #include "md5.h"
+ #include "regex.h"
+@@ -417,13 +418,11 @@ bool DefinitionImpl::_docsAlreadyAdded(const QCString 
  
  bool DefinitionImpl::_docsAlreadyAdded(const QCString &doc,QCString &sigList)
  {

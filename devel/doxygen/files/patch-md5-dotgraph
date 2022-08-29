@@ -1,14 +1,14 @@
---- src/dotgraph.cpp.orig	2021-05-12 18:53:13 UTC
+--- src/dotgraph.cpp.orig	2022-08-11 20:14:32 UTC
 +++ src/dotgraph.cpp
-@@ -19,6 +19,7 @@
+@@ -16,6 +16,7 @@
+ #include <sstream>
+ #include <mutex>
+ #include <regex>
++#include <sys/types.h>
+ 
  #include "config.h"
  #include "doxygen.h"
- #include "index.h"
-+#include <sys/types.h>
- #include "md5.h"
- #include "message.h"
- #include "util.h"
-@@ -154,12 +155,9 @@ bool DotGraph::prepareDotFile()
+@@ -155,12 +156,9 @@ bool DotGraph::prepareDotFile()
      term("Output dir %s does not exist!\n", m_dir.path().c_str());
    }
  
