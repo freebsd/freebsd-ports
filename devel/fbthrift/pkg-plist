@@ -305,6 +305,7 @@ include/thrift/lib/cpp2/op/Compare.h
 include/thrift/lib/cpp2/op/Copy.h
 include/thrift/lib/cpp2/op/Create.h
 include/thrift/lib/cpp2/op/DeterministicAccumulator.h
+include/thrift/lib/cpp2/op/Encode.h
 include/thrift/lib/cpp2/op/Ensure.h
 include/thrift/lib/cpp2/op/Get.h
 include/thrift/lib/cpp2/op/Hash.h
@@ -322,6 +323,7 @@ include/thrift/lib/cpp2/op/detail/Compare.h
 include/thrift/lib/cpp2/op/detail/Copy.h
 include/thrift/lib/cpp2/op/detail/ContainerPatch.h
 include/thrift/lib/cpp2/op/detail/Create.h
+include/thrift/lib/cpp2/op/detail/Encode.h
 include/thrift/lib/cpp2/op/detail/Ensure.h
 include/thrift/lib/cpp2/op/detail/Get.h
 include/thrift/lib/cpp2/op/detail/Hash.h
@@ -522,7 +524,6 @@ include/thrift/lib/cpp2/type/NativeType.h
 include/thrift/lib/cpp2/type/Protocol.h
 include/thrift/lib/cpp2/type/Runtime.h
 include/thrift/lib/cpp2/type/Tag.h
-include/thrift/lib/cpp2/type/TagUtil.h
 include/thrift/lib/cpp2/type/Testing.h
 include/thrift/lib/cpp2/type/ThriftType.h
 include/thrift/lib/cpp2/type/Traits.h
