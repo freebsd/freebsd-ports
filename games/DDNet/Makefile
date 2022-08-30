@@ -1,5 +1,5 @@
 PORTNAME=	DDNet
-PORTVERSION=	16.2.2
+PORTVERSION=	16.3.1
 CATEGORIES=	games
 MASTER_SITES=	https://ddnet.tw/downloads/
 
@@ -9,7 +9,7 @@ COMMENT=	DDraceNetwork, a cooperative racing mod of Teeworlds
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-LIB_DEPENDS=	libpnglite.so:graphics/pnglite
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cmake compiler:c++17-lang pkgconfig python sqlite:3 ssl tar:xz
 CMAKE_ARGS=	-DPYTHON_EXECUTABLE="${PYTHON_CMD}"
@@ -20,7 +20,7 @@ CXXFLAGS+=	-DBINARY_DIR="\\\"${PREFIX}/bin\\\""
 PORTDATA=	*
 DATADIR=	${PREFIX}/share/ddnet
 
-TEST_ENV=	${MAKE_ENV} GTEST_FILTER=-Io.CurrentExe:Jobs.LookupHost
+TEST_ENV=	${MAKE_ENV} GTEST_FILTER=-Io.CurrentExe:Jobs.LookupHost:Io.CurrentExe:Jobs.LookupHostWebsocket
 
 OPTIONS_DEFINE=		TEST WEBSOCKETS MYSQL VIDEORECORDER UPNP VULKAN
 OPTIONS_MULTI=		COMPONENTS
