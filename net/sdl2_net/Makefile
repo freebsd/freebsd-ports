@@ -1,21 +1,21 @@
 PORTNAME=	sdl2_net
-PORTVERSION=	2.0.1
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	2.2.0
 CATEGORIES=	net
-MASTER_SITES=	https://www.libsdl.org/projects/SDL_net/release/
-DISTNAME=	SDL2_net-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Small sample cross-platform networking library
 
 LICENSE=	ZLIB
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+USES=		cmake sdl
+USE_GITHUB=	yes
+GH_ACCOUNT=	libsdl-org
+GH_PROJECT=	SDL_net
 USE_SDL=	sdl2
-USES=		gmake libtool pathfix pkgconfig:build sdl
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-CONFIGURE_ARGS=	--disable-gui
+CMAKE_OFF=	SDL2NET_SAMPLES
+CMAKE_ARGS=	-DSDL2NET_DEBUG_POSTFIX:STRING=
 
 .include <bsd.port.mk>
