@@ -23,12 +23,6 @@ PLIST_FILES=	bin/funkgold
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE:Mgcc}
-CFLAGS+=	-fnested-functions
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/funkgold ${STAGEDIR}${PREFIX}/bin
 
@@ -38,4 +32,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
