@@ -1,8 +1,7 @@
 PORTNAME=	gpsprune
-PORTVERSION=	21.3
+PORTVERSION=	22
 CATEGORIES=	astro java
-MASTER_SITES=	https://activityworkshop.net/software/${PORTNAME}/ \
-		https://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://activityworkshop.net/software/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.jar
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
