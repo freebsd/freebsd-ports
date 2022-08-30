@@ -1,9 +1,7 @@
 PORTNAME=	conkyforecast
-PORTVERSION=	2.20
-PORTREVISION=	3
+PORTVERSION=	2.24
 CATEGORIES=	deskutils
-MASTER_SITES=	https://launchpadlibrarian.net/70673352/ \
-		LOCAL/vg
+MASTER_SITES=	https://launchpad.net/~conky-companions/+archive/ppa/+files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
