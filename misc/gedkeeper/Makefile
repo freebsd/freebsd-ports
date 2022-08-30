@@ -1,5 +1,5 @@
 PORTNAME=	gedkeeper
-PORTVERSION=	2.19.1
+PORTVERSION=	2.21.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -15,11 +15,15 @@ USES=		desktop-file-utils mono shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	Serg-Norseman
 GH_PROJECT=	GEDKeeper GKCommunicator:gkc
-GH_TAGNAME=	cfd6393:gkc
+GH_TAGNAME=	4757bf3:gkc
 GH_SUBDIR=	projects/GKCommunicator:gkc
 
 _BUILD_TYPE=	Release
 DATADIR=	${PREFIX}/lib/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/Reference Include/s,System\.XML,System.Xml,' \
+		${WRKSRC}/projects/GKCommunicator/GKNetCore/GKNetCore.csproj
 
 do-build:
 	cd ${BUILD_WRKSRC} && msbuild projects/GEDKeeper2.linux.sln \

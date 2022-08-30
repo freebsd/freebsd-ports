@@ -5,7 +5,6 @@ bin/gedkeeper
 %%DATADIR%%/BSLib.Linguistics.dll
 %%DATADIR%%/BSLib.SQLite.dll
 %%DATADIR%%/BSLib.dll
-%%DATADIR%%/DotNetRtfWriter.dll
 %%DATADIR%%/ExcelLibrary.dll
 %%DATADIR%%/GEDKeeper2.exe
 %%DATADIR%%/GEDKeeper2.exe.config
@@ -18,13 +17,22 @@ bin/gedkeeper
 %%DATADIR%%/KopiLua.dll
 %%DATADIR%%/NLog.dll
 %%DATADIR%%/NLua.dll
-%%DATADIR%%/Ude.dll
-%%DATADIR%%/YamlSerializer.dll
+%%DATADIR%%/Newtonsoft.Json.dll
+%%DATADIR%%/RtfWriter.dll
+%%DATADIR%%/UtfUnknown.dll
+%%DATADIR%%/YamlDotNet.dll
 %%DATADIR%%/ZedGraph.dll
 %%DATADIR%%/itextsharp.dll
 %%DATADIR%%/locales/Chinese Simplified.lng
 %%DATADIR%%/locales/English.lng
 %%DATADIR%%/locales/czech.lng
+%%DATADIR%%/locales/dev/gkhDev_Architecture.html
+%%DATADIR%%/locales/dev/gkhDev_CodeStruct.html
+%%DATADIR%%/locales/dev/gkhDev_FileFormats.html
+%%DATADIR%%/locales/dev/gkhDev_Implementations.html
+%%DATADIR%%/locales/dev/gkhDev_Releases.html
+%%DATADIR%%/locales/dev/gkhDevelopment.html
+%%DATADIR%%/locales/dev/styles.css
 %%DATADIR%%/locales/french.lng
 %%DATADIR%%/locales/german.lng
 %%DATADIR%%/locales/help_enu/GEDKeeper2.html
@@ -34,6 +42,7 @@ bin/gedkeeper
 %%DATADIR%%/locales/help_enu/gkhCAIndex.html
 %%DATADIR%%/locales/help_enu/gkhContents.html
 %%DATADIR%%/locales/help_enu/gkhDateSpecials.html
+%%DATADIR%%/locales/help_enu/gkhExpandability.html
 %%DATADIR%%/locales/help_enu/gkhFAQ.html
 %%DATADIR%%/locales/help_enu/gkhFeatures.html
 %%DATADIR%%/locales/help_enu/gkhGenRes.html
@@ -50,7 +59,7 @@ bin/gedkeeper
 %%DATADIR%%/locales/help_enu/gkhNav_QuickSearch.html
 %%DATADIR%%/locales/help_enu/gkhOptions.html
 %%DATADIR%%/locales/help_enu/gkhPedigrees.html
-%%DATADIR%%/locales/help_enu/gkhPluginStd.html
+%%DATADIR%%/locales/help_enu/gkhPlugin_GEDmill.html
 %%DATADIR%%/locales/help_enu/gkhPlugins.html
 %%DATADIR%%/locales/help_enu/gkhPortable.html
 %%DATADIR%%/locales/help_enu/gkhQuotes.html
@@ -172,6 +181,7 @@ bin/gedkeeper
 %%DATADIR%%/locales/help_rus/gkhCAIndex.html
 %%DATADIR%%/locales/help_rus/gkhContents.html
 %%DATADIR%%/locales/help_rus/gkhDateSpecials.html
+%%DATADIR%%/locales/help_rus/gkhExpandability.html
 %%DATADIR%%/locales/help_rus/gkhFAQ.html
 %%DATADIR%%/locales/help_rus/gkhFeatures.html
 %%DATADIR%%/locales/help_rus/gkhGenRes.html
@@ -188,7 +198,7 @@ bin/gedkeeper
 %%DATADIR%%/locales/help_rus/gkhNav_QuickSearch.html
 %%DATADIR%%/locales/help_rus/gkhOptions.html
 %%DATADIR%%/locales/help_rus/gkhPedigrees.html
-%%DATADIR%%/locales/help_rus/gkhPluginStd.html
+%%DATADIR%%/locales/help_rus/gkhPlugin_GEDmill.html
 %%DATADIR%%/locales/help_rus/gkhPlugins.html
 %%DATADIR%%/locales/help_rus/gkhPortable.html
 %%DATADIR%%/locales/help_rus/gkhQuotes.html
@@ -312,8 +322,6 @@ bin/gedkeeper
 %%DATADIR%%/plugins/BSLib.Linguistics.dll
 %%DATADIR%%/plugins/BSLib.SQLite.dll
 %%DATADIR%%/plugins/BSLib.dll
-%%DATADIR%%/plugins/BouncyCastle.OpenPgp.dll
-%%DATADIR%%/plugins/DotNetRtfWriter.dll
 %%DATADIR%%/plugins/ExcelLibrary.dll
 %%DATADIR%%/plugins/GEDmillPlugin.dll
 %%DATADIR%%/plugins/GEDmillPlugin.enu
@@ -334,6 +342,8 @@ bin/gedkeeper
 %%DATADIR%%/plugins/GKChroniclePlugin.rus
 %%DATADIR%%/plugins/GKChroniclePlugin.ukr
 %%DATADIR%%/plugins/GKCommunicatorPlugin.dll
+%%DATADIR%%/plugins/GKCommunicatorPlugin.enu
+%%DATADIR%%/plugins/GKCommunicatorPlugin.rus
 %%DATADIR%%/plugins/GKComponents.dll
 %%DATADIR%%/plugins/GKCore.dll
 %%DATADIR%%/plugins/GKDataQualityPlugin.dll
@@ -371,6 +381,7 @@ bin/gedkeeper
 %%DATADIR%%/plugins/GKNavigatorPlugin.rus
 %%DATADIR%%/plugins/GKNavigatorPlugin.ukr
 %%DATADIR%%/plugins/GKNetCore.dll
+%%DATADIR%%/plugins/GKNetUI.dll
 %%DATADIR%%/plugins/GKPedigreeImporterPlugin.dll
 %%DATADIR%%/plugins/GKPedigreeImporterPlugin.enu
 %%DATADIR%%/plugins/GKPedigreeImporterPlugin.pol
@@ -405,14 +416,14 @@ bin/gedkeeper
 %%DATADIR%%/plugins/GKWordsCloudPlugin.ukr
 %%DATADIR%%/plugins/GWTreePlugin.dll
 %%DATADIR%%/plugins/KopiLua.dll
-%%DATADIR%%/plugins/LiteDB.dll
 %%DATADIR%%/plugins/Mono.Nat.dll
 %%DATADIR%%/plugins/NLog.dll
 %%DATADIR%%/plugins/NLua.dll
-%%DATADIR%%/plugins/System.Data.SQLite.dll
-%%DATADIR%%/plugins/Ude.dll
+%%DATADIR%%/plugins/Newtonsoft.Json.dll
+%%DATADIR%%/plugins/RtfWriter.dll
+%%DATADIR%%/plugins/UtfUnknown.dll
 %%DATADIR%%/plugins/XapianCSharp.dll
-%%DATADIR%%/plugins/YamlSerializer.dll
+%%DATADIR%%/plugins/YamlDotNet.dll
 %%DATADIR%%/plugins/ZedGraph.dll
 %%DATADIR%%/plugins/_XapianSharp.dll
 %%DATADIR%%/plugins/csgl.dll
@@ -453,6 +464,8 @@ bin/gedkeeper
 %%DATADIR%%/scripts/groups2places.lua
 %%DATADIR%%/scripts/sofonov_import.lua
 %%DATADIR%%/scripts/test.lua
+%%DATADIR%%/scripts/test_def_pat.lua
+%%DATADIR%%/scripts/test_def_sex.lua
 %%DATADIR%%/scripts/tree_add.lua
 %%DATADIR%%/scripts/tree_add2.lua
 %%DATADIR%%/scripts/tree_simple.lua
