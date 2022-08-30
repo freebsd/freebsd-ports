@@ -1,18 +1,6 @@
 This is a simple library to load images of various formats as SDL surfaces.
-This library supports BMP, PPM, PCX, GIF, JPEG, PNG, TGA, and TIFF formats.
+It can load BMP, GIF, JPEG, LBM, PCX, PNG, PNM (PPM/PGM/PBM), QOI,
+TGA, XCF, XPM, and simple SVG format images. It can also load AVIF,
+JPEG-XL, TIFF, and WebP images, depending on build options
 
-API:
-#include "SDL_image.h"
-
-	SDL_Surface *IMG_Load(const char *file);
-or
-	SDL_Surface *IMG_Load_RW(SDL_RWops *src, int freesrc);
-or
-	SDL_Surface *IMG_Load_RW(SDL_RWops *src, int freesrc, char *type);
-
-where type is a string specifying the format (i.e. "PNG" or "pcx").
-Note that IMG_Load_RW cannot load TGA images.
-
-An example program 'showimage' is included, with source in showimage.c
-
-WWW: https://www.libsdl.org/projects/SDL_image/
+WWW: https://github.com/libsdl-org/SDL_image
