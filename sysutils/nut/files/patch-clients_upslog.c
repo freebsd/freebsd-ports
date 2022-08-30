@@ -1,16 +1,5 @@
 --- clients/upslog.c.orig	2022-08-29 22:20:14.342137000 -0700
 +++ clients/upslog.c	2022-08-29 22:21:10.934419000 -0700
-@@ -32,6 +32,10 @@
-  */
- 
- #include "common.h"
-+#include <signal.h>
-+#include <unistd.h>
-+#include <sys/types.h>
-+#include <sys/wait.h>
- #include "nut_platform.h"
- #include "upsclient.h"
- 
 @@ -41,32 +45,49 @@
  #include "upslog.h"
  
