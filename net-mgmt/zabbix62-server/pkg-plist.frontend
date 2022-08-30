@@ -420,6 +420,7 @@
 %%WWWDIR%%/app/views/js/monitoring.charts.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.dashboard.print.js.php
 %%WWWDIR%%/app/views/js/monitoring.dashboard.view.js.php
+%%WWWDIR%%/app/views/js/monitoring.dashboard.widget.edit.js.php
 %%WWWDIR%%/app/views/js/monitoring.host.dashboard.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.host.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.latest.view.js.php
