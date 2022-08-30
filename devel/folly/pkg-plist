@@ -214,6 +214,7 @@ include/folly/executors/IOThreadPoolDeadlockDetectorObserver.h
 include/folly/executors/IOThreadPoolExecutor.h
 include/folly/executors/InlineExecutor.h
 include/folly/executors/ManualExecutor.h
+include/folly/executors/MeteredExecutor-inl.h
 include/folly/executors/MeteredExecutor.h
 include/folly/executors/QueueObserver.h
 include/folly/executors/QueuedImmediateExecutor.h
