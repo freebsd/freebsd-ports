@@ -1,7 +1,14 @@
 bin/pea
 bin/peazip
+share/applications/peazip-add-to-archive.desktop
+share/applications/peazip-extract-here.desktop
+share/applications/peazip-extract-smart.desktop
+share/applications/peazip-extract.desktop
+share/applications/peazip-open.desktop
 share/applications/peazip.desktop
 share/icons/hicolor/256x256/apps/peazip.png
+share/icons/hicolor/256x256/apps/peazip_add.png
+share/icons/hicolor/256x256/apps/peazip_extract.png
 %%DATADIR%%/peazip
 %%DATADIR%%/res/altconf.txt
 %%7Z%%%%DATADIR%%/res/bin/7z/7z
@@ -71,10 +78,10 @@ share/icons/hicolor/256x256/apps/peazip.png
 %%DATADIR%%/res/share/lang/uz.txt
 %%DATADIR%%/res/share/lang/vn.txt
 %%DATADIR%%/res/share/themes/different.theme.7z
-%%DATADIR%%/res/share/themes/gray.theme.7z
 %%DATADIR%%/res/share/themes/main-embedded/fm-theme.bmp
 %%DATADIR%%/res/share/themes/main-embedded/readme.txt
 %%DATADIR%%/res/share/themes/main.theme.7z
 %%DATADIR%%/res/share/themes/nographic-embedded/fm-theme.bmp
 %%DATADIR%%/res/share/themes/nographic-embedded/readme.txt
 %%DATADIR%%/res/share/themes/ten.theme.7z
+%%DATADIR%%/res/share/themes/tuxedo.theme.7z

@@ -1,6 +1,5 @@
 PORTNAME=	peazip
-PORTVERSION=	8.6.0
-PORTREVISION=	2
+PORTVERSION=	8.8.0
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -21,7 +20,7 @@ SUB_FILES=	pea peazip
 
 DOS2UNIX_REGEX=		.*\.([txt]|pas|lpi|txt)
 
-LAZARUS_PROJECT_FILES=	project_pea.lpi project_peach.lpi
+LAZARUS_PROJECT_FILES=	dev/project_pea.lpi dev/project_peach.lpi
 LAZBUILD_ARGS=		-d
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
@@ -80,7 +79,7 @@ PLIST_SUB+=	UNACE="@comment "
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} 's|GetSelectedNodePath|Path|g' ${WRKSRC}/peach.pas
+	${REINPLACE_CMD} 's|GetSelectedNodePath|Path|g' ${WRKSRC}/dev/peach.pas
 
 pre-install:
 	@${ECHO_CMD} "#" > ${WRKSRC}/altconf.txt
@@ -99,12 +98,12 @@ do-install:
 .endfor
 	@cd ${WRKSRC}/res/share && ${COPYTREE_SHARE} "icons lang themes" ${STAGEDIR}${DATADIR}/res/share
 	@cd ${WRKSRC} && ${INSTALL_DATA} altconf.txt ${STAGEDIR}${DATADIR}/res && \
-			${INSTALL_PROGRAM} pea ${STAGEDIR}${DATADIR}/res && \
-			${INSTALL_PROGRAM} peazip ${STAGEDIR}${DATADIR}
+			${INSTALL_PROGRAM} dev/pea ${STAGEDIR}${DATADIR}/res && \
+			${INSTALL_PROGRAM} dev/peazip ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps
 	@cd ${WRKSRC}/res/share/batch/freedesktop_integration && \
-		${INSTALL_DATA} peazip.desktop ${STAGEDIR}${DESKTOPDIR} && \
-		${INSTALL_DATA} peazip.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/${PORTNAME}.png
+		${INSTALL_DATA} peazip*.desktop ${STAGEDIR}${DESKTOPDIR} && \
+		${INSTALL_DATA} peazip*.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/
 	${INSTALL_SCRIPT} ${WRKDIR}/pea ${WRKDIR}/peazip ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
