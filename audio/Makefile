@@ -26,6 +26,7 @@
     SUBDIR += alure
     SUBDIR += amarok
     SUBDIR += amb-plugins
+    SUBDIR += amberol
     SUBDIR += ampache
     SUBDIR += ample
     SUBDIR += amsynth
