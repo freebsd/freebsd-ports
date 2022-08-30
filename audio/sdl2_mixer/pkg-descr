@@ -1,6 +1,6 @@
-SDL_mixer is a sample multi-channel audio mixer library. It supports any number
-of simultaneously playing channels of 16 bit stereo audio, plus a single
-channel of music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
-libraries.
+SDL_mixer is a simple multi-channel audio mixer library. It supports
+8 channels of 16 bit stereo audio, plus a single channel of music.
+It can load FLAC, MP3, Ogg, VOC, and WAV format audio. It can also
+load MIDI, MOD, and Opus audio, depending on build options
 
-WWW: https://www.libsdl.org/projects/SDL_mixer/index.html
+WWW: https://github.com/libsdl-org/SDL_mixer
