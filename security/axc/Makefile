@@ -19,7 +19,9 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	gkdr
 
+MAKE_ENV+=      DESTDIR=${STAGEDIR}
+
 post-install:
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaxc.so
+		${STRIP_CMD} ${STAGEDIR}$(PREFIX)/lib/libaxc.so
 
 .include <bsd.port.mk>
