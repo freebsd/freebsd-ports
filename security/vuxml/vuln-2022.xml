@@ -1,3 +1,56 @@
+  <vuln vid="e6b994e2-2891-11ed-9be7-454b1dd82c64">
+    <topic>Gitlab -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.3.0</ge><lt>15.3.2</lt></range>
+	<range><ge>15.2.0</ge><lt>15.2.4</lt></range>
+	<range><ge>10.0.0</ge><lt>15.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/08/30/critical-security-release-gitlab-15-3-2-released/">
+	  <p>Remote Command Execution via GitHub import</p>
+	  <p>Stored XSS via labels color</p>
+	  <p>Content injection via Incidents Timeline description</p>
+	  <p>Lack of length validation in Snippets leads to Denial of Service</p>
+	  <p>Group IP allow-list not fully respected by the Package Registry</p>
+	  <p>Abusing Gitaly.GetTreeEntries calls leads to denial of service</p>
+	  <p>Arbitrary HTTP Requests Possible in .ipynb Notebook with Malicious Form Tags</p>
+	  <p>Regular Expression Denial of Service via special crafted input</p>
+	  <p>Information Disclosure via Arbitrary GFM references rendered in Incident Timeline Events</p>
+	  <p>Regex backtracking through the Commit message field</p>
+	  <p>Read repository content via LivePreview feature</p>
+	  <p>Denial of Service via the Create branch API</p>
+	  <p>Denial of Service via Issue preview</p>
+	  <p>IDOR in Zentao integration leaked issue details</p>
+	  <p>Brute force attack may guess a password even when 2FA is enabled</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2992</cvename>
+      <cvename>CVE-2022-2865</cvename>
+      <cvename>CVE-2022-2527</cvename>
+      <cvename>CVE-2022-2592</cvename>
+      <cvename>CVE-2022-2533</cvename>
+      <cvename>CVE-2022-2455</cvename>
+      <cvename>CVE-2022-2428</cvename>
+      <cvename>CVE-2022-2908</cvename>
+      <cvename>CVE-2022-2630</cvename>
+      <cvename>CVE-2022-2931</cvename>
+      <cvename>CVE-2022-2907</cvename>
+      <cvename>CVE-2022-3031</cvename>
+      <url>https://about.gitlab.com/releases/2022/08/30/critical-security-release-gitlab-15-3-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-08-30</discovery>
+      <entry>2022-08-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3110b29e-c82d-4287-9f6c-db82bb883b1e">
     <topic>zeek -- potential DoS vulnerabilities</topic>
     <affects>
