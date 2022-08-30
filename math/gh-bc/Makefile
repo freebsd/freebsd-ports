@@ -1,5 +1,5 @@
 PORTNAME=		bc
-PORTVERSION=		6.0.1
+PORTVERSION=		6.0.2
 CATEGORIES=		math lang
 MASTER_SITES=		https://github.com/gavinhoward/bc/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=		gh-
@@ -15,7 +15,7 @@ USES=			compiler:c11 tar:xz
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure.sh
-CONFIGURE_ARGS+=	--predefined-build-type=BSD
+CONFIGURE_ARGS+=	--predefined-build-type=BSD --disable-problematic-tests
 
 TEST_TARGET=		test
 
