@@ -9,7 +9,7 @@ COMMENT=	Real-time physically based rendering engine
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	compilation breaks: register %r11 is only available in 64-bit mode
+BROKEN_i386=	compilation breaks: register r11 is only available in 64-bit mode
 
 BUILD_DEPENDS=	bash:shells/bash \
 		evdev-proto>0:devel/evdev-proto
