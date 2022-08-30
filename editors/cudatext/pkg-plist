@@ -782,6 +782,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-fenced-blocks.png
 %%DATADIR%%/readme/wiki/cudatext-find-dlg.png
 %%DATADIR%%/readme/wiki/cudatext-find-markers.png
+%%DATADIR%%/readme/wiki/cudatext-findinfiles-intabs.png
 %%DATADIR%%/readme/wiki/cudatext-fold-comments.png
 %%DATADIR%%/readme/wiki/cudatext-fuzzy-and-normal.png
 %%DATADIR%%/readme/wiki/cudatext-hex-chars.png
@@ -826,6 +827,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext.wiki
 %%DATADIR%%/readme/wiki/cudatext_all_icons.png
 %%DATADIR%%/readme/wiki/cudatext_api.wiki
+%%DATADIR%%/readme/wiki/cudatext_files_formats.wiki
 %%DATADIR%%/readme/wiki/cudatext_options_editor.png
 %%DATADIR%%/readme/wiki/cudatext_plugins.wiki
 %%DATADIR%%/readme/wiki/cudatext_snippets_menu.png
