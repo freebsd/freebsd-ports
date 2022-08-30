@@ -1,29 +1,31 @@
 [
 { type: install
   message: <<EOM
-  Configuration of the bruteblock is done via configuration files
-  located at %%PREFIX%%/etc/bruteblock/
+Configuration of the bruteblock is done via configuration files
+located at %%PREFIX%%/etc/bruteblock.
 
-  To run the script, append following lines to /etc/syslog.conf:
+To run the script, append following lines to /etc/syslog.conf:
 
-!*
-auth.info;authpriv.info                         |exec %%PREFIX%%/sbin/bruteblock -f %%PREFIX%%/etc/bruteblock/ssh.conf
+    !*
+    auth.info;authpriv.info    |exec %%PREFIX%%/sbin/bruteblock -f %%PREFIX%%/etc/bruteblock/ssh.conf
 
-  and restart syslogd.
+and restart syslogd.
 
-  Also you should add ipfw2 table and the corresponding deny rule.
-  For example,
+Also you should add ipfw2 table and the corresponding deny rule.
+For example,
 
-# ipfw add deny ip from table(1) to any
+    ipfw add deny ip from table(1) to any
 
-  Next, you'll want to setup periodical cleanup of ipfw2 table.  Add following
-  lines to /etc/rc.conf:
+Next, you'll want to setup periodical cleanup of ipfw2 table.
+Add following lines to /etc/rc.conf:
 
-     bruteblockd_enable="YES"
-     bruteblockd_table="1"
-     bruteblockd_flags="-s 5"
+    bruteblockd_enable="YES"
+    bruteblockd_table="1"
+    bruteblockd_flags="-s 5"
 
-  and start bruteblockd: %%PREFIX%%/etc/rc.d/bruteblockd.sh start
+and start bruteblockd:
+
+    service bruteblockd start
 
 See bruteblock(8) for more details.
 EOM
