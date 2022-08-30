@@ -39,6 +39,7 @@
     SUBDIR += aws-c-cal
     SUBDIR += aws-iam-authenticator
     SUBDIR += aws-vault
+    SUBDIR += axc
     SUBDIR += barnyard2
     SUBDIR += barnyard2-sguil
     SUBDIR += bastillion

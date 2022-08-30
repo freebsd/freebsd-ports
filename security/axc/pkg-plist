@@ -1,0 +1,7 @@
+include/axc/axc.h
+include/axc/axc_crypto.h
+include/axc/axc_store.h
+lib/libaxc.so
+lib/libaxc.so.0
+lib/libaxc.so.0.3.7
+libdata/pkgconfig/libaxc.pc
