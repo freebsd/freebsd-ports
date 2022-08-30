@@ -1,6 +1,5 @@
 PORTNAME=	ops-agent
-DISTVERSION=	2.18.2
-PORTREVISION=	2
+DISTVERSION=	2.20.0
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	gcp-
 
@@ -45,6 +44,7 @@ GH_TUPLE=	StackExchange:wmi:v1.2.1:stackexchange_wmi/vendor/github.com/StackExch
 		googleapis:google-cloud-go:storage/v1.18.2:googleapis_google_cloud_go_storage \
 		googleapis:google-cloud-go:v0.1.0:googleapis_google_cloud_go_compute/vendor/cloud.google.com/go \
 		googleapis:google-cloud-go:v0.100.2:googleapis_google_cloud_go \
+		gotestyourself:gotest.tools:v3.3.0:gotestyourself_gotest_tools/vendor/gotest.tools/v3 \
 		grpc:grpc-go:v1.40.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.1.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
@@ -59,8 +59,8 @@ GH_TUPLE=	StackExchange:wmi:v1.2.1:stackexchange_wmi/vendor/github.com/StackExch
 		tklauser:numcpus:v0.2.2:tklauser_numcpus/vendor/github.com/tklauser/numcpus \
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.7.0:uber_go_multierr/vendor/go.uber.org/multierr
-GO_TARGET=	./cmd/google_cloud_ops_agent_engine
 
+GO_TARGET=	./cmd/google_cloud_ops_agent_engine
 PLIST_FILES=	bin/google_cloud_ops_agent_engine
 
 post-extract:
