@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.32.0
-PORTREVISION=	1
+DISTVERSION=	0.34.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -37,16 +36,20 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		diff-0.1.12 \
 		either-1.6.1 \
 		env_logger-0.7.1 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
 		fixedbitset-0.4.1 \
 		fnv-1.0.7 \
 		hashbrown-0.11.2 \
 		hermit-abi-0.1.19 \
 		humantime-1.3.0 \
 		indexmap-1.7.0 \
+		io-lifetimes-0.7.3 \
 		itertools-0.10.3 \
 		lazy_static-1.4.0 \
 		libc-0.2.126 \
 		libmimalloc-sys-0.1.24 \
+		linux-raw-sys-0.0.46 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		memoffset-0.6.5 \
@@ -71,14 +74,15 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		regex-syntax-0.6.26 \
 		rpds-0.10.0 \
 		rustc-hash-1.1.0 \
+		rustix-0.35.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.95 \
-		term_size-0.3.2 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
+		terminal_size-0.2.1 \
 		textwrap-0.15.0 \
 		tree-sitter-0.20.6 \
 		tree_magic_mini-3.0.3 \
@@ -86,11 +90,18 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		unicode-ident-1.0.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.3 \
+		version_check-0.9.4 \
 		walkdir-2.3.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.36.1 \
 		wu-diff-0.1.2
 
 PORTDOCS=	*
