@@ -1,5 +1,5 @@
 PORTNAME=	chrony
-DISTVERSION=	4.2
+DISTVERSION=	4.3
 CATEGORIES=	net
 MASTER_SITES=	https://download.tuxfamily.org/chrony/ \
 		LOCAL/mandree
