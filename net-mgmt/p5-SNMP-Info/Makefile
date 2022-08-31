@@ -1,5 +1,5 @@
 PORTNAME=	SNMP-Info
-PORTVERSION=	3.85
+PORTVERSION=	3.89
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 RUN_DEPENDS=	p5-Class-ISA>0:devel/p5-Class-ISA \
 		p5-Module-Info>0:devel/p5-Module-Info \
 		p5-NetAddr-IP>0:net-mgmt/p5-NetAddr-IP \
-		p5-PPI>0:textproc/p5-PPI
+		p5-PPI>0:textproc/p5-PPI \
+		p5-Regexp-Common>=0:textproc/p5-Regexp-Common
 TEST_DEPENDS=	p5-Hook-LexWrap>=0:devel/p5-Hook-LexWrap \
 		p5-Test-Class-Most>0:devel/p5-Test-Class-Most \
 		p5-Test-Distribution>0:devel/p5-Test-Distribution \
