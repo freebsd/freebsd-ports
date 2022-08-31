@@ -1,5 +1,5 @@
 PORTNAME=	gssdp
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -29,7 +29,7 @@ SNIFFER_DESC=	Build graphical SSDP sniffer
 SNIFFER_BUILD_DEPENDS=	gtk4>=4:x11-toolkits/gtk40
 SNIFFER_MESON_TRUE=	sniffer
 SNIFFER_USE=		GNOME=gtk40
-VAPI_USES=		vala:build
 VAPI_MESON_TRUE=	vapi
+VAPI_USES=		vala:build
 
 .include <bsd.port.mk>
