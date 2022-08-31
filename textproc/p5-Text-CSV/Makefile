@@ -1,5 +1,5 @@
 PORTNAME=	Text-CSV
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	XS
 
-XS_BUILD_DEPENDS=	p5-Text-CSV_XS>=1.46:textproc/p5-Text-CSV_XS
-XS_RUN_DEPENDS=		p5-Text-CSV_XS>=1.46:textproc/p5-Text-CSV_XS
+XS_BUILD_DEPENDS=	p5-Text-CSV_XS>=1.48:textproc/p5-Text-CSV_XS
+XS_RUN_DEPENDS=		p5-Text-CSV_XS>=1.48:textproc/p5-Text-CSV_XS
 
 .include <bsd.port.mk>
