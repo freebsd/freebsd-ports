@@ -1,5 +1,5 @@
 PORTNAME=	Config-Perl-V
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HMBRAND
@@ -10,6 +10,8 @@ COMMENT=	Structured data retrieval of perl -V output
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure
