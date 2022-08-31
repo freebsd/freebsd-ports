@@ -1,10 +1,10 @@
-PORTNAME=	1password-client2
-DISTVERSION=	2.7.0
+PORTNAME=	1password-client2-beta
+DISTVERSION=	2.7.1-beta.01
 CATEGORIES=	security
 MASTER_SITES=	https://cache.agilebits.com/dist/1P/op2/pkg/v${DISTVERSION}/
 
 MAINTAINER=	ler@FreeBSD.org
-COMMENT=	1Password CLI client
+COMMENT=	1Password CLI client (BETA)
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
@@ -14,7 +14,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=		bin/op
-CONFLICTS_INSTALL=	security/1password-client security/op security/1password-client2-beta
+CONFLICTS_INSTALL=	security/1password-client security/op security/1password-client2
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/op \
