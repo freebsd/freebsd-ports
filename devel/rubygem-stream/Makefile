@@ -1,5 +1,5 @@
 PORTNAME=	stream
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,8 +8,6 @@ COMMENT=	Interface for external iterators
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
-
-RUN_DEPENDS=	rubygem-generator>=0:devel/rubygem-generator
 
 USES=		gem
 USE_RUBY=	yes
