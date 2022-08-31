@@ -38,6 +38,7 @@
 %%SITE_PERL%%/Pithub/Repos/Watching.pm
 %%SITE_PERL%%/Pithub/Result.pm
 %%SITE_PERL%%/Pithub/Result/SharedCache.pm
+%%SITE_PERL%%/Pithub/ResultSet.pm
 %%SITE_PERL%%/Pithub/Search.pm
 %%SITE_PERL%%/Pithub/SearchV3.pm
 %%SITE_PERL%%/Pithub/Users.pm
@@ -84,6 +85,7 @@
 %%PERL5_MAN3%%/Pithub::Repos::Watching.3.gz
 %%PERL5_MAN3%%/Pithub::Result.3.gz
 %%PERL5_MAN3%%/Pithub::Result::SharedCache.3.gz
+%%PERL5_MAN3%%/Pithub::ResultSet.3.gz
 %%PERL5_MAN3%%/Pithub::Search.3.gz
 %%PERL5_MAN3%%/Pithub::SearchV3.3.gz
 %%PERL5_MAN3%%/Pithub::Users.3.gz
