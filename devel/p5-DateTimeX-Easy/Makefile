@@ -1,6 +1,5 @@
 PORTNAME=	DateTimeX-Easy
-PORTVERSION=	0.089
-PORTREVISION=	1
+PORTVERSION=	0.090
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,11 +12,13 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
-		p5-DateTime-Format-DateParse>=0:devel/p5-DateTime-Format-DateParse \
+		p5-DateTime-Format-DateManip>=0:devel/p5-DateTime-Format-DateManip \
 		p5-DateTime-Format-Flexible>=0:devel/p5-DateTime-Format-Flexible \
 		p5-DateTime-Format-ICal>=0:devel/p5-DateTime-Format-ICal \
 		p5-DateTime-Format-Natural>=0:devel/p5-DateTime-Format-Natural \
-		p5-TimeDate>=0:devel/p5-TimeDate
+		p5-DateTime-TimeZone>=0,1:devel/p5-DateTime-TimeZone \
+		p5-TimeDate>=0,1:devel/p5-TimeDate \
+		p5-YAML>=0:textproc/p5-YAML
 TEST_DEPENDS=	p5-Test-Most>=0:devel/p5-Test-Most
 
 USES=		perl5
