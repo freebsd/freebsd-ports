@@ -1,3 +1,4 @@
+include/atk-1.0/atk/atk-autocleanups.h
 include/atk-1.0/atk/atk-enum-types.h
 include/atk-1.0/atk/atk.h
 include/atk-1.0/atk/atkaction.h
@@ -35,7 +36,7 @@ include/atk-1.0/atk/atkwindow.h
 lib/girepository-1.0/Atk-1.0.typelib
 lib/libatk-1.0.so
 lib/libatk-1.0.so.0
-lib/libatk-1.0.so.0.23609.1
+lib/libatk-1.0.so.0.23809.1
 libdata/pkgconfig/atk.pc
 share/gir-1.0/Atk-1.0.gir
 share/locale/af/LC_MESSAGES/atk10.mo
