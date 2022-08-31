@@ -1,3 +1,36 @@
+  <vuln vid="a1323a76-28f1-11ed-a72a-002590c1f29c">
+    <topic>FreeBSD -- zlib heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.1</ge><lt>13.1_2</lt></range>
+	<range><ge>13.0</ge><lt>13.0_13</lt></range>
+	<range><ge>12.3</ge><lt>12.3_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>zlib through 1.2.12 has a heap-based buffer over-read or buffer
+	overflow in inflate in inflate.c via a large gzip header extra
+	field.</p>
+	<h1>Impact:</h1>
+	<p>Applications that call inflateGetHeader may be vulnerable to a
+	buffer overflow.  Note that inflateGetHeader is not used by anything
+	in the FreeBSD base system, but may be used by third party
+	software.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-37434</cvename>
+      <freebsdsa>SA-22:13.zlib</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-08-30</discovery>
+      <entry>2022-08-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e6b994e2-2891-11ed-9be7-454b1dd82c64">
     <topic>Gitlab -- multiple vulnerabilities</topic>
     <affects>
