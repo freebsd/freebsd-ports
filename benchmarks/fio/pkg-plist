@@ -75,6 +75,8 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gpudirect-rdmaio-server.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/http-s3.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/http-s3.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/http-s3-crypto.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/http-s3-storage-class.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/http-swift.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/http-swift.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/http-webdav.fio
