@@ -1,12 +1,7 @@
 PORTNAME=	precice
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.0
-PORTREVISION=	2
+DISTVERSION=	2.5.0
 CATEGORIES=	science # physics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	236e5fb9ad611186515142c2d7538b5c78c6f266.patch:-p1 \
-		1d8643401b0a7bfd061d2ee47d6bd9e4cfaf2cca.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Coupling library for partitioned multi-physics simulations
@@ -39,7 +34,7 @@ PETSC_IMPLIES=		MPI
 
 PORTEXAMPLES=		*
 
-# 3 tests are known to fail, see https://github.com/precice/precice/issues/1331
+# 3 tests time out, see https://github.com/precice/precice/issues/1331
 
 post-install: # remove files which aren't docs
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc

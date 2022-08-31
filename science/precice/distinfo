@@ -1,7 +1,3 @@
-TIMESTAMP = 1655802288
-SHA256 (precice-precice-v2.4.0_GH0.tar.gz) = 762e603fbcaa96c4fb0b378b7cb6789d09da0cf6193325603e5eeb13e4c7601c
-SIZE (precice-precice-v2.4.0_GH0.tar.gz) = 1596029
-SHA256 (236e5fb9ad611186515142c2d7538b5c78c6f266.patch) = 3a472a26dcdb2eaad3bbefc4c9fe7376ea30bcb7836738949745ca85410e1d7f
-SIZE (236e5fb9ad611186515142c2d7538b5c78c6f266.patch) = 758
-SHA256 (1d8643401b0a7bfd061d2ee47d6bd9e4cfaf2cca.patch) = 1c54bfceb1f87ffaad2ae8f087ad770e8aa1854454ca136198434937302e78ce
-SIZE (1d8643401b0a7bfd061d2ee47d6bd9e4cfaf2cca.patch) = 563
+TIMESTAMP = 1661926395
+SHA256 (precice-precice-v2.5.0_GH0.tar.gz) = 76ec6ee0d1a66f6f3d3d2d11f03cfc5aa7ef4d9e5deb9b7a4b4455ec7f796c00
+SIZE (precice-precice-v2.5.0_GH0.tar.gz) = 1653085
