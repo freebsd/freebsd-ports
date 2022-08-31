@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig	2022-08-31 12:19:35 UTC
 +++ chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc
 @@ -15,7 +15,7 @@
  #include "chrome/browser/ui/views/frame/glass_browser_frame_view.h"
@@ -15,6 +15,6 @@
      BrowserView* browser_view) {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   auto* linux_ui = views::LinuxUI::instance();
+   auto* linux_ui = ui::LinuxUi::instance();
    auto* profile = browser_view->browser()->profile();
    auto* theme_service_factory = ThemeServiceFactory::GetForProfile(profile);

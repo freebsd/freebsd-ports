@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2022-07-22 17:30:31 UTC
+--- content/gpu/gpu_main.cc.orig	2022-08-31 12:19:35 UTC
 +++ content/gpu/gpu_main.cc
 @@ -86,7 +86,7 @@
  #include "sandbox/win/src/sandbox.h"
@@ -36,7 +36,7 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -404,17 +404,19 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -396,17 +396,19 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  
@@ -57,7 +57,7 @@
  
    // SandboxLinux::InitializeSandbox() must always be called
    // with only one thread.
-@@ -449,11 +451,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -453,11 +455,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
            *base::CommandLine::ForCurrentProcess()),
        base::BindOnce(GpuProcessPreSandboxHook), sandbox_options);
  

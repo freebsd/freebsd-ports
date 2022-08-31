@@ -1,4 +1,4 @@
---- base/threading/platform_thread_linux.cc.orig	2022-06-17 14:20:10 UTC
+--- base/threading/platform_thread_linux.cc.orig	2022-08-31 12:19:35 UTC
 +++ base/threading/platform_thread_linux.cc
 @@ -29,7 +29,9 @@
  
@@ -10,7 +10,7 @@
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -132,7 +134,7 @@ int sched_setattr(pid_t pid,
+@@ -132,7 +134,7 @@ long sched_setattr(pid_t pid,
  #endif  // !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_AIX)
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -19,7 +19,7 @@
  const FilePath::CharType kCgroupDirectory[] =
      FILE_PATH_LITERAL("/sys/fs/cgroup");
  
-@@ -286,7 +288,7 @@ void SetThreadCgroupsForThreadPriority(PlatformThreadI
+@@ -303,7 +305,7 @@ void SetThreadCgroupsForThreadType(PlatformThreadId th
  namespace internal {
  
  namespace {
@@ -28,34 +28,34 @@
  const struct sched_param kRealTimePrio = {8};
  #endif
  }  // namespace
-@@ -299,7 +301,7 @@ const ThreadPriorityToNiceValuePair kThreadPriorityToN
+@@ -328,7 +330,7 @@ const ThreadTypeToNiceValuePair kThreadTypeToNiceValue
  };
  
- bool CanSetThreadPriorityToRealtimeAudio() {
+ bool CanSetThreadTypeToRealtimeAudio() {
 -#if !BUILDFLAG(IS_NACL)
 +#if !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_BSD)
    // A non-zero soft-limit on RLIMIT_RTPRIO is required to be allowed to invoke
-   // pthread_setschedparam in SetCurrentThreadPriorityForPlatform().
+   // pthread_setschedparam in SetCurrentThreadTypeForPlatform().
    struct rlimit rlim;
-@@ -310,7 +312,7 @@ bool CanSetThreadPriorityToRealtimeAudio() {
- }
+@@ -340,7 +342,7 @@ bool CanSetThreadTypeToRealtimeAudio() {
  
- bool SetCurrentThreadPriorityForPlatform(ThreadPriority priority) {
+ bool SetCurrentThreadTypeForPlatform(ThreadType thread_type,
+                                      MessagePumpType pump_type_hint) {
 -#if !BUILDFLAG(IS_NACL)
 +#if !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_BSD)
    // For legacy schedtune interface
-   SetThreadCgroupsForThreadPriority(PlatformThread::CurrentId(), priority);
+   SetThreadCgroupsForThreadType(PlatformThread::CurrentId(), thread_type);
  
-@@ -328,7 +330,7 @@ bool SetCurrentThreadPriorityForPlatform(ThreadPriorit
- }
+@@ -359,7 +361,7 @@ bool SetCurrentThreadTypeForPlatform(ThreadType thread
  
- absl::optional<ThreadPriority> GetCurrentThreadPriorityForPlatform() {
+ absl::optional<ThreadPriorityForTest>
+ GetCurrentThreadPriorityForPlatformForTest() {
 -#if !BUILDFLAG(IS_NACL)
 +#if !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_BSD)
    int maybe_sched_rr = 0;
    struct sched_param maybe_realtime_prio = {0};
    if (pthread_getschedparam(pthread_self(), &maybe_sched_rr,
-@@ -347,7 +349,7 @@ absl::optional<ThreadPriority> GetCurrentThreadPriorit
+@@ -378,7 +380,7 @@ GetCurrentThreadPriorityForPlatformForTest() {
  void PlatformThread::SetName(const std::string& name) {
    ThreadIdNameManager::GetInstance()->SetName(name);
  
@@ -64,13 +64,13 @@
    // On linux we can get the thread names to show up in the debugger by setting
    // the process name for the LWP.  We don't want to do this for the main
    // thread because that would rename the process, causing tools like killall
-@@ -377,8 +379,10 @@ void PlatformThread::SetThreadPriority(ProcessId proce
+@@ -408,8 +410,10 @@ void PlatformThread::SetThreadType(ProcessId process_i
    // priority.
    CHECK_NE(thread_id, process_id);
  
 +#if !BUILDFLAG(IS_BSD)
    // For legacy schedtune interface
-   SetThreadCgroupsForThreadPriority(thread_id, priority);
+   SetThreadCgroupsForThreadType(thread_id, thread_type);
 +#endif
  
  #if BUILDFLAG(IS_CHROMEOS)

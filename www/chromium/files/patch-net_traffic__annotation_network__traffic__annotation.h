@@ -1,6 +1,6 @@
---- net/traffic_annotation/network_traffic_annotation.h.orig	2022-02-28 16:54:41 UTC
+--- net/traffic_annotation/network_traffic_annotation.h.orig	2022-08-31 12:19:35 UTC
 +++ net/traffic_annotation/network_traffic_annotation.h
-@@ -371,7 +371,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
+@@ -372,7 +372,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
  }  // namespace net
  
  // Placeholder for unannotated usages.
@@ -9,7 +9,7 @@
  #define TRAFFIC_ANNOTATION_WITHOUT_PROTO(ANNOTATION_ID) \
    net::DefineNetworkTrafficAnnotation(ANNOTATION_ID, "No proto yet.")
  #endif
-@@ -385,7 +385,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
+@@ -386,7 +386,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if !BUILDFLAG(IS_WIN) && \

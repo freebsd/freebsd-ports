@@ -1,4 +1,4 @@
---- base/process/process_metrics_freebsd.cc.orig	2022-04-21 18:48:31 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2022-09-01 05:13:41 UTC
 +++ base/process/process_metrics_freebsd.cc
 @@ -3,20 +3,39 @@
  // found in the LICENSE file.
@@ -70,7 +70,7 @@
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
  }
  
-+int GetNumberOfThreads(ProcessHandle process) {
++int64_t GetNumberOfThreads(ProcessHandle process) {
 +  // Taken from FreeBSD top (usr.bin/top/machine.c)
 +
 +  kvm_t* kd = kvm_open(NULL, "/dev/null", NULL, O_RDONLY, "kvm_open");

@@ -1,7 +1,7 @@
---- base/rand_util_posix.cc.orig	2022-07-22 17:30:31 UTC
+--- base/rand_util_posix.cc.orig	2022-08-31 12:19:35 UTC
 +++ base/rand_util_posix.cc
-@@ -17,7 +17,7 @@
- #include "base/posix/eintr_wrapper.h"
+@@ -22,7 +22,7 @@
+ #include "base/time/time.h"
  #include "build/build_config.h"
  
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && !BUILDFLAG(IS_NACL)
@@ -9,31 +9,36 @@
  #include "third_party/lss/linux_syscall_support.h"
  #elif BUILDFLAG(IS_MAC)
  // TODO(crbug.com/995996): Waiting for this header to appear in the iOS SDK.
-@@ -34,6 +34,7 @@ static constexpr int kOpenFlags = O_RDONLY;
+@@ -39,6 +39,7 @@ static constexpr int kOpenFlags = O_RDONLY;
  static constexpr int kOpenFlags = O_RDONLY | O_CLOEXEC;
  #endif
  
-+#if !BUILDFLAG(IS_OPENBSD)
++#if !BUILDFLAG(IS_BSD)
  // We keep the file descriptor for /dev/urandom around so we don't need to
  // reopen it (which is expensive), and since we may not even be able to reopen
  // it if we are later put in a sandbox. This class wraps the file descriptor so
-@@ -51,6 +52,7 @@ class URandomFd {
+@@ -56,10 +57,11 @@ class URandomFd {
   private:
    const int fd_;
  };
 +#endif
  
- }  // namespace
- 
-@@ -62,6 +64,7 @@ namespace base {
+ #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
+      BUILDFLAG(IS_ANDROID)) &&                        \
+-    !BUILDFLAG(IS_NACL)
++    !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_BSD)
+ // TODO(pasko): Unify reading kernel version numbers in:
+ // mojo/core/channel_linux.cc
+ // chrome/browser/android/seccomp_support_detector.cc
+@@ -144,6 +146,7 @@ void ConfigureRandBytesFieldTrial() {
  // (https://chromium-review.googlesource.com/c/chromium/src/+/1545096) and land
  // it or some form of it.
  void RandBytes(void* output, size_t output_length) {
-+#if !BUILDFLAG(IS_OPENBSD)
- #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && !BUILDFLAG(IS_NACL)
-   // We have to call `getrandom` via Linux Syscall Support, rather than through
-   // the libc wrapper, because we might not have an up-to-date libc (e.g. on
-@@ -91,11 +94,16 @@ void RandBytes(void* output, size_t output_length) {
++#if !BUILDFLAG(IS_BSD)
+ #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
+      BUILDFLAG(IS_ANDROID)) &&                        \
+     !BUILDFLAG(IS_NACL)
+@@ -172,11 +175,16 @@ void RandBytes(void* output, size_t output_length) {
    const bool success =
        ReadFromFD(urandom_fd, static_cast<char*>(output), output_length);
    CHECK(success);
@@ -42,7 +47,7 @@
 +#endif
  }
  
-+#if !BUILDFLAG(IS_OPENBSD)
++#if !BUILDFLAG(IS_BSD)
  int GetUrandomFD() {
    static NoDestructor<URandomFd> urandom_fd;
    return urandom_fd->fd();

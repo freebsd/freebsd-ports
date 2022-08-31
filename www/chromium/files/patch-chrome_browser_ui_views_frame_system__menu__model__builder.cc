@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2022-08-31 12:19:35 UTC
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc
 @@ -76,7 +76,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
      ui::SimpleMenuModel* model) {
@@ -18,12 +18,12 @@
    model->AddSeparator(ui::NORMAL_SEPARATOR);
    bool supports_server_side_decorations = true;
  #if defined(USE_OZONE) && !BUILDFLAG(IS_CHROMEOS)
-@@ -146,7 +146,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
+@@ -144,7 +144,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
+     model->AddSeparator(ui::NORMAL_SEPARATOR);
+     model->AddItemWithStringId(IDC_TASK_MANAGER, IDS_TASK_MANAGER);
    }
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    model->AddSeparator(ui::NORMAL_SEPARATOR);
    model->AddItemWithStringId(IDC_CLOSE_WINDOW, IDS_CLOSE);
  #endif

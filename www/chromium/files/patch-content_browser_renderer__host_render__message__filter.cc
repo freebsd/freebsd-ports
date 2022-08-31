@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_message_filter.cc.orig	2022-05-19 14:06:27 UTC
+--- content/browser/renderer_host/render_message_filter.cc.orig	2022-08-31 12:19:35 UTC
 +++ content/browser/renderer_host/render_message_filter.cc
 @@ -66,7 +66,7 @@
  #if BUILDFLAG(IS_MAC)
@@ -15,15 +15,15 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- void RenderMessageFilter::SetThreadPriorityOnFileThread(
+ void RenderMessageFilter::SetThreadTypeOnWorkerThread(
      base::PlatformThreadId ns_tid,
-     base::ThreadPriority priority) {
-@@ -149,7 +149,7 @@ void RenderMessageFilter::SetThreadPriorityOnFileThrea
+     base::ThreadType thread_type) {
+@@ -149,7 +149,7 @@ void RenderMessageFilter::SetThreadTypeOnWorkerThread(
  }
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- void RenderMessageFilter::SetThreadPriority(int32_t ns_tid,
-                                             base::ThreadPriority priority) {
+ void RenderMessageFilter::SetThreadType(int32_t ns_tid,
+                                         base::ThreadType thread_type) {
    constexpr base::TaskTraits kTraits = {

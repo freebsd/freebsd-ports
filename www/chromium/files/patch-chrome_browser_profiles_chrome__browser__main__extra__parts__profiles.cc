@@ -1,6 +1,15 @@
---- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2022-07-22 17:30:31 UTC
+--- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2022-08-31 12:19:35 UTC
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -414,7 +414,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -251,7 +251,7 @@
+ #include "chrome/browser/ui/cocoa/screentime/screentime_features.h"
+ #endif
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "chrome/browser/enterprise/idle/idle_service_factory.h"
+ #endif
+ 
+@@ -428,11 +428,11 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,3 +18,8 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    metrics::DesktopProfileSessionDurationsServiceFactory::GetInstance();
  #endif
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   enterprise_idle::IdleServiceFactory::GetInstance();
+ #endif
+   ModelTypeStoreServiceFactory::GetInstance();
