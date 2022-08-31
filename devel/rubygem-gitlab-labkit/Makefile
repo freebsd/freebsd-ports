@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-labkit
 PORTVERSION=	0.23.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +16,7 @@ RUN_DEPENDS=	rubygem-actionpack61>=5<7:www/rubygem-actionpack61 \
 		rubygem-jaeger-client>=1.1.0<1.2:devel/rubygem-jaeger-client \
 		rubygem-opentracing>=0.4<1.0:devel/rubygem-opentracing \
 		rubygem-pg_query>=2.1<3:databases/rubygem-pg_query \
-		rubygem-redis>3.0.0<5.0.0:databases/rubygem-redis
+		rubygem-redis4>3.0.0<5.0.0:databases/rubygem-redis4
 
 USES=		gem
 USE_RUBY=	yes
