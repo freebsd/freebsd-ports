@@ -1,3 +1,5 @@
-TIMESTAMP = 1638556464
-SHA256 (Blosc-caterva-v0.5.0-9414145_GH0.tar.gz) = 9ed40fa1c3e9113fa8dd7032c066f477ee760eea7ac2b8f608f71b640aef3c0f
-SIZE (Blosc-caterva-v0.5.0-9414145_GH0.tar.gz) = 525827
+TIMESTAMP = 1661599165
+SHA256 (Blosc-caterva-v0.5.0-1f82f42_GH0.tar.gz) = 24546da92263503446a800c5ee4545961133edd53b3ac7bb92a8c0f38ae625af
+SIZE (Blosc-caterva-v0.5.0-1f82f42_GH0.tar.gz) = 538847
+SHA256 (Blosc-c-blosc2-v2.3.0_GH0.tar.gz) = d530694d1572a75c7e64133fedd83b507650db91ca9383a72d5c63a0ed5357e7
+SIZE (Blosc-c-blosc2-v2.3.0_GH0.tar.gz) = 2356744
