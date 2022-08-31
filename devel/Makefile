@@ -4957,6 +4957,7 @@
     SUBDIR += py-pluggy
     SUBDIR += py-pluggy0
     SUBDIR += py-pluginbase
+    SUBDIR += py-plux
     SUBDIR += py-ply
     SUBDIR += py-pockets
     SUBDIR += py-podcastparser

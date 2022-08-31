@@ -1,0 +1,19 @@
+PORTNAME=	plux
+PORTVERSION=	1.3.1
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Dynamic code loading framework for building pluggable Python distributions
+
+LICENSE=	APACHE20
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stevedore>=3.4:devel/py-stevedore@${PY_FLAVOR}
+
+USES=		python:3.7+
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
