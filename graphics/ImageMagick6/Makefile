@@ -1,6 +1,5 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.12-58
-PORTREVISION=	1
+DISTVERSION=	6.9.12-62
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
