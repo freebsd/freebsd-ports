@@ -26,6 +26,6 @@ PLIST=
 DOCSDIR=	${PREFIX}/share/doc/py-libxml2
 EXAMPLESDIR=	${PREFIX}/share/examples/py-libxml2
 
-do-configure:
+#do-configure:
 
 .include "${MASTERDIR}/Makefile"
