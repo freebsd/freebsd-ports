@@ -1,0 +1,3 @@
+Redis Cluster Client is a client for Redis cluster. It depends on redis-client.
+
+WWW: https://github.com/redis-rb/redis-cluster-client
