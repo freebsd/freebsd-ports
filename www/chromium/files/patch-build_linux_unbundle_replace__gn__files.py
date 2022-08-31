@@ -1,8 +1,8 @@
---- build/linux/unbundle/replace_gn_files.py.orig	2021-12-14 11:44:55 UTC
+--- build/linux/unbundle/replace_gn_files.py.orig	2022-08-31 12:19:35 UTC
 +++ build/linux/unbundle/replace_gn_files.py
-@@ -25,6 +25,7 @@ REPLACEMENTS = {
-   'libevent': 'base/third_party/libevent/BUILD.gn',
+@@ -52,6 +52,7 @@ REPLACEMENTS = {
    'libjpeg': 'third_party/libjpeg.gni',
+   'libjxl' : 'third_party/libjxl/BUILD.gn',
    'libpng': 'third_party/libpng/BUILD.gn',
 +  'libusb': 'third_party/libusb/BUILD.gn',
    'libvpx': 'third_party/libvpx/BUILD.gn',

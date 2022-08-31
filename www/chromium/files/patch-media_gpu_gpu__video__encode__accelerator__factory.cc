@@ -1,6 +1,6 @@
---- media/gpu/gpu_video_encode_accelerator_factory.cc.orig	2022-06-17 14:20:10 UTC
+--- media/gpu/gpu_video_encode_accelerator_factory.cc.orig	2022-08-31 12:19:35 UTC
 +++ media/gpu/gpu_video_encode_accelerator_factory.cc
-@@ -103,7 +103,7 @@ std::vector<VEAFactoryFunction> GetVEAFactoryFunctions
+@@ -111,7 +111,7 @@ std::vector<VEAFactoryFunction> GetVEAFactoryFunctions
      return vea_factory_functions;
  
  #if BUILDFLAG(USE_VAAPI)

@@ -1,4 +1,4 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2022-06-17 14:20:10 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2022-08-31 12:19:35 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
 @@ -50,7 +50,7 @@
  #include "net/base/network_change_notifier.h"
@@ -15,8 +15,8 @@
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include "ui/views/linux_ui/linux_ui.h"  // nogncheck
- #include "ui/views/linux_ui/linux_ui_factory.h"  // nogncheck
+ #include "ui/linux/linux_ui.h"          // nogncheck
+ #include "ui/linux/linux_ui_factory.h"  // nogncheck
  #endif
 @@ -129,7 +129,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
  }
@@ -33,7 +33,7 @@
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   views::LinuxUI::SetInstance(CreateLinuxUi());
+   ui::LinuxUi::SetInstance(ui::CreateLinuxUi());
  #endif
  }
 @@ -196,7 +196,7 @@ void ShellBrowserMainParts::PostMainMessageLoopRun() {
@@ -42,6 +42,6 @@
    off_the_record_browser_context_.reset();
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   views::LinuxUI::SetInstance(nullptr);
+   ui::LinuxUi::SetInstance(nullptr);
  #endif
    performance_manager_lifetime_.reset();

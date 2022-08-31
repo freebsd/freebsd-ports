@@ -1,6 +1,6 @@
---- media/base/media_switches.h.orig	2022-07-22 17:30:31 UTC
+--- media/base/media_switches.h.orig	2022-08-31 12:19:35 UTC
 +++ media/base/media_switches.h
-@@ -198,7 +198,7 @@ MEDIA_EXPORT extern const base::Feature kUseDecoderStr
+@@ -203,7 +203,7 @@ MEDIA_EXPORT extern const base::Feature kUseDecoderStr
  MEDIA_EXPORT extern const base::Feature kUseFakeDeviceForMediaStream;
  MEDIA_EXPORT extern const base::Feature kUseMediaHistoryStore;
  MEDIA_EXPORT extern const base::Feature kUseR16Texture;
@@ -9,7 +9,7 @@
  MEDIA_EXPORT extern const base::Feature kVaapiVideoDecodeLinux;
  MEDIA_EXPORT extern const base::Feature kVaapiVideoEncodeLinux;
  MEDIA_EXPORT extern const base::Feature kVaapiIgnoreDriverChecks;
-@@ -304,7 +304,7 @@ MEDIA_EXPORT extern const base::FeatureParam<
+@@ -310,7 +310,7 @@ MEDIA_EXPORT extern const base::FeatureParam<
  MEDIA_EXPORT extern const base::Feature kDeprecateLowUsageCodecs;
  #endif
  

@@ -1,6 +1,15 @@
---- content/browser/renderer_host/render_process_host_impl.h.orig	2022-07-22 17:30:31 UTC
+--- content/browser/renderer_host/render_process_host_impl.h.orig	2022-08-31 12:19:35 UTC
 +++ content/browser/renderer_host/render_process_host_impl.h
-@@ -470,7 +470,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -85,7 +85,7 @@
+ #include "third_party/blink/public/mojom/hid/hid.mojom-forward.h"
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ #include "media/mojo/mojom/stable/stable_video_decoder.mojom.h"
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+ 
+@@ -474,7 +474,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
    // Sets this RenderProcessHost to be guest only. For Testing only.
    void SetForGuestsOnlyForTesting();
  
@@ -9,3 +18,21 @@
    // Launch the zygote early in the browser startup.
    static void EarlyZygoteLaunch();
  #endif  // BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_MAC)
+@@ -673,7 +673,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+       mojo::PendingReceiver<blink::mojom::WebSocketConnector> receiver)
+       override;
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   void CreateStableVideoDecoder(
+       mojo::PendingReceiver<media::stable::mojom::StableVideoDecoder> receiver)
+       override;
+@@ -1128,7 +1128,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+   // RenderProcessHost. This is destroyed early in ResetIPC() method.
+   std::unique_ptr<PermissionServiceContext> permission_service_context_;
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   // Connection to the StableVideoDecoderFactory that lives in a utility
+   // process. This is only used for out-of-process video decoding.
+   mojo::Remote<media::stable::mojom::StableVideoDecoderFactory>

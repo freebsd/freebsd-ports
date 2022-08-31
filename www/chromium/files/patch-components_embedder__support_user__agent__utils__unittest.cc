@@ -1,15 +1,15 @@
---- components/embedder_support/user_agent_utils_unittest.cc.orig	2022-06-17 14:20:10 UTC
+--- components/embedder_support/user_agent_utils_unittest.cc.orig	2022-08-31 12:19:35 UTC
 +++ components/embedder_support/user_agent_utils_unittest.cc
-@@ -55,7 +55,7 @@ namespace {
- static constexpr char kChromeProductVersionRegex[] =
-     "Chrome/([0-9]+).([0-9]+).([0-9]+).([0-9]+)";
+@@ -80,7 +80,7 @@ const char kDesktop[] =
+     "Safari/537.36";
+ #endif  // BUILDFLAG(IS_ANDROID)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  std::string GetMachine() {
    struct utsname unixinfo;
    uname(&unixinfo);
-@@ -163,7 +163,7 @@ void CheckUserAgentStringOrdering(bool mobile_device) 
+@@ -188,7 +188,7 @@ void CheckUserAgentStringOrdering(bool mobile_device) 
      int value;
      ASSERT_TRUE(base::StringToInt(pieces[i], &value));
    }

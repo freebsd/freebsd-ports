@@ -1,7 +1,7 @@
---- third_party/blink/renderer/modules/media/audio/audio_device_factory.cc.orig	2022-02-28 16:54:41 UTC
+--- third_party/blink/renderer/modules/media/audio/audio_device_factory.cc.orig	2022-08-31 12:19:35 UTC
 +++ third_party/blink/renderer/modules/media/audio/audio_device_factory.cc
-@@ -34,7 +34,7 @@ AudioDeviceFactory* AudioDeviceFactory::factory_ = nul
- namespace {
+@@ -34,7 +34,7 @@ namespace {
+ AudioDeviceFactory* g_factory_override = nullptr;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS_LACROS)

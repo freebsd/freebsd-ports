@@ -1,6 +1,6 @@
---- chrome/browser/apps/platform_apps/platform_app_launch.cc.orig	2022-04-21 18:48:31 UTC
+--- chrome/browser/apps/platform_apps/platform_app_launch.cc.orig	2022-08-31 12:19:35 UTC
 +++ chrome/browser/apps/platform_apps/platform_app_launch.cc
-@@ -19,7 +19,7 @@
+@@ -20,7 +20,7 @@
  #include "extensions/common/extension.h"
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

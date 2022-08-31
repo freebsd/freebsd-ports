@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2022-07-22 17:30:31 UTC
+--- build/config/compiler/BUILD.gn.orig	2022-08-31 12:19:35 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -231,13 +231,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
@@ -18,7 +18,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -447,6 +450,10 @@ config("compiler") {
+@@ -461,6 +464,10 @@ config("compiler") {
      }
    }
  
@@ -29,7 +29,7 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_gold) {
-@@ -522,7 +529,7 @@ config("compiler") {
+@@ -536,7 +543,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -38,25 +38,25 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
  
      # TODO(hans): Remove this once Clang generates better optimized debug info
-@@ -909,7 +916,7 @@ config("compiler_cpu_abi") {
+@@ -900,7 +907,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
--      if (is_clang && !is_android && !is_nacl) {
-+      if (is_clang && !is_android && !is_nacl && !is_bsd) {
+-      if (is_clang && !is_android && !is_nacl &&
++      if (is_clang && !is_android && !is_nacl && !is_bsd &&
+           !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-       }
-@@ -923,7 +930,7 @@ config("compiler_cpu_abi") {
+@@ -915,7 +922,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
--      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
-+      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd) {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia &&
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd &&
+           !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-       }
-@@ -1244,7 +1251,7 @@ config("compiler_deterministic") {
+@@ -1243,7 +1250,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -65,7 +65,7 @@
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1535,12 +1542,12 @@ config("default_warnings") {
+@@ -1534,7 +1541,7 @@ config("default_warnings") {
          "-Wno-ignored-pragma-optimize",
        ]
  
@@ -73,14 +73,8 @@
 +      if (!is_nacl && !is_bsd) {
          # TODO(https://crbug.com/1300731) Clean up and enable.
          cflags += [ "-Wno-unqualified-std-cast-call" ]
-       }
  
--      if (!is_nacl && !(is_chromeos ||
-+      if (!is_nacl && !is_bsd && !(is_chromeos ||
-                         default_toolchain == "//build/toolchain/cros:target")) {
-         # TODO(https://crbug.com/1322823): Remove flags once potential miscompile is investigated.
-         cflags += [
-@@ -1724,7 +1731,7 @@ config("no_chromium_code") {
+@@ -1727,7 +1734,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -89,7 +83,7 @@
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -2238,7 +2245,7 @@ config("afdo_optimize_size") {
+@@ -2241,7 +2248,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -98,7 +92,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2254,7 +2261,7 @@ config("afdo") {
+@@ -2257,7 +2264,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -107,7 +101,7 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2395,7 +2402,8 @@ config("symbols") {
+@@ -2397,7 +2404,8 @@ config("symbols") {
      }
    }
  

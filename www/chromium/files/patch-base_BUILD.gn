@@ -1,6 +1,15 @@
---- base/BUILD.gn.orig	2022-07-22 17:30:31 UTC
+--- base/BUILD.gn.orig	2022-08-31 12:19:35 UTC
 +++ base/BUILD.gn
-@@ -1001,7 +1001,7 @@ mixed_component("base") {
+@@ -162,7 +162,7 @@ buildflag_header("ios_cronet_buildflags") {
+   flags = [ "CRONET_BUILD=$is_cronet_build" ]
+ }
+ 
+-enable_message_pump_epoll = is_linux || is_chromeos || is_android
++enable_message_pump_epoll = (is_linux || is_chromeos || is_android) && !is_bsd
+ buildflag_header("message_pump_buildflags") {
+   header = "message_pump_buildflags.h"
+   header_dir = "base/message_loop"
+@@ -1014,7 +1014,7 @@ mixed_component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -9,7 +18,7 @@
        sources += [
          "profiler/stack_copier_signal.cc",
          "profiler/stack_copier_signal.h",
-@@ -1010,6 +1010,12 @@ mixed_component("base") {
+@@ -1023,6 +1023,12 @@ mixed_component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -22,7 +31,7 @@
    }
  
    if (is_win) {
-@@ -1496,11 +1502,23 @@ mixed_component("base") {
+@@ -1507,11 +1513,23 @@ mixed_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -47,7 +56,7 @@
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1528,7 +1546,7 @@ mixed_component("base") {
+@@ -1539,7 +1557,7 @@ mixed_component("base") {
        ]
        configs += [ "//base/allocator:mac_no_default_new_delete_symbols" ]
      }
@@ -56,7 +65,7 @@
        sources += [
          "allocator/allocator_shim_override_cpp_symbols.h",
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
-@@ -1584,7 +1602,7 @@ mixed_component("base") {
+@@ -1595,7 +1613,7 @@ mixed_component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -65,7 +74,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2165,6 +2183,42 @@ mixed_component("base") {
+@@ -2183,6 +2201,42 @@ mixed_component("base") {
      }
    }
  
@@ -108,7 +117,7 @@
    # iOS
    if (is_ios) {
      sources -= [
-@@ -3467,7 +3521,7 @@ test("base_unittests") {
+@@ -3496,7 +3550,7 @@ test("base_unittests") {
      }
    }
  
@@ -117,7 +126,7 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3514,7 +3568,7 @@ test("base_unittests") {
+@@ -3543,7 +3597,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -126,7 +135,7 @@
        sources += [
          "profiler/stack_copier_signal_unittest.cc",
          "profiler/thread_delegate_posix_unittest.cc",
-@@ -3524,7 +3578,7 @@ test("base_unittests") {
+@@ -3553,7 +3607,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -135,7 +144,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3712,7 +3766,7 @@ test("base_unittests") {
+@@ -3741,7 +3795,7 @@ test("base_unittests") {
      }
    }
  

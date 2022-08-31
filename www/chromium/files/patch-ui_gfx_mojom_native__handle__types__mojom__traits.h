@@ -1,4 +1,4 @@
---- ui/gfx/mojom/native_handle_types_mojom_traits.h.orig	2022-02-28 16:54:41 UTC
+--- ui/gfx/mojom/native_handle_types_mojom_traits.h.orig	2022-08-31 12:19:35 UTC
 +++ ui/gfx/mojom/native_handle_types_mojom_traits.h
 @@ -15,7 +15,7 @@
  #include "third_party/abseil-cpp/absl/types/optional.h"
@@ -18,7 +18,7 @@
  template <>
  struct COMPONENT_EXPORT(GFX_NATIVE_HANDLE_TYPES_SHARED_MOJOM_TRAITS)
      StructTraits<gfx::mojom::NativePixmapPlaneDataView,
-@@ -53,7 +53,7 @@ struct COMPONENT_EXPORT(GFX_NATIVE_HANDLE_TYPES_SHARED
+@@ -53,13 +53,13 @@ struct COMPONENT_EXPORT(GFX_NATIVE_HANDLE_TYPES_SHARED
      return pixmap_handle.planes;
    }
  
@@ -27,3 +27,10 @@
    static uint64_t modifier(const gfx::NativePixmapHandle& pixmap_handle) {
      return pixmap_handle.modifier;
    }
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   static bool supports_zero_copy_webgpu_import(
+       const gfx::NativePixmapHandle& pixmap_handle) {
+     return pixmap_handle.supports_zero_copy_webgpu_import;
