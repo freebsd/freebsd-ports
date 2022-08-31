@@ -1,6 +1,6 @@
---- src/hiawatha.c.orig	2018-09-16 08:22:32 UTC
+--- src/hiawatha.c.orig	2021-07-22 15:18:13 UTC
 +++ src/hiawatha.c
-@@ -156,8 +156,12 @@ void task_runner(t_config *config) {
+@@ -141,8 +141,12 @@ void task_runner(t_config *config) {
  	int delay = 0;
  	time_t now;
  #ifdef ENABLE_LOADCHECK
@@ -13,7 +13,7 @@
  #ifdef ENABLE_MONITOR
  	int  load_monitor_timer = 0;
  #endif
-@@ -228,6 +232,21 @@ void task_runner(t_config *config) {
+@@ -213,6 +217,21 @@ void task_runner(t_config *config) {
  
  #ifdef ENABLE_LOADCHECK
  		if (config->max_server_load > 0) {
@@ -35,7 +35,7 @@
  			if ((load_fp = fopen("/proc/loadavg", "r")) != NULL) {
  				if (fgets(load_str, 49, load_fp) != NULL) {
  					load_str[49] = '\0';
-@@ -253,6 +272,7 @@ void task_runner(t_config *config) {
+@@ -238,6 +257,7 @@ void task_runner(t_config *config) {
  			} else {
  				current_server_load = 0;
  			}

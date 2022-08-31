@@ -1,6 +1,5 @@
 PORTNAME=	hiawatha
-PORTVERSION=	10.12
-PORTREVISION=	3
+PORTVERSION=	11.2
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
@@ -58,8 +57,8 @@ post-patch:
 		${WRKSRC}/man/hiawatha.1.in
 
 post-install:
-.for f in hiawatha.conf mimetype.conf cgi-wrapper.conf toolkit.conf \
-	error.xslt index.xslt
+.for f in hiawatha.conf mimetype.conf cgi-wrapper.conf toolkit.conf error.xslt \
+	index.xslt
 	${INSTALL_DATA} ${WRKSRC}/config/${f} \
 		${STAGEDIR}${PREFIX}/etc/hiawatha/${f}.sample
 .endfor

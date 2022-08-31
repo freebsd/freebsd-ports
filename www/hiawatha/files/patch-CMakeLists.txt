@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-09-11 05:44:11 UTC
+--- CMakeLists.txt.orig	2022-06-01 21:01:35 UTC
 +++ CMakeLists.txt
-@@ -39,7 +39,8 @@ include(FindZLIB)
+@@ -36,7 +36,8 @@ include(cmake/CopyIfNotExists.cmake)
  include(cmake/CopyIfNotExists.cmake)
  
  # Settings
