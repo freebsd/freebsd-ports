@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.2.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -145,7 +145,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-acts-as-taggable-on>=9.0<10:www/rubygem-acts-as-taggable-on \
 	rubygem-sidekiq64>=6.4<6.5:devel/rubygem-sidekiq64 \
 	rubygem-sidekiq-cron-sidekiq64>=1.2<2.0:devel/rubygem-sidekiq-cron-sidekiq64 \
-	rubygem-redis-namespace>=1.8.1<1.9.0:databases/rubygem-redis-namespace \
+	rubygem-redis-namespace18>=1.8.1<1.9.0:databases/rubygem-redis-namespace18 \
 	rubygem-gitlab-sidekiq-fetcher>=0.8.0<0.9:devel/rubygem-gitlab-sidekiq-fetcher \
 	rubygem-fugit>=1.2.1<2:devel/rubygem-fugit \
 	rubygem-httparty>=0.16.4<1:www/rubygem-httparty \
@@ -165,7 +165,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-flowdock>=0.7<1.0:www/rubygem-flowdock \
 	rubygem-slack-messenger>=2.3.4<2.4.0:devel/rubygem-slack-messenger \
 	rubygem-hangouts-chat>=0.0.5<0.1.0:net/rubygem-hangouts-chat \
-	rubygem-asana>=0.10.13<0.11:www/rubygem-asana \
+	rubygem-asana0>=0.10.13<0.11:www/rubygem-asana0 \
 	rubygem-ruby-fogbugz021>=0.2.1<0.3.0:devel/rubygem-ruby-fogbugz021 \
 	rubygem-kubeclient>=4.9.2<4.10.0:www/rubygem-kubeclient \
 	rubygem-sanitize>=6.0<7:textproc/rubygem-sanitize \
