@@ -43,7 +43,7 @@ include/libsoup-3.0/libsoup/soup.h
 lib/girepository-1.0/Soup-3.0.typelib
 lib/libsoup-3.0.so
 lib/libsoup-3.0.so.0
-lib/libsoup-3.0.so.0.0.5
+lib/libsoup-3.0.so.0.6.0
 libdata/pkgconfig/libsoup-3.0.pc
 share/gir-1.0/Soup-3.0.gir
 share/locale/ab/LC_MESSAGES/libsoup-3.0.mo

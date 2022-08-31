@@ -1,5 +1,5 @@
 PORTNAME=	libsoup
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -41,7 +41,6 @@ MESON_ARGS=	-Dtests=false \
 		-Dinstalled_tests=false \
 		-Dsysprof=disabled \
 		-Dpkcs11_tests=disabled \
-		-Dhttp2_tests=disabled \
 		-Dfuzzing=disabled \
 		-Dautobahn=disabled \
 		-Dtls_check=true \
