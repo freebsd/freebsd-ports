@@ -6,4 +6,4 @@ Hypercorn can utilise asyncio, uvloop, or trio worker types.
 Hypercorn can optionally serve the current draft of the HTTP/3 specification
 using the aioquic library.
 
-WWW: https://gitlab.com/pgjones/hypercorn
+WWW: https://github.com/pgjones/hypercorn
