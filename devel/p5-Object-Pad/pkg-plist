@@ -5,6 +5,7 @@
 %%SITE_ARCH%%/Object/Pad/MOP/Field.pm
 %%SITE_ARCH%%/Object/Pad/MOP/FieldAttr.pm
 %%SITE_ARCH%%/Object/Pad/MOP/Method.pm
+%%SITE_ARCH%%/Object/Pad/MetaFunctions.pm
 %%SITE_ARCH%%/auto/Object/Pad/Pad.so
 %%PERL5_MAN3%%/Object::Pad.3.gz
 %%PERL5_MAN3%%/Object::Pad::ExtensionBuilder.3.gz
@@ -12,3 +13,4 @@
 %%PERL5_MAN3%%/Object::Pad::MOP::Field.3.gz
 %%PERL5_MAN3%%/Object::Pad::MOP::FieldAttr.3.gz
 %%PERL5_MAN3%%/Object::Pad::MOP::Method.3.gz
+%%PERL5_MAN3%%/Object::Pad::MetaFunctions.3.gz
