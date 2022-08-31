@@ -1,5 +1,5 @@
 PORTNAME=	html-proofer
-PORTVERSION=	4.3.2
+PORTVERSION=	4.4.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
