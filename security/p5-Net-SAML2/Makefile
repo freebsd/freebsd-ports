@@ -1,5 +1,5 @@
 PORTNAME=	Net-SAML2
-PORTVERSION=	0.57
+PORTVERSION=	0.59
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,9 +24,11 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:security/p5-Crypt-OpenSSL-Bignum \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-Moose>=0:devel/p5-Moose \
+		p5-MooseX-Types>=0:devel/p5-MooseX-Types \
 		p5-MooseX-Types-Common>=0:devel/p5-MooseX-Types-Common \
 		p5-MooseX-Types-DateTime>=0:devel/p5-MooseX-Types-DateTime \
 		p5-MooseX-Types-URI>=0:devel/p5-MooseX-Types-URI \
+		p5-Types-Serialiser>=0:devel/p5-Types-Serialiser \
 		p5-URI>=0:net/p5-URI \
 		p5-URI-Encode>=0:www/p5-URI-Encode \
 		p5-URN-OASIS-SAML2>=0.002:security/p5-URN-OASIS-SAML2 \
@@ -44,6 +46,7 @@ TEST_DEPENDS=	p5-Import-Into>=0:devel/p5-Import-Into \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Lib>=0:devel/p5-Test-Lib \
+		p5-Test-Mock-One>=0:devel/p5-Test-Mock-One \
 		p5-Test-NoTabs>=0:devel/p5-Test-NoTabs \
 		p5-Test-Pod>=0:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage

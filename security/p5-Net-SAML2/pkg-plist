@@ -10,6 +10,7 @@
 %%SITE_PERL%%/Net/SAML2/Protocol/LogoutResponse.pm
 %%SITE_PERL%%/Net/SAML2/Role/ProtocolMessage.pm
 %%SITE_PERL%%/Net/SAML2/SP.pm
+%%SITE_PERL%%/Net/SAML2/Types.pm
 %%SITE_PERL%%/Net/SAML2/Util.pm
 %%SITE_PERL%%/Net/SAML2/XML/Sig.pm
 %%SITE_PERL%%/Net/SAML2/XML/Util.pm
@@ -25,6 +26,7 @@
 %%PERL5_MAN3%%/Net::SAML2::Protocol::LogoutResponse.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Role::ProtocolMessage.3.gz
 %%PERL5_MAN3%%/Net::SAML2::SP.3.gz
+%%PERL5_MAN3%%/Net::SAML2::Types.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Util.3.gz
 %%PERL5_MAN3%%/Net::SAML2::XML::Sig.3.gz
 %%PERL5_MAN3%%/Net::SAML2::XML::Util.3.gz
