@@ -10,6 +10,8 @@ COMMENT=	Fido-Internet Gateway and Tosser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not configure: error: use --with-newsbindir=DIR or --without-news option
+
 USES=		autoreconf perl5 iconv
 USE_GITHUB=	yes
 GH_ACCOUNT=	ykaliuta
