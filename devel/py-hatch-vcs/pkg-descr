@@ -1,0 +1,4 @@
+hatch-vcs provides a plugin for Hatch that uses your preferred version control
+system (like Git) to determine project versions.
+
+WWW: https://github.com/ofek/hatch-vcs
