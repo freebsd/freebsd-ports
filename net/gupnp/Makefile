@@ -3,6 +3,9 @@ PORTVERSION=	1.5.3
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/gupnp/-/commit/
+PATCHFILES=	1296d10eda308792d2924f141d72b8b6818878bd.diff:-p1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for UPnP devices
 
