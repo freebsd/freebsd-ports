@@ -1,5 +1,5 @@
 PORTNAME=	whitenoise
-PORTVERSION=	4.1.2
+PORTVERSION=	6.2.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ COMMENT=	Radically simplified static file serving for wsgi applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
