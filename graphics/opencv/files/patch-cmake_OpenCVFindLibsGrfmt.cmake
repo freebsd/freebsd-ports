@@ -1,6 +1,6 @@
---- cmake/OpenCVFindLibsGrfmt.cmake.orig	2021-07-18 11:13:32 UTC
+--- cmake/OpenCVFindLibsGrfmt.cmake.orig	2022-06-05 15:32:44 UTC
 +++ cmake/OpenCVFindLibsGrfmt.cmake
-@@ -228,9 +228,9 @@ if(WITH_PNG)
+@@ -230,9 +230,9 @@ if(WITH_PNG)
      include(FindPNG)
      if(PNG_FOUND)
        include(CheckIncludeFile)
