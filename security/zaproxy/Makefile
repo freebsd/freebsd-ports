@@ -8,6 +8,8 @@ COMMENT=	The OWASP zed attack proxy
 
 LICENSE=	APACHE20
 
+BROKEN=		does not build: could not resolve plugin artifact 'org.gradle.kotlin.kotlin-dsl:...'
+
 BUILD_DEPENDS=	gradle:devel/gradle
 
 USES=		gettext-runtime
