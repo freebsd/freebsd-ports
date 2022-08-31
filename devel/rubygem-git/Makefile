@@ -1,5 +1,5 @@
 PORTNAME=	git
-PORTVERSION=	1.11.0
+PORTVERSION=	1.12.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git>=1.6:devel/git \
+		rubygem-addressable>=2.8<3:www/rubygem-addressable \
 		rubygem-rchardet>=1.8<2:textproc/rubygem-rchardet
 
 USES=		gem
