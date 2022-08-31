@@ -1,5 +1,5 @@
 PORTNAME=	asdf
-PORTVERSION=	2.12.0
+PORTVERSION=	2.13.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,11 +10,10 @@ COMMENT=	Python tools to handle ASDF files
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asdf-standard>=1.0.1:science/py-asdf-standard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asdf-transform-schemas>=0.2.2:science/py-asdf-transform-schemas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0.6.2:devel/py-jmespath@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.0.1:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.0.1<4.10.0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lz4>=0.10:archivers/py-lz4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.10,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=16.0:devel/py-packaging@${PY_FLAVOR} \
@@ -31,5 +30,8 @@ NO_ARCH=	yes
 .if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=3:devel/py-importlib-resources@${PY_FLAVOR}
 .endif
+
+post-patch:
+	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>
