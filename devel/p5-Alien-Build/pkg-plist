@@ -39,6 +39,10 @@
 %%SITE_PERL%%/Alien/Build/Plugin/Decode/DirListingFtpcopy.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Decode/HTML.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Decode/Mojo.pm
+%%SITE_PERL%%/Alien/Build/Plugin/Digest.pod
+%%SITE_PERL%%/Alien/Build/Plugin/Digest/Negotiate.pm
+%%SITE_PERL%%/Alien/Build/Plugin/Digest/SHA.pm
+%%SITE_PERL%%/Alien/Build/Plugin/Digest/SHAPP.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Download.pod
 %%SITE_PERL%%/Alien/Build/Plugin/Download/Negotiate.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Extract.pod
@@ -125,6 +129,10 @@
 %%PERL5_MAN3%%/Alien::Build::Plugin::Decode::DirListingFtpcopy.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Decode::HTML.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Decode::Mojo.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Digest.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Digest::Negotiate.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Digest::SHA.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Digest::SHAPP.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Download.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Download::Negotiate.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Extract.3.gz
