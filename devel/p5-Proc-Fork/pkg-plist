@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Proc/Fork.pm
-%%SITE_PERL%%/Proc/boilerplate.pl
 %%PERL5_MAN3%%/Proc::Fork.3.gz
