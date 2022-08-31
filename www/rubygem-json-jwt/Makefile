@@ -1,5 +1,5 @@
 PORTNAME=	json-jwt
-PORTVERSION=	1.14.0
+PORTVERSION=	1.15.3
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport60>=4.2:devel/rubygem-activesupport60 \
 		rubygem-aes_key_wrap>=0:security/rubygem-aes_key_wrap \
-		rubygem-bindata>=0:devel/rubygem-bindata
+		rubygem-bindata>=0:devel/rubygem-bindata \
+		rubygem-httpclient>=0:www/rubygem-httpclient
 
 USES=		gem
 USE_RUBY=	yes
