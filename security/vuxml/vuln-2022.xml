@@ -1,3 +1,72 @@
+  <vuln vid="f2043ff6-2916-11ed-a1ef-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>105.0.5195.52</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/08/stable-channel-update-for-desktop_30.html">
+	  <p>This release contains 24 security fixes, including:</p>
+	  <ul>
+	    <li>[1340253] Critical CVE-2022-3038: Use after free in Network Service. Reported by Sergei Glazunov of Google Project Zero on 2022-06-28</li>
+	    <li>[1343348] High CVE-2022-3039: Use after free in WebSQL. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Vulnerability Research Institute on 2022-07-11</li>
+	    <li>[1341539] High CVE-2022-3040: Use after free in Layout. Reported by Anonymous on 2022-07-03</li>
+	    <li>[1345947] High CVE-2022-3041: Use after free in WebSQL. Reported by Ziling Chen and Nan Wang(@eternalsakura13) of 360 Vulnerability Research Institute on 2022-07-20</li>
+	    <li>[1338553] High CVE-2022-3042: Use after free in PhoneHub. Reported by koocola(@alo_cook) and Guang Gong of 360 Vulnerability Research Institute on 2022-06-22</li>
+	    <li>[1336979] High CVE-2022-3043: Heap buffer overflow in Screen Capture. Reported by @ginggilBesel on 2022-06-16</li>
+	    <li>[1051198] High CVE-2022-3044: Inappropriate implementation in Site Isolation. Reported by Lucas Pinheiro, Microsoft Browser Vulnerability Research on 2020-02-12</li>
+	    <li>[1339648] High CVE-2022-3045: Insufficient validation of untrusted input in V8. Reported by Ben Noordhuis &lt;info@bnoordhuis.nl&gt; on 2022-06-26</li>
+	    <li>[1346245] High CVE-2022-3046: Use after free in Browser Tag. Reported by Rong Jian of VRI on 2022-07-21</li>
+	    <li>[1342586] Medium CVE-2022-3047: Insufficient policy enforcement in Extensions API. Reported by Maurice Dauer on 2022-07-07</li>
+	    <li>[1303308] Medium CVE-2022-3048: Inappropriate implementation in Chrome OS lockscreen. Reported by Andr.Ess on 2022-03-06</li>
+	    <li>[1316892] Medium CVE-2022-3049: Use after free in SplitScreen. Reported by @ginggilBesel on 2022-04-17</li>
+	    <li>[1337132] Medium CVE-2022-3050: Heap buffer overflow in WebUI. Reported by Zhihua Yao of KunLun Lab on 2022-06-17</li>
+	    <li>[1345245] Medium CVE-2022-3051: Heap buffer overflow in Exosphere. Reported by @ginggilBesel on 2022-07-18</li>
+	    <li>[1346154] Medium CVE-2022-3052: Heap buffer overflow in Window Manager. Reported by Khalil Zhani on 2022-07-21</li>
+	    <li>[1267867] Medium CVE-2022-3053: Inappropriate implementation in Pointer Lock. Reported by Jesper van den Ende (Pelican Party Studios) on 2021-11-08</li>
+	    <li>[1290236] Medium CVE-2022-3054: Insufficient policy enforcement in DevTools. Reported by Kuilin Li on 2022-01-24</li>
+	    <li>[1351969] Medium CVE-2022-3055: Use after free in Passwords. Reported by Weipeng Jiang (@Krace) and Guang Gong of 360 Vulnerability Research Institute on 2022-08-11</li>
+	    <li>[1329460] Low CVE-2022-3056: Insufficient policy enforcement in Content Security Policy. Reported by Anonymous on 2022-05-26</li>
+	    <li>[1336904] Low CVE-2022-3057: Inappropriate implementation in iframe Sandbox. Reported by Gareth Heyes on 2022-06-16</li>
+	    <li>[1337676] Low CVE-2022-3058: Use after free in Sign-In Flow. Reported by raven at KunLun lab on 2022-06-20</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3038</cvename>
+      <cvename>CVE-2022-3039</cvename>
+      <cvename>CVE-2022-3040</cvename>
+      <cvename>CVE-2022-3041</cvename>
+      <cvename>CVE-2022-3042</cvename>
+      <cvename>CVE-2022-3043</cvename>
+      <cvename>CVE-2022-3044</cvename>
+      <cvename>CVE-2022-3045</cvename>
+      <cvename>CVE-2022-3046</cvename>
+      <cvename>CVE-2022-3047</cvename>
+      <cvename>CVE-2022-3048</cvename>
+      <cvename>CVE-2022-3049</cvename>
+      <cvename>CVE-2022-3050</cvename>
+      <cvename>CVE-2022-3051</cvename>
+      <cvename>CVE-2022-3052</cvename>
+      <cvename>CVE-2022-3053</cvename>
+      <cvename>CVE-2022-3054</cvename>
+      <cvename>CVE-2022-3055</cvename>
+      <cvename>CVE-2022-3056</cvename>
+      <cvename>CVE-2022-3057</cvename>
+      <cvename>CVE-2022-3058</cvename>
+      <url>https://chromereleases.googleblog.com/2022/08/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2022-08-30</discovery>
+      <entry>2022-08-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a1323a76-28f1-11ed-a72a-002590c1f29c">
     <topic>FreeBSD -- zlib heap buffer overflow</topic>
     <affects>
