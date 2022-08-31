@@ -1,5 +1,5 @@
 PORTNAME=	NBlood
-DISTVERSION=	g20220210
+DISTVERSION=	g20220802
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libvpx.so:multimedia/libvpx \
 USES=		compiler:c++14-lang gl gmake pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	nukeykt
-GH_TAGNAME=	d2c0ef3
+GH_TAGNAME=	4c3ce1e
 USE_GL=		glu
 USE_SDL=	sdl2
 
@@ -35,6 +35,9 @@ PLIST_FILES=	bin/pcexhumed \
 .if ${ARCH} == powerpc64 || ${ARCH} == riscv64
 MAKE_ARGS+=	LTO=0
 .endif
+
+post-patch:
+	${MV} ${WRKSRC}/source/build/include/lz4.h ${WRKSRC}/source/build/include/my_lz4.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pcexhumed ${STAGEDIR}${PREFIX}/bin
