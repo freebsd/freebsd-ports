@@ -6,6 +6,8 @@
 %%SITE_ARCH%%/FFI/Build/File/Object.pm
 %%SITE_ARCH%%/FFI/Build/MM.pm
 %%SITE_ARCH%%/FFI/Build/Platform.pm
+%%SITE_ARCH%%/FFI/Build/Plugin.pm
+%%SITE_ARCH%%/FFI/Build/PluginData.pm
 %%SITE_ARCH%%/FFI/Platypus.pm
 %%SITE_ARCH%%/FFI/Platypus/API.pm
 %%SITE_ARCH%%/FFI/Platypus/Buffer.pm
@@ -59,6 +61,8 @@
 %%PERL5_MAN3%%/FFI::Build::File::Object.3.gz
 %%PERL5_MAN3%%/FFI::Build::MM.3.gz
 %%PERL5_MAN3%%/FFI::Build::Platform.3.gz
+%%PERL5_MAN3%%/FFI::Build::Plugin.3.gz
+%%PERL5_MAN3%%/FFI::Build::PluginData.3.gz
 %%PERL5_MAN3%%/FFI::Platypus.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::API.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Buffer.3.gz
