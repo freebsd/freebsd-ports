@@ -1,5 +1,5 @@
 PORTNAME=	gupnp
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -33,8 +33,8 @@ SHEBANG_FILES=	tools/gupnp-binding-tool
 OPTIONS_DEFINE=	VAPI
 OPTIONS_SUB=	yes
 
-VAPI_USES=		vala:build
 VAPI_MESON_TRUE=	vapi
+VAPI_USES=		vala:build
 
 .include <bsd.port.pre.mk>
 
