@@ -1,5 +1,5 @@
 PORTNAME=	jupyterlab-server
-PORTVERSION=	2.15.0
+PORTVERSION=	2.15.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/jupyterlab/jupyterlab_server/releases/download/v${PORTVERSION}/
