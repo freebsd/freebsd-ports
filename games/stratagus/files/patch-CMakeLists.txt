@@ -1,20 +1,66 @@
---- CMakeLists.txt.orig	2021-12-24 20:26:54 UTC
+--- CMakeLists.txt.orig	2022-07-31 09:44:18 UTC
 +++ CMakeLists.txt
-@@ -1238,7 +1238,6 @@ endif()
- install(TARGETS stratagus DESTINATION ${GAMEDIR})
- install(TARGETS png2stratagus DESTINATION ${BINDIR})
+@@ -807,7 +807,7 @@ endif()
+ # Stratagus definitions
+ 
+ add_definitions(-DUSE_ZLIB -DPIXMAPS=\"${PIXMAPSDIRABS}\")
+-include_directories(${LUA_INCLUDE_DIR} ${SDL2_INCLUDE_DIR} ${SDL2_MIXER_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS} ${TOLUA++_INCLUDE_DIR} ${ZLIB_INCLUDE_DIRS})
++include_directories(SYSTEM ${LUA_INCLUDE_DIR} ${SDL2_INCLUDE_DIR} ${SDL2_MIXER_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS} ${TOLUA++_INCLUDE_DIR} ${ZLIB_INCLUDE_DIRS})
+ set(stratagus_LIBS ${stratagus_LIBS} ${LUA_LIBRARIES} ${SDL2_LIBRARY} ${SDL2_MIXER_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${TOLUA++_LIBRARY} ${ZLIB_LIBRARIES})
+ 
+ if(WIN32 AND NOT ENABLE_STDIO_REDIRECT)
+@@ -816,13 +816,13 @@ endif()
+ 
+ if(WITH_BZIP2 AND BZIP2_FOUND)
+ 	add_definitions(-DUSE_BZ2LIB ${BZIP2_DEFINITIONS})
+-	include_directories(${BZIP2_INCLUDE_DIR})
++	include_directories(SYSTEM ${BZIP2_INCLUDE_DIR})
+ 	set(stratagus_LIBS ${stratagus_LIBS} ${BZIP2_LIBRARIES})
+ endif()
+ 
+ if(WITH_MNG AND MNG_FOUND)
+ 	add_definitions(-DUSE_MNG)
+-	include_directories(${MNG_INCLUDE_DIR})
++	include_directories(SYSTEM ${MNG_INCLUDE_DIR})
+ 	set(stratagus_LIBS ${stratagus_LIBS} ${MNG_LIBRARY})
+ 	if (MSVC)
+ 		include_directories(${JPEG_INCLUDE_DIR})
+@@ -832,13 +832,13 @@ endif()
+ 
+ if(WITH_OGGVORBIS AND OGGVORBIS_FOUND)
+ 	add_definitions(-DUSE_VORBIS)
+-	include_directories(${OGGVORBIS_INCLUDE_DIR})
++	include_directories(SYSTEM ${OGGVORBIS_INCLUDE_DIR})
+ 	set(stratagus_LIBS ${stratagus_LIBS} ${OGG_LIBRARY} ${VORBIS_LIBRARY})
+ endif()
+ 
+ if(WITH_THEORA AND THEORA_FOUND)
+ 	add_definitions(-DUSE_THEORA)
+-	include_directories(${THEORA_INCLUDE_DIR})
++	include_directories(SYSTEM ${THEORA_INCLUDE_DIR})
+ 	set(stratagus_LIBS ${stratagus_LIBS} ${THEORA_LIBRARY})
+ endif()
+ 
+@@ -1311,7 +1311,7 @@ if (WIN32)
+ 	install(TARGETS midiplayer DESTINATION ${GAMEDIR})
+ endif()
  
 -if(ENABLE_DOC AND DOXYGEN_FOUND)
  	install(FILES doc/stratagus.6 DESTINATION ${MANDIR})
++if(ENABLE_DOC)
  	install(FILES
  		doc/development.html
-@@ -1252,8 +1251,7 @@ if(ENABLE_DOC AND DOXYGEN_FOUND)
+@@ -1325,8 +1325,11 @@ if(ENABLE_DOC AND DOXYGEN_FOUND)
  		doc/README-SDL.txt
  		DESTINATION share/doc/stratagus
  	)
 -	install(DIRECTORY doc/graphics doc/scripts ${CMAKE_CURRENT_BINARY_DIR}/doxygen DESTINATION ${DOCDIR})
 -endif(ENABLE_DOC AND DOXYGEN_FOUND)
 +	install(DIRECTORY doc/graphics doc/scripts DESTINATION ${DOCDIR})
++	if(DOXYGEN_FOUND)
++		install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/doxygen DESTINATION ${DOCDIR})
++	endif()
++endif()
  
  if(ENABLE_DEV)
  	install(FILES ${gameheaders_HDRS} DESTINATION ${STRATAGUS_HEADERS})

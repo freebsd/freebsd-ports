@@ -1,5 +1,5 @@
 PORTNAME=	stratagus
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	zenity:x11/zenity
 USE_GITHUB=	yes
 GH_ACCOUNT=	Wargus
 
-USES=		cmake lua:51 pkgconfig sdl
+USES=		cmake compiler:c++17-lang lua:51 pkgconfig sdl
 USE_SDL=	sdl2 mixer2 image2
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DTOLUA++_APP:STRING="tolua++-${LUA_VER}" \
@@ -27,8 +27,12 @@ CMAKE_OFF=	WITH_STACKTRACE  # not in ports
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	MNG THEORA VORBIS DOCS
+OPTIONS_DEFINE=	MNG THEORA VORBIS EAGER_LOAD DOCS
 OPTIONS_DEFAULT=MNG THEORA VORBIS
+.if exists(/usr/include/omp.h)
+OPTIONS_DEFINE+=OPENMP
+OPTIONS_DEFAULT+=OPENMP
+.endif
 
 MNG_DESC=		MNG image library support
 MNG_LIB_DEPENDS=	libmng.so:graphics/libmng
@@ -36,23 +40,15 @@ MNG_CMAKE_BOOL=		WITH_MNG
 
 THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 THEORA_CMAKE_BOOL=	WITH_THEORA
-# XXX: does not build otherwise, remove after upstream bug is fixed: https://github.com/Wargus/stratagus/issues/396
-THEORA_IMPLIES=		VORBIS
+THEORA_IMPLIES=		VORBIS  # https://github.com/Wargus/stratagus/issues/396
 
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 			libogg.so:audio/libogg
 VORBIS_CMAKE_BOOL=	WITH_OGGVORBIS
 
-.if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++17-lang
-.endif
+EAGER_LOAD_DESC=	Load all game data at startup (more memory, less stutter)
+EAGER_LOAD_CMAKE_BOOL=	EAGER_LOAD
 
-.include <bsd.port.pre.mk>
+OPENMP_CMAKE_BOOL=	WITH_OPENMP
 
-.if ${CHOSEN_COMPILER_TYPE} == clang
-CXXFLAGS+=	-Wno-register  # incompatible code included from lcms
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
