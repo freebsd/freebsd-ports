@@ -34,6 +34,7 @@ share/locale/uk/LC_MESSAGES/subtitlecomposer.mo
 share/locale/zh_TW/LC_MESSAGES/subtitlecomposer.mo
 share/metainfo/org.kde.subtitlecomposer.appdata.xml
 share/mime/packages/subtitlecomposer.xml
+share/mime/subpicture/x-pgs.xml
 %%DATADIR%%/scripts/README
 %%DATADIR%%/scripts/api/scripting_list.h
 %%DATADIR%%/scripts/api/scripting_range.h
@@ -61,3 +62,4 @@ share/mime/packages/subtitlecomposer.xml
 %%DATADIR%%/scripts/prepare_RTL_release.py
 %%DATADIR%%/scripts/remove_hearing_impaired_text.js
 %%DATADIR%%/scripts/undo_RTL_release.py
+@dir share/mime/subpicture
