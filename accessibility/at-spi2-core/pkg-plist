@@ -1,3 +1,4 @@
+etc/xdg/Xwayland-session.d/00-at-spi
 etc/xdg/autostart/at-spi-dbus-bus.desktop
 include/at-spi-2.0/atspi/atspi-accessible.h
 include/at-spi-2.0/atspi/atspi-action.h
@@ -5,7 +6,10 @@ include/at-spi-2.0/atspi/atspi-application.h
 include/at-spi-2.0/atspi/atspi-collection.h
 include/at-spi-2.0/atspi/atspi-component.h
 include/at-spi-2.0/atspi/atspi-constants.h
+include/at-spi-2.0/atspi/atspi-device-legacy.h
 include/at-spi-2.0/atspi/atspi-device-listener.h
+include/at-spi-2.0/atspi/atspi-device-x11.h
+include/at-spi-2.0/atspi/atspi-device.h
 include/at-spi-2.0/atspi/atspi-document.h
 include/at-spi-2.0/atspi/atspi-editabletext.h
 include/at-spi-2.0/atspi/atspi-enum-types.h
@@ -38,6 +42,7 @@ share/dbus-1/accessibility-services/org.a11y.atspi.Registry.service
 share/dbus-1/services/org.a11y.Bus.service
 share/defaults/at-spi2/accessibility.conf
 share/gir-1.0/Atspi-2.0.gir
+share/locale/ab/LC_MESSAGES/at-spi2-core.mo
 share/locale/an/LC_MESSAGES/at-spi2-core.mo
 share/locale/as/LC_MESSAGES/at-spi2-core.mo
 share/locale/ast/LC_MESSAGES/at-spi2-core.mo
@@ -70,6 +75,7 @@ share/locale/hi/LC_MESSAGES/at-spi2-core.mo
 share/locale/hr/LC_MESSAGES/at-spi2-core.mo
 share/locale/hu/LC_MESSAGES/at-spi2-core.mo
 share/locale/id/LC_MESSAGES/at-spi2-core.mo
+share/locale/is/LC_MESSAGES/at-spi2-core.mo
 share/locale/it/LC_MESSAGES/at-spi2-core.mo
 share/locale/ja/LC_MESSAGES/at-spi2-core.mo
 share/locale/kk/LC_MESSAGES/at-spi2-core.mo
