@@ -1,5 +1,5 @@
 PORTNAME=	flipper-active_record
-PORTVERSION=	0.25.1
+PORTVERSION=	0.25.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
