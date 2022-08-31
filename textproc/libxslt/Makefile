@@ -1,5 +1,5 @@
 PORTNAME=	libxslt
-DISTVERSION=	1.1.36
+DISTVERSION=	1.1.37
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
 DIST_SUBDIR=	gnome
@@ -23,13 +23,14 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
+PLIST_SUB=	LIBVERSION=${PORTVERSION}
+
 OPTIONS_DEFINE=	CRYPTO MEM_DEBUG STATIC
 OPTIONS_DEFAULT=	CRYPTO STATIC
 OPTIONS_SUB=		yes
 
 CRYPTO_DESC=	Enable crypto support
 MEM_DEBUG_DESC=	Enable memory debugging
-
 
 CRYPTO_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libgpg-error.so:security/libgpg-error
