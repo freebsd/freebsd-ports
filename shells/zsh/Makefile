@@ -1,5 +1,6 @@
 PORTNAME=	zsh
 DISTVERSION=	5.9
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	https://www.zsh.org/pub/ \
 		SF \
@@ -44,13 +45,12 @@ CPPFLAGS+=	-DBOOL_DEFINED
 LDFLAGS+=	-Wl,--as-needed
 TEST_TARGET=	test
 
-OPTIONS_DEFINE=	DEBUG ETCDIR GDBM MEM PCRE STATIC \
+OPTIONS_DEFINE=	DEBUG ETCDIR GDBM PCRE STATIC \
 		DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
 ETCDIR_DESC=	System-wide defaults in /etc (instead of $${PREFIX}/etc)
 GDBM_DESC=	Enable GDBM support (GPL)
-MEM_DESC=	Enable zsh-mem options
 
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
@@ -58,7 +58,6 @@ PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 DEBUG_CONFIGURE_ENABLE=	zsh-debug
 ETCDIR_CONFIGURE_OFF=	--enable-etcdir=${PREFIX}/etc
 GDBM_CONFIGURE_ENABLE=	gdbm
-MEM_CONFIGURE_ENABLE=	zsh-mem
 PCRE_CONFIGURE_ENABLE=	pcre
 
 ## Some modules can only be built as a shared library.
