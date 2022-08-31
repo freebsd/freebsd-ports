@@ -3671,6 +3671,7 @@
     SUBDIR += p5-Variable-Disposition
     SUBDIR += p5-Variable-Eject
     SUBDIR += p5-Variable-Magic
+    SUBDIR += p5-Venus
     SUBDIR += p5-Want
     SUBDIR += p5-WeakRef
     SUBDIR += p5-Workflow

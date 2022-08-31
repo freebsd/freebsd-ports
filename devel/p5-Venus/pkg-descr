@@ -1,0 +1,11 @@
+Venus provides an object-orientation framework and extendible standard library
+for Perl 5, built on top of the Mars architecture with classes which wrap most
+native Perl data types. Venus has a simple modular architecture, robust library
+of classes, methods, and roles, supports pure-Perl autoboxing, advanced
+exception handling, "true" and "false" functions, package introspection,
+command-line options parsing, and more. This package will always automatically
+exports true and false keyword functions (unless existing routines of the same
+name already exist in the calling package or its parents), otherwise exports
+keyword functions as requested at import.
+
+WWW: https://metacpan.org/dist/Venus
