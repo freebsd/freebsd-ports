@@ -1,6 +1,6 @@
 PORTNAME=	arj
 PORTVERSION=	3.10.22
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	archivers
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.78_3.10%20build%2022:source \
 		DEBIAN_POOL:patch
@@ -58,7 +58,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's!/etc!${LOCALBASE}/etc!' \
 		 ${WRKSRC}/arj.c ${WRKSRC}/file_reg.c ${WRKSRC}/rearj.c
 	@${REINPLACE_CMD} -e 's!-O2!!' -e 's!ALIGN_POINTERS!&,1,desc!' \
-		-e 's!USE_COLORS!&,1,desc!' ${WRKSRC}/gnu/configure.in
+		-e 's!USE_COLORS!&,1,desc!' -e '/LD_STRIP=/d' \
+		${WRKSRC}/gnu/configure.in
 	@${REINPLACE_CMD} -e 's!^static !!' ${WRKSRC}/integr.c
 
 post-install:
