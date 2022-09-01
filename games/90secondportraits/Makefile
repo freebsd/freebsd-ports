@@ -21,6 +21,8 @@ GH_TUPLE=	vrld:hump:537ca76:hump/hump \
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+PORTSCOUT=	skipv:1.01
+
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 PORTDOCS=	*
