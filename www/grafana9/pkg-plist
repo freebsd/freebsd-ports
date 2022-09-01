@@ -2440,6 +2440,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/resourcePicker/resourcePickerData.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/time_grain_converter.test.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/time_grain_converter.ts
+%%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/tracking.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/types/index.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/types/logAnalyticsMetadata.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/types/query.ts
@@ -3494,9 +3495,6 @@ bin/grafana-server
 %%DATADIR%%/public/build/1011.16526cfdc6ca6f23472d.js
 %%DATADIR%%/public/build/1011.16526cfdc6ca6f23472d.js.LICENSE.txt
 %%DATADIR%%/public/build/1011.16526cfdc6ca6f23472d.js.map
-%%DATADIR%%/public/build/1173.9436c9585f818b85f4c2.js
-%%DATADIR%%/public/build/1173.9436c9585f818b85f4c2.js.LICENSE.txt
-%%DATADIR%%/public/build/1173.9436c9585f818b85f4c2.js.map
 %%DATADIR%%/public/build/1204.81bb48e97eab63fc5554.js
 %%DATADIR%%/public/build/1204.81bb48e97eab63fc5554.js.LICENSE.txt
 %%DATADIR%%/public/build/1204.81bb48e97eab63fc5554.js.map
@@ -3646,8 +3644,6 @@ bin/grafana-server
 %%DATADIR%%/public/build/4536.1b1b9eca3a0f188c77dc.js
 %%DATADIR%%/public/build/4536.1b1b9eca3a0f188c77dc.js.LICENSE.txt
 %%DATADIR%%/public/build/4536.1b1b9eca3a0f188c77dc.js.map
-%%DATADIR%%/public/build/4550.7d4e839dfb1dffbc8f6e.js
-%%DATADIR%%/public/build/4550.7d4e839dfb1dffbc8f6e.js.map
 %%DATADIR%%/public/build/4602.b92152b6e3b372abc5dc.js
 %%DATADIR%%/public/build/4602.b92152b6e3b372abc5dc.js.LICENSE.txt
 %%DATADIR%%/public/build/4602.b92152b6e3b372abc5dc.js.map
@@ -3662,8 +3658,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/4833.e49e07b89a97cb53c469.js
 %%DATADIR%%/public/build/4833.e49e07b89a97cb53c469.js.LICENSE.txt
 %%DATADIR%%/public/build/4833.e49e07b89a97cb53c469.js.map
-%%DATADIR%%/public/build/516.3370e2750e5770cd54cb.js
-%%DATADIR%%/public/build/516.3370e2750e5770cd54cb.js.map
+%%DATADIR%%/public/build/516.8bdd0cc09b6dcbd4bb6a.js
+%%DATADIR%%/public/build/516.8bdd0cc09b6dcbd4bb6a.js.map
 %%DATADIR%%/public/build/5455.0fcfb0d8074e2111fa1c.js
 %%DATADIR%%/public/build/5455.0fcfb0d8074e2111fa1c.js.LICENSE.txt
 %%DATADIR%%/public/build/5455.0fcfb0d8074e2111fa1c.js.map
@@ -3685,11 +3681,16 @@ bin/grafana-server
 %%DATADIR%%/public/build/6127.4f97b46bb73a0a5702ac.js
 %%DATADIR%%/public/build/6127.4f97b46bb73a0a5702ac.js.LICENSE.txt
 %%DATADIR%%/public/build/6127.4f97b46bb73a0a5702ac.js.map
+%%DATADIR%%/public/build/6151.e6d8219d85d0941f9bf8.js
+%%DATADIR%%/public/build/6151.e6d8219d85d0941f9bf8.js.LICENSE.txt
+%%DATADIR%%/public/build/6151.e6d8219d85d0941f9bf8.js.map
 %%DATADIR%%/public/build/63.8360bd500aa791ae3403.js
 %%DATADIR%%/public/build/63.8360bd500aa791ae3403.js.LICENSE.txt
 %%DATADIR%%/public/build/63.8360bd500aa791ae3403.js.map
 %%DATADIR%%/public/build/6324.4a3c3887825551a24ebd.js
 %%DATADIR%%/public/build/6324.4a3c3887825551a24ebd.js.map
+%%DATADIR%%/public/build/6350.08edb0f977ea5320f9c4.js
+%%DATADIR%%/public/build/6350.08edb0f977ea5320f9c4.js.map
 %%DATADIR%%/public/build/6354.1768cf67d93e3edb7654.js
 %%DATADIR%%/public/build/6354.1768cf67d93e3edb7654.js.LICENSE.txt
 %%DATADIR%%/public/build/6354.1768cf67d93e3edb7654.js.map
@@ -3780,8 +3781,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/832.1bbcc6420497d432a98b.js
 %%DATADIR%%/public/build/832.1bbcc6420497d432a98b.js.LICENSE.txt
 %%DATADIR%%/public/build/832.1bbcc6420497d432a98b.js.map
-%%DATADIR%%/public/build/8626.96faf96fa79d9d52998e.js
-%%DATADIR%%/public/build/8626.96faf96fa79d9d52998e.js.map
+%%DATADIR%%/public/build/8626.76a448a51b23add1ee93.js
+%%DATADIR%%/public/build/8626.76a448a51b23add1ee93.js.map
 %%DATADIR%%/public/build/865.6a351d4c8e1788389d2b.js
 %%DATADIR%%/public/build/865.6a351d4c8e1788389d2b.js.LICENSE.txt
 %%DATADIR%%/public/build/865.6a351d4c8e1788389d2b.js.map
@@ -3810,9 +3811,9 @@ bin/grafana-server
 %%DATADIR%%/public/build/9104.3297bebfa2c9f0ee286b.js
 %%DATADIR%%/public/build/9104.3297bebfa2c9f0ee286b.js.LICENSE.txt
 %%DATADIR%%/public/build/9104.3297bebfa2c9f0ee286b.js.map
-%%DATADIR%%/public/build/9137.f075e1d92c723d7709ef.js
-%%DATADIR%%/public/build/9137.f075e1d92c723d7709ef.js.LICENSE.txt
-%%DATADIR%%/public/build/9137.f075e1d92c723d7709ef.js.map
+%%DATADIR%%/public/build/9137.d7fb8ff029fa51328905.js
+%%DATADIR%%/public/build/9137.d7fb8ff029fa51328905.js.LICENSE.txt
+%%DATADIR%%/public/build/9137.d7fb8ff029fa51328905.js.map
 %%DATADIR%%/public/build/9179.1ed7b3bb5070f7d631f6.js
 %%DATADIR%%/public/build/9179.1ed7b3bb5070f7d631f6.js.LICENSE.txt
 %%DATADIR%%/public/build/9179.1ed7b3bb5070f7d631f6.js.map
@@ -3889,8 +3890,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/DashboardImport.4173336038c91a0b172c.js.map
 %%DATADIR%%/public/build/DashboardListPage.0099be6c25a1c7f4ed52.js
 %%DATADIR%%/public/build/DashboardListPage.0099be6c25a1c7f4ed52.js.map
-%%DATADIR%%/public/build/DashboardPage.a8ba8795a020dda3a90d.js
-%%DATADIR%%/public/build/DashboardPage.a8ba8795a020dda3a90d.js.map
+%%DATADIR%%/public/build/DashboardPage.5bbef957f179b0dccbbf.js
+%%DATADIR%%/public/build/DashboardPage.5bbef957f179b0dccbbf.js.map
 %%DATADIR%%/public/build/DataConnectionsPage.8a67a2237493ec4b0246.js
 %%DATADIR%%/public/build/DataConnectionsPage.8a67a2237493ec4b0246.js.map
 %%DATADIR%%/public/build/DataSourceDashboards.010ef8fb1a8393c5f104.js
@@ -3987,8 +3988,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/UsersListPage.2a220612f75819771aab.js.map
 %%DATADIR%%/public/build/alertmanagerPlugin.8396ac3a4a41b26a621a.js
 %%DATADIR%%/public/build/alertmanagerPlugin.8396ac3a4a41b26a621a.js.map
-%%DATADIR%%/public/build/app.f03d0b85c5bc1584000c.js
-%%DATADIR%%/public/build/app.f03d0b85c5bc1584000c.js.map
+%%DATADIR%%/public/build/app.2e869d22a62a3c00d02d.js
+%%DATADIR%%/public/build/app.2e869d22a62a3c00d02d.js.map
 %%DATADIR%%/public/build/azureMonitorPlugin.93e9bbeebabd360f746b.js
 %%DATADIR%%/public/build/brace.edb33d518abc1f1a9670.js
 %%DATADIR%%/public/build/brace.edb33d518abc1f1a9670.js.map
@@ -4000,8 +4001,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/cloudwatchPlugin.81508f2e56a904a5857f.js
 %%DATADIR%%/public/build/cloudwatchPlugin.81508f2e56a904a5857f.js.map
 %%DATADIR%%/public/build/dark.fa07f40772cfbfcc2378.js
-%%DATADIR%%/public/build/elasticsearchPlugin.6ad792a54585088ff011.js
-%%DATADIR%%/public/build/elasticsearchPlugin.6ad792a54585088ff011.js.map
+%%DATADIR%%/public/build/elasticsearchPlugin.3828bbf3c8bcb5f0a0d5.js
+%%DATADIR%%/public/build/elasticsearchPlugin.3828bbf3c8bcb5f0a0d5.js.map
 %%DATADIR%%/public/build/explore-feature-toggle-page.b8b746f6de1cca70d16b.js
 %%DATADIR%%/public/build/explore-feature-toggle-page.b8b746f6de1cca70d16b.js.map
 %%DATADIR%%/public/build/explore.fb593d6b1bcd93e66c3c.js
@@ -4048,8 +4049,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/rst2html.3d128ffac9ac95da6ce0.js
 %%DATADIR%%/public/build/rst2html.3d128ffac9ac95da6ce0.js.LICENSE.txt
 %%DATADIR%%/public/build/rst2html.3d128ffac9ac95da6ce0.js.map
-%%DATADIR%%/public/build/runtime.fe65622f1fd3e8e05441.js
-%%DATADIR%%/public/build/runtime.fe65622f1fd3e8e05441.js.map
+%%DATADIR%%/public/build/runtime.039659ce7c5e02f11df5.js
+%%DATADIR%%/public/build/runtime.039659ce7c5e02f11df5.js.map
 %%DATADIR%%/public/build/scenes.41c9d177683f456ac4ea.js
 %%DATADIR%%/public/build/scenes.41c9d177683f456ac4ea.js.map
 %%DATADIR%%/public/build/static/img/codicon.56dba998.ttf
@@ -6224,6 +6225,7 @@ bin/grafana-server
 @dir %%GRAFANA_PLUGINDIR%%
 @dir %%GRAFANA_PROVISIONINGDIR%%
 @dir %%GRAFANA_PROVISIONINGDIR%%/access-control
+@dir %%GRAFANA_PROVISIONINGDIR%%/alerting
 @dir %%GRAFANA_PROVISIONINGDIR%%/dashboards
 @dir %%GRAFANA_PROVISIONINGDIR%%/datasources
 @dir %%GRAFANA_PROVISIONINGDIR%%/notifiers
