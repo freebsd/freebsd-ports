@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.5
+DISTVERSION=	0.9.6
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -89,7 +89,7 @@ GH_TUPLE=	Arceliar:ironwood:319147a02d98:arceliar_ironwood/vendor/github.com/Arc
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-sqlite3-js:28aa791a1c91:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:be2af5ef2e16:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:662dca17bf94:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:gomatrixserverlib:c71e518537a2:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
 		matrix-org:pinecone:b7a830c08fb9:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.13:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
