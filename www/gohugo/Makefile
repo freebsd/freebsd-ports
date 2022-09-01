@@ -1,7 +1,6 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.101.0
-PORTREVISION=	3
+DISTVERSION=	0.102.2
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -18,6 +17,7 @@ CPE_VENDOR=	gohugo
 GO_MODULE=	github.com/gohugoio/hugo
 GO_BUILDFLAGS=	-ldflags="\
 		-s -w \
+		-X github.com/gohugoio/hugo/common/hugo.buildDate=${SOURCE_DATE_EPOCH:U${SOURCE_DATE_EPOCH_CMD:sh}} \
 		-X github.com/gohugoio/hugo/common/hugo.vendorInfo=freebsd" \
 		${BUILD_TAGS}
 
@@ -50,6 +50,8 @@ PORTMANS=	hugo-completion-bash.1 hugo-completion-fish.1 hugo-completion-powershe
 
 # needed to get DISTINFO_FILE in scope for the shell command evaluation by go.mk
 .include <bsd.port.pre.mk>
+
+SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
