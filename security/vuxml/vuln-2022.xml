@@ -1,3 +1,31 @@
+  <vuln vid="5418b360-29cc-11ed-a6d4-6805ca2fa271">
+    <topic>powerdns-recursor -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>4.7.2</lt></range>
+	<range><lt>4.6.3</lt></range>
+	<range><lt>4.5.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://www.powerdns.com/news.html#20220823">
+	  <p>PowerDNS Security Advisory 2022-02: incomplete exception handling related to protobuf message generation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-37428</cvename>
+      <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2022-02.html</url>
+    </references>
+    <dates>
+      <discovery>2022-08-23</discovery>
+      <entry>2022-09-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="827b95ff-290e-11ed-a2e7-6c3be5272acd">
     <topic>Grafana -- Unauthorized file disclosure</topic>
     <affects>
