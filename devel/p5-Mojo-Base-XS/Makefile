@@ -1,8 +1,8 @@
 PORTNAME=	Mojo-Base-XS
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5
-# Won't fetch with MASTER_SITES=CPAN for some reason
-MASTER_SITES=	https://cpan.metacpan.org/authors/id/Y/YK/YKO/
+MASTER_SITES= 	CPAN
+MASTER_SITE_SUBDIR= 	CPAN:YKO
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Very fast Mojo-style accessors
