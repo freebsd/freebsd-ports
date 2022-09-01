@@ -4,7 +4,6 @@ share/bash-completion/completions/wxmaxima
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
 %%PORTDOCS%%%%DOCSDIR%%/BatchImage.png
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/GPL.txt
 %%PORTDOCS%%%%DOCSDIR%%/InputCell.png
 %%PORTDOCS%%%%DOCSDIR%%/MatrixTableExample.png
@@ -151,7 +150,7 @@ share/wxMaxima/sumCells.wxm
 share/wxMaxima/testbench_all_celltypes.wxm
 share/wxMaxima/testbench_simple.mac
 share/wxMaxima/testbench_simple2.mac
-share/wxMaxima/testbench_simple2.mac.wxmx
+share/wxMaxima/testbench_simple2.wxmx
 share/wxMaxima/textcells.wxm
 share/wxMaxima/threadtest.wxm
 share/wxMaxima/threadtest2.wxm
