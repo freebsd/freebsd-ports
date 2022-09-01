@@ -17542,3 +17542,4 @@ print/py-pdf|print/py-pypdf|2022-08-27|Rename to match upstream naming
 shells/ksh93-devel|shells/ksh-devel|2022-08-28|Development has resumed under a new GH account
 devel/boehm-gc-redirect||2022-08-29|No consumer in ports tree
 devel/libthreader|devel/libthreadar|2022-08-29|Fix directory name
+mail/rainloop-community|mail/rainloop|2022-09-01|Only one edition "legacy" is provided now

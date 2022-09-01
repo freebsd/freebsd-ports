@@ -632,7 +632,6 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/Enumerations/ConditionsType.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/FiltersInterface.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Filters/SieveStorage.php
-%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Prem.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Settings.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Settings/DefaultSettings.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Settings/ISettings.php
@@ -649,6 +648,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/TwoFactorAuth/AbstractTwoFactorAuth.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/TwoFactorAuth/GoogleTwoFactorAuth.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/TwoFactorAuth/TwoFactorAuthInterface.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/Version.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Service.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/ServiceActions.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Settings.php
@@ -1160,7 +1160,6 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/AdminSettingsDomainListItem.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/AdminSettingsDomains.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/AdminSettingsGeneral.html
-%%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/AdminSettingsLicensing.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/AdminSettingsLogin.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/AdminSettingsPackages.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/AdminSettingsPackagesListItem.html
@@ -1170,7 +1169,6 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/AdminSettingsPlugins.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/AdminSettingsSecurity.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/AdminSettingsSocial.html
-%%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/PopupsActivate.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/PopupsDomain.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/PopupsDomainAlias.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/Admin/PopupsPlugin.html

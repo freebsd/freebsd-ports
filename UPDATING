@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220901:
+  AFFECTS: user of mail/rainloop-community
+  AUTHOR: yasu@FreeBSD.org
+
+  Since 1.17.0 upstream distributes only one edition "lagacy" under MIT license
+  and mail/rainloop-community is remove as a result. So please uninstall
+  mail/rainloop-community (rainloop-community-phpXY) and install mail/rainloop
+  (rainloop-phpXY) instead.
+
 20220831:
   AFFECTS: users of x11/xscreensaver on 13.1-RELEASE
   AUTHOR: zirias@FreeBSD.org

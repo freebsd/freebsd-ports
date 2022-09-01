@@ -1,20 +1,14 @@
 PORTNAME=	rainloop
-DISTVERSION=	1.16.0
-PORTREVISION=	2
+DISTVERSIONPREFIX=	legacy-
+DISTVERSION=	1.17.0
 CATEGORIES=	mail www
 MASTER_SITES=	https://github.com/RainLoop/rainloop-webmail/releases/download/v${PORTVERSION}/
-PKGNAMESUFFIX?=	${PHP_PKGNAMESUFFIX}
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
-COMMENT?=	Modern and interactive webmail
+COMMENT=	Modern and interactive webmail
 
-.if "${PKGNAMESUFFIX}" == "${PHP_PKGNAMESUFFIX}"
-LICENSE=	RainLoop
-LICENSE_NAME=	RainLoop Software License
-LICENSE_TEXT=	License can be found at: http://www.rainloop.net/licensing/
-# Redistribution in any form is prohibited
-LICENSE_PERMS=	auto-accept
-.endif
+LICENSE=	MIT
 
 USES=		php:web,flavors zip
 USE_PHP=	curl dom iconv json openssl pcre simplexml spl xml zlib

@@ -547,7 +547,6 @@
     SUBDIR += queue-fix
     SUBDIR += queue-repair
     SUBDIR += rainloop
-    SUBDIR += rainloop-community
     SUBDIR += ratelimit-policyd
     SUBDIR += raysfilter
     SUBDIR += razor-agents
