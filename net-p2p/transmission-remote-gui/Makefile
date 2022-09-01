@@ -14,7 +14,7 @@ COMMENT=	Remote GUI for transmission daemon
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		desktop-file-utils fpc gnome iconv lazarus:flavors x11
+USES=		desktop-file-utils fpc gnome iconv lazarus:flavors xorg
 USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-net fcl-xml pasjpeg \
 		rtl-objpas rtl-extra x11
 USE_GNOME=	cairo
