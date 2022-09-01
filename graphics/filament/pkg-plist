@@ -19,12 +19,14 @@ bin/specular-color
 bin/uberz
 include/backend/BufferDescriptor.h
 include/backend/CallbackHandler.h
+include/backend/DriverApiForward.h
 include/backend/DriverEnums.h
 include/backend/Handle.h
 include/backend/PipelineState.h
 include/backend/PixelBufferDescriptor.h
 include/backend/Platform.h
 include/backend/PresentCallable.h
+include/backend/Program.h
 include/backend/SamplerDescriptor.h
 include/backend/TargetBufferInfo.h
 include/camutils/Bookmark.h
