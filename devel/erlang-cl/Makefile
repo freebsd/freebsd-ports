@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	cl-
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenCL binding for Erlang
 
 LICENSE=	MIT
