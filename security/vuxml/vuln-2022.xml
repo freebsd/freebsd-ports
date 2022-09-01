@@ -96,8 +96,8 @@
       </body>
     </description>
     <references>
-      <cvename>2022-36059</cvename>
-      <cvename>2022-36060</cvename>
+      <cvename>CVE-2022-36059</cvename>
+      <cvename>CVE-2022-36060</cvename>
       <url>https://matrix.org/blog/2022/08/31/security-releases-matrix-js-sdk-19-4-0-and-matrix-react-sdk-3-53-0</url>
     </references>
     <dates>
