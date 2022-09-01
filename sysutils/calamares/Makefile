@@ -1,6 +1,5 @@
 PORTNAME=	calamares
-DISTVERSION=	3.2.44.2
-PORTREVISION=	3
+DISTVERSION=	3.2.61
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/calamares/${PORTNAME}/releases/download/v${DISTVERSION}/
 

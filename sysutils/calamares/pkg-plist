@@ -152,8 +152,7 @@ lib/calamares/modules/localeq/libcalamares_viewmodule_localeq.so
 lib/calamares/modules/localeq/module.desc
 lib/calamares/modules/luksbootkeyfile/libcalamares_job_luksbootkeyfile.so
 lib/calamares/modules/luksbootkeyfile/module.desc
-lib/calamares/modules/luksopenswaphookcfg/luksopenswaphookcfg.schema.yaml
-lib/calamares/modules/luksopenswaphookcfg/main.py
+lib/calamares/modules/luksopenswaphookcfg/libcalamares_job_luksopenswaphookcfg.so
 lib/calamares/modules/luksopenswaphookcfg/module.desc
 lib/calamares/modules/machineid/libcalamares_job_machineid.so
 lib/calamares/modules/machineid/module.desc
@@ -179,7 +178,6 @@ lib/calamares/modules/packagechooserq/module.desc
 lib/calamares/modules/packages/main.py
 lib/calamares/modules/packages/module.desc
 lib/calamares/modules/packages/packages.schema.yaml
-lib/calamares/modules/packages/test.yaml
 lib/calamares/modules/plymouthcfg/main.py
 lib/calamares/modules/plymouthcfg/module.desc
 lib/calamares/modules/plymouthcfg/plymouthcfg.schema.yaml
@@ -201,9 +199,8 @@ lib/calamares/modules/summaryq/libcalamares_viewmodule_summaryq.so
 lib/calamares/modules/summaryq/module.desc
 lib/calamares/modules/tracking/libcalamares_viewmodule_tracking.so
 lib/calamares/modules/tracking/module.desc
-lib/calamares/modules/umount/main.py
+lib/calamares/modules/umount/libcalamares_job_umount.so
 lib/calamares/modules/umount/module.desc
-lib/calamares/modules/umount/umount.schema.yaml
 lib/calamares/modules/unpackfs/main.py
 lib/calamares/modules/unpackfs/module.desc
 lib/calamares/modules/unpackfs/runtests.sh
@@ -231,9 +228,9 @@ lib/cmake/Calamares/CalamaresTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Calamares/CalamaresTargets.cmake
 lib/cmake/Calamares/FindYAMLCPP.cmake
 lib/libcalamares.so
-lib/libcalamares.so.3.2.44.2
+lib/libcalamares.so.3.2.61
 lib/libcalamaresui.so
-lib/libcalamaresui.so.3.2.44.2
+lib/libcalamaresui.so.3.2.61
 man/man8/calamares.8.gz
 share/applications/calamares.desktop
 %%DATADIR%%/branding/default/banner.png
