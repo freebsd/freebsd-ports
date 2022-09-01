@@ -1,9 +1,7 @@
 MASTER_SITES+=	https://gitea.com/xorm/builder/archive/:builder \
-		https://gitea.com/xorm/core/archive/:core \
-		https://gitea.com/xorm/xorm/archive/:xorm
+		https://gitea.com/xorm/core/archive/:core
 DISTFILES+=	v0.3.6${EXTRACT_SUFX}:builder \
-		v0.7.3${EXTRACT_SUFX}:core \
-		v0.8.2${EXTRACT_SUFX}:xorm
+		v0.7.3${EXTRACT_SUFX}:core
 GH_TUPLE=	\
 		Azure:azure-sdk-for-go:v59.3.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:azure-sdk-for-go:sdk/azcore/v0.22.0:azure_azure_sdk_for_go_sdk_azcore \
@@ -90,29 +88,29 @@ GH_TUPLE=	\
 		go-sourcemap:sourcemap:v2.1.3:go_sourcemap_sourcemap/vendor/github.com/go-sourcemap/sourcemap \
 		go-sql-driver:mysql:v1.6.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
-		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gofrs:uuid:v4.0.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		gogo:googleapis:v1.4.1:gogo_googleapis/vendor/github.com/gogo/googleapis \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		gogo:status:v1.1.0:gogo_status/vendor/github.com/gogo/status \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:ae814b36b871:golang_crypto/vendor/golang.org/x/crypto \
-		golang:exp:85be41e4509f:golang_exp/vendor/golang.org/x/exp \
+		golang:crypto:05595931fe9d:golang_crypto/vendor/golang.org/x/crypto \
+		golang:exp:b0d781184e0d:golang_exp/vendor/golang.org/x/exp \
 		golang:glog:23def4e6c14b:golang_glog/vendor/github.com/golang/glog \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.4.1:golang_mod/vendor/golang.org/x/mod \
-		golang:net:6a13c67c3ce4:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:d3ed0bb246c8:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:net:1bab6f366d9e:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:fd043fe589d2:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:da31bd327af9:golang_sys/vendor/golang.org/x/sys \
+		golang:sync:0de741cfad7f:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.1.9:golang_tools/vendor/golang.org/x/tools \
+		golang:time:579cf78fd858:golang_time/vendor/golang.org/x/time \
+		golang:tools:v0.1.11:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		golang-jwt:jwt:v3.2.1:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
 		golang-jwt:jwt:v4.2.0:golang_jwt_jwt_v4/vendor/github.com/golang-jwt/jwt/v4 \
@@ -123,7 +121,7 @@ GH_TUPLE=	\
 		google:btree:v1.0.1:google_btree/vendor/github.com/google/btree \
 		google:flatbuffers:v2.0.0:google_flatbuffers/vendor/github.com/google/flatbuffers \
 		google:go-cloud:99801bbb523a:google_go_cloud/vendor/gocloud.dev \
-		google:go-cmp:v0.5.7:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-cmp:v0.5.8:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:81c1377c94b1:google_go_genproto/vendor/google.golang.org/genproto \
 		google:subcommands:v1.0.1:google_subcommands/vendor/github.com/google/subcommands \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
@@ -139,11 +137,12 @@ GH_TUPLE=	\
 		grafana:dskit:3a88ec0b675f:grafana_dskit/vendor/github.com/grafana/dskit \
 		grafana:go-mssqldb:d0ce3c521036:grafana_go_mssqldb/vendor/github.com/denisenkom/go-mssqldb \
 		grafana:grafana-aws-sdk:v0.10.3:grafana_grafana_aws_sdk/vendor/github.com/grafana/grafana-aws-sdk \
-		grafana:grafana-azure-sdk-go:v1.1.0:grafana_grafana_azure_sdk_go/vendor/github.com/grafana/grafana-azure-sdk-go \
+		grafana:grafana-azure-sdk-go:v1.3.0:grafana_grafana_azure_sdk_go/vendor/github.com/grafana/grafana-azure-sdk-go \
 		grafana:grafana-google-sdk-go:b190293eaf58:grafana_grafana_google_sdk_go/vendor/github.com/grafana/grafana-google-sdk-go \
 		grafana:grafana-plugin-sdk-go:v0.131.0:grafana_grafana_plugin_sdk_go/vendor/github.com/grafana/grafana-plugin-sdk-go \
 		grafana:loki:7832783b1caa:grafana_loki/vendor/github.com/grafana/loki \
 		grafana:saml:aed1b2edd86b:grafana_saml/vendor/github.com/crewjam/saml \
+		grafana:xorm:2fcda7565af6:grafana_xorm/vendor/xorm.io/xorm \
 		grpc-ecosystem:go-grpc-middleware:v1.3.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:6af20e3a5340:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
 		grpc:grpc-go:v1.42.0:grpc_grpc_go/vendor/google.golang.org/grpc \
@@ -286,4 +285,3 @@ deps-post-extract:
 	@${MKDIR} ${WRKSRC}/vendor/xorm.io
 	@${RLN} ${WRKDIR}/builder ${WRKSRC}/vendor/xorm.io/
 	@${RLN} ${WRKDIR}/core ${WRKSRC}/vendor/xorm.io/
-	@${RLN} ${WRKDIR}/xorm ${WRKSRC}/vendor/xorm.io/
