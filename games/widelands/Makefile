@@ -26,6 +26,8 @@ CMAKE_ARGS=	-DWL_INSTALL_BASEDIR="${PREFIX}" \
 		-DWL_OPTIMIZE_FLAGS="" \
 		-Wno-dev
 
+PORTSCOUT=	limit:^[0-9]+\.
+
 PORTDATA=	*
 PORTDOCS=	*
 
