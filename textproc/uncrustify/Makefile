@@ -15,6 +15,8 @@ USES=		cmake compiler:c++11-lang python:build
 CMAKE_ON=	NoGitVersionString
 TEST_TARGET=	test
 
+PORTSCOUT=	limit:^[0-9]+\.
+
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
