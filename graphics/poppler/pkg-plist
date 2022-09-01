@@ -136,7 +136,7 @@ include/poppler/splash/SplashXPath.h
 include/poppler/splash/SplashXPathScanner.h
 lib/libpoppler-cpp.so
 lib/libpoppler-cpp.so.0
-lib/libpoppler-cpp.so.0.10.0
+lib/libpoppler-cpp.so.0.11.0
 lib/libpoppler.so
 lib/libpoppler.so.%%SHLIB_VER%%
 lib/libpoppler.so.%%SHLIB_VER%%.0.0
