@@ -1,7 +1,7 @@
 PORTNAME=	darknet
 DISTVERSIONPREFIX=	darknet_yolo_v
 DISTVERSION=	4_pre
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	misc # machine-learning
 
