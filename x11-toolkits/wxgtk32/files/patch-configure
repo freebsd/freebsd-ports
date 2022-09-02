@@ -1,0 +1,57 @@
+--- configure.orig	2021-04-12 22:23:58 UTC
++++ configure
+@@ -3969,7 +3969,7 @@ case "${host}" in
+ 
+     DEFAULT_DEFAULT_wxUSE_GTK=1
+   ;;
+-  *-*-freebsd*)
++  *-*-dragonfly*|*-*-freebsd*)
+     USE_BSD=1
+     USE_FREEBSD=1
+     $as_echo "#define __FREEBSD__ 1" >>confdefs.h
+@@ -20997,6 +20997,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+ SEARCH_INCLUDE="\
++    $X11BASE/include          \
+     /usr/local/include        \
+     /usr/local/X11/include    \
+     /usr/local/include/X11    \
+@@ -32061,9 +32062,6 @@ $as_echo "$as_me: WARNING: BeOS threads are not yet su
+                                         THREAD_OPTS="-pthreads $THREAD_OPTS"
+                 fi
+                 ;;
+-          *-*-freebsd*)
+-                                                THREAD_OPTS="-kthread lthread $THREAD_OPTS c_r"
+-                ;;
+           *-*-darwin* | *-*-cygwin* )
+                                                 THREAD_OPTS=""
+                 ;;
+@@ -32839,10 +32837,10 @@ if test "x$ac_cv_func_gmtime_r" = xyes; then :
+    $as_echo "#define HAVE_GMTIME_R 1" >>confdefs.h
+ 
+ fi
++OPTIMISE_CFLAGS=
+ 
+ 
+ 
+-
+     ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+@@ -39638,6 +39636,7 @@ fi
+       ;;
+ 
+       powerpc-apple-macos* | \
++      *-*-dragonfly* | \
+       *-*-freebsd* | *-*-openbsd* | *-*-haiku* | *-*-netbsd* | *-*-gnu* | *-*-k*bsd*-gnu | \
+       *-*-mirbsd* | \
+       *-*-sunos4* | \
+@@ -39679,6 +39678,7 @@ fi
+ 
+     case "${BAKEFILE_HOST}" in
+       *-*-linux* | *-*-freebsd* | *-*-openbsd* | *-*-haiku* | *-*-netbsd* | \
++      *-*-dragonfly* | \
+       *-*-k*bsd*-gnu | *-*-mirbsd* | *-*-gnu* )
+         if test "x$SUNCXX" = "xyes"; then
+             SONAME_FLAG="-h "

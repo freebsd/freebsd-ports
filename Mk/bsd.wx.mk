@@ -111,9 +111,9 @@ _WX_Definitions_Done=	yes
 
 _WX_COMPS_ALL=		wx contrib python
 _WX_DEP_TYPES_ALL=	build lib run
-_WX_VERS_ALL=		2.8 3.0 3.1
-_WX_VERS_UC_ALL=	2.8 3.0 3.1
-_WX_VERS_SKIP=		3.0 3.1
+_WX_VERS_ALL=		2.8 3.0 3.1 3.2
+_WX_VERS_UC_ALL=	2.8 3.0 3.1 3.2
+_WX_VERS_SKIP=		3.0 3.1 3.2
 _WX_VERS_LISTS=		WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 
 #
@@ -142,6 +142,13 @@ _WX_FILE_python_3.1=	${PYTHON_SITELIBDIR}/wx/__init__.py
 # wxgtk 3.1
 _WX_PORT_wx_3.1=	x11-toolkits/wxgtk31
 _WX_LIB_wx_3.1=		wx_baseu-3.1
+
+_WX_PORT_python_3.2=	x11-toolkits/py-wxPython4@${PY_FLAVOR}
+_WX_FILE_python_3.2=	${PYTHON_SITELIBDIR}/wx/__init__.py
+
+# wxgtk 3.2
+_WX_PORT_wx_3.2=	x11-toolkits/wxgtk32
+_WX_LIB_wx_3.2=		wx_baseu-3.2
 
 # Set _WX_SHVER_comp_ver to 0 and _WX_FILE_comp_ver for libs appropriately.
 # Set _WX_DEPTYPE_comp_ver for "python" to "run", and others to "lib".
@@ -406,7 +413,7 @@ _WX_VER=		${ver}
 # Set variables.
 #
 
-.  if ${_WX_VER} == 3.1
+.  if ${_WX_VER} == 3.1 || ${_WX_VER} == 3.2
 _GTKVER=	3
 .  elif ${_WX_VER} == 3.0
 _GTKVER=	${WANT_WXGTK_VER:U3}
