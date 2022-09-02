@@ -48,10 +48,10 @@ lib/cmake/drumstick/drumstick-widgets-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/drumstick/drumstick-widgets-targets.cmake
 %%ALSA%%lib/drumstick2/libdrumstick-rt-alsa-in.so
 %%ALSA%%lib/drumstick2/libdrumstick-rt-alsa-out.so
-%%PULSEAUDIO%%lib/drumstick2/libdrumstick-rt-eassynth.so
-lib/drumstick2/libdrumstick-rt-fluidsynth.so
-lib/drumstick2/libdrumstick-rt-net-in.so
-lib/drumstick2/libdrumstick-rt-net-out.so
+%%SONIVOX%%lib/drumstick2/libdrumstick-rt-eassynth.so
+%%FLUIDSYNTH%%lib/drumstick2/libdrumstick-rt-fluidsynth.so
+%%NETWORK%%lib/drumstick2/libdrumstick-rt-net-in.so
+%%NETWORK%%lib/drumstick2/libdrumstick-rt-net-out.so
 lib/drumstick2/libdrumstick-rt-oss-in.so
 lib/drumstick2/libdrumstick-rt-oss-out.so
 %%ALSA%%lib/libdrumstick-alsa.so

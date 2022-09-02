@@ -1,6 +1,6 @@
 PORTNAME=	drumstick
 DISTVERSION=	2.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -10,30 +10,39 @@ COMMENT=	MIDI libraries for Qt/C++
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
-		libsonivox.so:audio/sonivox
-RUN_DEPENDS=	${LOCALBASE}/share/sounds/sf2/FluidR3_GM.sf2:audio/fluid-soundfont
-
 USES=		compiler:c++11-lang cmake desktop-file-utils pkgconfig qt:6 shared-mime-info tar:bz2
 USE_QT=		base svg 5compat tools_build
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DUSE_QT=6
+CMAKE_OFF=	BUILD_TESTING
 
-OPTIONS_DEFINE=		ALSA PULSEAUDIO MANPAGES
-OPTIONS_DEFAULT=	ALSA PULSEAUDIO MANPAGES
+OPTIONS_DEFINE=		ALSA MANPAGES
+OPTIONS_MULTI=			RT_BACKEND
+OPTIONS_MULTI_RT_BACKEND=	FLUIDSYNTH NETWORK SONIVOX
+OPTIONS_DEFAULT=	ALSA MANPAGES ${OPTIONS_MULTI_RT_BACKEND}
 OPTIONS_SUB=		yes
 
 ALSA_CMAKE_BOOL=	BUILD_ALSA
 ALSA_USES=		localbase
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-PULSEAUDIO_CMAKE_BOOL=	USE_PULSEAUDIO
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-
 MANPAGES_CMAKE_BOOL=	BUILD_DOCS
 MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			docbook-xsl>0:textproc/docbook-xsl
+
+FLUIDSYNTH_DESC=	Build FluidSynth RT backend
+FLUIDSYNTH_CMAKE_BOOL=	USE_FLUIDSYNTH
+FLUIDSYNTH_RUN_DEPENDS=	${LOCALBASE}/share/sounds/sf2/FluidR3_GM.sf2:audio/fluid-soundfont
+FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
+
+NETWORK_DESC=		Build Network RT backend
+NETWORK_CMAKE_BOOL=	USE_NETWORK # QtNetwork is used
+
+SONIVOX_DESC=		Build FluidSynth RT backend
+SONIVOX_CMAKE_BOOL=	USE_SONIVOX USE_PULSEAUDIO # these two options have to be always equal
+SONIVOX_LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
+			libsonivox.so:audio/sonivox
 
 post-patch:
 	# instead of default.sf2 use FluidR3_GM.sf2 installed by fluid-soundfont
