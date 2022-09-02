@@ -22,12 +22,4 @@ GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/lib/pcc
 PORTDATA=	*
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OPSYS} == FreeBSD
-	@${REINPLACE_CMD} -e '/targmach=amd64/s/x86_64/amd64/' \
-		${WRKSRC}/configure
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
