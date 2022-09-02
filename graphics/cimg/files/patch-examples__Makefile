@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2022-04-26 06:16:18 UTC
+--- examples/Makefile.orig	2022-08-19 17:18:04 UTC
 +++ examples/Makefile
 @@ -89,7 +89,7 @@ VERSION2 = $(shell grep 'cimg_version\ ' ../CImg.h | t
  VERSION3 = $(shell grep 'cimg_version\ ' ../CImg.h | tail -c2 | head -c1)
