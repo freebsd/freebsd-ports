@@ -3,7 +3,7 @@ DISTVERSION=	g20180725
 PORTREVISION=	4
 CATEGORIES=	security
 
-MAINTAINER=	michiel@vanbaak.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
 
 LICENSE=	GPLv3+
