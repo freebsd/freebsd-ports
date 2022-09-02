@@ -1,0 +1,15 @@
+--- configure.ac.orig	2022-08-31 15:52:22 UTC
++++ configure.ac
+@@ -27,12 +27,6 @@ AC_PROG_RANLIB
+ AC_CHECK_TOOL(STRIP, strip, )
+ AC_CHECK_TOOL(CONVERT, convert, )
+ 
+-if test "$GCC" = "yes"
+-then
+-        WARNINGS="-Wall -Wdeclaration-after-statement -Wredundant-decls"
+-        CFLAGS="-O$OPT_LEVEL -g $WARNINGS $orig_CFLAGS"
+-fi
+-
+ dnl network libraries
+ 
+ case "$target" in

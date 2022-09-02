@@ -880,6 +880,7 @@
     SUBDIR += scummvm-tools
     SUBDIR += sdb
     SUBDIR += sdl-ball
+    SUBDIR += sdl-sopwith
     SUBDIR += sdl_jewels
     SUBDIR += sdl_lopan
     SUBDIR += sdl_scavenger
@@ -915,7 +916,6 @@
     SUBDIR += solarconquest
     SUBDIR += solarus
     SUBDIR += solarus-quest-editor
-    SUBDIR += sopwith
     SUBDIR += spacejunk
     SUBDIR += spacezero
     SUBDIR += speak
