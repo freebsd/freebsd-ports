@@ -1127,6 +1127,7 @@ share/gir-1.0/Adw-1.gir
 share/icons/hicolor/scalable/apps/org.gnome.Adwaita1.Demo.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Adwaita1.Demo-symbolic.svg
 share/locale/ab/LC_MESSAGES/libadwaita.mo
+share/locale/bg/LC_MESSAGES/libadwaita.mo
 share/locale/ca/LC_MESSAGES/libadwaita.mo
 share/locale/cs/LC_MESSAGES/libadwaita.mo
 share/locale/da/LC_MESSAGES/libadwaita.mo
@@ -1148,6 +1149,7 @@ share/locale/ja/LC_MESSAGES/libadwaita.mo
 share/locale/kk/LC_MESSAGES/libadwaita.mo
 share/locale/ko/LC_MESSAGES/libadwaita.mo
 share/locale/lt/LC_MESSAGES/libadwaita.mo
+share/locale/ne/LC_MESSAGES/libadwaita.mo
 share/locale/nl/LC_MESSAGES/libadwaita.mo
 share/locale/oc/LC_MESSAGES/libadwaita.mo
 share/locale/pl/LC_MESSAGES/libadwaita.mo
@@ -1163,6 +1165,7 @@ share/locale/tr/LC_MESSAGES/libadwaita.mo
 share/locale/uk/LC_MESSAGES/libadwaita.mo
 share/locale/vi/LC_MESSAGES/libadwaita.mo
 share/locale/zh_CN/LC_MESSAGES/libadwaita.mo
+share/locale/zh_TW/LC_MESSAGES/libadwaita.mo
 share/metainfo/org.gnome.Adwaita1.Demo.metainfo.xml
 share/vala/vapi/libadwaita-1.deps
 share/vala/vapi/libadwaita-1.vapi
