@@ -258,7 +258,7 @@ bin/xscreensaver-hacks/xrayswarm
 bin/xscreensaver-hacks/xspirograph
 bin/xscreensaver-hacks/zoom
 bin/xscreensaver-settings
-%%PAM%%etc/pam.d/xscreensaver
+etc/pam.d/xscreensaver
 lib/X11/app-defaults/XScreenSaver
 man/man1/xscreensaver-command.1.gz
 man/man1/xscreensaver-demo.1.gz

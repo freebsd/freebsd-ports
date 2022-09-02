@@ -1,5 +1,6 @@
 PORTNAME=	xscreensaver
 PORTVERSION=	6.04
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -10,7 +11,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	giftopnm:graphics/netpbm \
 		p5-libwww>0:www/p5-libwww \
-		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https
+		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
+		unix-selfauth-helper>0:security/unix-selfauth-helper
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgle.so:graphics/gle \
@@ -35,6 +37,7 @@ CONFIGURE_ARGS=	--enable-locking \
 		--with-gtk \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
 		--with-jpeg=${LOCALBASE} \
+		--with-pam \
 		--with-pixbuf \
 		--with-randr-ext \
 		--with-xdbe-ext \
@@ -43,17 +46,14 @@ CONFIGURE_ARGS=	--enable-locking \
 		--with-xft \
 		--with-xinerama-ext \
 		--with-xshm-ext \
-		--without-kerberos
+		--without-kerberos \
+		--without-shadow
 MAKE_ARGS+=	install_prefix=${STAGEDIR}
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		FIREF NLS NSFW PAM SETUID_HACKS XAOS1 XDALI XEARTH \
+OPTIONS_DEFINE=		FIREF NLS NSFW SETUID_HACKS XAOS1 XDALI XEARTH \
 			XMOUN XPLANET XSNOW
-OPTIONS_DEFAULT=	PAM
 OPTIONS_SUB=		yes
-
-PAM_CONFIGURE_WITH=	pam
-PAM_RUN_DEPENDS=	unix-selfauth-helper>0:security/unix-selfauth-helper
 
 SETUID_HACKS_DESC=	Install sonar hack suid so it can ping
 SETUID_HACKS_CONFIGURE_WITH=	setuid-hacks
@@ -104,8 +104,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/x*.xml ${STAGEDIR}${DATADIR}/config/
 	${INSTALL_DATA} ${WRKDIR}/*.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	${RM} ${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver.pam
-
-post-install-PAM-on:
 	${INSTALL_DATA} ${WRKDIR}/xscreensaver.pam ${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver
 
 .include <bsd.port.mk>
