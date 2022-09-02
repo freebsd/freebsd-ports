@@ -52,6 +52,37 @@ index facb951d3c..81861a7457 100644
          r.nField = pX->nMem;
          r.default_rc = 0;
          r.eqSeen = 0;
+diff --git src/build.c src/build.c
+index e243e795fe..679594e11f 100644
+--- src/build.c
++++ src/build.c
+@@ -311,7 +311,7 @@ void sqlite3NestedParse(Parse *pParse, const char *zFormat, ...){
+   char *zSql;
+   sqlite3 *db = pParse->db;
+   u32 savedDbFlags = db->mDbFlags;
+-  char saveBuf[PARSE_TAIL_SZ];
++  Parse saveParse;
+ 
+   if( pParse->nErr ) return;
+   assert( pParse->nested<10 );  /* Nesting should only be of limited depth */
+@@ -327,7 +327,7 @@ void sqlite3NestedParse(Parse *pParse, const char *zFormat, ...){
+     return;
+   }
+   pParse->nested++;
+-  memcpy(saveBuf, PARSE_TAIL(pParse), PARSE_TAIL_SZ);
++  memcpy(PARSE_TAIL(&saveParse), PARSE_TAIL(pParse), PARSE_TAIL_SZ);
+   memset(PARSE_TAIL(pParse), 0, PARSE_TAIL_SZ);
+   db->mDbFlags |= DBFLAG_PreferBuiltin;
+   sqlite3RunParser(pParse, zSql);
+@@ -335,7 +335,7 @@ void sqlite3NestedParse(Parse *pParse, const char *zFormat, ...){
+   pParse->zErrMsg = 0;
+   db->mDbFlags = savedDbFlags;
+   sqlite3DbFree(db, zSql);
+-  memcpy(PARSE_TAIL(pParse), saveBuf, PARSE_TAIL_SZ);
++  memcpy(PARSE_TAIL(pParse), PARSE_TAIL(&saveParse), PARSE_TAIL_SZ);
+   pParse->nested--;
+ }
+ 
 diff --git src/mem1.c src/mem1.c
 index 512ab3747f..2cdc30aa53 100644
 --- src/mem1.c
@@ -249,10 +280,20 @@ index a93b146894..aa77ffac93 100644
    sz = sizeof(PCache1) + sizeof(PGroup)*pcache1.separateCache;
    pCache = (PCache1 *)sqlite3MallocZero(sz);
 diff --git src/sqliteInt.h src/sqliteInt.h
-index 45e3453464..5913cae7f4 100644
+index 45e3453464..0a47de6322 100644
 --- src/sqliteInt.h
 +++ src/sqliteInt.h
-@@ -936,6 +936,14 @@ typedef INT16_TYPE LogEst;
+@@ -607,6 +607,9 @@
+ ** hack only.
+ */
+ #ifdef SQLITE_INLINE_MEMCPY
++#ifdef __CHERI_PURE_CAPABILITY__
++#error SQLITE_INLINE_MEMCPY is not allowed when compiling for CheriABI.
++#endif
+ # define memcpy(D,S,N) {char*xxd=(char*)(D);const char*xxs=(const char*)(S);\
+                         int xxn=(N);while(xxn-->0)*(xxd++)=*(xxs++);}
+ #endif
+@@ -936,6 +939,14 @@ typedef INT16_TYPE LogEst;
  #define LARGEST_UINT64 (0xffffffff|(((u64)0xffffffff)<<32))
  #define SMALLEST_INT64 (((i64)-1) - LARGEST_INT64)
  
@@ -267,7 +308,7 @@ index 45e3453464..5913cae7f4 100644
  /*
  ** Round up a number to the next larger multiple of 8.  This is used
  ** to force 8-byte alignment on 64-bit architectures.
-@@ -945,18 +953,39 @@ typedef INT16_TYPE LogEst;
+@@ -945,18 +956,39 @@ typedef INT16_TYPE LogEst;
  ** ROUND8P() assumes that the argument is already an integer number of
  ** pointers in size, and so it is a no-op on systems where the pointer
  ** size is 8.
@@ -310,7 +351,7 @@ index 45e3453464..5913cae7f4 100644
  
  /*
  ** Assert that the pointer X is aligned to an 8-byte boundary.  This
-@@ -970,7 +999,12 @@ typedef INT16_TYPE LogEst;
+@@ -970,7 +1002,12 @@ typedef INT16_TYPE LogEst;
  #ifdef SQLITE_4_BYTE_ALIGNED_MALLOC
  # define EIGHT_BYTE_ALIGNMENT(X)   ((((char*)(X) - (char*)0)&3)==0)
  #else
@@ -448,6 +489,26 @@ index 0e17c7d91f..8dd1057ac6 100644
    } u;
    char *z;            /* String or BLOB value */
    int n;              /* Number of characters in string value, excluding '\0' */
+diff --git src/vdbeapi.c src/vdbeapi.c
+index 4e719ede36..c661f19cb8 100644
+--- src/vdbeapi.c
++++ src/vdbeapi.c
+@@ -1124,10 +1124,13 @@ static const Mem *columnNullValue(void){
+   ** that a Mem structure is located on an 8-byte boundary. To prevent
+   ** these assert()s from failing, when building with SQLITE_DEBUG defined
+   ** using gcc, we force nullMem to be 8-byte aligned using the magical
+-  ** __attribute__((aligned(8))) macro.  */
++  ** __attribute__((aligned(8))) macro.
++  ** For CheriABI, such alignment is increased to 16 bytes to satisfy that the
++  ** returned capability is appropriately aligned for CHERI architectures.
++  */
+   static const Mem nullMem 
+ #if defined(SQLITE_DEBUG) && defined(__GNUC__)
+-    __attribute__((aligned(8))) 
++    __attribute__((aligned(SQLITE_DEFAULT_ALIGNMENT)))
+ #endif
+     = {
+         /* .u          = */ {0},
 diff --git src/vdbeaux.c src/vdbeaux.c
 index 7c3be404ef..3e327ff5b2 100644
 --- src/vdbeaux.c
