@@ -1,5 +1,5 @@
 PORTNAME=	vmpk
-DISTVERSION=	0.8.7
+DISTVERSION=	0.8.8
 CATEGORIES=	audio
 MASTER_SITES=	SF/vmpk/vmpk/${PORTVERSION}/
 
@@ -9,21 +9,24 @@ COMMENT=	Virtual MIDI Piano Keyboard
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	xsltproc:textproc/libxslt \
-		docbook-xsl>0:textproc/docbook-xsl
 LIB_DEPENDS=	libdrumstick-rt.so:audio/drumstick
 
-USES=		compiler:c++11-lang cmake localbase:ldflags pkgconfig qt:5 tar:bz2 xorg
-USE_QT=		core gui network svg widgets x11extras \
-		buildtools_build linguisttools_build qmake_build
+USES=		compiler:c++11-lang cmake localbase:ldflags pkgconfig qt:6 tar:bz2 xorg
+USE_QT=		base svg tools_build
 USE_XORG=	xcb
 
 CMAKE_ON=	EMBED_TRANSLATIONS
+CMAKE_ARGS=	-DUSE_QT=6
 
-OPTIONS_DEFINE=		DBUS
+OPTIONS_DEFINE=		DBUS MANPAGES
+OPTIONS_DEFAULT=	DBUS #MANPAGES
 OPTIONS_SUB=		yes
 
 DBUS_CMAKE_BOOL=	ENABLE_DBUS
-DBUS_USE=		qt=dbus
+
+MANPAGES_CMAKE_BOOL=	BUILD_DOCS
+MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+			docbook-xsl>0:textproc/docbook-xsl
+MANPAGES_BROKEN=	see https://github.com/pedrolcl/VMPK/issues/4
 
 .include <bsd.port.mk>
