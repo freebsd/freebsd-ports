@@ -1,5 +1,6 @@
 PORTNAME=	drumstick
 DISTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	audio multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -20,7 +21,7 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DUSE_QT=6
 
 OPTIONS_DEFINE=		ALSA PULSEAUDIO MANPAGES
-OPTIONS_DEFAULT=	ALSA PULSEAUDIO #MANPAGES
+OPTIONS_DEFAULT=	ALSA PULSEAUDIO MANPAGES
 OPTIONS_SUB=		yes
 
 ALSA_CMAKE_BOOL=	BUILD_ALSA
@@ -33,7 +34,6 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 MANPAGES_CMAKE_BOOL=	BUILD_DOCS
 MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			docbook-xsl>0:textproc/docbook-xsl
-MANPAGES_BROKEN=	see https://sourceforge.net/p/drumstick/bugs/47/
 
 post-patch:
 	# instead of default.sf2 use FluidR3_GM.sf2 installed by fluid-soundfont
