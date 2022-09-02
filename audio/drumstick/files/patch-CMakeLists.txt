@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2021-12-10 10:36:02 UTC
+--- CMakeLists.txt.orig	2022-08-14 10:57:49 UTC
 +++ CMakeLists.txt
-@@ -251,7 +251,7 @@ endif()
+@@ -182,7 +182,7 @@ else()
+ endif()
+ 
+ # ALSA Sequencer is only available on Linux
+-if (BUILD_ALSA AND (${CMAKE_SYSTEM} MATCHES "Linux"))
++if (BUILD_ALSA AND (${CMAKE_SYSTEM} MATCHES "Linux" OR ${CMAKE_SYSTEM} MATCHES "FreeBSD"))
+     pkg_check_modules(ALSA REQUIRED IMPORTED_TARGET alsa>=1.0.0)
+     if(ALSA_FOUND)
+         message(STATUS "Found ALSA version = ${ALSA_VERSION}")
+@@ -299,7 +299,7 @@ endif ()
  
  if(UNIX AND NOT APPLE)
      if (BUILD_DOCS)
@@ -9,16 +18,3 @@
          if(DOXYGEN_FOUND)
              string(REPLACE ";" " " DOXYGEN_INCLUDE_DIRS "${Qt${QT_VERSION_MAJOR}Core_INCLUDE_DIRS}")
              configure_file("${CMAKE_SOURCE_DIR}/Doxyfile.in"
-@@ -264,9 +264,9 @@ if(UNIX AND NOT APPLE)
-     endif()
-     configure_file(drumstick.spec.in drumstick.spec IMMEDIATE @ONLY)
-     if(ALSA_FOUND AND PKG_CONFIG_FOUND)
--        configure_file(drumstick-alsa.pc.in drumstick-alsa.pc IMMEDIATE @ONLY)
--        install(FILES ${CMAKE_CURRENT_BINARY_DIR}/drumstick-alsa.pc
--            DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig )
-+        #configure_file(drumstick-alsa.pc.in drumstick-alsa.pc IMMEDIATE @ONLY)
-+        #install(FILES ${CMAKE_CURRENT_BINARY_DIR}/drumstick-alsa.pc
-+        #    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig )
-     endif()
-     # XML mime types
-     set( SHARED_MIME_INFO_MINIMUM_VERSION "0.30" )
