@@ -1,0 +1,11 @@
+--- libsvoxeas/CMakeLists.txt.orig	2022-09-02 17:37:31 UTC
++++ libsvoxeas/CMakeLists.txt
+@@ -25,7 +25,7 @@ set_target_properties( svoxeas PROPERTIES 
+ 
+ target_link_libraries( svoxeas PRIVATE
+     sonivox::sonivox-static
+-    Qt5::Core
++    Qt6::Core
+     Drumstick::ALSA
+     PkgConfig::PULSE
+ )
