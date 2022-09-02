@@ -1,5 +1,5 @@
 PORTNAME=	dmidiplayer
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/v${DISTVERSION}/
 
@@ -9,12 +9,14 @@ COMMENT=	Featured MIDI file player
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libdrumstick-rt.so:audio/drumstick \
+LIB_DEPENDS=	libdrumstick-widgets.so:audio/drumstick \
+		libOpenGL.so:graphics/libglvnd \
 		libuchardet.so:textproc/uchardet
 
-USES=		compiler:c++11-lang cmake desktop-file-utils pkgconfig qt:5 tar:bz2
-USE_QT=		core gui printsupport widgets buildtools_build linguisttools qmake_build
+USES=		compiler:c++17-lang cmake desktop-file-utils pkgconfig qt:6 tar:bz2
+USE_QT=		base tools_build
 
+CMAKE_ARGS=	-DUSE_QT=6
 CMAKE_ON=	EMBED_TRANSLATIONS
 CMAKE_OFF=	BUILD_DOCS
 
