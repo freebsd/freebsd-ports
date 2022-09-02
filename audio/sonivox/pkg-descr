@@ -1,0 +1,13 @@
+sonivox is a fork of the Android Open Source Project
+'platform_external_sonivox', including a CMake based build system to be used
+not on Android, but on any other computer Operating System. Google licensed
+this work originally named Sonivox EAS (Embedded Audio Synthesis) from the
+company Sonic Network Inc. under the terms of the Apache License 2.0.
+
+This is a Wave Table synthesizer, not using external soundfont files but
+embedded samples instead. It is also a real time GM synthesizer. It consumes
+very little resources, so it may be indicated in projects for small embedded
+devices. There is neither MIDI input nor Audio output facilities included in
+the library. You need to provide your own input/output.
+
+WWW: https://github.com/pedrolcl/sonivox
