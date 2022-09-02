@@ -2,4 +2,4 @@ include/suitesparse/GraphBLAS.h
 lib/libgraphblas.a
 lib/libgraphblas.so
 lib/libgraphblas.so.7
-lib/libgraphblas.so.7.0.3
+lib/libgraphblas.so.7.2.0
