@@ -381,6 +381,7 @@ share/icons/hicolor/48x48/apps/ibus-typing-booster.png
 share/icons/hicolor/64x64/apps/ibus-typing-booster.png
 share/icons/hicolor/scalable/apps/ibus-typing-booster.svg
 share/locale/ar/LC_MESSAGES/ibus-typing-booster.mo
+share/locale/bn/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/ca/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/cs/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/de/LC_MESSAGES/ibus-typing-booster.mo
