@@ -137,7 +137,7 @@ post-patch:
 	${REINPLACE_CMD} -e '/neon/s|0.30.99|0.32.99|g' \
 		${WRKSRC}/configure
 # Fix build against OpenCV 4.5.1
-	 ${REINPLACE_CMD} '/opencv/s|4\.2\.0|4.6.0|g' \
+	 ${REINPLACE_CMD} '/opencv/s|4\.2\.0|4.7.0|g' \
 		 ${WRKSRC}/configure
 
 .endif
