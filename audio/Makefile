@@ -15,6 +15,7 @@
     SUBDIR += afsp
     SUBDIR += aften
     SUBDIR += alac
+    SUBDIR += alacenc
     SUBDIR += alienwah
     SUBDIR += alo-lv2
     SUBDIR += alsa-lib
