@@ -165,6 +165,7 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmLO.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmLegacyMacro.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmLookupTable.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmMD5.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmMEC_MR3.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmMacro.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmMacroEntry.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmMacros.h
