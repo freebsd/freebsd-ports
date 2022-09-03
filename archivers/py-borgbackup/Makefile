@@ -33,13 +33,15 @@ OPTIONS_DEFAULT=	FUSE
 FUSE_DESC=	Support to mount locally borg backup files
 FUSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llfuse>0:devel/py-llfuse@${PY_FLAVOR}
 
-_BORGENV=BORG_PASSPHRASE=secret123 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
+_BORGHOME=${WRKDIR}/testhome
+_BORGENV=BORG_PASSPHRASE=secret123 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} HOME=${_BORGHOME}
 post-install:
 	${MKDIR} ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
-	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/borg/ -name "*.so" \
+	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/borg/ -name "*.so" \
 		-exec ${STRIP_CMD} {} \;
 	@${ECHO_MSG} "----> running borg smoke tests"
+	${MKDIR} ${_BORGHOME}
 	${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} ${STAGEDIR}${PREFIX}/bin/borg -V
 	${RM} -r ${WRKDIR}/borgrepo
 	${SETENV} ${_BORGENV} ${STAGEDIR}${PREFIX}/bin/borg init --encryption=repokey ${WRKDIR}/borgrepo
