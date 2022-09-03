@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	22.2-branchpoint-1392
-DISTVERSIONSUFFIX=	-gd3642a0e027
+DISTVERSION=	22.2-branchpoint-1696
+DISTVERSIONSUFFIX=	-ga03ce740bbb
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -51,12 +51,12 @@ OPTIONS_DEFINE=		LIBUNWIND LLVM LTO VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
 OPTIONS_DEFAULT=	LIBUNWIND LLVM LTO VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
 OPTIONS_GROUP=		GALLIUM VULKAN
 OPTIONS_GROUP_GALLIUM=	crocus iris panfrost r600 radeonsi
-OPTIONS_GROUP_VULKAN=	anv radv
-OPTIONS_EXCLUDE_DragonFly=	LIBUNWIND anv
+OPTIONS_GROUP_VULKAN=	anv hasvk radv
+OPTIONS_EXCLUDE_DragonFly=	LIBUNWIND anv hasvk
 OPTIONS_EXCLUDE_i386=	LTO # anv: vkcube fails on vkCreateSwapchainKHR
 OPTIONS_EXCLUDE_powerpc64=	${"${/usr/bin/ld:L:tA}"==/usr/bin/ld.lld:?LTO:} # https://github.com/llvm/llvm-project/issues/46697
 OPTIONS_EXCLUDE+=	${ARCH:Naarch64:C/.+/panfrost/}
-OPTIONS_EXCLUDE+=	${ARCH:Namd64:Ni386:Nx86_64:C/.+/anv crocus iris/}
+OPTIONS_EXCLUDE+=	${ARCH:Namd64:Ni386:Nx86_64:C/.+/anv crocus hasvk iris/}
 OPTIONS_EXCLUDE+=	${ARCH:Naarch64:Namd64:Ni386:Npowerpc64:Npowerpc64le:Nx86_64:C/.+/LIBUNWIND/}
 OPTIONS_EXCLUDE+=	${"${GL_DEFAULT:S/,/ /g:[-1]}"==${.CURDIR:T}:?COINST:}
 OPTIONS_SLAVE+=		${"${GL_DEFAULT:S/,/ /g:[-1]}"!=${.CURDIR:T}:?COINST:}
@@ -67,7 +67,7 @@ OPTIONS_SUB=		yes
 MESON_ARGS+=		-D${i:tl}-drivers=${${i}_DRIVERS:ts,}
 . for j in ${OPTIONS_GROUP_${i}}
 OPTIONS_DEFAULT+=	${j}
-${j}_VARS+=		${i}_DRIVERS+=${j:S/anv/intel/:S/radv/amd/}
+${j}_VARS+=		${i}_DRIVERS+=${j:S/anv/intel/:S/hasvk/intel_&/:S/radv/amd/}
 . endfor
 .endfor
 
@@ -79,7 +79,8 @@ r600_DESC=		R600, R700, Evergreen, Northern Islands (implies LLVM)
 radeonsi_DESC=		Southern Islands and newer (implies LLVM)
 
 VULKAN_DESC=		Vulkan drivers
-anv_DESC=		Haswell and newer
+anv_DESC=		Skylake and newer
+hasvk_DESC=		Ivy Bridge, Haswell, Broadwell
 radv_DESC=		Southern Islands and newer (implies LLVM)
 radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 
