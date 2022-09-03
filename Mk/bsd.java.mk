@@ -166,8 +166,6 @@ _JAVA_VENDOR_LIST=		openjdk oracle
 
 # Set all meta-information about JDK ports:
 # port location, corresponding JAVA_HOME, JDK version, OS, vendor
-_JAVA_PORT_NATIVE_OPENJDK_JDK_7_INFO=		PORT=java/openjdk7			HOME=${LOCALBASE}/openjdk7 \
-											VERSION=7	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_8_INFO=		PORT=java/openjdk8			HOME=${LOCALBASE}/openjdk8 \
 											VERSION=8	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_11_INFO=		PORT=java/openjdk11			HOME=${LOCALBASE}/openjdk11 \
@@ -193,7 +191,6 @@ __JAVA_PORTS_ALL=	\
 					JAVA_PORT_NATIVE_OPENJDK_JDK_11 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_17 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_18 \
-					JAVA_PORT_NATIVE_OPENJDK_JDK_7  \
 					JAVA_PORT_LINUX_ORACLE_JDK_8
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
 			JAVA_PORT_NATIVE_OPENJDK_JDK_${JAVA_DEFAULT} \
