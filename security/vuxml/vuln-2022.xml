@@ -1,3 +1,33 @@
+  <vuln vid="f38d25ac-2b7a-11ed-a1ef-3065ec8fd3ec">
+    <topic>chromium -- insufficient data validation in Mojo</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>105.0.5195.102</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/09/stable-channel-update-for-desktop.html">
+	  <p>This release contains 1 security fix:</p>
+	  <ul>
+	    <li>[1358134] High CVE-2022-3075: Insufficient data validation in Mojo. Reported by Anonymous on 2022-08-30</li>
+	  </ul>
+	  <p>Google is aware that an exploit of CVE-2022-3075 exists in the wild.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3075</cvename>
+      <url>https://chromereleases.googleblog.com/2022/09/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-09-02</discovery>
+      <entry>2022-09-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5418b360-29cc-11ed-a6d4-6805ca2fa271">
     <topic>powerdns-recursor -- denial of service</topic>
     <affects>
