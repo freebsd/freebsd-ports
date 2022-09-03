@@ -15,8 +15,7 @@ BROKEN_riscv64=		fails to link: undefined reference to SyAllocBags
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		autoreconf:build gmake libtool localbase perl5 shebangfix	\
-		readline
+USES=		gmake libtool localbase perl5 readline shebangfix
 SHEBANG_FILES=	.
 USE_PERL5=	run
 
