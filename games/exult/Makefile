@@ -1,5 +1,6 @@
 PORTNAME=	exult
 DISTVERSION?=	1.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -28,8 +29,8 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-icondir=${PREFIX}/share/pixmaps
 
 CONFLICTS_INSTALL=	exult-devel
-SUB_FILES=	pkg-message
-PLIST?=		${.CURDIR}/pkg-plist
+SUB_FILES=		pkg-message
+PLIST?=			${.CURDIR}/pkg-plist
 
 .if !defined(MASTERDIR)
 MASTER_SITES=	http://prdownloads.sourceforge.net/exult/
