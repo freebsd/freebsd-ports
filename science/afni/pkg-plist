@@ -854,7 +854,6 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/afnimusic.au
 %%DATADIR%%/funstuff/face_15k_jjlr.jpg
 %%DATADIR%%/funstuff/face_7Tesla.jpg
-%%DATADIR%%/funstuff/face_alexp.jpg
 %%DATADIR%%/funstuff/face_ABtwins.jpg
 %%DATADIR%%/funstuff/face_AuroraRamos.jpg
 %%DATADIR%%/funstuff/face_CassieK.jpg
@@ -865,6 +864,8 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_JimEliassen.jpg
 %%DATADIR%%/funstuff/face_JohannaBaas.jpg
 %%DATADIR%%/funstuff/face_JulieFrost.jpg
+%%DATADIR%%/funstuff/face_LABlab1b.jpg
+%%DATADIR%%/funstuff/face_LABlab2b.jpg
 %%DATADIR%%/funstuff/face_MallaKing.jpg
 %%DATADIR%%/funstuff/face_MallaQueen.jpg
 %%DATADIR%%/funstuff/face_PhilippeGoldin.jpg
@@ -890,6 +891,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_alexandrakofinis.jpg
 %%DATADIR%%/funstuff/face_alexmartin.jpg
 %%DATADIR%%/funstuff/face_alexmartin2.jpg
+%%DATADIR%%/funstuff/face_alexp.jpg
 %%DATADIR%%/funstuff/face_aliceh.jpg
 %%DATADIR%%/funstuff/face_alkattan.jpg
 %%DATADIR%%/funstuff/face_allyson_rosen.jpg
@@ -1968,3 +1970,4 @@ lib/afni/plug_zeropad.so
 %%PORTDOCS%%%%DOCSDIR%%/README.volreg
 %%PORTDOCS%%%%DOCSDIR%%/README.web
 %%PORTDOCS%%%%DOCSDIR%%/README.ziad
+
