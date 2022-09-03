@@ -1,6 +1,6 @@
---- src/gnutls_io.c.orig	2016-12-25 18:36:37 UTC
+--- src/gnutls_io.c.orig	2021-08-13 20:27:17 UTC
 +++ src/gnutls_io.c
-@@ -23,7 +23,8 @@
+@@ -25,7 +25,8 @@ APLOG_USE_MODULE(gnutls);
  APLOG_USE_MODULE(gnutls);
  #endif
  
@@ -10,7 +10,7 @@
  #include <inttypes.h>
  #endif
  
-@@ -572,18 +573,21 @@ apr_status_t mgs_filter_input(ap_filter_t * f,
+@@ -576,18 +577,21 @@ apr_status_t mgs_filter_input(ap_filter_t * f,
           * might have different lengths. Read sizes should be too
           * small for 32 or 64 bit to matter, but we have to make
           * sure. */

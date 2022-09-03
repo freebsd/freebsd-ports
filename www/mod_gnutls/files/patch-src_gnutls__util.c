@@ -1,6 +1,6 @@
---- src/gnutls_util.c.orig	2016-12-25 18:36:37 UTC
+--- src/gnutls_util.c.orig	2021-07-11 11:33:26 UTC
 +++ src/gnutls_util.c
-@@ -113,7 +113,8 @@ apr_status_t datum_from_file(apr_pool_t *p, const char
+@@ -121,7 +121,8 @@ apr_status_t datum_from_file(apr_pool_t *p, const char
  
      /* safe integer type conversion: unsigned int and apr_size_t might
       * have different sizes */
