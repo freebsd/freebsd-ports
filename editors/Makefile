@@ -268,6 +268,7 @@
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vim
+    SUBDIR += vim-colorschemes-legacy
     SUBDIR += vscode
     SUBDIR += web-mode
     SUBDIR += with-editor
