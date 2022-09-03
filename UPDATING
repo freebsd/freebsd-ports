@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20220903:
+  AFFECTS: users of editors/vim
+  AUTHOR: adamw@FreeBSD.org
+
+  The Vim port no longer installs a system-wide vimrc. It drastically affected
+  config loading order, and led to various settings being clobbered, duplicated,
+  or ignored.
+
+  Vim's provided defaults.vim (/usr/local/share/vim/vim90/defaults.vim) continues
+  to be read just as before, but its settings are no longer clobbered. Take a look
+  in there for any settings you may want to change, and do ':h initialization' to
+  see where Vim looks for config files.
+
+20220903:
   AFFECTS: users of archivers/py-borgbackup
   AUTHOR: mandree@FreeBSD.org
 
