@@ -1,0 +1,11 @@
+[
+  { type: upgrade
+    maximum_version: "9.0.0129"
+    message: <<EOM
+  Vim no longer installs or reads a system-wide vimrc. The only overridden
+  defaults are those which provide FreeBSD-specific settings. Read through
+  $VIMRUNTIME/defaults.vim to see Vim's defaults, and see ':h initialization'
+  for the standard locations Vim looks for configuration files.
+    EOM
+  }
+]
