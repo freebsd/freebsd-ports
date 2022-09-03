@@ -1,6 +1,14 @@
---- hw/xfree86/os-support/meson.build.orig	2022-07-12 13:27:57.000000000 +0000
-+++ hw/xfree86/os-support/meson.build	2022-08-08 23:22:53.349353000 +0000
-@@ -111,9 +111,9 @@
+--- hw/xfree86/os-support/meson.build.orig	2022-07-12 13:27:57 UTC
++++ hw/xfree86/os-support/meson.build
+@@ -96,6 +96,7 @@ elif host_machine.system().endswith('bsd')
+         'bsd/bsd_VTsw.c',
+         'bsd/bsd_bell.c',
+         'bsd/bsd_init.c',
++        'misc/SlowBcopy.c',
+ 	'shared/pm_noop.c'
+     ]
+ 
+@@ -111,9 +112,9 @@ elif host_machine.system().endswith('bsd')
          if host_machine.system() == 'netbsd' or host_machine.system() == 'openbsd'
              os_dep += cc.find_library('i386')
          endif
