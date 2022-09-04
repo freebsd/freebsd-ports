@@ -3442,6 +3442,7 @@
     SUBDIR += p5-Test-LeakTrace
     SUBDIR += p5-Test-LectroTest
     SUBDIR += p5-Test-Lib
+    SUBDIR += p5-Test-Lives
     SUBDIR += p5-Test-LoadAllModules
     SUBDIR += p5-Test-Log-Log4perl
     SUBDIR += p5-Test-Log4perl
