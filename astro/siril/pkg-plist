@@ -32,6 +32,8 @@ share/mime/packages/siril.xml
 %%DATADIR%%/pixmaps/curve.svg
 %%DATADIR%%/pixmaps/export.svg
 %%DATADIR%%/pixmaps/export_dark.svg
+%%DATADIR%%/pixmaps/eyedropper.svg
+%%DATADIR%%/pixmaps/eyedropper_dark.svg
 %%DATADIR%%/pixmaps/g.svg
 %%DATADIR%%/pixmaps/grid.svg
 %%DATADIR%%/pixmaps/histo.svg
