@@ -1,4 +1,4 @@
---- openapi_core/spec/accessors.py.orig	2021-05-14 11:26:22 UTC
+--- openapi_core/spec/accessors.py.orig	2022-09-02 20:04:02 UTC
 +++ openapi_core/spec/accessors.py
 @@ -1,6 +1,6 @@
  from contextlib import contextmanager
@@ -8,7 +8,7 @@
  
  
  class SpecAccessor(DictOrListAccessor):
---- openapi_core/spec/paths.py.orig	2021-05-14 11:26:22 UTC
+--- openapi_core/spec/paths.py.orig	2022-09-02 20:04:02 UTC
 +++ openapi_core/spec/paths.py
 @@ -1,4 +1,4 @@
 -from dictpath.paths import AccessorPath
@@ -16,7 +16,7 @@
  
  from openapi_core.spec.accessors import SpecAccessor
  
---- setup.cfg.orig	2021-05-14 11:26:32 UTC
+--- setup.cfg.orig	2022-09-02 20:04:16 UTC
 +++ setup.cfg
 @@ -27,7 +27,7 @@ setup_requires = 
  	setuptools
@@ -24,6 +24,6 @@
  	isodate
 -	dictpath
 +	pathable
- 	openapi-spec-validator
- 	openapi-schema-validator
+ 	openapi-spec-validator < 0.5.0
+ 	openapi-schema-validator < 0.3.0
  	six
