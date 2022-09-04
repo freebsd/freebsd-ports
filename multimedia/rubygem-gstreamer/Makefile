@@ -1,5 +1,5 @@
 PORTNAME=	gstreamer
-PORTVERSION=	3.5.1
+PORTVERSION=	4.0.0
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
