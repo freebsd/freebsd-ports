@@ -15,7 +15,7 @@
 +
 +setup_kwargs = {
 +    'name': 'ntc-templates',
-+    'version': '3.0.0',
++    'version': '%%DISTVERSION%%',
 +    'description': "TextFSM Templates for Network Devices, and Python wrapper for TextFSM's CliTable.",
 +    'author': 'Network to Code',
 +    'author_email': 'info@networktocode.com',
