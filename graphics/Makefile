@@ -885,6 +885,7 @@
     SUBDIR += py-opencolorio
     SUBDIR += py-openimageio
     SUBDIR += py-openshadinglanguage
+    SUBDIR += py-optimize-images
     SUBDIR += py-osmnet
     SUBDIR += py-pandana
     SUBDIR += py-photocollage
