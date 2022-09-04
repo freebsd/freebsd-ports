@@ -1,5 +1,5 @@
 PORTNAME=	python-dotenv
-PORTVERSION=	0.20.0
+PORTVERSION=	0.21.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ COMMENT=	Add .env support to your django/flask apps
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	rubygem-dotenv # bin/dotenv
