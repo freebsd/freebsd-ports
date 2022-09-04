@@ -1137,6 +1137,7 @@
     SUBDIR += libcwd
     SUBDIR += libdaemon
     SUBDIR += libdap
+    SUBDIR += libdatadog
     SUBDIR += libdatrie
     SUBDIR += libdbusmenu
     SUBDIR += libdbusmenu-qt

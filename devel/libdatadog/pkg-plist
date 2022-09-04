@@ -1,0 +1,6 @@
+include/datadog/common.h
+include/datadog/profiling.h
+lib/libdatadog_profiling_ffi.a
+lib/libdatadog_profiling_ffi.so
+libdata/pkgconfig/datadog_profiling.pc
+libdata/pkgconfig/datadog_profiling_with_rpath.pc
