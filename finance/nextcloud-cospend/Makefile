@@ -1,5 +1,5 @@
 PORTNAME=	cospend
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.10
 CATEGORIES=	finance www editors
 MASTER_SITES=	https://github.com/eneiluj/${PORTNAME}-nc/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
