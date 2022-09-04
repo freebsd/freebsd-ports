@@ -1,6 +1,5 @@
 PORTNAME=	cirrus-cli
-PORTVERSION=	0.82.0
-PORTREVISION=	1
+PORTVERSION=	0.85.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -26,7 +25,7 @@ GH_TUPLE=	\
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		certifi:gocertifi:431795d63e8d:certifi_gocertifi/vendor/github.com/certifi/gocertifi \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		cirruslabs:cirrus-ci-agent:v1.80.0:cirruslabs_cirrus_ci_agent/vendor/github.com/cirruslabs/cirrus-ci-agent \
+		cirruslabs:cirrus-ci-agent:v1.81.0:cirruslabs_cirrus_ci_agent/vendor/github.com/cirruslabs/cirrus-ci-agent \
 		cirruslabs:echelon:v1.7.0:cirruslabs_echelon/vendor/github.com/cirruslabs/echelon \
 		cirruslabs:go-java-glob:v0.1.0:cirruslabs_go_java_glob/vendor/github.com/cirruslabs/go-java-glob \
 		cirruslabs:podmanapi:v0.2.0:cirruslabs_podmanapi/vendor/github.com/cirruslabs/podmanapi \
@@ -147,5 +146,7 @@ PLIST_FILES=	bin/cirrus
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/moby/sys/mountinfo
 	@${RLN} ${WRKSRC_moby_sys_mountinfo}/mountinfo ${WRKSRC}/vendor/github.com/moby/sys/mountinfo
+
+PLIST_FILES=	bin/cirrus
 
 .include <bsd.port.mk>
