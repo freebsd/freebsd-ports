@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=	compilation fails: Creating OVM precompiled package... Segmentation fault (core dumped) # update to the current revision might help but it has C++ errors
 BROKEN_armv6=	compilation fails: Creating OVM precompiled package... libunwind: personality function returned unknown result 5
+BROKEN_i386=	compilation fails: conversion function cannot be redeclared, see https://github.com/chipsalliance/Surelog/issues/3206
 
 BUILD_DEPENDS=	utf8cpp>0:devel/utf8cpp \
 		${PYTHON_PKGNAMEPREFIX}orderedmultidict>0:devel/py-orderedmultidict@${PY_FLAVOR}
