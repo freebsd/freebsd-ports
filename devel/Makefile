@@ -4849,6 +4849,7 @@
     SUBDIR += py-openapi-codec
     SUBDIR += py-openapi-core
     SUBDIR += py-openapi-schema-validator
+    SUBDIR += py-openapi-schema-validator02
     SUBDIR += py-openapi-spec-validator
     SUBDIR += py-opencensus
     SUBDIR += py-opencensus-context
