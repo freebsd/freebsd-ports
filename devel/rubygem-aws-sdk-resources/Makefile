@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.139.0
+PORTVERSION=	3.140.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -87,6 +87,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-connectcontactlens>=1<2:devel/rubygem-aws-sdk-connectcontactlens \
 		rubygem-aws-sdk-connectparticipant>=1<2:devel/rubygem-aws-sdk-connectparticipant \
 		rubygem-aws-sdk-connectwisdomservice>=1<2:devel/rubygem-aws-sdk-connectwisdomservice \
+		rubygem-aws-sdk-controltower>=1<2:devel/rubygem-aws-sdk-controltower \
 		rubygem-aws-sdk-costandusagereportservice>=1<2:devel/rubygem-aws-sdk-costandusagereportservice \
 		rubygem-aws-sdk-costexplorer>=1<2:devel/rubygem-aws-sdk-costexplorer \
 		rubygem-aws-sdk-customerprofiles>=1<2:devel/rubygem-aws-sdk-customerprofiles \
