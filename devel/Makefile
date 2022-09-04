@@ -5369,6 +5369,7 @@
     SUBDIR += py-testscenarios
     SUBDIR += py-testtools
     SUBDIR += py-thefuzz
+    SUBDIR += py-threadpoolctl
     SUBDIR += py-threema-msgapi
     SUBDIR += py-thrift
     SUBDIR += py-thriftpy2
