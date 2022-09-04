@@ -1,5 +1,5 @@
 PORTNAME=	Proc-Fork
-PORTVERSION=	0.807
+PORTVERSION=	0.808
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,8 +12,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Exporter-Tidy>=0:devel/p5-Exporter-Tidy \
-		p5-Object-Tiny-Lvalue>=0:devel/p5-Object-Tiny-Lvalue
+RUN_DEPENDS=	p5-Exporter-Tidy>=0:devel/p5-Exporter-Tidy
 
 USES=		perl5
 USE_PERL5=	configure
