@@ -1,5 +1,5 @@
 PORTNAME=	Test-PerlTidy
-PORTVERSION=	20210709
+PORTVERSION=	20220902
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Path-Tiny>=0.100:devel/p5-Path-Tiny \
-		p5-Perl-Tidy>=20201001:devel/p5-Perl-Tidy \
+		p5-Perl-Tidy>=20220613:devel/p5-Perl-Tidy \
 		p5-Text-Diff>=0:textproc/p5-Text-Diff
 
 USES=		perl5
