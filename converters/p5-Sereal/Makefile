@@ -25,4 +25,6 @@ USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 .include <bsd.port.mk>
