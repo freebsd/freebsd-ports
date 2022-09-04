@@ -1,5 +1,5 @@
 PORTNAME=	sounddevice
-DISTVERSION=	0.4.4
+DISTVERSION=	0.4.5
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR} \
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 post-install: # workaround for https://github.com/spatialaudio/python-sounddevice/issues/116
