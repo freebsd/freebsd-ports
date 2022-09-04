@@ -24,6 +24,8 @@ USE_PERL5=	configure
 MAKE_ENV=	PASTHRU_DEFINE="-I${LOCALBASE}/include"
 MAKE_JOBS_UNSAFE=	yes
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Sereal/Encoder/Encoder.so
 
