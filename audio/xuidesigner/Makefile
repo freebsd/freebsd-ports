@@ -1,6 +1,6 @@
 PORTNAME=	xuidesigner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5
+DISTVERSION=	0.6
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/brummer10/XUiDesigner/releases/download/v${DISTVERSION}/
 DISTNAME=	XUIDesigner_${DISTVERSION}
