@@ -1,5 +1,5 @@
 PORTNAME=	gtk3
-PORTVERSION=	3.5.1
+PORTVERSION=	4.0.0
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,7 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
-		rubygem-gdk_pixbuf2>=${PORTVERSION}:graphics/rubygem-gdk_pixbuf2 \
-		rubygem-gdk3>=${PORTVERSION}:x11-toolkits/rubygem-gdk3 \
-		rubygem-gio2>=${PORTVERSION}:devel/rubygem-gio2 \
-		rubygem-pango>=${PORTVERSION}:x11-toolkits/rubygem-pango
+		rubygem-gdk3>=${PORTVERSION}:x11-toolkits/rubygem-gdk3
 
 USES=		gem gnome
 USE_GNOME=	gtk30
