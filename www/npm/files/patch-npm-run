@@ -1,0 +1,11 @@
+--- lib/node_modules/npm/node_modules/@npmcli/run-script/lib/make-spawn-args.js.orig	2022-08-27 11:30:45 UTC
++++ lib/node_modules/npm/node_modules/@npmcli/run-script/lib/make-spawn-args.js
+@@ -67,7 +67,7 @@ const makeSpawnArgs = options => {
+   }
+   const spawnArgs = isCmd
+     ? ['/d', '/s', '/c', script]
+-    : ['-c', '--', script]
++    : ['-c', script]
+ 
+   const spawnOpts = {
+     env: spawnEnv,
