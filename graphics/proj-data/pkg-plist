@@ -41,6 +41,7 @@
 %%DATADIR%%/ca_nrc_CRD93_00.tif
 %%DATADIR%%/ca_nrc_GS7783.tif
 %%DATADIR%%/ca_nrc_HT2_2010v70.tif
+%%DATADIR%%/ca_nrc_HT2_2010v70_CGG2013a.tif
 %%DATADIR%%/ca_nrc_MAY76V20.tif
 %%DATADIR%%/ca_nrc_NA27SCRS.tif
 %%DATADIR%%/ca_nrc_NA83SCRS.tif
@@ -107,6 +108,7 @@
 %%DATADIR%%/fr_ign_RAF09.tif
 %%DATADIR%%/fr_ign_RAF18.tif
 %%DATADIR%%/fr_ign_RAF18b.tif
+%%DATADIR%%/fr_ign_RAF20.tif
 %%DATADIR%%/fr_ign_RAGTBT2016.tif
 %%DATADIR%%/fr_ign_RALD2016.tif
 %%DATADIR%%/fr_ign_RALDW842016.tif
@@ -175,6 +177,7 @@
 %%DATADIR%%/no_kv_HREF2018B_NN2000_EUREF89.tif
 %%DATADIR%%/no_kv_NKGETRF14_EPSG7922_2000.tif
 %%DATADIR%%/no_kv_README.txt
+%%DATADIR%%/no_kv_arcgp-2006-sk.tif
 %%DATADIR%%/no_kv_href2008a.tif
 %%DATADIR%%/nz_linz_README.txt
 %%DATADIR%%/nz_linz_auckht1946-nzvd2016.tif
