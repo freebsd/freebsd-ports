@@ -1,5 +1,5 @@
 PORTNAME=	vim
-PORTVERSION=	9.0.0369
+PORTVERSION=	9.0.0379
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -160,7 +160,7 @@ post-extract:
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${WRKSRC}/runtime/keymap
 
 post-patch:
-	${ECHO_CMD} 'source $$VIMRUNTIME/defaults_freebsd.vim' >> ${WRKSRC}/runtime/defaults.vim
+	${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|' ${WRKSRC}/src/feature.h
 	${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|g; s|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/src/auto/configure
 
@@ -172,12 +172,13 @@ post-configure:
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/${VIM_VER}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/vim ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${FILESDIR}/defaults_freebsd.vim ${STAGEDIR}${DATADIR}/${VIM_VER}/defaults.vim
+	${INSTALL_DATA} ${WRKSRC}/runtime/defaults.vim ${STAGEDIR}${DATADIR}/${VIM_VER}
+	${INSTALL_DATA} ${FILESDIR}/defaults_freebsd.vim ${STAGEDIR}${DATADIR}/${VIM_VER}
 	${INSTALL_MAN} ${WRKSRC}/runtime/doc/vim.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .else  # flavor != tiny
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/defaults_freebsd.vim ${STAGEDIR}${DATADIR}/${VIM_VER}/
+	${INSTALL_DATA} ${FILESDIR}/defaults_freebsd.vim ${STAGEDIR}${DATADIR}/${VIM_VER}
 	${RM} ${STAGEDIR}${PREFIX}/bin/ex
 	${RM} ${STAGEDIR}${PREFIX}/bin/view
 .  for F in eview evim gview gvim gvimdiff rgview rgvim rview rvim vimdiff
