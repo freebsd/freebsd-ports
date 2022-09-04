@@ -1,6 +1,6 @@
 PORTNAME=	eisl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.60
+DISTVERSION=	2.62
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,9 +22,6 @@ TEST_TARGET=	check # tests print some errors and warnings, see https://github.co
 MAKEFILE=	makefile
 
 LDFLAGS+=	-lncursesw
-
-PLIST_FILES=	bin/edlis \
-		bin/eisl
 
 .include <bsd.port.options.mk>
 
