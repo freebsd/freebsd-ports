@@ -1,6 +1,6 @@
-@exec d=/var/spool/newsstar/incoming ; test -d "$d" || install -d -onews -gnews -m0750 "$d"
-@exec d=/var/spool/newsstar/lib ; test -d "$d" || install -d -onews -gnews -m0750 "$d"
-@exec d="%D/%%ETCDIR%%" ; test -d "$d" || install -d -o0 -g0 -m0755 "$d"
+@postexec d=/var/spool/newsstar/incoming ; test -d "$d" || install -d -onews -gnews -m0750 "$d"
+@postexec d=/var/spool/newsstar/lib ; test -d "$d" || install -d -onews -gnews -m0750 "$d"
+@postexec d="%D/%%ETCDIR%%" ; test -d "$d" || install -d -o0 -g0 -m0755 "$d"
 bin/newsstar
 man/man1/newsstar.1.gz
 libexec/newsstar/newsstar.bin
