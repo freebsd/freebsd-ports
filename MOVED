@@ -17545,3 +17545,4 @@ devel/libthreader|devel/libthreadar|2022-08-29|Fix directory name
 mail/rainloop-community|mail/rainloop|2022-09-01|Only one edition "legacy" is provided now
 java/openjdk7||2022-09-03|Has expired: EOLed since 31 July 2022
 java/openjdk7-jre||2022-09-03|Has expired: EOLed since 31 July 2022
+devel/py-logfury0|devel/py-logfury|2022-09-04|Remove obsoleted port. Use devel/py-logfury instead

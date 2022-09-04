@@ -4752,7 +4752,6 @@
     SUBDIR += py-logan
     SUBDIR += py-logbook
     SUBDIR += py-logfury
-    SUBDIR += py-logfury0
     SUBDIR += py-logilab-common
     SUBDIR += py-loguru
     SUBDIR += py-logutils
