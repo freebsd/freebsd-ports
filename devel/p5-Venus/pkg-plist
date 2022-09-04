@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Venus.pm
 %%SITE_PERL%%/Venus/Args.pm
 %%SITE_PERL%%/Venus/Array.pm
+%%SITE_PERL%%/Venus/Assert.pm
 %%SITE_PERL%%/Venus/Boolean.pm
 %%SITE_PERL%%/Venus/Box.pm
 %%SITE_PERL%%/Venus/Class.pm
@@ -12,6 +13,7 @@
 %%SITE_PERL%%/Venus/Data.pm
 %%SITE_PERL%%/Venus/Date.pm
 %%SITE_PERL%%/Venus/Error.pm
+%%SITE_PERL%%/Venus/False.pm
 %%SITE_PERL%%/Venus/Float.pm
 %%SITE_PERL%%/Venus/Hash.pm
 %%SITE_PERL%%/Venus/Json.pm
@@ -31,6 +33,7 @@
 %%SITE_PERL%%/Venus/Replace.pm
 %%SITE_PERL%%/Venus/Role.pm
 %%SITE_PERL%%/Venus/Role/Accessible.pm
+%%SITE_PERL%%/Venus/Role/Assertable.pm
 %%SITE_PERL%%/Venus/Role/Boxable.pm
 %%SITE_PERL%%/Venus/Role/Buildable.pm
 %%SITE_PERL%%/Venus/Role/Catchable.pm
@@ -45,6 +48,7 @@
 %%SITE_PERL%%/Venus/Role/Pluggable.pm
 %%SITE_PERL%%/Venus/Role/Printable.pm
 %%SITE_PERL%%/Venus/Role/Proxyable.pm
+%%SITE_PERL%%/Venus/Role/Reflectable.pm
 %%SITE_PERL%%/Venus/Role/Stashable.pm
 %%SITE_PERL%%/Venus/Role/Testable.pm
 %%SITE_PERL%%/Venus/Role/Throwable.pm
@@ -57,6 +61,7 @@
 %%SITE_PERL%%/Venus/Template.pm
 %%SITE_PERL%%/Venus/Test.pm
 %%SITE_PERL%%/Venus/Throw.pm
+%%SITE_PERL%%/Venus/True.pm
 %%SITE_PERL%%/Venus/Try.pm
 %%SITE_PERL%%/Venus/Type.pm
 %%SITE_PERL%%/Venus/Undef.pm
@@ -65,6 +70,7 @@
 %%PERL5_MAN3%%/Venus.3.gz
 %%PERL5_MAN3%%/Venus::Args.3.gz
 %%PERL5_MAN3%%/Venus::Array.3.gz
+%%PERL5_MAN3%%/Venus::Assert.3.gz
 %%PERL5_MAN3%%/Venus::Boolean.3.gz
 %%PERL5_MAN3%%/Venus::Box.3.gz
 %%PERL5_MAN3%%/Venus::Class.3.gz
@@ -76,6 +82,7 @@
 %%PERL5_MAN3%%/Venus::Data.3.gz
 %%PERL5_MAN3%%/Venus::Date.3.gz
 %%PERL5_MAN3%%/Venus::Error.3.gz
+%%PERL5_MAN3%%/Venus::False.3.gz
 %%PERL5_MAN3%%/Venus::Float.3.gz
 %%PERL5_MAN3%%/Venus::Hash.3.gz
 %%PERL5_MAN3%%/Venus::Json.3.gz
@@ -95,6 +102,7 @@
 %%PERL5_MAN3%%/Venus::Replace.3.gz
 %%PERL5_MAN3%%/Venus::Role.3.gz
 %%PERL5_MAN3%%/Venus::Role::Accessible.3.gz
+%%PERL5_MAN3%%/Venus::Role::Assertable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Boxable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Buildable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Catchable.3.gz
@@ -109,6 +117,7 @@
 %%PERL5_MAN3%%/Venus::Role::Pluggable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Printable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Proxyable.3.gz
+%%PERL5_MAN3%%/Venus::Role::Reflectable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Stashable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Testable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Throwable.3.gz
@@ -121,6 +130,7 @@
 %%PERL5_MAN3%%/Venus::Template.3.gz
 %%PERL5_MAN3%%/Venus::Test.3.gz
 %%PERL5_MAN3%%/Venus::Throw.3.gz
+%%PERL5_MAN3%%/Venus::True.3.gz
 %%PERL5_MAN3%%/Venus::Try.3.gz
 %%PERL5_MAN3%%/Venus::Type.3.gz
 %%PERL5_MAN3%%/Venus::Undef.3.gz
