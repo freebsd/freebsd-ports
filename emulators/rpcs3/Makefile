@@ -4,6 +4,9 @@ DISTVERSION=	0.0.24-14112 # git rev-list --count HEAD
 DISTVERSIONSUFFIX=	-g64579eef7e
 CATEGORIES=	emulators wayland
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	290226539f67.patch:-p1 # https://github.com/RPCS3/rpcs3/pull/12606
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
 
