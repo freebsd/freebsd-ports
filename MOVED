@@ -17546,3 +17546,4 @@ mail/rainloop-community|mail/rainloop|2022-09-01|Only one edition "legacy" is pr
 java/openjdk7||2022-09-03|Has expired: EOLed since 31 July 2022
 java/openjdk7-jre||2022-09-03|Has expired: EOLed since 31 July 2022
 devel/py-logfury0|devel/py-logfury|2022-09-04|Remove obsoleted port. Use devel/py-logfury instead
+www/py-beautifulsoup449|www/py-beautifulsoup|2022-09-04|Remove obsoleted port. Use www/py-beautifulsoup instead
