@@ -344,7 +344,8 @@ LLD_UNSAFE=	yes
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
-CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unused-parameter -Wno-unused-local-typedefs
+CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-c++11-narrowing \
+		-Wno-unused-parameter -Wno-unused-local-typedefs
 .else
 CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
 .endif
