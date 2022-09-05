@@ -1,6 +1,6 @@
 PORTNAME=	inkscape
 DISTVERSION=	1.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
@@ -18,8 +18,8 @@ LICENSE_FILE_LGPL3  =	${WRKSRC}/LICENSES/LGPL-3.0.txt
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSES/LGPL-3.0-or-later.txt
 LICENSE_FILE_MPL11  =	${WRKSRC}/LICENSES/MPL-1.1.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:devel/boost-libs
-LIB_DEPENDS=	libpopt.so:devel/popt \
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
+		libpopt.so:devel/popt \
 		libgc.so:devel/boehm-gc \
 		libgdl-3.so:x11-toolkits/gdl \
 		libgsl.so:math/gsl \
@@ -47,8 +47,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		compiler:c++17-lang cmake cpe desktop-file-utils gnome \
 		iconv:wchar_t jpeg pathfix pkgconfig python:3.7+ \
-		shebangfix tar:xz xorg
-USE_GNOME=	gtkmm30 libxml2 libxslt
+		readline shebangfix tar:xz xorg
+USE_GNOME=	gdkpixbuf2 gtkmm30 libxml2 libxslt
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
