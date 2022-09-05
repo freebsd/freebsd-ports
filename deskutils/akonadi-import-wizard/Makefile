@@ -1,6 +1,6 @@
 PORTNAME=	akonadi-import-wizard
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libqgpgme.so:security/gpgme-qt5 \
 		libqt5keychain.so:security/qtkeychain@qt5
 
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		crash dbusaddons i18n itemmodels kio service wallet \
 		widgetsaddons xmlgui \
