@@ -1,6 +1,6 @@
 PORTNAME=	kopete
 PORTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libidn.so:dns/libidn \
 		libv4l2.so:multimedia/libv4l
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gnome jpeg kde:5 \
-		qca qt:5 shebangfix tar:xz
+		qca qt:5 shebangfix tar:xz xorg
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons dnssd emoticons guiaddons i18n \
@@ -26,6 +26,7 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 USE_KDE+=	contacts identitymanagement libkleo pimtextedit
 USE_QT=		concurrent core dbus gui network phonon4 printsupport sql widgets xml \
 		buildtools_build qmake_build testlib_build
+USE_XORG=	x11
 
 SHEBANG_FILES=	protocols/winpopup/winpopup-install \
 		protocols/winpopup/winpopup-send \
