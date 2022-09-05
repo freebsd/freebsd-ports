@@ -1,7 +1,7 @@
 PORTNAME=	kde-thumbnailer-chm
 PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc kde
 
 MAINTAINER=	makc@FreeBSD.org
@@ -12,10 +12,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libchm.so:misc/chmlib
 
-USES=		cmake compiler:c++11-lang kde:5 qt:5
-USE_KDE=	ecm_build kio
-USE_QT=		buildtools_build qmake_build gui
-
+USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
+USE_KDE=	ecm_build completion config coreaddons jobwidgets kio service solid \
+		widgetsaddons windowsystem
+USE_QT=		buildtools_build qmake_build concurrent core dbus gui network widgets
+USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	Caig
 
