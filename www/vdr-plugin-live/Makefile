@@ -10,6 +10,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - live web plugin
 
+BROKEN=		does not build: 'tr1/functional' file not found
+
 LIB_DEPENDS+=	libtntnet.so:www/tntnet \
 		libpcre.so:devel/pcre
 
