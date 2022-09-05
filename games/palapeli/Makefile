@@ -1,5 +1,6 @@
 PORTNAME=	palapeli
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,6 +13,7 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		solid widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui network svg widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
