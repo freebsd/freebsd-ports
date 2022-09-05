@@ -31,6 +31,7 @@ USE_KDE+=	akonadi akonadicontacts akonadimime akonadisearch calendarcore \
 USE_QT=		concurrent core dbus declarative gui location network printsupport \
 		uitools webchannel webengine widgets xml \
 		buildtools_build qmake_build testlib_build
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		INOTIFY DOCS
