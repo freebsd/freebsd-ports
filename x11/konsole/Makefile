@@ -1,5 +1,6 @@
 PORTNAME=	konsole
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang gettext pkgconfig kde:5 \
-		qt:5 tar:xz
+		qt:5 tar:xz xorg
 USE_KDE=	auth attica bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons emoticons globalaccel guiaddons i18n \
 		iconthemes init itemmodels jobwidgets kio \
@@ -23,6 +24,7 @@ USE_KDE=	auth attica bookmarks codecs completion config configwidgets \
 USE_QT=		concurrent core dbus gui network printsupport script scripttools sql \
 		widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 
