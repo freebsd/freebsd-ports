@@ -23,7 +23,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 USE_KDE+=	akonadi akonadimime calendarcore contacts grantleetheme libkleo mime
 USE_QT=		concurrent core dbus gui network testlib widgets xml \
 		buildtools_build qmake_build
-USE_XOR=	x11
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
