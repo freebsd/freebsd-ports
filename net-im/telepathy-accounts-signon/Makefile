@@ -16,7 +16,7 @@ LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libtelepathy-glib.so:net-im/telepathy-glib
 
 USES=		gettext gnome meson pkgconfig tar:bz2
-USE_GNOME=	glib2
+USE_GNOME=	glib20
 
 USE_LDCONFIG=	YES
 
