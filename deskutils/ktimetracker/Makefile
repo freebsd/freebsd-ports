@@ -1,6 +1,6 @@
 PORTNAME=	ktimetracker
 DISTVERSION=	5.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src/
 
@@ -10,7 +10,7 @@ COMMENT=	Todo management and time tracker
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	kio sonnet auth calendarcore codecs config configwidgets \
 		coreaddons dbusaddons i18n idletime jobwidgets \
 		notifications service textwidgets widgetsaddons \
@@ -18,5 +18,6 @@ USE_KDE=	kio sonnet auth calendarcore codecs config configwidgets \
 		doctools_build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 
 .include <bsd.port.mk>
