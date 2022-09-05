@@ -140,10 +140,12 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/Signals/DVB/signal_8.csv
 %%DATADIR%%/Data/Compatibility/Signals/DVB/signal_9.csv
 %%DATADIR%%/Data/Compatibility/Signals/Graphics/glow_green.png
+%%DATADIR%%/Data/Compatibility/Signals/Graphics/glow_purple.png
 %%DATADIR%%/Data/Compatibility/Signals/Graphics/glow_red.png
 %%DATADIR%%/Data/Compatibility/Signals/Graphics/glow_white.png
 %%DATADIR%%/Data/Compatibility/Signals/Graphics/glow_yellow.png
 %%DATADIR%%/Data/Compatibility/Signals/Graphics/light_green.png
+%%DATADIR%%/Data/Compatibility/Signals/Graphics/light_purple.png
 %%DATADIR%%/Data/Compatibility/Signals/Graphics/light_red.png
 %%DATADIR%%/Data/Compatibility/Signals/Graphics/light_white.png
 %%DATADIR%%/Data/Compatibility/Signals/Graphics/light_yellow.png
@@ -194,6 +196,13 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/Signals/Japanese/signal_6_4.csv
 %%DATADIR%%/Data/Compatibility/Signals/Japanese/signal_6_5.csv
 %%DATADIR%%/Data/Compatibility/Signals/Japanese/signal_post.csv
+%%DATADIR%%/Data/Compatibility/Signals/KCR.xml
+%%DATADIR%%/Data/Compatibility/Signals/KCR/signal_2b_4.csv
+%%DATADIR%%/Data/Compatibility/Signals/KCR/signal_3_4.csv
+%%DATADIR%%/Data/Compatibility/Signals/KCR/signal_4a_2.csv
+%%DATADIR%%/Data/Compatibility/Signals/KCR/signal_4b_2.csv
+%%DATADIR%%/Data/Compatibility/Signals/KCR/signal_4b_3.csv
+%%DATADIR%%/Data/Compatibility/Signals/KCR/signal_4b_4.csv
 %%DATADIR%%/Data/Compatibility/Signals/KS.xml
 %%DATADIR%%/Data/Compatibility/Signals/KS/Mast_R.png
 %%DATADIR%%/Data/Compatibility/Signals/KS/Relay0.png
