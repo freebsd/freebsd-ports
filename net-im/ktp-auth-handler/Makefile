@@ -1,6 +1,6 @@
 PORTNAME=	ktp-auth-handler
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,12 +16,13 @@ LIB_DEPENDS=	libtelepathy-qt5.so:net-im/telepathy-qt \
 		libsignon-qt5.so:sysutils/signon-qt5
 
 USES=		compiler:c++11-lang cmake gettext kde:5 pkgconfig \
-		qca qt:5 tar:xz
+		qca qt:5 tar:xz xorg
 USE_KDE=	completion config coreaddons i18n jobwidgets kdewebkit \
 		kio wallet service solid widgetsaddons windowsystem \
 		ecm_build
 USE_QT=		concurrent core dbus gui network webkit widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 
