@@ -417,6 +417,7 @@
     SUBDIR += rubygem-ruby-netcdf
     SUBDIR += scidavis
     SUBDIR += segyio
+    SUBDIR += serac
     SUBDIR += shelxle
     SUBDIR += siconos
     SUBDIR += siesta
