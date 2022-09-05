@@ -3,9 +3,6 @@ DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 PORTREVISION=	2
 CATEGORIES=	sysutils kde kde-frameworks
 
-PATCH_SITES=	https://invent.kde.org/frameworks/kwallet/-/commit/
-PATCHFILES=	ac77d25dcf9eb5832ebdf9301041682547d2b4cf.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 secure and unified container for user passwords
 

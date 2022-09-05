@@ -1,5 +1,5 @@
-bin/kwalletd5
 bin/kwallet-query
+bin/kwalletd5
 include/KF5/KWallet/KWallet
 include/KF5/KWallet/kwallet.h
 include/KF5/KWallet/kwallet_export.h
@@ -14,8 +14,8 @@ lib/libKF5Wallet.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libkwalletbackend5.so
 lib/libkwalletbackend5.so.5
 lib/libkwalletbackend5.so.%%KDE_FRAMEWORKS_VERSION%%
-man/man1/kwallet-query.1.gz
 %%QT_MKSPECDIR%%/modules/qt_KWallet.pri
+man/man1/kwallet-query.1.gz
 share/applications/org.kde.kwalletd5.desktop
 share/dbus-1/interfaces/kf5_org.kde.KWallet.xml
 share/dbus-1/services/org.kde.kwalletd5.service
@@ -79,6 +79,8 @@ share/locale/it/LC_MESSAGES/kwallet-query.mo
 share/locale/it/LC_MESSAGES/kwalletd5.mo
 share/locale/ja/LC_MESSAGES/kwallet-query.mo
 share/locale/ja/LC_MESSAGES/kwalletd5.mo
+share/locale/ka/LC_MESSAGES/kwallet-query.mo
+share/locale/ka/LC_MESSAGES/kwalletd5.mo
 share/locale/kk/LC_MESSAGES/kwalletd5.mo
 share/locale/km/LC_MESSAGES/kwalletd5.mo
 share/locale/kn/LC_MESSAGES/kwalletd5.mo

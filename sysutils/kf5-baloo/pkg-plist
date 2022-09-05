@@ -30,6 +30,8 @@ lib/libKF5Baloo.so.5
 lib/libKF5Baloo.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5BalooEngine.so.5
 lib/libKF5BalooEngine.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libexec/baloo_file
+lib/libexec/baloo_file_extractor
 %%QT_MKSPECDIR%%/modules/qt_Baloo.pri
 %%QT_PLUGINDIR%%/kf5/kded/baloosearchmodule.so
 %%QT_PLUGINDIR%%/kf5/kio/baloosearch.so
@@ -39,10 +41,8 @@ lib/libKF5BalooEngine.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/baloo/experimental/qmldir
 %%QT_QMLDIR%%/org/kde/baloo/libbalooplugin.so
 %%QT_QMLDIR%%/org/kde/baloo/qmldir
-libdata/pkgconfig/Baloo.pc
-lib/libexec/baloo_file
-lib/libexec/baloo_file_extractor
 lib/systemd/user/kde-baloo.service
+libdata/pkgconfig/Baloo.pc
 share/dbus-1/interfaces/org.kde.BalooWatcherApplication.xml
 share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
 share/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
@@ -232,6 +232,14 @@ share/locale/ja/LC_MESSAGES/balooshow5.mo
 share/locale/ja/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/ja/LC_MESSAGES/kio5_tags.mo
 share/locale/ja/LC_MESSAGES/kio5_timeline.mo
+share/locale/ka/LC_MESSAGES/balooctl5.mo
+share/locale/ka/LC_MESSAGES/baloodb5.mo
+share/locale/ka/LC_MESSAGES/balooengine5.mo
+share/locale/ka/LC_MESSAGES/baloosearch5.mo
+share/locale/ka/LC_MESSAGES/balooshow5.mo
+share/locale/ka/LC_MESSAGES/kio5_baloosearch.mo
+share/locale/ka/LC_MESSAGES/kio5_tags.mo
+share/locale/ka/LC_MESSAGES/kio5_timeline.mo
 share/locale/ko/LC_MESSAGES/balooctl5.mo
 share/locale/ko/LC_MESSAGES/baloodb5.mo
 share/locale/ko/LC_MESSAGES/balooengine5.mo
