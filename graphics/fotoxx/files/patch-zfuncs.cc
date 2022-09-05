@@ -120,7 +120,7 @@
 -   err = sched_setaffinity(0,sizeof(cpuset),&cpuset);
 +   err = cpuset_setaffinity(CPU_LEVEL_WHICH,CPU_WHICH_PID,0,
 +      sizeof(cpuset),&cpuset);
-    if (err) Plog(1,"set_cpu_affinity() %s \n",strerror(errno));
+    if (err) Plog(2,"set_cpu_affinity() %s \n",strerror(errno));
     return;
  }
 @@ -2234,7 +2275,7 @@ int diskspace(cchar *file)                            
