@@ -1,9 +1,9 @@
 PORTNAME=	argparse
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Argument Parser for Modern C++ 
 
 LICENSE=	MIT
