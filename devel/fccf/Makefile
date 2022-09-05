@@ -3,7 +3,7 @@ PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool that quickly searches through C/C++
 
 LICENSE=	MIT
