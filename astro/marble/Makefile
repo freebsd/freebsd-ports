@@ -1,6 +1,6 @@
 PORTNAME=	marble
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro education kde kde-applications
 
 PATCH_SITES=	https://invent.kde.org/education/marble/-/commit/
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libquazip1-qt5.so:archivers/quazip
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
-		kde:5 qt:5 shared-mime-info tar:xz
+		kde:5 qt:5 shared-mime-info tar:xz xorg
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		crash doctools i18n jobwidgets kio newstuff package parts \
 		plasma-framework plasma-workspace-wallpapers runner service solid \
@@ -24,6 +24,7 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 USE_QT=		concurrent core dbus declarative designer gui location network opengl \
 		phonon4 printsupport script serialport sql svg webchannel widgets xml \
 		buildtools_build qmake_build testlib_build
+USE_XORG=	x11
 
 USE_LDCONFIG=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
