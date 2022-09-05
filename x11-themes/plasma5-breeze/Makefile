@@ -1,5 +1,6 @@
 PORTNAME=	breeze
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,6 +18,6 @@ USE_KDE=	auth breeze-icons codecs config configwidgets coreaddons \
 		windowsystem
 USE_QT=		core dbus declarative gui network widgets x11extras xml \
 		buildtools_build qmake_build
-USE_XORG=	xcb
+USE_XORG=	x11 xcb
 
 .include <bsd.port.mk>
