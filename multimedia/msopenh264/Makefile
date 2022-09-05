@@ -1,5 +1,6 @@
 PORTNAME=	msopenh264
 PORTVERSION=	1.2.1.20220531
+PORTREVISION=	1
 CATEGORIES=	multimedia net
 #MASTER_SITES=	https://www.linphone.org/releases/sources/plugins/msopenh264/
 
