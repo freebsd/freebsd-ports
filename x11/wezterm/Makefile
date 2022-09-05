@@ -1,5 +1,5 @@
 PORTNAME=	wezterm
-DISTVERSION=	20220904-064125-9a6cee2b
+DISTVERSION=	20220905-102802-7d4b8249
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -49,7 +49,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		ahash-0.7.6 \
 		aho-corasick-0.7.19 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.63 \
+		anyhow-1.0.64 \
 		arrayref-0.3.6 \
 		arrayvec-0.7.2 \
 		assert_fs-1.0.7 \
@@ -76,7 +76,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		bitflags-1.3.2 \
 		block-0.1.6 \
 		block-buffer-0.9.0 \
-		block-buffer-0.10.2 \
+		block-buffer-0.10.3 \
 		blocking-1.2.0 \
 		bstr-0.1.4 \
 		bstr-0.2.17 \
@@ -115,7 +115,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		core-graphics-0.22.3 \
 		core-graphics-types-0.1.1 \
 		core-text-19.2.0 \
-		cpufeatures-0.2.4 \
+		cpufeatures-0.2.5 \
 		crc32fast-1.3.2 \
 		criterion-0.3.6 \
 		criterion-plot-0.4.5 \
@@ -281,7 +281,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		mime-0.3.16 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.4.4 \
-		miniz_oxide-0.5.3 \
+		miniz_oxide-0.5.4 \
 		mio-0.8.4 \
 		mlua-0.8.3 \
 		names-0.12.0 \
@@ -467,8 +467,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		termtree-0.2.4 \
 		textwrap-0.11.0 \
 		textwrap-0.15.0 \
-		thiserror-1.0.33 \
-		thiserror-impl-1.0.33 \
+		thiserror-1.0.34 \
+		thiserror-impl-1.0.34 \
 		thread_local-1.1.4 \
 		threadpool-1.8.1 \
 		tiff-0.7.3 \
