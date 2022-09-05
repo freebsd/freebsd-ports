@@ -1,7 +1,7 @@
 PORTNAME=	kde-thumbnailer-fb2
 PORTVERSION=	0.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc kde
 
 MAINTAINER=	makc@FreeBSD.org
@@ -10,9 +10,12 @@ COMMENT=	KDE thumbnail generator for fb2 files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang kde:5 qt:5
-USE_KDE=	archive ecm_build kio
-USE_QT=		buildtools_build qmake_build gui
+USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
+USE_KDE=	ecm_build archive completion config coreaddons jobwidgets kio \
+		service solid widgetsaddons windowsystem
+USE_QT=		buildtools_build qmake_build concurrent core dbus gui network \
+		widgets
+USE_XORG=	x11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Caig
