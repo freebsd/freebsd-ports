@@ -9,6 +9,8 @@ COMMENT=	Command-line based Direct Connect client
 
 LICENSE=	GPLv2
 
+BROKEN=		does not build: undefined symbol: main_to_utf8_string
+
 CONFLICTS=	tthsum
 
 USES=		gnome iconv readline
