@@ -1,10 +1,10 @@
 PORTNAME=	taskwarrior-tui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.23.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 
-MAINTAINER=	alexis.praga@free.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal User Interface (TUI) for Taskwarrior
 
 LICENSE=	AGPLv3
