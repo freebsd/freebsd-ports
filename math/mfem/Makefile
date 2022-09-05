@@ -1,7 +1,7 @@
 PORTNAME=	mfem
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,10 +17,10 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	MFEM_ENABLE_TESTING # tests are broken, see https://github.com/mfem/mfem/issues/3163
 
-OPTIONS_DEFINE=		SUPERLU
+OPTIONS_DEFINE=		METIS SUPERLU
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	NOMPI MPICH OPENMPI
-OPTIONS_DEFAULT=	MPICH SUPERLU # should be the same MPI choice as in science/hypre
+OPTIONS_DEFAULT=	METIS MPICH SUPERLU # should be the same MPI choice as in science/hypre
 OPTIONS_SUB=		yes
 
 NOMPI_DESC=		Build without parallel processing support
@@ -35,6 +35,10 @@ OPENMPI_USES=		mpi:openmpi
 OPENMPI_CMAKE_ON=	-DTPL_ENABLE_MPI=ON
 OPENMPI_LIB_DEPENDS=	libHYPRE.so:science/hypre \
 			libmetis.so:math/metis
+
+METIS_DESC=		Build with metis
+METIS_CMAKE_BOOL=	MFEM_USE_METIS
+METIS_LIB_DEPENDS=	libmetis.so:math/metis
 
 SUPERLU_DESC=		Enable SuperLU use
 SUPERLU_CMAKE_BOOL=	MFEM_USE_SUPERLU
