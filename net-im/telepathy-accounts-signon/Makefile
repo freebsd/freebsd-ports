@@ -1,6 +1,6 @@
 PORTNAME=	telepathy-accounts-signon
 DISTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
@@ -12,9 +12,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 
 LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libmission-control-plugins.so:net-im/telepathy-mission-control \
-		libsignon-glib.so:net-im/libsignon-glib
+		libsignon-glib.so:net-im/libsignon-glib \
+		libtelepathy-glib.so:net-im/telepathy-glib
 
-USES=		gettext meson pkgconfig tar:bz2
+USES=		gettext gnome meson pkgconfig tar:bz2
+USE_GNOME=	glib2
 
 USE_LDCONFIG=	YES
 
