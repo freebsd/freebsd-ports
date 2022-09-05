@@ -1,6 +1,6 @@
 PORTNAME=	evince
 DISTVERSION=	42.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -30,7 +30,7 @@ SLAVEPORT?=	no
 
 USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome gstreamer libarchive \
 		localbase:ldflags meson pkgconfig tar:xz xorg
-USE_GNOME=	cairo gtk30
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_LDCONFIG=	yes
 USE_XORG=	ice
 CPE_VENDOR=	gnome
