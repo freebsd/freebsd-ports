@@ -1,5 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.34.0
+DISTVERSION=	0.35.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -80,6 +80,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.95 \
+		term_size-0.3.2 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
 		terminal_size-0.2.1 \
