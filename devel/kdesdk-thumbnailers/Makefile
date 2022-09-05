@@ -1,5 +1,6 @@
 PORTNAME=	kdesdk-thumbnailers
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -7,12 +8,13 @@ COMMENT=	KDE thumbnail generator for gettext po files
 
 LIB_DEPENDS=	libgettextpo.so:devel/gettext-tools
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	completion config coreaddons i18n jobwidgets \
 		kio service solid widgetsaddons windowsystem \
 		ecm_build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 
