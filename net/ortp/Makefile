@@ -2,7 +2,7 @@ PORTNAME=	ortp
 PORTVERSION=	5.1.32
 CATEGORIES=	net
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Real-time Transport Protocol (RTP) library
 
 LICENSE=	GPLv3
