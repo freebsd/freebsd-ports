@@ -1,5 +1,6 @@
 PORTNAME=	falkon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +15,7 @@ USE_KDE=	archive i18n \
 USE_QT=		concurrent core dbus declarative gui location network printsupport \
 		sql webchannel webengine widgets x11extras sql-sqlite3_run \
 		buildtools_build qmake_build
-USE_XORG=	xcb
+USE_XORG=	x11 xcb
 
 USE_LDCONFIG=	yes
 
