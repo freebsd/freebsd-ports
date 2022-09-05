@@ -1,6 +1,7 @@
 PORTNAME=	lean
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.48.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -32,6 +33,9 @@ TCMALLOC_CMAKE_BOOL=	TCMALLOC
 TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 
 THREADS_CMAKE_BOOL=	MULTI_THREAD
+
+post-build: # workaround for https://github.com/leanprover-community/lean/issues/765
+	@cd ${WRKSRC}/../library && ${BUILD_WRKSRC}/shell/lean --make
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
