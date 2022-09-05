@@ -1,5 +1,6 @@
 PORTNAME=	krita
 DISTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -21,6 +22,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libgif.so:graphics/giflib \
 		libgsl.so:math/gsl \
 		libheif.so:graphics/libheif \
+		libjxl.so:graphics/libjxl \
 		liblcms2.so:graphics/lcms2 \
 		libmypaint.so:graphics/libmypaint \
 		libpng.so:graphics/png \
