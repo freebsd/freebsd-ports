@@ -1,0 +1,36 @@
+--- policyd-spf.conf.5.orig	2020-04-18 06:04:36 UTC
++++ policyd-spf.conf.5
+@@ -137,7 +137,7 @@ policyd-spf python configuration parameters
+ 
+ .SH "USAGE"
+ Usage:
+-  policyd-spf [/etc/policyd-spf/policyd-spf.conf]
++  policyd-spf [%%PREFIX%%/etc/python-policyd-spf/policyd-spf.conf]
+ 
+ .SH "OTHER DOCUMENTATION"
+ This documentation assumes you have read Postfix's README_FILES/
+@@ -162,7 +162,7 @@ file.
+ 
+ Configuration options are described here and in the configuration file 
+ provided with the package.  The provided setup.py installs this configuration 
+-file in /etc/policyd-spf/.
++file in %%PREFIX%%/etc/python-policyd-spf/.
+ 
+ Additionally, whitelisting certain IP addresses from SPF checks is supported.
+ This man page and the sample configuration file show the format to use.
+@@ -684,12 +684,12 @@ visible to milters such as DMARC milter.
+ To use this feature requires additional postfix configuration to execute the
+ second, mock, instance of the policy server:
+ 
+- Add a second service to /etc/postfix/master.cf:
++ Add a second service to %%PREFIX%%/etc/postfix/master.cf:
+ 
+         policyd-spf-mock  unix  -       n       n       -       0       spawn
+-            user=nobody argv=/usr/bin/policyd-spf '/etc/pypolicyd-spf/mock
++            user=nobody argv=%%PREFIX%%/bin/policyd-spf '%%PREFIX%%/etc/pypolicyd-spf/mock
+ 
+-Configure the Postfix additional policy service in /etc/postfix/main.cf to
++Configure the Postfix additional policy service in %%PREFIX%%/etc/postfix/main.cf to
+ run before the regular service:
+ 
+         smtpd_recipient_restrictions =
