@@ -1,0 +1,48 @@
+--- policyd-spf.1.orig	2020-04-18 06:04:36 UTC
++++ policyd-spf.1
+@@ -144,12 +144,12 @@ $ policyd-spf (Start using installed config file)
+ 
+ $ policyd-spf \-h (Display usage message)
+ 
+-$ policyd-spf /etc/policyd-spf/policyd-spf.conf (Config file name to use)
++$ policyd-spf %%PREFIX%%/etc/python-policyd-spf/policyd-spf.conf (Config file name to use)
+ 
+ Configuration options are described in the sample configuration file provided
+ with the package (policyd-spf.conf.commented) and in policyd-spf.conf(5).  The
+ provided setup.py installs an uncommented configuration file in 
+-/etc/policyd-spf/.
++%%PREFIX%%/etc/python-policyd-spf/.
+ 
+ Additionally, whitelisting certain IP addresses or IP addresses used by listed
+ domains from SPF checks is supported.  Skipping SPF checks for local submission
+@@ -186,7 +186,7 @@ script is smoothed over time
+ The default policy_time_limit is 1000 seconds.  This may be too short for some
+ SMTP transactions to complete.  As recommended in SMTPD_POLICY_README, this
+ should be extended to 3600 seconds.  To do so, set "policy_time_limit = 3600"
+-in /etc/postfix/main.cf.
++in %%PREFIX%%/etc/postfix/main.cf.
+ 
+ Messages that get a Fail SPF result will be rejected.  Messages that get a 
+ Permerror are, by default, treated as if they had no SPF record.  Messages
+@@ -244,10 +244,10 @@ followed by a empty line:
+ 
+ .SH "POSTFIX INTEGRATION"
+ 
+- 1. Add the following to /etc/postfix/master.cf:
++ 1. Add the following to %%PREFIX%%/etc/postfix/master.cf:
+ 
+         policyd-spf  unix  -       n       n       -       0       spawn
+-            user=nobody argv=/usr/bin/policyd-spf
++            user=nobody argv=%%PREFIX%%/bin/policyd-spf
+ 
+     NOTE: Check the path to both the installed Python 3 interpreter and
+           policyd-spf.  These vary from system to system.  To use non-default
+@@ -257,7 +257,7 @@ followed by a empty line:
+           that instead.  Python and Python 3 versions prior to 3.3 are not
+           supported.
+ 
+- 2. Configure the Postfix policy service in /etc/postfix/main.cf:
++ 2. Configure the Postfix policy service in %%PREFIX%%/etc/postfix/main.cf:
+ 
+         smtpd_recipient_restrictions =
+             ...
