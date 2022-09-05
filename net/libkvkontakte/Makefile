@@ -1,6 +1,6 @@
 PORTNAME=	libkvkontakte
 DISTVERSION=	5.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/digikam
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	config coreaddons ecm i18n kdewebkit kio service widgetsaddons
-USE_QT=		core gui network webkit widgets \
+USE_QT=		concurrent core dbus gui network webkit widgets \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>
