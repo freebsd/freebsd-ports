@@ -1,5 +1,6 @@
 PORTNAME=	kglobalaccel
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,6 +14,6 @@ USE_KDE=	config coreaddons crash dbusaddons i18n service \
 		ecm_build
 USE_QT=		core dbus gui linguisttools widgets x11extras \
 		buildtools_build qmake_build testlib_build
-USE_XORG=	xcb
+USE_XORG=	x11 xcb
 
 .include <bsd.port.mk>
