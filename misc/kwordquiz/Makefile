@@ -1,11 +1,13 @@
 PORTNAME=	kwordquiz
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Flash card trainer for KDE Applications
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
+		kde:5 qt:5 tar:xz xorg
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash doctools emoticons guiaddons i18n \
 		iconthemes init itemmodels itemviews jobwidgets kdeclarative \
@@ -15,6 +17,7 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		ecm_build
 USE_QT=		core dbus gui network phonon4 printsupport widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 
