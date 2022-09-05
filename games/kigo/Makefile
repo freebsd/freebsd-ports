@@ -1,11 +1,12 @@
 PORTNAME=	kigo
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME:tu}_DESC}
 
-USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 tar:xz xorg
 USE_KDE=	attica auth codecs completion config configwidgets \
 		coreaddons crash dbusaddons i18n jobwidgets kio \
 		libkdegames newstuff notifyconfig service solid sonnet textwidgets \
@@ -13,6 +14,7 @@ USE_KDE=	attica auth codecs completion config configwidgets \
 		ecm_build
 USE_QT=		concurrent core dbus declarative gui network svg widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 
