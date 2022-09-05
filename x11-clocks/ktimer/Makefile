@@ -1,5 +1,6 @@
 PORTNAME=	ktimer
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-clocks kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,6 +13,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		ecm_build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
+USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 
