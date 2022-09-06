@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-09-06 16:20:58 UTC
++++ CMakeLists.txt
+@@ -63,7 +63,7 @@ find_path(HALF_PRECISION half.hpp)
+ if (NOT HALF_PRECISION)
+ 	message(FATAL_ERROR "Failed to find the half-precision floating point library (half.hpp)")
+ endif()
+-find_package(Flatbuffers REQUIRED)
++find_package(FlatBuffers REQUIRED)
+ pkg_check_modules(libcgraph libgvc REQUIRED IMPORTED_TARGET libcgraph)
+ if (USE_PERFTOOLS)
+ 	pkg_check_modules(libtcmalloc REQUIRED IMPORTED_TARGET libtcmalloc)
