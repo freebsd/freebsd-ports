@@ -1,6 +1,6 @@
 PORTNAME=	alsa-seq-server
 DISTVERSIONPREFIX=	v
-PORTVERSION=		1.0.8
+PORTVERSION=		1.1.0
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
