@@ -1,6 +1,6 @@
 PORTNAME=	openscad
 PORTVERSION=	2022.09.03
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 
@@ -30,11 +30,11 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 CONFLICTS=	openscad
 
 USES=		bison cmake compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
-		gl gnome pkgconfig qmake qt:5 shared-mime-info xorg
+		gl gnome pkgconfig qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu glew
 USE_GNOME=	cairo glib20 libxml2
-USE_QT=		buildtools buildtools_build core concurrent_build dbus gui multimedia svg widgets
+USE_QT=		buildtools_build core concurrent_build dbus gui multimedia qmake_build svg widgets
 USE_XORG=	x11
 GH_ACCOUNT=	microsoft:mimalloc
 GH_PROJECT=	MCAD:mcad mimalloc:mimalloc
