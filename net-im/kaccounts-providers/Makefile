@@ -1,6 +1,5 @@
 PORTNAME=	kaccounts-providers
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	11
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

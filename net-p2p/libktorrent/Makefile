@@ -1,6 +1,5 @@
 PORTNAME=	libktorrent
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	net-p2p kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
