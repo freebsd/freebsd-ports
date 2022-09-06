@@ -76,10 +76,8 @@ CLANG_COMMANDS=	\
 		clang-extdef-mapping \
 		clang-format \
 		clang-linker-wrapper \
-		clang-nvlink-wrapper \
 		clang-offload-bundler \
 		clang-offload-packager \
-		clang-offload-wrapper \
 		clang-repl \
 		clang-scan-deps \
 		clang-tblgen \
