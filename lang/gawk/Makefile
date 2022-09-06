@@ -1,5 +1,5 @@
 PORTNAME=	gawk
-PORTVERSION=	5.1.1
+PORTVERSION=	5.2.0
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -21,7 +21,7 @@ MPFR_DESC?=		Support multiple-precision floating-point computation
 MPFR_LIB_DEPENDS=	libgmp.so:math/gmp libmpfr.so:math/mpfr
 MPFR_CONFIGURE_OFF=	--without-gmp --without-mpfr
 
-INFO=		gawk gawkinet gawkworkflow
+INFO=		gawk gawkinet gawkworkflow pm-gawk
 
 GNU_CONFIGURE=	yes
 USES=		iconv libtool makeinfo readline tar:lz
