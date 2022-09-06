@@ -1,5 +1,5 @@
 PORTNAME=	elk
-DISTVERSION=	8.4.30
+DISTVERSION=	8.5.2
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/
 PKGNAMESUFFIX=	-chemistry
@@ -62,7 +62,7 @@ do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-do-test:
+do-test: # several tests fail, see https://sourceforge.net/p/elk/discussion/897822/thread/5d7862dd8b/
 	@cd ${WRKSRC}/tests && ./test.sh
 
 .include <bsd.port.post.mk>
