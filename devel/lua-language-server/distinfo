@@ -1,0 +1,15 @@
+TIMESTAMP = 1662484910
+SHA256 (sumneko-lua-language-server-3.5.4_GH0.tar.gz) = bf1fd783051724fac46028eef018abb14a741db1b07d49a7e50770cb1cbb67a2
+SIZE (sumneko-lua-language-server-3.5.4_GH0.tar.gz) = 3124118
+SHA256 (actboy168-bee.lua-301ad60_GH0.tar.gz) = 8c51b059426c4cf3c5a6db33cc11f0dca44881e762dc5de238219312fe81971a
+SIZE (actboy168-bee.lua-301ad60_GH0.tar.gz) = 478403
+SHA256 (actboy168-luamake-db9d087_GH0.tar.gz) = e8b538decaabe2d16da7cd71ace9dc45d8f4f4924608981420a5040bf1217282
+SIZE (actboy168-luamake-db9d087_GH0.tar.gz) = 55438
+SHA256 (cppcxy-EmmyLuaCodeStyle-f389817_GH0.tar.gz) = fac6f0a7fbbd0848ab9482ac9bc3fe535d31f02dc89285c4ba8c0c89f727cdbe
+SIZE (cppcxy-EmmyLuaCodeStyle-f389817_GH0.tar.gz) = 4242506
+SHA256 (bjornbytes-lovr-docs-a6fc516_GH0.tar.gz) = 80dcf5a071c2bdb0f41c1f4b203600180aa499085ce090c124f353e4bb8249f1
+SIZE (bjornbytes-lovr-docs-a6fc516_GH0.tar.gz) = 16640833
+SHA256 (love2d-community-love-api-69e7e01_GH0.tar.gz) = 35263a7cb16256407c23155df915e2e0bb2054679f61e86572967eb9afbb04b5
+SIZE (love2d-community-love-api-69e7e01_GH0.tar.gz) = 151635
+SHA256 (sqmedeiros-lpeglabel-b5d7638_GH0.tar.gz) = e2285dac6ad9a2ffca17f5f9ed2f9a57d753b58d41194fc53df35b257bb453d2
+SIZE (sqmedeiros-lpeglabel-b5d7638_GH0.tar.gz) = 82828
