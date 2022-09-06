@@ -14,7 +14,11 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils cython autoplist pytest # tests fail, see https://github.com/glotzerlab/gsd/issues/180
+USE_PYTHON=	distutils cython autoplist pytest
+
+TEST_WRKSRC=	${WRKSRC}/gsd/test
+#TEST_ARGS=	--pyargs gsd -p gsd.pytest_plugin_validate --validate # enable this line to run longer tests, see https://gsd.readthedocs.io/en/v2.6.0/installation.html#run-tests
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/gsd/fl*.so
