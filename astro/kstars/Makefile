@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libraw.so:graphics/libraw \
 		libgsl.so:math/gsl \
 		libsecret-1.so:security/libsecret \
-		libnova-0.15.so:astro/libnova \
+		libnova.so:astro/libnova \
 		libstellarsolver.so:astro/stellarsolver \
 		libwcs.so:astro/wcslib
 BUILD_DEPENDS=	xplanet:astro/xplanet
