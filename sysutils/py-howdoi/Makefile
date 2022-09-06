@@ -4,7 +4,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@riseup.net
+MAINTAINER=	DtxdF@disroot.org
 COMMENT=	Instant coding answers via the command line
 
 LICENSE=	MIT
