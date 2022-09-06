@@ -1,6 +1,5 @@
 PORTNAME=	django-hijack
-PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTVERSION=	3.2.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://ports.caomhin.org/:npmcache
