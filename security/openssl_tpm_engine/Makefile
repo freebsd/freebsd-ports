@@ -19,7 +19,8 @@ USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	mgerstner
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl="${OPENSSLBASE}"
+CONFIGURE_ARGS=	--with-openssl="${OPENSSLBASE}" \
+		--with-enginedir="${PREFIX}/lib/openssl/engines"
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/create_tpm_key
 INSTALL_TARGET=	install-strip
