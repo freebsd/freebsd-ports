@@ -1,3 +1,5 @@
-TIMESTAMP = 1658687106
+TIMESTAMP = 1662474311
 SHA256 (inkscape-1.2.1.tar.xz) = 46ce7da0eba7ca4badc1db70e9cbb67e0adf9bb342687dc6e08b5ca21b8d4c1b
 SIZE (inkscape-1.2.1.tar.xz) = 98048464
+SHA256 (inkscape-1.2.1-poppler-22.09.0.patch) = 5e847d11c1c42db717ad39bc03708e3b855f0e0a99ee4ac8d97f5bfe4af8985c
+SIZE (inkscape-1.2.1-poppler-22.09.0.patch) = 3576

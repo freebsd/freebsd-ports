@@ -4,6 +4,9 @@ PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
+PATCH_SITES=	https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/inkscape/trunk/
+PATCHFILES=	inkscape-1.2.1-poppler-22.09.0.patch:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
 
