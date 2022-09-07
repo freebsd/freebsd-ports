@@ -3,5 +3,4 @@ developed over the course of +10 years and several major C++ application
 development projects. It should compile and run on FreeBSD, Windows, Linux and
 OSX using a modern C++ compiler.
 
-WWW: https://cbang.org/
-WWW: https://github.com/CauldronDevelopmentLLC/cbang/
+See also: https://github.com/CauldronDevelopmentLLC/cbang/

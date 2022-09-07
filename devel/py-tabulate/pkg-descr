@@ -8,5 +8,3 @@ lightweight plain-text markup: multiple output formats
 suitable for further editing or transformation readable presentation of
 mixed textual and numeric data: smart column alignment,
 configurable number formatting, alignment by a decimal point
-
-WWW: https://github.com/astanin/python-tabulate

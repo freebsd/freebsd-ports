@@ -8,5 +8,3 @@ Features:
 - Scan a bitmap created by Ghostscript to find bounding box.
 - Create TIFF or Interchange from part of a bitmap created
   by Ghostscript.
-
-WWW: http://www.ghostgum.com.au/software/epstool.htm

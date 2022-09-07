@@ -2,5 +2,3 @@ Encode Explorer is an easy-to-use php script to use as an index file.
 It shows files in the server and lets you browse through folders,
 upload files etc. It is kept small and neat so that the source can be
 used for learning.
-
-WWW: https://sourceforge.net/projects/encode-explorer/

@@ -2,5 +2,3 @@ A collection of fancy functional tools focused on practicality. It
 was designed to be a layer of functional tools over Python.
 
 It was inspired by Clojure and Underscore (JS library).
-
-WWW: https://github.com/Suor/funcy

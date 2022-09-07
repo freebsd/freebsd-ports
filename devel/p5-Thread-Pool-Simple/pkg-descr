@@ -3,5 +3,3 @@ external dependencies outside core modules.
 
 Jobs can be submitted to and handled by multi-threaded `workers' managed
 by the pool.
-
-WWW: https://metacpan.org/release/Thread-Pool-Simple

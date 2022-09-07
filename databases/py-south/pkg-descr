@@ -11,5 +11,3 @@ South is:
       use syncdb for your non-migrated apps without it interfering.
     * Useful for data too; you can write migrations to transform legacy data.
     * Better (we think, anyway) than the alternatives.
-
-WWW: http://south.aeracode.org/

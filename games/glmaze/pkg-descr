@@ -5,5 +5,3 @@ the master client and starts a local server. Up to six players can join
 a session. Only the master client can start the session. Other players
 can join a running game. The game stops when the first player reaches
 ten kills. The player with the top score at this moment is the winner.
-
-WWW: http://glmaze.sourceforge.net/

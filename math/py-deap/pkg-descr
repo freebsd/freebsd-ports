@@ -19,5 +19,3 @@ DEAP includes the following features:
 * Genealogy of an evolution (that is compatible with NetworkX)
 * Examples of alternative algorithms : Particle Swarm Optimization, Differential
   Evolution, Estimation of Distribution Algorithm
-
-WWW: https://github.com/DEAP/deap

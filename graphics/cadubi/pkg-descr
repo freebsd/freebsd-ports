@@ -5,5 +5,3 @@ consoles support various text modes, such as background and
 foreground colors, bold, and inverse.  This text art, commonly
 called "ASCII art," is used in various places such as online
 BBSes, email and login prompts.
-
-WWW: https://github.com/statico/cadubi

@@ -6,5 +6,3 @@ parenthesis-delimited pair, just like it does non-terminal nodes.
 
 The CNF format attaches pre-terminal tags to the word with an
 underscore.
-
-WWW: https://metacpan.org/release/Lingua-Treebank

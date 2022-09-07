@@ -10,5 +10,3 @@ If your project requires that you create a new XML document format, the XML
 Document Format Style Guide may be helpful. In addition to actual style rules,
 it also contains advice on designing your own vs. adapting an existing format,
 on XML instance document formatting, and on elements vs. attributes.
-
-WWW: https://github.com/google/styleguide

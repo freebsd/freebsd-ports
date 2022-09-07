@@ -20,5 +20,3 @@ The accompanying formail program enables you to generate autoreplies,
 split up digests/mailboxes into the original messages, do some very
 simple header-munging/extraction, or force mail into mail-format (with
 leading From line).
-
-WWW: https://github.com/BuGlessRB/procmail

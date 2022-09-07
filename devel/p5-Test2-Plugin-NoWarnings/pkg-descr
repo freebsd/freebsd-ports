@@ -4,5 +4,3 @@ test and the warning content is outputted via diag.
 
 This module uses $SIG{__WARN__}, so if the code you're testing
 sets this, then this module will stop working.
-
-WWW: https://metacpan.org/release/Test2-Plugin-NoWarnings

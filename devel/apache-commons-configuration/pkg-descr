@@ -19,5 +19,3 @@ Different configuration sources can be mixed using a ConfigurationFactory and
 CompositeConfiguration. Additional sources of configuration parameters can be
 created by using custom configuration objects. This customization can be
 achieved by extending AbstractConfiguration.
-
-WWW: https://commons.apache.org/proper/commons-configuration/

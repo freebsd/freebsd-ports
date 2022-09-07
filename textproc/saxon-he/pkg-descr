@@ -18,5 +18,3 @@ components are:
 So you can use Saxon to process XML by writing XSLT stylesheets, by writing
 XQuery queries, by writing Java applications, or by combinations of the
 approaches.
-
-WWW: http://www.saxonica.com/

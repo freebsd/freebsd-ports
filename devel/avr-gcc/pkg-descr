@@ -10,5 +10,4 @@ Locally added support for the following AVR devices:
   ATmega64RFR2, ATmega644RFR2, ATmega128RFR2, ATmega1284RFR2,
   ATmega256RFR2, ATmega2564RFR2
 
-WWW: http://gcc.gnu.org/
-WWW: http://www.nongnu.org/avr-libc/
+See also: https://gcc.gnu.org/

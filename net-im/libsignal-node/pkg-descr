@@ -15,5 +15,3 @@ The underlying implementations are written in Rust:
    available in Signal.
  - poksho: Utilities for implementing zero-knowledge proofs (such as those used
    by zkgroup); stands for "proof-of-knowledge, stateful-hash-object".
-
-WWW: https://github.com/signalapp/libsignal

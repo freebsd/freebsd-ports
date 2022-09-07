@@ -18,5 +18,3 @@ Also you can pass an opened file:
 
   with open('file.html') as f:
       imgkit.from_file(f, 'out.jpg')
-
-WWW: https://github.com/jarrekk/imgkit

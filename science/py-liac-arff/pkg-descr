@@ -7,5 +7,3 @@ ARFF (Attribute-Relation File Format) is an file format specially created for
 describe datasets which are used commonly for machine learning experiments and
 softwares. This file format was created to be used in Weka, the best
 representative software for machine learning automated experiments.
-
-WWW: https://github.com/renatopp/liac-arff

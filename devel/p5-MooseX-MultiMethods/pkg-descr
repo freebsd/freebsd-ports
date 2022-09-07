@@ -6,5 +6,3 @@ When invoking a method declared as multi a matching variant is being searched
 in all the declared multi variants based on the passed parameters and the
 declared type constraints. If a variant has been found, it will be invoked.
 If no variant could be found, an exception will be thrown.
-
-WWW: https://metacpan.org/release/MooseX-MultiMethods

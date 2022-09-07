@@ -6,5 +6,3 @@ devices like mobile phones, tablets and their capabilities by parsing (browser) 
 
 user_agents relies on the excellent ua-parser to do the actual parsing of the
 raw user agent string.
-
-WWW: https://github.com/selwin/python-user-agents

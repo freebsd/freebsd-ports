@@ -10,5 +10,3 @@ unencrypted messages with other software on the same machine.
 
 signald does not come with a user friendly frontend. Users should select an
 existing client to use signald with.
-
-WWW: https://signald.org/

@@ -5,5 +5,3 @@ the name is only used for informational purposes (caller, Carp, etc.).
 Note that for anonymous closures (subs that reference lexicals declared
 outside the sub itself) one can name each instance of the closure
 differently, which can be very useful for debugging.
-
-WWW: https://metacpan.org/release/Sub-Name

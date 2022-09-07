@@ -1,5 +1,3 @@
 Middleware that converts files uploaded with mimetype application/octet-stream
 into normal form input, so Rack applications can read these as normal, rather
 than as raw input.
-
-WWW: https://github.com/New-Bamboo/rack-raw-upload

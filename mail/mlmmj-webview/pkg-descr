@@ -2,5 +2,3 @@ Tiny web frontend for mlmmj.
 
 Provides an index of mailing lists including a frontend to handle subscription,
 unsubscription and access to the archives.
-
-WWW: https://codeberg.org/bapt/mlmmj-webview

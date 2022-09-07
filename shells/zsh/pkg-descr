@@ -11,5 +11,3 @@ To fire up the zsh completion system, type the following commands:
 
 	$ autoload -U compinstall
 	$ compinstall
-
-WWW: https://www.zsh.org/

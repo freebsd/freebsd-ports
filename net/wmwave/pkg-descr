@@ -8,5 +8,3 @@ Wavelan Silver WEP/IEEE card from Lucent Technologies.
 I have rewritten the network code for use with Bill Paul's wi(4)
 driver as it appears in FreeBSD 5.0-CURRENT and 4.4-STABLE. Support
 for other cards will not be integrated into this GPLed version.
-
-WWW: http://www.schuermann.org/~dockapps/

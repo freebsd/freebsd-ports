@@ -10,5 +10,3 @@ PFFASTCONV does fast convolution (FIR filtering), of single precision
 real vectors, utilizing the PFFFT library.
 
 PFDSP contains a few other signal processing functions.
-
-WWW: https://github.com/marton78/pffft

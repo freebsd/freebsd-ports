@@ -11,5 +11,3 @@ IPTCInfo will let your web server -- and other automated server
 programs -- pull it back out. You can use the information directly in
 Perl programs, export it to XML, or even export SQL statements ready
 to be fed into a database.
-
-WWW: https://metacpan.org/release/Image-IPTCInfo

@@ -5,5 +5,3 @@ number of times against each host, increasing the number of requested
 connections per second on each iteration, and extracts the significant data
 from the httperf output, delivering a CSV or TSV format file which can be
 imported directly into a spreadsheet for analysis/graphing.
-
-WWW: http://www.xenoclast.org/autobench/

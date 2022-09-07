@@ -10,5 +10,3 @@ like handheld devices.
 The library includes bindings for both the C and C++ languages. It works
 on POSIX-compliant UNIX and UNIX-like systems (GNU/Linux, Mac OS X,
 Solaris, FreeBSD), Android, and Windows (2000, XP and later).
-
-WWW: https://www.hyperrealm.com/libconfig/libconfig.html

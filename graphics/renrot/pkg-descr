@@ -12,5 +12,3 @@ the Orientation EXIF tag, or a given angle.
 The script can also put commentary into the Commentary and UserComment tags.
 Personal details can be specified via XMP tags defined in a configuration
 file.
-
-WWW: http://puszcza.gnu.org.ua/projects/renrot/

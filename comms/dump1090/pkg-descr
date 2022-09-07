@@ -16,5 +16,3 @@ The main features are:
   shown as a list refreshing as more data arrives.
 * CPR coordinates decoding and track calculation from velocity.
 * TCP server streaming and receiving raw data to/from connected clients.
-
-WWW: https://github.com/antirez/dump1090

@@ -4,5 +4,3 @@ and readable way.
 
 Due to the simplicity of fex's language, it can enable you to replace
 many common invocations of cut and awk with a single invocation of fex.
-
-WWW: http://semicomplete.com/projects/fex/

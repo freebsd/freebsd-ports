@@ -12,5 +12,3 @@ While mpg321 is not as fast as the non-free mpg123 on systems which have a
 floating point unit, it comes under the GNU General Public License, which
 allows greater freedom to its users. For most people who want mpg123,
 mpg321 is a better alternative.
-
-WWW: http://mpg321.sourceforge.net/

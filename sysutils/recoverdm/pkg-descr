@@ -12,5 +12,3 @@ images into one. This can be usefull when you have, for example, multiple CD's
 with the same data which are all damaged. In such case, you can then first use
 recoverdm to retrieve the data from the damaged CD's into image-files and then
 combine them into one image with mergebad.
-
-WWW: http://www.vanheusden.com/recoverdm/

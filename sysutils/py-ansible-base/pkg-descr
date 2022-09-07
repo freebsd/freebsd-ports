@@ -6,5 +6,3 @@ contain community and partner supported Ansible Collections of modules and
 plugins.  For future versions of Ansible, ansible-base is going to be
 superseded by the ansible-core Python package, available in the FreeBSD
 ports as sysutils/py-ansible-core.
-
-WWW: https://www.ansible.com/

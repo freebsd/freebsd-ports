@@ -2,5 +2,3 @@ DateTime::Calendar::Christian is the implementation of the combined Julian and
 Gregorian calendar.
 
 See DateTime for information about most of the methods.
-
-WWW: https://metacpan.org/release/DateTime-Calendar-Christian

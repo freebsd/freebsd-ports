@@ -11,5 +11,3 @@ that make exploring data a breeze.
 JLess supports full text regular-expression based search. Quickly find the data
 you're looking for in long String values, or jump between values for the same
 Object key.
-
-WWW: https://jless.io

@@ -4,5 +4,3 @@ data for your projects. It's primarily used for
 managing debug information files for iOS, Android
 as well as release and source maps management for
 other platforms.
-
-WWW: https://docs.sentry.io/cli/

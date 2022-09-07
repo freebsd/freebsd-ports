@@ -2,5 +2,3 @@ String::Interpolate::Named provides a function to interpolate named arguments by
 target texts in a template string. The target texts are provided to the function
 via a hash, where the keys correspond to the named argument to be replaced, or a
 subroutine that performs the lookup.
-
-WWW: https://metacpan.org/dist/String-Interpolate-Named

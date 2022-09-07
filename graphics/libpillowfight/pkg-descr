@@ -15,5 +15,3 @@ Available algorithms:
 * SWT (Stroke Width Transformation)
 * Compare: Compare two images (grayscale) and makes the pixels that are
   different really visible (red).
-
-WWW: https://gitlab.gnome.org/World/OpenPaperwork/libpillowfight

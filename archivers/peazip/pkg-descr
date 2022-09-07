@@ -5,5 +5,3 @@ including ACE, CAB, DMG, ISO, RAR, UDF, ZIPX format. Extract, create and
 convert archives, split / join files, strong encryption, encrypted password
 manager, secure delete, find duplicate files, compute hash, export job
 definition as script to automate backup / restore.
-
-WWW: https://peazip.github.io

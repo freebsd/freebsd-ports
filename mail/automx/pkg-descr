@@ -11,5 +11,3 @@ automx unifies Microsoft's and Mozilla's mail account provisioning standards
 in one powerful Open Source tool.  Choose from many backends, including LDAP
 and SQL, and let automx create standard and individualized profiles for
 multiple domains on the fly!
-
-WWW: http://www.automx.org/en/

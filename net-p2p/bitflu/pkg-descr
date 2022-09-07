@@ -10,5 +10,3 @@ maybe even OSX.
   your downloads again :-)
 * Non-Threading/(almost)Non-Forking design: All connections are handled
   in non-blocking state using a dynamic select loop
-
-WWW: http://bitflu.workaround.ch/

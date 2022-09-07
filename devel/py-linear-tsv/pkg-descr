@@ -7,5 +7,3 @@ escaped. In the TSV format presented here, escape codes are used for newlines
 and tabs in field data, allowing naive filtering with line-oriented shell tools
 like sort, fgrep and cut to work as expected. In all of its details, the format
 derives from the TEXT serialization mode of Postgres and MySQL.
-
-WWW: https://github.com/solidsnack/tsv

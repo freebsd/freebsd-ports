@@ -13,5 +13,3 @@ protos). In fact, the way the tool transforms JSON request data into a binary
 encoded protobuf is using that very same schema. So, if the server you interact
 with does not support reflection, you will either need the proto source files
 that define the service or need protoset files that grpcui can use.
-
-WWW: https://github.com/fullstorydev/grpcui

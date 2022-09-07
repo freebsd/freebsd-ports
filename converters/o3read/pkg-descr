@@ -6,5 +6,3 @@ There are three output modules:
     * o3totxt creates plain text
     * o3tohtml creates html code
 Example: unzip -p document.odt content.xml | o3totxt
-
-WWW: http://siag.nu/o3read/

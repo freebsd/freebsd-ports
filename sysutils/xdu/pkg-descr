@@ -2,5 +2,3 @@ XDU is a program for displaying a graphical tree of disk space
 utilization as reported by the UNIX utility "du".  You can
 navigate up and down in the tree, sort things, and print out
 information.
-
-WWW: http://sd.wareonearth.com/~phil/xdu/

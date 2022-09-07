@@ -5,5 +5,3 @@ Furthermore it provides a powerful, rule-based event after treatment, e.g.
 for switching other KNX devices, sending e-mail or SMS or executing a shell
 command. You can configure and control the LinKNX daemon using an XML-style
 protocol via TCP network socket or Unix domain socket.
-
-WWW: http://linknx.sourceforge.net/

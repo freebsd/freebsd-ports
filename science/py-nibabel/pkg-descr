@@ -7,5 +7,3 @@ the successor of PyNIfTI.
 
 The various image format classes give full or selective access to header (meta)
 information and access to the image data is made available via NumPy arrays.
-
-WWW: https://nipy.org/nibabel/

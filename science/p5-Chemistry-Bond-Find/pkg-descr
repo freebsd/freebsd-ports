@@ -1,5 +1,3 @@
 Perl module which provides functions for detecting the bonds in a molecule from
 its 3D coordinates by using simple cutoffs, and for guessing the formal bond
 orders.
-
-WWW: https://metacpan.org/release/Chemistry-Bond-Find

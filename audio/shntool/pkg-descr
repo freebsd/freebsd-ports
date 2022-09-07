@@ -5,5 +5,3 @@ format module to handle that particular file type.
 
 Apart from .wav shntool supports many formats through helper programs.
 Please see the manual page for more information.
-
-WWW: http://www.etree.org/shnutils/shntool/

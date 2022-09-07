@@ -20,5 +20,3 @@ database server, with awkward and hard-to-guess names. This is messy and
 obscure.
 
 DBIx::Admin::DSNManager is a solution to this problem.
-
-WWW: https://metacpan.org/release/DBIx-Admin-DSNManager

@@ -1,5 +1,3 @@
 glFlow is a DoS detection tool written with speed in mind. It detects
 attacks on high speed links through real-time NetFlow aggregation and
 analysis.
-
-WWW: http://freshmeat.net/projects/glflow/

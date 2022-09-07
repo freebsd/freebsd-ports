@@ -3,5 +3,3 @@ namespace and attributes which are used by the Zope Page Templates
 renderer to inject dynamic markup into a page. It also includes
 the Macro Expansion for TAL (METAL) macro language used in page
 assembly.
-
-WWW: https://pypi.org/project/zope.tal/

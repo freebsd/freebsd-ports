@@ -13,5 +13,3 @@ Key features include:
 - CLI context aware. At the time of writing this, no other TACACS+ daemon is.
 - Both IPv4 and IPv6 are fully supported.
 - Compliant to latest TACACS+ protocol specification (draft 1.78)
-
-WWW: http://www.pro-bono-publico.de/projects/tac_plus.html

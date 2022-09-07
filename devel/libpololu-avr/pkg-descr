@@ -1,4 +1,2 @@
 A C/C++ library for controlling Pololu AVR hardware, such as the 3pi robot
 and Orangutan family of robot controllers.
-
-WWW: https://www.pololu.com/docs/0J20

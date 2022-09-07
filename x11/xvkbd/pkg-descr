@@ -4,5 +4,3 @@ which provides facility to enter characters onto other clients
 be used for systems without a hardware keyboard such as kiosk terminals
 or handheld devices. This program also has facility to send characters
 specified as the command line option to another client.
-
-WWW: http://t-sato.in.coocan.jp/xvkbd/

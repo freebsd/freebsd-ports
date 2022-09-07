@@ -13,5 +13,3 @@ for some of the more esoteric portions of the 6.0 TIFF spec.
 
 Unless WITHOUT=DOCS, the html documentations is also
 installed locally in /usr/local/share/doc/tiff.
-
-WWW: http://www.simplesystems.org/libtiff/

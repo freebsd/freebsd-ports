@@ -1,3 +1,1 @@
 Wrap tests with fixtures in freeze_time
-
-WWW: https://github.com/ktosiek/pytest-freezegun

@@ -3,5 +3,3 @@ order of associative arrays.
 
 Preserving the mapping order is helpful to humans reading the documents, despite
 not affecting their meaning.
-
-WWW: https://github.com/drbild/json2yaml

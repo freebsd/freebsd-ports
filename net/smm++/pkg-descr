@@ -5,5 +5,3 @@ It is based on itcl , which itself depends on tcl/tk . itcl, tcl/tk
 are free and standart programming languages. (If you need further
 information, where to get itcl and/or tcl/tk, please drop me a
 line.)
-
-WWW: http://smm.sourceforge.net/

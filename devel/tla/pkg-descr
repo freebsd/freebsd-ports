@@ -4,5 +4,3 @@ and directory adds, deletes, and renames cleanly, and that it does branching
 simply and easily.  Arch is also "distributed" which means, for example that
 you can make arch branches of your own from remote projects, even if you do
 not have write access to the revision control archives for those projects.
-
-WWW: http://www.gnu.org/software/gnu-arch/

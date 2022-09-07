@@ -4,5 +4,3 @@ save these parts into a single MPEG output file. It follows a "keyhole
 surgery" approach. Thus, the input video and audio data is mostly kept
 unchanged, only very few frames at the beginning and/or end of the selected
 range are recoded in order to obtain a valid MPEG file.
-
-WWW: https://github.com/bernhardu/dvbcut-deb/

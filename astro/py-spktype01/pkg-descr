@@ -11,5 +11,3 @@ This module reads SPK files of data type 1, one of the types of binary SPK file.
 At the point of Oct. 2018, HORIZONS system provides files of type 21 as binary
 SPK files by default. You can get type 1 binary SPK file for celestial small
 bodies through TELNET interface by answering back '1' for 'SPK file format'.
-
-WWW: https://github.com/whiskie14142/spktype01

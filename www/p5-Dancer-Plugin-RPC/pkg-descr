@@ -15,5 +15,3 @@ This plugin exposes the new keyword "jsonrpc" that is followed by
 jsonrpc-calls at this endpoint.
 
 See the /t dir for examples (until some tutorial exists)
-
-WWW: https://metacpan.org/release/Dancer-Plugin-RPC

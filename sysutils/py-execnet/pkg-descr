@@ -6,5 +6,3 @@ following uses:
   * Distribute tasks to (many) local or remote CPUs
   * Write and deploy hybrid multi-process applications
   * Write scripts to administer multiple environments
-
-WWW: http://codespeak.net/execnet/

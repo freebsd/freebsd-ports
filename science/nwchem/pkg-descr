@@ -11,5 +11,3 @@ NWChem software can handle:
 * Gaussian basis functions or plane-waves
 * Scaling from one to thousands of processors
 * Properties and relativistic effects
-
-WWW: https://nwchemgit.github.io/

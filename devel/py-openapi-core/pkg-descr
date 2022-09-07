@@ -8,5 +8,3 @@ Key features:
 - Security providers (API keys, Cookie, Basic and Bearer HTTP authentications)
 - Custom deserializers and formats
 - Integration with libraries and frameworks
-
-WWW: https://github.com/p1c2u/openapi-core

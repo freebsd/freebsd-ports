@@ -4,5 +4,3 @@ and constructs a list of associations between IP address prefixes
 and AS numbers.  It provides this information to routers supporting
 the RPKI-RTR protocol or publishes this in a number of useful
 formats.
-
-WWW: https://github.com/NLnetLabs/routinator

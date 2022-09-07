@@ -10,5 +10,4 @@ This strategy enables the DBI and drivers to serve a useful purpose
 whilst allowing the real interface to evolve with experience behind the
 emulation interface.
 
-WWW: http://dbi.perl.org
-WWW: https://metacpan.org/release/DBI
+See also: https://dbi.perl.org

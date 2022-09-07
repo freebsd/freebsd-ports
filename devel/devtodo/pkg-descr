@@ -3,5 +3,3 @@ terminal) in maintaining a list of outstanding tasks in a hierarchical,
 prioritised, list. Additionally, it can automatically list outstanding
 items when you change into a directory (see example shell configurations
 in ${PREFIX}/share/examples/devtodo).
-
-WWW: http://swapoff.org/devtodo.html

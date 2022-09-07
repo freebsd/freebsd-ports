@@ -1,4 +1,2 @@
 Hexify formats arbitrary (possible binary) data into a format suitable for hex
 dumps in the style of xd or hexl.
-
-WWW: https://metacpan.org/release/Data-Hexify

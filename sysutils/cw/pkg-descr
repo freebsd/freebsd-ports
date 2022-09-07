@@ -8,5 +8,3 @@ a definition file containing the color format desired.  cw has support
 for wildcard match coloring, tokenized coloring, headers/footers, case
 scenario coloring, command line dependent definition coloring, and
 includes over 50 pre-made definition files.
-
-WWW: http://cwrapper.sourceforge.net/

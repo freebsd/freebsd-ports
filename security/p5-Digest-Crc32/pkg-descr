@@ -1,4 +1,2 @@
 This module provides a perl implementation to generate 32 bits CRC digests for
 buffers and files.
-
-WWW: https://metacpan.org/release/Digest-Crc32

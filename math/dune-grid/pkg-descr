@@ -3,5 +3,3 @@ differential equations (PDEs) with grid-based methods.
 
 dune-grid module contains the implementations of AlbertaGrid,
 GeometryGrid, OneDGrid and YaspGrid.
-
-WWW: https://www.dune-project.org/

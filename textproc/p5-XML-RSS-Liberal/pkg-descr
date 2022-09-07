@@ -2,5 +2,3 @@ XML::RSS::Liberal is a subclass of XML::RSS::LibXML, for those of you
 who want to parse broken RSS files (as they often are). It uses
 XML::Liberal as its core parser, and therefore whatever broken XML you
 provided, as long as XML::Liberal can tolerate it.
-
-WWW: https://metacpan.org/release/XML-RSS-Liberal

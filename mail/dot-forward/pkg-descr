@@ -7,5 +7,3 @@ dot-forward supports forwarding, program deliveries, and comments.
 It does not support file deliveries or :include:.
 (However, it recognizes file delivery attempts,
 and defers delivery to give you a chance to set up a .qmail file.)
-
-WWW: http://cr.yp.to/dot-forward.html

@@ -8,5 +8,3 @@ class, and return an answer set. The low level classes allow direct
 manipulation of DNS zones, messages, names, and records.
 
 This is 1.x version of the port which supports python 2.7
-
-WWW: http://www.dnspython.org/

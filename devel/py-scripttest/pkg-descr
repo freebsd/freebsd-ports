@@ -3,5 +3,3 @@ applications.
 
 With it you can easily run the command (in a subprocess) and see the
 output (stdout, stderr) and any file modifications.
-
-WWW: http://pythonpaste.org/scripttest/

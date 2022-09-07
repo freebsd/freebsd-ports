@@ -10,6 +10,3 @@ physical SMS hardware. It could be a free or paid. The details shouldn't matter.
 
 You should not have to care how it is actually sent, only that it has been sent
 (although some drivers may not be able to provide certainty).
-
-
-WWW: https://metacpan.org/release/SMS-Send

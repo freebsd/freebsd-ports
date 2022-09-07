@@ -7,5 +7,3 @@ netgroup file is an example of such a database). It offers the
 capability to select nodes on the tree, and attachment points for
 nodes on the tree. Each attachment point can support multiple
 child nodes.
-
-WWW: https://metacpan.org/release/Tree-Nary

@@ -13,5 +13,3 @@ additive for video, but subtractive for inks and film. Video and film typically
 use three color channels, while four or more inks are used for printing on
 paper. A color management system must transform each pixel in the original image
 to corresponding amounts of ink or film density values.
-
-WWW: https://github.com/ampas/CTL

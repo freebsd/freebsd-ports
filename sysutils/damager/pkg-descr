@@ -1,5 +1,3 @@
 Takes a small amount of random data from /dev/random and writes it to
 some place inside the file passed as argument. Then you can test your
 FAM or checksuming system for integrity protection.
-
-WWW: https://github.com/granalberto/damager

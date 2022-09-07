@@ -5,5 +5,3 @@ to convert the high quality font data into a lesser quality, proprietary
 format. FTGL uses the Freetype (www.freetype.org) font library to open and
 'decode' the fonts. It then takes that output and stores it in a format
 most efficient for OpenGL rendering.
-
-WWW: https://github.com/frankheckenbach/ftgl

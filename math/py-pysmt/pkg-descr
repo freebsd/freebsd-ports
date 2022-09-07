@@ -18,5 +18,3 @@ solver.
 
 PySMT assumes that the python bindings for the SMT Solver are installed and
 accessible from your PYTHONPATH.
-
-WWW: http://www.pysmt.org

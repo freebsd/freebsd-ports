@@ -4,5 +4,3 @@ provided by the Zenoss API programmatically.  Anything you could do from
 the Zenoss interface can be achieved via this module.  This is a
 full service implementation, providing the construction of the call
 to the API and the handling of the response.
-
-WWW: https://metacpan.org/release/Zenoss

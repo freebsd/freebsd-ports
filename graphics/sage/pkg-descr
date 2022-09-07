@@ -1,4 +1,2 @@
 Sage is an OpenGL extension library written to make use of SDL's mechanism for
 enabling OpenGL's extensions.
-
-WWW: http://www.worldforge.org/dev/eng/libraries/sage

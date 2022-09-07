@@ -3,5 +3,3 @@ per pixel lights to Quake.  Stencil shadows allow for realistic shadow
 effects on every object in the game world.  Per pixel lighting allows you to
 have fine surface details correctly lit.  These are essentially the same
 algorithms as used by the new Doom game.
-
-WWW: http://tenebrae.sourceforge.net/

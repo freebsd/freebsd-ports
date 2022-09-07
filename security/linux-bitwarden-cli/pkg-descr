@@ -3,5 +3,3 @@ The Bitwarden CLI is a powerful, full-featured command-line interface
 with TypeScript and Node.js and can be run on Windows, macOS, and Linux
 distributions. This port is using the Linux binary thanks to the Linux
 binary compatibility provided by FreeBSD.
-
-WWW: https://github.com/bitwarden/cli

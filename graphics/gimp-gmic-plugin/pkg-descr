@@ -8,5 +8,3 @@ G'MIC stands for GREYC's Magic Image Converter. This project aims to:
     o The command-line executable gmic to use the G'MIC framework from a shell.
     o The interactive plug-in gmic_gimp to bring G'MIC capabilities to the image
       retouching software GIMP.
-
-WWW: http://gmic.eu/

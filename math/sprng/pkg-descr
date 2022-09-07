@@ -9,5 +9,3 @@ source of pseudo random numbers. The goal of this project is to develop,
 implement and test a scalable package for parallel pseudo random number
 generation which will be easy to use on a variety of architectures, especially
 in large-scale parallel Monte Carlo applications.
-
-WWW: http://www.sprng.org/

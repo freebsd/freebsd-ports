@@ -11,5 +11,3 @@ for testing and prototyping C/C++ software. SWIG is typically used to parse
 C/C++ interfaces and generate the 'glue code' required for the above target
 languages to call into the C/C++ code. SWIG can also export its parse tree in
 the form of XML and Lisp s-expressions.
-
-WWW: http://www.swig.org/

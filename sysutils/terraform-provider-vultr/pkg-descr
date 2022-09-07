@@ -6,5 +6,3 @@ Almost any infrastructure type can be represented as a resource in Terraform.
 
 A provider is responsible for understanding API interactions and exposing
 resources. Providers generally are an IaaS, PaaS, or SaaS services.
-
-WWW: https://github.com/squat/terraform-provider-vultr

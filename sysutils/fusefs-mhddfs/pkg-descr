@@ -6,5 +6,3 @@ combined, simulating a single big volume which can merge several hard
 drives or remote file systems. It is like unionfs, but can choose the
 drive with the most free space to create new files on, and can move
 data transparently between drives.
-
-WWW: http://mhddfs.uvw.ru/

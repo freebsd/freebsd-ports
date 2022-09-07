@@ -13,5 +13,3 @@ Features:
 * Jupyter notebook integration
 * Efficient storage of models, for reloading
 * Efficient caching included
-
-WWW: https://github.com/sods/paramz

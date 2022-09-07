@@ -13,5 +13,3 @@ and friendly to the user and inherently free of those bugs.
 Even though sdbus-c++ uses sd-bus library, it is not necessarily
 constrained to systemd and can perfectly be used in non-systemd
 environments as well.
-
-WWW: https://github.com/Kistler-Group/sdbus-cpp

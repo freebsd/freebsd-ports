@@ -3,5 +3,3 @@ wavio is a Python module that defines two functions:
   rate, sample width (in bytes), and a numpy array containing the data.
 * wavio.write writes a numpy array to a WAV file, optionally using a specified
   sample width.
-
-WWW: https://github.com/WarrenWeckesser/wavio

@@ -19,5 +19,3 @@ SEMI, Library of MIME feature for GNU Emacs for emacs20.
   MUAs.  They are released as separated packages.
 
 Ported by shige@FreeBSD.ORG
-
-WWW: https://github.com/wanderlust/semi

@@ -5,5 +5,3 @@ Features:
 - API to create and manipulate SPDX documents.
 - Parse and create Tag/Value format SPDX files
 - Parse and create RDF format SPDX files
-
-WWW: https://github.com/spdx/tools-python

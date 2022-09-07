@@ -8,5 +8,3 @@ humans to decipher. More specifically, each word that cannot be read
 correctly by OCR is placed on an image and used as a CAPTCHA. This is
 possible because most OCR programs alert you when a word cannot be read
 correctly.
-
-WWW: https://metacpan.org/release/Captcha-reCaptcha

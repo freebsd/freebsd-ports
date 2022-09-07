@@ -9,5 +9,3 @@ ossec, auditd, etc.).
 
 This library provides functionality for sensors (connection with a manager,
 handling sensor-exported options,...).
-
-WWW: https://www.prelude-siem.org/

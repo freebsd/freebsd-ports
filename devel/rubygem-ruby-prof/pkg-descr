@@ -9,5 +9,3 @@ ruby-prof is a fast code profiler for Ruby. Its features include:
 * Recursive calls - supports profiling recursive method calls
 * Reports - can generate both text and cross-referenced html reports
 * Output - can output to standard out or to a file
-
-WWW: https://github.com/ruby-prof/ruby-prof

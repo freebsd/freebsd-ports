@@ -3,5 +3,3 @@ varieties.
 
 This port provides only the static library libgfan.a. You can get the
 rest of the software package from math/gfan.
-
-WWW: https://users-math.au.dk/jensen/software/gfan/gfan.html

@@ -8,5 +8,3 @@ Caliper can be used for lightweight always-on profiling or advanced performance
 engineering use cases, such as tracing, monitoring, and auto-tuning. It is
 primarily aimed at HPC applications, but works for any C/C++/Fortran program on
 Unix/Linux.
-
-WWW: https://software.llnl.gov/Caliper/

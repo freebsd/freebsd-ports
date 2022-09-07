@@ -2,5 +2,3 @@ IO::LockedFile supplies object methods for locking files.  In its
 simplistic use, the IO::LockedFile class gives us the same interface as
 the IO::File class with the unique difference that the files we deal
 with are locked using the Flock mechanism (using the flock function).
-
-WWW: https://metacpan.org/release/IO-LockedFile

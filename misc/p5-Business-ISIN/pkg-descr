@@ -5,5 +5,3 @@ identify books.  An ISIN consists of two letters,
 identifying the country of origin of the security
 according to ISO 3166, followed by nine characters in
 [A-Z0-9], followed by a decimal check digit.
-
-WWW: https://metacpan.org/release/Business-ISIN

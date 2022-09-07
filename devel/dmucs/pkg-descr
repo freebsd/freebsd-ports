@@ -10,5 +10,3 @@ the new loads.
 * Takes into account the load on a host caused by non-compilation tasks.
 * Supports the dynamic addition and removal of hosts to the compilation farm.
 * Works with distcc, which need not be altered in any way.
-
-WWW: http://dmucs.sourceforge.net/

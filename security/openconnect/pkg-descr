@@ -1,5 +1,3 @@
 OpenConnect is a client for Cisco's AnyConnect SSL VPN.  Beyond
 Cisco's official client, OpenConnect supports multiple platforms,
 NetworkManager integration, and the ability to run as a user.
-
-WWW: http://www.infradead.org/openconnect/

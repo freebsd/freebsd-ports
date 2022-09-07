@@ -8,5 +8,3 @@ compiled natively under all platforms (yes, even MSVC on Windows)
 re-entrant, with sane error handling
 designed with a solid and consistent API
 available as bindings for all major scripting languages
-
-WWW: http://libgit2.github.com/

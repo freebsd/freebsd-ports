@@ -7,5 +7,3 @@ all the necessary pthread stubs.  On platforms which already supply all the
 necessary pthread stubs, this package ships only the pkg-config file
 pthread-stubs.pc, to allow libraries to unconditionally express a dependency
 on pthread-stubs and still obtain correct behavior.
-
-WWW: https://xcb.freedesktop.org/

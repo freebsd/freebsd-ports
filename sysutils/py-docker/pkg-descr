@@ -1,5 +1,3 @@
 A Python library for the Docker Engine API. It lets you do anything the
 docker command does, but from within Python apps: run containers,
 manage containers, manage Swarms, etc.
-
-WWW: https://github.com/docker/docker-py

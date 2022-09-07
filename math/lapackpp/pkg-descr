@@ -9,5 +9,3 @@ Targeting Exascale), which is funded by the Department of Energy as
 part of its Exascale Computing Initiative (ECP). Closely related to
 LAPACK++ is the BLAS++ project, which provides a C++ API for BLAS and
 Batch BLAS.
-
-WWW: https://bitbucket.org/icl/lapackpp/src/master/

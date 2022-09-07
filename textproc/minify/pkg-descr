@@ -10,5 +10,3 @@ allowing embedded resources (like CSS or JS within HTML files) to be minified as
 well. Users can add new implementations that are triggered based on a mimetype
 (or pattern), or redirect to an external command (like ClosureCompiler,
 UglifyCSS, ...).
-
-WWW: https://github.com/tdewolff/minify

@@ -3,5 +3,3 @@ This port provides server components of TigerVNC.
 TigerVNC is a high-performance, platform-neutral implementation of VNC,
 a client/server application that allows users to launch and interact with
 graphical applications on remote machines.
-
-WWW: https://tigervnc.org/

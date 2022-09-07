@@ -7,5 +7,3 @@ image types supported by the Pillow and Leptonica imaging libraries, including
 jpeg, png, gif, bmp, tiff, and others. Additionally, if used as a script,
 Python-tesseract will print the recognized text instead of writing it to a
 file.
-
-WWW: https://github.com/madmaze/pytesseract

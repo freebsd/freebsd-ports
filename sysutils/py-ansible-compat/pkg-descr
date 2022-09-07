@@ -1,4 +1,2 @@
 A python package that contains functions that facilitate working with
 various versions of Ansible 2.9 and newer.
-
-WWW: https://github.com/ansible-community/ansible-compat

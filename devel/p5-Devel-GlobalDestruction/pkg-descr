@@ -7,5 +7,3 @@ process local resources to actually execute.
 
 For these constructors you can avoid the mess by simply bailing out if global
 destruction is in effect.
-
-WWW: https://metacpan.org/release/Devel-GlobalDestruction

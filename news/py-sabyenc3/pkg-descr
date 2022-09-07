@@ -7,5 +7,3 @@ particularly beneficial when SSL is enabled, which limits the size of each
 chunk to 16K. Parsing these chunks in Python is much more costly. Additionally,
 this module releases Python's GIL during decoding, greatly increasing
 performance of the overall download process.
-
-WWW: https://github.com/sabnzbd/sabyenc

@@ -19,5 +19,3 @@ nnn can:
   - pin a directory you may need to revisit and jump to it anytime
   - lock the current terminal after a specified idle time
   - change directory on exit
-
-WWW: https://github.com/jarun/nnn

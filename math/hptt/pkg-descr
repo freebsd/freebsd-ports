@@ -11,5 +11,3 @@ Key Features:
   * Explicitly vectorized kernels for (AVX and ARM)
 * Supports float, double, complex and double complex data types
 * Supports both column-major and row-major data layouts
-
-WWW: https://github.com/springer13/hptt

@@ -4,5 +4,3 @@ RUBY_PLATFORM constant.  This library is parsing this constant for
 information.  You could easily do this yourself.  We've just taken the
 hassle out of it for you and hopefully covered a few of the more
 unusual cases you mightn't have thought of yourself.
-
-WWW: https://github.com/berk/platform

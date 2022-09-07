@@ -1,3 +1,1 @@
 Hash::MultiKey provides hashes that accept arrayrefs of strings as keys.
-
-WWW: https://metacpan.org/release/Hash-MultiKey

@@ -1,5 +1,4 @@
 This is a wrapper around a SPARQL service. It helps in creating the query URI
 and, possibly, convert the result into a more manageable format.
 
-WWW: https://sparqlwrapper.readthedocs.io/en/stable/
-WWW: https://github.com/RDFLib/sparqlwrapper
+See also: https://github.com/RDFLib/sparqlwrapper

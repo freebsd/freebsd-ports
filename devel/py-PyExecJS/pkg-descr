@@ -9,5 +9,3 @@ Supported runtimes
 * Microsoft Windows Script Host (JScript)
 * SlimerJS
 * Nashorn - Included with Oracle Java 8
-
-WWW: https://pypi.org/project/PyExecJS/

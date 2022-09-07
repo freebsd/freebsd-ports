@@ -3,5 +3,3 @@ and improve portability of Common Lisp code according to its own
 idiosyncratic and rather conservative aesthetic. What this actually
 means is open to debate, but each project member has a veto on all
 project activities, so a degree of conservatism is inevitable.
-
-WWW: http://common-lisp.net/project/alexandria/

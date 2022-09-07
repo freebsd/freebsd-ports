@@ -6,5 +6,3 @@ domain:
 	  form
 	. create user- and group-accounts in the domain
 	. delete and reset accounts
-
-WWW: https://www.freedesktop.org/software/realmd/adcli/adcli.html

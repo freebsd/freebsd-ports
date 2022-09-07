@@ -1,4 +1,2 @@
 This Hammer CLI plugin contains a set of commands for remote execution
 of commands on hosts known to Foreman via SSH
-
-WWW: https://github.com/theforeman/hammer-cli-foreman-ssh

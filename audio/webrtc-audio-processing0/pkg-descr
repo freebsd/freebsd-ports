@@ -8,5 +8,3 @@ standalone library. It provides the following features:
 - Level estimator
 - Noise suppression
 - Voice activity detection
-
-WWW: https://freedesktop.org/software/pulseaudio/webrtc-audio-processing/

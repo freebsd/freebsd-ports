@@ -7,5 +7,3 @@ performs only a rough analysis of source code.  It will not find
 every error and will also find things that are not errors.  Manual
 inspection of your code is still necessary, but greatly aided with
 this tool.
-
-WWW: https://security.web.cern.ch/security/recommendations/en/codetools/rats.shtml

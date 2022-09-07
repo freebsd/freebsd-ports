@@ -14,5 +14,3 @@ efficient implementations of the following lattice cryptography capabilities:
 * Digital Signature
 * Identity-Based Encryption
 * Ciphertext-Policy Attribute-Based Encryption
-
-WWW: https://palisade-crypto.org

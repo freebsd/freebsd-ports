@@ -10,5 +10,3 @@ compression and how to tune a compressor for best quality.
 S2TC is especially well suited for runtime (on-load) compression of textures, as
 it is - in low quality settings - way faster than any other texture compressors
 out there.
-
-WWW: https://github.com/divVerent/s2tc/wiki

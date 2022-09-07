@@ -6,5 +6,3 @@ functions to find or generate appropriate SSH keys. The package
 both helps the user to setup a local git installation, and also
 provides a back-end for git/ssh client libraries to authenticate
 with existing user credentials.
-
-WWW:  https://docs.ropensci.org/credentials

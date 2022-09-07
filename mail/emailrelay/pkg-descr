@@ -7,5 +7,3 @@ and then forwarded to the next SMTP server on request.
 
 E-MailRelay can also run as a POP3 server.  Messages received over SMTP
 can be automatically dropped into several independent POP3 mailboxes.
-
-WWW: http://emailrelay.sourceforge.net/

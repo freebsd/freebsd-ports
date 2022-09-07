@@ -6,5 +6,3 @@ modular, library-based approach, with simple input state for input and draw
 commands describing primitive shapes as output. So instead of providing a
 layered library that tries to abstract over a number of platform and render
 backends, it focuses only on the actual UI.
-
-WWW: https://github.com/Immediate-Mode-UI/Nuklear

@@ -7,5 +7,3 @@ discussion of these modules and examples of how to build a module to
 sub-class from C<IO::Capture> yourself.   If after reading the overview,
 you would like to build a class from C<IO::Capture>, look here for
 details on the internals.
-
-WWW: https://metacpan.org/release/IO-Capture

@@ -4,5 +4,3 @@ also detects audio AirPlay services; coupled with the AirPlay support
 in PulseAudio or GStreamer, this can allow an application to stream audio
 to an AirPlay device. The library presently supports Linux and other
 POSIX-based systems.
-
-WWW: https://www.flyn.org/projects/libdmapsharing

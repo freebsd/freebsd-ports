@@ -6,5 +6,3 @@ Main Memory Relational Database Management System
    - Automatic scheme evaluation
    - Efficient log-less transactions
    - Zero time recovery
-
-WWW: https://sourceforge.net/projects/fastdb/

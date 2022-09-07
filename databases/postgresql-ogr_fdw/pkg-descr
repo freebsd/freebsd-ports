@@ -6,5 +6,3 @@ have some limitations:
 	Spatial restrictions are not pushed down.
 	OGR connections every time.
 	All columns are retrieved every time.
-
-WWW: https://github.com/pramsey/pgsql-ogr-fdw

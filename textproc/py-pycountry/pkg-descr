@@ -5,5 +5,3 @@ pycountry provides the ISO databases for the standards:
 - 3166-2: Subdivisions of countries
 - 4217: Currencies
 - 15924: Scripts
-
-WWW: https://github.com/flyingcircusio/pycountry

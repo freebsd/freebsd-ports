@@ -6,5 +6,3 @@ Features:
 - Server-side and client-side validation, several common rules provided
 - Multipage forms (tabbed forms and wizards)
 - Pluggable elements, rules, renderers and renderer plugins
-
-WWW: https://pear.php.net/package/HTML_QuickForm2

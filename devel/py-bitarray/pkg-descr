@@ -7,5 +7,3 @@ representation are provided. This can be useful when bit level access to binary
 files is required, such as portable bitmap image files (.pbm). Also, when
 dealing with compressed data which uses variable bit length encoding, you may
 find this module useful.
-
-WWW: https://pypi.org/project/bitarray/

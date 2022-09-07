@@ -4,5 +4,3 @@ This project prepares for a future where JupyterLab and other frontends switch
 to Jupyter Server for their Python Web application backend. Using this package,
 users can launch Jupyter Notebook, JupyterLab and other frontends side-by-side
 on top of the new Python server backend.
-
-WWW: https://github.com/jupyter/nbclassic

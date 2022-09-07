@@ -2,5 +2,4 @@ Ned's script to check McCabe complexity.
 
 This module provides a plugin for flake8, the Python code checker.
 
-WWW: https://pypi.org/project/mccabe/
-WWW: https://github.com/flintwork/mccabe
+See also: https://github.com/flintwork/mccabe

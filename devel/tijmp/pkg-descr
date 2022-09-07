@@ -16,5 +16,3 @@ TIJmp is distributed under the General Public License, GPL.
 
 Usage:
 java -Dtijmp.jar=%JAVAJARDIR%/tijmp.jar -agentlib:tijmp <your-class>
-
-WWW: http://khelekore.org/jmp/tijmp/

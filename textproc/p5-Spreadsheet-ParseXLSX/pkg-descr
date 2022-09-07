@@ -4,5 +4,3 @@ This module is an adaptor for Spreadsheet::ParseExcel that reads XLSX files.
 For documentation about the various data that you can retrieve from these
 classes, please see Spreadsheet::ParseExcel, Spreadsheet::ParseExcel::Workbook,
 Spreadsheet::ParseExcel::Worksheet, and Spreadsheet::ParseExcel::Cell.
-
-WWW: https://metacpan.org/release/Spreadsheet-ParseXLSX

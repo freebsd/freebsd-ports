@@ -9,5 +9,3 @@ The main benefit of using ormar are:
 
 The goal was to create a simple ORM that can be used directly (as request and
 response models) with fastapi that bases it's data validation on pydantic.
-
-WWW: https://github.com/collerek/ormar

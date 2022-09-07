@@ -7,5 +7,3 @@ parameters are calculated based on a 3D representation of the
 aircraft. Stalls are properly modelled as well. Model control is
 possible with your own rc transmitter, or any input device such as
 joystick, mouse, keyboard.
-
-WWW: https://sourceforge.net/projects/crrcsim/

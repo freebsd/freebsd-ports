@@ -2,5 +2,3 @@ Crypt::X509 parses X.509 certificates. Methods are provided for accessing most
 certificate elements. It is based on the generic ASN.1 module by Graham Barr,
 on the x509decode example by Norbert Klasen and contributions on the
 perl-ldap-dev-Mailinglist by Chriss Ridd.
-
-WWW: https://metacpan.org/release/Crypt-X509

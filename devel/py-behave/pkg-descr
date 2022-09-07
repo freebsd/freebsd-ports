@@ -5,5 +5,3 @@ that encourages collaboration between developers, QA and non-technical or
 business participants in a software project.
 
 behave uses tests written in a natural language style, backed up by Python code.
-
-WWW: https://github.com/behave/behave

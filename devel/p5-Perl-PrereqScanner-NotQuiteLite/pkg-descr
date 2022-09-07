@@ -10,5 +10,3 @@ are not considered as requirements, but you can collect them as suggestions.
 Conditional requirements or requirements loaded in a block are treated as
 recommends. Noed modules are stored separately (since 0.94). You may or may not
 need to merge them into requires.
-
-WWW: https://metacpan.org/release/Perl-PrereqScanner-NotQuiteLite

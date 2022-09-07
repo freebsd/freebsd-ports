@@ -2,5 +2,3 @@ git-prompt.zsh is a fast, customizable, pure-shell, asynchronous Git
 prompt for Zsh.  It is heavily inspired by Olivier Verdier's
 zsh-git-prompt and very similar to the "Informative VCS" prompt of fish
 shell.
-
-WWW: https://github.com/woefe/git-prompt.zsh

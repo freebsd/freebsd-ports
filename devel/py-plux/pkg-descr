@@ -4,5 +4,3 @@ Plux builds a higher-level plugin mechanism around Python's entry point
 mechanism. It provides tools to load plugins from entry points at run time, and
 to discover entry points from plugins at build time (so you don't have to
 declare entry points statically in your setup.py).
-
-WWW: https://github.com/localstack/plux

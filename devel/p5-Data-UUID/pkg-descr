@@ -13,5 +13,4 @@ per machine, and therefore, is suitable for identifying both - extremely
 short-lived and very persistent objects on a given system as well as
 across the network.
 
-WWW: https://metacpan.org/release/Data-UUID
-WWW: http://www.opengroup.org/dce/info/draft-leach-uuids-guids-01.txt
+See also: http://www.opengroup.org/dce/info/draft-leach-uuids-guids-01.txt

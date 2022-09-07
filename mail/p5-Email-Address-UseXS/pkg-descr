@@ -8,5 +8,3 @@ Email::Address is dangerous, badly-formed input can cause very slow regex
 expressions (taking minutes or more to run).
 
 See https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7686 for details.
-
-WWW: https://metacpan.org/pod/Email::Address::UseXS

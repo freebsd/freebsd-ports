@@ -7,5 +7,3 @@ extraction using CSS and XPath Selectors.
 It's specially useful when you need to standardize the data from many sources.
 For example, it allows you to have all your casting and parsing rules in a
 single place.
-
-WWW: https://pypi.org/project/itemloaders/

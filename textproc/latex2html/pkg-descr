@@ -1,5 +1,3 @@
 This program can be used to convert LaTeX to HTML.  It has many configuration
 options configurable by editing a configuration file.  It can handle equations
 and postscript images as well.
-
-WWW: http://www.latex2html.org/

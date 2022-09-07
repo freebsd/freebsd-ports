@@ -17,5 +17,3 @@ contexts like bootstrap code.
 and extensions; BearSSL should implement most of them, and allow extra
 algorithm implementations to be added afterwards, possibly from third
 parties.
-
-WWW: https://bearssl.org/

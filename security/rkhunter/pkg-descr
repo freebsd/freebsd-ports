@@ -10,5 +10,3 @@ tests like:
 - Look for suspected strings in LKM and KLD modules
 - Look for hidden files
 - Optional scan within plaintext and binary files
-
-WWW: http://rkhunter.sourceforge.net

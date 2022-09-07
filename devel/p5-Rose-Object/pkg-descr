@@ -1,4 +1,2 @@
 Rose::Object is a generic object base class.  It provides very little
 functionality, but a healthy dose of convention.
-
-WWW: https://metacpan.org/release/Rose-Object

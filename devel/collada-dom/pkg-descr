@@ -12,5 +12,3 @@ with commercial content creation tools such as Maya, Max or Softimage.
 This project is a very lightweight version of the Sourceforce Collada
 Repository. It maintains only the base collada parser with minimal
 dependencies.
-
-WWW: https://github.com/rdiankov/collada-dom

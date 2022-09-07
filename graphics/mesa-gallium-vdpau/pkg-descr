@@ -5,5 +5,3 @@ Inc.  However, the author makes no claim that Mesa is in any way a
 compatible replacement for OpenGL or associated with Silicon Graphics, Inc.
 
 VDPAU is a Gallium driver for video decoding on AMD hardware.
-
-WWW: https://www.mesa3d.org/

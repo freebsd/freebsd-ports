@@ -8,5 +8,3 @@ Formatting becomes transparent after a while and you can focus on the content
 instead.
 
 Black makes code review faster by producing the smallest diffs possible.
-
-WWW: https://github.com/psf/black

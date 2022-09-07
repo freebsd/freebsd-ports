@@ -11,5 +11,3 @@ plans to change it to pay-to-play.
 Note: this port only contains the data needed to run Alien Arena, shared by
 the Linux and native ports of the game engine. To play Alien Arena you have to
 install one of "games/alienarena" or "games/linux-alienarena".
-
-WWW: http://red.planetarena.org/

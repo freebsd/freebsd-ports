@@ -7,5 +7,3 @@ besides Pillow, therefore ensuring compatibility with a wide range of systems.
 Some aditional features can be added which require the presence of other
 third-party packages that are not written in pure Python, but those packages and
 the features depending on them should be treated as optional.
-
-WWW: https://github.com/victordomingos/optimize-images

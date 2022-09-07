@@ -9,5 +9,3 @@ for toJSON and fromJSON, jsonlite contains functions to stream,
 validate, and prettify JSON data. The unit tests included with the
 package verify that all edge cases are encoded and decoded consistently
 for use with dynamic data in systems and applications.
-
-WWW: https://cran.r-project.org/web/packages/jsonlite/

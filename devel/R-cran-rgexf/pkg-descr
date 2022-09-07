@@ -6,5 +6,3 @@ viz attributes (such as color, size, and position), network dynamics
 graphs element-by-element or massively through data-frames, visualize
 the graph on a web browser through "sigmajs" (a javascript library)
 and interact with the igraph package.
-
-WWW: https://cran.r-project.org/web/packages/rgexf/

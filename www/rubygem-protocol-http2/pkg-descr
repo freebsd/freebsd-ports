@@ -1,3 +1,1 @@
 Protocol::HTTP2 provides a low-level implementation of the HTTP/2 protocol.
-
-WWW: https://github.com/socketry/protocol-http2

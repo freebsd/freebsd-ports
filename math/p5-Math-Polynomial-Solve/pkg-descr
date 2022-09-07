@@ -9,5 +9,3 @@ expect to have a non-zero value for the $a term.
 
 If the constant term is zero then the first value returned in the list
 of answers will always be zero, for all functions.
-
-WWW: https://metacpan.org/release/Math-Polynomial-Solve

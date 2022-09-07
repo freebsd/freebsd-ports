@@ -5,5 +5,3 @@ libxml2 to manipulate the XML responses.  The current version supports part
 of the API (see Flickcurl API coverage) primarily the functions for reading
 photo, people and tags description, uploading photos, changing tags and
 comments.
-
-WWW: http://librdf.org/flickcurl/

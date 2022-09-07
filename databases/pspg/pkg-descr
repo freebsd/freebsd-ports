@@ -2,5 +2,3 @@ pspg is a small specialized pager designed to work with tables. Its primary
 purpose is to work as PostgreSQL pager, but MySQL is supported too. Main
 features include the ability to freeze first few rows/columns, possibility to
 sort data by specified numeric column and configurable color themes.
-
-WWW: https://github.com/okbob/pspg

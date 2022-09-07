@@ -9,5 +9,3 @@ normal program execution, changing or enhancing certain aspects of it.
 
 In essence, pluggy enables function hooking so you can build "pluggable"
 systems.
-
-WWW: https://github.com/pytest-dev/pluggy

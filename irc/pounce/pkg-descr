@@ -1,5 +1,3 @@
 pounce is a multi-client, TLS-only IRC bouncer. It takes a simple
 approach, using a multiple-consumer ring buffer and the IRCv3.2
 server-time extension to communicate with clients.
-
-WWW: https://git.causal.agency/pounce/

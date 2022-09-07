@@ -1,5 +1,3 @@
 Snarf is another small command-line URL fetcher. It supports proxying,
 http redirect, http and ftp resume, http and ftp authentication, as well
 as retrieving data via gopher and finger protocols.
-
-WWW: https://www.xach.com/snarf/

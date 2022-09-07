@@ -6,5 +6,3 @@ build and install scripts.
 This is quaternion.
 
  Package for the manipulation of Quaternion's used for frame transformation.
-
-WWW: http://octave.sourceforge.net/

@@ -4,5 +4,3 @@ own project.
 
 Some of these utilities need linprocfs(5) and linsysfs(5) to be mounted
 under /compat/linux/{proc,sys} to operate.
-
-WWW: http://inai.de/projects/hxtools/

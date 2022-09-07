@@ -10,5 +10,3 @@ advantages:
 
 The implementation is based on SysV shared memory, semaphores and message
 queues. It makes use of POSIX pthreads.
-
-WWW: http://0pointer.de/lennart/projects/libshbuf/

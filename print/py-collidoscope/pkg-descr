@@ -16,5 +16,3 @@ where the glyphs collide. It has a number of collision tests:
   of the paths involved. But if a stroke significantly overlaps a nukta, it will
   be reported as a collision. (Of course, this will not detect strokes which
   merely graze a nukta.)
-
-WWW: https://github.com/simoncozens/collidoscope

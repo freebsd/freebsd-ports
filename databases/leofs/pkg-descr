@@ -14,5 +14,3 @@ LeoFS provides High Scalability. Adding and removing nodes is simple
 and quick, allowing you to react swiftly when your needs change. A
 LeoFS cluster can be thought as elastic storage that you can stretch
 as much and as often as you need.
-
-WWW: http://leo-project.net/

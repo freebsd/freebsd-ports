@@ -2,5 +2,3 @@ Egg V4 (tamago) is a multilingual input method for Emacsen
 written in only Emacs-Lisp.  It supports the following translating servers:
 jserver, cserver, tserver, Wnn6, SJ3 ver 1 and ver 2, cannaserver, wxgserver,
 and anthy.
-
-WWW: https://github.com/hrs-allbsd/tamago

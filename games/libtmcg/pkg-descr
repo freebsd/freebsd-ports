@@ -15,5 +15,3 @@ against his will (except for trivial conclusions). The corresponding
 cryptographic problem, actually called Mental Poker, has been studied since 1979
 (Shamir, Rivest, and Adleman) by many authors. LibTMCG provides the first
 practical implementation of such protocols.
-
-WWW: https://www.nongnu.org/libtmcg/

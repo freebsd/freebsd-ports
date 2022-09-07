@@ -3,5 +3,3 @@ from the ANSI Common Lisp standard, such as sockets, multiprocessing,
 calling external programs, Gray streams etc.
 
 This package contains binaries compiled for SBCL.
-
-WWW: http://clocc.sourceforge.net

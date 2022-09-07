@@ -9,5 +9,3 @@ installed, won't work). This is only a shell script that wraps the other
 programs. If you can watch the DVD with MPlayer, you can compress it with
 iso2mkv. Other used programs (hopefully included in most GNU/Linux
 distributions as well a FreeBSD :) ) are basename, bc, nice, stat.
-
-WWW: http://5ko.free.fr/en/iso2mkv.html

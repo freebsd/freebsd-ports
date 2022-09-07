@@ -14,5 +14,3 @@ been confirmed.
 You should be able to run threaded applications unchanged by simply making
 sure that the "forks" and "forks::shared" modules are loaded,
 e.g. by specifying them on the command line.
-
-WWW: https://metacpan.org/release/forks

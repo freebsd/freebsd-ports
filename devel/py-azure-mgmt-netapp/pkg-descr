@@ -2,5 +2,3 @@ This is the Microsoft Azure NetApp Files Management Client Library.
 
 Azure Resource Manager (ARM) is the next generation of management APIs that
 replace the old Azure Service Management (ASM).
-
-WWW: https://pypi.org/project/azure-mgmt-netapp/

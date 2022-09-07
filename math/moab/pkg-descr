@@ -11,5 +11,3 @@ a mesh. Examples include boundary condition groupings, material types, and
 provenance information for the mesh. Because the data model used in MOAB is so
 abstract, conventions are useful for describing how meta-data is stored into
 that data model.
-
-WWW: https://press3.mcs.anl.gov/sigma/moab-library/

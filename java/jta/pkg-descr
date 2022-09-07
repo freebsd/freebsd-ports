@@ -6,5 +6,3 @@ transactional applications.
 The JTA specification was developed by Sun Microsystems in cooperation
 with leading industry partners in the transaction processing and database
 system arena. See JSR 907.
-
-WWW: http://www.oracle.com/technetwork/java/javaee/tech/jta-138684.html

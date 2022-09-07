@@ -6,5 +6,3 @@ server (or vice-versa).
 
 This port is a private snapshot because p5-VCP's distribution files is
 gone from the MASTER_SITE, and does not currently work with svk.
-
-WWW: http://public.perforce.com/public/revml/index.html

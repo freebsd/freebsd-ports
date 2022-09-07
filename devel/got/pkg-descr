@@ -5,5 +5,3 @@ Got uses Git repositories to store versioned data. Git can be used
 for any functionality which has not yet been implemented in Got.
 It will always remain possible to work with both Got and Git on the
 same repository.
-
-WWW: https://gameoftrees.org

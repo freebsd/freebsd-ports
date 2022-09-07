@@ -10,5 +10,3 @@ so on.  This package also contains the demonstration applications
 nexplot.pl (plot character data with a tree) and nextool.pl
 (allowing programmatic editing, e.g., selecting particular
 clades or subsets of data).
-
-WWW: https://metacpan.org/release/Bio-NEXUS

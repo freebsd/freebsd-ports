@@ -1,4 +1,2 @@
 Search::Odeum is an interface to the Odeum API. Odeum is the inverted index API
 which is a part of qdbm database library.
-
-WWW: https://metacpan.org/release/Search-Odeum

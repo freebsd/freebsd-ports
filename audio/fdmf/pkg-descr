@@ -4,5 +4,3 @@ music itself, not on the filename, tags, or headers. It uses an audio
 fingerprint, or perceptual hash to recognize the duplicate files. It is
 currently under heavy development, so it might be buggy, broken, or
 otherwise bad. But it works for me.
-
-WWW: http://www.w140.com/audio/

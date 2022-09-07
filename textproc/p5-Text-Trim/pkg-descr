@@ -1,5 +1,3 @@
 Text::Trim provides functions for removing leading and/or trailing whitespace
 from strings. It is basically a wrapper around some simple regexes with a
 flexible context-based interface.
-
-WWW: https://metacpan.org/release/Text-Trim

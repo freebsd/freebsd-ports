@@ -11,5 +11,3 @@ The key features of this project according to initial technical requirements are
 * Smooth bypass/automation. No pops, spikes or clicks.
 * Normalized output level: different amplifiers should sound almost of the same
   output loudness with different gain settings.
-
-WWW: https://github.com/sadko4u/tamgamp.lv2

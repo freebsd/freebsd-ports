@@ -8,5 +8,3 @@ evolutionary algorithm. Moreover, specialized techniques are included
 to partition road networks (Buffoon), to output a vertex separator
 from a given partition or techniques geared towards efficient
 partitioning of social networks.
-
-WWW: https://kahip.github.io/

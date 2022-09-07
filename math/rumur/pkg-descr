@@ -3,5 +3,3 @@ security properties of systems represented as state machines. It is based on a
 previous tool, CMurphi, and intended to be close to a drop-in replacement. Rumur
 takes the same input format as CMurphi, the Murphi modelling language, with some
 extensions and generates a C program that implements a verifier.
-
-WWW: https://github.com/Smattr/rumur

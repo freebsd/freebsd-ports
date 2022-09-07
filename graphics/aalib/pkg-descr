@@ -5,5 +5,3 @@ ascii-art renderer in place of outmoded and cumbersome graphical output.
 
 The AA-lib API is designed to be similar to that of other graphics
 libraries so learning its API should be simple.
-
-WWW: http://aa-project.sourceforge.net/aalib/

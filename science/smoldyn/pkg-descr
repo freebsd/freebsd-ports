@@ -11,5 +11,3 @@ other particle-based simulators. Smoldyn's unique features include:
 a "virtual experimenter" who can manipulate or measure the simulated system,
 support for spatial compartments, molecules with excluded volume, and
 simulations in 1, 2, or 3 dimensions.
-
-WWW: https://www.smoldyn.org/

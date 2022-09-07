@@ -1,5 +1,3 @@
 HTTP::DAV is a Perl API for interacting with and modifying content on
 webservers using the WebDAV protocol.  Now you can LOCK, DELETE and PUT
 files and much more on a DAV-enabled webserver.
-
-WWW: https://metacpan.org/release/HTTP-DAV

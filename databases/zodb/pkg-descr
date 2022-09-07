@@ -8,5 +8,3 @@ a high-degree of transparency. ZODB runs on Python 2.7 or Python 3.4
 *Using an object-relational mapping is not like using an object-oriented
 database.
 *almost no seam between code and database.
-
-WWW: https://github.com/zopefoundation/zodb

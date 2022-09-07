@@ -9,5 +9,3 @@ heyoka is a C++ library for the integration of ordinary differential equations
 * batch mode integration to harness the power of modern SIMD instruction sets,
 * a high-performance implementation of Taylor's method based on automatic
   differentiation techniques and aggressive just-in-time compilation via LLVM.
-
-WWW: https://bluescarni.github.io/heyoka/

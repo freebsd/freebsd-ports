@@ -1,4 +1,2 @@
 The twilio-python helper library lets you write Python code to make
 HTTP requests to the Twilio API.
-
-WWW: https://www.twilio.com/docs/libraries/python

@@ -7,5 +7,3 @@ A high compression derivative, called LZ4_HC, is also provided. It trades CPU
 time for compression ratio.
 
 The libraries are BSD licensed, and the binaries are GPLv2.
-
-WWW: https://lz4.github.io/lz4/

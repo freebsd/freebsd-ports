@@ -4,5 +4,3 @@ notifications using dbus.
 Unlike other daemons, tiramisu does not have any sort of window or
 pop-up, but rather sends all notifications to STDOUT. Doing so enables
 endless customization from the end-user.
-
-WWW: https://github.com/Sweets/tiramisu

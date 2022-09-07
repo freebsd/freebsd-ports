@@ -4,5 +4,3 @@ Besides the basic bandwith monitor it comes with two scripts.
 sbm-rt-plot can be used for realtime bandwidth graphs and sbm-plot can
 be used to generate static graphs for bandwith usage over a period of
 time.
-
-WWW: http://git.2f30.org/sbm/

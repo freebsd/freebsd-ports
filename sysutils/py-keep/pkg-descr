@@ -6,5 +6,3 @@ keeper with some useful features:
 * Save the commands as a secret GitHub gist
 * Use keep push and keep pull to sync the commands between GitHub
   gist and other computers.
-
-WWW: https://github.com/OrkoHunter/keep

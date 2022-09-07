@@ -5,5 +5,3 @@ systems on different machines, or under different circumstances.
 This system uses ini-like file format of section, keys, and values.
 The config file supports inheritance to minimize duplication of
 information across files. The format supports schema validation.
-
-WWW: https://launchpad.net/lazr.config

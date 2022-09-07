@@ -19,5 +19,3 @@ controlled by a script file. It supports the following operations:
 	. Removing dead code (classes, fields, methods) and constant
 	  fields
 	. Optimizing local variable allocation
-
-WWW: http://jode.sourceforge.net/

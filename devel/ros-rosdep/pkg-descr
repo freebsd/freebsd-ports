@@ -7,5 +7,3 @@ simplifies the problem of installing system dependencies on different
 platforms.
 
 On FreeBSD, the pkg system is used.
-
-WWW: http://docs.ros.org/independent/api/rosdep/html/

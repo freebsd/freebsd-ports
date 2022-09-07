@@ -9,5 +9,3 @@ activation mechanism. This means it is launched only when needed,
 and additionally it will shut itself down after a period of inactivity.
 
 (Text copied from link below.)
-
-WWW: https://www.freedesktop.org/wiki/Software/fprint/fprintd/

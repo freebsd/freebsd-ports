@@ -18,5 +18,3 @@ stage), as well as to manage load, for example, by performing
 adaptive load shedding. Decomposing services into a set of stages
 also enables modularity and code reuse, as well as the development
 of debugging tools for complex event-driven applications.
-
-WWW: http://www.eecs.harvard.edu/~mdw/proj/seda/

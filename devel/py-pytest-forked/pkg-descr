@@ -1,4 +1,2 @@
 pytest plugin to run each test in a forked subprocess. This is an
 extraction of the xdist --forked module.
-
-WWW: https://github.com/pytest-dev/pytest-forked

@@ -5,5 +5,3 @@ usual file operations on it: reading data, writing data, changing its
 permissions, etc. So although this class does not explicitly document all
 instance methods supported by File, you can in fact call any File instance
 method on a Tempfile object.
-
-WWW: https://github.com/ruby/tempfile

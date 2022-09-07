@@ -12,5 +12,3 @@ command "pdftk".
 http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 
 (PDF Chain starting from version 0.4.0 is compatible with PDFtk 1.45)
-
-WWW: https://sourceforge.net/projects/pdfchain/

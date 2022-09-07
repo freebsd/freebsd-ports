@@ -1,3 +1,1 @@
 pytest plugin to run pycodestyle, Python style guide checker.
-
-WWW: https://github.com/henry0312/pytest-codestyle

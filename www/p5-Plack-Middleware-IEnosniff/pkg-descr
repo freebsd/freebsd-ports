@@ -3,5 +3,3 @@ adds HTTP Header 'X-Content-Type-Options: nosniff' for safe.  Sending
 X-Content-Type-Options response header with the value nosniff will
 prevent Internet Explorer from MIME-sniffing a response away from the
 declared content-type.
-
-WWW: https://metacpan.org/release/Plack-Middleware-IEnosniff

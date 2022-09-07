@@ -3,5 +3,3 @@ a machine with an X display and a machine with a VNC server running on its
 main screen to act as if they were two displays connected to one machine.
 When you move your mouse pointer off the screen in a direction of your
 choosing, the pointer will appear on the other screen instead.
-
-WWW: http://fredrik.hubbe.net/x2vnc.html

@@ -5,5 +5,3 @@ they are already included in another supplied prefix. The second optimisation
 identifies adjacent prefixes that can be combined under a single, shorter-length
 prefix. The above optimalisation steps are often useful in context of
 compressing firewall rules or BGP prefix-list filters.
-
-WWW: https://github.com/job/aggregate6

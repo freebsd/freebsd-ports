@@ -15,5 +15,3 @@ module.
 Parse::CSV fills this functionality gap. It provides a flexible
 and light-weight streaming parser for large, extremely large,
 or arbitrarily large CSV files.
-
-WWW: https://metacpan.org/release/Parse-CSV

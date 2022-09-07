@@ -7,5 +7,3 @@ restarting functionality against manual/sudden termination is
 implemented for facilitating package build in busy or low-
 performance machines. Utilities for building packages in a chroot
 environment are also provided for safe upgrade.
-
-WWW: http://www.mwghennndo.com/software/portsreinstall/

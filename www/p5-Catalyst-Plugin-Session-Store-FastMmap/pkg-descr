@@ -1,5 +1,3 @@
 "Catalyst::Plugin::Session::Store::FastMmap" is a fast session storage
 plugin for Catalyst that uses an mmap'ed file to act as a shared memory
 interprocess cache. It is based on Cache::FastMmap.
-
-WWW: https://metacpan.org/release/Catalyst-Plugin-Session-Store-FastMmap

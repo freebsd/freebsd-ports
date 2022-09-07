@@ -1,4 +1,2 @@
 AnyEvent::MessagePack is MessagePack stream serializer/deserializer
 for AnyEvent.
-
-WWW: https://metacpan.org/release/AnyEvent-MessagePack

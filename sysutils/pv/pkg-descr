@@ -4,5 +4,3 @@ any normal pipeline between two processes to give a visual
 indication of how quickly data is passing through, how long
 it has taken, how near to completion it is, and an estimate
 of how long it will be until completion.
-
-WWW: http://www.ivarch.com/programs/pv.shtml

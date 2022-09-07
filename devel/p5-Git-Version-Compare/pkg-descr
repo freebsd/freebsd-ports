@@ -6,5 +6,3 @@ of git version or git describe.
 
 These routines collect the knowledge about Git versions that was accumulated
 while developing Git::Repository.
-
-WWW: https://metacpan.org/release/Git-Version-Compare

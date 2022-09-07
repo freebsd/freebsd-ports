@@ -4,5 +4,3 @@ authentication and executing command.
 Name please fits into Unix naming conventions. Where we have daemon instead of
 background process. We are killing processes, not closing processes. Now we can
 please to run privileged process.
-
-WWW: https://github.com/MagikBSD/please

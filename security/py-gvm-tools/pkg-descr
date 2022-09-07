@@ -8,5 +8,3 @@ This module is comprised of interactive and non-interactive clients. The
 programming language Python is supported directly for interactive scripting.
 But it is also possible to issue remote GMP/OSP commands without programming
 in Python.
-
-WWW: https://github.com/greenbone/gvm-tools

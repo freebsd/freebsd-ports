@@ -16,5 +16,3 @@ probabilistic model (e.g., an n-gram model, pronunciation model).  FSTs can
 be optimized by determinization and minimization, models can be applied to
 hypothesis sets (also represented as automata) or cascaded by finite-state
 composition, and the best results can be selected by shortest-path algorithms.
-
-WWW: http://www.openfst.org/

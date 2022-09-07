@@ -1,4 +1,2 @@
 Jet is a cross-platform library for simulating quantum circuits
 using tensor network contractions.
-
-WWW: https://github.com/XanaduAI/jet

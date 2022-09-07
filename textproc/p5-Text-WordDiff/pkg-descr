@@ -5,5 +5,3 @@ narrative documents or documents with very long lines. To diff
 source code, one is still best off using Text::Diff. But if you
 want to see how a short story changed from one version to the next,
 this module will do the job very nicely.
-
-WWW: https://metacpan.org/release/Text-WordDiff

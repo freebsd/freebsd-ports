@@ -7,5 +7,3 @@ However I wanted to tidy up some of the code to make it use strallocs
 and do more error checking. I also wanted to simplify the configuration,
 whilst at the same time allowing more flexibility. Plus there were
 some things I just didn't want: quotas and APOP support for example...
-
-WWW: http://iain.cx/unix/qmail/mysql.php

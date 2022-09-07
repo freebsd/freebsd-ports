@@ -20,5 +20,3 @@ Features:
   recording something only to figure out afterwards that some setting was wrong.
 * Supports many different codecs and file formats (adding more is trivial).
 * Can also do live streaming (experimental).
-
-WWW: https://www.maartenbaert.be/simplescreenrecorder/

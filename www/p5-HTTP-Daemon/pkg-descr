@@ -12,5 +12,3 @@ This HTTP daemon does not fork(2) for you. Your application, i.e. the user of
 the HTTP::Daemon is responsible for forking if that is desirable. Also note that
 the user is responsible for generating responses that conform to the HTTP/1.1
 protocol.
-
-WWW: https://metacpan.org/release/HTTP-Daemon

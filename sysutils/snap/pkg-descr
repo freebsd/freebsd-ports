@@ -7,5 +7,3 @@ users can create them manually.
 The major advantage over sysutils/freebsd-snapshot is that
 it uses hardlink to save diskspace, mark each snapshot with
 its creation time and calculates redundancy in a smart way.
-
-WWW: http://www.cs.nctu.edu.tw/~wchunhao/ports/snap/

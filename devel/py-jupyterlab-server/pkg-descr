@@ -3,5 +3,4 @@ core JupyterLab application. They can then serve their files by subclassing the
 LabServerApp with the appropriate configuration and creating a Python entry
 point that launches the app.
 
-WWW: https://jupyter.org/
-WWW: https://github.com/jupyterlab/jupyterlab_server
+See also: https://github.com/jupyterlab/jupyterlab_server

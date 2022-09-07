@@ -14,5 +14,3 @@ And here's 'jexec':
   $j->attach && chdir('/') && exec $ARGV[1] or exit;
 
 For more info please use 'perldoc' on the module.
-
-WWW: https://metacpan.org/release/BSD-Jail-Object

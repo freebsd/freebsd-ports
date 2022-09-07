@@ -6,5 +6,3 @@ list of all mixer parameters can be obtained using get_mixer_params()
 function.
 
 All values (lcval, rcval) are numbers in 0-100 range.
-
-WWW: https://metacpan.org/release/Audio-Mixer

@@ -6,5 +6,3 @@ functionality as easy as possible to use for both programmers and template
 designers. Smarty also converts the templates into PHP scripts, eliminating the
 need to parse the templates on every invocation. This makes Smarty extremely
 scalable and managable for large application needs.
-
-WWW: https://www.smarty.net/

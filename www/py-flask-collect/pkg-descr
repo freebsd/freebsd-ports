@@ -1,4 +1,2 @@
 This tool will help you collect static files in one command. It checks
 application and blueprints for static files and copy them to specific folder.
-
-WWW: https://github.com/coleifer/flask-peewee/

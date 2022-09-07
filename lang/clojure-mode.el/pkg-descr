@@ -1,5 +1,3 @@
 Clojure Mode is an Emacs editing mode. It provides Emacs font-lock,
 indentation, navigation and refactoring for the Clojure(Script) programming
 language (https://clojure.org/).
-
-WWW: https://github.com/clojure-emacs/clojure-mode

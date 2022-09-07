@@ -6,5 +6,3 @@ it's easy but everything that is not documented should be considered private. If
 you play around with undocumented properties/methods and that it changes,
 upgrading to the new version with all the extra new killer features will be very
 hard to do.
-
-WWW: https://metacpan.org/release/WebService-GData

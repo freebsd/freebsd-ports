@@ -1,4 +1,2 @@
 This Hammer CLI plugin contains a set of commands for foreman_salt,
 a plugin to Foreman for SaltStack integration.
-
-WWW: https://github.com/theforeman/hammer_cli_foreman_salt

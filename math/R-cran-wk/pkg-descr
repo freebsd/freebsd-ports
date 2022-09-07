@@ -4,5 +4,3 @@ formats. Well-known binary is compact and fast to parse; well-known
 text is human-readable and is useful for writing tests. These formats
 are only useful in R if the information they contain can be accessed
 in R, for which high-performance functions are provided here.
-
-WWW: https://cran.r-project.org/web/packages/wk/

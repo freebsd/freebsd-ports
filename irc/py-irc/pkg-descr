@@ -2,5 +2,3 @@ This library is intended to encapsulate the IRC protocol at a quite
 low level.  It provides an event-driven IRC client framework. It has
 a fairly thorough support for the basic IRC protocol, CTCP and DCC
 connections.
-
-WWW: https://github.com/jaraco/irc

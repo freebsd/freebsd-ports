@@ -7,5 +7,3 @@ project), tag regeneration can become too slow for really big
 projects.  This is why this plugin was created.  It makes it possible
 to generate the tag file only once and just query it when searching
 for a particular symbol definition/declaration.
-
-WWW: https://plugins.geany.org/geanyctags.html

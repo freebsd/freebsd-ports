@@ -15,5 +15,3 @@ replaying the inputs generated for the POSIX/Linux emulation layer, which
 handles running native programs in an environment that matches a computed test
 input, including setting up files, pipes, environment variables, and passing
 command line arguments.
-
-WWW: https://klee.github.io/

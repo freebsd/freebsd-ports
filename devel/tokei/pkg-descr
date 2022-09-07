@@ -5,5 +5,3 @@ comments, and blanks grouped by language.
 It is fast, supports over 100 languages, and correctly handles multi
 line comments, nested comments, while ignoring comments that are in
 strings, providing accurate code statistics.
-
-WWW: https://github.com/XAMPPRocky/tokei

@@ -4,5 +4,3 @@ option offered by ExtUtils::MakeMaker.
 
 This module works best with the Module::Install framework,
 a drop-in replacement for MakeMaker.
-
-WWW: https://metacpan.org/release/ExtUtils-AutoInstall

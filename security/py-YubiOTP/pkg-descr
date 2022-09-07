@@ -3,5 +3,3 @@ low-level implementation for verifying tokens locally and clients for multiple
 versions of the Yubico validation web service. The primary audience is
 developers who wish to verify YubiKey tokens in their applications, presumably
 as part of a multi-factor authentication scheme.
-
-WWW: https://pypi.org/project/YubiOTP/

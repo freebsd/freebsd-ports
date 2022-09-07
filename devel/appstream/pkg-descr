@@ -9,5 +9,3 @@ derived specification for a metadata-collection format to provide a
 list of these metadata entries in XML or YAML for easy consumption by
 software centers and other tools which need to know about available
 software in a repository.
-
-WWW: https://www.freedesktop.org/wiki/Distributions/AppStream/

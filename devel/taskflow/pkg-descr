@@ -1,5 +1,3 @@
 Taskflow is faster, more expressive, and easier for drop-in integration than
 many of existing task programming frameworks in handling complex parallel
 workloads.
-
-WWW: https://github.com/taskflow/taskflow

@@ -12,5 +12,3 @@ Key differences from nss_ldap:
 * clear separation between NSS, PAM and LDAP code (the server
   part could easily be implemented in another language)
 * less connections to the LDAP server
-
-WWW: http://arthurdejong.org/nss-pam-ldapd/

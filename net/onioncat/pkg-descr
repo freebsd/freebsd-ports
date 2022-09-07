@@ -15,5 +15,3 @@ within the OnionCat VPN.
 If necessary, OnionCat can of course transport IPv4 as well. Although it has
 native IP support, the suggested way to do this is to configure an
 IPv4-in-IPv6 tunnel.
-
-WWW: https://www.onioncat.org/

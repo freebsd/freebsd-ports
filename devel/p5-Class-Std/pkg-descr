@@ -8,5 +8,3 @@ politely respecting their public interface, some clever client coder
 inevitably will realize that it's marginally faster to interact directly
 with the underlying implementation, pulling out attribute values
 directly from the hash of an object.
-
-WWW: https://metacpan.org/release/Class-Std

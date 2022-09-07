@@ -5,5 +5,3 @@ even maintains their state locally.
 File::Tail::Multi will tail multiple files and return the records read
 to a Data Structure. The Data Structure can be processed by
 File::Tail::Multi functions.
-
-WWW: https://metacpan.org/pod/File::Tail::Multi

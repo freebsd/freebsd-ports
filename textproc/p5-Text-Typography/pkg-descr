@@ -9,5 +9,3 @@ entities. SmartyPants can perform the following transformations:
 * Backticks-style quotes (``like this'') into "curly" quote HTML entities
 * Dashes (-- and ---) into en- and em-dash entities
 * Three consecutive dots (...) into an ellipsis entity
-
-WWW: https://metacpan.org/release/Text-Typography

@@ -8,5 +8,3 @@ is sent unaffected to the output, allowing Python to be used in effect as a
 markup language. Also supported are callbacks via hooks, recording and
 playback via diversions, and dynamic, chainable filters. The system is highly
 configurable via command line options and embedded commands.
-
-WWW: http://www.alcyone.com/software/empy/

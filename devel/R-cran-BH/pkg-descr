@@ -5,5 +5,3 @@ aims to provide the most useful subset of Boost libraries for
 template use among CRAN package. By placing these libraries in this
 package, we offer a more efficient distribution system for CRAN as
 replication of this code in the sources of other packages is avoided.
-
-WWW: https://cran.r-project.org/web/packages/BH/

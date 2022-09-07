@@ -7,5 +7,3 @@ remote host by sending it TCP "echo" (or other protocol) packets.
 - can use T/TCP on systems which support it.
 
 It's useful for checking that http servers are running and not wedged.
-
-WWW: https://github.com/bortzmeyer/echoping

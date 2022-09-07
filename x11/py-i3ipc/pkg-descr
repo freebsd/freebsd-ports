@@ -7,5 +7,3 @@ i3ipc-python is a Python library for controlling the window
 manager. This project is intended to be useful for general scripting,
 and for applications that interact with the window manager like status
 line generators, notification daemons, and window pagers.
-
-WWW: http://i3ipc-python.readthedocs.io/

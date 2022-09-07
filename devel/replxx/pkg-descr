@@ -6,5 +6,3 @@ This replxx implementation is based on the work by ArangoDB Team
 and Salvatore Sanfilippo and 10gen Inc.  The goal is to create a
 zero-config, BSD licensed, readline replacement usable in Apache2
 or BSD licensed programs.
-
-WWW: https://github.com/AmokHuginnsson/replxx

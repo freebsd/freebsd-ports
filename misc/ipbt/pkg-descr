@@ -10,5 +10,3 @@ that ttyplay lacks. Notable features are:
 
 IPBT works by reading the entire input file and running it through
 an internal terminal emulator (the one from PuTTY).
-
-WWW: http://www.chiark.greenend.org.uk/~sgtatham/ipbt/

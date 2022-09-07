@@ -4,5 +4,3 @@ well-structured plain ASCII, JSON (YAML), XML or CSV.
 
 It is useful as a test tool, to understand what environment a process runs in
 and for system comparison.
-
-WWW: https://github.com/jamesodhunt/procenv

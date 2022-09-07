@@ -10,5 +10,3 @@ You're running a huge cloud, want to get rid of the monitoring noise triggered
 by your auto-scaling platform but still want to have detailed information just
 a couple of clicks away in case you need them? You will love this little
 module!
-
-WWW: https://github.com/Icinga/icingaweb2-module-businessprocess

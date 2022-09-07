@@ -9,5 +9,3 @@ your system can read or write to a file.
 This is the 2.1 version of iozone.  The new 3.x+ versions of iozone have
 completely changed their testing methods, thus their output is useless in
 comparing with older statistics.
-
-WWW: http://www.iozone.org/

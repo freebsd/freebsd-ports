@@ -1,4 +1,2 @@
 Module::CheckVersion checks latest version of modules with CPAN (or equivalent
 repo).
-
-WWW: https://metacpan.org/release/Module-CheckVersion

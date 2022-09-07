@@ -16,5 +16,3 @@ implementation (String#to_xs), but it does escape "&quot;" (which is an
 optional, but all parsers are able ot handle it. XML::Builder as packaged in
 Rails 2.0 will be automatically use String#fast_xs instead of String#to_xs
 available.
-
-WWW: http://fast-xs.rubyforge.org/

@@ -2,5 +2,3 @@ All methods that alter the contents of an array that implements
 this Gem are first checked to ensure that the added items are of
 the types allowed. All methods behave exactly as their Array
 counterparts, including additional forms, block processing, etc.
-
-WWW: https://github.com/yaauie/typed-array

@@ -5,5 +5,3 @@ events rather than time periods.
 
 Written to use (and named after) Linux' "inotify", on BSD it uses
 the libinotify compatibility layer.
-
-WWW: http://inotify.aiken.cz/?section=incron&page=about

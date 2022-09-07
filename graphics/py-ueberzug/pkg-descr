@@ -9,5 +9,3 @@ Advantages to w3mimgdisplay:
 - terminals without the WINDOWID environment variable are supported
 - chars are used as position - and size unit
 - no memory leak (/ unlimited cache)
-
-WWW: https://github.com/seebye/ueberzug

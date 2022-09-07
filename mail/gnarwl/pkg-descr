@@ -9,5 +9,3 @@ With gnarwl this is history. User information is now stored in LDAP.
 Thats right, no more messing around with system accounts or homedirs for
 users who just want their email working, but don't care to fuss around
 with shell commands.
-
-WWW: http://www.onyxbits.de/gnarwl

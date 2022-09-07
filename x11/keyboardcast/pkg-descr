@@ -15,5 +15,3 @@ gnome-terminal executing a single command on multiple arguments (for example
 executing 'ssh' on several hosts). The gnome-terminals are invoked with
 the profile 'keyboardcast' if it exists (so, for example, your font size
 can be smaller).
-
-WWW: https://launchpad.net/keyboardcast

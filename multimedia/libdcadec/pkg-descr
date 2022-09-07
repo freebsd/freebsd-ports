@@ -11,5 +11,3 @@ Downmixing to stereo and 5.1 using embedded coefficients
 Features not implemented:
 Decoding of DTS Express streams
 Applying dynamic range compression and dialog normalization
-
-WWW: https://github.com/foo86/dcadec

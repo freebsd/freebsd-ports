@@ -5,5 +5,3 @@ Besides providing a simple tool for batch visualization as PNG images,
 h5utils also includes programs to convert HDF5 datasets into the formats
 required by other free visualization software (e.g. plain text, Vis5d,
 and VTK).
-
-WWW: https://github.com/stevengj/h5utils

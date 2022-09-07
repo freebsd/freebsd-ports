@@ -1,4 +1,2 @@
 Podcastdl is a simple podcast download application written in plain C and
 designed to work in the console or from the crontab.
-
-WWW: https://www.osorio.me/projects/dev/podcastdl/

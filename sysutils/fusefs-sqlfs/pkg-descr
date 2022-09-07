@@ -4,5 +4,3 @@ file system in a single file, complete with its own file hierarchy and name
 space.  This is useful for applications which needs structured storage, such
 as embedding documents within documents, or management of configuration
 data or preferences.
-
-WWW: http://www.nongnu.org/libsqlfs/

@@ -6,5 +6,3 @@ safely and explicitly rejects UDP traffic from the application
 you're using.
 
 See also https://gitweb.torproject.org/torsocks.git
-
-WWW: https://github.com/dgoulet/torsocks

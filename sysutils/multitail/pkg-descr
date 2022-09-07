@@ -10,5 +10,3 @@ expressions). It has interactive menus for editing given regular expressions
 and deleting and adding windows. One can also have windows with the output of
 shell scripts and other software. When viewing the output of external software,
 MultiTail can mimic the functionality of tools like 'watch' and such.
-
-WWW: http://www.vanheusden.com/multitail/

@@ -10,5 +10,3 @@ the same type can be aggregated or compared.
 
 If the profile samples contain machine addresses, pprof can symbolize them
 through the use of the native binutils tools (addr2line and nm).
-
-WWW: https://github.com/google/pprof

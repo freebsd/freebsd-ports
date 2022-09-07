@@ -9,5 +9,3 @@ like Red/Black Trees, tries, different sorting algorithms, etc. This project
 will create such a library with documentation on when to use a particular
 structure/algorithm. It will also come with a benchmark suite to compare
 performance in different situations.
-
-WWW: https://github.com/kanwei/algorithms

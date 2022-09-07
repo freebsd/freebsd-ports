@@ -20,5 +20,3 @@ These syntax flavours are supported:
     Motorola/Freescale 68k syntax (Devpac compatible)
     Atari MadMac syntax (6502, 68k, Jaguar)
     Old 8-bit style syntax
-
-WWW: http://sun.hasenbraten.de/vasm/

@@ -5,5 +5,3 @@ Features:
 * header file library
 * Intel/MASM like syntax
 * Full suppor of AVX-512
-
-WWW: https://github.com/herumi/xbyak

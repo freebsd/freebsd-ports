@@ -9,5 +9,3 @@ Django. Some awesome features are:
 * Works well with task queues like RQ or Celery
 * Uses multiprocessing to send a large number of emails in parallel
 * Supports multilingual email templates (i18n)
-
-WWW: https://github.com/ui/django-post_office

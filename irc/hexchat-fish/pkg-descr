@@ -6,5 +6,3 @@ FiSHLiM is a HexChat plugin for FiSH IRC encryption.
   * Pure protocol-level filtering (works with highlighting, nick coloring etc)
   * Partially encrypted messages (i.e. prefixed with nickname by a bouncer)
   * CBC mode
-
-WWW: http://fishlim.kodafritt.se/

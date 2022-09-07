@@ -12,5 +12,3 @@ much better. This gem is always preferable in production
 use. However, if you want to understand how the MMSEG segmenting
 algorithm works, the source code of RMMSeg is a better choice than
 this.
-
-WWW: http://rmmseg-cpp.rubyforge.org

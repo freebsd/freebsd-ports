@@ -1,5 +1,3 @@
 cmus is a small ncurses based music player. It supports various
 output methods by output-plugins. It has got completely configurable
 keybindings and it can be controlled from the outside via cmus-remote(1).
-
-WWW: https://cmus.github.io/

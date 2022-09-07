@@ -11,5 +11,3 @@ test the most recent version only. If that version fails, then it will test
 a previous version.
 
 By default it uses CPANPLUS configuration settings.
-
-WWW: https://metacpan.org/release/RRWO/CPAN-YACSmoke-0.03_07

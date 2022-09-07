@@ -12,5 +12,3 @@ The tool will prove domain control to the CA and submit a CSR
 
 If domain control has been proven, a certificate will get issued and
 the tool will automatically install it.
-
-WWW: https://github.com/certbot/certbot

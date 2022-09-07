@@ -13,5 +13,3 @@ complete control over the execution environment of each component.  This
 includes modifying shell environment, running components with the given
 user privileges, etc.  The standard error and/or output of any component
 may be redirected either to a disk file or to syslog.
-
-WWW: https://puszcza.gnu.org.ua/projects/pies

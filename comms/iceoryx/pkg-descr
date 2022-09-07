@@ -7,5 +7,3 @@ development. Iceoryx uses a true zero-copy, shared memory approach that allows
 to transfer data from publishers to subscribers without a single copy. This
 ensures data transmissions with constant latency, regardless of the size of the
 payload.
-
-WWW: https://iceoryx.io/

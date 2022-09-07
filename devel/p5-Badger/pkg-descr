@@ -2,5 +2,3 @@ The Badger toolkit is a collection of Perl modules designed to simplify
 the process of building object-oriented Perl applications. It provides a
 set of foundation classes upon which you can quickly build robust and
 reliable systems that are simple, sexy and scalable.
-
-WWW: https://metacpan.org/release/Badger

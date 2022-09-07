@@ -14,5 +14,3 @@ popular free firewalls are supported: ipchains, iptables and ipfilter.
 Because of this, Firewall Builder can be used to manage firewalls built on
 variety of platforms including, but not limited to, Linux running ipchains or
 iptables and FreeBSD or Solaris running ipfilter.
-
-WWW: http://www.fwbuilder.org/

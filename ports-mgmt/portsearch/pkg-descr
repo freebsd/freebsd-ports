@@ -4,5 +4,3 @@ but honoring PLIST_(FILES|DIRS) and %%FOOBAR%% variables.
 It also supports searching for ports by name, key (name, comment or
 dependencies), path, info (comment), maintainer, category, fetch, extract,
 patch, build and run dependencies and www site.
-
-WWW: https://people.freebsd.org/~vd/portsearch

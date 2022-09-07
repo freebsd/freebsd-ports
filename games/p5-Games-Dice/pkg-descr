@@ -13,5 +13,3 @@ the sum by c. (x can also be used instead of *.) Using b in this slot is a
 little different: it's short for "best" and indicates "roll a number of dice,
 but add together only the best few". For example, 5d6b3 rolls five six- sided
 dice and adds together the three best rolls.
-
-WWW: https://metacpan.org/release/Games-Dice

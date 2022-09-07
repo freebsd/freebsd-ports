@@ -5,5 +5,3 @@ required, but the system resources for a larger proxy are unavailable.
 
 Note that tinyproxy requires configuration to run in anonymizing mode. See
 tinyproxy.conf.sample for detail.
-
-WWW: https://tinyproxy.github.io/

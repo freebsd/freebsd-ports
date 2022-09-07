@@ -6,5 +6,3 @@ This module can retrieve DBI's database handle object or connection
 information (data source, user, credential...) by labeled name and
 treat same cluster consists many nodes as one labeled name, choose
 fetching strategy.
-
-WWW: https://metacpan.org/release/DBIx-DBHResolver

@@ -12,5 +12,3 @@ o Collect the extracted strings together with messages from traditional
 o Merge back the translations from .po files into .xml, .desktop and
   .oaf files.  This merge step will happen at build resp. installation
   time.
-
-WWW: http://www.gnome.org/

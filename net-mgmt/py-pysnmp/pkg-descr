@@ -1,4 +1,2 @@
 PySNMP is fully functional SNMP v1, v2c and v3 engine (agent and manager)
 written entirely in Python.
-
-WWW: https://github.com/etingof/pysnmp

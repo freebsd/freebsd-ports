@@ -1,4 +1,2 @@
 Atom is a syndication, API, and archiving format for weblogs and other data.
 XML::Atom implements the feed format as well as a client for the API.
-
-WWW: https://metacpan.org/release/XML-Atom

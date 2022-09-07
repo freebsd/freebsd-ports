@@ -4,5 +4,3 @@ desktop environments such as Gnome and Xfce.
 
 Deluge uses Rasterbar's version of libtorrent as the main ingredient in its
 bittorrent protocol backend.
-
-WWW: https://deluge-torrent.org/

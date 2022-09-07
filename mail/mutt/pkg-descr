@@ -7,5 +7,3 @@ RFC1522 support for encoded headers), customizable key bindings, POP3,
 Delivery Status Notification (DSN) support, and PGP/MIME.
 
 Mutt FAQ:	http://dev.mutt.org/trac/wiki/MuttFaq
-
-WWW: http://www.mutt.org/

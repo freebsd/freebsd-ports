@@ -1,4 +1,2 @@
 Rvi is an interface to RCS. It attempts to make the process of
 using RCS simpler by wrapping common RCS commands around an editor.
-
-WWW: http://www.cs.ru.ac.za/research/g98t4414/static/home/rvi/index.html

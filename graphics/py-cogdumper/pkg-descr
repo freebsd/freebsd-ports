@@ -5,5 +5,3 @@ on a web server or S3.
 This can be useful for serving compressed tiles from a TIFF without invoking
 Rasterio and GDAL. This utility has been tested with Tiff that have JPEG
 compression.
-
-WWW: https://github.com/mapbox/COGDumper

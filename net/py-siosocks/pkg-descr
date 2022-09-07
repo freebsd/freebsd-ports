@@ -8,5 +8,3 @@ Features:
  * Socks5 auth: no auth, username/password
  * Couple io backends: asyncio, trio, socketserver
  * One-shot socks server (python -m siosocks)
-
-WWW: https://pypi.python.org/pypi/siosocks

@@ -20,5 +20,3 @@ Much work has been done in integrating this library into its first application,
 Xiphos.  It is useful to examine Xiphos' code to see where and how integration
 has been done.  Get a Xiphos source tree using:
 git clone https://github.com/crosswire/xiphos
-
-WWW: https://github.com/karlkleinpaste/biblesync

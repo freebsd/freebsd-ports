@@ -5,5 +5,3 @@ multitasking environment where the switch from one task to another is done
 explicitly by a function call. Coroutines are a lot faster than processes or
 threads switch, since there is no OS kernel involvement for the operation. Also
 coroutines require much less OS resources than processes of threads.
-
-WWW: http://xmailserver.org/libpcl.html

@@ -6,5 +6,3 @@ analysis, filtering, conversion and merging of paired-end reads.
 
 The aim of this project is to create an alternative to the USEARCH tool
 developed by Robert C. Edgar (2010).
-
-WWW: https://github.com/torognes/vsearch

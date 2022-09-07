@@ -6,5 +6,3 @@ One is included in the distribution as an example.
 
 Currently, the only supported BSD device is the bktr driver.
 Both tunable modes and camera inputs are supported.
-
-WWW: http://cserv.sourceforge.net/

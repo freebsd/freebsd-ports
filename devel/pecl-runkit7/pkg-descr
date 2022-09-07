@@ -5,4 +5,3 @@ embeddable sub-interpreters via sandboxing.
 Compatibility: PHP 7.2 to PHP 7.4
 
 Documentation: https://www.php.net/runkit7
-WWW: https://github.com/runkit7/runkit7

@@ -12,5 +12,3 @@ Feature List:
 - Automatic message truncation when message exceeds providers limit
 - Verbose and descriptive error messages if something goes wrong
 - Multiple debugging levels
-
-WWW: http://caspian.dotconf.net/menu/Software/SendSNPP/

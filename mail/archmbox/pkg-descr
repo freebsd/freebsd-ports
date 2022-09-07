@@ -19,5 +19,3 @@ All archived messages are stored in a new mailbox with the same name of the
 original one plus .archived as extension (this is the default, but can be
 changed); the archive mailbox can be saved in gz or bz2 compressed format
 as well.
-
-WWW: http://adc-archmbox.sourceforge.net/

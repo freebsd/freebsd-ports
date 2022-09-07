@@ -8,5 +8,3 @@ have enough memory on your system, Sympa is especially well adapted for big
 lists. For a list with 20 000 subscribers, it takes 5 minutes to send a
 message to 90% of subscribers, of course considering that the network is
 available.
-
-WWW: http://www.sympa.org/

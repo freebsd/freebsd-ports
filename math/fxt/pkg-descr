@@ -9,5 +9,3 @@ algorithms for:
 - Fast Haar Transform, Fast Wavelet Transform
 - Mass storage convolution and fast multiplication routines.
 - Sine- and cosine transform (DCT, DST), Fast Z-Transform (FZT)
-
-WWW: https://www.jjj.de/fxt/

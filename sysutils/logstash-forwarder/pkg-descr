@@ -5,5 +5,3 @@ I parse your logs, I eat the JVM agent for lunch!
 make its intended use clear. The 'lumberjack' name now remains as the network
 protocol, and 'logstash-forwarder' is the name of the program. It's still the
 same lovely log forwarding program you love.)
-
-WWW: https://github.com/elasticsearch/logstash-forwarder

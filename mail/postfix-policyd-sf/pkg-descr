@@ -8,5 +8,3 @@ Policyd is an anti-spam plugin for Postfix (written in C) that does :
  o HELO auto blacklisting
  o HELO randomization preventation,
  o Sender mail addresses or domain Sender blacklisting
-
-WWW: https://wiki.policyd.org/

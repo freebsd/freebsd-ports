@@ -19,5 +19,3 @@ additional features which improve usability:
     dependencies).
 
     - Uses libjpeg-turbo for speed improvement (if available).
-
-WWW: http://opennx.net/

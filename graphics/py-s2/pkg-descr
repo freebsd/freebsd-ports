@@ -5,5 +5,4 @@ especially suitable for working with geographic data.
 
 This port is the Python binding of S2 Geometry Library.
 
-WWW: https://s2geometry.io/
-WWW: https://github.com/google/s2geometry
+See also: https://github.com/google/s2geometry

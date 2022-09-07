@@ -4,5 +4,3 @@ functions in XML is presented. Due to separation it's possible to describe
 vast classes of resources without changing the analyzer core.
 Detected errors often have an influence on security, safety, robustness and
 resource optimal usage.
-
-WWW: http://skylark.tsu.ru/art/index-en.html

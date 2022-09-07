@@ -2,5 +2,3 @@ unrpa is a tool to extract files from the RPA archive format (from the
 Ren'Py Visual Novel Engine).
 
 It can also be used as a library.
-
-WWW: https://pypi.org/project/unrpa/

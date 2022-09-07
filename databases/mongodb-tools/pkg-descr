@@ -11,5 +11,4 @@ Useful utilities for managing a MongoDB instance written in Go.
 - mongofiles - Read, write, delete, or update files in GridFS
 - mongotop - Monitor read/write activity on a mongo server
 
-WWW: https://github.com/mongodb/mongo-tools
-WWW: https://docs.mongodb.com/database-tools/
+See also: https://github.com/mongodb/mongo-tools

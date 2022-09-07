@@ -6,5 +6,3 @@ implementation, with support for analytical gradients and distributed
 parallelism, and additional functionality beyond the MBD method
 itself. It provides a low-level and a high-level Fortran API, as well
 as a C API. Furthermore, Python bindings to the C API are provided.
-
-WWW: https://github.com/libmbd/libmbd

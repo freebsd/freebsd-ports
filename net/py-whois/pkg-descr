@@ -10,5 +10,3 @@ Features
  - works with Python 2.4+ and Python 3.x
  - all dates as datetime objects
  - possibility to cache results
-
-WWW: https://pypi.org/project/whois/

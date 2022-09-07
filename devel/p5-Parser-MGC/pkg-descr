@@ -7,5 +7,3 @@ It provides a number of token-parsing methods, which each extract a grammatical
 token from the string. It also provides wrapping methods that can be used to
 build up a possibly-recursive grammar structure, by applying a structure around
 other parts of parsing code.
-
-WWW: https://metacpan.org/release/Parser-MGC

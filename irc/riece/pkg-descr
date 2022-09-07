@@ -9,5 +9,3 @@ Riece is an IRC client for Emacs. It provides the following features:
   dialogues.  The user can select the window layout.
 - Step-by-step instructions (currently written in Japanese) are included.
 - Mostly compliant with RFC 2812.
-
-WWW: http://www.nongnu.org/riece/

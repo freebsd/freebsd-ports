@@ -1,5 +1,3 @@
 pstotext extracts ASCII text from PostScript and PDF files.  It
 uses Ghostscript, but does a more careful job with kerned characters
 and nonstandard font encodings than Ghostscript's ps2ascii utility.
-
-WWW: http://pages.cs.wisc.edu/~ghost/doc/pstotext.htm

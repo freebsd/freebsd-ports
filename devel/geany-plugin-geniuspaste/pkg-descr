@@ -8,5 +8,3 @@ different pastebins. At the moment it supports this services:
 GeniusPaste detects automatically the syntax of the code and paste
 it with syntax highlighting enabled. It can also display the pasted
 code opening a new browser tab.
-
-WWW: https://plugins.geany.org/geniuspaste.html

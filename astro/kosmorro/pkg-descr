@@ -13,5 +13,3 @@ Kosmorro has a lot of available options. To get a list of them, run kosmorro
 Note: the first time it runs, Kosmorro will download some important files needed
 to make the computations. They are stored in a cache folder named
 ~/.kosmorro-cache .
-
-WWW: http://kosmorro.space/

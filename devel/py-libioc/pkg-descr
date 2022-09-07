@@ -5,5 +5,3 @@ while aiming to be compatible with iocage_legacy, iocell, and the Python
 iocage is a jail/container manager fusioning some of the best features
 and technologies the FreeBSD operating system has to offer. It is geared
 for ease of use with a simple and easy to understand command syntax.
-
-WWW: https://github.com/bsdci/libioc

@@ -8,5 +8,3 @@ Currently the following Python pacakges are available as "backends":
 * PySym
 * SymCXX
 * Diofant
-
-WWW: https://github.com/bjodah/sym

@@ -6,5 +6,3 @@ Unlike the normal mode of deployments for SpamAssassin, isbg
 does not need to be involved in mail delivery, and can run on
 completely different machines to where your mailbox actually
 is.
-
-WWW: https://github.com/isbg/isbg

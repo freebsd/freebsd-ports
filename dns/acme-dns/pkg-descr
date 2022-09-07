@@ -1,4 +1,2 @@
 Limited DNS server with RESTful HTTP API to handle ACME DNS challenges
 easily and securely. FreeBSD port by https://github.com/freultwah
-
-WWW: https://github.com/joohoi/acme-dns

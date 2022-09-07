@@ -4,5 +4,3 @@ both audio and MIDI data between applications.
 
 These are the official JACK example clients and tools that are now distributed
 separately from the JACK server package.
-
-WWW: https://jackaudio.org/

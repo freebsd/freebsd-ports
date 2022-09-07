@@ -14,5 +14,3 @@ send back to the user whose browser will then submit it back to
 Google. If everything works, users will then be logged into their
 Google account and they don't even have to know their usernames or
 passwords.
-
-WWW: https://metacpan.org/release/Google-SAML-Response

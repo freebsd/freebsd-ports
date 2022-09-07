@@ -13,5 +13,3 @@ Data structures for working with intervals on sequences:
    all unset bits to be stored compactly
  * "Intersecter" for performing fast intersection tests that preserve
    both query and target intervals and associated annotation
-
-WWW: https://github.com/bxlab/bx-python

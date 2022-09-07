@@ -1,4 +1,2 @@
 Python version of Google's common library for parsing, formatting, storing
 and validating international phone numbers.
-
-WWW: https://github.com/daviddrysdale/python-phonenumbers

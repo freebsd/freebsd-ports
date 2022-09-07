@@ -1,5 +1,3 @@
 python-gdsii is a library that can be used to read, create, modify and save
 GDSII files. It supports both low-level record I/O and high level interface to
 GDSII libraries (databases), structures, and elements.
-
-WWW: https://pythonhosted.org/python-gdsii/

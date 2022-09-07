@@ -12,5 +12,3 @@ Due to the threaded model of emulation used in Mednafen, and limitations of SDL
 a joystick is preferred over a keyboard to play games, as the joystick will have
 slightly less latency, although the latency differences may not be perceptible
 to most people.
-
-WWW: https://mednafen.github.io

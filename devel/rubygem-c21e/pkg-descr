@@ -7,5 +7,3 @@ operating systems, resulting in 20 or so executables that are bundled inside
 packages (gems, jars, npm modules etc).
 
 This library picks the right executable to run for the current CPU/OS.
-
-WWW: https://github.com/cucumber/c21e-ruby

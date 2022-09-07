@@ -10,5 +10,3 @@ documentation describes the format as:
   binary and presentation formats can be loaded at runtime by libnmsg.
   nmsgtool provides a command line interface to control the
   transmission, storage, creation, and conversion of NMSG payloads.
-
-WWW: https://tools.netsa.cert.org/confluence/display/tt/Net-Nmsg

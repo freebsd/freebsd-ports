@@ -2,5 +2,3 @@ ruby_parser (RP) is a ruby parser written in pure ruby (utilizing
 racc--which does by default use a C extension). RP's output is
 the same as ParseTree's output: s-expressions using ruby's arrays and
 base types.
-
-WWW: https://github.com/seattlerb/ruby_parser

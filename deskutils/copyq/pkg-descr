@@ -14,5 +14,3 @@ Features:
 - Advanced command-line interface and scripting
 - Ignore clipboard copied from some windows or containing some text
 - Support for simple Vim-like editor and shortcuts
-
-WWW: https://github.com/hluk/CopyQ

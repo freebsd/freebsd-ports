@@ -9,5 +9,3 @@ This port comes in two flavours:
 
     games/stonesoup@console - the traditional tty interface
     games/stonesoup@sdl     - the fancy SDL interface
-
-WWW: http://crawl.develz.org/

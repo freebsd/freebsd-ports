@@ -6,5 +6,3 @@ Supported Features:
  * Streaming decompression through multiple calls to decompress.
  * An initial library that supports reading of 7-zip archives (both
    solid and non-solid)
-
-WWW: http://www.joachim-bauch.de/projects/python/pylzma

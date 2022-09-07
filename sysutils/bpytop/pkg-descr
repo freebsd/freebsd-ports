@@ -2,5 +2,3 @@ Resource monitor that shows usage and stats for processor, memory, disks,
 network and processes.
 
 Python port of bashtop. (https://github.com/aristocratos/bashtop)
-
-WWW: https://github.com/aristocratos/bpytop

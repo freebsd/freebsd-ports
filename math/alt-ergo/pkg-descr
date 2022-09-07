@@ -6,5 +6,3 @@ home made SAT-solver and an instantiation mechanism.
 
 Alt-Ergo is compact, safe, and modular. Each component is described by a small
 set of inference rules and is implemented as an Ocaml functor.
-
-WWW: http://alt-ergo.lri.fr

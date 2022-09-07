@@ -9,5 +9,3 @@ https://github.com/jech/dht by Juliusz Chroboczek.
   encryption (using GnuTLS).
 * IPv4 and IPv6 support.
 * Python binding.
-
-WWW: https://github.com/savoirfairelinux/opendht/

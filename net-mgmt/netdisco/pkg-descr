@@ -13,5 +13,3 @@ Some of the things you can do with Netdisco:
 App::Netdisco provides a web frontend with built-in web server,
 and a backend daemon to handle interactive requests
 such as changing port or device properties.
-
-WWW: http://netdisco.org/

@@ -16,5 +16,3 @@ Limitations:
   while recording (23 ms for 44.1 kHz)
 * It was developed to be used with Ardour however it is known to work
   with other hosts
-
-WWW: https://github.com/lucianodato/noise-repellent

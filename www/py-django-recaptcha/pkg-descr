@@ -8,5 +8,3 @@ Following reCAPTCHA variants are supported:
 
 Django reCAPTCHA uses a modified version of the Python reCAPTCHA client which
 is included in the package as "client.py"
-
-WWW: https://github.com/torchbox/django-recaptcha

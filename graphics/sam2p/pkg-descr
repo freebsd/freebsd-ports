@@ -5,5 +5,3 @@ user to specify standards-compliance, compression, and bit depths. In some
 cases sam2p can compress an image 100 times smaller than the PostScript output
 of many other common image converters. sam2p provides ZIP, RLE and LZW
 (de)compression filters even on Level1 devices.
-
-WWW: http://code.google.com/p/sam2p/

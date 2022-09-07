@@ -1,4 +1,2 @@
 Faraday::NetHttpPersistent is a Faraday adapter for the Net::HTTP::Persistent
 gem.
-
-WWW: https://github.com/lostisland/faraday-net_http_persistent

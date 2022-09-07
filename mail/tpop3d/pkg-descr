@@ -2,5 +2,3 @@ tpop3d is yet-another-pop3-server. The intention has been to write
 a server which is fast, extensible, and secure. tpop3d supports
 traditional (BSD-format) mailspools and Maildir. It also supports
 MySQL, perl, and external authentication methods.
-
-WWW: http://savannah.nongnu.org/projects/tpop3d/

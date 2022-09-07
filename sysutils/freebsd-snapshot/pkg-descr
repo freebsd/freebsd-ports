@@ -5,5 +5,3 @@ scheduler periodic-snapshot(8) and the mounting/unmouning
 command in the amd(8) map /usr/local/etc/amd.map.snap. It
 provides the making, expiring, visiting, mounting and
 unmounting of filesystem snapshots.
-
-WWW: https://people.freebsd.org/~rse/snapshot/

@@ -6,4 +6,3 @@ for example, as a preferred alternative to running mod_php in-process,
 delivering very similar performance.
 
 License: Apache License
-WWW: https://httpd.apache.org/mod_fcgid/

@@ -69,5 +69,3 @@ Right now, there are these subcommands:
   to another workspace selected with the menu program.  Non-matching input of
   the form #w:<workspace> where the hash and w: shortcut are optional can
   be used to move it to a new workspace.
-
-WWW: https://sr.ht/~tsdh/swayr/

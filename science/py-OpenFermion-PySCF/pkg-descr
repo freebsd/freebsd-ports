@@ -1,4 +1,2 @@
 OpenFermion-PySCF is an interface between OpenFermion and PySCF to perform
 relativistic quantum chemistry calculations simulated on a quantum computer.
-
-WWW: https://github.com/quantumlib/OpenFermion-PySCF

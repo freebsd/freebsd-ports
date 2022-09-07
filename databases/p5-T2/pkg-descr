@@ -18,5 +18,3 @@ If you are familiar with DBI, it is somewhat similar to bless'ing the
 structures returned by $dbh->fetchrow_hashref, except that references and
 collections to other objects in the store are loaded `on demand' (aka
 Lazy-loading).
-
-WWW: https://metacpan.org/release/SAMV/T2-0.10

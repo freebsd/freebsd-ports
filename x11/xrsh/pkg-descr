@@ -8,5 +8,3 @@ various types of X server access control including xauth and xhost.
 
 Xrlogin opens a local xterm window and runs rlogin or telnet to
 connect to a remote machine.
-
-WWW: http://jjd.com/

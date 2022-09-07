@@ -7,5 +7,4 @@ the English stemmer maps connection, connections, connective, connected, and
 connecting to connect. So a searching for connected would also find documents
 which only have the other forms.
 
-WWW: https://snowballstem.org/
-WWW: https://github.com/snowballstem/snowball
+See also: https://github.com/snowballstem/snowball

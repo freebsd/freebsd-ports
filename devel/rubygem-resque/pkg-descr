@@ -1,4 +1,2 @@
 Redis-backed Ruby library for creating background jobs, placing them on
 multiple queues, and processing them later.
-
-WWW: https://resque.github.io/

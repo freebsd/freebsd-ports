@@ -3,5 +3,3 @@ This library is used to create/poke/manipulate IPv4 and
 IPv6 addresses and prefixes.
 Development mailing list:
 http://groups.google.com/group/ipaddr-py-dev
-
-WWW: https://github.com/google/ipaddr-py

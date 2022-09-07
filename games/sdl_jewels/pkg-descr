@@ -17,6 +17,3 @@ Hit F1 or spacebar to start a new game, or ESC to exit.
 This game makes use of OpenGL. Without an OpenGL implementation it won't work.
 If you only have software rendering you can still play but the frame rate
 will be lower. The GLX module must be present as well.
-
-
-WWW: http://www.linuxmotors.com/gljewel/

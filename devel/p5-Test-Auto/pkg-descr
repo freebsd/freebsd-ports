@@ -8,5 +8,3 @@ automatically ensure that the package the test is associated with is loadable,
 that the test file comment blocks meet the specification, that any super-classes
 or libraries are loadable, and that the functions, methods, and routines are
 properly documented.
-
-WWW: https://metacpan.org/release/Test-Auto

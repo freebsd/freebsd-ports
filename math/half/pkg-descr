@@ -3,5 +3,3 @@ half-precision floating-point type along with corresponding arithmetic
 operators, type conversions and common mathematical functions. It aims for
 both efficiency and ease of use, trying to accurately mimic the behaviour of
 the built-in floating-point types at the best performance possible.
-
-WWW: http://half.sourceforge.net/

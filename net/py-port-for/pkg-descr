@@ -1,5 +1,3 @@
 A command-line utility and a python library that helps with local TCP ports
 management. It can find an unused TCP localhost port and remember the
 association.
-
-WWW: https://github.com/kmike/port-for/

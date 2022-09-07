@@ -1,4 +1,2 @@
 This PAM service module allows PAM-enabled applications to
 authenticate users using RFC6287 (OCRA) tokens.
-
-WWW: https://github.com/sg2342/pam_ocra

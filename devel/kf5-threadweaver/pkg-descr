@@ -4,5 +4,3 @@ interface to queue tasks and execute them in an efficient way.
 You simply divide the workload into jobs, state the dependencies between the
 jobs and ThreadWeaver will work out the most efficient way of dividing the work
 between threads within a set of resource limits.
-
-WWW: https://api.kde.org/frameworks/threadweaver/html/index.html

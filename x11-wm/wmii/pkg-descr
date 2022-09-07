@@ -7,5 +7,3 @@ and even Chicken).
 Its minimalist philosophy attempts to not exceed 10.000 lines of code
 (including all shipped utilities and libraries), to enforce simplicity and
 clarity (read: it is hackable and beautiful).
-
-WWW: http://wmii.suckless.org/

@@ -9,5 +9,3 @@ Minimum Profit is an easy to use programmer's text editor.  Its features:
   - Automatic indentation, word wrapping, internal grep, etc.
   - Spellchecking support (via the ispell package)
   - Multilingual; has complete Unicode support
-
-WWW: http://www.triptico.com/software/mp.html

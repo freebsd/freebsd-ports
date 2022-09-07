@@ -1,4 +1,2 @@
 CGI::Application::Plugin::Apache provides easy access to Apache::* modules
 for CGI::Application.
-
-WWW: https://metacpan.org/release/CGI-Application-Plugin-Apache

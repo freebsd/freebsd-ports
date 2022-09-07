@@ -10,5 +10,3 @@ Some typical uses of this plugin include:
 * monitor automated mailboxes
 * aggregate check results of multiple plugins
 * check email-to-FTP or other special email gateways
-
-WWW: http://buhacoff.net/software/check_email_delivery/

@@ -6,5 +6,3 @@ heavy modules. Conventions: module written in Pure Perl are located in lib/;
 executable file is in script/ directory, if any; module is maintained with
 Git and git ls-files matches with what you will release; module has a static
 list of prerequisites that can be described in cpanfile; has a Changes file.
-
-WWW: https://metacpan.org/release/Minilla

@@ -1,3 +1,1 @@
 Nagios::Plugin::Beanstalk - Nagios plugin to observe Beanstalkd queue server.
-
-WWW: https://metacpan.org/release/Nagios-Plugin-Beanstalk

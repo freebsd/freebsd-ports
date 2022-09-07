@@ -12,5 +12,3 @@ Usage:
 	$Net::Whois::Raw::CHECK_FAIL = 1;
 
 	print "Hurry up!\n" if !whois('microsoft.com');
-
-WWW: https://metacpan.org/release/Net-Whois-Raw

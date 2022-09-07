@@ -4,5 +4,3 @@ a command line program to send RADIUS authentication/authorisation requests
 and accounting records and a utility to query the status of a RADIUS server.
 All these programs are based on a library which lets you develop a
 RADIUS-aware application in less than 50 lines of C code.
-
-WWW: http://developer.berlios.de/projects/radiusclient-ng/

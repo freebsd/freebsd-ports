@@ -1,4 +1,2 @@
 Replacement for the default renderer of HTML_QuickForm that uses only XHTML and
 CSS but no table tags, and generates fully valid XHTML output.
-
-WWW: https://pear.php.net/package/HTML_QuickForm_Renderer_Tableless

@@ -6,5 +6,3 @@ This class provides a base for subclasses which represent particular
 color values in particular spaces. The base class provides methods to
 represent the color in a few convenient forms, though subclasses may
 provide more specific details for the space in question.
-
-WWW: https://metacpan.org/release/Convert-Color

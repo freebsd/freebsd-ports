@@ -4,5 +4,3 @@ are held in the Interpreter symbol table 'symtable': a simple dictionary
 supporting a simple, flat namespace. Expressions can be compiled into ast node
 for later evaluation, using the values in the symbol table current at evaluation
 time.
-
-WWW: https://github.com/newville/asteval

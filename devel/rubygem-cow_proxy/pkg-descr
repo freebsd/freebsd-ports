@@ -15,5 +15,3 @@ argument, so a proxy will always return proxy objects for getters without
 arguments. When a method tries to change a frozen object, if proxy has
 copy-on-write enabled, it will duplicate frozen object and will send next method
 calls to duplicated object, in other case an exception is raised.
-
-WWW: https://github.com/activescaffold/cow_proxy

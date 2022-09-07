@@ -4,5 +4,3 @@ does not already exist.
 
 It will also try to remove the lock file.  This makes it a bit
 complicated.
-
-WWW: https://metacpan.org/release/File-BasicFlock

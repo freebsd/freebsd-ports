@@ -7,5 +7,3 @@ REST API framework built upon Flask and marshmallow.
     ReDoc or Swagger UI
   - Pagination
   - ETag
-
-WWW: https://github.com/marshmallow-code/flask-smorest

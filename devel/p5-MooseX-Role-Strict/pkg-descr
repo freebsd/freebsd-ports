@@ -3,5 +3,3 @@ silently override that method. This can cause strange, hard-to-debug errors when
 the role's methods are not called. Simple use MooseX::Role::Strict instead of
 Moose::Role and overriding a role's method becomes a composition-time failure.
 See the synopsis for a resolution.
-
-WWW: https://metacpan.org/release/MooseX-Role-Strict

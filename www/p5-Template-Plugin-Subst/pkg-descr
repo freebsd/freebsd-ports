@@ -1,5 +1,3 @@
 Template::Plugin::Subst acts as a filter and a virtual method to
 carry out regular expression substitutions with back references on
 text and variables in the Template Toolkit.
-
-WWW: https://metacpan.org/release/Template-Plugin-Subst

@@ -7,5 +7,3 @@ addition to the functionality of blahtex, blahtexml has XML processing in mind
 and is able to process a whole XML document into another XML document. Instead
 of converting only one formula at a time, blahtexml can convert all the formulas
 of the given XML file into MathML.
-
-WWW: http://gva.noekeon.org/blahtexml/

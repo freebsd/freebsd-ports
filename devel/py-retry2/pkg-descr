@@ -4,5 +4,3 @@ Features
 * No external dependency (stdlib only).
 * (Optionally) Preserve function signatures (pip install decorator).
 * Original traceback, easy to debug.
-
-WWW: https://github.com/eSAMTrade/retry

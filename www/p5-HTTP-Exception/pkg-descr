@@ -8,5 +8,3 @@ HTTP::Exception is only a factory for HTTP::Exception::XXX (where X is
 a number) subclasses. That means that HTTP::Exception->new(404)
 returns a HTTP::Exception::404 object, which in turn is a
 HTTP::Exception::Base - Object.
-
-WWW: https://metacpan.org/release/HTTP-Exception

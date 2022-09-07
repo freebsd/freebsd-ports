@@ -3,5 +3,3 @@ filters and similiar applications. Clamassassin's interface is similiar to
 that of spamassassin, making it easy to implement for those familiar with
 that tool. Clamassassin is designed with an emphasis on security, robustness
 and simplicity.
-
-WWW: http://drivel.com/clamassassin/

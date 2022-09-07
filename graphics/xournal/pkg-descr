@@ -9,5 +9,3 @@ stable, and some features have not been implemented yet.
 
 Xournal supports annotation of PDF files through the Poppler library; PDF files,
 much like paper styles, are loaded as an immutable background image.
-
-WWW: http://xournal.sourceforge.net

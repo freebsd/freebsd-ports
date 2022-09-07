@@ -1,4 +1,2 @@
 This Gem contains all of the Ruby Exploitation(Rex) methods for creating and/or
 parsing MIME messages.
-
-WWW: https://github.com/rapid7/rex-mime

@@ -1,5 +1,3 @@
 This package provides an API to talk to servers implementing the managesieve
 protocol. It can be used to install and remove sieve scripts, mark them active
 etc.
-
-WWW: https://pear.php.net/package/Net_Sieve

@@ -8,5 +8,3 @@ Synthesis), PLLs (Phase Locked Loops), Variable/Programmable Gain Amplifiers
 (VGA, PGA), and RF transceivers. You can use libiio natively on an embedded
 Linux target (local mode), or use libiio to communicate remotely to that same
 target from a host Linux, Windows or MAC over USB or Ethernet or Serial.
-
-WWW: https://github.com/analogdevicesinc/libiio

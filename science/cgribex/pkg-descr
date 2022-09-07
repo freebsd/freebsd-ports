@@ -7,5 +7,3 @@ written in Fortran. Therefore it has only a Fortran interface.
 CGRIBEX is a lightweight version of GRIBEX written in ANSI C with a portable
 Fortran interface. For best compatibility some of the C sources were converted
 from the Fortran GRIBEX version.
-
-WWW: https://code.mpimet.mpg.de/projects/cgribex

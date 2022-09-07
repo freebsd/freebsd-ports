@@ -12,5 +12,3 @@ Extracted from the validates_timeliness gem, it has been rewritten cleaner and
 much faster. It's most suitable for when you need to control the parsing
 behaviour. It's faster than the Time/Date class parse methods, so it has general
 appeal.
-
-WWW: https://github.com/adzap/timeliness

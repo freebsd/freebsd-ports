@@ -8,5 +8,4 @@ The Mail::SPF source package includes the following additional tools:
 - spfquery: A command-line tool for performing SPF checks.
 - spfd:     A daemon for services that perform SPF checks frequently.
 
-WWW: https://metacpan.org/release/Mail-SPF
-WWW: http://www.openspf.org/
+See also: http://www.openspf.org/

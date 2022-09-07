@@ -3,5 +3,3 @@ quadratic number fields and of elliptic curves with complex multiplication via
 floating point approximations. It consists of libraries that can be called from
 within a C program and of executable command line applications. For the
 implemented algorithms.
-
-WWW: http://www.multiprecision.org/cm/home.html

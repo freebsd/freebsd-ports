@@ -7,5 +7,3 @@ vgrep is inspired by the ancient cgvg scripts but
 extended to perform further operations such as listing
 statistics of files and directory trees or showing the
 context lines before and after the matches.
-
-WWW: https://github.com/vrothberg/vgrep

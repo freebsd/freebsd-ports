@@ -5,5 +5,3 @@ Harness is the testing infrastructure that is created to support a
 specific program or tool. Each program can have multiple testsuites, all
 supported by a single test harness. DejaGnu is written in Expect, which
 in turn uses Tcl -- Tool command language.
-
-WWW: http://www.gnu.org/software/dejagnu/

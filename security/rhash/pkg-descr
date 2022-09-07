@@ -11,5 +11,3 @@ TTH, Torrent BTIH, AICH, ED2K, GOST R 34.11-94, RIPEMD-160, HAS-160, EDON-R
   * Portable, written in pure C, small in size, open source (MIT license)
 
 Perl wrapper is available as `security/p5-Crypt-RHash' port.
-
-WWW: http://rhash.sourceforge.net/

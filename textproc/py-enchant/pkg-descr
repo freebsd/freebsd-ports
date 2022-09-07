@@ -4,5 +4,3 @@ The bindings are generated using SWIG. It includes all the functionality
 of Enchant with the flexibility of Python and a nice 'Pythonic'
 object-oriented interface. It also aims to provide some higher-level
 functionality than is available in the C API.
-
-WWW: https://pyenchant.github.io/pyenchant/

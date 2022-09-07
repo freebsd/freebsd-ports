@@ -12,5 +12,4 @@ It supports quite a lot of features, such as transactions (atomic
 commit and rollback), indexes, DBA-free operation, a large subset
 of SQL92 supported, and more.
 
-WWW: https://metacpan.org/release/DBD-SQLite
-WWW: http://www.sqlite.org/
+See also: https://www.sqlite.org/

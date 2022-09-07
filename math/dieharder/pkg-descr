@@ -20,5 +20,3 @@ n-tuplets.
 Dieharder is by design extensible. It is intended to be the "Swiss army knife
 of random number test suites", or if you prefer, "the last suite you'll ever
 ware" for testing random numbers.
-
-WWW: http://www.phy.duke.edu/~rgb/General/dieharder.php

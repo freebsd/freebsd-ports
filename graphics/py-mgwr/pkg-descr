@@ -7,5 +7,4 @@ Weighted Regression (GWR) as well as the newly proposed approach - Multiscale
 GWR (MGWR) which relaxes the assumption that all of the processes being modeled
 operate at the same spatial scale. Inferences are available for both approaches.
 
-WWW: https://mgwr.readthedocs.io/en/latest/
-WWW: https://github.com/pysal/mgwr
+See also: https://github.com/pysal/mgwr

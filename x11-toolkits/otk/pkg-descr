@@ -12,5 +12,3 @@ It is based on OpenGL and C. Otk provides the following basic widgets:
 * Slider Control -	Slider control with call-back,
 * Sub-windows -		Detachable self-managed windows,
 * Gadgets -		High level widgets
-
-WWW: http://otk.sourceforge.net/

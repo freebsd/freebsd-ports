@@ -15,5 +15,3 @@ when there are problems that it can't be sure of how to handle. These
 are logged as "errors" rather than "warnings".
 
 LICENSE: BSD
-
-WWW: http://www.w3.org/People/Raggett/tidy/

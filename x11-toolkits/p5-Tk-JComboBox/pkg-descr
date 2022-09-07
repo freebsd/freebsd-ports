@@ -18,5 +18,3 @@ When editable, JComboBox somewhat resembles BrowseEntry. That is, the
 widget is composed of an Entry widget with a Button to the right of it. As
 in the editable mode, the Button activates a popup Listbox from which a
 single item can be selected.
-
-WWW: https://metacpan.org/release/Tk-JComboBox

@@ -4,5 +4,3 @@ author also wrote, called "subsets", and uses a multi-stage rsync to fix
 some of the problems he had there.
 
 Basically, it's a glorified wrapper around rsync.
-
-WWW: http://code.google.com/p/slack/

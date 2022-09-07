@@ -6,5 +6,4 @@ It intentionally does not provide any extra code except some metadata nor has
 any extra requirements. You MAY use some minimal support code from the XStatic
 base package, if you like.
 
-WWW: https://github.com/openstack/xstatic-rickshaw
-WWW: https://tech.shutterstock.com/rickshaw/
+See also: https://github.com/openstack/xstatic-rickshaw

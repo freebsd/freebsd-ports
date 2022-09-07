@@ -7,5 +7,3 @@ simple commandline interface to discover LXI instruments, send SCPI
 commands, and capture screenshots from supported LXI instruments.
 
 lxi-tools rely on liblxi for all communication.
-
-WWW: https://lxi-tools.github.io/

@@ -4,5 +4,3 @@ differences between two samples. For example, one sample could be compressed
 audio, such as Ogg Vorbis, and another one its uncompressed variant. You could
 then use abx to infer whether you are able to separate the two samples due to
 compression artifacts.
-
-WWW: https://phintsan.kapsi.fi/abx.html

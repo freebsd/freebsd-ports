@@ -9,5 +9,3 @@ information in your configuration files.
 A good reference to the Apache configuration file format can be found
 here:
 http://httpd.apache.org/docs-2.0/configuring.html
-
-WWW: https://metacpan.org/release/Config-ApacheFormat

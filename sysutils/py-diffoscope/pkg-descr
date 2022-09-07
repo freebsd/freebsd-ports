@@ -13,5 +13,3 @@ diffoscope is developed as part of the 'reproducible builds' Debian
 project. It is meant to be able to quickly understand why two builds
 of the same package produce different outputs. diffoscope was previously
 named debbindiff.
-
-WWW: https://diffoscope.org/

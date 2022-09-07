@@ -9,5 +9,3 @@ a fake certificate authority (CA) that you can use to generate fake
 TLS certs to use in your tests. Well, technically they're real
 certs, they're just signed by your CA, which nobody trusts. But you
 can trust it. Trust me.
-
-WWW: https://github.com/python-trio/trustme

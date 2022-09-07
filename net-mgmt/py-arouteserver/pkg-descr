@@ -1,4 +1,2 @@
 A Python tool to automatically build (and test) feature-rich configurations for
 BGP route servers.
-
-WWW: https://github.com/pierky/arouteserver

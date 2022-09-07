@@ -1,5 +1,3 @@
 BSD licensed charset/encoding converter library with more function than
 libiconv. (Currently, only a few codecs are supported)
 This port is a php wrapper for bsdconv.
-
-WWW: https://github.com/buganini/php-bsdconv

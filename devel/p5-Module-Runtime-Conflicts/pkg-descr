@@ -1,5 +1,3 @@
 Module::Runtime::Conflicts provides conflicts checking for Module::Runtime,
 which had a recent release that broke some versions of Moose. It is called from
 Moose::Conflicts and moose-outdated.
-
-WWW: https://metacpan.org/release/Module-Runtime-Conflicts

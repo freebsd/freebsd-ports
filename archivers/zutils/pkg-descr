@@ -13,5 +13,3 @@ Ztest - Tests integrity of compressed files.
 Zupdate - Recompresses files to lzip format.
 
 The supported compressors are bzip2, gzip, lzip, and xz.
-
-WWW: http://www.nongnu.org/zutils/zutils.html

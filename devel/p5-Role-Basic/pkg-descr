@@ -10,5 +10,3 @@ good idea but they're leery of dragging in Moose (your author has had
 this happen more than once and heard of others making the same
 complaint). Sometimes you just want good old-fashioned roles which let
 you separate class responsibility from code reuse.
-
-WWW: https://metacpan.org/release/Role-Basic

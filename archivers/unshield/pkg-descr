@@ -10,5 +10,3 @@ to Microsoft Windows.
 - Support InstallShield versions 5 and later
 - Be able to list contents of InstallShield Cabinet Files
 - Be able to extract files from InstallShield Cabinet Files
-
-WWW: https://github.com/twogood/unshield

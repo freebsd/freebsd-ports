@@ -14,5 +14,3 @@ PAM-PKCS#11 package provides:
         Standalone cert-to-login finder tool
         Certificate contents viewer
         Card Event status monitor, to trigger actions on card insert/removal
-
-WWW: https://github.com/OpenSC/pam_pkcs11

@@ -13,5 +13,3 @@ binary SPK files by default. You can get type 21 binary SPK file for celestial
 small bodies through TELNET interface by answering back 'B' for 'SPK file
 format'. Also you can get type 21 binary SPK file from:
 https://ssd.jpl.nasa.gov/x/spk.html
-
-WWW: https://github.com/whiskie14142/spktype21

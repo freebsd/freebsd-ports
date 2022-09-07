@@ -4,5 +4,3 @@ network interface, keeps track of their state, and displays a list of
 connections in a manner similar to the UNIX top(1) command. It displays
 source and destination addresses, ports, connection state, idle time, and
 bandwidth usage.
-
-WWW: https://BSDforge.com/projects/net-mgmt/tcptrack/

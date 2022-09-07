@@ -9,5 +9,3 @@ potentially, a set of CSS stylesheets) and an Ncurses WINDOW structure, and
 libRUIN paints the WINDOW according to the markup and CSS; the programmer may
 subsequently pass Ncurses-style input strings to that WINDOW via libRUIN, and
 libRUIN will handle the resulting event flows.
-
-WWW: http://www.nongnu.org/libruin/

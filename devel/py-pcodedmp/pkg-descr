@@ -9,5 +9,3 @@ Since most of the time it is the p-code that determines what exactly a macro
 would do (even if neither source code, nor execodes are present), it would make
 sense to have a tool that can display it. This is what prompted us to create
 this VBA p-code disassembler.
-
-WWW: https://github.com/bontchev/pcodedmp

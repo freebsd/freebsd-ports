@@ -17,5 +17,3 @@ Fully featured git bug tracker that:
   tools through the CLI or the GraphQL API.
 * Bridges to other bug trackers: use bridges to import
   and export to other trackers.
-
-WWW: https://github.com/MichaelMure/git-bug

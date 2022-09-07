@@ -6,5 +6,3 @@ decides at run time which output style should be produced. The
 application calls a function "xo_emit" to product output that is
 described in a format string. A "field descriptor" tells libxo what
 the field is and what it means.
-
-WWW: https://github.com/Juniper/libxo

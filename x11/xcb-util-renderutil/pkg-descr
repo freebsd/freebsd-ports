@@ -6,5 +6,3 @@ libraries also provide client-side code which is not strictly part of
 the X protocol but which have traditionally been provided by Xlib.
 
 Renderutil module s Convenience functions for the Render extension.
-
-WWW: https://xcb.freedesktop.org/

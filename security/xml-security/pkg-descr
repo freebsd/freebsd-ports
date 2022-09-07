@@ -6,5 +6,3 @@ The Java library supports the standard Java API JSR-105: XML Digital
 Signature APIs for creating and validating XML Signatures. A standard
 Java API for XML Encryption JSR-106: XML Digital Encryption APIs is
 in progress and is not final, so this API is not yet supported.
-
-WWW: https://santuario.apache.org/javaindex.html

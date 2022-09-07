@@ -17,5 +17,3 @@ libircclient features include:
 	* Compatible with RFC 1459 and most IRC clients.
 	* Free, licensed under LGPL license.
 	* Good documentation and examples available.
-
-WWW: http://www.ulduzsoft.com/libircclient/

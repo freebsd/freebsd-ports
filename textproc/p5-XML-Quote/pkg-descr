@@ -2,5 +2,3 @@ This module provides functions to quote/dequote strings in "xml"-way.
 
 All functions are written in XS and are very fast; they correctly process
 utf8, tied, overloaded variables and all the rest of perl "magic".
-
-WWW: https://metacpan.org/release/XML-Quote

@@ -1,4 +1,2 @@
 Proc::BackOff provides methods for a Perl script to backoff retries
 when an operation fails.
-
-WWW: https://metacpan.org/release/Proc-BackOff

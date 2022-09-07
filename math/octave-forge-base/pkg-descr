@@ -9,5 +9,3 @@ packaging system.
 
 Another purpose of the script "load-octave-pkg" is to attempt to correct any
 errors created by the octave packaging system.
-
-WWW: http://octave.sourceforge.net/

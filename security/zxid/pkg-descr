@@ -7,5 +7,3 @@ It is suitable for both high performance and embedded applications.
 Scripting languages are supported using SWIG, including Perl, PHP and
 Java. The "full stack" nature of ZXID means it's self contained and
 has minimal external library dependencies (see downloads).
-
-WWW: http://zxid.org/

@@ -11,5 +11,3 @@ put the source code into a source subfolder. It can then be registered on the
 public package registry to be made available for everyone. Any dependencies
 specified in dub.json are automatically downloaded and made available to the
 project during the build process.
-
-WWW: https://github.com/dlang/dub

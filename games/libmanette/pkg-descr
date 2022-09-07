@@ -9,5 +9,3 @@ the popular SDL mapping string format.
 
 The API is inspired by the device and event handling of GDK, so
 anybody used to GTK should feel right at home.
-
-WWW: https://gnome.pages.gitlab.gnome.org/libmanette/

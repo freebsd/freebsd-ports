@@ -2,5 +2,3 @@ Pyright for Python is a Python command-line wrapper over pyright [1], a static
 type checker for Python.
 
 [1] https://github.com/microsoft/pyright
-
-WWW: https://github.com/RobertCraigie/pyright-python

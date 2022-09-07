@@ -4,5 +4,3 @@ selectors.
 Features
   - Extract text using CSS or XPath selectors
   - Regular expression helper methods
-
-WWW: https://github.com/scrapy/parsel

@@ -6,5 +6,3 @@ programs.
 Other SMTPd implementations don't support useful ESMTP extensions and the LMTP
 protocol. Their interface design precludes adding them later. So I've decided
 to rewrite a complete implementation with extensibility in mind.
-
-WWW: https://metacpan.org/release/Net-Server-Mail

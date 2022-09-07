@@ -17,5 +17,3 @@ Typical use cases for Zyre are:
 * Clustering of a set of services on the same Ethernet network.
 * Controlling a network of smart devices (Internet of Things).
 * Multi-user mobile applications (like smart classrooms).
-
-WWW: https://github.com/zeromq/zyre

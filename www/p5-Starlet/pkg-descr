@@ -2,5 +2,3 @@ Starlet is a standalone HTTP/1.0 server.
 
 The server supports several features, and is suitable for running HTTP
 application servers behind a reverse proxy.
-
-WWW: https://metacpan.org/release/Starlet

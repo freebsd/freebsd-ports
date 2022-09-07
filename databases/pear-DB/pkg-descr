@@ -15,5 +15,3 @@ DB is a database abstraction layer providing:
 - DocBook and phpDocumentor API documentation
 
 DB layers itself on top of PHP's existing database extensions.
-
-WWW: https://pear.php.net/package/DB

@@ -8,5 +8,3 @@ Key Features:
 * Uses a modified Wadler-Leijen layout algorithm for optimal formatting.
 * Write pretty printers for your own types with a dead simple, declarative
   interface.
-
-WWW: https://pypi.org/project/prettyprinter/

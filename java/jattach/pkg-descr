@@ -4,5 +4,3 @@ No installed JDK required, works with just JRE.
 
 This is the lightweight native version of HotSpot Attach API
 https://docs.oracle.com/javase/8/docs/jdk/api/attach/spec/
-
-WWW: https://github.com/apangin/jattach

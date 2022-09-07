@@ -20,5 +20,3 @@ It contains:
 * Biological Sequences Retrieval and Processing Library
 * Portable FLTK and OpenGL based GUI and graphic libraries
 * XmlWrapp (XML parsing and handling, XSLT, XPath)
-
-WWW: https://ncbi.github.io/cxx-toolkit/

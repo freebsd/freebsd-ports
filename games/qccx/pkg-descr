@@ -3,5 +3,3 @@ manipulation, pointers, integers, arrays, and ``for'' loops.  It is also the
 fastest QuakeC compiler out there (at least at its time).  QCCX is based on
 FastQCC which was, in turn, based on QCCDOS.  Use it the same way you use any
 other QuakeC compiler.
-
-WWW: http://www.quakewiki.net/archives/qccx/

@@ -3,5 +3,3 @@ support for SMTP authentication with Net::Server::Mail::ESMTP
 module.
 
 Currently only LOGIN and PLAIN methods are supported.
-
-WWW: https://metacpan.org/release/Net-Server-Mail-ESMTP-AUTH

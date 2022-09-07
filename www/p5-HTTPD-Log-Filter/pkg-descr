@@ -10,5 +10,3 @@ is where the line is a valid httpd logfile entry, but just
 doesn't happen to match the filter (where "" is returned).
 The other is where it is an invalid entry according to the
 format specified in the constructor.
-
-WWW: https://metacpan.org/release/HTTPD-Log-Filter

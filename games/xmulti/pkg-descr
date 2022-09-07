@@ -8,5 +8,3 @@ xmulti/xmaid - mascot girl for X11
 % xmulti [toolkit options] -mod osouji \
 		[-root [-drawroot] [-rootimage img] [-num n] [-incinf]]
 % xmulti [toolkit options] -name nadewin
-
-WWW: http://www.denpa.org/~go/xmulti/

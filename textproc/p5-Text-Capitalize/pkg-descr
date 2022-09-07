@@ -9,5 +9,3 @@ The "capitalize_title" function tries to get closer to English title
 capitalization rules where only the "important" words are supposed
 to be capitalized. There are also some customization features
 provided to allow the user to choose variant rules.
-
-WWW: https://metacpan.org/release/Text-Capitalize

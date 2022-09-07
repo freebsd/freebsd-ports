@@ -9,5 +9,3 @@ to generate random numbers. Each stream also has equally-spaced
 substreams, which are occasionally useful. The API is currently
 implemented for four different RNGs, namely the MRG31k3p, MRG32k3a,
 LFSR113 and Philox-4x32-10 generators.
-
-WWW: https://github.com/clMathLibraries/clRNG

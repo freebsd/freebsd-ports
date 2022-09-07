@@ -1,5 +1,3 @@
 This module allows you to store multiple columns in one and
 transparently use this columns as if they were normal columns
 in your table.
-
-WWW: https://metacpan.org/release/DBIx-Class-FrozenColumns

@@ -7,5 +7,3 @@ the command line or manually selected via a file picker, pasted from the
 clipboard or dropped by DnD. The extracted content can then be exported to the
 clipboard or as a file. The version also provides integration via the Dolphin
 context menu for image files and by a KDE Purpose "Export" plugin.
-
-WWW: https://invent.kde.org/graphics/kodaskanna

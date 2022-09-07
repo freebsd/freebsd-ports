@@ -7,5 +7,3 @@ Hashie is available as a RubyGem which extend Hashes and make them more useful.
 - Hashie::Trash: a Dash that allows you to translate keys on initialization.
 - Hashie::Clash: allows you to easily construct complex hashes using method
   notation chaining.
-
-WWW: https://github.com/hashie/hashie

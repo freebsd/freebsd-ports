@@ -19,5 +19,3 @@ the detected track starts and ends, but generally that will not be
 necessary. Track-times are saved in an editable (plaintext) .tracks file,
 that will be used during the signal processing to produce one processed
 .wav file for each individual track.
-
-WWW: http://www.opensourcepartners.nl/~costar/gramofile/

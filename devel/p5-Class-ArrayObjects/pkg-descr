@@ -6,5 +6,3 @@ This module is little more than a cute way of defining constant subs in
 your own package.  Constant subs are very useful when dealing with array
 based objects because they allow one to access array slots by name
 instead of by index.
-
-WWW: https://metacpan.org/release/Class-ArrayObjects

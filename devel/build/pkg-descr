@@ -13,5 +13,3 @@ Some of its features include:
 * complete dependency graph.
 * inter-project dependency tracking.
 * extensible language/compiler framework.
-
-WWW: https://www.codesynthesis.com/projects/build/

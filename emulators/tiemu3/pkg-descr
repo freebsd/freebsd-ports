@@ -5,5 +5,3 @@ was deeply reworked and improved, thus it's very different now.
 
 TiEmu uses the GDK library (GTK component) for display.  The GUI has been
 written with GTK+ (the Gimp ToolKit).
-
-WWW: http://lpg.ticalc.org/prj_tiemu/

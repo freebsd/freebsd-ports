@@ -15,5 +15,3 @@ be also useful if you want to learn about the Java Virtual Machine
 BCEL is already being used successfully in several projects such as
 compilers, optimizers, obsfuscators and analysis tools, the most
 popular probably being the Xalan XSLT processor at Apache.
-
-WWW: https://commons.apache.org/proper/commons-bcel/

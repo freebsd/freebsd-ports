@@ -12,5 +12,3 @@ through either SDL input or Allegro input.
 The primary goal for Fifechan is to keep it extendable, lightweight
 and still be powerful enough to use in all types of games out of the
 box.
-
-WWW: http://fifengine.net/

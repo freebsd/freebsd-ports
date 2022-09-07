@@ -3,5 +3,3 @@ you specify and exports into your namespace a subroutine that returns the
 class name. You can explicitly alias the class to another name or, if you
 prefer, you can do so implicitly. In the latter case, the name of the
 subroutine is the last part of the class name.
-
-WWW: https://metacpan.org/release/aliased

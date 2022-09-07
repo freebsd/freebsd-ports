@@ -6,5 +6,3 @@ CLI runs your tasks locally the same way they are executed in CI or on
 your colleague's machine. Immutability of containers ensures the tasks
 will be executed the same way years from now regardless what versions
 of packages you'll have locally.
-
-WWW: https://github.com/cirruslabs/cirrus-cli

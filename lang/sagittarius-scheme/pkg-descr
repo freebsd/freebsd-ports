@@ -12,5 +12,3 @@ Features:
  -  Builtin regular expression
       -  mostly works O(n)
  -   Replaceable reader
-
-WWW: https://bitbucket.org/ktakashi/sagittarius-scheme/wiki/Home

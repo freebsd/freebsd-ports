@@ -5,5 +5,3 @@ userland applications to receive packets sent to it.
 
 The userland applications can also send their own packets to the devices
 and they will be forwarded to the kernel.
-
-WWW: https://github.com/LaKabane/libtuntap

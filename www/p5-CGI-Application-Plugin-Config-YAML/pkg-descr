@@ -1,3 +1,1 @@
 add Config::YAML support to CGI::Application
-
-WWW: https://metacpan.org/release/CGI-Application-Plugin-Config-YAML

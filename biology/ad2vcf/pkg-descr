@@ -1,4 +1,2 @@
 ad2vcf extracts allelic depth info from a SAM stream and adds it to a
 corresponding single-sample VCF file.
-
-WWW: https://github.com/auerlab/ad2vcf

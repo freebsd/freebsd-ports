@@ -1,4 +1,2 @@
 The Vulcan Logic Disassembler hooks into the Zend Engine and
 dumps all the opcodes (execution units) of a script.
-
-WWW: https://pecl.php.net/package/vld

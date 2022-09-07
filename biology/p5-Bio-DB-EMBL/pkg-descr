@@ -7,5 +7,3 @@ servers in different geographical locations.
 
 The functionality of this module is inherited from Bio::DB::DBFetch which
 implements Bio::DB::WebDBSeqI.
-
-WWW: https://metacpan.org/release/Bio-DB-EMBL

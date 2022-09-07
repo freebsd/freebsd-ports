@@ -19,5 +19,3 @@ Its main features are:
   CGI::FastTemplate.
 
 Plus, the native HTML generated is valid XHTML 1.0 Transitional.
-
-WWW: https://metacpan.org/release/CGI-FormBuilder

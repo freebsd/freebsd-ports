@@ -1,5 +1,3 @@
 This library provides inotify-compatible interface for applications,
 that need to monitor changes happening in a filesystem.  It can be useful
 when porting Linux applications, which often use inotify interface.
-
-WWW: https://github.com/libinotify-kqueue/libinotify-kqueue

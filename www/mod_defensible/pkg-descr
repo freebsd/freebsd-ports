@@ -7,5 +7,3 @@ DnsblUse On
 DnsblServers bsb.spamlookup.net bl.blbl.org opm.blitzed.org sbl-xbl.spamhaus.org
 
 No UDNS support in this FreeBSD port version
-
-WWW: https://github.com/jd/mod_defensible

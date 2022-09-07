@@ -20,5 +20,3 @@ on _mm_crc32_u64().  It returns a 256-bit hash.
 All members of the CityHash family were designed with heavy reliance
 on previous work by Austin Appleby, Bob Jenkins, and others.
 For example, CityHash32 has many similarities with Murmur3a.
-
-WWW: http://code.google.com/p/cityhash/

@@ -6,5 +6,3 @@ Features:
   (ensure your gRPC server supports server reflection).
 * Save established connection, and reuse it for next invoke/request (also can
   close/restart connection).
-
-WWW: https://github.com/gusaul/grpcox

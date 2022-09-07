@@ -1,5 +1,3 @@
 MongoKit is a python module that brings structured schema and validation layer
 on top of the great pymongo driver. It has be written to be simpler and
 lighter as possible with the KISS and DRY principles in mind.
-
-WWW: http://namlook.github.com/mongokit/

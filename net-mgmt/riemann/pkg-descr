@@ -7,5 +7,3 @@ code. Track the latency distribution of your web app. See the top processes
 on any host, by memory and CPU. Combine statistics from every Riak node in
 your cluster and forward to Graphite. Send alerts when a key process fails
 to check in. Know how many users signed up right this second.
-
-WWW: http://riemann.io/

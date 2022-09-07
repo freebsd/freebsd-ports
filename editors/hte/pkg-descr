@@ -16,5 +16,3 @@ probably include the following file formats:
    - Unix common object file format (COFF) + DJGPP COFF (supported)
    - OS2 linear executables (LX)
    - Microsoft object files (.obj)
-
-WWW: http://hte.sourceforge.net/

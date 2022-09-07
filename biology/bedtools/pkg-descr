@@ -8,5 +8,3 @@ Although each individual utility is designed to do a relatively simple task,
 e.g., intersect two interval files, more sophisticated analyses can be
 conducted by stringing together multiple bedtools operations on the command
 line or in shell scripts.
-
-WWW: http://bedtools.readthedocs.org/

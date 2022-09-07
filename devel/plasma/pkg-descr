@@ -6,5 +6,3 @@ It supports :
 
 * Architectures : x86{64}, ARM, MIPS{64} (partially for ARM and MIPS)
 * Formats : ELF, PE, RAW
-
-WWW: https://www.github.com/plasma-disassembler/plasma

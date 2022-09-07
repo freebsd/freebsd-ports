@@ -12,5 +12,3 @@ Implemented Features:
     * Joystick emulation (numeric keypad, numlock disabled)
     * Almost full CRTC-6845 / GateArray emulation
     * Adaptative frame-rate
-
-WWW: http://xcpc.sourceforge.net/

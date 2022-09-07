@@ -3,5 +3,3 @@ interface supports broadly the same options as the linux-tools perf,
 but also supports various Android-specific improvements.
 
 This package only provides subcommands to read perf.data.
-
-WWW: https://developer.android.com/ndk/guides/simpleperf

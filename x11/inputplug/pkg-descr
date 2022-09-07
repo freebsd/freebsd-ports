@@ -5,5 +5,3 @@ removed, enabled or disabled).
 For example, inputplug can be used in shell scripts which monitor attachments
 of keyboards in order to run change keyboard mappings with commands like
 "setxkbmap -option ctrl:nocaps".
-
-WWW: https://github.com/andrewshadura/inputplug

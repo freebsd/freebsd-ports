@@ -10,5 +10,3 @@ size, is intuitive and easy to select.
 
 HDBSCAN is ideal for exploratory data analysis; it's a fast and robust algorithm
 that you can trust to return meaningful clusters (if there are any).
-
-WWW: https://github.com/scikit-learn-contrib/hdbscan

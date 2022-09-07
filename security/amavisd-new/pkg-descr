@@ -5,5 +5,3 @@ integration into your MTA can be different, so please read the README and
 INSTALL files very carefully.
 
 amavisd-new also supports SpamAssassin integration.
-
-WWW: https://www.ijs.si/software/amavisd/

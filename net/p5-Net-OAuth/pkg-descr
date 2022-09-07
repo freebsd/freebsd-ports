@@ -16,5 +16,4 @@ Net::OAuth does not provide:
 - Consumer or Service Provider encapsulation
 - token/nonce/key storage/management
 
-WWW: https://metacpan.org/release/Net-OAuth
-WWW: http://oauth.net/
+See also: https://oauth.net/

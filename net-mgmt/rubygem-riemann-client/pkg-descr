@@ -5,5 +5,3 @@ processor for monitoring all your distributed systems.
 Only plain UDP and TCP connections are provided, TLS is not available.
 Thus, either use a TLS proxy (haproxy or nginx), or a tool such as
 spiped, to add encryption to your Riemann servers.
-
-WWW: https://github.com/riemann/riemann-ruby-client

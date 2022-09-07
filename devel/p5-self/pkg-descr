@@ -4,5 +4,3 @@ really just handy helpers to get rid of:
     my $self = shift;
 
 Basically, self is just equal to $_[0], and args is just $_[1..$#_].
-
-WWW: https://metacpan.org/release/self

@@ -1,4 +1,2 @@
 libslirp is a user-mode networking library used by virtual machines,
 containers or various tools.
-
-WWW: https://gitlab.freedesktop.org/slirp/libslirp

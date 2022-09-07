@@ -6,5 +6,3 @@ well) as a low-tech "terminal-window" to allow operator intervention in
 PPP connection scripts (something like the  ms-windows  "open  terminal
 window  before / after dialing" feature). It could also prove useful in
 many other similar tasks.
-
-WWW: https://github.com/npat-efault/picocom

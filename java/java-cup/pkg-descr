@@ -3,5 +3,3 @@ parsers from simple specifications.  It serves the same role as the
 widely-used program `yacc', and in fact offers most of the features of
 `yacc'; however, CUP is written in Java, uses specifications including
 embedded Java code, and produces parsers with are implemented in Java.
-
-WWW: http://www2.cs.tum.edu/projects/cup/

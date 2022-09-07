@@ -16,5 +16,3 @@ Comparison between 'htop' and 'top'
 	the priority value to renice a process, in 'top' you do.
 	* In 'htop' you can kill multiple processes at once.
 	* 'top' is older, hence, more tested.
-
-WWW: https://htop.dev/

@@ -8,5 +8,3 @@ where it may be useful to others as a platform for research and experimentation.
 
 There are several optimization algorithms available with the baseline
 being sparse gradient descent (GD) on a loss function (several are available).
-
-WWW: https://github.com/JohnLangford/vowpal_wabbit/wiki

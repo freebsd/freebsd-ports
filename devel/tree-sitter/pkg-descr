@@ -8,5 +8,3 @@ syntax tree as the source file is edited. Tree-sitter aims to be:
 	errors
 - Dependency-free so that the runtime library (which is written in pure C)
 	can be embedded in any application
-
-WWW: https://tree-sitter.github.io/

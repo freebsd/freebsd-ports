@@ -5,5 +5,3 @@ other page.
 But with this plugin, you can link to a heading from any other page on the site
 without needing to know the path of either of the pages, just the heading title
 itself.
-
-WWW: https://github.com/mkdocstrings/autorefs

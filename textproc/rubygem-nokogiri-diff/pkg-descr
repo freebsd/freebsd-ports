@@ -6,5 +6,3 @@ Features:
 - Compares XML/HTML Elements, Attributes, Text nodes and DTD nodes.
 - Allows calculating differences between documents, or just enumerating the
   added or removed nodes.
-
-WWW: https://github.com/postmodern/nokogiri-diff

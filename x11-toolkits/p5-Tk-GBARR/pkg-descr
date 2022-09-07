@@ -3,5 +3,3 @@ Tk::TFrame      - A frame with a title
 Tk::NumEntry    - An entry widget that accepts numbers and has up/down
  	         buttons for in/decrement.
 Tk::FireButton  - Button that keeps invoking command when pressed
-
-WWW: https://metacpan.org/release/Tk-GBARR

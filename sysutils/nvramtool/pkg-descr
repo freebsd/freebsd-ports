@@ -9,5 +9,3 @@ specifies locations in the CMOS (nonvolatile RAM) where the coreboot
 parameters are stored.
 
 For information about coreboot, see http://www.coreboot.org/.
-
-WWW: http://www.coreboot.org/Nvramtool

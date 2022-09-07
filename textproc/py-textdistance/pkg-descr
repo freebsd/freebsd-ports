@@ -8,5 +8,3 @@ Features:
 - More than two sequences comparing
 - Some algorithms have more than one implementation in one class
 - Optional numpy usage for maximum speed
-
-WWW: https://github.com/life4/textdistance

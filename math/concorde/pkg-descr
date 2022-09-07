@@ -12,5 +12,3 @@ users to create specialized codes for TSP-like problems.  All Concorde
 functions are thread-safe for programming in shared-memory parallel
 environments; the main TSP solver includes code for running over
 networks of Unix workstations.
-
-WWW: http://www.tsp.gatech.edu/concorde.html

@@ -9,5 +9,3 @@ as appropriate when displaying.
 In format=flowed, a soft newline is expressed as " \n", while hard
 newlines are expressed as "\n". Soft newlines can be automatically
 deleted or inserted as appropriate when the text is reformatted.
-
-WWW: https://metacpan.org/release/Text-Flowed

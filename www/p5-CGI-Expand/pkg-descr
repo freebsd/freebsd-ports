@@ -6,5 +6,3 @@ expand_cgi works with CGI.pm, Apache::Request or anything with an appropriate
 
 If you prefer to use a different flattening convention then CGI::Expand can
 be subclassed.
-
-WWW: https://metacpan.org/release/CGI-Expand

@@ -7,5 +7,3 @@ Simple Viewer is small and simple OpenGL based image viewer.  Its features:
   - Very simple interface, minimum dependencies, does not require any
     specific desktop environment
   - Suitable as default (general-purpose) desktop image viewer
-
-WWW: https://bitbucket.org/andreyu/simple-viewer-gl

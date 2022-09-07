@@ -1,4 +1,2 @@
 This gem logs the execution source of all queries to the Rails log.  Tracking
 down the source is often useful for performance optimization.
-
-WWW: https://github.com/brunofacca/active-record-query-trace

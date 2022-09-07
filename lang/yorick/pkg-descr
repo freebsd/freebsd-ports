@@ -16,5 +16,3 @@ keyboard, as well as stored in files for later use.
 This package includes an emacs-based development environment, which one
 can launch by typing M-x yorick in emacs, if installed `yorick.el' have
 been loaded into one's ~/.emacs file.
-
-WWW: http://yorick.sourceforge.net/

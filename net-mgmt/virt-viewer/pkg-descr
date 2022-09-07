@@ -4,5 +4,3 @@ protocol. Further protocols may be supported in the future
 as user demand dictates. The viewer can connect directly
 to both local and remotely hosted guest OS, optionally
 using SSL/TLS encryption.
-
-WWW: https://virt-manager.org/

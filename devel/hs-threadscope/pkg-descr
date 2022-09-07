@@ -5,5 +5,3 @@ The ThreadScope program allows us to debug the parallel performance of
 Haskell programs.  Using Threadscope we can check to see that work is
 well balanced across the available processors and spot performance
 issues relating to garbage collection or poor load balancing.
-
-WWW: https://www.haskell.org/haskellwiki/ThreadScope

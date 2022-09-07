@@ -5,5 +5,3 @@ The module is used indirectly through LWP, rather than including it directly
 in your code. The LWP system will invoke the WSSE authentication when it
 encounters the authentication scheme while attempting to retrieve a URL
 from a server.
-
-WWW: https://metacpan.org/release/LWP-Authen-Wsse

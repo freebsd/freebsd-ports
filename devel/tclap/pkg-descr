@@ -3,5 +3,3 @@ defining and accessing command line arguments.
 
 It seems to do everything that getopt(3) can do.  It is needed here as
 a dependency for `graphics/hugin'.
-
-WWW: http://tclap.sourceforge.net/

@@ -1,4 +1,2 @@
 Net::Write provides a portable interface to open a network interface, and be
 able to write raw data directly to the network.
-
-WWW: https://metacpan.org/release/Net-Write

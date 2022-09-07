@@ -5,5 +5,3 @@ groups of objects.
 Factory classes are used when you have different implementations for the
 same set of tasks but may not know in advance what implementations you
 will be using.
-
-WWW: https://metacpan.org/release/Class-Factory

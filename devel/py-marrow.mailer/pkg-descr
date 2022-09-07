@@ -8,5 +8,3 @@ By using Marrow Mailer you can:
  - Deliver e-mail through a number of alternative transports including SMTP,
    Amazon SES, sendmail, or even via direct on-disk mbox/maildir.
  - Multiple simultaneous configurations for more targeted delivery.
-
-WWW: https://github.com/marrow/mailer

@@ -11,5 +11,3 @@ Features:
   mode),
 - supports writing the index of a GRIB file to disk, to save a full-file scan on
   open.
-
-WWW: https://github.com/ecmwf/eccodes-python

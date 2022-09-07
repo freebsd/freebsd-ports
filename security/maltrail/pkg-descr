@@ -8,5 +8,3 @@ IP address (e.g. 185.130.5.231 for known attacker) or HTTP User-Agent header
 value (e.g. sqlmap for automatic SQL injection and database takeover tool).
 Also, it uses (optional) advanced heuristic mechanisms that can help in
 discovery of unknown threats (e.g. new malware).
-
-WWW: https://github.com/stamparm/maltrail

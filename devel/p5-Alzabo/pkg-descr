@@ -7,5 +7,3 @@ created a schema, you can use the Alzabo::Runtime::Table and
 Alzabo::Runtime::Row classes to access its data. These classes offer a high
 level interface to common operations such as SQL SELECT, INSERT, DELETE, and
 UPDATE commands.
-
-WWW: https://metacpan.org/release/Alzabo

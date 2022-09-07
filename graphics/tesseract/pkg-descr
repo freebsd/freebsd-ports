@@ -3,5 +3,3 @@ Accuracy test. Between 1995 and 2006 it had little work done on it, but
 it is probably one of the most accurate open source OCR engines
 available. The source code will read a binary, grey or color image and
 output text.
-
-WWW: https://github.com/tesseract-ocr/tesseract

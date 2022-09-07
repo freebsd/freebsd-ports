@@ -18,5 +18,3 @@ It's smart enough to do the following:
 - remove duplicate type comments from source when annotations are applied
 - normalize remaining type comments in the source to annotations; this is done
   even if the corresponding .pyi file is missing
-
-WWW: https://github.com/ambv/retype

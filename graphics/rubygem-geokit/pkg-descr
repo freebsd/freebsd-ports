@@ -8,5 +8,3 @@ The Geokit gem provides:
   fails to geocode in one service.
 - Rectangular bounds calculations: is a point within a given rectangular bounds?
 - Heading and midpoint calculations
-
-WWW: https://github.com/geokit/geokit

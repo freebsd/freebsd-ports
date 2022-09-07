@@ -6,5 +6,3 @@ PyPdf isaA Pure-Python library built as a PDF toolkit. It is capable of:
 - cropping pages,
 - merging multiple pages into a single page,
 - encrypting and decrypting PDF files.
-
-WWW: https://mstamy2.github.io/PyPDF2/

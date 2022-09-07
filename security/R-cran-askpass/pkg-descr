@@ -7,5 +7,3 @@ password-entry back-end for 'ssh-agent' or 'git-credential' via the
 SSH_ASKPASS and GIT_ASKPASS environment variables. Thereby the user
 can be prompted for credentials or a passphrase if needed when R
 calls out to git or ssh.
-
-WWW: https://cran.r-project.org/web/packages/askpass/

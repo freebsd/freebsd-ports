@@ -6,5 +6,3 @@ Currently supported docstrings are:
 * Google
 * Numpydoc-style
 * ReST
-
-WWW: https://github.com/rr-/docstring_parser

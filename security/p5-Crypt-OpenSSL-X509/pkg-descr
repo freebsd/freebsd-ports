@@ -5,5 +5,3 @@ This implement a large majority of OpenSSL's useful X509 API.
   "... CN=Firstname lastname/emailAddress=user@domain", and also
   certificates where there is a X509v3 Extension of the form
   "X509v3 Subject Alternative Name: email=user@domain".
-
-WWW: https://metacpan.org/release/Crypt-OpenSSL-X509

@@ -7,5 +7,3 @@ grammar by default, while also accepting posix, extended posix,
 awk, grep, and extended grep grammars.  Input can be received by
 piped stdin, or by using the -s option.  Output options include
 plain, colour, and json formats.
-
-WWW: https://octobanana.com/software/crex

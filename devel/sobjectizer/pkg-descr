@@ -8,5 +8,3 @@ objects which interact with each other through asynchronous messages.
 It handles message dispatching and provides a working context for message
 processing, and allows to tune those things by supplying various ready-
 to-use dispatchers.
-
-WWW: https://stiffstream.com/en/products/sobjectizer.html

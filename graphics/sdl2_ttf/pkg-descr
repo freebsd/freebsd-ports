@@ -5,5 +5,3 @@ It allows a programmer to use multiple TrueType fonts without having
 to code a font rendering routine themselves. With the power of
 outline fonts and antialiasing, high quality text output can be
 obtained without much effort.
-
-WWW: https://github.com/libsdl-org/SDL_ttf

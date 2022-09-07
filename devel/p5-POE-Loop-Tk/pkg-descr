@@ -6,5 +6,3 @@ POE::Loop::TkActiveState accommodates behavior differences in ActiveState's
 build of Tk. Both versions share common code in POE::Loop::TkCommon.
 POE::Loop::Tk dynamically selects the appropriate bridge code based on the
 runtime enviroment.
-
-WWW: https://metacpan.org/release/POE-Loop-Tk

@@ -8,5 +8,3 @@ files without much hassle. Possible use cases are:
 * You like everything to be on the command line.
 
 lv2file uses the LV2 plugin format (http://lv2plug.in/) for the effects it uses.
-
-WWW: https://github.com/jeremysalwen/lv2file

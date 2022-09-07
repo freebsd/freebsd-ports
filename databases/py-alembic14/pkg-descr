@@ -10,5 +10,3 @@ SQLAlchemy. A migrations tool offers the following functionality:
 - Allows the scripts to execute in some sequential manner.
 
 This is 1.4.X branch that works with sqlalchemy 1.2.X branch.
-
-WWW: http://alembic.zzzcomputing.com/

@@ -6,5 +6,3 @@ Possibly the most convenient way of constructing Math::Symbolic trees is
 using the builtin parser to generate trees from expressions such as '2 *
 x^5'. You may use the Math::Symbolic->parse_from_string() class method for
 this.
-
-WWW: https://metacpan.org/release/Math-Symbolic

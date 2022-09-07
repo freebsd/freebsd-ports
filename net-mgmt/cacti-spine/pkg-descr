@@ -5,5 +5,3 @@ minimal SNMP polling overhead.
 
 It's a replacement for the default 'poller.php' script, so you must
 decide if using Spine makes sense for your installation.
-
-WWW: https://cacti.net/spine_info.php

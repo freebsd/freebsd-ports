@@ -9,5 +9,3 @@ Features:
 
 Implements header-based authentication, GET URL parameter and POST parameter
 authentication are not supported.
-
-WWW: https://github.com/sam-washington/requests-aws4auth

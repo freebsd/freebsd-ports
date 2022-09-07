@@ -5,5 +5,3 @@ Examples of delivery methods include:
 POST to a delivery URL (Postback)
 Queue a job to Sidekiq or Que for later processing (Sidekiq or Que)
 Log the message or open with LetterOpener (Logger or LetterOpener)
-
-WWW: https://github.com/tpitale/mail_room

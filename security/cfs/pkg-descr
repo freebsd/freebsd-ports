@@ -7,5 +7,3 @@ For an overview of how to use it, read "${PREFIX}/share/doc/cfs/notes.ms"
 and the manual pages.  There is a paper describing CFS at:
 
     http://www.crypto.com/papers/cfs.pdf
-
-WWW: http://www.bayofrum.net/cgi-bin/fossil/cfs/

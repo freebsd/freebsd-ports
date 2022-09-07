@@ -3,5 +3,3 @@ As of version 0.6.0, only Microsoft Excel compatible spreadsheets are
 supported. Spreadsheet is a combination/complete rewrite of the
 Spreadsheet::Excel Library by Daniel J. Berger and the ParseExcel Library by
 Hannes Wyss. Spreadsheet can read, write and modify Spreadsheet Documents.
-
-WWW: https://github.com/zdavatz/spreadsheet

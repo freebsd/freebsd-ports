@@ -1,4 +1,2 @@
 Guard::Minitest allows to automatically & intelligently launch tests with the
 minitest framework when files are modified.
-
-WWW: https://github.com/guard/guard-minitest

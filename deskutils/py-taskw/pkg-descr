@@ -8,5 +8,3 @@ and task import commands to manipulate the task database.
 The second implementation opens the task db file itself and directly
 manipulates it. It exists for backwards compatibility, but should only
 be used when necessary.
-
-WWW: https://github.com/ralphbean/taskw

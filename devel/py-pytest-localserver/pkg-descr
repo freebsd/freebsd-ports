@@ -6,5 +6,3 @@ instance if you work with urllib2.Request, define your own
 openers/handlers or work with httplib. In these cases it may come in
 handy to have an HTTP server running locally which behaves just like
 the real thing. Well, look no further!
-
-WWW: https://github.com/pytest-dev/pytest-localserver

@@ -12,5 +12,3 @@ established with the 'mmap' command. Following 'mmap' execution,
 access to the memory mapped file is done via the standard Tcl
 commands: puts/gets/seek/flush/close/fconfigure, only that this
 time these commands operate on memory, rather than on a file.
-
-WWW: http://tcl-mmap.sourceforge.net/

@@ -2,5 +2,3 @@ Drop-in substitute for Py2.7's new collections.OrderedDict. The
 recipe has big-oh performance that matches regular dictionaries
 (amortized O(1) insertion/deletion/lookup and O(n)
 iteration/repr/copy/equality_testing).
-
-WWW: https://pypi.org/project/ordereddict/

@@ -5,5 +5,3 @@ In MyApp.pm:
 After that, any warn statement that's executed during action
 processing is sent to the log $c->log as a warning (instead of
 being dumped to STDERR).
-
-WWW: https://metacpan.org/release/Catalyst-Plugin-LogWarnings

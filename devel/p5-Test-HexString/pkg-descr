@@ -2,5 +2,3 @@ This testing module provides a single function, is_hexstr(), which
 asserts that the given string matches what was expected. When the
 strings match (i.e.  compare equal using the eq operator), the behaviour
 is identical to the usual is() function provided by Test::More.
-
-WWW: https://metacpan.org/release/Test-HexString

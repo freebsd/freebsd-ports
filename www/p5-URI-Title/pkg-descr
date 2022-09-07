@@ -14,5 +14,3 @@ title tag, you're done. There are several problems with this approach:
 - What if the resource is an MP3 file, or a word document or something?
 
 This module attempts to solve this problem.
-
-WWW: https://metacpan.org/release/URI-Title

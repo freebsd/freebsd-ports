@@ -17,5 +17,3 @@ Features:
 * Support for MIC to enhance the integrity of the messages
 * Support for session security with signing and sealing messages
   after authentication happens
-
-WWW: https://github.com/jborean93/ntlm-auth

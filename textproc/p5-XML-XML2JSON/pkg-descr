@@ -16,5 +16,3 @@ Namespace:
 XML:
 - XML version and encoding attributes are converted to version and encoding
   attributes of the root element, respectively.
-
-WWW: https://metacpan.org/release/XML-XML2JSON

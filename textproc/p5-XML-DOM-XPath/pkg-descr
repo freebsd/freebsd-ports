@@ -2,5 +2,3 @@ XML::DOM::XPath allows you to use XML::XPath methods to query a DOM.
 This is often much easier than relying only on getElementsByTagName.
 
 It lets you use all of the XML::DOM methods.
-
-WWW: https://metacpan.org/release/XML-DOM-XPath

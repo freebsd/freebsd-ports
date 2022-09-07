@@ -14,5 +14,3 @@ It also does type checking, understanding all the types that Moose (or Mouse)
 would understand.
 
 And it does all this with no source filters.
-
-WWW: https://metacpan.org/release/Method-Signatures

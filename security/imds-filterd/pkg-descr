@@ -8,5 +8,3 @@ in the Instance Metadata Service.  For example, "root" could be granted
 access to everything; most unprivileged users granted access to everything
 except IAM role credentials; but the www user denied access to the entire
 Instance Metadata Service in order to guard against SSRF and similar attacks.
-
-WWW: http://github.com/cperciva/imds-filterd

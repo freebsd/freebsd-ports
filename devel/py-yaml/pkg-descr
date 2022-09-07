@@ -12,5 +12,3 @@ PyYAML features:
    * support for all types from the YAML types repository. A simple extension
      API is provided.
    * relatively sensible error messages.
-
-WWW: https://pyyaml.org/

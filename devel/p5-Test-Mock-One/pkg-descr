@@ -2,5 +2,3 @@ Test::Mock::One is able to mock many things with little code by using AUTOLOAD.
 
 The problem this module tries to solve is to allow testing many things without
 having to write many lines of code.
-
-WWW: https://metacpan.org/dist/Test-Mock-One

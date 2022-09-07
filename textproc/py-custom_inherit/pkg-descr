@@ -12,5 +12,3 @@ Features:
    * Merging based on reST sections
    * Simple inheritance from a parent, if the docstring is not overwritten
  * Simple interface for using your own docstring inheritance style.
-
-WWW: https://github.com/meowklaski/custom_inherit

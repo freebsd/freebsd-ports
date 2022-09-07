@@ -7,5 +7,3 @@ use of One-time Passwords to provide two factor authentication.
 Activate the plugin  by adding the following to Roundcube's
 config/config.inc.php:
 $config['plugins'] = array('roundcube_yubikey_authentication');
-
-WWW: https://github.com/northox/roundcube-yubikey-plugin

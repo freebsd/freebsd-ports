@@ -12,5 +12,3 @@ This software covers :
 * encoding/decoding of WMO FM-95 CREX CREX code messages
 * handling pure binary unix files
 * multiple (Temperton's) FFT routine
-
-WWW: https://confluence.ecmwf.int/display/EMOS/Emoslib

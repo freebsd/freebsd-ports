@@ -1,5 +1,3 @@
 The official ODBC driver for connecting to PostgreSQL Database; not a
 part of the PostgreSQL Database distribution, though -- developed and
 maintained separately.
-
-WWW: https://www.postgresql.org/ftp/odbc/versions/

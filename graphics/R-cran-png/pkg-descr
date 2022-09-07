@@ -1,5 +1,3 @@
 This package provides an easy and simple way to read, write and
 display bitmap images stored in the PNG format. It can read and
 write both files and in-memory raw vectors.
-
-WWW: http://www.rforge.net/png/

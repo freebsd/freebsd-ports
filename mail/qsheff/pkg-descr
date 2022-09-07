@@ -12,5 +12,3 @@ will wake the qmail queue.  Some of the supported features:
   - Single line logging for qmail
   - Basic DoS attack prevention
   - And much more...
-
-WWW: http://www.enderunix.org/qsheff/

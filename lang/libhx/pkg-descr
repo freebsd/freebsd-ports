@@ -10,5 +10,3 @@ into a library. The focus is on reducing the amount of time (and
 secondarily, the amount of code) a developer has to spend for otherwise
 implementing such. Subsequently, proficient coders can use this to
 code as fast as for a scripting language.
-
-WWW: https://inai.de/projects/libhx/

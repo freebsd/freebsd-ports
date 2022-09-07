@@ -12,5 +12,3 @@ that work already: an HTTP server, an IRC server, a Gnutella spider and
 some others.  One of the highlights is that you can run all protocols on
 the same port. The application itself is single threaded but it uses
 helper processes for concurrent name resolution and ident lookups.
-
-WWW: http://www.gnu.org/software/serveez/

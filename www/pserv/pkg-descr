@@ -4,5 +4,3 @@ It should be small enough to be used in a mobile computer or to be run on your
 obsolete workstation you have somewhere.
 
 This port contains a patched version to support the execution of php scripts.
-
-WWW: https://sourceforge.net/projects/pserv/

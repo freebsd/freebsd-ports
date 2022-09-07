@@ -3,5 +3,3 @@ line of code per option is all you need to write. For that, you get a nice
 automatically-generated help page (fit to your screen size!), robust option
 parsing, command subcompletion, and sensible defaults for everything you don't
 specify.
-
-WWW: https://manageiq.github.io/trollop/

@@ -4,5 +4,3 @@ form of a wrapper around virtualenv.
 
 It can be used to create and delete environments and perform package management
 inside the environment.
-
-WWW: https://github.com/sjkingo/virtualenv-api

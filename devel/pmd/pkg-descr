@@ -6,5 +6,3 @@ PMD scans Java source code and looks for potential problems like:
     * Overcomplicated expressions - unnecessary if statements, for loops
       that could be while loops
     * Duplicate code - copied/pasted code means copied/pasted bugs
-
-WWW: http://pmd.sourceforge.net/

@@ -1,4 +1,2 @@
 Utility to extract kernel and ramdisk from
 an Android boot or recovery image file
-
-WWW: https://github.com/csimmonds/boot-extract

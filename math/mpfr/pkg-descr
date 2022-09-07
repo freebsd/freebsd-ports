@@ -6,5 +6,3 @@ The main goal of MPFR is to provide a library for multiple-precision
 floating-point computation which is both efficient and has a well-defined
 semantics.  It copies the good ideas from the ANSI/IEEE-754 standard for
 double-precision floating-point arithmetic (53-bit mantissa).
-
-WWW: https://www.mpfr.org/

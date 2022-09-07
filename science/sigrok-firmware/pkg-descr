@@ -3,5 +3,3 @@ devices libsigrok supports (logic analyzers, oscilloscopes, or others).
 
 We only carry firmware files for which we have an explicit permission/license
 that allows at _least_ redistribution of the firmware.
-
-WWW: http://www.sigrok.org/wiki/Firmware

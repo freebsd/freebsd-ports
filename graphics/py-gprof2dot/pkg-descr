@@ -19,5 +19,3 @@ It can:
 - use color efficiently to draw attention to hot-spots;
 - work on any platform where Python and Graphviz is available, i.e, virtually
   anywhere.
-
-WWW: https://github.com/jrfonseca/gprof2dot

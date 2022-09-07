@@ -5,5 +5,3 @@ you need not only to supply the list of objects, but also a function
 that calculates the similarity between two of those objects.
 For simple datatypes, like integers, this can be as simple as a
 subtraction, but more complex calculations are possible.
-
-WWW: https://pypi.org/project/cluster/

@@ -15,5 +15,3 @@ images or raw disk partitions.
 
 BackupPC supports laptop environments with clients on dynamic
 IP addresses (DHCP) not always connected to the network.
-
-WWW: https://backuppc.github.io/backuppc/

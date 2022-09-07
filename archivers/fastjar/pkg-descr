@@ -12,5 +12,3 @@ moment, implemented features are:
   * Changing to directory and adding files (-C)
   * Archive content listing (-t)
   * Archive extraction (-x)
-
-WWW: http://fastjar.sourceforge.net/

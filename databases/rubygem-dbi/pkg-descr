@@ -1,3 +1,1 @@
 A vendor independent interface for accessing databases, similar to Perl's DBI
-
-WWW: https://github.com/erikh/ruby-dbi

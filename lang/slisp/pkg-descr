@@ -1,5 +1,3 @@
 SLisp is a simple Lisp interpreter that implements most of the
 common Lisp constructs in a few hundred lines of C code. It may be
 useful for learning the basis of the Lisp language.
-
-WWW: http://www.sigala.it/sandro/software.php#slisp

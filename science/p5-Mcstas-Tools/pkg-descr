@@ -16,5 +16,3 @@ mcformatgui: Front-end to mxformat to help reformat data-files (obsolescent).
 mcdaemon: Deamon to dynamically monitor and plot results (obsolescent).
 mcstas2vitess: Tool to transfer a McStas simulation to ViTESS.
 mcresplot: Script to help plotting resolution functions.
-
-WWW: http://www.mcstas.org

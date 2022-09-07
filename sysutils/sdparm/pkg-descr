@@ -7,5 +7,3 @@ devices include CD/DVD drives (irrespective of transport), SCSI and ATAPI
 tape drives and SCSI enclosures. A small set of commands associated with
 starting and stopping the media, loading and unloading removable media
 and some other housekeeping functions can also be sent with this utility.
-
-WWW: http://sg.danny.cz/sg/sdparm.html

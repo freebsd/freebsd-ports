@@ -1,5 +1,3 @@
 AnyEvent::HTTP::LWP::UserAgent uses AnyEvent::HTTP inside but have an
 interface of LWP::UserAgent.  You can safely use this module in Coro
 environment (and possibly in AnyEvent too).
-
-WWW: https://metacpan.org/release/AnyEvent-HTTP-LWP-UserAgent

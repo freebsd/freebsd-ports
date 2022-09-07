@@ -6,5 +6,3 @@ Code Constraints
 - no runtime dependency (betterC compatible)
 - no iteration in algorithms (no loops at all)
 - no complex algorithms
-
-WWW: https://github.com/libmir/mir-core

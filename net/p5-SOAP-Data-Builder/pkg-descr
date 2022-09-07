@@ -4,5 +4,3 @@ and header structures for use with SOAP::Lite.
 It primarily provides a wrapper around SOAP::Serializer and
 SOAP::Data (or SOAP::Header) enabling you to generate complex XML
 within your SOAP request or response.
-
-WWW: https://metacpan.org/release/SOAP-Data-Builder

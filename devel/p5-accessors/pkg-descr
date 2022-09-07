@@ -11,5 +11,3 @@ and wait until the dust settles.
 
 See accessors::classic for accessors that always return the current value if
 you don't like method chaining.
-
-WWW: https://metacpan.org/release/accessors

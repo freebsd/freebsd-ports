@@ -7,5 +7,3 @@ implementation.
 
 LibreSSL was forked from the OpenSSL library starting with the 1.0.1g branch
 and will follow the security guidelines used elsewhere in the OpenBSD project.
-
-WWW: http://www.libressl.org/

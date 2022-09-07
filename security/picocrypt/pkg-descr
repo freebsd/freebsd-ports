@@ -6,5 +6,3 @@ Argon2id key derivation function to provide a high level of security,
 even from three-letter agencies like the NSA.  It is designed for maximal
 security, making absolutely no compromises security-wise, and is built
 with Go's standard x/crypto modules.
-
-WWW: https://github.com/HACKERALERT/Picocrypt

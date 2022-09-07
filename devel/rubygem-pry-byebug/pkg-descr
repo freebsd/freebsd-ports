@@ -1,4 +1,2 @@
 Combine 'pry' with 'byebug'. Adds 'step', 'next', 'finish',
     'continue' and 'break' commands to control execution.
-
-WWW: https://github.com/deivid-rodriguez/pry-byebug

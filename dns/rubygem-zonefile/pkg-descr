@@ -5,5 +5,3 @@ MX, NS, SOA, TXT, CNAME, PTR and SRV records. The data can be accessed by the
 instance method of the same name. All except SOA return an array of hashes
 containing the named data. SOA directly returns the hash since there can only be
 one SOA information.
-
-WWW: https://github.com/boesemar/zonefile

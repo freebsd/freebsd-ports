@@ -10,5 +10,3 @@ If the requested shell is already opened on another screen, it will be
 moved on the current screen.
 
 It is recommended to map it to an i3 binding. See WWW for user config.
-
-WWW: https://github.com/lbonn/i3-quickterm

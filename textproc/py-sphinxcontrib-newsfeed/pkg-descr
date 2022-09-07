@@ -6,6 +6,3 @@ Features:
     Generates a list of entries with teasers.
     Saves the feed to a file in RSS format.
     Supports comments via Disqus.
-
-
-WWW: https://pypi.org/project/sphinxcontrib-newsfeed/

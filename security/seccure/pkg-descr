@@ -11,5 +11,3 @@ seccure builds on this feature and therefore is the tool of choice
 whenever lightweight asymmetric cryptography -- independent of key
 servers, revocation certificates, the Web of Trust or even
 configuration files -- is required.
-
-WWW: http://point-at-infinity.org/seccure/

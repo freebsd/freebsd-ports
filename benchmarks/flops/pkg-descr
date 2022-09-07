@@ -8,5 +8,3 @@ modules include various percent weightings of FDIV's (from 0% to 25% FDIV's)
 so that the range of performance can be obtained when using FDIV's.  FDIV's,
 being computationally more intensive than FADD's or FMUL's, can impact
 performance considerably on some systems.
-
-WWW: http://performance.netlib.org/performance/html/flops.html

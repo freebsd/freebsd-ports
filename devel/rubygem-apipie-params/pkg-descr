@@ -2,5 +2,3 @@ DSL for Hash/JSON descriptions. Allows description of hash formats using Ruby
 code, generating a json-schema for it and validating values against it.
 
 It's based on the DSL of apipie-rails.
-
-WWW: https://github.com/iNecas/apipie-params

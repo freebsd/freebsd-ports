@@ -8,5 +8,3 @@ features in a platform-agnostic manner.  When all service traffic in an
 infrastructure flows via an Envoy mesh, it becomes easy to visualize problem
 areas via consistent observability, tune overall performance, and add
 substrate features in a single place.
-
-WWW: https://www.envoyproxy.io/

@@ -12,5 +12,3 @@ Instances of the class HTTP::Cookies are able to store a collection of
 Set-Cookie2: and Set-Cookie: headers and are able to use this information to
 initialize Cookie-headers in HTTP::Request objects. The state of a HTTP::Cookies
 object can be saved in and restored from files.
-
-WWW: https://metacpan.org/release/HTTP-Cookies

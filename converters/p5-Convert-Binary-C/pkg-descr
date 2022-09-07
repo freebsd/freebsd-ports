@@ -5,5 +5,3 @@ methods that act as replacements for Perl's "pack" and "unpack" and
 allow to use the C types instead of a string representation of the data
 structure for conversion of binary data from and to Perl's complex data
 structures.
-
-WWW: https://metacpan.org/release/Convert-Binary-C

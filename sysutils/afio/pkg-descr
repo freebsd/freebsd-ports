@@ -2,5 +2,3 @@ Afio makes cpio-format archives. It deals somewhat gracefully with input data
 corruption, supports multi-volume archives during interactive operation, and
 can make compressed archives that are much safer than compressed tar or cpio
 archives. Afio is best used as an `archive engine' in a backup script.
-
-WWW: http://members.chello.nl/k.holtman/afio.html

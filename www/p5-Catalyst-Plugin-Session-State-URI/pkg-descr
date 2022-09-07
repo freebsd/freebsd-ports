@@ -4,5 +4,3 @@ server.
 
 This plugin cheats and instead of storing the session id on the client,
 it simply embeds the session id into every URI sent to the user.
-
-WWW: https://metacpan.org/release/Catalyst-Plugin-Session-State-URI

@@ -7,5 +7,3 @@ range, port, router interface, autonomous system (AS), specified time interval,
 and now by protocols, TOS field, and TCP flags. Many of the flow-tools reports
 are configured as drop-down selections. Users are also able to save reports and
 graphs for later viewing.
-
-WWW: http://flowviewer.net/

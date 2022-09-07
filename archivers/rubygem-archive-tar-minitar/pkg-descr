@@ -8,5 +8,3 @@ modernization of the code:
   and
 - the archive-tar-minitar gem now points to the minitar and minitar-cli gems and
   discourages its installation.
-
-WWW: https://github.com/halostatue/minitar

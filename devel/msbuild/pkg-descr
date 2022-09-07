@@ -4,5 +4,3 @@ file that controls how the build platform processes and builds software. Visual
 Studio uses MSBuild, but MSBuild does not depend on Visual Studio. By invoking
 msbuild.exe on your project or solution file, you can orchestrate and build
 products in environments where Visual Studio isn't installed.
-
-WWW: https://github.com/Microsoft/msbuild

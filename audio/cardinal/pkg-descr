@@ -6,5 +6,3 @@ This is a DPF-based plugin wrapper around VCV Rack, using its code
 directly instead of forking the project.
 The target is to have a proper, self-contained, fully free and
 open-source plugin version of Rack.
-
-WWW: https://github.com/DISTRHO/Cardinal

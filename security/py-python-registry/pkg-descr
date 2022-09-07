@@ -6,5 +6,3 @@ high-level interface suitable for most tasks, and a low level set of parsing
 objects and methods which may be used for advanced study of the Windows
 Registry. python-registry is written in pure Python, making it portable across
 all major platforms.
-
-WWW: http://www.williballenthin.com/registry/

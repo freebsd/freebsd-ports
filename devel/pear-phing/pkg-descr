@@ -12,5 +12,3 @@ XSLT transformation, Smarty template transformations), file system operations,
 interactive build support, SQL execution, CVS/SVN/GIT operations, tools for
 creating PEAR packages, documentation generation (DocBlox, PhpDocumentor) and
 much, much more.
-
-WWW: https://www.phing.info/

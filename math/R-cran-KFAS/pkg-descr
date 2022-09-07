@@ -8,5 +8,3 @@ standard approach, and it also allows singularity of prediction
 error variance matrix. KFAS also contains function for computing
 the likelihood of exponential family state space models and function
 for state smoothing of exponential family state space models.
-
-WWW: https://cran.r-project.org/web/packages/KFAS/

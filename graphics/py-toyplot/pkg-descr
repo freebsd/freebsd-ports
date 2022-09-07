@@ -6,5 +6,3 @@ Toyplot is a kid-sized plotting toolkit for Python with grownup-sized goals:
   and minimizing chartjunk.
 * Provide a clean, minimalist interface that scientists and engineers will
   love.
-
-WWW: https://pypi.org/project/toyplot/

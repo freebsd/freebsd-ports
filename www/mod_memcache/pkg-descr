@@ -1,5 +1,3 @@
 mod_memcache manages the parsing of memcached server configuration and
 exports a single function for use by other modules to access a
 configured apr_memcache object.
-
-WWW: https://github.com/joshrotenberg/modmemcache

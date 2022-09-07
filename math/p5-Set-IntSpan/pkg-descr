@@ -9,5 +9,3 @@ Sets are stored internally in a run-length coded form.  This provides
 for both compact storage and efficient computation.  In particular,
 set operations can be performed directly on the encoded
 representation.
-
-WWW: https://metacpan.org/release/Set-IntSpan

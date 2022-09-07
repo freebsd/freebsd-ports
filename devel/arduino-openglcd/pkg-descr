@@ -5,5 +5,3 @@ The library supports several different Arduino platforms and is
 easy to integrate with different glcd panels. The configuration
 mechanism allows using a broad range of GLCD panels and Arduino
 controllers.
-
-WWW: https://bitbucket.org/bperrybap/openglcd/wiki/Home

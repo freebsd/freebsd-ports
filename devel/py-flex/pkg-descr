@@ -6,5 +6,3 @@ Features:
 - JSON Schema Validation
 - Validation of request/response objects against schema.
 - Command Line Interface.
-
-WWW: https://github.com/pipermerriam/flex

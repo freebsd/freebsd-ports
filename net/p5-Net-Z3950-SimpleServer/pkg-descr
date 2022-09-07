@@ -15,5 +15,3 @@ to relational databases, local file stores, SOAP/RDF-servers, etc.
 
 SimpleServer currently supports the Init, Search, Present, Scan and
 Close services.
-
-WWW: http://www.indexdata.dk/simpleserver/

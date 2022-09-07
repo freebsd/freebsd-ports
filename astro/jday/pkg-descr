@@ -2,5 +2,3 @@ jday and j2d are command line utilities to convert calendar dates
 to astronomical julian dates, and julian dates to calendar dates.
 There is a corresponding library libjday.a which can be used for
 the same functionality within applications.
-
-WWW: http://jday.sourceforge.net/

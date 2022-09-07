@@ -6,5 +6,3 @@ various computational problems, since it does not require any information about
 the underlying geometry. AMG is often used not as a standalone solver but as a
 preconditioner within an iterative solver (e.g. Conjugate Gradients, BiCGStab,
 or GMRES).
-
-WWW: https://github.com/ddemidov/amgcl

@@ -13,5 +13,3 @@ the data more difficult. Scrub operates in one of three modes:
 
 Scrub implements user-selectable pattern algorithms that are compliant with
 DoD 5520.22-M or NNSA NAP-14.x.
-
-WWW: https://code.google.com/p/diskscrub/

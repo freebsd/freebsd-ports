@@ -1,4 +1,2 @@
 App::Options combines command-line arguments, environment variables,
 option files, and program defaults to produce a hash of option values.
-
-WWW: https://metacpan.org/release/App-Options

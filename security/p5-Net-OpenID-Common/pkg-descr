@@ -1,4 +1,2 @@
 Net::OpenID::Common - Libraries shared between Net::OpenID::Consumer
 and Net::OpenID::Server
-
-WWW: https://metacpan.org/release/Net-OpenID-Common

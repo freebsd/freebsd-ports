@@ -7,5 +7,3 @@ information on sessions.
 For queries, CGI provides methods to get at environmental variables, parameters,
 cookies, and multipart request data. For responses, CGI provides methods for
 writing output and generating HTML.
-
-WWW: https://github.com/ruby/cgi

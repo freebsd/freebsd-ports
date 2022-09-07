@@ -20,5 +20,3 @@ Features:
   simulator ghdl needs to be installed to simulate a VHDL defined component, and
   the open source Verilog simulator Icarus Verilog is required to simulate a
   Verilog defined component.
-
-WWW: https://github.com/hneemann/Digital

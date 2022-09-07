@@ -7,5 +7,3 @@ The SOCKS proxy and relay.
 * Testing on Linux-x86_64, macos 10.7-10.12, FreeBSD 10.1-11.1
 * Supports IPv6 as well as IPv4.
 * Srelay is Free.
-
-WWW: https://socks-relay.sourceforge.io/

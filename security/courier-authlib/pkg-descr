@@ -5,5 +5,3 @@ for two purposes:
    directory, and system userid and groupid.
 2. Read an account name, and a password. If valid, determine the
    account's home directory, system userid, and groupid.
-
-WWW: http://www.Courier-MTA.org/authlib/

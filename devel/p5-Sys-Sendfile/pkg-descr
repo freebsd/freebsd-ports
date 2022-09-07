@@ -3,5 +3,3 @@ facility.  It allows you to efficiently transfer data from one
 filehandle to another.  Typically the source is a file on disk and the
 sink is a socket, and some operating systems may not even support
 other usage.
-
-WWW: https://metacpan.org/release/Sys-Sendfile

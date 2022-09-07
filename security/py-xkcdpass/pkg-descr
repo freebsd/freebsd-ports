@@ -6,5 +6,3 @@ strong diceword-style passphrases, inspired by XKCD 936.
 
 Usable as standalone script or a module within a larger
 Python project.
-
-WWW: https://github.com/jwfh/xkcdpass

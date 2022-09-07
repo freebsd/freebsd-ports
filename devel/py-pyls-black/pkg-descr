@@ -10,5 +10,3 @@ Black plugin for the Python Language Server.
 
 Using pyls-black while yapf and autopep8 are installed, may
 lead to unexpected results!
-
-WWW: https://github.com/rupert/pyls-black

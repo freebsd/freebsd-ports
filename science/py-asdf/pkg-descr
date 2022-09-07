@@ -11,5 +11,3 @@ The ASDF format has the following features:
 - Native Python data types (numerical types, strings, dicts, lists) are
   serialized automatically
 - ASDF can be extended to serialize custom data types
-
-WWW: https://github.com/asdf-format/asdf

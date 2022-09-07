@@ -7,5 +7,3 @@ gracefully fall back to standard clear-text TCP. Install Tcpcrypt and
 you'll feel no difference in your every day user experience, but yet
 your traffic will be more secure and you'll have made life much harder
 for hackers.
-
-WWW: http://www.tcpcrypt.org/

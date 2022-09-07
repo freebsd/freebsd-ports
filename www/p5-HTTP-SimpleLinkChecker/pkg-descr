@@ -16,5 +16,3 @@ not respond correctly at all. Furthermore, some servers might be
 temporarily down or overloaded. I recommend that you recheck "broken"
 links a couple times over a long period (like a day or two) before you
 decide they are really broken.
-
-WWW: https://metacpan.org/release/HTTP-SimpleLinkChecker

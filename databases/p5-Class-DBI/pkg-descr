@@ -9,5 +9,3 @@ This is particularly useful when using a database which doesn't support
 these (such as MySQL), or when you would like your code to be portable
 across multiple databases which might implement these things in
 different ways.
-
-WWW: https://metacpan.org/release/Class-DBI

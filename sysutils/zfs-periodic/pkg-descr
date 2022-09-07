@@ -1,4 +1,2 @@
 Scripts that uses the periodic system to create and manage zfs
 snapshots. Easily configured via /etc/periodic.conf
-
-WWW: https://github.com/ross/zfs-periodic

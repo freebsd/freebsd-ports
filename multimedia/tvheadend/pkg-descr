@@ -2,5 +2,3 @@ A TV streaming server and recorder for Linux, FreeBSD and
 Android supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, ISDB-T,
 IPTV, SAT>IP, HDHomeRune and other formats through the unix
 pipe as input sources.
-
-WWW: https://tvheadend.org/

@@ -19,5 +19,3 @@ lots of things at(1) does that runwhen doesn't:
   if there is no mail system installed.
 - It doesn't check access control files - thus it doesn't gratuitously
   deny users.
-
-WWW: http://code.dogmap.org/runwhen/

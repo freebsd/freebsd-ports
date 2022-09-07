@@ -8,5 +8,3 @@ requests off as they finish. The actual sending and receiving of the
 requests is abstracted. As soon as you add a request it is transmitted, if
 there are too many requests in progress at the moment they are queued. There
 is no concept of starting or stopping - it runs continuously.
-
-WWW: https://metacpan.org/release/HTTP-Async

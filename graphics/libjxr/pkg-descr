@@ -14,5 +14,3 @@ like JPEG, PNG, OpenEXR, and TIFF.
 	- Progressive Decode
 	- Advanced Decoding Features (tile-based layout, for efficient
 	  region-of-interest access.)
-
-WWW: https://jxrlib.codeplex.com/

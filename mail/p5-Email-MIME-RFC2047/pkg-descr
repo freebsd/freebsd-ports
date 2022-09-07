@@ -6,5 +6,3 @@ implementation of RFC 2047
 - As a replacement for a 'word' entity within a 'phrase',
   for example, one that precedes an address in a From,
   To, or Cc header
-
-WWW: https://metacpan.org/release/Email-MIME-RFC2047

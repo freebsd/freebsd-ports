@@ -18,5 +18,3 @@ incoming TCP connections and require root privileges.  You take your
 chances running this in the default configuration.  Consider using a
 firewall to limit access to klh-10.  See the pub-its/adm directory for
 firewall documentation.
-
-WWW: http://www.inwap.com/pdp10/

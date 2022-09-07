@@ -5,5 +5,3 @@ password detection from haveibeenpwned.com using a K-anonymity method. Using
 this method, you do not need to (fully) trust the server that stores the
 breached password. You should read the security consideration section for more
 information.
-
-WWW: https://github.com/roddhjav/pass-audit

@@ -18,5 +18,3 @@ It supports:
 * Real-time alarms. Incoming MidiShare events as well as global context changes
   (new clients starting a session, modifications of the connections between
   applications, etc.) can be processed in real-time by user defined alarms.
-
-WWW: http://midishare.sourceforge.net

@@ -5,5 +5,3 @@ purposes.
 In the simplest case, this means host name verification.
 However, service_identity implements RFC 6125 fully and
 plans to add other relevant RFCs too.
-
-WWW: https://github.com/pyca/service_identity

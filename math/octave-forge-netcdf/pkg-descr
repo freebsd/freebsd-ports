@@ -6,5 +6,3 @@ build and install scripts.
 This is netcdf.
 
  A MATLAB compatible NetCDF interface for Octave.
-
-WWW: http://octave.sourceforge.net/

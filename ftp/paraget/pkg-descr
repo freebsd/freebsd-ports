@@ -14,5 +14,3 @@ Paraget is designed to not only do basic n -equal-piece partitioning of a
 file and sending requests out to n servers for data, but to also be dynamic
 during the downloading process. For example if one server is too slow, and
 paraget was done with faster server downloading its piece
-
-WWW: http://paraget.sourceforge.net/

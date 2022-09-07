@@ -5,5 +5,3 @@ C3 revolve around class building and metamodels, but it could
 also be used for things like dependency resolution as well since
 it tends to do such a nice job of preserving local precedence
 orderings.
-
-WWW: https://metacpan.org/release/Algorithm-C3

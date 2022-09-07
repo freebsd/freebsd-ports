@@ -11,5 +11,3 @@ Views: One server process can provide multiple "views" of the DNS namespace,
 Multiprocessor Support
 
 See the CHANGES file for more information on new features.
-
-WWW: https://www.isc.org/bind/

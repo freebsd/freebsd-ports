@@ -1,4 +1,2 @@
 subatom is a small script to produce an Atom feed from subversion commits. You
 can use this with a feed reader to see new commits to your repository.
-
-WWW: https://metacpan.org/release/HDM/subatom-0.12

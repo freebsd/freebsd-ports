@@ -1,5 +1,3 @@
 Xalan-C++ is an XSLT processor from the Apache XML Project.
 It provides a shared library to transform XML documents into HTML,
 text or other XML document types from within your own application.
-
-WWW: https://apache.github.io/xalan-c/

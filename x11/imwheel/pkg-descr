@@ -3,5 +3,3 @@ using a configuration file that allows per-user translation preferences.
 
 For more information on setting up your wheeled mouse to work with X, see
 either the imwheel man page or the FreeBSD FAQ.
-
-WWW: http://imwheel.sourceforge.net/

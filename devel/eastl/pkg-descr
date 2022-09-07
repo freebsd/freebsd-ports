@@ -3,5 +3,3 @@ library of containers, algorithms, and iterators useful for runtime and tool
 development across multiple platforms. It is a fairly extensive and robust
 implementation of such a library and has an emphasis on high performance above
 all other considerations.
-
-WWW: https://github.com/electronicarts/EASTL

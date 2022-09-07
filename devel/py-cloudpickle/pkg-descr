@@ -10,5 +10,3 @@ instance in a script, a shell or a Jupyter notebook).
 
 Cloudpickle can only be used to send objects between the exact same version of
 Python.
-
-WWW: https://github.com/cloudpipe/cloudpickle

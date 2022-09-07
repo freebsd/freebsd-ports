@@ -9,5 +9,3 @@ WARNING the handle won't timeout if you use sysread or syswrite on
 it, because these functions works at a lower level. However if
 you're trying to implement a timeout for a socket, see IO::Socket::Timeout
 that implements exactly that.
-
-WWW: https://metacpan.org/release/PerlIO-via-Timeout

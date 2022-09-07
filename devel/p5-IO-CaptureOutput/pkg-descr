@@ -1,4 +1,2 @@
 This module provides routines for capturing STDOUT and STDERR from
 forked system calls (e.g. system(), fork()) and from XS/C modules.
-
-WWW: https://metacpan.org/release/IO-CaptureOutput

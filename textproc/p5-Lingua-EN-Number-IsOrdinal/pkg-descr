@@ -3,5 +3,3 @@ is a cardinal or ordinal number.
 
 This is useful if you e.g. want to distinguish these types of numbers
 found with Lingua::EN::FindNumber and take different actions.
-
-WWW: https://metacpan.org/release/Lingua-EN-Number-IsOrdinal

@@ -5,5 +5,3 @@ encoded in the PDF output using lossless Group 4 fax compression
 (ITU-T recommendation T.6).  This provides a very good compression
 ratio for text and line art.  JPEG images will be preserved with the
 original coding.
-
-WWW: http://tumble.brouhaha.com/

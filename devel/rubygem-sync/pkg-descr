@@ -1,3 +1,1 @@
 Sync is a module that provides a two-phase lock with a counter.
-
-WWW: https://github.com/ruby/sync

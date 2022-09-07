@@ -4,5 +4,3 @@ elements including many builtin functions.
 
 Additionaly, Jedi suports two different goto functions and has support for
 renaming as well as Pydoc support and some other IDE features.
-
-WWW: https://github.com/davidhalter/jedi

@@ -1,5 +1,3 @@
 Set of Horde classes that provide an abstraction to various online weather
 service providers. Includes drivers for WeatherUnderground, WorldWeatherOnline
 and Google Weather.
-
-WWW: http://pear.horde.org

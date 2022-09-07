@@ -1,5 +1,3 @@
 This package provides Python bindings to CryptoMiniSat on the C++ level,
 i.e. when importing pycryptosat, the CryptoMiniSat solver becomes part of the
 Python process itself.
-
-WWW: https://github.com/msoos/cryptominisat

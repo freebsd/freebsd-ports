@@ -4,5 +4,3 @@ and HTTPS protocols, where requests can be forwarded to internal services by
 domain name.
 
 frp also has a P2P connect mode.
-
-WWW: https://github.com/fatedier/frp

@@ -13,5 +13,3 @@ Features:
 - allows naming of backup files on command line
 - works as a restricted shell to limit access to server
 - very simple and short ANSI C code, easy to audit
-
-WWW: http://anarcat.ath.cx/software/bksh

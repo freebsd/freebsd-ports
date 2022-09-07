@@ -1,4 +1,2 @@
 Generate bash completion functions or perl scripts to dynamically provide
 completion for an application.
-
-WWW: https://metacpan.org/release/Term-Bash-Completion-Generator

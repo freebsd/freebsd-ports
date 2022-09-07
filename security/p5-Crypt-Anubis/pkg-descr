@@ -4,5 +4,3 @@ a NESSIE candidate. Key length can be 128, 160, 192, 224, 256, 288,
 or 320 bits.
 
 The default key length in this implementation is 128 bits.
-
-WWW: https://metacpan.org/release/Crypt-Anubis

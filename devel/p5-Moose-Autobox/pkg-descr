@@ -1,5 +1,3 @@
 Moose::Autobox provides an implementation of SCALAR, ARRAY, HASH & CODE for use
 with autobox. It does this using a hierarchy of roles in a manner similar to
 what Perl 6 might do.
-
-WWW: https://metacpan.org/release/Moose-Autobox

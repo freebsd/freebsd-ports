@@ -2,5 +2,3 @@ The pyral package enables you to push, pull and otherwise wrangle the data in
 your Agile Central (formerly named Rally) subscription using the popular and
 productive Python language. The pyral package provides a smooth and easy to use
 veneer on top of the Agile Central (Rally) REST Web Services API using JSON.
-
-WWW: https://github.com/RallyTools/RallyRestToolkitForPython

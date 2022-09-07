@@ -1,4 +1,2 @@
 The "mix_class" function provided by this module dynamically generates
 `anonymous' classes with specified inheritance.
-
-WWW: https://metacpan.org/release/Class-Mix

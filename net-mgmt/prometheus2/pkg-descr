@@ -15,5 +15,3 @@ systems are:
 - targets are discovered via service discovery or static configuration
 - multiple modes of graphing and dashboarding support
 - support for hierarchical and horizontal federation
-
-WWW: https://prometheus.io/

@@ -8,5 +8,3 @@ Features:
 * Solves the electronic structure of the system.
 * Several solvers such as SP2, Truncated SP2, Chebyshev polynomial
   expansion, etc.
-
-WWW: https://github.com/lanl/LATTE

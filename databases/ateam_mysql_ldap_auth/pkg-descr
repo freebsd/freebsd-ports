@@ -19,5 +19,3 @@ checking "Enable Cleartext Authentication Plugin" when editing a connction.
 !!! ------------------------------------------------------------------------
 !!! By default MySQL does not use SSL so additional steps and network design
 !!! are needed to ensure you're not exposing your credetials.
-
-WWW: https://github.com/ateamsystems/ateam_mysql_ldap_auth

@@ -8,5 +8,3 @@ suitable for processing very large numbers of graphs.
 
 Isomorphisms are defined with respect to the embeddings, so in some cases
 outputs may be isomorphic as abstract graphs.
-
-WWW: https://users.cecs.anu.edu.au/~bdm/plantri/

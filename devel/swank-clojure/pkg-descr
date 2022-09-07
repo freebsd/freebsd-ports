@@ -13,5 +13,3 @@ For example:
     (swank/start-server "/dev/null" :port 4005))
 
 Just replace "user" with your preferred namespace.
-
-WWW: https://github.com/technomancy/swank-clojure

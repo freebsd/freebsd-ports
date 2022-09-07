@@ -20,5 +20,3 @@ It supports:
 - reverse proxy
 - websocket support
 - embedded mruby interpreter for high speed custom functions
-
-WWW: https://github.com/h2o/h2o

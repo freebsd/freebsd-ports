@@ -6,5 +6,4 @@ Active Record model in the application. Any embedded images (or other
 attachments) are automatically stored using Active Storage and associated with
 the included RichText model.
 
-WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/main/actiontext
+See also: https://rubyonrails.org/

@@ -4,5 +4,3 @@ about HTTP-level things, such as REST-type services.
 Each Test::HTTP object can contain state about a current request and its
 response.  This allows convenient shorthands for sending requests,
 checking status codes, headers, and message bodies.
-
-WWW: https://metacpan.org/release/Test-HTTP

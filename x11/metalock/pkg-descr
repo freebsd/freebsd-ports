@@ -12,5 +12,3 @@ Current features include:
 	- Optional Imlib2 support for use of png or jpg formats, which are more
 	  appropriate for photos or high-color images than xpm.
 	- Portable to most UNIX-like operating systems, developed on FreeBSD.
-
-WWW: http://chiselapp.com/user/beyert/repository/metalock/

@@ -8,5 +8,3 @@ interact with STF servers. For example, setting up the main STF
 implementation is quite a pain if all you want to do is to test your
 application, but with this module, you can easily create a dummy STF
 dispatcher.
-
-WWW: https://metacpan.org/release/STF-Dispatcher-PSGI

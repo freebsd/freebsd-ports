@@ -3,5 +3,3 @@ virtually any JavaScript code.
 
 Js2Py is written in pure python and does not have any dependencies. Basically
 an implementation of JavaScript core in pure python.
-
-WWW: https://pypi.org/project/Js2Py/

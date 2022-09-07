@@ -4,5 +4,3 @@ librsync, the incremental archives are space efficient and only record the
 parts of files that have changed since the last backup. Because duplicity
 uses GnuPG to encrypt and/or sign these archives, they will be safe from
 spying and/or modification by the server.
-
-WWW: http://duplicity.nongnu.org

@@ -9,5 +9,3 @@ Pass to work, only GnuPG is needed in order to be able to decrypt the password.
 Plasma Pass looks for the password directory by default in
 $HOME/.password-store, but it can be customized through PASSWORD_STORE_DIR
 environment variable.
-
-WWW: https://github.com/kde/plasma-pass

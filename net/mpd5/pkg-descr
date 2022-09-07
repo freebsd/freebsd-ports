@@ -33,5 +33,3 @@ Mpd also includes many additional features:
       Clean device-type independent design
       Comprehensive logging
       Telnet and HTTP control interfaces.
-
-WWW: https://sourceforge.net/projects/mpd/

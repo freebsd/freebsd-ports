@@ -16,5 +16,3 @@ Features include:
 - Glue for integration with JAXB and for queries over ill-formed HTML.
 - All this is rock-solid, dependable, well documented, and ships in a jar file
   that weighs just 60 KB.
-
-WWW: http://dst.lbl.gov/ACSSoftware/nux/

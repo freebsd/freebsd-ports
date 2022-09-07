@@ -6,5 +6,3 @@ package for colored tables optimized for presentations.  The powerful
 new ctable package is supported and especially recommended when
 footnotes are needed. LaTeX::Table ships with some predefined, good
 looking themes.
-
-WWW: https://metacpan.org/release/LaTeX-Table

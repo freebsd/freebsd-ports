@@ -14,5 +14,3 @@ where type is a string specifying the format (i.e. "PNG" or "pcx").
 Note that IMG_Load_RW cannot load TGA images.
 
 An example program 'showimage' is included, with source in showimage.c
-
-WWW: https://www.libsdl.org/projects/SDL_image/

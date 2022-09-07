@@ -18,5 +18,3 @@ tool to transcode DVD videos to a smaller size. Vamps does not need
 to write temporary data files, which is a major pro. Vamps is very
 fast. The downside is, that Vamps is not capable of making DVD
 backups on its own.
-
-WWW: http://vamps.sourceforge.net/

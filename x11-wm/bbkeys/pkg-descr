@@ -3,5 +3,3 @@ keybindings and keyboard shortcuts for Blackbox.  It uses Blackbox' Image
 classes for rendering its look and feel so that bbkeys will render itself to
 match whatever Blackbox style is used.  It is highly configurable either via
 the "bbconf" GUI utility or by hand-editting bbkeys's config file.
-
-WWW: http://bbkeys.sourceforge.net/

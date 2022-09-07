@@ -6,5 +6,3 @@ amount of time. Bruteblock uses regular expressions to parse logs,
 which provides flexibility allowing it to be used with almost any
 network service.  Bruteblock is written in pure C, doesn't use any
 external programs and work with ipfw2 tables via raw sockets API.
-
-WWW: https://samm.kiev.ua/bruteblock/

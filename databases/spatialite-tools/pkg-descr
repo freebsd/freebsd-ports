@@ -18,5 +18,3 @@ spatialite-tools is a collection of open source Command Line Interface (CLI)
 * XML-tools: spatialite_xml_load, spatialite_xml_collapse,
  spatialite_xml_print, spatialite_xml_validator: tools supporting XML files
  processing
-
-WWW: http://www.gaia-gis.it/fossil/spatialite-tools/index

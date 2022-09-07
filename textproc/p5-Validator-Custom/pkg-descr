@@ -8,5 +8,3 @@ the following ones.
 - You can set error messages for invalid parameter value. The order of messages
   is keeped.
 - Support OR condtion constraint and negativate constraint.
-
-WWW: https://metacpan.org/release/Validator-Custom

@@ -6,5 +6,3 @@ strengths of three independent tRNA prediction programs by negotiating
 the flow of information between them, performing a limited amount of
 post-processing, and outputting the results in one of several
 formats.
-
-WWW: http://lowelab.ucsc.edu/tRNAscan-SE/

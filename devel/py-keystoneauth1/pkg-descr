@@ -5,5 +5,3 @@ These tools include:
 - Discovery mechanisms to determine API version support
 - A session that is used to maintain client settings across requests
  (based on the requests Python library)
-
-WWW: https://docs.openstack.org/keystoneauth/latest/

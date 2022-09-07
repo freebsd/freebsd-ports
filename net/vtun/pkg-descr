@@ -8,5 +8,3 @@ it can be used for various network task like VPN, Mobile IP, Shaped
 Internet access, IP address saving, etc.  It is completely user
 space implementation and does not require modification to any kernel
 parts.
-
-WWW: http://vtun.sourceforge.net/

@@ -1,4 +1,2 @@
 NFPM is a simple, 0-dependency, as-little-assumptions-as-possible program that
 is able to create deb, rpm, apk archives.
-
-WWW: https://github.com/goreleaser/nfpm

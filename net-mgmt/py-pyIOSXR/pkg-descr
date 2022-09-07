@@ -1,4 +1,2 @@
 pyIOSXR is a Python library that facilitates communication with Cisco devices
 running IOS-XR through the XML agent.
-
-WWW: https://github.com/fooelisa/pyiosxr

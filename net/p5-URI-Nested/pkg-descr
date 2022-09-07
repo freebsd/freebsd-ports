@@ -7,6 +7,3 @@ Some examples:
 
 * `jdbc:oracle:scott/tiger@//myhost:1521/myservicename`
 * `db:postgres://db.example.com/template1`
-
-
-WWW: https://metacpan.org/release/URI-Nested

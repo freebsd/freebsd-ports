@@ -7,5 +7,3 @@ The interface for binding with native code is designed to be as simple as
 possible to use, and is very similar to Lua. There is no need to interact with
 byzantine C++ template mechanisms, or worry about marking and unmarking garbage
 collection roots, or wrestle with obscure build systems.
-
-WWW: https://mujs.com/

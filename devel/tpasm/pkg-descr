@@ -19,5 +19,3 @@ Its features include:
   * Arbitrary length labels, local labels
   * Supporting new processors is reasonably straightforward
   * Can switch between processors during assembly
-
-WWW: http://www.sqrt.com/

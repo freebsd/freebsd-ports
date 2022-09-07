@@ -8,5 +8,3 @@ Optional thin wrappers allow usage of the library from other languages, e.g.:
 * Ruby wrappers (the symengine.rb repository)
 * Julia wrappers (the SymEngine.jl repository)
 * Haskell wrappers (the symengine.hs repository)
-
-WWW: https://symengine.org/

@@ -3,5 +3,3 @@ symmetrical block cipher with a 256-bit key from the former Soviet
 Union. Please read the Pod documentation contained in the module
 itself for additional information, including the rationale behind
 the writing of this module.
-
-WWW: https://metacpan.org/release/Crypt-GOST_PP

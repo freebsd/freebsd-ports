@@ -1,5 +1,3 @@
 Cal-Heatmap is a JavaScript module to create calendar heatmaps
 to visualize time series data. This gem packages it for the
 Rails asset pipeline.
-
-WWW: https://github.com/pavolzbell/cal-heatmap-rails

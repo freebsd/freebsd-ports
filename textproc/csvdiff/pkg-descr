@@ -5,5 +5,3 @@ Differences will be shown like:
 "Column XYZ in record 999" is different.
 After this, the actual and the expected result for this
 column will be shown.
-
-WWW: http://csvdiff.sourceforge.net/

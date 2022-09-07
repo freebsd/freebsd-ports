@@ -1,4 +1,2 @@
 Fork of debugger-ruby_core_source that uses included Ruby headers (*.h and
 *.inc) instead of downloading them.
-
-WWW: https://github.com/ruby-debug/debase-ruby_core_source

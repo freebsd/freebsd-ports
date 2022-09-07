@@ -10,5 +10,3 @@ descriptors of resources annotated to the tree.
 This package provides a native port of the Argdata library, so that it
 can be used in native FreeBSD applications, but also to spawn CloudABI
 processes appropriately.
-
-WWW: https://github.com/NuxiNL/argdata

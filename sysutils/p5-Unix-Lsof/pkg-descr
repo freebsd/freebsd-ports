@@ -1,4 +1,2 @@
 This is a port of Unix::Lsof, a perl wrapper around the UNIX lsof
 command.
-
-WWW: https://metacpan.org/release/Unix-Lsof

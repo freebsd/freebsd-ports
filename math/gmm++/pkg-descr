@@ -8,5 +8,3 @@ hence it can be used as a standalone linear algebra library.
 Interfacing a vector or matrix type means writing "traits" objects
 called "linalg_traits", which describe their properties. The library
 offers predefined dense, sparse and skyline matrix types.
-
-WWW: http://getfem.org/gmm/

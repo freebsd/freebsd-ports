@@ -18,5 +18,3 @@ follows:
     idea of handling the conflicting requirements is to put the library
     user in control, allowing him to choose the most desired library
     characteristic.
-
-WWW: https://github.com/ironbee/libhtp

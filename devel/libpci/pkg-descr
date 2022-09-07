@@ -1,4 +1,2 @@
 libpci is a common portable library which offers access to the PCI configuration
 space on a variety of operating systems.
-
-WWW: https://mj.ucw.cz/sw/pciutils/

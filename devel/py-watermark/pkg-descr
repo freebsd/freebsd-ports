@@ -1,4 +1,2 @@
 watermark is an IPython magic extension for printing date and time stamps,
 version numbers, and hardware information.
-
-WWW: https://github.com/rasbt/watermark

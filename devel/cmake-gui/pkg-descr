@@ -5,5 +5,3 @@ compiler environment of your choice. CMake is quite sophisticated:
 it is possible to support complex environments requiring system
 configuration, pre-processor generation, code generation, and
 template instantiation.
-
-WWW: http://www.cmake.org

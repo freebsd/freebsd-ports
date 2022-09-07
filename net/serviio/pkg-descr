@@ -15,5 +15,3 @@ Serviio works with any DLNA compliant device (TV, Playstation 3,
 etc.) and some other (XBox 360). It supports profiles for particular
 devices so that it can be tuned to maximise the device's potential
 and/or minimize lack of media format playback support (via transcoding).
-
-WWW: https://www.serviio.org/

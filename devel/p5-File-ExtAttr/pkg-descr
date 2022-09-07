@@ -6,5 +6,3 @@ access control lists (ACLs) and other security parameters. But users can
 add their own key=value pairs.
 
 Extended attributes are supported by FreeBSD starting from version 5.
-
-WWW: https://metacpan.org/release/File-ExtAttr

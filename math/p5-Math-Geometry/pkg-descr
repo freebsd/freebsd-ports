@@ -1,5 +1,3 @@
 Math::Geometry implements classic geomtrical functions in Perl, it has an
 emphasis on 3 dimensional geometry including projects, rotations and other
 standard 3 dimensional operations.
-
-WWW: https://metacpan.org/release/Math-Geometry

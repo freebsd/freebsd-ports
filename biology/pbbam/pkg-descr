@@ -7,5 +7,3 @@ built around the legacy cmp.h5 format.
 The pbbam software package provides components to create, query, & edit PacBio
 BAM files and associated indices. These components include a core C++ library,
 bindings for additional languages, and command-line utilities.
-
-WWW: https://github.com/PacificBiosciences/pbbam

@@ -10,5 +10,3 @@ overriding methods in existing classes. This tool also allows for the
 restoration of the original class methods. Best of all this is a
 localized tool, when your control object falls out of scope the original
 class is restored.
-
-WWW: https://metacpan.org/release/Mock-Quick

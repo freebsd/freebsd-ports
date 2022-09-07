@@ -6,5 +6,3 @@ KWallet (>= 4.8).
 
 It allows to create new passwords, delete and search for passwords matching
 given attributes. It also supports graphical prompts when unlocking is needed.
-
-WWW: https://pypi.org/project/SecretStorage/

@@ -5,5 +5,3 @@ unoptimized SFD files that should be post-processed using FontForge.
 It was originally created to generate OpenType versions of Spleen. It works best
 on fonts proportional to 8x16. Other sizes will work but the aspect ratio will
 not be preserved.
-
-WWW: https://github.com/fcambus/bdf2sfd

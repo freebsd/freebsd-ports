@@ -5,5 +5,3 @@ It manages the storage of any vulnerability management configurations and of
 the scan results. Access to data, control commands and workflows is offered
 via the XML-based Greenbone Management Protocol (GMP). Controlling scanners
 like OpenVAS is done via the Open Scanner Protocol (OSP).
-
-WWW: https://github.com/greenbone/gvmd

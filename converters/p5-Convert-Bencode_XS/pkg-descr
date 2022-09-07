@@ -6,5 +6,3 @@ written in C for better performance, but it still uses a recursive
 algorithm. It manages to be around 3 to 5 times faster than
 Convert::Bencode version. Check out the "extras" directory in this
 distribution for benchmarks.
-
-WWW: https://metacpan.org/release/Convert-Bencode_XS

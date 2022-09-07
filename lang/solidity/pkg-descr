@@ -7,5 +7,3 @@ complex user-defined types among other features.
 
 It is possible to create contracts for voting, crowdfunding,
 blind auctions, multi-signature wallets and more.
-
-WWW: https://github.com/ethereum/solidity

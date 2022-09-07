@@ -11,5 +11,3 @@ by the Google Engineering team: Bug Prediction at Google
 
 Point bugspots at any git repo and it will identify the hotspots
 for you.
-
-WWW: https://github.com/igrigorik/bugspots

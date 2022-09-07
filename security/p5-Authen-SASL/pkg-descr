@@ -2,5 +2,3 @@ SASL is a generic mechanism for authentication used by
 several network protocols. Authen::SASL provides an
 implementation framework that all protocols should be able
 to share.
-
-WWW: https://metacpan.org/release/Authen-SASL

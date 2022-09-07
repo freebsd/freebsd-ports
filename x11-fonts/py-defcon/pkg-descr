@@ -4,5 +4,3 @@ The objects are very bare-bones and they are not meant to be end-all, be-all
 objects. Rather, they are meant to provide base functionality so that you can
 focus on your application's behavior, not object observing or maintaining
 cached data.
-
-WWW: https://github.com/typesupply/defcon

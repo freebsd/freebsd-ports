@@ -19,5 +19,3 @@ Features:
 - Compose key for character variants (e.g. diacritics)
 - Show/hide keyboard on signals (SIGUSR1 = hide, SIGUSR2 = show)
 - Automatic portrait/landscape detection and subsequent layout switching
-
-WWW: https://github.com/jjsullivan5196/wvkbd

@@ -8,5 +8,3 @@ INTERNAL VARIABLES for manipulating messages and sending mail. It
 provides the user simple editing capabilities to ease the composition
 of outgoing messages, and increasingly powerful and reliable
 non-interactive scripting capabilities.
-
-WWW: https://www.sdaoden.eu/code.html#s-mailx

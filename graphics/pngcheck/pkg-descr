@@ -12,5 +12,3 @@ pngsplit - break a PNG, MNG or JNG image into constituent chunks
 
 png-fix-IDAT-windowsize - fix minor zlib-header breakage caused by
 older libpng
-
-WWW: http://www.libpng.org/pub/png/apps/pngcheck.html

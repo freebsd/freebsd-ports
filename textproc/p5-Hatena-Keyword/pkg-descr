@@ -11,5 +11,3 @@ a posting is linked to the keywords page automatically.
 You can implement the same kind of feature outside Hatena using this module.
 
 It queries Hatena Keyword Link API internally for retrieving terms
-
-WWW: https://metacpan.org/release/Hatena-Keyword

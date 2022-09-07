@@ -10,5 +10,3 @@ Mason is most often used for generating web pages. It has a companion web
 framework, Poet, designed to take maximum advantage of its routing and content
 generation features. It can also be used as the templating layer for web
 frameworks such as Catalyst and Dancer.
-
-WWW: https://metacpan.org/release/Mason

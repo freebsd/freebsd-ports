@@ -6,5 +6,3 @@ These provide several pieces of "middleware" (or filters) that can be
 nested to build web applications. Each piece of middleware uses the
 WSGI (PEP 333) interface, and should be compatible with other
 middleware based on those interfaces.
-
-WWW: https://github.com/cdent/paste

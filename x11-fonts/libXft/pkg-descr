@@ -4,5 +4,3 @@ rendering them. When available, Xft uses the Render extension to accelerate
 text drawing. When Render is not available, Xft uses the core protocol to draw
 client-side glyphs. This provides completely compatible support of client-side
 fonts for all X servers.
-
-WWW: https://www.freedesktop.org/wiki/Software/Xft/

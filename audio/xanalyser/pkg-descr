@@ -16,5 +16,3 @@ produces a vertical line. A mono signal produces a 45 degree line.
 A stereo signal creates a wilde pattern (if the phase is correct,
 predominately in the same direction as a mono signal) or may even fill
 the entire scope.
-
-WWW: http://arvin.schnell-web.net/xanalyser/

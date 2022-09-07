@@ -10,5 +10,3 @@ It also performs very well at a lot of other specific tasks that most other
 tools can't handle, like sending invalid frames, injecting your own 802.11
 frames, combining technics (VLAN hopping+ARP cache poisoning, VOIP decoding on
 WEP encrypted channel, ...), etc.
-
-WWW: https://scapy.net/

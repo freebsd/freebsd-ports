@@ -14,5 +14,3 @@ Selection of libraries for Java which are useful and not provided with Java.
   or to an OutputStream and a file. Equivelent to the UNIX tool tee in UNIX
   pipes.
 - Hexdump: This class formats byte-arrays in hex and ascii for display.
-
-WWW: http://www.matthew.ath.cx/projects/java/

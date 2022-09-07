@@ -2,5 +2,3 @@ YODL - Your Own Document Language, implements an easy-to-use, yet
 powerful document preparation language.  It also includes converters to
 convert documents written in that language to several formats, including
 ASCII, man page format, LaTeX, DVI, XML, and HTML.
-
-WWW: http://fbb-git.gitlab.io/yodl/

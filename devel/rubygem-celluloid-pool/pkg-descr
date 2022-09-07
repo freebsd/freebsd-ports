@@ -1,4 +1,2 @@
 This port provides an implementation of an actor pool, based on the Celluloid
 concurrent object framework.
-
-WWW: https://github.com/celluloid/celluloid-pool

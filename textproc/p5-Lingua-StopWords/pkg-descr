@@ -2,5 +2,3 @@ This module provides lists of stopwords for several languages.
 Currently supported languages are Danish, Dutch, English, Finnish,
 French, German, Italian, Norwegian, Portugese, Spanish, Swedish,
 and Russian.
-
-WWW: https://metacpan.org/release/Lingua-StopWords

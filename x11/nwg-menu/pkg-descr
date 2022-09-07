@@ -5,5 +5,3 @@ files in XDG user directories.
 
 It's being developed with sway in mind, but should also work with
 other wlroots-based Wayland compositors such as Wayfire.
-
-WWW: https://github.com/nwg-piotr/nwg-menu

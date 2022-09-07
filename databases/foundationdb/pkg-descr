@@ -12,5 +12,3 @@ for years and been hardened with lessons learned in some of the world's
 largest database deployments. Backing FoundationDB up is an unmatched
 testing system based on a deterministic simulation engine that ensures
 optimal reliability of operations.
-
-WWW: https://www.foundationdb.org/

@@ -1,4 +1,2 @@
 Mojolicious::Plugin::Mongodb provides a few helpers to ease the use of MongoDB
 in your Mojolicious application.
-
-WWW: https://metacpan.org/release/Mojolicious-Plugin-Mongodb

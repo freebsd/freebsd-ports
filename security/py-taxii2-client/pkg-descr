@@ -9,5 +9,3 @@ It supports the following TAXII 2.0 API services:
 - Add Objects
 - Get an Object
 - Get Object Manifests
-
-WWW: https://github.com/oasis-open/cti-taxii-client

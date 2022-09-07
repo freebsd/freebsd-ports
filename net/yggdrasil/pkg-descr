@@ -3,5 +3,3 @@ network. It is lightweight, self-arranging, supported on multiple platforms and
 allows pretty much any IPv6-capable application to communicate securely with
 other Yggdrasil nodes. Yggdrasil does not require you to have IPv6 Internet
 connectivity - it also works over IPv4.
-
-WWW: https://yggdrasil-network.github.io/

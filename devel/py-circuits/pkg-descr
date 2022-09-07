@@ -12,5 +12,3 @@ Features:
 - No compulsory external dependencies
 - Full featured web framework (circuits.web)
 - Coroutine based synchronization primitives
-
-WWW: https://bitbucket.org/prologic/circuits/

@@ -5,5 +5,3 @@ Red Alert versions with both encrypted and unencrypted file headers, and
 Tiberian Sun versions with encrypted and unencrypted file headers.  It also
 optionally adds the XCC extension of including a local filenames database
 to allow recovery of filenames from the one way hash they are stored as.
-
-WWW: https://github.com/OmniBlade/ccmix

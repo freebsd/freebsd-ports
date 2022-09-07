@@ -9,5 +9,3 @@ NEST is ideal for networks of spiking neurons of any size, for example:
 * Models of network activity dynamics, e.g. laminar cortical networks or
   balanced random networks,
 * Models of learning and plasticity.
-
-WWW: https://www.nest-simulator.org/

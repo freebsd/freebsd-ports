@@ -7,5 +7,3 @@ how many concurrent connections it can handle. SlowHTTPTest works on majority
 of Linux platforms, OS X and Cygwin - a Unix-like environment and command-line
 interface for Microsoft Windows, and comes with a Dockerfile to make things even
 easier.
-
-WWW: https://github.com/shekyan/slowhttptest

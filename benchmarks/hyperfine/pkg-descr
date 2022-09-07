@@ -10,5 +10,3 @@ Features:
 * Export results to various formats: CSV, JSON, Markdown.
 * Parameterized benchmarks.
 * Cross-platform
-
-WWW: https://github.com/sharkdp/hyperfine

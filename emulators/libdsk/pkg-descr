@@ -18,5 +18,3 @@ LIBDSK has drivers for:
   DOS floppy drive (via the PC BIOS), CopyQM files (read-only),
   TeleDisk files (read-only), APRIDISK image files,
   rcpmfs - makes a Unix/Windows directory appear to be a CP/M disc image.
-
-WWW: http://www.seasip.info/Unix/LibDsk/index.html

@@ -1,4 +1,2 @@
 Allows access to Jekyll's site, posts and pages at different points in the
 processing life cycle of a build. Formerly known as 'jekyll-page-hooks'.
-
-WWW: https://github.com/octopress/hooks

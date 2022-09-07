@@ -26,5 +26,3 @@ This port overwrites system files in /usr/share/zoneinfo.  If you build
 your systems from source, add WITHOUT_ZONEINFO="yes" to /etc/src.conf.
 If you use freebsd-update(8), add /usr/share/zoneinfo to IgnorePaths in
 /etc/freebsd-update.conf.
-
-WWW: https://github.com/JodaOrg/global-tz

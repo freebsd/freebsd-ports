@@ -9,5 +9,3 @@ Features provided by smooth include:
   - File and network I/O interface
   - Unicode and internationalization support
   - Libxml2-based XML parser
-
-WWW: http://www.smooth-project.org/

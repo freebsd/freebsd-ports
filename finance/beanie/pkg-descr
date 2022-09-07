@@ -12,5 +12,3 @@ lacking, but the command-line interface now has support for automated
 bank reconciliation (from online banking QIF files), payroll,
 automated billing and reminders, invoice PDF generation, statement
 PDF generation, and a general journal.
-
-WWW: http://beanie.sf.net/

@@ -1,5 +1,3 @@
 Jlint will check your Java code and find bugs, inconsistencies
 and synchronization problems by doing data flow analysis and
 building the lock graph.
-
-WWW: http://artho.com/jlint/

@@ -18,5 +18,3 @@ Key features:
   * YIQ, YUV(BT.601, BT.709), YCgCo, YPbPr(BT.601, BT.709, BT.2020),
   * XYZ(sRGB, D65, 2deg), LAB( CIE, Hunter), LUV, LMS (von Kries D65,
     von Kries E, BFD, MCAT02), xyY, LabCH, LuvCH
-
-WWW: https://github.com/dmilos/color

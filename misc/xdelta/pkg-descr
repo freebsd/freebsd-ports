@@ -7,5 +7,3 @@ Xdelta has three subcommands, delta, patch, and info.  Delta
 accepts two file versions and produces a delta, while patch
 accepts the original file version and delta and produces the
 second version.
-
-WWW: https://github.com/jmacd/xdelta

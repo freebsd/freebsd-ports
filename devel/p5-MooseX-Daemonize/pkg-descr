@@ -1,5 +1,3 @@
 Often you want to write a persistant daemon that has a pid file, and responds
 appropriately to Signals. This module provides a set of basic roles as an
 infrastructure to do that.
-
-WWW: https://metacpan.org/release/MooseX-Daemonize

@@ -7,5 +7,3 @@ that depends on other SKK packages (skkserv, skk-elisp, skk-jisyo,
 and skk-tools). Its sole purpose is to require dependencies so users can
 install this package only and have all the SKK stuff pulled in by the
 port/package dependency mechanism.
-
-WWW: http://openlab.jp/skk/

@@ -7,5 +7,3 @@ by seed clustering and stitching procedure. STAR outperforms other aligners by
 a factor of >50 in mapping speed, aligning to the human genome 550 million 2 x
 76 bp paired-end reads per hour on a modest 12-core server, while at the same
 time improving alignment sensitivity and precision
-
-WWW: https://github.com/alexdobin/STAR

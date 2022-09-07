@@ -8,5 +8,3 @@ ReportLab Platypus Flowable objects or in RML.
 As a command-line tool it converts SVG files into PDF ones (but adding other
 output formats like bitmap or EPS is really easy and will be better supported,
 soon).
-
-WWW: https://github.com/deeplook/svglib

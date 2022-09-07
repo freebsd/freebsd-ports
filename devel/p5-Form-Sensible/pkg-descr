@@ -19,5 +19,3 @@ Features:
 - HTML renderer allows for custom templates to control all aspects of form
   rendering.
 - HTML output not tied to any javascript library.
-
-WWW: https://metacpan.org/release/Form-Sensible

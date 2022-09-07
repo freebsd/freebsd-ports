@@ -13,5 +13,3 @@ datetime.date(1976, 10, 1)
 8
 >>> LunarDate(1976, 8, 8, 1).isLeapMonth
 True
-
-WWW: https://pypi.org/project/lunardate/

@@ -6,5 +6,3 @@ Just as compiler systems like gcc provide dependency information
 via switches such as -M, Devel::Modlist is intended to assist script
 authors in preparing dependency information for potential users of
 their scripts.
-
-WWW: https://metacpan.org/release/Devel-Modlist

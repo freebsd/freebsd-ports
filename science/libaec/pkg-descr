@@ -13,5 +13,3 @@ SZIP's shared library libsz.so* with libaec.so* and libsz.so* from libaec. Code
 which is dynamically linked with SZIP such as HDF5 should continue to work with
 libaec. No re-compilation required. HDF5 files which contain SZIP encoded data
 can be decoded by HDF5 using libaec and vice versa.
-
-WWW: https://gitlab.dkrz.de/k202009/libaec

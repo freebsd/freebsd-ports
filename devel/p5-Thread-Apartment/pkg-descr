@@ -17,5 +17,3 @@ the ability to pass arbitrary objects between arbitrary threads.
 
 Thread::Apartment is a fundamental component of the PSiCHE
 framework (http://www.presicient.com/psiche).
-
-WWW: https://metacpan.org/release/Thread-Apartment

@@ -3,5 +3,3 @@ management system. It will provide game server management (instant deployment
 of game servers) and tournament management in a more advanced and automated
 way than other systems. It will also consist of basic tools for LAN sessions
 such as a generic modular Masterserver, IRC bot, etc.
-
-WWW: http://lasange-system.sourceforge.net/

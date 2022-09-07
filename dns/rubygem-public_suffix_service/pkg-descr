@@ -13,5 +13,3 @@ Some examples of public suffixes are ".com", ".co.uk" and "pvt.k12.wy.us". The
 Public Suffix List is a list of all known public suffixes.
 
 GitHub repository is at https://github.com/weppos/publicsuffix-ruby
-
-WWW: http://www.simonecarletti.com/code/public_suffix_service

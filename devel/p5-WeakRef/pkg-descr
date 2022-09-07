@@ -8,5 +8,3 @@ to. This means that once all references to a particular piece of
 data are weak, the piece of data is freed and all the weak references
 are set to undef. This is particularly useful for implementing
 circular data structures without memory leaks or caches of objects.
-
-WWW: https://metacpan.org/release/WeakRef

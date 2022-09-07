@@ -2,5 +2,3 @@ opentypespec currently provides the opentypespec.tags module, which exports
 FEATURE_TAGS, SCRIPT_TAGS, LANGUAGE_TAGS and BASELINE_TAGS dictionaries,
 representing data from the Layout Tag Registry (section 6.4 of the Open Font
 Format specification).
-
-WWW: https://github.com/simoncozens/opentypespec-py

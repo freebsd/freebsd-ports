@@ -5,5 +5,4 @@ Pcapy is highly effective when used in conjunction with a packet-handling
 package such as Impacket, which is a collection of Python classes for
 constructing and dissecting network packets.
 
-WWW: https://github.com/CoreSecurity/pcapy
-WWW: http://www.coresecurity.com/corelabs-research/open-source-tools/pcapy
+See also: https://github.com/CoreSecurity/pcapy

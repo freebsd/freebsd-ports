@@ -14,5 +14,3 @@ own way(s) providing it.  SIGAR provides developers with one API to access this
 information regardless of the underlying platform.  The core API is implemented
 in pure C with bindings currently implemented for Java, Perl, Ruby, Python,
 Erlang, PHP and C#. This port provides the Java bindings.
-
-WWW: https://support.hyperic.com/display/SIGAR/Home

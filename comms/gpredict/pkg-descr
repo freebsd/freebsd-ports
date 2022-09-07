@@ -3,5 +3,3 @@ written using the Gtk+ widgets. Gpredict is targetted mainly towards ham
 radio operators but others interested in satellite tracking may find it
 useful as well. Gpredict uses the SGP4/SDP4 algorithms, which are
 compatible with the NORAD Keplerian elements.
-
-WWW: http://gpredict.oz9aec.net/

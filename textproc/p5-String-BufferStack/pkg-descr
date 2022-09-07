@@ -2,5 +2,3 @@ String::BufferStack provides a framework for storing nested buffers.  By
 default, all of the buffers flow directly to the output method, but
 individual levels of the stack can apply filters, or store their output
 in a scalar reference.
-
-WWW: https://metacpan.org/release/String-BufferStack

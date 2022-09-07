@@ -3,5 +3,3 @@ a non-blocking wrapper around Net::Telnet, or any other module
 based on Net::Telnet.
 
 Consult the Net::Telnet documentation for more details.
-
-WWW: https://metacpan.org/release/POE-Component-Client-Telnet

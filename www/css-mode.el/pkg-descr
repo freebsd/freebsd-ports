@@ -5,5 +5,3 @@ To use this, put the following into your ~/.emacs:
 
 	(autoload 'css-mode "css-mode")
 	(setq auto-mode-alist (cons '("\\.css\\'" . css-mode) auto-mode-alist))
-
-WWW: http://www.garshol.priv.no/download/software/css-mode/index.html

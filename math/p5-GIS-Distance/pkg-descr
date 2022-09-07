@@ -6,5 +6,3 @@ GIS::Distance::Fast, a separate distribution, ships with C implmentations of
 some of the formulas shipped with GIS::Distance. If you're looking for speed
 then install it and the ::Fast formulas will be automatically used by this
 module.
-
-WWW: https://metacpan.org/release/GIS-Distance

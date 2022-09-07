@@ -1,5 +1,3 @@
 tinystats is a statistic generator for DJB's tinydns.
 It can be easily integrated with rrdtool to generate
 nice graphical DNS stats.
-
-WWW: http://www.morettoni.net/tinystats.en.html

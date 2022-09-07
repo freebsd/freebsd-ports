@@ -8,5 +8,3 @@ not meant to be run as a substitute for init as "process id 1".
 Instead it is meant to be used to control processes related to
 a project or a customer, and is meant to start like any
 other program at boot time.
-
-WWW: http://supervisord.org/

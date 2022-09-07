@@ -7,5 +7,3 @@ the AST, and rendering the document to HTML, groff man, LaTeX,
 CommonMark, or an XML representation of the AST.  It also provides a
 command-line program (cmark) for parsing and rendering CommonMark
 documents.
-
-WWW: https://github.com/commonmark/cmark

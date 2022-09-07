@@ -6,5 +6,3 @@ partial distance correlation, multivariate goodness-of-fit tests, k-groups and
 hierarchical clustering based on energy distance, testing for multivariate
 normality, distance components (disco) for non-parametric analysis of
 structured data, and other energy statistics/methods are implemented.
-
-WWW: https://github.com/mariarizzo/energy

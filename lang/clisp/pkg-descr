@@ -18,5 +18,3 @@ GNU CLISP includes an interpreter, a compiler, a debugger, CLOS, MOP,
 a foreign language interface, sockets, i18n, fast bignums and more.
 An X11 interface is available through CLX, Garnet, CLUE/CLIO.
 GNU CLISP runs Maxima, ACL2 and many other Common Lisp packages.
-
-WWW: http://www.gnu.org/software/clisp/

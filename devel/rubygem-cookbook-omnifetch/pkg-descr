@@ -1,4 +1,2 @@
 Library code to fetch Chef cookbooks from a variety of sources to a local
 cache.
-
-WWW: https://github.com/chef/cookbook-omnifetch

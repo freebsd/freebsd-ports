@@ -19,5 +19,3 @@ Features:
     * Compilation notes: SLIME is able to take compiler messages and
       annotate them directly into source buffers.
     * Inspector: Interactive object-inspector in an Emacs buffer.
-
-WWW: http://common-lisp.net/project/slime/

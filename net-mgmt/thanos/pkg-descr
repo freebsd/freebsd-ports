@@ -6,5 +6,3 @@ Thanos leverages the Prometheus 2.0 storage format to cost-efficiently store
 historical metric data in any object storage while retaining fast query
 latencies. Additionally, it provides a global query view across all Prometheus
 installations and can merge data from Prometheus HA pairs on the fly.
-
-WWW: https://thanos.io/

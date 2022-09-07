@@ -14,5 +14,3 @@ media relay as well as gateway RTP sessions between IPv4 and IPv6 networks.
 It can also perform number of additional functions, including call recording,
 playing pre-encoded announcements, real-time stream copying and RTP payload
 reframing.
-
-WWW: http://www.rtpproxy.org/

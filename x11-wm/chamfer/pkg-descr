@@ -23,5 +23,3 @@ Compositor:
 - Arbitrary window decorations and borders with user supplied shaders
 - Per-client materials
 - Optional, alternatively use any other external compositor
-
-WWW: https://jaelpark.github.io/chamferwm-docs/

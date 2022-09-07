@@ -17,5 +17,3 @@ Goals:
   object-like access to SOAP messages
 - Extensible: supports several HTTP wrappers (httplib2, pycurl, urllib2) for
   special transport needs over SSL and proxy (ISA)
-
-WWW: https://github.com/pysimplesoap/pysimplesoap

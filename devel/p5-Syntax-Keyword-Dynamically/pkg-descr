@@ -5,5 +5,3 @@ keyword local, but is implemented somewhat differently to give two key
 advantages over regular local:
 - You can dynamically assign to lvalue functions and accessors.
 - You can dynamically assign to regular lexical variables.
-
-WWW: https://metacpan.org/dist/Syntax-Keyword-Dynamically

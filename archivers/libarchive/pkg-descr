@@ -1,5 +1,3 @@
 Libarchive is a programming library that can create and read several
 different streaming archive formats, including most popular tar
 variants and the POSIX cpio format.
-
-WWW: https://libarchive.org/

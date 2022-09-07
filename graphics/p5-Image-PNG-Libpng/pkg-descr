@@ -6,5 +6,3 @@ the PNG format.
 Image::PNG::Libpng consists of Perl subroutines which mirror the C
 functions in libpng, plus helper subroutines to make it easier to
 read and write PNG data in Perl.
-
-WWW: https://metacpan.org/release/Image-PNG-Libpng

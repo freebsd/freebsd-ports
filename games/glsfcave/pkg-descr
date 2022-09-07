@@ -6,5 +6,3 @@ ribbon goes up. Otherwise the ribbon goes down.
 
 The game uses OpenGL for drawing two-dimensional frames. This is
 for portability(for MacOS X) and to offload CPU.
-
-WWW: http://user.ecc.u-tokyo.ac.jp/~g650192/glsfcave/

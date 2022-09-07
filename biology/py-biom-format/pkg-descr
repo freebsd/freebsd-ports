@@ -15,5 +15,3 @@ to genome data, this format may be used to represent a set of genomes: the
 observations in this case again might correspond to SEED subsystems, and the
 counts would correspond to the number of times each subsystem is observed in
 each genome.
-
-WWW: http://biom-format.org/

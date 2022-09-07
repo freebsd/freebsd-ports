@@ -2,5 +2,3 @@ This is a collection of utilities that some users of python-requests might need
 but do not belong in requests proper. The library is actively maintained by
 members of the requests core development team, and so reflects the
 functionality most requested by users of the requests library.
-
-WWW: https://toolbelt.readthedocs.org

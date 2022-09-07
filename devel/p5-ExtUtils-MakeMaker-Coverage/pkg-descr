@@ -10,5 +10,3 @@ test coverage using Devel::Cover:
         testcover();
         ...
     }
-
-WWW: https://metacpan.org/release/SMPETERS/ExtUtils-MakeMaker-Coverage-0.05

@@ -7,5 +7,3 @@ NIST-published JSON file).
 
 This project also contains a generator, validator, and translator for Molecule
 QCSchema.
-
-WWW: https://github.com/MolSSI/QCElemental

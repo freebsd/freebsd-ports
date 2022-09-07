@@ -7,5 +7,3 @@ and much more. Almost any calculation can be performed just as well at
 asymptotically fast algorithms that scale well for extremely high
 precision work. If available, mpmath will (optionally) use gmpy to
 speed up high precision operations.
-
-WWW: http://www.mpmath.org/

@@ -6,5 +6,3 @@ different mail servers.
 
 IMAPFilter uses the Lua programming language as a configuration and extension
 language.
-
-WWW: https://github.com/lefcha/imapfilter

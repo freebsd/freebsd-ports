@@ -12,5 +12,3 @@ first one found is used. If none are detected, the module tries to load the
 first four modules in the order given; but note that if EV is not available, the
 pure-perl AnyEvent::Loop should always work, so the other two are not normally
 tried.
-
-WWW: https://metacpan.org/release/AnyEvent

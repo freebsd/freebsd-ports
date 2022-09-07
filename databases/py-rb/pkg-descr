@@ -1,4 +1,2 @@
 Rb is the fastest way to talk to many redis nodes. It can do routing as well as
 blindly blasting commands to many nodes.
-
-WWW: https://github.com/getsentry/rb

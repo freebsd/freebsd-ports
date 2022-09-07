@@ -8,5 +8,3 @@ Why not pip freeze?
     don't use in your current project. (if you don't have virtualenv)
   - and sometimes you just need to create requirements.txt for a new project
     without installing modules.
-
-WWW: https://pypi.org/project/pipreqs/

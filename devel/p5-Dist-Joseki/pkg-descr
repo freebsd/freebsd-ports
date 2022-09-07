@@ -5,5 +5,3 @@ has come into general use to describe any fixed form of behaviour.
 Dist::Joseki offers you tools that help you in developing Perl module
 distributions if you stick to a certain formulaic style of structuring your
 distributions.
-
-WWW: https://metacpan.org/release/MARCEL/Dist-Joseki-0.20

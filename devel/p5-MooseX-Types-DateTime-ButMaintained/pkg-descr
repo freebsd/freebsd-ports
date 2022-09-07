@@ -5,5 +5,3 @@ This module is just the MooseX::Types::DateTime without the requirement
 on DateTimeX::Easy (which requires DateTime::Manip). As of 0.05
 this module supports globally unique Olson abbreviations, and dies
 when they are not globally unique.
-
-WWW: https://metacpan.org/release/MooseX-Types-DateTime-ButMaintained

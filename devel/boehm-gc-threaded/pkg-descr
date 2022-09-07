@@ -15,5 +15,3 @@ such source code modifications.  See the man page and header files.
 This package only brings Boehm-GC libraries with threading support.
 
 ps: garbage collection is addictive.
-
-WWW: https://www.hboehm.info/gc/

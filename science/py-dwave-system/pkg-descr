@@ -6,5 +6,3 @@ authentication down the stack, LeapHybridSampler, for Leap's hybrid solvers,
 and other. It also includes several useful composites - layers of pre- and
 post-processing - that can be used with DWaveSampler to handle minor-embedding,
 optimize chain strength, etc.
-
-WWW: https://github.com/dwavesystems/dwave-system

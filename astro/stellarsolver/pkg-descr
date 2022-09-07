@@ -16,5 +16,3 @@
 - The Index Files are still required for solving images, but the program or the
   user can specify the folder locations rather than putting them in the config
   file.
-
-WWW: https://github.com/rlancaste/stellarsolver

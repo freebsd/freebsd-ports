@@ -7,5 +7,3 @@ It supports:
 - Use as an alternative to ActiveRecord callbacks and Observers in Rails apps.
 - Connect objects based on context without permanence.
 - Publish events synchronously or asynchronously.
-
-WWW: https://github.com/krisleech/wisper

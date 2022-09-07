@@ -10,5 +10,3 @@ cryptographic flaws.  Key features:
   configure your output
 - Reliability: features are tested thoroughly
 - Privacy: It's only you who sees the result, not a third party
-
-WWW: https://github.com/drwetter/testssl.sh

@@ -13,5 +13,3 @@ HTTPRequest to perform server communication functions - data can be encoded into
 JSON notation for use in a client-side javascript, or decoded from incoming
 Javascript requests. JSON format is native to Javascript, and can be directly
 eval()'ed with no further parsing overhead.
-
-WWW: https://pear.php.net/package/Services_JSON

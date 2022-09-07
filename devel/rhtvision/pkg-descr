@@ -1,5 +1,3 @@
 A complete C++ Text User Interface (TUI) featuring windows, dialogs
 (buttons, check and radio boxes, input boxes, etc.), mouse support,
 menus, etc. It's available for various platforms and compilers.
-
-WWW: https://sourceforge.net/projects/tvision/

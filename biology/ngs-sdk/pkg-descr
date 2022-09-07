@@ -8,5 +8,3 @@ ncbi-vdb.
 The API is currently expressed in C++, Java and Python languages. The design
 makes it possible to maintain a high degree of similarity between the code in
 one language and code in another - especially between C++ and Java.
-
-WWW: https://github.com/ncbi/ngs

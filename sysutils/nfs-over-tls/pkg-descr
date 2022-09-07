@@ -5,5 +5,3 @@ These daemons require OpenSSL libraries patched to support Kernel TLS (KTLS).
 The OPENSSL port found in security/openssl-devel satisfies this requirement.
 These daemons also require a FreeBSD system running a kernel built from a
 kernel configuration file with "options KERNEL_TLS" specified in it.
-
-WWW: https://people.freebsd.org/~rmacklem/nfs-over-tls-setup.txt

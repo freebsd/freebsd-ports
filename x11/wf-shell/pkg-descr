@@ -1,5 +1,3 @@
 wf-shell is a repository which contains the various components needed
 to built a fully functional DE based around wayfire. Currently it has
 only a GTK-based panel and background client.
-
-WWW: https://wayfire.org/

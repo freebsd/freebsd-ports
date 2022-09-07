@@ -3,5 +3,3 @@ Trac doesn't provide a web services API, this module currently "fakes"
 an RPC interface around Trac's webforms and the feeds it exports.
 Because of this, it's somewhat more brittle than a true RPC client
 would be.
-
-WWW: https://metacpan.org/release/Net-Trac

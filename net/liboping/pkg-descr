@@ -9,5 +9,3 @@ ncurses-based front-end to liboping. Using curses windows it is able
 to display the ping statistics online 'live'. An aberrant behavior
 detection highlights all round-trip times that are unusually high or
 low.
-
-WWW: http://noping.cc/

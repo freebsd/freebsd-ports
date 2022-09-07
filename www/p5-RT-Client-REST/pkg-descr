@@ -3,5 +3,3 @@ which provide interface between Perl scripts and RT
 (an industrial-grade ticketing system) using REST protocol.
 Most of the features have been implemented and
 tested with rt 3.6.0 and later.
-
-WWW: https://metacpan.org/release/RT-Client-REST

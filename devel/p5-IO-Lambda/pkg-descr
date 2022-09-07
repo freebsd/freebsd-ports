@@ -3,5 +3,3 @@ non-blocking I/O programming. It tries to bring back the
 simplicity of the declarative programming style, that is
 only otherwise available when one employs threads,
 coroutines, or co-processes.
-
-WWW: https://metacpan.org/release/IO-Lambda

@@ -11,6 +11,3 @@ Specification. libmpdec++ is mostly a header library around libmpdec.  The
 library frees users from manual memory management and has an easy API with
 inline operators.  libmpdec++ has a thread local context for inline operators
 and other functions that use the implicit context.
-
-
-WWW: https://www.bytereef.org/mpdecimal/index.html

@@ -15,5 +15,3 @@ the original Getopt::Long module to:
    well (automatically).  If the Getopt::GUI::Long program is installed as a
    CGI script then it will automatically prompt the user for the same
    variables.
-
-WWW: https://metacpan.org/release/Getopt-GUI-Long

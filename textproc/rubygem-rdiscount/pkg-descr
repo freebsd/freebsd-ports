@@ -5,5 +5,3 @@ conversion language for web writers, inspired by the format
 of plain-text e-mail messages.  Markdown allows you to write
 in an easy-to-read, easy-to-write plain text format, then
 convert it to structurally valid XHTML (or HTML).
-
-WWW: https://dafoster.net/projects/rdiscount/

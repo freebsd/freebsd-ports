@@ -1,3 +1,1 @@
 concurrentqueue is an industrial-strength lock-free queue for C++.
-
-WWW: https://github.com/cameron314/concurrentqueue

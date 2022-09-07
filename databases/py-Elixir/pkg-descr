@@ -9,5 +9,3 @@ not need the full expressiveness of SQLAlchemy's manual mapper definitions.
 
 Elixir is intended to replace the ActiveMapper SQLAlchemy extension, and the
 TurboEntity project.
-
-WWW: http://elixir.ematia.de/

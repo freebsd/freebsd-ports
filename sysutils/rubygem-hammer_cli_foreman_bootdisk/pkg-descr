@@ -1,4 +1,2 @@
 This Hammer CLI plugin contains set of commands for foreman_bootdisk,
 a plugin to Foreman for ISO/USB booting support
-
-WWW: https://github.com/theforeman/hammer_cli_foreman_bootdisk

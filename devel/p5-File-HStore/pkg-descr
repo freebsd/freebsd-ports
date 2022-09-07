@@ -12,5 +12,3 @@ The current version is supporting the SHA-1 and SHA-2 (256 bits)
 algorithm. The FAT (Free Archive Toolkit) format is also supported and
 it is composed of the date of submission plus the SHA-2 real digest
 part.
-
-WWW: https://metacpan.org/release/File-HStore

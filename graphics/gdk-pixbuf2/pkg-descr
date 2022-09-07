@@ -4,5 +4,3 @@ The GdkPixBuf library provides a number of features:
 	- Rendering of a GdkPixBuf into various formats:
 	  drawables (windows, pixmaps), GdkRGB buffers.
 	- A cache interface
-
-WWW: https://developer.gnome.org/gdk-pixbuf/

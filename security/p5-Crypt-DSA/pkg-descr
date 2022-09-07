@@ -4,5 +4,3 @@ although the heavy-duty mathematics underneath are provided by the
 Math::Pari library.
 
 This package provides DSA signing, signature verification, and key generation.
-
-WWW: https://metacpan.org/release/Crypt-DSA

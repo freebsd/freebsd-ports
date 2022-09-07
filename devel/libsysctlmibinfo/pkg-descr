@@ -7,5 +7,3 @@ It implements wrappers around an undocumented kernel interface
 to provide a more easy interface, moreover it defines a
 'struct sysctlmif_object' and provides a convenient API to build
 data structures of sysctlmif_object.
-
-WWW: https://gitlab.com/alfix/sysctlmibinfo/

@@ -1,5 +1,3 @@
 LibTorrent is a BitTorrent library written in C++ for *nix. It is
 designed to avoid redundant copying and storing of data that other
 clients and libraries suffer from. Licensed under the GPL.
-
-WWW: https://github.com/rakshasa/libtorrent

@@ -15,5 +15,3 @@ something like:
 |  +-< main::fo(4, 5) (in ./t.pm:32): 'now then'
 |  done (in ./t.pm:34)
 +-< global: '0'
-
-WWW: https://metacpan.org/release/traceFunc

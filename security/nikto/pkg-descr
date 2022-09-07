@@ -13,5 +13,3 @@ supports basic port scanning and will determine if a web server is
 running on any open ports.
 
 Nikto is written by Chris Sullo and David Lodge.
-
-WWW: http://cirt.net/nikto2

@@ -2,5 +2,3 @@ Use the Kubernetes command-line tool, kubectl, to deploy and manage
 applications on Kubernetes. Using kubectl, you can inspect cluster
 resources; create, delete, and update components; and look at your
 new cluster and bring up example apps.
-
-WWW: https://github.com/kubernetes/kubectl

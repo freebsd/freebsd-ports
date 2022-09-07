@@ -8,5 +8,3 @@ do one of the following:
 make results (to run the benchmarks)
 make rerun   (to rerun the benchmarks)
 make see     (to see how you did)
-
-WWW: https://sourceforge.net/projects/lmbench/

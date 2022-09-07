@@ -8,5 +8,3 @@ Aiksausus plugins exist for AbiWord on UNIX and Win32; the library is also
 used by Lyx; and the new Cocoa port provides a MacOSX NSService hook so that
 Safari and other such applications can use this thesaurus without
 Aiksaurus-specific development.
-
-WWW: http://aiksaurus.sourceforge.net/

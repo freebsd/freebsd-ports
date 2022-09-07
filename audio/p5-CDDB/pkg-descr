@@ -7,5 +7,3 @@ its analogs, CDDB.pm doesn't try to read a disc in your CD-ROM by
 itself, but relies on the main program supplying disc data.
 Therefore, it is particularly useful for developing software that
 deals with alternative media, such as MPEG audio files.
-
-WWW: https://metacpan.org/release/CDDB

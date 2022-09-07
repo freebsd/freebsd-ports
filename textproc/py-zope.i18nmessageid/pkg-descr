@@ -1,5 +1,3 @@
 zope.i18nmessageid provides facilities for declaring such messages
 within program source text; translation of the messages is the
 responsiblitiy of the 'zope.i18n' package.
-
-WWW: https://pypi.org/project/zope.i18nmessageid/

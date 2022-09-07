@@ -4,5 +4,4 @@ Though Ruby's File and FileUtils libraries provide very robust apis for dealing
 with files, this library aims to provide a level of abstraction that is much
 more convenient, with useful logging capabilities.
 
-WWW: https://ttytoolkit.org/
-WWW: https://github.com/piotrmurach/tty-file
+See also: https://github.com/piotrmurach/tty-file

@@ -14,5 +14,3 @@ keyword. You then use those parameters to construct and return the replacement
 source code. The module takes care of setting up the keyword, and of the
 associated syntax parsing, and of inserting the replacement source code in the
 correct place.
-
-WWW: https://metacpan.org/release/Keyword-Declare

@@ -2,5 +2,3 @@ XGalaga++ is a classic vertical scrolling shoot em up.
 It requires no X Window extension and its window is freely resizable.
 It is inspired by XGalaga, but rewritten from scratch,
 except for the graphics.
-
-WWW: http://marc.mongenet.ch/OSS/XGalaga/

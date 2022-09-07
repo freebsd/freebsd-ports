@@ -4,5 +4,3 @@ to set outgoing MAC addresses and optional settings in generated
 DHCP requests. Supports legal DHCP servers list. One can run it
 in interactive mode under users control or fully automatic mode for
 start up from script.
-
-WWW: http://www.netpatch.ru/en/dhcdrop.html

@@ -2,5 +2,3 @@ File::Locate provides the locate() function that scans the locate
 database for a given substring or POSIX regular expression. The
 module can handle both plain old locate databases as well as the
 more hip slocate format.
-
-WWW: https://metacpan.org/release/File-Locate

@@ -2,5 +2,3 @@ Fluent::Mixin::PlainTextFormatter is a mix-in module, that provides
 '#format' instance method and its configurations to Fluentd
 BufferedOutput Plugin and TimeSlicedOutput Plugin, to output plain
 text data (to file, REST storages, KVSs ...).
-
-WWW: https://github.com/tagomoris/fluent-mixin-plaintextformatter

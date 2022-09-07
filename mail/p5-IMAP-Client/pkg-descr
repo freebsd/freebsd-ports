@@ -17,5 +17,3 @@ anonymous or the same user with the same password - a new user or
 different password would require a new username/password to be
 obtained. As of 0.01, this is not supported, however the framework is
 down.
-
-WWW: https://metacpan.org/release/IMAP-Client

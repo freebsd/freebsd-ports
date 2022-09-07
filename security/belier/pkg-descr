@@ -1,5 +1,3 @@
 Belier allows opening a shell or executing a command on a remote computer
 through a SSH connection. The main feature of Belier is its ability to cross
 several intermediate computers before realizing the job.
-
-WWW: http://www.ohmytux.com/belier/index.html

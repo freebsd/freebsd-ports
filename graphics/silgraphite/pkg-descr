@@ -5,5 +5,3 @@ Windows platform; the system has also been ported to Linux. Graphite can be used
 to create "smart fonts" capable of displaying writing systems with various
 complex behaviors. With respect to the Text Encoding Model, Graphite handles the
 "Rendering" aspect of writing system implementation.
-
-WWW: http://silgraphite.sourceforge.net/

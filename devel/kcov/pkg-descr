@@ -4,5 +4,3 @@ a large feature set in addition to that of Bcov.
 
 Kcov, like Bcov, uses DWARF debugging information for compiled programs to make
 it possible to collect coverage information without special compiler switches.
-
-WWW: https://simonkagstrom.github.io/kcov/index.html

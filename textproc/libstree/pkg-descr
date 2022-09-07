@@ -6,5 +6,3 @@ efficient and implemented using the algorithm by Ukkonen, which
 means that libstree builds suffix trees in time linear to the length
 of the strings (assuming that string element comparisons can be done
 in O(1)).
-
-WWW: http://www.icir.org/christian/libstree/

@@ -3,5 +3,3 @@ is maintained by the Celery project, and used by kombu as a pure python
 alternative when librabbitmq is not available.
 
 This library should be API compatible with librabbitmq.
-
-WWW: https://github.com/celery/py-amqp

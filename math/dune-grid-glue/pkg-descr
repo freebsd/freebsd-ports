@@ -7,5 +7,3 @@ Couplings are described as sets of remote intersections. Conceptually, these
 remote intersections are very close to what the regular intersections in the
 Dune grid interface are, with the difference that the inside and outside
 entities are taken from different grids.
-
-WWW: https://www.dune-project.org/

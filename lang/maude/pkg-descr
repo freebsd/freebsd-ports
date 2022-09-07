@@ -21,5 +21,3 @@ metalanguage applications. Indeed, some of the most interesting applications
 of Maude are metalanguage applications, in which Maude is used to create
 executable environments for different logics, theorem provers, languages, and
 models of computation.
-
-WWW: http://maude.cs.uiuc.edu/

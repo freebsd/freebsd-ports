@@ -1,5 +1,3 @@
 Renders and parses JSON/XML/YAML documents from and to
 Ruby objects. Includes plain properties, collections,
 nesting, coercion and more.
-
-WWW: https://github.com/trailblazer/representable

@@ -11,5 +11,3 @@ paragraph or directive it finds. Once complete events are immediately passed to
 the handle_event method. This method should be implemented by Pod::Eventual
 subclasses. If it isn't, Pod::Eventual's own handle_event will be called, and
 will raise an exception.
-
-WWW: https://metacpan.org/release/Pod-Eventual

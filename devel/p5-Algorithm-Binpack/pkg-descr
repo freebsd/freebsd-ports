@@ -2,5 +2,3 @@ Algorithm::BinPack efficiently packs items into bins. The bins are given
 a maximum size, and items are packed in with as little empty space as
 possible. An example use would be backing up files to CD, while
 minimizing the number of discs required.
-
-WWW: https://metacpan.org/release/Algorithm-BinPack

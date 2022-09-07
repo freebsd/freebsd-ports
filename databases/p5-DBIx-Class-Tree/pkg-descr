@@ -7,5 +7,3 @@ some sort of integer.  The row with a parent ID of 0 is the root node
 and is usually the parent of all other rows.  Although, there is no
 limitation in this module that would stop you from having multiple
 root nodes.
-
-WWW: https://metacpan.org/release/DBIx-Class-Tree

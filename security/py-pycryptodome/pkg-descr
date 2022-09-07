@@ -18,5 +18,3 @@ PyCrypto (2.6.1):
 * Simplified install process, including better support for Windows
 * Cleaner RSA and DSA key generation (largely based on FIPS 186-4)
 * Major clean ups and simplification of the code base
-
-WWW: https://www.pycryptodome.org/

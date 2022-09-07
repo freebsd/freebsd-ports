@@ -9,5 +9,3 @@ Any data types supported by threads::shared can be passed via queues:
 - Objects based on the above
 
 Ordinary scalars are added to queues as they are.
-
-WWW: https://metacpan.org/release/Thread-Queue

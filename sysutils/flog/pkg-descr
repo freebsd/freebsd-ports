@@ -6,5 +6,3 @@ is gone or the inode has changed). flog is extremely small (a memory footprint
 of less than 500 bytes). It also protects you from running out of disk space;
 if that happens, the logfile will be truncated and a warning generated. This
 could save you from waking up to pager beeps in the middle of the night.
-
-WWW: http://oss.ezic.com/

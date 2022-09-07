@@ -1,4 +1,2 @@
 A ruby library for generating one time passwords (HOTP & TOTP)
 according to RFC 4226 and RFC 6238.
-
-WWW: https://github.com/mdp/rotp

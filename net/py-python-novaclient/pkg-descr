@@ -4,5 +4,3 @@ entire OpenStack Nova API.
 
 You'll need credentials for an OpenStack cloud that implements the Compute API,
 such as TryStack, HP, or Rackspace, in order to use the nova client.
-
-WWW: https://docs.openstack.org/python-novaclient/latest/

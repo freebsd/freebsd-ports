@@ -1,4 +1,2 @@
 This module attempts to work around people calling UNIVERSAL::can() as a
 function, which it is not.
-
-WWW: https://metacpan.org/release/UNIVERSAL-can

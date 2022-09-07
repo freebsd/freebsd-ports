@@ -11,5 +11,3 @@ formats in use today. In very subtle ways these formats are not entirely
 compatible from one to another. XML::RSS::Parser makes a couple assumptions
 to "normalize" the parse tree into a more consistent form. For instance,
 it forces channel and item into a parent-child relationship.
-
-WWW: https://metacpan.org/release/XML-RSS-Parser

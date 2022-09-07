@@ -13,5 +13,3 @@ the first time.  On and after the second time, pdumpfs copies only
 updated or newly created files and stores unchanged files as hard
 links to the files of the previous day's snapshot for saving a disk
 space.
-
-WWW: http://0xcc.net/pdumpfs/

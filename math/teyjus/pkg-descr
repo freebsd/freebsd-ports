@@ -15,5 +15,3 @@ significantly improved virtual machine that has been designed by Xiaochu Qi as
 part of her doctoral dissertation work at the University of Minnesota. This
 virtual machine extensively exploits a special form of higher-order unification
 known as pattern unification.
-
-WWW: http://teyjus.cs.umn.edu/

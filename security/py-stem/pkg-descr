@@ -1,5 +1,3 @@
 Stem is a python controller library for Tor. Like its predecessor, TorCtl, it
 uses Tor's control protocol to help developers program against the Tor process,
 enabling them to build things similar to Vidalia and arm.
-
-WWW: https://stem.torproject.org/

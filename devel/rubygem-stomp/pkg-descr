@@ -6,5 +6,3 @@ Clients can communicate with any Stomp Message Broker to provide easy and
 widespread messaging interop among languages, platforms and brokers.
 
 This is a rubygem binding for stomp.
-
-WWW: https://github.com/stompgem/stomp

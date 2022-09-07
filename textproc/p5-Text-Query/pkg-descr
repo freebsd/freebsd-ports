@@ -10,5 +10,3 @@ query. The query parser parses the question and calls a query expression
 builder (internal form of the question). The optimizer is then called to
 reduce the complexity of the expression. The solver applies the
 expression on a data source.
-
-WWW: https://metacpan.org/release/Text-Query

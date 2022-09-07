@@ -8,5 +8,3 @@ as well as tools and examples for quick-starting your projects. Based
 on the OpenGL API specification (gl.xml) glbinding is generated using
 python scripts and templates that can be easily adapted to fit custom
 needs.
-
-WWW: https://glbinding.org/

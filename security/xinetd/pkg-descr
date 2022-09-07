@@ -8,5 +8,3 @@ listed in /etc/services.
 Its configuration file has a different format than inetd's one
 and it understands different signals. However the signal-to-action
 assignment can be changed.
-
-WWW: http://www.xinetd.org/

@@ -1,3 +1,1 @@
 Providers for interacting with the Erlang package manager hex.pm.
-
-WWW: https://github.com/hexpm/rebar3_hex

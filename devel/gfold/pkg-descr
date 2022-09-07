@@ -12,5 +12,3 @@ or change the default path in the config file.
 After traversal, gfold leverages rayon to perform concurrent,
 read-only analysis of all Git repositories detected.
 Analysis is performed by leveraging the git2-rs library.
-
-WWW: https://github.com/nickgerace/gfold

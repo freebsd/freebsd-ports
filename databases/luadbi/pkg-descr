@@ -5,5 +5,3 @@ for all database operations.
 
 On FreeBSD, LuaDBI supports MySQL, PostgreSQL, and SQLite3 databases with
 native database drivers.
-
-WWW: https://github.com/mwild1/luadbi

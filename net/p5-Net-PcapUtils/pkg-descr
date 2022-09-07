@@ -2,5 +2,3 @@ Net::PcapUtils is a module to sit in front of Net::Pcap in order to hide
 some of the pcap(3) initialisation by providing sensible defaults.  This
 enables a programmer to easily write small, specific scripts for a
 particular purpose without having to worry about too many details.
-
-WWW: https://metacpan.org/release/Net-PcapUtils

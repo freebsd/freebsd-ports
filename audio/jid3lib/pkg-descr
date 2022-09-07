@@ -4,5 +4,3 @@ ID3v2.3, and ID3v2.4 tags. MP3 Frame Headers can also be read. There is a
 FilenameTag, a ID3v2.4 tag that is intelligently derived from the file name.
 It contains tag synchronization utilities, multiple save options, and easy tag
 conversion methods.
-
-WWW: http://javamusictag.sourceforge.net/index.html

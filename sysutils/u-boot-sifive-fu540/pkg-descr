@@ -15,5 +15,3 @@ sgdisk --clear --set-alignment=2 \
 Now, copy the u-boot files to the SD card with dd(1).
 dd if=/usr/local/share/u-boot/u-boot-sifive-fu540/u-boot-spl.bin of=/dev/da2p1 conv=sync
 dd if=/usr/local/share/u-boot/u-boot-sifive-fu540/u-boot.itb of=/dev/da2p2 conv=sync
-
-WWW: https://www.denx.de/wiki/U-Boot

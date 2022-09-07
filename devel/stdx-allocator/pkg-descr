@@ -1,3 +1,1 @@
 Extracted std.experimental.allocator for usage via DUB
-
-WWW: https://github.com/dlang-community/stdx-allocator

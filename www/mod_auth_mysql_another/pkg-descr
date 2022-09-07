@@ -6,5 +6,3 @@ There is a different version of mod_auth_mysql in the ports tree with
 different configuration. Unfortunatly this version has a bug if used on
 a system which has more than one authentification databases. You may have
 to look which version fits your requirements.
-
-WWW: http://modauthmysql.sourceforge.net/

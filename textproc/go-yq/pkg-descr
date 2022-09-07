@@ -2,5 +2,3 @@ yq is a lightweight and portable command-line YAML processor in go.
 yq uses jq like syntax but works with yaml files as well as json.
 It doesn't yet support everything jq does - but it does support the most common
 operations and functions, and more is being added continuously.
-
-WWW: https://github.com/mikefarah/yq

@@ -5,5 +5,3 @@ and boot directly. If not, you may PXE boot using software that
 contains iSCSI support such as iPXE. The module reads the iSCSI
 Boot Firmware Table (IBFT) to configure the network and re-attach
 the volume once the kernel begins execution.
-
-WWW: https://github.com/jnielsendotnet/isboot

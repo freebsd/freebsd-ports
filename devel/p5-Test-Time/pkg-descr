@@ -2,5 +2,3 @@ Test::Time can be used to test modules that deal with time.  Once you
 use this module, all references to time and sleep will be
 internalized.  You can set custom time by passing time => number after
 the use statement.
-
-WWW: https://metacpan.org/release/Test-Time

@@ -3,5 +3,3 @@ SCSI (SAS) Serial Management Protocol (SMP) request to an SMP target.
 If the request fails then the error is decoded. If the request succeeds
 then the response is either decoded, printed out in hexadecimal or
 output in binary.
-
-WWW: http://sg.danny.cz/sg/smp_utils.html

@@ -1,5 +1,3 @@
 The murmur hash algorithm by Austin Appleby is an exteremely fast
 algorithm that combines both excellent collision resistence and
 distribution characteristics.
-
-WWW: https://metacpan.org/release/Digest-MurmurHash

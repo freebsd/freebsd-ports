@@ -6,5 +6,3 @@ want.
 
 Its API is based on jquery.couch.js, but we've adapted the API slightly so that
 it makes sense in an asynchronous Perl environment.
-
-WWW: https://metacpan.org/release/AnyEvent-CouchDB

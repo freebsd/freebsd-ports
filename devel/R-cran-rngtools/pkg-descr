@@ -4,5 +4,3 @@ framework for getting/setting the current RNG, or RNG data that are
 embedded into objects for reproducibility. Notably, convenient
 default methods greatly facilitate the way current RNG settings can
 be changed.
-
-WWW: https://cran.r-project.org/web/packages/rngtools/

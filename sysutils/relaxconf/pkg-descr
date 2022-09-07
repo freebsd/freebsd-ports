@@ -19,5 +19,3 @@ relaxloadsetting:	Auto seek and load preference save file in a partition.
 relaxmediabackup:	Backup your person data.
 relaxrestore:		Restore your person data.
 relaxinstaller:		Launch BSD/RelaxBSD Installer to install LiveCD.
-
-WWW: https://sourceforge.net/projects/relaxbsd/

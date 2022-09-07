@@ -4,5 +4,3 @@ command, and it's partially compatible with Linux's one.
 
 It also features a library to access functions to lookup devices and
 mountpoints, unmount and eject devices.
-
-WWW: http://flameeyes.is-a-geek.org/projects#unieject

@@ -3,5 +3,3 @@ services in Catalyst.  It does this by extending the normal Catalyst
 dispatch mechanism to allow for different subroutines to be called based
 on the HTTP Method requested, while also transparently handling all the
 serialization/deserialization for you.
-
-WWW: https://metacpan.org/release/Catalyst-Action-REST

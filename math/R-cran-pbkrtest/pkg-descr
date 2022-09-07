@@ -2,5 +2,3 @@ Test in linear mixed effects models. Attention is on linear mixed
 effects models as implemented in the lme4 package. The package
 implements a parametric bootstrap test. The package implements a
 Kenward-Roger modification of F-tests.
-
-WWW: https://cran.r-project.org/web/packages/pbkrtest/

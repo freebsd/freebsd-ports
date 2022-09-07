@@ -4,5 +4,4 @@ production environments. In order to get the best throughput, it is highly
 recommended that you use a Ruby implementation with real threads like Rubinius
 or JRuby.
 
-WWW: https://puma.io/
-WWW: https://github.com/puma/puma
+See also: https://github.com/puma/puma

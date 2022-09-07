@@ -16,5 +16,3 @@ seconds to calculate a set of statistics instead of the 561 seconds
 required by Statistics::Descriptive::Full. It also required only 4MB of
 RAM instead of the 400MB used by Statistics::Descriptive::Full for the
 same data set.
-
-WWW: https://metacpan.org/release/Statistics-Descriptive-Discrete

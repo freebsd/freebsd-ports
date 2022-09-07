@@ -4,5 +4,3 @@ optional package, which can capture, playback, stream and transcode
 multiple media formats, extends the multimedia capabilities on the
 J2SE platform, and gives multimedia developers a powerful toolkit to
 develop scalable, cross-platform technology.
-
-WWW: https://www.oracle.com/java/technologies/javase/java-media-framework.html

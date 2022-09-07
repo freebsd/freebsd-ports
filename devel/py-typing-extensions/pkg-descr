@@ -7,5 +7,3 @@ typing.Coroutine.
 The typing_extensions module contains both backports of these changes as well as
 experimental types that will eventually be added to the typing module, such as
 Protocol.
-
-WWW: https://github.com/python/typing_extensions

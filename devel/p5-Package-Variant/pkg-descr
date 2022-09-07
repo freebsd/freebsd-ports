@@ -4,5 +4,3 @@ variations depending on what parameters are given.
 Users of your package will receive a subroutine able to take parameters
 and return the name of a suitable variant package. The implmenetation
 does not care about what kind of package it builds.
-
-WWW: https://metacpan.org/release/Package-Variant

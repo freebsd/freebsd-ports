@@ -5,5 +5,3 @@ Clewn is a program controlling vim through the netBeans socket interface,
 it runs concurrently with vim and talks to vim.
 Clewn can only be used with gvim, the graphical implementation of vim,
 as vim on a terminal does not support netBeans.
-
-WWW: http://clewn.sourceforge.net/index.html

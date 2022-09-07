@@ -6,5 +6,3 @@ to the ctl-sat program, e.g.:
 
 The worst-case time complexity is O((2^n)^3) for this SAT solver, while the
 worst-case space complexity is O((2^n)^2).
-
-WWW: https://github.com/nicolaprezza/CTLSAT

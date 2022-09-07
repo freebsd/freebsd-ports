@@ -1,4 +1,2 @@
 PerlIO::via::Unidecode implements a PerlIO::via layer that applies
 Unidecode (Text::Unidecode) to data passed through it.
-
-WWW: https://metacpan.org/release/PerlIO-via-Unidecode

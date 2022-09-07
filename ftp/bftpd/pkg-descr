@@ -14,5 +14,3 @@ Features of bftpd include:
 * Logging to wtmp and to a config file
 * PAM support
 * Support for site chown/chmod
-
-WWW: http://bftpd.sourceforge.net/

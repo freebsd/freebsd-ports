@@ -3,5 +3,3 @@ permission.
 
 Application should not change the permission to make the temporary directory
 accessible from other users.
-
-WWW: https://github.com/ruby/tmpdir

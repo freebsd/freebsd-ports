@@ -8,5 +8,3 @@ display confidence and duplicate matches.
 
 It does NOT try to match files off non-magic string. In other words it will
 not search for a string within a certain window of bytes like others might.
-
-WWW: https://pypi.org/project/puremagic/

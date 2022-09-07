@@ -9,5 +9,3 @@ that two almost identical files, such as the same file before an after a
 change, when encrypted using rsyncrypto and the same key, will produce almost
 identical encrypted files. This means that both objectives can be achieved
 simultaneously.
-
-WWW: http://rsyncrypto.lingnu.com/

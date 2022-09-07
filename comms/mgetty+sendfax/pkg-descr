@@ -10,5 +10,3 @@ Mgetty provides very extensive logging facilities.
 Sendfax sends the named g3 fax files to the fax machine at "phone number".
 The g3 files can be created with pbmtog3(1) or GNU's GhostScript with the
 "digifax" driver.
-
-WWW: http://mgetty.greenie.net/

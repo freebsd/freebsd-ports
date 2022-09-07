@@ -9,5 +9,3 @@ Major features:
   * Extensible variables and functions (including with DSOs)
   * Simple to embed in any program
   * High-level UI components to manipulate and visualize expressions
-
-WWW: https://wdas.github.io/SeExpr/

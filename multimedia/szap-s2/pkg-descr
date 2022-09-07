@@ -15,5 +15,3 @@ name:frequency_MHz:polarization[coderate][delivery][modulation][rolloff]:sat_no:
 one line of the VDR channel file has the following format:
 
 name:frequency_MHz:polarization[coderate][delivery][modulation][rolloff]:sat_no:symbolrate:vpid:apid:tpid:?:service_id:?:?:?
-
-WWW: https://www.linuxtv.org/wiki/index.php/Szap-s2

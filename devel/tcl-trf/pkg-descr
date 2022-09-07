@@ -8,5 +8,3 @@ to transform  the buffer  contents as desired.  This allows  things like
 transparent encryption,  compression, charset recoding, etc.  Build upon
 this  framework (and  as proof  of  concept) a  collection of  tcl-level
 commands was implemented.
-
-WWW: https://wiki.tcl-lang.org/479

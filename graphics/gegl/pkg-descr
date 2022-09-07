@@ -5,5 +5,3 @@ GEGL provides infrastructure to do demand based cached
 non destructive image editing on larger than RAM buffers.
 Through babl it provides support for a wide range of color
 models and pixel storage formats for input and output.
-
-WWW: http://gegl.org/

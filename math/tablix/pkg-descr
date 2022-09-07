@@ -11,5 +11,3 @@ Because of kernel's modular design it is easy to add custom timetable
 constraints and/or modify existing ones. Kernel modules are written in C.
 Extensive API documentation is available on the internet
 and in the source distribution.
-
-WWW: http://www.tablix.org/

@@ -17,5 +17,3 @@ Major features of Net::FTPServer include:
    * SITE EXEC (disabled by default).
    * Syslog logging.
    * Set TCP parameters.
-
-WWW: https://metacpan.org/release/Net-FTPServer

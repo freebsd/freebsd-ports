@@ -11,5 +11,3 @@ Features:
   unMessage protocol
 * User interfaces are created with Tkinter (graphical) and curses
   (command-line)
-
-WWW: https://github.com/AnemoneLabs/unmessage

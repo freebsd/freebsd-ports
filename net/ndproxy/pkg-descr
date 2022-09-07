@@ -10,5 +10,3 @@ The main difference with the ndp(8) command-line tool is that, with
 ndproxy(4), the host running ndp can be used only to redirect
 packets to another IPv6 internal router, for instance a dedicated
 one with hardware support of IPv6 routing processes.
-
-WWW: http://www.fenyo.net/newweb/ndproxy.html

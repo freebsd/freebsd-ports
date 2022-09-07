@@ -2,5 +2,3 @@ ParseTreeReloaded is a reimplementation of ParseTree
 using RubyInlineAcceleration.
 The goal is to provide full compatibility
 to ParseTree while making it easier to build and extend.
-
-WWW: https://rubygems.org/gems/ptreloaded

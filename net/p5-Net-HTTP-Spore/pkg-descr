@@ -4,5 +4,3 @@ To use this client, you need to use or to write a SPORE specification of an API.
 A description of the SPORE specification format is available at [1].
 
 [1] https://github.com/SPORE/specifications/blob/master/spore_description.pod
-
-WWW: https://metacpan.org/release/Net-HTTP-Spore

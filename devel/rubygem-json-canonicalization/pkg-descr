@@ -9,5 +9,3 @@ cryptographic operations. JCS achieves this by building on the serialization
 formats for JSON primitives as defined by ECMAScript [ES6], constraining JSON
 data to the I-JSON [RFC7493] subset, and through a platform independent property
 sorting scheme.
-
-WWW: https://github.com/dryruby/json-canonicalization

@@ -5,5 +5,3 @@ This port adds Gnome Keyring support to Subversion.
 
 See https://wiki.freebsd.org/Ports/security/subversion-gnome-keyring for
 setup instructions.
-
-WWW: https://subversion.apache.org/

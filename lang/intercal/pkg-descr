@@ -3,5 +3,3 @@ feature set differing considerably from all other programming
 languages.  This is the C-INTERCAL compiler, which compiles
 INTERCAL to C, and then invokes cc as a backend, much like the
 "f2c" Fortran compiler.
-
-WWW: http://www.catb.org/~esr/intercal/

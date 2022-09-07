@@ -6,5 +6,3 @@ multiple concatenated compressed streams are decompressed seamlessly.
 
 For output access (compression), the only parameter exposed by this API is the
 compression level.
-
-WWW: https://github.com/mateidavid/zstr

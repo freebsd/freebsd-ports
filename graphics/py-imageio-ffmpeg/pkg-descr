@@ -7,5 +7,3 @@ that include the binary ffmpeg executables.
 This library is used as the basis for the imageio ffmpeg plugin, but it can also
 be used by itself. Imageio provides a higher level API, and adds support for
 e.g. cameras and seeking.
-
-WWW: https://github.com/imageio/imageio-ffmpeg

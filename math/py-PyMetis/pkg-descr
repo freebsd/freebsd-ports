@@ -6,5 +6,3 @@ current use), but extending it in case you need more should be quite
 straightforward. Using PyMetis to partition your meshes is really easy -
 essentially all you need to pass into PyMetis is an adjacency list for the
 graph and the number of parts you would like.
-
-WWW: https://mathema.tician.de/software/pymetis/

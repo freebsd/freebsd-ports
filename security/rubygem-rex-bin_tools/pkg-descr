@@ -3,5 +3,3 @@ contains ElfScan, MachScan, PEScan, and BinScan.  These tools are designed to
 help you analyze an executable binary and search for particular instruction
 sets.  This is particularly useful for things like building ROP chains or SEH
 exploits.
-
-WWW: https://github.com/rapid7/rex-bin_tools

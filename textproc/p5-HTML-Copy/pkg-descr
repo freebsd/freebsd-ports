@@ -1,4 +1,2 @@
 This module is to copy a HTML file without beaking links in the file.
 This module is a sub class of HTML::Parser.
-
-WWW: https://metacpan.org/release/HTML-Copy

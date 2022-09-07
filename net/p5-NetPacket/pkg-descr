@@ -2,5 +2,3 @@ NetPacket provides a base class for a cluster of modules related
 to decoding and encoding of network protocols. Each NetPacket
 descendent module knows how to encode and decode packets for the
 network protocol it implements.
-
-WWW: https://metacpan.org/release/NetPacket

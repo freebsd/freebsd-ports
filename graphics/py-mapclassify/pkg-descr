@@ -6,5 +6,4 @@ of observations to those classes. It is intended for use with upstream mapping
 and geovisualization packages (see geopandas and geoplot) that handle the
 rendering of the maps.
 
-WWW: https://pysal.org/mapclassify/
-WWW: https://github.com/pysal/mapclassify
+See also: https://github.com/pysal/mapclassify

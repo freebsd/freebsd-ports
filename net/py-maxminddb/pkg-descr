@@ -1,4 +1,2 @@
 Python module for reading MaxMind DB files. The module includes both a pure
 Python reader and a C extension.
-
-WWW: https://github.com/maxmind/MaxMind-DB-Reader-python

@@ -9,5 +9,3 @@ at your direct request, after parsing / before emitting. Internally, the data
 tree representation stores only strings and has no knowledge of types, but of
 course, every node can have a YAML type tag. ryml makes it easy and fast to
 read and modify the data tree.
-
-WWW: https://github.com/biojppm/rapidyaml

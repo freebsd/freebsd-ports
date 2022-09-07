@@ -1,4 +1,2 @@
 WWW::Mechanize::DecodedContent is a plugin to add
 decoded_content utility method to WWW::Mechanize.
-
-WWW: https://metacpan.org/release/WWW-Mechanize-DecodedContent

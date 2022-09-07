@@ -7,5 +7,3 @@ This allows them to examine and modify message content and
 meta-information during the SMTP transaction. Plugins are loaded at
 runtime and can be processed in any sequence, the processing chain
 can also be altered by a single plugin
-
-WWW: http://www.spmfilter.org/

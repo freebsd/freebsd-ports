@@ -3,5 +3,3 @@ version. You can open/save every DXF file without losing any content (except
 comments), Unknown tags in the DXF file will be ignored but preserved for
 saving. With this behavior it is possible to open also DXF drawings that
 contains data from 3rd party applications.
-
-WWW: https://ezdxf.mozman.at/

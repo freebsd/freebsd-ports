@@ -7,5 +7,3 @@ when signing in, but doing a brute force search of several billion passwords
 will take a considerable amount of time. This is in contrast to more
 traditional hash functions such as MD5 or the SHA family which can be
 implemented extremely fast on cheap hardware.
-
-WWW: https://pypi.org/project/scrypt/

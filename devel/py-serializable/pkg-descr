@@ -6,5 +6,3 @@ helpers. A derived class must either have a member data matching the name of
 each argument to __init__ or, alternatively, must provide a user-defined
 to_dict() method which returns a dictionary whose keys match the arguments to
 __init__.
-
-WWW: https://pypi.org/project/serializable/

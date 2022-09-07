@@ -12,5 +12,3 @@ options, the main one (rre) is buildable with just the standard C
 compiler and libraries on most systems (tested at various points
 on Linux, NetBSD, macOS, and Windows, on x86, x86-64, PPC [emulated],
 and various ARM processors).
-
-WWW: https://forthworks.com/retro

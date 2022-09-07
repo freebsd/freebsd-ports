@@ -16,5 +16,3 @@ the same way as the standard Random Mix plugin, you can optionally
 also choose that a smart playlist shouldn't repeat already played
 tracks and in that case the music will stop when all songs matching
 the playlist has been played.
-
-WWW: http://wiki.slimdevices.com/index.php/SQL_Playlist_plugin

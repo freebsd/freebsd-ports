@@ -3,5 +3,3 @@ negotiation algorithm. Content negotiation allows for the selection of
 a preferred content representation based upon attributes of the
 negotiable variants and the value of the various Accept* header fields
 in the request.
-
-WWW: https://metacpan.org/release/HTTP-Negotiate

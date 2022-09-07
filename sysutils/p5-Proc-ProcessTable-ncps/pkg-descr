@@ -6,5 +6,4 @@ ncps -c firefox --stats
 
 Show all firefox processes and the cumulative stats for them.
 
-WWW: https://github.com/VVelox/Proc-ProcessTable-ncps
-WWW: https://metacpan.org/release/Proc-ProcessTable-ncps
+See also: https://github.com/VVelox/Proc-ProcessTable-ncps

@@ -18,5 +18,3 @@ circuit types is included as well:
 
 The plugin also introduces a NetBox REST API extension which is compatible
 with pynetbox.
-
-WWW: https://github.com/iDebugAll/phonebox_plugin

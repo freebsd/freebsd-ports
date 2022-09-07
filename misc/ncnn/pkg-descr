@@ -7,5 +7,3 @@ learning algorithm models to mobile platforms by using the efficient ncnn
 implementation. They can create intelligent apps, and bring the artificial
 intelligence to your fingertips. ncnn is currently being used in many Tencent
 applications, such as QQ, Qzone, WeChat, Pitu and so on.
-
-WWW: https://github.com/Tencent/ncnn

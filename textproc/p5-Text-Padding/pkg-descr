@@ -5,5 +5,3 @@ provides it, but it's incredibly slow during startup / destroy time. And
 Text::Reform was segfaulting during destroy time.
 
 Hence this module, which aims to provide only those 3 methods.
-
-WWW: https://metacpan.org/release/Text-Padding

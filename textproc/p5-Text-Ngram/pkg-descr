@@ -8,5 +8,3 @@ word prediction networks, and perform spelling correction.
 
 This module provides an efficient XS-based implementation of n-gram
 spectrum analysis.
-
-WWW: https://metacpan.org/release/Text-Ngram

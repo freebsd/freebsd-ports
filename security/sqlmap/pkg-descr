@@ -3,5 +3,3 @@ capable to perform an extensive database management system back-end fingerprint,
 retrieve remote DBMS databases, usernames, tables, columns, enumerate entire
 DBMS, read system files and much more taking advantage of web application
 programming security flaws that lead to SQL injection vulnerabilities.
-
-WWW: http://sqlmap.org/

@@ -3,5 +3,3 @@ self-extracting shell scripts, and allows you to specify a "setup"
 command to execute upon finishing.
 
 It's sorta like the Windows winzip self-extracting archives.
-
-WWW: https://makeself.io/

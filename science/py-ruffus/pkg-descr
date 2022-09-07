@@ -9,5 +9,3 @@ function. Each Python function can be called in parallel to run multiple jobs.
 
 Ruffus was originally designed for use in bioinformatics to analyse multiple
 genome data sets.
-
-WWW: http://www.ruffus.org.uk

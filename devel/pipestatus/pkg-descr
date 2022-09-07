@@ -16,5 +16,3 @@ doing this but POSIX shell unfortunately doesn't provide an EASY way
 for doing this.
 
 In order to solve the problem, described above pipestatus was written.
-
-WWW: https://sourceforge.net/projects/pipestatus/

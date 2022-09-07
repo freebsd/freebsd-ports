@@ -20,5 +20,3 @@ parsedatetime is able to parse, for example, the following:
     * 5 hours before now
     * 2 hours before noon
     * 2 days from tomorrow
-
-WWW: https://github.com/bear/parsedatetime

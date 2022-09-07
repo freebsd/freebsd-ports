@@ -19,5 +19,3 @@ the complex data types employed by JSON, such as arrays and objects.
 JSON-GLib uses GLib native data types and the generic value container GValue
 for ease of development. It also provides integration with the GObject classes
 for direct serialization into, and deserialization from, JSON data streams.
-
-WWW: http://live.gnome.org/JsonGlib

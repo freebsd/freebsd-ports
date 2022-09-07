@@ -16,5 +16,3 @@ protocols are currently available:
   * PIPELINE -- aggregates messages from multiple sources and load balances
     them among many destinations
   * SURVEY -- allows to query state of multiple applications in single go
-
-WWW: https://nanomsg.org/

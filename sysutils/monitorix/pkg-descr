@@ -7,5 +7,3 @@ well.
 It mainly consists mainly of two programs: a collector, called monitorix, which
 is a Perl daemon that is started automatically like any other system service,
 and a CGI script called monitorix.cgi.
-
-WWW: https://www.monitorix.org/

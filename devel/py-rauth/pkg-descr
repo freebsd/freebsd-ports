@@ -6,5 +6,3 @@ package is wrapped around the superb Python Requests.
  * Authenticated session objects providing nifty things like keep-alive
  * Well tested (100% coverage)
  * Built on Requests
-
-WWW: https://github.com/litl/rauth

@@ -4,5 +4,3 @@ Named Entity Recognition, base NP chunking, and Text Chunking.
 YamCha is using a state-of-the-art machine learning algorithm
 called Support Vector Machines (SVMs), first introduced by
 Vapnik in 1995.
-
-WWW: http://chasen.org/~taku/software/yamcha/

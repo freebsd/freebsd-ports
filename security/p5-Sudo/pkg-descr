@@ -6,5 +6,3 @@ suidperl. Suidperl is not generally recommended for secure operation
 as another user. While sudo itself is a single point tool to enable
 one user to execute commands as another sudo does not itself make you
 any more or less secure.
-
-WWW: https://metacpan.org/release/Sudo

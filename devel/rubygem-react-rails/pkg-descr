@@ -7,5 +7,3 @@ application.  It can
 - render components server-side with prerender: true
 - generate components with a Rails generator
 - be extended with custom renderers, transformers and view helpers
-
-WWW: https://github.com/reactjs/react-rails

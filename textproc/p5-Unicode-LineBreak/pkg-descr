@@ -6,5 +6,3 @@ more details read following POD documentations:
     Text::LineFold - Line Folding for Plain Text
     Unicode::GCString - String as Sequence of UAX #29 Grapheme Clusters
     Unicode::LineBreak - UAX #14 Unicode Line Breaking Algorithm
-
-WWW: https://metacpan.org/release/Unicode-LineBreak

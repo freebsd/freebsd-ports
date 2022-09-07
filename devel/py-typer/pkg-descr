@@ -12,5 +12,3 @@ The key features are:
   import, 1 function call.
 - Grow large: Grow in complexity as much as you want, create arbitrarily complex
   trees of commands and groups of subcommands, with options and arguments.
-
-WWW: https://github.com/tiangolo/typer

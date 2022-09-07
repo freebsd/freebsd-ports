@@ -6,5 +6,3 @@ Simply put, it helps you work with dates and times with fewer imports and a lot
 less code.
 
 Arrow is heavily inspired by moment.js and requests.
-
-WWW: https://github.com/arrow-py/arrow

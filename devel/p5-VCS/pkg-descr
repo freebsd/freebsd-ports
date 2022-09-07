@@ -2,5 +2,4 @@
 from Perl code. This is achieved in a similar fashion to the `DBI'
 suite of modules. It comes with example CVS and RCS wrappers.
 
-WWW: https://web.archive.org/web/20041224075034/http://astray.com:80/VCS/
-WWW: https://metacpan.org/release/VCS
+See also: https://web.archive.org/web/20041224075034/http://astray.com:80/VCS/

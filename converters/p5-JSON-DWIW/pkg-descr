@@ -7,5 +7,3 @@ This means that any piece of data in Perl will get converted to something in
 JSON instead of throwing an exception. It also means that output will be
 strict JSON, while accepted input will be flexible, without having to set
 any options.
-
-WWW: https://metacpan.org/release/JSON-DWIW

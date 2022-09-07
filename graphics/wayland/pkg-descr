@@ -4,5 +4,3 @@ standalone display server running on Linux kernel modesetting and evdev
 input devices, an X application, or a wayland client itself. The clients can
 be traditional applications, X servers (rootless or fullscreen) or other
 display servers.
-
-WWW: https://wayland.freedesktop.org/

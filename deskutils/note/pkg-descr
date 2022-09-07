@@ -2,5 +2,3 @@ Console based tool to handle encrypted notes
 
 This is a small console program written in perl, which allows you to manage
 notes similar to programs like "knotes" from command line.
-
-WWW: https://www.daemon.de/NOTE

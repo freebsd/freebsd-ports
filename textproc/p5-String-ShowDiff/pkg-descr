@@ -5,5 +5,3 @@ each strings.
 Compared to the many other Diff modules, the output is neither in diff-style
 nor are the recognised differences on line or word boundaries, they are at
 character level.
-
-WWW: https://metacpan.org/release/String-ShowDiff

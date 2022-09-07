@@ -10,5 +10,3 @@ data. Its main features and design principles are:
 - Full Unicode support (UTF-8)
 
 - Extensive test suite
-
-WWW: https://github.com/akheron/jansson

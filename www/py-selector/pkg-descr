@@ -9,5 +9,4 @@ expressions directly or even create our own mini-language. There is a simple
 features (to MVC or whatever). Neither are there any framework specific
 features.
 
-WWW: https://pypi.org/project/selector/
-WWW: https://github.com/lukearno/selector
+See also: https://github.com/lukearno/selector

@@ -10,5 +10,3 @@ This (FreeBSD) version differs from original in the following:
 - It works as a daemon
 - Has ability to write messages to logfile
 - Can save it's PID
-
-WWW: http://www.netlab.cs.tsukuba.ac.jp/~yokota/izumi/dns_balance/

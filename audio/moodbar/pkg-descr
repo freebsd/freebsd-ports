@@ -4,5 +4,3 @@ be used by audio players to display a visual representation or
 
 The original moodbar generator developed for Amarok has become
 abandonware. This is a new implementation based on GStreamer 1.x.
-
-WWW: https://github.com/exaile/moodbar

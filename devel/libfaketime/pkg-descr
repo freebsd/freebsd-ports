@@ -16,5 +16,3 @@ libfaketime might be used for various purposes, for example
 - Using different system-wide date and time settings, e.g., on OpenVZ-
   based virtual machines running on the same host
 - Deterministic build processes.
-
-WWW: https://github.com/wolfcw/libfaketime

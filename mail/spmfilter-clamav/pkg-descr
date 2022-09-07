@@ -5,5 +5,3 @@ for virus-scanning emails. If ClamAV detects malicious software
 like viruses the affected email is discarded by the plugin.
 Optionally notifications can be enabled to inform the recipients
 and sender (configurable) about the discarded message.
-
-WWW: http://www.spmfilter.org/

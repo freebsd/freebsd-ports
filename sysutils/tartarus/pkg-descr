@@ -10,5 +10,3 @@ tartarus reads its configuration from easily manageable configuration files.
 It can store gathered data in regular files, or upload the backup directly (on
 the fly) to an FTP server. For more specific usage scenarios, custom methods
 can also be defined within the config file.
-
-WWW: http://wertarbyte.de/tartarus.shtml

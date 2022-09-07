@@ -6,5 +6,3 @@ by implementations in any programming language.
 This port itself does not contain a parser: only the necessary data to build
 one.  There exists a ref implementation, along with multiple, production-ready
 implementations in various programming languages.
-
-WWW: https://github.com/ua-parser/uap-core

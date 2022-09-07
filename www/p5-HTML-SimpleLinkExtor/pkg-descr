@@ -1,5 +1,3 @@
 This is a simple HTML link extractor designed for the person who does
 not want to deal with the intricacies of "HTML::Parser" or the de-ref-
 erencing needed to get links out of "HTML::LinkExtor".
-
-WWW: https://metacpan.org/release/HTML-SimpleLinkExtor

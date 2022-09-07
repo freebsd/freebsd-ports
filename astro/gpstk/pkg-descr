@@ -5,5 +5,3 @@ of applications.  The GPSTk provides a wide array of functions that solve
 processing problems associated with GNSS such as processing or using
 standard formats such as RINEX.  The libraries are the basis for the more
 advanced applications distributed as part of the GPSTk suite.
-
-WWW: https://github.com/SGL-UT/GPSTk

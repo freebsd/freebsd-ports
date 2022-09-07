@@ -7,5 +7,3 @@ can be output instead.
 
 This program is intended to be used in combination with a separate source
 of demodulated FM multiplex signals, such as rtl-sdr.
-
-WWW: https://github.com/windytan/redsea/

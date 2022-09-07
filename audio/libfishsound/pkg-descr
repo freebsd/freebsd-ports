@@ -12,5 +12,3 @@ a wide variety of applications; it has no direct dependencies on Ogg
 encapsulation, though it is most commonly used in conjunction with liboggz to
 decode or encode FLAC, Speex or Vorbis audio tracks in Ogg files, including Ogg
 Theora and Annodex.
-
-WWW: https://www.xiph.org/fishsound/

@@ -3,5 +3,3 @@ NOPs. This is useful in writing exploits and encoders. It allows you to dynamic
 generate variable length instruction sets that are equivalent to a No Operation
 (NOP) without using the actual 0x90 bytecode. The original code was written by
 Optyx and spoonm.
-
-WWW: https://github.com/rapid7/rex-nop

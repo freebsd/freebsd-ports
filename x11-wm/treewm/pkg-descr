@@ -18,5 +18,3 @@ Short feature list (some of them are quite unique among window managers):
   - Icons can be placed on desktops that can execute arbitrary commands
   - Only uses very common libraries, in particular it doesn't require
     GTK, Qt, or anything like that
-
-WWW: http://treewm.sourceforge.net/

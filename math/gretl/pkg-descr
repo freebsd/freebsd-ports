@@ -18,5 +18,3 @@ Features
    - Command loop structure for Monte Carlo simulations.
    - GUI controller for fine-tuning Gnuplot graphs.
    - Link to GNU R for further data analysis.
-
-WWW: http://gretl.sourceforge.net/

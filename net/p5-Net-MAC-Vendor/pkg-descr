@@ -19,5 +19,3 @@ normal hash (which is lost when the process finishes). You can preload
 this cache with the load_cache() function. So far, the module looks in the
 current working directory for a file named mac_oui.db to find the cache. I
 need to come up with a way to let the user set that location.
-
-WWW: https://metacpan.org/release/Net-MAC-Vendor

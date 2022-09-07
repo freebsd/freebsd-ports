@@ -19,5 +19,3 @@ then you should replace sameln with samerm. You can add the option -vn
 after both application for a verbose dry-run.
 
 Please see the man page samesame for a introduction to all applications.
-
-WWW: http://samesame.kruijff.org/

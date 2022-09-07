@@ -5,5 +5,3 @@ currently available general-purpose compression methods. It is similar in speed
 with deflate but offers more dense compression.
 
 The specification of the Brotli Compressed Data Format is defined in RFC 7932.
-
-WWW: https://github.com/google/brotli

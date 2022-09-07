@@ -1,3 +1,1 @@
 Re-implementation of AWK, a popular text processing language, in Go.
-
-WWW: https://github.com/benhoyt/goawk

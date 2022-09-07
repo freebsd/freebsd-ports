@@ -11,5 +11,3 @@ Complex message handling, like construction of replies and forwards, are
 implemented in separate packages which are autoloaded into this class. This
 means you can simply use these methods as if they are part of this class. Those
 package add functionality to all kinds of message objects.
-
-WWW: https://metacpan.org/release/Mail-Message

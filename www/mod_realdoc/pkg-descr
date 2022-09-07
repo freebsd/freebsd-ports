@@ -1,5 +1,3 @@
 mod_realdoc is an Apache module which does a realpath on the docroot
 symlink and sets the absolute path as the real document root for the
 remainder of the request.
-
-WWW: https://github.com/etsy/mod_realdoc

@@ -5,5 +5,3 @@ in use, the next connection will close the oldest connection data
 has been read. This way this program is not very vulnerable to so
 called `denial of service' attack, thus making this ideal "identd"
 to be used in a firewall, IP masquerading hosts etc.
-
-WWW: http://www.guru-group.fi/~too/sw/identd.readme

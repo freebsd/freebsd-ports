@@ -1,4 +1,2 @@
 This module complements Algorithm::Diff by providing three-way merge
 and diff functions.
-
-WWW: https://metacpan.org/release/Algorithm-Merge

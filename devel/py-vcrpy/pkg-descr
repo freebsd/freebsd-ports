@@ -14,5 +14,3 @@ confers several benefits including:
  * The ability to work offline
  * Completely deterministic tests
  * Increased test execution speed
-
-WWW: https://github.com/kevin1024/vcrpy

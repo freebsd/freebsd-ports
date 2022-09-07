@@ -7,5 +7,4 @@ Request Library.
  - parsing of multipart/form-data
  - parsing of HTTP Cookies
 
-WWW: https://httpd.apache.org/apreq/
-WWW: https://metacpan.org/dist/libapreq2
+See also: https://httpd.apache.org/apreq/

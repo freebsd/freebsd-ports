@@ -3,5 +3,3 @@ Test dependency between module and META.yml.
 This module reads META.yml and get build_requires and requires.
 It compares required module is really used and used module is
 really required.
-
-WWW: https://metacpan.org/release/Test-Module-Used

@@ -2,5 +2,3 @@ linux_libusb takes advantage of the FreeBSD's libusb(8) library, which
 got prepared to work correctly within the linux(4) emulation layer. It
 lets you to take a Linux binary linked with libusb.so and use it on
 FreeBSD.
-
-WWW: https://github.com/hselasky/linux_libusb

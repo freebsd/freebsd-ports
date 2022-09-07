@@ -7,5 +7,3 @@ and because there is no separate tokenizer, can include whitespace in terminals
 and have terminals which are prefixes of other terminals. DParser handles not
 just well formed computer languages and data files, but just about any wacky
 situation that occurs in the real world.
-
-WWW: http://dparser.sourceforge.net/

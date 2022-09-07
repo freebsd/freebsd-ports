@@ -7,5 +7,3 @@ code.
 Perl::Metrics::Simple is far simpler than Perl::Metrics.
 
 Installs a script called countperl.
-
-WWW: https://metacpan.org/release/Perl-Metrics-Simple

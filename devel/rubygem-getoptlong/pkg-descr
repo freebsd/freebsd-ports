@@ -7,5 +7,3 @@ options like -f
 
 The empty option -- (two minus symbols) is used to end option processing. This
 can be particularly important if options have optional arguments.
-
-WWW: https://github.com/ruby/getoptlong

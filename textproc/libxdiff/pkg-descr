@@ -11,5 +11,3 @@ to diff/patch functions. Text files for diff/patch functions require that a
 single line do not have to spawn across two different memory file blocks.
 Binary diff/patch functions require memory files to be compact. A compact
 memory files is a file whose content is stored inside a single block.
-
-WWW: http://www.xmailserver.org/xdiff-lib.html

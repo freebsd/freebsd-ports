@@ -13,6 +13,3 @@ languages")
 * a racer-based completion engine for Rust
 * an omnifunc-based completer that uses data from Vim's omnicomplete system
 to provide semantic completions for many other languages (Ruby, PHP etc.)
-
-
-WWW: https://github.com/Valloric/YouCompleteMe

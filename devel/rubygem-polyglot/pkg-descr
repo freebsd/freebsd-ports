@@ -11,5 +11,3 @@ appropriate to their purpose, instead of abusing the Ruby syntax.
 Required files are attempted first using the normal Ruby loader,
 and if that fails, Polyglot conducts a search for a file having
 a supported extension.
-
-WWW: https://github.com/cjheath/polyglot

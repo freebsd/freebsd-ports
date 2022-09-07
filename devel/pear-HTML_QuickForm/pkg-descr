@@ -11,5 +11,3 @@ Features:
 * Total customization of form rendering.
 * Support for external template engines (ITX, Sigma, Flexy, Smarty).
 * Pluggable elements, rules and renderers extensions.
-
-WWW: https://pear.php.net/package/HTML_QuickForm

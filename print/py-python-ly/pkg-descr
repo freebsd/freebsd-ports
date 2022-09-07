@@ -9,5 +9,3 @@ music typesetter LilyPond (www.lilypond.org).
 The python-ly package is Free Software, licensed under the GPL.  This
 package is written by the Frescobaldi developers and is used extensively by
 the Frescobaldi project.  The main author is Wilbert Berendsen.
-
-WWW: https://github.com/wbsoft/python-ly

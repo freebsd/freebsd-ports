@@ -2,5 +2,3 @@ Metasploit::Concern allows you to define concerns in app/concerns that will
 automatically be included in matching classes.  It can be used to automate
 adding new associations to ActiveRecord::Base models from gems and
 Rails::Engines.
-
-WWW: https://github.com/rapid7/metasploit-concern

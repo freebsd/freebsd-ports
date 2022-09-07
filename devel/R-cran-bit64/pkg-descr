@@ -5,5 +5,3 @@ doubles, characters and factors as well as many elementwise and
 summary functions. Many fast algorithmic operations such as 'match'
 and 'order' support interactive data exploration and manipulation
 and optionally leverage caching.
-
-WWW: https://cran.r-project.org/web/packages/bit64/

@@ -11,5 +11,3 @@ This module also installs a program called tt-render which you can use
 from the command line to render templates with all the power of the Perl
 object. All of the object methods become command line arguments in the
 command line version.
-
-WWW: https://metacpan.org/release/Template-Toolkit-Simple

@@ -12,5 +12,3 @@ the NTP protocol and can act as either a client or a server.
 chronyc provides a user interface to chronyd for monitoring its performance
 and configuring various settings.  It can do so while running on the same
 computer as the chronyd instance it is controlling or a different computer.
-
-WWW: http://chrony.tuxfamily.org/

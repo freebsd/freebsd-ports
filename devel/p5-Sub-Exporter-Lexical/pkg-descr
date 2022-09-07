@@ -2,5 +2,3 @@ Sub::Exporter::Lexical provides an alternate installer for Sub::Exporter.
 Installers are documented in Sub::Exporter's documentation; all you need to know
 is that by using Sub::Exporter::Lexical's installer, you can import routines
 into a lexical scope that will be cleaned up when that scope ends.
-
-WWW: https://metacpan.org/release/Sub-Exporter-Lexical

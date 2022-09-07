@@ -5,5 +5,3 @@ boot is enabled and the binary is not signed with an appropriate key, for
 instance) it will then validate the binary against a built-in certificate. If
 this succeeds and if the binary or signing key are not blacklisted then shim
 will relocate and execute the binary.
-
-WWW: https://github.com/mjg59/shim

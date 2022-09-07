@@ -8,5 +8,3 @@ Standards) X0510:2004 or ISO/IEC 18004. Currently the following features are
 not supported:
     * ECI and FNC1 mode
     * QR Code model 1
-
-WWW: https://github.com/fukuchi/libqrencode

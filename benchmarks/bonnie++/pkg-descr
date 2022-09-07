@@ -9,5 +9,3 @@ The main program tests database type access to a single file (or a set
 of files if you wish to test more than 1G of storage), and it tests
 creation, reading, and deleting of small files which can simulate the
 usage of programs such as Squid, INN, or Maildir format email.
-
-WWW: http://www.coker.com.au/bonnie++/

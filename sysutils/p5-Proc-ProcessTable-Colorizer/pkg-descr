@@ -16,5 +16,3 @@ Searching is currently possible against the following criteria.
  wait channel in use
 
 bin/cps - A colorized version of ps with various extra useful options
-
-WWW: https://metacpan.org/release/Proc-ProcessTable-Colorizer

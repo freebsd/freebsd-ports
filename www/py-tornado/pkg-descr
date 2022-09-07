@@ -12,5 +12,4 @@ real-time web services. We built the web server specifically to handle
 FriendFeed's real-time features - every active user of FriendFeed maintains an
 open connection to the FriendFeed servers.
 
-WWW: https://www.tornadoweb.org/
-WWW: https://github.com/tornadoweb/tornado
+See also: https://github.com/tornadoweb/tornado

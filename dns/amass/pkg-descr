@@ -14,5 +14,3 @@ this process, Amass queries for associated netblocks and ASNs. As additional
 data sources become available to provide visibility of the Internet,
 implementations can quickly be developed within Amass due to the simple
 interfaces worked into the design.
-
-WWW: https://owasp.org/www-project-amass/

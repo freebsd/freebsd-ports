@@ -6,5 +6,3 @@ Package comes with a vignette describing how to write HTML reports for
 statistical analysis. Finally, a driver for Sweave allows to parse HTML flat
 files containing R code and to automatically write the corresponding outputs
 (tables and graphs).
-
-WWW: https://cran.r-project.org/package=R2HTML

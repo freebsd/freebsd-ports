@@ -3,5 +3,3 @@ that can be used for authenticating against a kerberos5 realm.
 Bindings for nearly the complete GSSAPI (RFC2744).
 The administrative interface (KADM5).
 Support for HTTP Negotiate authentication via GSSAPI.
-	
-WWW: https://pecl.php.net/package/krb5

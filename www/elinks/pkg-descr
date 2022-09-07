@@ -17,5 +17,3 @@ So far elinks adds the following to links:
      ability to switch off document-specific colors
      Spidermonkey-based ECMAScript support
      Syntax highlighting for HTML, RSS, and XBEL
-
-WWW: https://github.com/rkd77/elinks/

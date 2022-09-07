@@ -4,5 +4,4 @@ based on previous runs.
 Inspired by Yandex's canondata plugin, pytest-needle and
 pytest-regtest.
 
-WWW: https://pypi.org/project/pytest-canonical-data/
-WWW: https://github.com/shuternay/pytest-canonical-data
+See also: https://github.com/shuternay/pytest-canonical-data

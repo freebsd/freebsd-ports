@@ -1,4 +1,2 @@
 Plugin for setuptools that provides bdist_pkg command for building FreeBSD
 package artifact.
-
-WWW: https://github.com/kxepal/setuptools-pkg

@@ -5,5 +5,3 @@ documents (HTML, XML, etc.) that can be read by ElementTree-like parsers
 Unlike cssselect, it does not translate selectors to XPath and therefore does
 not have all the correctness corner cases that are hard or impossible to fix in
 cssselect.
-
-WWW: https://github.com/Kozea/cssselect2

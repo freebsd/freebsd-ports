@@ -4,5 +4,3 @@ Vulkan's shader language.
 Based on the reference glslang compiler, Shaderc aims to provide a more
 convenient command-line compiler with GCC/clang-like usage and a library
 with a more stable API.
-
-WWW: https://github.com/google/shaderc

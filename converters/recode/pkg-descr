@@ -7,5 +7,3 @@ This program recognizes or produces around 150 different character
 sets and is able to transliterate files between almost any pair.
 
 Most RFC 1345 character sets are supported.
-
-WWW: http://www.gnu.org/software/recode/recode.html

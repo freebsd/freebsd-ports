@@ -6,5 +6,3 @@ specific notifications posted by other objects. When an event occurs,
 an object posts an appropriate notification to the Event_Dispatcher.
 The Event_Dispatcher dispatches a message to each registered
 observer, passing the notification as the sole argument.
-
-WWW: https://pear.php.net/package/Event_Dispatcher

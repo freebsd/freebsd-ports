@@ -11,5 +11,3 @@ Trio was built from the ground up to take advantage of the latest Python
 features, and draws inspiration from many sources, in particular Dave Beazley's
 Curio. The resulting design is radically simpler than older competitors like
 asyncio and Twisted, yet just as capable.
-
-WWW: https://pypi.org/project/trio/

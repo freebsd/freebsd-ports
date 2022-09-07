@@ -8,5 +8,3 @@ specifically targeting graph analytics.
   coarse-grained parallelism.
 * CombBLAS powers HipMCL, a highly-scalable parallel implementation of the
   Markov Cluster Algorithm (MCL).
-
-WWW: https://people.eecs.berkeley.edu/~aydin/CombBLAS/html/

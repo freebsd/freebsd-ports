@@ -12,5 +12,3 @@ With it, one can easily:
  - Rename or alias attributes to change the name from the model
  - Append attributes from a child into a parent node
  - Include nodes only if a certain condition has been met
-
-WWW: https://github.com/nesquena/rabl

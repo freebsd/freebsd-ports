@@ -15,5 +15,3 @@ While there are many kinds of delays (caret movement, line editing, etc.),
 typing latency is a major predictor of editor usability.
 
 Java 8 or later is required to run the program.
-
-WWW: https://pavelfatin.com/typometer/

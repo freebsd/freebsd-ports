@@ -17,5 +17,3 @@ ADIOS 2 focuses on:
 * Ease of Use two-level application programming interface (APIs)
 * Full APIs for HPC applications: C++11, Fortran 90, C 99, Python 2 and 3
 * Simplified High-Level APIs for data analysis: Python 2 and 3, C++11, Matlab
-
-WWW: https://github.com/ornladios/ADIOS2

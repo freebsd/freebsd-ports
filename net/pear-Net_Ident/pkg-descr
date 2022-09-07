@@ -6,5 +6,3 @@ Protocol") provides a means to determine the identity of a user
 of a particular TCP connection. Given a TCP port number pair, it
 returns a character string which identifies the owner of that
 connection on the server's system.
-
-WWW: https://pear.php.net/package/Net_Ident

@@ -2,5 +2,3 @@ Straightfoward pure-ruby first-class Protocol Buffers library. Supports
 optional and required fields, repeated and packed repeated fields,
 varints, 32 and 64 bit fields, length-delimited fields, embedded
 messages and enums, and defaults. Per spec, unknown fields are ignored.
-
-WWW: https://github.com/protobuf-ruby/beefcake

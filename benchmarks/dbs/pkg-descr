@@ -5,5 +5,3 @@ flow control, retransmission control and congestion avoidance.
  simultaneously, and
 -It has the capability of measuring the changes of application
  level throughput at every data transmission.
-
-WWW: http://www.kusa.ac.jp/~yukio-m/dbs/

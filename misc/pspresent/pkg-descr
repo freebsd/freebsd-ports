@@ -1,5 +1,3 @@
 pspresent is a presentation tool to display full-screen PostScript
 presentations. It provides simple navigation, and double-buffers for
 seamless transitions.
-
-WWW: http://www.zmatt.net/pspresent/

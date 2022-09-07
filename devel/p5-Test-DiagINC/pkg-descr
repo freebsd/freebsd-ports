@@ -8,5 +8,3 @@ program is about to exit with a non-zero exit code or if
 $test_builder->is_passing is false by the time the END block is reached. If that
 happens, this module prints out the names and version numbers of non-local
 modules appearing in %INC at the end of the test.
-
-WWW: https://metacpan.org/release/Test-DiagINC

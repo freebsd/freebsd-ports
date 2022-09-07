@@ -7,5 +7,3 @@ Differences from RFC7601:
   against RFC but has been seen in headers added by Yahoo!.
 - Comments added between key/value pairs will be added after them in the data
   structures and when stringified.
-
-WWW: https://metacpan.org/release/Mail-AuthenticationResults

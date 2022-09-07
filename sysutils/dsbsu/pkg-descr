@@ -1,4 +1,2 @@
 DSBSu is a simple Qt frontend to FreeBSD's su(1). It allows you to execute
 a command as root.
-
-WWW: https://github.com/mrclksr/DSBSu

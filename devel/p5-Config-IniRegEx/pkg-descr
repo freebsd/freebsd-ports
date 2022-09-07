@@ -4,5 +4,3 @@ aims out doing a regex search for Sections, and Parameters
 of the Ini configuration file. It does the Perl regex matching,
 nothing external. So whoever knows the Perl basic regex can
 use this feature.
-
-WWW: https://metacpan.org/release/Config-IniRegEx

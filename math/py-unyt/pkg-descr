@@ -7,5 +7,3 @@ priori.
 
 The unyt package (pronounced like "unit") provides a subclass of NumPy's ndarray
 class that knows about units.
-
-WWW: https://github.com/yt-project/unyt

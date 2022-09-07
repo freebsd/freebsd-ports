@@ -1,4 +1,2 @@
 Term::Encoding is a simple module to detect an encoding the current terminal
 expects, in various ways.
-
-WWW: https://metacpan.org/release/Term-Encoding

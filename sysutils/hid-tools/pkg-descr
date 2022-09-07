@@ -12,5 +12,3 @@ version of it.  hid-decode takes binary report descriptors, strings of
 bytes, and other formats.
 
 hid-tools requires hidraw.ko driver to be loaded in to kernel.
-
-WWW: https://gitlab.freedesktop.org/libevdev/hid-tools

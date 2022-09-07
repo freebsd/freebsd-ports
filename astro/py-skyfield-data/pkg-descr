@@ -19,5 +19,3 @@ positions, etc. Several issues are raised by these data files:
     making any computation using them.
 
 This package provides at least the most common of these assets.
-
-WWW: https://github.com/brunobord/skyfield-data

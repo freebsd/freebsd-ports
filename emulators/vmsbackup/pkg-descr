@@ -6,5 +6,3 @@ Main features:
  - can preserve directory structure.
  - excludes vms specific files (eg executables and objects).
  - converts vms version numbering semicolons to colons.
-
-WWW: http://www.panix.com/~kingdon/vms/backup.html

@@ -13,5 +13,3 @@ computation, and leverages OpenGL for rendering.
    the WASI format (C, Rust, AssemblyScript)
  - Built-in terminal, so you can execute commands in your workspace,
    without leaving Lapce.
-
-WWW: https://lapce.dev/

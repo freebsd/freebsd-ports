@@ -1,4 +1,2 @@
 FreeBSD-telnetd: This is/was FreeBSD libexec/telnetd prior to its removal
 in FreeBSD-14.
-
-WWW: https://github.com/cschuber/freebsd-telnetd

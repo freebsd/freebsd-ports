@@ -17,5 +17,3 @@ own programs. Main features of LIBSVM include
     It's also included in some learning environments: YALE and PCP.
   * Automatic model selection which can generate contour of cross valiation
     accuracy.
-
-WWW: http://www.csie.ntu.edu.tw/~cjlin/libsvm/

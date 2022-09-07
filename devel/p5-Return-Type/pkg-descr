@@ -6,5 +6,3 @@ If the attribute is passed a single type constraint as shown, this will be
 applied to the return value if called in scalar context, and to each item in the
 returned list if called in list context. (If the sub is called in void context,
 type constraints are simply ignored.)
-
-WWW: https://metacpan.org/release/Return-Type

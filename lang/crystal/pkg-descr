@@ -7,5 +7,3 @@ Crystal is a programming language with the following goals:
 - Have compile-time evaluation and generation of code, to
   avoid boilerplate code.
 - Compile to efficient native code.
-
-WWW: https://crystal-lang.org

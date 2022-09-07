@@ -4,5 +4,3 @@ than the traditional, non-compressed, direct memory fetch approach
 via a memcpy() OS call. Blosc is the first compressor (that I'm aware of)
 that is meant not only to reduce the size of large datasets on-disk or
 in-memory, but also to accelerate memory-bound computations.
-
-WWW: https://blosc.org/

@@ -4,5 +4,3 @@ information from malicious xls documents.
 
 Xlrd Purpose: Provide a library for developers to use to extract data from
 Microsoft Excel (tm) spreadsheet files. It is not an end-user tool.
-
-WWW: https://github.com/DissectMalware/xlrd2

@@ -11,5 +11,3 @@ It can analyze log files from IIS (W3C log format), Apache log files
 (NCSA combined/XLF/ELF log format or common/CLF log format), WebStar
 and most of all web, proxy, WAP, and streaming servers (and FTP
 servers or mail logs).
-
-WWW: http://www.awstats.org/

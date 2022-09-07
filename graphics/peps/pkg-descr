@@ -4,5 +4,3 @@ anti-aliasing.  You can use it as a stand-alone Postscript-to-bitmap
 conversion program, or use it on-line to create bitmaps on the fly and send
 them out to a web browser, even compressing them if the browser supports
 gzip compression.
-
-WWW: http://peps.redprince.net/peps/

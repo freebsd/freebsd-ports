@@ -7,5 +7,3 @@ file against a running ldap directory. ldapdiff is able to produce ldif
 delta files in ldap version 3 format, which can be fed, into tools like
 "ldapmodify", "ldapdelete" etc. ldapdiff is also able to modify, delete
 and add entries/attributes online.
-
-WWW: https://launchpad.net/ldapdiff

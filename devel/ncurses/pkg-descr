@@ -9,5 +9,3 @@ The ncurses library uses a terminfo database (included), but can
 be configured to use BSD's /etc/termcap file instead.  This has
 been approved by the old 4.4BSD curses maintainer as the official
 4.4BSD curses successor.
-
-WWW: https://invisible-island.net/ncurses/

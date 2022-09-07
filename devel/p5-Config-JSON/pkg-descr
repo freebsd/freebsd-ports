@@ -1,4 +1,2 @@
 This package parses the config files written in JSON. It also does some
 non-JSON stuff, like allowing for comments in the files.
-
-WWW: https://metacpan.org/release/Config-JSON

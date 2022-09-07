@@ -9,5 +9,3 @@ tunning that reflects the desktop the user wants or is familiar
 with. Internally, it is based around a file-system like structure
 ("the menu") and everything else is references to paths within this
 structure.
-
-WWW: http://durden.arcan-fe.com/

@@ -13,5 +13,3 @@ Unicorn offers some unparalleled features:
 - Support for fine-grained instrumentation at various levels
 - Thread-safety by design
 - Distributed under free software license GPLv2
-
-WWW: https://www.unicorn-engine.org/

@@ -4,5 +4,3 @@ supports autodiscovery of your addressbook url via well-known URLs so you can
 just point it to your servers base url.
 
 This port comes with Composer dependencies vendored in.
-
-WWW: https://github.com/mstilkerich/rcmcarddav

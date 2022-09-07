@@ -9,5 +9,3 @@ values (as shown in the link above).
 Standard INI parsers (like Config::INI) are not made to parse this sort of
 structure (nor should they). So Config::AWS exists to provide a suitable and
 lightweight ad-hoc parser that can be used in other applications.
-
-WWW: https://metacpan.org/dist/Config-AWS

@@ -5,5 +5,3 @@ capitulation-inducing poor performance, with far more capabilities,
 and with a design that scales usability-wise beyond trivial rewriting
 cases. git filter-repo is now recommended by the git project instead of
 git filter-branch.
-
-WWW: https://github.com/newren/git-filter-repo

@@ -4,5 +4,3 @@ library interface to the callers, thus avoiding erroneous ioctls, etc.
 
 The eventual goal is that libevdev wraps all ioctls available to evdev
 devices, thus making direct access unnecessary.
-
-WWW: https://www.freedesktop.org/wiki/Software/libevdev/

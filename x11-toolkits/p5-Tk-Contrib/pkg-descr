@@ -7,5 +7,3 @@ Tk::Axis - Canvas with Axes
 Tk::Dial - an alternative to the Scale widget
 Tk::OlWm - Interface to OpenLook properties of Toplevel widget
 Tk::TiedListbox - gang together Listboxes
-
-WWW: https://metacpan.org/release/Tk-Contrib

@@ -7,5 +7,3 @@ Alternatively, it may be invoked with file names as arguments:
 
 Suffice it to say that input defaults to '-', the standard input, and output
 defaults to '-', the standard output.
-
-WWW: https://pypi.org/project/PythonTidy/

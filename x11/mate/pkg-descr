@@ -17,5 +17,3 @@ This metaport installs MATE base (lite, a lean desktop) plus
 extras applications such as text editor, archiver manager and
 etc. If you do not want to have the bloats, please install
 x11/mate-base.
-
-WWW: http://www.FreeBSD.org/gnome/

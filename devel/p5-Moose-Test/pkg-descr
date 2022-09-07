@@ -1,5 +1,3 @@
 This module provides an abstraction over the Moose test
 cases such that it makes it easier for them to be re-used
 in different contexts.
-
-WWW: https://metacpan.org/release/Moose-Test

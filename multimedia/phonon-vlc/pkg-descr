@@ -1,4 +1,2 @@
 Phonon is the multimedia framework for KDE Software Compilation.
 This port provides the VLC backend.
-
-WWW: https://invent.kde.org/libraries/phonon-vlc

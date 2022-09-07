@@ -1,4 +1,2 @@
 A Python library designed to ease the use of the JIRA REST API. Some basic
 support for the GreenHopper REST API also exists.
-
-WWW: https://bitbucket.org/bspeakmon/jira-python

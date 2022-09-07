@@ -8,5 +8,3 @@ guide.
 The point of this plugin is to be able to run black --check ... from within the
 flake8 plugin ecosystem. You might use this via a git pre-commit hook, or as
 part of your continuous integration testing.
-
-WWW: https://github.com/peterjc/flake8-black

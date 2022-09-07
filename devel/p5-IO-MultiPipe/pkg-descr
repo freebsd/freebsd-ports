@@ -16,5 +16,3 @@ It uses open3 to run each chunk of the pipe.
 
     #'123-ABCxyz' through the command set above.
     my $returned=$pipes->run('123-ABCxyz');
-
-WWW: https://metacpan.org/release/IO-MultiPipe

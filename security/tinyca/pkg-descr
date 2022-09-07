@@ -17,5 +17,3 @@ Currently TinyCA supports the following features:
 		Internet Explorer, Outlook (Express) and FreeS/WAN
     * Certificate Revocation List
           o CRLs can be exported as: PEM, DER and TXT
-
-WWW: https://opsec.eu/src/tinyca/

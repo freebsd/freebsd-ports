@@ -15,5 +15,3 @@ This library enables scripts to size their images at run-time and include
 that as part of the generated HTML. Or for any other utility that uses and
 manipulates graphics. The idea of the basic interface + wrappers is to not
 limit the programmer to a certain data format.
-
-WWW: https://metacpan.org/release/Image-Size

@@ -8,5 +8,3 @@ Features:
 * Header-only library, no installation or build required
 * Compatible with C99 and C++11
 * Fully covered with unit tests and microbenchmarks
-
-WWW: https://github.com/Maratyszcza/FP16

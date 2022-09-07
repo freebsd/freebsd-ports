@@ -9,5 +9,3 @@ Also implementation without priority change support is
 provided(SimplePairingHeap), while the asymptotical complexity of the methods
 stay the same, bookkeeping of elements is not needed making, the constant
 smaller.
-
-WWW: https://github.com/mhib/pairing_heap

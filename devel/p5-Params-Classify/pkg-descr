@@ -8,5 +8,3 @@ These functions only provide type classification; they do not enforce
 type restrictions. Type enforcement may, of course, be built using
 these classification functions, but the reader's attention is drawn
 to Params::Validate.
-
-WWW: https://metacpan.org/release/Params-Classify

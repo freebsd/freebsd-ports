@@ -6,5 +6,3 @@ for a given OS or any other case of needing to provide multiple implementations.
 Module::Implementation is only useful when you know all the implementations
 ahead of time. If you want to load arbitrary implementations then you probably
 want something like a plugin system, not this module.
-
-WWW: https://metacpan.org/release/Module-Implementation

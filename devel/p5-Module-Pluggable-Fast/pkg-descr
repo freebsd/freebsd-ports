@@ -1,4 +1,2 @@
 Similar to Module::Pluggable but instantiates plugins as soon as they're
 found, useful for code generators like Class::DBI::Loader.
-
-WWW: https://metacpan.org/release/Module-Pluggable-Fast

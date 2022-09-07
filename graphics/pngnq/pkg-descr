@@ -6,5 +6,3 @@ Anthony Dekker's neuquant algorithm.
 The neuquant algorithm uses a neural network to optimise the color map
 selection. This is fast and quite accurate, giving good results on many
 types of images.
-
-WWW: http://pngnq.sourceforge.net/

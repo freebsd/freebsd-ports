@@ -2,5 +2,3 @@ Genplist automatically creates a static plist for a port by installing it
 into a temporary directory, and then examining the directory tree.  The
 process is based on the instructions for plist generation in the
 FreeBSD Porter's Handbook.
-
-WWW: http://personalpages.tds.net/~jwbacon/Ports

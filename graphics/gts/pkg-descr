@@ -17,5 +17,3 @@ A brief summary of its main features:
    - Graph operations: traversal, graph partitioning.
    - Metric operations (area, volume, curvature ...).
    - Triangle strips generation for fast rendering.
-
-WWW: http://gts.sourceforge.net/

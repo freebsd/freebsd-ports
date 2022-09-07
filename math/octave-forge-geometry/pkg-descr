@@ -7,5 +7,3 @@ This is geometry.
 
  Library for geometric computing extending MatGeom functions. Useful to create,
  transform, manipulate and display geometric primitives.
-
-WWW: http://octave.sourceforge.net/

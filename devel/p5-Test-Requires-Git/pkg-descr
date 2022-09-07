@@ -5,5 +5,3 @@ The "current git" is obtained by running git --version (so the first git binary
 found in the PATH will be tested).
 
 If the checks fail, then all tests will be skipped.
-
-WWW: https://metacpan.org/release/Test-Requires-Git

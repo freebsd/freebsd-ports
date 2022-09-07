@@ -19,5 +19,3 @@ first expressed in the second quantization formalism, comprising fermionic
 excitation and annihilation operators. These can then be mapped to the qubit
 formalism using a variety of mappings such as Jordan-Wigner, Parity, and more,
 in readiness for the quantum computation.
-
-WWW: https://qiskit.org/

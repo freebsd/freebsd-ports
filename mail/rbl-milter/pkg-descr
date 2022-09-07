@@ -6,5 +6,3 @@ This is useful if you'd rather have the mail user agent (MUA) deal with
 potential spam rather than just blocking it in case you loose
 legitimate messages.  Note that the X-RBL-Warning header is only set if
 the site was found to be an open-relay.
-
-WWW: https://github.com/jbeker/rbl-milter

@@ -20,5 +20,3 @@ Features:
 * Shape drawing (line, arrow, circle, rect), resizing and rotation
 * Rotation snapping every 45 degrees, rect snapping to grid
 * Audio recording and playback alongside with handwritten notes
-
-WWW: https://github.com/xournalpp/xournalpp

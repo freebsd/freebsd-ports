@@ -1,4 +1,2 @@
 R-cran-gpclib is a general polygon clipping routines for
 R based on Alan Murta's C library.
-
-WWW: https://github.com/rdpeng/gpclib

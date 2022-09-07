@@ -7,5 +7,3 @@ of rsync connections to separate clients in parallel, the ability to use
 multiple logical partitions (vaults) in a configurable fashion for purposes
 of redundancy and added reliability, and the use of hard links for files that
 have not changed from one archive to the next.
-
-WWW: http://rvm.sourceforge.net/

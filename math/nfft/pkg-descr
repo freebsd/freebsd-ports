@@ -14,5 +14,3 @@ transforms:
  - to the hyperbolic cross (NSFFT)
 3. Generalised inverse transformations based on iterative methods, e.g.
    CGNR/CGNE
-
-WWW: https://www-user.tu-chemnitz.de/~potts/nfft

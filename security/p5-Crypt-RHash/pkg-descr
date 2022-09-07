@@ -4,5 +4,3 @@ text message.
 
 Resulting hash digest can be obtained in hexadecimal, BASE32, BASE64, raw
 binary format or as a magnet link.
-
-WWW: https://metacpan.org/release/Crypt-RHash

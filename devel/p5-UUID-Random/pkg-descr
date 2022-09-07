@@ -2,5 +2,3 @@ UUID::Random generates random uuid strings. It does not satisfy any of the
 points listed in RFC 4122 but the default format.
 
 If you need RFC compliant UUID strings have a look at Data::UUID.
-
-WWW: https://metacpan.org/release/UUID-Random

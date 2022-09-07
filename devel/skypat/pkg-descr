@@ -9,5 +9,3 @@ to ensure correctness and to evaluate performance of a region of code. With
 perf_events, SkyPat can evaluate running time precisely without interference to
 scheduler. Moreover, perf_event also gives SkyPat accurate cycle counts that are
 useful for tools that are sensitive to variance of timing, such as compilers.
-
-WWW: https://skypat.skymizer.com/

@@ -4,5 +4,3 @@ useful when testing accessibility. One of them writes all accessibiliy
 interfaces an application provides as text output. The other, more advanced
 application shows a tree of objects and allows some interaction and
 exploration.
-
-WWW: https://github.com/kde/libqaccessibilityclient

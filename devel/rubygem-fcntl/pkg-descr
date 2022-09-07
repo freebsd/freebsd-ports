@@ -5,5 +5,3 @@ used with both the fcntl(2) and open(2) POSIX system calls.
 
 The set of operations and constants available depends upon specific operating
 system. Some values listed below may not be supported on your system.
-
-WWW: https://github.com/ruby/fcntl

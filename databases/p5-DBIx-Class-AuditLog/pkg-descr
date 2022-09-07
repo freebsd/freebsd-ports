@@ -1,4 +1,2 @@
 Simple activity audit logging for DBIx::Class. Save the update contents in
 another tables.
-
-WWW: https://metacpan.org/release/DBIx-Class-AuditLog

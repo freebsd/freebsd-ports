@@ -18,5 +18,3 @@ Major features:
   - In the converter, we can generate some training/inference code snippet to
     simplify the retrain/evaluate work
 * Deployment
-
-WWW: https://github.com/microsoft/MMdnn

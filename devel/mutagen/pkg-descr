@@ -7,5 +7,3 @@ container filesystems.
 Mutagen is designed specifically to support remote development scenarios, with
 configurable behaviors specifically designed to help developers edit code
 locally while building, running, or packaging it in a remote environment.
-
-WWW: https://mutagen.io/

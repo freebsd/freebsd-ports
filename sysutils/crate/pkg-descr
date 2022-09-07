@@ -13,5 +13,3 @@ Containers can be useful in these scenarios:
   your system, and there will be no chance for them seeing your disks.
 
 crate is in its alpha stage. Things might not work as expected!
-
-WWW: https://github.com/yurivict/crate

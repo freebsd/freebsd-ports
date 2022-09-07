@@ -3,5 +3,3 @@ command line tool, that can be found in the easy-rsa subdirectory of the
 OpenVPN distribution.  While this tool is primary concerned with key
 management for the SSL VPN application space, it can also be used for
 building web certificates.
-
-WWW: https://github.com/OpenVPN/easy-rsa

@@ -2,5 +2,3 @@ Net::Google::PicasaWeb - use Google's Picasa Web API
 
 This is both a library and a set of simple scripts for
 reading information about a Google PicasaWeb account.
-
-WWW: https://metacpan.org/release/Net-Google-PicasaWeb

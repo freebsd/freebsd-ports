@@ -3,5 +3,3 @@ object with some overloaded operators, supporting the concept of Folding
 and Diversion.  This allows nested generation of structured output. The
 idea is to decouple the sequential generation of output from the nested
 and non-sequential structure of the output.
-
-WWW: https://metacpan.org/release/String-Divert

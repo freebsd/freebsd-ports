@@ -1,3 +1,1 @@
 Plack handler to run PSGI apps on AnyEvent::HTTPD.
-
-WWW: https://metacpan.org/release/Plack-Handler-AnyEvent-HTTPD

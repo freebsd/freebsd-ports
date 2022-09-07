@@ -4,5 +4,3 @@ unrelated, except in that they all deal with the ELF file format.
 The main purpose of these programs is to be illustrative and
 educational -- to help fellow programmers understand the ELF file
 format and something of how it works under the Linux platform.
-
-WWW: https://www.muppetlabs.com/~breadbox/software/elfkickers.html

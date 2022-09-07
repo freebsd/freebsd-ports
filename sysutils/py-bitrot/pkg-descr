@@ -4,5 +4,3 @@ photo and music collection from slow decay.
 It reports on files whose contents have changed without their
 modification times being updated.  This may be an indication of
 bitrot.
-
-WWW: https://github.com/ambv/bitrot

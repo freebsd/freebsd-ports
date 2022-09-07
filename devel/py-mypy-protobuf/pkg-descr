@@ -1,4 +1,2 @@
 mypy-protobuf generates mypy stub files from protobuf specs. protoc-gen-mypy is
 a python implementation of the plugin.
-
-WWW: https://github.com/nipunn1313/mypy-protobuf

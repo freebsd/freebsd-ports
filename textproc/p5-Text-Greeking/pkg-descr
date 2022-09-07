@@ -10,5 +10,3 @@ This module was created to quickly give developers simulated content to fill
 systems with simulated content. Instead of static Lorem Ipsum text, by using
 randomly generated text and optionally varying word sources, repetitive and
 monotonous patterns that do not represent real system usage is avoided.
-
-WWW: https://metacpan.org/release/Text-Greeking

@@ -9,5 +9,3 @@ turned into underscores. The values of the hash are the objects.
 
 So if the cursor returns Foo::User and Foo::Page objects, the keys are
 "user" and "page".
-
-WWW: https://metacpan.org/release/Template-Iterator-AlzaboWrapperCursor

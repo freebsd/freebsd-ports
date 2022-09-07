@@ -5,5 +5,3 @@ to those returned by csv.reader(). This package:
 - provides a single interface across Python versions (including seamless
   Unicode-aware CSV support for Python 2).
 - is easy to incorporate into your own projects.
-
-WWW: https://github.com/shawnbrown/get_reader

@@ -8,5 +8,3 @@ Methodology underlying the program includes a minimal sampling
 strategy for genomic mapping, oligomer chaining for approximate
 alignment, sandwich DP for splice site detection, and microexon
 identification with statistical significance testing.
-
-WWW: http://www.gene.com/share/gmap

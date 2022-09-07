@@ -1,4 +1,2 @@
 Module::Build::Pluggable::ReadmeMarkdownFromPod generates README.mkdn from pod
 file.
-
-WWW: https://metacpan.org/release/Module-Build-Pluggable-ReadmeMarkdownFromPod

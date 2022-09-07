@@ -8,5 +8,3 @@ framework. It comes with a ports overlay that replaces the
 default do-fetch and checksum targets.
 
 This is an experiment. Use at your own risk.
-
-WWW: https://github.com/t6/parfetch

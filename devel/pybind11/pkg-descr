@@ -5,5 +5,3 @@ extension modules by inferring type information using compile-time
 introspection.
 
 This is the cmake part of pybind11.
-
-WWW: https://github.com/wjakob/pybind11

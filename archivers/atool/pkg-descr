@@ -8,5 +8,3 @@ tar+gzip, zip, etc.). It provides the following commands:
 
 Optional dependencies: lbzip2 or pbzip2, lzip, plzip, lzop, lzma, zip,
 unzip, unrar, lha, unace, arj, arc, nomarch, p7zip, unalz.
-
-WWW: http://www.nongnu.org/atool/

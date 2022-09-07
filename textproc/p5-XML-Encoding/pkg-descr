@@ -1,4 +1,2 @@
 This module, which is built as a subclass of XML::Parser, provides a parser
 for encoding map files, which are XML files.
-
-WWW: https://metacpan.org/release/XML-Encoding

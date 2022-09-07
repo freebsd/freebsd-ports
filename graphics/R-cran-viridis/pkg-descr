@@ -9,5 +9,3 @@ when converted to black-and-white. They are also designed to be
 perceived by readers with the most common form of color blindness
 (all color maps in this package) and color vision deficiency
 ('cividis' only).
-
-WWW: https://cran.r-project.org/web/packages/viridis/

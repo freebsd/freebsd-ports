@@ -13,5 +13,3 @@ configured.
 AND also provides network-wide configuration files with host-specific
 sections, as well as wildcard/regexp support for commands in the priority
 database.
-
-WWW: http://and.sourceforge.net/

@@ -18,5 +18,3 @@ doesn't need to know what language the function is implemented in.
 
 The main property of fungw is simplicity.  The only API between objects
 is the plain old function call mechanism.
-
-WWW: http://www.repo.hu/projects/fungw/

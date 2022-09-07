@@ -20,5 +20,3 @@ IPv6 -
 * The ability to "split" a network based on a smaller netmask,
   now also with recursive runs on the generated subnets.
 * DNS resolution.
-
-WWW: http://www.routemeister.net/projects/sipcalc/

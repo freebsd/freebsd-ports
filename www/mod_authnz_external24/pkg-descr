@@ -7,5 +7,3 @@ Mod_authnz_external is a flexible tool for creating authentication systems based
 on other databases.
 
 This port gives the same funcionality as mod_auth_external, but over apache 2.4.
-
-WWW: http://code.google.com/p/mod-auth-external/

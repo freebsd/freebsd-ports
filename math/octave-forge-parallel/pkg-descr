@@ -8,5 +8,3 @@ This is parallel.
 Parallel execution package for cluster computers. For parallel execution on a
 single machine see e.g. function parcellfun (author: Jaroslav Hajek) in
 package general.
-
-WWW: http://octave.sourceforge.net/

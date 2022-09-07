@@ -6,5 +6,3 @@ CVS implementations, except when particular features reduce the overall
 security of the system. Among other things, support for the pserver
 connection mechanism has been dropped because of security issues with
 the authentication mechanism.
-
-WWW: http://www.opencvs.org/

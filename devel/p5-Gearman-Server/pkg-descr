@@ -6,5 +6,3 @@ languages.
 This is the server daemon component.  The bridge between workers (clients who
 can do work) and callers (clients who want work done).  You should run several
 of these, at least two, for both load balancing and high availability.
-
-WWW: https://metacpan.org/release/Gearman-Server

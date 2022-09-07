@@ -9,5 +9,3 @@ returned list. Each member in a group is a triplet of
 (host,user,domain). The host portion or user portion of the members is
 returned by listgroup_host() and listgroup(), the user portion of the
 members is returned by listgroup_user().
-
-WWW: https://metacpan.org/release/Net-NIS-Listgroup

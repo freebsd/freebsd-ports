@@ -13,5 +13,3 @@ The result is provided in a one zipped ODF file (.odt/.odp/.ods) with all
 required content. There are group of utilities like docbook2odt, docbook2ods
 and docbook2odp as docbook2odf is actually universally converting to these
 respective formats.
-
-WWW: http://open.comsultia.com/docbook2odf/

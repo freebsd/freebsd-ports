@@ -5,5 +5,3 @@ It also supports Video4Linux because of its design.
 
 You can control an xmradio running on your desktop using some special
 command line options and remote control mechanism.
-
-WWW: https://BSDforge.com/projects/audio/xmradio/

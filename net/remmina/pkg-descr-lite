@@ -8,5 +8,3 @@ Remmina includes support for the following network protocols:
 
 This is the lite flavor of the Remmina package, compiled with the minimum
 dependencies to support the RDP and VNC protocols only.
-
-WWW: https://www.remmina.org/

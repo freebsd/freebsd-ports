@@ -4,5 +4,3 @@ Simple and efficient live broadcast server:
  * Pure Golang, high performance, and cross-platform;
  * Supports commonly used transmission protocols, file formats, and encoding
    formats
-
-WWW: https://github.com/gwuhaolin/livego

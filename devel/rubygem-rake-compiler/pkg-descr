@@ -1,4 +1,2 @@
 Provide a standard and simplified way to build and package Ruby extensions (C,
 Java) using Rake as glue.
-
-WWW: https://github.com/rake-compiler/rake-compiler

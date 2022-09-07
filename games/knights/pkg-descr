@@ -6,5 +6,3 @@ one. Supports playing againts computer engines
 that support the XBoard protocol or against
 player at the same computer. It has automatic
 rule checking and some nice animations.
-
-WWW: https://github.com/KDE/knights

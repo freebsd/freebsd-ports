@@ -6,5 +6,3 @@ also provides methods for graph exploration (d-separation, back-door
 criterion), simulation of general non-linear latent variable models,
 and estimation of influence functions for a broad range of statistical
 models.
-
-WWW: https://cran.r-project.org/web/packages/lava/

@@ -16,6 +16,3 @@ Features:
 * Distributed computing: can run Latent Semantic Analysis and Latent Dirichlet
   Allocation on a cluster of computers.
 * Extensive documentation and Jupyter Notebook tutorials.
-
-
-WWW: https://radimrehurek.com/gensim/

@@ -16,5 +16,3 @@ ATLAS-enhanced LAPACK, serial (thread-safe) interface:
 	-lalapack -lf77blas -lcblas
 ATLAS-enhanced LAPACK, multi-threaded interface:
 	-lalapack -lptf77blas -lptcblas
-
-WWW: http://math-atlas.sourceforge.net/

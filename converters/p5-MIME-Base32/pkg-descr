@@ -7,5 +7,3 @@ sequences of octets in a form that need not be humanly
 readable. A 33-character subset ([A-Z2-7=]) of US-ASCII
 is used, enabling 5 bits to be represented per printable
 character.
-
-WWW: https://metacpan.org/release/MIME-Base32

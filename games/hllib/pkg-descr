@@ -5,5 +5,3 @@ any C or C++ application (additional languages may also use the library with
 standard C imports).  HLLib works natively in both Windows and *nix.  BSP,
 GCF, NCF, PAK, SGA, VPK, WAD, XZP, and ZIP (store/deflate) package formats
 are supported.
-
-WWW: https://developer.valvesoftware.com/wiki/HLLib

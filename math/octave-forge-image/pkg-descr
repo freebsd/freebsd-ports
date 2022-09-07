@@ -11,5 +11,3 @@ This is image.
  The package also provides functions for feature extraction, image
  statistics, spatial and geometric transformations, morphological
  operations, linear filtering, and much more.
-
-WWW: http://octave.sourceforge.net/

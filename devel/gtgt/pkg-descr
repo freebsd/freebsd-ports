@@ -7,5 +7,3 @@ constituted by a main program, two internal modules (classes), one
 static and one shared library. Using gitty-gitty you will get a
 template of sources for the main cases you might meet, and which
 you can also use as examples for automake, autoconf and so on.
-
-WWW: http://gtgt.sourceforge.net/

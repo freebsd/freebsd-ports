@@ -6,5 +6,3 @@ and operating systems. Four forms of graphics are produced:
     (VRML) for dissemination across the Internet, and
 (4) a Postscript rendering of the OpenGL window for those that want high-quality
     output but do not have POV-RAY installed.
-
-WWW: http://www.lwfinger.net/drawxtl/

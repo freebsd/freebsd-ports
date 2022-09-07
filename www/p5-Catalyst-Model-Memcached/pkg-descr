@@ -1,4 +1,2 @@
 Catalyst::Model::Memcached is a simple Model for Catalyst for storing
 data in memcached.
-
-WWW: https://metacpan.org/release/Catalyst-Model-Memcached

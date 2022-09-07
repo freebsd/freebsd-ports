@@ -3,5 +3,3 @@ designed to let web developers measure the performance of their code
 under duress, to see how it will stand up to load on the internet. It
 lets the user hit a web server with a configurable number of
 concurrent simulated users.
-
-WWW: http://www.joedog.org/JoeDog/Siege

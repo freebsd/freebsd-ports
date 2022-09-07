@@ -10,5 +10,3 @@ Providers (IdPs). It has been tested against:
 - Keycloak
 - Auth0
 - PingIdentity
-
-WWW: https://metacpan.org/dist/Net-SAML2

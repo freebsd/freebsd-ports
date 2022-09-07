@@ -15,5 +15,3 @@ By default the on keyword is exported into the namespace
 of the test file.
 The date to get mocked must be in a format that is recognized
 by DateTime::Format::DateParse.
-
-WWW: https://metacpan.org/release/Test-MockDateTime

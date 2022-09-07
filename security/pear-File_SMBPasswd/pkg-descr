@@ -1,4 +1,2 @@
 With PEAR::File_SMBPasswd you can maintain smbpasswd-files, usualy used by
 SAMBA.
-
-WWW: https://pear.php.net/package/File_SMBPasswd

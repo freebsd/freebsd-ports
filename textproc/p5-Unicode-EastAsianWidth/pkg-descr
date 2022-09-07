@@ -14,5 +14,3 @@ Ambiguous characters are treated by default as part of InHalfwidth, but you can
 modify this behaviour by assigning a true value to
 $Unicode::EastAsianWidth::EastAsian at compile time within a BEGIN block before
 loading this module
-
-WWW: https://metacpan.org/release/Unicode-EastAsianWidth

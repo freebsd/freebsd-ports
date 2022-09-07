@@ -19,5 +19,3 @@ interface similar to the C functions of Tcl.  In other words, you can:
   The variables can be either scalars or hashes.
 
 Github repository is at https://github.com/gisle/tcl.pm
-
-WWW: https://metacpan.org/release/Tcl

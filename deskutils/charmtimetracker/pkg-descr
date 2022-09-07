@@ -8,5 +8,3 @@ time sheets. So in case laundry would be done for three hours on
 Wednesday again, the activity report for the "Ironing Laundry" task
 would list the event on tuesday, the event on wednesday and a total of
 five hours.
-
-WWW: https://github.com/KDAB/Charm

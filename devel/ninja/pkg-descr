@@ -7,5 +7,3 @@ fast. It is born from my work on the Chromium browser project, which has
 over 30,000 source files and whose other build systems (including one built
 from custom non-recursive Makefiles) can take ten seconds to start building
 after changing one file. Ninja is under a second.
-
-WWW: https://ninja-build.org/

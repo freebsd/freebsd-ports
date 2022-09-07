@@ -1,4 +1,2 @@
 This is a tool for debugging events on a Wayland window, analagous to
 the X11 tool xev.
-
-WWW: https://git.sr.ht/~sircmpwn/wev

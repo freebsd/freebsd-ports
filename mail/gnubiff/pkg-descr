@@ -9,5 +9,3 @@ apop, imap4, mh, qmail and mailfile.
 Furthermore, gnubiff is fully configurable with a lot of options
 like polltime, poptime, sounds, mail reader, mailbox names, etc.
 and can also filter spam.
-
-WWW: http://gnubiff.sourceforge.net/

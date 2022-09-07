@@ -10,5 +10,3 @@ Short list of features:
     * output of KB/s, Kb/s, packets, errors, average, max and total sum
     * output in curses, plain console, CSV or HTML
     * configfile
-
-WWW: http://www.gropp.org/?id=projects&sub=bwm-ng

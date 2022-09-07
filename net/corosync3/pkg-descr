@@ -12,5 +12,3 @@ provides four C Application Programming Interface features:
 
 Corosync is used as a High Availability framework by projects such as Apache
 Qpid and Pacemaker.
-
-WWW: https://corosync.github.io/corosync/

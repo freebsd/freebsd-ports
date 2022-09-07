@@ -14,5 +14,3 @@ sequences against a large reference database. Typical use cases include:
 
 (6) full-genome alignment between two closely related species with divergence
     below ~15%
-
-WWW: https://github.com/lh3/minimap2

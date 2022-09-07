@@ -1,5 +1,3 @@
 Polkit authentification agent of LXQt.
 The authentication agent can elevate user
 privileges for other processes via polkit.
-
-WWW: https://lxqt-project.org

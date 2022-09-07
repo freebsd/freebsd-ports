@@ -16,5 +16,3 @@ The key features are:
    Rust, shell script or Tcl.
 
  * Filters can be stacked in front of plugins to transform the output.
-
-WWW: https://github.com/libguestfs/nbdkit

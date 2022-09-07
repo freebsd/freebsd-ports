@@ -6,5 +6,3 @@ embed Ruby and write Ruby extensions in C++.
 Rice is similar to Boost.Python and pybind11 in that it minimizes boilerplate
 code needed to interface with C++. It does this by automatically determining
 type information allowing Ruby object to be converted to C++ and vice versa.
-
-WWW: https://github.com/jasonroelofs/rice

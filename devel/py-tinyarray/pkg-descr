@@ -5,5 +5,3 @@ times), and 3 times less memory is used to store them. Tinyarrays
 are useful if you need many small arrays of numbers, and cannot
 combine them into a few large ones. (The resulting code is still
 much slower than C, but it may now be fast enough.)
-
-WWW: https://gitlab.kwant-project.org/kwant/tinyarray

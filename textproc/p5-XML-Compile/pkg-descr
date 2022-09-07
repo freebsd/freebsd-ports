@@ -20,5 +20,3 @@ correctly; for instance, integer does accept huge values
 complex data-types like list, union, and substitutionGroup
 (unions on complex type level) are supported, which is rarely the
 case in other modules.
-
-WWW: https://metacpan.org/release/XML-Compile

@@ -4,5 +4,3 @@ almost all libudev functionality. You can enumerate devices, query
 device properties and attributes or monitor devices, including
 asynchronous monitoring with threads, or within the event loops of Qt,
 Glib or wxPython.
-
-WWW: https://pyudev.readthedocs.org

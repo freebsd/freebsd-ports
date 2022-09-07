@@ -16,5 +16,3 @@ o Ubench will spawn about 2 concurrent processes for each CPU available on the
 o Ubench is executing rather senseless memory allocation and memory to memory
   copying operations for another 3 mins concurrently using several processes,
   and the result Ubench MEM benchmark.
-
-WWW: http://www.phystech.com/download/ubench.html

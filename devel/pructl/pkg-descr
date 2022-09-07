@@ -1,5 +1,3 @@
 pructl is a tool to interface with libpru.
 It allows the user to reset the PRU, enable/disable the PRU and to
 upload programs to the PRU.
-
-WWW: https://bitbucket.org/rpaulo/pructl

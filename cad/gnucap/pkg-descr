@@ -18,5 +18,3 @@ with the circuit and want a simulator that is interactive, you want to
 study the source code and want something easier to follow than Spice,
 or you are a researcher working on modeling and want automated model
 generation tools to make your job easier, try GnuCap.
-
-WWW: http://www.gnucap.org/

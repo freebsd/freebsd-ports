@@ -6,5 +6,3 @@ GeoServer is a tool you can display maps on web pages,
 where the user can zoom and pan around. And it is
 used in conjunction with clients such as OpenLayers,
 Google Earth, UDig, GVSig and others.
-
-WWW: http://geoserver.org/

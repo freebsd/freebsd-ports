@@ -1,3 +1,1 @@
 OS independent wrapper class for executing traceroute calls.
-
-WWW: https://pear.php.net/package/Net_Traceroute

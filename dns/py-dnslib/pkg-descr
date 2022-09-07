@@ -7,5 +7,3 @@ The library provides:
    (dnslib.server) and a number of example servers created using this framework
  - A number of utilities for testing (dnslib.client, dnslib.proxy,
    dnslib.intercept)
-
-WWW: https://github.com/paulc/dnslib

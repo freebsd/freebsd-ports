@@ -1,4 +1,2 @@
 The goal of this gem is to ensure your Sidekiq jobs are unique. We do this by
 creating unique keys in Redis based on how you configure uniqueness.
-
-WWW: https://github.com/mhenrixon/sidekiq-unique-jobs

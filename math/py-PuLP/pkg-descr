@@ -6,5 +6,3 @@ call
 * CPLEX (commercial package)
 * GUROBI (commercial package)
 to solve linear problems
-
-WWW: https://github.com/coin-or/pulp

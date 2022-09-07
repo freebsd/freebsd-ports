@@ -7,5 +7,3 @@ collaboration with Didier Remy, research Director at INRIA.
 
 Feel free to enable option GTK2 to try the new GUI. It's
 only disabled by default to avoid accidental GTK2 dependencies.
-
-WWW: http://opensource.geneanet.org/projects/geneweb/

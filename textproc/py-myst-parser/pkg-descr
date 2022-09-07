@@ -1,4 +1,2 @@
 MyST-Parser provides an extended CommonMark-compliant parser, with bridges to
 Docutils and Sphinx.
-
-WWW: https://github.com/executablebooks/MyST-Parser

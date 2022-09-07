@@ -5,5 +5,3 @@ to determine NFS/CIFS procedures in raw network traffic. Furthermore, it
 performs filtration, dumping, compression, statistical analysis,
 visualization and provides the API for custom pluggable analysis
 modules.
-
-WWW: https://github.com/epam/nfstrace

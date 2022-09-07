@@ -9,5 +9,3 @@ along with specifying the number of decimal places you'd like to see.
 To configure Discus on a system-wide basis, edit the /usr/local/etc/discusrc
 file. But you should probably change things just for yourself, by copying
 /usr/local/etc/discusrc to ~/.discusrc and editing that.
-
-WWW: https://github.com/ncarrier/discus

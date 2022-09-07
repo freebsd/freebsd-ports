@@ -5,5 +5,3 @@ provides an implementation of JSON parsing and generation. Because
 JSON is YAML (http://redhanded.hobix.com/inspect/yamlIsJson.html),
 using libsyck gives you the fastest and most memory efficient parser
 and dumper for JSON data representation.
-
-WWW: https://metacpan.org/release/YAML-Syck

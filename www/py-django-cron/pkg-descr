@@ -8,5 +8,3 @@ necessary.
 
 This app solves both issues to a reasonable extent. This is by no means a
 replacement for queues like Celery etc.
-
-WWW: https://github.com/tivix/django-cron

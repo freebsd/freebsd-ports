@@ -12,5 +12,3 @@ Key Features:
 * Support len() on colored strings
 * Support color names from X11 rgb.txt
 * No dependencies
-
-WWW: https://pypi.org/project/colorful/

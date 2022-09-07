@@ -6,5 +6,3 @@ extensible.
 GTK+-2 is a very stable release, similar only in design to GTK+-1.
 GTK+-2 can coexist happily alongside GTK+-1, but applications are
 written for one version or the other.
-
-WWW: https://www.gtk.org/

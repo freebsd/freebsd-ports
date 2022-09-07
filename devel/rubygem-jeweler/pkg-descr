@@ -2,5 +2,3 @@ Jeweler provides the noble ruby developer with two primary features:
 
  * a library for managing and releasing RubyGem projects
  * a scaffold generator for starting new RubyGem projects
-
-WWW: https://github.com/technicalpickles/jeweler

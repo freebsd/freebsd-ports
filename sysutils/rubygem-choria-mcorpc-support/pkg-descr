@@ -9,5 +9,3 @@ resulting gem.
 This fork was made off version 2.12.0 of The Marionette Collective and have
 diverged since then, the changes made are not compatible with legacy
 MCollective.
-
-WWW: http://rubygems.org/gems/choria-mcorpc-support

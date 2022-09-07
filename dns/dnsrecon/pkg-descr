@@ -13,5 +13,3 @@ DNSRecon provides the ability to perform:
  CNAME Records provided a list of host records in a text file to check.
  Enumerate Common mDNS records in the Local
  Network Enumerate Hosts and Subdomains using Google.
-
-WWW: https://github.com/darkoperator/dnsrecon

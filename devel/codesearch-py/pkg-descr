@@ -7,5 +7,3 @@ message classes you are likely to encounter are defined in messages.py
 In addition, the library also includes facilities for maintaining an
 ephemeral or persistent cache in order to minimize generated network
 traffic.
-
-WWW: https://github.com/chromium/codesearch-py

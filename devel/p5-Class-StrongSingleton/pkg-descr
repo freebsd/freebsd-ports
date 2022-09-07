@@ -3,5 +3,3 @@ Class::WeakSingleton, and provides a more secure Singleton class in that
 it takes steps to prevent the possibility of accidental creation of
 multiple instances and/or the overwriting of existing Singleton
 instances.
-
-WWW: https://metacpan.org/release/Class-StrongSingleton

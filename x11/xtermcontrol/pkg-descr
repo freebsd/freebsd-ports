@@ -4,5 +4,3 @@ running xterm, as well as to report the current settings of the
 properties. Window manipulations such as (de)iconify, raise and
 lower, maximize and restore, and reset are also supported. It also
 lets advanced users issue any xterm control sequence.
-
-WWW: http://www.thrysoee.dk/xtermcontrol/

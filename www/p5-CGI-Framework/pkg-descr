@@ -6,5 +6,3 @@ library, (optional) multi-lingual templates support, and an extremely easy to
 use methodology for the validation, pre-preparation and post-cleanup associated
 with each template. It also provides easy logging mechanisms, graceful fatal
 error handling, including special templates and emails to admins.
-
-WWW: https://metacpan.org/release/CGI-Framework

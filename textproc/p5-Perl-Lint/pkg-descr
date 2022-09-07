@@ -1,4 +1,2 @@
 This module implements Perl::Critic's heuristics with a much faster
 analyzer.
-
-WWW: https://metacpan.org/pod/Perl::Lint

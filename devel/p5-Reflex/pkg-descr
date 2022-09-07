@@ -4,5 +4,3 @@ Reflex is a library of classes that assist with writing reactive (AKA
 event-driven) programs. Reflex uses Moose internally, but it doesn't enforce
 programs to use Moose's syntax. However, Moose syntax brings several useful
 features we hope will become indispensible.
-
-WWW: https://metacpan.org/release/Reflex

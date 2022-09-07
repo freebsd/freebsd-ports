@@ -6,5 +6,3 @@ things. OpenIPMI is also dynamic and event-driven. It will come up
 and start discovering things in the managed system. As it discovers
 things, it will report them to the software using it (assuming the
 software has asked for this reporting).
-
-WWW: http://openipmi.sourceforge.net/

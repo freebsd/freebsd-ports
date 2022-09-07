@@ -4,5 +4,3 @@ This module is quite similar to Test::BinaryData and Test::HexString in concept.
 The difference is that this module shows failure diagnostics in a different way,
 and has a slightly different calling style. Depending on the nature of the data
 you're working with, this module may be easier to work with.
-
-WWW: https://metacpan.org/release/Test-Bits

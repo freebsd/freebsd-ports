@@ -4,5 +4,3 @@ Templates, key/value Databases, a build-in HTTP Server and adapters
 for many third party WSGI/HTTP-server and template engines.
 All in a single file and with no dependencies other than the Python
 Standard Library.
-
-WWW: http://bottlepy.org/

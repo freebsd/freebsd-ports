@@ -4,5 +4,3 @@ Server 2003, Windows 2000, Windows Vista, Windows Server 2008, Windows 7
 and Windows 8 NTFS file systems. Almost the full POSIX filesystem
 functionality is supported, the major exceptions are changing the file
 ownerships and the access rights.
-
-WWW: https://github.com/tuxera/ntfs-3g

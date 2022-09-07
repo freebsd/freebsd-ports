@@ -13,5 +13,3 @@ are provided with the code and users are encouraged to develop their own.
 By developing a pool of template files, scripts can call TextFSM to parse useful
 information from a variety of sources. It is also possible to use different
 templates on the same data in order to create different tables (or views).
-
-WWW: https://github.com/google/textfsm

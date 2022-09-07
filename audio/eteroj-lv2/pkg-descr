@@ -20,5 +20,3 @@ LV2 plugin bundle from OpenMusicKontrollers:
 * Query
   This plugin implements our OSC Introspect specification. It thus exports any
   methods and parameters of a given OSC device transparently to LV2 properties.
-
-WWW: https://open-music-kontrollers.ch/lv2/eteroj/

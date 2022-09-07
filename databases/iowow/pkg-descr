@@ -12,5 +12,3 @@ structure.  Some of its features and limitations:
   - Tiny C11 library (200 KB), easily embeddable into any software
   - Maximum storage file size is 512 GB, maximum size of a single
     key+value record is 255 MB
-
-WWW: http://iowow.io/

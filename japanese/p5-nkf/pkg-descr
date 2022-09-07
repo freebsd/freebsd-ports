@@ -7,5 +7,3 @@ The syntax is as follows:
 
 	use NKF;
 	$output = nkf (@flags, $input)
-
-WWW: http://sourceforge.jp/projects/nkf/

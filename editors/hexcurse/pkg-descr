@@ -2,5 +2,3 @@ HEXcurse is a versatile ncurses-based hex editor written in C which provides
 the user with many features. It currently supports searching, hex and decimal
 address output, jumping to specified locations in a file, as well as quick
 keyboard shortcuts to commands.
-
-WWW: https://BSDforge.com/projects/editors/hexcurse/

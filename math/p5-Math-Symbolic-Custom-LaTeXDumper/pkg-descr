@@ -5,5 +5,3 @@ prior to version 0.201.
 For details on how the custom method delegation model works, please have a
 look at the Math::Symbolic::Custom and Math::Symbolic::Custom::Base
 classes.
-
-WWW: https://metacpan.org/release/Math-Symbolic-Custom-LaTeXDumper

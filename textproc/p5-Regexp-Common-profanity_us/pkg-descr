@@ -16,5 +16,3 @@ different contexts: labels (email, names) and text (what you are reading).
 Because open-source is driven by demand and I have no need for detecting
 profanity in text, only label is implemented at the moment. And you know the
 next sentence: "patches welcome" :)
-
-WWW: https://metacpan.org/release/Regexp-Common-profanity_us

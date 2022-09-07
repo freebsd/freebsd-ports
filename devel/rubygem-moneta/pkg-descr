@@ -1,4 +1,2 @@
 Moneta provides a standard interface for interacting with various kinds of
 key/value stores.
-
-WWW: https://github.com/moneta-rb/moneta

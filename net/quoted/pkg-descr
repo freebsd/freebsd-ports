@@ -5,5 +5,3 @@ stand-alone daemon, or can also be invoked via inetd.
 
 If you want, you can also have it listen on a different port, other than
 the default 'qotd' port (17).
-
-WWW: http://www.mrp3.com/webutil/quoted.html

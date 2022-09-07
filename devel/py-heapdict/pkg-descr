@@ -19,5 +19,3 @@ Unlike the Python standard library's heapq module, the heapdict supports
 efficiently changing the priority of an existing object (often called "decrease-
 key" in textbooks). Altering the priority is important for many algorithms such
 as Dijkstra's Algorithm and A*.
-
-WWW: https://github.com/DanielStutzbach/heapdict

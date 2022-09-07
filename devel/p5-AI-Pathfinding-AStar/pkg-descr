@@ -3,5 +3,3 @@ from which a custom map object can be derived. It requires from the map object
 a subroutine named "getSurrounding" and provides to the object a routine called
 "findPath" which calculates the shortest (ie. least-expensive) path between two
 nodes.
-
-WWW: https://metacpan.org/release/AI-Pathfinding-AStar

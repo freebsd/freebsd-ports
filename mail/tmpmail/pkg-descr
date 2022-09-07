@@ -6,5 +6,3 @@ By default w3m is used to render the HTML emails on the terminal. But if
 you prefer another text based web browser or would rather view the email
 in a GUI web browser such as Firefox, simply use the --browser argument
 followed by the command needed to launch the web browser of your choice.
-
-WWW: https://github.com/sdushantha/tmpmail

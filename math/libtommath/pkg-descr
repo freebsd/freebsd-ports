@@ -1,5 +1,3 @@
 LibTomMath provides highly optimized and portable routines for a vast
 majority of integer based number theoretic applications (including
 public key cryptography).
-
-WWW: http://libtom.net/

@@ -6,5 +6,3 @@ projects. The code was originally written by Rafael Guterres Jeffman who is
 not involved with the project but we have extensively rewritten it, and added
 new features such as IPv6 support and Unix domain sockets. It now maintained
 for WorldForge by Al Riddoch and others.
-
-WWW: http://www.worldforge.org/dev/eng/libraries/skstream/

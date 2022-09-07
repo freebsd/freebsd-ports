@@ -6,5 +6,3 @@ time.
 This version has the old shared library version from libffi 3.2.1.
 It is stripped down and only brings in the shared library.  It is
 not meant to build against.
-
-WWW: http://sources.redhat.com/libffi/

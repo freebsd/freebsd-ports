@@ -4,5 +4,3 @@ computation. The libraries are designed as a framework for new crystallographic
 software, which will allow the full power of modern programming techniques to be
 exploited by the developer. This will lead to greater functionality from simpler
 code which will be easier to develop and debug.
-
-WWW: http://www.ysbl.york.ac.uk/~cowtan/clipper/

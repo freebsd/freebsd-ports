@@ -10,5 +10,3 @@ extensible as possible, and to make secure password handling easy (the
 base class for auth providers makes handling `RFC2307'-style hashed
 passwords really simple, so you have no excuse for storing plain-text
 passwords).
-
-WWW: https://metacpan.org/release/Dancer2-Plugin-Auth-Extensible

@@ -11,5 +11,3 @@ Some features include:
  * Chromatic adaptations (changing illuminants).
  * RGB to hex and vice-versa.
  * 16-bit RGB support.
-
-WWW: https://pypi.org/project/colormath/

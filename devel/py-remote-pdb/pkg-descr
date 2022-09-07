@@ -1,5 +1,3 @@
 Remote vanilla PDB (over TCP sockets) done right.
 
 No extras, proper handling around connection failures and CI. Based on pdbx.
-
-WWW: https://github.com/ionelmc/python-remote-pdb

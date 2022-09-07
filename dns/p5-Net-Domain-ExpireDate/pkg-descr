@@ -7,5 +7,3 @@ Net::Domain::ExpireDate knows more than 40 different formats of
 expiration date representation provided by different servers (almost
 all gTLD registrars and some ccTLD registrars are covered).
 Now obtaining of domain creation date is also supported.
-
-WWW: https://metacpan.org/release/Net-Domain-ExpireDate

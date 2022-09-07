@@ -20,5 +20,3 @@ Netron has experimental support for:
 * scikit-learn (.pkl),
 * ML.NET (.zip),
 * TensorFlow.js (model.json, .pb) and TensorFlow (.pb, .meta, .pbtxt).
-
-WWW: https://github.com/lutzroeder/netron

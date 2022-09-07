@@ -4,5 +4,3 @@ run commands based on the values received.
 keyboard-daemon binds to a device (for example, a remote control) and
 listens for button presses.  These are then mapped to programs that are
 executed.
-
-WWW: http://www.bayofrum.net/cgi-bin/fossil/keyboard-daemon/

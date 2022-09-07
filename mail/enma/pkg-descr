@@ -1,5 +1,3 @@
 ENMA is a milter program for the domain authentication technologies.
 It authenticates sender's address with SPF and Sender ID, then labels
 the result onto the Authentication-Results: field.
-
-WWW: https://sourceforge.net/projects/enma/

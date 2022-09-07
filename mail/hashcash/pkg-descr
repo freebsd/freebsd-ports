@@ -2,5 +2,3 @@ The hashcash tool allows you to create hashcash tokens to attach to
 emails you send, and to verify hashcash tokens attached to emails you
 receive. A hashcash token constitutes a proof-of-work which takes a
 parameterizable amount of work to compute for the sender.
-
-WWW: http://www.hashcash.org/

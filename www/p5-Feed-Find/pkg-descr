@@ -1,4 +1,2 @@
 Feed::Find implements feed auto-discovery for finding syndication
 feeds, given a URI.
-
-WWW: https://metacpan.org/release/Feed-Find

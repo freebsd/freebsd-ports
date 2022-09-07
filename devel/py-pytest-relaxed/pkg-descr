@@ -4,5 +4,3 @@ hint as to which ones are private.
 
 By default, all files and objects pytest is told to scan will be considered
 tests; to mark something as not-a-test, simply prefix it with an underscore.
-
-WWW: https://pytest-relaxed.readthedocs.io/

@@ -5,5 +5,3 @@ retrieving their output.
 
 reproc consists out of two libraries: reproc and reproc++. reproc is a C99
 library that contains the actual code for working with external programs.
-
-WWW: https://github.com/DaanDeMeyer/reproc

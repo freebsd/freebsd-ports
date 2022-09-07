@@ -15,5 +15,3 @@ easily extensible to include new output modes. Recent additions include
 interactive terminals based on wxWidgets (usable on multiple platforms), and Qt.
 Mouseable plots embedded in web pages can be generated using the svg or HTML5
 canvas terminal drivers.
-
-WWW: http://www.gnuplot.info/

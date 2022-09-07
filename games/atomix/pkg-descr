@@ -4,5 +4,3 @@ and obstacles on the playfield. Once you have pushed an atom in
 one direction it moves until it hits an obstacle or another
 atom. It needs some thinking how to construct complex
 molecules with this atom behaviour.
-
-WWW: https://wiki.gnome.org/Apps/Atomix

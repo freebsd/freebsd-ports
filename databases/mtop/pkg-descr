@@ -7,5 +7,3 @@ configuration information, and tuning tips are provided.
 mkill (MySQL kill) monitors a MySQL server for long running queries and kills
 them after a specified time interval. Queries can be selected based on regexes
 on the user, host, command, database, state and query.
-
-WWW: http://mtop.sourceforge.net/

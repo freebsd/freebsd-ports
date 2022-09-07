@@ -1,4 +1,2 @@
 Adds escape sequences for code blocks in Jekyll, so liquid tags can be used
 without having to surround these with {% raw %} and {% endraw %} tags.
-
-WWW: https://github.com/octopress/escape-code

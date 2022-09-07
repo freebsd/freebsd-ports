@@ -3,5 +3,3 @@ programs that are event-driven, networked, non-blocking and portable.
 It includes a simple API to do any networking, file I/O and pipes.
 
 It is multiplatform and runs on POSIX-like systems and Windows.
-
-WWW: http://www.lundman.net/wiki/index.php/LiON

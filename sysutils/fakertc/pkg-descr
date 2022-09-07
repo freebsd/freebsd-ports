@@ -7,5 +7,3 @@ date/time again.
 
 Note that systems using UFS for the root fs won't need this, as the
 clock is already restored from info in the UFS superblock.
-
-WWW: https://github.com/ronaldklop/fakertc

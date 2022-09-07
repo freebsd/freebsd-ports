@@ -12,5 +12,3 @@ Features:
   * Super Cluster observation
   * Configuration context maintenance
   * NATS ecosystem schema registry
-
-WWW: https://github.com/nats-io/natscli

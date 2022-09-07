@@ -8,5 +8,3 @@ the compression a lot slower, but do not affect the decompression speed.
 
 Zopfli is bit-stream compatible with compression used in gzip, Zip, PNG, HTTP
 requests, and others.
-
-WWW: https://github.com/google/zopfli

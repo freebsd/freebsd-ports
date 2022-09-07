@@ -10,5 +10,3 @@ Libraries that try to read and parse mdb file indices like
 databases/mdbtools should work on every platform and therefore a
 platform independent version of this library is needed. This is an
 attempt to port the library to Posix-systems.
-
-WWW: https://github.com/leecher1337/libmswstr

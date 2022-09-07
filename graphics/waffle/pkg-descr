@@ -8,5 +8,3 @@ Waffle's immediate goal is to enable Piglit, Mesa's OpenGL test suite,
 to test multiple OpenGL flavors in a cross-platform way. However,
 Waffle's design does not preclude it from being useful to other
 projects.
-
-WWW: http://www.waffle-gl.org/

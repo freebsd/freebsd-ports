@@ -5,5 +5,4 @@ input image is preserved (within user defined error bounds).
 
 This port is the Python binding for LERC (Limited Error Raster Compression).
 
-WWW: https://esri.github.io/lerc/
-WWW: https://github.com/Esri/lerc/tree/master/OtherLanguages/Python
+See also: https://github.com/Esri/lerc/tree/master/OtherLanguages/Python

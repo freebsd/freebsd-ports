@@ -2,5 +2,3 @@ dxpc is an X protocol compressor designed to improve the speed of X11
 applications run over low-bandwidth links (such as dialup PPP
 connections).  dxpc attempts to exploit patterns in X protocol
 messages to limit the amount of data actually sent over the network.
-
-WWW: http://www.vigor.nu/dxpc/

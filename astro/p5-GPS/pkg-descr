@@ -1,4 +1,2 @@
 This is a Perl module that gives access to several GPS protocols, such as
 Garmin, NMEA, and Magellan. It works in Unix and Win32.
-
-WWW: https://metacpan.org/release/perl-GPS

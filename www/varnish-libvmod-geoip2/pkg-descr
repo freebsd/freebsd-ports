@@ -1,4 +1,2 @@
 Varnish Module (vmod) for accessing MaxMind GeoIP2 DB files.
 It supports opening multiple databases at the same time.
-
-WWW: https://github.com/fgsch/libvmod-geoip2

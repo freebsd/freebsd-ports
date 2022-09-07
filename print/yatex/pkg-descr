@@ -6,5 +6,3 @@ Language Enhancement to GNU Emacs), and latex on DOS.
 Yahtml is a brand new package for writing HTML files with Emacs. It is
 very far from html-mode, html-helper-mode or other existing HTML modes.
 It is a good successor of YaTeX in HTML world.
-
-WWW: http://www.yatex.org/

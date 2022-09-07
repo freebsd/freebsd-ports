@@ -4,5 +4,3 @@ editor GUI.  Xsynth-DSSI was written by Sean Bolton, and was based
 on Steve Brooke's Xsynth code, but has since acquired polyphonic
 operation, band-limited oscillators, a better filter mode, and
 velocity-sensitive envelopes.
-
-WWW: http://dssi.sourceforge.net/download.html

@@ -8,5 +8,3 @@ TagPy can:
       FLAC and MPC)
     * access Xiph Comments in Ogg Vorbis Files and Ogg Flac Files
     * access APE tags in Musepack and MP3 files.
-
-WWW: http://mathema.tician.de/software/tagpy

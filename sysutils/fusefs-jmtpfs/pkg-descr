@@ -12,5 +12,3 @@ and use the files.
 Since it is meant as an Android file transfer utility, and I don't have
 any non-Android MTP devices to test with, playlists and other non-file
 based data are not supported.
-
-WWW: https://github.com/kiorky/jmtpfs

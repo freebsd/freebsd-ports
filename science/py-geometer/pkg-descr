@@ -14,5 +14,3 @@ There are points at infinity that can be treated just like normal points.
   angles and to construct perpendicular geometric structures.
 - Most of the computation in the library done via tensor diagrams (using
   numpy.einsum).
-
-WWW: https://github.com/jan-mue/geometer

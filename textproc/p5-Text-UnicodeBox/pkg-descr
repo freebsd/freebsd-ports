@@ -12,5 +12,3 @@ complete the box.
 
 Output is built up over time, which allows you to stream the output rather then
 buffering it and printing it in one go.
-
-WWW: https://metacpan.org/release/Text-UnicodeBox

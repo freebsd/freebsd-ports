@@ -1,5 +1,3 @@
 A Data::ICal object represents a VCALENDAR object as defined in the
 iCalendar protocol (RFC 2445, MIME type "text/calendar"), as implemented
 in many popular calendaring programs such as Apple's iCal.
-
-WWW: https://metacpan.org/release/Data-ICal

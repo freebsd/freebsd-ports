@@ -8,5 +8,3 @@ essentially zero overhead compared to matrix multiplication. TBLIS
 also aims to offer a convenient C++ interface for tensors and
 tensor operations, as well as a stable C interface with high
 portability.
-
-WWW: https://github.com/devinamatthews/tblis

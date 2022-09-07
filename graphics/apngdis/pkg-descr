@@ -1,4 +1,2 @@
 apngdis converts an APNG file into a sequence of individual PNG frames
 via a simple command-line interface.
-
-WWW: https://sourceforge.net/projects/apngdis/

@@ -13,5 +13,3 @@ for post-facto mangling.
 In the current code the SVG elements emitted assume some default style
 attributes such as stroke-width 1. Perhaps that should be set explicitly on each
 element.
-
-WWW: https://metacpan.org/release/Image-Base-SVG

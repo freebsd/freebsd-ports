@@ -7,5 +7,3 @@ and dynamic applications in robotics and computer animation. DART is
 distinguished by its accuracy and stability due to its use of generalized
 coordinates to represent articulated rigid body systems and Featherstone's
 Articulated Body Algorithm to compute the dynamics of motion.
-
-WWW: https://dartsim.github.io/

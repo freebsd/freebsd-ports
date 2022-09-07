@@ -5,5 +5,3 @@ activity, syscall access, and more.
 
 These modules allow you to generate log files for rendering realtime process,
 filesystem, and other activities in FreeBSD using gource.
-
-WWW: https://fraubsd.org/dwatch-gource/

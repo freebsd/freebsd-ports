@@ -6,5 +6,3 @@ It's meant to make ssh tunnels fun and understandable again.
 Rospo supports a cool UI, too. The UI lets you handle tunnel and
 pipe configuration at runtime through a web interface. You can
 start/stop new tunnels and pipes at runtime.
-
-WWW: https://github.com/ferama/rospo

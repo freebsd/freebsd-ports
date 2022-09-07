@@ -7,5 +7,3 @@ for event routing within various application contexts.
 Included in the package are the robustapply and saferef modules, which provide
 the ability to selectively apply arguments to callable objects and to reference
 instance methods using weak-references.
-
-WWW: http://pydispatcher.sourceforge.net/

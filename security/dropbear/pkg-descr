@@ -6,5 +6,3 @@ environments. It supports:
 	for OpenSSH clients
 	* Compatible with OpenSSH ~/.ssh/authorized_keys public key
 	authentication
-
-WWW: https://matt.ucc.asn.au/dropbear/dropbear.html

@@ -1,4 +1,2 @@
 This roundcube plugin allows to setup identities with different SMTP servers
 than server's default.
-
-WWW: https://github.com/deflomu/Roundcube-SMTP-per-Identity-Plugin

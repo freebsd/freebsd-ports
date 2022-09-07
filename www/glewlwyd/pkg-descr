@@ -16,5 +16,3 @@ Password
 Database
 * LDAP service
 * HTTP Backend service providing Basic Authentication
-
-WWW: https://github.com/babelouest/glewlwyd

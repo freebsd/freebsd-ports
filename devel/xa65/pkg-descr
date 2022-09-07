@@ -13,5 +13,3 @@ Key amongst its features:
   - Supports o65 relocatable objects with a full linker and relocation
     suite, as well as "bare" plain binary object files
   - Block structure for label scoping
-
-WWW: http://www.floodgap.com/retrotech/xa/

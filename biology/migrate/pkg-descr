@@ -2,5 +2,3 @@ Migrate estimates effective population sizes and past migration rates between
 two or "n" populations assuming a migration matrix model with asymmetric
 migration rates and different subpopulation sizes.  The n-population migrate
 can use sequence data, microsatellite data or electrophoretic data.
-
-WWW: http://popgen.sc.fsu.edu/Migrate/Migrate-n.html

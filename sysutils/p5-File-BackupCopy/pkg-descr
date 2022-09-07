@@ -8,5 +8,3 @@ the original file name with '.~N~', where N is a decimal number starting with
 1.  Additionally, the automatic backup name scheme is implemented.  In this
 naming scheme, numbered backups are created if at least one numbered backup
 copy already exists and simple backups are created otherwise.
-
-WWW: https://metacpan.org/release/File-BackupCopy

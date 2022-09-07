@@ -6,5 +6,3 @@ Cppcheck is versatile.  You can check non-standard code that includes
 various compiler extensions, inline assembly code, etc.
 
 The goal is no false positives.
-
-WWW: https://cppcheck.sourceforge.io/

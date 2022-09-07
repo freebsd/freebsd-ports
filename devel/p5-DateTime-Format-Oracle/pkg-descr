@@ -13,5 +13,3 @@ NLS_TIMESTAMP_TZ_FORMAT session variables.
 This module keeps track of these Oracle session variable values by examining
 environment variables of the same name. Each time one of Oracle's formatting
 session variables is updated, the %ENV hash must also be updated.
-
-WWW: https://metacpan.org/release/DateTime-Format-Oracle

@@ -3,5 +3,3 @@ email based on arbitrary criteria. It accepts SMTP connections and
 forwards the SMTP commands and responses to another SMTP server. You
 need to be able to write the filtering scripts that integrate it with
 your particular needs.
-
-WWW: http://thewalter.net/stef/software/proxsmtp/

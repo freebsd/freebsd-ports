@@ -4,5 +4,3 @@
        methods
 
        blocksize =item keysize =item encrypt =item decrypt
-
-WWW: https://metacpan.org/release/Crypt-IDEA

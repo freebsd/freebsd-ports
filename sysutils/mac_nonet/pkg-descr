@@ -10,5 +10,3 @@ and enable enforcing:
 Any call to socket(2) from user in this group will end with EPERM.
 You can also select group that can access only AF_UNIX sockets with
 security.mac.nonet.local_gid.
-
-WWW: https://github.com/pbiernacki/mac_nonet

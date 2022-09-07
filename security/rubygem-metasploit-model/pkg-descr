@@ -1,4 +1,2 @@
 Common code, such as validators and mixins, that are shared between ActiveModels
 in metasploit-framework and ActiveRecords in metasploit_data_models.
-
-WWW: https://github.com/rapid7/metasploit-model

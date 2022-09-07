@@ -3,5 +3,3 @@ textual description of the CD contents (toc-file).
 
 Among others, cdrdao can handle the bin/cue format commonly used for VCDs
 or disks with subchannel data.
-
-WWW: http://cdrdao.sourceforge.net/

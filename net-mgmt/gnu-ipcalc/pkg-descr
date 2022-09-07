@@ -7,5 +7,3 @@ It supports printing a summary about the provided network address, multiple
 command line options per information to be printed, transparent IPv6 support,
 and in addition it will use libGeoIP if available to provide geographic
 information.
-
-WWW: https://gitlab.com/ipcalc/ipcalc/

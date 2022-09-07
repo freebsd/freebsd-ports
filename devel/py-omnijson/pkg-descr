@@ -7,5 +7,3 @@ Features:
     * Proper API (loads(), dumps())
     * Vendorizable
     * Supports Python 2.5-3.2 out of the box
-
-WWW: https://github.com/kennethreitz/omnijson

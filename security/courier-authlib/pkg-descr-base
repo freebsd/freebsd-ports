@@ -19,5 +19,3 @@ Other plugin authentication modules are provided:
 	mail/courier-authlib-vchkpw		vpopmail/vchkpw
 
 Install them as occasion demands.
-
-WWW:	http://www.Courier-MTA.org/authlib/

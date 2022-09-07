@@ -4,5 +4,3 @@ appropriate submodule or via this module.
 
 These functions were originally from Perl::Critic::Utils and related modules,
 and have been split off to this distribution for use outside of Perl::Critic.
-
-WWW: https://metacpan.org/release/PPIx-Utils

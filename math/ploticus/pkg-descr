@@ -19,5 +19,3 @@ effects, gradient backgrounds, and so on.
 
 FreeBSD note: the binary is referred to as 'pl' in the source files, but
 is installed as 'ploticus' so as to avoid conflicts with other ports.
-
-WWW: http://ploticus.sourceforge.net/

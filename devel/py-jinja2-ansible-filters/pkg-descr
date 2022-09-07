@@ -4,5 +4,3 @@ templating engine.
 This repository is not inteded to supplant ansible functionality however there
 are a lot of filters ansible provides that are not present in upstream Jinja2 so
 you may find these helpful.
-
-WWW: https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters

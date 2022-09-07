@@ -8,5 +8,3 @@ any or all of:
   immutability for attributes,
   and a kwargs-based initializer
 without writing dull boilerplate code again and again.
-
-WWW: https://github.com/hynek/characteristic

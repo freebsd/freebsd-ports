@@ -11,5 +11,3 @@ You can also drill down to only certain parts of your codebase like:
 - gems, everything within Rails.root/vendor/gems
 - all, everything within Rails.root
 - stdlib
-
-WWW: https://github.com/peek/peek-rblineprof

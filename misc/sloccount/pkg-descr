@@ -19,5 +19,3 @@ generated, and then present it in several different formats and sorted
 different ways. The report-generating tool can also generate simple tab-
 separated files so data can be passed on to other analysis tools (such as
 spreadsheets and database systems).
-
-WWW: http://www.dwheeler.com/sloccount/

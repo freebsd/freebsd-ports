@@ -5,5 +5,3 @@ utilities, it maximizes performance by recognizing duplicate data and
 only storing it once, and cryptographically encrypts and signs archives
 using locally-held keys in order to guarantee that nobody without access
 to the key file (including the author) can read or modify archives.
-
-WWW: http://www.tarsnap.com/

@@ -4,5 +4,3 @@ a small feature set similar to a traditional Bourne shell, but with a much
 cleaner and simpler syntax. Among other things, this makes rc much better than
 Bourne-compatible shells at handling filenames which contain spaces. Thus,
 writing rc scripts is less error-prone than writing sh scripts.
-
-WWW: https://github.com/rakitzis/rc

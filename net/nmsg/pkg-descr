@@ -8,5 +8,3 @@ are distinguished by assigned vendor ID and message type values and
 libnmsg provides a modular interface for registering handlers for
 specific message types. libnmsg makes it easy to build new message
 types using the protobuf-c compiler.
-
-WWW: https://github.com/farsightsec/nmsg

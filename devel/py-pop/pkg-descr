@@ -11,5 +11,3 @@ Using Plugin Oriented Programming it then becomes easy to have the best of both
 worlds, software can be build in small pieces, making development easier to
 maintain. But the small pieces can then be merged and deployed in a single
 binary, making code deployment easy as well.
-
-WWW: https://pop.readthedocs.io

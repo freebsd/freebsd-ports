@@ -17,5 +17,3 @@ Why mysqlbackup?
 5. It can be safely used on a large MySQL installations (1000+ databases).
 
 6. It is written in sh - code interpreter available in a base system.
-
-WWW: https://code.google.com/archive/p/mysqlbackup/

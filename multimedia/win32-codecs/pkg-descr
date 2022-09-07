@@ -35,5 +35,3 @@ Audio:
 - Win32 DirectShow filters, untested decompression-only support:
     Voxware Metasound
     ACELP.net
-
-WWW: http://www.mplayerhq.hu/MPlayer/releases/codecs/

@@ -19,5 +19,3 @@ Supported protocols are:
     * Echo
     * Discard
     * NTP/SNTP
-
-WWW: https://commons.apache.org/proper/commons-net/

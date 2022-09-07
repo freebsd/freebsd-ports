@@ -1,5 +1,3 @@
 DateTime::Calendar::FrenchRevolutionary implements the French Revolutionary
 Calendar. This module implements most methods of DateTime; see the DateTime(3)
 man page for all methods.
-
-WWW: https://metacpan.org/release/DateTime-Calendar-FrenchRevolutionary

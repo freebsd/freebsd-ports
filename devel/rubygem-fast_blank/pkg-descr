@@ -1,5 +1,3 @@
 fast_blank provides a C-optimized method for determining if a string is blank.
 According to the author, it is about 1.2 and 20 times faster than the Active
 Support implementation.
-
-WWW: https://github.com/SamSaffron/fast_blank/

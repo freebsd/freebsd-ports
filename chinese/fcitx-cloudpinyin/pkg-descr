@@ -1,5 +1,3 @@
 fcitx-cloudpinyin is not an input method engine. It adds candidates
 from the cloud-based Pinyin services (Sogou, QQ, Baidu, Google) to any
 Pinyin IMEs in Fcitx.
-
-WWW: https://fcitx-im.org/wiki/Fcitx

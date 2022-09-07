@@ -2,5 +2,3 @@ Rudiments is an Open Source C++ class library providing base classes
 for things such as daemons, clients and servers, and wrapper classes
 for the standard C functions for things like such as regular
 expressions, semaphores and signal handling.
-
-WWW: http://rudiments.sourceforge.net

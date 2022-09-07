@@ -8,5 +8,3 @@ execute the module, for security or other reasons.
 
 Module::Installed::Tiny provides a routine module_installed() which works like
 Perl's require but does not actually load the module.
-
-WWW: https://metacpan.org/dist/Module-Installed-Tiny

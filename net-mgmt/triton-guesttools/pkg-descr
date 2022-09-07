@@ -1,3 +1,1 @@
 FreeBSD guest tools to enable compatibility with SmartOS and Triton.
-
-WWW: https://github.com/joyent/freebsd-kvm-image-builder/tree/master/triton-freebsd-guesttools

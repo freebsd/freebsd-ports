@@ -12,5 +12,3 @@ there's a conflict, it checks to see if one of the two sides has already
 been applied to the other one, and if so, makes the other side win
 automatically. When there's a non automatically mergeable version conflict,
 Codeville behaves in almost exactly the same way as CVS.
-
-WWW: https://bsdforge.com/projects/devel/codeville/

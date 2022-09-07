@@ -1,4 +1,2 @@
 This Horde package provides a tree view of hierarchical information.
 It allows for expanding/collapsing of branches and maintains their state.
-
-WWW: http://pear.horde.org

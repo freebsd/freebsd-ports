@@ -8,5 +8,3 @@ It returns an object by which you can revisit the manner in which the
 mocked subroutine was called. Further when the object goes out of scope
 (or when the "restore" method is called) the original subroutine is
 replaced.
-
-WWW: https://metacpan.org/dist/Mock-MonkeyPatch

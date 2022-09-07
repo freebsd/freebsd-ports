@@ -5,5 +5,3 @@ css, or even JavaScript Sprinkles (that all continues to live in app/assets). It
 is, however, possible to use Webpacker for CSS and images assets as well, in
 which case you may not even need the asset pipeline. This is mostly relevant
 when exclusively using component-based JavaScript frameworks.
-
-WWW: https://github.com/rails/webpacker

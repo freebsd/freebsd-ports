@@ -7,5 +7,3 @@ distribution (RFC 3450). ALC is a protocol instantiation of Layered Coding
 Transport building block (LCT) (RFC 3451). MAD-ALC is an implementation of
 the ALC/LCT protocols. The MAD/TUT project is going on at Tampere
 University of Technology (TUT).
-
-WWW: http://mad.cs.tut.fi/

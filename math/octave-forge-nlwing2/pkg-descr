@@ -9,5 +9,3 @@ This package allows efficient computation of nonlinear aerodynamic properties
 of a wing. It employs 2D section data to build a 3D potential vortex model of
 the flow. It uses a robust Euler-Newton method to track the change of flow
 vorticity quantities as the angle of attack progresses.
-
-WWW: http://octave.sourceforge.net/

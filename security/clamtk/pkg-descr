@@ -1,4 +1,2 @@
 ClamTk is a GUI front-end for ClamAV using gtk2-perl. It is designed to
 be an easy-to-use frontend for Unix systems.
-
-WWW: https://dave-theunsub.github.io/clamtk/

@@ -3,5 +3,3 @@ changes instead of time.
 
 In principle it is similar to incron, but it's simpler, more limited,
 and does not depend on anything outside of FreeBSD base.
-
-WWW: https://github.com/faelys/filewatcherd/

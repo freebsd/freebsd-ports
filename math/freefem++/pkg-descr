@@ -11,5 +11,3 @@ bamg) and test by designing an extension of freefem and of freefem+.
 
 Suggested add-ons: the ports graphics/xd3d, science/medit and math/gnuplot
 (medit and gnuplot are requested to run some examples).
-
-WWW: http://www.freefem.org/ff++/

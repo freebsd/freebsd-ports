@@ -19,5 +19,3 @@ compared to the schemes based on a hash function. EMAC is also chosen
 as one of the NESSIE winners for Message Authentication Codes, along
 with UMAC, TTMAC and HMAC. The current NESSIE specification chooses the
 AES as block cipher.
-
-WWW: https://metacpan.org/release/Digest-DMAC

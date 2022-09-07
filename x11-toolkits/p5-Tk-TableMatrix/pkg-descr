@@ -18,5 +18,3 @@ features of the widget are:
 * optional 'flashes' when things update
 * cell validation support
 * Works everywhere Tk does (including Windows and Mac!)
-
-WWW: https://metacpan.org/release/Tk-TableMatrix

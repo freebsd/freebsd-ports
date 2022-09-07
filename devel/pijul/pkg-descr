@@ -17,5 +17,3 @@ same time fast and sound:
   to build a mathematically sound distributed version control system had huge
   worst-case complexities. The use of Rust additionally yields a blazingly fast
   implementation.
-
-WWW: https://pijul.org/

@@ -6,5 +6,3 @@ module's current logic is fairly simple-minded), particularly after
 reading my Perl Journal #18 article on trees, which discusses this
 module's implementation of game trees as an example of general
 tree-shaped data structures.
-
-WWW: https://metacpan.org/release/Games-Alak

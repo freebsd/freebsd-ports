@@ -4,5 +4,3 @@ prototype architecture (CHERI ported to ARMv8-A).
 
 This port includes Clang (a C/C++/Objective-C compiler), LLD (a linker),
 and the LLVM infrastructure these are built on.
-
-WWW: https://git.morello-project.org/morello/llvm-project

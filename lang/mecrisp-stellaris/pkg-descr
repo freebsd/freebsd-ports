@@ -6,5 +6,3 @@ instructions.  Note that it doesn't need to save any pointers, so it
 compiles directly into flash memory without the need for erase cycles.
 Although it is in spirit of ANS, there are a few differences: Be
 careful!
-
-WWW: http://mecrisp.sourceforge.net

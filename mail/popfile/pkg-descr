@@ -10,5 +10,3 @@ easily; it uses ${HOME}/.popfile as a working directory.
 
 Note for old POPFile users: copy messages/ and corpus/ directory to your
 ${HOME}/.popfile directory (if not, create it), then start popfile.sh.
-
-WWW: http://getpopfile.org/

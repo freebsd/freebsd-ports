@@ -3,5 +3,3 @@ transformations implemented in PDF::FromHTML::Twig.
 
 There is also a command-line utility, html2pdf.pl, that comes with this
 distribution.
-
-WWW: https://metacpan.org/release/PDF-FromHTML

@@ -5,5 +5,3 @@ Perl.  The program itself is installed as 'solitaire', and the source
 code and test vectors are installed in share/doc/solitaire.
 
 Please read the web site below before relying on this for real security.
-
-WWW: http://www.counterpane.com/solitaire.html

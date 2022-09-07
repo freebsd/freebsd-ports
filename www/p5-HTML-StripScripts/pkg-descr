@@ -19,5 +19,3 @@ is necessary.) The HTML document must be parsed into start tags,
 end tags and text before it can be filtered by this module. Use
 either HTML::StripScripts::Parser or HTML::StripScripts::Regex
 instead if you want to input an unparsed HTML document.
-
-WWW: https://metacpan.org/release/HTML-StripScripts

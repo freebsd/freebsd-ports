@@ -14,5 +14,3 @@ servers without FastCGI support. In other words, if the server supports
 FastCGI, then FastCGI applications get all the perks (mainly being *really*
 fast); if the server does not support FastCGI, then FastCGI applications
 behave exactly like standard CGIs.
-
-WWW: http://www.fastcgi.com/

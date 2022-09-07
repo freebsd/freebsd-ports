@@ -14,5 +14,3 @@ Features:
   interface so users can customize the operating system interactions.
 - Detailed documentation about how to use the library is included with the
   source code.
-
-WWW: https://github.com/google/leveldb

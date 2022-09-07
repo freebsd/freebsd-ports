@@ -13,5 +13,3 @@ listings.
 
 WEBrick also includes tools for daemonizing a process and starting a process at
 a higher privilege level and dropping permissions.
-
-WWW: https://github.com/ruby/webrick

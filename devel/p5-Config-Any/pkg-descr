@@ -9,5 +9,3 @@ developers. The flexibility inherent in a multiple format configuration loader
 allows different users to make different choices, without generating extra work
 for the developers. As a developer you only need to learn a single interface to
 be able to use the power of different configuration formats.
-
-WWW: https://metacpan.org/release/Config-Any

@@ -2,5 +2,3 @@ st is a minimalistic X terminal.
 
 It consists of a single binary, configuration is done at compile-time by a
 config.h file.
-
-WWW: https://st.suckless.org/

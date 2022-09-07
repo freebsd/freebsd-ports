@@ -18,5 +18,3 @@ Features
 - Transparency and antialiasing effects thru SDL_gfx library
 - Can use Truetype fonts thru SDL_ttf library
 - Multiplatform: supports Linux and Windows
-
-WWW: http://www.luolamies.org/software/luola/

@@ -9,6 +9,5 @@ This version is modified to add auto-rotate to exported thumbnails, and also
 add adjustment for camera timezone offset. If your thumbnails appear upside
 down, set DCRAW_RTC env var.
 
-WWW: http://www.cybercom.net/~dcoffin/dcraw/
-WWW: https://dx.mehomi.com/autorot.html
-WWW: https://dx.mehomi.com/photohack.html
+See also: https://dx.mehomi.com/photohack.html
+See also: https://dx.mehomi.com/autorot.html

@@ -11,5 +11,3 @@ was originally designed to use.
 There is no manpage for this package, but you will find some
 quickstart instructions and example configuration files in
 "${PREFIX}/share/examples/pptpclient".
-
-WWW: http://pptpclient.sourceforge.net/

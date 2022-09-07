@@ -8,5 +8,3 @@ This module is intended to be a drop-in replacement for PFProAPI (a couple of
 minor changes to your code are necessary to use this module instead of
 PFProAPI).  The major difference is that it is pure Perl, and not architecture
 dependent (ie, you can use this on your 64-bit FreeBSD platform.)
-
-WWW: http://www.mailermailer.com/labs/projects/Payflow-Pro-API.rwp

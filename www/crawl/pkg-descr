@@ -16,5 +16,3 @@ Some of the main features:
  - Persistent database of visited URLs
  - Very small and efficient code
  - Supports robots.txt
-
-WWW: https://www.monkey.org/~provos/crawl/

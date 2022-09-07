@@ -9,5 +9,3 @@ Bayespam is based on a paper written by Paul Graham called A Plan
 for Spam. In this paper, Mr. Graham talked about a spam filter he
 is working on that used Bayesian classification to determine if a
 particular piece of email is spam or not.
-
-WWW: https://BSDforge.com/projects/mail/bayespam

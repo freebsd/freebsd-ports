@@ -4,5 +4,3 @@ replacement for MP3::Info.
 
 Note that this module does not allow you to update the information
 in MPEG-4 files.
-
-WWW: https://metacpan.org/release/MP4-Info

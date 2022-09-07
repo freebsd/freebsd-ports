@@ -8,5 +8,3 @@ samples or video images inside an application.
 In addition, it handles the sometimes ugly task to convert between
 all these formats and provides some elementary operations (copying,
 scaling, alpha blending etc)
-
-WWW: http://gmerlin.sourceforge.net/

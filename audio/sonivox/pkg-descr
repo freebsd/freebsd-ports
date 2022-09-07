@@ -9,5 +9,3 @@ embedded samples instead. It is also a real time GM synthesizer. It consumes
 very little resources, so it may be indicated in projects for small embedded
 devices. There is neither MIDI input nor Audio output facilities included in
 the library. You need to provide your own input/output.
-
-WWW: https://github.com/pedrolcl/sonivox

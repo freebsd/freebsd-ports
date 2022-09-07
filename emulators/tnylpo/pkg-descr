@@ -8,5 +8,3 @@ bit), and Mac OS X (10.5 ppc, 10.6, 10.9, 10.11, 10.13), but should
 need little to no modifications to run under any other reasonably
 recent system. The companion program tnylpo-convert converts text
 files to and from the CP/M format.
-
-WWW: https://gitlab.com/gbrein/tnylpo

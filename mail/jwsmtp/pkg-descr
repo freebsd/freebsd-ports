@@ -6,5 +6,3 @@ multiple recipients including Cc/Bcc recipients. LOGIN and PLAIN SMTP
 authentication. Do an MX lookup or send direct via an smtp server.
 
 Supported platforms are BSD, Linux and Windows.
-
-WWW: https://talk.mumbleface.net/jwsmtp/

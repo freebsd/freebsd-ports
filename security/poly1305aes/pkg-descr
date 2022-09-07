@@ -9,5 +9,3 @@ message receiver checks each authenticator.
 
 There's a mailing list for Poly1305-AES discussions. To subscribe, send
 an empty message to poly1305-subscribe@list.cr.yp.to.
-
-WWW: http://cr.yp.to/mac.html

@@ -6,5 +6,3 @@ It provides support for PyQt5, PyQt4, PySide2 and PySide using the Qt5 layout
 
 Basically, you write your code as if you were using PySide2 but import Qt
 modules from qtpy instead of PySide2 (or PyQt5)
-
-WWW: https://github.com/spyder-ide/qtpy

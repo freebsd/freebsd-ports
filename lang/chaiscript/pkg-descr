@@ -6,5 +6,3 @@ The parts of the ChaiScript API that the average user will be concerned with are
 contained in the chaiscript namespace and the chaiscript::ChaiScript class.
 
 The end user parts of the API are extremely simple both in size and ease of use.
-
-WWW: https://chaiscript.com/

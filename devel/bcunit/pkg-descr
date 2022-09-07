@@ -12,5 +12,3 @@ CUnit is built as either a static or shared library which provides framework
 support when linked into user testing code. The framework complies with the
 conventional structure of test cases bundled into suites which are registered
 with the framework for running.
-
-WWW: https://gitlab.linphone.org/BC/public/bcunit

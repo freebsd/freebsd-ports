@@ -8,5 +8,3 @@ textproc/scim-kmfl-imengine) to handle the input method interface to X.
 KMFL aims to bring Tavultesoft Keyman functionality to *nix operating
 systems. KMFL is being jointly developed by SIL International
 (http://www.sil.org) and Tavultesoft (http://www.tavultesoft.com).
-
-WWW: http://kmfl.sourceforge.net/

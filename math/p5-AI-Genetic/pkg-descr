@@ -15,5 +15,3 @@ from both of its "parents". Every now and then, a mutation occurs where
 some gene randomly changes value, resulting in a different individual. If
 all is well defined, after a few generations, the population should
 converge on a "good-enough" solution to the problem being tackled.
-
-WWW: https://metacpan.org/release/AI-Genetic

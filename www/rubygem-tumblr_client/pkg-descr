@@ -1,4 +1,2 @@
 This is the official Ruby wrapper for the Tumblr v2 API.
 It supports all endpoints currently available on the Tumblr API.
-
-WWW: https://github.com/tumblr/tumblr_client

@@ -16,5 +16,3 @@ in C++.  It comprises:
 - cubehash - a utility program that generates hashes of file contents
   using the same parameterization of Bernstein CubeHash as is used
   by the redo tools to check for changes to source and target files
-
-WWW: https://jdebp.eu/Softwares/redo/

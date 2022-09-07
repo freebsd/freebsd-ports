@@ -16,5 +16,3 @@ The program pospell is a utility to isolate the translations from a .po
 file, then call some other program which may change the translations
 (typically a spell checker), and eventually copy them back in place in
 the .po file.
-
-WWW: http://www.sourcefiles.org/Utilities/Text_Utilities/spellutils-0.7.tar.bz2.shtml

@@ -2,5 +2,3 @@ poetry2setup converts python-poetry (pyproject.toml) to setup.py. It only relies
 on poetry.core, so the effect is better than any other third-party software. The
 author created this library because python-poetry does not support exporting to
 setup.py and dephell will generate setup.py incorrectly in some cases.
-
-WWW: https://github.com/abersheeran/poetry2setup

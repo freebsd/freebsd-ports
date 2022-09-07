@@ -12,5 +12,3 @@ Features:
 	models.
 - Clean: Testable and well tested code base. Code/branch test coverage is
 	 above 96%.
-
-WWW: https://github.com/django-treebeard/django-treebeard

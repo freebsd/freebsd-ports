@@ -8,5 +8,3 @@ data structures like sorted sets.
 This also enables more advanced features, like exact phrase
 matching and numeric filtering for text queries, that are not
 possible or efficient with traditional Redis search approaches.
-
-WWW: https://oss.redislabs.com/redisearch/

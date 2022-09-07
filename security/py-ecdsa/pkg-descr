@@ -20,5 +20,3 @@ SEC standard are also included (mainly to speed-up testing of the library),
 those are: secp112r1, secp112r2, secp128r1, and secp160r1. No other curves are
 included, but it is not too hard to add support for more curves over prime
 fields.
-
-WWW: https://github.com/tlsfuzzer/python-ecdsa

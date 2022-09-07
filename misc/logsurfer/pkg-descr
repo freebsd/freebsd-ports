@@ -10,5 +10,3 @@ setup to group boot-time messages together and forward them in
 a single Email message to the system administrator under the
 subject line "Host xxx has just booted".
 Swatch just couldn't do this properly.
-
-WWW: http://www.crypt.gen.nz/logsurfer/

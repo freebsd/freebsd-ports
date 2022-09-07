@@ -8,5 +8,3 @@ infrastructure that facilitates the use of any existing method, such as by
 allowing multiply imputed data for any model, and mimicking the program Clarify
 (for Stata) that takes the raw output of existing statistical procedures and
 translates them into quantities of direct interest.
-
-WWW: https://gking.harvard.edu/zelig

@@ -8,5 +8,3 @@ arbitrary sized data. Other utilities include key generators, hash
 functions (md5, sha1, sha256, etc), base64 encoder, a secure random
 number generator, and 'bignum' math methods for manually performing
 crypto calculations on large multibyte integers.
-
-WWW: https://cran.r-project.org/web/packages/openssl/

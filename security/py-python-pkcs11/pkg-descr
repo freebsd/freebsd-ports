@@ -14,5 +14,3 @@ features, with continuous integration against multiple HSM platforms including:
 - Thales nCipher
 - Opencryptoki TPM
 - OpenSC/Smartcard-HSM/Nitrokey HSM
-
-WWW: https://github.com/danni/python-pkcs11

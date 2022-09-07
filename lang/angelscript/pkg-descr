@@ -15,6 +15,3 @@ For the script writer the scripting language follows the widely known syntax
 of C/C++, but without the need to worry about pointers and memory leaks.
 Contrary to most scripting languages, AngelScript uses the common C/C++
 datatypes for more efficient communication with the host application.
-
-
-WWW: http://www.angelcode.com/angelscript/

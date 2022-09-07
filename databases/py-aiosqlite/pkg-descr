@@ -8,5 +8,3 @@ Connection objects are proxies to the real connections, contain the shared
 execution thread, and provide context managers to handle automatically closing
 connections. Cursors are similarly proxies to the real cursors, and provide
 async iterators to query results.
-
-WWW: https://pypi.python.org/pypi/aiosqlite

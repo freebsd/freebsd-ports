@@ -5,5 +5,3 @@ templating language used in most Ruby on Rails applications.
 However, Haml avoids the need for explicitly coding HTML into the template,
 because it itself is a description of the HTML, with some code to generate
 dynamic content.
-
-WWW: https://haml.info/

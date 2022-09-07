@@ -1,5 +1,3 @@
 FFI::Platypus::Declare provides a declarative interface to FFI::Platypus. It
 provides a more concise interface at the cost of a little less power, and a
 little more namespace pollution.
-
-WWW: https://metacpan.org/release/FFI-Platypus-Declare

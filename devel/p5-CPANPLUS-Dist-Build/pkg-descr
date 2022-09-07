@@ -7,5 +7,3 @@ modules. It inherits from CPANPLUS::Dist.
 Normal users won't have to worry about the interface to this module,
 as it functions transparently as a plug-in to CPANPLUS and will
 just Do The Right Thing when it's loaded.
-
-WWW: https://metacpan.org/release/BINGOS/CPANPLUS-Dist-Build-0.88

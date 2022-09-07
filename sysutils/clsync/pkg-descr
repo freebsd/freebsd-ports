@@ -1,3 +1,1 @@
 file live sync daemon based on inotify, written in GNU C
-
-WWW: https://github.com/xaionaro/clsync

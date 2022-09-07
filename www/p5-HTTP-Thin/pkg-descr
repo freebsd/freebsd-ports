@@ -3,5 +3,3 @@ HTTP::Request objects and get back HTTP::Response objects. The maintainers of
 HTTP::Tiny, justifiably, don't want to have to maintain compatibility but many
 other projects already consume the HTTP::Message objects. This is just glue code
 doing what it does best.
-
-WWW: https://metacpan.org/release/HTTP-Thin

@@ -5,5 +5,3 @@ correct operation. Any errors in how Vulkan is used can result in a
 crash. This project provides Vulkan validation layers that can be
 enabled to assist development by enabling developers to verify their
 applications correct use of the Vulkan API.
-
-WWW: https://github.com/KhronosGroup/Vulkan-ValidationLayers

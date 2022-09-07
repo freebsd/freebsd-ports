@@ -5,5 +5,3 @@ generator to other protocols, to act on your code, making your life easier as a
 programmer. Rinci also allows better interoperability between programming
 languages. It is geared towards dynamic scripting languages like Perl, Python,
 Ruby, PHP, JavaScript, but is not limited to those languages.
-
-WWW: https://metacpan.org/release/Rinci

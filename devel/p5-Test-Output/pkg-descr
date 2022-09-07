@@ -7,5 +7,3 @@ however, the features provided by Sub::Exporter over what Exporter
 provides is just to great to pass up.
 
 Test::Output ties STDOUT and STDERR using Test::Output::Tie.
-
-WWW: https://metacpan.org/release/Test-Output

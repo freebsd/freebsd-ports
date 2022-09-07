@@ -8,5 +8,3 @@ Features:
 * Work-stealing scheduling for efficient work balancing
 * Compatible with Linux, macOS, and Native Client environments
 * Covered with unit tests and microbenchmarks
-
-WWW: https://github.com/Maratyszcza/pthreadpool

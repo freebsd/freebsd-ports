@@ -5,5 +5,3 @@ its actual colors. It simply implements the colors that are present as defaults
 in the XTerm source code.
 
 It implements the complete 256-color model in XTerm.
-
-WWW: https://metacpan.org/release/Convert-Color-XTerm

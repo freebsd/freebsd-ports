@@ -3,5 +3,4 @@ decryption, signing and verifying signatures, and key generation according to
 PKCS#1 version 1.5. It can be used as a Python library as well as on the
 commandline.
 
-WWW: https://stuvel.eu/software/rsa/
-WWW: https://github.com/sybrenstuvel/python-rsa
+See also: https://github.com/sybrenstuvel/python-rsa

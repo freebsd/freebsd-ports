@@ -5,5 +5,3 @@ Lab of Parallel Software and Computational Science, ISCAS.
 NOTE: If you want to specify your CPU microarchitecture manually,
 please use TARGET_CPU_ARCH knob, e.g., "make TARGET_CPU_ARCH=NEHALEM".
 This value is set TARGET build flag.
-
-WWW: https://github.com/xianyi/OpenBLAS

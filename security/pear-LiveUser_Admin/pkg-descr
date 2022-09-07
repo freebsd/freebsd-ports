@@ -1,5 +1,3 @@
 LiveUser_Admin is meant to be used with the LiveUser package.
 It is composed of all the classes necessary to administrate
 data used by LiveUser.
-
-WWW: https://pear.php.net/package/LiveUser_Admin

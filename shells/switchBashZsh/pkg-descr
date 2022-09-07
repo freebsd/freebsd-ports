@@ -13,5 +13,3 @@ paste it over your second box's $HOME/.shell (after running
 switchBashZsh setup script on the second box). The second box need
 not be the same operating system - switchBashZsh works across
 FreeBSD / Linux / Cygwin.
-
-WWW: https://github.com/bourne-again/switchBashZsh

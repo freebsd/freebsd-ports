@@ -3,5 +3,3 @@ toolchain technologies.
 
 This port includes Clang builtins for WASI
 (WebAssembly System Interface).
-
-WWW: http://llvm.org/

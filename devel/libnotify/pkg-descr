@@ -6,5 +6,3 @@ of time.
 
 This port contains the library and a small command line client.
 See deskutils/notification-daemon for the daemon.
-
-WWW: https://gitlab.gnome.org/GNOME/libnotify

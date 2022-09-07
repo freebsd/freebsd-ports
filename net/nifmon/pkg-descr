@@ -7,5 +7,3 @@ It displays continously updated statistics for the following quantities:
  - a stripped down tcpdump output
 
 You will need super-user permissions in order to use nifmon.
-
-WWW: http://www.freebsd-support.de/misc/

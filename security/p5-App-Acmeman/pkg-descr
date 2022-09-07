@@ -8,5 +8,3 @@ that serves them, so domain name obtains its certificate automatically,
 once the administrator configures the HTTP server to serve it via HTTPS.
 
 The utility is normally run as a cron(8) job.
-
-WWW: https://metacpan.org/release/App-Acmeman

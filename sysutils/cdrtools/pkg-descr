@@ -17,5 +17,3 @@ This package contains the following programs:
 - readcd (a data CD reading and recording program)
   May be used to write to DVD-RAM and to copy Solaris boot CD's.
 - scgcheck (checks and validates the ABI of libscg)
-
-WWW: https://codeberg.org/schilytools/schilytools

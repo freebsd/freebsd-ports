@@ -10,5 +10,3 @@ Features:
  - Constant time, constant memory access signing and pubkey generation.
  - Derandomized DSA (via RFC6979 or with a caller provided function.)
  - Very efficient implementation.
-
-WWW: https://github.com/bitcoin-core/secp256k1

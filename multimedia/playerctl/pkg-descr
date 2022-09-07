@@ -8,5 +8,3 @@ For more advanced users, Playerctl provides an introspectable library available
 in your favorite scripting language that allows more detailed control like the
 ability to subscribe to media player events or get metadata such as artist and
 title for the playing track.
-
-WWW: https://github.com/altdesktop/playerctl

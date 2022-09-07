@@ -6,5 +6,3 @@ label to be valid.
 The principle use in a web browser is to restrict supercookies being set
 although it can also serve secondary purposes in the UI such as domain
 highlighting.
-
-WWW: https://www.netsurf-browser.org/

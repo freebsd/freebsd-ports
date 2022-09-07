@@ -6,5 +6,3 @@ import of references from 'bibtex' files for use in 'Rd' files and
 snippets of 'R' code and the results of its evaluation or creating
 graphics on the fly; and many functions for manipulation of references
 and Rd files.
-
-WWW: https://cran.r-project.org/web/packages/Rdpack/

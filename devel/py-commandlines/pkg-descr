@@ -11,5 +11,3 @@ more sub-commands to the executable.
 
 [*] with the exception of the short single option-argument definition syntax
 that does not include an intervening space character (e.g. -ofile)
-
-WWW: https://github.com/chrissimpkins/commandlines

@@ -19,5 +19,4 @@ x11-fonts/noto is a meta port which includes:
 - x11-fonts/noto-sc: Simplified Chinese fonts set
 - x11-fonts/noto-tc: Traditional Chinese fonts set
 
-WWW: https://www.google.com/get/noto/
-WWW: https://github.com/googlefonts?q=noto
+See also: https://github.com/googlefonts?q=noto

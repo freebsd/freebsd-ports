@@ -12,5 +12,3 @@ implementation) to display easy-to-remember key fingerprints.
 The key (a DSA or RSA key) is converted into a textual form,
 digested using Digest::SHA1, and run through bubblebabble
 to create the key fingerprint.
-
-WWW: https://metacpan.org/release/Digest-BubbleBabble

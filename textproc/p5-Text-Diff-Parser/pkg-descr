@@ -1,5 +1,3 @@
 Text::Diff::Parser parses diff files and patches.  It allows you to
 access the changes to a file in a standardized way, even if multiple
 patch formats are used.
-
-WWW: https://metacpan.org/release/Text-Diff-Parser

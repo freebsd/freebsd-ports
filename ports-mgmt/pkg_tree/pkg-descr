@@ -20,5 +20,3 @@ For example for setxkbmap and xkbcomp
       |\__ libXdmcp-1.0.2_1
       |\__ libX11-1.1.3_1,1
        \__ libxkbfile-1.0.4
-
-WWW: https://www.mavetju.org/unix/general.php

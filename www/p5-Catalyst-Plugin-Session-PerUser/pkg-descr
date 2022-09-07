@@ -10,5 +10,3 @@ permanent account if they made the changes as guests and then logged in.
 This is probably most useful for e-commerce sites, where the
 shopping cart is typically used before login, and should be
 equally accessible to both guests and logged in users.
-
-WWW: https://metacpan.org/release/Catalyst-Plugin-Session-PerUser

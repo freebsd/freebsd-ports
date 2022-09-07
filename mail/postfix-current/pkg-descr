@@ -11,5 +11,3 @@ per client/sender/recipient/etc, Content filter (built-in, external before
 queue, external after queue), Berkeley DB database, LDAP database, MySQL
 database, PostgreSQL database, Maildir and mailbox format, Virtual domains,
 VERP envelope return addresses and others.
-
-WWW: http://www.postfix.org/

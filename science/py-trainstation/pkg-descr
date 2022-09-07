@@ -6,5 +6,3 @@ construction of force constant and cluster expansions. Since it has
 proven to be valuable in more general contexts and to simplify the
 maintenance of the two aforementioned packages, the functionality has
 been moved into a separate package.
-
-WWW: https://trainstation.materialsmodeling.org/

@@ -4,5 +4,3 @@ useful for creating cryptographically secure UUID's. On the other hand, as a
 note, this makes generate() around 20 times slower.
 
 After you use this module, use UUID::Random as usual.
-
-WWW: https://metacpan.org/release/UUID-Random-Patch-UseMRS

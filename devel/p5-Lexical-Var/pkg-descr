@@ -11,5 +11,3 @@ of a function, use my.
 Lexical::Sub is implemented through the mechanism of Lexical::Var. Its distinct
 name and declaration syntax exist to make lexical subroutine declarations
 clearer.
-
-WWW: https://metacpan.org/release/Lexical-Var

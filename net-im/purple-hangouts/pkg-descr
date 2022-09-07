@@ -4,5 +4,3 @@ uses for its Hangouts service. So far it supports all the fun things
 that aren't part of the XMPP interface, such as Group Chats,
 synchronised history between devices and SMS support via Google
 Voice.
-
-WWW: https://github.com/EionRobb/purple-hangouts

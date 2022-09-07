@@ -1,5 +1,3 @@
 Test::Name::FromLine is test utility that fills test names from its
 file.  Just use this module in test and this module fill test names to
 all test except named one.
-
-WWW: https://metacpan.org/release/Test-Name-FromLine

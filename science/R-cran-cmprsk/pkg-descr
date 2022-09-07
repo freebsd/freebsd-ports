@@ -4,5 +4,3 @@ of K-sample tests for comparing the cumulative incidence of a
 competing risk, Ann. Stat. 16:1141-1154, and Fine JP and Gray RJ
 (1999), A proportional hazards model for the subdistribution of a
 competing risk, JASA, 94:496-509.
-
-WWW: https://cran.r-project.org/web/packages/cmprsk/

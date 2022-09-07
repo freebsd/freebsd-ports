@@ -7,5 +7,3 @@ A wrapper around tarsnap which does two things:
   backup scheme. This feature can be used in conjunction with tarsnapper
   backup jobs, or standalone, to be applied to any existing set of
   tarsnap backup archives, regardless of how they have been created.
-
-WWW: https://github.com/miracle2k/tarsnapper

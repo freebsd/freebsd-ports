@@ -3,5 +3,3 @@ do some simple PDF processing on a web server with limited RAM and
 CPU, and if slurping the entire file into memory is not an option,
 this module may well be for you, at the cost of far less functionality
 than other solutions out there.
-
-WWW: https://metacpan.org/release/PDF-Tiny

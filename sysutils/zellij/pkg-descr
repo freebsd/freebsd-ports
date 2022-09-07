@@ -4,5 +4,3 @@ and screen), but this is merely its infrastructure layer.
 
 Zellij includes a layout system, and a plugin system allowing one to create
 plugins in any language that compiles to WebAssembly.
-
-WWW: https://zellij.dev/

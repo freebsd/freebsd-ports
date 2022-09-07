@@ -3,5 +3,3 @@ specifies a standardized language-independent columnar memory format for flat
 and hierarchical data, organized for efficient analytic operations on modern
 hardware. It also provides computational libraries and zero-copy streaming
 messaging and interprocess communication.
-
-WWW: https://arrow.apache.org/

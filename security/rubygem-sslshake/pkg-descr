@@ -5,5 +5,3 @@ support for even older handshakes, which are not available in
 current releases of OpenSSL anymore. It also aims to be executable
 on all systems with a sufficiently modern version of Ruby without
 any additional requirements or pre-compiled binaries.
-
-WWW: https://github.com/arlimus/sslshake

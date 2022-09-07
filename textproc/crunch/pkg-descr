@@ -13,5 +13,3 @@ Features:
 - new -l option for literal support of @,%^
 - new -d option to limit duplicate characters see man file for details
 - now has unicode support
-
-WWW: https://crunch-wordlist.sourceforge.io/

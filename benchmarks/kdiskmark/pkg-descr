@@ -5,5 +5,3 @@ comprehensive benchmark result.  The program is written in C++ with Qt and
 needs a minimal set of KDE dependencies (KF5Auth).
 
 It is inspired by and resembles famous CrystalDiskMark program for Windows.
-
-WWW: https://github.com/JonMagon/KDiskMark

@@ -19,5 +19,3 @@ Features:
 	add this middleware and it will serve you static files.
     JSONField - custom field that lets you easily store JSON data in one of
 	your model fields.
-
-WWW: https://github.com/skorokithakis/django-annoying

@@ -10,5 +10,3 @@ Basic GET usage:
 >>> r = httpx.get("http://example.org", auth=HTTPSPNEGOAuth())
 
 Both the sync and async HTTPX APIs should be fully supported.
-
-WWW: https://github.com/pythongssapi/httpx-gssapi

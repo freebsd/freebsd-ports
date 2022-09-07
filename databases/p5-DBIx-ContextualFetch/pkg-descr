@@ -1,4 +1,2 @@
 DBIx::ContextualFetch redefines some of the various fetch methods to
 add context sensitivity.
-
-WWW: https://metacpan.org/release/DBIx-ContextualFetch

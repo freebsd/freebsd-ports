@@ -4,5 +4,3 @@ It is a BOSH or XEP-0124 connection manager that allows persistent client
 connections to an XMPP server.
 
 Supporting XMPP over BOSH or XEP-0206
-
-WWW: https://github.com/twonds/punjab

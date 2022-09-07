@@ -7,5 +7,3 @@ PQL syntax of the traditional PuppetDB query syntax (also known as AST).
 
 The db subcommand is a replacement for the older puppetdb <export|import>
 commands with faster startup times and much friendlier error messages.
-
-WWW: https://github.com/puppetlabs/puppetdb-cli

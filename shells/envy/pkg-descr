@@ -7,5 +7,3 @@ pyenv, nvm and asdf. It sets environment variables with the root of
 the current git repository and the active branch without executing
 git, which you can use to customize your shell prompt. It also loads
 custom environment variables from local .envy files.
-
-WWW: https://github.com/wojas/envy

@@ -14,5 +14,3 @@ merge multiple servers, (permiting local newsgroups with remote
 NNTP feeds), filter articles, xovers, and headers based on weighted
 regular expressions, and has built in NoCem/PGP (anti-spam) support
 (see http://www.nocem.org/ for details).
-
-WWW: http://iq.org/~proff/nntpcache.org/

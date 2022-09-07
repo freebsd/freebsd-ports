@@ -13,5 +13,3 @@ having to worry about managing a server or a database.
 
 Zola supports augmented Markdown which comes with shortcodes and
 internal links to make it easier to write your content.
-
-WWW: https://www.getzola.org/

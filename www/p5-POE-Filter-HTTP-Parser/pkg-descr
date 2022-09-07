@@ -1,5 +1,3 @@
 POE::Filter::HTTP::Parser is a POE::Filter for HTTP which is based
 on HTTP::Parser. It can be used to easily create POE based HTTP
 servers or clients.
-
-WWW: https://metacpan.org/release/POE-Filter-HTTP-Parser

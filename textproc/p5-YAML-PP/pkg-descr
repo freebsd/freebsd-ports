@@ -7,5 +7,3 @@ libyaml.
 Loading and Dumping can be customized.
 
 It supports the YAML 1.2 Failsafe, JSON and Core Schemas.
-
-WWW: https://github.com/perlpunk/YAML-PP-p5

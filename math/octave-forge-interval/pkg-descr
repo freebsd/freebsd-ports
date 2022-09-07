@@ -13,5 +13,3 @@ This is interval.
  proofs, constraint programming, and verified computing. The implementation
  is based on interval boundaries represented by binary64 numbers and is
  conforming to IEEE Std 1788-2015, IEEE standard for interval arithmetic.
-
-WWW: http://octave.sourceforge.net/

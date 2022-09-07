@@ -5,5 +5,3 @@ works very similar to URI::Find's find_uris() or
 Email::Find's find_emails().
 
 $num_ipaddrs_found = find_ipaddrs($text, \&callback);
-
-WWW: https://metacpan.org/release/NetAddr-IP-Find

@@ -12,5 +12,3 @@ Features:
   installed
 - Supports running inside a Docker container and automatically uploads test
   results
-
-WWW: https://github.com/tonybaloney/pytest-azurepipelines

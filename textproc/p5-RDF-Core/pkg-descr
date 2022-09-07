@@ -13,5 +13,3 @@ The serializer attempts to preserve anonymous nodes and to compact xml a
 bit grouping statements with common subject.
 
 The query language is rather focused on resources than on statements.
-
-WWW: https://metacpan.org/release/RDF-Core

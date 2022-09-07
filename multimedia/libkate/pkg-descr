@@ -6,5 +6,3 @@ a powerful means to describe arbitrary curves, so hand drawing of shapes can be
 achieved. This was originally meant for karaoke use, but can be used for any
 purpose. Motions can be attached to various semantics, like position, color,
 etc, so scrolling or fading text can be defined.
-
-WWW: https://wiki.xiph.org/index.php/OggKate

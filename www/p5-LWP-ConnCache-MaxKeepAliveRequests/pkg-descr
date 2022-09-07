@@ -4,5 +4,3 @@ requests to the same server. Some servers will disconnect you after
 a limited number of requests (in Apache 2 this is achieved with the
 MaxKeepAliveRequests directive). This module allows you to limit
 the maximum number of keep alive requests to a server.
-
-WWW: https://metacpan.org/release/LWP-ConnCache-MaxKeepAliveRequests

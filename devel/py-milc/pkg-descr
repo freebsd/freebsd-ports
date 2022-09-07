@@ -9,5 +9,3 @@ the features users expect from a modern CLI tool out of the box:
 - Easy method for printing to stdout with ANSI colors
 - Labeling log output with colored emoji to easily distinguish message types
 - Thread safety
-
-WWW: https://milc.clueboard.co/

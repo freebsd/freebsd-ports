@@ -3,5 +3,3 @@ constructed procedurally, without the need for a temporary variable. Within the
 block/closure controlled by a gather any call to take pushes that call's
 argument list to an implicitly created array. take returns the number of
 elements it took. Syntax::Keyword::Gather implements that control structure.
-
-WWW: https://metacpan.org/release/Syntax-Keyword-Gather

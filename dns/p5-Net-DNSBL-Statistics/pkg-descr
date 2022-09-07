@@ -1,5 +1,3 @@
 Net::DNSBL::Statistics is the Perl module that collects statistics on the
 interrogation success for a list of IP addresses against a list of DNSBL's. The
 module is used to implement the reproting script dnsblstat.
-
-WWW: https://metacpan.org/release/Net-DNSBL-Statistics

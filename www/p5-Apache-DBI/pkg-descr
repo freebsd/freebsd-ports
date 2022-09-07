@@ -14,5 +14,3 @@ o DBI.pm provides persistent database connections:
 - connections can be established during server-startup - configurable
 rollback to ensure data integrity - configurable verification of the
 connections to avoid time-outs.
-
-WWW: https://metacpan.org/release/Apache-DBI

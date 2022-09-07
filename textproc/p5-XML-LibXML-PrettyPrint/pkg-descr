@@ -11,5 +11,3 @@ an XML::LibXML DOM tree to reformat it into a more readable result.
 Pretty-printing XML is not as CPU-efficient as dumping it out sloppily, so
 unless you're pretty sure that a human is going to need to make sense of your
 XML, you should probably not use this module.
-
-WWW: https://metacpan.org/release/XML-LibXML-PrettyPrint

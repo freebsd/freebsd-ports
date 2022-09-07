@@ -12,5 +12,3 @@ it is able to derive parameters for the following Poisson count models:
 - production-constrained model (origin-constrained)
 - attraction-constrained model (destination-constrained)
 - doubly-constrained model
-
-WWW: https://github.com/pysal/spint

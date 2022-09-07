@@ -9,5 +9,3 @@ problems that web applications face:
 Complex data structures
 	Brannigan can validate and parse complex data structures, possibly
 	deserialized from JSON or XML data sent to web services and APIs.
-
-WWW: https://metacpan.org/pod/Brannigan

@@ -15,5 +15,3 @@ Features:
  * Prevent burning if used space > DVD+R/RW capacity
  * Show output of growisofs/mkisofs to view burned % and estimated
    remaining time
-
-WWW: http://regis.damongeot.free.fr/tkdvd/

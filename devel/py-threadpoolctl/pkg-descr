@@ -4,5 +4,3 @@ computing and data science (e.g. BLAS and OpenMP).
 
 Fine control of the underlying thread-pool size can be useful in workloads that
 involve nested parallelism so as to mitigate oversubscription issues.
-
-WWW: https://github.com/joblib/threadpoolctl

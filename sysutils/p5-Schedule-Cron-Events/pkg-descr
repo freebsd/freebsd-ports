@@ -12,5 +12,3 @@ to the date you constructed it with.
 
 This module uses Set::Crontab to understand the date specification,
 so we should be able to handle all forms of cron entries.
-
-WWW: https://metacpan.org/release/Schedule-Cron-Events

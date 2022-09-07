@@ -14,5 +14,3 @@ Key features of the database:
 - asynchronous master-master replication
 - authentication and access control
 - the database is just a C extension to the app server and can be turned off
-
-WWW: https://tarantool.io/

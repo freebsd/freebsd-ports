@@ -3,5 +3,3 @@ File::Find. Students are always asking me what closures are good for, and here's
 some examples. The functions mostly stand alone (i.e. they don't need the rest
 of the module), so rather than creating a dependency in your code, just lift the
 parts you want).
-
-WWW: https://metacpan.org/release/File-Find-Closures

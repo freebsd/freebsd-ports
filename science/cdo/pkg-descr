@@ -19,5 +19,3 @@ overview about the main categories.
 * Field interpolation (remapbil, remapcon, remapdis, ...)
 * Vertical interpolation (ml2pl, ml2hl)
 * Time interpolation (inttime, intyear)
-
-WWW: https://code.mpimet.mpg.de/projects/cdo

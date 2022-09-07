@@ -4,5 +4,3 @@ given path is a development tree root of some kind.
 This has many useful applications, notably ones that require
 behaviours for "installed" modules to be different to those that are
 still "in development"
-
-WWW: https://metacpan.org/release/Path-IsDev

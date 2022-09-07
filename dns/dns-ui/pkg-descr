@@ -11,5 +11,3 @@ Features:
 * Keeps a changelog of all DNS changes done through it.
 * (Optionally) export all zones as bind-format zone files and store changes
   in git.
-
-WWW: https://github.com/operasoftware/dns-ui/

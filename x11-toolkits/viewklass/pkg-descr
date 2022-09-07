@@ -7,5 +7,3 @@ techniques.
 It also provides classes which encapsulate some of the more difficult and
 tedious aspects of Motif development. These include classes which handle
 the creation of windows, dialogs and menus.
-
-WWW: http://viewklass.sourceforge.net/

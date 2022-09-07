@@ -7,5 +7,3 @@ Features:
   rows or use printf like functions)
 * Support of multiple lines in cells
 * Support of UTF-8 and wide characters
-
-WWW: https://github.com/seleznevae/libfort

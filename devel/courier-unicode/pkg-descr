@@ -15,5 +15,3 @@ Unicode Standard:
    for this unicode library.
 
 This library also implements C++ bindings for these algorithms.
-
-WWW: http://www.courier-mta.org/unicode/

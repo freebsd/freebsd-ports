@@ -11,5 +11,3 @@ to remove blanks around and inside integers, but not in strings.
 Beautifiers which do not look into the schema have only limited
 possibilities for cleanup, or may accidentally change the message
 content.
-
-WWW: https://metacpan.org/release/XML-Rewrite

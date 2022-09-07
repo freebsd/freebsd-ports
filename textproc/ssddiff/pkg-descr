@@ -11,5 +11,3 @@ The approach used here is usually much slower than other well-known xmldiff
 applications, however it produces better results in many "tricky" cases.
 You say that other xmldiff applications try to do a syntactic diff, whereas
 xmldiff tries to do a semantic diff.
-
-WWW: http://ssddiff.alioth.debian.org/

@@ -3,5 +3,3 @@ supports decimals number, and five representation systems (charsets):
 traditional, simplified, big5, gb and pinyin. The first two are returned
 as unicode strings; hence they are only available for Perl 5.6 and later
 versions.
-
-WWW: https://metacpan.org/release/Lingua-ZH-Numbers

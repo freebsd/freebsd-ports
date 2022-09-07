@@ -5,5 +5,3 @@ The algorithms are:
 * NYSIIS
 * Double Metaphone Based on Maurice Aubrey's C code from his perl
   implementation.
-
-WWW: https://pypi.org/project/Fuzzy/

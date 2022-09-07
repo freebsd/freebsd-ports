@@ -11,5 +11,3 @@ XML elements map.
 With that, if in the future, there is a change in REST XML output structure,
 no changes will be required on amazon-ecs, instead you just need to change
 your element path.
-
-WWW: https://github.com/jugend/amazon-ecs

@@ -4,5 +4,3 @@ version number.
 
 This package includes pTeX support.  A fontmap file for xdvi is installed as
 TEXMFDIST/fonts/map/xdvi/xdvi-ptex.map.
-
-WWW: http://xdvi.sourceforge.net/

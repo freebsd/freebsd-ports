@@ -7,5 +7,3 @@ based on FreeBSD that allows you to easily manage virtual machines.
 3. There are two kinds of network modes: Bridged and NAT
 4. Support grub and uefi boot
 5. Support for ZFS
-
-WWW: https://github.com/bigdragonsoft/bvm

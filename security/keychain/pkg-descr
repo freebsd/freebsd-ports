@@ -4,5 +4,3 @@ system rather than per login session.
 
 Please study the documentation on the keychain website carefully since
 incorrect usage of this script may have certain security implications.
-
-WWW: https://www.funtoo.org/Keychain

@@ -6,5 +6,3 @@ view log files by drastically reducing the amount of
 typing involved.
 
 bin/clog - Searches, displays, and colorizes log files.
-
-WWW: https://metacpan.org/release/Log-Colorize-Helper

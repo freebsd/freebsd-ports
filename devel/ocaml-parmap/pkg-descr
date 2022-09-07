@@ -5,5 +5,3 @@ map, fold or map/fold (map-reduce), just use Parmap's parmap, parfold
 and parmapfold primitives in place of the standard List.map and friends,
 and specify the number of subprocesses to use by the optional parameter
 ~ncores.
-
-WWW: https://github.com/rdicosmo/parmap

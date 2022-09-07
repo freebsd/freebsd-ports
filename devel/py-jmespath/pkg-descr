@@ -1,4 +1,2 @@
 JMESPath (pronounced "jaymz path") allows you to declaratively specify how to
 extract elements from a JSON document.
-
-WWW: https://github.com/jmespath/jmespath.py

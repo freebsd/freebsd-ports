@@ -13,5 +13,3 @@ dispatch portaudit reports to the owners of jails, keeping them informed
 about potential security advisories of their installed ports.
 
 Jailaudit can be used on FreeBSD 5.1 or larger.
-
-WWW: https://github.com/cristianyxen/jailaudit

@@ -10,5 +10,3 @@ Features:
     * no configuration, so you can run several sites off the same fcgiwrap pool
     * passes CGI stderr output to fcgiwrap's stderr (this is by design but
     * stderr could be also passed to FastCGI stderr stream)
-
-WWW: http://nginx.localdomain.pl/wiki/FcgiWrap

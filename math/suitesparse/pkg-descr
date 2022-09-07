@@ -18,5 +18,3 @@ It contains:
     * SPQR: sparse QR factorization
     * UMFPACK: sparse multifrontal LU factorization
     * SuiteSparse_config: common configuration for all of the above
-
-WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html

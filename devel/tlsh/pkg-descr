@@ -4,5 +4,3 @@ Similar files will have similar hash values which allows for the detection of
 similar objects by comparing their hash values.
 
 This port only includes the core C++ library.
-
-WWW: https://tlsh.org

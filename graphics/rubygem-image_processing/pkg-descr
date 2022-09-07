@@ -6,5 +6,3 @@ libraries. ImageMagick is a good default choice, especially if you are migrating
 from another gem or library that uses ImageMagick. Libvips is a newer library
 that can process images very rapidly (often multiple times faster than
 ImageMagick).
-
-WWW: https://github.com/janko/image_processing

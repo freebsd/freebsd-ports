@@ -4,5 +4,3 @@ to remote or cloud storage of your choice, to network-attached storage
 or server, or locally on your machine. Kopia does not 'image' your
 whole machine. Rather, Kopia allows you to backup/restore any and all
 files/directories that you deem are important or critical.
-
-WWW: https://kopia.io/

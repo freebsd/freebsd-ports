@@ -15,5 +15,3 @@ devices. It currently supports a variety of devices, such as:
   * Alcatel Ethernet Routers (Riverstone)
   * Old Terayon 3200/3500 CMTS
   * Tellabs MSR
-
-WWW: https://github.com/udhos/fetchconfig

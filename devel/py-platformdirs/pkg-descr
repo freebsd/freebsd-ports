@@ -16,5 +16,3 @@ And also:
 - Is a single module so other Python packages can vendor their own private copy.
 - Is slightly opinionated on the directory names used. Look for "OPINION" in
   documentation and code for when an opinion is being applied.
-
-WWW: https://github.com/platformdirs/platformdirs

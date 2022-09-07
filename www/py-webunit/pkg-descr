@@ -12,5 +12,3 @@ Features in a nutshell:
 5. Two-line page-fetch followed by form-submit possible, with error checking
 6. Ability to register error page content across multiple tests
 7. Uses python's standard unittest module as the underlying framework
-
-WWW: https://pypi.org/project/webunit/

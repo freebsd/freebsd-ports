@@ -19,5 +19,3 @@ loading, you need to be able to take options from the command line,
 environment variables, and configuration files. Pop-config does all
 of this for you, and loads them in the correct order, all behind the
 scenes, making your life easier.
-
-WWW: https://gitlab.com/saltstack/pop/pop-config

@@ -3,5 +3,3 @@ SQLite database library possible. Everything you can do from the SQLite C API,
 you can do from Python. Although APSW looks vaguely similar to the PEP 249
 (DBAPI), it is not compliant with that API because instead it works the way
 SQLite 3 does.
-
-WWW: https://rogerbinns.github.io/apsw/

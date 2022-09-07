@@ -23,5 +23,3 @@ cryptographic hashes, dbm, directories, ffi, fork, pipes,
 pseudo-terminals, random, readline, sprintf, sqlite3, stat, tcl, and
 TLS, documented in manual pages created using embedded POD-like
 "snopea" markup.
-
-WWW: http://www.regressive.org/snobol4/

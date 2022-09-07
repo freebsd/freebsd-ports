@@ -6,5 +6,3 @@ designed from the ground-up with flexibility, thread-safety, and
 correctness as first priorities. Allocation, buffering, and I/O are
 cleanly separated from processing, allowing the programmer to adapt
 "z" to many scenarios.
-
-WWW: https://github.com/sekrit-twc/zimg

@@ -6,5 +6,3 @@ Class::props	Pragma to implement lvalue accessors with options
 Class::group	Pragma to implement group of properties accessors with options
 Object::props	Pragma to implement lvalue accessors with options
 Object::group	Pragma to implement group of properties accessors with options
-
-WWW: https://metacpan.org/release/OOTools

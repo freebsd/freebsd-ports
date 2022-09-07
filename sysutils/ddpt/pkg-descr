@@ -3,5 +3,3 @@ copies files. The ddpt utility specializes in files that are block
 devices. For block devices that understand the SCSI command set,
 finer grain control over the copy may be available via a SCSI
 pass-through interface.
-
-WWW: http://sg.danny.cz/sg/ddpt.html

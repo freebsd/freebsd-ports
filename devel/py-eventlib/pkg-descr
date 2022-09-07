@@ -6,5 +6,3 @@ built upon the following values:
 - The event system must be asynchronous, so let's use celery
 - The library must be extensible
 - 100% of test coverage is enough
-
-WWW: https://pypi.org/project/eventlib/

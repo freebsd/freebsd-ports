@@ -2,5 +2,4 @@ Pod::DocBook is a module for translating Pod-formatted documents to
 DocBook 4.2 SGML.  It is primarily a back end for pod2docbook, but,
 as a Pod::Parser subclass, it can be used on its own.
 
-WWW: https://metacpan.org/release/Pod-DocBook
-WWW: https://docbook.org/
+See also: https://docbook.org/

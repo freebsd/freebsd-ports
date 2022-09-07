@@ -10,5 +10,3 @@ Also included is an Emacs interface to commit-patch. It allows you to
 just hit C-c C-c in any patch buffer to apply and commit only the
 changes indicated by the patch, regardless of the changes in your
 working directory.
-
-WWW: https://www.porkrind.org/commit-patch/

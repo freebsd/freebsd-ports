@@ -8,5 +8,3 @@ the sublibraries. Each sublibrary implements one type of compression.
 There are different libraries for different types of data. When unpacking the
 applications do not need to know which library was used to pack the data --
 the appropriate library needs to be installed.
-
-WWW: http://www.jormas.com/~vesuri/xpk/

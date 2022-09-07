@@ -14,5 +14,3 @@ This is identical to the normal netcat options for doing exactly the
 same thing.  However, in this case the data transferred is encrypted.
 
 For more information about netcat see net/netcat port.
-
-WWW: https://sourceforge.net/projects/cryptcat/

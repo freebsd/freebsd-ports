@@ -1,4 +1,2 @@
 Fog::Sakuracloud is a module for the fog gem that allows you to manage resources
 in the Sakura no Cloud.
-
-WWW: https://github.com/fog/fog-sakuracloud

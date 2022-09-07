@@ -3,5 +3,3 @@ a variety of ciphers for convenient use.
 
 In particular, having libmcrypt allows you to build PHP with
 encryption.
-
-WWW: http://mcrypt.sourceforge.net/

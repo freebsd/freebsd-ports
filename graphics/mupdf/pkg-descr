@@ -14,5 +14,3 @@ provides a simple API for accessing the internal structures of the PDF
 document. Example code for navigating interactive links and bookmarks,
 encrypting PDF files, extracting fonts, images, and searchable text, and
 rendering pages to image files is provided.
-
-WWW: https://www.mupdf.com/

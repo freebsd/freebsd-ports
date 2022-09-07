@@ -3,5 +3,3 @@ serializer using a binary protocol called Sereal.  Its sister module
 Sereal::Decoder (converts/p5-Sereal-Decoder) implements a decoder for
 this format.  The two are released separately to allow for independent
 and safer upgrading.
-
-WWW: https://metacpan.org/pod/Sereal::Encoder

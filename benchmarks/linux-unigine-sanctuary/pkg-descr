@@ -22,5 +22,3 @@ Key features:
 The program requires linprocfs(5) and linsysfs(5) to be mounted under
 /compat/linux/{proc,sys} to operate and writable /compat/linux/dev/shm
 directory, which is typically backed by tmpfs(5).
-
-WWW: https://benchmark.unigine.com/sanctuary

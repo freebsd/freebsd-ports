@@ -12,5 +12,3 @@ USAGE
                 -m to force mplayer if you don't have transcode installed.
                 -t to force transcode (you can also edit the script in the :user
  settings" section)
-
-WWW: http://kvcd4nix.sourceforge.net/

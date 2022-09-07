@@ -10,5 +10,3 @@ filtering using the user's own mail user-agent application.
 
 Additional drop-in rule sets are available at
 https://cwiki.apache.org/confluence/display/spamassassin/CustomRulesets
-
-WWW: https://spamassassin.apache.org/

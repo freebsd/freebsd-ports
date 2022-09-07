@@ -3,5 +3,3 @@ Its primary use is for Internet Service Providers, though it may also
 be used on any network that needs a centralized authentication and/or
 accounting service for its workstations.  The package includes an
 authentication and accounting server and administrator tools.
-
-WWW: http://www.gnu.org/software/radius/

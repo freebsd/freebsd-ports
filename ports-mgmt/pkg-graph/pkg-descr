@@ -3,5 +3,3 @@ DOT syntax (for use with graphviz and others) to represent the
 dependency tree of installed packages. It can be used to visually
 analyze the package dependency chain and understand why certain packages
 are pulled in.
-
-WWW: https://github.com/neosmart/pkg-graph

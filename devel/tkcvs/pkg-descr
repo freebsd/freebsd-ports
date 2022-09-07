@@ -10,5 +10,3 @@ For Subversion, the repository tree is browsed like an ordinary file
 tree. For CVS, the CVSROOT/modules file is read. TkCVS extends CVS with
 a method to produce a "user friendly" listing of modules by using special
 comments in the CVSROOT/modules file.
-
-WWW: http://www.twobarleycorns.net/tkcvs.html

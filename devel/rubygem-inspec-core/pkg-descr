@@ -4,5 +4,3 @@ portable test profiles and use them in your workflow to ensure stability
 and security. Integrate InSpec in your change lifecycle for local testing,
 CI/CD, and deployment verification. This has local support only.
 See the `inspec` gem for full support.
-
-WWW: https://github.com/inspec/inspec

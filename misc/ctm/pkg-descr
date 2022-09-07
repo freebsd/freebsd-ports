@@ -8,5 +8,3 @@ There are two parts to this, making the delta and applying it.  These are two
 entirely different things.  CTM concentrates the computation-burden on the
 generation of the deltas, as a delta very often is applied more times than
 it is made.  Second CTM tries to make the minimal size delta.
-
-WWW: https://github.com/freebsd/ctm

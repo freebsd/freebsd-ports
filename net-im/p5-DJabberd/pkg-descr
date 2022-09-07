@@ -4,5 +4,3 @@ classes for you to build your own Jabber server without understanding
 Jabber.  Instead of working with XML and protocol-specific details, you
 subclass parts and work with sane objects and data structures and let
 DJabberd do all the ugly work.
-
-WWW: https://metacpan.org/release/DJabberd

@@ -1,4 +1,2 @@
 Stoplight is traffic control for code. It's an implementation of the circuit
 breaker pattern in Ruby.
-
-WWW: https://github.com/bolshakov/stoplight

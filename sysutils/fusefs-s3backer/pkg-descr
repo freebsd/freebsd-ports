@@ -20,5 +20,3 @@ reused.
 By utilizing existing filesystems atop s3backer, you get full UNIX
 filesystem semantics. Subtle bugs or missing functionality relating
 to hard links, extended attributes, POSIX locking, etc. are avoided.
-
-WWW: https://github.com/archiecobbs/s3backer

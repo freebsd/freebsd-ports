@@ -17,5 +17,3 @@ Features include:
     * IPv6 support (on systems that support it)
     * support for multiple accounts
     * sendmail compatible exit codes (which most MUAs understand).
-
-WWW: https://marlam.de/msmtp/

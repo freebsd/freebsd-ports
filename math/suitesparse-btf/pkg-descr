@@ -7,5 +7,3 @@ exists); otherwise, it finds a maximal matching which maximizes the number of
 nonzeros on the diagonal. The package also includes a method for finding the
 strongly connected components of a graph. These two methods together give the
 permutation to block upper triangular form.
-
-WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html

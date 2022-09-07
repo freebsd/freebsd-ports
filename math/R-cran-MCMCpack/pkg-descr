@@ -6,5 +6,3 @@ then be summarized using the coda package. Some useful utility
 functions such as density functions, pseudo-random number generators
 for statistical distributions, a general purpose Metropolis sampling
 algorithm, and tools for visualization are provided.
-
-WWW: https://cran.r-project.org/web/packages/MCMCpack/

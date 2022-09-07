@@ -3,5 +3,3 @@ nested, easy-to-read form. Handles recursive data structures properly,
 and has sensible options for limiting the extent of the dump both
 by simple depth and by some rules for how to handle contained
 instances.
-
-WWW: https://pypi.org/project/Dumper/

@@ -11,5 +11,3 @@ Pomerium can be used to:
  - enforce dynamic access policy based on context, identity, and device state.
  - aggregate access logs and telemetry data.
  - a VPN alternative.
-
-WWW: https://pomerium.io/

@@ -1,5 +1,3 @@
 MooseX::Declare provides syntactic sugar for Moose, the postmodern
 object system for Perl 5.  When used, it sets up the "class" and
 "role" keywords.
-
-WWW: https://metacpan.org/release/MooseX-Declare

@@ -8,5 +8,3 @@ The following GUI backends are supported:
  * wxPython
  * PyQt
  * PySide
-
-WWW: https://docs.enthought.com/traitsui/

@@ -8,5 +8,3 @@ Features:
   * Modular fixtures to manage small or parametrized long-lived test resources
   * Can run unittest (or trial), nose test suites out of the box
   * Rich plugin architecture, with over 315+ external plugins
-
-WWW: https://docs.pytest.org/en/latest/

@@ -13,5 +13,3 @@ To create a highlighter for a language, there is no need
 to code a new class manually. Simply describe the rules
 in XML file and use Text_Highlighter_Generator to create
 a new class.
-
-WWW: https://pear.php.net/package/Text_Highlighter

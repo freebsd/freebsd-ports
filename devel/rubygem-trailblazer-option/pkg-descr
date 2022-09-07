@@ -1,5 +1,3 @@
 Trailblazer::Option is the one of the core concept behind traiblazer-operation's
 step API, reform's populator API etc. It makes us possible to accept any kind of
 callable objects at compile time and execute them at runtime.
-
-WWW: https://github.com/trailblazer/trailblazer-option

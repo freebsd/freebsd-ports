@@ -1,3 +1,1 @@
 Check for memory leaks and circular memory references.
-
-WWW: https://metacpan.org/release/Test-Memory-Cycle

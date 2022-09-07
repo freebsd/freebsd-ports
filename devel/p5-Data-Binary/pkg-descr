@@ -5,5 +5,3 @@ functions but on strings.
 Note that the actual implementation is currently different, basically because
 the -T / -B functions are in C/XS, and this module is written in pure Perl. For
 now, anyway.
-
-WWW: https://metacpan.org/release/Data-Binary

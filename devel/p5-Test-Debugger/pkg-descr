@@ -5,5 +5,3 @@ about each failed test.
 You can take your existing test script, and with (hopefully) very little
 effort, convert it to use Test::Debugger. Then re-run your modified test and
 view the log file it creates.
-
-WWW: https://metacpan.org/release/Test-Debugger

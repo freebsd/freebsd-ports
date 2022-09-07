@@ -6,5 +6,3 @@ HTTP_Request2 provides cleaner API and pluggable Adapters:
 It supports POST requests with data and file uploads, basic and digest
 authentication, cookies, managing cookies across requests, proxies, gzip and
 deflate encodings, redirects, monitoring the request progress with Observers.
-
-WWW: https://pear.php.net/package/HTTP_Request2

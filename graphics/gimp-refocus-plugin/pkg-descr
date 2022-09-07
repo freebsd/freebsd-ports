@@ -14,5 +14,3 @@ images is to use unsharp masking. Refocus generally produces better
 results than unsharp masking.
 
 The plugin can be found under "Filters > Enhance > Refocus"
-
-WWW: http://refocus.sourceforge.net/

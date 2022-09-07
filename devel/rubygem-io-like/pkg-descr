@@ -3,5 +3,3 @@ such as File; most importantly the read, write, and seek series of methods.  A
 class which includes IO::Like needs to provide only a few methods in order to
 enable the higher level methods.  Buffering is automatically provided by default
 for the methods which normally provide it in IO.
-
-WWW: https://rubygems.org/gems/io-like

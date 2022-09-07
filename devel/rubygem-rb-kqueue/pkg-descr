@@ -1,5 +1,3 @@
 This is a simple wrapper over the kqueue BSD event notification interface
 (supported on FreeBSD, NetBSD, OpenBSD, and Darwin). It uses the FFI gem to
 avoid having to compile a C extension.
-
-WWW: https://github.com/mat813/rb-kqueue

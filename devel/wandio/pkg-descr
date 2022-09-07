@@ -6,5 +6,3 @@ separate thread.
 
 Libwandio supports the popular compression methods (zlib, bzip2, LZMA,
 write-only LZO) and HTTP transport (read-only).
-
-WWW: http://research.wand.net.nz/software/libwandio.php

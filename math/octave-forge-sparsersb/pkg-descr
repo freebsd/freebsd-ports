@@ -6,5 +6,3 @@ build and install scripts.
 This is sparsersb.
 
  Interface to the librsb package implementing the RSB sparse matrix format.
-
-WWW: http://octave.sourceforge.net/

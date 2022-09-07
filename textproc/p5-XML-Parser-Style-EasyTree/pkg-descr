@@ -1,4 +1,2 @@
 This module provides an XML::Parser style for generating a simple tree
 out of XML.
-
-WWW: https://metacpan.org/release/XML-Parser-Style-EasyTree

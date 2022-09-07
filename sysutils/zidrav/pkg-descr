@@ -3,5 +3,3 @@ to provide a way to fix file damage without having to redownload the
 entire (potentially large) file over a (potentially slow) connection.
 
 LICENSE: GPL2 or later
-
-WWW: https://sourceforge.net/projects/zidrav/

@@ -16,5 +16,3 @@ most wikis:
 
 Each feature is implemented as a separate plugin class. This keeps things
 simple and extensible.
-
-WWW: http://www.kwiki.org/

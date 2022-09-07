@@ -4,5 +4,3 @@ incremental backups, and remote mirroring via ssh.
 
 Note: This port does not copy (or mirror) any FreeBSD supported ACL
 types and Extended Attributes nor MAC labels.
-
-WWW: https://github.com/DragonFlyBSD/cpdup

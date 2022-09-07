@@ -4,5 +4,3 @@ stream into HTTP/2 frames.
 
 This library is used directly by hyper and a number of other projects to
 provide HTTP/2 frame decoding logic.
-
-WWW: http://hyper.rtfd.org/

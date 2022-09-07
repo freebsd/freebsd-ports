@@ -1,5 +1,3 @@
 This extension uses rabbitmq-c library to provide API for
 communicating with AMQP compliant servers, and writing
 producers and consumers.
-
-WWW: https://pecl.php.net/package/amqp

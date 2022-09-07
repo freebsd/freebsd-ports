@@ -10,5 +10,3 @@ more effectively.
 A simple pattern-based sequencer is used to create songs which use up to 24
 voices, each of which can use a different synthesizer. Each synthesizer can be
 programmed with a number of patches that can be switched between patterns.
-
-WWW: https://github.com/electronoora/komposter

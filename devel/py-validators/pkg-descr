@@ -6,5 +6,3 @@ validating a simple value does not require defining a form or a schema.
 
   >>> validators.email('someone@example.com')
   True
-
-WWW: https://pypi.org/project/validators/

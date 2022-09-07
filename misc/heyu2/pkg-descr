@@ -11,5 +11,3 @@ Heyu now supports an optional W800RF32A or MR26A RF receiver connected to a
 second port as an auxiliary input device for X10 RF signals.
 
 Heyu can also use an optional CM17A interface to transmit X10 RF signals.
-
-WWW: http://www.heyu.org/

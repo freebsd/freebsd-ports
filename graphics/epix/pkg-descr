@@ -5,5 +5,3 @@ file, which produces a text file that is included into a LATEX document.
 Because the output is plain text, the output can be edited manually if
 necessary. However, for most visual tweaking it is easier and safer to change
 the source and re-run ePiX.
-
-WWW: http://mathcs.holycross.edu/~ahwang/epix/ePiX.html

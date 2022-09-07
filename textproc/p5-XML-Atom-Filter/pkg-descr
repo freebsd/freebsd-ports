@@ -1,4 +1,2 @@
 XML::Atom::Filter supports creation of command line tools to filter and
 process Atom feeds.
-
-WWW: https://metacpan.org/release/XML-Atom-Filter

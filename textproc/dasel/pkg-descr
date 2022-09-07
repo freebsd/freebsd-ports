@@ -5,5 +5,3 @@ using selector strings.
 Comparable to jq / yq, but supports JSON,
 YAML, TOML and XML with zero runtime
 dependencies.
-
-WWW: https://github.com/TomWright/dasel

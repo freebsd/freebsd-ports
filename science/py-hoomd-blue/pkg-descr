@@ -4,5 +4,3 @@ optimized for fast execution on both GPUs and CPUs. As a Python
 package, HOOMD-blue gives you the flexibility to create custom
 initialization routines, control simulation parameters, perform in
 situ analysis, use interactive notebooks, and more.
-
-WWW: https://glotzerlab.engin.umich.edu/hoomd-blue/

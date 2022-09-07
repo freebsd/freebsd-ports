@@ -11,5 +11,3 @@ Features:
 * Provides additional integration for the KDE Plasma Workspace through
   a plasmoid and an OSD activated by hardware key for quick
   configuration changes.
-
-WWW: https://gitlab.com/kwinft/kdisplay

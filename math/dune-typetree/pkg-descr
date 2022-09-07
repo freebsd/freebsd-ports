@@ -6,5 +6,3 @@ typed trees of objects. It is based around the idea of defining loosely coupled,
 componentized algorithms. Component lookup happens through tag dispatch, making
 it very easy to extend and / or modify existing algorithms as well as
 constructing new algorithms for existing types of tree nodes.
-
-WWW: https://www.dune-project.org/

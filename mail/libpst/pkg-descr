@@ -10,5 +10,3 @@ It includes:
 - lspst: list PST (MS Outlook Personal Folders) file data
 - pst2ldif: extract contacts from a MS Outlook .pst file in .ldif format
 - pst2dii: extract email messages from a MS Outlook .pst file in DII load format
-
-WWW: https://www.five-ten-sg.com/libpst/

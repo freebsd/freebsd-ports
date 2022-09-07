@@ -15,5 +15,3 @@ SLY's highlights are:
   object and remain stable throughout the REPL session.
 - Support for NAMED-READTABLES, macrostep.el and quicklisp.
 - A portable, annotation-based stepper in early but functional prototype stage.
-
-WWW: https://github.com/joaotavora/sly

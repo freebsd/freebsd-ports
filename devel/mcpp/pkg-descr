@@ -10,5 +10,3 @@ Though mcpp could be built as a replacement of GCC's resident
 preprocessor or as a stand-alone program without using library build of
 mcpp, this package installs a program named 'mcpp' which links shared
 library of libmcpp and behaves independent from GCC.
-
-WWW: http://mcpp.sourceforge.net/

@@ -7,5 +7,3 @@ There are two main components: the Recorder obtains data via MQTT subscribes or
 HTTP POST, stores the data in plain files and serve it via its built-in REST
 API, and the ocat command-line utility reads stored data in a variety of
 formats.
-
-WWW: https://github.com/owntracks/recorder

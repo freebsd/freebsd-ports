@@ -7,5 +7,4 @@ largely inspired from Symfony's EventDispatcher component.
 Using an event dispatcher is a great way to write loosely coupled extensible
 code, having each part only communicate using light events.
 
-WWW: https://python-whistle.github.io/
-WWW: https://github.com/python-whistle/whistle
+See also: https://github.com/python-whistle/whistle

@@ -11,5 +11,3 @@ numbers) can be masked with the standard regular expression grouping
 operators ( ). This allows cleaner and more readable reports. All
 reports are separated by hostname and all messages are condensed
 when possible.
-
-WWW: https://inversepath.com/tenshi.html

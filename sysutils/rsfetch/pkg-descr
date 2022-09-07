@@ -10,5 +10,3 @@ more fast. Users may instead create aliases in their
 ~/.${SHELL}rc. In addition, no automatic package
 manager or ASCII logo mechanism is present, but must
 instead be manually specified.
-
-WWW: https://github.com/rsfetch/rsfetch

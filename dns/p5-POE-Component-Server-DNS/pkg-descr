@@ -6,5 +6,3 @@ POE::Component::Generic to perform recursion.
 
 One may add handlers to massage and manipulate responses to particular queries
 which is vaguely modelled after Net::DNS::Nameserver.
-
-WWW: https://metacpan.org/release/POE-Component-Server-DNS

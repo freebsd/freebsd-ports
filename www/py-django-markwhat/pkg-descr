@@ -13,5 +13,3 @@ In each case, the filter expects formatted markup as a string and
 returns a string representing the marked-up text. For example, the
 ``textile`` filter converts text that is marked-up in Textile format
 to HTML.
-
-WWW: https://pypi.org/project/django-markwhat/

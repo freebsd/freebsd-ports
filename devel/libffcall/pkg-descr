@@ -11,5 +11,3 @@ The four packages are:
 
     callback - closures with variable arguments as first-class C functions
                (a reentrant combination of vacall and trampoline)
-
-WWW: https://www.haible.de/bruno/packages-ffcall.html

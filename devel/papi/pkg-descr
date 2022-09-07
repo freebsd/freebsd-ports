@@ -5,5 +5,4 @@ hardware found in most major microprocessors.
 PAPI enables software engineers to see, in near real time, the relation
 between software performance and processor events.
 
-WWW: http://code.google.com/p/papi-for-freebsd/
-WWW: http://icl.cs.utk.edu/papi
+See also: https://icl.cs.utk.edu/papi

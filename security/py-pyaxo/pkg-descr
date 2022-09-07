@@ -6,5 +6,3 @@ forward and future secrecy, as well as deniability.
 
 The protocol was developed by Trevor Perrin and Moxie Marlinspike. Its chief
 use currently is in the Open Whisper Systems Signal package.
-
-WWW: https://github.com/rxcomm/pyaxo

@@ -5,5 +5,3 @@ tickets are explicitly moved to or from specified statuses. If you list
 custom fields which must have a value before a ticket is resolved, those
 custom fields will automatically show up on the "Resolve" page. The
 reply/comment won't be allowed until a value is provided.
-
-WWW: https://metacpan.org/release/RT-Extension-MandatoryOnTransition

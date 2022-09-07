@@ -4,5 +4,3 @@ implement clients and servers; HTTPS extensions to Python's httplib, urllib, and
 xmlrpclib; unforgeable HMAC'ing AuthCookies for web session management; FTP/TLS
 client and server; S/MIME; ZServerSSL: A HTTPS server for Zope and ZSmime: An
 S/MIME messenger for Zope.
-
-WWW: https://gitlab.com/m2crypto/m2crypto

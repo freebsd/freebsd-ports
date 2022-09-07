@@ -15,5 +15,3 @@ Its goals are:
 - Keep the API small to maximize both portability and performance across many
   different OSes and Ruby VMs
 - Provide inherently thread-safe facilities for working with IO objects
-
-WWW: https://github.com/socketry/nio4r

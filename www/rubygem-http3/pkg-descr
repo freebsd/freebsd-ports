@@ -4,5 +4,3 @@ Requests
 
 Under the hood, The HTTP Gem uses http_parser.rb, a fast HTTP parsing native
 extension based on the Node.js parser and a Java port thereof.
-
-WWW: https://github.com/httprb/http

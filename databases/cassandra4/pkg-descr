@@ -12,5 +12,3 @@ The CQL query language offers SQL-like data access and management.
 Drivers are available for a number of languages.
 
 This is a BETA version!
-
-WWW: https://cassandra.apache.org/

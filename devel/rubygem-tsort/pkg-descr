@@ -11,5 +11,3 @@ and tsort_each_child:
 
 The equality of nodes are defined by eql? and hash since TSort uses Hash
 internally.
-
-WWW: https://github.com/ruby/tsort

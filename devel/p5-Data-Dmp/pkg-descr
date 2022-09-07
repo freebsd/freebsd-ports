@@ -8,5 +8,3 @@ dumping objects, regexes, circular structures, coderefs. Its code is first based
 on Data::Dump: I removed all the parts that I don't need, particularly the
 pretty formatting stuffs) and added some features that I need like proper regex
 dumping and coderef deparsing.
-
-WWW: https://metacpan.org/release/Data-Dmp

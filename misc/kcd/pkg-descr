@@ -17,5 +17,3 @@ kcd allows user to change directory by using various methods:
 	- Faster directory rescan if old data file exists.  Only
 	  directories with newer modified/changed time are scanned.
 	- Sorted directory tree listing.
-
-WWW: http://kcd.sourceforge.net/

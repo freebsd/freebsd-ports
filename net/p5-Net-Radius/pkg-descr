@@ -7,5 +7,3 @@ Net::Radius::Dictionary - Deals with RADIUS dictionaries
 This module is essentially the original RADIUS-1.0 distribution by
 Christopher Masto plus a number of changes and fixes by Luis Munoz and
 Ian Smith.
-
-WWW: https://metacpan.org/release/Net-Radius

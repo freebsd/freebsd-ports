@@ -4,5 +4,3 @@ a lightweight method of carrying out messaging using a publish/subscribe
 model. This makes it suitable for "machine to machine" messaging such as
 with low power sensors or mobile devices such as phones, embedded
 computers or microcontrollers like the Arduino.
-
-WWW: http://mosquitto.org/

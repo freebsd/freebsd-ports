@@ -5,5 +5,3 @@ their associated build requirements.
 
 The scikit-build package is fundamentally just glue between the setuptools
 Python module and CMake.
-
-WWW: https://scikit-build.readthedocs.io/en/latest/

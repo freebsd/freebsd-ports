@@ -7,5 +7,3 @@ on multi-dimensional arrays, rather than the tabular data for which pandas
 excels. Our approach adopts the Common Data Model for self- describing
 scientific data in widespread use in the Earth sciences: xarray.Dataset is an
 in-memory representation of a netCDF file.
-
-WWW: https://github.com/pydata/xarray

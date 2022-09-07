@@ -14,5 +14,3 @@ This library works perfectly with OpenGL but it also ensures interoperability
 with third party libraries and SDKs.  It is a good candidate for software
 rendering (Raytracing / Rasterisation), image processing, physic simulations
 and any context that requires a simple and convenient mathematics library.
-
-WWW: https://glm.g-truc.net/

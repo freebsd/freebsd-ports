@@ -5,5 +5,3 @@ classes, functions, methods and properties.
 zope.deprecation provides a simple function called
 'deprecated(names, reason)' to deprecate the previously mentioned
 Python objects.
-
-WWW: https://pypi.org/project/zope.deprecation/

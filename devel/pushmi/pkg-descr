@@ -2,5 +2,3 @@ Pushmi provides a mechanism for bidirectionally synchronizing Subversion
 repositories. The main difference between Pushmi and other replication
 tools is that Pushmi makes the "slave" repositories writable by normal
 Subversion clients.
-
-WWW: https://metacpan.org/release/Pushmi

@@ -8,5 +8,3 @@ less than one screen's worth of data. And if you redirect the output to a file
 or a pipe, it does the right thing instead. Colours are preserved. Don't you
 wish all programs worked like that? Now at least all of your Python programs
 can.
-
-WWW: https://github.com/zaneb/autopage

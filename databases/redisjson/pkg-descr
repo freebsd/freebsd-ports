@@ -8,5 +8,3 @@ Primary features:
 - Documents are stored as binary data in a tree structure, allowing
   fast access to sub-elements
 - Typed atomic operations for all JSON values types
-
-WWW: https://oss.redislabs.com/redisjson/

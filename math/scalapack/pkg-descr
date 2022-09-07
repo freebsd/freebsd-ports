@@ -5,5 +5,3 @@ passing for interprocessor communication. It assumes matrices are laid out
 in a two-dimensional block cyclic decomposition.
 
 Now the code for BLACS and PBLAS is included.
-
-WWW: http://www.netlib.org/scalapack/

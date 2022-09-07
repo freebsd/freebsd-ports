@@ -13,5 +13,3 @@ Features:
 - Jitter-buffer
 - Async I/O (poll, epoll, select)
 - UDP/TCP/TLS transport
-
-WWW: http://www.creytiv.com/re.html

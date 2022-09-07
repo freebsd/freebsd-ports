@@ -4,5 +4,3 @@ syntax. It has several builtin functions for algorithmic number
 theory like gcd, Jacobi symbol, Rabin probabilistic prime test,
 continued fraction and quadratic sieve factorization, Pollard rho
 factorization, etc.
-
-WWW: http://www.mathematik.uni-muenchen.de/~forster/sw/adownload.html

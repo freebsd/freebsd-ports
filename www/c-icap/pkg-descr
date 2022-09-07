@@ -18,5 +18,3 @@ Currently the following services have been implemented for the c-icap server:
 
     Web antivirus service, using the clamav open-source antivirus engine
     basic URL filtering service
-
-WWW: http://c-icap.sourceforge.net/

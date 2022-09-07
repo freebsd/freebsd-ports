@@ -4,5 +4,3 @@ to deliver messages via attached hardware.
 You provide the hardware port and the baudrate to use.
 Consult Device::Gsm for further information on what devices
 and baudrates are supported.
-
-WWW: https://metacpan.org/release/SMS-Send-DeviceGsm

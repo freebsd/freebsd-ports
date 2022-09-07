@@ -4,5 +4,3 @@ Features:
 * Conforming and nonconforming adaptive mesh refinement.
 * Scalable to hundreds of thousands of cores.
 * etc.
-
-WWW: https://mfem.org/

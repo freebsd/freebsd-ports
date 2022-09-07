@@ -2,5 +2,3 @@ A simple, powerful, and very fast logging utility that can be a drop in
 replacement for Logger or ActiveSupport::BufferedLogger. Provides support for
 automatically rolling log files even with multiple processes writing the same
 log file.
-
-WWW: https://github.com/bdurand/lumberjack

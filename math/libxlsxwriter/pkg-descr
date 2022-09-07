@@ -15,5 +15,3 @@ features such as:
 * ANSI C.
 * Compiles for 32 and 64 bit.
 * The only dependency is on zlib.
-
-WWW: http://libxlsxwriter.github.io/

@@ -8,5 +8,3 @@ LibCST creates a compromise between an Abstract Syntax Tree (AST) and a
 traditional Concrete Syntax Tree (CST). By carefully reorganizing and naming
 node types and fields, we've created a lossless CST that looks and feels like an
 AST.
-
-WWW: https://github.com/Instagram/LibCST

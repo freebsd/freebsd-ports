@@ -3,5 +3,3 @@ which usually consist of a video stream (Theora) and an audio stream
 (Vorbis). It includes a number of handy command line tools for
 creating an manipulating these video files, such as for splitting the
 different streams.
-
-WWW: http://www.streamnik.de/oggvideotools.html

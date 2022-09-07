@@ -4,5 +4,3 @@ and provide a convenient API.
 It currently provides bidirectional text support (using FriBiDi), shaping
 (using HarfBuzz), and proper script itemization. As a result, Raqm can
 support most writing systems covered by Unicode.
-
-WWW: https://github.com/HOST-Oman/libraqm

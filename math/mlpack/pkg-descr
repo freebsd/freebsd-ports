@@ -4,5 +4,3 @@ cutting-edge machine learning algorithms. mlpack provides these
 algorithms as simple command-line programs, Python bindings, and
 C++ classes which can then be integrated into larger-scale machine
 learning solutions.
-
-WWW: https://www.mlpack.org/

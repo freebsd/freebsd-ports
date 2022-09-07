@@ -5,5 +5,3 @@ It uses the subversion filesystem but provides additional features:
     - Distributed branches.
     - Lightweight checkout copy management (no .svn directories).
     - Advanced merge algorithms, like star-merge and cherry picking.
-
-WWW: https://metacpan.org/release/SVK

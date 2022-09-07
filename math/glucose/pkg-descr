@@ -8,5 +8,3 @@ presented at IJCAI'09. Solver's name is a contraction of the concept of
 during search.
 
 Glucose accepts SAT problems in the DIMACS format.
-
-WWW: http://www.labri.fr/perso/lsimon/glucose/

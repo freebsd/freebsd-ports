@@ -7,5 +7,3 @@ trivial.
 
 Test::Base gives you a way to write your own test framework base class
 that *is* trivial.
-
-WWW: https://metacpan.org/release/Test-Base

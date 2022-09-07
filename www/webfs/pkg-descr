@@ -16,5 +16,3 @@ Features/Design:
  * supports keep-alive and pipelined requests.
  * serves byte ranges.
  * optional logging in common log file format.
-
-WWW: http://linux.bytesex.org/misc/webfs.html

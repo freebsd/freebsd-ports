@@ -1,4 +1,2 @@
 AttrDict is an MIT-licensed library that provides mapping objects that allow
 their elements to be accessed both as keys and as attributes
-
-WWW: https://pypi.python.org/pypi/attrdict

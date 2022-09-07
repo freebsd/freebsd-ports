@@ -20,5 +20,3 @@ the common database. DataDraw is also 64-bit optimized, allowing programs to
 run much faster and in less memory than standard C programs using 64-bit
 pointers. This is because DataDraw databases support over 4 billion objects
 of a given class with 32-bit object references.
-
-WWW: http://datadraw.sourceforge.net/

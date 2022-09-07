@@ -4,5 +4,3 @@ monitors disk performance.
 
 It can also display information about remote hosts using the RSTAT RPC
 protocol, as perfmeter does.
-
-WWW: http://www.cs.toronto.edu/~jdd/

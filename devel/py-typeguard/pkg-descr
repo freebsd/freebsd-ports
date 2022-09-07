@@ -1,4 +1,2 @@
 This library provides runtime type checking for functions defined with PEP 484
 argument (and return) type annotations.
-
-WWW: https://github.com/agronholm/typeguard

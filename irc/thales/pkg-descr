@@ -10,5 +10,3 @@ Supported DBMS and IRCDs:
 * Currently runs with MySQL
 * Support for Bahamut (1.4.27 or later), Hybrid 7 and Ultimate (2.8 or
   later, 3.0.0 or later) is still included, but is not maintained
-
-WWW: http://www.gnu.org/software/thales/

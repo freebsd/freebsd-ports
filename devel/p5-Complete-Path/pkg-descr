@@ -6,5 +6,3 @@ and case mapping.
 Algorithm is to split path into path elements, then list items (using
 the supplied list_func) and perform filtering (using the supplied
 filter_func) at every level.
-
-WWW: https://metacpan.org/release/Complete-Path

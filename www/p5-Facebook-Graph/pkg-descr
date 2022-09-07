@@ -5,5 +5,3 @@ http://developers.facebook.com/docs/api.  With this module you can
 currently query public Facebook data, query privileged Facebook data,
 and build a privileged Facebook application.  See the TODO for all
 that this module cannot yet do.
-
-WWW: https://metacpan.org/release/Facebook-Graph

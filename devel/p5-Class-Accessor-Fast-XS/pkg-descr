@@ -3,5 +3,3 @@ Just replace Class::Accessor::Fast with Class::Accessor::Fast::XS
 and it should just work.
 
 Read Class::Accessor::Fast and Class::Accessor for API docs and usage.
-
-WWW: https://metacpan.org/release/Class-Accessor-Fast-XS

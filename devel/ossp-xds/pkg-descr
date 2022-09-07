@@ -6,5 +6,3 @@ certain existing formats (Sun RPC/XDR and XDS/XML are currently
 provided), and a run-time context, which is used to manage buffers,
 registered engines, etc.  The library is designed to allow fully
 recursive and efficient encoding/decoding of arbitrary nested data.
-
-WWW: http://www.ossp.org/pkg/lib/xds/

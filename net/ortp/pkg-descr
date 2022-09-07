@@ -20,5 +20,3 @@ Features:
 * RTCP messages sent periodically since 0.7.0 (compound packet including
   sender report or receiver report + SDES)
 * Includes an API to parse incoming RTCP packets
-
-WWW: https://www.linphone.org/technical-corner/ortp.html

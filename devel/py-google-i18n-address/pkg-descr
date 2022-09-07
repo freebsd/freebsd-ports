@@ -1,5 +1,3 @@
 Contents of this package will allow you to programatically build address forms
 that adhere to rules of a particular region or country, validate local
 addresses and format them to produce a valid address label for delivery.
-
-WWW: https://pypi.org/project/google-i18n-address/

@@ -2,5 +2,3 @@ It's a Ruby script that loads the application classes and analyzes its
 properties (attributes, methods) and relationships (inheritance, model
 associations like has_many, etc.) The output is a graph description in
 the DOT language, suitable to be handled with tools like Graphviz.
-
-WWW: http://railroad.rubyforge.org/

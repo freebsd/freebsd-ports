@@ -5,5 +5,3 @@ an installation CD, just access to a Debian repository.
 In FreeBSD, you can use debootstrap to install Debian into a subdirectory
 of your existing FreeBSD installation and then run Debian Linux in a jail
 or chroot.
-
-WWW: https://wiki.debian.org/Debootstrap

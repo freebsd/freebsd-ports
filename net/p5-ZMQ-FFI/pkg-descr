@@ -1,4 +1,2 @@
 ZMQ::FFI exposes a high level, transparent, OO interface to zeromq independent
 of the underlying libzmq version.
-
-WWW: https://metacpan.org/pod/ZMQ::FFI

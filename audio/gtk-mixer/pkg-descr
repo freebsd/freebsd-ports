@@ -10,5 +10,3 @@ Features
 - enable/disable lines (mute/unmute)
 - detect sound cards connect/disconnect
 - detect default sound card change
-
-WWW: https://github.com/rozhuk-im/gtk-mixer

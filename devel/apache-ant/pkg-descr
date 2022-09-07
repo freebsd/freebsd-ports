@@ -8,5 +8,3 @@ There are tasks for various things, like compiling ("javac"),
 copying ("copy"), deleting ("delete"), executing other programs
 ("java", "exec", "execon", etc.), stylesheet transformations
 ("style") and so on.
-
-WWW: https://ant.apache.org/

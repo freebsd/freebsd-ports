@@ -17,5 +17,3 @@ Token Sort Ratio
     91
 >>> fuzz.token_sort_ratio("fuzzy wuzzy was a bear", "wuzzy fuzzy was a bear")
     100
-
-WWW: https://pypi.org/project/naiveBayesClassifier/

@@ -9,5 +9,3 @@ When bkt is passed a command it hasn't seen before (or recently) it executes
 the command synchronously and caches its stdout, stderr, and exit code.
 Calling bkt again with the same command reads the data from the cache and
 outputs it as if the command had been run again.
-
-WWW: https://github.com/dimo414/bkt

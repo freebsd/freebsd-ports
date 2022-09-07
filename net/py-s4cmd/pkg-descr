@@ -11,5 +11,3 @@ corner cases where different behavior seems preferable, or for bugfixes.
 
 S4cmd supports the regular commands you might expect for fetching and
 storing files in S3: ls, put, get, cp, mv, sync, del, du.
-
-WWW: https://github.com/bloomreach/s4cmd

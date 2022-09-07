@@ -4,5 +4,3 @@ a PFA or PFB font (A PostScript Type1 Scalable Font) or TTF (TrueType) font.
 Scalable fonts offer many advantages over bitmaps, as they allow documents
 to render correctly at many printer resolutions. Moreover, Ghostscript can
 generate much better PDF, if given scalable PostScript fonts.
-
-WWW: http://lilypond.org/mftrace/

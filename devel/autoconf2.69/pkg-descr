@@ -5,5 +5,3 @@ systems without manual user intervention.  Autoconf creates a
 configuration script for a package from a template file that lists the
 operating system features that the package can use, in the form of M4
 macro calls.
-
-WWW: https://www.gnu.org/software/autoconf/

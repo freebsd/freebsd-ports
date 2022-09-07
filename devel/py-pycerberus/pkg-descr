@@ -19,5 +19,3 @@ protect your application from malicious (or just garbled) input data.
  * Use it wherever you like: pycerberus is used in a SMTP server, trac
    macros as well as web applications - there are no dependecies on a
    specific context like web development.
-
-WWW: http://www.schwarz.eu/opensource/projects/pycerberus

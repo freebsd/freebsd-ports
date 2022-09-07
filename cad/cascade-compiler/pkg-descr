@@ -7,5 +7,3 @@ from the user's perspective it simply gets faster over time. Cascade's ability
 to move code back and forth between software and hardware also makes it the
 first platform to provide generic support for the execution of unsynthesizable
 Verilog from hardware.
-
-WWW: https://github.com/vmware/cascade

@@ -1,4 +1,2 @@
 EmailReplyParser is a small library to parse plain text email content to return
 only the reply.
-
-WWW: https://github.com/github/email_reply_parser

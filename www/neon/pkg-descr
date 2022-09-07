@@ -15,5 +15,3 @@ interface. Featuring:
 	. WebDAV resource manipulation: MOVE, COPY, DELETE, MKCOL
 	. WebDAV metadata support: set and remove properties, query
 	  any set of properties (PROPPATCH/PROPFIND).
-
-WWW: https://notroj.github.io/neon/

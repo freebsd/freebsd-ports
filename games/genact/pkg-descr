@@ -11,5 +11,3 @@ It is described in the following way by its authors:
 genact can load modules, which produce different activity. Currently, it
 comes with the following set of modules: bootlog, cargo, cc, composer,
 cryptomining, simcity, download, memdump, kernel_compile, weblog.
-
-WWW: https://github.com/svenstaro/genact

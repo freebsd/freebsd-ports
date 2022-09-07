@@ -15,5 +15,3 @@ have Tcl code for managing the user interface and a C program for
 computations and OpenGL rendering.
 Togl is copyrighted by Brian Paul (brian_paul@avid.com) and Benjamin
 Bederson (bederson@cs.umd.edu). See the LICENSE file for details.
-
-WWW: http://togl.sourceforge.net/

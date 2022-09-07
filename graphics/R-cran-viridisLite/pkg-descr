@@ -11,5 +11,3 @@ perceived by readers with the most common form of color blindness
 ('cividis' only). This is the 'lite' version of the more complete
 'viridis' package that can be found at
 <https://cran.r-project.org/package=viridis>.
-
-WWW: https://cran.r-project.org/web/packages/viridisLite/

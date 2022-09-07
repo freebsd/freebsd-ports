@@ -5,5 +5,3 @@ compression ratio while allowing *very* fast decompression. Decompression
 requires no additional memory.
 
 UCL is an OpenSource re-implementation of some NRV compression algorithms.
-
-WWW: https://www.oberhumer.com/opensource/ucl/

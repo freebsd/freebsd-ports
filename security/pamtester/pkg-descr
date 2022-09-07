@@ -7,5 +7,3 @@ While specifically designed to help PAM module authors to test their modules,
 that might also be handy for system administrators interested in building a
 centralised authentication system using common standards such as NIS, SASL and
 LDAP.
-
-WWW: http://pamtester.sourceforge.net/

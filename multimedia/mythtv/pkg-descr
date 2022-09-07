@@ -7,5 +7,3 @@ won't be able to live without).
 MythTV requires tuner drivers supporting the V4L standard.
 MythTV works with HDHomeRun and V4L DVB Compatibility:
 https://wiki.freebsd.org/WebcamCompat
-
-WWW: http://www.mythtv.org/

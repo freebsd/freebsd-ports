@@ -3,5 +3,3 @@ x-on-resize is a simple display configuration daemon.
 It is used to monitor the X display for output configuration
 changes and/or screen resize events. When these occur, it can call
 external programs to respond to the new display environment.
-
-WWW: https://gitlab.com/0mp/x-on-resize

@@ -7,5 +7,3 @@ interrupt (usually control-c) key. If you invoke playmidi while it is al-
 ready running, it will allow you to control the currently running invoca-
 tion until its death, after which time all waiting invocations fight to
 go first.
-
-WWW: https://sourceforge.net/projects/playmidi/

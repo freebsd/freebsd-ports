@@ -1,5 +1,3 @@
 This is an extract-only program which allows access to the contents of ARJ
 archives. You cannot specify a base directory or select individual files
 to extract.  UNARJ does not support empty directories or volume labels.
-
-WWW: http://www.arjsoftware.com/

@@ -5,5 +5,3 @@ With sound.
 This port features per-user config: when you first start Falcon's Eye,
 it creates $HOME/.falcon and copie default configuration files there,
 that you can then edit.
-
-WWW: http://falconseye.sourceforge.net/

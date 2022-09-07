@@ -7,5 +7,3 @@ import holidays
 
 date(2015, 1, 1) in us_holidays  # True
 date(2015, 1, 2) in us_holidays  # False
-
-WWW: https://github.com/dr-prodigy/python-holidays

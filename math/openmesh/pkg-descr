@@ -7,5 +7,3 @@ The main features of the underlying data structure are:
 * Efficient access to the one-ring neighborhood of a vertex.
 * Ability to handle non-manifold vertices (like two faces meeting in only one
   vertex).
-
-WWW: https://www.openmesh.org/

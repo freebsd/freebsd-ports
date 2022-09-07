@@ -9,5 +9,3 @@ convenient means to make those references weak.
 This subclass of Tie::RefHash has weak keys, instead of strong ones. The
 values are left unaltered, and you'll have to make sure there are no strong
 references there yourself.
-
-WWW: https://metacpan.org/release/Tie-RefHash-Weak

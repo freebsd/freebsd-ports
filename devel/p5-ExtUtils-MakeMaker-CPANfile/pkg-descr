@@ -5,5 +5,3 @@ ExtUtils::MakeMaker (which should be loaded internally), and prepare cpanfile.
 As of version 0.03, ExtUtils::MakeMaker::CPANfile also removes WriteMakefile
 parameters that the installed version of ExtUtils::MakeMaker doesn't know, to
 avoid warnings.
-
-WWW: https://metacpan.org/release/ExtUtils-MakeMaker-CPANfile

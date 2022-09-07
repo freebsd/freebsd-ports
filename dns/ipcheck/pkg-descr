@@ -20,5 +20,3 @@ There is also direct support for determining the IP address on the
 following devices: Linksys (-L), Netgear (-N), Draytek (-D), Netopia
 (-O), HawkingTech (-H), Cisco 667i (-C), Cisco 700 series (-I),
 ZyXEL Prestige (-Z), SMC Barricade (-S)
-
-WWW: http://ipcheck.sourceforge.net/

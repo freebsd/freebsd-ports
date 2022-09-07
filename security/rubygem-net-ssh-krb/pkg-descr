@@ -9,5 +9,3 @@ even if your company prohibits public key or host-based authentication. If your
 organization uses Kerberos (many mid-to-large size corporations do), you can
 use this package to get password-less authentication without breaking your
 company's security guidelines.
-
-WWW: https://rubygems.org/gems/net-ssh-krb

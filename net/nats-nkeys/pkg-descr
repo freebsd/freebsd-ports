@@ -13,5 +13,3 @@ the seed can generate both the public and private keys.
 The NATS system will utilize Ed25519 keys, meaning that NATS systems
 will never store or even have access to any private keys. Authentication
 will utilize a random challenge response mechanism.
-
-WWW: https://github.com/nats-io/nkeys

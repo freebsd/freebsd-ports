@@ -9,5 +9,3 @@ string in a desired way.
 
 This module is implemented in XS, with a pure Perl backup version for systems
 that can't handle XS.
-
-WWW: https://metacpan.org/release/Scalar-String

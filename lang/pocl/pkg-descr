@@ -15,5 +15,3 @@ The code base is modularized to allow easy adding of new "device drivers"
 in the host-device layer. A generic multithreaded "target driver" is
 included. It allows running OpenCL applications on a host that supports
 the pthread library with multithreading at the work group granularity.
-
-WWW: http://portablecl.org/

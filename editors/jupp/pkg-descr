@@ -7,5 +7,3 @@ Jupp also does come with the editor flavours known from joe, specifically,
 jmacs, joe, jpico, jstar, and rjoe.  Not all features of jupp are available
 for these though (but all the bugfixes, and syntax highlighting is still
 enabled by default for these, while it is not auto-enabled in jupp).
-
-WWW: http://www.mirbsd.org/jupp.htm

@@ -10,5 +10,3 @@ image downloading.
 
 Digikam also uses the very flexible Kipi plugin architecture.
 Install the graphics/kipi-plugins port to extend Digikam's features.
-
-WWW: https://www.digikam.org/

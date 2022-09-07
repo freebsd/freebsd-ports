@@ -4,5 +4,3 @@ objects created by the Exception::Class module from the CPAN.
 Exception::Class::DBI itself offers a single class method, handler(),
 that returns a code reference appropriate for passing to the DBI
 HandleError attribute.
-
-WWW: https://metacpan.org/release/Exception-Class-DBI

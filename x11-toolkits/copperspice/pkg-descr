@@ -10,5 +10,3 @@ design and turn the existing framework into a set of libraries for C++
 developers. We are accomplishing this by leveraging modern C++
 functionality, new technology, and modern tooling. CopperSpice currently
 requires C++17 or newer.
-
-WWW: https://www.copperspice.com/

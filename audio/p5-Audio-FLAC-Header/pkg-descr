@@ -11,5 +11,3 @@ basic set of tags used for FLAC files include:
 * GENRE
 * TRACKNUMBER
 * COMMENT
-
-WWW: https://metacpan.org/release/Audio-FLAC-Header

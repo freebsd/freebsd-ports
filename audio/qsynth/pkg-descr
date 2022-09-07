@@ -3,5 +3,3 @@ the Qt toolkit using Qt Designer. Eventually it may evolve into a
 softsynth management application allowing the user to control and manage
 a variety of command line softsynth but for the moment it wraps the
 excellent FluidSynth.
-
-WWW: https://qsynth.sourceforge.io/

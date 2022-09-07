@@ -4,5 +4,3 @@ acids. It can read and write MDL Molfiles, read and write CML
 (Chemical Markup Language), read (some?) ChemDraw XML and binary
 files, and export to EPS. It can predict 13C NMR and simple IR
 spectra. It works under Unix or Windows.
-
-WWW: https://www.woodsidelabs.com/chemistry/xdrawchem.php

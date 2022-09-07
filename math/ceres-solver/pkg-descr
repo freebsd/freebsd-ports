@@ -5,5 +5,3 @@ since 2010. Ceres Solver can solve two kinds of problems.
 
 1. Non-linear Least Squares problems with bounds constraints.
 2. General unconstrained optimization problems.
-
-WWW: http://ceres-solver.org/

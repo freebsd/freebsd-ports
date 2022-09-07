@@ -9,5 +9,3 @@ Azure Key Vault helps solve the following problems:
   access to tokens, passwords, certificates, API keys, and other secrets
 - Certificate management (azure-keyvault-certificates) - create, manage, and
   deploy public and private SSL/TLS certificates
-
-WWW: https://pypi.org/project/azure-keyvault-administration/

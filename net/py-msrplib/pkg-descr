@@ -5,5 +5,3 @@ a series of related instant messages in the context of a session.
 Message sessions are treated like any other media stream
 when set up via a rendezvous or session creation protocol
 such as the Session Initiation Protocol (SIP).
-
-WWW: http://mediaproxy.ag-projects.com/projects/msrp/wiki

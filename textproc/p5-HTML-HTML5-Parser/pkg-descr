@@ -6,6 +6,3 @@ soup HTML.
     * Constructs an XML::LibXML::Document as the result of parsing.
     * Via bundling and modifications, removed external dependencies
 on non-CPAN packages.
-
-
-WWW: https://metacpan.org/release/HTML-HTML5-Parser

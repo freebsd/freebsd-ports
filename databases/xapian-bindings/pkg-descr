@@ -4,5 +4,3 @@ This is the meta port of the following bindings:
 - databases/php-xapian: PHP binding
 - databases/py-xapian: Python binding
 - databases/ruby-xapian: Ruby binding
-
-WWW: https://xapian.org/

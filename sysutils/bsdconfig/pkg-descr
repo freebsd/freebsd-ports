@@ -7,5 +7,3 @@ FreeBSD Operating System. Feature-highlights include (but are not limited to):
   - rc.conf(5) configuration/management based on sysutils/sysrc.
   - Timezone configuration based on sysutils/tzdialog.
   - Networking management based on sysutils/host-setup.
-
-WWW: http://druidbsd.sourceforge.net/

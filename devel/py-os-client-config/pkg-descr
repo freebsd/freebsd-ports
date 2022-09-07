@@ -5,5 +5,4 @@ will read environment variables and config files, and it also contains some
 vendor specific default values so that you don't have to know extra info to use
 OpenStack.
 
-WWW: https://docs.openstack.org/os-client-config/latest/
-WWW: https://github.com/openstack/os-client-config
+See also: https://github.com/openstack/os-client-config

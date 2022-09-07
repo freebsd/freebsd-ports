@@ -4,5 +4,3 @@ differential equations (PDEs) with grid-based methods.
 dune-alugrid provides an adaptive, load-balancing, and unstructured
 implementation of the DUNE grid interface in two or three space dimensions
 supporting either simiex or cube elements.
-
-WWW: https://www.dune-project.org/

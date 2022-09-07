@@ -4,5 +4,3 @@ executes in which fork. The code for the parent, child, retry handler
 and error handler are grouped together in a "fork block". The clauses
 may appear in any order, but they must be consecutive (without any other
 statements in between).
-
-WWW: https://metacpan.org/release/Proc-Fork

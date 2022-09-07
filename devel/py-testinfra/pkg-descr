@@ -6,5 +6,3 @@ Chef and so on.
 
 Testinfra aims to be a Serverspec equivalent in python and is written as
 a plugin to the powerful Pytest test engine.
-
-WWW: https://github.com/philpep/testinfra

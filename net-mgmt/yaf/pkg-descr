@@ -4,5 +4,3 @@ interface using pcap(3) into bidirectional flows, then exports those
 flows to IPFIX Collecting Processes or in an IPFIX-based file format.
 YAF's output can be used with the SiLK flow analysis tools and any
 other IPFIX compliant toolchain.
-
-WWW: http://tools.netsa.cert.org/yaf/index.html

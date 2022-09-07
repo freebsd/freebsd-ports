@@ -6,5 +6,3 @@ css and javascript.  Your subtemplates can now define css and
 javscript files to be included, and the css will be nicely put at the
 top and the javascript to the bottom, just like you should.  Also
 sekizai will ignore any duplicate content in a single block.
-
-WWW: https://github.com/ojii/django-sekizai

@@ -1,4 +1,3 @@
 Foreign Function Interface for Python calling C code.
 
-WWW: https://cffi.readthedocs.io/en/latest/
-WWW: https://foss.heptapod.net/pypy/cffi
+See also: https://foss.heptapod.net/pypy/cffi

@@ -8,5 +8,3 @@ configuration.
 
 To be able to launch the editor from inside apwal you need a
 mounted procfs.
-
-WWW: http://apwal.free.fr/

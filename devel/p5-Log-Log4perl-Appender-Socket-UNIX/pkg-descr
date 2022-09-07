@@ -5,5 +5,3 @@ very useful to always log debug streams to the socket.
 The appender tries to stream to a socket. The socket in questions is beeing
 created by the client who wants to listen, once created the messages are coming
 thru.
-
-WWW: https://metacpan.org/release/Log-Log4perl-Appender-Socket-UNIX

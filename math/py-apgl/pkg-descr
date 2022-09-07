@@ -12,5 +12,3 @@ Dijkstras algorithm
     * Some machine learning features - data preprocessing, kernels, PCA, KCCA,
 wrappers for LibSVM, and some mlpy learning algorithms
     * Unit tested using the Python unittest framework
-
-WWW: http://packages.python.org/apgl/

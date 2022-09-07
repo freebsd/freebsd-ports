@@ -5,5 +5,3 @@ flexible network structure of nodes and relationships rather than static
 tables yet enjoys all the benefits of enterprise-quality database. For many
 applications, Neo4j offers orders of magnitude performance benefits compared
 to relational DBs.
-
-WWW: https://neo4j.com

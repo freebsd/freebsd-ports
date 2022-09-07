@@ -6,5 +6,3 @@ for alpha blending, scaling, color transformation, pixel
 perfect collision detection, OpenGL acceleration, and mouse
 testing. It comes with tools to define sprites and import
 images into the system.
-
-WWW: http://www.grinninglizard.com/kyra/

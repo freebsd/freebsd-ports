@@ -4,5 +4,3 @@ as those commonly found in software designed for scientific experimentation.
 These "configurations" typically cover concepts like hyperparameters used in
 training a machine learning model or configurable model hyperparameters, such
 as the depth of a convolutional neural network.
-
-WWW: https://github.com/rbgirshick/yacs

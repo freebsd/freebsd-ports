@@ -1,5 +1,3 @@
 Drum machine compiler. You write the drum patterns in text file with a list of
 samples (*.WAV files). Feat.subroutine calls, loops, tempo changes, 8 volume
 levels, 16bit-stereo-44khz mixing.
-
-WWW: http://drumpiler.sourceforge.net/

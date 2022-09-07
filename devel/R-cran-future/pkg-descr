@@ -13,5 +13,3 @@ to, say, distributed processing on a remote compute cluster. Another
 strength of this package is that global variables and functions are
 automatically identified and exported as needed, making it
 straightforward to tweak existing code to make use of futures.
-
-WWW: https://cran.r-project.org/web/packages/future/

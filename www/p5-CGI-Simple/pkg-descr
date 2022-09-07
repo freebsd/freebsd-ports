@@ -11,5 +11,3 @@ with CGI.pm section at the end.
 
 In practical testing this module loads and runs about twice as fast as CGI.pm
 depending on the precise task.
-
-WWW: https://metacpan.org/release/CGI-Simple

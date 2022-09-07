@@ -17,5 +17,3 @@ from the specified file instead of from stdin.
 
 Unzipsfx may be used to create self-extracting ZIP archives from previously
 created ZIP archives.
-
-WWW: http://infozip.sourceforge.net/UnZip.html

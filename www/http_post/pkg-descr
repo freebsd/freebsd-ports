@@ -1,4 +1,2 @@
 Http_post does a POST operation and dumps the results to stdout. This supports
 ipv6 and https (SSL).
-
-WWW: http://www.acme.com/software/http_post/

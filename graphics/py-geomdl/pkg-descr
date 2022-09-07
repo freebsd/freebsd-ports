@@ -16,5 +16,3 @@ efficient and extensible implementations of the following algorithms:
 
 NURBS-Python (geomdl) also provides customizable visualization and animation
 options via Matplotlib, Plotly and VTK libraries.
-
-WWW: https://onurraufbingol.com/NURBS-Python/

@@ -8,5 +8,3 @@ The current components of the SDL_gfx library are:
    - Rotozoomer (SDL_rotozoom.h)
    - Framerate control (SDL_framerate.h)
    - MMX image filters (SDL_imageFilter.h)
-
-WWW: http://www.ferzkopp.net/Software/SDL_gfx-2.0/

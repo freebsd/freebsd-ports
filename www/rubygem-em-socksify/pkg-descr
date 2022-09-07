@@ -4,5 +4,3 @@ Dealing with SOCKS proxies is pain. EM-Socksify provides a simple shim to setup
 & negotiate a SOCKS5 connection for any EventMachine protocol. To add SOCKS
 support, all you have to do is include the module and provide your destination
 address.
-
-WWW: https://github.com/igrigorik/em-socksify

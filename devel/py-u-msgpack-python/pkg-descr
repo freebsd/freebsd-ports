@@ -4,5 +4,4 @@ CPython and PyPy implementations of Python. u-msgpack-python is fully compliant
 with the latest MessagePack specification. In particular, it supports the new
 binary, UTF-8 string, application-defined ext, and timestamp types.
 
-WWW: https://pypi.org/project/u-msgpack-python/
-WWW: https://github.com/vsergeev/u-msgpack-python
+See also: https://github.com/vsergeev/u-msgpack-python

@@ -8,5 +8,3 @@ output of each analysis to the top N queries, averaging execution
 time over N runs, customizing the order in which the analyses are
 ran, statement filtering, statement pattern matching, and
 mysqldumpslow-like formatting.
-
-WWW: http://hackmysql.com/mysqlsla

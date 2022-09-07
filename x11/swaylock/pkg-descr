@@ -5,5 +5,3 @@ with any Wayland compositor which implements the following Wayland protocols:
 - wlr-input-inhibitor
 - xdg-output
 - xdg-shell
-
-WWW: https://github.com/swaywm/swaylock

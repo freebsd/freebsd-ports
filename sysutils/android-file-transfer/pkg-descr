@@ -10,5 +10,3 @@ Features:
 * No extra dependencies (e.g., libptp/libmtp).
 * Available as static/shared library.
 * Command line tool (aft-mtp-cli)
-
-WWW: https://github.com/whoozle/android-file-transfer-linux

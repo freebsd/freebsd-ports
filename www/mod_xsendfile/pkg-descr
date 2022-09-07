@@ -7,5 +7,3 @@ including all optimizations like caching-headers and sendfile or mmap if
 configured.
 
 It is useful for processing script-output of e.g. php, perl or any cgi.
-
-WWW: https://tn123.org/mod_xsendfile/

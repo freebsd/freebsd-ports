@@ -12,5 +12,3 @@ Features:
 * Customizable formatting, can be used in C or C++ projects
 * Support for generating #ifdef's for #[cfg] attributes
 * Support for #[repr(sized)] tagged enum's
-
-WWW: https://github.com/eqrion/cbindgen

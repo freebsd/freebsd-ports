@@ -10,5 +10,3 @@ together with other Iterator functions. The "idb_rows" iterator has the
 same interface as any other interface, making it interchangeable with
 iterators of any other source (for example, files), and usable with the
 iterator manipulation functions in the Iterator::Util module.
-
-WWW: https://metacpan.org/release/Iterator-DBI

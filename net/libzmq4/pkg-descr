@@ -10,5 +10,3 @@ Version 4 Features:
  * New wire level protocol, ZMTP/3.0
  * New security framework with PLAIN and CURVE mechanisms
  * New ZMQ_STREAM socket type
-
-WWW: http://www.zeromq.org/

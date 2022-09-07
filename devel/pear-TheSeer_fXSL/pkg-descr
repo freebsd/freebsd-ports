@@ -3,5 +3,3 @@ use exceptions at all occasions of errors instead of PHP warnings, notices or
 semi completed transformations. They also add various custom methods and short-
 cuts for convinience and to allow a nicer API to implement callbacks to the PHP
 stack.
-
-WWW: https://github.com/theseer/fXSL/

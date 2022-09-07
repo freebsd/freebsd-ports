@@ -11,5 +11,3 @@ ApacheBench is based on the Apache 1.3.12 ab code (src/support/ab.c).
 Since the initial release, I have made efforts to merge in all the
 newest features of ab. Currently (v0.62) it has almost all the features
 of Apache 1.3.22 ab.
-
-WWW: https://metacpan.org/release/ApacheBench

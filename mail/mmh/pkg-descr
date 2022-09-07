@@ -5,5 +5,3 @@ In contrast, mmh is not intended to be a drop-in replacement for nmh,
 but rather aims for the modernization and simplification of nmh,
 accepting reduced compatiblity if it, at the same time, allows to
 achieve greater goals from mmh's point of view.
-
-WWW: http://marmaro.de/prog/mmh/

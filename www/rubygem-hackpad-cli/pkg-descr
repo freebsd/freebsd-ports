@@ -1,5 +1,3 @@
 This is a command-line utility to check and manipulate
 hackpad documents.
 It uses Hackpad REST API 1.0 https://hackpad.com/Hackpad-API-v1.0-k9bpcEeOo2Q
-
-WWW: https://github.com/mose/hackpad-cli/

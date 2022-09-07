@@ -13,5 +13,3 @@ rendered results from time to time. A benchmark result shows that Marko is 3
 times slower than Python-Markdown, but a bit faster than Commonmark-py, much
 slower than mistune. If performance is a bigger concern to you than spec
 compliance, you'd better choose another parser.
-
-WWW: https://github.com/frostming/marko

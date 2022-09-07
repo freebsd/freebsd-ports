@@ -1,4 +1,2 @@
 itextomml provides native Ruby bindings to itex2MML, which converts
 itex equations to MathML.
-
-WWW: https://golem.ph.utexas.edu/~distler/blog/itex2MML.html

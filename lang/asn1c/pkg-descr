@@ -4,5 +4,3 @@ generation, parametrization, basic support for Information Object Classes.
 The produced C code contains the codecs for BER/DER/CER/PER/XER encoding rules.
 
 See asn1c-usage.pdf and asn1c(1) manual page for details.
-
-WWW: http://lionet.info/asn1c

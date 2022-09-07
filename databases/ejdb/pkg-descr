@@ -1,4 +1,2 @@
 Embeddable JSON database engine C library which supports simple XPath-like
 query language (JQL).
-
-WWW: https://ejdb.org/

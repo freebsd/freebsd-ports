@@ -9,5 +9,3 @@ available.
 scim-openvanilla is an OpenVanilla loader as a SCIM IM engine that
 enables the input method modules of OpenVanilla to be used through
 SCIM.
-
-WWW: http://openvanilla.org/

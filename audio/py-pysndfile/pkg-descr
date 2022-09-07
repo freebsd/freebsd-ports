@@ -12,5 +12,3 @@ functionality of libsndfile can be used, notably the reading and writing of
 strings into soundfile formats that support these, and a number of sf_commands
 that allow to control the way libsndfile reads and writes the samples. One of
 the most important ones is the use of the clipping command.
-
-WWW: https://forge-2.ircam.fr/roebel/pysndfile

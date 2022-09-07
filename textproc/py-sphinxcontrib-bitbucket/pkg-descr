@@ -1,4 +1,2 @@
 This module adds custom roles to Sphinx for linking to resources
 on BitBucket projects.
-
-WWW: http://www.doughellmann.com/projects/sphinxcontrib-bitbucket/

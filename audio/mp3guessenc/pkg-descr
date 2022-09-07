@@ -4,5 +4,3 @@ create an mp3 file.
 Each encoder has unique characteristics fingerprinted into each file. This
 program analyzes algorithms that are used in any given file and determines which
 encoder was used. For example the Xing encoder never uses short blocks.
-
-WWW: http://mp3guessenc.sourceforge.net/

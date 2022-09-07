@@ -4,5 +4,3 @@ assert_dom_not_equal. Elements are asserted via assert_select,
 assert_select_encoded, assert_select_email and a subset of the dom can be
 selected with css_select. The gem is developed for Rails 4.2 and above, and
 will not work on previous versions.
-
-WWW: https://github.com/rails/rails-dom-testing

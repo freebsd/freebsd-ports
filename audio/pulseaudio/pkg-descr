@@ -4,5 +4,3 @@ It allows you to do advanced operations on your sound data as it passes between
 your application and your hardware. Things like transferring the audio to a
 different machine, changing the sample format or channel count and mixing
 several sounds into one are easily achieved using a sound server.
-
-WWW: http://pulseaudio.org/

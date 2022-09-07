@@ -11,5 +11,3 @@ It is recommended that you:
 - Remove 'pytest' and any other testing requirements from tests_require,
   preferably removing the tests_requires option.
 - Select a tool to bootstrap and then run tests such as tox.
-
-WWW: https://github.com/pytest-dev/pytest-runner

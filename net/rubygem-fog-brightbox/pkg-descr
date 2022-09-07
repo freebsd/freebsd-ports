@@ -11,5 +11,3 @@ This includes support for the following services:
 - Images
 - Load Balancers
 - SQL Cloud instances
-
-WWW: https://github.com/fog/fog-brightbox

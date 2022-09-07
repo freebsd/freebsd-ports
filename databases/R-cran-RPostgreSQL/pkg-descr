@@ -6,5 +6,3 @@ system to provide 'PostgreSQL' functionality via its libraries and
 header files. These files are provided as 'postgresql-devel' package
 under some Linux distributions. On 'macOS' and 'Microsoft Windows'
 system the attached 'libpq' library source will be used.
-
-WWW: https://cran.r-project.org/web/packages/RPostgreSQL/

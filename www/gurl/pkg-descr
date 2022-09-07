@@ -10,5 +10,3 @@ $ gurl httpbin.org/post bool=true key=value
 
 A PUT to HTTPS site from stdin:
 $ gurl PUT https://httpbin.org/put < /etc/os-release
-
-WWW: https://github.com/skunkwerks/gurl

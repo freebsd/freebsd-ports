@@ -1,5 +1,3 @@
 sfront is a translator that converts MP4-SA files into efficient C
 programs that generate audio for rendering, interactive and network
 applications.
-
-WWW: http://john-lazzaro.github.io/sa/

@@ -6,5 +6,3 @@ The 'autocutsel' binary performs the synchronization continuously.  I
 suggest running it from ~/.vnc/xstartup by adding a line like this at
 the top:
   exec autocutsel &
-
-WWW: http://www.nongnu.org/autocutsel/

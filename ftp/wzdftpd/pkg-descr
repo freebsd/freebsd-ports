@@ -15,5 +15,3 @@ wzdftpd offers the following features:
 - Cross devices operations (copy/move) (though can be slow)
 - Logging support (compatible with the wu-ftpd standard)
 - Designed for high performances: coded with C, multithreaded
-
-WWW: https://sourceforge.net/projects/wzdftpd/

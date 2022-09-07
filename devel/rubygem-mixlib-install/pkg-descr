@@ -1,5 +1,4 @@
 A library for interacting with Chef Software Inc's software distribution
 systems.
 
-WWW: https://www.chef.io/
-WWW: https://github.com/chef/mixlib-install
+See also: https://github.com/chef/mixlib-install

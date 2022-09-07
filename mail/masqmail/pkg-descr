@@ -19,5 +19,3 @@ Features
     * SMTP-after-POP
     * POP3 client
     * POP3 client daemon (fetch mail in regular intervals if online)
-
-WWW: http://marmaro.de/prog/masqmail/

@@ -13,5 +13,3 @@ pyxslb2 offers the following improvements/changes in comparison to pyxlsb:
   - supports A1 addressing
   - supports external addressing (partially implemented))
 - extracts defined names such as auto_open
-
-WWW: https://github.com/DissectMalware/pyxlsb2

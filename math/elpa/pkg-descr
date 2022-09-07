@@ -3,5 +3,3 @@ eigensolvers for symmetric matrices. Though especially designed for use for
 PetaFlop/s applications solving large problem sizes on massively parallel
 supercomputers, ELPA eigensolvers have proven to be also very efficient for
 smaller matrices.
-
-WWW: https://elpa.mpcdf.mpg.de/

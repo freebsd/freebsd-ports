@@ -5,5 +5,3 @@ compatible with xv and Gimp.
 In contrast to other image file viewers for X, xzgv uses only one window and
 can fit a large image to the size of the window without changing the aspect
 ratio.
-
-WWW: https://sourceforge.net/projects/xzgv/

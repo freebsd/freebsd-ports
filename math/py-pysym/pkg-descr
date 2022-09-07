@@ -5,5 +5,3 @@ should be viewed as a prototype and not as a "production" package.
 The capabilities include:
 * Differentiation
 * (slow) numerical evaluation (including "lambdify" support)
-
-WWW: https://github.com/bjodah/pysym

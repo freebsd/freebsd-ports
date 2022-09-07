@@ -3,5 +3,3 @@ requests session object.
 
 It was written because httplib2's better support for caching is often mitigated
 by its lack of thread safety. The same is true of requests in terms of caching.
-
-WWW: https://github.com/ionrock/cachecontrol

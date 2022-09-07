@@ -5,5 +5,3 @@ of this protocol.
 
 With the official 0.3 release the protocol is now frozen (only extensions
 advertised through capabilities can be added from now on).
-
-WWW: http://cgit.freedesktop.org/spice/usbredir

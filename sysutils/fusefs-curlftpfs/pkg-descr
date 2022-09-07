@@ -9,5 +9,3 @@ features:
     * automatically reconnection if the server times out
     * transform absolute symlinks to point back into the ftp file
       system
-
-WWW: http://curlftpfs.sourceforge.net/

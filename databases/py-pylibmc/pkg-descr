@@ -7,5 +7,3 @@ so that applications can drop-in replace it.
 pylibmc leverages among other things configurable behaviors, data pickling,
 data compression, battle-tested GIL retention, consistent distribution, and
 the binary memcached protocol.
-
-WWW: http://sendapatch.se/projects/pylibmc

@@ -13,5 +13,3 @@ eval() work, you can do this:
 
 It doesn't save you much typing, but it'll make a lot more sense to
 someone who's not a ninth level Perl acolyte.
-
-WWW: https://metacpan.org/release/UNIVERSAL-require

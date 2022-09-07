@@ -1,4 +1,3 @@
 pytest plugin for manipulating test data directories and files.
 
-WWW: https://pypi.org/project/pytest-datadir/
-WWW: https://github.com/gabrielcnr/pytest-datadir
+See also: https://github.com/gabrielcnr/pytest-datadir

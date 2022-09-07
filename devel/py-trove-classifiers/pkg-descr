@@ -2,5 +2,3 @@ Canonical source for classifiers on PyPI.
 
 Classifiers categorize projects per PEP 301. Use this package to validate
 classifiers in packages for PyPI upload or download.
-
-WWW: https://github.com/pypa/trove-classifiers

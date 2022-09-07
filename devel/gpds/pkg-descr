@@ -6,5 +6,3 @@ readability).
 GPDS provides the user with complete control over the generated tag names and
 attributes in the resulting XML compared to just using traditional "key" and
 "value" tags.
-
-WWW: https://gpds.simulton.com/

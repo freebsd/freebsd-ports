@@ -2,5 +2,3 @@ CHARVA is a Java framework for presenting a "graphical" user interface,
 composed of elements such as windows, dialogs, menus, textfields and
 buttons, on a traditional character-cell ASCII terminal.
 It has an API based on that of "Swing" (a.k.a. the Java Foundation Classes).
-
-WWW: http://www.pitman.co.za/projects/charva/

@@ -8,5 +8,3 @@ into them.
 
 The output of this tool is a list of suggestions in Vim quickfix format, which
 is accepted by lots of different editors.
-
-WWW: https://github.com/golang/lint/

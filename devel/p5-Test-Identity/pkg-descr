@@ -5,5 +5,3 @@ that it behaves correctly even if the references under test are objects that
 overload stringification or numification.
 
 It also provides better diagnostics if the test fails.
-
-WWW: https://metacpan.org/release/Test-Identity

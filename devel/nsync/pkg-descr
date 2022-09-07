@@ -3,5 +3,3 @@ The library is intended to be portable, and to be compilable on a system with
 only a C90 compiler, assuming atomic operations are available from the
 compiler, operating system, or assembler routines.  It is able to use C11 or
 C++11 atomic operations if they are available.
-
-WWW: https://github.com/google/nsync

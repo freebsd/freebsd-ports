@@ -6,5 +6,3 @@ Features
 * Ping multiple hosts at once
 * Implementation of RFC Draft draft-ietf-mboned-ssmping-08
 * Any-source and Source-specific Multicast
-
-WWW: https://github.com/jfriesse/omping

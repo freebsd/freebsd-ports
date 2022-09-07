@@ -5,5 +5,3 @@ generating queries used in the tests.
 
 It was built as an alternative to dnsperf, and many of the command
 line options are compatible.
-
-WWW: https://github.com/DNS-OARC/flamethrower

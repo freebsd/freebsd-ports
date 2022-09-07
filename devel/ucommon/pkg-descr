@@ -5,5 +5,3 @@ uCommon C++ disables language features that consume memory or introduce runtime
 overhead, such as rtti and exception handling, and assumes one will mostly be
 linking applications with other pure C based libraries rather than using the
 overhead of the standard C++ library and other similar class frameworks.
-
-WWW: https://www.gnu.org/software/commoncpp/

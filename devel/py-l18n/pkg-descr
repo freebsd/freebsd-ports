@@ -16,5 +16,3 @@ Integrating function to link timezone to country codes, there was no reason not
 to try and provide translations also for the latter. In the near future, I - or
 contributors - may also add currencies or measurement units fetched from the
 CLDR database ...
-
-WWW: https://github.com/tkhyn/l18n

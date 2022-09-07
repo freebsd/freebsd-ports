@@ -12,5 +12,3 @@ matrices.  While geomview is tailored for mathematical visualization,
 it is written to be extensible and can serve as a general-purpose
 tool. Its functionality can be extended in an almost unlimited fashion
 by external modules.
-
-WWW: http://www.geomview.org/

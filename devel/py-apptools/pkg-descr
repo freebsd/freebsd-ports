@@ -20,5 +20,3 @@ found useful in creating a number of applications.
 - apptools.type_manager: Manages type extensions, including factories to
   generate adapters, and hooks for methods and functions.
 - apptools.undo: Supports undoing and scripting application commands.
-
-WWW: https://docs.enthought.com/apptools

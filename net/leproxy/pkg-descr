@@ -10,5 +10,3 @@ instance with your family and friends without having to worry about
 third parties.  It provides compatibility with a large number of clients
 and services by accepting both common HTTP and SOCKS proxy protocols on
 a single listening port.
-
-WWW: https://github.com/leproxy/leproxy

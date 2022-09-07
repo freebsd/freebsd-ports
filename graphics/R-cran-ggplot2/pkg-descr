@@ -4,5 +4,3 @@ none of the bad parts. It takes care of many of the fiddly details
 that make plotting a hassle (like drawing legends) as well as
 providing a powerful model of graphics that makes it easy to produce
 complex multi-layered graphics.
-
-WWW: https://ggplot2.tidyverse.org/

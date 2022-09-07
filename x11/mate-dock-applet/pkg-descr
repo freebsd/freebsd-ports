@@ -14,6 +14,3 @@ The applet works with both GTK2 and GTK3 versions of MATE and allows you to:
   * Change the colour of MATE panels to the dominant colour (i.e. the most
     common colour) of the desktop wallpaper. The colour can be applied to all
     panels or just the panel containing the dock.
-
-
-WWW: https://github.com/ubuntu-mate/mate-dock-applet

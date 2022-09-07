@@ -1,4 +1,2 @@
 py-transaction contains a generic transaction implementation
 for Python. It is mainly used by the ZODB, though.
-
-WWW: https://pypi.org/project/transaction/

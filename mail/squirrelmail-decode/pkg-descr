@@ -21,5 +21,3 @@ is set to true. This variable should be enabled only on smaller systems, that
 don't call aggressive decoding functions very often. Turning on
 $aggressive_decoding  variable by default in packaged SquirrelMail versions is
 not recommended.
-
-WWW: http://www.squirrelmail.org/

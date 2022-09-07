@@ -5,5 +5,3 @@ This app allows you to either ingest e-mail content from common e-mail services
 (as long as the service provides POP3 or IMAP support), or directly receive
 e-mail messages from stdin (for locally processing messages
 from Postfix or Exim4).
-
-WWW: https://github.com/coddingtonbear/django-mailbox/

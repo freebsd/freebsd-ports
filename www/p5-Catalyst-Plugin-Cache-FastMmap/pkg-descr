@@ -2,5 +2,3 @@ This package is part of the Catalyst Cache family. It allows integration
 of Cache::FastMmap and Catalyst
 
 This module extends the Catalyst application class with a "mmap" cache.
-
-WWW: https://metacpan.org/release/Catalyst-Plugin-Cache-FastMmap

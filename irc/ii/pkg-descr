@@ -5,5 +5,3 @@ The in file is used to communicate with the servers and the out files
 contain the server messages. For every channel and every nick name there
 are related in and out files created. This allows IRC communication from
 command line and adheres to the Unix philosophy.
-
-WWW: http://tools.suckless.org/ii/

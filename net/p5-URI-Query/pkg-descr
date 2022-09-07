@@ -5,5 +5,3 @@ subset of the parameters to the current request, and potentially add or replace
 others. Given a query string this is doable with regexes, of course, but making
 sure you get the anchoring and escaping right is tedious and error-prone - this
 module is simpler.
-
-WWW: https://metacpan.org/release/URI-Query

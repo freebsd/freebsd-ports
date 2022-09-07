@@ -3,5 +3,4 @@ RO is a package of python utilities with an emphasis on cross-platform support
 Tkinter-compatible networking. It was developed to support a telescope user
 interface (TUI).
 
-WWW: https://staff.washington.edu/rowen/ROPackage/Overview.html
-WWW: https://github.com/ApachePointObservatory/RO
+See also: https://github.com/ApachePointObservatory/RO

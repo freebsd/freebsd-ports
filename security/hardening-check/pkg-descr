@@ -4,5 +4,3 @@ test each ELF binary and the output will show if the binary has
 position independent executable, stack protected, fortify source
 functions(not supported on FreeBSD now), read only relocations or
 immediate binding supported.
-
-WWW: https://wiki.debian.org/Hardening

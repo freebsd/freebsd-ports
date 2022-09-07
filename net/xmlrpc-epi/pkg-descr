@@ -14,5 +14,3 @@ Various iterations of this code have been/are running at Epinions.com and are
 sufficiently fast for the high traffic volume this site encounters, with several
 xmlrpc type requests generated for each user http request. No specific speed
 claims are made. Your mileage may vary.
-
-WWW: http://xmlrpc-epi.sourceforge.net/

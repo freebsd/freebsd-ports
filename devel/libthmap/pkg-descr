@@ -8,5 +8,3 @@ combining the elements of hashing and radix trie. Highlights:
 
 The implementation is written in C11 and distributed under the 2-clause BSD
 license.
-
-WWW: https://github.com/rmind/thmap

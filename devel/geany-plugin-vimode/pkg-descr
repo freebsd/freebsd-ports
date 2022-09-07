@@ -12,5 +12,3 @@ to be a reasonably complete Vim mode implementation featuring:
  - basic ex mode commands like :s, including range specifications
  - most basic navigation, selection and text manipulation commands
  - command repetition using "." and repeated insert
-
-WWW: https://plugins.geany.org/vimode.html

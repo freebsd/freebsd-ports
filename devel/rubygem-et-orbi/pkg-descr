@@ -2,5 +2,3 @@ Time zones for fugit and for rufus-scheduler. Urbi et Orbi.
 
 EtOrbi::EoTime instances quack like Ruby Time instances, but their #zone returns
 a TZInfo::TimeZone instance.
-
-WWW: https://github.com/floraison/et-orbi

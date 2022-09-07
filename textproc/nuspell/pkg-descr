@@ -16,5 +16,3 @@ Main features of Nuspell spelling checker:
     (Turkish dotted i or German sharp s), conditional affixes, circumfixes,
     fogemorphemes, forbidden words, pseudoroots and homonyms.
   - Free and open source software. Licensed under GNU LGPL v3 or later.
-
-WWW: https://nuspell.github.io/

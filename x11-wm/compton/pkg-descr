@@ -10,5 +10,3 @@ Most prominent changes from the original xcompmgr:
   - Colored shadows; new fade system
   - Blur of background of transparent windows, window color inversion
   - Configuration file support with blacklisting
-
-WWW: https://github.com/chjj/compton

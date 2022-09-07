@@ -3,5 +3,3 @@ Latex programs to format a LaTeX document. Formatting with LaTeX
 is complicated; there are potentially many programs to run and the
 output of those programs must be monitored to determine whether
 further processing is required.
-
-WWW: https://metacpan.org/release/LaTeX-Driver

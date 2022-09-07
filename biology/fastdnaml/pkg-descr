@@ -6,5 +6,3 @@ fastDNAml is an attempt to solve the same problem as DNAML, but to do so
 faster and using less memory, so that larger trees and/or more bootstrap
 replicates become tractable. Much of fastDNAml is merely a recoding of the
 PHYLIP 3.3 DNAML program from PASCAL to C.
-
-WWW: http://www.life.illinois.edu/gary/programs/fastDNAml.html

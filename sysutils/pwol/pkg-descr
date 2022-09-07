@@ -7,5 +7,3 @@ in order to wake them up from sleep mode.
 It can also be used as a WoL proxy daemon listening to
 incoming WoL packets (possibly authenticated) and then
 forwarding requests to one or many other targets.
-
-WWW: https://github.com/ptrrkssn/pwol

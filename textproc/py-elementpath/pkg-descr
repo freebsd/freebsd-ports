@@ -4,5 +4,3 @@ for the lxml.etree library.
 
 For lxml.etree this package can be useful for providing XPath 2.0/3.0
 selectors, because lxml.etree already has it's own implementation of XPath 1.0.
-
-WWW: https://github.com/sissaschool/elementpath

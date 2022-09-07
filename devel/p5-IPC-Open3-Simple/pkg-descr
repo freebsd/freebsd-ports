@@ -11,5 +11,3 @@ IPC::Open3::Simple calls IPC::Open3 and redirects stdin, stdout and stderr to
 some function references passed in argument to the constructor. It does a select
 on the input/output filehandles returned by IPC::Open3 and dispatches their
 content to and from those functions.
-
-WWW: https://metacpan.org/release/IPC-Open3-Simple

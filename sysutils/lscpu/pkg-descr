@@ -5,5 +5,3 @@ threads, cores, and sockets.
 
 There is also information about the CPU caches, family, model,
 byte order, and stepping.
-
-WWW: https://github.com/NanXiao/lscpu

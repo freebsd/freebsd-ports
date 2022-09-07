@@ -1,3 +1,1 @@
 PSGI handler on AnyEvent::SCGI.
-
-WWW: https://metacpan.org/release/Plack-Handler-AnyEvent-SCGI

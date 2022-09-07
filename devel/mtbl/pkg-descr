@@ -12,5 +12,3 @@ SSTable data structure internally as part of their data store,
 management of SSTable files -- creation, merging, deletion, combining
 of search results from multiple SSTables -- is left to the discretion
 of the mtbl library user.
-
-WWW: https://github.com/farsightsec/mtbl

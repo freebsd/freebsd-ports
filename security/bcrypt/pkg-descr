@@ -4,5 +4,3 @@ portability.
 In addition to providing 448-bit encryption, bcrypt overwrites input files with
 random garbage before deletion in order to make low-level data recovery much
 more difficult.
-
-WWW: http://bcrypt.sourceforge.net/

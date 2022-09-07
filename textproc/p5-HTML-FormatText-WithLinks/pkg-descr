@@ -2,5 +2,3 @@ HTML::FormatText::WithLinks takes HTML and turns it into plain text
 but prints all the links in the HTML as footnotes. By default, it
 attempts to mimic the format of the lynx text based web browser's
 --dump option.
-
-WWW: https://metacpan.org/release/HTML-FormatText-WithLinks

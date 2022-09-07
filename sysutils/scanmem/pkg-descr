@@ -18,5 +18,3 @@ More in GameConqueror, optional PyGTK-based GUI:
   - Memory viewer/editor
 
 It requires linprocfs(5) to be mounted under /compat/linux/proc to operate.
-
-WWW: http://code.google.com/p/scanmem/

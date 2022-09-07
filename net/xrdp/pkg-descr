@@ -9,5 +9,3 @@ Unlike Windows NT/2000/2003 server, xrdp will not display a Windows desktop
 but an X window desktop to the user.
 
 Xrdp uses Xvnc or X11rdp to manage the X session.
-
-WWW: http://www.xrdp.org/

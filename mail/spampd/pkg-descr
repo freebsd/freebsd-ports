@@ -7,5 +7,3 @@ and during the transaction it passes the mail through SA. If SA decides the
 mail could be spam, then spampd will ask SA to add some headers and a report to
 the message indicating it's spam and why. spampd is written in Perl and should
 theoretically run on any platform supported by Perl and SpamAssassin.
-
-WWW: https://github.com/mpaperno/spampd

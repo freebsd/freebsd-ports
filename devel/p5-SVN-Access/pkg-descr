@@ -2,5 +2,3 @@ SVN::Access includes both an object oriented interface for manipulating
 SVN access files (AuthzSVNAccessFile files), as well as a command
 line interface to that object oriented programming interface
 (svnaclmgr.pl) which is in the examples/ directory.
-
-WWW: https://metacpan.org/release/SVN-Access

@@ -4,5 +4,3 @@ This one is pure Perl, single file and mostly Moose compatible (for what it
 does). Moos has no non-core dependencies, but certain features (roles, debugging
 functions, legacy Perl support) do require additional modules. If you steer away
 from those features, you don't need those additional modules.
-
-WWW: https://metacpan.org/release/Moos

@@ -1,5 +1,4 @@
 kaptan is a configuration parser which supports dict, ini, json, yaml and python
 files.
 
-WWW: https://pypi.org/project/kaptan/
-WWW: https://github.com/emre/kaptan
+See also: https://github.com/emre/kaptan

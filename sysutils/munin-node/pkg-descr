@@ -9,5 +9,3 @@ and (if needed) updates the graphs. One of the main goals have been ease
 of creating own "plugins" (graphs).
 
 This is the node part. It is used on all machines Munin shall watch.
-
-WWW: https://munin-monitoring.org/

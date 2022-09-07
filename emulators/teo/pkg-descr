@@ -3,5 +3,3 @@ on MSDOS, Windows, Linux, and FreeBSD.
 
 The compatibility is close to 100% for softwares which don't use
 non emulated peripherals and don't hold physical protections.
-
-WWW: https://sourceforge.net/projects/teoemulator/

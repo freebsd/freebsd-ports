@@ -5,5 +5,3 @@ objects. SRU often goes under the name SRW which is a SOAP version of the
 protocol. You can think of SRU as a RESTful version of SRW, since all the
 requests are simple URLs instead of XML documents being sent via some sort
 of transport layer.
-
-WWW: https://metacpan.org/release/SRU

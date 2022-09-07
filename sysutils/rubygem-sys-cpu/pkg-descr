@@ -5,5 +5,3 @@ also CPU statistics, such as load average information.
 It is part of a library of a set libraries for various system  administration
 tasks, such as gathering information about users, processes, your CPU, the
 filesystem, and so on.
-
-WWW: https://github.com/djberg96/sys-cpu

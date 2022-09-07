@@ -1,4 +1,2 @@
 ds2 is a debug server designed to be used with LLDB to perform remote debugging
 of Linux, Android, FreeBSD and Windows targets.
-
-WWW: https://github.com/facebook/ds2

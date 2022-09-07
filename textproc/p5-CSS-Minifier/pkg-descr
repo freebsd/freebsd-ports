@@ -12,5 +12,3 @@ For static CSS files, it is recommended that you minify during the build stage
 of web deployment. If you minify on-the-fly then it might be a good idea to
 cache the minified file. Minifying static files on-the-fly repeatedly is
 wasteful.
-
-WWW: https://metacpan.org/release/CSS-Minifier

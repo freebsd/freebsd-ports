@@ -3,5 +3,3 @@ TrueType fonts.
 
 It uses ctypes to load the libttfautohint shared library and call the
 TTF_autohint function.
-
-WWW: https://github.com/fonttools/ttfautohint-py

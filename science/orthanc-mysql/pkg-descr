@@ -1,5 +1,3 @@
 Orthanc-mysql is an Orthanc plugin that replaces the default SQLite
 engine of Orthanc with a MySQL back-end. The plugin is compatible
 with MariaDB as well.
-
-WWW: https://www.orthanc-server.com/static.php?page=mysql

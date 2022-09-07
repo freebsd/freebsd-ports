@@ -8,5 +8,3 @@ servers.
 
 Thrift is specifically designed to support non-atomic version changes
 across client and server code.
-
-WWW: https://thrift.apache.org/

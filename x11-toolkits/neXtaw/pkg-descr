@@ -3,5 +3,3 @@ appearance. It is based on the Xaw3d 1.5 library by Kaleb Keithley.
 This is not a magic library which will beautify all your apps instantly.
 But with some .Xdefaults fiddling you can make Athena applications look
 and behave much better.
-
-WWW: http://siag.nu/neXtaw/

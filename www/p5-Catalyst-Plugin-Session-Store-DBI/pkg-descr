@@ -1,3 +1,1 @@
 This storage module will store session data in a database using DBI.
-
-WWW: https://metacpan.org/release/Catalyst-Plugin-Session-Store-DBI

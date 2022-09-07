@@ -16,5 +16,3 @@ Features:
 - Preserves aspect ratio (either via EWMH hints or by padding the window)
 - XSHM Support
 - Minimal dependencies (Xlib, libjpeg, libpng, giflib)
-
-WWW: https://www.johnhawthorn.com/meh/

@@ -1,4 +1,2 @@
 Redis::Cluster is a Ruby client that tries to match Redis' Cluster API
 one-to-one, while still providing an idiomatic interface.
-
-WWW: https://github.com/redis/redis-rb/tree/master/cluster

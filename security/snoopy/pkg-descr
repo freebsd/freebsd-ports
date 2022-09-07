@@ -4,5 +4,3 @@ administrators may find snoopy useful in tasks such as light/heavy system
 monitoring, tracking other administrator's actions as well as getting a good
 'feel' of what's going on in the system (for example Apache running CGI
 scripts).
-
-WWW: https://github.com/a2o/snoopy

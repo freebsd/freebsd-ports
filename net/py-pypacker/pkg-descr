@@ -4,5 +4,3 @@ Key features:
 - Creating custom Packets (via keywords) or from raw byte and change their data
 - Reading/writing packets from/to file (Support only for Wireshark/tcpdump pcap format)
 - Merging multiple pcap files to one file
-
-WWW: https://gitlab.com/mike01/pypacker

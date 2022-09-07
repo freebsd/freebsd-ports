@@ -17,5 +17,3 @@ The most of LaTeX commands are available and :
 10) the fonts are embedded in the jar file to be used by fop 0.95 to generate
     PDF, PS or EPS (SVG export with shaped fonts works fine too);
 11) and probably other things I forgot...
-
-WWW: https://wiki.scilab.org/JLaTeXMath

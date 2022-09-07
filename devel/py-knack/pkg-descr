@@ -20,5 +20,3 @@ following patterns:
    default it goes to STDOUT).
  - STDOUT vs. STDERR: STDOUT is used for actual command output. Everything
    else to STDERR (e.g. log/status/error messages).
-
-WWW: https://github.com/Microsoft/knack

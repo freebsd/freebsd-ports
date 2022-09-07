@@ -7,5 +7,3 @@ https://www.vmware.com/files/pdf/techpaper/Timekeeping-In-VirtualMachines.pdf
 http://oliveryang.net/2015/09/pitfalls-of-TSC-usage/#33-tsc-emulation-on-different-hypervisors
 https://reviews.freebsd.org/D29531
 https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=216759
-
-WWW: https://reviews.freebsd.org/D29733

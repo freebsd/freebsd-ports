@@ -2,5 +2,4 @@ MessagePack is a binary-based efficient data interchange format that
 is focused on high performance. It is like JSON, but very fast and
 small.
 
-WWW: https://msgpack.org/
-WWW: https://github.com/msgpack/msgpack-ruby
+See also: https://github.com/msgpack/msgpack-ruby

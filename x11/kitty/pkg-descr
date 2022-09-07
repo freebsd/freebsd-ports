@@ -8,5 +8,3 @@ kitty is designed from the ground up to support all modern terminal
 features, such as unicode, true color, bold/italic fonts, text formatting, etc.
 It even extends existing text formatting escape codes, to add support for
 features not available elsewhere, such as colored and styled (curly) underlines.
-
-WWW: https://sw.kovidgoyal.net/kitty/

@@ -7,5 +7,3 @@ The Easy Publish and Consume library provides an easy method to:
 
 You can use this library as key/value store published to the network,
 using encryption, authentication and service discovery.
-
-WWW: http://live.gnome.org/libepc/

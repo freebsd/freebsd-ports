@@ -6,5 +6,3 @@ to change the base type of an object after it has been created, for
 example for dynamic loading of data structures:
 
       swap $self, bless $replacement, $newclass;
-
-WWW: https://metacpan.org/release/Data-Swap

@@ -9,5 +9,3 @@ found.
 Metalog is easier to configure than syslogd and syslog-ng, accepts unlimited
 number of rules and has (switchable) memory bufferisation for maximal
 performance.
-
-WWW: http://metalog.sourceforge.net/

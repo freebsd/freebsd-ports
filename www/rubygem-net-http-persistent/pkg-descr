@@ -6,5 +6,3 @@ avoidance negotiation to start over. Net::HTTP supports persistent connections
 with some API methods but does not make setting up a single persistent
 connection or managing multiple connections easy. Net::HTTP::Persistent wraps
 Net::HTTP and allows you to focus on how to make HTTP requests.
-
-WWW: https://github.com/drbrain/net-http-persistent

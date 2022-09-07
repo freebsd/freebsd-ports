@@ -1,4 +1,2 @@
 Rack middleware that provides a fully featured web interface for the flipper
 gem.
-
-WWW: https://github.com/jnunemaker/flipper

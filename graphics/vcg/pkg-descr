@@ -7,5 +7,3 @@ language of the edge tool, but contains many extensions. The VCG tool
 allows folding of dynamically or statically specified regions of the
 graph. It uses colors and runs on X11. (An older version runs on
 Sunview).
-
-WWW: http://rw4.cs.uni-sb.de/users/sander/html/gsvcg1.html

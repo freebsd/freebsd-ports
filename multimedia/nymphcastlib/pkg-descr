@@ -6,5 +6,3 @@ client. This includes:
 - Communication with remote NymphCast Apps.
 - Multi-casting media content.
 - Interact with NymphCast MediaServers.
-
-WWW: https://github.com/MayaPosch/libnymphcast

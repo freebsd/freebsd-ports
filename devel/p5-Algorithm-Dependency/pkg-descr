@@ -6,5 +6,3 @@ Despite the most visible of these being software installation systems like
 the CPAN installer, or debian apt-get, they are useful in other
 situations. This module intentionally uses implementation-neutral words,
 to avoid confusion.
-
-WWW: https://metacpan.org/release/Algorithm-Dependency

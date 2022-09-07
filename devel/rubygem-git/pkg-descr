@@ -2,5 +2,3 @@ Ruby/Git is a Ruby library that can be used to create, read and
 manipulate Git repositories.  Currently it is a wrapper around
 the git binary, but there are plans to switch to C bindings at
 some point in the future.
-
-WWW: https://github.com/ruby-git/ruby-git

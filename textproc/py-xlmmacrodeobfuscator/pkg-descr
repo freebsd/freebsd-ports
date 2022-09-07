@@ -6,5 +6,3 @@ It supports both xls, xlsm, and xlsb formats.
 
 It uses xlrd2, pyxlsb2 and its own parser to extract cells and other information
 from xls, xlsb and xlsm files, respectively.
-
-WWW: https://github.com/DissectMalware/XLMMacroDeobfuscator

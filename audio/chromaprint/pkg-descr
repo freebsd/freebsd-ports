@@ -2,5 +2,3 @@ Chromaprint is the core component of the AcoustID project.  It is
 a client-side library that implements a custom algorithm for
 extracting fingerprints from any audio source.  Also included is
 fpcalc, a small utility for calculating AcoustID fingerprints.
-
-WWW: https://acoustid.org/chromaprint

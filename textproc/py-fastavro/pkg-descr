@@ -4,5 +4,3 @@ Fast Avro support for Python provides:
 * A container file, to store persistent data.
 * Remote procedure call (RPC).
 * Simple integration with dynamic languages.
-
-WWW: https://pypi.python.org/pypi/fastavro

@@ -6,5 +6,3 @@ platform and install it into ~/.chromedriver-helper, then exec it. Easy peasy!
 
 Individual projects can even select which version of chromedriver they want to
 run.
-
-WWW: https://github.com/flavorjones/chromedriver-helper

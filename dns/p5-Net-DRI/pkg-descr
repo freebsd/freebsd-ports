@@ -6,5 +6,3 @@ Net::DRI offers a uniform API to access services.
 It can be used by registrars to access registries.
 It can be used by clients to access registrars and/or resellers.
 It can be used by anonyone to do whois, DAS or IRIS DCHK queries.
-
-WWW: https://metacpan.org/release/Net-DRI

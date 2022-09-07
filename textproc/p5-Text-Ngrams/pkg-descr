@@ -5,5 +5,3 @@ analysis, including character and word n-grams.
 
 The module can be used from the command line through the script ngrams.pl
 provided with the package.
-
-WWW: https://metacpan.org/release/Text-Ngrams

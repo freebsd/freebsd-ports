@@ -13,5 +13,3 @@ What it does:
 * Add or remove braces on single-statement if/do/while/for statements
 * Supports embedded SQL 'EXEC SQL' stuff
 * Highly configurable - 168 configurable options as of version 0.30
-
-WWW: http://uncrustify.sourceforge.net/

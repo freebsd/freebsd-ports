@@ -18,5 +18,3 @@ The key features are:
 - *8-bit safe*:  it makes no assumption that you are generating markup and does
   nothing unexpected with whitespace; you could use it to generate images or
   binary files if you wanted to.
-
-WWW: http://preppy.readthedocs.org/en/latest/

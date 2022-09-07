@@ -20,5 +20,3 @@ following requirements:
 * Compact. The map is stored efficiently, both in memory and on disk. It is
   possible to generate compressed files for later usage or convenient exchange
   between robots even under bandwidth constraints.
-
-WWW: https://octomap.github.io/

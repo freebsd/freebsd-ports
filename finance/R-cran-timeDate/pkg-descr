@@ -6,5 +6,3 @@ respect to your personal financial center, or alternatively to the GMT
 reference time. It can thus also handle time stamps from historical data
 records from the same time zone, even if the financial centers changed day
 light saving times at different calendar dates.
-
-WWW: https://www.rmetrics.org

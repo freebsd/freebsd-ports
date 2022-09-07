@@ -1,4 +1,2 @@
 django-tinymce is a Django application that contains a widget
 to render a form field as a TinyMCE editor.
-
-WWW: https://github.com/jazzband/django-tinymce

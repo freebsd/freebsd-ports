@@ -1,4 +1,2 @@
 This module merely sub-classes YAPE::Regex, and produces a rather verbose
 explanation of a regex, suitable for demonstration and tutorial purposes.
-
-WWW: https://metacpan.org/release/YAPE-Regex-Explain

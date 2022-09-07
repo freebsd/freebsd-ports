@@ -1,5 +1,3 @@
 The Shapefile C Library provides the ability to write simple C programs for
 reading, writing and updating (to a limited extent) ESRI Shapefiles, and the
 associated attribute file (.dbf).
-
-WWW: http://shapelib.maptools.org/

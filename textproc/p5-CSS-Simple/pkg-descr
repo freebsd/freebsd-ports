@@ -1,4 +1,2 @@
 CSS::Simple is an interface through which to read/write/manipulate CSS
 files while respecting the cascade order.
-
-WWW: https://metacpan.org/release/CSS-Simple

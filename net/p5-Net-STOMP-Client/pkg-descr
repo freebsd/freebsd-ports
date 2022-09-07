@@ -4,5 +4,3 @@ Protocol). It supports the major features of messaging brokers: SSL,
 asynchronous I/O, receipts and transactions.
 
 For details on the protocol see http://stomp.codehaus.org/Protocol.
-
-WWW: https://metacpan.org/release/Net-STOMP-Client

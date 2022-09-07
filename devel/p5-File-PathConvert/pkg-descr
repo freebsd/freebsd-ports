@@ -4,5 +4,3 @@ filesystems, including the URL 'filesystem'.
 
 For new programs, it is probably better to use File::Spec and Cwd
 modules, if you can help it.
-
-WWW: https://metacpan.org/release/File-PathConvert

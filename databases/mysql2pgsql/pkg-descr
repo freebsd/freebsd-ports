@@ -3,5 +3,3 @@ dumps to a PostgreSQL-compatible format (so the data can be imported
 into PostgreSQL).  This can be useful if you are switching from MySQL
 to PostgreSQL and you have quite a bit of data in your MySQL
 databases.
-
-WWW: http://pgfoundry.org/projects/mysql2pgsql/

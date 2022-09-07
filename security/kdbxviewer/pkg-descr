@@ -6,5 +6,3 @@ Features:
 - Dump raw, decrypted XML content with obscured passwords
 - Display tree structure with de-obscured (=readable) passwords
 - Get tab-separated (TSV/CSV) password list
-
-WWW: https://github.com/pepa65/kdbxviewer

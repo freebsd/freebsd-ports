@@ -13,5 +13,3 @@ This package contains:
   SWF::Builder::Character::MovieClip    - SWF movie clip object
   SWF::Builder::Character::Shape        - SWF shape object
   SWF::Builder::Character::Text         - SWF static text object
-
-WWW: https://metacpan.org/release/SWF-Builder

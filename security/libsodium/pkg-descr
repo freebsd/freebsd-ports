@@ -5,5 +5,3 @@ libsodium is a portable, cross-compilable, installable,
 packageable, API-compatible version of NaCl(security/nacl).
 NaCl's goal is to provide all of the core operations needed
 to build higher-level cryptographic tools.
-
-WWW: https://github.com/jedisct1/libsodium

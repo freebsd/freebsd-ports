@@ -5,5 +5,3 @@ sort of dumb in this regard, but uses a slightly more intuitive interface
 and an algorithm that should perform noticably faster. The module was
 primarily designed based on the Swiss rounds system used for Magic: The
 Gathering tournaments.
-
-WWW: https://metacpan.org/release/Algorithm-Pair-Swiss

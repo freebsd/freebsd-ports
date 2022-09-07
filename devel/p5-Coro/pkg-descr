@@ -14,5 +14,3 @@ Unlike a full interpreter process, a thread doesn't have its own variable or
 code namespaces - everything is shared. That means that when one thread modifies
 a variable (or any value, e.g. through a reference), then other threads
 immediately see this change when they look at the same variable or location.
-
-WWW: https://metacpan.org/release/Coro

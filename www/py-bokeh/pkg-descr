@@ -4,5 +4,3 @@ of novel graphics in the style of D3.js, and to extend this capability with
 high-performance interactivity over very large or streaming datasets. Bokeh can
 help anyone who would like to quickly and easily create interactive plots,
 dashboards, and data applications.
-
-WWW: http://bokeh.pydata.org/

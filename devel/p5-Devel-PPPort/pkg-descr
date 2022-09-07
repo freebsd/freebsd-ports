@@ -15,5 +15,3 @@ old polluting ways of original Perl modules will not be supported very far into
 the future, and your module will almost certainly break! By adapting to it now,
 you'll gain compatibility and a sense of having done the electronic ecology
 some good.
-
-WWW: https://metacpan.org/release/Devel-PPPort

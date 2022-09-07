@@ -12,5 +12,3 @@ to the experience of incomplete or buggy implementations of SMTP and
 also to help remove the need for the installation of MTAs on
 workstations which only need them to provide a sendmail command for a
 mail client to post its mail.
-
-WWW: http://www.stafford.uklinux.net/libesmtp/

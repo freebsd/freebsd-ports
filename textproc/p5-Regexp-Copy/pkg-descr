@@ -5,5 +5,3 @@ This causes problems if you want to change the data in the regexp without
 losing the reference to it. Its impossible.
 Regexp::Copy allows you to change the Regexp by copying one object created
 through qr// to another.
-
-WWW: https://metacpan.org/release/Regexp-Copy

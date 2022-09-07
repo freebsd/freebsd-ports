@@ -3,5 +3,3 @@ Datatypes-- and improves decision tree learning by supporting
 significantly more complex kinds of data. This allows users to more
 conveniently describe the data they want to have learnt, which can
 improve accuracy and complexity of resulting models.
-
-WWW: https://mmottl.github.io/aifad

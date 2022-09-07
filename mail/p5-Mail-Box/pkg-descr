@@ -1,5 +1,3 @@
 The Mail::Box folder is a modern mail-folder manager (at least on the
 moment of this writing).  It is written to replace Mail::Folder,
 although its interface is different.
-
-WWW: https://metacpan.org/release/Mail-Box

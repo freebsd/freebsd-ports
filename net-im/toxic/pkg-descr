@@ -2,5 +2,3 @@ Toxic, sometimes referred to as Tox/Toxic or the purged Core/Toxic, is the
 reference CLI front-end written for the Tox core.
 
 It uses the ncurses library.
-
-WWW: http://tox.chat/

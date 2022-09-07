@@ -7,5 +7,3 @@ EXR format), fix chromatic aberrations and CCD noise, perform tone mapping
 and some simple color manipulations, apply gamma correction and optionally
 adjust the exposure, crop, and finally convert the result into a "normal"
 image (a JPG, for example).
-
-WWW: http://ttic.uchicago.edu/~cotter/projects/hdr_tools/

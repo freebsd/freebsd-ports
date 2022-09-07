@@ -5,5 +5,3 @@ amount of time. Pylru provides a cache class with a simple dict interface. It
 also provides classes to wrap any object that has a dict interface with a cache.
 Both write-through and write-back semantics are supported. Pylru also provides
 classes to wrap functions in a similar way, including a function decorator.
-
-WWW: https://github.com/jlhutch/pylru

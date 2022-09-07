@@ -7,5 +7,3 @@ number of items or picking the pairs will throw an exception.
 
 Algorithm::Pair::Best2->pick explores all combinations of items and returns the
 pairing list with the best (lowest) score.
-
-WWW: https://metacpan.org/release/Algorithm-Pair-Best2

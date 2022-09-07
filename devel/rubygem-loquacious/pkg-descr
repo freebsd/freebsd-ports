@@ -2,5 +2,3 @@ Loquacious provides a very open configuration system written in ruby and
 descriptions for each configuration attribute. The attributes and descriptions
 can be iterated over allowing for helpful information about those attributes to
 be displayed to the user.
-
-WWW: https://github.com/TwP/loquacious

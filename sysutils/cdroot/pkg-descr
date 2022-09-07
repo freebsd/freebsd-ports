@@ -5,5 +5,3 @@ with an /etc directory may be provided to supply system /etc overrides,
 allowing one to use the same CD/DVD image to boot multiple systems, where
 each system's hostname, IP address, etc is contained on a separate floppy
 disk. See the README file for more information.
-
-WWW: https://BSDforge.com/projects/sysutils/cdroot/

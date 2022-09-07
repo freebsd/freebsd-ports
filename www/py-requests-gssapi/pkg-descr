@@ -8,5 +8,3 @@ python-requests-kerberos library.
 A more powerful interface is provided by the HTTPSPNEGOAuth component,
 but this is of course not guaranteed to be compatible. Documentation
 below is written toward the new interface.
-
-WWW: https://pypi.org/project/requests-gssapi/

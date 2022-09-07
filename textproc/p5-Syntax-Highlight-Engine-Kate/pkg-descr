@@ -3,5 +3,3 @@ engine of the Kate text editor.
 
 The language xml files of kate have been rewritten to perl modules using a
 script. These modules function as plugins to this module.
-
-WWW: https://metacpan.org/release/Syntax-Highlight-Engine-Kate

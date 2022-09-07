@@ -1,4 +1,2 @@
 nfy is a minimal and daemonless notification program for X. Configuration
 is done by editing 'config.h' and recompiling the source code.
-
-WWW: https://margiolis.net/w/nfy-a-daemonless-notification-program.html

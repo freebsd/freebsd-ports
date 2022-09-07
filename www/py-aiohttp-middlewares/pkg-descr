@@ -7,5 +7,3 @@ providing CORS headers.
 
 aiohttp-middlewares tries to fix this by providing several middlewares that aims
 to cover most common web-development needs.
-
-WWW: https://github.com/playpauseandstop/aiohttp-middlewares

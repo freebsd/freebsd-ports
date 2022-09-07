@@ -7,5 +7,3 @@ simplify text manipulation.
 In addition, String Theory includes a powerful and fast type-safe
 string formatter (ST::format), which can be extended with custom
 type formatters by end-user code.
-
-WWW: https://github.com/zrax/string_theory

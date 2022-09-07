@@ -2,5 +2,3 @@ PgDbConn is an offshoot from the Perseas project (started as Pyrseas) to
 isolate and generalize the Postgres database connection code so that it can be
 used in other Perseas products, such as a web application to update Postgres
 tables.
-
-WWW: https://pypi.org/project/pgdbconn/

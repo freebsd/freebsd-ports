@@ -3,5 +3,3 @@ automate common tasks related to building binary debian packages. Programs are
 included to install various files into your package, compress files, fix file
 permissions, integrate your package with the debian menu system, etc. This will
 be of use only to debian developers or others who wish to build debian packages.
-
-WWW: https://salsa.debian.org/debian/debhelper

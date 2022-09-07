@@ -1,5 +1,3 @@
 MPEG::ID3v2Tag is a Perl module capable of parsing and creating
 ID3v2 revision 3 tags.  While not all frames are fully supported,
 it's easy to add support for more.
-
-WWW: https://metacpan.org/release/MPEG-ID3v2Tag

@@ -10,5 +10,3 @@ The ethos of Pangolin is to reduce the boilerplate code that normally gets
 written to visualise and interact with (typically image and 3D based) systems,
 without compromising performance. It also enables write-once code for a number
 of platforms, currently including Windows, Linux, OSX, Android and IOS.
-
-WWW: https://github.com/stevenlovegrove/Pangolin

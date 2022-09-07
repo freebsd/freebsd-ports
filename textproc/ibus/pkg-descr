@@ -3,5 +3,3 @@ input framework, developed by the developer of scim-python, includes all
 its function, and much more.
 
 This is the base port, you need input methods such as pinyin to input text.
-
-WWW: https://github.com/ibus/ibus

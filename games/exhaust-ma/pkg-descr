@@ -3,5 +3,3 @@ into your applications, as an alternative to pMARS. By M Joonas Pihlaja.
 
 Exhaust-ma is exhaust with some of my optimizations. The interface is exactly
 the same, but the sourcecode contains heavy optimations in the simulator core.
-
-WWW: http://corewar.co.uk/ankerl/exhaust-ma.htm

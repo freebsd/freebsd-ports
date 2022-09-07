@@ -1,3 +1,1 @@
 Asyncronous memcached/memcachedb client for AnyEvent framework
-
-WWW: https://metacpan.org/release/AnyEvent-Memcached

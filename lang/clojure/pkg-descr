@@ -14,5 +14,3 @@ functional programming language, and features a rich set of immutable,
 persistent data structures. When mutable state is needed, Clojure offers a
 software transactional memory system that ensures clean, correct,
 multithreaded designs.
-
-WWW: http://clojure.sourceforge.net/

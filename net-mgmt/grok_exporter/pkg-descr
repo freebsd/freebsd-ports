@@ -8,5 +8,3 @@ webserver logs, mysql logs, etc. It is easy to extend Grok with custom patterns.
 The grok_exporter aims at porting Grok from the ELK stack to Prometheus
 monitoring. The goal is to use Grok patterns for extracting Prometheus metrics
 from arbitrary log files.
-
-WWW: https://github.com/fstab/grok_exporter

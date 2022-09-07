@@ -4,5 +4,3 @@ $FreeBSD header then it is assumed to be a beta port.
 
 Chucky also features a shar file backup feature, which is normally used to
 backup 'beta' development ports.
-
-WWW: https://dx.burplex.com/bin/chucky.html

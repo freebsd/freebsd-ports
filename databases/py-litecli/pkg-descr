@@ -1,5 +1,4 @@
 LiteCLI is a command-line client for SQLite databases that has auto-completion
 and syntax highlighting.
 
-WWW: https://github.com/dbcli/litecli
-WWW: https://litecli.com/
+See also: https://github.com/dbcli/litecli

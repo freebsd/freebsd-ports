@@ -12,5 +12,3 @@ and a spatial-decomposition of the simulation domain. Many of its models have
 versions that provide accelerated performance on CPUs, GPUs, and Intel Xeon
 Phis. The code is designed to be easy to modify or extend with new
 functionality.
-
-WWW: https://lammps.sandia.gov/

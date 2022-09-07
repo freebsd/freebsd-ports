@@ -8,5 +8,3 @@ template instantiation.
 
 This port contains CMake's documentation in additional formats such as
 HTML and QCH.
-
-WWW: https://www.cmake.org

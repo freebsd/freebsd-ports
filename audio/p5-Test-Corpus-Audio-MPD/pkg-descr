@@ -8,5 +8,3 @@ tarball). It will then check if some mpd server is already running,
 and stop it if the MPD_TEST_OVERRIDE environment variable is true
 (die otherwise). Last it will run the test mpd with its newly
 created configuration file.
-
-WWW: https://metacpan.org/release/Test-Corpus-Audio-MPD

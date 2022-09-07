@@ -6,5 +6,3 @@ operating systems, and runs on the command line using files or pipes. The
 conversion still requires the valid MAK of the TiVo which recorded the file,
 so it cannot be used to circumvent their protection, simply to provide the
 same level of access as is already available on Windows.
-
-WWW: http://tivodecode.sourceforge.net/

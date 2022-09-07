@@ -1,4 +1,2 @@
 OpenSSL provides SSL, TLS and general purpose cryptography.  This gem wraps the
 OpenSSL library.
-
-WWW: https://github.com/ruby/openssl

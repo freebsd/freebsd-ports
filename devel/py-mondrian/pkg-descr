@@ -10,5 +10,4 @@ and enhance its default output formatters for better readability.
 Mondrian provides a one-call interface to its configuration, with pretty
 formatters that makes you feel great.
 
-WWW: https://python-mondrian.github.io/
-WWW: https://github.com/python-mondrian/mondrian
+See also: https://github.com/python-mondrian/mondrian

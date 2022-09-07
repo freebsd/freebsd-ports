@@ -8,5 +8,3 @@ Furthermore, it can identify the address type (e.g. multicast, unique local,
 site local, etc.) and extract additional information from the address
 (e.g. type, scope, interface ID, etc.). Finally, it can generate IPv6 unique
 local prefixes.
-
-WWW: https://www.uni-due.de/~be0001/subnetcalc/

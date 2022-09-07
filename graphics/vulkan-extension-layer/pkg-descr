@@ -3,5 +3,3 @@ available everywhere due to various reasons. While not available, some
 extensions are capable of being done as layer and mapping to any
 Vulkan implementation regardless of it supporting the desired
 functionality or not.
-
-WWW: https://github.com/KhronosGroup/Vulkan-ExtensionLayer

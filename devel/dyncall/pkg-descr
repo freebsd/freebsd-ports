@@ -16,5 +16,3 @@ and portable C interface to dynamically issue calls to foreign code using
 small kernels written in assembly. Instead of providing code for every
 bridged function call, which unnecessarily results in code bloat, only a
 couple of instructions are used to invoke every possible call.
-
-WWW: https://www.dyncall.org

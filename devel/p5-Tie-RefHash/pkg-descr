@@ -11,5 +11,3 @@ The Nestable version works by looking for hash references being stored
 and converting them to tied hashes so that they too can have references
 as keys.  This will happen without warning whenever you store a refer-
 ence to one of your own hashes in the tied hash.
-
-WWW: https://metacpan.org/release/Tie-RefHash

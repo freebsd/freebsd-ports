@@ -6,5 +6,3 @@ aborted prematurely. This effectively allows lexically-scoped "promises" to be
 made that are automatically honoured by perl's garbage collector.
 
 For more info, see: http://www.drdobbs.com/cpp/184403758
-
-WWW: https://metacpan.org/release/Scope-Guard

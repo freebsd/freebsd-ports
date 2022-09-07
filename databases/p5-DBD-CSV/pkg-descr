@@ -3,5 +3,3 @@ independent interface for Perl). This one is based on the SQL
 "engine" SQL::Statement and the abstract DBI driver DBD::File
 and implements access to so-called CSV files (Comma separated
 values).
-
-WWW: https://metacpan.org/release/DBD-CSV

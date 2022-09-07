@@ -12,5 +12,3 @@ typically /dev/bpf0.  Granting such access allows the users who have it to
 put your Ethernet device into promiscuous mode and sniff your network.
 Running p0f with no options will cause it to analyze packets intended for
 other hosts.
-
-WWW: http://lcamtuf.coredump.cx/p0f3/

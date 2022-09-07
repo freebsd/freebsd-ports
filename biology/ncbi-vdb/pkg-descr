@@ -3,5 +3,3 @@ The 'front-end' API are provided by biology/ngs-sdk port.
 
 Although the GitHub repository also contains Java and Python codes,
 this port currently builds only C- and C++-based libraries.
-
-WWW: https://github.com/ncbi/ncbi-vdb/wiki

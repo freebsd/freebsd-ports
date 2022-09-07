@@ -1,4 +1,2 @@
 Provides a parallel backend for the %dopar% function using the
 parallel package.
-
-WWW: https://cran.r-project.org/web/packages/doParallel/

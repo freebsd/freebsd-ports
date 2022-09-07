@@ -13,5 +13,3 @@ physical/inorganic/analytical chemistry). Currently it includes:
   * water diffusivity as function of temperature
   * water viscosity as function of temperature
   * sulfuric acid density as function of temperature & weight fraction H2SO4
-
-WWW: https://github.com/bjodah/chempy

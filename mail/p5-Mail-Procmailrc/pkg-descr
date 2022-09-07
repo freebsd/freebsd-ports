@@ -6,5 +6,3 @@ procmailrc files, but it could be used in any number of useful ways
 
 Mail::Procmailrc does not process mail in any form; it only reads and
 writes procmail(1) rc files.
-
-WWW: http://scott.wiersdorf.org/perl/

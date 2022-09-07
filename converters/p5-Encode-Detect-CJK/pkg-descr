@@ -1,4 +1,2 @@
 Encode::Detect::CJK is a charset detector which is optimized for East Asia
 charsets and website contents.
-
-WWW: https://metacpan.org/release/Encode-Detect-CJK

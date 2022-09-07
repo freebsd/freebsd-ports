@@ -6,5 +6,3 @@ Steghide is designed to be portable and configurable and features hiding data
 in bmp, wav and au files, blowfish encryption, MD5 hashing of passphrases to
 blowfish keys and pseudo-random distribution of hidden bits ("stego bits") in
 the container data.
-
-WWW: http://steghide.sourceforge.net/

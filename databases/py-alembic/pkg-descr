@@ -8,5 +8,3 @@ SQLAlchemy. A migrations tool offers the following functionality:
   database to a new version, and optionally a series of steps that can
   "downgrade" similarly, doing the same steps in reverse.
 - Allows the scripts to execute in some sequential manner.
-
-WWW: http://alembic.zzzcomputing.com/

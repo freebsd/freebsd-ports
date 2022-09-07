@@ -16,5 +16,3 @@ use frame-buffer settings of the graphics hardware, e.g., the depth
 and stencil buffer, to compose CSG shapes. OpenCSG implements a
 variety of those algorithms, namely the Goldfeather algorithm and the
 SCS algorithm, both of them in several variants.
-
-WWW: http://www.opencsg.org/

@@ -6,5 +6,3 @@ This package provides an Image utility API, with backends for:
 * SWF
 * ImageMagick convert command line tool
 * Imagick Extension
-
-WWW: https://pear.horde.org

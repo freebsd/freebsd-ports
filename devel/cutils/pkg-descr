@@ -8,5 +8,3 @@ chilight - highlight C source files with colors
 cunloop - unloop C loops
 yyextract - extract grammar rules from yacc grammar
 yyref - yacc grammar reference program
-
-WWW: http://www.sigala.it/sandro/software.php#cutils

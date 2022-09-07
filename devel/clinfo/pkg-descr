@@ -6,5 +6,3 @@ Inspired by AMD's program of the same name, it is coded in pure C and it
 tries to output all possible information, including those provided by
 platform-specific extensions, trying not to crash on unsupported
 properties (e.g. 1.2 properties on 1.1 platforms).
-
-WWW: https://github.com/Oblomov/clinfo

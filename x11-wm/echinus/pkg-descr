@@ -5,5 +5,3 @@ So you don't need to recompile echinus every time you change something.
 Echinus supports a small subset of EWMH to be compatible
 with external panels and pagers.
 It draws a border around windows and also an optional titlebar.
-
-WWW: https://plhk.ru/

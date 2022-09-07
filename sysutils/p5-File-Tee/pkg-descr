@@ -2,5 +2,3 @@ This module is able to replicate data written to a
 Perl stream into another streams.
 
 It is the Perl equivalent of the shell utility tee(1)
-
-WWW: https://metacpan.org/release/File-Tee

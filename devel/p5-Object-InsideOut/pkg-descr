@@ -7,5 +7,3 @@ are blessed into a class with the scalar containing the ID for the object
 set as read-only to prevent accidental modifications to the ID. Object data
 (i.e., fields) are stored within the class's package in either arrays indexed
 by the object's ID, or hashes keyed to the object's ID.
-
-WWW: https://metacpan.org/release/Object-InsideOut

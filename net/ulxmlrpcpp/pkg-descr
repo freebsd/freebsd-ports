@@ -7,5 +7,3 @@ ulxmlrpcpp is a library to perform such calls in an object oriented approach
 implemented in C++. It is intended to have simple interfaces and to be easy to
 learn. But it shall still be fully compliant to the standards and safe in it's
 use.
-
-WWW: http://ulxmlrpcpp.sourceforge.net/

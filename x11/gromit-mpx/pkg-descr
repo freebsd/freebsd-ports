@@ -23,5 +23,3 @@ Key features include:
   should be the case on any contemporary desktop environment
   making use of the XCOMPOSITE extension under X11 and with
   every Wayland-based session.
-
-WWW: https://github.com/bk138/gromit-mpx

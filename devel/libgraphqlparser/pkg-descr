@@ -3,5 +3,3 @@ requirements on complex application data models, implemented in C++11. It can be
 used on its own in C++ code (or in C code via the pure C API defined in the c
 subdirectory), or you can use it as the basis for an extension module for your
 favorite programming language instead of writing your own parser from scratch.
-
-WWW: https://github.com/graphql/libgraphqlparser

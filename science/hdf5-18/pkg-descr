@@ -16,5 +16,3 @@ HDF5 includes the following improvements:
 Note: two releases of HDF5 are available. HDF5-1.10 can read files created with
 earlier releases, but earlier releases such as HDF5-1.8 may not be able to read
 HDF5-1.10 files. If you need the latest, please see the port science/hdf5.
-
-WWW: http://www.hdfgroup.org/HDF5/

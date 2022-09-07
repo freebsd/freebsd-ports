@@ -8,5 +8,3 @@ Kokkos is designed to target complex node architectures with N-level memory
 hierarchies and multiple types of execution resources. It currently can use
 CUDA, HPX, OpenMP and Pthreads as backend programming models with several other
 backends in development.
-
-WWW: https://github.com/kokkos/kokkos

@@ -10,5 +10,3 @@ Goals include:
 - Reliability.  Crashing, hanging, or losing work should never happen.
 - Developer friendliness.  It should be easy to customize xi editor,
   whether by adding plug-ins or hacking on the core.
-
-WWW: https://github.com/xi-frontend/xi-term

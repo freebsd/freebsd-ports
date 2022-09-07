@@ -5,5 +5,3 @@ of time so they can perform work. Second, it provides a framework for starting,
 executing, and monitoring work (typically a parallel job) on a set of allocated
 nodes. Finally, it arbitrates contention for resources by managing a queue of
 pending work.
-
-WWW: https://slurm.schedmd.com/

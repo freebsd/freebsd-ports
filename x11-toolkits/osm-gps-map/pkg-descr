@@ -5,5 +5,3 @@ moving map display.
 osm-gps-map downloads map data from a number of websites, including
 openstreetmap.org, openaerialmap.org and others and can be used to build
 desktop mapping or geolocation applications.
-
-WWW: http://nzjrs.github.io/osm-gps-map/

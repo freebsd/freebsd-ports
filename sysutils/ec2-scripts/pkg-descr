@@ -7,5 +7,3 @@ Amazon EC2 cloud computing platform.  These include:
  * Automatically configuring swap space on EC2 "ephemeral" disks, and
  * Sending email when an virtual machine first boots and when rebooting
    after a kernel panic.
-
-WWW: http://www.daemonology.net/freebsd-on-ec2/

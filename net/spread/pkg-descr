@@ -6,5 +6,3 @@ collaborative work applications.
 Spread consists of a library that user applications are linked with, a binary
 daemon which runs on each computer that is part of the processor group, and
 various utility and demonstration programs.
-
-WWW: http://www.spread.org/

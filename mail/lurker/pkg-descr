@@ -17,5 +17,3 @@ As one would expect, lurker also supports file attachments, multiple languages,
 message threading, gpg key photo ids, a transactional database, automatic
 timezone detection, render caching, xml customization with xslt and css,
 multiple front-ends (3-tier deployment), and many other buzz words.
-
-WWW: http://lurker.sourceforge.net/

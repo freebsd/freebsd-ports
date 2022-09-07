@@ -10,5 +10,3 @@ speeding up database-driven web-based applications, accessing
 databases from unsupported platforms, migrating between databases,
 distributing access to replicated databases and throttling database
 access.
-
-WWW: http://sqlrelay.sourceforge.net/

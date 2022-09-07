@@ -6,5 +6,3 @@ fuzzed code.
 
 afl++ is a fork of afl that incorporates all community patches into
 a single source distribution.
-
-WWW: https://aflplus.plus/

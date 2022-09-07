@@ -10,5 +10,3 @@ The BIRD project aims to develop a fully functional dynamic IP routing daemon.
 - Command-line interface
 - Soft reconfiguration
 - Powerful language for route filtering
-
-WWW: http://bird.network.cz/

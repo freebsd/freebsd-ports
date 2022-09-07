@@ -7,5 +7,3 @@ Bogofilter decodes base64 or quoted-printable encoded texts and ignores non-text
 attachments and HTML comments.
 
 The supported database backends are Berkeley DB, QDBM and SQLite3.
-
-WWW: https://bogofilter.sourceforge.io/

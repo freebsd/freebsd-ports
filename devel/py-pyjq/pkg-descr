@@ -11,5 +11,3 @@ python data structure.
 
 For your information, https://pypi.python.org/pypi/jq is a also jq bindings but
 different and incompatible with pyjq.
-
-WWW: https://github.com/doloopwhile/pyjq

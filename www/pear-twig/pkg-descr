@@ -11,5 +11,3 @@ Twig is a modern template engine for PHP.
  * Flexible: Twig is powered by a flexible lexer and parser. This allows
              the developer to define its own custom tags and filters, and
              create its own DSL.
-
-WWW: https://twig.symfony.com

@@ -19,5 +19,3 @@ path from JSON to JSON with added semantics. Finally, the format
 is intended to be fast to parse, fast to generate, stream-based and
 document-based processing compatible, and require a very small
 memory footprint in order to operate.
-
-WWW: https://github.com/digitalbazaar/pyld

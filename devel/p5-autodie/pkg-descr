@@ -9,5 +9,3 @@ until the end of the enclosing block, file, or eval.
 If system is specified as an argument to autodie, then it uses
 IPC::System::Simple to do the heavy lifting. See the description
 of that module for more information.
-
-WWW: https://metacpan.org/release/autodie

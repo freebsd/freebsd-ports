@@ -12,5 +12,3 @@ of files the said clock is stored to an auxiliary file (example.aux
 accompanies example.ts) while recording. Other inputs are considered
 "live", and the input clock is simply derived from the reception
 time of the packets.
-
-WWW: https://www.videolan.org/projects/multicat.html

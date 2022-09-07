@@ -20,5 +20,3 @@ To address this problem, Artistic Style was created -- a filter written in C++
 that automatically re-indents and re-formats C / C++ / Objective-C / C++/CLI / C#
 / Java source files. It can be used from a command line, or it can be
 incorporated as a library in another program.
-
-WWW: http://astyle.sourceforge.net/

@@ -3,5 +3,3 @@ The collection of legacy vim colorschemes before 8.2.4954.
 The upstream vim colorschemes were substantively changed in that patch,
 so the look is now noticably different. The original colorschemes live
 on in this package.
-
-WWW: https://github.com/vim/colorschemes

@@ -16,5 +16,3 @@ for security purposes), and includes hooks to make it easily scriptable and
 extensible.  It is compatible with most web servers and browsers, and most
 mail transfer agents (mail servers).  Mailman's documentation may be found on
 its website.
-
-WWW: http://www.list.org/

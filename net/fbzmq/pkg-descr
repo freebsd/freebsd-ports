@@ -10,5 +10,3 @@ awesomeness of libzmq (message passing semantics). At a high level it provides:
 * Suite of monitoring tools that make it easy to add logging and counters to
   your service.
 * RPC, and some storage systems use Thrift for serializing records on disk.
-
-WWW: https://github.com/facebook/fbzmq

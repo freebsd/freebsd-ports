@@ -7,5 +7,3 @@ It supports:
 
 Depends only on the standard C library.
 Primary develop for the x86_64 architecture.
-
-WWW: https://github.com/melanhit/akmos

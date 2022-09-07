@@ -13,5 +13,3 @@ kinds of monitors:
 
 fswatch should build and work correctly on any system shipping either of the
 aforementioned APIs.
-
-WWW: https://github.com/emcrisostomo/fswatch

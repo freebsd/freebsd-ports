@@ -7,5 +7,3 @@ synthesis flows targeting FPGAs are available, usually from the FPGA
 manufacturers, and while they are typically not open source, they are generally
 distributed for free (presumably on the sensible assumption that more people
 will be buying more FPGA hardware).
-
-WWW: http://opencircuitdesign.com/qflow/

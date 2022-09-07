@@ -5,5 +5,3 @@ properties:
 * No external dependencies (only uses standard C++ libraries)
 * STL-friendly (arrays are represented using std::vector, objects are std::map)
 * Provides both pull interface and streaming (event-based) interface
-
-WWW: https://github.com/kazuho/picojson

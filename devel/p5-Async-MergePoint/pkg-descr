@@ -12,5 +12,3 @@ the combined result of each step on to the next stage.
 This module was originally part of the IO::Async distribution, but was
 removed under the inspiration of Pedro Melo's Async::Hooks distribution,
 because it does not itself contain anything I/O-specific.
-
-WWW: https://metacpan.org/release/Async-MergePoint

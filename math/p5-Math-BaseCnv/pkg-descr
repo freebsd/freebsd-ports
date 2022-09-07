@@ -4,5 +4,3 @@ to make it (of course relying only on the lovely Perl). If you
 would rather utilize an object syntax for number-base conversion,
 please see Ken Williams's <Ken@Forum.Swarthmore.Edu> fine
 Math::BaseCalc module.
-
-WWW: https://metacpan.org/release/Math-BaseCnv

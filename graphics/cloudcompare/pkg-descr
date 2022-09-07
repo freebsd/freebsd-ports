@@ -5,5 +5,3 @@ triangular mesh. It relies on an octree structure that is highly optimized for
 this particular use-case. It was also meant to deal with huge point clouds
 (typically more than 10 millions points, and up to 120 millions with 2 Gb of
 memory).
-
-WWW: http://www.cloudcompare.org/

@@ -1,4 +1,2 @@
 iCalendar is a Ruby library for dealing with iCalendar files in the iCalendar
 format defined by RFC-5545.
-
-WWW: https://github.com/icalendar/icalendar

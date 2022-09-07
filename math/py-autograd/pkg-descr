@@ -6,5 +6,3 @@ can efficiently take gradients of scalar-valued functions with respect to
 array-valued arguments, as well as forward-mode differentiation, and the two
 can be composed arbitrarily. The main intended application of Autograd is
 gradient-based optimization.
-
-WWW: https://github.com/HIPS/autograd

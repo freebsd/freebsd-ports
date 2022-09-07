@@ -7,5 +7,3 @@ to require dependencies so users can install this package only and
 have all the KDE stuff pulled in by the port/package dependency mechanism.
 
 x11/kde5 contains current KDE Frameworks, Plasma Desktop and Applications.
-
-WWW: https://www.kde.org

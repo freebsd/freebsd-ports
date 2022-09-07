@@ -5,5 +5,3 @@ when they log in (where the "Message Of The Day" would normally be displayed).
 
 This plugin is compatible with three types of mail quota systems:
 UNIX (filesystem), IMAP-based, and cPanel quotas.
-
-WWW: http://www.squirrelmail.org/plugin_view.php?id=237

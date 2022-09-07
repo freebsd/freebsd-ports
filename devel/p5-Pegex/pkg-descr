@@ -17,5 +17,3 @@ Pegex attempts to be the simplest way to define new (or old) Domain Specific
 Languages (DSLs) that need to be used in several programming languages and
 environments. Things like JSON, YAML, Markdown etc. It also great for writing
 parsers/compilers that only need to work in one language.
-
-WWW: https://metacpan.org/release/Pegex

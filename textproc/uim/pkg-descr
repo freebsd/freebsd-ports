@@ -5,5 +5,3 @@ And currently it supports following input methods.
   Chinese:    New Pinyin (Simplified), Pinyin (Unicode), Pinyin (Traditional)
   Japanese:   Anthy, Canna, Prime, SKK, T-code, TUT-code
   Korean:     Byeoru, Hangul (2-beol), Hangul (3-beol), Hangul (Romaja)
-
-WWW: https://github.com/uim/uim

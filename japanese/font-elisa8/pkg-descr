@@ -5,5 +5,3 @@ jis.x0201 font, 4x8 dots iso8859-1 font.
 
 A simple usage:
 	% kterm -fn a8 -fr r8 -fk k8
-
-WWW: http://hp.vector.co.jp/authors/VA002310/family.htm

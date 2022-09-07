@@ -12,5 +12,3 @@ different machines and OSes via the network. It integrates multiple
 computing devices such as multi-core CPUs, GPGPUs, and even embedded
 hardware. You can also create message passing interface for your OpenCL
 backends.
-
-WWW: http://www.actor-framework.org

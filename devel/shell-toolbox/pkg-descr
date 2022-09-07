@@ -14,5 +14,3 @@ The temporary working directory may also be pre-populated with the
 contents of an existing directory (using the "-s" flag).
 
 See "man 1 shell" after installation.
-
-WWW: https://github.com/kusalananda/shell-toolbox

@@ -7,5 +7,3 @@ Test::TinyMocker - a very simple tool to mock external modules
         * method
 	* methods
 	* should
-
-WWW: https://metacpan.org/release/Test-TinyMocker

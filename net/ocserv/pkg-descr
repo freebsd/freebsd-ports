@@ -16,5 +16,3 @@ prevents data leak (e.g., heartbleed-style attacks), and privilege
 escalation due to any bug on the VPN handling (worker) process. A
 management interface allows for viewing and querying logged-in
 users.
-
-WWW: https://ocserv.gitlab.io/www/index.html

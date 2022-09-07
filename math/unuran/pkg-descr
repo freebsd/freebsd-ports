@@ -19,5 +19,3 @@ non-uniform random variates may be chosen according to various criteria, such
 as speed, quality, and variance reduction. It is flexible enough to permit
 sampling from non-standard distributions, such as distributions that arise in
 a model and can only be computed in complicated subroutines.
-
-WWW: http://statmath.wu-wien.ac.at/unuran/

@@ -5,5 +5,4 @@ Algorithm, which is now the fastest and simplest linear-time method for
 planar graph embedding and planarity obstruction isolation (i.e. Kuratowski
 subgraph isolation).
 
-WWW: http://dx.doi.org/10.7155/jgaa.00091
-WWW: https://github.com/graph-algorithms/edge-addition-planarity-suite/
+See also: https://github.com/graph-algorithms/edge-addition-planarity-suite/

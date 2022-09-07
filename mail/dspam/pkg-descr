@@ -3,5 +3,3 @@ of anti-spam mechanism, and is currently effective as both a
 server-side agent for UNIX email servers and a developer's library
 for mail clients, other anti-spam tools, and similar projects
 requiring drop-in spam filtering.
-
-WWW: http://dspam.sourceforge.net/

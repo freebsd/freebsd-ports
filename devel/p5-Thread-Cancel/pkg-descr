@@ -6,6 +6,3 @@ Threads that are suspended using Thread::Suspend do not need to be resumed in
 order to be cancelled.
 
 It is possible for a thread to cancel itself.
-
-
-WWW: https://metacpan.org/release/Thread-Cancel

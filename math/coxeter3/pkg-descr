@@ -14,5 +14,4 @@ Kazhdan-Lusztig polynomials.
 Note: this port is specially crafted to be used with SageMath, with patches from
 Sage.
 
-WWW: http://math.univ-lyon1.fr/~ducloux/coxeter/coxeter3/english/coxeter3_e.html
-WWW: https://github.com/tscrim/coxeter
+See also: https://github.com/tscrim/coxeter

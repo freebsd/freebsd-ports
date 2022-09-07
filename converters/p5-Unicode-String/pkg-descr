@@ -8,5 +8,3 @@ The current set of modules are:
   Unicode::Map8     - mapping tables towards 8-bit char sets
 
 (the Unicode::Map8 module is distributed separately)
-
-WWW: https://metacpan.org/release/Unicode-String

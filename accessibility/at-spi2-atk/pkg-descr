@@ -5,5 +5,3 @@ to each other.
 
 This port contains the GTK+ module needed to interface with the SPI
 framework.
-
-WWW: https://gitlab.gnome.org/GNOME/at-spi2-atk

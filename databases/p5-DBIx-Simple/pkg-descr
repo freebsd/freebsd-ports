@@ -10,5 +10,3 @@ DBI.  From its description ...
   boolean context, is false. The dummy object lets you postpone (or skip) error
   checking, but it also makes immediate error check simply " $db->query(...) or
   die $db->error".
-
-WWW: https://metacpan.org/release/DBIx-Simple

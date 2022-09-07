@@ -10,5 +10,3 @@ of RRDTool's original source code. JRobin does not use native functions and
 libraries, has no Runtime.exec() calls and does not require RRDTool to be
 present. JRobin is distributed as a software library (jar files) and comes
 with full java source code (LGPL licence).
-
-WWW: http://www.jrobin.org/

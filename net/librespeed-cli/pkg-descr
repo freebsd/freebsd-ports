@@ -3,5 +3,3 @@ With the CLI it's possible to run a speedtest from the command line interface.
 The server part can be found in:
 	- www/librespeed (javascript php implementation)
 	- net/librespeed-go (go implementation)
-
-WWW: https://github.com/librespeed/speedtest-cli

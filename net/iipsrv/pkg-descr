@@ -5,5 +5,3 @@ requirements. The system can handle gigapixel size images as
 well as advanced image features such as 8/16/32 bits per
 channel, CIELAB colorimetric images and scientific imagery
 such as multispectral images and digital elevation maps.
-
-WWW: https://iipimage.sourceforge.io

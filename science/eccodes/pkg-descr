@@ -17,5 +17,3 @@ For GRIB encoding and decoding, the GRIB-API functionality is provided fully in
 ecCodes with only minor interface and behaviour changes. Interfaces for C,
 Fortran 90 and Python are all maintained as in GRIB-API. However, the GRIB-API
 Fortran 77 interface is no longer available.
-
-WWW: https://confluence.ecmwf.int/display/ECC

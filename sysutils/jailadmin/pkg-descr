@@ -6,5 +6,3 @@ JailAdmin is a system for managing a set of named jails.  It provides:
  - SNMP monitoring facilities.
 It is designed to provide more flexible functionality than FreeBSD's own
 rc.d/jail script, and should provide a complete superset of features.
-
-WWW: https://BSDforge.com/projects/sysutils/jailadmin/

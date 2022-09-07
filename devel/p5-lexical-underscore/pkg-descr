@@ -15,5 +15,3 @@ global $_ if there was no lexical version.
 
 Wrapping lexical::underscore in ${ ... } dereferences the scalar reference,
 allowing you to access (and even assign to) it.
-
-WWW: https://metacpan.org/release/lexical-underscore

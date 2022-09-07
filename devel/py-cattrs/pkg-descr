@@ -19,5 +19,3 @@ database...), cattrs helps to convert this data into structured data. When you
 have to convert your structured data into data types other libraries can handle,
 cattrs turns your classes and enumerations into dictionaries, integers and
 strings.
-
-WWW: https://github.com/python-attrs/cattrs

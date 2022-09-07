@@ -8,5 +8,3 @@ AutoDia supports any language that a Handler has been written for -
 currently this is C++, DBI, Java, PHP, Perl, Python, SQL and Torque (XML
 DB schema).
 Adding a handler is easy - read the DEVELOP file for details.
-
-WWW: https://metacpan.org/release/Autodia

@@ -4,5 +4,3 @@ extensions for GNU Octave. contains the source for all the functions plus
 build and install scripts.
 
 This is the metaport.
-
-WWW: http://octave.sourceforge.net/

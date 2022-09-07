@@ -8,5 +8,3 @@ running process. If the process is multithread, the backtrace of all
 threads is printed.
 
 It works with the last version of GDB
-
-WWW: https://github.com/pizzamig/bstack

@@ -5,5 +5,3 @@ be found in your PATH.
 
 FONTBOUNDINGBOX in a BDF file is not used by bdftopcf, so pcf2bdf
 generates irresponsible values.
-
-WWW: https://github.com/ganaware/pcf2bdf

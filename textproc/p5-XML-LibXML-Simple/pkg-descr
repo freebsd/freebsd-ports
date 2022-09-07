@@ -1,5 +1,3 @@
 This module is a blunt rewrite of XML::Simple (by Grant McLean)
 to use the XML::LibXML parser for XML structures, where the original
 uses plain Perl or SAX parsers.
-
-WWW: https://metacpan.org/release/XML-LibXML-Simple

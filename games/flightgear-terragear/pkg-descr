@@ -7,5 +7,3 @@ FlightGear project.  Generally, the process is done in two steps:
 
   2. Collect all the different pieces of intermediate data and
      assemble them into a 3d model of the terrain.
-
-WWW: https://github.com/FlightGear/terragear

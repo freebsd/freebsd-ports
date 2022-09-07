@@ -1,4 +1,2 @@
 This module provides filesystem and stream iterator functions. See the
 Iterator module for more information about how to use iterators.
-
-WWW: https://metacpan.org/release/Iterator-IO

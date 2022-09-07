@@ -4,5 +4,3 @@ directory (cd). This prevents users from having to set other
 environment variables when they switch between areas, and allows
 scripts and such inside the directory to be executed without changing
 the user's PATH.
-
-WWW: https://metacpan.org/release/Dir-Project

@@ -4,5 +4,3 @@ inheritance from those modules at the same time.
 If a module in the import list is followed by something that
 doesn't look like a legal module name,
 the VERSION method will be called with it as an argument.
-
-WWW: https://metacpan.org/release/superclass

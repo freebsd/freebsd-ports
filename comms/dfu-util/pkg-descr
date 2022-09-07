@@ -4,5 +4,3 @@ dfu-util is a program that implements the host (PC) side of the USB DFU
 In the OpenMoko project (for example), this program is used to communicate
 with the specially enhanced u-boot boot loader, which implements the DFU
 device side.
-
-WWW: http://dfu-util.sourceforge.net/

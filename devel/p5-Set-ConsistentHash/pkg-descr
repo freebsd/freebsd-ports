@@ -7,5 +7,3 @@ causes nearly all keys to be remapped.
 Consistent hashing was introduced in 1997 as a way of distributing
 requests among a changing population of web servers. More recently, it
 and similar techniques have been employed in distributed hash tables.
-
-WWW: https://metacpan.org/release/Set-ConsistentHash

@@ -4,5 +4,3 @@ than the official one:
 libmongo-client is meant to be a stable (API, ABI and quality alike), clean,
 well documented and well tested shared library, that strives to make the most
 common use cases as convenient as possible.
-
-WWW: https://github.com/algernon/libmongo-client

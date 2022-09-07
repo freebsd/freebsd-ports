@@ -12,5 +12,3 @@ Note that special care has been taken to allow the use of this library
 in threaded programs. The option to enable this is discussed in the
 Makefile, and specific discussions of thread safety are presented in
 the included man pages.
-
-WWW: http://www.astro.caltech.edu/~mcs/tecla/

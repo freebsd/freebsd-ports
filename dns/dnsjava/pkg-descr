@@ -14,5 +14,3 @@ return an array of records. There is also a clone of InetAddress, which is even
 simpler. A cache is used to reduce the number of DNS queries sent. The low
 level functions allow direct manipulation of DNS messages and records, as well
 as allowing additional resolver properties to be set.
-
-WWW: http://www.xbill.org/dnsjava/

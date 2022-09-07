@@ -8,5 +8,3 @@ domain-specific extensions of the syntax of OCaml.
 Camlp4 was part of the official OCaml distribution until its version
 4.01.0. Since then it has been replaced by a simpler system which is
 easier to maintain and to learn: ppx rewriters and extension points.
-
-WWW: https://github.com/ocaml/camlp4

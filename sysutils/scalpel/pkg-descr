@@ -4,5 +4,3 @@ image files or raw device files.
 Scalpel is filesystem-independent and will carve files from
 FATx, NTFS, ext2/3, HFS+, or raw partitions.
 It is useful for both digital forensics investigation and file recovery.
-
-WWW: http://www.digitalforensicssolutions.com/Scalpel/

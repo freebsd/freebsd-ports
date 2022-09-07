@@ -4,5 +4,3 @@ from killing by the kernel when memory is exhausted.
 The P_PROTECTED flag protects processes from killing by the kernel
 when memory is exhausted. This may be useful for protection many
 critical daemons, such as cron, syslogd, inetd, sshd or mysqld.
-
-WWW: http://www.zonov.org/

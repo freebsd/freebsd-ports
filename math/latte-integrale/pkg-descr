@@ -8,5 +8,3 @@ LattE integrale, the latest version, has the ability to directly compute
 integrals of polynomial functions over polytopes and in particular to do exact
 volume computations. Version 1.6 adds the capability of computing the highest
 coefficients of weighted Ehrhart quasipolynomials.
-
-WWW: https://www.math.ucdavis.edu/~latte/

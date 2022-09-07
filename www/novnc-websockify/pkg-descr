@@ -4,5 +4,3 @@ Implementations in Python, C, Node.js and Ruby.
 
 It also includes a wrap program that uses a LD_PRELOAD library to
 proxying from a source address to a target address.
-
-WWW: https://github.com/novnc/websockify

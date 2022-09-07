@@ -19,5 +19,3 @@ modern DNS deployments require:
    - Local and remote access
  * DNS Response Policy Zones (RPZ)
  * DNS64
-
-WWW: https://www.PowerDNS.com/recursor.html

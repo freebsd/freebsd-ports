@@ -5,5 +5,3 @@ ability to generate a full size report for each element in a structure.
 You have full control over how the generated text report looks like, and where
 you want to output it. In addition, the method track_size allows you to get at
 the raw data that is used to generate the report for even more flexibility.
-
-WWW: https://metacpan.org/release/Devel-Size-Report

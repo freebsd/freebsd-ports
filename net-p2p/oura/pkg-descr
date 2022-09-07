@@ -3,5 +3,3 @@ tip of a Cardano node through a combination of Ouroboros mini-protocol
 (using either a unix socket or tcp bearer), filters the events that match
 a particular pattern and then submits a succint, self-contained payload
 to pluggable observers called "sinks".
-
-WWW: https://txpipe.github.io/oura/

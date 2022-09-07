@@ -1,5 +1,3 @@
 GTK+ is a collection of GUI widgets. GTK+ essentially provides the
 building blocks from which GUIs can be built. It is highly themable,
 and its functionality is highly extensible.
-
-WWW: https://www.gtk.org/

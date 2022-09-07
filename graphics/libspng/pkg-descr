@@ -4,5 +4,3 @@ use.
 
 The goal is to provide a fast PNG library with a simpler API than
 libpng.
-
-WWW: https://libspng.org/

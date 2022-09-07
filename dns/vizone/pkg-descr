@@ -1,4 +1,2 @@
 A script that tries to update the serial inside a DNS zonefile with sane values
 if the file has changed during edit.
-
-WWW: http://www.netswarm.net/

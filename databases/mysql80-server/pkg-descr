@@ -10,6 +10,3 @@ The new features in MySQL 8.0. In addition to Data Dictionnary and CTEs are:
     Performance Schema, instrumenting data locks
     Performance Schema, instrumenting error messages
     Improved cost model with histograms
-
-
-WWW: https://www.mysql.com/

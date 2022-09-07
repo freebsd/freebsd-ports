@@ -6,5 +6,3 @@ more stable releases, package dependencies will be completely managed with xsl
 parameters, making it virtually compatible with basic LaTeX 2e installations).
 All the "styling" has to be done by modifying available xsl:params, overriding
 and customizing templates, and in the last, by adding your "sty" files.
-
-WWW: http://db2latex.sourceforge.net/

@@ -12,5 +12,3 @@ a directory to the gh-pages branch of the repository. This saves me from even
 having to think about the branch and everything becomes magical.
 
 This is what ghp-import was written for.
-
-WWW: https://github.com/c-w/ghp-import

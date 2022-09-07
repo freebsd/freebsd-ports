@@ -9,5 +9,3 @@ That means that compiling with this backend will not help improve
 the runtime execution speed of your program but may improve
 the start-up time. Depending on the environment in which your
 program runs this may be either a help or a hindrance.
-
-WWW: https://metacpan.org/release/B-C

@@ -7,5 +7,3 @@ The methods are:
      rdir - Receive an entire directory tree listing.
      rls  - Receive an entire directory tree listing, filenames only.
      rdelete - Remove an entire directory tree.
-
-WWW: https://metacpan.org/release/Net-FTP-Recursive

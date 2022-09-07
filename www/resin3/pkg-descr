@@ -9,5 +9,3 @@ Sun.
 Resin 3.0 Open Source is available under the GNU Public License (GPL).  It
 contains all functional components of Resin, including EJB, but excludes
 performance and clustering capabilities.
-
-WWW: http://www.caucho.com/

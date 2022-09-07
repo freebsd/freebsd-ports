@@ -15,5 +15,3 @@ or tunnel a connection through a SOCKS proxy server.
 *   Mail User Agent (client)
 **  An outgoing mail processor and the SMTP tunnel.
 *** Mail Transport Agent (server)
-
-WWW: http://www.gnu.org/software/anubis/

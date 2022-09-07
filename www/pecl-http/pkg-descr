@@ -6,5 +6,3 @@ negotiation of clients preferred language and charset,
 as well as a convenient way to send any arbitrary data
 with caching and resuming capabilities. It provides
 powerful request functionality too.
-
-WWW: https://pecl.php.net/package/pecl_http

@@ -15,5 +15,3 @@ Net::DNS contains all needed hooks to load the Net::DNS::SEC extensions when
 they are available.
 
 See Net::DNS for general help.
-
-WWW: https://metacpan.org/release/Net-DNS-SEC

@@ -4,5 +4,3 @@ includes:
 - the tokenizer toke,
 - the detokenizer detok,
 - and a PCI rom header utility.
-
-WWW: https://www.openfirmware.info/FCODE_suite

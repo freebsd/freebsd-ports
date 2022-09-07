@@ -4,5 +4,3 @@ machine learning group.
 Gaussian processes underpin range of modern machine learning algorithms. In GPy,
 we've used python to implement a range of machine learning algorithms based on
 GPs.
-
-WWW: https://sheffieldml.github.io/GPy/

@@ -5,5 +5,3 @@ Features:
 - GNOME-like application grid, with search box and favourites
 - Horizontal or vertical button bar, out of a template file
 - GTK menu out of commands found in $PATH or newline-separated input
-
-WWW: https://github.com/nwg-piotr/nwg-launchers

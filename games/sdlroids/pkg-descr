@@ -3,5 +3,3 @@ features, and some nice game physics. It is based on xhyperoid, which
 is a UNIX port of the 16-bit Windows game Hyperoid. Major changes from
 xhyperoid are that it's using SDL for sound and graphics, has a couple
 of extra powerups  and that the shield behaves differently.
-
-WWW: https://sourceforge.net/projects/sdlroids/

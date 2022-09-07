@@ -19,5 +19,3 @@ ciphers 3DES, Blowfish, IDEA, Twofish, and Rijndael (AES). Rijndael is
 supported for key sizes of 128, 192, and 256 bits. Crypt::OpenPGP
 supports the digest algorithms MD5, SHA-1, and RIPE-MD/160. And it
 supports ZIP and Zlib compression.
-
-WWW: https://metacpan.org/release/Crypt-OpenPGP

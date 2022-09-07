@@ -4,5 +4,3 @@ format to ifconfig(8) so the synopsis should be familiar to the user.
 Given an address family, address and a netmask/prefix length, subcalc
 will calculate the number of hosts and address ranges of the specific
 network.
-
-WWW: http://www.seccuris.com

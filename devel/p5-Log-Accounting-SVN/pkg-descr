@@ -5,5 +5,3 @@ svn-accounting.pl script demonstrate a simple use to this module,
 you may try:
 
   svn-accounting.pl http://svn.collab.net/repos/svn/
-
-WWW: https://metacpan.org/release/GUGOD/Log-Accounting-SVN-0.01

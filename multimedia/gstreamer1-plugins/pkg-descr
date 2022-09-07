@@ -11,5 +11,3 @@ Some features of these plugins are:
   automatically
 - Pipelines can be saved to XML and loaded back to working state
 - Resource friendly plugins don't waste RAM
-
-WWW: https://gstreamer.freedesktop.org/

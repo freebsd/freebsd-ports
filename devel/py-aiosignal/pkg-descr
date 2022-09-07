@@ -8,5 +8,3 @@ callbacks is forbidden.
 
 The only available operation is calling the previously registered callbacks by
 using await sig.send(data).
-
-WWW: https://github.com/aio-libs/aiosignal

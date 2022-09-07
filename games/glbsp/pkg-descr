@@ -6,5 +6,3 @@ compute the polygons needed for drawing the levels.
 There are many DOOM ports that understand the GL Nodes which glBSP
 creates, including: EDGE, the Doomsday engine (JDOOM), Doom3D, PrBoom,
 and Vavoom.
-
-WWW: http://glbsp.sourceforge.net/

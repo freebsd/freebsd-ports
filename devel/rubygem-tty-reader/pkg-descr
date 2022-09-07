@@ -4,5 +4,4 @@ character, line and multiline modes. In addition it maintains history of entered
 input with an ability to recall and re-edit those inputs and register to listen
 for keystroke events.
 
-WWW: https://ttytoolkit.org/
-WWW: https://github.com/piotrmurach/tty-reader
+See also: https://github.com/piotrmurach/tty-reader

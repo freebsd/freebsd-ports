@@ -3,5 +3,3 @@ command.  It has wrappers for almost all the rsync commands and features,
 as well as detecting errors.
 
 For more details, type 'perldoc File::Rsync' or see the CPAN homepage:
-
-WWW: https://metacpan.org/release/File-Rsync

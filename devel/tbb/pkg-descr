@@ -8,5 +8,3 @@ mechanism for performance and scalability.
 
 That port is the legacy version of tbb and will not be updated anymore.
 See devel/onetbb for newer versions.
-
-WWW: http://threadingbuildingblocks.org/

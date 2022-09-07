@@ -3,5 +3,3 @@ This format is defined in international specifications ISO/IEC 14496-12,
 14496-14 and 14496-15.
 The format is a derivative of the Apple Quicktime file format,
 so Bento4 can be used to read and write most Quicktime files as well.
-
-WWW: https://www.bento4.com

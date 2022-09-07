@@ -7,5 +7,3 @@ LWP::UserAgent, and HTML::Selector::XPath.
 So, this module uses HTML::Selector::XPath, then this module only supports CSS3
 selector supported by HTML::Selector::XPath. Web::Query doesn't support jQuery's
 extended quries(yet?).
-
-WWW: https://metacpan.org/release/Web-Query

@@ -4,5 +4,3 @@ recommendations for increased performance and
 stability. Within seconds, it will display
 statistics about your MySQL installation and the
 areas where it can be improved.
-
-WWW: https://github.com/major/MySQLTuner-perl

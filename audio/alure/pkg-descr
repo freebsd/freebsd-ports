@@ -14,5 +14,3 @@ Currently ALURE includes a basic .wav and .aif file reader, and can
 leverage external libraries such as libSndFile (for extended wave
 formats and several others), VorbisFile (for Ogg Vorbis), FLAC (for
 FLAC and Ogg FLAC), and others.
-
-WWW: https://kcat.strangesoft.net/alure.html

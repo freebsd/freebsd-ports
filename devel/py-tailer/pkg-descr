@@ -5,5 +5,3 @@ supports seek() and tell().
 - tail: read lines from the end of a file
 - head: read lines from the top of a file
 - follow: read lines as a file grows
-
-WWW: https://github.com/six8/pytailer

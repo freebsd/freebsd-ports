@@ -5,5 +5,3 @@ directories do not exist.  In effect, it will automatically create
 directories as needed.  This is create for things like install scripts
 and such, as you never need to worry about the existence of directories,
 just write to a file, no matter where it is.
-
-WWW: https://metacpan.org/release/File-Flat

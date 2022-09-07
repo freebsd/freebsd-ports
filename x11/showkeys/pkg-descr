@@ -12,5 +12,3 @@ advantages of showkeys are
    you're using a tiling WM like Xmonad.
 4. Keystroke history. key-mon has this but doesn't show modifiers. showkeys
    does this using an Emacs style key notation.
-
-WWW: https://github.com/nibrahim/showkeys

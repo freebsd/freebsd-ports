@@ -9,5 +9,3 @@ From the README file for AppConfig:
     flags (On/Off), take a single value, or take multiple values stored as a
     a list or hash. The number of arguments a variable expects is determined
     by its configuration when defined.
-
-WWW: https://metacpan.org/release/AppConfig

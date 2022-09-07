@@ -19,5 +19,3 @@ Features
  * Simplified email sending via SMTP
    * Uses opportunistic encryption (STARTTLS) by default
    * Easily add attachments, plain text, and HTML
-
-WWW: https://github.com/seanthegeek/mailsuite

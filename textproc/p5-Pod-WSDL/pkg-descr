@@ -12,5 +12,3 @@ calling
 	$pwsdl->WSDL;
 
 Pod::WSDL will output the WSDL document. That's it.
-
-WWW: https://metacpan.org/release/Pod-WSDL

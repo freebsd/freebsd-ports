@@ -6,5 +6,3 @@ omega keywords (id, host, date, month, year,title), so that you can do
 searches like
 
       'fubar site:microsoft.com'
-
-WWW: https://metacpan.org/release/Catalyst-Model-Xapian

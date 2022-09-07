@@ -7,5 +7,3 @@ or produce error messages. It just doesn't automatically log you in. If the
 user/pass information does not work for the IMAP server, this still displays
 the login form, just in case the web server password and IMAP password are
 not synchronized.
-
-WWW: http://www.squirrelmail.org/plugin_view.php?id=34

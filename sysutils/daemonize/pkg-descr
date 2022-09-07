@@ -1,4 +1,2 @@
 daemonize is a command-line utility that runs a command as a Unix daemon. See
 the accompanying man page for full details.
-
-WWW: https://github.com/bmc/daemonize

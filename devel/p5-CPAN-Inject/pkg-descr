@@ -9,5 +9,3 @@ CPAN::Inject replicates the basics of this functionality.
 Specifically, it takes an arbitrary tarball and adds it to the CPAN
 sources directory for a particular author, and then add the new
 file to the CHECKSUMS file.
-
-WWW: https://metacpan.org/release/CPAN-Inject

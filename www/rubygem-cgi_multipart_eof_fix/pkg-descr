@@ -10,5 +10,3 @@ This fix adds escaping for the user data.
 
 This fix will not modify versions of Ruby greater than 1.8.5, and is
 cumulative with previous CGI multipart vulnerability fixes.
-
-WWW: http://blog.evanweaver.com/pages/code#cgi_multipart_eof_fix

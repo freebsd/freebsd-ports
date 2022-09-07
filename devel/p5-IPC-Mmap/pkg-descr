@@ -15,5 +15,3 @@ memory. Refer to the excellent "Advanced Programming in the UNIX
 Environment", Stevens et al., Addison-Wesley Publisher for a detailed
 reference on the POSIX implementation. IPC::Mmap provides OS-agnostic
 wrappers for both the POSIX and Win32 memory mapped file capabilities.
-
-WWW: https://metacpan.org/release/IPC-Mmap

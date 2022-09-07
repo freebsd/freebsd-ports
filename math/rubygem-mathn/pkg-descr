@@ -9,5 +9,3 @@ of requiring mathn, you instead explicitly specify rational values as desired.
 Before ruby 2.5, mathn was part of the ruby standard library. It was deprecated
 in ruby 2.2.0, and removed from ruby 2.5.0. In order to use the library with a
 current version of ruby, you must install it as a gem.
-
-WWW: https://github.com/ruby/mathn

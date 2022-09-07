@@ -7,5 +7,3 @@ ssl-admin will help you do the following tasks with SSL certificates:
   * Sign existing Certificate Signing Requests
   * Manage Certificate Revokation Lists
   * Export configurations and certificates for OpenVPN.
-
-WWW: https://github.com/ecrist/ssl-admin/

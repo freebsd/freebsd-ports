@@ -6,5 +6,3 @@ intended as stopgap solution to enable higher level frameworks and runtimes
 to use QUIC with the proven and reliable TLS functionality from OpenSSL.
 This fork will be maintained until OpenSSL officially provides reasonable
 support for QUIC implementations.
-
-WWW: https://www.github.com/quictls/openssl

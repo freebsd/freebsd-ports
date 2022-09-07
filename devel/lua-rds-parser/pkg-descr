@@ -5,5 +5,3 @@ quite inefficient in terms of both memory and CPU time.
 
 To maximize speed and minimize memory footprint, this library is implemented
 in pure C.
-
-WWW: https://github.com/agentzh/lua-rds-parser/

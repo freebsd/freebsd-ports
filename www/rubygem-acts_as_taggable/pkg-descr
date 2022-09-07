@@ -2,5 +2,3 @@ This ActiveRecord acts-as mixin provides an easy way for addind tagging
 capabilities (also known as folksnomy) to your ActiveRecord objects. It
 allows you to apply tags to your objects as well as search for tagged
 objects.
-
-WWW: https://github.com/twoism/taggable

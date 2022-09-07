@@ -1,3 +1,1 @@
 Lua DNS resolver for the ngx_lua based on the cosocket API
-
-WWW: https://github.com/openresty/lua-resty-dns

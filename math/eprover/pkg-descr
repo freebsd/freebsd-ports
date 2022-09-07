@@ -3,5 +3,3 @@ a problem specification, typically consisting of a number of first-order clauses
 or formulas, and a conjecture, again either in clausal or full first-order
 form. The system will then try to find a formal proof for the conjecture,
 assuming the axioms.
-
-WWW: http://www.eprover.org

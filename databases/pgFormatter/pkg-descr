@@ -6,5 +6,3 @@ pgFormatter can work as a console program or as a CGI. It will automatically
 detect his environment and output as text or as HTML following the context.
 
 Keywords highlighting will only be available in CGI context.
-
-WWW: https://github.com/darold/pgFormatter

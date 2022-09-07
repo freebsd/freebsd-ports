@@ -16,5 +16,3 @@ You may want to look at "Google Safe Browsing v2: Implementation Notes"
 a collection of notes and real-world numbers about the API. This is intended
 for people who want to learn more about the API, whether as a user or to
 make their own implementation.
-
-WWW: https://metacpan.org/release/Net-Google-SafeBrowsing2

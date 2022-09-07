@@ -14,5 +14,3 @@ thread safe, and provide full access to server side methods.
     - Implementations of the new cas, replace, and append operators.
     - Man pages written up on entire API.
     - Implements both modulo and consistent hashing solutions.
-
-WWW: https://metacpan.org/release/Memcached-libmemcached

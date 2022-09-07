@@ -5,5 +5,3 @@ The Net::DNS::Check was built to be as easy as possible to use and
 highly configurable and flexible: it allow easy implementation
 of your custom test and deeper configuration of what you want
 to check and how.
-
-WWW: https://metacpan.org/release/Net-DNS-Check

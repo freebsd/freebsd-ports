@@ -6,5 +6,3 @@ various criteria.
 It uses a state machine to parse URIs and rules, and a constant
 database to store and access those rules. It can then either perform
 conditional rewrites internally, or by evaluating Lua scripts.
-
-WWW: http://projects.martini.nu/volta/

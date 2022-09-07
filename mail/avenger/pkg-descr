@@ -7,5 +7,3 @@ of sender addresses through SMTP callbacks, SPF (sender policy
 framework) as a general policy language, qmail-style control over both
 SMTP-level behavior and local delivery of extension addresses,
 mail-bomb protection, integration with kernel firewalls, and more.
-
-WWW: http://www.mailavenger.org/

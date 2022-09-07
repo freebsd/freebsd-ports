@@ -1,5 +1,3 @@
 This module is a client for RedMine REST API.  Please note that although
 RedMine API is designed to support both JSON and XML, this module is JSON
 only.
-
-WWW: https://metacpan.org/release/WebService-Redmine

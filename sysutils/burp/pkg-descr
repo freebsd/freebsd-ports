@@ -8,5 +8,4 @@ independent backup protocols to choose from:
   Available from burp version 2.0.x, but is experimental and should not be used
   in production.
 
-WWW: https://burp.grke.org/
-WWW: https://github.com/grke/burp
+See also: https://github.com/grke/burp

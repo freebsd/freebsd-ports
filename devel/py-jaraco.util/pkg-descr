@@ -3,5 +3,3 @@ functions.
 
 They're designed to be intuitively named and self-documenting (many with
 extensive doctests).
-
-WWW: https://github.com/jaraco/jaraco.util

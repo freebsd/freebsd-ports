@@ -1,5 +1,3 @@
 IPAddress is a Ruby library designed to make manipulation of IPv4 and IPv6
 addresses both powerful and simple. It mantains a layer of compatibility
 with Ruby's own IPAddr, while addressing many of its issues
-
-WWW: https://github.com/bluemonk/ipaddress

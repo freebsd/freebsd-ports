@@ -1,4 +1,2 @@
 The upsdaemon is a simple program to monitor APC-Pro series UPSes.
 When the power fails, the UpsDaemon it effects shutdown the system.
-
-WWW: https://BSDforge.com/projects/sysutils/upsdaemon/

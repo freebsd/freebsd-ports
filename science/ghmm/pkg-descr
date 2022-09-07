@@ -3,5 +3,3 @@ with additional Python bindings implementing a wide range of
 types of Hidden Markov Models and algorithms:
 discrete, continous emissions, basic training,
 HMM clustering, HMM mixtures.
-
-WWW: http://ghmm.sourceforge.net/

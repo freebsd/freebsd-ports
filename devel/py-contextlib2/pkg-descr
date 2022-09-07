@@ -1,3 +1,1 @@
 Backport of the standard library's contextlib module to earlier Python versions.
-
-WWW: https://pypi.org/project/contextlib2/

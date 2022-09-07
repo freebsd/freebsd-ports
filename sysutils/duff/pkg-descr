@@ -1,4 +1,2 @@
 Duff is a Unix command-line utility written in C for quickly finding
 duplicates in a given set of files.
-
-WWW: https://github.com/elmindreda/duff

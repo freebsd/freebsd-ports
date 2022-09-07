@@ -3,5 +3,3 @@ socket, and any connection to this port will be forwarded to another
 socket at remote host.
 
 LICENSE: GPL2 or later
-
-WWW: http://www.crocodile.org/software.html

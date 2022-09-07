@@ -20,5 +20,3 @@ Features:
 - base conversion to binary, decimal and hex
 - custom sector size, max heads/cylinder and max sectors/track
 - minimal dependencies
-
-WWW: https://github.com/jarun/bcal

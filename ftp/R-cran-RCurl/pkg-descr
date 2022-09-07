@@ -3,5 +3,3 @@ provides HTTP facilities. This allows us to download files from Web
 servers, post forms, use HTTPS (the secure HTTP), use persistent
 connections, upload files, use binary content, handle redirects,
 password authentication, etc.
-
-WWW: https://cran.r-project.org/web/packages/RCurl/

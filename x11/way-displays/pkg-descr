@@ -12,5 +12,3 @@ Command line client to inspect, modify and persist changes to the
 active configuration.
 
 Wayland successor to xlayoutdisplay, inspired by kanshi.
-
-WWW: https://github.com/alex-courtis/way-displays

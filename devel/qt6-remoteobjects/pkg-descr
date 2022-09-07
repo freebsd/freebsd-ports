@@ -9,5 +9,3 @@ expected API, even if the true QObject is in a different process. A slot called
 on a copy of an object (the Replica in QtRO) is forwarded to the true object
 (the Source in QtRO) for handling. Every Replica receives updates to the
 Source, either property changes or emitted signals.
-
-WWW: https://qt.io

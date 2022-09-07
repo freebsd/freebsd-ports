@@ -1,4 +1,2 @@
 This is an Oriented Object module that calculates a future value by using
 existing values. The new value is calculated by using linear regression.
-
-WWW: https://metacpan.org/release/Statistics-Forecast

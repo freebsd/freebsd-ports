@@ -1,5 +1,3 @@
 "Catalyst::Plugin::Session::Store::Memcached" is a session storage
 plugin for Catalyst that uses the Cache::Memcached::Managed module to
 connect to memcached, a fast data caching server.
-
-WWW: https://metacpan.org/release/Catalyst-Plugin-Session-Store-Memcached

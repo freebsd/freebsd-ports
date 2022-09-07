@@ -8,5 +8,3 @@ FEATURES
   language, plus the graph library.
 - Nodes, graphs and edges are extensible from the scripting interface,
   so you can do anything you want.
-
-WWW: http://www.kde.org/applications/education/rocs

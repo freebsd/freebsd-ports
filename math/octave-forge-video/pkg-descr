@@ -7,5 +7,3 @@ This is video.
 
 Implements addframe, avifile, aviinfo, and aviread, using ffmpeg.
 (and approximately conforms to Matlab interface)
-
-WWW: http://octave.sourceforge.net/

@@ -7,5 +7,4 @@ faster.
 Furthermore, libdivide allows you to divide SIMD vectors by runtime constants,
 which is especially nice because SIMD typically lacks integer division.
 
-WWW: https://libdivide.com/
-WWW: https://github.com/ridiculousfish/libdivide/
+See also: https://github.com/ridiculousfish/libdivide/

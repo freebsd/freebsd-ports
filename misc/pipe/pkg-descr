@@ -11,5 +11,3 @@ written (so far) including Invariant Analysis, State-Space Analysis (deadlock,
 etc), Simulation Analysis & Classification. PIPE adheres to the latest XML
 Petri net standard (PNML). File format for saving and loading Petri-Nets is
 also extensible through the use of XSLT, the default being PNML.
-
-WWW: http://pipe2.sourceforge.net/

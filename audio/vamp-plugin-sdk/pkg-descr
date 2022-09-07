@@ -1,5 +1,3 @@
 Vamp is an audio processing plugin system for plugins that extract descriptive
 information from audio data typically referred to as audio analysis plugins or
 audio feature extraction plugins.
-
-WWW: https://www.vamp-plugins.org/

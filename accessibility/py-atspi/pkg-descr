@@ -4,5 +4,3 @@ and assistive technologies to announce their respective existence
 to each other.
 
 This port is the Python API to interface with the D-BUS based SPI framework.
-
-WWW: https://gitlab.gnome.org/GNOME/pyatspi2

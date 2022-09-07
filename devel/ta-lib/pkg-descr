@@ -6,5 +6,3 @@ More than 150 technical analysis indicators such as ADX, MACD, RSI,
 Stochastic, Bollinger Bands. Includes candlestick pattern recognition.
 Optional abstract API allowing your code to adapt automatically when new
 functions are added!
-
-WWW: http://ta-lib.org/

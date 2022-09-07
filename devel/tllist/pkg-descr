@@ -20,5 +20,3 @@ in time.
 
 Thus, assuming 64-bit pointers (and a 64-bit size_t type), the total overhead
 is 3*8 + n*2*8 bytes.
-
-WWW: https://codeberg.org/dnkl/tllist

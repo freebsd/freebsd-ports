@@ -19,5 +19,3 @@ Cantata is a QT graphical client for MPD with the following features:
 - Basic support for touch-style interface (views are made 'flickable')
 - Scrobbling.
 - Ratings support.
-
-WWW: https://github.com/CDrummond/cantata

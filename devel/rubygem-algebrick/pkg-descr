@@ -1,4 +1,2 @@
 Typed structs on steroids based on algebraic types and pattern matching
 seamlessly integrating with standard Ruby features.
-
-WWW: https://github.com/pitr-ch/algebrick

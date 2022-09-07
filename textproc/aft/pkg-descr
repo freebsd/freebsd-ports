@@ -10,5 +10,3 @@ lout and RTF. It can, in fact, be coerced into producing all types of
 output (e.g. roll-your-own XML). All that needs to be done is to edit
 a rule file. You can even customize your own HTML rule files for
 specialized output.
-
-WWW: http://www.maplefish.com/todd/aft.html

@@ -12,5 +12,3 @@ Features:
 - Smart, common-sense defaults.  Smart-cased regular expressions
   also come with a sane syntax that's not opt-in.  Defaults follow
   common sense and are tailored for typical daily use.
-
-WWW: https://github.com/chmln/sd

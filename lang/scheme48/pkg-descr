@@ -16,5 +16,3 @@ the VM, especially core dumps, to scheme-48-bugs@s48.org. Include the version
 number x.yy from the "Welcome to Scheme 48 x.yy" greeting message in your bug
 report. It is a goal of this project to produce a bullet-proof system; we want
 no bugs and, especially, no crashes.
-
-WWW: http://www.s48.org

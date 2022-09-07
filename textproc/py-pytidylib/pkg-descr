@@ -9,5 +9,3 @@ many capabilities include:
   * Clean up HTML from programs such as Word (to an extent)
   * Indent the output, including proper (i.e. no) indenting for pre elements,
     which some (X)HTML indenting code overlooks.
-
-WWW: http://countergram.com/open-source/pytidylib

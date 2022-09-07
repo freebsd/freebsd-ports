@@ -3,5 +3,3 @@ an elementary quantum optics process.
 
 This port contains the kernel driver to access Quantis
 PCI and PCIe devices.
-
-WWW: https://www.idquantique.com/

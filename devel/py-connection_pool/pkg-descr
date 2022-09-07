@@ -1,5 +1,3 @@
 Thread-safe connection pool for python.
 
 It allows to cache network connections.
-
-WWW: https://github.com/zhouyl/ConnectionPool

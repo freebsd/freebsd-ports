@@ -1,4 +1,2 @@
 This package contains a proxy program that passes data back and forth
 between two connections set up by a UCSPI server and a UCSPI client.
-
-WWW: http://untroubled.org/ucspi-proxy/

@@ -5,5 +5,3 @@ torrent of requests.
 Requests appear as colored balls which travel across the screen to arrive at the
 requested location. Successful requests are hit by the paddle while unsuccessful
 ones (eg. 404 - File Not Found) are missed and pass through.
-
-WWW: http://logstalgia.io/

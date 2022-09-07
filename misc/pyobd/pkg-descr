@@ -8,5 +8,3 @@ they should work with pyOBD.
 pyOBD is written entirely in Python and was originally written by Donour
 Sizemore, now maintained and improved by SECONS Ltd. and it is Free Software
 and is distributed under the terms of the GPL.
-
-WWW: http://www.obdtester.com/pyobd

@@ -14,5 +14,3 @@ Features include:
 * Stand-alone midi renderer, generating .wav files, 1 for each channel
 * Stand-alone midi input, making it possible to use DrumGizmo as a software
   sampler for an electronic drumkit
-
-WWW: https://www.drumgizmo.org/

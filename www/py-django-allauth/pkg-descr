@@ -1,5 +1,4 @@
 django-allauth is a reusable Django app that allows for both local and social
 authentication, with flows that just work.
 
-WWW: https://www.intenct.nl/projects/django-allauth/
-WWW: https://github.com/pennersr/django-allauth
+See also: https://github.com/pennersr/django-allauth

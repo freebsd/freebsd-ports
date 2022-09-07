@@ -11,5 +11,3 @@ ldapvi is tool to update LDAP entries with a text editor.  It is:
   - Can rename entries;
   - Does not give up easily.  On error, you can edit the file again, or
     rebind to the server and try again.
-
-WWW: http://www.lichteblau.com/ldapvi.html

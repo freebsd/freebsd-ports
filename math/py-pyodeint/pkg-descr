@@ -10,5 +10,3 @@ calculating the Jacobian.
 You may also want to know that you can use pyodeint from pyodesys which can e.g.
 derive the Jacobian analytically for you (pyodesys also provides plotting
 functions, C++ code-generation and more).
-
-WWW: https://github.com/bjodah/pyodeint

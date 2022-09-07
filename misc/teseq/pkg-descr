@@ -19,5 +19,3 @@ support for that (*note Future Enhancements::). Therefore, the
 descriptions Teseq uses for control functions may not necessarily match
 their actual interpretation by whatever terminal device the characters
 were actually intended for
-
-WWW: http://www.gnu.org/software/teseq/

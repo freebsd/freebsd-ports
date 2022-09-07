@@ -7,5 +7,3 @@ similar way to the standard make index command, except that the
 FreeBSD::Portindex tools keep a cache of the make describe output from
 each port, and can update that cached data incrementally as the ports
 tree itself is updated.
-
-WWW: http://www.infracaninophile.co.uk/portindex/

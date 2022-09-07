@@ -4,5 +4,3 @@ being introduced to module uploads, via the use of ExtUtils::MakeMaker,
 Module::Build and Module::Install.
 
 See CPAN::Meta for further details of the CPAN Meta Specification.
-
-WWW: https://metacpan.org/release/Test-CPAN-Meta-YAML

@@ -11,5 +11,3 @@ package pages.
 
 Unpublishing is usually very cumbersome. We save our time by validating reST
 input using checkdocs and showdocs commands before submitting eggs to PyPi.
-
-WWW: https://github.com/collective/collective.checkdocs

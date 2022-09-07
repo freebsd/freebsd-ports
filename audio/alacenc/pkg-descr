@@ -1,4 +1,2 @@
 Command-line program to encode audio files into the Apple Lossless
 Audio Codec (ALAC) format.
-
-WWW: https://github.com/flacon/alacenc

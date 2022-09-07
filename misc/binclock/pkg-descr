@@ -2,5 +2,3 @@ Binary clock to display time in binary format.
 
 It supports showing the time with eight different colors,
 and it can run a loop that prints the time every second.
-
-WWW: http://www.ngolde.de/binclock.html

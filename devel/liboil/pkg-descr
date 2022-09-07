@@ -9,5 +9,3 @@ Many multimedia applications and libraries already do similar things
 internally. The goal of this project is to consolidate some of the code used
 by various multimedia projects, and also make optimizations easier to use by
 a broad range of applications.
-
-WWW: https://liboil.freedesktop.org/wiki/

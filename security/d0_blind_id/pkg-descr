@@ -1,4 +1,2 @@
 Cryptographic library to perform identification using Schnorr
 Identification scheme and Blind RSA Signatures.
-
-WWW: https://github.com/divVerent/d0_blind_id

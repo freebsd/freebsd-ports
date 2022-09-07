@@ -7,5 +7,3 @@ It is implemented as multiple packages which closly resamble Ruby
 implementation. It also includes methods to manage nodes.
 
 There are few examples in scripts directory of this distribution.
-
-WWW: https://metacpan.org/release/Search-Estraier

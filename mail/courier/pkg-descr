@@ -19,5 +19,3 @@ features:
  * PAM, LDAP, PostgreSQL, or MySQL authentication.
  * Authenticated SMTP.
  * Integrated mail filtering.
-
-WWW: http://www.Courier-MTA.org/

@@ -5,5 +5,3 @@ not unlike the famous AAlib library, with the following improvements:
  * 2048 available colours (some devices can only handle 16)
  * dithering of colour images
  * advanced text canvas operations (blitting, rotations)
-
-WWW: http://caca.zoy.org/

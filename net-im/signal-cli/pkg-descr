@@ -7,5 +7,3 @@ you can receive SMS or incoming calls. signal-cli is primarily intended to be
 used on servers to notify admins of important events. For this use-case, it has
 a dbus interface, that can be used to send messages from any programming
 language that has dbus bindings.
-
-WWW: https://github.com/AsamK/signal-cli

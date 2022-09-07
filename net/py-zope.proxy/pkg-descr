@@ -2,5 +2,3 @@ Proxies are special objects which serve as mostly-transparent wrappers
 around another object, intervening in the apparent behavior of the
 wrapped object only when necessary to apply the policy (e.g., access
 checking, location brokering, etc.) for which the proxy is responsible.
-
-WWW: https://pypi.org/project/zope.proxy/

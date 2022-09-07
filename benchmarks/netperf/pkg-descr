@@ -13,5 +13,3 @@ Some of these are:
         * specification of sizes of data to send
 Netperf can be used for measuring stream performance as well as
 round-trip performance.
-
-WWW: https://hewlettpackard.github.io/netperf/

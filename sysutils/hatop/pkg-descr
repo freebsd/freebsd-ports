@@ -8,5 +8,3 @@ Unix socket. This allows administrators to control the given haproxy
 instance (change server weight, put servers into maintenance mode,
 etc.) directly out of hatop (using keybinds or the CLI) and monitor the
 results immediately.
-
-WWW: https://github.com/jhunt/hatop

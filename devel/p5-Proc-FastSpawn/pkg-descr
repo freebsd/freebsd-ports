@@ -7,5 +7,3 @@ Apart from fork overhead, this module also allows you to fork+exec programs when
 otherwise you couldn't - for example, when you use POSIX threads in your perl
 process then it generally isn't safe to call fork from perl, but it is safe to
 use this module to execute external processes.
-
-WWW: https://metacpan.org/dist/Proc-FastSpawn

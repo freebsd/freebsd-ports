@@ -1,4 +1,2 @@
 This OCaml library is a binding to the NDBM/GDBM Unix "databases". It
 provides persistent storage of key-value pairs of strings.
-
-WWW: http://forge.ocamlcore.org/projects/camldbm/

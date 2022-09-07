@@ -11,5 +11,3 @@ facility (using definitions in the template file or in simple environment files
 using a syntax a la objective Caml). In short, Htmlc ensures the static
 verification and the static expansion of the Server Side Includes directives of
 the Web pages in the efficient and friendly way of a command-line compiler.
-
-WWW: http://htmlc.inria.fr/eng.htm

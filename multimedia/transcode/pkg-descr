@@ -17,5 +17,3 @@ available, as well as an interface import module to the avifile
 library. Its modular concept is intended to provide flexibility
 and easy user extensibility to include other video/audio codecs or
 file types.
-
-WWW: http://www.transcoding.org/

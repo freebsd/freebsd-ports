@@ -19,5 +19,3 @@ Documentation:
 * file:tests/context.c for basic usage
 * http://du-a.org/docs/libskk/libskk/ for Vala binding reference
 * http://du-a.org/docs/gtk-doc/libskk/html/ for C binding reference
-
-WWW: https://github.com/ueno/libskk

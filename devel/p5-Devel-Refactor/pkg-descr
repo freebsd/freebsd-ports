@@ -3,5 +3,3 @@ The Devel::Refactor module is for code refactoring.
 While Devel::Refactor may be used from Perl programs, it is also
 designed to be used with the EPIC plug-in for the eclipse integrated
 development environment.
-
-WWW: https://metacpan.org/release/Devel-Refactor

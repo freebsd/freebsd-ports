@@ -13,5 +13,3 @@ order to implement error-safe C++ wrappers on top of a Lua C binary
 library, Lutok adds several layers or abstraction and error checking
 that go against the original spirit of the Lua C API and thus degrade
 performance.
-
-WWW: https://github.com/jmmv/lutok/

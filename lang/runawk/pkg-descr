@@ -1,4 +1,2 @@
 runawk is a small wrapper for AWK that implements a modules
 system and helps one to write the standalone AWK programs.
-
-WWW: https://sourceforge.net/projects/runawk/

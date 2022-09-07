@@ -3,5 +3,3 @@ HTML, MathML, and (via LaTeX/dvips/ImageMagick) rasterized PNG images.
 Input data is parsed and scrutinized for safety, and the output includes
 an estimate of whether the code is simple enough that HTML rendering will
 look acceptable.
-
-WWW: https://www.mediawiki.org/wiki/Texvc

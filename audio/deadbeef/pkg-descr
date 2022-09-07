@@ -18,5 +18,3 @@ last.fm scrobbler; sdk is included
 - duration calculation is as precise as possible for vbr mp3 files (with and
 without xing/info tags)
 - and etc...
-
-WWW: http://deadbeef.sourceforge.net/

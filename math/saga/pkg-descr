@@ -5,5 +5,3 @@ Interface (API), providing data object definitions and computational methods for
 raster, vector and tabular data. As a normal user, you will not get into touch
 with the API. But as an interested scientist or coder you will soon discover
 its great flexibility.
-
-WWW: http://www.saga-gis.org/en/index.html

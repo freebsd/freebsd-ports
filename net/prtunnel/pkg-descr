@@ -2,5 +2,3 @@ prtunnel tunnels a TCP connection through to a remote server
 using an HTTP or SOCKS5 proxy. It is useful if you are behind a
 proxy and want to use a program that doesn't have native proxy
 support.
-
-WWW: https://www.joshbeam.com/software/prtunnel/

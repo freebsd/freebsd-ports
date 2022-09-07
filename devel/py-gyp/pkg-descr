@@ -3,5 +3,3 @@ build systems.  It is intended to support large projects that need
 to be built on multiple platforms (e.g., Mac, Windows, Linux), and
 where it is important that the project can be built using the IDEs
 that are popular on each platform as if the project is a "native" one.
-
-WWW: https://gyp.gsrc.io/

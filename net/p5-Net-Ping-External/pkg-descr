@@ -5,5 +5,3 @@ returns true if the host is alive, and false otherwise. Unless you
 have the ability (and willingness) to run your scripts as the
 superuser on your system, this module will probably provide more
 accurate results than Net::Ping will.
-
-WWW: https://metacpan.org/release/Net-Ping-External

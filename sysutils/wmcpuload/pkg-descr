@@ -1,4 +1,2 @@
 This is a port of wmcpuload, which displays the current cpu-load in a
 simulated lcd-display, which supports background lighting.
-
-WWW: https://www.dockapps.net/wmcpuload

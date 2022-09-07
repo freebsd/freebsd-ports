@@ -8,5 +8,3 @@ DEPOT supports storing files in multiple backends, like:
 and integrates with database by providing files attached to your SQLAlchemy or
 Ming/MongoDB models with respect to transactions behaviours (files are rolled
 back too).
-
-WWW: https://github.com/amol-/depot

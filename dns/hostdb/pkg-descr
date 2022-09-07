@@ -5,5 +5,3 @@ source.
 
 A system for generating internal DNS zones, external DNS zones, and
 DHCP configuration data from the same simple repository.
-
-WWW: http://everythingsysadmin.com/hostdb

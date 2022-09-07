@@ -4,5 +4,3 @@ the PulseAudio sound server.
 Please note that this program can only configure local servers, and requires
 that a special module module-gsettings is loaded in the sound server. (This
 require to build the audio/pulseaudio port with option GSETTINGS).
-
-WWW: https://freedesktop.org/software/pulseaudio/paprefs/

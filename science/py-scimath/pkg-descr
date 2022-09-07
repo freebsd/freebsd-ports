@@ -3,5 +3,3 @@ mathematical calculations, beyond the capabilities offered by SciPy.
     * enthought.interpolate
     * enthought.mathematics
     * enthought.units
-
-WWW: https://pypi.org/project/scimath/

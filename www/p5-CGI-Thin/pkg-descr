@@ -6,5 +6,3 @@ complications.
 The hash %cgi_data will have all the form data from either a POST or GET form
 and will also work for "multipart/form-data" forms necessary for uploading
 files.
-
-WWW: https://metacpan.org/release/CGI-Thin

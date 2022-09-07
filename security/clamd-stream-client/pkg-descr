@@ -3,5 +3,3 @@ if a file containt a virus. May be used with
 procmail or maildrop rules. Clamav library
 is not required to be installed on the running
 host.
-
-WWW: http://clamd-stream-cl.sourceforge.net/

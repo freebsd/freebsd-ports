@@ -6,5 +6,3 @@ best compression ratios currently possible.
 libheif makes use of libde265 for the actual image decoding and x265 for
 encoding. Alternative codecs for, e.g., AVC and JPEG can be provided as
 plugins.
-
-WWW: https://github.com/strukturag/libheif

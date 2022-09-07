@@ -14,5 +14,3 @@ server. It functions as an LSP client, supporting:
 * Code formatting
 * Spell checking
 * Custom plugins
-
-WWW: https://github.com/sumneko/lua-language-server

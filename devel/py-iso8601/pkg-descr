@@ -4,5 +4,3 @@ This module parses the most common forms of ISO 8601 date strings
 You can parse full date + times, or just the date. In both cases a datetime
 instance is returned but with missing times defaulting to 0, and missing
 days / months defaulting to 1.
-
-WWW: https://bitbucket.org/micktwomey/pyiso8601

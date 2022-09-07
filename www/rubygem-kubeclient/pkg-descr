@@ -2,5 +2,3 @@ A Ruby client for Kubernetes REST API. The client supports
 GET, POST, PUT, DELETE on all the entities available in
 kubernetes in both the core and group apis. The client
 currently supports Kubernetes REST API version v1.
-
-WWW: https://github.com/abonas/kubeclient

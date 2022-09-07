@@ -8,5 +8,3 @@ The Hungry Programmers, the people writing LessTif, have adopted a
 naming scheme where an even minor number indicates a stable release
 of the libraries and an odd number is a development release. *Ports will
 be made for even number releases only.*
-
-WWW: http://lesstif.sourceforge.net/

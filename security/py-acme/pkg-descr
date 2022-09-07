@@ -3,5 +3,3 @@ automating the management of domain-validation certificates, based on a
 simple JSON-over-HTTPS interface.
 
 This packages provides a Python implementation of the protocol.
-
-WWW: https://github.com/certbot/certbot/tree/master/acme

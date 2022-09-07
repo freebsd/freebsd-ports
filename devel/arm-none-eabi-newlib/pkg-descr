@@ -1,5 +1,3 @@
 Newlib is a C library intended for use on embedded systems. It is
 a conglomeration of several library parts, all under free software
 licenses, that make them easily usable on embedded products.
-
-WWW: https://www.sourceware.org/newlib/

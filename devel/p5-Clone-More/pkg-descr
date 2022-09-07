@@ -2,5 +2,3 @@ This is intended to act as a utility in order to natively clone data structures
 via a simple Perl interface. Will ensure that all references will be separated
 from the parent data structure, yet kept relative to the new structure (if need
 be).
-
-WWW: https://metacpan.org/release/WAZZUTEKE/Clone-More-0.90.2

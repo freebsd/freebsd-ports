@@ -8,5 +8,3 @@ PDF...). It is free software, released under the GPL.
 It is composed of two parts: eqedit, which is a command line tool that
 generates images from LaTeX input, and eqe which wraps eqedit into a
 graphical user interface.
-
-WWW: http://rlehy.free.fr/

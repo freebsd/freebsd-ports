@@ -4,5 +4,3 @@ on GNU Common C++ which provides a high performance, flexible and extensible
 standards-compliant RTP stack with full RTCP support. The design and
 implementation of ccRTP make it suitable for high capacity servers and
 gateways as well as personal client applications.
-
-WWW: http://www.gnu.org/software/ccrtp/

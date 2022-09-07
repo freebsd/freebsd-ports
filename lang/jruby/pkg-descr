@@ -6,5 +6,3 @@ language, as well as most of the Ruby Standard Libraries. The standard libraries
 are mostly Ruby's own complement of .rb files, but a few that depend on C
 language-based extensions have been reimplemented. Some are still missing, but
 we hope to implement as many as is feasible.
-
-WWW: http://jruby.org/

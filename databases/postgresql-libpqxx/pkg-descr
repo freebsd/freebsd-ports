@@ -14,5 +14,3 @@ of your hands; of constructors and destructors to bring resource
 management under control; and even basic object-orientation to give
 you some extra reliability features that would be hard to get with
 most other database interfaces.
-
-WWW: http://pqxx.org/

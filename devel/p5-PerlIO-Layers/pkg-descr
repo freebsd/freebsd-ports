@@ -2,5 +2,3 @@ Perl's filehandles are implemented as a stack of layers, with the bottom-most
 usually doing the actual IO and the higher ones doing buffering,
 encoding/decoding or transformations. PerlIO::Layers allows you to query the
 filehandle's properties concerning there layers.
-
-WWW: https://metacpan.org/release/PerlIO-Layers

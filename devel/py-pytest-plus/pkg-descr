@@ -5,5 +5,3 @@ meet the following criteria:
 
 * Downgrade gracefully, meaning that if the plugin is removed, you
   will still be able to run pytest
-
-WWW: https://github.com/pycontribs/pytest-plus

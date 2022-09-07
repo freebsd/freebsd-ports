@@ -4,5 +4,3 @@ low memory footprint compared to other webservers and takes care of
 cpu-load. Its advanced feature-set (FastCGI, CGI, Auth, Output-Compression,
 URL-Rewriting and many more) make lighttpd the perfect webserver-software
 for every server that is suffering load problems.
-
-WWW: https://www.lighttpd.net/

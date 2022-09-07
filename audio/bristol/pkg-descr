@@ -3,5 +3,3 @@ synthesizers including additive, subtractive and a few organs.
 The application consists of the engine, which is called bristol,
 and its own GUI library called brighton that represents all the
 emulations.
-
-WWW: http://bristol.sourceforge.net/

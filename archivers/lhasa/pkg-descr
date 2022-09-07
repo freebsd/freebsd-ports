@@ -8,5 +8,3 @@ format as possible, including LArc (.lzs) and PMarc (.pma).
 The command line tool aims to be interface-compatible with Unix LHA
 tool (command line syntax and output), for backwards compatibility
 with tools that expect particular output.
-
-WWW: http://fragglet.github.io/lhasa/

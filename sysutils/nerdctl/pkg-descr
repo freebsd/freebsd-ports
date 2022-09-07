@@ -8,5 +8,3 @@ ContaiNERD CTL - Docker-compatible CLI for containerd
 - [Optional] Supports container image signing and verifying (cosign)
 
 nerdctl is a non-core sub-project of containerd.
-
-WWW: https://github.com/containerd/nerdctl

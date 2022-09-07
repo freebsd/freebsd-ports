@@ -1,4 +1,2 @@
 A fast, modern, zero-conf load balancing HTTP(S) router for deploying
 microservices managed by consul.
-
-WWW: https://github.com/fabiolb/fabio

@@ -1,5 +1,3 @@
 This module understands the W3CDTF date/time format, an ISO 8601 profile,
 defined at http://www.w3.org/TR/NOTE-datetime. This format as the native date
 format of RSS 1.0.
-
-WWW: https://metacpan.org/release/DateTime-Format-W3CDTF

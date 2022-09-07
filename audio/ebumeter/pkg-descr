@@ -3,5 +3,3 @@ recommendation. The current release implements all features required by the EBU
 document except the oversampled peak level monitoring. This will be added in a
 future release. A separate command-line utility to measure audio files is
 provided as well.
-
-WWW: https://kokkinizita.linuxaudio.org/linuxaudio/ebumeter-doc/quickguide.html

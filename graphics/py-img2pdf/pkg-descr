@@ -19,5 +19,3 @@ Conventional conversion software (like ImageMagick) would either:
 Another advantage of not having to re-encode the input (in most common
 situations) is, that img2pdf is able to handle much larger input than other
 software, because the raw pixel data never has to be loaded into memory.
-
-WWW: https://gitlab.mister-muffin.de/josch/img2pdf

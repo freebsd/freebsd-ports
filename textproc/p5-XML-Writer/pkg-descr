@@ -4,5 +4,3 @@ default, it also performs a significant amount of well-formedness
 checking on the output, to make certain (for example) that start and
 end tags match, that there is exactly one document element, and that
 there are not duplicate attribute names.
-
-WWW: https://metacpan.org/release/XML-Writer

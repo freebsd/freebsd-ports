@@ -5,5 +5,3 @@ It stores almost any kind of information. A tree structure makes it easy to
 keep things organised. Each node in the tree can contain several fields,
 forming a mini-database. The output format for each node can be defined, and
 the output can be shown on the screen, printed, or exported to html.
-
-WWW: http://treeline.bellz.org

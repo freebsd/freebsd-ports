@@ -3,5 +3,3 @@ multi-format support and an emphasis on hackability.
 
 Currently, Breezy has built-in support for the Git and Bazaar file
 formats and network protocols.
-
-WWW: https://www.breezy-vcs.org/

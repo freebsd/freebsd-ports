@@ -10,5 +10,3 @@ obscure browsers and devices.
 
 DeviceDetector is optimized for speed of detection, by providing optimized code
 and in-memory caching.
-
-WWW: https://github.com/podigee/device_detector

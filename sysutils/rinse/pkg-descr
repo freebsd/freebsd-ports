@@ -9,5 +9,3 @@ The purpose and usage are analogous to the 'debootstrap' utility
 familiar to users of Debian GNU/Linux. It was primarily designed to
 work with the xen-tools software, which creates new guest images for
 running under the Xen hypervisor.
-
-WWW: http://collab-maint.alioth.debian.org/rinse/

@@ -3,5 +3,3 @@ for those of you who do not use the HTML generating features of CGI.pm
 This module provides an object-oriented interface for retrieving information
 provided by the Common Gateway Interface, as well as url-encoding and
 decoding values, and parsing CGI parameters.
-
-WWW: https://metacpan.org/release/CGI-Utils

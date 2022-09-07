@@ -13,5 +13,3 @@ on your data, and then see the results. Most users either use the
 Mayavi user interface or program to its scripting interface; you
 probably don't need to interact with TVTK unless you want to create
 a new Mayavi module.
-
-WWW: http://code.enthought.com/pages/mayavi-project.html

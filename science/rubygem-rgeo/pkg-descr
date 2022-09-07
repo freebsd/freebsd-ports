@@ -17,5 +17,3 @@ Use the core rgeo gem to:
   map display and data analysis.
 - Read and write location data in the WKT and WKB representations used by
   spatial databases.
-
-WWW: https://github.com/rgeo/rgeo

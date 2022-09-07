@@ -7,5 +7,3 @@ functionality for a variety of volumetric data formats. The kernels are
 optimized for the latest Intel processors with support for SSE, AVX, AVX2,
 and AVX-512 instructions, and for ARM processors with support for NEON
 instructions.
-
-WWW: https://github.com/openvkl/openvkl

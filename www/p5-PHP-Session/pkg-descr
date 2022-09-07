@@ -1,4 +1,2 @@
 PHP::Session provides a way to read / write PHP4 session files, with which
 you can make your Perl application session shared with PHP4.
-
-WWW: https://metacpan.org/release/PHP-Session

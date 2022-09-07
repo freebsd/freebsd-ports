@@ -8,5 +8,4 @@ concurrency. Instead, it's a purely in-memory solution, defined in terms of data
 actions and WebSocket frames. RFC6455 and Compression Extensions for WebSocket
 via RFC7692 are fully supported.
 
-WWW: https://pypi.org/project/wsproto/
-WWW: https://github.com/python-hyper/wsproto/
+See also: https://github.com/python-hyper/wsproto/

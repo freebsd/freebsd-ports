@@ -7,5 +7,3 @@ power is simple to implement with a straight forward and very
 intuitive configuration hash structure that mirrors the actual menu
 architecture needed by the application. A separate configuration file
 is optional. Term::Menus is cross platform compatible.
-
-WWW: https://metacpan.org/release/Term-Menus

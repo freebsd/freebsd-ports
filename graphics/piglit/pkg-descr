@@ -8,5 +8,3 @@ perform regression tests.
 The original tests have been taken from
 - Glean ( http://glean.sourceforge.net/ ) and
 - Mesa ( https://www.mesa3d.org/ )
-
-WWW: https://piglit.freedesktop.org/

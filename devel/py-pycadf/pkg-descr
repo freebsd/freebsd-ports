@@ -3,5 +3,4 @@ Federation specification, primarily for use by OpenStack. The goal is to
 establish strict expectations about what auditors can expect from audit
 notifications.
 
-WWW: https://docs.openstack.org/pycadf/latest/
-WWW: https://github.com/openstack/pycadf
+See also: https://github.com/openstack/pycadf

@@ -3,5 +3,3 @@ Public Key Infrastructure for key certification, revocation and
 expiration.  Monkeysphere is a framework that uses the OpenPGP web of
 trust for these PKI functions.  It can be used in both directions: for
 users to get validated host keys, and for hosts to authenticate users.
-
-WWW: https://github.com/dkg/monkeysphere

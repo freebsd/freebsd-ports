@@ -4,5 +4,3 @@ to a normal pth. The header file is called pthsem.h, the configuration
 program pthsem-config and the autoconf macro AC_CHECK_PTHSEM. If
 references to one of these names are changed, pthsem can be used as an
 replacement of GNU pth.
-
-WWW: http://www.auto.tuwien.ac.at/~mkoegler/index.php/pth

@@ -9,5 +9,3 @@ This package provides a Virtual File System API, with backends for:
 
 Reading, writing and listing of files are all supported, and there are both
 object-based and array-based interfaces to directory listings.
-
-WWW: http://pear.horde.org

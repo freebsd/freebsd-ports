@@ -7,5 +7,3 @@ that can be linked with C.
 The numerical values of derivative vectors are obtained free of truncation
 errors at a small multiple of the run time and randomly accessed memory of the
 given function evaluation program.
-
-WWW: https://github.com/coin-or/ADOL-C

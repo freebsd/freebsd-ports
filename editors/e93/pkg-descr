@@ -17,5 +17,3 @@ e93 is highly configurable without recompiling because scripts which
 control the editor can be written in Tcl.
 
 e93 supports user-configurable syntax highlighting.
-
-WWW: http://www.e93.org/

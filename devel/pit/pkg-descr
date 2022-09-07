@@ -17,5 +17,3 @@ Pit tries to maintain a notion of "current" project, task, or
 note. When you create new project, it automatically becomes
 current. If you do not specify project number when creating a
 task, the new task will be associated with the current project.
-
-WWW: https://github.com/michaeldv/pit

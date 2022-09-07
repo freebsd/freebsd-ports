@@ -5,5 +5,3 @@ By default, autoflake only removes unused imports for modules that are part of
 the standard library. (Other modules may have side effects that make them
 unsafe to remove automatically.) Removal of unused variables is also disabled
 by default.
-
-WWW: https://github.com/myint/autoflake

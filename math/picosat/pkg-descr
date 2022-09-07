@@ -6,5 +6,3 @@ assignments that make the expression true.
 
 Many problems can be broken down into a large SAT problem (perhaps with
 thousands of variables), so SAT solvers have a variety of uses.
-
-WWW: http://fmv.jku.at/picosat

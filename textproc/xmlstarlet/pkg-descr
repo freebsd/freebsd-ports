@@ -6,5 +6,3 @@ grep, sed, awk, diff, patch, join, etc commands.
 This set of command line utilities can be used by those who deal with many XML
 documents on UNIX shell command prompt as well as for automated XML processing
 with shell scripts.
-
-WWW: http://xmlstar.sourceforge.net/

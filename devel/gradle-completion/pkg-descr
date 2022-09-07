@@ -8,5 +8,3 @@ This provides fast tab completion for:
 
 It also handles custom default build files, so rootProject.buildFileName =
 'build.gradle.kts' is supported.
-
-WWW: https://github.com/gradle/gradle-completion

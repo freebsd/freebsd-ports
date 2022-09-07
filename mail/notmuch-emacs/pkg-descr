@@ -1,4 +1,2 @@
 An Emacs major-mode for interfacing with the notmuch
 thread-based email indexing, tagging and search application.
-
-WWW: https://notmuchmail.org/notmuch-emacs/

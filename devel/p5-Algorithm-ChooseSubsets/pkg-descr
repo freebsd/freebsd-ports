@@ -5,5 +5,3 @@ from the original list, and in the same order as the elements in the
 original list.  After creating the object, subsequent calls to next()
 will return the next such list in lexicographic order (where the alphabet
 is the original list).
-
-WWW: https://metacpan.org/release/Algorithm-ChooseSubsets

@@ -19,5 +19,3 @@ Celluloid::IO actors provide "evented" performance. Since they're drop-in
 replacements for the standard classes, there's no need to rewrite every library
 just to take advantage of Celluloid::IO's event loop and you can freely switch
 between evented and blocking IO even over the lifetime of a single connection.
-
-WWW: https://github.com/celluloid/celluloid-io

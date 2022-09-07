@@ -8,5 +8,3 @@ you can also use it for automatic ftp or scp backup and much more.
 
 Commands are exactly those you type on your terminal. It also allow you to use
 'su -' to execute your commands under the TELNET and SSH protocols.
-
-WWW: http://massadmin.darold.net/

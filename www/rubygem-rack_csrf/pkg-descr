@@ -4,5 +4,3 @@ come from the right client, not from a mischievous impersonator.
 
 Rack::Csrf is not tailored to any particular web framework, so it can be used
 with your preferred Rack-based framework.
-
-WWW: https://github.com/baldowl/rack_csrf

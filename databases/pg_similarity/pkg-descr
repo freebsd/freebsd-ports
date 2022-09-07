@@ -13,5 +13,3 @@ pg_similarity has three main components:
   value to a user-defined threshold to decide if it is a match or not;
 * Session Variables: a set of variables that store similarity function
   parameters. Theses variables can be defined at run time.
-
-WWW: http://pgsimilarity.projects.pgfoundry.org

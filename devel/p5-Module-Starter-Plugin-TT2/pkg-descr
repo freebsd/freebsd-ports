@@ -2,5 +2,3 @@ Module::Starter::Plugin::TT2 - allows the use of TT2 to render templates
 
 This module is a plugin for Module::Starter, and allows the use of TT2 to
 render templates.
-
-WWW: https://metacpan.org/release/Module-Starter-Plugin-TT2

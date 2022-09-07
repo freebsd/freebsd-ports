@@ -13,5 +13,3 @@ Notus Scanner integrates into the Greenbone Vulnerability Management framework
 which allows to let it scan entire networks within a single task. Any
 vulnerability test in the format of .notus files inside the Greenbone Feed will
 be considered and automatically matched with the scanned environments.
-
-WWW: https://github.com/greenbone/notus-scanner

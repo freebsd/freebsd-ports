@@ -1,4 +1,2 @@
 Provides common methods for handling language data, timezones,
 and hostname->country lookups.
-
-WWW: http://pear.horde.org

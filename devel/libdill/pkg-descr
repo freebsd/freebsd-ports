@@ -8,5 +8,3 @@ finishes.
 
 Please note that concurrency isn't the same as parallelism. libdill provides
 concurrency, but not parallelism.
-
-WWW: http://libdill.org

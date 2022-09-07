@@ -1,5 +1,3 @@
 wput is a tiny program that looks like wget and does as the name suggests
 exactly the opposite: it uploads files or recursively whole directories to
 a ftp-server and supports resuming.
-
-WWW: http://wput.sourceforge.net/

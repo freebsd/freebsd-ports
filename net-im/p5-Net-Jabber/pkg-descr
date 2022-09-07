@@ -14,5 +14,3 @@ Net::Jabber is a collection of Perl modules that provide a Perl Developer
 access to the Jabber protocol.  Using OOP modules we provide a clean
 interface to writing anything from a full client to a simple protocol
 tester.
-
-WWW: https://metacpan.org/release/Net-Jabber

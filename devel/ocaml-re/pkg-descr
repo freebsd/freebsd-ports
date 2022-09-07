@@ -5,5 +5,3 @@ The following styles of regular expressions are supported:
 * Posix extended regular expressions (module Re_posix);
 * Emacs-style regular expressions (module Re_emacs);
 * Shell-style file globbing (module Re_glob).
-
-WWW: https://github.com/ocaml/ocaml-re

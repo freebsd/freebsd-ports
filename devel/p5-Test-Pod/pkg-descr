@@ -1,4 +1,2 @@
 Check POD files for errors or warnings in a test file, using Pod::Simple to do
 the heavy lifting.
-
-WWW: https://metacpan.org/release/Test-Pod

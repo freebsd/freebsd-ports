@@ -1,4 +1,2 @@
 This is an effort to create a unionfs filesystem implementation which is way
 more flexible than the current in-kernel unionfs solution.
-
-WWW: https://github.com/rpodgorny/unionfs-fuse

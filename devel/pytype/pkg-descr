@@ -12,5 +12,4 @@ Pytype is a static analyzer; it does not execute the code it runs on.
 Thousands of projects at Google rely on pytype to keep their Python code
 well-typed and error-free.
 
-WWW: https://google.github.io/pytype/
-WWW: https://github.com/google/pytype
+See also: https://github.com/google/pytype

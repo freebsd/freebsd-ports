@@ -11,5 +11,3 @@ and programmatically build SQL.
 
 Syntax errors are highlighted and dialect incompatibilities can warn or raise
 depending on configurations.
-
-WWW: https://github.com/tobymao/sqlglot

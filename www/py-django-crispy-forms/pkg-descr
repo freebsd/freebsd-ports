@@ -10,5 +10,3 @@ The application mainly provides:
 - A tag named {% crispy %} that will render a form based on your configuration
   and specific layout setup. This gives you amazing power without much hassle,
   helping you save tons of time.
-
-WWW: https://github.com/django-crispy-forms/django-crispy-forms

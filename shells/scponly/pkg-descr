@@ -8,5 +8,3 @@ scponly validates remote requests by examining the third argument passed to the
 shell upon login.  (The first argument is the shell itself, and the second is
 -c.)  The only commands allowed are "scp", "sftp-server" and "ls".  Arguments
 to these commands are passed along unmolested.
-
-WWW: https://github.com/scponly/scponly/wiki

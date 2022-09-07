@@ -5,5 +5,3 @@ for as init.d files and as apachectl-like commands.
 Programs that use Daemon::Generic subclass Daemon::Generic to override its
 behavior. Almost everything that Genric::Daemon does can be overridden as
 needed.
-
-WWW: https://metacpan.org/release/Daemon-Generic

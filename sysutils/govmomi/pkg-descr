@@ -9,5 +9,3 @@ vcsim - A vCenter and ESXi API based simulator
 This package implements a vSphere Web Services (SOAP) SDK endpoint intended
 for testing consumers of the API. While the mock framework is written in the
 Go language, it can be used by any language that can talk to the vSphere API.
-
-WWW: https://github.com/vmware/govmomi/

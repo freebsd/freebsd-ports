@@ -11,5 +11,3 @@ line level.  Files created by lbzip2 can be decompressed by all versions
 of bzip2 and other software supporting bz2 format.  lbzip2 can decompress
 any bz2 files in parallel.  All bzip2 command-line options are also
 accepted by lbzip2.  This makes lbzip2 a drop-in replacement for bzip2.
-
-WWW: http://lbzip2.org/

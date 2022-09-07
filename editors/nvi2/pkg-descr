@@ -10,5 +10,3 @@ California, Berkeley.
 This version is based on a fork of nvi by Sven Verdoolaege. It is
 very similar to the base vi but includes the expandtab option from
 NetBSD which is handy for Python development.
-
-WWW: https://github.com/lichray/nvi2/

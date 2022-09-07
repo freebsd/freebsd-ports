@@ -10,5 +10,3 @@ for buffer with additional functionality:
 - autoloader support
 - networking support
 - command-line options compatible to buffer
-
-WWW: http://www.maier-komor.de/mbuffer.html

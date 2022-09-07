@@ -8,5 +8,3 @@ Features:
 - Optional run-time support for common exceptions to the JSON specification
   (NaN, Infinity,..).
 - No external dependencies.
-
-WWW: https://www.kyne.com.au/~mark/software/lua-cjson.php

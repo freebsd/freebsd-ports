@@ -15,5 +15,3 @@ It currently supports the following remote resources:
   * Activecollab (2.x and 4.x)
   * Phabricator
   * VersionOne
-
-WWW: https://github.com/ralphbean/bugwarrior

@@ -1,5 +1,3 @@
 telepath is a Django library for exchanging data between Python and JavaScript,
 allowing you to build apps with rich client-side interfaces while keeping the
 business logic in server-side code.
-
-WWW: https://github.com/wagtail/telepath

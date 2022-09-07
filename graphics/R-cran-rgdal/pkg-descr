@@ -10,5 +10,3 @@ important that 'GDAL' < 3 be matched with 'PROJ' < 6. From 'rgdal'
 coordinate reference systems use 'WKT2_2019' strings, not 'PROJ'
 strings. 'Windows' and 'macOS' binaries (including 'GDAL', 'PROJ'
 and their dependencies) are provided on 'CRAN'.
-
-WWW: https://cran.r-project.org/web/packages/rgdal/

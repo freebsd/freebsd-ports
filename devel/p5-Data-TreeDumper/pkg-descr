@@ -7,5 +7,3 @@ in a format more easily understood.
 
 Data::TreeDumper also gives one extraordinary control over output and
 provides for custom filtering of and iteration over data structures.
-
-WWW: https://metacpan.org/release/Data-TreeDumper

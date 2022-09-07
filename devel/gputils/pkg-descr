@@ -2,5 +2,3 @@ GPUTILS contains a set of utilities (assembler, disassembler, ...) for
 Microchip's PIC microcontroller families.
 
 This port was previously called GPASM.
-
-WWW: https://gputils.sourceforge.io/

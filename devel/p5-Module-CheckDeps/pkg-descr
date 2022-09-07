@@ -4,5 +4,3 @@ modules that are not available in the host system (e.g. not installed modules).
 
 Compared to similar modules, such as Module::ScanDeps, Module::CheckDeps is
 simpler and less powerful, but also much faster.
-
-WWW: https://metacpan.org/release/ALEXBIO/Module-CheckDeps-0.08

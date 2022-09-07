@@ -10,5 +10,3 @@ CFSSL consists of:
 * the mkbundle program is used to build certificate pool bundles
 * the cfssljson program, which takes the JSON output from the cfssl and
   multirootca programs and writes certificates, keys, CSRs, and bundles to disk
-
-WWW: https://cfssl.org/

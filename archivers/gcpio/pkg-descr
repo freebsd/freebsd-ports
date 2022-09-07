@@ -13,5 +13,3 @@ byte-order.
 Note that this port will install these utilities with a 'g' prefix,
 e.g. gcpio, but the texinfo documentation will refer to them without
 the 'g' prefix.
-
-WWW: http://www.gnu.org/software/cpio/

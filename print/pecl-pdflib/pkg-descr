@@ -1,4 +1,2 @@
 This extension wraps the PDFlib programming library
 for processing PDF on the fly, created by Thomas Merz.
-
-WWW: https://pecl.php.net/package/pdflib

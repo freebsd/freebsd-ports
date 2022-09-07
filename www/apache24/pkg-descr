@@ -5,5 +5,3 @@ provide a secure, efficient and extensible server which provides HTTP
 services in sync with the current HTTP standards.
 The 2.x branch of Apache Web Server includes several improvements like
 threading, use of APR, native IPv6 and SSL support, and many more.
-
-WWW: https://httpd.apache.org/

@@ -17,5 +17,3 @@ This metaport installs only MATE base (lite, a lean desktop) with
 file manager without any of extra applications. If you want to
 have the most common user MATE applications, please install the
 x11/mate metaport.
-
-WWW: https://mate-desktop.org/

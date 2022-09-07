@@ -9,5 +9,3 @@ to both of the input files.
 ZIPMIX can also be used to perform boolean operations on ZIP files,
 such as merging 2 ZIP files together, or updating a new file (with
 some tricks).
-
-WWW: http://www.advsys.net/ken/utils.htm

@@ -20,5 +20,3 @@ OpenEXR's features include:
   New image attributes (strings, vectors, integers, etc.) can be added to
   OpenEXR image headers without affecting backward compatibility with existing
   OpenEXR applications.
-
-WWW: https://www.openexr.com/

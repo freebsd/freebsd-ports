@@ -20,5 +20,3 @@ Design choice, not a bug:
   be configured into the kernel separately from racoon.  If you want to
   support roaming clients, you may need to have a mechanism to put policy
   for the roaming client after phase 1 finishes.
-
-WWW: http://ipsec-tools.sourceforge.net/

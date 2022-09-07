@@ -7,5 +7,3 @@ typically have their newest entries appended to them. By default files
 are assumed to be plain text and have a line ending appropriate to the
 OS. But you can set the input record separator string on a per file
 basis.
-
-WWW: https://metacpan.org/release/File-ReadBackwards

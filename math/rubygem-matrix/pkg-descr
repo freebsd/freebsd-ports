@@ -7,5 +7,3 @@ eigensystem, etc.).
 
 The Vector class represents a mathematical vector, which is useful in its own
 right, and also constitutes a row or column of a Matrix.
-
-WWW: https://github.com/ruby/matrix

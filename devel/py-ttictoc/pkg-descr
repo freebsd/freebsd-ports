@@ -10,5 +10,3 @@ tic()
 time.sleep(1)
 elapsed = toc()
 print('Elapsed time:',elapsed)
-
-WWW: https://github.com/hector-sab/ttictoc

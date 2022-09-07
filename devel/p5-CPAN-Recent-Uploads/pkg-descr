@@ -2,5 +2,3 @@ CPAN::Recent::Uploads provides a mechanism for obtaining a list of
 the RECENT uploads to CPAN as determined from the files produced
 by File::Rsync::Mirror::Recentfile that exist in the authors/
 directory on CPAN.
-
-WWW: https://metacpan.org/release/CPAN-Recent-Uploads

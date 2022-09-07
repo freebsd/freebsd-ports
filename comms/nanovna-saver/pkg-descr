@@ -3,5 +3,3 @@ NanoVNASaver
 A multiplatform tool to save Touchstone files from the NanoVNA, sweep
 frequency spans in segments to gain more than 101 data points, and
 generally display and analyze the resulting data.
-
-WWW: https://github.com/NanoVNA-Saver/nanovna-saver

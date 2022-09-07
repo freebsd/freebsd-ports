@@ -12,5 +12,3 @@ and other such, but in such a way as it's hopefully easy to understand and make
 it work.
 
 Setup method calls are chain-able in a File::Find::Rule kind of a way.
-
-WWW: https://metacpan.org/release/IPC-ShellCmd

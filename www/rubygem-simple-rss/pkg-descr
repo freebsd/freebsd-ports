@@ -1,5 +1,3 @@
 Simple RSS is a simple, flexible, extensible, and liberal RSS and Atom reader
 for Ruby. It is designed to be backwards compatible with the standard RSS
 parser, but will never do RSS generation.
-
-WWW: https://github.com/cardmagic/simple-rss

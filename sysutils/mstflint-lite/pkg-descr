@@ -4,5 +4,4 @@ manufactured HCA/NIC cards.
 
 This package is the lite version (static compiled with essential tools only).
 
-WWW: https://github.com/Mellanox/mstflint
-WWW: http://www.mellanox.com/page/management_tools
+See also: https://github.com/Mellanox/mstflint

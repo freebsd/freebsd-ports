@@ -1,4 +1,2 @@
 Test utility to test UNIX domain socket server programs.
 It is based on Test::TCP.
-
-WWW: https://metacpan.org/pod/Test::UNIXSock

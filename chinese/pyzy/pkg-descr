@@ -2,5 +2,3 @@ The Chinese PinYin and Bopomofo conversion library
 
 This is the Chinese PinYin / Bopomofo conversion library.
 You can easily write an application which handles the Chinese with it.
-
-WWW: https://github.com/pyzy/pyzy

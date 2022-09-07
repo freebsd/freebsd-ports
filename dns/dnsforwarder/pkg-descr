@@ -9,5 +9,3 @@ Dnsforwarder is A simple DNS forwarder.Main fetures:
    redirections and remote hosts files);
  5.Refusing queries to specified domains (for ads blocking);
  6.Cross-platform (Windows, Linux);
-
-WWW: https://github.com/holmium/dnsforwarder

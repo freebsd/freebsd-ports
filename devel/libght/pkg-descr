@@ -18,5 +18,3 @@ LASZ zipped files can be smaller, but will be less efficient at
 overviews, searching and sub-setting. GHT is a good working format
 for applications that will be filtering and querying large sets of
 LIDAR data.
-
-WWW: https://github.com/pramsey/libght

@@ -1,4 +1,2 @@
 JSON formatter for SimpleCov generates a formatted JSON report of your SimpleCov
 ruby code coverage results.
-
-WWW: https://github.com/codeclimate-community/simplecov_json_formatter

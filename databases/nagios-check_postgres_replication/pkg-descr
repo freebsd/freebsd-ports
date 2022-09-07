@@ -12,5 +12,3 @@ including:
  * Timeout handling
  * Default options
  * Persistent "cookies" to retain state information between check runs
-
-WWW: https://pypi.org/project/nagiosplugin/

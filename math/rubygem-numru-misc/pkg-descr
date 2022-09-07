@@ -1,4 +1,2 @@
 Miscellaneous functions and classes to facilitate programming.
 Misc requires NArray, a multi-dimensional numeric array class for ruby.
-
-WWW: http://ruby.gfd-dennou.org/products/numru-misc/

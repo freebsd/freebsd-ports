@@ -1,4 +1,2 @@
 This is a PAM module which allows authentication against alternate
 passwd files.
-
-WWW: http://www.cpbotha.net/pam_pwdfile.html

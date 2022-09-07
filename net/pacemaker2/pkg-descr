@@ -7,5 +7,3 @@ resources and dependencies.
 It will run scripts at initialization, when machines go up or down, when
 related resources fail and can be configured to periodically check resource
 health.
-
-WWW: https://www.clusterlabs.org/pacemaker/

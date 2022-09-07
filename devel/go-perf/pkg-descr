@@ -8,5 +8,3 @@ for minuscule performance improvements.  Four programs are included:
    benchmark result storage system
  - localperf is a local version of the https://perf.golang.org/
    benchmark result analysis system.
-
-WWW: https://golang.org/x/perf

@@ -19,5 +19,3 @@ trees, as well as constructing and representing native objects is left to
 applications and bindings. Although some of these processes may be covered
 in the latter releases, they are not in the scope of the initial release of
 LibYAML.
-
-WWW: https://pyyaml.org/wiki/LibYAML

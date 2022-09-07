@@ -14,5 +14,3 @@ The Bouncy Castle Crypto APIs consist of the following:
 . A signed jar version suitable for JDK 1.4/1.5 and the Sun JCE.
 
 It's distributed under a modified X license.
-
-WWW: http://www.bouncycastle.org/

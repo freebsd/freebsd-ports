@@ -12,5 +12,3 @@ a newtork client or server you can pipe the output of tcpcat to a hex dump
 (I recomend xxd which comes with vim). Also it can act as a crude telnet server
 when invoded with --listen, --input, and --output, this mode is quite useful
 for network program debugging as well.
-
-WWW: http://ess4.engr.uvic.ca/proj/tcpcat

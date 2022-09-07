@@ -4,5 +4,3 @@ much as is reasonably possible without resorting to magic. By default,
 nose will run tests in files or directories under the current working
 directory whose names include "test". nose also supports doctest tests
 and may optionally provide a test coverage report.
-
-WWW: https://nose.readthedocs.io/

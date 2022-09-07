@@ -16,5 +16,3 @@ all of our machines or use a small one-floppy-disk-linux (e.g.
 muLinux) to do the cloning. On newer machines we use PXE to boot a
 small system in a RAM disk. From that system we then clone the hard
 disks in the machines.
-
-WWW: http://www.cs.inf.ethz.ch/CoPs/patagonia/dolly.html

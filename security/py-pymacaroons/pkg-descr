@@ -9,5 +9,3 @@ of verifying the integrity of macaroons it receives.
 Macaroons allow for delegation and attenuation of authorization. They are simple
 and fast to verify, and decouple authorization policy from the enforcement of
 that policy.
-
-WWW: https://github.com/ecordell/pymacaroons

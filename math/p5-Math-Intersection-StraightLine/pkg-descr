@@ -3,5 +3,3 @@ one exists). It returns 0, if no intersection point exists. If the lines
 have an intersection point, the coordinates of the point are the
 returnvalue. If the given lines have infinite intersection points, -1 is
 returned.
-
-WWW: https://metacpan.org/release/Math-Intersection-StraightLine

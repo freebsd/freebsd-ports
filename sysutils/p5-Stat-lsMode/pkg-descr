@@ -4,5 +4,3 @@ regular file that is readable by everyone and writable only by its
 owner has the mode string -rw-r--r--.  Stat::lsMode will either
 examine the file and produce the right mode string for you, or you
 can pass it the mode that you get back from Perl's stat call.
-
-WWW: https://metacpan.org/release/Stat-lsMode

@@ -9,5 +9,3 @@ also need a Java virtual machine to run.  As a result, they are too slow
 for batch processing many APK files just to get the XML information.  In
 contrast, axmldec is specialized for binary XML decoding and written in
 simple modern C++, so it runs nicely within a shell script.
-
-WWW: https://github.com/ytsutano/axmldec

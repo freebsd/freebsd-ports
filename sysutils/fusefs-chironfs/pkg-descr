@@ -6,5 +6,3 @@ The replicated filesystems may be of any kind you want.
 The only requisite is that you mount it.
 No need for special configuration files. The setup is as
 simple as one mount command (or one line in fstab).
-
-WWW: https://BSDforge.com/projects/sysutils/fusefs-chironfs/

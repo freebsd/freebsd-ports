@@ -5,5 +5,3 @@ mailer backends.
 Currently supported are native PHP mail() function, sendmail and SMTP.
 This package also provides a RFC 822 Email address list validation utility
 class.
-
-WWW: https://pear.php.net/package/Mail

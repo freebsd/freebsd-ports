@@ -10,5 +10,3 @@ implements the changeset evolution concept for Mercurial.
 - It fully respects the Phases concept so users will only be able to
   rewrite parts of the history that are safe to change. Phases have been
   part of Mercurial since early 2012.
-
-WWW: https://www.mercurial-scm.org/doc/evolution/

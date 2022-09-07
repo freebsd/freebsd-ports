@@ -3,5 +3,3 @@ into a smaller set of 'windows', or 'pages' in web language.
 Array::Window implements an algorithm specifically for dealing with
 these windows.  It is very flexible and permissive, making adjustments
 to the window as needed.
-
-WWW: https://metacpan.org/release/Array-Window

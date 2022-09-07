@@ -1,4 +1,2 @@
 Config::INI::Reader::Ordered is a subclass of Config::INI::Reader which
 preserves section order.
-
-WWW: https://metacpan.org/pod/Config::INI::Reader::Ordered

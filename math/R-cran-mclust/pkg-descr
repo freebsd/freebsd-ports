@@ -6,5 +6,4 @@ clustering, classification, and density estimation, including Bayesian
 regularization, dimension reduction for visualization, and resampling-based
 inference.
 
-WWW: https://cran.r-project.org/package=mclust
-WWW: https://mclust-org.github.io/mclust/
+See also: https://mclust-org.github.io/mclust/

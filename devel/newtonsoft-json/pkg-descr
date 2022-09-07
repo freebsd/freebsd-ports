@@ -9,5 +9,3 @@ Popular high-performance JSON framework for .NET
 
 The JSON serializer in Json.NET is a good choice when the JSON you are reading
 or writing maps closely to a .NET class.
-
-WWW: http://james.newtonking.com/json

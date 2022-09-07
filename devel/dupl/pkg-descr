@@ -7,5 +7,3 @@ minimal token sequence size).
 Due to the used method dupl can report so called "false positives" on the
 output.  These are the ones we do not consider clones (whether they are too
 small, or the values of the matched tokens are completely different).
-
-WWW: https://github.com/mibk/dupl

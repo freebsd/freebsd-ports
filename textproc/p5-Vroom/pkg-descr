@@ -11,5 +11,3 @@ Vroom takes advantage of Vim's syntax highlighting. It also lets you run
 slides that contain code.
 
 Since Vim is an editor, you can change your slides during the show.
-
-WWW: https://metacpan.org/release/Vroom

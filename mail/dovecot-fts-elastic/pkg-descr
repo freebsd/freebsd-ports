@@ -7,4 +7,3 @@ and searching of e-mail. For mailboxes with more than 10000 messages, it uses
 the Elastic Scroll API.
 
 WWW: https://github.com/filiphanes/fts-elastic
-

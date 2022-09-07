@@ -1,4 +1,2 @@
 tartiflette-aiohttp is a wrapper of aiohttp which includes the Tartiflette
 GraphQL Engine.
-
-WWW: https://github.com/tartiflette/tartiflette-aiohttp

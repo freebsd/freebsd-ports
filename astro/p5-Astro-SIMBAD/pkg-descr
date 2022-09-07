@@ -1,5 +1,3 @@
 The Astro::SIMBAD module is an objected orientated Perl interface to the
 SIMBAD astronomical database. SIMBAD provides basic data, cross-identifications
 and bibliography for astronomical objects outside the solar system.
-
-WWW: http://www.estar.org.uk/

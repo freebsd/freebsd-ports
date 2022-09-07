@@ -1,4 +1,2 @@
 pytest-metadata is a plugin for pytest that provides access to test
 session metadata.
-
-WWW: https://github.com/pytest-dev/pytest-metadata

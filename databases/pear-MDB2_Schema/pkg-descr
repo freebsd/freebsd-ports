@@ -3,5 +3,3 @@ files in XML that can be used to create, alter and drop database entities
 and insert data into a database. Reverse engineering database schemas from
 existing databases is also supported. The format is compatible with both
 PEAR::MDB and Metabase.
-
-WWW: https://pear.php.net/package/MDB2_Schema

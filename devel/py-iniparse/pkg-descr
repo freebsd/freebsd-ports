@@ -13,5 +13,3 @@ programs, since it is very disorienting for a user to have her config file
 completely rearranged whenever a program changes it. iniparse also allows making
 the order of entries in a config file significant, which is desirable in
 applications like image galleries.
-
-WWW: https://github.com/candlepin/python-iniparse

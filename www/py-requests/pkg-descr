@@ -19,5 +19,4 @@ Beloved Features:
 - Chunked Requests
 - .netrc Support
 
-WWW: https://docs.python-requests.org/en/latest/
-WWW: https://github.com/psf/requests
+See also: https://github.com/psf/requests

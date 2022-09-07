@@ -7,5 +7,4 @@ accessible from Cocoa, Ruby, Python, and other languages.
 The mDNSResponder project is a component of Bonjour, Apple's ease-of-use IP
 networking initiative.
 
-WWW: https://developer.apple.com/bonjour/
-WWW: https://opensource.apple.com/tarballs/mDNSResponder/
+See also: https://developer.apple.com/bonjour/

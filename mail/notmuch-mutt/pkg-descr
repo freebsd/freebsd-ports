@@ -6,5 +6,3 @@ search and thread reconstruction) without having to change MUA.
 
 The notmuch-mutt script bridges the gap between Notmuch and
 Mutt.
-
-WWW: https://notmuchmail.org/notmuch-mutt/

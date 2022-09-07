@@ -4,5 +4,3 @@ Magic, Acronis, etc. detect only slice, not real partitions on that
 slice. CloneHDD correctly understand size difference between two HDD
 and change size of each partition proportionally for filling entire
 HDD.
-
-WWW: https://sourceforge.net/projects/clonehdd/

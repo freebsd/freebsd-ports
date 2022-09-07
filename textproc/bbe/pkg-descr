@@ -10,5 +10,3 @@ features like printing the input file name, stream offset,
 and block number of found blocks. Block contents can also
 be printed in different formats like hex, octal, ASCII, and
 binary.
-
-WWW: https://sourceforge.net/projects/bbe-/

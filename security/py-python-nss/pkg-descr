@@ -9,5 +9,3 @@ common operating system services, particularly in the areas of
 networking and process management. Python also provides an abstraction
 of common operating system services but because NSS and NSPR are
 tightly bound, python-nss exposes elements of NSPR.
-
-WWW: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/Python_binding_for_NSS

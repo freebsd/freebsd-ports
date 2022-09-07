@@ -16,5 +16,3 @@ signed dot product
 peak detection
 sum-of-squares (energy) computation
 This library is licensed under the "lesser" GNU General Public License.
-
-WWW: http://www.ka9q.net/code/fec/

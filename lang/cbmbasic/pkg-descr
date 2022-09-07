@@ -6,5 +6,3 @@ without parameters, or you can specify an ASCII-encoded BASIC program
 on the command line. You can also use cbmbasic as a UNIX scripting
 language by adding a hashbang line to your BASIC program and making
 it executable.
-
-WWW: https://github.com/mist64/cbmbasic

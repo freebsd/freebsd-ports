@@ -3,5 +3,3 @@ server status in multiprocess Plack servers such as Starman and
 Starlet.  This middleware changes status only before and after
 executing the application.  so cannot monitor keepalive session and
 network i/o wait.
-
-WWW: https://metacpan.org/release/Plack-Middleware-ServerStatus-Lite

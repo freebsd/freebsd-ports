@@ -1,5 +1,3 @@
 This gem is a lib for managing configfile for cli applications, including:
 - call a setup of the config file if it does not exist
 - edit configuration and update the config file
-
-WWW: https://github.com/mose/configstruct

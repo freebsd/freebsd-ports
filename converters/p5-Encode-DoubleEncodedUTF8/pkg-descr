@@ -1,5 +1,3 @@
 Encode::DoubleEncodedUTF8 adds a new encoding utf-8-de and fixes double
 encoded utf-8 bytes found in the original bytes to the correct Unicode
 entity.
-
-WWW: https://metacpan.org/release/Encode-DoubleEncodedUTF8

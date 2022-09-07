@@ -9,5 +9,3 @@ programming environment for building similar applications. Future development
 will focus on improving the algorithms and making most of the packages
 stand-alone. This will allow the user to customize ABC for their needs as if
 it were a tool-box rather than a complete tool.
-
-WWW: https://people.eecs.berkeley.edu/~alanmi/abc/

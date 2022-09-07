@@ -17,5 +17,3 @@ Features:
 * Can focus on digits only (Tesseract and libtesseract only)
 * Can save and reload boxes in hOCR format
 * PDF generation (libtesseract only)
-
-WWW: https://gitlab.gnome.org/World/OpenPaperwork/pyocr

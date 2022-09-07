@@ -7,4 +7,3 @@ to dump the current stack trace of each thread to
 ``$TMPDIR/tipper-[Unix timestamp]-[parent pid]-[pid].log``.
 
 WWW: https://pypi.org/project/tipper/
-

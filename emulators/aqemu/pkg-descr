@@ -1,5 +1,3 @@
 AQEMU is a Qt5 GUI for virtual machines using QEMU as the backend.
 The application has a user-friendly interface and allows to set a
 large number of options.
-
-WWW: https://github.com/tobimensch/aqemu

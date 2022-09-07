@@ -2,5 +2,3 @@ Tcpillust - A graphical TCP connection analysis tool
 
 Tcpillust takes tcpdump file(s) specified on the command line and draw
 pictures like figures in the ``TCP/IP Illustrated'' series.
-
-WWW: http://www.jp.nishida.org/tcpillust/index.html

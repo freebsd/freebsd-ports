@@ -1,4 +1,2 @@
 DBIx::Handler is fork-safe and easy transaction handling DBI handler.
 It provides scope base transaction, fork safe dbh handling.
-
-WWW: https://metacpan.org/release/DBIx-Handler

@@ -4,5 +4,3 @@ Recipes consist of one or more data manipulation and analysis
 an initial data set and then applied to other data sets. The resulting
 design matrices can then be used as inputs into statistical or
 machine learning models.
-
-WWW: https://cran.r-project.org/web/packages/recipes/

@@ -4,5 +4,3 @@ Features:
 * Flash programing via JTAG link to ECP5 part
 * Validate ECP5 IDCODEs
 * Read/Decode ECP5 status register
-
-WWW: https://github.com/gregdavill/ecpprog

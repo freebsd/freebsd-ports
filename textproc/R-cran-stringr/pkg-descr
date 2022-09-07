@@ -4,5 +4,3 @@ that: function and argument names (and positions) are consistent,
 all functions deal with NA's and zero length character appropriately,
 and the output data structures from each function matches the input
 data structures of other functions.
-
-WWW: https://cran.r-project.org/web/packages/stringr/

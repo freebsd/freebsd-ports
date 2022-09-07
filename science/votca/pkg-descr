@@ -3,5 +3,3 @@ The Votca package contains two libraries:
   from atomistic simulation data
 * VOTCA-XTP, a library designed to determine electronic properties of organic
   materials from atomistic MD-trajectories.
-
-WWW: https://github.com/votca/votca

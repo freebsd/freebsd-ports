@@ -1,5 +1,3 @@
 mod_memcache_block is an Apache module that allows you to block access to
 your servers using a block list stored in memcache. It also offers
 distributed rate limiting based on HTTP response code.
-
-WWW: https://github.com/netik/mod_memcache_block

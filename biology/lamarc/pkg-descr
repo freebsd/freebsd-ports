@@ -3,5 +3,3 @@ Coalescence) is a package of programs for computing population parameters
 such as population size, population growth rate and migration rates.  It does
 this by using likelihoods for samples of data (sequences, microsatellites,
 and electrophoretic polymorphisms) from populations.
-
-WWW: http://evolution.genetics.washington.edu/lamarc/

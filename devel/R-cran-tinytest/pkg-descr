@@ -6,5 +6,3 @@ build-install-test sequence for packages. Skip tests when not run locally (e.g.
 on CRAN). Flexible and configurable output printing. Compare computed output
 with output stored with the package. Run tests in parallel. Extensible by other
 packages. Report side effects.
-
-WWW: https://github.com/markvanderloo/tinytest

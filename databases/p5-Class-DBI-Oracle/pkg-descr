@@ -7,5 +7,3 @@ This is an extension to Class::DBI that currently implements:
 * Proper aliasing of reserved words.
 
 Instead of setting Class::DBI as your base class, use this.
-
-WWW: https://metacpan.org/release/Class-DBI-Oracle

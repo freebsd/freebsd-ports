@@ -6,5 +6,3 @@ execute configured commands.  You can also pass data from the HTTP request
 (such as headers, payload or query variables) to your commands.  webhook
 also allows you to specify rules which have to be satisfied in order for the
 hook to be triggered.
-
-WWW: https://github.com/adnanh/webhook

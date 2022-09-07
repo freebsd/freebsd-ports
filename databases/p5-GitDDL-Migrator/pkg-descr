@@ -7,5 +7,3 @@ Extended features are:
 - specify version
 - specify SQL (sometimes SQL::Translator's output is wrong)
 - check differences from versioned SQL and real database
-
-WWW: https://metacpan.org/release/GitDDL-Migrator

@@ -6,5 +6,3 @@ demonstration type "perl swatchdog --examine=FILENAME" with FILENAME being
 the file that you would like to see the contents of.  All this example will
 do is demonstrate the different text modes that are available with to the
 echo action.
-
-WWW: http://swatch.sourceforge.net/

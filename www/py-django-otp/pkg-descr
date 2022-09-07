@@ -9,5 +9,3 @@ This project includes several simple OTP plugins and more are available
 separately. This package also includes an implementation of OATH HOTP and TOTP
 for convenience, as these are standard OTP algorithms used by multiple
 plugins.
-
-WWW: https://bitbucket.org/psagers/django-otp

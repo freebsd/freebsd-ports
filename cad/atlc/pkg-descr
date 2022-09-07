@@ -10,5 +10,3 @@ cross section. This cross section is stored in a data file, which
 happens to be a Windows bitmap file. The bitmap file is read by
 atlc, following which the program performs the analysis. Look in
 /usr/local/share/examples/atlc for some examples.
-
-WWW: http://atlc.sourceforge.net/

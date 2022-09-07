@@ -1,5 +1,3 @@
 This implements a driver for the generic cache handling interface (CHI)
 that uses Cache::Memcached to store data in the specified memcached
 server(s).
-
-WWW: https://metacpan.org/pod/CHI::Driver::Memcached

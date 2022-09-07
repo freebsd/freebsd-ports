@@ -3,5 +3,3 @@ written in plain perl with minimal dependencies. It features almost all
 key-bindings described in the posix spec for the sh(1) utility with some
 extensions like multi-line editing; this includes a vi-command mode with a
 save-buffer (for copy-pasting) and an undo-stack.
-
-WWW: https://metacpan.org/release/Term-ReadLine-Zoid

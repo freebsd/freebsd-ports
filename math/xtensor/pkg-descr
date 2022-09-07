@@ -5,5 +5,3 @@ xtensor provides:
 * an extensible expression system enabling lazy broadcasting
 * an API following the idioms of the C++ standard library
 * tools to manipulate array expressions and build upon xtensor
-
-WWW: https://github.com/xtensor-stack/xtensor

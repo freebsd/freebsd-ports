@@ -9,5 +9,3 @@ Possible errors during automatic conversions from S-expressions to
 OCaml-values are reported in a very human-readable way. Another module
 in the library allows you to extract and replace sub-expressions in
 S-expressions.
-
-WWW: http://janestreet.github.io/

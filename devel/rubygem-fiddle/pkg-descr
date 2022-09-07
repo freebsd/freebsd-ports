@@ -3,5 +3,3 @@ ruby.
 
 It wraps libffi, a popular C library which provides a portable interface that
 allows code written in one language to call code written in another language.
-
-WWW: https://github.com/ruby/fiddle

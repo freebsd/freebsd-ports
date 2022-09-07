@@ -7,5 +7,3 @@ The data format allows key/value pairs, comments, escaping of
 unprintable or problematic characters, sensible whitespace
 handling, support for Unicode data, nested sections, or blocks,
 of configuration data.
-
-WWW: https://metacpan.org/release/Config-Wrest

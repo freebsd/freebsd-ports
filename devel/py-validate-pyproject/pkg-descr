@@ -12,5 +12,3 @@ pyproject.toml files, and make sure they are compliant with the standards and
 PEPs. Behind the scenes, validate-pyproject relies on JSON Schema files, which,
 in turn, are also a standardised way of checking if a given data structure
 complies with a certain specification.
-
-WWW: https://github.com/abravalheri/validate-pyproject

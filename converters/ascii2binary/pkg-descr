@@ -16,5 +16,3 @@ The two programs are useful for generating test data, for inspecting binary
 files, and for interfacing programs that generate textual output to programs
 that require binary input and conversely. They can also be useful when it is
 desired to reformat numbers.
-
-WWW: http://billposer.org/Software/a2b.html

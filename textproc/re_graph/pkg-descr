@@ -13,5 +13,3 @@ A few notes on what you are looking at:
  * Brown boxes indicate a grouping operation, i.e. ().
  * Green boxes indicate a zero with test. The state machine will perform
    the test inside the box before moving ahead.
-
-WWW: http://www.oualline.com/sw/

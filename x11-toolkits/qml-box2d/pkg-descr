@@ -4,5 +4,3 @@ QML.
 
 This plugin is meant to be installed to your Qt/imports directory, or shipped
 in a directory of which the parent is added as import path.
-
-WWW: https://github.com/qml-box2d/qml-box2d

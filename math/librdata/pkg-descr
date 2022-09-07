@@ -5,5 +5,3 @@ Features:
 - Read both RData and RDS formats
 - Read compressed files (requires bzip2, zlib, and lzma)
 - Write factors, timestamps, logical vectors, and more
-
-WWW: https://github.com/WizardMac/librdata

@@ -5,5 +5,3 @@ GRPN works with real numbers, complex numbers, matrices, and
 complex matrices.  Numbers can be displayed in 4 different
 radix modes, and complex numbers can be displayed in either
 Cartesian or polar form.
-
-WWW: https://github.com/utopiabound/grpn

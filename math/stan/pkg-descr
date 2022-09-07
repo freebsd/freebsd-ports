@@ -8,5 +8,3 @@ and get:
 * full Bayesian statistical inference with MCMC sampling (NUTS, HMC)
 * approximate Bayesian inference with variational inference (ADVI)
 * penalized maximum likelihood estimation with optimization (L-BFGS)
-
-WWW: https://mc-stan.org/

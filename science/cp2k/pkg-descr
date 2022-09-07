@@ -8,5 +8,3 @@ fields (AMBER, CHARMM, ...). CP2K can do simulations of molecular dynamics,
 metadynamics, Monte Carlo, Ehrenfest dynamics, vibrational analysis, core level
 spectroscopy, energy minimization, and transition state optimization using NEB
 or dimer method.
-
-WWW: https://www.cp2k.org/

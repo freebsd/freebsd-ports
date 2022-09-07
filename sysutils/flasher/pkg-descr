@@ -20,5 +20,3 @@ each write that has been made to /var/mail/root, until it also has
 been read.
 
 The list of files can include files that don't yet exist.
-
-WWW: http://www.unixporting.com/downloads/flasher/

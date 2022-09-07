@@ -6,5 +6,3 @@ the command-line.  gRPC servers use a binary encoding on the wire (protobufs)
 and is effectively impossible to interact with using regular HTTP tools such as
 curl.  grpcurl accepts messages using JSON encoding, which is usable by both
 humans and scripts.
-
-WWW: https://github.com/fullstorydev/grpcurl

@@ -12,5 +12,3 @@ codepoints is many-to-one. Therefore, there's no particular sense in
 having an inverse function, which takes codepoints to named entities.
 
 Based on: HTML::Entities by Koichi Taniguchi <taniguchi@livedoor.jp>
-
-WWW: https://metacpan.org/release/MathML-Entities

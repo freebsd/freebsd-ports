@@ -5,5 +5,3 @@ Enigma Machine.
 The implementation allows for all of the Rotors and Reflectors available to the
 real world Enigma to be used. A Steckerboard has also been implemented,
 allowing letter substitutions to be made.
-
-WWW: https://metacpan.org/release/Crypt-Enigma

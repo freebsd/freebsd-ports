@@ -7,5 +7,3 @@ secret key can still clone and commit to a repository with encrypted
 files. This lets you store your secret material (such as keys or
 passwords) in the same repository as your code, without requiring you
 to lock down your entire repository.
-
-WWW: https://www.agwa.name/projects/git-crypt/

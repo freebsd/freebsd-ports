@@ -6,5 +6,3 @@ line interfaces, featuring:
 -  a fairly large subset of the readline emacs-mode keybindings
 -  a liberal, Python-style, license
 -  a new python top-level.
-
-WWW: https://bitbucket.org/pypy/pyrepl

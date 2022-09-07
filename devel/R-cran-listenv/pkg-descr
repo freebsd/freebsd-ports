@@ -5,5 +5,3 @@ can be accessed and iterated over using index subsetting,
  'x <- listenv(a = 1, b = 2);
   for (i in seq_along(x)) x[[i]] <- x[[i]] ^ 2;
   y <- as.list(x)'.
-
-WWW: https://cran.r-project.org/web/packages/listenv/

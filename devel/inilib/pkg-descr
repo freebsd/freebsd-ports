@@ -10,5 +10,3 @@ store any data that can be expressed in std::string, int, double, or bool
 types. In addition, inilib handles any conversion that may be necessary
 to convert from one type to the other. Saving all information stored in
 inilib to disk or loading information from disk requires only one command.
-
-WWW: http://inilib.sourceforge.net/

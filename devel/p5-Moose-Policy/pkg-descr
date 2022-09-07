@@ -6,5 +6,3 @@ metaclasses, however fiddling with the metaclasses can be hairy.
 Moose::Policy removes most of that hairiness and makes it possible to
 cleanly contain a set of meta-level customizations in one easy to use
 module.
-
-WWW: https://metacpan.org/release/Moose-Policy

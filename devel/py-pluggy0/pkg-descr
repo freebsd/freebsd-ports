@@ -10,5 +10,3 @@ of it.
 
 In essence, pluggy enables function hooking so you can build "pluggable"
 systems.
-
-WWW: https://github.com/pytest-dev/pluggy

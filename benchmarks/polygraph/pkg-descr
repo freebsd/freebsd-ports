@@ -4,5 +4,3 @@ The simulators create a stream of HTTP requests that can be routed through
 a Web proxy. Studying proxy performance under various [stress] conditions is
 essential for performance tuning, evaluation of new algorithms, analysis of
 hardware configurations, and comparing available proxy products.
-
-WWW: http://www.web-polygraph.org/

@@ -5,5 +5,3 @@ it will use that instead.
 This way code requiring field hashes can benefit from fast, robust field
 hashes on Perl 5.10 and newer, but still run on older perls that don't ship
 with that module.
-
-WWW: https://metacpan.org/release/Hash-Util-FieldHash-Compat

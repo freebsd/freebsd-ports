@@ -5,5 +5,3 @@ to stdout.
 
 dmenu was developed as an addition to the dynamic window manager (dwm), but can
 be used in any X11-environment.
-
-WWW: https://tools.suckless.org/dmenu

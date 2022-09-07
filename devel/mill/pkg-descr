@@ -10,5 +10,3 @@ Mill has built in support for the Scala programming language, and
 can serve as a replacement for SBT, but can also be extended to
 support any other language or platform via modules (written in Java
 or Scala) or through external subprocesses.
-
-WWW: https://www.lihaoyi.com/mill/

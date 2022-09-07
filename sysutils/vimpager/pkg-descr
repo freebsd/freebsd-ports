@@ -8,5 +8,3 @@ VIMPAGER_VIM=nvim or VIMPAGER_VIM=gvim.
 
 To set Vimpager as your default pager, export PAGER=vimpager
 in your shell.
-
-WWW: https://github.com/rkitover/vimpager

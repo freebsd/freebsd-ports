@@ -5,5 +5,3 @@ policy enforcement, rootkit detection, real-time alerting and active response.
 
 This package adds the configuration overlay with samples, additional rules,
 commands, scripts and support for multiple configuration files.
-
-WWW: https://ossec.github.io

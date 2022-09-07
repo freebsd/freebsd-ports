@@ -4,5 +4,3 @@ and currently only the UNIX (X-Windows) and Microsoft Windows operating
 systems are supported. Under Unix the drag & drop protocol in use is the
 XDND protocol version 4 (also used by the QT toolkit, KDE & GNOME
 Desktops).
-
-WWW: http://www.iit.demokritos.gr/~petasis/Tcl/tkDND/tkDND.html

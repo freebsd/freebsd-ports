@@ -13,5 +13,3 @@ provides happy defaults and other niceties:
  - fully compatible with git allowing you to fallback to git if need be
  - update using bit update
  - get insight into how bit works using bit --debug
-
-WWW: https://github.com/chriswalz/bit

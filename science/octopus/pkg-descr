@@ -8,5 +8,3 @@ the pseudopotential approximation.
 For optimal execution performance Octopus is parallelized using MPI and OpenMP
 and can scale to tens of thousands of processors. It also has support for
 graphical processing units (GPUs) through OpenCL and CUDA.
-
-WWW: https://octopus-code.org/wiki/Main_Page

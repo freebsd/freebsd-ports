@@ -1,4 +1,2 @@
 This module is a Perl-only implementation of the OFB mode.
 Where OFB stands for Output Feedback Block.
-
-WWW: https://metacpan.org/release/Crypt-OFB

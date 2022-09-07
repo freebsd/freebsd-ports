@@ -9,5 +9,3 @@ SG  -- Some Standard Geometry functions (vector and
        matrix math, spheres, boxes, frustra, etc)
 SL  -- A Games-oriented Sound Library.
 SSG -- A Simple Scene Graph API built on top of OpenGL.
-
-WWW: http://plib.sourceforge.net/

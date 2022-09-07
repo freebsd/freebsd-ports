@@ -20,5 +20,3 @@ supports a wide range of problem types, including:
 * Differential algebraic equations
 * Bilevel programming
 * Mathematical programming with equilibrium constraints
-
-WWW: https://github.com/Pyomo/pyomo

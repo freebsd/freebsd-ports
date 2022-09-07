@@ -8,5 +8,3 @@ The pyeapi library also provides an API layer for building native Python
 objects to interact with the destination nodes. The API layer is a convenient
 implementation for working with the EOS configuration and is extensible for
 developing custom implementations.
-
-WWW: https://github.com/arista-eosplus/pyeapi

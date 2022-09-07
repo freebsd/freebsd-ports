@@ -3,5 +3,3 @@ be used both as a desktop application and a personal self-hosted server.
 
 It is written in Go with the frontend in Vue.js. The storage is backed
 by SQLite.
-
-WWW: https://github.com/nkanaev/yarr

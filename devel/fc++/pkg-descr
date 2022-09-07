@@ -17,5 +17,3 @@ in C++ programs. This includes infinite ("lazy") lists, useful higher-order
 functions (like map, compose, etc.), a reference-counting facility that can be
 used to replace C++ pointers, many common logical and arithmetic operators in
 a form that can be used with higher-order functions, and more.
-
-WWW: http://people.cs.umass.edu/~yannis/fc++/

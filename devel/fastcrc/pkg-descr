@@ -12,5 +12,3 @@ This port requires ELF. It creates libfcrc.so.1, and includes <fastcrc.h> for
 C programmers.
 
 Dependencies: nasm
-
-WWW: http://www.whizkidtech.redprince.net/fports/

@@ -8,5 +8,3 @@ developer workflow to ensure/check things like:
 
 Test results are inserted using subunit (and thus anything that can output
 subunit or be converted into a subunit stream can be accepted).
-
-WWW: https://launchpad.net/testrepository

@@ -1,5 +1,4 @@
 This distribution installs libgumbo:https://github.com/google/gumbo-parser
 on your system for use by perl modules like HTML::Gumbo.
 
-WWW: https://metacpan.org/pod/Alien::LibGumbo
-WWW: https://github.com/ruz/Alien-LibGumbo
+See also: https://github.com/ruz/Alien-LibGumbo

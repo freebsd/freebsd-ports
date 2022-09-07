@@ -16,5 +16,3 @@ distribute multiple input streams (i.e. from multiple DVB-cards) to multiple
 clients using the native VTP protocol (for VDR-clients), or using the HTTP
 protocol supporting clients such as XINE, MPlayer and so on. With XMMS or
 WinAMP, you can also listen to radio channels over a HTTP connection.
-
-WWW: http://streamdev.vdr-developer.org/

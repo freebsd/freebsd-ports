@@ -3,5 +3,3 @@ that is required for the graphics/epsonscan2 scanner driver.  The kernel
 Linux emulation is required to run these binaries.  This is only required
 to access a scanner over the network or for certain older USB scanner
 models.
-
-WWW: https://support.epson.net/linux/en/epsonscan2.php

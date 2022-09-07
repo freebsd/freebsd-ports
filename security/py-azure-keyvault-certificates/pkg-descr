@@ -1,5 +1,3 @@
 Azure Key Vault Certificates Client Library provides certificate management. It
 can be used to create, manage, and deploy public and private SSL/TLS
 certificates.
-
-WWW: https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/keyvault/azure-keyvault-certificates

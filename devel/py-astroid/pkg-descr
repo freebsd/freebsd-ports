@@ -9,5 +9,3 @@ down the AST and building an extended ast. The new node classes have additional
 methods and attributes for different usages. They include some support for
 static inference and local name scopes. Furthermore, astroid builds partial
 trees by inspecting living objects.
-
-WWW: https://github.com/PyCQA/astroid

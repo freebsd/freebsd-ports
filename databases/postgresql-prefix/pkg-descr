@@ -9,5 +9,3 @@ SELECT *
   FROM prefixes
  WHERE prefix @> '0123456789'
 ORDER BY length(prefix) DESC LIMIT 1;
-
-WWW: https://github.com/dimitri/prefix

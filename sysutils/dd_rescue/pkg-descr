@@ -6,5 +6,3 @@ a medium with errors.
 - Don't truncate the output file.
 - Can use two different block sizes for normal operation and the case of errors.
 - Can start from the end of the file and move backwards.
-
-WWW: http://www.garloff.de/kurt/linux/ddrescue/

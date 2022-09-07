@@ -9,5 +9,3 @@ John Wiley and Sons, ISBN 9781118661789, and is available as a preprint. The use
 of one-sided MPI and a 2.5D algorithm to reduce communication is shown to be
 effective for sparse matrix matrix multiplication in this manuscript. libDBCSR
 is made available for integration in other projects, see the github webpage.
-
-WWW: https://www.cp2k.org/dbcsr

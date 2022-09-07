@@ -3,5 +3,3 @@ information about the state of a filesystem to a database.
 Later, yafic can be used to compare the current  state  of
 the  filesystem  against  the  saved database, letting you
 know of any changed, added, or removed files.
-
-WWW: http://philosophysw.com/software/yafic/

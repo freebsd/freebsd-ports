@@ -16,5 +16,3 @@ should be mostly accurate too, although not always what one might initially
 expect. Subroutine coverage should be as accurate as statement coverage. Pod
 coverage comes from Pod::Coverage. Coverage data for path coverage are not yet
 collected.
-
-WWW: https://metacpan.org/release/Devel-Cover

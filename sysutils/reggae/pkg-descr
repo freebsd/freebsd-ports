@@ -8,5 +8,3 @@ while code editing is done on the host. It makes transition from
 development to production easier by using provisioners. It makes host
 clean of all requirements of development and puts them inside jail which
 is easily stopped, started, provisioned, and destroyed.
-
-WWW: https://github.com/cbsd/reggae

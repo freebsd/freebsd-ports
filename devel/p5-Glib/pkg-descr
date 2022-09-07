@@ -15,5 +15,3 @@ you need never worry about reference-counting on GObjects or GBoxed
 structures.  Other concepts have been converted to a perlish analogy;
 the GType id will never be seen in perl, as the package name serves
 that purpose.  [FIXME link to a document describing this stuff in detail.]
-
-WWW: http://gtk2-perl.sourceforge.net/

@@ -1,5 +1,3 @@
 The Progressive Graphics File (PGF) is an efficient image file format that is
 based on a fast, discrete wavelet transform with progressive coding features.
 PGF can be used for lossless and lossy compression.
-
-WWW: https://www.libpgf.org/

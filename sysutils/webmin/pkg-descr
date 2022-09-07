@@ -5,5 +5,3 @@ user accounts, Apache, DNS, file sharing and so on.
 Webmin consists of a simple web server, and a number of CGI programs
 which directly update system files like /etc/inetd.conf and
 /etc/master.passwd.
-
-WWW: http://www.webmin.com/

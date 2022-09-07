@@ -20,5 +20,3 @@ The units passed to NanoSVG should be one of: 'px', 'pt', 'pc' 'mm', 'cm', or
 
 If you don't know or care about the units stuff, "px" and 96 should get you
 going.
-
-WWW: https://github.com/memononen/nanosvg

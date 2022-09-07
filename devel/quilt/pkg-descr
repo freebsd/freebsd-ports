@@ -6,5 +6,3 @@ patches. Not ".c" files, not ".h" files. But patches. So patches are
 the first-class object here.
 Quilt was originally based on Andrew Morton's patch scripts published
 on the Linux kernel mailing list.
-
-WWW: https://savannah.nongnu.org/projects/quilt

@@ -8,5 +8,3 @@ sets. Thus an application written with Vc can be compiled for:
 * AVX-512 (Vc 2 development)
 * NEON (in development)
 * NVIDIA GPUs / CUDA (research)
-
-WWW: https://github.com/VcDevel/Vc

@@ -4,5 +4,3 @@ to play automatically. It garners this information through whether or not a song
 is skipped.  Squash also avoids picking the same song twice.  Thus Squash is
 like a radio station that plays the songs you like -- and you don't even have to
 call in requests!
-
-WWW: http://savannah.nongnu.org/projects/squash/

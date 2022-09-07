@@ -6,5 +6,3 @@ strings, ints, etc.). jsonpickle builds on top of these libraries and allows
 more complex data structures to be serialized to JSON. jsonpickle is highly
 configurable and extendable-allowing the user to choose the JSON backend and add
 additional backends.
-
-WWW: https://jsonpickle.github.io/

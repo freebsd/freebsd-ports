@@ -12,5 +12,3 @@ polling the Powerwall frequently for trending data).
 * Will cache responses to limit number of calls to Powerwall Gateway
 * Easy access to decoded binary device vitals
 * Provides solar string data for Powerwall+ systems
-
-WWW: https://github.com/jasonacox/pypowerwall

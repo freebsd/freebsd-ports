@@ -4,5 +4,3 @@ for a Qt developer uncomfortable low-level C-API. For example the callback
 mechanism from the Wayland API is replaced by signals; data types are adjusted
 to be what a Qt developer expects, e.g. two arguments of int are represented by
 a QPoint or a QSize.
-
-WWW: https://api.kde.org/frameworks/kwayland/html/index.html

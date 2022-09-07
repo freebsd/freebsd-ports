@@ -8,5 +8,3 @@ more and more mail is encapsulated into this format.
 The TNEF program allows one to unpack the attachments which were encapsulated
 into the TNEF attachment.  Thus alleviating the need to use Microsoft Outlook
 to view them.
-
-WWW: http://tnef.sourceforge.net/

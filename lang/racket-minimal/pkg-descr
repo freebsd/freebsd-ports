@@ -9,5 +9,3 @@ web browser.
 
 The racket-minimal port provides a text-only version of the Racket
 environment without X11 dependencies.
-
-WWW: http://racket-lang.org/

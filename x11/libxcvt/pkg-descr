@@ -4,5 +4,3 @@ implementation of the VESA CVT standard timing modelines generator.
 libxcvt also provides a standalone version of the command line tool
 cvt copied from the Xorg implementation and is meant to be a direct
 replacement to the version provided by the Xorg server.
-
-WWW: https://gitlab.freedesktop.org/xorg/lib/libxcvt

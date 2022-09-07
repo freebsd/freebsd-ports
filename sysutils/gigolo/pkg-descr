@@ -5,5 +5,3 @@ quickly connect/mount a remote filesystem and manage bookmarks of such.
 It is part of the Xfce project and is hosted at Xfce gitlab server
 but does not does not have any hard Xfce dependencies and can be
 used on other desktop environments as well.
-
-WWW: https://docs.xfce.org/apps/gigolo/start

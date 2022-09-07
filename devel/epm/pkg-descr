@@ -7,5 +7,3 @@ o Generate "native" distributions in AIX, BSD, Debian,  HP-UX, IRIX, MacOS X,
   Red Hat, Slackware, Solaris, and  Tru64 UNIX formats.
 o Provide a complete, cross-platform software  distribution solution for
   your applications.
-
-WWW: https://www.msweet.org/epm/

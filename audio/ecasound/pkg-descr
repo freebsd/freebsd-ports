@@ -8,5 +8,3 @@ parameters can be controlled by operator objects like oscillators
 and MIDI-CCs. As most functionality is located in shared libraries,
 creating alternative user-interfaces is easy. A versatile console mode
 interface is included in the package.
-
-WWW: http://nosignal.fi/ecasound/

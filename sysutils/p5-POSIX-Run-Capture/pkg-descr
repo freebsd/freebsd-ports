@@ -7,5 +7,3 @@ supplied as either a file handle or a text.
 
 This module is for those who value performance and effectiveness over
 portability.  As its name suggests, it can be used only on POSIX systems.
-
-WWW: https://metacpan.org/dist/POSIX-Run-Capture

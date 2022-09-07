@@ -6,5 +6,3 @@ Otherwise, it enters interactive mode.  There are a great number
 of pre-defined functions.  The calculator can calculate transcendental
 functions, and accept and display numbers in real or exponential format.
 The calculator also knows about complex numbers.
-
-WWW: https://github.com/lcn2/calc

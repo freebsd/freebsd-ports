@@ -7,5 +7,3 @@ occurs on 0-byte blocks.
 
 This makes basE91 very useful for transferring larger files over binary unsafe
 connections like e-mail or terminal lines.
-
-WWW: http://base91.sourceforge.net/

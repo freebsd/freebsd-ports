@@ -3,5 +3,3 @@ distributed by Zuse Institute Berlin (ZIB).
 
 pynleq2 can be used as a backend for pyneqsys (math/py-pyneqsys)
 to solve non-linear symbolic equation systems.
-
-WWW: https://github.com/bjodah/pynleq2

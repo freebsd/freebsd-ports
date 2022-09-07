@@ -12,5 +12,3 @@ received, reply_to, subject, to.
 
 There are other properties to get: body, body html, body plain, headers,
 attachments, sender IP address, to domains, timezone.
-
-WWW: https://github.com/SpamScope/mail-parser

@@ -3,5 +3,3 @@ much more written in modern C++, mainly known for its innovative
 entity-component-system (ECS) model.
 Among others, it's used in Minecraft by Mojang, the ArcGIS Runtime SDKs by Esri
 and The Forge by Confetti.
-
-WWW: https://github.com/skypjack/entt/wiki

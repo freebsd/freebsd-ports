@@ -2,5 +2,3 @@ libgpkg is a SQLite 3 extension that provides a minimal OGC GeoPackage
 implementation. GeoPackage is an open, standards-based, application and
 platform independent, and self-describing file format for geodata based on
 SQLite.
-
-WWW: https://github.com/luciad/libgpkg

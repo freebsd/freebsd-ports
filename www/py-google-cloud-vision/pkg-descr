@@ -6,5 +6,3 @@ images, and finds and reads printed words contained within images. You can build
 metadata on your image catalog, moderate offensive content, or enable new
 marketing scenarios through image sentiment analysis. Analyze images uploaded in
 the request or integrate with your image storage on Google Cloud Storage.
-
-WWW: https://github.com/googleapis/python-vision

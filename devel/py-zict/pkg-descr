@@ -10,5 +10,3 @@ The dictionary / mutable mapping interface is powerful and multi-faceted.
 To this end we build abstract MutableMapping classes that consume and build on
 other MutableMappings. We can compose several of these with each other to form
 intuitive interfaces over complex storage systems policies.
-
-WWW: https://github.com/dask/zict

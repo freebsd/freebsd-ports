@@ -7,5 +7,3 @@ TCP and UDP sockets, encrypted TCP, HTTP protocol, highly customizable
 error handling.
 The source code is released under the terms of the GNU GPL, but is
 also available under an alternative license.
-
-WWW: http://www.alhem.net/Sockets/

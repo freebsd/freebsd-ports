@@ -2,5 +2,3 @@ A console graphics viewer using the svga console graphics library.
 
 Seejpeg is another JPEG viewer which utilizes svgalib and contains
 limited GIF, PPM, BMP and TARGA viewing support.
-
-WWW: http://www.icewalk.com/softlib/app/app_00013.html

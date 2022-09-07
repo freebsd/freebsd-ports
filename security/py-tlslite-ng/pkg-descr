@@ -3,5 +3,3 @@ cryptographic protocols. It can be used either as a standalone wrapper around
 python socket interface or as a backend for multiple other libraries. tlslite-ng
 is pure python, however it can use other libraries for faster crypto operations.
 tlslite-ng integrates with several stdlib neworking libraries.
-
-WWW: https://github.com/tlsfuzzer/tlslite-ng

@@ -8,5 +8,3 @@ set the list data with a simple Perl array assignment. Rows may be added or
 deleted with all of the normal array operations. You can treat the data member
 of the list simplelist object as an array reference, and manipulate the list
 data with perl's normal array operators.
-
-WWW: https://metacpan.org/dist/Gtk3-SimpleList

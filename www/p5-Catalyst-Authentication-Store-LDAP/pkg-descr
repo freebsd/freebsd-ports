@@ -13,5 +13,3 @@ credentials supplied in the "binddn" and "bindpw" configuration options.
 
 2) If that object is found, we then re-bind to the directory as that
 object.  Assuming this is successful, the user is Authenticated.
-
-WWW: https://metacpan.org/release/Catalyst-Authentication-Store-LDAP

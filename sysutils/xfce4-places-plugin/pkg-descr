@@ -5,5 +5,3 @@ The arrow button opens up a menu with two sections: system- and user-defined
 locations. The system-defined locations are consistent with Thunar (including
 their icons). For user-defined bookmarks, the ~/.gtk-bookmarks file is being
 read in order to share bookmarks with Thunar, Nautilus, the GNOME Panel, etc.
-
-WWW: https://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin

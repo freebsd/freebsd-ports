@@ -4,5 +4,3 @@ each thread in that process.
 
 It's useful for finding out what wedged processes are up to, getting
 profiles of applications, and just satisfying one's curiosity.
-
-WWW: https://www.kib.kiev.ua/git/gitweb.cgi?p=pstacku.git;a=tree

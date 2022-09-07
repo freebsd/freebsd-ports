@@ -5,5 +5,3 @@ Net::HTTP is designed to work closely with URI. URI::HTTP#host, URI::HTTP#port
 and URI::HTTP#request_uri are designed to work with Net::HTTP.
 
 If you are only performing a few GET requests you should try OpenURI.
-
-WWW: https://github.com/ruby/net-http

@@ -1,4 +1,2 @@
 This driver renders an HTML form to let the user easily sort the datagrid,
 using multiple fields and directions. It uses the HTML_Quickform package.
-
-WWW: https://pear.php.net/package/Structures_DataGrid_Renderer_HTMLSortForm

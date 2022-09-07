@@ -6,5 +6,3 @@ Provides:
 * gui module for building GUI
 * WidgetsScheme the workflow execution model/bridge
 * basic configuration for a workflow based application
-
-WWW: https://orangedatamining.com/

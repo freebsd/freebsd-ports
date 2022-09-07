@@ -1,4 +1,2 @@
 rosinstall_generator generates the information for a distribution of
 the Robot Operating System (ROS).
-
-WWW: https://github.com/ros-infrastructure/rosinstall_generator

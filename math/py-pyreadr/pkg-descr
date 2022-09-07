@@ -1,5 +1,3 @@
 pyreadr is a python package to read and write R RData and Rds files into/from
 pandas dataframes. It does not need to have R or other external dependencies
 installed.
-
-WWW: https://github.com/ofajardo/pyreadr

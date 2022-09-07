@@ -13,5 +13,3 @@ This backend implements both protocols, choosing automatically between them.
 It was successfully tested with many devices from Brother, Canon, Dell,
 Kyocera, Lexmark, Epson, HP, OKI, Panasonic, Pantum, Ricoh, Samsung and
 Xerox both in WSD and eSCL modes.
-
-WWW: https://github.com/alexpevzner/sane-airscan

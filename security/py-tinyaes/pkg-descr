@@ -7,5 +7,3 @@ Given the C API works modifying a buffer in-place, the wrapper offers:
   encrypting a copy of the buffer,
 - CTR_xcrypt_buffer_inplace(..) that works on bytearrays only, modifying the
   buffer in-place.
-
-WWW: https://github.com/naufraghi/tinyaes-py

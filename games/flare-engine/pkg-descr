@@ -8,5 +8,3 @@ Rather than building a very abstract, robust game engine, the goal
 of this project is to build several real games and harvest an engine
 from the common, reusable code. The first game, in progress, is a
 fantasy dungeon crawl.
-
-WWW: https://flarerpg.org/

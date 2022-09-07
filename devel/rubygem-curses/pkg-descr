@@ -1,4 +1,2 @@
 A Ruby binding for curses, ncurses, and PDCurses, formerly part of the Ruby
 standard library. curses is an extension library for text UI applications.
-
-WWW: https://rubygems.org/gems/curses

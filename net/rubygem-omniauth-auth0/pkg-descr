@@ -4,5 +4,3 @@ Directory, LDAP, Google Apps, Salesforce. OmniAuth is a library
 that standardizes multi-provider authentication for web applications.
 It was created to be powerful, flexible, and do as little as possible.
 omniauth-auth0 is the omniauth strategy for Auth0.
-
-WWW: https://github.com/auth0/omniauth-auth0

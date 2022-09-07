@@ -6,5 +6,3 @@ The mktime function converts a local broken-down time into an epoch value.
 However, POSIX does not provide a UTC version of this.
 
 This module provides a function timegm which has this ability.
-
-WWW: https://metacpan.org/pod/Time::timegm

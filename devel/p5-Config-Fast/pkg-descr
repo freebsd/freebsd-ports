@@ -37,5 +37,3 @@ This is great if you're really lazy and always in a hurry, like I am.
 If this doesn't work for you, simply supply a filename manually. Note that
 filename generation does not work in mod_perl, so you'll need to supply a
 filename manually.
-
-WWW: https://metacpan.org/release/Config-Fast

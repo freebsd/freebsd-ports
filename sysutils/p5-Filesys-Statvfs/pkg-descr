@@ -11,5 +11,3 @@ man page.
 
 The module assumes that if you have statvfs(), fstatvfs() will also be
 available.
-
-WWW: https://metacpan.org/release/Filesys-Statvfs

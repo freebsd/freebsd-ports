@@ -6,5 +6,3 @@ statistical findings such as coefficients of a regression; augment,
 which adds columns to the original data such as predictions, residuals
 and cluster assignments; and glance, which provides a one-row summary
 of model-level statistics.
-
-WWW: https://cran.r-project.org/web/packages/broom/

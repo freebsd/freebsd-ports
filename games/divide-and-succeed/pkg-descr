@@ -7,5 +7,3 @@ Levels consists of a list of Polygons, a number of parts and a
 number of slices. Maximum width allowed for a level is 600, Maximum
 height is 400. There is no level editor at the moment, so it's
 text-editor style.
-
-WWW: http://projects.haxx.es/p/divide-and-succeed/

@@ -5,5 +5,3 @@ engine. fresnel also supports multi-core CPUs using Intel's Embree ray
 tracing kernels. Path tracing enables high quality global illumination
 and advanced rendering effects controlled by intuitive parameters
 (like roughness, specular, and metal).
-
-WWW: https://github.com/glotzerlab/fresnel

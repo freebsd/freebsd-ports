@@ -11,5 +11,4 @@ This package is based on a subset of the Mellanox Firmware Tools (MFT) package.
 For a full documentation of the MFT package, please refer to the downloads page
 in Mellanox web site.
 
-WWW: https://github.com/Mellanox/mstflint
-WWW: http://www.mellanox.com/page/management_tools
+See also: https://github.com/Mellanox/mstflint

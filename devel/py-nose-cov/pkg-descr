@@ -1,3 +1,1 @@
 nose plugin for coverage reporting, including subprocesses and multiprocessing.
-
-WWW: https://pypi.org/project/nose-cov/

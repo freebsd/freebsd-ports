@@ -5,5 +5,3 @@ to be used for low bit rate digital voice. Speech is compressed down to
 is received by an SSB radio, then demodulated and decoded by FreeDV. FreeDV
 700(B) rivals SSB in it's low SNR performance. At high SNRs FreeDV 1600
 sounds like FM, with no annoying analog HF radio noise.
-
-WWW: http://freedv.org/

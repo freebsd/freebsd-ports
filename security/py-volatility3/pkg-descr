@@ -5,5 +5,3 @@ visibility into the runtime state of the system.  The framework is intended to
 introduce people to the techniques and complexities associated with extracting
 digital artifacts from volatile memory samples and provide a platform for
 further work into this exciting area of research.
-
-WWW: https://www.volatilityfoundation.org/

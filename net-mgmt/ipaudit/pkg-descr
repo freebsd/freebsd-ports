@@ -15,5 +15,3 @@ tabulated results.
 
 Ipaudit is built using the pcap packet capture library to read the network port
 from LBNL Network Research Group.
-
-WWW: http://ipaudit.sourceforge.net/

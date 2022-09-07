@@ -1,5 +1,3 @@
 mathlibtools contains leanproject, a supporting tool for Lean mathlib.
 
 Lean is installed by the port math/lean.
-
-WWW: https://github.com/leanprover-community/mathlib-tools

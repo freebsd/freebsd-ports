@@ -8,5 +8,3 @@ names, internationalized domain names, and other text strings.
 The stringprep framework does not specify how protocols should
 prepare text strings. Protocols must create profiles of
 stringprep in order to fully specify the processing options.
-
-WWW: https://metacpan.org/release/Unicode-Stringprep

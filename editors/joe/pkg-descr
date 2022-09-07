@@ -9,5 +9,3 @@ termcap/terminfo, excellent screen update optimizations (JOE is fully usable at
 VI.
 
 JOE now has UTF-8 support and Syntax Highlighting.
-
-WWW: https://sourceforge.net/projects/joe-editor/

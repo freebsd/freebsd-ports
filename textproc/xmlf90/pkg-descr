@@ -14,5 +14,3 @@ major components:
   XML, including such features as automatic start-tag completion,
   attribute pretty-printing, and element indentation. There are also
   helper routines to handle the output of numerical arrays.
-
-WWW: https://launchpad.net/xmlf90

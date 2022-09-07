@@ -7,5 +7,3 @@ Markdown's syntax is designed not as a generic markup language, but
 specifically to serve as a front-end to (X)HTML. You can use span-level
 HTML tags anywhere in a Markdown document, and you can use block level
 HTML tags (like <div> and <table> as well).
-
-WWW: https://daringfireball.net/projects/markdown/

@@ -8,5 +8,3 @@ Alembic is focused on efficiently storing the computed results of complex
 procedural geometric constructions.  It is very specifically NOT concerned
 with storing the complex dependency graph of procedural tools used to
 create the computed results.
-
-WWW: http://alembic.io/

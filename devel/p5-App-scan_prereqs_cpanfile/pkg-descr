@@ -1,4 +1,2 @@
 This script scans prerequisite modules from your code, and generate
 CPANfile. You can also list missing prerequisite modules.
-
-WWW: https://metacpan.org/release/App-scan_prereqs_cpanfile

@@ -17,5 +17,3 @@ knowledge is provided in the argument $recipe of the new() function.
 This is a reference to a hash, keyed by fields. The values of this hash
 are hash references themselves, which describe how to acquire the field
 which is the corresponding key of the initial hash.
-
-WWW: https://metacpan.org/release/Data-Flow

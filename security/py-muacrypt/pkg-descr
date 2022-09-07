@@ -7,5 +7,3 @@ is tied to a set of e-mail addresses, specified as a regular expression.
 
 Functionality is exposed through a command line tool muacrypt and a Python
 API obtained through import muacrypt.
-
-WWW: https://pypi.org/project/muacrypt/

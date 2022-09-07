@@ -6,5 +6,3 @@ concurrency, distribution and fault tolerance.
 
 This port contains a standalone runtime environment of Erlang 23
 to be used during the development of OTP applications.
-
-WWW: https://www.erlang.org/

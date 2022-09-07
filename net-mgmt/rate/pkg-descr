@@ -7,5 +7,3 @@ different operating modes, designed to perform the following tasks:
 estimating overall traffic rates, determining nodes generating the
 highest traffic, determining connections and flows generating the highest
 traffic and extracting strings from packets.
-
-WWW: http://s-tech.elsat.net.pl/

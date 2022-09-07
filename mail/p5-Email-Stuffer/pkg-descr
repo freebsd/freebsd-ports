@@ -7,5 +7,3 @@ Email::Stuffer is typically used to build emails and send them in a single
 statement, as seen in the synopsis. And it is certain only for use when
 creating and sending emails. As such, it contains no email parsing
 capability, and little to no modification support.
-
-WWW: https://metacpan.org/release/Email-Stuffer

@@ -7,5 +7,3 @@ To do this you will need to read the info page that is installed by the port.
 
 This port includes additional patches and fixes making it work properly
 with ZFS boot-environments.
-
-WWW: http://www.gnu.org/software/grub/

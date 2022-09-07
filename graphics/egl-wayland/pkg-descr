@@ -4,5 +4,3 @@ and EGLStream families of extensions.
 
 This library implements an EGL External Platform interface to work
 along with EGL drivers that support the external platform mechanism.
-
-WWW: https://github.com/NVIDIA/egl-wayland

@@ -1,4 +1,2 @@
 Programatically (or manually) simulate keyboard input or mouse activity
 using X11's XTEST extension.
-
-WWW: https://www.semicomplete.com/projects/xdotool/

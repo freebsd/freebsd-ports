@@ -11,5 +11,3 @@ Feature:
 - Removing or adding of empty frames (for id3v2)
 - Setting header flags, gain values
 - ...
-
-WWW: https://sourceforge.net/projects/mp3asm/

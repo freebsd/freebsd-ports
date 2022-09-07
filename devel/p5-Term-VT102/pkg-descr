@@ -8,5 +8,3 @@ This allows your program to interface with full-screen console
 programs by running them in a subprocess and passing their output to a
 VT102 class. You can then see what the application has written on the
 screen by querying the class appropriately.
-
-WWW: https://metacpan.org/release/Term-VT102

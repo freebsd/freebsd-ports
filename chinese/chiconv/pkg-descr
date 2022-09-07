@@ -1,4 +1,2 @@
 Auto chinese encoding converter. It can detect UTF-8/Big5/GBK text and convert
 them to specified chinese encoding with transliteration.
-
-WWW: https://github.com/buganini/chiconv

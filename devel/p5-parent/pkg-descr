@@ -7,5 +7,3 @@ from those modules at the same time. Mostly similar in effect to
         require Bar;
         push @ISA, qw(Foo Bar);
     }
-
-WWW: https://metacpan.org/release/parent

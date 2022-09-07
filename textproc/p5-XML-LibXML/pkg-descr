@@ -2,5 +2,3 @@ This module is an interface to the gnome libxml2 DOM parser (no SAX
 parser support yet), and the DOM tree.  It also provides an
 XML::XPath-like findnodes() interface, providing access to the XPath API
 in libxml2.
-
-WWW: https://metacpan.org/release/XML-LibXML

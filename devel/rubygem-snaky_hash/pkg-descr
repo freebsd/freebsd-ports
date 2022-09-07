@@ -5,5 +5,3 @@ It has its roots in the Rash (specifically the rash_alt flavor), which is a
 special Mash, made popular by the hashie gem.
 
 Classes that include SnakyHash::Snake should inherit from Hashie::Mash.
-
-WWW: https://gitlab.com/oauth-xx/snaky_hash

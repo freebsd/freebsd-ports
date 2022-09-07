@@ -7,5 +7,3 @@ normalization.
 Functions are also provided to fold over the characters of UTF encoded
 OCaml string values and to directly encode characters in OCaml Buffer.t
 values.
-
-WWW: https://erratique.ch/software/uutf

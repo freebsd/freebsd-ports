@@ -7,5 +7,3 @@ merging hash databases, and performing hash lookups.
 
 hashdb provides C++ and Python interfaces for working with and scanning hashdb
 databases.
-
-WWW: https://github.com/NPS-DEEP/hashdb

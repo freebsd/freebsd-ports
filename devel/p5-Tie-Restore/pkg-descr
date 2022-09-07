@@ -9,5 +9,3 @@ But, how does one go the other way?  Simple, with Tie::Restore
  tie %hash, 'Tie::Restore', $object;
 
 Works for any kind of tie. (scalar, array, hash, filehandle)
-
-WWW: https://metacpan.org/release/Tie-Restore

@@ -4,5 +4,3 @@ been to manage the application server and storage server daemons
 for Zope / ZEO, although it is not limited to running Python-based
 applications (for instance, it has been used to manage the
 'spread' daemon).
-
-WWW: https://pypi.org/project/zdaemon/

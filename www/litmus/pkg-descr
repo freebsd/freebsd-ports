@@ -18,5 +18,3 @@ Tests include:
   o shared/exclusive locks, lock discovery
 
 usage: litmus <url> <username> <password>
-
-WWW: http://www.webdav.org/neon/litmus/

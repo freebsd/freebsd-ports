@@ -9,5 +9,3 @@ source, and flushed the last of the output, it will clean up after
 itself by closing the wheel, the handles, and sending all of them out
 of scope. If an exception happens, it will clean up after itself, and
 let the DIE signal propagate.
-
-WWW: https://metacpan.org/release/NPEREZ/POEx-Role-Streaming-1.102610

@@ -9,5 +9,3 @@ This module is still experimental and is moving quickly away from the
 original springgraph.pl code. It is likely to be rewritten from basic
 principles in the near future to remove some of the quirks inherent in
 the Autodia and springgraph.pl code used.
-
-WWW: https://metacpan.org/release/SpringGraph

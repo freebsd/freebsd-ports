@@ -5,5 +5,3 @@ be recorded.
 
 Errors in the class Error should not be thrown directly, but the user should
 throw errors from a sub-class of Error.
-
-WWW: https://metacpan.org/release/Error

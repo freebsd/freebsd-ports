@@ -1,5 +1,3 @@
 Templater is a powerful code generation framework. It declarative
 rules for generators, supports generators discovery in gems, has idea
 of actions other than template rendering and is open for extension.
-
-WWW: https://github.com/jnicklas/templater

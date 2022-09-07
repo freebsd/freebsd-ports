@@ -7,5 +7,3 @@ Orange Bioinformatics provides access to publicly available data, like GEO data
 sets, GO and KEGG. All features can be combined with powerful visualization,
 network exploration and data mining techniques from the Orange data mining
 framework.
-
-WWW: https://github.com/biolab/orange3-bioinformatics

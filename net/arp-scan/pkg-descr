@@ -1,4 +1,2 @@
 arp-scan is a command-line tool that uses the ARP protocol to discover and
 fingerprint IP hosts on the local network.
-
-WWW: https://github.com/royhills/arp-scan

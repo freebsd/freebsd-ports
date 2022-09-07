@@ -6,5 +6,3 @@ why something failed. Unfortunately, chaining together many computations which
 may fail can be verbose, as error-checking code will be mixed in with the
 actual programming logic. This implementation provides a number of utilities to
 make coding with expected cleaner.
-
-WWW: https://github.com/TartanLlama/expected

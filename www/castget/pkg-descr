@@ -5,5 +5,3 @@ primarily intended for automatic, unattended downloading of podcasts.
 * Per-channel tagging of downloaded MP3 files using ID3v2.
 * Per-channel download directories.
 * Supports all RSS versions and Media RSS.
-
-WWW: http://www.nongnu.org/castget/

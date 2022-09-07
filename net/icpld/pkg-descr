@@ -7,5 +7,3 @@ connection was unavailable, as well as for how long. It records
 both total down time and each occasion of interrupted
 connection. The log can also be duplicated in HTML format to
 put online.
-
-WWW: http://icpld.northernmost.org/

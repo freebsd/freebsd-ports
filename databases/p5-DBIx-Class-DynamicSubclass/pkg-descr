@@ -1,5 +1,3 @@
 Convenient way to use dynamic subclassing. This plugin implements
 methodics described in "Dynamic Sub-classing DBIx::Class proxy classes"
 in DBIx::Class::Manual::Cookbook.
-
-WWW: https://metacpan.org/release/DBIx-Class-DynamicSubclass

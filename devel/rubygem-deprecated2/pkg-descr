@@ -5,5 +5,3 @@ allow/disallow the ability to execute deprecated code.
 
 This is a legacy copy in ports of the 2.x series for compatibility with
 some other Ruby ports.
-
-WWW: https://github.com/erikh/deprecated

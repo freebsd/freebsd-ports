@@ -1,4 +1,2 @@
 ExtUtils::Helpers provides various portable helper functions for module building
 modules.
-
-WWW: https://metacpan.org/release/ExtUtils-Helpers

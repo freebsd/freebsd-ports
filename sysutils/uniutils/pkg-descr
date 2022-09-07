@@ -19,5 +19,3 @@ determines and explains the validity of a sequence of bytes as a UTF8 encoding.
 
 Unirev is a filter that reverses UTF-8 strings character-by-character (as
 opposed to byte-by-byte).
-
-WWW: http://billposer.org/Software/unidesc.html

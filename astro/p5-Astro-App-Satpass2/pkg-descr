@@ -3,5 +3,3 @@ related phenomena. It is a mostly-compatible rewrite and eventual
 replacement of the satpass script in distribution Astro-satpass, aimed
 at making it easier to test, and removing some of the odder cruft that
 has accumulated in the satpass script.
-
-WWW: https://metacpan.org/release/Astro-App-Satpass2

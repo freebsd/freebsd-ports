@@ -1,4 +1,2 @@
 Zita-dpl1 is a look-ahead digital peak level limiter using some special
 algorithms to allow fast response without excessive LF distortion.
-
-WWW: https://kokkinizita.linuxaudio.org/linuxaudio/zita-dpl1-doc/quickguide.html

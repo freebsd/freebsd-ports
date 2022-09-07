@@ -5,5 +5,3 @@ language, and provides support for PostgreSQL, MySQL, and SQLite.
 
 Databases is suitable for integrating against any async Web framework, such as
 Starlette, Sanic, Responder, Quart, aiohttp, Tornado, or FastAPI.
-
-WWW: https://github.com/encode/databases

@@ -4,5 +4,3 @@ You can profile any function in C++ code. Furthermore this library
 allows to measure runtime of any block of code. For example, gathering
 information for 12 million blocks is using less than 300MB of memory.
 Working profiler slows an application execution by only 1-2%.
-
-WWW: https://github.com/yse/easy_profiler

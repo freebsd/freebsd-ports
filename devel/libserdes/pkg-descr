@@ -5,5 +5,3 @@ Platform Schema Registry.
 The library is aimed to be used in the streaming pipeline,
 e.g. Apache Kafka, to perform data serialization and
 deserialization with centrally managed schemas.
-
-WWW: https://github.com/confluentinc/libserdes

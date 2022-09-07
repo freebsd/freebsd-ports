@@ -1,4 +1,2 @@
 This release includes a Java implementation of beep core RFC 3080 and
 beep mapping for TCP RFC 3081.
-
-WWW: https://sourceforge.net/projects/beepcore-java/

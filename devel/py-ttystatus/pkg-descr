@@ -2,5 +2,3 @@ ttystatus is a Python library for showing progress reporting and status updates
 on terminals, for (Unix) command line programs. Output is automatically adapted
 to the width of the terminal: truncated if it does not fit, and re-sized if the
 terminal size changes.
-
-WWW: https://liw.fi/ttystatus/

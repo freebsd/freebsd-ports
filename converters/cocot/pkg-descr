@@ -3,5 +3,3 @@ converting characters from one encoding to another.
 
 e.g.
 	$ cocot -p euc-jp -t utf-8 screen -xRR wb
-
-WWW: https://github.com/vmi/cocot

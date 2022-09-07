@@ -20,5 +20,3 @@ version MDK includes the following applications:
    - mixvm.el: An elisp program which allows you to run mixvm within an Emacs
      GUD window, simultaneously viewing your MIXAL source file in another
      buffer.
-
-WWW: http://www.gnu.org/software/mdk/mdk.html

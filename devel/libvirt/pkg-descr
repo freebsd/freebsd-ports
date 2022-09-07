@@ -8,5 +8,3 @@ libvirt provides:
 * Zero-conf discovery using Avahi multicast-DNS
 * Management of virtual machines, virtual networks and storage
 * Portable client API for Linux, Solaris and Windows
-
-WWW: https://libvirt.org/

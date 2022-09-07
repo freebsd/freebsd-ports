@@ -17,5 +17,3 @@ Currently the methods below are supported.
  * state - Connection
  * uid - User ID
  * user - Username
-
-WWW: https://metacpan.org/release/Net-Connection-Sort

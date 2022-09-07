@@ -1,5 +1,3 @@
 This is a tiny library for decoding PhotoCD images.  Its not exactly
 new, it exists for years.  I've just released it separately for the
 first time now.  It used to come bundled with xpcd.
-
-WWW: https://www.kraxel.org/blog/linux/libpcd/

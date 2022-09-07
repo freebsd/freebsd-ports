@@ -1,5 +1,3 @@
 slrn is an easy to use but powerful NNTP/spool based newsreader.  It is
 highly customizable, supports scoring, free key bindings, and can be
 extended using the SLang macro language.  slrn supports SSL and IPv6.
-
-WWW: http://slrn.sourceforge.net/

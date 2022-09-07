@@ -6,5 +6,3 @@ full-featured user interface for vulnerability management.
 
 Greenbone Security Assistant consists of GSA - The webpage written in React
 and GSAD - The HTTP server talking to the GVM daemon
-
-WWW: https://github.com/greenbone/gsa

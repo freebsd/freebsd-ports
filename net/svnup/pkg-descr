@@ -1,4 +1,2 @@
 A lightweight, dependency-free program to pull FreeBSD source using the svn
 protocol.
-
-WWW: https://github.com/johnmehr/svnup

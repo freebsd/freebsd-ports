@@ -4,5 +4,3 @@ standardised tools.
 - simplified JavaScript tooling setup
 - development server, with rebuild-on-save and automagical browser reloading
 - consistent repository structure across themes
-
-WWW: https://github.com/pradyunsg/sphinx-theme-builder

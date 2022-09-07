@@ -13,5 +13,3 @@ and placed alongside the file to download - it is generated once, then
 any downloaders with zsync can use it. Alternatively, anyone can
 download the file, make a .zsync and provide it to other users (this is
 what I am doing for the moment).
-
-WWW: http://zsync.moria.org.uk/

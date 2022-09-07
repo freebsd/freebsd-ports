@@ -15,5 +15,4 @@ It currently supports:
   (e.g. 1 *^ 3 == 1000).
 - Local variables in Block, With and Module
 
-WWW: https://mathics.org/
-WWW: http://github.com/Mathics3/mathics-pygments/
+See also: https://github.com/Mathics3/mathics-pygments/

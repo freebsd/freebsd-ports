@@ -1,4 +1,2 @@
 bspwm is a tiling window manager that represents windows as the leaves
 of a full binary tree. It is controlled and configured via bspc.
-
-WWW: https://github.com/baskerville/bspwm

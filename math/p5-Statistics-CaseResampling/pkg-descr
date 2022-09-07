@@ -10,5 +10,3 @@ C). These functions may be useful in their own right and are thus exposed to
 Perl. Most notably, this exposes a median (and general selection) algorithm that
 works in linear time as opposed to the trivial implementation that requires
 O(n*log(n)).
-
-WWW: https://metacpan.org/release/Statistics-CaseResampling

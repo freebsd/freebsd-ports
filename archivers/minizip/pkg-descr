@@ -5,5 +5,3 @@ An archive in ZIP format can contain several files compressed with this method,
 while a .gz archive can containt only one file. It is a very popular format,
 that is why I have written a package for reading files compressed within a Zip
 archive.
-
-WWW: http://www.winimage.com/zLibDll/minizip.html

@@ -6,5 +6,3 @@ Saxon's evaluate and expressions extensions.
 
 People can either embed the library in their application or use xsltproc the
 command line processing tool.
-
-WWW: https://gitlab.gnome.org/GNOME/libxslt/

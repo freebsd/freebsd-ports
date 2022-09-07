@@ -14,5 +14,3 @@ INFO[0601] terminating pod        name=nginx-701339712-u4fr3 namespace=chaoskube
 chaoskube allows to filter target pods by namespaces, labels, annotations and
 age as well as exclude certain weekdays, times of day and days of a year from
 chaos.
-
-WWW: https://github.com/linki/chaoskube

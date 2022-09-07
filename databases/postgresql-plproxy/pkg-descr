@@ -7,5 +7,3 @@ that handled all sharding decisions. This proved to be too complex setup and in
 version 2 it was re-written to current archtecture of PL that handles sharding
 and generic pooler process (PgBouncer) that is able to handle large amount of
 standard PostgreSQL connections that the PL makes.
-
-WWW: https://plproxy.github.io/

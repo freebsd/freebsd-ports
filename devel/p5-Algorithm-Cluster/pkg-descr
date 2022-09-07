@@ -9,5 +9,3 @@ by Michiel de Hoon.
 
 This module is a Perl wrapper for the C clustering library for
 cDNA microarray data, Copyright (C) 2002 Michiel Jan Laurens de Hoon.
-
-WWW: https://metacpan.org/release/Algorithm-Cluster

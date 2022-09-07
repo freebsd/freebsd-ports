@@ -5,5 +5,3 @@ support for platforms that currently do not have a Spotify client,
 such as the BSDs.
 
 Ncspot requires a Spotify Premium account.
-
-WWW: https://github.com/hrkfdn/ncspot

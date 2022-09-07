@@ -4,5 +4,3 @@ The NULL Encryption Algorithm is a symmetric block cipher described in
 RFC 2410 by Rob Glenn and Stephen Kent.
 
 This module implements NULL encryption. It supports the Crypt::CBC.
-
-WWW: https://metacpan.org/release/Crypt-NULL

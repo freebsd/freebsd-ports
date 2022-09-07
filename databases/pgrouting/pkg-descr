@@ -1,4 +1,2 @@
 pgRouting extends the PostGIS / PostgreSQL geospatial database to provide
 geospatial routing functionality.
-
-WWW: http://pgrouting.org/

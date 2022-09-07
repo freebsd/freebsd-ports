@@ -12,5 +12,3 @@ good.
 For good text files, chkascii will wind up by checking on proper EOL
 termination. If the file is not EOL-terminated, that too is reported as
 an error.
-
-WWW: https://github.com/bourne-again/chkascii

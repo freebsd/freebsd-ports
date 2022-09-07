@@ -7,5 +7,3 @@ exceptions involved. It's not intended that you use HTTP::Throwable directly,
 although you can, and instructions for using it correctly are given below.
 Instead, you probably want to use HTTP::Throwable::Factory, which will assemble
 exception classes from roles needed to build an exception for your use case.
-
-WWW: https://metacpan.org/release/HTTP-Throwable

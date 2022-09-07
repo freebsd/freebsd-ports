@@ -5,5 +5,3 @@ specification of the Jacobian matrix or directly from the problem functions.
 The paths include facilities for systems of equations with a banded Jacobian
 matrix, for least squares problems with a large amount of data, and for
 checking the consistency of the Jacobian matrix with the functions
-
-WWW: http://devernay.free.fr/hacks/cminpack/

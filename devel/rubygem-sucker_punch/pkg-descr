@@ -17,5 +17,3 @@ requirement (ie. database, redis, etc.). However, if the web processes are
 restarted with jobs remaining in the queue, they will be lost. For this reason,
 Sucker Punch is generally recommended for jobs that are fast and non-mission
 critical (ie. logs, emails, etc.).
-
-WWW: https://github.com/brandonhilkert/sucker_punch

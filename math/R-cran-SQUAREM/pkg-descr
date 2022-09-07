@@ -4,5 +4,3 @@ It can be used to accelerate any smooth, linearly convergent
 acceleration scheme. A tutorial style introduction to this package
 is available in a vignette on the CRAN download page or, when the
 package is loaded in an R session, with vignette("SQUAREM").
-
-WWW: https://cran.r-project.org/web/packages/SQUAREM/

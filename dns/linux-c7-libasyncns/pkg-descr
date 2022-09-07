@@ -16,5 +16,3 @@ libc is.
 
 libasyncns is very tiny, consisting of just one header and one source file. It
 has no dependencies besides libc.
-
-WWW: http://0pointer.de/lennart/projects/libasyncns/

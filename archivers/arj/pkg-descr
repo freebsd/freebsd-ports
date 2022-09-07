@@ -10,5 +10,3 @@ New ARJ features on Unix-like platforms:
   - Support for UID/GID storage in a variety of methods
   - World's smallest native self-extracting modules
   - Interoperability with ARJ for DOS, Windows, and OS/2 Warp
-
-WWW: http://arj.sourceforge.net/

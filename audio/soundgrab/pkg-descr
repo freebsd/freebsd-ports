@@ -10,5 +10,3 @@ emacs mark and point concept), and the export command exports the
 named sections to other files in wav, cdr (CD mastering), or raw
 format (or ogg or flac format if the appropriate encoder binaries are
 found on your system).
-
-WWW: http://rawrec.sourceforge.net/soundgrab/

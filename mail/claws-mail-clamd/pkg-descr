@@ -5,5 +5,3 @@ When a message attachment is found to contain a virus it can be
 deleted or saved in a specially designated folder.
 
 Options can be found in /Configuration/Preferences/Plugins/Clam AntiVirus.
-
-WWW: https://www.claws-mail.org/plugins.php

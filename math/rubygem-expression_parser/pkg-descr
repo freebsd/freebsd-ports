@@ -1,4 +1,2 @@
 Implementation of mathematical expression parsing in Ruby including
 support for reverse polish notation (RPN).
-
-WWW: http://lukaszwrobel.pl/blog/math-parser-part-3-implementation

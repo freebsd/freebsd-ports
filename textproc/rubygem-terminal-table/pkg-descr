@@ -6,5 +6,3 @@ Features:
 - Alignment of columns, headings, or cells
 - Supports column span
 - Easy modification of table strings (+, -, |)
-
-WWW: https://github.com/tj/terminal-table

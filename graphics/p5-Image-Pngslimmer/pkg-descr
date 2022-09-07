@@ -5,5 +5,3 @@ returned. Image::Pngslimmer is designed for use where PNGs are being
 generated on the fly and where size matters - eg for J2ME use. There are
 other options - probably better ones - for handling static PNGs.
 and more image types.
-
-WWW: https://metacpan.org/release/Image-Pngslimmer

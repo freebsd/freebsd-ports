@@ -4,5 +4,3 @@ events from the MIDI input device and render them to the audio device.
 It can also play MIDI files.
 
 Note: FluidSynth was previously called IIWU Synth.
-
-WWW: https://www.fluidsynth.org/

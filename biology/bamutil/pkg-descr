@@ -2,5 +2,3 @@ Utilities for working on SAM/BAM files from The Center for Statistical
 Genetics at the University of Michigan School of Public Health.  It
 includes numerous functions such as splitting, merging, trimming reads,
 filtering, validation, diff, etc.
-
-WWW: https://github.com/statgen/bamUtil

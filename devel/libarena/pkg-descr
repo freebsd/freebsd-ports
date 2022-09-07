@@ -13,5 +13,3 @@ suite of string utilities which aren't available in the generic exportable
 interface. Note that these string utilities are built upon a generic
 interface (see util.h) which can take the prototypical allocation context,
 so they are also available to any 3rd party compatible allocators.
-
-WWW: http://www.25thandclement.com/~william/projects/libarena.html

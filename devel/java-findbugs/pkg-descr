@@ -9,5 +9,3 @@ arise for a variety of reasons:
 
 FindBugs uses static analysis to inspect Java bytecode for occurrences of
 bug patterns.
-
-WWW: http://findbugs.sourceforge.net/

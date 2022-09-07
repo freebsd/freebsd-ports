@@ -7,5 +7,3 @@ interact with the service.
 
 Additionally the command line utility "dismanctl" is provided to query
 and modify display settings directly from the command line.
-
-WWW: https://gitlab.com/kwinft/disman

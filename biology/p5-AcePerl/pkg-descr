@@ -1,5 +1,3 @@
 AcePerl is an object-oriented Perl interface for the ACEDB genome database
 system. It provides functionality for connecting to remote ACEDB databases,
 performing queries, fetching ACE objects, and updating databases.
-
-WWW: https://metacpan.org/release/AcePerl

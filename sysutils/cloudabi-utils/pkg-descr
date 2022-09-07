@@ -7,5 +7,3 @@ allowed to perform.
 This package installs utilities that are useful when running CloudABI
 processes. The cloudabi-run utility can run CloudABI processes,
 providing it the resources (sockets and files) that it requires.
-
-WWW: https://github.com/NuxiNL/cloudabi-utils

@@ -4,5 +4,3 @@ it was designed to function with, PostgreSQL.
 
 It is fast, robust and features fall-back-logging to a text file.  It
 is flexible and typically uses less than 128K of memory.
-
-WWW: http://www.digitalstratum.com/pglogd/

@@ -5,5 +5,3 @@ each particle individually. It is particularly well-suited for applications
 that rely on cell-based statistics, where features of Voronoi cells (eg.
 volume, centroid, number of faces) can be used to analyze a system of
 particles.
-
-WWW: http://math.lbl.gov/voro++/

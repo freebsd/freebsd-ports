@@ -5,5 +5,3 @@ A and AAAA records for your server with a dynamic IP address.
 
 It features support for multiple subdomain records with painless
 configuration and administration.
-
-WWW: https://github.com/filiparag/hetzner_ddns

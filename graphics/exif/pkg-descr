@@ -1,4 +1,2 @@
 Command line utility to read, write, modify and display EXIF data found
 in digital image files written by digital cameras, using libexif.
-
-WWW: https://libexif.github.io/

@@ -3,5 +3,3 @@ the maintenance of access control lists with Subversion repositories.
 This module removes the need to maintain a separate list of people
 to send email notification messages to (via svnnotify --to arguments),
 from the AuthZSVNAccessFile.
-
-WWW: https://metacpan.org/release/SVN-Notify-Filter-AuthZMail

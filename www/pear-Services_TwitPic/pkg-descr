@@ -1,4 +1,2 @@
 An interface for uploading pictures to TwitPic and optionally posting them
 (along with status messages) to Twitter as well.
-
-WWW: https://pear.php.net/package/Services_TwitPic

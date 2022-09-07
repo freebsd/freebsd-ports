@@ -11,5 +11,3 @@ The package also includes a set of styling (and javascript) that is expected to
 layer on top of a Sphinx theme base. This addition provides a nice set of
 collapsing sections for REST methods and javascript controls to expand or
 collapse all sections.
-
-WWW: https://docs.openstack.org/os-api-ref/

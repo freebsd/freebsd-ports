@@ -5,5 +5,3 @@ for preprocessing, constructing vector spaces (like bag-of-words, topic
 modeling, and similarity hashing) and visualizations like word cloud end geo
 map. All features can be combined with powerful data mining techniques from
 the Orange data mining framework.
-
-WWW: https://github.com/biolab/orange3-text

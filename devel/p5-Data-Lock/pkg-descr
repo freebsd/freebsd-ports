@@ -4,5 +4,3 @@ of perl SV so it imposes almost no penalty.
 
 Like Readonly, Data::Lock locks not only the variable itself but also elements
 therein. You can Data::Lock objects as well.
-
-WWW: https://metacpan.org/pod/Data::Lock

@@ -7,5 +7,3 @@ store arbitrary perl data, including nested references.
 It works by converting the values in the hash that are references, to their
 string representation in perl syntax.  When using a DBM database, it is this
 string that gets stored.
-
-WWW: https://metacpan.org/release/MLDBM

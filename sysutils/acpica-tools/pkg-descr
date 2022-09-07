@@ -3,5 +3,3 @@ system (OS)-independent reference implementation of the Advanced
 Configuration and Power Interface Specification (ACPI).
 
 This port provides utilities bundled with the ACPICA release.
-
-WWW: https://acpica.org

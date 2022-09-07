@@ -16,5 +16,3 @@ o Handles non-UTF-8 encoded filenames correctly
 o Provide icon view and detailed list view
 o Standard compliant (Follows FreeDesktop.org)
 o Clean and user-friendly interface (GTK+ 2)
-
-WWW: http://wiki.lxde.org/en/PCManFM

@@ -3,5 +3,3 @@ patch JSON and JSON-like structures in Python. It has special support for:
 - multiple and custom-defined diff syntaxes
 - Python sets
 - similarity-based list comparison
-
-WWW: https://github.com/xlwings/jsondiff

@@ -15,5 +15,3 @@ multimethod (by calling ref on each) and determines the "closest" matching
 variant of the multimethod, according to the argument types specified in
 the variants' definitions (see "Finding the "nearest" multimethod" for a
 definition of "closest").
-
-WWW: https://metacpan.org/release/Class-Multimethods

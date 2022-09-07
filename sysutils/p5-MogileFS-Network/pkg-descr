@@ -3,5 +3,3 @@ server. It provides two replication policies, 'MultipleNetworks' and
 'HostsPerNetwork', and also provides a plugin 'ZoneLocal' that causes
 get_paths queries to be returned in a prioritized order based on locality of
 storage.
-
-WWW: https://metacpan.org/release/MogileFS-Network

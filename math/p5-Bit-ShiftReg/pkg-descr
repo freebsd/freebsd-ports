@@ -4,5 +4,3 @@ all C integer types. The results depend on the number of bits with that the
 integer types unsigned char, unsigned short, unsigned int, and unsigned long
 have on your machine. The module automatically determines the number of bits of
 each integer type and adjusts its internal constants accordingly.
-
-WWW: https://metacpan.org/release/Bit-ShiftReg

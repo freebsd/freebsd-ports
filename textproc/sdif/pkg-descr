@@ -9,5 +9,3 @@ It also reads and formats the output from diff command from standard
 input.  Besides normal diff output, context diff -c and unified diff
 -u output will be handled properly.  Combined diff format is also
 supported, but currently limited upto three files.
-
-WWW: https://github.com/kaz-utashiro/sdif

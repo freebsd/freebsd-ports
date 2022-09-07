@@ -17,5 +17,3 @@ Gnash is based on GameSWF, and supports many SWF v7 features.
   AntiGrain (AGG) for embedded framebuffer only devices.
 - Gnash pays extra attention to all network connections, and allows
   the user to control access.
-
-WWW: http://www.gnu.org/software/gnash/

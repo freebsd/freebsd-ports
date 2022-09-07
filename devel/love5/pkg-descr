@@ -3,5 +3,3 @@ scripting language to create dynamic gaming experiences. It relies
 on OpenGL graphics and the SDL interface library to allow for
 cross-platform implementation and is an all-encompassing gaming
 environment for the development and enjoyment of 2D games.
-
-WWW: http://www.love2d.org/

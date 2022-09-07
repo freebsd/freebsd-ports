@@ -17,5 +17,3 @@ software on Windows. .NET Core is also modular, meaning that instead of
 assemblies, developers work with NuGet packages. Unlike .NET Framework, which
 is serviced using Windows Update, .NET Core relies on its package manager to
 receive updates.
-
-WWW: https://www.microsoft.com/net/

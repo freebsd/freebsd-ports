@@ -7,5 +7,3 @@ reference to an array of lists, that represents the original list arranged
 according to the given partitioning. All possible arrangements are
 returned, and the object returns undef when the entire combination space
 has been exhausted.
-
-WWW: https://metacpan.org/release/Set-Partition

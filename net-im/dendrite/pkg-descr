@@ -10,5 +10,3 @@ Synapse:
 
   o Scalable: can run on multiple machines and eventually scale to
     massive homeserver deployments.
-
-WWW: https://github.com/matrix-org/dendrite

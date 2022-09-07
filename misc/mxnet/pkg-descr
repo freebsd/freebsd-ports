@@ -9,5 +9,3 @@ lightweight, scaling effectively to multiple GPUs and multiple machines.
 MXNet is more than a deep learning project. It is a collection of blue prints
 and guidelines for building deep learning systems, and interesting insights of
 DL systems for hackers.
-
-WWW: https://mxnet.apache.org/

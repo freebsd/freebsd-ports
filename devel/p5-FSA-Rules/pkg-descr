@@ -9,5 +9,3 @@ strict attribute and parameter to new().) It differs from an NFA model in
 that it offers no back-tracking. But in truth, you can use it to build a
 state machine that adheres to either model--hence the more generic FSA
 moniker.
-
-WWW: https://metacpan.org/release/FSA-Rules

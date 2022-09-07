@@ -3,5 +3,3 @@ The logbook server maintains a large set of QSO logbook fields that will
 probably be sufficient for casual operating, contesting and some certificate
 logging.  All of the fields that are captured in the logbook are maintained
 in an ADIF database.
-
-WWW: http://www.w1hkj.com/fllog-help/index.html

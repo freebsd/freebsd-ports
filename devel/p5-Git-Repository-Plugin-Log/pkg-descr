@@ -1,5 +1,3 @@
 Git::Repository::Plugin::Log adds a log() method to Git::Repository, which will
 return Git::Repository::Log objects representing the commit information provided
 by `git log`.
-
-WWW: https://metacpan.org/release/Git-Repository-Plugin-Log

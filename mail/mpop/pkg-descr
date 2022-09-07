@@ -10,5 +10,3 @@ Features include:
   * Support for Internationalized Domain Names (IDN)
   * Fast POP3 implementation using command pipelining
   * SOCKS proxy support
-
-WWW: https://marlam.de/mpop/

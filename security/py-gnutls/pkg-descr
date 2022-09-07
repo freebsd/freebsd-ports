@@ -13,5 +13,3 @@ The high level wrapper is written using the GNUTLS library bindings that are
 made available via ctypes. This makes the wrapper very powerful and flexible
 as it has direct access to all the GNUTLS internals and is also very easy to
 extend without any need to write C code or recompile anything.
-
-WWW: https://pypi.org/project/python-gnutls/

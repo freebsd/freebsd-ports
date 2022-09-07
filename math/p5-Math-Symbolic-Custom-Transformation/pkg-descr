@@ -15,5 +15,3 @@ Math::Symbolic::Custom::Pattern.
 To modify the tree, you had to use equally low-level or even
 encapsulation-breaking methods. This is meant to be changed by this
 distribution.
-
-WWW: https://metacpan.org/release/Math-Symbolic-Custom-Transformation

@@ -2,5 +2,3 @@ Aspell Spanish dictionary.
 
 Note: if you build from ports, prefer textproc/aspell, it will let you
       select dictionaries for several languages.
-
-WWW: http://www.datsi.fi.upm.es/~coes/

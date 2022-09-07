@@ -4,5 +4,3 @@ will do), but accepts only a subset of rsync's command-line arguments.
 
 Its officially-supported operating system is OpenBSD, but it will compile and
 run on other UNIX systems. See Portability for details.
-
-WWW: https://github.com/kristapsdz/openrsync

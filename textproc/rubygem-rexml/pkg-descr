@@ -7,5 +7,3 @@ flow, rather than mirroring the Java API.
 REXML supports both tree and stream document parsing. Stream parsing is faster
 (about 1.5 times as fast). However, with stream parsing, you don't get access to
 features such as XPath.
-
-WWW: https://github.com/ruby/rexml

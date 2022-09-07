@@ -1,5 +1,3 @@
 String::Trim trims whitespace off your strings. chomp trims only $/
 (typically, that's newline), but trim will trim all leading and
 trailing whitespace.
-
-WWW: https://metacpan.org/release/String-Trim

@@ -4,5 +4,3 @@ validating dates of any format (using strptime(3)) and transforming
 those dates (as long as you 'untaint' the fields) into valid DateTime
 objects, or into strings that would be properly formatted for various
 database engines.
-
-WWW: https://metacpan.org/release/Data-FormValidator-Constraints-DateTime

@@ -7,5 +7,3 @@ kana-kanji conversion, and sends converted text back to the client.
 
 From version 3.0, skkinput becomes an emacs-lisp like interpreter,
 and uses skk.el in skk-8.6 as an conversion engine.
-
-WWW: http://sourceforge.jp/projects/skkinput3/

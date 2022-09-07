@@ -4,5 +4,3 @@ an inverted index based engine, and combines the best of n-gram
 indexing and word indexing to achieve fast, precise searches. While
 senna codebase is rather compact it is scalable enough to handle large
 amounts of data and queries.
-
-WWW: http://qwik.jp/senna/

@@ -16,5 +16,3 @@ family of functions, 'purrr', 'plyr', and 'foreach'. It will also
 work with parallel processing via the 'future' framework, e.g.
 future.apply::future_lapply(), furrr::future_map(), and 'foreach'
 with 'doFuture'. The package is compatible with Shiny applications.
-
-WWW: https://cran.r-project.org/web/packages/progressr/

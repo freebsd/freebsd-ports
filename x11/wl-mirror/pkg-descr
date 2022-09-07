@@ -11,5 +11,3 @@ Features:
 - Supports mirroring custom regions of outputs
 - Supports receiving additional options on stdin for changing the mirrored
   screen or region on the fly (works best when used with pipectl)
-
-WWW: https://github.com/Ferdi265/wl-mirror

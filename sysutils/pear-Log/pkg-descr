@@ -1,5 +1,3 @@
 The Log package provides an abstracted logging framework. It includes output
 handlers for log files, databases, syslog, email, Firebug, and the console. It
 also provides composite and subject-observer logging mechanisms.
-
-WWW: https://pear.php.net/package/Log

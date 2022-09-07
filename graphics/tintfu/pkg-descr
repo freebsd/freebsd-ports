@@ -6,5 +6,3 @@ conventional drawing programs.
 TINTFU can parse DOT files and render a preview of them in a side pane, while
 allowing each and every attribute of Graphs, SubGraphs and Nodes to be edited.
 The results of such changes are immediately updated in the preview pane.
-
-WWW: http://tintfu.sourceforge.net/

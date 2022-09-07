@@ -9,5 +9,3 @@ protobuf schema is changing frequently or lazy decoding is not
 critical for your application then this approach offers no value:
 just use the C++ API that can be generated with the Google Protobufs
 protoc program.
-
-WWW: https://github.com/mapbox/protozero

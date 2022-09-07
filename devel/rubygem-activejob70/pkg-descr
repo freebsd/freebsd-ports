@@ -15,5 +15,4 @@ about API differences between Delayed Job and Resque. Picking your queuing
 backend becomes more of an operational concern, then. And you'll be able to
 switch between them without having to rewrite your jobs.
 
-WWW: https://rubyonrails.org/
-WWW: https://github.com/rails/rails/tree/main/activejob
+See also: https://rubyonrails.org/

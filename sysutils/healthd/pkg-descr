@@ -7,5 +7,3 @@ specifies which functions are active and their acceptable ranges.
 With the healthdc companion program the status can be read from any
 networked computer.  The healthd daemon's network connection is protected
 by libwrap and /etc/hosts.allow.
-
-WWW: http://healthd.thehousleys.net/

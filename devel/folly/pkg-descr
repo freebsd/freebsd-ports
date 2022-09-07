@@ -14,5 +14,3 @@ Performance concerns permeate much of Folly, sometimes leading to designs that
 are more idiosyncratic than they would otherwise be (see e.g. PackedSyncPtr.h,
 SmallLocks.h). Good performance at large scale is a unifying theme in all of
 Folly.
-
-WWW: https://github.com/facebook/folly

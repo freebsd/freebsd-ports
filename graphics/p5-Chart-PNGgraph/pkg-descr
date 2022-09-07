@@ -19,5 +19,3 @@ Chart::PNGgraph::mixed
 
 Chart::PNGgraph::pie
     Create a pie chart.
-
-WWW: https://metacpan.org/release/Chart-PNGgraph

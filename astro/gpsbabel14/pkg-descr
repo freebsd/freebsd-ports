@@ -7,5 +7,3 @@ to freely move our own waypoint data between the programs and hardware we
 choose to use.
 It contains extensive data manipulation abilities making it a convenient for
 server-side processing or as the backend for other tools.
-
-WWW: https://www.gpsbabel.org/

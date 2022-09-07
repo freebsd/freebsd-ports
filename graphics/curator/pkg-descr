@@ -7,5 +7,3 @@ scripts are required on the server. The script supports many file formats,
 hierarchical directories, thumbnail generation and update, per-image
 description file with any attributes, and 'tracks' of images spanning multiple
 directories.
-
-WWW: http://curator.sourceforge.net/

@@ -10,5 +10,3 @@ The components included in the package is:
 - liboath:  A shared and static C library for OATH handling.
 - oathtool: A command line tool for generating and validating OTPs.
 - pam_oath: A PAM module for pluggable login authentication for OATH.
-
-WWW: http://www.nongnu.org/oath-toolkit/

@@ -5,5 +5,4 @@ SRU), providing a standards-based metadata and catalogue component of spatial
 data infrastructures. pycsw is Open Source, released under an MIT license, and
 runs on all major platforms (Windows, Linux, Mac OS X).
 
-WWW: https://pycsw.org/
-WWW: https://github.com/geopython/pycsw
+See also: https://github.com/geopython/pycsw

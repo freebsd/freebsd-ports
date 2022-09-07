@@ -8,5 +8,3 @@ the programmer from the details of the file format. It can process
 different document classes (texts, spreadsheets, presentations,
 and drawings). It can retrieve or update styles and images,
 document metadata, as well as text content.
-
-WWW: https://metacpan.org/release/OpenOffice-OODoc

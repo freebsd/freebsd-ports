@@ -12,5 +12,3 @@ applications.  The receive portion of this tool set can be scripted to
 dynamically join and leave IP multicast groups.  MGEN log data can be used
 to calculate performance statistics on throughput, packet loss rates,
 communication delay, and more.
-
-WWW: http://mgen.pf.itd.nrl.navy.mil/

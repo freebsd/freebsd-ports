@@ -5,5 +5,3 @@ via *nix-style pidfiles, which are files that store a process
 identifier.
 
 Inspired by Proc::PID_File, but with a much simpler interface.
-
-WWW: https://metacpan.org/release/Proc-PID-File

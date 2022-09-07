@@ -8,5 +8,3 @@ linear algebra software -- LINPACK and LAPACK, for example.
 The original Fortran77 reference implementation of the BLAS is located in the
 blas directory of Netlib.  However, this port uses the updated sources
 distributed with LAPACK.
-
-WWW: http://www.netlib.org/blas/

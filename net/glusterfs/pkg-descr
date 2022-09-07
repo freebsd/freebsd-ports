@@ -5,5 +5,3 @@ Infiniband RDMA or TCP/IP interconnect, aggregating disk and memory
 resources and managing data in a single global namespace.  GlusterFS
 is based on a stackable user space design and can deliver exceptional
 performance for diverse workloads.
-
-WWW: https://www.gluster.org

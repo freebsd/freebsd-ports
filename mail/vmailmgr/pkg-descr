@@ -19,5 +19,3 @@ co-operates with qmail for mail delivery and program control. It features:
       code.
     * A separate delivery agent that automatically deals with any address
       inside a virtual domain from a single .qmail-default file.
-
-WWW: http://www.vmailmgr.org

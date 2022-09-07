@@ -9,5 +9,3 @@ KDiff3 is a program that:
     * Manual alignment of lines,
     * Automatic merging of version control history (cvs Log keyword),
     * and has an intuitive graphical user interface.
-
-WWW: http://kdiff3.sourceforge.net/

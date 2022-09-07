@@ -19,5 +19,3 @@ between the DOS/Windows and the Unix formats.
 This port depends on ports/converters/libutf-8.
 
 Further details: RFC 2277, and RFC 2279.
-
-WWW: http://www.whizkidtech.redprince.net/i18n/

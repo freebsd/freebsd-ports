@@ -5,5 +5,3 @@ to provide facilities which are useful in the majority of graphics programs.
 
 This release introduces some (relatively small) incompatible changes with
 1.0.x versions of the library. Details on changes can be found below.
-
-WWW: http://mgarland.org/software/libgfx.html

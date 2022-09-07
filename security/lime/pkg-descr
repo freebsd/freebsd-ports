@@ -12,5 +12,3 @@ The library exposes a C, C++, Python and Java API for easy integration
 in mobile and desktop environments.
 
 LIME supports multiple devices per user and multiple users per device.
-
-WWW: https://www.linphone.org/technical-corner/lime

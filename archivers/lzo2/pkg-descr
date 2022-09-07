@@ -15,5 +15,3 @@ LZO implements a number of algorithms with the following features:
      compression.
    + Algorithm is thread safe.
    + Algorithm is lossless.
-
-WWW: http://www.oberhumer.com/opensource/lzo/

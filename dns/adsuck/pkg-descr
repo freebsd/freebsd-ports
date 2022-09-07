@@ -1,4 +1,2 @@
 adsuck is a DNS relay that returns NXdomain for hosts that match names in a
 blacklist for quick and non browser plugin based ad blocking.
-
-WWW: http://opensource.conformal.com/wiki/Adsuck

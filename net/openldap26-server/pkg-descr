@@ -7,5 +7,3 @@ This package includes the following major components:
  * LDIF tools - data conversion tools for use with slapd
 
 This is the latest stable release of OpenLDAP Software for general use.
-
-WWW: https://www.OpenLDAP.org/

@@ -19,5 +19,3 @@ Relic support
 - Although Hash::FieldHash uses a new feature introduced in Perl 5.10, the uvar
   magic for hashes described in "GUTS" in Hash::Util::Fieldhash, it supports
   Perl 5.8 using the traditional tie-hash layer.
-
-WWW: https://metacpan.org/release/Hash-FieldHash

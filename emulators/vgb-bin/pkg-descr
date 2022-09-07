@@ -9,5 +9,3 @@ handheld videogame console. It allows to run most of GameBoy software
 on a personal computer, as well as debug this software. As VGB is
 written in a portable C programming language, it runs on many
 different platforms and operating systems
-
-WWW: http://fms.komkon.org/VGB/

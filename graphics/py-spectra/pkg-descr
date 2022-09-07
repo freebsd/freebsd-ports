@@ -12,5 +12,3 @@ Support for:
 
 Spectra is built on colormath and grapefruit. Spectra is enormously inspired by
 chroma.js and d3's scales.
-
-WWW: https://pypi.python.org/pypi/spectra

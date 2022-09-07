@@ -12,5 +12,3 @@ maildir, and picking up the messages through qmail-pop3d, can switch to
 maildirsmtp without pestering the sysadmin. The user can also decide
 whether undeliverable messages should be left for POP retrieval or
 bounced back to the sender.
-
-WWW: http://cr.yp.to/serialmail.html

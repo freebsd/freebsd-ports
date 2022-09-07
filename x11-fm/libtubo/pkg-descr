@@ -3,5 +3,3 @@ process to run any other process in the background and communicate
 via the stdout, stderr and stdin file descriptors. This library is
 used by Rodent filemanager but is also available here for other
 programs to use freely.
-
-WWW: http://xffm.sourceforge.net/libtubo.html

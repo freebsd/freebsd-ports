@@ -7,5 +7,3 @@ for use in compilers and other text processing programs.
 LLgen, and therefore LLnextgen, extends on the LL(1) class of parser generators
 by allowing FIRST/FIRST conflicts and FIRST/FOLLOW conflicts to be resolved with
 both static and dynamic conditions.
-
-WWW: https://os.ghalkes.nl/LLnextgen/index.html

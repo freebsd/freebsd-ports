@@ -4,5 +4,3 @@ which supports many formats. It can render images of characters with
 high-quality hinting and antialiasing, extract metrics information,
 and extract the outlines of characters in scalable formats like
 TrueType.
-
-WWW: https://metacpan.org/release/Font-FreeType

@@ -5,5 +5,3 @@ check_postgres.pl is a Perl script that runs many different tests
 against one or more Postgres databases. It uses the psql program to
 gather the information, and outputs the results in one of three
 formats: Nagios, MRTG, or simple.
-
-WWW: https://bucardo.org/check_postgres/

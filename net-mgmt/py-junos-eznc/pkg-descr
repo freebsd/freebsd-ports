@@ -11,5 +11,3 @@ automation tasks. These capabilities include, but are not limited to:
 - Make configuration changes in unstructured and structured ways
 - Provide common utilities for tasks such as secure copy of files and software
   updates
-
-WWW: https://github.com/Juniper/py-junos-eznc

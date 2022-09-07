@@ -7,5 +7,3 @@ and "ncftpls".  Also included is a batch processing daemon,
 and also the "-b" flag of "ncftpput" and "ncftpget".  Lastly, the
 "ncftpbookmarks" program is a full-screen utility program to
 manipulate user's FTP bookmarks.
-
-WWW: https://www.ncftp.com/ncftp/

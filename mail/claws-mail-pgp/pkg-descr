@@ -8,5 +8,3 @@ signature and encryption features:
 - Optionally, caching your passphrase or using gpg-agent.
 
 S/MIME plugin handles S/MIME signed and/or encrypted mails.
-
-WWW: https://www.claws-mail.org/plugin.php?plugin=gpg

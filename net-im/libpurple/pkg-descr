@@ -19,5 +19,3 @@ and more.
 
 Libgaim is a backend library and protocol modules needed for Pidgin frontend
 frontends such as the GTK+ and console UIs.
-
-WWW: https://www.pidgin.im/

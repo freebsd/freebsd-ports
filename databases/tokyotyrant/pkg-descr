@@ -5,5 +5,3 @@ processes access the database. Thus, Tokyo Tyrant is provided for
 concurrent and remote connections to Tokyo Cabinet. It is composed of
 the server process managing a database and its access library for
 client applications.
-
-WWW: https://dbmx.net/tokyotyrant/

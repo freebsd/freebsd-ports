@@ -3,5 +3,3 @@ apitrace is a set of tools to:
 - replay OpenGL and OpenGL ES calls from a file
 - inspect OpenGL state at any call while retracing
 - visualize and edit trace files
-
-WWW: https://apitrace.github.io

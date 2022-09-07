@@ -4,5 +4,3 @@ declarations.
 The reader methods for all attributes with that option will throw an
 exception unless a value for the attributes was provided earlier by a
 constructor parameter or through a writer method.
-
-WWW: https://metacpan.org/release/MooseX-LazyRequire

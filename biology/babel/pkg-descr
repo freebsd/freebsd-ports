@@ -2,5 +2,3 @@ Babel is a program designed to interconvert a number of file formats
 currently used in molecular modeling.  Babel is capable of assigning
 hybridization, bond order, and connectivity when these elements are
 not present in the input file.
-
-WWW: http://smog.com/chem/babel/

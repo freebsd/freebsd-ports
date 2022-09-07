@@ -1,5 +1,3 @@
 This modules exports the needed subtypes, and coercions for POEx
 modules and is based on Sub::Exporter, so see that module for options
 on importing.
-
-WWW: https://metacpan.org/release/NPEREZ/POEx-Types-1.100910

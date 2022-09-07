@@ -6,5 +6,3 @@ Essentially all it does is export a method into your namespace that looks
 through a search path for .pm files and turn those into class names.
 
 Optionally it instantiates those classes for you.
-
-WWW: https://metacpan.org/release/Module-Pluggable

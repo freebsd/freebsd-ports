@@ -3,5 +3,4 @@ for Perl programs. The module may be used to search directories or perform
 maintenance functions such as add, deleting or modify entries in an LDAP
 directory.
 
-WWW: https://metacpan.org/release/perl-ldap
-WWW: http://ldap.perl.org/
+See also: https://ldap.perl.org/

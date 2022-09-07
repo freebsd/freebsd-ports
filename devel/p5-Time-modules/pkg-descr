@@ -9,5 +9,3 @@ This package contains the following perl5 modules:
 * Time::Timezone - miscellaneous timezone manipulations routines
 
 * Time::DaysInMonth - simply report the number of days in a month
-
-WWW: https://metacpan.org/release/MUIR/Time-modules-2013.0912

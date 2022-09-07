@@ -1,4 +1,2 @@
 An extension module for click to enable registering CLI commands via setuptools
 entry-points.
-
-WWW: https://pypi.org/project/click-plugins/

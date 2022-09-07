@@ -20,5 +20,3 @@ After midnight the following files would be used:
 
 	/www/logs/1997/01/01/access.log
 	/www/logs/1997/01/01/errors.log
-
-WWW: https://BSDforge.com/projects/sysutils/cronolog-devel

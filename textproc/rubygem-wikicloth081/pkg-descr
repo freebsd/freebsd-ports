@@ -6,5 +6,3 @@ Ruby parser for the MediaWiki markup language, supporting:
 - Disabling of wiki markup
 - References
 - HTML sanitization
-
-WWW: https://github.com/nricciar/wikicloth

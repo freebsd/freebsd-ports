@@ -2,5 +2,3 @@ This package is used for setting up, maintaining, and searching a CPAN database
 consisting of the information stored in the three main CPAN indices:
 $CPAN/modules/03modlist.data.gz, $CPAN/modules/02packages.details.txt.gz, and
 $CPAN/authors/01mailrc.txt.gz.
-
-WWW: https://metacpan.org/release/CPAN-SQLite

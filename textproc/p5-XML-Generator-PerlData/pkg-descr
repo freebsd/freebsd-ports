@@ -1,5 +1,3 @@
 XML::Generator::PerlData provides a simple way to generate SAX2 events from
 nested Perl data structures, while providing finer-grained control over the
 resulting document streams.
-
-WWW: https://metacpan.org/release/XML-Generator-PerlData

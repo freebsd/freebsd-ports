@@ -5,5 +5,3 @@ instant messaging. Erlang's runtime system has built-in support for
 concurrency, distribution and fault tolerance.
 
 This port contains the man pages for Erlang/OTP.
-
-WWW: https://www.erlang.org/

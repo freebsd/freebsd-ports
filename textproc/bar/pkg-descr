@@ -10,5 +10,3 @@ This is pure Bourne shell code. (For sh, ash, ksh, zsh, bash, ...)
 
 The script is mainly indented to be used in portable install scripts, where
 you can use the body of the script.
-
-WWW: http://www.theiling.de/projects/bar.html

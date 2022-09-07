@@ -6,5 +6,3 @@ Graceful / fast shutdown, Prometheus support, Grafana 8 dashboard,
 Remote management, Authentication query support, Failover support,
 Transport Layer Security (TLS) v1.2+ support, Daemon support, User
 vault, Lightweight connection pooler for PostgreSQL.
-
-WWW: https://agroal.github.io/pgagroal/

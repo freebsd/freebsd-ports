@@ -10,5 +10,3 @@ system works at microsecond and millisecond granularities.
 
 - It acts as an abstraction layer for threading, timing, and CPU
   scheduling functionality on Unix- and Win32-based systems
-
-WWW: http://www.cs.utah.edu/~regehr/hourglass/

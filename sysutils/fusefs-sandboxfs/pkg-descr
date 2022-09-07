@@ -7,5 +7,3 @@ different access privileges per directory.
 Sandboxfs is designed to allow running commands with limited access
 to the file system by using the virtual tree as their new root, and
 to do so consistently across a variety of platforms.
-
-WWW: https://github.com/bazelbuild/sandboxfs

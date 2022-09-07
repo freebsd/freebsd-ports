@@ -4,5 +4,3 @@ completely customizable.  It can output highlighted code for embedding
 in HTML, terminal escapes for an ANSI-capable display, or even posting
 on an online forum.  Bundled support includes C/C++, CSS, HTML, Java,
 Perl, PHP and SQL.
-
-WWW: https://metacpan.org/release/ICRF/text-highlight-0.04

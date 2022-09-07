@@ -10,5 +10,3 @@ changing where that line exists in the hierarchy. It doesn't know much else.
 Cisco::Reconfig can be used to modify configurations. The set() method will check
 the current configruation and return commands to change it if it is other than
 what is wanted (as passed to the set() method).
-
-WWW: https://metacpan.org/release/Cisco-Reconfig

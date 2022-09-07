@@ -5,5 +5,3 @@ only remote access to the machine. Using a flexible configuration file, GNU Rush
 gives administrator complete control over the command lines that users execute,
 and allows to tune the usage of system resources, such as virtual memory, CPU
 time, etc. on a per-user basis.
-
-WWW: https://puszcza.gnu.org.ua/software/rush/

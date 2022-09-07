@@ -2,5 +2,3 @@ Parses a mobile user agent string into it's basic constituent parts, the most
 important being vendor and model. One reason for doing this would be to use
 this information to lookup vendor-model specific device characteristics in a
 database.
-
-WWW: https://metacpan.org/release/Mobile-UserAgent

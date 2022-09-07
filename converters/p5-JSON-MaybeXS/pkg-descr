@@ -4,5 +4,3 @@ load JSON::PP. If neither is available, an exception will be thrown.
 It then exports the encode_json and decode_json functions from the loaded
 module, along with a JSON constant that returns the class name for calling new
 on.
-
-WWW: https://metacpan.org/release/JSON-MaybeXS

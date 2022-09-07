@@ -3,5 +3,3 @@ BibTeX entries to other formats, including customly defined
 text output. Furthermore, it provides the possibility to
 check URLs (including MD5, size and MIME type computations)
 and to verify ISBN and ISSN numbers.
-
-WWW: https://www.uni-due.de/~be0001/bibtexconv/

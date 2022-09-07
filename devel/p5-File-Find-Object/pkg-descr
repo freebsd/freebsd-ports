@@ -7,5 +7,3 @@ result.
 
 With File::Find::Object you can get the next file by calling the
 next() function, but setting a callback is still possible.
-
-WWW: https://metacpan.org/release/File-Find-Object

@@ -6,5 +6,3 @@ The only difference between this module and Text::Xslate::Bridge::TT2
 is that Bridge::TT2 uses Template::Toolkit underneath, while this
 module is independent of Template::Toolkit and therefore does not
 require TT to be installed.
-
-WWW: https://metacpan.org/release/Text-Xslate-Bridge-TT2Like

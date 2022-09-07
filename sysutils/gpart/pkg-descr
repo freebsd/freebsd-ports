@@ -5,5 +5,3 @@ or deleted. The guessed table can be written to a file or device.
 Supported (guessable) filesystem or partition types: DOS/Windows FAT, Linux
 ext2 and swap, OS/2 HPFS, Windows NTFS, FreeBSD and Solaris/x86 disklabels,
 Minix FS, Reiser FS
-
-WWW: https://github.com/baruch/gpart/

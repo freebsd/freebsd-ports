@@ -5,5 +5,3 @@ Features:
 - inserting new OTP key URI
 - validating OTP URI
 - appending OTP URI to existing password files
-
-WWW: https://github.com/tadfisher/pass-otp

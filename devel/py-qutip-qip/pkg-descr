@@ -16,5 +16,3 @@ simulating quantum circuits, one with QubitCircuit calculating unitary
 evolution under quantum gates by matrix product, another called
 Processor using open system solvers in QuTiP to simulate noisy quantum
 device.
-
-WWW: https://github.com/qutip/qutip-qip

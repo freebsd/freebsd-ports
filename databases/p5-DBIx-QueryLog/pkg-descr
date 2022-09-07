@@ -1,5 +1,3 @@
 DBIx::QueryLog is logs each execution time and the actual query.
 
 Currently, works on DBD::mysql and DBD::sqlite.
-
-WWW: https://metacpan.org/release/DBIx-QueryLog

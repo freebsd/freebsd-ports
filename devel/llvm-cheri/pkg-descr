@@ -4,5 +4,3 @@ and MIPS64.
 
 This port includes Clang (a C/C++/Objective-C compiler), LLD (a linker),
 and the LLVM infrastructure these are built on.
-
-WWW: http://cheri-cpu.org

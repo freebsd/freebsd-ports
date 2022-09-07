@@ -6,5 +6,3 @@ of reports.
 
 Ruport provides tools for using a number of data sources, including CSV files,
 ActiveRecord models, and raw SQL connections via RubyDBI (through ruport-util).
-
-WWW: https://github.com/ruport/ruport

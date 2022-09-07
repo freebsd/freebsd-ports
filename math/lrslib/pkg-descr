@@ -5,5 +5,3 @@ package. All computations are done exactly in either multiple  precision or
 fixed integer arithmetic. Output is not stored in memory, so even problems with
 very large output sizes can sometimes be solved. The program is intended for
 Unix/Linux platforms, but will compile using gcc/cygwin on Windows.
-
-WWW: http://cgm.cs.mcgill.ca/~avis/C/lrs.html

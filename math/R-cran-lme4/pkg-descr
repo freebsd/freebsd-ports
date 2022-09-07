@@ -2,5 +2,3 @@ Fit linear and generalized linear mixed-effects models. The models
 and their components are represented using S4 classes and methods.
 The core computational algorithms are implemented using the Eigen
 C++ library for numerical linear algebra and RcppEigen "glue".
-
-WWW: https://github.com/lme4/lme4

@@ -17,5 +17,3 @@ Features:
  * Idle dispatch callbacks
  * Thread pool
  * Interoperability with other event loops
-
-WWW: https://github.com/any1/aml

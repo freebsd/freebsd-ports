@@ -24,5 +24,3 @@ multiplexer written by @wez and implemented in Rust.
 - Connect to a remote multiplexer using SSH or TLS over TCP/IP
 - iTerm2 compatible image protocol support, and built-in imgcat command
 - Sixel graphics support
-
-WWW: https://wezfurlong.org/wezterm/

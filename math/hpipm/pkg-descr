@@ -4,5 +4,3 @@ efficient implementations of dense and structure-exploiting algorithms to solve
 small to medium scale problems arising in model predictive control and embedded
 optimization in general and it relies on the high-performance linear algebra
 package BLASFEO.
-
-WWW: https://github.com/giaf/hpipm

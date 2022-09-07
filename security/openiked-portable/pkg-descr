@@ -6,5 +6,3 @@ allows for easy setup and management of IPsec VPNs.
 The portable versions take the OpenBSD based source code and add
 compatibility functions and build infrastructure for other operating
 systems.
-
-WWW: https://github.com/openiked/openiked-portable

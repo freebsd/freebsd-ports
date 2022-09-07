@@ -1,4 +1,2 @@
 Plack::Middleware::RemoveRedundantBody removes body in HTTP response, if it is
 not required.
-
-WWW: https://metacpan.org/release/Plack-Middleware-RemoveRedundantBody

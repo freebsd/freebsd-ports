@@ -6,5 +6,3 @@ This module attempts to fix a glaring hole in pytz, that there is no way
 to get the local timezone information, unless you know the zoneinfo
 name, and under several Linux distros that's hard or impossible to
 figure out.
-
-WWW: https://github.com/regebro/tzlocal

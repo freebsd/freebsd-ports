@@ -6,5 +6,3 @@ feel.
 Internally aiomysql is copy of PyMySQL, underlying io calls switched to async,
 basically yield from and asyncio.coroutine added in proper places)). sqlalchemy
 support ported from aiopg.
-
-WWW: https://github.com/aio-libs/aiomysql

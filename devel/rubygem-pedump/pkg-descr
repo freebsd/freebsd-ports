@@ -1,3 +1,1 @@
 pedump provides a pure ruby implementation of Win32 PE binary files dumper.
-
-WWW: https://github.com/zed-0xff/pedump

@@ -8,5 +8,3 @@ Modules
     smb - Contains all the SMB operations and constants
     nmb - Contains some of the NetBIOS over TCP/IP operations which is
           necessary for the smb module to operate.
-
-WWW: http://miketeo.net/wp/index.php/projects/pysmb

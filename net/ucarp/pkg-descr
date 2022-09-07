@@ -6,5 +6,3 @@ Protocol (CARP, OpenBSD's alternative to the VRRP).
 Because UCARP does not require "promiscuous mode" on interfaces, it may be a
 suitable option in environments where carp(4) may be difficult to deploy,
 such as in clouds or other virtualized infrastructures.
-
-WWW: https://github.com/jedisct1/UCarp

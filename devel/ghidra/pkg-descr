@@ -11,5 +11,3 @@ of processor instruction sets and executable formats and can be run
 in both user-interactive and automated modes. Users may also develop
 their own Ghidra plug-in components and/or scripts using Java or
 Python.
-
-WWW: https://ghidra-sre.org/

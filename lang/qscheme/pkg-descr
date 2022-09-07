@@ -9,5 +9,3 @@ QScheme is really fast: benchmarks (still a little old) shows that it is
 generaly between 2 and 70 times faster than other scheme interpreters.
 
 Documentation and GTK support has been disabled in this port.
-
-WWW: http://www.sof.ch/dan/qscheme/index-e.html

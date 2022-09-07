@@ -4,5 +4,3 @@ in any compositor that implements wlr-output-management-unstable-v1.
 Compositors known to support the protocol are Sway and Wayfire.
 wdisplays' goal is to allow precise adjustment of display settings in
 kiosks, digital signage, and other elaborate multi-monitor setups.
-
-WWW: https://github.com/artizirk/wdisplays

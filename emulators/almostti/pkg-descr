@@ -5,5 +5,3 @@ TI-84+, TI-84+SE, TI-85, and TI-86.
 It requires ROM image to operate, which must be obtained separately.  RAM
 state is preserved across different runs, making complex usage scenarios
 possible.
-
-WWW: http://fms.komkon.org/ATI85/

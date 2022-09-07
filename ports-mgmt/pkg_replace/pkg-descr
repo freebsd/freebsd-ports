@@ -1,5 +1,3 @@
 pkg_replace is used to upgrade installed packages.
 It is compatible with portupgrade and can be used as
 an alternative to portupgrade and portmaster.
-
-WWW: http://portutil.osdn.jp/

@@ -3,5 +3,3 @@ work. PytorchVideo provides reusable, modular and efficient components needed
 to accelerate the video understanding research. PyTorchVideo is developed using
 PyTorch and supports different deeplearning video components like video models,
 video datasets, and video-specific transforms.
-
-WWW: https://github.com/facebookresearch/pytorchvideo

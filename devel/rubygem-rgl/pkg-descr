@@ -5,5 +5,3 @@ Library (BGL) which is written in C++ heavily using its template
 mechanism. Refer to http://www.boost.org/libs/graph/doc for further
 links and documentation on graph data structures and algorithms and
 the design rationales of BGL.
-
-WWW: https://github.com/monora/rgl

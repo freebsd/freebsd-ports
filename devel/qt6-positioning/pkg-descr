@@ -3,5 +3,3 @@ possible sources, including satellite, wifi, or text files. That information
 can then be used to, for example, determine a position on a map. In addition,
 you can use to the API to retrieve satellite information and perform area based
 monitoring.
-
-WWW: https://qt.io

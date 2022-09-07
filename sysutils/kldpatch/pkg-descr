@@ -4,5 +4,3 @@ and possibly apply specific quirks to enable/disable certain features.
 
 Kldpatch is especially useful to let the kernel recognise a new device
 without rebooting and rebuilding/reinstalling kernel or modules.
-
-WWW: http://info.iet.unipi.it/~luigi/FreeBSD/

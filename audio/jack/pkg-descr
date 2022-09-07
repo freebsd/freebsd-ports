@@ -4,5 +4,3 @@ both audio and MIDI data between applications.
 
 This provides the JACK server and libraries, example clients and tools are
 distributed separately now.
-
-WWW: https://jackaudio.org/

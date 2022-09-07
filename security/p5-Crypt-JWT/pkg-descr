@@ -11,5 +11,3 @@ The module implements all (100%) algorithms defined in RFC7518 - JSON
 Web Algorithms (JWA). This module supports Compact JWS/JWE and
 flattened JWS/JWE JSON serialization, general JSON serialization
 is not supported yet.
-
-WWW: https://metacpan.org/release/Crypt-JWT

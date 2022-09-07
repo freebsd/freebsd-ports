@@ -9,5 +9,3 @@ Key].  Also, SVGAlib corrects most of VGAlib's textmode corruption behavior
 by catching SIGSEGV, SIGFPE, SIGILL, and other fatal signals and ensuring
 that a program is running in the currently visible virtual console before
 setting a graphics mode.
-
-WWW: http://www.svgalib.org/

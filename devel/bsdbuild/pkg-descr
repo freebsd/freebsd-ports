@@ -8,5 +8,3 @@ recompiled (unless a separate build is requested). BSDBuild can also generate
 pure Bourne ./configure scripts, which function similarly to GNU-style
 configure scripts (as far as end-users are concerned), but are compiled using
 Perl modules instead of macro packages.
-
-WWW: http://bsdbuild.hypertriton.com/

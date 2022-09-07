@@ -4,5 +4,3 @@ Procedure Call and Procedure Return objects (formerly known as
 request and result), along with error objects. It also provides
 marshalling objects to convert the model objects into JSON text
 and HTTP requests/responses.
-
-WWW: https://metacpan.org/release/JSON-RPC-Common

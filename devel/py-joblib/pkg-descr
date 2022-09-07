@@ -7,5 +7,3 @@ particular, joblib offers:
 
 Joblib is optimized to be fast and robust in particular on large data and has
 specific optimizations for numpy arrays.
-
-WWW: https://github.com/joblib/joblib

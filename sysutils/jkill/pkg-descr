@@ -1,5 +1,3 @@
 Shutdowns a running jail and all its processes.
 
 No additional software or tools like "jailer(8)" needed.
-
-WWW: http://ext.by/jkill/

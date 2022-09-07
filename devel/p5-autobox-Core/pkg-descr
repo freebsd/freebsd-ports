@@ -8,5 +8,3 @@ minipulating numbers, strings, arrays, hashes, and code references.
 
 It can be handy to use built-in functions as methods to avoid messy
 dereferencing syntaxes and parentheses pile ups.
-
-WWW: https://metacpan.org/release/autobox-Core

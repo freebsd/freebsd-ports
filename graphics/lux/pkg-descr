@@ -8,5 +8,3 @@ produce synoptic views of several images and do stitching, HDR blending,
 exposure fusions, focus stacks and deghosting, usually from 'PTO' files,
 processing a subset of the panotools standard used by panorama stitching
 software like hugin.
-
-WWW: https://bitbucket.org/kfj/pv

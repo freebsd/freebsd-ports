@@ -4,5 +4,3 @@ library than the static library API, but they also sets requirements for
 libraries which needs to be implemented in the library side. PythonLibCore eases
 the problem by providing simpler interface and handling all the requirements
 towards the Robot Framework library APIs.
-
-WWW: https://github.com/robotframework/PythonLibCore

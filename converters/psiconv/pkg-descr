@@ -6,5 +6,3 @@ and output Word and TextEd files for use in other programs. Included is full
 documentation on several Psion 5(MX) file formats. This information is not
 available from Psion (it has been reverse-engineered from Psion files), and
 it's free for anybody to use.
-
-WWW: http://frodo.looijaard.name/project/psiconv

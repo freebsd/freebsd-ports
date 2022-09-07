@@ -1,5 +1,3 @@
 Math::Prime::XS detects and calculates prime numbers by either applying Modulo
 operator division, the Sieve of Eratosthenes, a Summation calculation or Trial
 division.
-
-WWW: https://metacpan.org/release/Math-Prime-XS

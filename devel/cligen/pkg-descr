@@ -7,5 +7,3 @@ and helps you develop CLI:s easier. You enter a CLI syntax either in a text
 file, you write callback functions where you call the right library routines.
 The callback functions add the semantics, that is, what the commands in the
 CLI are supposed to do.
-
-WWW: http://cligen.se/

@@ -5,5 +5,3 @@ Task::Catalyst::Tutorial.
 
 If you just want to run Catalyst applications, you probably don't need
 this manual, but you do need Catalyst::Runtime.
-
-WWW: https://metacpan.org/release/Catalyst-Manual

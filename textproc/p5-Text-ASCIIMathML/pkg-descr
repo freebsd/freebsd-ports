@@ -1,5 +1,3 @@
 Text::ASCIIMathML is a parser for ASCIIMathML text which produces
 MathML XML markup strings that are suitable for rendering by any
 MathML-compliant browser.
-
-WWW: https://metacpan.org/release/Text-ASCIIMathML

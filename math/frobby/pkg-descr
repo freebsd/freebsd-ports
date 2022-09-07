@@ -11,5 +11,3 @@ monomial ideals as well as the computation of Frobenius problems
 between formats that can be used with several different computer
 systems, such as Macaulay 2, Monos, 4ti2, CoCoA4 and Singular. Thus
 Frobby can be used with any of those systems.
-
-WWW: https://github.com/Macaulay2/frobby

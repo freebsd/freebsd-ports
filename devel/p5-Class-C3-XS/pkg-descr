@@ -7,5 +7,3 @@ This module won't do anything for you if you're running a
 version of Class::C3 older than 0.16.  (It's not a
 dependency because it would be circular with the optional
 dep from that package to this one).
-
-WWW: https://metacpan.org/release/Class-C3-XS

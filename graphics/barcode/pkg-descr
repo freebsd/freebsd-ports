@@ -9,5 +9,3 @@ Main features of GNU Barcode:
 * Postscript and Encapsulated Postscript output
 * Accepts sizes and positions as inches, centimeters, millimeters
 * Can create tables of barcodes (to print labels on sticker pages)
-
-WWW: http://www.gnu.org/software/barcode/

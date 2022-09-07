@@ -18,5 +18,3 @@ Non-exhaustive list of new features:
 - "yield from" Syntax
 - "concurrent.futures" Module
 - UTF-8 as the default source encoding
-
-WWW: https://github.com/naftaliharris/tauthon

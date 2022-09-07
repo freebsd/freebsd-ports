@@ -12,5 +12,3 @@ You can use Net::RabbitFoot to -
 
 Net::RabbitFoot is known to work with RabbitMQ versions 2.4.0 and version 0-8
 of the AMQP specification.
-
-WWW: https://metacpan.org/release/Net-RabbitFoot

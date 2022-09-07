@@ -12,5 +12,3 @@ script-based counterpart. The resulting performance gain would normally vary
 between packages, and is most noticeable in builds that invoke libtool a large
 number of times, and which are characterized by the short compilation duration
 of individual translation units.
-
-WWW: https://git.foss21.org/slibtool

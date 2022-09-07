@@ -5,5 +5,3 @@ in IETF RFC 7049.
 
 TinyCBOR is Intel's industrial strength C/C++ implementation of CBOR, as used in
 the IoTivity framework.
-
-WWW: https://github.com/intel/tinycbor

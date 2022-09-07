@@ -17,5 +17,3 @@ Requirements:
   https://docs.freebsd.org/en/books/handbook/kernelconfig/#kernelconfig-building
 * Make sure you have the "linux" kernel module loaded. On amd64, "linux64" is
   also required.
-
-WWW: https://www.makemkv.com

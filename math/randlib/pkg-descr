@@ -18,5 +18,3 @@ This library provides routines that return:
     (16) Integer uniform deviates between specified limits
     (17) Seeds for the random number generator calculated from a
          character string
-
-WWW: https://biostatistics.mdanderson.org/SoftwareDownload/SingleSoftware.aspx?Software_Id=27

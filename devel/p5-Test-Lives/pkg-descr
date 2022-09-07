@@ -11,5 +11,3 @@ different from Test::Exception, which employs hacky magic to relieve you of
 having to pass the description to the decorated assertion.)
 
 If the block ends up throwing an exception, a test failure will be logged.
-
-WWW: https://metacpan.org/dist/Test-Lives

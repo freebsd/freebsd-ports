@@ -12,5 +12,3 @@ Here's what Data::Printer has to offer to Perl developers, out of the box:
 - Ability to easily create filters for objects and regular structures
 - Ability to load settings from a .dataprinter file so you don't have to write
   anything other than "use DDP;" in your code!
-
-WWW: https://metacpan.org/release/Data-Printer

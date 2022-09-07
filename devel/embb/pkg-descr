@@ -7,5 +7,3 @@ operations are hidden in the library which relieves software developers
 from the burden of thread management and synchronization. This not only
 improves productivity of parallel software development, but also results
 in increased reliability and performance of the applications.
-
-WWW: https://github.com/siemens/embb

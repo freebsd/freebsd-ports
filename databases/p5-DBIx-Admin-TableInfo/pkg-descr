@@ -4,5 +4,3 @@ all of these DBI methods:
 - column_info()
 - primary_key_info()
 - foreign_key_info()
-
-WWW: https://metacpan.org/release/DBIx-Admin-TableInfo

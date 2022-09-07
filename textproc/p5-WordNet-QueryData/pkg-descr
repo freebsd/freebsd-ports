@@ -7,5 +7,3 @@ of speech are supported and access is generally very efficient because the
 index and morphical exclusion tables are loaded at initialization.  This
 initialization step is slow (appx. 10-15 seconds), but queries are very fast
 thereafter---thousands of queries can be completed every second.
-
-WWW: http://www.ai.mit.edu/people/jrennie/WordNet/

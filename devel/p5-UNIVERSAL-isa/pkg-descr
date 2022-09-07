@@ -8,5 +8,3 @@ it's called as a function on objects which override isa, isa will be
 called on those objects as a method.
 
 In all other cases the real UNIVERSAL::isa is just called directly.
-
-WWW: https://metacpan.org/release/UNIVERSAL-isa

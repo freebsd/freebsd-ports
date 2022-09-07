@@ -10,5 +10,3 @@ It is multi-platform and provides the following capabilities:
 
 In addition, it communicates with the Wazuh manager, sending data in near
 real-time through an encrypted and authenticated channel.
-
-WWW: https://github.com/wazuh/wazuh

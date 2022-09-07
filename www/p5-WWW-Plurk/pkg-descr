@@ -5,5 +5,3 @@ advantage of it. In the mean time use with caution.
 
 Ryan Lim did the heavy lifting of reverse engineering the API. His PHP
 implementation can be found at http://code.google.com/p/rlplurkapi/.
-
-WWW: https://metacpan.org/release/WWW-Plurk

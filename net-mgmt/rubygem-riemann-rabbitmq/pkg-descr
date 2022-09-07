@@ -1,5 +1,3 @@
 Submit detailed metrics from your RabbitMQ server or cluster, to the
 Riemann streaming event monitoring system, to allow monitoring and
 alerting of many rabbitmq internals from a central point.
-
-WWW: https://github.com/riemann/riemann-tools

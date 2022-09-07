@@ -3,5 +3,3 @@ a "C" parser for it, a parser that can parse either strings or files.
 
 This is a flexible tool, meant for smaller parsing tasks where
 bison+flex are just too big to use.
-
-WWW: http://www.nongnu.org/bnf/

@@ -4,5 +4,3 @@ test utility and static and dynamic libraries. SRS is a stop-gap
 for users of SPF (Sender Policy Framework).
 
 See https://github.com/Exim/exim/wiki/SRS for integration with exim.
-
-WWW: http://opsec.eu/src/srs/

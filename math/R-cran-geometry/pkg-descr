@@ -8,5 +8,3 @@ Qhull does not support constrained Delaunay triangulations, or mesh
 generation of non-convex objects, but the package does include some
 R functions that allow for this. Currently the package only gives
 access to Delaunay triangulation and convex hull computation.
-
-WWW: https://cran.r-project.org/web/packages/geometry/

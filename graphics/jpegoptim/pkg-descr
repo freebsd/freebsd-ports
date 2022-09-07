@@ -5,5 +5,3 @@ Provides:
   * lossless optimization
   * lossy optimization based on setting maximum quality factor
   * selective strip of comments and Exif markers
-
-WWW: http://www.kokkonen.net/tjko/projects.html#jpegoptim

@@ -9,5 +9,3 @@ tricks, but generally speaking most people only need the normal generators.
 There are two ways to access the generators, using a convenience typedef or by
 using the underlying templates directly (similar to C++11's std::mt19937 typedef
 vs its std::mersenne_twister_engine template).
-
-WWW: https://github.com/imneme/pcg-cpp

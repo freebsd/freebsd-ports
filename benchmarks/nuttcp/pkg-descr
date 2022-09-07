@@ -8,5 +8,3 @@ interval, or alternatively transferring a specified number of bytes.
 nuttcp is based on nttcp, but have several useful  features such
 as a server mode, rate limiting, multiple parallel streams, and
 timer based usage.
-
-WWW: http://nuttcp.net/

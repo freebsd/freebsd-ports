@@ -22,5 +22,3 @@ but makes some different design decisions:
   false positives it simplifies query creation. For example, the query $x = 10;
   will match both assignment expressions (foo = 10;) and declarations
   (int bar = 10;).
-
-WWW: https://github.com/googleprojectzero/weggli

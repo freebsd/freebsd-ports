@@ -19,5 +19,3 @@ steamcompmgr didn't support.
   rate as the only thing the game sees, and control/resize the output
   as needed. This can be useful in exotic display configurations like
   ultrawide or multi-monitor setups that involve rotation.
-
-WWW: https://github.com/Plagman/gamescope

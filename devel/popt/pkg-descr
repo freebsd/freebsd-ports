@@ -7,5 +7,3 @@ to getopt(3), it contains a number of enhancements, including:
         3) popt allows users to alias command line arguments
         4) popt provides convenience functions for parsing strings
            into argv[] style arrays
-
-WWW: http://freshmeat.net/projects/popt/

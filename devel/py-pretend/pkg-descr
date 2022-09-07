@@ -5,5 +5,3 @@ What is stubbing?
 Stubbing is a technique for writing tests. You may hear the term mixed
 up with mocks, fakes, or doubles. Basically a stub is an object that
 returns pre-canned responses, rather than doing any computation.
-
-WWW: https://github.com/alex/pretend

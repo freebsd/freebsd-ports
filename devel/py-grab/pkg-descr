@@ -14,5 +14,3 @@ to scrape web sites and to process the scraped content:
    library called Spider and it is too big to even list its features in this
    README.
  * Python 3 ready
-
-WWW: http://grablib.org/

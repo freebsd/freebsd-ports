@@ -10,5 +10,3 @@ The current pieces of GDL include:
 
  - An utility library that also contains the stubs and skels for
    the above components (gdl).
-
-WWW: https://www.gnome.org/

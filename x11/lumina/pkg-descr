@@ -9,5 +9,3 @@ user's productivity.
 This meta-package installs all the packages related to the Lumina desktop.
 If you want more fine-grained control over the installed utilities, please
 install the individual x11/lumina-* and deskutils/lumina-* packages instead.
-
-WWW: https://lumina-desktop.org/

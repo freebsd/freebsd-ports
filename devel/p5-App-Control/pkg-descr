@@ -4,5 +4,3 @@ executable. There is a very simple OO interface, where the constructor
 is used to specify the executable, command line arguments, and pidfile,
 and various methods (start, stop, etc.) are used to control the executable
 in the obvious way.
-
-WWW: https://metacpan.org/release/App-Control

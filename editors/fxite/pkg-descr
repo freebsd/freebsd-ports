@@ -5,5 +5,3 @@ recording and playback, multi-line regular expression search and
 replace, rudimentary ctags and calltip support, a flexible interface to
 external tools, and a built-in "message window" to capture the output of
 external commands such as compiler error messages, etc.
-
-WWW: https://github.com/yetanothergeek/fxite

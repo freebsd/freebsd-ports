@@ -3,5 +3,3 @@ Custom Sphinx directives are used to show Jupyter Notebook code cells (and of
 course their results) in both HTML and LaTeX output. Unevaluated notebooks --
 i.e. notebooks without stored output cells -- will be automatically executed
 during the Sphinx build process.
-
-WWW: https://github.com/spatialaudio/nbsphinx

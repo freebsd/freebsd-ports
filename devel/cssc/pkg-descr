@@ -14,5 +14,3 @@ system, such as git or Apache Subversion.
 However, SCCS (and CSSC) is still perfectly adequate for small projects.  For
 example, if you are familiar with SCCS, it is not unreasonable to control the
 files in /etc and /usr/local/etc on your private FreeBSD machine with CSSC.
-
-WWW: http://www.gnu.org/software/cssc/

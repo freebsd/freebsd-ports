@@ -1,4 +1,2 @@
 REST::Google::Apps::Provisioning provides a Perl interface to Google's
 RESTful Apps API.
-
-WWW: https://metacpan.org/release/REST-Google-Apps-Provisioning

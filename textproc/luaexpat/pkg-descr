@@ -11,5 +11,4 @@ chunk. LuaExpat reports parsing events (such as the start and end of elements)
 directly to the application through callbacks. The parsing of huge documents can
 benefit from this piecemeal operation.
 
-WWW: https://lunarmodules.github.io/luaexpat/
-WWW: https://github.com/lunarmodules/luaexpat
+See also: https://github.com/lunarmodules/luaexpat

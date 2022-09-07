@@ -6,5 +6,3 @@ ries from outside the eZ Components.
 Aside from the autoload functionality, the Base component also contains a
 number of generic Exception classes that all inherit from the ezcBaseExce-
 ption class.
-
-WWW: http://ezcomponents.org/

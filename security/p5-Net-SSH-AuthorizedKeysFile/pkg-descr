@@ -2,5 +2,3 @@ Net::SSH::AuthorizedKeysFile reads and modifies "authorized_keys"
 files.  "authorized_keys" files contain public keys and meta
 information to be used by "ssh" on the remote host to let users in
 without having to type their password.
-
-WWW: https://metacpan.org/release/Net-SSH-AuthorizedKeysFile

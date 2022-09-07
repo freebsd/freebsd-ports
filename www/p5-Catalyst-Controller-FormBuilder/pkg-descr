@@ -5,5 +5,3 @@ such as controllablefield stickiness, multilingual support, and Javascript
 generation. For more details, see CGI::FormBuilder or the website at:
 
     http://www.formbuilder.org
-
-WWW: https://metacpan.org/release/Catalyst-Controller-FormBuilder

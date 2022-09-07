@@ -9,5 +9,3 @@ to the host and port specified.  On the other hand, it also could
 be used in a scripting way using the STDOUT module.
 
 It is written in Perl.
-
-WWW: https://github.com/wireghoul/dotdotpwn

@@ -4,5 +4,3 @@ Iorate was created in 1997 by Vince Westin of EMC while working with Cliff
 Burrell of FedEx to fill a need to perform a set of storage I/O benchmarks.
 Though Iorate was developed by EMC staff with EMC resources there are no
 EMC-specific pieces to the testing, it just tests storage.
-
-WWW: http://iorate.org/

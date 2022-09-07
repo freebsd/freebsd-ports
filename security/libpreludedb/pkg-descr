@@ -8,5 +8,3 @@ systems dedicated to enriching information even further (snort, samhain,
 ossec, auditd, etc.).
 
 This library provides a framework for easy access to the Prelude database.
-
-WWW: https://www.prelude-siem.org/

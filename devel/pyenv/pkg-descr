@@ -5,5 +5,3 @@ single-purpose tools that do one thing well.
 
 This project was forked from rbenv and ruby-build, and modified for
 Python.
-
-WWW: https://github.com/pyenv/pyenv

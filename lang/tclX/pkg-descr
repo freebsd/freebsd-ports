@@ -6,5 +6,3 @@ programming tasks, with many additional interfaces to the Unix
 operating system, It is upwardly compatible with Tcl.  You take
 the Extended Tcl package, add it to Tcl, and from that you get
 Extended Tcl.
-
-WWW: http://tclx.sourceforge.net/

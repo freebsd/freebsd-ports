@@ -4,5 +4,3 @@ escape sequences into customizable HTML (with a small amount of code).
 Parse::ANSIColor::Tiny returns a data structure that's easy to reformat
 into any desired output.  Reformatting to HTML seemed simple and common
 enough to warrant this module as well.
-
-WWW: https://metacpan.org/release/HTML-FromANSI-Tiny

@@ -11,5 +11,3 @@ keystroke (Control+a by default) which then allows a number of bindings
 accessible with just a single keystroke or any other combination. For
 example, to cycle through available windows in a frame, press Control+a
 then n.
-
-WWW: https://github.com/jcs/sdorfehs

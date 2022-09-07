@@ -18,5 +18,3 @@ Notable features include:
   * Generates complex where clauses from hashes and arrays.
   * Shortcuts (convenience functions) for some common cases. (Like
     select_all_to_hashref.)
-
-WWW: https://metacpan.org/release/DBIx-Abstract

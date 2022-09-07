@@ -8,5 +8,3 @@ backends can be dynamically loaded. PyVISA-py is one of such backends. It
 implements most of the methods for Message Based communication
 (Serial/USB/GPIB/Ethernet) using Python and some well developed, easy to deploy
 and cross platform libraries.
-
-WWW: https://github.com/pyvisa/pyvisa-py

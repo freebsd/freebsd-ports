@@ -9,5 +9,3 @@ magicfilter is primarily intended for use as the `input filter' by the
 lpd print spooler. The options accepted by magicfilter are exactly the
 ones passed to the input filter by lpd (unless you build it on a LPRng
 system -- in that case, magicfilter accepts no options.)
-
-WWW: http://www.pell.portland.or.us/~orc/Code/magicfilter/

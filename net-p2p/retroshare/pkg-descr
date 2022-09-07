@@ -3,5 +3,3 @@ decentralised communication platform. It lets you to securely chat
 and share files with your friends and family, using a web-of-trust
 to authenticate peers and OpenSSL to encrypt all communication.
 RetroShare provides filesharing, chat, messages, forums and channels.
-
-WWW: https://retroshare.github.io/

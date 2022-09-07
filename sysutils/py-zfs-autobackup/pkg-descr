@@ -18,5 +18,3 @@ will do everything, except make changes to your zfs datasets. Another nice
 thing is progress reporting: Its very useful with HUGE datasets,
 when you want to know how many hours/days it will take. zfs-autobackup tries to
 be the easiest to use backup tool for zfs.
-
-WWW: https://github.com/psy0rz/zfs_autobackup

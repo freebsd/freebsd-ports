@@ -3,5 +3,3 @@ Data::SpreadPagination can be used to create an easy to use spread pagination
 navigator. It inherits from Data::Page, and in addition provides methods to
 create a pagination spread, keeping pagenumbers displayed within a sensible
 limit.
-
-WWW: https://metacpan.org/release/Data-SpreadPagination

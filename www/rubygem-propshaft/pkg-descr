@@ -4,5 +4,3 @@ JavaScript and CSS are either compiled by dedicated Node.js bundlers or served
 directly to the browsers, and where increases in bandwidth have made the need
 for minification less pressing. These factors allow for a dramatically simpler
 and faster asset pipeline compared to previous options, like Sprockets.
-
-WWW: https://github.com/rails/propshaft

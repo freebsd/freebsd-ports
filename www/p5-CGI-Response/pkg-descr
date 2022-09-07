@@ -12,5 +12,3 @@ More advanced applications may employ the Full Interface object
  methods to access any HTTP header, or to add experimental or
  non-standard headers. Both interfaces try to generate reasonable
  defaults whenever possible.
-
-WWW: https://metacpan.org/release/MGH/CGI-Response-0.03

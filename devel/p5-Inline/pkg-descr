@@ -15,5 +15,3 @@ whenever it is modified) so you only take the performance hit once. Code
 that is Inlined into distributed modules (like on the CPAN) will get
 compiled when the module is installed, so the end user will never notice
 the compilation time.
-
-WWW: https://metacpan.org/release/Inline

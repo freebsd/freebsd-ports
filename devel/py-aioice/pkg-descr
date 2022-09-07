@@ -5,5 +5,3 @@ framework.
 Interactive Connectivity Establishment (ICE) is useful for applications that
 establish peer-to-peer UDP data streams, as it facilitates NAT traversal.
 Typical usecases include SIP and WebRTC.
-
-WWW: https://github.com/jlaine/aioice

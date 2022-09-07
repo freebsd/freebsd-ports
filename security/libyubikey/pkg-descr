@@ -1,4 +1,2 @@
 Library for decrypting and parsing YubiKey One-Time Passwords (OTP),
 written in C.
-
-WWW: https://developers.yubico.com/yubico-c/

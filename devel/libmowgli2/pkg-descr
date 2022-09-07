@@ -4,5 +4,3 @@ to GLib (to add additional functions (dictionaries, hashes), or replace
 some of the slow GLib list manipulation functions), or stand alone. It
 also provides a powerful hook system and convenient logging for your code,
 as well as a high performance block allocator.
-
-WWW: https://github.com/atheme/libmowgli-2

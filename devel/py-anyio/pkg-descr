@@ -15,5 +15,3 @@ It bridges the following functionality:
 You can even use it together with native libraries from your selected backend in
 applications. Doing this in libraries is not advisable however since it limits
 the usefulness of your library.
-
-WWW: https://github.com/agronholm/anyio

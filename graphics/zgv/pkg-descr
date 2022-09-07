@@ -4,5 +4,3 @@ full-screen file selector front-end. It can be used as a simple
 command, with zgv filename(s), which bypasses the front-end. For
 more on how zgv works and how to use it, do `info zgv' or `man zgv'
 once it's installed.
-
-WWW: http://www.svgalib.org/rus/zgv/

@@ -6,5 +6,3 @@ The Ruby standard library contains the core classes of the dRuby package.
 However, the full package also includes access control lists and the Rinda
 tuple-space distributed task management system, as well as a large number of
 samples.
-
-WWW: https://github.com/ruby/drb

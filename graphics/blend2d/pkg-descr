@@ -6,5 +6,3 @@ while quality is comparable to rasterizers used by AGG and FreeType. The
 performance has been optimized by using an innovative approach to index data
 that is built during rasterization and scanned during composition. The
 rasterizer is robust and excels in rendering complex vector art and text.
-
-WWW: https://blend2d.com/

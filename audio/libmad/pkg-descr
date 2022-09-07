@@ -14,5 +14,3 @@ MAD has the following special features:
 
 The software is distributed as a library (libmad) and command-line front-end
 (madplay). Also included is an ID3 tag manipulation library (libid3tag).
-
-WWW: https://www.underbit.com/products/mad/

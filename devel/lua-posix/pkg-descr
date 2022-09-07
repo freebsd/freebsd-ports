@@ -5,5 +5,3 @@ underlying system and bind only available APIs.
 
 For a while, luaposix contained support for curses functionality too, but now it
 has its own lcurses repository again, where it is being maintained separately.
-
-WWW: https://github.com/luaposix/luaposix

@@ -1,5 +1,3 @@
 These modules provide a basis for parsing snort configuration files and
 rules, allow tools to be built that muck with rulesets with less effort.
 An example tool, snortconfig, is included.
-
-WWW: https://projects.honeynet.org/svn/honeywall/honeywall/trunk/rpm-devel/perl-Net-Snort-Parser/

@@ -10,5 +10,3 @@ Due to Cloudflare continually changing and hardening their protection page,
 cloudflare-scrape requires js2py to solve Javascript challenges. This allows
 the script to easily impersonate a regular web browser without explicitly
 deobfuscating and parsing Cloudflare's Javascript.
-
-WWW: https://github.com/VeNoMouS/cloudflare-scrape-js2py

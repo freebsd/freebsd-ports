@@ -6,5 +6,3 @@ Net::HTTP is a sub-class of one of IO::Socket::IP (IPv6+IPv4), IO::Socket::INET6
 (IPv6+IPv4), or IO::Socket::INET (IPv4 only). You can mix the methods described
 below with reading and writing from the socket directly. This is not necessary a
 good idea, unless you know what you are doing.
-
-WWW: https://metacpan.org/release/Net-HTTP

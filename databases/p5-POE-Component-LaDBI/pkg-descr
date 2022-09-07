@@ -1,4 +1,2 @@
 POE Component that spawns a perl subprocess to handle non-blocking
 access to the DBI API.
-
-WWW: https://metacpan.org/release/POE-Component-LaDBI

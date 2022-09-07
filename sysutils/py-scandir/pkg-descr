@@ -10,5 +10,3 @@ to speed it up significantly.
 
 NOTE: If you're using Python version 3.5+, os.scandir() and the speed
 improvements to os.walk() are already available in the standard library.
-
-WWW: https://github.com/benhoyt/scandir

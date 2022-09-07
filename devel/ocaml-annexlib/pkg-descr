@@ -8,5 +8,3 @@ old library (stew) that I broke up into a couple of smaller ones. This
 one /was/ extlib, now annexlib. Its companion is mathlib.
 
 See supplied documentation for additional info.
-
-WWW: http://raevnos.pennmush.org/code/extlib/

@@ -7,5 +7,3 @@ The wise choice for Ruby memoization.
 * Support for inheritance of memoized class and instance methods
 * Documented and tested thread-safety guarantees
 * Full documentation and test coverage!
-
-WWW: https://github.com/panorama-ed/memo_wise

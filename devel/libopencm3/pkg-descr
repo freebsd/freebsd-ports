@@ -14,5 +14,3 @@ with a GCC toolchain for ARM (arm-elf or arm-none-eabi), flashing of the
 code to a microcontroller can be done using the OpenOCD ARM JTAG software.
 
 This port depends on devel/gcc-arm-embedded toolchain.
-
-WWW: https://github.com/libopencm3/libopencm3

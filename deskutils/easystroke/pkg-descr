@@ -6,5 +6,3 @@ easystroke can emulate key presses, execute shell commands, hold down
 modifiers and emulate a scroll wheel. The program was designed with
 Tablet PCs in mind and can be used effectively even without access to
 a keyboard.
-
-WWW: https://github.com/thjaeger/easystroke

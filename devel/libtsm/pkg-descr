@@ -14,5 +14,3 @@ terminal emulation only. Furthermore, TSM does not try to establish a new
 terminal emulation standard, but instead keeps compatibility as close to xterm
 as possible. This is why the TERM variable can be set to xterm-color256 with
 any TSM based terminal emulator.
-
-WWW: https://www.freedesktop.org/wiki/Software/kmscon/libtsm/

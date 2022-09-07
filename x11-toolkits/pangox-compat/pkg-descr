@@ -5,5 +5,3 @@ code is platform- and toolkit-independent.
 
 This port supplies the deprecated pangox interface which was removed from
 the pango port.
-
-WWW: http://www.pango.org/

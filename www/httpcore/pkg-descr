@@ -13,5 +13,3 @@ Java 5.0 compatible runtime and the HttpCore base module. HttpCore NIO
 extensions are intended for those usage scenarios where raw throughput is
 less important than the ability to handle thousands of simultaneous HTTP
 connections in a resource efficient manner.
-
-WWW: https://hc.apache.org/httpcomponents-core-4.4.x/

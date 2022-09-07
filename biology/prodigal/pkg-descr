@@ -18,5 +18,3 @@ Features:
   translation initiation site for most genes, and can output information about
   every potential start site in the genome, including confidence score, RBS
   motif, and much more.
-
-WWW: https://github.com/hyattpd/Prodigal

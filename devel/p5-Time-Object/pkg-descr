@@ -2,5 +2,3 @@ This module replaces the standard localtime and gmtime functions
 with implementations that return objects. It does so in a backwards
 compatible manner, so that using localtime/gmtime in the way documented
 in perlfunc will still return what you expect.
-
-WWW: https://metacpan.org/release/Time-Object

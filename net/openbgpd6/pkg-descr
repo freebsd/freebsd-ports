@@ -5,5 +5,3 @@ other systems speaking the BGP protocol.
 This is the portable version and it does not have the means to
 influence kernel routing tables. It is only suitable for route
 servers/collectors.
-
-WWW: http://www.openbgpd.org/

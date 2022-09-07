@@ -8,5 +8,3 @@ It includes a powerful debugger, fully featured request and response
 objects, HTTP utilities to handle entity tags, cache control headers,
 HTTP dates, cookie handling, file uploads, a powerful URL routing
 system and a bunch of community contributed add-on modules.
-
-WWW: https://palletsprojects.com/p/werkzeug/

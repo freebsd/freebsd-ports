@@ -6,5 +6,3 @@ It is faster in parsing then XML::Simple, XML::Hash, XML::Twig and
 of course much slower than XML::Bare.
 
 It is faster in composing than XML::Hash, but slower than XML::Simple.
-
-WWW: https://metacpan.org/release/XML-Hash-LX

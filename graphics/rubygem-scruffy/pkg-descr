@@ -2,5 +2,3 @@ Scruffy is a Ruby library for creating great looking graphs and charts.
 Graphs can be rendered to SVG code or an image. Blend the beauty of Gruff
 with the SVG capabilities of SVG::Graph, make it super simple and extensible,
 and you've got Scruffy.
-
-WWW: https://github.com/brasten/scruffy

@@ -6,5 +6,3 @@ needed. The filesystem is currently stable, and has been tested on
 PowerPC, i586, Sparc and ARM architectures.
 
 squashfs-tools are the set of tools to manipulate squashfs images.
-
-WWW: http://squashfs.sourceforge.net/

@@ -1,5 +1,3 @@
 Net::IMAP::Client provides methods to access an IMAP server.  It aims to
 provide a simple and clean API, while employing a rigorous parser for
 IMAP responses in order to create Perl data structures from them.
-
-WWW: https://metacpan.org/release/Net-IMAP-Client

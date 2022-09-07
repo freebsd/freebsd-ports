@@ -8,5 +8,3 @@ This is gnuplot.
 Scripts to save data in gnuplot-readable formats, specify gnuplot commands
 that will be used to produce graphics, and call gnuplot. See help g_ez
 quickly produce the most common plots.
-
-WWW: http://octave.sourceforge.net/

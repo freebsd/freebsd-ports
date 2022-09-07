@@ -13,5 +13,3 @@ applications, a working evaluator. The result is a system that is useful
 not only to our customers for the applications they distribute, but also
 to people who want to use a top-quality Scheme system and can't justify
 purchasing Chez Scheme.
-
-WWW: http://www.scheme.com/petitechezscheme.html

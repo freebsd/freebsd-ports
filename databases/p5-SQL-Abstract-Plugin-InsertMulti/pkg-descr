@@ -5,5 +5,3 @@ methods to SQL::Abstract namespace from
 SQL::Abstract::Plugin::InsertMulti.
 
 Plugin system is depends on 'into' options of Sub::Exporter.
-
-WWW: https://metacpan.org/release/SQL-Abstract-Plugin-InsertMulti

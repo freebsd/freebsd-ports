@@ -2,5 +2,3 @@ slst generates statistics from the output of syslog.
 
 With slst one can find tendencies and unexpected changes in the behaviour of
 the running processes.
-
-WWW: http://www.vanheusden.com/slst/

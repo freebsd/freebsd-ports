@@ -7,5 +7,3 @@ mate-text-editor (Pluma) is a Gtk3 text editor. Its features include:
 	* Printing support
 	* Configurable Plugins system
 	* Unlimited Undo/Redo
-
-WWW: http://mate-desktop.org/

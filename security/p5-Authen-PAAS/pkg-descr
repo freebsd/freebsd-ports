@@ -18,5 +18,3 @@ accounts in a text configuration file. Since it merely delegates through
 to the underlying C libraries, the Authen::PAM module does not provide a
 convenient means to write new authentication schemes in Perl. Thus the
 Authen::PAAS distribution provides a pure Perl API for authentication.
-
-WWW: https://metacpan.org/release/DANBERR/Authen-PAAS-1.1.1

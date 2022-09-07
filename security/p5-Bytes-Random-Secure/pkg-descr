@@ -16,5 +16,3 @@ random number generator comes from Math::Random::ISAAC, and is suitable for
 cryptographic purposes. The harder problem to solve is how to seed the
 generator. This module uses Crypt::Random::Seed to generate the initial seeds
 for Math::Random::ISAAC.
-
-WWW: https://metacpan.org/release/Bytes-Random-Secure

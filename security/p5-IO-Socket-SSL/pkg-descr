@@ -2,5 +2,3 @@ IO::Socket::SSL is a class implementing an object oriented
 interface to SSL sockets. The class is a descendent of
 IO::Socket::INET and provides a subset of the base class's
 interface methods.
-
-WWW: https://metacpan.org/release/IO-Socket-SSL

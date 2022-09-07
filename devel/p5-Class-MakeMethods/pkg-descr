@@ -3,5 +3,3 @@ define common types of methods. When a module "use"s a subclass of
 Class::MakeMethods, it can select from the supported method types, and
 specify a name for each method desired. The methods are dynamically
 generated and installed in the calling package.
-
-WWW: https://metacpan.org/release/Class-MakeMethods

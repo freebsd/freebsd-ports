@@ -2,5 +2,3 @@ This port installs the module CXSparse of SuiteSparse.
 
 CXSparse is a version of CSparse that operates on both real and complex
 matrices, using either int or SuiteSparse_long integers.
-
-WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html

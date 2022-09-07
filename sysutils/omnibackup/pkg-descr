@@ -17,5 +17,3 @@ permissions inside backup files. And, last but not least it provides random
 passphrase generation for encrypted archives with variable length and patterns
 or a unique passphrase for all backups. It's also possible to encrypt each
 passphrase by using RSA public keys for individual backup servers.
-
-WWW: https://github.com/NuLL3rr0r/omnibackup

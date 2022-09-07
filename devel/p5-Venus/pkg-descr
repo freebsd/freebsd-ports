@@ -7,5 +7,3 @@ command-line options parsing, and more. This package will always automatically
 exports true and false keyword functions (unless existing routines of the same
 name already exist in the calling package or its parents), otherwise exports
 keyword functions as requested at import.
-
-WWW: https://metacpan.org/dist/Venus

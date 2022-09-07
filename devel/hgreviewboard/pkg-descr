@@ -2,5 +2,3 @@ reviewboard extension for mercurial
 
 This extension adds a new command 'postreview' to post changesets for
 review to a reviewboard server.
-
-WWW: http://www.review-board.org/

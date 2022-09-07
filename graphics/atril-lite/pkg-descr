@@ -3,5 +3,3 @@ Postscript.  The goal of Atril is to replace document viewers such as ggv and
 gpdf with a single, simple application.
 
 This lite version doesn't have depend on MATE libraries. Such as caja.
-
-WWW: http://mate-desktop.org/

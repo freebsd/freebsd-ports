@@ -6,5 +6,3 @@ dnspython provides both high and low level access to DNS. The high
 level classes perform queries for data of a given name, type, and
 class, and return an answer set. The low level classes allow direct
 manipulation of DNS zones, messages, names, and records.
-
-WWW: http://www.dnspython.org/

@@ -6,5 +6,3 @@ The Amazon SES Scripts zip archive contains the following Perl scripts:
 - ses-verify-email-addresses.pl: verify email addresses to be used with
                                  Amazon SES.
 - SES.pm: a module used by all of the above scripts.
-
-WWW: http://aws.amazon.com/code/Amazon-SES/8945574369528337

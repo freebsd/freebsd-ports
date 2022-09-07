@@ -8,5 +8,3 @@ doesn't use whitespaces between words (like Chinese and Japanese) is supported.
 
 Like Text::Wrap, hyphenation and "kinsoku" processing are not supported, to keep
 simplicity.
-
-WWW: https://metacpan.org/release/Text-WrapI18N

@@ -1,4 +1,2 @@
 libebur128 is a library that implements the EBU R 128 standard for loudness
 normalization.
-
-WWW: https://github.com/jiixyj/libebur128

@@ -5,5 +5,3 @@ greatly reduce Verilog coding time.
 Recent versions allow you to insert AUTOS in non-AUTO designs, so IP
 interconnect can be easily modified. You can also expand Verilog-2001 ".*"
 instantiations, to see what ports will be connected by simulators.
-
-WWW: https://www.veripool.org/wiki/verilog-mode

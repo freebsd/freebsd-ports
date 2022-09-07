@@ -8,5 +8,3 @@ performing and which ones require some attention.
 The Hiawatha Monitor is a PHP web application with a MySQL database
 backend.  It requires the cron daemon for periodic downloading of
 statistical information from the web servers it monitors.
-
-WWW: https://www.hiawatha-webserver.org/monitor

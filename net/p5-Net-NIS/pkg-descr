@@ -6,5 +6,3 @@ object-oriented component (Net::NIS::Table), and the tied interface
 Unless someone provides strong reason to support the raw or OO
 components, they will be marked as deprecated and not documented or
 enhanced (but still supported for backward compatibility).
-
-WWW: https://metacpan.org/release/Net-NIS

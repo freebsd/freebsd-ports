@@ -12,5 +12,3 @@ unique to keyd. Some of the more interesting ones include:
 - System wide config (works in a VT).
 - First class support for modifier overloading.
 - Unicode support.
-
-WWW: https://github.com/rvaiya/keyd

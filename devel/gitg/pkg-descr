@@ -5,5 +5,3 @@ representation of data and actions. It can:
  * Commit changes
  * Show colorized diff of changes in revisions
  * Handles extremely large projects very well
-
-WWW: https://wiki.gnome.org/Apps/Gitg

@@ -4,5 +4,3 @@ equipment.
 LibreVISA aims to be a compliant implementation of the VISA standard in
 a free software library. Currently support for targets connected via USB,
 exposing the USBTMC interface, and VXI-11 devices.
-
-WWW: http://www.librevisa.org/

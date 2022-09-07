@@ -1,4 +1,2 @@
 Client library for interacting with the CloudFoundry User Account and
 Authorization (UAA) server.
-
-WWW: https://github.com/cloudfoundry/cf-uaa-lib

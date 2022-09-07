@@ -4,5 +4,3 @@ filter_type none, and libpng adaptive filtering, with compression
 levels 3 and 9).  It does the most time-consuming method last in case
 it turns out to be the best.  Optionally, it can remove unwanted
 chunks or add gAMA and sRGB chunks.
-
-WWW: http://pmt.sourceforge.net/pngcrush/

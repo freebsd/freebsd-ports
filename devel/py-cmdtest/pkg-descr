@@ -2,5 +2,3 @@ cmdtest black box tests Unix command line tools. Roughly, it is given a command
 line and input files, and the expected output, and it verifies that the command
 line produces the expected output. If not, it reports a problem, and shows the
 differences.
-
-WWW: https://liw.fi/cmdtest/

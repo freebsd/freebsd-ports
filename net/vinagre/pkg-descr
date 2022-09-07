@@ -6,5 +6,3 @@ Vinagre is a VNC Client for the GNOME Desktop.  Its features include:
 * You can browse your network for VNC servers, we like avahi
 * You don't need to supply the password on every connection, we like GNOME
   Keyring
-
-WWW: http://www.gnome.org/projects/vinagre/

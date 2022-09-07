@@ -4,5 +4,3 @@ host-provided musical time.
 
 mclk.lv2 supports Transport, Song-Position and MIDI Clock and allows to only
 generate a subset.
-
-WWW: https://github.com/x42/mclk.lv2

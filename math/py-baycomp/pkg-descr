@@ -7,5 +7,3 @@ practical equivalence (rope), or that the second classifier has higher scores.
 We will refer to this probabilities as p_left, p_rope and p_right. If the
 argument rope is omitted (or set to zero), functions return only p_left and
 p_right.
-
-WWW: https://github.com/janezd/baycomp

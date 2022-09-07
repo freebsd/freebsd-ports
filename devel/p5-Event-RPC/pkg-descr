@@ -6,5 +6,3 @@ Event, Glib and AnyEvent are implemented. The latter lets you use nearly every
 event loop implementation available for Perl. AnyEvent was invented after
 Event::RPC was created and thus Event::RPC started using it's own abstraction
 model.
-
-WWW: https://metacpan.org/release/Event-RPC

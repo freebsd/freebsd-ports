@@ -5,5 +5,3 @@ make the output platform specific.
 This module forked from File::MimeInfo.
 
 For this module the XDG basedir specification 0.6 was used.
-
-WWW: https://metacpan.org/release/File-BaseDir

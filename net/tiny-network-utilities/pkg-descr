@@ -1,4 +1,2 @@
 The collection of minimalistic network server implementations to support
 virtual machine network connectivity: DHCP, UDP proxy, UDP anti-NAT.
-
-WWW: https://github.com/yurivict/tiny-network-utilities

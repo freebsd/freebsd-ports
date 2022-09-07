@@ -6,5 +6,3 @@ Nicolas Gama, Mariya Georgieva, Malika Izabachene.
 The Fully Homomorphic Encryption is a cryptosystem that supports arbitrary
 computation on ciphertexts. It may be used by banks to perform computations on
 fully encrypted client information.
-
-WWW: https://github.com/tfhe/tfhe

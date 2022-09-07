@@ -5,5 +5,3 @@ Graphene is a Python library for building GraphQL schemas/types fast and easily.
 SQLAlchemy), NoSQL, custom Python objects, etc. We believe that by providing a
 complete API you could plug Graphene anywhere your data lives and make your data
 available through GraphQL.
-
-WWW: https://github.com/graphql-python/graphene

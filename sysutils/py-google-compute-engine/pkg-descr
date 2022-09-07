@@ -10,5 +10,3 @@ background and provides the following services:
   rule changes into the guest.
 - Metadata scripts to run user provided scripts at VM startup and shutdown.
 - Network setup service to enable multiple network interfaces on boot.
-
-WWW: https://github.com/GoogleCloudPlatform/compute-image-packages

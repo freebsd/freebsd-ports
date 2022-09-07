@@ -5,5 +5,3 @@ maven2 repositories.
 
 Note: This is a forked version from the 2.x branch that supports unicode and
       uses other routines for data structures.
-
-WWW: https://github.com/nexB/pymaven

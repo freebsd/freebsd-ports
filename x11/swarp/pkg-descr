@@ -2,5 +2,3 @@ Simple pointer warp is a generic pointer warping utility for X11.
 It allows you to place the pointer to arbitrary x/y coordinates,
 for instance from within scripts.  It is especially useful in
 conjunction with scripted window managers such as wmii.
-
-WWW: https://tools.suckless.org/x/swarp

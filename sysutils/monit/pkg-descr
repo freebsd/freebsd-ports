@@ -20,5 +20,3 @@ monit supports:
  * Protocol verification such as HTTP, FTP, SMTP, POP, IMAP, NNTP, NTP, etc.
  * A HTTP interface with XML output option
  and many more features :)
-
-WWW: https://mmonit.com/monit/

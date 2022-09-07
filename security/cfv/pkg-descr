@@ -11,5 +11,3 @@ Features:
    - transparent gzip support for checksum files
    - configurable renaming of bad files (with testing against previous bad
      files, to save only unique differing copies)
-
-WWW: https://github.com/cfv-project/cfv

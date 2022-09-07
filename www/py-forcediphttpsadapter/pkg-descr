@@ -10,5 +10,3 @@ is (assuming I want http://example.com/some/path on IP 1.2.3.4):
 This is useful if I want to specifically test how 1.2.3.4 is responding; for
 instance, if example.com is DNS round-robined to several IP addresses and I want
 to hit one of them specifically.
-
-WWW: https://github.com/Roadmaster/forcediphttpsadapter

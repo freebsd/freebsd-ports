@@ -8,5 +8,3 @@ Specifically, URLs that look like this:
 Fuzzyurls can be constructed using some or all of the above fields, optionally
 replacing some or all of those fields with a * wildcard if you wish to use the
 Fuzzyurl as a URL mask.
-
-WWW: https://github.com/gamache/fuzzyurl.rb

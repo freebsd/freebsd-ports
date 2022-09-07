@@ -1,5 +1,3 @@
 VUser::Google::ProvisioningAPI provides a simple interface to the Google Apps
 for Your Domain Provisioning API. It uses the LWP::UserAgent module for the HTTP
 transport, and the HTTP::Request module for the HTTP request and response.
-
-WWW: https://metacpan.org/release/RSMITH/VUser-Google-ProvisioningAPI-0.24

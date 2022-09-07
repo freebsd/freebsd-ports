@@ -7,5 +7,3 @@ In contrast, gSOAP provides a transparent SOAP API through the use of proven
 compiler technologies. These technologies leverage strong typing to map
 XML schemas to C/C++ definitions. Strong typing provides a greater assurance
 on content validation of both WSDL schemas and SOAP/XML messages.
-
-WWW: http://www.cs.fsu.edu/~engelen/soap.html

@@ -13,5 +13,3 @@ producers or consumers of data, this allows for more informative
 measurements. One-way measurements allow the user to better isolate
 the effects of specific parts of a network on the treatment of
 traffic.
-
-WWW: http://www.internet2.edu/performance/owamp/

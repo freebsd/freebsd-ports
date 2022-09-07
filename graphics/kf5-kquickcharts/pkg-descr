@@ -4,5 +4,3 @@ well as continuous display of high-volume data (often referred to as plotters).
 The charts use a system called distance fields for their accelerated rendering,
 which provides ways of using the GPU for rendering 2D shapes without loss of
 quality.
-
-WWW: https://api.kde.org/frameworks/kquickcharts/html/index.html

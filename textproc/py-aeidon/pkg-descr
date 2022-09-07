@@ -5,5 +5,3 @@ editor with a GTK user interface.
 Separating a user interface independent general-purpose subtitle editing package
 from Gaupol has been an afterthought and thus not well designed to be a reusable
 component, but on the other hand is proven, working and maintained code.
-
-WWW: https://github.com/otsaloma/gaupol

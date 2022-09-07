@@ -12,5 +12,3 @@ easy to extend.
 What’s included in CLI Helpers?
 - Prettyprinting of tabular data with custom pre-processing
 - [in progress] config file reading/writing
-
-WWW: https://github.com/dbcli/cli_helpers

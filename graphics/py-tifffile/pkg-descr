@@ -18,5 +18,3 @@ integer, 16, 32 and 64-bit float, grayscale and multi-sample images.
 Specifically, CCITT and OJPEG compression, chroma subsampling without JPEG
 compression, color space transformations, samples with differing types, or IPTC
 and XMP metadata are not implemented.
-
-WWW: https://github.com/cgohlke/tifffile

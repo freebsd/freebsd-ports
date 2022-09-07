@@ -1,4 +1,2 @@
 A port of Dallas Semiconductors 3.00 beta API for accessing 1-wire LAN
 devices.  Only DS2480 serial port adapters are supported by this port.
-
-WWW: http://www.maximintegrated.com/en/products/comms/ibutton.html

@@ -1,4 +1,2 @@
 Data::Object::Exception provides functionality for creating, throwing, and
 introspecting exception objects.
-
-WWW: https://metacpan.org/release/Data-Object-Exception

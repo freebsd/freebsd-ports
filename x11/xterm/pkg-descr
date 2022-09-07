@@ -6,5 +6,3 @@ terminal resizing capabilities (for example, the SIGWINCH
 signal in systems derived from 4.3bsd), xterm will use the
 facilities to notify programs running in the window whenever it
 is resized.
-
-WWW: https://invisible-island.net/xterm/

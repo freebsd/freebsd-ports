@@ -7,5 +7,3 @@ Benefits over xargs:
 - Can also take arguments from command-line.
 - No shell involved unless -s is used.
 - {} replacing possible with multiple arguments.
-
-WWW: https://github.com/leahneukirchen/xe/

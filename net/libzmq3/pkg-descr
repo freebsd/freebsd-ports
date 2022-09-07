@@ -4,5 +4,3 @@ ZeroMQ - Distributed Computing Made Simple
  * Carries messages across inproc, IPC, TCP, and multicast.
  * Connect N-to-N via fanout, pubsub, pipeline, request-reply.
  * Asynch I/O for scalable multicore message-passing apps.
-
-WWW: http://www.zeromq.org/

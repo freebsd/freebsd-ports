@@ -7,5 +7,3 @@ The DLV system also includes
     * a frontend for abductive diagnosis and Reiter's diagnosis,
     * support for inheritance, and
     * an SQL frontend which prototypes some novel SQL3 features.
-
-WWW: http://www.dlvsystem.com/dlv/

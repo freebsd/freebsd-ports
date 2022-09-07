@@ -5,5 +5,3 @@ Samba4 zone updates.
 Standard GSS-TSIG mode is switched on with the -g flag. A proprietary
 variant of GSS-TSIG used by Windows 2000 can be switched on with the -o
 flag.
-
-WWW: https://www.isc.org/software/bind

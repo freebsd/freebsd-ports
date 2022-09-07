@@ -1,4 +1,2 @@
 This module profiles POE programs, in the same way the Devel::DProf
 family of modules do.
-
-WWW: https://metacpan.org/release/POE-Devel-Profiler

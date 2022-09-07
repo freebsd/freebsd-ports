@@ -13,5 +13,3 @@ Some feature highlights
   changing the type of a column
 * Extract columns into separate tables to better normalize your
   existing data
-
-WWW: https://github.com/simonw/sqlite-utils

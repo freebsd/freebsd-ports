@@ -4,5 +4,3 @@ and hierarchical data, organized for efficient analytic operations on modern
 hardware. It also provides computational libraries and zero-copy streaming
 messaging and interprocess communication. Languages currently supported include
 C, C++, C#, Go, Java, JavaScript, MATLAB, Python, R, Ruby, and Rust.
-
-WWW: https://arrow.apache.org/

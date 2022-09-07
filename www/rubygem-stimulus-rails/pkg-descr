@@ -10,5 +10,3 @@ import-mapped and JavaScript-bundled apps. It relies on either importmap-rails
 to make Stimulus available via ESM or a Node-capable Rails (like via
 jsbundling-rails) to include Stimulus in the bundle. Make sure to install one of
 these first!
-
-WWW: https://github.com/hotwired/stimulus-rails

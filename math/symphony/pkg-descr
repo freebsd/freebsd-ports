@@ -5,5 +5,3 @@ written in C. It can be used in four different main modes:
 * As an interactive solver using a command-line interface.
 * As a framework to build customized solvers for specific problem classes.
 * Through a number of different modeling languages: AMPL, GMPL, GAMS, PuLP.
-
-WWW: https://github.com/coin-or/SYMPHONY

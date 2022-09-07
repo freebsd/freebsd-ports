@@ -13,5 +13,3 @@ which gives it several advantages over other RDBMS-backed queues:
 - Safety - If a Ruby process dies, the jobs it's working won't be lost, or left
   in a locked or ambiguous state - they immediately become available for any
   other worker to pick up.
-
-WWW: https://github.com/que-rb/que

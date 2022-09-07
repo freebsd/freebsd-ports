@@ -6,5 +6,3 @@ and more useful than IPSec, while avoiding the massive headache. It
 intends to be considerably more performant than OpenVPN. WireGuard is
 designed as a general purpose VPN for running on embedded interfaces and
 super computers alike, fit for many different circumstances.
-
-WWW: https://www.wireguard.com

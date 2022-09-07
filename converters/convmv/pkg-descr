@@ -9,5 +9,3 @@ locales to UTF-8 locales. It is also possible to convert directories to UTF-8
 which are already partly UTF-8 encoded. convmv is able to detect if certain
 files are UTF-8 encoded and will skip them by default. To turn this smartness
 off use the --nosmart switch.
-
-WWW: http://j3e.de/linux/convmv/man/

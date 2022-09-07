@@ -5,5 +5,3 @@ dependencies, and build steps.
 The default tree describes packages for Vishap Oberon Compiler,
 but there's no restriction on the stack and any custom tree can
 be used.
-
-WWW: https://github.com/vishaps/vipack

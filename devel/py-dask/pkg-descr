@@ -8,5 +8,4 @@ Dask is composed of two parts:
   larger-than-memory or distributed environments. These parallel collections run
   on top of dynamic task schedulers.
 
-WWW: https://dask.org/
-WWW: https://github.com/dask/dask
+See also: https://github.com/dask/dask

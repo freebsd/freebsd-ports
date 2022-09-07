@@ -1,4 +1,2 @@
 This DBIx::Class component resembles the behaviour of Class::DBI::UUID,
 implicitly creating columns as uuid.
-
-WWW: https://metacpan.org/release/DBIx-Class-UUIDColumns

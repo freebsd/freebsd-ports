@@ -1,5 +1,3 @@
 DateTime::Event::NameDay is a class that knows the name days for various
 countries. In some countries a person's nameday is more important than their
 birthday and gifts may be exchanged.
-
-WWW: https://metacpan.org/release/DateTime-Event-NameDay

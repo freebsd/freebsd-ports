@@ -1,5 +1,3 @@
 This package provides a code generator and runtime libraries to use
 Protocol Buffers from pure C (not C++).
 It uses a modified version of protoc called protoc-c.
-
-WWW: https://github.com/protobuf-c/protobuf-c

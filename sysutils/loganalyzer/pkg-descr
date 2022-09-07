@@ -9,5 +9,3 @@ works equally well on Linux and Windows.
 LogAnalyzer is a free, GPLed open source application written mostly in php.
 Data can be obtained from databases but also from plain text files, for
 example those that are written by the syslogd.
-
-WWW: https://loganalyzer.adiscon.com/

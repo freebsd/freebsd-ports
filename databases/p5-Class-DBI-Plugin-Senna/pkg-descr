@@ -3,5 +3,3 @@ Class::DBI::Plugin::Senna harnesses the power of Senna
 
 This module installs hooks in your Class::DBI package that automatically
 creates and updates a Senna index.
-
-WWW: https://metacpan.org/release/Class-DBI-Plugin-Senna

@@ -16,5 +16,3 @@
 
 	% wdiff -n text-a text-b
 	I [-like-] {+love+} FreeBSD.
-
-WWW: http://www.gnu.org/software/wdiff/

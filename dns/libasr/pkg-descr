@@ -8,5 +8,3 @@ version that can build and run on several systems, including:
 * NetBSD
 * DragonFly
 * MacOSX
-
-WWW: https://github.com/OpenSMTPD/libasr

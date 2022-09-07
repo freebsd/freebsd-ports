@@ -4,5 +4,3 @@ value. The constants which encode these values are specified in
 section 4.1.1, and are made available by this module. For instance,
 the exportable LOG_FTP constant has a value of 11, the value for the
 FTP facility.
-
-WWW: https://metacpan.org/release/Log-Syslog-Constants

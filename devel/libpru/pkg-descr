@@ -2,5 +2,3 @@ libpru is a library to interface with Programmable Realtime Units on
 FreeBSD. Currently only the Texas Instruments PRUs are
 supported. Those can be found in the AM18XX and AM33XX (BeagleBone
 Black) SoCs.
-
-WWW: https://bitbucket.org/rpaulo/libpru

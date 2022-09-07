@@ -7,5 +7,3 @@ This patch implements RFC2487 in qmail. This means you can
 get SSL or TLS encrypted and authenticated SMTP between
 the MTAs and between MTA and an MUA like Netscape4.5 TM.
 The code is considered experimental.
-
-WWW: http://inoa.net/qmail-tls/

@@ -2,5 +2,3 @@ SBLIM (pronounced "sublime"), the Standards Based Linux
 Instrumentation for Manageability is an IBM-initiated Open Source
 project, intended to enhance the manageability of GNU/Linux
 systems. It does so by enabling WBEM, Web Based Enterprise Management.
-
-WWW: https://sourceforge.net/projects/sblim/

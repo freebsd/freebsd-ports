@@ -12,5 +12,3 @@ segments and ground planes by Stephen R. Whiteley of Whitleley Research Inc.
 The analysis used is based on the London equations and the two-fluid
 model.  Both reactive and lossy components of the superconductor complex
 conductivity are employed in obtaining the impedance matrix.
-
-WWW: http://www.rle.mit.edu/cpg/research_codes.htm

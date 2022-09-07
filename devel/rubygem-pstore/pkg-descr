@@ -10,5 +10,3 @@ state, where some values were updated but others were not.
 Behind the scenes, Ruby objects are stored to the data store file with Marshal.
 That carries the usual limitations. Proc objects cannot be marshalled, for
 example.
-
-WWW: https://github.com/ruby/pstore

@@ -5,4 +5,3 @@ convert numbers entered on the command line. It can correctly handle
 both signed and unsigned 32-bit integers.
 
 License: Artistic
-WWW: http://www.fluxcode.net/

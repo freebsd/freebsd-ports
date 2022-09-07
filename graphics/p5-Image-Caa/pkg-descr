@@ -2,5 +2,3 @@ This module outputs Image::Magick image objects as ASCII Art, using a
 variety of output dithering modes and output drivers (currently
 supported is a plain old ANSI termical output driver and a curses
 driver).
-
-WWW: https://metacpan.org/release/Image-Caa

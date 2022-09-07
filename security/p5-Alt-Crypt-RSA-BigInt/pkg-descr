@@ -10,5 +10,3 @@ Math::Pari is completely removed. This includes the two modules:
 
 All operations are now performed using Math::BigInt, and prefer the GMP and Pari
 backends.
-
-WWW: https://metacpan.org/release/Alt-Crypt-RSA-BigInt

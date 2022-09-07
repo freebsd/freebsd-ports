@@ -4,5 +4,3 @@ to a destination.
 
 FindMTU only performs IPv6 path MTU discovery. It does not know about
 IPv4.
-
-WWW: http://www.dia.uniroma3.it/~compunet/tunneldiscovery/

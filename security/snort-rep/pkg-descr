@@ -6,5 +6,3 @@ output from a syslog file. The reports contain:
 * Alert summary by remote host and ID
 * Alert summary by local host and ID
 * Alert summary by local port and ID
-
-WWW: http://david.schweikert.ch/software/snort-rep/

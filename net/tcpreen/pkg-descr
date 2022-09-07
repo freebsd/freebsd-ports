@@ -2,5 +2,3 @@ TCPreen is a simple tool to monitor and analyze data transmitted between
 a client and a server via a TCP connection. This tool focuses on the data
 stream (software/socket layer), not on the lower level transmission
 protocol as packet sniffers do.
-
-WWW: https://www.remlab.net/tcpreen/

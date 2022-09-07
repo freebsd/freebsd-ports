@@ -4,5 +4,3 @@ It includes the following features:
 - Supports Dropbox v2 REST API
 - Supports Furl (Fast!!!)
 - Streaming IO (Low Memory)
-
-WWW: https://metacpan.org/pod/WebService::Dropbox

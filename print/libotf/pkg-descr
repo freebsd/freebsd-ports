@@ -8,5 +8,3 @@ The library "libotf" provides the following facilites:
 
 The combination of libotf and the FreeType library (Ver. 2) realizes
 CTL (complex text layout) by OpenType fonts.
-
-WWW: http://www.nongnu.org/m17n/

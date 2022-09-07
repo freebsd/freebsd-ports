@@ -10,5 +10,3 @@ Features:
 * Tested and accurate to floating-point precision against the C++ standard
   library.
 * Released under a permissive, non-GPL license.
-
-WWW: https://gcem.readthedocs.io/en/latest/

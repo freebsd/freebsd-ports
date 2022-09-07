@@ -1,4 +1,2 @@
 Send messages and exceptions with arbitrary context, get back aggregates, and
 debug production issues quickly.
-
-WWW: https://github.com/rollbar/pyrollbar

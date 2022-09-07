@@ -14,5 +14,3 @@ all fonts for the same encoding into a single directory, with combined
 fonts.aliases and the new fonts.dir. The default encoding is KOI8-O --
 seemingly the most complete of the Cyrillic encodings, compatible (for
 most intents and purposes) with KOI8-R and KOI8-U.
-
-WWW: http://www.inp.nsk.su/~bolkhov/files/fonts/cyr-rfx/00index.en.html

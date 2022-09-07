@@ -1,3 +1,1 @@
 Math::Int128 adds support for 128 bit integers, signed and unsigned, to Perl.
-
-WWW: https://metacpan.org/release/Math-Int128

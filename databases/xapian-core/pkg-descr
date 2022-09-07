@@ -14,5 +14,3 @@ Xapian features include:
 - Database files > 2GB
 - Platform independent data formats
 - Allows simultaneous update and searching.
-
-WWW: https://xapian.org/

@@ -2,5 +2,3 @@ SCCS is an implementation of the POSIX standard Source Code Control
 System. It provides actively maintained code based on the original UNIX
 SCCS code OpenSourced by Sun as part of OpenSolaris and was made
 portable to other platforms.
-
-WWW: https://codeberg.org/schilytools/schilytools

@@ -6,5 +6,3 @@ which comprises several core concepts:
 
 Async::REST models these abstractions as closely and practically as possible and
 serves as a basis for building asynchronous web clients.
-
-WWW: https://github.com/socketry/async-rest

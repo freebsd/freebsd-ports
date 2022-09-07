@@ -15,5 +15,3 @@ attributes on all three systems.  It consists in a single C++ module
 application source code, or can be built as a reference command-line
 utility to manage user extended attributes in a uniform and cross-
 platform way.  It includes an attributes archive/restore facility.
-
-WWW: https://www.lesbonscomptes.com/pxattr/

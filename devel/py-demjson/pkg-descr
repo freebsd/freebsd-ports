@@ -8,5 +8,3 @@ support, including UTF-32, BOM, and surrogate pair processing. It can
 also support JavaScript's NaN and Infinity numeric types as well as
 it's 'undefined' type. It also includes a lint-like JSON syntax
 validator which tests JSON text for strict compliance to the standard.
-
-WWW: http://deron.meranda.us/python/demjson/

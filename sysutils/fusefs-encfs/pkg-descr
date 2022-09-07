@@ -3,5 +3,3 @@ using the FUSE kernel module.  Similar in design to CFS and other
 pass-through filesystems, all data is encrypted and stored in the
 underlying filesystem.  Unlike loopback filesystems, there is no
 predetermined or pre-allocated filesystem size.
-
-WWW: http://www.arg0.net/encfs

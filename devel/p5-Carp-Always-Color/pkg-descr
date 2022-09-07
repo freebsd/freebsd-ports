@@ -4,5 +4,3 @@ colors the first line of each stacktrace, based on whether it's a warning or an
 error. If messages are being sent to a terminal, it colors them with terminal
 escape codes, otherwise it colors them with HTML (ideas for more intelligent
 behavior here are welcome).
-
-WWW: https://metacpan.org/release/Carp-Always-Color

@@ -6,5 +6,3 @@ great Cairo library. Its goals are:
         * Customization
 It won't try to draw any possible chart on earth but draw the most
 common ones nicely.
-
-WWW: https://bitbucket.org/lgs/pycha

@@ -13,5 +13,3 @@ Features that screen doesn't have:
 Features that both bug5 and screen has:
 - Optional ambiguous-width characters padding
 - Specify I/O conversion
-
-WWW: https://github.com/buganini/bug5

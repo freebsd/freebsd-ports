@@ -14,5 +14,3 @@ Features:
 - Sending IOCTL commands
 - Sending of multiple messages in one packet (compounding)
 - Experimental support for both standalone and DFS server shares
-
-WWW: https://github.com/jborean93/smbprotocol

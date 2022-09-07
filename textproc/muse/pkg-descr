@@ -5,5 +5,3 @@ various output formats.
 Muse consists of two main parts: an enhanced text-mode for authoring
 documents and navigating within Muse projects, and a set of publishing
 styles for generating different kinds of output.
-
-WWW: http://www.emacswiki.org/cgi-bin/wiki/MuseMode

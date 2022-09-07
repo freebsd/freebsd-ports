@@ -2,5 +2,3 @@ The package is intended for scientists and engineers who need to manipulate
 a variety of types of matrices using standard matrix operations. Emphasis is
 on the kind of operations needed in statistical calculations such as least
 squares, linear equation solve and eigenvalues.
-
-WWW: http://www.robertnz.net/nm_intro.htm

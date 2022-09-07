@@ -12,5 +12,3 @@ SYNOPSIS
     Class::Inspector->loaded( 'Some::Class' ); # Returns false
 
     require Some::Class; # Reloads the class
-
-WWW: https://metacpan.org/release/Class-Unload

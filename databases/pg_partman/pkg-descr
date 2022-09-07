@@ -6,5 +6,3 @@ easily managed smaller batches. Optional retention policy can automatically
 drop partitions no longer needed. A background worker (BGW) process is
 included to automatically run partition maintenance without the need of an
 external scheduler (cron, etc) in most cases.
-
-WWW: https://github.com/keithf4/pg_partman

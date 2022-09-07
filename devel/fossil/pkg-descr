@@ -1,5 +1,3 @@
 Fossil is an easy-to-use Distributed Source Control Management system (DSCM)
 which supports access and administration over HTTP CGI or via a built-in HTTP
 server, has a built-in wiki, file browser, ticket system, and more.
-
-WWW: http://fossil-scm.org/

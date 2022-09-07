@@ -13,5 +13,3 @@ atoms, bonds, ball+stick, etc.
 Raster3D can also be used to render pictures composed in other programs
 such as Molscript in glorious 3D with highlights, shadowing, etc. Output
 is to pixel image files with 24 bits of color information per pixel.
-
-WWW: http://skuld.bmsc.washington.edu/raster3d/

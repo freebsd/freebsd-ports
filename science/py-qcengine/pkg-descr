@@ -8,5 +8,3 @@ Currently available compute backends for single results are:
   * TorchANI
 * Molecular Mechanics:
   * RDKit
-
-WWW: https://github.com/MolSSI/QCEngine

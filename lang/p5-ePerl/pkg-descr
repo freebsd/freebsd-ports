@@ -11,5 +11,3 @@
   can operate in various ways: As a stand-alone Unix filter or integrated Perl
   5 module for general file generation tasks and as a powerful Webserver
   scripting language for dynamic HTML page programming.
-
-WWW: http://www.ossp.org/pkg/tool/eperl/

@@ -2,5 +2,3 @@ The Nemesis Project is designed to be a command line based, portable
 human IP stack for UNIX-like and Windows systems. The suite is broken
 down by protocol, and should allow for useful scripting of injected
 packets from simple shell scripts.
-
-WWW: https://troglobit.com/projects/nemesis/

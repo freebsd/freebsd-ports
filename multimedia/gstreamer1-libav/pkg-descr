@@ -1,5 +1,3 @@
 The GStreamer libav package provides mpeg support for GStreamer.
 It includes codecs for most popular formats, and optimized
 colourspace conversion.
-
-WWW: https://gstreamer.freedesktop.org/

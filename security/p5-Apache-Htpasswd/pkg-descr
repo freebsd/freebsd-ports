@@ -5,5 +5,3 @@ on a web server.
 The password file is a flat-file with login names and their associated
 crypted password. You can use this for non-Apache files if you wish,
 but it was written specifically for .htaccess style files.
-
-WWW: https://metacpan.org/release/Apache-Htpasswd

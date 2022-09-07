@@ -10,5 +10,3 @@ services.
 DHCPerf measures the DHCP lease assignments to client computers by
 ramping up lease assignment over time to determine the maximum
 performance profile.
-
-WWW: http://www.nominum.com/testing_tools.php

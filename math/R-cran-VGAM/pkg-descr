@@ -4,5 +4,3 @@ additive model (VGLM/VGAM) classes, and the book "Vector Generalized
 Linear and Additive Models: With an Implementation in R" (Yee, 2015)
 gives details of the statistical framework and VGAM package. Currently
 only fixed-effects models are implemented, i.e., no random-effects models.
-
-WWW: https://www.stat.auckland.ac.nz/~yee/VGAM

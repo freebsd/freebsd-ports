@@ -5,5 +5,3 @@ Features:
 - Shows percentage complete if regular file specified
 - Allows tuning of block size and display interval
 - Support for dd style block size specification
-
-WWW: https://launchpad.net/pipemeter

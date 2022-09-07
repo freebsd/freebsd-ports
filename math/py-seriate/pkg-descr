@@ -5,5 +5,3 @@ Problem (TSP) and leverage the powerful Google's or-tools to do heavy-lifting.
 Since TSP is NP-hard, it is not possible to calculate the precise solution for
 a big number of elements. However, the or-tools' heuristics work very well in
 practice, and they are used in e.g. Google Maps.
-
-WWW: https://github.com/src-d/seriate

@@ -13,5 +13,3 @@ It provides:
 * Export to visualization tools such as Gmsh, Paraview, Matlab
 * Many solvers (direct solvers, iterative solvers, eigenvalue solvers, wrappers
   to Arpack, UmfPack and Eigen libraries)
-
-WWW: https://uma.ensta-paristech.fr/soft/XLiFE++/

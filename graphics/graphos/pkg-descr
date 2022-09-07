@@ -6,5 +6,3 @@ debugged, rewritten and updated.
 The main changes were the transition from post-script to NSBezierPath drawing,
 total rearrangement of the objects into Drawable Objects and their Editors
 organized hierachically and the porting to Macintosh.
-
-WWW: http://gap.nongnu.org/graphos/

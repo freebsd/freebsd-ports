@@ -17,5 +17,3 @@ image formats such as JPEG are also supported.  The core operates completely
 on floating point values, so darktable can not only be used for photography
 but also for scientifically acquired images or output of renderers (high
 dynamic range).
-
-WWW: https://www.darktable.org/

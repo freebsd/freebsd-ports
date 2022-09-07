@@ -6,5 +6,3 @@ you should be able call url_for from within a handler as follows:
   url_for "/"            # Returns "/myapp/"
   url_for "/foo"         # Returns "/myapp/foo"
   url_for "/foo", :full  # Returns "http://example.com/myapp/foo"
-
-WWW: https://github.com/emk/sinatra-url-for

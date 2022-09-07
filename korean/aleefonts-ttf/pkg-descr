@@ -5,5 +5,3 @@ good in 12px (9pt in 96dpi screen) size without antialiasing.
 Hmfs is not a real Hangul font. It is specially designed truetype
 ascii font in the manner of Hangul 3-bul-sik typewriter which is
 invented by Ph.D Kong Byeong-woo.
-
-WWW: https://packages.debian.org/unstable/fonts/fonts-alee

@@ -2,5 +2,3 @@ File::Tempdir is a Perl5 module which provides an object interface to
 tempdir() from File::Temp. This allow to destroy the temporary directory
 as soon you don't need it anymore using the magic DESTROY() function
 automatically call be perl when the object is no longer reference.
-
-WWW: https://metacpan.org/release/File-Tempdir

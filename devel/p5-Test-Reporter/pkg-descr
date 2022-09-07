@@ -3,5 +3,3 @@ to the CPAN testing service. See http://testers.cpan.org/ for
 details.
 
 Test::Reporter has wide support for various perl5's and platforms.
-
-WWW: https://metacpan.org/release/Test-Reporter

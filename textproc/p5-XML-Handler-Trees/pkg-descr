@@ -6,5 +6,3 @@ XML::Parser::EasyTree.  XML::Handler::TreeBuilder builds the same type
 of tree as Sean M. Burke's XML::TreeBuilder.  These classes make it
 possible to construct these tree structures from sources other than
 XML::Parser.
-
-WWW: https://metacpan.org/release/XML-Handler-Trees

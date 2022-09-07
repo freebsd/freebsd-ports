@@ -3,5 +3,3 @@ can protect all of your websites at once.
 
 Vouch Proxy supports many OAuth and OIDC login providers and can
 enforce authentication to Google, GitHub, Okta and many more.
-
-WWW: https://github.com/vouch/vouch-proxy

@@ -10,5 +10,3 @@ The basic idea behind generate is to create a script which generates files.
 There is some simple flow control constructs but the power lies in its
 macro processing. I have shamelessly stolen ideas from cpp, m4, make and
 David Tilbrook's dtree.
-
-WWW: http://www.druid.net/darcy/readme-generate.html

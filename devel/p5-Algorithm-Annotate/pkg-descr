@@ -1,4 +1,2 @@
 Algorithm::Annotate generates a list that is useful for generating
 output similar to "cvs annotate".
-
-WWW: https://metacpan.org/release/Algorithm-Annotate

@@ -14,5 +14,3 @@ It is an interesting alternative to some popular solutions:
   some cases.
 - netcat: Not as convenient to use and sending directories is
   nontrivial.
-
-WWW: https://github.com/svenstaro/miniserve

@@ -5,5 +5,3 @@ AIDA (Abstract Interfaces for Data Analysis).  The main features are:
 - Fitting parameter optimization with constraints and its parabolic and
   asymmetric error evaluation
 - XML based storing
-
-WWW: http://paida.sourceforge.net

@@ -8,5 +8,3 @@ about HTTP redirects, including directory redirects, and can check
 recursively a part of a web site.
 
 The program can be used either as a command line tool or as a CGI script.
-
-WWW: https://metacpan.org/release/W3C-LinkChecker

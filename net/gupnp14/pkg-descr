@@ -9,5 +9,3 @@ description, control, event notification, and presentation (GUPnP includes basic
 web server functionality through libsoup). GUPnP does not include helpers for
 construction or control of specific standardized resources (e.g. MediaServer);
 this is left for higher level libraries utilizing the GUPnP framework.
-
-WWW: https://wiki.gnome.org/Projects/GUPnP

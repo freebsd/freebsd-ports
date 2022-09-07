@@ -3,5 +3,3 @@ Pico, the default editor included in the non-free Pine package.
 Rather than just copying Pico's look and feel, nano also implements
 some missing (or disabled by default) features in Pico, such as
 "search and replace" and "goto line number".
-
-WWW: http://www.nano-editor.org/

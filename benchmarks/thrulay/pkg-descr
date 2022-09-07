@@ -12,5 +12,3 @@ Special features of thrulay include:
 * For UDP, the ability to send precisely positioned true Poisson streams
   (microsecond errors in sending times)
 * Human- and machine-readable output (ready to be fed to gnuplot)
-
-WWW: https://sourceforge.net/projects/thrulay/

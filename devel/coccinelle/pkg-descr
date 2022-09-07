@@ -7,5 +7,3 @@ include modifications such as renaming a function, adding a function argument
 whose value is somehow context-dependent, and reorganizing a data
 structure. Beyond collateral evolutions, Coccinelle is successfully used (by us
 and others) for finding and fixing bugs in systems code.
-
-WWW: http://coccinelle.lip6.fr/

@@ -6,5 +6,3 @@ Routes module and as such, this package can be compared to what they call
 a router. Still, Net_URL_Mapper does not perform the dispatching like these
 frameworks and therefore can be used with your
 own router.
-
-WWW: https://pear.php.net/package/Net_URL_Mapper

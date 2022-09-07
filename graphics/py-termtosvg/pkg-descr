@@ -1,4 +1,2 @@
 A terminal recorder written in Python which renders your command line sessions
 as standalone SVG animations.
-
-WWW: https://github.com/nbedos/termtosvg

@@ -5,5 +5,3 @@ Encrypt is a popular one) and an applicant to automate the process
 of verification and certificate issuance.  The protocol also provides
 facilities for other certificate management functions, such as
 certificate revocation.
-
-WWW: https://github.com/ndilieto/uacme

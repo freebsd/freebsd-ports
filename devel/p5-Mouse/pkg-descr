@@ -13,5 +13,3 @@ by providing a subset of Moose's functionality.
 We're also going as light on dependencies as possible. Mouse currently has no
 dependencies except for building/testing modules. Mouse also works without XS,
 although it has an XS backend to make it much faster.
-
-WWW: https://metacpan.org/release/Mouse

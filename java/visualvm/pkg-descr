@@ -2,5 +2,3 @@ VisualVM is a visual tool integrating several commandline JDK tools and
 lightweight profiling capabilities. Designed for both production and
 development time use, it further enhances the capability of monitoring and
 performance analysis for the Java SE platform.
-
-WWW: https://visualvm.github.io/

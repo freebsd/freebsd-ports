@@ -5,5 +5,3 @@ engine capable of solving many "build system"-like problems. The project
 also includes additional libraries on top of that engine which provide
 support for constructing bespoke build systems (like swift build) or for
 building from Ninja manifests.
-
-WWW: https://github.com/apple/swift-llbuild

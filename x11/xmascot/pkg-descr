@@ -19,5 +19,3 @@ XMascot supports these image formats:
 XMascot distinguishes images from their suffix and can load other image
 formats when corresponding *topnm, *topgm, or *topbm commands are found
 in your system.
-
-WWW: http://cclub-flying.dsl.gr.jp/products/xmascot/

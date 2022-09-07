@@ -1,4 +1,2 @@
 EM-Twitter is an EventMachine-based ruby client for the Twitter
 Streaming API.
-
-WWW: https://github.com/tweetstream/em-twitter

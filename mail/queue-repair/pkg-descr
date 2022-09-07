@@ -15,5 +15,3 @@ queue_repair features include:
   queue from scratch.
 
 - can run in repair or test (report-only) modes.  The default is test mode.
-
-WWW: http://pyropus.ca/software/queue-repair/

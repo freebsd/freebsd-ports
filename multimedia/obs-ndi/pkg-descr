@@ -5,5 +5,3 @@ Features:
 * NDI Output : transmit video and audio from OBS to NDI
 * NDI Filter (a.k.a NDI Dedicated Output) : transmit a single source or
   scene to NDI
-
-WWW: https://github.com/Palakis/obs-ndi

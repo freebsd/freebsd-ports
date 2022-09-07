@@ -12,5 +12,3 @@ reading configuration files in an easy to program fashion.
 This library uses long long, which is part of the C99 standard
 (previously a GNU extension).	Your compiler needs to support
 this in order for FireString to work.
-
-WWW: http://www.firestuff.org/

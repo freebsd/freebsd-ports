@@ -10,5 +10,3 @@ Dnsmasq is targeted at home networks using NAT and connected to the internet
 via a modem, cable-modem or ADSL connection but would be a good choice for any
 smallish network (up to 1000 clients is known to work) where low resource use
 and ease of configuration are important. 			-- Simon Kelley
-
-WWW: http://www.thekelleys.org.uk/dnsmasq/doc.html

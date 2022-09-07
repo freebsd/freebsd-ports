@@ -3,5 +3,3 @@ firmware ROM is built in and executed by an 8080 emulator.  Other
 components include video display with character generator ROM, settings
 NVRAM, Intel 8251 USART, and a keyboard matrix scanner.  The Advance
 Video Option is not included.
-
-WWW: https://github.com/larsbrinkhoff/terminal-simulator

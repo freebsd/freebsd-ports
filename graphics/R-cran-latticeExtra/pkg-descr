@@ -1,5 +1,3 @@
 Building on the infrastructure provided by the lattice package, this package
 provides several new high-level functions and methods, as well as additional
 utilities such as panel and axis annotation functions.
-
-WWW: https://cran.r-project.org/web/packages/latticeExtra/
