@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Daemon that converts a GuitarHero device into a JACK MIDI device
+WWW=		https://github.com/hselasky/jack_ghero
 
 LICENSE=	BSD2CLAUSE
 

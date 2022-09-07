@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Firmware modules for the drm-kmod drivers
+WWW=		https://github.com/freebsd/drm-kmod
 
 USES=		metaport
 

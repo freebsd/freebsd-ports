@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	dovecot-
 
 MAINTAINER=	bgupta@kde.org
 COMMENT=	Dovecot FTS plugin for using ElasticSearch 6 or 7
+WWW=		https://github.com/filiphanes/fts-elastic
 
 LICENSE=	MIT
 

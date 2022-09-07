@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Lightweight, secure, and feature-rich Discord terminal client
+WWW=		https://github.com/ayntgl/discordo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	MIDI playback, recording, and live performance tool
+WWW=		https://github.com/hselasky/midipp
 
 LICENSE=	BSD2CLAUSE
 
