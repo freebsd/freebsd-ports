@@ -1,3 +1,44 @@
+  <vuln vid="6fea7103-2ea4-11ed-b403-3dae8ac60d3e">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go118</name>
+	<range><lt>1.18.6</lt></range>
+      </package>
+      <package>
+	<name>go119</name>
+	<range><lt>1.19.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/54658">
+	  <p>net/http: handle server errors after sending GOAWAY</p>
+	  <p>A closing HTTP/2 server connection could hang forever
+	    waiting for a clean shutdown that was preempted by a
+	    subsequent fatal error. This failure mode could be
+	    exploited to cause a denial of service.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/54385">
+	  <p>net/url: JoinPath does not strip relative path components
+	    in all circumstances</p>
+	  <p>JoinPath and URL.JoinPath would not remove ../ path
+	    components appended to a relative path.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-27664</cvename>
+      <cvename>CVE-2022-32190</cvename>
+      <url>https://groups.google.com/g/golang-announce/c/x49AQzIVX-s/m/0tgO0pjiBQAJ</url>
+    </references>
+    <dates>
+      <discovery>2022-09-06</discovery>
+      <entry>2022-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f38d25ac-2b7a-11ed-a1ef-3065ec8fd3ec">
     <topic>chromium -- insufficient data validation in Mojo</topic>
     <affects>
