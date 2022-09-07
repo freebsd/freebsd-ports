@@ -17,10 +17,6 @@ CMAKE_ARGS=	-DLOCALBASE:PATH="${LOCALBASE}"
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e '/WARNING_FLAGS/s,-pedantic,& -fcommon,' \
-		${WRKSRC}/CMakeLists.txt
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
