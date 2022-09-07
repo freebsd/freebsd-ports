@@ -123,9 +123,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # (NOTE: by convention, the MAINTAINER entry (see above) should go here.)
 #
-# These variables are typically set in /etc/make.conf to indicate
-# the user's preferred location to fetch files from.  You should
-# rarely need to set these.
+# COMMENT		- A short description of the package (less than 70 characters)
+# WWW			- URL users can get more information on the provided package
+# 				  was previously part of pkg-descr
+#
+# The following variables are typically set in /etc/make.conf to indicate
+# the user's preferred location to fetch files from.  You should rarely
+# need to set these.
 #
 # MASTER_SITE_BACKUP
 #				- Backup location(s) for distribution files and patch
@@ -3595,12 +3599,11 @@ security-check: ${TMPPLIST}
 		! ${AWK} -v audit="$${PORTS_AUDIT}" -f ${SCRIPTSDIR}/security-check.awk \
 		  ${WRKDIR}/.PLIST.flattened ${WRKDIR}/.PLIST.readelf ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.writable; \
 	then \
-		www_site=$$(cd ${.CURDIR} && ${MAKE} www-site); \
-	    if [ ! -z "$${www_site}" ]; then \
+	    if [ ! -z "${_WWW}" ]; then \
 			${ECHO_MSG}; \
 			${ECHO_MSG} "      For more information, and contact details about the security"; \
 			${ECHO_MSG} "      status of this software, see the following webpage: "; \
-			${ECHO_MSG} "$${www_site}"; \
+			${ECHO_MSG} "${_WWW}"; \
 		fi; \
 	fi
 .      endif
@@ -3655,10 +3658,9 @@ ${stage}-${name}-script:
 
 .    if !target(pretty-print-www-site)
 pretty-print-www-site:
-	@www_site=$$(cd ${.CURDIR} && ${MAKE} www-site); \
-	if [ -n "$${www_site}" ]; then \
+	@if [ -n "${_WWW}" ]; then \
 		${ECHO_MSG} -n " and/or visit the "; \
-		${ECHO_MSG} -n "<a href=\"$${www_site}\">web site</a>"; \
+		${ECHO_MSG} -n "<a href=\"${_WWW}\">web site</a>"; \
 		${ECHO_MSG} " for further information"; \
 	fi
 .    endif
@@ -4285,7 +4287,7 @@ create-manifest:
 			dp_PORT_OPTIONS='${PORT_OPTIONS}'                     \
 			dp_PREFIX='${PREFIX}'                                 \
 			dp_USERS='${USERS:u:S/$/,/}'                          \
-			dp_WWW='${WWW}'                                       \
+			dp_WWW='${_WWW}'                                      \
 			${PKG_NOTES_ENV}                                      \
 			${SH} ${SCRIPTSDIR}/create-manifest.sh
 
@@ -4349,6 +4351,7 @@ _FETCH_DEPENDS=${FETCH_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C
 _LIB_DEPENDS=${LIB_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
 _BUILD_DEPENDS=${BUILD_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
 _RUN_DEPENDS=${RUN_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
+_WWW=${WWW:U${MASTER_SITES:[1]}}
 .      if exists(${DESCR})
 _DESCR=${DESCR}
 .      else
@@ -4363,19 +4366,7 @@ INDEX_OUT=/dev/stdout
 
 .      if empty(FLAVORS) || defined(_DESCRIBE_WITH_FLAVOR)
 describe:
-	@(${ECHO_CMD} -n "${PKGNAME}|${.CURDIR}|${PREFIX}|"; \
-	${ECHO_CMD} -n ${COMMENT:Q}; \
-	${ECHO_CMD} -n "|${_DESCR}|${MAINTAINER}|${CATEGORIES}|${_EXTRACT_DEPENDS}|${_PATCH_DEPENDS}|${_FETCH_DEPENDS}|${_BUILD_DEPENDS:O:u}|${_RUN_DEPENDS:O:u}|"; \
-	while read one two discard; do \
-		case "$$one" in \
-		WWW:)   case "$$two" in \
-			https://*|http://*|ftp://*) ${ECHO_CMD} -n "$$two" ;; \
-			*) ${ECHO_CMD} -n "http://$$two" ;; \
-			esac; \
-			break; \
-			;; \
-		esac; \
-	done < ${DESCR}; ${ECHO_CMD}) >>${INDEX_OUT}
+	@(${ECHO_CMD} "${PKGNAME}|${.CURDIR}|${PREFIX}|${COMMENT:Q}|${_DESCR}|${MAINTAINER}|${CATEGORIES}|${_EXTRACT_DEPENDS}|${_PATCH_DEPENDS}|${_FETCH_DEPENDS}|${_BUILD_DEPENDS:O:u}|${_RUN_DEPENDS:O:u}|${_WWW}" >> ${INDEX_OUT})
 .      else # empty(FLAVORS)
 describe: ${FLAVORS:S/^/describe-/}
 .        for f in ${FLAVORS}
@@ -4386,11 +4377,7 @@ describe-${f}:
 .    endif
 
 www-site:
-.    if exists(${DESCR})
-	@${AWK} '$$1 ~ /^WWW:/ {print $$2}' ${DESCR} | ${HEAD} -1
-.    else
-	@${ECHO_CMD}
-.    endif
+	@${ECHO_CMD} ${_WWW}
 
 .    if !target(readmes)
 readmes:	readme
