@@ -15,4 +15,4 @@ Also, effective user ID of relevant process and timestamp can be saved.
 
 CPU overhead is minimal because ng_ipacct works at kernel level.
 
-WWW: ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/kernel/ng_ipacct/
+WWW: https://github.com/vstakhov/ng_ipacct/
