@@ -117,7 +117,6 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Toolkit.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::VolatileVault.3.gz
 %%PERL5_MAN3%%/OpenXPKI::DN.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Daemonize.3.gz
 %%PERL5_MAN3%%/OpenXPKI::DateTime.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Debug.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Dumper.3.gz
@@ -258,6 +257,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Authentication::OneTimePassword.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Authentication::Password.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Authentication::X509.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Bedroom.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Context.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Database.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Database::Driver::DB2.3.gz
@@ -286,6 +286,9 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::NICE::Factory.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::NICE::Local.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::NICE::Null.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::NICE::Role::KeyGenerationLocal.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::NICE::Role::KeyInDataPool.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::NICE::Role::RevokeCertificate.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Notification::Base.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Notification::Connector.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Notification::Handler.3.gz
@@ -315,6 +318,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::EST::CACerts.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::EST::GenerateCSRAttribute.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Log.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::CallMethod.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::CheckForRevocation.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::FetchCertificate.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::FetchKey.3.gz
@@ -413,8 +417,10 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::Connector::IsValue.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::DatapoolEntry.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::DateTime.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::Evaluate.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::HasRole.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::IsCertificateOwner.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::IsWrappedRequest.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::Key.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::KeyGenerationMode.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::KeyParams.3.gz
@@ -624,7 +630,6 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Crypto/Toolkit.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/VolatileVault.pm
 %%SITE_PERL%%/OpenXPKI/DN.pm
-%%SITE_PERL%%/OpenXPKI/Daemonize.pm
 %%SITE_PERL%%/OpenXPKI/DateTime.pm
 %%SITE_PERL%%/OpenXPKI/Debug.pm
 %%SITE_PERL%%/OpenXPKI/Dumper.pm
@@ -770,6 +775,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/Authentication/OneTimePassword.pm
 %%SITE_PERL%%/OpenXPKI/Server/Authentication/Password.pm
 %%SITE_PERL%%/OpenXPKI/Server/Authentication/X509.pm
+%%SITE_PERL%%/OpenXPKI/Server/Bedroom.pm
 %%SITE_PERL%%/OpenXPKI/Server/Context.pm
 %%SITE_PERL%%/OpenXPKI/Server/Database.pm
 %%SITE_PERL%%/OpenXPKI/Server/Database/Driver/DB2.pm
@@ -798,6 +804,9 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/NICE/Factory.pm
 %%SITE_PERL%%/OpenXPKI/Server/NICE/Local.pm
 %%SITE_PERL%%/OpenXPKI/Server/NICE/Null.pm
+%%SITE_PERL%%/OpenXPKI/Server/NICE/Role/KeyGenerationLocal.pm
+%%SITE_PERL%%/OpenXPKI/Server/NICE/Role/KeyInDataPool.pm
+%%SITE_PERL%%/OpenXPKI/Server/NICE/Role/RevokeCertificate.pm
 %%SITE_PERL%%/OpenXPKI/Server/Notification/Base.pm
 %%SITE_PERL%%/OpenXPKI/Server/Notification/Connector.pm
 %%SITE_PERL%%/OpenXPKI/Server/Notification/Handler.pm
@@ -827,6 +836,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/EST/CACerts.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/EST/GenerateCSRAttribute.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Log.pm
+%%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/NICE/CallMethod.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/NICE/CheckForRevocation.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/NICE/FetchCertificate.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/NICE/FetchKey.pm
@@ -932,8 +942,10 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/Connector/IsValue.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/DatapoolEntry.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/DateTime.pm
+%%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/Evaluate.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/HasRole.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/IsCertificateOwner.pm
+%%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/IsWrappedRequest.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/Key.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/KeyGenerationMode.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/KeyParams.pm

@@ -1,6 +1,6 @@
 PORTNAME=	openxpki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.20.0
+DISTVERSION=	3.22.0
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -25,7 +25,6 @@ MY_DEPENDS=	bash:shells/bash \
 		p5-Crypt-Argon2>=0.007:security/p5-Crypt-Argon2 \
 		p5-Crypt-CBC>=2.29:security/p5-Crypt-CBC \
 		p5-Crypt-JWT>=0.032:security/p5-Crypt-JWT \
-		p5-Crypt-LibSCEP>=0.6:security/p5-Crypt-LibSCEP \
 		p5-Crypt-OpenSSL-AES>=0.02:security/p5-Crypt-OpenSSL-AES \
 		p5-Crypt-PKCS10>=2.000:security/p5-Crypt-PKCS10 \
 		p5-Crypt-Rijndael>=1.13:security/p5-Crypt-Rijndael \
