@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20220907:
+AUTHOR: se@FreeBSD.org
+
+  The convention of a WWW: line at the end of each port's pkg-descr file
+  has been changed to a WWW= definition in the port's Makefile. All ports
+  have been converted to follow this new scheme.
+
+  The portlint and portfmt ports will be updated, but may erroneously flag
+  the new convention as incorrect until the new versions have been installed.
+
 20220826:
 AUTHOR: tcberner@FreeBSD.org
 
