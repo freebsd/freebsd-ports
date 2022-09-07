@@ -14,6 +14,7 @@
     SUBDIR += cutegram
     SUBDIR += dendrite
     SUBDIR += dino
+    SUBDIR += discordo
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += farstream
