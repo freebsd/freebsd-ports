@@ -17492,3 +17492,4 @@ sysutils/pesign||2022-07-01|Has expired: Unmaintaned since 2016, very much out o
 misc/ngraph||2022-07-15|Software is discontinued because its developer Nervana Systems is defunct
 games/fishfight|games/jumpy|2022-08-02|Project renamed
 graphics/drm-fbsd13-kmod|graphics/drm-510-kmod|2022-09-07|Obsolete, use graphics/drm-510-kmod
+graphics/drm-54-kmod|graphics/drm-510-kmod|2022-09-07|Obsolete, use graphics/drm-510-kmod
