@@ -1,0 +1,5 @@
+An implementation of a synergy client for wayland compositors. Based on the
+upstream uSynergy library (heavily modified for more protocol support and a
+bit of paranoia).
+
+WWW:	https://github.com/r-c-f/waynergy
