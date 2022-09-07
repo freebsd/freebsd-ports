@@ -49,7 +49,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 12;
+my $micro = 13;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -158,7 +158,7 @@ my @varlist =  qw(
 	PKGNAMEPREFIX PKGNAMESUFFIX DISTVERSIONPREFIX DISTVERSION
 	DISTVERSIONSUFFIX DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER
 	MASTER_SITES WRKDIR WRKSRC NO_WRKSUBDIR SCRIPTDIR FILESDIR
-	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
+	PKGDIR COMMENT WWW DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE DISTINFO_FILE .CURDIR USE_LDCONFIG USE_AUTOTOOLS
 	USE_GNOME USE_PERL5 USE_QT USE_QT5 INDEXFILE PKGORIGIN
 	CONFLICTS CONFLICTS_BUILD CONFLICTS_INSTALL PKG_VERSION
@@ -490,7 +490,7 @@ sub checkdescr {
 	my($file) = @_;
 	my(%maxchars) = ($makevar{DESCR}, 80);
 	my(%maxlines) = ($makevar{DESCR}, 24);
-	my(%minlines) = ($makevar{DESCR}, 3);
+	my(%minlines) = ($makevar{DESCR}, 2);
 	my(%toolongerrmsg) = ($makevar{DESCR},
 					"exceeds $maxlines{$makevar{DESCR}} ".
 					"lines, make it shorter if possible.");
@@ -515,10 +515,10 @@ sub checkdescr {
 		}
 		if (/^WWW:(\s+)(\S*)/) {
 			my $wwwurl = $2;
-			if ($1 ne ' ') {
-				&perror("WARN", $file, -1, "use WWW: with a single space, ".
-					"then $wwwurl");
-			}
+			&perror("WARN", $file, -1, "the URL of the project website has been ".
+				"moved into the Makefile.  ".
+				"Remove the WWW: line from this file and add \"WWW=$wwwurl\"".
+				"to the Makefile immediately below the COMMENT line.");
 			if ($wwwurl !~ m|^https?://|) {
 				&perror("WARN", $file, -1, "WWW URL, $wwwurl should begin ".
 					"with \"http://\" or \"https://\".");
@@ -819,6 +819,11 @@ sub checkplist {
 				"porting guide at ".
 				"http://www.FreeBSD.org/gnome/docs/porting.html ".
 				"for more details)");
+		}
+
+		if ($_ =~ m|\.desktop$| && $makevar{USES} !~ /\bdesktop-file-utils\b/) {
+			&perror("FATAL", $file, $., "this port installs .desktop files. ".
+				"Please add `desktop-file-utils` to USES.");
 		}
 
 		if ($_ =~ m|^(%%([^%]+)%%)?.*\.mo$| && $makevar{USES} !~ /\bgettext\b/) {
@@ -1569,6 +1574,10 @@ sub checkmakefile {
 				&perror("FATAL", "", -1, "PLIST_FILES: files cannot contain ".
 					"%%FOO%% variables.  Use make variables and logic instead");
 			}
+			if ($plist_file =~ m|\.desktop$| && $makevar{USES} !~ /\bdesktop-file-utils\b/) {
+				&perror("FATAL", "", -1, "PLIST_FILES: this port installs .desktop files. ".
+					"please add `desktop-file-utils` to USES.");
+			}
 
 		}
 	}
@@ -2171,6 +2180,7 @@ xargs xmkmf
 				&& $curline !~ /^NO_PACKAGE(.)?=[^\n]+$i/m
 				&& $curline !~ /^NO_CDROM(.)?=[^\n]+$i/m
 				&& $curline !~ /^MAINTAINER(.)?=[^\n]+$i/m
+				&& $curline !~ /^WWW(.)?=[^\n]+$i/m
 				&& $curline !~ /^CATEGORIES(.)?=[^\n]+$i/m
 				&& $curline !~ /^(\w+)?USES(.)?=[^\n]+$i/m
 				&& $curline !~ /^WX_COMPS(.)?=[^\n]+$i/m
@@ -2205,6 +2215,7 @@ xargs xmkmf
 				&& $lm !~ /^NO_PACKAGE(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^NO_CDROM(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^MAINTAINER(.)?=[^\n]+($i\d*)/m
+				&& $lm !~ /^WWW(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^CATEGORIES(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^USES(.)?=[^\n]+$i/m
 				&& $lm !~ /^[A-Z0-9_]+_DESC=[^\n]+($i\d*)/m
@@ -2677,15 +2688,16 @@ EOF
 			&perror("WARN", $file, -1, "Version required is no longer needed in the comment section.");
 		}
 
-		#
-		# for the rest of the checks, comment lines are not important.
-		#
-		for ($i = 0; $i < scalar(@sections); $i++) {
-			$sections[$i] = "\n" . $sections[$i];
-			$sections[$i] =~ s/\n#[^\n]*//g;
-			$sections[$i] =~ s/\n\n+/\n/g;
-			$sections[$i] =~ s/^\n//;
-		}
+	}
+
+	#
+	# for the rest of the checks, comment lines are not important.
+	#
+	for ($i = 0; $i < scalar(@sections); $i++) {
+		$sections[$i] = "\n" . $sections[$i];
+		$sections[$i] =~ s/\n#[^\n]*//g;
+		$sections[$i] =~ s/\n\n+/\n/g;
+		$sections[$i] =~ s/^\n//;
 	}
 
 	#
@@ -2972,7 +2984,7 @@ DIST_SUBDIR EXTRACT_ONLY
 		&perror("FATAL", $file, -1, "either PORTVERSION or DISTVERSION must be specified");
 	}
 	if ($portversion =~ /^pl[0-9]*$/
-	|| $portversion =~ /^[0-9]*[A-Za-z]?[0-9]*(\.[0-9]*[A-Za-z]?[0-9+]*)*$/) {
+	|| $portversion =~ /^[0-9]*[A-Za-z]?[0-9]*([.+][0-9]*[A-Za-z]?[0-9+]*)*$/) {
 		print "OK: PORTVERSION \"$portversion\" looks fine.\n" if ($verbose);
 	} elsif ($portversion =~ /^[^\-]*\$[{\(].+[\)}][^\-]*$/) {
 		&perror("WARN", $file, -1, "using variable, \"$portversion\", as version ".
@@ -3176,7 +3188,7 @@ PATCH_SITES PATCHFILES PATCH_DIST_STRIP
 
 	&checkearlier($file, $tmp, @varnames);
 	&checkorder('MAINTAINER', $tmp, $file, qw(
-MAINTAINER COMMENT
+MAINTAINER COMMENT WWW
 	));
 
 	$tmp = "\n" . $tmp;
@@ -3226,10 +3238,31 @@ MAINTAINER COMMENT
 		}
 	}
 
+	# check WWW
+	if ($tmp !~ /\nWWW.?=\s*(\S+)/) {
+		&perror("WARN", $file, -1, "WWW should exist and immediately follow COMMENT.") unless ($makevar{WWW} ne '');
+	}
+
+	# check for correctness
+	{
+		my $wwwurl = $1 // $makevar{WWW};
+		if ($wwwurl and $wwwurl !~ m|^https?://|) {
+			&perror("WARN", $file, -1, "WWW URL, $wwwurl should begin with \"http://\" or \"https://\".");
+		}
+		if ($wwwurl =~ m|search.cpan.org|) {
+			if ($wwwurl =~ m|^http.?://search.cpan.org/~|) {
+				&perror("WARN", $file, -1, "consider changing WWW URL to https://search.cpan.org/dist/$makevar{PORTNAME}/");
+			}
+			if ($wwwurl =~ m,/$,) {
+				&perror("WARN", $file, -1, "end WWW CPAN URL with a \"/\"");
+			}
+		}
+	}
+
 	$idx++;
 
 	push(@varnames, qw(
-MAINTAINER COMMENT
+MAINTAINER COMMENT WWW
 	));
 
 	#
