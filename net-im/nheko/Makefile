@@ -6,6 +6,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Matrix IM client based on Qt technologies
+WWW=		https://github.com/Nheko-Reborn/nheko
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

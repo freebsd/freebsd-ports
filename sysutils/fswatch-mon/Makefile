@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-mon
 
 MAINTAINER=	enrico.m.crisostomo@gmail.com
 COMMENT=	Cross-platform file change monitor
+WWW=		https://github.com/emcrisostomo/fswatch
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux32
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Open-source electronics prototyping platform
+WWW=		https://www.arduino.cc/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

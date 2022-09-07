@@ -6,6 +6,7 @@ CATEGORIES=	dns security
 
 MAINTAINER=	rs@nextdns.io
 COMMENT=	NextDNS DNS53 to DNS over HTTPS proxy
+WWW=		https://github.com/nextdns/nextdns
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

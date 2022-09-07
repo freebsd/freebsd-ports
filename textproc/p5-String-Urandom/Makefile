@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to convert /dev/urandom to 8-bit chars
+WWW=		https://metacpan.org/release/String-Urandom
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

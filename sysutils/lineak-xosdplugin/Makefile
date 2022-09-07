@@ -7,6 +7,7 @@ DIST_SUBDIR=	lineak
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xosd-plugin for lineakd
+WWW=		http://lineak.sourceforge.net/
 
 LICENSE=	GPLv2
 

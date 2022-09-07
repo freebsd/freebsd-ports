@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Perl extension for OpenSSL PKCS10 API
+WWW=		https://metacpan.org/release/Crypt-OpenSSL-PKCS10
 
 LICENSE=	ART10
 

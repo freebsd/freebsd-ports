@@ -11,6 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Professional CAD system
+WWW=		https://www.ribbonsoft.com/qcad.html
 
 LICENSE=	GPLv3
 

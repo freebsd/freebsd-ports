@@ -4,6 +4,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	pyrus@bsdmail.com
 COMMENT=	Ridiculously tiny libxcb window manager
+WWW=		https://github.com/marshallmason/ittywm
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

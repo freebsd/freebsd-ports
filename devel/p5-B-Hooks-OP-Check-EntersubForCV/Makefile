@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to invoke callback on construction of entersub OPs
+WWW=		https://metacpan.org/release/B-Hooks-OP-Check-EntersubForCV
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

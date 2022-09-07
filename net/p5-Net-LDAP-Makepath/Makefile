@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides a method for creating paths in LDAP simply
+WWW=		https://metacpan.org/release/Net-LDAP-Makepath
 
 RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap
 

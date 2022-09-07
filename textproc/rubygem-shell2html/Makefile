@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mose@mose.com
 COMMENT=	Ruby library for transforming bash colors into HTML
+WWW=		https://github.com/mose/shell2html
 
 LICENSE=	MIT
 

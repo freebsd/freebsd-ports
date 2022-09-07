@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to pcap(3) LBL packet capture library
+WWW=		https://metacpan.org/release/Net-Pcap
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

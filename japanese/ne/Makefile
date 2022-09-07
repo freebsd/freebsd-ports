@@ -5,6 +5,7 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA018758/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VZ-like full-screen text editor with Japanese support
+WWW=		https://hp.vector.co.jp/authors/VA018758/ne/
 
 LICENSE=	GPLv2
 

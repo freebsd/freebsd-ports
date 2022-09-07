@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails60
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides the Font-Awesome web fonts and stylesheets as a Rails engine
+WWW=		https://github.com/bokmann/font-awesome-rails
 
 LICENSE=	MIT OFL11
 LICENSE_COMB=	dual

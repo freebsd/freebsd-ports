@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colour Management System (CMS)
+WWW=		http://www.oyranos.org/
 
 LICENSE=	BSD3CLAUSE
 

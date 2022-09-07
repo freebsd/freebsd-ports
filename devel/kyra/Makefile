@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Sprite engine written in C++
+WWW=		https://www.grinninglizard.com/kyra/
 
 LICENSE=	GPLv2
 

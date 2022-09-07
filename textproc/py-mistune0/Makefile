@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	0
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fastest markdown parser in pure Python
+WWW=		https://github.com/lepture/mistune
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

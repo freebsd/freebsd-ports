@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Produce PostScript files from Perl
+WWW=		https://metacpan.org/release/PostScript
 
 USES=		perl5
 USE_PERL5=	configure

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based password database client
+WWW=		http://ckpass.sourceforge.net/
 
 LICENSE=	GPLv3
 

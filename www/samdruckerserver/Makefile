@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	server
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Installs the server side of SamDrucker
+WWW=		https://github.com/dlangille/SamDrucker
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

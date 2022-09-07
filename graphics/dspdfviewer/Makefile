@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Dual-screen PDF viewer for LaTeX-beamer
+WWW=		https://github.com/dannyedel/dspdfviewer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

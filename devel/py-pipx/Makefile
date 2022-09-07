@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Install and Run Python Applications in Isolated Environments
+WWW=		https://github.com/pypa/pipx
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

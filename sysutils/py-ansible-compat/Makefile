@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Ansible compatibility goodies
+WWW=		https://github.com/ansible-community/ansible-compat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

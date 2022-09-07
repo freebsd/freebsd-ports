@@ -6,6 +6,7 @@ PKGNAMESUFFIX=		24
 
 MAINTAINER=		leva@ecentrum.hu
 COMMENT=		Console based password storing application
+WWW=		https://github.com/levaidaniel/kc
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

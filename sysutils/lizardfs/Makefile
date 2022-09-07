@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Open Source Distributed Filesystem
+WWW=		https://lizardfs.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

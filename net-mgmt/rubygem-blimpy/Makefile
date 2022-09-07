@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tool for managing a fleet of machines in the cloud
+WWW=		https://github.com/rtyler/blimpy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

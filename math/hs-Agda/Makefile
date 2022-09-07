@@ -5,6 +5,7 @@ CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Dependently typed functional programming language and proof assistant
+WWW=		https://wiki.portal.chalmers.se/agda/
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	custom

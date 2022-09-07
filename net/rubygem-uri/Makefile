@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provide classes to handle Uniform Resource Identifiers
+WWW=		https://github.com/ruby/uri
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

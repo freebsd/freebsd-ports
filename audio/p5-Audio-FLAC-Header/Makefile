@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to FLAC header metadata
+WWW=		https://metacpan.org/release/Audio-FLAC-Header
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

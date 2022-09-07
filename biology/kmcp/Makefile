@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Accurate metagenomic profiling & fast large-scale genome searching
+WWW=		https://bioinf.shenwei.me/kmcp/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

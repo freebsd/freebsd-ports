@@ -7,6 +7,7 @@ DISTNAME=	ProjectCenter-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development environment for GNUstep
+WWW=		http://www.gnustep.org/experience/ProjectCenter.html
 
 LICENSE=	GPLv2+ # comment in code; COPYING says GPLv3
 

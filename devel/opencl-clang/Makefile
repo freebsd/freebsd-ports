@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Clang wrapper to compile OpenCL C kernels to SPIR-V modules
+WWW=		https://github.com/intel/opencl-clang
 
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Geocode addresses with Mapquest
+WWW=		https://metacpan.org/release/Geo-Coder-Mapquest
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

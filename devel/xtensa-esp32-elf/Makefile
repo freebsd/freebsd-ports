@@ -31,6 +31,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Espressif ESP32 toolchain
+WWW=		https://dl.espressif.com/doc/esp-idf/latest/get-started/index.html #setup-toolchain
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

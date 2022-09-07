@@ -6,6 +6,7 @@ CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Intuitive, easy to use open source scan program
+WWW=		https://userbase.kde.org/Kooka
 
 LICENSE=	GPLv2+
 

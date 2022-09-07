@@ -10,6 +10,7 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin to check the lag between a postgresql replica and master
+WWW=		https://pypi.org/project/nagiosplugin/
 
 LICENSE=	MIT
 

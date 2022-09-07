@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	marcellocoutinho@gmail.com
 COMMENT=	Perl module for interfacing with GnuPG
+WWW=		https://metacpan.org/release/GnuPG
 
 LICENSE=	GPLv2
 

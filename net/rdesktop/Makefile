@@ -5,6 +5,7 @@ CATEGORIES=	net comms
 
 MAINTAINER=	freebsd@gregv.net
 COMMENT=	RDP client for Windows NT/2000/2003 Terminal Server
+WWW=		http://www.rdesktop.org/
 
 LICENSE=	GPLv3
 

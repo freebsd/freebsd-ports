@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE RSI prevention tool
+WWW=		https://userbase.kde.org/RSIBreak
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt

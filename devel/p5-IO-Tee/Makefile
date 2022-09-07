@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Multiplex output to multiple output handles
+WWW=		https://metacpan.org/release/IO-Tee
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

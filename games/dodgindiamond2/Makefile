@@ -7,6 +7,7 @@ DISTNAME=	dd2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old school shoot'em up game
+WWW=		https://www.usebox.net/jjm/dd2/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

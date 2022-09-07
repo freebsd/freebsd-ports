@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ale_sagra@hotmail.com
 COMMENT=	Ruby client for the Oracle Cloud Infrastructure API
+WWW=		https://github.com/oracle/oci-ruby-sdk/
 
 LICENSE=	APACHE20
 

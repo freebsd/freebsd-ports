@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/silnrsi/graphite/releases/download/${DISTVERSIO
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Rendering capabilities for complex non-Roman writing systems
+WWW=		https://graphite.sil.org
 
 LICENSE=	GPLv2 LGPL21 MPL20
 LICENSE_COMB=	dual

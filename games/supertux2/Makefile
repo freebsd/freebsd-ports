@@ -10,6 +10,7 @@ DISTNAME=	SuperTux-${DISTVERSIONFULL}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Side-scroller game similar to Super Mario Brothers
+WWW=		https://supertux.org/
 
 BUILD_DEPENDS=	glm>0:math/glm
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \

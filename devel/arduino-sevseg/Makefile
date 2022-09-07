@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Arduino seven segment display library
+WWW=		https://github.com/DeanIsMe/SevSeg
 
 LICENSE=	MIT
 

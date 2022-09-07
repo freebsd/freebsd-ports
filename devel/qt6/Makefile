@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform application and UI framework (metaport)
+WWW=		https://www.qt.io/
 
 USES=		metaport qt:6
 USE_QT=		${_USE_QT_ALL:S/$/_run/}

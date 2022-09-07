@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast PostreSQL array parsing
+WWW=		https://github.com/dockyard/pg_array_parser
 
 LICENSE=	MIT
 

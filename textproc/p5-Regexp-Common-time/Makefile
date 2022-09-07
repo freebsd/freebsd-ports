@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Date and time regexps implemented in Perl
+WWW=		https://metacpan.org/release/Regexp-Common-time
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Regexp-Common>0:textproc/p5-Regexp-Common

@@ -4,6 +4,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Script to ease creation of rubygem- ports
+WWW=		https://github.com/swills/freebsd-ruby
 
 RUN_DEPENDS=	gem:devel/ruby-gems
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Assess password quality
+WWW=		https://metacpan.org/release/Data-Password
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

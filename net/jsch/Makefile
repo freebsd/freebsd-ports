@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Java implementation of SSH2
+WWW=		http://www.jcraft.com/jsch
 
 LICENSE=	BSD3CLAUSE
 

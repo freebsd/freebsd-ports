@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Non-blocking Graphite client
+WWW=		https://metacpan.org/release/AnyEvent-Graphite
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-AnyEvent>=4.15:devel/p5-AnyEvent \

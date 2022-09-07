@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	Python Xapp library
+WWW=		https://github.com/linuxmint/python3-xapp
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

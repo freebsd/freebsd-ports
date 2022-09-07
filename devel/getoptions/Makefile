@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Elegant option parser for shell scripts
+WWW=		https://github.com/ko1nksm/getoptions/
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

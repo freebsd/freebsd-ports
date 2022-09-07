@@ -6,6 +6,7 @@ MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%200.5.x/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXDE Session Manager
+WWW=		https://lxde.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

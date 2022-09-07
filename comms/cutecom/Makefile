@@ -5,6 +5,7 @@ CATEGORIES=		comms
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Graphical serial terminal for embedded programming
+WWW=		https://gitlab.com/cutecom/cutecom
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

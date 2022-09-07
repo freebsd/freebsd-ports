@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	johan@stromnet.se
 COMMENT=	Pure python bindings for Augeas
+WWW=		https://augeas.net
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wolfenstein 3D levels ported to Doom II
+WWW=		https://www.doomworld.com/wolfendoom/
 
 USES=		tar:bzip2
 NO_BUILD=	yes

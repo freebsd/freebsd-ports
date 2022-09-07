@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:S/-/_/}.${PORTVERSION}-1.4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lets define folders to be displayed at the top of the folders list
+WWW=		https://www.squirrelmail.org/plugin_view.php?id=183
 
 USE_SM_COMPAT=	yes
 

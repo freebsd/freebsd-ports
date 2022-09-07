@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full screen visualization of network traffic (an ancient version)
+WWW=		http://soft.risp.ru/trafshow/index_en.shtml
 
 .if defined(WITH_TRAFSHOW_SLANG) || \
     (exists(${LOCALBASE}/lib/libslang.a) && !defined(WITHOUT_TRAFSHOW_SLANG))

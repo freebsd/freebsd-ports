@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Port of jQuery.js
+WWW=		https://metacpan.org/release/pQuery
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

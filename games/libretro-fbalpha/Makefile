@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Final Burn Alpha port for libretro
+WWW=		https://github.com/libretro/libretro-fbalpha
 
 # Commercial users must seek permission from copyright holders.
 LICENSE=	FBA

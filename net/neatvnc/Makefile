@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Liberally licensed VNC server library
+WWW=		https://github.com/any1/neatvnc
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

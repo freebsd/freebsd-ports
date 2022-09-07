@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DI
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Git extension for versioning large files
+WWW=		https://git-lfs.github.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

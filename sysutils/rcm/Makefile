@@ -5,6 +5,7 @@ MASTER_SITES=	https://thoughtbot.github.io/rcm/dist/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	RC file (dotfile) management
+WWW=		https://github.com/thoughtbot/rcm
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

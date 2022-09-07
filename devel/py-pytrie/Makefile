@@ -7,6 +7,7 @@ DISTNAME=	PyTrie-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Pure Python implementation of the trie data structure
+WWW=		https://github.com/gsakkis/pytrie
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

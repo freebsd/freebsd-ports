@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Kuhn-Munkres (Hungarian) algorithm in C++
+WWW=		https://github.com/saebyn/munkres-cpp
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

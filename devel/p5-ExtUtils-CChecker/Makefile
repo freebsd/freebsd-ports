@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Configure-time utilities for using C headers, libraries, OS features
+WWW=		https://metacpan.org/release/ExtUtils-CChecker
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

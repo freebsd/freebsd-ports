@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	GUI for Panorama Tools, to stitch panoramic images
+WWW=		http://hugin.sourceforge.net/
 
 LICENSE=	GPLv2
 

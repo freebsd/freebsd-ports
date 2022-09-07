@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mark modules as loaded or unloaded
+WWW=		https://metacpan.org/release/Module-Loaded
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

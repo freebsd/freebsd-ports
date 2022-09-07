@@ -5,6 +5,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to validate use of certain identifiers in messages
+WWW=		https://github.com/trusteddomainproject/OpenARC
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

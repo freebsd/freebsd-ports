@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides a dialog for getting values to use with chmod
+WWW=		https://metacpan.org/release/Gtk2-Chmod
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Stat-Bits>=0:sysutils/p5-File-Stat-Bits \

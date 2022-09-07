@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Common stuff for completion Perl routines
+WWW=		https://metacpan.org/release/Complete-Common
 
 NO_ARCH=	yes
 USES=		perl5

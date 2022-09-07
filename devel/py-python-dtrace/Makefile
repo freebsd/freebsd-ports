@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gcj21@cl.cam.ac.uk
 COMMENT=	DTrace consumer for Python based on libdtrace
+WWW=		https://tmetsch.github.io/python-dtrace/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

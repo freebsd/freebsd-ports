@@ -11,6 +11,7 @@ DISTNAME=	Browser282b2
 
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Java/Swing-based LDAP browser and editor
+WWW=		https://web.archive.org/web/20081218031210/http://www.mcs.anl.gov/~gawor/ldap/
 
 # Converted from RESTRICTED
 LICENSE=	ldapbrowser-license

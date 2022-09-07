@@ -4,6 +4,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool to query internet domain name services
+WWW=		https://pear.php.net/package/Net_Whois
 
 USES=		pear
 

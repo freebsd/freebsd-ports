@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple Pod browser with hypertext capabilities in a Toplevel widget
+WWW=		https://metacpan.org/release/Tk-Pod
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

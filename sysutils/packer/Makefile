@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	brad@facefault.org
 COMMENT=	Tool for creating machine images
+WWW=		https://packer.io/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

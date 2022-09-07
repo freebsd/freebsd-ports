@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	naito.yuichiro@gmail.com
 COMMENT=	Test suite for server configuration
+WWW=		https://github.com/mizzy/specinfra
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

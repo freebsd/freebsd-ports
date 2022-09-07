@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library to interact with HipChat
+WWW=		https://github.com/hipchat/hipchat-rb
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

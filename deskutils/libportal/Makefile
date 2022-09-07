@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	GIO-styled async APIs for Flatpak
+WWW=		https://github.com/flatpak/libportal
 
 LICENSE=	GPLv2+
 

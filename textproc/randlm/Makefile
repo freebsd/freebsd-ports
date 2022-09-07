@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Toolkit for building randomized language models
+WWW=		https://sourceforge.net/projects/randlm/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

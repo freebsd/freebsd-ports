@@ -8,6 +8,7 @@ CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plugin extensible IDE for C/C++ and other languages
+WWW=		https://www.kdevelop.org/
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi

@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	freebsd-ports@jan0sch.de
 COMMENT=	Java/Scala build tool
+WWW=		https://www.lihaoyi.com/mill/
 
 LICENSE=	MIT
 

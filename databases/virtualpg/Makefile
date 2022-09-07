@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Loadable dynamic extension to both SQLite and SpatiaLite
+WWW=		https://www.gaia-gis.it/fossil/virtualpg/index
 
 LICENSE=	MPL11 LGPL21 GPLv2
 LICENSE_COMB=	dual

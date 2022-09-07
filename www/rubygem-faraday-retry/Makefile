@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Catch exceptions and retries each request a limited number of times
+WWW=		https://github.com/lostisland/faraday-retry
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

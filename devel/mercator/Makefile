@@ -6,6 +6,7 @@ MASTER_SITES=	SF/worldforge/Mercator%20%28terrain%20lib%29/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Procedural terrain library
+WWW=		https://www.worldforge.org/index.php/components/mercator/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

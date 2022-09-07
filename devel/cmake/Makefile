@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/Kitware/CMake/releases/download/v${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform Makefile generator
+WWW=		https://www.cmake.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt

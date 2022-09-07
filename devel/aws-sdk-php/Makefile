@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}-php-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	PHP interface for Amazon Web Services (AWS)
+WWW=		https://github.com/aws/aws-sdk-php
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

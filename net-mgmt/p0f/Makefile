@@ -7,6 +7,7 @@ MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/ \
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Passive OS fingerprinting tool
+WWW=		https://lcamtuf.coredump.cx/p0f3/
 
 LICENSE=	LGPL21
 

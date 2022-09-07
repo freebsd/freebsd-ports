@@ -16,6 +16,7 @@ PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	GNU Compiler Collection
+WWW=		https://gcc.gnu.org/
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi

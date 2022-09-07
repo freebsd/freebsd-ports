@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Calculates 'eMule' hashes or producing ed2k:// file links
+WWW=		https://www.sdalu.com/software/
 
 LICENSE=	PD BSD3CLAUSE
 LICENSE_COMB=	multi

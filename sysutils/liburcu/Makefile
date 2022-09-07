@@ -6,6 +6,7 @@ DISTNAME=	userspace-rcu-${PORTVERSION}
 
 MAINTAINER=	freebsd@dns-lab.com
 COMMENT=	Userspace read-copy-update (RCU) data synchronization library
+WWW=		https://liburcu.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/lgpl-2.1.txt

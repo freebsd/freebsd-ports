@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implementation of RFC 3610 - Counter with CBC-MAC (CCM)
+WWW=		https://github.com/SmallLars/openssl-ccm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

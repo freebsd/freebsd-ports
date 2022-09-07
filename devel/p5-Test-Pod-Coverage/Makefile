@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check for pod coverage in your distribution
+WWW=		https://metacpan.org/release/Test-Pod-Coverage
 
 LICENSE=	ART20
 

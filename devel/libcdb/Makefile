@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Constant database library
+WWW=		https://github.com/rmind/libcdb
 
 USES=		compiler:c11 gmake libtool:build
 

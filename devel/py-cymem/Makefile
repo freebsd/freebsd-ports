@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cython memory helper
+WWW=		https://github.com/explosion/cymem
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

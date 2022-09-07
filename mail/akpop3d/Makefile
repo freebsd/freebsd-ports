@@ -5,6 +5,7 @@ MASTER_SITES=	https://synflood.at/akpop3d/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP3 daemon aimed to be small and secure
+WWW=		https://synflood.at/akpop3d.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

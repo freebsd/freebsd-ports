@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Queue
+WWW=		https://pear.horde.org
 
 USES=	horde cpe
 

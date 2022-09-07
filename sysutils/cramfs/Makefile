@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Linux Compressed ROM FileSystem
+WWW=		https://sourceforge.net/projects/cramfs/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

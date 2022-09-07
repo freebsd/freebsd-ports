@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Fork of mox with Python 3 support
+WWW=		https://docs.openstack.org/mox3/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

@@ -6,6 +6,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Twitch chat client
+WWW=		https://chatterino.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

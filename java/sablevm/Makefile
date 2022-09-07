@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java VM created by McGill University's Sable Research Group
+WWW=		http://www.sablevm.org/
 
 LICENSE=	LGPL21
 

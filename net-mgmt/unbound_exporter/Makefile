@@ -6,6 +6,7 @@ CATEGORIES=		net-mgmt
 
 MAINTAINER=		aduitsis@cpan.org
 COMMENT=		Prometheus metrics exporter for the Unbound DNS resolver
+WWW=		https://github.com/kumina/unbound_exporter
 
 LICENSE=		APACHE20
 

@@ -5,6 +5,7 @@ MASTER_SITES=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Comic book viewer
+WWW=		https://peruse.kde.org/
 
 LICENSE=	LGPL21
 

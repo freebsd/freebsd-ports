@@ -5,6 +5,7 @@ CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PHP support for KDevelop
+WWW=		https://www.kdevelop.org/
 
 LICENSE=	GPLv2+
 

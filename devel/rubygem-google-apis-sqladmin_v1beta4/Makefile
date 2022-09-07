@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple REST client for Cloud SQL Admin API V1beta4
+WWW=		https://github.com/googleapis/google-api-ruby-client/tree/master/generated/google-apis-sqladmin_v1beta4
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

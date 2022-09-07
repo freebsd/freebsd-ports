@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Visualization tool for genomic datasets
+WWW=		https://software.broadinstitute.org/software/igv/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt

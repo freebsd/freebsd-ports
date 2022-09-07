@@ -7,6 +7,7 @@ DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Send small notifications to your desktop
+WWW=		https://mate-desktop.org/
 
 LICENSE=	GPLv2+ GPLv3+
 LICENSE_COMB=	multi

@@ -8,6 +8,7 @@ DISTNAME=	elisau10
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Elisa 10-dot Kanji font
+WWW=		http://www.wheel.gr.jp/~dai/software/elisau10-doc.html
 
 LICENSE=	NOTPARTIAL-NOTCOMMERCIAL
 LICENSE_NAME=	Whole, not partial, and not commercial

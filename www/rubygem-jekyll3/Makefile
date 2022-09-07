@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple, blog aware, static site generator
+WWW=		https://jekyllrb.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

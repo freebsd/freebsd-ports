@@ -10,6 +10,7 @@ PATCHFILES=	1f322c45aa365d377e1d7db567bb7087c7c1b38c.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Regular expressions library compatible with POSIX/GNU/Perl
+WWW=		https://github.com/kkos/oniguruma
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

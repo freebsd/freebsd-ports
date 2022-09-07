@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl extension for a front-end to gnuplot, XRT, and Xmgrace
+WWW=		https://metacpan.org/release/Chart-Graph
 
 LICENSE=	GPLv2
 

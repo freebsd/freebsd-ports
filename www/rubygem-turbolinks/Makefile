@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Turbolinks makes following links in your web application faster
+WWW=		https://github.com/turbolinks/turbolinks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

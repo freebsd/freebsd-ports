@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OmniAuth strategy for SAML
+WWW=		https://github.com/omniauth/omniauth-saml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Call methods on native Perl types
+WWW=		https://metacpan.org/release/autobox
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

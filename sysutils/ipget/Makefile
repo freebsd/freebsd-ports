@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Retrieve files over IPFS and save them locally
+WWW=		https://github.com/ipfs/ipget
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

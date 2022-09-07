@@ -6,6 +6,7 @@ MASTER_SITES=	https://noping.cc/files/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Liboping, a C library, and utility to generate ICMP echo requests
+WWW=		https://noping.cc/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

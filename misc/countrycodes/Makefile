@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ISO 3166 country code finder
+WWW=		https://sourceforge.net/projects/countrycodes/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

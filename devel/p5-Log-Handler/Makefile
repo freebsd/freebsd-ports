@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-oriented handler for logging, tracing, and debugging in Perl
+WWW=		https://metacpan.org/release/Log-Handler
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

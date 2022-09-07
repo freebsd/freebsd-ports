@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Handles low-level interfacing for files tags
+WWW=		https://github.com/beetbox/mediafile
 
 LICENSE=	MIT
 

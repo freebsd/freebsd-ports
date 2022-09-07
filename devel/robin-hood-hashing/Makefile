@@ -4,6 +4,7 @@ CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast & memory efficient hashtable based on robin hood hashing for C++
+WWW=		https://github.com/martinus/robin-hood-hashing
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/2588/
 
 MAINTAINER=	uddka@student.kit.edu
 COMMENT=	Vamp audio analysis plugin SDK
+WWW=		https://www.vamp-plugins.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,6 +1,7 @@
 PORTNAME=	husky-areafix
 
 COMMENT=	Husky FTN areafix library
+WWW=		http://husky.sourceforge.net/
 
 LICENSE=	LGPL20
 

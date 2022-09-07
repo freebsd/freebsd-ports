@@ -5,6 +5,7 @@ CATEGORIES=	net wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VNC server for wlroots-based compositors
+WWW=		https://github.com/any1/wayvnc
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

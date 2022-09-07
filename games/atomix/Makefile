@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Yet another little mind game
+WWW=		https://wiki.gnome.org/Apps/Atomix
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

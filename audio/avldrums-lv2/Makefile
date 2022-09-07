@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Dedicated AVLDrumkits LV2 Plugin
+WWW=		https://x42-plugins.com/x42/x42-avldrums
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

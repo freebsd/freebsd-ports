@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utilities to build beautiful and testable command line interfaces
+WWW=		https://github.com/sdispater/clikit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

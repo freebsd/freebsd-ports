@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Middleware to handle HTTP caching
+WWW=		https://github.com/sourcelevel/faraday-http-cache
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

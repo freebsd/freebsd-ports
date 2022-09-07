@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perform exit processing for a program or object
+WWW=		https://metacpan.org/release/AtExit
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE

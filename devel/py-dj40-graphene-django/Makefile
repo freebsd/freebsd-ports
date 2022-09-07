@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Graphene Django integration
+WWW=		https://github.com/graphql-python/graphene-django
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

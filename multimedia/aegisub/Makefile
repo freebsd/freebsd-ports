@@ -9,6 +9,7 @@ MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform subtitle editor
+WWW=		http://www.aegisub.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE

@@ -6,6 +6,7 @@ MASTER_SITES=	http://coccinelle.lip6.fr/distrib/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program matching and transformation engine
+WWW=		http://coccinelle.lip6.fr/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt

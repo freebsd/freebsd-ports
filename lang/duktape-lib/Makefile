@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lib
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeddable Javascript engine (shared lib)
+WWW=		https://duktape.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

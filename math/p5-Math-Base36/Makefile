@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Encoding and decoding of base36 strings
+WWW=		https://metacpan.org/release/Math-Base36
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

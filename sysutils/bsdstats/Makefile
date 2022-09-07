@@ -6,6 +6,7 @@ DISTFILES=
 
 MAINTAINER=	scrappy@hub.org
 COMMENT=	Monthly script for reporting anonymous statistics about your machine
+WWW=		https://www.bsdstats.org/
 
 LICENSE=	BSD4CLAUSE
 

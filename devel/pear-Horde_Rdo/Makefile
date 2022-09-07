@@ -5,6 +5,7 @@ MASTER_SITES=	http://pear.horde.org/get/
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Rampage Data Objects
+WWW=		https://pear.horde.org
 
 USES=	horde
 USE_HORDE_RUN=	Horde_Db \

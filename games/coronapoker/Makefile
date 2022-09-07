@@ -5,6 +5,7 @@ CATEGORIES=	games java
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Texas Holdem poker game
+WWW=		https://tonikelope.github.io/coronapoker/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

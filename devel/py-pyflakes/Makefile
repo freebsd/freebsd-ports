@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Passive checker of Python programs
+WWW=		https://github.com/PyCQA/pyflakes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

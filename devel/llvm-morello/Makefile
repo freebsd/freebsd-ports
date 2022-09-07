@@ -3,6 +3,7 @@
 LLVM_SUFFIX=	-morello
 
 COMMENT=	LLVM and Clang with support the Arm Morello architecture
+WWW=		https://git.morello-project.org/morello/llvm-project
 
 DISTINFO_FILE=	${.CURDIR}/distinfo
 DESCR=		${.CURDIR}/pkg-descr

@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Minimalistic C client library for the Redis database
+WWW=		https://github.com/redis/hiredis
 
 LICENSE=	BSD3CLAUSE
 

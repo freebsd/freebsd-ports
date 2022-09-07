@@ -6,6 +6,7 @@ MASTER_SITES=	http://e-soul.org/distfiles/ \
 
 MAINTAINER=	Mario.G.Pavlov@gmail.com
 COMMENT=	Simple GUI tool for tracking port updates
+WWW=		https://portrac.e-soul.org/
 
 LICENSE=	BSD2CLAUSE
 

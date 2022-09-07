@@ -8,6 +8,7 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/local/${PORTNAME}/ \
 
 MAINTAINER=	matt@peterson.org
 COMMENT=	SNMP library written on top of glib and gnet2
+WWW=		https://trac.eecs.iu-bremen.de/projects/gsnmp/
 
 LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
 

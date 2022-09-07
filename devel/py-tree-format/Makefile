@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Generate nicely formatted trees
+WWW=		https://pypi.org/project/tree-format/
 
 LICENSE=	APACHE20
 

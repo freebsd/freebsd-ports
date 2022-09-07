@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dave@gufi.org
 COMMENT=	Collection of Python deprecation patterns and strategies
+WWW=		https://docs.openstack.org/debtcollector/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

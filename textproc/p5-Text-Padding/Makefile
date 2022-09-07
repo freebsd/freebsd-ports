@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple way of formatting a text
+WWW=		https://metacpan.org/release/Text-Padding
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

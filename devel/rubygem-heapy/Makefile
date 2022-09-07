@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	CLI for analyzing Ruby Heap dumps
+WWW=		https://github.com/schneems/heapy
 
 LICENSE=	MIT
 

@@ -10,6 +10,7 @@ PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GPU stress test and OpenGL benchmark
+WWW=		https://www.Geeks3D.com/GpuTest/
 
 LICENSE=	GEEKS3D
 LICENSE_NAME=	Geeks3D End-User License Agreement

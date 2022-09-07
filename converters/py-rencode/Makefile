@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Web safe object pickling/unpickling
+WWW=		https://github.com/aresch/rencode
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

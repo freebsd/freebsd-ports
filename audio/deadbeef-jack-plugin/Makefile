@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	JACK output plugin for DeaDBeeF music player
+WWW=		https://github.com/Alexey-Yakovenko/jack
 
 LICENSE=	MIT
 

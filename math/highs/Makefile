@@ -9,6 +9,7 @@ PATCHFILES=	616280ac3f2a894cfcd138a9883a7e0df6355187.patch:-p1 # backport https:
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solver for large scale sparse linear programming (LP) problems
+WWW=		https://github.com/ERGO-Code/HiGHS
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

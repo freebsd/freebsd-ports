@@ -6,6 +6,7 @@ MASTER_SITES=	SF/vfront/vfront/vfront-${DISTVERSION}
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Simple frontend for database data entry
+WWW=		http://www.vfront.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license

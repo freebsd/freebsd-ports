@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ShipIt step for recreating the MANIFEST
+WWW=		https://metacpan.org/release/ShipIt-Step-Manifest
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jkeenan@cpan.org
 COMMENT=	Unified framework for obtaining common platform metadata
+WWW=		https://metacpan.org/release/Devel-Platform-Info
 
 LICENSE=	ART20
 

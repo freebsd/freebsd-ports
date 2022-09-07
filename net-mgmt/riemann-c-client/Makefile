@@ -5,6 +5,7 @@ MASTER_SITES=	https://git.madhouse-project.org/algernon/${PORTNAME}/archive/
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	C library and command-line tool for Riemann
+WWW=		https://git.madhouse-project.org/algernon/riemann-c-client
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

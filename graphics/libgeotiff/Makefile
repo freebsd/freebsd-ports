@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.osgeo.org/geotiff/libgeotiff/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing GeoTIFF information tags
+WWW=		https://github.com/OSGeo/libgeotiff
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

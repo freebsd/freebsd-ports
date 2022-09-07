@@ -7,6 +7,7 @@ DISTNAME=	openvanilla-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM OpenVanilla input method (IM)/output filter (OF) framework
+WWW=		https://openvanilla.org/
 
 BUILD_DEPENDS=	scim:textproc/scim	\
 		${LOCALBASE}/include/OpenVanilla/OpenVanilla.h:textproc/openvanilla-framework

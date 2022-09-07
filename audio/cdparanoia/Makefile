@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	CDDA extraction tool (also known as ripper)
+WWW=		https://www.xiph.org/paranoia/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL

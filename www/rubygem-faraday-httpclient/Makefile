@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Faraday adapter for HTTPClient
+WWW=		https://github.com/lostisland/faraday-httpclient
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

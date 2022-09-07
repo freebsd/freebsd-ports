@@ -7,6 +7,7 @@ DISTNAME=	vnc_reflector-${PORTVERSION}
 
 MAINTAINER=	paul@it.ca
 COMMENT=	Multi-client VNC proxy server
+WWW=		https://sourceforge.net/projects/vnc-reflector/
 
 USES=		jpeg
 USE_RC_SUBR=	vncreflector

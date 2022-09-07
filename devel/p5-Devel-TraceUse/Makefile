@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	Show the modules your program loads, recursively
+WWW=		https://metacpan.org/release/Devel-TraceUse
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

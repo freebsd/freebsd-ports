@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Library, tools, and PAM module for OATH authentication
+WWW=		https://www.nongnu.org/oath-toolkit/
 
 LICENSE=	GPLv3+ LGPL20+
 LICENSE_COMB=	multi

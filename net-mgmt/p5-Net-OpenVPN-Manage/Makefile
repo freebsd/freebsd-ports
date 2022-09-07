@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manage an OpenVPN process via its management port
+WWW=		https://metacpan.org/release/Net-OpenVPN-Manage
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

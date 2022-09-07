@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-libs
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	libraries module for the GVM solution
+WWW=		https://github.com/greenbone/gvm-libs
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Determines Subversion accounts to receive email via the authz file
+WWW=		https://metacpan.org/release/SVN-Notify-Filter-AuthZMail
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

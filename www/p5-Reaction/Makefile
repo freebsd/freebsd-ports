@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extended MVC framework built upon Catalyst
+WWW=		https://metacpan.org/release/Reaction
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Catalyst-Component-ACCEPT_CONTEXT>=0.05:www/p5-Catalyst-Component-ACCEPT_CONTEXT \

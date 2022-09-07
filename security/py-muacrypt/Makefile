@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Support tool and API for Autocrypt mail agents
+WWW=		https://pypi.org/project/muacrypt/
 
 LICENSE=	MIT
 

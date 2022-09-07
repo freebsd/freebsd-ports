@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	205
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Memory efficient serialization library
+WWW=		https://google.github.io/flatbuffers/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

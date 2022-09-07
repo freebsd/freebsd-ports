@@ -5,6 +5,7 @@ CATEGORIES=	textproc www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library and program to validate and fix HTML
+WWW=		http://tidyp.com/
 
 CONFIGURE_ARGS=	--enable-asian --enable-utf16
 GNU_CONFIGURE=	yes

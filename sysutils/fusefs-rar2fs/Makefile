@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	n_carlsson@outlook.com
 COMMENT=	Mount RAR archives as file system
+WWW=		https://hasse69.github.io/rar2fs/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

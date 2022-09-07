@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert files from lemon parser to php5
+WWW=		https://pear.php.net/package/PHP_ParserGenerator
 
 USES=		pear
 

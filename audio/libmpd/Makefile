@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction around libmpdclient
+WWW=		https://gmpc.wikia.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

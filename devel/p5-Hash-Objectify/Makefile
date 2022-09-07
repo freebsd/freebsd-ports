@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create objects from hashes on the fly
+WWW=		https://metacpan.org/release/Hash-Objectify
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

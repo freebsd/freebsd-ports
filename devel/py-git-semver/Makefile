@@ -8,6 +8,7 @@ DISTNAME=	git_semver-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Semantic versions management integrated to git
+WWW=		https://github.com/hartym/git-semver
 
 LICENSE=	APACHE20
 

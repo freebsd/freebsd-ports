@@ -7,6 +7,7 @@ DISTNAME=	gtk-chtheme-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 theme changer
+WWW=		http://plasmasturm.org/programs/gtk-chtheme/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

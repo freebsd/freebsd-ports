@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Library for building web service security
+WWW=		https://github.com/savonrb/akami
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

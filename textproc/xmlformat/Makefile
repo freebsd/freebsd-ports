@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.kitebird.com/software/xmlformat/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XML Document Formatter
+WWW=		http://www.kitebird.com/software/xmlformat/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

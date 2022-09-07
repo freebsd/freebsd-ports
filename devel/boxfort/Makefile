@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Convenient and cross-platform sandboxing C library
+WWW=		https://github.com/Snaipe/BoxFort
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

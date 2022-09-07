@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.cl.cam.ac.uk/~mgk25/download/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Lossless compression for bi-level images such as scanned pages, faxes
+WWW=		https://www.cl.cam.ac.uk/~mgk25/jbigkit/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

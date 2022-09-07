@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Experimental vector graphics and 2D animation editor
+WWW=		https://www.vpaint.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

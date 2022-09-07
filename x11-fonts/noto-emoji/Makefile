@@ -10,6 +10,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Noto Fonts family (Emoji)
+WWW=		https://www.google.com/get/noto/
 
 LICENSE=	APACHE20
 

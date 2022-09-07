@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multiply and invert matrices in Perl
+WWW=		https://metacpan.org/release/Math-Matrix
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

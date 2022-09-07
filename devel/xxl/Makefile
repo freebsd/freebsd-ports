@@ -6,6 +6,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/39195019/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ library for exception handling and asset management
+WWW=		https://web.archive.org/web/20120106082715/http://www.zork.org/xxl/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

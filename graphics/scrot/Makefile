@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	SCReenshOT - command line screen capture utility
+WWW=		https://github.com/resurrecting-open-source-projects/scrot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

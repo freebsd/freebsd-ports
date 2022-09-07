@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python module that provides access to NOAA METAR weather reports
+WWW=		https://github.com/klausman/pymetar
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

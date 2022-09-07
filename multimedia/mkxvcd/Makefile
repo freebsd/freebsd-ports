@@ -6,6 +6,7 @@ MASTER_SITES=	SF/kvcd4nix/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Makes high quality X/K/S/VCD movies from many formats
+WWW=		http://kvcd4nix.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	aou@eecs.berkeley.edu
 COMMENT=	Slack plugin for libpurple
+WWW=		https://github.com/dylex/slack-libpurple
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

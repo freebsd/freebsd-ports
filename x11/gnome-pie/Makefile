@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Circular application launcher
+WWW=		https://schneegans.github.io/gnome-pie.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

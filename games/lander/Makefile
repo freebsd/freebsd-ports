@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.nickg.me.uk/files/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lunar Lander clone
+WWW=		https://www.doof.me.uk/lunar-lander/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

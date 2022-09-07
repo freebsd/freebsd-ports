@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Access any command-line tool via a WebSocket
+WWW=		http://websocketd.com/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

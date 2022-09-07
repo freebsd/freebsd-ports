@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	PostgreSQL extension for ed25519 sign and verify
+WWW=		https://gitlab.com/dwagin/pg_ed25519
 
 LICENSE=	MIT
 

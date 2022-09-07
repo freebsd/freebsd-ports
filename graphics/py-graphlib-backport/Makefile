@@ -7,6 +7,7 @@ DISTNAME=	graphlib_backport-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Backport of the Python 3.9 graphlib module for Python 3.6+
+WWW=		https://github.com/mariushelf/graphlib_backport
 
 LICENSE=	PSFL
 

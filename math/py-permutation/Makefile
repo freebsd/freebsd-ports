@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Permutations of finitely many positive integers
+WWW=		https://github.com/jwodder/permutation
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

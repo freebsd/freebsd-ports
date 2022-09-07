@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Various R Programming Tools for Model Fitting
+WWW=		https://cran.r-project.org/web/packages/gmodels/
 
 LICENSE=	GPLv2
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sergey.dyatko@gmail.com
 COMMENT=	Simple compile time interface checking for OO Perl
+WWW=		https://metacpan.org/release/interface
 
 USES=		perl5
 USE_PERL5=	configure

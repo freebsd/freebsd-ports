@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/BRL-CAD/brlcad/releases/download/rel-${PORTVERS
 
 MAINTAINER=	erik@brlcad.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
+WWW=		https://brlcad.org/
 
 WRKSRC=${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Gem to handle all CRUD user interface needs
+WWW=		https://github.com/activescaffold/active_scaffold
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

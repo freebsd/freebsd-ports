@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Python index manager for Elasticsearch
+WWW=		https://curator.readthedocs.org/en/master/
 
 LICENSE=	APACHE20
 

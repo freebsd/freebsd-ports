@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Flexible version handling
+WWW=		https://github.com/jimporter/verspec
 
 LICENSE=	APACHE20 BSD2CLAUSE
 LICENSE_COMB=	dual

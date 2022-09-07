@@ -4,6 +4,7 @@ CATEGORIES=	security lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language of cryptography
+WWW=		https://cryptol.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR simple HTML form package
+WWW=		https://pear.php.net/package/HTML_Form
 
 LICENSE=	PHP301
 

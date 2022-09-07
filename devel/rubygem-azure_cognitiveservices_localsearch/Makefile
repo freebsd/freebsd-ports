@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Cognitive Services Local Search Client Library for Ruby
+WWW=		https://github.com/Azure/azure-sdk-for-ruby/tree/master/data/azure_cognitiveservices_localsearch
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

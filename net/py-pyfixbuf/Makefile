@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python API for libfixbuf
+WWW=		https://tools.netsa.cert.org/pyfixbuf/
 
 LICENSE=	GPLR LGPL21
 LICENSE_COMB=	multi

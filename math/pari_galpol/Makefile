@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Database of Galois polynomials for PARI/GP
+WWW=		https://pari.math.u-bordeaux.fr/packages.html
 
 LICENSE=	GPLv2
 

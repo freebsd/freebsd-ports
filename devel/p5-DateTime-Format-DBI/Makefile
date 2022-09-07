@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find a parser class for a database connection
+WWW=		https://metacpan.org/release/DateTime-Format-DBI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

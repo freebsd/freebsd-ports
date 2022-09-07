@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Great Ruby debugging companion
+WWW=		https://github.com/amazing-print/amazing_print
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

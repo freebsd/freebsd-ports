@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Django ckeditor-5
+WWW=		https://github.com/hvlads/django-ckeditor-5
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

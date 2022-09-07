@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Load bit files to the Open Source Papilio FPGA boards
+WWW=		https://papilio.cc/index.php?n=Papilio.PapilioLoaderV2
 
 LICENSE=	GPLv2
 

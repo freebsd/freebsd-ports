@@ -6,6 +6,7 @@ DISTNAME=	rw-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Calculation of rank-width and rank-decompositions
+WWW=		https://sourceforge.net/projects/rankwidth/
 
 LICENSE=	GPLv2
 

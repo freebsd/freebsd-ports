@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of Desmume to libretro based on Desmume SVN circa 2015
+WWW=		https://github.com/libretro/desmume2015
 
 LICENSE=	GPLv2
 

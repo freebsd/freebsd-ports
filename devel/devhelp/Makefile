@@ -9,6 +9,7 @@ PATCHFILES+=	f1c27fd4eaa5.patch:-p1 # https://gitlab.gnome.org/GNOME/devhelp/-/m
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Developer help browser for GNOME
+WWW=		https://wiki.gnome.org/Apps/Devhelp
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt

@@ -6,6 +6,7 @@ CATEGORIES=	devel www
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Serves embedded files from go-bindata with Go's net/http support
+WWW=		https://github.com/elazarl/go-bindata-assetfs
 
 LICENSE=	BSD2CLAUSE
 

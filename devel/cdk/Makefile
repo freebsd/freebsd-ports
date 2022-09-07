@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://invisible-island.net/cdk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses Development Kit for speedy development of full screen programs
+WWW=		https://invisible-island.net/cdk/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

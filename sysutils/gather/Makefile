@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Utility to store and display system statistics
+WWW=		https://github.com/trociny/gather
 
 LICENSE=	BSD2CLAUSE
 

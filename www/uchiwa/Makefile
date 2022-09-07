@@ -6,6 +6,7 @@ MASTER_SITES=	http://uchiwa.io/
 
 MAINTAINER=	alexander@treg.io
 COMMENT=	Simple dashboard for Sensu
+WWW=		https://uchiwa.io/
 
 LICENSE=	MIT
 

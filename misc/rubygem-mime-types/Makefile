@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby gem which provides a mailcap-like MIME Content-Type lookup
+WWW=		https://github.com/mime-types/ruby-mime-types
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Licence.md

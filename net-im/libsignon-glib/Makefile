@@ -5,6 +5,7 @@ DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	GLib-based client library for applications handling account authentication
+WWW=		https://gitlab.com/accounts-sso/libsignon-glib
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

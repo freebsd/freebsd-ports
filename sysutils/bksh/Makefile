@@ -5,6 +5,7 @@ MASTER_SITES=	http://anarcat.ath.cx/software/distfiles/
 
 MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	Backup-only shell
+WWW=		http://anarcat.ath.cx/software/bksh
 
 USES=		uidfix
 

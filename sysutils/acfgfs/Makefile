@@ -8,6 +8,7 @@ PATCHFILES+=	f1ff13a78c8a.patch:-p1 # https://github.com/letoram/arcan/pull/254
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	FUSE file system driver for Arcan window managers
+WWW=		https://arcan-fe.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC:H:H:H}/data/distr/LICENSE.BSD

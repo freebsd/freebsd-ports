@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Make your classes pluggable
+WWW=		https://metacpan.org/release/MooseX-Object-Pluggable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

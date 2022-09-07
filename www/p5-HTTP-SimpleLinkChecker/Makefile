@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check the HTTP response code for a link
+WWW=		https://metacpan.org/release/HTTP-SimpleLinkChecker
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

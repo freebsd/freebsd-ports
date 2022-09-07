@@ -5,6 +5,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ graphics library for data visualization
+WWW=		https://alandefreitas.github.io/matplotplusplus/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

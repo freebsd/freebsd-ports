@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Python analysis of Apache Storm streams
+WWW=		https://github.com/Parsely/streamparse
 
 LICENSE=	APACHE20
 

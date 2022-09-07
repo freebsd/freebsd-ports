@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to verify the human element in transactions
+WWW=		https://metacpan.org/release/Authen-Captcha
 
 LICENSE=	GPLv2
 

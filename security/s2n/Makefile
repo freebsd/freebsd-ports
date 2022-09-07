@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C99 implementation of the TLS/SSL protocols
+WWW=		https://github.com/aws/s2n-tls
 
 LICENSE=	APACHE20
 

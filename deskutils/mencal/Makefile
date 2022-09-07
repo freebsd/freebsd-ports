@@ -5,6 +5,7 @@ MASTER_SITES=	http://kyberdigi.cz/projects/mencal/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple variation of the unix command cal
+WWW=		https://kyberdigi.cz/projects/mencal/english.html
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Read and write Java .properties files
+WWW=		https://github.com/jwodder/javaproperties
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

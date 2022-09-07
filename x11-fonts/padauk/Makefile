@@ -7,6 +7,7 @@ MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?&format=fil
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Unicode font supporting all the Myanmar characters
+WWW=		https://scripts.sil.org/Padauk
 
 LICENSE=	OFL11
 

@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Execute SQL queries on CSV, LTSV, JSON and TBLN
+WWW=		https://github.com/noborus/trdsql
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Minimal Lightweight PDF Library
+WWW=		https://metacpan.org/release/PDF-Tiny
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

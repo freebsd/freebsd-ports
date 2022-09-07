@@ -7,6 +7,7 @@ DISTNAME=	Pygments-${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Syntax highlighter written in Python
+WWW=		https://pygments.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced and secure webserver for Unix
+WWW=		https://www.hiawatha-webserver.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

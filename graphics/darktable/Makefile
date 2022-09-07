@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/rel
 
 MAINTAINER=	dumbbell@FreeBSD.org
 COMMENT=	Virtual lighttable and darkroom for photographers
+WWW=		https://www.darktable.org/
 
 LICENSE=	GPLv3
 

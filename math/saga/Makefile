@@ -6,6 +6,7 @@ MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	System for Automated Geoscientific Analyses
+WWW=		http://www.saga-gis.org/en/index.html
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

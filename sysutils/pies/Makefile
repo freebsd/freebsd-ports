@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Program Invocation and Execution Supervisor
+WWW=		https://puszcza.gnu.org.ua/projects/pies
 
 LICENSE=	GPLv3+
 

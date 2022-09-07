@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database object interface for EMBL entry retrieval
+WWW=		https://metacpan.org/release/Bio-DB-EMBL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

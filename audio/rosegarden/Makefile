@@ -6,6 +6,7 @@ MASTER_SITES=	https://sourceforge.net/projects/${PORTNAME}/files/${PORTNAME}/21.
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	General purpose music editor and sequencer suite
+WWW=		https://www.rosegardenmusic.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

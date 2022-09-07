@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}.tar.gz \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qt-based frontend for wpa_supplicant
+WWW=		https://w1.fi/wpa_supplicant/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../COPYING

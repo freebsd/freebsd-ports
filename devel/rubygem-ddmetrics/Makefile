@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Non-timeseries measurements for Ruby programs
+WWW=		https://github.com/ddfreyne/ddmetrics
 
 LICENSE=	MIT
 

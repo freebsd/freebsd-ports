@@ -7,6 +7,7 @@ DISTNAME=	PyPrind-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Progress Bar and Percent Indicator Utility
+WWW=		https://github.com/rasbt/pyprind
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

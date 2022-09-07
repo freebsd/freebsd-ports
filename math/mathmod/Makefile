@@ -5,6 +5,7 @@ CATEGORIES=	math graphics
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mathematical modeling software
+WWW=		https://sourceforge.net/projects/mathmod/
 
 LICENSE=	GPLv2
 

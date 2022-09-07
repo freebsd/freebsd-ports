@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/pfbtopfa/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PFB files to the PFA format
+WWW=		http://www.whizkidtech.redprince.net/pfbtopfa/
 
 PLIST_FILES=	bin/pfbtopfa man/man1/pfbtopfa.1.gz
 

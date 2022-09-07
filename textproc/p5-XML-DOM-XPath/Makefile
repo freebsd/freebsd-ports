@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	Adds XPath support to XML::DOM, using XML::XPath engine
+WWW=		https://metacpan.org/release/XML-DOM-XPath
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

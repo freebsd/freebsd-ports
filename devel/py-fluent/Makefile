@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Localization library for expressive translations
+WWW=		https://github.com/projectfluent/python-fluent
 
 LICENSE=	APACHE20
 

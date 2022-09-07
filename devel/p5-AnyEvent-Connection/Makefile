@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Base class for TCP connectful clients
+WWW=		https://metacpan.org/release/AnyEvent-Connection
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

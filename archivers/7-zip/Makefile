@@ -7,6 +7,7 @@ DISTNAME=	7z${DISTVERSION:S/.//}-src
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Console version of the 7-Zip file archiver
+WWW=		https://www.7-zip.org/
 
 CONFLICTS_INSTALL=	p7zip
 

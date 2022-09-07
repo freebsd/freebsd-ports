@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DUNE framework: one- and two-dimensional simplex grids
+WWW=		https://www.dune-project.org/
 
 LICENSE=	GPLv2+
 

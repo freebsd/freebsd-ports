@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.mcxtrace.org/${PORTNAME}-${DISTVERSION}/unix/mcxtr
 
 MAINTAINER=	erkn@fysik.dtu.dk
 COMMENT=	Monte Carlo X-ray tracing package
+WWW=		https://www.mcxtrace.org
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/lib/LGPL

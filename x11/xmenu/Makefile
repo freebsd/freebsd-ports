@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	X11 menu utility
+WWW=		https://github.com/phillbush/xmenu
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby implementation of gRPC
+WWW=		https://github.com/grpc/grpc/tree/master/src/ruby
 
 LICENSE=	BSD3CLAUSE
 

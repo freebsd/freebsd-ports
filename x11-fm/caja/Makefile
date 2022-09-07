@@ -6,6 +6,7 @@ DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	File manager for the MATE desktop
+WWW=		https://mate-desktop.org/
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi

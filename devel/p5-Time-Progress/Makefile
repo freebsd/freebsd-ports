@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Elapsed and estimated finish time reporting
+WWW=		https://metacpan.org/release/Time-Progress
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	avr-
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	FSF GCC for Atmel AVR 8-bit RISC cross-development
+WWW=		https://www.nongnu.org/avr-libc/
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi

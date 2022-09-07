@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	mk@nic-nac-project.org
 COMMENT=	Qt frontend to su(1)
+WWW=		https://github.com/mrclksr/DSBSu
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

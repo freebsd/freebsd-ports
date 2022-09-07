@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Boolean operations on paths
+WWW=		https://github.com/typemytype/booleanOperations
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

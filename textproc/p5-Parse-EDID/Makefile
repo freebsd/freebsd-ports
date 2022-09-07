@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	xavier@amdh.fr
 COMMENT=	Extended display identification data (EDID) parser
+WWW=		https://metacpan.org/dist/Parse-EDID
 
 LICENSE=	GPLv3
 

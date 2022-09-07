@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/ssdeep-project/ssdeep/releases/download/release
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Tool for computing context triggered piecewise hashes
+WWW=		https://ssdeep-project.github.io/ssdeep/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

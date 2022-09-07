@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Make it easy to run code against a local-lib
+WWW=		https://metacpan.org/release/App-local-lib-helper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

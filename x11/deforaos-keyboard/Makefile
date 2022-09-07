@@ -7,6 +7,7 @@ DISTNAME=	Keyboard-${PORTVERSION}
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop virtual keyboard
+WWW=		https://www.defora.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

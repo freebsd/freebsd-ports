@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	CommonMark bridge for docutils and Sphinx
+WWW=		https://github.com/readthedocs/recommonmark
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md

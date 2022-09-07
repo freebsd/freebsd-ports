@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bring your own LUA scripts into redis
+WWW=		https://github.com/brpoplpush/brpoplpush-redis_script
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

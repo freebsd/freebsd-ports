@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl5 File::ShareDir module with PAR support
+WWW=		https://metacpan.org/release/File-ShareDir-PAR
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

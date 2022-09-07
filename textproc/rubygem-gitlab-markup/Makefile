@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Render any fancy GitLab markup
+WWW=		https://gitlab.com/gitlab-org/gitlab-markup
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

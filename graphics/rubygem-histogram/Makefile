@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Give objects the ability to 'histogram' in several useful ways
+WWW=		https://github.com/jtprince/histogram
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

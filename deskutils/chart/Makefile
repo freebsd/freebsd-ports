@@ -6,6 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	mail@dbalan.in
 COMMENT=	CLI tool to create quick plots
+WWW=		https://marianogappa.github.io/chart/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

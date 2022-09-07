@@ -4,6 +4,7 @@ CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multi-page image scanning application
+WWW=		https://invent.kde.org/utilities/skanpage
 
 # We pick GPLv3 out of 2|3|KDEeV
 LICENSE=	GPLv3
@@ -20,8 +21,5 @@ USE_KDE=	auth config configwidgets codecs completion \
 USE_QT=		core concurrent dbus declarative gui network printsupport \
 		quickcontrols2 widgets xml \
 		buildtools_build qmake_build testlib_build
-
-
-
 
 .include <bsd.port.mk>

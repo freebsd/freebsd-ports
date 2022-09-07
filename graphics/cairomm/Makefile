@@ -6,6 +6,7 @@ MASTER_SITES=	http://cairographics.org/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interface to cairo
+WWW=		https://cairographics.org
 
 LICENSE=	LGPL20
 

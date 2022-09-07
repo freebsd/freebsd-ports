@@ -7,6 +7,7 @@ MASTER_SITES=	http://lacklustre.net/projects/ems-flasher/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to flash ROM images to the EMS USB 64mb flash cart
+WWW=		https://lacklustre.net/redmine/projects/ems-flash/
 
 LICENSE=	MIT
 

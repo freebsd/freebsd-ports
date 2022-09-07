@@ -7,6 +7,7 @@ CATEGORIES=	biology python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Prediction of protein-small molecule binding affinities
+WWW=		https://nestor.science.uu.nl/prodigy/lig
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

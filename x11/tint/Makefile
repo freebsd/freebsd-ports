@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	yamagi@yamagi.org
 COMMENT=	Lightweight freedesktop-compliant panel/taskbar/systray/clock
+WWW=		https://gitlab.com/o9000/tint2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Streamlined Cython bindings for the harfbuzz shaping engine
+WWW=		https://github.com/harfbuzz/uharfbuzz
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

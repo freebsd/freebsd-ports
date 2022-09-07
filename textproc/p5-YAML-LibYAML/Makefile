@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl YAML Serialization using XS and libyaml
+WWW=		https://metacpan.org/release/YAML-LibYAML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

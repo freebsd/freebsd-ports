@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Support for creating standard "inside-out" classes
+WWW=		https://metacpan.org/release/Class-Std
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

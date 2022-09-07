@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Library for polynomials over boolean rings
+WWW=		https://github.com/BRiAl/BRiAl
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.huzheng.org/ru/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Mueller English-Russian dictionary
+WWW=		http://download.huzheng.org/ru/
 
 USES=		tar:bzip2
 

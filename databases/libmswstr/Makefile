@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Read and parse mdb file indices
+WWW=		https://github.com/leecher1337/libmswstr
 
 # https://github.com/leecher1337/libmswstr/blob/master/COPYING
 #DISABLE_LICENSES=	yes

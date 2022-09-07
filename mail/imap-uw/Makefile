@@ -12,6 +12,7 @@ PKGNAMESUFFIX=	-uw
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
+WWW=		http://www.washington.edu/imap/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

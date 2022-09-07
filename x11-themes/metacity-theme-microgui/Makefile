@@ -8,6 +8,7 @@ DISTNAME=	mcitymicrogui-default
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	MicroGUI Sawfish theme for Metacity
+WWW=		http://themes.freshmeat.net/projects/mcitymicrogui/
 
 LICENSE=	GPLv2
 

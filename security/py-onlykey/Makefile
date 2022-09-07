@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dmytro@posteo.net
 COMMENT=	Python command line tool for configuring and using OnlyKey
+WWW=		https://github.com/trustcrypto/python-onlykey
 
 LICENSE=	MIT
 

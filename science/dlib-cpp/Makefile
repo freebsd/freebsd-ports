@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-cpp
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Machine learning framework written in C++
+WWW=		http://dlib.net
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/dlib/LICENSE.txt

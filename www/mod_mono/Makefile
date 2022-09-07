@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Apache module for serving ASP.NET applications
+WWW=		https://www.mono-project.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

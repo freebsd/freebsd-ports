@@ -6,6 +6,7 @@ MASTER_SITES=	http://devel.ringlet.net/sysutils/sysgather/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keep configuration files under version control
+WWW=		https://devel.ringlet.net/sysutils/sysgather/
 
 LICENSE=	BSD2CLAUSE
 

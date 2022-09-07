@@ -5,6 +5,7 @@ CATEGORIES=	devel editors
 
 MAINTAINER=	james.wright@digital-chaos.com
 COMMENT=	Additional color schemes for the Geany IDE
+WWW=		https://www.geany.org/download/themes/
 
 LICENSE=	GPLv2+ BSD PD
 LICENSE_COMB=	multi

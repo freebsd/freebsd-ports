@@ -5,6 +5,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple gray themes for GTK-based desktops
+WWW=		https://github.com/lassekongo83/zuki-themes
 
 LICENSE=	GPLv3
 

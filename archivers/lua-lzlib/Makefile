@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Lua bindings to the ZLib compression library
+WWW=		https://github.com/LuaDist/lzlib
 
 LICENSE=	MIT
 

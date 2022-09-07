@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-XXV-source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xboard-compatible chess playing program
+WWW=		http://phalanx.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

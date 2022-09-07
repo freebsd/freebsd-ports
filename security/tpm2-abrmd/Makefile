@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/tpm2-software/tpm2-abrmd/releases/download/${DI
 
 MAINTAINER=	tstruk@gmail.com
 COMMENT=	TPM2 Access Broker & Resource Manager Deamon
+WWW=		https://github.com/tpm2-software/tpm2-abrmd
 
 LICENSE=	BSD2CLAUSE
 

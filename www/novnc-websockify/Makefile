@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Websockify implementation for noVNC
+WWW=		https://github.com/novnc/websockify
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

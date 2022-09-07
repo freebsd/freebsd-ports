@@ -6,6 +6,7 @@ MASTER_SITES=	https://invisible-mirror.net/archives/byacc/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Best yacc variant available
+WWW=		https://invisible-island.net/byacc/
 
 LICENSE=	PD
 

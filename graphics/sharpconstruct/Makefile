@@ -6,6 +6,7 @@ MASTER_SITES=	SF/sharp3d/SharpConstruct/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D modeller for organic shapes
+WWW=		http://sharp3d.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

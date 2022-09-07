@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	JSX lexer for Pygments
+WWW=		https://github.com/fcurella/jsx-lexer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

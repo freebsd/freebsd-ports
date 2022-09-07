@@ -7,6 +7,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Auto-generated gRPC client for KAS
+WWW=		https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	6
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for parsing ISO 8601 strings
+WWW=		https://bitbucket.org/nielsenb/aniso8601/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

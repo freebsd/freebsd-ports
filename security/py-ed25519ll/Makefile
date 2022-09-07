@@ -10,6 +10,7 @@ DISTNAME=	37719c56b7b6
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Low-level ctypes wrapper for Ed25519 digital signatures
+WWW=		https://bitbucket.org/dholth/ed25519ll
 
 LICENSE=	MIT
 

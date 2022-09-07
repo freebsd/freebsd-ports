@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/down
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Fork of clementine with many features
+WWW=		https://www.strawberrymusicplayer.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

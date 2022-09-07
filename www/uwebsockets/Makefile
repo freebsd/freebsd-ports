@@ -5,6 +5,7 @@ CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ Web I/O library for the most demanding of applications
+WWW=		https://github.com/uNetworking/uWebSockets
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

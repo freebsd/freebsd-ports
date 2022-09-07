@@ -4,6 +4,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Padring generator for ASICs
+WWW=		https://github.com/donn/padring
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/License.txt

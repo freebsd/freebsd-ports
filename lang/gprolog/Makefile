@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.gprolog.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Prolog compiler
+WWW=		http://www.gprolog.org/
 
 LICENSE=	GPLv2
 

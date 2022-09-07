@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Terminal Interface Construction KIT
+WWW=		https://metacpan.org/release/Tickit
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

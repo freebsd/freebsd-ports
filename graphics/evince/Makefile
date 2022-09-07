@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME multi-format document viewer
+WWW=		https://wiki.gnome.org/Apps/Evince
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

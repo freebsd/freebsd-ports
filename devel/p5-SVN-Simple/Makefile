@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple interface to SVN::Delta::Editor
+WWW=		https://metacpan.org/release/SVN-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

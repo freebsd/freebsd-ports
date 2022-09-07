@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Very competent log analyzer for PostgreSQL
+WWW=		http://dalibo.github.com/pgbadger/
 
 LICENSE=	PostgreSQL
 

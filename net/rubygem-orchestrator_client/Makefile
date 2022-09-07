@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Client library for Puppet orchestration services
+WWW=		https://github.com/puppetlabs/orchestrator_client-ruby
 
 LICENSE=	APACHE20
 

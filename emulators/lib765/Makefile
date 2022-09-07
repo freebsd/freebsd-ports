@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.seasip.demon.co.uk/Unix/LibDsk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulation of uPD765a Floppy Disc Controller
+WWW=		http://www.seasip.demon.co.uk/Unix/LibDsk/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/doc/COPYING.LIB

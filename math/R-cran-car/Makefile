@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Companion to Applied Regression
+WWW=		https://r-forge.r-project.org/projects/car/
 
 LICENSE=	GPLv2+
 

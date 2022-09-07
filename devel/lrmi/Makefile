@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for calling real mode BIOS routines
+WWW=		http://lrmi.sourceforge.net/
 
 ONLY_FOR_ARCHS=	i386
 USE_LDCONFIG=	yes

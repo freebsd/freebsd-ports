@@ -6,6 +6,7 @@ CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multiple View Geometry (MVG) library
+WWW=		https://imagine.enpc.fr/%7Emoulonp/openMVG/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/../LICENSE

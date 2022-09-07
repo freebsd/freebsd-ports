@@ -4,6 +4,7 @@ CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Image Plugin Interface
+WWW=		https://www.digikam.org/
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Time zone object base class and factory
+WWW=		https://metacpan.org/release/DateTime-TimeZone
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

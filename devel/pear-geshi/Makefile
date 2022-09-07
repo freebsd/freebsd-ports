@@ -5,6 +5,7 @@ MASTER_SITES=	http://pear.geshi.org/get/
 
 MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	Generic syntax highlighter written in PHP
+WWW=		http://qbnz.com/highlighter/
 
 LICENSE=	GPLv2
 

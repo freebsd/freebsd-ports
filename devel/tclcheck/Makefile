@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Program to check the nesting of parenthesis in tcl scripts
+WWW=		https://gitlab.com/ports1/tclcheck
 
 LICENSE=			NEWCASTLE BSD2CLAUSE
 LICENSE_COMB=			dual

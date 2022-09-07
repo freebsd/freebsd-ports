@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Window Protocol Viewer
+WWW=		https://www.x.org/releases/X11R7.6/doc/man/man1/xscope.1.xhtml
 
 LICENSE=	MIT
 

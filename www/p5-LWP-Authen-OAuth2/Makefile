@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Perl extension to generate signed OAuth2 requests
+WWW=		https://metacpan.org/release/LWP-Authen-OAuth2
 
 LICENSE=	ART20
 

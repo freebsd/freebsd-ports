@@ -6,6 +6,7 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Credential Validation Modules
+WWW=		https://untroubled.org/cvm/
 
 LICENSE=	GPLv2
 

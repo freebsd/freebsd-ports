@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby library for declaring, composing and executing GraphQL queries
+WWW=		https://github.com/github/graphql-client
 
 LICENSE=	MIT
 

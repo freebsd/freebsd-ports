@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Format text e-mail using Petal
+WWW=		https://metacpan.org/release/Petal-Mail
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Parse command line arguments based on nothing more than a usage message
+WWW=		https://github.com/docopt/docopt.rb
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

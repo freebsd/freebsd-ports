@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Configure your application with environment variables
+WWW=		https://metacpan.org/release/Catalyst-Plugin-ConfigLoader-Environment
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

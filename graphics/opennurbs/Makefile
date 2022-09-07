@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Tools to accurately transfer 3-D geometry between applications
+WWW=		https://www.rhino3d.com/opennurbs
 
 LICENSE_FILE=	${WRKSRC}/readme.txt
 

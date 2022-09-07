@@ -7,6 +7,7 @@ MASTER_SITE_SUBDIR=	CPAN:SUKRIA
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light program that lets you evaluate Perl code interactively
+WWW=		http://www.sukria.net/perlconsole.html
 
 RUN_DEPENDS=	p5-Term-ReadLine-Gnu>=0:devel/p5-Term-ReadLine-Gnu \
 		p5-Module-Refresh>=0:devel/p5-Module-Refresh \

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the circuit breaker pattern
+WWW=		https://github.com/bolshakov/stoplight
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

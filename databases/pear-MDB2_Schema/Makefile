@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR XML based database schema manager
+WWW=		https://pear.php.net/package/MDB2_Schema
 
 LICENSE=	BSD2CLAUSE
 

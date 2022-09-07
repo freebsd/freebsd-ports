@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Turns ref() into a multimethod
+WWW=		https://metacpan.org/release/UNIVERSAL-ref
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-B-Utils>=0:devel/p5-B-Utils

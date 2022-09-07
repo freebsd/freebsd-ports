@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Trained module to guess a document's language
+WWW=		https://metacpan.org/release/Text-Language-Guess
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Log-Log4perl>=1.0:devel/p5-Log-Log4perl \

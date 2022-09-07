@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical x86 CPU opcode calculator
+WWW=		https://github.com/horsicq/XOpcodeCalc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

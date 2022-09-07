@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Advanced FFmpeg-based subtitle editor
+WWW=		https://subtitlecomposer.kde.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Component to auto-create NetAddr::IP objects from columns
+WWW=		https://metacpan.org/release/DBIx-Class-InflateColumn-IP
 
 BUILD_DEPENDS=	p5-DBIx-Class>=0.06002:databases/p5-DBIx-Class \
 		p5-NetAddr-IP>=4.00.7:net-mgmt/p5-NetAddr-IP

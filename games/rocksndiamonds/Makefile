@@ -19,6 +19,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
+WWW=		https://www.artsoft.org/rocksndiamonds/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

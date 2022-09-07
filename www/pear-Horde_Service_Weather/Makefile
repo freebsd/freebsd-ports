@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Weather Provider
+WWW=		https://pear.horde.org
 
 USES=	horde cpe
 USE_HORDE_BUILD=	Horde_Role

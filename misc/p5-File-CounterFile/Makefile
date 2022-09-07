@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for persistent counter class
+WWW=		https://metacpan.org/release/File-CounterFile
 
 USES=		perl5
 USE_PERL5=	configure

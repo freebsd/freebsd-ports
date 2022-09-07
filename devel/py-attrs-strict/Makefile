@@ -7,6 +7,7 @@ DISTNAME=	attrs_strict-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Runtime validators for attrs
+WWW=		https://github.com/bloomberg/attrs-strict
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

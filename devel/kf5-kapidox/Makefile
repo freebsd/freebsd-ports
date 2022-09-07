@@ -4,6 +4,7 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 API Documentation Tools
+WWW=		https://projects.kde.org/projects/frameworks/kapidox
 
 LICENSE=	BSD2CLAUSE
 

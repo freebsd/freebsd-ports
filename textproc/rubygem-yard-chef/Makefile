@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	YARD plugin for Chef
+WWW=		https://github.com/rightscale/yard-chef
 
 LICENSE=	MIT
 

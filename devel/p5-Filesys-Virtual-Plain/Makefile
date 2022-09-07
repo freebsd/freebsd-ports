@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Plain virtual filesystem
+WWW=		https://metacpan.org/release/Filesys-Virtual-Plain
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

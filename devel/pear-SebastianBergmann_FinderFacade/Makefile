@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}SebastianBergmann_
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convenience wrapper for Symfony Finder component
+WWW=		https://github.com/sebastianbergmann/finder-facade
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

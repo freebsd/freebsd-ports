@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide API for managing cached information
+WWW=		https://metacpan.org/release/Cache-Memcached-Managed
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

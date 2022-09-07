@@ -8,6 +8,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Viewer and editor for multiple sequence alignments
+WWW=		https://www.jalview.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

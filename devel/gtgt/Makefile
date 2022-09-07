@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General (or GNU) template generation tools
+WWW=		http://gtgt.sourceforge.net/
 
 RUN_DEPENDS=	bash:shells/bash
 

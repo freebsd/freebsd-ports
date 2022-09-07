@@ -7,6 +7,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	count@211.ru
 COMMENT=	Markup converter in pure Python
+WWW=		https://pypi.org/project/python-creole/
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Module for the 'fog' gem to support gridscale
+WWW=		https://github.com/gridscale/fog-gridscale
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

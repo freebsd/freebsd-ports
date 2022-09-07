@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/rafael2k/darkice/releases/download/v${PORTVERSI
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	IceCast, IceCast2, and ShoutCast live audio streamer
+WWW=		http://darkice.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

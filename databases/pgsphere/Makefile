@@ -5,6 +5,7 @@ CATEGORIES=	databases geography
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Spherical data types, functions, and operators for PostgreSQL
+WWW=		https://pgsphere.github.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT.pg_sphere

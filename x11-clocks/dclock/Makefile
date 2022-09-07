@@ -5,6 +5,7 @@ MASTER_SITES=	http://opencircuitdesign.com/~tim/programs/dclock/archive/
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	7-segment digital clock with some optional features
+WWW=		http://opencircuitdesign.com/~tim/programs/dclock/
 
 USES=		pkgconfig tar:tgz xorg
 USE_XORG=	x11 xt

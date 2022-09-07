@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	VU meter plugin for DeaDBeeF audio player
+WWW=		https://github.com/cboxdoerfer/ddb_vu_meter
 
 BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:audio/deadbeef
 RUN_DEPENDS:=	${BUILD_DEPENDS}

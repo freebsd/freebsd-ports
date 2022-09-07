@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Enumerated attributes with I18n and ActiveRecord/Mongoid/MongoMapper support
+WWW=		https://github.com/brainspec/enumerize
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

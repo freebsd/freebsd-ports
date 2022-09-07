@@ -5,6 +5,7 @@ CATEGORIES=	net multimedia
 
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	Media server compatible with DLNA and UPnP
+WWW=		https://gerbera.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

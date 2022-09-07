@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Backup content from DVD to hard disk
+WWW=		http://dvdbackup.sourceforge.net/
 
 LICENSE=	GPLv3
 

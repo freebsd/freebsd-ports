@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/appneta/${PORTNAME}/releases/download/v${DISTVE
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to replay saved packet capture files
+WWW=		https://github.com/appneta/tcpreplay
 
 LICENSE=	GPLv3
 

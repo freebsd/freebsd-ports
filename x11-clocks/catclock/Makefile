@@ -4,6 +4,7 @@ CATEGORIES=	x11-clocks
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Kit-cat xclock
+WWW=		https://github.com/BarkyTheDog/catclock
 
 LICENSE=	MIT
 

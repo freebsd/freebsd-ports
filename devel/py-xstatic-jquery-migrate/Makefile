@@ -7,6 +7,7 @@ DISTNAME=	XStatic-JQuery-Migrate-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JQuery-Migrate (XStatic packaging standard)
+WWW=		https://github.com/jquery/jquery-migrate
 
 LICENSE=	MIT
 

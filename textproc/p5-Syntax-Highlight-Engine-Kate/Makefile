@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Port of the syntax highlight engine of the Kate text editor
+WWW=		https://metacpan.org/release/Syntax-Highlight-Engine-Kate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

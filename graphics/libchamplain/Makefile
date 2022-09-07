@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C library aimed to provide a Gtk+ widget to display rasterized maps and markers
+WWW=		https://projects.gnome.org/libchamplain/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

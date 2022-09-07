@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Allows to set the available languages in Plone site
+WWW=		https://pypi.org/project/Products.PloneLanguageTool/
 
 LICENSE=	GPLv2
 

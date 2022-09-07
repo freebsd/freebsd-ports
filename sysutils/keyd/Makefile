@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Key remapping daemon for evdev
+WWW=		https://github.com/rvaiya/keyd
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libinotify.so:devel/libinotify

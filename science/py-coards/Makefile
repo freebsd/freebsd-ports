@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	COARDS compliant time parser
+WWW=		https://pypi.org/project/coards/
 
 LICENSE=	MIT
 

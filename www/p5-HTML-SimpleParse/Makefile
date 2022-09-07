@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Bare-bones HTML parser
+WWW=		https://metacpan.org/release/HTML-SimpleParse
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

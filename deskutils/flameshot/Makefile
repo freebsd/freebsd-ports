@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Powerful yet simple to use screenshot software
+WWW=		https://flameshot.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

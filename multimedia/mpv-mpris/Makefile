@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	MPRIS plugin for mpv
+WWW=		https://github.com/hoyon/mpv-mpris
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

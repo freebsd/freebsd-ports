@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/libfsapfs/releases/download/${PORTVERSIO
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the Apple File System (APFS)
+WWW=		https://github.com/libyal/libfsapfs
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

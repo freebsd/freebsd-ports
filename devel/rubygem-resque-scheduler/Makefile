@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Light weight job scheduling on top of Resque
+WWW=		https://github.com/resque/resque-scheduler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

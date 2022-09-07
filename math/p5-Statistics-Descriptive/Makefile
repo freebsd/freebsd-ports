@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that supplies statistical methods for perl5
+WWW=		https://metacpan.org/release/Statistics-Descriptive
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

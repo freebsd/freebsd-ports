@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	PolicyKit authentication agent
+WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 

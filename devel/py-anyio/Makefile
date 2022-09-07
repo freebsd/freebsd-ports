@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	High level compatibility layer for multiple asynchronous event loop implementations
+WWW=		https://github.com/agronholm/anyio
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

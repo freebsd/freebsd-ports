@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse and manipulate version numbers
+WWW=		https://github.com/RazerM/parver
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

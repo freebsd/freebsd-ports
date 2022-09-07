@@ -7,6 +7,7 @@ DISTNAME=	iteration_utilities-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utilities based on Pythons iterators and generators
+WWW=		https://github.com/MSeifert04/iteration_utilities
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse iCalendar files into a data structure
+WWW=		https://metacpan.org/release/iCal-Parser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

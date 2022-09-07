@@ -9,6 +9,7 @@ DISTNAME=	mopac7-${MOPAC_SUBVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Semi-empirical (MNDO, etc.) molecular orbital calculation
+WWW=		https://bioinformatics.org/ghemical/
 
 LICENSE=	GPLv2+
 

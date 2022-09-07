@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Insight file manager from the Lumina Desktop
+WWW=		https://lumina-desktop.org/
 
 LICENSE=	BSD3CLAUSE
 

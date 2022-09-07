@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	shen.elf@gmail.com
 COMMENT=	Platform for building proxies to bypass network restrictions
+WWW=		https://www.v2ray.com
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

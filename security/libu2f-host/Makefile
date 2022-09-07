@@ -6,6 +6,7 @@ CATEGORIES=	security devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yubico Universal 2nd Factor (U2F) Host C Library
+WWW=		https://developers.yubico.com/libu2f-host/
 
 LICENSE=	LGPL21+ GPLv3+
 LICENSE_COMB=	multi

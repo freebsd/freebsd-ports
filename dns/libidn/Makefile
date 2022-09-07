@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Internationalized Domain Names command line tool
+WWW=		https://www.gnu.org/software/libidn/
 
 LICENSE=	GPLv2+ LGPL3+
 LICENSE_COMB=	dual

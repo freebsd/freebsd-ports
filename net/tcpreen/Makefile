@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.remlab.net/files/tcpreen/
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Simple TCP session re-engineering tool
+WWW=		https://www.remlab.net/tcpreen/
 
 LICENSE=	GPLv2+
 

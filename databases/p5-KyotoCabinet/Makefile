@@ -8,6 +8,7 @@ DISTNAME=	kyotocabinet-perl-${PORTVERSION}
 
 MAINTAINER=	geraud@gcu.info
 COMMENT=	Perl extension for KyotoCabinet
+WWW=		https://dbmx.net/kyotocabinet/
 
 LICENSE=	GPLv3
 

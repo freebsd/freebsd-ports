@@ -4,6 +4,7 @@ CATEGORIES=	textproc pear
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Validation class for ISPN (International Standard Product Numbers)
+WWW=		https://pear.php.net/package/Validate_ISPN
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

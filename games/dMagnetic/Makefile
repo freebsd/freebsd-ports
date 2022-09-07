@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	dettus@dettus.net
 COMMENT=	Magnetic Scrolls Interpreter
+WWW=		https://www.dettus.net/dMagnetic/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

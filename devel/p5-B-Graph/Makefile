@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl Compiler backend to diagram OP trees
+WWW=		https://metacpan.org/release/B-Graph
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

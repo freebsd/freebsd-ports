@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tiny library to add async generators to Python 3.5
+WWW=		https://pypi.org/project/async_generator/
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	dual

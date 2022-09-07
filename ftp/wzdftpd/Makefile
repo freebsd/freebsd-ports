@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Modular FTP server configurable online using SITE commands
+WWW=		https://sourceforge.net/projects/wzdftpd/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework focused on making media discovery and browsing
+WWW=		https://wiki.gnome.org/Grilo
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Python wrapper around some of the Visual Studio Team Services APIs
+WWW=		https://pypi.org/project/vsts-cd-manager/
 
 LICENSE=	MIT
 

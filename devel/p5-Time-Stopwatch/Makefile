@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	madis555@hot.ee
 COMMENT=	Use tied scalars as timers
+WWW=		https://metacpan.org/release/Time-Stopwatch
 
 USES=		perl5
 USE_PERL5=	configure

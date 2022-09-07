@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Collection of C++/Qt classes designed to use the APIs of The Echo Nest
+WWW=		https://github.com/lfranchi/libechonest
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

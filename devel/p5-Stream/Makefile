@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generic stream classes for Perl
+WWW=		https://metacpan.org/release/Stream
 
 LICENSE=	BSD3CLAUSE
 

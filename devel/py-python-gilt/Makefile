@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	GIT layering tool
+WWW=		https://pypi.org/project/python-gilt/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

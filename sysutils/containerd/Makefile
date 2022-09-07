@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Open and reliable container runtime
+WWW=		https://containerd.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Plack middleware to show server status like Apache mod_status
+WWW=		https://metacpan.org/release/Plack-Middleware-ServerStatus-Lite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

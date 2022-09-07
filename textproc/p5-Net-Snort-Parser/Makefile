@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl modules for parsing Snort configuration files
+WWW=		https://projects.honeynet.org/svn/honeywall/honeywall/trunk/rpm-devel/perl-Net-Snort-Parser/
 
 USES=		perl5
 USE_PERL5=	configure

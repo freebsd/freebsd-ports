@@ -8,6 +8,7 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for htpasswd
+WWW=		https://trac.edgewall.org/browser/trunk/contrib/htpasswd.py
 
 USES=		python shebangfix
 SHEBANG_FILES=	${PORTNAME}.py

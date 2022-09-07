@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Gtk and xfwm4 themes for the Xfce Desktop
+WWW=		https://github.com/shimmerproject/Greybird
 
 LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	dual

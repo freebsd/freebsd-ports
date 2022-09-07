@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@saltant.com
 COMMENT=	SNMP/SMI MIB parsing in Python
+WWW=		https://github.com/etingof/pysmi
 
 LICENSE=	BSD2CLAUSE
 

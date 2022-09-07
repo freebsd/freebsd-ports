@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Proxy UDP/DNS to TCP/DNS
+WWW=		https://www.cypherpunk.at/2013/04/dnsudp-to-tcp-translator/
 
 LICENSE=	GPLv3
 

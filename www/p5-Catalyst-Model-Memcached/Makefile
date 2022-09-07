@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrapper for memcached imitating Catalyst models
+WWW=		https://metacpan.org/release/Catalyst-Model-Memcached
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

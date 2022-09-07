@@ -4,6 +4,7 @@ CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Encrypts text which is later decoded using JavaScript on the client side
+WWW=		https://pear.php.net/package/HTML_Crypt
 
 USES=		pear
 

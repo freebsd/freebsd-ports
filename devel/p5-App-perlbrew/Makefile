@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl Environment manager
+WWW=		https://metacpan.org/release/App-perlbrew
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

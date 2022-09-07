@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Git extension for generic, high-level git workflow support
+WWW=		https://www.git-town.com
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

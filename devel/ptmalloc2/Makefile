@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-current
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alternative threads-aware malloc
+WWW=		http://www.malloc.de/en/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

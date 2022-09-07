@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	maintainer@hasting.email
 COMMENT=	Basic launcher for Mupen64Plus
+WWW=		https://github.com/dh4/mupen64plus-qt
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Faster facility for creating read-only scalars, arrays, hashes
+WWW=		https://metacpan.org/pod/ReadonlyX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

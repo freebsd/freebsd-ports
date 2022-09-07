@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/fcambus/logswan/releases/download/${DISTVERSION
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Fast Web log analyzer
+WWW=		https://www.logswan.org
 
 LICENSE=	BSD2CLAUSE
 

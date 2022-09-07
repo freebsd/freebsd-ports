@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Find out about running services
+WWW=		https://metacpan.org/release/What
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

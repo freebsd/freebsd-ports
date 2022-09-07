@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Conference companion application
+WWW=		https://apps.kde.org/en/kongress
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt

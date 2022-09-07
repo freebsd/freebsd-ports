@@ -5,6 +5,7 @@ CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Monitors S.M.A.R.T. capable devices for imminent failure
+WWW=		https://invent.kde.org/plasma/plasma-disks
 
 # XXX license
 # https://invent.kde.org/plasma/plasma-disks/-/tree/master/LICENSES

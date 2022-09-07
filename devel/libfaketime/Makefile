@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Modifies the system time for a single application
+WWW=		https://github.com/wolfcw/libfaketime
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

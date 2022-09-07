@@ -6,6 +6,7 @@ CATEGORIES=	biology
 # See https://github.com/PacificBiosciences/ccs.
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pacific Biosciences patched and stripped down SeqAn
+WWW=		https://github.com/PacificBiosciences/seqan
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

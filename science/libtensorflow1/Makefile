@@ -7,6 +7,7 @@ CATEGORIES=	science
 
 MAINTAINER=	freebsd-ports@otoh.org
 COMMENT=	C API for TensorFlow, an open source platform for machine learning
+WWW=		https://www.tensorflow.org/install/lang_c
 
 LICENSE=	APACHE20 THIRD_PARTY_TF_C_LICENSES
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Composable style cycles
+WWW=		https://pypi.org/project/Cycler/
 
 LICENSE=	BSD2CLAUSE
 

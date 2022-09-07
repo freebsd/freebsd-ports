@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Tools for debugging ISO28500/WARC files
+WWW=		https://pypi.org/project/warctools/
 
 LICENSE=	MIT
 

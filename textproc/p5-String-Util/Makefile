@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for string processing utilities
+WWW=		https://metacpan.org/release/String-Util
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

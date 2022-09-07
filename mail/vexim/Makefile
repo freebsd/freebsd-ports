@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Web interface for managing virtual domains for exim
+WWW=		https://silverwraith.com/vexim/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Download and search pkg-fallout logs
+WWW=		https://github.com/dmgk/fallout
 
 LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

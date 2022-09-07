@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for POSIX socket low-level interface
+WWW=		https://metacpan.org/release/POSIX-Socket
 
 USES=	perl5
 USE_PERL5=	configure

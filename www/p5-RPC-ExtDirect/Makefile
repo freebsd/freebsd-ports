@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for implementing the Ext.Direct remoting protocol
+WWW=		https://metacpan.org/release/RPC-ExtDirect
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

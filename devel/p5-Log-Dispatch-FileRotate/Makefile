@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Log::Dispatch plug-in for files that archive/rotate themselves
+WWW=		https://metacpan.org/release/Log-Dispatch-FileRotate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

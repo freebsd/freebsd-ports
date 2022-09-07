@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Stemmers for Portuguese and Galician
+WWW=		https://metacpan.org/release/Lingua-PT-Stemmer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

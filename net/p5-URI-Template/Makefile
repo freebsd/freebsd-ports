@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object for handling URI templates
+WWW=		https://metacpan.org/release/URI-Template
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

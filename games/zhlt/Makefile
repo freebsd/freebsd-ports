@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}f-src
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Zoner's Half-Life compile tools
+WWW=		http://zhlt.info/
 
 USES=		dos2unix zip
 DOS2UNIX_FILES=	common/bspfile.h common/cmdlib.cpp common/mathlib.h \

@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC viewer widget for GTK+
+WWW=		http://live.gnome.org/gtk-vnc
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
@@ -27,7 +28,6 @@ OPTIONS_SUB=	yes
 PULSEAUDIO_DESC=	use PulseAudio for audio playback
 PULSEAUDIO_MESON_ENABLED=	pulseaudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 

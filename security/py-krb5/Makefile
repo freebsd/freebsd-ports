@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Kerberos API bindings for Python
+WWW=		https://github.com/jborean93/pykrb5
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

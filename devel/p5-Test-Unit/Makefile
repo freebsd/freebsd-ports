@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PerlUnit testing framework
+WWW=		https://metacpan.org/release/Test-Unit
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Inner>=0:devel/p5-Class-Inner \

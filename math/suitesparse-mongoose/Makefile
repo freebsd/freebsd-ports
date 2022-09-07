@@ -3,6 +3,7 @@ PORTVERSION=	2.0.4
 CATEGORIES=	math
 
 COMMENT=	Symmetric approximate minimum degree
+WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
 
 LICENSE=	GPLv3
 

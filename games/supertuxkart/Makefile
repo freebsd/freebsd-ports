@@ -6,6 +6,7 @@ DISTNAME=	SuperTuxKart-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free 3D kart racing game
+WWW=		http://supertuxkart.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

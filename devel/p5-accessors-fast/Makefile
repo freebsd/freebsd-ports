@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Wrap fastest Class::Accessor::* into pragma
+WWW=		https://metacpan.org/release/accessors-fast
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

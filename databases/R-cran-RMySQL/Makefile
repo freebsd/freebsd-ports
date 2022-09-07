@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	R interface to the MySQL database
+WWW=		https://cran.r-project.org/web/packages/RMySQL/
 
 LICENSE=	GPLv2
 

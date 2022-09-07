@@ -8,6 +8,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.-release${EXTRACT_SUFX}
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Multi-protocol soft switch for telephony applications
+WWW=		https://freeswitch.org
 
 LICENSE=	MPL11
 

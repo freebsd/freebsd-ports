@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Silly speed painting game
+WWW=		https://tangramgames.dk/games/90secondportraits/
 
 LICENSE=	ZLIB MIT CC-BY-SA-4.0 CC-BY-3.0
 LICENSE_COMB=	multi

@@ -7,6 +7,7 @@ DISTNAME=	dna_features_viewer-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python library to visualize DNA features, e.g. GenBank or Gff files
+WWW=		https://pypi.python.org/project/dna-features-viewer/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt

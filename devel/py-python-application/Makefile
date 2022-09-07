@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Basic building blocks for python applications
+WWW=		https://github.com/AGProjects/python-application
 
 LICENSE=	LGPL21+
 

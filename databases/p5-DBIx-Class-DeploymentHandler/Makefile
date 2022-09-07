@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for extensible DBIx::Class deployment
+WWW=		https://metacpan.org/release/DBIx-Class-DeploymentHandler
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

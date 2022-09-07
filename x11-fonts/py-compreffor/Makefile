@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	CFF subroutinizer for fontTools
+WWW=		https://github.com/googlei18n/compreffor
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	rbarabas@rbarabas.info
 COMMENT=	C implementation of statsd
+WWW=		https://github.com/armon/statsite
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

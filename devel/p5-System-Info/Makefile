@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jkeenan@cpan.org
 COMMENT=	Extract system info for reporting
+WWW=		https://metacpan.org/release/System-Info
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

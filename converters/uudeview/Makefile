@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for uu/xx/Base64/BinHex/yEnc de-/encoding
+WWW=		http://www.fpx.de/fp/Software/UUDeview/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for parsing domain names and canonicalizing URLs
+WWW=		https://github.com/pauldix/domainatrix
 
 LICENSE=	MIT
 

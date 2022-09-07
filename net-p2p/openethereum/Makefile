@@ -6,6 +6,7 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Fast and feature-rich multi-network Ethereum client
+WWW=		https://github.com/openethereum/openethereum/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

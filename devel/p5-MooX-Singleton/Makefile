@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Turn your Moo class into singleton
+WWW=		https://metacpan.org/pod/MooX::Singleton
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

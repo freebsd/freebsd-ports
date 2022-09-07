@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simplifies embedding JavaScript in your PDF files
+WWW=		https://pat.github.io/thinking-sphinx/
 
 LICENSE=	MIT
 

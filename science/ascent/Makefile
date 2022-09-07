@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-visualizer
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Visualization and analysis runtime for multi-physics HPC simulations
+WWW=		https://ascent.readthedocs.io/en/latest/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Inclusive, Unifying API for Progress Updates
+WWW=		https://cran.r-project.org/web/packages/progressr/
 
 LICENSE=	GPLv3
 

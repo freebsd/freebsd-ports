@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.libcmime.org/files/
 
 MAINTAINER=	ast@treibsand.com
 COMMENT=	Lightweight C mime library
+WWW=		https://www.libcmime.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

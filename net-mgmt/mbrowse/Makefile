@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	SNMP MIB Browser for X
+WWW=		https://sourceforge.net/projects/mbrowse/
 
 LICENSE=	GPLv2
 

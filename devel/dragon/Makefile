@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.lemke-it.com/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Combined C++ scanner/parser generator for LR compliant grammars
+WWW=		https://www.lemke-it.com/
 
 LICENSE=	GPLv3
 

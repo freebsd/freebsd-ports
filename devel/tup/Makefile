@@ -6,6 +6,7 @@ MASTER_SITES=	https://gittup.org/tup/releases/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast and smart file-based build system
+WWW=		https://gittup.org/tup/
 
 LICENSE=	GPLv2
 

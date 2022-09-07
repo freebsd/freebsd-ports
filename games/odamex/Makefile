@@ -7,6 +7,7 @@ DISTNAME=	odamex-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client/server multiplayer engine for Doom
+WWW=		https://odamex.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ toolkit for working with macromolecular coordinate files
+WWW=		https://launchpad.net/mmdb
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual

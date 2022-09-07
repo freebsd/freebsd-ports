@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Transaction management for Python
+WWW=		https://pypi.org/project/transaction/
 
 LICENSE=	ZPL21
 

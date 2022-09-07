@@ -5,6 +5,7 @@ CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Atomic-charge dependent london dispersion correction computation
+WWW=		https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dftd4
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

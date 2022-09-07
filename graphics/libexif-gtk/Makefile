@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/libexif/${PORTNAME}/releases/download/v${PORTVE
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	GTK+ widgets to display/edit EXIF tags
+WWW=		https://sourceforge.net/projects/libexif/
 
 LICENSE=	LGPL21
 

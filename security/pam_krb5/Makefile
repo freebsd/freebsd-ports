@@ -7,6 +7,7 @@ DISTNAME=		pam-krb5-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Pluggable Authentication Module for Kerberos 5
+WWW=		https://www.eyrie.org/~eagle/software/pam-krb5/
 
 LICENSE=		BSD3CLAUSE GPLv1+
 LICENSE_COMB=		dual

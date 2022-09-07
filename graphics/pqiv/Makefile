@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Pretty Quick Image Viewer
+WWW=		https://github.com/phillipberndt/pqiv
 
 LICENSE=	GPLv2
 

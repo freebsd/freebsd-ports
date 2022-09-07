@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of 2048 puzzle game to the libretro API
+WWW=		https://github.com/libretro/libretro-2048
 
 LICENSE=	GPLv2
 

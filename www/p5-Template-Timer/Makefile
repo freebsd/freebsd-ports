@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Rudimentary profiling for Template Toolkit
+WWW=		https://metacpan.org/release/Template-Timer
 
 LICENSE=	ART20 GPLv3
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.pmacct.net/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
+WWW=		http://www.pmacct.net/
 
 LICENSE=	GPLv2
 

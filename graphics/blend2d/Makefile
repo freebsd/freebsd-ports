@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	2D Vector Graphics Engine Powered by a JIT Compiler
+WWW=		https://blend2d.com/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

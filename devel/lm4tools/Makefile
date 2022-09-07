@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	TI Tiva C ARM microcontroller tools
+WWW=		https://github.com/utzig/lm4tools
 
 LICENSE=	GPLv2 BSD3CLAUSE
 LICENSE_COMB=	multi

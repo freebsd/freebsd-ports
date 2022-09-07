@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fine grained cloning support for Moose objects
+WWW=		https://metacpan.org/release/MooseX-Clone
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

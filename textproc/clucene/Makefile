@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-core-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	C++ port of Lucene
+WWW=		https://sourceforge.net/projects/clucene/
 
 LICENSE=	APACHE20 LGPL21
 LICENSE_COMB=	dual

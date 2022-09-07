@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Auto-seeded Mersenne Twister PRNGs
+WWW=		https://metacpan.org/release/Math-Random-MT-Auto
 
 LICENSE=	BSD3CLAUSE
 

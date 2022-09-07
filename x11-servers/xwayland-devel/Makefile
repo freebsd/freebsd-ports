@@ -13,6 +13,7 @@ PATCHFILES+=	74813b4c09ca.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserve
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X11 server as Wayland client (development snapshot)
+WWW=		https://wayland.freedesktop.org/xserver.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

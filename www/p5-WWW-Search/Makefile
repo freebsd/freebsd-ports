@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for WWW searches
+WWW=		https://metacpan.org/release/WWW-Search
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	cad graphics geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Library which provides a way to read/write CAD (DWG/DXF/DXFB) files
+WWW=		https://trac.osgeo.org/gdal/wiki/DWG_driver
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

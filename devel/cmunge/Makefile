@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for encrypting and compacting C source code
+WWW=		http://www.vcpc.univie.ac.at/~jhm/cmunge/
 
 WRKSRC=		${WRKDIR}/cmunger
 MAKE_ARGS=	CC="${CC} ${CFLAGS}"

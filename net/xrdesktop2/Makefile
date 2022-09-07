@@ -5,6 +5,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/net/xrdesktop2/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	GTK2 frontend for Rdesktop
+WWW=		https://BSDforge.com/projects/net/xrdesktop2/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

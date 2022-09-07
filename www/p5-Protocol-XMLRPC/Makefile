@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XML-RPC implementation
+WWW=		https://metacpan.org/release/Protocol-XMLRPC
 
 LICENSE=	ART20
 

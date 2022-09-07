@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Collection of additional irssi themes
+WWW=		https://irssi-import.github.io/themes/
 
 RUN_DEPENDS=	irssi:irc/irssi
 

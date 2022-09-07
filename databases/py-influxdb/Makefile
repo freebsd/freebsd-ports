@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vladimirv@ixsystems.com
 COMMENT=	Python Client for InfluxDB
+WWW=		https://github.com/influxdata/influxdb-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

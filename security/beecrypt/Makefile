@@ -9,6 +9,7 @@ PATCH_SITES=	http://sourceforge.net/p/beecrypt/patches/_discuss/thread/bff89ba1/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Open source cryptographic library
+WWW=		https://sourceforge.net/projects/beecrypt/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

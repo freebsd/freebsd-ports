@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Data Acquisition abstraction library for snort 3.0+
+WWW=		https://www.snort.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

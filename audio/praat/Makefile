@@ -5,6 +5,7 @@ CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Phonetics by Computer
+WWW=		https://www.fon.hum.uva.nl/praat/
 
 LICENSE=	GPLv2
 

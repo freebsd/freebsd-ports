@@ -12,6 +12,7 @@ DISTFILES=	percona-${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:percona \
 
 MAINTAINER=	eugene@zhegan.in
 COMMENT=	Open-source backup tool for InnoDB and XtraDB
+WWW=		https://www.percona.com/doc/percona-xtrabackup/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

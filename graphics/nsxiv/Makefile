@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Simple X image viewer
+WWW=		https://github.com/nsxiv/nsxiv
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

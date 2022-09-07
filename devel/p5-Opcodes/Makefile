@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	More Opcodes information from opnames.h and opcode.h
+WWW=		https://metacpan.org/release/Opcodes
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

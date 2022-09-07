@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Cross-platform alternative to the UNIX patch utility
+WWW=		https://github.com/techtonik/python-patch
 
 LICENSE=	MIT
 

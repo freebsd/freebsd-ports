@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Filtering reverse HTTP proxy
+WWW=		https://github.com/asciimoo/filtron
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

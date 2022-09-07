@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	Python bindings for Jsonnet - The data templating language
+WWW=		https://github.com/google/jsonnet
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

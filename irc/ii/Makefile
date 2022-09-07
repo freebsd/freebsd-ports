@@ -6,6 +6,7 @@ MASTER_SITES=	http://dl.suckless.org/tools/ \
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Minimalist FIFO and filesystem-based IRC client
+WWW=		https://tools.suckless.org/ii/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

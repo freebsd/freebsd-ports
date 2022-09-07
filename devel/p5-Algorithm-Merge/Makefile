@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Three-way merge and diff
+WWW=		https://metacpan.org/release/Algorithm-Merge
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

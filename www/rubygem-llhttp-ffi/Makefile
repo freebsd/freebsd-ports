@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby FFI bindings for llhttp
+WWW=		https://github.com/metabahn/llhttp/tree/main/ffi
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

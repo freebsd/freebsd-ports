@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	zab@zltech.eu
 COMMENT=	X11 events recorder and player
+WWW=		http://www.sandklef.com/xnee/
 
 LICENSE=	GPLv3
 

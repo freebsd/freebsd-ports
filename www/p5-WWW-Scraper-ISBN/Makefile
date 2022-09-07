@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieving information about books by ISBN number
+WWW=		https://metacpan.org/release/WWW-Scraper-ISBN
 
 LICENSE=	ART20
 

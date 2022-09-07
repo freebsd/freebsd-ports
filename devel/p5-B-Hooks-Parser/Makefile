@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to perls parser variables
+WWW=		https://metacpan.org/release/B-Hooks-Parser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

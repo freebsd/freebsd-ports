@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://ftp.ebi.ac.uk/pub/software/clustalw2/${PORTVERSION}/ \
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Multiple alignment program for DNA or proteins
+WWW=		http://www.clustal.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	MIDI libraries for Qt/C++
+WWW=		https://sourceforge.net/projects/drumstick
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

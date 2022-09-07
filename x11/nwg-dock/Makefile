@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK3-based dock for sway
+WWW=		https://github.com/nwg-piotr/nwg-dock
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object oriented interface to a directory based queue in Perl
+WWW=		https://metacpan.org/release/Directory-Queue
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

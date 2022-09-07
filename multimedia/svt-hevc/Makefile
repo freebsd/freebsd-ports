@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Scalable HEVC encoder
+WWW=		https://01.org/svt
 
 LICENSE=	BSD2CLAUSE+PATENT
 LICENSE_GROUPS=	FSF OSI COPYFREE

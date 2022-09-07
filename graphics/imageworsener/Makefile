@@ -6,6 +6,7 @@ MASTER_SITES=	https://entropymine.com/imageworsener/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CLI utility and library for image scaling and processing
+WWW=		https://entropymine.com/imageworsener/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

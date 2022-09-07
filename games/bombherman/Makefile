@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bomberman clone written in C++
+WWW=		https://github.com/Keruspe/Bomb-her-man
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

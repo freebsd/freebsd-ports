@@ -7,6 +7,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open-source graph database
+WWW=		https://github.com/cayleygraph/cayley
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

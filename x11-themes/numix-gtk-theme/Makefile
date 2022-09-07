@@ -5,6 +5,7 @@ CATEGORIES=	x11-themes xfce
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk flat themes
+WWW=		https://numixproject.github.io
 
 LICENSE=	GPLv3
 

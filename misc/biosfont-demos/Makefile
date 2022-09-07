@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Demos for the biosfont kernel module
+WWW=		https://github.com/rene0/biosfont
 
 LICENSE=	BSD2CLAUSE
 

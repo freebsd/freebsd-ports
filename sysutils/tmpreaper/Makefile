@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cleans up files in directories based on their age
+WWW=		https://packages.debian.org/sid/tmpreaper
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

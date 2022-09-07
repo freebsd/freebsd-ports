@@ -7,6 +7,7 @@ DISTNAME=	pytz_deprecation_shim-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Shims to make deprecation of pytz easier
+WWW=		https://github.com/pganssle/pytz-deprecation-shim
 
 LICENSE=	APACHE20
 

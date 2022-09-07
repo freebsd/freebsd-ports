@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.earth.li/projectpurple/files/
 
 MAINTAINER=	coco@executive-computing.de
 COMMENT=	Command-line tool for sending arbitrary IP packets
+WWW=		https://www.earth.li/projectpurple/progs/sendip.html
 
 LICENSE=	GPLv2
 

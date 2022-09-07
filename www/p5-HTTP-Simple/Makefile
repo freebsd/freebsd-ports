@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple procedural interface to HTTP::Tiny
+WWW=		https://metacpan.org/release/HTTP-Simple
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

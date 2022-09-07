@@ -5,6 +5,7 @@ MASTER_SITES=	SF/libpinyin/${PORTNAME}
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Intelligent Pinyin engine based on libpinyin for IBus
+WWW=		https://github.com/libpinyin/ibus-libpinyin
 
 LICENSE=	GPLv2
 

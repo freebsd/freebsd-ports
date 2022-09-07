@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	Eclipse IDE 2022-06
+WWW=		https://www.eclipse.org/
 
 LICENSE=	EPL
 

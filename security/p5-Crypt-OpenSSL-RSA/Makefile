@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to RSA encode and decode strings using OpenSSL
+WWW=		https://metacpan.org/release/Crypt-OpenSSL-RSA
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

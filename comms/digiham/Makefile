@@ -4,6 +4,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Tools for decoding digital ham communication
+WWW=		https://github.com/jketterl/digiham
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

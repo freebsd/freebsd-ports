@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Fast and secure open-source backup/restore tool
+WWW=		https://kopia.io/
 
 LICENSE=	APACHE20
 

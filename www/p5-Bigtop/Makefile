@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web application data language processor
+WWW=		https://metacpan.org/release/Bigtop
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

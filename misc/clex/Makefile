@@ -6,6 +6,7 @@ DISTNAME=	clex-4.6.patch9
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line file manager
+WWW=		http://www.clex.sk/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/dag-erling/${PORTNAME}/releases/download/${PORT
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Prioritized topological sort
+WWW=		https://github.com/dag-erling/ptsort
 
 LICENSE=	BSD3CLAUSE
 

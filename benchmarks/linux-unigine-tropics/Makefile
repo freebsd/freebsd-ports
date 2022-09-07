@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.run
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Unigine GPU benchmark depicting tropical paradise
+WWW=		https://benchmark.unigine.com/tropics
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	precompiled, binary-only software for GNU/Linux

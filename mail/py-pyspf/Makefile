@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SPF (Sender Policy Framework) implemented in Python
+WWW=		https://github.com/sdgathman/pyspf
 
 LICENSE=	PSFL
 

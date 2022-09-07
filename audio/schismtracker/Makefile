@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module tracker editor/player resembling impulse tracker
+WWW=		https://schismtracker.org/
 
 LICENSE=	GPLv2
 

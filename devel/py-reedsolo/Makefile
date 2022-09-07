@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Pure-Python Reed Solomon encoder/decoder
+WWW=		https://github.com/tomerfiliba/reedsolomon
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

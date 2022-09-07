@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to {in,de}flate columns to Path::Class::File objects
+WWW=		https://metacpan.org/release/DBIx-Class-InflateColumn-FS
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Audit Protos
+WWW=		https://github.com/googleapis/python-audit-log
 
 LICENSE=	APACHE20
 

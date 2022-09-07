@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Audio player for GNOME
+WWW=		https://wiki.gnome.org/Apps/Rhythmbox
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

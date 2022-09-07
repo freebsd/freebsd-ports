@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Declarative object constructor
+WWW=		https://metacpan.org/release/Object-Declare
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

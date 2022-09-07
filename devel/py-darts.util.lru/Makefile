@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Simple dictionary with LRU behaviour in Python
+WWW=		https://pypi.org/project/darts.util.lru/
 
 LICENSE=	MIT
 

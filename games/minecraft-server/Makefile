@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	freebsd@jonathanprice.org
 COMMENT=	Dedicated server for the game Minecraft
+WWW=		http://www.minecraft.net/
 
 LICENSE=	minecraft
 LICENSE_NAME=	Minecraft End User License Agreement

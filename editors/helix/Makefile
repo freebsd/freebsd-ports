@@ -6,6 +6,7 @@ DISTFILES=	${TREE_SITTER_HARE_REV}.tar.gz:treesitterhare
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Post-modern modal text editor
+WWW=		https://helix-editor.com/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

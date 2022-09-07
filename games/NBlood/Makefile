@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Reverse-engineered ports of Build games using EDuke32 engine
+WWW=		https://github.com/nukeykt/NBlood
 
 LICENSE=	GPLv2 BUILDLIC
 LICENSE_COMB=	multi

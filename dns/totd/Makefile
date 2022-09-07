@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/dns/totd/
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
+WWW=		https://BSDforge.com/projects/dns/totd/
 
 USES=		desthack uidfix
 

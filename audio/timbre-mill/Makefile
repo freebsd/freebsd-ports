@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Timbre Mill tool for timbre correction
+WWW=		https://github.com/sadko4u/timbre-mill
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

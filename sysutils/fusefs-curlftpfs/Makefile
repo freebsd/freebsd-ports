@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Mount remote FTP directories
+WWW=		http://curlftpfs.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

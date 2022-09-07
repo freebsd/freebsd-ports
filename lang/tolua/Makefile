@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.tecgraf.puc-rio.br/~celes/tolua/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to integrate C/C++ code with Lua
+WWW=		https://www.tecgraf.puc-rio.br/~celes/tolua/
 
 USES=		gmake lua
 

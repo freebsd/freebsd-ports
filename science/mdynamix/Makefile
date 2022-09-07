@@ -7,6 +7,7 @@ DISTNAME=	md${DISTVERSION:S/.//g}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	General purpose molecular dynamics code
+WWW=		http://www.fos.su.se/~sasha/mdynamix/
 
 LICENSE=	GPLv2+
 

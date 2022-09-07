@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Email address and MIME parsing library
+WWW=		https://github.com/mailgun/flanker
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

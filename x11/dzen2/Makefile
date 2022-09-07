@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	General purpose messaging, notification and menuing program for X11
+WWW=		https://github.com/robm/dzen
 
 LICENSE=	MIT
 

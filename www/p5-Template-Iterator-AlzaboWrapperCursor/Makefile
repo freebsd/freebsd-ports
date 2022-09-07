@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Turns a Class-AlzaboWrapper-Cursor object into a TT2 iterator
+WWW=		https://metacpan.org/release/Template-Iterator-AlzaboWrapperCursor
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

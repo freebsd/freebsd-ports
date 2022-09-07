@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 plugins for various sound effects
+WWW=		https://ssj71.github.io/infamousPlugins
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

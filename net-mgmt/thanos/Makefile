@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Highly available Prometheus setup with long term storage capabilities
+WWW=		https://thanos.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

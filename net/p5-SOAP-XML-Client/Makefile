@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple frame work for talking with web services
+WWW=		https://metacpan.org/release/SOAP-XML-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

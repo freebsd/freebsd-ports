@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Open source monitoring and visualization UI for the TICK stack
+WWW=		https://www.influxdata.com/time-series-platform/chronograf/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Server side of MaitreTarot, a Tarot card game
+WWW=		https://www.nongnu.org/maitretarot/
 
 LICENSE=	GPLv2
 

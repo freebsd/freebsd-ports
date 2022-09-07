@@ -4,6 +4,7 @@ CATEGORIES=	net mail www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class that provides an implementation of the SMTP protocol
+WWW=		https://pear.php.net/package/Net_SMTP
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

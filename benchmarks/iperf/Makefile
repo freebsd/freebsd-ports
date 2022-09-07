@@ -6,6 +6,7 @@ MASTER_SITES=	SF/iperf2 \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool to measure maximum TCP and UDP bandwidth
+WWW=		https://sourceforge.net/projects/iperf2/
 
 LICENSE=	BSD2CLAUSE
 

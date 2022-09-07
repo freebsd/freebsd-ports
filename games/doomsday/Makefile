@@ -6,6 +6,7 @@ MASTER_SITES=	SF/deng/Doomsday%20Engine/${PORTVERSION}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Enhanced Doom, Heretic, and Hexen source port
+WWW=		https://www.dengine.net/
 
 LICENSE=	GPLv2
 

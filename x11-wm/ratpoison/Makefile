@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Simple window manager with no fat library dependencies
+WWW=		https://www.nongnu.org/ratpoison/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

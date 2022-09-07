@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Timeout control decorator and context managers in Python
+WWW=		https://pypi.org/project/stopit/
 
 LICENSE=	MIT
 

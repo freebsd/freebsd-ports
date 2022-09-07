@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Z3 Theorem Prover
+WWW=		https://github.com/Z3Prover/z3
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

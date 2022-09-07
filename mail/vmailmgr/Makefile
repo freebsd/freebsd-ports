@@ -6,6 +6,7 @@ MASTER_SITES=	http://vault.101011010.xyz/distfiles/ GENTOO
 
 MAINTAINER=	mij@bitchx.it
 COMMENT=	Virtual domain manager for qmail
+WWW=		http://www.vmailmgr.org
 
 LICENSE=	GPLv2+
 

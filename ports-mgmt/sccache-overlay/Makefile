@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-overlay
 
 MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Ports overlay for sccache
+WWW=		https://github.com/mozilla/sccache
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple REST client for Cloud Monitoring API V3
+WWW=		https://github.com/googleapis/google-api-ruby-client/tree/master/generated/google-apis-monitoring_v3
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

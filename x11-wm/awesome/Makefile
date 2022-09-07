@@ -7,6 +7,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Highly configurable, next generation framework window manager
+WWW=		https://awesomewm.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

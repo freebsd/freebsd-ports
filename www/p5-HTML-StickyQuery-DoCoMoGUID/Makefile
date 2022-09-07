@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to add guid in query for DoCoMo imode
+WWW=		https://metacpan.org/release/HTML-StickyQuery-DoCoMoGUID
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

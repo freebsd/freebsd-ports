@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	API for accessing the structure of an XML document
+WWW=		https://metacpan.org/release/XML-SimpleObject
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	Parse and format RFC3339 times
+WWW=		https://metacpan.org/release/DateTime-Format-RFC3339
 
 BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime
 RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime

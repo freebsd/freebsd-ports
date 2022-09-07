@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Extension plugins for the SuperCollider3 audio synthesis server
+WWW=		https://github.com/supercollider/sc3-plugins
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt

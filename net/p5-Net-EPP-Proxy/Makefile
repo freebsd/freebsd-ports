@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Proxy server for the EPP protocol
+WWW=		https://metacpan.org/release/Net-EPP-Proxy
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \

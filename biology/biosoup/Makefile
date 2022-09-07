@@ -4,6 +4,7 @@ CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of C++ header-only data structures for bioinformatics
+WWW=		https://github.com/rvaser/biosoup
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

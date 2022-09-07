@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that compares two images
+WWW=		https://github.com/myint/perceptualdiff
 
 LICENSE=	GPLv2
 

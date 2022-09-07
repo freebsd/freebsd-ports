@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML Help Maker
+WWW=		http://bonedaddy.net/pabs3/code/ #hhm
 
 LIB_DEPENDS=	liblzxcomp.so:archivers/liblzxcomp
 

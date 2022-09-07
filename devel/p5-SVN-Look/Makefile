@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Caching wrapper around the svnlook command
+WWW=		https://metacpan.org/release/SVN-Look
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

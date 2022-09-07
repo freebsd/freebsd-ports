@@ -6,6 +6,7 @@ DISTNAME=	susv3
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Single UNIX Specification Version 3
+WWW=		http://www.unix.org/version3/online.html
 
 # Redistribution of the documents is not permitted
 LICENSE=	NONE

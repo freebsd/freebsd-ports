@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/thierry
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Program to fetch news from and post news to a remote NNTP server
+WWW=		http://www.kvaleberg.no/newsx.html
 
 LICENSE=	GPLv2
 

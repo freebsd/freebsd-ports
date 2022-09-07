@@ -8,6 +8,7 @@ PATCHFILES+=	265e406e254c8d84016b12b344d8df71d1765dd1.patch:-p1 # install direct
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Easy-to-use uinput library in C++
+WWW=		https://github.com/YukiWorkshop/libuInputPlus
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

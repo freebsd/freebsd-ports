@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Corel Draw file format
+WWW=		https://wiki.documentfoundation.org/DLP/Libraries/libcdr
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.MPL

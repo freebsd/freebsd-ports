@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert MASM/TASM files to NASM compatible sources
+WWW=		http://www.devoresoftware.com/nomyso/
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

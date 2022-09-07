@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 based RTF editor
+WWW=		https://www.nllgg.nl/Ted/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl.txt

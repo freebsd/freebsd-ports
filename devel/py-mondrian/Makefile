@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Logging with pretty colored squares
+WWW=		https://python-mondrian.github.io/
 
 LICENSE=	APACHE20
 

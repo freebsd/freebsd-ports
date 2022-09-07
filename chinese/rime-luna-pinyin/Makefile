@@ -5,6 +5,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Rime Luna Pinyin schema support
+WWW=		https://github.com/rime/rime-luna-pinyin
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

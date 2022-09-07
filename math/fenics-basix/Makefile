@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	FEniCS finite element basis evaluation library
+WWW=		https://github.com/FEniCS/basix
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE

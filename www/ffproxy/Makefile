@@ -8,6 +8,7 @@ MASTER_SITES=	http://${PORTNAME}.sourceforge.net/${PORTNAME}/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filtering HTTP proxy server
+WWW=		http://ffproxy.sourceforge.net
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

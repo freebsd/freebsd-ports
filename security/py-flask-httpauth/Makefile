@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Basic and Digest HTTP authentication for Flask routes
+WWW=		https://github.com/miguelgrinberg/flask-httpauth/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

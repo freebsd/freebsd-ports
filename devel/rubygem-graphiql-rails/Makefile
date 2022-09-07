@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Use the GraphiQL IDE for GraphQL with Ruby on Rails
+WWW=		https://github.com/rmosolgo/graphiql-rails
 
 LICENSE=	MIT
 

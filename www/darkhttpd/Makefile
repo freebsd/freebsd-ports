@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	henrichartzer@tuta.io
 COMMENT=	Simple, static web server
+WWW=		https://unix4lyfe.org/darkhttpd/
 
 LICENSE=	ISCL
 

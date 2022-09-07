@@ -5,6 +5,7 @@ MASTER_SITES=	SF/iograph
 
 MAINTAINER=	bsdfan@nurfuerspam.de
 COMMENT=	Creates HTML statistics of network transfer
+WWW=		http://mdolze.gmxhome.de/iograph.shtml
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

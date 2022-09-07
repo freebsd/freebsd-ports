@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Feature-rich Unix terminal client for the Mattermost chat system
+WWW=		https://github.com/matterhorn-chat/matterhorn/
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Espeak dialplan application for Asterisk
+WWW=		https://zaf.github.io/Asterisk-eSpeak/
 
 LICENSE=	GPLv2
 

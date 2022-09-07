@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Misc LED programs for ARM boards
+WWW=		https://github.com/RaspBSD/raspbsd-led
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	raspbsd

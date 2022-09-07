@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Dmenu/rofi interface for KeePass
+WWW=		https://www.alessiodp.com/kpmenu
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

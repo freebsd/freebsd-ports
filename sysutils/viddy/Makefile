@@ -7,6 +7,7 @@ MASTER_SITES=
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Modern watch command
+WWW=		https://github.com/sachaos/viddy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

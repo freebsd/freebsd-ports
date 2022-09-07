@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Reader and writer for Philips' MFF file format
+WWW=		https://github.com/BEL-Public/mffpy/
 
 LICENSE=	APACHE20
 

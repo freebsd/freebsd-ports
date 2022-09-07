@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/chpp/files/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Non-intrusive full-featured text preprocessor
+WWW=		https://www.complang.tuwien.ac.at/schani/chpp/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

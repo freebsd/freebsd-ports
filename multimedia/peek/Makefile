@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple animated GIF screen recorder with an easy to use interface
+WWW=		https://github.com/phw/peek
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

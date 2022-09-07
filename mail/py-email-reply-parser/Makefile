@@ -7,6 +7,7 @@ DISTNAME=	email_reply_parser-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	GitHubs Email Reply Parser library for python
+WWW=		https://github.com/zapier/email-reply-parser
 
 LICENSE=	MIT
 

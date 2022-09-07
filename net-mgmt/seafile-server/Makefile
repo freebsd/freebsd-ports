@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Open Source Cloud Storage (Server)
+WWW=		https://github.com/haiwen/seafile-server
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -8,6 +8,7 @@ DIST_SUBDIR=	sqlite-ext
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Regular-expression matcher using NFA engine for SQLite
+WWW=		https://www.sqlite.org/
 
 LICENSE=	public
 LICENSE_NAME=	Public Domain

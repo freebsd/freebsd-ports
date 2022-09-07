@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	FreeBSD@ShaneWare.biz
 COMMENT=	Example-based Image Synthesis and Style Transfer
+WWW=		https://ebsynth.com
 
 LICENSE=	PD
 

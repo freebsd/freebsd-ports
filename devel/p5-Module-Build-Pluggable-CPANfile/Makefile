@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Include cpanfile
+WWW=		https://metacpan.org/dist/Module-Build-Pluggable-CPANfile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

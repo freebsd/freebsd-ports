@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/tinyproxy/tinyproxy/releases/download/${PORTVER
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small, efficient HTTP proxy server
+WWW=		https://tinyproxy.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

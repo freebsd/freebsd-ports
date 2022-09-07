@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fork of json-c (JSON implementation in C)
+WWW=		https://github.com/rsyslog/libfastjson
 
 LICENSE=	MIT
 

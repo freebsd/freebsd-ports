@@ -7,6 +7,7 @@ DISTNAME=	MyITCRM1-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CRM project designed for Computer Servicing and Repairs
+WWW=		http://www.myitcrm.com
 
 LICENSE=	GPLv3
 

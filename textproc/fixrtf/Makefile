@@ -11,6 +11,7 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Patch making it possible to embed PNGs into RTFs
+WWW=		http://www.freebsd.org.cn
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	hernan.di.pietro@gmail.com
 COMMENT=	Impressive OpenGL Demo
+WWW=		http://www.glexcess.com
 
 USES=		gl
 USE_GL=		glut

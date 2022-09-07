@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Email::Folder Access to IMAP Folders
+WWW=		https://metacpan.org/release/Email-Folder-IMAP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

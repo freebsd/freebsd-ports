@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LDAP support for the Lua language
+WWW=		https://github.com/lualdap/lualdap
 
 LICENSE=	MIT
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Convert Markdown text in (X)HTML
+WWW=		https://metacpan.org/release/libsoldout
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

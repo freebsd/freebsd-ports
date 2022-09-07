@@ -7,6 +7,7 @@ DISTNAME=	htdig-3.2.0b6
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW indexing and searching system
+WWW=		https://sourceforge.net/projects/htdig/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

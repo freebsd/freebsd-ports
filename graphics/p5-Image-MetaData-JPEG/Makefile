@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Perl extension for showing/modifying JPEG (meta)data]
+WWW=		https://metacpan.org/release/Image-MetaData-JPEG
 
 USES=		perl5
 USE_PERL5=	configure

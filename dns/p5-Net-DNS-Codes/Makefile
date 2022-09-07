@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of C library DNS codes
+WWW=		https://metacpan.org/release/Net-DNS-Codes
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

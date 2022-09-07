@@ -7,6 +7,7 @@ DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Anthy support for Fcitx
+WWW=		https://fcitx-im.org/wiki/Fcitx
 
 LICENSE=	GPLv2
 

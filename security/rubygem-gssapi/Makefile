@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Ruby FFI Library wrapper for GSSAPI
+WWW=		https://github.com/zenchild/gssapi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

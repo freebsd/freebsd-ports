@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svvord@soft-wizard.ru
 COMMENT=	Input filter for Doxygen enabling support for Perl code documentation
+WWW=		http://perldoxygen.sourceforge.net/
 
 LICENSE=	GPLv3
 

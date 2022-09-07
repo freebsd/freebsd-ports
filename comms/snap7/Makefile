@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.7z
 
 MAINTAINER=	vova@fbsd.ru
 COMMENT=	Multi-platform Ethernet S7 PLC communication suite
+WWW=		https://sourceforge.net/projects/snap7/
 
 LICENSE=	GPLv3
 

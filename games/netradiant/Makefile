@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${_DISTFILES:Nq3map2.6}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fork of GtkRadiant v1.5 FPS games map editor
+WWW=		http://ingar.intranifty.net/gtkradiant/
 
 LICENSE=	GPLv2
 

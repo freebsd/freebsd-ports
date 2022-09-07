@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	otacilio.neto@bsd.com.br
 COMMENT=	Building point for Verilog support in the Perl language
+WWW=		https://www.veripool.org/wiki/verilog-perl
 
 LICENSE=	ART20 LGPL3
 LICENSE_COMB=	dual

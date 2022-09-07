@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/choehwanjin/ibus-hangul/releases/download/${POR
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Hangul input engine for IBus
+WWW=		https://github.com/libhangul/ibus-hangul/wiki
 
 LICENSE=	GPLv2
 

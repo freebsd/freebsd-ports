@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	james.wright@digital-chaos.com
 COMMENT=	Header file only JSON parser/serializer in C++
+WWW=		https://github.com/kazuho/picojson
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

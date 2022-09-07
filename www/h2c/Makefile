@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Provided a set of HTTP request headers, output a curl command line
+WWW=		https://curl.se/h2c/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

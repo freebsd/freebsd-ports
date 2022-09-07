@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Produce an atom feed from subversion commits
+WWW=		https://metacpan.org/release/HDM/subatom-0.12
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/README

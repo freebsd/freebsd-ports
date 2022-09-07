@@ -9,6 +9,7 @@ DIST_SUBDIR=	qmail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DomainKeys implementation for qmail
+WWW=		https://cr.yp.to/qmail.html
 
 LIB_DEPENDS+=	libdomainkeys.so:mail/libdomainkeys
 

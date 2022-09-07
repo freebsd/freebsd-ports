@@ -7,6 +7,7 @@ DISTNAME=	phonebox_plugin-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Phone numbers management plugin for NetBox
+WWW=		https://github.com/iDebugAll/phonebox_plugin
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

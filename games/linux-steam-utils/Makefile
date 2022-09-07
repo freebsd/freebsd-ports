@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	iwtcex@gmail.com
 COMMENT=	Steam launcher for FreeBSD
+WWW=		https://github.com/shkhln/linuxulator-steam-utils
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

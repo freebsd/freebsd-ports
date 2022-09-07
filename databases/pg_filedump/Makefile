@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Display formatted contents of a PostgreSQL heap, index, or control file
+WWW=		https://github.com/df7cb/pg_filedump
 
 LICENSE=	GPLv2+
 

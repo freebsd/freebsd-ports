@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Keeps track of file creation times
+WWW=		https://metacpan.org/release/File-CreationTime
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Attributes>=0:devel/p5-File-Attributes

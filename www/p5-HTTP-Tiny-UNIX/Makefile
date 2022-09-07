@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Subclass of HTTP::Tiny to connect to HTTP server over Unix socket
+WWW=		https://metacpan.org/dist/HTTP-Tiny-UNIX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

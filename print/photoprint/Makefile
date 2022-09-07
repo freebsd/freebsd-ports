@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.blackfiveimaging.co.uk/photoprint/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to print multiple images per sheet
+WWW=		http://blackfiveimaging.co.uk/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Enhance Exception\#message
+WWW=		https://github.com/ruby/error_highlight
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

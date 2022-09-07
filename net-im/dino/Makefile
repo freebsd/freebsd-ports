@@ -6,6 +6,7 @@ CATEGORIES=		net-im
 
 MAINTAINER=		ashish@FreeBSD.org
 COMMENT=		Modern XMPP Chat Client using GTK+/Vala
+WWW=		https://dino.im
 
 LICENSE=		GPLv3
 LICENSE_FILE=		${WRKSRC}/LICENSE

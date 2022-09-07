@@ -4,6 +4,7 @@ CATEGORIES=	net-im java
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Server side focus component used in Jitsi Meet conferences
+WWW=		https://github.com/jitsi/jicofo/
 
 LICENSE=	APACHE20
 

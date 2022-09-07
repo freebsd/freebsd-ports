@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl-based implementation of the Textile syntax by Dean Allen
+WWW=		https://metacpan.org/release/Text-Textile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

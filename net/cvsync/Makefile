@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-0.24.19
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Portable CVS repository synchronization utility
+WWW=		https://www.cvsync.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/COPYRIGHT

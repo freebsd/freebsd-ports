@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Programming language and compiler that converts Vala code into C code
+WWW=		https://wiki.gnome.org/Projects/Vala
 
 LICENSE=	LGPL21
 

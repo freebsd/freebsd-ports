@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.oasis-open.org/docbook/${PORTNAME}/${PORTVERSION}/ \
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XML character entities
+WWW=		https://www.oasis-open.org/docbook/xmlcharent/
 
 LICENSE=	OASIS
 LICENSE_NAME=	OASIS License

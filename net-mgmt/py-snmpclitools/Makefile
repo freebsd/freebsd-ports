@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	Command-line SNMP utilities in Python
+WWW=		https://github.com/etingof/snmpclitools
 
 LICENSE=	BSD2CLAUSE
 

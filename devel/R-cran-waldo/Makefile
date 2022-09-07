@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Find Differences Between R Objects
+WWW=		https://waldo.r-lib.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

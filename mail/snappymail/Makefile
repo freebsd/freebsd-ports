@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Simple, modern, lightweight & fast web-based email client
+WWW=		https://snappymail.eu/
 
 LICENSE=	AGPLv3
 

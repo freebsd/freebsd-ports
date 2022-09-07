@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cross-platform and ultrafast toolkit for FASTA/Q file manipulation
+WWW=		https://bioinf.shenwei.me/seqkit/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

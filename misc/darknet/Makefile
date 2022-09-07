@@ -7,6 +7,7 @@ CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source neural networks in C
+WWW=		https://pjreddie.com/darknet/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

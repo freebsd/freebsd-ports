@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Backport/clone of chainmap for py26, py32, and pypy3
+WWW=		https://bitbucket.org/jeunice/chainmap
 
 LICENSE=	PSFL
 

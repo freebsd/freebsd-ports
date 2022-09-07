@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add colours to the output of Python logging module
+WWW=		https://github.com/borntyping/python-colorlog
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

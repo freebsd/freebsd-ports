@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Terminal frontend for xi-editor
+WWW=		https://github.com/xi-frontend/xi-term
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

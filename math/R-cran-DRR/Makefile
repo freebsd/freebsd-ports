@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Dimensionality Reduction via Regression
+WWW=		https://cran.r-project.org/web/packages/DRR/
 
 LICENSE=	GPLv3
 

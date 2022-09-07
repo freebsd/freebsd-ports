@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data compressor in the PPM family
+WWW=		http://www3.sympatico.ca/mt0000/bicom/
 
 # Converted from RESTRICTED
 LICENSE=	BICOM

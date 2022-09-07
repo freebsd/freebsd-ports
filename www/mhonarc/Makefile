@@ -4,6 +4,7 @@ CATEGORIES=	www mail
 
 MAINTAINER=	kerndtr@kerndt.com
 COMMENT=	WWW front end for mail archives
+WWW=		https://www.mhonarc.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

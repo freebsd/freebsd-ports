@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only library for color conversion and manipulation
+WWW=		https://github.com/dmilos/color
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/license.txt

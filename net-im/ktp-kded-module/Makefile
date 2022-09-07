@@ -5,6 +5,7 @@ CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Module for integration of instant messaging into KDE Workspaces
+WWW=		https://community.kde.org/KTp
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

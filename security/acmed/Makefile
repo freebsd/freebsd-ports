@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	ACME (RFC 8555) client daemon written in Rust
+WWW=		https://github.com/breard-r/acmed
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

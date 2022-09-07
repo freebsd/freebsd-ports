@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	bruno@ruomad.net
 COMMENT=	OpenCA OCSP responder
+WWW=		https://www.openca.org/projects/ocspd
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

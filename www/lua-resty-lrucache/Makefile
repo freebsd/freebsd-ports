@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	Lua-land LRU cache based on the LuaJIT FFI
+WWW=		https://github.com/openresty/lua-resty-lrucache
 
 LICENSE=	BSD2CLAUSE
 

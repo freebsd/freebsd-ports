@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight, flexible logging framework
+WWW=		https://metacpan.org/release/Log-ger
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Map application for GNOME
+WWW=		https://wiki.gnome.org/Apps/Maps
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

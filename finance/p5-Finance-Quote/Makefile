@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get stock and mutual fund quotes from various exchanges
+WWW=		https://metacpan.org/release/Finance-Quote
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

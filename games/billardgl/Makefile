@@ -7,6 +7,7 @@ DISTNAME=	BillardGL-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenGL pool billiard simulation
+WWW=		http://www.billardgl.de/index-en.html
 
 LICENSE=	GPLv2 # from website
 

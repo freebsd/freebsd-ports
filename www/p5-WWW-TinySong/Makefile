@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get free music links from tinysong.com
+WWW=		https://metacpan.org/release/WWW-TinySong
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

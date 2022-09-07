@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Classic WW1 biplane game
+WWW=		https://github.com/fragglet/sdl-sopwith
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.md

@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library that provides PHP code coverage information
+WWW=		https://github.com/sebastianbergmann/php-code-coverage
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	olgeni@FreeBSD.org
 
 COMMENT=	Python client for Firebase Cloud Messaging
+WWW=		https://olucurious.github.io/PyFCM/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Listens on a keyboard device and executes commands on keypresses
+WWW=		https://www.bayofrum.net/cgi-bin/fossil/keyboard-daemon/
 
 LICENSE=	BSD2CLAUSE
 

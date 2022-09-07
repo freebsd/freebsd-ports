@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	cl-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Thin compatibility layer for Gray streams
+WWW=		https://www.cliki.net/trivial-gray-streams
 
 NO_BUILD=	yes
 

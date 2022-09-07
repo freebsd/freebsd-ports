@@ -6,6 +6,7 @@ DISTNAME=	RedCloth-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Module for using Textile in Ruby
+WWW=		https://redcloth.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

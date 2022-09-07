@@ -12,6 +12,7 @@ PATCHFILES+=	2d31d49eac9bcc010.patch:-p1
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Tools for tracing OpenGL and other graphics APIs
+WWW=		https://apitrace.github.io
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

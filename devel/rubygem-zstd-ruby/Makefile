@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Ruby binding for zstd
+WWW=		https://github.com/SpringMT/zstd-ruby
 
 LICENSE=	BSD3CLAUSE
 

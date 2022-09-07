@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Convert Between Bibliography Formats
+WWW=		https://cran.r-project.org/web/packages/rbibutils/
 
 LICENSE=	GPLv2
 

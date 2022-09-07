@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Generic script compiler
+WWW=		https://github.com/neurobin/shc/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

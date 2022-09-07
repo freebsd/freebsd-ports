@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Swiss army knife for protocol buffers (ProtoBuf)
+WWW=		https://github.com/uber/prototool
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

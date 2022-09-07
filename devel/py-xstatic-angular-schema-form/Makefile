@@ -8,6 +8,7 @@ DISTNAME=	XStatic-Angular-Schema-Form-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Angular-Schema-Form (XStatic packaging standard)
+WWW=		http://schemaform.io/
 
 LICENSE=	MIT
 

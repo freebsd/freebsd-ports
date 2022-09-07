@@ -7,6 +7,7 @@ DISTNAME=	lib${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	SIMD-accelerated JPEG codec which replaces libjpeg
+WWW=		https://libjpeg-turbo.org/
 
 LICENSE=	BSD3CLAUSE IJG ZLIB
 LICENSE_COMB=	multi

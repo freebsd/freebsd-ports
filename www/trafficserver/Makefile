@@ -5,6 +5,7 @@ MASTER_SITES=	APACHE/${PORTNAME}
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Fast, scalable and extensible HTTP proxy server
+WWW=		https://trafficserver.apache.org/
 
 LICENSE=	APACHE20
 

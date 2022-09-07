@@ -5,6 +5,7 @@ CATEGORIES=	devel kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Tools for inspecting, analyzing and optimizing ELF files
+WWW=		https://invent.kde.org/sdk/elf-dissector
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

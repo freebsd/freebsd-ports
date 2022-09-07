@@ -6,6 +6,7 @@ CATEGORIES=	devel www
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	String utilities and common hash functions for ngx_lua and LuaJIT
+WWW=		https://github.com/openresty/lua-resty-string
 
 LICENSE=	BSD2CLAUSE
 

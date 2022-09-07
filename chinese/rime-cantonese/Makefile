@@ -5,6 +5,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Rime Cantonese (Jyutping) schema support
+WWW=		https://github.com/rime/rime-cantonese
 
 LICENSE=		CC-BY-4.0 ODbL
 LICENSE_COMB=		multi

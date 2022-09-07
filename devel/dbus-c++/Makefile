@@ -10,6 +10,7 @@ PATCHFILES=	7fca13b03d1d4af585714293358cf1f76664f41d.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ API for D-BUS
+WWW=		https://sourceforge.net/projects/dbus-cplusplus/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

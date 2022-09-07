@@ -5,6 +5,7 @@ CATEGORIES=	emulators games
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Standalone port of reicast to libretro
+WWW=		https://github.com/reicast/reicast-emulator
 
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Tool to simply and securely transfer files and folders
+WWW=		https://github.com/schollz/croc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

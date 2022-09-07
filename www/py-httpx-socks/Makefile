@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Proxy (HTTP, SOCKS) transports for httpx
+WWW=		https://github.com/romis2012/httpx-socks
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

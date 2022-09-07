@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, simple, yet very secure encryption tool
+WWW=		https://github.com/HACKERALERT/Picocrypt
 
 LICENSE=	GPLv3
 

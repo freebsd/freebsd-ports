@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	mk@nic-nac-project.org
 COMMENT=	Graphical tool for configuring pointing devices
+WWW=		https://github.com/mrclksr/DSBXinput
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

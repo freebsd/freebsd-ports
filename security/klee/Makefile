@@ -6,6 +6,7 @@ CATEGORIES=	security devel
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Symbolic virtual machine built on top of LLVM
+WWW=		https://klee.github.io/
 
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

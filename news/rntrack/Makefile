@@ -8,6 +8,7 @@ DISTNAME=	rntrack-2_1_10-src
 
 MAINTAINER=	admin@5034.ru
 COMMENT=	FTN Messages tracker
+WWW=		https://sourceforge.net/projects/ftrack-as/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

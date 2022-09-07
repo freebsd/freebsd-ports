@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python binding for Project-Tox
+WWW=		https://github.com/TokTok/py-toxcore-c
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

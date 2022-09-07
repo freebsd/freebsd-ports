@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	marius.halden@modirum.com
 COMMENT=	Intrusion detection and prevention engine
+WWW=		https://www.modsecurity.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

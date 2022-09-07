@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Object Oriented Binary Tree for Perl
+WWW=		https://metacpan.org/release/Tree-Binary
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

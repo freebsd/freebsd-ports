@@ -3,6 +3,7 @@ PORTREVISION?=	0
 PKGNAMESUFFIX=	-pam-for-mysql
 
 COMMENT=	PAM plugin for MySQL
+WWW=		https://www.percona.com/
 
 LICENSE=	GPLv2+
 

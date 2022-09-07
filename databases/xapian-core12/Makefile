@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	12
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Probabilistic text search database engine
+WWW=		https://xapian.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

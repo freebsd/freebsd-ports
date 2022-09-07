@@ -7,6 +7,7 @@ DISTNAME=	unrarsrc-${PORTVERSION}
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Library to work with RAR archives
+WWW=		https://www.rarsoft.com/
 
 WRKSRC=		${WRKDIR}/unrar
 

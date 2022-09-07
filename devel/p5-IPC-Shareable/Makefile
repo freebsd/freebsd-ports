@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Share Perl variables between processes
+WWW=		https://metacpan.org/release/IPC-Shareable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

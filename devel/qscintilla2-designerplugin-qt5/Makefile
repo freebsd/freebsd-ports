@@ -7,6 +7,7 @@ DISTNAME=	${QSCI2_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 Designer plugin for QScintilla2
+WWW=		http://www.riverbankcomputing.co.uk/software/qscintilla/
 
 LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of useful math-related functions
+WWW=		https://metacpan.org/release/Math-NumberCruncher
 
 USES=		perl5
 USE_PERL5=	configure

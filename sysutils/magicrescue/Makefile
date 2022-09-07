@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	File recovery tool which recovers deleted files from a block device
+WWW=		https://github.com/jbj/magicrescue/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

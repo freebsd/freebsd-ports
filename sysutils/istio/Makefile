@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Open platform to connect, manage, and secure microservices
+WWW=		https://istio.io
 
 LICENSE=	APACHE20
 

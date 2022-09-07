@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Basic functions for handling mime-types in Python
+WWW=		http://code.google.com/p/mimeparse/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

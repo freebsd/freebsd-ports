@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	cs@innolan.dk
 COMMENT=	Charting library for .NET
+WWW=		http://nplot.com
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

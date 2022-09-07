@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Utility to parse and modify C-like configuration files
+WWW=		https://github.com/trasz/confctl/
 
 LICENSE=	BSD2CLAUSE
 

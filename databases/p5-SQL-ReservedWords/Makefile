@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reserved SQL words by ANSI/ISO
+WWW=		https://metacpan.org/release/SQL-ReservedWords
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

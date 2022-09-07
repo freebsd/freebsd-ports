@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Header-only C++/Qt5 FontoBene font parser library
+WWW=		https://github.com/fontobene/fontobene-qt5
 
 LICENSE=		APACHE20 MIT
 LICENSE_COMB=		multi

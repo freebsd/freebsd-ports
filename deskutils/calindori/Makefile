@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Calendar application for desktop and phone
+WWW=		https://apps.kde.org/en/calindori
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt

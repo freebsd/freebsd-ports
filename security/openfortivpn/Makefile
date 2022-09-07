@@ -5,6 +5,7 @@ CATEGORIES=	security net-vpn
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Client for PPP+SSL VPN tunnel services
+WWW=		https://github.com/adrienverge/openfortivpn
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 

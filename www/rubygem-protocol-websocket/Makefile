@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Low-level implementation of the WebSocket protocol
+WWW=		https://github.com/socketry/protocol-websocket
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Extension to reStructuredText and Sphinx to render Doxygen xml output
+WWW=		https://github.com/michaeljones/breathe
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

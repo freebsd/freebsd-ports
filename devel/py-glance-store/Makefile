@@ -7,6 +7,7 @@ DISTNAME=	glance_store-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Image Service Store Library
+WWW=		https://docs.openstack.org/glance_store/latest/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,6 +9,7 @@ DISTFILES=	go.mod:gomod ${PORTNAME}-web-ui-${DISTVERSION}.tar.gz:ui
 
 MAINTAINER=	dor.bsd@xm0.uk
 COMMENT=	Systems monitoring and alerting toolkit
+WWW=		https://prometheus.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

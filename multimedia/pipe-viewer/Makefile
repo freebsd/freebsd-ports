@@ -4,6 +4,7 @@ CATEGORIES=	multimedia perl5
 
 MAINTAINER?=	DtxdF@disroot.org
 COMMENT?=	Application for searching and playing videos from YouTube
+WWW=		https://github.com/trizen/pipe-viewer
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

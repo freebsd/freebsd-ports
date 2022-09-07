@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Gathers information about CPU, motherboard, and more
+WWW=		https://x0rg.github.io/CPU-X/
 
 LICENSE=	GPLv3
 

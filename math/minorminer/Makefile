@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Heuristic tool for minor graph embedding (C++ headers-only library)
+WWW=		https://github.com/dwavesystems/minorminer
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

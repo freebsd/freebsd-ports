@@ -7,6 +7,7 @@ DISTNAME=	HeapDict-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Heap with decrease-key and increase-key operations
+WWW=		https://github.com/DanielStutzbach/heapdict
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

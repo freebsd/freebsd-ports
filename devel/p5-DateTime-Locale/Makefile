@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Localization support for DateTime
+WWW=		https://metacpan.org/release/DateTime-Locale
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

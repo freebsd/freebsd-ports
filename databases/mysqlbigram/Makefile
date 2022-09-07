@@ -7,6 +7,7 @@ DISTNAME=	bi_gram-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple n-gram (bi-gram) fulltext parser plugin for MySQL
+WWW=		http://mysqlbigram.googlepages.com/
 
 LICENSE=	LGPL21
 

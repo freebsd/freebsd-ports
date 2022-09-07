@@ -8,6 +8,7 @@ DISTNAME=	PlemolJP_v${DISTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Plex Mono Language JP
+WWW=		https://github.com/yuru7/PlemolJP
 
 LICENSE=	OFL11
 

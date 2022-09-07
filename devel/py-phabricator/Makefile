@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Phabricator API Bindings
+WWW=		https://github.com/disqus/python-phabricator
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

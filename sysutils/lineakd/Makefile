@@ -7,6 +7,7 @@ DIST_SUBDIR=	lineak
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon which enables special keys on internet keyboards
+WWW=		http://lineak.sourceforge.net
 
 USES=		gmake libtool localbase xorg
 USE_CXXSTD=	c++98

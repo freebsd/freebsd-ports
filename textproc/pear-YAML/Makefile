@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	The Symfony YAML Component
+WWW=		http://components.symfony-project.org/yaml/
 
 USES=	pear
 PEAR_CHANNEL=	symfony

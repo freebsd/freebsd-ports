@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Cantarell, a Humanist sans-serif font family
+WWW=		https://wiki.gnome.org/Projects/CantarellFonts
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Nomad driver to support pot jails
+WWW=		https://www.nomadproject.io
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

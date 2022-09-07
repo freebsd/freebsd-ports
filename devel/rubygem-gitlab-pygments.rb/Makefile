@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Exposes the pygments syntax highlighter to Ruby
+WWW=		https://github.com/gitlabhq/pygments.rb
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	AirPlay audio player with multi-room audio synchronisation capability
+WWW=		https://github.com/mikebrady/shairport-sync
 
 LICENSE=	BSD3CLAUSE
 

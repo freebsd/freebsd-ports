@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple settings solution that uses an ERB enabled YAML file
+WWW=		https://github.com/drnic/readwritesettings
 
 LICENSE=	MIT
 

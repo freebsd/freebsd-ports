@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast Jaro and Jaro Winkler distance C++ header-only library
+WWW=		https://github.com/maxbachmann/jarowinkler-cpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

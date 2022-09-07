@@ -5,6 +5,7 @@ CATEGORIES=	textproc devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only PEG (Parsing Expression Grammars) library
+WWW=		https://github.com/yhirose/cpp-peglib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

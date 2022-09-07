@@ -7,6 +7,7 @@ DISTNAME=	fastDNAml_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Faster DNAML, makes phylogenetic trees using maximum likelihood
+WWW=		https://www.life.illinois.edu/gary/programs/fastDNAml.html
 
 LICENSE=	GPLv2+
 

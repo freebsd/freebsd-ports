@@ -6,6 +6,7 @@ MASTER_SITES=	https://fuel-scm.org/files/releases/
 
 MAINTAINER=	nukama+maintainer@gmail.com
 COMMENT=	GUI Front-End to the Fossil SCM tool
+WWW=		https://fuel-scm.org/fossil/home
 
 LICENSE=	GPLv2
 

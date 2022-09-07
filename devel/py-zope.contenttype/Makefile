@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope contenttype
+WWW=		https://pypi.org/project/zope.contenttype/
 
 LICENSE=	ZPL21
 

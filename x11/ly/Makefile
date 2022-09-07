@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	TUI (ncurses-like) display manager for X and Wayland
+WWW=		https://github.com/cylgom/ly
 
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/license.md

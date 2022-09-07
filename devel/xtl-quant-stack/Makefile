@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-quant-stack
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Template library that supports other quantstack projects
+WWW=		https://github.com/xtensor-stack/xtl
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

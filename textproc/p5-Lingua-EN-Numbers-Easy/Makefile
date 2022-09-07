@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module providing hash access to Lingua::EN::Numbers objects
+WWW=		https://metacpan.org/release/Lingua-EN-Numbers-Easy
 
 LICENSE=	MIT
 

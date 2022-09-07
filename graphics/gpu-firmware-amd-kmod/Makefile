@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Firmware modules for ${FLAVOR} AMD GPUs
+WWW=		https://github.com/freebsd/drm-kmod-firmware
 
 LICENSE=	AMD
 LICENSE_NAME=	AMD firmware license (amdgpu/radeon)

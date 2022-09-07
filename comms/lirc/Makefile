@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/LIRC/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux Infrared Remote Control
+WWW=		https://www.lirc.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

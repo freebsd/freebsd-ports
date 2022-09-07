@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20${PORTVERSION:R}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D Real Time Strategy space combat game
+WWW=		http://spacezero.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

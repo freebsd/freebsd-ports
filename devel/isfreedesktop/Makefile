@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	D programming to test if target platform is freedesktop
+WWW=		https://github.com/FreeSlave/isfreedesktop
 
 LICENSE=	BSL
 

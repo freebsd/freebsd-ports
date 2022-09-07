@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interface to .pc file interface via libpkgconf
+WWW=		https://metacpan.org/release/PkgConfig-LibPkgConf
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

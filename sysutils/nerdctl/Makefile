@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Docker-compatible CLI for containerd
+WWW=		https://github.com/containerd/nerdctl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

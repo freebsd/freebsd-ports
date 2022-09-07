@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class for handling astronomical coordinates
+WWW=		https://metacpan.org/release/Astro-Coords
 
 LICENSE=	GPLv2+
 

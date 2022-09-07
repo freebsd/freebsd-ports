@@ -12,6 +12,7 @@ PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Newsreader based on the S-Lang library
+WWW=		https://www.slrn.org/
 
 LICENSE=	GPLv2
 

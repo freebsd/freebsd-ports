@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SSH public key parser
+WWW=		https://github.com/ojarva/python-sshpubkeys
 
 LICENSE=	BSD3CLAUSE
 

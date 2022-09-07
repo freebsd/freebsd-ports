@@ -8,6 +8,7 @@ DISTNAME=	Mnemosyne-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash-card tool which optimises your learning process
+WWW=		https://www.mnemosyne-proj.org/
 
 LICENSE=	LGPL3
 

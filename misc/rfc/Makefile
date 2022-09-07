@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/misc/rfc/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Perl script to search for RFC's
+WWW=		http://www.dewn.com/rfc/
 
 LICENSE=	BSD2CLAUSE
 

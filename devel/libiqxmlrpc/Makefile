@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, object-oriented XML-RPC implementation written in C++
+WWW=		https://libiqxmlrpc.wikidot.com/
 
 LICENSE=	BSD2CLAUSE
 

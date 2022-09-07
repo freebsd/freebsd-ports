@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT?=	Persistent key-value store for fast storage environments
+WWW=		https://rocksdb.org/
 
 LICENSE=	APACHE20 GPLv2
 LICENSE_COMB=	dual

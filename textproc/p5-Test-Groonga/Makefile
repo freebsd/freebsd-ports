@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for testing Groonga full-text search engine
+WWW=		https://metacpan.org/release/Test-Groonga
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

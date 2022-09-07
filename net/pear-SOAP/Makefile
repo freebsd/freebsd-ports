@@ -4,6 +4,7 @@ CATEGORIES=	net www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR SOAP Client/Server for PHP
+WWW=		https://pear.php.net/package/SOAP
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}

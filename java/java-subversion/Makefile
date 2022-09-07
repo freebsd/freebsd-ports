@@ -3,6 +3,7 @@ CATEGORIES=	java
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Java bindings for Version control system
+WWW=		https://subversion.apache.org/
 
 USES=		compiler
 

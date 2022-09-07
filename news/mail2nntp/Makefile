@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable%201.0/
 
 MAINTAINER=	gary@hayers.org
 COMMENT=	Simple mail to news gateway
+WWW=		https://sourceforge.net/projects/mail2nntp/
 
 LICENSE=	GPLv2
 

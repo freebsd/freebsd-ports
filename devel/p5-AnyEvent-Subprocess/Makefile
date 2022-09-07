@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Flexible, OO, asynchronous process spawning and management
+WWW=		https://metacpan.org/release/AnyEvent-Subprocess
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RRD graph view class for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-View-RRDGraph
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

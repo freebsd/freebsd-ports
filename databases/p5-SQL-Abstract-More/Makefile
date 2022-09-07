@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Extension of SQL::Abstract with more constructs and more flexible API
+WWW=		https://metacpan.org/release/SQL-Abstract-More
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

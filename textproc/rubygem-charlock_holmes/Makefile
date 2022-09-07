@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Gems for character encoding detection
+WWW=		https://github.com/brianmario/charlock_holmes
 
 LICENSE=	MIT
 

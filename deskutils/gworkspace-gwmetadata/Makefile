@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-gwmetadata${PKGNAMESUFFIX2}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GWMetadata for GNUstep workspace manager
+WWW=		http://www.gnustep.it/enrico/gworkspace/
 
 LICENSE=	GPLv2
 

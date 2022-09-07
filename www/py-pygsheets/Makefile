@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Spreadsheets Python API v4
+WWW=		https://github.com/nithinmurali/pygsheets
 
 LICENSE=	MIT
 

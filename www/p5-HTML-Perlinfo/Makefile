@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Display a lot of Perl information in HTML format
+WWW=		https://metacpan.org/release/HTML-Perlinfo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

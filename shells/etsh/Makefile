@@ -5,6 +5,7 @@ MASTER_SITES=	https://etsh.nl/src/${PORTNAME}_${PORTVERSION}/
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Enhanced V6 Thompson Compatible Shell
+WWW=		https://etsh.nl/
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE BSD4CLAUSE
 LICENSE_COMB=	multi

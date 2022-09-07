@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	matrix-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Simple, fast and reliable chat server powered by Matrix
+WWW=		https://conduit.rs/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

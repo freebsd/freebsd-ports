@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Proper and correct (emulated) sequence support for MySQL
+WWW=		https://metacpan.org/release/DBIx-MySQLSequence
 
 BUILD_DEPENDS=	p5-DBD-mysql>0:databases/p5-DBD-mysql \
 		p5-DBI>0:databases/p5-DBI \

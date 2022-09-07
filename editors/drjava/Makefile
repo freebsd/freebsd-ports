@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Lightweight IDE for writing Java programs
+WWW=		http://www.drjava.org
 
 NO_BUILD=	yes
 USE_JAVA=	yes

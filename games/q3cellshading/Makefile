@@ -7,6 +7,7 @@ DISTNAME=	q3cel-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III engine with Cell Shading capabilities
+WWW=		http://q3cellshading.sourceforge.net/
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	does not run properly; try games/ioquake3 with option

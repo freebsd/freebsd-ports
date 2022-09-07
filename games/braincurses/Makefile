@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of the Mastermind game
+WWW=		http://freshmeat.net/projects/braincurses/
 
 LICENSE=	GPLv2
 

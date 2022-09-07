@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Type constraint based variant table
+WWW=		https://metacpan.org/release/MooseX-Types-VariantTable
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-MooseX-Types-Structured>=0.12:devel/p5-MooseX-Types-Structured \

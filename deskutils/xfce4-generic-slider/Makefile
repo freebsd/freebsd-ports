@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Slider plugin to adjust and/or monitor any numeric variable
+WWW=		https://gitlab.xfce.org/panel-plugins/xfce4-generic-slider
 
 LICENSE=	GPLv3
 

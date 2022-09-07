@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Very lightweight libcurl wrapper
+WWW=		https://github.com/typhoeus/ethon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

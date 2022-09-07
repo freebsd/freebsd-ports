@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Supporting module for SOAP::Lite
+WWW=		https://metacpan.org/release/IO-SessionData
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

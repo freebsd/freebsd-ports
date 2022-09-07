@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple blog code to valid XHTML
+WWW=		https://metacpan.org/release/MEMOWE/HTML-SBC-0.15
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

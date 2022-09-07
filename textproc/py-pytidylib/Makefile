@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python wrapper for HTML Tidy (tidylib)
+WWW=		http://countergram.com/open-source/pytidylib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

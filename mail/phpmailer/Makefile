@@ -5,6 +5,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Full Featured Email Transfer Class for PHP
+WWW=		https://github.com/PHPMailer/PHPMailer
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

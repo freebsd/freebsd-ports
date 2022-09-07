@@ -6,6 +6,7 @@ MASTER_SITES=	https://common-lisp.net/project/ecl/static/files/release/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	ANSI Common Lisp implementation
+WWW=		https://common-lisp.net/project/ecl/main.html
 
 LICENSE=	LGPL20
 

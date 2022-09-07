@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Test translation files with pytest
+WWW=		https://github.com/Thermondo/pytest-translations
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

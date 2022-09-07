@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Emacs Package Library
+WWW=		https://github.com/cask/epl
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://mgarland.org/files/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL/FLTK development
+WWW=		https://mgarland.org/software/libgfx.html
 
 LICENSE=	MIT
 

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-1.1.1-a021
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT?=	Japanese/Chinese/Korean input method (Japanese server)
+WWW=		http://www.freewnn.org/
 
 OPTIONS_DEFAULT?=	WNN SERVER
 MANLANG?=		ja

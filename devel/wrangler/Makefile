@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Cloudflare Workers CLI Tool
+WWW=		https://developers.cloudflare.com/workers/cli-wrangler/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

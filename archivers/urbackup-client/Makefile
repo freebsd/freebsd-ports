@@ -5,6 +5,7 @@ MASTER_SITES=	https://hndl.urbackup.org/Client/${DISTVERSION:R}/
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Client component of the UrBackup backup system
+WWW=		https://www.urbackup.org
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

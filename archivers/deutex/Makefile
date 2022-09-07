@@ -5,6 +5,7 @@ CATEGORIES=	archivers games
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	WAD file manipulator for Doom, Heretic, Hexen, and Strife
+WWW=		https://github.com/Doom-Utils/deutex
 
 LICENSE=	GPLv2 LGPL20 MIT
 LICENSE_COMB=	multi

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	vendion@gmail.com
 COMMENT=	Yet Another Dotfiles Manager
+WWW=		https://thelocehiliosan.github.io/yadm/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

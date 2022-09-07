@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of MIDI filter, generator and processor plugins
+WWW=		https://github.com/SpotlightKid/midiomatic
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

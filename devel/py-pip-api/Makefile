@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Importable pip API
+WWW=		https://github.com/di/pip-api
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

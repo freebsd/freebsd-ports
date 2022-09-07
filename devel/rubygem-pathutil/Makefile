@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Like Pathname but a little less insane
+WWW=		https://github.com/envygeeks/pathutil
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Calculate offset polygons
+WWW=		https://metacpan.org/release/Math-Geometry-Planar-Offset
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

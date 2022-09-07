@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
 COMMENT=	Teach ->new to accept single, non-hashref arguments
+WWW=		https://metacpan.org/release/MooseX-OneArgNew
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

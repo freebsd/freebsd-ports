@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Harmonic tide clock and tide predictor
+WWW=		https://flaterco.com/xtide/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

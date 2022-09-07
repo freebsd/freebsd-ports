@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	varnish-
 
 MAINTAINER=	allanjude@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for computing message digests and HMAC
+WWW=		https://github.com/varnish/libvmod-digest
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

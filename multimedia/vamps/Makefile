@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Vamps/${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	High performance tool to transcode DVD videos to a smaller size
+WWW=		http://vamps.sourceforge.net/
 
 LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 

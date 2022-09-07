@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ALSA PCM sndio plugin
+WWW=		https://github.com/Duncaen/alsa-sndio
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

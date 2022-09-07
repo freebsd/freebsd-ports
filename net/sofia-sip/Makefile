@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	jailbird@fdf.net
 COMMENT=	Open-source SIP User-Agent library
+WWW=		http://sofia-sip.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

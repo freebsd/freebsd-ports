@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	samir@noir.im
 COMMENT=	MkDocs plugin for dynamic page redirects to prevent broken links
+WWW=		https://github.com/mkdocs/mkdocs-redirects
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

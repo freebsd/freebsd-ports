@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate random strings matching a pattern
+WWW=		https://github.com/simoncozens/stringbrewer
 
 LICENSE=	MIT
 

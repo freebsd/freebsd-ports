@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Some utility routines related to module loading
+WWW=		https://metacpan.org/release/Module-Load-Util
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

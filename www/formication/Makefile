@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.ranner.eu/stuff/ \
 
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Formular processing tool written in perl
+WWW=		http://www.villainy.com/developers.html
 
 USES=		apache:run,2.2+ perl5
 USE_PERL5=	run

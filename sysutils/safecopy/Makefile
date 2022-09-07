@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Safe copying of files and partition
+WWW=		http://safecopy.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

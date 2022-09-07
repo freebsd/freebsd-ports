@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Simple X11 menu
+WWW=		https://jgmenu.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

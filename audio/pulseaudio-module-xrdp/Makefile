@@ -8,6 +8,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	PulseAudio module which enables xrdp to use audio redirection
+WWW=		https://github.com/neutrinolabs/pulseaudio-module-xrdp
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -25,7 +26,6 @@ PLIST_FILES=	`${PULSE_MODDIR}`/module-xrdp-sink.so \
 		`${PULSE_MODDIR}`/module-xrdp-source.so \
 		etc/xdg/autostart/pulseaudio-xrdp.desktop \
 		libexec/pulseaudio-module-xrdp/load_pa_modules.sh
-
 
 CONFIGURE_ARGS=	PULSE_DIR=${WRKDIR}/pulseaudio-`${PULSE_VERSION}` \
 		--with-xdgautostart-dir=${PREFIX}/etc/xdg/autostart

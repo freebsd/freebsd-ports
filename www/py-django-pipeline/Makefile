@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Asset (css/js) packaging library for Django
+WWW=		https://github.com/jazzband/django-pipeline
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

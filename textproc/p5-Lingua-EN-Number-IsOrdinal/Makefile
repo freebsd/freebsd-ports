@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to detect if English number is ordinal or cardinal
+WWW=		https://metacpan.org/release/Lingua-EN-Number-IsOrdinal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

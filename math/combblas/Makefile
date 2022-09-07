@@ -7,6 +7,7 @@ DISTFILES=	testdata_combblas1.6.1.tgz:test_data
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Combinatorial BLAS library: an extensible parallel graph library
+WWW=		https://people.eecs.berkeley.edu/~aydin/CombBLAS/html/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

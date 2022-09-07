@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	C implementation of the ISAAC PRNG Algorithm
+WWW=		https://metacpan.org/release/Math-Random-ISAAC-XS
 
 LICENSE=	PD MIT ART10 ART20 GPLv1+
 LICENSE_COMB=	dual

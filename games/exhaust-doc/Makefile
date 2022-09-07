@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-doc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redcode simulator easy to embed into applications (docs)
+WWW=		https://corewar.co.uk/pihlaja/exhaust/
 
 NO_BUILD=	yes
 

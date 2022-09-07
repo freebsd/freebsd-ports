@@ -5,6 +5,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Maximum sustainable throughput benchmark
+WWW=		https://github.com/outpaddling/MST-Bench
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Assisted Technology Provider module for GTK+
+WWW=		https://gitlab.gnome.org/GNOME/at-spi2-atk
 
 LICENSE=	LGPL21
 

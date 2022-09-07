@@ -7,6 +7,7 @@ DISTNAME=	mb339pan_${PORTVERSION}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Simulation of the MB-339 PAN aerobatic jet
+WWW=		http://hcilab.uniud.it/pan/
 
 # Converted from RESTRICTED
 LICENSE=	mb339

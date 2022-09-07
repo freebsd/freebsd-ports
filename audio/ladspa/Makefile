@@ -6,6 +6,7 @@ DISTNAME=	ladspa_sdk_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux Audio Developer's Simple Plugin API
+WWW=		https://www.ladspa.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

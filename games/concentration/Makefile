@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.shiftygames.com/concentration/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Find all matching pairs of icons as fast as possible
+WWW=		http://www.shiftygames.com/concentration/concentration.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DISTFILES=	${DISTNAME}.zip tkicons.txz:ikon
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Tk frontend for diff(1)
+WWW=		https://sourceforge.net/projects/tkdiff/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

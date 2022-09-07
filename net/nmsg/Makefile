@@ -6,6 +6,7 @@ MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Network message encapsulation system
+WWW=		https://github.com/farsightsec/nmsg
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.tddft.org/programs/${PORTNAME}/down/${DISTVERSION}/
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Library of exchange-correlation functionals for DFT
+WWW=		https://www.tddft.org/programs/libxc/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

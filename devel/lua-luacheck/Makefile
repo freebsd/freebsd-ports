@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Linter and static analyzer for lua files
+WWW=		https://github.com/luarocks/luacheck
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

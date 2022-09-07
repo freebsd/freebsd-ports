@@ -6,6 +6,7 @@ MASTER_SITES=	https://people.torproject.org/~dgoulet/${PORTNAME}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Easy way to make any app work through Tor
+WWW=		https://github.com/dgoulet/torsocks
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt

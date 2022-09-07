@@ -9,6 +9,7 @@ DIST_SUBDIR=	java
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Merchant Of Venice, a stock market trading program
+WWW=		http://mov.sourceforge.net/
 
 LICENSE=	GPLv2
 

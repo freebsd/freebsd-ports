@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
 COMMENT=	Command-line interface generator
+WWW=		https://cligen.se/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

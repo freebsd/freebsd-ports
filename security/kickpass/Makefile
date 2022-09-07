@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Stupid simple password safe
+WWW=		https://kickpass.pw/
 
 LICENSE=	MIT
 

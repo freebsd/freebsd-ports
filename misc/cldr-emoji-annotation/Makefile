@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Emoji annotation files in CLDR
+WWW=		https://github.com/fujiwarat/cldr-emoji-annotation
 
 LICENSE=	UNICODE
 LICENSE_NAME=	UNICODE

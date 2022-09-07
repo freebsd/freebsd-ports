@@ -6,6 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Qt 5-based Syncthing tray application
+WWW=		https://github.com/Martchus/syncthingtray
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/syncthingtray/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for single call read and write file routines
+WWW=		https://metacpan.org/release/File-Slurp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

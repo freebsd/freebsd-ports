@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Extended Rasch Modeling
+WWW=		https://cran.r-project.org/package=eRm
 
 LICENSE=	GPLv3
 

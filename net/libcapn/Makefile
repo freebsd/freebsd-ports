@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	C Library to interact with Apple Push Notification Service
+WWW=		https://github.com/adobkin/libcapn
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

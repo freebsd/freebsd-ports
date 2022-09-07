@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Recursive DNS client for POE
+WWW=		https://metacpan.org/release/POE-Component-Client-DNS-Recursive
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

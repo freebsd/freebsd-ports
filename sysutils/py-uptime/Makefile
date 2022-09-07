@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	uros@gruber.si
 COMMENT=	Cross-platform uptime library
+WWW=		https://github.com/Cairnarvon/uptime
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

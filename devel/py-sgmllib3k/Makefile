@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python 3 port of sgmllib
+WWW=		https://pypi.org/project/sgmllib3k/
 
 LICENSE=	BSD2CLAUSE
 

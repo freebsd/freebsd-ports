@@ -6,6 +6,7 @@ CATEGORIES=	www security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for domain flyovers that checks open ports and takes screenshots
+WWW=		https://michenriksen.com/blog/aquatone-now-in-go/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

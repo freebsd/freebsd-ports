@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data serialization system for python
+WWW=		https://avro.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/avro/LICENSE

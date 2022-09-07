@@ -4,6 +4,7 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Lightweight UDP torrent tracker
+WWW=		https://github.com/troydm/udpt
 
 LICENSE=	GPLv3+
 

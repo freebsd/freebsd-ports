@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/voretaq7/${PORTNAME}/releases/download/${PORTNA
 
 MAINTAINER=	mikeg@bsd-box.net
 COMMENT=	Utility for administering filesystem changes
+WWW=		https://github.com/voretaq7/radmind
 
 LICENSE=	Michigan
 LICENSE_NAME=	University of Michigan License

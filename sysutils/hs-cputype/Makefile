@@ -4,6 +4,7 @@ CATEGORIES=	sysutils haskell
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Find out your CPUTYPE
+WWW=		https://foss.heptapod.net/bsdutils/cputype
 
 LICENSE=	BSD3CLAUSE
 

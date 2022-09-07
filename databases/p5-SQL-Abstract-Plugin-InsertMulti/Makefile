@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to add bulk insert for SQL::Abstract
+WWW=		https://metacpan.org/release/SQL-Abstract-Plugin-InsertMulti
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-SQL-Abstract>=1.6:databases/p5-SQL-Abstract \

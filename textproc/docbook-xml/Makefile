@@ -8,6 +8,7 @@ DISTFILES=	${DBFILES:C,.*:(.*),\1.zip:\1,:C,:docbook-xml-([0-9]+).([0-9]+).?([0-
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	DocBook XML DTD
+WWW=		https://www.oasis-open.org/docbook/
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xml/xmlcharent/catalog.xml:textproc/xmlcharent \
 		xmlcatmgr:textproc/xmlcatmgr

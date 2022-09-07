@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for filesystem disk space information
+WWW=		https://metacpan.org/release/Filesys-DfPortable
 
 USES=		perl5
 USE_PERL5=	configure

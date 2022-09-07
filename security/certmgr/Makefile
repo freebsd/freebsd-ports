@@ -6,6 +6,7 @@ CATEGORIES=	security net
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Automated certificate management using a CFSSL CA
+WWW=		https://github.com/cloudflare/certmgr
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

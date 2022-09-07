@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astronomical Julian date calculator
+WWW=		http://jday.sourceforge.net/
 
 USES=		pathfix libtool
 GNU_CONFIGURE=	yes

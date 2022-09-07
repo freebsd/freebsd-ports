@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fly through your shell history
+WWW=		https://github.com/cantino/mcfly
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

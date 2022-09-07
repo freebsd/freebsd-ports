@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sounds for Atris: Alizarin Tetris
+WWW=		https://www.wkiri.com/projects/atris/
 
 RUN_DEPENDS=	atris:games/atris
 

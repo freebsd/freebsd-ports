@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Modern plotting toolkit supporting electronic publishing
+WWW=		https://pypi.org/project/toyplot/
 
 LICENSE=	BSD3CLAUSE
 

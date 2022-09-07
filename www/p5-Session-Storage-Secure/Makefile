@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for encrypted, serialized session data with integrity
+WWW=		https://metacpan.org/release/Session-Storage-Secure
 
 LICENSE=	APACHE20
 

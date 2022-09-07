@@ -11,6 +11,7 @@ PATCHFILES+=	cf3f8a67cd6f.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-dicti
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME dictionary lookup application
+WWW=		https://wiki.gnome.org/Dictionary
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

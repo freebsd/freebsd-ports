@@ -6,6 +6,7 @@ CATEGORIES=	devel sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Developer tool that runs processes and responds to filesystem changes
+WWW=		https://github.com/cortesi/modd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

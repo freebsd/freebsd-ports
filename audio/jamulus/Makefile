@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Internet jam session software
+WWW=		https://jamulus.io
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

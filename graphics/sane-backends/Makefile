@@ -6,6 +6,7 @@ MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/7d30fab4e115029d9
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	API for accessing scanners, digital cameras, frame grabbers, etc
+WWW=		http://www.sane-project.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

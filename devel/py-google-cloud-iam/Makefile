@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	IAM Service Account Credentials API client library
+WWW=		https://github.com/googleapis/python-iam
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

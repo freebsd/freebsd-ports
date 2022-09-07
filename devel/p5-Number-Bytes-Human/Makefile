@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	madis555@hot.ee
 COMMENT=	Convert byte count to human readable format
+WWW=		https://metacpan.org/release/Number-Bytes-Human
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

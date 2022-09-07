@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.2.7
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds multi-site-hosting capabilities to SquirrelMail
+WWW=		https://www.squirrelmail.org
 
 USE_SM_COMPAT=	yes
 

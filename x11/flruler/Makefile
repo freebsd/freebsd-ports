@@ -5,6 +5,7 @@ MASTER_SITES=	http://seriss.com/people/erco/fltk/flruler/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	On-screen pixel ruler
+WWW=		https://seriss.com/people/erco/fltk/flruler/
 
 LICENSE=	GPLv2
 

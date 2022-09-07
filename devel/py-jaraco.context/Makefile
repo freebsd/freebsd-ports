@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Context managers by jaraco
+WWW=		https://github.com/jaraco/jaraco.context
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

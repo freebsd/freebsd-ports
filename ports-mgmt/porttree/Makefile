@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show dependencies of FreeBSD port as pseudo graphical tree
+WWW=		https://sourceforge.net/projects/porttree/
 
 LICENSE=	MIT
 

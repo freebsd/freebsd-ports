@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}${PEAR_CHANNEL}_
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	staticReflection package for PHP
+WWW=		http://pear.pdepend.org/
 
 LICENSE=	BSD3CLAUSE
 

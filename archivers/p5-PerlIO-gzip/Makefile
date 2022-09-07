@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to provide a PerlIO layer to gzip/gunzip
+WWW=		https://metacpan.org/release/PerlIO-gzip
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

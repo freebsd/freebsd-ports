@@ -6,6 +6,7 @@ DISTNAME=	Mail-SpamAssassin-${PORTVERSION}
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Highly efficient mail filter for identifying spam
+WWW=		https://spamassassin.apache.org/
 
 LICENSE=	APACHE20
 

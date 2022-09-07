@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject library to create cabinet files
+WWW=		https://wiki.gnome.org/msitools
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

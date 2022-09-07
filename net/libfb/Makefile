@@ -6,6 +6,7 @@ MASTER_SITES=	http://support.red-fone.com/downloads/fonulator/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FoneBRIDGE configuration library
+WWW=		http://red-fone.com/
 
 LIB_DEPENDS=	libnet.so:net/libnet
 

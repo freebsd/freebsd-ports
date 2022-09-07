@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Discover and load entry points from installed packages
+WWW=		https://github.com/takluyver/entrypoints
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

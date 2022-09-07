@@ -4,6 +4,7 @@ CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library for access to the windowing system
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kwindowsystem/html/index.html
 
 LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
 

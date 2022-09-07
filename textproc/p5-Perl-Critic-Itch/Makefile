@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of Perl::Critic Policies
+WWW=		https://metacpan.org/release/Perl-Critic-Itch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

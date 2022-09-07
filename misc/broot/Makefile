@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Quick and easy new way to see and navigate directory trees
+WWW=		https://dystroy.org/broot/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

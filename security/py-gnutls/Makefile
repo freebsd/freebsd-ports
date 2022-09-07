@@ -7,6 +7,7 @@ DISTNAME=	python-gnutls-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python wrapper for the GNUTLS library
+WWW=		https://pypi.org/project/python-gnutls/
 
 LICENSE=	LGPL20
 

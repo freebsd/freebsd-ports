@@ -4,6 +4,7 @@ CATEGORIES=	net dns
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Multicast DNS repeater to re-broadcast mDNS packets across interfaces
+WWW=		https://github.com/kennylevinsen/mdns-repeater/
 
 LICENSE=	GPLv2
 

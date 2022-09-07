@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Kannada dictionary
+WWW=		https://gitorious.org/aspell-kn
 
 LICENSE=	GPLv3
 

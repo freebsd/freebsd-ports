@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DIS
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Portable ASS/SSA subtitle renderer
+WWW=		https://github.com/libass/libass
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Small library for rendering Postscript documents
+WWW=		https://www.freedesktop.org/wiki/Software/libspectre/
 
 LICENSE=	GPLv2
 

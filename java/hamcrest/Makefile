@@ -7,6 +7,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of matchers for building test expressions
+WWW=		https://hamcrest.org/
 
 USE_JAVA=	yes
 NO_ARCH=	yes

@@ -8,6 +8,7 @@ MASTER_SITES=	SF \
 
 MAINTAINER=	unix4all@gulic.org
 COMMENT=	Audio mixer for X11, terminal, or command line
+WWW=		http://jpj.net/~trevor/aumix.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

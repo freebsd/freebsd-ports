@@ -8,6 +8,7 @@ LICENSE=	GPLv2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible plotting language for producing scientific graphs
+WWW=		http://gri.sourceforge.net/
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 

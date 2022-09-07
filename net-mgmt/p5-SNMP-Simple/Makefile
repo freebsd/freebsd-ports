@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Shortcuts for when using p5-SNMP
+WWW=		https://metacpan.org/release/SNMP-Simple
 
 RUN_DEPENDS=	net-snmp>=0:net-mgmt/net-snmp
 

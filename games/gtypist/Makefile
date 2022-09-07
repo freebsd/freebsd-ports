@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Interactive typing tutor
+WWW=		https://www.gnu.org/software/gtypist/
 
 LICENSE=	GPLv3
 

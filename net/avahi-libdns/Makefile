@@ -4,6 +4,7 @@ PKGNAMESUFFIX=	-libdns
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	mDNSResponder compatibility from Avahi
+WWW=		https://www.avahi.org/
 
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app
 

@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	petteri.valkonen@iki.fi
 COMMENT=	Command-line tool for generating regular expressions from test cases
+WWW=		https://github.com/pemistahl/grex/
 
 LICENSE=	APACHE20
 

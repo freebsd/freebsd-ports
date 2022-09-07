@@ -9,6 +9,7 @@ PATCHFILES=	cffa0cee9f5897fbd96a3621f2c0dc8aeb90e711.patch:-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Interact with any Open Service Broker API
+WWW=		https://github.com/starkandwayne/eden
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Meta-port for the Python interpreter 2.7
+WWW=		https://www.python.org/
 
 DEPRECATED=	EOLed upstream
 EXPIRATION_DATE=	2020-12-31

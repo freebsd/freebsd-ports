@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Twitter realtime API client
+WWW=		https://github.com/voloko/twitter-stream
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

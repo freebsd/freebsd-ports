@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open framework for storing and sharing graphic scene data
+WWW=		http://alembic.io/
 
 LICENSE=	BSD3CLAUSE
 

@@ -4,6 +4,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Application for rendering IC (chip) layouts in 3D
+WWW=		https://github.com/trilomix/GDS3D
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt

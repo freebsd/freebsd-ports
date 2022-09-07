@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	postgresql${PGSQL_VER:S|.||}-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL foreign data wrapper to connect to TDS databases
+WWW=		https://github.com/tds-fdw/tds_fdw
 
 LICENSE=	PostgreSQL
 

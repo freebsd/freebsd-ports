@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	UFO source file linter
+WWW=		https://github.com/source-foundry/ufolint
 
 LICENSE=	MIT
 

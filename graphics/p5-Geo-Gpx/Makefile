@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Module to Create and Parse GPX Files
+WWW=		https://metacpan.org/release/Geo-Gpx
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

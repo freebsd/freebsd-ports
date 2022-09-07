@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	List of Mailing Lists Manager
+WWW=		https://metacpan.org/release/Mail-LMLM
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

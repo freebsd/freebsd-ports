@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple Python wrapper around the PubChem PUG REST API
+WWW=		https://github.com/mcs07/PubChemPy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

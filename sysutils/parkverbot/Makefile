@@ -5,6 +5,7 @@ MASTER_SITES=	https://inai.de/files/parkverbot/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Hard disk head parking inhibitor
+WWW=		https://inai.de/projects/parkverbot/
 
 LICENSE=	GPLv2+
 

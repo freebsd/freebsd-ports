@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	SSH tarpit
+WWW=		https://github.com/skeeto/endlessh
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE

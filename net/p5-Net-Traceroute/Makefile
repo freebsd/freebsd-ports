@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to parse traceroute(8)
+WWW=		https://metacpan.org/release/Net-Traceroute
 
 USES=		perl5
 USE_PERL5=	configure

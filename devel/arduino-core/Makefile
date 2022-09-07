@@ -6,6 +6,7 @@ DIST_SUBDIR=	arduino
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Core board support for Arduino devices
+WWW=		https://www.arduino.cc/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/license.txt

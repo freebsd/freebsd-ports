@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Secure parasitic rdate replacement
+WWW=		https://github.com/ioerror/tlsdate
 
 LICENSE=	BSD3CLAUSE
 

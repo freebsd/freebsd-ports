@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quite Universal Circuit Simulator: GUI for circuit simulation kernels
+WWW=		https://ra3xdh.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	mattias.lindvall@gmail.com
 COMMENT=	ZFS Snapshot Manager
+WWW=		https://zsm.rtfd.io/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

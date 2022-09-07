@@ -7,6 +7,7 @@ DISTNAME=	PyDispatcher-${PORTVERSION}
 
 MAINTAINER=	eric@camachat.org
 COMMENT=	Multi-producer-multi-consumer signal dispatching mechanism
+WWW=		http://pydispatcher.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

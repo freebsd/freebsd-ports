@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Wonderfully simple way to load your code
+WWW=		https://github.com/jarmo/require_all
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,6 +9,7 @@ DISTNAME=	povunix-${DISTVERSIONPREFIX}${DISTVERSION}-src
 
 MAINTAINER=	bsd@philippost.de
 COMMENT=	Persistence of Vision Ray Tracer v3.8.0 Beta 2
+WWW=		https://www.povray.org/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt binding for Telepathy Logger
+WWW=		https://community.kde.org/KTp
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

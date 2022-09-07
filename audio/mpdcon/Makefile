@@ -7,6 +7,7 @@ DISTNAME=	MPDCon-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPD client for GNUstep
+WWW=		https://gap.nongnu.org/mpdcon/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Documentation/COPYING

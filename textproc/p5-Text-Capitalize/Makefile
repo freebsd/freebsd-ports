@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Capitalize strings ("to WORK AS titles" becomes "To Work as Titles")
+WWW=		https://metacpan.org/release/Text-Capitalize
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

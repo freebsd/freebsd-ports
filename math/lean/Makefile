@@ -9,6 +9,7 @@ PATCHFILES=	5eecaa0b9c860858372a22ab242566671907c913.patch:-p2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Theorem prover
+WWW=		https://leanprover-community.github.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Dynamic Documents for R
+WWW=		https://cran.r-project.org/web/packages/rmarkdown/
 
 LICENSE=	GPLv3
 

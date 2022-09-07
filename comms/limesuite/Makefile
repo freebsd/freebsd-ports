@@ -6,6 +6,7 @@ CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	tomek@cedro.info
 COMMENT=	Software Defined Radio Software Suite from Lime Microsystems
+WWW=		https://github.com/myriadrf/LimeSuite
 
 LICENSE=	APACHE20
 

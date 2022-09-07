@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.monkey.org/~provos/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, efficient web crawler with advanced features
+WWW=		https://www.monkey.org/~provos/crawl/
 
 LICENSE=	BSD4CLAUSE
 

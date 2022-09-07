@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Persistence layer for Ruby models and Elasticsearch
+WWW=		https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-persistence
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	n_hibma@FreeBSD.org
 COMMENT=	MongoDB document to Moose object mapper
+WWW=		https://metacpan.org/release/Mongoose/
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

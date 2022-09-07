@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts PNG files to Windows icon resource files
+WWW=		https://www.winterdrache.de/freeware/png2ico/index.html
 
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/LICENSE

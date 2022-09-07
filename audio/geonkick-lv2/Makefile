@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software percussion synthesizer
+WWW=		https://github.com/iurie-sw/geonkick
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

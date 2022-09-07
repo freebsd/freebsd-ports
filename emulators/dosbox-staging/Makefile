@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	DOS/x86 emulator based on DOSBox
+WWW=		https://dosbox-staging.github.io/
 
 LICENSE=	GPLv2
 

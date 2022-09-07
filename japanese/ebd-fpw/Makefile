@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easton's 1897 Bible Dictionary (EPWING V1 format)
+WWW=		http://openlab.ring.gr.jp/edict/fpw/
 
 USES=		zip
 NO_BUILD=	yes

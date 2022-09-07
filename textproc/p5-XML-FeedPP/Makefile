@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Parse/write/merge/edit RSS/RDF/Atom syndication feeds
+WWW=		https://metacpan.org/release/XML-FeedPP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

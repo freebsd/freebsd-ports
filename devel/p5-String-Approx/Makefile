@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for approximate matching (fuzzy matching)
+WWW=		https://metacpan.org/release/String-Approx
 
 LICENSE=	ART20 LGPL20
 LICENSE_COMB=	dual

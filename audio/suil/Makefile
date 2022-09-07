@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for loading and wrapping LV2 plugin UIs
+WWW=		http://drobilla.net/software/suil/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

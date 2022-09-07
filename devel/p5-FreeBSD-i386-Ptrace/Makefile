@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for ptrace on FreeBSD-i386
+WWW=		https://metacpan.org/release/FreeBSD-i386-Ptrace
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

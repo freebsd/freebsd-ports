@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client library for Tarantool Database
+WWW=		https://github.com/tarantool/tarantool-python
 
 LICENSE=	BSD3CLAUSE
 

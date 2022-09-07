@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	langer.markus@gmail.com
 COMMENT=	Time series alerting framework developed by Stack Exchange
+WWW=		https://bosun.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

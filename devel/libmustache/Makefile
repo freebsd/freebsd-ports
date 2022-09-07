@@ -7,6 +7,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ implementation of Mustache
+WWW=		https://github.com/jbboehr/libmustache
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

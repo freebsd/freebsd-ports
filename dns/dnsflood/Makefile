@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	DNS flood detector
+WWW=		http://www.adotout.com/
 
 LICENSE=	GPLv2
 

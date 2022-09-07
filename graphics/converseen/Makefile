@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Easy to use graphics conversion utility
+WWW=		http://converseen.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

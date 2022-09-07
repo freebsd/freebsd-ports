@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Wrapper for the UNIX-style Database Manager Library
+WWW=		https://github.com/ruby/dbm
 
 LICENSE=	BSD2CLAUSE
 

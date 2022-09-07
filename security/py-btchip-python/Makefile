@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Python communication library for Ledger Hardware Wallet
+WWW=		https://github.com/LedgerHQ/btchip-python
 
 LICENSE=	APACHE20
 

@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	StructuredText parser
+WWW=		https://pypi.org/project/zope.structuredtext/
 
 LICENSE=	ZPL21
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Specify a return type for a function (optionally with coercion)
+WWW=		https://metacpan.org/release/Return-Type
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

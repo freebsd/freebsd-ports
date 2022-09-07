@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	List possible $$^O ($$OSNAME) values, with description
+WWW=		https://metacpan.org/release/Perl-osnames
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

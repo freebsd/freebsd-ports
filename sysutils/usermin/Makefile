@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Web-based interface for performing some user tasks
+WWW=		http://www.usermin.com/
 
 LICENSE=	BSD3CLAUSE
 

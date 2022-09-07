@@ -6,6 +6,7 @@ MASTER_SITES=	http://archives.eyrie.org/software/system/ \
 
 MAINTAINER=	paulo@nlink.com.br
 COMMENT=	Convert tai64n format invented by Dan Bernstein
+WWW=		https://www.eyrie.org/~eagle/software/tai64nfrac/
 
 PLIST_FILES=	bin/tai64nfrac man/man1/tai64nfrac.1.gz
 

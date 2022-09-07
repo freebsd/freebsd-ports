@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides Moose-like method modifiers
+WWW=		https://metacpan.org/release/Class-Method-Modifiers
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Recreate decrypting text effect from the Sneakers movie
+WWW=		https://github.com/bartobri/no-more-secrets
 
 LICENSE=	GPLv3
 

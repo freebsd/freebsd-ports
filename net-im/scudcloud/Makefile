@@ -6,6 +6,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Desktop client app for Slack
+WWW=		https://github.com/raelgc/scudcloud
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

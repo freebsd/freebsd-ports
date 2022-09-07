@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.arpoison.net/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	UNIX arp cache update utility
+WWW=		http://www.arpoison.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

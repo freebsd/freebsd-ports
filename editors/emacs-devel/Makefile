@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	emacs@FreeBSD.org
 COMMENT=	GNU editing macros ${COMMENT_${FLAVOR}}
+WWW=		https://www.gnu.org/software/emacs/
 COMMENT_nox=	(No X flavor)
 
 LICENSE=	GPLv3+

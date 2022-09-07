@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of the Fuse Unix Spectrum Emulator to libretro
+WWW=		https://github.com/libretro/fuse-libretro
 
 LICENSE=	GPLv3
 

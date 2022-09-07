@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Role-Based Access Control authorization scheme
+WWW=		https://metacpan.org/release/Tree-Authz
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

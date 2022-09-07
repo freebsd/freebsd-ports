@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	andrew.fengler@scaleengine.com
 COMMENT=	Perl interface for libcurl
+WWW=		https://search.cpan.org/dist/Net-Curl/
 
 LICENSE=	MIT
 

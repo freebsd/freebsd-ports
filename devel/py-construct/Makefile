@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Python module for parsing and building of data structures
+WWW=		https://github.com/construct/construct
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

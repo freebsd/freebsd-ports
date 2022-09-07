@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	knyght@gmail.com
 COMMENT=	Emulator of a PC with DOS
+WWW=		http://dosbox.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/bland
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Parallels Desktop Tools for FreeBSD
+WWW=		https://www.parallels.com/products/desktop/
 
 LICENSE=	BSD2CLAUSE
 

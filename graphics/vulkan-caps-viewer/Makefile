@@ -5,6 +5,7 @@ CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Vulkan Hardware Capability Viewer
+WWW=		https://vulkan.gpuinfo.org/
 
 LICENSE=	LGPL3 # based on license headers
 

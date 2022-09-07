@@ -7,6 +7,7 @@ CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Keybase.io client and Keybase Filesystem (KBFS)
+WWW=		https://keybase.io/docs/command_line
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE

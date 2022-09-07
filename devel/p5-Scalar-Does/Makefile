@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Like ref() but useful
+WWW=		https://metacpan.org/release/Scalar-Does
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

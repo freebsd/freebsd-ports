@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Object-oriented paths
+WWW=		https://github.com/p1c2u/pathable
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

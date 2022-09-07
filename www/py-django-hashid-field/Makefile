@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hashids obfuscated Django Model Field
+WWW=		https://github.com/nshafer/django-hashid-field
 
 LICENSE=	MIT
 

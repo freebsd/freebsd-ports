@@ -6,6 +6,7 @@ MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Settings editor for LightDM GTK+ Greeter
+WWW=		https://launchpad.net/lightdm-gtk-greeter-settings
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

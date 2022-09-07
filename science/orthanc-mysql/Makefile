@@ -13,6 +13,7 @@ EXTRACT_ONLY=	OrthancMySQL-${PORTVERSION}.tar.gz
 
 MAINTAINER=	maintainer.freebsd@xpoundit.com
 COMMENT=	Orthanc plugin to use MySQL/MariaDB for indexing or storage
+WWW=		https://www.orthanc-server.com/static.php?page=mysql
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

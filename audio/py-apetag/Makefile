@@ -8,6 +8,7 @@ DISTNAME=	py-ApeTag-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for APE Tag written in Python
+WWW=		https://sourceforge.net/projects/pylibape/
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist

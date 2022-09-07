@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Flexible and easy to integrate syslog daemon
+WWW=		http://oss.coresecurity.com/projects/msyslog.html
 
 LICENSE=	BSD4CLAUSE MIT
 LICENSE_COMB=	dual

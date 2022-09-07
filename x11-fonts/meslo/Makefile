@@ -7,6 +7,7 @@ DISTNAME=	Meslo%20LG%20v${DISTVERSION}
 
 MAINTAINER=	johalun0@gmail.com
 COMMENT=	Customized version of the Apple Menlo font
+WWW=		https://github.com/andreberg/Meslo-Font
 
 LICENSE=	APACHE20
 

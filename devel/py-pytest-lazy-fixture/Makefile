@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use fixtures in pytest.mark.parametrize
+WWW=		https://github.com/TvoroG/pytest-lazy-fixture
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Zabbix API Python Library
+WWW=		https://github.com/lukecyca/pyzabbix
 
 LICENSE=	LGPL21
 

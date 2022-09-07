@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-Source e-Commerce Software for Web 2.0
+WWW=		https://www.prestashop.com/
 
 USES=		cpe php shebangfix zip:infozip
 NO_BUILD=	yes

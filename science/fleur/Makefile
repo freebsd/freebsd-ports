@@ -5,6 +5,7 @@ CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	FLAPW code for atomic computations in quantum chemistry and physics
+WWW=		https://www.flapw.de/master/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C WebSocket library
+WWW=		https://github.com/tatsuhiro-t/wslay
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 window manager
+WWW=		https://www.kde.org/plasma-desktop
 
 LICENSE=	GPLv2
 

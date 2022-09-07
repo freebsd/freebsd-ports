@@ -5,6 +5,7 @@ MASTER_SITES=	SF/courier/analog/${PORTVERSION}
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Courier log analyzer
+WWW=		https://www.courier-mta.org/download.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL

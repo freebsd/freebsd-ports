@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RT Extension to repeat tickets base on a schedule
+WWW=		https://metacpan.org/release/RT-Extension-RepeatTicket
 
 LICENSE=	GPLv2
 

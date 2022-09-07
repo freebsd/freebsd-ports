@@ -7,6 +7,7 @@ DISTNAME=	Poe-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vorbis comment editor for GNUstep
+WWW=		https://www.eskimo.com/~pburns/Poe/
 
 LICENSE=	GPLv2+
 

@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Apache module to support atomic deploys
+WWW=		https://github.com/etsy/mod_realdoc
 
 LICENSE=	MIT
 

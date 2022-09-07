@@ -9,6 +9,7 @@ DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Calendar app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/calendar
 
 LICENSE=	AGPLv3
 

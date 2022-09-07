@@ -7,6 +7,7 @@ DISTNAME=	GTAMSAnalyzer.src.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qualitative Research Software for the Free World for GNUstep
+WWW=		http://tamsys.sourceforge.net/gtams/
 
 LICENSE=	GPLv2
 

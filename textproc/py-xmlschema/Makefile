@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Implementation of XML Schema for Python
+WWW=		https://pypi.org/project/xmlschema/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

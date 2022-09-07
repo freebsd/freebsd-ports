@@ -8,6 +8,7 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	The build utility of the Qt 3 project
+WWW=		http://doc.qt.digia.com/3.3/index.html
 
 REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/${DISTNAME}/qmake

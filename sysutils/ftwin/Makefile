@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Useful tool to find duplicate files
+WWW=		https://github.com/fpesce/ftwin
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

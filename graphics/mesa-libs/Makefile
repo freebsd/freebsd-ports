@@ -3,6 +3,7 @@ PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
+WWW=		https://www.mesa3d.org/
 
 LIB_DEPENDS=	libOpenGL.so:graphics/libglvnd
 

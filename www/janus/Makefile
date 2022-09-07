@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	WebRTC gateway
+WWW=		https://github.com/meetecho/janus-gateway
 
 LICENSE=	GPLv3
 

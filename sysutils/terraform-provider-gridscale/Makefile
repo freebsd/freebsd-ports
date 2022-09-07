@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Terraform provider for gridscale
+WWW=		https://github.com/terraform-providers/terraform-provider-gridscale
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

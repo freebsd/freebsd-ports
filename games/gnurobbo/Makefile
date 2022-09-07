@@ -6,6 +6,7 @@ EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Reimplementation of LK Avalon's Robbo for the Atari XE/XL
+WWW=		http://gnurobbo.sourceforge.net/
 
 LICENSE=	AREV BITSTREAM_VERA GPLv2 CCSP
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Command line tool for DigitalOcean services
+WWW=		https://github.com/digitalocean/doctl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -7,6 +7,7 @@ PATCHFILES+=	442bcebcc00e.patch:-p1 # meson >= 0.60
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Application Menu plugin for XFCE panel
+WWW=		https://gitlab.com/vala-panel-project/vala-panel-appmenu
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

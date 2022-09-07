@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extends ruby String class enabling coloring text on ANSI terminals
+WWW=		https://github.com/sickill/rainbow
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	libstdc++-html-USERS-4.2.2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU libstdc++ API documentation
+WWW=		https://gcc.gnu.org/onlinedocs/libstdc++/latest-doxygen/index.html
 
 USES=		tar:bzip2
 

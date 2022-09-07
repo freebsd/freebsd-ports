@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/zeux/pugixml/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Light-weight, simple and fast XML parser for C++ with XPath support
+WWW=		https://pugixml.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

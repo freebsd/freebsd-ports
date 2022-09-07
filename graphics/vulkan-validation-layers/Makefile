@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Validation layers for the Vulkan graphics API
+WWW=		https://github.com/KhronosGroup/Vulkan-ValidationLayers
 
 LICENSE=	APACHE20
 

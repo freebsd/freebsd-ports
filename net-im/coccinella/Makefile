@@ -7,6 +7,7 @@ DISTNAME=	Coccinella-${PORTVERSION}Src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber client with whiteboard communication
+WWW=		https://thecoccinella.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

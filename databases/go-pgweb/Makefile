@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	go-
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	Web-based database browser for PostgreSQL
+WWW=		https://github.com/sosedoff/pgweb
 
 LICENSE=	MIT
 

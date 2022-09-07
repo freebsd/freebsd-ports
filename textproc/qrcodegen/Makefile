@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI to generate QR codes
+WWW=		https://sites.google.com/site/qrcodeforwn/home/qr-code-generator-for-wireless-networks
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${POR
 
 MAINTAINER=	freebsd@rheinwolf.de
 COMMENT=	Identity and access management solution
+WWW=		https://www.keycloak.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

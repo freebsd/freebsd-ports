@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	rihaz.jerrin@gmail.com
 COMMENT=	DNS enumeration tool
+WWW=		https://github.com/darkoperator/dnsrecon
 
 LICENSE=	GPLv2
 

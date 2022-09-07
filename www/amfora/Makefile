@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Fancy terminal browser for the Gemini protocol
+WWW=		https://github.com/makeworld-the-better-one/amfora
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

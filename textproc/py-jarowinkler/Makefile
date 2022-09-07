@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for fast approximate string matching
+WWW=		https://github.com/maxbachmann/JaroWinkler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

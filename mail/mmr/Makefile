@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.sourcefiles.org/Internet/Mail/Clients/Console/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based MIME Mail Reader
+WWW=		https://slouken.libsdl.org/projects/mmr/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

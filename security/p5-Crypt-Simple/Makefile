@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	avk@vl.ru
 COMMENT=	Perl encrypt stuff simply
+WWW=		https://metacpan.org/release/Crypt-Simple
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for pure perl eval with persistent lexical variables
+WWW=		https://metacpan.org/release/Eval-WithLexicals
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

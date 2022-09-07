@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	zrj@dragonflybsd.org
 COMMENT=	Portable hex editor with vi like interface
+WWW=		https://github.com/kusumi/fileobj/tree/v0.7
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

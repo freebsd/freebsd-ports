@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metaport for FreeDink engine and data
+WWW=		https://www.gnu.org/software/freedink/
 
 RUN_DEPENDS=	freedink-engine>=${PORTVERSION}:games/freedink-engine \
 		freedink-data>=1.08.20140901:games/freedink-data \

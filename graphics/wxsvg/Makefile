@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	C++ library to create, manipulate, and render SVG files
+WWW=		http://wxsvg.sourceforge.net/
 
 LICENSE=	LGPL21+
 

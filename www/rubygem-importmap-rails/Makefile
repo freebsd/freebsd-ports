@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use ESM with importmap to manage modern JavaScript in Rails without transpiling or bundling
+WWW=		https://github.com/rails/importmap-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

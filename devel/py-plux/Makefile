@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dynamic code loading framework for building pluggable Python distributions
+WWW=		https://github.com/localstack/plux
 
 LICENSE=	APACHE20
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	CMS meant to be used from the terminal and integrated into a VCS for rendering static pages
+WWW=		https://metacpan.org/release/Toader
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

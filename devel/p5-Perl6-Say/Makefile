@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl 6 say (print, but no newline needed) function
+WWW=		https://metacpan.org/release/Perl6-Say
 
 USES=		perl5
 USE_PERL5=	configure

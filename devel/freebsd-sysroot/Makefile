@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTFILES:[1]:S/:${FLAVOR}$$//}
 
 MAINTAINER=	rust@FreeBSD.org
 COMMENT=	FreeBSD ${_SYSROOT_VER} ${FLAVOR:S/_/ /} sysroot
+WWW=		https://www.FreeBSD.org/
 
 LICENSE=	FREEBSD
 LICENSE_NAME=	FreeBSD base licenses

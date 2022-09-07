@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Error/exception handling in object-oriented programming style
+WWW=		https://metacpan.org/release/Error
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Canonicalizes text to a specified EOL/EOF convention
+WWW=		https://metacpan.org/release/Text-FixEOL
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension SOAP::Lite transport for Plack
+WWW=		https://metacpan.org/release/SOAP-Transport-HTTP-Plack
 
 RUN_DEPENDS=	\
 	p5-SOAP-Lite>0:net/p5-SOAP-Lite \

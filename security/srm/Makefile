@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION} \
 
 MAINTAINER=	mshirk@daemon-security.com
 COMMENT=	Secure rm, a utility which destroys file contents before unlinking
+WWW=		https://sourceforge.net/projects/srm/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTNAME=	cflow-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Call graph generator for C and assembler code
+WWW=		https://bitbucket.org/marcusva/cflow
 
 LICENSE=	BSD2CLAUSE
 

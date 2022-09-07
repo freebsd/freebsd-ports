@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Graphical interface to git repositories
+WWW=		https://github.com/tibirna/qgit
 
 LICENSE=	GPLv2
 

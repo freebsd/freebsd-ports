@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Implementation of rsync with a BSD (ISC) license
+WWW=		https://github.com/kristapsdz/openrsync
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

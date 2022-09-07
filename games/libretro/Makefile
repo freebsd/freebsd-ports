@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Meta-port for libretro cores
+WWW=		https://www.libretro.com
 
 USES=		metaport
 

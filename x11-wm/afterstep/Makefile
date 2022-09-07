@@ -8,6 +8,7 @@ DISTNAME=	AfterStep-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Window manager originally based on the Bowman NeXTstep clone
+WWW=		http://www.afterstep.org/
 
 LICENSE=	GPLv2+
 

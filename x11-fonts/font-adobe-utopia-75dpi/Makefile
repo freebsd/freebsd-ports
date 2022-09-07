@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org Adobe Utopia 75dpi font
+WWW=		https://www.x.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

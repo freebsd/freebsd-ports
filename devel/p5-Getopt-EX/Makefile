@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Getopt Extender
+WWW=		https://metacpan.org/release/Getopt-EX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

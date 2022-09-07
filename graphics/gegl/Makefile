@@ -6,6 +6,7 @@ MASTER_SITES=	GIMP
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
+WWW=		https://gegl.org/
 
 LICENSE=	BSD3CLAUSE GPLv3+ LGPL3+
 LICENSE_COMB=	multi

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Desktop notifications, the UNIX way
+WWW=		https://github.com/Sweets/tiramisu
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

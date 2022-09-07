@@ -6,6 +6,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	DateTime Extension for Japanese Eras
+WWW=		https://metacpan.org/release/DateTime-Calendar-Japanese-Era
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

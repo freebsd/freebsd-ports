@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Report power statistics for Intel CPUs
+WWW=		https://github.com/torvalds/linux/tree/master/tools/power/x86/turbostat
 
 LICENSE=	GPLv2
 

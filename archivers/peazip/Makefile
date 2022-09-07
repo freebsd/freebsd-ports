@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free archiver and file compressor
+WWW=		https://peazip.github.io
 
 LICENSE=	LGPL3
 

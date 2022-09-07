@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Portable readline library capable of handling UTF-8
+WWW=		https://github.com/AmokHuginnsson/replxx
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

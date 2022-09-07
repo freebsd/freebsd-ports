@@ -2,6 +2,7 @@ PORTNAME?=	v4l-utils
 PORTREVISION=	1
 
 COMMENT=	Video4Linux utilities
+WWW=		https://linuxtv.org/wiki/index.php/V4l-utils
 
 MASTERDIR=	${.CURDIR}/../libv4l
 DESCR=		${.CURDIR}/pkg-descr

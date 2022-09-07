@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/fribidi/fribidi/releases/download/v${DISTVERSIO
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Free Implementation of the Unicode Bidirectional Algorithm
+WWW=		https://fribidi.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

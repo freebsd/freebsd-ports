@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Integrated environment for writing LaTeX using GNU Emacs
+WWW=		https://www.gnu.org/software/auctex/
 
 LICENSE=	GPLv3
 

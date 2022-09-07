@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Build simple recursive-descent parsers
+WWW=		https://metacpan.org/release/Parser-MGC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

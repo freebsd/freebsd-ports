@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rouslan@rshell.net
 COMMENT=	Generic pipeline Perl interface
+WWW=		https://metacpan.org/release/Pipeline
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-ISA>=0:devel/p5-Class-ISA \

@@ -5,6 +5,7 @@ MASTER_SITES=	https://people.redhat.com/~rjones/virt-what/files/
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Utility to determine whether it is being run in virtual environment
+WWW=		https://people.redhat.com/~rjones/virt-what/
 
 LICENSE=	GPLv1
 

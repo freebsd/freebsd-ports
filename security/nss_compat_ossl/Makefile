@@ -6,6 +6,7 @@ MASTER_SITES=	http://rcritten.fedorapeople.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source-level compatibility library for OpenSSL to NSS porting
+WWW=		http://rcritten.fedorapeople.org/nss_compat_ossl.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

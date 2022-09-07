@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-2014-12-07-c2d3662
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Destroys ZFS snapshots
+WWW=		https://www.fabiankeil.de/gehacktes/zsd/
 
 LICENSE=	MIT
 

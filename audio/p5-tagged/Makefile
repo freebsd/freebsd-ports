@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read, change, and write different tags of MP3 audio files
+WWW=		http://tagged.sourceforge.net/
 
 USES=		perl5
 USE_PERL5=	configure

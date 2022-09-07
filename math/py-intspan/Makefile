@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Finite element automatic tabulator
+WWW=		https://github.com/jonathaneunice/intspan
 
 LICENSE=	APACHE20
 

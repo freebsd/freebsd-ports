@@ -8,6 +8,7 @@ DIST_SUBDIR=	postgresql
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PostgreSQL ODBC driver
+WWW=		https://www.postgresql.org/ftp/odbc/versions/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/license.txt

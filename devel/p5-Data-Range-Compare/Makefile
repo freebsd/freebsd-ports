@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Find gaps and intersections in lists of ranges
+WWW=		https://metacpan.org/release/Data-Range-Compare
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

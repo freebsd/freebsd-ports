@@ -5,6 +5,7 @@ MASTER_SITES=	http://dl.midipix.org/${PORTNAME}/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Skinny libtool implementation, written in C
+WWW=		https://git.foss21.org/slibtool
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.SLIBTOOL

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	14
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	HTTP/REST API client library in Ruby
+WWW=		https://github.com/lostisland/faraday
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

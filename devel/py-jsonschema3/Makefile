@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON Schema validation for Python
+WWW=		https://github.com/Julian/jsonschema
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

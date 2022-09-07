@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Time Zone Database Information
+WWW=		https://cran.r-project.org/web/packages/tzdb/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.headmqa.com/${PORTNAME}/ \
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Renames mp3 files using freedb or local CDDB
+WWW=		http://www.headmqa.com/rebot3/
 
 LICENSE=	GPLv2
 

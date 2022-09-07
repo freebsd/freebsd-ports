@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	freebsd.ports@tipstrade.net
 COMMENT=	Access to Clickatell SMS messaging service
+WWW=		https://metacpan.org/release/Net-SMS-Clickatell
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

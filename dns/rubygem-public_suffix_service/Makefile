@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse and decompose domain names into TLD, domain, and subdomains
+WWW=		http://www.simonecarletti.com/code/public_suffix_service
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

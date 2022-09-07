@@ -6,6 +6,7 @@ MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/13/77/93/e85dc2dc266e9
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
+WWW=		https://download.ebz.epson.net/dsc/search/01/search/?OSC=LX
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

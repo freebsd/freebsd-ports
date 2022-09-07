@@ -7,6 +7,7 @@ DISTNAME=	omniORBpy-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python bindings for omniORB4, a CORBA 2.6 ORB
+WWW=		http://omniorb.sourceforge.net
 
 LICENSE=	LGPL21
 

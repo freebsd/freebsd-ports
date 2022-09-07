@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gebhart@secnetix.de
 COMMENT=	Log::Dispatch output class for logging to database via DBI interface
+WWW=		https://metacpan.org/release/Log-Dispatch-DBI
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Log-Dispatch>=2.0:devel/p5-Log-Dispatch \

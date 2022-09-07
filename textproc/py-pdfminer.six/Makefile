@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	PDF parser and analyzer
+WWW=		https://github.com/pdfminer/pdfminer.six
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

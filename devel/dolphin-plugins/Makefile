@@ -5,6 +5,7 @@ CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plugins for Dolphin file manager
+WWW=		https://www.kde.org/
 
 BUILD_DEPENDS=	dolphin:x11-fm/dolphin
 RUN_DEPENDS=	dolphin:x11-fm/dolphin

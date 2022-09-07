@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for folding Japanese text
+WWW=		https://metacpan.org/release/Lingua-JA-Fold
 
 USES=		perl5
 USE_PERL5=	configure

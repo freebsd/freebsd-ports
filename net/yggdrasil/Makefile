@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	freebsd@neilalexander.dev
 COMMENT=	Experimental end-to-end encrypted self-arranging IPv6 network
+WWW=		https://yggdrasil-network.github.io/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

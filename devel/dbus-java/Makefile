@@ -5,6 +5,7 @@ MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus-java/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Java API for D-BUS
+WWW=		https://dbus.freedesktop.org/doc/dbus-java/
 
 LICENSE=	ACADEMIC LGPL21+
 LICENSE_COMB=	dual

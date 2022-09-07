@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Interactive CLI arbitrary-precision calculator
+WWW=		https://github.com/lcn2/calc
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING-LGPL

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Toolkit for building Null Objects
+WWW=		https://github.com/avdi/naught
 
 LICENSE=	MIT
 

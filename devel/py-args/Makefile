@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Command arguments for humans
+WWW=		https://github.com/kennethreitz/args
 
 LICENSE=	BSD2CLAUSE
 

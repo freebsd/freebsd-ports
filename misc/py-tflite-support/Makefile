@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Toolkit for developing/deploying ML/TFLite models
+WWW=		https://www.tensorflow.org/
 
 LICENSE=	APACHE20
 

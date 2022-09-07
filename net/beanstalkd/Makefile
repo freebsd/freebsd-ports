@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast, distributed, in-memory workqueue service
+WWW=		http://xph.us/software/beanstalkd/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

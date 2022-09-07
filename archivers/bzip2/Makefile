@@ -5,6 +5,7 @@ MASTER_SITES=	https://sourceware.org/pub/bzip2/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Block-sorting file compressor
+WWW=		https://gitlab.com/federicomenaquintero/bzip2/
 
 LICENSE=	BZIP2
 LICENSE_NAME=	BZIP2 license

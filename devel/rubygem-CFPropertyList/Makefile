@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read, write and manipulate both binary and XML property lists
+WWW=		https://github.com/ckruse/CFPropertyList
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

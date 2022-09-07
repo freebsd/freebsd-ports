@@ -5,6 +5,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/516365027/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tool for displaying pipe status information
+WWW=		https://launchpad.net/pipemeter
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

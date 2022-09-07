@@ -7,6 +7,7 @@ DISTNAME=	get_reader-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Return csv.reader-like objects from multiple sources
+WWW=		https://github.com/shawnbrown/get_reader
 
 LICENSE=	APACHE20
 

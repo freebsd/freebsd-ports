@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module that supports mon, a network and system monitoring daemon
+WWW=		https://metacpan.org/release/Mon
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:S/./-/g}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Embeddable Javascript interpreter in C
+WWW=		https://bellard.org/quickjs/
 
 LICENSE=	MIT
 

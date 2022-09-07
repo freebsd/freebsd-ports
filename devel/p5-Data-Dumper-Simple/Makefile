@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easily dump variables with names
+WWW=		https://metacpan.org/release/Data-Dumper-Simple
 
 USES=		perl5
 USE_PERL5=	modbuild

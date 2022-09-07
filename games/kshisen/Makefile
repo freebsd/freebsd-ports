@@ -4,6 +4,7 @@ CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME:tu}_DESC}
+WWW=		https://www.kde.org/applications/games/kshisen/
 
 LIB_DEPENDS=	libKF5KMahjongglib.so:games/libkmahjongg
 

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	rainbow@sanitylinux.org
 COMMENT=	Local LetsEncrypt client for managing certificates on remote servers
+WWW=		https://github.com/srvrco/getssl
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

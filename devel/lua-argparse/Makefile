@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Feature-rich command line parser for Lua
+WWW=		https://github.com/luarocks/argparse
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

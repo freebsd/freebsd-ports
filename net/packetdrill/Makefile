@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Network stack testing tool
+WWW=		https://github.com/freebsd-net/packetdrill
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ CATEGORIES=	multimedia kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE video player
+WWW=		https://invent.kde.org/multimedia/haruna
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libmpv.so:multimedia/mpv

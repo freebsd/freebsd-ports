@@ -5,6 +5,7 @@ CATEGORIES=	misc devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only general purpose quantum computing library
+WWW=		https://github.com/softwareQinc/qpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

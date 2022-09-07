@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easily timeout long running operations
+WWW=		https://metacpan.org/release/Time-Out
 
 USES=		perl5
 USE_PERL5=	configure

@@ -6,6 +6,7 @@ MASTER_SITES=	http://swtch.com/drawterm/
 
 MAINTAINER=	winston@ml1.net
 COMMENT=	Plan9 cpu client
+WWW=		https://swtch.com/drawterm/
 
 # Additionally the Lucent Public License
 LICENSE=	MIT

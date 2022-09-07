@@ -8,6 +8,7 @@ DISTNAME=	UrbanTerror${PORTVERSION:S/.//}_full
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: Urban Terror
+WWW=		https://www.urbanterror.info/
 
 USES=		gmake zip
 NO_BUILD=	yes

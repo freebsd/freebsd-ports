@@ -5,6 +5,7 @@ CATEGORIES=	print kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Printer manager for KDE
+WWW=		https://www.kde.org
 
 LIB_DEPENDS=	libcups.so:print/cups
 

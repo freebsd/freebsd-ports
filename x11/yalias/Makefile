@@ -7,6 +7,7 @@ MASTER_SITES=	http://offog.org/files/ \
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Enhanced execution box with regex pattern matching
+WWW=		https://offog.org/code/
 
 USES=		gnome pkgconfig
 USE_GNOME=	gtk20

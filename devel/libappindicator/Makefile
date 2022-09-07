@@ -10,6 +10,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	KSNI App Indicator library
+WWW=		https://launchpad.net/libappindicator
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

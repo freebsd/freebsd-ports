@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK3 app for finding and listening to internet radio stations
+WWW=		https://github.com/haecker-felix/gradio
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -4,6 +4,7 @@ CATEGORIES=	misc perl5
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Utility which outputs a number of characters to the screen
+WWW=		https://github.com/neelchauhan/colwide
 
 LICENSE=	BSD2CLAUSE
 

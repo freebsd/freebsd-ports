@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Icon taskbar for the Gnome Shell
+WWW=		https://github.com/home-sweet-gnome/dash-to-panel
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

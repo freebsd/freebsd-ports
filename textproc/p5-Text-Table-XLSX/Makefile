@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate XLSX worksheet
+WWW=		https://metacpan.org/release/Text-Table-XLSX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org fonts meta-port
+WWW=		https://www.x.org/
 
 USES=		metaport xorg
 USE_XORG=	fontutil

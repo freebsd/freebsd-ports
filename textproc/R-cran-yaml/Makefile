@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Methods to convert R data to YAML and back
+WWW=		https://cran.r-project.org/web/packages/yaml/
 
 LICENSE=	BSD3CLAUSE
 

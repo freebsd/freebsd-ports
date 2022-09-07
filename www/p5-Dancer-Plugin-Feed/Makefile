@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dancer plugin for generating RSS or Atom feeds
+WWW=		https://metacpan.org/release/Dancer-Plugin-Feed
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

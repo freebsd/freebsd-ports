@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides support for asynchronous TCP, UDP, Unix, and SSL sockets
+WWW=		https://github.com/socketry/async-io
 
 LICENSE=	MIT
 

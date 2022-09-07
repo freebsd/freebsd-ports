@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Very fast S3 command-line tool written in Go
+WWW=		https://github.com/peak/s5cmd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

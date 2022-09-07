@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Kodi game addon for Sega - MS/MD/CD/32X (PicoDrive)
+WWW=		https://github.com/libretro/picodrive
 
 LICENSE=	GPLv2+
 

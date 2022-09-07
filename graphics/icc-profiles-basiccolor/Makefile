@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-printing2009-${PORTVERSION}
 COMMENT=	CMYK ICC profiles for ISO Printing conditions (ISO 12647-2)
 
 MAINTAINER=	ports@FreeBSD.org
+WWW=		https://www.basiccolor.de/
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes

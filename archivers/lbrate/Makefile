@@ -6,6 +6,7 @@ MASTER_SITES=	SUNSITE/utils/compress
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Extract/decompress CP/M LBR archives
+WWW=		http://freshmeat.net/projects/lbrate/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

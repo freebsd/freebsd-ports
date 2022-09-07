@@ -6,6 +6,7 @@ MASTER_SITES=	http://soliton.vm.bytemark.co.uk/pub/jjg/src/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert and manipulate colour gradients
+WWW=		http://soliton.vm.bytemark.co.uk/pub/jjg/en/code/cptutils/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Tool to analyze Nginx configuration for security misconfiguration
+WWW=		https://github.com/yandex/gixy
 
 LICENSE=	APACHE20
 

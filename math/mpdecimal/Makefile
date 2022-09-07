@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.bytereef.org/software/mpdecimal/releases/
 
 MAINTAINER=	skrah@bytereef.org
 COMMENT=	C/C++ arbitrary precision decimal floating point libraries
+WWW=		https://www.bytereef.org/mpdecimal/index.html
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

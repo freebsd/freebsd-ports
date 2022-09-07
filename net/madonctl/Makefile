@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CLI client for the Mastodon social network API
+WWW=		https://github.com/McKael/madonctl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

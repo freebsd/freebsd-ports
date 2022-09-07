@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Easy to use retry decorator in python
+WWW=		https://github.com/eSAMTrade/retry
 
 LICENSE=	APACHE20
 

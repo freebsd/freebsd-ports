@@ -7,6 +7,7 @@ DISTNAME=	IMAPClient-${PORTVERSION}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Easy to use, Pythonic and complete IMAP client library
+WWW=		https://github.com/mjs/imapclient
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

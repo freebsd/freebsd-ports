@@ -5,6 +5,7 @@ CATEGORIES=	security java
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The OWASP zed attack proxy
+WWW=		https://www.zaproxy.org/
 
 LICENSE=	APACHE20
 

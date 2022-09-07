@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Romanization of Japanese language
+WWW=		https://metacpan.org/release/Lingua-JA-Romanize-Japanese
 
 LICENSE=	GPLv2+
 

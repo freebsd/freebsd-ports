@@ -5,6 +5,7 @@ MASTER_SITES=	http://dl.exactcode.de/oss/minised/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Smaller, cheaper, faster sed implementation
+WWW=		http://www.exactcode.de/oss/minised/
 
 ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} man/man1/minised.1.gz

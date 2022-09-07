@@ -6,6 +6,7 @@ MASTER_SITES=		http://opsec.eu/src/srs/
 
 MAINTAINER=		pi@FreeBSD.org
 COMMENT=		Sender Rewriting Scheme C Implementation
+WWW=		https://opsec.eu/src/srs/
 
 USES=			libtool tar:bzip2
 USE_LDCONFIG=		yes

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Static code checker for C++
+WWW=		https://github.com/cpplint/cpplint
 
 LICENSE=	BSD3CLAUSE
 

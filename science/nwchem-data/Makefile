@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Data for NWChem, the computational chemistry software
+WWW=		https://nwchemgit.github.io/
 
 LICENSE=	ECL20
 LICENSE_NAME=	Educational Community License (ECL) 2.0

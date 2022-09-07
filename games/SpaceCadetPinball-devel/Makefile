@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Decompilation of 3D Pinball for Windows (development version)
+WWW=		https://github.com/k4zmu2a/SpaceCadetPinball
 
 LICENSE=	MIT
 

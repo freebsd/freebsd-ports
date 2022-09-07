@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for handling X509 Certificates
+WWW=		https://metacpan.org/release/OpenCA-X509
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-X500-DN>=0:net/p5-X500-DN

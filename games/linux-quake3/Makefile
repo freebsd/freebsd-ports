@@ -10,6 +10,7 @@ DIST_SUBDIR=	${Q3PKGNAMEPREFIX}data
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena for Linux
+WWW=		http://www.quake3arena.com/
 
 # Converted from RESTRICTED
 LICENSE=	Loki

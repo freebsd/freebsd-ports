@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to provide custom forms for reauthentication
+WWW=		https://metacpan.org/release/Apache-AuthCookie
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

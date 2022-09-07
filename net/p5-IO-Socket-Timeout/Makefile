@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	IO::Socket with read/write timeout
+WWW=		https://metacpan.org/release/IO-Socket-Timeout
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

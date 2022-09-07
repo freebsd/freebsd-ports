@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Create machine readable date/time with natural parsing logic
+WWW=		https://metacpan.org/release/DateTime-Format-Natural
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

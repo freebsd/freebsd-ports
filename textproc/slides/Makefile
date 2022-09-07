@@ -7,6 +7,7 @@ DISTNAME=	docbook-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doctype and stylesheets for making slides
+WWW=		http://docbook.sourceforge.net/projects/slides/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

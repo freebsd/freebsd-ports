@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	g
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU version of the traditional tape archiver
+WWW=		https://www.gnu.org/software/tar/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

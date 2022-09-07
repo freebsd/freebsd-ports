@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to pass a file descriptor over a socket
+WWW=		https://metacpan.org/release/IO-FDPass
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

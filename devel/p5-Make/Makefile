@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing 'make' and script
+WWW=		https://metacpan.org/release/Make
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

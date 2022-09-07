@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Highly extensible git library in pure Go
+WWW=		https://github.com/go-git/go-git
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

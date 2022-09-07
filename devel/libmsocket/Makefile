@@ -6,6 +6,7 @@ MASTER_SITES=	SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Socket abstraction library for C programmers
+WWW=		https://sourceforge.net/projects/kageki/
 
 LICENSE=	BSD2CLAUSE
 

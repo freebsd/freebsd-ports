@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interactive shell for www/p5-WWW-Mechanize
+WWW=		https://metacpan.org/release/WWW-Mechanize-Shell
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

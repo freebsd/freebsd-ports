@@ -8,6 +8,7 @@ DISTFILES=	ko.tex-extra-hlfont.tar.gz \
 
 MAINTAINER=	hyogeollee@gmail.com
 COMMENT=	Korean TeX extra fonts
+WWW=		http://project.ktug.or.kr/ko.TeX/
 
 USE_TEX=	dvipsk latex
 CONFLICTS=	hlatex

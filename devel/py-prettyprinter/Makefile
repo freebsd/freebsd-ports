@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	monsieurp@gentoo.org
 COMMENT=	Syntax-highlighting, declarative and composable pretty printer
+WWW=		https://pypi.org/project/prettyprinter/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

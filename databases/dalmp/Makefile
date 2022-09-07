@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	nbari@tequila.io
 COMMENT=	Database Abstraction Layer for MySQL using PHP
+WWW=		https://docs.dalmp.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

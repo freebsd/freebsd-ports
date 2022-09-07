@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cuckoo hashing library written in C++
+WWW=		https://github.com/microsoft/Kuku
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

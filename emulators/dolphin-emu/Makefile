@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Gamecube and Wii Emulator
+WWW=		https://www.dolphin-emu.org
 
 LICENSE=	BSD3CLAUSE CC0-1.0 GPLv2+ MIT
 LICENSE_COMB=	multi

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	algernon@madhouse-project.org
 COMMENT=	Asynchronous I/O readiness notification library
+WWW=		https://github.com/buytenh/ivykis
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

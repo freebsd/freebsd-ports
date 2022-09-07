@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/${PORTVERSION} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator from LaTeX to RTF
+WWW=		http://latex2rtf.sourceforge.net/
 
 USES=		cpe shebangfix makeinfo
 SHEBANG_FILES=	${WRKSRC}/scripts/latex2png

@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer and organizer
+WWW=		http://oferkv.github.io/phototonic/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

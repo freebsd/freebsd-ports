@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read MaxMind DB files
+WWW=		https://metacpan.org/release/MaxMind-DB-Reader
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

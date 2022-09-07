@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Plain text to HTML (and other formats) converter
+WWW=		https://triptico.com/software/grutatxt.html
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

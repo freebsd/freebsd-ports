@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for using the cfitsio library
+WWW=		https://metacpan.org/release/Astro-FITS-CFITSIO
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

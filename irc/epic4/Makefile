@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
+WWW=		http://www.epicsol.org/
 
 LICENSE=	BSD3CLAUSE
 

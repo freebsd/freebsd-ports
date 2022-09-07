@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated LaTeX environment
+WWW=		https://wiki.gnome.org/Apps/LaTeXila
 
 LICENSE=	GPLv3
 

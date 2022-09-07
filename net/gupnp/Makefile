@@ -8,6 +8,7 @@ PATCHFILES=	1296d10eda308792d2924f141d72b8b6818878bd.diff:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for UPnP devices
+WWW=		https://wiki.gnome.org/Projects/GUPnP
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

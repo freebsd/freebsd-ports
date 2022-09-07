@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Clean, elegant, and pragmatic dialect of Forth
+WWW=		https://forthworks.com/retro
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

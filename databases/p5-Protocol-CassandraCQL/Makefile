@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	admins@perceptyx.com
 COMMENT=	Wire protocol support functions for Cassandra CQL3
+WWW=		https://metacpan.org/release/Protocol-CassandraCQL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

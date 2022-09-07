@@ -9,6 +9,7 @@ PATCHFILES+=	f123f433ad2d.patch:-p1 # https://github.com/nwg-piotr/nwg-launchers
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK-based launchers: application grid, button bar, dmenu for sway and other window managers
+WWW=		https://github.com/nwg-piotr/nwg-launchers
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	https://mosh.org/ \
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Mobile terminal that supports intermittent connectivity
+WWW=		https://mosh.org/
 
 LICENSE=	GPLv3
 

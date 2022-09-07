@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Internationalization package
+WWW=		https://pear.php.net/package/I18N
 
 LICENSE=	PHP30
 

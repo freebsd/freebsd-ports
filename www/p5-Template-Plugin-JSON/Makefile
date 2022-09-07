@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Adds a .json vmethod for all TT values
+WWW=		https://metacpan.org/release/Template-Plugin-JSON
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

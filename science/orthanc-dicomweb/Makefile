@@ -21,6 +21,7 @@ EXTRACT_ONLY=	OrthancDicomWeb-${PORTVERSION}.tar.gz
 
 MAINTAINER=	maintainer.freebsd@xpoundit.com
 COMMENT=	Orthanc plugin to bring support of the DICOMweb standard into Orthanc
+WWW=		https://www.orthanc-server.com/static.php?page=dicomweb
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

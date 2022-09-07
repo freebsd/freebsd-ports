@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read-Eval-Print-Loop on die and/or warn
+WWW=		https://metacpan.org/release/Carp-REPL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

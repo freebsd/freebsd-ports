@@ -22,6 +22,7 @@ DIST_SUBDIR=	rocksndiamonds
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional Player Levels for Rocks'n'Diamonds and R'n'D jue
+WWW=		https://web.archive.org/web/20140110211740/http://www.bd-fans.com/RnD.html
 
 DATADIR=	${PREFIX}/share/rocksndiamonds
 NO_ARCH=	yes

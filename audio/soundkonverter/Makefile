@@ -6,6 +6,7 @@ CATEGORIES=	audio kde
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend to various audio converters (transcoder)
+WWW=		https://github.com/dfaust/soundkonverter/
 
 LICENSE=	GPLv2
 

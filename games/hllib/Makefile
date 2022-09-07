@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	kpedersen@disroot.org
 COMMENT=	Library to work with various Half-Life file formats
+WWW=		https://developer.valvesoftware.com/wiki/HLLib
 
 LICENSE=	LGPL21
 

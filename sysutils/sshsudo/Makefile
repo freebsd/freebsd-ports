@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Bash script to run sudo command on multiple remote computers
+WWW=		https://github.com/gaod/sshsudo
 
 LICENSE=	GPLv3
 

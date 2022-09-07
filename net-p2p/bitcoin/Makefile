@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${_DISTFILES:N*.png}
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
+WWW=		https://www.bitcoin.org/
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Photo Management and Web Gallery
+WWW=		https://www.horde.org/apps/ansel/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

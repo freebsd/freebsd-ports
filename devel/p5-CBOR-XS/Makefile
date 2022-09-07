@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Perl does Concise Binary Object Representation (CBOR, RFC7049)
+WWW=		https://metacpan.org/release/CBOR-XS
 
 LICENSE=	GPLv3
 

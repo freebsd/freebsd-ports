@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the BSD kqueue system call
+WWW=		https://metacpan.org/release/IO-KQueue
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

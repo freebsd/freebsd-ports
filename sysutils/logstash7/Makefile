@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	7
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Server-side data ingestion and transformation tool
+WWW=		https://www.elastic.co/products/logstash
 
 LICENSE=	APACHE20
 

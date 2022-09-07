@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for making charts with Python
+WWW=		https://bitbucket.org/lgs/pycha
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

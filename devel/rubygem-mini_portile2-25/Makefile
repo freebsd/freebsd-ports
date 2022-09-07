@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-25
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple autoconf builder for developers
+WWW=		https://github.com/luislavena/mini_portile
 
 LICENSE=	MIT
 

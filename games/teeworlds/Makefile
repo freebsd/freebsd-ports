@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Platform game featuring buggers equipped with weapons
+WWW=		https://www.teeworlds.com/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt

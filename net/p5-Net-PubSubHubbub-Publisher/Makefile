@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client library to ping a PubSubHubbub hub
+WWW=		https://metacpan.org/release/Net-PubSubHubbub-Publisher
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

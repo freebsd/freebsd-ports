@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete C++ Text User Interface (TUI) library
+WWW=		https://sourceforge.net/projects/tvision/
 
 OPTIONS_DEFINE=	NLS X11
 OPTIONS_SUB=	yes

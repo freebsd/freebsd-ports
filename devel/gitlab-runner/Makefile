@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${ALLFILES:Nprebuilt*:}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Official GitLab Runner written in Go
+WWW=		https://gitlab.com/gitlab-org/gitlab-runner
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

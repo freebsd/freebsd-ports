@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	fjachuf@gmail.com
 COMMENT=	Enhanced i3lock with higher capacity
+WWW=		https://github.com/Raymo111/i3lock-color
 
 LICENSE=	BSD3CLAUSE
 

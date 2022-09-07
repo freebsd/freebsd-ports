@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Construct Modeling Packages
+WWW=		https://cran.r-project.org/web/packages/hardhat/
 
 LICENSE=	MIT
 

@@ -10,6 +10,7 @@ DISTNAME=	${JDK_PORT}-${JDK_ARCH}-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Java Development Kit 8
+WWW=		https://openjdk.java.net/
 
 LICENSE=	GPLv2
 

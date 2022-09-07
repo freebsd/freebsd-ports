@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gmc@sonologic.nl
 COMMENT=	Programmable DNS resolver for off-line testing
+WWW=		https://metacpan.org/release/Net-DNS-Resolver-Programmable
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual

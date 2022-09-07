@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://ftp.iap.fr/pub/from_users/bertin/sextractor/ \
 
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Catalogue of objects builder from astronomical images
+WWW=		http://terapix.iap.fr/soft/sextractor/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

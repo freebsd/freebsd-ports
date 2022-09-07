@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/${PORTNAME}%20${PORTVERS
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	dd program useful for computer forensics
+WWW=		http://dc3dd.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

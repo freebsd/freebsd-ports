@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Documentation projects builder in HTML, PS, and PDF formats
+WWW=		https://metacpan.org/release/DocSet
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Pod-POM>=0:textproc/p5-Pod-POM \

@@ -10,6 +10,7 @@ DIST_SUBDIR=	python
 # discretion.
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python packages installer
+WWW=		https://pypi.org/project/setuptools/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

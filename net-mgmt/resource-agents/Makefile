@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	OCF Compliant Resource Agents
+WWW=		http://www.linux-ha.org/wiki/Resource_agents
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

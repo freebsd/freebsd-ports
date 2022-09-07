@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Calculate VESA CVT mode lines
+WWW=		https://gitlab.freedesktop.org/xorg/lib/libxcvt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

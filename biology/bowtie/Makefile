@@ -5,6 +5,7 @@ CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ultrafast, memory-efficient short read aligner
+WWW=		http://bowtie-bio.sourceforge.net/index.shtml
 
 LICENSE=	ART10
 

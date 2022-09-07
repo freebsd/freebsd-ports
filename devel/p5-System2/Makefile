@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Like system(), but with STDERR available as well
+WWW=		https://metacpan.org/release/System2
 
 USES=		perl5
 USE_PERL5=	configure

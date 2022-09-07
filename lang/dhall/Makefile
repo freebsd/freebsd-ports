@@ -4,6 +4,7 @@ CATEGORIES=	lang haskell
 
 MAINTAINER=	malcolm.matalka@acsl.se
 COMMENT=	Explicitly typed configuration language
+WWW=		https://dhall-lang.org/
 
 LICENSE=	BSD3CLAUSE
 

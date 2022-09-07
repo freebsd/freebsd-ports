@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Application and library for 3D visualization and plotting in Python
+WWW=		http://code.enthought.com/pages/mayavi-project.html
 
 LICENSE=			BSD3CLAUSE LGPL21 LGPL20 EPL LGPL3 BSD2CLAUSE APACHE11 # see ${WRKSRC}/image_LICENSE.txt
 LICENSE_COMB=			multi

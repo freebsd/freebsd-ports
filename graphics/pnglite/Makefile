@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight PNG C library
+WWW=		https://sourceforge.net/projects/pnglite/
 
 LICENSE=	ZLIB
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Event-driven architecture for rails
+WWW=		https://github.com/kookster/activemessaging
 
 LICENSE=	MIT
 

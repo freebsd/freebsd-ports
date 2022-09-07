@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Real-time stats toolkit to show statistics for Rack HTTP servers
+WWW=		https://yhbt.net/raindrops/
 
 LICENSE=	LGPL21+ LGPL3
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	Helmfile is a declarative spec for deploying helm charts
+WWW=		https://github.com/roboll/helmfile
 
 LICENSE=	MIT
 

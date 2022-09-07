@@ -6,6 +6,7 @@ DISTNAME=	Template_.2.2.3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance PHP compiling template engine
+WWW=		https://www.xtac.net/
 
 LICENSE=	LGPL20+
 

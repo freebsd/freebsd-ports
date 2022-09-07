@@ -5,6 +5,7 @@ MASTER_SITES=	https://bitbucket.org/icl/${PORTNAME}/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ API for the Linear Algebra PACKage
+WWW=		https://bitbucket.org/icl/lapackpp/src/master/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module to create temporary database from a DBIx::Class::Schema
+WWW=		https://metacpan.org/release/DBICx-TestDatabase
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

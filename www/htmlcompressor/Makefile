@@ -8,6 +8,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML/XML Compressor
+WWW=		https://github.com/serg472/htmlcompressor
 
 LICENSE=	APACHE20
 

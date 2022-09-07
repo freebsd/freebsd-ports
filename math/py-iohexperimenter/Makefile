@@ -8,6 +8,7 @@ DISTNAME=	IOHexperimenter-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Experimenter for Iterative Optimization Heuristic
+WWW=		https://github.com/IOHprofiler/IOHexperimenter
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

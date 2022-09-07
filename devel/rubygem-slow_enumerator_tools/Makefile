@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tools for transforming enumerators that produce data slowly and unpredictably
+WWW=		https://github.com/ddfreyne/slow_enumerator_tools
 
 LICENSE=	MIT
 

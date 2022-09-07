@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Mail notification applet for the Xfce panel
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-mailwatch-plugin
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

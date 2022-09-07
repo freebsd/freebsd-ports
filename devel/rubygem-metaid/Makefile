@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby metaprogramming helpers
+WWW=		http://whytheluckystiff.net/metaid/
 
 NO_ARCH=	yes
 USE_RUBY=	yes

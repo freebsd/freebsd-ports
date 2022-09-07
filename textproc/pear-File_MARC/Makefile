@@ -4,6 +4,7 @@ CATEGORIES=	textproc pear
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Parse, modify, and create MARC records
+WWW=		https://pear.php.net/package/File_MARC
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

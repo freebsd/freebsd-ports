@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adobe Flex SDK
+WWW=		http://opensource.adobe.com/wiki/display/flexsdk/Flex+3
 
 CONFLICTS=	flex-sdk
 USES=		zip

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Encapsulate install info for GIMP
+WWW=		https://metacpan.org/release/Alien-Gimp
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-ExtUtils-Depends>=0.402:devel/p5-ExtUtils-Depends \

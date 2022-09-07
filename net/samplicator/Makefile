@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ath@heybey.org
 COMMENT=	Receives UDP datagrams and redistributes them to a set of receivers
+WWW=		http://samplicator.googlecode.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

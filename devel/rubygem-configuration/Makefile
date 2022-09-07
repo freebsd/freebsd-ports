@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Mechanism to parse ruby configuration files
+WWW=		https://github.com/ahoward/configuration
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

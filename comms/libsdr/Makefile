@@ -6,6 +6,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	jeff@baitis.net
 COMMENT=	Simple software defined radio (SDR) library
+WWW=		https://github.com/hmatuschek/libsdr
 
 LICENSE=	GPLv2
 

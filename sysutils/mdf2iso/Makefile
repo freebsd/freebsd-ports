@@ -6,6 +6,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.orig.tar.gz ${PORTNAME}_${PORTVERSION}-${D
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Alcohol 120% to ISO converter
+WWW=		https://BSDforge.com/projects/sysutils/mdf2iso/
 
 LICENSE=	GPLv2+
 

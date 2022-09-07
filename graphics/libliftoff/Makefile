@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight KMS plane library
+WWW=		https://gitlab.freedesktop.org/emersion/libliftoff
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:S/v/V/:S/c/C/}_${PORTVERSION}_Source
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Open-source disk encryption software based on Truecrypt
+WWW=		https://www.veracrypt.fr/
 
 BUILD_DEPENDS=	yasm:devel/yasm
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:security/sudo

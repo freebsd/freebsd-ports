@@ -7,6 +7,7 @@ DISTNAME=	cdrdao-${PORTVERSION}
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT?=	Record CD-R[W]s in disk-at-once mode
+WWW=		http://cdrdao.sourceforge.net/
 
 LICENSE=	GPLv2
 

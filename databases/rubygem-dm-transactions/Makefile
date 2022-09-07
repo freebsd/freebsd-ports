@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Makes transaction support available for adapters that support them
+WWW=		https://github.com/datamapper/dm-transactions
 
 LICENSE=	MIT
 

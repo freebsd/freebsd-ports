@@ -6,6 +6,7 @@ MASTER_SITES=	http://downloads.mikekohn.net/mp2p/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert MySQL calls in a PHP page into PostgreSQL calls
+WWW=		http://mp2p.mikekohn.net/
 
 ALL_TARGET=	default
 PLIST_FILES=	bin/mysqlphp2postgres

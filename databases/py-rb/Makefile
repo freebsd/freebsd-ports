@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Redis blaster
+WWW=		https://github.com/getsentry/rb
 
 LICENSE=	APACHE20
 

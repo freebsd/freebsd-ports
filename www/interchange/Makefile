@@ -5,6 +5,7 @@ MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.6/tar/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RedHat's database-enabled e-commerce server
+WWW=		https://www.icdevgroup.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

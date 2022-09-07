@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/ale
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Streaming-based Java implementation of ISO 9660
+WWW=		http://jiic.berlios.de/
 
 LICENSE=	LGPL21
 

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	Emacs lisp mode for editing haskell programs
+WWW=		https://projects.haskell.org/haskellmode-emacs/
 
 LICENSE=	GPLv3
 

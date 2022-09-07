@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Underscore.js asset pipeline provider/wrapper
+WWW=		https://github.com/rweng/underscore-rails
 
 LICENSE=	MIT
 

@@ -10,6 +10,7 @@ EXTRACT_ONLY=	ef.tgz
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Numerologically determine the evilness of things
+WWW=		https://lcamtuf.coredump.cx/evilfinder/ef.shtml
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

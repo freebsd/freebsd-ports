@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Another hyper make utility
+WWW=		https://www.openoffice.org/tools/dmake/
 
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/readme/license.txt

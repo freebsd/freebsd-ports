@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle platformer for gravity-oblivious aliens
+WWW=		https://kobuge-games.github.io/minilens/
 
 LICENSE=	GPLv3+ CC-BY-SA-4.0
 LICENSE_COMB=	multi

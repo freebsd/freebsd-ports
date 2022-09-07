@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ASCII sprite animation framework
+WWW=		https://metacpan.org/release/Term-Animation
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Curses>=0:devel/p5-Curses

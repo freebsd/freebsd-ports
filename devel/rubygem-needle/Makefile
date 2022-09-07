@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Dependency-injection/inversion-of-control container
+WWW=		http://needle.rubyforge.org/
 
 LICENSE=	BSD3CLAUSE GPLv2 RUBY
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	roberfern@gmail.com
 COMMENT=	Python-ish BASH-wards shell
+WWW=		https://xon.sh
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license

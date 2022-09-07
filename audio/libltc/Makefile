@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Linear/Logitudinal Time Code (LTC) Library
+WWW=		https://github.com/x42/libltc
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

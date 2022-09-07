@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Easy access of environment variables from Python
+WWW=		https://github.com/capless/envs
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

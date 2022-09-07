@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple interface for calling SQL functions from PostgreSQL PL/Perl
+WWW=		https://metacpan.org/release/PostgreSQL-PLPerl-Call
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert X font from PCF to BDF
+WWW=		https://github.com/ganaware/pcf2bdf
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://newspat.csis.u-tokyo.ac.jp/download/
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Geocoder that converts address strings into latitude and longitude
+WWW=		http://newspat.csis.u-tokyo.ac.jp/geocode/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

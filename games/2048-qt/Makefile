@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	2048 game implemented in QT
+WWW=		https://github.com/xiaoyong/2048-Qt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

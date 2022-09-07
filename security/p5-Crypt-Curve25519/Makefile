@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate shared secret using elliptic-curve Diffie-Hellman function
+WWW=		https://metacpan.org/release/Crypt-Curve25519
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

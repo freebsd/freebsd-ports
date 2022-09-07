@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.lesbonscomptes.com/recoll/
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Personal full text search package, based on Xapian
+WWW=		https://www.lesbonscomptes.com/recoll/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

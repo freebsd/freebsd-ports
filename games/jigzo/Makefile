@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/jigzo/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenGL jigsaw puzzle game
+WWW=		http://www.resorama.com/jigzo/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.txt

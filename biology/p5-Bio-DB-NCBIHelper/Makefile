@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of routines useful for queries to NCBI databases
+WWW=		https://metacpan.org/release/Bio-DB-NCBIHelper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

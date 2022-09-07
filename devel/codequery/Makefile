@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code understanding, browsing and search tool
+WWW=		https://ruben2020.github.io/codequery/
 
 LICENSE=	MPL20 MIT
 LICENSE_COMB=	multi

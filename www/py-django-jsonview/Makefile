@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Always return JSON from your Django view
+WWW=		https://github.com/jsocol/django-jsonview
 
 LICENSE=	APACHE20
 

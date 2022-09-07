@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Global custom management extensions for the Django Framework
+WWW=		https://github.com/django-extensions/django-extensions
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

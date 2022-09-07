@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Access to X11 clipboard from Perl
+WWW=		https://metacpan.org/release/Clipboard
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

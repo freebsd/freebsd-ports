@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	robert.ayrapetyan@gmail.com
 COMMENT=	Library of routines for performing sparse factorization
+WWW=		https://portal.nersc.gov/project/sparse/superlu/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt

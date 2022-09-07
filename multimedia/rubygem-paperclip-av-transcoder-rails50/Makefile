@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails50
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Audio/Video transcoder for Paperclip using FFMPEG/Avconv
+WWW=		https://github.com/ruby-av/paperclip-av-transcoder/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

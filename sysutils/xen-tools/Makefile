@@ -7,6 +7,7 @@ MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Xen management tools
+WWW=		https://wiki.xen.org/wiki/XL
 
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Generate a provable prime number, in pure Perl
+WWW=		https://metacpan.org/release/Math-ProvablePrime
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

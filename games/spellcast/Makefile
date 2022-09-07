@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer fight with spells turn based game for X Window System
+WWW=		https://www.eblong.com/zarf/spellcast.html
 
 USES=		xorg
 USE_XORG=	x11

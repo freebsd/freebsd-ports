@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jpbeconne@free.fr
 COMMENT=	Tools for Managing SSH and Git Credentials
+WWW=		https://docs.ropensci.org/credentials
 
 LICENSE=	MIT
 

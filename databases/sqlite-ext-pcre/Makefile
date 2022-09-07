@@ -6,6 +6,7 @@ DIST_SUBDIR=	sqlite-ext
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	Regexp function for SQLite based on PCRE library
+WWW=		https://github.com/ralight/sqlite3-pcre
 
 LICENSE=	PD
 

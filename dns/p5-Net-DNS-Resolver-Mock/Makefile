@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mock a DNS Resolver object for testing
+WWW=		https://metacpan.org/release/Net-DNS-Resolver-Mock
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

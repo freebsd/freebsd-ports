@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails52
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Peek into how much each line of your Rails application takes
+WWW=		https://github.com/peek/peek-rblineprof
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

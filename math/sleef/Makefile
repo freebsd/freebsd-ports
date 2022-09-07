@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	SIMD Library for Evaluating Elementary Functions, vectorized libm
+WWW=		https://sleef.org
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

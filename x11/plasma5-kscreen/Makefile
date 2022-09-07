@@ -5,6 +5,7 @@ CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 screen management library
+WWW=		https://www.kde.org/plasma-desktop
 
 LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 

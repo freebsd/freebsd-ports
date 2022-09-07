@@ -5,6 +5,7 @@ MASTER_SITES=	SF/lxde/LXRandR%20%28monitor%20config%20tool%29/LXRandR%20${PORTVE
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Monitor configuration tool
+WWW=		https://wiki.lxde.org/en/LXRandR
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

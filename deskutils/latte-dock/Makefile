@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/latte-dock
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Launcher for Qt and Plasma desktops
+WWW=		https://cgit.kde.org/latte-dock.git/tree/README.md
 
 LICENSE_COMB=	multi
 LICENSE=	GPLv2+ LGPL20+ LGPL21 LGPL3

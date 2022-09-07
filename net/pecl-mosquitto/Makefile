@@ -5,6 +5,7 @@ DISTNAME=	Mosquitto-${PORTVERSION}
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Extension for libmosquitto
+WWW=		https://pecl.php.net/package/Mosquitto
 
 LICENSE=	BSD3CLAUSE
 

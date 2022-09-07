@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Parametrize hook to generate ids for parametrized tests
+WWW=		https://github.com/manahl/pytest-plugins/tree/master/pytest-verbose-parametrize
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org miscellaneous bitmap fonts
+WWW=		https://www.x.org/
 
 RUN_DEPENDS=	font-arabic-misc>0:x11-fonts/font-arabic-misc \
 		font-cursor-misc>0:x11-fonts/font-cursor-misc \

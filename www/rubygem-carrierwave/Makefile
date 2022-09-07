@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Upload files, map them to a range of ORMs, store on different backends
+WWW=		https://github.com/carrierwaveuploader/carrierwave
 
 LICENSE=	MIT
 

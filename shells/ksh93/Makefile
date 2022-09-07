@@ -21,6 +21,7 @@ DIST_SUBDIR=	ksh93
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	AT&T KornShell 93
+WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
 

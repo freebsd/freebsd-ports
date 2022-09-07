@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert from Inline C++ code to XS
+WWW=		https://metacpan.org/release/InlineX-CPP2XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

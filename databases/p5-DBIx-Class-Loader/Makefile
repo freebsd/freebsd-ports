@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dynamic definition of DBIx::Class sub classes
+WWW=		https://metacpan.org/release/DBIx-Class-Loader
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBI>=1.3:databases/p5-DBI \

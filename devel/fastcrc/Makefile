@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast CRC routines
+WWW=		http://www.whizkidtech.redprince.net/fports/
 
 BUILD_DEPENDS=	nasm:devel/nasm
 

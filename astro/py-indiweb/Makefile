@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Simple web application to manage INDI server
+WWW=		https://github.com/knro/indiwebmanager
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

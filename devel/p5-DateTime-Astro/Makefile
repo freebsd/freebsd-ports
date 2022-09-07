@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Functions For Astromical Calendars
+WWW=		https://metacpan.org/release/DateTime-Astro
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

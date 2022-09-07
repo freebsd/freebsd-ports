@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Facebook OAuth2 Strategy for OmniAuth
+WWW=		https://github.com/mkdynamic/omniauth-facebook
 
 LICENSE=	MIT
 

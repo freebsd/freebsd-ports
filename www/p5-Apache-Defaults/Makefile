@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get default settings for Apache httpd daemon
+WWW=		https://metacpan.org/release/Apache-Defaults
 
 LICENSE=	GPLv3+
 

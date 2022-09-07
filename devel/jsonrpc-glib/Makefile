@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to communicate using the JSON-RPC 2.0 specification
+WWW=		https://gitlab.gnome.org/GNOME/jsonrpc-glib
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

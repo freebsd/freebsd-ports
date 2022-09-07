@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Fluentd plugin to include format values into json, tsv or csv
+WWW=		https://github.com/tagomoris/fluent-mixin-plaintextformatter
 
 LICENSE=	APACHE20
 

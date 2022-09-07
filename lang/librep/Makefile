@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Emacs Lisp like runtime library
+WWW=		https://sawfish.tuxfamily.org/
 
 LICENSE=	GPLv2
 

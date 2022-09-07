@@ -9,6 +9,7 @@ PATCHFILES+=	4bf6fcf5c804.patch:-p1 # https://gitlab.gnome.org/GNOME/aisleriot/-
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of patience games written in guile scheme
+WWW=		https://wiki.gnome.org/Apps/Aisleriot
 
 LICENSE=	GPLv3
 

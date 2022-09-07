@@ -5,6 +5,7 @@ MASTER_SITES=	https://web-cpan.shlomifish.org/downloads/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library implementing the Test Anything Protocol
+WWW=		https://www.shlomifish.org/open-source/projects/libtap/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

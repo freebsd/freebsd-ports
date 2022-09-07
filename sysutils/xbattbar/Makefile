@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple battery meter
+WWW=		http://iplab.aist-nara.ac.jp/member/suguru/xbattbar.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

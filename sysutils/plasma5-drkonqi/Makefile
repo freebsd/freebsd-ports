@@ -5,6 +5,7 @@ CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 crash handler
+WWW=		https://www.kde.org/plasma-desktop
 
 USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \

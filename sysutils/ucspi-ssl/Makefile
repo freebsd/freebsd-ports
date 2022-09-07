@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.fehcom.de/ipnet/ucspi-ssl/
 
 MAINTAINER=	freebsd@charles.lecklider.org
 COMMENT=	UCSPI tools for building SSL client-server applications
+WWW=		http://www.fehcom.de/ipnet/ucspi-ssl.html
 
 RUN_DEPENDS=	tcpserver:sysutils/ucspi-tcp \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss

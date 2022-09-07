@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Conic solver interface for Ipopt
+WWW=		https://github.com/aykutbulut/OsiIpopt
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

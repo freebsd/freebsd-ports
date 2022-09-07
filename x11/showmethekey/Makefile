@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Show keys you typed on screen
+WWW=		https://showmethekey.alynx.one/
 
 LICENSE=	APACHE20
 

@@ -9,6 +9,7 @@ DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	KMFL Unicode keyboard for standardized Yi script
+WWW=		https://scripts.sil.org/SILYI_home
 
 RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 

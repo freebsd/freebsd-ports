@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Open Source Computer Vision library
+WWW=		https://www.opencv.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

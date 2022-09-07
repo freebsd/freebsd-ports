@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.run
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Unigine GPU benchmark depicting a Gothic chapel
+WWW=		https://benchmark.unigine.com/sanctuary
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	precompiled, binary-only software for GNU/Linux

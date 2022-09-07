@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C++ class library for writing CGI applications
+WWW=		https://www.gnu.org/software/cgicc/
 
 LICENSE=	LGPL3+
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Python bindings for NSS and NSPR
+WWW=		https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/Python_binding_for_NSS
 
 LICENSE=	LGPL21+ GPLv2+ MPL20
 LICENSE_COMB=	dual

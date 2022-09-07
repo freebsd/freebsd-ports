@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Ctypes based libraw bindings
+WWW=		https://rawkit.readthedocs.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

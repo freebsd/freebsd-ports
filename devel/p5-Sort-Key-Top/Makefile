@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Select and sort top n elements
+WWW=		https://metacpan.org/release/Sort-Key-Top
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

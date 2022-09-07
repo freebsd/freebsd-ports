@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of QUIC protocol
+WWW=		https://github.com/ngtcp2/ngtcp2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

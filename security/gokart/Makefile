@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Go Security Static Analysis
+WWW=		https://github.com/praetorian-inc/gokart
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

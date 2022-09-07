@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	URI query string manipulation
+WWW=		https://metacpan.org/release/URI-Query
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

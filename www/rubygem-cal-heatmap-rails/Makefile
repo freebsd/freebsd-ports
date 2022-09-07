@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Calendar heatmap assets for Rails
+WWW=		https://github.com/pavolzbell/cal-heatmap-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

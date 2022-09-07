@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Simple immutable types for Python
+WWW=		https://github.com/tomchristie/itypes
 
 LICENSE=	BSD2CLAUSE
 

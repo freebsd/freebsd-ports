@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Clamav c-icap service and redirector for Squid
+WWW=		https://squidclamav.darold.net/
 
 LICENSE=	GPLv3+
 

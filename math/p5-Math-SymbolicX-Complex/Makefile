@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Complex number support for the Math::Symbolic parser
+WWW=		https://metacpan.org/release/Math-SymbolicX-Complex
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Math-Symbolic>=0:math/p5-Math-Symbolic \

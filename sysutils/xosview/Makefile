@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	otaciliodearaujo@gmail.com
 COMMENT=	Graphical performance meter
+WWW=		https://www.pogo.org.uk/~mark/xosview/
 
 LICENSE=	BSD4CLAUSE GPLv2
 LICENSE_COMB=	multi

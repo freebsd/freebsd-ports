@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create DateTime objects with sub-second current time resolution
+WWW=		https://metacpan.org/release/DateTime-HiRes
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

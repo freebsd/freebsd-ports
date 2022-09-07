@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Curses-like terminal wrapper, with colored strings
+WWW=		https://github.com/bpython/curtsies
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

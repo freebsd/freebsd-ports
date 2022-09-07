@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SystemVerilog 2017 Pre-processor, Parser, Elaborator, etc
+WWW=		https://github.com/chipsalliance/Surelog
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

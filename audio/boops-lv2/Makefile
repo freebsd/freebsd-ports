@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Glitch effect sequencer LV2 plugin
+WWW=		https://github.com/sjaehn/BOops
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

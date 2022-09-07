@@ -7,6 +7,7 @@ MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Rewritten engine for Flashback
+WWW=		http://cyxdown.free.fr/reminiscence/
 
 LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 BUILD_DEPENDS=	${LOCALBASE}/include/stb/stb_vorbis.c:devel/stb

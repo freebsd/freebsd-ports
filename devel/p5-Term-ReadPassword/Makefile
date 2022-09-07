@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for asking the user for a password
+WWW=		https://metacpan.org/release/Term-ReadPassword
 
 USES=		perl5
 USE_PERL5=	configure

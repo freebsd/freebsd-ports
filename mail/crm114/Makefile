@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${CRM114RELEASENAME}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Markov based SpamFilter
+WWW=		http://crm114.sourceforge.net/
 
 LICENSE=	GPLv2
 

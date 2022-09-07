@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	JSON Query Language CLI tool built with Rust
+WWW=		https://github.com/yamafaktory/jql
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT

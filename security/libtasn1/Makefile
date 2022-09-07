@@ -6,6 +6,7 @@ MASTER_SITES=	GNU \
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
+WWW=		https://www.gnu.org/software/libtasn1/
 
 LICENSE=	LGPL21+ GPLv3
 LICENSE_COMB=	multi

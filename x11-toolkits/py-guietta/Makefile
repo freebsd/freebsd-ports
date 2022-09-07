@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Simple GUI for Python
+WWW=		https://github.com/alfiopuglisi/guietta
 
 LICENSE=	MIT
 

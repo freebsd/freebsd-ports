@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for throttling algorithms
+WWW=		https://github.com/sigmavirus24/rush
 
 LICENSE=	MIT
 

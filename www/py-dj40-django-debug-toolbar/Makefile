@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Configurable set of panels to display debug information
+WWW=		https://github.com/jazzband/django-debug-toolbar
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

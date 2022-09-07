@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for HTTP Server Engine Drivers
+WWW=		https://metacpan.org/release/HTTP-Engine
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

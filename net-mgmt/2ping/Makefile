@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.finnie.org/software/2ping/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bi-directional ping utility
+WWW=		https://www.finnie.org/software/2ping/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.md

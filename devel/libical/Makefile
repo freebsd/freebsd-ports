@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/libical/libical/releases/download/v${PORTVERSIO
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Implementation of the IETF Calendaring and Scheduling protocols
+WWW=		https://github.com/libical
 
 LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	dual

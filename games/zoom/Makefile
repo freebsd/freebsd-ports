@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.logicalshift.co.uk/unix/zoom/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Z-Interpreter for X with full V6 support
+WWW=		http://www.logicalshift.demon.co.uk/unix/zoom/
 
 LICENSE=	LGPL21
 

@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XBill Modification
+WWW=		https://github.com/Xylemon/xlennart
 
 LICENSE=	GPLv2
 

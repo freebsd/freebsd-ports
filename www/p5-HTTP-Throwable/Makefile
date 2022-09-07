@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of strongly-typed, PSGI-friendly HTTP 1.1 exception libraries
+WWW=		https://metacpan.org/release/HTTP-Throwable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

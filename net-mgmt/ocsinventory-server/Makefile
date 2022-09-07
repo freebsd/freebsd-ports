@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Open Computer and Software Inventory Next Generation
+WWW=		https://www.ocsinventory-ng.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

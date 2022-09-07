@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Prometheus exporter for nsd metrics
+WWW=		https://github.com/optix2000/nsd_exporter
 
 LICENSE=	BSD3CLAUSE
 

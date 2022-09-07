@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.run
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Neat script to make self-extracting archives
+WWW=		https://makeself.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

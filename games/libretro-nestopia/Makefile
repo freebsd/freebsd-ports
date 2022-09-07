@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	NEStopia emulator for libretro
+WWW=		https://github.com/libretro/nestopia
 
 LICENSE=	GPLv2
 

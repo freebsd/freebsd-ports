@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Pie menu for X
+WWW=		https://github.com/phillbush/pmenu
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manipulating Flash movie (SWF) files
+WWW=		https://metacpan.org/release/SWF-File
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-TemporaryBag>=0:devel/p5-Data-TemporaryBag

@@ -6,6 +6,7 @@ CATEGORIES=			www
 
 MAINTAINER=			joneum@FreeBSD.org
 COMMENT=			Server that scraps NGINX vts stats and export them via HTTP
+WWW=		https://github.com/hnlq715/nginx-vts-exporter
 
 LICENSE=			MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE

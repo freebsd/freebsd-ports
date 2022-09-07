@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Client that submits to Metabase servers
+WWW=		https://metacpan.org/release/Metabase-Client-Simple
 
 BUILD_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
 		p5-libwww>=0:www/p5-libwww \

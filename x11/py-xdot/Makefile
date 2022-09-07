@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Interactive viewer for Graphviz dot files
+WWW=		https://pypi.org/project/xdot/
 
 LICENSE=	LGPL3+
 

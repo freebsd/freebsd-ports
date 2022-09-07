@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Add lvalue getters and setters to existing objects
+WWW=		https://metacpan.org/release/Lvalue
 
 USES=		perl5
 USE_PERL5=	configure

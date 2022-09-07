@@ -8,6 +8,7 @@ DISTNAME=	django_csp-${PORTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Adds Content-Security-Policy headers to Django
+WWW=		https://github.com/mozilla/django-csp
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	https://gitlab.com/confget/confget/-/archive/release/${PORTVERSION
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read variables from INI-style configuration files
+WWW=		https://gitlab.com/confget/confget
 
 LICENSE=	BSD2CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		grembo@FreeBSD.org
 COMMENT=		Python library to retrieve information on uhid devices
+WWW=		https://github.com/grembo/uhid-freebsd
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

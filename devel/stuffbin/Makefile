@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Compress and embed static files and assets into Go binaries
+WWW=		https://github.com/knadh/stuffbin
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

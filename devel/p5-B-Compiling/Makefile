@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to expose PL_compiling to perl
+WWW=		https://metacpan.org/release/B-Compiling
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Transparently speed up perl functions by caching return values
+WWW=		https://metacpan.org/release/Memoize
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

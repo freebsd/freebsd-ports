@@ -7,6 +7,7 @@ DIST_SUBDIR=	enlightenment
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Enlightenment Foundation Libraries
+WWW=		https://docs.enlightenment.org/efl/current/
 
 LICENSE=	BSD2CLAUSE LGPL21
 LICENSE_COMB=	multi

@@ -5,6 +5,7 @@ CATEGORIES=	devel games
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Small, efficient C++ GUI library designed for games
+WWW=		http://fifengine.net/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

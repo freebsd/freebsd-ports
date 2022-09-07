@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multiprecision for modern C++
+WWW=		https://github.com/bluescarni/mppp
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

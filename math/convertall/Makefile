@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/doug-101/ConvertAll/releases/download/v${PORTVE
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Another unit converter
+WWW=		https://convertall.bellz.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE

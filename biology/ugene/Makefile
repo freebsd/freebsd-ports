@@ -4,6 +4,7 @@ CATEGORIES=	biology science
 
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Integrated bioinformatics toolkit
+WWW=		https://ugene.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

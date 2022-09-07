@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-srtp-native
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Native libraties to speed up jitsi-srtp
+WWW=		https://github.com/jitsi/jitsi-srtp/tree/master/src/main/native
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

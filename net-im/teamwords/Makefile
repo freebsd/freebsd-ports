@@ -6,6 +6,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial Qt Slack client
+WWW=		https://github.com/MiT-Ufa/TeamWords
 
 LICENSE=	LGPL3
 

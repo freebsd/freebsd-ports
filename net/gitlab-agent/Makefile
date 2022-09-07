@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	GitLab kubernetes agent
+WWW=		https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent
 
 LICENSE=	MIT
 

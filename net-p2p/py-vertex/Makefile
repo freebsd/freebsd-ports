@@ -8,6 +8,7 @@ DISTNAME=	Vertex-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of Q2Q protocol
+WWW=		https://launchpad.net/divmod
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

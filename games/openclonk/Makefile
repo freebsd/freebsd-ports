@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSION}/
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Multiplayer action game involving small and nimble humanoids
+WWW=		https://www.openclonk.org/
 
 LICENSE=	ISCL CC0-1.0
 LICENSE_COMB=	multi

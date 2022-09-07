@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Microsoft Authentication Extensions for Python
+WWW=		https://pypi.org/project/msal-extensions/
 
 LICENSE=	MIT
 

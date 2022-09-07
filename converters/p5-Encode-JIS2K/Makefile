@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	JIS X 0212 (aka JIS 2000) Encodings
+WWW=		https://metacpan.org/release/Encode-JIS2K
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

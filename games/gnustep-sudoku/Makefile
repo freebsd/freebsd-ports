@@ -8,6 +8,7 @@ DISTNAME=	Sudoku-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sudoku solver and generator
+WWW=		https://gap.nongnu.org/sudoku/index.html
 
 LICENSE=	GPLv3+
 

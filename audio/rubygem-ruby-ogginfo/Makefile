@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library to access to information on ogg files
+WWW=		https://github.com/moumar/ruby-ogginfo
 
 LICENSE=	GPLv3
 

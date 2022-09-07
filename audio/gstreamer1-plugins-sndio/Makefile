@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sndio audio sink and source for GStreamer
+WWW=		https://github.com/t6/gstreamer1-plugins-sndio/
 
 LICENSE=	ISCL
 

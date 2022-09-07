@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kitchen contains a cornucopia of useful code
+WWW=		https://pypi.org/project/kitchen/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

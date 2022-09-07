@@ -7,6 +7,7 @@ EXTRACT_ONLY=	# extracted directly in install target
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digital content manager
+WWW=		http://www.photodex.com/downloads/platforms/freebsd.html
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

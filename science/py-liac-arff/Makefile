@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read and write ARFF files in Python
+WWW=		https://github.com/renatopp/liac-arff
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Message representation or encoding elisp library for emacs
+WWW=		https://github.com/wanderlust/flim
 
 LICENSE=	GPLv2
 

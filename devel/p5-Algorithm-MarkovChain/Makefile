@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl class capable of creating Markov chains and output based on them
+WWW=		https://metacpan.org/release/Algorithm-MarkovChain
 
 USES=		perl5
 USE_PERL5=	modbuild

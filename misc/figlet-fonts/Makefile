@@ -7,6 +7,7 @@ DIST_SUBDIR=	figlet
 
 MAINTAINER=	ptudor@ptudor.net
 COMMENT=	Assorted fonts for the figlet(6) program
+WWW=		http://www.figlet.org/
 
 RUN_DEPENDS=	figlet:misc/figlet
 

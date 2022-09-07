@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate metadata for geospatial datasets
+WWW=		https://github.com/geopython/pygeometa
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bazel BUILD file formatter and editor
+WWW=		https://github.com/bazelbuild/buildtools
 
 LICENSE=	APACHE20
 

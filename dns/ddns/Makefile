@@ -5,6 +5,7 @@ MASTER_SITES=	http://instinctive.eu/code/
 
 MAINTAINER=	natbsd@instinctive.eu
 COMMENT=	Lightweight UDP-based dynamic DNS updater
+WWW=		http://fossil.instinctive.eu/ddns/home
 
 LICENSE=	ISCL
 

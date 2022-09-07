@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl SAX Filter allowing DOM processing of selected subtrees
+WWW=		https://metacpan.org/release/XML-Filter-DOMFilter-LibXML
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-LibXML>=0:textproc/p5-XML-LibXML

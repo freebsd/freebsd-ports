@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music creation tool inspired by Fast Tracker 2
+WWW=		https://milkytracker.titandemo.org/
 
 LICENSE=	GPLv3+ BSD3CLAUSE
 LICENSE_COMB=	multi

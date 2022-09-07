@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Compiler for SCSS flavor of the Sass language
+WWW=		https://github.com/Kronuz/pyScss
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

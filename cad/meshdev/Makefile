@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/gahr \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mesh comparison software
+WWW=		http://meshdev.sourceforge.net/
 
 USES=		dos2unix
 DOS2UNIX_FILES=	src/MeshDev.h

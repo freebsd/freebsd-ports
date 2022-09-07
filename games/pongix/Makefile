@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/pongix/descargas/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free pong-like game
+WWW=		http://www.losersjuegos.com.ar
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

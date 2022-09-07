@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Reference server implementation in Go of tus
+WWW=		https://github.com/tus/tusd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -8,6 +8,7 @@ DISTNAME=	mps.${PORTVERSION}
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Secure small and high performance POP3 server
+WWW=		http://dengh.com/missey/index.html
 
 USES=	tar:bzip2
 

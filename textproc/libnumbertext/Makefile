@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/Numbertext/libnumbertext/releases/download/${PO
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Number to number name and money text conversion libraries
+WWW=		https://numbertext.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -9,6 +9,7 @@ PATCHFILES+=	69068bf83653.patch:-p1 # https://github.com/sekaiproject/ponscripte
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	NScripter-like novel-game interpreter with Unicode support
+WWW=		https://github.com/sekaiproject/ponscripter-fork
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

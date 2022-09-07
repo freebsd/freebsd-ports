@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Graphical MPD client focusing on low footprint
+WWW=		https://goodies.xfce.org/projects/applications/xfmpc
 
 LICENSE=	GPLv2
 

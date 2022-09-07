@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/pavelfatin/${PORTNAME}/releases/download/v${POR
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Text/code editor typing latency analyzer
+WWW=		https://pavelfatin.com/typometer/
 
 LICENSE=	APACHE20
 

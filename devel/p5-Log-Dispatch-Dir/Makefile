@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Log messages to separate files in a directory, with rotate options
+WWW=		https://metacpan.org/release/Log-Dispatch-Dir
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

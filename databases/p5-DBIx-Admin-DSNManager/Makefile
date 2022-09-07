@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manage a file of DSNs, for both testing and production
+WWW=		https://metacpan.org/release/DBIx-Admin-DSNManager
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

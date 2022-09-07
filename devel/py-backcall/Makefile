@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Backwards compatible callback APIs
+WWW=		https://github.com/takluyver/backcall
 
 LICENSE=	BSD3CLAUSE
 

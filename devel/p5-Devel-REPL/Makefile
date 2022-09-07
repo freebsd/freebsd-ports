@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Modern Perl interactive shell
+WWW=		https://metacpan.org/release/Devel-REPL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Kaitai Struct declarative parser generator for binary data
+WWW=		https://kaitai.io/
 
 LICENSE=	MIT
 

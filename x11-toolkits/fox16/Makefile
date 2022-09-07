@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
+WWW=		http://www.fox-toolkit.org/fox.html
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

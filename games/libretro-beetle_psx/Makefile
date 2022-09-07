@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port/fork of Mednafen PSX to the Libretro API
+WWW=		https://github.com/libretro/beetle-psx-libretro
 
 LICENSE=	GPLv2
 

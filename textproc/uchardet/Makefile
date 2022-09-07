@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME}/releases/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Universal charset detection library
+WWW=		https://www.freedesktop.org/wiki/Software/uchardet/
 
 LICENSE=	GPLv2+ LGPL21+ MPL11
 LICENSE_COMB=	dual

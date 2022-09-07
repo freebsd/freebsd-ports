@@ -5,6 +5,7 @@ MASTER_SITES=	http://outpost.h3q.com/software/jailaudit/
 
 MAINTAINER=	cryx-ports@h3q.com
 COMMENT=	Script to generate portaudit reports for jails
+WWW=		https://github.com/cristianyxen/jailaudit
 
 LICENSE=	Beerware
 LICENSE_NAME=	Beerware

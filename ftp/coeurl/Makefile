@@ -5,6 +5,7 @@ CATEGORIES=	ftp www
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Simple async wrapper around CURL for C++
+WWW=		https://nheko.im/nheko-reborn/coeurl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

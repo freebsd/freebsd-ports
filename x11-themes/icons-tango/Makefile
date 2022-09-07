@@ -7,6 +7,7 @@ DISTNAME=	tango-icon-theme-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic set of icons for the most common usage
+WWW=		http://tango.freedesktop.org/
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:x11-themes/icon-naming-utils
 

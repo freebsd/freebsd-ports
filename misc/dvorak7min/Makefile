@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}${DISTVERSIONSUFFIX}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses-based Dvorak typing tutor
+WWW=		https://packages.qa.debian.org/d/dvorak7min.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

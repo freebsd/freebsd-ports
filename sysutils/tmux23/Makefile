@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	000.fbsd@quip.cz
 COMMENT=	Terminal Multiplexer (old stable version 2.3)
+WWW=		https://tmux.github.io/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

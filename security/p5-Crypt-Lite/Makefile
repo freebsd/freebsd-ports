@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for a symmetric data encryption and decryption
+WWW=		https://metacpan.org/release/Crypt-Lite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

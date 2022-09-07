@@ -5,6 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	P25 Phase 1 and ProVoice vocoder
+WWW=		https://github.com/szechyjs/mbelib
 
 LICENSE=	ISCL UNKNOWN
 LICENSE_COMB=	multi

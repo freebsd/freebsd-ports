@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Parallel HTTP request library
+WWW=		https://github.com/typhoeus/typhoeus
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

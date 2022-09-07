@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Python wrapper to the C++ Parma Polyhedra Library (PPL)
+WWW=		https://www.labri.fr/perso/vdelecro/pplpy/latest/
 
 LICENSE=	GPLv3
 

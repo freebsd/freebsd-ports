@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	varnish-
 
 MAINTAINER=	allanjude@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for accessing maxminddb geoip data
+WWW=		https://github.com/simonvik/libvmod_maxminddb
 
 LICENSE=	BSD2CLAUSE
 

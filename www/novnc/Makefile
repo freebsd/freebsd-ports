@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	dpetrov67@gmail.com
 COMMENT=	HTML5 VNC client
+WWW=		https://github.com/novnc/noVNC
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

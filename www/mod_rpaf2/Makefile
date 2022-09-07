@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Make proxied requests appear with client IP
+WWW=		https://github.com/gnif/mod_rpaf/
 
 LICENSE=	APACHE20
 

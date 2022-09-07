@@ -4,6 +4,7 @@ CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries used by KDE games
+WWW=		https://www.kde.org/applications/games/
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 

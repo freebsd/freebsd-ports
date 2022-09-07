@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy subclassing of non-Moose classes
+WWW=		https://metacpan.org/release/MooseX-NonMoose
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

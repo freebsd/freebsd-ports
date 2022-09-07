@@ -5,6 +5,7 @@ MASTER_SITES=	SF/modplug-xmms/${PORTNAME}/${PORTVERSION} LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ModPlug mod-like music shared libraries
+WWW=		http://modplug-xmms.sourceforge.net/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

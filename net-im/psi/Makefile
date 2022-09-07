@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Qt-based Jabber (XMPP) client
+WWW=		https://psi-im.org/
 
 LICENSE=	GPLv2+
 

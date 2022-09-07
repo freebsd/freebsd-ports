@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl module for sprintf-like string formatting capability
+WWW=		https://metacpan.org/release/String-Format
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/README

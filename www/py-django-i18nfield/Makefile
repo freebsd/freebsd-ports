@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alex@xanderio.de
 COMMENT=	Store internationalized strings in django models
+WWW=		https://github.com/raphaelm/django-i18nfield
 
 LICENSE=	APACHE20
 

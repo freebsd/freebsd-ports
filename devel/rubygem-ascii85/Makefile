@@ -6,6 +6,7 @@ DISTNAME=	Ascii85-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Encode/decode Adobe's binary-to-text encoding of the same name #'
+WWW=		https://github.com/DataWraith/ascii85gem
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

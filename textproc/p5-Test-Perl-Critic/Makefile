@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use Perl::Critic in test programs
+WWW=		https://metacpan.org/release/Test-Perl-Critic
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

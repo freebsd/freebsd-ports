@@ -4,6 +4,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tool for manipulating files in LEP image format
+WWW=		https://github.com/dropbox/lepton
 
 LICENSE=	APACHE20
 

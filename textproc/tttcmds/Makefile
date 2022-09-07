@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Unix-style data processing commands and library
+WWW=		https://github.com/daichigoto/tttcmds
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

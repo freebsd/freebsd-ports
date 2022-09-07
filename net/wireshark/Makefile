@@ -13,6 +13,7 @@ DISTNAME=	${DATADIR_NAME}-${DISTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	Powerful network analyzer/capture tool
+WWW=		https://www.wireshark.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

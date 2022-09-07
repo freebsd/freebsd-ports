@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Robust fiducial markers for augmented reality and robotics
+WWW=		https://chili.epfl.ch/software
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl.txt

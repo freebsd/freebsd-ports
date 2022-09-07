@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fcitx support for Qt5
+WWW=		https://github.com/fcitx/fcitx-qt5
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

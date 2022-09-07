@@ -10,6 +10,7 @@ DIST_SUBDIR=	mta
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi Theft Auto: Vice City and GTA3 dedicated server
+WWW=		http://www.mtavc.com/
 
 LICENSE=	MTA
 LICENSE_NAME=	MTA v0.5 LICENSE AGREEMENT

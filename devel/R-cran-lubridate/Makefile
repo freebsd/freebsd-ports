@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Make Dealing with Dates a Little Easier
+WWW=		https://cran.r-project.org/web/packages/lubridate/
 
 LICENSE=	GPLv2+
 

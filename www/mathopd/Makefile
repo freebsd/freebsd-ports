@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.mathopd.org/dist/
 
 MAINTAINER=	michiel@boland.org
 COMMENT=	Small, yet fast HTTP server
+WWW=		http://www.mathopd.org/
 
 LICENSE=	BSD3CLAUSE
 

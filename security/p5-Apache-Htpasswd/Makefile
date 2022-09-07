@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Manage Unix crypt-style password file
+WWW=		https://metacpan.org/release/Apache-Htpasswd
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

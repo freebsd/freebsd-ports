@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Serializer for JSON-like data in Python
+WWW=		https://github.com/RussellLuo/jsonsir
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Library for fast arithmetic with dense matrices over F2
+WWW=		https://bitbucket.org/malb/m4ri/src/master/
 
 LICENSE=	GPLv2+
 

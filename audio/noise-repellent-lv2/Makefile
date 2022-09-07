@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 plugin for broadband noise reduction
+WWW=		https://github.com/lucianodato/noise-repellent
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

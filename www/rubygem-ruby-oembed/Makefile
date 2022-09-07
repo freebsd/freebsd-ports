@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	oEmbed consumer library
+WWW=		https://github.com/ruby-oembed/ruby-oembed
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

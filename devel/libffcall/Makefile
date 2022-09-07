@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	ndowens04@gmail.com
 COMMENT=	Foreign function call libraries
+WWW=		https://www.haible.de/bruno/packages-ffcall.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

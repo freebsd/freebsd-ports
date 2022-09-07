@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	0
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library with GTK+ widgets for mobile phones
+WWW=		https://source.puri.sm/Librem5/libhandy
 
 LICENSE=	LGPL21
 

@@ -8,6 +8,7 @@ MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/ \
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Audio compression codec library
+WWW=		https://xiph.org/vorbis/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

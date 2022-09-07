@@ -9,6 +9,7 @@ PATCHFILES=	7baefc3315e9dc11c8a3a787a3b6c6888c2b590a.patch:-p1
 
 MAINTAINER=	dor.bsd@xm0.uk
 COMMENT=	Modular IRC client with many features
+WWW=		https://irssi.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

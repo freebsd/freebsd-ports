@@ -6,6 +6,7 @@ CATEGORIES=	astro
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library providing basic tools for astrodynamics research
+WWW=		https://github.com/esa/pykep
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

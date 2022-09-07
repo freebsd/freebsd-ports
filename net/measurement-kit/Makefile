@@ -5,6 +5,7 @@ CATEGORIES=		net devel
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Portable C++14 network measurement library
+WWW=		https://measurement-kit.github.io/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

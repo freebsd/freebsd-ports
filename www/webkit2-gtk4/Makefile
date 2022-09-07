@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK+ 4 toolkit
+WWW=		https://webkitgtk.org/
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	dual

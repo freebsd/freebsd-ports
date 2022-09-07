@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode for editing C\# source code
+WWW=		https://github.com/josteink/csharp-mode
 
 LICENSE=	GPLv2
 

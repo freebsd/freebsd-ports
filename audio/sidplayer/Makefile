@@ -8,6 +8,7 @@ DISTNAME=	SIDPlayer-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	C64 SID tune player
+WWW=		https://sidplayer.cebix.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GPL library that extends the capability of the oSIP library
+WWW=		https://savannah.nongnu.org/projects/exosip
 
 LICENSE=	GPLv2
 

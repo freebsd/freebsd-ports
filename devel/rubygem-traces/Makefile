@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Application instrumentation and tracing
+WWW=		https://github.com/socketry/traces
 
 LICENSE=	MIT
 

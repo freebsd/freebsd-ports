@@ -9,6 +9,7 @@ DISTNAME=	RakNet-3.902
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Networking API that provides reliable UDP primarily for online games
+WWW=		http://www.jenkinssoftware.com/
 
 # Original license is Indy license, but FreeBSD has been granted special
 # authorization to provide RakNet 3.x (*only*, not 4.x) under the terms of

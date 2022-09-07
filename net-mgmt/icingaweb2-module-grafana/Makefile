@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Add Grafana graphs into Icinga Web 2 to display performance metrics
+WWW=		https://github.com/Mikesch-mp/icingaweb2-module-grafana
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

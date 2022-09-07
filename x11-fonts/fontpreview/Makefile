@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts graphics
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Very customizable and minimal font previewer written in Bash
+WWW=		https://github.com/sdushantha/fontpreview
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt/C++ wrapper for ZIP/UNZIP package
+WWW=		https://github.com/stachenov/quazip
 
 LICENSE=	LGPL21
 

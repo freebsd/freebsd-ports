@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	YAML parser and emitter
+WWW=		https://github.com/ruby/psych
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

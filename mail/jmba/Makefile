@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Junk Mail Buffering Agent
+WWW=		https://www.ivarch.com/programs/jmba.shtml
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_gettext=no ac_cv_lib_intl_main=no

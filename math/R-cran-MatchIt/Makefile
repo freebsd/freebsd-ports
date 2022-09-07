@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Nonparametric Preprocessing for Parametric Casual Inference
+WWW=		https://gking.harvard.edu/matchit
 
 LICENSE=	GPLv2+
 

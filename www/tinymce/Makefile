@@ -7,6 +7,7 @@ DISTNAME=	tinymce_${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open source JavaScript HTML WYSIWYG editor for web sites
+WWW=		https://www.tiny.cloud/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/js/tinymce/license.txt

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	C standard library for WebAssembly System Interface
+WWW=		https://github.com/CraneStation/wasi-libc
 
 LICENSE=	APACHE20 MIT LLVM2
 LICENSE_COMB=	multi

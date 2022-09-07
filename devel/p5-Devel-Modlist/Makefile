@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to collect module use information
+WWW=		https://metacpan.org/release/Devel-Modlist
 
 USES=		perl5
 USE_PERL5=	configure

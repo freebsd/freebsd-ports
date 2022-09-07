@@ -6,6 +6,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chat over SSH
+WWW=		https://github.com/shazow/ssh-chat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

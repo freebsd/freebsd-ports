@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Embeddable programming language
+WWW=		https://marcobambini.github.io/gravity/ #/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data encryption support for Chef Infra using data bags
+WWW=		https://github.com/chef/chef-vault
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

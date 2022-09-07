@@ -5,6 +5,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Lisp Flavored Erlang
+WWW=		https://lfe.io
 
 LICENSE=	APACHE20
 

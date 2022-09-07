@@ -5,6 +5,7 @@ MASTER_SITES=	https://causal.agency/libretls/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	TLS library designed to ease writing foolproof applications
+WWW=		https://git.causal.agency/libretls/about/
 
 LICENSE=	ISCL
 

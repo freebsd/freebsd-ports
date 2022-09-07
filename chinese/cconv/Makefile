@@ -5,6 +5,7 @@ CATEGORIES=	chinese converters
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplified-Traditional Chinese conversion tool
+WWW=		https://github.com/xiaoyjy/cconv
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License

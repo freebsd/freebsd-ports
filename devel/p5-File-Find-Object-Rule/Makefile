@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alternative interface to File::Find::Object
+WWW=		https://metacpan.org/release/File-Find-Object-Rule
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

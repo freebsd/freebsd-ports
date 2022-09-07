@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-rails50
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Analyse and compare DOMs using Nokogiri
+WWW=		https://github.com/rails/rails-dom-testing
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

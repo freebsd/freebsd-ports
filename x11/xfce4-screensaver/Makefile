@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 screen saver and locker
+WWW=		https://git.xfce.org/apps/xfce4-screensaver/about/
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	dual

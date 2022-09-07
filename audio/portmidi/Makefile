@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Library for real time MIDI input and output
+WWW=		https://github.com/mixxxdj/portmidi
 
 LICENSE=	PL
 LICENSE_NAME=	PortMidi license

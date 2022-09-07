@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	LLVM intrinsics for SIMD on GPU
+WWW=		https://github.com/intel/vc-intrinsics
 
 LICENSE=	MIT
 

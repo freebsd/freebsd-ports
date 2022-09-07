@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reference implementation of OGC KML 2.2
+WWW=		https://github.com/libkml/libkml
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

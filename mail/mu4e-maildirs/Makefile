@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Maildirs extension for Mu4e
+WWW=		https://github.com/agpchil/mu4e-maildirs-extension
 
 LICENSE=	GPLv3
 

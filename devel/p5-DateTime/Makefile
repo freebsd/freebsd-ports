@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Date and time object
+WWW=		https://metacpan.org/release/DateTime
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

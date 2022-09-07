@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Virtual Private Network (VPN) daemon
+WWW=		https://www.tinc-vpn.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

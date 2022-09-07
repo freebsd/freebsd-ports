@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	GFF/GTF format conversions, filtering, FASTA extraction, etc
+WWW=		http://ccb.jhu.edu/software/stringtie/gff.shtml #gffread
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

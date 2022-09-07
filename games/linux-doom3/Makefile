@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.run
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doom III for Linux
+WWW=		http://www.doom3.com/
 
 # Converted from NO_CDROM
 LICENSE=	doom3

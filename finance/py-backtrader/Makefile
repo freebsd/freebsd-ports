@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Python Backtesting library for trading strategies
+WWW=		https://www.backtrader.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

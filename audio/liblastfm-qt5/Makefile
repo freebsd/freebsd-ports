@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Qt C++ library for the Last.fm webservices
+WWW=		https://github.com/lastfm/liblastfm
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

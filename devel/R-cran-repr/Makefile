@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Serializable Reprensentations
+WWW=		https://cran.r-project.org/web/packages/repr/
 
 LICENSE=	GPLv3
 

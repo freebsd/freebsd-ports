@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Datastore API client library
+WWW=		https://github.com/googleapis/python-datastore
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

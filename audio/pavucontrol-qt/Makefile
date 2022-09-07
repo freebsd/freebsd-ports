@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT/${PORTNAME}
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	PulseAudio mixer in Qt
+WWW=		https://github.com/lxqt/pavucontrol-qt/
 
 LICENSE=	GPLv2
 

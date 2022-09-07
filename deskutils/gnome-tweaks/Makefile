@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Allows to tweak some hidden settings in GNOME3
+WWW=		https://gitlab.gnome.org/GNOME/gnome-tweaks
 
 LICENSE=	CC0-1.0 GPLv3+
 LICENSE_COMB=	multi

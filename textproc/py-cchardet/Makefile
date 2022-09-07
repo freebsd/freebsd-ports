@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	High speed universal character encoding detector
+WWW=		https://github.com/PyYoshi/cChardet
 
 LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	dual

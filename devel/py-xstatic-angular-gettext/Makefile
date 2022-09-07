@@ -7,6 +7,7 @@ DISTNAME=	XStatic-Angular-Gettext-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Angular-Gettext (XStatic packaging standard)
+WWW=		https://angular-gettext.rocketeer.be/
 
 LICENSE=	MIT
 

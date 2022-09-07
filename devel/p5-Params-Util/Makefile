@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Utility functions to aid in parameter checking
+WWW=		https://metacpan.org/release/Params-Util
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

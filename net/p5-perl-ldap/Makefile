@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client interface to LDAP (includes Net::LDAP)
+WWW=		https://metacpan.org/release/perl-ldap
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

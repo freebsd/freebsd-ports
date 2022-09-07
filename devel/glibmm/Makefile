@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interfaces for glib2
+WWW=		https://www.gtkmm.org/
 
 LICENSE=	LGPL21
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple rake/rubygems helper for project Rakefiles
+WWW=		https://github.com/seattlerb/hoe
 
 LICENSE=	MIT
 

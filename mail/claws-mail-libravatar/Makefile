@@ -1,6 +1,7 @@
 PORTNAME=	libravatar
 
 COMMENT=	Avatar display plugin for Claws Mail
+WWW=		https://www.claws-mail.org/plugin.php?plugin=libravatar
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

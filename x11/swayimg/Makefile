@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Image viewer for Sway/Wayland
+WWW=		https://github.com/artemsen/swayimg
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

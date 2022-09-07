@@ -7,6 +7,7 @@ MASTER_SITES=	http://dst.lbl.gov/ACSSoftware/nux/nux-download/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small open-source XQuery extension of the XOM library
+WWW=		https://dst.lbl.gov/ACSSoftware/nux/
 
 RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:textproc/xom \
 		${JAVALIBDIR}/saxon9.jar:textproc/saxon-devel

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	gogolok@gmail.com
 COMMENT=	Kubernetes command-line tool
+WWW=		https://github.com/derailed/k9s
 
 LICENSE=	APACHE20
 

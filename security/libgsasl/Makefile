@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GNU SASL library
+WWW=		https://www.gnu.org/software/gsasl/
 
 LICENSE=	LGPL21
 

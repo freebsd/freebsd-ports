@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II: The Reckoning (Xatrix) official mission pack
+WWW=		http://www.idsoftware.com/games/quake/quake2-reckoning/
 
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message

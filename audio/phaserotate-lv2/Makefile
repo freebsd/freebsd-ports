@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Phase rotation LV2 plugin
+WWW=		https://x42-plugins.com/x42/x42-phaserotate
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/bitcointrader/SRC/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Secure client uses latest OpenSSL and best encryption
+WWW=		https://centrabit.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL3

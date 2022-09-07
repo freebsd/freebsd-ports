@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface for editing soundfont (sf2 and sfz) files
+WWW=		https://www.polyphone-soundfonts.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt

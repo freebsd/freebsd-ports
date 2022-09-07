@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Parsing tools for GTF (gene transfer format) files
+WWW=		https://github.com/openvax/gtfparse
 
 LICENSE=	APACHE20
 

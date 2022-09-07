@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
 COMMENT=	Complete security camera solution, fully web based with image analysis
+WWW=		https://www.zoneminder.com/
 
 LICENSE=	GPLv2
 

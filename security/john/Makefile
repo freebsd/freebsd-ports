@@ -10,6 +10,7 @@ PATCH_STRIP=	-p2
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
+WWW=		https://www.openwall.com/john/
 
 LICENSE=	GPLv2+
 

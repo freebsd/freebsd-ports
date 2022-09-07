@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Rapid fuzzy string matching in C++ using the levenshtein distance
+WWW=		https://github.com/maxbachmann/rapidfuzz-cpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

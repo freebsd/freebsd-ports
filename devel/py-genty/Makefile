@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Allows you to run a test with multiple data sets
+WWW=		https://github.com/box/genty
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

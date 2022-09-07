@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use "in-mem" pkgs and force definitions into mem early
+WWW=		https://metacpan.org/release/mem
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

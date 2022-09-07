@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	MIME types are used in MIME-compliant communications
+WWW=		https://github.com/liluo/mime
 
 LICENSE=	MIT
 LICENSE_FILE=	${FILESDIR}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Check for spelling errors in POD files
+WWW=		https://metacpan.org/release/Test-Spelling
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Cross-platform .NET implementation
+WWW=		https://www.microsoft.com/net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

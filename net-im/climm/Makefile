@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI-based Multi-Messenger
+WWW=		http://www.climm.org/
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes

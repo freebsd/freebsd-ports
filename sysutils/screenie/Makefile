@@ -5,6 +5,7 @@ MASTER_SITES=	SF/screenie
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and lightweight screen(1) wrapper
+WWW=		https://sourceforge.net/projects/screenie/
 
 LICENSE=	GPLv2
 

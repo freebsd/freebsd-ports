@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Low-level pixel manipulation library
+WWW=		http://pixman.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

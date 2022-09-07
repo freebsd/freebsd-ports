@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	penzin.dev@gmail.com
 COMMENT=	Library to dynamically generate webOS system bus role files
+WWW=		https://freewebos.github.io/
 
 LICENSE=	APACHE20
 

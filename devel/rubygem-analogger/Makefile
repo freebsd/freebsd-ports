@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, flexible, easy to use logging service for Ruby
+WWW=		https://github.com/wyhaines/analogger
 
 LICENSE=	MIT
 

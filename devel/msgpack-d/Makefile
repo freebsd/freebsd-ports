@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Pure D implementation of MessagePack
+WWW=		https://github.com/msgpack/msgpack-d
 
 LICENSE=	BSL
 

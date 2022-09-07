@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	081
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby parser for the MediaWiki markup language
+WWW=		https://github.com/nricciar/wikicloth
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

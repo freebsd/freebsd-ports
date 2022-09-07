@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-quality QR Code generator library
+WWW=		https://www.nayuki.io/page/qr-code-generator-library
 
 LICENSE=	MIT
 

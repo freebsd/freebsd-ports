@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Policies for Perl::Critic concerned with using Moose
+WWW=		https://metacpan.org/release/Perl-Critic-Moose
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

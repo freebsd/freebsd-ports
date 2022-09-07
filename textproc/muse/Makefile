@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Authoring and publishing environment for Emacs
+WWW=		https://www.emacswiki.org/cgi-bin/wiki/MuseMode
 
 USES=		emacs gmake makeinfo
 

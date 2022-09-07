@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	Determine the current uptime in seconds
+WWW=		https://metacpan.org/release/Unix-Uptime
 
 USES=		perl5
 USE_PERL5=	modbuild

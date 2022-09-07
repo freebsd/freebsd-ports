@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Cairo-based canvas widget for GTK+
+WWW=		https://gitlab.gnome.org/GNOME/goocanvas/
 
 LICENSE=	LGPL20
 

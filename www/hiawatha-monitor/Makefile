@@ -7,6 +7,7 @@ DISTNAME=	monitor-${PORTVERSION}
 
 MAINTAINER=	christopher.petrik@usm.edu
 COMMENT=	Monitoring tool for the Hiawatha webserver
+WWW=		https://www.hiawatha-webserver.org/monitor
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

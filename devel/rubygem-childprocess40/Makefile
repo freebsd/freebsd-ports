@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	40
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	External background process controller
+WWW=		https://github.com/enkessler/childprocess
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

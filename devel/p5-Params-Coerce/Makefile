@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Allows your classes to do parameter coercion
+WWW=		https://metacpan.org/release/Params-Coerce
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

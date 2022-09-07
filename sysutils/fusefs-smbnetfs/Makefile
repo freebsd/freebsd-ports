@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Mount smb shares (Fuse filesystem)
+WWW=		https://sourceforge.net/projects/smbnetfs/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Detect and calculate prime numbers with deterministic tests
+WWW=		https://metacpan.org/release/Math-Prime-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

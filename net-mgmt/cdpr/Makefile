@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cisco Discovery Protocol Reporter
+WWW=		http://www.monkeymental.com/nuke/
 
 LICENSE=	GPLv2
 

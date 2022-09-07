@@ -7,6 +7,7 @@ DISTNAME=	IccXML-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for reading and writing the ICC profile contents as XML files
+WWW=		http://iccxml.sourceforge.net/
 
 LIB_DEPENDS=	libSampleICC.so:graphics/sampleicc
 

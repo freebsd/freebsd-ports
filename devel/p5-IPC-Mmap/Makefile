@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides a minimal mmap() interface for both POSIX and Win32
+WWW=		https://metacpan.org/release/IPC-Mmap
 
 USES=		perl5
 USE_PERL5=	configure

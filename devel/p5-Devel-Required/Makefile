@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatic update of required modules documentation
+WWW=		https://metacpan.org/release/Devel-Required
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line player for gsf audio files
+WWW=		http://projects.raphnet.net/ #playgsf
 
 LICENSE=	GPLv2+ LGPL21 NONE
 LICENSE_COMB=	multi

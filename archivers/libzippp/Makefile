@@ -6,6 +6,7 @@ CATEGORIES=	archivers devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ wrapper for libzip
+WWW=		https://github.com/ctabin/libzippp
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE

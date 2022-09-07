@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to online Jifty applications
+WWW=		https://metacpan.org/release/Net-Jifty
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

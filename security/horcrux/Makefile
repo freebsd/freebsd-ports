@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Split files into encrypted fragments
+WWW=		https://github.com/jesseduffield/horcrux
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -3,6 +3,7 @@ PORTVERSION=	3.0.14
 CATEGORIES=	math
 
 COMMENT=	Sparse CHOLesky MODification package
+WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
 
 LICENSE=	LGPL21+
 

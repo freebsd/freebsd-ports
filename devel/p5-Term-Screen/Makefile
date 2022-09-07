@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Basic screen + input class
+WWW=		https://metacpan.org/release/Term-Screen
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

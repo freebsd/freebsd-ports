@@ -5,6 +5,7 @@ CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE chat window application
+WWW=		https://community.kde.org/KTp
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	netpkt@gomor.org
 COMMENT=	Send and receive frames from layer 2 to layer 7
+WWW=		https://metacpan.org/release/Net-Packet
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Bit-Vector>=6.4:math/p5-Bit-Vector \

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Draws Python object reference graphs with graphviz
+WWW=		https://pypi.org/project/objgraph/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

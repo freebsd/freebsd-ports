@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Munsell colour system
+WWW=		https://cran.r-project.org/web/packages/munsell/
 
 LICENSE=	MIT CW
 LICENSE_COMB=	multi

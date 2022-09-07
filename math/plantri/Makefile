@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${DISTVERSION:S/.//}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Plantri and fullgen are programs to generate planar graph
+WWW=		https://users.cecs.anu.edu.au/~bdm/plantri/
 
 MAKEFILE=	makefile
 MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}"

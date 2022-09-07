@@ -6,6 +6,7 @@ DIST_SUBDIR=	lxqt
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	About dialog of LXQt
+WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

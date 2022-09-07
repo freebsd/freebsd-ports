@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Makes working with AWS Cognito easier for Python developers
+WWW=		https://github.com/pvizeli/pycognito
 
 LICENSE=	APACHE20
 

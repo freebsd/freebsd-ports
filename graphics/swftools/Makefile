@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.swftools.org/ \
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SWF manipulation and generation utilities
+WWW=		http://www.swftools.org/
 
 LICENSE=	GPLv2
 

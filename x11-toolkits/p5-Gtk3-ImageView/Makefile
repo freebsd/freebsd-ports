@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Perl bindings to the GtkImageView image viewer widget
+WWW=		https://metacpan.org/release/Gtk3-ImageView
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

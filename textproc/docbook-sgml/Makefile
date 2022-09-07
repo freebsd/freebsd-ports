@@ -8,6 +8,7 @@ DISTFILES=	${DBFILES:C,.*:(.*),\1.zip:\1,:C,:docbook-([0-9]+).([0-9]+),:db\1\2,}
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	DocBook SGML DTD
+WWW=		https://www.oasis-open.org/docbook/
 
 LICENSE=	MIT
 

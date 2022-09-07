@@ -5,6 +5,7 @@ CATEGORIES=	irc
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Modular C++ IRC daemon
+WWW=		https://www.inspircd.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.txt

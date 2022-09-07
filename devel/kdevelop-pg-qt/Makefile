@@ -6,6 +6,7 @@ DIST_SUBDIR=	KDE/kdevelop
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Parser-generator from KDevplatform
+WWW=		https://techbase.kde.org/Development/KDevelop-PG-Qt_Introduction
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

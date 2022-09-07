@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}-full${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Java 3D viewer for chemical structures
+WWW=		http://jsmol.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

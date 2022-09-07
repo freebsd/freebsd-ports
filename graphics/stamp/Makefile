@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Adds a graphical, configurable timestamp to a grayscale image
+WWW=		http://stamp.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

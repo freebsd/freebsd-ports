@@ -6,6 +6,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	Alternate Interface To libmecab
+WWW=		https://metacpan.org/release/Text-MeCab
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

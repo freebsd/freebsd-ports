@@ -7,6 +7,7 @@ MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONFULL:C/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland screen capture plugin for obs-studio
+WWW=		https://hg.sr.ht/~scoopta/wlrobs
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md

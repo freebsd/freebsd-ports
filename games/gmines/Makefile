@@ -7,6 +7,7 @@ DISTNAME=	GMines-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Well-known minesweeper game for GNUstep
+WWW=		https://gap.nongnu.org/gmines/
 
 LICENSE=	GPLv2+
 

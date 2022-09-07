@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for mapping keyboard and mouse to a gamepad
+WWW=		https://github.com/AntiMicro/antimicro
 
 LICENSE=	GPLv3
 

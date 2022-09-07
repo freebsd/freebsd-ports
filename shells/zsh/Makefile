@@ -10,6 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	The Z shell
+WWW=		https://www.zsh.org/
 
 LICENSE=	ZSH
 LICENSE_NAME=	ZSH license

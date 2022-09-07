@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for ElfHash hash algorithm
+WWW=		https://metacpan.org/release/Digest-Elf
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

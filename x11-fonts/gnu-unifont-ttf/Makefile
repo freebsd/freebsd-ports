@@ -10,6 +10,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GNU Unicode TrueType font
+WWW=		https://unifoundry.com/unifont/index.html
 
 LICENSE=	GPLv2+
 

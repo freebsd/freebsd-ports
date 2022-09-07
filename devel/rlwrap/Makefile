@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/hanslub42/rlwrap/releases/download/v${DISTVERSI
 
 MAINTAINER=	gamato@users.sf.net
 COMMENT=	Readline wrapper
+WWW=		https://github.com/hanslub42/rlwrap
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

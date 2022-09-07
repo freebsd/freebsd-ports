@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.shar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for "homebrew" serial LIRC receivers
+WWW=		https://forums.freebsd.org/viewtopic.php?t=31610
 
 BROKEN_aarch64=		fails to compile: uartlirc_core.c:273:19: expected expression
 BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99

@@ -7,6 +7,7 @@ DISTNAME=	XUIDesigner_${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	WYSIWYG LV2 X11UI GUI creator tool
+WWW=		https://github.com/brummer10/XUiDesigner
 
 LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

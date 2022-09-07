@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	axel.rau@chaos1.de
 COMMENT=	Service identity verification for pyOpenSSL
+WWW=		https://github.com/pyca/service_identity
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

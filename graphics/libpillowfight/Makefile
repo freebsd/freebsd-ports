@@ -4,6 +4,7 @@ CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library containing various image processing algorithms
+WWW=		https://gitlab.gnome.org/World/OpenPaperwork/libpillowfight
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

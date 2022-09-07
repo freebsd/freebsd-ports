@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Gameboy emulator for libretro
+WWW=		https://github.com/libretro/gpsp
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Library for both parsing and applying patch files
+WWW=		https://github.com/cscorley/whatthepatch
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -10,6 +10,7 @@ DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	KMFL keyboard for African Latin writing systems
+WWW=		https://scripts.sil.org/AfricanKeyboard1
 
 RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 

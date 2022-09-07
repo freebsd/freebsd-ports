@@ -5,6 +5,7 @@ CATEGORIES=	net wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Network transparency with Wayland
+WWW=		https://gitlab.freedesktop.org/mstoeckl/waypipe
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

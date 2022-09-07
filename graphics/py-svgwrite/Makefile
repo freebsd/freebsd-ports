@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	george@m5p.com
 COMMENT=	Python library to create SVG drawings
+WWW=		https://github.com/mozman/svgwrite
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

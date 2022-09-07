@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Dining Cryptographers' Protocol
+WWW=		https://metacpan.org/release/Crypt-Dining
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Crypt-Random>=0:security/p5-Crypt-Random \

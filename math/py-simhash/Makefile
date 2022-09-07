@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python implementation of simhash algorithm
+WWW=		https://leons.im/posts/a-python-implementation-of-simhash-algorithm/
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org syscons display driver
+WWW=		https://github.com/rayddteam/xf86-video-scfb
 
 USES=		xorg-cat:driver
 PLIST_FILES=	lib/xorg/modules/drivers/scfb_drv.so \

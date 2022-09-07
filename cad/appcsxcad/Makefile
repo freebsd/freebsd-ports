@@ -7,6 +7,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Minimal GUI Application using the QCSXCAD library
+WWW=		https://github.com/thliebig/AppCSXCAD
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

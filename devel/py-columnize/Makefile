@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Format a simple (i.e. not nested) list into aligned columns
+WWW=		https://github.com/rocky/pycolumnize
 
 LICENSE=	MIT
 

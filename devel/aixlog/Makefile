@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Header-only C++ logging library
+WWW=		https://github.com/badaix/aixlog
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	MOZILLA/opus
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	IETF audio codec
+WWW=		https://opus-codec.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

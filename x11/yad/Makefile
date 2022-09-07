@@ -6,6 +6,7 @@ CATEGORIES=	x11 gnome
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Display GNOME dialogs from the command line
+WWW=		https://github.com/v1cont/yad
 
 LICENSE=	GPLv3
 

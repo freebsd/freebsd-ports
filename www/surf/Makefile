@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-browser
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Simple Web browser based on WebKit2/GTK+
+WWW=		https://surf.suckless.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

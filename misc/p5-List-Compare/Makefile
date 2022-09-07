@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	marck@FreeBSD.org
 COMMENT=	Perl extension for comparing lists
+WWW=		https://metacpan.org/release/List-Compare
 
 LICENSE=	ART10
 

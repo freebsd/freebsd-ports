@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modified USAF Aircraft Stability and Control Data Compendium
+WWW=		https://github.com/arktools/aircraft-datcom
 
 LICENSE=	GPLv3
 

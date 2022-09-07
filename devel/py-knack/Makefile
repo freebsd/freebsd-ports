@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Command line interface framework
+WWW=		https://github.com/Microsoft/knack
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Symbolic MDA Analysis Package for Linear Circuits
+WWW=		https://github.com/mph-/lcapy
 
 LICENSE=	LGPL21
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for hierarchy-wide accumulation of list/hash results
+WWW=		https://metacpan.org/release/Data-Inherited
 
 USES=		perl5
 USE_PERL5=	configure

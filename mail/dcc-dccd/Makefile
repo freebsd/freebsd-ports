@@ -6,6 +6,7 @@ DISTNAME=	dcc-${PORTVERSION}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Distributed Checksum Clearinghouse bulk email detector
+WWW=		https://www.rhyolite.com/dcc/
 
 LICENSE=	DCC
 LICENSE_NAME=	DCC

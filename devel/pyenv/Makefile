@@ -5,6 +5,7 @@ CATEGORIES=	devel python
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Manage multiple versions of Python
+WWW=		https://github.com/pyenv/pyenv
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

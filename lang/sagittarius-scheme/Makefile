@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-scheme
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	R6RS/R7RS Scheme system
+WWW=		https://bitbucket.org/ktakashi/sagittarius-scheme/wiki/Home
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	https://gitlab.com/l_sim/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Visualization of atomic structures
+WWW=		https://gitlab.com/l_sim/v_sim
 
 LICENSE=	CeCILL
 LICENSE_NAME=	CeCILL

@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game Boy Advance emulator with GTK frontend
+WWW=		https://vba-m.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/gpl.txt

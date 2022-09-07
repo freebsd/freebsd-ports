@@ -6,6 +6,7 @@ CATEGORIES=		devel
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Code generator and libraries to use Protocol Buffers from pure C
+WWW=		https://github.com/protobuf-c/protobuf-c
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

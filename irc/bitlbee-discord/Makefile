@@ -5,6 +5,7 @@ CATEGORIES=	irc
 
 MAINTAINER=	arfy32@gmail.com
 COMMENT=	Discord plugin for bitlbee
+WWW=		https://github.com/sm00th/bitlbee-discord
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

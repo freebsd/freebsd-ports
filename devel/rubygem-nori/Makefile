@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Library for converting XML to Hash syntax
+WWW=		https://github.com/savonrb/nori
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

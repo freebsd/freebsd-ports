@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jbo@insane.engineer
 COMMENT=	Qt/C++ library providing widgets for drawing diagrams
+WWW=		https://github.com/simulton/qschematic
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt

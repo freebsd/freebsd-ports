@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Generate sitemaps in Ruby
+WWW=		https://github.com/kjvarga/sitemap_generator
 
 RUN_DEPENDS=	rubygem-builder>=3.0:devel/rubygem-builder
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Loads one of several alternate underlying implementations for a module
+WWW=		https://metacpan.org/release/Module-Implementation
 
 LICENSE=	ART20
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://shallowsky.com/software/pho/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Lightweight image viewer
+WWW=		https://shallowsky.com/software/pho/
 
 LICENSE=	GPLv2
 

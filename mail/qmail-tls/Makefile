@@ -5,6 +5,7 @@ CATEGORIES=	mail
 PKGNAMESUFFIX=	-tls
 
 COMMENT=	Secure, reliable, and fast MTA for UNIX systems with TLS support
+WWW=		https://inoa.net/qmail-tls/
 
 CONFLICTS=	*qmail qmail-ldap *qmail-mysql qmail-spamcontrol
 

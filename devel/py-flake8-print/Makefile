@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Print statement checker plugin for flake8
+WWW=		https://github.com/JBKahn/flake8-print
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

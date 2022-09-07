@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Efficient, immutable, thread-safe collection classes for Ruby
+WWW=		https://github.com/hamstergem/hamster
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

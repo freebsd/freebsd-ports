@@ -4,6 +4,7 @@ CATEGORIES=	graphics accessibility kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Color contrast checker
+WWW=		https://apps.kde.org/en/kontrast
 
 USES=		compiler:c++11-lang cmake pkgconfig \
 		kde:5 qt:5 tar:xz

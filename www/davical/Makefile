@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Simple CalDAV server using a postgres backend
+WWW=		https://www.davical.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

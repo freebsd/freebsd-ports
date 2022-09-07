@@ -6,6 +6,7 @@ CATEGORIES=	math education
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tilburg Memory Based Learner
+WWW=		https://ilk.uvt.nl/timbl/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

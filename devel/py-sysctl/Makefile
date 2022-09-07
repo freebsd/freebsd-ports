@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	Wrapper for the sysctl system functions
+WWW=		https://github.com/truenas/py-sysctl
 
 LICENSE=	BSD2CLAUSE
 

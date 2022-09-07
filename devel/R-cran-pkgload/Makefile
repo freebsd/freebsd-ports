@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Simulate Package Installation and Attach
+WWW=		https://github.com/r-lib/pkgload
 
 LICENSE=	GPLv3
 

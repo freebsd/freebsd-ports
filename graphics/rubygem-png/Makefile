@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Almost-pure-ruby PNG library
+WWW=		https://www.zenspider.com/projects/png.html
 
 LICENSE=	MIT
 

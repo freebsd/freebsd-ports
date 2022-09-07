@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multimedia player based on KDE and VLC
+WWW=		https://www.kde.org/applications/multimedia/kaffeine/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

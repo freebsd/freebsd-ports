@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Set of classes for viewing Tree::Simple hierarchies
+WWW=		https://metacpan.org/release/Tree-Simple-View
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

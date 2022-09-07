@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Home Automation System
+WWW=		https://www.domoticz.com
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/License.txt

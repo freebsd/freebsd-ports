@@ -5,6 +5,7 @@ CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PALISADE lattice cryptography library for Fully Homomorphic Encryption
+WWW=		https://palisade-crypto.org
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

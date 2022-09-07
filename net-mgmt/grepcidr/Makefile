@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.pc-tools.net/files/unix/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter IP addresses matching IPv4 CIDR/network specification
+WWW=		http://www.pc-tools.net/unix/grepcidr/
 
 LICENSE=	GPLv2
 

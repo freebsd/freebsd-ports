@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Perl module to Retrieve list of filesystems and their properties
+WWW=		https://metacpan.org/release/Sys-Filesystem
 
 LICENSE=	APACHE20
 

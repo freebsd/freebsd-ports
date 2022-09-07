@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Set the keyboard using the X Keyboard Extension
+WWW=		https://www.freedesktop.org/Software/xorg
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

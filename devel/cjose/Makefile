@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jamie@chair6.net
 COMMENT=	C library implementing JavaScript Object Signing and Encryption (JOSE)
+WWW=		https://github.com/cisco/cjose
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	java devel
 
 MAINTAINER=	mizhka@FreeBSD.org
 COMMENT=	JVM dynamic attach utility
+WWW=		https://github.com/apangin/jattach
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

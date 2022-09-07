@@ -6,6 +6,7 @@ DISTNAME=	pecl_${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Extended HTTP Support
+WWW=		https://pecl.php.net/package/pecl_http
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

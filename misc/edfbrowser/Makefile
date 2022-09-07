@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION:S/.//}_source
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Viewer, annotator, toolbox for timeseries files EEG, EMG, ECG, etc
+WWW=		https://www.teuniz.net/edfbrowser/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

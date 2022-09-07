@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Common code techniques
+WWW=		https://github.com/jordansissel/ruby-stud
 
 LICENSE=	APACHE20
 

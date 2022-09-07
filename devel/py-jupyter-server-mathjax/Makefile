@@ -7,6 +7,7 @@ DISTNAME=	jupyter_server_mathjax-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MathJax resources as a Jupyter Server Extension
+WWW=		https://github.com/jupyter-server/jupyter_server_mathjax
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

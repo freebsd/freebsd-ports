@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Strict, simple, lightweight RFC3339 functions
+WWW=		https://github.com/danielrichman/strict-rfc3339
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

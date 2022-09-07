@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	General framework for graph optimization
+WWW=		https://openslam-org.github.io/g2o.html
 
 LICENSE=	LGPL3 GPLv3
 LICENSE_COMB=	dual

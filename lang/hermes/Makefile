@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-javascript-engine
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	JavaScript engine
+WWW=		https://github.com/facebook/hermes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

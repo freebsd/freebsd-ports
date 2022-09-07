@@ -6,6 +6,7 @@ MASTER_SITES=	https://gitlab.freedesktop.org/libevdev/${PORTNAME}/-/archive/${PO
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Input device event monitor and query tool
+WWW=		https://gitlab.freedesktop.org/libevdev/evtest
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

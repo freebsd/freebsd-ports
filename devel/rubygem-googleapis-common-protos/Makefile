@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common gRPC and protocol buffer classes used in Google APIs
+WWW=		https://github.com/googleapis/common-protos-ruby/tree/master/googleapis-common-protos
 
 LICENSE=	APACHE20
 

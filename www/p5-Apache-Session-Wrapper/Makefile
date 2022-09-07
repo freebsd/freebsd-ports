@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple wrapper around Apache::Session
+WWW=		https://metacpan.org/release/Apache-Session-Wrapper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

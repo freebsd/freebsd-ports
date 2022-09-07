@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XML Security Library
+WWW=		https://www.aleksey.com/xmlsec/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Copyright

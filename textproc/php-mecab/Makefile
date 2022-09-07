@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PHP bindings of the MeCab
+WWW=		https://github.com/rsky/php-mecab
 
 LICENSE=	MIT
 

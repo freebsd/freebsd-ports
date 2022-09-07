@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ja-font-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Sazanami Japanese TrueType fonts
+WWW=		http://wiki.fdiary.net/font/?sazanami
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/README

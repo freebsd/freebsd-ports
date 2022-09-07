@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple converter of geo coordinates
+WWW=		https://metacpan.org/release/Geo-Coordinates-Converter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

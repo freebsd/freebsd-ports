@@ -7,6 +7,7 @@ DISTNAME=	GSPdf-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Postscript and Pdf Viewer for GNUstep
+WWW=		https://gap.nongnu.org/gspdf/index.html
 
 USES=		ghostscript gnustep
 USE_GNUSTEP=	back build

@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Game Boy Advance Emulator for libretro
+WWW=		https://github.com/libretro/mgba
 
 LICENSE=	MPL20
 

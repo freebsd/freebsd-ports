@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	CLI and Ruby client library for Travis CI
+WWW=		https://github.com/travis-ci/travis.rb
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

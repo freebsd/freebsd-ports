@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Interface for OCaml to the curl lib
+WWW=		http://ocurl.forge.ocamlcore.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

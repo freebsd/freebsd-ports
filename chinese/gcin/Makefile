@@ -6,6 +6,7 @@ EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Traditional Chinese input utility in X
+WWW=		https://hyperrate.com/dir.php?eid=67
 
 LICENSE=	LGPL21
 

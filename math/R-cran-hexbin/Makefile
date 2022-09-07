@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Hexagonal Binning Routines
+WWW=		https://github.com/edzer/hexbin
 
 LICENSE=	GPLv2
 

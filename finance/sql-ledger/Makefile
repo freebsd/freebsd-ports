@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.sql-ledger.com/source/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Double entry accounting system
+WWW=		https://www.sql-ledger.org/
 
 LICENSE=	GPLv2
 

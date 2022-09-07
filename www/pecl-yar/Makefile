@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Yar (Yet another RPC framework) is a light, concurrent RPC framework
+WWW=		https://pecl.php.net/package/yar
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

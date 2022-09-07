@@ -5,6 +5,7 @@ CATEGORIES=	graphics x11-fonts
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for vector graphics and TTF, OTF, EOT and SVG fonts
+WWW=		https://birdfont.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPLv3.txt

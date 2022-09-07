@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Lightweight and Feature Complete Unit Testing Framework
+WWW=		https://github.com/markvanderloo/tinytest
 
 LICENSE=	GPLv3
 

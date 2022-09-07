@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	Perl web site authentication/authorization system
+WWW=		https://metacpan.org/release/Apache2-SiteControl
 
 BUILD_DEPENDS=	p5-Apache-AuthCookie>=3.08:www/p5-Apache-AuthCookie \
 		p5-Apache-Session>=1.54:www/p5-Apache-Session \

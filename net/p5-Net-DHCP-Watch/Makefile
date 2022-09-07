@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	beastie@tardisi.com
 COMMENT=	Class for monitoring a remote DHCPD server
+WWW=		https://metacpan.org/release/Net-DHCP-Watch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

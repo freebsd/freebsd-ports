@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fax@nohik.ee
 COMMENT=	Alternative regular expression module, to replace re
+WWW=		https://pypi.org/project/regex/
 
 LICENSE=	PSFL
 

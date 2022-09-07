@@ -6,6 +6,7 @@ DISTNAME=	SAS3IRCU_P16
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SAS-3 Integrated RAID Configuration Utility
+WWW=		https://www.avagotech.com/
 
 # Converted from RESTRICTED
 LICENSE=	BROADCOM

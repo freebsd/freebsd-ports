@@ -6,6 +6,7 @@ DISTNAME=	ecFlow-${DISTVERSION}-Source
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Workflow package that enables users to run a large number of programs
+WWW=		https://confluence.ecmwf.int/display/ECFLOW/ecflow+home
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

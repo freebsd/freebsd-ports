@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ale@biancalanas.net
 COMMENT=	SSL/STARTTLS support for Net::SMTP
+WWW=		https://metacpan.org/release/Net-SMTPS
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Authen-SASL>=2:security/p5-Authen-SASL \

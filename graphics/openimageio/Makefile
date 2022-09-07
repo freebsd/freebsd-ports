@@ -10,6 +10,7 @@ CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
 COMMENT?=	OpenImageIO graphics library
+WWW=		https://www.openimageio.org/
 
 LICENSE=	BSD3CLAUSE
 

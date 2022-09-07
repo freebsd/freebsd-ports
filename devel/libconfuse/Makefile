@@ -7,6 +7,7 @@ DISTNAME=	confuse-${PORTVERSION}
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Configuration file parsing library
+WWW=		https://savannah.nongnu.org/projects/confuse/
 
 LICENSE=	ISCL
 

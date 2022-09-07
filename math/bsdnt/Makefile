@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Bignum Library
+WWW=		https://github.com/wbhart/bsdnt
 
 LICENSE=	BSD3CLAUSE
 

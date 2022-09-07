@@ -5,6 +5,7 @@ CATEGORIES=	lang haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Brainfuck interpreter
+WWW=		https://hackage.haskell.org/package/brainfuck
 
 LICENSE=	GPLv2
 

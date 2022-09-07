@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails50
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Create navigations for Rails, Sinatra or Padrino applications
+WWW=		https://github.com/codeplant/simple-navigation
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

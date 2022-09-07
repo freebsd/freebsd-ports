@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Dynamic binding to OpenGL for the D Programming Language
+WWW=		https://github.com/DerelictOrg/DerelictGL3
 
 LICENSE=	BSL
 

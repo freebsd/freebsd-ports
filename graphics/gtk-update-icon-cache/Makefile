@@ -5,6 +5,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Gtk-update-icon-cache utility from the Gtk+ toolkit
+WWW=		https://www.gtk.org/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

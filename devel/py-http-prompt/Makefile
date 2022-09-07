@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Interactive command-line HTTP client
+WWW=		https://pypi.org/project/http-prompt/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

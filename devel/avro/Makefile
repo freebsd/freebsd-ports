@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data serialization system
+WWW=		https://avro.apache.org/
 
 LICENSE=	APACHE20
 

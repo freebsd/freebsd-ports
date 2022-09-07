@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Extension for flake8 which uses pydocstyle to check docstrings
+WWW=		https://pypi.org/project/flake8-docstrings/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

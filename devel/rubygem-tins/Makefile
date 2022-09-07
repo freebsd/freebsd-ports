@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Useful tools library in Ruby
+WWW=		https://github.com/flori/tins
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

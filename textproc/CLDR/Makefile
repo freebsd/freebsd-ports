@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Unicode Common Locale Data Repository
+WWW=		https://cldr.unicode.org/index
 
 LICENSE=	Unicode_License_Agreement
 LICENSE_NAME=	Unicode License Agreement

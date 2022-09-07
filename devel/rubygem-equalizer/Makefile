@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library to define equality methods
+WWW=		https://github.com/dkubb/equalizer
 
 LICENSE=	MIT
 

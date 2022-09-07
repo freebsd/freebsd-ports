@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.cs.uwaterloo.ca/~astorjoh/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Integer Matrix Library
+WWW=		https://cs.uwaterloo.ca/~astorjoh/iml.html
 
 LICENSE=	GPLv2
 

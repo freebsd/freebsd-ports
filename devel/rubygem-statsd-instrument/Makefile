@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	StatsD client for Ruby applications
+WWW=		https://github.com/Shopify/statsd-instrument
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

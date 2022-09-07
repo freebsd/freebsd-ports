@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Container framework for FreeBSD
+WWW=		https://github.com/pizzamig/pot/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

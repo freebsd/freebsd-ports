@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	cnszym@gmail.com
 COMMENT=	Generalized Dynamic Linear Modeler
+WWW=		https://www.rdocumentation.org/packages/dlmodeler/
 
 LICENSE=	GPLv2 GPLv3 BSD2CLAUSE
 LICENSE_COMB=	dual

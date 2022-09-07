@@ -5,6 +5,7 @@ CATEGORIES=	www kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 components to integrate browsers into the desktop
+WWW=		https://www.kde.org/plasma-desktop
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz xorg
 USE_KDE=	activities completion config coreaddons crash dbusaddons \

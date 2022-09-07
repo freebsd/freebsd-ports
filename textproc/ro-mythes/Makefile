@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Romanian thesaurus
+WWW=		http://rospell.sourceforge.net/
 
 LICENSE=	GPLv2
 

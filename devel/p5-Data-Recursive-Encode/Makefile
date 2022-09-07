@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to encode/decode values in a structure
+WWW=		https://metacpan.org/release/Data-Recursive-Encode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

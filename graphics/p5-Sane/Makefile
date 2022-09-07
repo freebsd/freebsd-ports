@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the SANE (Scanner Access Now Easy) Project
+WWW=		https://metacpan.org/release/RATCLIFFE/Sane-0.05
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

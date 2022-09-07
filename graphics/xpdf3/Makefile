@@ -12,6 +12,7 @@ CONFLICTS_INSTALL=	xpdf4 xpdf3
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display PDF files and convert them to other formats
+WWW=		https://www.xpdfreader.com/
 
 LICENSE=	GPLv2
 

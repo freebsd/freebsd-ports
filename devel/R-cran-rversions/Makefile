@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Query 'R' Versions, Including 'r-release' and 'r-oldrel'
+WWW=		https://github.com/r-hub/rversions
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

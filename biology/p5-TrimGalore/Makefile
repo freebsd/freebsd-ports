@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrapper around Cutadapt and FastQC for adapter and quality trimming
+WWW=		https://github.com/FelixKrueger/TrimGalore
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

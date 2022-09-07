@@ -6,6 +6,7 @@ MASTER_SITES=	GNU/freefont
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Free UCS Outline Fonts
+WWW=		https://www.nongnu.org/freefont/
 
 LICENSE=	GPLv3
 

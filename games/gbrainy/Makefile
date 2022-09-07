@@ -6,6 +6,7 @@ MASTER_SITES=	https://gent.softcatala.org/jmas/gbrainy/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Brain teaser game and trainer
+WWW=		https://live.gnome.org/gbrainy
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

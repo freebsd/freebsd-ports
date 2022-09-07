@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Framework for collecting user feedback
+WWW=		https://github.com/kde/kuserfeedback
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

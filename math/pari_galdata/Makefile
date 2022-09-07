@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Data needed by PARI/GP for polgalois
+WWW=		https://pari.math.u-bordeaux.fr/packages.html
 
 LICENSE=	GPLv2
 

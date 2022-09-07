@@ -8,6 +8,7 @@ DIST_SUBDIR=	festival
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Castilian Spanish male voice for Festival
+WWW=		https://www.cstr.ed.ac.uk/projects/festival/
 
 RUN_DEPENDS=	festival:audio/festival
 

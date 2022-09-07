@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Call HTML::Entities::encode_entities, via a hash, within a string
+WWW=		https://metacpan.org/release/HTML-Entities-Interpolate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.davidhbailey.com/dhbsoftware/
 
 MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	Double-Double and Quad-Double Arithmetic
+WWW=		https://crd-legacy.lbl.gov/~dhbailey/mpdist
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

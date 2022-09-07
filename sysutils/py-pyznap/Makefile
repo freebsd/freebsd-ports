@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	ZFS snapshot tool written in Python
+WWW=		https://github.com/yboetz/pyznap
 
 LICENSE=	GPLv3
 

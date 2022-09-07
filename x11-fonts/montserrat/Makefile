@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Sans-serif font inspired by the street signs of Montserrat
+WWW=		https://github.com/JulietaUla/Montserrat/
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.txt

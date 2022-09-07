@@ -5,6 +5,7 @@ CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	CLI for managing resources in InfluxDB v2
+WWW=		https://github.com/influxdata/influx-cli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

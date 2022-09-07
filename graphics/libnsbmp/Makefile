@@ -6,6 +6,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	NetSurf BMP decoder
+WWW=		https://www.netsurf-browser.org/projects/libnsbmp/
 
 LICENSE=	MIT
 

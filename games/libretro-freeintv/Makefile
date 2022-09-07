@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro emulation core for the Mattel Intellivision
+WWW=		https://github.com/libretro/freeintv
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

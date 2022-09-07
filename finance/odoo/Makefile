@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Suite of web based open source business apps
+WWW=		https://www.odoo.com
 
 LICENSE=	LGPL3
 

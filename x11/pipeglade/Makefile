@@ -5,6 +5,7 @@ CATEGORIES=	x11 devel
 
 MAINTAINER=	trebbu@googlemail.com
 COMMENT=	Graphical user interface driven by pipes or fifos
+WWW=		http://pipeglade.boundp.org
 
 LICENSE=	MIT
 

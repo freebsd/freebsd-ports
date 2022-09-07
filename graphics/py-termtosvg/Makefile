@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Record terminal sessions as SVG animations
+WWW=		https://github.com/nbedos/termtosvg
 
 LICENSE=	BSD3CLAUSE
 

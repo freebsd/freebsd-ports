@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unified API for parsing NZB files
+WWW=		https://pypi.org/project/pynzb/
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Autotuner Jack application
+WWW=		https://kokkinizita.linuxaudio.org/linuxaudio/zita-at1-doc/quickguide.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING

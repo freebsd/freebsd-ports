@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.cabextract.org.uk/libmspack/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for Microsoft compression formats
+WWW=		https://www.cabextract.org.uk/libmspack/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

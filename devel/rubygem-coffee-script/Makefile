@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby CoffeeScript is a bridge to the JS CoffeeScript compiler
+WWW=		https://github.com/rails/ruby-coffee-script
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

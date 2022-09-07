@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module to efficiently parse exuberant ctags files
+WWW=		https://metacpan.org/release/Parse-ExuberantCTags
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

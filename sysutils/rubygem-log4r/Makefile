@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Flexible logging library for use in Ruby programs
+WWW=		https://github.com/colbygk/log4r
 
 LICENSE=	LGPL3
 

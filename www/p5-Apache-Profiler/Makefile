@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Profiles time seconds needed for every request
+WWW=		https://metacpan.org/release/Apache-Profiler
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	mp2bug:www/mod_perl2

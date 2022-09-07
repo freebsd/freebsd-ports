@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Test Classes the easy way
+WWW=		https://metacpan.org/release/Test-Class-Most
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

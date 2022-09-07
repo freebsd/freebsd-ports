@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CLI client for exercism.io
+WWW=		https://exercism.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

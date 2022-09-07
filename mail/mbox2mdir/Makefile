@@ -5,6 +5,7 @@ MASTER_SITES=	http://sageshome.net/downloads/oss/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Mbox to qmail's Maildir converter written in C++
+WWW=		https://sageshome.net/oss/mbox2mdir.php
 
 LICENSE=	GPLv2
 

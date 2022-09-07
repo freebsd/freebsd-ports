@@ -6,6 +6,7 @@ MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight X11 desktop panel
+WWW=		https://wiki.lxde.org/en/LXPanel
 
 LICENSE=	GPLv2+ MIT
 LICENSE_COMB=	multi

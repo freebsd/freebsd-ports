@@ -3,6 +3,7 @@ PKGNAMESUFFIX=	26-sharp
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for gmime
+WWW=		http://spruce.sourceforge.net/gmime/
 
 LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26
 

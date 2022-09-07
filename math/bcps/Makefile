@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Branch, Constrain, and Price Software (BiCePS)
+WWW=		https://github.com/coin-or/CHiPPS-BiCePS
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Bcps/LICENSE

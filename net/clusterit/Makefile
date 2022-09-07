@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Collection of clustering tools
+WWW=		https://www.garbled.net/clusterit.html
 
 LICENSE=	BSD2CLAUSE
 

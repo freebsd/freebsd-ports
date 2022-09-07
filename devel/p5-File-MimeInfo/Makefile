@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Determine file type
+WWW=		https://metacpan.org/release/File-MimeInfo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

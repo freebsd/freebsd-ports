@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utilities for Bitcoin and altcoin addresses/transaction manipulation
+WWW=		https://github.com/richardkiss/pycoin
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

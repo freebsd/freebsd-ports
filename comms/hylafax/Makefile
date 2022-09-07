@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fax software
+WWW=		https://www.hylafax.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

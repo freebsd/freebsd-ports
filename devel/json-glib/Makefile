@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	JSON (RFC 4627) interface for Glib
+WWW=		https://live.gnome.org/JsonGlib
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

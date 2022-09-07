@@ -6,6 +6,7 @@ MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONFULL}${
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Launcher/menu program for wlroots-based compositors
+WWW=		https://hg.sr.ht/~scoopta/wofi
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md

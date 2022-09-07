@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	C++ implementation of the OpenTracing API
+WWW=		https://github.com/opentracing/opentracing-cpp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

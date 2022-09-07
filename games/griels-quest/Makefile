@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Griel's Quest for the Sangraal
+WWW=		https://github.com/nevat/griels-quest
 
 LICENSE=	GPLv3
 

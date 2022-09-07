@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Dependency generator for makefiles
+WWW=		https://www.x.org/archive/X11R7.5/doc/man/man1/makedepend.1.html
 
 LICENSE=	MIT
 

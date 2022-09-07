@@ -9,6 +9,7 @@ DISTNAME=	Crypt-Tea-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	The Tiny Encryption Algorithm in Perl and JavaScript
+WWW=		https://metacpan.org/release/PJB/Crypt-Tea-2.12
 
 CONFLICTS=	p5-Crypt-Tea_JS
 

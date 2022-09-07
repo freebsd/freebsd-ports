@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Icinga PHP library
+WWW=		https://github.com/Icinga/icingaweb2-module-ipl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

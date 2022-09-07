@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	File attachments as attributes for DataMapper
+WWW=		https://github.com/krobertson/dm-paperclip
 
 LICENSE=	MIT
 

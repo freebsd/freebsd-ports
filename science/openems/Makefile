@@ -7,6 +7,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Electromagnetic field solver using the EC-FDTD method
+WWW=		https://openems.de/start/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

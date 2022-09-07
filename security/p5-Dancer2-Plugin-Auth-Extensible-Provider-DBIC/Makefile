@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible authentication framework for Dancer2 apps using DBIC
+WWW=		https://metacpan.org/release/Dancer2-Plugin-Auth-Extensible-Provider-DBIC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

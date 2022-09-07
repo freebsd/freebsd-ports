@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mashes up MouseX::Getopt and App::Cmd
+WWW=		https://metacpan.org/release/MouseX-App-Cmd
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

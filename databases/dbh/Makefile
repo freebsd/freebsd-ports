@@ -7,6 +7,7 @@ DISTNAME=	libdbh2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disk Based Hashtables
+WWW=		https://www.gnu.org/software/libdbh/
 
 LICENSE=	GPLv3
 

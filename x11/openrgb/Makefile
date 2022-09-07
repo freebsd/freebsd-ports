@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Software to control a multitude of (a)RGB devices
+WWW=		https://openrgb.org
 
 LICENSE=	GPLv2
 

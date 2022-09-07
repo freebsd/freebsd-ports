@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Generic imperative build system
+WWW=		https://github.com/wrapl/rabs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

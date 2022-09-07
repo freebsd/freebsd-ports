@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Multidimensional data container on top of Blosc2
+WWW=		https://github.com/Blosc/caterva
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

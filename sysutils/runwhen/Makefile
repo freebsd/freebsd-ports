@@ -6,6 +6,7 @@ MASTER_SITES=	http://code.dogmap.org/runwhen/releases/
 
 MAINTAINER=	crest@rlwinm.de
 COMMENT=	Tools for running commands at particular times
+WWW=		http://code.dogmap.org/runwhen/
 
 LICENSE=	GPLv2
 

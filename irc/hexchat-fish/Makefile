@@ -7,6 +7,7 @@ DISTNAME=	fishlim-f952f6f21f6b7786e10d06a5ca90749f6e9f1f40
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Encryption plugin for Hexchat
+WWW=		https://fishlim.kodafritt.se/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

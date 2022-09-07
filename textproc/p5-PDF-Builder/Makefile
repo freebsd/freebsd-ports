@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Facilitates the creation and modification of PDF files
+WWW=		https://metacpan.org/release/PDF-Builder
 
 LICENSE=	LGPL21
 

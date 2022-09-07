@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for timing side-channel protected string compare
+WWW=		https://metacpan.org/release/String-Compare-ConstantTime
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

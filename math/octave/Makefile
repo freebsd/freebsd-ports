@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	High-level interactive language for numerical computations
+WWW=		https://www.octave.org/
 
 LICENSE=	GPLv3
 

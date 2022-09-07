@@ -11,6 +11,7 @@ PATCHFILES+=	b3ca1d02bb01.patch:-p1 # https://gitlab.gnome.org/GNOME/gcr/-/merge
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for bits of crypto UI and parsing
+WWW=		https://live.gnome.org/GnomeKeyring
 
 BUILD_DEPENDS=	gpg2:security/gnupg
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \

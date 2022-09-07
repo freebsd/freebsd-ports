@@ -7,6 +7,7 @@ MASTER_SITES=	SUNSITE/apps/www/converters \
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Converts HTML documents into plain text
+WWW=		http://www.mbayer.de/html2text/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

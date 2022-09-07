@@ -6,6 +6,7 @@ MASTER_SITES=	http://opsec.eu/src/xc3sprog/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free programmer for Xilinx Spartan S3E Starter Kit
+WWW=		https://sourceforge.net/projects/xc3sprog/
 
 LIB_DEPENDS=	libftdi.so:devel/libftdi
 RUN_DEPENDS=	${LOCALBASE}/sbin/fxload:misc/fxload

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sirl33tname@gmail.com
 COMMENT=	Lua libevent binding
+WWW=		https://github.com/harningt/luaevent
 
 LICENSE=	MIT
 

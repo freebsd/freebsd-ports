@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGrok tools for synchronization and mirroring
+WWW=		https://oracle.github.io/opengrok/
 
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

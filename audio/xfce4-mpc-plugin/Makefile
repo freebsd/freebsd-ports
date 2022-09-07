@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Musicpd client plugin for the Xfce panel
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin
 
 LICENSE=	ISCL
 

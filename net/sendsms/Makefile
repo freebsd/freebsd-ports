@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple perl command-line utility to send SMS via from on provider site
+WWW=		http://caspian.dotconf.net/menu/Software/SendSMS/
 
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=

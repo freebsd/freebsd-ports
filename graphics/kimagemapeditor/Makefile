@@ -5,6 +5,7 @@ CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE generator of HTML image maps
+WWW=		https://www.kde.org/applications/development/kimagemapeditor/
 
 USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \

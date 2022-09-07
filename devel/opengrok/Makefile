@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/oracle/opengrok/releases/download/${PORTVERSION
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Fast and powerful code search and cross-reference engine
+WWW=		https://opengrok.github.io/OpenGrok/
 
 LICENSE=	CDDL ADAIC BSD3CLAUSE EPL ECMA MIT RUBY
 LICENSE_COMB=	multi

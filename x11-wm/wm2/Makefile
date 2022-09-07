@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple window manager for X
+WWW=		https://www.all-day-breakfast.com/wm2/
 
 BUILD_DEPENDS=	makedepend:devel/makedepend
 

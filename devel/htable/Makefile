@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/culot
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight implementation of hash tables in C
+WWW=		http://culot.org/public/Code/htable.html
 
 LICENSE=	BSD2CLAUSE
 

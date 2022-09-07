@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Override REST methods to Plack apps via POST
+WWW=		https://metacpan.org/release/Plack-Middleware-MethodOverride
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

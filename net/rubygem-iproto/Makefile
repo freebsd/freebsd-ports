@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby implementation of Mail.Ru iproto protocol
+WWW=		https://github.com/mailru/iproto-ruby
 
 RUN_DEPENDS=	rubygem-bin_utils>=0.0.3:devel/rubygem-bin_utils
 

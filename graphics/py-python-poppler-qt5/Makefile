@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Python bindings for the Poppler-Qt PDF rendering library
+WWW=		https://pypi.org/project/python-poppler-qt5/
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

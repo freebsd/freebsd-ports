@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Ultra fast JSON encoder and decoder for Python
+WWW=		https://github.com/esnme/ultrajson
 
 LICENSE=	BSD3CLAUSE TclTk
 LICENSE_COMB=	multi

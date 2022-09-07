@@ -1473,6 +1473,7 @@ EXTRACT_ONLY=	${DISTFILES:N*\:yarn*:C/:.*$//}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Screen sharing server based on WebRTC
+WWW=		https://github.com/screego/server
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

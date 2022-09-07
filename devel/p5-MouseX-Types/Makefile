@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to organize your Mouse types in libraries
+WWW=		https://metacpan.org/release/MouseX-Types
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

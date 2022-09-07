@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 interface to bzip2 compression library
+WWW=		https://metacpan.org/release/Compress-Bzip2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

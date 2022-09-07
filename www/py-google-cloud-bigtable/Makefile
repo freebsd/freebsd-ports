@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Bigtable API client library
+WWW=		https://github.com/googleapis/python-bigtable
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}2-${PORTVERSION}-bin
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Apache Commons Database Connection Pool
+WWW=		https://commons.apache.org/dbcp/
 
 LICENSE=	APACHE20
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to build chart graphics
+WWW=		https://metacpan.org/release/Chart
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

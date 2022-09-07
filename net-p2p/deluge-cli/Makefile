@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-cli
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	CLI part of bittorrent client using Python and libtorrent-rasterbar
+WWW=		https://deluge-torrent.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

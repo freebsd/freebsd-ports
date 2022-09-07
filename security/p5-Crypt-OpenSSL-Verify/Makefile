@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenSSL Verify certificate verification in XS
+WWW=		https://metacpan.org/dist/Crypt-OpenSSL-Verify
 
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

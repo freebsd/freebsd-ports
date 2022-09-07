@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	WebSocket library for the gevent networking library
+WWW=		https://www.gitlab.com/noppo/gevent-websocket
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

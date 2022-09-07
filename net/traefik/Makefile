@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/riggs/${PORTNAME}
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	High availability reverse proxy and load balancer
+WWW=		https://traefik.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

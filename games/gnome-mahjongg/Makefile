@@ -9,6 +9,7 @@ PATCHFILES+=	7604f8c8311f.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-mahjo
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome mahjongg
+WWW=		https://wiki.gnome.org/Apps/Mahjongg
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

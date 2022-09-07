@@ -7,6 +7,7 @@ MASTER_SITES=	SF/orso${PORTNAME}/orso${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Allow users to change their Squid or Web password using the browser
+WWW=		https://sourceforge.net/projects/orsochpasswd
 
 HAS_CONFIGURE=	yes
 

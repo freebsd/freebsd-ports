@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Spike, a RISC-V ISA Simulator
+WWW=		https://github.com/riscv/riscv-isa-sim
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	mk@nic-nac-project.org
 COMMENT=	Qt client for DSBMD that lets you mount media, and more
+WWW=		https://github.com/mrclksr/DSBMC
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

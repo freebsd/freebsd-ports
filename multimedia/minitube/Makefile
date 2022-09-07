@@ -4,6 +4,7 @@ CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	TV-like client for YouTube
+WWW=		https://flavio.tordini.org/minitube
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

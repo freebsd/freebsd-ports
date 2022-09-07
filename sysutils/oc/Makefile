@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@freebsd.org
 COMMENT=	OpenShift Command Line
+WWW=		https://github.com/openshift/oc
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE

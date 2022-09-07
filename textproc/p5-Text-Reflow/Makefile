@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for reflowing text files
+WWW=		https://metacpan.org/release/Text-Reflow
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Perl extension for statvfs() and fstatvfs()
+WWW=		https://metacpan.org/release/Filesys-Statvfs
 
 USES=		perl5
 USE_PERL5=	configure

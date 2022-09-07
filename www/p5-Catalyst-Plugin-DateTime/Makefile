@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DateTime support for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-Plugin-DateTime
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

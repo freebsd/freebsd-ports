@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Export php-fpm metrics in Prometheus format
+WWW=		https://github.com/bakins/php-fpm-exporter
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

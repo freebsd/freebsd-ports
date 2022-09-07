@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME manpages editor
+WWW=		https://sourceforge.net/projects/gmanedit2/
 
 USES=		gettext gmake gnome pathfix pkgconfig
 USE_GNOME=	gtk20

@@ -5,6 +5,7 @@ MASTER_SITES=	GIMP/gimp/extras/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of additional brushes and patterns files for GIMP
+WWW=		https://gimp.org
 
 LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 

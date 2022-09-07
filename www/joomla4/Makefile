@@ -7,6 +7,7 @@ DISTNAME=	Joomla_${DISTVERSION}-Stable-Full_Package
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Dynamic web content management system (CMS)
+WWW=		https://www.joomla.org/
 
 LICENSE=	GPLv2
 

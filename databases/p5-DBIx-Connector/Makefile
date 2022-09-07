@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for fast, safe DBI connection management
+WWW=		https://metacpan.org/release/DBIx-Connector
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

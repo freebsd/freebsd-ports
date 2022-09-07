@@ -6,6 +6,7 @@ MASTER_SITES=	http://simon.morlat.free.fr/download/1.2.x/source/
 
 MAINTAINER=	asm@asm.kiev.ua
 COMMENT=	Internet Low Bit Rate codec (RFC3951)
+WWW=		http://www.ilbcfreeware.org/
 
 CONFLICTS=	libilbc
 

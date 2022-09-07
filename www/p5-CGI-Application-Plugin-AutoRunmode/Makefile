@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	CGI::App plugin to automatically register runmodes
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-AutoRunmode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

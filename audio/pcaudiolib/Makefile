@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${D
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Portable C audio library
+WWW=		https://github.com/espeak-ng/pcaudiolib
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

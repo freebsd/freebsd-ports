@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.intrarts.com/Files/
 
 MAINTAINER=	quest@mac.com
 COMMENT=	Bandwidth shaping and QoS solution
+WWW=		https://www.intrarts.com/throttledcli.html
 
 LICENSE=	GPLv3
 

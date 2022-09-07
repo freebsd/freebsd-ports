@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of superdaemon for hot-deploying server programs
+WWW=		https://metacpan.org/release/Server-Starter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

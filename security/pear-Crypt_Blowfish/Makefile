@@ -4,6 +4,7 @@ CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class for blowfish encryption
+WWW=		https://pear.php.net/package/Crypt_Blowfish
 
 USES=		pear
 

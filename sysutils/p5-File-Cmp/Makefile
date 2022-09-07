@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to compare two files character by character
+WWW=		https://metacpan.org/release/File-Cmp
 
 USES=		perl5
 USE_PERL5=	configure

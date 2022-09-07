@@ -4,6 +4,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple Wrapper Class for the Nmap Utility
+WWW=		https://pear.php.net/package/Net_Nmap
 
 LICENSE=	LGPL3
 

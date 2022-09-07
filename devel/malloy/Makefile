@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jbo@insane.engineer
 COMMENT=	Embeddable HTTP(S) and WS(S) client/server components for C++
+WWW=		https://github.com/tectu/malloy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt

@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen supergrafx to libretro
+WWW=		https://github.com/libretro/beetle-supergrafx-libretro
 
 LICENSE=	GPLv2
 

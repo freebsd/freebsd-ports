@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 FTP client class with automatic reconnect on failure
+WWW=		https://metacpan.org/release/Net-FTP-AutoReconnect
 
 USES=		perl5
 USE_PERL5=	configure

@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org apps meta-port
+WWW=		https://www.x.org/
 
 COMPONENTS=	appres bitmap xf86dga:dga iceauth \
 		x11-fonts/mkfontscale:mkfontscale sessreg \

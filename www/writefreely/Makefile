@@ -11,6 +11,7 @@ DIST_SUBDIR=	writeas
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Clean, Markdown-based publishing platform made for writers
+WWW=		https://writefreely.org
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

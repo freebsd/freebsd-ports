@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-Jun05
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Handle external logins, send and receive faxes
+WWW=		http://mgetty.greenie.net/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	QEMU CPU Emulator ${${FLAVOR}_COMMENT}
+WWW=		https://wiki.qemu.org/Main_Page
 
 LICENSE=	GPLv2
 

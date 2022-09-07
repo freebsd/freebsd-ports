@@ -7,6 +7,7 @@ MASTER_SITE_SUBDIR=	CPAN:BDFOY
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML validator and sanity checker
+WWW=		https://metacpan.org/release/BDFOY/weblint++-1.15
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

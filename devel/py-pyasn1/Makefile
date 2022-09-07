@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	ASN.1 toolkit for Python
+WWW=		https://github.com/etingof/pyasn1
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

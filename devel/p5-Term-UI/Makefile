@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Term::ReadLine UI made easy
+WWW=		https://metacpan.org/release/Term-UI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Data Driven Testing Framework
+WWW=		https://metacpan.org/release/Test-Base
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux compilers and base libraries (CentOS ${LINUX_DIST_VER})
+WWW=		https://gcc.gnu.org/
 
 # LICENSE=	Various GNU
 

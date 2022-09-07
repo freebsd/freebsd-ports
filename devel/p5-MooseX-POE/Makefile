@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Illicit Love Child of Moose and POE
+WWW=		https://metacpan.org/release/MooseX-POE
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

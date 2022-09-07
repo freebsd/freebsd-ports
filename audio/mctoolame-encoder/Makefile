@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG Layer II audio encoder with multi-channel support
+WWW=		http://mctoolame.sourceforge.net/
 
 DEPRECATED=	Legacy and obscure audio format that never gained any traction
 EXPIRATION_DATE=2022-09-30

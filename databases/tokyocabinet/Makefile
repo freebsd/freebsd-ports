@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/kuriyama \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern implementation of DBM
+WWW=		https://dbmx.net/tokyocabinet/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-source Braille Translator And Back-translator
+WWW=		http://www.liblouis.org/
 
 LICENSE=	LGPL3+
 

@@ -7,6 +7,7 @@ DISTFILES=	quaqua-5.2.1.nested.zip:quaqua
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GUI for programs that play Go through Go Text Protocol (GTP)
+WWW=		https://github.com/lemonsqueeze/gogui
 
 LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	multi

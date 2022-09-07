@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Free Music Instrument Tuner
+WWW=		https://github.com/gillesdegottex/fmit
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

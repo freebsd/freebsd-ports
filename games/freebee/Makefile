@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Multi-platform ncurses-based console client for Free Bee
+WWW=		https://freebee.fun/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

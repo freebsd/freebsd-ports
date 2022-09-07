@@ -16,6 +16,7 @@ EXTRACT_ONLY=	${ZIP_FILES}
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Perforce API (static libraries and header files)
+WWW=		http://www.perforce.com/perforce/loadsupp.html
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

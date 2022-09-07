@@ -6,6 +6,7 @@ MASTER_SITES=	https://launchpad.net/libmemcached/${PORTVERSION:R}/${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C and C++ client library to the memcached server
+WWW=		https://libmemcached.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

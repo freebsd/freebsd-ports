@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert Date::Manip dates and durations to DateTimes and vice versa
+WWW=		https://metacpan.org/release/DateTime-Format-DateManip
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

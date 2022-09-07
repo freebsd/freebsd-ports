@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	PDAL Python bindings
+WWW=		https://pypi.python.org/pypi/pdal
 
 LICENSE=	BSD3CLAUSE
 

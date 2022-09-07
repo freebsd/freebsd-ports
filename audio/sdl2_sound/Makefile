@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Abstract SDL soundfile decoder
+WWW=		https://icculus.org/SDL_sound/
 
 LICENSE=	ZLIB
 LICENSE_FILE_ZLIB=${WRKSRC}/LICENSE.txt

@@ -10,6 +10,7 @@ PATCHFILES+=	7207431e466a.patch:-p1 # https://gitlab.freedesktop.org/mesa/drm/-/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
+WWW=		https://dri.freedesktop.org/
 
 LICENSE=	MIT
 

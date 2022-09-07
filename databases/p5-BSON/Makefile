@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Perl implementation of MongoDB BSON serialization
+WWW=		https://metacpan.org/release/BSON
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

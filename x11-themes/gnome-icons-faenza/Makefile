@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-icon-theme_${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Faenza GNOME 2 icon themes
+WWW=		http://tiheum.deviantart.com/art/Faenza-Icons-173323228
 
 LICENSE=	GPLv3
 

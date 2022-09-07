@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	ALSA MIDI sequencer server
+WWW=		https://github.com/hselasky/alsa-seq-server
 
 LICENSE=	BSD2CLAUSE
 

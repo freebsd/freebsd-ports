@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	zackj901@yandex.com
 COMMENT=	Open source web HTTP fuzzing tool and bruteforcer
+WWW=		https://github.com/CoolerVoid/0d1n
 
 LICENSE=	GPLv3
 

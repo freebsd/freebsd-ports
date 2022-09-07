@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Cross compiler environment for building Windows binary gems
+WWW=		https://github.com/rake-compiler/rake-compiler-dock
 
 LICENSE=	MIT
 

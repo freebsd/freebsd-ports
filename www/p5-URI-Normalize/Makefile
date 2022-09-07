@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Normalize URIs according to RFC 3986
+WWW=		https://metacpan.org/pod/URI::Normalize
 
 LICENSE=	GPLv1 ART10
 LICENSE_COMB=	dual

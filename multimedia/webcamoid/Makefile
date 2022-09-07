@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Full featured webcam suite
+WWW=		https://webcamoid.github.io
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Lua interface to selected ICU utilities
+WWW=		https://github.com/adam-stanek/lua_icu_utils
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

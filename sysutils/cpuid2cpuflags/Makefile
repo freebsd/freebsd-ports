@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Tool to generate CPU_FLAGS_* for your CPU
+WWW=		https://github.com/mgorny/cpuid2cpuflags
 
 LICENSE=	BSD2CLAUSE
 

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Simple ncurses-based pico-style hex editor
+WWW=		https://sourceforge.net/projects/shed/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides a simple interface on top of CouchDBs RESTful HTTP API
+WWW=		https://github.com/couchrest/couchrest
 
 LICENSE=	APACHE20
 

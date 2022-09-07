@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/vg
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XWinWrap replace a desktop background with a movie or screensaver
+WWW=		http://tech.shantanugoel.com/projects/linux/shantz-xwinwrap
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

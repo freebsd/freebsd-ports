@@ -9,6 +9,7 @@ MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite
+WWW=		https://wiki.freebsd.org/portupgrade
 
 LICENSE=	BSD3CLAUSE
 

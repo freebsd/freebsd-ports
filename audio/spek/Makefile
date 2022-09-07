@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/alexkay/${PORTNAME}/releases/download/v${PORTVE
 
 MAINTAINER=	alexander@kojevnikov.com
 COMMENT=	Acoustic spectrum analyser
+WWW=		http://spek.cc/
 
 LICENSE=	GPLv3+
 

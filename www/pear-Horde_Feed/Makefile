@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Feed libraries
+WWW=		https://pear.horde.org
 
 USES=	horde php cpe
 USE_PHP=	dom

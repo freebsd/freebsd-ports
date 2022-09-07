@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rack-based asset packaging system
+WWW=		https://github.com/rails/sprockets
 
 LICENSE=	MIT
 

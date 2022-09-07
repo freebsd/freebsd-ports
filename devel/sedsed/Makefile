@@ -7,6 +7,7 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Python script that masters SED scripts
+WWW=		http://sedsed.sourceforge.net/
 
 PLIST_FILES=	bin/sedsed
 EXTRACT_CMD=	${CP}

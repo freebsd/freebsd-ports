@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	A 'Linter' for R Code
+WWW=		https://github.com/r-lib/lintr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

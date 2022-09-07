@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tools for working with Merkle trees
+WWW=		https://github.com/Tierion/pymerkletools
 
 LICENSE=	MIT
 

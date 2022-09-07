@@ -8,6 +8,7 @@ MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Port build and test system
+WWW=		https://github.com/freebsd/poudriere/wiki
 
 LICENSE=	BSD2CLAUSE
 

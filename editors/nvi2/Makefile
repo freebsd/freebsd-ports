@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Updated implementation of the ex/vi text editor
+WWW=		https://github.com/lichray/nvi2/
 
 LICENSE=	BSD3CLAUSE
 

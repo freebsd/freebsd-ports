@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Grep with multiple keywords
+WWW=		https://github.com/kaz-utashiro/greple
 
 LICENSE=	GREPLE
 LICENSE_NAME=	GREPLE License

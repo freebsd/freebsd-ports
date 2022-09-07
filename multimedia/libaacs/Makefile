@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSI
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced Access Content System implementation
+WWW=		https://www.videolan.org/developers/libaacs.html
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

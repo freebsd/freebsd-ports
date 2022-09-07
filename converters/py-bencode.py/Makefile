@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Bencoding and bdecoding implementation
+WWW=		https://github.com/fuzeman/bencode.py
 
 LICENSE=	BTOSL
 LICENSE_NAME=	BitTorrent Open Source License

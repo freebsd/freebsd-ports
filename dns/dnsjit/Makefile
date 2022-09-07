@@ -5,6 +5,7 @@ CATEGORIES=	dns net
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Engine for capturing, parsing and replaying DNS
+WWW=		https://www.dns-oarc.net/tools/dnsjit
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

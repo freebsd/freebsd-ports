@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Copy-on-write proxy for frozen Ruby objects
+WWW=		https://github.com/activescaffold/cow_proxy
 
 LICENSE=	MIT
 #LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	https://xkbcommon.org/download/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Keymap handling library for toolkits and window systems
+WWW=		https://xkbcommon.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

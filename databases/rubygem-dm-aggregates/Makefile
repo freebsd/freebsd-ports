@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin providing support for aggregates
+WWW=		https://github.com/datamapper/dm-aggregates
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-gaps
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Fork of i3 tiling window manager with more features, including gaps
+WWW=		https://github.com/Airblader/i3
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,6 +9,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Command line plugin for the Xfce Desktop
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-verve-plugin
 
 LICENSE=	GPLv2
 

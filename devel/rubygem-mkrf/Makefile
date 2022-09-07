@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Replacement to mkmf generates Rakefiles to build C Extensions
+WWW=		http://mkrf.rubyforge.org/
 
 LICENSE=	MIT
 

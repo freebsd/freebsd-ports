@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Archive pages for Jekyll tags and categories
+WWW=		https://jekyll.github.io/jekyll-archives/
 
 LICENSE=	MIT
 

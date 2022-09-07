@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Memcache API
+WWW=		https://pear.horde.org
 
 USES=		horde php
 USE_PHP=	memcache hash

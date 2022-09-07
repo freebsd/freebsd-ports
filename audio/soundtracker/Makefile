@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pattern-oriented music editor
+WWW=		https://sourceforge.net/projects/soundtracker/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

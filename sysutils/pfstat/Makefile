@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.benzedrine.ch/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to render graphical statistics for pf
+WWW=		https://www.benzedrine.ch/pfstat.html
 
 LICENSE=	BSD2CLAUSE
 

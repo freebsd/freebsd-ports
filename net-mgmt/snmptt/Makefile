@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	nistor@snickers.org
 COMMENT=	SNMP trap handler/translator/swiss-army-knife
+WWW=		http://www.snmptt.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

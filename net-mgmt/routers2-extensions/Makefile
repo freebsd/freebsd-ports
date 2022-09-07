@@ -7,6 +7,7 @@ DISTNAME=	routers2-v${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Extensions of routers2 frontend
+WWW=		https://www.steveshipway.org/software/
 
 RUN_DEPENDS=	${LOCALBASE}/www/routers2/routers2.cgi:net-mgmt/routers2 \
 		p5-Net-Telnet-Cisco>=0:net-mgmt/p5-Telnet-Cisco \

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python modules for proteomics data analysis
+WWW=		https://pyteomics.readthedocs.io/
 
 LICENSE=	APACHE20
 

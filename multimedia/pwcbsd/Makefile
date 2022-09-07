@@ -8,6 +8,7 @@ MASTER_SITES=	http://raaf.atspace.org/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Linux pwc webcam driver ported to FreeBSD
+WWW=		http://raaf.atspace.org/
 
 LICENSE=	GPLv2
 

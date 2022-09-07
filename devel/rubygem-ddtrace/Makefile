@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tracking client of Datadog for Ruby
+WWW=		https://github.com/DataDog/dd-trace-rb
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

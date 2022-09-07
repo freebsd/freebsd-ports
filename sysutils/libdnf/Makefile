@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Dandified YUM, the next-generation version of YUM
+WWW=		https://github.com/rpm-software-management/libdnf
 
 LICENSE=	LGPL21 # no LICENSE tag for Version 2.1
 LICENSE_FILE=	${WRKSRC}/COPYING

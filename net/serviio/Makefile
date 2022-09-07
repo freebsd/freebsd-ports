@@ -7,6 +7,7 @@ EXTRACT_SUFX=	-linux.tar.gz
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Transcoding DLNA-server implemented in Java
+WWW=		https://www.serviio.org/
 
 # Converted from RESTRICTED
 LICENSE=	serviio

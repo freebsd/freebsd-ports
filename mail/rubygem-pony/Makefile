@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Express way to send mail from Ruby
+WWW=		https://github.com/benprew/pony
 
 LICENSE=	MIT
 

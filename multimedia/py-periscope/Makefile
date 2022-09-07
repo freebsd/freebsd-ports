@@ -11,6 +11,7 @@ EXTRACT_ONLY=	python-${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Subtitles searching module
+WWW=		https://code.google.com/archive/p/periscope/
 
 LICENSE=	LGPL3
 

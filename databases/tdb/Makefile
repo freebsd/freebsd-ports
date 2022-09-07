@@ -7,6 +7,7 @@ MASTER_SITES=			SAMBA
 
 MAINTAINER=			timur@FreeBSD.org
 COMMENT=			Trivial Database
+WWW=		https://tdb.samba.org/
 
 LICENSE=			GPLv3
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Modern/fast Python SOAP client based on lxml / requests
+WWW=		https://python-zeep.readthedocs.io/
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi

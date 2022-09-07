@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pretty printing algorithm for readable structure
+WWW=		https://github.com/ruby/prettyprint
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Retrieving terminal size
+WWW=		https://metacpan.org/release/Term-Size-Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

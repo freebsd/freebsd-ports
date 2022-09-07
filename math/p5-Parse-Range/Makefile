@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Parses range definitions and returns an array
+WWW=		https://metacpan.org/release/Parse-Range
 
 LICENSE=	ART10 BSD3CLAUSE
 LICENSE_COMB=	dual

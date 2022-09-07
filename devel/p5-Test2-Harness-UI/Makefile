@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Web interface for viewing and inspecting yath test logs
+WWW=		https://metacpan.org/dist/Test2-Harness-UI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

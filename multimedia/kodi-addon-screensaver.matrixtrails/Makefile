@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Matrix trails screensaver for Kodi
+WWW=		https://github.com/xbmc/screensaver.matrixtrails
 
 LICENSE=	GPLv2+
 

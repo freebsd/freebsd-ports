@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Perl interface for interact with a Netscreen firewall
+WWW=		https://metacpan.org/release/Net-Telnet-Netscreen
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet

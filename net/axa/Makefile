@@ -6,6 +6,7 @@ MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	AXA library and tools
+WWW=		https://github.com/farsightsec/axa
 
 LICENSE=	APACHE20 PD
 LICENSE_COMB=	multi

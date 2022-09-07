@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl implementation of Red/Black tree, a type of balanced tree
+WWW=		https://metacpan.org/release/Tree-RedBlack
 
 LICENSE=	ART10
 

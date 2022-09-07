@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Speech API client library
+WWW=		https://github.com/googleapis/python-speech
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

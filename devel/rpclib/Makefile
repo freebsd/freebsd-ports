@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	aleksandr.fedorov@itglobal.com
 COMMENT=	Modern C++ msgpack-RPC server and client library
+WWW=		https://github.com/rpclib/rpclib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

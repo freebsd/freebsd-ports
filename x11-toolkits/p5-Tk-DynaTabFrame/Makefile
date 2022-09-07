@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	NoteBook widget with orientable, dynamically stacking tabs
+WWW=		https://metacpan.org/release/Tk-DynaTabFrame
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Tk>=804.027:x11-toolkits/p5-Tk

@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Scalable overlay networking tool
+WWW=		https://github.com/slackhq/nebula
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open-source JPEG 2000 codec
+WWW=		https://www.openjpeg.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

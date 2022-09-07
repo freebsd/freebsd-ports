@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a minimal mirror of CPAN
+WWW=		https://metacpan.org/release/CPAN-Mini
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

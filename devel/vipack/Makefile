@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Vishap package manager
+WWW=		https://github.com/vishaps/vipack
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

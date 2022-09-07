@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby library for InfluxDB
+WWW=		http://influxdb.org/
 
 LICENSE=	MIT
 

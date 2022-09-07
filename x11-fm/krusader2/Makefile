@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Twin panel file manager for KDE, like midnight or norton commander
+WWW=		https://krusader.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

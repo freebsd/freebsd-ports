@@ -6,6 +6,7 @@ MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	API to access the performance counter hw in the microprocessor
+WWW=		https://code.google.com/p/papi-for-freebsd/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/LICENSE.txt

@@ -6,6 +6,7 @@ MASTER_SITES=	http://s-tech.elsat.net.pl/bmtools/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Traffic analysis command-line utility
+WWW=		http://s-tech.elsat.net.pl/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

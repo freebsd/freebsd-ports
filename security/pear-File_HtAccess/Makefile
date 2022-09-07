@@ -4,6 +4,7 @@ CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class to manipulate .htaccess files
+WWW=		https://pear.php.net/package/File_HtAccess
 
 USES=		pear
 

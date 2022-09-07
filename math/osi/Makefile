@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	COIN-OR Open Solver Interface, an API for calling solver libraries
+WWW=		https://projects.coin-or.org/Osi/
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Osi/LICENSE

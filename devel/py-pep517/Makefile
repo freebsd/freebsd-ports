@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrappers to build Python packages using PEP 517 hooks
+WWW=		https://github.com/pypa/pep517
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Symbol lookup support for libdparse
+WWW=		https://github.com/dlang-community/dsymbol
 
 LICENSE=	BSL
 

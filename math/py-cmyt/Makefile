@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of Matplotlib colormaps from the yt project
+WWW=		https://yt-project.org/
 
 LICENSE=	BSD3CLAUSE
 

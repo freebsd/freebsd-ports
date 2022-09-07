@@ -5,6 +5,7 @@ CATEGORIES=	polish multimedia
 
 MAINTAINER=	dominik.lisiak@bemsoft.pl
 COMMENT=	Command line subtitles downloader for napiprojekt.pl
+WWW=		https://gitlab.com/hesperos/napi
 
 LICENSE=	GPLv3
 

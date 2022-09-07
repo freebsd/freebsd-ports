@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CSS Cascading Style Sheets library for Python
+WWW=		https://github.com/jaraco/cssutils
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual

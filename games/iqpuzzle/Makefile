@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Diverting I.Q. challenging pentomino puzzle
+WWW=		https://elth0r0.github.io/iqpuzzle/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

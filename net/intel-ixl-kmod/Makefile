@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	-kmod
 
 MAINTAINER?=	freebsd@intel.com
 COMMENT?=	40 gigabit FreeBSD Base Driver for Intel(R) Network Connections
+WWW=		https://downloadcenter.intel.com
 
 LICENSE=	BSD2CLAUSE
 

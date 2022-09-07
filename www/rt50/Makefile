@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	50
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Industrial-grade ticketing system written in Perl
+WWW=		https://www.bestpractical.com/rt/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

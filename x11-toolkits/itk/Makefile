@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tk [incr Tk]
+WWW=		https://sourceforge.net/projects/incrtcl/
 
 LIB_DEPENDS=	libitcl.so.${MAJOR}:lang/itcl
 

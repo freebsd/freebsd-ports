@@ -5,6 +5,7 @@ CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Neural network visualization software
+WWW=		https://github.com/yurivict/nn-insight
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

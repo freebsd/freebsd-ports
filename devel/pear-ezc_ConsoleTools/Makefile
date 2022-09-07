@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}${PEAR_CHANNEL}_
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of classes to do different actions with the console
+WWW=		https://ezcomponents.org/
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,6 +5,7 @@ CATEGORIES=	net perl5
 
 MAINTAINER=	mahlon@martini.nu
 COMMENT=	Shell-like environment for LDAP
+WWW=		https://bitbucket.org/mahlon/shelldap
 
 LICENSE=	BSD3CLAUSE
 

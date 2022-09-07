@@ -7,6 +7,7 @@ DIST_SUBDIR=		KDE/${PORTNAME}
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Framework for creation of reports in multiple formats
+WWW=		https://www.kexi-project.org/
 
 LIB_DEPENDS=		libKPropertyCore3.so:x11-toolkits/kproperty
 

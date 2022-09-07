@@ -4,6 +4,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Simple Mode S decoder for RTLSDR devices
+WWW=		https://github.com/antirez/dump1090
 
 LICENSE=	BSD3CLAUSE
 

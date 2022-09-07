@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast(er) URI parser
+WWW=		https://metacpan.org/release/URI-Fast
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

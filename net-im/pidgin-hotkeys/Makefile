@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Pidgin plugin that allows user to assign global hotkeys
+WWW=		https://sourceforge.net/projects/pidgin-hotkeys/
 
 LICENSE=	GPLv2
 

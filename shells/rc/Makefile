@@ -6,6 +6,7 @@ CATEGORIES=	shells plan9
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Unix incarnation of the plan9 shell
+WWW=		https://github.com/rakitzis/rc
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING

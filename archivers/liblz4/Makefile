@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	lib
 
 MAINTAINER=	martin@waschbuesch.de
 COMMENT=	LZ4 compression library, lossless and very fast
+WWW=		https://lz4.github.io/lz4/
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi

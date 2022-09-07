@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-doc-${DISTVERSION}.tar.gz:docs
 
 MAINTAINER=	nickblack@linux.com
 COMMENT=	TUI library for modern terminal emulators
+WWW=		https://nick-black.com/dankwiki/index.php/Notcurses
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to trim whitespace from your strings
+WWW=		https://metacpan.org/release/String-Trim
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

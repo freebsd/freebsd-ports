@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Terser minifies JavaScript files for Ruby
+WWW=		https://github.com/ahorek/terser-ruby
 
 LICENSE=	MIT
 

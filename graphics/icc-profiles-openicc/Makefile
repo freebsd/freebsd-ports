@@ -6,6 +6,7 @@ MASTER_SITES=	SF/openicc/OpenICC-Profiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color data for color managed applications
+WWW=		https://sourceforge.net/projects/openicc/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING    # Has a Copyright note

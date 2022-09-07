@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Adds Grape style patterns to Mustermman
+WWW=		https://github.com/ruby-grape/mustermann-grape
 
 LICENSE=	MIT
 

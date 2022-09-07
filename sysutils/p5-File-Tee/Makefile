@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kostjnspb@yandex.ru
 COMMENT=	Replicate data sent to a Perl stream
+WWW=		https://metacpan.org/release/File-Tee
 
 USES=		perl5
 USE_PERL5=	configure

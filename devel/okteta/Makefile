@@ -7,6 +7,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE hex editor
+WWW=		https://www.kde.org/applications/utilities/okteta/
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qca qt:5 \
 		shared-mime-info tar:xz xorg

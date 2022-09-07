@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Escape of the cat - hardcore oldschool platformer
+WWW=		https://github.com/gl00my/catesc
 
 LICENSE=	CC-BY-SA-3.0 CC-BY-SA-4.0
 LICENSE_COMB=	multi

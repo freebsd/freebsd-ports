@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Reorganize tables in PostgreSQL databases with minimal locks
+WWW=		https://github.com/reorg/pg_repack
 
 LICENSE=	BSD3CLAUSE
 

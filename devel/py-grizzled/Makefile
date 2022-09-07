@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	The Grizzled Python Utility Library
+WWW=		http://www.clapper.org/software/python/grizzled/
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist

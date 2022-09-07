@@ -6,6 +6,7 @@ MASTER_SITES=	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	Elegant, simple, and clean dock
+WWW=		https://launchpad.net/plank/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

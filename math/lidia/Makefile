@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}+latte-patches-2014-10-04
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for computational number theory
+WWW=		https://www.math.ucdavis.edu/~latte/
 
 LICENSE=	LiDIA
 LICENSE_NAME=	LiDIA License

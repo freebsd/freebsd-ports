@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Reverse proxy to expose local server behind NAT/firewall to Internet
+WWW=		https://github.com/fatedier/frp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

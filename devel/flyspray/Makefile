@@ -6,6 +6,7 @@ MASTER_SITES=	http://flyspray.org/packed/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, easy-to-use web based bug tracking system
+WWW=		https://www.flyspray.org/
 
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:databases/adodb5
 

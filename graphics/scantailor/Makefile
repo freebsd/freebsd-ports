@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Interactive post-processing tool for scanned pages
+WWW=		https://github.com/4lex4/scantailor-advanced
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Multiple GNOME terminals in one window
+WWW=		https://github.com/gnome-terminator/terminator
 
 LICENSE=	GPLv2
 

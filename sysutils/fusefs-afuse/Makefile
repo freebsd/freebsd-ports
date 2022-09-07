@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	File system automounting implemented in user-space using FUSE
+WWW=		https://github.com/pcarrier/afuse
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

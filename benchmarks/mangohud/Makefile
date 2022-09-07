@@ -8,6 +8,7 @@ DISTFILES=	imgui-1.81-1-wrap.zip:igw
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Vulkan/OpenGL overlay for CPU/GPU monitoring
+WWW=		https://github.com/flightlessmango/MangoHud
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

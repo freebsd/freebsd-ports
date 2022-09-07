@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse and format SQLite dates and times
+WWW=		https://metacpan.org/release/DateTime-Format-SQLite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

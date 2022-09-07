@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	sigrok-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sigrok firmware
+WWW=		https://www.sigrok.org/wiki/Firmware
 
 RUN_DEPENDS=	parseelf.py:science/sigrok-firmware-utils \
 		${LOCALBASE}/share/sigrok-firmware/fx2lafw-cypress-fx2.fw:science/sigrok-firmware-fx2lafw

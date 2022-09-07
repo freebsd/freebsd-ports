@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to matches language preference (HTTP Accept-Language)
+WWW=		https://metacpan.org/release/I18N-AcceptLanguage
 
 USES=		perl5
 USE_PERL5=	configure

@@ -7,6 +7,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	harsha@harshavardhana.net
 COMMENT=	Cmockery2 revival of Cmockery unit test framework from Google
+WWW=		https://github.com/lpabon/cmockery2
 
 LICENSE=	APACHE20
 

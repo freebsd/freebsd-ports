@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	C library for RDF syntax
+WWW=		https://drobilla.net/software/serd.html
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

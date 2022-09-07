@@ -5,6 +5,7 @@ CATEGORIES=	graphics editors
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII drawing utility
+WWW=		https://github.com/statico/cadubi
 
 LICENSE=	ART10
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extremely basic SOAP client module
+WWW=		https://metacpan.org/release/KARJALA/SOAP-MySOAP-0.023
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

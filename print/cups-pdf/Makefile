@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual printer for CUPS to produce PDF files
+WWW=		https://www.cups-pdf.de/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

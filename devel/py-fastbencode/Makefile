@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Fast implementation of bencode
+WWW=		https://github.com/breezy-team/fastbencode
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

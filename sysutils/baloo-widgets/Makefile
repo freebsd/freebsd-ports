@@ -8,6 +8,7 @@ PATCHFILES=	7ff54ae9b68ca0edf3d6cd57c3eefb6cf072b6f8.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	BalooWidgets library
+WWW=		https://projects.kde.org/projects/kde/kdelibs/baloo
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	baloo completion config coreaddons emoticons filemetadata \

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	70
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Structure many real-time application concerns into channels over a single WebSocket connection
+WWW=		https://github.com/rails/rails/tree/main/actioncable
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

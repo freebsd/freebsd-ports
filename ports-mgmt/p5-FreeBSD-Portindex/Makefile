@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Incremental FreeBSD ports INDEX file generation
+WWW=		https://www.infracaninophile.co.uk/portindex/
 
 LICENSE=	BSD2CLAUSE
 

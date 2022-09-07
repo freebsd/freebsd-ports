@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/unstable/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	User-friendly XMPP client for every device
+WWW=		https://www.kaidan.im/
 
 LIB_DEPENDS=	libqxmpp.so:net-im/qxmpp-qt5 \
 		libZXing.so:textproc/zxing-cpp

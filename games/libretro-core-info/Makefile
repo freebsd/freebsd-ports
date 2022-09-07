@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Metadata about libretro cores
+WWW=		https://github.com/libretro/libretro-core-info
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

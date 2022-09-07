@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.sh
 
 MAINTAINER=	fw@moov.de
 COMMENT=	Make daily, weekly, and monthly backups of your MySQL databases
+WWW=		https://sourceforge.net/projects/autobackupmysql/
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 

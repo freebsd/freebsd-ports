@@ -7,6 +7,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ Chemical Kinetics, Thermodynaimics, and Transport Library
+WWW=		https://libantioch.github.io/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

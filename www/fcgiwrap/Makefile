@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Simple FastCGI wrapper for CGI scripts
+WWW=		http://nginx.localdomain.pl/wiki/FcgiWrap
 
 LICENSE=	MIT
 

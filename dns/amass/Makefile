@@ -6,6 +6,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	In-depth DNS enumeration
+WWW=		https://owasp.org/www-project-amass/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

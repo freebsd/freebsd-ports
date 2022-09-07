@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope Location
+WWW=		https://pypi.org/project/zope.location/
 
 LICENSE=	ZPL21
 

@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	GNOME Shell integration for Chrome
+WWW=		https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

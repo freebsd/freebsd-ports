@@ -8,6 +8,7 @@ DISTFILES?=	${PORTNAME}_${DISTVERSION}_web-assets.tar.gz:web
 
 MAINTAINER=	me+freebsd@igalic.co
 COMMENT=	Golang fediverse server
+WWW=		https://docs.gotosocial.org/en/latest/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for dumping DMI (SMBIOS) contents in human-readable format
+WWW=		https://www.nongnu.org/dmidecode/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

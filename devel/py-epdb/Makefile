@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Enhanced Python Debugger
+WWW=		https://github.com/sassoftware/epdb
 
 USES=		python:3.6+
 USE_GITHUB=	yes

@@ -7,6 +7,7 @@ DIST_SUBDIR=	AbiWord
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Open-source, cross-platform WYSIWYG word processor
+WWW=		https://www.abisource.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

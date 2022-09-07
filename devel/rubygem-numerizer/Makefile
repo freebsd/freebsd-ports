@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Parse numbers in natural language from strings
+WWW=		https://github.com/jduff/numerizer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,6 +9,7 @@ PATCHFILES=	5b9e4ac4057f5693f53c321eeb5bfb387f6b69fb.patch:-p1
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Software system and project for computations with monomial ideals
+WWW=		https://github.com/Macaulay2/frobby
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

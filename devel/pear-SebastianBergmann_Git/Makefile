@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}SebastianBergmann_
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple wrapper for Git
+WWW=		https://github.com/sebastianbergmann/git
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

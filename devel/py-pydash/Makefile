@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Kitchen sink of Python utility libraries for doing "stuff"
+WWW=		https://pypi.org/pypi/pydash/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome klotski
+WWW=		https://wiki.gnome.org/Apps/Klotski
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

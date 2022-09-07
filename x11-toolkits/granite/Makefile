@@ -4,6 +4,7 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Extensions of GTK+3 toolkit
+WWW=		https://github.com/elementary/granite
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

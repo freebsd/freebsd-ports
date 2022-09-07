@@ -6,6 +6,7 @@ MASTER_SITES=	https://fastjet.fr/repo/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package for jet finding in pp and e+e- collisions
+WWW=		https://fastjet.fr/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

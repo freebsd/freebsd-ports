@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/svaarala/${PORTNAME}/releases/download/v${DISTV
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeddable Javascript engine
+WWW=		https://duktape.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

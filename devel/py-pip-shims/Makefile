@@ -7,6 +7,7 @@ DISTNAME=	pip_shims-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Compatibility shims for pip versions 8 thru current
+WWW=		https://github.com/sarugaku/pip-shims
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

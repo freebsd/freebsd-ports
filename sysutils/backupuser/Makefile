@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.olivermahmoudi.com/files/
 
 MAINTAINER=	fbsd@olivermahmoudi.com
 COMMENT=	User Backup Utility
+WWW=		https://www.olivermahmoudi.com/programming/backupuser/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

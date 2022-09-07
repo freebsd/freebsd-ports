@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Icculus.org version of the original Quake II
+WWW=		https://www.icculus.org/quake2/
 
 LICENSE=	GPLv2
 

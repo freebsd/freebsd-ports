@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build objects representing outstanding operations
+WWW=		https://metacpan.org/release/Future
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

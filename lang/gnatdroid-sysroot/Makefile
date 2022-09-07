@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnatdroid-ndk11
 
 MAINTAINER=	jamie@catflap.org
 COMMENT=	Android sysroots for C/Ada Android cross-compiler
+WWW=		http://www.dragonlace.net
 
 ONLY_FOR_ARCHS=	amd64 i386
 

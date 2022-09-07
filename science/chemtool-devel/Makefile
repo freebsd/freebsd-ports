@@ -8,6 +8,7 @@ DISTNAME=	ct17a15
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Drawing organic molecules easily and store them (developer version)
+WWW=		http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-find
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Simple, fast and user-friendly alternative to find
+WWW=		https://github.com/sharkdp/fd
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

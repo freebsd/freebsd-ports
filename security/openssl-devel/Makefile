@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
+WWW=		https://www.openssl.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

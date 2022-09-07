@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0x04
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The geekest content helper management system
+WWW=		http://chems.sf.net
 
 NO_BUILD=	yes
 USES=		zip php

@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Common interfaces for neuronal simulators
+WWW=		https://github.com/INCF/libneurosim
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

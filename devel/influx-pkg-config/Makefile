@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	influx
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Drop-in pkg-config replacement for compiling C libraries for InfluxData
+WWW=		https://github.com/influxdata/pkg-config
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

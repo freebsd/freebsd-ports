@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Radeon Open Compute Thunk Interface
+WWW=		https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

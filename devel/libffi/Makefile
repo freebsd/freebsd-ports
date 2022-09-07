@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PO
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Foreign Function Interface
+WWW=		https://sourceware.org/libffi/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

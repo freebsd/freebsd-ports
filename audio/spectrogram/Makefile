@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio visualization for sndio
+WWW=		https://www.dim13.org/Spectrogram
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

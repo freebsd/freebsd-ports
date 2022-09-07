@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	SockJS python server implementation on top of Tornado framework
+WWW=		https://pypi.org/project/sockjs-tornado/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

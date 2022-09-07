@@ -4,6 +4,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	miguel@gocobachi.dev
 COMMENT=	Code editor designed for elementary OS
+WWW=		https://github.com/elementary/code/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

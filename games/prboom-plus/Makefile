@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	thiagohero501@gmail.com
 COMMENT=	Fork of the prboom Doom game engine
+WWW=		http://prboom-plus.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

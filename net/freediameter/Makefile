@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:S/d/D/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source Diameter protocol implementation
+WWW=		http://www.freediameter.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

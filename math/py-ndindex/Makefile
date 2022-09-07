@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library for manipulating indices of ndarrays
+WWW=		https://github.com/Quansight-Labs/ndindex
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

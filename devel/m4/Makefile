@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GNU M4
+WWW=		https://www.gnu.org/software/m4/m4.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

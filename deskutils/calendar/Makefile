@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Port of the FreeBSD calendar program
+WWW=		https://freebsd.org
 
 LICENSE=	BSD3CLAUSE
 

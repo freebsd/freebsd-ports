@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Fast Light Window Manager
+WWW=		https://github.com/bbidulock/flwm
 
 LICENSE=	GPLv2+
 

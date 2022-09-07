@@ -6,6 +6,7 @@ MASTER_SITES=	http://qsynaptics.sourceforge.net/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to access the Xorg/XFree86 Synaptics TouchPad Driver
+WWW=		http://qsynaptics.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

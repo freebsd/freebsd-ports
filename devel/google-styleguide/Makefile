@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	google-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool to assist with Google style guide compliance
+WWW=		https://github.com/google/styleguide
 
 # cpplint.py and cpplint_unittest.py are released under BSD3CLAUSE
 # style guides is released under CC-BY-3.0

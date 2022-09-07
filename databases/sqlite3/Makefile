@@ -10,6 +10,7 @@ DISTNAME=	sqlite-src-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
+WWW=		https://www.sqlite.org/
 .if ${FLAVOR:U} == icu
 COMMENT+=	(ICU flavor)
 .endif

@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge metaport for math/octave
+WWW=		http://octave.sourceforge.net/
 
 USES=		metaport
 

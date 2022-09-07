@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mock DateTime->now calls during tests
+WWW=		https://metacpan.org/release/Test-MockDateTime
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

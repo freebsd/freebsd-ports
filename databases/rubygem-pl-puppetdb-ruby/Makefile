@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Simple Ruby client library for PuppetDB API
+WWW=		https://rubygems.org/gems/pl-puppetdb-ruby
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

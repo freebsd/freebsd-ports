@@ -6,6 +6,7 @@ DISTNAME=	64tass-${PORTVERSION}-src
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Multi pass optimizing macro assembler for 65xx series processors
+WWW=		http://tass64.sourceforge.net/
 
 LICENSE=	GPLv2+ LGPL20+ LGPL21+ MIT
 LICENSE_COMB=	multi

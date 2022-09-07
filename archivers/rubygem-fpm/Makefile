@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Build packages for multiple platforms with great ease and sanity
+WWW=		https://github.com/jordansissel/fpm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

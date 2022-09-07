@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provide a PrettyPrinter for Ruby objects
+WWW=		https://github.com/ruby/pp
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

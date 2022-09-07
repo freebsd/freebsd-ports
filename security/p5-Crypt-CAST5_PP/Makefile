@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CAST5 block cipher in pure Perl
+WWW=		https://metacpan.org/release/Crypt-CAST5_PP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

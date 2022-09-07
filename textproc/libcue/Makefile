@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	CUE Sheet Parser Library
+WWW=		https://github.com/lipnitsk/libcue
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi

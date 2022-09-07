@@ -7,6 +7,7 @@ DISTNAME=	Pint-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Physical quantities module
+WWW=		https://github.com/hgrecco/pint
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

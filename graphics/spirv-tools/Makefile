@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tools for processing SPIR-V intermediate shader language modules
+WWW=		https://github.com/KhronosGroup/SPIRV-Tools
 
 LICENSE=	APACHE20
 

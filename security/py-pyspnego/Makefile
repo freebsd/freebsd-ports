@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Windows Negotiate Authentication Client and Server
+WWW=		https://github.com/jborean93/pyspnego
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

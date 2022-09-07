@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Meta-port for software and artwork from the Xfce4 Goodies Project
+WWW=		https://goodies.xfce.org/
 
 USES=		metaport
 

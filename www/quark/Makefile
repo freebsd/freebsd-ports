@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-server
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and simple HTTP GET/HEAD-only web server for static content
+WWW=		https://tools.suckless.org/quark/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

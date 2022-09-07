@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy way to use the associate option from HTML::Template
+WWW=		https://metacpan.org/release/HTML-Template-HashWrapper
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Template>=0:www/p5-HTML-Template

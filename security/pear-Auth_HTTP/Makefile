@@ -4,6 +4,7 @@ CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR HTTP authentication
+WWW=		https://pear.php.net/package/Auth_HTTP
 
 USES=		pear
 

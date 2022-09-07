@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Library for monitoring directories for changes
+WWW=		https://github.com/Maher4Ever/wdm
 
 LICENSE=	MIT
 

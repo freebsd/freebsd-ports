@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension that looks for MD5 hashes in several databases
+WWW=		https://metacpan.org/release/Digest-MD5-Reverse
 
 USES=		perl5
 USE_PERL5=	modbuild

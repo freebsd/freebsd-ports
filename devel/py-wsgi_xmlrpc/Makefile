@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME:S/_/-/}-${PORTVERSION}
 
 MAINTAINER=	geka@sippysoft.com
 COMMENT=	WSGI application for a simple XMLRPC method dispatching
+WWW=		https://code.google.com/p/wsgi-xmlrpc/
 
 LICENSE=	APACHE20
 

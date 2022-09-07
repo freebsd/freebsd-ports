@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Statistical Methods for Quality Science
+WWW=		http://www.r-qualitytools.org/
 
 LICENSE=	GPLv2
 

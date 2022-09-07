@@ -7,6 +7,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	ZFS dataset replication tool
+WWW=		https://zrepl.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

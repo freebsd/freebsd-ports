@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interface for secure random number generator
+WWW=		https://github.com/ruby/securerandom
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

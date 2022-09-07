@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	pytest plugin for test data directories and files
+WWW=		https://pypi.org/project/pytest-datadir/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

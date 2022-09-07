@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	More routines for operating on iterables, beyond itertools
+WWW=		https://github.com/more-itertools/more-itertools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

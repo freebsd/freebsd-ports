@@ -11,6 +11,7 @@ EXTRACT_ONLY=	src.tar.Z
 
 MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	NIST Core math library (CMLIB)
+WWW=		https://www.nist.gov/itl/math/mcsd-software.cfm
 
 USES=		fortran uidfix
 USE_LDCONFIG=	yes

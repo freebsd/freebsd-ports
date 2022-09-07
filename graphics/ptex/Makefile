@@ -6,6 +6,7 @@ CATEGORIES?=	graphics
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	Per face texture library
+WWW=		https://ptex.us
 
 LICENSE=	BSD3CLAUSE
 

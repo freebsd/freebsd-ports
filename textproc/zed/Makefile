@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Command-line tool to manage and query Zed data lakes
+WWW=		https://zed.brimdata.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

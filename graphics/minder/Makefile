@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-app
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Mind-mapping application
+WWW=		https://github.com/phase1geo/Minder
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

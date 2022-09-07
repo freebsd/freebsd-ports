@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Profiling plugin for py.test
+WWW=		https://github.com/man-group/pytest-plugins/tree/master/pytest-profiling
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

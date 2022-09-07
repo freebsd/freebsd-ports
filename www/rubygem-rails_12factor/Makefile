@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Run Rails the 12factor way
+WWW=		https://github.com/heroku/rails_12factor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read and write CPAN Changes files
+WWW=		https://metacpan.org/release/CPAN-Changes
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

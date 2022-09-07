@@ -6,6 +6,7 @@ CATEGORIES=	finance
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Cryptocurrency coin stats
+WWW=		https://github.com/miguelmota/cointop
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

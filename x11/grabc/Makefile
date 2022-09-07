@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grab a color from screen
+WWW=		https://www.muquit.com/muquit/software/grabc/grabc.html
 
 LICENSE=	GPLv2 # specified on the website
 

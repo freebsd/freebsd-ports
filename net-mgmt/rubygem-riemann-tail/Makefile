@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Tail Riemann event streams from the console
+WWW=		https://github.com/wkf/riemann-tail
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

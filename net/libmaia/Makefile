@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	XML-RPC library for Qt
+WWW=		https://github.com/wiedi/libmaia
 
 USES=		compiler:c++11-lang gmake qmake qt:5
 USE_GITHUB=	yes

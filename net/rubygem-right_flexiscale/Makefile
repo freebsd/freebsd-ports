@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides Ruby access to the Flexiscale API
+WWW=		https://github.com/rightscale/right_flexiscale
 
 LICENSE=	MIT
 

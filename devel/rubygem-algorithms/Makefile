@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby algorithms and data structures
+WWW=		https://github.com/kanwei/algorithms
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-linux
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Single- and multi-player first-person shooter based on Cube 2
+WWW=		https://www.bloodfrontier.com/
 
 LICENSE=	ZLIB
 

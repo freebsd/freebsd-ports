@@ -9,6 +9,7 @@ PATCHFILES=	inkscape-1.2.1-poppler-22.09.0.patch:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
+WWW=		https://inkscape.org
 
 LICENSE=	GPLv2 GPLv2+ GPLv3 GPLv3+ LGPL21 LGPL3 LGPL3+ MPL11
 LICENSE_COMB=	multi

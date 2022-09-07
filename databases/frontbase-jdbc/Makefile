@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	The Java JDBC implementation for FrontBase
+WWW=		http://www.frontbase.com/
 
 USE_JAVA=	yes
 

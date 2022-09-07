@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	SMS::Send driver for www.nexmo.com (Unicode)
+WWW=		https://metacpan.org/release/SMS-Send-NexmoUnicode
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Nexmo-SMS>=0.04:comms/p5-Nexmo-SMS \

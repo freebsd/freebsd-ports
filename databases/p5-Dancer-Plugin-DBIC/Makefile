@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	DBIx::Class interface for Dancer applications
+WWW=		https://metacpan.org/release/Dancer-Plugin-DBIC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Web-based diary system (like weblog) written in Ruby
+WWW=		https://www.tdiary.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

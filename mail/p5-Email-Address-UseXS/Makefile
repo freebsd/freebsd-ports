@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Ensure that any code uses Email::Address::XS instead of Email::Address
+WWW=		https://metacpan.org/pod/Email::Address::UseXS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Get the short or long hostname
+WWW=		https://metacpan.org/release/Sys-Hostname-FQDN
 
 LICENSE=	ART20
 

@@ -7,6 +7,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/243440794/ \
 
 MAINTAINER=	vishwin@vishwin.info
 COMMENT=	GLib and Gtk Implementation of the DBusMenu protocol
+WWW=		https://launchpad.net/libdbusmenu
 
 LICENSE=	GPLv3 LGPL21 LGPL3
 LICENSE_COMB=	multi

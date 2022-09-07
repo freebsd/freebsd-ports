@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Directory lister which sorts the file list in 2D
+WWW=		https://glyphobet.net/dim/dim.html
 
 LICENSE=	GPLv2+
 

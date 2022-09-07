@@ -10,6 +10,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Noto Fonts family (Simplified Chinese)
+WWW=		https://www.google.com/get/noto/
 
 LICENSE=	OFL11
 LICENSE_FILE=	${DISTDIR}/${DIST_SUBDIR}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Easy way to work around problems in Wine
+WWW=		https://wiki.winehq.org/Winetricks
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

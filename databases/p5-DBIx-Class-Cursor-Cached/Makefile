@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cursor class with built-in caching support
+WWW=		https://metacpan.org/release/DBIx-Class-Cursor-Cached
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -2,6 +2,7 @@ PORTNAME=	finch
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Finch multi-protocol messaging client (Console UI)
+WWW=		https://www.pidgin.im/
 
 LIB_DEPENDS=	libpurple.so:net-im/libpurple \
 		libgnt.so:devel/libgnt

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Advanced search language for Django, with auto-completion
+WWW=		https://github.com/ivelum/djangoql
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

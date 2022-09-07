@@ -9,6 +9,7 @@ DIST_SUBDIR=	alephone
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Released Marathon data files for the Aleph One port
+WWW=		http://source.bungie.org/
 
 # Converted from NO_CDROM
 LICENSE=	alephone-data

@@ -6,6 +6,7 @@ CATEGORIES=		finance
 
 MAINTAINER=		blttll@gmail.com
 COMMENT=		Simple Financial Information eXchange (FIX) protocol console client
+WWW=		https://github.com/blttll/fixc
 
 USES=			go
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://files.froxlor.org/releases/
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	PHP-based ISP Server Management Panel
+WWW=		https://www.froxlor.org/
 
 LICENSE=	GPLv2
 

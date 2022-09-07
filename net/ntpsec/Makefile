@@ -7,6 +7,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Network Time Protocol suite, refactored
+WWW=		https://gitlab.com/NTPsec/ntpsec/
 
 LICENSE=	BSD2CLAUSE
 

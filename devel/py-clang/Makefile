@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Python bindings for libclang
+WWW=		https://github.com/llvm-mirror/clang/tree/master/bindings/python
 
 LICENSE=	NCSA
 

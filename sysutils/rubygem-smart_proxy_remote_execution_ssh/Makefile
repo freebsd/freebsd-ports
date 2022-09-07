@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	SSH remote execution provider for foreman-proxy
+WWW=		https://github.com/theforeman/smart_proxy_remote_execution_ssh
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

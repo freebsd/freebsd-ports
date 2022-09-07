@@ -10,6 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Server part of free Worms-like turn based strategy game
+WWW=		https://www.hedgewars.org
 
 LICENSE=	GPLv2
 

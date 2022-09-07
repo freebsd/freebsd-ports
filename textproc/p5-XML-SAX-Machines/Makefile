@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manage collections of SAX processors
+WWW=		https://metacpan.org/release/XML-SAX-Machines
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-SAX>=0:textproc/p5-XML-SAX \

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Perl binding for Redis database
+WWW=		https://metacpan.org/release/Redis-Fast
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

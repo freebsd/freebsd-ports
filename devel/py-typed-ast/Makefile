@@ -7,6 +7,7 @@ DISTNAME=	typed_ast-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fork of Python ast modules with type comment support
+WWW=		https://github.com/python/typed_ast
 
 LICENSE=	APACHE20 PSFL
 LICENSE_COMB=	multi

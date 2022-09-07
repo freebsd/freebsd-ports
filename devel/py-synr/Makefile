@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Consistent AST for Python
+WWW=		https://github.com/octoml/synr
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

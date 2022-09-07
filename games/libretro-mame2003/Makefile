@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	MAME 0.78 for libretro
+WWW=		https://github.com/libretro/mame2003-libretro
 
 LICENSE=	GPLv2
 

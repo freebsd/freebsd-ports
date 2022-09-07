@@ -7,6 +7,7 @@ DISTNAME=	plasTeX-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	LaTeX Document Processing Framework
+WWW=		https://github.com/plastex/plastex
 
 LICENSE=	MIT
 

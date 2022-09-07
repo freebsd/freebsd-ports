@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Distributed Python deployment and communication
+WWW=		https://codespeak.net/execnet/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

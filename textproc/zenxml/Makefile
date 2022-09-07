@@ -6,6 +6,7 @@ DISTNAME=	zenXml_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple XML processing using C++
+WWW=		http://zenxml.sourceforge.net/
 
 LICENSE=	GPLv3
 

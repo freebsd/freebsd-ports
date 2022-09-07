@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
 COMMENT=	Simple sprintf-like dialect
+WWW=		https://metacpan.org/release/String-Errf
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

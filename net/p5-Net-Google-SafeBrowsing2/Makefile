@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ale@biancalanas.net
 COMMENT=	Perl extension for the Google Safe Browsing v2 API
+WWW=		https://metacpan.org/release/Net-Google-SafeBrowsing2
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=5:www/p5-libwww \

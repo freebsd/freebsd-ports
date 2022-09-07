@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.lichteblau.com/download/ \
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Tool to update LDAP entries with a text editor
+WWW=		http://www.lichteblau.com/ldapvi.html
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny library for bitwise operations
+WWW=		http://luaforge.net/projects/bitlib/
 
 USES=		lua:module
 

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	dns2blackhole1@a1poweruser.com
 COMMENT=	Malware Prevention through Domain Blocking
+WWW=		http://dns2blackhole.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Sans-io socks proxy client/server library/framework
+WWW=		https://pypi.python.org/pypi/siosocks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt

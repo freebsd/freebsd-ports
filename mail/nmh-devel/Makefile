@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${NMH_COMMIT_DATE}-${GIT_TAGNAME}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Cleaned up MH mailer suite
+WWW=		https://savannah.nongnu.org/projects/nmh/
 
 GIT_TAGNAME=	17734c9
 NMH_COMMIT_DATE=	2022.07.04

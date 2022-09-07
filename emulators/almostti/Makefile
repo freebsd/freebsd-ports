@@ -6,6 +6,7 @@ DISTNAME=	AlmostTI13-Unix-DougMelton-051409
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Texas Instruments Z80 series calculator emulator
+WWW=		https://fms.komkon.org/ATI85/
 
 USES=		gmake xorg
 USE_XORG=	x11 xext

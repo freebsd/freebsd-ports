@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.2.7
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View quota and current usage
+WWW=		https://www.squirrelmail.org
 
 USE_SM_COMPAT=	yes
 USE_GENERIC_PKGMESSAGE=	yes

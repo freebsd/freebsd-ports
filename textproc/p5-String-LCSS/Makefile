@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Find The Longest Common Substring of Two Strings
+WWW=		https://metacpan.org/release/String-LCSS
 
 USES=		perl5
 USE_PERL5=	configure

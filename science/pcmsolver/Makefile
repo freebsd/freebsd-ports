@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	API for the Polarizable Continuum Model
+WWW=		https://github.com/PCMSolver/pcmsolver
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

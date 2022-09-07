@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	daniel.tihanyi@tetragir.com
 COMMENT=	Web-console for dispatching commands and scripts to your nodes
+WWW=		https://rundeck.org
 
 LICENSE=	APACHE20
 

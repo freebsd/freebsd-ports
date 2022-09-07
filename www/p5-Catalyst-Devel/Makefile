@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst Development Tools
+WWW=		https://metacpan.org/release/Catalyst-Devel
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

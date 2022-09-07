@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	${${FLAVOR}_COMMENT}
+WWW=		https://github.com/libretro/vice-libretro
 
 LICENSE=	GPLv2
 

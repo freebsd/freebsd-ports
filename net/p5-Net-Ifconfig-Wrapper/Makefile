@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides a unified way to configure network interfaces
+WWW=		https://metacpan.org/release/Net-Ifconfig-Wrapper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

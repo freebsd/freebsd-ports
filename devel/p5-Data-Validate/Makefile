@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Common data validation methods
+WWW=		https://metacpan.org/release/Data-Validate
 
 USES=		perl5
 USE_PERL5=	configure

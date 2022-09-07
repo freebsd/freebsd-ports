@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Tool for deploying Puppet environments and modules
+WWW=		https://github.com/puppetlabs/r10k
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

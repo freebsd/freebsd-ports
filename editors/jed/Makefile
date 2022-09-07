@@ -8,6 +8,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	SLang-based text editor
+WWW=		https://www.jedsoft.org/jed/
 
 LICENSE=	GPLv2
 

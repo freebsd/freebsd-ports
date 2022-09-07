@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Scientific calculator that supports math-like syntax
+WWW=		https://kalker.xyz/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

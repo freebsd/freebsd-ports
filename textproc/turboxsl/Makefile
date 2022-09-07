@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Fast, multithreaded XML+XSLT transformation library
+WWW=		https://github.com/Litres/turboxsl
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Play and record sound through OSS in python programs
+WWW=		https://github.com/spatialaudio/python-sounddevice
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

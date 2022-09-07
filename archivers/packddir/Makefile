@@ -6,6 +6,7 @@ DISTNAME=	upackddir_${PORTVERSION}-1
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Utilities to unpack and create PackdDir archives
+WWW=		https://www.nongnu.org/packddir/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to parse mime-types
+WWW=		https://metacpan.org/release/Parse-MIME
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ DISTNAME=	clipper_ver${PORTVERSION}
 
 MAINTAINER=	sikmir@gmail.com
 COMMENT=	Polygon and line clipping and offsetting library
+WWW=		https://sourceforge.net/projects/polyclipping/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/License.txt

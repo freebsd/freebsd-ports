@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/demos/ #${PORTVERSION}/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL demos distributed with Mesa
+WWW=		https://www.mesa3d.org/
 
 LICENSE=	MIT
 

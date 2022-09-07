@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Display a stack trace on the debug screen
+WWW=		https://metacpan.org/release/Catalyst-Plugin-StackTrace
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

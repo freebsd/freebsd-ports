@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/NanoComp/libctl/releases/download/v${DISTVERSIO
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Control Language Library
+WWW=		https://libctl.readthedocs.io/en/latest/
 
 LICENSE=	GPLv2
 

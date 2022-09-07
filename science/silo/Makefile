@@ -7,6 +7,7 @@ MASTER_SITES=	http://wci.llnl.gov/content/assets/docs/simulation/computer-codes/
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Mesh and field I/O library and scientific database
+WWW=		https://wci.llnl.gov/simulation/computer-codes/silo
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

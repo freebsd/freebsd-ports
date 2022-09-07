@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/audio/streamtranscoder/
 
 MAINTAINER=	mark@mkproductions.org
 COMMENT=	Transcode and stream audio to a SHOUTcast/Icecast/Peercast server
+WWW=		https://BSDforge.com/projects/audio/streamTranscoder/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

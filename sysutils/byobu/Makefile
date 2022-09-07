@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	cws@cybersecu.red
 COMMENT=	Profile and configuration utilities for GNU Screen and/or tmux
+WWW=		https://byobu.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

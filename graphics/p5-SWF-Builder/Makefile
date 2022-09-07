@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create SWF movie
+WWW=		https://metacpan.org/release/SWF-Builder
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-SWF-File>=0:graphics/p5-SWF-File \

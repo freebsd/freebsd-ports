@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	End-to-end encryption library for instant messaging
+WWW=		https://www.linphone.org/technical-corner/lime
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

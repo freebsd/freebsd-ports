@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for DNS service discovery
+WWW=		https://metacpan.org/release/Net-Bonjour
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

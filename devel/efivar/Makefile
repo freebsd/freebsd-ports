@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools and library to manipulate EFI variables
+WWW=		https://github.com/rhboot/efivar
 
 LICENSE=	LGPL21
 

@@ -7,6 +7,7 @@ DISTNAME=	EditorConfig-${DISTVERSION}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	EditorConfig File Locator and Interpreter for Python
+WWW=		https://editorconfig.org/
 
 LICENSE=	BSD2CLAUSE PSFL
 LICENSE_COMB=	multi

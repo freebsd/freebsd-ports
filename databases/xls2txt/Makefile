@@ -5,6 +5,7 @@ CATEGORIES=	databases textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Utilities to convert spreadsheet files to text and csv formats
+WWW=		https://github.com/masklinn/xls2txt
 
 LICENSE=	APACHE20
 

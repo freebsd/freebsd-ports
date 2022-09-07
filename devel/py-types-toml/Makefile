@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typing stubs for toml
+WWW=		https://github.com/python/typeshed/tree/master/stubs/toml
 
 LICENSE=	APACHE20
 

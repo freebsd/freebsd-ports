@@ -8,6 +8,7 @@ DISTNAME=	qr-tools-${DISTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GUI that makes it easy to create and decode QR codes
+WWW=		https://launchpad.net/qr-tools
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE

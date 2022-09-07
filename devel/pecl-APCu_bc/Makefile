@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	me@skylord.ru
 COMMENT=	APCu Backwards Compatibility Module
+WWW=		https://pecl.php.net/package/apcu_bc
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

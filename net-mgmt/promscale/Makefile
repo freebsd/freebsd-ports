@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Timescale analytical platform for Prometheus metrics
+WWW=		https://www.timescale.com/promscale
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

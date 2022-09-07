@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/doug-101/TreeLine/releases/download/v${PORTVERS
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Structured information storage program
+WWW=		https://treeline.bellz.org
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE

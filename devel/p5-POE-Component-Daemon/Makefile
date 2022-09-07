@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Handles all the housework for a daemon in POE
+WWW=		https://metacpan.org/release/POE-Component-Daemon
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

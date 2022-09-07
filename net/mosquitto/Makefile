@@ -5,6 +5,7 @@ MASTER_SITES=	https://mosquitto.org/files/source/
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Open source MQTT broker
+WWW=		https://mosquitto.org/
 
 LICENSE=	EPL
 

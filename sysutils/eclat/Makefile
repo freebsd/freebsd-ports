@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Amazon EC2 command line administration tool
+WWW=		https://puszcza.gnu.org.ua/software/eclat/
 
 LICENSE=	GPLv3
 

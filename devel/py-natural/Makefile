@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert data to their natural (human-readable) format
+WWW=		https://natural.readthedocs.org/en/latest/
 
 LICENSE=	MIT
 

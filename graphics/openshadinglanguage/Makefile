@@ -6,6 +6,7 @@ CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT?=	Advanced shading language for production GI renderers
+WWW=		https://github.com/AcademySoftwareFoundation/OpenShadingLanguage
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

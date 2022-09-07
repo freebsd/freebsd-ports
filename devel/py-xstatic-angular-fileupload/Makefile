@@ -8,6 +8,7 @@ DISTNAME=	XStatic-Angular-FileUpload-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Angular-FileUpload (XStatic packaging standard)
+WWW=		https://opendev.org/x/xstatic-angular-fileupload
 
 LICENSE=	MIT
 

@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	miguel@gocobachi.dev
 COMMENT=	Elementary OS video player
+WWW=		https://github.com/elementary/videos/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

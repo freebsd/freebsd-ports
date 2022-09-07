@@ -5,6 +5,7 @@ MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/sddm-freebsd-black-theme/g
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Simple SDDM theme inspired on the FBSD SLiM theme
+WWW=		https://bitbucket.org/rigoletto-freebsd/sddm-freebsd-black-theme
 
 LICENSE=	CC-BY-SA-4.0
 LICENSE_FILE=	${WRKSRC}/COPYING

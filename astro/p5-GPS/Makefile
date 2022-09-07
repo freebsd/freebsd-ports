@@ -8,6 +8,7 @@ DISTNAME=	perl-GPS-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl interface to GPS receivers
+WWW=		https://metacpan.org/release/perl-GPS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

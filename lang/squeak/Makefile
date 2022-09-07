@@ -14,6 +14,7 @@ EXTRACT_ONLY=	Squeak-${VM_VERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	takeshi.mutoh@gmail.com
 COMMENT=	Full Smalltalk 80 with portability to Unix, Mac, and Windows
+WWW=		https://www.squeak.org/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for adapter to use Log::Dispatch with Log::Any
+WWW=		https://metacpan.org/release/Log-Any-Adapter-Dispatch
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\

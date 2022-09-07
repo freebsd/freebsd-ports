@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	mdBook backend to check links
+WWW=		https://github.com/Michael-F-Bryan/mdbook-linkcheck
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

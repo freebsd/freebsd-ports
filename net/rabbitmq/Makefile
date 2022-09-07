@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-server-${PORTVERSION}
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang implementation of AMQP
+WWW=		https://www.rabbitmq.com/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-RabbitMQ

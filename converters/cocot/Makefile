@@ -6,6 +6,7 @@ CATEGORIES=	converters
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code Converter on TTY
+WWW=		https://github.com/vmi/cocot
 
 LICENSE=	BSD3CLAUSE
 

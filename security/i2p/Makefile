@@ -6,6 +6,7 @@ DISTNAME=	i2psource_${PORTVERSION}
 
 MAINTAINER=	m.muenz@gmail.com
 COMMENT=	Anonymizing network
+WWW=		https://geti2p.net/
 
 LICENSE=	EULA
 LICENSE_NAME=	End User License Agreement

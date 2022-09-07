@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Way of addressing elements within a JSON object
+WWW=		https://github.com/joshbuddy/jsonpath
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

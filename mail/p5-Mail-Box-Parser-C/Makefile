@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parsing folders for Mail::Box with C routines
+WWW=		https://metacpan.org/release/Mail-Box-Parser-C
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

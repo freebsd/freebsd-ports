@@ -4,6 +4,7 @@ CATEGORIES=	comms archivers
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Commodore CBM serial IEC/IEEE-488 bus utilities
+WWW=		http://opencbm.sourceforge.net/
 
 LICENSE=	GPLv2 BSD3CLAUSE
 LICENSE_COMB=	multi

@@ -7,6 +7,7 @@ DISTNAME=	ViennaCL-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linear algebra and solver library using CUDA, OpenCL, and OpenMP
+WWW=		http://viennacl.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

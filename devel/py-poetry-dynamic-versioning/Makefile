@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Plugin for Poetry to enable dynamic versioning based on VCS tags
+WWW=		https://github.com/mtkennerly/poetry-dynamic-versioning
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

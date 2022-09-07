@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.nlnetlabs.nl/downloads/ldns/ \
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Library for programs conforming to DNS RFCs and drafts
+WWW=		https://www.nlnetlabs.nl/projects/ldns/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

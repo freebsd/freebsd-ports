@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.lighttpd.net/multiwatch/releases-1.x/
 
 MAINTAINER=	chris@chrullrich.net
 COMMENT=	Spawn-fcgi helper for forking multiple workers
+WWW=		https://redmine.lighttpd.net/projects/multiwatch/wiki
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTNAME=	CacheControl-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	httplib2 caching for requests
+WWW=		https://github.com/ionrock/cachecontrol
 
 LICENSE=	APACHE20
 

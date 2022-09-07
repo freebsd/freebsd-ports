@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	0
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for handling registration and authentication of U2F devices
+WWW=		https://github.com/castle/ruby-u2f
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

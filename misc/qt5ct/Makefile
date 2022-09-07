@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Qt 5 configuration tool
+WWW=		https://sourceforge.net/projects/qt5ct/
 
 LICENSE=	BSD2CLAUSE
 

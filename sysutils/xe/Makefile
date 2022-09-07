@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple xargs and apply replacement
+WWW=		https://github.com/leahneukirchen/xe/
 
 LICENSE=	CC0-1.0
 

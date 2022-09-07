@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Datadog APM client library
+WWW=		https://github.com/DataDog/dd-trace-py
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

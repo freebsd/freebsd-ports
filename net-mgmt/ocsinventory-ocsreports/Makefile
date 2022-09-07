@@ -6,6 +6,7 @@ DISTNAME=	OCSNG_UNIX_SERVER-${PORTVERSION}
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Webconsole for OCS Inventory NG
+WWW=		http://www.ocsinventory-ng.org/en/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

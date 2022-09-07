@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compiler for Perl 6 Rules
+WWW=		https://metacpan.org/release/Pugs-Compiler-Rule
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Cache-Cache>=1.05:devel/p5-Cache-Cache \

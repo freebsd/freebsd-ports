@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple class builder
+WWW=		https://metacpan.org/release/Object-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

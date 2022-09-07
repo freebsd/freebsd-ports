@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	eric.devolder@gmail.com
 COMMENT=	Tools for managing PKCS11 cryptographic tokens
+WWW=		https://github.com/Mastercard/pkcs11-tools
 
 LICENSE=	APACHE20
 

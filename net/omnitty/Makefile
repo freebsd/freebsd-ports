@@ -6,6 +6,7 @@ MASTER_SITES=	SF/omnitty/omnitty/omnitty-${PORTVERSION}
 
 MAINTAINER=	david@catwhisker.org
 COMMENT=	Curses-based SSH multiplexer
+WWW=		http://omnitty.sourceforge.net/
 
 LIB_DEPENDS=	librote.so:devel/rote
 

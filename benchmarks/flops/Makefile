@@ -4,6 +4,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Floating point benchmark to give your MFLOPS rating
+WWW=		https://performance.netlib.org/performance/html/flops.html
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3

@@ -7,6 +7,7 @@ DISTNAME=	Eiffel${PORTVERSION:S/.//}_gpl_64493-freebsd-${EIFFEL_ARCH}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete Integrated Development Environment for Eiffel
+WWW=		https://www.eiffel.com/products/studio/
 
 USES=		shebangfix
 SHEBANG_FILES=	library/event/example/gen_action_sequences \

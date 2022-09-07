@@ -6,6 +6,7 @@ DISTNAME=	dmz-cursor-theme_${PORTVERSION}
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	DMZ style neutral scalable cursor theme
+WWW=		http://jimmac.musichall.cz/
 
 LICENSE=	CC-BY-SA-3.0
 

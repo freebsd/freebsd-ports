@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	ZFS based replication and failover solution
+WWW=		http://www.bolthole.com/solaris/zrep/
 
 LICENSE=	bolthole
 LICENSE_NAME=	bolthole

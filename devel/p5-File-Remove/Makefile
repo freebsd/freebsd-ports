@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to easily removes files and directories
+WWW=		https://metacpan.org/release/File-Remove
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Settings manager for C Suite
+WWW=		https://gitlab.com/cubocore/coregarage
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-dimensional medians
+WWW=		https://github.com/daleroberts/hdmedians
 
 LICENSE=	APACHE20
 

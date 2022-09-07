@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Flow-control helpers for Mojo::Promise
+WWW=		https://metacpan.org/release/Mojo-IOLoop-Delay
 
 LICENSE=	ART20
 

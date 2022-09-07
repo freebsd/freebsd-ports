@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	UDisks2 service implementation for FreeBSD
+WWW=		https://foss.heptapod.net/bsdutils/bsdisks
 
 LICENSE=	BSD3CLAUSE
 

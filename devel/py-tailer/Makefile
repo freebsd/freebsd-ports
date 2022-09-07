@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple implementation of GNU tail and head
+WWW=		https://github.com/six8/pytailer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

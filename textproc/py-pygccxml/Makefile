@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python package for easy C++ declarations navigation
+WWW=		https://github.com/CastXML/pygccxml
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

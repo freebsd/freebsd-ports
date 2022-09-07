@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for explode MIME messages
+WWW=		https://metacpan.org/release/MIME-Explode
 
 USES=		perl5
 USE_PERL5=	configure

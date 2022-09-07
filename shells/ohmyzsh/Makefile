@@ -4,6 +4,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Community-driven framework for managing your zsh configuration
+WWW=		https://ohmyz.sh/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

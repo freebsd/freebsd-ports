@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Yet Another SWF Parser
+WWW=		https://github.com/facundobatista/yaswfp
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

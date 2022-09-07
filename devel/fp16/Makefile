@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Conversion to/from half-precision floating point formats
+WWW=		https://github.com/Maratyszcza/FP16
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

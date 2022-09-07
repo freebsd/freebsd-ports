@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mose@mose.com
 COMMENT=	Convert html code into markdown
+WWW=		https://github.com/xijo/reverse_markdown
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library to maintain seed data
+WWW=		https://github.com/mbleigh/seed-fu
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

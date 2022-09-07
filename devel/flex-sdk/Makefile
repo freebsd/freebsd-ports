@@ -6,6 +6,7 @@ DISTNAME=	flex_sdk_${PORTVERSION}_mpl
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adobe Flex SDK
+WWW=		http://opensource.adobe.com/wiki/display/flexsdk/Flex+4
 
 CONFLICTS=	flex-sdk3
 USES=		zip

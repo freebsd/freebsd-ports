@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	pave@FreeBSD.org
 COMMENT=	Zstandard extension for PHP
+WWW=		https://github.com/kjdev/php-ext-zstd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

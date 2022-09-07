@@ -7,6 +7,7 @@ DISTNAME=	apache-log4j-${PORTVERSION}-bin
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Fast and flexible logging library for Java
+WWW=		https://logging.apache.org/log4j/2.x/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

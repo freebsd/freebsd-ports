@@ -6,6 +6,7 @@ CATEGORIES=	chinese converters
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Open Chinese Convert library and utilities
+WWW=		https://github.com/BYVoid/OpenCC
 
 LICENSE=	APACHE20
 

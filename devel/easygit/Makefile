@@ -7,6 +7,7 @@ EXTRACT_SUFX=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy wrapper for git
+WWW=		http://www.gnome.org/~newren/eg/
 
 RUN_DEPENDS=	git:devel/git
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.gnu.org.ua/release/xenv/
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Text preprocessor for environment variable expansion
+WWW=		https://gnu.org.ua/software/xenv/
 
 LICENSE=	GPLv3+
 

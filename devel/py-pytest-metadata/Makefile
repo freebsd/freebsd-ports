@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Pytest plugin for test session metadata
+WWW=		https://github.com/pytest-dev/pytest-metadata
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=		biology perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Alignment program for mapping next-generation sequencing reads
+WWW=		https://ccb.jhu.edu/software/hisat2/index.shtml
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

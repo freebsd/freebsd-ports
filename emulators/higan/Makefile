@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}-source
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Nintendo multi-system emulator
+WWW=		http://byuu.org/higan/
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 

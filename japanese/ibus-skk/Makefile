@@ -5,6 +5,7 @@ CATEGORIES=	japanese
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese SKK input engine for IBus
+WWW=		https://github.com/ueno/ibus-skk
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

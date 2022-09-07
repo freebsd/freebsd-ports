@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	d.pryadko@rambler-co.ru
 COMMENT=	Get public suffix of domain name from Public Suffix List
+WWW=		https://pypi.org/project/publicsuffix/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,0.0.,,}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Device driver for PT1/PT2 ISDB-S/T tuner cards
+WWW=		https://d.hatena.ne.jp/bsdaemon/20100429/1272556078
 
 LICENSE=	GPLv3
 

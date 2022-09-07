@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Store files on a filesystem using a simple hash-based storage
+WWW=		https://metacpan.org/release/File-HStore
 
 USES=		perl5
 USE_PERL5=	configure

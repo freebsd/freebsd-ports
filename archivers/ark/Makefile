@@ -5,6 +5,7 @@ CATEGORIES=	archivers kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Archiving tool for KDE
+WWW=		https://utils.kde.org/projects/ark/
 
 LICENSE=	GPLv2+
 

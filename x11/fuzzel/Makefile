@@ -5,6 +5,7 @@ MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Application launcher for wlroots-based Wayland compositors
+WWW=		https://codeberg.org/dnkl/fuzzel
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

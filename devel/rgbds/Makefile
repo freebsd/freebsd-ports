@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/gbdev/rgbds/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Free assembler/linker for the Game Boy and Game Boy Color
+WWW=		https://rgbds.gbdev.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

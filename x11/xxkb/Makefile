@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	alexander.pohoyda@gmx.net
 COMMENT=	XKB keyboard layout indicator and switcher
+WWW=		https://sourceforge.net/projects/xxkb/
 
 LICENSE=	ART10
 

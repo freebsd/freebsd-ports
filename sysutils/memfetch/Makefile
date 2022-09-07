@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Utility to dump memory of a running process
+WWW=		https://lcamtuf.coredump.cx/
 
 LICENSE=	GPLv2
 

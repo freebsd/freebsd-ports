@@ -7,6 +7,7 @@ DISTNAME=	piwik-${DISTVERSION}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Open Source Web Analytics Software Program
+WWW=		https://www.matomo.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

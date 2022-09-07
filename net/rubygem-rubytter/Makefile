@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple Twitter library
+WWW=		https://github.com/jugyo/rubytter
 
 LICENSE=	MIT
 

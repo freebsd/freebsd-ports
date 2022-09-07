@@ -5,6 +5,7 @@ MASTER_SITES=	http://docscripts.glenbarber.us/tags/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	wblock@FreeBSD.org
 COMMENT=	FreeBSD Documentation Project sanity check script
+WWW=		http://www.wonkity.com/~wblock/igor/
 
 LICENSE=	BSD2CLAUSE
 

@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for handling media art
+WWW=		https://www.gnome.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual

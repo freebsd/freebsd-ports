@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Utilities for managing storage devices
+WWW=		https://github.com/Seagate/openSeaChest
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

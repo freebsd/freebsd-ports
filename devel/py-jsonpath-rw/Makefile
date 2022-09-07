@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Implementation of JSONPath for Python
+WWW=		https://github.com/kennknowles/python-jsonpath-rw
 
 LICENSE=	APACHE20
 

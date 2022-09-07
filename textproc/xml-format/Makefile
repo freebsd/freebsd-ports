@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML beautifier
+WWW=		https://acadix.biz/xml-format.php
 
 MAKE_ENV+=	DATADIR=${DATADIR}
 

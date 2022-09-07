@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Implementation of Tor, in Rust
+WWW=		https://gitlab.torproject.org/tpo/core/arti/
 
 LICENSE=	MIT
 

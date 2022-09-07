@@ -4,6 +4,7 @@ CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Utilities for converting YAML and JSON documents back and forth
+WWW=		https://github.com/snoyberg/yaml/
 
 LICENSE=	BSD3CLAUSE
 

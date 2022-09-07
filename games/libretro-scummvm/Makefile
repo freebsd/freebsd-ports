@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	ScummVM with libretro backend
+WWW=		https://github.com/libretro/scummvm
 
 LICENSE=	GPLv2
 

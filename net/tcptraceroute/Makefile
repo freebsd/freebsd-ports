@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute implementation using TCP packets
+WWW=		https://github.com/mct/tcptraceroute
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

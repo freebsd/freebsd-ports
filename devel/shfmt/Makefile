@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Shell script formatter
+WWW=		https://github.com/mvdan/sh
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

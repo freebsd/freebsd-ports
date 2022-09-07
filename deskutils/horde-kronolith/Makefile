@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde web based calendar
+WWW=		https://www.horde.org/apps/kronolith/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

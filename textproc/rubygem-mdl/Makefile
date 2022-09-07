@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Check markdown files and flag style issues
+WWW=		https://github.com/markdownlint/markdownlint
 
 LICENSE=	MIT
 

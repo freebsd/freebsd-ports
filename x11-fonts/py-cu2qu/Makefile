@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Cubic-to-quadratic bezier curve conversion
+WWW=		https://github.com/googlei18n/cu2qu
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

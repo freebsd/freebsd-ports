@@ -6,6 +6,7 @@ DISTNAME=	cryptopp${PORTVERSION:S/.//g}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Free C++ class library of Cryptographic Primitives
+WWW=		https://www.cryptopp.com/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/License.txt

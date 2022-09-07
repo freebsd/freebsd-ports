@@ -7,6 +7,7 @@ DISTNAME=	GabeditSrc${DISTVERSION:C/([0-9])\.([0-9])\.([0-9])-([0-9])/\1\2\3_\4/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface for several chemistry software packages
+WWW=		http://gabedit.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License

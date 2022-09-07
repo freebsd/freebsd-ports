@@ -7,6 +7,7 @@ DISTNAME=	Flask-SocketIO-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Socket.IO integration for Flask applications
+WWW=		https://github.com/miguelgrinberg/Flask-SocketIO
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

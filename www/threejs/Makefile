@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	JavaScript 3D library
+WWW=		https://threejs.org/
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.markboyd.me.uk/games/flyhard/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Game resembling Thrust, but with lots of shooting and puzzles
+WWW=		https://www.markboyd.me.uk/games/flyhard/flyhard.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -8,6 +8,7 @@ DISTNAME=	jesred-1.2pl1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redirector for Squid
+WWW=		http://www.linofee.org/~elkner/webtools/jesred/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jesred ${STAGEDIR}${PREFIX}/libexec

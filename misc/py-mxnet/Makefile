@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Apache MXNet: Ultra-scalable deep learning framework
+WWW=		https://mxnet.apache.org/
 
 LICENSE=	APACHE20
 

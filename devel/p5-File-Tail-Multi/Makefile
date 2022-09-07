@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Stateful tail of multiple files
+WWW=		https://metacpan.org/pod/File::Tail::Multi
 
 LICENSE=	GPLv1 ART10
 LICENSE_COMB=	dual

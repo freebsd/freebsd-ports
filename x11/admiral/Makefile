@@ -7,6 +7,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Merge concurrent outputs for a status bar
+WWW=		https://github.com/sector-f/admiral
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

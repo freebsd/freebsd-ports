@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dynamically create Perl language bindings
+WWW=		https://metacpan.org/release/Glib-Object-Introspection
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

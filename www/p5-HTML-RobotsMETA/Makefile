@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Parse HTML For Robots Exclusion META Markup
+WWW=		https://metacpan.org/release/HTML-RobotsMETA
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Parser>=3:www/p5-HTML-Parser

@@ -6,6 +6,7 @@ CATEGORIES=	lang python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Implementation of the Python language for microcontrollers
+WWW=		https://www.micropython.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

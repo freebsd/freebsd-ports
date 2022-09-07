@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast low-level functions for parsing and formatting GFF3
+WWW=		https://metacpan.org/release/Bio-GFF3
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

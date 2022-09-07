@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Configuration database system for GNOME
+WWW=		https://wiki.gnome.org/Projects/dconf
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

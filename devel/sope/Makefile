@@ -6,6 +6,7 @@ DISTNAME=		SOPE-${PORTVERSION}
 
 MAINTAINER=		acm@FreeBSD.org
 COMMENT=		Extensive set of GNUstep web application frameworks
+WWW=		https://sogo.nu/
 
 LICENSE=		LGPL20
 

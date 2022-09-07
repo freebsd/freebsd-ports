@@ -6,6 +6,7 @@ MASTER_SITES=	https://hikari.acmelabs.space/releases/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Stacking Wayland compositor with tiling capabilities
+WWW=		https://hikari.acmelabs.space
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

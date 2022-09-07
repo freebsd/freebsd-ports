@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	SMTP client supporting TLS and AUTH
+WWW=		https://metacpan.org/release/Net-SMTP-TLS-ButMaintained
 
 RUN_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \

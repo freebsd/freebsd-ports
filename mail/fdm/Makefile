@@ -4,6 +4,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fetches and delivers mail
+WWW=		https://github.com/nicm/fdm
 
 LICENSE=	ISCL
 

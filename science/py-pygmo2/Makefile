@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python platform to perform parallel computations of optimisation tasks
+WWW=		https://esa.github.io/pygmo2/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

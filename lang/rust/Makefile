@@ -15,6 +15,7 @@ DIST_SUBDIR?=	rust
 
 MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Language with a focus on memory safety and concurrency
+WWW=		https://www.rust-lang.org/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	PE analysis toolkit
+WWW=		https://sourceforge.net/projects/pev/
 
 LICENSE=	GPLv3
 

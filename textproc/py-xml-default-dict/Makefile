@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	contato@kanazuchi.com
 COMMENT=	Python scripts to convert xml data into a defaultdict
+WWW=		https://github.com/kanazux/xml-default-dict
 
 LICENSE=	BSD2CLAUSE
 

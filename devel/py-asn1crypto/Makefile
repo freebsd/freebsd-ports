@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	ASN.1 library with a focus on performance and a pythonic API
+WWW=		https://github.com/wbond/asn1crypto
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

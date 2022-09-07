@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	List objects, kitchen sink included
+WWW=		https://metacpan.org/release/List-Objects-WithUtils
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

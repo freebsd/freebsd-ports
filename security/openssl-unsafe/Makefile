@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-unsafe
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Unsafe SSL and crypto library
+WWW=		https://onwebsecurity.com/pages/openssl.html
 
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

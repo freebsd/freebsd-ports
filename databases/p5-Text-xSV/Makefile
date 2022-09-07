@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dliakh@ukr.net
 COMMENT=	Read character separated files
+WWW=		https://metacpan.org/release/Text-xSV
 
 USES=		perl5
 USE_PERL5=	configure

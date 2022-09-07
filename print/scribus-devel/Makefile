@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Comprehensive desktop publishing program (development version)
+WWW=		https://www.scribus.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

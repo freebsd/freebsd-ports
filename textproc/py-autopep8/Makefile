@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Automatically formats Python code to conform to the PEP 8 style guide
+WWW=		https://github.com/hhatto/autopep8
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

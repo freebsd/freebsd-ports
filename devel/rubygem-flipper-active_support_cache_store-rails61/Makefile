@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-rails61
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	ActiveSupport::Cache store adapter for Flipper
+WWW=		https://github.com/jnunemaker/flipper
 
 LICENSE=	MIT
 

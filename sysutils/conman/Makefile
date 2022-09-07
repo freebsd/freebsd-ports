@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Serial Console Management Program
+WWW=		https://dun.github.io/conman/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -9,6 +9,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	t.hiroaki.209@gmail.com
 COMMENT=	Ruby library wrapping the Taglib library
+WWW=		https://www.hakubi.us/ruby-taglib/
 
 LICENSE=	MIT
 

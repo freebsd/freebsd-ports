@@ -6,6 +6,7 @@ DISTNAME=	httpcomponents-client-${DISTVERSION}-bin
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java components implementing an advanced HTTP client
+WWW=		https://hc.apache.org/httpcomponents-client-4.5.x/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

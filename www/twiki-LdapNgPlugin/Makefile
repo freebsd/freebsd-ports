@@ -4,6 +4,7 @@ MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 		LOCAL/skv
 
 COMMENT=	Query and display data from an LDAP directory
+WWW=		https://twiki.org/cgi-bin/view/Plugins/LdapNgPlugin
 
 TWDEP=		LdapContrib>=0
 

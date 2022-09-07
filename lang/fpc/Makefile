@@ -17,6 +17,7 @@ DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Free Pascal compiler with Turbo and Delphi compatibility
+WWW=		https://www.freepascal.org/
 
 RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils
 

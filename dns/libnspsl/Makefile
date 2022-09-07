@@ -6,6 +6,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	NetSurf public suffix list handling
+WWW=		https://www.netsurf-browser.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

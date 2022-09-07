@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	German thesaurus
+WWW=		https://www.openthesaurus.de/
 
 LICENSE=	LGPL21
 

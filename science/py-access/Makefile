@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Calculate spatial accessibility metrics
+WWW=		https://access.readthedocs.io/en/latest/
 
 LICENSE=	BSD3CLAUSE
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Yet another mixi scraper
+WWW=		https://metacpan.org/release/WWW-Mixi-Scraper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

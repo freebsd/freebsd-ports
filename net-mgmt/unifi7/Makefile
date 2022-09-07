@@ -12,6 +12,7 @@ EXTRACT_ONLY=	unifi_sysvinit_all.deb
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	UniFi Controller v7
+WWW=		https://help.ui.com/hc/en-us/categories/200320654-UniFi-Wireless
 
 RUN_DEPENDS=	snappyjava>0:archivers/snappy-java
 

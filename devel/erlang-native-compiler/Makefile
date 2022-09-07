@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Native Code Compiler helper for Erlang
+WWW=		https://github.com/davisp/erlang-native-compiler
 
 LICENSE=	APACHE20
 

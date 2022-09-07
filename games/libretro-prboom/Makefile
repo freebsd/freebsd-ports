@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of prboom to libretro
+WWW=		https://github.com/libretro/libretro-prboom
 
 LICENSE=	GPLv2
 

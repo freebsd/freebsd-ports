@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infocom game interpreter that runs under X11
+WWW=		https://www.eblong.com/zarf/xzip.html
 
 USES=		xorg
 USE_XORG=	x11

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for restricted URI Templates handler
+WWW=		https://metacpan.org/release/URI-Template-Restrict
 
 RUN_DEPENDS=	\
 	p5-Class-Accessor>0:devel/p5-Class-Accessor \

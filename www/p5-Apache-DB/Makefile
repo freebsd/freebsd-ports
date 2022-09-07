@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Debugging and profiling tools for mod_perl
+WWW=		https://metacpan.org/release/Apache-DB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

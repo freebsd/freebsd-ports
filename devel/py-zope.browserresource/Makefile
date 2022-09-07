@@ -9,6 +9,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Browser resources implementation for Zope
+WWW=		https://pypi.org/project/zope.browserresource/
 
 LICENSE=	ZPL21
 

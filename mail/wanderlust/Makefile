@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Mail and news system for Emacs
+WWW=		https://github.com/wanderlust/wanderlust
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ CATEGORIES=	graphics math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Easy and intuitive tool to make 2D hand-drawn animations
+WWW=		https://www.pencil2d.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

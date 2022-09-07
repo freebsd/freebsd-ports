@@ -6,6 +6,7 @@ MASTER_SITES=	SF/caphgame/${PORTNAME}/caphgame-${PORTVERSION}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Physics-based sandbox game
+WWW=		http://caphgame.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/caph/COPYING

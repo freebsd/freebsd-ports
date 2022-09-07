@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Save real-time clock on reboot
+WWW=		https://github.com/ronaldklop/fakertc
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	yaml-${PORTVERSION}
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	YAML 1.1 parser and emitter written in C
+WWW=		https://pyyaml.org/wiki/LibYAML
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License

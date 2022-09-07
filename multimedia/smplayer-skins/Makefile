@@ -7,6 +7,7 @@ MASTER_SITES=	SF/smplayer/SMPlayer-skins/${PORTVERSION}
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Skins for SMPlayer (Skinnable GUI)
+WWW=		http://smplayer.sourceforge.net/
 
 USES=		qt:5 tar:bzip2
 USE_QT=		buildtools_build

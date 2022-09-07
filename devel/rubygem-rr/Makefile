@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Double framework with lots of double techniques and terse syntax
+WWW=		https://rr.github.io/rr/
 
 LICENSE=	MIT
 

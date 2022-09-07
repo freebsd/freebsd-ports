@@ -5,6 +5,7 @@ MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ single-header simple "fuzzy" search library
+WWW=		https://bitbucket.org/j_norberg/fuzzysearchdatabase
 
 LICENSE=	BSD3CLAUSE
 

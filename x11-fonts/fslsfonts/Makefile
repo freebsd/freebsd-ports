@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	List fonts served by the X font server
+WWW=		https://www.x.org/
 
 USES=		xorg xorg-cat:app
 USE_XORG=	x11 libfs

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simpler Term::ProgressBar interface
+WWW=		https://metacpan.org/release/Term-ProgressBar-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

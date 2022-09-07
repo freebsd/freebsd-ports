@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	arcade@b1t.name
 COMMENT=	Framework and utilities to upgrade and maintain a relational database
+WWW=		https://github.com/perseas/Pyrseas
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

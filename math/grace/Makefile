@@ -9,6 +9,7 @@ MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful 2D plotting tool (successor of xmgr)
+WWW=		https://plasma-gate.weizmann.ac.il/Grace/
 
 LICENSE=	GPLv2
 

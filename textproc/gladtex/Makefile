@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Program to replace LaTeX formulas in HTML files with images
+WWW=		http://gladtex.sourceforge.net/
 
 LICENSE=	GPLv2
 

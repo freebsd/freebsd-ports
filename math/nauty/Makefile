@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	moritz@schmi.tt
 COMMENT=	Nauty & Traces are programs for computing graph automorphism
+WWW=		https://pallini.di.uniroma1.it/
 
 LICENSE=	APACHE20
 

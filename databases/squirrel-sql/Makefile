@@ -6,6 +6,7 @@ DISTNAME=	squirrelsql-${PORTVERSION}-optional
 
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	Universal SQL Client
+WWW=		http://www.squirrelsql.org/index.php?page=screenshots
 
 LICENSE=	GPLv2
 

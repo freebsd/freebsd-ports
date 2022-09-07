@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Domain validation methods in Perl
+WWW=		https://metacpan.org/release/Data-Validate-Domain
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

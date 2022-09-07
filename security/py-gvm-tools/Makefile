@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The Greenbone Vulnerability Management Tools
+WWW=		https://github.com/greenbone/gvm-tools
 
 LICENSE=	GPLv3+
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://landley.net/toybox/downloads/
 
 MAINTAINER=	vidar@karlsen.tech
 COMMENT=	All-in-one command line
+WWW=		https://landley.net/toybox/
 
 LICENSE=	0BSD
 LICENSE_NAME=	BSD Zero Clause License

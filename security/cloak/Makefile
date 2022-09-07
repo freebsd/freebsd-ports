@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Command line OTP Authenticator application
+WWW=		https://github.com/evansmurithi/cloak
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

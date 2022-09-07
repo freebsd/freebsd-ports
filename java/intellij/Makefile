@@ -10,6 +10,7 @@ DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	IntelliJ IDEA Community Edition
+WWW=		https://www.jetbrains.com/idea/
 
 LICENSE=	APACHE20
 

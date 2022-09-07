@@ -10,6 +10,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	Simple and powerful analytics tool that supports multiple data stores
+WWW=		https://metabase.com/
 
 LICENSE=	AGPLv3
 

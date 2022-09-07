@@ -4,6 +4,7 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 pty abstraction
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kpty/html/index.html
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	coreaddons i18n \

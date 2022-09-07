@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kostjnspb@yandex.ru
 COMMENT=	The Twofish Algorithm in Pure Perl
+WWW=		https://metacpan.org/release/Crypt-Twofish_PP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/osnapfont/
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Monospaced font based on Artwiz Snap
+WWW=		https://sourceforge.net/projects/osnapfont/
 
 LICENSE=	GPLv2
 

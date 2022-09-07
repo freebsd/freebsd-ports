@@ -6,6 +6,7 @@ DISTNAME=	Xerces-J-bin.${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	XML parser for Java
+WWW=		https://xerces.apache.org/xerces2-j/
 
 LICENSE=	APACHE20
 

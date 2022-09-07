@@ -5,6 +5,7 @@ MASTER_SITES=	http://cdn.bitbucket.org/starling13/tkgate/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Event driven digital circuit simulator
+WWW=		https://tkgate.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

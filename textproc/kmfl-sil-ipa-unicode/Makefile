@@ -11,6 +11,7 @@ EXTRACT_ONLY=	IPAUni_Src12.zip
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	IPA Unicode 5.1 mnemonic keyboard for KMFL IMEngine
+WWW=		http://scripts.sil.org/UniIPAKeyboard #dee994f5
 
 RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 

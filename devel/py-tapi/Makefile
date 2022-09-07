@@ -8,6 +8,7 @@ DISTNAME=	Tapi-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for testing APIs
+WWW=		https://pypi.org/project/Tapi/
 
 LICENSE=	MIT
 

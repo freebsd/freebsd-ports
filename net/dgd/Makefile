@@ -4,6 +4,7 @@ CATEGORIES=	net lang games
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dworkin's Game Driver
+WWW=		http://www.dworkin.nl/dgd/
 
 LICENSE=	GPLv3
 
@@ -53,7 +54,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/mud.dgd \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/mud.dgd.sample
-	@# Install an RC script for DGD
 	${CAT} ${FILESDIR}/dgd.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
 		-e "s:%%DATADIR%%:${DATADIR}:" > \
 			${STAGEDIR}${PREFIX}/etc/rc.d/dgd.sh.sample

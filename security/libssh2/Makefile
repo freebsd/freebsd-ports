@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.libssh2.org/download/ \
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Library implementing the SSH2 protocol
+WWW=		https://www.libssh2.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Pure Python Off-The-Record encryption
+WWW=		https://github.com/afflux/pure-python-otr/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

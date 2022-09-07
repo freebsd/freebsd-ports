@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Time out plugin for Xfce
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-time-out-plugin
 
 LICENSE=	GPLv2
 

@@ -11,6 +11,7 @@ DISTNAME=	ICON-NoiaWarm
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NoiaWarm Icons for Gnome
+WWW=		https://art.gnome.org/
 
 # Converted from RESTRICTED
 LICENSE=	icons

@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Tool for generating lexical analysers in Haskell
+WWW=		https://www.haskell.org/alex/
 
 LICENSE=	BSD3CLAUSE
 

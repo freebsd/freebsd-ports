@@ -5,6 +5,7 @@ MASTER_SITES=	http://erdgeist.org/arts/software/minimunin/
 
 MAINTAINER=	erdgeist@erdgeist.org
 COMMENT=	Tiny munin-node implementation written in pure bourne shell
+WWW=		https://erdgeist.org/arts/software/minimunin/
 
 LICENSE=	Beerware
 LICENSE_NAME=	Beerware License

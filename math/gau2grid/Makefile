@@ -5,6 +5,7 @@ CATEGORIES=	math python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast computation of a gaussian and its derivative on a grid
+WWW=		https://github.com/dgasmith/gau2grid
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

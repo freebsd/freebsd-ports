@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Warns and dies noisily with stack backtraces
+WWW=		https://metacpan.org/release/Carp-Always
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

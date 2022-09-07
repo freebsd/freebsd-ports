@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Symbolic Algebra in Pure Perl
+WWW=		https://metacpan.org/release/Math-Algebra-Symbols
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

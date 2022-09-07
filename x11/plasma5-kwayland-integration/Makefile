@@ -5,6 +5,7 @@ CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Integration plugins for a Wayland-based desktop
+WWW=		https://www.kde.org/plasma-desktop
 
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libwayland-client.so:graphics/wayland \

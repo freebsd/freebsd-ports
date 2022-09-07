@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	04
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validator for OpenAPI 2.0 and 3.0.0 specification
+WWW=		https://github.com/p1c2u/openapi-spec-validator
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

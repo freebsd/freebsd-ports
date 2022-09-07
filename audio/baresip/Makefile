@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.creytiv.com/pub/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Small SIP client
+WWW=		http://www.creytiv.com/baresip.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/COPYING

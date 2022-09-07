@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comic book viewer for comic book archives in cbz, cbr, zip, rar
+WWW=		https://www.renuncln.com/programs/cbviewer/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

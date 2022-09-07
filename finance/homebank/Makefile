@@ -5,6 +5,7 @@ MASTER_SITES=	http://homebank.free.fr/public/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Free, easy, personal accounting for everyone
+WWW=		http://homebank.free.fr/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

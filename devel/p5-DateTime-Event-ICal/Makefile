@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl DateTime extension for computing RFC 2445 recurrences
+WWW=		https://metacpan.org/release/DateTime-Event-ICal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

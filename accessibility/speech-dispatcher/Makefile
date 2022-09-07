@@ -9,6 +9,7 @@ PATCHFILES=	c204a23db76345d0bce2cdf395517c99699a8a4a.diff:-p1
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	Common interface to speech synthesis
+WWW=		https://devel.freebsoft.org/speechd
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

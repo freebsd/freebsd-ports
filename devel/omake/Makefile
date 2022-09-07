@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.camlcity.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible build system
+WWW=		http://omake.metaprl.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

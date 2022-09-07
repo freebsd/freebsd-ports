@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High-performance, dynamic web site authoring system
+WWW=		https://metacpan.org/release/Mason
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

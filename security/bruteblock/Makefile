@@ -6,6 +6,7 @@ MASTER_SITES=	https://samm.kiev.ua/bruteblock/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Software for blocking bruteforce attacks with ipfw
+WWW=		https://samm.kiev.ua/bruteblock/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE

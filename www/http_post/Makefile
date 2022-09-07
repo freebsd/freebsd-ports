@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_14Aug2014
 
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Do a POST operation and dump http-contents to stdout
+WWW=		https://www.acme.com/software/http_post/
 
 WRKSRC=		${WRKDIR}/http_post
 USES=		uidfix

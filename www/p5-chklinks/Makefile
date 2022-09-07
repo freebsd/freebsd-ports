@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Non-threaded Perl link checker
+WWW=		https://metacpan.org/release/IMACAT/chklinks-3.09
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

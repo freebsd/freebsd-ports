@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Handle and manage Python errors with ease
+WWW=		https://github.com/sdispater/woops
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

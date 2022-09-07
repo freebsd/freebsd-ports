@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Document cache for XML::LibXML
+WWW=		https://metacpan.org/release/XML-LibXML-Cache
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

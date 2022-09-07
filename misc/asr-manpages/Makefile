@@ -6,6 +6,7 @@ DISTNAME=	asr.pages
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	alt.sysadmin.recovery man page distribution
+WWW=		http://www.infonet.ee/~sbernard/manpage/
 
 NO_BUILD=	yes
 

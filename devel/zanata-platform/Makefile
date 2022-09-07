@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Web-based translation platform
+WWW=		http://zanata.org/
 
 LICENSE=	GPLv2 LGPL21+
 LICENSE_COMB=	multi

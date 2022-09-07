@@ -6,6 +6,7 @@ MASTER_SITES=	GNU/ccaudio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files
+WWW=		https://www.gnu.org/software/ccaudio/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

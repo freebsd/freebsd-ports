@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Build-tool for Erlang that follows OTP principles
+WWW=		https://github.com/rebar/rebar
 
 LICENSE=	APACHE20
 

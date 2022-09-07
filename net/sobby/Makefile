@@ -6,6 +6,7 @@ MASTER_SITES=	http://releases.0x539.de/sobby/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone obby server
+WWW=		http://gobby.0x539.de
 
 LICENSE=	GPLv2
 

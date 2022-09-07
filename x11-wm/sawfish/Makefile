@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible window manager using Lisp-based scripting language
+WWW=		https://sawfish.tuxfamily.org/
 
 LICENSE=	ART20 GPLv2
 LICENSE_COMB=	multi

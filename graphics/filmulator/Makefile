@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Simplified raw editor with the power of film
+WWW=		https://filmulator.org/
 
 LICENSE=	GPLv3+
 

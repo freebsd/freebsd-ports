@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	ANother Tool for Language Recognition (python3 runtime)
+WWW=		https://www.antlr.org/
 
 LICENSE=	BSD3CLAUSE
 

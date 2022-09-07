@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python wrapper for OpenCL
+WWW=		https://mathema.tician.de/software/pyopencl/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

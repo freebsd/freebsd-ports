@@ -6,6 +6,7 @@ MASTER_SITES=	https://ensmallen.org/files/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Flexible C++ library for efficient mathematical optimization
+WWW=		https://ensmallen.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

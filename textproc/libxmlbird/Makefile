@@ -5,6 +5,7 @@ MASTER_SITES=	https://birdfont.org/xmlbird-releases/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	XML parser for Vala and C programs
+WWW=		https://birdfont.org/xmlbird.php
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LGPLv3.txt

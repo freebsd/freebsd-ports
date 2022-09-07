@@ -11,6 +11,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Iagno
+WWW=		https://wiki.gnome.org/Iagno
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

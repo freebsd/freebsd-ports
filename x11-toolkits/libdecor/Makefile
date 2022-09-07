@@ -10,6 +10,7 @@ PATCHFILES+=	51e9db022fe2.patch:-p1 # https://gitlab.gnome.org/jadahl/libdecor/-
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Client-side decorations library for Wayland client
+WWW=		https://gitlab.gnome.org/jadahl/libdecor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

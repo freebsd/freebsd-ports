@@ -4,6 +4,7 @@ CATEGORIES=	devel linux
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Linux-compatibility LibUSB
+WWW=		https://github.com/hselasky/linux_libusb
 
 LICENSE=	BSD2CLAUSE
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Expand filenames
+WWW=		https://metacpan.org/release/File-Path-Expand
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

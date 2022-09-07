@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	FUSE filesystem to mount HTTP directory listings, with a permanent cache
+WWW=		https://github.com/fangfufu/httpdirfs
 
 LICENSE=	GPL3OPENSSL
 LICENSE_NAME=	GPLv3 or later with execption to link with OpenSSL

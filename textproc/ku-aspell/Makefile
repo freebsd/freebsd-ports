@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Kurdi dictionary
+WWW=		https://sourceforge.net/projects/myspellkurdish/
 
 DICT=	 	ku
 

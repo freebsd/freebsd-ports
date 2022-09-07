@@ -5,6 +5,7 @@ MASTER_SITES=	GNU/osip
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Low layer of SIP implementation
+WWW=		https://www.gnu.org/software/osip/
 
 LICENSE=	LGPL21
 

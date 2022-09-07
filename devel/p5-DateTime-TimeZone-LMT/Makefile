@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Local Mean Time time zone for DateTime
+WWW=		https://metacpan.org/pod/DateTime::TimeZone::LMT
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

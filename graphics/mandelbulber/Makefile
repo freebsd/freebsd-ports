@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D Mandelbrot fractal renderer
+WWW=		https://mandelbulber.com/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

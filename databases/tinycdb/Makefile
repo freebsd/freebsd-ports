@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.corpit.ru/mjt/tinycdb/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Analogous to cdb, but faster
+WWW=		https://www.corpit.ru/mjt/tinycdb.html
 
 LICENSE=	PD
 

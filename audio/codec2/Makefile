@@ -6,6 +6,7 @@ CATEGORIES=	audio hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Low bit rate codec
+WWW=		https://www.rowetel.com/?page_id=452
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

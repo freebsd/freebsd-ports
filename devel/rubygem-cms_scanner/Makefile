@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	rihaz.jerrin@gmail.com
 COMMENT=	Framework to provide an easy way to implement CMS Scanners
+WWW=		https://github.com/wpscanteam/CMSScanner
 
 LICENSE=	MIT
 

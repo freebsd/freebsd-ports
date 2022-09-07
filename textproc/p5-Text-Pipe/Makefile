@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for common text filter API
+WWW=		https://metacpan.org/release/Text-Pipe
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

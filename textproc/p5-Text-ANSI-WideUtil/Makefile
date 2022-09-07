@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Routines for text containing ANSI color codes (wide-character functions only)
+WWW=		https://metacpan.org/release/Text-ANSI-WideUtil
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

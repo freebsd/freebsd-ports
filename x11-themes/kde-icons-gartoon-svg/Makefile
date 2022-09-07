@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-svg
 DISTNAME=	ICONS-Gartoon-SVG-v${PORTVERSION}
 
 COMMENT=	KDE Gartoon SVG iconset
+WWW=		http://www.kde-look.org/content/show.php?content=17362
 
 USES=		tar:bzip2
 

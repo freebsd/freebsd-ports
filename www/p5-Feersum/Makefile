@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PSGI engine for Perl based on EV/libev
+WWW=		https://metacpan.org/release/Feersum
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

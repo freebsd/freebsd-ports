@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Collection of utilities which submit events to Riemann
+WWW=		https://github.com/riemann/riemann-tools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

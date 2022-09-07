@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Sumneko Lua development server and LSP client
+WWW=		https://github.com/sumneko/lua-language-server
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

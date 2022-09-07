@@ -4,6 +4,7 @@ CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde API for encoding and decoding WBXML documents
+WWW=		https://pear.horde.org
 
 USES=	horde cpe
 USE_HORDE_RUN=	Horde_Util

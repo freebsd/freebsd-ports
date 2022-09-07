@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manage I/O on many file handles
+WWW=		https://metacpan.org/release/IO-Multiplex
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

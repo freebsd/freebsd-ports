@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python library for parsing and creating TOML
+WWW=		https://github.com/uiri/toml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

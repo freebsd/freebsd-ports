@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Run Kubernetes locally
+WWW=		https://github.com/kubernetes/minikube
 
 LICENSE=	APACHE20
 

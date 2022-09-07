@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implements an FTP client POE Component
+WWW=		https://metacpan.org/release/POE-Component-Client-FTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

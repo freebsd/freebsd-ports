@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Easy access to SQLite databases using objects
+WWW=		https://metacpan.org/release/DBIx-SQLite-Simple
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Gomor>=0:devel/p5-Class-Gomor \

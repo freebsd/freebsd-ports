@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High performance real-time physics library
+WWW=		http://www.tokamakphysics.com/
 
 LICENSE=	BSD3CLAUSE ZLIB
 LICENSE_COMB=	dual

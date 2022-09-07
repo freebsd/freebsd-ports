@@ -6,6 +6,7 @@ CATEGORIES=		net www benchmarks
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Next generation OONI Probe CLI
+WWW=		https://ooni.org/about/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

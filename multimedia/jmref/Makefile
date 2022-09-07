@@ -7,6 +7,7 @@ DISTNAME=	jm${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	JM Reference Software
+WWW=		https://iphome.hhi.de/suehring/tml
 
 LICENSE=	ISO_IEC ITU
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Form builder using Twitter Bootstrap 3+
+WWW=		https://github.com/bootstrap-ruby/rails-bootstrap-forms
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

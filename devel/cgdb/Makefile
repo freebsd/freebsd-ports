@@ -5,6 +5,7 @@ MASTER_SITES=	http://cgdb.me/files/
 
 MAINTAINER=	serio.jeffrey@gmail.com
 COMMENT=	Curses-based interface to the GNU Debugger
+WWW=		https://cgdb.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

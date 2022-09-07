@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Python Programming Environment & Heap analysis toolset
+WWW=		https://github.com/zhuyifei1999/guppy3/
 
 LICENSE=	MIT
 

@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	C library for dynamically generating PDF
+WWW=		http://www.pdflib.de/
 
 LICENSE=	PDFlib-Lite
 LICENSE_NAME=	PDFlib-Lite

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Suit of XML tools with Antlers
+WWW=		https://metacpan.org/release/XML-Toolkit
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Multi-View Stereo reconstruction library
+WWW=		https://github.com/cdcseacave/openMVS
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

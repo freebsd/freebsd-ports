@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Handle long size data using temporary file
+WWW=		https://metacpan.org/release/Data-TemporaryBag
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

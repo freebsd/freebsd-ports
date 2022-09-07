@@ -7,6 +7,7 @@ DISTNAME=	radius-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU RADIUS server
+WWW=		https://www.gnu.org/software/radius/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

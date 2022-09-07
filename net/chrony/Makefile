@@ -7,6 +7,7 @@ MASTER_SITES=	https://download.tuxfamily.org/chrony/ \
 # overridden in net/chrony-lite
 MAINTAINER?=	mandree@FreeBSD.org
 COMMENT?=	System clock synchronization client and server
+WWW=		https://chrony.tuxfamily.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

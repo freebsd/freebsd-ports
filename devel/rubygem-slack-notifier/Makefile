@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby wrapper for posting to slack webhooks
+WWW=		https://github.com/stevenosloan/slack-notifier
 
 LICENSE=	MIT
 

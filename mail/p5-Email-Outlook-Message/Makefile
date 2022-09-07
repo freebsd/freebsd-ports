@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read e-mail messages stored as .msg files
+WWW=		https://metacpan.org/release/Email-Outlook-Message
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

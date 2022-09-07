@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Play solitaire in your terminal
+WWW=		https://github.com/mpereira/tty-solitaire
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

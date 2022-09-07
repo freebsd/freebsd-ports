@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utilities to replace common UNIX commands
+WWW=		https://github.com/ruby/un
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

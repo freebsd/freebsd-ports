@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Deferred for Delayer
+WWW=		https://rubygems.org/gems/delayer-deferred
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

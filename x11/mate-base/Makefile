@@ -4,6 +4,7 @@ CATEGORIES=	x11 mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	"meta-port" for the MATE base integrated X11 desktop
+WWW=		https://mate-desktop.org/
 
 USES=		mate metaport
 

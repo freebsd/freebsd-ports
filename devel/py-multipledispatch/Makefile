@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Relatively sane approach to multiple dispatch in Python
+WWW=		https://pypi.org/project/multipledispatch/
 
 LICENSE=	BSD3CLAUSE
 

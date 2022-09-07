@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-irc-server
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern IRC server (daemon/ircd) written in Go
+WWW=		https://ergo.chat/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

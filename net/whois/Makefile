@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	coco@executive-computing.de
 COMMENT=	Marco d'Itri whois client
+WWW=		https://github.com/rfc1036/whois
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

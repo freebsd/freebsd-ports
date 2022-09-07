@@ -4,6 +4,7 @@ PKGNAMESUFFIX=	-gtk3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gtk+ 3 library to the Avahi mDNS system
+WWW=		https://www.avahi.org/
 
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libgdbm.so:databases/gdbm \

@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Playstation (PSX) emulator
+WWW=		http://pcsxr.codeplex.com
 
 LICENSE=	GPLv3+
 

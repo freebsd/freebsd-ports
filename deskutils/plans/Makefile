@@ -21,6 +21,7 @@ EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Good Web Calendar
+WWW=		http://www.planscalendar.com/
 
 LICENSE=	GPLv2
 

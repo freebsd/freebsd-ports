@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-ispell
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Ispell compatibility script for aspell
+WWW=		http://aspell.net/
 
 LICENSE=	LGPL21
 

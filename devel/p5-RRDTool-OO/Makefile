@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Object-oriented interface to RRDTool
+WWW=		https://metacpan.org/release/RRDTool-OO
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

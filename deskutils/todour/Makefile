@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	mizhka@FreeBSD.org
 COMMENT=	Qt-based UI for editing of todo.txt files
+WWW=		https://nerdur.com/todour-pl/
 
 LICENSE=	GPLv2
 

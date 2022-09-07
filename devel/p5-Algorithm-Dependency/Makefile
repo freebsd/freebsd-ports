@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base class for implementing various dependency trees
+WWW=		https://metacpan.org/release/Algorithm-Dependency
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

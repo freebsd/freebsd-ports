@@ -6,6 +6,7 @@ MASTER_SITES=	http://graveman.tuxfamily.org/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another GTK2 frontend for cdrecord, mkisofs, readcd, and sox
+WWW=		https://www.nongnu.org/graveman/
 
 LIB_DEPENDS=	libmng.so:graphics/libmng
 BUILD_DEPENDS=	cdrecord:sysutils/cdrtools

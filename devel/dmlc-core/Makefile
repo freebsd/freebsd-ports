@@ -6,6 +6,7 @@ CATEGORIES=	devel # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Common library for scalable and portable distributed machine learning
+WWW=		https://github.com/dmlc/dmlc-core
 
 LICENSE=	APACHE20
 

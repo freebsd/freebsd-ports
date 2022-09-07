@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/michaelrsweet/epm/releases/download/v${PORTVERS
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Free UNIX software/file packaging program
+WWW=		https://www.msweet.org/epm/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	cheffo@freebsd-bg.org
 COMMENT=	Collect logs locally in preparation for processing elsewhere!
+WWW=		https://github.com/elasticsearch/logstash-forwarder
 
 LICENSE=	APACHE20
 

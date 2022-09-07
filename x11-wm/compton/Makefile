@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	femc7488@gmail.com
 COMMENT=	Feature-rich compositing window manager for X11
+WWW=		https://github.com/chjj/compton
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

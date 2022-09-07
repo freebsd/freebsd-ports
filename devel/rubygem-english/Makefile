@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reference global variables with less cryptic names
+WWW=		https://github.com/ruby/English
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

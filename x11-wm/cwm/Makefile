@@ -5,6 +5,7 @@ MASTER_SITES=	https://leahneukirchen.org/releases/
 
 MAINTAINER=	me@emilengler.com
 COMMENT=	Minimalistic window manager for X11 based on evilwm
+WWW=		https://github.com/leahneukirchen/cwm
 
 LICENSE=	ISCL
 

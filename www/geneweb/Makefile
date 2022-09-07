@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	alex@stangl.us
 COMMENT=	Advanced genealogy software
+WWW=		https://opensource.geneanet.org/projects/geneweb/
 
 LICENSE=	GPLv2
 

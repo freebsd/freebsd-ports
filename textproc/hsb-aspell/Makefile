@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Upper Sorbian dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	hsb
 

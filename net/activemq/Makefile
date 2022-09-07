@@ -7,6 +7,7 @@ EXTRACT_SUFX=	-bin.tar.gz
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Messaging and Integration Patterns provider
+WWW=		https://activemq.apache.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

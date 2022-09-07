@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to the GMP library rational (mpq) functions
+WWW=		https://metacpan.org/release/Math-GMPq
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

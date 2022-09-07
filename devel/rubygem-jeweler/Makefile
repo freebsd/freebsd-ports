@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Simple and opinionated helper for creating Rubygem projects
+WWW=		https://github.com/technicalpickles/jeweler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Unofficial Django swappable models API
+WWW=		https://github.com/openwisp/django-swappable-models
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

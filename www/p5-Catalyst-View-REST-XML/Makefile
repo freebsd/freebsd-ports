@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Catalyst XML View Class
+WWW=		https://metacpan.org/release/Catalyst-View-REST-XML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	https://git.kevans.dev/kevans/${PORTNAME}/archive/${PORTVERSION}.t
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Utility to quickly create transient single-command jails
+WWW=		https://git.kevans.dev/kevans/quickjail
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Source code spelling checker
+WWW=		https://github.com/codespell-project/codespell
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

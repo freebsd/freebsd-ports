@@ -6,6 +6,7 @@ CATEGORIES=	java lang
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Open source API for expressing data parallel workflows in Java
+WWW=		https://github.com/aparapi/aparapi
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

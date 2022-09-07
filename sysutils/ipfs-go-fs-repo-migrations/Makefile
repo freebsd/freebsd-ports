@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/ipfs/fs-repo-migrations/archive/${DISTVERSIONFU
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Migrations for the filesystem repository of ipfs clients
+WWW=		https://github.com/ipfs/fs-repo-migrations
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

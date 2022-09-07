@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}rel.${PORTVERSION:E}
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Non-graphical, text-based World-Wide Web client
+WWW=		https://lynx.invisible-island.net/
 
 LICENSE=	GPLv2
 

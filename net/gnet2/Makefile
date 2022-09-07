@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple network library built upon Glib-2
+WWW=		https://www.gnetlibrary.org/
 
 USES=		gnome libtool pathfix pkgconfig
 USE_GNOME=	glib20

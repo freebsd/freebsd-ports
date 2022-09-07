@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Render markdown on the CLI, with pizzazz!
+WWW=		https://github.com/charmbracelet/glow
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

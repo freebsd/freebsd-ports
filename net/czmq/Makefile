@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/zeromq/${PORTNAME}/releases/download/v${PORTVER
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High-level C Binding for ZeroMQ
+WWW=		http://czmq.zeromq.org
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

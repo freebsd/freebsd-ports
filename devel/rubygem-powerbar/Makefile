@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Progressbar library for Ruby
+WWW=		https://github.com/busyloop/powerbar
 
 LICENSE=	MIT
 

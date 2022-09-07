@@ -7,6 +7,7 @@ DISTNAME=	PyScaffold-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Template tool for putting up the scaffold of a Python project
+WWW=		https://github.com/pyscaffold/pyscaffold
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

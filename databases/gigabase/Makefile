@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-Relational Database Management System
+WWW=		http://www.garret.ru/gigabase.html
 
 LICENSE=	MIT
 

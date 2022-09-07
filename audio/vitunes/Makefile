@@ -6,6 +6,7 @@ MASTER_SITES=	http://vitunes.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based media player with vim-like keybinds
+WWW=		http://vitunes.org/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

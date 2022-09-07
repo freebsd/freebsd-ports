@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fly a little plane around and shoot things and drop bombs
+WWW=		https://github.com/moggers87/apricots
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	trix@basement.net
 COMMENT=	Log file analysis program
+WWW=		https://www.logwatch.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

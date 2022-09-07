@@ -7,6 +7,7 @@ MASTER_SITES=	https://dbmx.net/kyototycoon/pkg/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Handy cache/storage server
+WWW=		https://dbmx.net/kyototycoon/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

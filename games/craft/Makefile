@@ -7,6 +7,7 @@ CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Simple Minecraft clone written in C using modern OpenGL
+WWW=		https://www.michaelfogleman.com/craft/
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

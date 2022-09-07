@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tu}-${DISTVERSION}-Source
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Program for atomic & molecular relativistic all-electron calculations
+WWW=		http://diracprogram.org/doku.php
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

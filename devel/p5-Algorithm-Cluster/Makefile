@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to C clustering library
+WWW=		https://metacpan.org/release/Algorithm-Cluster
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

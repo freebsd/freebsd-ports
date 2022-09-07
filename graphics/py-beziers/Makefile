@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bezier curve manipulation library
+WWW=		https://github.com/simoncozens/beziers.py
 
 LICENSE=	MIT
 

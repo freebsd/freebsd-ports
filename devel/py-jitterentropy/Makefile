@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Use libjitterentropy to get random bytes
+WWW=		https://github.com/swills/py-jitterentropy
 
 LIB_DEPENDS=	libjitterentropy.so:devel/libjitterentropy
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rtd24@columbia.edu
 COMMENT=	Turns CSS blocks into style attributes
+WWW=		https://github.com/peterbe/premailer
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Timer plugin for nosetests
+WWW=		https://github.com/mahmoudimus/nose-timer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate probabilities and quantiles
+WWW=		https://metacpan.org/release/Math-CDF
 
 USES=		perl5
 USE_PERL5=	configure

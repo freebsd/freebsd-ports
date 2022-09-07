@@ -7,6 +7,7 @@ DISTNAME=	PyPDF3-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Python PDF toolkit
+WWW=		https://github.com/sfneal/PyPDF3
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

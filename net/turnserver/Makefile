@@ -8,6 +8,7 @@ DISTFILES=	turn.extra.docs-2.0.0.1.tar.gz:xdocs
 
 MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
+WWW=		https://code.google.com/p/coturn/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

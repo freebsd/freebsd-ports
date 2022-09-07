@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command line interface for working with github gists
+WWW=		https://pypi.org/project/python-gist/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

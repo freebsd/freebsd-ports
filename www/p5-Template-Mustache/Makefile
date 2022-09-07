@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kurt.lidl@cello.com
 COMMENT=	Perl version of the fabulous Mustache template language
+WWW=		https://metacpan.org/release/Template-Mustache
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-YAML-Syck>=1.15:textproc/p5-YAML-Syck

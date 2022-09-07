@@ -6,6 +6,7 @@ MASTER_SITES=	GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking, stress testing, and load generation tool for Databases
+WWW=		https://jeremy.zawodny.com/mysql/super-smack/
 
 LICENSE=	GPLv2+
 

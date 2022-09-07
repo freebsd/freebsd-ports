@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.digitalforensicssolutions.com/Scalpel/ \
 
 MAINTAINER=	nukama+maintainer@gmail.com
 COMMENT=	Frugal, high performance file carver
+WWW=		http://www.digitalforensicssolutions.com/Scalpel/
 
 LICENSE=	GPLv2
 

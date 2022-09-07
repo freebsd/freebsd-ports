@@ -7,6 +7,7 @@ DISTNAME=	Hypercorn-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ASGI Server based on Hyper libraries
+WWW=		https://github.com/pgjones/hypercorn
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

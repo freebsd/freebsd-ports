@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multi-machine audio network performance over the Internet
+WWW=		https://github.com/jacktrip/jacktrip
 
 LICENSE=	MIT
 

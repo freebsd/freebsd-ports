@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Transform cloud infrastructure into queryable SQL tables
+WWW=		https://cloudquery.io/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

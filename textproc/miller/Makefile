@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	jungleboogie0+mlr@gmail.com
 COMMENT=	Sed/awk/cut/join/sort for name-indexed data such as CSV, TSV and JSON
+WWW=		https://johnkerl.org/miller/doc/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

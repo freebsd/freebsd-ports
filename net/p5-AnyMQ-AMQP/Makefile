@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	AMQP binding for AnyMQ
+WWW=		https://metacpan.org/release/AnyMQ-AMQP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

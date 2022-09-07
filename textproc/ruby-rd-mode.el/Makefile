@@ -8,6 +8,7 @@ DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp module for editing RD files
+WWW=		https://github.com/uwabami/rdtool
 
 BUILD_DEPENDS=	${NONEXISTENT}:textproc/ruby-rdtool:patch
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module::Build class for building XS modules
+WWW=		https://metacpan.org/release/Module-Build-XSUtil
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

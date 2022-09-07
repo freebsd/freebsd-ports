@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	German hunspell dictionaries
+WWW=		https://www.j3e.de/ispell/igerman98/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

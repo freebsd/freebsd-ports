@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Cross platform C99 library to get cpu features at runtime
+WWW=		https://github.com/google/cpu_features
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

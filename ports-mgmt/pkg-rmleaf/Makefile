@@ -6,6 +6,7 @@ DISTFILES=	# none
 
 MAINTAINER=	shen.elf@gmail.com
 COMMENT=	Remove leaf packages
+WWW=		https://github.com/bsdelf/pkg-rmleaf
 
 LICENSE=	BSD2CLAUSE
 

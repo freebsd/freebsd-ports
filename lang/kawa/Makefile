@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Java-based Scheme implementation
+WWW=		https://www.gnu.org/software/kawa/
 
 LICENSE=	MIT
 

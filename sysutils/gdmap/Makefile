@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical disk map Utility
+WWW=		http://gdmap.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	6
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Configuration management framework written in Ruby
+WWW=		https://puppet.com/docs/puppet/latest/puppet_index.html
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

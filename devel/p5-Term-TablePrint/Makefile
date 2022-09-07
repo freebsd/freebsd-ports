@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Print a table to the terminal and browse it interactively
+WWW=		https://metacpan.org/release/Term-TablePrint
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

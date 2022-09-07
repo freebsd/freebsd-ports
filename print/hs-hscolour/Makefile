@@ -6,6 +6,7 @@ CATEGORIES=	print haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Colourise Haskell code
+WWW=		http://code.haskell.org/~malcolm/hscolour/
 
 LICENSE=	GPLv2
 

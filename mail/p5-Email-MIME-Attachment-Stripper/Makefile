@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Strip the attachments from a mail
+WWW=		https://metacpan.org/release/Email-MIME-Attachment-Stripper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

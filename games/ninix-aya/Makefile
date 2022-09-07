@@ -5,6 +5,7 @@ MASTER_SITES=	OSDN/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop mascot program compatible with "Ukagaka"
+WWW=		http://ninix-aya.sourceforge.jp/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

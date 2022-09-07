@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	henrik@hodne.io
 COMMENT=	Sane database change management
+WWW=		https://metacpan.org/release/App-Sqitch
 
 LICENSE=	MIT
 

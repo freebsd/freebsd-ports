@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Run a subprocess in a pseudo terminal
+WWW=		https://github.com/pexpect/ptyprocess
 
 LICENSE=	ISCL
 

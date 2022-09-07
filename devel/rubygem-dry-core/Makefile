@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Toolset of small support modules used throughout the dry-rb ecosystem
+WWW=		https://github.com/dry-rb/dry-core
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

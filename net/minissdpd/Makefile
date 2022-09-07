@@ -6,6 +6,7 @@ MASTER_SITES=	http://miniupnp.free.fr/files/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	UPnP IGD discovery speed enhancer
+WWW=		http://miniupnp.free.fr/minissdpd.html
 
 LICENSE=	BSD3CLAUSE
 

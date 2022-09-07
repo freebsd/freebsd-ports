@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Tokeniser, char tables, & conversion routines for the Wolfram Language
+WWW=		https://mathics.org/
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Parse RSA keys
+WWW=		https://metacpan.org/release/Crypt-RSA-Parse
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source library for hafnian calculation
+WWW=		https://github.com/XanaduAI/thewalrus
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

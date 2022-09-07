@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-$
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
+WWW=		https://www.syslog-ng.org/
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi

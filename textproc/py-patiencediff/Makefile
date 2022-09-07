@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Implementation of the "Patience Diff" algorithm
+WWW=		https://pypi.org/project/patiencediff/
 
 LICENSE=	GPLv2+
 

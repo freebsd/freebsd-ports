@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Base class with serialization helpers for user-defined Python objects
+WWW=		https://pypi.org/project/serializable/
 
 LICENSE=	APACHE20
 

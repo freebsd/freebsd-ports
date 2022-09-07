@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Django ModelAdmin mixin
+WWW=		https://github.com/modlinltd/django-advanced-filters
 
 LICENSE=	MIT
 

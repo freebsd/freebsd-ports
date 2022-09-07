@@ -7,6 +7,7 @@ DISTNAME=	ncat-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network aware cat
+WWW=		https://www.kyne.com.au/~mark/software/ncat.php
 
 GNU_CONFIGURE=	yes
 

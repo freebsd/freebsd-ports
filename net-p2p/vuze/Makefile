@@ -7,6 +7,7 @@ DISTNAME=	Vuze_${PORTVERSION:S/.//g}_source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent client written in Java
+WWW=		https://www.vuze.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL.txt

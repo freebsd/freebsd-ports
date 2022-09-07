@@ -5,6 +5,7 @@ CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 Oxygen style
+WWW=		https://www.kde.org/plasma-desktop
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

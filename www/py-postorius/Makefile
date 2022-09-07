@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Django app provoding web user interface to access GNU Mailman
+WWW=		https://pypi.org/project/postorius/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

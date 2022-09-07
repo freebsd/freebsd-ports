@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for UPnP devices
+WWW=		https://wiki.gnome.org/Projects/GUPnP
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

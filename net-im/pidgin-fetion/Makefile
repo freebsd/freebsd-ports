@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	pidgin-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fetion protocol plugin for libpurple
+WWW=		https://sourceforge.net/projects/fetion/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

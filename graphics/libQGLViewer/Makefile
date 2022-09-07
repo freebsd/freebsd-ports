@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.libqglviewer.com/src/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library based on Qt5 that eases the creation of OpenGL 3D viewers
+WWW=		http://libqglviewer.com/index.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE

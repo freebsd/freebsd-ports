@@ -6,6 +6,7 @@ CATEGORIES=	devel sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Introduces git to GitHub
+WWW=		https://hub.github.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

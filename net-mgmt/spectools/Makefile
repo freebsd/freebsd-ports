@@ -8,6 +8,7 @@ DISTNAME=	spectools-2011-08-R1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for the Wi-Spy spectrum analyzers from MetaGeek LLC
+WWW=		https://www.kismetwireless.net/spectools/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL

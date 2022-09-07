@@ -6,6 +6,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language for fast and portable data-parallel computation
+WWW=		https://halide-lang.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

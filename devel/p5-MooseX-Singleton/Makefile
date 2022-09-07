@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Turn Moose class into a singleton
+WWW=		https://metacpan.org/release/MooseX-Singleton
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Method/Function Signatures w/Type::Tiny Constraints
+WWW=		https://metacpan.org/release/Type-Tiny-Signatures
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

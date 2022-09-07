@@ -9,6 +9,7 @@ DISTNAME=	Cheetah3-${DISTVERSION}
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
 COMMENT=	HTML template engine for Python
+WWW=		https://cheetahtemplate.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

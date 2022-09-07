@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert HTML to WikkaWiki markup
+WWW=		https://metacpan.org/release/HTML-WikiConverter-WikkaWiki
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

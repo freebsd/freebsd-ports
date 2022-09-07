@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	GNU Project Debugger
+WWW=		https://www.gnu.org/software/gdb/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING3

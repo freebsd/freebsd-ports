@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Build script creation tool
+WWW=		https://premake.github.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

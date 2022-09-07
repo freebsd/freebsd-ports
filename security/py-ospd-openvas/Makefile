@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Scanner wrapper for OSP (Open Scanner Protocol)
+WWW=		https://github.com/greenbone/ospd-openvas
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

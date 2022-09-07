@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.newlisp.org/downloads/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	LISP like scripting language
+WWW=		http://www.newlisp.org/
 
 LICENSE=	GPLv3
 

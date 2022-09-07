@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.kismetwireless.net/code/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
+WWW=		https://www.kismetwireless.net/
 
 LICENSE=	GPLv2
 

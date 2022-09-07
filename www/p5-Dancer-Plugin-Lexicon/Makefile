@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Flexible I18N using Locale::Maketext::Lexicon for Dancer apps
+WWW=		https://metacpan.org/release/Dancer-Plugin-Lexicon
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

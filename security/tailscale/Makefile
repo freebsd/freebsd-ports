@@ -5,6 +5,7 @@ CATEGORIES=	security net-vpn
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Mesh VPN that makes it easy to connect your devices
+WWW=		https://tailscale.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

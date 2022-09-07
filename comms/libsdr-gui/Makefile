@@ -6,6 +6,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	jeff@baitis.net
 COMMENT=	GUI functions (e.g. waterfall) for libsdr library
+WWW=		https://github.com/hmatuschek/libsdr-gui
 
 LICENSE=	GPLv2
 

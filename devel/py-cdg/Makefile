@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jonathan@FreeBSD.org
 COMMENT=	Library for working with call- and data-flow graphs
+WWW=		https://github.com/musec/py-cdg
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

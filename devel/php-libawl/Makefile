@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Andrew.s Web Libraries - PHP Utility Libraries
+WWW=		https://gitlab.com/davical-project/awl
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

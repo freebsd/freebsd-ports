@@ -4,6 +4,7 @@ CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LibRaw interface for KDE
+WWW=		https://www.digikam.org/
 
 LICENSE=	GPLv2+
 

@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Build system library, like Make, but more accurate dependencies
+WWW=		https://shakebuild.com/
 
 LICENSE=	BSD3CLAUSE
 

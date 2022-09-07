@@ -7,6 +7,7 @@ DISTNAME=	arab${PORTVERSION:S/.//}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	TeX/LaTeX package to generate Arabic writing
+WWW=		http://www2.informatik.uni-stuttgart.de/ivi/bs/research/arab_e.htm
 
 LICENSE=	LPPL10
 

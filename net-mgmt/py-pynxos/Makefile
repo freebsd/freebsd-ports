@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Python client for managing Cisco NX-OS devices through NX-API
+WWW=		https://github.com/networktocode/pynxos
 
 LICENSE=	APACHE20
 

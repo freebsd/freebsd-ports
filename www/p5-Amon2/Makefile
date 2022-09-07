@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for lightweight web application framework
+WWW=		https://metacpan.org/release/Amon2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

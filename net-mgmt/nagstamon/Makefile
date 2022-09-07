@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt python
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Nagios status monitor for your desktop
+WWW=		https://nagstamon.ifw-dresden.de/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

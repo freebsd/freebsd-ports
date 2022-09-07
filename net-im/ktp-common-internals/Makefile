@@ -5,6 +5,7 @@ CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Telepathy internal library
+WWW=		https://community.kde.org/KTp
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libsignon-qt5.so:sysutils/signon-qt5 \

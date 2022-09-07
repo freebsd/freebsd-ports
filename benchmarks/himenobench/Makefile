@@ -12,6 +12,7 @@ DIST_SUBDIR=	himeno
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for measuring performance of floating point operations
+WWW=		http://accc.riken.jp/en/supercom/himenobmt/
 
 LICENSE=	LGPL20 # (or later)
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collects and extracts URLs from given text
+WWW=		https://github.com/lipoja/URLExtract
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

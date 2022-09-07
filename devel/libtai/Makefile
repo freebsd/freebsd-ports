@@ -7,6 +7,7 @@ MASTER_SITES=	http://cr.yp.to/libtai/ \
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library for storing and manipulating dates and times
+WWW=		https://cr.yp.to/libtai.html
 
 LICENSE=	UNLICENSE
 

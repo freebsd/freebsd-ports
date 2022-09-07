@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/irc/ezbounce/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Highly configurable IRC Proxy
+WWW=		https://sourceforge.net/projects/ezbounce/
 
 OPTIONS_DEFINE=	DOCS SSL COMPRESS
 OPTIONS_DEFAULT=SSL COMPRESS

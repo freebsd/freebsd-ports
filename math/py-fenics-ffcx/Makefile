@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	FEniCS Form Compiler for finite element forms
+WWW=		https://github.com/FEniCS/ffcx
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

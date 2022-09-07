@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	External netdata collection plugin written in Go
+WWW=		https://github.com/netdata/go.d.plugin
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

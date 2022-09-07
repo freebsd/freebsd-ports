@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://puck.nether.net/pub/jared/ \
 
 MAINTAINER=	mk@oxeo.com
 COMMENT=	Network tool designed for high performance and accurate monitoring
+WWW=		https://puck.nether.net/sysmon/
 
 LICENSE=	GPLv2
 

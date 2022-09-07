@@ -6,6 +6,7 @@ MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/toilet/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced figlet(6)
+WWW=		http://caca.zoy.org/wiki/toilet
 
 LIB_DEPENDS=	libcaca.so:graphics/libcaca
 

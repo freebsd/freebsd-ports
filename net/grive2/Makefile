@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	samuel@andersentech.net
 COMMENT=	Open source client for Google Drive
+WWW=		https://github.com/vitalif/grive2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

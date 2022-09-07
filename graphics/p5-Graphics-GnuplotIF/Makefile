@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dynamic Perl interface to gnuplot
+WWW=		https://metacpan.org/release/Graphics-GnuplotIF
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	FEniCS Unified Form Language
+WWW=		https://github.com/FEniCS/ufl
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

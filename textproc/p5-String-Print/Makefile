@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alternative of printf
+WWW=		https://metacpan.org/release/String-Print
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

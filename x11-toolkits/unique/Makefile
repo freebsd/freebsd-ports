@@ -7,6 +7,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for single instance applications
+WWW=		http://live.gnome.org/LibUnique
 
 PORTSCOUT=	ignore:1
 

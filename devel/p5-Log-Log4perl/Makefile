@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Log4j implementation for Perl
+WWW=		https://metacpan.org/release/Log-Log4perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	File system general utilities for Python
+WWW=		https://github.com/gorakhargosh/pathtools
 
 LICENSE=	MIT
 

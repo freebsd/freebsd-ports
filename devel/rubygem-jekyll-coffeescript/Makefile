@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CoffeeScript converter for Jekyll
+WWW=		https://github.com/jekyll/jekyll-coffeescript
 
 LICENSE=	MIT
 

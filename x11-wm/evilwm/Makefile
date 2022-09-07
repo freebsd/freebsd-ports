@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.6809.org.uk/evilwm/
 
 MAINTAINER=	lasg@lasg.dk
 COMMENT=	Minimalist window manager based on 9wm
+WWW=		https://www.6809.org.uk/evilwm/
 
 USES=		gmake localbase:ldflags xorg
 USE_XORG=	x11 xpm xext xrandr xrender

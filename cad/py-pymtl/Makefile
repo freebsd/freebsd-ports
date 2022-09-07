@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R:R}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python-based hardware generation, simulation, verification framework
+WWW=		https://github.com/pymtl/pymtl3
 
 LICENSE=	BSD3CLAUSE
 

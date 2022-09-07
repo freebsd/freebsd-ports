@@ -4,6 +4,7 @@ CATEGORIES=	science
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Software suite for (bio)chemists
+WWW=		http://www.msxpertsuite.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

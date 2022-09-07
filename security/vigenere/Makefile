@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.olivermahmoudi.com/files/
 
 MAINTAINER=	fbsd@olivermahmoudi.com
 COMMENT=	Vigenere cipher cryptography tool
+WWW=		https://github.com/olimah/vigenere
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Optional addons to wmutils
+WWW=		https://github.com/wmutils/opt
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

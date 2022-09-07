@@ -8,6 +8,7 @@ DISTNAME=		bind-${ISCVERSION}
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		nsupdate utility with the GSS-TSIG support
+WWW=		https://www.isc.org/software/bind
 
 LICENSE=		MPL20
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT

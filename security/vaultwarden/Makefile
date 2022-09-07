@@ -8,6 +8,7 @@ DISTFILES=	${WV_DISTFILE}:web
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Bitwarden compatible backend server
+WWW=		https://github.com/dani-garcia/vaultwarden
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

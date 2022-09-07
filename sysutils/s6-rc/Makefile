@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
 MAINTAINER=	crest@rlwinm.de
 COMMENT=	Skarnet.org service manager
+WWW=		https://www.skarnet.org/software/s6-rc/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

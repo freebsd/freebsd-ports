@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/SenderID%20Milter/${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter module for sid and spf
+WWW=		https://sourceforge.net/projects/sid-milter/
 
 USES=		groff
 WCONF=		${WRKSRC}/devtools/Site

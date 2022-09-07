@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Size profiler for binaries
+WWW=		https://github.com/google/bloaty
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

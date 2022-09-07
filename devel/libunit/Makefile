@@ -6,6 +6,7 @@ DISTINFO_FILE=	${.CURDIR}/../../www/unit/distinfo
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Development kit for dynamic web application server
+WWW=		https://unit.nginx.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

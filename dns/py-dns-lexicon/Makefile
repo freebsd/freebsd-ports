@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manipulate DNS records on various DNS providers in a standardized way
+WWW=		https://github.com/AnalogJ/lexicon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

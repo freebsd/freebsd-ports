@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Text editor product line
+WWW=		https://wiki.gnome.org/Projects/Tepl
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-3.0-or-later.txt

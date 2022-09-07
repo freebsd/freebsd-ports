@@ -5,6 +5,7 @@ CATEGORIES=	devel java
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated drawing of UML diagrams
+WWW=		https://www.umlgraph.org/
 
 LICENSE=	BSD3CLAUSE
 

@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Widgets library for the Xfce desktop environment
+WWW=		https://www.xfce.org/
 
 LICENSE=	GPLv2
 

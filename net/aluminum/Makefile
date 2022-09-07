@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Generic interface to high-performance communication libraries
+WWW=		https://github.com/LLNL/Aluminum
 
 LICENSE=	APACHE20
 

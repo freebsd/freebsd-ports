@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
+WWW=		https://www.love2d.org/
 
 LIB_DEPENDS=	libIL.so:graphics/devil \
 		libmodplug.so:audio/libmodplug \

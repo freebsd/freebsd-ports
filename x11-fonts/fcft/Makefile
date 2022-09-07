@@ -5,6 +5,7 @@ MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple library for font loading and glyph rasterization
+WWW=		https://codeberg.org/dnkl/fcft
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

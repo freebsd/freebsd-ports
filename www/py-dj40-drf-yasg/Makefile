@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Yet Another Swagger Generator
+WWW=		https://github.com/axnsan12/drf-yasg
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

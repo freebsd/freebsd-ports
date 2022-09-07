@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatically encode columns
+WWW=		https://metacpan.org/release/DBIx-Class-EncodedColumn
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

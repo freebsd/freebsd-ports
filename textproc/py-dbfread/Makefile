@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Read DBF files, returning data as native Python objects
+WWW=		https://github.com/olemb/dbfread
 
 LICENSE=	MIT
 

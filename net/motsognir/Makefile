@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/v${PORTVERSION}
 
 MAINTAINER=	kaltheat@gmail.com
 COMMENT=	Full-featured gopher server without dependencies
+WWW=		https://sourceforge.net/projects/motsognir/
 
 LICENSE=	MIT
 

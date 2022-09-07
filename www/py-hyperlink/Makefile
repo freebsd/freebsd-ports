@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Featureful, correct URL for Python
+WWW=		https://github.com/python-hyper/hyperlink
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

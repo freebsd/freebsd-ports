@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing the Twofish cipher
+WWW=		https://metacpan.org/release/Crypt-Twofish
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

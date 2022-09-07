@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Find processes that need restarting after an upgrade
+WWW=		https://github.com/Freaky/checkrestart
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

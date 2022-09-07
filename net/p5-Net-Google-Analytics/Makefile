@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Google Analytics Data Export API
+WWW=		https://metacpan.org/release/Net-Google-Analytics
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

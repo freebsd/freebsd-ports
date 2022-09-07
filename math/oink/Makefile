@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern parity game solvers written in C++
+WWW=		https://github.com/trolando/oink
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

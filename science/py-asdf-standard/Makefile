@@ -7,6 +7,7 @@ DISTNAME=	asdf_standard-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ASDF Standard schemas
+WWW=		https://github.com/asdf-format/asdf-standard
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

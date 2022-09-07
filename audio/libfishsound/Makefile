@@ -8,6 +8,7 @@ MASTER_SITES=	https://downloads.xiph.org/releases/libfishsound/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Programming interface to decode/encode audio data
+WWW=		https://www.xiph.org/fishsound/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

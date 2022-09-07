@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OldSkool Gravity Game
+WWW=		https://sourceforge.net/projects/osgg/
 
 LICENSE=	GPLv3+
 

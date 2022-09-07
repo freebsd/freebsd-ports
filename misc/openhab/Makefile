@@ -7,6 +7,7 @@ DISTNAME=	openhab-${PORTVERSION}
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Vendor and technology agnostic open source smart-home software
+WWW=		https://www.openhab.org/
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

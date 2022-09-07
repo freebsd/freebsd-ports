@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to process and/or create PGP email
+WWW=		https://metacpan.org/release/Mail-GnuPG
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-GnuPG-Interface>=0:security/p5-GnuPG-Interface \

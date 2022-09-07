@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test against data stored in automatically-named file
+WWW=		https://metacpan.org/release/Test-Snapshot
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

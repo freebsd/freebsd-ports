@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Read and write Ruby-marshalled data
+WWW=		https://pypi.org/project/rubymarshal/
 
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

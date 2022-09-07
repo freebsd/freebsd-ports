@@ -6,6 +6,7 @@ CATEGORIES=	net-im irc
 
 MAINTAINER=	norrland@nullbyte.se
 COMMENT=	IRC bridge for Mattermost and Slack
+WWW=		https://github.com/42wim/matterircd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

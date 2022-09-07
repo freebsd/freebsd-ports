@@ -5,6 +5,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DICOM ToolKit, libraries and applications for DICOM/MEDICOM standard
+WWW=		https://dcmtk.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

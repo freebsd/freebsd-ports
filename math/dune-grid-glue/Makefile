@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DUNE framework: infrastructure for coupling of unrelated Dune grids
+WWW=		https://www.dune-project.org/
 
 LICENSE=	GPLv2
 

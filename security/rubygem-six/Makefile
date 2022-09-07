@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Very simple authorization gem
+WWW=		https://github.com/dzaporozhets/six
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Material Design theme for GNOME/GTK+ based desktop environments
+WWW=		https://github.com/nana-4/materia-theme
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

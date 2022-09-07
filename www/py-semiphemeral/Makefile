@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Automatically delete your old tweets, and more
+WWW=		https://semiphemeral.com
 
 LICENSE=	MIT
 

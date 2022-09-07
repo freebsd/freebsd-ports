@@ -5,6 +5,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	High performance compressor optimized for binary data
+WWW=		https://www.blosc.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

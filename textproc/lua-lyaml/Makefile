@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	yds@Necessitu.de
 COMMENT=	LibYAML binding for Lua
+WWW=		https://GVVaughan.GitHub.io/lyaml/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

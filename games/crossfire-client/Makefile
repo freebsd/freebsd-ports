@@ -5,6 +5,7 @@ MASTER_SITES=	SF/crossfire/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Cooperative multiplayer graphical RPG and adventure game
+WWW=		https://crossfire.real-time.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

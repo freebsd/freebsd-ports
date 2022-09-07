@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Azure Devops Build Manager For Azure Functions
+WWW=		https://pypi.org/project/azure-functions-devops-build/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

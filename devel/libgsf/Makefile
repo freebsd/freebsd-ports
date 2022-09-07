@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Extensible I/O abstraction for dealing with structured file formats
+WWW=		http://www.gnumeric.org
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

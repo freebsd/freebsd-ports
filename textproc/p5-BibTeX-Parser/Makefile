@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure perl BibTeX parser
+WWW=		https://metacpan.org/release/BibTeX-Parser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	https://portland.freedesktop.org/download/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Tools to allow all applications to integrate with the free desktop
+WWW=		https://www.freedesktop.org/wiki/Software/xdg-utils/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

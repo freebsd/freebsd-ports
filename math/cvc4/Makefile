@@ -11,6 +11,7 @@ PATCHFILES+=	fc8907afc08d.patch:-p1 # Install Java bindings
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Automatic theorem prover for SMT (Satisfiability Modulo Theories)
+WWW=		https://cvc4.cs.stanford.edu/web/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

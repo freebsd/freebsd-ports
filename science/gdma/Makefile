@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Anthony Stone's Gaussian Distributed Multipole Analysis
+WWW=		https://github.com/psi4/gdma
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

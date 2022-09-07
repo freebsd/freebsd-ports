@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Respond_to style Rails block for Sinatra
+WWW=		https://github.com/cehoffman/sinatra-respond_to
 
 LICENSE=	MIT
 

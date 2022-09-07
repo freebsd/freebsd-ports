@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	FUSE filesystem for WEBDAV shares
+WWW=		https://github.com/miquels/webdavfs
 
 LICENSE=	BSD3CLAUSE BSD4CLAUSE MIT
 LICENSE_COMB=	multi

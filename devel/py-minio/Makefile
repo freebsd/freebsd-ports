@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Minio library for Amazon S3 compatible cloud storage
+WWW=		https://github.com/minio/minio-py
 
 LICENSE=	APACHE20
 

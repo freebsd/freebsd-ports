@@ -8,6 +8,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Library with a fast, convenient interface to Mercurial
+WWW=		https://www.mercurial-scm.org/wiki/PythonHglib
 
 LICENSE=	MIT
 

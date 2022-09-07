@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Small X11 utility to hide the mouse pointer when unused
+WWW=		https://github.com/aktau/hhpc
 
 LICENSE=	BSD3CLAUSE
 

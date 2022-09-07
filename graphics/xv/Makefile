@@ -14,6 +14,7 @@ PATCHFILES=	xv-3.10a-enhancements.20070520-20081216.diff
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	X11 program that displays images of various formats
+WWW=		http://www.gregroelofs.com/greg_xv.html
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \

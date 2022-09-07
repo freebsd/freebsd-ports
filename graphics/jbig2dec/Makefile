@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/dow
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Decoder implementation of the JBIG2 image compression format
+WWW=		https://github.com/ArtifexSoftware/jbig2dec
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

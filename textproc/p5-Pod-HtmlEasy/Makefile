@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generate personalized HTML from PODs
+WWW=		https://metacpan.org/release/Pod-HtmlEasy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

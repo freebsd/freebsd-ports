@@ -7,6 +7,7 @@ DISTNAME=	sphinx_autodoc_typehints-${DISTVERSION}
 
 MAINTAINER=	andreas@bilke.org
 COMMENT=	Type hints (PEP 484) support for the Sphinx autodoc extension
+WWW=		https://github.com/tox-dev/sphinx-autodoc-typehints
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

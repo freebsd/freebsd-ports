@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured audio player and manager developed in Java
+WWW=		https://www.atunes.org/
 
 LICENSE=	GPLv2
 

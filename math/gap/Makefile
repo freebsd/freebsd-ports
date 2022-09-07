@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	System for computational discrete algebra
+WWW=		https://www.gap-system.org/
 
 LICENSE=	GPLv2+
 

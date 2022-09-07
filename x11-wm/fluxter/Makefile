@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.hydrus.org.uk/downloads/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Desktop pager for the Fluxbox Slit
+WWW=		https://www.hydrus.org.uk/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	File::Find::Rule adapted to Filesys::Virtual
+WWW=		https://metacpan.org/release/File-Find-Rule-Filesys-Virtual
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line id3v2 tag editor
+WWW=		https://sourceforge.net/projects/id3v2/
 
 LICENSE=	LGPL21
 

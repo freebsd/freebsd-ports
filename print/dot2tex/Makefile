@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Graphviz to LaTeX converter
+WWW=		https://github.com/kjellmf/dot2tex
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

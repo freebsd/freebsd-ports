@@ -7,6 +7,7 @@ DISTNAME=	crashme
 
 MAINTAINER=	gjc@alum.mit.edu
 COMMENT=	Tool to test an operating system's robustness
+WWW=		http://crashme.codeplex.com/
 
 # according to license.rtf, and using the most restrictive one:
 LICENSE=	LGPL21

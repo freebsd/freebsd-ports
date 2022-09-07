@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XS backend for PerlX::Maybe
+WWW=		https://metacpan.org/release/PerlX-Maybe-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

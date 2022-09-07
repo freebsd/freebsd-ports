@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Builds manuals
+WWW=		https://rtomayko.github.io/ronn/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

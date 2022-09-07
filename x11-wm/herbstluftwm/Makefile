@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Manual tiling window manager for X11
+WWW=		https://herbstluftwm.org/
 
 LICENSE=	BSD2CLAUSE
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.habets.pp.se/synscan/files/
 
 MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	ARP level "ping" utility
+WWW=		https://www.habets.pp.se/synscan/programs.php?prog=arping
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

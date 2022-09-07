@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mahlon@martini.nu
 COMMENT=	Object oriented perl interface to jail(2)
+WWW=		https://metacpan.org/release/BSD-Jail-Object
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

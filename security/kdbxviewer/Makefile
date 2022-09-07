@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Ncurses UI and command-line tool for KeePass2 Database files
+WWW=		https://github.com/pepa65/kdbxviewer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

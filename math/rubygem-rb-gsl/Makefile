@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	rubygem-rb-
 
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Ruby extension library for GSL (GNU Scientific Library)
+WWW=		https://github.com/blackwinter/rb-gsl
 
 LICENSE=	GPLv2
 

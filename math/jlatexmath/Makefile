@@ -9,6 +9,7 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Java API to display mathematical formulas written in LaTeX
+WWW=		https://wiki.scilab.org/JLaTeXMath
 
 LICENSE=	GPLv2
 

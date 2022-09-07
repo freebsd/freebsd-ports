@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module implementing a portable chomp
+WWW=		https://metacpan.org/release/SMPETERS/Text-Chomp-0.02
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

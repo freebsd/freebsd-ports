@@ -5,6 +5,7 @@ CATEGORIES=	sysutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Backup program with an easy to use user interface
+WWW=		https://utils.kde.org/projects/kbackup/
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
 		qt:5 shared-mime-info tar:xz xorg

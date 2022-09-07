@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Fast and lightweight data forwarder
+WWW=		https://fluentbit.io/
 
 LICENSE=	APACHE20
 

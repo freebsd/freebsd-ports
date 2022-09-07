@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		krion@FreeBSD.org
 COMMENT=		Asynchronous logging for python and asyncio
+WWW=		https://github.com/b2wdigital/aiologger
 
 LICENSE=		MIT
 

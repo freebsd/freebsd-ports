@@ -10,6 +10,7 @@ PATCHFILES+=	77b13493.patch:-p1 # https://gitlab.freedesktop.org/xorg/driver/xf8
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org amdgpu display driver
+WWW=		https://www.x.org/wiki/RadeonFeature/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	MIDI network gateway application
+WWW=		https://qmidinet.sourceforge.io
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

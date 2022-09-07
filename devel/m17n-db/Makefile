@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${M17N_DISTFILE}
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Data files for the m17n library
+WWW=		https://www.nongnu.org/m17n/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTNAME=	Arpeggio-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser interpreter based on PEG grammars
+WWW=		https://github.com/textX/Arpeggio
 
 LICENSE=	MIT
 

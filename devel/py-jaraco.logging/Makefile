@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Additional facilities to supplement Python stdlib logging module
+WWW=		https://github.com/jaraco/jaraco.logging
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

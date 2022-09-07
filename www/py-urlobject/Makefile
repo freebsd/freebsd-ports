@@ -7,6 +7,7 @@ DISTNAME=	URLObject-${PORTVERSION}
 
 MAINTAINER=	freebsd@skinc.ru
 COMMENT=	Utility class for manipulating URLs
+WWW=		https://github.com/zacharyvoase/urlobject
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE

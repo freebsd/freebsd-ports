@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for sorting objects by some DateTime key
+WWW=		https://metacpan.org/release/Sort-Key-DateTime
 
 RUN_DEPENDS=	p5-DateTime>=0.28:devel/p5-DateTime \
 		p5-Sort-Key>=1.28:devel/p5-Sort-Key

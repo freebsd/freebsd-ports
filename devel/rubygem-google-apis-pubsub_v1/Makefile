@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple REST client for Cloud Pub/Sub API V1
+WWW=		https://github.com/googleapis/google-api-ruby-client/tree/master/generated/google-apis-pubsub_v1
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

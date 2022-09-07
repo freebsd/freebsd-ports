@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	mdw@FreeBSD.org
 COMMENT=	Library providing OpenBSD's bcrypt hash function for Lua
+WWW=		https://github.com/mikejsavage/lua-bcrypt/
 
 LICENSE=	ISCL
 

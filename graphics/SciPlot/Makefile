@@ -6,6 +6,7 @@ MASTER_SITES=	XCONTRIB/widgets
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Full-featured Xt widget to display 2D data in a graph
+WWW=		https://www.mathi.uni-heidelberg.de/~flight/eduStep/Subjects/Visualization/Apps/SciPlot/SciPlot.html
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ MASTER_SITES=	https://dl.opendesktop.org/api/files/download/id/1482097460/ \
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Simple KDE based image viewer
+WWW=		http://kde-apps.org/content/show.php/ShowImage?content=143977
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

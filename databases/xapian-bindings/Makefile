@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bindings allowing Xapian to be used from various programming languages
+WWW=		https://xapian.org/
 
 LICENSE=	GPLv2
 

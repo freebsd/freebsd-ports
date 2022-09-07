@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.inter7.com/eps/
 
 MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	EPS (Email Parsing System) sample tools
+WWW=		https://www.inter7.com/index.php?page=eps
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libeps.a:mail/eps
 RUN_DEPENDS:=	${BUILD_DEPENDS}

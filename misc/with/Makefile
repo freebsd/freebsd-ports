@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Command prefixing for continuous workflow using a single tool
+WWW=		https://github.com/mchav/with
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

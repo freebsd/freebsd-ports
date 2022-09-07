@@ -5,6 +5,7 @@ CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org drivers meta-port
+WWW=		https://www.x.org/
 
 VIDEODIR=	${LOCALBASE}/lib/xorg/modules/drivers
 INPUTDIR=	${LOCALBASE}/lib/xorg/modules/input

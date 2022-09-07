@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	String template engine for Qt 5
+WWW=		https://github.com/steveire/grantlee
 
 LICENSE=	LGPL21
 

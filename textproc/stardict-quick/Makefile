@@ -7,6 +7,7 @@ DIST_SUBDIR=	stardict
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionaries from Quick for StarDict
+WWW=		http://stardict.sourceforge.net/
 
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple support for XML Namespaces
+WWW=		https://metacpan.org/release/XML-Namespace
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

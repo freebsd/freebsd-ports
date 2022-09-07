@@ -6,6 +6,7 @@ MASTER_SITES=	http://dev.yorhel.nl/download/
 
 MAINTAINER=	earl1k@mail.ru
 COMMENT=	Lightweight direct connect client with ncurses interface
+WWW=		https://dev.yorhel.nl/ncdc
 
 LICENSE=	MIT
 

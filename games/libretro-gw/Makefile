@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro core for Game & Watch simulators
+WWW=		https://github.com/libretro/gw-libretro
 
 LICENSE=	GPLv2
 

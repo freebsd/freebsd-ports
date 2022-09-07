@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	swills@FreeBSD.org
 # co-maintainer: brd
 COMMENT=	Service discovery and configuration made easy
+WWW=		https://www.consul.io/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

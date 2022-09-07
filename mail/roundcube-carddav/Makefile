@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Roundcube CardDAV plugin
+WWW=		https://github.com/mstilkerich/rcmcarddav
 
 LICENSE=	GPLv2
 

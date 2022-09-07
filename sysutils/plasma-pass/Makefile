@@ -6,6 +6,7 @@ CATEGORIES=	sysutils kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma applet for Pass password manager
+WWW=		https://github.com/kde/plasma-pass
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Shared memory user data cache for PHP
+WWW=		https://github.com/laruence/yac/wiki
 
 LICENSE=	PHP301
 

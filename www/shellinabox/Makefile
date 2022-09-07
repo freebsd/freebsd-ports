@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Publish command line shell through AJAX interface
+WWW=		https://github.com/shellinabox/shellinabox
 
 LICENSE=	GPLv2
 

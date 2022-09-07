@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	0
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Plugin and hook calling mechanisms for Python
+WWW=		https://github.com/pytest-dev/pluggy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

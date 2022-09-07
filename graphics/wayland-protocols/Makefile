@@ -5,6 +5,7 @@ MASTER_SITES=	https://wayland.freedesktop.org/releases/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Wayland protocols
+WWW=		https://wayland.freedesktop.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

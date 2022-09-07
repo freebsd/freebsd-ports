@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OpenID strategy for OmniAuth
+WWW=		https://github.com/omniauth/omniauth-openid
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

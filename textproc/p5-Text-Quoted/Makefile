@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extract structure of quoted email message in Perl
+WWW=		https://metacpan.org/release/Text-Quoted
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tests remote URLs or local web files
+WWW=		http://martynov.org/webtest/
 
 BUILD_DEPENDS=	\
 	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \

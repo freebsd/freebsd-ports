@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-quality image resizing/scaling C++ library
+WWW=		https://github.com/avaneev/avir
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

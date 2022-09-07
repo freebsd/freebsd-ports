@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple, modern file watching and code reload in python
+WWW=		https://github.com/samuelcolvin/watchfiles
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

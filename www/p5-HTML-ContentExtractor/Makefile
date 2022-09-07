@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Extract text contained within an HTML document
+WWW=		https://metacpan.org/release/HTML-ContentExtractor
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Tree>=3.13:www/p5-HTML-Tree			\

@@ -5,6 +5,7 @@ MASTER_SITES=	http://tsung.erlang-projects.org/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-protocol distributed load testing tool
+WWW=		http://tsung.erlang-projects.org/
 
 LICENSE=	GPLv2
 

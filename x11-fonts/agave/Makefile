@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	TrueType monospaced font designed for X environments
+WWW=		https://b.agaric.net/page/agave
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE

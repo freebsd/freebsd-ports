@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-QPL-${PORTVERSION}
 
 MAINTAINER=	bmc@clapper.org
 COMMENT=	Xlib-based two-dimensional drawing tool and hyper-object browser
+WWW=		http://bourbon.usc.edu:8001/tgif/
 
 LICENSE=	QPLv1
 LICENSE_NAME=	Q PUBLIC LICENSE v1.0

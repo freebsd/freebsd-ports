@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Capture short movies with Canon DSLR camera
+WWW=		https://sourceforge.net/projects/eos-movrec/
 
 LICENSE=	GPLv2
 

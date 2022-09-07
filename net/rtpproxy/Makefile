@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	High-performance RTP proxy server for the SIP Express Router (SER)
+WWW=		https://www.rtpproxy.org/
 
 LICENSE=	BSD2CLAUSE
 

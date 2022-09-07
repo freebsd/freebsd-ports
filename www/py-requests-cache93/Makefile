@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	93
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Transparent persistent cache for the requests library (0.9.3 branch)
+WWW=		https://github.com/requests-cache/requests-cache
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

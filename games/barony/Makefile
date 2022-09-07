@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	devnexen@gmail.com
 COMMENT=	3D roguelike game
+WWW=		http://www.baronygame.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.3.0.txt

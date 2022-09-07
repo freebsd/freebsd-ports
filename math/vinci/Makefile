@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.multiprecision.org/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package that implements algorithms for convex body volume computation
+WWW=		https://www.multiprecision.org/vinci/home.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

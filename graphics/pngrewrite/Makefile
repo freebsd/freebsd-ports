@@ -7,6 +7,7 @@ MASTER_SITES=	http://entropymine.com/jason/pngrewrite/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PNG palette optimizer
+WWW=		https://entropymine.com/jason/pngrewrite/
 
 LICENSE=	ZLIB
 

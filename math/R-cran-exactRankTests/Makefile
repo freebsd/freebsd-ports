@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Exact Distributions for Rank and Permutation Tests
+WWW=		https://cran.r-project.org/package=exactRankTests
 
 LICENSE=	GPLv2+
 

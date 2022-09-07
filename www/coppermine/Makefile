@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Web picture gallery script
+WWW=		https://coppermine-gallery.net/
 
 LICENSE=	GPLv3
 

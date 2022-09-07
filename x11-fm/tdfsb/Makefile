@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.determinate.net/webdata/data/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D filesystem browser
+WWW=		https://www.determinate.net/webdata/seg/tdfsb.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

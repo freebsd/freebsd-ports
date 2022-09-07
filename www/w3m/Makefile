@@ -5,6 +5,7 @@ CATEGORIES+=	www
 
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	Pager/text-based WWW browser
+WWW=		http://w3m.sourceforge.net/
 
 LICENSE=	w3m
 LICENSE_NAME=	w3m

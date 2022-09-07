@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP interface to TinyURL's API
+WWW=		https://pear.php.net/package/Services_TinyURL
 
 USES=		pear php
 USE_PHP=	curl

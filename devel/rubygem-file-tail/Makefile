@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library that allows Ruby to 'tail' files
+WWW=		https://github.com/flori/file-tail
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

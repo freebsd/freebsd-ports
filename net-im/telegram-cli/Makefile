@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line interface for Telegram
+WWW=		https://github.com/kenorb-contrib/tg
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

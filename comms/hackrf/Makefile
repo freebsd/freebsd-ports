@@ -4,6 +4,7 @@ CATEGORIES=	comms devel hamradio science security
 
 MAINTAINER=	cederom@tlen.pl
 COMMENT=	Low cost open source hardware software radio platform
+WWW=		https://greatscottgadgets.com/hackrf/
 
 LICENSE=	GPLv2
 

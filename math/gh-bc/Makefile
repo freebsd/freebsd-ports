@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		gh-
 
 MAINTAINER=		se@FreeBSD.org
 COMMENT=		GNU compatible bc/dc calculator
+WWW=		https://git.yzena.com/gavin/bc
 
 LICENSE=		BSD2CLAUSE MIT
 LICENSE_COMB=		multi

@@ -7,6 +7,7 @@ DISTNAME=	glucose-syrup-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Parallel SAT solver based on Minisat, with glue clauses
+WWW=		https://www.labri.fr/perso/lsimon/glucose/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Provides an "include" function for Markdown
+WWW=		https://github.com/cmacmackin/markdown-include
 
 LICENSE=	GPLv3+
 

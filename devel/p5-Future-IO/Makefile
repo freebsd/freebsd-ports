@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Future-returning IO methods
+WWW=		https://metacpan.org/dist/Future-IO
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

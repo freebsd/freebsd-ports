@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Data backends for the Evolution integrated mail/PIM suite
+WWW=		https://wiki.gnome.org/Apps/Evolution
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

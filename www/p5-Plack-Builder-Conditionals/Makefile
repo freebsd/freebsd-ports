@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to extend Plack::Builder
+WWW=		https://metacpan.org/release/Plack-Builder-Conditionals
 
 RUN_DEPENDS=	\
 	p5-List-MoreUtils>0:lang/p5-List-MoreUtils \

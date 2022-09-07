@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Best old-school Deathmatch game ever (only for two players)
+WWW=		https://github.com/keithfancher/Bomns-for-Linux
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

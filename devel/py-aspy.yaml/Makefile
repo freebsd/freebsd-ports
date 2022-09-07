@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Extensions to pyyaml
+WWW=		https://github.com/asottile/aspy.yaml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

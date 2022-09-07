@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Small utility to dump info about DRM devices
+WWW=		https://github.com/ascent12/drm_info
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

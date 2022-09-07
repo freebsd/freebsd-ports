@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	13
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby module for reading and writing zip files
+WWW=		https://github.com/rubyzip/rubyzip
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ DISTNAME=	pyPdf-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure-Python PDF toolkit
+WWW=		https://pybrary.net/pyPdf/
 
 USES=		dos2unix python:3.6+
 USE_PYTHON=	autoplist concurrent distutils

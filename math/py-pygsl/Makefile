@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to GNU Scientific Library
+WWW=		https://github.com/pygsl/pygsl
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

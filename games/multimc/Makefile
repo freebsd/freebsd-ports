@@ -4,6 +4,7 @@ CATEGORIES=	games java
 
 MAINTAINER=	me@tsundoku.ne.jp
 COMMENT=	Minecraft launcher with the ability to manage multiple instances
+WWW=		https://multimc.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING.md

@@ -7,6 +7,7 @@ DISTNAME=	OpenCSG-${PORTVERSION}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Constructive Solid Geometry rendering library
+WWW=		https://www.opencsg.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../license.txt

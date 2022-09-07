@@ -7,6 +7,7 @@ CATEGORIES=	security graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Steganography software
+WWW=		https://github.com/DimitarPetrov/stegify
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

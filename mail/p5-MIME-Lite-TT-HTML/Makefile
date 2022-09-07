@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	freebsd-ports@t-b-o-h.net
 COMMENT=	Create html mail with MIME::Lite and TT
+WWW=		https://metacpan.org/release/MIME-Lite-TT-HTML
 
 BUILD_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
 		p5-DateTime-Format-Mail>=0:devel/p5-DateTime-Format-Mail \

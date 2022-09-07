@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RT extension to import users from an LDAP store
+WWW=		https://metacpan.org/release/RT-Extension-LDAPImport
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

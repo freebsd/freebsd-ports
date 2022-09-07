@@ -6,6 +6,7 @@ MASTER_SITES=	https://dbmx.net/qdbm/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Quick Database Manager
+WWW=		https://dbmx.net/qdbm/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|000$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Socket.IO Plack application
+WWW=		https://metacpan.org/release/PocketIO
 
 LICENSE=	ART20
 

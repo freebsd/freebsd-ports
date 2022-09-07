@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Built-package format for Python
+WWW=		https://github.com/pypa/wheel
 
 LICENSE=	MIT
 

@@ -9,6 +9,7 @@ DISTNAME=	EasyRSA-${DISTVERSION}
 # approval for changes to this package. -- mandree@FreeBSD.org
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Small RSA key management package based on openssl
+WWW=		https://github.com/OpenVPN/easy-rsa
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ja-p5-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Perl5 module for eucJP-open
+WWW=		https://metacpan.org/release/Unicode-Japanese
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

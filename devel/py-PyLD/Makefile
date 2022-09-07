@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Implementation of the JSON Linked Data specification in Python
+WWW=		https://github.com/digitalbazaar/pyld
 
 LICENSE=	BSD3CLAUSE
 

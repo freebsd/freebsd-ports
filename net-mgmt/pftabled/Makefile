@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.wolfermann.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to manage pf tables remotely
+WWW=		https://wolfermann.org/pftabled.html
 
 LICENSE=	BSD2CLAUSE
 

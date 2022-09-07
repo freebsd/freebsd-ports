@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	hdholm@alumni.iastate.edu
 COMMENT=	Tools for JSON Object Signing and Encryption (JOSE)
+WWW=		https://github.com/latchset/jose
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

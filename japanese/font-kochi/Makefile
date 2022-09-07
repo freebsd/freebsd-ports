@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-substitute-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Kochi Japanese TrueType font
+WWW=		http://wiki.fdiary.net/font/?kochi-alternative
 
 LICENSE=	COPYINGATTACHED
 LICENSE_NAME=	Free redistribution with copyright document attached

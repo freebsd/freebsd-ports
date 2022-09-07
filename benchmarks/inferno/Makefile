@@ -6,6 +6,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Stack trace visualizer, a Rust port of flamegraph
+WWW=		https://github.com/jonhoo/inferno
 
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Discrete element method particle simulation software
+WWW=		https://www.cfdem.com/liggghts-open-source-discrete-element-method-particle-simulation-code
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../LICENSE

@@ -8,6 +8,7 @@ DISTNAME=	opam-full-${DISTVERSION}
 
 MAINTAINER=	hannes@mehnert.org
 COMMENT=	Source-based package manager for OCaml
+WWW=		https://opam.ocaml.org/
 
 LICENSE=	LGPL21
 

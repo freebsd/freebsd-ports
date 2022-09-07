@@ -6,6 +6,7 @@ DIST_SUBDIR=	jira-cli
 
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Feature-rich Interactive Jira Command Line
+WWW=		https://github.com/ankitpokhrel/jira-cli
 
 LICENSE=	MIT
 

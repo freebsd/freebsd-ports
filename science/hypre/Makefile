@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scalable Linear Solvers and Multigrid Methods
+WWW=		https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

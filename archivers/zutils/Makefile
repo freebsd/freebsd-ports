@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH/zutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for searching in bzip2, gzip, lzip, and xz archives
+WWW=		https://www.nongnu.org/zutils/zutils.html
 
 LICENSE=	GPLv2
 

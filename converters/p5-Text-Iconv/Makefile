@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to iconv() codeset conversion function
+WWW=		https://metacpan.org/release/Text-Iconv
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

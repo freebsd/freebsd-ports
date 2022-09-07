@@ -7,6 +7,7 @@ MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
 
 MAINTAINER=	squat@squat.no
 COMMENT=	UPnP IGD implementation which uses pf/ipf
+WWW=		http://miniupnp.free.fr/
 
 LICENSE=	BSD3CLAUSE
 

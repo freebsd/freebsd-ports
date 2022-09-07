@@ -7,6 +7,7 @@ DISTNAME=	bot-sentry-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pidgin plugin to prevent instant message spam
+WWW=		https://sourceforge.net/projects/pidgin-bs/
 
 LICENSE=	GPLv3
 

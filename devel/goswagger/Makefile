@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Swagger 2.0 implementation for Go
+WWW=		https://goswagger.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

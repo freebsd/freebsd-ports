@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Roles, like a nouvelle cusine portion size slice of Moose
+WWW=		https://metacpan.org/release/Role-Tiny
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

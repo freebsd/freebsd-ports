@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides some easy error related methods
+WWW=		https://metacpan.org/release/Error-Helper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

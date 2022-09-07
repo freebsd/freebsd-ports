@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate simple tables in terminals from a nested list of strings
+WWW=		https://github.com/matthewdeanmartin/terminaltables
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

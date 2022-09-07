@@ -10,6 +10,7 @@ DIST_SUBDIR=	go-bapu
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Virtual Machine Controller for Gandi.net
+WWW=		https://bitbucket.org/carlostrub/bapu
 
 LICENSE=	BSD3CLAUSE
 

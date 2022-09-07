@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Most basic port of Perl's Text::Unidecode module
+WWW=		https://github.com/kmike/text-unidecode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

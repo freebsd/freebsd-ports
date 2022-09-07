@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Constant subs with deferred value calculation
+WWW=		https://metacpan.org/release/constant-defer
 
 LICENSE=	GPLv3
 

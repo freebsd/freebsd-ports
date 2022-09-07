@@ -8,6 +8,7 @@ DISTNAME=	XStatic-Font-Awesome-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Iconic font and CSS framework (font-awesome)
+WWW=		https://fontawesome.com/
 
 LICENSE=	OFL11
 

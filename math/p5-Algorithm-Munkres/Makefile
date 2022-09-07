@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Extension for Munkres' Solution to Classical Assignment Problem
+WWW=		https://metacpan.org/release/Algorithm-Munkres
 
 LICENSE=	GPLv2+
 

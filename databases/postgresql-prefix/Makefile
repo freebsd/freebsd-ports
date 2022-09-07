@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Prefix Range module for PostgreSQL
+WWW=		https://github.com/dimitri/prefix
 
 LICENSE=	PostgreSQL
 

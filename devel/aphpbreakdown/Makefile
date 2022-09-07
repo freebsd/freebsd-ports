@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.phar
 
 MAINTAINER=	freebsd@code-mesa.com
 COMMENT=	Code-Analyzer for PHP for Compatibility Check-UP
+WWW=		https://gitlab.code-mesa.com/code-mesa/aphpbreakdown/
 
 LICENSE=	BSD2CLAUSE
 

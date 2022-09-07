@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	XML stylesheet transformation library
+WWW=		https://gitlab.gnome.org/GNOME/libxslt/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

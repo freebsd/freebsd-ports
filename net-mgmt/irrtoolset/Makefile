@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	rkoberman@gmail.com
 COMMENT=	Suite of routing policy tools to interact with the IRR
+WWW=		http://irrtoolset.isc.org/
 
 LICENSE=	MIT GPLv2+ RIPE_NCC
 LICENSE_COMB=	multi

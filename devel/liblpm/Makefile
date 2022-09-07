@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Longest Prefix Match library
+WWW=		https://github.com/rmind/liblpm
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE

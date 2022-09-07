@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for alternate data localization API
+WWW=		https://metacpan.org/release/Data-Localize
 
 LICENSE=	MIT
 

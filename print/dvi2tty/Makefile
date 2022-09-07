@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVI file previewer for text only devices
+WWW=		https://www.mesa.nl/
 
 CONFLICTS=	texlive-base # bin/disdvi bin/dvi2tty
 

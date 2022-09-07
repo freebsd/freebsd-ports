@@ -5,6 +5,7 @@ MASTER_SITES=	http://archive.hadrons.org/software/xfstt/
 
 MAINTAINER=	gspurki@gmail.com
 COMMENT=	TrueType font server for X11
+WWW=		https://www.hadrons.org/software/xfstt/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

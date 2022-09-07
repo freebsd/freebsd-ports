@@ -6,6 +6,7 @@ MASTER_SITES=	LXQT/${PORTNAME}
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Controls compton settings
+WWW=		https://github.com/lxqt/compton-conf
 
 LICENSE=	LGPL21+
 

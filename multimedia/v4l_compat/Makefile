@@ -1,6 +1,7 @@
 PORTNAME=	v4l_compat
 
 COMMENT=	Video4Linux IOCTL header files
+WWW=		https://linuxtv.org
 
 NO_BUILD=	yes
 NO_ARCH=	yes

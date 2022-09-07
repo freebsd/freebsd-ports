@@ -9,6 +9,7 @@ DISTNAME=	tokyocabinet-perl-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for TokyoCabinet
+WWW=		https://dbmx.net/tokyocabinet/
 
 LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 

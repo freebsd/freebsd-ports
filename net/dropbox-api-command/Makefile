@@ -5,6 +5,7 @@ CATEGORIES=	net perl5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dropbox API wrapper command
+WWW=		https://metacpan.org/pod/App::dropboxapi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

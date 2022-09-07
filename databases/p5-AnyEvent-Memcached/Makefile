@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	AnyEvent memcached client
+WWW=		https://metacpan.org/release/AnyEvent-Memcached
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

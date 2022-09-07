@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	TCL interface to the Thomas Boutell's Gd library
+WWW=		http://graphviz.org/cgi-bin/man?gdtclft
 
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libpng.so:graphics/png

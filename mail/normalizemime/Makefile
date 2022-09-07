@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mime normalizer to be used as a preprocessor for email classification
+WWW=		http://hyvatti.iki.fi/~jaakko/spam/
 
 LICENSE=	GPLv2
 

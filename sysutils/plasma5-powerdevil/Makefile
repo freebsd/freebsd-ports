@@ -5,6 +5,7 @@ CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 tool to manage the power consumption settings
+WWW=		https://www.kde.org/plasma-desktop
 
 LIB_DEPENDS=	libudev.so:devel/libudev-devd
 RUN_DEPENDS=	${LOCALBASE}/libexec/upowerd:sysutils/upower

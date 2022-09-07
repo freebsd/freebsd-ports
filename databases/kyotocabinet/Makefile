@@ -6,6 +6,7 @@ MASTER_SITES=	https://dbmx.net/kyotocabinet/pkg/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Straightforward implementation of DBM
+WWW=		https://dbmx.net/kyotocabinet/
 
 LICENSE=	GPLv3
 

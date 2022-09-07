@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	uros@gruber.si
 COMMENT=	Use requests to talk HTTP via a UNIX domain socket
+WWW=		https://github.com/msabramo/requests-unixsocket
 
 LICENSE=	APACHE20
 

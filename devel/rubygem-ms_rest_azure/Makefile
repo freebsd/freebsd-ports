@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Azure Client Library for Ruby
+WWW=		https://github.com/Azure/azure-sdk-for-ruby/tree/master/runtime/ms_rest_azure
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

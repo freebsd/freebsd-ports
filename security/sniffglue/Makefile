@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Secure multithreaded packet sniffer
+WWW=		https://github.com/kpcyrd/sniffglue
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	bar_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command Line Progress Bar
+WWW=		http://clpbar.sourceforge.net/
 
 WRKSRC=		${WRKDIR}/bar-${PORTVERSION}
 GNU_CONFIGURE=	yes

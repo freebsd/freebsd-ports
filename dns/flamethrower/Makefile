@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	pcarboni@gmail.com
 COMMENT=	DNS performance and functional testing utility
+WWW=		https://github.com/DNS-OARC/flamethrower
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

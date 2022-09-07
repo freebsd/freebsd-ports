@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Terminal charts, plots, histograms and maps from JSON and CSV
+WWW=		https://github.com/sgreben/jp
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	multi

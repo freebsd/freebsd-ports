@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Beat/envelope shaper LV2 plugin
+WWW=		https://github.com/sjaehn/BShapr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

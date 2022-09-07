@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Trim adapter sequences from Illumina data using heuristic rules
+WWW=		https://github.com/lh3/trimadap
 
 LICENSE=	GPLv2
 

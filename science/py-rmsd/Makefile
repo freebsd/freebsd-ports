@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Calculate root-mean-square deviation (RMSD) between coordinate sets
+WWW=		https://github.com/charnley/rmsd
 
 LICENSE=	BSD2CLAUSE
 

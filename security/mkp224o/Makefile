@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Vanity address generator for tor onion v3 (ed25519) hidden services
+WWW=		https://github.com/cathugger/mkp224o
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

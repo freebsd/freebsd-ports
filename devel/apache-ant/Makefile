@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${ANT_DISTFILE}
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java- and XML-based build tool, conceptually similar to make
+WWW=		https://ant.apache.org/
 
 LICENSE=	APACHE20
 

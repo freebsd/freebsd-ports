@@ -21,6 +21,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT?=	Distributed source code management tool ${COMMENT_${FLAVOR}}
+WWW=		https://git-scm.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

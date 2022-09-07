@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a module as recommended in "Perl Best Practices"
+WWW=		https://metacpan.org/release/Module-Starter-PBP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

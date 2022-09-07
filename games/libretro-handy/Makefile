@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Atari Lynx emulator Handy for Libretro
+WWW=		https://github.com/libretro/libretro-handy
 
 LICENSE=	ZLIB
 

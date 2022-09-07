@@ -8,6 +8,7 @@ MASTER_SITES=	LOCAL/fernape:maven
 
 MAINTAINER=	nikita@druba.su
 COMMENT=	Enterprise instant messaging server
+WWW=		https://www.igniterealtime.org/projects/openfire/index.jsp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

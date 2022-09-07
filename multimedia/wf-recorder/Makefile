@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/ammen99/wf-recorder/releases/download/v${DISTVE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screen recorder for wlroots-based compositors
+WWW=		https://github.com/ammen99/wf-recorder
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

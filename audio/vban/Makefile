@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-tools
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Command-line VBAN (audio over UDP protocol) tools
+WWW=		https://github.com/quiniouben/vban
 
 LICENSE=	GPLv3+
 

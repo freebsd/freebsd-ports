@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read all the messages from a folder as Email::Simple objects
+WWW=		https://metacpan.org/release/Email-Folder
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

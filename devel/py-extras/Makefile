@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Useful extra bits for Python
+WWW=		https://pypi.org/project/extras/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

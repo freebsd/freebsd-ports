@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Maketext from already interpolated strings
+WWW=		https://metacpan.org/release/Locale-Maketext-Fuzzy
 
 USES=		perl5
 USE_PERL5=	configure

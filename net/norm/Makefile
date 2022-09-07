@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	hd@oc.dk
 COMMENT=	NACK-Oriented Reliable Multicast (NORM)
+WWW=		https://www.nrl.navy.mil/itd/ncs/products/norm
 
 WRKSRC=		${WRKDIR}/norm-${DISTVERSION}
 

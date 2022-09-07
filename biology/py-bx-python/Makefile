@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for reading, manipulating and writing genomic data sets
+WWW=		https://github.com/bxlab/bx-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

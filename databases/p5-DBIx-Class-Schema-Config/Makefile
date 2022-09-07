@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	espen@tagestad.no
 COMMENT=	Credential Management for DBIx::Class
+WWW=		https://metacpan.org/release/DBIx-Class-Schema-Config
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

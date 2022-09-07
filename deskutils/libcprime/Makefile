@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Library for bookmarking, saving recent activites, managing settings
+WWW=		https://gitlab.com/cubocore/libcprime
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

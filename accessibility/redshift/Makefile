@@ -10,6 +10,7 @@ PATCHFILES+=	7da875d34854.patch:-p1 # wayland, see #663
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Adjusts the color temperature of your screen
+WWW=		http://jonls.dk/redshift/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

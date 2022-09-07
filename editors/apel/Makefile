@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Portable Emacs Library
+WWW=		https://github.com/wanderlust/apel
 
 LICENSE=	GPLv2
 

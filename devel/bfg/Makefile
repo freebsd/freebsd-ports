@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Removes large or troublesome blobs like git-filter-branch does
+WWW=		https://rtyley.github.io/bfg-repo-cleaner/
 
 LICENSE=	GPLv3
 

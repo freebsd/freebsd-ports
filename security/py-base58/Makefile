@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Bitcoin-compatible Base58 and Base58Check implementation
+WWW=		https://pypi.org/project/base58/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

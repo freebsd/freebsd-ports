@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Official Python client for Prometheus
+WWW=		https://github.com/prometheus/client_python
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

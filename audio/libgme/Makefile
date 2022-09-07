@@ -6,6 +6,7 @@ DISTNAME=	game-music-emu-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of video game music emulators
+WWW=		https://bitbucket.org/mpyne/game-music-emu
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/license.txt

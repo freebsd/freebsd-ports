@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Realtime Lua as programmable glue in LV2
+WWW=		https://open-music-kontrollers.ch/lv2/moony
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING

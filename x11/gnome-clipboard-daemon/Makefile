@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S,^gnome-,,}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that keeps the content of your X clipboard in memory
+WWW=		http://members.chello.nl/~h.lai/gnome-clipboard-daemon/
 
 LICENSE=	GPLv2
 

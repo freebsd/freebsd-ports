@@ -7,6 +7,7 @@ CATEGORIES=		devel
 
 MAINTAINER=		zi@FreeBSD.org
 COMMENT=		Cross-platform, standards compliant networking library
+WWW=		https://github.com/cpp-netlib/cpp-netlib/
 
 LICENSE=		BSL
 LICENSE_FILE=		${WRKSRC}/LICENSE_1_0.txt

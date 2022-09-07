@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tiny Pythonic visitor implementation
+WWW=		https://github.com/mbr/visitor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

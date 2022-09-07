@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Tool for performing TimescaleDB backups across versions
+WWW=		https://github.com/timescale/timescaledb-backup
 
 LICENSE=	TSL
 LICENSE_NAME=	Timescale License Agreement

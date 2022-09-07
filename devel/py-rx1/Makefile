@@ -8,6 +8,7 @@ DISTNAME=	Rx-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reactive Extensions (Rx) for Python
+WWW=		https://github.com/ReactiveX/RxPY
 
 LICENSE=	APACHE20
 

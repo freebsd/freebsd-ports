@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Base class for a bare-bones exception factory
+WWW=		https://metacpan.org/release/X-Tiny
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

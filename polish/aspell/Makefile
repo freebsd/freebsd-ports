@@ -6,6 +6,7 @@ CATEGORIES=	polish textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Polish dictionary
+WWW=		http://aspell.sourceforge.net/
 
 DICT=	 	pl
 

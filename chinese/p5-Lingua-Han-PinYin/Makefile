@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve the Mandarin (PinYin) of Chinese character (HanZi)
+WWW=		https://metacpan.org/release/Lingua-Han-PinYin
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

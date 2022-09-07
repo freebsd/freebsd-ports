@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Flexibly reshape data: a reboot of the reshape package
+WWW=		https://cran.r-project.org/web/packages/reshape2/
 
 LICENSE=	MIT
 

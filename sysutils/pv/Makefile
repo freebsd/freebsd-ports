@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.ivarch.com/programs/sources/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Pipe throughput monitor
+WWW=		https://www.ivarch.com/programs/pv.shtml
 
 LICENSE=	ART20
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alternative Exporter with persistent defaults and auto-ISA
+WWW=		https://metacpan.org/release/Xporter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

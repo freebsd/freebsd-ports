@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Pure Perl implementation of 'HikiDoc'
+WWW=		https://metacpan.org/release/Text-HikiDoc
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

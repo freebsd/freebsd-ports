@@ -6,6 +6,7 @@ MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Ignition entry point (ign) for using all the suite of ignition tools
+WWW=		https://ignitionrobotics.org/home
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

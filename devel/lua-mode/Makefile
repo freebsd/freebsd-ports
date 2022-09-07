@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Minor mode for LUA
+WWW=		https://github.com/immerrr/lua-mode
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

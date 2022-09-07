@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.frenchfries.net/paul/tcpstat/
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Program to report various network statistics
+WWW=		https://www.frenchfries.net/paul/tcpstat/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

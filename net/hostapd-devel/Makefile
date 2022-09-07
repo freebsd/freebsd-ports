@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator
+WWW=		https://w1.fi/hostapd/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber

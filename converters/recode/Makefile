@@ -6,6 +6,7 @@ CATEGORIES=	converters
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts files between character sets and usages
+WWW=		https://www.gnu.org/software/recode/recode.html
 
 LICENSE=	GPLv2+
 

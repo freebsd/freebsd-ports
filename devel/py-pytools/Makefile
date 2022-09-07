@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Collection of tools for Python
+WWW=		https://pypi.org/project/pytools/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Library for simple WSDL parsing
+WWW=		https://github.com/savonrb/wasabi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	http://wertarbyte.de/tartarus/ \
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Wrappers around common Unix tools for simplified backup solution
+WWW=		https://wertarbyte.de/tartarus.shtml
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

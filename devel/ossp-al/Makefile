@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Defines an abstract type of buffer that can move data without copying
+WWW=		http://www.ossp.org/pkg/lib/al/
 
 LIB_DEPENDS=	libex.so:devel/ossp-ex
 

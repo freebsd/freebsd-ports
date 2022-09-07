@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Remove leading and/or trailing whitespace from strings
+WWW=		https://metacpan.org/release/Text-Trim
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

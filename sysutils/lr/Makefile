@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	List files, recursively
+WWW=		https://github.com/leahneukirchen/lr/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

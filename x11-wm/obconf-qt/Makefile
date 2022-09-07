@@ -6,6 +6,7 @@ MASTER_SITES=	LXQT/${PORTNAME}
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Qt port of preferences manager for Openbox
+WWW=		https://github.com/lxqt/obconf-qt
 
 LICENSE=	GPLv2
 

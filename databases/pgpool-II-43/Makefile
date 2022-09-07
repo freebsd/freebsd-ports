@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-43
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Connection pool server for PostgreSQL (4.3.X branch)
+WWW=		https://pgpool.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

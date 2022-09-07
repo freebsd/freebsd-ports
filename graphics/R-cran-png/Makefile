@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Read and write PNG images
+WWW=		https://www.rforge.net/png/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

@@ -16,6 +16,7 @@ DISTFILES=	junction.zip \
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Collection of open source fonts
+WWW=		https://www.theleagueofmoveabletype.com/
 
 NO_BUILD=	yes
 USES=		fonts zip

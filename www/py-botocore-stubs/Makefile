@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Type annotations for botocore
+WWW=		https://github.com/youtype/mypy_boto3_builder
 
 LICENSE=	MIT
 

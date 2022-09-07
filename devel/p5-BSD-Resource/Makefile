@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to access BSD resource limit and priority functions
+WWW=		https://metacpan.org/release/BSD-Resource
 
 LICENSE=	ART20 GPLv2
 LICENSE_COMB=	dual

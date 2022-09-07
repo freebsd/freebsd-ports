@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Command line utility to interact with and manage NATS
+WWW=		https://github.com/nats-io/natscli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

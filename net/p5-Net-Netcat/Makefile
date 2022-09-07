@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl wrapper class for nc(1) utility (netcat)
+WWW=		https://metacpan.org/release/Net-Netcat
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

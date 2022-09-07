@@ -8,6 +8,7 @@ DISTNAME=	Electrum-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Easy to use Bitcoin client
+WWW=		https://electrum.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

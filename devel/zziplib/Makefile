@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to provide transparent read access to zipped files
+WWW=		https://github.com/gdraheim/zziplib
 
 LICENSE=	LGPL21 MPL11
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/eggheads/${PORTNAME}/releases/download/v${DISTV
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Popular Internet Relay Chat (IRC) bot
+WWW=		https://www.eggheads.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

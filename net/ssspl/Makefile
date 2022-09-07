@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.pl
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Simple Socks Server for Perl
+WWW=		https://sourceforge.net/projects/ssspl/
 
 RUN_DEPENDS=	p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww

@@ -7,6 +7,7 @@ DISTNAME=	popcheck
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preview and delete messages in POP3 mailbox
+WWW=		http://www.ludd.luth.se/~staham/linux/programs.html
 
 USES=		ncurses
 ALL_TARGET=	popcheck

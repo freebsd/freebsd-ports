@@ -7,6 +7,7 @@ MASTER_SITES=	http://chaosophia.net/downloads/graffer/ \
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Utility to render graphical statistics
+WWW=		http://chaosophia.net/graffer/
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2

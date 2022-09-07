@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}-${ARCH:S/amd64/x86_64/:S/i386/i386/
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Fast remote desktop
+WWW=		https://anydesk.com/remote-desktop
 
 LICENSE=	commercial
 LICENSE_NAME=	commercial

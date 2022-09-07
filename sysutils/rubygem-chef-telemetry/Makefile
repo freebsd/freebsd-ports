@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Send user actions to the Chef telemetry system
+WWW=		https://github.com/chef/chef-telemetry
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

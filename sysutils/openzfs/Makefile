@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	OpenZFS userland for FreeBSD
+WWW=		https://github.com/zfsonfreebsd/ZoF
 
 LICENSE=	CDDL
 

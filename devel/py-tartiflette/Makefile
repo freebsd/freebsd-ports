@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GraphQL Engine for Python
+WWW=		https://github.com/tartiflette/tartiflette
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

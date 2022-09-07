@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SPORE client
+WWW=		https://metacpan.org/release/Net-HTTP-Spore
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

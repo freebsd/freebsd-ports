@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Hardcore 3D space shooter with spaceship upgrade possibilities
+WWW=		https://www.viewizard.com/
 
 LICENSE=	GPLv3+ CC-BY-SA-4.0 OFL11
 LICENSE_COMB=	multi

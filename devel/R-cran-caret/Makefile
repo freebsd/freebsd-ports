@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Classification and Regression Training
+WWW=		https://topepo.github.io/caret/
 
 LICENSE=	GPLv2+
 

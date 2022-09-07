@@ -4,6 +4,7 @@ CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert OSM XML data to PostgreSQL database
+WWW=		https://wiki.openstreetmap.org/wiki/Osm2pgsql
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

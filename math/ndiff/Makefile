@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.math.utah.edu/pub/misc/
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Compare files, ignoring numeric differences
+WWW=		https://www.math.utah.edu/~beebe/software/ndiff/
 
 LICENSE=	GPLv2
 

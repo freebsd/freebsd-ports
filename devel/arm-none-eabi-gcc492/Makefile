@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	492
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection for bare metal arm cross-development
+WWW=		https://gcc.gnu.org/
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi

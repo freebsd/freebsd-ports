@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of yet another session manager
+WWW=		https://metacpan.org/release/HTTP-Session
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

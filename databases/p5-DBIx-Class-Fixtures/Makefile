@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to use fixtures with DBIx::Class
+WWW=		https://metacpan.org/release/DBIx-Class-Fixtures
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

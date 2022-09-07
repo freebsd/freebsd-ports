@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Compatibility wrapper around Date::Parse
+WWW=		https://metacpan.org/release/DateTime-Format-DateParse
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

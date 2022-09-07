@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Lightweight regexp-based XML parser
+WWW=		https://metacpan.org/release/XML-Parser-Lite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.pmwiki.org/pub/pmwiki/
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	WikiWikiWeb clone using PHP
+WWW=		https://www.pmwiki.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt

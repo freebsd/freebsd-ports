@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Service daemon for the Keybase filesystem (KBFS)
+WWW=		https://github.com/0mp/kbfsd
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

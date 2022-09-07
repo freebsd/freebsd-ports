@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for lightweight prereqs scanner
+WWW=		https://metacpan.org/release/Perl-PrereqScanner-Lite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

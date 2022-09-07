@@ -6,6 +6,7 @@ DISTFILES=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation for TCL (Tool Command Language)
+WWW=		https://www.tcl.tk/
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

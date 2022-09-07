@@ -5,6 +5,7 @@ CATEGORIES=	science education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE interactive physics simulator
+WWW=		https://edu.kde.org/step
 
 LIB_DEPENDS=	libcln.so:math/cln \
 		libgsl.so:math/gsl \

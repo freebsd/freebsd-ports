@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Cross-platform emulator project supporting various machines
+WWW=		https://github.com/libretro/emux
 
 LICENSE=	GPLv2
 

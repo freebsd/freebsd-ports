@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Support for the SSH 2 protocol via libSSH2
+WWW=		https://metacpan.org/release/Net-SSH2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

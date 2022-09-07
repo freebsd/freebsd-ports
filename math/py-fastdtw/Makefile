@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Dynamic Time Warping (DTW) algorithm with an O(N) complexity
+WWW=		https://github.com/slaypni/fastdtw
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

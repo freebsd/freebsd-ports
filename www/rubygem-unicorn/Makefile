@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	HTTP server for Rack applications
+WWW=		https://yhbt.net/unicorn/
 
 LICENSE=	GPLv2 GPLv3 RUBY
 LICENSE_COMB=	dual

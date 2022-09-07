@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Vector Helpers
+WWW=		https://cran.r-project.org/web/packages/vctrs/
 
 LICENSE=	MIT
 

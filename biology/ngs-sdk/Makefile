@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-sdk
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tools and libraries for using data in the INSDC Sequence Read Archives
+WWW=		https://github.com/ncbi/ngs
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

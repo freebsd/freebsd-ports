@@ -7,6 +7,7 @@ DISTNAME=	libAfterImage-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic imaging library originally designed for AfterStep
+WWW=		http://www.afterstep.org/afterimage/
 
 LICENSE=	LGPL21+
 

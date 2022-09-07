@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Integration between the flask web framework and the peewee orm
+WWW=		https://github.com/coleifer/flask-peewee/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

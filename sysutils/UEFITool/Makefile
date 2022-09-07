@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	UEFI images parser
+WWW=		https://github.com/LongSoft/UEFITool
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE.md

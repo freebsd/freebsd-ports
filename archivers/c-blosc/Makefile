@@ -5,6 +5,7 @@ CATEGORIES=	archivers devel
 
 MAINTAINER=	iblis.dif01@nctu.edu.tw
 COMMENT=	Blocking, shuffling and loss-less compression library
+WWW=		https://blosc.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSES/BLOSC.txt

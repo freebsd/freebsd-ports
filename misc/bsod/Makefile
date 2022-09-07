@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.vanheusden.com/bsod/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Experience the authentic Microsoft Windows experience
+WWW=		https://www.vanheusden.com/bsod/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt

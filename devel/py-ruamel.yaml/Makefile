@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	YAML 1.2 loader/dumper package for Python
+WWW=		https://bitbucket.org/ruamel/yaml
 
 LICENSE=	MIT
 

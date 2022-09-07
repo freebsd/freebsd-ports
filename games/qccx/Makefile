@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast optimizing QuakeC compiler
+WWW=		https://www.quakewiki.net/archives/qccx/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Essential utilities for the Iterator class
+WWW=		https://metacpan.org/release/Iterator-DBI
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Iterator>=0:devel/p5-Iterator

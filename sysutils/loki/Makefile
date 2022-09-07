@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	grafana-
 
 MAINTAINER=	freebsd@funzi.org
 COMMENT=	Scalable, highly-available, multi-tenant log aggregation system
+WWW=		https://github.com/grafana/loki
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules cpe
 CPE_VENDOR=	grafana
 USE_GITHUB=	yes
-
 
 GH_ACCOUNT=	grafana
 GH_PROJECT=	loki

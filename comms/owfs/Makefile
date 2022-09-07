@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/owfs/owfs/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	johan@stromnet.se
 COMMENT=	1-wire file system implementation
+WWW=		https://www.owfs.org/
 
 LICENSE=	GPLv2
 

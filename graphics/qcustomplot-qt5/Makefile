@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qt C++ widget for plotting and data visualization
+WWW=		https://www.qcustomplot.com
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.txt

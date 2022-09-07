@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple, intuitive interface to fork() system call
+WWW=		https://metacpan.org/release/Proc-Fork
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

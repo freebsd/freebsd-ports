@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module for managing Subversion hook scripts
+WWW=		https://metacpan.org/release/SVN-Hook
 
 LICENSE=	APACHE20
 

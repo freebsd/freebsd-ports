@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Takes mixed encoding input and produces UTF-8 output
+WWW=		https://metacpan.org/release/Encoding-FixLatin
 
 USES=		perl5
 USE_PERL5=	configure

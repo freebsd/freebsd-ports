@@ -5,6 +5,7 @@ MASTER_SITES=	http://user-dirs.freedesktop.org/releases/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Tool to help manage personal user directories
+WWW=		https://freedesktop.org/wiki/Software/xdg-user-dirs/
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi

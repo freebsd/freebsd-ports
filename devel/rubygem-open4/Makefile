@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open4 manages child processes and their io handles
+WWW=		https://github.com/ahoward/open4
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

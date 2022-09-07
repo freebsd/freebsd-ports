@@ -12,6 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet communicator supporting Gadu-Gadu and Jabber/XMPP
+WWW=		http://kadu.im
 
 LICENSE=	GPLv2
 

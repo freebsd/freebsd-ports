@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides Django integration for RQ (Redis Queue)
+WWW=		https://github.com/rq/django-rq
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

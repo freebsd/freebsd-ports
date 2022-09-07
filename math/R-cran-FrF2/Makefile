@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Statistical Methods for Quality Science
+WWW=		https://CRAN.R-project.org/package=FrF2
 
 LICENSE=	GPLv2+
 

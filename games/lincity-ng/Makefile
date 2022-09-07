@@ -6,6 +6,7 @@ MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved rich city simulation game for X
+WWW=		http://lincity-ng.berlios.de
 
 BUILD_DEPENDS=	jam:devel/jam
 LIB_DEPENDS=	libphysfs.so:devel/physfs

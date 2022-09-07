@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	42
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Flexible project management web application
+WWW=		https://www.redmine.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

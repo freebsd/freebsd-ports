@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the soundex algorithm
+WWW=		https://metacpan.org/release/Text-Soundex
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

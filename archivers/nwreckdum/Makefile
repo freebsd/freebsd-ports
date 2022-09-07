@@ -5,6 +5,7 @@ CATEGORIES=	archivers games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for manipulating of Quake packed data files
+WWW=		https://github.com/danfe/nwreckdum
 
 LICENSE=	GPLv2
 

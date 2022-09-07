@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	samir@noir.im
 COMMENT=	MkDocs plugin for including mermaid graphs in markdown sources
+WWW=		https://github.com/fralau/mkdocs-mermaid2-plugin
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

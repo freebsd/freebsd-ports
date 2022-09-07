@@ -5,6 +5,7 @@ MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine for PostGRESQL
+WWW=		https://pgroonga.github.io/
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/COPYING

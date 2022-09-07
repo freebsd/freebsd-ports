@@ -7,6 +7,7 @@ DISTNAME=	PyNamecheap-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Namecheap API client in Python
+WWW=		https://github.com/Bemmu/PyNamecheap
 
 LICENSE=	MIT
 

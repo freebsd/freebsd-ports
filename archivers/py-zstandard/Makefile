@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Zstandard bindings for Python, a full-featured version
+WWW=		https://github.com/indygreg/python-zstandard
 
 LICENSE=	BSD2CLAUSE
 

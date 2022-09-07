@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-kernel
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Hypervisor using a microkernel design
+WWW=		https://www.xenproject.org/
 
 LICENSE=	GPLv2
 

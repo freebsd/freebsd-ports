@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Preprocessing Tools to Create Design Matrices
+WWW=		https://cran.r-project.org/web/packages/recipes/
 
 LICENSE=	MIT
 

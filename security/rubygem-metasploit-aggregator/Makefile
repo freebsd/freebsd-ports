@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Proxy for Meterpreter sessions
+WWW=		https://github.com/rapid7/metasploit-aggregator
 
 LICENSE=	BSD3CLAUSE
 

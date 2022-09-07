@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.lcdf.org/xmahjongg/
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Chinese game of Mahjongg for X11
+WWW=		https://www.lcdf.org/xmahjongg/
 
 LICENSE=	GPLv2
 

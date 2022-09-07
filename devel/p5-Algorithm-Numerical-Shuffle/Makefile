@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Shuffle a list
+WWW=		https://metacpan.org/release/Algorithm-Numerical-Shuffle
 
 LICENSE=	MIT
 

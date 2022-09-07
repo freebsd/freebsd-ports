@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple Alt+Tab switcher for floating windows
+WWW=		https://github.com/ErikReider/SwayFloatingSwitcher
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

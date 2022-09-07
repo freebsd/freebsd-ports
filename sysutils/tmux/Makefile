@@ -6,6 +6,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Terminal Multiplexer
+WWW=		https://tmux.github.io/
 
 LICENSE=	ISCL GPLv2
 LICENSE_COMB=	multi

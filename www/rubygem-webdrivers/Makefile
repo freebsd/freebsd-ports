@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Run Selenium tests more easily with install and updates for all supported webdrivers
+WWW=		https://github.com/titusfortner/webdrivers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

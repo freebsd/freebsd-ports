@@ -7,6 +7,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/41155299/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client and protocol library for the Drizzle database
+WWW=		https://launchpad.net/libdrizzle
 
 LICENSE=	BSD3CLAUSE
 

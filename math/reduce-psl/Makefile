@@ -7,6 +7,7 @@ DISTNAME=	Reduce-svn6110-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Standard Lisp REDUCE general-purpose algebra system
+WWW=		http://www.reduce-algebra.com/
 
 LICENSE=	BSD2CLAUSE
 

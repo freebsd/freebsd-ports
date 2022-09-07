@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mock package, object and standard subroutines, with unit testing in mind
+WWW=		https://metacpan.org/dist/Mock-Sub
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

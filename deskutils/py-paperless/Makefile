@@ -10,6 +10,7 @@ PATCHFILES+=	b131c97d1d85.patch:-p1 # https://github.com/the-paperless-project/p
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Index and archive scanned paper documents
+WWW=		https://paperless.readthedocs.io
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

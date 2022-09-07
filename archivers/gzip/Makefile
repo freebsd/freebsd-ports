@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Compression utility designed to be a replacement for compress
+WWW=		https://www.gnu.org/software/gzip/
 
 LICENSE=	GPLv3+
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension like CDBI::Plugin::AsFdat
+WWW=		https://metacpan.org/release/DBIx-Class-AsFdat
 
 RUN_DEPENDS=	\
 	p5-DBIx-Class>0:databases/p5-DBIx-Class

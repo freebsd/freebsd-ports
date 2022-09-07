@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate RBS type definitions from JSON schema
+WWW=		https://github.com/ruby/rbs_json_schema
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

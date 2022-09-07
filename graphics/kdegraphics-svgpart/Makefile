@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	kdegraphics-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SVG KPart
+WWW=		https://www.kde.org
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \

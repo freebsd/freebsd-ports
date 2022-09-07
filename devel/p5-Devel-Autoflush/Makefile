@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Set autoflush from the command line
+WWW=		https://metacpan.org/release/Devel-Autoflush
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

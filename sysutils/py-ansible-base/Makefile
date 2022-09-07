@@ -8,6 +8,7 @@ PATCHFILES=	6459fbb7bcf792aac9208d7851bf1edeb0495295.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Radically simple IT automation
+WWW=		https://www.ansible.com/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

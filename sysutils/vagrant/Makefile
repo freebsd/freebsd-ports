@@ -6,6 +6,7 @@ CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Vagrant Virtual Machine Manager
+WWW=		https://www.vagrantup.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

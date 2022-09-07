@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	alex.deiter@gmail.com
 COMMENT=	Combine WWW::Mechanize and HTML::TreeBuilder
+WWW=		https://metacpan.org/release/WWW-Mechanize-TreeBuilder
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

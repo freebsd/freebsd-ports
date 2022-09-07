@@ -6,6 +6,7 @@ MASTER_SITES=	http://tellico-project.org/files/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collection manager for KDE
+WWW=		https://tellico-project.org
 
 LICENSE=	GPLv2
 

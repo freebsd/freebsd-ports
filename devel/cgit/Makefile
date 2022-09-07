@@ -9,6 +9,7 @@ DISTFILES=	cgit-${PORTVERSION}${EXTRACT_SUFX}:cgit \
 
 MAINTAINER=	mt@markoturk.info
 COMMENT=	Fast, lightweight web frontend for Git repositories
+WWW=		https://git.zx2c4.com/cgit/about/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

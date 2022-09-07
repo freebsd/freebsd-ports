@@ -5,6 +5,7 @@ MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fast, lightweight and minimalistic Wayland terminal emulator
+WWW=		https://codeberg.org/dnkl/foot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	aryeh.friedman@gmail.com
 COMMENT=	Transaction-based software configuration management system
+WWW=		http://aegis.sourceforge.net/
 
 LICENSE=	GPLv3
 

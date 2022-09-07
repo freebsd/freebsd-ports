@@ -6,6 +6,7 @@ MASTER_SITES=	http://0pointer.de/lennart/projects/atitvout/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toggle TV Out on Mach64 graphics cards
+WWW=		https://0pointer.de/lennart/projects/atitvout/
 
 LICENSE=	GPLv2
 

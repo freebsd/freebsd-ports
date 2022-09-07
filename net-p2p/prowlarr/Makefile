@@ -6,6 +6,7 @@ DISTNAME=	Prowlarr.develop.${PORTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Indexer Manager for Usenet and BitTorrent users
+WWW=		https://github.com/Prowlarr/Prowlarr
 
 LICENSE=	GPLv3
 

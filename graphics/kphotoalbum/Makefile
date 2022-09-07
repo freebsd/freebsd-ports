@@ -6,6 +6,7 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Image viewer and organizer for KDE
+WWW=		https://www.kphotoalbum.org/
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Prometheus exporter for endpoints over HTTP(S), DNS, TCP and ICMP
+WWW=		https://github.com/prometheus/blackbox_exporter
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

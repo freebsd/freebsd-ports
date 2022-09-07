@@ -8,6 +8,7 @@ DISTNAME=	LaTeXService-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX service for GNUstep
+WWW=		http://www.roard.com/latexservice/
 
 LICENSE=	GPLv2
 

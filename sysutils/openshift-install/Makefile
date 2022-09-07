@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@freebsd.org
 COMMENT=	RedHat OpenShift installer
+WWW=		https://github.com/openshift/installer
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE

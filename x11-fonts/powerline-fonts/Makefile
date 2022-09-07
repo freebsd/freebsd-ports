@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Fixed width sans fonts for use with powerline
+WWW=		https://github.com/powerline/fonts
 
 USES=		fonts
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fabianosidler@swissonline.ch
 COMMENT=	Simple PDF generation for Python
+WWW=		https://code.google.com/p/pyfpdf/
 
 LICENSE=	LGPL3
 

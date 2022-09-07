@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Twitter client for Rabbit
+WWW=		https://rabbit-shocker.org/en/rabbiter/
 
 LICENSE=	GPLv2+
 

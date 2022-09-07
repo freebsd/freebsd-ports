@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool suite used to flash firmware onto Samsung mobile devices
+WWW=		https://glassechidna.com.au/heimdall/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

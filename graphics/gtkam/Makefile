@@ -6,6 +6,7 @@ MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and view files from various digital cameras
+WWW=		http://www.gphoto.org/proj/gtkam/
 
 LICENSE=	GPLv2+
 

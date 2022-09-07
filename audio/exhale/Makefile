@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	Open source xHE-AAC (Extended HE-AAC/USAC) encoder
+WWW=		https://gitlab.com/ecodis/exhale
 
 LICENSE=	EXHALE
 LICENSE_NAME=	exhale Copyright License

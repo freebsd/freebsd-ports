@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC server that allows for remote access to your GNOME desktop
+WWW=		https://wiki.gnome.org/Projects/Vino
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

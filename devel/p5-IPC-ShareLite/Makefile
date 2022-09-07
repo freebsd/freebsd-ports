@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple interface to access shared memory
+WWW=		https://metacpan.org/release/IPC-ShareLite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

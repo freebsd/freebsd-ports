@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mocks LWP::UserAgent and dispatches your requests/responses
+WWW=		https://metacpan.org/release/Test-Mock-LWP-Dispatch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/xml${PORTNAME}/xml${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Resume library
+WWW=		http://xmlresume.sourceforge.net/
 
 LICENSE=	MIT
 

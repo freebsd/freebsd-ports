@@ -8,6 +8,7 @@ DISTNAME=	ndg_httpsclient-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Enhance HTTPS support for httplib and urllib2
+WWW=		https://pypi.org/project/ndg-httpsclient/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/ndg/httpsclient/LICENSE

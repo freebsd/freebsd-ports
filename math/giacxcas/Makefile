@@ -12,6 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer algebra system
+WWW=		https://www-fourier.ujf-grenoble.fr/~parisse/giac.html
 
 LICENSE=	GPLv3 DOC
 LICENSE_COMB=	multi

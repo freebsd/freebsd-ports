@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby wrapper for the OAuth 2.0 protocol
+WWW=		https://github.com/oauth-xx/oauth2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

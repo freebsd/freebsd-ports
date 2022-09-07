@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Simple data validation in Python
+WWW=		https://pypi.org/project/validators/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

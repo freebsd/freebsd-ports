@@ -11,6 +11,7 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Diff application for semistructured data such as XML files
+WWW=		http://ssddiff.alioth.debian.org/
 
 LICENSE=	GPLv2+
 

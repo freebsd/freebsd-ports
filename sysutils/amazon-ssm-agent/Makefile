@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	cperciva@FreeBSD.org
 COMMENT=	Amazon Simple Systems Manager Agent
+WWW=		https://github.com/aws/amazon-ssm-agent
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

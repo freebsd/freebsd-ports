@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	olexander.v.melnyk@gmail.com
 COMMENT=	Multi-backend SQL database library for Lua
+WWW=		https://github.com/mwild1/luadbi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

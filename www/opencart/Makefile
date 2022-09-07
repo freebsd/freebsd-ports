@@ -4,6 +4,7 @@ CATEGORIES=	www misc
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open source PHP-based online shopping cart system
+WWW=		https://www.opencart.com/
 
 LICENSE=	GPLv3
 

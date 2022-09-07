@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Mechanism to parse ruby little-plugger files
+WWW=		https://github.com/TwP/little-plugger
 
 LICENSE=	MIT
 

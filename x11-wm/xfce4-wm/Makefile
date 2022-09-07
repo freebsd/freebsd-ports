@@ -8,6 +8,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's window manager
+WWW=		https://xfce.org/
 
 LICENSE=	GPLv2
 

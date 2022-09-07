@@ -6,6 +6,7 @@ DISTNAME=	BBMap_${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	BBMap short read aligner, and other bioinformatic tools
+WWW=		https://jgi.doe.gov/data-and-tools/bbtools/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

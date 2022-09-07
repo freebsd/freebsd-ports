@@ -6,6 +6,7 @@ CATEGORIES=	graphics math science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Extract data points from images of graphs
+WWW=		https://markummitchell.github.io/engauge-digitizer/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

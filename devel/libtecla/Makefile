@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
 MAINTAINER=	k@stereochro.me
 COMMENT=	Interactive command line editing facilities
+WWW=		https://www.astro.caltech.edu/~mcs/tecla/
 
 LICENSE=	MIT
 

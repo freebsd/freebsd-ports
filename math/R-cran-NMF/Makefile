@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Algorithms and Framework for Nonnegative Matrix Factorization
+WWW=		https://cran.r-project.org/web/packages/NMF/
 
 LICENSE=	GPLv2+
 

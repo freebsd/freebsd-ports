@@ -7,6 +7,7 @@ DISTNAME=	Reverend-${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Simple Bayesian classifier written in Python
+WWW=		http://www.divmod.org/trac/wiki/DivmodReverend
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist

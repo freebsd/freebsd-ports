@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Format times in .beat notation
+WWW=		https://metacpan.org/release/EMARTIN/DateTime-Format-IBeat-0.161
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

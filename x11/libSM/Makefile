@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Session Management library for X11
+WWW=		https://www.freedesktop.org/Software/xlibs
 
 LICENSE=	MIT
 

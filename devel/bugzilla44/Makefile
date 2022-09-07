@@ -6,6 +6,7 @@ MASTER_SITES=	MOZILLA/webtools MOZILLA/webtools/archived
 
 MAINTAINER=	bz-ports@FreeBSD.org
 COMMENT=	Bug-tracking system developed by Mozilla Project
+WWW=		https://www.bugzilla.org/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

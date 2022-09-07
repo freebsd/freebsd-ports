@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Implementation of the arcade classic Puzznic
+WWW=		https://dustedgames.blogspot.com/p/wizznic.html
 
 LICENSE=	GPLv3+
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Swagger schema validation
+WWW=		https://github.com/pipermerriam/flex
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

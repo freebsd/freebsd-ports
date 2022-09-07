@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Package manager for the Nim programming language
+WWW=		https://github.com/nim-lang/nimble
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

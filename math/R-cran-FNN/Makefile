@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Fast Nearest Neighbor Search Algorithms and Applications
+WWW=		https://cran.r-project.org/package=FNN
 
 LICENSE=	GPLv2+
 

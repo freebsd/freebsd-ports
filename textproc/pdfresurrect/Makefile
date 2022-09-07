@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Analyze and extract older versions of a pdf from the current pdf
+WWW=		https://github.com/enferex/pdfresurrect
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

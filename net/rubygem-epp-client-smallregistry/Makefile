@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Smallregistry EPP client library
+WWW=		https://github.com/Absolight/epp-client
 
 LICENSE=	MIT
 

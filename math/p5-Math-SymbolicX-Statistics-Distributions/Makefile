@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Statistical distributions
+WWW=		https://metacpan.org/release/Math-SymbolicX-Statistics-Distributions
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	http://users.ics.forth.gr/~lourakis/levmar/
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	GPL-licensed library implementing the Levenberg-Marquardt algorithm
+WWW=		http://www.ics.forth.gr/~lourakis/levmar/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

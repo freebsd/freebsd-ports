@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Munkres implementation for Python
+WWW=		https://software.clapper.org/munkres/
 
 LICENSE=	APACHE20
 

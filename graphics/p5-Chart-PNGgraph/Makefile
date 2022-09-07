@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module for generating presentation graphics (i.e., charts)
+WWW=		https://metacpan.org/release/Chart-PNGgraph
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

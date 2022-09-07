@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Nested exception support for Ruby
+WWW=		https://github.com/skorks/nesty
 
 LICENSE=	MIT
 

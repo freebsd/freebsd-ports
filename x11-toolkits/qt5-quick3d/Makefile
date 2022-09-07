@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Set of controls for building complete interfaces in Qt Quick3D
+WWW=		https://qt-project.org
 
 LIB_DEPENDS=	libassimp.so:multimedia/assimp
 

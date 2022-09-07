@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Machine-readable software metadata for desktop environments
+WWW=		https://www.freedesktop.org/wiki/Distributions/AppStream/
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi

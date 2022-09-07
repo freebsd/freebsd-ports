@@ -6,6 +6,7 @@ MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${POR
 
 MAINTAINER=	opensearch@FreeBSD.org
 COMMENT=	Full-text search engine for Java
+WWW=		https://opensearch.org
 
 LICENSE=	APACHE20
 

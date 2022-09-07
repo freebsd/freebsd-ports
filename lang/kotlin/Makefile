@@ -6,6 +6,7 @@ DISTNAME=	kotlin-compiler-${PORTVERSION}
 
 MAINTAINER=	mizhka@FreeBSD.org
 COMMENT=	Kotlin Programming Language
+WWW=		https://kotlinlang.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/license/LICENSE.txt

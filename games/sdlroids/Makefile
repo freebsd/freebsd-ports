@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced shoot-the-asteroids game
+WWW=		https://sourceforge.net/projects/sdlroids/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

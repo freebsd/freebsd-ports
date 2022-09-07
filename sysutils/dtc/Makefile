@@ -8,6 +8,7 @@ PATCHFILES+=	ca19c3db2b.patch:-p1 # https://github.com/dgibson/dtc/pull/41
 
 MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	Device Tree Compiler
+WWW=		https://git.kernel.org/cgit/utils/dtc/dtc.git
 
 LICENSE=	GPLv2
 

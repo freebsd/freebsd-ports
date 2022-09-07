@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GLib-based implementation of the GData protocol
+WWW=		https://live.gnome.org/libgdata
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

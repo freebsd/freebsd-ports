@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	mizhka@gmail.com
 COMMENT=	GTK frontend for XNeur keyboard layout switcher
+WWW=		https://launchpad.net/xneur
 
 LICENSE=	GPLv2
 

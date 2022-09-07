@@ -9,6 +9,7 @@ DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Groupfolders app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/groupfolders
 
 LICENSE=	AGPLv3
 

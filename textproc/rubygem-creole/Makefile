@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Creole-to-HTML converter
+WWW=		https://github.com/minad/creole
 
 LICENSE=	RUBY
 

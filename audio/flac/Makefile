@@ -6,6 +6,7 @@ MASTER_SITES=	https://downloads.xiph.org/releases/flac/ \
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Free lossless audio codec
+WWW=		https://www.xiph.org/flac/
 
 LICENSE=	BSD3CLAUSE GFDL GPLv2 LGPL21
 LICENSE_COMB=	multi

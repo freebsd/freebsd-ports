@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addressbook for the GNOME 2 desktop
+WWW=		https://www.nicolafragale.org/rubrica/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

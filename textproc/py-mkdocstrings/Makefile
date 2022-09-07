@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Automatic documentation from sources for MkDocs
+WWW=		https://github.com/mkdocstrings/mkdocstrings
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

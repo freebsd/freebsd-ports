@@ -5,6 +5,7 @@ MASTER_SITES=	http://forge.scilab.org/index.php/p/${PORTNAME}/downloads/get/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Swing windowing and docking framework
+WWW=		https://forge.scilab.org/index.php/p/flexdock/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

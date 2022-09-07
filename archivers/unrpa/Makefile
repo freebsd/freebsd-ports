@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Extract RenPy Archives
+WWW=		https://pypi.org/project/unrpa/
 
 LICENSE=	GPLv3+
 

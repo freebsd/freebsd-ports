@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GUI for Apple iPod using GTK2
+WWW=		http://www.gtkpod.org/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Yet Another Python Profiler
+WWW=		https://github.com/sumerc/yappi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

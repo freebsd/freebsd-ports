@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Modern editor for Doom-engine based games and source ports
+WWW=		https://slade.mancubus.net/
 
 LICENSE=	GPLv2
 

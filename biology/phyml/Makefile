@@ -6,6 +6,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, fast, and accurate algorithm to estimate large phylogenies
+WWW=		https://github.com/stephaneguindon/phyml
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Python implementation of BRiAl
+WWW=		https://github.com/BRiAl/BRiAl
 
 LICENSE=	GPLv2
 

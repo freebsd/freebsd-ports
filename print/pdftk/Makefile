@@ -6,6 +6,7 @@ CATEGORIES=	print java
 
 MAINTAINER=	andreas@bilke.org
 COMMENT=	Simple tool for doing everyday things with PDF documents
+WWW=		https://gitlab.com/pdftk-java/pdftk
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

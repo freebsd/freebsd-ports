@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Distributed Block Compressed Sparse Row matrix library
+WWW=		https://www.cp2k.org/dbcsr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	lib
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	AdLib emulator library supporting many formats
+WWW=		https://adplug.github.io/
 
 LICENSE=	GPLv2
 

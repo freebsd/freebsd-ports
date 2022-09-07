@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl class for PDF generation
+WWW=		https://metacpan.org/release/Games-Bingo-Print
 
 LICENSE=	ART10
 

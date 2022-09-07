@@ -7,6 +7,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Interactive Go interpreter and debugger with REPL, generics and macros
+WWW=		https://github.com/cosmos72/gomacro
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

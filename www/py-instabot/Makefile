@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Instagram bot scripts and API wrapper
+WWW=		https://github.com/instagrambot/instabot
 
 LICENSE=	APACHE20
 

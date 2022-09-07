@@ -6,6 +6,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Lexer/parser utility functions for NetSurf
+WWW=		https://www.netsurf-browser.org/projects/libparserutils/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

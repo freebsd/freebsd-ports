@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	HTTP client mocking tool for Python
+WWW=		https://github.com/gabrielfalcao/HTTPretty
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

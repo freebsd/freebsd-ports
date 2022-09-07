@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Email protection Liquid filter for Jekyll
+WWW=		https://github.com/vwochnik/jekyll-email-protect
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

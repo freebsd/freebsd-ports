@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	EFL process monitor and system monitor
+WWW=		https://www.enlightenment.org/
 
 LICENSE=	BSD2CLAUSE
 

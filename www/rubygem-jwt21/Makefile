@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	21
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON Web Token implementation in Ruby
+WWW=		https://github.com/jwt/ruby-jwt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

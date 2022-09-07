@@ -8,6 +8,7 @@ DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Cospend app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/cospend
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

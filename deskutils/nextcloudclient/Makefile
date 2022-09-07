@@ -6,6 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	NextCloud Desktop Syncing Client
+WWW=		https://github.com/nextcloud/desktop
 
 LICENSE=	GPLv2
 

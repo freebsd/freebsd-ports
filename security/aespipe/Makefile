@@ -7,6 +7,7 @@ MASTER_SITES=	http://loop-aes.sourceforge.net/${PORTNAME}/ \
 
 MAINTAINER=	gehm@physik.tu-berlin.de
 COMMENT=	AES encrypting or decrypting pipe
+WWW=		https://sourceforge.net/projects/loop-aes/
 
 LICENSE=	GPLv2
 

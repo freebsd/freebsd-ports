@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	${_qt_version}
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Adwaita theme for Qt applications
+WWW=		https://github.com/MartinBriza/adwaita-qt
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi

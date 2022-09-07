@@ -6,6 +6,7 @@ DIST_SUBDIR=	KDE/digikam
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE library for accessing MediaWiki sites
+WWW=		https://www.digikam.org
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

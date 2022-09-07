@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	SSO solution for Nginx using the auth_request module
+WWW=		https://github.com/vouch/vouch-proxy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

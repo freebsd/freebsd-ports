@@ -5,6 +5,7 @@ CATEGORIES=	editors security
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Minimalist secure text editor and binary encryptor
+WWW=		https://evpo.net/encryptpad/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt

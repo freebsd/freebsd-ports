@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	19
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTML formatter for Cucumber
+WWW=		https://github.com/cucumber/html-formatter
 
 LICENSE=	MIT
 

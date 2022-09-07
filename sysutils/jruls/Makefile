@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	606u@dir.bg
 COMMENT=	Display and update FreeBSD jails resource usage
+WWW=		https://github.com/606u/jruls
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

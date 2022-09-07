@@ -6,6 +6,7 @@ MASTER_SITES=	http://kozos.jp/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fireworks on X
+WWW=		https://kozos.jp/myfreesoft/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

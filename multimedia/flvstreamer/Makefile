@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-2.1c1
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Open source command-line RTMP client
+WWW=		https://savannah.nongnu.org/projects/flvstreamer/
 
 USES=		gmake
 ALL_TARGET=	posix

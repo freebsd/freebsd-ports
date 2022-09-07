@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	More expressive universal gRPC client
+WWW=		https://github.com/ktr0731/evans
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

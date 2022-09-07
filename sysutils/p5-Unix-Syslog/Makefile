@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the UNIX syslog(3) calls
+WWW=		https://metacpan.org/release/Unix-Syslog
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/Artistic

@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.mercurial-scm.org/release/tortoisehg/targz/
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	GUI for Mercurial VCS
+WWW=		https://tortoisehg.bitbucket.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

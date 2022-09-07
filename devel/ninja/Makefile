@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Small build system closest in spirit to Make
+WWW=		https://ninja-build.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

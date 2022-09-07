@@ -4,6 +4,7 @@ CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland tiling compositor inspired by ratpoison
+WWW=		https://github.com/project-repo/cagebreak
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

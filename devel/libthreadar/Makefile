@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/ \
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Abstracted set of C++ *classes* to manipulate threads
+WWW=		https://libthreadar.sourceforge.net/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

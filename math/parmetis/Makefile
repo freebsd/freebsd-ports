@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package for parallel (MPI) unstructured graph partitioning
+WWW=		http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview
 
 LICENSE=	METIS
 LICENSE_NAME=	University of Minnesota METIS License

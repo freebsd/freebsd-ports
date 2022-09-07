@@ -5,6 +5,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	IMAP mail filtering utility
+WWW=		https://github.com/lefcha/imapfilter
 
 LICENSE=	MIT
 

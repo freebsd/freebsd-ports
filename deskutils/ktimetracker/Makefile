@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Todo management and time tracker
+WWW=		https://userbase.kde.org/KTimeTracker
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple Text Adventure, The Interpreter
+WWW=		https://instead.syscall.ru/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

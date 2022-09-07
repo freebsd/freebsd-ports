@@ -6,6 +6,7 @@ CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Generic utility library shared by the Tilburg University software
+WWW=		https://github.com/LanguageMachines/ticcutils
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

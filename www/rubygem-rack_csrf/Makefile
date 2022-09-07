@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Anti-CSRF Rack middleware
+WWW=		https://github.com/baldowl/rack_csrf
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rdoc

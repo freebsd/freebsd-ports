@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source lightweight messaging layer
+WWW=		https://github.com/crossroads-io/libxs
 
 LICENSE=	GPLv3
 

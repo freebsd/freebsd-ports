@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	henrik@gulbra.net
 COMMENT=	Multiphysical simulation software
+WWW=		https://www.csc.fi/web/elmer
 
 LICENSE=	GPLv2
 

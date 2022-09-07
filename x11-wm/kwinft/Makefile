@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland compositor and X11 window manager
+WWW=		https://gitlab.com/kwinft/kwinft
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

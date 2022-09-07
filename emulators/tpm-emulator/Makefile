@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S,-,_,}-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Trusted Platform Module (TPM) emulator
+WWW=		http://tpm-emulator.berlios.de/
 
 LICENSE=	GPLv2
 

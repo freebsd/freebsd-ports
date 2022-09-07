@@ -7,6 +7,7 @@ MASTER_SITES=	SF/java-readline/java-readline/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JNI wrapper around GNU Readline / libedit / libgetline
+WWW=		https://sourceforge.net/projects/java-readline/
 
 ALL_TARGET=	# empty
 MAKE_ENV=	JAVA_HOME="${JAVA_HOME}" JAVA="${JAVA}" JAVAC="${JAVAC}" \

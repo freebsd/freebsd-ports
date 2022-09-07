@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Original mixer(8) from FreeBSD 13.0
+WWW=		https://github.com/0mp/freebsd-13-mixer
 
 LICENSE=	PD
 

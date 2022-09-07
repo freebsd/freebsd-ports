@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	File::HomeDir returning Path::Class objects
+WWW=		https://metacpan.org/release/File-HomeDir-PathClass
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

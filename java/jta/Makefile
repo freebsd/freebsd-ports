@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-spec${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Transaction API (JTA)
+WWW=		http://www.oracle.com/technetwork/java/javaee/tech/jta-138684.html
 
 # Converted from NO_CDROM
 LICENSE=	jta

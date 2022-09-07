@@ -5,6 +5,7 @@ CATEGORIES=	biology devel math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only library for biological sequence analysis
+WWW=		https://github.com/seqan/seqan3
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

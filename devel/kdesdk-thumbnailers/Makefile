@@ -5,6 +5,7 @@ CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE thumbnail generator for gettext po files
+WWW=		https://www.kde.org/
 
 LIB_DEPENDS=	libgettextpo.so:devel/gettext-tools
 

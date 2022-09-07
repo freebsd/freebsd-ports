@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Small and easy to use ruby Atom feed generator
+WWW=		https://github.com/mmb/tinyatom
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

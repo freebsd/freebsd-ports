@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Meta-language for DSL implementation inspired by Xtext
+WWW=		https://textx.github.io/textX/stable/
 
 LICENSE=	MIT
 

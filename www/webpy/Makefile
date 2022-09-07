@@ -8,6 +8,7 @@ DISTNAME=	web.py-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Web Framework For Python
+WWW=		https://webpy.org/
 
 LICENSE=	PD
 

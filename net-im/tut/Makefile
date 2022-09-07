@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	TUI for Mastodon
+WWW=		https://github.com/RasmusLindroth/tut
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

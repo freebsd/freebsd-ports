@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Internet Routing Registry database server v4
+WWW=		http://www.irrd.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

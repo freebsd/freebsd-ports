@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatically apply roles at object creation time
+WWW=		https://metacpan.org/release/MooX-Traits
 
 LICENSE=	ARTPERL10
 

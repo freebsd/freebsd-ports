@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Rule-based tunnel in Go
+WWW=		https://github.com/Dreamacro/clash
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

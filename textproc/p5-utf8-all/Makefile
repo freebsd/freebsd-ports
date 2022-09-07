@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Turn on Unicode - all of it
+WWW=		https://metacpan.org/release/utf8-all
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

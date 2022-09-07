@@ -3,6 +3,7 @@ PORTVERSION=	7.2.0
 CATEGORIES=	math
 
 COMMENT=	Graph algorithms in the language of linear algebra
+WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
 
 LICENSE=	APACHE20
 

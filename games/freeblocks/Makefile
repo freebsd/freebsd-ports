@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game with similar gameplay to Tetris Attack
+WWW=		https://github.com/dorkster/freeblocks
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

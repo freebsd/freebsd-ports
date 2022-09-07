@@ -6,6 +6,7 @@ MASTER_SITES=	SF/vmpk/vmpk/${PORTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Virtual MIDI Piano Keyboard
+WWW=		http://vmpk.sourceforge.net
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

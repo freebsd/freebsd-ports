@@ -8,6 +8,7 @@ DISTFILES=	#
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	TuxPaint Localized Fonts
+WWW=		https://www.tuxpaint.org/
 
 RUN_DEPENDS=	tuxpaint>=0.9.21:games/tuxpaint
 

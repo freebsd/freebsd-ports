@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Thumbnail maker for GD
+WWW=		https://metacpan.org/release/GD-Thumbnail
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD

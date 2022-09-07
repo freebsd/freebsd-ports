@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Datetime panel plugin for the Xfce desktop
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-datetime-plugin
 
 LICENSE=	GPLv2
 

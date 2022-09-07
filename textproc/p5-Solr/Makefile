@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for interfacing with Solr
+WWW=		https://metacpan.org/release/Solr
 
 LICENSE=	APACHE20
 

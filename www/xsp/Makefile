@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono based web server
+WWW=		https://www.mono-project.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

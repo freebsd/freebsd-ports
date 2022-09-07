@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Online jamming client and server tool
+WWW=		https://github.com/hselasky/hpsjam
 
 LICENSE=	BSD2CLAUSE
 

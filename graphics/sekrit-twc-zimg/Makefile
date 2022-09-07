@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${GH_ACCOUNT}-
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Scaling, colorspace conversion, and dithering library
+WWW=		https://github.com/sekrit-twc/zimg
 
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/COPYING

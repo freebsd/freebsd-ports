@@ -6,6 +6,7 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	hsw@bitmark.com
 COMMENT?=	Bitmark distributed property system programs
+WWW=		https://github.com/bitmark-inc/bitmarkd
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

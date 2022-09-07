@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library and tools to support IPMI-capable hardware
+WWW=		https://savannah.gnu.org/projects/freeipmi/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

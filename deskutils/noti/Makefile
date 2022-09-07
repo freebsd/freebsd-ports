@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Trigger notifications when a process completes
+WWW=		https://github.com/variadico/noti
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

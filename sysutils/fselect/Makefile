@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Find files with SQL-like queries
+WWW=		https://github.com/jhspetersson/fselect
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

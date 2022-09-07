@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Fast and lightweight x86/x86-64 disassembler library
+WWW=		https://zydis.re
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

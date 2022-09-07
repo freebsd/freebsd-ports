@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Performant HTTP server for sysutils/restic backend API
+WWW=		https://github.com/restic/rest-server
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

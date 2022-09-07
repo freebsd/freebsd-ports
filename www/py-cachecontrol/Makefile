@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Caching algorithms in httplib2 for use with requests session object
+WWW=		https://github.com/ionrock/cachecontrol/
 
 LICENSE=	BSD2CLAUSE
 

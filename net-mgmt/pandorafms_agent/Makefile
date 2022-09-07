@@ -3,6 +3,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	koichiro@rworks.jp
 COMMENT=	Pandora FMS agent, Perl version
+WWW=		https://www.pandorafms.com/
 
 LICENSE=	${PANDORA_LICENSE}
 LICENSE_FILE=	${PANDORA_LICENSE_FILE}

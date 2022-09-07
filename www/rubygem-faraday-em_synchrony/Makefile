@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Faraday adapter for Em::Synchrony
+WWW=		https://github.com/lostisland/faraday-em_synchrony
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

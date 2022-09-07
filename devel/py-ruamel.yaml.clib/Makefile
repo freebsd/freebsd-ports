@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C version of reader, parser and emitter for ruamel.yaml
+WWW=		https://sourceforge.net/projects/ruamel-yaml-clib/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

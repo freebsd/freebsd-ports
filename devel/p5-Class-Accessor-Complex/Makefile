@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Arrays, hashes, booleans, integers, sets, and more
+WWW=		https://metacpan.org/release/Class-Accessor-Complex
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

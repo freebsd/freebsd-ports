@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Mojo Server FastCGI
+WWW=		https://metacpan.org/release/Mojo-Server-FastCGI
 
 LICENSE=	ART20
 

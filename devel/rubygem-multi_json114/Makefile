@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	114
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby library provide swappable JSON backends
+WWW=		https://github.com/intridea/multi_json
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

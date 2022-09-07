@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate Kwalitee ratings for a distribution
+WWW=		https://metacpan.org/release/Module-CPANTS-Analyse
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

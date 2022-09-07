@@ -12,6 +12,7 @@ EXTRACT_ONLY=	fMSX${PORTVERSION:C/\.//}.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable MSX/MSX2/MSX2+ Emulator
+WWW=		https://fms.komkon.org/fMSX/
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	unknown

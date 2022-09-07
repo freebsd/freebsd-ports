@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISO 7816 Smartcard Utility
+WWW=		http://www.citi.umich.edu/projects/smartcard/sectok.html
 
 LIB_DEPENDS=	libsectok.so:security/libsectok
 

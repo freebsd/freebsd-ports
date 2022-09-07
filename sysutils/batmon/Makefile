@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH/gap
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep battery monitor for laptops
+WWW=		https://www.nongnu.org/gap/batmon/index.html
 
 LICENSE=	GPLv2+
 

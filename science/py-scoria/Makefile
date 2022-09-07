@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight molecule manipulation codebase
+WWW=		https://git.durrantlab.pitt.edu/jdurrant/scoria
 
 LICENSE=	APACHE20
 

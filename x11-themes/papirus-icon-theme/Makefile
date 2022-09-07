@@ -4,6 +4,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Papirus icon theme
+WWW=		https://git.io/papirus-icon-theme
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

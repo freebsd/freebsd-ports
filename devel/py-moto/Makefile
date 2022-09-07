@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Allow your python tests to easily mock out the boto library
+WWW=		https://github.com/spulec/moto
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

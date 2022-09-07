@@ -5,6 +5,7 @@ MASTER_SITES=	https://repo.or.cz/alpine.git/snapshot/${GIT_COMMIT}${EXTRACT_SUFX
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT?=	Mail and news client descended from Pine
+WWW=		https://www.washington.edu/alpine/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

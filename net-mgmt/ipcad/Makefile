@@ -8,6 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 
 MAINTAINER=	vlm@lionet.info
 COMMENT=	IP accounting daemon with Cisco-like RSH and NetFlow export
+WWW=		http://ipcad.sourceforge.net/
 
 USE_RC_SUBR=	ipcad
 SUB_FILES=	pkg-message

@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	andrey@hm.perm.ru
 COMMENT=	Small, powerful, GPL'ed password generator #'
+WWW=		https://sourceforge.net/projects/pwgen/
 
 LICENSE=	GPLv2
 

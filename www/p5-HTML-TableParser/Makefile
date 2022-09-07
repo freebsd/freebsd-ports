@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extract data from an HTML table
+WWW=		https://metacpan.org/release/HTML-TableParser
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

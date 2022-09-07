@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implement the Singleton pattern
+WWW=		https://github.com/ruby/singleton
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

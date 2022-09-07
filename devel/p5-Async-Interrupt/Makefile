@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Allow C/XS libraries to interrupt perl asynchronously
+WWW=		https://metacpan.org/release/Async-Interrupt
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

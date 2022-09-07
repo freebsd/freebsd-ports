@@ -6,6 +6,7 @@ MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
+WWW=		http://www.speech.cs.cmu.edu/sphinx/
 
 LIB_DEPENDS=	libsphinxbase.so:audio/sphinxbase
 

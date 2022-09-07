@@ -5,6 +5,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		otis@FreeBSD.org
 COMMENT=		Jinja2 CLI tool
+WWW=		https://github.com/mattrobenolt/jinja2-cli
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

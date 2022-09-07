@@ -5,6 +5,7 @@ CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Command line client for RFC 4918 WebDAV protocol
+WWW=		http://floss.scru.org/hDAV
 
 LICENSE=	GPLv3
 

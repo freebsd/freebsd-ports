@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Rails plugin for Japanese mobile-phones
+WWW=		https://jpmobile-rails.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

@@ -8,6 +8,7 @@ DIST_SUBDIR=	edirect-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Access to the NCBI's suite of interconnected databases
+WWW=		https://www.ncbi.nlm.nih.gov/books/NBK179288/
 
 LICENSE=	PD
 

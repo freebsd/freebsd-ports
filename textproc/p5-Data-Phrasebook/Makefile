@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Accessing phrasebooks from various data sources
+WWW=		https://metacpan.org/release/Data-Phrasebook
 
 LICENSE=	ART20
 

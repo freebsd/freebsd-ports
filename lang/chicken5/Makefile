@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Scheme-to-C compiler
+WWW=		https://www.call-cc.org/
 
 LICENSE=	BSD3CLAUSE PD
 LICENSE_COMB=	multi

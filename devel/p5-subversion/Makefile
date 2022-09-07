@@ -2,6 +2,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Perl bindings for Version control system
+WWW=		https://subversion.apache.org/
 
 USES=		perl5
 USE_PERL5=	build run

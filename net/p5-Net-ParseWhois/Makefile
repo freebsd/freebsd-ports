@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Extendable perl5 module for parsing whois information
+WWW=		https://metacpan.org/release/Net-ParseWhois
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

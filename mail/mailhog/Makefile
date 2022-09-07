@@ -6,6 +6,7 @@ CATEGORIES=	mail devel
 
 MAINTAINER=	mops@punkt.de
 COMMENT=	MailHog development mail server
+WWW=		https://github.com/mailhog/MailHog
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

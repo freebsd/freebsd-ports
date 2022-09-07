@@ -6,6 +6,7 @@ MASTER_SITES=	http://jameslick.com/clamassassin/
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Simple virus filter wrapper for ClamAV
+WWW=		http://drivel.com/clamassassin/
 
 LICENSE=	BSD3CLAUSE
 

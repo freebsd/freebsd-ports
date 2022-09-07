@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
+WWW=		https://sourceforge.net/projects/hamlib/
 
 LICENSE=	LGPL20
 

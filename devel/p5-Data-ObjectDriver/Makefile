@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple, transparent data interface, with caching
+WWW=		https://metacpan.org/release/Data-ObjectDriver
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

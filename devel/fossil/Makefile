@@ -8,6 +8,7 @@ MASTER_SITES=	https://fossil-scm.org/home/tarball/version-${PORTVERSION}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
+WWW=		https://fossil-scm.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT-BSD2.txt

@@ -7,6 +7,7 @@ CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	ProjectTox-Core library, a decentralized and secure messenger
+WWW=		https://tox.chat/
 
 LICENSE=	GPLv3
 

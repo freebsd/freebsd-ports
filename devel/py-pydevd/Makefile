@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Debugger used in PyDev and PyCharm
+WWW=		https://pypi.org/project/pydevd/
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

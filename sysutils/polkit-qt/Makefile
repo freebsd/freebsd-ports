@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 wrapper around Polkit libraries
+WWW=		https://projects.kde.org/projects/kdesupport/polkit-qt-1
 
 LICENSE=	LGPL21
 

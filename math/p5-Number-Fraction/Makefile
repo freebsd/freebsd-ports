@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl extension to model fractions
+WWW=		https://metacpan.org/release/Number-Fraction
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moo>=1.000001:devel/p5-Moo \

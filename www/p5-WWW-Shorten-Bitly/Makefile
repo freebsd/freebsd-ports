@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Abstract interface to bit.ly, one of URL shortening sites
+WWW=		https://metacpan.org/release/WWW-Shorten-Bitly
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

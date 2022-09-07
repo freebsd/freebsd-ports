@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Perl API for check_mk livestatus
+WWW=		https://metacpan.org/release/Monitoring-Livestatus
 
 LICENSE=	GPLv1+
 LICENSE_FILE=	${WRKSRC}/README

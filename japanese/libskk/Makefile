@@ -4,6 +4,7 @@ CATEGORIES=	japanese
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Library to deal with Japanese Kana-to-Kanji conversion method
+WWW=		https://github.com/ueno/libskk
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

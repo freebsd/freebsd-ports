@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for performing validations on DM models and pure Ruby object
+WWW=		https://github.com/datamapper/dm-validations
 
 LICENSE=	MIT
 

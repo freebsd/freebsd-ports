@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tie to an existing object
+WWW=		https://metacpan.org/release/Tie-ToObject
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

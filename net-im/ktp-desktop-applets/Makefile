@@ -5,6 +5,7 @@ CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE instant messaging plasma widgets
+WWW=		https://community.kde.org/KTp
 
 LIB_DEPENDS=	libKTpCommonInternals.so:net-im/ktp-common-internals
 

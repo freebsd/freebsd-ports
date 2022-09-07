@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Text Mining add-on for Orange3
+WWW=		https://github.com/biolab/orange3-text
 
 LICENSE=	AGPLv3
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.burtonini.com/computing/
 
 MAINTAINER=	w.schwarzenfeld@utanet.at
 COMMENT=	Window manipulation tool
+WWW=		http://www.burtonini.com/blog/computers/devilspie/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

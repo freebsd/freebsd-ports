@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Formatter for Python code
+WWW=		https://github.com/google/yapf
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

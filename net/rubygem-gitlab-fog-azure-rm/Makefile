@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Stripped-down fork that enables Azure Blob Storage
+WWW=		https://gitlab.com/gitlab-org/gitlab-fog-azure-rm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

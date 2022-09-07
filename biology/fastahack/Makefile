@@ -5,6 +5,7 @@ CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Utility for indexing and sequence extraction from FASTA files
+WWW=		https://github.com/ekg/fastahack
 
 LICENSE=	GPLv2
 

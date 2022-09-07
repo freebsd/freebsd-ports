@@ -7,6 +7,7 @@ DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE micro-blogging client
+WWW=		https://www.kde.org/applications/internet/choqok/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Fetch sysctl values from BSD-like systems
+WWW=		https://metacpan.org/release/BSD-Sysctl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

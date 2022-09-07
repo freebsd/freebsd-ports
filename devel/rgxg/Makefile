@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DI
 
 MAINTAINER=	alexander.naumochkin@gmail.com
 COMMENT=	Regular expression generator
+WWW=		https://rgxg.github.io
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING

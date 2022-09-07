@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bayes Screening and Model Discrimination
+WWW=		https://cran.r-project.org/package=BsMD
 
 LICENSE=	GPLv2+
 

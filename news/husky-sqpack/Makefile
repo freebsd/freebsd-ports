@@ -1,6 +1,7 @@
 PORTNAME=	husky-sqpack
 
 COMMENT=	Husky FTN msgbase packer
+WWW=		http://husky.sourceforge.net/
 
 LICENSE=	GPLv2
 

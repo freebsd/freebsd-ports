@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}0
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test routines for examining the contents of files
+WWW=		https://metacpan.org/release/Test-File-Contents
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	New TCL channel type using mmap-ed files
+WWW=		http://tcl-mmap.sourceforge.net/
 
 LICENSE=	GPLv3
 

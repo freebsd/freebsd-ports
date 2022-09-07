@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Vi-like Spotify client for terminal users
+WWW=		https://visp.site
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

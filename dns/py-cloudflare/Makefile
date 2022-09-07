@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Wrapper for the Cloudflare v4 API
+WWW=		https://github.com/cloudflare/python-cloudflare
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

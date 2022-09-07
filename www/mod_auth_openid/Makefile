@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Authentication module for the Apache 2 webserver with OpenID
+WWW=		https://findingscience.com/mod_auth_openid/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

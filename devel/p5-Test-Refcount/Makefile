@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Assert reference counts on objects
+WWW=		https://metacpan.org/release/Test-Refcount
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

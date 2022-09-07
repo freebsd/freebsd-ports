@@ -7,6 +7,7 @@ DISTNAME=	wiki${PORTVERSION:S|.|_|g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeStyle Wiki (perl based wiki clone)
+WWW=		http://fswiki.sourceforge.jp/cgi-bin/wiki.cgi
 
 RUN_DEPENDS=	ja-p5-Jcode>=0:japanese/p5-Jcode \
 		p5-HTML-Template>=0:www/p5-HTML-Template

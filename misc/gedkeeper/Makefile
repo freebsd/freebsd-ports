@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Personal genealogical database editor
+WWW=		http://gedkeeper.net/
 
 LICENSE=	GPLv3+
 

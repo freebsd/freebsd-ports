@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Highly flexible, no magic input validation library
+WWW=		https://www.schwarz.eu/opensource/projects/pycerberus
 
 LICENSE=	MIT
 

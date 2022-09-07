@@ -5,6 +5,7 @@ MASTER_SITES=	SF/clamd-stream-cl/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone clamav client
+WWW=		http://clamd-stream-cl.sourceforge.net/
 
 HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/clamd-stream-client

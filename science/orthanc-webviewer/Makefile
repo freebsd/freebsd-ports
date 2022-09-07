@@ -19,6 +19,7 @@ EXTRACT_ONLY=	OrthancWebViewer-${PORTVERSION}.tar.gz
 
 MAINTAINER=	maintainer.freebsd@xpoundit.com
 COMMENT=	Orthanc plugin to extend Orthanc with a Web viewer of medical images
+WWW=		https://www.orthanc-server.com/static.php?page=web-viewer
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

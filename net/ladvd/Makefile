@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimal LLDP/CDP/EDP/FDP/NDP sender daemon
+WWW=		https://github.com/sspans/ladvd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE

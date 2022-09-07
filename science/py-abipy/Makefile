@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for analyzing the results produced by ABINIT
+WWW=		https://abinit.github.io/abipy/
 
 LICENSE=	GPLv2
 

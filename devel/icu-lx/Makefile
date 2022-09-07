@@ -3,6 +3,7 @@ CATEGORIES?=	devel print
 PKGNAMESUFFIX=	-lx
 
 COMMENT=	ICU Paragraph Layout API
+WWW=		http://site.icu-project.org/
 
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libicu-le-hb.so:devel/icu-le-hb

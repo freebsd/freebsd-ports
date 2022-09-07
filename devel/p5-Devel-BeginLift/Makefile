@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to make selected sub calls evaluate at compile time
+WWW=		https://metacpan.org/release/Devel-BeginLift
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 	p5-ExtUtils-Depends>0:devel/p5-ExtUtils-Depends

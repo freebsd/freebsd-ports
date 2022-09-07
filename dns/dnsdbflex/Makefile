@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Tool to use the DNSDB Flexible Search API extensions
+WWW=		https://github.com/farsightsec/dnsdbflex
 
 LICENSE=		APACHE20
 LICENSE_FILE_APACHE20=	${WRKSRC}/Apache-2.0

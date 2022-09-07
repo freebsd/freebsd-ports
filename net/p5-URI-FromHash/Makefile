@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create URI from hash of components
+WWW=		https://metacpan.org/release/URI-FromHash
 
 LICENSE=	ART20
 

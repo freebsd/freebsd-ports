@@ -6,6 +6,7 @@ MASTER_SITES=	http://etla.net/libstroke/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stroke translation library
+WWW=		http://www.etla.net/libstroke/
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

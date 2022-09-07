@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	echo@lethedata.com
 COMMENT=	Modular status bar for dwm
+WWW=		https://github.com/torrinfail/dwmblocks/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive cli tool for HTTP inspection
+WWW=		https://github.com/asciimoo/wuzz
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

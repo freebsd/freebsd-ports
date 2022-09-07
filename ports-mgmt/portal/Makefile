@@ -5,6 +5,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end to pkg(8)
+WWW=		https://github.com/culot/portal
 
 LICENSE=	BSD2CLAUSE
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/middle-man/Source/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robust proxy server
+WWW=		https://sourceforge.net/projects/middle-man/
 
 OPTIONS_DEFINE=	SYSLOG DEBUG MTIME DOCS
 

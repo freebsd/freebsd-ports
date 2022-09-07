@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python library for parsing PGP packets
+WWW=		https://pypi.org/project/pgpdump/
 
 LICENSE=	BSD2CLAUSE
 

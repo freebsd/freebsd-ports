@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tie a filehandle to Syslog
+WWW=		https://metacpan.org/release/Tie-Syslog
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	mingw32-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The zlib library cross-compiled for MinGW32
+WWW=		https://zlib.net/
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
 		${LOCALBASE}/mingw32/include/sys/types.h:devel/${PKGNAMEPREFIX}bin-msvcrt

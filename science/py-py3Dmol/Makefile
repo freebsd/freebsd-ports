@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	IPython interface for embedding 3Dmol.js views
+WWW=		https://3dmol.csb.pitt.edu/
 
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -7,6 +7,7 @@ DISTNAME=	css-mode.el
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CSS(Cascade Style Sheet) editing mode for Emacsen
+WWW=		https://www.garshol.priv.no/download/software/css-mode/index.html
 
 EXTRACT_SUFX=	# empty
 DISTFILES=	${DISTNAME} doco.html

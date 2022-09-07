@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Full-featured, secure, extensible, and configurable Perl FTP server
+WWW=		https://metacpan.org/release/Net-FTPServer
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \

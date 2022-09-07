@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Highly flexible CSV parser for large files
+WWW=		https://metacpan.org/release/Parse-CSV
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

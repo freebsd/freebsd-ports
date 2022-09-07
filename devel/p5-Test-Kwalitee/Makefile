@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test the Kwalitee of a distribution before you release it
+WWW=		https://metacpan.org/release/Test-Kwalitee
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

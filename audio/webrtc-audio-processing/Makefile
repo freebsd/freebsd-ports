@@ -13,6 +13,7 @@ PATCHFILES+=	f29ff57d6ccd.patch:-p1 # https://gitlab.freedesktop.org/pulseaudio/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	AudioProcessing module from WebRTC project
+WWW=		https://freedesktop.org/software/pulseaudio/webrtc-audio-processing/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

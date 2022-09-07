@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple lightweight parser for a subset of XML
+WWW=		https://metacpan.org/release/XML-Tiny
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

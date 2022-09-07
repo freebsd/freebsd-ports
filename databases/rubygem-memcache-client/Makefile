@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for MemCached
+WWW=		https://github.com/mperham/memcache-client
 
 LICENSE=	BSD3CLAUSE
 

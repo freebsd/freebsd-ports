@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	ik@sjmulder.nl
 COMMENT=	Convert JSON to YAML
+WWW=		https://github.com/sjmulder/json-yaml
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

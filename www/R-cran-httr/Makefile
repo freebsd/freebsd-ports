@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Tools for Working with URLs and HTTP
+WWW=		https://cran.r-project.org/web/packages/httr/
 
 LICENSE=	MIT
 

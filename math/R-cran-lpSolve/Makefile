@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Interface to 'Lp_solve' v. 5.5 to Solve Linear/Integer Programs
+WWW=		https://cran.r-project.org/web/packages/lpSolve/
 
 LICENSE=	LGPL20
 

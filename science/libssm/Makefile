@@ -7,6 +7,7 @@ DISTNAME=	ssm-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ toolkit for superposition of macromolecules
+WWW=		https://launchpad.net/ssm
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

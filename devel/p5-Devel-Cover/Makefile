@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Code coverage metrics for Perl
+WWW=		https://metacpan.org/release/Devel-Cover
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

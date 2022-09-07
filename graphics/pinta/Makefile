@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/PintaProject/Pinta/releases/download/${PORTVERS
 
 MAINTAINER=	olivierw1+bugzilla-freebsd@hotmail.com
 COMMENT=	Simple Gtk\# Paint Program
+WWW=		https://pinta-project.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license-mit.txt

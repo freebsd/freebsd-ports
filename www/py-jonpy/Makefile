@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python FastCGI interface library
+WWW=		http://jonpy.sourceforge.net/
 
 LICENSE=	MIT
 

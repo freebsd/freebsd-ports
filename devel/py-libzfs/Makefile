@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	Python libzfs bindings
+WWW=		https://github.com/freenas/py-libzfs
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

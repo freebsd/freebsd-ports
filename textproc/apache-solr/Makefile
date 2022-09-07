@@ -7,6 +7,7 @@ DISTNAME=	solr-${PORTVERSION}
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	High performance search server built using Lucene Java
+WWW=		https://lucene.apache.org/solr/
 
 LICENSE=	APACHE20
 

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils net www
 
 MAINTAINER=	uros@gruber.si
 COMMENT=	Datadog Agent: collect metrics and events from your systems and apps
+WWW=		https://www.datadoghq.com/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

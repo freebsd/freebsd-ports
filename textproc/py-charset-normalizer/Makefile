@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Real First Universal Charset Detector
+WWW=		https://github.com/Ousret/charset_normalizer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

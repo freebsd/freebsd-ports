@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Class File Reader (CFR) Java decompiler
+WWW=		https://www.benf.org/other/cfr/
 
 # http://www.benf.org/other/cfr/license.html
 LICENSE=	MIT

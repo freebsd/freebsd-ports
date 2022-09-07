@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple yet powerful HTML attribute rewriting
+WWW=		https://metacpan.org/release/HTML-RewriteAttributes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Parser>0:www/p5-HTML-Parser \

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	High-Performance Stemmer, Tokenizer, and Spell Checker
+WWW=		https://docs.ropensci.org/hunspell/
 
 LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	dual

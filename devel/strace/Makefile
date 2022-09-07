@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	System call tracer
+WWW=		https://sourceforge.net/projects/strace/
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	PNG support for pymaging
+WWW=		https://pymaging.rtfd.org
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi

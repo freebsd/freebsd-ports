@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	000.fbsd@quip.cz
 COMMENT=	Set httpd process titles to reflect currently processed request
+WWW=		https://github.com/MirLach/mod_proctitle
 
 LICENSE=	BSD2CLAUSE
 

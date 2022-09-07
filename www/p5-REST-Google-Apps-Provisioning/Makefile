@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl library to Google's RESTful Apps API
+WWW=		https://metacpan.org/release/REST-Google-Apps-Provisioning
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

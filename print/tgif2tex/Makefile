@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.cs.hiroshima-u.ac.jp/~nakano/tgif2tex/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Converting texts in figure by tgif to LaTeX commands
+WWW=		https://www.cs.hiroshima-u.ac.jp/~nakano/tgif2tex/
 
 LICENSE=	GPLv2
 

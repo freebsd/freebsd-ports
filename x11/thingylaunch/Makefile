@@ -6,6 +6,7 @@ MASTER_SITES=	http://gahr.ch/thingylaunch/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Lightweight launcher for X
+WWW=		https://www.gahr.ch/thingylaunch
 
 LICENSE=	MIT BSD2CLAUSE
 LICENSE_COMB=	multi

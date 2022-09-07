@@ -7,6 +7,7 @@ PATCHFILES=	552.patch:-p1:freebsd_compat
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Portal frontend service for Flatpak
+WWW=		https://github.com/flatpak/xdg-desktop-portal
 
 LICENSE=	LGPL21
 

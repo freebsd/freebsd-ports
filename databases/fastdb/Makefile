@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Main Memory Relational Database Management System
+WWW=		https://sourceforge.net/projects/fastdb/
 
 LICENSE=	MIT
 

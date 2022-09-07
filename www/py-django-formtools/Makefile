@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Bootstrap forms for django
+WWW=		https://github.com/django/django-formtools
 
 LICENSE=	MIT
 

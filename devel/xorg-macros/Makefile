@@ -5,6 +5,7 @@ DISTNAME=	util-macros-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org development aclocal macros
+WWW=		https://cgit.freedesktop.org/xorg/util/macros/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

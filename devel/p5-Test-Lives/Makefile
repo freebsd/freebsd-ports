@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Decorate tests with a no-exceptions assertion
+WWW=		https://metacpan.org/dist/Test-Lives
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

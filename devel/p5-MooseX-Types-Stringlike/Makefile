@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of Moose type constraints for string-like objects
+WWW=		https://metacpan.org/release/MooseX-Types-Stringlike
 
 LICENSE=	APACHE20
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implementation of structured warnings for Ruby
+WWW=		https://github.com/schmidt/structured_warnings
 
 LICENSE=	MIT
 

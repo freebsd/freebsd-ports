@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL based space-ship "shoot-em-up" game
+WWW=		http://xhosxe.free.fr/glaxium/
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

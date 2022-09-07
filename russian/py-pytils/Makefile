@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Russian-specific string utilities
+WWW=		https://github.com/j2a/pytils/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=		sysutils
 
 MAINTAINER=		jp+ports@supplntr.io
 COMMENT=		Ephemeral infrastructure and distributed applications monitoring
+WWW=		https://github.com/sensu/sensu-go/
 
 LICENSE=		APACHE20
 

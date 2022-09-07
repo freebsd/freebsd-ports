@@ -6,6 +6,7 @@ MASTER_SITES=	GNUSTEP_CH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front-end to the command-line BSD fortune
+WWW=		https://www.orange-carb.org/~csaldanh/software.html
 
 USES=		gnustep
 USE_GNUSTEP=	back build

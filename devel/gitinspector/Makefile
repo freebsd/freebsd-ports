@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Statistical analysis tool for git repositories
+WWW=		https://github.com/ejwa/gitinspector
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

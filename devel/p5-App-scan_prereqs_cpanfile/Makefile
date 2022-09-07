@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for scanning prerequisite modules to generate cpanfile
+WWW=		https://metacpan.org/release/App-scan_prereqs_cpanfile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

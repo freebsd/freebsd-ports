@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Utilities for statistical testing of uniform random number generators
+WWW=		http://simul.iro.umontreal.ca/testu01/tu01.html
 
 LICENSE=	TestU01
 LICENSE_NAME=	TestU01 license

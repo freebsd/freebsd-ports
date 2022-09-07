@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Compile .po files to .mo files
+WWW=		https://metacpan.org/release/Locale-Msgfmt
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

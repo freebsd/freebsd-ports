@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	maliit-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual keyboard based on Maliit framework
+WWW=		https://maliit.github.io/
 
 BUILD_DEPENDS=	hunspell:textproc/hunspell
 LIB_DEPENDS=	libmaliit-plugins.so:deskutils/maliit-framework \

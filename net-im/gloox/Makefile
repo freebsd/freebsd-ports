@@ -5,6 +5,7 @@ MASTER_SITES=	http://camaya.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber/XMPP client library
+WWW=		https://camaya.net/gloox
 
 LICENSE=	GPLv3 # with OpenSSL exception
 LICENSE_FILE=	${WRKSRC}/LICENSE

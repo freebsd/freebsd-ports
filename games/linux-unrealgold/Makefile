@@ -10,6 +10,7 @@ DIST_SUBDIR=	linux-ut
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Gold for Linux
+WWW=		https://icculus.org/~ravage/unreal/unrealgold/
 
 # Converted from RESTRICTED
 LICENSE=	unreal

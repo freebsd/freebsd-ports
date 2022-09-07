@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ajax.org Cloud9 Editor (Ace) for the Rails 3.1 asset pipeline
+WWW=		https://github.com/codykrieger/ace-rails-ap
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

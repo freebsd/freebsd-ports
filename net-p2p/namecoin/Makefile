@@ -7,6 +7,7 @@ CATEGORIES=	net-p2p dns
 
 MAINTAINER=	milios@ccsys.com
 COMMENT?=	Decentralized, open DNS and general purpose key/value store
+WWW=		https://namecoin.org/
 
 LICENSE=	MIT
 

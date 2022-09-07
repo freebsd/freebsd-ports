@@ -8,6 +8,7 @@ MASTER_SITES=	LOCAL/gahr \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Tiny CD, a simple ncurses-based CD player
+WWW=		https://www.gahr.ch/etcd
 
 USES=		ncurses sdl
 USE_SDL=	sdl

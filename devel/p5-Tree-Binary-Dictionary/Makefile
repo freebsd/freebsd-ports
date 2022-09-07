@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Dictionary API to a binary tree
+WWW=		https://metacpan.org/release/Tree-Binary-Dictionary
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

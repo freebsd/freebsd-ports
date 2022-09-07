@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Detects under what license a project is distributed
+WWW=		https://github.com/benbalter/licensee
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Select a pager, optionally pipe it output if destination is a TTY
+WWW=		https://metacpan.org/release/IO-Pager
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

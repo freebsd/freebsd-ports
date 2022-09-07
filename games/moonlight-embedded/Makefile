@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/irtimmer/moonlight-embedded/releases/download/v
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gamestream client
+WWW=		https://github.com/irtimmer/moonlight-embedded
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+
+WWW=		https://www.gtkmm.org/
 
 USES+=		tar:xz
 

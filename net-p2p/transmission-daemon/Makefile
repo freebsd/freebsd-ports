@@ -1,6 +1,8 @@
 PKGNAMESUFFIX=	-daemon
 PORTREVISION=	4
 
+WWW=		https://www.transmissionbt.com/
+
 USES=		ssl
 NLS_USES=	gettext-runtime:run
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module for communicating with the Lego RCX brick via the IR tower
+WWW=		https://metacpan.org/release/LEGO-RCX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

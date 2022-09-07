@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Easy to use BASIC language and IDE for education
+WWW=		https://www.basic256.org
 
 LICENSE=	GPLv2
 

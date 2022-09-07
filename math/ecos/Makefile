@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight conic solver for second-order cone programming
+WWW=		https://forces.embotech.com/Documentation/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

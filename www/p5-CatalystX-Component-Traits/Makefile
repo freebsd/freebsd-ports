@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Automatic Trait Loading and Resolution for Catalyst Components
+WWW=		https://metacpan.org/release/CatalystX-Component-Traits
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

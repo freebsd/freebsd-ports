@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Provide commonly requested Perl regular expressions
+WWW=		https://metacpan.org/release/Regexp-Common
 
 LICENSE=	ART10 ART20 BSD3CLAUSE MIT
 LICENSE_COMB=	dual

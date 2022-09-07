@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Toolkit to handle the automatic picture transmission protocol
+WWW=		https://github.com/rsj56/apitran
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

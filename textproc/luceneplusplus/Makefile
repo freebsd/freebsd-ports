@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ port of the Lucene library
+WWW=		https://github.com/luceneplusplus/LucenePlusPlus
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LGPL.license

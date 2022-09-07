@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	JSON Incremental Digger
+WWW=		https://github.com/simeji/jid
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

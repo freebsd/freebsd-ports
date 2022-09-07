@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Final Burn Alpha fork for libretro
+WWW=		https://github.com/libretro/FBNeo
 
 LICENSE=	FBNeo
 LICENSE_NAME=	FBNeo

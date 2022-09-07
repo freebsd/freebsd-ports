@@ -8,6 +8,7 @@ DISTNAME=	sz${PORTVERSION:S/.//}_src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast compression utility
+WWW=		http://www.compressconsult.com/szip/
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

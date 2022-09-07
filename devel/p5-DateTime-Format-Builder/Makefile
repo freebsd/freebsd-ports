@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create DateTime parser classes and objects
+WWW=		https://metacpan.org/release/DateTime-Format-Builder
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

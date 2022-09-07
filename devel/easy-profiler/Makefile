@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight profiler library for C++
+WWW=		https://github.com/yse/easy_profiler
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Visual Studio remote debugging server for Python
+WWW=		https://pypi.org/project/ptvsd/
 
 LICENSE=	APACHE20
 

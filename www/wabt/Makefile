@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	WebAssembly Binary Toolkit
+WWW=		https://github.com/WebAssembly/wabt
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

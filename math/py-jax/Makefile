@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Differentiate, compile, and transform Numpy code
+WWW=		https://github.com/google/jax
 
 LICENSE=	APACHE20
 

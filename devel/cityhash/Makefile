@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Family of hash functions
+WWW=		https://code.google.com/p/cityhash/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

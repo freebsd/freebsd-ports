@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Python library and command-line utility for Shodan
+WWW=		https://cli.shodan.io/
 
 LICENSE=	MIT
 

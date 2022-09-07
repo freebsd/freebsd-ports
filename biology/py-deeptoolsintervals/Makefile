@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python interface for deepTools interval trees
+WWW=		https://github.com/deeptools/deeptools_intervals
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

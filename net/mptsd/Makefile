@@ -5,6 +5,7 @@ MASTER_SITES=	https://georgi.unixsol.org/programs/mptsd/
 
 MAINTAINER=	win2000rus@hotmail.com
 COMMENT=	MPEG TS stream muxer
+WWW=		https://github.com/gfto/mptsd
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi

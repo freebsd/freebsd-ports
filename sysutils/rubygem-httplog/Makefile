@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Log outgoing HTTP requests
+WWW=		https://github.com/trusche/httplog
 
 LICENSE=	MIT
 

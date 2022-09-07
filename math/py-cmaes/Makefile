@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight CMA Evolution Strategy implementation for Python
+WWW=		https://github.com/CyberAgent/cmaes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

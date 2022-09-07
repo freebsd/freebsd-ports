@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	info@babaei.net
 COMMENT=	Widget-centric C++ library for developing web applications
+WWW=		https://www.webtoolkit.eu/wt
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

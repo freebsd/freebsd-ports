@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Given word lists, create Perl regular expressions
+WWW=		https://metacpan.org/release/Regex-PreSuf
 
 USES=		perl5
 USE_PERL5=	configure

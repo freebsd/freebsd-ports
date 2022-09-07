@@ -6,6 +6,7 @@ MASTER_SITES=	http://ohse.de/uwe/releases/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receive/Send files via X/Y/ZMODEM protocol (unrestrictive)
+WWW=		https://ohse.de/uwe/software/lrzsz.html
 
 LICENSE=	GPLv2
 

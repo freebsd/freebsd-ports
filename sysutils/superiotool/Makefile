@@ -7,6 +7,7 @@ MASTER_SITES=	LOCAL/avg \
 
 MAINTAINER=	avg@FreeBSD.org
 COMMENT=	Helper tool for Super I/O chip detection and analysis
+WWW=		http://www.coreboot.org/Superiotool
 
 LIB_DEPENDS=	libpci.so:devel/libpci
 

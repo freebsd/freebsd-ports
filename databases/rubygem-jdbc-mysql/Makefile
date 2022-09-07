@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MySQL JDBC driver for JRuby
+WWW=		https://github.com/jruby/activerecord-jdbc-adapter/tree/master/jdbc-mysql
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WSGI request delegation (a.k.a. routing)
+WWW=		https://pypi.org/project/selector/
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	dual

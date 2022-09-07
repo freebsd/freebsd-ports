@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	LeoFS Web console
+WWW=		https://leo-project.net/
 
 LICENSE=	APACHE20
 

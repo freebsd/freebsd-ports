@@ -5,6 +5,7 @@ CATEGORIES=	science python
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Swiss Army knife for neural networking
+WWW=		http://pybrain.org/
 
 LICENSE=	BSD3CLAUSE
 

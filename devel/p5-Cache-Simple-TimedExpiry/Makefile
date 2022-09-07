@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Lightweight cache with timed expiration
+WWW=		https://metacpan.org/release/Cache-Simple-TimedExpiry
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

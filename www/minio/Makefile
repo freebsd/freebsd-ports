@@ -6,6 +6,7 @@ DIST_SUBDIR=	minio
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Amazon S3 compatible object storage server
+WWW=		https://minio.io/
 
 LICENSE=	APACHE20
 

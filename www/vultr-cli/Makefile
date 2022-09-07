@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Official command line tool for Vultr services
+WWW=		https://github.com/vultr/vultr-cli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

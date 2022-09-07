@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Application and panel plugin to take screenshots
+WWW=		https://goodies.xfce.org/projects/applications/xfce4-screenshooter
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

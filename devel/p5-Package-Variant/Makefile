@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parameterizable packages
+WWW=		https://metacpan.org/release/Package-Variant
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

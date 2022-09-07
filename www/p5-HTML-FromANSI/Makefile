@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mark up ANSI sequences as HTML
+WWW=		https://metacpan.org/release/HTML-FromANSI
 
 LICENSE=	ART10 GPLv1 MIT
 LICENSE_COMB=	dual

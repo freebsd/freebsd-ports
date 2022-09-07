@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Object interface for querying Geocaching.com website
+WWW=		https://metacpan.org/release/Geo-Caching
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

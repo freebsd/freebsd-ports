@@ -6,6 +6,7 @@ MASTER_SITES=	http://atterer.org/sites/atterer/files/2009-08/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility used to retrieve large files over the Internet
+WWW=		http://atterer.org/jigdo/
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:ftp/wget
 

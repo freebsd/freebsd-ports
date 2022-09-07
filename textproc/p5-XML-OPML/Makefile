@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Creates and updates OPML (Outline Processor Markup Language) files
+WWW=		https://metacpan.org/release/XML-OPML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

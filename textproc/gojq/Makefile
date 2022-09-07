@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	nork@ninth-nine.com
 COMMENT=	Pure Go implementation of jq
+WWW=		https://github.com/itchyny/gojq
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

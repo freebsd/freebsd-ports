@@ -5,6 +5,7 @@ MASTER_SITES=	SF/libds/libds/libds-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANSI Generic Data Structures Library
+WWW=		https://sourceforge.net/projects/libds/
 
 LICENSE=	BSD4CLAUSE
 

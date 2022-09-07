@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C99 implementation of the HTTP/1.1 and HTTP/2 specifications
+WWW=		https://github.com/awslabs/aws-c-http
 
 LICENSE=	APACHE20
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.percona.com/downloads/${PORTNAME}/${PORTVERSION}/sourc
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Collection of essential command-line utilities for MySQL
+WWW=		https://www.percona.com/software/percona-toolkit/
 
 LICENSE=	ARTPERL10 GPLv2
 LICENSE_COMB=	dual

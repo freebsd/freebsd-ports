@@ -4,6 +4,7 @@ CATEGORIES=	textproc devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR SAX parser for HTML and other badly formed XML documents
+WWW=		https://pear.php.net/package/XML_HTMLSax
 
 USES=		pear
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://highmoon.gerdsmeier.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Duel in the universe
+WWW=		http://highmoon.gerdsmeier.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Capture C-level output in context managers
+WWW=		https://github.com/minrk/wurlitzer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

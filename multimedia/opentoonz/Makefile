@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Open-source full-featured 2D animation creation software
+WWW=		https://opentoonz.github.io/e/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

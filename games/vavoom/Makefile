@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Vavoom-source/${PORTVERSION}
 
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen, and Strife source port
+WWW=		https://www.vavoom-engine.com/
 
 LICENSE=	GPLv2
 

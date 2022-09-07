@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple, powerful, and fast logging utility
+WWW=		https://github.com/bdurand/lumberjack
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT_LICENSE.txt

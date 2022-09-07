@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl 5 module to walk Perls arena
+WWW=		https://metacpan.org/release/Devel-Gladiator
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

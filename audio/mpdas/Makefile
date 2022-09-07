@@ -6,6 +6,7 @@ MASTER_SITES=	http://50hz.ws/mpdas/
 
 MAINTAINER=	henrik@affekt.org
 COMMENT=	MPD AudioScrobbler written in C++ supporting the latest protocol
+WWW=		https://50hz.ws/mpdas/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

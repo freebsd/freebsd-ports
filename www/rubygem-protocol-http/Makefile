@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides abstractions to handle HTTP protocols
+WWW=		https://github.com/socketry/protocol-http
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	Small, fast, web development framework by the Pylons community
+WWW=		https://pylonsproject.org/
 
 LICENSE=	REPOZE
 LICENSE_NAME=	Repoze License

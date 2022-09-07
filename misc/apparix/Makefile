@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-11-062
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bookmark directories and apparate inside them
+WWW=		https://micans.org/apparix/
 
 LICENSE=	GPLv2+ # though code says GPLv3 or later
 LICENSE_FILE=	${WRKSRC}/COPYING

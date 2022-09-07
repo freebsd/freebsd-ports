@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME music playing application
+WWW=		https://www.flyn.org/projects/libdmapsharing
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

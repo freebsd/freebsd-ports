@@ -8,6 +8,7 @@ DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	JetBrains PhpStorm IDE
+WWW=		https://www.jetbrains.com/phpstorm/
 
 LICENSE=	IntelliJ-PhpStorm
 LICENSE_NAME=	Subscription license agreement for business and organizations

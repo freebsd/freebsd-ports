@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet another web framework written in Perl
+WWW=		https://metacpan.org/release/Jifty
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Weather client for the terminal
+WWW=		https://github.com/schachmat/wego
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

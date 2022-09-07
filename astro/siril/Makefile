@@ -5,6 +5,7 @@ MASTER_SITES=	https://free-astro.org/download/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Astronomical image processing software
+WWW=		https://siril.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

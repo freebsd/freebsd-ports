@@ -5,6 +5,7 @@ CATEGORIES=	misc python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mesh optimization library
+WWW=		https://github.com/zeux/meshoptimizer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

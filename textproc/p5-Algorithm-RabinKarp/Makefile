@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Rabin-Karp streaming hash
+WWW=		https://metacpan.org/release/Algorithm-RabinKarp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	miguel@gocobachi.dev
 COMMENT=	Photo viewer and organizer designed for elementary OS
+WWW=		https://github.com/elementary/videos/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

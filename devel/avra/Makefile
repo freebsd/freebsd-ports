@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Macro Assembler for Atmel AVR microcontrollers
+WWW=		https://github.com/hsoft/avra
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Extremely memory-efficient hash_map implementation
+WWW=		https://github.com/sparsehash/sparsehash
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast & minimal low-level HTTP client
+WWW=		https://metacpan.org/release/Hijk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.com/menelkir/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Library to render the LCD screen on Logitech keyboards
+WWW=		https://sourceforge.net/projects/g15tools
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

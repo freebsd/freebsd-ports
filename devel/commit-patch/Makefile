@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Commit patches or partial workspace changes to a VCS repository
+WWW=		https://www.porkrind.org/commit-patch/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

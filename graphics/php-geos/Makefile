@@ -9,6 +9,7 @@ DIST_SUBDIR=	php-geos
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP bindings for GEOS
+WWW=		https://git.osgeo.org/gitea/geos/php-geos
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin for serializing Resources and Collections
+WWW=		https://github.com/datamapper/dm-serializer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DIST_SUBDIR=	caddy
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Fast, cross-platform HTTP/2 web server with automatic HTTPS
+WWW=		https://caddyserver.com
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Rcpp integration for Armadillo templated linear algebra library
+WWW=		https://cran.r-project.org/web/packages/RcppArmadillo/
 
 LICENSE=	GPLv2+
 

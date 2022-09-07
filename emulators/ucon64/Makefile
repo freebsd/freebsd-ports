@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Multipurpose video game ROM image and backup utility
+WWW=		https://ucon64.sourceforge.io
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../license.html # only available as HTML file

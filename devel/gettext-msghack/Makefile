@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	gettext-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alter gettext po files in special ways
+WWW=		https://src.fedoraproject.org/rpms/gettext/blob/master/f/msghack.py
 
 LICENSE=	GPLv3+
 

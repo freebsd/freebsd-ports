@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	amijaresp@gmail.com
 COMMENT=	Overrides chunks of files with garbage
+WWW=		https://github.com/granalberto/damager
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

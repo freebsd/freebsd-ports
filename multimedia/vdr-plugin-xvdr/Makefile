@@ -7,6 +7,7 @@ DISTNAME=	pipelka-${PORTNAME}-xvdr-${PORTVERSION}-0-g${GITHASH}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - XVDR server plugin
+WWW=		https://github.com/pipelka/vdr-plugin-xvdr
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

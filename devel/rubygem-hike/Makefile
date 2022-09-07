@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for finding files in a set of paths
+WWW=		https://github.com/sstephenson/hike
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

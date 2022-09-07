@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Immutable collections
+WWW=		https://github.com/MagicStack/immutables
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi

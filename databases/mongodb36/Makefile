@@ -10,6 +10,7 @@ DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	dev@dudu.ro
 COMMENT=	Distributed document-oriented "NoSQL" database
+WWW=		https://docs.mongodb.com/v3.6/
 
 # mongodb is SSPLv1, C++ driver is APACHE20
 LICENSE=	SSPLv1 APACHE20

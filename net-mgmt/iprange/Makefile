@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/firehol/iprange/releases/download/v${PORTVERSIO
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Manage IP ranges
+WWW=		https://github.com/firehol/iprange
 
 LICENSE=	GPLv2+
 

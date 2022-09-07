@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	R package for manipulating Microsoft Excel files
+WWW=		https://cran.r-project.org/package=XLConnect
 
 LICENSE=	GPLv3
 

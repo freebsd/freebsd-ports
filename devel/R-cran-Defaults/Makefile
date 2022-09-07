@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Create Global Function Defaults
+WWW=		https://cran.r-project.org/web/packages/Defaults/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

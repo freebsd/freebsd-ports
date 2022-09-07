@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Nagios Plugin to monitor your mail environment
+WWW=		http://buhacoff.net/software/check_email_delivery/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

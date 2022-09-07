@@ -6,6 +6,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple clipboard manager for Wayland
+WWW=		https://github.com/yory8/clipman
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

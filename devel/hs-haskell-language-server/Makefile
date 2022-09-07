@@ -4,6 +4,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	LSP provider implementation for Haskell language
+WWW=		https://github.com/haskell/haskell-language-server/
 
 LICENSE=	APACHE20
 

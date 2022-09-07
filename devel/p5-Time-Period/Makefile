@@ -9,6 +9,7 @@ DISTNAME=	Period-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module that contains code to deal with time periods
+WWW=		https://metacpan.org/release/PRYAN/Period-1.20
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

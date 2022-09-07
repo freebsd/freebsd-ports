@@ -6,6 +6,7 @@ MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure shell and telnet client including xterm emulator
+WWW=		https://www.chiark.greenend.org.uk/~sgtatham/putty/
 # test plan: test ALL 4 GSSAPI_* options, GTK3 yes/no, WITH_DEBUG=yes build.
 
 LICENSE=	MIT

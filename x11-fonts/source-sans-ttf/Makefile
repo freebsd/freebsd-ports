@@ -7,6 +7,7 @@ DISTNAME=	TTF-source-sans-${PORTVERSION}R
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of fonts by Adobe designed for user interfaces
+WWW=		https://github.com/adobe-fonts/source-sans
 
 LICENSE=	OFL11
 

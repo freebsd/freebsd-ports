@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
 COMMENT=	Let's Encrypt client and ACME library written in Go
+WWW=		https://github.com/go-acme/lego
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

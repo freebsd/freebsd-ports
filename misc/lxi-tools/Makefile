@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Collection of tools that enables control of LXI compatible instruments
+WWW=		https://lxi-tools.github.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

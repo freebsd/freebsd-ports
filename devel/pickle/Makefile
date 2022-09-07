@@ -5,6 +5,7 @@ MASTER_SITES=	http://wiki.kewl.org/downloads/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Programs Microchip PICs using ICSP
+WWW=		https://wiki.kewl.org/dokuwiki/projects:pickle
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Structured concurrency library in C
+WWW=		http://libdill.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

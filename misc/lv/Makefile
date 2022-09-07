@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Powerful Multilingual File Viewer
+WWW=		https://github.com/ttdoda/lv
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../GPL.txt

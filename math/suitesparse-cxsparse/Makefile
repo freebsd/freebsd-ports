@@ -3,6 +3,7 @@ PORTVERSION=	3.2.0
 CATEGORIES=	math
 
 COMMENT=	Extended version of CSparse
+WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
 
 LICENSE=	LGPL21+
 

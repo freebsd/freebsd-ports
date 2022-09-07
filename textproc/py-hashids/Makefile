@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implement the hashids algorithm in python
+WWW=		https://github.com/davidaurelio/hashids-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

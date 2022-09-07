@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python library for OAuth 1.0/a, 2.0, and Ofly consumers
+WWW=		https://github.com/litl/rauth
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DISTFILES=	go.mod:gomod
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Fast and lightweight DNS proxy as ad-blocker
+WWW=		https://0xerr0r.github.io/blocky/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

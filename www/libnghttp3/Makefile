@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/3 C Library
+WWW=		https://github.com/ngtcp2/nghttp3
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

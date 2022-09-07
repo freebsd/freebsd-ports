@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome swell-foop
+WWW=		https://wiki.gnome.org/Swell%20Foop
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

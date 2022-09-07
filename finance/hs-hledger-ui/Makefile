@@ -4,6 +4,7 @@ CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	UI for hledger, the accounting software package
+WWW=		https://hledger.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

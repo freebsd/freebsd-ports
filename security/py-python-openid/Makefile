@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Python OpenID version
+WWW=		http://janrain.com/openid-enabled
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

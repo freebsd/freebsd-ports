@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	nbari@tequila.io
 COMMENT=	Automated HTTP (microservices) supervisor
+WWW=		https://epazote.io
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

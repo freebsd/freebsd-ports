@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-openwrt
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenWrt package manager
+WWW=		https://openwrt.org/docs/guide-user/additional-software/opkg
 
 LICENSE=	GPLv2
 

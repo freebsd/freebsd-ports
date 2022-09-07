@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Namazu library module for perl
+WWW=		https://www.akaneiro.jp/Search-Namazu/
 
 LIB_DEPENDS=	libnmz.so:databases/namazu2
 

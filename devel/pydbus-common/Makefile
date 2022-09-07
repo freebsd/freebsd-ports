@@ -9,6 +9,7 @@ DISTNAME=	dbus-python-${PORTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	Common files for the Python bindings for the D-BUS messaging system
+WWW=		https://dbus.freedesktop.org/doc/dbus-python/
 
 BUILD_DEPENDS=	dbus-glib>=0:devel/dbus-glib
 

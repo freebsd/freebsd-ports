@@ -7,6 +7,7 @@ DISTNAME=	XStatic-Angular-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Angular (XStatic packaging standard)
+WWW=		https://angularjs.org/
 
 LICENSE=	MIT
 

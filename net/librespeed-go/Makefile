@@ -6,6 +6,7 @@ CATEGORIES=	net www
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	GO backend for LibreSpeed
+WWW=		https://github.com/librespeed/speedtest-go
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland-based logout menu
+WWW=		https://github.com/ArtsyMacaw/wlogout
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

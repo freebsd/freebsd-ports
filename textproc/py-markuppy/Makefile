@@ -7,6 +7,7 @@ DISTNAME=	MarkupPy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTML/XML generator
+WWW=		https://github.com/tylerbakke/MarkupPy
 
 LICENSE=	MIT
 

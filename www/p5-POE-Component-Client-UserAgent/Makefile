@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	LWP and LWP::Parallel based POE component
+WWW=		https://metacpan.org/release/POE-Component-Client-UserAgent
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

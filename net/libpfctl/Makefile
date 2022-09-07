@@ -6,6 +6,7 @@ DISTFILES=	libpfctl-${_LIBPFCTL_HASH}.tar.gz
 
 MAINTAINER=	kp@FreeBSD.org
 COMMENT=	Library for interaction with pf(4)
+WWW=		https://cgit.freebsd.org/src/tree/lib/libpfctl
 
 LICENSE=	BSD2CLAUSE
 

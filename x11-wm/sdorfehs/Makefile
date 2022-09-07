@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Tiling window manager descended from ratpoison
+WWW=		https://github.com/jcs/sdorfehs
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DISTNAME=	mcxtrace-comps-${DISTVERSION}-src
 
 MAINTAINER=	erkn@fysik.dtu.dk
 COMMENT=	Component Library for the McXtrace X-ray tracing package
+WWW=		https://www.mcxtrace.org
 
 LICENSE=	LGPL21+
 

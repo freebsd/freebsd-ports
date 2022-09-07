@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	Web user interface and RESTful API for rubygems-oxidized
+WWW=		https://github.com/ytti/oxidized-web
 
 LICENSE=	APACHE20
 

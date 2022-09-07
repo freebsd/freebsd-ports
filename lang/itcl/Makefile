@@ -8,6 +8,7 @@ DISTNAME=	itcl${PORTVERSION}
 
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tcl [incr Tcl]
+WWW=		https://sourceforge.net/projects/incrtcl/
 
 USES+=		tcl:tea
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Graph manipulation library in pure Python
+WWW=		https://github.com/jciskey/pygraph
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

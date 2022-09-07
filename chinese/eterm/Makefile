@@ -4,6 +4,7 @@ MASTERDIR=	${.CURDIR}/../../x11/eterm
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	X11 terminal emulator based on rxvt/xterm that supports traditional Chinese (Big5)
+WWW=		http://www.eterm.org/
 
 EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure
 

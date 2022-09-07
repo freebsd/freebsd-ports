@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Whole Program LLVM: wllvm ported to Go
+WWW=		https://github.com/SRI-CSL/gllvm
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

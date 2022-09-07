@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Nonlinear optimization library
+WWW=		https://nlopt.readthedocs.io/en/latest/
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi

@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Kirghiz dictionary
+WWW=		http://borel.slu.edu/crubadan/
 
 DICT=	 	ky
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manage process id files
+WWW=		https://metacpan.org/release/Proc-PID-File
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

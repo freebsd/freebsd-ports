@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	thomas@beingboiled.info
 COMMENT=	Lua binding for the OpenSSL library to provide TLS/SSL communication
+WWW=		https://github.com/brunoos/luasec
 
 LICENSE=	MIT
 

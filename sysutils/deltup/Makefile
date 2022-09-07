@@ -10,6 +10,7 @@ DISTFILES+=	${DISTNAME}.tar.gz ${BZIP2_102_SOURCE}:bzip2102src ${BZIP2_103_SOURC
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source delta update program
+WWW=		http://www.deltup.org/
 
 RUN_DEPENDS=	bdelta:misc/bdelta \
 		xdelta:misc/xdelta \

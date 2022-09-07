@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy to use but powerful templating system for Ruby
+WWW=		https://github.com/ruby/erb
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

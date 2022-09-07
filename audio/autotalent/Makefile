@@ -6,6 +6,7 @@ DIST_SUBDIR=	repacked
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time pitch correction plugin for LADSPA
+WWW=		http://tombaran.info/autotalent.html
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi

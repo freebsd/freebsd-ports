@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Grep replacement in pure Ruby
+WWW=		https://github.com/danlucraft/rak
 
 LICENSE=	MIT
 

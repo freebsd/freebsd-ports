@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	cperciva@FreeBSD.org
 COMMENT=	Exposes information about NVMe disks on EC2
+WWW=		https://github.com/cperciva/ebsnvme-id
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

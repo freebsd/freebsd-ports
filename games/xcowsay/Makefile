@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.nickg.me.uk/files/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Graphical configurable talking cow
+WWW=		https://www.doof.me.uk/xcowsay/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

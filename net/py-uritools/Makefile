@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	RFC 3986 compliant, Unicode-aware, scheme-agnostic replacement for urlparse
+WWW=		https://github.com/tkem/uritools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

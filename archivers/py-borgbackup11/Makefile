@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	11
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Deduplicating backup program
+WWW=		https://pypi.org/project/borgbackup/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

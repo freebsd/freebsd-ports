@@ -8,6 +8,7 @@ DIST_SUBDIR=	KDE/plasma/${KDE_PLASMA_VERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 utility to track and control the running processes
+WWW=		https://www.kde.org/plasma-desktop
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:5 \
 		localbase pathfix qt:5 tar:xz xorg

@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display images on 256 color xterms
+WWW=		https://github.com/kfei/img2xterm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

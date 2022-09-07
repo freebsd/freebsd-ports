@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	AutoRest swagger generator Python client runtime
+WWW=		https://github.com/Azure/msrest-for-python
 
 LICENSE=	MIT
 

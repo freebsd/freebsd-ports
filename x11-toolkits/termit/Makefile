@@ -5,6 +5,7 @@ CATEGORIES=	x11-toolkits gnome
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Small terminal emulator with Lua scripting
+WWW=		http://wiki.github.com/nonstop/termit/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

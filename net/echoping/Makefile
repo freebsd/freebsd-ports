@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ping-like program that uses TCP and/or HTTP
+WWW=		https://github.com/bortzmeyer/echoping
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

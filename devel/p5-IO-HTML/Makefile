@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Open an HTML file with automatic charset detection
+WWW=		https://metacpan.org/release/IO-HTML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

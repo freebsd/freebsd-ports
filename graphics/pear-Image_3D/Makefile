@@ -4,6 +4,7 @@ CATEGORIES=	graphics www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class allows the rendering of 3 dimensional objects
+WWW=		https://pear.php.net/package/Image_3D
 
 USE_PHP=	gd
 USES=		pear php

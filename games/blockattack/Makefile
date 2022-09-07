@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Puzzle game inspired by Tetris
+WWW=		https://blockattack.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

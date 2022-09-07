@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Buzzurl WebService API
+WWW=		https://metacpan.org/release/WebService-BuzzurlAPI
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0.25:devel/p5-Class-Accessor \
 		p5-YAML-Syck>=0.21:textproc/p5-YAML-Syck \

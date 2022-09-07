@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy database connections for Dancer applications
+WWW=		https://metacpan.org/release/Dancer-Plugin-Database
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

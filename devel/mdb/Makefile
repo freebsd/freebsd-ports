@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jhb@FreeBSD.org
 COMMENT=	Solaris Modular Debugger
+WWW=		https://docs.oracle.com/cd/E19683-01/806-6545/index.html
 
 LICENSE=	CDDL
 

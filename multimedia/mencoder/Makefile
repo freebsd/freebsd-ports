@@ -5,6 +5,7 @@ CATEGORIES=	multimedia audio
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Convenient video file and movie encoder
+WWW=		http://www.mplayerhq.hu/
 
 .include "${.CURDIR}/../mplayer/Makefile.common"
 

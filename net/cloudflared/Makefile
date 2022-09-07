@@ -5,6 +5,7 @@ CATEGORIES=	net www
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Cloudflare's Argo Tunnel client
+WWW=		https://developers.cloudflare.com/argo-tunnel/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

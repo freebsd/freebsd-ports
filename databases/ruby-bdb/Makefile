@@ -10,6 +10,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
+WWW=		https://github.com/knu/ruby-bdb
 
 LICENSE=	RUBY
 

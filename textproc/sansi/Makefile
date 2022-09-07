@@ -5,6 +5,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/textproc/sansi/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Removes ANSI control sequences/characters, from files
+WWW=		https://BSDforge.com/projects/textproc/sansi/
 
 LICENSE=	ART20 BSD2CLAUSE
 LICENSE_COMB=	multi

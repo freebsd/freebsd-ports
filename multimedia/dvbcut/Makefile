@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Qt application for cutting of MPEG PS and MPEG TS streams (DVB)
+WWW=		https://github.com/bernhardu/dvbcut-deb/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Cross-Platform File System Operations Based on 'libuv'
+WWW=		https://fs.r-lib.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

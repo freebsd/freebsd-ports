@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Quickly and easily create secure passwords
+WWW=		https://metacpan.org/release/App-Genpass
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

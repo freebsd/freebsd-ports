@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Set of Perl modules that allows you to enhance logging capabilities
+WWW=		https://metacpan.org/release/Log-Agent
 
 LICENSE=	ART20
 

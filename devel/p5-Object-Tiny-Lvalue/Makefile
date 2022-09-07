@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Minimal class builder with lvalue accessors
+WWW=		https://metacpan.org/release/Object-Tiny-Lvalue
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

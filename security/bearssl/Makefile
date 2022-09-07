@@ -5,6 +5,7 @@ MASTER_SITES=	https://bearssl.org/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Implementation of TLS/SSL in C
+WWW=		https://bearssl.org/
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML::Stream provides you with access to XML Stream
+WWW=		https://metacpan.org/release/XML-Stream
 
 LICENSE=	LGPL21
 

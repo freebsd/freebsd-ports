@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Log to files that archive/rotate themselves, w/ File::Write::Rotate
+WWW=		https://metacpan.org/release/Log-Dispatch-FileWriteRotate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

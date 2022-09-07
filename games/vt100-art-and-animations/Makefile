@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	VT100 art and animations
+WWW=		http://artscene.textfiles.com/vt100/
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	Unknown

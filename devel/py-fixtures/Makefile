@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fixtures, reusable state for writing clean tests and more
+WWW=		https://github.com/testing-cabal/fixtures
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

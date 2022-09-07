@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Qiniu Resource (Cloud) Storage SDK for Ruby
+WWW=		https://github.com/qiniu/ruby-sdk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

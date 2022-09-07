@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Flake8 lint for quotes
+WWW=		https://pypi.org/project/flake8-quotes/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

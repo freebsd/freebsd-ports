@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.chronos.org.uk/download/ \
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio DX cluster monitor
+WWW=		http://pg4i.chronos.org.uk/linux/xdx.html
 
 LICENSE=	GPLv2
 

@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}/es-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spanish hunspell dictionaries
+WWW=		https://github.com/sbosio/rla-es
 
 LICENSE=	GPLv3 LGPL3 MPL11
 LICENSE_COMB=	dual

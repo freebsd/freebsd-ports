@@ -4,6 +4,7 @@ CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Embeddable Javascript interpreter in C
+WWW=		https://mujs.com/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

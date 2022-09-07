@@ -7,6 +7,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Sphinx extension which renders display math in HTML via JavaScript
+WWW=		https://www.sphinx-doc.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

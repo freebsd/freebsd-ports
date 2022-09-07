@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Calculate intersection point for two lines
+WWW=		https://metacpan.org/release/Math-Intersection-StraightLine
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

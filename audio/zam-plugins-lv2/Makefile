@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of LADSPA/LV2/VST/JACK audio plugins
+WWW=		https://www.zamaudio.com/?p=976
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

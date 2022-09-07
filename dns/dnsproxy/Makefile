@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.wolfermann.org/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Proxy for DNS queries
+WWW=		https://www.wolfermann.org/dnsproxy.html
 
 LICENSE=	MIT
 

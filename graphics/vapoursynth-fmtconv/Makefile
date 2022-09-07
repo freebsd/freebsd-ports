@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	vapoursynth-
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Format conversion tools for Vapoursynth and Avisynth+
+WWW=		https://github.com/EleonoreMizo/fmtconv
 
 LICENSE=	WTFPL
 

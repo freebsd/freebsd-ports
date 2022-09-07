@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Panel plugin which displays free space of mountpoint
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-fsguard-plugin
 
 # COPYING file is wrong compared to license header
 LICENSE=	BSD2CLAUSE

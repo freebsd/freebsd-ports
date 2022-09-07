@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-webfrontend${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, web frontend
+WWW=		http://ganglia.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

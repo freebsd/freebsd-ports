@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OmniAuth strategy for Bitbucket
+WWW=		https://github.com/sishen/omniauth-bitbucket
 
 LICENSE=	MIT
 

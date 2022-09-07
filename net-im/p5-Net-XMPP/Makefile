@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Net::XMPP provides Perl Developer access to the XMPP protocol
+WWW=		https://metacpan.org/release/Net-XMPP
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

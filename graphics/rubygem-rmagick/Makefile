@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for ImageMagick
+WWW=		https://github.com/rmagick/rmagick
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

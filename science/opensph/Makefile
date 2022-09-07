@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library and graphical tools for running SPH and N-body simulations
+WWW=		https://gitlab.com/sevecekp/sph
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

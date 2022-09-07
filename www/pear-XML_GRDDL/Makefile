@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP library for dealing with GRDDL
+WWW=		https://pear.php.net/package/XML_GRDDL
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR} \
 		${PEARDIR}/Net/URL.php:net/pear-Net_URL@${PHP_FLAVOR} \

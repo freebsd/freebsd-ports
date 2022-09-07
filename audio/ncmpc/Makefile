@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.musicpd.org/download/ncmpc/0/
 
 MAINTAINER=	laurent@nilio.ca
 COMMENT=	Ncurses client for the musicpd
+WWW=		https://www.musicpd.org/clients/ncmpc/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

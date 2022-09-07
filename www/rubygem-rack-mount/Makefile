@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Stackable dynamic tree based Rack router
+WWW=		https://github.com/josh/rack-mount
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

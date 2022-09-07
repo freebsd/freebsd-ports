@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helper for generating HTML mails
+WWW=		https://github.com/Mange/roadie
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

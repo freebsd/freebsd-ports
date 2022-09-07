@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	csjp@FreeBSD.org
 COMMENT=	BSM based intrusion detection system
+WWW=		https://www.github.com/openbsm/bsmtrace
 
 LICENSE=	BSD2CLAUSE
 

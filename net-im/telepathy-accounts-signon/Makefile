@@ -6,6 +6,7 @@ DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Telepathy libaccounts and libsignon plugin
+WWW=		https://gitlab.com/accounts-sso/telepathy-accounts-signon
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL

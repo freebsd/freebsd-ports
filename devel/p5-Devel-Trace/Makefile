@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Print out each line before it is executed (like sh -x)
+WWW=		https://metacpan.org/release/Devel-Trace
 
 USES=		perl5
 USE_PERL5=	configure

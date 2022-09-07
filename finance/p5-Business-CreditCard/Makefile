@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to validate/generate credit card checksums/names
+WWW=		https://metacpan.org/release/Business-CreditCard
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight and flexible C++ logging library
+WWW=		https://github.com/emilk/loguru
 
 LICENSE=	PD
 

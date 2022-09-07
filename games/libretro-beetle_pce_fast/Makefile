@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen PCE Fast to libretro
+WWW=		https://github.com/libretro/beetle-pce-fast-libretro
 
 LICENSE=	GPLv2
 

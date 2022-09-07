@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/troglobit/editline/releases/download/${PORTVERS
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Minix editline: A free readline() for UNIX
+WWW=		https://github.com/troglobit/editline
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

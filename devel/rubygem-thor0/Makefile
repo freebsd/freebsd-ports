@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	0
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Scripting framework that replaces rake, sake, and rubigen
+WWW=		https://github.com/erikhuda/thor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

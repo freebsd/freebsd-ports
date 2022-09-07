@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EditorConfig core library and executable written in C
+WWW=		https://editorconfig.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

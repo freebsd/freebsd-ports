@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Libpcap bindings for ruby
+WWW=		https://github.com/shadowbq/pcaprub
 
 LICENSE=	LGPL21
 

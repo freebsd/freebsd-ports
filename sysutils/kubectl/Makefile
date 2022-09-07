@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Kubernetes command-line tool
+WWW=		https://github.com/kubernetes/kubectl
 
 LICENSE=	APACHE20
 

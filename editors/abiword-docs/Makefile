@@ -7,6 +7,7 @@ DIST_SUBDIR=	AbiWord
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	AbiWord help files
+WWW=		https://www.abisource.com/
 
 BUILD_DEPENDS=	abiword:editors/abiword
 RUN_DEPENDS=	abiword:editors/abiword

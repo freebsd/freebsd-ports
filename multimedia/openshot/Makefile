@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	OpenShot Video Editor
+WWW=		https://www.openshot.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 settings application
+WWW=		https://docs.xfce.org/xfce/xfce4-settings/start
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

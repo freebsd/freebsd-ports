@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple Authentication and Security Layer
+WWW=		https://github.com/pyu10055/ruby-sasl
 
 LICENSE=	MIT
 

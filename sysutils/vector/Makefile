@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	High performance logs, metrics, and events router
+WWW=		https://vector.dev
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

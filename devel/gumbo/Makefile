@@ -5,6 +5,7 @@ CATEGORIES=	devel textproc
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Pure-C HTML5 parser
+WWW=		https://github.com/google/gumbo-parser
 
 LICENSE=	APACHE20
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for decrypting rot-N strings
+WWW=		https://metacpan.org/release/Crypt-Caesar
 
 USES=		perl5
 USE_PERL5=	configure

@@ -8,6 +8,7 @@ DISTNAME=	wit-${DISTVERSION}
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Wiimms ISO Tools
+WWW=		https://wit.wiimm.de/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt

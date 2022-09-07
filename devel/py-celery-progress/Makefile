@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Distributed Task Queue
+WWW=		https://github.com/celery/celery/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

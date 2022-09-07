@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Xdebug extension for PHP
+WWW=		https://www.xdebug.org/
 
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE

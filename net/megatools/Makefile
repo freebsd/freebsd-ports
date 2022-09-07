@@ -5,6 +5,7 @@ MASTER_SITES=	https://megatools.megous.com/builds/
 
 MAINTAINER=	max@kostikov.co
 COMMENT=	Command line tools for MEGA.NZ cloud drive
+WWW=		https://megatools.megous.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

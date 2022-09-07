@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce GTK2 theme engine
+WWW=		https://www.xfce.org/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for persistent session data in CGI applications
+WWW=		https://metacpan.org/release/CGI-Session-Driver-memcached
 
 RUN_DEPENDS=	\
 	p5-CGI-Session>=4:www/p5-CGI-Session

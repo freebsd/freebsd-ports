@@ -8,6 +8,7 @@ DIST_SUBDIR=	sqlite-ext
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Search large vocabulary for close matches for SQLite
+WWW=		https://www.sqlite.org/spellfix1.html
 
 LICENSE=	PD
 

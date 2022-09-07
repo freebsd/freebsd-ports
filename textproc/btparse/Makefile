@@ -7,6 +7,7 @@ MASTER_SITE_SUBDIR=	CPAN:AMBS/${PORTNAME}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	C library for parsing and processing BibTeX data files
+WWW=		http://www.gerg.ca/software/btOOL
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

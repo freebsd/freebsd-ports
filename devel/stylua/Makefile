@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Opinionated Lua code formatter
+WWW=		https://github.com/JohnnyMorganz/StyLua
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

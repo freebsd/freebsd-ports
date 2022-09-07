@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Object interface for GPS waypoints
+WWW=		https://metacpan.org/release/Geo-Cache
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

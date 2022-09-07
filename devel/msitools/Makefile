@@ -10,6 +10,7 @@ PATCHFILES=	b08275d549bb12a09a420ef9ccaeb0974e00008a.patch:-p1 \
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Inspect and build Windows Installer (.MSI) files
+WWW=		https://wiki.gnome.org/msitools
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/copyright

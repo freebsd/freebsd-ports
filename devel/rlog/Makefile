@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Flexible message logging facility for C++
+WWW=		https://www.arg0.net/rlog
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

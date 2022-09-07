@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Small, clear, and fast Qt-based audio player
+WWW=		https://www.sayonara-player.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

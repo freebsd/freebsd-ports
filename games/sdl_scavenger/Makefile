@@ -8,6 +8,7 @@ DISTNAME=	sdlscav-145.4_2015_01_05
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lode Runner like game
+WWW=		https://sourceforge.net/projects/sdlscavenger/
 
 LICENSE=	GPLv1
 

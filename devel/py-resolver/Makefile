@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolve specially formatted statements to Python objects
+WWW=		http://lukearno.com/projects/resolver/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

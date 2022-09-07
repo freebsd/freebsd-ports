@@ -5,6 +5,7 @@ MASTER_SITES=	SF/agos/vrflash/${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Flash kernels and romdisks to the Agenda VR3
+WWW=		https://sourceforge.net/projects/agos/
 
 LICENSE=	GPLv2
 

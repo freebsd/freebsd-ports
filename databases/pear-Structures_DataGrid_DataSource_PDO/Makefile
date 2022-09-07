@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DataSource driver using PHP Data Objects (PDO) and an SQL query
+WWW=		https://pear.php.net/package/Structures_DataGrid_DataSource_PDO
 
 LICENSE=	BSD2CLAUSE
 

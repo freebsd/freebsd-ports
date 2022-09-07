@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.lcdf.org/type/
 
 MAINTAINER=	mwm@mired.org
 COMMENT=	Six utilities for manipulating t1 fonts
+WWW=		https://www.lcdf.org/~eddietwo/type/
 
 USES=		cpe
 CPE_VENDOR=	${PORTNAME}_project

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jbo@insane.engineer
 COMMENT=	Simple yet fancy CPU architecture fetching tool
+WWW=		https://github.com/Dr-Noob/cpufetch
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	Maude-${PORTVERSION}
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	High-performance reflective language
+WWW=		https://maude.cs.uiuc.edu/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

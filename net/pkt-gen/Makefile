@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Packet sink/source using the netmap API
+WWW=		https://github.com/luigirizzo/netmap
 
 LICENSE=	BSD2CLAUSE
 

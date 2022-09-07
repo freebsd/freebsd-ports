@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl/Tk widget to display XML
+WWW=		https://metacpan.org/release/Tk-XMLViewer
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Tk>=0:x11-toolkits/p5-Tk \

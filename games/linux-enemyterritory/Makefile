@@ -10,6 +10,7 @@ DISTFILES=	et-linux-2.60.x86.run:full ET-2.60b.zip:patch
 
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Wolfenstein: Enemy Territory (Linux version)
+WWW=		https://www.splashdamage.com/games/wolfenstein-enemy-territory/
 
 # Converted from NO_CDROM
 LICENSE=	IDSOFTWARE

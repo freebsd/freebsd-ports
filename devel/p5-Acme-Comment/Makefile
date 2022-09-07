@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	marcellocoutinho@gmail.com
 COMMENT=	Allow multi-line comments which are filtered out
+WWW=		https://metacpan.org/release/Acme-Comment
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

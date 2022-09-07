@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Kodi platform support library
+WWW=		https://github.com/xbmc/kodi-platform
 
 LICENSE=	GPLv2+
 

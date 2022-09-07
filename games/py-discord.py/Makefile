@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	API wrapper for Discord written in Python
+WWW=		https://github.com/Rapptz/discord.py
 
 LICENSE=	MIT
 

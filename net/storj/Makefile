@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Decentralized cloud object storage
+WWW=		https://storj.io/
 
 LICENSE=	AGPLv3
 

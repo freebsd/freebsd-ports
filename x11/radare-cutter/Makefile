@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	GUI for radare2 reverse engineering framework
+WWW=		https://github.com/radareorg/cutter
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING

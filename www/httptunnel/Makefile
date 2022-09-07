@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Tunnel a TCP/IP connection through a HTTP/TCP/IP connection
+WWW=		https://github.com/larsbrinkhoff/httptunnel/
 
 LICENSE=	GPLv2
 

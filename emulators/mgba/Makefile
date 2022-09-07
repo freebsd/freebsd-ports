@@ -4,6 +4,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Game Boy Advance (GBA) emulator/debugger
+WWW=		https://mgba.io
 
 LICENSE=	MPL20 BSD3CLAUSE LGPL21+
 LICENSE_COMB=	multi

@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library that makes it easy to build console style tables
+WWW=		https://pear.php.net/package/Console_Table
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Plugin that adds file streaming support to CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-Stream
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

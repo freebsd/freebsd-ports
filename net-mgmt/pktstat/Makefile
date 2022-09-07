@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	freebsd@sosend.de
 COMMENT=	Network traffic viewer
+WWW=		https://github.com/dleonard0/pktstat
 
 LICENSE=	PD
 

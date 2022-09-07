@@ -5,6 +5,7 @@ CATEGORIES=	games cad
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cross-platform level editor for Quake-engine based games
+WWW=		https://kristianduske.com/trenchbroom/
 
 LICENSE=	GPLv3
 

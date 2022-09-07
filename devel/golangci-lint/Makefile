@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Linters Runner for Go
+WWW=		https://github.com/golangci/golangci-lint
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

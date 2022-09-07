@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Attributes on Steroids for Plain Old Ruby Objects
+WWW=		https://github.com/solnic/virtus
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

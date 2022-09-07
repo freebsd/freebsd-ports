@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/burghardt/${PORTNAME}/releases/download/${PORTN
 
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	User-space fs with on-access antivirus scanning
+WWW=		https://github.com/burghardt/clamfs
 
 LICENSE=	GPLv2
 

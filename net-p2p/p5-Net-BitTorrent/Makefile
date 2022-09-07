@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	BitTorrent peer-to-peer protocol class
+WWW=		https://metacpan.org/release/Net-BitTorrent
 
 LICENSE=	ART20
 

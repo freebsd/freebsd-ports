@@ -4,6 +4,7 @@ CATEGORIES=	comms archivers
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	OpenCBM driver module for parallel-port X[MA]-1541 cables
+WWW=		http://opencbm.sourceforge.net/
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Like Data::Dump, but with color
+WWW=		https://metacpan.org/release/Data-Dump-Color
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

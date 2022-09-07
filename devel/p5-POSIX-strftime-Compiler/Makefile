@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	GNU C library compatible strftime for loggers and servers
+WWW=		https://metacpan.org/release/POSIX-strftime-Compiler
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

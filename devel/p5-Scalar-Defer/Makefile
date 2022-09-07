@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Calculate values on demand
+WWW=		https://metacpan.org/release/Scalar-Defer
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \

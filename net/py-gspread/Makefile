@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Google Spreadsheets Python API
+WWW=		http://burnash.github.io/gspread/
 
 LICENSE=	MIT
 

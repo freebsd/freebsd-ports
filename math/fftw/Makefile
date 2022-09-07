@@ -9,6 +9,7 @@ MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/		\
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
+WWW=		https://www.fftw.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

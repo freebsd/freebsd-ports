@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight Music Server
+WWW=		https://github.com/epoupon/lms
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

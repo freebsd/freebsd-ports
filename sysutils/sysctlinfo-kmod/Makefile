@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
 COMMENT=	Kernel sysctl MIB-Tree interface
+WWW=		https://gitlab.com/alfix/sysctlinfo
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

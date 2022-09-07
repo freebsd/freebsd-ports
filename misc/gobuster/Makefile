@@ -6,6 +6,7 @@ CATEGORIES=	misc dns
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Directory/file & DNS busting tool written in Go
+WWW=		https://github.com/OJ/gobuster
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

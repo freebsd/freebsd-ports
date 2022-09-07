@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Uniform Manifold Approximation and Projection
+WWW=		https://github.com/lmcinnes/umap
 
 LICENSE=	BSD3CLAUSE
 

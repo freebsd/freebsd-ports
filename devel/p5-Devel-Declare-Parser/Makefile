@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for higher level interface to Devel-Declare
+WWW=		https://metacpan.org/release/Devel-Declare-Parser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

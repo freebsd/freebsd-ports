@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${OPSYS:tl}-
 VALID_CATEGORIES=	base
 
 COMMENT=	GNU binary tools for base
+WWW=		https://www.gnu.org/software/binutils/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

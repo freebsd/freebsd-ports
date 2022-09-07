@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-syntax-highlighter
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	General purpose syntax highlighter in pure Go
+WWW=		https://github.com/alecthomas/chroma
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

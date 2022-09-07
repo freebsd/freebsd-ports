@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
+WWW=		https://www.open-mpi.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

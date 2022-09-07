@@ -7,6 +7,7 @@ DISTNAME=	RSSKit-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Etoile Project RSSKit framework
+WWW=		https://gap.nongnu.org/grr/index.html
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

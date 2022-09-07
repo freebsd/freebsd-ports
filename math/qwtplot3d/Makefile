@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	3D plotting widgets for Qt
+WWW=		https://github.com/SciDAVis/qwtplot3d
 
 LIB_DEPENDS=	libgl2ps.so:print/gl2ps
 

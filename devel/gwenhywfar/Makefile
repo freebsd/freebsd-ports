@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/415/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Multi-platform helper library for networking and security applications
+WWW=		https://www.aquamaniac.de/rdm/projects/gwenhywfar
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

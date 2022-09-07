@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Wallon hunspell dictionaries
+WWW=		http://chanae.walon.org/walon/aspell.php
 
 LICENSE=	LGPL21
 

@@ -6,6 +6,7 @@ DISTVERSIONSUFFIX=	-src
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ultimate Packer for eXecutables
+WWW=		https://upx.github.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

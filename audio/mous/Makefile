@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	shen.elf@gmail.com
 COMMENT=	Simple yet powerful audio player
+WWW=		https://github.com/bsdelf/mous
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

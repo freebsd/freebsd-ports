@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	File::ShareDir returning Path::Class objects
+WWW=		https://metacpan.org/release/File-ShareDir-PathClass
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-ShareDir>=0:devel/p5-File-ShareDir \

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl5 module to generate and test even, odd, mark, and space parity
+WWW=		https://metacpan.org/release/String-Parity
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

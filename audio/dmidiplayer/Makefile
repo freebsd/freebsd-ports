@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Featured MIDI file player
+WWW=		https://sourceforge.net/projects/dmidiplayer/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

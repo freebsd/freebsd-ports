@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Abstract OAuth2 strategy for OmniAuth
+WWW=		https://github.com/omniauth/omniauth-oauth2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

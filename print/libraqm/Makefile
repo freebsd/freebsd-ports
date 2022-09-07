@@ -6,6 +6,7 @@ DISTNAME=	raqm-${DISTVERSION}
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library that encapsulates complex text layout logic
+WWW=		https://github.com/HOST-Oman/libraqm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

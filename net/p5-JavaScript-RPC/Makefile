@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Remote procedure calls from JavaScript
+WWW=		https://metacpan.org/release/BRICAS/JavaScript-RPC-0.3
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

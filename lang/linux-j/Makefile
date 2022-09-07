@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose programming language
+WWW=		https://www.jsoftware.com/
 
 LICENSE=	JSoftware
 LICENSE_NAME=	JSoftware End User License Agreement

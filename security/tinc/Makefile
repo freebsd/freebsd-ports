@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.tinc-vpn.org/packages/ \
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Virtual Private Network (VPN) daemon
+WWW=		https://www.tinc-vpn.org/
 
 LICENSE=	GPLv3
 

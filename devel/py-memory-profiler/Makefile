@@ -7,6 +7,7 @@ DISTNAME=	memory_profiler-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for monitoring memory usage of a python program
+WWW=		https://github.com/pythonprofilers/memory_profiler
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Lab makes it simple to work with repositories on GitLab
+WWW=		https://zaquestion.github.io/lab
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Azure OAuth2 Strategy for OmniAuth
+WWW=		https://github.com/KonaTeam/omniauth-azure-oauth2
 
 LICENSE=	MIT
 

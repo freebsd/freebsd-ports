@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Redis driver for CHI
+WWW=		https://metacpan.org/pod/CHI::Driver::Redis
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.mml.org.ua/LIST/ \
 
 MAINTAINER=	gmarco@giovannelli.it
 COMMENT=	Minimalistic mailing list manager
+WWW=		http://www.mml.org.ua/
 
 USES=		shebangfix perl5
 USE_PERL5=	run

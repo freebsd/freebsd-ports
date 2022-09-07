@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Check for errors when running a command through multiple pipes
+WWW=		https://metacpan.org/release/IO-MultiPipe
 
 USES=		perl5
 USE_PERL5=	configure

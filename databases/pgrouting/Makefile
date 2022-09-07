@@ -6,6 +6,7 @@ CATEGORIES=	databases geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Extension to PostGIS to provide geospatial routing functionality
+WWW=		https://pgrouting.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

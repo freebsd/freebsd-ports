@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert unittest test-cases to pytest
+WWW=		https://pypi.org/project/unittest2pytest/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING-GPLv3.txt

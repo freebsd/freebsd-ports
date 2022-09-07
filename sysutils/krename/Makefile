@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Powerful batch file renamer for KDE
+WWW=		https://userbase.kde.org/KRename
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

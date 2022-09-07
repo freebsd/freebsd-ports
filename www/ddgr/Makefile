@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	DuckDuckGo from the terminal
+WWW=		https://github.com/jarun/ddgr
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

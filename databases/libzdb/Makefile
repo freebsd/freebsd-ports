@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.tildeslash.com/libzdb/dist/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Thread-safe connection pool library
+WWW=		https://www.tildeslash.com/libzdb/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

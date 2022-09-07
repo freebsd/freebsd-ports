@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser for Tom's Obvious, Minimal Language (TOML) #'
+WWW=		https://metacpan.org/release/TOML
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

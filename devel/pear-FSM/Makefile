@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR Finite State Machine
+WWW=		https://pear.php.net/package/FSM
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

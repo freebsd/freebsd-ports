@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE component base class which implements the Observer pattern
+WWW=		https://metacpan.org/release/POE-Component-Syndicator
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

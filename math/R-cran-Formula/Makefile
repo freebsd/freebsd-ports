@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Extended Model Formulas
+WWW=		https://cran.r-project.org/web/packages/Formula/
 
 LICENSE=	GPLv2+
 

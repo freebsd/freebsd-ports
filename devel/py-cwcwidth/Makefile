@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python bindings for wc(s)width
+WWW=		https://github.com/sebastinas/cwcwidth
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

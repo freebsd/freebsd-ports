@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	citrin@citrin.ru
 COMMENT=	Client for beanstalkd, in-memory workqueue daemon
+WWW=		https://metacpan.org/release/Queue-Beanstalk
 
 USES=		perl5
 USE_PERL5=	modbuild

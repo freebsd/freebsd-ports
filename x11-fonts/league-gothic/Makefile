@@ -10,6 +10,7 @@ DISTNAME=	LeagueGothic-${DISTVERSION}
 
 MAINTAINER=	flo@snakeoilproductions.net
 COMMENT=	Revival of an old classic, Alternate Gothic \#1
+WWW=		https://www.theleagueofmoveabletype.com/league-gothic
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.md

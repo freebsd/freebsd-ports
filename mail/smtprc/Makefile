@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Scanner for open SMTP relays
+WWW=		http://smtprc.sourceforge.net
 
 OPTIONS_DEFINE=	DOCS GUI
 

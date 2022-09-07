@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	HTTP web service mocking library for GNOME
+WWW=		https://gitlab.com/groups/uhttpmock
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

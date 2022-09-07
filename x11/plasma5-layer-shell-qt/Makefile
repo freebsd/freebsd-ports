@@ -5,6 +5,7 @@ CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt component to make use of the Wayland wl-layer-shell protoco
+WWW=		https://kde.org/
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \

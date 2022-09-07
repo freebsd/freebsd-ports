@@ -7,6 +7,7 @@ DISTNAME=	ColorCode-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced MasterMind game and solver
+WWW=		http://colorcode.laebisch.com/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

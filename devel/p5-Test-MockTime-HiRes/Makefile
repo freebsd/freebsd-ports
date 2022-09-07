@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Replaces actual time with simulated high resolution time
+WWW=		https://metacpan.org/release/Test-MockTime-HiRes
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

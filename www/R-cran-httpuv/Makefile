@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	HTTP and WebSocket server library for R
+WWW=		https://cran.r-project.org/web/packages/httpuv/
 
 LICENSE=	GPLv2+
 

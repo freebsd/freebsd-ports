@@ -7,6 +7,7 @@ DISTNAME=	ZenTest-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Unit Testing Utility
+WWW=		https://github.com/seattlerb/zentest
 
 LICENSE=	MIT
 

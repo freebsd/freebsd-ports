@@ -9,6 +9,7 @@ PATCHFILES+=	80912d06f5e5.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-tetra
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome tetravex
+WWW=		https://wiki.gnome.org/Apps/Tetravex
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

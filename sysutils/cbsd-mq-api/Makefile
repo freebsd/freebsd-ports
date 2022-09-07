@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Simplified API for creating and destroying CBSD virtual environments
+WWW=		https://www.bsdstore.ru/
 
 LICENSE=	BSD2CLAUSE
 

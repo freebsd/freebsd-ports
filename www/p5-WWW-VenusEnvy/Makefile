@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	VenusEnvy comic strip archive and retrieval module
+WWW=		https://metacpan.org/release/WWW-VenusEnvy
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=5.805:www/p5-libwww

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Stats collection and distributed tracing framework
+WWW=		https://github.com/census-instrumentation/opencensus-python
 
 LICENSE=	APACHE20
 

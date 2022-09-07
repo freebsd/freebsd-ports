@@ -7,6 +7,7 @@ DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	D-Bus service performing user authentication
+WWW=		https://gitlab.com/accounts-sso/signond
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

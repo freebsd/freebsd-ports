@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Implementation of the HTML Document Object Model
+WWW=		https://metacpan.org/release/HTML-DOM
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CSS-DOM>=0:www/p5-CSS-DOM \

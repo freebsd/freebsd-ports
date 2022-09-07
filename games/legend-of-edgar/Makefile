@@ -7,6 +7,7 @@ DISTFILES=	edgar-${DISTVERSION}-1${EXTRACT_SUFX}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	2D platform game with a persistent world
+WWW=		https://www.parallelrealities.co.uk/games/edgar/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/license

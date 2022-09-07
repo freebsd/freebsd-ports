@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Multi-platform and spyware-free Gnutella client
+WWW=		http://phex.sourceforge.net/
 
 LICENSE=	GPLv2
 

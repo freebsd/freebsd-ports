@@ -6,6 +6,7 @@ DISTNAME=	spread-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spread Group Communication System, a network toolkit
+WWW=		http://www.spread.org/
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: yyin
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: yyin

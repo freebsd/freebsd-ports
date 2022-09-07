@@ -7,6 +7,7 @@ DISTNAME=	libintl-perl-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Internationalization library for Perl
+WWW=		https://metacpan.org/release/libintl-perl
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

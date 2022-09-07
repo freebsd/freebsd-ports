@@ -10,6 +10,7 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple XML-editing for GNU Emacs
+WWW=		https://www.dogbiscuit.org/mdub/software/
 
 LICENSE=	GPLv2+
 

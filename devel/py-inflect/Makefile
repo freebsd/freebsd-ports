@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate plurals, singular nouns, ordinals, indefinite articles
+WWW=		https://github.com/jaraco/inflect
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

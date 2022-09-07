@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Open source version of Bungies Marathon game
+WWW=		http://source.bungie.org/
 
 LICENSE=	GPLv3
 

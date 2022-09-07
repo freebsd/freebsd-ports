@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Utility functions for handling MIDI data in a nice/intuitive way
+WWW=		https://github.com/craffel/pretty-midi
 
 LICENSE=	MIT
 

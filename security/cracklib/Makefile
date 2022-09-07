@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT?=	Password-checking library
+WWW=		https://sourceforge.net/projects/cracklib/
 
 LICENSE=	LGPL21
 

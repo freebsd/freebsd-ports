@@ -7,6 +7,7 @@ DISTNAME=	tsMuxeR_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to create TS and M2TS files for IP broadcasting
+WWW=		http://www.smlabs.net/en/products/tsmuxer/
 
 USES=		linux
 NO_WRKSUBDIR=	yes

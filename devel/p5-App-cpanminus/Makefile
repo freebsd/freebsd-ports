@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get, unpack, build and install modules from CPAN
+WWW=		https://metacpan.org/release/App-cpanminus
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

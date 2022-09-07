@@ -6,6 +6,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	LLVM-based D compiler
+WWW=		https://wiki.dlang.org/LDC
 
 LICENSE=	BSD3CLAUSE
 

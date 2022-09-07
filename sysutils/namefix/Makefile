@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}.pl_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Batch file renamer
+WWW=		https://namefix.blogspot.com/
 
 LICENSE=	GPLv2
 

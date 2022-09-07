@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RDoc produces HTML and command-line documentation for Ruby projects
+WWW=		https://ruby.github.io/rdoc/
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual

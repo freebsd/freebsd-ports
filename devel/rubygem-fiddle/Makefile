@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	libffi wrapper for Ruby
+WWW=		https://github.com/ruby/fiddle
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.mupdf.com/downloads/ \
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Lightweight PDF viewer and toolkit
+WWW=		https://www.mupdf.com/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

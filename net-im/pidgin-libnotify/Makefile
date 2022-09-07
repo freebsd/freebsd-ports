@@ -8,6 +8,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	meethune@gmail.com
 COMMENT=	This plugin adds a libnotify interface to Pidgin
+WWW=		http://gaim-libnotify.sourceforge.net/
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin \
 		${LOCALBASE}/libdata/pkgconfig/libnotify.pc:devel/libnotify

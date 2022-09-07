@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen NGP to the libretro API
+WWW=		https://github.com/libretro/beetle-ngp-libretro
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Support for KDE to interface between your phone and your computer
+WWW=		https://community.kde.org/KDEConnect
 
 LICENSE=	GPLv2
 

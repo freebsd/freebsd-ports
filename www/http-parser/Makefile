@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	HTTP request/response parser written in C
+WWW=		https://github.com/nodejs/http-parser
 
 LICENSE=	MIT
 

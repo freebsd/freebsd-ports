@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen PCE to libretro
+WWW=		https://github.com/libretro/beetle-pce-libretro
 
 LICENSE=	GPLv2
 

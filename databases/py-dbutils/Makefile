@@ -7,6 +7,7 @@ DISTNAME=	DBUtils-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Providing solid, persistent, and pooled connections to a database
+WWW=		https://webwareforpython.github.io/DBUtils/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

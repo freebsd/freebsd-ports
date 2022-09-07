@@ -1,6 +1,7 @@
 PORTNAME=	litehtml_viewer
 
 COMMENT=	Viewer plugin for HTML emails, using the litehtml library
+WWW=		https://www.claws-mail.org/plugins.php
 
 USES+=		compiler:c++11-lang gnome
 USE_GNOME=	cairo glib20

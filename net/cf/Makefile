@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	dumbbell@FreeBSD.org
 COMMENT=	CLI for Cloud Foundry written in Go
+WWW=		https://cloudfoundry.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

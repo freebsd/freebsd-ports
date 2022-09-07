@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python bindings for XML Security Library
+WWW=		https://github.com/mehcode/python-xmlsec/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

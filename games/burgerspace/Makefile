@@ -6,6 +6,7 @@ MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/ \
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	BurgerTime clone
+WWW=		http://sarrazip.com/dev/burgerspace.html
 
 LICENSE=	GPLv2
 

@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Report on and update an SQLite database
+WWW=		https://metacpan.org/release/SQLite-Work
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

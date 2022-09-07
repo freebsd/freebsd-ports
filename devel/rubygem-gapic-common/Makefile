@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common code for GAPIC-generated API clients
+WWW=		https://github.com/googleapis/gapic-generator-ruby/tree/master/gapic-common
 
 LICENSE=	APACHE20
 

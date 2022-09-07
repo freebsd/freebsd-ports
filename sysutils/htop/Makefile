@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Better top(1) - interactive process viewer
+WWW=		https://htop.dev/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

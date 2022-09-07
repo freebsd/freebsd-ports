@@ -9,6 +9,7 @@ DIST_SUBDIR=	navidrome
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	Modern Music Server and Streamer compatible with Subsonic/Airsonic
+WWW=		https://www.navidrome.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

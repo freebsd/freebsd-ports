@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	List of registered asynchronous callbacks
+WWW=		https://github.com/aio-libs/aiosignal
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

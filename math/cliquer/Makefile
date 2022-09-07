@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Routines for clique searching
+WWW=		https://users.aalto.fi/~pat/cliquer.html
 
 LICENSE=	GPLv2
 

@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	lytboris@gmail.com
 COMMENT=	Small, fast, embeddable web server with CGI, SSL, Authorization
+WWW=		https://github.com/cesanta/mongoose
 
 LICENSE=	GPLv2
 

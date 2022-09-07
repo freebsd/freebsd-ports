@@ -7,6 +7,7 @@ CATEGORIES=	deskutils kde
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop organization tool
+WWW=		https://basket-notepads.github.io/
 
 LICENSE=	GPLv2
 

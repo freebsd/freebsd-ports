@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to test many params as one test
+WWW=		https://metacpan.org/release/Test-ManyParams
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

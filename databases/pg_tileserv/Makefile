@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	PostGIS-only tile server written in Go
+WWW=		https://github.com/crunchydata/pg_tileserv/issues
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

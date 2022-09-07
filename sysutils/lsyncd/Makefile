@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	junichi@junichi.org
 COMMENT=	Live Syncing (Mirror) Daemon
+WWW=		https://axkibe.github.io/lsyncd/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

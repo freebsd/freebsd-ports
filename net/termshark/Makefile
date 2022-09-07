@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Terminal UI for tshark, inspired by Wireshark
+WWW=		https://termshark.io/
 
 LICENSE=	MIT
 

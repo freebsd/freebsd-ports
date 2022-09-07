@@ -6,6 +6,7 @@ DIST_SUBDIR=	enlightenment
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	EFL (Enlightenment) graphical text editor
+WWW=		https://github.com/Obsidian-StudiosInc/ecrire
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

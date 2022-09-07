@@ -7,6 +7,7 @@ MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Translator library for raster geospatial data formats
+WWW=		https://gdal.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

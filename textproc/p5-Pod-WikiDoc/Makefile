@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate Pod from inline wiki style text
+WWW=		https://metacpan.org/release/Pod-WikiDoc
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

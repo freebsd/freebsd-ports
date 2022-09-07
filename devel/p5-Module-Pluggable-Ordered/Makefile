@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Call module plugins in a specified order
+WWW=		https://metacpan.org/release/Module-Pluggable-Ordered
 
 BUILD_DEPENDS=	p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require

@@ -8,6 +8,7 @@ MASTER_SITES=	http://ftp.geda-project.org/${PORTNAME}-gaf/stable/v${PORTVERSION:
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GPL Electronic Design Automation tools
+WWW=		http://www.gpleda.org/
 
 LICENSE=	GPLv2+
 

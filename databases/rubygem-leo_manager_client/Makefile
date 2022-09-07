@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	LeoFS-Manager client library for Ruby
+WWW=		https://leo-project.net/
 
 LICENSE=	APACHE20
 

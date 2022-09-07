@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP wrapper for the Sodium cryptographic library
+WWW=		https://pecl.php.net/package/libsodium
 
 LICENSE=	BSD2CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Python module that decodes binary streams into HTTP/2 frames
+WWW=		https://hyper.rtfd.org/
 
 LICENSE=	MIT
 

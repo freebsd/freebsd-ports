@@ -5,6 +5,7 @@ CATEGORIES=	textproc devel
 
 MAINTAINER=	flo@purplekraken.com
 COMMENT=	Header-only C++ library for parsing TOML
+WWW=		https://github.com/skystrife/cpptoml/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

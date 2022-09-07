@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of C++ data structures, algorithms, miscellaneous helpers
+WWW=		https://github.com/tlx/tlx
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

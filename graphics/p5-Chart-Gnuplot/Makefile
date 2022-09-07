@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Perl module to plot graphs using GNUPLOT on the fly
+WWW=		https://metacpan.org/release/Chart-Gnuplot
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

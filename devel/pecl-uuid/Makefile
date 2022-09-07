@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	UUID extension in PHP
+WWW=		https://pecl.php.net/package/uuid
 
 LICENSE=	LGPL3
 

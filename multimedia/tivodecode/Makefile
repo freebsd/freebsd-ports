@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.2pre4
 
 MAINTAINER=	mhsin@mhsin.org
 COMMENT=	Converts .TiVo files to normal MPEG files
+WWW=		http://tivodecode.sourceforge.net/
 
 OPTIONS_DEFINE=	DOCS
 

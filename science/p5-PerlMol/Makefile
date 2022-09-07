@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl modules for molecular chemistry
+WWW=		https://metacpan.org/release/PerlMol
 
 BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
 		p5-Chemistry-MacroMol>=0:science/p5-Chemistry-MacroMol \

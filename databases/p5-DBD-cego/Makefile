@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Cego DBI driver for Perl 5
+WWW=		https://www.lemke-it.com/
 
 LICENSE=	GPLv3
 

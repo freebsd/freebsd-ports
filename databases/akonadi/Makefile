@@ -5,6 +5,7 @@ CATEGORIES=	databases kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Storage server for KDE-Pim
+WWW=		https://community.kde.org/KDE_PIM/Akonadi
 
 LICENSE=	LGPL21
 

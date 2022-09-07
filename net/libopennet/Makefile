@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.rkeene.org/files/oss/libopennet/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for opening files over a network
+WWW=		https://www.rkeene.org/oss/libopennet/
 
 LICENSE=	LGPL21 GPLv2 # net.c header mentions GPL
 LICENSE_COMB=	multi

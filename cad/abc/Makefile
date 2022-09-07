@@ -4,6 +4,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	uddka@student.kit.edu
 COMMENT=	System for sequential synthesis and verification
+WWW=		https://people.eecs.berkeley.edu/~alanmi/abc/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/copyright.txt

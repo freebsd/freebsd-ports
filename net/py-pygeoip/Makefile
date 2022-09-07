@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Pure Python GeoIP API
+WWW=		https://github.com/appliedsec/pygeoip
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Utilities for processing high-throughput sequencing experiments
+WWW=		https://github.com/jeffhussmann/hits
 
 LICENSE=	GPLv3
 

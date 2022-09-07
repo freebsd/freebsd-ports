@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	xdg-desktop-portal backend for wlroots
+WWW=		https://github.com/emersion/xdg-desktop-portal-wlr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

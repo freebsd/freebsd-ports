@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANSI-BBS terminal which supports telnet, rlogin, and SSH
+WWW=		https://syncterm.bbsdev.net/
 
 LICENSE=	GPLv2
 

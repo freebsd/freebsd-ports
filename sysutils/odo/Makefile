@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atomic odometer for the command line
+WWW=		https://github.com/atomicobject/odo
 
 LICENSE=	ISCL
 

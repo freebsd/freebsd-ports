@@ -9,6 +9,7 @@ DISTFILES=	td${PORTVERSION:S/.//}s.lzh \
 
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Tells you what day today is
+WWW=		https://www.vector.co.jp/soft/dos/personal/se002657.html
 
 EXTRACT_DEPENDS=nkf:japanese/nkf
 

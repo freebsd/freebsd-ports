@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provide an interface for GNU Readline and Edit Line (libedit)
+WWW=		https://github.com/ruby/readline-ext
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

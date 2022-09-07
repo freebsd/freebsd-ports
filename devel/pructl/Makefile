@@ -7,6 +7,7 @@ MAINTAINER=	jmg@FreeBSD.org
 # The maintainer says, if you're actively using this you are free to
 # take this port.
 COMMENT=	Utilities to interface with PRUs
+WWW=		https://bitbucket.org/rpaulo/pructl
 
 LICENSE=	BSD2CLAUSE
 

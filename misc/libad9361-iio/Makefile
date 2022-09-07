@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	IIO AD9361 library for filter design, handling, multi-chip sync, etc
+WWW=		https://analogdevicesinc.github.io/libad9361-iio/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to check shared library links
+WWW=		http://svn.idaemons.org/cgi-bin/viewvc.cgi/trunk/?root=libchk
 
 LICENSE=	BSD2CLAUSE
 

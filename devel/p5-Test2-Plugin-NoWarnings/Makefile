@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fail if tests warn
+WWW=		https://metacpan.org/release/Test2-Plugin-NoWarnings
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Load (and optionally decrypt via GnuPG) user/pass identity information
+WWW=		https://metacpan.org/release/Config-Identity
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

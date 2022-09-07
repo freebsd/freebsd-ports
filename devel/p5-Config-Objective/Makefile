@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Configuration data as perl objects
+WWW=		https://metacpan.org/release/Config-Objective
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Parse-Yapp>=0:devel/p5-Parse-Yapp \

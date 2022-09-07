@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for libcurl
+WWW=		https://github.com/taf2/curb
 
 LICENSE=	RUBY
 LICENSE_FILE=	${WRKSRC}/LICENSE

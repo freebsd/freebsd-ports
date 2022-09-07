@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical audio file extractor and encoder
+WWW=		https://flacon.github.io/
 
 LICENSE=	LGPL21+
 

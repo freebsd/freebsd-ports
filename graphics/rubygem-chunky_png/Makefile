@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library to read and write PNG images
+WWW=		https://github.com/wvanbergen/chunky_png/wiki
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

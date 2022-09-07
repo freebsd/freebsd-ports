@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|000$||}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write-once, read-many attributes for Moose
+WWW=		https://metacpan.org/release/MooseX-SetOnce
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

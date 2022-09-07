@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.codon.org.uk/~mjg59/libx86/downloads/	\
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Hardware-independent library for executing real-mode x86 code
+WWW=		http://www.codon.org.uk/~mjg59/libx86/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mixin methods for simple event/message dispatch framework
+WWW=		https://metacpan.org/release/Mixin-Event-Dispatch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

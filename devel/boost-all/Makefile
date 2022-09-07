@@ -3,6 +3,7 @@ PORTNAME=	boost-all
 USES=		metaport
 
 COMMENT?=	The "meta-port" for boost libraries
+WWW=		https://www.boost.org/
 
 OPTIONS_DEFINE=	JAM LIBRARIES PYTHON DOCS
 OPTIONS_DEFAULT=	JAM LIBRARIES

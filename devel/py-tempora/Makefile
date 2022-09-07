@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Objects and routines pertaining to date and time
+WWW=		https://github.com/jaraco/tempora
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

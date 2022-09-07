@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pretty printing of data structures
+WWW=		https://metacpan.org/release/Data-Dump
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

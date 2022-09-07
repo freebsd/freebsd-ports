@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sysadmin@gkg.net
 COMMENT=	RT Extension to change ticket metadata via email
+WWW=		https://metacpan.org/release/RT-Extension-Gravatar
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Set of py.test fixtures to test Flask applications
+WWW=		https://github.com/pytest-dev/pytest-flask
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

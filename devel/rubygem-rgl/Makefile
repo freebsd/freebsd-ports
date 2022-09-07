@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby framework for graph algorithms and data structures
+WWW=		https://github.com/monora/rgl
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse/Build Peer Packets from BitTorrent
+WWW=		https://metacpan.org/release/Net-BitTorrent-PeerPacket
 
 USES=		perl5
 USE_PERL5=	modbuild

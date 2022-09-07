@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Repository of test results
+WWW=		https://launchpad.net/testrepository
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

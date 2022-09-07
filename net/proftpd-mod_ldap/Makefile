@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	proftpd-
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	LDAP and quotatab_ldap ProFTPD modules
+WWW=		http://www.proftpd.org/docs/contrib/mod_ldap.html
 
 LICENSE=	GPLv2
 

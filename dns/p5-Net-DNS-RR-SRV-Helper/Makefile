@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Orders SRV records by priority and weight for Net::DNS
+WWW=		https://metacpan.org/release/Net-DNS-RR-SRV-Helper
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-DNS>=0.68:dns/p5-Net-DNS \

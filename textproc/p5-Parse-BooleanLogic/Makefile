@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Parser of boolean expressions
+WWW=		https://metacpan.org/release/Parse-BooleanLogic
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

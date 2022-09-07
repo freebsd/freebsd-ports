@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Process CGI input parameters
+WWW=		https://metacpan.org/release/CGI-Untaint
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0.01:devel/p5-UNIVERSAL-require

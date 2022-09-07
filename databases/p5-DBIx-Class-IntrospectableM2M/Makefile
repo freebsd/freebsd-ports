@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Introspect many-to-many shortcuts
+WWW=		https://metacpan.org/release/DBIx-Class-IntrospectableM2M
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Adding two-factor authentication to Django
+WWW=		https://bitbucket.org/psagers/django-otp
 
 LICENSE=	BSD2CLAUSE
 

@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/acm/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Qt5 binding for FreePascal
+WWW=		https://wiki.lazarus.freepascal.org/index.php/Qt_Interface
 
 USES=		compiler:c++11-lang qmake qt:5
 USE_QT=		buildtools_build core gui network printsupport x11extras

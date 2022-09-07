@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mons@cpan.org
 COMMENT=	Relative use lib in absolute way
+WWW=		https://metacpan.org/release/lib-abs
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

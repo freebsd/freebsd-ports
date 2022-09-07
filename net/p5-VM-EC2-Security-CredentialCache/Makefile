@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cache credentials respecting expiration time for IAM roles
+WWW=		https://metacpan.org/release/VM-EC2-Security-CredentialCache
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

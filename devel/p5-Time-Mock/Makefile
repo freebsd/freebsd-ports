@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Shift and scale time
+WWW=		https://metacpan.org/release/Time-Mock
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

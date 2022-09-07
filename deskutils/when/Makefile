@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple personal calendar
+WWW=		https://www.lightandmatter.com/when/when.html
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/chrootsafe/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LD_PRELOAD wrapper to safely chroot(2) any program
+WWW=		https://sourceforge.net/projects/chrootsafe/
 
 LICENSE=	MIT
 

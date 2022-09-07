@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Bootstrap pagination for django
+WWW=		https://pypi.org/project/django-bootstrap-pagination/
 
 LICENSE=	MIT
 

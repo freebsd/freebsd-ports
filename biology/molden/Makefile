@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
+WWW=		https://www.theochem.ru.nl/molden/
 
 LICENSE=	Molden
 LICENSE_NAME=	Molden License

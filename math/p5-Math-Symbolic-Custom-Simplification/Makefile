@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	User defined simplification routines
+WWW=		https://metacpan.org/release/Math-Symbolic-Custom-Simplification
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

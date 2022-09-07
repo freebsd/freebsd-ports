@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Fluid R3 sound fonts (GM/GS)
+WWW=		https://musescore.org/en/handbook/soundfont
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

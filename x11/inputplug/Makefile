@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	XInput event monitor daemon
+WWW=		https://github.com/andrewshadura/inputplug
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

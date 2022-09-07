@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	Concurrent ssh client
+WWW=		https://github.com/akosela/go-cs
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

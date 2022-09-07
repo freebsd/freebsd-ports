@@ -5,6 +5,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Port installed version check/report with shar archival
+WWW=		https://dx.burplex.com/bin/chucky.html
 
 LICENSE=	CHUCKY
 LICENSE_NAME=	CHUCKY BSD LICENSE

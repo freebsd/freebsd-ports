@@ -6,6 +6,7 @@ CATEGORIES=	security www
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Fast web fuzzer written in Go
+WWW=		https://github.com/ffuf/ffuf
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

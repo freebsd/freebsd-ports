@@ -5,6 +5,7 @@ CATEGORIES=		editors
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Lightweight Qt5 plain-text editor
+WWW=		https://github.com/tsujan/FeatherPad
 
 LICENSE=	GPLv3
 

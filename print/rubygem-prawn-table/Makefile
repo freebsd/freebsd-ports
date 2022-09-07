@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provide tables for the Prawn PDF toolkit
+WWW=		https://github.com/prawnpdf/prawn-table
 
 LICENSE=	GPLv2 GPLv3 RUBY
 LICENSE_COMB=	dual

@@ -9,6 +9,7 @@ DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The OpenSSL library cross-compiled for MinGW32
+WWW=		http://sctp.fh-muenster.de/dtls-patches.html
 
 BUILD_DEPENDS=	makedepend:devel/makedepend \
 		${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \

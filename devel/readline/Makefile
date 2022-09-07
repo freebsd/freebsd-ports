@@ -8,6 +8,7 @@ PATCH_SITES=	GNU/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-patches
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for editing command lines as they are typed
+WWW=		https://tiswww.case.edu/php/chet/readline/rltop.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

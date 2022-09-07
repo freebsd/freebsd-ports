@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	HTML exportation for R objects
+WWW=		https://cran.r-project.org/package=R2HTML
 
 LICENSE=	GPLv2
 

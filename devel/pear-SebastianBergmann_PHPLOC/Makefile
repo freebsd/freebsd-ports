@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}SebastianBergmann_
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for quickly measuring the size of a PHP project
+WWW=		https://github.com/sebastianbergmann/phploc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

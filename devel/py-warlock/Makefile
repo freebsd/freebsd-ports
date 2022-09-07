@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python object model built on JSON schema and JSON patch
+WWW=		https://github.com/bcwaldon/warlock
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

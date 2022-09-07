@@ -5,6 +5,7 @@ CATEGORIES=	security kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Certificate manager for KDE
+WWW=		https://www.kde.org/applications/utilities/kleopatra/
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libboost_thread.so:devel/boost-libs \

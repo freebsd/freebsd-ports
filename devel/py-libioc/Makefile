@@ -9,6 +9,7 @@ PATCHFILES=	ceea85bbabaafa0be700.diff:-p1
 
 MAINTAINER=	stefan@gronke.net
 COMMENT=	Library to manage jails with iocage and iocell
+WWW=		https://github.com/bsdci/libioc
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	wand-
 
 MAINTAINER=	matt@peterson.org
 COMMENT=	C library for parsing config files
+WWW=		http://research.wand.net.nz/software/libconfig.php
 
 CONFLICTS=	libconfig
 

@@ -5,6 +5,7 @@ CATEGORIES=	textproc lisp
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable Perl-Compatible Regular Expression for Common Lisp
+WWW=		http://www.weitz.de/cl-ppcre/
 
 LICENSE=	BSD2CLAUSE
 

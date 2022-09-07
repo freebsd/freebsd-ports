@@ -9,6 +9,7 @@ DIST_SUBDIR=	freepascal/${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal compiler Adobe Acrobat(tm) documentation
+WWW=		https://www.freepascal.org/
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes

@@ -6,6 +6,7 @@ MASTER_SITES=	http://spiegl.de/qiv/download/ \
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Small, fast GDK/Imlib2 image viewer
+WWW=		https://spiegl.de/qiv/
 
 LICENSE=	GPLv2
 

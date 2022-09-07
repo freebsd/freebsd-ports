@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Collection of classes that provide different ways to ping computers
+WWW=		https://github.com/chernesk/net-ping
 
 LICENSE=	APACHE20
 

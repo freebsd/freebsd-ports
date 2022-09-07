@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module intended to make it easier to create reusable web apps
+WWW=		https://metacpan.org/release/CGI-Builder
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

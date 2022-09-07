@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple iterator and utilities
+WWW=		https://metacpan.org/release/Iterator-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

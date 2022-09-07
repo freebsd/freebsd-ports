@@ -9,6 +9,7 @@ DISTNAME=	crypto-${JARVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
+WWW=		https://www.bouncycastle.org/
 
 BUILD_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail \
 		${JAVALIBDIR}/junit.jar:java/junit

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Enable tests to run in parallel using multiple processes
+WWW=		http://deep-test.rubyforge.org/
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

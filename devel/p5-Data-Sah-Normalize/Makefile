@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Normalize Sah schema
+WWW=		https://metacpan.org/release/Data-Sah-Normalize
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

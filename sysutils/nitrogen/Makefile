@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/l3ib/nitrogen/releases/download/${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Background browser and setter for X windows
+WWW=		https://github.com/l3ib/nitrogen
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

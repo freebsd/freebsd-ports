@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Python setuptools_scm plugin for git archives
+WWW=		https://github.com/Changaco/setuptools_scm_git_archive
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

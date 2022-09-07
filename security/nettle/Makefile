@@ -6,6 +6,7 @@ MASTER_SITES=	GNU \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Low-level cryptographic library
+WWW=		https://www.lysator.liu.se/~nisse/nettle/
 
 LICENSE=	GPLv2+ LGPL3
 LICENSE_COMB=	multi

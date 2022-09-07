@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	gnu-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Free interpreter for APL programming language
+WWW=		https://www.gnu.org/software/apl/
 
 LICENSE=	GPLv3+
 

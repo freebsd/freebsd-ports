@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	sec.research.2005@gmail.com
 COMMENT=	Terminal interface for Stack Overflow
+WWW=		https://github.com/samtay/so
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

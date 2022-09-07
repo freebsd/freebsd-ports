@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	samir@noir.im
 COMMENT=	MkDocs plugin to define hooks
+WWW=		https://github.com/aklajnert/mkdocs-simple-hooks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

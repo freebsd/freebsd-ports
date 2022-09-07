@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Watch for changes to files
+WWW=		https://metacpan.org/release/File-ChangeNotify
 
 LICENSE=	ART20
 

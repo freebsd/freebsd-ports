@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Optimized port of VBA-M to Libretro, a Game Boy Advance emulator
+WWW=		https://github.com/libretro/vba-next
 
 LICENSE=	GPLv2
 

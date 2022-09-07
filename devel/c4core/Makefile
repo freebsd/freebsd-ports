@@ -8,6 +8,7 @@ PATCHFILES=	ed9bf87ab152509fcd5c54bdc40ebed9a2b4ede7.patch:-p1
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Library of low-level C++ utilities
+WWW=		https://github.com/biojppm/c4core
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

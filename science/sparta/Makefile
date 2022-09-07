@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-dsmc # Direct Simulation Monte Carlo
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Gas simulator: SPARTA DSMC software package
+WWW=		https://sparta.sandia.gov/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../LICENSE

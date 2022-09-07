@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Perl extension to create logfiles
+WWW=		https://metacpan.org/release/LINMAR/IO-Toolkit-1.008
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

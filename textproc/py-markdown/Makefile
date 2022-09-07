@@ -7,6 +7,7 @@ DISTNAME=	Markdown-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python implementation of Markdown
+WWW=		https://github.com/Python-Markdown/markdown
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

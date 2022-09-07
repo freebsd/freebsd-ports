@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Algorithms for converting plain text
+WWW=		https://github.com/diff-match-patch-python/diff-match-patch
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

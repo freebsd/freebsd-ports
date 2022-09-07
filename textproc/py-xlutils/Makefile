@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Utilities for working with Excel files that require both xlrd and xlwt
+WWW=		https://www.python-excel.org/
 
 LICENSE=	MIT
 

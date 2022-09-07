@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-autoconf-${PORTVERSION}
 
 MAINTAINER=	cperciva@tarsnap.com
 COMMENT=	Online encrypted backup service (client)
+WWW=		https://www.tarsnap.com/
 
 LICENSE=	tarsnap
 LICENSE_NAME=	tarsnap

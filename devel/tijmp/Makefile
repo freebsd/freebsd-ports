@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.khelekore.org/jmp/tijmp/ \
 
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Tools Interface Java Memory Profiler
+WWW=		http://khelekore.org/jmp/tijmp/
 
 OPTIONS_DEFINE=	DOCS OPTIMIZED_CFLAGS
 

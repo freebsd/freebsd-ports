@@ -6,6 +6,7 @@ CATEGORIES=		sysutils
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Open-source application container engine
+WWW=		https://www.docker.com/
 
 LICENSE=		APACHE20
 

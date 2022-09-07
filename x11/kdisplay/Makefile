@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	App and daemon for display managing
+WWW=		https://gitlab.com/kwinft/kdisplay
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi

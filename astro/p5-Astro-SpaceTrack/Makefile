@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve orbital data from www.space-track.org
+WWW=		https://metacpan.org/release/Astro-SpaceTrack
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

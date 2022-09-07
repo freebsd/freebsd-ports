@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to allow p5-libwww LWP to make https connections
+WWW=		https://metacpan.org/release/Crypt-SSLeay
 
 LICENSE=	ART20
 

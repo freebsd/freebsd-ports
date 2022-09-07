@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Iterates over all IP addresses in a text similar to Email::Find
+WWW=		https://metacpan.org/release/NetAddr-IP-Find
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

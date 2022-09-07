@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}.x%20%28new%29/${PORTNA
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of C++ classes for flexible logging
+WWW=		http://log4cpp.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

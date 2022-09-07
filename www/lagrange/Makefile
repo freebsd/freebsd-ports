@@ -5,6 +5,7 @@ MASTER_SITES=	https://git.skyjake.fi/gemini/${PORTNAME}/releases/download/v${DIS
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Beautiful Gemini Client
+WWW=		https://gmi.skyjake.fi/lagrange/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

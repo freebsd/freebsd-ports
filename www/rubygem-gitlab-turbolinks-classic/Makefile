@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Turbolinks makes following links in your web application faster
+WWW=		https://gitlab.com/jamedjo/gitlab-turbolinks-classic/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

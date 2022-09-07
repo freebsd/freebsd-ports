@@ -4,6 +4,7 @@ CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Xml Element object
+WWW=		https://pear.horde.org
 
 USES=		horde php cpe
 USE_PHP=	dom

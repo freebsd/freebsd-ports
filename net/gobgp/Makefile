@@ -7,6 +7,7 @@ DIST_SUBDIR=	gobgp
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	BGP implementation in Go
+WWW=		https://github.com/osrg/gobgp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

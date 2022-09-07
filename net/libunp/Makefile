@@ -7,6 +7,7 @@ DISTNAME=	unpv12e
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The networking library used in UNIX Network Programming Volume 1 2e
+WWW=		http://www.kohala.com/start/
 
 USES=		gmake
 GNU_CONFIGURE=	yes

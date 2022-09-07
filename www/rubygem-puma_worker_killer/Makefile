@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Automatically restart Puma cluster workers based on max RAM available
+WWW=		https://github.com/schneems/puma_worker_killer
 
 LICENSE=	MIT
 

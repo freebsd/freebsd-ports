@@ -5,6 +5,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome-shell trash indicator
+WWW=		https://github.com/bertoldia/gnome-shell-trash-extension
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

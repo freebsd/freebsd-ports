@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Perl extension for the Mcrypt cryptography library
+WWW=		https://metacpan.org/release/Mcrypt
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

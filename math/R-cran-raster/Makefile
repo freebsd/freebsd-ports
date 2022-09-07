@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Geographic Data Analysis and Modeling
+WWW=		https://cran.r-project.org/web/packages/raster/
 
 LICENSE=	GPLv3
 

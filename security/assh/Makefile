@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Smart SSH client wrapper
+WWW=		https://manfred.life/assh
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

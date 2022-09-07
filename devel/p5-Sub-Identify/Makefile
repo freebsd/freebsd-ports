@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve names of code references
+WWW=		https://metacpan.org/release/Sub-Identify
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

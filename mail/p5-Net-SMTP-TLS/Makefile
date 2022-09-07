@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SMTP client supporting TLS and AUTH
+WWW=		https://metacpan.org/release/Net-SMTP-TLS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

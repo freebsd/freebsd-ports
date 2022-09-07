@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple HTML-based presentation system
+WWW=		https://www.meyerweb.com/eric/tools/s5/
 
 LICENSE=	BSD2CLAUSE PD
 LICENSE_COMB=	multi

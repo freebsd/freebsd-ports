@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Policy Agent for policy enforcement across the entire stack
+WWW=		https://github.com/open-policy-agent/opa
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

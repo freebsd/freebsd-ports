@@ -8,6 +8,7 @@ MASTER_SITES=	SF/fetchmail/branch_6.4/
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT?=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
+WWW=		https://www.fetchmail.info/
 
 LICENSE=	GPLv2+
 

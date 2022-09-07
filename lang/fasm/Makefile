@@ -6,6 +6,7 @@ MASTER_SITES=	https://flatassembler.net/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Flat, multiple-pass assembler for IA-32 & x86-64 architectures
+WWW=		https://flatassembler.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

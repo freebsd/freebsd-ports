@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S|j|J|:S|.pl||}-${PORTVERSION}
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Perl library for Japanese character code conversion
+WWW=		https://metacpan.org/release/Jacode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

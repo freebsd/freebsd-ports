@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to guess file type like file(1)
+WWW=		https://metacpan.org/release/File-MMagic
 
 USES=		perl5
 USE_PERL5=	configure

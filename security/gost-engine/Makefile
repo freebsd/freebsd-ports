@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Implementation of the Russian GOST crypto algorithms for OpenSSL
+WWW=		https://github.com/gost-engine/engine/blob/master/README.gost
 
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

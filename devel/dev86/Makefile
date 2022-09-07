@@ -8,6 +8,7 @@ DISTNAME=	Dev86src-${PORTVERSION}
 
 MAINTAINER=	phs@deadc0.de
 COMMENT=	8086 development tools
+WWW=		http://homepage.ntlworld.com/robert.debath/
 
 CONFLICTS=	bcc
 

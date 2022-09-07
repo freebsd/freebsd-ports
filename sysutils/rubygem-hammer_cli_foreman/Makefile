@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Foreman commands for Hammer CLI
+WWW=		https://github.com/theforeman/hammer-cli-foreman
 
 LICENSE=	GPLv3+
 

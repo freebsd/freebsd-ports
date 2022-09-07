@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper for perl configuration
+WWW=		https://metacpan.org/release/ExtUtils-Config
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

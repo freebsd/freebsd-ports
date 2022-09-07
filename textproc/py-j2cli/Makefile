@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		vendion@gmail.com
 COMMENT=		Jinja2 Command-Line Tool, reworked
+WWW=		https://github.com/kolypto/j2cli
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

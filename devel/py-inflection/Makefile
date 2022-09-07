@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Ruby on Rails' inflector ported to Python
+WWW=		https://github.com/jpvanhal/inflection
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

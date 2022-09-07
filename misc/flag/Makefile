@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cyberleo@cyberleo.net
 COMMENT=	Turn the hostname into a colourful and visually distinctive ansi flag
+WWW=		https://git.cyberleo.net/CDN/flag.git
 
 NO_BUILD=	yes
 

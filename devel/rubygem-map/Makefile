@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Maps are ordered hashes with many features
+WWW=		https://github.com/ahoward/map
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

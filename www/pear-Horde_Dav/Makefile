@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde library for WebDAV, CalDAV, CardDAV
+WWW=		https://pear.horde.org
 
 LICENSE=	BSD3CLAUSE
 

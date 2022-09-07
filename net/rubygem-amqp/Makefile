@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the AMQP protocol for RabbitMQ clients
+WWW=		http://rubyamqp.info/
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

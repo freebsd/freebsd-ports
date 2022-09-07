@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of PSGI adapter for CGI
+WWW=		https://metacpan.org/release/CGI-Emulate-PSGI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	mk@nic-nac-project.org
 COMMENT=	Media mounting daemon
+WWW=		https://github.com/mrclksr/DSBMD
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

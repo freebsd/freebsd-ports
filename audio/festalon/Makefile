@@ -7,6 +7,7 @@ MASTER_SITES=	http://projects.raphnet.net/festalon/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command line player for .nsf and .hes audio files
+WWW=		http://projects.raphnet.net/ #festalon
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

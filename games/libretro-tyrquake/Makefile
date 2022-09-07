@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro port of Tyrquake (Quake 1 engine)
+WWW=		https://github.com/libretro/tyrquake
 
 LICENSE=	GPLv2
 

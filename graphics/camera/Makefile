@@ -7,6 +7,7 @@ DISTNAME=	Camera-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep application for digital still cameras
+WWW=		http://home.gna.org/gsimageapps/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Documentation/COPYING

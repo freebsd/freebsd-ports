@@ -7,6 +7,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/net-mgmt/tcptrack/ \
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Packet sniffer that displays TCP information like top(1)
+WWW=		https://BSDforge.com/projects/net-mgmt/tcptrack/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

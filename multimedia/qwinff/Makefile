@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Qt5 GUI Frontend for FFmpeg
+WWW=		https://qwinff.github.io/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	111
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	HTML, XML, SAX, and Reader parser
+WWW=		https://nokogiri.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

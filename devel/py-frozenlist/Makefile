@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	List-like structure which implements collections.abc.MutableSequence
+WWW=		https://github.com/aio-libs/frozenlist
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

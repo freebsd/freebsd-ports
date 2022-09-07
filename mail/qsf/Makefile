@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	jack@jarasoft.net
 COMMENT=	Small fast spam filter intended to be used with procmail
+WWW=		https://www.ivarch.com/programs/qsf/
 
 USES=	localbase tar:bzip2
 GNU_CONFIGURE=	yes

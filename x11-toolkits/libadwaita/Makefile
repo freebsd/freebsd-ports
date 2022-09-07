@@ -5,6 +5,7 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Building blocks for modern GNOME applications
+WWW=		https://www.gtk.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

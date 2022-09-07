@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Heap memory profiler
+WWW=		https://github.com/KDE/heaptrack
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Memory-efficient tree nodes in Perl
+WWW=		https://metacpan.org/release/Tree-Node
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

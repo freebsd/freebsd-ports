@@ -5,6 +5,7 @@ CATEGORIES=	math devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-performance C++ interface for MPFR library
+WWW=		http://www.holoborodko.com/pavel/mpfr/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/copying.txt

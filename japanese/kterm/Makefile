@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Xterm variant with Japanese support
+WWW=		https://bogytech.blogspot.jp/search/label/kterm
 
 LICENSE=	MIT
 

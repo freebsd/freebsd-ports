@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Track sessions and, optionally, users
+WWW=		https://metacpan.org/release/Maypole-Authentication-UserSessionCookie
 
 USES=		perl5
 USE_PERL5=	configure patch

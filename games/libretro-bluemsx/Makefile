@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of blueMSX to the libretro API
+WWW=		https://github.com/libretro/blueMSX-libretro
 
 LICENSE=	GPLv3
 

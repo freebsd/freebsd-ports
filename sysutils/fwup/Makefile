@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Configurable embedded Linux firmware update creator and runner
+WWW=		https://github.com/fhunleth/fwup
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

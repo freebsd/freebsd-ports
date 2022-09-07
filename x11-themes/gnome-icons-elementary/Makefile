@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	gnome-icons-
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Elementary icon set
+WWW=		https://github.com/elementary/icons
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

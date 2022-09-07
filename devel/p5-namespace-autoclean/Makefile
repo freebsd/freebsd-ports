@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Keep imports out of your namespace
+WWW=		https://metacpan.org/release/namespace-autoclean
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

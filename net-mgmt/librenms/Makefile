@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-vendor-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUF
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
+WWW=		https://www.librenms.org
 
 LICENSE=	GPLv3
 

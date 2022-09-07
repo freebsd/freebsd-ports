@@ -5,6 +5,7 @@ CATEGORIES=	devel kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Git gui client for KDE
+WWW=		https://github.com/HamedMasafi/GitKlient
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

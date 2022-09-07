@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Diff your Docker containers
+WWW=		https://github.com/GoogleContainerTools/container-diff
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

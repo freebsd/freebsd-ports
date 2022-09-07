@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Discovers short variants from Next Generation Sequencing data
+WWW=		https://genome.sph.umich.edu/wiki/Vt
 
 LICENSE=	MIT
 

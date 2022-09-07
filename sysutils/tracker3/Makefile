@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Object database, tag/metadata database, search tool and indexer
+WWW=		https://wiki.gnome.org/Projects/Tracker
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL

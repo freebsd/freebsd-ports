@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/exaile/${PORTNAME}/releases/download/v${PORTVER
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Generates mood files from audio files
+WWW=		https://github.com/exaile/moodbar
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -13,6 +13,7 @@ EXTRACT_ONLY=	OrthancPostgreSQL-${PORTVERSION}.tar.gz
 
 MAINTAINER=	maintainer.freebsd@xpoundit.com
 COMMENT=	Orthanc plugin to use PostgreSQL for indexing or storage
+WWW=		https://www.orthanc-server.com/static.php?page=postgresql
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

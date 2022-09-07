@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/relea
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	API for executing callback functions on events or timeouts
+WWW=		https://libevent.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

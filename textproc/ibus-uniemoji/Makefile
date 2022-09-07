@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Input method for entering unicode symbols and emoji by name
+WWW=		https://github.com/salty-horseibus-uniemoji
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

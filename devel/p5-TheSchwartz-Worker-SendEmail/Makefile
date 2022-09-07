@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	TheSchwartz Worker Task to Send Email
+WWW=		https://metacpan.org/release/TheSchwartz-Worker-SendEmail
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-TheSchwartz>=1.10:devel/p5-TheSchwartz \

@@ -8,6 +8,7 @@ DISTNAME_i386=	df_${DISTVERSION:S|0.||:S|.|_|}_linux32
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Dwarven fortress building game with ASCII graphics (Linux version)
+WWW=		https://www.bay12games.com/dwarves/
 
 LICENSE=	BAY12
 LICENSE_NAME=	Bay 12 Games Dwarf Fortress Licence

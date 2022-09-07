@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class library for the automatic layout of diagrams
+WWW=		https://ogdf.uos.de/
 
 LICENSE=		GPLv2 GPLv3
 LICENSE_COMB=		dual

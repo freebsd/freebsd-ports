@@ -7,6 +7,7 @@ DISTNAME=	PyX-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python package for creating encapsulated PostScript figures
+WWW=		https://pyx-project.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

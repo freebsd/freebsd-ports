@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Python implementation of the Language Server Protocol
+WWW=		https://github.com/python-lsp/python-lsp-server
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	http://0pointer.de/lennart/projects/libcanberra/ \
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Implementation of the Freedesktop sound theme spec
+WWW=		https://0pointer.de/lennart/projects/libcanberra/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL
@@ -62,6 +63,5 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| gtkdoc | |g' \
 		${WRKSRC}/Makefile.in
-
 
 .include <bsd.port.mk>

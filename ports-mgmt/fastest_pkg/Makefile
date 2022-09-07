@@ -10,6 +10,7 @@ PATCHFILES=	0a736009a0c98d3277e6cfe93cc36a5bc6f6cd40.patch:-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Script to find the fastest pkg mirror
+WWW=		https://github.com/ehaupt/fastest_pkg
 
 LICENSE=	BSD3CLAUSE
 

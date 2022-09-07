@@ -5,6 +5,7 @@ MASTER_SITES=	#
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
+WWW=		https://openpear.org/
 
 PEAR_CHANNEL_HOST=	openpear.org
 

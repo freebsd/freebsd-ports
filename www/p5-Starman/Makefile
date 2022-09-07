@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for high-performance preforking PSGI web server
+WWW=		https://metacpan.org/release/Starman
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	https://c9x.me/git/qbe.git/snapshot/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Embeddable compiler backend for C type languages
+WWW=		https://c9x.me/compile/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

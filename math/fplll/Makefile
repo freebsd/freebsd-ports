@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DIS
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lattice algorithms using floating-point arithmetic
+WWW=		https://github.com/fplll/fplll
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

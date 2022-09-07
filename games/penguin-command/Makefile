@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the classic game Missile Command
+WWW=		https://www.linux-games.com/penguin-command/
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

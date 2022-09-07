@@ -6,6 +6,7 @@ MASTER_SITES=	NETLIB/benchmark/hpl
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	High Performance Computing Linpack Benchmark
+WWW=		https://www.netlib.org/benchmark/hpl/
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		libmpich.so:net/mpich

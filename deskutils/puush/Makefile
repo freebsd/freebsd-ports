@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Screen capture and Puush image-bin client
+WWW=		https://github.com/Ultima1252/puush
 
 RUN_DEPENDS=	gnome-screenshot:deskutils/gnome-screenshot \
 		curl:ftp/curl \

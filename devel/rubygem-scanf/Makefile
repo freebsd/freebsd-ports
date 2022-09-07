@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Ruby implementation of the C function scanf(3)
+WWW=		https://rubygems.org/gems/scanf
 
 LICENSE=	BSD2CLAUSE
 

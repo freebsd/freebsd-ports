@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Resolving paths in the object hierarchy
+WWW=		https://pypi.org/project/zope.traversing/
 
 LICENSE=	ZPL21
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Spiffy Perl Interface Framework For You
+WWW=		https://metacpan.org/release/Class-Spiffy
 
 USES=		perl5
 USE_PERL5=	configure

@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.libreswan.org/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	IPsec and IKE based firewall
+WWW=		https://libreswan.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

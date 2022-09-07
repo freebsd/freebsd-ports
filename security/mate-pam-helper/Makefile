@@ -4,6 +4,7 @@ CATEGORIES=	security sysutils
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	MATE authenticate applications requiring PAM services
+WWW=		https://github.com/ghostbsd/mate-pam-helper
 
 LICENSE=	BSD2CLAUSE
 

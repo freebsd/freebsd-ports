@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read and write vCard files (RFC 2426)
+WWW=		https://metacpan.org/release/Net-vCard
 
 USES=		perl5
 USE_PERL5=	configure

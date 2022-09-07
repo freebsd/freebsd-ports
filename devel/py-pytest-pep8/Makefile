@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Pytest plugin to check PEP8 requirements
+WWW=		https://bitbucket.org/pytest-dev/pytest-pep8
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

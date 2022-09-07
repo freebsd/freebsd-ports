@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Trivial API for reading and writing XML (esp config files)
+WWW=		https://www.mclean.net.nz/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

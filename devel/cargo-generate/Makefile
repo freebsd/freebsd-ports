@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Quickly generate Rust project templates from existing git repositories
+WWW=		https://github.com/ashleygwilliams/cargo-generate
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

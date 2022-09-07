@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Clean, simple, and unobtrusive Ruby authentication solution
+WWW=		https://github.com/binarylogic/authlogic
 
 LICENSE=	MIT
 

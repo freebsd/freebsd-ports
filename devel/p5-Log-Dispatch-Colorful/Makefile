@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for logging to screen
+WWW=		https://metacpan.org/release/Log-Dispatch-Colorful
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Filter>0:devel/p5-Filter \

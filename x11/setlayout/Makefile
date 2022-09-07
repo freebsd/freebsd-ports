@@ -7,6 +7,7 @@ EXTRACT_ONLY=	#none
 
 MAINTAINER=	oleg@bsdpower.com
 COMMENT=	Arrange desktops in an MxN grid layout
+WWW=		https://icculus.org/openbox/index.php
 
 USES=		pkgconfig xorg
 USE_XORG=	x11

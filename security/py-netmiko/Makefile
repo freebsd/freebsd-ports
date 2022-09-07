@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Multi-vendor library to simplify SSH connections to network devices
+WWW=		https://github.com/ktbyers/netmiko
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

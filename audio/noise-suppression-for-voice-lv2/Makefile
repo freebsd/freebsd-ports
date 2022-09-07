@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Real-time noise suppression plugin
+WWW=		https://github.com/werman/noise-suppression-for-voice
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

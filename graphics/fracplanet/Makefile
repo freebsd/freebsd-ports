@@ -9,6 +9,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for creating random fractal planets and terrain
+WWW=		http://www.bottlenose.demon.co.uk/share/fracplanet/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

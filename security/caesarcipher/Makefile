@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.olivermahmoudi.com/files/
 
 MAINTAINER=	fbsd@olivermahmoudi.com
 COMMENT=	Caesar cipher cryptography tool
+WWW=		https://www.olivermahmoudi.com/programming/caesar-cipher/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

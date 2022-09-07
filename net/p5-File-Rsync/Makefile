@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl convenience wrapper for the rsync(1) program
+WWW=		https://metacpan.org/release/File-Rsync
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

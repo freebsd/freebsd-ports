@@ -8,6 +8,7 @@ DISTNAME=	nero2_linux_i386
 
 MAINTAINER=	craig001@lerwick.hopto.org
 COMMENT=	Neuro evolving robotic operatives the game
+WWW=		http://www.nerogame.org/
 
 # Converted from RESTRICTED
 LICENSE=	nero

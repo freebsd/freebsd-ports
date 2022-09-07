@@ -5,6 +5,7 @@ CATEGORIES=	audio www
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Stand-alone lightweight web UI controller for audio/musicpd
+WWW=		https://www.ympd.org/
 
 LICENSE=	GPLv2 BSD3CLAUSE MIT
 LICENSE_COMB=	multi

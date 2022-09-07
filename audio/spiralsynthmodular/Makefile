@@ -7,6 +7,7 @@ DISTNAME=	spiralmodular-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented modular softsynth/sequencer/sampler
+WWW=		https://www.pawfal.org/Software/SSM/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 		jackd:audio/jack

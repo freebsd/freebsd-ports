@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dmytro@posteo.net
 COMMENT=	Python library and scripts to work with files in Intel HEX format
+WWW=		https://github.com/python-intelhex/intelhex
 
 LICENSE=	BSD3CLAUSE
 

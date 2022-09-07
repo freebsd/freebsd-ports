@@ -7,6 +7,7 @@ MASTER_SITES=		https://github.com/marbl/canu/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single molecule sequence assembler
+WWW=		https://canu.readthedocs.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL

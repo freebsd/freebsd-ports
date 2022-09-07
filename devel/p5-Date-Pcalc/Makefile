@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Gregorian calendar date calculations
+WWW=		https://catcode.com/date/pcalc.html
 
 BUILD_DEPENDS=	p5-Carp-Clan>=5.3:devel/p5-Carp-Clan \
 		p5-Bit-Vector>=7.0:math/p5-Bit-Vector

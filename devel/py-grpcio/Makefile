@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	HTTP/2-based RPC framework
+WWW=		https://pypi.org/project/grpcio/
 
 LICENSE=	APACHE20
 

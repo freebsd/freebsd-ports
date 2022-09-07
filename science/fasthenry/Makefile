@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.wrcad.com/ftp/pub/ LOCAL/bf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multipole-accelerated inductance analysis program
+WWW=		https://www.rle.mit.edu/cpg/research_codes.htm
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 BROKEN_riscv64=	Fails to link: missing sbrk

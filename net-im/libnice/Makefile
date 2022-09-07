@@ -6,6 +6,7 @@ MASTER_SITES=	http://nice.freedesktop.org/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Library and transmitter that implements ICE-19
+WWW=		https://nice.freedesktop.org/
 
 LICENSE=	LGPL21 MPL11
 LICENSE_COMB=	dual

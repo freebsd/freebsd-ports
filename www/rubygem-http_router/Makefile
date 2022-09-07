@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	HTTP router for use in Rack
+WWW=		https://github.com/joshbuddy/http_router
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

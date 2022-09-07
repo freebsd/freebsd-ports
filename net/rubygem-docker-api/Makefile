@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Simple REST client for the Docker Remote API
+WWW=		https://rubygems.org/gems/docker-api
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

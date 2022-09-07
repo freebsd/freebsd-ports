@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to use HTML Templates from CGI scripts
+WWW=		https://metacpan.org/release/HTML-Template-Pro
 
 LICENSE=	ART10 GPLv1+ LGPL21+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	git-
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Syntax-highlighting pager for git/diff
+WWW=		https://github.com/dandavison/delta
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Search for a file in an environment variable path
+WWW=		https://metacpan.org/release/File-SearchPath
 
 LICENSE=	GPLv2
 

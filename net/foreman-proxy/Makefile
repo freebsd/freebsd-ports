@@ -5,6 +5,7 @@ MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
 MAINTAINER=	freebsd@moov.de
 COMMENT=	Foreman Proxy Agent
+WWW=		https://theforeman.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

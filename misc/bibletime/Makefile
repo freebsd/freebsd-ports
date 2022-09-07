@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Open source Bible study tool
+WWW=		https://www.bibletime.info/
 
 LICENSE=	GPLv2
 

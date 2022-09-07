@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/westes/flex/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Fast lexical analyzer generator
+WWW=		https://github.com/westes/flex
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

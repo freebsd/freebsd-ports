@@ -5,6 +5,7 @@ MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Generic game engine for 2D double-buffering animation
+WWW=		http://www3.sympatico.ca/sarrazip/en/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

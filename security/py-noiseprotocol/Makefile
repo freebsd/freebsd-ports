@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Python implementation of Noise Protocol Framework
+WWW=		https://pypi.org/project/noiseprotocol/
 
 LICENSE=	MIT
 

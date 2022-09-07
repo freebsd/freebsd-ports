@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/danilo
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	CLI for Amazon EKS
+WWW=		https://eksctl.io/
 
 LICENSE=	APACHE20
 

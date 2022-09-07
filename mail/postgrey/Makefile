@@ -7,6 +7,7 @@ MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	Greylisting policy server for Postfix
+WWW=		https://postgrey.schweikert.ch/
 
 LICENSE=	GPLv2
 

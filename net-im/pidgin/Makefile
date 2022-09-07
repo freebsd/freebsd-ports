@@ -2,6 +2,7 @@ PORTNAME=	pidgin
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Pidgin multi-protocol messaging client (GTK+ UI)
+WWW=		https://www.pidgin.im/
 
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libpurple.so:net-im/libpurple

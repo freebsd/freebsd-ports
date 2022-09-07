@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python package for executing tests in documentation strings
+WWW=		https://github.com/Erotemic/xdoctest
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

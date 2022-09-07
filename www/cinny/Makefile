@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/ajbura/${PORTNAME}/releases/download/v${PORTVER
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Yet another Matrix client for the web
+WWW=		https://cinny.in/
 
 LICENSE=	MIT
 

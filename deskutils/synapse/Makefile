@@ -6,6 +6,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/363823069/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Semantic application launcher written in Vala
+WWW=		https://launchpad.net/synapse-project
 
 LICENSE=	GPLv2 LGPL21 GPLv3
 LICENSE_COMB=	multi

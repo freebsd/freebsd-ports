@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	SaltyRTC compliant signalling server
+WWW=		https://github.com/saltyrtc/saltyrtc-server-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

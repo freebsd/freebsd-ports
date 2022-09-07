@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line program for reading parsing and setting MP4/M4A metadata
+WWW=		https://github.com/wez/atomicparsley
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.nncpgo.org/download/
 
 MAINTAINER=	stargrave@stargrave.org
 COMMENT=	Utilities for secure store-and-forward files, mail, command exchanging
+WWW=		http://www.nncpgo.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

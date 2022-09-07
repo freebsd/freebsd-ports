@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl implementation of GraphQL
+WWW=		https://metacpan.org/release/GraphQL
 
 LICENSE=	ART20
 

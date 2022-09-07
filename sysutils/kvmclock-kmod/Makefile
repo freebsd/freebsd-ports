@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Paravirtualized Linux KVM clock support
+WWW=		https://reviews.freebsd.org/D29733
 
 LICENSE=	BSD2CLAUSE
 

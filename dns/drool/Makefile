@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.dns-oarc.net/files/drool/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Replay DNS traffic from packet capture files
+WWW=		https://www.dns-oarc.net/tools/drool
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

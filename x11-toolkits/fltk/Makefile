@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cross-platform C++ graphical user interface toolkit
+WWW=		https://www.fltk.org/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

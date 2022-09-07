@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Routines for manipulating a person's name #'
+WWW=		https://metacpan.org/release/Lingua-EN-NameParse
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

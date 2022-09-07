@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-pro-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
+WWW=		https://web.archive.org/web/20150211123250/http://erik-kunze.de/xzx/
 
 # Converted from RESTRICTED
 LICENSE=	xzx

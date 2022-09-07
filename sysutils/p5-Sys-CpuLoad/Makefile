@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to retrieve CPU load averages
+WWW=		https://metacpan.org/release/Sys-CpuLoad
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

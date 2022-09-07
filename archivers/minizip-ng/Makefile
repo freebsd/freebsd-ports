@@ -4,6 +4,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Fork of the popular minizip found in the zlib distribution
+WWW=		https://github.com/zlib-ng/minizip-ng
 
 LICENSE=	ZLIB
 

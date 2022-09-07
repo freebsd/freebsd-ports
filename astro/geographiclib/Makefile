@@ -10,6 +10,7 @@ DIST_SUBDIR=	GeographicLib
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Library for geographic projections
+WWW=		https://geographiclib.sourceforge.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

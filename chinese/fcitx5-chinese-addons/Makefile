@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Pinyin and table input method support for Fcitx5
+WWW=		https://github.com/fcitx/fcitx5-chinese-addons
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt

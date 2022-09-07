@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
 MAINTAINER=	ports@xanderio.de
 COMMENT=	SemVer 2.0.0 compatible datatype for PostgreSQL database
+WWW=		https://github.com/theory/pg-semver/
 
 LICENSE=	PostgreSQL
 

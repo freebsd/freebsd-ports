@@ -9,6 +9,7 @@ DISTNAME=	Trac-${DISTVERSION}
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Enhanced wiki and issue tracking system for software projects
+WWW=		https://trac.edgewall.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

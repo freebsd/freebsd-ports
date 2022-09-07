@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/libfsxfs/releases/download/${PORTVERSION
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the SGI X File System
+WWW=		https://github.com/libyal/libfsxfs
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

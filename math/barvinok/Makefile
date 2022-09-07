@@ -5,6 +5,7 @@ MASTER_SITES=	https://barvinok.sourceforge.io/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for counting the number of integer points in polytopes
+WWW=		http://freshmeat.sourceforge.net/projects/barvinok
 
 LICENSE=	GPLv2
 

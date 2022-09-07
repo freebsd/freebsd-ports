@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Framework to create end-to-end infrastructure tests
+WWW=		https://github.com/inspec/inspec
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

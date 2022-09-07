@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-src-${DISTVERSION:C/\.//g}
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Free, open source, cross-platform video editor
+WWW=		https://shotcut.org/
 
 LICENSE=	GPLv3
 

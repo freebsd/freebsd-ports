@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Python logging made (stupidly) simple
+WWW=		https://pypi.org/project/loguru/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

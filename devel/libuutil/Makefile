@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Illumos userland utilities library
+WWW=		https://github.com/jrmarino/libuutil
 
 LICENSE=	CDDL
 

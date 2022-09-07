@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of O2EM to the libretro API, an Odyssey 2 / VideoPac emulator
+WWW=		https://github.com/libretro/libretro-o2em
 
 LICENSE=	ART20
 

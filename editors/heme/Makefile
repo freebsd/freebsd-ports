@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Small and fast console hex editor for Unix-like systems
+WWW=		http://heme.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:C/-.*//}-${PORTVERSION}
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	CJK Mincho-typeface developed by Hanazono University
+WWW=		http://fonts.jp/hanazono/
 
 LICENSE=	OFL11
 

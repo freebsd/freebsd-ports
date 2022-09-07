@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	corey@electrickite.org
 COMMENT=	PWM cooling fan control daemon
+WWW=		https://github.com/electrickite/fand
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

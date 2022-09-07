@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	DNS Diagnostics and measurement tools (ping, traceroute)
+WWW=		https://github.com/farrokhi/dnsdiag
 
 LICENSE=	BSD2CLAUSE
 

@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Classic overhead run-and-gun game
+WWW=		https://github.com/cxong/cdogs-sdl
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3,1:devel/py-protobuf@${PY_FLAVOR} \
 		protoc:devel/protobuf

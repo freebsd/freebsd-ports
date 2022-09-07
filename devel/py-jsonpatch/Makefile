@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	harm@weites.com
 COMMENT=	Apply JSON-Patches (RFC 6902)
+WWW=		https://github.com/stefankoegl/python-json-patch
 
 LICENSE=	BSD3CLAUSE
 

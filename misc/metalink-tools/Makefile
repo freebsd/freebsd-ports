@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	-tools
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metalink generation tool
+WWW=		http://metalinks.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

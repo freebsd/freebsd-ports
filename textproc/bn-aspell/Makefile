@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Bengali dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	bn
 

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Easily Work with 'Font Awesome' Icons
+WWW=		https://cran.r-project.org/web/packages/fontawesome/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Parser for MediaWiki wikicode
+WWW=		https://github.com/earwig/mwparserfromhell
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=		math
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Ncurses spreadsheet program for terminal
+WWW=		https://github.com/andmarti1424/sc-im
 
 LICENSE=	BSD4CLAUSE
 

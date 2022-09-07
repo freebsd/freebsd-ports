@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/rdoeffinger/${PORTNAME}/releases/download/v${DI
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create 2D barcodes, also known as DataMatrix
+WWW=		https://github.com/rdoeffinger/iec16022
 
 LICENSE=	GPLv2
 

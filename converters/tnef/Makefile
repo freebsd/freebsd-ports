@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Unpack data in MS Outlook TNEF format
+WWW=		http://tnef.sourceforge.net/
 
 LICENSE=	GPLv2
 

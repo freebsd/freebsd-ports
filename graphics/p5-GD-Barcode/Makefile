@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Create barcode image with GD in Perl
+WWW=		https://metacpan.org/release/GD-Barcode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PipeWire Graph Qt GUI Interface
+WWW=		https://gitlab.freedesktop.org/rncbc/qpwgraph
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

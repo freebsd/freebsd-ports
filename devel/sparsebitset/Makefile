@@ -7,6 +7,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Efficient sparse bitset implementation for Java
+WWW=		https://github.com/brettwooldridge/SparseBitSet
 
 LICENSE=	APACHE20
 

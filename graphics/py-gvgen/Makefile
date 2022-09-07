@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Easy python interface to generate dot files
+WWW=		https://github.com/stricaud/gvgen
 
 LICENSE=	GPLv2
 

@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve TV information from http://www.atmovies.com.tw/
+WWW=		https://metacpan.org/release/WWW-AtMovies-TV
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-TableExtract>=2.1:www/p5-HTML-TableExtract \

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Stress test your disks before trusting your valuable data to them
+WWW=		https://github.com/ncw/stressdisk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Add SQL read/write support to agate
+WWW=		https://agate-sql.rtfd.org/
 
 LICENSE=	MIT
 

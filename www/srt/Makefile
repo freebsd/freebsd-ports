@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Secure Reliable Transport (SRT) Protocol
+WWW=		https://www.srtalliance.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

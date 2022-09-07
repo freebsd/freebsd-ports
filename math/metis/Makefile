@@ -6,6 +6,7 @@ MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package for unstructured graph partitioning
+WWW=		http://glaros.dtc.umn.edu/gkhome/metis/metis/overview
 
 LICENSE=	APACHE20
 

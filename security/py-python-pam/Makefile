@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Python PAM module
+WWW=		https://github.com/FirefighterBlu3/python-pam
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

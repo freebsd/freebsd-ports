@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.oasis-open.org/docbook/xmlschema/${DISTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DocBook W3C XML Schema
+WWW=		https://www.oasis-open.org/docbook/xmlschema/1.0b1/
 
 USES=		zip
 

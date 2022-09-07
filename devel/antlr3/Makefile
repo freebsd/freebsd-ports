@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	takumiiinn@gmail.com
 COMMENT=	ANother Tool for Language Recognition
+WWW=		https://www.antlr3.org/
 
 LICENSE=	BSD3CLAUSE
 

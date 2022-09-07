@@ -7,6 +7,7 @@ DIST_SUBDIR=	postgresql
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL database design and management system
+WWW=		https://www.pgadmin.org/
 
 LICENSE=	PostgreSQL
 

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	47-rails61
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Flexible authentication solution for Rails with Warden
+WWW=		https://github.com/heartcombo/devise
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@scd-systems.net
 COMMENT=	Tool for upgrade everything
+WWW=		https://github.com/r-darwish/topgrade
 
 LICENSE=	GPLv3
 

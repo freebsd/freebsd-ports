@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Collection of high-performance ray tracing kernels
+WWW=		https://www.embree.org/
 
 LICENSE=	APACHE20
 

@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	cheffo@freebsd-bg.org
 COMMENT=	Time-series data collection
+WWW=		https://influxdata.com/time-series-platform/kapacitor/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

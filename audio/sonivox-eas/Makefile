@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sonivox EAS for Qt
+WWW=		https://github.com/pedrolcl/Linux-SonivoxEas
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

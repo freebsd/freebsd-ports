@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Zelda-like 2D game engine
+WWW=		http://wiki.solarus-games.org/doku.php
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt

@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common logging library for Bourne shell scripts
+WWW=		https://sites.google.com/a/forestent.com/projects/log4sh
 
 USES=		cpe
 

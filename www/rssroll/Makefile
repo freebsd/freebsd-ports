@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	RSS collector in C
+WWW=		http://chaosophia.net/rssroll/
 
 LICENSE=	BSD2CLAUSE
 

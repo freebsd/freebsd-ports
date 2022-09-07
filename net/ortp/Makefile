@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Real-time Transport Protocol (RTP) library
+WWW=		https://www.linphone.org/technical-corner/ortp.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

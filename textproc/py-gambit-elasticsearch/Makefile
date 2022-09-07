@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-elasticsearch
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Micro library for performing multi queries in elasticsearch
+WWW=		https://pypi.org/project/gambit/
 
 LICENSE=	MIT
 

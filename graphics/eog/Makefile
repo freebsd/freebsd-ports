@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Eye Of Gnome image viewer
+WWW=		https://wiki.gnome.org/Apps/EyeOfGnome
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

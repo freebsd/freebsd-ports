@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	RBTree is a sorted associative collection
+WWW=		http://rbtree.rubyforge.org/
 
 LICENSE=	MIT
 

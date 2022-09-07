@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Commandline option parser for Ruby that gets out of your way
+WWW=		https://manageiq.github.io/trollop/
 
 LICENSE=	MIT
 

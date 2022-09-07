@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/Juniper/${PORTNAME}/releases/download/${PORTVER
 
 MAINTAINER=	jonathan@FreeBSD.org
 COMMENT=	Library to generate text, XML, JSON, and HTML output
+WWW=		https://github.com/Juniper/libxo
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright

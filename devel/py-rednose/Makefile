@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Coloured output for nosetests
+WWW=		https://github.com/JBKahn/rednose
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

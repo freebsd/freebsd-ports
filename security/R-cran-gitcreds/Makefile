@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Query 'git' Credentials from 'R'
+WWW=		https://github.com/r-lib/gitcreds
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

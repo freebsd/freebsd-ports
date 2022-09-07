@@ -6,6 +6,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	Bayesian inference of phylogeny
+WWW=		https://nbisweden.github.io/MrBayes/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, Enjoyable HTML Parser for Ruby
+WWW=		https://github.com/hpricot/hpricot
 
 LICENSE=	MIT
 

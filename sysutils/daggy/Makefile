@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Data Aggregation Utility: runs commands on remote hosts simultaneously
+WWW=		https://daggy.dev/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE

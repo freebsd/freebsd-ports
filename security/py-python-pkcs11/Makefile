@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PKCS\#11 (Cryptoki) support for Python
+WWW=		https://github.com/danni/python-pkcs11
 
 LICENSE=	MIT
 

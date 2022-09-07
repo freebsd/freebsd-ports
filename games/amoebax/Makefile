@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.emma-soft.com/games/amoebax/download/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cute and addictive Puyo Puyo like game
+WWW=		https://www.emma-soft.com/games/amoebax/
 
 LICENSE=	GPLv2 FAL
 LICENSE_COMB=	dual

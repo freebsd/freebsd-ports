@@ -8,6 +8,7 @@ DISTNAME=	motif-${PORTVERSION}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
+WWW=		https://motif.ics.com/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

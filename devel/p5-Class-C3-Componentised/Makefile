@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load mix-ins or components to your C3-based class
+WWW=		https://metacpan.org/release/Class-C3-Componentised
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

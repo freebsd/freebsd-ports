@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-conrad
 
 MAINTAINER=	code@apotheon.net
 COMMENT=	Access X selection from command line
+WWW=		https://www.vergenet.net/~conrad/software/xsel/
 
 LICENSE=	xsel-conrad
 LICENSE_GROUPS=	COPYFREE

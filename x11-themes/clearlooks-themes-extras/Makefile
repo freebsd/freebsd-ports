@@ -7,6 +7,7 @@ DISTNAME=	Clearlooks-Big_Pack-${PORTVERSION}.x
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extras colour schemes for Clearlooks engine theme
+WWW=		http://www.kernow-webhosting.com/~bvc/theme/gtk/clearlooks/
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

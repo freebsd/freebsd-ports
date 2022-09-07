@@ -4,6 +4,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Profile Vulkan devices to find their peak capacities
+WWW=		https://github.com/nihui/vkpeak
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

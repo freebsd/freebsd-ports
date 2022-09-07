@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File Delivery over Unidirectional Transport implementation
+WWW=		http://mad.cs.tut.fi/
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libcurl.so:ftp/curl

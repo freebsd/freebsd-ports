@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20latest/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filesystem metadata benchmark utility
+WWW=		https://sourceforge.net/projects/mdtest/
 
 LICENSE=	GPLv2
 

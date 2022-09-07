@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://ftp.whizkidtech.redprince.net/unix/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for the conversion to and from UTF-8 Unicode encoding
+WWW=		http://www.whizkidtech.redprince.net/i18n/
 
 LICENSE=	BSD2CLAUSE
 

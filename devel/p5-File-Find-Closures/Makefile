@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Functions you can use with File::Find
+WWW=		https://metacpan.org/release/File-Find-Closures
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

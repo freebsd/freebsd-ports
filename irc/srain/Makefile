@@ -5,6 +5,7 @@ CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Modern IRC client written in GTK
+WWW=		https://srain.im/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

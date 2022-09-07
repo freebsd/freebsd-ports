@@ -8,6 +8,7 @@ DIST_SUBDIR=	logitechmediaserver
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logitech Media Server plugin to store song ratings and statistics
+WWW=		https://wiki.slimdevices.com/index.php/TrackStat_plugin
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/TrackStat/LICENSE.txt

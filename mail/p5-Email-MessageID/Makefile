@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate world unique message-ids
+WWW=		https://metacpan.org/release/Email-MessageID
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

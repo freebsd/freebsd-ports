@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Automates certificate monitoring with Icinga
+WWW=		https://github.com/Icinga/icingaweb2-module-x509
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -10,6 +10,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenArena game data files
+WWW=		http://openarena.ws/
 
 LICENSE=	GPLv2
 

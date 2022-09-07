@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Tools for working with the OFX file format
+WWW=		https://pypi.org/project/ofxparse/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

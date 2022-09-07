@@ -10,6 +10,7 @@ MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Web-based SSH console
+WWW=		https://www.bastillion.io
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

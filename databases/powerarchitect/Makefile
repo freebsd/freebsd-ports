@@ -6,6 +6,7 @@ DISTNAME=	SQL-Power-Architect-generic-${PORTVERSION}
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Data modeling and profiling tool
+WWW=		http://www.bestofbi.com/page/architect
 
 LICENSE=	GPLv3
 

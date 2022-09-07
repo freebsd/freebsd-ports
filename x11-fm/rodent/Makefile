@@ -6,6 +6,7 @@ MASTER_SITES=	SF/xffm/${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Fast, small, and powerful file manager
+WWW=		http://xffm.org/
 
 LICENSE=	GPLv3
 

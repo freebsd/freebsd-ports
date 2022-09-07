@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Objective wrapper for OpenSSL Crypto Library
+WWW=		https://pecl.php.net/package/crypto
 
 LICENSE=	PHP301
 

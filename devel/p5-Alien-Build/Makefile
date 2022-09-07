@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build external dependencies for use in CPAN
+WWW=		https://metacpan.org/release/Alien-Build
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

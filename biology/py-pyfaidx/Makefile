@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Efficient pythonic random access to fasta subsequences
+WWW=		https://github.com/mdshw5/pyfaidx
 
 LICENSE=	BSD3CLAUSE
 

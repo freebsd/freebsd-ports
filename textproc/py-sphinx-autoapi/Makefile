@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	andreas@bilke.org
 COMMENT=	Sphinx API documentation generator
+WWW=		https://sphinx-autoapi.readthedocs.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

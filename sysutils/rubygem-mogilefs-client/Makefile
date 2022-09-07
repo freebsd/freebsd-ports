@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	MogileFS client library for Ruby
+WWW=		https://yhbt.net/mogilefs-client/
 
 LICENSE=	BSD3CLAUSE
 

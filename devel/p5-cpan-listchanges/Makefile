@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to list changes for CPAN modules
+WWW=		https://metacpan.org/release/cpan-listchanges
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

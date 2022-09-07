@@ -13,6 +13,7 @@ PATCHFILES+=	19eb2c30bff0.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bleeding edge Mesa drivers (OpenGL, Vulkan)
+WWW=		https://www.mesa3d.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.rst

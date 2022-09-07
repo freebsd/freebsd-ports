@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ruby generic EPUB parser/generator
+WWW=		https://github.com/skoji/gepub
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

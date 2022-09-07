@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GSSAPI authentication handler for python-requests
+WWW=		https://pypi.org/project/requests-gssapi/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

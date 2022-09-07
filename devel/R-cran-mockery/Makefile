@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Mocking Library for R
+WWW=		https://github.com/r-lib/mockery
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

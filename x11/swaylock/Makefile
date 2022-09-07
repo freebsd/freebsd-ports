@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	Screen locker for Wayland
+WWW=		https://github.com/swaywm/swaylock
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Real-time audio and video streaming and processing
+WWW=		https://www.linphone.org/technical-corner/mediastreamer2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

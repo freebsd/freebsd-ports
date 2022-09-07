@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Timer plugin for Xfce
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-timer-plugin
 
 LICENSE=	GPLv2
 

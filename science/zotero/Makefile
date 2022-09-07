@@ -7,6 +7,7 @@ EXTRACT_ONLY=	Zotero-${DISTVERSION}_FreeBSD-${ARCH}${EXTRACT_SUFX}
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Reference management for bibliographic data and research materials
+WWW=		https://www.zotero.org/
 
 LICENSE=	AGPLv3
 

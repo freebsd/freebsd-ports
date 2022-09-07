@@ -7,6 +7,7 @@ DISTNAME=	matrix_common-${PORTVERSION}
 
 MAINTAINER=	ports@skyforge.at
 COMMENT=	Common utilities for Synapse, Sydent and Sygnal
+WWW=		https://www.matrix.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

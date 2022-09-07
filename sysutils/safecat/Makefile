@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.jeenyus.net/linux/software/safecat/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Safely write data to maildir directory
+WWW=		http://www.jeenyus.net/linux/software/safecat.html
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

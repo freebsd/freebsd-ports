@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	SAML toolkit for Ruby on Rails
+WWW=		https://github.com/onelogin/ruby-saml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

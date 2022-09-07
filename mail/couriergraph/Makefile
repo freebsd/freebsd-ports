@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RRDtool frontend for Courier statistics
+WWW=		https://www.arschkrebs.de/postfix/couriergraph/
 
 RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
 		p5-File-Tail>=0:devel/p5-File-Tail

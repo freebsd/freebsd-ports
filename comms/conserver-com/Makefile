@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-com
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Application that allows multiple users to watch serial consoles
+WWW=		https://www.conserver.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

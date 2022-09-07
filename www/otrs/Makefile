@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Open Ticket Request System
+WWW=		https://www.otrs.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

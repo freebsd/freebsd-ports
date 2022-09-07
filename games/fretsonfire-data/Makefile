@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Frets on Fire data files
+WWW=		http://louhi.kempele.fi/~skyostil/uv/fretsonfire/
 
 # Converted from RESTRICTED
 LICENSE=	fretsonfire

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Simple library for detecting objects in pictures
+WWW=		https://rubygems.org/gems/objectdetect
 
 LICENSE=	MIT
 

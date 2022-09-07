@@ -4,6 +4,7 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library for monitoring user activity
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kidletime/html/index.html
 
 USES=		cmake compiler:c++11-lib kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	ecm_build

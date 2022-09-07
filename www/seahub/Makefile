@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Web frontend for Seafile
+WWW=		https://github.com/haiwen/seahub
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

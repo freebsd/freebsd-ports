@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Scraping NICONICO DOUGA utility for Ruby
+WWW=		http://nicovideo.rubyforge.org/
 
 LICENSE=	BSD2CLAUSE
 

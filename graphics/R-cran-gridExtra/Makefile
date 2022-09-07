@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Miscellaneous Functions for "Grid" Graphics
+WWW=		https://cran.r-project.org/web/packages/gridExtra/
 
 LICENSE=	GPLv2+
 

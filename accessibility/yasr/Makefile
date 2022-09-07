@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	David.K.Gerry@GMail.com
 COMMENT=	General-purpose console screen reader
+WWW=		http://yasr.sourceforge.net/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

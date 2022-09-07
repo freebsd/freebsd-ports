@@ -6,6 +6,7 @@ MASTER_SITES=	SF/c${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Fully matured and stable set of printf and string functions
+WWW=		https://daniel.haxx.se/projects/trio/
 
 LICENSE=	BSD2CLAUSE
 

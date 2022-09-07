@@ -5,6 +5,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Icon pack designed to integrate with most desktop environments
+WWW=		https://krourke.org/projects/art/la-capitaine-icon-theme
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

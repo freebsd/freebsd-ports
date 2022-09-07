@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Linda distributed computing paradigm in Ruby
+WWW=		https://github.com/ruby/rinda
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

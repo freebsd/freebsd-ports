@@ -7,6 +7,7 @@ DISTNAME=	GMastermind-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Well-known mastermind game
+WWW=		https://gap.nongnu.org/gmastermind/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

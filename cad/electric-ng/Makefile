@@ -12,6 +12,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated VLSI design system
+WWW=		https://www.staticfreesoft.com/
 
 LICENSE=	GPLv3
 

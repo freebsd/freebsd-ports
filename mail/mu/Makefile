@@ -4,6 +4,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Mail searching frontend for Xapian
+WWW=		http://www.djcbsoftware.nl/code/mu/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	demelier.david@gmail.com
 COMMENT=	Lua library for musicpd
+WWW=		https://github.com/silentbicycle/lua-mpd
 
 RUN_DEPENDS=	${LUA_REFMODLIBDIR}/socket/core.so:net/luasocket@${LUA_FLAVOR}
 

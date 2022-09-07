@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-099-pre22
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another billiards simulator
+WWW=		https://www.planetjahn.de/apool/
 
 LICENSE=	GPLv2+
 

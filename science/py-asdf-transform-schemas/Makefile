@@ -7,6 +7,7 @@ DISTNAME=	asdf_transform_schemas-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ASDF schemas for transforms
+WWW=		https://github.com/asdf-format/asdf-transform-schemas
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

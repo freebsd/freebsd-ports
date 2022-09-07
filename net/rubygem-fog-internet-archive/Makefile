@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for the 'fog' gem to support Internet Archive
+WWW=		https://github.com/fog/fog-internet-archive
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
 COMMENT=	Python library for calculating various types of CRC
+WWW=		https://github.com/hex-in/libscrc
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

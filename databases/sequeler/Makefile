@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Friendly SQL client
+WWW=		https://github.com/Alecaddd/sequeler
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

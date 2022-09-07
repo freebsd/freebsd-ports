@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python library for synching with OpenScienceFramework projects
+WWW=		https://github.com/psychopy/pyosf
 
 LICENSE=	MIT
 

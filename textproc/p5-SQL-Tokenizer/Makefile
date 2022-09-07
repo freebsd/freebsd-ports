@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple regular expressions based SQL tokenizer
+WWW=		https://metacpan.org/release/SQL-Tokenizer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

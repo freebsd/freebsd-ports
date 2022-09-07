@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenWeather extension for the GNOME3 shell
+WWW=		https://github.com/jenslody/gnome-shell-extension-openweather
 
 BROKEN=		does not fetch
 

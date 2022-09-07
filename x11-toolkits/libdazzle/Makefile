@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Companion library to GObject and Gtk+
+WWW=		https://gitlab.gnome.org/GNOME/libdazzle
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

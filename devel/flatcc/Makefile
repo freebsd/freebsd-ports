@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	FlatBuffers compiler and library in C for C
+WWW=		https://github.com/dvidelabs/flatcc
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

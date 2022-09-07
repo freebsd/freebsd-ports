@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Speech synthesizer for English, Russian, Georgian, and other languages
+WWW=		https://github.com/RHVoice/RHVoice
 
 LICENSE=	LGPL21+ GPLv3+ # the main code is under LGPL21+, MAGE library is under GPLv3+, voices are licensed for use by individuals only, no commercial use
 LICENSE_COMB=	multi

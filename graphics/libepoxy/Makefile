@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/anholt/${PORTNAME}/releases/download/${DISTVERS
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Library to handle OpenGL function pointer management
+WWW=		https://github.com/anholt/libepoxy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

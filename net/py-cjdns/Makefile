@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to interact with the cjdns admin interface
+WWW=		https://github.com/hyperboria/python-cjdns
 
 LICENSE=	GPLv3
 

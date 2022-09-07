@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	WebSockets support for any application/server
+WWW=		https://github.com/novnc/websockify
 
 LICENSE=	LGPL3
 

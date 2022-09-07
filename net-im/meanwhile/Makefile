@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open Source implementation of the Lotus Sametime protocol
+WWW=		http://meanwhile.sourceforge.net/
 
 USES=		gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	glib20

@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Screenshot utility from the Lumina Desktop
+WWW=		https://lumina-desktop.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE

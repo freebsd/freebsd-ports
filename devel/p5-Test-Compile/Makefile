@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check whether Perl module files compile correctly
+WWW=		https://metacpan.org/release/Test-Compile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

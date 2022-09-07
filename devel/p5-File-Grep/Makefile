@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Perl Module that Find matches to a pattern in files or function
+WWW=		https://metacpan.org/release/File-Grep
 
 USES=		perl5
 USE_PERL5=	configure

@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Primitive computer algebra system
+WWW=		https://github.com/p-e-w/savage
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility functions for XS modules
+WWW=		https://metacpan.org/release/Module-Install-XSUtil
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

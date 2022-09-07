@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	21
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance Test of Sequential File I/O (older version)
+WWW=		https://www.iozone.org/
 
 CONFLICTS_INSTALL=	iozone
 

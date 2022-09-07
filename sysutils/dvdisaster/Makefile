@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.ml1.org.uk/distfiles/ \
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Optical disc error correction data and recovery tool
+WWW=		https://www.bobeager.uk/software.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

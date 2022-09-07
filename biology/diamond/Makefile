@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	BLAST-compatible local sequence aligner
+WWW=		http://ab.inf.uni-tuebingen.de/software/diamond/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

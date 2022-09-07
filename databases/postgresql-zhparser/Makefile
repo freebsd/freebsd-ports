@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL extension for full-text search of Chinese
+WWW=		https://github.com/amutu/zhparser
 
 LICENSE=	PostgreSQL
 

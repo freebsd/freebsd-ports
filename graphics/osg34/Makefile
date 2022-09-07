@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	34
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
+WWW=		https://www.openscenegraph.org/
 
 LICENSE=	OSGPL
 LICENSE_NAME=	OpenSceneGraph Public License

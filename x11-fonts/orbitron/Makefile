@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	flo@snakeoilproductions.net
 COMMENT=	Geometric sans-serif typeface intended for display purposes
+WWW=		https://github.com/theleagueof/orbitron
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/Open\ Font\ License.markdown

@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Perl extension scripts for rxvt-unicode terminal emulator
+WWW=		https://github.com/muennich/urxvt-perls
 
 LICENSE=	GPLv2
 

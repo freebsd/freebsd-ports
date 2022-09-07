@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Groonga httpd client library
+WWW=		https://metacpan.org/release/Net-Groonga-HTTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

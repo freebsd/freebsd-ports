@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Declarative YAML templating system tuned for BOSH deployment manifests
+WWW=		https://github.com/cloudfoundry-incubator/spiff
 
 USES=		go
 

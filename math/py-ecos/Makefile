@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python package for ECOS: Embedded Cone Solver
+WWW=		https://www.embotech.com/ECOS
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

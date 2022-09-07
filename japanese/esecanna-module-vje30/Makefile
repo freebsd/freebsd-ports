@@ -9,6 +9,7 @@ DIST_SUBDIR=	esecanna
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Esecanna module for VJE-Delta 3.0
+WWW=		http://esecanna.netfort.gr.jp/
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:japanese/esecanna
 

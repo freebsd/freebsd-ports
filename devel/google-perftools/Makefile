@@ -8,6 +8,7 @@ DISTNAME=	gperftools-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
+WWW=		https://github.com/gperftools/gperftools
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

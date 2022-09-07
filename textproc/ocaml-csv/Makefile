@@ -6,6 +6,7 @@ MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/420/
 
 MAINTAINER=	tcrimi@gmail.com
 COMMENT=	OCaml library to read and write CSV files
+WWW=		https://forge.ocamlcore.org/projects/csv/
 
 LICENSE=	LGPL21+
 

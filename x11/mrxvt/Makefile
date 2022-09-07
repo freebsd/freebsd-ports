@@ -6,6 +6,7 @@ MASTER_SITES=	SF/materm/${PORTNAME}%20source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tabbed version of rxvt
+WWW=		http://materm.sourceforge.net/
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

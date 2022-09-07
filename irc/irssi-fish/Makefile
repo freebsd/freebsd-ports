@@ -4,6 +4,7 @@ CATEGORIES=	irc security
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Encryption plugin for irssi
+WWW=		https://github.com/falsovsky/FiSH-irssi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

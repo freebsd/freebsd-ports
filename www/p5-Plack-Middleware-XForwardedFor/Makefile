@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Plack middleware to handle X-Forwarded-For headers
+WWW=		https://metacpan.org/release/Plack-Middleware-XForwardedFor
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

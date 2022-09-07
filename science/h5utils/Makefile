@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	Set of utilities for visualization and conversion of HDF5 format
+WWW=		https://github.com/stevengj/h5utils
 
 LICENSE=	MIT GPLv2
 LICENSE_COMB=	multi

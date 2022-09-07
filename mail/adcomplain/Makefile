@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.uu
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complain about inappropriate commercial use (f.e. SPAM) of usenet/e-mail
+WWW=		http://www.rdrop.com/users/billmc/adcomplain.html
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	adcomplain.pl

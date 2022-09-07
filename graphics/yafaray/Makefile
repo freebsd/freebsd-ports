@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Montecarlo raytracing engine
+WWW=		http://www.yafaray.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual

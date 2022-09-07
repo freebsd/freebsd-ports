@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Commodore 64 X11 fonts
+WWW=		https://beej.us/c64bdf/
 
 NO_BUILD=	yes
 

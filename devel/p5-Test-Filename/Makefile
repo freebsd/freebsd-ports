@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for portable filename comparison
+WWW=		https://metacpan.org/release/Test-Filename
 
 RUN_DEPENDS=	\
 	p5-Path-Tiny>0:devel/p5-Path-Tiny

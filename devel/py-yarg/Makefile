@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Easy to use PyPI client
+WWW=		https://pypi.org/project/yarg/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

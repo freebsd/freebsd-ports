@@ -5,6 +5,7 @@ CATEGORIES=	net www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive web UI for gRPC, along the lines of postman
+WWW=		https://github.com/fullstorydev/grpcui
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

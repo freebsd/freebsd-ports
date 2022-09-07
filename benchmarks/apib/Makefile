@@ -7,6 +7,7 @@ CATEGORIES=	benchmarks www
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Simple and fast HTTP performance testing tool
+WWW=		https://github.com/apigee/apib
 
 LICENSE=	APACHE20
 

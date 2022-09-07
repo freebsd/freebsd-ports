@@ -5,6 +5,7 @@ CATEGORIES=	print
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Brother laser printer driver
+WWW=		https://github.com/QORTEC/brlaser/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

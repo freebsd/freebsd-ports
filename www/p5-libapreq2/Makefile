@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Perl binding for the Generic Apache2 Request Library
+WWW=		https://metacpan.org/dist/libapreq2
 
 LICENSE=	APACHE20
 

@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Crossassembler for 6502, 65c02 and 65816 processors
+WWW=		https://sourceforge.net/projects/acme-crossass/
 
 LICENSE=	GPLv2
 

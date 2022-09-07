@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-dev.${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library - nightly snapshot
+WWW=		http://www.freetds.org/
 
 LICENSE=	LGPL20
 

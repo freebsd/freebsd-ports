@@ -4,6 +4,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	BSD Administration Scripts 2
+WWW=		https://github.com/lonkamikaze/bsda2
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

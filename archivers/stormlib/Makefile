@@ -5,6 +5,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library to process MPQ (MoPaQ) archives
+WWW=		http://www.zezula.net/en/mpq/main.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

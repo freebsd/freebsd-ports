@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility to fetch and download python packages
+WWW=		https://github.com/frostming/unearth
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

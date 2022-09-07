@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Parser for puppet modules
+WWW=		https://github.com/theforeman/kafo_parsers
 
 LICENSE=	GPLv3
 

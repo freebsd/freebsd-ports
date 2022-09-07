@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Simple and fast gzip and gunzip
+WWW=		https://metacpan.org/release/Gzip-Faster
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

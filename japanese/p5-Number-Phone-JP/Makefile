@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ja-p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to validate Japanese phone numbers
+WWW=		https://metacpan.org/release/Number-Phone-JP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

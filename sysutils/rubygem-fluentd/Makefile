@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Fluent event collector
+WWW=		https://fluentd.org/
 
 LICENSE=	APACHE20
 

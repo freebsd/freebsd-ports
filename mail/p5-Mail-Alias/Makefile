@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mail::Alias
+WWW=		https://metacpan.org/release/Mail-Alias
 
 USES=		perl5
 USE_PERL5=	configure

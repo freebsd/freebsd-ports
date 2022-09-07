@@ -11,6 +11,7 @@ WRKSRC=			${WRKDIR}/mlt-${DISTVERSION}
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT?=		Multimedia framework for TV broadcasting
+WWW=		https://www.mltframework.org/
 
 LICENSE?=		GPLv2 GPLv3 LGPL21
 LICENSE_COMB?=		multi

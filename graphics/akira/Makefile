@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical UI/UX design tool
+WWW=		http://akiraux.org/
 
 LICENSE=	GPLv3+
 

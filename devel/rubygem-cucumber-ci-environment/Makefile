@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Detect CI Environment from environment variables
+WWW=		https://github.com/cucumber/ci-environment
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

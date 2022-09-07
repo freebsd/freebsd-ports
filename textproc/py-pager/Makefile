@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Terminal/console pager module
+WWW=		https://pypi.org/project/pager/
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to SQLite2 databases through the DBI
+WWW=		https://www.sqlite.org/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

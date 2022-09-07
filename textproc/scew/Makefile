@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple C Expat Wrapper
+WWW=		https://savannah.nongnu.org/projects/scew
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

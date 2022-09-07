@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Package for the V2 CF Service Broker API and Open Broker API
+WWW=		https://pypi.org/project/openbrokerapi/
 
 LICENSE=	MIT
 

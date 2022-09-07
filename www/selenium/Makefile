@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Selenium Standalone Server, allows browser testing
+WWW=		https://www.seleniumhq.org
 
 LICENSE=	APACHE20
 

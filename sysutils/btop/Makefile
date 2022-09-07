@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Monitor of resources
+WWW=		https://github.com/aristocratos/btop
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

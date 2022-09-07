@@ -11,6 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Solitaire game, written in Python and the successor of PySol
+WWW=		https://pysolfc.sourceforge.io/
 
 LICENSE=	GPLv2+ GPLv3+
 LICENSE_COMB=	multi

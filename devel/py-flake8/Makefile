@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Code checking using pep8 and pyflakes
+WWW=		https://pypi.org/project/flake8/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper of the C library Google CRC32C
+WWW=		https://github.com/googleapis/python-crc32c
 
 LICENSE=	APACHE20
 

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl bindings for fast and powerful template system
+WWW=		http://www.clearsilver.net/
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:www/clearsilver
 

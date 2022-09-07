@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test2 Harness designed for the Test2 event system
+WWW=		https://metacpan.org/release/Test2-Harness
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

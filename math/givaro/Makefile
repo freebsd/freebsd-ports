@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	C++ library for computer algebra
+WWW=		https://casys.gricad-pages.univ-grenoble-alpes.fr/givaro
 
 LICENSE=	CeCILL-Bv1-en.txt
 LICENSE_NAME=	Ce[a] C[nrs] I[nria] L[ogiciel] L[ibre] B license, version 1

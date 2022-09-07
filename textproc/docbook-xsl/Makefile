@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XSL DocBook stylesheets
+WWW=		http://docbook.sourceforge.net/projects/xsl/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

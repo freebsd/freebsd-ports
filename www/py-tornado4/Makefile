@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Web Server from FriendFeed
+WWW=		https://www.tornadoweb.org/
 
 LICENSE=	APACHE20
 

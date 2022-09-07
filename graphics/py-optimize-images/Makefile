@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CLI utility to reduce the file size of images
+WWW=		https://github.com/victordomingos/optimize-images
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

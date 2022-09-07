@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern ZZT editor with necessary features
+WWW=		https://github.com/cknave/kevedit
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

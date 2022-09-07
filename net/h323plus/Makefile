@@ -5,6 +5,7 @@ CATEGORIES=	net multimedia
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	H323 Video Conferencing library
+WWW=		https://www.h323plus.org/
 
 LICENSE=	MPL10 MPL11
 LICENSE_COMB=	multi

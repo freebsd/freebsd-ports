@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Text::Xslate wrapper for Dancer
+WWW=		https://metacpan.org/release/Dancer-Template-Xslate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

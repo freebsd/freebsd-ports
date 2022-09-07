@@ -6,6 +6,7 @@ CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor
+WWW=		https://github.com/riverwm/river
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

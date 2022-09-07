@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.repo.hu/projects/fungw/releases/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	C Function gateway for different programming languages
+WWW=		http://www.repo.hu/projects/fungw/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

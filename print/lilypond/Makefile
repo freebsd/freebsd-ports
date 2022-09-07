@@ -6,6 +6,7 @@ MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	GNU music typesetter
+WWW=		https://lilypond.org/
 
 LICENSE=	GPLv3
 

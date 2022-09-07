@@ -6,6 +6,7 @@ DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Expose the Online Accounts API to QML applications
+WWW=		https://gitlab.com/groups/accounts-sso
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

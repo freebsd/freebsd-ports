@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for Simpler parsing of CSV files
+WWW=		https://metacpan.org/release/Text-CSV-Simple
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS \

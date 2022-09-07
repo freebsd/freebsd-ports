@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Implementation of sum/option types using QVariant
+WWW=		https://github.com/robertknight/qt-maybe
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

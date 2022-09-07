@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to convert HTML to text with tables intact
+WWW=		https://metacpan.org/release/HTML-FormatText-WithLinks-AndTables
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

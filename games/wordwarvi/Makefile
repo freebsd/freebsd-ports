@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Side-scrolling shoot'em up '80s style arcade game
+WWW=		https://smcameron.github.io/wordwarvi/
 
 LICENSE=	GPLv2+ CC-BY-2.0 CC-BY-SA-3.0
 LICENSE_COMB=	multi

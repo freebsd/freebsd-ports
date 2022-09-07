@@ -6,6 +6,7 @@ MASTER_SITES=	http://offog.org/files/ \
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Experimental reimplementation of Dan Bernstein's daemontools
+WWW=		https://offog.org/code/freedt.html
 
 CONFLICTS=	daemontools daemontools-encore ucspi-tcp # bin/argv0 bin/envdir bin/envuidgid
 

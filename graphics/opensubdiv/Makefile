@@ -6,6 +6,7 @@ CATEGORIES?=	graphics
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	High performance subdivision surface libraries
+WWW=		https://graphics.pixar.com/opensubdiv
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

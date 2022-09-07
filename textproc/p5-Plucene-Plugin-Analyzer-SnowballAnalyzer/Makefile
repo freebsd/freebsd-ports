@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Stemmed analyzer plugin for p5-Plucene search engine
+WWW=		https://metacpan.org/release/Plucene-Plugin-Analyzer-SnowballAnalyzer
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Lingua-StopWords>=0:textproc/p5-Lingua-StopWords \

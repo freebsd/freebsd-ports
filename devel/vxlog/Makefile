@@ -7,6 +7,7 @@ MASTER_SITES=	http://bitbucket.org/klepa/vxlog/downloads/ \
 
 MAINTAINER=	konstantin.lepa@gmail.com
 COMMENT=	C++ logging library
+WWW=		https://sourceforge.net/projects/vxlog/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/COPYING.txt

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Chinese Keywords Extraction via Lingua::ZH::TaBE
+WWW=		https://metacpan.org/release/Lingua-ZH-Keywords
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Lingua-ZH-TaBE>=0:chinese/p5-Lingua-ZH-TaBE

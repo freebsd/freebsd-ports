@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Pretty Tkinter widgets for Python
+WWW=		https://pypi.org/project/AwesomeTkinter/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

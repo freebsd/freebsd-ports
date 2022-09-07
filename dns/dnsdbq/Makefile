@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	DNSDB API Client, C Version
+WWW=		https://github.com/dnsdb/dnsdbq
 
 LICENSE=		APACHE20
 LICENSE_FILE_APACHE20=	${WRKSRC}/Apache-2.0

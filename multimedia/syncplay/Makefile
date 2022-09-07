@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	heckendorfc@gmail.com
 COMMENT=	Synchronize video playback over networks
+WWW=		https://syncplay.pl/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

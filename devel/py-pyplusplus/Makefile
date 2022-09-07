@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework of components for creating a C++ code generator
+WWW=		https://github.com/ompl/pyplusplus
 
 LICENSE=	BSL
 

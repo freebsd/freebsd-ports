@@ -8,6 +8,7 @@ DISTFILES=	${PORTNAME}-core-${PORTVERSION}.src.zip \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show and convert the content of dBASE III, IV, and 5.0 files
+WWW=		http://dbf.berlios.de/
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

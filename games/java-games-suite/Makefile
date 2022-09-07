@@ -6,6 +6,7 @@ MASTER_SITES=	SF/javagamessuite
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Simple Java games collection
+WWW=		https://sourceforge.net/projects/javagamessuite/
 
 USE_JAVA=	yes
 

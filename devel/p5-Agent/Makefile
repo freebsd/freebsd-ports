@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module that provides a foundation for software agent developers
+WWW=		https://metacpan.org/release/Agent
 
 LICENSE=	ARTPERL10
 

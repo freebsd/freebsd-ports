@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	IDE for writing software for GNOME
+WWW=		https://wiki.gnome.org/Apps/Builder
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

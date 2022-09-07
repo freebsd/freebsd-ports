@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to provide simplify common usages of Net::FTP
+WWW=		https://metacpan.org/release/Net-FTP-Common
 
 LICENSE=	MIT
 

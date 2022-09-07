@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Data aggregator for perl objects
+WWW=		https://metacpan.org/release/Data-Grouper
 
 USES=		perl5
 USE_PERL5=	configure

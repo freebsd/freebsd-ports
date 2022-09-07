@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert XHTML+MathML Named Entities to Numeric Character References
+WWW=		https://metacpan.org/release/MathML-Entities
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

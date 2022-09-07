@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for batch renaming files/directories via regular expressions
+WWW=		https://github.com/shenwei356/brename
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

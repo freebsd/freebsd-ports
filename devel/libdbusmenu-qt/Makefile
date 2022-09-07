@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_${MAJOR_VER}+${SNAPSHOT_VER}.orig
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 implementation of the DBusMenu protocol
+WWW=		https://launchpad.net/libdbusmenu-qt
 
 LICENSE=	LGPL20
 

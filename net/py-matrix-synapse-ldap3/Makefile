@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	LDAP3 auth provider for Matrix Synapse
+WWW=		https://github.com/matrix-org/matrix-synapse-ldap3
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

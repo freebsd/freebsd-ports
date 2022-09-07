@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Miscellaneous utilities for filesystems, paths, projects, subprocesses and more
+WWW=		https://github.com/sarugaku/vistir
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

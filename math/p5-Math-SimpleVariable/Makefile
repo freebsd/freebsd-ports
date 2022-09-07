@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple representation of mathematical variables
+WWW=		https://metacpan.org/release/Math-SimpleVariable
 
 USES=		perl5
 USE_PERL5=	configure patch

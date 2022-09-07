@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Import packages into other packages
+WWW=		https://metacpan.org/release/Import-Into
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

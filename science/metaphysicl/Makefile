@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Metaprogramming, operator-overloaded classes for numerical simulations
+WWW=		https://github.com/libMesh/MetaPhysicL
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

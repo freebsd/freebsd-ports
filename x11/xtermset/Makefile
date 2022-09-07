@@ -6,6 +6,7 @@ MASTER_SITES=	SF/clts/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamically change some settings of an xterm
+WWW=		https://sourceforge.net/projects/clts/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

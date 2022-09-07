@@ -11,6 +11,7 @@ PKGNAMESUFFIX=	8
 MAINTAINER=	olivier@FreeBSD.org
 
 COMMENT?=	IP routing protocol suite including BGP, IS-IS, OSPF and RIP
+WWW=		https://frrouting.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

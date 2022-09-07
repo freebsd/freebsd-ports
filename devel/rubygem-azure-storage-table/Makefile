@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Storage Table Client Library for Ruby
+WWW=		https://github.com/Azure/azure-storage-ruby/tree/master/table
 
 LICENSE=	MIT
 

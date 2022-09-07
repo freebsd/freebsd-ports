@@ -5,6 +5,7 @@ MASTER_SITES=	https://downloads.puppetlabs.com/${PORTNAME}/
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Modern scalable datacenter orchestration framework
+WWW=		http://docs.puppetlabs.com/mcollective/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

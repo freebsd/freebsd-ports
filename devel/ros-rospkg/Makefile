@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Python library for ROS packaging system
+WWW=		https://wiki.ros.org/rospkg
 
 LICENSE=	BSD3CLAUSE
 

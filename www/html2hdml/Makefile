@@ -5,6 +5,7 @@ MASTER_SITES=	OSDN/html2hdml
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	I-mode HTML to EZweb HDML converter
+WWW=		https://sourceforge.jp/projects/html2hdml/
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/html2hdml

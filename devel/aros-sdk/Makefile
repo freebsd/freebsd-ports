@@ -6,6 +6,7 @@ DISTNAME=	AROS-20060207-i386-all-sdk
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Software development kit (SDK) for the AROS Operating System
+WWW=		http://aros.sourceforge.net/
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	should work with a cross compiler, needs testing

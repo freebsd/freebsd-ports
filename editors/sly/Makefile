@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	olce.freebsd.ports@certner.fr
 COMMENT=	Sylvester the Cat's Common Lisp IDE for Emacs
+WWW=		https://github.com/joaotavora/sly
 
 LICENSE=	PD
 

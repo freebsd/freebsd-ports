@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	rubygem-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Meta port for gems of Ruby-GNOME project
+WWW=		https://ruby-gnome.github.io/
 
 RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 		rubygem-cairo-gobject>=${PORTVERSION}:devel/rubygem-cairo-gobject \

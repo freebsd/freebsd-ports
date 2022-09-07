@@ -5,6 +5,7 @@ MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/freebsd-8k-wallpapers/get/
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Collection of simple FreeBSD wallpapers
+WWW=		https://bitbucket.org/rigoletto-freebsd/freebsd-8k-wallpapers
 
 LICENSE=	CC-BY-4.0
 LICENSE_FILE=	${WRKSRC}/COPYING

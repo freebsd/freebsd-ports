@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.nickle.org/release/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Numeric-oriented programming language
+WWW=		https://www.nickle.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

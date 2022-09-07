@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Output disk SMART values
+WWW=		https://github.com/ctuffli/smart
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Persistent HTTP/HTTPS connections with error retries
+WWW=		https://github.com/rightscale/right_http_connection
 
 LICENSE=	MIT
 

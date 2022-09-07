@@ -10,6 +10,7 @@ PATCHFILES+=	fa28442195bd99b9bac87e3ff752953ac57ee172.patch:-p1 # backport fix f
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Powerful script-based vector graphics language
+WWW=		https://asymptote.sourceforge.io/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual

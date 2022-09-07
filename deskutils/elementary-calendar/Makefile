@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Desktop calendar app designed for elementary OS
+WWW=		https://github.com/elementary/calendar
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

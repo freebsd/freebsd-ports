@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Turkmen hunspell dictionaries
+WWW=		https://addons.mozilla.org/en-US/firefox/addon/turkmen-spell-checker/
 
 LICENSE=	GPLv3
 

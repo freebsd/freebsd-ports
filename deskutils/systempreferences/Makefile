@@ -7,6 +7,7 @@ DISTNAME=	SystemPreferences-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System Preferences application for GNUstep
+WWW=		http://www.gnustep.org/experience/systempreferences.html
 
 LICENSE=	GPLv2
 

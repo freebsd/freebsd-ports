@@ -7,6 +7,7 @@ EXTRACT_SUFX=
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Cache Profiling Tool
+WWW=		https://homepages.cwi.nl/~manegold/Calibrator/
 
 NO_WRKSUBDIR=		yes
 PLIST_FILES=		bin/calibrator

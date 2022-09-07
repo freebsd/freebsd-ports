@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implementation of the HTTP content negotiation algorithm
+WWW=		https://metacpan.org/release/HTTP-Negotiate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

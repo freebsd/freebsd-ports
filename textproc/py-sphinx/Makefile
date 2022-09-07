@@ -12,6 +12,7 @@ DIST_SUBDIR=	python
 # discretion.
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python documentation generator
+WWW=		https://www.sphinx-doc.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

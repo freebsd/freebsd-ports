@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chemistry Development Kit
+WWW=		https://cdk.github.io/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

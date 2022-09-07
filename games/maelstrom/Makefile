@@ -12,6 +12,7 @@ EXTRACT_ONLY=	Maelstrom-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asteroids-style game for X Window System
+WWW=		https://slouken.libsdl.org/projects/Maelstrom/
 
 LICENSE=	GPLv2
 

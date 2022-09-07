@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tiny replacement for Module::Build
+WWW=		https://metacpan.org/release/Module-Build-Tiny
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

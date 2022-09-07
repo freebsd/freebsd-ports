@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	File type identification using libmagic
+WWW=		https://github.com/ahupp/python-magic
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

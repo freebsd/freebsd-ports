@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	PHP wrapper for bsdconv
+WWW=		https://github.com/buganini/php-bsdconv
 
 LICENSE=	ISCL
 

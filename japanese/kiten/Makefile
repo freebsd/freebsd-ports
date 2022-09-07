@@ -4,6 +4,7 @@ CATEGORIES=	japanese education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Japanese reference/study tool for KDE
+WWW=		https://edu.kde.org/kiten
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth archive codecs completion config configwidgets coreaddons \

@@ -7,6 +7,7 @@ MASTER_SITES=	https://ngircd.barton.de/pub/ngircd/ \
 
 MAINTAINER=	fgsch@lodoss.net
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
+WWW=		https://ngircd.barton.de/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

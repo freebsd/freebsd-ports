@@ -6,6 +6,7 @@ MASTER_SITES=	XCONTRIB/games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexagons puzzle (similar to Fifteen Puzzle) for X Window System
+WWW=		http://www.tux.org/~bagleyd/puzzles.html
 
 WRKSRC=		${WRKDIR}/xhexagons
 USES=		imake xorg

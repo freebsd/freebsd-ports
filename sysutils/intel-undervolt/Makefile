@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Intel CPU undervolting tool
+WWW=		https://github.com/kitsunyan/intel-undervolt
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

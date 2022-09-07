@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Tool for creating isolated Python environments
+WWW=		https://virtualenv.pypa.io
 
 LICENSE=	MIT
 

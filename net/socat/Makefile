@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Multipurpose relay and more
+WWW=		http://www.dest-unreach.org/socat/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

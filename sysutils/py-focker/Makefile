@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	FreeBSD image orchestration tool in the vein of Docker
+WWW=		https://github.com/sadaszewski/focker
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

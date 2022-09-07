@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bring colors to your terminal
+WWW=		https://github.com/sdispater/pastel
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

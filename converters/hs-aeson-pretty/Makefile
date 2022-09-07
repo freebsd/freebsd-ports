@@ -4,6 +4,7 @@ CATEGORIES=	converters haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	JSON pretty-printing command-line tool
+WWW=		https://github.com/informatikr/aeson-pretty
 
 LICENSE=	BSD3CLAUSE
 

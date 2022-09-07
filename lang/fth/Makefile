@@ -5,6 +5,7 @@ MASTER_SITES=	SF/fth/fth/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Forth interpreter and extension library
+WWW=		https://sourceforge.net/projects/fth/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

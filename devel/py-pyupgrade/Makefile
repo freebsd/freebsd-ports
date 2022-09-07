@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Tool to automatically upgrade Python syntax for newer versions
+WWW=		https://github.com/asottile/pyupgrade
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

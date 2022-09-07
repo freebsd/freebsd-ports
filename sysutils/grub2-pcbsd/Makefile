@@ -7,6 +7,7 @@ DISTNAME=	grub-2.02_8
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Multiboot boot loader
+WWW=		https://www.gnu.org/software/grub/
 
 LICENSE=	GPLv3
 

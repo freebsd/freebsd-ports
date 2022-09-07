@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OpenID JanRain and Consumer with JanRain API
+WWW=		http://www.openidenabled.com/openid/libraries/perl/
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Crypt-DH>=0:security/p5-Crypt-DH \

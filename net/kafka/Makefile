@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_2.13-${PORTVERSION}
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	Distributed streaming platform
+WWW=		https://kafka.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

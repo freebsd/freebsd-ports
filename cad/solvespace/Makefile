@@ -6,6 +6,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Parametric 2d/3d CAD
+WWW=		https://solvespace.com/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

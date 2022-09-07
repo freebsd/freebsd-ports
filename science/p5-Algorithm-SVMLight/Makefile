@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to SVMLight Machine-Learning Package
+WWW=		https://metacpan.org/release/Algorithm-SVMLight
 
 BUILD_DEPENDS=	svmlight>=6.01_2:science/svmlight
 LIB_DEPENDS=	libsvmlight.so:science/svmlight

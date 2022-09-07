@@ -8,6 +8,7 @@ PKGNAMESUFFIX=		${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Backup and recovery manager for PostgreSQL
+WWW=		https://pgbarman.org/
 
 LICENSE=	GPLv3
 

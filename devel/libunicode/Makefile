@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for manipulating Unicode characters and strings
+WWW=		https://www.gnome.org/
 
 USES=		iconv libtool
 GNU_CONFIGURE=	yes

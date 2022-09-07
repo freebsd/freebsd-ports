@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Grammars for the babi text editor
+WWW=		https://github.com/asottile/babi-grammars
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist distutils flavors

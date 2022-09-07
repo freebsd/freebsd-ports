@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Custom op checking attached to subroutines
+WWW=		https://metacpan.org/release/Devel-CallChecker
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

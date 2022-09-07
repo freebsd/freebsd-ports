@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}/${DISTNAME}-${DISTVERSIONPREFIX}${PORTVERSIO
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Admin create one-time TOTP app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/twofactor_admin
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-FCS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java XPath Engine
+WWW=		https://jaxen.org
 
 USE_JAVA=	YES
 NO_BUILD=	YES

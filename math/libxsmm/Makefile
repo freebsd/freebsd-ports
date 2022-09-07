@@ -4,6 +4,7 @@ CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for dense and sparse matrix operations and deep learning
+WWW=		https://github.com/hfp/libxsmm
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

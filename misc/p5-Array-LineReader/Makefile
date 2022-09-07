@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Access lines of a file via an array
+WWW=		https://metacpan.org/release/Array-LineReader
 
 USES=		perl5
 USE_PERL5=	configure

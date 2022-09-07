@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK+ Integration library for Clutter
+WWW=		https://blogs.gnome.org/clutter/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

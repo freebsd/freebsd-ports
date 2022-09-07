@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-game
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text puzzle game with the aim of clearing the game field
+WWW=		http://catb.org/~esr/greed/
 
 LICENSE=	BSD2CLAUSE
 

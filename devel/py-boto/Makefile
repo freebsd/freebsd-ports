@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Python interface to Amazon Web Services
+WWW=		https://github.com/boto/boto/
 
 LICENSE=	MIT
 

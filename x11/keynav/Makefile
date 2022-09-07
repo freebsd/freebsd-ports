@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	karlo@klarinet.osamsb.hr
 COMMENT=	Quickly select a portion of the screen using minimal keystrokes
+WWW=		https://www.semicomplete.com/projects/keynav/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

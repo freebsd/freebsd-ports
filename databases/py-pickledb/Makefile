@@ -7,6 +7,7 @@ DISTNAME=	pickleDB-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Lightweight, fast, and simple key-value store
+WWW=		https://github.com/patx/pickledb
 
 LICENSE=	BSD3CLAUSE
 

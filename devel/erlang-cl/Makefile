@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	erlang-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenCL binding for Erlang
+WWW=		https://github.com/tonyrog/cl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

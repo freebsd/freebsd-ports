@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Decodes binary EDID information from monitors
+WWW=		https://git.linuxtv.org/edid-decode.git
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

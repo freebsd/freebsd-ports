@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based arcade game with only 64 lines of code
+WWW=		https://aop.raffi.at/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

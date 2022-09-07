@@ -6,6 +6,7 @@ EXTRACT_ONLY=	${_DISTFILES:N*.js}
 
 MAINTAINER=	samir@noir.im
 COMMENT=	Manage your dotfiles across multiple diverse machines, securely
+WWW=		https://www.chezmoi.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

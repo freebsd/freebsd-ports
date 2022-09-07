@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SOAP Toolkit for PHP
+WWW=		https://sourceforge.net/projects/nusoap/
 
 LICENSE=	LGPL21+
 

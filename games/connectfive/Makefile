@@ -7,6 +7,7 @@ DISTNAME=	connectFive
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Place five pieces in a row on a 3D board
+WWW=		https://sourceforge.net/projects/connectfive/
 
 USES=		dos2unix gl gmake sdl xorg
 USE_SDL=	sdl

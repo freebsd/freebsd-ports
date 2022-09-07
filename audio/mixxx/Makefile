@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	DJ mixing application
+WWW=		https://mixxx.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

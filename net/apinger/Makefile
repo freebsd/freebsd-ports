@@ -7,6 +7,7 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	IP device monitoring tool
+WWW=		http://www.bnet.pl/~jajcus/apinger/
 
 LICENSE=	GPLv2
 

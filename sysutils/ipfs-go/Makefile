@@ -9,6 +9,7 @@ DISTNAME=	go-ipfs-source
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	IPFS implementation in Go
+WWW=		https://github.com/ipfs/go-ipfs
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	dual

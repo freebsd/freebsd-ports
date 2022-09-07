@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
+WWW=		https://www.eudora.com/products/unsupported/qpopper/
 
 # BSD-style license
 LICENSE=	QUALCOMM

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	lib
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Multitouch Protocol Translation Library
+WWW=		https://bitmath.org/code/mtdev/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

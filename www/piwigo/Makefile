@@ -6,6 +6,7 @@ MASTER_SITES=	https://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	PHP based Web Gallery
+WWW=		https://piwigo.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

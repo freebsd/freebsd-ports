@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python's Encoder/decoder for simple GIS features
+WWW=		https://pypi.org/project/geojson/
 
 LICENSE=	BSD3CLAUSE
 

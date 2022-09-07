@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	TextFSM Templates for Network Devices
+WWW=		https://github.com/networktocode/ntc-templates
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

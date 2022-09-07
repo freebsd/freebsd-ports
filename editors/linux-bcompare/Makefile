@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	matias@pizarro.net
 COMMENT=	Compare, sync, and merge files and folders (X11)
+WWW=		https://www.scootersoftware.com/
 
 LICENSE=	SCOOTERSOFTWARE
 LICENSE_NAME=	Scooter Software License

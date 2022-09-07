@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	baptiste@bapt.name
 COMMENT=	Python implementation of df
+WWW=		http://kassiopeia.juls.savba.sk/~garabik/software/pydf/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

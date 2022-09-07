@@ -5,6 +5,7 @@ MASTER_SITES=	GH
 
 MAINTAINER=	natalino.picone@nozominetworks.com
 COMMENT=	PAM script module allows to hook user space scripts on PAM events
+WWW=		https://github.com/jeroennijhof/pam_script
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

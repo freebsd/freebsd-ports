@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Editor for MIDI System Exclusive files for XG devices
+WWW=		https://qxgedit.sourceforge.io
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

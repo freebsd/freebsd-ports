@@ -8,6 +8,7 @@ DISTNAME=	ufoProcessor-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read, write and generate UFOs with designspace data
+WWW=		https://github.com/LettError/ufoProcessor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

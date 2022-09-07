@@ -5,6 +5,7 @@ MASTER_SITES=	http://pldaniels.com/replaceit/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light replacement to the combination of sed/awk/grep/head/tail
+WWW=		https://pldaniels.com/replaceit/
 
 LICENSE=	Sendmail
 LICENSE_NAME=	Sendmail License

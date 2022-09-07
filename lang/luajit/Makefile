@@ -7,6 +7,7 @@ DISTNAME=	LuaJIT-${DISTVERSION}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Just-In-Time Compiler for Lua
+WWW=		https://luajit.org/luajit.html
 
 OPTIONS_DEFINE=	PTHREAD
 PTHREAD_DESC=	with pthread support

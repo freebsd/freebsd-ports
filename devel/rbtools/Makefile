@@ -8,6 +8,7 @@ DISTNAME=	${ORIGNAME}-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of client tools to use with Review Board
+WWW=		http://www.reviewboard.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Scalable distributed realtime performance and health monitoring
+WWW=		https://github.com/netdata/netdata
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

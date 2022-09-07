@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Library for the study of combinatorial aspects of Coxeter group theory
+WWW=		http://math.univ-lyon1.fr/~ducloux/coxeter/coxeter3/english/coxeter3_e.html
 
 LICENSE=	GPLv2
 

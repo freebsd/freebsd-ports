@@ -6,6 +6,7 @@ MASTER_SITES=	GNU/guile-gnome/${PORTNAME}
 
 MAINTAINER=	andrew@tao11.riddles.org.uk
 COMMENT=	Guile bindings for Gnome libraries
+WWW=		https://www.gnu.org/software/guile-gnome/
 
 LICENSE=	GPLv2+
 

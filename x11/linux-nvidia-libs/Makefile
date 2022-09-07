@@ -10,6 +10,7 @@ PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	NVidia graphics libraries and programs (Linux version)
+WWW=		https://www.nvidia.com/object/unix.html
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"

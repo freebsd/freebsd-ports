@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Leak git repositories from misconfigured websites
+WWW=		https://github.com/liamg/gitjacker
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

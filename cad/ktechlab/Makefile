@@ -6,6 +6,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	IDE for microcontrollers and electronics
+WWW=		https://userbase.kde.org/KTechlab
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

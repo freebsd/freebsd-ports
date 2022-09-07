@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Calculate the geographical distance between 2 points
+WWW=		https://github.com/maurycyp/vincenty
 
 LICENSE=	UNLICENSE
 

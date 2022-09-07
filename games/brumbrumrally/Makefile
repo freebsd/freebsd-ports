@@ -5,6 +5,7 @@ MASTER_SITES=	http://dataapa.net/brumbrumrally/files/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Racing game with randomized tracks
+WWW=		https://dataapa.net/brumbrumrally/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

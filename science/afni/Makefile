@@ -5,6 +5,7 @@ CATEGORIES=		science biology graphics perl5 python
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
+WWW=		https://afni.nimh.nih.gov/afni/
 
 LICENSE=	GPLv2
 

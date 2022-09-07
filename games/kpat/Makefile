@@ -4,6 +4,7 @@ CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME:tu}_DESC}
+WWW=		http://www.kde.org/applications/games/kpatience/
 
 LIB_DEPENDS=	libfreecell-solver.so:games/freecell-solver \
 		libblack_hole_solver.so:games/black-hole-solver

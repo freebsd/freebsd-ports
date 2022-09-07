@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/devel/clig/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Auto-generate an (argc, argv) processor, usage message, and manpage
+WWW=		https://BSDforge.com/projects/devel/clig
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING-2.0

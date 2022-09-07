@@ -8,6 +8,7 @@ DISTNAME=	xorg-server-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org X server and related programs
+WWW=		https://www.freedesktop.org/Software/xorg
 
 LICENSE=	MIT
 

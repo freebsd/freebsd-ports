@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Simple, yet powerful, Django captcha application
+WWW=		https://pypi.org/project/django-simple-captcha/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical program for editing sound files
+WWW=		https://github.com/magnush/mhwaveedit/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

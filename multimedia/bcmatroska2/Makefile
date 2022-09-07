@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.linphone.org/releases/sources/bcmatroska2/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Belledonne Communications Matroska media container support
+WWW=		https://www.linphone.org/
 
 USES=		cmake
 USE_LDCONFIG=	yes

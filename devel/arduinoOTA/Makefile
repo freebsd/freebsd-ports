@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	OTA upload tool for Arduino/ESP8266
+WWW=		https://www.arduino.cc
 
 LICENSE=	GPLv3
 

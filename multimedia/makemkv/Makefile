@@ -13,6 +13,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Video converter reading from DVD and Bluray
+WWW=		https://www.makemkv.com
 
 LICENSE=		MAKEMKV LGPL21+ ${PORT_OPTIONS:MFDK_AAC}
 LICENSE_COMB=		multi

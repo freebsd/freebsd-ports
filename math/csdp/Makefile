@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solver for semidefinite programming problems
+WWW=		https://github.com/coin-or/Csdp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

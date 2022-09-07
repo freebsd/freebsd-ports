@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Use AWS IAM credentials to authenticate to a Kubernetes cluster
+WWW=		https://github.com/kubernetes-sigs/aws-iam-authenticator
 
 LICENSE=	APACHE20
 

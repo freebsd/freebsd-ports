@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for Cisco 3000 VPN Concentrator
+WWW=		https://www.unix-ag.uni-kl.de/~massar/vpnc/
 
 LICENSE=	BSD2CLAUSE GPLv2+
 LICENSE_COMB=	multi

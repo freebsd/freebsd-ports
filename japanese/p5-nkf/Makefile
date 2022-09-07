@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ja-p5-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Perl extension module to use NKF
+WWW=		https://sourceforge.jp/projects/nkf/
 
 LICENSE=	ZLIB NKF
 LICENSE_COMB=	multi

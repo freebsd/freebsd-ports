@@ -5,6 +5,7 @@ CATEGORIES=	misc shells
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Missing terminal file browser for X
+WWW=		https://github.com/jarun/nnn
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

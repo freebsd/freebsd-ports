@@ -8,6 +8,7 @@ DISTNAME=	XStatic-objectpath-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	objectpath (XStatic packaging standard)
+WWW=		https://github.com/mike-marcacci/objectpath
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Remote desktop client for GNOME
+WWW=		https://apps.gnome.org/app/org.gnome.Connections/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

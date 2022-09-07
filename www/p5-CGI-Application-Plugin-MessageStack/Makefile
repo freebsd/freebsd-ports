@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Message stack for your CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-MessageStack
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

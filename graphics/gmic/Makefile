@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for image processing
+WWW=		https://gmic.eu/
 
 LICENSE=	CeCILL
 LICENSE_NAME=	CeCILL

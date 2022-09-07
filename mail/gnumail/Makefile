@@ -7,6 +7,7 @@ DISTNAME=	GNUMail-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep mail client
+WWW=		http://www.collaboration-world.com/gnumail/
 
 LICENSE=	GPLv2
 

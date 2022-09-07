@@ -7,6 +7,7 @@ DISTNAME=	Rx-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reactive Extensions (Rx) for Python
+WWW=		https://github.com/ReactiveX/RxPY
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -10,6 +10,7 @@ PATCHFILES+=	01ccae2ccb64.patch:-p1 # https://gitlab.gnome.org/GNOME/bijiben/-/m
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Note editor designed to remain simple to use
+WWW=		https://wiki.gnome.org/Apps/Bijiben
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

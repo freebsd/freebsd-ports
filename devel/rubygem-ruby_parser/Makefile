@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	Ruby parser written in pure ruby
+WWW=		https://github.com/seattlerb/ruby_parser
 
 LICENSE=	MIT
 

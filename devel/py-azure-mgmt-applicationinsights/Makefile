@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Microsoft Azure Application Insights Management Cli Library for Python
+WWW=		https://pypi.org/project/azure-mgmt-applicationinsights/
 
 LICENSE=	MIT
 

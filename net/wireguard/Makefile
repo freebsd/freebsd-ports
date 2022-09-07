@@ -5,6 +5,7 @@ CATEGORIES=	net net-vpn
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Meta-port for Wireguard
+WWW=		https://www.wireguard.com
 
 RUN_DEPENDS=	wg-quick:net/wireguard-tools
 

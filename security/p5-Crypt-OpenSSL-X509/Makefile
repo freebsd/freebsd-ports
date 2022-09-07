@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for OpenSSL X509 API
+WWW=		https://metacpan.org/release/Crypt-OpenSSL-X509
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

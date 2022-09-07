@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	PEX packaging toolchain
+WWW=		https://pex.readthedocs.org/en/latest/
 
 LICENSE=	APACHE20
 

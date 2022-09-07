@@ -7,6 +7,7 @@ DISTNAME=	asterisk-${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	G.729 codec for Asterisk PBX
+WWW=		http://asterisk.hosting.lv/
 
 LIB_DEPENDS=	libbcg729.so:audio/bcg729
 

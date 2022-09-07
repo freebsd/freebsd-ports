@@ -7,6 +7,7 @@ DISTNAME=	Guake-${PORTVERSION}
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	Dropdown terminal made for the GNOME desktop
+WWW=		http://guake-project.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

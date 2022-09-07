@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of Virtual Jaguar to Libretro
+WWW=		https://github.com/libretro/virtualjaguar-libretro
 
 LICENSE=	GPLv3
 

@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	mail@dbalan.in
 COMMENT=	Shell helper program to autocomplete paths faster
+WWW=		https://github.com/clvv/fasd
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenCensus Runtime Context
+WWW=		https://github.com/census-instrumentation/opencensus-python/tree/master/context/opencensus-context
 
 LICENSE=	APACHE20
 

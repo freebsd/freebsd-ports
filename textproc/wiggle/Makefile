@@ -5,6 +5,7 @@ MASTER_SITES=	http://neil.brown.name/wiggle/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Apply rejected patches and perform word-wise diffs
+WWW=		https://github.com/neilbrown/wiggle
 
 LICENSE=	GPLv2
 

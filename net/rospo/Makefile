@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-ui-artifacts-${DISTVERSION}.tar.gz:artifacts
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Simple and reliable ssh tunnels with embedded ssh server
+WWW=		https://github.com/ferama/rospo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

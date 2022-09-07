@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	API for complex flow controls with asynchronous execution of external programs
+WWW=		https://metacpan.org/release/Event-ExecFlow
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \

@@ -6,6 +6,7 @@ MASTER_SITES=	GNU LOCAL/hrs/a2ps/:i18n
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Formats an ASCII file for printing on a postscript printer
+WWW=		https://www.gnu.org/software/a2ps/
 
 LICENSE=	GPLv2
 

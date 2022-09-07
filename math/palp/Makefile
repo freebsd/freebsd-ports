@@ -5,6 +5,7 @@ MASTER_SITES=	http://hep.itp.tuwien.ac.at/~kreuzer/CY/palp/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Package for Analyzing Lattice Polytopes
+WWW=		http://hep.itp.tuwien.ac.at/~kreuzer/CY/CYpalp.html
 
 LICENSE=	GPLv3
 

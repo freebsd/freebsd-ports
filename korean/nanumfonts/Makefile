@@ -4,6 +4,7 @@ CATEGORIES=	korean x11-fonts
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Nanum family Hangul fonts (meta-port)
+WWW=		https://hangeul.naver.com/
 
 RUN_DEPENDS=	ko-nanum-barun-gothic>0:korean/nanum-barun-gothic \
 		ko-nanum-barun-pen>0:korean/nanum-barun-pen \

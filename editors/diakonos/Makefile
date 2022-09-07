@@ -6,6 +6,7 @@ CATEGORIES=	editors ruby
 
 MAINTAINER=	christopher.petrik@usm.edu
 COMMENT=	Console editor for the masses
+WWW=		https://github.com/Pistos/diakonos
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	API for aliasing methods to/from other classes
+WWW=		https://metacpan.org/release/Class-Mixin
 
 USES=	perl5
 USE_PERL5=	configure

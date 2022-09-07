@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	MySQL and SQLite Database Visualisation Tool
+WWW=		https://github.com/globalcitizen/mysqlviz
 
 LICENSE=	GPLv3
 

@@ -4,6 +4,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Standalone module for sampling genomic sequences
+WWW=		https://github.com/rvaser/rampler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

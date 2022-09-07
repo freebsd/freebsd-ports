@@ -6,6 +6,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK3 settings editor for sway and other wlroots compositors
+WWW=		https://github.com/nwg-piotr/nwg-look
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,6 +9,7 @@ PATCHFILES=	d7617046e9da97473a140c02582fa571f6359ae3.patch:-p1
 
 MAINTAINER=	bruno@ruomad.net
 COMMENT=	OpenCA PKI library (libpki) and tools
+WWW=		https://www.openca.org/projects/libpki
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

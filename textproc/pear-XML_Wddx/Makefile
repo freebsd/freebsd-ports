@@ -4,6 +4,7 @@ CATEGORIES=	textproc devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR Wddx pretty serializer and deserializer
+WWW=		https://pear.php.net/package/XML_Wddx
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser@${PHP_FLAVOR}

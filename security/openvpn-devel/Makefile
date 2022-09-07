@@ -9,6 +9,7 @@ MAINTAINER=	gert@greenie.muc.de
 # let's use ?= in spite of portlint WARNings because this might become
 # security/openvpn one day which would then have a slave port:
 COMMENT?=	Secure IP/Ethernet tunnel daemon
+WWW=		https://openvpn.net/community/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT.GPL

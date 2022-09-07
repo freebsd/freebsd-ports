@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Perl interface to manage NetApp NAS devices
+WWW=		https://metacpan.org/release/NetApp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

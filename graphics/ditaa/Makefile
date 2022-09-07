@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert ASCII art diagrams into proper bitmap graphics
+WWW=		http://ditaa.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/COPYING

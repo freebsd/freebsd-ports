@@ -7,6 +7,7 @@ DISTNAME=	BOLT-LMM_v${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Mixed model association testing and variance component analysis
+WWW=		https://data.broadinstitute.org/alkesgroup/BOLT-LMM/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt

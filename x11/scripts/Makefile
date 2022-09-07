@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Various X related scripts
+WWW=		https://cgit.freedesktop.org/xorg/app/scripts
 
 RUN_DEPENDS=	ksh:shells/pdksh
 

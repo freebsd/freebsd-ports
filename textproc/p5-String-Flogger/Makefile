@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	String munging for loggers
+WWW=		https://metacpan.org/release/String-Flogger
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

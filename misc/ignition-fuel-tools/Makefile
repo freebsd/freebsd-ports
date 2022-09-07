@@ -6,6 +6,7 @@ MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Classes and tools for interacting with Ignition Fuel
+WWW=		https://ignitionrobotics.org/home
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

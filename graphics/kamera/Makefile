@@ -4,6 +4,7 @@ CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Digital camera manager for KDE
+WWW=		https://www.kde.org
 
 LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 

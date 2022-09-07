@@ -9,6 +9,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Servlet API
+WWW=		http://java.sun.com/products/servlet/
 
 USE_JAVA=	yes
 NO_BUILD=	yes

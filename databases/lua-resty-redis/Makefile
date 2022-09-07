@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	arcade@b1t.name
 COMMENT=	Redis client driver for the ngx_lua nginx module
+WWW=		https://github.com/openresty/lua-resty-redis
 
 LICENSE=	BSD2CLAUSE
 

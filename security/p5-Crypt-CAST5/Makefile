@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CAST5 block cipher
+WWW=		https://metacpan.org/release/Crypt-CAST5
 
 USES=		perl5
 USE_PERL5=	configure

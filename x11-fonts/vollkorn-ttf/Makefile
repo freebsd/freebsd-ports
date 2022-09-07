@@ -7,6 +7,7 @@ DISTNAME=	vollkorn-${PORTVERSION:S|.|-|}
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Free and healthy typeface for bread and butter use
+WWW=		http://vollkorn-typeface.com/
 
 LICENSE=	OFL11
 

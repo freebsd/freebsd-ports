@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Build Reasonableness
+WWW=		https://github.com/openstack-dev/pbr
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

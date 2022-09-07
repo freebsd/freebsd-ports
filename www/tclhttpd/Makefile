@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Http-server implemented in TCL
+WWW=		https://www.tcl.tk/software/tclhttpd/
 
 RUN_DEPENDS=	dtplite:devel/tcllib
 

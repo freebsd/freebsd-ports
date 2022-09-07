@@ -7,6 +7,7 @@ DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides buttons with customizable action (for reporting spam, etc.)
+WWW=		https://www.squirrelmail.org/plugin_view.php?id=242
 
 USE_SM_COMPAT=	yes
 

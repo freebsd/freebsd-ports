@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typing stubs for typed-ast
+WWW=		https://github.com/python/typeshed/tree/master/stubs/typed-ast
 
 LICENSE=	APACHE20
 

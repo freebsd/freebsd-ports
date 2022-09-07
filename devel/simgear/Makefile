@@ -6,6 +6,7 @@ MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Toolkit for 3D games and simulations
+WWW=		https://www.flightgear.org/
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi

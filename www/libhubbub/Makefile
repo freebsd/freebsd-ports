@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	HTML5 parser library
+WWW=		https://www.netsurf-browser.org/projects/hubbub/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

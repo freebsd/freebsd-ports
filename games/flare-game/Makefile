@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-game
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free Libre Action Roleplaying Engine: game data
+WWW=		https://flarerpg.org/
 
 LICENSE=	CC-BY-SA-3.0
 

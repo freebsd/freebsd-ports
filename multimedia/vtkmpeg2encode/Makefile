@@ -8,6 +8,7 @@ DISTNAME=	vtkmpeg2encode
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VTK MPEG2 encoding library
+WWW=		http://www.vtk.org/get-software.php #addons
 
 LICENSE=	MPEG-2
 LICENSE_NAME=	MPEG-2 license

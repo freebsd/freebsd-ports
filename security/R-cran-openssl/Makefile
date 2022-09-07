@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Toolkit for Encryption, Signatures and Certificates Based on OpenSSL
+WWW=		https://cran.r-project.org/web/packages/openssl/
 
 LICENSE=	MIT
 

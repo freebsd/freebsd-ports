@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.daemon.de/idisk/Apps/dbtool/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Store and retrieve data in a key/value format in a hash database
+WWW=		https://www.daemon.de/DBTOOL
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

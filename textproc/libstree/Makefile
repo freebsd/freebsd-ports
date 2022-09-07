@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.icir.org/christian/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Suffix Tree Library
+WWW=		https://www.icir.org/christian/libstree/
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes

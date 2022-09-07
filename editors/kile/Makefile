@@ -6,6 +6,7 @@ CATEGORIES=	editors kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LaTeX source editor for KDE
+WWW=		https://kile.sourceforge.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

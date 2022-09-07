@@ -6,6 +6,7 @@ MASTER_SITES=	SF/clunk
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Real-time 3D sound generation library
+WWW=		https://sourceforge.net/projects/clunk/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extension of Prawn that allows inline formatting
+WWW=		https://github.com/practicingruby/prawn-format
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual

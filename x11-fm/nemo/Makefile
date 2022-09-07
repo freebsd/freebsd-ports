@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	File manager for the Cinnamon desktop
+WWW=		http://cinnamon.linuxmint.com/
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi

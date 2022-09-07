@@ -6,6 +6,7 @@ MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Displays U.S. Census Bureau populated places on a map
+WWW=		http://www.tkgeomap.org/ptiger.html
 
 LIB_DEPENDS=	libtkgeomap.so:astro/tkgeomap
 

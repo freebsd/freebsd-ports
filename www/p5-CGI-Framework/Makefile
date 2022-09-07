@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple-to-use, lightweight web CGI framework
+WWW=		https://metacpan.org/release/CGI-Framework
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Template>=0:www/p5-HTML-Template \

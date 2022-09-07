@@ -5,6 +5,7 @@ CATEGORIES=	dns www
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Lua DNS resolver for ngx_lua
+WWW=		https://github.com/openresty/lua-resty-dns
 
 LICENSE=	BSD2CLAUSE
 

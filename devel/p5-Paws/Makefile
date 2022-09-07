@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of SDK for AWS (Amazon Web Services) APIs
+WWW=		https://metacpan.org/release/Paws
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	caml${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml binding to the NDBM and GDBM database library
+WWW=		https://forge.ocamlcore.org/projects/camldbm/
 
 LICENSE=	LGPL20
 

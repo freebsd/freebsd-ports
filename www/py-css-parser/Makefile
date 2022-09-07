@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	CSS related utilities (parsing, serialization, etc) for python
+WWW=		https://github.com/ebook-utils/css-parser
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual

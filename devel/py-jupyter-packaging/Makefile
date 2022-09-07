@@ -7,6 +7,7 @@ DISTNAME=	jupyter_packaging-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Jupyter Packaging Utilities
+WWW=		https://github.com/jupyter/jupyter-packaging
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

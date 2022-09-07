@@ -6,6 +6,7 @@ MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION}/
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	SMPlayer YouTube browser
+WWW=		https://www.smtube.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt

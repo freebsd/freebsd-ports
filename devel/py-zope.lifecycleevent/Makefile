@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Object life-cycle events
+WWW=		https://pypi.org/project/zope.lifecycleevent/
 
 LICENSE=	ZPL21
 

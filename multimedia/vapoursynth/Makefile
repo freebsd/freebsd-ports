@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Video processing framework with simplicity in mind
+WWW=		https://www.vapoursynth.com/
 
 LICENSE=	LGPL21+
 

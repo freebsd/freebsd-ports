@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Algorithmic Differentiation (AD) and Taylor polynomial approximations
+WWW=		https://pythonhosted.org/algopy/
 
 LICENSE=	BSD3CLAUSE
 

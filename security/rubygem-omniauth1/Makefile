@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generalized Rack framework for multiple-provider authentication
+WWW=		https://github.com/omniauth/omniauth
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

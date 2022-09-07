@@ -7,6 +7,7 @@ DISTNAME=	Bottleneck-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of fast NumPy array functions written in Cython
+WWW=		https://github.com/kwgoodman/bottleneck
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

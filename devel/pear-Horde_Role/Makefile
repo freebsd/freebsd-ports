@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	PEAR installer role for Horde components
+WWW=		https://pear.horde.org
 
 PATCH_WRKSRC=	${WRKDIR}
 

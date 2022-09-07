@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Object Oriented Input System
+WWW=		https://sourceforge.net/projects/wgois/
 
 LICENSE=	ZLIB
 

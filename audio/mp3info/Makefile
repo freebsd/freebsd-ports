@@ -5,6 +5,7 @@ MASTER_SITES=	SUNSITE/apps/sound/mp3-utils/mp3info
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
+WWW=		https://ibiblio.org/mp3info/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

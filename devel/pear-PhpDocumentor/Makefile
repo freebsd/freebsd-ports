@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides automatic documenting of php-api from the source
+WWW=		https://pear.php.net/package/PhpDocumentor
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

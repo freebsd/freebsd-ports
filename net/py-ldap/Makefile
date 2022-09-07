@@ -7,6 +7,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	LDAP module for python, for OpenLDAP2
+WWW=		https://www.python-ldap.org
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENCE

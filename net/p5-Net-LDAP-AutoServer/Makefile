@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Automatically make some default decisions some LDAP server information
+WWW=		https://metacpan.org/release/Net-LDAP-AutoServer
 
 RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \

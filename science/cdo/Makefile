@@ -6,6 +6,7 @@ MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/27276/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Climate Data Operators
+WWW=		https://code.mpimet.mpg.de/projects/cdo
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

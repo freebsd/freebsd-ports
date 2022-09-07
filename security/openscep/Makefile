@@ -6,6 +6,7 @@ MASTER_SITES=	http://openscep.othello.ch/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source scep server
+WWW=		http://openscep.othello.ch/
 
 CONFLICTS_INSTALL=	nss-3.*
 

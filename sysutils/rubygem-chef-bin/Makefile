@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Chef-branded binstubs for chef-client
+WWW=		https://github.com/chef/chef/tree/main/chef-bin
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

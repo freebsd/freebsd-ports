@@ -9,6 +9,7 @@ PATCHFILES+=	1eeb32b94b9e.patch:-p1 # https://gitlab.gnome.org/GNOME/frogr/-/mer
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Flickr upload and management tool
+WWW=		https://wiki.gnome.org/Apps/Frogr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

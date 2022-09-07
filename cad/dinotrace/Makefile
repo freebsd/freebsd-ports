@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical signal trace waveform viewer
+WWW=		https://www.veripool.org/wiki/dinotrace
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

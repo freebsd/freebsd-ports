@@ -7,6 +7,7 @@ DISTFILES=	elm-compiler-bootstrap-${PORTVERSION}${EXTRACT_SUFX}:package_list
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Delightful language for reliable webapps
+WWW=		https://elm-lang.org/
 
 LICENSE=	BSD3CLAUSE
 

@@ -8,6 +8,7 @@ MASTER_SITES=	LOCAL/bdrewery \
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Tool to minimize the compile time of C/C++ programs
+WWW=		https://ccache.samba.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPL-3.0.txt

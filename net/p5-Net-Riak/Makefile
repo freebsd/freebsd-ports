@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to Riak
+WWW=		https://metacpan.org/release/Net-Riak
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Sixel image dumper
+WWW=		https://github.com/uobikiemukot/sdump
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

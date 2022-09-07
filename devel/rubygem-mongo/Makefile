@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby driver for MongoDB
+WWW=		https://github.com/mongodb/mongo-ruby-driver
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

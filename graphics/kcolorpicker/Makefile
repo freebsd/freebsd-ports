@@ -6,6 +6,7 @@ CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt based Color Picker library with popup menu
+WWW=		https://github.com/ksnip/kColorPicker
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

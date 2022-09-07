@@ -6,6 +6,7 @@ MASTER_SITES=	http://ftp.rpm.org/popt/releases/popt-1.x/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Getopt(3) like library with a number of enhancements, from Redhat
+WWW=		http://freshmeat.net/projects/popt/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ Library for converting images into a bag-of-word representation
+WWW=		https://github.com/dorian3d/DBoW2
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

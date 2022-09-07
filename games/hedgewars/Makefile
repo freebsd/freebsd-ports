@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free Worms-like turn based strategy game
+WWW=		https://www.hedgewars.org
 
 LICENSE=	GPLv2 GFDL
 LICENSE_COMB=	multi

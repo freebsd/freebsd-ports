@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for creating easy email filters
+WWW=		https://metacpan.org/release/Email-Filter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ CATEGORIES=	x11-fm
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Advanced graphical file manager written in Vala
+WWW=		https://teejee2008.github.io/polo/
 
 LICENSE=	GPLv2+
 

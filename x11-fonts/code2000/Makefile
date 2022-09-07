@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Shareware demo Unicode TrueType font
+WWW=		https://en.wikipedia.org/wiki/Code2000
 
 USES=		fonts zip
 

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Realtime software synthesizer
+WWW=		http://zynaddsubfx.sourceforge.net/
 
 LICENSE=	GPLv2
 

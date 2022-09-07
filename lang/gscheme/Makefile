@@ -10,6 +10,7 @@ DIST_SUBDIR=	repacked
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep-aware scheme interpreter
+WWW=		http://www.gnustep.it/marko/GScheme/index.html
 
 LICENSE=	GPLv2+
 

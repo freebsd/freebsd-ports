@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Stringify a Regexp object
+WWW=		https://metacpan.org/release/Regexp-Stringify
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

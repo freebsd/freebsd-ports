@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line utility for querying IP information
+WWW=		https://github.com/hashicorp/go-sockaddr/tree/master/cmd/sockaddr
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

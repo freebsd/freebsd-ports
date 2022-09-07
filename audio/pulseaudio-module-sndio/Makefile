@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/t6/pulseaudio-module-sndio/releases/download/${
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sndio module for PulseAudio
+WWW=		https://github.com/t6/pulseaudio-module-sndio
 
 LICENSE=	ISCL LGPL21+
 LICENSE_COMB=	multi

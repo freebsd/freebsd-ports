@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Tool to switch between different versions of terraform
+WWW=		https://tfswitch.warrensbox.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

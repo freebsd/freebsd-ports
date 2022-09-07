@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	g
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU cpio copies files to and from archives
+WWW=		https://www.gnu.org/software/cpio/
 
 LICENSE=	GPLv3
 

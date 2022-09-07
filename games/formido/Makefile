@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.mhgames.org/files/formido/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D kill-em all with 3D rendered graphics
+WWW=		http://www.mhgames.org/oldies/formido/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL_license.txt

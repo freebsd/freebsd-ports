@@ -5,6 +5,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Decompression library for RAR, TAR, ZIP and 7z* archives
+WWW=		https://github.com/selmf/unarr
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

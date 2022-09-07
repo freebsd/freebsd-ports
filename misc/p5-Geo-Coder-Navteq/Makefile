@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Geocode addresses with the Navteq MapTP AJAX API
+WWW=		https://metacpan.org/release/Geo-Coder-Navteq
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

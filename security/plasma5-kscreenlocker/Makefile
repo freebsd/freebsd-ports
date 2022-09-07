@@ -5,6 +5,7 @@ CATEGORIES=	security kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 secure lock screen architecture
+WWW=		https://www.kde.org/plasma-desktop
 
 BUILD_DEPENDS=	ck-list-sessions:sysutils/consolekit2
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \

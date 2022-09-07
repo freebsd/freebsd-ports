@@ -6,6 +6,7 @@ MASTER_SITES=	http://opsec.eu/src/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple graphical interface to manage a small Certification Authority
+WWW=		https://opsec.eu/src/tinyca/
 
 LICENSE=	GPLv2+
 

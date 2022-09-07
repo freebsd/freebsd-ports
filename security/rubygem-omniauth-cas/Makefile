@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Central Authentication Service (CAS) strategy for OmniAuth
+WWW=		https://github.com/dlindahl/omniauth-cas
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	PyVISA-py-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PyVISA backend in pure Python
+WWW=		https://github.com/pyvisa/pyvisa-py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

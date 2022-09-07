@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dark GTK theme for Enlightenment
+WWW=		https://github.com/tsujan/E17gtk
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

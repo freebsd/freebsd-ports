@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Missing part of Mail::Box::IMAP4
+WWW=		https://metacpan.org/release/Mail-Box-IMAP4-SSL
 
 LICENSE=	APACHE20
 

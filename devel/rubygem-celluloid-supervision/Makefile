@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Supervisors, supervision groups, and supervision trees for Celluloid
+WWW=		https://github.com/celluloid/celluloid-supervision
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

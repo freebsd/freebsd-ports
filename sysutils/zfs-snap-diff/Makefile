@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ben@lavery-griffiths.com
 COMMENT=	View ZFS snapshot differences via a web browser
+WWW=		https://github.com/j-keck/zfs-snap-diff
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

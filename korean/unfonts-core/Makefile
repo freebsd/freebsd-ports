@@ -8,6 +8,7 @@ DISTNAME=	${FILEID}-un-fonts${PKGNAMESUFFIX}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	GPL'd Korean TrueType Fonts by UN Koaunghi (${FONTCAT})
+WWW=		https://kldp.net/projects/unfonts/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${FILESDIR}/COPYING

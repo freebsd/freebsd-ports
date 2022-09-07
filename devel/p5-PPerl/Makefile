@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make perl scripts persistent in memory
+WWW=		https://metacpan.org/release/PPerl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

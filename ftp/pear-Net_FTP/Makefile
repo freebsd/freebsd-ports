@@ -4,6 +4,7 @@ CATEGORIES=	ftp www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR OO interface to the PHP FTP functions plus some additions
+WWW=		https://pear.php.net/package/Net_FTP
 
 LICENSE=	BSD2CLAUSE
 

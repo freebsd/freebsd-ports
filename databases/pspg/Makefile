@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Tabular data pager designed to be used with psql
+WWW=		https://github.com/okbob/pspg
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

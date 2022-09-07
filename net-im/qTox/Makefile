@@ -5,6 +5,7 @@ CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qt 5 based Tox client
+WWW=		https://qtox.github.io/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

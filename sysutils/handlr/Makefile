@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	sec.research.2005@gmail.com
 COMMENT=	Manage mimeapps.list and default applications with ease
+WWW=		https://github.com/Anomalocaridid/handlr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

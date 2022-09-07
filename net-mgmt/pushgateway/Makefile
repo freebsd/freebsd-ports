@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Prometheus push acceptor for ephemeral and batch jobs
+WWW=		https://github.com/prometheus/pushgateway
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

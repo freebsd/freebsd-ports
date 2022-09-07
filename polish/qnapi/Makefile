@@ -5,6 +5,7 @@ CATEGORIES=	polish multimedia
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt5 based subtitle downloader
+WWW=		https://qnapi.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Proxy server for the Go Modules download API
+WWW=		https://github.com/gomods/athens
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Opaque, extensible XS pointer backed objects using sv_magic
+WWW=		https://metacpan.org/release/XS-Object-Magic
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

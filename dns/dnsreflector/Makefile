@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.wolfermann.org/
 
 MAINTAINER=	ismail.yenigul@endersys.com.tr
 COMMENT=	Listens for DNS queries on a UDP port and change the answer
+WWW=		https://www.wolfermann.org/dnsreflector.html
 
 USE_RC_SUBR=	dnsreflector
 

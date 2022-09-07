@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Regexp::Log::Common, a parser for the Common Log Format
+WWW=		https://metacpan.org/release/Regexp-Log-Common
 
 LICENSE=	ART20
 

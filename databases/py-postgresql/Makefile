@@ -10,6 +10,7 @@ DIST_SUBDIR=	postgresql
 
 MAINTAINER=	c.kworr@gmail.com
 COMMENT=	Python 3 compatible PostgreSQL database driver and tools
+WWW=		http://python.projects.postgresql.org/
 
 LICENSE=	BSD3CLAUSE
 

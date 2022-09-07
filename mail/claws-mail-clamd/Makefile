@@ -1,6 +1,7 @@
 PORTNAME=	clamd
 
 COMMENT=	ClamAV based antivirus plugin for Claws Mail
+WWW=		https://www.claws-mail.org/plugins.php
 
 RUN_DEPENDS=	clamd:security/clamav
 

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Classes that extend/augment the Java Collections Framework
+WWW=		https://commons.apache.org/proper/commons-collections/
 
 LICENSE=	APACHE20
 

@@ -7,6 +7,7 @@ MASTER_SITES=	http://dist1.innolan.net/ \
 
 MAINTAINER=	cs@innolan.net
 COMMENT=	Simple command line calculator
+WWW=		https://amath.innolan.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

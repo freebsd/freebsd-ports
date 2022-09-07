@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MIME Media Types and their file extensions
+WWW=		https://metacpan.org/release/Media-Type-Simple
 
 LICENSE=	ART20
 

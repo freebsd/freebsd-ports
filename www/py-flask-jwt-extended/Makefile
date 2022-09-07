@@ -7,6 +7,7 @@ DISTNAME=	Flask-JWT-Extended-${DISTVERSION}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Extended JWT integration with Flask
+WWW=		https://github.com/vimalloc/flask-jwt-extended
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

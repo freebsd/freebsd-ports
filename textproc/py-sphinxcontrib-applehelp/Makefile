@@ -7,6 +7,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Extension which outputs Apple help books
+WWW=		https://www.sphinx-doc.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

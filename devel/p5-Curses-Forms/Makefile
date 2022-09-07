@@ -8,6 +8,7 @@ DISTNAME=	CursesForms-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Provide high level APIs for rapid UI design on the console
+WWW=		https://metacpan.org/release/CursesForms
 
 LICENSE=	GPLv2
 

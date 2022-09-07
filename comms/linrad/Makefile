@@ -8,6 +8,7 @@ DISTNAME=	lir04-02
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio DSP utility (SDR)
+WWW=		https://www.nitehawk.com/sm5bsz/linuxdsp/linrad.htm
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	micadeyeye@gmail.com
 COMMENT=	OMEMO Encryption Library for libpurple (plugin)
+WWW=		https://research.ngportal.com/lurch
 
 LICENSE=	GPLv2
 

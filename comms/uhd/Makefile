@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Ettus Research UHD driver framework
+WWW=		https://www.ettus.com/sdr-software/uhd-usrp-hardware-driver/
 
 # See https://www.ettus.com/sdr-software/licenses/.  Dual license
 # under GPLv3 and and "Alternate License" whose terms are not documented

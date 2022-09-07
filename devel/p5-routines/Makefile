@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typeable method and function signatures
+WWW=		https://metacpan.org/release/routines
 
 LICENSE=	APACHE20
 

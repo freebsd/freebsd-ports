@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for running commands as elevated
+WWW=		https://github.com/WinRb/winrm-elevated
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

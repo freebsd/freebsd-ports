@@ -5,6 +5,7 @@ CATEGORIES=	java graphics
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Java Graph Diagram Component version X
+WWW=		https://github.com/jgraph/jgraphx
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

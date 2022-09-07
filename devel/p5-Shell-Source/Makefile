@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Run programs and inherit environment changes
+WWW=		https://metacpan.org/release/Shell-Source
 
 USES=		perl5
 USE_PERL5=	configure

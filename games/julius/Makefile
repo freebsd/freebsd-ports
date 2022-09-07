@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-caesariii
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source re-implementation of Caesar III
+WWW=		https://github.com/bvschaik/julius
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

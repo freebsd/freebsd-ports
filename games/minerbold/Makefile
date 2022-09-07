@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Remake of Bolder Dash from BK-0010 with INSTEAD engine
+WWW=		https://github.com/gl00my/minerbold
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

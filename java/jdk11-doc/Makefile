@@ -7,6 +7,7 @@ DISTNAME=	jdk-${PORTVERSION}_doc-all
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_VERSION} Documentation
+WWW=		https://www.oracle.com/java/
 
 # Converted from RESTRICTED
 LICENSE=	jdk

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Base Class for SAX Filters parsing WellBallanced Chunks
+WWW=		https://metacpan.org/release/XML-Filter-GenericChunk
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

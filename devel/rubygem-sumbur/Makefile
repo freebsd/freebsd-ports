@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Consistent spreading for server balancing
+WWW=		https://github.com/mailru/sumbur-ruby
 
 LICENSE=	MIT
 

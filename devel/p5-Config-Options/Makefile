@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide a configuration hash with options
+WWW=		https://metacpan.org/release/Config-Options
 
 USES=		perl5
 USE_PERL5=	configure

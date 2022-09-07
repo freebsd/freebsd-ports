@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
+WWW=		https://www.pylint.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

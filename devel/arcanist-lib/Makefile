@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT?=	Libraries for the command line interface for Phabricator
+WWW=		https://secure.phabricator.com/book/arcanist/
 
 SLAVEPORT?=	lib
 

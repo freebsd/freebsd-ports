@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Collection of unix shell and environment tools for py.test
+WWW=		https://github.com/manahl/pytest-plugins/tree/master/pytest-shutil
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

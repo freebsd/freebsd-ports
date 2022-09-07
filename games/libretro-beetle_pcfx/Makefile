@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen PCFX to libretro
+WWW=		https://github.com/libretro/beetle-gba-libretro
 
 LICENSE=	GPLv2
 

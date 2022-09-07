@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Spin-adapted implementation of DMRG for ab initio quantum chemistry
+WWW=		https://github.com/SebWouters/CheMPS2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

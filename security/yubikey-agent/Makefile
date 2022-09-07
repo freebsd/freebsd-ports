@@ -6,6 +6,7 @@ CATEGORIES=	security sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Seamless ssh-agent for YubiKeys
+WWW=		https://filippo.io/yubikey-agent
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

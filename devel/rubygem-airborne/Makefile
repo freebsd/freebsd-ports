@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	RSpec driven API testing framework
+WWW=		https://github.com/brooklynDev/airborne
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

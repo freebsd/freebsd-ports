@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Python interface to dialog(3)
+WWW=		http://pythondialog.sourceforge.net/
 
 LICENSE=	LGPL21+
 

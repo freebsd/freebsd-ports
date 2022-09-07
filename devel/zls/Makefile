@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Zig LSP implementation + Zig Language Server
+WWW=		https://github.com/zigtools/zls
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR OO-interface for easily retrieving and modifying data in a DB
+WWW=		https://pear.php.net/package/DB_QueryTool
 
 LICENSE=	BSD2CLAUSE
 

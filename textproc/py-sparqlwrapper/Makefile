@@ -7,6 +7,7 @@ DISTNAME=	SPARQLWrapper-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	SPARQL endpoint interface to Python
+WWW=		https://sparqlwrapper.readthedocs.io/en/stable/
 
 LICENSE=	W3C
 LICENSE_NAME=	W3C Software Notice and License

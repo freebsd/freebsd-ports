@@ -5,6 +5,7 @@ CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class allows you to use two-key strong cryptography
+WWW=		https://pear.php.net/package/Crypt_RSA
 
 USES=		pear
 

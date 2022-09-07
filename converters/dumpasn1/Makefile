@@ -8,6 +8,7 @@ EXTRACT_ONLY=	yes
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Dumps the contents of an ASN.1 encoded file, e.g. an SSL certificate
+WWW=		http://www.cs.auckland.ac.nz/~pgut001/
 
 LICENSE=	DUMPASN1
 LICENSE_NAME=	dumpasn1 license

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Contributed Rack Middleware and Utilities
+WWW=		https://github.com/rack/rack-contrib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

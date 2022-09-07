@@ -6,6 +6,7 @@ MASTER_SITES=	https://wpd.home.xs4all.nl/symon/philes/ \
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Performance and information monitoring tool
+WWW=		https://wpd.home.xs4all.nl/symon/
 
 SUB_FILES=	pkg-message
 

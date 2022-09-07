@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce file manager
+WWW=		https://docs.xfce.org/xfce/thunar/Start
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi

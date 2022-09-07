@@ -8,6 +8,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language (beta version)
+WWW=		https://www.python.org/
 
 LICENSE=	PSFL
 

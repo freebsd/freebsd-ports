@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Execute commands remotely over SSH and WinRM
+WWW=		https://github.com/puppetlabs/bolt
 
 LICENSE=	APACHE20
 

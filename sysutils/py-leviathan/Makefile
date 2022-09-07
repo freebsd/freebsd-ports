@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Application to control and monitor NZXT (Asetek) liquid coolers
+WWW=		https://github.com/jaksi/leviathan/tree/0.1.1
 
 LICENSE=	GPLv2
 #LICENSE_FILE=	Not packaged with PyPI sdist

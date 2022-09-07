@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Composable complex class support for attrs and dataclasses
+WWW=		https://github.com/python-attrs/cattrs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

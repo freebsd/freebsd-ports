@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Simple SQLite3-based store for Python objects
+WWW=		https://github.com/thp/minidb
 
 LICENSE=	ISCL
 

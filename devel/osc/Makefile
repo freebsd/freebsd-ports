@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Command Line Interface to work with an openSUSE Build Service
+WWW=		https://en.opensuse.org/openSUSE:OSC
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

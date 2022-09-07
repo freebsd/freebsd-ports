@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Tools for reading and handling spatial objects
+WWW=		https://cran.r-project.org/web/packages/maptools/
 
 LICENSE=	GPLv2+
 

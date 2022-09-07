@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.dkrz.de/k202009/libaec/uploads/45b10e42123edd26ab7b
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Adaptive entropy coding library
+WWW=		https://gitlab.dkrz.de/k202009/libaec
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

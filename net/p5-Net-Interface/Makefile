@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to access network interfaces
+WWW=		https://metacpan.org/release/Net-Interface
 
 USES=		perl5
 USE_PERL5=	configure

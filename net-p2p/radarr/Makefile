@@ -7,6 +7,7 @@ DISTNAME=	Radarr.master.${PORTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Movie Library Manager for Usenet and BitTorrent users
+WWW=		https://radarr.video
 
 LICENSE=	GPLv3
 

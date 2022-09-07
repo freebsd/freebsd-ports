@@ -8,6 +8,7 @@ DISTNAME=	WTForms-${DISTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Flexible forms validation and rendering library for python
+WWW=		http://wtforms.simplecodes.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

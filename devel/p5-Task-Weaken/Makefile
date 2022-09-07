@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Ensure that a platform has weaken support
+WWW=		https://metacpan.org/release/Task-Weaken
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

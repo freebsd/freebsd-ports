@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SVG extension to the popular XML::DOM2
+WWW=		https://metacpan.org/release/SVG-DOM2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

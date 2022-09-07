@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple and Fast Multimedia Library
+WWW=		https://www.sfml-dev.org/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.md

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	New iterator for p5-Class-DBI
+WWW=		https://metacpan.org/release/Class-DBI-Plugin-Iterator
 
 BUILD_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI
 TEST_DEPENDS=	p5-DBD-SQLite>=1.27:databases/p5-DBD-SQLite \

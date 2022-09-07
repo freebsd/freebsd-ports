@@ -9,6 +9,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	Nice looking OpenGL chess game
+WWW=		http://brutalchess.sourceforge.net/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

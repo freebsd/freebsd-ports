@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform crypto API for Qt ${FLAVOR:C/qt//}
+WWW=		http://delta.affinix.com/qca/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

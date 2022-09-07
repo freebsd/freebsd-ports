@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ classes and macros for describing complex hardware systems
+WWW=		https://www.accellera.org/downloads/standards/systemc
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.osgeo.org/proj/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Datum grid package for PROJ
+WWW=		https://github.com/OSGeo/PROJ-data
 
 NO_ARCH=	yes
 NO_BUILD=	yes

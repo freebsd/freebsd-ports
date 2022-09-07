@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast and exact spin spherical harmonic transforms
+WWW=		https://astro-informatics.github.io/ssht/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

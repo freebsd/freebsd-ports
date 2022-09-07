@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate HTML tables for CGI scripts
+WWW=		http://www.chime.ucl.ac.uk/~rmhiajp/htmltable/index.htm
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

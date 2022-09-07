@@ -7,6 +7,7 @@ MASTER_SITES=	http://thor-f5.er.usgs.gov/sdts/sdtsxx/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for SDTS related development
+WWW=		https://mcmcweb.er.usgs.gov/sdts/sdtsxx/
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 

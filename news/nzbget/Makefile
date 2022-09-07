@@ -6,6 +6,7 @@ CATEGORIES=	news
 
 MAINTAINER=	alexis.praga@free.fr
 COMMENT=	Binary newsreader supporting NZB files
+WWW=		http://nzbget.net/
 
 LICENSE=	GPLv2
 

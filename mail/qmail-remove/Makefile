@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.linuxmagic.com/opensource/qmail/qmail-remove/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Removes messages from your qmail queue based on a particular string
+WWW=		https://www.linuxmagic.com/opensource/qmail/qmail-remove/
 
 PLIST_FILES=	sbin/qmail-remove bin/populate-qmail-queue.pl
 PORTDOCS=	INSTALL LICENSE README

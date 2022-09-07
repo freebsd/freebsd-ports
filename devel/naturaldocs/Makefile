@@ -8,6 +8,7 @@ DISTNAME=	NaturalDocs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible, multi-language source code documentation generator
+WWW=		https://www.naturaldocs.org/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/License.txt

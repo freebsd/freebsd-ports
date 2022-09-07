@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Full XS implementation of common crypt() algorithms
+WWW=		https://metacpan.org/release/Crypt-Passwd-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

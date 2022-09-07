@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Multi-view FLTK-based VNC client
+WWW=		https://www.pismotek.com/brainout/content/spiritvnc.php
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Lasso and elastic-net regularized generalized linear models
+WWW=		https://cran.r-project.org/web/packages/glmnet/
 
 LICENSE=	GPLv2
 

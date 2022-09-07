@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Albert a keyboard launcher
+WWW=		https://github.com/albertlauncher/albert
 
 LICENSE=	GPLv3
 

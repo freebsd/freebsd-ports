@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic archive extracting mechanism
+WWW=		https://metacpan.org/release/Archive-Extract
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

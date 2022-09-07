@@ -2,6 +2,7 @@ PORTNAME=	schilybase
 CATEGORIES=	devel
 
 COMMENT=	Support files and libraries for the schilytools
+WWW=		https://codeberg.org/schilytools/schilytools
 
 NLS_USES=	gettext-tools
 USE_LDCONFIG=	yes

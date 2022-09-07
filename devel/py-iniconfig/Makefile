@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Simple parsing of ini files in Python
+WWW=		https://pypi.org/project/iniconfig/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

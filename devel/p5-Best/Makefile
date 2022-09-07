@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fallbackable module loader
+WWW=		https://metacpan.org/release/Best
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

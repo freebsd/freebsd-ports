@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ logging library
+WWW=		https://github.com/amrayn/easyloggingpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

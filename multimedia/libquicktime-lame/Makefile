@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lame
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LAME plugin for libquicktime
+WWW=		http://libquicktime.sourceforge.net/
 
 LIB_DEPENDS=	libquicktime.so:multimedia/libquicktime \
 		libmp3lame.so:audio/lame

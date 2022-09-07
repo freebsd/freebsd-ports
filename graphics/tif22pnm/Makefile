@@ -6,6 +6,7 @@ MASTER_SITES=	http://pts.szit.bme.hu/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Converts TIFF-sampled images to PNM image
+WWW=		http://pts.szit.bme.hu/
 
 LICENSE=	GPLv2
 

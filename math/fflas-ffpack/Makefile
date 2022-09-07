@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for dense linear algebra over word-size finite fields
+WWW=		https://linbox-team.github.io/fflas-ffpack/
 
 LICENSE=	LGPL21
 

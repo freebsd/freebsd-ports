@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tame Rails' multi-line logging into a single line per request #'
+WWW=		https://github.com/roidrage/lograge
 
 LICENSE=	MIT
 

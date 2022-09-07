@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Portable 128-bit SIMD intrinsics
+WWW=		https://github.com/Maratyszcza/psimd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

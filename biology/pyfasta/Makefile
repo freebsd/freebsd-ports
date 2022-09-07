@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Fast, memory-efficient, pythonic access to fasta sequence files
+WWW=		https://bitbucket.org/brentp/biostuff/src/
 
 LICENSE=	MIT
 

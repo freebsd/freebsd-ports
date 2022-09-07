@@ -7,6 +7,7 @@ MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/3473472/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interpolation library for meteorological software
+WWW=		https://confluence.ecmwf.int/display/EMOS/Emoslib
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

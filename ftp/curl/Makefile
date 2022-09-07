@@ -6,6 +6,7 @@ MASTER_SITES=	https://curl.se/download/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line tool and library for transferring data with URLs
+WWW=		https://curl.se/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

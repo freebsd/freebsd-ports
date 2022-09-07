@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic interface for processing online credit card payments
+WWW=		https://metacpan.org/release/Business-OnlinePayment
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python-Based Framework for Rapid Web Development
+WWW=		https://www.turbogears.org/
 
 LICENSE=	MIT
 

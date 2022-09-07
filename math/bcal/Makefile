@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Storage expression, unit conversion & address offset CLI calculator
+WWW=		https://github.com/jarun/bcal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

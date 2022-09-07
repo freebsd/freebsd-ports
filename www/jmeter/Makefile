@@ -6,6 +6,7 @@ MASTER_SITES=	https://archive.apache.org/dist/jmeter/binaries/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Functional behaviour load and performance test application
+WWW=		https://jmeter.apache.org/
 
 LICENSE=	APACHE20
 

@@ -5,6 +5,7 @@ MASTER_SITES=		SAMBA/cwrap
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Wrapper to fake privilege separation
+WWW=		https://cwrap.org/uid_wrapper.html
 
 LICENSE=		GPLv3
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Python parser for RAML
+WWW=		https://github.com/spotify/ramlfications
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

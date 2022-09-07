@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Syntax sugar for transactional methods
+WWW=		https://metacpan.org/release/MooseX-TransactionalMethods
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

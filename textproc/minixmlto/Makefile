@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Minimalistic alternative to xmlto
+WWW=		https://github.com/bapt/minixmlto
 
 LICENSE=	BSD2CLAUSE
 

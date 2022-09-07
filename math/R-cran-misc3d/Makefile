@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Miscellaneous 3D Plots
+WWW=		https://cran.r-project.org/package=misc3d
 
 LICENSE=	GPLv2+
 

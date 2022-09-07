@@ -8,6 +8,7 @@ DISTNAME=	XStatic-Jasmine-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Jasmine (XStatic packaging standard)
+WWW=		https://jasmine.github.io/
 
 LICENSE=	MIT
 

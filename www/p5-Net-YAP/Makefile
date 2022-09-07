@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Conduit to communicate with the Yahoo! Application Platform
+WWW=		https://metacpan.org/release/Net-YAP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-OAuth-Simple>=1.0:net/p5-Net-OAuth-Simple

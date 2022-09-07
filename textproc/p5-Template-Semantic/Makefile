@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to use pure XHTML/XML as a template
+WWW=		https://metacpan.org/release/Template-Semantic
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

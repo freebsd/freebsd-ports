@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cross-Python bytecode Disassembler and Marshal routines
+WWW=		https://github.com/rocky/python-xdis
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

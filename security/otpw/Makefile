@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.cl.cam.ac.uk/~mgk25/download/ \
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	One-time password login package by Markus Kuhn
+WWW=		https://www.cl.cam.ac.uk/~mgk25/otpw.html
 
 LICENSE=	GPLv2+
 

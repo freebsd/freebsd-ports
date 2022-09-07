@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple DNS resolver with caching
+WWW=		https://metacpan.org/release/AnyEvent-CacheDNS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

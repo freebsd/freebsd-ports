@@ -11,6 +11,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Move tiles so that they reach their places
+WWW=		https://wiki.gnome.org/Apps/Taquin/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

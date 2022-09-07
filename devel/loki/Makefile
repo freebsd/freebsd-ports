@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}-lib/Loki/Loki%20${PORTVERSION}
 
 MAINTAINER=	snnn119@gmail.com
 COMMENT=	C++ library of common design patterns
+WWW=		https://sourceforge.net/projects/loki-lib/
 
 USES=		gmake dos2unix
 USE_LDCONFIG=	yes

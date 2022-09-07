@@ -7,6 +7,7 @@ DISTNAME=	joe-${PORTVERSION:C/([0-9]+\.[0-9]+)\.([0-9]+)/\1${PORTNAME}\2/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable version of Joe's Own Editor from MirBSD
+WWW=		https://www.mirbsd.org/jupp.htm
 
 LICENSE=	GPLv1
 

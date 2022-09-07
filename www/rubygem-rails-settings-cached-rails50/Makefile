@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails50
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rails settings plugin for easily managing key-value pairs table
+WWW=		https://github.com/huacnlee/rails-settings-cached
 
 LICENSE=	MIT
 

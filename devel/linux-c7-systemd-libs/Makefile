@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-libs
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for accessing systemd (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://www.freedesktop.org/wiki/Software/systemd/
 
 LICENSE=	LGPL21+
 

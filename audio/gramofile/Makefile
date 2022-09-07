@@ -10,6 +10,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio recording and tick/scratch reduction for e.g. vinyl records
+WWW=		https://www.opensourcepartners.nl/~costar/gramofile/
 
 LIB_DEPENDS=	libfftw.so:math/fftw
 

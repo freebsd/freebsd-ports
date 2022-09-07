@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quality Control Charts
+WWW=		https://cran.r-project.org/package=qcc
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

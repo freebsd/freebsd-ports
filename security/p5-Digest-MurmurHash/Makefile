@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for XS interface to the MurmurHash algorithm
+WWW=		https://metacpan.org/release/Digest-MurmurHash
 
 USES=		perl5
 USE_PERL5=	configure

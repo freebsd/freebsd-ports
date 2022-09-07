@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Library for reading and writing Matlab MAT files
+WWW=		https://sourceforge.net/projects/matio/
 
 LICENSE=	BSD2CLAUSE
 

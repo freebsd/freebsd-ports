@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.codon.org.uk/~mjg59/vbetool/download/	\
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Application for executing video card BIOS code
+WWW=		http://www.codon.org.uk/~mjg59/vbetool/
 
 LICENSE=	GPLv2
 

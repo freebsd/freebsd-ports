@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	-bdb
 
 MAINTAINER?=	mandree@FreeBSD.org
 COMMENT=	Fast, teachable, learning spam detector
+WWW=		https://bogofilter.sourceforge.io/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Lightweight music composing system
+WWW=		https://github.com/electronoora/komposter
 
 LICENSE=	GPLv2
 

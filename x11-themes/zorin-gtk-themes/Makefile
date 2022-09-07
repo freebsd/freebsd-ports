@@ -4,6 +4,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Zorin OS GTK theme
+WWW=		https://github.com/ZorinOS/zorin-desktop-themes
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

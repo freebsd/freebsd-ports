@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Whois Client Interface for Perl5
+WWW=		https://metacpan.org/release/Net-XWhois
 
 USES=		perl5
 USE_PERL5=	configure

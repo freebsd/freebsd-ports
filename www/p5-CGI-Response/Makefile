@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module allowing response construction for CGI applications
+WWW=		https://metacpan.org/release/MGH/CGI-Response-0.03
 
 LICENSE=	ART10
 

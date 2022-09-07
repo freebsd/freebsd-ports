@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Safely run SSH commands on a bunch of machines at the same time
+WWW=		https://github.com/delano/rye/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

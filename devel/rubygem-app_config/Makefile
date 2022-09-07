@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby gem for storing application configuration
+WWW=		https://oshuma.github.io/app_config/
 
 LICENSE=	MIT
 

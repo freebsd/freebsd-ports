@@ -8,6 +8,7 @@ DISTNAME=	chromium_compact_language_detector-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Python bindings for compact language detector library
+WWW=		https://code.google.com/p/chromium-compact-language-detector/
 
 LICENSE=	BSD3CLAUSE
 

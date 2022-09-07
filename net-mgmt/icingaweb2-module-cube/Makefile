@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Drill-down view for Icinga web 2 based on custom variables
+WWW=		https://github.com/Icinga/icingaweb2-module-cube
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

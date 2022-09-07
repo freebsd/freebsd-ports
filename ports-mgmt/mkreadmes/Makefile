@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speedy substitute for "make readmes"
+WWW=		https://sourceforge.net/projects/mkreadmes/
 
 USES=		tar:bzip2
 

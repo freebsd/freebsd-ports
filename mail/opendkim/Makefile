@@ -8,6 +8,7 @@ MASTER_SITES=	SF/${PORTNAME} \
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	DKIM library and milter implementation
+WWW=		http://opendkim.org/
 
 LICENSE=	BSD3CLAUSE SENDMAIL
 LICENSE_COMB=	multi

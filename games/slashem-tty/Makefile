@@ -7,6 +7,7 @@ DISTNAME=	se${PORTVERSION:S/.//g:tl}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dungeon explorin', slashin', hackin' game
+WWW=		http://slashem.sourceforge.net/
 
 USES=		cpe gmake
 CPE_VENDOR=	freebsd

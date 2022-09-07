@@ -7,6 +7,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Spatial Extensions for SQLite
+WWW=		https://www.gaia-gis.it/gaia-sins/
 
 LICENSE=	GPLv2 # Only GPLv2 since we enable rttopo and gcp
 LICENSE_FILE=	${WRKSRC}/COPYING

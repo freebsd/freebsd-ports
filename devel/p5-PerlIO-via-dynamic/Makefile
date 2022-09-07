@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dynamic PerlIO layers
+WWW=		https://metacpan.org/release/PerlIO-via-dynamic
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/plasma-mobile/${DISTVERSION}
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Glossy Matrix IM client based on KDE technologies
+WWW=		https://invent.kde.org/network/neochat
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt

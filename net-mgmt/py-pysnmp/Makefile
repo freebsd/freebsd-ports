@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	SNMP framework for Python
+WWW=		https://github.com/etingof/pysnmp
 
 LICENSE=	BSD2CLAUSE
 

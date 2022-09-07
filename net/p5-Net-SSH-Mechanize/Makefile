@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for asynchronous ssh command invocation
+WWW=		https://metacpan.org/release/Net-SSH-Mechanize
 
 RUN_DEPENDS=	\
 	p5-AnyEvent>0:devel/p5-AnyEvent \

@@ -7,6 +7,7 @@ MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	X11 circuit schematics drawing program
+WWW=		http://opencircuitdesign.com/xcircuit/
 
 LICENSE=	GPLv2
 

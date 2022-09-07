@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Detect mouse gestures
+WWW=		https://github.com/t6/simplestroke
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

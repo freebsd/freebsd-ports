@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class to talk to MPD (Music Player Daemon) servers
+WWW=		https://metacpan.org/release/Audio-MPD
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

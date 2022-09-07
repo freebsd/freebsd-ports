@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Rakuten WebService API
+WWW=		https://metacpan.org/release/WebService-Rakuten
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	ja-p5-Unicode-Japanese>=0:japanese/p5-Unicode-Japanese \

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web application fuzzer allowing to find vulnerabilities in them
+WWW=		https://wfuzz.readthedocs.io/en/latest
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

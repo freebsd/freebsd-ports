@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Implementation of the EBU R128 loudness standard
+WWW=		https://github.com/jiixyj/libebur128
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

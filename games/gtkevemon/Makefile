@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skill monitoring standalone application for EVE Online
+WWW=		http://gtkevemon.battleclinic.com
 
 LIB_DEPENDS=	libgtkmm-3.0.so:x11-toolkits/gtkmm30 \
 		libcurl.so:ftp/curl

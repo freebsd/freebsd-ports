@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kurt.lidl@cello.com
 COMMENT=	Another pretty-printer for perl objects
+WWW=		https://metacpan.org/release/Data-Inspect
 
 USES=		perl5
 USE_PERL5=	configure

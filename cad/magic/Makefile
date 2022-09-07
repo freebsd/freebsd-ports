@@ -5,6 +5,7 @@ MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive editor for VLSI layouts
+WWW=		http://opencircuitdesign.com/magic/
 
 LICENSE=	MIT
 LICENSE_FILE=	${FILESDIR}/license.txt

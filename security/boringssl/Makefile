@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Fork of OpenSSL
+WWW=		https://github.com/google/boringssl
 
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

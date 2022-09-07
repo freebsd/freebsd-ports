@@ -7,6 +7,7 @@ DISTNAME=	SoftLayer-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SoftLayer API Python Client
+WWW=		https://github.com/softlayer/softlayer-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

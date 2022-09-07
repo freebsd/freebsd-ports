@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Modern and interactive webmail
+WWW=		https://rainloop.net/
 
 LICENSE=	MIT
 

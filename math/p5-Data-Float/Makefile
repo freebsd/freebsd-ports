@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Details of the floating point data type
+WWW=		https://metacpan.org/release/Data-Float
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

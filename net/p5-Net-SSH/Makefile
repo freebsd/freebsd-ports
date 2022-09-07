@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to access and use ssh protocol
+WWW=		https://metacpan.org/release/Net-SSH
 
 USES=		perl5
 USE_PERL5=	configure

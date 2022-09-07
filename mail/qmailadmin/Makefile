@@ -8,6 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
+WWW=		https://www.inter7.com/qmailadmin/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

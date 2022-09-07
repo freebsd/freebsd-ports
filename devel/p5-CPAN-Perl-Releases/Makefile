@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Map Perl releases to the location of the tarballs
+WWW=		https://metacpan.org/release/CPAN-Perl-Releases
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

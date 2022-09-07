@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.physcip.uni-stuttgart.de/pages/~phy11733/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three-dimensional fractal creator (command line only)
+WWW=		https://www.physcip.uni-stuttgart.de/pages/~phy11733/index_e.html
 
 LICENSE=	GPLv2+
 

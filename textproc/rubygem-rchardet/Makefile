@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Character encoding auto-detection in Ruby
+WWW=		https://github.com/jmhodges/rchardet
 
 LICENSE=	LGPL21
 

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steve Harris' huge Collection of LADSPA Plugins
+WWW=		http://www.plugin.org.uk
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	gnu
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU version of popular pattern matching utility
+WWW=		https://www.gnu.org/software/grep/
 
 LICENSE=	GPLv3+
 

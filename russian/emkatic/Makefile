@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	andrey@bsdnir.info
 COMMENT=	Emulator of Elektronika RPN programmable calculator series
+WWW=		https://sourceforge.net/projects/emkatic/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

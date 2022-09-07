@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome minesweeper
+WWW=		https://wiki.gnome.org/Apps/Mines
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

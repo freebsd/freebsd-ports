@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Distribution with a rich set of tools built upon the Test2 framework
+WWW=		https://metacpan.org/release/Test2-Suite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

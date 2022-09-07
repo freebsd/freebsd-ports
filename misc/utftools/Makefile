@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.cs.yorku.ca/pub/wily/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UTF-aware wc, fmt, expand, and unexpand
+WWW=		http://www.cs.yorku.ca/~oz/
 
 LICENSE=	UTFTOOLS
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validate XML and XHTML
+WWW=		https://metacpan.org/release/Test-XML-Valid
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML \

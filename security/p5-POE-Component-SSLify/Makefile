@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Integrate SSL into POE
+WWW=		https://metacpan.org/release/POE-Component-SSLify
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

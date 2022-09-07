@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	HTTP/2 header encoding (HPACK) logic implementation
+WWW=		https://hyper.rtfd.org/
 
 LICENSE=	MIT
 

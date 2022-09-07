@@ -6,6 +6,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	manu@FreeBSD.Org
 COMMENT=	OpenSMTPD filter integration for the Rspamd daemon
+WWW=		https://github.com/poolpOrg/filter-rspamd
 
 LICENSE=	ISCL
 

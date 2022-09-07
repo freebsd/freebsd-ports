@@ -11,6 +11,7 @@ PATCHFILES=	${PORTNAME}_${PORTVERSION:S/a45/a-45/}yavdr1.diff.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - telnet control plugin
+WWW=		http://ricomp.de/vdr/down_en.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

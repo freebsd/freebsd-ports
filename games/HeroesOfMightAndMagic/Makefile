@@ -7,6 +7,7 @@ DISTFILES=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD Installation of the Linux game "Heroes of Might and Magic III"
+WWW=		https://www.lokigames.com/products/heroes3/
 
 # Converted from RESTRICTED
 LICENSE=	HeroesOfMightAndMagic

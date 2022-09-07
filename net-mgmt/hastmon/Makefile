@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Cluster monitoring daemon
+WWW=		http://hastmon.googlecode.com/
 
 LICENSE=	BSD2CLAUSE
 

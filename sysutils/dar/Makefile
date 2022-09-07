@@ -7,6 +7,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Command-line backup tool, aimed for disks
+WWW=		http://dar.linux.free.fr/
 
 LICENSE=	GPLv2+
 

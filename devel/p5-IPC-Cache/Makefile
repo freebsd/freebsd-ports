@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Persist data across processes via shared memory
+WWW=		https://metacpan.org/release/IPC-Cache
 
 LICENSE=	GPLv1
 

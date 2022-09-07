@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for OpenSSL EC (Elliptic Curves) library
+WWW=		https://metacpan.org/release/Crypt-OpenSSL-EC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

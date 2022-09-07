@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Optimized template builder base class
+WWW=		https://metacpan.org/release/Class-ObjectTemplate
 
 USES=		perl5
 USE_PERL5=	configure

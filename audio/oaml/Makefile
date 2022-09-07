@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open Adaptive Music Library
+WWW=		https://oamldev.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

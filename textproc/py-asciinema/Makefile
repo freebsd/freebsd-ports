@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Tool for recording and sharing terminal sessions
+WWW=		https://asciinema.org/
 
 LICENSE=	GPLv3+
 

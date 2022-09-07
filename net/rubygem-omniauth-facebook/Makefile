@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Facebook OAuth2 Strategy for OmniAuth
+WWW=		https://github.com/simi/omniauth-facebook
 
 LICENSE=	MIT
 

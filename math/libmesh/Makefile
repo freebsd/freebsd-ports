@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/libMesh/${PORTNAME}/releases/download/v${DISTVE
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Numerical simulation of partial differential equations
+WWW=		https://libmesh.github.io
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

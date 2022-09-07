@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Easy pre and post assertions
+WWW=		https://cran.r-project.org/web/packages/assertthat/
 
 LICENSE=	GPLv3
 

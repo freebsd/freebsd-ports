@@ -7,6 +7,7 @@ DISTNAME=	PySocks-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python SOCKS module
+WWW=		https://github.com/Anorov/PySocks
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

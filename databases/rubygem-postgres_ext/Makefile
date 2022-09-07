@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	PostgreSQL data types extension for ActiveRecord
+WWW=		https://github.com/dockyard/postgres_ext
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

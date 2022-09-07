@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Preprocessor to be called from an assembler
+WWW=		https://metacpan.org/dist/Asm-Preproc
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

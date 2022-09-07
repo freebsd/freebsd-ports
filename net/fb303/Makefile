@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Base Thrift service and a common set of functionality
+WWW=		https://github.com/facebook/fb303
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

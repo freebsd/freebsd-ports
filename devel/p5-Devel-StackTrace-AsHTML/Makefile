@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to display stack trace in HTML
+WWW=		https://metacpan.org/release/Devel-StackTrace-AsHTML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

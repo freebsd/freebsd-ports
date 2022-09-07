@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Promise library for Python
+WWW=		https://github.com/celery/vine/
 
 LICENSE=	BSD3CLAUSE
 

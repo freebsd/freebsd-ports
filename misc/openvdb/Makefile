@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tools for storage and manipulation of sparse volumetric data
+WWW=		https://www.openvdb.org/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

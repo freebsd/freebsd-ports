@@ -7,6 +7,7 @@ DISTNAME=	Grammalecte-fr-v${PORTVERSION}
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	French grammar and typographic corrector
+WWW=		https://grammalecte.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

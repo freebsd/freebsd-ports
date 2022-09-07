@@ -5,6 +5,7 @@ CATEGORIES=	deskutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Backend implementation for xdg-desktop-portal
+WWW=		https://kde.org/plasma-desktop/
 
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 

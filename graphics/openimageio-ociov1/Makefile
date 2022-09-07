@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-ociov1
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	OpenImageIO graphics library linked to ocio v1
+WWW=		https://www.openimageio.org/
 
 LICENSE=	BSD3CLAUSE
 

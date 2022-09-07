@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Library for raw image processing
+WWW=		https://github.com/CarVac/librtprocess
 
 LICENSE=	GPLv3+
 

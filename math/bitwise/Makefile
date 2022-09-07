@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal-based bit manipulator in curses
+WWW=		https://github.com/mellowcandle/bitwise
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

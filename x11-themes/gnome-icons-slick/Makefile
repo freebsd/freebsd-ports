@@ -11,6 +11,7 @@ DISTNAME=	ICON-Slick
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slick Icons for Gnome
+WWW=		https://art.gnome.org/
 
 # Converted from RESTRICTED
 LICENSE=	icons

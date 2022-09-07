@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for telling fully qualified name of the method
+WWW=		https://metacpan.org/release/UNIVERSAL-which
 
 USES=		perl5
 USE_PERL5=	configure

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	wrapper for Google's Tesseract OCR engine
+WWW=		https://github.com/madmaze/pytesseract
 
 PATCH_STRIP=	-p1
 

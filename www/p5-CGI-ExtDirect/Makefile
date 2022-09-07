@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for creating Ext.Direct remoting in CGI applications
+WWW=		https://metacpan.org/release/CGI-ExtDirect
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-RPC-ExtDirect>=3.20:www/p5-RPC-ExtDirect \

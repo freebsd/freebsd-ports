@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for packed binary data stored in ruby Strings
+WWW=		https://github.com/vjoel/bit-struct
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

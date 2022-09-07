@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple Mail Transfer Protocol client library for Ruby
+WWW=		https://github.com/ruby/net-smtp
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

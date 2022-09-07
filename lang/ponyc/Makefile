@@ -4,6 +4,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pony language compiler
+WWW=		https://www.ponylang.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

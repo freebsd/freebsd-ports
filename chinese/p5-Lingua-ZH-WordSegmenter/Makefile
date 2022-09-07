@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplified Chinese Word Segmentation
+WWW=		https://metacpan.org/release/Lingua-ZH-WordSegmenter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

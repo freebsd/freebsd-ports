@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Command-line encrypted password database manager
+WWW=		https://github.com/nsd20463/pwsafe/
 
 LICENSE=	GPLv2+
 

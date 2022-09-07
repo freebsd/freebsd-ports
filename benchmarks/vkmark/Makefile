@@ -9,6 +9,7 @@ PATCHFILES+=	27fa846e34ed.patch:-p1 # https://github.com/vkmark/vkmark/pull/29
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Vulkan benchmark
+WWW=		https://github.com/vkmark/vkmark
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING-LGPL2.1

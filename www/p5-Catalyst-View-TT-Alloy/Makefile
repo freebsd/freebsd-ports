@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	danny@dannywarren.com
 COMMENT=	Template::Alloy views for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-View-TT-Alloy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

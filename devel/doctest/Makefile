@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	nickblack@linux.com
 COMMENT=	Header-only C++ unit-testing
+WWW=		https://github.com/onqtam/doctest
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

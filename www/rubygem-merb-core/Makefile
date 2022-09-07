@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Merb. Pocket rocket web framework
+WWW=		https://github.com/merb/merb-core
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

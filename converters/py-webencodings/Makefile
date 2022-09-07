@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Character encoding aliases for legacy web content
+WWW=		https://github.com/SimonSapin/python-webencodings
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Run Tartiflette GraphQL Engine through aiohttp
+WWW=		https://github.com/tartiflette/tartiflette-aiohttp
 
 LICENSE=	MIT
 

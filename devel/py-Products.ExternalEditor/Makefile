@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope external editor
+WWW=		https://pypi.org/project/Products.ExternalEditor/
 
 LICENSE=	ZPL21
 

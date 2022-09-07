@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Gets current callsite and interpreter context
+WWW=		https://metacpan.org/release/Devel-Callsite
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual

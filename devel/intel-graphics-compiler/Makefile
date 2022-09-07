@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Compiler for OpenCL
+WWW=		https://01.org/compute-runtime
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

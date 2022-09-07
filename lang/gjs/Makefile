@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Javascript binding
+WWW=		https://live.gnome.org/Gjs
 
 LICENSE=	MPL11 LGPL20+ GPLv2+
 LICENSE_COMB=	multi

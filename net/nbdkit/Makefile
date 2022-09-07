@@ -9,6 +9,7 @@ MASTER_SITES=	http://download.libguestfs.org/${PORTNAME}/${PORTVERSION:R}-stable
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Network Block Device server toolkit with stable ABI and permissive license
+WWW=		https://github.com/libguestfs/nbdkit
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

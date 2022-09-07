@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build and install Perl modules
+WWW=		https://metacpan.org/release/Module-Build
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Build an optimized subroutine parameter validator once, use it forever
+WWW=		https://metacpan.org/release/Params-ValidationCompiler
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

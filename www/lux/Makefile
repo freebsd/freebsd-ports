@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Fast, simple and clean video downloader
+WWW=		https://github.com/iawia002/annie
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

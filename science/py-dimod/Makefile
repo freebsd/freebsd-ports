@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DWave: Shared API for QUBO/Ising samplers
+WWW=		https://github.com/dwavesystems/dimod
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

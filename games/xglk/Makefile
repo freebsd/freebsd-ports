@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Windows Implementation of the Glk API
+WWW=		https://www.ifarchive.org/if-archive/programming/glk/implementations/
 
 LIB_DEPENDS+=	libpng.so:graphics/png
 

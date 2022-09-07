@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.dockapps.net/download/
 
 MAINTAINER=	jd.fbsd@goneja.de
 COMMENT=	Neat xearth-like WindowMaker dockapp
+WWW=		https://www.dockapps.net/wmglobe
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

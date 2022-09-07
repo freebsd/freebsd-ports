@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Show library info in a tree form
+WWW=		https://github.com/haampie/libtree
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	mizhka@freebsd.org
 COMMENT=	Rocket.Chat Plugin for libpurple
+WWW=		https://github.com/EionRobb/purple-rocketchat
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

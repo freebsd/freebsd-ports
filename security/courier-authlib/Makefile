@@ -11,6 +11,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT?=	Meta-port for the courier authentication library
+WWW=		https://www.Courier-MTA.org/authlib/
 
 CONFLICTS=	courier-0.45*
 

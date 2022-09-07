@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.si6networks.com/tools/ipv6toolkit/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Set of IPv6 security assessment tools
+WWW=		https://www.si6networks.com/tools/ipv6toolkit/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

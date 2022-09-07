@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for building services in a consistent/modular/composable way
+WWW=		https://github.com/facebook/wangle
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE

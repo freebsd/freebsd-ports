@@ -5,6 +5,7 @@ CATEGORIES=		www
 
 MAINTAINER=		ports@zx23.net
 COMMENT=		Prometheus metrics exporter for the Varnish WWW cache
+WWW=		https://github.com/jonnenauha/prometheus_varnish_exporter
 
 LICENSE=		APACHE20
 

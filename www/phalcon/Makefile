@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	Phalcon PHP Framework written in C-language
+WWW=		https://phalcon.io/
 
 LICENSE=	BSD3CLAUSE
 

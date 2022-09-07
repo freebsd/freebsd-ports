@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl subroutines that would be nice to have in the perl core
+WWW=		https://metacpan.org/release/Scalar-List-Utils
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

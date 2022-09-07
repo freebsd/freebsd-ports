@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DWave: Preprocessing tools to aid in solving binary quadratic models
+WWW=		https://github.com/dwavesystems/dwave-preprocessing
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

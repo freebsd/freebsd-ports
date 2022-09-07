@@ -8,6 +8,7 @@ DIST_SUBDIR=	TeX
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, documentation
+WWW=		https://tug.org/texlive/
 
 USES=		perl5 tar:xz
 USE_TEX=	texmf

@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility to split a diff patch into separate sections
+WWW=		https://github.com/jaalto/splitpatch
 
 LICENSE=	GPLv2+
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for detecting mailing list messages
+WWW=		https://metacpan.org/release/Mail-ListDetector
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Email-Abstract>=3.001:mail/p5-Email-Abstract \

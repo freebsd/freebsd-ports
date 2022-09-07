@@ -7,6 +7,7 @@ PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		olgeni@FreeBSD.org
 COMMENT=		Run blocking functions asynchronously by forking
+WWW=		https://metacpan.org/release/Mojo-IOLoop-ForkCall
 
 LICENSE=		ART10 GPLv1+
 LICENSE_COMB=		dual

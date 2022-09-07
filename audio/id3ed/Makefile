@@ -5,6 +5,7 @@ MASTER_SITES=	http://code.fluffytapeworm.com/projects/${PORTNAME}/
 
 MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Id3 tag editor for mp3 files
+WWW=		http://code.fluffytapeworm.com/projects/id3ed
 
 LICENSE=	GPLv2
 

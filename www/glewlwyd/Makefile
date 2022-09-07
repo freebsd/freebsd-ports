@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Single Sign On server, multiple factor authentication
+WWW=		https://github.com/babelouest/glewlwyd
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	http://font.gohu.org/
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Monospace bitmap font well suited for programming and terminal use
+WWW=		https://font.gohu.org/
 
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/COPYING-LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH/lzip/${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Recovery tool for Lzip compressed data files
+WWW=		https://www.nongnu.org/lzip/lziprecover.html
 
 LICENSE=	GPLv2+
 

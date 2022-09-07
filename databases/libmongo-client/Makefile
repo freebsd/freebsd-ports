@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	gd.workbox@gmail.com
 COMMENT=	Alternative C driver for MongoDB
+WWW=		https://github.com/algernon/libmongo-client
 
 LICENSE=	APACHE20
 

@@ -7,6 +7,7 @@ DISTNAME=	PHPEclipse-${PLIST_VER}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP Eclipse adds PHP support to the Eclipse IDE Framework
+WWW=		http://www.phpeclipse.com/
 
 RUN_DEPENDS=	eclipse:java/eclipse
 

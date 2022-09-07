@@ -6,6 +6,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Data Language
+WWW=		https://metacpan.org/release/PDL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

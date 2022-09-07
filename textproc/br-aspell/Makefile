@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Breton dictionary
+WWW=		http://aspell.sourceforge.net/
 
 DICT=	 	br
 

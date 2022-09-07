@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple scanning utility
+WWW=		https://gitlab.gnome.org/GNOME/simple-scan
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

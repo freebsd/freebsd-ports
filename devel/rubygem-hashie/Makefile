@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple collection of useful Hash extensions
+WWW=		https://github.com/hashie/hashie
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

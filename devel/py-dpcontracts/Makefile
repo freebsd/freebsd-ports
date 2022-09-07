@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple implementation of contracts for Python
+WWW=		https://github.com/deadpixi/contracts
 
 LICENSE=	LGPL3+
 

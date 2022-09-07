@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Plugin Oriented Programming interface for Python
+WWW=		https://pop.readthedocs.io
 
 LICENSE=	APACHE20
 

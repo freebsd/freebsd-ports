@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro port of UAE
+WWW=		https://github.com/libretro/libretro-uae
 
 LICENSE=	GPLv2
 

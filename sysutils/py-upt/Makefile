@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tipecaml@gmail.com
 COMMENT=	Package software from any package manager to any distribution
+WWW=		https://framagit.org/upt/upt
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

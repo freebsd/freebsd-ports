@@ -7,6 +7,7 @@ DISTNAME=	Terminal-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal Emulator for GNUstep
+WWW=		https://www.nongnu.org/backbone/
 
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING

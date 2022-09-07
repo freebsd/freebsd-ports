@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}-1.4.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check/display users' mail quota (filesystem, IMAP-based, and cPanel)
+WWW=		https://www.squirrelmail.org/plugin_view.php?id=237
 
 USE_SM_COMPAT=	YES
 

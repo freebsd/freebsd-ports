@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Database of IDs used in PCI, PNP and USB devices
+WWW=		https://github.com/vcrhonek/hwdata
 
 LICENSE=	GPLv2+ MIT
 LICENSE_COMB=	dual

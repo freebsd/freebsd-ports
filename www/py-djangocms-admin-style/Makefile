@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Pretty CSS styles for the django CMS admin interface
+WWW=		https://www.django-cms.org/
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Support reading dbf files for agate
+WWW=		https://agate-dbf.rtfd.org/
 
 LICENSE=	MIT
 

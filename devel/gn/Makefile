@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	o.hushchenkov@gmail.com
 COMMENT=	Gn meta build framework - standalone version
+WWW=		https://gn.googlesource.com/gn/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Gravitational Teleport SSH
+WWW=		https://gravitational.com/teleport/
 
 LICENSE=	APACHE20
 

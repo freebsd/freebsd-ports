@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEG-based pattern-matching library for Lua
+WWW=		http://www.inf.puc-rio.br/~roberto/lpeg/
 
 LICENSE=	MIT
 

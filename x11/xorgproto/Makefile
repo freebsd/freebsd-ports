@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Window System unified protocol definitions
+WWW=		https://gitlab.freedesktop.org/xorg/proto/xorgproto
 
 LICENSE=	MIT
 

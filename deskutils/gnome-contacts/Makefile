@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Contacts manager for gnome
+WWW=		https://wiki.gnome.org/Apps/Contacts
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

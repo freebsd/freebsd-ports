@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/amadvance/snapraid/releases/download/v${DISTVER
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	File-level Backup/RAID program for disk arrays
+WWW=		https://www.snapraid.it/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

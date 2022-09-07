@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	svyatoslav.lempert@gmail.com
 COMMENT=	Loader for ionCube-encoded PHP files
+WWW=		https://www.ioncube.com/
 
 DEPRECATED=	Requires php 7.4 which is set to expire on 2022-11-29
 EXPIRATION_DATE=2022-11-28

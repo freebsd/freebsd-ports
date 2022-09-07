@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.rpcurnow.force9.co.uk/tdl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	To-do list manager
+WWW=		http://www.rc0.org.uk/tdl/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

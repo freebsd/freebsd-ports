@@ -9,6 +9,7 @@ DISTNAME=	mpm-itk-2.4.7-04
 
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Run each vhost under a separate uid and gid
+WWW=		http://mpm-itk.sesse.net/
 
 LICENSE=	APACHE20
 

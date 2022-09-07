@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Dictionary whose items can be set using both attribute and item syntax
+WWW=		https://github.com/mewwts/addict
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Math::Symbolic LaTeX output
+WWW=		https://metacpan.org/release/Math-Symbolic-Custom-LaTeXDumper
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Math-Symbolic>=0.201:math/p5-Math-Symbolic

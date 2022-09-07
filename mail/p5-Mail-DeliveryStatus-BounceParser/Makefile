@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to analyze bounce messages
+WWW=		https://metacpan.org/release/Mail-DeliveryStatus-BounceParser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

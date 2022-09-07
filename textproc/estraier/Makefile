@@ -6,6 +6,7 @@ MASTER_SITES=	https://dbmx.net/estraier/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search system for personal use
+WWW=		https://dbmx.net/estraier/
 
 LIB_DEPENDS=	libqdbm.so:databases/qdbm
 

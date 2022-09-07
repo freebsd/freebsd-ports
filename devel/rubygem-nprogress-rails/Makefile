@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rails implementation of nprogress progress bars library
+WWW=		https://github.com/caarlos0/nprogress-rails
 
 LICENSE=	MIT
 

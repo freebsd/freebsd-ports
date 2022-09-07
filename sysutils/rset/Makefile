@@ -5,6 +5,7 @@ MASTER_SITES=	https://scriptedconfiguration.org/code/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Configure systems using using any scripting language
+WWW=		https://scriptedconfiguration.org/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

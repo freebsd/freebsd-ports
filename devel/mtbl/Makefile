@@ -5,6 +5,7 @@ MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Immutable sorted string table library
+WWW=		https://github.com/farsightsec/mtbl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

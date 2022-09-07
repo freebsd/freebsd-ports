@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module for Ming which allows you to create Flash 4/5 movies
+WWW=		http://www.libming.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

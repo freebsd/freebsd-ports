@@ -5,6 +5,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides methods for dumping structured information about a variable
+WWW=		https://pear.php.net/package/Var_Dump
 
 LICENSE=	PHP30
 

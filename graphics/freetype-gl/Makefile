@@ -9,6 +9,7 @@ PATCHFILES+=	00a13d4c9e31f9c4e68e8ab30e2f7ec5b0e4bf60.patch:-p1 # https://github
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C OpenGL Freetype engine library
+WWW=		https://github.com/rougier/freetype-gl
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

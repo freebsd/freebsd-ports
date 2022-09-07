@@ -6,6 +6,7 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK+ library for the Wayland layer-shell protocol
+WWW=		https://github.com/wmww/gtk-layer-shell
 
 LICENSE=	LGPL3+ MIT
 LICENSE_COMB=	multi

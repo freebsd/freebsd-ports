@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	File identification tool
+WWW=		https://github.com/richardlehane/siegfried
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	QML/C++-written desktop client for Twitch.tv
+WWW=		https://alamminsalo.github.io/orion/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

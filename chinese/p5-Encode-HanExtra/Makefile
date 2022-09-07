@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extra sets of Chinese encodings
+WWW=		https://metacpan.org/release/Encode-HanExtra
 
 LICENSE=	MIT
 

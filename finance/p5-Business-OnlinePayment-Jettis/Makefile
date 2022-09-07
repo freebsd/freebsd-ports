@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Business::OnlinePayment backend module for Jettis
+WWW=		https://metacpan.org/release/Business-OnlinePayment-Jettis
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ MASTER_SITES=	https://rawtherapee.com/shared/source/ \
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Powerful RAW image processing application
+WWW=		https://www.rawtherapee.com/
 
 LICENSE=	GPLv3
 

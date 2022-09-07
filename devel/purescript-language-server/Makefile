@@ -8,6 +8,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	LSP provider implementation for PureScript language
+WWW=		https://github.com/nwolverson/purescript-language-server/
 
 LICENSE=	MIT
 

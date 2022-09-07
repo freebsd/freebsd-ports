@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-parallelization-library
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multi-threaded coroutine dispatcher and parallel execution engine
+WWW=		https://github.com/bloomberg/quantum
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

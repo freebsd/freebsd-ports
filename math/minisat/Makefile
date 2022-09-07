@@ -6,6 +6,7 @@ MASTER_SITES=	http://highsecure.ru/distfiles/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Minimalistic, open-source SAT solver
+WWW=		http://minisat.se/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

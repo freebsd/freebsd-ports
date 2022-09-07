@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Thread safe connection pool for Python programs
+WWW=		https://github.com/zhouyl/ConnectionPool
 
 LICENSE=	MIT
 

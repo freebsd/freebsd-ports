@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Nonsense activity generator
+WWW=		https://github.com/svenstaro/genact
 
 LICENSE=	APACHE20 BSD3CLAUSE ISCL MIT UNLICENSE
 LICENSE_COMB=	multi

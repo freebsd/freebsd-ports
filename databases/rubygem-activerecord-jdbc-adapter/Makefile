@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	JDBC adapter for ActiveRecord, for use within JRuby on Rails
+WWW=		https://github.com/jruby/activerecord-jdbc-adapter
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

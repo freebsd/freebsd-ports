@@ -7,6 +7,7 @@ DISTNAME=	InnerSpace-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep screensaver
+WWW=		https://www.nongnu.org/gap/innerspace/index.html
 
 LICENSE=	GPLv2
 

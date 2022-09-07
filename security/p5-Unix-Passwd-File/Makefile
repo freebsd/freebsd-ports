@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manipulate passwd and group entries
+WWW=		https://metacpan.org/release/Unix-Passwd-File
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thai language support library
+WWW=		https://linux.thai.net/projects/libthai/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

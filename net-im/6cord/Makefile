@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Terminal-driven Discord client
+WWW=		https://gitlab.com/diamondburned/6cord
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

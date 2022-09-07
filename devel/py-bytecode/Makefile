@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python module to generate and modify bytecode
+WWW=		https://github.com/MatthieuDartiailh/bytecode
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

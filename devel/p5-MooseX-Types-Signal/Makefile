@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Type to represent valid UNIX or Perl signals
+WWW=		https://metacpan.org/release/MooseX-Types-Signal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

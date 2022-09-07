@@ -6,6 +6,7 @@ DISTNAME=	simutrans-src-${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Transportation simulator
+WWW=		https://www.simutrans.com/
 
 LICENSE=	ART10 MIT
 LICENSE_COMB=	multi

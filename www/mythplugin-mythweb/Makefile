@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	mythplugin-
 
 MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	Frontend for scheduling and managing recordings on your MythTV Box
+WWW=		https://www.mythtv.org/wiki/MythWeb
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

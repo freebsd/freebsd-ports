@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	HTML Widgets for R
+WWW=		https://cran.r-project.org/web/packages/htmlwidgets/
 
 LICENSE=	MIT
 

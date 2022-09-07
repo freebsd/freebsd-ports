@@ -9,6 +9,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Glib wrapper library around the libgit2 git access library
+WWW=		https://git.gnome.org/browse/libgit2-glib
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

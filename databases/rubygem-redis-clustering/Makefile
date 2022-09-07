@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby client that tries to match Redis Cluster API
+WWW=		https://github.com/redis/redis-rb/tree/master/cluster
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

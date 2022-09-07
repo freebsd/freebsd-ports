@@ -6,6 +6,7 @@ CATEGORIES=		net-p2p
 
 MAINTAINER=		boris@zfs.ninja
 COMMENT=		A pipeline that connects to the tip of a Cardano node
+WWW=		https://txpipe.github.io/oura/
 
 LICENSE=		APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

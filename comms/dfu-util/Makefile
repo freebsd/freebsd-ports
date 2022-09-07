@@ -5,6 +5,7 @@ MASTER_SITES=	http://dfu-util.sourceforge.net/releases/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Device firmware update (DFU) USB programmer
+WWW=		http://dfu-util.sourceforge.net/
 
 LICENSE=	GPLv2
 

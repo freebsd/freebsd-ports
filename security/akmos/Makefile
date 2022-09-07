@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	melanhit@gmail.com
 COMMENT=	Cryptographic library with low footprint
+WWW=		https://github.com/melanhit/akmos
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

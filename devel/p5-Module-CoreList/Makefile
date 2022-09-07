@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	See what modules shipped with versions of Perl
+WWW=		https://metacpan.org/release/Module-CoreList
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

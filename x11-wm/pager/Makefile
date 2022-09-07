@@ -7,6 +7,7 @@ DISTNAME=	sawfish-pager-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pager for sawfish without GNOME
+WWW=		https://sawfish.tuxfamily.org/
 
 BUILD_DEPENDS=	sawfish:x11-wm/sawfish
 RUN_DEPENDS=	sawfish:x11-wm/sawfish

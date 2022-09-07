@@ -6,6 +6,7 @@ CATEGORIES=	sysutils textproc
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Generate documentation from Terraform modules
+WWW=		https://github.com/terraform-docs/terraform-docs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

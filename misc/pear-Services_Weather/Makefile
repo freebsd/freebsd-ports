@@ -5,6 +5,7 @@ CATEGORIES=	misc www pear geography
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR interface to various online weather-services
+WWW=		https://pear.php.net/package/Services_Weather
 
 LICENSE=	BSD2CLAUSE
 

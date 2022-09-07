@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	ACME protocol client written in shell
+WWW=		https://github.com/Neilpang/acme.sh/
 
 LICENSE=	GPLv3+
 

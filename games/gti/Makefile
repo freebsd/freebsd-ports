@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Just a silly git launcher, basically. Inspired by sl
+WWW=		https://r-wos.org/hacks/gti
 
 LICENSE=	GTI
 LICENSE_NAME=	MIT-like license

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${PORT
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	High performance build system
+WWW=		https://mesonbuild.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	LLVM and Clang with support for the CHERI architecture
+WWW=		https://cheri-cpu.org
 
 LICENSE_DIR=	${WRKSRC}/llvm
 .include "${.PARSEDIR}/../llvm-devel/Makefile.LICENSE"

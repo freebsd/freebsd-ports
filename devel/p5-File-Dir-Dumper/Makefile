@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	tolid@tolid.eu.org
 COMMENT=	Perl5 module to dump directory structures meta-data
+WWW=		https://metacpan.org/release/File-Dir-Dumper
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Find-Object>0:devel/p5-File-Find-Object \

@@ -6,6 +6,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	freebsd@coombscloud.com
 COMMENT=	Graphical front-end for emulators (RetroPie fork)
+WWW=		https://github.com/RetroPie/EmulationStation
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi

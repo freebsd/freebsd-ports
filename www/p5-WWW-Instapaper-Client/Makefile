@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Implementation of the Instapaper client API
+WWW=		https://metacpan.org/release/WWW-Instapaper-Client
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Base>=0:devel/p5-Class-Base \

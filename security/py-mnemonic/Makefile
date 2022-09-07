@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Implementation of Bitcoin BIP-0039
+WWW=		https://github.com/trezor/python-mnemonic
 
 LICENSE=	MIT
 

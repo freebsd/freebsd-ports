@@ -7,6 +7,7 @@ DISTNAME=	rep-gtk_${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GTK+-2 bindings for rep Lisp interpreter
+WWW=		https://sawfish.tuxfamily.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph manipulation library for OCaml
+WWW=		https://ocamlgraph.lri.fr/
 
 USES=		gmake
 USE_OCAML=	yes

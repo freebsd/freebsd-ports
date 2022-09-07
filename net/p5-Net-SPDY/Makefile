@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SPDY protocol client and server implementation
+WWW=		https://metacpan.org/release/LKUNDRAK/Net-SPDY-0.1_5
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

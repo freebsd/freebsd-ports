@@ -9,6 +9,7 @@ DISTNAME=	Flask-Caching-${PORTVERSION}
 
 MAINTAINER=	rt@scientifics.de
 COMMENT=	Flask-Caching is an extension to Flask
+WWW=		https://pythonhosted.org/Flask-Cache/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

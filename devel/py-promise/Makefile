@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Promises/A+ implementation for Python
+WWW=		https://github.com/syrusakbary/promise
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

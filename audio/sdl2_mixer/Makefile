@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Sample multi-channel audio mixer library
+WWW=		https://github.com/libsdl-org/SDL_mixer
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

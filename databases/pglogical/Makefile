@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Logical replication system as a PostgreSQL extension
+WWW=		https://www.2ndquadrant.com/en/resources-old/pglogical/
 
 LICENSE=	PostgreSQL
 

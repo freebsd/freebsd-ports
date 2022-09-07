@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Obtain expiration date of certificate
+WWW=		https://metacpan.org/release/Net-SSL-ExpireDate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}.r${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Symbolic Model Verifier System for checking finite state systems
+WWW=		https://www.cs.cmu.edu/~modelcheck/smv.html
 
 BROKEN_aarch64=		fails to build: undefined reference to sbrk
 BROKEN_armv6=		fails to build: error: non-void function check_bdd should return a value

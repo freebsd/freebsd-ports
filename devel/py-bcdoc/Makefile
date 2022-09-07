@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to help document botocore-based projects
+WWW=		https://github.com/boto/bcdoc/
 
 LICENSE=	MIT
 

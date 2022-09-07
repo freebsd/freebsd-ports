@@ -5,6 +5,7 @@ MASTER_SITES=	OSSP/tool/${PORTNAME}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	OSSP mail to news gateway
+WWW=		http://www.ossp.org/pkg/tool/lmtp2nntp/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

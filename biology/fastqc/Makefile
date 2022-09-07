@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_v${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Quality control tool for high throughput sequence data
+WWW=		https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

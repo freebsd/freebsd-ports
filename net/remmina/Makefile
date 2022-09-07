@@ -5,6 +5,7 @@ CATEGORIES=	net gnome
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	GTK+ Remote Desktop Client
+WWW=		https://www.remmina.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

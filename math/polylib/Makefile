@@ -5,6 +5,7 @@ MASTER_SITES=	http://icps.u-strasbg.fr/polylib/polylib_src/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library of polyhedral functions
+WWW=		https://icps.u-strasbg.fr/polylib/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

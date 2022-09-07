@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Run and analyze benchmarks
+WWW=		https://github.com/psf/pyperf
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

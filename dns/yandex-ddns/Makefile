@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Use Yandex DNS as a dynamic DNS provider
+WWW=		https://github.com/thekvs/yandex-ddns
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

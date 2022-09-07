@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Distributed quantile sketches
+WWW=		https://github.com/DataDog/sketches-py
 
 LICENSE=	APACHE20
 

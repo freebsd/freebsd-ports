@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
+WWW=		http://netpbm.sourceforge.net/
 
 LICENSE=	GPLv2 IJG LGPL21 MIT PD
 LICENSE_COMB=	multi

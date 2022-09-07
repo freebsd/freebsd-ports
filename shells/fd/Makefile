@@ -7,6 +7,7 @@ DISTNAME=	FD-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CUI-based file and directory management tool
+WWW=		https://hp.vector.co.jp/authors/VA012337/soft/fd/
 
 USE_LOCALE=	ja
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \

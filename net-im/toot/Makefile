@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Interact with the Mastodon social network from the command line
+WWW=		https://github.com/ihabunek/toot
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

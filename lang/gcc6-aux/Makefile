@@ -9,6 +9,7 @@ DISTFILES=	${IDENTIFICATION}.tar.xz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
+WWW=		http://www.dragonlace.net/
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi

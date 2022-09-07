@@ -5,6 +5,7 @@ MASTER_SITES=	https://arthurdejong.org/rl/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Randomizes lines from a specified input file
+WWW=		https://arthurdejong.org/rl/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

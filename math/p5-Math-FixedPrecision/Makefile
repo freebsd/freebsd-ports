@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that provides decimal math without floating point errors
+WWW=		https://metacpan.org/release/Math-FixedPrecision
 
 USES=		perl5
 USE_PERL5=	configure

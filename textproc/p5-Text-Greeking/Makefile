@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate meaningless text that creates the illusion of the document
+WWW=		https://metacpan.org/release/Text-Greeking
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE

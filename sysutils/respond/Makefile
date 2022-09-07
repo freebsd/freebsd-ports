@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	j.witteveen@gmail.com
 COMMENT=	Response automator for logged events
+WWW=		https://github.com/joukewitteveen/respond
 
 LICENSE=	BSD2CLAUSE
 

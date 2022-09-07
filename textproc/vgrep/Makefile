@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	User-friendly pager for grep
+WWW=		https://github.com/vrothberg/vgrep
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

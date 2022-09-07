@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Attributes with aliases for constructor arguments for MooseX
+WWW=		https://metacpan.org/release/MooseX-MultiInitArg
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

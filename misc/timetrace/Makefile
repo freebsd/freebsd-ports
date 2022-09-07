@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Simple time tracking CLI
+WWW=		https://github.com/dominikbraun/timetrace
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

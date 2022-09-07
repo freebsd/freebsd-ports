@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Python module for communicating with the Twilio API
+WWW=		https://www.twilio.com/docs/libraries/python
 
 LICENSE=	MIT
 

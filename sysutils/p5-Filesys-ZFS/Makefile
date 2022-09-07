@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Perl interface to zpool(8) and zfs(8)
+WWW=		https://metacpan.org/pod/Filesys::ZFS
 
 LICENSE=	ARTPERL10
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Basic Robust Statistics
+WWW=		https://cran.r-project.org/web/packages/robustbase/
 
 LICENSE=	GPLv2+
 

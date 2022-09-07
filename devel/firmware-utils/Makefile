@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.transit.hanse.de/mirror/svn.openwrt.org/firmware-utils/
 
 MAINTAINER=	stb@lassitu.de
 COMMENT=	Create device firmware images
+WWW=		https://www.openwrt.org/
 
 LICENSE=	GPLv2
 

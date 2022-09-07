@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@ny-central.org
 COMMENT=	Discus is a program to display hard drive space usage
+WWW=		https://github.com/ncarrier/discus
 
 LICENSE=	GPLv2
 

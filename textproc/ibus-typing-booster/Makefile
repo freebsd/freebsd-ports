@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Faster typing by context sensitive completion
+WWW=		https://mike-fabian.github.io/ibus-typing-booster/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple GObject game controller library
+WWW=		https://gnome.pages.gitlab.gnome.org/libmanette/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

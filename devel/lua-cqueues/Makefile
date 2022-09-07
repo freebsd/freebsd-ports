@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Continuation queues module for Lua
+WWW=		https://25thandclement.com/~william/projects/cqueues.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

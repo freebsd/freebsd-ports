@@ -9,6 +9,7 @@ DISTFILES=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION:S/b/+beta/}${DISTVERSIO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - Reelchannelscan plugin
+WWW=		http://www.reel-multimedia.com
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

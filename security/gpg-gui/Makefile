@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	GUI wrapper for symmetric GPG file encryption
+WWW=		https://github.com/AnsgarKlein/GPG-Gui
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

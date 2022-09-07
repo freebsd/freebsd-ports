@@ -7,6 +7,7 @@ MASTER_SITES=	https://libwebsockets.org/git/libwebsockets/snapshot/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for lightweight websocket clients and servers
+WWW=		https://libwebsockets.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

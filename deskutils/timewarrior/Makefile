@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Track time from the command line
+WWW=		https://timewarrior.net/
 
 LICENSE=	MIT
 

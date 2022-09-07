@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	PEG-based parser interpreter with memoization (Python module)
+WWW=		https://github.com/avakar/speg
 
 LICENSE=	MIT
 

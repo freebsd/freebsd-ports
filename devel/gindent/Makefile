@@ -7,6 +7,7 @@ DISTNAME=	indent-${DISTVERSION}
 
 MAINTAINER=	moritz@schmi.tt
 COMMENT=	C source code reformatter
+WWW=		https://www.gnu.org/software/indent/indent.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

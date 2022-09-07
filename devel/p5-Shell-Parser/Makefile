@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple shell script parser
+WWW=		https://metacpan.org/release/Shell-Parser
 
 USES=		perl5
 USE_PERL5=	configure

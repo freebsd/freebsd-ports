@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.phar
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Testing framework for unit tests
+WWW=		https://www.phpunit.de
 
 LICENSE=	BSD3CLAUSE
 

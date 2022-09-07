@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Private Configuration for 'R' Packages
+WWW=		https://cran.r-project.org/web/packages/pkgconfig/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Automatic SQL injection tool
+WWW=		https://sqlmap.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/sqlmap/LICENSE

@@ -11,6 +11,7 @@ PATCHFILES+=	347b32642fb6.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlr
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
+WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

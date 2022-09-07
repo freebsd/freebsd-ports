@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	arcade@b1t.name
 COMMENT=	Distributed peer-to-peer file syncing application
+WWW=		https://www.resilio.com/
 
 LICENSE=	EULA
 LICENSE_NAME=	Resilio Sync

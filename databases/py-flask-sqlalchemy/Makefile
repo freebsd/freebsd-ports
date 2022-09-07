@@ -8,6 +8,7 @@ DISTNAME=	Flask-SQLAlchemy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add SQLAlchemy support to your Flask application
+WWW=		https://github.com/pallets/flask-sqlalchemy
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

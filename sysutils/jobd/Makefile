@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	mark@heily.com
 COMMENT=	Job management framework
+WWW=		https://github.com/mheily/jobd
 
 LICENSE=	ISCL
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dump Perl data structures as Perl code
+WWW=		https://metacpan.org/release/Data-Dmp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

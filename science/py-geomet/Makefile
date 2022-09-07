@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GeoJSON <-> WKT/WKB conversion utilities
+WWW=		https://github.com/geomet/geomet
 
 LICENSE=	APACHE20
 

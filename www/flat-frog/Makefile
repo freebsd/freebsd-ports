@@ -5,6 +5,7 @@ MASTER_SITES=	SF/flatfrog/flatfrog/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Templating engine working in php
+WWW=		https://sourceforge.net/projects/flatfrog/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

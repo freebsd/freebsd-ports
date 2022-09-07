@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Tool to control Rabbit from web browser
+WWW=		https://rabbit-shocker.org/en/rabbirack/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL

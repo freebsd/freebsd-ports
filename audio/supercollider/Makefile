@@ -7,6 +7,7 @@ DISTNAME=	SuperCollider-${PORTVERSION}-Source
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Programming language for real time audio synthesis
+WWW=		https://supercollider.github.io
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

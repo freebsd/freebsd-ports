@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implementation of Shamir's Secret Sharing System
+WWW=		https://metacpan.org/release/Crypt-SSSS
 
 LICENSE=	ART10
 

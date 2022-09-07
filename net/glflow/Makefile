@@ -7,6 +7,7 @@ DISTNAME=	glFlow-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetFlow tool for detecting DoS attacks
+WWW=		http://freshmeat.net/projects/glflow/
 
 USES=		ssl tar:tgz
 PLIST_FILES=	bin/glflow

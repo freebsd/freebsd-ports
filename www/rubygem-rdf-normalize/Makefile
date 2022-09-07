@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RDF Graph normalizer for Ruby
+WWW=		https://github.com/ruby-rdf/rdf-normalize
 
 LICENSE=	UNLICENSE
 

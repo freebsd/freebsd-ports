@@ -8,6 +8,7 @@ DIST_SUBDIR=	java
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Action adventure in Space
+WWW=		http://rescue.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl.txt

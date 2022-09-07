@@ -5,6 +5,7 @@ MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LR(1) parser generator for OCaml
+WWW=		http://cristal.inria.fr/~fpottier/menhir
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

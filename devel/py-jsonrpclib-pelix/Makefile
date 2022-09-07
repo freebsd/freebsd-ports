@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	JSON-RPC over HTTP that mirrors xmlrpclib syntax
+WWW=		https://pypi.org/project/jsonrpclib-pelix/
 
 LICENSE=	APACHE20
 

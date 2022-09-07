@@ -9,6 +9,7 @@ DISTNAME=	MIME-tools-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Set of perl5 modules for MIME
+WWW=		https://metacpan.org/release/MIME-tools
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

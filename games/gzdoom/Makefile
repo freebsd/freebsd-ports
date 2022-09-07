@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	GL-enhanced source port for Doom-engine games
+WWW=		https://zdoom.org/
 
 LICENSE=	BSD3CLAUSE GPLv3 LGPL3
 LICENSE_COMB=	multi

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ Algorithmic Differentiation package
+WWW=		https://coin-or.github.io/CppAD/doc/cppad.htm
 
 LICENSE=	EPL
 

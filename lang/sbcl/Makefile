@@ -14,6 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Common Lisp development system derived from the CMU CL system
+WWW=		http://sbcl.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE PD
 LICENSE_COMB=	dual

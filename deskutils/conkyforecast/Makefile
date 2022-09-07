@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weather forecast script for conky
+WWW=		https://code.launchpad.net/~m-buck/+junk/conkyforecast
 
 LICENSE=	GPLv3
 

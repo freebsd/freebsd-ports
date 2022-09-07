@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Cloudflare fork of mod_remoteip
+WWW=		https://github.com/cloudflare/mod_cloudflare
 
 LICENSE=	APACHE20
 

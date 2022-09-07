@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
 COMMENT=	Smallstep step-ca certificates server
+WWW=		https://smallstep.com/certificates/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

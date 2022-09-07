@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library to use TrueType fonts to render text in SDL applications
+WWW=		https://github.com/libsdl-org/SDL_ttf
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

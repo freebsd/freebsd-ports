@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts kde-plasma
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Plasma5 Oxygen font family
+WWW=		https://cgit.kde.org/oxygen-fonts.git
 
 LICENSE=	OFL11 GPLv3RLE+
 LICENSE_COMB=	dual

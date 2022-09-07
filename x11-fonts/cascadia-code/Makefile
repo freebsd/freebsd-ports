@@ -6,6 +6,7 @@ DISTNAME=	CascadiaCode-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Monospaced font with programming ligatures
+WWW=		https://github.com/microsoft/cascadia-code
 
 LICENSE=	OFL11
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.fiction.net/blong/programs/tnef2txt/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable application/ms-tnef parser
+WWW=		http://www.fiction.net/blong/programs/ #tnef2txt
 
 ALL_TARGET=	tnef2txt
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

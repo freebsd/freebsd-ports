@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Distance-vector routing protocol
+WWW=		https://www.irif.fr/~jch/software/babel/
 
 LICENSE=	MIT
 

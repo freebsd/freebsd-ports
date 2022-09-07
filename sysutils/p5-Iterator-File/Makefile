@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	File iterator, optionally stateful and verbose
+WWW=		https://metacpan.org/release/Iterator-File
 
 USES=		perl5
 USE_PERL5=	configure

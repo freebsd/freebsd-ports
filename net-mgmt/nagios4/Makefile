@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Powerful network monitoring system
+WWW=		https://www.nagios.org/
 
 LICENSE=	GPLv2
 

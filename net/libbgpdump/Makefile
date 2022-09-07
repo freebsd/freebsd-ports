@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.ris.ripe.net/source/bgpdump/
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Analyzing dump files produced by Zebra/Quagga or MRT
+WWW=		https://www.ris.ripe.net/source/
 
 LICENSE=	GPLv2
 

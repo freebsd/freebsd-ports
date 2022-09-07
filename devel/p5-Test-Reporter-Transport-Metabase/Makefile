@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Metabase transport for Test::Reporter
+WWW=		https://metacpan.org/release/Test-Reporter-Transport-Metabase
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-JSON>=0:converters/p5-JSON \

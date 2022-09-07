@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python scheduler library
+WWW=		https://gitlab.com/DigonIO/scheduler
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	GitLab wrapper around git objects
+WWW=		https://gitlab.com/gitlab-org/gitlab_git
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to read and write GEneric Trajectory ARchives
+WWW=		https://github.com/glotzerlab/libgetar
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

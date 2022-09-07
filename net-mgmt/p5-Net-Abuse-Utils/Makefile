@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Routines useful for processing network abuse
+WWW=		https://metacpan.org/release/Net-Abuse-Utils
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

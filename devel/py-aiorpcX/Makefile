@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Generic async RPC implementation, including JSON-RPC
+WWW=		https://pypi.org/project/aiorpcX/
 
 LICENSE=	MIT
 

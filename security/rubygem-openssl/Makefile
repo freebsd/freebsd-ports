@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby gem that wraps around the OpenSSL library
+WWW=		https://github.com/ruby/openssl
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

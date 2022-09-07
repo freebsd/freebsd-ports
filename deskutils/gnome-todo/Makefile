@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small application to manage your personal tasks
+WWW=		https://wiki.gnome.org/Apps/Todo
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

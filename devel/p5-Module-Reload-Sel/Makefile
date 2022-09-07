@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Reload perl library files when updated on disk
+WWW=		https://metacpan.org/release/Module-Reload-Sel
 
 USES=		perl5
 USE_PERL5=	configure

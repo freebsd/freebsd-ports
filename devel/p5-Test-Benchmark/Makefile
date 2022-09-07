@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Make sure something really is faster
+WWW=		https://metacpan.org/release/Test-Benchmark
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL

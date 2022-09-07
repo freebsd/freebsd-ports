@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.harukizaemon.com/simian/
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Similarity analyser for source and other text files
+WWW=		https://www.harukizaemon.com/simian/
 
 LICENSE=	SIMIAN
 LICENSE_NAME=	SIMIAN SOFTWARE LICENSE

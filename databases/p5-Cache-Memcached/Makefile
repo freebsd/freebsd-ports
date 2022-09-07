@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl API for memcached, a distributed memory cache daemon
+WWW=		https://metacpan.org/release/Cache-Memcached
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

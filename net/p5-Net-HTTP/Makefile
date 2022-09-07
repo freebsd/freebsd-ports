@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Low-level HTTP client
+WWW=		https://metacpan.org/release/Net-HTTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

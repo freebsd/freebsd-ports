@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Realtime plotting utility for TTY with data input from stdin
+WWW=		https://github.com/tenox7/ttyplot
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

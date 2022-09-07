@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python bindings to UDPipe library for parsing universal treebanks
+WWW=		https://ufal.mff.cuni.cz/udpipe
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

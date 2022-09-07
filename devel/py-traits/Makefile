@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Explicitly Typed Attributes for Python
+WWW=		https://pypi.org/project/traits/
 
 LICENSE=	BSD3CLAUSE PSFL
 LICENSE_COMB=	multi

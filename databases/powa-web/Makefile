@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	PostgreSQL Workload Analyzer is a performance tool for PostgreSQL
+WWW=		https://powa.readthedocs.org/
 
 LICENSE=	PostgreSQL
 

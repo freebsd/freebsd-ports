@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.stack.nl/~marcolz/empire/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Empire text client
+WWW=		https://www.stack.nl/~marcolz/empire/
 
 GNU_CONFIGURE=	yes
 USES=		ncurses readline shebangfix

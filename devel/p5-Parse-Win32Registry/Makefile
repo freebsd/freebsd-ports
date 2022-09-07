@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Perl extension for parsing Win32Registry
+WWW=		https://metacpan.org/release/Parse-Win32Registry
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

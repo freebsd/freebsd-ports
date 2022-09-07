@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Configuration frontend for Icinga 2, integrated automation
+WWW=		https://github.com/Icinga/icingaweb2-module-director
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

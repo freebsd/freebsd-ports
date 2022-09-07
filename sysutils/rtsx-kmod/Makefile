@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	FreeBSD driver for Realtec card readers
+WWW=		https://github.com/hlh-restart/rtsx
 
 LICENSE=	BSD2CLAUSE
 

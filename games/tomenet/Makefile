@@ -5,6 +5,7 @@ MASTER_SITES=	http://tomenet.eu/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online multiplayer rogue-like role-playing game
+WWW=		https://tomenet.eu/
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: lite_later
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: lite_later

@@ -7,6 +7,7 @@ DISTNAME=	pdns-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Advanced DNS recursor
+WWW=		https://www.PowerDNS.com/recursor.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

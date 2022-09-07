@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Extract the top level domain (TLD) from the URL given
+WWW=		https://github.com/barseghyanartur/tld
 
 LICENSE=	MPL11 GPLv2 LGPL21
 LICENSE_COMB=	multi

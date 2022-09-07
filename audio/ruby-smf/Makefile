@@ -8,6 +8,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module to handle Standard MIDI Files
+WWW=		http://www.funaba.org/code #smf
 
 LICENSE=	BSD2CLAUSE
 

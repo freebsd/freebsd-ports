@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}2-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Virtual versatile amplification for Jack and set of LV2 plugins
+WWW=		https://sourceforge.net/projects/guitarix/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

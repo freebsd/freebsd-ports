@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web validation in a Perl object using tidy
+WWW=		https://metacpan.org/release/HTML-Tidy
 
 LICENSE=	ART20
 

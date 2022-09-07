@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Django app for adding object tools for models in the admin
+WWW=		https://github.com/crccheck/django-object-actions
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

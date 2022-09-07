@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Powerful tool for extending functions
+WWW=		https://cran.r-project.org/web/packages/ellipsis/
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://fo2k.com/qmail-activedir/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to allow qmail to authenticate users through a MS ad
+WWW=		http://fo2k.com/qmail-activedir/
 
 USES=		qmail:run
 SUB_FILES=	pkg-message

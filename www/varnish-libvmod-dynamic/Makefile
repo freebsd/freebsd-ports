@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	varnish-
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for dynamic backends
+WWW=		https://github.com/nigoroll/libvmod-dynamic
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

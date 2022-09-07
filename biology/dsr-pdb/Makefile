@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple C++ PDB reader (reads the protein description format)
+WWW=		https://graphics.stanford.edu/~drussel/pdb/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

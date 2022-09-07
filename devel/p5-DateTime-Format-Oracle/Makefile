@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse and format Oracle dates and timestamps
+WWW=		https://metacpan.org/release/DateTime-Format-Oracle
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

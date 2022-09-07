@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-plugin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP plug-ins to both quickly and easily beautify photo
+WWW=		https://github.com/hejiann/beautify
 
 LICENSE=	GPLv3+
 

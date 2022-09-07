@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple set of building blocks for both unit and runtime testing
+WWW=		https://metacpan.org/release/Test-Assertions
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Log-Trace>0:devel/p5-Log-Trace

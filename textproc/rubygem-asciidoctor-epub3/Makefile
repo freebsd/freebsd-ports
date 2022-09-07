@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Convert AsciiDoc documents to EPUB3
+WWW=		https://github.com/asciidoctor/asciidoctor-epub3
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

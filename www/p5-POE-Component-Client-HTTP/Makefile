@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE component for non-blocking/concurrent HTTP queries
+WWW=		https://metacpan.org/release/POE-Component-Client-HTTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

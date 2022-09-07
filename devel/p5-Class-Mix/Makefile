@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module for dynamic class mixing
+WWW=		https://metacpan.org/release/Class-Mix
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

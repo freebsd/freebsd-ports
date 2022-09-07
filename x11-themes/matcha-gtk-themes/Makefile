@@ -4,6 +4,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Flat design theme for GTK 3, GTK 2, and Gnome-Shell
+WWW=		https://github.com/vinceliuice/Matcha-gtk-theme
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

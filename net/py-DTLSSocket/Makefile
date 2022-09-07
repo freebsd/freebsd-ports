@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Python IKEA Tradfri API controller
+WWW=		https://git.fslab.de/jkonra2m/tinydtls-cython
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

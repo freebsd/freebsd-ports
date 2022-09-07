@@ -5,6 +5,7 @@ CATEGORIES=	www graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Modern, static javascript photo gallery generator
+WWW=		https://www.thregr.org/~wavexx/software/fgallery/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

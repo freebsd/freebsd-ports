@@ -9,6 +9,7 @@ DISTNAME=	dcl-${PORTVERSION}-C
 
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Scientific graphic library for geoscience
+WWW=		https://www.gfd-dennou.org/arch/dcl/
 
 # Converted from RESTRICTED
 LICENSE=	cdcl

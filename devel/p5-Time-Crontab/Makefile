@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to parse crontab date and time field
+WWW=		https://metacpan.org/release/Time-Crontab
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

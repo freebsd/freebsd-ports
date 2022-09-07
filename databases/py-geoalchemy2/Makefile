@@ -7,6 +7,7 @@ DISTNAME=	GeoAlchemy2-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Using SQLAlchemy with Spatial Databases
+WWW=		https://github.com/geoalchemy/geoalchemy2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.rst

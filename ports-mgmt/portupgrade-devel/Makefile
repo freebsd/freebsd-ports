@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages management tool (devel version)
+WWW=		https://wiki.freebsd.org/portupgrade
 
 LICENSE=	BSD3CLAUSE
 

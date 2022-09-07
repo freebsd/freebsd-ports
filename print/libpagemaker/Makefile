@@ -6,6 +6,7 @@ MASTER_SITES=	LODEV/${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Aldus/Adobe PageMaker documents
+WWW=		https://wiki.documentfoundation.org/DLP/Libraries/libpagemaker
 
 LICENSE=	MPL20
 

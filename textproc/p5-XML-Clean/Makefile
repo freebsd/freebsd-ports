@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Ensure, that *(HTML)* text pass throught an XML parser
+WWW=		https://metacpan.org/release/XML-Clean
 
 USES=		perl5
 USE_PERL5=	configure

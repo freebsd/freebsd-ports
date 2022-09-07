@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Base-class for SOAP implementations
+WWW=		https://metacpan.org/release/XML-Compile-SOAP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

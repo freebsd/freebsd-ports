@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 6 module that contains unsupported Qt 5 APIs
+WWW=		https://qt-project.org
 
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libdouble-conversion.so:devel/double-conversion \

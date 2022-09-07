@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very popular card game with variable skill levels
+WWW=		https://sourceforge.net/projects/euchre/
 
 LICENSE=	GPLv2
 

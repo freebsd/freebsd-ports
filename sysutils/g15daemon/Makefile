@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.com/menelkir/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Daemon for Logitech G15 Keyboards
+WWW=		https://gitlab.com/menelkir/g15daemon
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

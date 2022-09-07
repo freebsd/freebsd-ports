@@ -6,6 +6,7 @@ CATEGORIES=	astro
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Guiding software inspired by Stark Labs PHD Guiding
+WWW=		https://openphdguiding.org/
 
 LICENSE=	BSD3CLAUSE
 

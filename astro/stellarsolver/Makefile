@@ -4,6 +4,7 @@ CATEGORIES=	astro
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Astrometric Plate Solver built on Astrometry.net and SEP
+WWW=		https://github.com/rlancaste/stellarsolver
 
 LICENSE=	GPLv3
 

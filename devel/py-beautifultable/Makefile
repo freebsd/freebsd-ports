@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Print ASCII tables for terminals
+WWW=		https://github.com/pri22296/beautifultable
 
 LICENSE=	MIT
 

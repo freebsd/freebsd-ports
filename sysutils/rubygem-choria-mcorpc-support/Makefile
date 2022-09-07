@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Ruby support for the Choria Orchestration Server
+WWW=		https://rubygems.org/gems/choria-mcorpc-support
 
 LICENSE=	APACHE20
 

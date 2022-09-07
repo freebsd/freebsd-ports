@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
 COMMENT=	Log events to an array (reference)
+WWW=		https://metacpan.org/release/Log-Dispatchouli
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Creates an index of scalable font files for X
+WWW=		https://www.xfree86.org/4.3.0/mkfontscale.1.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

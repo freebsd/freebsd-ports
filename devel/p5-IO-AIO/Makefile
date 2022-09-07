@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Asynchronous/Advanced Input/Output
+WWW=		https://metacpan.org/release/IO-AIO
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

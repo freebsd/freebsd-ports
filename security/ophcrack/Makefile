@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Windows password cracker based on rainbow tables
+WWW=		http://ophcrack.sourceforge.net/
 
 LICENSE=	APACHE20 GPLv2
 LICENSE_COMB=	multi

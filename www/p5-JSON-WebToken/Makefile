@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	JSON Web Token (JWT) implementation
+WWW=		https://github.com/xaicron/p5-JSON-WebToken
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

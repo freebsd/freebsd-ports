@@ -5,6 +5,7 @@ CATEGORIES=	misc gnome
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	Gtk3 timezone map widget, forked from gnome which forked from Ubiquity
+WWW=		https://github.com/dashea/timezonemap
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

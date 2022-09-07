@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Test::WWW::Mechanize for CGIApp
+WWW=		https://metacpan.org/release/Test-WWW-Mechanize-CGIApp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

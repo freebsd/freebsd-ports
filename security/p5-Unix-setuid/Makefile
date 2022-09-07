@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Get/set real/effective UID/username via (localizeable) variable
+WWW=		https://metacpan.org/release/Unix-setuid
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

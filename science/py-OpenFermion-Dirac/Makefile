@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interface between OpenFermion and Dirac
+WWW=		https://github.com/bsenjean/Openfermion-Dirac
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

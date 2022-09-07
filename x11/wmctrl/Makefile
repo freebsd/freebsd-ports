@@ -6,6 +6,7 @@ MASTER_SITES=	http://sweb.cz/tripie/utils/wmctrl/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool to interact with an EWMH/NetWM compatible X managers
+WWW=		http://sweb.cz/tripie/utils/wmctrl/
 
 LICENSE=	GPLv2
 

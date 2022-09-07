@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Digital model of electronic string ensemble instrument
+WWW=		https://github.com/jpcima/string-machine
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Vietnamese hunspell dictionaries
+WWW=		https://github.com/1ec5/hunspell-vi
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://w140.com/audio/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find similar music by perceptual hashing
+WWW=		https://www.w140.com/audio/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

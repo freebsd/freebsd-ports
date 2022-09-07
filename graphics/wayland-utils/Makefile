@@ -8,6 +8,7 @@ PATCHFILES+=	d367b894f9c8.patch:-p1 # https://gitlab.freedesktop.org/wayland/way
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Display information about protocols supported by Wayland compositor
+WWW=		https://gitlab.freedesktop.org/wayland/wayland-utils
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

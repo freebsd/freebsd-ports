@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++11/C++14 multiplatform utility library
+WWW=		https://magnum.graphics/corrade/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

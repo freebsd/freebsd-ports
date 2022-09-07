@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	lobo@bsd.com.br
 COMMENT=	Fork of apcupsd 3.14.x with support for Brazilian APC nobreaks
+WWW=		http://www.apcctrl.com.br
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

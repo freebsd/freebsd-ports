@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Photobooth-inspired app for taking pictures and videos from webcam
+WWW=		https://www.gnome.org/projects/cheese/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

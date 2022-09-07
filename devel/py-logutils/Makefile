@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Handlers for the Python standard library logging package
+WWW=		https://bitbucket.org/vinay.sajip/logutils/
 
 LICENSE=	BSD3CLAUSE
 

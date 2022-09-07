@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	sunpoet@freeBSD.org
 COMMENT=	MVC framework written as a C PHP extension
+WWW=		https://pecl.php.net/package/yaf
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

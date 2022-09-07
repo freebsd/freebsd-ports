@@ -5,6 +5,7 @@ MASTER_SITES=	http://devel.ringlet.net/x11/wmanager-addons/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper scripts and documentation for the X11 window manager selector
+WWW=		https://devel.ringlet.net/x11/wmanager-addons/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

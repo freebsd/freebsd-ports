@@ -2,6 +2,7 @@ PKGNAMESUFFIX=	-motif
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif interface for TiMidity++
+WWW=		http://timidity.sourceforge.net/
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 

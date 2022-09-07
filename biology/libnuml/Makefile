@@ -5,6 +5,7 @@ CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for Numerical Markup Language
+WWW=		https://github.com/NuML/NuML
 
 LICENSE=	LGPL21
 

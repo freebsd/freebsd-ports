@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictionary client for Emacs
+WWW=		https://www.myrkr.in-berlin.de/dictionary/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL

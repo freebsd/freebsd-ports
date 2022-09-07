@@ -7,6 +7,7 @@ MASTER_SITES=	http://fmv.jku.at/${PORTNAME}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple CDCL satisfiability solver
+WWW=		http://fmv.jku.at/cadical/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

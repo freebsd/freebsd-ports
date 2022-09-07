@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	kurt@kmk-computers.de
 COMMENT=	Simple PDF viewer uses as much available screen space as possible
+WWW=		https://gitlab.cs.fau.de/Qui_Sum/katarakt
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

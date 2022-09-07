@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for process runner with RAII pattern
+WWW=		https://metacpan.org/release/Proc-Guard
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

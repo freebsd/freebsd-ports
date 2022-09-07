@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight C++ command line option parser
+WWW=		https://github.com/jarro2783/cxxopts
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTFILES=	${CUBE_DATA} ${CUBE_SRC}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL 3D FPS (first person shooter) game
+WWW=		http://www.cubeengine.com/
 
 LIB_DEPENDS=	libenet.so:net/enet
 

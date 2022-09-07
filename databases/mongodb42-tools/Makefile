@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Tools for MongoDB 4.2.x
+WWW=		https://github.com/mongodb/mongo-tools
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

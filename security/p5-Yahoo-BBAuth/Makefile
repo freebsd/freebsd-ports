@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to the Yahoo! Browser-Based Authentication
+WWW=		https://metacpan.org/release/Yahoo-BBAuth
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

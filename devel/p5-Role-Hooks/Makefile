@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Role callbacks
+WWW=		https://metacpan.org/dist/Role-Hooks
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

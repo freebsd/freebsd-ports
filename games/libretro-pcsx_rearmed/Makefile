@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Fork of PCSX with ARM optimizations
+WWW=		https://github.com/libretro/pcsx_rearmed
 
 LICENSE=	GPLv2
 

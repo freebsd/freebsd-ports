@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby code generation framework
+WWW=		https://github.com/jnicklas/templater
 
 LICENSE=	MIT
 

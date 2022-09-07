@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Simple markdown viewer, written in Vala and GTK 3
+WWW=		https://github.com/craigbarnes/showdown
 
 LICENSE=	GPLv3
 

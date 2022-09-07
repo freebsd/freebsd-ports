@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.gz
 
 MAINTAINER=	t@nakao.org
 COMMENT=	Yet another Canna client for Emacs
+WWW=		http://www.ceres.dti.ne.jp/~knak/yc.html
 
 USES=		emacs
 EMACS_FLAVORS_EXCLUDE=	devel_full devel_nox # fail to build

@@ -8,6 +8,7 @@ DISTNAME=	smf-sav-reloaded-${PORTVERSION}
 
 MAINTAINER=	sasaki12@gmail.com
 COMMENT=	Sendmail Sender Address Validator
+WWW=		http://smf-sav.anw.at/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

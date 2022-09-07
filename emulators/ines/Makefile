@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo Entertainment System emulator for X11
+WWW=		https://fms.komkon.org/iNES/
 
 LIB_DEPENDS=	libc.so.5:misc/compat5x
 

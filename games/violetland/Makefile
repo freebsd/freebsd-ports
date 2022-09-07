@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Top-down survival shoot 'em up
+WWW=		https://violetland.github.io/
 
 LICENSE=	GPLv3 CC-BY-SA-3.0
 LICENSE_COMB=	multi

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Access to kernel level POSIX thread id
+WWW=		http://www.grosbein.net/pthread/
 
 LICENSE=	ARTPERL10
 

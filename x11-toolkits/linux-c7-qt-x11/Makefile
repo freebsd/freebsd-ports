@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-x11
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Cross-platform application and UI framework (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://qt-project.org
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes

@@ -12,6 +12,7 @@ PATCHFILES+=	ee748fec3adf.patch:-p1 # https://github.com/Hjdskes/cage/pull/197
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland kiosk
+WWW=		https://www.hjdskes.nl/projects/cage/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

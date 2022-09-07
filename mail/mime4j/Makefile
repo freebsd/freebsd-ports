@@ -7,6 +7,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java parser for e-mail message streams
+WWW=		https://james.apache.org/mime4j/
 
 LICENSE=	APACHE20
 

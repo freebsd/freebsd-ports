@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module implementing lanman and nt md4 hash functions
+WWW=		https://metacpan.org/release/Crypt-SmbHash
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

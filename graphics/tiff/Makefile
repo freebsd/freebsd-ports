@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.osgeo.org/libtiff/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
+WWW=		http://www.simplesystems.org/libtiff/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

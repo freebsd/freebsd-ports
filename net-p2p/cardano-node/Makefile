@@ -4,6 +4,7 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Core component of the Cardano decentralized blockchain
+WWW=		https://cardano.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

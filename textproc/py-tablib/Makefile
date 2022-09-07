@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Format agnostic tabular data library (XLS, JSON, YAML, CSV)
+WWW=		https://github.com/jazzband/tablib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

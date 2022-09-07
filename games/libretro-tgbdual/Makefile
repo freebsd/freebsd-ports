@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Open-source GB/GBC emulator with game link support
+WWW=		https://github.com/libretro/tgbdual-libretro
 
 LICENSE=	GPLv2
 

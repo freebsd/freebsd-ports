@@ -7,6 +7,7 @@ MASTER_SITES=	https://git.sr.ht/~exec64/${PORTNAME}/archive/${DISTVERSIONFULL}${
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple image viewer
+WWW=		https://sr.ht/~exec64/imv/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

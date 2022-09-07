@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of Rijndael
+WWW=		https://metacpan.org/release/Crypt-Rijndael_PP
 
 USES=		perl5
 USE_PERL5=	configure

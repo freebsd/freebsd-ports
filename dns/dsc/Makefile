@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Tool used for collecting and exploring statistics from DNS servers
+WWW=		https://www.dns-oarc.net/tools/dsc/
 
 LICENSE=	BSD3CLAUSE
 

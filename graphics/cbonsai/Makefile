@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Bonsai tree generator, written in C using ncurses
+WWW=		https://gitlab.com/jallbrit/cbonsai
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

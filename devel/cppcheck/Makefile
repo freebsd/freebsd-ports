@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT?=	Static analysis of C/C++ code
+WWW=		https://cppcheck.sourceforge.io/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

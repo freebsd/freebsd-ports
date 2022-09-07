@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern library for 3D data processing (Python binding)
+WWW=		http://www.open3d.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE

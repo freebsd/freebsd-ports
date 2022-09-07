@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alex@xanderio.de
 COMMENT=	Hierarchical key-value store for django
+WWW=		https://github.com/raphaelm/django-hierarkey
 
 LICENSE=	APACHE20
 

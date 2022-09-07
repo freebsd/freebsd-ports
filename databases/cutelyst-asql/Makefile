@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	cutelyst-
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Qt async SQL library (for Postgres)
+WWW=		https://github.com/cutelyst/asql
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

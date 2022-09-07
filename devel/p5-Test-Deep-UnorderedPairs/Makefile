@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Plugin for Test::Deep to compare unordered lists of tuples
+WWW=		https://metacpan.org/release/Test-Deep-UnorderedPairs
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

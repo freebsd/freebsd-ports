@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Common S3 Generics not Provided by Base R Methods
+WWW=		https://cran.r-project.org/web/packages/generics/
 
 LICENSE=	MIT
 

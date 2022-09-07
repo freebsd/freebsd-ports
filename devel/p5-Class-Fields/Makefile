@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Functions/methods for examining data members of a class
+WWW=		https://metacpan.org/release/Class-Fields
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

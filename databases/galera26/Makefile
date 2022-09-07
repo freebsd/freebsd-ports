@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	26
 
 MAINTAINER=	devel@galeracluster.com
 COMMENT=	Synchronous multi-master replication engine
+WWW=		https://galeracluster.com/
 
 LICENSE=	GPLv2
 

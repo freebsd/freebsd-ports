@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Library of web-related functions
+WWW=		https://github.com/scrapy/w3lib/
 
 LICENSE=	BSD3CLAUSE
 

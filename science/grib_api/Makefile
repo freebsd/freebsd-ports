@@ -8,6 +8,7 @@ MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/3473437/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ECMWF API for WMO FM-92 GRIB messages
+WWW=		https://confluence.ecmwf.int/display/GRIB
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

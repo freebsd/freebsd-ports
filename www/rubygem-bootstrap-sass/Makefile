@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Bootstrap by Twitter
+WWW=		https://github.com/twbs/bootstrap-sass
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Manage your own package jail
+WWW=		https://people.freebsd.org/~dinoex/batch/README.txt
 
 LICENSE=	BSD3CLAUSE
 

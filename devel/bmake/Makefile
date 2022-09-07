@@ -5,6 +5,7 @@ MASTER_SITES=	https://ftp.netbsd.org/pub/NetBSD/misc/sjg/
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Portable version of NetBSD 'make' utility
+WWW=		https://www.crufty.net/help/sjg/bmake.html
 
 LICENSE=	BSD3CLAUSE
 

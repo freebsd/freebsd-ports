@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH/alive
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto login/Keep-alive for Telia AB ADSL, COMHEM Cable, and Tiscali Internet
+WWW=		https://www.gnu.org/software/alive/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

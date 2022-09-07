@@ -7,6 +7,7 @@ DISTNAME=	XStatic-Angular-Bootstrap-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Angular-Bootstrap (XStatic packaging standard)
+WWW=		https://angular-ui.github.io/bootstrap/
 
 LICENSE=	MIT
 

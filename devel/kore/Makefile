@@ -5,6 +5,7 @@ MASTER_SITES=	https://kore.io/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web application framework for writing web APIs in C
+WWW=		http://www.kore.io/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

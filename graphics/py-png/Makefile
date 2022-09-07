@@ -7,6 +7,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Python PNG encoder/decoder
+WWW=		https://github.com/drj11/pypng
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Top like program monitor for NATS
+WWW=		https://github.com/nats-io/nats-top
 
 LICENSE=	MIT
 

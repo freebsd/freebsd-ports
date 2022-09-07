@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database of all known IDs used in USB devices
+WWW=		http://www.linux-usb.org/
 
 LICENSE=	BSD3CLAUSE GPLv2+
 LICENSE_COMB=	dual

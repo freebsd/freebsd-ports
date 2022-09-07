@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Create stacked configuration structures
+WWW=		https://github.com/conversis/varstack
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

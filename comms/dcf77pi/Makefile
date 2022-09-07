@@ -6,6 +6,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	DCF77 receiver/logger/analyzer and library for the Raspberry Pi
+WWW=		https://github.com/rene0/dcf77pi
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

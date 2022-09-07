@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to pack your dependencies onto your script file
+WWW=		https://metacpan.org/release/App-FatPacker
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

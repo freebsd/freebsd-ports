@@ -4,6 +4,7 @@ CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Simple (yet powerful) Qt5 feed reader
+WWW=		https://github.com/martinrotter/rssguard
 
 LICENSE=	GPLv3+
 

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Mocking library for requests
+WWW=		https://github.com/patrys/httmock
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

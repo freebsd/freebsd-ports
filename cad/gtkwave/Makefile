@@ -5,6 +5,7 @@ MASTER_SITES=	http://gtkwave.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Waveform Viewer
+WWW=		http://gtkwave.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

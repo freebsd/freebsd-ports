@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
+WWW=		https://www.isc.org/bind/
 
 # Uncomment when bind920 comes of age.
 # DEPRECATED=	End of life, please migrate to a newer version of BIND9

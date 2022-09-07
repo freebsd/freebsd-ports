@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for generating various statistics on emails
+WWW=		https://www.marki-online.net/MLS/
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: r_base64
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: r_base64

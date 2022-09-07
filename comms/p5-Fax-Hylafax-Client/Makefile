@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple Perl client for the HylaFAX fax server
+WWW=		https://metacpan.org/release/Fax-Hylafax-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

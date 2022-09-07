@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/juzzlin/Heimer/releases/download/${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple mind map, diagram, and note-taking tool
+WWW=		https://github.com/juzzlin/Heimer
 
 LICENSE=	CC-BY-SA-3.0 GPLv3+
 LICENSE_COMB=	multi

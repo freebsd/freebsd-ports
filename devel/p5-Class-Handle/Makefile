@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Create objects that are handles to classes
+WWW=		https://metacpan.org/release/Class-Handle
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

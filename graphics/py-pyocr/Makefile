@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python wrapper for OCR engines (Tesseract, Cuneiform, etc)
+WWW=		https://gitlab.gnome.org/World/OpenPaperwork/pyocr
 
 LICENSE=	GPLv3
 

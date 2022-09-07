@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@saltant.com
 COMMENT=	Format dates and times in Flask templates using moment.js
+WWW=		https://github.com/miguelgrinberg/Flask-Moment
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Network monitoring library with TCP/IP reassembly
+WWW=		http://libnids.sf.net
 
 LIB_DEPENDS=	libnet.so:net/libnet
 

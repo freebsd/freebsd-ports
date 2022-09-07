@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Unofficial build of FCEU Ultra by CaH4e3
+WWW=		https://github.com/libretro/libretro-fceumm
 
 LICENSE=	GPLv2
 

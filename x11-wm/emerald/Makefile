@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/x11-wm/emerald/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Emerald Window Decorator
+WWW=		http://www.beryl-project.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

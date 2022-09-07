@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	Cross-platform application for configuring any YubiKey
+WWW=		https://developers.yubico.com/yubikey-manager-qt/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

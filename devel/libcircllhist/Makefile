@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Circonus log-linear histogram C implementation
+WWW=		https://github.com/circonus-labs/libcircllhist
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

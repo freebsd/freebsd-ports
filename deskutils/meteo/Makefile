@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Weather forecast application using OpenWeatherMap API
+WWW=		https://gitlab.com/bitseater/meteo
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

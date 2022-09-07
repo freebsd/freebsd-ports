@@ -6,6 +6,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Telegram API tools for QtQML and Qml
+WWW=		https://github.com/Aseman-Land/TelegramQML
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

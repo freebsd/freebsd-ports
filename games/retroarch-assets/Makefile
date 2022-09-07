@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Graphical assets and official branding for RetroArch
+WWW=		https://github.com/libretro/retroarch-assets
 
 LICENSE=	CC-BY-4.0
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create or parse Google SAML requests
+WWW=		https://metacpan.org/release/Google-SAML-Request
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

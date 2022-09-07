@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.hep.ucl.ac.uk/~bino/libbpm/dist/
 
 MAINTAINER=	i@levsha.me
 COMMENT=	C-library contains low level beam position monitor signal processing
+WWW=		https://www.hep.ucl.ac.uk/~bino/libbpm/
 
 GNU_CONFIGURE=	yes
 

@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
+WWW=		https://motif.ics.com/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber

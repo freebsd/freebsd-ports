@@ -5,6 +5,7 @@ MASTER_SITES=	http://verplant.org/onis/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script that converts IRC logfiles into an HTML statistics page
+WWW=		https://verplant.org/onis/
 
 USES=		perl5
 NO_BUILD=	yes

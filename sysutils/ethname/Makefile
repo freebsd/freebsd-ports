@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	eborisch@gmail.com
 COMMENT=	MAC-based network name pinning
+WWW=		https://github.com/eborisch/ethname
 
 LICENSE=	MIT
 

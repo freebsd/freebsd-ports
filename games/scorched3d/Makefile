@@ -7,6 +7,7 @@ DISTNAME=	Scorched3D-${SCORCH_VERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D version of the classic DOS game Scorched Earth
+WWW=		http://www.scorched3d.co.uk/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing COLLADA files
+WWW=		http://opencollada.org/
 
 LICENSE=	MIT
 

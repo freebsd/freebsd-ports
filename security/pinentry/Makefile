@@ -6,6 +6,7 @@ MASTER_SITES=	GNUPG/pinentry
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Collection of simple PIN or passphrase entry dialogs
+WWW=		https://www.gnupg.org/aegypten2
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

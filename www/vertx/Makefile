@@ -7,6 +7,7 @@ DISTNAME=	vert.x-${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Effortless asynchronous application development for the modern web
+WWW=		https://vertx.io/
 
 LICENSE=	APACHE20
 

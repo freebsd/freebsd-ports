@@ -8,6 +8,7 @@ DISTNAME=	dn${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-system emulator
+WWW=		http://www.dridus.com/~nyef/darcnes/
 
 # Converted from NO_CDROM
 LICENSE=	darcnes-license

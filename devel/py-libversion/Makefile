@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Python bindings for libversion
+WWW=		https://pypi.org/project/libversion/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

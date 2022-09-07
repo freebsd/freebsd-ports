@@ -5,6 +5,7 @@ MASTER_SITES=	https://elpa.mpcdf.mpg.de/software/tarball-archive/Releases/${DIST
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Eigenvalue soLver for Petaflop Applications
+WWW=		https://elpa.mpcdf.mpg.de/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual

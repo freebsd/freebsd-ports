@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	SHARP X68000 libretro core
+WWW=		https://github.com/libretro/px68k-libretro
 
 LICENSE=	GPLv2
 

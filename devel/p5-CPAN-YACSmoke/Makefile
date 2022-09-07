@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet Another CPAN Smoke Tester
+WWW=		https://metacpan.org/release/RRWO/CPAN-YACSmoke-0.03_07
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

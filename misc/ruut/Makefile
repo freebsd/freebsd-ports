@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Print arbitrary trees on the command line
+WWW=		https://github.com/HarrisonB/ruut
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

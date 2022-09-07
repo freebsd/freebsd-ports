@@ -5,6 +5,7 @@ MASTER_SITES=	https://releases.pagure.org/tmpwatch/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for removing files based on when they were last accessed
+WWW=		https://pagure.io/tmpwatch
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

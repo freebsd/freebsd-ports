@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small library intended for internal use by GNOME Games
+WWW=		https://git.gnome.org/browse/libgnome-games-support
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google API Extensions
+WWW=		https://github.com/googleapis/gax-ruby
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/Open%20DC%20Hub/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial Unix version of the Direct Connect Hub software
+WWW=		http://opendchub.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

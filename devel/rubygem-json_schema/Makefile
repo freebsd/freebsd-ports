@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	JSON Schema V4 and Hyperschema V4 parser and validator
+WWW=		https://github.com/brandur/json_schema
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

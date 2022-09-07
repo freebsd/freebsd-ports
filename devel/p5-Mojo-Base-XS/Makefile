@@ -6,6 +6,7 @@ MASTER_SITE_SUBDIR= 	CPAN:YKO
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Very fast Mojo-style accessors
+WWW=		https://metacpan.org/pod/Mojo::Base::XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

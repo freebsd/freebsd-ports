@@ -6,6 +6,7 @@ MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/${PORTVERSION}/
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Low level XML support for SAML
+WWW=		https://wiki.shibboleth.net/confluence/display/OpenSAML/XMLTooling-C
 
 LICENSE=	APACHE20
 

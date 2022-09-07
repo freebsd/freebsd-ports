@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Command-line HTML processor, similar to jq
+WWW=		https://github.com/mgdm/htmlq
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Base class for loading, manipulating, and saving images
+WWW=		https://metacpan.org/release/Image-Base
 
 LICENSE=	LGPL3
 

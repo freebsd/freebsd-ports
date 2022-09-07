@@ -6,6 +6,7 @@ MASTER_SITES=	https://notmuchmail.org/releases/
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT?=	Thread-based email index, search and tagging application
+WWW=		https://notmuchmail.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/${WRKSRC_SUBDIR:C/[^\/]+/../g}/COPYING-GPL-3

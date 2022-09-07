@@ -11,6 +11,7 @@ PATCH_SITES=	https://github.com/libharu/libharu/pull/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Haru Free PDF Library
+WWW=		http://libharu.org/
 
 LICENSE=	ZLIB
 

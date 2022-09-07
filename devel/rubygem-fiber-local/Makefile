@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provide a class-level mixin to make fiber local state easy
+WWW=		https://github.com/socketry/fiber-local
 
 LICENSE=	MIT
 

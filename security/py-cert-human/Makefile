@@ -7,6 +7,7 @@ DISTNAME=	cert_human-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SSL Certificates for Humans
+WWW=		https://github.com/lifehackjim/cert_human
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

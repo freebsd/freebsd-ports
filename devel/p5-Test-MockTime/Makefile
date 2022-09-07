@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Replaces actual time with simulated time
+WWW=		https://metacpan.org/release/Test-MockTime
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

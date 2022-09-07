@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP client and server library
+WWW=		https://github.com/socketry/async-http
 
 LICENSE=	MIT
 

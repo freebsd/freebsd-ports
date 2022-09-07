@@ -5,6 +5,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Simple Go SMTP relay/proxy server
+WWW=		https://github.com/decke/smtprelay
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

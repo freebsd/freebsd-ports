@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.clovery.jp/tiarra/archive/2010/02/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	IRC Proxy software
+WWW=		https://www.clovery.jp/tiarra/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

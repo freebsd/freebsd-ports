@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides zlib functionality in an iostream
+WWW=		https://www.cs.unc.edu/Research/compgeom/gzstream/
 
 LICENSE=	LGPL21
 

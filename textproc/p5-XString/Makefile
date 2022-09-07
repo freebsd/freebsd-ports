@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Isolated String helpers from B
+WWW=		https://metacpan.org/release/XString
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

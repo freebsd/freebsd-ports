@@ -7,6 +7,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Python module to handle standardized numbers and codes
+WWW=		https://pypi.org/project/python-stdnum/
 
 LICENSE=	LGPL21
 

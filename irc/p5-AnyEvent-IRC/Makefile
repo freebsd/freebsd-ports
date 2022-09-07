@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Event system independent IRC protocol module
+WWW=		https://metacpan.org/release/AnyEvent-IRC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

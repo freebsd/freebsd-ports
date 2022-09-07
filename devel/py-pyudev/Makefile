@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Pure Python libudev binding
+WWW=		https://pyudev.readthedocs.org
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

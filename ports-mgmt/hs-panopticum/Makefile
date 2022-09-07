@@ -5,6 +5,7 @@ CATEGORIES=	ports-mgmt haskell
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Query port information with every combination of OPTIONS
+WWW=		https://foss.heptapod.net/bsdutils/panopticum
 
 LICENSE=	BSD3CLAUSE
 

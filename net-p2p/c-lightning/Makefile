@@ -9,6 +9,7 @@ CATEGORIES=	net-p2p finance
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Lightning Network implementation in C
+WWW=		https://github.com/ElementsProject/lightning
 
 LICENSE=	MIT
 

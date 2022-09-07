@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.net.princeton.edu/software/dhcp_probe/
 
 MAINTAINER=	khung@nullaxiom.com
 COMMENT=	Attempts to discover DHCP and BootP servers on a network
+WWW=		https://www.net.princeton.edu/software/dhcp_probe/
 
 LICENSE=	GPLv2 LGPL20 addl
 LICENSE_COMB=	multi

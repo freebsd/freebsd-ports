@@ -7,6 +7,7 @@ CATEGORIES=	biology
 # See https://github.com/PacificBiosciences/ccs.
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PacBio BAM C++ library, with SWIG bindings
+WWW=		https://github.com/PacificBiosciences/pbbam
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ library for Limited Error Raster Compression
+WWW=		https://esri.github.io/lerc/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

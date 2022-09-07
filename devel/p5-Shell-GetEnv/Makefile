@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extract shell environment after executing commands
+WWW=		https://metacpan.org/release/Shell-GetEnv
 
 LICENSE=	GPLv3+
 

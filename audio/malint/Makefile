@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.nih.at/malint/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	MPEG Audio stream validator
+WWW=		https://www.nih.at/malint/
 
 LICENSE=	GPLv2
 

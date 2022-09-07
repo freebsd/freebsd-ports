@@ -7,6 +7,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jockl@pianojockl.org
 COMMENT=	Remove duplicates and other lint from your filesystem
+WWW=		https://rmlint.readthedocs.io/en/latest/
 
 LICENSE=	GPLv3
 

@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Fast MegaDrive/MegaCD/32X emulator
+WWW=		https://github.com/libretro/picodrive
 
 LICENSE=	MAME-License
 LICENSE_NAME=	MAME license

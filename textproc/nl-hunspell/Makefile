@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Dutch hunspell dictionaries
+WWW=		https://www.opentaal.org/bestanden
 
 LICENSE=	BSD2CLAUSE CC-BY-3.0
 LICENSE_COMB=	dual

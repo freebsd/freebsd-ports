@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Assert the referential identity of a reference
+WWW=		https://metacpan.org/release/Test-Identity
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

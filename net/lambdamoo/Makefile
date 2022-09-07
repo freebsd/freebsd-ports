@@ -7,6 +7,7 @@ DISTNAME=	LambdaMOO-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The most commonly used program to run MOOs
+WWW=		https://www.moo.mud.org/
 
 USES=		bison
 GNU_CONFIGURE=	yes

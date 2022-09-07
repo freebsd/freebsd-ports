@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Perl interface to the GOST R 34.11-94 digest algorithm
+WWW=		https://metacpan.org/release/Digest-GOST
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

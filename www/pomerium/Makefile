@@ -7,6 +7,7 @@ CATEGORIES=	www
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Identity-aware access proxy
+WWW=		https://pomerium.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

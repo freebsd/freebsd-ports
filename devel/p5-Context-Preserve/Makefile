@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run code after a subroutine call, preserving the context the subroutine
+WWW=		https://metacpan.org/release/Context-Preserve
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

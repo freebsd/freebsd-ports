@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mason per-component profiler
+WWW=		https://metacpan.org/release/MasonX-Profiler
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Mason>=0:www/p5-HTML-Mason

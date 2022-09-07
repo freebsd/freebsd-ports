@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pure python implementation of the BiDi layout algorithm
+WWW=		https://github.com/MeirKriheli/python-bidi
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for performing transliteration
+WWW=		https://github.com/zzzsochi/trans
 
 LICENSE=	BSDunclear
 LICENSE_NAME=	Unclear BSD License

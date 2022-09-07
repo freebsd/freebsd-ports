@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Project automation tool
+WWW=		https://www.gradle.org/
 
 LICENSE=	APACHE20
 

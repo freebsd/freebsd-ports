@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP client api for Ruby
+WWW=		https://github.com/ruby/net-http
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

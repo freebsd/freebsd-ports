@@ -6,6 +6,7 @@ DISTNAME=	Sonarr.main.${PORTVERSION}.linux
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	PVR for Usenet and BitTorrent users
+WWW=		https://sonarr.tv
 
 LICENSE=	GPLv3
 

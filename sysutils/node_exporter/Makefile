@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dor.bsd@xm0.uk
 COMMENT=	Prometheus exporter for machine metrics
+WWW=		https://github.com/prometheus/node_exporter
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

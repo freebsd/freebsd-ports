@@ -4,6 +4,7 @@ CATEGORIES=	chinese
 
 MAINTAINER=	eric@camachat.org
 COMMENT=	Chewing engine for IBus
+WWW=		https://github.com/definite/ibus-chewing
 
 LICENSE=	GPLv2
 

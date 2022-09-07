@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Generic sexp processing tools
+WWW=		https://github.com/seattlerb/sexp_processor
 
 LICENSE=	MIT
 

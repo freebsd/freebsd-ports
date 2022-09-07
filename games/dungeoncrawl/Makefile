@@ -7,6 +7,7 @@ DISTNAME=	dc${PORTVERSION:S/.//g}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old school roguelike game
+WWW=		http://www.dungeoncrawl.org/
 
 WRKSRC_SUBDIR=	source
 

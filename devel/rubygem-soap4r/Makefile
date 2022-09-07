@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby implementation of SOAP 1.1
+WWW=		https://github.com/felipec/soap4r
 
 LICENSE=	GPLv2+ RUBY
 LICENSE_COMB=	dual

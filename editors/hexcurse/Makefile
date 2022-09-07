@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Versatile ncurses-based hex editor
+WWW=		https://BSDforge.com/projects/editors/hexcurse/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

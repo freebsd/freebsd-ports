@@ -8,6 +8,7 @@ DISTNAME=	stuffit520.611linux-i386
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stuffit Archive Creator and Expander
+WWW=		https://my.smithmicro.com/unix/stuffit/
 
 # Converted from RESTRICTED
 LICENSE=	STUFFIT

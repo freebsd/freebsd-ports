@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU astronomy utilities and library
+WWW=		https://www.gnu.org/software/gnuastro/
 
 LICENSE=	GPLv3+
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple RADIUS authentication
+WWW=		https://metacpan.org/release/Authen-Simple-RADIUS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

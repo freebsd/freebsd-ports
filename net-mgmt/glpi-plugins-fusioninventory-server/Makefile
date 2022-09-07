@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	glpi-plugins-fusioninventory-
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Plugin of glpi to get information of networking devices
+WWW=		https://fusioninventory.org/
 
 LICENSE=	AGPLv3
 

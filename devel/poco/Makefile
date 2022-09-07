@@ -6,6 +6,7 @@ MASTER_SITES=	https://pocoproject.org/releases/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	C++ libraries with a network/internet focus
+WWW=		https://pocoproject.org/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

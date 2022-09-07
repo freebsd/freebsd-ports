@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Volume management daemon for Xfce using PulseAudio
+WWW=		https://git.xfce.org/apps/xfce4-volumed-pulse/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

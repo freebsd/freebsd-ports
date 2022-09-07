@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
+WWW=		https://pear.phing.info
 
 PEAR_CHANNEL_HOST=	pear.phing.info
 

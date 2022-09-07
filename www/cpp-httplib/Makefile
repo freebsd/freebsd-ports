@@ -5,6 +5,7 @@ CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only HTTP/HTTPS server and client library
+WWW=		https://github.com/yhirose/cpp-httplib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

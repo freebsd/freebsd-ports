@@ -6,6 +6,7 @@ CATEGORIES=		net www benchmarks
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Small command line client that tests OONI's functionality
+WWW=		https://ooni.org/about/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

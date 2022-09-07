@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jt@ixsystems.com
 COMMENT=	TrueOS QT5 Library
+WWW=		https://github.com/trueos/trueos-libqt5
 
 LICENSE=	BSD2CLAUSE
 

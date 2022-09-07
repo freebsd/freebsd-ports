@@ -7,6 +7,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Player for many different Amiga and PC module formats
+WWW=		http://xmp.sourceforge.net/
 
 LICENSE=	GPLv2
 

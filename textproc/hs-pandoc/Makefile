@@ -5,6 +5,7 @@ CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Conversion between markup formats
+WWW=		https://pandoc.org
 
 LICENSE=	GPLv2
 

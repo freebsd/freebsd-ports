@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	me@cameronkatri.com
 COMMENT=	BSD-licensed replacement for dircolors
+WWW=		https://github.com/CRKatri/opendircolors
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

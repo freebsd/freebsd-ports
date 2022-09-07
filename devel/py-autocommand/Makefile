@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create a command-line program from a function
+WWW=		https://github.com/Lucretiel/autocommand
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

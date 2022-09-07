@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Inspect and manipulate a Path based on a Package name
+WWW=		https://metacpan.org/release/Devel-PackagePath
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

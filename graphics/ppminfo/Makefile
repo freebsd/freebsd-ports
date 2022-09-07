@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.vanheusden.com/ppminfo/ CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows details of a ppm file
+WWW=		http://www.vanheusden.com/ppminfo/
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 

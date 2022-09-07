@@ -5,6 +5,7 @@ MASTER_SITES=	SF/sblim/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI for Web Based Enterprise Management by SBLIM
+WWW=		https://sourceforge.net/projects/sblim/
 
 BUILD_DEPENDS=	libwww-config:www/libwww
 LIB_DEPENDS=	libcurl.so:ftp/curl

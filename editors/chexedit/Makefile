@@ -8,6 +8,7 @@ DISTNAME=	hexedit-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Full screen text mode Hex editor using the [n]curses library
+WWW=		http://www.rogoyski.com/adam/programs/hexedit/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	GObject-based wrapper around Exiv2 library
+WWW=		https://wiki.gnome.org/Projects/gexiv2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

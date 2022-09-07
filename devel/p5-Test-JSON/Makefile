@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test JSON data
+WWW=		https://metacpan.org/release/Test-JSON
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

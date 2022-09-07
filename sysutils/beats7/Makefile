@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	7
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Send logs, network, metrics and heartbeat to elasticsearch or logstash
+WWW=		https://www.elastic.co/products/beats/
 
 LICENSE=	APACHE20
 

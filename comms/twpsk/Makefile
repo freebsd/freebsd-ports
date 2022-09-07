@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	X psk31 client
+WWW=		http://wa0eir.bcts.info/twpsk.html
 
 LICENSE=	GPLv3
 

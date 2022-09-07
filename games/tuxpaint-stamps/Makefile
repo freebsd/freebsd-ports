@@ -5,6 +5,7 @@ MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION:S|.|-|g}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	TuxPaint Stamps
+WWW=		https://www.tuxpaint.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt

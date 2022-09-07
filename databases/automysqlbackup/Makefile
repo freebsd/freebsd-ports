@@ -6,6 +6,7 @@ MASTER_SITES=	SF/automysqlbackup/AutoMySQLBackup/AutoMySQLBackup%20VER%203.0
 
 MAINTAINER=	me@cschwarz.com
 COMMENT=	Automatic MySQL Backup Tool
+WWW=		https://sourceforge.net/projects/automysqlbackup
 
 LICENSE=	GPLv2
 

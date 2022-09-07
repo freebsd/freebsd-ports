@@ -4,6 +4,7 @@ CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde MIME Viewer Library
+WWW=		https://pear.horde.org
 
 CONFLICTS=	horde-3*
 

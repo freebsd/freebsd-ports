@@ -5,6 +5,7 @@ CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tools and demos for the Vulkan graphics API
+WWW=		https://github.com/KhronosGroup/Vulkan-Tools
 
 LICENSE=	APACHE20
 

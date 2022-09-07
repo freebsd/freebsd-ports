@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Golang terminal emulator from scratch
+WWW=		https://github.com/liamg/aminal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

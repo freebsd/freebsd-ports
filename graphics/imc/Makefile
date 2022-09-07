@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.peterverthez.net/projects/imc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Compiler
+WWW=		http://users.skynet.be/Peter.Verthez/projects/imc/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

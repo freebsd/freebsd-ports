@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated mail, calendar and address book distributed suite
+WWW=		https://wiki.gnome.org/Apps/Evolution
 
 LICENSE=	GFDL GPLv2+ LGPL21+ MPL11 OPENLDAP
 LICENSE_COMB=	multi

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	ZFS Snapshot Replication Script
+WWW=		https://github.com/leprechau/zfs-replicate
 
 RUN_DEPENDS=	bash:shells/bash
 

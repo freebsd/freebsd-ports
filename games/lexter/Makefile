@@ -6,6 +6,7 @@ MASTER_SITES=	SUNSITE/games/arcade
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time word puzzle for text terminals
+WWW=		https://www.kyne.com.au/~mark/software/lexter.php
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

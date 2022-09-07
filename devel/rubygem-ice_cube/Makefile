@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Recurring date library for Ruby
+WWW=		https://github.com/seejohnrun/ice_cube
 
 LICENSE=	MIT
 

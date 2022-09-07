@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to browse, transform and manipulate Guido scores
+WWW=		https://github.com/grame-cncm/guidoar
 
 LICENSE=	MPL20
 

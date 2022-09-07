@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-zero/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converter from MS Word to text, HTML, or LaTeX
+WWW=		http://word2x.sourceforge.net/
 
 USES=		gmake
 GNU_CONFIGURE=	yes

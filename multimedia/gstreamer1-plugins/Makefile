@@ -14,6 +14,7 @@ PKGNAMESUFFIX?=	1-plugins${GST_PLUGIN_SUFFIX}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
+WWW=		https://gstreamer.freedesktop.org/
 
 LICENSE=	LGPL20
 

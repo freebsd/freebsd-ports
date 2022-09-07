@@ -5,6 +5,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/jailadmin/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Jail management system with optional SNMP support
+WWW=		https://BSDforge.com/projects/sysutils/jailadmin/
 
 LICENSE=	BSD2CLAUSE
 

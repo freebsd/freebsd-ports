@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Perl binding to modified RSA (yamrsa)
+WWW=		https://metacpan.org/release/Crypt-RSA-Yandex
 
 USES=	perl5
 USE_PERL5=	configure

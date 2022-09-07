@@ -4,6 +4,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	gspurki@gmail.com
 COMMENT=	SIMH based simulator for the Honeywell h6180/dps8m Multics processor
+WWW=		https://ringzero.wikidot.com
 
 LICENSE=	ICU
 LICENSE_NAME=	ICU license

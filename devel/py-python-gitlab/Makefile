@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Interact with GitLab API
+WWW=		https://github.com/python-gitlab/python-gitlab
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

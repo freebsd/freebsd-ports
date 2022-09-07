@@ -5,6 +5,7 @@ MASTER_SITES=	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	cfengine sample policies for installations and upgrades
+WWW=		https://cfengine.com/
 
 LICENSE=	GPLv3
 

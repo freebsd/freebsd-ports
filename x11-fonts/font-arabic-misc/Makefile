@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org miscellaneous Arabic fonts
+WWW=		https://www.x.org/
 
 USES=		xorg-cat:font
 

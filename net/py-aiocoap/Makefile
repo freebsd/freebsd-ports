@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Python CoAP library
+WWW=		https://github.com/chrysn/aiocoap
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

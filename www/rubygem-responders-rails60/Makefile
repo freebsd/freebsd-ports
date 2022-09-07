@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails60
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple Ruby DSL for making HTTP requests
+WWW=		https://github.com/heartcombo/responders
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

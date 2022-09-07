@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Like cowsay but with random anime quotes
+WWW=		https://github.com/irevenko/weebsay
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

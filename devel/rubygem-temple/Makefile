@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Template compilation framework in Ruby
+WWW=		https://github.com/judofyr/temple
 
 LICENSE=	MIT
 

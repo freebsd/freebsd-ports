@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	mark@foster.cc
 COMMENT=	DNS debugger - requests a zone transfer and analyzes the result
+WWW=		https://sourceforge.net/projects/dnswalk/
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

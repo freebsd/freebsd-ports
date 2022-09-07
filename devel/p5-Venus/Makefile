@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OO Library
+WWW=		https://metacpan.org/dist/Venus
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

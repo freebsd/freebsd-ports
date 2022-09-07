@@ -10,6 +10,7 @@ GH_PROJECT=	transgui
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Remote GUI for transmission daemon
+WWW=		https://github.com/transmission-remote-gui/transgui
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

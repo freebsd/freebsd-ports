@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jjachuf@gmail.com
 COMMENT=	Python DBAPI module for FirebirdSQL
+WWW=		https://github.com/nakagami/pyfirebirdsql
 
 LICENSE=	BSD2CLAUSE
 

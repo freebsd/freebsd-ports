@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Efficiently compute time from local and GMT time
+WWW=		https://metacpan.org/pod/Time::timegm
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

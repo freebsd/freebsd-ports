@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.colm.net/files/${PORTNAME}/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Compile regular languages into executable C/C++ code
+WWW=		http://www.complang.org/ragel/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

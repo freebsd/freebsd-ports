@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interpolate Perl variables into SQL with DBI
+WWW=		https://metacpan.org/release/SQL-Interp
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

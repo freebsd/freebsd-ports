@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Synthesizable Verilog to C++ compiler
+WWW=		https://www.veripool.org/projects/verilator/wiki/Intro
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

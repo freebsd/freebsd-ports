@@ -11,6 +11,7 @@ PATCHFILES=	2883770ae46731a2a94cd41e6d01d32cec6f1f21.patch:-p1 \
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	FreeBSD jail manager written in Python3
+WWW=		https://github.com/iocage/iocage
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

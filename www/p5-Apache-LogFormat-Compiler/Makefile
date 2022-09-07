@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compile a log format string to perl-code
+WWW=		https://metacpan.org/release/Apache-LogFormat-Compiler
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

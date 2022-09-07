@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	API and tools for communicating with Lego and Vex robots
+WWW=		http://personalpages.tds.net/~jwbacon/Ports
 
 LICENSE=	GPLv3
 

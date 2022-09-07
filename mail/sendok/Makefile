@@ -6,6 +6,7 @@ MASTER_SITES=	http://peff.net/sendok/ \
 
 MAINTAINER=	zakj@nox.cx
 COMMENT=	Generates qmail email addresses with timed cookies
+WWW=		https://peff.net/sendok/
 
 USES=		qmail:run
 

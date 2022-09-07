@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fork of Official OmniAuth strategy for GitHub
+WWW=		https://github.com/omniauth/omniauth-github
 
 LICENSE=	MIT
 

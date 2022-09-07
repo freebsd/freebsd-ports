@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	andrej@ebert.su
 COMMENT=	Extension for Flask that compresses responses with gzip
+WWW=		https://pypi.org/project/Flask-Compress/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Kramdown parser for the GFM dialect of Markdown
+WWW=		https://github.com/kramdown/parser-gfm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.webdav.org/neon/litmus/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	WebDAV server protocol compliance test suite
+WWW=		http://www.webdav.org/neon/litmus/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

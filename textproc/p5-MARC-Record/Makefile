@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Core class for representing a single MARC record
+WWW=		https://metacpan.org/release/MARC-Record
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

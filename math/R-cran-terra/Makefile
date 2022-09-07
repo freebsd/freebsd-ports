@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Spatiall Data Analysis
+WWW=		https://cran.r-project.org/web/packages/terra/
 
 LICENSE=	GPLv3+
 

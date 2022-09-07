@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	PSGI compliant HTTP Entity Parser
+WWW=		https://search.mcpan.org/dist/HTTP-Entity-Parser/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

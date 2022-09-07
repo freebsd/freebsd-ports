@@ -7,6 +7,7 @@ DIST_SUBDIR=	eb
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Command to lookup words in EB format dictionaries
+WWW=		http://openlab.ring.gr.jp/edict/eblook/index.html.ja
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

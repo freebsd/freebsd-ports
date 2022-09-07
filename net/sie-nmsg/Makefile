@@ -6,6 +6,7 @@ MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	SIE message module plugin for libnmsg
+WWW=		https://github.com/farsightsec/sie-nmsg
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${CYRUS_IMAPD_VER}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Cyrus mail server, supporting POP3 and IMAP4 protocols ${COMMENT_${FLAVOR}}
+WWW=		https://www.cyrusimap.org/
 COMMENT_http=	(with HTTP)
 
 LICENSE=	BSD4CLAUSE

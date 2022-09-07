@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Various helpers to pass data in untrusted environments
+WWW=		https://github.com/mitsuhiko/itsdangerous/
 
 LICENSE=	BSD3CLAUSE
 

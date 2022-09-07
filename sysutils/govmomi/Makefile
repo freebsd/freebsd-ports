@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	alex@i.org.ua
 COMMENT=	vSphere CLI and vSphere API mock framework
+WWW=		https://github.com/vmware/govmomi/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -8,6 +8,7 @@ DISTNAME=	ncbi-blast-${PORTVERSION}+-src
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
+WWW=		http://blast.ncbi.nlm.nih.gov
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE

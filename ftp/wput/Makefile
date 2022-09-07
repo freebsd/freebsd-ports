@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Upload files or directories to FTP server with resume support
+WWW=		http://wput.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

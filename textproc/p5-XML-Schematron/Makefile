@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of the Schematron
+WWW=		https://metacpan.org/release/XML-Schematron
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

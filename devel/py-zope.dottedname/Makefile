@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Resolver for Python dotted names
+WWW=		https://pypi.org/project/zope.dottedname/
 
 LICENSE=	ZPL21
 

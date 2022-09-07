@@ -5,6 +5,7 @@ MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/pic/
 
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Serial port pic16c84 programmer
+WWW=		http://hyvatti.iki.fi/~jaakko/pic/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

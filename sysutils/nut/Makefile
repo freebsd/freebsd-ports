@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Network UPS Tools
+WWW=		https://www.networkupstools.org/
 
 LICENSE=	GPLv2+ GPLv3+ ART10 GPLv1+
 LICENSE_COMB=	multi

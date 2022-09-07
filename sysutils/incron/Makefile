@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	joh.hendriks@gmail.com
 COMMENT=	Handle filesystem-events the way cron handles time ones
+WWW=		https://inotify.aiken.cz/?section=incron&page=about
 
 LICENSE=	GPLv2 LGPL21 MIT
 LICENSE_COMB=	dual

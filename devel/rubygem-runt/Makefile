@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby implementation of select Martin Fowler patterns
+WWW=		https://github.com/mlipper/runt
 
 LICENSE=	MIT
 

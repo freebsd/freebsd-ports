@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that allows writing mail filter rules in XML
+WWW=		https://metacpan.org/release/Mail-FilterXML
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Mail-Audit>=0:mail/p5-Mail-Audit \

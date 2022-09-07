@@ -5,6 +5,7 @@ CATEGORIES=	net www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class that determines the Web browser, version, and platform
+WWW=		https://pear.php.net/package/Net_UserAgent_Detect
 
 LICENSE=	PHP202
 

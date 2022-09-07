@@ -5,6 +5,7 @@ CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Electronegativity equilibration model for atomic partial charges
+WWW=		https://github.com/grimme-lab/mstore
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

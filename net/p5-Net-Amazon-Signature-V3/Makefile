@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to sign AWS requests V3
+WWW=		https://metacpan.org/release/Net-Amazon-Signature-V3
 
 LICENSE=	LGPL21
 

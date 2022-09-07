@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/-plugin//}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - VDR-Manager server plugin
+WWW=		https://projects.vdr-developer.org/projects/vdr-manager/wiki
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PORTNAME=	libtextstyle
 PORTREVISION=	0
 
 COMMENT=	Text styling library
+WWW=		https://www.gnu.org/software/gettext/libtextstyle/manual/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

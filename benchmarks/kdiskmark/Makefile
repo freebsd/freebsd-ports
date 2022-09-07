@@ -4,6 +4,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical HDD/SSD benchmarking tool
+WWW=		https://github.com/JonMagon/KDiskMark
 
 LICENSE=	GPLv3
 

@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.freetds.org/files/stable/ \
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library
+WWW=		http://www.freetds.org/
 
 LICENSE=	GPLv2
 

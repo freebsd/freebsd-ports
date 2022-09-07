@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic archive extracting mechanism (using libarchive)
+WWW=		https://metacpan.org/release/Archive-Extract-Libarchive
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

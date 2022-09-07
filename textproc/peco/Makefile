@@ -7,6 +7,7 @@ MASTER_SITES=	LOCAL/knu
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplistic interactive filtering tool
+WWW=		https://github.com/peco/peco
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.ssisc.org/lis/dl/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library of Iterative Solvers for linear systems
+WWW=		https://www.ssisc.org/lis/index.en.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

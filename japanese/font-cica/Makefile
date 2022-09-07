@@ -8,6 +8,7 @@ DISTNAME=	Cica_v${DISTVERSION}${OPT_EMOJI}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Cica Japanese monospaced fonts for programming
+WWW=		https://github.com/miiton/Cica
 
 LICENSE=	OFL11
 

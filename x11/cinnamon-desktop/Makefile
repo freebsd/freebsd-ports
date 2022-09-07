@@ -5,6 +5,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for cinnamon
+WWW=		http://cinnamon.linuxmint.com/
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi

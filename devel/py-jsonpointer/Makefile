@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	harm@weites.com
 COMMENT=	Identify specific nodes in a JSON document (RFC 6901)
+WWW=		https://pypi.org/project/jsonpointer/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

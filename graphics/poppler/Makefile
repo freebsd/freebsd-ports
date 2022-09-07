@@ -6,6 +6,7 @@ MASTER_SITES=	https://poppler.freedesktop.org/
 
 MAINTAINER?=	desktop@FreeBSD.org
 COMMENT?=	PDF rendering library
+WWW=		https://poppler.freedesktop.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

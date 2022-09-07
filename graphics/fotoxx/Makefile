@@ -5,6 +5,7 @@ MASTER_SITES=	https://kornelix.net/downloads/downloads/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Application to organize and edit image collections
+WWW=		https://kornelix.net/fotoxx/fotoxx.html
 
 LICENSE=	GPLv3+
 

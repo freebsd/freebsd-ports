@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Groove quantizer LV2 MIDI plugin
+WWW=		https://github.com/sjaehn/BSchaffl
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

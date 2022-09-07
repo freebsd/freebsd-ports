@@ -6,6 +6,7 @@ CATEGORIES=	net devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eclipse Paho C Client Library for the MQTT Protocol
+WWW=		https://github.com/eclipse/paho.mqtt.c
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

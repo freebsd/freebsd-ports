@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel's open telemetry framework
+WWW=		https://github.com/intelsdi-x/snap
 
 #LICENSE=	APACHE2
 

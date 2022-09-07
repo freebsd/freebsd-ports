@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easily create test classes in an xUnit style
+WWW=		https://metacpan.org/release/Test-Class
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

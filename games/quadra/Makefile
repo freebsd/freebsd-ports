@@ -8,6 +8,7 @@ MASTER_SITES=	http://kbrandt.sdf-eu.org/FreeBSD/distfiles/ \
 
 MAINTAINER=	kbrandt@sdf-eu.org
 COMMENT=	Tetris like game with multiplayer support
+WWW=		https://code.google.com/p/quadra/
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

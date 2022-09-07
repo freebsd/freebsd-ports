@@ -8,6 +8,7 @@ PATCHFILES=	09444c7f0a9b3204394914ea18f629567868aacf.diff:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Free, open-source audio converter and CD ripper
+WWW=		https://www.freac.org/
 
 LICENSE=	GPLv2+
 

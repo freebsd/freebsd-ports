@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	pyrus@bsdmail.com
 COMMENT=	XVT fork in xcb
+WWW=		https://github.com/jefbed/jbxvt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

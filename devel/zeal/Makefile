@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Offline documentation browser
+WWW=		https://zealdocs.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

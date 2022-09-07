@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Small Python server for inserting notications into MQTT
+WWW=		https://github.com/jpmens/hared-hare
 
 LICENSE=	MIT
 

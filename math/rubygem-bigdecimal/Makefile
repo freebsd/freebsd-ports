@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Arbitrary-precision decimal floating-point number class
+WWW=		https://github.com/ruby/bigdecimal
 
 LICENSE=	RUBY
 

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	CBSD message queue router
+WWW=		https://github.com/cbsd/cbsd-mq-router
 
 LICENSE=	BSD2CLAUSE
 

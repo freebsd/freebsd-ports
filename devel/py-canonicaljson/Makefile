@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Canonical JSON
+WWW=		https://github.com/matrix-org/python-canonicaljson
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

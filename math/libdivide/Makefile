@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Fast prime counting function implementations
+WWW=		https://libdivide.com/
 
 LICENSE=	ZLIB BSL
 LICENSE_COMB=	multi

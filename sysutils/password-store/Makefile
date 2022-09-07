@@ -6,6 +6,7 @@ MASTER_SITES=	https://git.zx2c4.com/${PORTNAME}/snapshot/
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Stores, retrieves, generates, and synchronizes passwords securely
+WWW=		https://www.passwordstore.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

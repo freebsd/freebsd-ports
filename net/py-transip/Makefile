@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	TransIP API Connector
+WWW=		https://github.com/benkonrath/transip-api
 
 LICENSE=	MIT
 

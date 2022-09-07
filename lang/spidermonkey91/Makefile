@@ -8,6 +8,7 @@ DISTNAME=	firefox-${DISTVERSION}esr.source
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Standalone JavaScript based from Mozilla 91-esr
+WWW=		https://spidermonkey.dev/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

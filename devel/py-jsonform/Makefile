@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Form validation for JSON-like data
+WWW=		https://github.com/RussellLuo/jsonform
 
 LICENSE=	MIT
 

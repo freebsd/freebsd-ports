@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Objects for cycling through a list of values
+WWW=		https://metacpan.org/release/List-Cycle
 
 LICENSE=	ART20
 

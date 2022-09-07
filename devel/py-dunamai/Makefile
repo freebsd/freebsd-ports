@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dynamic version generation
+WWW=		https://github.com/mtkennerly/dunamai
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

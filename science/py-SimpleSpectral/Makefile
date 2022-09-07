@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simplified scipy.signal.spectral module with only pyFFTW support
+WWW=		https://github.com/xmikos/simplespectral
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

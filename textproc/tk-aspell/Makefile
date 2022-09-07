@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Turkmen dictionary
+WWW=		http://borel.slu.edu/crubadan/
 
 DICT=	 	tk
 

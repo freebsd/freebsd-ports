@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Keep track of your Tk widgets
+WWW=		https://metacpan.org/release/Tk-Role-HasWidgets
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

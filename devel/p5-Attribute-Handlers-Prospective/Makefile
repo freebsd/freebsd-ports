@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Richer semantics for attribute handlers
+WWW=		https://metacpan.org/release/Attribute-Handlers-Prospective
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

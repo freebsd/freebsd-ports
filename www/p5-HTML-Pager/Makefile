@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module for handling CGI HTML paging of arbitrary data
+WWW=		https://metacpan.org/release/HTML-Pager
 
 LICENSE=	GPLv2
 

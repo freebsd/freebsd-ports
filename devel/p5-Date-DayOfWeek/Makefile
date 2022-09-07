@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Determine the day of the week for any date
+WWW=		https://metacpan.org/release/Date-DayOfWeek
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Date-Leapyear>=0:devel/p5-Date-Leapyear \

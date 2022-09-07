@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to access and manipulate Subversion dumpfiles
+WWW=		https://metacpan.org/release/SVN-Dumpfile
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-GUID>=0:devel/p5-Data-GUID \

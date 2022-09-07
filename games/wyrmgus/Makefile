@@ -5,6 +5,7 @@ CATEGORIES=	games devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modified Stratagus engine for Wyrmsun
+WWW=		https://github.com/Andrettin/Wyrmgus
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

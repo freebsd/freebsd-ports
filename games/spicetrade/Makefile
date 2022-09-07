@@ -9,6 +9,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colourful 14th century Arab spice trading game
+WWW=		http://www.spicetrade.org/
 
 USE_JAVA=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

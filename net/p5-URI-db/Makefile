@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	henrik@hodne.io
 COMMENT=	Perl5 module representing database URIs
+WWW=		https://metacpan.org/release/URI-db
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Delegate session storage to an application model object
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Session-Store-Delegate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

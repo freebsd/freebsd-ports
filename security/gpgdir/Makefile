@@ -7,6 +7,7 @@ MASTER_SITES=	https://www.cipherdyne.org/~cipherdy/gpgdir/download/ \
 
 MAINTAINER=	nukama+maintainer@gmail.com
 COMMENT=	Recursive directory encryption with GnuPG
+WWW=		https://www.cipherdyne.org/gpgdir/
 
 LICENSE=	GPLv2
 

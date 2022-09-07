@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based filesystem for mounting iOS devices over USB
+WWW=		https://www.libimobiledevice.org
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

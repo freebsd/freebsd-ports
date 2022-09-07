@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject library for playing system sounds
+WWW=		https://wiki.gnome.org/Projects/GSound
 
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://plugin.org.uk/timemachine/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JACK audio capture tool
+WWW=		http://plugin.org.uk/timemachine/
 
 LICENSE=	GPLv2
 

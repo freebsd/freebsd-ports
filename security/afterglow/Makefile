@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/AfterGlow%201.x/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Collection of graph-generating scripts
+WWW=		https://sourceforge.net/projects/afterglow/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL

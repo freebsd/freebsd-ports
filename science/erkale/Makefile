@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum chemistry program to solve the electronic structure of atoms
+WWW=		https://github.com/susilehtola/erkale
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

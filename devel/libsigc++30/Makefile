@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	30
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
+WWW=		https://libsigcplusplus.github.io/libsigcplusplus/index.html
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

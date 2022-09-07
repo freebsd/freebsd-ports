@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	mkgmap-
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tile splitter for mkgmap
+WWW=		https://www.mkgmap.org.uk/doc/splitter.html
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+

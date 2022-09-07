@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.manyfish.co.uk/${PORTNAME}/ \
 
 MAINTAINER=	sitecopy@oldach.net
 COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up w/ local copy
+WWW=		https://www.manyfish.co.uk/sitecopy/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

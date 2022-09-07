@@ -5,6 +5,7 @@ MASTER_SITES=	https://codemadness.org/releases/sfeed/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	RSS and Atom parser
+WWW=		https://codemadness.org/sfeed-simple-feed-parser.html
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

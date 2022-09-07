@@ -4,6 +4,7 @@ CATEGORIES=	security net
 
 MAINTAINER=	marcel@FreeBSD.org
 COMMENT=	IKEv2 daemon
+WWW=		https://github.com/xcllnt/openiked
 
 LICENSE=	ISCL
 

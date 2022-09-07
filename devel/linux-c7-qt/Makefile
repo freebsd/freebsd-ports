@@ -6,6 +6,7 @@ CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of QT4 (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://qt-project.org
 
 USES=		cpe linux:c7
 CPE_VENDOR=	qt

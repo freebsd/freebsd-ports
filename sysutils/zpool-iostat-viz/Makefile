@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	ZFS pool I/O latency statistics
+WWW=		https://github.com/chadmiller/zpool-iostat-viz
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

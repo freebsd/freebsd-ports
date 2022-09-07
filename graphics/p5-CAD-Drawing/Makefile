@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Methods to create, load, and save vector graphics
+WWW=		https://metacpan.org/release/CAD-Drawing
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

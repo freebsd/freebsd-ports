@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.drobilla.net/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive Gtk canvas widget for audio topologies representation
+WWW=		https://drobilla.net/software/ganv.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

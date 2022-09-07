@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.angelfire.com/linux/linuxjeff/mtrxmath/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small tool for matrix mathematics
+WWW=		https://www.angelfire.com/linux/linuxjeff/mtrxmath/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

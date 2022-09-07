@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Scans a directory at a set interval and lists files
+WWW=		https://github.com/TwP/directory_watcher
 
 LICENSE=	MIT
 

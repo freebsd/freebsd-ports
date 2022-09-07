@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Django Debug Toolbar for GraphiQL IDE
+WWW=		https://github.com/flavors/django-graphiql-debug-toolbar
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

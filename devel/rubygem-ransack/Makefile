@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Successor to the MetaSearch gem
+WWW=		https://github.com/activerecord-hackery/ransack
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

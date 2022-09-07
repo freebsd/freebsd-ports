@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for easy management of RSS/Atom/Pie feeds
+WWW=		https://www.gnome.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

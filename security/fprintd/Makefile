@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon that provides fingerprint scanning functionality over D-Bus
+WWW=		https://www.freedesktop.org/wiki/Software/fprint/fprintd/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

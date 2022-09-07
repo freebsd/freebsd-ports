@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.pl
 
 MAINTAINER=	alexander.4mail@gmail.com
 COMMENT=	Command line interface to KeePassX and KeePass database files
+WWW=		http://kpcli.sourceforge.net/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

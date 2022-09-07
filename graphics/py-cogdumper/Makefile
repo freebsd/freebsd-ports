@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cloud Optimized GeoTIFF (COG) dumper
+WWW=		https://github.com/mapbox/COGDumper
 
 LICENSE=	MIT
 

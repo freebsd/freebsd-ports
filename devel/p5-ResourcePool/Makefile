@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic way to use connection caching for any kind of resources
+WWW=		http://www.fatalmind.com/projects/ResourcePool/
 
 USES=		perl5
 USE_PERL5=	configure

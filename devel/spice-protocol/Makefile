@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.spice-space.org/download/releases/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Simple Protocol for Independent Computing Environments
+WWW=		https://www.spice-space.org
 
 LICENSE=	BSD3CLAUSE
 

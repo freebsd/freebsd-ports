@@ -6,6 +6,7 @@ CATEGORIES=	dns devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library for executing DNS queries (Linux CentOS ${LINUX_DIST_VER})
+WWW=		https://0pointer.de/lennart/projects/libasyncns/
 
 LICENSE=	LGPL21+
 

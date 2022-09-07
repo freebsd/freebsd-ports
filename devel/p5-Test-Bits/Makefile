@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides a bits_is() subroutine for testing binary data
+WWW=		https://metacpan.org/release/Test-Bits
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

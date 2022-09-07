@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Image viewer utility from the Lumina Desktop
+WWW=		https://lumina-desktop.org
 
 LICENSE=	BSD3CLAUSE
 

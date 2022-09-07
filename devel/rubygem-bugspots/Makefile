@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple bug prediction heuristic
+WWW=		https://github.com/igrigorik/bugspots
 
 LICENSE=	MIT
 

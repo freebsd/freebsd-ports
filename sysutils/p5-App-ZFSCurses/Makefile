@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	monsieurp@gentoo.org
 COMMENT=	Curses UI to query/modify a ZFS dataset/snapshot properties
+WWW=		https://metacpan.org/pod/App::ZFSCurses
 
 LICENSE=	BSD3CLAUSE
 

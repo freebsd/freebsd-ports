@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	cem@FreeBSD.org
 COMMENT=	Full-featured Linux BTRFS, Ext4, XFS as a FUSE module
+WWW=		https://github.com/lkl/linux/
 
 LICENSE=	GPLv2
 

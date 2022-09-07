@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl6 like method signature parser
+WWW=		https://metacpan.org/release/Parse-Method-Signatures
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

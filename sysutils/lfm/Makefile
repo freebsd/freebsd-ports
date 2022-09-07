@@ -6,6 +6,7 @@ MASTER_SITES=	https://inigo.katxi.org/devel/lfm/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Last File Manager, a powerful file manager for the UNIX console
+WWW=		https://inigo.katxi.org/devel/lfm/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Notification system compatible with Growl
+WWW=		http://mattn.github.com/growl-for-linux/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

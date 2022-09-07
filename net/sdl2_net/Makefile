@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Small sample cross-platform networking library
+WWW=		https://github.com/libsdl-org/SDL_net
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
+WWW=		https://www.drupal.org/project/wysiwyg
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cancel (i.e., kill) threads
+WWW=		https://metacpan.org/release/Thread-Cancel
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-threads>=1.34:devel/p5-threads

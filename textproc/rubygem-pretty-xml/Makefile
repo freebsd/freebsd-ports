@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Print well formatted XML
+WWW=		https://github.com/jrobertson/pretty-xml
 
 LICENSE=	MIT
 

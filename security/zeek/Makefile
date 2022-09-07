@@ -6,6 +6,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	System for detecting network intruders in real-time
+WWW=		https://www.zeek.org/
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rails Plugin Tool
+WWW=		http://rapt.rubyforge.org/
 
 LICENSE=	MIT
 

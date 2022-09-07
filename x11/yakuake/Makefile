@@ -4,6 +4,7 @@ CATEGORIES=	x11 kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Drop-down terminal emulator for KDE
+WWW=		https://www.kde.org/applications/system/yakuake
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	GNU find utilities
+WWW=		https://www.gnu.org/software/findutils/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

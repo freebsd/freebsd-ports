@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Official Python low-level client for Elasticsearch
+WWW=		https://elasticsearch-py.readthedocs.org/en/master/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 extension which makes available the pgplot library
+WWW=		https://metacpan.org/release/PGPLOT
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

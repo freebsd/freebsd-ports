@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Core Library for Python
+WWW=		https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/core/azure-core
 
 LICENSE=	MIT
 

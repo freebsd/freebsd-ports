@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Graphical YubiKey personalization tool
+WWW=		https://github.com/Yubico/yubikey-personalization-gui
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

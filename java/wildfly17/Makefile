@@ -6,6 +6,7 @@ DISTNAME=	wildfly-${WILDFLY_VERSION}
 
 MAINTAINER=	reig.simeo@gmail.com
 COMMENT=	Java Jakarta EE8 application server developed by Red Hat
+WWW=		https://wildfly.org/
 
 LICENSE=	GPLv2
 

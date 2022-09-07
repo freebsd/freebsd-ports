@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:src
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Parser for Systematic IUPAC Nomenclature of chemical names
+WWW=		https://bitbucket.org/dan2097/opsin/src/default/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

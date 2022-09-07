@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-${LUASQL_DRIVER}
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	LuaSQL driver
+WWW=		https://github.com/keplerproject/luasql
 
 LICENSE=	MIT
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Takes a string composed of various tests, arguments, etc and returns a value
+WWW=		https://metacpan.org/release/Chooser
 
 RUN_DEPENDS=	p5-Net-CIDR-Lite>=0.21:net/p5-Net-CIDR-Lite \
 		p5-IO-Socket-SSL>=1.74:security/p5-IO-Socket-SSL \

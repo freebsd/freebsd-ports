@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to simulate die rolls
+WWW=		https://metacpan.org/release/Games-Dice
 
 LICENSE=	MIT
 

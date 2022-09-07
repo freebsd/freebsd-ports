@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.xskat.de/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the card game Skat
+WWW=		http://www.xskat.de/xskat.html
 
 LICENSE=	unknown
 LICENSE_NAME=	xskat license clause

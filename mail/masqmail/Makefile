@@ -5,6 +5,7 @@ MASTER_SITES=	http://marmaro.de/prog/masqmail/files/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Mail server for hosts, not permanently connected to the internet
+WWW=		http://marmaro.de/prog/masqmail/
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ DISTNAME=	pyfr-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for solving advection-diffusion type problems
+WWW=		https://www.pyfr.org/
 
 LICENSE=	BSD3CLAUSE
 

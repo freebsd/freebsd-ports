@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Perl extension for collecting information about the machine
+WWW=		https://metacpan.org/release/Unix-Statgrab
 
 BUILD_DEPENDS=	p5-Config-AutoConf>=0.317:devel/p5-Config-AutoConf
 LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab

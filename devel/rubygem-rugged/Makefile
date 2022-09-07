@@ -7,6 +7,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby bindings to the libgit2 library
+WWW=		https://github.com/libgit2/rugged
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

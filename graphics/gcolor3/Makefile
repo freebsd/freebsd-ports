@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colour picker is a simple color chooser
+WWW=		https://www.hjdskes.nl/projects/gcolor3/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

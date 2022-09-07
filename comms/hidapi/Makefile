@@ -5,6 +5,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Library to access USB HID-class devices
+WWW=		https://github.com/libusb/hidapi
 
 LICENSE=	BSD3CLAUSE GPLv3
 LICENSE_COMB=	dual

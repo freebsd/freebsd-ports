@@ -8,6 +8,7 @@ DISTNAME=	zxid-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for using SAML SSO
+WWW=		http://zxid.org/
 
 LICENSE=	APACHE20
 

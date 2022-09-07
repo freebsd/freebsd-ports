@@ -8,6 +8,7 @@ DISTNAME=	H.fonts
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of Hebrew fonts from El-Mar software, Ltd
+WWW=		http://elmar.co.il/wwh/wwh/xfiles/H.fonts/index.en.html
 
 USES=		fonts tar:Z
 NO_WRKSUBDIR=	yes

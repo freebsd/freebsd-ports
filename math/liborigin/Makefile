@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/3.0
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Library and utility for reading OriginLab project files
+WWW=		https://sourceforge.net/projects/liborigin/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING # GPLv3

@@ -8,6 +8,7 @@ DISTNAME=	importlib_resources-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Read resources from Python packages
+WWW=		https://github.com/python/importlib_resources
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

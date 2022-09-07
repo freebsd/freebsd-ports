@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/^(...)\./\1/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated electrical CAD system
+WWW=		https://www.gnu.org/software/electric/electric.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Easy-to-use interface between LibSCEP and Perl programs
+WWW=		https://github.com/openxpki/libscep/src/clients/perl/Crypt-LibSCEP/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/Readme.md

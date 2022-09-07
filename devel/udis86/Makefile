@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalistic x86 and x86-64 disassembler library
+WWW=		http://udis86.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 

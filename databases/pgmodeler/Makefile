@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	PostgreSQL Database Modeler
+WWW=		http://pgmodeler.com.br/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

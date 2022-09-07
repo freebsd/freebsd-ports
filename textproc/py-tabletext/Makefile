@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library to pretty-print tabular data
+WWW=		https://pypi.org/project/tabletext/
 
 LICENSE=	GPLv3
 

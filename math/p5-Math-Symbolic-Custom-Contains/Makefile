@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find subtrees in Math::Symbolic expressions
+WWW=		https://metacpan.org/release/Math-Symbolic-Custom-Contains
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Math-Symbolic>=0:math/p5-Math-Symbolic

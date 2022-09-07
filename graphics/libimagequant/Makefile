@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Image Quantization Library
+WWW=		https://github.com/ImageOptim/libimagequant
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

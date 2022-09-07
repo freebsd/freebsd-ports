@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller #'
+WWW=		https://www.openscad.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

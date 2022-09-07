@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Standalone streaming replication tool for SQLite
+WWW=		https://litestream.io/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

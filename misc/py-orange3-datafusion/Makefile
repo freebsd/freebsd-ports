@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Data fusion add-on for Orange3
+WWW=		https://github.com/biolab/orange3-datafusion
 
 LICENSE=	GPLv3
 

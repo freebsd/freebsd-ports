@@ -8,6 +8,7 @@ DISTNAME=	FTP-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compact and handy FTP client for GNUstep
+WWW=		https://www.nongnu.org/gap/ftp/index.html
 
 LICENSE=	GPLv2
 

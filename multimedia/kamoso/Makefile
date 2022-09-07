@@ -5,6 +5,7 @@ CATEGORIES=	multimedia kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Application to take pictures and videos out of your webcam
+WWW=		https://userbase.kde.org/Kamoso
 
 LICENSE=	GPLv2
 

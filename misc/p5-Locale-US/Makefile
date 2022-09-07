@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Two letter codes for state identification in the United States
+WWW=		https://metacpan.org/release/Locale-US
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

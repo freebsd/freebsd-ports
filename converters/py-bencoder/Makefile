@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple bencode decoder/encoder library in pure Python
+WWW=		https://github.com/utdemir/bencoder
 
 LICENSE=	GPLv1
 

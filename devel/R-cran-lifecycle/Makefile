@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Manage the Life Cycle of your Package Functions
+WWW=		https://cran.r-project.org/web/packages/lifecycle/
 
 LICENSE=	MIT
 

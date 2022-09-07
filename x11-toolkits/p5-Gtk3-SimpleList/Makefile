@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple interface to Gtk3's complex MVC list widget
+WWW=		https://metacpan.org/dist/Gtk3-SimpleList
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

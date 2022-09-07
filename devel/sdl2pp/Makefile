@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++11 bindings/wrapper for SDL2
+WWW=		https://github.com/libSDL2pp/libSDL2pp
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

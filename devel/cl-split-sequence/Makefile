@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Partitioning Common Lisp sequences
+WWW=		https://www.cliki.net/SPLIT-SEQUENCE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

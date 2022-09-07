@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.caida.org/projects/spoofer/downloads/
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Spoofer Project testing software
+WWW=		https://www.caida.org/projects/spoofer/
 
 LICENSE=	GPLv3
 

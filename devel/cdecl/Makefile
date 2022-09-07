@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Explains complicated C/C++ declarations in plain English
+WWW=		https://github.com/paul-j-lucas/cdecl
 
 LICENSE=	GPLv3
 

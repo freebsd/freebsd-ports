@@ -5,6 +5,7 @@ MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSION
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Minimal seat management daemon and universal library
+WWW=		https://git.sr.ht/~kennylevinsen/seatd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	https://dev.gentoo.org/~voyageur/distfiles/
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Dockapp for monitoring memory and swap usage
+WWW=		https://windowmaker.org/dockapps/?name=wmmemload
 
 LICENSE=	GPLv2+
 

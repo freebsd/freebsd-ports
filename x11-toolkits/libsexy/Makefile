@@ -6,6 +6,7 @@ MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexy/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension widgets for GTK+
+WWW=		http://releases.chipx86.com/libsexy/libsexy/
 
 LICENSE=	LGPL21
 

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	fpc-
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Meta package to install all of the Free Pascal base
+WWW=		https://www.freepascal.org/
 
 USES=		fpc:base metaport
 

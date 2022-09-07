@@ -8,6 +8,7 @@ PATCHFILES=	0851b89eb6633dd792cd4eb10c26f86c2f0da56a.patch:-p1
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Open source, software engineering platform
+WWW=		https://www.phacility.com/phabricator/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Backport of Ruby 1.9's Open3 methods for Ruby 1.8
+WWW=		https://github.com/kindkid/open3_backport
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

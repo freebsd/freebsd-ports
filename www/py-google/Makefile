@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python bindings to the Google search engine
+WWW=		https://breakingcode.wordpress.com/
 
 LICENSE=	BSD2CLAUSE
 

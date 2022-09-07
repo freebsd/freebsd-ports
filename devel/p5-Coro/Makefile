@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|0$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Coroutine process abstraction for perl
+WWW=		https://metacpan.org/release/Coro
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

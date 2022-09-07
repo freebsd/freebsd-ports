@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sergey@akhmatov.ru
 COMMENT=	Junos easy automation for non-programmers
+WWW=		https://github.com/Juniper/py-junos-eznc
 
 LICENSE=	APACHE20
 

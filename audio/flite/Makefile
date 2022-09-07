@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:}-release
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small run-time speech synthesis engine
+WWW=		http://www.festvox.org/flite/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

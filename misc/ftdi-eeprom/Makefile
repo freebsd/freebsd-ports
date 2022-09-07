@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.bwct.de/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to program the eeprom on FTDI usb devices
+WWW=		https://www.bwct.de/
 
 MAKE_ARGS=	BINDIR="${PREFIX}/sbin" \
 		MANDIR="${PREFIX}/man/man"

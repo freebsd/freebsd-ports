@@ -6,6 +6,7 @@ MASTER_SITES=	https://spectmorph.org/files/releases/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Analyze and combine samples of musical instruments
+WWW=		https://spectmorph.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

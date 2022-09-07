@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	5250 Telnet protocol and Terminal
+WWW=		http://tn5250.sourceforge.net/
 
 USES=		libtool ncurses ssl
 GNU_CONFIGURE=	yes

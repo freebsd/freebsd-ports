@@ -7,6 +7,7 @@ DISTNAME=	mp3asm-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MP3 frame level editor
+WWW=		https://sourceforge.net/projects/mp3asm/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	http://simula67.at.ifi.uio.no/Cim/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for the SIMULA programming language
+WWW=		http://folk.uio.no/simula67/cim.shtml
 
 LICENSE=	GPLv2
 

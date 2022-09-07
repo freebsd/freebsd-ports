@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	CPE: Common Platform Enumeration for Python
+WWW=		https://github.com/nilp0inter/cpe
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

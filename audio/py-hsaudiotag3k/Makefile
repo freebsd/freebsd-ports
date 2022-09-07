@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Read metdata (tags) of mp3, mp4, wma, ogg, flac and aiff files
+WWW=		http://hg.hardcoded.net/hsaudiotag
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/kovidgoyal/${PORTNAME}/releases/download/v${DIS
 
 MAINTAINER=	alexis.praga@free.fr
 COMMENT=	Cross-platform, fast, featureful, GPU-based terminal emulator
+WWW=		https://sw.kovidgoyal.net/kitty/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Free mind mapping and knowledge management software
+WWW=		https://www.freeplane.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt

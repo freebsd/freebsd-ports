@@ -1,6 +1,7 @@
 PORTNAME=	husky-htick
 
 COMMENT=	Husky FTN file ticker
+WWW=		http://husky.sourceforge.net/
 
 LICENSE=	GPLv2
 

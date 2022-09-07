@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Process manager for applications with multiple components
+WWW=		https://github.com/ddollar/foreman
 
 LICENSE=	MIT
 

@@ -9,6 +9,7 @@ PATCHFILES+=	a9f5699256c9.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Utility for miscellaneous wlroots extensions
+WWW=		https://git.sr.ht/~brocellous/wlrctl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

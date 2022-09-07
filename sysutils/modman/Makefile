@@ -4,6 +4,7 @@ CATEGORIES=	sysutils www
 
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Modularize extensions using symlinks
+WWW=		https://github.com/colinmollenhour/modman
 
 LICENSE=	APACHE20
 

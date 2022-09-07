@@ -7,6 +7,7 @@ DISTNAME=	ParaView-v${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Powerful scientific data visualization application
+WWW=		https://www.paraview.org/
 
 LICENSE=	ParaView_License_1.2
 LICENSE_NAME=	ParaView_License

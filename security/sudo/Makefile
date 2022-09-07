@@ -5,6 +5,7 @@ MASTER_SITES=	SUDO
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Allow others to run commands as root
+WWW=		https://www.sudo.ws/
 
 LICENSE=	sudo
 LICENSE_NAME=	Sudo license

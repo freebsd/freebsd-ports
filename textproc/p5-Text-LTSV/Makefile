@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Labeled Tab Separated Value manipulator
+WWW=		https://metacpan.org/release/Text-LTSV
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

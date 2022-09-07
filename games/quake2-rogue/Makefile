@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II: Ground Zero (Rogue) official mission pack
+WWW=		http://www.idsoftware.com/games/quake/quake2-grndzero/
 
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message

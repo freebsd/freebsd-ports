@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	C library for encoding data in a QR Code symbol
+WWW=		https://github.com/fukuchi/libqrencode
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

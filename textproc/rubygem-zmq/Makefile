@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby ZeroMQ gem
+WWW=		https://zeromq.org/bindings:ruby
 
 LICENSE=	LGPL3
 

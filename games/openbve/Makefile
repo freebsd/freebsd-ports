@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Realistic 3D train/railway simulator
+WWW=		https://openbve-project.net/
 
 LICENSE=	PD
 

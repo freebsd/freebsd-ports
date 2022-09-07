@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.invisible-island.net/rcs-blame/
 
 MAINTAINER=	jhein@symmetricom.com
 COMMENT=	Display last modification for each line in an RCS file
+WWW=		https://invisible-island.net/rcs-blame/
 
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes

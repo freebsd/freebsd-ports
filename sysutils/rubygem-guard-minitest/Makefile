@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automatically run your tests with Minitest framework
+WWW=		https://github.com/guard/guard-minitest
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

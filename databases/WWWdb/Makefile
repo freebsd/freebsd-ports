@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl based generic WWW DB interface / frontend
+WWW=		https://sourceforge.net/projects/wwwdb/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

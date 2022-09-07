@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Generic helper tool to build app in a distributable format
+WWW=		https://github.com/develar/app-builder
 
 LICENSE=	MIT
 

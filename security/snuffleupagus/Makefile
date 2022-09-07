@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	Security module for PHP
+WWW=		https://snuffleupagus.readthedocs.io/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/../LICENSE

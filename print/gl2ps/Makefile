@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.geuz.org/gl2ps/src/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	C library providing vector output for OpenGL applications
+WWW=		https://www.geuz.org/gl2ps/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL

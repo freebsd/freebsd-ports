@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PSGI/Plack server w/ event driven connection manager, prefork workers
+WWW=		https://metacpan.org/release/Monoceros
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

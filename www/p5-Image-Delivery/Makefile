@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Efficient transformation and delivery of web images
+WWW=		https://metacpan.org/release/Image-Delivery
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Test-ClassAPI>=1.04:devel/p5-Test-ClassAPI \

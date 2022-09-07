@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	GNU Emacs modes for Git-related files
+WWW=		https://github.com/magit/git-modes
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	https://invisible-mirror.net/archives/${PORTNAME}/ \
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Makes a histogram summarizing "diff" output
+WWW=		https://invisible-island.net/diffstat/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

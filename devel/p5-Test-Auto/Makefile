@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test automation and docs generation
+WWW=		https://metacpan.org/release/Test-Auto
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

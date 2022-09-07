@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	MQTT version 3.1/3.1.1 client class
+WWW=		https://www.eclipse.org/paho/
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/edl-v10

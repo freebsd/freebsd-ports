@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program showing where new mail has been placed
+WWW=		http://gubby.sourceforge.net
 
 USES=		ncurses
 

@@ -12,6 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Security tool to monitor and check logs and intrusions (manager)
+WWW=		https://wazuh.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

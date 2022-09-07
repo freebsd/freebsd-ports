@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS SASL Authentication
+WWW=		https://metacpan.org/release/Authen-SASL-Cyrus
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL

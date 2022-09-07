@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-rails5
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Easy upload management for ActiveRecord
+WWW=		https://github.com/thoughtbot/paperclip
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Date and time library for OCaml
+WWW=		http://calendar.forge.ocamlcore.org/
 
 LICENSE=	LGPL21
 

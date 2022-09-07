@@ -7,6 +7,7 @@ DISTNAME=	FormEncode-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	HTML form validation, generation, and conversion package
+WWW=		https://www.formencode.org/
 
 LICENSE=	PSFL
 

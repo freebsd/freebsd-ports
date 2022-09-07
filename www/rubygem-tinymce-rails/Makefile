@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Seamlessly integrates TinyMCE into the Rails asset pipeline
+WWW=		https://github.com/spohlenz/tinymce-rails
 
 LICENSE=	MIT
 

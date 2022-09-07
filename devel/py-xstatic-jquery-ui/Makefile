@@ -7,6 +7,7 @@ DISTNAME=	XStatic-jquery-ui-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	jquery-ui (XStatic packaging standard)
+WWW=		https://jqueryui.com/
 
 LICENSE=	MIT
 

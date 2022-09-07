@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Store and access your passwords safely
+WWW=		https://github.com/jaraco/keyring
 
 LICENSE=	PSFL
 

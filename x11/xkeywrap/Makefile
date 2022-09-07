@@ -6,6 +6,7 @@ MASTER_SITES=	http://ftp.vector.co.jp/18/98/1364/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Record, repeat, and play key sequence from keyboard
+WWW=		https://kozos.jp/myfreesoft/
 
 MAKE_ENV=	X11BASE="${LOCALBASE}"
 USES=		xorg

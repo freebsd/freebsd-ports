@@ -8,6 +8,7 @@ DIST_SUBDIR=	imhex
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Hex editor for reverse engineers and programmers
+WWW=		https://github.com/WerWolv/ImHex
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Implementation of the precision time protocol IEEE 1588-2008
+WWW=		https://github.com/ptpd/ptpd
 
 LICENSE=	BSD2CLAUSE
 

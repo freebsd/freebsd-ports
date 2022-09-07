@@ -6,6 +6,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Kakasi library module for Perl5
+WWW=		http://www.daionet.gr.jp/~knok/kakasi/
 
 LIB_DEPENDS=	libkakasi.so:japanese/kakasi
 

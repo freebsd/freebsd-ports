@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to manage .pid file for current process
+WWW=		https://metacpan.org/release/Proc-Pidfile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

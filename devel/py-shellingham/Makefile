@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Detect what shell the current Python executable is running in
+WWW=		https://github.com/sarugaku/shellingham
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

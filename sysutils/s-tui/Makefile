@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Stress Terminal UI, Terminal-based CPU stress and monitoring utility
+WWW=		https://github.com/amanusk/s-tui
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

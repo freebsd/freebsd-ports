@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Simple, versioned access to configuration data
+WWW=		https://metacpan.org/release/Config-Versioned
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

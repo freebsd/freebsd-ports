@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen Lynx to libretro, itself a fork of Handy
+WWW=		https://github.com/libretro/beetle-lynx-libretro
 
 LICENSE=	GPLv2
 

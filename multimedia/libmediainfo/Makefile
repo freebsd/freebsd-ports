@@ -7,6 +7,7 @@ DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MediaInfo library
+WWW=		https://mediaarea.net/en/MediaInfo
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../../License.html

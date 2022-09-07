@@ -7,6 +7,7 @@ PATCHFILES=	7c112351d9e941567e64063638396259546d9a48.patch:-p1  # libutil: EPERM
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Purely functional package manager
+WWW=		https://nixos.org/nix/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

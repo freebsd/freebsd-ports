@@ -4,6 +4,7 @@ CATEGORIES=	net www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple and flexible way to build nice URLs for web applications
+WWW=		https://pear.php.net/package/Net_URL_Mapper
 
 USES=		pear
 

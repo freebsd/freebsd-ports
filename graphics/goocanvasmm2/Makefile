@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	C++ bindings for the goocanvas widget for GTK
+WWW=		https://sourceforge.net/projects/goocanvas/
 
 LIB_DEPENDS=	libgoocanvas-2.0.so:graphics/goocanvas2
 

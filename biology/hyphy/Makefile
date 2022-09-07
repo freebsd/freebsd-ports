@@ -4,6 +4,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Hypothesis testing using Phylogenies
+WWW=		https://www.hyphy.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

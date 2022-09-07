@@ -5,6 +5,7 @@ MASTER_SITES=	http://fs-uae.net/stable/${PORTVERSION}/
 
 MAINTAINER=	sirdice@gmail.com
 COMMENT=	Amiga emulator
+WWW=		https://fs-uae.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

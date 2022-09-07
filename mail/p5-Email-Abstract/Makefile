@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Unified interface to mail representations
+WWW=		https://metacpan.org/release/Email-Abstract
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

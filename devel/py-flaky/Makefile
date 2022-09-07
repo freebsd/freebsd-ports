@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Plugin for nose or pytest that automatically reruns flaky tests
+WWW=		https://github.com/box/flaky
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

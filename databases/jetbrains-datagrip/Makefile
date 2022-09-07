@@ -7,6 +7,7 @@ DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	JetBrains DataGrip IDE for your Databases
+WWW=		https://www.jetbrains.com/datagrip/
 
 LICENSE=	IntelliJ-datagrip
 LICENSE_NAME=	Subscription license agreement for business and organizations

@@ -7,6 +7,7 @@ MASTER_SITES=	https://downloads.xiph.org/releases/theora/ \
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Theora video codec for the Ogg multimedia streaming system
+WWW=		https://www.theora.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -8,6 +8,7 @@ DISTNAME=	tango-icon-theme-extras-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extra set of icons from the Tango project
+WWW=		http://tango-project.org/
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:x11-themes/icon-naming-utils \
 		${LOCALBASE}/share/icons/Tango/16x16/actions/add.png:x11-themes/icons-tango

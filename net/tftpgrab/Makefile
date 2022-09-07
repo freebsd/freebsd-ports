@@ -6,6 +6,7 @@ MASTER_SITES=	http://pseudo-flaw.net/tftpgrab/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TFTP stream extractor
+WWW=		https://pseudo-flaw.net/tftpgrab/
 
 GNU_CONFIGURE=	yes
 

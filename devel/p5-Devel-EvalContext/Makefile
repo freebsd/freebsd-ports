@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Save lexicals and hints between calls to eval
+WWW=		https://metacpan.org/release/Devel-EvalContext
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-PadWalker>=0:devel/p5-PadWalker \

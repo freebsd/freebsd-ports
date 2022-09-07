@@ -6,6 +6,7 @@ DISTFILES=	go.mod:gomod
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Distributed Object Store and Filesystem
+WWW=		https://github.com/chrislusf/seaweedfs/wiki
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

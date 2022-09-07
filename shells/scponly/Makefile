@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-20110526
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Tiny shell that only permits scp and sftp
+WWW=		https://github.com/scponly/scponly/wiki
 
 LICENSE=	BSD2CLAUSE
 

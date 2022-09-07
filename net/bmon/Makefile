@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	michelle@sorbs.net
 COMMENT=	Human-readable bandwidth monitor and rate estimator
+WWW=		https://github.com/tgraf/bmon
 
 LICENSE=	MIT
 

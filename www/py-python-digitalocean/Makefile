@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	API to manage digitalocean.com droplets
+WWW=		https://github.com/koalalorenzo/python-digitalocean
 
 LICENSE=	GPLv3
 

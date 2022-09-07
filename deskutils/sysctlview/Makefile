@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	alfix86@gmail.com
 COMMENT=	Graphical sysctl MIB explorer
+WWW=		https://gitlab.com/alfix/sysctlview/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get COUNT(*) results with abstract SQL
+WWW=		https://metacpan.org/release/Class-DBI-Plugin-AbstractCount
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-DBI-Plugin>=0.02:databases/p5-Class-DBI-Plugin \

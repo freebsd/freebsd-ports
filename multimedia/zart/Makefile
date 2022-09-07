@@ -10,6 +10,7 @@ PATCHFILES=	6ca1964690afbbc78627d7c868a692401043a584.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GMIC GUI for video streams
+WWW=		https://github.com/c-koi/zart
 
 LICENSE=	CeCILL
 LICENSE_NAME=	CeCILL

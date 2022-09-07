@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Use the OpenPGP web of trust to verify ssh connections
+WWW=		https://github.com/dkg/monkeysphere
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

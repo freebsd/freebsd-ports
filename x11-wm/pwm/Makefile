@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	Lightweight window manager with emphasis on usability
+WWW=		http://iki.fi/tuomov/ion/pwm.html
 
 USES=		gmake xorg
 USE_XORG=	x11

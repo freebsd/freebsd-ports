@@ -7,6 +7,7 @@ DISTNAME=	AfterStep-${PORTVERSION}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Stable version of the AfterStep window manager
+WWW=		http://www.afterstep.org/
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfontconfig.so:x11-fonts/fontconfig \

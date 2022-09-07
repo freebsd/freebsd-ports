@@ -6,6 +6,7 @@ MASTER_SITE_SUBDIR=	CPAN:JV
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Converts EPS images to PNG
+WWW=		https://www.vromans.org/johan/software/sw_eps2png.html
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual

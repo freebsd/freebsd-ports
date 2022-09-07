@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GREYC's Magic Image Converter
+WWW=		https://gmic.eu/
 
 BROKEN=		OpenCV4 no longer ships OpencCV-1.0 headers
 

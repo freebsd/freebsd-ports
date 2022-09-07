@@ -6,6 +6,7 @@ MASTER_SITES=	http://graph.seul.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that allows you to create, manipulate, and study graphs
+WWW=		http://graph.seul.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse and format strp and strf time patterns
+WWW=		https://metacpan.org/release/DateTime-Format-Strptime
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

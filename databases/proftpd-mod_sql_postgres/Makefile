@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	proftpd-
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	PostgreSQL ProFTPD module
+WWW=		http://www.proftpd.org/docs/contrib/mod_sql.html
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight volume control for the systray
+WWW=		https://github.com/Maato/volumeicon/
 
 LICENSE=	GPLv3
 

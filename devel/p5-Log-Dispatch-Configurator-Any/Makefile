@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Configurator implementation with Config::Any
+WWW=		https://metacpan.org/release/Log-Dispatch-Configurator-Any
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

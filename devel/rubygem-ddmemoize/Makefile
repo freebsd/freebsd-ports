@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Support for memoizing functions
+WWW=		https://github.com/ddfreyne/ddmemoize
 
 LICENSE=	MIT
 

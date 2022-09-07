@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Look up country by IP Address
+WWW=		https://metacpan.org/release/Geo-IP-PurePerl
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/AlDanial/cloc/releases/download/v${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Count lines of code
+WWW=		https://github.com/AlDanial/cloc
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

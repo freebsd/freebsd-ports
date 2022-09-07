@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Allows performing chunked queries
+WWW=		https://github.com/postmodern/dm-chunked_query
 
 LICENSE=	MIT
 

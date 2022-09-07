@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.daveltd.com/src/util/ttyload/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Give a color-coded graph of load averages over time
+WWW=		https://www.daveltd.com/src/util/ttyload/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

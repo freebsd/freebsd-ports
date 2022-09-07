@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Web log rotation utility that provides datestamp filenames
+WWW=		https://BSDforge.com/projects/sysutils/cronolog-devel
 
 LICENSE=	APACHE10
 

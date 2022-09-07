@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse a distribution name
+WWW=		https://metacpan.org/dist/Parse-Distname
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	michel@boaventura.dev
 COMMENT=	Faster way to navigate your filesystem
+WWW=		https://github.com/wting/autojump
 
 LICENSE=	GPLv3+
 

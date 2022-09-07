@@ -6,6 +6,7 @@ DISTNAME=	ramsmp-${PORTVERSION}
 
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	Cache and memory benchmarking tool
+WWW=		http://alasir.com/software/ramspeed/
 
 # do not sell for money
 LICENSE=	ALASIR

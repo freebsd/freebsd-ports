@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/release-${PORTVERSION}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	GUI frontend to openvpn
+WWW=		https://sourceforge.net/projects/openvpn-admin/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

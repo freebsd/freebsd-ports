@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
+WWW=		https://live.gnome.org/LibRsvg
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi

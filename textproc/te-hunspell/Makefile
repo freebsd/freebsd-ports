@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Telugu hunspell dictionaries
+WWW=		http://aspell.net/
 
 LICENSE=	GPLv2
 

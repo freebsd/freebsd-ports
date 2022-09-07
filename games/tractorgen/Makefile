@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.vergenet.net/~conrad/software/tractorgen/dl/
 
 MAINTAINER=	robin@15augustus.nl
 COMMENT=	Generates ASCII tractors
+WWW=		https://www.vergenet.net/~conrad/software/tractorgen/
 
 GNU_CONFIGURE=	yes
 

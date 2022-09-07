@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Templating Framework for Report Generation
+WWW=		https://cran.r-project.org/web/packages/brew/
 
 LICENSE=	GPLv2
 

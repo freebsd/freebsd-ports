@@ -3,6 +3,7 @@ PORTVERSION=	${MESAVERSION}
 CATEGORIES=	lang
 
 COMMENT=	Mesa OpenCL implementation for AMD GPUs
+WWW=		https://dri.freedesktop.org/wiki/GalliumCompute/
 
 BUILD_DEPENDS=	libclc>=0.3.0:devel/libclc \
 		opencl>=0:devel/opencl

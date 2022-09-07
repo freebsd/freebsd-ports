@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Information about the currently running perl
+WWW=		https://metacpan.org/release/Probe-Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

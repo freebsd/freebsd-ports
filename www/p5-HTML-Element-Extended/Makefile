@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extended interface to HTML::Tree's HTML::Element class
+WWW=		https://metacpan.org/release/HTML-Element-Extended
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

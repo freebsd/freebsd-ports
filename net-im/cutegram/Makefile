@@ -7,6 +7,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Free and opensource telegram client
+WWW=		https://aseman.co/en/products/cutegram/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/alexandervdm/gummi/releases/download/${PORTVERS
 
 MAINTAINER=	zab@zltech.eu
 COMMENT=	Simple LaTeX editor for GTK users
+WWW=		https://github.com/alexandervdm/gummi/
 
 LICENSE=	MIT
 

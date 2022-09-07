@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	fpc-
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Meta port to install Free Pascal units
+WWW=		https://www.freepascal.org/
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		fpc:run metaport

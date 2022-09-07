@@ -18,6 +18,7 @@ DISTFILES=	lucene-core-7.7.1.jar:core \
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	JavaFX SDK overlay for OpenJDK 11
+WWW=		https://openjdk.java.net/projects/openjfx/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

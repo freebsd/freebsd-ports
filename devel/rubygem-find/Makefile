@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Support top-down traversal of a set of file paths
+WWW=		https://github.com/ruby/find
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

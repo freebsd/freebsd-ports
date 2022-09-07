@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Isomorphism testing and automorphisms of graphs
+WWW=		https://github.com/pdobsan/pynauty
 
 LICENSE=	GPLv3
 

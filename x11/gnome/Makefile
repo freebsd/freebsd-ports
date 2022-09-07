@@ -5,6 +5,7 @@ CATEGORIES?=	x11 gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Metaport for the GNOME integrated X11 desktop
+WWW=		https://www.FreeBSD.org/gnome/
 
 FLAVORS=	full lite
 FLAVOR?=	full

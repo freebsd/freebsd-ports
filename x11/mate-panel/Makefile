@@ -7,6 +7,7 @@ DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Panel component for the MATE Desktop
+WWW=		https://mate-desktop.org/
 
 LICENSE=	GPLv2 GFDL LGPL21
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Emails posts from subscribed RSS/Atom newsfeeds
+WWW=		https://github.com/rss2email/rss2email
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

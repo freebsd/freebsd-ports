@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Matrix protocol homeserver
+WWW=		https://github.com/matrix-org/dendrite
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Google API Client Library for Python
+WWW=		https://github.com/googleapis/google-api-python-client
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -11,6 +11,7 @@ DISTFILES=	${DISTNAME}.tgz:main
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT=	Web server log file analysis program
+WWW=		http://www.mrunix.net/webalizer/
 
 LICENSE=	GPLv2
 

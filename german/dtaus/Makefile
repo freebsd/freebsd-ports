@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.infodrom.org/projects/dtaus/download/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Belegloser DatenTraegerAUStausch
+WWW=		https://www.infodrom.org/projects/dtaus/
 
 LICENSE=	GPLv2
 

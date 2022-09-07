@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts plain ASCII text into PNG bitmap images
+WWW=		https://sourceforge.net/projects/a2png/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

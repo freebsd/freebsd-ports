@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for libmemcached
+WWW=		https://github.com/ninjudd/memcache
 
 LICENSE=	MIT
 

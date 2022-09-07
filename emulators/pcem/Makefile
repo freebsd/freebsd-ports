@@ -7,6 +7,7 @@ DISTNAME=	faf5d6423060
 
 MAINTAINER=	darkfm@vera.com.uy
 COMMENT=	PC/PC-Compatible low-level emulator striving for accuracy
+WWW=		https://www.pcem-emulator.co.uk
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

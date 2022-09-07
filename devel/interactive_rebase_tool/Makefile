@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	petteri.valkonen@iki.fi
 COMMENT=	Improved sequence editor for Git
+WWW=		https://gitrebasetool.mitmaro.ca/
 
 LICENSE=	GPLv3+
 

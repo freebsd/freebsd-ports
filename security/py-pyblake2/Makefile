@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	BLAKE2 hash function extension module
+WWW=		https://github.com/dchest/pyblake2
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/COPYING

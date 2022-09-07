@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-darwin-x86_64
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Full-text search engine for Java
+WWW=		https://www.elastic.co/
 
 LICENSE=	APACHE20
 

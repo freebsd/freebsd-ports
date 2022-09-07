@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Handles rebuilding of Jekyll sites when a file changes
+WWW=		https://github.com/jekyll/jekyll-watch
 
 LICENSE=	MIT
 

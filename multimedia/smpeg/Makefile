@@ -6,6 +6,7 @@ MASTER_SITES=	GENTOO
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free MPEG1 video player library with sound support
+WWW=		https://www.lokigames.com/development/smpeg.php3
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

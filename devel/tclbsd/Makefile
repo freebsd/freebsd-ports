@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl interface to various system calls and library routines
+WWW=		https://github.com/flightaware/tclbsd
 
 LICENSE=	MIT
 

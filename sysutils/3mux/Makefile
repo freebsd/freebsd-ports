@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Terminal multiplexer inspired by i3
+WWW=		https://github.com/aaronjanse/3mux
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	vapoursynth-
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Video Multi-Method Assessment Fusion plugin for VapourSynth
+WWW=		https://github.com/HomeOfVapourSynthEvolution/VapourSynth-VMAF
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

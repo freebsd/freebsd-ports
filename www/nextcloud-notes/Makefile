@@ -10,6 +10,7 @@ DIST_SUBDIR=	nextcloud/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Notes app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/notes
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

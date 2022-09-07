@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for calculating CRC checksums
+WWW=		https://metacpan.org/release/Digest-CRC
 
 LICENSE=	PD
 

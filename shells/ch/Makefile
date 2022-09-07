@@ -7,6 +7,7 @@ DISTNAME=	chstandard-${PORTVERSION}.freebsd9.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeddable C/C++ interpreter/shell
+WWW=		http://www.softintegration.com/products/chstandard/
 
 IA32_BINARY_PORT=	yes
 NO_BUILD=	yes

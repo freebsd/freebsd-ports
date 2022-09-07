@@ -6,6 +6,7 @@ MASTER_SITES=	http://ftp.wagner.pp.ru/pub/tcl/tclsyslog/
 
 MAINTAINER=	frank@fenor.de
 COMMENT=	Tcl Interface to Syslog
+WWW=		https://www.wagner.pp.ru/~vitus/software/tcl/tclsyslog.html
 
 USES=		tcl
 

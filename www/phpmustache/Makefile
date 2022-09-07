@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	marc@bumblingdork.com
 COMMENT=	PHP5 code for Mustache
+WWW=		https://github.com/bobthecow/mustache.php
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

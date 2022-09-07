@@ -11,6 +11,7 @@ PATCHFILES=	1b48446068608aff9b5edf1fdbd4b8c0d9f0be94.diff:-p1 \
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome nibbles
+WWW=		https://wiki.gnome.org/Apps/Nibbles
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

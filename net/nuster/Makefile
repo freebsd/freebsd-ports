@@ -5,6 +5,7 @@ CATEGORIES=	net www
 
 MAINTAINER=	felix@userspace.com.au
 COMMENT=	Web caching proxy server based on haproxy
+WWW=		https://github.com/jiangwenyuan/nuster
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

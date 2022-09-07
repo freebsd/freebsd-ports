@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/brooks
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Compiler runtime library with Blocks support
+WWW=		https://compiler-rt.llvm.org/
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	dual

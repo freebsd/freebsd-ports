@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplified object-oriented Python wrapper for libpcap
+WWW=		https://github.com/pynetwork/pypcap
 
 LICENSE=	BSD3CLAUSE
 

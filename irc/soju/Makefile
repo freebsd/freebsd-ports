@@ -6,6 +6,7 @@ CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	IRC bouncer
+WWW=		https://soju.im
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

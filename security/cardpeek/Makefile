@@ -5,6 +5,7 @@ MASTER_SITES=	http://downloads.pannetrat.com/install/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Tool for reading the contents of ISO 7816 smart cards
+WWW=		http://pannetrat.com/Cardpeek/
 
 LICENSE=	GPLv3
 

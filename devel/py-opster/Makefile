@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command line parsing speedster
+WWW=		https://pypi.org/project/opster/
 
 LICENSE=	BSD2CLAUSE
 

@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of fMSX to the libretro API
+WWW=		https://github.com/libretro/fmsx-libretro
 
 LICENSE=	FMSX
 LICENSE_NAME=	FMSX

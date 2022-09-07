@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	EXIF JPEG header manipulation tool
+WWW=		https://github.com/Matthias-Wandel/jhead
 
 LICENSE=	PD
 

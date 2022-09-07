@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE::Component::IRC plugin for IRC based DNSBL queries
+WWW=		https://metacpan.org/release/POE-Component-IRC-Plugin-QueryDNSBL
 
 BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE \
 		p5-POE-Component-IRC>=6.68:irc/p5-POE-Component-IRC \

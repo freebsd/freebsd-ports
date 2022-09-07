@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL features for SQL::Abstract
+WWW=		https://metacpan.org/release/SQL-Abstract-Pg
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

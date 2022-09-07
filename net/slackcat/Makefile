@@ -7,6 +7,7 @@ DISTFILES=	go.mod:gomod
 
 MAINTAINER=	nork@ninth-nine.com
 COMMENT=	Simple commandline utility to post snippets to Slack
+WWW=		https://github.com/bcicen/slackcat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

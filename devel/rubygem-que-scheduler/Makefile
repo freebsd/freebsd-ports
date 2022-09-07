@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight cron scheduler for the Que async job worker
+WWW=		https://github.com/hlascelles/que-scheduler
 
 LICENSE=	MIT
 

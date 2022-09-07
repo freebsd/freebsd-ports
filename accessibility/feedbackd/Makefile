@@ -4,6 +4,7 @@ CATEGORIES=	accessibility
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Haptic/visual/audio feedback for GNOME
+WWW=		https://source.puri.sm/Librem5/feedbackd
 
 LICENSE=	GPLv3+ LGPL21+
 LICENSE_COMB=	multi

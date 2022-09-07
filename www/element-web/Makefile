@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-web
 
 MAINTAINER=	ports@xanderio.de
 COMMENT=	Glossy Matrix collaboration client for the web
+WWW=		https://github.com/vector-im/element-web
 
 LICENSE=	APACHE20
 

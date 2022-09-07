@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Lisp macro for reading math expressions in infix form
+WWW=		https://www.cliki.net/infix
 
 # Converted from NO_CDROM
 LICENSE=	infix

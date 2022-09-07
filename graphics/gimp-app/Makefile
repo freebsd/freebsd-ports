@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-app
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNU Image Manipulation Program
+WWW=		https://www.gimp.org/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

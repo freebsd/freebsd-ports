@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive designer for Celtic knots
+WWW=		https://knotter.mattbas.org/Knotter
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Software library containing FFT functions written in OpenCL
+WWW=		https://github.com/clMathLibraries/clFFt
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	print
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	LaTeX like document creation system with PostScript/PDF output
+WWW=		https://savannah.nongnu.org/projects/lout/
 
 LICENSE=	GPLv3+
 

@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple library to speed up or slow down speech
+WWW=		https://github.com/waywardgeek/sonic
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

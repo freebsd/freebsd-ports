@@ -7,6 +7,7 @@ DISTNAME=	Pyro4-${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Distributed Object Middleware for Python (IPC/RPC)
+WWW=		https://pythonhosted.org/Pyro4/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

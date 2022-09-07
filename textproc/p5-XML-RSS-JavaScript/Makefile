@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to serialize your RSS as JavaScript
+WWW=		https://metacpan.org/release/XML-RSS-JavaScript
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

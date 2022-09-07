@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Survival analysis in Python
+WWW=		https://github.com/CamDavidsonPilon/lifelines/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

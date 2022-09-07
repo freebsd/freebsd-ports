@@ -5,6 +5,7 @@ CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Message extension library for tox
+WWW=		https://github.com/toxext/tox_extension_messages
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

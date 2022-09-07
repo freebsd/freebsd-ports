@@ -6,6 +6,7 @@ MASTER_SITES=	http://somewhere.fscked.org/proj/fireflies/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension of xscreensaver
+WWW=		http://somewhere.fscked.org/fireflies/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

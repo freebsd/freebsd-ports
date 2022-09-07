@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	PHP module for accessing a FastDFS cluster
+WWW=		https://github.com/happyfish100/fastdfs
 
 LICENSE=	GPLv3+
 

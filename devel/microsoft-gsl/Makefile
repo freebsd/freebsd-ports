@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Guidelines Support Library
+WWW=		https://github.com/microsoft/GSL
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

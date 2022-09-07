@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cython hash table
+WWW=		https://github.com/explosion/preshed
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

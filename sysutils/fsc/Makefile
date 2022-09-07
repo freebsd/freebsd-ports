@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	FreeBSD Services Control family of utilities
+WWW=		https://github.com/bsdtrhodes/freebsd-fscd/
 
 LICENSE=	BSD2CLAUSE
 

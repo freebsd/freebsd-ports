@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Determine the Web browser, version, OS from an HTTP user agent string
+WWW=		https://metacpan.org/release/HTTP-BrowserDetect
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

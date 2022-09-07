@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	BioPerl variation-related functionality
+WWW=		https://metacpan.org/release/Bio-Variation
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

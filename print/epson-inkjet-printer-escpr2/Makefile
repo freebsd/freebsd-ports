@@ -13,6 +13,7 @@ DISTFILES_i386=	${DISTNAME}.i486${EXTRACT_SUFX}:i386 \
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Epson Inkjet Printer Driver 2 (ESC/P-R) for Linux
+WWW=		https://download.ebz.epson.net/dsc/search/01/search/?OSC=LX
 
 LICENSE=	EPSON LGPL21
 LICENSE_COMB=	multi

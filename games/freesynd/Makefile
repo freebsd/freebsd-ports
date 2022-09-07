@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Reimplementation of the classic Bullfrog game Syndicate
+WWW=		http://freesynd.sourceforge.net/
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Lightweight Qt-based terminal emulator
+WWW=		https://github.com/lxqt/qterminal
 
 LICENSE=	GPLv2
 

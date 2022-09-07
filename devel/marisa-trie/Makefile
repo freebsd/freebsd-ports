@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	iblis@hs.ntnu.edu.tw
 COMMENT=	MARISA: Matching Algorithm with Recursively Implemented StorAge
+WWW=		https://github.com/s-yata/marisa-trie
 
 LICENSE=	BSD2CLAUSE LGPL21+
 LICENSE_COMB=	dual

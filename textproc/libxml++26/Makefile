@@ -7,6 +7,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	XML API for C++
+WWW=		http://libxmlplusplus.sourceforge.net/
 
 USES+=		tar:xz compiler:c++11-lang
 USE_CXXSTD=	c++11

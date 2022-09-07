@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Library for interfacing with maven
+WWW=		https://github.com/nexB/pymaven
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

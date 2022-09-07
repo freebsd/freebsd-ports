@@ -6,6 +6,7 @@ CATEGORIES=	devel sysutils
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Cross-platform build runner to run your own build tasks
+WWW=		https://buildkite.com/
 
 LICENSE=	APACHE20 BSD2CLAUSE BSD3CLAUSE LGPL3 MIT
 LICENSE_COMB=	multi

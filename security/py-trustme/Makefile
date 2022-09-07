@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Top quality TLS certs while you wait, for the discerning tester
+WWW=		https://github.com/python-trio/trustme
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

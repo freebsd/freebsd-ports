@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper Pagination
+WWW=		https://github.com/tj/dm-pagination
 
 LICENSE=	MIT
 

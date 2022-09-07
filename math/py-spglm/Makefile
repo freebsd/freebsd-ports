@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sparse generalize linear models
+WWW=		https://github.com/pysal/spglm
 
 LICENSE=	BSD3CLAUSE
 

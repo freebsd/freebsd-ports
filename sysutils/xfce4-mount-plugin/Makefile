@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Mount and umount utility for the Xfce4 panel
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-mount-plugin
 
 LICENSE=	GPLv2
 

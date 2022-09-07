@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create Bread::Board containers as normal Moose objects
+WWW=		https://metacpan.org/release/Bread-Board-Declare
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

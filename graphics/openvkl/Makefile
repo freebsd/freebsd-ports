@@ -6,6 +6,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel Open Volume Kernel Library for graphics applications
+WWW=		https://github.com/openvkl/openvkl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

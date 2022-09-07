@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.gaia-gis.it/gaia-sins/freexl-sources/
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Library to extract valid data from within an Excel (.xls) spreadsheet
+WWW=		https://www.gaia-gis.it/fossil/freexl/index
 
 LICENSE=	GPLv2+ LGPL21+ MPL11
 LICENSE_COMB=	dual

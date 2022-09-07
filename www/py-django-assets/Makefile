@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Compress and merge CSS and Javascript files
+WWW=		https://github.com/miracle2k/django-assets
 
 LICENSE=	BSD2CLAUSE
 

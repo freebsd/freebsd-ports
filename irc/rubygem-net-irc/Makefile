@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Ruby library for implementing IRC server and client
+WWW=		https://github.com/cho45/net-irc
 
 LICENSE=	RUBY
 

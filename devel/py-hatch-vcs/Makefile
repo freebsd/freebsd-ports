@@ -7,6 +7,7 @@ DISTNAME=	hatch_vcs-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hatch plugin for versioning with your preferred VCS
+WWW=		https://github.com/ofek/hatch-vcs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

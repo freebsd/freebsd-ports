@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module for introducing to internal operations of neural networks
+WWW=		https://metacpan.org/release/AI-Perceptron
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

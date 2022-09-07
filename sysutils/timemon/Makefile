@@ -7,6 +7,7 @@ DISTNAME=	TimeMon-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU time usage monitor for GNUstep
+WWW=		https://www.nongnu.org/gap/timemon/index.html
 
 # Converted from NO_CDROM
 LICENSE=	TimeMon

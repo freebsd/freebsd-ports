@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Use DBD::SQLite 1.x for Apache::Session storage
+WWW=		https://metacpan.org/release/Apache-Session-SQLite3
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

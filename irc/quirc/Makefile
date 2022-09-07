@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/irc/quirc/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Tcl/Tk IRC client for the X Window System
+WWW=		https://BSDforge.com/projects/irc/quirc/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

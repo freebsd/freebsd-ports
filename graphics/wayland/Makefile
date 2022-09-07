@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/-/releases/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Core Wayland window system code and protocol
+WWW=		https://wayland.freedesktop.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

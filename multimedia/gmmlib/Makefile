@@ -16,6 +16,7 @@ PATCHFILES+=	4ae2fd0de966.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Memory Management Library
+WWW=		https://01.org/intel-media-for-linux
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

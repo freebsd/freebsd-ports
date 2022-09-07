@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Package providing tools for inheriting docstrings in customizable ways
+WWW=		https://github.com/meowklaski/custom_inherit
 
 LICENSE=	MIT
 

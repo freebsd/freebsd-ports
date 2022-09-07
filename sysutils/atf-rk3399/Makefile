@@ -1,3 +1,4 @@
+WWW=		https://github.com/ARM-software/arm-trusted-firmware
 MASTERDIR=	${.CURDIR}/../atf-master
 
 PLAT=	rk3399

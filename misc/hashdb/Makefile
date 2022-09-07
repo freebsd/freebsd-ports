@@ -7,6 +7,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Block hash database tool and API
+WWW=		https://github.com/NPS-DEEP/hashdb
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

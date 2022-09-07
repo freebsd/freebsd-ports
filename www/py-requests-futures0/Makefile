@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	0
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP library written in Python for human beings
+WWW=		https://github.com/ross/requests-futures
 
 LICENSE=	APACHE20
 

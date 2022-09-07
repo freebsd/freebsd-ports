@@ -5,6 +5,7 @@ CATEGORIES=		x11 xfce
 
 MAINTAINER=		bsd@quentb.com
 COMMENT=		Modern, minimalist taskbar for Xfce
+WWW=		https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin
 
 LICENSE=		GPLv3
 

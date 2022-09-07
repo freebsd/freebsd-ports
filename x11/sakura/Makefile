@@ -5,6 +5,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/593981610/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Terminal emulator based on GTK and VTE
+WWW=		https://launchpad.net/sakura
 
 LICENSE=	GPLv2
 

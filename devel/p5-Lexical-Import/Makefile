@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Clean imports from package-exporting modules
+WWW=		https://metacpan.org/release/Lexical-Import
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

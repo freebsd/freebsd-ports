@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Application Programming Toolkit
+WWW=		https://metacpan.org/release/Badger
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

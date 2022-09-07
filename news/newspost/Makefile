@@ -6,6 +6,7 @@ MASTER_SITES=	http://newspost.unixcab.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured Usenet binary autoposter
+WWW=		http://newspost.unixcab.org/
 
 LICENSE=	GPLv2
 

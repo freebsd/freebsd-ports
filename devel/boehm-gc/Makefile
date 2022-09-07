@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	-${GC_VARIANT}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
+WWW=		https://www.hboehm.info/gc/
 
 LICENSE=	BDWGC
 LICENSE_NAME=	Boehm-Demers-Weiser Garbage Collector License

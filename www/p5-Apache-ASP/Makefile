@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${MODPERL_SUFFIX}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Active Server Pages for Apache
+WWW=		https://metacpan.org/release/Apache-ASP
 
 LICENSE=	GPLv2
 

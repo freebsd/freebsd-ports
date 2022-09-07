@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	crest@bultmann.eu
 COMMENT=	Socket library that provides several common communication patterns
+WWW=		https://nanomsg.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

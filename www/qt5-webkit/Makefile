@@ -11,6 +11,7 @@ PATCHFILES+=		78360c01c796b6260bf828bc9c8a0ef73c5132fd.patch:-p1
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		QtWebKit with a more modern WebKit code base
+WWW=		https://github.com/annulen/webkit
 
 LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 			libhyphen.so:textproc/hyphen \

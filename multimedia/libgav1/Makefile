@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Main profile (0) & High profile (1) compliant AV1 decoder
+WWW=		https://chromium.googlesource.com/codecs/libgav1
 
 LICENSE=	APACHE20
 

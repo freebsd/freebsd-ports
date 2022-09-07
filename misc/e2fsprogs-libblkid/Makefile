@@ -3,6 +3,7 @@ CATEGORIES=	misc devel
 PKGNAMESUFFIX=	-libblkid
 
 COMMENT=	Blkid library from e2fsprogs package
+WWW=		http://e2fsprogs.sourceforge.net/
 
 LICENSE=	LGPL20+
 _no_license_file=	sorry

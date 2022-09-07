@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jbaggs2016@gmail.com
 COMMENT=	High level Python client for Elasticsearch
+WWW=		https://pypi.org/project/elasticsearch-dsl/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

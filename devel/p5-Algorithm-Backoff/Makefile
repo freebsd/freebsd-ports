@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Various backoff strategies for retry
+WWW=		https://metacpan.org/release/Algorithm-Backoff
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

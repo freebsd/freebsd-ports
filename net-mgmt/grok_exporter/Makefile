@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Export Prometheus metrics from arbitrary unstructured log data
+WWW=		https://github.com/fstab/grok_exporter
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

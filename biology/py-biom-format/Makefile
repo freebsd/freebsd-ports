@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Biological Observation Matrix (BIOM) Format Project
+WWW=		https://biom-format.org/
 
 LICENSE=	BSD3CLAUSE
 

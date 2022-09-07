@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Record progress to any output
+WWW=		https://metacpan.org/release/Progress-Any
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

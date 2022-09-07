@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Reverb effect with frozen/pitch-shifted/disintegrated reflections
+WWW=		https://github.com/linuxmao-org/fogpad-port
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

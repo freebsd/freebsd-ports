@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Lexer and highlighter for Mathematica/Wolfram Language source code
+WWW=		https://mathics.org/
 
 LICENSE=	MIT
 

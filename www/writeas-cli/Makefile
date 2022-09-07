@@ -9,6 +9,7 @@ DIST_SUBDIR=	writeas
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Command line client for Write.as / WriteFreely
+WWW=		https://write.as/apps/cli
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	panda-
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mark Crispin's C-client mail access routines forked from UW
+WWW=		https://github.com/jonabbey/panda-imap
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

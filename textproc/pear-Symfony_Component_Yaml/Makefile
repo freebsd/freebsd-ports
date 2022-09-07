@@ -7,6 +7,7 @@ DIST_SUBDIR=	Symfony2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Symfony2 Yaml Component
+WWW=		http://pear.symfony.com/Yaml
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast debugging with Pry
+WWW=		https://github.com/deivid-rodriguez/pry-byebug
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Backport of PEP 654 (exception groups)
+WWW=		https://github.com/agronholm/exceptiongroup
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	Forensic tool to find hidden processes and TCP/UDP ports
+WWW=		https://www.unhide-forensics.info/
 
 LICENSE=	GPLv3
 

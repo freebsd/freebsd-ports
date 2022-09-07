@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Portably create pipe() or pipe-like handles, one way or another
+WWW=		https://metacpan.org/release/IO-Pipely
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

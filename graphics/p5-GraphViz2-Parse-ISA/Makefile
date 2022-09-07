@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Visualize N Perl class hierarchies as a graph
+WWW=		https://metacpan.org/release/GraphViz2-Parse-ISA
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 runtime and library to organize work in separate activities
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kactivities/html/index.html
 
 BUILD_DEPENDS=	boost-libs>1.53:devel/boost-libs
 

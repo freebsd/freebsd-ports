@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Program that shows AMD Radeon GPU resource utilization
+WWW=		https://github.com/clbr/radeontop
 
 LICENSE=	GPLv3
 

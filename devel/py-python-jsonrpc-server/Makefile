@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Python implementation of the JSON RPC 2.0 protocol
+WWW=		https://github.com/palantir/python-jsonrpc-server
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

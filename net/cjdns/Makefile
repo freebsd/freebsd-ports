@@ -6,6 +6,7 @@ CATEGORIES=	net security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Routing engine designed for security, scalability, speed
+WWW=		https://github.com/cjdelisle/cjdns
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

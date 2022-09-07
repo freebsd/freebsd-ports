@@ -6,6 +6,7 @@ DISTNAME=	dz${PORTVERSION:S/.//g}src
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	File compression utility specializing in Quake demo compression
+WWW=		https://speeddemosarchive.com/dzip/
 
 LICENSE=	ZLIB
 

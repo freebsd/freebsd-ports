@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	37
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Connection pool server for PostgreSQL
+WWW=		https://pgpool.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

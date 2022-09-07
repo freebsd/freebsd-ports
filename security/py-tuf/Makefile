@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for securing software update systems
+WWW=		https://www.updateframework.com
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

@@ -9,6 +9,7 @@ PATCHFILES=	74df5c76d8d475818138a9a16ceccbd6f326247c.patch:-p1 # https://github.
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for multi-physics simulation
+WWW=		https://projectchrono.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

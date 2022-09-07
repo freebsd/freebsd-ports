@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Deep freeze Ruby objects
+WWW=		https://github.com/dkubb/ice_nine
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

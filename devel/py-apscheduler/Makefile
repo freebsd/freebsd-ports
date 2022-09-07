@@ -7,6 +7,7 @@ DISTNAME=	APScheduler-${DISTVERSION}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	In-process task scheduler with Cron-like capabilities
+WWW=		https://pypi.org/project/APScheduler/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

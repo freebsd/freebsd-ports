@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}.shar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates postscript graphs
+WWW=		https://web.eecs.utk.edu/~plank/plank/jgraph/
 
 EXTRACT_CMD=	uncompress
 EXTRACT_BEFORE_ARGS=	-c

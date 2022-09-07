@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
+WWW=		https://metacpan.org/release/Search-Xapian
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

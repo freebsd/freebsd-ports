@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for displaying Microsoft(R) Word documents
+WWW=		http://www.winfield.demon.nl/index.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Docs/COPYING

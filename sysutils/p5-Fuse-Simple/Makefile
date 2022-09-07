@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple way to write filesystems in Perl using FUSE
+WWW=		https://metacpan.org/release/Fuse-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

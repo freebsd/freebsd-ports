@@ -6,6 +6,7 @@ MASTER_SITES=	https://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Monospaced bitmap fonts for X11
+WWW=		https://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/
 
 LICENSE=		MIT TTYP0
 LICENSE_COMB=		multi

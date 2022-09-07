@@ -9,6 +9,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor
+WWW=		https://avidemux.org/
 
 .include "${.CURDIR}/Makefile.common"
 

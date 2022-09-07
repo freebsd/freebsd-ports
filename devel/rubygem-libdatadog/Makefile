@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rust-based utility library for Datadog ddtrace gem
+WWW=		https://github.com/DataDog/libdatadog/tree/main/ruby
 
 LICENSE=	APACHE20
 

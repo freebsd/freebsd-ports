@@ -5,6 +5,7 @@ MASTER_SITES=	SF/fldigi/${PORTNAME}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ham Radio logging program
+WWW=		http://www.w1hkj.com/fllog-help/index.html
 
 LICENSE=	GPLv2
 

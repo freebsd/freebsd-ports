@@ -6,6 +6,7 @@ MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Real-time audio level metering according to the EBU R-128
+WWW=		https://kokkinizita.linuxaudio.org/linuxaudio/ebumeter-doc/quickguide.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING

@@ -8,6 +8,7 @@ PATCHFILES=	96800576209b.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Raspberry Pi video player
+WWW=		https://github.com/popcornmix/omxplayer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

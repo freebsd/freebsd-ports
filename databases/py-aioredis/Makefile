@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Python asyncio (PEP 3156) Redis client library
+WWW=		https://github.com/aio-libs/aioredis
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for fast templating engine with support for embedded
+WWW=		https://metacpan.org/release/Tenjin
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

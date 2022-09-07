@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mojolicious plugin to send email
+WWW=		https://metacpan.org/release/Mojolicious-Plugin-Mail
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

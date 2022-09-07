@@ -6,6 +6,7 @@ MASTER_SITES=	http://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	X11 viewer of NEC2 input and output data
+WWW=		https://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

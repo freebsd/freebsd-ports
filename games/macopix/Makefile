@@ -7,6 +7,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LICENSE_DISTFILES_DATA}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window sitter for X11
+WWW=		http://rosegray.sakura.ne.jp/macopix/index-e.html
 
 LICENSE=	GPLv2+ DATA
 LICENSE_COMB=	multi

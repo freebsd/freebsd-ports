@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-master
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Collector part of Munin
+WWW=		https://munin-monitoring.org/
 
 BUILD_DEPENDS=	munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		p5-CGI>=0:www/p5-CGI \

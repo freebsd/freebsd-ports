@@ -7,6 +7,7 @@ DISTNAME=	Par-${PORTVERSION}
 
 MAINTAINER=	markm@FreeBSD.org
 COMMENT=	Paragraph reformatter for email
+WWW=		http://www.nicemice.net/par/
 
 CONFLICTS=	quake-par
 

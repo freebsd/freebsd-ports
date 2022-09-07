@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	XML::LibXML clone of XML::Simple::XMLin()
+WWW=		https://metacpan.org/release/XML-LibXML-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

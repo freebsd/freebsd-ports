@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Linux/OSX/FreeBSD resource monitor
+WWW=		https://github.com/aristocratos/bpytop
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

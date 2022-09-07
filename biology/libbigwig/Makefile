@@ -4,6 +4,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for handling bigWig files (containing genomic data)
+WWW=		https://github.com/dpryan79/libBigWig
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

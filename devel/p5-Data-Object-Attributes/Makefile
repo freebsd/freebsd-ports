@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Attribute Builder for Data::Object
+WWW=		https://metacpan.org/release/Data-Object-Attributes
 
 LICENSE=	APACHE20
 

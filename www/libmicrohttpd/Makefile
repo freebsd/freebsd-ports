@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	C library for embedding HTTP server functionality
+WWW=		https://www.gnu.org/software/libmicrohttpd/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

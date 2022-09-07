@@ -5,6 +5,7 @@ MASTER_SITES=	https://feh.finalrewind.org/
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Image viewer that utilizes Imlib2
+WWW=		https://feh.finalrewind.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

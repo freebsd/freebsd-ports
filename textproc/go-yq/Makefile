@@ -6,6 +6,7 @@ CATEGORIES=		textproc
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	Portable commandline YAML processor written in go
+WWW=		https://github.com/mikefarah/yq
 
 LICENSE=	MIT
 

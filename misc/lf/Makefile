@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal file manager
+WWW=		https://github.com/gokcehan/lf
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

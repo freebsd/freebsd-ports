@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	112
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Boot large ruby/rails apps faster
+WWW=		https://github.com/Shopify/bootsnap
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

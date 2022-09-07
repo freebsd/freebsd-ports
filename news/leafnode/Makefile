@@ -6,6 +6,7 @@ MASTER_SITES=	SF \
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	NNTP package for offline news caching and reading
+WWW=		https://www.leafnode.org/
 
 LICENSE=	GPLv2+
 

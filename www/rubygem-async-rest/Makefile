@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	RESTful clients (and hopefully servers)
+WWW=		https://github.com/socketry/async-rest
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Transparent BigNumber/BigRational support for Perl
+WWW=		https://metacpan.org/release/bignum
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

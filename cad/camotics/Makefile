@@ -6,6 +6,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	3-axis CNC GCode simulator
+WWW=		https://camotics.org/
 
 LICENSE=	GPLv2+
 

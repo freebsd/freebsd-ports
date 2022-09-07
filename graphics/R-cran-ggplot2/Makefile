@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Implementation of the Grammar of Graphics
+WWW=		https://ggplot2.tidyverse.org/
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for generating documents in Open Document Format (ODF)
+WWW=		https://sourceforge.net/p/libwpd/wiki/libodfgen
 
 LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	dual

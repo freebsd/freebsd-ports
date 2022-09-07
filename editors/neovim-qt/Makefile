@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	chuck@tuffli.net
 COMMENT=	Neovim client library and QT5 GUI
+WWW=		https://github.com/equalsraf/neovim-qt/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

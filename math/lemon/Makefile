@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for Efficient Modeling and Optimization in Networks
+WWW=		https://lemon.cs.elte.hu/trac/lemon/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

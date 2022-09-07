@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	NGINX configurations converter into JSON and back
+WWW=		https://github.com/nginxinc/crossplane
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

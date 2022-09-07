@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Generic Mapping Tools - data processing and display software package
+WWW=		https://www.generic-mapping-tools.org/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

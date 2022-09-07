@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Qt5 based clipboard manager
+WWW=		https://github.com/hluk/CopyQ
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

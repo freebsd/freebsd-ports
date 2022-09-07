@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Grammar of Data Manipulation
+WWW=		https://github.com/hadley/dplyr
 
 LICENSE=	MIT
 

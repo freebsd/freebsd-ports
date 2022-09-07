@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to Dropbox API
+WWW=		https://metacpan.org/pod/WebService::Dropbox
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mt-bugs@markoturk.info
 COMMENT=	RSS feed reader for the text console
+WWW=		https://newsboat.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Linux/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface for easily configuring Synergy2
+WWW=		http://quicksynergy.sourceforge.net/
 
 BUILD_DEPENDS=	synergys:sysutils/synergy
 

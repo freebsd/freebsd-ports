@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Quantitative Financial Modelling and Trading Framework for R
+WWW=		https://www.quantmod.com/
 
 LICENSE=	GPLv3
 

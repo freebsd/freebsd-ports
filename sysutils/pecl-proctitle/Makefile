@@ -5,6 +5,7 @@ CATEGORIES=	sysutils pear
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	PECL extension that allows changing the current process' name
+WWW=		http://www.pecl.php.net/package/proctitle/
 
 LICENSE=	PHP301
 

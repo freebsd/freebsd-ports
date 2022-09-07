@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.infradead.org/ocserv/download/
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Server implementing the AnyConnect SSL VPN protocol
+WWW=		https://ocserv.gitlab.io/www/index.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	josh@zipperup.org
 COMMENT=	Locking access to Berkeley DB v1.x
+WWW=		https://metacpan.org/release/Tie-DB_FileLock
 
 USES=		perl5
 USE_PERL5=	configure

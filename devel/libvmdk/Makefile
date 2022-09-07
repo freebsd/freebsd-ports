@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/libvmdk/releases/download/${PORTVERSION}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the VMware Virtual Disk (VMDK) format
+WWW=		https://github.com/libyal/libvmdk
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

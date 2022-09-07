@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Free Google Translate API that translates totally free of charge
+WWW=		https://github.com/ssut/py-googletrans
 
 LICENSE=	MIT
 # LICENSE_FILE isn't packaged in the sdist, yet

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-nobuildfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for easily serializing a wide variety of objects
+WWW=		http://s11n.net
 
 USES=		uidfix zip
 WRKSRC_SUBDIR=	src

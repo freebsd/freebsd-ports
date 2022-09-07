@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	marco.broeder@posteo.eu
 COMMENT=	Python implementation of the Git file formats and protocols
+WWW=		https://www.dulwich.io/
 
 LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual

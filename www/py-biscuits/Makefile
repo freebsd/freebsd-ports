@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast and tasty cookies handling
+WWW=		https://github.com/pyrates/biscuits
 
 LICENSE=	MIT
 

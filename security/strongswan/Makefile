@@ -7,6 +7,7 @@ MASTER_SITES=	https://download.strongswan.org/ \
 
 MAINTAINER=	strongswan@nanoteq.com
 COMMENT=	Open Source IKEv2 IPsec-based VPN solution
+WWW=		https://www.strongswan.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Non-blocking Jabber/XMPP module
+WWW=		https://dev.gajim.org/gajim/python-nbxmpp
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

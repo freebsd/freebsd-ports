@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/relaxng/jing-trang/releases/download/V${PORTVER
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Multi-format schema converter based on RELAX NG
+WWW=		http://www.thaiopensource.com/relaxng/trang.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/copying.txt

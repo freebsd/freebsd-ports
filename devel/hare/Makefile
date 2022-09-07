@@ -8,6 +8,7 @@ DIST_SUBDIR=	hare
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Hare language build system and standard library
+WWW=		https://harelang.org/
 
 LICENSE=	MPL20 GPLv3
 LICENSE_COMB=	multi

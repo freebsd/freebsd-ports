@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ii@any.com.ru
 COMMENT=	Tool that automates the creation of control points
+WWW=		http://aorlinsk2.free.fr/panomatic/
 
 BUILD_DEPENDS=	bjam:devel/boost-jam \
 		${LOCALBASE}/include/boost/format.hpp:devel/boost-libs

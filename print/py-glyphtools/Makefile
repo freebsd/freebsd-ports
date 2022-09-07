@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Routines for extracting information from fontTools glyphs
+WWW=		https://github.com/simoncozens/glyphtools
 
 LICENSE=	APACHE20
 

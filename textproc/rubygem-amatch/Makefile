@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for approximate string matching and searching
+WWW=		https://github.com/flori/amatch
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

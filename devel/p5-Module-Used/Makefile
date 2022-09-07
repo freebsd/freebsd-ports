@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tsucchi@cpan.org
 COMMENT=	Find modules loaded by Perl code without running it
+WWW=		https://metacpan.org/release/Module-Used
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

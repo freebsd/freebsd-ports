@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Redis client library
+WWW=		https://github.com/socketry/async-pool
 
 LICENSE=	MIT
 

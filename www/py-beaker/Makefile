@@ -7,6 +7,7 @@ DISTNAME=	Beaker-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Session and Caching library with WSGI Middleware
+WWW=		https://beaker.readthedocs.io/en/latest/
 
 LICENSE=	BSD3CLAUSE
 

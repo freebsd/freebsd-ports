@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Profile your Catalyst application with Devel::NYTProf
+WWW=		https://metacpan.org/release/CatalystX-Profile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

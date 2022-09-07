@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Install Debian or Ubuntu base system into a directory
+WWW=		https://wiki.debian.org/Debootstrap
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/debian/copyright

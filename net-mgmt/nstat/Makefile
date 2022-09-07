@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Replacement for bw/netstat/vmstat/pcm-memory.x
+WWW=		https://github.com/gallatin/nstat
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

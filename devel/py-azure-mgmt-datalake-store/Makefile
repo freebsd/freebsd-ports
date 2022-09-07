@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Microsoft Azure Data Lake Store Management Client Library for Python
+WWW=		https://pypi.org/project/azure-mgmt-datalake-store/
 
 LICENSE=	MIT
 

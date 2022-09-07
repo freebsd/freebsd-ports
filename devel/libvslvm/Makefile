@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/libvslvm/releases/download/${PORTVERSION
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the LVM volume system format
+WWW=		https://github.com/libyal/libvslvm
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

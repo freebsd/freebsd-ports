@@ -5,6 +5,7 @@ CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library for extracting file metadata
+WWW=		https://projects.kde.org/projects/kde/workspace/kfilemetadata
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libepub.so:textproc/ebook-tools \

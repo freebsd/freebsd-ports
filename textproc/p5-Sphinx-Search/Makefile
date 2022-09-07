@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sphinx search engine API Perl client
+WWW=		https://metacpan.org/release/Sphinx-Search
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

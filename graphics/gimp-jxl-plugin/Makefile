@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GIMP plugin to read/write JPEG XL images
+WWW=		https://jpeg.org/jpegxl/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC:H:H}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension interface for libcurl
+WWW=		https://metacpan.org/release/WWW-Curl
 
 LICENSE=	MIT
 

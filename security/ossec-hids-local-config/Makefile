@@ -1,5 +1,6 @@
 PKGNAMESUFFIX?=	-${OSSEC_TYPE}-config
 COMMENT?=	Configuration manager for ossec-hids-${OSSEC_TYPE}
+WWW=		https://ossec.github.io
 OSSEC_TYPE?=	local
 
 .include "${.CURDIR}/../ossec-hids/version.mk"

@@ -20,6 +20,7 @@ PATCHFILES+=	ba388061b0f9ed9584e57d6019c30b044a657c3e.patch:-p1 \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Point Cloud Library
+WWW=		https://pointclouds.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Instant Message (IM) program using the Jabber protocol
+WWW=		http://convey.sourceforge.net/
 
 USE_ANT=	yes
 USE_JAVA=	yes

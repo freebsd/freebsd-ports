@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Converts ES6 code into vanilla ES5 with Babel JS
+WWW=		https://github.com/TannerRogalsky/sprockets-es6
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

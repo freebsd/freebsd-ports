@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Native Python interface for strongSwan's VICI protocol
+WWW=		https://pypi.org/project/vici/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

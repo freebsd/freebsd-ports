@@ -6,6 +6,7 @@ CATEGORIES=	net www
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	CLI interface to run librespeed speedtests
+WWW=		https://github.com/librespeed/speedtest-cli
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

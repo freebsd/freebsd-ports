@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	VBA p-code disassembler
+WWW=		https://github.com/bontchev/pcodedmp
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

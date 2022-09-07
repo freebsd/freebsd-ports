@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	ForensicArtifacts.com Artifact Repository
+WWW=		https://github.com/ForensicArtifacts/artifacts
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

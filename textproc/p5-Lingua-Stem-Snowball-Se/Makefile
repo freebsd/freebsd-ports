@@ -8,6 +8,7 @@ DISTNAME=	Snowball-Swedish-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Stemmer for Swedish
+WWW=		https://metacpan.org/release/Snowball-Swedish
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

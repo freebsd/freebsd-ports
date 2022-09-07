@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	michal@hanu.la
 COMMENT=	Alert routing for Prometheus
+WWW=		https://prometheus.io/docs/alerting/alertmanager/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

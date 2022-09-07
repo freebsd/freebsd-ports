@@ -7,6 +7,7 @@ DISTNAME=	ROPGadget-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to search gadgets to facilitate ROP exploitation
+WWW=		https://pypi.org/project/ropgadget/
 
 LICENSE=	BSD3CLAUSE
 

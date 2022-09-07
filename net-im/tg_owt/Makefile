@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Webrtc library used by telegram-desktop
+WWW=		https://github.com/desktop-app/tg_owt
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

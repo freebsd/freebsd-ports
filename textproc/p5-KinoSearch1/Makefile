@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl search engine library
+WWW=		https://metacpan.org/release/KinoSearch1
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Lingua-StopWords>=0.02:textproc/p5-Lingua-StopWords \

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
 MAINTAINER=	amutu@amutu.com
 COMMENT=	Set of functions and operators for executing similarity queries
+WWW=		http://pgsimilarity.projects.pgfoundry.org
 
 LICENSE=	BSD3CLAUSE
 

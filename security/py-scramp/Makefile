@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Pure-Python implementation of the SCRAM authentication protocol
+WWW=		https://github.com/tlocke/scramp
 
 LICENSE=	MIT
 

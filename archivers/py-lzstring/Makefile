@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	LZ-based in-memory string compression
+WWW=		https://pypi.python.org/pypi/lzstring
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

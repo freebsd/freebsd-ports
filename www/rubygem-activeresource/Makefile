@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Coherent wrapper object-relational mapping for REST web services
+WWW=		https://rubyonrails.org/
 
 LICENSE=	MIT
 

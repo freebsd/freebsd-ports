@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DocBook SGML DTD into nroff/troff -man macros converter
+WWW=		https://www.oasis-open.org/docbook/tools/dtm/
 
 RUN_DEPENDS=	docbook>0:textproc/docbook
 

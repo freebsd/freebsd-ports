@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	churchers@gmail.com
 COMMENT=	Management system for bhyve virtual machines
+WWW=		https://github.com/churchers/vm-bhyve
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

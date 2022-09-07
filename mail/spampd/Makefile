@@ -5,6 +5,7 @@ CATEGORIES=	mail perl5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spamassassin SMTP Proxy
+WWW=		https://github.com/mpaperno/spampd
 
 LICENSE=	GPLv3
 

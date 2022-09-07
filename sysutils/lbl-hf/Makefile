@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	lbl-
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Address to hostname filter
+WWW=		https://ee.lbl.gov/downloads/hf/
 
 LICENSE=	BSD3CLAUSE
 

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Emacs package for extended tabulated-list-mode
+WWW=		https://github.com/politza/tablist
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

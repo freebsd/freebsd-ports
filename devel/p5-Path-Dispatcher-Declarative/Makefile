@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sugary dispatcher for perl
+WWW=		https://metacpan.org/release/Path-Dispatcher-Declarative
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

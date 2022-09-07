@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Extract change logs from Subversion server
+WWW=		https://metacpan.org/release/SVN-Log
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

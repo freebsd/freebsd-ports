@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of Matrix and Vector classes
+WWW=		https://github.com/ruby/matrix
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

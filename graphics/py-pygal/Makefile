@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jjachuf@gmail.com
 COMMENT=	Python svg graph plotting library
+WWW=		http://pygal.org/
 
 LICENSE=	LGPL3
 

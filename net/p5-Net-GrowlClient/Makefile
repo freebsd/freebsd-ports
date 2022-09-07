@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Perl implementation of Growl Network Notification Protocol
+WWW=		https://metacpan.org/release/Net-GrowlClient
 
 USES=		perl5
 USE_PERL5=	configure

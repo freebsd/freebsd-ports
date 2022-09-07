@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	For DBI to selectively log SQL, parameters, result-sets, transactions
+WWW=		https://metacpan.org/release/DBIx-Log4perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script to convert DVD image, device, or VIDEO_TS to mkv
+WWW=		http://5ko.free.fr/en/iso2mkv.html
 
 LICENSE=	MIT
 

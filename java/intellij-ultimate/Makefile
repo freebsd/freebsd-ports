@@ -7,6 +7,7 @@ DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	andoriyu@gmail.com
 COMMENT=	IntelliJ IDEA Ultimate Edition
+WWW=		https://www.jetbrains.com/idea/
 
 LICENSE=	IntelliJ-Ultimate
 LICENSE_NAME=	Subscription license agreement for business and organizations

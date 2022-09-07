@@ -7,6 +7,7 @@ DISTFILES=	xmul200b4.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 mascot based on gal-game "To Heart"
+WWW=		https://www.denpa.org/~go/xmulti/
 
 BROKEN_aarch64=	fails to build: fails to build: locale/mywchar.h:16:10: fatal error: 'machine/limits.h' file not found
 BROKEN_riscv64=	fails to build: fails to build: locale/mywchar.h:16:10: fatal error: 'machine/limits.h' file not found

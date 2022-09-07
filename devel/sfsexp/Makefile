@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/mjsottile/${PORTNAME}/releases/download/v${DIST
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Small Fast S-Expression Library
+WWW=		https://github.com/mjsottile/sfsexp
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

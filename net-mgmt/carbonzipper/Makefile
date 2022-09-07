@@ -5,6 +5,7 @@ CATEGORIES=		net-mgmt
 
 MAINTAINER=		a.andersson.thn@gmail.com
 COMMENT=		Proxy between carbonapi and go-carbon
+WWW=		https://github.com/go-graphite/carbonzipper/
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

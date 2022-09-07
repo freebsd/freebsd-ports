@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	General parsing module for Python - 2.X branch
+WWW=		https://pypi.org/project/pyparsing/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

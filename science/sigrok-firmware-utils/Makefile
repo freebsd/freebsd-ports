@@ -9,6 +9,7 @@ DISTFILES=	#none
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sigrok firmware extraction utilities
+WWW=		https://www.sigrok.org/wiki/Firmware
 
 LICENSE=	GPLv3+
 

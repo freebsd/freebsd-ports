@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Remove duplicated entries from feed
+WWW=		https://metacpan.org/release/XML-Feed-Deduper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

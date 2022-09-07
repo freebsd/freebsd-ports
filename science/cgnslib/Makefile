@@ -7,6 +7,7 @@ CATEGORIES=	science
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	CFD General Notation System library code
+WWW=		https://cgns.github.io/
 
 LICENSE=	AS-IS
 LICENSE_NAME=	AS-IS

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Easy peasy Python decorators
+WWW=		https://github.com/mplanchard/pydecor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

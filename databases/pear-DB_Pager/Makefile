@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	toshiya@saitoh.nu
 COMMENT=	PEAR Database Abstraction Layer
+WWW=		https://pear.php.net/package/DB_Pager
 
 LICENSE=	GPLv3
 

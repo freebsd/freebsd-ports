@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generate Perl classes with XML bindings from a W3C XSD schema
+WWW=		https://metacpan.org/release/XML-Pastor
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

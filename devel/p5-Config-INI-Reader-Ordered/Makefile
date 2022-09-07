@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	INI-file parser that returns sections in order
+WWW=		https://metacpan.org/pod/Config::INI::Reader::Ordered
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

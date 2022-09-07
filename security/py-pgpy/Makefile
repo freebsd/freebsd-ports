@@ -7,6 +7,7 @@ DISTNAME=	PGPy-${PORTVERSION}
 
 MAINTAINER=	contact@evilham.com
 COMMENT=	Pretty Good Privacy for Python
+WWW=		https://github.com/SecurityInnovation/PGPy
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

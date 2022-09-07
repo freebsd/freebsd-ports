@@ -6,6 +6,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Generate GH_TUPLE from modules.txt
+WWW=		https://github.com/dmgk/modules2tuple
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

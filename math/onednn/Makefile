@@ -5,6 +5,7 @@ CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel(R) Math Kernel Library for Deep Neural Networks
+WWW=		https://01.org/onednn
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

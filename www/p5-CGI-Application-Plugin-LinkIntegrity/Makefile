@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Make tamper-resistent links in CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-LinkIntegrity
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

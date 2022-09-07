@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-dist
 
 MAINTAINER=	freebsd@rheinwolf.de
 COMMENT=	Identity management and identity governance system
+WWW=		https://evolveum.com/midpoint/
 
 LICENSE=			AMS APACHE20 AREV BITSTREAM CDDL LGPL3 MIT
 LICENSE_COMB=			multi

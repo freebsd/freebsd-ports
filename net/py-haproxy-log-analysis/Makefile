@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/g}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Haproxy log analyzer that tries to gives an insight of what's going on
+WWW=		https://pypi.org/project/haproxy_log_analysis/
 
 LICENSE=	GPLv3
 

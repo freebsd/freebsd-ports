@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Preprocessor for mdBook to add mermaid.js support
+WWW=		https://github.com/badboy/mdbook-mermaid
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Parser for SVG content in files or buffers
+WWW=		http://cairographics.org/libsvg
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png

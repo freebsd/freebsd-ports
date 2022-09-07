@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple game to teach you typing, fast
+WWW=		http://www.vanheusden.com/banihstypos/
 
 USES=		ncurses
 MAKE_ARGS=	LDFLAGS="${LDFLAGS} -lncurses"

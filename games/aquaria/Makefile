@@ -7,6 +7,7 @@ CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Underwater 2D fantasy action-adventure (game engine)
+WWW=		https://github.com/AquariaOSE/Aquaria
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text based card game, the objective is to get rid of all your cards
+WWW=		http://dxkelly.freeshell.org/games.html
 
 USES=	dos2unix
 DOS2UNIX_FILES=	eights.c

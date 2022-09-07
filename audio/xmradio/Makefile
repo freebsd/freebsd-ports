@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/audio/xmradio/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Motif based FM tuner (for use with bktr(4) driver)
+WWW=		https://BSDforge.com/projects/audio/xmradio/
 
 LICENSE=	BSD2CLAUSE
 

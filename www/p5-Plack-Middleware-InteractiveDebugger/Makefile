@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Awesome Interactive Debugger ala Werkzeug
+WWW=		https://metacpan.org/release/Plack-Middleware-InteractiveDebugger
 
 RUN_DEPENDS=	\
 	p5-Data-Dump-Streamer>0:devel/p5-Data-Dump-Streamer \

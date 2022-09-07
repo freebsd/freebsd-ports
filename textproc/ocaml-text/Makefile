@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml library for dealing with text
+WWW=		https://forge.ocamlcore.org/projects/ocaml-text/
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 

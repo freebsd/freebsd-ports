@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Replacement for ls, cp, mkdir, diff and rsync commands for filesystems
+WWW=		https://minio.io/downloads/ #minio-client
 
 LICENSE=	APACHE20
 

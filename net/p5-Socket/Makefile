@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Networking constants and support functions
+WWW=		https://metacpan.org/release/Socket
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

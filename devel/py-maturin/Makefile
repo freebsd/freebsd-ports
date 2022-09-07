@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Build and publish crates with pyo3, rust-cpython and cffi bindings
+WWW=		https://github.com/PyO3/maturin
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

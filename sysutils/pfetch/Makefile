@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Pretty system information tool written in POSIX sh
+WWW=		https://github.com/dylanaraps/pfetch
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

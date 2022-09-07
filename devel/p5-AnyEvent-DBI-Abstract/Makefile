@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	AnyEvent::DBI + SQL::Abstract
+WWW=		https://metacpan.org/release/AnyEvent-DBI-Abstract
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

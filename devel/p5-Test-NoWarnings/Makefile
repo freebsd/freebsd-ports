@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Hide and store warnings while running test scripts
+WWW=		https://metacpan.org/release/Test-NoWarnings
 
 LICENSE=	LGPL21
 

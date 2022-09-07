@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Lightweight web browser
+WWW=		https://www.netsurf-browser.org/
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ClearSilver view class for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-View-ClearSilver
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

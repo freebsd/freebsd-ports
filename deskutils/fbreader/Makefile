@@ -6,6 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	johannes@perceivon.net
 COMMENT=	Powerful e-book reader
+WWW=		https://www.fbreader.org/
 
 LICENSE=	GPLv2+
 

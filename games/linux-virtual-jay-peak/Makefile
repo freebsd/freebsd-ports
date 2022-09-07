@@ -8,6 +8,7 @@ DISTNAME=	virtual_jay_peak_linux_1_1a
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulation of snowboarding at the Jay Peak resort in Vermont
+WWW=		http://www.soulride.com/products/jay_peak.html
 
 OPTIONS_DEFINE=	DOCS
 

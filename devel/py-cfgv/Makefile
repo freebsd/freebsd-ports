@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Validate configuration and produce human readable error messages
+WWW=		https://github.com/asottile/cfgv
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

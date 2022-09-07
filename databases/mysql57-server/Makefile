@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-boost-${PORTVERSION}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
+WWW=		https://www.mysql.com/
 
 LICENSE=	GPLv2
 

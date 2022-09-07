@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	pydio-
 
 MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Pydio fork of packr v1
+WWW=		https://github.com/pydio/packr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Fast sampling profiler for ruby code
+WWW=		https://github.com/tmm1/stackprof
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast and powerful open source alternative to grep
+WWW=		https://github.com/svent/sift
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

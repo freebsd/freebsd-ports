@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Catalyst Server Plugin: Base & XMLRPC
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Server
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

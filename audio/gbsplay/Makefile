@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Emulates the sound hardware of the Nintendo Game Boy(TM)
+WWW=		https://github.com/mmitch/gbsplay
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

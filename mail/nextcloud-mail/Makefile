@@ -9,6 +9,7 @@ DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Mail app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/mail
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

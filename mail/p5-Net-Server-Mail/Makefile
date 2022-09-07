@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Implementation of SMTP, ESMTP, and LMTP protocols
+WWW=		https://metacpan.org/release/Net-Server-Mail
 
 TEST_DEPENDS=	p5-Test-Most>=0:devel/p5-Test-Most
 

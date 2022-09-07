@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Border styles
+WWW=		https://metacpan.org/dist/BorderStyle
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

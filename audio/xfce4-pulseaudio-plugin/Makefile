@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Panel plugin for controlling PulseAudio mixer
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-pulseaudio-plugin
 
 LICENSE=	GPLv2
 

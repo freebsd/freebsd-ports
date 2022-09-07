@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-meet
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Secure, Simple and Scalable Video Conferences
+WWW=		https://github.com/jitsi/jitsi-meet
 
 LICENSE=	APACHE20
 

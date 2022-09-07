@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	dsp@php.net
 COMMENT=	Collectd exporter for Prometheus
+WWW=		https://github.com/prometheus/collectd_exporter
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

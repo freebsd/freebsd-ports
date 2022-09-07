@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Babel JS source
+WWW=		https://github.com/babel/ruby-babel-transpiler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

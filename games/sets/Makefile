@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the sets game
+WWW=		http://www.linuxmotors.com/sets/
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.qtrac.eu/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Compare two PDF files-textually or visually
+WWW=		http://www.qtrac.eu/diffpdf-foss.html
 
 LICENSE=	GPLv2+
 

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Provides interface to libevent library
+WWW=		https://pecl.php.net/package/event
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DISTNAME=	FirgeNerd_v${DISTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Firge is a composite font of Fira Mono and GenShin-Gothic
+WWW=		https://github.com/yuru7/Firge
 
 LICENSE=	OFL11
 

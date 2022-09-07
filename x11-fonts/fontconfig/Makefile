@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.freedesktop.org/software/fontconfig/release/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	XML-based font configuration API for X Windows
+WWW=		https://www.freedesktop.org/wiki/Software/fontconfig/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	nyan@FreeBSD.org
 COMMENT=	Moving mascot on your X11 screen
+WWW=		https://cclub-flying.dsl.gr.jp/products/xmascot/
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	XMascot

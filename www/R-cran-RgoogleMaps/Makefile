@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Overlays on Google map tiles in R
+WWW=		https://cran.r-project.org/web/packages/RgoogleMaps/
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Themeable LS_COLORS generator with a rich filetype datebase
+WWW=		https://github.com/sharkdp/vivid
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

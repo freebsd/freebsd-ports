@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Python module for creating GDSII stream files
+WWW=		https://github.com/heitzmann/gdspy
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

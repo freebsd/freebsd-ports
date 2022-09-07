@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Drum synth LV2 plugin
+WWW=		https://github.com/mxmilkiib/stegosaurus
 
 LICENSE=	GPLv3
 

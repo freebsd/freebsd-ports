@@ -13,6 +13,7 @@ MASTER_SITES=	https://dovecot.org/releases/2.3/
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Secure, fast and powerful IMAP and POP3 server
+WWW=		https://www.dovecot.org/
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	dual

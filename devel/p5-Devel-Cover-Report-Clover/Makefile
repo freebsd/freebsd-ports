@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Clover reporting of coverage statistics
+WWW=		https://metacpan.org/release/Devel-Cover-Report-Clover
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

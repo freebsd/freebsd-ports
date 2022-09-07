@@ -5,6 +5,7 @@ MASTER_SITES=	SF/devmon/${PORTNAME}/templates/
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Device templates for use with devmon
+WWW=		http://devmon.sourceforge.net/
 
 RUN_DEPENDS=	devmon>0:net-mgmt/devmon
 

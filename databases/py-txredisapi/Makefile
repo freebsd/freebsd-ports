@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@skyforge.at
 COMMENT=	Non-blocking redis client for python
+WWW=		https://github.com/IlyaSkriblovsky/txredisapi
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

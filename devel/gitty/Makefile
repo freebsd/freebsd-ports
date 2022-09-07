@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Smart terminal helper for git projects
+WWW=		https://github.com/muesli/gitty
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

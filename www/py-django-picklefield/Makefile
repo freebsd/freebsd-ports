@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pickled object field for Django
+WWW=		https://github.com/gintas/django-picklefield
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

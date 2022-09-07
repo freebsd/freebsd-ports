@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source XML framework for Java
+WWW=		https://www.dom4j.org/
 
 USES=		cpe
 CPE_VENDOR=	${PORTNAME}_project

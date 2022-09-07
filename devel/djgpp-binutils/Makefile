@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	djgpp-
 
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	FSF binutils for DJGPP cross-development
+WWW=		https://www.delorie.com/djgpp/
 
 LICENSE=	GPLv2
 

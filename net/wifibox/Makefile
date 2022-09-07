@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
 COMMENT=	Wireless card driver via virtualized Linux
+WWW=		https://github.com/pgj/freebsd-wifibox
 
 ONLY_FOR_ARCHS=	amd64
 

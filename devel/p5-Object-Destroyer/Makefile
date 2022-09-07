@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make objects with circular references DESTROY normally
+WWW=		https://metacpan.org/release/Object-Destroyer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easily create forking queue processing applications
+WWW=		https://metacpan.org/release/Parallel-Fork-BossWorker
 
 USES=		perl5
 USE_PERL5=	configure

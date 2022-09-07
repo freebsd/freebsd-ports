@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides an interactive input buffer written in plain PERL
+WWW=		https://metacpan.org/release/Term-ReadLine-Zoid
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey

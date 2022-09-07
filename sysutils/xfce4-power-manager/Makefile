@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Power manager for the Xfce Desktop
+WWW=		https://goodies.xfce.org/projects/applications/xfce4-power-manager
 
 LICENSE=	GPLv2
 

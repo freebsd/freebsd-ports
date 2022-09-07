@@ -6,6 +6,7 @@ MASTER_SITES=	http://uniquesoftwaredesigns.com/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lambda calculus interpreter
+WWW=		https://uniquesoftwaredesigns.com/lambda/docs/lambda.html
 
 LICENSE=	GPLv2
 

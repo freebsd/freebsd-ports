@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	o.hushchenkov@gmail.com
 COMMENT=	Rewrite of unclutter using the x11-xfixes extension
+WWW=		https://github.com/Airblader/unclutter-xfixes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

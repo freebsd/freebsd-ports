@@ -8,6 +8,7 @@ MASTER_SITES=	GH \
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	OpenSolaris-compatible auto snapshotting for ZFS
+WWW=		https://github.com/bdrewery/zfstools
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

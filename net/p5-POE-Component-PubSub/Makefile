@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic publish/subscribe POE::Component
+WWW=		https://metacpan.org/release/NPEREZ/POE-Component-PubSub-0.091370
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

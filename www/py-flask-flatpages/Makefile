@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	oleg@bsdpower.com
 COMMENT=	Provides flat static pages to a Flask application
+WWW=		https://github.com/SimonSapin/Flask-FlatPages
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

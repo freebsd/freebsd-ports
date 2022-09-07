@@ -7,6 +7,7 @@ DISTNAME=	pyproject_fmt-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Format your pyproject.toml file
+WWW=		https://github.com/tox-dev/pyproject-fmt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

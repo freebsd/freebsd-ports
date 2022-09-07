@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	ZXing C++ Library for QR code recognition
+WWW=		https://github.com/nu-book/zxing-cpp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

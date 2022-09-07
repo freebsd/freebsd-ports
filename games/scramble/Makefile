@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.shiftygames.com/scramble/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	From 6 letters you are to create as many words as you can
+WWW=		http://www.shiftygames.com/scramble/scramble.html
 
 GNU_CONFIGURE=	yes
 USES=		gmake sdl

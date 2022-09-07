@@ -6,6 +6,7 @@ MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/2607/
 
 MAINTAINER=	uddka@student.kit.edu
 COMMENT=	Program for viewing and analysing the contents of music audio files
+WWW=		https://www.sonicvisualiser.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

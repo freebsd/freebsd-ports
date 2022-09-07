@@ -6,6 +6,7 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for checking and fixing MP3 archive inconsistencies
+WWW=		https://www.icculus.org/mp3check/
 
 RUN_DEPENDS=	${LOCALBASE}/bin/id3tool:audio/id3tool \
 		${LOCALBASE}/bin/mp3_check:audio/mp3_check

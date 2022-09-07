@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl class performing Bayesian prediction of categories
+WWW=		https://metacpan.org/release/Algorithm-NaiveBayes
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

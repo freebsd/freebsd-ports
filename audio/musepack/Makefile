@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_src_r475
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Decoder, encoder, and replaygain for musepack (mpc)
+WWW=		https://www.musepack.net/
 
 LICENSE=	BSD3CLAUSE GPLv2+ LGPL21+
 LICENSE_COMB=	multi

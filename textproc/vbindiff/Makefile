@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.cjmweb.net/vbindiff/
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Visual binary diff, visually compare binary files
+WWW=		https://www.cjmweb.net/vbindiff/
 
 LICENSE=	GPLv2+
 

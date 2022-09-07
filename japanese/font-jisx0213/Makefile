@@ -12,6 +12,7 @@ DISTFILES=	jiskan16-2004-1.bdf.gz jiskan16-2000-1.bdf.gz \
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese jisx0213 fonts
+WWW=		http://www12.ocn.ne.jp/~imamura/jisx0213.html
 
 LICENSE=	PD
 

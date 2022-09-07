@@ -7,6 +7,7 @@ MASTER_SITES=	AFTERSTEP/apps/asmail/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Biff-type program, designed to match AfterStep
+WWW=		https://tigr.net/afterstep/
 
 USES=		ssl xorg
 USE_XORG=	xpm

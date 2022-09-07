@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	casnix@gmail.com
 COMMENT=	Utility to perform elementary actions on windows
+WWW=		https://github.com/baskerville/xdo
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

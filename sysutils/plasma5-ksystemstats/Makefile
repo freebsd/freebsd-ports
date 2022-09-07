@@ -4,6 +4,7 @@ CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 library to report system activity
+WWW=		https://invent.kde.org/plasma/ksystemstats
 
 LIB_DEPENDS+=	libudev.so:devel/libudev-devd
 

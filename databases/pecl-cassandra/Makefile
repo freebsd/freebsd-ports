@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Extension to access Cassandra
+WWW=		https://pecl.php.net/package/cassandra
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

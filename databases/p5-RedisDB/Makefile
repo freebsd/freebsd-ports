@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to access redis database
+WWW=		https://metacpan.org/release/RedisDB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Simulation in Python
+WWW=		https://simpy.readthedocs.org/en/latest/
 
 LICENSE=	LGPL21
 

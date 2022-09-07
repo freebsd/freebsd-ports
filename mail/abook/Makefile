@@ -6,6 +6,7 @@ MASTER_SITES=	http://abook.sourceforge.net/devel/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Addressbook program with mutt mail client support
+WWW=		http://abook.sourceforge.net/
 
 LICENSE=	GPLv2
 

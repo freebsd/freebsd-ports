@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	clutton@zoho.com
 COMMENT=	GNU MAC Changer
+WWW=		https://www.gnu.org/software/macchanger
 
 LICENSE=	GPLv3
 

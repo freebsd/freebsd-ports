@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 guitar amp simulator
+WWW=		https://github.com/sadko4u/tamgamp.lv2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

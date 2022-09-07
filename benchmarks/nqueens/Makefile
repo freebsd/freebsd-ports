@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	N-queens benchmark
+WWW=		https://www.arch.cs.titech.ac.jp/~kise/nq/index.htm
 
 WRKSRC=		${WRKDIR}/version${PORTVERSION}
 

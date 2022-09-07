@@ -2,6 +2,7 @@ PORTNAME=	sunpromake
 CATEGORIES=	devel parallel
 
 COMMENT=	Parallel-execution enabled SunOS make program, enhanced to fit POSIX
+WWW=		https://codeberg.org/schilytools/schilytools
 
 USE_LDCONFIG=	yes
 

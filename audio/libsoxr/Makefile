@@ -7,6 +7,7 @@ DISTNAME=	soxr-${PORTVERSION}-Source
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	High quality, one-dimensional sample-rate conversion library
+WWW=		https://sourceforge.net/projects/soxr/
 
 LICENSE=	LGPL21+ FFTPAK
 LICENSE_COMB=	multi

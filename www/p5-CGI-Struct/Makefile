@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Build data structures from CGI request parameters
+WWW=		https://metacpan.org/release/CGI-Struct
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

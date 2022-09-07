@@ -7,6 +7,7 @@ DISTNAME=	Pillow-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fork of the Python Imaging Library (PIL)
+WWW=		https://python-pillow.org/
 
 LICENSE=	PIL
 LICENSE_NAME=	Standard PIL License

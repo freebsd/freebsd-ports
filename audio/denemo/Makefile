@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphical score editor
+WWW=		http://www.denemo.org/
 
 LICENSE=	GPLv3+
 

@@ -7,6 +7,7 @@ DISTNAME=	Python-EasyConfig-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Library for loading configurations easily in Python
+WWW=		https://github.com/RussellLuo/easyconfig
 
 LICENSE=	MIT
 

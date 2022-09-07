@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	PECL extension that provides direct access to low level IO
+WWW=		http://www.pecl.php.net/package/dio/
 
 LICENSE=	PHP30
 

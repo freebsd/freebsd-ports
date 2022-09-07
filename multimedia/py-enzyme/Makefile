@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python module to parse metadata in video files
+WWW=		https://github.com/Diaoul/enzyme
 
 LICENSE=	APACHE20
 

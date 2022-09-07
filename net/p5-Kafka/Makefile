@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gebhart@secnetix.de
 COMMENT=	Apache Kafka interface for Perl
+WWW=		https://metacpan.org/pod/Kafka
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

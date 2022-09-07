@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.go-mono.com/archive/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully managed implementation of gnome-keyring
+WWW=		https://andrew.jorgensenfamily.us/2008/08/gnome-keyring-sharp/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

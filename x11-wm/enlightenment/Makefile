@@ -7,6 +7,7 @@ DIST_SUBDIR=	enlightenment
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Artistic and fast X window manager
+WWW=		https://www.enlightenment.org/
 
 LICENSE=	BSD2CLAUSE
 

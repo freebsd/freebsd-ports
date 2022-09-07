@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl 5 module to deploy a DBIx::Class schema
+WWW=		https://metacpan.org/release/DBICx-Deploy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

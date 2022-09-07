@@ -7,6 +7,7 @@ DISTFILES=	# nil
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traceroute attempt logger and result spoofer
+WWW=		http://www.ussrback.com/UNIX/loggers/fakeroute.c
 
 NO_WRKSUBDIR=	yes
 

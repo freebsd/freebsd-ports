@@ -6,6 +6,7 @@ MASTER_SITES=	SF/heaven/Audio%20Applications/Jack%20Related/jack_convolve/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple C library for partitioned convolution
+WWW=		http://heaven.sourceforge.net/index.php/programs/audio
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	tim@wallago.co.uk
 COMMENT=	Server Density Agent for FreeBSD
+WWW=		https://www.serverdensity.com/
 
 LICENSE=	BSD3CLAUSE
 

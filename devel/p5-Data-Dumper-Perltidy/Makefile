@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	Stringify and pretty print Perl data structures
+WWW=		https://metacpan.org/release/Data-Dumper-Perltidy
 
 RUN_DEPENDS=	perltidy:devel/p5-Perl-Tidy
 

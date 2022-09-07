@@ -7,6 +7,7 @@ DISTNAME=	ltb-project-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Set of PHP-scripts to change LDAP password over the web
+WWW=		https://ltb-project.org/documentation/self-service-password.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE

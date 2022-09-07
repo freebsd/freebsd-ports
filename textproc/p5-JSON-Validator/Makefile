@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validate data against a JSON schema
+WWW=		https://metacpan.org/pod/JSON::Validator
 
 LICENSE=	ART20
 

@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.bearnip.com/ftp/mud/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern version of the LPMud game driver
+WWW=		https://www.ldmud.eu/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKRSC}/COPYRIGHT

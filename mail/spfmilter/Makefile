@@ -6,6 +6,7 @@ MASTER_SITES=	https://acme.com/software/spfmilter/
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	SPF milter for sendmail
+WWW=		https://acme.com/software/spfmilter/
 
 LICENSE=	BSD2CLAUSE
 

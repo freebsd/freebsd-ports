@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	alexander@sulfrian.net
 COMMENT=	Nagios Service Check Acceptor
+WWW=		https://github.com/weiss/nsca-ng
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

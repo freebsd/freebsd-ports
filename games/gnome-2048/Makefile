@@ -10,6 +10,7 @@ PATCHFILES+=	194e22699f71.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-2048/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Move the tiles until you obtain the 2048 tile
+WWW=		https://wiki.gnome.org/Apps/2048
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		appstream-util:devel/appstream-glib

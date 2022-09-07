@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Flask extension that adds Bootstrap to your projects
+WWW=		https://pythonhosted.org/Flask-Bootstrap/
 
 LICENSE=	BSD3CLAUSE
 

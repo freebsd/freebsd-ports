@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Real Embedded Algebraic Number Theory In C
+WWW=		https://github.com/flatsurf/e-antic
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual

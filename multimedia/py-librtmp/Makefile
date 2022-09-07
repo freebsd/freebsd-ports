@@ -8,6 +8,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python bindings for librtmp, built with cffi
+WWW=		https://github.com/chrippa/python-librtmp
 
 LICENSE=	BSD2CLAUSE
 

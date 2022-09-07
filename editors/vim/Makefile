@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Improved version of the vi editor (${FLAVOR:U} flavor)
+WWW=		https://www.vim.org/
 
 LICENSE=	VIM
 LICENSE_NAME=	VIM License

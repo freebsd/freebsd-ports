@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Next generation web interface for Icinga 1 and 2
+WWW=		https://www.icinga.com/products/icinga-web-2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

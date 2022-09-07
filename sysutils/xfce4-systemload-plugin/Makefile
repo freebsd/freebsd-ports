@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	System Load plugin for Xfce4 panel
+WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-systemload-plugin
 
 LICENSE=	BSD2CLAUSE
 

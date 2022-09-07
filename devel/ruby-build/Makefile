@@ -6,6 +6,7 @@ DIST_SUBDIR=	rbenv
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Compile and install different ruby versions
+WWW=		https://github.com/rbenv/ruby-build
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

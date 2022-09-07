@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of cut generators for COIN-OR packages that use cuts
+WWW=		https://github.com/coin-or/Cgl
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Cgl/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Pack, send, and unpack shell archives; synchronize via e-mail
+WWW=		https://www.gnu.org/s/sharutils/
 
 LICENSE=	GPLv3
 

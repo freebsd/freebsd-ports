@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/dejavu-fonts/dejavu-fonts/releases/download/ver
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bitstream Vera Fonts clone with a wider range of characters
+WWW=		https://dejavu-fonts.github.io/
 
 LICENSE=	AMS AREV BITSTREAM
 LICENSE_COMB=	multi

@@ -8,6 +8,7 @@ DISTFILES=	${PORTNAME}-linux-src-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tomato-smashing, Q-Bert style
+WWW=		http://tomatoes.sourceforge.net/
 
 LICENSE=	ZLIB
 

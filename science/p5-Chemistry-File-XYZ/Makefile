@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	XYZ molecule format reader/writer
+WWW=		https://metacpan.org/release/Chemistry-File-XYZ
 
 BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol
 RUN_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol

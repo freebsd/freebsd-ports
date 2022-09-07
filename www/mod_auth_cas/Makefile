@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache 2.x module that supports the CASv1 and CASv2 protocols
+WWW=		https://wiki.jasig.org/display/CASC/mod_auth_cas
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/README

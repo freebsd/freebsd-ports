@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	NetCDF file reader and writer
+WWW=		https://bitbucket.org/robertodealmeida/pupynere
 
 LICENSE=	MIT
 

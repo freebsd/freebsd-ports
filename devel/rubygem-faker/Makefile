@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for generating fake data: names, addresses, phone numbers
+WWW=		https://github.com/faker-ruby/faker
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt

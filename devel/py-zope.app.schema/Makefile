@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Component Architecture based Vocabulary Registry
+WWW=		https://pypi.org/project/zope.app.schema/
 
 LICENSE=	ZPL21
 

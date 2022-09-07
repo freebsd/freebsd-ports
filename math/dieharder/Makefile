@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/ LOCAL/bf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Random number generator testsuite
+WWW=		http://www.phy.duke.edu/~rgb/General/dieharder.php
 
 LICENSE=	GPLv2
 

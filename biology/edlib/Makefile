@@ -4,6 +4,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast C++ library for sequence alignment using edit distance
+WWW=		https://github.com/Martinsos/edlib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

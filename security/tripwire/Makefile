@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File system security and verification program
+WWW=		https://sourceforge.net/projects/tripwire/
 
 LICENSE=	GPLv2
 

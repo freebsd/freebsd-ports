@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Gem Based Plugin System
+WWW=		https://rubygems.org/gems/gem_plugin
 
 LICENSE=	LGPL21 RUBY
 LICENSE_COMB=	dual

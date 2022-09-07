@@ -5,6 +5,7 @@ MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Plugins needed for audacious
+WWW=		https://audacious-media-player.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

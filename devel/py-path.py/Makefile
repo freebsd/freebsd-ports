@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Module wrapper for os.path
+WWW=		https://github.com/jaraco/path.py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

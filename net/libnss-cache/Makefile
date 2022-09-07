@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	NSS module for directory services using an indexed, local disk cache
+WWW=		https://github.com/google/libnss-cache
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Auditing tool for system logs on Unix boxes
+WWW=		https://salsa.debian.org/debian/logcheck
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

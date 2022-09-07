@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.inter7.com/wp-content/uploads/2014/12/ \
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Program to create mrtg graphs for qmail activity
+WWW=		https://www.inter7.com/?page=qmailmrtg7
 
 LICENSE=	GPLv2
 

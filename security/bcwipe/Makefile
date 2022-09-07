@@ -6,6 +6,7 @@ DISTNAME=	BCWipe-${PORTVERSION:S/./-/g:S/-/./}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	BCWipe securely erases data from magnetic and solid-state memory
+WWW=		https://www.jetico.com/
 
 # Converted from NO_CDROM
 LICENSE=	bcwipe

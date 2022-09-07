@@ -7,6 +7,7 @@ DISTNAME?=	fireflysung-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Combination of two Arphic Sung fonts
+WWW=		http://www.study-area.org/apt/firefly-font/
 
 CONFLICTS=	zh-opendesktop-fonts
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl pragma to declare lexical compile-time constants
+WWW=		https://metacpan.org/release/constant-lexical
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

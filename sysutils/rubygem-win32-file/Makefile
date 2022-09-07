@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extra and redefined methods for the File class on MS Windows
+WWW=		https://github.com/chef/win32-file
 
 LICENSE=	ART20
 

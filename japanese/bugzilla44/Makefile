@@ -7,6 +7,7 @@ DISTNAME=	Bugzilla-ja-${PORTVERSION}-template
 
 MAINTAINER=	bz-ports@FreeBSD.org
 COMMENT=	Japanese localization for Bugzilla
+WWW=		http://bug-ja.org/
 
 RUN_DEPENDS=	bugzilla44>=${PORTVERSION}:devel/bugzilla44
 

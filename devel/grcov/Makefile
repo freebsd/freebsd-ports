@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Code coverage information aggregator
+WWW=		https://github.com/mozilla/grcov
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-2.0

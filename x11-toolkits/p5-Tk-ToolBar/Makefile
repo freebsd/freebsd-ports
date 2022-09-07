@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Toolbar widget for Perl/Tk
+WWW=		https://metacpan.org/release/Tk-ToolBar
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

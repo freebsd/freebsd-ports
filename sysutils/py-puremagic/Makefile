@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	james@french.id.au
 COMMENT=	Pure python implementation of magic file detection
+WWW=		https://pypi.org/project/puremagic/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

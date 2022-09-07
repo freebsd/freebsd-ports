@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides interface to working with ZIP archives
+WWW=		https://github.com/javanthropus/archive-zip
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

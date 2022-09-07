@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to check that all your files are tidy
+WWW=		https://metacpan.org/release/Test-PerlTidy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

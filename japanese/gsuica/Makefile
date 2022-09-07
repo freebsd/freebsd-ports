@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GNOME SUICA Viewer
+WWW=		http://hito.music.coocan.jp/pasori/gsuica.html
 
 LICENSE=	GPLv2
 

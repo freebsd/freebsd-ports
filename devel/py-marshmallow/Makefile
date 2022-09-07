@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplified object serialization for Python
+WWW=		https://github.com/marshmallow-code/marshmallow
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

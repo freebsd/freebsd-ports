@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	High-level, extensible programming language
+WWW=		http://seed7.sourceforge.net/
 
 # The language libraries are licensed under the LGPL21 license. Starting from
 # version 05_20140601, the compiler libraries are also distributed. These are

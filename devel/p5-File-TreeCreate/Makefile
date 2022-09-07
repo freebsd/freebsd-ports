@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Recursively create a directory tree
+WWW=		https://metacpan.org/dist/File-TreeCreate
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

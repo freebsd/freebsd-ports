@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tl}-docker-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based GroupWare system
+WWW=		https://www.egroupware.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME:tl}/doc/LICENSE

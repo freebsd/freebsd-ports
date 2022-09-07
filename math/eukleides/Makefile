@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.eukleides.org/files/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Euclidean geometry drawing language
+WWW=		http://www.eukleides.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

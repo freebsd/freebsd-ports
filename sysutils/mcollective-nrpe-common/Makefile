@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT?=	MCollective common files to interact with the NRPE monitoring system
+WWW=		https://github.com/puppetlabs/mcollective-package-agent
 
 LICENSE=	APACHE20
 

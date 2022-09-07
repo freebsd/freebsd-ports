@@ -8,6 +8,7 @@ DISTNAME=	nec2c
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Used to calculate antenna patterns useful to ham radio
+WWW=		http://5b4az.chronos.org.uk/pages/nec2.html
 
 LIB_DEPENDS=	libccm.so:math/ccmath
 

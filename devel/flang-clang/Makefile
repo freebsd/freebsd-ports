@@ -5,6 +5,7 @@ CATEGORIES=	devel lang
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Fortran compiler targeting LLVM (modified clang part)
+WWW=		https://github.com/flang-compiler/flang-driver
 
 LICENSE=	LLVM
 LICENSE_NAME=	LLVM Release License

@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Small and easy to use console text editor
+WWW=		https://craigbarnes.gitlab.io/dte/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

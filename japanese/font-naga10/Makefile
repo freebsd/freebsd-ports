@@ -8,6 +8,7 @@ DISTNAME=	knj10-${PORTVERSION}
 
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	10-dot Kanji font
+WWW=		http://hp.vector.co.jp/authors/VA013391/fonts/ #naga10
 
 LICENSE=	NOTPARTIAL
 LICENSE_NAME=	Whole not partial

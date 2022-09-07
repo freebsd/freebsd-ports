@@ -4,6 +4,7 @@ CATEGORIES=	comms archivers
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	OpenCBM plugin for parallel-port cables
+WWW=		http://opencbm.sourceforge.net/
 
 LICENSE=	GPLv2
 

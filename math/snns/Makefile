@@ -7,6 +7,7 @@ DISTNAME=	SNNSv${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully featured neural network simulator
+WWW=		https://www.ra.cs.uni-tuebingen.de/SNNS/
 
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 

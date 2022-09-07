@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interface to the Google WebRTC Voice Activity Detector (VAD)
+WWW=		https://github.com/wiseman/py-webrtcvad
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

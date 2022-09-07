@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spanish thesaurus
+WWW=		http://openoffice-es.sourceforge.net/thesaurus/
 
 LICENSE=	LGPL21
 

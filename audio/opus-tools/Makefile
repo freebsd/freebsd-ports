@@ -5,6 +5,7 @@ MASTER_SITES=	MOZILLA/opus
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Encode, inspect, and decode Opus files
+WWW=		https://opus-codec.org/
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi

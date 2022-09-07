@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fetch info from WMA audio files
+WWW=		https://metacpan.org/release/Audio-WMA
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

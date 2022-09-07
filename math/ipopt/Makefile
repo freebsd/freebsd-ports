@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software package for large-scale nonlinear optimization
+WWW=		https://projects.coin-or.org/Ipopt
 
 LICENSE=	EPL
 

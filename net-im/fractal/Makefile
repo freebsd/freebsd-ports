@@ -9,6 +9,7 @@ PATCHFILES+=	6fa1a23596d6.patch:-p1 # https://gitlab.gnome.org/GNOME/fractal/-/m
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	GTK+ Matrix IM client
+WWW=		https://wiki.gnome.org/Apps/Fractal
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -9,6 +9,7 @@ EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Icon editing companion
+WWW=		https://kde.org/applications/system/org.kde.Ikona
 
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/LICENSE

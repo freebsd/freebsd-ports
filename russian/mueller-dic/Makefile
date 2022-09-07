@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mueller English-Russian dictionary
+WWW=		http://mueller-dic.chat.ru/
 
 USES=		gmake iconv:build
 SUB_FILES=	mueller pkg-message

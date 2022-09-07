@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	CHANGELOG generator implemented in Go
+WWW=		https://github.com/git-chglog/git-chglog
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

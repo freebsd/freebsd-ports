@@ -10,6 +10,7 @@ EXTRACT_ONLY=	#
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	API for building a graphical console in Swing
+WWW=		http://dev.artenum.com/projects/JRosetta
 
 USES=		zip
 USE_JAVA=	yes

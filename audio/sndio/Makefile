@@ -5,6 +5,7 @@ MASTER_SITES=	https://sndio.org/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Small audio and MIDI framework from the OpenBSD project
+WWW=		https://www.sndio.org/
 
 LICENSE=	ISCL
 

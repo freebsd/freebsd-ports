@@ -6,6 +6,7 @@ CATEGORIES=	print graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cuts an image into pieces which can be printed out as a poster
+WWW=		https://github.com/aportale/posterazor
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

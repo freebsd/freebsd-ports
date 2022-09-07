@@ -7,6 +7,7 @@ DISTNAME=	c_icap-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	ICAP server implementation
+WWW=		http://c-icap.sourceforge.net/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

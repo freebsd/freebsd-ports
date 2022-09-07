@@ -6,6 +6,7 @@ MASTER_SITES=	https://xpra.org/src/
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Persistent remote applications for X
+WWW=		https://xpra.org/
 
 LICENSE=	GPLv2
 

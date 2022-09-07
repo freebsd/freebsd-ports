@@ -6,6 +6,7 @@ MASTER_SITES=	GNU/gnucobol
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Free/libre COBOL compiler
+WWW=		https://www.gnu.org/software/gnucobol/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

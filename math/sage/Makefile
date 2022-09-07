@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Open source Mathematics software
+WWW=		https://www.sagemath.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

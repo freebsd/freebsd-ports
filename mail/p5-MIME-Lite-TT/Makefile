@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	freebsd-ports@t-b-o-h.net
 COMMENT=	TT enabled MIME::Lite wrapper
+WWW=		https://metacpan.org/release/MIME-Lite-TT
 
 BUILD_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
 		p5-MIME-Lite>=0:mail/p5-MIME-Lite \

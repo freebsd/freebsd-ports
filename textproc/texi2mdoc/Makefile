@@ -5,6 +5,7 @@ MASTER_SITES=	http://mdocml.bsd.lv/texi2mdoc/snapshots/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Convert Texinfo data to mdoc input
+WWW=		https://mdocml.bsd.lv/texi2mdoc/
 
 LICENSE=	ISCL
 

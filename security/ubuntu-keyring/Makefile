@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	mia-rain@tuta.io
 COMMENT=	GPG keys for Ubuntu package signature verification
+WWW=		https://bugs.launchpad.net/ubuntu/+filebug
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/debian/copyright

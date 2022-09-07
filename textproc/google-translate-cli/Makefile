@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Google Translate to serve as a command line tool
+WWW=		https://www.soimort.org/translate-shell/
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

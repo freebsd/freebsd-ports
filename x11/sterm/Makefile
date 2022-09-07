@@ -6,6 +6,7 @@ DISTNAME=	st-${PORTVERSION}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Simple X terminal
+WWW=		https://st.suckless.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

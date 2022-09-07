@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Emacs major mode for editing Markdown-formatted text
+WWW=		https://jblevins.org/projects/markdown-mode/
 
 LICENSE=	GPLv3+
 

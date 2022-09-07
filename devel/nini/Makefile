@@ -7,6 +7,7 @@ DISTNAME=	Nini-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NET configuration library
+WWW=		http://nini.sourceforge.net
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

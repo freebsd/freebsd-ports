@@ -6,6 +6,7 @@ DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mixer library for MATE desktop
+WWW=		https://github.com/mate-desktop/libmatemixer
 
 LICENSE=	LGPL21
 

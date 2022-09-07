@@ -7,6 +7,7 @@ DISTNAME=	South-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Intelligent schema migrations for Django apps
+WWW=		https://south.aeracode.org/
 
 LICENSE=	APACHE20
 

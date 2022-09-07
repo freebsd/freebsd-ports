@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Define things according to a specification, using hashes
+WWW=		https://metacpan.org/release/DefHash
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

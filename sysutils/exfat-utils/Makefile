@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-utils
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Utilities to create, check, label and dump exFAT filesystem
+WWW=		https://github.com/relan/exfat
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

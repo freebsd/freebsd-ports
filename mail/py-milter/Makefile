@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	estartu@augusta.de
 COMMENT=	Python interface to Sendmail milter API
+WWW=		https://pythonhosted.org/milter/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

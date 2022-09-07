@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen VB to libretro
+WWW=		https://github.com/libretro/beetle-vb-libretro
 
 LICENSE=	GPLv2
 

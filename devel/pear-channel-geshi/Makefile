@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
+WWW=		http://pear.geshi.org/
 
 PEAR_CHANNEL_HOST=	pear.geshi.org
 

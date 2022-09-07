@@ -6,6 +6,7 @@ DISTNAME=	stardict-en-ru-bars-${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	New Comprehensive English-Russian dictionary
+WWW=		http://download.huzheng.org/ru/
 
 USES=		tar:bzip2
 

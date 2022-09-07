@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Provides a few simple methods to make it easier to inspect $?
+WWW=		https://metacpan.org/release/Process-Status
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

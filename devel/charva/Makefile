@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java Windowing Toolkit for Text Terminals
+WWW=		http://www.pitman.co.za/projects/charva/
 
 BUILD_DEPENDS=	gmake:devel/gmake
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging

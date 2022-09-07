@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Perl wrapper for bsdconv
+WWW=		https://github.com/buganini/perl-bsdconv
 
 LICENSE=	ISCL
 

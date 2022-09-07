@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Networking and Cryptography (NaCl) library
+WWW=		https://github.com/cryptosphere/rbnacl
 
 LICENSE=	MIT
 

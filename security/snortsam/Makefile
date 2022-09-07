@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	urisso@bsd.com.br
 COMMENT=	Output plugin for Snort
+WWW=		http://www.snortsam.net
 
 OPTIONS_DEFINE=	IPFW SAMTOOL DEBUG DOCS
 OPTIONS_DEFAULT=	IPFW SAMTOOL

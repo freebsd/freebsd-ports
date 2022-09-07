@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Realtime distributed messaging platform
+WWW=		https://nsq.io
 
 LICENSE=	MIT
 

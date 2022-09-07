@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Collect and display info & stats from a running PostgreSQL server
+WWW=		https://pgmetrics.io/
 
 LICENSE=	APACHE20
 

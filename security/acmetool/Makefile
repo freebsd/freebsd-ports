@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	CLI tool for automatically acquiring certificates from ACME servers
+WWW=		https://github.com/hlandau/acme/
 
 LICENSE=	MIT
 

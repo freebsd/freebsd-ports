@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.opensmtpd.org/archives/
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD
+WWW=		https://www.OpenSMTPD.org/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

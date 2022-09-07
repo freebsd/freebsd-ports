@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Geocoding Toolbox
+WWW=		https://github.com/geopy/geopy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

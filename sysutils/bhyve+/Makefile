@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pali.gabor@gmail.com
 COMMENT=	BHyVe with unofficial extensions
+WWW=		https://github.com/pgj/freebsd-bhyve-plus-port
 
 LICENSE=	BSD2CLAUSE
 

@@ -4,6 +4,7 @@ CATEGORIES=	net devel gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	D-Bus service that provides location information
+WWW=		https://gitlab.freedesktop.org/geoclue/geoclue/wikis/home
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

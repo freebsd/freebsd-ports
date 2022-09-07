@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	WSGI Transport Adapter for Requests
+WWW=		https://github.com/seanbrant/requests-wsgi-adapter
 
 LICENSE=	BSD3CLAUSE
 

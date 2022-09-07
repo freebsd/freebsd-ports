@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	mk@capri.pl
 COMMENT=	Software to manipulate EEPROM/FLASH memory
+WWW=		http://cml.mfk.net.pl/hc12mem
 
 OPTIONS_DEFINE=	DOCS
 

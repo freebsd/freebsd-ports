@@ -8,6 +8,7 @@ DISTNAME=	OnionBalance-${PORTVERSION}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Load-balancing and Redundancy for Onion Services
+WWW=		https://onionbalance.readthedocs.io/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

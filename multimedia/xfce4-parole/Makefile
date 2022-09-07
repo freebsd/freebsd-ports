@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Lightweight media player for Xfce4 based on GStreamer
+WWW=		https://docs.xfce.org/apps/parole/introduction
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ DISTNAME=	nuoveXT-${PORTVERSION}_KDE
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	KDE nuoveXT 2 iconset
+WWW=		https://BSDforge.com/projects/x11-themes/kde-icons-nuovext2/
 
 LICENSE=	LGPL3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING

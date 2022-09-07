@@ -7,6 +7,7 @@ DIST_SUBDIR=	ipcalc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP Calculator
+WWW=		https://jodies.de/ipcalc
 
 LICENSE=	GPLv2
 

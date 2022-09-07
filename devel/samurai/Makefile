@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ninja-compatible build tool written in C
+WWW=		https://github.com/michaelforney/samurai
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi

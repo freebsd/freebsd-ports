@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Script to perform actions on LDAP syncrepl events
+WWW=		https://metacpan.org/release/App-Regather
 
 LICENSE=	GPLv3+
 

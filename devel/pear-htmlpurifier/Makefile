@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	PHP HTML filter library
+WWW=		http://htmlpurifier.org/
 
 LICENSE=	LGPL21
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	chris@chrullrich.net
 COMMENT=	Apache module for authenticating users with GSSAPI
+WWW=		https://github.com/gssapi/mod_auth_gssapi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

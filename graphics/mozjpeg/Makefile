@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Improved JPEG encoder by Mozilla
+WWW=		https://github.com/mozilla/mozjpeg
 
 LICENSE=	BSD3CLAUSE
 

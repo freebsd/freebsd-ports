@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby String class extension
+WWW=		https://github.com/fazibear/colorize
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

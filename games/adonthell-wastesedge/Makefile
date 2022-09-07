@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Role playing game for the Adonthell engine
+WWW=		https://adonthell.nongnu.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

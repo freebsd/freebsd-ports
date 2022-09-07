@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	XMODEM protocol implementation
+WWW=		https://github.com/tehmaze/xmodem
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.gnu-darwin.org/distfiles/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter that adds mail header warnings on mail from open-relays
+WWW=		https://github.com/jbeker/rbl-milter
 
 USES=		gmake
 GNU_CONFIGURE=	yes

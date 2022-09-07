@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Observer classes for Rails
+WWW=		https://github.com/rails/rails-observers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

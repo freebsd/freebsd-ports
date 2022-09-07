@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure ruby library to support locales
+WWW=		https://github.com/ruby-gettext/locale
 
 LICENSE=	RUBY LGPL3
 LICENSE_COMB=	dual

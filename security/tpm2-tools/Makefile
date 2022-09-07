@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/tpm2-software/tpm2-tools/releases/download/${DI
 
 MAINTAINER=	tstruk@gmail.com
 COMMENT=	TPM2 tools
+WWW=		https://github.com/tpm2-software/tpm2-tools
 
 LICENSE=	BSD2CLAUSE
 

@@ -6,6 +6,7 @@ MASTER_SITES=	SF \
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Command-line player for MPEG Layer 1, 2, and 3 audio files
+WWW=		https://www.mpg123.de/
 
 LICENSE=	LGPL21
 

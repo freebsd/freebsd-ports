@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Flash programmer for Atmel SAM microcontrollers
+WWW=		https://github.com/shumatech/BOSSA
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Various Ruby artificial intelligence algorithm implementations
+WWW=		http://www.ai4r.org/
 
 LICENSE=	MPL11
 

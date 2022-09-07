@@ -7,6 +7,7 @@ DISTNAME=	xhtml-basic
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	W3C's XHTML Basic DTD
+WWW=		https://www.w3.org/TR/xhtml-basic/
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr \
 		${LOCALBASE}/share/xml/dtd/xhtml-modularization/catalog.xml:textproc/xhtml-modularization

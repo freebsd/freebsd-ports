@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Pytest plugin for measuring coverage
+WWW=		https://github.com/pytest-dev/pytest-cov
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

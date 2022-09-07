@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Query the Unicode database from the commandline
+WWW=		https://github.com/arp242/uni
 
 LICENSE=	MIT
 

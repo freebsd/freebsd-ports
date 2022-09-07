@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library and converter tools for the WOFF 2.0 web font format
+WWW=		https://github.com/google/woff2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

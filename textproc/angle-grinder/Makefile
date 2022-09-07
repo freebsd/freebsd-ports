@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Slice and dice logs on the command line
+WWW=		https://github.com/rcoh/angle-grinder
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

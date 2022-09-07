@@ -8,6 +8,7 @@ DISTNAME=	bennugd-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High level open source game development suite, modules
+WWW=		https://www.bennugd.org/
 
 LIB_DEPENDS=	libbgdrtm.so:devel/bennugd-core \
 		libpng.so:graphics/png

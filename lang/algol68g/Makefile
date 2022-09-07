@@ -5,6 +5,7 @@ MASTER_SITES=	http://jmvdveer.home.xs4all.nl/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Algol 68 Genie compiler
+WWW=		https://www.xs4all.nl/~jmvdveer/algol.html
 
 LICENSE=	GPLv3+
 

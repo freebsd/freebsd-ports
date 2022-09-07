@@ -7,6 +7,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pulseaudio command line mixer
+WWW=		https://github.com/cdemoulins/pamixer
 
 LICENSE=	GPLv3
 

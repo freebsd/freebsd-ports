@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.it.uc3m.es/jaf/html2xhtml/downloads/
 
 MAINTAINER=	wilfried.meindl@gmail.com
 COMMENT=	Convert HTML to XHTML
+WWW=		https://www.it.uc3m.es/jaf/html2xhtml
 
 GNU_CONFIGURE=	yes
 USES=		iconv

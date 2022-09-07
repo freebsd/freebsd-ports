@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to inflate/deflate DateTime for DBIx::Skinny
+WWW=		https://metacpan.org/release/DBIx-Skinny-InflateColumn-DateTime
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

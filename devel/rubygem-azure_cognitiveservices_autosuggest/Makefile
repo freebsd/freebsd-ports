@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Cognitive Services Auto Suggest Client Library for Ruby
+WWW=		https://github.com/Azure/azure-sdk-for-ruby/tree/master/data/azure_cognitiveservices_autosuggest
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

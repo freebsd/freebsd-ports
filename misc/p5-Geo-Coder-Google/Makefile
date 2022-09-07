@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Maps Geocoding API
+WWW=		https://metacpan.org/release/Geo-Coder-Google
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	lacey.leanne@gmail.com
 COMMENT=	PostgreSQL Partition Manager
+WWW=		https://github.com/keithf4/pg_partman
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

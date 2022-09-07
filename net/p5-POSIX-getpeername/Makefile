@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to provide getpeername(2)
+WWW=		https://metacpan.org/release/POSIX-getpeername
 
 USES=		perl5
 USE_PERL5=	modbuild

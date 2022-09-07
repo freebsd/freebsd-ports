@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	D-Bus-based configuration storage system
+WWW=		https://www.xfce.org/projects
 
 LICENSE=	GPLv2
 

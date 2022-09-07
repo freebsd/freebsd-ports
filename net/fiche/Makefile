@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Command line pastebin for sharing terminal output
+WWW=		https://github.com/solusipse/fiche
 
 LICENSE=	MIT
 

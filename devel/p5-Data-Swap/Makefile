@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	parv@pair.com
 COMMENT=	XS module to swap the contents and types of referenced variables
+WWW=		https://metacpan.org/release/Data-Swap
 
 USES=		perl5
 USE_PERL5=	configure

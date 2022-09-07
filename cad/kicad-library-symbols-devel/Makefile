@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-symbols-${GL_COMMIT}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Official KiCad schematic symbol libraries for the future Kicad 5 release
+WWW=		https://github.com/KiCad/kicad-symbols
 
 LICENSE=	GPLv2
 

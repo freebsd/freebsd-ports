@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Skip tests when modules not available
+WWW=		https://metacpan.org/release/Test-Needs
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

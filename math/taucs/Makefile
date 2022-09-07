@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library of sparse linear solvers
+WWW=		http://www.tau.ac.il/~stoledo/taucs/
 
 LICENSE=	TAUCS
 LICENSE_NAME=	TAUCS License

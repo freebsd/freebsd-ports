@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MaxMind DB Reader Ruby API
+WWW=		https://github.com/maxmind/MaxMind-DB-Reader-ruby
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

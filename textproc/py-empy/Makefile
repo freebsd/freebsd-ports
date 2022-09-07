@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Powerful and robust templating system for Python
+WWW=		http://www.alcyone.com/software/empy/
 
 LICENSE=	LGPL21
 

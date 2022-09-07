@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.zonov.org/${PORTNAME}/
 
 MAINTAINER=	zont@FreeBSD.org
 COMMENT=	Daemon that protects processes from killing when memory is exhausted
+WWW=		http://www.zonov.org/
 
 USE_RC_SUBR=	${PORTNAME}
 

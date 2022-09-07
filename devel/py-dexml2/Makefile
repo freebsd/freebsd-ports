@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Dead-simple Object-XML mapper for Python
+WWW=		http://www.rfk.id.au/software/
 
 LICENSE=	MIT
 

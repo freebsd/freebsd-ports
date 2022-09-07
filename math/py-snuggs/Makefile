@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	S-expressions for Numpy
+WWW=		https://github.com/mapbox/snuggs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

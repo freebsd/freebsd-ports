@@ -6,6 +6,7 @@ CATEGORIES=	biology education java
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical viewer of phylogenetic trees
+WWW=		http://tree.bio.ed.ac.uk/software/figtree/
 
 LICENSE=	GPLv2
 

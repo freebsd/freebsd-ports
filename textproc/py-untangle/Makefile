@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert XML to Python objects
+WWW=		https://github.com/stchris/untangle
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

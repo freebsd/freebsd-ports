@@ -10,6 +10,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to print a statement of Edy card
+WWW=		https://www.imfj.net/people/nomura/soft/PaSoRi/EdyValue.html
 
 LIB_DEPENDS=	libpasori.so:devel/libpasori
 

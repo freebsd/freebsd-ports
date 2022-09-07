@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Fast, highly customizable system info script
+WWW=		https://github.com/dylanaraps/neofetch
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

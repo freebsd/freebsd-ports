@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Go language LSP server
+WWW=		https://pkg.go.dev/golang.org/x/tools/gopls
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Terragrunt is a thin wrapper for Terraform
+WWW=		https://terragrunt.gruntwork.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

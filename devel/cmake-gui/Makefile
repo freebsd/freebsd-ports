@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-gui-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt-based GUI for CMake
+WWW=		https://www.cmake.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt

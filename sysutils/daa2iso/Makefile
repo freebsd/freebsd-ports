@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	marcel@herrbischoff.com
 COMMENT=	Convert PowerISO DAA files to ISO9660
+WWW=		https://aluigi.altervista.org/mytoolz.htm
 
 LICENSE=	GPLv2
 

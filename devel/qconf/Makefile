@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to create configure script for qmake-based project
+WWW=		https://github.com/psi-im/qconf
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

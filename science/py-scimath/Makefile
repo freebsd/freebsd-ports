@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Scientific and Mathematical calculations
+WWW=		https://pypi.org/project/scimath/
 
 LICENSE=	BSD3CLAUSE LGPL3
 LICENSE_COMB=	dual

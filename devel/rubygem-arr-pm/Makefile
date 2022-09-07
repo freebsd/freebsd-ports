@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Read and write rpm packages
+WWW=		https://rubygems.org/gems/arr-pm
 
 LICENSE=	APACHE20
 

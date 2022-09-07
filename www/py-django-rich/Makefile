@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Extensions for using Rich with Django
+WWW=		https://github.com/adamchainz/django-rich
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

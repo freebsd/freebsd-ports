@@ -6,6 +6,7 @@ MASTER_SITES=	http://vfom.narod.ru/download/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	GUI tool for NetFlow data visualisation
+WWW=		https://vfom.narod.ru/TkTopNetFlows/
 
 # LICENSE - zero indication within source, need to contact author
 

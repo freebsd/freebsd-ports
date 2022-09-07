@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Russian language support for Ruby and Rails, based on I18n library
+WWW=		https://github.com/yaroslav/russian
 
 LICENSE=	MIT
 

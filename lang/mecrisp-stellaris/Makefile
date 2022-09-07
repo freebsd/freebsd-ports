@@ -5,6 +5,7 @@ MASTER_SITES=	SF/mecrisp
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Native code Forth system for ARM
+WWW=		http://mecrisp.sourceforge.net
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ bindings for libvlc, VLC mediaplayer library
+WWW=		https://code.videolan.org/videolan/libvlcpp
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

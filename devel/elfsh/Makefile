@@ -7,6 +7,7 @@ DISTNAME=	elfsh-0.51b3-portable
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Attractive toolkit for the analysis of ELF object files
+WWW=		http://elfsh.asgardlabs.org/
 
 USES=		gmake ncurses readline tar:tgz
 USE_LDCONFIG=	yes

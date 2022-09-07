@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Let your Python tests travel through time
+WWW=		https://github.com/spulec/freezegun
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

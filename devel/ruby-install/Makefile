@@ -5,6 +5,7 @@ CATEGORIES=     devel ruby
 
 MAINTAINER=     henry@henryphan.com
 COMMENT=        Compile and install different versions of Ruby
+WWW=		https://github.com/postmodern/ruby-install
 
 LICENSE=        MIT
 LICENSE_FILE=   ${WRKSRC}/LICENSE.txt

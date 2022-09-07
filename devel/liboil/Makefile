@@ -6,6 +6,7 @@ MASTER_SITES=	http://liboil.freedesktop.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of optimized inner loops
+WWW=		https://liboil.freedesktop.org/wiki/
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi

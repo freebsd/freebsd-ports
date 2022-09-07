@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Print awesomely in terminals
+WWW=		https://github.com/s0md3v/hue
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

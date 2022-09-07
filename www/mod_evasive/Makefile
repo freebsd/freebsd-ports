@@ -6,6 +6,7 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Apache module to try to protect the HTTP Server from DoS/DDoS attacks
+WWW=		https://github.com/jzdziarski/mod_evasive
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

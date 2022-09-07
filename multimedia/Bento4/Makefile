@@ -7,6 +7,7 @@ CATEGORIES=	multimedia devel
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Full-featured MP4 format and MPEG DASH library and tools
+WWW=		https://www.bento4.com
 
 LICENSE=	GPLv2
 

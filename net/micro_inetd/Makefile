@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_14Aug2014
 
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	inetd-like program intended for temporarily usage
+WWW=		https://www.acme.com/software/micro_inetd/
 
 LICENSE=	BSD2CLAUSE
 

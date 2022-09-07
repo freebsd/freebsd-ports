@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.schwardtnet.de/alienblaster/archives/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alien Blaster
+WWW=		https://www.schwardtnet.de/alienblaster/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

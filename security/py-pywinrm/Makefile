@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Python library for Windows Remote Management (WinRM)
+WWW=		https://github.com/diyan/pywinrm
 
 LICENSE=	MIT
 

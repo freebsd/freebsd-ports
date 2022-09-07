@@ -8,6 +8,7 @@ DIST_SUBDIR=	linux-ha
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High availability cluster libraries and utilities
+WWW=		http://linux-ha.org/wiki/Cluster_Glue
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi

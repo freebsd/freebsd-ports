@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	bdheeman@gmail.com
 COMMENT=	UNIX, POSIX Library for Technical Analysis
+WWW=		https://ta-lib.org/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

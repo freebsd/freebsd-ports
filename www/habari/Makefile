@@ -6,6 +6,7 @@ MASTER_SITES=	http://habariproject.org/dist/ \
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Next-generation free software blogging platform
+WWW=		http://habariproject.org/
 
 USES=		zip php:web
 USE_PHP=	ctype filter hash json mbstring pcre pdo session simplexml tokenizer zlib

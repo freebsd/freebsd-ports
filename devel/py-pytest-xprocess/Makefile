@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Pytest plugin to manage external processes across test runs
+WWW=		https://github.com/pytest-dev/pytest-xprocess
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

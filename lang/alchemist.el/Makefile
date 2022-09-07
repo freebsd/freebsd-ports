@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Elixir Tooling Integration Into Emacs
+WWW=		https://github.com/tonini/alchemist.el
 
 LICENSE=	GPLv3
 

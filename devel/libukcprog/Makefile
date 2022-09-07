@@ -8,6 +8,7 @@ MASTER_SITES=	http://ftp.mirrorservice.org/pub/i-scream/libukcprog/ \
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Generally useful low level routines
+WWW=		https://www.i-scream.org/
 
 # Converted from NO_CDROM
 LICENSE=	libukcprog

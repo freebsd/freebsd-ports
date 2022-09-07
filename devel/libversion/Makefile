@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Advanced version string comparison library
+WWW=		https://github.com/repology/libversion
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

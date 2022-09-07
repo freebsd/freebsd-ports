@@ -4,6 +4,7 @@ CATEGORIES?=	net dns
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	"meta-port" for the Avahi service discovery suite
+WWW=		https://www.avahi.org/
 
 RUN_DEPENDS=	avahi-app>=0.8:net/avahi-app
 

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Maintain and replicate ZFS snapshots
+WWW=		https://github.com/Jehops/zap
 
 LICENSE=	BSD2CLAUSE
 

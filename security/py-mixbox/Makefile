@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Utility library for cybox, maec, and stix
+WWW=		https://github.com/CybOXProject/mixbox
 
 LICENSE=	BSD3CLAUSE
 

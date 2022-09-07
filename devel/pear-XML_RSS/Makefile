@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR RSS parser
+WWW=		https://pear.php.net/package/XML_RSS
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/openchemistry/molequeue/releases/download/${DIS
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Desktop integration of high performance computing resources
+WWW=		https://www.openchemistry.org/projects/molequeue
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

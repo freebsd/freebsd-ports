@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Improved Nintendo 64 core for libretro
+WWW=		https://github.com/libretro/parallel-n64
 
 # Commercial users must seek permission from copyright holders.
 LICENSE=	BITSTREAM_VERA CC0-1.0 GFDL GPLv2 GPLv3 LGPL3 MIT ZLIB

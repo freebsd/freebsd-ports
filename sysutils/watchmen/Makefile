@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	proler@gmail.com
 COMMENT=	Watch and restart daemons
+WWW=		https://github.com/proller/watchmen
 
 LICENSE=	GPLv3+
 

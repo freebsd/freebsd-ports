@@ -4,6 +4,7 @@ CATEGORIES=	x11-toolkits kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 widget addons for Qt Model/View
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kitemviews/html/index.html
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	ecm_build

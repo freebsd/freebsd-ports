@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base class to treat unhandled method calls as no-ops
+WWW=		https://metacpan.org/release/Class-BlackHole
 
 USES=		perl5
 USE_PERL5=	configure

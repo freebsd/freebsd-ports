@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multi-Language Vulkan/GL/GLES/EGL/GLX/WGL loader-generator
+WWW=		https://glad.dav1d.de/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

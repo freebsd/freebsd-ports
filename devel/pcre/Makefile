@@ -7,6 +7,7 @@ MASTER_SITES=	https://ftp.pcre.org/pub/pcre/ \
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Perl Compatible Regular Expressions library
+WWW=		https://www.pcre.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Python module to deal with versions
+WWW=		https://github.com/ludeeus/awesomeversion
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE.md

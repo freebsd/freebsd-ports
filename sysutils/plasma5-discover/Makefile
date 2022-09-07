@@ -5,6 +5,7 @@ CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 package management tools
+WWW=		https://www.kde.org/plasma-desktop
 
 # TODO: update packagekit-qt5
 #LIB_DEPENDS=	libpackagekit-qt.so:ports-mgmt/packagekit-qt5

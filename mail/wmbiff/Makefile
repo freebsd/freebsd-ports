@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.dockapps.net/download/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	xbiff-like Window Maker dock app
+WWW=		https://www.dockapps.net/wmbiff
 
 LICENSE=	GPLv2
 

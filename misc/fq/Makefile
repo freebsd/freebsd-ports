@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Tool, language, and decoders for inspecting binary data
+WWW=		https://github.com/wader/fq
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

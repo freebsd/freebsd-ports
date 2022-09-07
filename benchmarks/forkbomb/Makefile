@@ -7,6 +7,7 @@ MASTER_SITES=	SUNSITE/system/benchmark \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System stress testing tool
+WWW=		http://home.tiscali.cz/~cz210552/forkbomb.html
 
 LICENSE=	PD
 

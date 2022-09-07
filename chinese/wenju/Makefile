@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of writing tools in Chinese
+WWW=		https://sourceforge.net/projects/wenju/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

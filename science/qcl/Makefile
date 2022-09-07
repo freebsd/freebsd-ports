@@ -6,6 +6,7 @@ MASTER_SITES=	http://tph.tuwien.ac.at/~oemer/tgz/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quantum computer simulator
+WWW=		http://tph.tuwien.ac.at/~oemer/qcl.html
 
 LICENSE=	GPLv2+
 

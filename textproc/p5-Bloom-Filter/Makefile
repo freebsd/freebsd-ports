@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Probabilistic algorithm for doing existence tests
+WWW=		https://metacpan.org/release/Bloom-Filter
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

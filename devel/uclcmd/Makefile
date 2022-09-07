@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	allanjude@FreeBSD.org
 COMMENT=	Command line tool for working with UCL config files
+WWW=		https://github.com/allanjude/uclcmd/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

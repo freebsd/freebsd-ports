@@ -5,6 +5,7 @@ MASTER_SITES=	https://brick.kernel.dk/snaps/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Flexible IO tester
+WWW=		https://git.kernel.dk/?p=fio.git
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

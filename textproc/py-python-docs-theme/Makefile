@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Sphinx theme for the CPython docs and related projects
+WWW=		https://pypi.org/project/python-docs-theme/
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE

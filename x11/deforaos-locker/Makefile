@@ -7,6 +7,7 @@ DISTNAME=	Locker-${PORTVERSION}
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop screensaver
+WWW=		https://www.defora.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -8,6 +8,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAINTAINER=	sigma.zx@gmail.com
 COMMENT=	Assembler for the Z80 microprocessor
+WWW=		https://savannah.nongnu.org/projects/z80asm/
 
 OPTIONS_DEFINE=	EXAMPLES
 

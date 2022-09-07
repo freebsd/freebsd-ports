@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compare two images in a variety of ways
+WWW=		https://metacpan.org/release/Image-Compare
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

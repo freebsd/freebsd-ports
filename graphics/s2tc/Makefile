@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subset of a well-known texture compression scheme
+WWW=		https://github.com/divVerent/s2tc/wiki
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

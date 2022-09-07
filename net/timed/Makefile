@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Old time synchronisation service superseded by more modern protocols
+WWW=		https://github.com/freebsd/timed
 
 LICENSE=	BSD3CLAUSE
 

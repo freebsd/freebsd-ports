@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Compile all protobuf files and create package distributions
+WWW=		https://github.com/netsaj/python-protobuf-compiler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC_tests}/LICENSE

@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Amstrad CPC computers emulator core for libretro API
+WWW=		https://github.com/libretro/libretro-cap32
 
 LICENSE=	GPLv2
 

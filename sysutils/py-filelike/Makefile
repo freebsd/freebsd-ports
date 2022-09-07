@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Python module for building and manipulating file-like object
+WWW=		http://www.rfk.id.au/software/filelike/
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist concurrent

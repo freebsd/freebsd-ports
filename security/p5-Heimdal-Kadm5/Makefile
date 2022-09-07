@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Perl extension for Heimdal administrative client library
+WWW=		https://metacpan.org/release/Heimdal-Kadm5
 
 USES=		perl5
 USE_PERL5=	configure

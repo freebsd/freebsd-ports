@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Functions for generating lists
+WWW=		https://metacpan.org/release/List-Gen
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

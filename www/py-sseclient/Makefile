@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python client library for reading Server Sent Event streams
+WWW=		https://github.com/btubbs/sseclient
 
 LICENSE=	MIT
 

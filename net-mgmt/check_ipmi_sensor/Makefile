@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	sergey_zaikov@rambler.ru
 COMMENT=	Nagios/Icinga plugin to check IPMI sensors
+WWW=		https://github.com/thomas-krenn/check_ipmi_sensor_v3
 
 LICENSE=	GPLv3
 

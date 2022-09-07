@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for large scale eigenvalue problems
+WWW=		https://spectralib.org
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

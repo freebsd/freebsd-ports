@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GUI for setting Sway wallpaper, default apps, GTK themes, etc.
+WWW=		https://github.com/ErikReider/SwaySettings
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

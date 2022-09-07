@@ -7,6 +7,7 @@ DIST_SUBDIR=	yj
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert between YAML, TOML, JSON, and HCL
+WWW=		https://github.com/sclevine/yj
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

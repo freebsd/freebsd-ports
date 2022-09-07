@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${PORTVERSION}/
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	F? Virtual Window Manager
+WWW=		https://www.fvwm.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

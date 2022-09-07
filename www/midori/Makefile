@@ -6,6 +6,7 @@ CATEGORIES=	www xfce
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Lightweight web browser using WebKit browser engine
+WWW=		https://www.midori-browser.org/
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi

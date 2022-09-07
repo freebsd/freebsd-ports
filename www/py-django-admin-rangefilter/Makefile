@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Add the filter by a custom date / datetime range on the admin UI
+WWW=		https://github.com/silentsokolov/django-admin-rangefilter
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

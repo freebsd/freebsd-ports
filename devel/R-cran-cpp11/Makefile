@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	C++11 Interface for R's C Interface
+WWW=		https://cran.r-project.org/web/packages/cpp11/
 
 LICENSE=	MIT
 

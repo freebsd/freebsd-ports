@@ -10,6 +10,7 @@ CONFLICTS=	bacula bacula11
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Bacula document set
+WWW=		https://www.bacula.org/
 
 USES=		tar:bz2
 NO_BUILD=	yes

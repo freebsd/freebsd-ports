@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Free Software Foundation core utilities
+WWW=		https://www.gnu.org/software/coreutils/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

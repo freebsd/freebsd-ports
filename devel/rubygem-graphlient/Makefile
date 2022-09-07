@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Friendlier Ruby client for consuming GraphQL-based APIs
+WWW=		https://github.com/ashkan18/graphlient
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR data validation class for Australia
+WWW=		https://pear.php.net/package/Validate_AU
 
 USES=		pear
 

@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Glib bindings for Libvirt virtualization API
+WWW=		https://www.libvirt.org
 
 LICENSE=	GPLv2
 

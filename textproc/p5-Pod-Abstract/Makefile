@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Abstract document tree for Perl POD documents
+WWW=		https://metacpan.org/release/Pod-Abstract
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

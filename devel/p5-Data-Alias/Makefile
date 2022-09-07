@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Comprehensive set of aliasing operations
+WWW=		https://metacpan.org/release/Data-Alias
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

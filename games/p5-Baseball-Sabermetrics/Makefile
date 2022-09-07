@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Baseball Statistics Module
+WWW=		https://metacpan.org/release/Baseball-Sabermetrics
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Serializer>=0.29:devel/p5-Data-Serializer \

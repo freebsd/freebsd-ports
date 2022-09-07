@@ -8,6 +8,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Build tool for Erlang
+WWW=		https://www.rebar3.org/
 
 LICENSE=	APACHE20
 

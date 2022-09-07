@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight XML encoding library for Java
+WWW=		http://xmlenc.sourceforge.net/
 
 USES=		tar:tgz
 USE_JAVA=	yes

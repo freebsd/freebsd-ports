@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Disk Usage/Free Utility
+WWW=		https://github.com/muesli/duf
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

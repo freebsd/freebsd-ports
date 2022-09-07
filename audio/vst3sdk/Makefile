@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	VST3 SDK (VST3 audio plugins Software Development Kit)
+WWW=		https://github.com/steinbergmedia/vst3sdk
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

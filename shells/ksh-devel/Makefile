@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Development branch of AT&T KornShell 93
+WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
 

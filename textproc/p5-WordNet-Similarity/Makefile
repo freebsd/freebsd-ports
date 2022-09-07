@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Modules/CLI to determine semantic relatedness using the WordNet
+WWW=		https://metacpan.org/release/WordNet-Similarity
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

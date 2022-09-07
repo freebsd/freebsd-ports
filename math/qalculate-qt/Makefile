@@ -9,6 +9,7 @@ PATCHFILES+=	fa69618d42b133e5942c4bb86efe2838b61af935.patch:-p1 #Fix version str
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Multi-purpose desktop calculator (Qt frontend)
+WWW=		https://qalculate.github.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

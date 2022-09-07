@@ -6,6 +6,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU console based Jabber client
+WWW=		https://www.gnu.org/software/freetalk/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

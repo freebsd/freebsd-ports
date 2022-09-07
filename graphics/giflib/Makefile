@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Tools and library routines for working with GIF images
+WWW=		https://sourceforge.net/projects/giflib/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

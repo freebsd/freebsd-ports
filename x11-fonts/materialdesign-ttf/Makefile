@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-ttf
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Material Design Webfont
+WWW=		https://materialdesignicons.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

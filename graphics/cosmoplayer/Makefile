@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}-jar
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Java classes to support VRML
+WWW=		http://cic.nist.gov/vrml/cosmoplayer.html
 
 LICENSE=	SGI
 LICENSE_NAME=	SGI

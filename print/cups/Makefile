@@ -5,6 +5,7 @@ CATEGORIES=	print
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Common UNIX Printing System
+WWW=		https://github.com/OpenPrinting/cups
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

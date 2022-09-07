@@ -6,6 +6,7 @@ MASTER_SITES=	https://parallel-netcdf.github.io/Release/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library providing high-performance I/O
+WWW=		https://parallel-netcdf.github.io/
 
 USES=		fortran gmake libtool pathfix perl5
 USE_PERL5=	build

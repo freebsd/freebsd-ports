@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Secure, efficient, simple random session token generation
+WWW=		https://metacpan.org/release/Session-Token
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

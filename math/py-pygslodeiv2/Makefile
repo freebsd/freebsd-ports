@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python binding for odeiv2 in GNU Scientific Library (GSL)
+WWW=		https://github.com/bjodah/pygslodeiv2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

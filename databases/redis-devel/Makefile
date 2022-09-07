@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
+WWW=		https://redis.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

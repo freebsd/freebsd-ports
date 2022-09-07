@@ -6,6 +6,7 @@ MASTER_SITES=	http://freeshell.de/~mk/download/
 
 MAINTAINER=	mk@nic-nac-project.org
 COMMENT=	Manage commands to be executed at X session start
+WWW=		https://freeshell.de/~mk/projects/dsbautostart.html
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

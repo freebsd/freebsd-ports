@@ -10,6 +10,7 @@ DISTNAME=	rmagic-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web site statistics post-processor for Analog
+WWW=		http://www.reportmagic.org
 
 RUN_DEPENDS=	analog:www/analog \
 		p5-GD-Graph3d>=0:graphics/p5-GD-Graph3d \

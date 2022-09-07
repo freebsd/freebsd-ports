@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Python package to simplify receiving, parsing, and sending email
+WWW=		https://github.com/seanthegeek/mailsuite
 
 LICENSE=	APACHE20
 

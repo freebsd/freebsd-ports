@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite element analysis program (personal version)
+WWW=		http://projects.ce.berkeley.edu/feap/feappv/
 
 USES=		fortran gmake localbase:ldflags xorg
 USE_GITHUB=	yes

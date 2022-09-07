@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command-line tool to perform basic statistics on tabular data
+WWW=		https://github.com/auerlab/basic-stats
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

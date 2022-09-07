@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for minifying CSS
+WWW=		https://metacpan.org/release/CSS-Minifier
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Template System
+WWW=		https://pear.horde.org
 
 USES=	horde cpe
 

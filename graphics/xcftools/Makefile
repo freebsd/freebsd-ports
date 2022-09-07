@@ -6,6 +6,7 @@ MASTER_SITES=	http://freeheimdall.spdns.org/files/
 
 MAINTAINER=	kalten@gmx.at
 COMMENT=	Command-line tools for extracting from XCF format (graphics/gimp)
+WWW=		http://henning.makholm.net/software
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

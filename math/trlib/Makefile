@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Trust Region Subproblem Solver Library
+WWW=		https://github.com/felixlen/trlib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

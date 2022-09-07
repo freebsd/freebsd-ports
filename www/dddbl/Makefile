@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Definition Driven Database Layer for PHP
+WWW=		https://www.dddbl.de/
 
 USES=		php:flavors tar:bzip2
 

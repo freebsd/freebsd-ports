@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Fast open-source OLAP database management system
+WWW=		https://clickhouse.tech/
 
 LICENSE=	APACHE20
 

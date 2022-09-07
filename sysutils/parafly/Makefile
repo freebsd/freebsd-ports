@@ -7,6 +7,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Process multiple commands in parallel on a single server
+WWW=		https://github.com/ParaFly/ParaFly/releases
 
 LICENSE=	BSD3CLAUSE
 

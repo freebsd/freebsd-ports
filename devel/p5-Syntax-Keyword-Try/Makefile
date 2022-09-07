@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	try/catch/finally syntax for Perl
+WWW=		https://metacpan.org/release/Syntax-Keyword-Try
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

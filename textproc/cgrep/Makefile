@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Context-aware grep for source codes
+WWW=		https://awgn.github.io/cgrep/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight named parameter handling system
+WWW=		https://metacpan.org/release/Class-NamedParms
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	https://ffmpeg.org/releases/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
+WWW=		https://ffmpeg.org/
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi

@@ -5,6 +5,7 @@ MASTER_SITES=	http://ftp.ebi.ac.uk/pub/software/vertebrategenomics/exonerate/
 
 MAINTAINER=	mzaki@niid.go.jp
 COMMENT=	Generic tool for sequence alignment
+WWW=		https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

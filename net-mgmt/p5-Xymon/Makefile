@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Xymon Base Module
+WWW=		https://metacpan.org/release/Xymon
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

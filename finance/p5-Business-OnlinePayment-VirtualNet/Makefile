@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Business::OnlinePayment backend module for Vital VirtualNet
+WWW=		https://metacpan.org/release/Business-OnlinePayment-VirtualNet
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Business-CreditCard>=0:finance/p5-Business-CreditCard \

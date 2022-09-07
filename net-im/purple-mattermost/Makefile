@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Mattermost plugin for libpurple
+WWW=		https://github.com/EionRobb/purple-mattermost
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

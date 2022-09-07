@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base class for SOAP message servers
+WWW=		https://metacpan.org/release/XML-Compile-SOAP-Daemon
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/rakuco
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Monospace bitmap font, primarily aimed at programmers
+WWW=		https://www.donationcoder.com/Software/Jibz/Dina/
 
 LICENSE=	MIT
 

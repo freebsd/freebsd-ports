@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multibody Dynamic Simulation Library
+WWW=		http://dynamechs.sourceforge.net/
 
 USES=		gl gmake perl5 shebangfix tar:bzip2
 USE_GL=		glut

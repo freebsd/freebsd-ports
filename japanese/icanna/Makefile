@@ -6,6 +6,7 @@ DISTNAME=	yc-${YC_VERSION}
 
 MAINTAINER=	t@nakao.org
 COMMENT=	Canna connector for yc.el via unix domain socket
+WWW=		http://www.ceres.dti.ne.jp/~knak/yc.html
 
 YC_VERSION=	4.0.13
 

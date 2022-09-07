@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVI to text/plain translator
+WWW=		http://catdvi.sourceforge.net/
 
 LICENSE=	GPLv2
 

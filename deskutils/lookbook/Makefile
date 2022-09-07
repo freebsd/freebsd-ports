@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Browse and find system icons
+WWW=		https://github.com/danrabbit/lookbook
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

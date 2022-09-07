@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}_lib_${PORTVERSION}.tgz lop-release.tgz
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	MetaPost library for typesetting UML diagrams
+WWW=		http://metauml.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/thrunk/License

@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	NCBI's toolkit for handling data in INSDC Sequence Read Archives
+WWW=		https://github.com/ncbi/sra-tools/wiki
 
 LICENSE=		PD LGPL21+
 LICENSE_COMB=		multi

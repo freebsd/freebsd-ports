@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open Source DNS benchmark utility
+WWW=		https://code.google.com/archive/p/namebench/
 
 LICENSE=	APACHE20
 

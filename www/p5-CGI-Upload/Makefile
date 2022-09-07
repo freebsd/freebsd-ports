@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	CGI class for handling browser file uploads
+WWW=		https://metacpan.org/release/CGI-Upload
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

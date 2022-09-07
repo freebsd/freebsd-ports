@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Handler for FeatureIO
+WWW=		https://metacpan.org/release/Bio-FeatureIO
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

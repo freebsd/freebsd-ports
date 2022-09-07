@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse and generate Cisco configuration files
+WWW=		https://metacpan.org/release/Cisco-Reconfig
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

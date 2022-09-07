@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Optimize module loading across forking and non-forking scenarios
+WWW=		https://metacpan.org/release/prefork
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

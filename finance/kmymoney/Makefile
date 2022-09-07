@@ -8,6 +8,7 @@ PATCHFILES+=	a06d2fe154f755c3af1e7f261cd631929b9da998.diff:-p1 # akonadi 21.12
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE personal finance manager
+WWW=		https://kmymoney.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt

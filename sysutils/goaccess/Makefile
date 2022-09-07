@@ -5,6 +5,7 @@ MASTER_SITES=	http://tar.goaccess.io/
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Real-time Apache web log analyzer
+WWW=		https://goaccess.io
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

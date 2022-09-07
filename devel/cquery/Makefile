@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Highly-scalable, low-latency language server for C/C++/Objective-C
+WWW=		https://github.com/cquery-project/cquery
 
 LICENSE=	MIT
 

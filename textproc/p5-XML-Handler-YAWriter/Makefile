@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet another Perl SAX XML Writer
+WWW=		https://metacpan.org/release/XML-Handler-YAWriter
 
 LICENSE=	GPLv1+  # exact version not specified
 

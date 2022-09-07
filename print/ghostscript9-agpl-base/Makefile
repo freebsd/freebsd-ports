@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	9-agpl-base
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	PostScript and PDF interpreter
+WWW=		https://ghostscript.com/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

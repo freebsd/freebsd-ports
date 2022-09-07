@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	TOML parser using Citrus parsing library
+WWW=		https://github.com/emancu/toml-rb
 
 LICENSE=	MIT
 

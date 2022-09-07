@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Present the user with a simple question before a destructive action
+WWW=		https://rubygems.org/gems/annoy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

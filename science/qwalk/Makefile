@@ -7,6 +7,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum Monte Carlo package for quantum chemistry computations
+WWW=		https://qwalk.github.io/mainline/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING

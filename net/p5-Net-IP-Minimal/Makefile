@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Minimal functions from Net::IP
+WWW=		https://metacpan.org/release/Net-IP-Minimal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

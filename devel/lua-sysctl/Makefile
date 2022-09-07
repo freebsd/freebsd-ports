@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Small sysctl(3) interface for lua
+WWW=		https://github.com/kAworu/lua-sysctl
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

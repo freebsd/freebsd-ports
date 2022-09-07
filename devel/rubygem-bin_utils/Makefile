@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extracting binary integers from binary string and packing back
+WWW=		https://github.com/funny-falcon/bin_utils
 
 LICENSE=	MIT
 

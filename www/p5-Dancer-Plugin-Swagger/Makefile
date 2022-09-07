@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Dancer plugin to create Swagger documentation for app REST
+WWW=		https://metacpan.org/pod/Dancer::Plugin::Swagger
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

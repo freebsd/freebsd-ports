@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@saltant.com
 COMMENT=	Optional test vectors for PyCryptodome and PyCryptodomeX
+WWW=		https://www.pycryptodome.org/
 
 LICENSE=	BSD2CLAUSE APACHE20
 LICENSE_COMB=	multi

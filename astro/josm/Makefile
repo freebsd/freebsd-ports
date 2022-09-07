@@ -7,6 +7,7 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Comprehensive editor for OpenStreetMap.org database
+WWW=		https://josm.openstreetmap.de/
 
 LICENSE=	GPLv2+
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test for Singleton classes
+WWW=		https://metacpan.org/release/Test-Singleton
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

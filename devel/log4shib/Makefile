@@ -5,6 +5,7 @@ MASTER_SITES=	http://shibboleth.net/downloads/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Library of C++ classes for flexible logging
+WWW=		https://spaces.internet2.edu/display/SHIB2/log4shib
 
 LICENSE=	APACHE20
 

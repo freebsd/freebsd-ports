@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.pro-bono-publico.de/projects/src/
 
 MAINTAINER=	akuz84@gmail.com
 COMMENT=	TACACS+ daemon from pro-bono
+WWW=		https://www.pro-bono-publico.de/projects/tac_plus.html
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	VHDL compiler and simulator
+WWW=		https://github.com/nickg/nvc
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

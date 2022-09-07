@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Diffs for R Objects
+WWW=		https://github.com/brodieG/diffobj
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

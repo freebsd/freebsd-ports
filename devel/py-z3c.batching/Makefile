@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Simple sequence batching
+WWW=		https://pypi.org/project/z3c.batching/
 
 LICENSE=	ZPL21
 

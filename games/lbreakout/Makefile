@@ -6,6 +6,7 @@ MASTER_SITES=	SF/lgames/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice clone of classical Breakout game
+WWW=		http://lgames.sourceforge.net/index.php?project=LBreakout
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

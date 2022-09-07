@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Typing stubs for Flask
+WWW=		https://pypi.org/project/types-Flask/
 
 LICENSE=	APACHE20
 

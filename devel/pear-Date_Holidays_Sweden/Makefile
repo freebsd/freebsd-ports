@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in Sweden
+WWW=		https://pear.php.net/package/Date_Holidays_Sweden
 
 LICENSE=	PHP301
 

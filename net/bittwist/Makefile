@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libpcap-based Ethernet packet generator, with PCAP editor
+WWW=		http://bittwist.sourceforge.net
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		dos2unix gmake

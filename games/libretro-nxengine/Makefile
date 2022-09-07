@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Cave Story game engine clone for libretro
+WWW=		https://github.com/libretro/nxengine-libretro
 
 LICENSE=	GPLv3
 

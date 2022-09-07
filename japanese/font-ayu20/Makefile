@@ -8,6 +8,7 @@ DISTNAME=	ayu20gothic-1.7a
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Ayu 20-dot Kanji font
+WWW=		https://x-tt.osdn.jp/ayu.html
 
 LICENSE=	PD
 

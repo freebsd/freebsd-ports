@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.icir.org/mallman/software/tcpsplit/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Breaks a libpcap trace along TCP connection boundaries
+WWW=		https://www.icir.org/mallman/software/tcpsplit/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

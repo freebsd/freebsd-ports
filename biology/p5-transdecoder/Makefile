@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Identify candidate coding regions within transcript sequences
+WWW=		https://transdecoder.github.io/
 
 LICENSE=	BSD3CLAUSE
 

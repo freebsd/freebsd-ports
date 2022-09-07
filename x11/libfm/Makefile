@@ -6,6 +6,7 @@ MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/LibFM/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT?=	Core library of PCManFM file manager
+WWW=		https://wiki.lxde.org/en/Libfm
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi

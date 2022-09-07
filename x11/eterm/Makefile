@@ -7,6 +7,7 @@ DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER?=	enlightenment@FreeBSD.org
 COMMENT?=	X11 terminal emulator based on rxvt/xterm
+WWW=		http://www.eterm.org/
 
 BUILD_DEPENDS=	man2html:textproc/man2html
 LIB_DEPENDS=	libast.so:devel/libast \

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	GRPC client for Murmur server
+WWW=		https://github.com/layeh/murmur-cli
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

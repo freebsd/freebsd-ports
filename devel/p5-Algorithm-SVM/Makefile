@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl bindings for the libsvm Support Vector Machine library
+WWW=		https://metacpan.org/release/Algorithm-SVM
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for decoding NTP server responses
+WWW=		https://metacpan.org/release/Net-NTP
 
 NO_ARCH=	yes
 USE_PERL5=	configure

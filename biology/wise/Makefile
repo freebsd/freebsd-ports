@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent algorithms for DNA searches
+WWW=		http://www.ebi.ac.uk/Wise2/
 
 BUILD_WRKSRC=	${WRKSRC}/src
 

@@ -5,6 +5,7 @@ CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Platform Theme integration plugins for the Plasma workspaces
+WWW=		https://www.kde.org/plasma-desktop
 
 RUN_DEPENDS=	hack-font>=0:x11-fonts/hack-font
 

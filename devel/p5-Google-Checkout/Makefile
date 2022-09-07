@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl implementation of Google Checkout (GCO)
+WWW=		https://metacpan.org/release/Google-Checkout
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

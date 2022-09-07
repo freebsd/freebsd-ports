@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.pitecan.com/Lens/ \
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Mail filter written in Ruby
+WWW=		http://www.pitecan.com/Lens/
 
 USES=		shebangfix
 USE_RUBY=	yes

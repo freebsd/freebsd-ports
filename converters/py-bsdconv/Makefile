@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Python wrapper for bsdconv
+WWW=		https://github.com/buganini/python-bsdconv
 
 LICENSE=	ISCL
 

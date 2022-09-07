@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-0
 
 MAINTAINER=	rodrigO@FreeBSD.org
 COMMENT=	Synchronizes a local and a remote FTP directory trees
+WWW=		https://www.clazzes.org/ftpsync
 
 LICENSE=	GPLv2
 

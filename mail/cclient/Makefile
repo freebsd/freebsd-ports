@@ -12,6 +12,7 @@ DISTNAME=	imap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C-client mail access routines by Mark Crispin
+WWW=		http://www.washington.edu/imap/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

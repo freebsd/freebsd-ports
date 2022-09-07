@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	eserte12@yahoo.de
 COMMENT=	Perl module implementing fast binary heaps/priority queues
+WWW=		https://metacpan.org/release/Array-Heap
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

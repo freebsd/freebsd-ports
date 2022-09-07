@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate simple text tables from 2D arrays using sprintf()
+WWW=		https://metacpan.org/release/Text-Table-Sprintf
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.wolfssl.com/ \
 
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Embedded SSL C-Library
+WWW=		https://www.wolfssl.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

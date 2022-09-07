@@ -6,6 +6,7 @@ CATEGORIES=	misc kde
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	KDE thumbnail generator for fb2 files
+WWW=		https://store.kde.org/p/1080816/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

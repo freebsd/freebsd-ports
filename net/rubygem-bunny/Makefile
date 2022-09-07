@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Another synchronous Ruby AMQP client
+WWW=		https://github.com/ruby-amqp/bunny
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

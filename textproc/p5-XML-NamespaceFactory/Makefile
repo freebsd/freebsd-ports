@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple factory objects for SAX namespaced names
+WWW=		https://metacpan.org/release/XML-NamespaceFactory
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

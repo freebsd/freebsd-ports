@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Lua HTTP client cosocket driver for OpenResty / ngx_lua
+WWW=		https://github.com/ledgetech/lua-resty-http
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

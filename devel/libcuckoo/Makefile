@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Performant hash table implementation
+WWW=		https://github.com/efficient/libcuckoo
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -12,6 +12,7 @@ PATCHFILES+=	7de7270e7f96.patch:-p1 # https://github.com/intel/intel-hybrid-driv
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hybrid VP8 encoder and VP9 decoder for Intel GPUs
+WWW=		https://01.org/linuxmedia
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

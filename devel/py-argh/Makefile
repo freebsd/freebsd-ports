@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Simple (Python) argparse wrapper
+WWW=		https://github.com/neithere/argh
 
 LICENSE=	LGPL3
 

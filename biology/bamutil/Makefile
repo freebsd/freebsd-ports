@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Utilities for working with SAM/BAM files
+WWW=		https://github.com/statgen/bamUtil
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/copyrights/COPYING

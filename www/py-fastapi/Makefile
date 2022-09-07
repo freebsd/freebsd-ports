@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	High-performance Python API Framework
+WWW=		https://github.com/tiangolo/fastapi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

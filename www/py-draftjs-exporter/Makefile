@@ -7,6 +7,7 @@ DISTNAME=	draftjs_exporter-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to convert rich text from Draft.js raw ContentState to HTML
+WWW=		https://github.com/springload/draftjs_exporter
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

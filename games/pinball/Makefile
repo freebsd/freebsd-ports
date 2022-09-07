@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Emilia Pinball is a free pinball game
+WWW=		http://pinball.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

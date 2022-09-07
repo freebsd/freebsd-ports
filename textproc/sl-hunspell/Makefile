@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.oxt
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovenian hunspell dictionary
+WWW=		https://extensions.libreoffice.org/extensions/slovenian-dictionary-pack/
 
 LICENSE=	LGPL21
 

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Enhances tmux to make multi-user terminal multiplexing easier
+WWW=		https://github.com/zolrath/wemux
 
 LICENSE=	MIT
 

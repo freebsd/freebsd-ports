@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Perl module to check email addresses for validity
+WWW=		https://metacpan.org/release/Mail-CheckUser
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS

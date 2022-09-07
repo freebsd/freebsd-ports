@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/klaussilveira/gitlist/releases/download/${DISTV
 
 MAINTAINER=	freebsd-ports@misc.ark-ict.nl
 COMMENT=	Web based Git repository browser written in PHP
+WWW=		https://gitlist.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

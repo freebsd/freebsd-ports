@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Schedule POE Events using a cron spec
+WWW=		https://metacpan.org/release/POE-Component-Cron
 
 BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE \
 		p5-POE-Component-Schedule>=0:devel/p5-POE-Component-Schedule \

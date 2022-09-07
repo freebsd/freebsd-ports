@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple, extensible Perl debugger
+WWW=		https://metacpan.org/release/Devel-ebug
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

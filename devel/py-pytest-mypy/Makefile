@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mypy static type checker plugin for pytest
+WWW=		https://github.com/dbader/pytest-mypy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

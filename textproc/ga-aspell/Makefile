@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Irish (Gaelic) dictionary
+WWW=		http://borel.slu.edu/ispell/index.html
 
 DICT=	 	ga
 

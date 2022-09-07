@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/nih-at/${PORTNAME}/releases/download/v${DISTVER
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	C library for reading, creating, and modifying ZIP archives
+WWW=		https://libzip.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Ready-to-use and customizable users management for FastAPI
+WWW=		https://github.com/fastapi-users/fastapi-users
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

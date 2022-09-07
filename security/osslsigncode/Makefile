@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSSL-based signcode utility
+WWW=		https://sourceforge.net/projects/osslsigncode/
 
 PLIST_FILES=	bin/osslsigncode
 

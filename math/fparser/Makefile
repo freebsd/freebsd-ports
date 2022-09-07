@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Function parser for C++
+WWW=		https://github.com/thliebig/fparser
 
 LICENSE=	LGPL3
 

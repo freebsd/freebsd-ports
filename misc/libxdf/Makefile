@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for loading XDF files
+WWW=		https://github.com/xdf-modules/libxdf
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

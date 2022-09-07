@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/liballeg/allegro5/releases/download/${DISTVERSI
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform library for games and multimedia programming
+WWW=		https://liballeg.org/
 
 LICENSE=	GIFTWARE
 LICENSE_NAME=	Giftware

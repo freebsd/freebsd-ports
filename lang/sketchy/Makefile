@@ -6,6 +6,7 @@ MASTER_SITES=	SF/sketchy-lisp/sketchy-lisp/2007-02-18
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpreter for purely applicative Scheme
+WWW=		http://sketchy-lisp.sourceforge.net/
 
 USES=		uidfix
 USE_LDCONFIG=	yes

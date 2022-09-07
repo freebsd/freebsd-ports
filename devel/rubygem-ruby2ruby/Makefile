@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure ruby code generator easily from ParseTree's Sexps # '
+WWW=		https://github.com/seattlerb/ruby2ruby
 
 LICENSE=	MIT
 

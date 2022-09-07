@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Access the lines of a disk file via a Perl array
+WWW=		https://metacpan.org/release/Tie-File
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Lightweight GTK2-based systray for UNIX desktop
+WWW=		https://github.com/sargon/trayer-srg
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

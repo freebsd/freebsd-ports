@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for working with VCF genomics files
+WWW=		https://github.com/vcftools/vcftools
 
 LICENSE=	LGPL3
 

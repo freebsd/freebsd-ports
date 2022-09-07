@@ -5,6 +5,7 @@ CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 daemon providing a polkit authentication UI
+WWW=		https://www.kde.org/plasma-desktop
 
 LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt
 

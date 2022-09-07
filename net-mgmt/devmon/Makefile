@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Device monitoring addition to Xymon/Hobbit/BigBrother
+WWW=		http://devmon.sourceforge.net/
 
 LICENSE=	GPLv2
 

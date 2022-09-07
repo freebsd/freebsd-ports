@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	21st century R console
+WWW=		https://github.com/randy3k/radian
 
 LICENSE=	MIT
 

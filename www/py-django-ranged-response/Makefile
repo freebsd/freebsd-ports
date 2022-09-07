@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Modified Django FileResponse that adds Content-Range headers
+WWW=		https://github.com/i3thuan5/django-ranged-response
 
 LICENSE=	MIT
 

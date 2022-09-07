@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.jibble.org/files/ \
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	PircBot Java IRC Bot Framework
+WWW=		http://www.jibble.org/pircbot.php
 
 LICENSE=	GPLv2
 

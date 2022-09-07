@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Module that simplifies access to Hotmail
+WWW=		https://metacpan.org/release/WWW-Hotmail
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \

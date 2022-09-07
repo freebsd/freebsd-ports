@@ -6,6 +6,7 @@ CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic algorithms and utilities for condensed matter physics
+WWW=		https://github.com/ALPSCore/ALPSCore
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

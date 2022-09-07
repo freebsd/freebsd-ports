@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Playback status widget for DeaDBeeF audio player
+WWW=		https://github.com/cboxdoerfer/ddb_playback_status
 
 BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:audio/deadbeef
 RUN_DEPENDS:=	${BUILD_DEPENDS}

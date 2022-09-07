@@ -6,6 +6,7 @@ PKGNAMESUFFIX?=	-kmod
 
 MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	OpenZFS kernel module for FreeBSD
+WWW=		https://github.com/zfsonfreebsd/ZoF
 
 LICENSE=	CDDL
 

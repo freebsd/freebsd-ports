@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde CSS Parser
+WWW=		https://pear.horde.org
 
 USES=	horde cpe
 

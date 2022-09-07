@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Sorts array of Net::Connection objects
+WWW=		https://metacpan.org/release/Net-Connection-Sort
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

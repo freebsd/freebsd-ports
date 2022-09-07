@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MySQL API module for Ruby
+WWW=		https://github.com/luislavena/mysql-gem
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual

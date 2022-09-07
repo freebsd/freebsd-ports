@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl script to produce statistics out of Squid log files
+WWW=		https://Cord.de/tools/squid/calamaris/
 
 LICENSE=	GPLv2
 

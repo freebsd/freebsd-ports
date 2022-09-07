@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Platform independent standalone library that plays Lottie Animation
+WWW=		https://github.com/Samsung/rlottie
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/licenses/COPYING.MIT

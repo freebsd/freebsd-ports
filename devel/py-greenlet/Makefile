@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Light-weight microthreads for Python
+WWW=		https://github.com/python-greenlet/greenlet
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

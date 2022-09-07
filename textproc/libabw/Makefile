@@ -6,6 +6,7 @@ MASTER_SITES=	LODEV/${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library providing ability to interpret Abiword documents
+WWW=		https://wiki.documentfoundation.org/DLP/Libraries/libabw
 
 LICENSE=	MPL20
 

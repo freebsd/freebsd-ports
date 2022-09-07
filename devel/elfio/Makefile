@@ -5,6 +5,7 @@ MASTER_SITES=	SF/elfio/ELFIO-sources/ELFIO-${PORTVERSION}
 
 MAINTAINER=	james.wright@digital-chaos.com
 COMMENT=	Small C++ library for reading and generating ELF files
+WWW=		http://elfio.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

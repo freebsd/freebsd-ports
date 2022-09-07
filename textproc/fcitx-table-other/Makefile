@@ -6,6 +6,7 @@ DIST_SUBDIR=	fcitx
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Table-based input methods for Fcitx
+WWW=		https://fcitx-im.org/wiki/Fcitx
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

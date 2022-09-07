@@ -7,6 +7,7 @@ MASTER_SITES=	SUNSITE/games/arcade/invaders/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Vector-graphics Space Invaders clone for X
+WWW=		https://libregamewiki.org/XInvaders3D
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Go implementation of the Ethereum 2.0
+WWW=		https://github.com/prysmaticlabs/prysm
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

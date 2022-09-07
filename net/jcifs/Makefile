@@ -6,6 +6,7 @@ MASTER_SITES=	http://jcifs.samba.org/src/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java CIFS Client Library
+WWW=		https://jcifs.samba.org/
 
 LICENSE=	LGPL21
 

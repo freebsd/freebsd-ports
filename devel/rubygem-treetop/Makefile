@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby-based DSL for text parsing and interpretation
+WWW=		https://github.com/cjheath/treetop
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

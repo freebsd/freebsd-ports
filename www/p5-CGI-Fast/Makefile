@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl CGI Interface for FastCGI
+WWW=		https://metacpan.org/release/CGI-Fast
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

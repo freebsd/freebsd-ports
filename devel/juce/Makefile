@@ -7,6 +7,7 @@ PATCHFILES=	27d6e8388c620bf32be0c86c66ff8c403f4c1d71.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ application framework to develop desktop and mobile applications
+WWW=		https://juce.com/
 
 LICENSE=	JUCE6
 LICENSE_NAME=	JUCE 6 End User License Agreement

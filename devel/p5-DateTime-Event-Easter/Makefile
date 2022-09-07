@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Returns Easter events for DateTime objects
+WWW=		https://metacpan.org/release/DateTime-Event-Easter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

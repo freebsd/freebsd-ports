@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	HTTP File Server
+WWW=		https://github.com/sigoden/dufs
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	dual

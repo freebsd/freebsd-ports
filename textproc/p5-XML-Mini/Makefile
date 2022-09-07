@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	Perl implementation of the XML::Mini XML create/parse interface
+WWW=		https://metacpan.org/release/XML-Mini
 
 USES=		perl5
 USE_PERL5=	configure

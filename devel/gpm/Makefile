@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lukejee@gmail.com
 COMMENT=	Go Package Manager
+WWW=		https://github.com/pote/gpm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

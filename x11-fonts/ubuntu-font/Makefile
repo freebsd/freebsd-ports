@@ -7,6 +7,7 @@ DISTNAME=	0cef8205-${ARCHIVE_NAME}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Ubuntu font family
+WWW=		https://design.ubuntu.com/font/
 
 LICENSE=	UFL
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt

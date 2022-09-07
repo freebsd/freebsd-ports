@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DIS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight file manager featuring a Norton Commander style interface
+WWW=		https://www.mucommander.com
 
 LICENSE=	GPLv3
 

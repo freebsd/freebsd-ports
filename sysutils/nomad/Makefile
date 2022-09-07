@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Cluster manager and scheduler
+WWW=		https://www.nomadproject.io/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

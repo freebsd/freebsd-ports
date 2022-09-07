@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Powerful web-framework wrapper for Rack
+WWW=		https://github.com/manveru/innate
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Query processing framework
+WWW=		https://metacpan.org/release/Text-Query
 
 USES=		perl5
 USE_PERL5=	configure patch

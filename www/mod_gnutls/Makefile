@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Extension for Apache httpd using GnuTLS library to provide HTTPS
+WWW=		https://mod.gnutls.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

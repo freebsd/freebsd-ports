@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gerard@seibercom.net
 COMMENT=	Perl module to delete expired CGI::Session-type sessions
+WWW=		https://metacpan.org/release/CGI-Session-ExpireSessions
 
 RUN_DEPENDS=	p5-CGI-Session>=4.14:www/p5-CGI-Session
 TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod

@@ -5,6 +5,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP interface to Digg's API
+WWW=		https://pear.php.net/package/Services_Digg
 
 USES=		pear php
 USE_PHP=	curl

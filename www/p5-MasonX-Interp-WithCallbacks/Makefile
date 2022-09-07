@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mason callback support via Params::CallbackRequest
+WWW=		https://metacpan.org/release/MasonX-Interp-WithCallbacks
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Mason>=0:www/p5-HTML-Mason \

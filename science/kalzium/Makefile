@@ -5,6 +5,7 @@ CATEGORIES=	science education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Periodic table of elements for KDE
+WWW=		https://www.kde.org/applications/education/kalzium
 
 LICENSE=	GPLv2 LGPL20 GFDL
 LICENSE_COMB=	multi

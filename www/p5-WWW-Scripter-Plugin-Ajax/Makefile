@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	WWW::Scripter plugin that provides the XMLHttpRequest object
+WWW=		https://metacpan.org/release/WWW-Scripter-Plugin-Ajax
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-WWW-Scripter-Plugin-JavaScript>0:www/p5-WWW-Scripter-Plugin-JavaScript \

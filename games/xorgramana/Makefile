@@ -8,6 +8,7 @@ DISTNAME=	XorGramana-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Logic word puzzle game set inside a series of mazes
+WWW=		https://www.jwm-art.net/XorGramana/
 
 USES=		gl gmake sdl tar:bzip2
 USE_SDL=	sdl image

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	XS implementation of Net::IP
+WWW=		https://metacpan.org/release/Net-IP-XS
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

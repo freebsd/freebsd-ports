@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sans-IO WebSocket protocol implementation
+WWW=		https://pypi.org/project/wsproto/
 
 LICENSE=	MIT
 

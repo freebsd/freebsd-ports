@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Classes that represent and manipulate fractions
+WWW=		https://pear.php.net/package/Math_Fraction
 
 LICENSE=	PHP30
 

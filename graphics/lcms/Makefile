@@ -8,6 +8,7 @@ MASTER_SITES=	SF \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library
+WWW=		https://www.littlecms.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

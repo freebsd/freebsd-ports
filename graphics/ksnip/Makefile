@@ -6,6 +6,7 @@ CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Screenshot and annotation tool
+WWW=		https://github.com/ksnip/ksnip
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

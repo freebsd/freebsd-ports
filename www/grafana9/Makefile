@@ -10,6 +10,7 @@ DISTFILES=	${GRAFANA_PREBUILT}:public \
 
 MAINTAINER=	drtr0jan@yandex.ru
 COMMENT=	Dashboard and graph editor for multiple data stores
+WWW=		https://github.com/grafana/grafana
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

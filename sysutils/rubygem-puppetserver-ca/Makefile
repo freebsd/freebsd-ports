@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Ruby CLI tool to interact with the Puppet Server Certificate Authority
+WWW=		https://github.com/puppetlabs/puppetserver-ca-cli/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

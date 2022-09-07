@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby extension to Google Protocol Buffers
+WWW=		https://developers.google.com/protocol-buffers/
 
 LICENSE=	BSD3CLAUSE
 

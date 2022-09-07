@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	WAD file editor, for games like Doom and Heretic
+WWW=		http://www.teaser.fr/~amajorel/yadex/
 
 LICENSE=	GPLv2
 

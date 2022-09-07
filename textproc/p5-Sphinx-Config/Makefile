@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sphinx search engine configuration file read/modify/write
+WWW=		https://metacpan.org/release/Sphinx-Config
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

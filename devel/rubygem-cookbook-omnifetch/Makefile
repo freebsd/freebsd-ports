@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library to fetch Chef cookbooks from a variety of sources
+WWW=		https://github.com/chef/cookbook-omnifetch
 
 LICENSE=	APACHE20
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wblock@FreeBSD.org
 COMMENT=	Efficiently pack items into bins
+WWW=		https://metacpan.org/release/Algorithm-BinPack
 
 LICENSE=	CC-BY-1.0 IRCCLAYPL
 LICENSE_COMB=	dual

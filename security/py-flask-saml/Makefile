@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@saltant.com
 COMMENT=	SAML authentication for Flask web apps
+WWW=		https://bitbucket.org/asecurityteam/flask_saml
 
 LICENSE=	APACHE20
 

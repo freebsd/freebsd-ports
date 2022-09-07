@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Asturian dictionary
+WWW=		http://docu.softastur.org/Aspell
 
 DICT=	 	ast
 

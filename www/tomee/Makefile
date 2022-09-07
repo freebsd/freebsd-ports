@@ -6,6 +6,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-webprofile
 
 MAINTAINER=	neu@mycontrol.de
 COMMENT=	Open-source Java EE Container by Apache
+WWW=		https://tomee.apache.org/
 
 LICENSE=	APACHE20
 

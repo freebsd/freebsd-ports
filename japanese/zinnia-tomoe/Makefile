@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}-20080911
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Handwriting recognition files for Zinnia (Tomoe data)
+WWW=		http://zinnia.sourceforge.net/
 
 LIB_DEPENDS=	libzinnia.so:japanese/zinnia
 RUN_DEPENDS=	zinnia:japanese/zinnia

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DWave: REST interface to communicate with D-Wave Solver API servers
+WWW=		https://github.com/dwavesystems/dwave-cloud-client
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

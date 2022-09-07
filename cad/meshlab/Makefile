@@ -6,6 +6,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	3D triangular meshes processing and editing tool
+WWW=		https://www.meshlab.net/
 
 LICENSE=	GPLv2
 

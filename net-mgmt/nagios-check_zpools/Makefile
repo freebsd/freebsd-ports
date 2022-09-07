@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin that checks zpool state
+WWW=		https://github.com/Napsty/check_zpools
 
 RUN_DEPENDS=	bash:shells/bash
 

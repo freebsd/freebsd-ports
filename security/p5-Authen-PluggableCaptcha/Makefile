@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pluggable Captcha framework for Perl
+WWW=		https://metacpan.org/release/Authen-PluggableCaptcha
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Number-Spell>=0:textproc/p5-Number-Spell \

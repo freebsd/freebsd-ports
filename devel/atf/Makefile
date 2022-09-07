@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/jmmv/${PORTNAME}/releases/download/${PORTNAME}-
 
 MAINTAINER=	jmmv@FreeBSD.org
 COMMENT=	C, C++ and shell libraries to write ATF-compliant test programs
+WWW=		https://github.com/jmmv/atf/
 
 LICENSE=	BSD3CLAUSE
 

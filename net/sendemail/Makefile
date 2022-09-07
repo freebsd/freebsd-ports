@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Lightweight, completely command line based, SMTP email agent
+WWW=		http://caspian.dotconf.net/menu/Software/SendEmail/
 
 LICENSE=	GPLv2+
 

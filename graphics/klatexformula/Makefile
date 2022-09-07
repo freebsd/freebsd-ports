@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert LaTeX formula to image
+WWW=		https://klatexformula.sourceforge.io
 
 LICENSE=	GPLv2
 

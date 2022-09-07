@@ -7,6 +7,7 @@ DISTNAME=	js-${DISTVERSION}
 
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	Standalone JavaScript interpreter from the Mozilla project
+WWW=		https://spidermonkey.dev/
 
 DEPRECATED=	Obsolete, released in 2007 and since long unsupported upstream
 EXPIRATION_DATE=2022-09-30

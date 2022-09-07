@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Stashable Role for Data::Object
+WWW=		https://metacpan.org/release/Data-Object-Role-Stashable
 
 LICENSE=	APACHE20
 

@@ -5,6 +5,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email client for your terminal
+WWW=		https://aerc-mail.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

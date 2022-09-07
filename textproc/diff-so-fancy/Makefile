@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Fancier diff output formatter
+WWW=		https://github.com/so-fancy/diff-so-fancy/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

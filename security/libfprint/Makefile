@@ -6,6 +6,7 @@ MASTER_SITES=	https://people.freedesktop.org/~anarsoul/
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Library for fingerprint reader devices
+WWW=		http://www.reactivated.net/fprint/wiki/Libfprint
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

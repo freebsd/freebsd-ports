@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic Gnu Chess
+WWW=		https://savannah.gnu.org/projects/chess
 
 LICENSE=	GPLv3+
 

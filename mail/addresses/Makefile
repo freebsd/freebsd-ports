@@ -7,6 +7,7 @@ DISTNAME=	Addresses-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Versatile addressbook for GNUstep
+WWW=		https://gap.nongnu.org/addresses/index.html
 
 LICENSE=	LGPL21
 

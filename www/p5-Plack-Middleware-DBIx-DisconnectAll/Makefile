@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Disconnect all database connection at end of request
+WWW=		https://metacpan.org/dist/Plack-Middleware-DBIx-DisconnectAll
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

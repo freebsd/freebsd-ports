@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Python Musicbrainz NGS site bindings
+WWW=		https://github.com/alastair/python-musicbrainz-ngs
 
 LICENSE=	BSD2CLAUSE ISCL
 LICENSE_COMB=	multi

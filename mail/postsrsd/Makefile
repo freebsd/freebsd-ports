@@ -4,6 +4,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Postfix Sender Rewriting Scheme daemon
+WWW=		https://github.com/roehling/postsrsd
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,6 +9,7 @@ DISTNAME=	opfc-ModuleHP-1.1.1_withIPAMonaFonts-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPA Japanese TrueType fonts with Mona font
+WWW=		http://www.geocities.jp/ipa_mona/
 
 LICENSE=	NOTPARTIAL
 LICENSE_NAME=	Whole not partial

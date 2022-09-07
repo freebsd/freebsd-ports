@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of modules to manipulate HTML syntax trees
+WWW=		https://metacpan.org/release/HTML-Tree
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby implementation of Douglas Crockford's JSMin JavaScript minifier
+WWW=		https://github.com/rgrove/jsmin
 
 LICENSE=	MIT
 

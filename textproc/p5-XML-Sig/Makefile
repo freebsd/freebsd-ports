@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Toolkit to help sign and verify XML Digital Signatures
+WWW=		https://metacpan.org/dist/XML-Sig
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -18,6 +18,7 @@ EXTRACT_ONLY=	dungeon-gdt-glk.tar.gz \
 
 MAINTAINER=	sailor@63bit.net
 COMMENT=	Text adventure which became Zork I-III
+WWW=		http://www.csd.uwo.ca/Infocom/dungeon.html
 
 USES=		ncurses
 NO_WRKSUBDIR=	yes

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bscott@bunyatech.com.au
 COMMENT=	Interface to the gpsd server daemon protocol version 3 (JSON)
+WWW=		https://metacpan.org/release/Net-GPSD3
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

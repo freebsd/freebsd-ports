@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	Highly efficient mail filter for identifying spam
+WWW=		https://spamassassin.apache.org/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache

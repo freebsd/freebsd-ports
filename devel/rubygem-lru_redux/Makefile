@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Efficient implementation of an lru cache
+WWW=		https://github.com/SamSaffron/lru_redux
 
 LICENSE=	MIT
 

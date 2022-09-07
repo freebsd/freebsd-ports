@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	WxWidgets GUI for the computer algebra system maxima
+WWW=		https://wxmaxima-developers.github.io/wxmaxima/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

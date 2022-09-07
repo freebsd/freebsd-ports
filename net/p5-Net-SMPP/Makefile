@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure Perl implementation of SMPP 3.4 over TCP
+WWW=		https://metacpan.org/release/Net-SMPP
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	*.pl

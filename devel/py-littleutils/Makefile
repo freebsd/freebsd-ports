@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small personal collection of python utility functions
+WWW=		https://github.com/alexmojaki/littleutils
 
 LICENSE=	MIT
 

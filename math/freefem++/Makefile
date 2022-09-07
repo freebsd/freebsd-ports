@@ -6,6 +6,7 @@ CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Partial differential equation solver
+WWW=		http://www.freefem.org/ff++/
 
 LICENSE=	LGPL3
 

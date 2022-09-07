@@ -6,6 +6,7 @@ MASTER_SITES=	https://git.zx2c4.com/wireguard-tools/snapshot/
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Fast, modern and secure VPN Tunnel
+WWW=		https://git.zx2c4.com/wireguard-tools/about/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING

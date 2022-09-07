@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Pytest plus plugin :: extends pytest functionality
+WWW=		https://github.com/pycontribs/pytest-plus
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	The lightweight and functional object-oriented statistics
+WWW=		https://metacpan.org/release/Statistics-Lite
 
 USES=		dos2unix perl5
 USE_PERL5=	configure

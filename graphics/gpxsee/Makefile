@@ -5,6 +5,7 @@ CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com
 COMMENT=	GPS log file viewer and analyzer
+WWW=		https://www.gpxsee.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/licence.txt

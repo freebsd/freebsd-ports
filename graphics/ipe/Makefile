@@ -7,6 +7,7 @@ MASTER_SITES=	https://dl.bintray.com/otfried/generic/ipe/${PORTVERSION:R}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Extensible vector graphics editor with LaTeX support
+WWW=		https://ipe.otfried.org/
 
 LICENSE=	GPLv3+
 

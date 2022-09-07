@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.spmfilter.org/files/
 
 MAINTAINER=	ast@treibsand.com
 COMMENT=	ClamAV plugin for spmfilter
+WWW=		https://www.spmfilter.org/
 
 BUILD_DEPENDS=	spmfilter>=0.6:mail/spmfilter
 RUN_DEPENDS=	spmfilter>=0.6:mail/spmfilter

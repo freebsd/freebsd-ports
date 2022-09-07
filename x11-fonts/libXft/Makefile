@@ -4,6 +4,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Client-sided font API for X applications
+WWW=		https://www.freedesktop.org/wiki/Software/Xft/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

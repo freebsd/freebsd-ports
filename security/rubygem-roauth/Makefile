@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Simple Ruby OAuth library
+WWW=		https://github.com/maccman/roauth
 
 NO_ARCH=	yes
 

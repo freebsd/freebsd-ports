@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Transport of serial interfaces over UDP/IP
+WWW=		https://www.sourceforge.net/projects/serialoverip/
 
 LICENSE=	GPLv2
 

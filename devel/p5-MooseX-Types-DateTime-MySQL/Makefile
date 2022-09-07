@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	MySQL datetime type constraints and coercions
+WWW=		https://metacpan.org/release/MooseX-Types-DateTime-MySQL
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DateTime>=0.03:devel/p5-DateTime \

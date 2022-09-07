@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Randomized thermal relaxation method for MaxFS problems
+WWW=		https://github.com/coin-or/Creme
 
 LICENSE=	EPL
 

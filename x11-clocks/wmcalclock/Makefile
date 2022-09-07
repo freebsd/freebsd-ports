@@ -6,6 +6,7 @@ MASTER_SITES=	http://jmpacquet.free.fr/wmcalclock/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Another Window Maker calendar/clock dockapp
+WWW=		http://jmpacquet.free.fr/wmcalclock/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING

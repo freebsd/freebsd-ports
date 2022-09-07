@@ -4,6 +4,7 @@ CATEGORIES=	www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP interface to access the Google SOAP Web APIs
+WWW=		https://pear.php.net/package/Services_Google
 
 USES=		pear php
 USE_PHP=	soap

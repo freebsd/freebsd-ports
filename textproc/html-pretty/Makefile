@@ -7,6 +7,7 @@ DISTNAME=	htmlpty-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML and SGML prettyprinter and text-to-HTML/SGML converter
+WWW=		http://www.math.utah.edu/~beebe/software/html-sgml-tools.html #html-pretty
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

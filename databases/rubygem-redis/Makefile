@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby client library for Redis, the key value storage server
+WWW=		https://github.com/redis/redis-rb
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

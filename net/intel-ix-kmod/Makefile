@@ -12,6 +12,7 @@ _MAN_SOURCE=	${PORTNAME}-3.3.10
 
 MAINTAINER=	freebsd@intel.com
 COMMENT=	10 gigabit FreeBSD Base Driver for Intel(R) Network Connections
+WWW=		https://downloadcenter.intel.com
 
 MANPAGENAME=	ixgbe
 MANPAGELINKS=	ix if_ix if_ixgbe

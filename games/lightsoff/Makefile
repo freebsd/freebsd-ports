@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome ligthsoff
+WWW=		https://wiki.gnome.org/Lightsoff
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

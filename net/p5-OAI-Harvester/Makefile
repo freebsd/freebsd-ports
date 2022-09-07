@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module to harvest using the OAI protocol
+WWW=		https://metacpan.org/release/OAI-Harvester
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

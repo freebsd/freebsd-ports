@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Next-generation Vim
+WWW=		https://neovim.io/
 
 LICENSE=	APACHE20
 

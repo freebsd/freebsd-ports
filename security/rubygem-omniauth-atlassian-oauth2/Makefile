@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Atlassian OAuth2 strategy for OmniAuth
+WWW=		https://github.com/aguynamedben/omniauth-atlassian-oauth2
 
 LICENSE=	MIT
 

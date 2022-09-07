@@ -6,6 +6,7 @@ MASTER_SITES=	http://chasen.org/~taku/software/yamcha/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Multipurpose CHunk Annotator
+WWW=		http://chasen.org/~taku/software/yamcha/
 
 BUILD_DEPENDS=	svm_learn:science/svmlight
 

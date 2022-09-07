@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for interfacing with local and remote IIO devices
+WWW=		https://github.com/analogdevicesinc/libiio
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

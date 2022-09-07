@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME calculator tool
+WWW=		https://live.gnome.org/Gcalctool
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

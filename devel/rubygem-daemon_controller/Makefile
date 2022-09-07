@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Library for implementing daemon management capabilities
+WWW=		https://github.com/FooBarWidget/daemon_controller/tree/master
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

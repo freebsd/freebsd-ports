@@ -10,6 +10,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Perl script to turn ``cvs log'' output into HTML
+WWW=		http://cvs.sslug.dk/cvs2html/
 
 LICENSE=	GPLv2
 

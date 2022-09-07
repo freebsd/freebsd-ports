@@ -5,6 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT?=	General purpose ham radio voice services
+WWW=		https://www.svxlink.org/
 
 LICENSE?=	GPLv2
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extension of Prawn
+WWW=		https://github.com/madriska/prawn-security
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ DIST_SUBDIR=	postgresql
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	New C++ interface for PostgreSQL
+WWW=		http://pqxx.org/
 
 LICENSE=	BSD3CLAUSE
 

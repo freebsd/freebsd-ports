@@ -12,6 +12,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Open source Old School RuneScape client
+WWW=		https://runelite.net
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${DISTDIR}/${DIST_SUBDIR}/LICENSE

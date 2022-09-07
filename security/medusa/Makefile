@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.foofus.net/~jmk/tools/
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Speedy, massively parallel, modular, login brute-forcer
+WWW=		http://www.foofus.net/jmk/medusa/medusa.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

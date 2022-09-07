@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Log::Any adapter for Log4perl
+WWW=		https://metacpan.org/release/Log-Any-Adapter-Log4perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

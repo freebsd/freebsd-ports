@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Vault for securely storing and accessing AWS credentials
+WWW=		https://github.com/99designs/aws-vault
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

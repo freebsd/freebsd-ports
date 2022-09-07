@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to create simple calendars
+WWW=		https://metacpan.org/release/Calendar-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

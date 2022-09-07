@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Structured data retrieval of perl -V output
+WWW=		https://metacpan.org/release/Config-Perl-V
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

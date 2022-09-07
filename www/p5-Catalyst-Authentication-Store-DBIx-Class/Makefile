@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Storage class for Catalyst Authentication using DBIx::Class
+WWW=		https://metacpan.org/release/Catalyst-Authentication-Store-DBIx-Class
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/culot
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compilation of quotes from Nietzsche's Thus spoke Zarathustra
+WWW=		https://www.ebooksgratuits.com/html/nietzsche_ainsi_parlait_zarathoustra.html
 
 LICENSE=	NONE
 

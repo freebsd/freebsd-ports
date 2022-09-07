@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use libraries from a t/lib directory
+WWW=		https://metacpan.org/dist/Test-Lib
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

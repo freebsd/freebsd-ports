@@ -9,6 +9,7 @@ DISTNAME=	mixfont-mplus-ipa-TrueType-20060520p1
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Mixed Japanese font with IPA, M-plus outline, and Bitstream Vera
+WWW=		http://mix-mplus-ipa.sourceforge.jp/
 
 LICENSE=	NOTPARTIAL
 LICENSE_NAME=	Whole not partial

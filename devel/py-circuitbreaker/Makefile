@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ale_sagra@hotmail.com
 COMMENT=	Python Circuit Breaker pattern implementation
+WWW=		https://github.com/fabfuel/circuitbreaker
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

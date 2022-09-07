@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: Weapons Factory Arena
+WWW=		https://www.weaponsfactoryarena.com/
 
 USES=		zip
 NO_BUILD=	yes

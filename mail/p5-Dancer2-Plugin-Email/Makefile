@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple email handling for Dancer2 applications
+WWW=		https://metacpan.org/release/Dancer2-Plugin-Email
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

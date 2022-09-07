@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Modern, pretty RDoc template
+WWW=		https://github.com/evan/allison
 
 NO_ARCH=	yes
 

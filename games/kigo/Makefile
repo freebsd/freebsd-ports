@@ -5,6 +5,7 @@ CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME:tu}_DESC}
+WWW=		https://www.kde.org/applications/games/kigo/
 
 USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 tar:xz xorg
 USE_KDE=	attica auth codecs completion config configwidgets \

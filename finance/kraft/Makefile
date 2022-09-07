@@ -6,6 +6,7 @@ CATEGORIES=	finance kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Manage invoices and documents for small companies
+WWW=		https://volle-kraft-voraus.de/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

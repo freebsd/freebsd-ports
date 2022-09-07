@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	erlang-
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Collection of functions and scripts to debug Erlang in production
+WWW=		https://ferd.github.io/recon/
 
 LICENSE=	BSD3CLAUSE
 

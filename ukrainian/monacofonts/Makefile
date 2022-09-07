@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Collection of 5 "fixed" fonts for X11 from www.brama.com
+WWW=		http://www.brama.com/compute/unix.html
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontscale:x11-fonts/mkfontscale

@@ -5,6 +5,7 @@ CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Web GUI for managing git repositories
+WWW=		https://gitlab.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

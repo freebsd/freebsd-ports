@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Detects objects from picture using opencv
+WWW=		https://metacpan.org/release/Image-ObjectDetect
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

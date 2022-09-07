@@ -9,6 +9,7 @@ PATCHFILES+=	cf95ac721fb1.patch:-p1 # https://github.com/WayfireWM/wayfire-plugi
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Additional plugins for Wayfire
+WWW=		https://wayfire.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

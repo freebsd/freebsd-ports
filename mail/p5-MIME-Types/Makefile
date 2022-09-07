@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for determining MIME types
+WWW=		https://metacpan.org/release/MIME-Types
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	james@elstone.net
 COMMENT=	Native interface to serial ports in Java
+WWW=		http://rxtx.qbang.org
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

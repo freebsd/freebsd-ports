@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	t.tom@succont.de
 COMMENT=	Exporter for Consul metrics
+WWW=		https://github.com/prometheus/consul_exporter
 
 LICENSE=	APACHE20
 

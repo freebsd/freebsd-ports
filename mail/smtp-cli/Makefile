@@ -8,6 +8,7 @@ EXTRACT_SUFX=	-${PORTVERSION}
 
 MAINTAINER=	fw@moov.de
 COMMENT=	Powerful SMTP command line client
+WWW=		http://www.logix.cz/michal/devel/smtp-cli/
 
 LICENSE=	GPLv3
 

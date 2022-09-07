@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version controlled file system
+WWW=		https://www.presslabs.com/code/gitfs/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

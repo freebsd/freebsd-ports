@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Perl extension to extract main content of a web page
+WWW=		https://metacpan.org/release/HTML-ExtractMain
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

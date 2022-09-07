@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library and tool for converting vertex formats
+WWW=		https://github.com/akb825/VertexFormatConvert
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

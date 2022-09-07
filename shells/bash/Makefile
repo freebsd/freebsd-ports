@@ -15,6 +15,7 @@ PATCHFILES!=		/usr/bin/jot -s " " -w \
 
 MAINTAINER=		ehaupt@FreeBSD.org
 COMMENT=		GNU Project's Bourne Again SHell
+WWW=		https://www.gnu.org/software/bash/
 
 LICENSE=		GPLv3+
 LICENSE_FILE=		${WRKSRC}/COPYING

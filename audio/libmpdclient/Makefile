@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.musicpd.org/download/libmpdclient/2/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	API library for interfacing MPD
+WWW=		https://www.musicpd.org/libs/libmpdclient/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

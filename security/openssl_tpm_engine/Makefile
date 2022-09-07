@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	OpenSSL TPM engine
+WWW=		https://github.com/mgerstner/openssl_tpm_engine
 
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

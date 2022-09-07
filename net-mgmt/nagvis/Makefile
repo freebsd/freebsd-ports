@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.nagvis.org/share/
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Visualization addon for Nagios
+WWW=		https://www.nagvis.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

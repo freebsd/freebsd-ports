@@ -4,6 +4,7 @@ CATEGORIES=	dns net pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP Resolver library used to communicate with a DNS server
+WWW=		https://pear.php.net/package/Net_DNS2
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

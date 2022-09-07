@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Default configuration and config loading library for Chef
+WWW=		https://github.com/chef/chef/tree/main/chef-config
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

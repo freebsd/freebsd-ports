@@ -6,6 +6,7 @@ CATEGORIES=		net-mgmt
 
 MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Export MQTT metrics to prometheus
+WWW=		https://github.com/hikhvar/mqtt2prometheus/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

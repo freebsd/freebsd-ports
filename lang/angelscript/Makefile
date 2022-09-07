@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ndowens04@gmail.com
 COMMENT=	AngelCode Scripting Library
+WWW=		https://www.angelcode.com/angelscript/
 
 LICENSE=	ZLIB
 

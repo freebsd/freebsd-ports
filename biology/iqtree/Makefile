@@ -6,6 +6,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Efficient phylogenomic software by maximum likelihood
+WWW=		http://www.iqtree.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

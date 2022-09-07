@@ -6,6 +6,7 @@ DISTNAME=	gstreamer-editing-services-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer editing services
+WWW=		http://gstreamer.freedeskop.org
 
 LICENSE=	LGPL20
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.dockapps.net/download/
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Displays the phase of the moon, plus orbital data
+WWW=		https://www.dockapps.net/wmmoonclock
 
 LICENSE=	GPLv2
 

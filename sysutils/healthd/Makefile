@@ -7,6 +7,7 @@ MASTER_SITES=	http://healthd.thehousleys.net/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon to monitor vital motherboard parameters
+WWW=		http://healthd.thehousleys.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

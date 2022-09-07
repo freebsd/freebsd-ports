@@ -9,6 +9,7 @@ PATCHFILES=	c0dfa140341cf9a848a6e5f926392623d03d2c28.patch:-p1
 
 MAINTAINER=	freebsd@bitchx.org
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
+WWW=		https://www.scrollz.info/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

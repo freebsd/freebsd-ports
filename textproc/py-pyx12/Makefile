@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Validate and convert HIPAA X12 documents
+WWW=		https://github.com/azoner/pyx12
 
 LICENSE=	BSD3CLAUSE
 

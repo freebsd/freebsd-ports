@@ -4,6 +4,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	rmm1.bob@gmail.com
 COMMENT=	Dumb Terminal Emulator
+WWW=		https://github.com/npat-efault/picocom
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

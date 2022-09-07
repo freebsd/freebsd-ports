@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Use Google Picasa Web API
+WWW=		https://metacpan.org/release/Net-Google-PicasaWeb
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}-1.2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows users to change their passwords stored in a SQL database
+WWW=		https://www.squirrelmail.org/plugin_view.php?id=25
 
 IGNORE_WITH_PHP=	82
 USE_SM_COMPAT=	yes

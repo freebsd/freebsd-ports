@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extended interface to JIRA REST API
+WWW=		https://metacpan.org/release/JIRA-REST
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

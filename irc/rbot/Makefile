@@ -6,6 +6,7 @@ CATEGORIES=	irc ruby
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby IRC bot similar to infobot
+WWW=		https://ruby-rbot.org/
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	dual

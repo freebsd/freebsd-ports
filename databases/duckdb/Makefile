@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	In-process SQL OLAP database management system
+WWW=		https://duckdb.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

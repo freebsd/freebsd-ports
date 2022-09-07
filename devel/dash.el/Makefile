@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Modern list library for Emacs
+WWW=		https://github.com/magnars/dash.el
 
 LICENSE=	GPLv3
 

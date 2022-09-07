@@ -5,6 +5,7 @@ MASTER_SITES=	https://ccid.apdu.fr/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic driver for USB CCID and ICCD
+WWW=		https://ccid.apdu.fr/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	51
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
+WWW=		https://dev.mysql.com/downloads/connector/j/
 
 LICENSE=	GPLv2
 

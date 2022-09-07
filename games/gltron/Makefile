@@ -7,6 +7,7 @@ EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D worm game for two players for X Window System
+WWW=		https://sourceforge.net/projects/gltron/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

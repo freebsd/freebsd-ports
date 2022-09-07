@@ -6,6 +6,7 @@ MASTER_SITES=	https://software.sandia.gov/opt++/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Object-oriented nonlinear optimization library
+WWW=		https://software.sandia.gov/opt++/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/GNU_LGPL

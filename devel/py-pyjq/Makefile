@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
 COMMENT=	Python binding for jq
+WWW=		https://github.com/doloopwhile/pyjq
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

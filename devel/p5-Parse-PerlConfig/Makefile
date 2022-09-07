@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to use perl scripts as config files
+WWW=		https://metacpan.org/release/Parse-PerlConfig
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

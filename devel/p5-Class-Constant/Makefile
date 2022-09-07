@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build constant classes
+WWW=		https://metacpan.org/release/Class-Constant
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

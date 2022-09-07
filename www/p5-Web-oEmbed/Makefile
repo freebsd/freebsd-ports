@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	oEmbed consumer
+WWW=		https://metacpan.org/release/Web-oEmbed
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

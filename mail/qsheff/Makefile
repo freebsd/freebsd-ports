@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.enderunix.org/qsheff/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qmail-queue replacement to filter mail traffic
+WWW=		http://www.enderunix.org/qsheff/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Docbook to mdoc(7) converter
+WWW=		https://github.com/trasz/laserhammer
 
 LICENSE=	BSD2CLAUSE
 

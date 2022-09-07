@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTTP Cookie parser in C
+WWW=		https://metacpan.org/release/Cookie-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

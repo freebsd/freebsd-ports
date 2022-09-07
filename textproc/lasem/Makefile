@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	SVG/Mathml renderer and editor
+WWW=		https://wiki.gnome.org/Projects/Lasem
 
 OPTIONS_DEFINE=	DOCS
 

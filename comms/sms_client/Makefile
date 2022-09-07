@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/comms/sms_client/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Simple UNIX SMS client to send messages to phones or pagers
+WWW=		https://bsdforge.com/projects/comms/sms_client/
 
 LICENSE=	LGPL20+
 

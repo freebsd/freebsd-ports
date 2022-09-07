@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ManageSieve Protocol Client
+WWW=		https://metacpan.org/release/Net-ManageSieve
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

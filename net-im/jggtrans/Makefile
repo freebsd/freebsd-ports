@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/Jajcus/jggtrans/releases/download/v${DISTVERSIO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabberd XMPP to GG instant messaging service gateway
+WWW=		http://jggtrans.jajcus.net/
 
 LICENSE=	GPLv2
 

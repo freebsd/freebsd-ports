@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Fast and complete Python implementation of Markdown
+WWW=		https://code.google.com/p/python-markdown2/
 
 LICENSE=	MIT
 

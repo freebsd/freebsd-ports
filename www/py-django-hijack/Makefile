@@ -9,6 +9,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Allows Django superusers to login as other users
+WWW=		https://github.com/arteria/django-hijack
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

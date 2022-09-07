@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|00$||}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Search nested hashref/arrayref structures using JSONPath
+WWW=		https://metacpan.org/release/JSON-Path
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

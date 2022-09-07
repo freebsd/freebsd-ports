@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.war
 
 MAINTAINER=	jlh@FreeBSD.org
 COMMENT=	Subsonic streaming media server, standalone version
+WWW=		https://www.libresonic.org
 
 USE_JAVA=	yes
 USE_RC_SUBR=	libresonic

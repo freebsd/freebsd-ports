@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dates in the pataphysical calendar
+WWW=		https://metacpan.org/release/DateTime-Calendar-Pataphysical
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

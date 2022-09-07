@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.osgeo.org/geos/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Geometry Engine, Open Source
+WWW=		https://libgeos.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

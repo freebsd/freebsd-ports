@@ -4,6 +4,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
+WWW=		https://www.openexr.com/
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	LXQt notification daemon
+WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 

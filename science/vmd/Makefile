@@ -12,6 +12,7 @@ DISTFILES=	${VMD_DIST} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Molecular visualization program
+WWW=		http://www.ks.uiuc.edu/Research/vmd/
 
 LICENSE=	VMD BSD3CLAUSE STRIDE
 LICENSE_COMB=	multi

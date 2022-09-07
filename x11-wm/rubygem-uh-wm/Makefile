@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tj+freebsd_ports@a13.fr
 COMMENT=	Minimalistic tiling and stacking window manager
+WWW=		https://rubygems.org/gems/uh-wm
 
 LICENSE=	BSD3CLAUSE
 

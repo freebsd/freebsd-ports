@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	vagner@bsdway.ru
 COMMENT=	GTK2.0 Sound Mixer
+WWW=		https://github.com/svagner/gtmixer
 
 LICENSE=	BSD2CLAUSE
 

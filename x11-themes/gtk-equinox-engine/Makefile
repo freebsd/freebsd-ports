@@ -10,6 +10,7 @@ DISTFILES=	121881-${DISTNAME}.tar.gz \
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Equinox GTK+ 2.x engine and themes
+WWW=		http://gnome-look.org/content/show.php?content=121881
 
 LICENSE=	GPLv2
 

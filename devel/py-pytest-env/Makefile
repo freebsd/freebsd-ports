@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Py.test plugin that allows you to add environment variables
+WWW=		https://github.com/MobileDynasty/pytest-env
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.6:devel/py-pytest@${PY_FLAVOR}
 

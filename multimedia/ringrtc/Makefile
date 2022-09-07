@@ -31,6 +31,7 @@ DISTFILES=	base-${BASE_REV}.tar.gz:base \
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Middleware library for Signal-Desktop
+WWW=		https://github.com/signalapp/ringrtc
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/../../LICENSE

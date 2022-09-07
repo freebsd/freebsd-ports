@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Syslog priority constants as defined in RFC3164
+WWW=		https://metacpan.org/release/Log-Syslog-Constants
 
 NO_ARCH=	yes
 

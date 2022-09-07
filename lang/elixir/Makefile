@@ -9,6 +9,7 @@ DIST_SUBDIR=	elixir/${PORTVERSION}
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional, meta-programming aware language built on top of Erlang VM
+WWW=		https://elixir-lang.org/
 
 LICENSE=	APACHE20
 

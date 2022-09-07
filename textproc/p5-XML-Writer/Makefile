@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple Perl module for writing XML documents
+WWW=		https://metacpan.org/release/XML-Writer
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

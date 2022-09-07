@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt based UNIX MAME/MESS frontend
+WWW=		https://qmc2.batcom-it.net/
 
 RUN_DEPENDS=	mame>=0.154:emulators/mame \
 		mess>=0.154:emulators/mess

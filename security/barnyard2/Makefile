@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Interpreter for Snort unified2 binary output files
+WWW=		https://github.com/firnsy/barnyard2
 
 LICENSE=	GPLv2
 

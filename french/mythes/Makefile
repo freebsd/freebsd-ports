@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	French thesaurus
+WWW=		https://www.dicollecte.org/
 
 LICENSE=	LGPL21
 

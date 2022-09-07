@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.jedrea.com/chmlib/
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Library for dealing with Microsoft ITSS/CHM format files
+WWW=		http://www.jedrea.com/chmlib/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

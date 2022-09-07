@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nistor@snickers.org
 COMMENT=	Perl5 interface to the CDB package
+WWW=		https://metacpan.org/release/CDB_File
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

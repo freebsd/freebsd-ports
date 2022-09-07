@@ -7,6 +7,7 @@ DISTNAME=	GitPython-${PORTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Python Git Library
+WWW=		https://github.com/gitpython-developers/GitPython
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

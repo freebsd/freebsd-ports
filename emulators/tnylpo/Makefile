@@ -5,6 +5,7 @@ MASTER_SITES=	https://gitlab.com/gbrein/${PORTNAME}/-/archive/${DISTVERSION}/
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	CP/M emulator
+WWW=		https://gitlab.com/gbrein/tnylpo
 
 LICENSE=	BSD3CLAUSE
 

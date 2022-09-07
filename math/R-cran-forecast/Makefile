@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Forecasting functions for time series and linear models
+WWW=		https://cran.r-project.org/web/packages/forecast/
 
 LICENSE=	GPLv3
 

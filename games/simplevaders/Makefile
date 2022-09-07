@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Space-Invaders like 2D space shooter
+WWW=		https://dusted.dk/pages/simplevaders/
 
 LICENSE=	GPLv3+
 

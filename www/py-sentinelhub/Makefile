@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sentinel Hub Utilities
+WWW=		https://github.com/sentinel-hub/sentinelhub-py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

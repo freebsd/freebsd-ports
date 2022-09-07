@@ -7,6 +7,7 @@ CATEGORIES=	www net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Privacy-aware web content sanitizer proxy as a service
+WWW=		https://github.com/asciimoo/morty
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/ffs2recov/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Utility to recover UFS2 filesystems
+WWW=		https://BSDforge.com/projects/sysutils/ffs2recov/
 
 LICENSE=	BSD2CLAUSE
 

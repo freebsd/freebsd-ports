@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Apple Lossless Audio Codec (ALAC) format encoder
+WWW=		https://github.com/flacon/alacenc
 
 LICENSE=	MIT
 

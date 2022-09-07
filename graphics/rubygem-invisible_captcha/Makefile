@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Unobtrusive CAPTCHA for ruby
+WWW=		https://github.com/markets/invisible_captcha
 
 LICENSE=	MIT
 

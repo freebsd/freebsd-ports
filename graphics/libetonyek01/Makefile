@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library to interpret and import Apple Keynote presentations
+WWW=		https://wiki.documentfoundation.org/DLP/Libraries/libetonyek
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

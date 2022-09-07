@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Not so simple IMAP client library
+WWW=		https://metacpan.org/release/Net-IMAP-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

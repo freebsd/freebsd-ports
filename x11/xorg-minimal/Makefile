@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-minimal
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org minimal distribution metaport
+WWW=		https://www.x.org/
 
 USES=		metaport
 .include <bsd.port.options.mk>

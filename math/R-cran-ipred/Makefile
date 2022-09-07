@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Improved Predictors
+WWW=		https://cran.r-project.org/web/packages/ipred/
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	mail@KhaledEmara.dev
 COMMENT=	Read-only FUSE server implementing XFS
+WWW=		https://github.com/KhaledEmaraDev/xfuse
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

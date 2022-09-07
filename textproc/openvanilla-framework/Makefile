@@ -6,6 +6,7 @@ DISTNAME=	openvanilla-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development header files for OpenVanilla
+WWW=		https://openvanilla.org/
 
 NO_BUILD=	yes
 

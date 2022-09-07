@@ -10,6 +10,7 @@ DIST_SUBDIR=	elixir/${PORTVERSION}
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional, meta-programming aware language built on top of Erlang VM
+WWW=		https://elixir-lang.org/
 
 LICENSE=	APACHE20
 
@@ -39,7 +40,6 @@ ERLANG_VER=	24
 
 post-extract:
 	@${FIND} ${WRKDIR}/doc -name .build -delete
-
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

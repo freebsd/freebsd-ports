@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Assembly By Short Sequences: parallel, paired-end sequence assembler
+WWW=		https://www.bcgsc.ca/resources/software/abyss
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

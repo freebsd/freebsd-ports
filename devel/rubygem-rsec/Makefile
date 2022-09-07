@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	fw@moov.de
 COMMENT=	Easy and extreme fast dynamic PEG parser combinator
+WWW=		https://github.com/luikore/rsec/
 
 LICENSE=	RUBY
 

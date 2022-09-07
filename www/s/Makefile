@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web search in a terminal
+WWW=		https://github.com/zquestz/s
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

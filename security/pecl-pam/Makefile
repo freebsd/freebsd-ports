@@ -4,6 +4,7 @@ CATEGORIES=	security pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PECL classes for PAM integration
+WWW=		https://pecl.php.net/package/PAM
 
 LICENSE=	PHP202
 

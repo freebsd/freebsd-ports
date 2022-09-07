@@ -6,6 +6,7 @@ DISTNAME=	devscripts_${PORTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Check for the presence of bashisms
+WWW=		https://packages.qa.debian.org/d/devscripts.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

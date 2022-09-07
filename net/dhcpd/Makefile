@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	OpenBSD dhcp daemon
+WWW=		https://github.com/koue/dhcpd
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Small Go server for inserting notifications into MQTT
+WWW=		https://github.com/jpmens/hared-hare
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

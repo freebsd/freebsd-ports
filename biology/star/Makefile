@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	rna-
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Spliced Transcripts Alignment to a Reference
+WWW=		https://github.com/alexdobin/STAR
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/STAR-${DISTVERSION}/LICENSE

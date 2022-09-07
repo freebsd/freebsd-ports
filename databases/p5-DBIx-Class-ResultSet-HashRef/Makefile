@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Adds syntactic sugar to skip the fancy objects
+WWW=		https://metacpan.org/release/DBIx-Class-ResultSet-HashRef
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBIx-Class>=0.04001:databases/p5-DBIx-Class

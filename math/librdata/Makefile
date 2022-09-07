@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read and write R data frames from C
+WWW=		https://github.com/WizardMac/librdata
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

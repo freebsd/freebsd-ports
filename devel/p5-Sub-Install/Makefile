@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Install subroutines into packages easily
+WWW=		https://metacpan.org/release/Sub-Install
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

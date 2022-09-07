@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build browsable HTML documentation for your app
+WWW=		https://metacpan.org/release/Pod-Site
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

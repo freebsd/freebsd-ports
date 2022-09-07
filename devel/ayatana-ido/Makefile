@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Ayatana Indicator Display Objects
+WWW=		https://github.com/AyatanaIndicators/ayatana-ido
 
 LICENSE=	LGPL3
 

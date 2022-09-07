@@ -6,6 +6,7 @@ CATEGORIES=	comms java
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Library for working with serial ports from Java
+WWW=		https://github.com/scream3r/java-simple-serial-connector
 
 LICENSE=	LGPL3
 

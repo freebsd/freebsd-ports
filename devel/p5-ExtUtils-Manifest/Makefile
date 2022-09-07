@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Utilities to write and check a MANIFEST file
+WWW=		https://metacpan.org/release/ExtUtils-Manifest
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

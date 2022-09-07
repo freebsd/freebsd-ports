@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	vapoursynth-
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	L-SMASH source plugin for VapourSynth
+WWW=		https://github.com/VFR-maniac/L-SMASH-Works/tree/master/VapourSynth
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

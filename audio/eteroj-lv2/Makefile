@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OSC injection/ejection from/to UDP/TCP/Serial for LV2
+WWW=		https://open-music-kontrollers.ch/lv2/eteroj/
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries and tools to manage and access persistent memory devices
+WWW=		https://pmem.io
 
 # PMDK code is BSD3CLAUSE, jemalloc is BSD2CLAUSE,
 # Valgrind headers are BSD4CLAUSE.

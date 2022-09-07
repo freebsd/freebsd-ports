@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-codec/Dirac-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Open source video codec from the BBC
+WWW=		http://dirac.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix shebangfix

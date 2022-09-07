@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SQLite database GUI manager
+WWW=		https://sqlitestudio.pl/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE

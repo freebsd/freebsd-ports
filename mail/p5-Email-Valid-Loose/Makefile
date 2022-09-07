@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Variation of Email::Valid which allows dot before at mark
+WWW=		https://metacpan.org/release/Email-Valid-Loose
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Email-Valid>=0:mail/p5-Email-Valid

@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clock using flying balls to display the time
+WWW=		https://bernd-paysan.de/
 
 LICENSE=	GPLv2
 

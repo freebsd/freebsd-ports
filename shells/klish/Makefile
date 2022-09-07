@@ -5,6 +5,7 @@ MASTER_SITES=	http://libcode.org/attachments/download/70/
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Kommand Line Interface Shell
+WWW=		http://libcode.org/projects/klish/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE

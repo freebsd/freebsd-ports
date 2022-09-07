@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Generic storages for Django
+WWW=		https://github.com/jschneier/django-storages
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	I2P bindings for Twisted
+WWW=		https://github.com/str4d/txi2p
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

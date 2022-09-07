@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby libraries for Aspect programming
+WWW=		http://aspectr.rubyforge.org/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

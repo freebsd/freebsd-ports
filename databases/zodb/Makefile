@@ -7,6 +7,7 @@ DISTNAME=	ZODB-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python object-oriented database
+WWW=		https://github.com/zopefoundation/zodb
 
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME:S/_//:S/2//}-${PORTVERSION}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Intrusion detection and prevention engine
+WWW=		https://www.modsecurity.org/
 
 LICENSE=	APACHE20
 

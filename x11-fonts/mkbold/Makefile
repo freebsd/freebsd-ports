@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	Perl script to make BDF font bold
+WWW=		http://hp.vector.co.jp/authors/VA013391/tools/ #mkbold
 
 CONFLICTS=	mkbold-mkitalic
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/linuxwacom/${PORTNAME}/releases/download/${PORT
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Adds tablet support to libinput
+WWW=		https://github.com/linuxwacom/libwacom/wiki
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

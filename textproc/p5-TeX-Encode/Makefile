@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Encode/decode Perl utf-8 strings into TeX
+WWW=		https://metacpan.org/release/TeX-Encode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

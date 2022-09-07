@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_demo_source_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Single player 2D role-playing game
+WWW=		http://allacrost.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

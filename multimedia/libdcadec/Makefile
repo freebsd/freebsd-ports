@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	DTS Coherent Acoustics decoder with support for HD extensions
+WWW=		https://github.com/foo86/dcadec
 
 LICENSE=	LGPL21
 

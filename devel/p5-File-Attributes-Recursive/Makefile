@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Inherit file attributes from parent directories
+WWW=		https://metacpan.org/release/File-Attributes-Recursive
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Directory-Scratch>=0:devel/p5-Directory-Scratch \

@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Enhanced port of Genesis Plus
+WWW=		https://github.com/libretro/Genesis-Plus-GX
 
 # Commercial users must seek permission from copyright holders.
 LICENSE=	GPGX

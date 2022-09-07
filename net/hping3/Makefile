@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.hping.org/ \
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Network auditing tool
+WWW=		http://www.hping.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

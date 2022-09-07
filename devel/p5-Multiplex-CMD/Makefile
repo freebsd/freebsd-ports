@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rdna@rdna.ru
 COMMENT=	Perl5 module which provides Multiplexed Fork Client
+WWW=		https://metacpan.org/release/KAN/Multiplex-CMD-v0.03
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

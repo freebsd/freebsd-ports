@@ -5,6 +5,7 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache 2.4 fast-cgi module
+WWW=		https://github.com/FastCGI-Archives/mod_fastcgi
 
 USES=		apache:2.4+
 

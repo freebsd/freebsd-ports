@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Library for reading GTFS-based transit data in Python
+WWW=		https://pypi.org/project/gtfslib/
 
 LICENSE=	GPLv3+
 

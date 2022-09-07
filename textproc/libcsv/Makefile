@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Small, simple and fast CSV library
+WWW=		https://sourceforge.net/projects/libcsv/
 
 LICENSE=	LGPL21
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Manipulate / fetch info from MP3 audio files
+WWW=		https://metacpan.org/release/MP3-Info
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to draw pictures on your root window
+WWW=		https://github.com/jd/telak
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in Germany
+WWW=		https://pear.php.net/package/Date_Holidays_Germany
 
 LICENSE=	PHP301
 

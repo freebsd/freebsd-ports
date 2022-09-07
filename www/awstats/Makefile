@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
 
 MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
+WWW=		https://www.awstats.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.TXT

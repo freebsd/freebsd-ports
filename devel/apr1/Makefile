@@ -8,6 +8,7 @@ DISTFILES=	apr-${APR_VERSION}.tar.gz \
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache Portability Library
+WWW=		https://apr.apache.org/
 
 LICENSE=	APACHE20
 

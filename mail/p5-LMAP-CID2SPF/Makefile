@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Module to convert between Microsoft's Caller-ID and SPF		#'
+WWW=		http://www.baschny.de/spf/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	postgresql-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Function-based sharding for PostgreSQL
+WWW=		https://plproxy.github.io/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GUI tool for designing and analysing discrete time filters
+WWW=		https://github.com/chipmuenk/pyFDA
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

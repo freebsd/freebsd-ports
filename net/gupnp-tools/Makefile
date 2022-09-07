@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of utilities and demos to work with UPnP
+WWW=		https://gitlab.gnome.org/GNOME/gupnp-tools
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

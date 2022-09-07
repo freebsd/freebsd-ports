@@ -6,6 +6,7 @@ CATEGORIES=	graphics devel multimedia
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Vector based 2D animation package
+WWW=		https://www.synfig.org/
 
 LICENSE=	GPLv2+
 

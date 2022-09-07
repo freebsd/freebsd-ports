@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME graphical directory tree analyzer
+WWW=		https://wiki.gnome.org/Apps/Baobab
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

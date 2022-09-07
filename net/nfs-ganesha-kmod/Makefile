@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	freebsd@gandi.net
 COMMENT=	Modules to implement required syscalls for userspace fileservers
+WWW=		https://github.com/gandi/nfs-ganesha-kmod
 
 LICENSE=	BSD3CLAUSE
 

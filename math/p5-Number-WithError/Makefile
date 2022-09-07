@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Numbers with error propagation and scientific rounding
+WWW=		https://metacpan.org/release/Number-WithError
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

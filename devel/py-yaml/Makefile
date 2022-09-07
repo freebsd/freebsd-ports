@@ -7,6 +7,7 @@ DISTNAME=	PyYAML-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python YAML parser
+WWW=		https://pyyaml.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

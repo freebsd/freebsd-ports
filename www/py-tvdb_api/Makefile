@@ -10,6 +10,7 @@ PATCHFILES+=	f8db8e91377b30a6da078a43467ebf2f3b38227e.patch:-p1
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	API interface to TheTVDB.com
+WWW=		https://pypi.org/project/tvdb_api/
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE

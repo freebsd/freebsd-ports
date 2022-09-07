@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-libs
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Simple NUMA policy support (CentOS ${LINUX_DIST_VER})
+WWW=		https://github.com/numactl/numactl
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

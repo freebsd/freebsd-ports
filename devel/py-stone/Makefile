@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interface description language (IDL) for APIs
+WWW=		https://github.com/dropbox/stone
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

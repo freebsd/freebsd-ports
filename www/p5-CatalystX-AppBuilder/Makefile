@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	danny@dannywarren.com
 COMMENT=	Programatically build your Catalyst app
+WWW=		https://metacpan.org/release/CatalystX-AppBuilder
 
 LICENSE=	ART10
 

@@ -8,6 +8,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}.html
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tutorial on the Sather programming language
+WWW=		https://www.gnu.org/software/sather/
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

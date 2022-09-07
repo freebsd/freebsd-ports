@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Carp::Always, but with color
+WWW=		https://metacpan.org/release/Carp-Always-Color
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	GH
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Android debugging tools
+WWW=		https://github.com/neelchauhan/freebsd-android-tools
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

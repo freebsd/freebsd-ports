@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-qt6
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Qt6-based multimedia player
+WWW=		https://qmmp.ylsoftware.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

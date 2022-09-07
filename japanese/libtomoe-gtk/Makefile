@@ -7,6 +7,7 @@ DISTNAME=	tomoe-gtk-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	TOMOE GTK+ library
+WWW=		http://tomoe.sourceforge.jp/
 
 LIB_DEPENDS=	libtomoe.so:japanese/tomoe
 

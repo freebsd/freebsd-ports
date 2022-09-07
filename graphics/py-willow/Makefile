@@ -8,6 +8,7 @@ DISTNAME=	Willow-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper that combines multiple Python image libraries into one API
+WWW=		https://github.com/wagtail/Willow
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

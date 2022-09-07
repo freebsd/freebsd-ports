@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Polyfill package for Flake8 plugins
+WWW=		https://pypi.org/project/flake8-polyfill/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

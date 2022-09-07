@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Atari ST/STE/TT/Falcon emulator
+WWW=		https://github.com/libretro/hatari
 
 LICENSE=	GPLv2
 

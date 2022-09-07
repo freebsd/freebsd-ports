@@ -6,6 +6,7 @@ MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Render an SVG image to a PDF file (using cairo)
+WWW=		https://cairographics.org
 
 LIB_DEPENDS=	libsvg-cairo.so:graphics/libsvg-cairo
 

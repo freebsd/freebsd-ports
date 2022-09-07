@@ -7,6 +7,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Time tracker
+WWW=		https://github.com/KDAB/Charm
 
 # The top-level license file is GPLv2, but all the sources say
 # (at your option) GPLv2+ .

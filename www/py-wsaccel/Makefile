@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	WebSocket Accelerator for ws4py and AutobahnPython
+WWW=		https://github.com/methane/wsaccel
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

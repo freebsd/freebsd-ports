@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl bindings for Yet Another JSON Library
+WWW=		https://github.com/flightaware/yajl-tcl
 
 LICENSE=	BSD3CLAUSE
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple website based Newsletter interface
+WWW=		https://metacpan.org/release/KALELE/Newsletter-0.033
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

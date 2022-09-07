@@ -5,6 +5,7 @@ MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/ts/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Serial task spooler
+WWW=		https://vicerveza.homeunix.net/~viric/soft/ts/
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mypy stubs for gRPC
+WWW=		https://github.com/shabbyrobe/grpc-stubs
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Python TFTP library
+WWW=		https://github.com/msoulier/tftpy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Perl module with object interface to AF_INET6 domain sockets
+WWW=		https://metacpan.org/release/IO-Socket-INET6
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

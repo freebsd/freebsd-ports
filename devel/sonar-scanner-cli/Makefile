@@ -6,6 +6,7 @@ MASTER_SITES=	https://binaries.sonarsource.com/Distribution/${PORTNAME}/
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Scanner component of SonarQube
+WWW=		https://www.sonarqube.org/
 
 LICENSE=	LGPL3
 

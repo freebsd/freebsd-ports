@@ -5,6 +5,7 @@ PORTREVISION=	2
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Slick-looking LightDM greeter
+WWW=		https://github.com/linuxmint/slick-greeter
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

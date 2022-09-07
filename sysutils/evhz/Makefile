@@ -5,6 +5,7 @@ MASTER_SITES=	https://git.sr.ht/~iank/${PORTNAME}/archive/${SR_HT_COMMIT}${EXTRA
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Tool for measuring evdev event rate (mouse polling rate)
+WWW=		https://git.sr.ht/~iank/evhz
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

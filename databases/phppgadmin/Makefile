@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Based Postgres Administration
+WWW=		http://phppgadmin.sourceforge.net/
 
 LICENSE=	GPLv2
 

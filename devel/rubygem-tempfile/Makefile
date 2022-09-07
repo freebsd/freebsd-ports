@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility class for managing temporary files
+WWW=		https://github.com/ruby/tempfile
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

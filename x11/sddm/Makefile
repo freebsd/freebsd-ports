@@ -9,6 +9,7 @@ PATCHFILES=	e93bf95c54ad8c2a1604f8d7be05339164b19308.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QML based login manager
+WWW=		https://github.com/sddm/sddm
 
 # The source code is GPLv2+, but the provided themes are:
 #  - CC-BY 3.0 (default greeter theme, maldives)

@@ -8,6 +8,7 @@ DISTNAME=	Alef
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free multi-lingual font designed for screens
+WWW=		http://alef.hagilda.com/
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKDIR}/OFL-license.txt

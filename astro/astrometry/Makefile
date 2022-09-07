@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}.net-${PORTVERSION}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Astronomic calibration service
+WWW=		https://astrometry.net/
 
 LICENSE=	GPLv3+
 

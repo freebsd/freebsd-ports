@@ -9,6 +9,7 @@ PATCHFILES+=	5e9854f13448.patch:-p1 # https://github.com/stillson/pycapsicum2/pu
 
 MAINTAINER=	stillson@gmail.com
 COMMENT=	Python interface to capsicum security
+WWW=		https://github.com/stillson/pycapsicum2
 
 LICENSE=	BSD3CLAUSE
 

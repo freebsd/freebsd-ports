@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Perl interface to the F5 iControl API
+WWW=		https://metacpan.org/release/BigIP-iControl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

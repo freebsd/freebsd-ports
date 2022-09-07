@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	XMPP client with OTR support
+WWW=		https://github.com/agl/xmpp-client
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

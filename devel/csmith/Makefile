@@ -5,6 +5,7 @@ MASTER_SITES=	http://embed.cs.utah.edu/csmith/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates random C programs that conform to the C99 standard
+WWW=		https://embed.cs.utah.edu/csmith/
 
 LICENSE=	BSD2CLAUSE
 

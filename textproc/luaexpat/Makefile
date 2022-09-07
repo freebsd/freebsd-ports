@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SAX XML parser based on the Expat library
+WWW=		https://lunarmodules.github.io/luaexpat/
 
 LICENSE=	MIT
 

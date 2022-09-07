@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Identify where print output comes from
+WWW=		https://metacpan.org/release/Devel-Ditto
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run

@@ -7,6 +7,7 @@ PATCHFILES=	44d5238ab4f05ed4064736ffd2f2b63438d3f64c.patch:-p1 # fix build on i3
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Reflection tools based on clang
+WWW=		https://github.com/TRIQS/cpp2py
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

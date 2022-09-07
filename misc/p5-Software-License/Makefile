@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Packages that provide templated software licenses
+WWW=		https://metacpan.org/release/Software-License
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

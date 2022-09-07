@@ -6,6 +6,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR object-oriented interface to a database table
+WWW=		https://pear.php.net/package/DB_Table
 
 LICENSE=	BSD2CLAUSE
 

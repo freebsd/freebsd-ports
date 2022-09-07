@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for the 'fog' gem to support Amazon Web Services
+WWW=		https://github.com/fog/fog-aws
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

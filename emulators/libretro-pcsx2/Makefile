@@ -5,6 +5,7 @@ CATEGORIES=	emulators games
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Standalone port of pcsx2 to libretro
+WWW=		https://github.com/libretro/pcsx2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPLv3

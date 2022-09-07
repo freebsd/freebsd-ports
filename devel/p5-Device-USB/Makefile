@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	josh.carroll@gmail.com
 COMMENT=	Perl wrapper for libusb
+WWW=		https://metacpan.org/release/Device-USB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

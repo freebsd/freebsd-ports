@@ -7,6 +7,7 @@ DISTNAME=	XLMMacroDeobfuscator-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XLM Emulation engine designed to analyze and deobfuscate malicious XLM macros
+WWW=		https://github.com/DissectMalware/XLMMacroDeobfuscator
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

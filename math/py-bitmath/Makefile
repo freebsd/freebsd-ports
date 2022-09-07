@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Represent and manipulate file sizes with different prefix notations
+WWW=		https://github.com/tbielawa/bitmath
 
 LICENSE=	MIT
 

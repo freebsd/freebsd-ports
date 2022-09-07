@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get public suffix of domain name via Mozilla Public Suffix List
+WWW=		https://metacpan.org/release/Mozilla-PublicSuffix
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

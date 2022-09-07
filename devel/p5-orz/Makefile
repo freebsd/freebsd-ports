@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Method of annotation as /* */ in perl
+WWW=		https://metacpan.org/release/orz
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Module-Compile>=0.21:devel/p5-Module-Compile

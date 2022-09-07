@@ -9,6 +9,7 @@ PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
 COMMENT?=	PostgreSQL is the most advanced open-source database available anywhere
+WWW=		https://www.postgresql.org/
 
 LICENSE=	PostgreSQL
 

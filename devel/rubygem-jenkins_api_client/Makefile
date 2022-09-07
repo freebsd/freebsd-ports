@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Jenkins JSON API Client
+WWW=		https://github.com/arangamani/jenkins_api_client
 
 LICENSE=	MIT
 

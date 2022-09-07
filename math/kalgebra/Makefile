@@ -4,6 +4,7 @@ CATEGORIES=	math education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE graph calculator
+WWW=		https://www.kde.org/applications/education/kalgebra
 
 LIB_DEPENDS=	libAnalitza.so:math/analitza
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \

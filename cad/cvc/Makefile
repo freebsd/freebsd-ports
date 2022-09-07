@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Circuit Validity Checker
+WWW=		https://github.com/d-m-bailey/cvc
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

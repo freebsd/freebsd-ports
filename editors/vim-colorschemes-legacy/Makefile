@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	Legacy colorschemes for Vim
+WWW=		https://github.com/vim/colorschemes
 
 LICENSE=	VIM
 LICENSE_NAME=	VIM License

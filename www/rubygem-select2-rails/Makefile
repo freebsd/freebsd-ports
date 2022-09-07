@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implement select2 jQuery library into Rails
+WWW=		https://github.com/argerim/select2-rails
 
 LICENSE=	MIT
 

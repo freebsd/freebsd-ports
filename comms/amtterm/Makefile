@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.kraxel.org/releases/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Serial-over-lan client for Intel AMT
+WWW=		https://www.kraxel.org/blog/linux/amtterm/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

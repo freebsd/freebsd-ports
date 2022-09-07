@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	nbari@tequila.io
 COMMENT=	Encrypt/decrypt using ssh keys
+WWW=		https://ssh-vault.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

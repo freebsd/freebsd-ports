@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test file attributes
+WWW=		https://metacpan.org/release/Test-File
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

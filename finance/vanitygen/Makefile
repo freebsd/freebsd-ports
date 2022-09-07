@@ -5,6 +5,7 @@ CATEGORIES=	finance
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone vanity address generator for bitcoin
+WWW=		https://github.com/samr7/vanitygen
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

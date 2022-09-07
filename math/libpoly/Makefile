@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for manipulating polynomials
+WWW=		https://github.com/SRI-CSL/libpoly
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE

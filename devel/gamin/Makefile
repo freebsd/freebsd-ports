@@ -6,6 +6,7 @@ MASTER_SITES=	http://people.gnome.org/~veillard/gamin/sources/
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	File and directory monitoring system
+WWW=		http://people.gnome.org/~veillard/gamin/index.html
 
 USES+=		gettext gnome libtool pathfix pkgconfig
 USE_GNOME?=	glib20

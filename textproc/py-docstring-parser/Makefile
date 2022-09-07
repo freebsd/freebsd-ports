@@ -7,6 +7,7 @@ DISTNAME=	docstring_parser-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Parse Python docstrings in ReST, Google and Numpydoc format
+WWW=		https://github.com/rr-/docstring_parser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

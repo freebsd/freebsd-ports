@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Single binary builder for Python projects
+WWW=		https://gitlab.com/saltstack/pop/tiamat
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

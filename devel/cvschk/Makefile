@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Quick offline checker for CVS modifications
+WWW=		http://web.archive.org/web/20121006163548/http://cvs.sslug.dk/cvs2html/
 
 LICENSE=	GPLv1
 

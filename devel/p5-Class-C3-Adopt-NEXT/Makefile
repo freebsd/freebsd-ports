@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make NEXT suck less
+WWW=		https://metacpan.org/release/Class-C3-Adopt-NEXT
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

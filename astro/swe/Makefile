@@ -6,6 +6,7 @@ CATEGORIES=	astro devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High Precision Ephemeris Developed By Astrodienst
+WWW=		https://www.astro.com/swisseph/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/agpl-3.0.txt

@@ -8,6 +8,7 @@ DIST_SUBDIR=	TeX
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree (source)
+WWW=		https://tug.org/texlive/
 
 USES=		cpe perl5 python:build tar:xz
 CPE_VENDOR=	tug

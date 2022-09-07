@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Read, modify, and write DICOM files with Python code
+WWW=		https://github.com/pydicom/pydicom
 
 LICENSE=	MIT
 

@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Self-hosted software to read RSS/Atom/JSON feeds
+WWW=		https://miniflux.app/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

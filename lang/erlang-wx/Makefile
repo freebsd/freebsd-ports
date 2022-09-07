@@ -9,6 +9,7 @@ DIST_SUBDIR=	erlang
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang bindings for wxWindows
+WWW=		https://www.erlang.org/
 
 LICENSE=	APACHE20
 

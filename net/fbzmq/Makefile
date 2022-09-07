@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for writing services in C++ while leveraging libzmq
+WWW=		https://github.com/facebook/fbzmq
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

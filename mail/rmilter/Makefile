@@ -4,6 +4,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Milter that performs rspamd, clamav, and other checks
+WWW=		https://github.com/vstakhov/rmilter
 
 LICENSE=	BSD2CLAUSE
 

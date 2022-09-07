@@ -4,6 +4,7 @@ CATEGORIES=	net wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland Native VNC Client
+WWW=		https://github.com/any1/wlvncc
 
 LICENSE=	GPLv2+ ISCL
 LICENSE_COMB=	multi

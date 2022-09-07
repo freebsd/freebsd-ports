@@ -7,6 +7,7 @@ DISTNAME=	App-Netdisco-${PORTVERSION}
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Network discovery/management tool with web console
+WWW=		http://netdisco.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

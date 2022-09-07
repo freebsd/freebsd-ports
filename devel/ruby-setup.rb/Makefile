@@ -9,6 +9,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Common installer script for ruby packages
+WWW=		http://www.loveruby.net/en/setup.html
 
 USE_RUBY=	yes
 

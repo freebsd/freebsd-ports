@@ -5,6 +5,7 @@ MASTER_SITES=	SF/unikey/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vietnamese input method for X
+WWW=		http://www.unikey.org/linux.php
 
 USES=		compiler tar:bzip2 xorg
 USE_XORG=	x11

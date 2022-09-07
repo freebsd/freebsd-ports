@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	CLI client for vimgolf.com
+WWW=		https://github.com/igrigorik/vimgolf
 
 LICENSE=	MIT
 

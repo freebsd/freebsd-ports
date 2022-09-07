@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON::XS compatible pure-Perl module
+WWW=		https://metacpan.org/release/JSON-PP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

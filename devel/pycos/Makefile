@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Concurrent, Asynchronous, Distributed, Communicating Tasks with Python
+WWW=		https://pycos.sourceforge.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

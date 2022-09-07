@@ -5,6 +5,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Cross-desktop libraries and common resources
+WWW=		https://github.com/linuxmint/xapp
 
 LICENSE=	LGPL3
 LICENSE_FILE?=	${WRKSRC}/COPYING.LESSER

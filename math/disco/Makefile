@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Discrete Conic Optimization Solver
+WWW=		https://github.com/coin-or/DisCO
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

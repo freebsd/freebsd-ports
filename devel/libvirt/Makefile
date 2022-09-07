@@ -6,6 +6,7 @@ MASTER_SITES=	http://libvirt.org/sources/ \
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
+WWW=		https://libvirt.org/
 
 LICENSE=	LGPL3
 

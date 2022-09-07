@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of the NULL encryption algorithm
+WWW=		https://metacpan.org/release/Crypt-NULL
 
 USES=		perl5
 USE_PERL5=	configure

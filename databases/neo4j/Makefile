@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-community-${DISTVERSION}-unix
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	High performance graph store and database
+WWW=		https://neo4j.com
 
 LICENSE=	GPLv3
 

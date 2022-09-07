@@ -6,6 +6,7 @@ MASTER_SITES=	SF/joe-editor/JOE%20sources/joe-${PORTVERSION}
 
 MAINTAINER=	juergen.gotteswinter@googlemail.com
 COMMENT=	Joe's Own Editor
+WWW=		https://sourceforge.net/projects/joe-editor/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

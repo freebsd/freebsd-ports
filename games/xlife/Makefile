@@ -5,6 +5,7 @@ MASTER_SITES=	http://litwr2.atspace.eu/xlife/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	John Horton Conway's Game of Life
+WWW=		http://litwr2.atspace.eu/xlife.php
 
 LICENSE=	MIT GPLv2
 LICENSE_COMB=	multi

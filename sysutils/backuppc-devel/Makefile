@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Multi-platform backup to disk-based storage
+WWW=		https://backuppc.github.io/backuppc/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

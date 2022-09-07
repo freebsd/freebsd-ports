@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ARP scanning and fingerprinting tool
+WWW=		https://github.com/royhills/arp-scan
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

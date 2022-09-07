@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Allow unsafe handling of signals in selected blocks
+WWW=		https://metacpan.org/release/Perl-Unsafe-Signals
 
 USES=		perl5
 USE_PERL5=	configure

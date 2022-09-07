@@ -4,6 +4,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Generic RF data receiver and decoder for ISM band devices
+WWW=		https://github.com/merbanan/rtl_433
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

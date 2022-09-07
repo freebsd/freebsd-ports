@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Standard Lua Libraries
+WWW=		https://github.com/lua-stdlib/lua-stdlib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

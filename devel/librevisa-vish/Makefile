@@ -7,6 +7,7 @@ DISTNAME=	vish-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source VISA shell for interfacing test and measurement equipment
+WWW=		http://www.librevisa.org/
 
 LIB_DEPENDS=	libvisa.so:devel/librevisa
 

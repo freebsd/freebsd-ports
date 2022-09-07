@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/liblnk/releases/download/${PORTVERSION}/
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the Windows shortcut file (LNK) format
+WWW=		https://github.com/libyal/liblnk
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

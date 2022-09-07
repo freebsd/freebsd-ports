@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Fast Cross-Validation via Sequential Testing
+WWW=		https://cran.r-project.org/web/packages/CVST/
 
 LICENSE=	GPLv2+
 

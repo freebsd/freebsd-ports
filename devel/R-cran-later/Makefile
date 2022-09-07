@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Utilities for Delaying Function Execution
+WWW=		https://cran.r-project.org/web/packages/later/
 
 LICENSE=	MIT
 

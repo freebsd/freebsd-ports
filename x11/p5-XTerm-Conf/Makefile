@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	slaven@rezic.de
 COMMENT=	Perl module that changes configuration of a running xterm
+WWW=		https://metacpan.org/release/XTerm-Conf
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

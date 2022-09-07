@@ -5,6 +5,7 @@ MASTER_SITES=	SF/lgames/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Destroy as many targets as possible
+WWW=		http://lgames.sourceforge.net/index.php?project=Barrage
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

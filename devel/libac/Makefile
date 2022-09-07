@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ implementation of the Aho-Corasick (AC) string matching algorithm
+WWW=		https://github.com/cloudflare/lua-aho-corasick
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

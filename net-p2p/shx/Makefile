@@ -9,6 +9,7 @@ PATCHFILES=	${DISTNAME}.diff.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text based Hotline Communications client for Unix
+WWW=		http://synhxd.sourceforge.net/
 
 LICENSE=	GPLv1
 

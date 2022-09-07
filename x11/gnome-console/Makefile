@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Minimal terminal for GNOME
+WWW=		https://gitlab.gnome.org/GNOME/console
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	PAM module for two-step authentication from Google
+WWW=		https://github.com/google/google-authenticator-libpam
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

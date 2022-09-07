@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base class to add xpath matching to object trees
+WWW=		https://metacpan.org/release/Class-XPath
 
 USES=		perl5
 USE_PERL5=	configure

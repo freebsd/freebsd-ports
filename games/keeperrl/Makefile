@@ -8,6 +8,7 @@ PATCHFILES=	c0fc69cbee72.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ambitious dungeon builder with roguelike elements
+WWW=		https://keeperrl.com/
 
 LICENSE=	GPLv2 OFL11
 LICENSE_COMB=	multi

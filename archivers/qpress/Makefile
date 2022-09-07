@@ -6,6 +6,7 @@ DISTNAME=	qpress-11-source
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Portable file archiver using QuickLZ
+WWW=		http://www.quicklz.com/
 
 LICENSE=	GPLv2
 

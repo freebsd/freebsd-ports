@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	05
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Resolve abstract dependencies into concrete ones
+WWW=		https://github.com/sarugaku/resolvelib
 
 LICENSE=	ISCL
 

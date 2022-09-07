@@ -7,6 +7,7 @@ DISTNAME=	cvstrac-${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT?=	Web-Based Bug And Patch-Set Tracking System For CVS
+WWW=		http://www.cvstrac.org/
 
 LICENSE=	GPLv2
 

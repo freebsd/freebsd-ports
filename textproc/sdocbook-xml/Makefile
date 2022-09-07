@@ -8,6 +8,7 @@ DISTNAME=	docbook-simple-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	"Simplified" DocBook XML DTD
+WWW=		https://www.oasis-open.org/docbook/xml/simple/
 
 LICENSE=	OASIS
 LICENSE_NAME=	OASIS License

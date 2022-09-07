@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of ProSystem to the libretro API
+WWW=		https://github.com/libretro/prosystem-libretro
 
 LICENSE=	GPLv2
 

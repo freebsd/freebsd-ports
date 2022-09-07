@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Popular secure and convenient password manager
+WWW=		https://pwsafe.org
 
 LICENSE=	ART20
 

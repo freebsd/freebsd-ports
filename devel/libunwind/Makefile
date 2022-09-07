@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-1.6.2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic stack unwinding library
+WWW=		https://www.nongnu.org/libunwind/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

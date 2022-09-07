@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Loader for readline
+WWW=		https://github.com/ruby/readline
 
 LICENSE=	RUBY
 LICENSE_FILE=	${WRKSRC}/COPYING

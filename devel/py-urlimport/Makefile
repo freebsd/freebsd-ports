@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.py
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python script for importing modules/packages over the net
+WWW=		https://urlimport.codeshift.net/
 
 NO_WRKSUBDIR=	yes
 

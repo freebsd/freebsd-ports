@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Adapter for Gollum to use Rugged (libgit2) at the backend
+WWW=		https://gitlab.com/gitlab-org/gitlab-gollum-rugged_adapter
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

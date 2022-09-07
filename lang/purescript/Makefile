@@ -4,6 +4,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Functional language that compiles to JavaScript
+WWW=		https://www.purescript.org/
 
 LICENSE=	BSD3CLAUSE
 

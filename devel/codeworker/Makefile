@@ -6,6 +6,7 @@ DISTNAME=	CodeWorker_SRC${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Versatile parsing tool and source code generator
+WWW=		http://codeworker.free.fr/
 
 LICENSE=	LGPL21
 

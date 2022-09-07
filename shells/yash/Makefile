@@ -5,6 +5,7 @@ MASTER_SITES=	OSDN/yash
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	POSIX-compliant command line shell
+WWW=		https://yash.osdn.jp/index.html.en
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

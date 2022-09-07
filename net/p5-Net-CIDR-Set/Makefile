@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	Manipulate sets of IP addresses
+WWW=		https://metacpan.org/release/Net-CIDR-Set
 
 LICENSE=	GPLv2 ART20
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Java Development Kit 6
+WWW=		https://openjdk.java.net/
 
 LICENSE=	GPLv2
 

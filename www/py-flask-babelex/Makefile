@@ -7,6 +7,7 @@ DISTNAME=	Flask-BabelEx-${DISTVERSION}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Support i18n/l10n in Flask applications
+WWW=		https://github.com/mrjoes/flask-babelex
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

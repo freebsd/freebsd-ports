@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Caching front-end based on the Dogpile lock
+WWW=		https://github.com/sqlalchemy/dogpile.cache
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Fast ISO8601 date time parser for Python written in C
+WWW=		https://github.com/closeio/ciso8601
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

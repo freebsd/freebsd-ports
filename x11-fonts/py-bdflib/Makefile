@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Library for working with BDF font files
+WWW=		https://gitlab.com/Screwtapello/bdflib
 
 LICENSE=	GPLv3
 

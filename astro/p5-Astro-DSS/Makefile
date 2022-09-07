@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OO interface to the 1st and 2nd Digital Sky Surveys
+WWW=		http://www.estar.org.uk/
 
 LICENSE=	GPLv2+
 

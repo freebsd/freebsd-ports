@@ -4,6 +4,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	FFmpeg-based source library and VapourSynth plugin
+WWW=		https://github.com/FFMS/ffms2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

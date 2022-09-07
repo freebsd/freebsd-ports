@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Gtk3 markdown editor
+WWW=		https://fabiocolacio.github.io/Marker/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

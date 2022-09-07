@@ -6,6 +6,7 @@ MASTER_SITES=	http://releases.0x539.de/net6/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network access framework for IPv4/IPv6
+WWW=		http://gobby.0x539.de
 
 LICENSE=	LGPL20+ # though COPYING is LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

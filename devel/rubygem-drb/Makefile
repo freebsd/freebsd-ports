@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Distributed object system for Ruby
+WWW=		https://github.com/ruby/drb
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

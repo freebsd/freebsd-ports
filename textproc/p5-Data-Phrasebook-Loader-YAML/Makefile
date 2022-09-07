@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Loader class for phrasebook implementations using YAML
+WWW=		https://metacpan.org/release/Data-Phrasebook-Loader-YAML
 
 LICENSE=	ART20
 

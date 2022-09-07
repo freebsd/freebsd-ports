@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
 
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Console WWW client (browser) with multi-byte encoding support
+WWW=		https://lynx.invisible-island.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

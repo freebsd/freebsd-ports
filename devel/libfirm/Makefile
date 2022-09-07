@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph-based SSA intermediate representation library for compilers
+WWW=		https://sourceforge.net/projects/libfirm/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

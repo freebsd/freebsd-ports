@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.joedog.org/siege/ \
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	HTTP regression testing and benchmarking utility
+WWW=		https://www.joedog.org/JoeDog/Siege
 
 LICENSE=	GPLv2
 

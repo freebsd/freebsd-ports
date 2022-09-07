@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Implementation for Unixish, a data transformation framework
+WWW=		https://metacpan.org/release/Data-Unixish
 
 BUILD_DEPENDS=	p5-Exporter>=5.57:devel/p5-Exporter \
 		p5-File-Which>0:sysutils/p5-File-Which \

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parser for Test::Base format
+WWW=		https://metacpan.org/release/Text-TestBase
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

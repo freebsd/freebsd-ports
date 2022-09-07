@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Debian repository management tool
+WWW=		https://www.aptly.info/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

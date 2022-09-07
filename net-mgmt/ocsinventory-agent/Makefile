@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-agent
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Keep track of the computers configuration and software
+WWW=		https://www.ocsinventory-ng.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

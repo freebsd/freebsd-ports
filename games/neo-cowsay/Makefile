@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Neo Cowsay written in Go
+WWW=		https://github.com/Code-Hex/Neo-cowsay
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

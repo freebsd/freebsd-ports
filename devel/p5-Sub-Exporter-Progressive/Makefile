@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Only use Sub::Exporter if you need it
+WWW=		https://metacpan.org/release/Sub-Exporter-Progressive
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

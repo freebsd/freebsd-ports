@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	32
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Gem containing EmojiOne unicode/image assets
+WWW=		https://github.com/jonathanwiesel/gemojione
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Export any utilities and create your own utility module
+WWW=		https://github.com/ktat/Util-Any
 
 LICENSE=	ART10
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OO wrapper to gpc library (translated to XS)
+WWW=		https://metacpan.org/release/Math-Geometry-Planar-GPC-PolygonXS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

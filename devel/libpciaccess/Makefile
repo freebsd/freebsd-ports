@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Generic PCI access library
+WWW=		https://www.freedesktop.org/wiki/Software/xlibs/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

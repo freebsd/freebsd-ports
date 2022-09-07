@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplex multiple PostgreSQL databases to one relay
+WWW=		https://www.mavetju.org/unix/general.php
 
 LICENSE=	BSD2CLAUSE # from website
 

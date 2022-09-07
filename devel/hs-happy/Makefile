@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Parser generator for Haskell
+WWW=		https://www.haskell.org/happy/
 
 LICENSE=	BSD3CLAUSE
 

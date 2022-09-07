@@ -8,6 +8,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	GNOME shell like dashboard for the Xfce desktop
+WWW=		https://docs.xfce.org/apps/xfdashboard/start
 
 LICENSE=	GPLv2
 

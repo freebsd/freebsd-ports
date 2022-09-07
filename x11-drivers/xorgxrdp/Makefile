@@ -10,6 +10,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	X.Org driver enabling use through an RDP session with xrdp
+WWW=		http://www.xrdp.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

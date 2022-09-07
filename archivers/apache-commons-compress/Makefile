@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Classes for working with various archivers
+WWW=		https://commons.apache.org/proper/commons-compress/
 
 LICENSE=	APACHE20
 

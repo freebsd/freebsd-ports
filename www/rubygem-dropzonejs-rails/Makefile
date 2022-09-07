@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	JS File upload by Matias Meno
+WWW=		https://github.com/ncuesta/dropzonejs-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

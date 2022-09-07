@@ -6,6 +6,7 @@ MASTER_SITES=	https://s3.amazonaws.com/json-c_releases/releases/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON (JavaScript Object Notation) implementation in C
+WWW=		https://github.com/json-c/json-c/wiki
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

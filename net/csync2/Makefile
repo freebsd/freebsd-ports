@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Cluster synchronization tool
+WWW=		https://github.com/LINBIT/csync2/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

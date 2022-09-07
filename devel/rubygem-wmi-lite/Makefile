@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Lightweight utility over win32ole for accessing basic WMI
+WWW=		https://github.com/opscode/wmi-lite
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	arcade@b1t.name
 COMMENT=	Prometheus exporter for redis stats
+WWW=		https://github.com/oliver006/redis_exporter
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

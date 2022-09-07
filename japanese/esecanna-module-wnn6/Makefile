@@ -9,6 +9,7 @@ DIST_SUBDIR=	esecanna
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Esecanna module for Wnn6
+WWW=		http://esecanna.netfort.gr.jp/
 
 LIB_DEPENDS=	libwnn6.so:japanese/Wnn6-lib
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:japanese/esecanna

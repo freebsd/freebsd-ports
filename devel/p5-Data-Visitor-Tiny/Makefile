@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Recursively walk data structures
+WWW=		https://metacpan.org/release/Data-Visitor-Tiny
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

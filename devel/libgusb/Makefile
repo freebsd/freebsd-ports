@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GUsb is a GObject wrapper for libusb1
+WWW=		https://github.com/hughsie/libgusb
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Display a progress indicator on a terminal
+WWW=		https://metacpan.org/module/Term::Sk
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

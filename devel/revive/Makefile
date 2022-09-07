@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Extensible static code analysis framework for Go
+WWW=		https://revive.run
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

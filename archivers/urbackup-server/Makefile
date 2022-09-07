@@ -5,6 +5,7 @@ MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Server component of the UrBackup backup system
+WWW=		https://www.urbackup.org
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/server-license.txt

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Support multimethods and function overloading in Perl
+WWW=		https://metacpan.org/release/Class-Multimethods
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

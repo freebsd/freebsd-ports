@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Flexible engine for running FCGI-based applications
+WWW=		https://metacpan.org/release/FCGI-Engine
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

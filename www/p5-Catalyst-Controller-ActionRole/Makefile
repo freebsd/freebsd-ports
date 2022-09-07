@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mons@cpan.org
 COMMENT=	Apply roles to action instances
+WWW=		https://metacpan.org/release/Catalyst-Controller-ActionRole
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Advanced wget GUI
+WWW=		https://github.com/Nenirey/AWGG
 
 DEPRECATED=	Depends on expired ftp/axel
 EXPIRATION_DATE=2022-09-30

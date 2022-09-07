@@ -6,6 +6,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	CLI for the Registration Data Access Protocol, RDAP
+WWW=		https://www.openrdap.org/
 
 LICENSE=	MIT
 

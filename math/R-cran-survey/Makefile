@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Analysis of complex survey samples
+WWW=		https://r-survey.r-forge.r-project.org/survey/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

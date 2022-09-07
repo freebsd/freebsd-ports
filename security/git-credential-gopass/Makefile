@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Manage git credentials using gopass
+WWW=		https://github.com/gopasspw/git-credential-gopass
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

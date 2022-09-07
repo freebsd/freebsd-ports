@@ -5,6 +5,7 @@ CATEGORIES=	sysutils archivers
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Another Calendar-based Tarsnap Script
+WWW=		https://github.com/alexjurkiewicz/acts
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Dump data from the tcp_log device
+WWW=		https://github.com/Netflix/tcplog_dumper
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

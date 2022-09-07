@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	terry-freebsd@glaver.org
 COMMENT=	Utility to both test and create .sfv, .csv, and md5sum files
+WWW=		https://github.com/cfv-project/cfv
 
 LICENSE=	GPLv2+
 

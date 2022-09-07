@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate mypy stub files from protobuf specs
+WWW=		https://github.com/nipunn1313/mypy-protobuf
 
 LICENSE=	APACHE20
 

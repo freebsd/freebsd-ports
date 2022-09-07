@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Version 2 of this library intended to aid working with deprecated code
+WWW=		https://github.com/erikh/deprecated
 
 LICENSE=	MIT
 

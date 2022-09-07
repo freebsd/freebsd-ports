@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Gems for fluent plugin of alternative implementation of out_file
+WWW=		https://rubygems.org/gems/fluent-plugin-file-alternative
 
 RUN_DEPENDS=	\
 	rubygem-fluentd>0:sysutils/rubygem-fluentd \

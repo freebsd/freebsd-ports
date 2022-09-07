@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails5
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Deliver Rails ActiveSupport::Notifications to a Statsd backend
+WWW=		https://github.com/localshred/nsa
 
 RUN_DEPENDS=	rubygem-activesupport5>=4.2<7:devel/rubygem-activesupport5 \
 		rubygem-concurrent-ruby>=1.0.2<2:devel/rubygem-concurrent-ruby \

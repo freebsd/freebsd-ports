@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for handling money and different currencies
+WWW=		https://rubymoney.github.io/money/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

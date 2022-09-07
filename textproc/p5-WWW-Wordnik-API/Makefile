@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Wordnik API implementation
+WWW=		https://metacpan.org/release/WWW-Wordnik-API
 
 LICENSE=	GPLv3
 

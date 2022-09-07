@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cython interface for the interior point optimizer IPOPT
+WWW=		https://github.com/matthias-k/cyipopt
 
 LICENSE=	EPL
 

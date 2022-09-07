@@ -6,6 +6,7 @@ MASTER_SITES=	http://monkey.org/~jose/software/libdistance/
 
 MAINTAINER=	jonathan@FreeBSD.org
 COMMENT=	Compute the distance between two pieces of data
+WWW=		https://monkey.org/~jose/software/libdistance
 
 LICENSE=	BSD3CLAUSE
 

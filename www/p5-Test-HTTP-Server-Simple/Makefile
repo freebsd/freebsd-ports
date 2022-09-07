@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test::More functions for HTTP::Server::Simple
+WWW=		https://metacpan.org/release/Test-HTTP-Server-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

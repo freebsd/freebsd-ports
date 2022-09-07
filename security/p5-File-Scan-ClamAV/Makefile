@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the clamav virus scanner
+WWW=		https://metacpan.org/release/File-Scan-ClamAV
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

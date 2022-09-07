@@ -4,6 +4,7 @@ CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 wallpapers
+WWW=		https://www.kde.org/plasma-desktop
 
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	multi

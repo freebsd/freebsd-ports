@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Object-oriented pure Python B-Spline and NURBS library
+WWW=		https://onurraufbingol.com/NURBS-Python/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

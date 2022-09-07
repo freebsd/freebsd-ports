@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Pytest plugin with mechanisms for caching across test runs
+WWW=		https://bitbucket.org/hpk42/pytest-cache/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

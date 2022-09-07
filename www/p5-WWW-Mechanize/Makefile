@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Handy web browsing in a Perl object
+WWW=		https://metacpan.org/release/WWW-Mechanize
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Helps for locating free GIDs
+WWW=		https://metacpan.org/release/Sys-Group-GIDhelper
 
 USES=		perl5
 USE_PERL5=	configure

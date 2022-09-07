@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for fast, compact, powerful binary (de-)serialization
+WWW=		https://metacpan.org/pod/Sereal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

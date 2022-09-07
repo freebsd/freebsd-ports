@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} jq-1.2.1-tests${EXTRACT_SUF
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	jq.py: a lightweight and flexible JSON processor
+WWW=		https://github.com/mwilliamson/jq.py
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

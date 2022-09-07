@@ -7,6 +7,7 @@ DISTNAME=	udt.sdk.${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	C++ library containing the UDT API implementation
+WWW=		http://udt.sourceforge.net/
 
 PATCH_WRKSRC=	${WRKDIR}/udt${PORTVERSION:R}
 WRKSRC=		${PATCH_WRKSRC}/src

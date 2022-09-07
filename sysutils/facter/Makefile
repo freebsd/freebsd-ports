@@ -6,6 +6,7 @@ MASTER_SITES=	https://downloads.puppetlabs.com/facter/
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Cross-platform library for retrieving facts from OS
+WWW=		https://puppetlabs.com/facter
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Helper functions to maintain LaTeX distribution
+WWW=		https://cran.r-project.org/web/packages/tinytex/
 
 LICENSE=	MIT
 

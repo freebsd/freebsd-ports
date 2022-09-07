@@ -4,6 +4,7 @@ CATEGORIES=	databases devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Illumos name-value pair library
+WWW=		http://illumos.org/man/3lib/libnvpair
 
 LICENSE=	CDDL
 

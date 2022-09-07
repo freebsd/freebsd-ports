@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Nested params (ala Ruby on Rails or PHP-style param arrays)
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Params-Nested
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

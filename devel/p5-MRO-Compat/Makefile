@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Add mro::* interface compatibility for Perls < 5.9.5
+WWW=		https://metacpan.org/release/MRO-Compat
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

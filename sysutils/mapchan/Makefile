@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Transform the input and output of a terminal (SCO Unix alike)
+WWW=		https://mapchan.sourceforge.io/
 
 LICENSE=	GPLv2
 

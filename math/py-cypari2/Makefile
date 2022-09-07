@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Python interface to the number theory library PARI/GP
+WWW=		https://github.com/sagemath/cypari2
 
 LICENSE=	GPLv2
 

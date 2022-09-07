@@ -5,6 +5,7 @@ CATEGORIES=	textproc devel
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Library & tools for converting wbxml<->xml
+WWW=		http://libwbxml.opensync.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

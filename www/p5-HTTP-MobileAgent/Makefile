@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTTP mobile user agent string parser for Perl
+WWW=		https://metacpan.org/release/HTTP-MobileAgent
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

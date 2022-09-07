@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Rsync client
+WWW=		https://metacpan.org/release/CBARRATT/File-RsyncP-0.76
 
 LICENSE=	GPLv2+
 

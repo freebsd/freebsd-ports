@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.lemke-it.com/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Relational and transactional database system
+WWW=		https://www.lemke-it.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

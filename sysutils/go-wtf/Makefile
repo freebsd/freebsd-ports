@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	go-
 
 MAINTAINER=	hsw@bitmark.com
 COMMENT=	Personal information dashboard for your terminal
+WWW=		https://wtfutil.com
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

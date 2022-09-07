@@ -5,6 +5,7 @@ MASTER_SITES=	http://heim.ifi.uio.no/kjetilho/hacks/
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Command-line alternative to Mailman Web interface
+WWW=		http://heim.ifi.uio.no/kjetilho/hacks/ #listadmin
 
 RUN_DEPENDS=	p5-Text-Reform>=0:textproc/p5-Text-Reform \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \

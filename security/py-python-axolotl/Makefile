@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Python port of libaxolotl-android
+WWW=		https://github.com/tgalal/python-axolotl
 
 LICENSE=	GPLv3
 

@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Qt-based chip mask layout viewing and editing tool
+WWW=		http://www.klayout.de/index.html
 
 LICENSE=	GPLv2
 

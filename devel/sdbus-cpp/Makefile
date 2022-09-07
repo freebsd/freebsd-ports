@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	High-level C++ D-Bus library
+WWW=		https://github.com/Kistler-Group/sdbus-cpp
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

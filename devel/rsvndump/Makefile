@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remote Subversion repository dumpfile generator
+WWW=		http://rsvndump.sourceforge.net/
 
 LICENSE=	GPLv2
 

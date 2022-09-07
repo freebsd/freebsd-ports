@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Perl wrapper around the OpenLDAP's LMDB
+WWW=		https://metacpan.org/release/LMDB_File
 
 LICENSE=	ART20
 

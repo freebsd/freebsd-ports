@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sets removes body for HTTP response if it is not required
+WWW=		https://metacpan.org/release/Plack-Middleware-RemoveRedundantBody
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

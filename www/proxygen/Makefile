@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of C++ HTTP libraries including easy way to use HTTP server
+WWW=		https://github.com/facebook/proxygen
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

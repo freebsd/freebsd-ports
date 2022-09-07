@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Invoke package init methods at compile time
+WWW=		https://metacpan.org/release/self-init
 
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
 		p5-ex-lib>=0:devel/p5-ex-lib

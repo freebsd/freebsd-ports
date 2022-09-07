@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make sure only one invocation of a script is active at a time
+WWW=		https://metacpan.org/release/Sys-RunAlone
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generates pod documentation by analysing perl modules
+WWW=		https://metacpan.org/release/Pod-Autopod
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

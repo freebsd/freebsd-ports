@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	3DO core for libretro
+WWW=		https://github.com/libretro/opera-libretro
 
 LICENSE=	GPLv2
 

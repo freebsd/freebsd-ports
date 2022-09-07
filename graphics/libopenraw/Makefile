@@ -7,6 +7,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for camera RAW files decoding
+WWW=		https://libopenraw.freedesktop.org/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

@@ -5,6 +5,7 @@ MASTER_SITES=	https://developers.yubico.com/yubico-c-client/Releases/
 
 MAINTAINER=	matt@mjslabs.com
 COMMENT=	Yubico C client library
+WWW=		https://developers.yubico.com/yubico-c-client/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

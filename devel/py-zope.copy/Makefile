@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Pluggable object copying mechanism
+WWW=		https://pypi.org/project/zope.copy/
 
 LICENSE=	ZPL21
 

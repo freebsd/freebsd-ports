@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Configure SCT ERC for hard disks on system startup
+WWW=		https://github.com/AMDmi3/scterc-rc.d
 
 RUN_DEPENDS=	smartctl:sysutils/smartmontools
 

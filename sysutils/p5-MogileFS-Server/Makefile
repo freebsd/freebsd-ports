@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	MogileFS (distributed filesystem) server
+WWW=		https://metacpan.org/release/MogileFS-Server
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Danga-Socket>=1.56:devel/p5-Danga-Socket \

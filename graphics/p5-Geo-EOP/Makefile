@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Module to Process Earth Observation Products Meta-data
+WWW=		https://metacpan.org/release/MARKOV/Geo-EOP-0.50
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

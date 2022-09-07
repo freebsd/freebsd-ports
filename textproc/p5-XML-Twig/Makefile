@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Process huge XML documents by chunks via a tree interface
+WWW=		https://metacpan.org/release/XML-Twig
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

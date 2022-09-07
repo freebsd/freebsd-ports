@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dominique.goncalves@gmail.com
 COMMENT=	Manipulate / fetch info from Ogg-Vorbis audio files
+WWW=		https://metacpan.org/release/Ogg-Vorbis-Header-PurePerl
 
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis

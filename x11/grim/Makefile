@@ -9,6 +9,7 @@ PATCHFILES+=	89e02e663fab.patch:-p1 # https://github.com/emersion/grim/pull/121
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Grab images from a Wayland compositor
+WWW=		https://sr.ht/~emersion/grim/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

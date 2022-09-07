@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Simple powerful testing with Python (legacy version 4)
+WWW=		https://docs.pytest.org/en/latest/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

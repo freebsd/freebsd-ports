@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple implementation of the ISO 8601 standard
+WWW=		https://github.com/arnau/ISO8601
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

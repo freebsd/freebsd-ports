@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tie-able array that allows only unique values
+WWW=		https://metacpan.org/release/Array-Unique
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

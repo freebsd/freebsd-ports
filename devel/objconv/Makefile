@@ -7,6 +7,7 @@ MASTER_SITES=	http://fuz.su/pub/objconv/ \
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Agner Fog's object file converter
+WWW=		https://www.agner.org/optimize
 
 LICENSE=	GPLv1
 

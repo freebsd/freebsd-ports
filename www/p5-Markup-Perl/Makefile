@@ -9,6 +9,7 @@ DISTNAME=	Markup-Perl-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Support perl code inside CGI scripts using simple tags
+WWW=		https://metacpan.org/release/Markup-Perl
 
 USES=		perl5
 USE_PERL5=	configure

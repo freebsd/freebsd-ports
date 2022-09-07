@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl modules for parsing FreeBSD's Ports INDEX file
+WWW=		https://people.freebsd.org/~tom/portpm/
 
 LICENSE=	BSD2CLAUSE
 

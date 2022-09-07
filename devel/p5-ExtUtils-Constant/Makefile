@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate XS code to import C header constants
+WWW=		https://metacpan.org/release/ExtUtils-Constant
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

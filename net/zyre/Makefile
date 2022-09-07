@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for proximity-based peer-to-peer applications
+WWW=		https://github.com/zeromq/zyre
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

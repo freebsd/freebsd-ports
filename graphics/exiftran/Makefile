@@ -6,6 +6,7 @@ DISTNAME=	fbida-${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Command line utility to transform jpeg files
+WWW=		https://www.kraxel.org/blog/linux/fbida/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

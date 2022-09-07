@@ -8,6 +8,7 @@ DIST_SUBDIR=	jiri
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Tool for multi-repo development
+WWW=		https://fuchsia.googlesource.com/jiri
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

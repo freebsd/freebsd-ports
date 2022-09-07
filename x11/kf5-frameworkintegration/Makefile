@@ -4,6 +4,7 @@ CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 workspace and cross-framework integration plugins
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/frameworkintegration/html/index.html
 
 USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig \
 		qt:5 tar:xz xorg

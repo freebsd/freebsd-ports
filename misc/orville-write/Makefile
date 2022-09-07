@@ -6,6 +6,7 @@ MASTER_SITES=	http://unixpapa.com/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced replacement for write/mesg
+WWW=		https://unixpapa.com/write.html
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-return-type

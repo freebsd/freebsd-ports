@@ -4,6 +4,7 @@ CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde library for reading/writing Kolab data formats
+WWW=		https://pear.horde.org
 
 USES=		horde php cpe
 USE_PHP=	dom

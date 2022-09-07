@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully-configurable hex grid generator
+WWW=		https://www.nomic.net/~uckelman/mkhexgrid/
 
 LICENSE=	GPLv2
 

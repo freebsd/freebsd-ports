@@ -5,6 +5,7 @@ MASTER_SITES=	https://phintsan.kapsi.fi/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple ABX tester to compare audio files with GUI
+WWW=		https://phintsan.kapsi.fi/abx.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

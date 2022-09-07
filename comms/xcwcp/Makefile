@@ -2,6 +2,7 @@ PORTNAME=	xcwcp
 PORTREVISION=	2
 
 COMMENT=	X11 CW Tutor using unixcw
+WWW=		https://www.ibiblio.org/pub/linux/apps/ham/morse/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

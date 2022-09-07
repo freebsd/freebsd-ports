@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	System for writing extensible parsers for OCaml
+WWW=		https://github.com/ocaml/camlp4
 
 LICENSE=	LGPL20
 

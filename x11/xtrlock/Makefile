@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	X Transparent Lock
+WWW=		https://salsa.debian.org/debian/xtrlock
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL-3.txt

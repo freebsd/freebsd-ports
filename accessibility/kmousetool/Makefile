@@ -4,6 +4,7 @@ CATEGORIES=	accessibility kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Automatic mouse click tool for KDE
+WWW=		https://www.kde.org/applications/utilities/kmousetool/
 
 LICENSE=	GPLv2
 

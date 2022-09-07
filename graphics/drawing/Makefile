@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Drawing application for the GNOME desktop
+WWW=		https://maoschanz.github.io/drawing/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

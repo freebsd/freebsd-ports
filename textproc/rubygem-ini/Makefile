@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby INI File Parser and Writer
+WWW=		https://rubygems.org/gems/ini
 
 LICENSE=	MIT
 

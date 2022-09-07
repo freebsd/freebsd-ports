@@ -7,6 +7,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CLI based audio visualizer
+WWW=		https://github.com/dpayne/cli-visualizer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

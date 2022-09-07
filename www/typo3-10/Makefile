@@ -7,6 +7,7 @@ DISTNAME=	${TYPO3SRC}
 
 MAINTAINER=	freebsd-ports@charlieroot.de
 COMMENT=	Typo3 content management system
+WWW=		https://typo3.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

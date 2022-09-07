@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data
+WWW=		https://www.gnu.org/software/pspp/pspp.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

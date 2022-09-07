@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Kill unicorn workers by memory and request counts
+WWW=		https://github.com/kzk/unicorn-worker-killer
 
 LICENSE=	GPLv2+ RUBY
 LICENSE_COMB=	dual

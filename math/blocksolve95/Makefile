@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for the efficient solution of large, sparse linear systems
+WWW=		https://ftp.mcs.anl.gov/pub/BlockSolve95/
 
 LICENSE=	AS-IS
 LICENSE_NAME=	AS-IS

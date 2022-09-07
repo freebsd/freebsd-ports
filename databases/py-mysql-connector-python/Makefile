@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	MySQL driver written in Python
+WWW=		https://dev.mysql.com/doc/connector-python/en
 
 LICENSE=	GPLv2
 

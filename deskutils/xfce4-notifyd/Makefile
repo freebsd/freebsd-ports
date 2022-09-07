@@ -11,6 +11,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Visually-appealing notification daemon for Xfce
+WWW=		https://gitlab.xfce.org/apps/xfce4-notifyd
 
 LICENSE=	GPLv3
 

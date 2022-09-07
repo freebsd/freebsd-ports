@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	QuakeC compiler, for building custom games of Quake
+WWW=		http://ftp.iinet.net.au/pub/idstuff/source/
 
 LICENSE=	GPLv2
 

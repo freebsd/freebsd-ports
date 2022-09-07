@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Markup as Perl
+WWW=		https://metacpan.org/release/Markapl
 
 LICENSE=	MIT
 

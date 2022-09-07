@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	URI datatype for PostgreSQL
+WWW=		https://github.com/petere/pguri
 
 BUILD_DEPENDS=	uriparser>=0.8.0:net/uriparser
 RUN_DEPENDS=	uriparser>=0.8.0:net/uriparser

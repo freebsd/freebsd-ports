@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easily create Google DataTable objects for the Google Visulization API
+WWW=		https://metacpan.org/release/Data-Google-Visualization-DataTable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

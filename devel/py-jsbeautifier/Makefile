@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	JavaScript unobfuscator and beautifier
+WWW=		https://jsbeautifier.org/
 
 LICENSE=	MIT
 

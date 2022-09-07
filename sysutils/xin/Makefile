@@ -6,6 +6,7 @@ MASTER_SITES=	SUNSITE/utils/file
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splits standard input and pipes into a command
+WWW=		https://www.kyne.com.au/~mark/software/xin.php
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

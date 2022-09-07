@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio SSTV/FAX reception program for unix
+WWW=		http://users.telenet.be/on4qz/
 
 LICENSE=	GPLv3
 

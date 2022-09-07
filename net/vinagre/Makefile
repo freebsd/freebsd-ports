@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
+WWW=		https://www.gnome.org/projects/vinagre/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

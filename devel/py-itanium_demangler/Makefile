@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Pure Python parser for mangled itanium symbols
+WWW=		https://github.com/whitequark/python-itanium_demangler
 
 LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/README.md

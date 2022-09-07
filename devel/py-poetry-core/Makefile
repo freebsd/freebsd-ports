@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Poetry PEP 517 Build Backend
+WWW=		https://github.com/python-poetry/poetry-core
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

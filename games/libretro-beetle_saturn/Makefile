@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen Saturn to libretro
+WWW=		https://github.com/libretro/beetle-saturn-libretro
 
 LICENSE=	GPLv2
 

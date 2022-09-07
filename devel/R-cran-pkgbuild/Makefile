@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Find Tools Needed to Build R Packages
+WWW=		https://github.com/r-lib/pkgbuild
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

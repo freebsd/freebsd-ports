@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	BitField in Django
+WWW=		https://github.com/disqus/django-bitfield
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

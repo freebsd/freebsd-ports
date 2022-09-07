@@ -6,6 +6,7 @@ MASTER_SITES=	https://aubio.org/pub/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Library for audio labelling
+WWW=		https://aubio.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

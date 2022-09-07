@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Unihan Data Base 5.1.0
+WWW=		https://metacpan.org/release/Unicode-Unihan
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

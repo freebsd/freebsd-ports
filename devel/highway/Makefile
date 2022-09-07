@@ -7,6 +7,7 @@ PATCHFILES+=	6a822e2a9ae3.patch:-p1 # https://github.com/google/highway/issues/9
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Performance-portable, length-agnostic SIMD with runtime dispatch
+WWW=		https://github.com/google/highway
 
 LICENSE=	APACHE20
 

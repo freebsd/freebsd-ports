@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automatically generate a sitemap.xml for Jekyll sites
+WWW=		https://github.com/jekyll/jekyll-sitemap
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

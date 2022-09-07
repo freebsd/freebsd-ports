@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GUI tool to split WAV and MP3 files
+WWW=		https://github.com/thp/wavbreaker
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

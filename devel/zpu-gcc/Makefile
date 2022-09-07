@@ -7,6 +7,7 @@ DISTNAME=	zpu-toolchain-${PORTVERSION}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	ZPU gcc compiler
+WWW=		https://opensource.zylin.com/zpu.htm
 
 LICENSE=	GPLv2
 

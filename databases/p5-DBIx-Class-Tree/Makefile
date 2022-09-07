@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to manipulate and analyze tree structured data
+WWW=		https://metacpan.org/release/DBIx-Class-Tree
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

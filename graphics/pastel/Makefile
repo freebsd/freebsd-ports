@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Command-line tool to generate, analyze, convert and manipulate colors
+WWW=		https://github.com/sharkdp/pastel
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

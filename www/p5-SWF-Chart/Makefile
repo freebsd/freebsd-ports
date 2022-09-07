@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the SWF Chart generation tool
+WWW=		https://metacpan.org/release/SWF-Chart
 
 USES=		perl5
 USE_PERL5=	configure

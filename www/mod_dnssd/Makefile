@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Apache module that provides DNS-SD capabilities
+WWW=		https://0pointer.de/lennart/projects/mod_dnssd/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

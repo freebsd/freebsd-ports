@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Friendlier flags for B
+WWW=		https://metacpan.org/release/B-Flags
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

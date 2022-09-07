@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Bugzilla XMLRPC access module
+WWW=		https://github.com/python-bugzilla/python-bugzilla
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

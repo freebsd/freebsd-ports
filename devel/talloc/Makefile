@@ -6,6 +6,7 @@ MASTER_SITES=			SAMBA
 
 MAINTAINER=			timur@FreeBSD.org
 COMMENT=			Hierarchical pool based memory allocator
+WWW=		https://talloc.samba.org/
 
 LICENSE=			LGPL3
 

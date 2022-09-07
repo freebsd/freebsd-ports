@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Advanced manipulation of IMAP services w/ referral support
+WWW=		https://metacpan.org/release/IMAP-Client
 
 RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 		p5-URI>=0:net/p5-URI \

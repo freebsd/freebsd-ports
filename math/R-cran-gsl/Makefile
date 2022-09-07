@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Wrapper for the Gnu Scientific Library
+WWW=		https://github.com/RobinHankin/gsl
 
 LICENSE=	GPLv3
 

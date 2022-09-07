@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dictionary/spellchecking framework
+WWW=		https://www.abisource.com/projects/enchant/
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

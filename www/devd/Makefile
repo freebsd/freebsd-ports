@@ -6,6 +6,7 @@ CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Local webserver for developers
+WWW=		https://github.com/cortesi/devd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

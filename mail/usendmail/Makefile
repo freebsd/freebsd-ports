@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.ohse.de/uwe/usendmail/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for qmail's sendmail drop-in
+WWW=		https://www.ohse.de/uwe/usendmail.html
 
 USES=		qmail
 

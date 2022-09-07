@@ -5,6 +5,7 @@ MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
+WWW=		https://gnutls.org/
 
 LICENSE=	GPLv3 LGPL21
 LICENSE_COMB=	multi

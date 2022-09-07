@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Self-hosted Git server for the command line
+WWW=		https://github.com/charmbracelet/soft-serve
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

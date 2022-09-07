@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mirror remote subversion repository to local
+WWW=		https://metacpan.org/release/SVN-Mirror
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

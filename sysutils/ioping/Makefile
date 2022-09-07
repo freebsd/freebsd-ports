@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple disk I/0 latency measuring tool
+WWW=		https://github.com/koct9i/ioping
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

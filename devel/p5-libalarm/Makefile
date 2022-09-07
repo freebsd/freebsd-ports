@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	delgod@portaone.com
 COMMENT=	Allow multiple, queued alarms
+WWW=		https://metacpan.org/release/libalarm
 
 USES=		perl5
 USE_PERL5=	configure

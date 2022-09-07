@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Yet another HTTP client implementation by NaHi
+WWW=		https://github.com/nahi/httpclient
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

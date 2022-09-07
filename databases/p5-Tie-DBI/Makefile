@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing Tie hash to a DBI handle
+WWW=		https://metacpan.org/release/Tie-DBI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

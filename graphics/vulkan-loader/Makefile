@@ -5,6 +5,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Driver loader for the Vulkan graphics API
+WWW=		https://github.com/KhronosGroup/Vulkan-Loader
 
 LICENSE=	APACHE20
 

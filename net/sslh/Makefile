@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	SSL/SSH multiplexer
+WWW=		https://www.rutschle.net/tech/sslh.shtml
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

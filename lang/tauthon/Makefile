@@ -12,6 +12,7 @@ CATEGORIES=	lang python
 
 MAINTAINER=	olce.freebsd.ports@certner.fr
 COMMENT=	Backwards-compatible fork of CPython 2.7 with Python 3.x features
+WWW=		https://github.com/naftaliharris/tauthon
 
 LICENSE=	PSFL
 

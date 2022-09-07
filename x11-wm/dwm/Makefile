@@ -5,6 +5,7 @@ MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Dynamic, small, fast and simple window manager
+WWW=		https://dwm.suckless.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

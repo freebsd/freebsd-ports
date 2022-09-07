@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	C utility functions for OpenWrt
+WWW=		https://openwrt.org/docs/techref/libubox
 
 LICENSE=	GPLv2
 

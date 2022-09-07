@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Live looping music creation tool
+WWW=		http://openavproductions.com/luppp
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

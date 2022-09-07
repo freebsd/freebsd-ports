@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Read Exif metadata from tiff and jpeg files
+WWW=		https://github.com/ianare/exif-py
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

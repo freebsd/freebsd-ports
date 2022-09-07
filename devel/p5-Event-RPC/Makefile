@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	Event based transparent Client/Server RPC framework
+WWW=		https://metacpan.org/release/Event-RPC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Library providing I/O interface among storage backends
+WWW=		https://github.com/facebookresearch/iopath
 
 LICENSE=	MIT
 

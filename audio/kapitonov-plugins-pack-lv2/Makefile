@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Kapitonov LV2 Plugins Pack (KPP)
+WWW=		https://github.com/olegkapitonov/Kapitonov-Plugins-Pack
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

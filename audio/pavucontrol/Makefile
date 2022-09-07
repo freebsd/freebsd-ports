@@ -6,6 +6,7 @@ MASTER_SITES=	http://freedesktop.org/software/pulseaudio/${PORTNAME}/
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	GTK mixer for PulseAudio
+WWW=		https://freedesktop.org/software/pulseaudio/pavucontrol/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

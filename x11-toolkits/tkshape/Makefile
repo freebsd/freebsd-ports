@@ -8,6 +8,7 @@ DISTNAME=		shape${PORTVERSION:S/.//g}
 
 MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		Tk library to access to X Shaped Window Extension
+WWW=		https://www.cs.man.ac.uk/~fellowsd/tcl/shapeidx.html
 
 USES=			gmake tk xorg
 

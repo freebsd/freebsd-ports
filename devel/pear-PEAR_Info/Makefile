@@ -5,6 +5,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Show Information about your PEAR install and its packages
+WWW=		https://pear.php.net/package/PEAR_Info
 
 LICENSE=	PHP301
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implements a flat filesystem
+WWW=		https://metacpan.org/release/File-Flat
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Copy-Recursive>=0.35:devel/p5-File-Copy-Recursive \

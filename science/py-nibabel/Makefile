@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Read/write some common neuroimaging file formats
+WWW=		https://nipy.org/nibabel/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

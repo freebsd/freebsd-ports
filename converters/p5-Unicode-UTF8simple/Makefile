@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Conversions to/from UTF-8 from/to charactersets
+WWW=		https://metacpan.org/release/Unicode-UTF8simple
 
 USES=		perl5
 USE_PERL5=	configure

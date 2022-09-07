@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Portable implementation of which(1) in Perl
+WWW=		https://metacpan.org/release/File-Which
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

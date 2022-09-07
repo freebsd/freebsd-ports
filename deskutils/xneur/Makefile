@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	mizhka@gmail.com
 COMMENT=	Auto keyboard switcher
+WWW=		https://launchpad.net/xneur
 
 LICENSE=	GPLv2
 

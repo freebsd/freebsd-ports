@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Makes a lexical an alias for another variable
+WWW=		https://metacpan.org/release/Lexical-Alias
 
 USES=		perl5
 USE_PERL5=	configure

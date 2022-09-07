@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.clifford.at/stfl/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Structured Terminal Forms Language/Library
+WWW=		https://www.clifford.at/stfl/
 
 LICENSE=	GPLv3
 

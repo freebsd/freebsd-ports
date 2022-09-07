@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Iterations per second enhancement to Benchmark
+WWW=		https://github.com/evanphx/benchmark-ips
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse a CDDB/freedb data file
+WWW=		https://metacpan.org/release/CDDB-File
 
 USES=		perl5
 USE_PERL5=	configure

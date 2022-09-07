@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Lightweight, easy to use replacement for GNU autotools
+WWW=		https://sourceforge.net/projects/mk-configure/
 
 LICENSE=	BSD2CLAUSE
 

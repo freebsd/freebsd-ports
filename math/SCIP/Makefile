@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solver for mixed integer, mixed integer nonlinear programming
+WWW=		https://www.scipopt.org/
 
 LICENSE=	ZIB
 LICENSE_NAME=	ZIB ACADEMIC LICENSE

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Technical Trading Rules
+WWW=		https://cran.r-project.org/web/packages/TTR/
 
 LICENSE=	GPLv2+
 

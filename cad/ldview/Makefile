@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LDraw model viewer
+WWW=		https://tcobbs.github.io/ldview/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../license.txt

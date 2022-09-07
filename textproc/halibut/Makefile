@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/halibut/halibut-${DIS
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Free document preparation system
+WWW=		https://www.chiark.greenend.org.uk/~sgtatham/halibut/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

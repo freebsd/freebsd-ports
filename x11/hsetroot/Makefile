@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Wallpaper manipulation utility for X11
+WWW=		https://github.com/himdel/hsetroot
 
 LICENSE=	GPLv2
 

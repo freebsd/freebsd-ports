@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Cython wrapper for the C++ translation of Clipper library
+WWW=		https://github.com/greginvm/pyclipper
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

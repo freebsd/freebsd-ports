@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lin-chi@lastamericanempire.com
 COMMENT=	POE Component to server HTTP requests
+WWW=		https://metacpan.org/release/POE-Component-Server-HTTPServer
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-POE>=0:devel/p5-POE \

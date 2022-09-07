@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Authentication from an LDAP Directory for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-Authentication-Store-LDAP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

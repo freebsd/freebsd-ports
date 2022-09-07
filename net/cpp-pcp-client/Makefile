@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Client libraries for the PCP protocol
+WWW=		https://github.com/puppetlabs/cpp-pcp-client
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

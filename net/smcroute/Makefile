@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Static multicast routing tool
+WWW=		https://github.com/troglobit/smcroute/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

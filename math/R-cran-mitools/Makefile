@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Tools for Multiple Imputation of Missing Data
+WWW=		https://cran.r-project.org/package=mitools
 
 LICENSE=	GPLv2
 

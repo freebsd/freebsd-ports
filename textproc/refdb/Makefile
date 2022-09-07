@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bibliographic reference database
+WWW=		http://refdb.sourceforge.net/
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: thecommandlist
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: thecommandlist

@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/oliver
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Modified greylisting for qmail and for any other MDA
+WWW=		http://mij.oltrelinux.com/net/greylite/
 
 LICENSE=	BSD3CLAUSE
 

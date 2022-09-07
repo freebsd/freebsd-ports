@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Override subroutines in a module for unit testing
+WWW=		https://metacpan.org/release/Test-MockModule
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

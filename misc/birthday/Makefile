@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Outputs reminders for upcoming events (e.g. birthdays)
+WWW=		https://sourceforge.net/projects/birthday/
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

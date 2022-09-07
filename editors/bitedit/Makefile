@@ -5,6 +5,7 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple ncurses file editing program
+WWW=		http://ledge.co.za/bitedit/
 
 LICENSE=	GPLv2
 

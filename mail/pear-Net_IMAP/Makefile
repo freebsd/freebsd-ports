@@ -4,6 +4,7 @@ CATEGORIES=	mail net pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class that provides an implementation of the IMAP protocol
+WWW=		https://pear.php.net/package/Net_IMAP
 
 LICENSE=	PHP301
 

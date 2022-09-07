@@ -5,6 +5,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Dark theme for GTK & KDE
+WWW=		https://github.com/dracula/gtk
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

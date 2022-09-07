@@ -4,6 +4,7 @@ CATEGORIES=	databases pear
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	PHP bindings to rrd tool system
+WWW=		https://pecl.php.net/package/rrd
 
 LICENSE=	PHP301
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Simple, fast, and easy to read binary data storage format
+WWW=		https://metacpan.org/release/ZML
 
 BUILD_DEPENDS=	p5-Error-Helper>=0:devel/p5-Error-Helper
 RUN_DEPENDS=	p5-Error-Helper>=0:devel/p5-Error-Helper

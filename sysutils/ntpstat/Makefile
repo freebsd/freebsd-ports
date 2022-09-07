@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Print the ntpd or chronyd synchronisation status
+WWW=		https://github.com/mlichvar/ntpstat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	http://gp2x.org/adtool/
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Active Directory administration tool
+WWW=		https://gp2x.org/adtool/
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes

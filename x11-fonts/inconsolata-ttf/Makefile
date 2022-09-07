@@ -6,6 +6,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Monospaced truetype font
+WWW=		https://fonts.google.com/specimen/Inconsolata
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.txt

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	archdvx@dxsolutions.org
 COMMENT=	Simple IRC client
+WWW=		https://www.dxirc.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

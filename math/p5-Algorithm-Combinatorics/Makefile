@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Efficient generation of combinatorial sequences
+WWW=		https://metacpan.org/release/Algorithm-Combinatorics
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

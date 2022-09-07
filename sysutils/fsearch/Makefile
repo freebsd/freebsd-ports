@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast file search utility for Unix-like systems
+WWW=		https://cboxdoerfer.github.io/fsearch/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License

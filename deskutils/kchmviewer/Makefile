@@ -6,6 +6,7 @@ CATEGORIES=	deskutils kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE viewer for CHM files
+WWW=		https://www.kchmviewer.net/
 
 LIB_DEPENDS=	libchm.so:misc/chmlib \
 		libzip.so:archivers/libzip

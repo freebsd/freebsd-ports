@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generates CPAN like pod pages
+WWW=		https://metacpan.org/release/Pod-ProjectDocs
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Selenium 2.0 bindings for Perl
+WWW=		https://metacpan.org/release/WebDriver-Tiny
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

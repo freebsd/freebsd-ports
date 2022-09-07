@@ -6,6 +6,7 @@ MASTER_SITES=	NETBSD
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Public ELF file access library similar to libelf(3) in Solaris
+WWW=		https://web.archive.org/web/20181111033959/www.mr511.de/software/english.html
 
 LICENSE=	LGPL20
 

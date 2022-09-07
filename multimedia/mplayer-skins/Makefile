@@ -8,6 +8,7 @@ DIST_SUBDIR=	mplayer-skins
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Skins for MPlayer's Graphical User Interface (GUI)
+WWW=		http://www.mplayerhq.hu/
 
 #
 # When adding a new skin, please make sure to add it into the following

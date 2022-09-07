@@ -9,6 +9,7 @@ DISTNAME=	soqt-${PORTVERSION}-src
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Qt5-fork of the SoQt toolkit library for Coin
+WWW=		https://github.com/coin3d/soqt/
 
 LICENSE=	BSD3CLAUSE
 

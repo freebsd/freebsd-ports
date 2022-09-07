@@ -6,6 +6,7 @@ DISTNAME=	9e
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Explode Plan9 archives
+WWW=		http://www.bebik.net/doku.php?id=software:9e
 
 LICENSE=	LPL
 LICENSE_GROUPS=	OSI

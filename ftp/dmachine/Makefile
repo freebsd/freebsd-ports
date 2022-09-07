@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Non interactive, non graphical, batch download manager
+WWW=		http://dmachine.sourceforge.net/
 
 LICENSE=	GPLv2
 

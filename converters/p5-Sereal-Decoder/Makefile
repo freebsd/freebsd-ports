@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for fast, powerful binary deserialization (decoder)
+WWW=		https://metacpan.org/pod/Sereal::Decoder
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

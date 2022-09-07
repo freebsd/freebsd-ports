@@ -7,6 +7,7 @@ DISTNAME=	eyeD3-${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Python module for processing ID3 tags
+WWW=		https://eyed3.nicfit.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

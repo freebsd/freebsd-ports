@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	d8zNeCFG@aon.at
 COMMENT=	Client-side library to implement the iSCSI protocol
+WWW=		https://github.com/sahlberg/libiscsi
 
 LICENSE=		LGPL21+ GPLv2+
 LICENSE_COMB=		multi

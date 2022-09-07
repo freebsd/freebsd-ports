@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Collection of tools and libraries by J. Schilling (metaport)
+WWW=		https://codeberg.org/schilytools/schilytools
 
 RUN_DEPENDS=	schilybase>=2021.05.19:devel/schilybase \
 		schilyutils>=2021.05.19:sysutils/schilyutils \

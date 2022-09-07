@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create runnable Perl files encrypted with OpenSSL libcrypto
+WWW=		https://metacpan.org/release/Filter-Crypto
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

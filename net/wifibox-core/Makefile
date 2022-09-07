@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
 COMMENT=	Wifibox core functionality
+WWW=		https://github.com/pgj/freebsd-wifibox
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

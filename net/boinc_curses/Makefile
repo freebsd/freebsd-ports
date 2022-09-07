@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.oook.cz/bsd/boinc_curses/
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Console, ncurses based monitor and manager for BOINC
+WWW=		http://www.oook.cz/bsd/boinc_curses/
 
 LICENSE=	LGPL21+
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://BSDforge.com/projects/sysutils/upsdaemon/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Simple APC UPS Daemon
+WWW=		https://BSDforge.com/projects/sysutils/upsdaemon/
 
 LICENSE=	BSD2CLAUSE
 

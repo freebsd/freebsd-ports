@@ -7,6 +7,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern command-line DNS client (like dig)
+WWW=		https://github.com/mr-karan/doggo
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

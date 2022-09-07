@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Free software tool for integrating software stacks
+WWW=		https://buildstream.build/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	databases pear
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	PECL classes for MongoDB
+WWW=		https://docs.mongodb.org/ecosystem/drivers/php/
 
 LICENSE=	APACHE20
 

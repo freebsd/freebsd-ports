@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validate combinations of parameters
+WWW=		https://metacpan.org/release/Params-Validate-Dependencies
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

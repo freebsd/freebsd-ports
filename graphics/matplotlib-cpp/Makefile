@@ -4,6 +4,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Header-only C++ plotting library built on the popular matplotlib
+WWW=		https://github.com/lava/matplotlib-cpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

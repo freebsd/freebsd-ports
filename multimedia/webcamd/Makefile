@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Port of Linux USB webcam and DVB drivers into userspace
+WWW=		https://github.com/hselasky/webcamd
 
 LICENSE=	GPLv2
 

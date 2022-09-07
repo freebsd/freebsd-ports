@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.lcdf.org/~eddietwo/xbraitenberg/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Braitenberg vehicle simulator with pseudo-physics
+WWW=		https://www.lcdf.org/~eddietwo/xbraitenberg/
 
 USES=		xorg
 USE_CXXSTD=	c++98

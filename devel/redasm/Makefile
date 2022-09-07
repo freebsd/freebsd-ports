@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Interactive, multiarchitecture disassembler
+WWW=		https://redasm.io/
 
 LICENSE=	GPLv3
 

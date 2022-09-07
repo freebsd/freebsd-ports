@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}-${REALVERSION}-source
 
 MAINTAINER=	shirshegsm@gmail.com
 COMMENT=	Quake III Arena -- first person shooter (native build)
+WWW=		http://www.idsoftware.com/games/quake/quake3-arena/
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: re
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: re

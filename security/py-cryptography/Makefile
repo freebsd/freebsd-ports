@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cryptographic recipes and primitives for Python developers
+WWW=		https://github.com/pyca/cryptography
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

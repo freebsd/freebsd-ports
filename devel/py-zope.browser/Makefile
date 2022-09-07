@@ -7,6 +7,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Shared Zope Toolkit browser components
+WWW=		https://pypi.org/project/zope.browser/
 
 LICENSE=	ZPL21
 

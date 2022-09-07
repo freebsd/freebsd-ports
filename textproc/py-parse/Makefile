@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Opposite of format()
+WWW=		https://github.com/r1chardj0n3s/parse
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

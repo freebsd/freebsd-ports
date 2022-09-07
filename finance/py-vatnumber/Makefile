@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	chian.jin@gmail.com
 COMMENT=	Python module to validate VAT numbers
+WWW=		http://code.google.com/p/vatnumber/
 
 LICENSE=	GPLv3
 

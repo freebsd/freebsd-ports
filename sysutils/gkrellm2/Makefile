@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GTK based system monitor
+WWW=		http://gkrellm.net
 
 LICENSE=	GPLv3
 

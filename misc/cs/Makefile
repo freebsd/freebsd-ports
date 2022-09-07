@@ -6,6 +6,7 @@ MASTER_SITES=	http://njhurst.com/programming/cross-stitch/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross Stitch software
+WWW=		http://njhurst.org/programming/cross-stitch/
 
 LICENSE=	GPLv2+
 

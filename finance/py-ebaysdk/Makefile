@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	eBay API SDK for Python
+WWW=		https://github.com/timotheus/ebaysdk-python
 
 LICENSE=	CDDL
 

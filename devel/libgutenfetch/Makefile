@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	johntabularasa@users.sf.net
 COMMENT=	Library that allows application developers to connect to PG
+WWW=		https://sourceforge.net/projects/libgutenfetch/
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

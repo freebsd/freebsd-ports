@@ -6,6 +6,7 @@ MASTER_SITES=	http://greek0.net/wmbutton/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that displays 9 buttons to run apps of your choice
+WWW=		https://greek0.net/wmbutton.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

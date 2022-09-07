@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/unstable/${PORTNAME}/${DISTVERSION}/src
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Barcode and QR-code scanner
+WWW=		https://invent.kde.org/graphics/kodaskanna
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt

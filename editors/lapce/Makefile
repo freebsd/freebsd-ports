@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Lightning-fast and Powerful Code Editor
+WWW=		https://lapce.dev/
 
 LICENSE=	APACHE20
 

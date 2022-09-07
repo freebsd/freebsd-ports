@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Cisco implementation of H.264 codec
+WWW=		https://www.openh264.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

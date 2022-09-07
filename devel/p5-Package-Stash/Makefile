@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Routines for manipulating stashes
+WWW=		https://metacpan.org/release/Package-Stash
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	mail@dhauck.eu
 COMMENT=	Very simple tool to display some text as large as possible
+WWW=		https://sm.nomeata.de/
 
 LICENSE=	GPLv2+
 

@@ -7,6 +7,7 @@ DISTFILES=	pks-current.tgz
 
 MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	PGP Public Key Server
+WWW=		http://www.mit.edu/people/marc/pks/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

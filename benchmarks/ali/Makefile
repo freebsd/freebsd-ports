@@ -6,6 +6,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Load testing tool aimed to perform real-time analysis
+WWW=		https://github.com/nakabonne/ali
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Arrays of numbers for Python, optimized for small sizes
+WWW=		https://gitlab.kwant-project.org/kwant/tinyarray
 
 LICENSE=	BSD2CLAUSE
 

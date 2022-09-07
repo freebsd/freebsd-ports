@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bundle and process CSS with Tailwind, Bootstrap, PostCSS, Sass in Rails via Node.js
+WWW=		https://github.com/rails/cssbundling-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

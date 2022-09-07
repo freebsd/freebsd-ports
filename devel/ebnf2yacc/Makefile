@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EBNF to YACC
+WWW=		https://sourceforge.net/projects/ebnf2yacc/
 
 GNU_CONFIGURE=	yes
 

@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/libfshfs/releases/download/${PORTVERSION
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the Mac OS Hierarchical File System (HFS)
+WWW=		https://github.com/libyal/libfshfs
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

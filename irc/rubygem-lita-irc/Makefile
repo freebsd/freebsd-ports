@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	IRC adapter for the Lita chat robot
+WWW=		https://github.com/litaio/lita-irc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

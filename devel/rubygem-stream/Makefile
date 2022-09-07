@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Interface for external iterators
+WWW=		https://github.com/monora/stream
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

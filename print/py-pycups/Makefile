@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CUPS bindings for Python
+WWW=		https://github.com/zdohnal/pycups
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

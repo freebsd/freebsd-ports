@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Feed fetching and parsing library
+WWW=		https://github.com/feedjira/feedjira
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

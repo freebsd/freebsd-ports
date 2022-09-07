@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Tool to measure practical TCP throughput between two machines
+WWW=		http://netstrain.sourceforge.net/
 
 PLIST_FILES=	bin/netstrain bin/netstraind
 PORTDOCS=	README

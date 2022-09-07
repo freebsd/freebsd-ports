@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	o.hushchenkov@gmail.com
 COMMENT=	Interactive fuzzy text selector for the terminal
+WWW=		https://github.com/jhawthorn/fzy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

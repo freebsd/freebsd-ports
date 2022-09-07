@@ -4,6 +4,7 @@ CATEGORIES=	devel perl5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
+WWW=		https://lvc.github.io/abi-compliance-checker/
 
 LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Lightweight, broker-less messaging
+WWW=		https://nanomsg.github.io/nng/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -9,6 +9,7 @@ DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Contacts app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/contacts
 
 LICENSE=	AGPLv3
 

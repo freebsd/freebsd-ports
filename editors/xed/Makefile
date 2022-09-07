@@ -5,6 +5,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful text editor for GTK
+WWW=		https://github.com/linuxmint/xed
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	PHP bindings for ZeroMQ
+WWW=		https://pecl.php.net/package/zmq
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Upload files to CPAN and SourceForge
+WWW=		https://metacpan.org/release/Module-Release
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

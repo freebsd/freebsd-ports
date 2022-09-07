@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Terminal multiplexer focused on simplicity, compatibility and stability
+WWW=		https://github.com/deadpixi/mtm
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/README.rst

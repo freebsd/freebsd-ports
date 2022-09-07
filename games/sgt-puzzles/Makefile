@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.${COMMITHASH}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simon Tatham's Portable Puzzle Collection
+WWW=		https://www.chiark.greenend.org.uk/~sgtatham/puzzles/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cross-platform graphical ELF file viewer/editor
+WWW=		https://github.com/horsicq/XELFViewer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

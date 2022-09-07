@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate SQL from Perl data structures
+WWW=		https://metacpan.org/release/SQL-Abstract-Classic
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Python bindings for the Perforce API
+WWW=		https://www.perforce.com/perforce/r14.2/manuals/p4script/python.programming.html
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

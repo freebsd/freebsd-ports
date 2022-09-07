@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/print/font2svg/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	All fonts to svg-font converter
+WWW=		https://BSDforge.com/projects/print/font2svg
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-templates-${DISTVERSION}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Official KiCad project templates
+WWW=		https://gitlab.com/kicad/libraries/kicad-templates
 
 LICENSE=	GPLv2
 

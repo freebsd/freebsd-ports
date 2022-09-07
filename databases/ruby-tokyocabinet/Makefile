@@ -8,6 +8,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	dgerow@afflictions.org
 COMMENT=	Ruby interface to the Tokyo Cabinet DB engine
+WWW=		https://dbmx.net/tokyocabinet/
 
 LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 

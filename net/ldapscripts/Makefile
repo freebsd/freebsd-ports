@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Scripts to manage posix accounts in an OpenLDAP directory
+WWW=		https://contribs.martymac.org
 
 LICENSE=	GPLv2
 

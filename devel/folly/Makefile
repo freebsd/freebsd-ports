@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library developed and used at Facebook
+WWW=		https://github.com/facebook/folly
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

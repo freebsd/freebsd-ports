@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.orig.tar.xz
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Wiki compiler
+WWW=		https://ikiwiki.info/
 
 LICENSE=	GPLv2
 

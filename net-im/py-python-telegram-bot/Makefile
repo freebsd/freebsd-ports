@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Not just a Python wrapper around the Telegram Bot API
+WWW=		https://python-telegram-bot.org/
 
 LICENSE=	LGPL3
 

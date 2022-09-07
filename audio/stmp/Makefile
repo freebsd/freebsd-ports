@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Subsonic terminal music player
+WWW=		https://github.com/wildeyedskies/stmp/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

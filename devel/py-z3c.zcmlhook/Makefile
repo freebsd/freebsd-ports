@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Easily hook into the ZCML processing machinery
+WWW=		https://pypi.org/project/z3c.zcmlhook/
 
 LICENSE=	ZPL21
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.noresult.net/freebsd/spindown/
 
 MAINTAINER=	noresult@noresult.net
 COMMENT=	SCSI/firewire harddrive spindown daemon
+WWW=		https://www.noresult.net/freebsd/spindown/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

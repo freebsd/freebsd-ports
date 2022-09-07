@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Python client for the whois.cymru.com service
+WWW=		https://pypi.org/project/cymruwhois/
 
 LICENSE=	MIT
 

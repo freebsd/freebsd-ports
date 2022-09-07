@@ -8,6 +8,7 @@ PATCHFILES+=	05465d486afd.patch:-p1 # https://gitlab.gnome.org/GNOME/d-feet/-/me
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	D-Bus Python introspection debugger
+WWW=		https://wiki.gnome.org/Apps/DFeet
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

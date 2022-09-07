@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}game/${PORTNAME}-4/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xpilot(client) and xpilots(server)
+WWW=		http://www.xpilot.org/
 
 USES=		imake tar:bzip2 xorg
 USE_XORG=	x11 xext

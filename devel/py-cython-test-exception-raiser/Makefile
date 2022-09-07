@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Trivial extension that just raises an exception
+WWW=		https://github.com/twisted/cython-test-exception-raiser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

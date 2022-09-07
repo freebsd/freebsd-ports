@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-minimal
 
 MAINTAINER=	bsd@philippost.de
 COMMENT=	Software package for research in polyhedral geometry
+WWW=		https://www.polymake.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

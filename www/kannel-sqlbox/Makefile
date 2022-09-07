@@ -6,6 +6,7 @@ CATEGORIES=	www
 MAINTAINER=	dbaio@FreeBSD.org
 # Co-maintainer: Alberto Mijares <amijaresp@gmail.com> (PR/173889)
 COMMENT=	Add-on module for www/kannel (svn rev.55)
+WWW=		https://redmine.kannel.org/projects/kannel-sq-lbox
 
 LICENSE=	The_Kannel_Software_License
 LICENSE_NAME=	The Kannel Software License, Version 1.0

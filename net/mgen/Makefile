@@ -7,6 +7,7 @@ DISTNAME=	src-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP network performance tests and measurements
+WWW=		http://mgen.pf.itd.nrl.navy.mil/
 
 # Dumps core on 64-bit architectures. This was reported to the upstream
 # author, who promised to fix it in one of the next releases.

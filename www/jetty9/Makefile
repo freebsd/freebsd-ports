@@ -7,6 +7,7 @@ DISTNAME=	jetty-distribution-${PORTVERSION}.${JDVDATE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured web server implemented entirely in Java
+WWW=		https://www.eclipse.org/jetty/
 
 LICENSE=	APACHE20 EPL
 LICENSE_COMB=	dual

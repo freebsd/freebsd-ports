@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
+WWW=		http://www2m.biglobe.ne.jp/~dolphin/lha/lha.htm
 
 LICENSE=	LHA
 LICENSE_NAME=	License of lha

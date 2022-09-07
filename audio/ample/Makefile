@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to listen to your own MP3's away from home
+WWW=		http://ample.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"

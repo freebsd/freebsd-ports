@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Powerful programmer's text editor written in Java
+WWW=		http://jedit.sourceforge.net/
 
 LICENSE=	GPLv2
 

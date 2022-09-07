@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Library for communicating with KeepKey Hardware Wallet
+WWW=		https://github.com/keepkey/python-keepkey
 
 LICENSE=	LGPL3
 

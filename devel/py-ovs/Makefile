@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	akoshibe@gmail.com
 COMMENT=	Python Open vSwitch library
+WWW=		https://github.com/openvswitch/ovs/tree/master/python
 
 LICENSE=	APACHE20
 

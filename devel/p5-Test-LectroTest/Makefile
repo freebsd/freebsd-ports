@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy, automatic, specification-based tests
+WWW=		https://metacpan.org/release/Test-LectroTest
 
 USES=		perl5
 USE_PERL5=	configure

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Generates mazes on a text terminal and lets you traverse them
+WWW=		https://www.robobunny.com/projects/textmaze/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl.txt

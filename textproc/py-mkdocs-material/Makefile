@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Material Design theme for MkDocs
+WWW=		https://github.com/squidfunk/mkdocs-material
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

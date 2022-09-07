@@ -6,6 +6,7 @@ MASTER_SITES=	http://dl.suckless.org/tools/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple SELection Printer for X11
+WWW=		http://www.suckless.org/programs/sselp.html
 
 USES=		xorg
 USE_XORG=	x11

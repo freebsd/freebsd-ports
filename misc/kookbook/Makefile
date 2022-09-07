@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/unstable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Recipes database with Markdown support
+WWW=		https://pusling.com/blog/?p=499
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

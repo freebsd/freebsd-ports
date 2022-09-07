@@ -5,6 +5,7 @@ CATEGORIES=	dns net
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Updates DNS records with Namesilo for dynamic IP addresses
+WWW=		https://github.com/crees/namesilo_ddns
 
 LICENSE=	MIT
 

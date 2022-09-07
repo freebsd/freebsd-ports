@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby wrapper library around git(1)
+WWW=		https://github.com/ruby-git/ruby-git
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

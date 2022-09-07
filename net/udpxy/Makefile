@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	alex.deiter@gmail.com
 COMMENT=	UDP-to-HTTP multicast traffic relay daemon
+WWW=		http://udpxy.sourceforge.net/
 
 LICENSE=	GPLv3
 

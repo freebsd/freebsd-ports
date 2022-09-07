@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Reliable Asynchronous Event Transport protocol library
+WWW=		https://github.com/saltstack/raet
 
 LICENSE=	APACHE20
 

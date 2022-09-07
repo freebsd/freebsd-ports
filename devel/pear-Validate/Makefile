@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PEAR Validation class
+WWW=		https://pear.php.net/package/Validate
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

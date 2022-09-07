@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dengtooling@gmail.com
 COMMENT=	Listing NFC devices and in-field tags or targets
+WWW=		https://github.com/nfc-tools/nfcutils/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

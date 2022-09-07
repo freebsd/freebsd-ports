@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieves module information from a file or script
+WWW=		https://metacpan.org/release/Module-Info-File
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	moin-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Easy to use, full-featured and extensible wiki software package
+WWW=		https://moinmo.in/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/licenses/COPYING

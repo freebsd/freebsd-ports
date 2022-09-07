@@ -4,6 +4,7 @@ CATEGORIES=	misc kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collection of utilities for KDE
+WWW=		https://www.kde.org/applications/utilities/
 
 USES=		kde:5 metaport
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data compression library with low memory usage
+WWW=		https://www.oberhumer.com/opensource/ucl/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	3
 # the <freebsd-cvsweb@FreeBSD.org> mailing list.
 MAINTAINER=	noackjr@alumni.rice.edu
 COMMENT=	WWW CGI script to browse CVS repository trees version 3
+WWW=		https://www.FreeBSD.org/projects/cvsweb.html
 
 LICENSE=	BSD2CLAUSE
 

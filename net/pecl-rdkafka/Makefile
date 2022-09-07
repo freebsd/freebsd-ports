@@ -4,6 +4,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	sergey@akhmatov.ru
 COMMENT=	Kafka client for PHP
+WWW=		https://github.com/arnaud-lb/php-rdkafka
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

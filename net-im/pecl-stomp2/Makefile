@@ -4,6 +4,7 @@ CATEGORIES=	net-im pear
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension of stomp client
+WWW=		https://pecl.php.net/package/stomp
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

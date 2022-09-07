@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Database Libraries
+WWW=		https://pear.horde.org
 
 OPTIONS_DEFAULT=	MYSQLI
 OPTIONS_DEFINE=		MYSQLI PDO

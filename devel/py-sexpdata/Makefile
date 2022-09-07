@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	S-expression parser for Python
+WWW=		https://github.com/jd-boyd/sexpdata
 
 LICENSE=	BSD2CLAUSE
 

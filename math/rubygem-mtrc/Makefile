@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Minimal metric aggregation library
+WWW=		https://github.com/aphyr/mtrc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

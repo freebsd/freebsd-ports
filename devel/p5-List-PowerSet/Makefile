@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module that allows you to generate the power set of a list
+WWW=		https://metacpan.org/release/List-PowerSet
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

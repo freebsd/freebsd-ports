@@ -7,6 +7,7 @@ LICENSE=	GPLv3+
 
 MAINTAINER=	schaiba@gmail.com
 COMMENT=	GNU differential compare utilities
+WWW=		https://www.gnu.org/software/diffutils/diffutils.html
 
 LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv
 

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/jensenpat/wordsearch/releases/download/${DISTVE
 
 MAINTAINER=	patj@passpackets.com
 COMMENT=	Classic word search game that you can play in your terminal
+WWW=		https://github.com/jensenpat/wordsearch
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

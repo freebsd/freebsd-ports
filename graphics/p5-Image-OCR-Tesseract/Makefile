@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Read an image with Resseract OCR and get output
+WWW=		https://metacpan.org/release/LEOCHARRE/Image-OCR-Tesseract-1.26
 
 LICENSE=	GPLv3
 

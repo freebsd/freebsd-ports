@@ -5,6 +5,7 @@ CATEGORIES=	net security
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Cross-platform subdomain enumerator
+WWW=		https://github.com/Findomain/findomain
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

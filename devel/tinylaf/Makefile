@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.muntjak.de/hans/java/tinylaf/
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Pluggable Look and Feel for Java
+WWW=		http://www.muntjak.de/hans/java/tinylaf/index.html
 
 OPTIONS_DEFINE=	DOCS
 

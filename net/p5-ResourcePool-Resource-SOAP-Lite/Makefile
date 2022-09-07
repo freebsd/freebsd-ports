@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ResourcePool wrapper for SOAP::Lite
+WWW=		http://www.fatalmind.com/software/ResourcePool/perl/
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-ResourcePool>=1.0100:devel/p5-ResourcePool \

@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the TokyoTyrant
+WWW=		https://dbmx.net/tokyotyrant/
 
 BUILD_DEPENDS=	tokyotyrant>=1.1.40:databases/tokyotyrant
 LIB_DEPENDS=	libtokyotyrant.so:databases/tokyotyrant

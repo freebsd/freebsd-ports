@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.qsl.net/5b4az/pkg/nec2/xnec2c/ \
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Used to calculate antenna patterns useful to ham radio
+WWW=		https://www.qsl.net/5b4az/
 
 LICENSE=	GPLv2
 

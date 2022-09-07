@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-w32-${PORTVERSION:S/./-/g}-release
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX threads library for Windows compiled with MinGW32
+WWW=		https://sourceware.org/pthreads-win32/
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
 		mingwm10.dll:devel/mingw32-bin-msvcrt

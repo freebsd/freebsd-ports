@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	JavaScript plugin for WWW::Scripter
+WWW=		https://metacpan.org/release/WWW-Scripter-Plugin-JavaScript
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-WWW-Scripter>0:www/p5-WWW-Scripter \

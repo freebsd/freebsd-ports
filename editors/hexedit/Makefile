@@ -4,6 +4,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	View and edit files in hexadecimal or ASCII
+WWW=		https://github.com/pixel/hexedit
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Dependency Manager for PHP, version 2.x
+WWW=		https://getcomposer.org/
 
 LICENSE=	MIT
 

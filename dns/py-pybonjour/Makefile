@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Pure-Python interface to Apple Bonjour
+WWW=		https://github.com/depl0y/pybonjour-python3
 
 LICENSE=	MIT
 

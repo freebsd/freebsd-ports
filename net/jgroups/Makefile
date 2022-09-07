@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/ale
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java toolkit for reliable multicast communication
+WWW=		http://www.jgroups.org/
 
 LICENSE=	LGPL21
 

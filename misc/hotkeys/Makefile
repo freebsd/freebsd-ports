@@ -7,6 +7,7 @@ DISTNAME=	hotkeys_${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Allows usage of special keys on internet/multimedia keyboards
+WWW=		http://ypwong.org/hotkeys/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

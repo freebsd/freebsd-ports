@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Toolkit to convert your script to a controllable daemon
+WWW=		https://github.com/thuehlinger/daemons
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

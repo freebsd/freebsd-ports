@@ -7,6 +7,7 @@ DISTNAME=	Keras-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Deep learning library for Python
+WWW=		https://keras.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

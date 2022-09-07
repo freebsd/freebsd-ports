@@ -7,6 +7,7 @@ DIST_SUBDIR=		KDE/${PORTNAME}
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Visual database applications creator
+WWW=		https://www.kexi-project.org/
 
 LIB_DEPENDS=		libKDb3.so:databases/kdb \
 			libKPropertyCore3.so:x11-toolkits/kproperty \

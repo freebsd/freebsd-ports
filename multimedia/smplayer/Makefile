@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Complete front-end based on Qt for mplayer
+WWW=		https://www.smplayer.info/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Copying.txt

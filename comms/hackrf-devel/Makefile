@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mr@freebsd.org
 COMMENT=	Low cost open source hardware software radio platform
+WWW=		https://greatscottgadgets.com/hackrf/
 
 LICENSE=	GPLv2
 

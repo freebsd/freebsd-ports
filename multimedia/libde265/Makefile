@@ -12,6 +12,7 @@ PATCHFILES=	900772c3e9ee1e106b93283fd8e7633d52899e40.patch:-p1 \
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Open source h.265 video codec
+WWW=		https://www.libde265.org
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

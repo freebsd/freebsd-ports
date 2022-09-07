@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Grabbing images off the Internet
+WWW=		https://metacpan.org/release/Image-Grab
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

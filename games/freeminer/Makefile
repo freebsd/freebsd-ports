@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source sandbox game inspired by Minecraft
+WWW=		https://freeminer.org/
 
 LICENSE=	LGPL21+ GPLv3+ # source mentions GPLv3+, LICENSE.txt LGPL21+
 LICENSE_COMB=	multi

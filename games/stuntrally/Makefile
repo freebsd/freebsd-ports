@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D racing game based on VDrift and OGRE with track editor
+WWW=		https://stuntrally.tuxfamily.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt

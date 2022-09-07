@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.infodrom.org/projects/cgilib/download/ \
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Library of procedures for developing CGI programs in C
+WWW=		https://www.infodrom.org/projects/cgilib/
 
 LICENSE=	GPLv2
 

@@ -9,6 +9,7 @@ EXTRACT_AFTER_ARGS=	--strip-components 1 # since 1.17.0, archive includes gitea-
 
 MAINTAINER=	stb@lassitu.de
 COMMENT=	Compact self-hosted Git service
+WWW=		https://gitea.io/en-US/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

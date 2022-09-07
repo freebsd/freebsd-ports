@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Tool to extract data from tcpdump logs
+WWW=		https://sourceforge.net/projects/chaosreader/
 
 LICENSE=	GPLv3+
 

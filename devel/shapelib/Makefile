@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.osgeo.org/shapelib/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C API for reading and writing ArcView Shapefiles
+WWW=		http://shapelib.maptools.org/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	MIFARE contactless tag access library
+WWW=		https://github.com/nfc-tools/libfreefare/
 
 LICENSE=	LGPL3+
 

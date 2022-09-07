@@ -6,6 +6,7 @@ MASTER_SITES=	https://kohei.us/files/ixion/src/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	General purpose formula parser, interpreter, dependency tracker
+WWW=		https://gitlab.com/ixion/ixion
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

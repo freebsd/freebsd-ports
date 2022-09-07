@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Converts output of popular command-line tools and file-types to JSON
+WWW=		https://pypi.python.org/pypi/jc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

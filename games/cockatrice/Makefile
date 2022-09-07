@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Virtual tabletop client and server for multiplayer card games
+WWW=		http://www.woogerworks.com
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

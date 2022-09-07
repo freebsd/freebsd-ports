@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	bsd-
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	BSD-licensed version of grep
+WWW=		https://www.freebsd.org/projects/ideas/ #p-bsdtexttools
 
 LICENSE=	BSD2CLAUSE
 

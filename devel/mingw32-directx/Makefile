@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DirectX header files for use with MinGW
+WWW=		https://www.libsdl.org/extras/win32/cygwin/README.txt
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
 		mingwm10.dll:devel/mingw32-bin-msvcrt

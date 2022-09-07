@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thomas@gibfest.dk
 COMMENT=	System for controlling process state under UNIX
+WWW=		http://supervisord.org/
 
 LICENSE=	BSD3CLAUSE MEDUSA REPOZE
 LICENSE_COMB=	multi

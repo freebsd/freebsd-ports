@@ -6,6 +6,7 @@ MASTER_SITES=	SF/worldforge/Eris%201.4%20%28client%20lib%29/${PORTVERSION}/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	WorldForge client entity library
+WWW=		https://www.worldforge.org/index.php/components/eris/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

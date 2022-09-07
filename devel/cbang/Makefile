@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	C! (cbang) is a library of cross-platform C++ utilities
+WWW=		https://cbang.org/
 
 LICENSE=	LGPL21
 

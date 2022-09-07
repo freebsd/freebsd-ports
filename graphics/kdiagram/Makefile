@@ -6,6 +6,7 @@ DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library to create business diagrams
+WWW=		https://projects.kde.org/kdiagram
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL.txt

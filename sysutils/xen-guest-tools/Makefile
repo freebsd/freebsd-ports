@@ -7,6 +7,7 @@ DISTNAME=	xen-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Xen tools within FreeBSD domU
+WWW=		https://xenproject.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

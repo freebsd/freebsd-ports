@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Display information about the CPU architecture
+WWW=		https://github.com/NanXiao/lscpu
 
 LICENSE=	BSD3CLAUSE
 

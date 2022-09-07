@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	OpenCL implementation for Intel HD 5000 (Gen8) or newer
+WWW=		https://01.org/compute-runtime
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

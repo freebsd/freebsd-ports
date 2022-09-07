@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Record desktop sessions to an Ogg-Theora-Vorbis file
+WWW=		http://recordmydesktop.sourceforge.net/
 
 LICENSE=	GPLv2+
 

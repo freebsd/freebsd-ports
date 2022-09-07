@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio streaming server that powers Squeezebox players from Logitech
+WWW=		https://wiki.slimdevices.com/index.php/Squeezebox_Server
 
 LICENSE=	SDL
 LICENSE_NAME=	Slim Devices License

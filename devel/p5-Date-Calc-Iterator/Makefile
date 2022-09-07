@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Iterate over a range of dates
+WWW=		https://metacpan.org/release/Date-Calc-Iterator
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

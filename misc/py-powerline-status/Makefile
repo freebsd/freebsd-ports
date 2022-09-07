@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Statusline plugin for vim, zsh, bash, and more
+WWW=		https://github.com/powerline/powerline
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/source/license-and-credits.rst

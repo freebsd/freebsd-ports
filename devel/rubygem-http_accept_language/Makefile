@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rails plugin to extract Accept-Language HTTP header into array
+WWW=		https://github.com/iain/http_accept_language/
 
 LICENSE=	MIT
 

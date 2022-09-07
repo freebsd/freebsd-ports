@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tj+freebsd_ports@a13.fr
 COMMENT=	Basic Application Framework
+WWW=		https://rubygems.org/gems/baf
 
 LICENSE=	BSD3CLAUSE
 

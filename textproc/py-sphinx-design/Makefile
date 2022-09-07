@@ -7,6 +7,7 @@ DISTNAME=	sphinx_design-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sphinx extension for designing beautiful, view size responsive web components
+WWW=		https://github.com/executablebooks/sphinx-design
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

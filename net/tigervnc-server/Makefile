@@ -2,6 +2,7 @@ PORTREVISION=	5
 PKGNAMESUFFIX=	-server
 
 COMMENT=	TigerVNC Server
+WWW=		https://tigervnc.org/
 
 EXTRA_PATCHES=	${FILESDIR}/xorg-1.21.patch:-p1 \
 		${FILESDIR}/xvnc-adapt-xorg-1.21.patch:-p1

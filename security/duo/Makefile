@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_unix-${PORTVERSION}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Duo unix integration package
+WWW=		https://duosecurity.com
 
 LICENSE=	GPLv2
 

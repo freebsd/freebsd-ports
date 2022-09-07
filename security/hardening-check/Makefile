@@ -6,6 +6,7 @@ DISTNAME=	hardening-wrapper_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check binaries for security hardening features
+WWW=		https://wiki.debian.org/Hardening
 
 LICENSE=	GPLv2+
 

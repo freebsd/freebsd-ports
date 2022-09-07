@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.shar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Launcher which starts an X program on a remote machine
+WWW=		https://jjd.com/
 
 USES=		imake
 NO_WRKSUBDIR=	yes

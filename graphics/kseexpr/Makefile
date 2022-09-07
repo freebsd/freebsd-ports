@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION:R}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Embeddable expression engine for Krita
+WWW=		https://invent.kde.org/graphics/kseexpr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

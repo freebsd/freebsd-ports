@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple low-level client for Redis 6+
+WWW=		https://github.com/redis-rb/redis-client
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

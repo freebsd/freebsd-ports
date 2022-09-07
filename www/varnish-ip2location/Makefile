@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	varnish-
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for ip2location
+WWW=		https://github.com/ip2location/IP2Location-Varnish
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

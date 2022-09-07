@@ -9,6 +9,7 @@ DIST_SUBDIR=	esecanna
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pseudo cannaserver which wraps some other input engines
+WWW=		http://esecanna.netfort.gr.jp/
 
 USE_RC_SUBR=	esecanna
 

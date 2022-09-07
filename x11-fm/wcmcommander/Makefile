@@ -6,6 +6,7 @@ CATEGORIES=	x11-fm
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform open source file manager
+WWW=		http://wcm.linderdaum.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

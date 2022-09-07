@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Box enhancer for jQuery and Protoype
+WWW=		https://github.com/tsechingho/chosen-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

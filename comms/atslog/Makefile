@@ -6,6 +6,7 @@ MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for collecting and analyzing calls from different PBX models
+WWW=		http://www.atslog.com/en/about/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

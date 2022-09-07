@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-video-editor
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	NLE (nonlinear) video editor
+WWW=		https://www.olivevideoeditor.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

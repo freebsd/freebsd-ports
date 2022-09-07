@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing ordered in-memory associative arrays
+WWW=		https://metacpan.org/release/Tie-IxHash
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

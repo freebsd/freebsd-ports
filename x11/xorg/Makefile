@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org complete distribution metaport
+WWW=		https://www.x.org/
 
 USES=		metaport
 

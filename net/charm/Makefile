@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Message-passing parallel language and runtime system
+WWW=		https://www.ks.uiuc.edu/Research/namd/
 
 LICENSE=	CHARMPP_CONVERSE_LICENSE
 LICENSE_NAME=	Charm++/Converse License

@@ -7,6 +7,7 @@ DISTNAME=	pytest_httpserver-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP server for pytest
+WWW=		https://github.com/csernazs/pytest-httpserver
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

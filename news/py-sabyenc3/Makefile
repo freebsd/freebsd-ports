@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python yEnc package optimized for use within SABnzbd
+WWW=		https://github.com/sabnzbd/sabyenc
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

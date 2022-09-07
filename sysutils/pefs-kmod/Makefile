@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	darius@dons.net.au
 COMMENT=	PEFS kernel level stacked cryptographic filesystem
+WWW=		https://wiki.freebsd.org/PEFS
 
 LICENSE=	BSD2CLAUSE
 

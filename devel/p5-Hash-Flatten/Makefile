@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Flatten, unflatten complex data hashes
+WWW=		https://metacpan.org/pod/Hash::Flatten
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

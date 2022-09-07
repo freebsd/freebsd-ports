@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Local Regression, Likelihood and Density Estimation
+WWW=		https://cran.r-project.org/package=locfit
 
 LICENSE=	GPLv2+
 

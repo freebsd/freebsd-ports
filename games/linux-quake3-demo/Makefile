@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.gz.sh
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena Demo
+WWW=		http://quake3arena.com/
 
 # Converted from RESTRICTED
 LICENSE=	Loki

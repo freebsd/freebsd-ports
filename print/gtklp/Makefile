@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	GTK interface to cups
+WWW=		https://gtklp.sirtobi.com
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

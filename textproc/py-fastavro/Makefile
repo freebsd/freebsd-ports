@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Fast AVRO for Python
+WWW=		https://pypi.python.org/pypi/fastavro
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

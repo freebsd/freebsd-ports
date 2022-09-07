@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dynamic options to evaluate at runtime
+WWW=		https://github.com/trailblazer/trailblazer-option
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

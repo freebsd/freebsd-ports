@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Allow --black on older Pythons
+WWW=		https://github.com/jaraco/pytest-black-multipy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	_nss
 
 MAINTAINER=	mazhe@alkumuna.eu
 COMMENT=	Apple mDNS responder - FreeBSD nsswitch module
+WWW=		https://opensource.apple.com/tarballs/mDNSResponder/
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

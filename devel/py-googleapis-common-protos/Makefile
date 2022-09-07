@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common protobufs used in Google APIs
+WWW=		https://github.com/googleapis/python-api-common-protos
 
 LICENSE=	APACHE20
 

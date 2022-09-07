@@ -7,6 +7,7 @@ DIST_SUBDIR=	TeX
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
+WWW=		http://xdvi.sourceforge.net/
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpaper.so:print/libpaper

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Read and update netrc files
+WWW=		https://github.com/heroku/netrc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

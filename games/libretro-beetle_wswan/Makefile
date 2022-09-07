@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen WonderSwan to libretro
+WWW=		https://github.com/libretro/beetle-wswan-libretro
 
 LICENSE=	GPLv2
 

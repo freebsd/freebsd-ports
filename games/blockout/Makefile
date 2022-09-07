@@ -8,6 +8,7 @@ DISTFILES=	bl25-src${EXTRACT_SUFX} bl25-linux-x86${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BlockOut II is an adaptation of the original Blockout DOS game
+WWW=		https://sourceforge.net/projects/blockout/
 
 LICENSE=	GPLv2+
 

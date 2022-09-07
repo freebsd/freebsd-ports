@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	SQL select on R data frames
+WWW=		https://cran.r-project.org/web/packages/sqldf/
 
 LICENSE=	GPLv2
 

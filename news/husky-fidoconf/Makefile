@@ -1,6 +1,7 @@
 PORTNAME=	husky-fidoconf
 
 COMMENT=	Husky FTN configuration library
+WWW=		http://husky.sourceforge.net/
 
 LICENSE=	LGPL20
 

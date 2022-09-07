@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-${SLAVE}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Audio file tag editor
+WWW=		https://kid3.kde.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

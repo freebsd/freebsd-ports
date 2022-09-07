@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/liberfa/erfa/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Essential Routines for Fundamental Astronomy
+WWW=		https://github.com/liberfa/erfa
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

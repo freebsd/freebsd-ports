@@ -6,6 +6,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Cross-platform Nintendo Entertainment System (NES/Famicom) emulator
+WWW=		https://www.mesen.ca/
 
 LICENSE=	GPLv3
 

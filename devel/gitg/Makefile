@@ -10,6 +10,7 @@ PATCHFILES+=	1978973b1284.patch:-p1 # https://gitlab.gnome.org/GNOME/gitg/-/merg
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GTK-based git repository viewer
+WWW=		https://wiki.gnome.org/Apps/Gitg
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

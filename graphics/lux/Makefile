@@ -7,6 +7,7 @@ DISTNAME=	${COMMIT}
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Panorama and image viewer
+WWW=		https://bitbucket.org/kfj/pv
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

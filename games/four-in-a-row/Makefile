@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Make lines of the same color
+WWW=		https://wiki.gnome.org/Apps/Four-in-a-row
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

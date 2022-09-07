@@ -11,6 +11,7 @@ DISTNAME=	ICON-Stylish
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stylish Icons for Gnome
+WWW=		https://art.gnome.org/
 
 # Converted from RESTRICTED
 LICENSE=	icons

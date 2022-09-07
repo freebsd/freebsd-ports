@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C99 library implementation of AWS client-side authentication
+WWW=		https://github.com/awslabs/aws-c-auth
 
 LICENSE=	APACHE20
 

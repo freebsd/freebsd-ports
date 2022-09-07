@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small C++ XML parser
+WWW=		https://sourceforge.net/projects/tinyxml/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

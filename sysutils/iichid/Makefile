@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	wulf@FreeBSD.org
 COMMENT=	Generic FreeBSD HID layer for I2C and USB devices
+WWW=		https://github.com/wulf7/iichid
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

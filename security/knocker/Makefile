@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Simple and easy to use TCP only port scanner (Console version)
+WWW=		https://knocker.sourceforge.io
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

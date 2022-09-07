@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MVC web application framework
+WWW=		https://github.com/rails/rails
 
 LICENSE=	MIT
 

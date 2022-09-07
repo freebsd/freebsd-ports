@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python framework for Telegram Bot API
+WWW=		https://github.com/nickoala/telepot
 
 LICENSE=	MIT
 

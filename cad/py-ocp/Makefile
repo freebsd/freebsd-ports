@@ -10,6 +10,7 @@ DISTNAME=	OCP_src_Linux
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Python wrapper for OCCT generated using pywrap
+WWW=		https://github.com/CadQuery/OCP
 
 BROKEN=		Mismatch between OpenCascase (7.5) and py-ocp (7.4)
 

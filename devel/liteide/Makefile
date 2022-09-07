@@ -6,6 +6,7 @@ CATEGORIES=	devel editors
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Simple, open source, cross-platform Go IDE
+WWW=		https://github.com/visualfc/liteide
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL

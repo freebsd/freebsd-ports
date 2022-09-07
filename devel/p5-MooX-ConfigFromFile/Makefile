@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Moo eXtension for initializing objects from config file
+WWW=		https://metacpan.org/release/MooX-ConfigFromFile
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

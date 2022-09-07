@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Super lightweight function registries for your library
+WWW=		https://github.com/explosion/catalogue
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

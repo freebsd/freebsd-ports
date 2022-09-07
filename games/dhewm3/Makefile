@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Doom 3 GPL source port
+WWW=		https://dhewm3.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../COPYING.txt

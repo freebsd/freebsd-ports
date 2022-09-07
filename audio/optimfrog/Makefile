@@ -6,6 +6,7 @@ DISTNAME=	# OptimFROG_FreeBSD_${ARCH}_${DISTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Best-ratio lossless audio codec
+WWW=		http://www.losslessaudio.org/
 
 LICENSE=	OptimFROG
 LICENSE_NAME=	OptimFROG - License

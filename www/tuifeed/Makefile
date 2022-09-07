@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	sec.research.2005@gmail.com
 COMMENT=	Trminal feed reader with a fancy UI
+WWW=		https://github.com/veeso/tuifeed
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

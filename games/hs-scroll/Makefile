@@ -5,6 +5,7 @@ CATEGORIES=	games haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Roguelike game
+WWW=		https://joeyh.name/code/scroll/
 
 LICENSE=	GPLv2
 

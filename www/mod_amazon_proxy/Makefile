@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/tota/${PORTNAME}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Amazon Auth Proxy for Product Advertising API
+WWW=		https://github.com/machu/mod_amazon_proxy
 
 LIB_DEPENDS=	libapreq2.so:www/libapreq2
 

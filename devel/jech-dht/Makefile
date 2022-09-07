@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Mainline variant of Kademlia Distributed Hash Table (DHT)
+WWW=		http://www.pps.univ-paris-diderot.fr/~jch/software/bittorrent/
 
 LICENSE=	MIT
 

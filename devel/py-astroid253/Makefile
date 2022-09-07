@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	253
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Abstract syntax tree for Python with inference support (legacy version)
+WWW=		https://github.com/PyCQA/astroid
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

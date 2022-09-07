@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_bin
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Digital TV and radio guide
+WWW=		https://www.tvbrowser.org
 
 LICENSE=	GPLv3
 

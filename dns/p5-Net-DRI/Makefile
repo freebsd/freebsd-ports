@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Perl library to access Domain Name Registries/Registrars
+WWW=		https://metacpan.org/release/Net-DRI
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

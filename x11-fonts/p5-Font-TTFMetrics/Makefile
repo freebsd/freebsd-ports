@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Parser for the TTF file
+WWW=		https://metacpan.org/release/Font-TTFMetrics
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

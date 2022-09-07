@@ -11,6 +11,7 @@ DISTFILES=	percona-server-${DISTVERSION}${EXTRACT_SUFX}:percona \
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
+WWW=		https://www.percona.com/software/percona-server
 
 LICENSE?=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

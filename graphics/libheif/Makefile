@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	ISO/IEC 23008-12:2017 HEIF file format de- and encoder
+WWW=		https://github.com/strukturag/libheif
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Demo/program inspired by Erics cascade
+WWW=		http://www.linuxmotors.com/founts/
 
 LICENSE=	GPLv2
 

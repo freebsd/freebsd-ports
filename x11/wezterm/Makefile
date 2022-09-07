@@ -4,6 +4,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GPU-accelerated terminal emulator and multiplexer
+WWW=		https://wezfurlong.org/wezterm/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

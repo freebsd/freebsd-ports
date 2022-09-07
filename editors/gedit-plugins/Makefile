@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plugins for GEdit
+WWW=		https://wiki.gnome.org/Apps/Gedit/PluginsLists
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

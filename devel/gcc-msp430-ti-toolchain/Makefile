@@ -26,6 +26,7 @@ EXTRACT_ONLY=	gcc-${GCC_REL_VERSION}.tar.xz \
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Complete gcc-based toolcahin for TI MSP430 uC
+WWW=		http://www.ti.com/tool/msp430-gcc-opensource
 
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi

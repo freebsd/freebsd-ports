@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Type analysis tool for Ruby code
+WWW=		https://github.com/ruby/typeprof
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

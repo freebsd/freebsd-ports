@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	7
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Extensions of GTK 4.0 toolkit
+WWW=		https://github.com/elementary/granite
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

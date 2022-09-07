@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Command line utility to show dependency tree of packages
+WWW=		https://github.com/naiquevin/pipdeptree
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

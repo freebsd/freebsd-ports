@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Fortran compiler targeting LLVM
+WWW=		https://github.com/flang-compiler/flang
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wonderful en_DK.UTF-8 locale
+WWW=		https://github.com/0mp/en_DK.UTF-8
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

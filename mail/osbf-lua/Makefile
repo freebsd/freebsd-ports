@@ -5,6 +5,7 @@ MASTER_SITES=	http://luaforge.net/frs/download.php/2094/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email classifier, primarily for anti-spam
+WWW=		http://osbf-lua.luaforge.net/
 
 LICENSE=	GPLv2
 

@@ -8,6 +8,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	WireGuard implementation in Go
+WWW=		https://www.wireguard.com
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -11,6 +11,7 @@ DISTNAME=	thundercache-6.1.201104260900-${BITS}-fbsd
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	High-performance and high-efficiency caching proxy system
+WWW=		https://www.bmsoftware.org
 
 LICENSE=	commercial
 LICENSE_NAME=	commercial

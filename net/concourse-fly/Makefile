@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-fly
 
 MAINTAINER=	dumbbell@FreeBSD.org
 COMMENT=	CLI for Concourse
+WWW=		https://concourse-ci.org/
 
 LICENSE=	APACHE20
 

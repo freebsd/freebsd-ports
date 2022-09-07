@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cryptographically secure online voting
+WWW=		https://cryptoballot.com
 
 LICENSE=	AGPLv3
 

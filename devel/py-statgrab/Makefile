@@ -9,6 +9,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Set of Python bindings for libstatgrab
+WWW=		https://libstatgrab.org/pystatgrab/
 
 LICENSE=	LGPL21
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS implementation of POE::Loop, using poll(2)
+WWW=		https://metacpan.org/release/POE-XS-Loop-Poll
 
 BUILD_DEPENDS=	p5-POE-Test-Loops>=1.033:devel/p5-POE-Test-Loops \
 		p5-POE>=1.003:devel/p5-POE

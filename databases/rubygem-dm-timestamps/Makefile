@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin for magical timestamps
+WWW=		https://github.com/datamapper/dm-timestamps
 
 LICENSE=	MIT
 

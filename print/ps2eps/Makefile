@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.tm.uka.de/~bless/ \
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Generate Encapsulated Postscript file from Postscript document
+WWW=		http://www.tm.uka.de/~bless/ps2eps
 
 CONFLICTS_INSTALL=	texlive-base
 

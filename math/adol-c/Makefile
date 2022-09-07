@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Automatic differentiation library
+WWW=		https://github.com/coin-or/ADOL-C
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE

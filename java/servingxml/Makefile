@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	jpbeconne@free.fr
 COMMENT=	Framework for flat/XML data transformations
+WWW=		http://servingxml.sourceforge.net/
 
 BUILD_DEPENDS=	${ANT_CMD}:devel/apache-ant
 

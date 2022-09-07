@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python library for creating and updating Microsoft Word files
+WWW=		https://github.com/python-openxml/python-docx
 
 LICENSE=	MIT
 

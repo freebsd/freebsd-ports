@@ -8,6 +8,7 @@ DISTNAME=	Botan-${PORTVERSION}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Portable, easy to use and efficient C++ crypto library
+WWW=		https://botan.randombit.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

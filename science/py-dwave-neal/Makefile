@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DWave: Simulated annealing sampler for general Ising model graphs
+WWW=		https://github.com/dwavesystems/dwave-neal
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

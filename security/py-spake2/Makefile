@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	SPAKE2 password-authenticated key exchange (pure python)
+WWW=		https://github.com/warner/python-spake2
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils

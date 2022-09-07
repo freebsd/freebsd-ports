@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	brnrd@freebsd.org
 COMMENT=	End-to-End Encryption app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/end_to_end_encryption
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Testing-specific WWW::Mechanize subclass
+WWW=		https://metacpan.org/release/Test-WWW-Mechanize
 
 LICENSE=	ART20
 

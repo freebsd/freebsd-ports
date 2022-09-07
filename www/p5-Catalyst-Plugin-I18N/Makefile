@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	I18N for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-Plugin-I18N
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

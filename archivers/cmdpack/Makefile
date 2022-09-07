@@ -4,6 +4,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compresses CD images by stripping unnecessary EDC/ECC data
+WWW=		https://github.com/chungy/cmdpack
 
 LICENSE=	GPLv2
 

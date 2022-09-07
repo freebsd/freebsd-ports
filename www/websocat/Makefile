@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	WebSockets tools
+WWW=		https://github.com/vi/websocat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

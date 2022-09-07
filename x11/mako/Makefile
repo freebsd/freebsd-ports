@@ -5,6 +5,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight Wayland notification daemon
+WWW=		https://github.com/emersion/mako
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

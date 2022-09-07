@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Perl5 module to create special files
+WWW=		https://metacpan.org/release/Unix-Mknod
 
 USES=		perl5
 USE_PERL5=	configure

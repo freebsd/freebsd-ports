@@ -7,6 +7,7 @@ EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	High performance processing of XML and HTML data with Tcl
+WWW=		http://www.tdom.org/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	Graphos-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector drawing application centered around bezier paths
+WWW=		https://gap.nongnu.org/graphos/
 
 LICENSE=	GPLv2
 

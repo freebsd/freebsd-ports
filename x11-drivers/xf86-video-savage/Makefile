@@ -8,6 +8,7 @@ PATCHFILES+=	0ece556daa8a88771b669d8104396abd9166d2d0.patch:-p1
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org savage display driver
+WWW=		https://www.x.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

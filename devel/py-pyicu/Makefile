@@ -8,6 +8,7 @@ DISTNAME=	PyICU-${PORTVERSION}
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Python extension wrapping IBM's ICU C++ API #'
+WWW=		https://pypi.org/project/PyICU/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

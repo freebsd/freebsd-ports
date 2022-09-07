@@ -7,6 +7,7 @@ DISTNAME=	${_PYPI_NAME}-${PORTVERSION}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Parse C++ header files and generate a data structure representing the class
+WWW=		https://senexcanis.com/open-source/cppheaderparser/
 
 # There is no license file,
 # the license is specified directly in the source file.

@@ -5,6 +5,7 @@ MASTER_SITES=	https://numpi.dm.unipi.it/_media/software/mpsolve/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multiprecision rootfinder for complex roots of univariate polynomials
+WWW=		https://numpi.dm.unipi.it/software/mpsolve
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

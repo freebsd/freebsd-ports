@@ -6,6 +6,7 @@ DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of icons for the MATE desktop
+WWW=		https://mate-desktop.org/
 
 LICENSE=	LGPL3 CC-BY-SA-3.0
 LICENSE_COMB=	dual

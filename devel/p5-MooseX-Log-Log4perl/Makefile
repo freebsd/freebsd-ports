@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Logging role for Moose based on Log::Log4perl
+WWW=		https://metacpan.org/release/MooseX-Log-Log4perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Any-Moose>=0.12:devel/p5-Any-Moose \

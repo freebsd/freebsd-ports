@@ -6,6 +6,7 @@ CATEGORIES=	audio net
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Music streaming server / subsonic server API implementation
+WWW=		https://github.com/sentriz/gonic
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

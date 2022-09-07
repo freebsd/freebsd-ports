@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	View the source of the running application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-ViewCode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

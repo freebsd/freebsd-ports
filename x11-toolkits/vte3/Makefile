@@ -8,6 +8,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal widget with improved accessibility and I18N support
+WWW=		https://wiki.gnome.org/Apps/Terminal/VTE
 
 LICENSE=	LGPL21
 

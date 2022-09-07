@@ -4,6 +4,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Classify ChIP/ATAC-Seq peaks based on features provided in a GFF
+WWW=		https://github.com/auerlab/peak-classifier
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

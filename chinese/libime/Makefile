@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Library to support generic input method implementation
+WWW=		https://github.com/fcitx/libime
 
 LICENSE=	LGPL21
 

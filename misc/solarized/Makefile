@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Precision colors schemes for machines and people
+WWW=		https://ethanschoonover.com/solarized
 
 LICENSE=	MIT
 

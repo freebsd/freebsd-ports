@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Spline library
+WWW=		https://github.com/SINTEF-Geometry/SISL
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

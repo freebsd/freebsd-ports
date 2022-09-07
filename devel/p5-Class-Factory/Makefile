@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Base class for dynamic factory classes
+WWW=		https://metacpan.org/release/Class-Factory
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

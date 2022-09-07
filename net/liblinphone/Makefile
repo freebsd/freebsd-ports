@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SIP library supporting voice/video calls and text messaging
+WWW=		https://www.linphone.org/technical-corner/liblinphone.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

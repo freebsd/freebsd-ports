@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Pytest plugin for trio
+WWW=		https://pypi.org/project/pytest-trio/
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	dual

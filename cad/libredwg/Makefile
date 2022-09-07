@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Library and command line tools to handle DWG files
+WWW=		https://www.gnu.org/software/libredwg/
 
 LICENSE=	GPLv3+
 

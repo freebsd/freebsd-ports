@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test bed for `Cons' development
+WWW=		http://www.dsmit.com/cons/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

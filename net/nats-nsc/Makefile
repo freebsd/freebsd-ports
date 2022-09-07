@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	nats-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Tool for creating NATS account and user access configurations
+WWW=		https://github.com/nats-io/nsc
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

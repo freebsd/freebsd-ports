@@ -2,6 +2,7 @@ PORTNAME=	star
 CATEGORIES=	archivers
 
 COMMENT=	Unique standard tape archiver with many enhancements
+WWW=		https://codeberg.org/schilytools/schilytools
 
 PORTDOCS=	README* STARvsGNUTAR
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Library that computes the ephemerides
+WWW=		https://kosmorro.space/
 
 LICENSE=	CeCILL-C
 LICENSE_NAME=	${LICENSE}

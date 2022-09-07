@@ -7,6 +7,7 @@ MASTER_SITES=	LOCAL/acm/${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	NeoGeo emulator
+WWW=		https://github.com/pepone42/gngeo
 
 LICENSE=	GPLv2
 

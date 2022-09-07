@@ -16,6 +16,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ardoise X cursor theme
+WWW=		https://gitlab.com/obnosim/ardoise
 
 LICENSE=	GPLv3
 

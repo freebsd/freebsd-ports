@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Random number generators
+WWW=		https://metacpan.org/release/Math-Random
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

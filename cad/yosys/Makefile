@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Yosys Open SYnthesis Suite
+WWW=		https://yosyshq.net/yosys/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

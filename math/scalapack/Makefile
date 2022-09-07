@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ScaLAPACK Scalable LAPACK library
+WWW=		https://www.netlib.org/scalapack/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

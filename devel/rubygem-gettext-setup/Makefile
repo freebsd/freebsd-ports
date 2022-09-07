@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set up i18n for Ruby projects
+WWW=		https://github.com/puppetlabs/gettext-setup-gem
 
 LICENSE=	APACHE20
 

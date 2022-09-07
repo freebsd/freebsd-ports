@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	cowboyneal@gmail.com
 COMMENT=	Perl interface to goo.gl
+WWW=		https://metacpan.org/release/WWW-Shorten-Googl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-WWW-Shorten>=1.98:www/p5-WWW-Shorten \

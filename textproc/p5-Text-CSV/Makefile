@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Composition and decomposition of comma-separated values
+WWW=		https://metacpan.org/release/Text-CSV
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ DISTNAME=	lzx_compress
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	LZX compression library
+WWW=		http://www.russotto.net/chm/
 
 LICENSE=	LGPL21
 

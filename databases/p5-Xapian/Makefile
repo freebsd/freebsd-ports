@@ -8,6 +8,7 @@ DISTNAME=	xapian-bindings-${PORTVERSION:R}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl binding for Xapian
+WWW=		https://xapian.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Encrypted filesystem for FUSE
+WWW=		https://BSDforge.com/projects/sysutils/fusefs-cryptofs/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

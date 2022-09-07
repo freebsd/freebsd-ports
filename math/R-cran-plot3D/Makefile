@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Plotting Multi-Dimensional Data
+WWW=		https://cran.r-project.org/package=plot3D
 
 LICENSE=	GPLv3+
 

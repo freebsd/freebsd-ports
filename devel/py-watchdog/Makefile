@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python API library to monitor file system events
+WWW=		https://github.com/gorakhargosh/watchdog
 
 LICENSE=	APACHE20
 

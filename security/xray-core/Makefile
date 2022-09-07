@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Set of network penetration tools
+WWW=		https://github.com/XTLS/Xray-core
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-fp-library
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Header-only C++ template library for universal number arithmetic
+WWW=		https://github.com/stillwater-sc/universal
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

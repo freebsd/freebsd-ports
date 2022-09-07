@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	sikmir@gmail.com
 COMMENT=	Qt image plugin for displaying Mapbox vector tiles
+WWW=		https://github.com/tumic0/QtPBFImagePlugin
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

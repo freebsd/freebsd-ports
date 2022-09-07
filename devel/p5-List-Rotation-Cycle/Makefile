@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cycle through a list of values
+WWW=		https://metacpan.org/release/List-Rotation-Cycle
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

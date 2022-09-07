@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Get the CDID of an audio CD and query the FreeDB servers
+WWW=		https://metacpan.org/release/Net-FreeDB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR template API ported from PHPLIB
+WWW=		https://pear.php.net/package/HTML_Template_PHPLIB
 
 LICENSE=	LGPL3
 

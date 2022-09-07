@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-i18n
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl based trustcenter software for PKI: i18n tools
+WWW=		https://www.openxpki.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../../LICENSE

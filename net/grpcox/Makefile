@@ -6,6 +6,7 @@ CATEGORIES=	net www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web based GUI client for gRPC
+WWW=		https://github.com/gusaul/grpcox
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

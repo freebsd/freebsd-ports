@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Test that only expected DBIx::Class queries are run
+WWW=		https://metacpan.org/release/Test-DBIC-ExpectedQueries
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

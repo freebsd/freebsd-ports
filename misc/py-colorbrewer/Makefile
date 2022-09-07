@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Constants from Cynthia Brewer's ColorBrewer
+WWW=		https://pypi.org/project/colorbrewer/
 
 LICENSE=	APACHE20
 

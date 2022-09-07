@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bidirectional UTM-WGS84 converter for Python
+WWW=		https://github.com/Turbo87/utm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

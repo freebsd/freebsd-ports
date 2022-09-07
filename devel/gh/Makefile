@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	GitHub's official command line tool
+WWW=		https://cli.github.com
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

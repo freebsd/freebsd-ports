@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module collection to easily create constructors methods
+WWW=		https://metacpan.org/release/OOTools
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

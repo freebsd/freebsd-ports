@@ -8,6 +8,7 @@ DISTNAME=	HoroscopeGenerator-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate horoscopes using context-free grammar
+WWW=		https://github.com/mouse-reeve/horoscope-generator
 
 LICENSE=	MIT
 

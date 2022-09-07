@@ -6,6 +6,7 @@ MASTER_SITES=	SF/gtkclipit/Version%201
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Lightweight GTK+ clipboard manager forked from parcellite
+WWW=		http://clipit.rspwn.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

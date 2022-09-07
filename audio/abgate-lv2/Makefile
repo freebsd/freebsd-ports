@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Noise gate LV2 plugin
+WWW=		https://github.com/antanasbruzas/abGate
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

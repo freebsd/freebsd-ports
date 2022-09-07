@@ -6,6 +6,7 @@ MASTER_SITES=		SF/arianne/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=		antumdeluge@gmail.com
 COMMENT=		Two-dimensional massively multi-player online RPG
+WWW=		https://stendhalgame.org/
 
 LICENSE=		BSD2CLAUSE GPLv2
 LICENSE_COMB=		multi

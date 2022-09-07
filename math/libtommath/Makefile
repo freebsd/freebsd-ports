@@ -7,6 +7,7 @@ DISTNAME=	ltm-${DISTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Comprehensive, modular, and portable mathematical routines
+WWW=		https://libtom.net/
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	https://git.joeyh.name/index.cgi/moreutils.git/snapshot/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Additional Unix utilities
+WWW=		https://joeyh.name/code/moreutils/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Just some syntax sugar for DBIx::Class
+WWW=		https://metacpan.org/release/DBICx-Sugar
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

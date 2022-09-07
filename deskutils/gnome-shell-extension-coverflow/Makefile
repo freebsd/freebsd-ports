@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lets you Alt-Tab windows in a cover-flow manner
+WWW=		https://github.com/dmo60/CoverflowAltTab
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	ports@ecadlabs.com
 COMMENT=	Systems monitoring and alerting toolkit
+WWW=		https://prometheus.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

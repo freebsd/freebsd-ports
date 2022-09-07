@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy and efficient manipulation of URI components
+WWW=		https://metacpan.org/release/Rose-URI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

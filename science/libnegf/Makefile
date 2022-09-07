@@ -5,6 +5,7 @@ CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Non Equilibrium Green's Functions library
+WWW=		https://github.com/libnegf/libnegf
 
 LICENSE=	GPLv3
 

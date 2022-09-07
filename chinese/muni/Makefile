@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/i18n/muni/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find Unicode values for Chinese characters
+WWW=		http://www.whizkidtech.redprince.net/i18n/muni/
 
 OPTIONS_DEFINE=	DOCS
 

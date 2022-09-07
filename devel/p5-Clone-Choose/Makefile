@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Choose appropriate clone utility
+WWW=		https://metacpan.org/release/Clone-Choose
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

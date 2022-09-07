@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.musicpd.org/download/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	freebsdbugs@tungol.org
 COMMENT=	Musicpd last.fm client
+WWW=		http://mpd.wikia.com/wiki/Client:Mpdscribble
 
 LICENSE=	GPLv2
 

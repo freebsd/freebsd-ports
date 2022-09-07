@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Platform independent Qt API for storing passwords
+WWW=		https://github.com/frankosterfeld/qtkeychain
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -28,7 +29,6 @@ USE_LDCONFIG=	yes
 OPTIONS_SUB=	yes
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		QT_VER=${FLAVOR:S/qt//}
-
 
 OPTIONS_DEFINE=		LIBSECRET NLS
 OPTIONS_DEFAULT=	LIBSECRET NLS

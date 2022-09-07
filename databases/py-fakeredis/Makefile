@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fake version of databases/py-redis for unit testing
+WWW=		https://github.com/cunla/fakeredis-py
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi

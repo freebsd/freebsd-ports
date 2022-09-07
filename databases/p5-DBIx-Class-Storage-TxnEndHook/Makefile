@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Transaction hook provider for DBIx::Class
+WWW=		https://metacpan.org/release/DBIx-Class-Storage-TxnEndHook
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

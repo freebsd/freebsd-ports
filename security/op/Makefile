@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Controlled privilege escalation tool
+WWW=		https://github.com/dagwieers/op/wiki
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

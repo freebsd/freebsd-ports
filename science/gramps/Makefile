@@ -6,6 +6,7 @@ CATEGORIES=	science gnome python
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK3-based genealogy program
+WWW=		https://gramps-project.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

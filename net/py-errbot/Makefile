@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Chatbot designed to be simple to extend with plugins
+WWW=		https://github.com/errbotio/errbot
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Cache support for your Flask application
+WWW=		https://pythonhosted.org/Flask-Cache/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

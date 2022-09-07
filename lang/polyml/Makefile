@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Fast open-source implementation of Standard ML
+WWW=		https://www.polyml.org
 
 LICENSE=	LGPL21
 

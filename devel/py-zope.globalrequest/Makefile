@@ -7,6 +7,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Global way of retrieving the currently active request
+WWW=		https://pypi.org/project/zope.globalrequest/
 
 LICENSE=	ZPL21
 

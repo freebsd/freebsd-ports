@@ -8,6 +8,7 @@ MASTER_SITES=	http://openwall.com/scanlogd/ \
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	TCP port scan detection tool
+WWW=		https://openwall.com/scanlogd/
 
 USE_RC_SUBR=	${PORTNAME}
 

@@ -4,6 +4,7 @@ CATEGORIES=	graphics kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 lightweight plotting framework
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kplotting/html/index.html
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	ecm_build

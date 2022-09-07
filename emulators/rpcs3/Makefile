@@ -9,6 +9,7 @@ PATCHFILES+=	290226539f67.patch:-p1 # https://github.com/RPCS3/rpcs3/pull/12606
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
+WWW=		https://rpcs3.net/
 
 LICENSE=	APACHE20 ISCL GPLv2 MIT ZLIB
 LICENSE_COMB=	multi

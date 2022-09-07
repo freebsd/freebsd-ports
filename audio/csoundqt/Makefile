@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Csound frontend with editor, integrated help, widgets, other features
+WWW=		https://csoundqt.github.io/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/lgpl-2.1.txt

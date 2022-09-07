@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to inflect short English Phrases
+WWW=		https://metacpan.org/release/Lingua-EN-Inflect-Phrase
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

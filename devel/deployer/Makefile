@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Deployment tool for PHP
+WWW=		https://deployer.org/
 
 LICENSE=	MIT
 

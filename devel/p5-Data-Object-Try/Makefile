@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Try Class for Data::Object
+WWW=		https://metacpan.org/release/Data-Object-Role-Tryable
 
 LICENSE=	APACHE20
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to the LZO compression library
+WWW=		https://metacpan.org/release/Compress-LZO
 
 LICENSE=	GPLv2
 

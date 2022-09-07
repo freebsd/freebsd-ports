@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	-common
 
 MAINTAINER?=	pdagog@gmail.com
 COMMENT?=	Netmagis common infrastructure
+WWW=		http://www.netmagis.org/
 
 LICENSE=	CECILL-B
 LICENSE_NAME=	CeCILL-B Free Software License Agreement

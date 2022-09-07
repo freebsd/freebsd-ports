@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Distributed, offline-first bug tracker embedded in git, with bridges
+WWW=		https://github.com/MichaelMure/git-bug
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

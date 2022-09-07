@@ -8,6 +8,7 @@ DISTFILES_i386=	${DISTNAME}-1lsb3.2.i486.rpm:i386
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CUPS filter for Seiko Epson Color Ink Jet Printers
+WWW=		https://download.ebz.epson.net/dsc/search/01/search/?OSC=LX
 
 # License does not allow redistribution
 LICENSE=		EPSON LGPL21

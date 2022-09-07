@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Session manager for tmux
+WWW=		https://github.com/tmux-python/tmuxp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	science python # quantum-computing
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for analysis, compilation, synthesis of quantum circuits
+WWW=		https://github.com/boschmitt/tweedledum
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

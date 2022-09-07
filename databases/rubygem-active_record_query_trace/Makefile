@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Print stack trace of all queries to the Rails log
+WWW=		https://github.com/brunofacca/active-record-query-trace
 
 LICENSE=	MIT
 

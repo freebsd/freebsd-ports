@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sort a file or merge sort multiple files
+WWW=		https://metacpan.org/release/File-Sort
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

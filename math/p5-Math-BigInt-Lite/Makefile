@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	What Math::BigInts are before they become big
+WWW=		https://metacpan.org/release/Math-BigInt-Lite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

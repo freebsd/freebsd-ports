@@ -4,6 +4,7 @@ CATEGORIES=	textproc devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Universal configuration library parser
+WWW=		https://github.com/vstakhov/libucl
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

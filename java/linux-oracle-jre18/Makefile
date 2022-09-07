@@ -7,6 +7,7 @@ DISTNAME=	jre-${JRE_VERSION}u${JRE_UPDATE_VERSION}-linux-${JAVA_DISTFILE_ARCH}
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JRE_VERSION} Runtime Environment for Linux
+WWW=		https://www.oracle.com/java/
 
 # Converted from RESTRICTED
 LICENSE=	jre

@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - live web plugin
+WWW=		http://live.vdr-developer.org/
 
 BROKEN=		does not build: 'tr1/functional' file not found
 

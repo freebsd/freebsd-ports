@@ -5,6 +5,7 @@ MASTER_SITES=	http://untroubled.org/daemontools-encore/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools for managing Unix services
+WWW=		https://untroubled.org/daemontools-encore/
 
 LICENSE=	MIT
 

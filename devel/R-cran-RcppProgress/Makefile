@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Interruptible Progress Bar with OpenMP Support for C++ in R Packages
+WWW=		https://cran.r-project.org/web/packages/RcppProgress/
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Command-line monitor for Tor
+WWW=		https://nyx.torproject.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse a cron entry and check against current time
+WWW=		https://metacpan.org/release/DateTime-Cron-Simple
 
 USES=		perl5
 USE_PERL5=	configure

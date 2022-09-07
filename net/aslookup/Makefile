@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-beta${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Tool that searches the sequence of AS numbers
+WWW=		http://aslookup.bgpview.org/index-e.html
 
 CFLAGS+=	-DARINDB -DJPNICDB -DAPNICDB
 

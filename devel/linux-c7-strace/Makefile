@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	System call tracer (CentOS ${LINUX_DIST_VER})
+WWW=		https://sourceforge.net/projects/strace/
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libdw.so.1:devel/linux-c7-elfutils-libs
 

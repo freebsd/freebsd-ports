@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Template Toolkit view class for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-View-TT
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

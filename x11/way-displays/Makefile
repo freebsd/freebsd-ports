@@ -4,6 +4,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Auto Manage Your Wayland Displays
+WWW=		https://github.com/alex-courtis/way-displays
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

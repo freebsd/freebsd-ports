@@ -6,6 +6,7 @@ CATEGORIES=	databases net
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Tools for MongoDB
+WWW=		https://github.com/mongodb/mongo-tools
 
 LICENSE=	APACHE20
 

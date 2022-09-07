@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.update.uu.se/~zrajm/programs/ratmen/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program for displaying a menu in a window
+WWW=		http://www.update.uu.se/~zrajm/programs/
 
 USES=		perl5 xorg
 USE_XORG=	x11

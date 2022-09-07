@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Modified Decoder for RAW files from digital cameras
+WWW=		http://www.cybercom.net/~dcoffin/dcraw/
 
 LICENSE=	GPLv2
 

@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Make the task of managing files over HTTP-based protocols simple
+WWW=		https://dmc-docs.web.cern.ch/dmc-docs/davix.html
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

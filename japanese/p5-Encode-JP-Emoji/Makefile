@@ -6,6 +6,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Emoji encodings and cross-mapping tables
+WWW=		https://metacpan.org/release/Encode-JP-Emoji
 
 USES=		perl5
 USE_PERL5=	configure

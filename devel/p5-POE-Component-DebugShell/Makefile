@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interactive peeking into a running POE application
+WWW=		https://metacpan.org/release/SUNGO/POE-Component-DebugShell-1.412
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

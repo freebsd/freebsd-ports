@@ -6,6 +6,7 @@ MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but challenging abstract shoot-em-up game
+WWW=		https://mbays.freeshell.org/kuklomenos/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

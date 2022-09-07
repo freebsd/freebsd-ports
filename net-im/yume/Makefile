@@ -6,6 +6,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Encrypted peer-to-peer IPv6 UDP messaging terminal
+WWW=		https://github.com/yamafaktory/yume
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT

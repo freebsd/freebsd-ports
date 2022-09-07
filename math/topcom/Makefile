@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computing triangulations of point configurations and oriented matroids
+WWW=		http://www.rambau.wm.uni-bayreuth.de/TOPCOM/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

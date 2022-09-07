@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to Musepack file information and APE tag fields
+WWW=		https://metacpan.org/release/Audio-Musepack
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

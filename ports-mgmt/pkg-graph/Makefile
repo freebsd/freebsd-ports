@@ -5,6 +5,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Graphviz generator for pkg
+WWW=		https://github.com/neosmart/pkg-graph
 
 LICENSE=	BSD2CLAUSE
 

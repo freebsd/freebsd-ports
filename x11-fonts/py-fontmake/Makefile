@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Compile fonts from sources to binary
+WWW=		https://github.com/googlei18n/fontmake
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Library for the Signal Private Group System
+WWW=		https://github.com/signalapp/zkgroup
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

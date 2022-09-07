@@ -5,6 +5,7 @@ MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/libpri/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C implementation of the Primary Rate ISDN specification
+WWW=		https://www.asterisk.org/downloads/libpri/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
 COMMENT=	Smallstep step-ca command line client
+WWW=		https://smallstep.com/cli/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

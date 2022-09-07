@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	GitHub Language detection
+WWW=		https://github.com/github/linguist
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

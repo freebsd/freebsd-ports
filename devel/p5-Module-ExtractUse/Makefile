@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find out what CPAN modules are used
+WWW=		https://metacpan.org/release/Module-ExtractUse
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

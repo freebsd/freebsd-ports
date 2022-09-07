@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	stdin@niklaas.eu
 COMMENT=	Python bindings for low-level FUSE API
+WWW=		https://bitbucket.org/nikratio/python-llfuse
 
 LICENSE=	LGPL20+
 

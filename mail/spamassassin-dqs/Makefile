@@ -5,6 +5,7 @@ CATEGORIES=		mail
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Real-Time DNSBL's that catch a bunch of additional spam
+WWW=		https://github.com/spamhaus/spamassassin-dqs/
 
 LICENSE=	APACHE20
 

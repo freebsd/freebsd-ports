@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	TeX to MathML converter designed with MediaWiki in mind
+WWW=		http://gva.noekeon.org/blahtexml/
 
 LICENSE=	BSD3CLAUSE
 

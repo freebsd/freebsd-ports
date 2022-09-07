@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple image glitcher for screen lockers
+WWW=		https://github.com/r00tman/corrupter
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

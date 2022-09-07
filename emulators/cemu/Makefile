@@ -6,6 +6,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	TI-84 Plus CE and TI-83 Premium CE calculator emulator
+WWW=		https://ce-programming.github.io/CEmu/
 
 LICENSE=	GPLv3
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl object-oriented methods for locking files
+WWW=		https://metacpan.org/release/IO-LockedFile
 
 USES=		perl5
 USE_PERL5=	configure

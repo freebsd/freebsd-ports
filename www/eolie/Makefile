@@ -5,6 +5,7 @@ MASTER_SITES=	https://adishatz.org/eolie/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple web browser for GNOME
+WWW=		https://wiki.gnome.org/Apps/Eolie
 
 LICENSE=	GPLv3+
 

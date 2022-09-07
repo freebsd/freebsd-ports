@@ -7,6 +7,7 @@ DISTNAME=	pure_eval-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Safely evaluate AST nodes without side effects
+WWW=		https://github.com/alexmojaki/pure_eval
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

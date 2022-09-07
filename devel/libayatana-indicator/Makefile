@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Ayatana Indicators Shared Library
+WWW=		https://github.com/AyatanaIndicators/libayatana-indicator
 
 LICENSE=	GPLv3
 

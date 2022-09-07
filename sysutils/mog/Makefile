@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Different take on the UNIX tool cat
+WWW=		https://github.com/witchard/mog/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

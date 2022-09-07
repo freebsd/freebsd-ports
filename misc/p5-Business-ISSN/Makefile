@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl extension for International Standard Serial Numbers
+WWW=		https://metacpan.org/release/Business-ISSN
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7MWVlSD
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	MeCab IPA dictionary meta-port
+WWW=		https://taku910.github.io/mecab/
 
 LICENSE=	NAIST ICOT
 LICENSE_COMB=	multi

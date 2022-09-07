@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Lexically warn about using the indirect object syntax
+WWW=		https://metacpan.org/release/indirect
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

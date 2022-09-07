@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to SQLite3 databases through the DBI
+WWW=		https://metacpan.org/release/DBD-SQLite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

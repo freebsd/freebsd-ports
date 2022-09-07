@@ -7,6 +7,7 @@ DISTNAME=	xlifepp-sources-v${DISTVERSION}-2018-05-09
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	XLiFE++: eXtended Library of Finite Elements in C++
+WWW=		https://uma.ensta-paristech.fr/soft/XLiFE++/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

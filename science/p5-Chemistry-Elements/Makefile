@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for working with Chemical Elements
+WWW=		https://metacpan.org/release/Chemistry-Elements
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

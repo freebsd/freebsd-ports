@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source port of Descent and Descent 2
+WWW=		https://www.dxx-rebirth.com/
 
 LICENSE=	GPLv3 PARALLAX
 LICENSE_COMB=	multi

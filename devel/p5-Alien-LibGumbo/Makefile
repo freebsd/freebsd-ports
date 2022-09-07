@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Gumbo parser library
+WWW=		https://metacpan.org/pod/Alien::LibGumbo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

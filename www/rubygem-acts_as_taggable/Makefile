@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Add tagging capabilities to your ActiveRecord objects
+WWW=		https://github.com/twoism/taggable
 
 NO_ARCH=	yes
 

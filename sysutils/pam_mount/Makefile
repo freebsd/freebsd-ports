@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME:S/_/-/}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PAM module that can mount volumes for a user session
+WWW=		http://pam-mount.sourceforge.net/
 
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	multi

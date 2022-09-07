@@ -5,6 +5,7 @@ MASTER_SITES=	CPAN
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to convert Japanese chars
+WWW=		https://metacpan.org/release/Lingua-JA-Regular-Unicode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Lightweight, extensible validation tool for Python dictionaries
+WWW=		https://github.com/pyeve/cerberus
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Web-based user interface for the flow-tools NetFlow data
+WWW=		http://flowviewer.net/
 
 RUN_DEPENDS=	p5-GD-Graph>=0:graphics/p5-GD-Graph \
 		rrdtool:databases/rrdtool \

@@ -5,6 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Editor allowing you to focus on your writing
+WWW=		https://github.com/lainsce/quilter
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

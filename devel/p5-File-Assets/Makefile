@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module to Manage .css and .js assets
+WWW=		https://metacpan.org/release/File-Assets
 
 BUILD_DEPENDS=	p5-Test-Memory-Cycle>0:devel/p5-Test-Memory-Cycle \
 	p5-Directory-Scratch>0:devel/p5-Directory-Scratch \

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	akoshibe@gmail.com
 COMMENT=	Component-based Software-defined Networking Framework
+WWW=		http://osrg.github.io/ryu/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

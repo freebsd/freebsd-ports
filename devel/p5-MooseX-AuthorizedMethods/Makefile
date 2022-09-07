@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Syntax sugar for authorized methods
+WWW=		https://metacpan.org/release/MooseX-AuthorizedMethods
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

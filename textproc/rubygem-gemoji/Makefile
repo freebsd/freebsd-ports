@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Emoji assets
+WWW=		https://github.com/github/gemoji
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl5 interface to SSL sockets
+WWW=		https://metacpan.org/release/IO-Socket-SSL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

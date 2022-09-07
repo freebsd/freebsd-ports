@@ -6,6 +6,7 @@ CATEGORIES=		sysutils
 
 MAINTAINER=		rainbow@sanitylinux.org
 COMMENT=		Feature-rich ZFS zvol management tool
+WWW=		https://github.com/RainbowHackerHorse/vzvol
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

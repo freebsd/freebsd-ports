@@ -7,6 +7,7 @@ DISTNAME=	avro-c-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C library for Apache Avro
+WWW=		https://avro.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

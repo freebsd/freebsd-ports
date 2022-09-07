@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	MIDI file player that teaches how to play the piano
+WWW=		https://www.pianobooster.org/index.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gplv3.txt

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module for symbolic and ls(1)-like chmod modes
+WWW=		https://metacpan.org/dist/File-chmod
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

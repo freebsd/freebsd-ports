@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Setup signal handler which dumps backtrace of running threads
+WWW=		https://github.com/frsyuki/sigdump
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

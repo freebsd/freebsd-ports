@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generates a static plist for a port
+WWW=		http://personalpages.tds.net/~jwbacon/Ports
 
 LICENSE=	BSD2CLAUSE
 

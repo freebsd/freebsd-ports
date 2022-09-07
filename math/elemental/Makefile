@@ -6,6 +6,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Dense and sparse linear algebra, conic optimization, lattice reduction
+WWW=		https://github.com/LLNL/Elemental
 
 LICENSE=	BSD2CLAUSE
 

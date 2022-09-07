@@ -6,6 +6,7 @@ DISTFILES=	${PORTVERSION}.tar.gz
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Simplistic and secure Gemini server
+WWW=		https://tildegit.org/solene/vger
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

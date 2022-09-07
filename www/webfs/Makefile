@@ -6,6 +6,7 @@ MASTER_SITES=	http://dl.bytesex.org/releases/webfs/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple http server for static content
+WWW=		https://linux.bytesex.org/misc/webfs.html
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
 

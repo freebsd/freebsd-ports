@@ -6,6 +6,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	All-in-one Internet mail library
+WWW=		https://www.vmime.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

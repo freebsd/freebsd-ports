@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated text editor for code, markup and prose
+WWW=		https://www.sublimetext.com
 
 USES=		desktop-file-utils gnome linux tar:bzip2
 USE_LINUX=	xorglibs gtk2

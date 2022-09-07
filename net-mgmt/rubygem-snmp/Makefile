@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	SNMP library for Ruby
+WWW=		https://rubygems.org/gems/snmp
 
 NO_ARCH=	yes
 

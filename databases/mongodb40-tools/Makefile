@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	dev.ashevchuk@gmail.com
 COMMENT=	Tools for MongoDB
+WWW=		https://github.com/mongodb/mongo-tools
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GNOME Edy Viewer
+WWW=		http://hito.music.coocan.jp/pasori/gedyviewer.html
 
 LICENSE=	GPLv2
 

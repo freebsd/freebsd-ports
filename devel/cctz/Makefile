@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	z7dr6ut7gs@snkmail.com
 COMMENT=	C++ library for handling dates, times, and time zones
+WWW=		https://github.com/google/cctz
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

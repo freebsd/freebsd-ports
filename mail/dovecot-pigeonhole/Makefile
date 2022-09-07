@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Sieve plugin for the Dovecot 'deliver' LDA and LMTP
+WWW=		https://wiki2.dovecot.org/Pigeonhole
 
 LICENSE=	LGPL21
 

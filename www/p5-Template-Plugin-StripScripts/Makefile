@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
 COMMENT=	TT plugin to filter HTML against XSS
+WWW=		https://metacpan.org/release/Template-Plugin-StripScripts
 
 LICENSE=	MIT
 

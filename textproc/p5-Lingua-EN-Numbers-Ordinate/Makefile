@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Go from cardinal number (3) to ordinal ("3rd")
+WWW=		https://metacpan.org/release/Lingua-EN-Numbers-Ordinate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

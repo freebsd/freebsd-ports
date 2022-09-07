@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	System tray icon support
+WWW=		https://sw4me.com/wiki/Tktray
 
 USES+=		tk:tea xorg
 USE_XORG=	x11 xext

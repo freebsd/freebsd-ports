@@ -5,6 +5,7 @@ CATEGORIES=		shells
 
 MAINTAINER=		sgniazdowski@gmail.com
 COMMENT=		Curses-based tools for Zshell, e.g. multi-word history searcher
+WWW=		https://github.com/psprint/zsh-navigation-tools
 
 LICENSE=		GPLv3 MIT
 LICENSE_COMB=		dual

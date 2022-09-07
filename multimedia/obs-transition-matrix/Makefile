@@ -6,6 +6,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OBS Studio Plugin: OBS Transition Matrix
+WWW=		https://github.com/admshao/obs-transition-matrix
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

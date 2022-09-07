@@ -7,6 +7,7 @@ DISTNAME=	stack_data-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extract data from python stack frames and tracebacks for informative displays
+WWW=		https://github.com/alexmojaki/stack_data
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

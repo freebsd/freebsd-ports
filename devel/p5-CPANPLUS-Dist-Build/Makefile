@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CPANPLUS plug-in to use Module-Build
+WWW=		https://metacpan.org/release/BINGOS/CPANPLUS-Dist-Build-0.88
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

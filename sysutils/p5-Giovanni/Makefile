@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	PERL-based software deployment tool inspired by capistrano
+WWW=		https://metacpan.org/release/Giovanni
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

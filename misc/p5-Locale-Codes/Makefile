@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 module providing access to ISO3166 and ISO639 Country Codes
+WWW=		https://metacpan.org/release/Locale-Codes
 
 LICENSE=	ART10
 

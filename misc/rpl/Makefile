@@ -5,6 +5,7 @@ MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix text replacement utility
+WWW=		http://www.laffeycomputer.com/rpl.html
 
 LICENSE=	GPLv2
 

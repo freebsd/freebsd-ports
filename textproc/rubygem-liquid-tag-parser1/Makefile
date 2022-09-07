@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse liquid tags easily
+WWW=		https://github.com/envygeeks/liquid-tag-parser
 
 LICENSE=	MIT
 

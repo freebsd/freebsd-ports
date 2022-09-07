@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	john@saltant.com
 COMMENT=	Simple multicast testing application for UNIX
+WWW=		https://github.com/troglobit/mcjoin
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

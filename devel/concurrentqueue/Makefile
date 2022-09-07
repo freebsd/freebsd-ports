@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast C++11 multi-producer multi-consumer lock-free concurrent queue
+WWW=		https://github.com/cameron314/concurrentqueue
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

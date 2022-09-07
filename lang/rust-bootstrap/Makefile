@@ -12,6 +12,7 @@ DIST_SUBDIR=	rust
 
 MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Create bootstrap compilers for building lang/rust
+WWW=		https://www.rust-lang.org/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

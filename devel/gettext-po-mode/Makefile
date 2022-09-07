@@ -3,6 +3,7 @@ PORTREVISION=	1
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	GNU gettext po-mode for emacs
+WWW=		https://www.gnu.org/software/gettext/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../COPYING

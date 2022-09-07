@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Minimalist protocol buffer decoder and encoder in C++
+WWW=		https://github.com/mapbox/protozero
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

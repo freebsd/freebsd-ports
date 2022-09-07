@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast handling of sets containing integer spans
+WWW=		https://metacpan.org/release/Set-IntSpan-Fast
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Types>=0:devel/p5-Data-Types

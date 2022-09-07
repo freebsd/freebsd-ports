@@ -7,6 +7,7 @@ MASTER_SITES=	http://static.blitzed.org/www.blitzed.org/bopm/files/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open proxy and DNSBL monitor designed for use with ircds
+WWW=		http://wiki.blitzed.org/BOPM
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/log/bopm

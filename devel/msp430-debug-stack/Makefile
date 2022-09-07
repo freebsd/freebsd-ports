@@ -12,6 +12,7 @@ EXTRACT_ONLY=	MSPDebugStack_OS_Package_${PORTVERSION:S/./_/g}.zip
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	TI MSP430 debugging interface library
+WWW=		http://www.ti.com/tool/mspds
 
 LICENSE=	BSD3CLAUSE
 

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	CloneCD to ISO converter
+WWW=		https://sourceforge.net/projects/ccd2iso/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

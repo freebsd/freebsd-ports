@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add post_multipart to HTTP::Tiny
+WWW=		https://metacpan.org/release/HTTP-Tiny-Multipart
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@saltant.com
 COMMENT=	GSSAPI Negotiate HTTP authentication for Flask routes
+WWW=		https://github.com/mkomitee/flask-kerberos
 
 LICENSE=	BSD2CLAUSE
 

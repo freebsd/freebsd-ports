@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.filesystems.org/pub/fistgen/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language for describing stackable filesystems
+WWW=		http://www.filesystems.org/
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes

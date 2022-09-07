@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/adrianlopezroche/${PORTNAME}/releases/download/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Program for identifying or deleting duplicate files
+WWW=		https://github.com/adrianlopezroche/fdupes/
 
 LICENSE=	MIT
 

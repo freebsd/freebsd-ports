@@ -5,6 +5,7 @@ MASTER_SITES=	SF/phpgroupware/phpgroupware/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Web based GroupWare system
+WWW=		https://phpgroupware.org/
 
 USES=		php:mod tar:bzip2
 

@@ -4,6 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	emikulic@gmail.com
 COMMENT=	Network statistics gatherer and reporter
+WWW=		https://unix4lyfe.org/darkstat/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL

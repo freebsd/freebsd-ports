@@ -7,6 +7,7 @@ DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Fast data collector
+WWW=		https://github.com/awslabs/flowgger
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

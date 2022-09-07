@@ -4,6 +4,7 @@ CATEGORIES=	sysutils kde-applications
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	KDE Partition Manager core library
+WWW=		https://invent.kde.org/system/kpmcore
 
 LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt
 

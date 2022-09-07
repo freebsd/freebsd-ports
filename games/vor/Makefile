@@ -6,6 +6,7 @@ MASTER_SITES=	https://jasonwoof.com/downloads/vor/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Dodge the rocks until you die
+WWW=		https://sametwice.com/vor
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

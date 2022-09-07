@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser
+WWW=		http://www.opera.com/
 
 RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 

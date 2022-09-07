@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implementation of murmur3 hashing function
+WWW=		https://github.com/funny-falcon/murmurhash3-ruby
 
 LICENSE=	MIT
 

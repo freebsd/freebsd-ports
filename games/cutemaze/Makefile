@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Simple, top-down game in which mazes are randomly generated
+WWW=		https://gottcode.org/cutemaze/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

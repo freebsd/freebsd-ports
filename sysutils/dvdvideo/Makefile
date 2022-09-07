@@ -9,6 +9,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Video DVD backup tool
+WWW=		http://bblank.thinkmo.de/blog/new-software-python-dvdvideo
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

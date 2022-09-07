@@ -5,6 +5,7 @@ CATEGORIES=	sysutils security
 
 MAINTAINER=	jt@ixsystems.com
 COMMENT=	Qt sudo front-end
+WWW=		https://github.com/trueos/qsudo
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE

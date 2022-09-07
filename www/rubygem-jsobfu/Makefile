@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Javascript code obfuscator
+WWW=		https://github.com/rapid7/jsobfu
 
 LICENSE=	BSD3CLAUSE
 

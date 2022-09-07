@@ -7,6 +7,7 @@ PATCHFILES=	e97d259b1cda3c1342c9cb472d31230e50b0776d.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	FUSE-based fault injection filesystem
+WWW=		https://github.com/ligurio/unreliablefs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

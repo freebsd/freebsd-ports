@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse vFile formatted files into data structures
+WWW=		https://metacpan.org/release/Text-vFile-asData
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

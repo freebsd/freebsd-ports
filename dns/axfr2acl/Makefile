@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.gnu.org.ua/pub/release/dnstools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transfer A records from DNS zones and convert to BIND ACLs
+WWW=		https://www.gnu.org.ua/software/dnstools/axfr2acl.html
 
 LICENSE=	GPLv3+
 

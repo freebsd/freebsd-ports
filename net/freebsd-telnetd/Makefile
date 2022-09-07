@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	FreeBSD telnetd
+WWW=		https://github.com/cschuber/freebsd-telnetd
 
 LICENSE=	BSD3CLAUSE
 

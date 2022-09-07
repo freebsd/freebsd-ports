@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Biloba/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Strategy board game for 2 to 4 players
+WWW=		http://biloba.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 USES=		gmake sdl

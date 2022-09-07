@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fasttracker II clone
+WWW=		https://github.com/8bitbubsy/ft2-clone
 
 LICENSE=	BSD3CLAUSE CC-BY-NC-SA-4.0
 LICENSE_COMB=	multi

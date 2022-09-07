@@ -9,6 +9,7 @@ DIST_SUBDIR=	glpng
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library to easily load PNG files as an OpenGL textures
+WWW=		http://www.wyatt100.freeserve.co.uk/download.htm
 
 LICENSE=	ZLIB
 

@@ -8,6 +8,7 @@ DIST_SUBDIR=	erlang
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang interface for Java
+WWW=		https://www.erlang.org/
 
 LICENSE=	APACHE20
 

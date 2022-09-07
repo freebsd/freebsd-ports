@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	6
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Collect logs locally and send to remote logstash
+WWW=		https://www.elastic.co/products/beats/
 
 LICENSE=	APACHE20
 

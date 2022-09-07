@@ -5,6 +5,7 @@ CATEGORIES=	deskutils mail
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	System tray new mail notification for Thunderbird
+WWW=		https://github.com/gyunaev/birdtray
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

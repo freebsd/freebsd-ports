@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Cryptography Toolkit
+WWW=		https://pycrypto.org
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

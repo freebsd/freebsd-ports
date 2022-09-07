@@ -6,6 +6,7 @@ CATEGORIES=	databases math graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Wrapper library around CGAL for PostGIS
+WWW=		http://www.sfcgal.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

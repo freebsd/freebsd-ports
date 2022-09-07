@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	vCard view class for Catalyst
+WWW=		https://metacpan.org/release/Catalyst-View-vCard
 
 RUN_DEPENDS=	p5-Text-vCard>0:textproc/p5-Text-vCard
 

@@ -6,6 +6,7 @@ CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Open-source distributed time series database
+WWW=		https://influxdata.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

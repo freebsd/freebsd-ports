@@ -11,6 +11,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ZOO archive extractor
+WWW=		http://freshmeat.sourceforge.net/projects/unzoo/
 
 LICENSE=	PD
 

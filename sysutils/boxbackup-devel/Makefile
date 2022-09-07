@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${SVNVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source, completely automatic on-line backup system
+WWW=		https://www.boxbackup.org/
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual

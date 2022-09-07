@@ -6,6 +6,7 @@ MASTER_SITE_SUBDIR=	17509/eng
 
 MAINTAINER=	freebsd@intel.com
 COMMENT=	Gigabit FreeBSD Base Drivers for Intel(R) Ethernet
+WWW=		https://downloadcenter.intel.com
 
 BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
 

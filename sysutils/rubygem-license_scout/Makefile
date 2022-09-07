@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Discover license files of a project's dependencies
+WWW=		https://github.com/chef/license_scout
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

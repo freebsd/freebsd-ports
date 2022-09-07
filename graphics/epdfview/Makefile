@@ -9,6 +9,7 @@ MASTER_SITES=	FRUGALWARE/xapps-extra/${PORTNAME} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight PDF document viewer
+WWW=		http://www.emma-soft.com/projects/epdfview/
 
 LICENSE=	GPLv2
 

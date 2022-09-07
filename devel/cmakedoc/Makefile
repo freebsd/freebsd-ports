@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Command-line tool to read CMake documentation
+WWW=		https://github.com/agateau/cmakedoc
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

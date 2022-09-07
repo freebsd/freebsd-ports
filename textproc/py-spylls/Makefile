@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Hunspell ported to pure Python
+WWW=		https://pypi.org/project/spylls/
 
 LICENSE=	MPL20
 

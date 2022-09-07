@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	alex.deiter@gmail.com
 COMMENT=	Generate, insert and update HTML Table of Contents
+WWW=		https://metacpan.org/release/HTML-Toc
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Test-Differences>=0:devel/p5-Test-Differences \

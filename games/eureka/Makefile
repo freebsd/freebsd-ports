@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	kalten@gmx.at
 COMMENT=	Map editor for various Doom-derived games
+WWW=		http://eureka-editor.sourceforge.net/
 
 LICENSE=	GPLv2+
 

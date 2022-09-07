@@ -6,6 +6,7 @@ PKGNAMESUFFIX=  2
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	YANG data modeling language library, version 2
+WWW=		https://github.com/CESNET/libyang
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

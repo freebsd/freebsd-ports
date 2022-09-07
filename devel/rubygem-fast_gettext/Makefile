@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast, memory-efficient and threadsafe GetText for Ruby
+WWW=		https://github.com/grosser/fast_gettext
 
 LICENSE=	MIT
 

@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	R support for Emacsen
+WWW=		https://ess.r-project.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Extensions on top of GTK-sharp
+WWW=		http://gitorious.org/gtk-sharp-beans
 
 LICENSE=	LGPL21
 

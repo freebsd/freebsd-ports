@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Data::FormValidator constraints for dates and times
+WWW=		https://metacpan.org/release/Data-FormValidator-Constraints-DateTime
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

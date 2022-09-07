@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Helps for locating free UIDs
+WWW=		https://metacpan.org/release/Sys-User-UIDhelper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

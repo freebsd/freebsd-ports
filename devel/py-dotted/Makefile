@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Access dicts and lists with a dotted path notation
+WWW=		https://github.com/carlosescri/DottedDict/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Enlightenment DR16 window manager
+WWW=		https://www.enlightenment.org/p.php?p=about/e16
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

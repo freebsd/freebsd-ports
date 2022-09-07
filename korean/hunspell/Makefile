@@ -4,6 +4,7 @@ CATEGORIES=	korean textproc
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Korean hunspell dictionaries
+WWW=		https://spellcheck-ko.github.io
 
 LICENSE=	GPLv2+ LGPL21+ MPL11
 LICENSE_COMB=	dual

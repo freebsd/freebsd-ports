@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Configurable MTA based on the python-slimta libraries
+WWW=		https://www.slimta.org/
 
 LICENSE=	MIT
 

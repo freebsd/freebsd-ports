@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/TimothyGu/${PORTNAME}/releases/download/v${DIST
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Internet Low Bit Rate codec (RFC3951)
+WWW=		https://github.com/TimothyGu/libilbc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

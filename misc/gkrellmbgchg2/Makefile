@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.bender-suhl.de/stefan/comp/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for GKrellM, which changes the desktop's background image
+WWW=		http://www.bender-suhl.de/stefan/english/comp/gkrellmbgchg.html
 
 LICENSE=	GPLv2
 

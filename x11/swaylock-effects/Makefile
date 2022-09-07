@@ -8,6 +8,7 @@ PATCHFILES+=	ea4b63d8fff3.patch:-p1 # https://github.com/mortie/swaylock-effects
 PATCHFILES+=	17fea65e8c99.patch:-p1 # https://github.com/mortie/swaylock-effects/pull/38
 
 COMMENT=	Screen locker for Wayland with fancy effects
+WWW=		https://github.com/mortie/swaylock-effects
 
 MASTERDIR=	${.CURDIR}/../swaylock
 DESCR=		${.CURDIR}/pkg-descr

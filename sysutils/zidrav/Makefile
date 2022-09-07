@@ -7,6 +7,7 @@ DISTNAME=	zidrav4unix-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	File corruption detection and repair program
+WWW=		https://sourceforge.net/projects/zidrav/
 
 LICENSE=	GPLv2
 

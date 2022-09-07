@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for the 'fog' gem to support Terremark vCloud
+WWW=		https://github.com/fog/fog-terremark
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

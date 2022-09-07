@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Remove accents from a string
+WWW=		https://metacpan.org/release/Text-Unaccent
 
 LICENSE=	GPLv2
 

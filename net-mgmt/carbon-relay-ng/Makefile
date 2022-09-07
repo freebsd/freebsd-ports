@@ -6,6 +6,7 @@ CATEGORIES=		net-mgmt
 
 MAINTAINER=		a.andersson.thn@gmail.com
 COMMENT=		Go implementation of carbonapi
+WWW=		https://github.com/graphite-ng/carbon-relay-ng
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

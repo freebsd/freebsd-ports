@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/x11-themes/gtk-nodoka-engine/
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	GTK nodoka engine and themes
+WWW=		https://pagure.io/nodoka-theme
 
 OPTIONS_DEFINE=	ANIMATION ANIMATIONTOLEFT
 ANIMATION_DESC=		Animation support

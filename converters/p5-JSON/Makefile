@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to convert to JSON (JavaScript Object Notation)
+WWW=		https://metacpan.org/release/JSON
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

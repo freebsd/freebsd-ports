@@ -6,6 +6,7 @@ DIST_SUBDIR=	enlightenment
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive Image Viewer Using EFL
+WWW=		https://www.enlightenment.org/about-ephoto
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

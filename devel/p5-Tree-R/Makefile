@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Perl extension for the Rtree data structure and algorithms
+WWW=		https://metacpan.org/release/Tree-R
 
 USES=		perl5
 USE_PERL5=	configure

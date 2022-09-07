@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manipulate db(3)'s btree(3) and hash(3) databases - NetBSD port
+WWW=		http://cvsweb.netbsd.org/bsdweb.cgi/src/usr.bin/db/
 
 LICENSE=	BSD4CLAUSE
 

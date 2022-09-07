@@ -8,6 +8,7 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache 2.x http IRIs module
+WWW=		https://www.w3.org/2003/06/mod_fileiri/
 
 #LICENSE=	AL11
 

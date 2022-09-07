@@ -5,6 +5,7 @@ MASTER_SITES=	http://welz.org.za/projects/since/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View the end of a file like tail(1), but save state between sessions
+WWW=		http://welz.org.za/projects/since
 
 LICENSE=	GPLv3
 

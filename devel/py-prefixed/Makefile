@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Prefixed alternative numeric library
+WWW=		https://github.com/Rockhopper-Technologies/prefixed
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

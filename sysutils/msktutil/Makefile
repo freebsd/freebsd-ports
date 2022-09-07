@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Utility to manage Active Directory interoperability
+WWW=		https://github.com/msktutil/msktutil
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

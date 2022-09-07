@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Set of LV2 plugins
+WWW=		https://calf-studio-gear.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for managing XFS filesystems
+WWW=		http://oss.sgi.com/projects/xfs/
 
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	multi

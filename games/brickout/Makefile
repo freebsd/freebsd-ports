@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/agenda/brickout/src/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Ball-and-paddle game
+WWW=		http://www.newbreedsoftware.com/brickout/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

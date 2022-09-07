@@ -7,6 +7,7 @@ MASTER_SITES=	PACKETSTORM/groups/thc \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure data deletion toolkit
+WWW=		https://www.thc.org/
 
 LICENSE=	GPLv2 # mentioned in manpages
 

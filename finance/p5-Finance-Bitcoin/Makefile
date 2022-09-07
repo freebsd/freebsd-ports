@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl interface to a bitcoin instance
+WWW=		https://metacpan.org/release/Finance-Bitcoin
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-JSON-RPC>=0.96:devel/p5-JSON-RPC \

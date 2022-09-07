@@ -8,6 +8,7 @@ DISTNAME=	VictorMonoAll
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Programming font with cursive italics and ligatures
+WWW=		https://rubjo.github.io/victor-mono/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

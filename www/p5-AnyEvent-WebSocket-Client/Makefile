@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	WebSocket client for AnyEvent
+WWW=		https://github.com/plicease/AnyEvent-WebSocket-Client
 
 LICENSE=	ART10
 

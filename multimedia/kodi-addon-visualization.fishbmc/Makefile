@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Fische visualizer for Kodi
+WWW=		https://github.com/xbmc/visualization.fishbmc
 
 LICENSE=	GPLv2+
 

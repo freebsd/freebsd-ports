@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@saltant.com
 COMMENT=	Cryptographic library for Python
+WWW=		https://www.pycryptodome.org/
 
 LICENSE=	PD BSD2CLAUSE APACHE20
 LICENSE_COMB=	multi

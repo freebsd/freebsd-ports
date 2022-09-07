@@ -7,6 +7,7 @@ DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphs-viewer for GraphViz files
+WWW=		https://extragear.kde.org/apps/kgraphviewer/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

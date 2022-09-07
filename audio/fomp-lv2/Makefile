@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen
+WWW=		https://drobilla.net/software/fomp.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

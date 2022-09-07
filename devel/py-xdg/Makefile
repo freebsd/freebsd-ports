@@ -7,6 +7,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python library to access freedesktop.org standards
+WWW=		https://freedesktop.org/Software/pyxdg
 
 LICENSE=	LGPL20
 

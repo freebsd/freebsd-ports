@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactively select and save sections of an audio file
+WWW=		http://rawrec.sourceforge.net/soundgrab/
 
 LICENSE=	GPLv2
 

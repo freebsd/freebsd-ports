@@ -6,6 +6,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	On-screen keyboard for Wayland
+WWW=		https://gitlab.gnome.org/World/Phosh/squeekboard
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

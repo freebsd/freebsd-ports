@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for converting XML hash structures into plain text
+WWW=		https://metacpan.org/release/XML-Code
 
 USES=		perl5
 USE_PERL5=	configure

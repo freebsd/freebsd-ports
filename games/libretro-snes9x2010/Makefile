@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Snes9x - Portable Super Nintendo emulator (1.52)
+WWW=		https://github.com/libretro/snes9x2010
 
 # Commercial users must seek permission from copyright holders.
 LICENSE=	PS

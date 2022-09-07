@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Small utility to convert a python dictionary into an XML string
+WWW=		https://github.com/delfick/python-dict2xml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

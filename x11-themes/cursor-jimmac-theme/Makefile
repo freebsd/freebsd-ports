@@ -7,6 +7,7 @@ DISTNAME=	Jimmac
 
 MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	Beautiful Jimmac X cursor themes
+WWW=		http://jimmac.musichall.cz/themes.php?skin=7
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DISTNAME=	microdns-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	mDNS library focused on being simple and cross-platform
+WWW=		https://github.com/videolabs/libmicrodns
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

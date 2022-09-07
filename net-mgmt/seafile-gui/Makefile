@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Open Source Cloud Storage (Client)
+WWW=		https://github.com/haiwen/seafile
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

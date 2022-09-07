@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DWave: API for incorporating the D-Wave system as a sampler
+WWW=		https://github.com/dwavesystems/dwave-system
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

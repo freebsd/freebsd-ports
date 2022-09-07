@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Computation utilities and interactive calculator compatible
+WWW=		https://github.com/skontar/cvss
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${FILESDIR}/LICENSE

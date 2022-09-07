@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	Client and server side XMLRPC implementation
+WWW=		https://metacpan.org/release/XMLRPC-Lite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

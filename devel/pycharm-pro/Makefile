@@ -7,6 +7,7 @@ DISTNAME=	pycharm-professional-${PORTVERSION}
 
 MAINTAINER=	guido@kollerie.com
 COMMENT=	JetBrains PyCharm Professional Edition IDE
+WWW=		https://www.jetbrains.com/pycharm/
 
 LICENSE=	PyCharm-Professional
 LICENSE_NAME=	Subscription license agreement for business and organizations

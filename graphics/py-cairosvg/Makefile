@@ -7,6 +7,7 @@ DISTNAME=	CairoSVG-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple SVG Converter based on Cairo
+WWW=		https://www.courtbouillon.org/cairosvg
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

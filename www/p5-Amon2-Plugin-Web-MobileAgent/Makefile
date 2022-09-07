@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of HTTP::MobileAgent plugin for Amon2
+WWW=		https://metacpan.org/release/TOKUHIROM/Amon2-Plugin-Web-MobileAgent-0.09
 
 RUN_DEPENDS=	\
 	p5-Amon2>=3.66:www/p5-Amon2 \

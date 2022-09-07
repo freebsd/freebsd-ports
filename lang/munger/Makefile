@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Static lisp interpreter with text processing abilities
+WWW=		http://www.mammothcheese.ca/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

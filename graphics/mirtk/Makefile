@@ -7,6 +7,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Medical Image Registration ToolKit (MIRTK)
+WWW=		https://mirtk.github.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

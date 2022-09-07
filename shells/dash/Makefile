@@ -5,6 +5,7 @@ MASTER_SITES=	http://gondor.apana.org.au/~herbert/dash/files/
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	POSIX-compliant implementation of /bin/sh
+WWW=		http://gondor.apana.org.au/~herbert/dash/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

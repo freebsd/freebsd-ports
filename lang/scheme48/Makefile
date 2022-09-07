@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.s48.org/${PORTVERSION}/
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Scheme Underground's implementation of R5RS
+WWW=		https://www.s48.org
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi

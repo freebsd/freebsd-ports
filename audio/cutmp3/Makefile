@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.puchalla-online.de/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast command line MP3 editor
+WWW=		https://www.puchalla-online.de/cutmp3.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Quickly navigate your file system
+WWW=		https://github.com/bertoldia/files-menu
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

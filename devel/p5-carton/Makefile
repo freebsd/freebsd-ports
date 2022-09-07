@@ -9,6 +9,7 @@ DISTNAME=	Carton-v${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module dependency manager
+WWW=		https://metacpan.org/release/Carton
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

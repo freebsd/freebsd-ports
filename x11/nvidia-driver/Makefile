@@ -23,6 +23,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	danfe@FreeBSD.org
 COMMENT?=	NVidia graphics card binary drivers for hardware OpenGL rendering
+WWW=		https://www.nvidia.com/object/unix.html
 
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manage Python errors with ease
+WWW=		https://github.com/sdispater/crashtest
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

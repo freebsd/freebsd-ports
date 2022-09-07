@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for working with IO::Handle like objects
+WWW=		https://metacpan.org/release/IO-Handle-Util
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

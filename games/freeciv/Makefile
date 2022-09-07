@@ -6,6 +6,7 @@ MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Free turn-based multiplayer strategy
+WWW=		https://www.freeciv.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

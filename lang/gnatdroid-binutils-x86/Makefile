@@ -3,6 +3,7 @@ PKGNAMESUFFIX=	-x86
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infrastructure for C/Ada Android cross-compiler (x86)
+WWW=		http://www.dragonlace.net
 
 BRANCH2=	x86_32
 XCCTARGET=	i686-aux-linux-android

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	C Driver for MongoDB
+WWW=		https://www.mongodb.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

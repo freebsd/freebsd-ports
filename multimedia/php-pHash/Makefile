@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	PHP extension for the pHash perceptual hash library
+WWW=		https://phash.org/
 
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE

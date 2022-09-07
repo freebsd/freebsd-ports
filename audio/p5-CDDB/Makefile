@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	High-level interface to the Compact Disc Database
+WWW=		https://metacpan.org/release/CDDB
 
 USES=		perl5
 USE_PERL5=	configure

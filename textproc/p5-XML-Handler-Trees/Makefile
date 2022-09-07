@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PerlSAX handlers for building tree structures
+WWW=		https://metacpan.org/release/XML-Handler-Trees
 
 USES=		perl5 dos2unix
 USE_PERL5=	configure

@@ -6,6 +6,7 @@ DISTNAME=	rivet-${PORTVERSION}
 
 MAINTAINER=	jeff.lawson@flightaware.com
 COMMENT=	Embeds a Tcl interpreter in the Apache server
+WWW=		https://tcl.apache.org/rivet/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	QPACK compression library for use with HTTP/3
+WWW=		https://github.com/litespeedtech/ls-qpack
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

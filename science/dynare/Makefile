@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.dynare.org/release/source/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software platform for handling a wide class of economic models
+WWW=		https://www.dynare.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	go-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Protocol Buffers for Go with Gadgets
+WWW=		https://github.com/gogo/protobuf
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

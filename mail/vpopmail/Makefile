@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy virtual domain and authentication package for use with qmail
+WWW=		https://inter7.com/vpopmail/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

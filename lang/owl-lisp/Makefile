@@ -5,6 +5,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional dialect of Scheme
+WWW=		https://github.com/aoh/owl-lisp/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

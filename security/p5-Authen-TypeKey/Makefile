@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	TypeKey authentication verification
+WWW=		https://metacpan.org/release/Authen-TypeKey
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

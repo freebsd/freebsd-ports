@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Open-source distributed storage service
+WWW=		https://garagehq.deuxfleurs.fr/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

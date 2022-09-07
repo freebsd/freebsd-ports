@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Library for generating documents in ePub format
+WWW=		http://libepubgen.sourceforge.net/
 
 LICENSE=	MPL20
 

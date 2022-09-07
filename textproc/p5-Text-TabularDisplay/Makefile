@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Display text in formatted table output
+WWW=		https://metacpan.org/release/Text-TabularDisplay
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

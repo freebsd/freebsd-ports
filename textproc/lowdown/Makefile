@@ -6,6 +6,7 @@ MASTER_SITES=	https://kristaps.bsd.lv/lowdown/snapshots/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple Markdown translator
+WWW=		https://kristaps.bsd.lv/lowdown/
 
 LICENSE=	ISCL
 

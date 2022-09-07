@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Simple interface for Google calculator
+WWW=		https://metacpan.org/release/WWW-Google-Calculator
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

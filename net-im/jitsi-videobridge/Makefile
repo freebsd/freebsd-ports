@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-videobridge
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	WebRTC compatible video router or SFU
+WWW=		https://jitsi.org/jitsi-videobridge
 
 LICENSE=	APACHE20
 
@@ -12,7 +13,6 @@ ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven/bin/mvn:devel/maven
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
-
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}

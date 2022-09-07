@@ -9,6 +9,7 @@ DISTFILES=	sphinx_book_theme-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bootstrap-based Sphinx theme from the PyData community
+WWW=		https://github.com/executablebooks/sphinx-book-theme
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

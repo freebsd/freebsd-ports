@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Full Factorials, Orthogonal Arrays and Base Utilities for DoE
+WWW=		https://CRAN.R-project.org/package=DoE.base
 
 LICENSE=	GPLv2+
 

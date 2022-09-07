@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.uni-due.de/~be0001/sctplib/download/
 
 MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	Socket API library for the SCTPLIB user-space SCTP implementation
+WWW=		https://www.uni-due.de/~be0001/sctplib/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

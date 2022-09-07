@@ -5,6 +5,7 @@ DIST_SUBDIR=	silq
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Silq from ETH Zuerich
+WWW=		https://silq.ethz.ch/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

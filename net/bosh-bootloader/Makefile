@@ -5,6 +5,7 @@ CATEGORIES=	net sysutils
 
 MAINTAINER=	dumbbell@FreeBSD.org
 COMMENT=	CLI for standing up CloudFoundry or Concourse on an IAAS
+WWW=		https://github.com/cloudfoundry/bosh-bootloader
 
 LICENSE=	APACHE20
 

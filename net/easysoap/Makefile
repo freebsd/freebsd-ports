@@ -7,6 +7,7 @@ DISTNAME=	EasySoap++-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ SOAP library based on Expat
+WWW=		http://easysoap.sourceforge.net/
 
 LICENSE=	LGPL21
 

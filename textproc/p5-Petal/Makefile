@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Template Attribute Language - TAL for Perl!
+WWW=		https://metacpan.org/release/Petal
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

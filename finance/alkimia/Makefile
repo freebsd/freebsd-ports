@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE financial data handling library
+WWW=		https://community.kde.org/Alkimia/libalkimia
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

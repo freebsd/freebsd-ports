@@ -7,6 +7,7 @@ DISTNAME=	DirectFB-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic development lightweight API
+WWW=		https://www.directfb.org/
 
 LICENSE=	LGPL21
 

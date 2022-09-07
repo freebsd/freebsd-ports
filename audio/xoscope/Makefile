@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Sound card oscilloscope
+WWW=		http://xoscope.sourceforge.net/
 
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/README

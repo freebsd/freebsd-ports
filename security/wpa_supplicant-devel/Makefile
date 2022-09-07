@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
+WWW=		https://w1.fi/wpa_supplicant/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber

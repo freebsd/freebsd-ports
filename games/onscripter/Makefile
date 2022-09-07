@@ -5,6 +5,7 @@ MASTER_SITES=	http://onscripter.osdn.jp/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	Visual novel engine compatible with NScripter
+WWW=		https://onscripter.osdn.jp/onscripter.html
 
 LICENSE=	GPLv2+
 

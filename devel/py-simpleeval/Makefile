@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple, safe single expression evaluator python library
+WWW=		https://github.com/danthedeckie/simpleeval
 
 LICENSE=	MIT
 

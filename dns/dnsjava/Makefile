@@ -5,6 +5,7 @@ CATEGORIES=	dns java
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of DNS in Java
+WWW=		http://www.xbill.org/dnsjava/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

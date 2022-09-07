@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/libesedb/releases/download/${PORTVERSION
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the ESEDB format
+WWW=		https://github.com/libyal/libesedb
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

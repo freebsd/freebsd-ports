@@ -7,6 +7,7 @@ DISTNAME=	uTidylib-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper for HTML Tidy
+WWW=		https://github.com/nijel/utidylib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

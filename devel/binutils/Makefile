@@ -7,6 +7,7 @@ MASTER_SITES=	SOURCEWARE/binutils/releases
 
 MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	GNU binary tools
+WWW=		https://www.gnu.org/software/binutils/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi

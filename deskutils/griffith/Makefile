@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight film collection manager
+WWW=		https://www.griffith.cc/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

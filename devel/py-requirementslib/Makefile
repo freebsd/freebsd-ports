@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for converting between pip-style and pipfile requirements
+WWW=		https://github.com/sarugaku/requirementslib
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	cheffo@freebsd-bg.org
 COMMENT=	Embed static files into a Go executable
+WWW=		https://github.com/rakyll/statik
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

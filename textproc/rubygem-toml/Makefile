@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	TOML parser
+WWW=		https://github.com/jm/toml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

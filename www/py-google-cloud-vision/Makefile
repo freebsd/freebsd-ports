@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cloud Vision API API client library
+WWW=		https://github.com/googleapis/python-vision
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	pre_commit_hooks-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Some out-of-the-box hooks for pre-commit
+WWW=		https://github.com/pre-commit/pre-commit-hooks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

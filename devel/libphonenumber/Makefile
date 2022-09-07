@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library for parsing, formatting, and validating phone numbers
+WWW=		https://github.com/google/libphonenumber
 
 LICENSE=	APACHE20
 

@@ -7,6 +7,7 @@ EXTRA_PATCHES=	${FILESDIR}/debian-bug-870150:-p1
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
+WWW=		https://bitbucket.org/skskeyserver/sks-keyserver/
 
 LICENSE=	GPLv2+
 

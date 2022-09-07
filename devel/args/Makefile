@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Header-only C++ argument parser library
+WWW=		https://github.com/Taywee/args
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

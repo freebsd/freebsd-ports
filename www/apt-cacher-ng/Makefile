@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 
 MAINTAINER=	keve@keve.hu
 COMMENT=	Specialized http/s proxy for caching software distribution sites
+WWW=		https://www.unix-ag.uni-kl.de/~bloch/acng/
 
 LICENSE=	EduardBloch
 LICENSE_NAME=	Eduard Bloch license

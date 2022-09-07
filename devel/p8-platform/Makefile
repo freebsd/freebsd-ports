@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	Platform support library used by libCEC and binary add-ons for Kodi
+WWW=		https://github.com/Pulse-Eight/platform
 
 LICENSE=	GPLv2+
 

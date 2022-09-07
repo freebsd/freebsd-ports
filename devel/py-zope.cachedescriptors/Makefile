@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Method and property caching decorators
+WWW=		https://pypi.org/project/zope.cachedescriptors/
 
 LICENSE=	ZPL21
 

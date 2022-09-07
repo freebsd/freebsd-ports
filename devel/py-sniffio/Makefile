@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sniff out which async library your code is running under
+WWW=		https://github.com/python-trio/sniffio
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

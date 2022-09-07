@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cross-platform automation tool
+WWW=		https://wiki.actiona.tools/doku.php
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

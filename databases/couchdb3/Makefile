@@ -7,6 +7,7 @@ DISTNAME=	apache-couchdb-${DISTVERSION}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	JSON document database with HTTP API and scalable multi-master sync
+WWW=		https://couchdb.apache.org/
 
 LICENSE=	APACHE20 BSD3CLAUSE ISCL OFL11 WTFPL
 LICENSE_COMB=	multi

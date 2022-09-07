@@ -9,6 +9,7 @@ PATCHFILES=	94c623b788462fadb3e292b918edc4e90adf4faa.patch:-p1
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Fast painting/scribbling program
+WWW=		http://mypaint.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

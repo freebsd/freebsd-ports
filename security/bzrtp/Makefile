@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	ZRTP support library (RFC 6189)
+WWW=		https://www.linphone.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

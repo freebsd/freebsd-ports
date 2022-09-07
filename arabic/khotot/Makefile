@@ -5,6 +5,7 @@ CATEGORIES=	arabic x11-fonts
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for popular Arabic font packages
+WWW=		http://www.arabeyes.org/project.php?proj=Khotot
 
 USES=		metaport
 

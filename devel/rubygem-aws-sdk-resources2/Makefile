@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	AWS SDK for Ruby Resources
+WWW=		https://github.com/aws/aws-sdk-ruby
 
 LICENSE=	APACHE20
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Platform independent file lock
+WWW=		https://github.com/benediktschmitt/py-filelock
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

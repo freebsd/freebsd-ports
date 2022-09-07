@@ -4,6 +4,7 @@ CATEGORIES=	audio multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bundle of free audio effects
+WWW=		https://github.com/michaelwillis/dragonfly-reverb
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

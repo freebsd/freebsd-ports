@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-ru-${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dal's Explanatory Dictionary
+WWW=		http://download.huzheng.org/ru/
 
 USES=		tar:bzip2
 

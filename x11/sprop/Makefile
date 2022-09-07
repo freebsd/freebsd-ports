@@ -5,6 +5,7 @@ MASTER_SITES=	https://dl.suckless.org/tools/
 
 MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Simple X property utility
+WWW=		https://tools.suckless.org/x/sprop
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	GTK search utility
+WWW=		https://docs.xfce.org/apps/catfish/start
 
 LICENSE=	GPLv3
 

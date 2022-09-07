@@ -8,6 +8,7 @@ DISTNAME=	SDL-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform multimedia development API
+WWW=		https://www.libsdl.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

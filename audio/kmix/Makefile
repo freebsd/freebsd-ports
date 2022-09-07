@@ -5,6 +5,7 @@ CATEGORIES=	audio kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Sound mixer for KDE
+WWW=		https://www.kde.org/applications/multimedia/kmix/
 
 LICENSE=	GPLv2
 

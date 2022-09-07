@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
+WWW=		https://www.love2d.org/
 
 LIB_DEPENDS=	libIL.so:graphics/devil \
 		libphysfs.so:devel/physfs \

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Vendor and platform neutral SDR support library (python binding)
+WWW=		https://github.com/pothosware/SoapySDR
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/../LICENSE_1_0.txt

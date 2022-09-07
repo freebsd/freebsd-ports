@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	Debugger for the Go programming language
+WWW=		https://github.com/go-delve/delve
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

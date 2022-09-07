@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${EDITDATE}-${EDITVERSION}
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Command line editor library
+WWW=		https://thrysoee.dk/editline/
 
 LICENSE=	BSD2CLAUSE
 

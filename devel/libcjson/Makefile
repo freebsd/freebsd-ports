@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ultralightweight JSON parser in ANSI C
+WWW=		https://github.com/DaveGamble/cJSON
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

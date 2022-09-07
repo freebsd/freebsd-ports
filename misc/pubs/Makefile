@@ -5,6 +5,7 @@ CATEGORIES=	misc python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Your bibliography on the command line
+WWW=		https://github.com/pubs/pubs
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license

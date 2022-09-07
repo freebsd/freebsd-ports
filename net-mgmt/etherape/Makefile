@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Graphical network traffic monitor tool modeled after Etherman
+WWW=		http://etherape.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

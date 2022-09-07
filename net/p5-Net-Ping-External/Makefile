@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Perl cross-platform interface to ICMP "ping" utilities
+WWW=		https://metacpan.org/release/Net-Ping-External
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

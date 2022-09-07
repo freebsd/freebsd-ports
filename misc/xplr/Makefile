@@ -6,6 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Hackable, minimal, fast TUI file explorer
+WWW=		https://xplr.dev
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

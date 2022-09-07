@@ -5,6 +5,7 @@ CATEGORIES=	sysutils java
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HFSExplorer read Mac-formatted harddisks and disk images
+WWW=		https://www.catacombae.org/hfsexplorer/
 
 LICENSE=	GPLv3
 

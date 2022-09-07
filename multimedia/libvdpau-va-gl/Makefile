@@ -9,6 +9,7 @@ PATCHFILES=	58a98e8a735f.patch:-p1
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	VDPAU driver with OpenGL/VAAPI backend
+WWW=		https://github.com/i-rinat/libvdpau-va-gl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

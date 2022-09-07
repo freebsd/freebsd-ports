@@ -8,6 +8,7 @@ DISTNAME=	prompt_toolkit-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for building powerful interactive command lines in Python
+WWW=		https://github.com/prompt-toolkit/python-prompt-toolkit
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for code clone detection
+WWW=		https://github.com/mibk/dupl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

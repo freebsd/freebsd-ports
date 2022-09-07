@@ -7,6 +7,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	RTSP bridge to Reolink IP cameras
+WWW=		https://github.com/thirtythreeforty/neolink
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

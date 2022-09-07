@@ -5,6 +5,7 @@ MASTER_SITES=	http://os.inf.tu-dresden.de/~adam/stowES/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stow enhancement script
+WWW=		https://os.inf.tu-dresden.de/~adam/stowES/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

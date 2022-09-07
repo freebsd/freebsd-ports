@@ -6,6 +6,7 @@ MASTER_SITES=	https://pdfgrep.org/download/
 
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Tool to search text in PDF files
+WWW=		https://pdfgrep.org
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

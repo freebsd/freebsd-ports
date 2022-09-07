@@ -8,6 +8,7 @@ DISTNAME=	zsnes${PORTVERSION:S/.//}src
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Intel x86 only Super Nintendo Entertainment System (SNES) Emulator
+WWW=		https://www.zsnes.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../docs/license.txt

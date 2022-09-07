@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Keybinding viewer for i3 and other programs
+WWW=		https://github.com/regolith-linux/remontoire
 
 LICENSE=	GPLv3
 

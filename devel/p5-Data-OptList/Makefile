@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse and validate simple name/value option pairs
+WWW=		https://metacpan.org/release/Data-OptList
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

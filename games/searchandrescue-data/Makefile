@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The data files for SearchAndRescue flight simulator
+WWW=		http://searchandrescue.sourceforge.net/
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

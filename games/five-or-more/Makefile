@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Form a line of 5 or more colored balls
+WWW=		https://wiki.gnome.org/Five%20or%20more
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

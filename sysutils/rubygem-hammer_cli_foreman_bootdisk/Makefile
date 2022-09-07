@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Foreman bootdisk commands for Hammer CLI
+WWW=		https://github.com/theforeman/hammer_cli_foreman_bootdisk
 
 LICENSE=	GPLv3+
 

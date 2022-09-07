@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro implementation of "Rick Dangerous"
+WWW=		https://github.com/libretro/xrick-libretro
 
 LICENSE=	GPLv2
 

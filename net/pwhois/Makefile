@@ -6,6 +6,7 @@ MASTER_SITES=	http://pwhois.org/get/ \
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Whois-compatible framework for disclosing routing data
+WWW=		https://pwhois.org/
 
 RUN_DEPENDS=	p5-DBI>0:databases/p5-DBI \
 		p5-Time-Format>0:devel/p5-Time-Format \

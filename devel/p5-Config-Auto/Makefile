@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Magical config file parser
+WWW=		https://metacpan.org/release/Config-Auto
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

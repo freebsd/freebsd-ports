@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Currency conversion module
+WWW=		https://metacpan.org/release/Finance-Currency-Convert-XE
 
 LICENSE=	ART20
 

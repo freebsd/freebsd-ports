@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src_all
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Memory-efficient and highly accurate paired-end read merger
+WWW=		https://sco.h-its.org/exelixis/web/software/pear/
 
 LICENSE=	CC-BY-NC-SA-3.0
 

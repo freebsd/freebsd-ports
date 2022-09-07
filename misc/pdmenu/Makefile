@@ -5,6 +5,7 @@ MASTER_SITES=	https://git.kitenet.net/index.cgi/pdmenu.git/snapshot/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Simple console menu program
+WWW=		https://joeyh.name/code/pdmenu/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://releases.0x539.de/gobby/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free collaborative editor
+WWW=		http://gobby.0x539.de
 
 LICENSE=	GPLv2
 

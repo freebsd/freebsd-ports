@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	COIN-OR autotools harness to build HSL linear solvers
+WWW=		https://github.com/coin-or-tools/ThirdParty-HSL
 
 LICENSE=	EPL
 

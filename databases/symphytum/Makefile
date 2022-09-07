@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Personal, user-friendly database software
+WWW=		https://github.com/giowck/symphytum
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

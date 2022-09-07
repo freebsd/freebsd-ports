@@ -5,6 +5,7 @@ MASTER_SITES=	GNU/${PORTNAME}/v${PORTVERSION}
 
 MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Utilities for developing programs using MIX and MIXAL
+WWW=		https://www.gnu.org/software/mdk/mdk.html
 
 LICENSE=	GPLv3
 

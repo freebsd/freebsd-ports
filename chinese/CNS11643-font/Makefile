@@ -8,6 +8,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	lhd@cs.nctu.edu.tw
 COMMENT=	Combine of Kai and Sung with CNS11643 TrueType Fonts
+WWW=		https://www.cns11643.gov.tw/
 
 LICENSE=	CC_BY-ND_3.0_TW
 LICENSE_NAME=	Creative Commons Attribution-NoDerivs 3.0 Taiwan License

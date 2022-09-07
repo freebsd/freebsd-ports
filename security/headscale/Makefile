@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	m.muenz@gmail.com
 COMMENT=	Mesh VPN that makes it easy to connect your devices
+WWW=		https://github.com/juanfont/headscale
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

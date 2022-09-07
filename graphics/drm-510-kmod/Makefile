@@ -5,6 +5,7 @@ CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	DRM drivers modules
+WWW=		https://github.com/freebsd/drm-kmod/
 
 LICENSE=	BSD2CLAUSE MIT GPLv2
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	don@regexguy.com
 COMMENT=	Wrapper around Perl's DBI module
+WWW=		https://metacpan.org/release/DBIx-Wrapper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

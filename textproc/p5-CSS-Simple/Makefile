@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	Interface through which to read/write/manipulate CSS files
+WWW=		https://metacpan.org/release/CSS-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

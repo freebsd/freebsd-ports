@@ -5,6 +5,7 @@ MASTER_SITES=	http://highsecure.ru/distfiles/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Yet another signify tool
+WWW=		https://github.com/vstakhov/asignify/
 
 LICENSE=	BSD2CLAUSE
 

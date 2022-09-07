@@ -7,6 +7,7 @@ EXTRACT_SUFX=	_src.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Program set interconverts between various bibliography formats
+WWW=		https://sourceforge.net/projects/bibutils/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying

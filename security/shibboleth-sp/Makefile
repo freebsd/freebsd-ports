@@ -6,6 +6,7 @@ MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
+WWW=		http://shibboleth.internet2.edu/
 
 LICENSE=	APACHE20
 

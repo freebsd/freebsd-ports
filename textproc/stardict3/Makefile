@@ -7,6 +7,7 @@ DIST_SUBDIR=	stardict
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionary lookup program written in Gtk2
+WWW=		http://www.stardict.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OmniAuth strategy for Twitter
+WWW=		https://github.com/arunagw/omniauth-twitter
 
 LICENSE=	MIT
 

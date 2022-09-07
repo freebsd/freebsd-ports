@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Round-Robin Tournament Schedule Pairings
+WWW=		https://metacpan.org/release/Games-Tournament-RoundRobin
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

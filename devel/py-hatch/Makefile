@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Modern project, package, and virtual env manager
+WWW=		https://github.com/pypa/hatch
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

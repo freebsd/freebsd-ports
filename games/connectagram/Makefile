@@ -7,6 +7,7 @@ MASTER_SITES=	http://gottcode.org/connectagram/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Word unscrambling game
+WWW=		https://gottcode.org/connectagram/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

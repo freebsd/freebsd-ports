@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Spiffy Perl Interface Framework For You
+WWW=		https://metacpan.org/release/Spiffy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

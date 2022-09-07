@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Library to parse and emit YAML
+WWW=		https://github.com/biojppm/rapidyaml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/djvu/DjView/${PORTVERSION}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Standalone Djvu viewer and plugin based on Qt toolkit
+WWW=		http://djvu.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

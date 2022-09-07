@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	jhb@FreeBSD.org
 COMMENT=	Cross GNU Compiler Collection for ${TARGETARCH}
+WWW=		https://gcc.gnu.org/
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi

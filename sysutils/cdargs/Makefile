@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.skamphausen.de/downloads/cdargs/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Navigate the filesystem using a menu interface or a bookmark system
+WWW=		https://www.skamphausen.de/cgi-bin/ska/CDargs
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

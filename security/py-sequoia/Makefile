@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	phryk-ports@wzff.de
 COMMENT=	Python binding of sequoia
+WWW=		https://sequoia-pgp.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE.txt

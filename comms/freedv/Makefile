@@ -5,6 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Narrow band digital voice
+WWW=		https://freedv.org/
 
 LICENSE=	LGPL21
 

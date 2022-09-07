@@ -5,6 +5,7 @@ MASTER_SITES=	SF/opennms/JICMP6/stable-1.2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java native interface (JNI) to ICMPv6
+WWW=		https://www.opennms.org/wiki/Jicmp
 
 USES=		libtool
 USE_JAVA=	yes

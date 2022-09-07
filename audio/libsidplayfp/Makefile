@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DI
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library to play Commodore 64 music derived from libsidplay2
+WWW=		https://sourceforge.net/p/sidplay-residfp/wiki/Home/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde library for manipulating the Kolab user database
+WWW=		https://pear.horde.org
 
 USES=		horde php cpe
 USE_PHP=	hash

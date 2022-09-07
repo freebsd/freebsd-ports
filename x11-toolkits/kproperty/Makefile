@@ -7,6 +7,7 @@ DIST_SUBDIR=		KDE/${PORTNAME}
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Property editing framwork
+WWW=		https://www.kexi-project.org/
 
 USES=			cmake compiler:c++11-lang gettext kde:5 qt:5 \
 			tar:xz

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Make a PNG image containing a QR code from text
+WWW=		https://metacpan.org/pod/Image::PNG::QRCode
 
 LICENSE=	GPLv3
 

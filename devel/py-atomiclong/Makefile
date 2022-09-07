@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AtomicLong type using CFFI
+WWW=		https://pypi.org/project/atomiclong/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

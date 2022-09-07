@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin for writing and specifying migrations
+WWW=		https://github.com/datamapper/dm-migrations
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-cvs-${PORTVERSION}
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Tool for parallelised IPv4 and IPv6 measurement
+WWW=		https://www.caida.org/tools/measurement/scamper/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

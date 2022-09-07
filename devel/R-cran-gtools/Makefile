@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Various R programming tools
+WWW=		https://cran.r-project.org/web/packages/gtools/
 
 LICENSE=	GPLv2
 

@@ -4,6 +4,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Hyper-V Data Exchange Service (KVP), users command line utility
+WWW=		https://github.com/pol73/hv_kvp_cmd/
 
 LICENSE=	MIT
 

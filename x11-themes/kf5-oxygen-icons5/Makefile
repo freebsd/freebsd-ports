@@ -4,6 +4,7 @@ CATEGORIES=	x11-themes kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The Oxygen icon theme for KDE
+WWW=		https://www.kde.org
 
 USES=		cmake kde:5 qt:5 tar:xz
 USE_KDE=	ecm_build  # We only install icons.

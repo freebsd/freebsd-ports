@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	File path utility
+WWW=		https://metacpan.org/release/Path-Tiny
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

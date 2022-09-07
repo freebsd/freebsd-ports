@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Asynchronous file and directory I/O with AnyEvent
+WWW=		https://metacpan.org/release/AnyEvent-AIO
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Replace tags with text and geometry
+WWW=		https://metacpan.org/release/CAD-Drawing-Template
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

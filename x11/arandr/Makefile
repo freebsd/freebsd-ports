@@ -5,6 +5,7 @@ CATEGORIES=	x11 deskutils
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Another XRandR GUI
+WWW=		https://christian.amsuess.com/tools/arandr/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Application launcher and finder
+WWW=		https://www.xfce.org/
 
 LICENSE=	GPLv2
 

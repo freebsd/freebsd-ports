@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Password encoding and checking utilities
+WWW=		https://pypi.org/project/zope.password/
 
 LICENSE=	ZPL21
 

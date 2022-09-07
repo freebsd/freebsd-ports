@@ -4,6 +4,7 @@ CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE integrated instant messaging framework
+WWW=		https://community.kde.org/KTp
 
 RUN_DEPENDS=	ktp-accounts-kcm>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-accounts-kcm \
 		ktp-approver>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-approver \

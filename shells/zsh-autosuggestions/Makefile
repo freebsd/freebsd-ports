@@ -5,6 +5,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Fish-like autosuggestions for Zsh
+WWW=		https://github.com/zsh-users/zsh-autosuggestions
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

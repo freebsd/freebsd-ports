@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alias for __PACKAGE__
+WWW=		https://metacpan.org/release/CLASS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.tucows.com/download/linux/files/x11/dock/	\
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Window Maker dockapp that displays cpu load and a realtime 3D object
+WWW=		https://www.dockapps.net/wmcube
 
 LICENSE=	GPLv2
 

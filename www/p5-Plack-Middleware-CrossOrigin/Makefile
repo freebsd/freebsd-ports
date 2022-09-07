@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Plack Middleware headers to allow Cross-Origin Resource Sharing
+WWW=		https://metacpan.org/release/Plack-Middleware-CrossOrigin
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

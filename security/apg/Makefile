@@ -7,6 +7,7 @@ CATEGORIES=		security sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Automated Password Generator written in Go
+WWW=		https://github.com/wneessen/apg-go
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

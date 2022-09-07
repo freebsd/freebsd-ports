@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MySQL Data Dumper
+WWW=		https://github.com/mydumper/mydumper
 
 LICENSE=	GPLv3
 

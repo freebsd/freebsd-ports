@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Gem for Flowdock API
+WWW=		https://github.com/flowdock/flowdock-api
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Format and parse DateTime::Durations
+WWW=		https://metacpan.org/release/DateTime-Format-Duration
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

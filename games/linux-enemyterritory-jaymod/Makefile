@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	linux-enemyterritory-
 
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Jaymod - An Enemy Territory Modification
+WWW=		https://jaymod.clanfu.org/
 
 RUN_DEPENDS=	et:games/linux-enemyterritory
 

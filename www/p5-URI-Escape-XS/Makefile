@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Drop-In replacement for URI::Escape in XS
+WWW=		https://metacpan.org/release/URI-Escape-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

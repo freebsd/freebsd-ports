@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Discover the classes of an arbitrary suite of Perl modules
+WWW=		https://metacpan.org/release/Devel-Diagram
 
 USES=		perl5 dos2unix
 USE_PERL5=	configure

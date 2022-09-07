@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Helper to make writing accessibility tools easier
+WWW=		https://github.com/kde/libqaccessibilityclient
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

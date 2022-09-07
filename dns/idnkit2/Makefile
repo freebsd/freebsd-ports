@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	fbsd@grid.einherjar.de
 COMMENT=	Internationalized Domain Name toolkit 2
+WWW=		https://jprs.co.jp/idn/index-e.html
 
 LICENSE=	OSCL
 LICENSE_NAME=	Open Source Code License

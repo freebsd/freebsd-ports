@@ -6,6 +6,7 @@ MASTER_SITES=		SAMBA/cwrap
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Preloadable wrapper to test PAM applications and PAM Modules
+WWW=		https://cwrap.org/pam_wrapper.html
 
 LICENSE=		GPLv3
 

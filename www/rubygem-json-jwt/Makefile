@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON Web Token implementation in Ruby
+WWW=		https://github.com/nov/json-jwt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

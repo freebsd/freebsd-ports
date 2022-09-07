@@ -8,6 +8,7 @@ MASTER_SITES=	http://ftp.coda.cs.cmu.edu/pub/rpc2/src/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interprocess communication library
+WWW=		http://www.coda.cs.cmu.edu/
 
 LICENSE=	LGPL20
 

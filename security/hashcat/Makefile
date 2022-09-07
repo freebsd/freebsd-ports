@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Advanced CPU-based password recovery utility
+WWW=		https://hashcat.net/hashcat/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.txt

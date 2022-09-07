@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Unicode case-folding for case-insensitive lookups
+WWW=		https://metacpan.org/release/Unicode-CaseFold
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

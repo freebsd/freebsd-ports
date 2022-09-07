@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GraphViz Writer for Graph object
+WWW=		https://metacpan.org/release/Graph-Writer-GraphViz
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

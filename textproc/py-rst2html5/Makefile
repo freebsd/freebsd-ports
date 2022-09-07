@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Produces HTML5 documents from reStructuredText sources
+WWW=		https://foss.heptapod.net/doc-utils/rst2html5
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

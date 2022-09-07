@@ -8,6 +8,7 @@ CFENGINE_COMMIT_DATE=	2022.08.19
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
+WWW=		https://cfengine.com/
 
 LICENSE=	GPLv3
 

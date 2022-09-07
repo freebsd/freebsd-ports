@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check that a command is available
+WWW=		https://metacpan.org/release/Devel-CheckBin
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

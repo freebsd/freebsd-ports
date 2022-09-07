@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Adrian Dusa's Miscellaneous
+WWW=		https://cran.r-project.org/package=admisc
 
 LICENSE=	GPLv3+
 

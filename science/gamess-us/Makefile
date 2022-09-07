@@ -7,6 +7,7 @@ DISTNAME=	gamess-current
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	General Atomic and Molecular Electronic Structure System (US)
+WWW=		https://www.msg.chem.iastate.edu/gamess/
 
 LICENSE=	GAMESS_LICENSE
 LICENSE_NAME=	GAMESS User License Agreement

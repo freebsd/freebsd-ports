@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client for Apple iTunes DAAP service
+WWW=		https://metacpan.org/release/Net-DAAP-Client
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Digest-MD5-M4p>=0:security/p5-Digest-MD5-M4p \

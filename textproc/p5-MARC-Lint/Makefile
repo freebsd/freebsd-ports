@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Mechanism for validating MARC records
+WWW=		https://metacpan.org/release/MARC-Lint
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-MARC-Record>=0:textproc/p5-MARC-Record \

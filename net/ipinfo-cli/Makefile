@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Official Command Line Interface for the IPinfo API
+WWW=		https://github.com/ipinfo/cli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

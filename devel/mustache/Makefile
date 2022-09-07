@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mustache text templates for modern C++
+WWW=		https://github.com/kainjow/Mustache
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

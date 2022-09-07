@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	C++/Qt web framework
+WWW=		https://cutelyst.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

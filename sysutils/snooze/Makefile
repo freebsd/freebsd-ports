@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Run a command at a particular time
+WWW=		https://github.com/leahneukirchen/snooze
 
 LICENSE=	CC0-1.0
 

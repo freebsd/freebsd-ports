@@ -10,6 +10,7 @@ DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard Fonts for Ghostscript
+WWW=		https://www.cs.wisc.edu/~ghost/doc/gnu/index.htm
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/fonts/COPYING

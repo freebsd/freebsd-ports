@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library to test long strings
+WWW=		https://metacpan.org/release/Test-LongString
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

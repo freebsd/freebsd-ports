@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	General Framework for Developing Spatial Indices
+WWW=		https://libspatialindex.github.io/
 
 LICENSE=	MIT
 

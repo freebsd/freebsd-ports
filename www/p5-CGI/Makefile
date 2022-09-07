@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Handle Common Gateway Interface requests and responses
+WWW=		https://metacpan.org/release/CGI
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	RabbitMQ client library for Python
+WWW=		https://github.com/gmr/rabbitpy
 
 LICENSE=	BSD3CLAUSE
 

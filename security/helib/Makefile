@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Implementation of homomorphic encryption
+WWW=		https://github.com/homenc/HElib
 
 LICENSE=	APACHE20
 

@@ -7,6 +7,7 @@ PATCHFILES=	f7f983e1e709.patch:-p1
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Fcitx support for Qt5
+WWW=		https://github.com/fcitx/fcitx5-qt
 
 LICENSE=	LGPL21+ BSD3CLAUSE
 LICENSE_COMB=	multi

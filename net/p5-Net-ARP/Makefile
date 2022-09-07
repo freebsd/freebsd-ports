@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for creating ARP packets
+WWW=		https://metacpan.org/release/Net-ARP
 
 LICENSE=	GPLv2
 

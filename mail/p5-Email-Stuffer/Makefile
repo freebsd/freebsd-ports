@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	More casual approach to creating and sending Email
+WWW=		https://metacpan.org/release/Email-Stuffer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

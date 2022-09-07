@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manage deprecation warnings for your distribution
+WWW=		https://metacpan.org/release/Package-DeprecationManager
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

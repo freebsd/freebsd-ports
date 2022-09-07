@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	SIP client supporting voice/video calls and text messaging
+WWW=		https://www.linphone.org/
 
 LICENSE=	GPLv3
 

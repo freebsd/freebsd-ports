@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C/C++ library to print formatted ASCII tables for console applications
+WWW=		https://github.com/seleznevae/libfort
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

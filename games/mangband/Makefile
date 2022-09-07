@@ -5,6 +5,7 @@ MASTER_SITES=	http://mangband.org/download/
 
 MAINTAINER=	flambard@mangband.org
 COMMENT=	Free online multiplayer real-time roguelike game
+WWW=		https://mangband.org/
 
 LICENSE=	GPLv2
 

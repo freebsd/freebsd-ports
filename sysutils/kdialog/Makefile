@@ -4,6 +4,7 @@ CATEGORIES=	sysutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Show nice dialog boxes from shell scripts
+WWW=		https://kde.org
 
 USES=		cmake compiler:c++11-lang gettext kde:5 pkgconfig \
 		qt:5 tar:xz xorg

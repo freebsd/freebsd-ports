@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Network time synchronization client
+WWW=		https://github.com/bsdphk/Ntimed
 
 LICENSE=	BSD2CLAUSE
 

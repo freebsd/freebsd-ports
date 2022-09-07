@@ -5,6 +5,7 @@ MASTER_SITES=	https://download.phpmyfaq.de/files/
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Multilingual, completely database-driven FAQ-system
+WWW=		https://www.phpmyfaq.de/
 
 LICENSE=	MPL20
 

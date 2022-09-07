@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Django template tag to load static files inline with your template
+WWW=		https://github.com/bartTC/django-staticinline
 
 LICENSE=	MIT
 #LICENSE_FILE=  Not yet packaged in sdist

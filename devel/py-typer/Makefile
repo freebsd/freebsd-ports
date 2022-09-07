@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for building CLI applications
+WWW=		https://github.com/tiangolo/typer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

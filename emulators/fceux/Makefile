@@ -5,6 +5,7 @@ MASTER_SITES=	SF/fceultra/Source%20Code/${DISTVERSION}%20src/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	NES emulator
+WWW=		https://fceux.com
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

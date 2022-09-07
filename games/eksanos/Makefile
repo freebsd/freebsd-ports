@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Simple TicTacToe game written for elementary OS
+WWW=		https://github.com/eksanos/eksanos
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

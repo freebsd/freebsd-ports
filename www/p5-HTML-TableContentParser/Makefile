@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Do interesting things with the contents of tables
+WWW=		https://metacpan.org/release/HTML-TableContentParser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

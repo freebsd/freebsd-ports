@@ -6,6 +6,7 @@ CATEGORIES=	misc kde
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	KDE thumbnail generator for CHM files
+WWW=		https://store.kde.org/p/1080871/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTNAME=	mpl_interactions-${DISTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Simple interactive Matplotlib plots
+WWW=		https://pypi.python.org/pypi/mpl-interactions
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

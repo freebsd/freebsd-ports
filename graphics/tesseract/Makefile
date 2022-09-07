@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
+WWW=		https://github.com/tesseract-ocr/tesseract
 
 LICENSE=	APACHE20
 

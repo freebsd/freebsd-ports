@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Static analysis tool for Java source code
+WWW=		http://pmd.sourceforge.net/
 
 LICENSE=	APACHE20 BSD4CLAUSE
 LICENSE_COMB=	dual

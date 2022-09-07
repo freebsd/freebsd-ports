@@ -8,6 +8,7 @@ DISTNAME=	drjava-eclipse-${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	DrJava plugin for Eclipse
+WWW=		http://www.drjava.org/eclipse.shtml
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 

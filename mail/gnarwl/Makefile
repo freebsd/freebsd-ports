@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.onyxbits.de/sites/default/files/download/15/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email autoresponder that gets data from LDAP
+WWW=		https://www.onyxbits.de/gnarwl
 
 LICENSE=	GPLv2
 

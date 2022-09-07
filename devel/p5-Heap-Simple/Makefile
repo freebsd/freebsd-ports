@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fast and easy to use classic heaps
+WWW=		https://metacpan.org/release/Heap-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

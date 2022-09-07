@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Faster implementation of the Devel::GlobalDestruction API
+WWW=		https://metacpan.org/release/Devel-GlobalDestruction-XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

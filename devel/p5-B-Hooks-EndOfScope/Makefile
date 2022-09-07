@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Execute code after a scope finished compilation
+WWW=		https://metacpan.org/release/B-Hooks-EndOfScope
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

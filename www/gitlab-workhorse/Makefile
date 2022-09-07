@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Smart reverse proxy for GitLab
+WWW=		https://gitlab.com/gitlab-org/gitlab-workhorse
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE

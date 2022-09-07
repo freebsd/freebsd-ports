@@ -7,6 +7,7 @@ DISTNAME=	WebOb-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	WSGI request and response Python object
+WWW=		https://webob.org/
 
 LICENSE=	MIT
 

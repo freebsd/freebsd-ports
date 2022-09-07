@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Assistive Technology Service Provider Interface
+WWW=		https://gitlab.gnome.org/GNOME/at-spi2-core
 
 LICENSE=	LGPL21
 

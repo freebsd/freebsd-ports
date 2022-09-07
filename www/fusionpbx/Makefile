@@ -4,6 +4,7 @@ CATEGORIES=	www
 
 MAINTAINER=	richard2891@gmail.com
 COMMENT=	Web/PHP Interface for FreeSwitch
+WWW=		https://www.fusionpbx.com
 
 LICENSE=	MPL11
 

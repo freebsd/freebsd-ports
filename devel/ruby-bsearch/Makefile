@@ -9,6 +9,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Binary search library for Ruby
+WWW=		http://0xcc.net/ruby-bsearch/
 
 USE_RUBY=	yes
 

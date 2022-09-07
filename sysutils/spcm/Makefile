@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for building and managing HPC clusters
+WWW=		http://acadix.biz/cluster-admin.php
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

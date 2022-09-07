@@ -7,6 +7,7 @@ DISTNAME=	LiVES-${PORTVERSION}
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Video editing system
+WWW=		http://lives-video.com/
 
 LICENSE=		GPLv3+ LGPL3+
 LICENSE_COMB=		multi

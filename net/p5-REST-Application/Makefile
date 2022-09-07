@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for building RESTful web-applications
+WWW=		https://metacpan.org/release/REST-Application
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Tie-IxHash>=0:devel/p5-Tie-IxHash

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for interfacing with Amazon S3 through SOAP
+WWW=		https://metacpan.org/release/KARJALA/SOAP-Amazon-S3-0.0401
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

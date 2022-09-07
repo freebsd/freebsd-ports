@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-mfront-edf
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code generation tool dedicated to material knowledge
+WWW=		http://tfel.sourceforge.net/
 
 LICENSE=	GPLv3
 

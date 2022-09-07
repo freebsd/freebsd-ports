@@ -6,6 +6,7 @@ MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Packet sniffer
+WWW=		http://nast.berlios.de
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

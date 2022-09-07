@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-core-${PORTVERSION}
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	Web based GroupWare system
+WWW=		http://moregroupware.sourceforge.net/
 
 USES=		gettext php:mod
 WANT_PGSQL=	server

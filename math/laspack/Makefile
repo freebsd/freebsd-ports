@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package for solving large sparse systems of linear equations
+WWW=		http://www.mgnet.org/mgnet/Codes/laspack/html/laspack.html
 
 LICENSE=	LASPACK
 LICENSE_FILE=	${WRKSRC}/copyrght.h

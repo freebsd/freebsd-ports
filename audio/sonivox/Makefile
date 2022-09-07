@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fork of the AOSP 'platform_external_sonivox' to use out of Android
+WWW=		https://github.com/pedrolcl/sonivox
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

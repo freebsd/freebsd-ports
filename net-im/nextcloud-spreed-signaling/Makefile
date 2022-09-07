@@ -6,6 +6,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Signaling server used for Nextcloud Talk
+WWW=		https://github.com/strukturag/nextcloud-spreed-signaling
 
 LICENSE=	AGPLv3
 

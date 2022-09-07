@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generic cad-related geometry calculations
+WWW=		https://metacpan.org/release/CAD-Calc
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

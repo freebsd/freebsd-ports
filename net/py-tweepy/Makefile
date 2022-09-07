@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Twitter API library for Python
+WWW=		https://github.com/tweepy/tweepy
 
 LICENSE=	MIT
 

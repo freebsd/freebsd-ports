@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
+WWW=		https://cdf.gsfc.nasa.gov/
 
 LICENSE=	NASA-G
 LICENSE_NAME=	NASA/Goddard Space Flight Center

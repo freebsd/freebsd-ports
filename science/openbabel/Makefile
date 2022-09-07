@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/openbabel/openbabel/releases/download/openbabel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chemical toolbox designed to speak the many languages of chemical data
+WWW=		https://openbabel.org/wiki/Main_Page
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python library for OAuth version 1.0
+WWW=		https://github.com/joestump/python-oauth2
 
 LICENSE=	MIT
 

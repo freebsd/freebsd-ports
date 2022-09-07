@@ -5,6 +5,7 @@ MASTER_SITES=	GIMP
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dynamic pixel format conversion library
+WWW=		https://www.gegl.org/babl/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

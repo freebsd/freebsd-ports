@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de
 COMMENT=	SNMP Exporter for Prometheus
+WWW=		https://github.com/prometheus/snmp_exporter
 
 LICENSE=	APACHE20
 

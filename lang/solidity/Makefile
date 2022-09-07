@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Solidity Contract-Oriented Programming Language
+WWW=		https://github.com/ethereum/solidity
 
 LICENSE=	GPLv3
 

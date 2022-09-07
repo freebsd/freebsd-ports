@@ -8,6 +8,7 @@ DISTNAME=	PyVirtualDisplay-${PORTVERSION}
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Python wrapper for Xvfb, Xephyr and Xvnc
+WWW=		https://github.com/ponty/pyvirtualdisplay
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

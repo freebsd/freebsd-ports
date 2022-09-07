@@ -6,6 +6,7 @@ MASTER_SITES=	http://gottcode.org/tanglet/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Single player word finding game based on Boggle
+WWW=		https://gottcode.org/tanglet/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/data/LICENSES/GPL-3.0.txt

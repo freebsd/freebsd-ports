@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Run SSH jobs in parallel
+WWW=		https://metacpan.org/release/Net-OpenSSH-Parallel
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

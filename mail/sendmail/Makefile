@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Reliable, highly configurable mail transfer agent with utilities
+WWW=		https://www.sendmail.org/
 
 LICENSE=	Sendmail
 LICENSE_NAME=	Sendmail License

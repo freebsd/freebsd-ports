@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl module control superclass method dispatch
+WWW=		https://metacpan.org/release/SUPER
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

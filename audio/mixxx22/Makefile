@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	22
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	DJ mixing application (previous version)
+WWW=		https://mixxx.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

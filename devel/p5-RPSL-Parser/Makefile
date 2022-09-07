@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Router Policy Specification Language (RFC2622) Parser
+WWW=		https://metacpan.org/release/RPSL-Parser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

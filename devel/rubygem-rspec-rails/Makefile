@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Testing framework for Rails
+WWW=		https://github.com/rspec/rspec-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

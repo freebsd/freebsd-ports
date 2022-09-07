@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Node package manager
+WWW=		https://www.npmjs.com/package/npm
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/lib/node_modules/npm/LICENSE

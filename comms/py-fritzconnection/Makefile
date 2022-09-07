@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	freebsd@michael-bueker.de
 COMMENT=	Python tool to communicate with AVM FritzBox routers
+WWW=		https://github.com/kbr/fritzconnection/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

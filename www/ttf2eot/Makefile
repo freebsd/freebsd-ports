@@ -5,6 +5,7 @@ CATEGORIES=	www converters
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Convert TTF font file to EOT web embeddable file
+WWW=		https://github.com/wget/ttf2eot
 
 LICENSE=	BSD2CLAUSE LGPL20
 LICENSE_COMB=	multi

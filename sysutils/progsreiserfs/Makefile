@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.cgsecurity.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and library to manipulate ReiserFS partitions
+WWW=		https://reiserfs.osdn.org.ua
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

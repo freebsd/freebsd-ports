@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl routines for data sets interpolation and interval search
+WWW=		https://metacpan.org/release/Math-Interpolate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

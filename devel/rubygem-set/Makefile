@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class to deal with collections of unordered, unique values
+WWW=		https://github.com/ruby/set
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

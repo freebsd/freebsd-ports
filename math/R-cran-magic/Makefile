@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Create and Investigate Magic Squares
+WWW=		https://cran.r-project.org/web/packages/magic/
 
 LICENSE=	GPLv2
 

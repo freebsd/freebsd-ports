@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Path::Class type library for Moose
+WWW=		https://metacpan.org/release/MooseX-Types-Path-Class
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

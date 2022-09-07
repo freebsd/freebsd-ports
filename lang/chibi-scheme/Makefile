@@ -6,6 +6,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Minimal Scheme implementation for use as a C extension language
+WWW=		https://github.com/ashinn/chibi-scheme
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

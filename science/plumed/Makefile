@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}2/releases/download/v${D
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PLUgin for MolEcular Dynamics
+WWW=		https://www.plumed.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

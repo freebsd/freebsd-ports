@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.libsrs2.org/srs/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Sender Rewriting Scheme 2 C Implementation
+WWW=		https://www.libsrs2.org/
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual

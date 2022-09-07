@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	rwestlun@gmail.com
 COMMENT=	Simple process supervisor
+WWW=		https://github.com/rwestlund/paladin
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

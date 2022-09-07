@@ -10,6 +10,7 @@ PATCHFILES=		5abba7f0505e75fceabd4dd8992a7e02bb149d64.patch:-p1
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Cross-platform multimedia framwork based on Qt and ffmpeg
+WWW=		https://github.com/wang-bin/QtAV
 
 LICENSE=		LGPL21+
 LICENSE_FILE=		${WRKSRC}/lgpl-2.1.txt

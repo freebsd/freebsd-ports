@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PO
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Extract Cell Data From Excel xls files
+WWW=		https://github.com/libxls/libxls
 
 LICENSE=	BSD2CLAUSE
 

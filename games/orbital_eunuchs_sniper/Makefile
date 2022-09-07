@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.icculus.org/oes/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Overhead shooting game
+WWW=		https://www.icculus.org/oes/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING

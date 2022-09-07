@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	delgod@portaone.com
 COMMENT=	Wrapper for the FreeBSD sendfile(2) function
+WWW=		https://metacpan.org/release/Sys-Sendfile-FreeBSD
 
 USES=		perl5
 USE_PERL5=	configure

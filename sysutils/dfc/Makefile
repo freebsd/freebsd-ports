@@ -5,6 +5,7 @@ MASTER_SITES=	https://projects.gw-computing.net/attachments/download/615/
 
 MAINTAINER=	mcy@lm7.fr
 COMMENT=	Display file system space usage using graph and colors
+WWW=		https://projects.gw-computing.net/projects/dfc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Emoticon filter of MSN Messenger
+WWW=		https://metacpan.org/release/Text-Emoticon-MSN
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

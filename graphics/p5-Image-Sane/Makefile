@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for the SANE (Scanner Access Now Easy) Project
+WWW=		https://metacpan.org/release/Image-Sane
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

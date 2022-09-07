@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Extension pack for Python Markdown
+WWW=		https://github.com/facelessuser/pymdown-extensions
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -6,6 +6,7 @@ MASTER_SITES=	SF/stoken
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Software Token for UNIX compatible with RSA SecurID
+WWW=		https://sourceforge.net/p/stoken/wiki/Home/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

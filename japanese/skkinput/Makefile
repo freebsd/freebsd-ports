@@ -6,6 +6,7 @@ MASTER_SITES=	OSDN/skkinput2
 
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	SKK-like Japanese input method for X11
+WWW=		http://skkinput2.sourceforge.jp/
 
 LICENSE=	GPLv2
 

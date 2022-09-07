@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby interface to the VMware vSphere API
+WWW=		https://github.com/vmware/rbvmomi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-time-tracking
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast time tracking tool made with love
+WWW=		https://github.com/gochrono/chrono
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

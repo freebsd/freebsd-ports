@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test your rendered HTML files
+WWW=		https://github.com/gjtorikian/html-proofer
 
 LICENSE=	MIT
 

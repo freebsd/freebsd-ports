@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Publish Rendezvous services
+WWW=		https://metacpan.org/release/Net-Rendezvous-Publish
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor-Lvalue>=0:devel/p5-Class-Accessor-Lvalue

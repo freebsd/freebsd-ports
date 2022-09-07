@@ -6,6 +6,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Git for data scientists: manage code and data together
+WWW=		https://dvc.org/
 
 LICENSE=	APACHE20
 

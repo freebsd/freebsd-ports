@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	More Ruby sugar
+WWW=		https://github.com/kristianmandrup/sugar-high
 
 LICENSE=	MIT
 

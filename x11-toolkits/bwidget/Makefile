@@ -5,6 +5,7 @@ MASTER_SITES=	SF/tcllib/BWidget/${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	High-level widget set for Tcl/Tk
+WWW=		https://core.tcl.tk/bwidget/home
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

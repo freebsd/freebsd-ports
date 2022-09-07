@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fun construction toy
+WWW=		https://www.nongnu.org/construo/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	multi

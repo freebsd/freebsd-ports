@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OOP MediaWiki engine client
+WWW=		https://metacpan.org/release/MediaWiki-API
 
 LICENSE=	GPLv3
 

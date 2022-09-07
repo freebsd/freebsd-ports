@@ -6,6 +6,7 @@ MASTER_SITES=	SF/industrializer/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Percussion sounds synthesizer using physical modelling
+WWW=		https://sourceforge.net/projects/industrializer/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

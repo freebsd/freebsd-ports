@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Light and dark colorful Gtk3.20+ theme
+WWW=		https://github.com/daniruiz/skeuos-gtk
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

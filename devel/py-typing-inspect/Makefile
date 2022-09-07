@@ -7,6 +7,7 @@ DISTNAME=	typing_inspect-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Runtime inspection utilities for typing module
+WWW=		https://github.com/ilevkivskyi/typing_inspect
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

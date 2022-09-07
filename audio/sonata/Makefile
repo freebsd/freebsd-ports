@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Elegant music player for MPD
+WWW=		http://sonata.berlios.de/index.html
 
 LICENSE=	GPLv3
 

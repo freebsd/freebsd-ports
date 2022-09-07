@@ -6,6 +6,7 @@ MASTER_SITES=	https://cgit.scilab.org/scilab/snapshot/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Scientific software package for numerical computations
+WWW=		https://www.scilab.org
 
 LICENSE=	GPLv2 BSD3CLAUSE
 LICENSE_COMB=	dual
@@ -143,7 +144,6 @@ post-patch:
 post-patch-GUI-on:
 # scilab segfaults on FreeBSD with C locale
 	@${REINPLACE_CMD} 's,LC_ALL=C,,' ${WRKSRC}/Makefile.in
-	@# Configure fixes
 	@${REINPLACE_CMD} '/ac_java_jvm_jni_lib_flags/s,\(ljvm\),\1 -pthread,' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/lib/java|${JAVALIBDIR}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/lib64/jni|${LOCALBASE}/lib/|g' ${WRKSRC}/configure
@@ -163,15 +163,12 @@ post-patch-GUI-on:
 # Part of the jogamp-jogl-2.3 patch:
 	@${REINPLACE_CMD} -e 's|javax.media.opengl.glu.GLUnurbs|com.jogamp.opengl.glu.GLUnurbs|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|jogamp.common.os.MachineDescriptionRuntime|jogamp.common.os.MachineDataInfoRuntime|' ${WRKSRC}/configure
-	@# Run fixes
 	@${REINPLACE_CMD} -e 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/bin/scilab
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/.atoms
 
 post-install:
-	@# Remove empty dirs in DATADIR/modules - they will be removed by the
-	@# toolbox uninstaller otherwise if 3rd party toolboxes are used
 	@${FIND} ${STAGEDIR}${DATADIR}/modules -type d -empty -delete
 
 .include <bsd.port.post.mk>

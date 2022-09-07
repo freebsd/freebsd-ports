@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DWIM, correct checking of an object's class #'
+WWW=		https://metacpan.org/release/Check-ISA
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

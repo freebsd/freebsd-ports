@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Fast desktop menu (i3-dmenu-desktop replacement)
+WWW=		https://github.com/enkore/j4-dmenu-desktop
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/Ettercap/ettercap/releases/download/v${PORTVERS
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Network sniffer/interceptor/injector/logger for switched LANs
+WWW=		https://www.ettercap-project.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

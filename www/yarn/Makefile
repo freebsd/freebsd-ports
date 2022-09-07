@@ -7,6 +7,7 @@ MASTER_SITES=	https://yarnpkg.com/downloads/${PORTVERSION}/
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Package manager for node, alternative to npm
+WWW=		https://yarnpkg.com/blog/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

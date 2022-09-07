@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrapper simplifying SOAP::Data and SOAP::Serialiser
+WWW=		https://metacpan.org/release/SOAP-Data-Builder
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-SOAP-Lite>=0:net/p5-SOAP-Lite

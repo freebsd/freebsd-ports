@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.ex-parrot.com/~pdw/iftop/download/
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Display bandwidth usage on an interface by host
+WWW=		https://www.ex-parrot.com/~pdw/iftop/
 
 LICENSE=	GPLv2
 

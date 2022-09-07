@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Multi-layer client for the GitHub API v3
+WWW=		https://github.com/travis-ci/gh
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

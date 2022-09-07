@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Standalone port of Mednafen bSNES to libretro
+WWW=		https://github.com/libretro/beetle-bsnes-libretro
 
 LICENSE=	GPLv2
 

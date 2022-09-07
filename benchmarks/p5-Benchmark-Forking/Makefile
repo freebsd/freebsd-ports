@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run benchmarks in separate processes
+WWW=		https://metacpan.org/release/Benchmark-Forking
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

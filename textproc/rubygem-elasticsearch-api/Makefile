@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby API for Elasticsearch
+WWW=		https://github.com/elastic/elasticsearch-ruby/tree/master/elasticsearch-api
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

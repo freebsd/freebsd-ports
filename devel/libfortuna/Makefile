@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Fortuna PRNG Library
+WWW=		http://crxwg.com/fortuna/bin/libfortuna.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

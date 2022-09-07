@@ -5,6 +5,7 @@ MASTER_SITES=	http://dotat.at/prog/nsnotifyd/
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Handle DNS NOTIFY messages by running a command
+WWW=		https://dotat.at/prog/nsnotifyd/
 
 LICENSE=	CC0-1.0
 

@@ -4,6 +4,7 @@ CATEGORIES=	devel print
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	ICU Layout Engine API on top of HarfBuzz shaping library
+WWW=		https://www.freedesktop.org/wiki/Software/HarfBuzz/
 
 LICENSE=	ICU
 LICENSE_NAME=	ICU license

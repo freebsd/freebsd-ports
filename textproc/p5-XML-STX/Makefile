@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure Perl STX processor
+WWW=		https://metacpan.org/release/XML-STX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

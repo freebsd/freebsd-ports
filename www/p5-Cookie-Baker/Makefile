@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cookie string generator/parser
+WWW=		https://metacpan.org/release/Cookie-Baker
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

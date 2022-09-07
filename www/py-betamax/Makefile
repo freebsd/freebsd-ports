@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	VCR imitation for python-requests
+WWW=		https://github.com/betamaxpy/betamax
 
 LICENSE=	APACHE20
 

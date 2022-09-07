@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Display images in terminals using RGB ANSI codes & unicode characters
+WWW=		https://github.com/stefanhaustein/TerminalImageViewer
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE

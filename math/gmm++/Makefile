@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME:S/+//g}-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Generic matrix template library
+WWW=		https://getfem.org/gmm/
 
 # Note: even though the port's COPYING file mentions gmm++ is licensed under
 # the LGPL version 2.1 with the GCC runtime exception,

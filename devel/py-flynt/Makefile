@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Convert Python scripts from string formatting to f-strings
+WWW=		https://github.com/ikamensh/flynt
 
 LICENSE=	MIT
 

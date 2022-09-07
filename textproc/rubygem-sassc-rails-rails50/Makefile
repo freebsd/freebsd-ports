@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-rails50
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Integrate SassC-Ruby into Rails
+WWW=		https://github.com/sass/sassc-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

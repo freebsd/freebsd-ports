@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Keeps your CouchDB views molten hot
+WWW=		https://github.com/iwantmyname/lava
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

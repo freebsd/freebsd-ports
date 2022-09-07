@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	In-process SQL OLAP database management system
+WWW=		https://duckdb.org/
 
 LICENSE=	MIT
 

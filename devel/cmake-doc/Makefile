@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-doc
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	HTML and Qt Creator helpfiles for CMake
+WWW=		https://www.cmake.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt

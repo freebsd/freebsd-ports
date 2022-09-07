@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Generate HTML or XML in a pythonic way
+WWW=		https://www.yattag.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/license/lgpl-2.1.txt

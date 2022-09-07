@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.toddmiller.com/epte/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Periodic Table of the Elements
+WWW=		http://www.toddmiller.com/epte/
 
 USES=		ncurses
 MAKEFILE=	makefile

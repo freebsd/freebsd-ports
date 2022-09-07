@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Tcl language interface to the Cassandra database
+WWW=		https://github.com/flightaware/casstcl
 
 LICENSE=	BSD3CLAUSE
 

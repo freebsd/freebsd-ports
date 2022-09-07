@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ActiveRecord adapter for Flipper
+WWW=		https://github.com/jnunemaker/flipper
 
 LICENSE=	MIT
 

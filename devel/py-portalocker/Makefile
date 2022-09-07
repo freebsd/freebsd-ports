@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Python library that provides an easy API to file locking
+WWW=		https://pypi.org/project/portalocker/
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE

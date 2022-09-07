@@ -6,6 +6,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
+WWW=		https://projects.kde.org/projects/extragear/sdk/kdesvn
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight X11 compositor
+WWW=		https://github.com/yshui/picom
 
 LICENSE=	MIT MPL20
 LICENSE_COMB=	multi

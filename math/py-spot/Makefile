@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python binding for 'Spot', the library for omega automata manipulation
+WWW=		https://spot.lrde.epita.fr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

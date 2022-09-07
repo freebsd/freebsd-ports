@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	andoriyu@gmail.com
 COMMENT=	Pretty ls alternative with support for icons
+WWW=		https://github.com/Peltoche/lsd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

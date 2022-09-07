@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	micadeyeye@gmail.com
 COMMENT=	Implements OMEMO in C
+WWW=		https://github.com/gkdr/libomemo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

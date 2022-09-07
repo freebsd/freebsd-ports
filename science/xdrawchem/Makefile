@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Two-dimensional molecule drawing program
+WWW=		https://www.woodsidelabs.com/chemistry/xdrawchem.php
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.meebey.net/projects/notify-sharp/downloads/
 
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	C\# client library for notification-daemon
+WWW=		http://www.ndesk.org/NotifySharp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

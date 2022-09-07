@@ -4,6 +4,7 @@ CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Pandoc filter for numbering figures and tables
+WWW=		https://github.com/lierdakil/pandoc-crossref/
 
 LICENSE=	BSD3CLAUSE
 

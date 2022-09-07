@@ -8,6 +8,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Java JDBC implementation for PostgreSQL
+WWW=		https://jdbc.postgresql.org/
 
 LICENSE=	BSD3CLAUSE
 

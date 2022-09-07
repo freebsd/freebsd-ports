@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple parsing of RFC2822 message format and headers
+WWW=		https://metacpan.org/release/Email-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

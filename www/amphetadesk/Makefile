@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-src-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSS client that serves HTTP to your local web browser
+WWW=		https://www.disobey.com/amphetadesk/index.html
 
 LICENSE=	EULA
 LICENSE_NAME=	The Clarified Artistic License

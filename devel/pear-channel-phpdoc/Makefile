@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
+WWW=		https://pear.phpdoc.org/
 
 PEAR_CHANNEL_HOST=	pear.phpdoc.org
 

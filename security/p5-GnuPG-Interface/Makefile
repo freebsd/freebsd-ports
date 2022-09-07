@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for interfacing with GnuPG
+WWW=		https://metacpan.org/release/GnuPG-Interface
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

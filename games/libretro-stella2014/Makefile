@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of Stella (Atari 2600) to libretro (2014)
+WWW=		https://github.com/libretro/stella2014-libretro
 
 LICENSE=	GPLv2
 

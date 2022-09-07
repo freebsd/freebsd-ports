@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Portable performant script to make rolling ZFS snapshots easy
+WWW=		https://github.com/zfsnap/zfsnap
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

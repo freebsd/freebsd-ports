@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Non-blocking, concurrent DNS server component
+WWW=		https://metacpan.org/release/POE-Component-Server-DNS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

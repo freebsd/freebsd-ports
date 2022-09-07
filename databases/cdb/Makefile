@@ -5,6 +5,7 @@ MASTER_SITES=	http://cr.yp.to/cdb/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast lookup database library & utilities
+WWW=		https://cr.yp.to/cdb.html
 
 ALL_TARGET=	it
 

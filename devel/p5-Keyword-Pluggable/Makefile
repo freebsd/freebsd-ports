@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Define new keywords in pure Perl
+WWW=		https://metacpan.org/release/Keyword-Pluggable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

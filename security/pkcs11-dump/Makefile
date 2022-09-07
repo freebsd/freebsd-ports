@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/alonbl/pkcs11-dump/releases/download/pkcs11-dum
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Allow dumping PKCS\#11 token content
+WWW=		http://sites.google.com/site/alonbarlev/pkcs11-utilities
 
 LICENSE=	GPLv2
 

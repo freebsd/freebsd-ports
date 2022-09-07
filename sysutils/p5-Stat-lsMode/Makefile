@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Format file modes like "ls -l" command does
+WWW=		https://metacpan.org/release/Stat-lsMode
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

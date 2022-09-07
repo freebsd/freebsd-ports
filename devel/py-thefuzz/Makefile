@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Fuzzy string matching in Python
+WWW=		https://github.com/seatgeek/thefuzz
 
 LICENSE=	GPLv2
 

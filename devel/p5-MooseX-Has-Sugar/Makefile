@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sugar Syntax for moose has fields
+WWW=		https://metacpan.org/release/MooseX-Has-Sugar
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple Database Abstraction
+WWW=		https://metacpan.org/release/Class-DBI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

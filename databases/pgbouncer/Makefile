@@ -6,6 +6,7 @@ MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Lightweight connection pooler for PostgreSQL
+WWW=		https://pgbouncer.github.io/
 
 LICENSE=	BSD2CLAUSE
 

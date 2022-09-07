@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Live shader coding tool and Shader Showdown workhorse
+WWW=		https://github.com/Gargaj/Bonzomatic
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

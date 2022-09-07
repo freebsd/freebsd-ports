@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ivan@serezhkin.com
 COMMENT=	Non-blocking I/O in lambda style
+WWW=		https://metacpan.org/release/IO-Lambda
 
 BUILD_DEPENDS=	p5-Sub-Name>=0.04:devel/p5-Sub-Name \
 		p5-Net-DNS>=0.64:dns/p5-Net-DNS \

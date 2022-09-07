@@ -6,6 +6,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flite dialplan application for Asterisk
+WWW=		https://zaf.github.io/Asterisk-Flite/
 
 LICENSE=	GPLv2
 

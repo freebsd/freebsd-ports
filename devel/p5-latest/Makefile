@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use the latest Perl features
+WWW=		https://metacpan.org/release/latest
 
 USES=		perl5
 USE_PERL5=	modbuild

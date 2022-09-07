@@ -7,6 +7,7 @@ DISTNAME=	spring-framework-${PORTVERSION}.RELEASE-with-docs
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	The Spring Framework for Java
+WWW=		https://www.springframework.org/
 
 WRKSRC=		${WRKDIR}/spring-framework-${PORTVERSION}.RELEASE
 

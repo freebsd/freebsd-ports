@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load a McBain API as a RESTful PSGI web service
+WWW=		https://metacpan.org/pod/McBain::WithPSGI
 
 LICENSE=	GPLv1 ARTPERL10
 LICENSE_COMB=	dual

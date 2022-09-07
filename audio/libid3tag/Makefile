@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ID3 tags library (part of MAD project)
+WWW=		http://mad.sourceforge.net/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

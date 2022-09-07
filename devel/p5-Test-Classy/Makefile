@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write your unit tests in other modules than *.t
+WWW=		https://metacpan.org/release/Test-Classy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

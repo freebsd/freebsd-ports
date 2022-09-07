@@ -4,6 +4,7 @@ CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 utility providing system information
+WWW=		https://www.kde.org/plasma-desktop
 
 RUN_DEPENDS=	lscpu:sysutils/lscpu \
 		glxinfo:graphics/mesa-demos \

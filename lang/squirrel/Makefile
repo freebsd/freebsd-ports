@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}_stable
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High level imperative/OO programming language
+WWW=		http://squirrel-lang.org/
 
 CONFLICTS=	squsq
 

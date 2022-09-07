@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python client for the Microsoft Certificate Authority
+WWW=		https://github.com/magnuswatn/certsrv
 
 LICENSE=	MIT
 

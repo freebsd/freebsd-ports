@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open Source J-RPG based on the Hero of Allacrost engine
+WWW=		https://valyriatear.blogspot.com/
 
 # Valyria Tear underwent a licensing audit.
 # The main game is GPLv2 but artwork/music/fonts are a variety of licenses:

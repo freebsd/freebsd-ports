@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GDSII reader and writer
+WWW=		http://rubyforge.org/projects/gdsii/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

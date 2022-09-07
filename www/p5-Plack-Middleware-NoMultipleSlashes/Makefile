@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Remove multiple slashes in your paths automatically
+WWW=		https://metacpan.org/release/Plack-Middleware-NoMultipleSlashes
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

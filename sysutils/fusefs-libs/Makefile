@@ -8,6 +8,7 @@ DISTNAME=	fuse-${DISTVERSION}
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	FUSE allows filesystem implementation in userspace
+WWW=		https://github.com/libfuse/libfuse
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Command line wrapper for ipmitool and freeipmi
+WWW=		https://github.com/logicminds/rubyipmi
 
 LICENSE=	LGPL21
 

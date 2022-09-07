@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH/lzip/lzlib
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	In-memory LZMA compression and decompression library
+WWW=		https://www.nongnu.org/lzip/lzlib.html
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

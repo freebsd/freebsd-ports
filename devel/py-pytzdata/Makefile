@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Olson timezone database for Python
+WWW=		https://github.com/sdispater/pytzdata
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

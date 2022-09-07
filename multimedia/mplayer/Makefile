@@ -5,6 +5,7 @@ CATEGORIES=	multimedia audio
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	High performance media player supporting many formats
+WWW=		http://www.mplayerhq.hu/
 
 .include "${.CURDIR}/../../multimedia/mplayer/Makefile.common"
 

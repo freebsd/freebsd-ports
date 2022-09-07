@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Package implementing the client side of the HTTP standard
+WWW=		https://hc.apache.org/httpclient-3.x/
 
 LICENSE=	APACHE20
 

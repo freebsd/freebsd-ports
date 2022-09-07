@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for Haval256 hash algorithm
+WWW=		https://metacpan.org/release/Digest-Haval256
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

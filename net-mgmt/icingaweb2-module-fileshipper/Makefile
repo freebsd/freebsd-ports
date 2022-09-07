@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Import CSV, JSON, XML and YAML files for the Icinga Director
+WWW=		https://github.com/Icinga/icingaweb2-module-fileshipper
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	zab@zltech.eu
 COMMENT=	Bug tracking system written in PHP
+WWW=		https://www.mantisbt.org/
 
 LICENSE=	GPLv2
 

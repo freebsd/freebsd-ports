@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	SAML responses for Google SSO implementation
+WWW=		https://metacpan.org/release/Google-SAML-Response
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

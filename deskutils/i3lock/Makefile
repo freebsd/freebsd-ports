@@ -5,6 +5,7 @@ MASTER_SITES=	http://i3wm.org/${PORTNAME}/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Slightly improved screen locker based on slock
+WWW=		https://i3wm.org/i3lock/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

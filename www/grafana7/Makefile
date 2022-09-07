@@ -15,6 +15,7 @@ DISTFILES=	grafana-${PORTVERSION}.linux-amd64${EXTRACT_SUFX}:public \
 
 MAINTAINER=	robsonmantovani@gmail.com
 COMMENT=	Dashboard and graph editor for multiple data stores
+WWW=		https://github.com/grafana/grafana
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

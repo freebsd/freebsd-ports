@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt oriented code checker based on clang
+WWW=		https://github.com/KDE/clazy
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING-LGPL2.txt

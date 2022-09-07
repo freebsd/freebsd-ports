@@ -5,6 +5,7 @@ CATEGORIES=	chinese
 
 MAINTAINER=	khng300@gmail.com
 COMMENT=	IBus engine for Rime users
+WWW=		https://github.com/rime/ibus-rime/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

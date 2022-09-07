@@ -6,6 +6,7 @@ MASTER_SITES=	SF/staybox
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XKB keyboard layout indicator and switcher
+WWW=		https://sourceforge.net/projects/staybox/
 
 LICENSE=	GPLv3
 

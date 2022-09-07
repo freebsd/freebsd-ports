@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	h.freshports@skarnell.se
 COMMENT=	CPanel DNS Authenticator plugin for Certbot
+WWW=		https://pypi.org/project/certbot-dns-cpanel/
 
 LICENSE=	APACHE20
 

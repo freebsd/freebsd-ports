@@ -5,6 +5,7 @@ CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE screen capture program
+WWW=		https://projects.kde.org/projects/kde/kdegraphics/spectacle
 
 LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-image.so:x11/xcb-util-image \

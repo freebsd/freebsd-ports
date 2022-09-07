@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for getting memory information
+WWW=		https://metacpan.org/release/Sys-MemInfo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

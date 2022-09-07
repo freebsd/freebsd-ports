@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check for presence of dependencies
+WWW=		https://metacpan.org/release/Test-CheckDeps
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

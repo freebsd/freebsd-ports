@@ -4,6 +4,7 @@ CATEGORIES=	irc
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	IRC client written in bash
+WWW=		https://github.com/dylanaraps/birch
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

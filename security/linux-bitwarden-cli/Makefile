@@ -9,6 +9,7 @@ DISTNAME=	bw-linux-${DISTVERSION}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Bitwarden CLI
+WWW=		https://github.com/bitwarden/cli
 
 LICENSE=	GPLv3
 

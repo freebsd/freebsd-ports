@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Flake8 and pylama plugin that checks the ordering of import statements
+WWW=		https://pypi.org/project/flake8-import-order/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Apartment threading wrapper for Perl objects
+WWW=		https://metacpan.org/release/Thread-Apartment
 
 LICENSE=	AFL21
 LICENSE_NAME=	Academic Free License version 2.1

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	SEMI, Library of MIME feature for GNU Emacs for emacs
+WWW=		https://github.com/wanderlust/semi
 
 LICENSE=	GPLv2
 

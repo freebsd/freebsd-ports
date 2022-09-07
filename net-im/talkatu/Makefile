@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Collection of Gtk+ widgets that are useful for chat applications
+WWW=		https://bitbucket.org/pidgin/talkatu/overview
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

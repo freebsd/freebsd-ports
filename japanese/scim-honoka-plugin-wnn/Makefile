@@ -7,6 +7,7 @@ DISTNAME=	honoka-plugin-wnn-${PORTVERSION}
 
 MAINTAINER=	chiba.masashi@gmail.com
 COMMENT=	Honoka plugin for using wnn7
+WWW=		http://scim.freedesktop.org
 
 BUILD_DEPENDS=	scim:textproc/scim \
 		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/honoka.so:japanese/scim-honoka

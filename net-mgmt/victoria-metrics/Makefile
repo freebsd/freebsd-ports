@@ -5,6 +5,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT?=	Fast, cost-effective, and scalable time series database
+WWW=		https://victoriametrics.github.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.gz
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Converts mbox mailboxes to Maildir
+WWW=		http://batleth.sapienti-sat.org/projects/mb2md/
 
 RUN_DEPENDS=	p5-TimeDate>=0:devel/p5-TimeDate
 

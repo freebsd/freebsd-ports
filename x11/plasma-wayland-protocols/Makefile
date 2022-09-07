@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma Specific Protocols for Wayland
+WWW=		https://github.com/kde/plasma-wayland-protocols
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

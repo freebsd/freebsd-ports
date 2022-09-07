@@ -8,6 +8,7 @@ DISTNAME=	libnet-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules to access and use network protocols
+WWW=		https://metacpan.org/release/libnet
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Web Framework to build REST APIs, Webservices in C
+WWW=		https://github.com/babelouest/ulfius
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

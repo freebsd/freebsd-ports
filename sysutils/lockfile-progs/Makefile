@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Programs for locking and unlocking files and mailboxes
+WWW=		https://tracker.debian.org/pkg/lockfile-progs
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

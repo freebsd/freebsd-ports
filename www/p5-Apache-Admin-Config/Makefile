@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manipulate Apache configuration files
+WWW=		https://metacpan.org/release/Apache-Admin-Config
 
 LICENSE=	LGPL21+
 

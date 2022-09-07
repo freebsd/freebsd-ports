@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	05
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Flexible Collision Library (Old version)
+WWW=		https://github.com/flexible-collision-library/fcl
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

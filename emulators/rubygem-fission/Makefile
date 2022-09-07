@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility to manage VMware Fusion VMs from the command line
+WWW=		https://github.com/thbishop/fission
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

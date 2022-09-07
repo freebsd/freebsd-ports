@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command-line tool for batch renaming files and directories
+WWW=		https://github.com/ayoisaiah/f2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

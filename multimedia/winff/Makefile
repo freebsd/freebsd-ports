@@ -8,6 +8,7 @@ DISTNAME=	${_PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Convert your videos quickly, easily, and all at once
+WWW=		https://www.biggmatt.com/p/winff.html
 
 LICENSE=	GPLv3
 

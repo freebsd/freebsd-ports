@@ -10,6 +10,7 @@ PATCHFILES=	992df30caa14fe6bfcd2c38213314622e1e02aae.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Run Time Type Reflection
+WWW=		https://github.com/rttrorg/rttr
 
 LICENSE=	MIT
 

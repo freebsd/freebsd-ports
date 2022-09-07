@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	FlatBuffers serialization format for Python
+WWW=		https://google.github.io/flatbuffers/
 
 LICENSE=	APACHE20
 

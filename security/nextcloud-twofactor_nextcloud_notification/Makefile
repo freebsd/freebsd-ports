@@ -9,6 +9,7 @@ DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Use Nextcloud notification as MFA app for Nextcloud
+WWW=		https://apps.nextcloud.com/apps/twofactor_nextcloud_notification
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

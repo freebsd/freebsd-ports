@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	Universal Command Line Interface for Amazon Web Services
+WWW=		https://aws.amazon.com/cli/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

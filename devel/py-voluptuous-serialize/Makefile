@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Convert voluptuous schemas to JSON
+WWW=		https://github.com/home-assistant-libs/voluptuous-serialize
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

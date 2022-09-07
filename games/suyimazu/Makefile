@@ -6,6 +6,7 @@ DISTNAME=	${DISTVERSION}
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Wine-based Game Launcher for FreeBSD
+WWW=		https://codeberg.org/Alexander88207/Suyimazu
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

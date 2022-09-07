@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read .ini-style configuration files
+WWW=		https://metacpan.org/release/Config-IniFiles
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl wrapper for Alan Murta's gpc library
+WWW=		https://metacpan.org/release/Math-Geometry-Planar-GPC
 
 LICENSE=	ART10
 

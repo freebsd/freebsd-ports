@@ -6,6 +6,7 @@ DISTNAME=	TwitterColorEmoji-SVGinOT-Linux-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Color emoji font using Twitter Unicode 10
+WWW=		https://github.com/eosrei/twemoji-color-font
 
 LICENSE=	CC-BY-4.0 MIT
 LICENSE_COMB=	multi

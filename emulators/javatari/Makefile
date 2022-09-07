@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Multiplayer Atari 2600 emulator written in pure Java
+WWW=		https://javatari.org
 
 LICENSE=	AGPLv3
 

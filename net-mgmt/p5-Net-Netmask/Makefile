@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to parse, manipulate, and lookup IP network blocks
+WWW=		https://metacpan.org/release/Net-Netmask
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

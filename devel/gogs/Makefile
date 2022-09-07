@@ -6,6 +6,7 @@ CATEGORIES=	devel www
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Painless self-hosted Git service
+WWW=		https://gogs.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

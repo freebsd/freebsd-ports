@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Yet another zen simulation
+WWW=		http://robotfindskitten.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

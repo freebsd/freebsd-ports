@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Bash Screenshot Information Tool
+WWW=		https://github.com/KittyKatt/screenFetch
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

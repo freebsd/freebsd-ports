@@ -6,6 +6,7 @@ DISTNAME=	shhcards-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for displaying game cards on X Window System
+WWW=		http://shh.thathost.com/pub-unix/ #shhcards
 
 LICENSE=	ART10
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl HTML::Element replacer
+WWW=		https://metacpan.org/release/HTML-Element-Replacer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

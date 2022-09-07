@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/harfbuzz/harfbuzz/releases/download/${DISTVERSI
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	OpenType text shaping engine
+WWW=		https://harfbuzz.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

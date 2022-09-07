@@ -9,6 +9,7 @@ DISTFILES=	${QMAIL_DIST} ${SPAMCONTROL_DIST}:spamcontrol
 EXTRACT_ONLY=	${QMAIL_DIST}
 
 COMMENT=	Qmail MTA with SpamControl patches
+WWW=		http://www.fehcom.de/qmail/spamcontrol.html
 
 BROKEN_FreeBSD_12=	incomplete definition of type 'struct X509_name_st'
 BROKEN_FreeBSD_13=	incomplete definition of type 'struct X509_name_st'

@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Graphical control panel for the virtual OSS daemon
+WWW=		https://github.com/hselasky/virtual_oss_ctl
 
 LICENSE=	BSD2CLAUSE
 

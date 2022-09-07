@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interface between OpenFermion and PySCF
+WWW=		https://github.com/quantumlib/OpenFermion-PySCF
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

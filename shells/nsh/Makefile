@@ -7,6 +7,7 @@ DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Command-line shell like fish, but POSIX compatible
+WWW=		https://github.com/nuta/nsh
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://corsair626.no-ip.org/microdc/
 
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	Command-line based Direct Connect client
+WWW=		http://corsair626.no-ip.org/microdc/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Peek into archives without extracting them
+WWW=		https://metacpan.org/release/Archive-Peek
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

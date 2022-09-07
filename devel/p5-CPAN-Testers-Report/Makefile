@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CPAN Testers report object
+WWW=		https://metacpan.org/release/CPAN-Testers-Report
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Metabase-Fact>0:devel/p5-Metabase-Fact

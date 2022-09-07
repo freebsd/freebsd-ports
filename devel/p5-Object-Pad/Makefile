@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple syntax for lexical slot-based objects
+WWW=		https://metacpan.org/dist/Object-Pad
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Complete SPARQL 1.1 Query and Update implementation for RDF::Trine
+WWW=		https://metacpan.org/release/RDF-Query
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

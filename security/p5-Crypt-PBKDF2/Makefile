@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PBKDF2 password hashing algorithm
+WWW=		https://metacpan.org/release/Crypt-PBKDF2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

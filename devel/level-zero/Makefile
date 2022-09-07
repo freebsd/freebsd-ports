@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	oneAPI Level Zero Specification Headers and Loader
+WWW=		https://spec.oneapi.io/versions/latest/elements/l0/source/index.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

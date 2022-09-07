@@ -4,6 +4,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Programming text editor
+WWW=		https://www.triptico.com/software/mp.html
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

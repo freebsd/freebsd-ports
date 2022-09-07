@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to handle internationalized domain names
+WWW=		https://www.nic.ad.jp/ja/idn/idnkit/download/
 
 LICENSE=	JPNIC
 LICENSE_NAME=	Japan Network Information Center license

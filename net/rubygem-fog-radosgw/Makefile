@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fog backend for provisioning users on Ceph Radosgw
+WWW=		https://github.com/fog/fog-radosgw
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

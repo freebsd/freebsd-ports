@@ -6,6 +6,7 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple guitar tuning assistant
+WWW=		https://code.google.com/p/wxguitar/
 
 RUN_DEPENDS=	wavplay:audio/wavplay
 

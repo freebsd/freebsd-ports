@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	All-electron full-potential linearised augmented-planewave code
+WWW=		http://elk.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

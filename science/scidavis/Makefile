@@ -4,6 +4,7 @@ CATEGORIES=	science
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Scientific data analysis and visualization
+WWW=		http://scidavis.sourceforge.net
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

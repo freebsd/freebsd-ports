@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Tools for HTML generation and output
+WWW=		https://cran.r-project.org/web/packages/htmltools/
 
 LICENSE=	GPLv2+
 

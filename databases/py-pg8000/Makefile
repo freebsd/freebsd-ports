@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Pure-Python Interface to the PostgreSQL Database
+WWW=		https://github.com/tlocke/pg8000
 
 LICENSE=	BSD3CLAUSE
 

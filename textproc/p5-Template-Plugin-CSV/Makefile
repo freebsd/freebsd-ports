@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Simple TT2 plugin for generating CSV
+WWW=		https://metacpan.org/release/Template-Plugin-CSV
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Template-Toolkit>0:www/p5-Template-Toolkit \

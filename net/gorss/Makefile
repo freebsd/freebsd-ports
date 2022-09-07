@@ -6,6 +6,7 @@ CATEGORIES=	net www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple RSS/Atom reader written in Go
+WWW=		https://github.com/Lallassu/gorss
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

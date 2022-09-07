@@ -5,6 +5,7 @@ CATEGORIES=	audio kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE CDDB library
+WWW=		https://www.kde.org/
 
 LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5
 

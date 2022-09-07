@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This module provides access to the libidn library
+WWW=		https://metacpan.org/release/Net-LibIDN
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

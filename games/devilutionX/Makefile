@@ -7,6 +7,7 @@ EXTRACT_ONLY=	${DISTFILES:N*\:data:C/:.*//}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Diablo I engine for modern operating systems
+WWW=		https://github.com/diasurgical/devilutionX
 
 LICENSE=	UNLICENSE CC-BY-NC-SA-4.0 OFL11
 LICENSE_COMB=	multi

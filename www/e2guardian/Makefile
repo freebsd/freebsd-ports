@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	marcellocoutinho@gmail.com
 COMMENT=	Dansguardian fork with many improvements and bug fixes
+WWW=		http://e2guardian.org
 
 LICENSE=	GPLv2
 

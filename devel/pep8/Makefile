@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python style guide checker
+WWW=		https://pypi.org/project/pep8/
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check if scalar is valid UTF-8
+WWW=		https://metacpan.org/release/Unicode-CheckUTF8
 
 USES=		perl5
 USE_PERL5=	configure

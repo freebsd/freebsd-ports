@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
+WWW=		https://metacpan.org/release/DBIx-Class
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

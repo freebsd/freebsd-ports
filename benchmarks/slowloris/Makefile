@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low-bandwidth, yet greedy and poisonous HTTP client
+WWW=		http://ha.ckers.org/slowloris/
 
 RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 

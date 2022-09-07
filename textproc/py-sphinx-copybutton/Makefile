@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add a copy button to each of your code cells
+WWW=		https://github.com/executablebooks/sphinx-copybutton
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

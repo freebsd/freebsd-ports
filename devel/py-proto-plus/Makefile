@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Beautiful, Pythonic protocol buffers
+WWW=		https://github.com/googleapis/proto-plus-python
 
 LICENSE=	APACHE20
 

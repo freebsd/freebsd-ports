@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for simple and extensible templating
+WWW=		https://metacpan.org/release/Text-MicroMason
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Ephemerides computation
+WWW=		https://kosmorro.space/
 
 LICENSE=	AGPLv3
 

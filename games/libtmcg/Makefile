@@ -6,6 +6,7 @@ DISTNAME=	libTMCG-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for creating secure and fair online card games
+WWW=		https://www.nongnu.org/libtmcg/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Portable NES/Famicom emulator
+WWW=		http://0ldsk00l.ca/nestopia/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

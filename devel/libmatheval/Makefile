@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Library to evaluate mathematical functions
+WWW=		https://www.gnu.org/software/libmatheval/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

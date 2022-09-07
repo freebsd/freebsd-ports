@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JSON data type for Redis
+WWW=		https://oss.redislabs.com/redisjson/
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	Redis Source Available License Agreement

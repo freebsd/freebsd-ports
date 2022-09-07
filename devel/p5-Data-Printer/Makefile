@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Colored pretty-print of Perl data structures and objects
+WWW=		https://metacpan.org/release/Data-Printer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

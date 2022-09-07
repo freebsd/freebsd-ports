@@ -4,6 +4,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multicast DNS library for Qt applications
+WWW=		https://github.com/nitroshare/qmdnsengine
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR logging utilities
+WWW=		https://pear.php.net/package/Log
 
 LICENSE=	MIT
 

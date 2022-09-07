@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Python framework for command line utilities
+WWW=		https://liw.fi/cliapp/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Convex Over and Under Envelopes for NonliNear Estimation
+WWW=		https://projects.coin-or.org/Couenne
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Couenne/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create nice formatted tables using extended ASCII and ANSI colors
+WWW=		https://metacpan.org/release/Text-ANSITable
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

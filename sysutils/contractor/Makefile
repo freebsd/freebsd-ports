@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Desktop-wide extension service
+WWW=		https://github.com/elementary/contractor
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

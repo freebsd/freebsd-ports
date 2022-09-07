@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	cl-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Lisp Markup Language
+WWW=		http://lml.b9.com/
 
 NO_BUILD=	yes
 

@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PCG Random Number Generation, C++ Edition
+WWW=		https://github.com/imneme/pcg-cpp
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

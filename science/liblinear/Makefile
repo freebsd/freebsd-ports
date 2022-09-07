@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.csie.ntu.edu.tw/~cjlin/liblinear/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for Large Linear Classification
+WWW=		https://www.csie.ntu.edu.tw/~cjlin/liblinear/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -6,6 +6,7 @@ MASTER_SITES=	http://jason.long.name/dkfilter/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domainkeys filter for Postfix
+WWW=		http://jason.long.name/dkfilter/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

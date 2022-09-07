@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Write command-line programs with less suffering
+WWW=		https://metacpan.org/release/App-Cmd
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	PostgreSQL extension for collecting statistics about predicates
+WWW=		https://github.com/dalibo/pg_qualstats
 
 LICENSE=	PostgreSQL
 

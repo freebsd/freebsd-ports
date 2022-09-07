@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sasaki12@gmail.com
 COMMENT=	Collection of normalized lua functions
+WWW=		https://github.com/lua-stdlib/normalize
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

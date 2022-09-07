@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Lightweight workflow system
+WWW=		https://metacpan.org/release/Class-Workflow
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

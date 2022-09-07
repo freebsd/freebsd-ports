@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rihaz.jerrin@gmail.com
 COMMENT=	Cisco IOS running-config manipulation
+WWW=		https://metacpan.org/release/Cisco-CopyConfig
 
 BUILD_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP

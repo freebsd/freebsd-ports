@@ -4,6 +4,7 @@ CATEGORIES=	converters devel sysutils
 
 MAINTAINER=	takawata@FreeBSD.org
 COMMENT=	Decompile binary MOF file (BMF) from WMI buffer
+WWW=		https://github.com/pali/bmfdec/
 
 LICENSE=	GPLv2
 

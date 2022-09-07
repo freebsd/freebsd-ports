@@ -6,6 +6,7 @@ MASTER_SITES=	https://aklv.github.io/distfiles/
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Extractor from .chm files
+WWW=		https://github.com/trexinc/evil-programmers
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../COPYING

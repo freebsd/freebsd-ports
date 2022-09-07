@@ -4,6 +4,7 @@ CATEGORIES=	audio hamradio
 
 MAINTAINER=	nsonack@outlook.com
 COMMENT=	SDR DAB/DAB+ Receiver
+WWW=		https://www.welle.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

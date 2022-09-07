@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Trap exit codes, exceptions, output, etc
+WWW=		https://metacpan.org/release/Test-Trap
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

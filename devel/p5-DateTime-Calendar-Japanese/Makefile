@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	DateTime Extension for Traditional Japanese Calendars
+WWW=		https://metacpan.org/release/DateTime-Calendar-Japanese
 
 BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
 		p5-DateTime-Util-Calc>=0:devel/p5-DateTime-Util-Calc \

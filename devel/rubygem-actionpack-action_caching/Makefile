@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Action caching for Action Pack (removed from core in Rails 4.0)
+WWW=		https://github.com/rails/actionpack-action_caching
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

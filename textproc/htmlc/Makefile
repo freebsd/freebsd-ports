@@ -6,6 +6,7 @@ MASTER_SITES=	http://htmlc.inria.fr/ \
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Text file generator
+WWW=		http://htmlc.inria.fr/eng.htm
 
 BUILD_DEPENDS=	ocamlc:lang/ocaml
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for parsing XML encoding maps
+WWW=		https://metacpan.org/release/XML-Encoding
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

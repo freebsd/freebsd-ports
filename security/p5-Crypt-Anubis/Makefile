@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Crypt::CBC-compliant block cipher
+WWW=		https://metacpan.org/release/Crypt-Anubis
 
 USES=		perl5
 USE_PERL5=	configure

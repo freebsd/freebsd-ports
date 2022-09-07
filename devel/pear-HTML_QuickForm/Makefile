@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provide methods for creating, validating, and processing HTML forms
+WWW=		https://pear.php.net/package/HTML_QuickForm
 
 LICENSE=	PHP301
 

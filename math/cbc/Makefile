@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Coin-or Branch and Cut: mixed integer programming solver
+WWW=		https://projects.coin-or.org/Cbc
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Cbc/LICENSE

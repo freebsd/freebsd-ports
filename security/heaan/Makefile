@@ -6,6 +6,7 @@ CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library that implements homomorphic encryption
+WWW=		https://github.com/snucrypto/HEAAN
 
 LICENSE=	CC-BY-3.0
 LICENSE_FILE=	${WRKSRC}/../../LICENSE

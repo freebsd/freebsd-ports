@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.autistici.org/bakunin/libnxml/ \
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	C library for writing XML 1.0/1.1 files or streams
+WWW=		http://www2.autistici.org/bakunin/libnxml/doc/
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

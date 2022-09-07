@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Object Class for Revision Control System (RCS)
+WWW=		https://metacpan.org/release/Rcs
 
 USES=		perl5
 USE_PERL5=	configure

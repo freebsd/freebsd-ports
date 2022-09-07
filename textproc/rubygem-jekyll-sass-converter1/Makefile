@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Basic Sass converter for Jekyll
+WWW=		https://github.com/jekyll/jekyll-sass-converter
 
 LICENSE=	MIT
 

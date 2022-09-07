@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.spin.rice.edu/Software/pathChirp/
 
 MAINTAINER=	dikshie@lapi.itb.ac.id
 COMMENT=	Measurement tool for available bandwidth estimation
+WWW=		http://www.spin.rice.edu/Software/pathChirp/
 
 LICENSE=		RICE MARYLAND
 LICENSE_COMB=		multi

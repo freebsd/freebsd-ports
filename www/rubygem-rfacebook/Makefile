@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to the Facebook API
+WWW=		http://www.livelearncode.com/
 
 LICENSE=	BSD4CLAUSE
 

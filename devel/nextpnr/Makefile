@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Portable FPGA place and route tool
+WWW=		https://github.com/YosysHQ/nextpnr
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

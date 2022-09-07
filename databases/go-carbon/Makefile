@@ -6,6 +6,7 @@ CATEGORIES=		databases
 
 MAINTAINER=		a.andersson.thn@gmail.com
 COMMENT=		Go implementation of carbon
+WWW=		https://github.com/lomik/go-carbon
 
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE.md

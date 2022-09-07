@@ -4,6 +4,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Distraction-free Markdown editor
+WWW=		https://wereturtle.github.io/ghostwriter/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

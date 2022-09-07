@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python attributes without boilerplate
+WWW=		https://github.com/python-attrs/attrs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Random numbers using timer/schedule entropy
+WWW=		https://metacpan.org/release/Crypt-Random-TESHA2
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

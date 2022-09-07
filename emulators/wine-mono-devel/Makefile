@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	damjan.jov@gmail.com
 COMMENT=	Mono .NET implementation for Wine development branch
+WWW=		https://wiki.winehq.org/Mono
 
 LICENSE=	MIT GPLv2 LGPL20
 LICENSE_COMB=	multi

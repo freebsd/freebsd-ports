@@ -6,6 +6,7 @@ CATEGORIES=		devel
 
 MAINTAINER=		dch@FreeBSD.org
 COMMENT=		Sleek and powerful Git GUI
+WWW=		https://git-cola.github.io/
 
 LICENSE=		GPLv2+
 LICENSE_FILE=		${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Bidirectional map implementation and related functionality
+WWW=		https://github.com/jab/bidict
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

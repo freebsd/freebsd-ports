@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@saltant.com
 COMMENT=	High-level and low-level Python bindings to GSSAPI C libraries
+WWW=		https://github.com/pythongssapi/python-gssapi
 
 LICENSE=	ISCL
 

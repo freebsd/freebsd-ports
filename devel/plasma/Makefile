@@ -5,6 +5,7 @@ CATEGORIES=	devel python
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Interactive disassembler for x86/ARM/MIPS
+WWW=		https://www.github.com/plasma-disassembler/plasma
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Jade syntax template adapter for Django, Jinja2, Mako and Tornado templates
+WWW=		https://github.com/syrusakbary/pyjade
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

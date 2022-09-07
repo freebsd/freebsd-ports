@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple .ini files emitter and parser for Perl
+WWW=		https://metacpan.org/release/Config-INI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

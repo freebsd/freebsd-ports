@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Helper to test WSGI applications
+WWW=		https://pythonpaste.org/webtest/
 
 LICENSE=	MIT
 

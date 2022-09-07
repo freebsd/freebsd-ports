@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl equivalent of du(1)
+WWW=		https://metacpan.org/release/Filesys-DiskUsage
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

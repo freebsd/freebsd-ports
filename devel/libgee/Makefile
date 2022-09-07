@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GObject collection library
+WWW=		https://wiki.gnome.org/Projects/Libgee
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

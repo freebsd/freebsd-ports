@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for R/W structured data to/from an external representation
+WWW=		http://xtl.sourceforge.net/
 
 NO_BUILD=	yes
 

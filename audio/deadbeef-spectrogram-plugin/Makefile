@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Spectrogram plugin for DeaDBeeF audio player
+WWW=		https://github.com/cboxdoerfer/ddb_spectrogram
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server browser for many popular 3D action games
+WWW=		http://www.linuxgames.com/xqf/
 
 RUN_DEPENDS=	qstat:games/qstat
 

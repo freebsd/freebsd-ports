@@ -6,6 +6,7 @@ MASTER_SITES=	http://web.novalis.org/programs/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that creates an animated Julia set
+WWW=		http://web.novalis.org/
 
 LICENSE=	GPLv2
 

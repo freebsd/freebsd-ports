@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	TREZOR Communication Daemon aka TREZOR Bridge
+WWW=		https://github.com/trezor/trezord-go
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

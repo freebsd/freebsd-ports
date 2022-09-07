@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_fsl09y
 
 MAINTAINER=	yds@Necessitu.de
 COMMENT=	Lua wrapper for SQLite3 library
+WWW=		http://Lua.SQLite.org/index.cgi/doc/tip/doc/lsqlite3.wiki
 
 LICENSE=	MIT
 

@@ -4,6 +4,7 @@ CATEGORIES=	deskutils gnome
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Time management utility for GNOME
+WWW=		https://gnomepomodoro.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

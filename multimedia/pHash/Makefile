@@ -7,6 +7,7 @@ MASTER_SITES=	http://phash.org/releases/ \
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Open source perceptual hash library
+WWW=		https://phash.org/
 
 LICENSE=	GPLv3+
 

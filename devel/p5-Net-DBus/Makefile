@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for the DBus message system
+WWW=		https://metacpan.org/release/Net-DBus
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

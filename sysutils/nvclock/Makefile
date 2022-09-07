@@ -7,6 +7,7 @@ DISTNAME=	nvclock${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	NVidia graphic card status and overclocking tool
+WWW=		https://www.linuxhardware.org/nvclock/
 
 LICENSE=	GPLv2
 

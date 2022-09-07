@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Export Django monitoring metrics for Prometheus.io
+WWW=		https://github.com/korfuri/django-prometheus
 
 LICENSE=	APACHE20
 

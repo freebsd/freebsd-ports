@@ -5,6 +5,7 @@ CATEGORIES=	devel wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	SDL-1.2 compatibility layer that uses SDL 2.0 behind the scenes
+WWW=		https://github.com/libsdl-org/sdl12-compat
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

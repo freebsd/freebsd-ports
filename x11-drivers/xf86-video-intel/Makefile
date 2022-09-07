@@ -7,6 +7,7 @@ CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org legacy driver for Intel integrated graphics chipsets
+WWW=		https://01.org/linuxgraphics/
 
 LICENSE=	MIT	# various
 LICENSE_FILE=	${WRKSRC}/COPYING

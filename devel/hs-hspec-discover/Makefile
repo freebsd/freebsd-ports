@@ -5,6 +5,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Automatically discover and run Hspec tests
+WWW=		https://hspec.github.io/
 
 LICENSE=	MIT
 

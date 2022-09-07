@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pyhon packet parsing using wireshark dissectors
+WWW=		https://github.com/KimiNewt/pyshark
 
 LICENSE=	MIT
 

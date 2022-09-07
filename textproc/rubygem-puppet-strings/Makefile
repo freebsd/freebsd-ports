@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Puppet documentation extraction and presentation tool
+WWW=		https://github.com/puppetlabs/puppet-strings
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

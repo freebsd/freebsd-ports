@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Wireguard client that exposes itself as a socks5 proxy
+WWW=		https://github.com/octeep/wireproxy
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

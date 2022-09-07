@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper for all of table_info(), column_info(), *_key_info()
+WWW=		https://metacpan.org/release/DBIx-Admin-TableInfo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

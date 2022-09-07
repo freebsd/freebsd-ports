@@ -5,6 +5,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Small prototype-based programming language
+WWW=		https://iolanguage.org
 
 LICENSE=	BSD3CLAUSE
 

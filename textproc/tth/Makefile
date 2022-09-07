@@ -8,6 +8,7 @@ DISTNAME=	tth_C
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TeX to HTML translator
+WWW=		http://hutchinson.belmont.ma.us/tth/
 
 RUN_DEPENDS=	ppmtogif:graphics/netpbm
 

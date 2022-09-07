@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	YUI Compressor for minifying JavaScript and CSS assets
+WWW=		https://github.com/sstephenson/ruby-yui-compressor
 
 LICENSE=	BSD3CLAUSE MIT MPL11 MPL20
 LICENSE_COMB=	multi

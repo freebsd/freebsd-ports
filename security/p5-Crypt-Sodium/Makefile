@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	freebsd@daemon.de
 COMMENT=	Perl bindings for portable NaCL (libsodium)
+WWW=		https://metacpan.org/release/Crypt-Sodium
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

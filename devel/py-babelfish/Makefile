@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Module to work with countries and languages
+WWW=		https://github.com/Diaoul/babelfish/
 
 LICENSE=	BSD3CLAUSE
 

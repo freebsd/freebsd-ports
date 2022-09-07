@@ -5,6 +5,7 @@ CATEGORIES=	arabic
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API abstraction to common Islamic calculations
+WWW=		https://github.com/arabeyes-org/ITL
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

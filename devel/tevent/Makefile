@@ -7,6 +7,7 @@ MASTER_SITES=			SAMBA
 
 MAINTAINER=			timur@FreeBSD.org
 COMMENT=			Talloc based event loop library
+WWW=		https://tevent.samba.org/
 
 LICENSE=			LGPL3
 

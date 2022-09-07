@@ -6,6 +6,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Shell combinators library
+WWW=		https://github.com/tomerfiliba/plumbum
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

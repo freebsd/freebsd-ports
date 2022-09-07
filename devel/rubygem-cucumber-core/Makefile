@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Core library for the Cucumber BDD app
+WWW=		https://github.com/cucumber/cucumber-ruby-core
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.run
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Easy to use, yet powerful tool for designing printed circuit boards
+WWW=		http://www.cadsoftusa.com
 
 LICENSE=	Eagle
 LICENSE_NAME=	Eagle End User License Agreement

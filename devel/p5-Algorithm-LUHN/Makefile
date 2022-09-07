@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Calculate the Modulus 10 Double Add Double checksum
+WWW=		https://metacpan.org/release/Algorithm-LUHN
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

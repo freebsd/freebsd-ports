@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	YAML Configuration Plugin
+WWW=		https://metacpan.org/release/Mojolicious-Plugin-YamlConfig
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

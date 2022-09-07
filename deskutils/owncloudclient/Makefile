@@ -11,6 +11,7 @@ PATCHFILES=	ff43c9394b45dd78106069ba89ae92f25abba158.patch:-p1
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	OwnCloud Desktop Syncing Client
+WWW=		https://github.com/owncloud/client
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

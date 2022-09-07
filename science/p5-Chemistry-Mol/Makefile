@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl toolkit to describe molecules
+WWW=		https://metacpan.org/release/Chemistry-Mol
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

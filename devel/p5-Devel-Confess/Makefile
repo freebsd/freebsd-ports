@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Include stack traces on all warnings and errors
+WWW=		https://metacpan.org/release/Devel-Confess
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/grip/${DISTVERSION}
 
 MAINTAINER=	freebsd-ports@jan0sch.de
 COMMENT=	GTK front-end to external cd rippers and audio encoders
+WWW=		https://sourceforge.net/projects/grip/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

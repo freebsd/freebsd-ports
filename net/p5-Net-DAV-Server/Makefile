@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide a DAV Server
+WWW=		https://metacpan.org/release/Net-DAV-Server
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \

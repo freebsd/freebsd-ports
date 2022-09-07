@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.maxr.org/downloads/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Mechanized Assault and Exploration Reloaded
+WWW=		https://www.maxr.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/data/COPYING

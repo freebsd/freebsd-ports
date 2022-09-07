@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	theis@gmx.at
 COMMENT=	Scans log files and bans IP that makes too many password failures
+WWW=		https://www.fail2ban.org/wiki/index.php/Main_Page
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

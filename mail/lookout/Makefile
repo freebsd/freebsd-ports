@@ -6,6 +6,7 @@ MASTER_SITES=	http://catb.org/~esr/lookout/
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Convert Outlook97 addressbook export files to KDE KAB/GNOME gnomecard
+WWW=		http://catb.org/~esr/lookout/
 
 USES=		python shebangfix
 NO_BUILD=	yes

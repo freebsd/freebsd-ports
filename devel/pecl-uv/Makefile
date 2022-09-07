@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	PHP wrapper for libuv
+WWW=		https://pecl.php.net/package/uv
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE

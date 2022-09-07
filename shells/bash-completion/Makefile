@@ -6,6 +6,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
+WWW=		https://github.com/scop/bash-completion
 
 # bash-completion is licensed under GPLv2+
 # bash-completion-freebsd is licensed under BSD2CLAUSE

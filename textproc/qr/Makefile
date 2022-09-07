@@ -4,6 +4,7 @@ CATEGORIES=	textproc graphics
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Generate textual QR codes using terminal
+WWW=		https://github.com/Y2Z/qr
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

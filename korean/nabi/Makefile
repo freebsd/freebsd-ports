@@ -5,6 +5,7 @@ CATEGORIES=	korean gnome
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Hangul X Input Method for Everywhere
+WWW=		https://github.com/libhangul/nabi/wiki
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

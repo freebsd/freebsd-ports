@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Handle data on a grid: NumPy n-dimensional arrays
+WWW=		https://github.com/MDAnalysis/GridDataFormats
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

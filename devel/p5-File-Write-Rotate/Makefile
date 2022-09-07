@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write to files that archive/rotate themselves
+WWW=		https://metacpan.org/release/File-Write-Rotate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

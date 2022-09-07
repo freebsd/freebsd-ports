@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight and flexible command-line JSON processor
+WWW=		https://stedolan.github.io/jq/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

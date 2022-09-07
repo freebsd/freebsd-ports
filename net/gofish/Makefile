@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	kaiw27@gmail.com
 COMMENT=	GoFish Gopher Server
+WWW=		http://gofish.sourceforge.net/
 
 LICENSE=	GPLv2
 

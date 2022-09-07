@@ -9,6 +9,7 @@ PATCHFILES=	4c8d0a1316000db93eb4484480b2e14188560e14.patch:-p1 \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modules for running Ruby on Rails and Rack applications
+WWW=		https://www.phusionpassenger.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

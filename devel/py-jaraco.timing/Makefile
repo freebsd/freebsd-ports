@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Routines pertinent to the fourth dimension
+WWW=		https://bitbucket.org/jaraco/jaraco.timing
 
 LICENSE=	MIT
 

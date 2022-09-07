@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read/Write .ini style files with as little code as possible
+WWW=		https://metacpan.org/release/Config-Tiny
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

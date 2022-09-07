@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Perl interface for the Tumblr API
+WWW=		https://metacpan.org/release/WWW-Tumblr
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

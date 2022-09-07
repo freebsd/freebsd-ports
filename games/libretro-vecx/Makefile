@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Vectrex emulator for libretro
+WWW=		https://github.com/libretro/libretro-vecx
 
 LICENSE=	GPLv3
 

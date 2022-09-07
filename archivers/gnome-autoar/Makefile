@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Glib wrapper around libarchives
+WWW=		https://gitlab.gnome.org/GNOME/gnome-autoar
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,4 +1,5 @@
 COMMENT=	Perl bindings for ossp-uuid
+WWW=		http://www.ossp.org/pkg/lib/uuid/
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libossp-uuid.a:misc/ossp-uuid
 

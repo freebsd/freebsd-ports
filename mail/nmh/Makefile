@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Cleaned up MH mailer suite
+WWW=		https://savannah.nongnu.org/projects/nmh/
 
 LICENSE=	BSD3CLAUSE
 

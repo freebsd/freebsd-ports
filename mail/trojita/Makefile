@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/src/
 
 MAINTAINER=	marco.broeder@posteo.eu
 COMMENT=	Fast cross-platform IMAP e-mail client using Qt 5 toolkit
+WWW=		http://trojita.flaska.net/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

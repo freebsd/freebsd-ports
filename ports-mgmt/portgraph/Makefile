@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Create a dependencies graph of a(all) port(s)
+WWW=		https://gitlab.com/lbartoletti/portgraph
 
 LICENSE=	BSD2CLAUSE
 

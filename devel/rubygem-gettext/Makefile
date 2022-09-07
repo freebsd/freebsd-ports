@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby implementation of the gettext library
+WWW=		https://ruby-gettext.github.io/
 
 LICENSE=	LGPL3 RUBY
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ DISTNAME=	HandlerSocket-Plugin-for-MySQL-${DISTVERSION}
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Client Library of HandlerSocket Plugin
+WWW=		https://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL
 
 WRKSRC=		${WRKDIR}/HandlerSocket-Plugin-for-MySQL
 

@@ -7,6 +7,7 @@ DISTNAME=	imp${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Publishing and presentation tool
+WWW=		https://www.ntlug.org/~ccox/impress/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

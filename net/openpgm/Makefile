@@ -9,6 +9,7 @@ PATCHFILES=	ee25ff3d13f2639b4c3a42125e79f77f921c3320.patch:-p3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the PGM reliable multicast protocol
+WWW=		https://code.google.com/p/openpgm/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

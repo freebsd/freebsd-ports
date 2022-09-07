@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	mythplugin-
 
 MAINTAINER?=	ahicks@p-o.co.uk
 COMMENT=	Music playing plugin for MythTV
+WWW=		https://www.mythtv.org/wiki/MythMusic
 
 LICENSE=	GPLv2
 

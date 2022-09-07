@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Chaoskube periodically kills random pods in your Kubernetes cluster
+WWW=		https://github.com/linki/chaoskube
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

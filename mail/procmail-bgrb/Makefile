@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-bgrb
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	BuGlessRB fork of the procmail local mail delivery agent
+WWW=		https://github.com/BuGlessRB/procmail
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BuGlessRB

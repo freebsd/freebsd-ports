@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl class to compress leading blank spaces in web content
+WWW=		https://metacpan.org/release/Compress-LeadingBlankSpaces
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

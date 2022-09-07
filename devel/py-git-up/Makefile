@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Python implementation of 'git up'
+WWW=		https://pypi.org/project/git-up/
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check currently running OS
+WWW=		https://metacpan.org/release/Devel-CheckOS
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

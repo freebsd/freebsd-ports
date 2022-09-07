@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}-1.4.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to create notes
+WWW=		https://www.squirrelmail.org
 
 USE_SM_COMPAT=	yes
 USE_GENERIC_PKGMESSAGE=	yes

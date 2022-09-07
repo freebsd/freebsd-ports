@@ -5,6 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Update dynamic DNS entries
+WWW=		https://github.com/ddclient/ddclient
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ library providing a simple API to INI-style configuration files
+WWW=		https://github.com/brofield/simpleini
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt

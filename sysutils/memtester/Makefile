@@ -5,6 +5,7 @@ MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/old-versions/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Utility to test for faulty memory subsystem
+WWW=		http://pyropus.ca/software/memtester/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

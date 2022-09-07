@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Basic runtime logger
+WWW=		https://metacpan.org/release/Log-Simple
 
 LICENSE=	GPLv2
 

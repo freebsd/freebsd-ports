@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python bindings for Libvirt virtualization API
+WWW=		https://libvirt.org/python.html
 
 LICENSE=	GPLv2
 

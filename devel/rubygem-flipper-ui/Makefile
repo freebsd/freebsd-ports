@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rack middleware that provides a fully featured web interface
+WWW=		https://github.com/jnunemaker/flipper
 
 LICENSE=	MIT
 

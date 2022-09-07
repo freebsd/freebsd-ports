@@ -8,6 +8,7 @@ DISTFILES=	MUMPS_${MUMPS_VERSION}.tar.gz:mumps
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	COIN-OR autotools harness to build Mumps
+WWW=		https://github.com/coin-or-tools/ThirdParty-Mumps
 
 LICENSE=	EPL
 

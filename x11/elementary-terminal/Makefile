@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Terminal emulator designed for elementary OS
+WWW=		https://github.com/elementary/terminal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/ipbt/ \
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	High-tech ttyrec player with improvements over ttyplay
+WWW=		https://www.chiark.greenend.org.uk/~sgtatham/ipbt/
 
 USES=		ncurses perl5 shebangfix
 

@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${PORTNAME}${DISTVERSION:R}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Nanoscale material simulations using density functional theories (DFT)
+WWW=		http://www.openmx-square.org/
 
 LICENSE=	GPLv2
 

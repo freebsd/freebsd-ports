@@ -6,6 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	mr.deadlystorm@gmail.com
 COMMENT=	Prometheus exporter for MySQL server metrics
+WWW=		https://github.com/prometheus/mysqld_exporter
 
 LICENSE=	APACHE20
 

@@ -6,6 +6,7 @@ CATEGORIES=	graphics geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Powerful suite of geospatial libraries and applications
+WWW=		https://github.com/ossimlabs/ossim
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

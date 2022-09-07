@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	WAF implementation in C++, exposed to Ruby
+WWW=		https://github.com/DataDog/libddwaf
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

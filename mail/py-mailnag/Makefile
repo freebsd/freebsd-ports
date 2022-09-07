@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Extensible mail notification daemon
+WWW=		https://github.com/pulb/mailnag
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

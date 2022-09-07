@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.w1hkj.com/files/fldigi/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
+WWW=		http://www.w1hkj.com
 
 LICENSE=	GPLv3
 

@@ -8,6 +8,7 @@ DISTNAME=	Kappa20-${PORTVERSION}
 
 MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	20-dot Kanji font Kappa20
+WWW=		http://kappa.allnet.ne.jp/20dot.fonts/
 
 LICENSE=	PD
 

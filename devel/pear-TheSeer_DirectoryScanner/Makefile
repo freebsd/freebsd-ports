@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}TheSeer_
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Recursive directory scanner and filter
+WWW=		https://github.com/theseer/DirectoryScanner/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

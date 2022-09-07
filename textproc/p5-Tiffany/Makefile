@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for generic interface for Perl5 template engines
+WWW=		https://metacpan.org/release/Tiffany
 
 TEST_DEPENDS=	\
 	p5-Test-Requires>0:devel/p5-Test-Requires \

@@ -14,6 +14,7 @@ EXTRACT_ONLY=	${_MAIN_DISTFILE}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	BibTeX native bibliographic reference manager (Linux version)
+WWW=		https://www.jabref.org/
 
 LICENSE=	BSD2CLAUSE GPLv2 GPLv3
 LICENSE_COMB=	multi

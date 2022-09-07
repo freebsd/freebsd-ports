@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Use version control tags to discover version numbers
+WWW=		https://github.com/habnabit/vcversioner
 
 LICENSE=	ISCL
 

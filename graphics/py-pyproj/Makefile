@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cython wrapper to provide python interfaces to PROJ.4 functions
+WWW=		https://github.com/pyproj4/pyproj
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

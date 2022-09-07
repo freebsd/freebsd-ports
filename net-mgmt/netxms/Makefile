@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.netxms.org/download/releases/${PORTVERSION:R}/${PORTVER
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring system
+WWW=		https://www.netxms.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Automated program/system tester
+WWW=		https://www.gnu.org/software/dejagnu/
 
 LICENSE=	GPLv3
 

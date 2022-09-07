@@ -7,6 +7,7 @@ CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Open source and cross-platform remake of a cult game System Shock
+WWW=		https://github.com/Interrupt/systemshock
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

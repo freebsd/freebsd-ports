@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Publicsuffixlist implementation
+WWW=		https://github.com/ko-zu/psl
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

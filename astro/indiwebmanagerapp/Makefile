@@ -5,6 +5,7 @@ CATEGORIES=	astro
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Graphical program to manage an INDI WebManager
+WWW=		https://github.com/rlancaste/INDIWebManagerApp
 
 LICENSE=	GPLv2
 

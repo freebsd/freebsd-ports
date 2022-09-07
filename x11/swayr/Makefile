@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Urgent-first/LRU window switcher for sway
+WWW=		https://sr.ht/~tsdh/swayr/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC:H}/LICENSE

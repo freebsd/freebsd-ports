@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Transform LaTeX source files to POD
+WWW=		https://metacpan.org/release/LaTeX-Pod
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

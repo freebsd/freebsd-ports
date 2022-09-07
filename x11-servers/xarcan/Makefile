@@ -8,6 +8,7 @@ PATCHFILES+=	2be9063af666.patch:-p1 # https://github.com/letoram/xarcan/pull/8
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X11 server as Arcan client
+WWW=		https://arcan-fe.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

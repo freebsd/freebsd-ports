@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read and write YAML streams incrementally
+WWW=		https://metacpan.org/release/IO-YAML
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	https://download.savannah.nongnu.org/releases/bino/
 
 MAINTAINER=	i@levsha.me
 COMMENT=	3D video player with multi-display support
+WWW=		https://bino3d.org
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

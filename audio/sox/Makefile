@@ -9,6 +9,7 @@ PATCH_SITES=	https://sourceforge.net/p/sox/patches/104/attachment/
 
 MAINTAINER=	dnelson@allantgroup.com
 COMMENT=	SOund eXchange - universal sound sample translator
+WWW=		http://sox.sourceforge.net/
 
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	dual

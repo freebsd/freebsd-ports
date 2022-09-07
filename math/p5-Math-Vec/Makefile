@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-Oriented Vector Math Methods in Perl
+WWW=		https://metacpan.org/release/Math-Vec
 
 USES=		perl5
 USE_PERL5=	modbuild

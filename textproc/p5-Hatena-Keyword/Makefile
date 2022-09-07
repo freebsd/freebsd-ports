@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Extract Hatena Keywords in a string
+WWW=		https://metacpan.org/release/Hatena-Keyword
 
 BUILD_DEPENDS=	p5-Cache>=0:devel/p5-Cache \
 		p5-Class-Accessor>=0:devel/p5-Class-Accessor \

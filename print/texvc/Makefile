@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-linux-x86-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert latex equations to HTML, MathML, PNG
+WWW=		https://www.mediawiki.org/wiki/Texvc
 
 USES=		gmake
 USE_OCAML=	yes

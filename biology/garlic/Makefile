@@ -8,6 +8,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Molecular viewer, editor, and visualization program
+WWW=		http://www.zucic.org/garlic/
 
 USES=		gmake xorg
 USE_XORG=	x11

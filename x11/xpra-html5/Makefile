@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Browser-based client for x11/xpra
+WWW=		https://xpra.org/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

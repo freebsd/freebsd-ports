@@ -7,6 +7,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/151383425/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Model to synchronize multiple instances over DBus
+WWW=		https://launchpad.net/dee
 
 LICENSE=	GPLv3
 

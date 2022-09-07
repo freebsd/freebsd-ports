@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Datadog Rust library
+WWW=		https://github.com/DataDog/libdatadog
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

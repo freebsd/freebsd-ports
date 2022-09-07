@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Facebook's branch of Apache Thrift, including a new C++ server
+WWW=		https://github.com/facebook/fbthrift
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

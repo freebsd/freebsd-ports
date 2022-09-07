@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	thomas@beingboiled.info
 COMMENT=	Lua binding to libunbound
+WWW=		https://github.com/brunoos/luasec
 
 LICENSE=	MIT
 

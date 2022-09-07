@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Missing font manager for UNIX
+WWW=		https://github.com/alexmyczko/fnt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

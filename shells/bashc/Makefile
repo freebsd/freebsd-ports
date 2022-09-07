@@ -4,6 +4,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	obscenum999@gmail.com
 COMMENT=	GNU Bourne Again shell extended with two-panel file manager
+WWW=		https://github.com/sergev/bash-commander
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Prebuilt dex-enabled yara-python wheels
+WWW=		https://github.com/MobSF/yara-python-dex
 
 LICENSE=	APACHE20
 

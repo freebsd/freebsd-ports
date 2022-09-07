@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}+git20220302+ds.orig
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Chiptune tracker compatible with DefleMask modules (.dmf)
+WWW=		https://github.com/tildearrow/furnace
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

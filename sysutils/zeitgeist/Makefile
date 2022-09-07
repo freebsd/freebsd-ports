@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Event logging framework
+WWW=		https://wiki.gnome.org/Projects/Zeitgeist
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

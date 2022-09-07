@@ -4,6 +4,7 @@ CATEGORIES=	deskutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 Plasmoid for search
+WWW=		https://www.kde.org/plasma-desktop
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config coreaddons i18n itemmodels kdeclarative \

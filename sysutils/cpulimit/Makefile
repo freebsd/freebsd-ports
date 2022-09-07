@@ -5,6 +5,7 @@ MASTER_SITES=	SF/limitcpu/limitcpu/
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	Limit the CPU usage of a process
+WWW=		http://limitcpu.sourceforge.net/
 
 LICENSE=	GPLv2
 

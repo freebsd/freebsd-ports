@@ -6,6 +6,7 @@ CATEGORIES=	ftp
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	FreeBSD ftpd
+WWW=		https://github.com/cschuber/freebsd-ftpd
 
 LICENSE=	BSD3CLAUSE
 

@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fluidsynth as LV2 plugin
+WWW=		https://github.com/brummer10/Fluida.lv2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

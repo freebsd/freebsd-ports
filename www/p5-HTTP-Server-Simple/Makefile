@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple standalone HTTP daemon
+WWW=		https://metacpan.org/release/HTTP-Server-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

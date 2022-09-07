@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Construct Makefile dependency list
+WWW=		https://netbsd.org
 
 LICENSE=	BSD2CLAUSE
 

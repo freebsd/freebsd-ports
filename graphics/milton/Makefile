@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Infinite-canvas paint program
+WWW=		https://www.miltonpaint.com/
 
 LICENSE=	GPLv3+
 

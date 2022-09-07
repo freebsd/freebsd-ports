@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	NES emulator core for libretro
+WWW=		https://github.com/libretro/QuickNES_Core
 
 LICENSE=	GPLv2
 

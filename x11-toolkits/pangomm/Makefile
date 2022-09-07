@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Pango
+WWW=		http://gtkmm.sourceforge.net/
 
 LICENSE=	LGPL21
 

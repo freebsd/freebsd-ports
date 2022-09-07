@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Wrapper the AliCloud Oauth2 API
+WWW=		https://gitlab.com/gitlab-jh/jh-team/omniauth-alicloud
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

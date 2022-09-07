@@ -4,6 +4,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Treemap visualiser for GHC .prof files
+WWW=		https://github.com/jaspervdj/profiteur
 
 LICENSE=	BSD3CLAUSE
 

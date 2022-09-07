@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Library and command line tool to detect SHA-1 collisions
+WWW=		https://github.com/cr-marcstevens/sha1collisiondetection
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

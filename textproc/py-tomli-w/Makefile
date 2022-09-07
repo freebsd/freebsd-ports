@@ -7,6 +7,7 @@ DISTNAME=	tomli_w-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lil' TOML writer
+WWW=		https://github.com/hukkin/tomli-w
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

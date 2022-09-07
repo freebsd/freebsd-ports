@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/Guardsquare/proguard/releases/download/v${PORTV
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java class file shrinker, optimizer, and obfuscator
+WWW=		https://www.guardsquare.com/en/products/proguard
 
 LICENSE=	GPLv2
 

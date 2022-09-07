@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cairo backend for Graphics::Primitive
+WWW=		https://metacpan.org/release/Graphics-Primitive-Driver-Cairo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

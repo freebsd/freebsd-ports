@@ -8,6 +8,7 @@ DISTNAME=	osd_clock-${PORTVERSION}
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Small clock which uses libxosd to render text to the root window
+WWW=		http://leftorium.net/software.phtml
 
 LIB_DEPENDS=	libxosd.so:misc/xosd
 

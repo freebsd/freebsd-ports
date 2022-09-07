@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Utility to show process environment
+WWW=		https://github.com/jamesodhunt/procenv
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

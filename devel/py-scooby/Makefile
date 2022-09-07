@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python environment detective
+WWW=		https://github.com/banesullivan/scooby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

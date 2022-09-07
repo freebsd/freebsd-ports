@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME application for managing encryption keys (PGP, SSH)
+WWW=		https://gitlab.gnome.org/GNOME/libcryptui
 
 BUILD_DEPENDS=	seahorse>=3.0.0:security/seahorse \
 		gpg:security/gnupg

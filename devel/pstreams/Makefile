@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Release%200.8.x
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	C++ utility for simple IOStream-based IPC
+WWW=		http://pstreams.sourceforge.net/
 
 LICENSE=	LGPL3
 

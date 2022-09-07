@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	CLI for development of Puppet modules
+WWW=		https://github.com/puppetlabs/pdk
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

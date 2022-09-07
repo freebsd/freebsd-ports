@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	papowell@astart.com
 COMMENT=	SOAP message messages with WSA fields
+WWW=		https://metacpan.org/release/MARKOV/XML-Compile-SOAP-WSA-0.13
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

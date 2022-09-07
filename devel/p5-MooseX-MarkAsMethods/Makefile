@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mark overload code symbols as methods
+WWW=		https://metacpan.org/release/MooseX-MarkAsMethods
 
 LICENSE=	LGPL21
 

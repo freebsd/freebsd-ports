@@ -6,6 +6,7 @@ DISTFILES=	go.mod:gomod
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Blazing fast command-line fuzzy finder
+WWW=		https://github.com/junegunn/fzf/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

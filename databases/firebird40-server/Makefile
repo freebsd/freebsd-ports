@@ -12,6 +12,7 @@ PATCHFILES=	96931200340c8e0abcd3529b8e443d5ab62adfa5.patch:-p1
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Firebird-4 relational database (server)
+WWW=		https://www.firebirdsql.org/
 
 LICENSE=	IDPL IPL
 LICENSE_COMB=	multi

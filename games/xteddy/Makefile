@@ -6,6 +6,7 @@ MASTER_SITES=	http://webstaff.itn.liu.se/~stegu/xteddy/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cuddlesome teddy for the X desktop
+WWW=		http://webstaff.itn.liu.se/~stegu/xteddy/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

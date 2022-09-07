@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to implement some of AutoConf macros
+WWW=		https://metacpan.org/release/Config-AutoConf
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Creates temporary files and directories from a structured description
+WWW=		https://metacpan.org/release/Directory-Scratch-Structured
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

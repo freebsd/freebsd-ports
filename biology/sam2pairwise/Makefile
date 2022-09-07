@@ -5,6 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Show pairwise alignment for each read in a SAM file
+WWW=		https://github.com/mlafave/sam2pairwise
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/LICENSE

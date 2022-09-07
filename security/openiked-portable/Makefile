@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-portable
 
 MAINTAINER=	david@lapinbilly.eu
 COMMENT=	IKEv2 daemon
+WWW=		https://github.com/openiked/openiked-portable
 
 LICENSE=	ISCL
 

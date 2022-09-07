@@ -7,6 +7,7 @@ DISTNAME=	Pantomime-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail/MIME handling library for GNUstep
+WWW=		http://www.collaboration-world.com/cgi-bin/project/index.cgi?pid=3
 
 LICENSE=	LGPL21
 

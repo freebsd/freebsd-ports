@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	RNP is a set of OpenPGP (RFC4880) tools
+WWW=		https://www.rnpgp.com/
 
 LICENSE=	APACHE20 BSD2CLAUSE BSD3CLAUSE OCB_Patent
 LICENSE_COMB=	multi

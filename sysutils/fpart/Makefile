@@ -7,6 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Sort and pack files into partitions
+WWW=		https://contribs.martymac.org
 
 LICENSE=	BSD2CLAUSE
 

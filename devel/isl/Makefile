@@ -5,6 +5,7 @@ MASTER_SITES=	SOURCEFORGE/libisl
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integer Set Library
+WWW=		https://libisl.sourceforge.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

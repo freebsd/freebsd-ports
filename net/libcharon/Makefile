@@ -7,6 +7,7 @@ DIST_SUBDIR=	Ultimaker
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	File metadata and streaming library
+WWW=		https://github.com/Ultimaker/libCharon
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

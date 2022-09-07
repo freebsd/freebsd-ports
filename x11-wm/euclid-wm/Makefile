@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Minimalist, tiling window manager for X11
+WWW=		http://euclid-wm.sourceforge.net
 
 LICENSE=	BSD3CLAUSE
 

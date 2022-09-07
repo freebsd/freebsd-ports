@@ -7,6 +7,7 @@ DISTNAME=	freebsd-runit-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Runit based init replacement for ${OPSYS}
+WWW=		http://smarden.org/runit/
 
 LICENSE=	BSD3CLAUSE CC0-1.0
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module to use plain config files
+WWW=		https://metacpan.org/release/Parse-PlainConfig
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

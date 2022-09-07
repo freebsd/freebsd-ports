@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library provide swappable JSON backends
+WWW=		https://github.com/intridea/multi_json
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

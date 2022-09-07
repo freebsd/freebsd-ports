@@ -7,6 +7,7 @@ DISTNAME=	commonmark-${PORTVERSION}
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Python parser for the CommonMark Markdown spec
+WWW=		https://github.com/rtfd/CommonMark-py
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

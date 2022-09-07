@@ -7,6 +7,7 @@ MASTER_SITES=	http://msp.ucsd.edu/Software/
 
 MAINTAINER=	brittlehaus@gmail.com
 COMMENT=	MIDI-capable real-time audio processor/synthesizer
+WWW=		http://msp.ucsd.edu/software.html
 
 LICENSE=	BSD3CLAUSE LGPL21
 LICENSE_COMB=	multi

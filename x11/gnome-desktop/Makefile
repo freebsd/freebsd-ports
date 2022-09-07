@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for GNOME
+WWW=		https://www.gnome.org/
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi

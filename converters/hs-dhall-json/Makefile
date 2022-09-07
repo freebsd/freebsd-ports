@@ -4,6 +4,7 @@ CATEGORIES=	converters lang haskell
 
 MAINTAINER=	malcolm.matalka@acsl.se
 COMMENT=	Compile Dhall expressions to JSON
+WWW=		https://dhall-lang.org/
 
 LICENSE=	BSD3CLAUSE
 

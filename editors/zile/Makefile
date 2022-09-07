@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small emacs-like text editor
+WWW=		https://www.gnu.org/software/zile/
 
 LICENSE=	GPLv3
 

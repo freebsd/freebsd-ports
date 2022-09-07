@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	mistresssilvara@hotmail.com
 COMMENT=	IPTV streaming application using mpv
+WWW=		https://github.com/linuxmint/hypnotix
 
 LICENSE=	GPLv3 PD
 LICENSE_COMB=	multi

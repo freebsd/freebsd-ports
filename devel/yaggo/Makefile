@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generate command line parser using getopt_long
+WWW=		https://github.com/gmarcais/yaggo
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fastimport parser and generator in Python
+WWW=		https://github.com/jelmer/python-fastimport
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

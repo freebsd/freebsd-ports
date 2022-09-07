@@ -7,6 +7,7 @@ DISTNAME=	Chameleon-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast HTML/XML Template Compiler
+WWW=		https://github.com/malthe/chameleon
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

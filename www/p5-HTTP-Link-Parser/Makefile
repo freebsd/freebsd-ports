@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse HTTP Link headers
+WWW=		https://metacpan.org/release/HTTP-Link-Parser
 
 LICENSE=	MIT
 

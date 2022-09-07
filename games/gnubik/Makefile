@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D Rubik's cube game
+WWW=		https://www.gnu.org/software/gnubik/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

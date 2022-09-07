@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Service mobile broadband provider database
+WWW=		https://wiki.gnome.org/Projects/NetworkManager/MobileBroadband/ServiceProviders
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

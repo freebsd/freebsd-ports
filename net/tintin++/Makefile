@@ -7,6 +7,7 @@ DISTNAME=	tintin-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client program to help playing MUDs
+WWW=		https://tintin.mudhalla.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING

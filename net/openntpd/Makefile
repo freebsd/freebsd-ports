@@ -7,6 +7,7 @@ MASTER_SITES=	OPENBSD/OpenNTPD
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Network Time Protocol (NTP) daemon
+WWW=		https://www.openntpd.org/
 
 LICENSE=	ISCL
 

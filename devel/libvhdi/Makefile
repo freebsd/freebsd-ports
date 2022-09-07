@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/libyal/libvhdi/releases/download/${PORTVERSION}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tools to access the Virtual Hard Disk image format
+WWW=		https://github.com/libyal/libvhdi
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance load generator for TCP and WebSocket servers
+WWW=		https://github.com/satori-com/tcpkali
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

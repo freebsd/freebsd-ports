@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-plugin
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Gimp plugin to correct lens distortion using the lensfun library
+WWW=		https://seebk.github.io/GIMP-Lensfun/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

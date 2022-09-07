@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Python codec that provides an RSpec style DSL for Python
+WWW=		https://github.com/delfick/nose-of-yeti
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

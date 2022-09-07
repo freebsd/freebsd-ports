@@ -6,6 +6,7 @@ MASTER_SITES=	https://s3.amazonaws.com/bjango/files/istatserverlinux/
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Daemon for iStat iPhone application
+WWW=		https://bjango.com/linux/istatserver/
 
 LICENSE=	BSD3CLAUSE
 

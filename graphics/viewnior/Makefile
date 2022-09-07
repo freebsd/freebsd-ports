@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Fast and simple image viewer
+WWW=		https://siyanpanayotov.com/project/viewnior/
 
 LICENSE=	GPLv3
 

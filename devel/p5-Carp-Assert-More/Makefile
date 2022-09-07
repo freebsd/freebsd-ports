@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convenience wrappers around Carp::Assert
+WWW=		https://metacpan.org/release/Carp-Assert-More
 
 LICENSE=	ART20
 

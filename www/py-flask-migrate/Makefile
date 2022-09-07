@@ -8,6 +8,7 @@ DISTNAME=	Flask-Migrate-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database schema migrations for Flask applications
+WWW=		https://github.com/miguelgrinberg/Flask-Migrate
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

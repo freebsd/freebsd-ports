@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Drivers and utilities for HP printers and All-in-One devices
+WWW=		https://developers.hp.com/hp-linux-imaging-and-printing
 
 LICENSE=	GPLv2+ MIT BSD3CLAUSE
 LICENSE_COMB=	multi

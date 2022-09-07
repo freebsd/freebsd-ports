@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	YAML parser and emitter in C++ matching the YAML 1.2 spec
+WWW=		https://github.com/jbeder/yaml-cpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

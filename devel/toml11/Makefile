@@ -5,6 +5,7 @@ CATEGORIES=		devel
 
 MAINTAINER=		dch@FreeBSD.org
 COMMENT=		C++11 header-only toml parser & encoder
+WWW=		https://github.com/toruniina/toml11
 
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE

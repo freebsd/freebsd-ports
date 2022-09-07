@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.unicom.com/sw/xtail/ \
 
 MAINTAINER=	gmarco@giovannelli.it
 COMMENT=	Watches the growth of files or directories
+WWW=		https://www.unicom.com/sw/xtail/
 
 HAS_CONFIGURE=	yes
 

@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunrychen@gmail.com
 COMMENT=	Fully automatic Morse code teaching machine
+WWW=		http://c2.com/morse
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 

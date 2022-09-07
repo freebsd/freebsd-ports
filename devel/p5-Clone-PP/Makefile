@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Recursively copy Perl datatypes
+WWW=		https://metacpan.org/release/Clone-PP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

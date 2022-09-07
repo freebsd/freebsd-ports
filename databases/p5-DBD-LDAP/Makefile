@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBI interface for accessing LDAP servers
+WWW=		https://metacpan.org/release/DBD-LDAP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

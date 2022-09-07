@@ -13,6 +13,7 @@ EXTRACT_ONLY=	baekmuk-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Hangul fonts for X11(baekmuk)
+WWW=		http://www.mizi.co.kr/software/baekmuk/index.html
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontscale:x11-fonts/mkfontscale

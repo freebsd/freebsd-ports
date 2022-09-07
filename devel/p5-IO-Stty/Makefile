@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Change and print terminal line settings
+WWW=		https://metacpan.org/release/IO-Stty
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

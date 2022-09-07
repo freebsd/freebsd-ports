@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Traditional and Simplified Chinese mappings
+WWW=		https://metacpan.org/release/Encode-HanConvert
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for terminal screen handling and optimization
+WWW=		https://metacpan.org/release/Curses
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

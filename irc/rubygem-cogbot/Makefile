@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mose@mose.com
 COMMENT=	Irc bot based on Cinch
+WWW=		https://github.com/mose/cogbot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

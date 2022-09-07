@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Convert ruby native regular expressions for JavaScript
+WWW=		https://github.com/jaynetics/js_regex
 
 LICENSE=	MIT
 

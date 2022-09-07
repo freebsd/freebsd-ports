@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pattern-controlled audio stream / sample re-sequencer LV2 plugin
+WWW=		https://github.com/sjaehn/BJumblr
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	gst-plugins-good-${DISTVERSION}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GStreamer GTK4 video sink plugin
+WWW=		https://gstreamer.freedesktop.org/documentation/gtk/gtksink.html
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

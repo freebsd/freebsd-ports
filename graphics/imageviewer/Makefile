@@ -9,6 +9,7 @@ DISTNAME=	ImageViewer-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Image Viewer
+WWW=		https://www.nice.ch/~phip/softcorner.html #img
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

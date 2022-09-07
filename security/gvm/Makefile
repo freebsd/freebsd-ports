@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Greenbone vulnerability management (metaport)
+WWW=		https://www.openvas.org/
 
 USES=		metaport python:3.7+
 

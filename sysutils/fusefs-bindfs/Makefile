@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	doralitze@chaotikum.org
 COMMENT=	FUSE based bindfs implementation way more powerful than nullfs
+WWW=		https://bindfs.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

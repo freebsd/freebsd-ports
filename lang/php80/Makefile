@@ -8,6 +8,7 @@ DIST_SUBDIR=	php
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	PHP Scripting Language
+WWW=		https://www.php.net/
 
 LICENSE=	PHP301
 

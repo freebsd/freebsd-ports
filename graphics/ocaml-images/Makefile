@@ -10,6 +10,7 @@ DIST_SUBDIR=	ocaml-images
 
 MAINTAINER=	michael.grunewald@laposte.net
 COMMENT=	Objective Caml image processing library
+WWW=		http://pauillac.inria.fr/camlimages/
 
 BROKEN=		does not build: broken plist
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTTP Body Parser
+WWW=		https://metacpan.org/release/HTTP-Body
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

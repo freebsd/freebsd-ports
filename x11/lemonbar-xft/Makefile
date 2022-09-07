@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	DtxdF@disroot.org
 COMMENT=	Fork of lemonbar with support for Xft (fontconfig typefaces)
+WWW=		https://gitlab.com/protesilaos/lemonbar-xft
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Advanced memory forensics framework
+WWW=		https://www.volatilityfoundation.org/
 
 LICENSE=	VSL
 LICENSE_NAME=	Volatility Software License

@@ -5,6 +5,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helpers for audio/video applications using GUPnP
+WWW=		https://wiki.gnome.org/Projects/GUPnP
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

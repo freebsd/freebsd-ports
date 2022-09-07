@@ -5,6 +5,7 @@ CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Preprocessor for typesetting Haskell sources with LaTeX
+WWW=		https://www.andres-loeh.de/lhs2tex/
 
 LICENSE=	GPLv2
 

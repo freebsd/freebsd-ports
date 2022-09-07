@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP class for creating scientific and business charts
+WWW=		http://www.phplot.com/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

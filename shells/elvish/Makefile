@@ -6,6 +6,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	vendion@gmail.com
 COMMENT=	Elvish = Expressive Programming Language + Versatile Interactive Shell
+WWW=		https://elv.sh/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE

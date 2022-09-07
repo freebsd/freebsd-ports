@@ -6,6 +6,7 @@ DISTNAME=	tenr.de-styles-pkg_${PORTVERSION}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Tenner themes pack for fluxbox
+WWW=		https://tenr.de/styles/
 
 RUN_DEPENDS=	fluxbox:x11-wm/fluxbox
 

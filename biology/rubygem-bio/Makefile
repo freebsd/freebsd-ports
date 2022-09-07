@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Integrated environment for Bioinformatics written in Ruby
+WWW=		http://bioruby.org/
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

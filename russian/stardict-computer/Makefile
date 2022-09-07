@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-ru-${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	English-Russian Computer dictionary
+WWW=		http://download.huzheng.org/ru/
 
 USES=	tar:bzip2
 

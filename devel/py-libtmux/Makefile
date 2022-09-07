@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typed scripting library / ORM / API wrapper for tmux
+WWW=		https://github.com/tmux-python/libtmux
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

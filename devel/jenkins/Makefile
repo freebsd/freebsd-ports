@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Open-source continuous integration server
+WWW=		https://jenkins.io/
 
 LICENSE=	MIT
 

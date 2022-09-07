@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Ancient Greek dictionary
+WWW=		https://www.himeros.eu/
 
 DICT=	 	grc
 

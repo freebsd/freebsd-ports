@@ -5,6 +5,7 @@ CATEGORIES=	math databases java
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	JTS Topology Suite
+WWW=		https://github.com/locationtech/jts
 
 LICENSE=	EPL
 #LICENSE_COMB=	dual

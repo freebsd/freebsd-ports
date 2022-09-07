@@ -5,6 +5,7 @@ CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell implementation of a javascript minifier
+WWW=		https://github.com/erikd/hjsmin
 
 LICENSE=	BSD3CLAUSE
 

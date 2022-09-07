@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Update Class::DBI using Data::FormValidator or HTML::Widget
+WWW=		https://metacpan.org/release/Class-DBI-FromForm
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

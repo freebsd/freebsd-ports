@@ -7,6 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Personal cloud which runs on your own server
+WWW=		https://nextcloud.com
 
 LICENSE=	AGPLv3
 

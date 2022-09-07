@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C++ Matrix: The Matrix Reloaded in Terminals
+WWW=		https://github.com/akinomyoga/cxxmatrix
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

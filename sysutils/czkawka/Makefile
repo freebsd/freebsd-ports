@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multi functional app to find duplicates, empty folders, similar images etc.
+WWW=		https://github.com/qarmin/czkawka
 
 LICENSE=	CC-BY-4.0 MIT
 LICENSE_COMB=	multi

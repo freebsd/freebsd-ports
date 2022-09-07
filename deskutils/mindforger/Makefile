@@ -4,6 +4,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Thinking notebook and markdown editor
+WWW=		https://www.mindforger.com/
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Phoronix Benchmarking Suite
+WWW=		https://www.phoronix-test-suite.com
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

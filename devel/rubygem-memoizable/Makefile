@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Memoize method return values
+WWW=		https://github.com/dkubb/memoizable
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

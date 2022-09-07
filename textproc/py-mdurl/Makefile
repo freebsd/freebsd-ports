@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Markdown URL utilities
+WWW=		https://github.com/executablebooks/mdurl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

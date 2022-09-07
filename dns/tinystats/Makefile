@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.morettoni.net/bsd/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	DJB's tinydns statistics generator
+WWW=		http://www.morettoni.net/tinystats.en.html
 
 LICENSE=	BSD2CLAUSE
 

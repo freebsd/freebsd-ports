@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Required attributes which fail only when trying to use them
+WWW=		https://metacpan.org/release/MooseX-LazyRequire
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

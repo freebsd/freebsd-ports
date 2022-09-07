@@ -11,6 +11,7 @@ DIST_SUBDIR=	latex
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Combines the features of both the tabularx and longtable packages
+WWW=		https://ctan.org/tex-archive/macros/latex/contrib/ltablex/
 
 USES=		zip
 USE_TEX=	latex texhash

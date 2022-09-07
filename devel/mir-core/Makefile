@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	base software building blocks and conventions
+WWW=		https://github.com/libmir/mir-core
 
 LICENSE=	BSL
 

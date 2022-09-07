@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-r/}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Streaming multimedia files downloader
+WWW=		http://msdl.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

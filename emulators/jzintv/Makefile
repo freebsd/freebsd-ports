@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^1.0.//1}-src
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Portable Intellivision(TM) Emulator
+WWW=		http://spatula-city.org/~im14u2c/intv/
 
 LICENSE=	GPLv2
 

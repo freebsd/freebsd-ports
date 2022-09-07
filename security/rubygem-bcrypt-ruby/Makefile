@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Sophisticated and secure hash algorithm for passwords
+WWW=		https://github.com/codahale/bcrypt-ruby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

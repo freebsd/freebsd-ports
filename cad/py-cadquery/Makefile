@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Python module for building parametric 3D CAD models
+WWW=		https://github.com/CadQuery/cadquery
 
 LICENSE=	APACHE20
 

@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides an interface for creating simple JS scripts
+WWW=		https://pear.php.net/package/HTML_Javascript
 
 LICENSE=	PHP30
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts Perl XS code into C code
+WWW=		https://metacpan.org/release/ExtUtils-ParseXS
 
 LICENSE=	ART10
 

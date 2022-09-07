@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Implementation of the Instrument-Neutral-Device-Interface protocol
+WWW=		https://github.com/indilib/indi
 
 LICENSE=	LGPL21
 

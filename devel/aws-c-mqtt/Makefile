@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C99 implementation of the MQTT 3.1.1 specification
+WWW=		https://github.com/awslabs/aws-c-mqtt
 
 LICENSE=	APACHE20
 

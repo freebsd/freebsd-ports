@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Generic ticket system integration into Icinga web 2
+WWW=		https://github.com/Icinga/icingaweb2-module-generictts
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

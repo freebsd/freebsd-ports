@@ -5,6 +5,7 @@ CATEGORIES=	dns benchmarks net
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Performance measurement of Domain Name System (DNS) servers
+WWW=		https://www.dns-oarc.net/tools/dnsperf
 
 LICENSE=	APACHE20
 

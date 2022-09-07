@@ -6,6 +6,7 @@ MASTER_SITES=	https://tools.ietf.org/tools/idnits/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Looks for problems in internet draft formatting
+WWW=		https://tools.ietf.org/tools/idnits/
 
 LICENSE=	GPLv2+
 

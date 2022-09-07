@@ -6,6 +6,7 @@ MASTER_SITES=	https://gitlab.linphone.org/BC/public/${PORTNAME}/-/archive/${PORT
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Belledonne Communications utility library
+WWW=		https://gitlab.linphone.org/BC/public/bctoolbox
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

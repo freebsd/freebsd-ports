@@ -7,6 +7,7 @@ MASTER_SITES=	http://bzflag.bz/~erik/files/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to display files or streams in random order
+WWW=		https://bzflag.bz/~erik
 
 LICENSE=	GPLv2
 

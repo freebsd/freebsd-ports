@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Comps XML file manipulation library
+WWW=		https://github.com/rpm-software-management/libcomps
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING

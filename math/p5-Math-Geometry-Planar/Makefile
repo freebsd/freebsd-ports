@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-withoutworldwriteables
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Collection of planar geometry functions
+WWW=		https://metacpan.org/release/Math-Geometry-Planar
 
 LICENSE=	ART10
 

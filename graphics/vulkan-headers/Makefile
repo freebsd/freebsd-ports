@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Headers for the Vulkan graphics API
+WWW=		https://github.com/KhronosGroup/Vulkan-Headers
 
 LICENSE=	APACHE20
 

@@ -4,6 +4,7 @@ CATEGORIES=	sysutils kde
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE utility that sums up disk usage for directory trees
+WWW=		https://github.com/jeromerobert/k4dirstat
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

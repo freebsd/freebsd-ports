@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Unified Parallel and Distributed Processing in R for Everyone
+WWW=		https://cran.r-project.org/web/packages/future/
 
 LICENSE=	LGPL21+
 

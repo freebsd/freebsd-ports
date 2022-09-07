@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alex@xanderio.de
 COMMENT=	Nicer way to do URLs for Django models
+WWW=		https://github.com/andrewgodwin/urlman
 
 LICENSE=	APACHE20
 

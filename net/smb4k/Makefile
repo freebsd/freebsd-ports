@@ -5,6 +5,7 @@ CATEGORIES=	net kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Advanced network neighborhood browser and Samba share mounting utility
+WWW=		http://smb4k.berlios.de
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

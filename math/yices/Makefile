@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SMT solver
+WWW=		https://yices.csl.sri.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

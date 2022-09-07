@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SED-ML library for Python
+WWW=		https://github.com/fbergmann/libSEDML
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE.txt

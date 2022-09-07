@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Match molecule by formula
+WWW=		https://metacpan.org/release/Chemistry-FormulaPattern
 
 BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
 		p5-Chemistry-Pattern>=0:science/p5-Chemistry-Pattern

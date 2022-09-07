@@ -6,6 +6,7 @@ MASTER_SITES=	http://sweb.cz/dan.polansky/chordpack/
 
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Script to convert ChordPro files to HTML, ASCII, and TeX
+WWW=		http://sweb.cz/dan.polansky/chordpack/
 
 USES=		shebangfix perl5 tar:tgz
 SHEBANG_FILES=	chordpack

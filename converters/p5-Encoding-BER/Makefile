@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Encode/decode data using ASN.1 Basic Encoding Rules (BER)
+WWW=		https://metacpan.org/release/Encoding-BER
 
 LICENSE=	ART10
 

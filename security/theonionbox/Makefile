@@ -6,6 +6,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web interface to monitor Tor node operation
+WWW=		https://github.com/ralphwetzel/theonionbox
 
 LICENSE=	MIT
 

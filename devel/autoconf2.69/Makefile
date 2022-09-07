@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${VERSION}
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Generate configure scripts and related files
+WWW=		https://www.gnu.org/software/autoconf/
 
 LICENSE=	EXCEPTION GFDL GPLv2+ GPLv3+
 LICENSE_COMB=	multi

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Re-usable XPath engine for DOM-like trees
+WWW=		https://metacpan.org/release/XML-XPathEngine
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

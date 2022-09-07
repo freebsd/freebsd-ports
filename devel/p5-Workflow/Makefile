@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Simple, flexible system to implement workflows
+WWW=		https://metacpan.org/release/Workflow
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

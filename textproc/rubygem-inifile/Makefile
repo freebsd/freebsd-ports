@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Native Ruby package for reading and writing INI files
+WWW=		https://github.com/twp/inifile
 
 LICENSE=	MIT
 

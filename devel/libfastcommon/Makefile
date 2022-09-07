@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	C common functions library used mainly by FastDFS and FastDHT
+WWW=		https://github.com/happyfish100/libfastcommon
 
 LICENSE=	GPLv3
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XDG Base Directory Standard Library for Ruby
+WWW=		https://github.com/bkuhlmann/xdg
 
 LICENSE=	HIPPOCRATIC
 LICENSE_NAME=	Hippocratic License 2.1.0

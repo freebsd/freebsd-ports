@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	go-
 
 MAINTAINER=	nbari@tequila.io
 COMMENT=	Web server for static content
+WWW=		https://go-www.com
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

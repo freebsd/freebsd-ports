@@ -5,6 +5,7 @@ CATEGORIES=	audio net
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Minimalistic Murmur (Mumble server)
+WWW=		https://umurmur.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

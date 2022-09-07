@@ -4,6 +4,7 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data paging class
+WWW=		https://pear.php.net/package/Pager
 
 LICENSE=	BSD2CLAUSE
 

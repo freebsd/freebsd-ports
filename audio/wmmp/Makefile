@@ -4,6 +4,7 @@ CATEGORIES=	audio windowmaker
 
 MAINTAINER=	nicolasherry@gmail.com
 COMMENT=	Dockable musicpd client applet for Window Maker
+WWW=		https://github.com/yogsothoth/wmmp
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

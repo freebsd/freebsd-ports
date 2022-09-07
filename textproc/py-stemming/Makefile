@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Algorithms for stemming
+WWW=		https://pypi.org/project/stemming/
 
 LICENSE=	PD
 

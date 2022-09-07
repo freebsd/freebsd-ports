@@ -5,6 +5,7 @@ MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple, distraction-free writing environment
+WWW=		https://gottcode.org/focuswriter/
 
 LICENSE=	GPLv3+ LGPL3+
 LICENSE_COMB=	multi

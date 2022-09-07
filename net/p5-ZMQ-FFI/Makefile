@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Version agnostic Perl bindings for zeromq using FFI
+WWW=		https://metacpan.org/pod/ZMQ::FFI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH/lzip/${PORTNAME}
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Parallel, lossless data compressor based on the LZMA algorithm
+WWW=		https://www.nongnu.org/lzip/plzip.html
 
 LICENSE=	GPLv2
 

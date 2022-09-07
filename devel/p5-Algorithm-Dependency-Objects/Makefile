@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Implementation of an Object Dependency Algorithm
+WWW=		https://metacpan.org/release/Algorithm-Dependency-Objects
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

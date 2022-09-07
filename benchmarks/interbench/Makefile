@@ -6,6 +6,7 @@ MASTER_SITES=	http://ck.kolivas.org/apps/${PORTNAME}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Interactivity benchmark for Unix-like systems
+WWW=		http://users.on.net/~ckolivas/interbench/
 
 LICENSE=	GPLv2
 

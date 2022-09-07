@@ -9,6 +9,7 @@ DISTFILES=	${PORTNAME}-boot-ta6fb-${PORTVERSION}.tar.xz:boot \
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Chez Scheme system
+WWW=		https://cisco.github.io/ChezScheme
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

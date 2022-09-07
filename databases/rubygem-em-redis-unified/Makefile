@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Eventmachine-based implementation of the Redis protocol
+WWW=		https://github.com/portertech/em-redis
 
 LICENSE=	MIT
 

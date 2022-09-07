@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of Python utilities
+WWW=		https://github.com/PyUtilib/pyutilib
 
 LICENSE=	BSD2CLAUSE
 

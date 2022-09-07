@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	rob@sarcasticadmin.com
 COMMENT=	POSIX shell script to quickly manage displays using XRandR
+WWW=		https://github.com/Ventto/mons
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

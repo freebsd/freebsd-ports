@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	tj+freebsd_ports@a13.fr
 COMMENT=	Xlib ruby toolkit
+WWW=		https://rubygems.org/gems/uh
 
 LICENSE=	BSD3CLAUSE
 

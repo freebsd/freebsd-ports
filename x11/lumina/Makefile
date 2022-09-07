@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Lumina Desktop Environment (meta-port)
+WWW=		https://lumina-desktop.org/
 
 RUN_DEPENDS=	lumina-core>=0:x11/lumina-core \
 		lumina-coreutils>=0:x11/lumina-coreutils \

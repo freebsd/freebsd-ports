@@ -5,6 +5,7 @@ CATEGORIES=	math devel
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Mathematical expressions parser library written in C++
+WWW=		https://beltoforion.de/en/muparser/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt

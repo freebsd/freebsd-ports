@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Command line WebDAV client and Ruby library
+WWW=		http://davclient.rubyforge.org/davclient
 
 LICENSE=	GPLv2
 

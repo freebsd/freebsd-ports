@@ -7,6 +7,7 @@ DISTNAME=	TeXmacs-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG scientific text editor
+WWW=		https://www.texmacs.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

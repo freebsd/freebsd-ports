@@ -4,6 +4,7 @@ CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	EGLStream-based Wayland external platform
+WWW=		https://github.com/NVIDIA/egl-wayland
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

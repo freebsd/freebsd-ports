@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk3 port of Clearlooks theme for the Xfce Desktop
+WWW=		https://github.com/jpfleury/clearlooks-phenix
 
 LICENSE=	GPLv3
 

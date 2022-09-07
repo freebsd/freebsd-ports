@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Class for generating EDI objects and subobjects
+WWW=		https://metacpan.org/release/Business-EDI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

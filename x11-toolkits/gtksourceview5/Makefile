@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Text widget that adds syntax highlighting to the GtkTextView widget
+WWW=		https://wiki.gnome.org/Projects/GtkSourceView
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

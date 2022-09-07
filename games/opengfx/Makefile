@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-all.zip
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Free alternative graphics for OpenTTD game engine
+WWW=		https://github.com/OpenTTD/OpenGFX
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
@@ -22,6 +23,5 @@ post-extract:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${DATADIR}
-
 
 .include <bsd.port.mk>

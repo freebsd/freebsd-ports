@@ -6,6 +6,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Terminal CLI to Mathics
+WWW=		https://mathics.org/
 
 LICENSE=	GPLv3
 

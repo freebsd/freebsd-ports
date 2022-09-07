@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net
 COMMENT=	CrowdSec bouncer written in golang for firewalls
+WWW=		https://github.com/crowdsecurity/cs-firewall-bouncer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

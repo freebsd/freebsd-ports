@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Full-screen Expose-style standalone task switcher for X11
+WWW=		https://github.com/richardgv/skippy-xd
 
 LICENSE=	GPLv2
 

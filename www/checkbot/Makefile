@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Checkbot%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW link verifier, similar to momspider
+WWW=		https://degraaff.org/checkbot/
 
 BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-URI>=0:net/p5-URI \

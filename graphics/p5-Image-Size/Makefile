@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tolid@tolid.eu.org
 COMMENT=	Perl5 module to determine the size of images in several common formats
+WWW=		https://metacpan.org/release/Image-Size
 
 LICENSE=	ART20 LGPL21
 LICENSE_COMB=	dual

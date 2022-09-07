@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interface to xymon/hobbit client
+WWW=		https://metacpan.org/release/Xymon-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -14,6 +14,7 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Interactive, integrated, graphical Scheme programming environment
+WWW=		https://racket-lang.org/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

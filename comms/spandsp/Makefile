@@ -4,6 +4,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	jailbird@fdf.net
 COMMENT=	DSP library and software FAX machine
+WWW=		https://www.soft-switch.org/
 
 LICENSE=	LGPL21
 

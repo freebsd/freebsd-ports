@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Pull out the modules a module explicitly uses
+WWW=		https://github.com/briandfoy/module-extract-use/tree/master
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

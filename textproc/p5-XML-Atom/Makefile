@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules for Atom feed and API implementation
+WWW=		https://metacpan.org/release/XML-Atom
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

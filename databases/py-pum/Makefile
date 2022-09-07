@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Postgres upgrade manager
+WWW=		https://github.com/opengisch/pum
 
 LICENSE=	GPLv2
 

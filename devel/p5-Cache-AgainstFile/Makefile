@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Cache data structures parsed from files, watching for updates
+WWW=		https://metacpan.org/release/Cache-AgainstFile
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Integer compression with SIMD based on Google's varint
+WWW=		https://github.com/lemire/streamvbyte
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

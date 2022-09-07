@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight File::Path alternative
+WWW=		https://metacpan.org/release/File-Path-Tiny
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

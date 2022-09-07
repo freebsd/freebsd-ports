@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Static analyzer for C/C++ based on theory of abstract interpretation
+WWW=		https://github.com/NASA-SW-VnV/ikos
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.pdf

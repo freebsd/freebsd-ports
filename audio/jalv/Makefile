@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple but fully featured LV2 plugin host for Jack
+WWW=		https://drobilla.net/software/jalv
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ DISTFILES=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CUPS backend for printing to Windows servers
+WWW=		http://www.cups.org/articles.php?L294
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:print/cups
 

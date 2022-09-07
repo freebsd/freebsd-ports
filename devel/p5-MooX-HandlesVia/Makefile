@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	NativeTrait-like behavior for Moo
+WWW=		https://metacpan.org/release/MooX-HandlesVia
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

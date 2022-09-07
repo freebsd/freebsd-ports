@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cross-platform graphical PE file viewer/editor
+WWW=		https://github.com/horsicq/XPEViewer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

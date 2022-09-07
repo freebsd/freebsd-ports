@@ -4,6 +4,7 @@ CATEGORIES=	www kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library providing an ECMAScript interpreter
+WWW=		https://api.kde.org/frameworks-api/frameworks5-apidocs/kjs/html/index.html
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 

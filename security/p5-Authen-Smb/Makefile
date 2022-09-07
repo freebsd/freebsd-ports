@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ma499@doc.ic.ac.uk
 COMMENT=	Perl extension to authenticate against an SMB server
+WWW=		https://metacpan.org/release/Authen-Smb
 
 LICENSE=	GPLv2+ NONE  # perl code has no license defined
 LICENSE_COMB=	multi

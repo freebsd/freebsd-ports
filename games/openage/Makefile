@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Free engine clone of the Genie Engine
+WWW=		https://openage.sft.mx/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/legal/GPLv3

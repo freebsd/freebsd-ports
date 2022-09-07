@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME:S/plugin-//}${EXTRACT_SUFX}:release
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - stream device plugin
+WWW=		http://streamdev.vdr-developer.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

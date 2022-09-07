@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Repository of useful code written in Guile Scheme
+WWW=		https://www.nongnu.org/guile-lib/
 
 LICENSE=	LGPL3 GPLv3
 LICENSE_COMB=	multi

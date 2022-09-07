@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Virtual Memory Toucher
+WWW=		https://hoytech.com/vmtouch/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hoytech

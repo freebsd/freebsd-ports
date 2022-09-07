@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Light weight SQLite-specific schema migration
+WWW=		https://metacpan.org/release/ORLite-Migrate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

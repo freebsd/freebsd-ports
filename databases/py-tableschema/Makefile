@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility library for working with Table Schema
+WWW=		https://github.com/frictionlessdata/tableschema-py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Helpers for DLNA-related tasks using GUPnP
+WWW=		https://wiki.gnome.org/Projects/GUPnP
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

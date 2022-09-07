@@ -6,6 +6,7 @@ MASTER_SITES=	https://developers.yubico.com/yubico-piv-tool/Releases/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Yubico PIV tool
+WWW=		https://developers.yubico.com/yubico-piv-tool/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

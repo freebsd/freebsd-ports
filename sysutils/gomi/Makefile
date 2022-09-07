@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix rm(1) command that can restore deleted files
+WWW=		https://github.com/b4b4r07/gomi
 
 LICENSE=	MIT
 

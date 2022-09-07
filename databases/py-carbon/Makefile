@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Backend storage application for graphite
+WWW=		https://github.com/graphite-project/carbon
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

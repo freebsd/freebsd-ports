@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.vanheusden.com/nagtail/ \
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Tail for the nagios status.dat file
+WWW=		http://www.vanheusden.com/nagtail/
 
 USES=		gmake tar:tgz
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Web interface to PuppetDB
+WWW=		https://github.com/voxpupuli/puppetboard
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

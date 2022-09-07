@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Routines for dealing with ANSI colors
+WWW=		https://metacpan.org/release/Color-ANSI-Util
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

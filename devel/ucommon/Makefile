@@ -6,6 +6,7 @@ MASTER_SITES=	GNU/commoncpp
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very lightweight C++ design pattern library
+WWW=		https://www.gnu.org/software/commoncpp/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

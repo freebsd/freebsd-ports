@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	E-Statistics: Multivariate Inference via the Energy of Data
+WWW=		https://github.com/mariarizzo/energy
 
 LICENSE=	GPLv2+
 

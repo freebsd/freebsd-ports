@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Touchscreen access library
+WWW=		http://www.tslib.org/
 
 LICENSE=	LGPL21
 

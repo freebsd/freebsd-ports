@@ -7,6 +7,7 @@ DISTNAME=	bork
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Feelter thet cunferts Ingleesh text tu Muck Cheenese-a
+WWW=		http://mysite.verizon.net/ebrowne72/chef/index.html
 
 CONFLICTS=	filters talkfilters
 PLIST_FILES=	bin/chef

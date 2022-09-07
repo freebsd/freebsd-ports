@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get memory usage of a process in Ruby
+WWW=		https://github.com/schneems/get_process_mem
 
 LICENSE=	MIT
 

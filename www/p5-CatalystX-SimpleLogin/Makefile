@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide a simple Login controller which can be reused
+WWW=		https://metacpan.org/release/CatalystX-SimpleLogin
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

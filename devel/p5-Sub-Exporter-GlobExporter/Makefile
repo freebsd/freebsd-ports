@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
 COMMENT=	Export shared globs with Sub::Exporter collectors
+WWW=		https://metacpan.org/release/Sub-Exporter-GlobExporter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

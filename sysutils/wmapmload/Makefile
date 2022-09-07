@@ -6,6 +6,7 @@ MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APM battery status monitor dockapp with a similar look to wmcpuload
+WWW=		http://tnemeth.free.fr/projets/dockapps.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

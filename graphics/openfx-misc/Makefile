@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Miscellaneous OpenFX Effects plugins
+WWW=		https://github.com/devernay/openfx-misc
 
 LICENSE=	GPLv2
 

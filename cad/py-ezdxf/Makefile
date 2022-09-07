@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Create and modify DXF drawings
+WWW=		https://ezdxf.mozman.at/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

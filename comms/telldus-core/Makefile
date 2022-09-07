@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.telldus.com/TellStick/Software/telldus-core/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tellstick Telldus daemon + library
+WWW=		https://developer.telldus.com/wiki/TellStickInstallationSource
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

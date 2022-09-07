@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	Xdebug Profiling Web Frontend in PHP
+WWW=		https://github.com/jokkedk/webgrind
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

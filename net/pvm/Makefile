@@ -7,6 +7,7 @@ DISTNAME=	pvm${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel Virtual Machine libraries and environment
+WWW=		http://www.csm.ornl.gov/pvm/
 
 LICENSE=	MIT
 

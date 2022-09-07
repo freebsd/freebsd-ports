@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open source library for manipulating fonts, written in Python
+WWW=		https://github.com/fonttools/fonttools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

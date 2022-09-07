@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.phar
 
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	CLI tool for inspection and control of Magento installations
+WWW=		https://magerun.net/
 
 LICENSE=	MIT
 

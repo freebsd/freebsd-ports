@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/latchset/${PORTNAME}/releases/download/v${DISTV
 
 MAINTAINER=	hdholm@alumni.iastate.edu
 COMMENT=	Tang is a small daemon for binding data to the presence of a network
+WWW=		https://github.com/latchset/tang
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

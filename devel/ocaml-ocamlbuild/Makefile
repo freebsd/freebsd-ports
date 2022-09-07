@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Legacy build tool for OCaml libraries and programs
+WWW=		https://github.com/ocaml/ocamlbuild
 
 LICENSE=	GPLv2
 

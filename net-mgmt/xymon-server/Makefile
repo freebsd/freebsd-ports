@@ -8,6 +8,7 @@ DIST_SUBDIR=	repacked
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	System for monitoring servers and networks
+WWW=		http://xymon.sourceforge.net/
 
 LICENSE=	GPLv2
 

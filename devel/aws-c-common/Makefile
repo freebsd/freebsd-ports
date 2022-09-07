@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Core c99 package for AWS SDK for C
+WWW=		https://github.com/awslabs/aws-c-common
 
 LICENSE=	APACHE20
 

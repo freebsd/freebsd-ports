@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Conveniently learn about the disk usage of directories
+WWW=		https://github.com/Byron/dua-cli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

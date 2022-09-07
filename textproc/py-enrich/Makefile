@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Extensions to py-rich
+WWW=		https://pypi.org/project/enrich/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

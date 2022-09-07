@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.freebsoft.org/pub/projects/${PORTNAME}/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Festival utilities focused on interaction with Speech Dispatcher
+WWW=		https://www.freebsoft.org/festival-freebsoft-utils
 
 RUN_DEPENDS=	festival:audio/festival \
 		sox:audio/sox

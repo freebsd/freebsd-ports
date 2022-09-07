@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Non-interactive SCP processing
+WWW=		https://github.com/net-ssh/net-scp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

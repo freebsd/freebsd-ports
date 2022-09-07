@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Archive the log files monthly
+WWW=		https://metacpan.org/release/IMACAT/arclog-3.04
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

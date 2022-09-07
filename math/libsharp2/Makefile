@@ -4,6 +4,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for fast spherical harmonic transforms
+WWW=		https://gitlab.mpcdf.mpg.de/mtr/libsharp
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

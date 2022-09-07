@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, simple event-processing library for Ruby programs
+WWW=		https://rubyeventmachine.com
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual

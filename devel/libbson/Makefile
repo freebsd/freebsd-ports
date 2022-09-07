@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	BSON utility library
+WWW=		https://github.com/mongodb/libbson
 
 LICENSE=	APACHE20
 

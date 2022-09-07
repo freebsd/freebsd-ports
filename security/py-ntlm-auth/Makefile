@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Create NTLM authentication structures
+WWW=		https://github.com/jborean93/ntlm-auth
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

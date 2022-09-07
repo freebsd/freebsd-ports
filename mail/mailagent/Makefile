@@ -4,6 +4,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated automatic mail-processing tool
+WWW=		https://github.com/rmanfredi/mailagent
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/Artistic

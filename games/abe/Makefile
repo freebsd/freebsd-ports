@@ -10,6 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abe's Amazing Adventure
+WWW=		http://abe.sourceforge.net/
 
 LICENSE=	GPLv2
 

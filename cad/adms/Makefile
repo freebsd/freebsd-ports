@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Model generator for SPICE simulators
+WWW=		https://github.com/Qucs/ADMS
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

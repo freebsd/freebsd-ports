@@ -1,6 +1,7 @@
 PKGNAMESUFFIX=	-gtk3
 
 COMMENT=	GTK+ 3.x modules of uim input method
+WWW=		https://github.com/uim/uim
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 LIB_DEPENDS=	libuim.so:textproc/uim \

@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/bookview/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NDTP client written in Tcl/Tk
+WWW=		http://www.sra.co.jp/people/m-kasahr/bookview/
 
 USES=		tk:wrapper
 

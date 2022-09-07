@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Pure perl implement of Tacacs+ client
+WWW=		https://metacpan.org/release/Net-TacacsPlus
 
 LICENSE=	ART20
 

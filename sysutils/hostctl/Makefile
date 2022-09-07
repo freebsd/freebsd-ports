@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Command-line tool to manage your hosts file
+WWW=		https://guumaster.github.io/hostctl/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

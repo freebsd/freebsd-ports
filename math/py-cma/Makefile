@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CMA-ES for non-linear numerical optimization in Python
+WWW=		https://github.com/CMA-ES/pycma
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/cma/LICENSE

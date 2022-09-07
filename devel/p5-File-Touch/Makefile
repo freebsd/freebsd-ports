@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Module to 'touch' files
+WWW=		https://metacpan.org/release/File-Touch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

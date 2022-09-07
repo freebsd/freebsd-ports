@@ -6,6 +6,7 @@ PKGNAMESUFFIX?=	-app
 
 MAINTAINER?=	desktop@FreeBSD.org
 COMMENT?=	Service discovery on a local network
+WWW=		https://www.avahi.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

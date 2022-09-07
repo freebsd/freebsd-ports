@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Friendly automation framework
+WWW=		https://metacpan.org/release/Rex
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Manage SQL queries as a Python API
+WWW=		https://pypi.org/project/aesqlapius/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

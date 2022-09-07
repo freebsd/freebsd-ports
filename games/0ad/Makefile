@@ -9,6 +9,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Real-time strategy (RTS) game of ancient warfare
+WWW=		https://play0ad.com/
 
 BROKEN_aarch64=		fails to compile: no member named verifyHeapAccessDisassembly
 BROKEN_armv6=		fails to link: fatal error: conftest: Unknown error: -1

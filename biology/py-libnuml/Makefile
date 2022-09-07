@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Numerical Markup Language for Python
+WWW=		https://github.com/NuML/NuML
 
 LICENSE=	LGPL21
 

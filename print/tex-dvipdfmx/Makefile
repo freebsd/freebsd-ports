@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
+WWW=		http://project.ktug.or.kr/dvipdfmx/
 
 LICENSE=	GPLv2
 

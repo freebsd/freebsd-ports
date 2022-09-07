@@ -7,6 +7,7 @@ MASTER_SITES=	https://gitlab.com/${PORTNAME}/code/${PORTNAME}/-/archive/${DISTVE
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Schematic and PCB editing software
+WWW=		https://kicad.org/
 
 LICENSE=	GPLv2
 

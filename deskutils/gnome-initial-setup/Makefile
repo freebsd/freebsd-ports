@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	First boot setup tool for GNOME
+WWW=		https://live.gnome.org/GnomeOS/Design/Whiteboards/InitialSetup
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

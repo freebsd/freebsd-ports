@@ -4,6 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	imp@FreeBSD.org
 COMMENT=	Port of Linux nvme cli utility
+WWW=		https://github.com/linux-nvme/nvme-cli
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ DISTFILES=	m1dgnhiemo47lhxczrn6si71bwxoxor8.gz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scientific program aimed at the ab initio virtual experimentation
+WWW=		https://berkeleygw.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

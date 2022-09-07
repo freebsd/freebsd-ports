@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OBS Studio Plugin: Output as Video4Linux2 device
+WWW=		https://github.com/CatxFish/obs-v4l2sink
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

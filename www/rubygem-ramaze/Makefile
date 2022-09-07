@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple and modular web framework
+WWW=		http://ramaze.net
 
 LICENSE=	MIT
 

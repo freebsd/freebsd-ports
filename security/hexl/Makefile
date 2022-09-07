@@ -5,6 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel homomorphic encryption acceleration library
+WWW=		https://intel.github.io/hexl/v1.2.1/doxygen/html/index.html
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

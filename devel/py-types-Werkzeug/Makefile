@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Typing stubs for Werkzeug
+WWW=		https://pypi.org/project/types-Werkzeug/
 
 LICENSE=	APACHE20
 

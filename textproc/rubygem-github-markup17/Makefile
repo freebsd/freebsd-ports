@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	17
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Render any fancy markup
+WWW=		https://github.com/github/markup
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

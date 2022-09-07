@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Comprehensive, DWIM-featured client to the MetaCPAN API
+WWW=		https://metacpan.org/release/MetaCPAN-Client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

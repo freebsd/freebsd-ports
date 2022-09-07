@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Agent program to post your hosts' metrics to mackerel.io
+WWW=		https://mackerel.io
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

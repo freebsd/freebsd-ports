@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	5${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Database library for PHP
+WWW=		http://adodb.org/
 
 LICENSE=	BSD3CLAUSE LGPL21+
 LICENSE_COMB=	dual

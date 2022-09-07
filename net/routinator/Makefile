@@ -8,6 +8,7 @@ DISTFILES+=	routinator-ui-build.tar.gz:0
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	RPKI signed route collector and validator
+WWW=		https://github.com/NLnetLabs/routinator
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

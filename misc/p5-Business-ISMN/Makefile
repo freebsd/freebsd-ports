@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Work with International Standard Music Numbers
+WWW=		https://metacpan.org/release/Business-ISMN
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Serbian hunspell dictionaries
+WWW=		https://addons.mozilla.org/en-US/firefox/addon/%D1%81%D1%80%D0%BF%D1%81%D0%BA%D0%B8-%D1%80%D0%B5%D1%87%D0%BD%D0%B8%D0%BA-serbian-dictiona/
 
 LICENSE=	GPLv2
 

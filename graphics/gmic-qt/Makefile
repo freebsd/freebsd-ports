@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz ${DISTFILE_gmic} ${DISTFILE_cimg}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Versatile Qt front-end to GMIC
+WWW=		https://github.com/c-koi/gmic-qt
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

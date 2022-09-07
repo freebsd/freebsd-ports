@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Thin wrapper around terminal coloring, styling, and positioning
+WWW=		https://github.com/erikrose/blessings
 
 LICENSE=	MIT
 

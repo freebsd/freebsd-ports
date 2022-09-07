@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for formatting text with Trac Wiki Style
+WWW=		https://metacpan.org/release/Text-Trac
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

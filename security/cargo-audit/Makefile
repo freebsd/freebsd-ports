@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Audit Cargo.lock for crates with security vulnerabilities
+WWW=		https://rustsec.org/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Wrapper library over ffmpeg, sndfile and libsamplerate
+WWW=		https://github.com/zrythm/libaudec
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

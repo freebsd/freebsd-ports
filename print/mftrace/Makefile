@@ -7,6 +7,7 @@ MASTER_SITES=	http://lilypond.org/download/sources/mftrace/ \
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Scalable PostScript (Type1) Fonts for MetaFont
+WWW=		https://lilypond.org/mftrace/
 
 RUN_DEPENDS=	t1asm:print/t1utils \
 		fontforge:print/fontforge

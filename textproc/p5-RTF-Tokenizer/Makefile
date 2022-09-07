@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for reading RTF files
+WWW=		https://metacpan.org/release/RTF-Tokenizer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

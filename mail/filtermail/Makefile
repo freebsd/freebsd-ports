@@ -6,6 +6,7 @@ DISTNAME=	mailfilter-${PORTVERSION}
 
 MAINTAINER=	jmc-freebsd2@milibyte.co.uk
 COMMENT=	Filter mail on a POP3 server: saves downloading spam
+WWW=		http://mailfilter.sourceforge.net
 
 LICENSE=	GPLv3
 

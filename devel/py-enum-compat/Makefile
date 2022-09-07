@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python 3.4 Enum dummy no-op package
+WWW=		https://github.com/jstasiak/enum-compat
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	URL encoder and decoder written in assembly
+WWW=		http://www.whizkidtech.redprince.net/urlendec/
 
 LICENSE=	BSD2CLAUSE
 

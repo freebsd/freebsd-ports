@@ -9,6 +9,7 @@ EXTRACT_SUFX=	.ZIP
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Copies files from VMS Files-11 (ODS2) file systems
+WWW=		http://vms.process.com/scripts/fileserv/fileserv.com?ODS-2-READER
 
 USES=		zip
 NO_WRKSUBDIR=	yes

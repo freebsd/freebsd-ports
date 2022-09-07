@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Markdown extension resources for MkDocs for Material
+WWW=		https://github.com/facelessuser/mkdocs-material-extensions
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

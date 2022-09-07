@@ -5,6 +5,7 @@ MASTER_SITES=	https://launchpad.net/libvterm/trunk/v0.1/+download/
 
 MAINTAINER=	aaron.kaufman@pm.me
 COMMENT=	Implementation of a VT220/xterm/ECMA-48 terminal emulator
+WWW=		https://www.leonerd.org.uk/code/libvterm/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

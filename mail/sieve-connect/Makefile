@@ -5,6 +5,7 @@ MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Command-line client for the MANAGESIEVE protocol
+WWW=		https://github.com/philpennock/sieve-connect
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

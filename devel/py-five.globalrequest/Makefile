@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope 2 integration for zope.globalrequest
+WWW=		https://pypi.org/project/five.globalrequest/
 
 LICENSE=	ZPL21
 

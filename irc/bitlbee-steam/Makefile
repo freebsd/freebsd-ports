@@ -5,6 +5,7 @@ CATEGORIES=	irc
 
 MAINTAINER=	aou@eecs.berkeley.edu
 COMMENT=	Steam plugin for bitlbee
+WWW=		https://github.com/bitlbee/bitlbee-steam
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

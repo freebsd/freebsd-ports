@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Registry of string functions, including backslash escapes
+WWW=		https://metacpan.org/release/String-Escape
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

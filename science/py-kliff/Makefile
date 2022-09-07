@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	KIM-based Learning-Integrated Fitting Framework
+WWW=		https://github.com/mjwen/kliff
 
 LICENSE=	CDDL
 

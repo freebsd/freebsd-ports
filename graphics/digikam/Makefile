@@ -9,6 +9,7 @@ DISTFILES=	digiKam-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRA
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE digital photo management application
+WWW=		https://www.digikam.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	OSSP/lib/${PORTNAME}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Generic String Library
+WWW=		http://www.ossp.org/pkg/lib/str/
 
 USES=		desthack libtool
 GNU_CONFIGURE=	yes

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Improved version of Test::Unit bundled in Ruby
+WWW=		https://github.com/test-unit/test-unit
 
 LICENSE=	BSD2CLAUSE PSFL RUBY
 LICENSE_COMB=	dual

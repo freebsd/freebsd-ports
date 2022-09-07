@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Simple RPC framework based on GObject System in C
+WWW=		https://github.com/haiwen/libsearpc
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

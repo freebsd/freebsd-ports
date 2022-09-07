@@ -5,6 +5,7 @@ CATEGORIES=	misc comms
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Motion Planning Library
+WWW=		https://ompl.kavrakilab.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

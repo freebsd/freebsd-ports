@@ -4,6 +4,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Simple Qt-based amateur radio logger
+WWW=		https://github.com/ea4k/klog/wiki
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

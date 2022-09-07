@@ -8,6 +8,7 @@ EXTRACT_ONLY=	# nothing to extract
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Unicode emoji data files
+WWW=		https://www.unicode.org/emoji
 
 LICENSE=	UNICODE
 LICENSE_NAME=	UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE

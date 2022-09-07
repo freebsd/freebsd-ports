@@ -5,6 +5,7 @@ MASTER_SITES=	https://lv2plug.in/spec/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open standard for audio plugins (successor to LADSPA)
+WWW=		https://lv2plug.in/
 
 LICENSE=	ISCL MIT
 LICENSE_COMB=	multi

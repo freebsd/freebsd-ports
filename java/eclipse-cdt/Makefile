@@ -9,6 +9,7 @@ DISTFILES=	${BUNDLES} \
 
 MAINTAINER=	mizhka@gmail.com
 COMMENT=	C/C++ plugin for Eclipse IDE
+WWW=		https://www.eclipse.org/cdt/
 
 LICENSE=	EPL
 

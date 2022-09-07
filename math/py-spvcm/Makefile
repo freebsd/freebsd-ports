@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fit spatial multilevel models and diagnose convergence
+WWW=		https://github.com/pysal/spvcm
 
 LICENSE=	BSD3CLAUSE
 

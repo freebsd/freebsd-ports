@@ -15,6 +15,7 @@ PATCHFILES+=	2b23616f26d8f9a9fa03010322fa967a2dc204e3.patch:-p1 \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fork of TimberWolf, a placement tool in VLSI design
+WWW=		https://github.com/rubund/graywolf
 
 LICENSE=	GPLv2
 

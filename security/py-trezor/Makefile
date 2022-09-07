@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Client side implementation for TREZOR Bitcoin hardware wallets
+WWW=		https://pypi.org/project/trezor/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

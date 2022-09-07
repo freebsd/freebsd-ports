@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to access the secret service API
+WWW=		https://wiki.gnome.org/Projects/Libsecret/
 
 LICENSE=	LGPL21
 

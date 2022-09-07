@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
+WWW=		https://plugins.geany.org/geanyctags.html
 
 RUN_DEPENDS=	exctags:devel/ctags
 

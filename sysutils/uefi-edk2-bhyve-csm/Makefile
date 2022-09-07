@@ -7,6 +7,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	bcran@FreeBSD.org
 COMMENT=	UEFI EDK2 firmware for bhyve with CSM (16-bit BIOS)
+WWW=		https://github.com/freebsd/uefi-edk2/tree/bhyve/UDK2014.SP1
 
 LICENSE=	BSD2CLAUSE
 

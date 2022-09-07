@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Algebraic modeling library in C++ for linear optimization solvers
+WWW=		https://projects.coin-or.org/Rehearse
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

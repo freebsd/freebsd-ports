@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	lambert@lambertfam.org
 COMMENT=	Morse code training program
+WWW=		https://www.nongnu.org/aldo/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

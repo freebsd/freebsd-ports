@@ -8,6 +8,7 @@ DISTNAME=	Noto-hinted
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Noto Fonts family (Basic)
+WWW=		https://www.google.com/get/noto/
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE_OFL.txt

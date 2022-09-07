@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	balaev@tarantool.org
 COMMENT=	Lightweight MessagePack library
+WWW=		https://github.com/tarantool/msgpuck
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

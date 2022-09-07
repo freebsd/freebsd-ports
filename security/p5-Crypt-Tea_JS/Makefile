@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Next gen Tiny Encryption Algorithm in Perl and Javascript
+WWW=		https://metacpan.org/release/Crypt-Tea_JS
 
 CONFLICTS=	p5-Crypt-T_e_a
 

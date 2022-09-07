@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Malayalam dictionary
+WWW=		https://savannah.nongnu.org/task/?6787
 
 DICT=	 	ml
 

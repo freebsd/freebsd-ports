@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Satellite orbit prediction library
+WWW=		https://github.com/la1k/libpredict
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

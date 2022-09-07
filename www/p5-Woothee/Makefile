@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Multi-language user-agent strings parsers (perl implementation)
+WWW=		https://woothee.github.io/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

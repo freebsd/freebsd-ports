@@ -5,6 +5,7 @@ CATEGORIES=	emulators
 
 MAINTAINER=	iwtcex@gmail.com
 COMMENT=	Wine with a bit of extra spice
+WWW=		https://github.com/ValveSoftware/wine
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

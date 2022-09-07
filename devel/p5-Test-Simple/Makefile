@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Basic utilities for writing tests in perl
+WWW=		https://metacpan.org/release/Test-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

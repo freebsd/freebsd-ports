@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Converts mimetype of application/octet-stream into normal form input
+WWW=		https://github.com/New-Bamboo/rack-raw-upload
 
 LICENSE=	MIT
 

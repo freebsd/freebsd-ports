@@ -5,6 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Feature-rich command-line todo list manager
+WWW=		https://taskwarrior.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

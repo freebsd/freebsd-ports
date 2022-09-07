@@ -5,6 +5,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Other table support for Fcitx5
+WWW=		https://github.com/fcitx/fcitx5-table-other
 
 LICENSE=	GPLv3
 

@@ -13,6 +13,7 @@ PATCHFILES+=	5fa970e868f2.patch:-p1 # https://lists.sr.ht/~emersion/public-inbox
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	sd-bus library, extracted from systemd
+WWW=		https://sr.ht/~emersion/basu/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL2.1

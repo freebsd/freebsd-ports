@@ -6,6 +6,7 @@ MASTER_SITES=	http://elfga.com/~erik/files/
 
 MAINTAINER=	erik@elfga.com
 COMMENT=	Image viewer for X
+WWW=		https://bzflag.bz/~erik
 
 GNU_CONFIGURE=	yes
 LIBS+=		-lm

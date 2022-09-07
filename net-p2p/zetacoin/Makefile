@@ -6,6 +6,7 @@ CATEGORIES=	net-p2p finance
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	Peer-to-Peer crypto currency with quick transactions
+WWW=		https://github.com/zetacoin/zetacoin
 
 LICENSE=	MIT
 

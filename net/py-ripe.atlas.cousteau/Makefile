@@ -6,6 +6,7 @@ PKGNAMEPREFIX=${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mstucchi@ripe.net
 COMMENT=	Python wrapper around the RIPE Atlas API
+WWW=		https://github.com/RIPE-NCC/ripe-atlas-cousteau
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

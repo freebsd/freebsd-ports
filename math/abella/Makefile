@@ -5,6 +5,7 @@ MASTER_SITES=	http://abella-prover.org/distributions/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive theorem prover
+WWW=		https://abella-prover.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

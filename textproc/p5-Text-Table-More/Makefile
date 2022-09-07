@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate text table with simple interface and many options
+WWW=		https://metacpan.org/release/Text-Table-More
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

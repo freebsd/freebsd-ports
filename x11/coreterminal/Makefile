@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Terminal emulator from the CoreApps family
+WWW=		https://gitlab.com/cubocore/coreterminal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

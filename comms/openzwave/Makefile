@@ -4,6 +4,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	johan@stromnet.se
 COMMENT=	Open-source interface to Z-Wave networks
+WWW=		http://www.openzwave.net/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/license/license.txt

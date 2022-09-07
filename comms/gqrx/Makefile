@@ -7,6 +7,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Software defined radio receiver powered by GNU Radio and Qt
+WWW=		https://gqrx.dk
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

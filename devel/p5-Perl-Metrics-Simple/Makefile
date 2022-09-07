@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to count packages, subs, lines, etc. of many files
+WWW=		https://metacpan.org/release/Perl-Metrics-Simple
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

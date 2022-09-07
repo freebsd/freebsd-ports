@@ -5,6 +5,7 @@ CATEGORIES=	databases devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SQLiteC++: Easy to use C++ SQLite3 wrapper
+WWW=		https://github.com/SRombauts/SQLiteCpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

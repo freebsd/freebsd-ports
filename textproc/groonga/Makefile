@@ -5,6 +5,7 @@ MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine and column store
+WWW=		https://groonga.org/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

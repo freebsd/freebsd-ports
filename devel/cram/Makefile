@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cem@FreeBSD.org
 COMMENT=	Simple testing framework for command line applications
+WWW=		https://pypi.org/project/cram/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

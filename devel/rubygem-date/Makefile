@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Subclass of Object includes Comparable module for handling dates
+WWW=		https://github.com/ruby/date
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

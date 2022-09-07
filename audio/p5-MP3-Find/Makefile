@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Search and sort MP3 files based on their ID3 tags
+WWW=		https://metacpan.org/release/MP3-Find
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

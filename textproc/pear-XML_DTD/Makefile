@@ -4,6 +4,7 @@ CATEGORIES=	textproc devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parsing of DTD files and DTD validation of XML files
+WWW=		https://pear.php.net/package/XML_DTD
 
 LICENSE=	BSD2CLAUSE
 

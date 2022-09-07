@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Python cli to interact with HP iLO management interface
+WWW=		https://github.com/seveas/python-hpilo
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

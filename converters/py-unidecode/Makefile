@@ -7,6 +7,7 @@ DISTNAME=	Unidecode-${PORTVERSION}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	ASCII transliterations of Unicode text
+WWW=		https://pypi.org/project/Unidecode/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

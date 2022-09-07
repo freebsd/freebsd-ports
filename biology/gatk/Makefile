@@ -6,6 +6,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Variant discovery in high-throughput sequencing data
+WWW=		https://gatk.broadinstitute.org/hc/en-us
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

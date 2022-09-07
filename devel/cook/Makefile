@@ -7,6 +7,7 @@ MASTER_SITES=	http://miller.emu.id.au/pmiller/software/cook/ \
 
 MAINTAINER=	jasone@FreeBSD.org
 COMMENT=	Like make(1), but more powerful and clean
+WWW=		http://miller.emu.id.au/pmiller/software/cook/
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=yacc

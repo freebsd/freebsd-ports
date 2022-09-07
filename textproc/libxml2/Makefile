@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
+WWW=		http://xmlsoft.org/
 
 LICENSE=	MIT
 

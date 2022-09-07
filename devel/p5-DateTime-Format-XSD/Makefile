@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sergey.dyatko@gmail.com
 COMMENT=	Format DateTime according to xsd:dateTime
+WWW=		https://metacpan.org/release/DateTime-Format-XSD
 
 BUILD_DEPENDS=	p5-DateTime-Format-ISO8601>=0:devel/p5-DateTime-Format-ISO8601
 RUN_DEPENDS=	p5-DateTime-Format-ISO8601>=0:devel/p5-DateTime-Format-ISO8601

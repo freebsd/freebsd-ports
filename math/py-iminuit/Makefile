@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Jupyter-friendly Python frontend for MINUIT2 in C++
+WWW=		https://iminuit.readthedocs.io/en/stable/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

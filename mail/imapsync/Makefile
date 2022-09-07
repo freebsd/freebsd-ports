@@ -5,6 +5,7 @@ CATEGORIES=	mail perl5
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	IMAP synchronization, copy or migration tool
+WWW=		https://imapsync.lamiral.info/
 
 LICENSE=	NO_LIMIT_PUBLIC_LICENSE
 LICENSE_NAME=	NO LIMIT PUBLIC LICENSE

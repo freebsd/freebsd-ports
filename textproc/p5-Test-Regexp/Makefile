@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Test your regular expressions
+WWW=		https://metacpan.org/release/Test-Regexp
 
 LICENSE=	MIT
 

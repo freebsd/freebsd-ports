@@ -5,6 +5,7 @@ MASTER_SITES=	http://inai.de/files/hxtools/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Collection of miscellaneous tools and scripts
+WWW=		https://inai.de/projects/hxtools/
 
 LIB_DEPENDS=	libHX.so:lang/libhx libpci.so:devel/libpci
 RUN_DEPENDS=	bash:shells/bash

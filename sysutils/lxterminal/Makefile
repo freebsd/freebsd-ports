@@ -5,6 +5,7 @@ MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%200.4.x/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Lightweight terminal emulator from the LXDE project
+WWW=		https://wiki.lxde.org/en/LXTerminal
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

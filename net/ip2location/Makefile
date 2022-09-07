@@ -4,6 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	C library to find user\'s location
+WWW=		https://www.ip2location.com/c.aspx
 
 LICENSE=	LGPL3
 

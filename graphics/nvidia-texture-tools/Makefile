@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Texture Tools with support for DirectX 10 texture formats
+WWW=		https://github.com/castano/nvidia-texture-tools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

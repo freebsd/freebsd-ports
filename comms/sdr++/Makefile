@@ -5,6 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cross-platform SDR software
+WWW=		https://github.com/AlexandreRouma/SDRPlusPlus
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license

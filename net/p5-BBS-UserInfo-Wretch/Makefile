@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get user information of Wretch-style BBS
+WWW=		https://metacpan.org/release/BBS-UserInfo-Wretch
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

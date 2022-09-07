@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Search driver for the (US) Amazon online catalog
+WWW=		https://metacpan.org/release/WWW-Scraper-ISBN-Amazon_Driver
 
 LICENSE=	ART20
 

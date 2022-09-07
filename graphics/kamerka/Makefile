@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Take photos using your webcam and shiny animated QML interface
+WWW=		https://dos1.github.io/kamerka/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

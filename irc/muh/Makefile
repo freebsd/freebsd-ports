@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Smart irc-bouncing-tool that remains on IRC all the time
+WWW=		https://sourceforge.net/projects/muh/
 
 GNU_CONFIGURE=	yes
 

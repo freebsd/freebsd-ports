@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface for the MusicBrainz libdiscid library
+WWW=		https://metacpan.org/release/MusicBrainz-DiscID
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

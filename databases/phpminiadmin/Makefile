@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Lightweight alternative to phpMyAdmin
+WWW=		http://phpminiadmin.sourceforge.net
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	dual

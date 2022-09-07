@@ -6,6 +6,7 @@ MASTER_SITES=	http://ctpp.havoc.ru/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to use templates in C/C++ projects, version 2
+WWW=		http://ctpp.havoc.ru/
 
 USES=		cmake gettext compiler:c++11-lang
 USE_LDCONFIG=	yes

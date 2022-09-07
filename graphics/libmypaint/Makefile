@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/mypaint/libmypaint/releases/download/v${PORTVER
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Brush library from the MyPaint project
+WWW=		http://mypaint.org/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/652/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - sleep timer plugin
+WWW=		https://projects.vdr-developer.org/projects/plg-sleeptimer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,6 +6,7 @@ MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
+WWW=		https://virt-manager.org/
 
 LICENSE=	LGPL3
 

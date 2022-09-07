@@ -4,6 +4,7 @@ CATEGORIES=	emulators games
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Sega Saturn and ST-V emulator forked from uoYabause for libretro
+WWW=		https://fcare.github.io
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/yabause/COPYING

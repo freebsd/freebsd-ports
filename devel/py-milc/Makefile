@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Opinionated, batteries-included Python 3 CLI framework
+WWW=		https://milc.clueboard.co/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

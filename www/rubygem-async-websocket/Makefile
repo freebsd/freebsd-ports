@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Async websocket library on top of websocket-driver
+WWW=		https://github.com/socketry/async-websocket
 
 LICENSE=	MIT
 

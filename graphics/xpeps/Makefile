@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	x
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Converts EPS images to anti-aliased bitmaps with X11 support
+WWW=		http://peps.redprince.net/peps/
 
 LICENSE=	BSD2CLAUSE
 

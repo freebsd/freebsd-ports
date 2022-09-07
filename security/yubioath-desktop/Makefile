@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	GUI for displaying OATH codes with a Yubikey
+WWW=		https://developers.yubico.com/yubioath-desktop/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

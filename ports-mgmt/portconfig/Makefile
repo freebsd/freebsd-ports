@@ -4,6 +4,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Utility to set up FreeBSD port options
+WWW=		https://gitlab.com/alfix/portconfig
 
 LICENSE=	BSD2CLAUSE
 

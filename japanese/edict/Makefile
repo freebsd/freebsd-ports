@@ -17,6 +17,7 @@ EXTRACT_ONLY=	${SRCFILES}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese-English dictionaries with access and maintenance utilities
+WWW=		http://ftp.monash.edu.au/pub/nihongo/00INDEX.html
 
 DIST_SUBDIR=	edict
 

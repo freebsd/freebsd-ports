@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Display HTML locally in a browser
+WWW=		https://metacpan.org/release/HTML-Display
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

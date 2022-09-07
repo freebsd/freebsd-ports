@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl port of the Java Lucene search engine
+WWW=		https://metacpan.org/release/Plucene
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

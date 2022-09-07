@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interactively prompt for user input
+WWW=		https://metacpan.org/release/IO-Prompt
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

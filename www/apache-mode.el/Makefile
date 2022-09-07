@@ -9,6 +9,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	max.n.boyarov@gmail.com
 COMMENT=	Emacs major mode for editing Apache configuration files
+WWW=		https://www.emacswiki.org/cgi-bin/wiki/apache-mode.el
 
 LICENSE=	GPLv2+
 

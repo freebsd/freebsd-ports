@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for reading and writing WAV files using numpy arrays
+WWW=		https://github.com/WarrenWeckesser/wavio
 
 LICENSE=	BSD2CLAUSE
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Speed up perl CGI scripts by running them persistently
+WWW=		http://daemoninc.com/SpeedyCGI/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/hrs
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for ARIB STD-B25 ECM handling in MPEG2-TS stream
+WWW=		http://www.marumo.ne.jp/db2012_2.htm #13
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/licence.txt

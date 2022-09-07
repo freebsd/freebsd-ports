@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class that provides an easy interface to use config files
+WWW=		https://metacpan.org/release/Config-Setting
 
 RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 

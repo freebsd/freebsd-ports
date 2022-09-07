@@ -5,6 +5,7 @@ CATEGORIES=	www perl5
 
 MAINTAINER=	dominique.goncalves@gmail.com
 COMMENT=	Squid access log report generation tool
+WWW=		https://squidanalyzer.darold.net/
 
 LICENSE=	GPLv3
 

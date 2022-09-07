@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sudoku generating and solving software
+WWW=		https://people.freedesktop.org/~hughsient/appdata/
 
 USES=		autoreconf compiler:c++11-lang gmake libtool pathfix pkgconfig
 USE_GITHUB=	yes

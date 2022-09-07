@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for gconf2 API library
+WWW=		http://gtkmm.sourceforge.net/
 
 LIB_DEPENDS=	libglibmm-2.4.so:devel/glibmm
 

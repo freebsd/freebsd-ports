@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Yet Another Terminal Spinner
+WWW=		https://github.com/pavdmyt/yaspin
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

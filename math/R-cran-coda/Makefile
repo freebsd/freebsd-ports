@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Output analysis and diagnostics for MCMC
+WWW=		https://cran.case.edu/web/packages/coda/index.html
 
 LICENSE=	GPLv2+
 

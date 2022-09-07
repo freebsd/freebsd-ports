@@ -9,6 +9,7 @@ PATCHFILES+=	56474378568e.patch:-p1 # https://gitlab.gnome.org/GNOME/dconf-edito
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Configuration database editor for GNOME
+WWW=		https://wiki.gnome.org/Projects/dconf
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	http://t-sato.in.coocan.jp/xvkbd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual keyboard for X applications
+WWW=		http://t-sato.in.coocan.jp/xvkbd/
 
 LICENSE=	GPLv2+
 

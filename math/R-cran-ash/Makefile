@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	David Scott's ASH Routines
+WWW=		https://cran.r-project.org/package=ash
 
 LICENSE=	GPLv2+
 

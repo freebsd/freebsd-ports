@@ -6,6 +6,7 @@ MASTER_SITES=	SF/ofset/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to share image and audio files between projects
+WWW=		http://www.ofset.org/assetml/
 
 BUILD_DEPENDS=	texi2html:textproc/texi2html
 LIB_DEPENDS=	libpopt.so:devel/popt

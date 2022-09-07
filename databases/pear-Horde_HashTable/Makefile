@@ -4,6 +4,7 @@ CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Hash Table Interface
+WWW=		https://pear.horde.org
 
 OPTIONS_DEFINE=	MEMCACHE
 USES=		horde cpe

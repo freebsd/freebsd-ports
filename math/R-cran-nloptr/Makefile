@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	R interface to NLopt
+WWW=		https://cran.r-project.org/web/packages/nloptr/
 
 LICENSE=	LGPL3
 

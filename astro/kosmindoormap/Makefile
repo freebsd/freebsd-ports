@@ -4,6 +4,7 @@ CATEGORIES=	astro kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library and QML component for rendering multi-level OSM indoor maps
+WWW=		https://marble.kde.org/
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 

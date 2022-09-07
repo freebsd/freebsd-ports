@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra taglib features for Amarok 2.2
+WWW=		http://websvn.kde.org/trunk/kdesupport/taglib-extras/
 
 LIB_DEPENDS=	libtag.so:audio/taglib
 

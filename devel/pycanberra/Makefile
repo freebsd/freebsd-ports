@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	hello@blubee.me
 COMMENT=	Very basic wrapper for libcanberra
+WWW=		https://github.com/totdb/pycanberra
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

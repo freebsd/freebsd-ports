@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sugar for your favorite ORM, DBIx::Class
+WWW=		https://metacpan.org/release/DBIx-Class-Candy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

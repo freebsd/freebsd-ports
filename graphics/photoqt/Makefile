@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	melanhit@gmail.com
 COMMENT=	Simple, powerful and good looking QT5 image viewer
+WWW=		https://photoqt.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

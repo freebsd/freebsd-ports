@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG
+WWW=		https://duplicity.nongnu.org
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

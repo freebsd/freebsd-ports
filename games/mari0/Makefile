@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Nintendo\'s Super Mario Bros and Valve\'s Portal at same time
+WWW=		https://stabyourself.net/mari0/
 
 LICENSE=	CC-BY-NC-SA-3.0
 

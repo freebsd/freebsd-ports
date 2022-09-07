@@ -7,6 +7,7 @@ DISTNAME=	fbida-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast motif-based image viewer and editor
+WWW=		https://www.kraxel.org/blog/linux/fbida/
 
 LICENSE=	GPLv2
 

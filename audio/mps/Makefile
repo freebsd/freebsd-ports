@@ -6,6 +6,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Terminal based MP3 search, playback and download
+WWW=		https://github.com/np1/mps
 
 LICENSE=	GPLv3
 

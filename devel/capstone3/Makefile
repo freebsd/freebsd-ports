@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	oliver.pntr@gmail.com
 COMMENT=	Multi-platform, multi-architecture disassembly framework
+WWW=		http://capstone-engine.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

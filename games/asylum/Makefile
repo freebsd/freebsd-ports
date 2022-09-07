@@ -6,6 +6,7 @@ MASTER_SITES=	SF/sdl-${PORTNAME}/Asylum/${PORTVERSION}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Surreal platform shooting game
+WWW=		http://sdl-asylum.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

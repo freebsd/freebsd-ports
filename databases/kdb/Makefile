@@ -10,6 +10,7 @@ PATCHFILES=		b36d74f13a1421437a725fb74502c993c359392a.diff:-p1
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Database connectivity and creation framework
+WWW=		https://community.kde.org/KDb
 
 LIB_DEPENDS=		libicuuc.so:devel/icu
 

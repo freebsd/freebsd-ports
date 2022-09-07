@@ -6,6 +6,7 @@ DISTNAME=	Libertinus-${DISTVERSION}
 
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Libertinus Open Fonts
+WWW=		https://github.com/alerque/libertinus
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.txt

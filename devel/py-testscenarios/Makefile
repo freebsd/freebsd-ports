@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PyUnit extension for dependency injection
+WWW=		https://pypi.org/project/testscenarios/
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

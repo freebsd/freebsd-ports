@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/akheron/${PORTNAME}/releases/download/v${DISTVE
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	C library for encoding, decoding, and manipulating JSON data
+WWW=		https://github.com/akheron/jansson
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

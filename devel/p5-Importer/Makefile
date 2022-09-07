@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alternative but compatible interface to modules that export symbols
+WWW=		https://metacpan.org/release/Importer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

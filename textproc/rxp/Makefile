@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/richard/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Validating XML parser written in C
+WWW=		https://www.cogsci.ed.ac.uk/~richard/rxp.html
 
 LICENSE=	GPLv2
 

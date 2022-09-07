@@ -6,6 +6,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compare putatively similar files, ignoring small numeric differences
+WWW=		https://www.nongnu.org/numdiff/
 
 LICENSE=	GPLv3
 

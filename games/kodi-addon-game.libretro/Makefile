@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Libretro compatibility layer for the Kodi Game API
+WWW=		https://github.com/kodi-game/game.libretro
 
 LICENSE=	GPLv2+
 

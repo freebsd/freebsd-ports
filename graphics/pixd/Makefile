@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	mail@dbalan.in
 COMMENT=	Visualize binary data in terminal
+WWW=		https://github.com/FireyFly/pixd/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

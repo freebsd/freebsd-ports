@@ -8,6 +8,7 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java tool for working with PDF documents
+WWW=		https://pdfbox.apache.org/
 
 LICENSE=	APACHE20
 

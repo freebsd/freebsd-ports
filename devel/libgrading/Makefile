@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	jonathan@FreeBSD.org
 COMMENT=	Simple library for grading C- and C++-language assignments
+WWW=		https://trombonehero.github.io/libgrading/
 
 LICENSE=	APACHE20
 

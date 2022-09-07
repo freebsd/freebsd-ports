@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Collection of open source tools for genetic sequence analysis
+WWW=		http://www.emboss.org/
 
 LICENSE=	GPLv2
 

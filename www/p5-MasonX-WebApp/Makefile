@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Works with HTML::Mason to do processing before Mason is invoked
+WWW=		https://metacpan.org/release/MasonX-WebApp
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	mp2bug:www/mod_perl2 \

@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Converts a ttyrec file into animated gif
+WWW=		https://github.com/icholy/ttygif
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

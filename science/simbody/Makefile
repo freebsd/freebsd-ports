@@ -9,6 +9,7 @@ PATCHFILES=	1b306f66bcd15e9bf6b27882e2daa6375ac4cd2e.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multibody dynamics library for (bio)mechanical systems simulation
+WWW=		https://simtk.org/projects/simbody
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

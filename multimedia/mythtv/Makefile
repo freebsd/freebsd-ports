@@ -7,6 +7,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER?=	ahicks@p-o.co.uk
 COMMENT?=	Homebrew PVR project
+WWW=		https://www.mythtv.org/
 
 LICENSE=	GPLv2+
 

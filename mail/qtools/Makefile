@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.superscript.com/qtools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to use in .qmail files
+WWW=		http://www.superscript.com/qtools/intro.html
 
 # Converted from LEGAL_TEXT
 LICENSE=	djb

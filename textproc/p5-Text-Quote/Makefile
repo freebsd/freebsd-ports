@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Quotes strings as required for perl to eval them back correctly
+WWW=		https://metacpan.org/release/Text-Quote
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

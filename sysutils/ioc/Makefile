@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	stefan@gronke.net
 COMMENT=	Jail management CLI using libioc
+WWW=		https://github.com/bsdci/ioc
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

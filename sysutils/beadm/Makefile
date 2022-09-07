@@ -5,6 +5,7 @@ MASTER_SITES=	GH
 
 MAINTAINER=	vermaden@interia.pl
 COMMENT=	Solaris-like utility to manage Boot Environments on ZFS
+WWW=		https://github.com/vermaden/beadm/
 
 LICENSE=	BSD2CLAUSE
 

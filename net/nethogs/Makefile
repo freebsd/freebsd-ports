@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Small net top tool
+WWW=		https://github.com/raboof/nethogs
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Yet another general purpose naive bayesian classifier
+WWW=		https://pypi.org/project/naiveBayesClassifier/
 
 LICENSE=	MIT
 

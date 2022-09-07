@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cookie storage and management for iCab
+WWW=		https://metacpan.org/release/HTTP-Cookies-iCab
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

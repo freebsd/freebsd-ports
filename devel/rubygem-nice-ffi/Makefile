@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Convenience layer atop Ruby-FFI
+WWW=		https://github.com/jacius/nice-ffi
 
 LICENSE=	MIT
 

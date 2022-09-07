@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl Interface to Google Charts API
+WWW=		https://metacpan.org/release/Google-Chart
 
 RUN_DEPENDS=	p5-libwww>0:www/p5-libwww \
 		p5-Moose>=2:devel/p5-Moose \

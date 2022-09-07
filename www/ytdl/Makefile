@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	YouTube downloader written in Go
+WWW=		https://github.com/rylio/ytdl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

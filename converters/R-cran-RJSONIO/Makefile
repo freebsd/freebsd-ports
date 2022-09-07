@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Serialize R objects to JSON, JavaScript Object Notation
+WWW=		https://cran.r-project.org/web/packages/RJSONIO/
 
 LICENSE=	BSD3CLAUSE
 

@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Portuguese thesaurus
+WWW=		http://openthesaurus.caixamagica.pt/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.spatula.net/muse/
 
 MAINTAINER=	freebsd@spatula.net
 COMMENT=	Shows memory usage data
+WWW=		http://www.spatula.net/proc/muse/index.src
 
 BROKEN_FreeBSD_12=	fails to compile: read_mem.c: invalid use of undefined type 'struct vmmeter'
 BROKEN_FreeBSD_13=	fails to compile: read_mem.c: invalid use of undefined type 'struct vmmeter'

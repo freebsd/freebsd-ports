@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Friendlier RFC 6265-compliant cookie parser/renderer
+WWW=		https://github.com/sashahart/cookies
 
 LICENSE=	MIT
 

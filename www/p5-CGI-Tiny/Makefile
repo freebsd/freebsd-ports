@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Common Gateway Interface, with no frills
+WWW=		https://metacpan.org/release/CGI-Tiny
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

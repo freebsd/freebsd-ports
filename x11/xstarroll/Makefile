@@ -7,6 +7,7 @@ MASTER_SITES=	http://kozos.jp/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Letters fly to far, far, far away
+WWW=		https://kozos.jp/myfreesoft/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.1
 

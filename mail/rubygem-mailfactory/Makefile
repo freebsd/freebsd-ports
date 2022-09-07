@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple to use module for generating RGC compliant MIME mail
+WWW=		https://github.com/tmm1/mailfactory
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

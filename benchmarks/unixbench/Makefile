@@ -6,6 +6,7 @@ CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	BYTE magazine's Public Domain benchmark for UNIX
+WWW=		https://github.com/kdlucas/byte-unixbench
 
 LICENSE=	GPLv2
 

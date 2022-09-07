@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	loic.blot@unix-experience.fr
 COMMENT=	Kubernetes scheduler daemon
+WWW=		https://github.com/kubernetes/kubernetes
 
 LICENSE=	APACHE20
 

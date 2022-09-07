@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Module for creating simple ASCII tables
+WWW=		https://pypi.org/project/texttable/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

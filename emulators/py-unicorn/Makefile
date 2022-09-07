@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python bindings for Unicorn CPU emulator framework
+WWW=		https://www.unicorn-engine.org/
 
 LICENSE=	BSD3CLAUSE
 

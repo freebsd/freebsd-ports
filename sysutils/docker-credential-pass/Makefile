@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Helper to use sysutils/password-store as Docker credentials store
+WWW=		https://github.com/docker/docker-credential-helpers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

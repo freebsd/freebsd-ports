@@ -12,6 +12,7 @@ PATCHFILES+=	0b46063c0e9f.patch:-p1 # wlroots 0.15
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	New implementation of the Fcitx IME framework
+WWW=		https://github.com/fcitx/fcitx5
 
 LICENSE=	LGPL21+
 

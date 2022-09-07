@@ -6,6 +6,7 @@ DISTNAME=	linuxx86-${PORTVERSION}.20
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
+WWW=		https://www.citrix.com/products/receiver/
 
 # Converted from RESTRICTED
 LICENSE=	citrix

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Collection of python dictionary management tools
+WWW=		https://gitlab.com/saltstack/open/dict-toolbox/
 
 LICENSE=	APACHE20
 

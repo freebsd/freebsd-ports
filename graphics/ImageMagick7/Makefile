@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	7
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Image processing tools
+WWW=		https://imagemagick.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

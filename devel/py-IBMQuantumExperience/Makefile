@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python library for the Quantum Experience API
+WWW=		https://github.com/IBM/qiskit-api-py
 
 LICENSE=	APACHE20
 

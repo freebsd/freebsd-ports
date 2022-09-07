@@ -1,6 +1,7 @@
 PORTNAME=	spamassassin
 
 COMMENT=	SpamAssassin plugin for Claws Mail
+WWW=		https://www.claws-mail.org/plugin.php?plugin=spamassassin
 
 RUN_DEPENDS=	spamd:mail/spamassassin
 

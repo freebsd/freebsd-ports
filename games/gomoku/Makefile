@@ -7,6 +7,7 @@ DISTNAME=	Gomoku-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Gomoku game
+WWW=		http://www.gnustep.it/nicola/Applications/Gomoku/
 
 LICENSE=	GPLv2+
 

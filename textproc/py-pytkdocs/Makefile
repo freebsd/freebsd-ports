@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Load Python objects documentation
+WWW=		https://github.com/mkdocstrings/pytkdocs
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

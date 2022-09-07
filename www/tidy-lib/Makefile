@@ -4,6 +4,7 @@ PKGNAMESUFFIX=	-lib
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Utility to clean up and pretty print HTML/XHTML/XML (with shared lib)
+WWW=		http://tidy.sourceforge.net/
 
 MASTERDIR=	${.CURDIR}/../../www/tidy-devel
 

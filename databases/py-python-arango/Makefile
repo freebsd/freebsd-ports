@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python driver for ArangoDB
+WWW=		https://github.com/joowani/python-arango
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

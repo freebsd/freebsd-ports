@@ -7,6 +7,7 @@ DISTNAME=	umefont_${PORTVERSION:E}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Ume Japanese TrueType fonts
+WWW=		https://sourceforge.jp/projects/ume-font/wiki/FrontPage
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/license.html

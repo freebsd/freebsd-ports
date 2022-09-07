@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	N-D labeled arrays and datasets in Python
+WWW=		https://github.com/pydata/xarray
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

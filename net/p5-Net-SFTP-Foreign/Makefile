@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Secure File Transfer Protocol client
+WWW=		https://metacpan.org/release/Net-SFTP-Foreign
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

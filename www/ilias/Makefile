@@ -5,6 +5,7 @@ CATEGORIES=	www education
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
+WWW=		https://www.ilias.de
 
 LICENSE=	GPLv2
 

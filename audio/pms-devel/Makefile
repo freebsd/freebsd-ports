@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Rewrite of pms, an ncurses-based client for the Music Player Daemon
+WWW=		https://github.com/ambientsound/pms
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

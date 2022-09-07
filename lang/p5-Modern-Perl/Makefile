@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Enable all of the features of Modern Perl with one import
+WWW=		https://metacpan.org/release/Modern-Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

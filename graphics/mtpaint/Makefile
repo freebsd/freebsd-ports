@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple painting program
+WWW=		http://mtpaint.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

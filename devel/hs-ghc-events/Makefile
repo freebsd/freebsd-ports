@@ -4,6 +4,7 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Library and tool for parsing .eventlog files from GHC
+WWW=		https://hackage.haskell.org/package/ghc-events
 
 LICENSE=	BSD3CLAUSE
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Scripting for adaptive AI systems
+WWW=		https://bitbucket.org/marcusva/py-dynrules
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/doc/copying.rst

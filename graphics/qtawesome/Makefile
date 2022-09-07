@@ -5,6 +5,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embed Font Awesome glyphs in Qt-applications
+WWW=		https://github.com/gamecreature/QtAwesome
 
 LICENSE=	MIT
 

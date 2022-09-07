@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of n-ary tree related modules
+WWW=		https://metacpan.org/release/Forest
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

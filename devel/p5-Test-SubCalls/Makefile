@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Track the number of times subs are called
+WWW=		https://metacpan.org/release/Test-SubCalls
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

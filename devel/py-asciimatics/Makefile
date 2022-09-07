@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mouse/keyboard input, text color/positioning, and ASCII animations
+WWW=		https://github.com/peterbrittain/asciimatics
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

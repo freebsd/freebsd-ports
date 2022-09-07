@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Application to keep a local mirror of web comics
+WWW=		https://dosage.rocks/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Window manager designed for speed and usability
+WWW=		https://ice-wm.org/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

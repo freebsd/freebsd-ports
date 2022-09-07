@@ -6,6 +6,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Task manager for the Xfce desktop
+WWW=		https://goodies.xfce.org/projects/applications/xfce4-taskmanager
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

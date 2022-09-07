@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Flexible event/agent & automation system with lots of bees
+WWW=		https://github.com/muesli/beehive
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

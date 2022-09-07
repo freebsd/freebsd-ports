@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Group together related tests in a test suite
+WWW=		https://metacpan.org/release/Test-Group
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

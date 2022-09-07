@@ -5,6 +5,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Incidence editor libriares for KDEPim
+WWW=		https://github.com/KDE/mailcommon
 
 LICENSE=	LGPL21
 

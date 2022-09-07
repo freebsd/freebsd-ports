@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/glpi-project/glpi/releases/download/${PORTVERSI
 
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Free IT and asset management software
+WWW=		https://glpi-project.org/
 
 LICENSE=	GPLv2
 

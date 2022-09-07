@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Multi-library, cross-platform audio decoding
+WWW=		https://github.com/beetbox/audioread
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

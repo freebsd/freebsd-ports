@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ concurrency library: tasks, executors, timers, C++20 coroutines
+WWW=		https://github.com/David-Haim/concurrencpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

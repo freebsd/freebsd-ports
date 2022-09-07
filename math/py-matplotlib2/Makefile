@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	Plotting library uses a syntax familiar to MATLAB users (legacy)
+WWW=		https://matplotlib.org/
 
 LICENSE=	PSFL
 

@@ -6,6 +6,7 @@ MASTER_SITES=	https://w1.fi/releases/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
+WWW=		https://w1.fi/wpa_supplicant/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/README

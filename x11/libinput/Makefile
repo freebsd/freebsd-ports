@@ -6,6 +6,7 @@ MASTER_SITES=	https://freedesktop.org/software/${PORTNAME}/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Generic input library
+WWW=		https://www.freedesktop.org/wiki/Software/libinput/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

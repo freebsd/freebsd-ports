@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Content/Anti-virus Scanner for qmail Written in C
+WWW=		https://www.inter7.com/?page=simscan
 
 USES=		qmail:build
 

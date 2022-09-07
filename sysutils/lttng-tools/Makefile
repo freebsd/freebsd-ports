@@ -6,6 +6,7 @@ MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of tools to control LTTng tracing
+WWW=		https://lttng.org/
 
 LICENSE=		LGPL21 GPLv2
 LICENSE_COMB=		dual

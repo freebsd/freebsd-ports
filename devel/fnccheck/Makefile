@@ -7,6 +7,7 @@ DISTNAME=	FunctionCheck-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Profiling library/utilities for C/C++ programs
+WWW=		https://sourceforge.net/projects/fnccheck/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

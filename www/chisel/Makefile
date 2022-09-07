@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Fast TCP tunnel over HTTP
+WWW=		https://github.com/jpillora/chisel
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

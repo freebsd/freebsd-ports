@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin that verifies ClamAV local signature database revision
+WWW=		http://bsd.phoenix.az.us/projects/check_clamav
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

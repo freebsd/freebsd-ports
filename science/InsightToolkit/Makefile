@@ -8,6 +8,7 @@ DISTFILES=	InsightData-5.0.1.tar.gz:data
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Insight Toolkit
+WWW=		https://www.itk.org
 
 LICENSE=	APACHE20
 

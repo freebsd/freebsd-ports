@@ -5,6 +5,7 @@ MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	z7dr6ut7gs@snkmail.com
 COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
+WWW=		https://gpsd.gitlab.io/gpsd/index.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

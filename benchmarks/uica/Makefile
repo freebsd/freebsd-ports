@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTFILES:C,:[^:]*$,,:N*.xml}
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Code Analyzer from the uops.info project
+WWW=		https://uops.info/uiCA.html
 
 LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi

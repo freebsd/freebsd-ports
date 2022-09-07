@@ -10,6 +10,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Easy to use graphical editor for electronics
+WWW=		https://darwinne.github.io/FidoCadJ/index.html
 
 LICENSE=	GPLv3
 

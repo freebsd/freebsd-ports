@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.thregr.org/~wavexx/software/screenkey/releases/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Screencast tool to display pressed keys
+WWW=		https://www.thregr.org/~wavexx/software/screenkey/
 
 LICENSE=	GPLv3+
 

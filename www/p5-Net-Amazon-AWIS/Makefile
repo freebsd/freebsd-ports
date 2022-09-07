@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use the Amazon Alexa Web Information Service
+WWW=		https://metacpan.org/release/Net-Amazon-AWIS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

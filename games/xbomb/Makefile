@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.gedanken.org.uk/software/xbomb/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minesweeper with a couple of grid types
+WWW=		http://www.gedanken.demon.co.uk/xbomb/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

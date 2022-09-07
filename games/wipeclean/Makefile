@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	CLI tool to wipe away your error messages in style
+WWW=		https://github.com/JeanJouliaCode/wipeClean
 
 LICENSE=	ISCL
 

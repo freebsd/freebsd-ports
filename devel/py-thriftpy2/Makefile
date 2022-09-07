@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Pure python implementation of Apache Thrift
+WWW=		https://github.com/Thriftpy/thriftpy2
 
 LICENSE=	MIT
 

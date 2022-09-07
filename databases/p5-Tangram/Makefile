@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Orthogonal Object Persistence in Relational Databases
+WWW=		https://metacpan.org/release/Tangram
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

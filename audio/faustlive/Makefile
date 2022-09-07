@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Standalone application that embeds Faust
+WWW=		https://github.com/grame-cncm/faustlive
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.txt

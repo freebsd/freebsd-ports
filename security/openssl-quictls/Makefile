@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-quictls
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	QUIC capable fork of OpenSSL
+WWW=		https://www.github.com/quictls/openssl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

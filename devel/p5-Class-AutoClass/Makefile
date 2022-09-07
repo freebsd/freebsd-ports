@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create get and set methods and simplify object initialization
+WWW=		https://metacpan.org/release/Class-AutoClass
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

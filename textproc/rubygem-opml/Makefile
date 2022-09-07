@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Simple wrapper for parsing OPML files
+WWW=		https://rubygems.org/gems/opml
 
 NO_ARCH=	yes
 

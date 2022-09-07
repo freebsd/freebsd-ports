@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	postgresql${PGSQL_VER_NODOT}-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL extension to check PL/pgSQL code
+WWW=		https://github.com/okbob/plpgsql_check
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	postcardware

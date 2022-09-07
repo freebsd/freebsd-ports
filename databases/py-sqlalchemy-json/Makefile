@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON type with nested change tracking for SQLAlchemy
+WWW=		https://github.com/edelooff/sqlalchemy-json
 
 LICENSE=	BSD2CLAUSE
 

@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	PureScript package manager and build tool
+WWW=		https://github.com/spacchetti/spago
 
 LICENSE=	BSD3CLAUSE
 

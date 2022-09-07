@@ -7,6 +7,7 @@ PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Auto-complete program for the D programming language (server)
+WWW=		https://github.com/dlang-community/DCD
 
 LICENSE=	BSL
 

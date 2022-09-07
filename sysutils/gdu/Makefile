@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Disk usage analyzer with console interface written in Go
+WWW=		https://github.com/dundee/gdu
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

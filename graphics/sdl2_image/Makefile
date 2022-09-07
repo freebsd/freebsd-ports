@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple library to load images of various formats as SDL surfaces
+WWW=		https://github.com/libsdl-org/SDL_image
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

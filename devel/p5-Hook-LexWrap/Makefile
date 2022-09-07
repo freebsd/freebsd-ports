@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lexically scoped subroutine wrappers for Perl
+WWW=		https://metacpan.org/release/Hook-LexWrap
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

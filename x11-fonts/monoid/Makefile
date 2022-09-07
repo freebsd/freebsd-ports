@@ -15,6 +15,7 @@ EXTRACT_ONLY=	${DISTFILES:M*\:monoid:S/:monoid//}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Coding font with alternates, ligatures and contextual positioning
+WWW=		https://larsenwork.com/monoid
 
 # The license is in the README file, which is not downloaded.
 LICENSE=	OFL11

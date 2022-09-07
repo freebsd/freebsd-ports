@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Makes it easier to investigate your mod_perl version
+WWW=		https://metacpan.org/release/ModPerl-VersionUtil
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

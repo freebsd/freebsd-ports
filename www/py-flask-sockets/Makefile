@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Elegant WebSockets for your Flask apps
+WWW=		https://github.com/kennethreitz/flask-sockets
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Photo geotagging manually or from GPX files
+WWW=		https://invent.kde.org/graphics/kgeotag/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSES/LicenseRef-KDE-Accepted-GPL.txt

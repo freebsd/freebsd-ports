@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parser / Dumper for LTSV
+WWW=		https://github.com/condor/ltsv
 
 NO_ARCH=	yes
 

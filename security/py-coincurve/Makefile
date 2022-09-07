@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cross-platform Python CFFI bindings for libsecp256k1
+WWW=		https://github.com/ofek/coincurve
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	dual

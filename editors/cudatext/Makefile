@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Cross-platform text editor, written in Lazarus
+WWW=		https://uvviewsoft.com/
 
 LICENSE=	MPL20
 

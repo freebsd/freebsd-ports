@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find RFC 822 email addresses in plain text
+WWW=		https://metacpan.org/release/Email-Find
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Gstreamer based non-linear audio/video editor
+WWW=		https://www.pitivi.org
 
 LICENSE=	LGPL21+
 

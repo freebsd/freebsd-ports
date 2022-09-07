@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.coppercloudmusic.com/enscribe/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create digital audio watermark images from photographic images
+WWW=		https://www.coppercloudmusic.com/enscribe/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS replacement for Class::Accessor::Fast
+WWW=		https://metacpan.org/release/Class-Accessor-Fast-XS
 
 BUILD_DEPENDS=	p5-AutoXS-Header>=0.03:devel/p5-AutoXS-Header \
 		p5-Class-Accessor>0:devel/p5-Class-Accessor

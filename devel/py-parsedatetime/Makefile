@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python module for parsing 'human readable' date/time expressions
+WWW=		https://github.com/bear/parsedatetime
 
 LICENSE=	APACHE20
 

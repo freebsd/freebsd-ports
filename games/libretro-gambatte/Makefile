@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Libretro Implementation of libgambatte, a Game Boy Color emulator
+WWW=		https://github.com/libretro/gambatte-libretro
 
 LICENSE=	GPLv2
 

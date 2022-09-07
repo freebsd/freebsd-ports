@@ -7,6 +7,7 @@ MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Protect hosts from brute-force attacks against SSH and other services
+WWW=		https://www.sshguard.net/
 
 LICENSE=	BSD2CLAUSE
 

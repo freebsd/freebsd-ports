@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gd.workbox@gmail.com
 COMMENT=	Python extension that wraps hiredis
+WWW=		https://github.com/pietern/hiredis-py
 
 LICENSE=	BSD3CLAUSE
 

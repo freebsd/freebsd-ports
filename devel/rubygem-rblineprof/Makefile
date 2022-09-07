@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Shows you lines of code that are slow
+WWW=		https://github.com/tmm1/rblineprof
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

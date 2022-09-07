@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Perl port of Webmachine
+WWW=		https://metacpan.org/pod/Web::Machine
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

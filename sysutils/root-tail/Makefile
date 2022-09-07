@@ -5,6 +5,7 @@ MASTER_SITES=	http://dist.schmorp.de/${PORTNAME}/
 
 MAINTAINER=	drtr0jan@yandex.ru
 COMMENT=	Print text directly to X11 root window
+WWW=		http://software.schmorp.de/pkg/root-tail.html
 
 LICENSE=	GPLv2+
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.memtest.org/download/${PORTVERSION}/
 
 MAINTAINER=	avg@FreeBSD.org
 COMMENT=	Stand-alone memory test for x86 architecture computers
+WWW=		https://www.memtest.org/
 
 LICENSE=	GPLv2
 

@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-icon-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Icon theme inspired by material design
+WWW=		https://github.com/daniruiz/flat-remix
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

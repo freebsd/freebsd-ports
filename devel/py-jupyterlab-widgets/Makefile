@@ -7,6 +7,7 @@ DISTNAME=	jupyterlab_widgets-${DISTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	JupyterLab extension for Jupyter/IPython widgets
+WWW=		https://pypi.python.org/pypi/jupyterlab-widgets
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

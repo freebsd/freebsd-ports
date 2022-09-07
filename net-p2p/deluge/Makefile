@@ -6,6 +6,7 @@ CATEGORIES=	net-p2p python
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Bittorrent client using Python, GTK3, and libtorrent-rasterbar
+WWW=		https://deluge-torrent.org/
 
 LICENSE=	GPLv3
 

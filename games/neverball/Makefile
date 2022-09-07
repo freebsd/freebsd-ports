@@ -7,6 +7,7 @@ MASTER_SITES=	http://icculus.org/neverball/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
+WWW=		https://neverball.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/legal/license-GPL-2.0.txt

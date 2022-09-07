@@ -6,6 +6,7 @@ CATEGORIES=	games
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	Port of "Jagged Alliance 2" using SDL
+WWW=		https://ja2-stracciatella.github.io/
 
 LICENSE=		PD SFI-SCLA
 LICENSE_COMB=		multi

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Log queries for later analysis
+WWW=		https://metacpan.org/release/DBIx-Class-QueryLog
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

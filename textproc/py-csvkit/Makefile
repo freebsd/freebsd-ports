@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Command line tools for working with CSV
+WWW=		https://csvkit.readthedocs.io/
 
 LICENSE=	MIT
 

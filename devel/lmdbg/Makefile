@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Lightweight malloc debugger
+WWW=		https://sourceforge.net/projects/lmdbg/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE

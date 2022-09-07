@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Automatically link across pages in MkDocs
+WWW=		https://github.com/mkdocstrings/autorefs
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	XStatic-Bootstrap-SCSS-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bootstrap-SCSS (XStatic packaging standard)
+WWW=		https://github.com/twbs/bootstrap-sass
 
 LICENSE=	MIT
 

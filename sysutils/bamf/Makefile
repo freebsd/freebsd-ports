@@ -5,6 +5,7 @@ MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	BAMF Application Matching Framework
+WWW=		https://launchpad.net/bamf
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL

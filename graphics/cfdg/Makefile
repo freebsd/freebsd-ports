@@ -8,6 +8,7 @@ DISTNAME=	ContextFreeSource${PORTVERSION}
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Context Free Design Grammar compiler
+WWW=		https://www.contextfreeart.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.ka9q.net/code/cpuid/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU identification utility
+WWW=		http://www.ka9q.net/code/cpuid/
 
 USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile.bsd

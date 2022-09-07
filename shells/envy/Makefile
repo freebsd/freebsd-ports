@@ -6,6 +6,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Shell helper that automatically sets and unsets environment variables
+WWW=		https://github.com/wojas/envy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

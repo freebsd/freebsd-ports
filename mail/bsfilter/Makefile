@@ -6,6 +6,7 @@ MASTER_SITES=	OSDN/bsfilter
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bayesian spam filter written in Ruby
+WWW=		https://en.sourceforge.jp/projects/bsfilter/
 
 LICENSE=	GPLv2
 

@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Repackaging of the historical megrez number field tables for PARI/GP
+WWW=		https://pari.math.u-bordeaux.fr/packages.html
 
 LICENSE=	GPLv2
 

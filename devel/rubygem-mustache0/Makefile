@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	0
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Framework-agnostic way to render logic-free views
+WWW=		https://github.com/mustache/mustache
 
 LICENSE=	MIT
 

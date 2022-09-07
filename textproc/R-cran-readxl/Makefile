@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read Excel Files
+WWW=		https://readxl.tidyverse.org
 
 LICENSE=	GPLv3
 

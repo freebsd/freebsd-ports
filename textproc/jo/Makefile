@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/jpmens/${PORTNAME}/releases/download/${PORTVERS
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Small utility to create JSON objects
+WWW=		https://github.com/jpmens/jo
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

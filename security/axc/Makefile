@@ -9,6 +9,7 @@ PATCHFILES=	c287e25143fc54486c8a8a86f9abb64ce1753372.patch:-p1 \
 
 MAINTAINER=	micadeyeye@gmail.com
 COMMENT=	Crypto interfaces for libsignal-protocol-c
+WWW=		https://github.com/gkdr/axc
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

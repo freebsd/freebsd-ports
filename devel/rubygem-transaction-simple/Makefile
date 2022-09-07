@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple object transaction support
+WWW=		http://trans-simple.rubyforge.org/
 
 LICENSE=	MIT
 

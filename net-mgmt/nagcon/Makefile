@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.vanheusden.com/nagcon/
 
 MAINTAINER=	rand@iteris.com
 COMMENT=	Nagios console monitor
+WWW=		http://www.vanheusden.com/nagcon
 
 LIB_DEPENDS=	libstrfunc.so:devel/libstrfunc
 

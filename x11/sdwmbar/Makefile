@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	sakhmatd@darkn.space
 COMMENT=	Simple statusbar for the dwm window manager
+WWW=		https://github.com/sakhmatd/sdwmbar
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

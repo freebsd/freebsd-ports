@@ -6,6 +6,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK3-based button bar for sway and other wlroots-based compositors
+WWW=		https://github.com/nwg-piotr/nwg-bar
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Curses based battleship type game
+WWW=		http://www.deater.net/weave/vmwprod/seabattle.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

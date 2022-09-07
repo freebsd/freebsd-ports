@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Aspell Serbian dictionary
+WWW=		https://srpski.org/aspell/
 
 DICT=		sr
 

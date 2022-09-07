@@ -8,6 +8,7 @@ DISTNAME=	${PYQT5_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtCore module
+WWW=		https://riverbankcomputing.com/software/pyqt
 
 PYQT_DIST=	yes
 

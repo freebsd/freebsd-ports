@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Virus Total Public/Private/Intel API
+WWW=		https://pypi.org/project/virustotal-api/
 
 LICENSE=	MIT
 

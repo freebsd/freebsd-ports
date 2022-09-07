@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python Library For Symbolic Mathematics
+WWW=		https://sympy.org/
 
 LICENSE=	BSD3CLAUSE
 

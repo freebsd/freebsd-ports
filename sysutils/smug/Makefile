@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Session manager and task runner for tmux
+WWW=		https://github.com/ivaaaan/smug
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

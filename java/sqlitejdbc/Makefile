@@ -8,6 +8,7 @@ MASTER_SITES=	http://files.zentus.com/sqlitejdbc/
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Java JDBC driver for SQLite
+WWW=		http://web.archive.org/web/20120721075310/http://www.zentus.com/sqlitejdbc/
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde timeobjects application
+WWW=		https://www.horde.org/
 
 USES=		cpe horde php
 CPE_VENDOR=	horde

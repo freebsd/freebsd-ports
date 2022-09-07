@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Globally unique timezones abbreviation handling
+WWW=		https://metacpan.org/release/Olson-Abbreviations
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

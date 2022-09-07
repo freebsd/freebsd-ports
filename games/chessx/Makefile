@@ -5,6 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/beta
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 5 chess database application
+WWW=		https://chessx.sourceforge.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

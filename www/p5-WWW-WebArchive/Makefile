@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Retrieve old versions of public web pages from various web archives
+WWW=		https://metacpan.org/release/WWW-WebArchive
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

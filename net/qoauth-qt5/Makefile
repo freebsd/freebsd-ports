@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 support for OAuth-powered network services
+WWW=		https://github.com/ayoy/qoauth
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

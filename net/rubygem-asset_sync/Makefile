@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Synchronizes Assets between Rails and S3
+WWW=		https://github.com/AssetSync/asset_sync
 
 LICENSE=	MIT
 

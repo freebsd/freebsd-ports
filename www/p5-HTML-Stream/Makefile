@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 HTML output stream class, and some markup utilities
+WWW=		https://metacpan.org/release/HTML-Stream
 
 USES=		perl5
 USE_PERL5=	configure

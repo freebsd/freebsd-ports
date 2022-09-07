@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Modules to streamline writing Monitoring plugins
+WWW=		https://metacpan.org/dist/Monitoring-Plugin
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

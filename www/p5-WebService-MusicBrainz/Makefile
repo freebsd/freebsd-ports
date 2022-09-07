@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl interface to MusicBrainz
+WWW=		https://metacpan.org/release/WebService-MusicBrainz
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/archivers/unalz/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Extracts AlZip archives
+WWW=		https://bsdforge.com/projects/archivers/unalz/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/readme.txt

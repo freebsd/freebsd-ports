@@ -4,6 +4,7 @@ CATEGORIES=	www finance
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Modern software package to manage your company or foundation
+WWW=		https://www.dolibarr.org/
 
 LICENSE=	GPLv3
 

@@ -6,6 +6,7 @@ MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/tm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal mixer
+WWW=		https://vicerveza.homeunix.net/~viric/soft/tm/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

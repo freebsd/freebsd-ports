@@ -5,6 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Environment for the design of interactive augmented music scores
+WWW=		https://inscore.grame.fr/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/src/license.txt

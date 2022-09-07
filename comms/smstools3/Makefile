@@ -7,6 +7,7 @@ DISTNAME=	smstools3-${PORTVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	SMS Gateway software for GSM modems and mobile phones
+WWW=		http://smstools3.kekekasvi.com
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

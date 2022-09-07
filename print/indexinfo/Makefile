@@ -4,6 +4,7 @@ CATEGORIES=	print ports-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Utility to regenerate the GNU info page index
+WWW=		https://github.com/bapt/indexinfo
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	WYSIWYG ePub editor
+WWW=		https://sigil-ebook.com/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

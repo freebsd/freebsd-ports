@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.packagekit.org/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	DBUS packaging abstraction layer
+WWW=		http://www.packagekit.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:textproc/docbook-utils
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \

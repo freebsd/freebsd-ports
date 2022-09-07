@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python Package for Manipulation 2D Geospatial Geometry
+WWW=		https://pypi.org/project/Shapely/
 
 LICENSE=	BSD3CLAUSE
 

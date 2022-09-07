@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control cameras based on Sierra Imaging chipset and compatibles
+WWW=		http://photopc.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 

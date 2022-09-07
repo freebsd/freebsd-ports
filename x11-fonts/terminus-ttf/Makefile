@@ -5,6 +5,7 @@ MASTER_SITES=	https://files.ax86.net/terminus-ttf/files/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Terminus Font - a clean fixed width font (TTF version)
+WWW=		https://files.ax86.net/terminus-ttf/
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/COPYING

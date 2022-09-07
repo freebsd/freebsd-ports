@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	aly@aaronly.me
 COMMENT=	Music library/editor/player written in Python
+WWW=		https://quodlibet.readthedocs.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	pave@FreeBSD.org
 COMMENT=	LZ4 extension for PHP
+WWW=		https://github.com/kjdev/php-ext-lz4
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

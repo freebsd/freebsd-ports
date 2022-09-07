@@ -6,6 +6,7 @@ MASTER_SITES=	http://math.lbl.gov/voro++/download/dir/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Three-dimensional computations of the Voronoi tessellation
+WWW=		http://math.lbl.gov/voro++/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

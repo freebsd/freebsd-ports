@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Perl interface to Apache CouchDB
+WWW=		https://metacpan.org/release/Store-CouchDB
 
 LICENSE=	ART10
 

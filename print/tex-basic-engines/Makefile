@@ -8,6 +8,7 @@ DIST_SUBDIR=	TeX
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	Basic TeX Engines
+WWW=		https://tug.org/texlive/
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/metabrainz/${PORTNAME}/releases/download/releas
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for accessing the MusicBrainz cover art archive
+WWW=		https://coverartarchive.org/
 
 LICENSE=	LGPL20
 

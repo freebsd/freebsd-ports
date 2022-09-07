@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Dutch thesaurus
+WWW=		https://data.opentaal.org/opentaalbank/thesaurus/
 
 LICENSE=	BSD3CLAUSE
 

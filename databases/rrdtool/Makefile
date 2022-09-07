@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/oetiker/rrdtool-1.x/releases/download/v${DISTVE
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Round Robin Database Tools
+WWW=		https://oss.oetiker.ch/rrdtool/
 
 LICENSE=	GPLv2
 

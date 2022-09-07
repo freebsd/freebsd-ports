@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Extends nose cover to add Cobertura-style XML reports
+WWW=		https://github.com/cmheisel/nose-xcover
 
 LICENSE=	MIT
 

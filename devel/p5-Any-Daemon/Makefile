@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	martin@waschbuesch.de
 COMMENT=	Provides basic needs for a daemon
+WWW=		https://metacpan.org/release/Any-Daemon
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

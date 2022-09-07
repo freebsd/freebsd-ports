@@ -5,6 +5,7 @@ MASTER_SITES=	LXQT/${PORTNAME}
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Qt implementation of freedesktop.org xdg specs
+WWW=		https://github.com/lxde/libqtxdg
 
 LICENSE=	LGPL21+
 

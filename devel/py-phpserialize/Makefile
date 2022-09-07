@@ -8,6 +8,7 @@ LICENSE=	BSD3CLAUSE
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Port of the serialize and unserialize functions of PHP to Python
+WWW=		http://www.hurring.com/scott/code/python/serialize/
 
 NO_ARCH=	yes
 USES=		python:3.6+

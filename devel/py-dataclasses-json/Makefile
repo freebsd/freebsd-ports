@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easily serialize dataclasses to and from JSON
+WWW=		https://github.com/lidatong/dataclasses-json
 
 LICENSE=	MIT
 

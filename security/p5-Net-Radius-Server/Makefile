@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for RADIUS Servers
+WWW=		https://metacpan.org/release/Net-Radius-Server
 
 RUN_DEPENDS=	p5-Authen-PAM>=0:security/p5-Authen-PAM \
 		p5-Class-Accessor>=0.27:devel/p5-Class-Accessor \

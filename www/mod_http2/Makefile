@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	HTTP/2 modules for Apache httpd
+WWW=		https://github.com/icing/mod_h2
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

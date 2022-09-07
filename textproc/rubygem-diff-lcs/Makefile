@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	LCS-based diff library for ruby
+WWW=		https://github.com/halostatue/diff-lcs
 
 LICENSE=	ART20 GPLv2+ MIT
 LICENSE_COMB=	dual

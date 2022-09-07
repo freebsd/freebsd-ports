@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	wulf@FreeBSD.org
 COMMENT=	Kernel driver for absolute USB HID mouses
+WWW=		https://github.com/wulf7/utouch
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python framework for fast Vector Space Modelling
+WWW=		https://radimrehurek.com/gensim/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

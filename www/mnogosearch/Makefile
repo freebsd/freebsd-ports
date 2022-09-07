@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.mnogosearch.org/Download/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
+WWW=		http://www.mnogosearch.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

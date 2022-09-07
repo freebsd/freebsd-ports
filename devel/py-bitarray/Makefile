@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Efficient arrays of booleans
+WWW=		https://pypi.org/project/bitarray/
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE

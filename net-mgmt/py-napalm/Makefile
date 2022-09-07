@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Net Automation and Progr. Abstraction Layer with Multivendor support
+WWW=		https://github.com/napalm-automation/napalm
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

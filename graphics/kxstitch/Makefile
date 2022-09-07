@@ -6,6 +6,7 @@ CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross stitch pattern editor
+WWW=		https://kde.org/applications/graphics/kxstitch/
 
 USES=		cmake compiler:c++11-lang desktop-file-utils magick:6 kde:5 qt:5 tar:xz \
 		xorg

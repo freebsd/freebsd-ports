@@ -6,6 +6,7 @@ DIST_SUBDIR=	Ultimaker
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Python framework for 3D printing applications
+WWW=		https://github.com/Ultimaker/Uranium/blob/master/docs/overview.md
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

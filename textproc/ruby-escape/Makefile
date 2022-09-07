@@ -8,6 +8,7 @@ DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Ruby library provides HTML/URI/shell escaping functions
+WWW=		http://www.a-k-r.org/escape/
 
 USE_RUBY=	yes
 NO_BUILD=	yes

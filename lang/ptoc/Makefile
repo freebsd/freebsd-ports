@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.garret.ru/
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	ANSI/Turbo Pascal to C/C++ converter
+WWW=		http://www.garret.ru/~knizhnik/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

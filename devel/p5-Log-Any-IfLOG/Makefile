@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Load Log::Any only if LOG environment variable is true
+WWW=		https://metacpan.org/release/Log-Any-IfLOG
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

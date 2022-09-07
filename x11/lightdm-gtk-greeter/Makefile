@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/Xubuntu/${PORTNAME}/releases/download/${PORTNAM
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GTK+ greeter for LightDM
+WWW=		https://github.com/Xubuntu/lightdm-gtk-greeter
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

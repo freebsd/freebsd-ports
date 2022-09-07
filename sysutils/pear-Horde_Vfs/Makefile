@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Virtual File System API
+WWW=		https://pear.horde.org
 
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Translation \

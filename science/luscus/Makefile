@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Molecular editor and viewer
+WWW=		https://sourceforge.net/projects/luscus/
 
 LICENSE=	AFL
 LICENSE_NAME=	Academic Free License

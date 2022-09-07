@@ -7,6 +7,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE desktop planetarium
+WWW=		https://edu.kde.org/kstars
 
 LICENSE=	GPLv2
 

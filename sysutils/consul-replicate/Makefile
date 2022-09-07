@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Consul cross-DC KV replication daemon
+WWW=		https://github.com/hashicorp/consul-replicate
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

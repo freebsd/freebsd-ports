@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Controller and GCode generator for RepRap 3D printers
+WWW=		https://reprap.org/wiki/RepSnapper_Manual:Introduction
 
 LICENSE=	GPLv2 BSD3CLAUSE MIT
 LICENSE_COMB=	multi

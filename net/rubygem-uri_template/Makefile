@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Templating system for URIs
+WWW=		https://github.com/hannesg/uri_template
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Portable OAuth 1.0 authentication
+WWW=		https://metacpan.org/release/WWW-OAuth
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

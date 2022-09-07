@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	GitHub HTML processing filters and utilities
+WWW=		https://github.com/jch/html-pipeline
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ CATEGORIES=		print graphics
 
 MAINTAINER=		grembo@FreeBSD.org
 COMMENT=		Simple wrapper around Ghostscript to reduce the file size of PDFs
+WWW=		https://github.com/aklomp/shrinkpdf
 
 LICENSE=		BSD3CLAUSE
 

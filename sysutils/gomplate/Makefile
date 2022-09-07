@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Command-line tool for rendering templates before executing binaries
+WWW=		https://github.com/hairyhenderson/gomplate
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

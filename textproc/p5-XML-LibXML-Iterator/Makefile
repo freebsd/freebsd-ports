@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Iterator for XML::LibXML parsed documents
+WWW=		https://metacpan.org/release/XML-LibXML-Iterator
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

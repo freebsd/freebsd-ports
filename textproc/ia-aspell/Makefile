@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Interlingua dictionary
+WWW=		http://aspell.net/
 
 DICT=	 	ia
 

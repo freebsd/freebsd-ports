@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pinocchio plugins for the nose testing framework
+WWW=		https://pypi.org/project/pinocchio/
 
 LICENSE=	MIT
 

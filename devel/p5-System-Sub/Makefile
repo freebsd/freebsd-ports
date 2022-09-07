@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrap external command with a DWIM sub
+WWW=		https://metacpan.org/release/System-Sub
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

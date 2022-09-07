@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Live video streaming server in golang
+WWW=		https://github.com/gwuhaolin/livego
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

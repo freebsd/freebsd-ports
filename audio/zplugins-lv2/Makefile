@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of LV2 plugins to be bundled with Zrythm
+WWW=		https://github.com/zrythm/ZPlugins
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

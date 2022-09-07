@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL SQL syntax beautifier
+WWW=		https://github.com/darold/pgFormatter
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE

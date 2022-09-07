@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-core
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Regex file for building language ports of Browserscope's UA parser
+WWW=		https://github.com/ua-parser/uap-core
 
 LICENSE=	APACHE20
 

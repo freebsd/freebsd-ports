@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enthought extensible application framework
+WWW=		http://code.enthought.com/projects/envisage
 
 LICENSE=	BSD3CLAUSE PSFL LGPL20
 LICENSE_COMB=	multi

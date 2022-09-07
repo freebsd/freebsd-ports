@@ -6,6 +6,7 @@ MASTER_SITES=	SF/cppcms/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	info@babaei.net
 COMMENT=	Platform and database independent SQL connectivity library
+WWW=		http://cppcms.com/sql/cppdb/
 
 LICENSE=	BSL MIT
 LICENSE_COMB=	dual

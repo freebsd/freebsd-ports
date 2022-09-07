@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Python library for using the Facebook Messenger API
+WWW=		https://github.com/conbus/fbmq
 
 LICENSE=	MIT
 

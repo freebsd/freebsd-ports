@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/wmQStat%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp for monitoring of various Internet game servers
+WWW=		http://wmqstat.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to Mozilla JavaScript implementation
+WWW=		https://metacpan.org/release/JavaScript-SpiderMonkey
 
 DEPRECATED=	Depends on deprecated SpiderMonkey 1.7
 EXPIRATION_DATE=2022-09-30

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	LRU Cache in Memory through a tie interface
+WWW=		https://metacpan.org/release/Tie-Cache
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

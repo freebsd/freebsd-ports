@@ -12,6 +12,7 @@ PATCHFILES+=	85096c4ba2fb.patch:-p1 # https://github.com/OpenRA/OpenRA/pull/1774
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer re-envisioning of early RTS games by Westwood Studios
+WWW=		https://www.openra.net/
 
 LICENSE=	GPLv3
 

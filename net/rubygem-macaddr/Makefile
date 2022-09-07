@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Cross Platform Mac Address Determination for Ruby
+WWW=		https://github.com/ahoward/macaddr
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ MASTER_SITES=	http://tthsum.devs.nu/pkg/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line utility for generating and checking TTH message digests
+WWW=		http://tthsum.devs.nu/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

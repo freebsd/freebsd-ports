@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl extension for centralized input validation for any application
+WWW=		https://metacpan.org/release/Validation-Class
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

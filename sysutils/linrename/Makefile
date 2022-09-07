@@ -10,6 +10,7 @@ DISTNAME=	util-linux-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename multiple files using substitution
+WWW=		http://freecode.com/projects/util-linux/
 
 BUILD_WRKSRC=	${WRKSRC}/misc-utils
 INSTALL_WRKSRC=	${WRKSRC}/misc-utils

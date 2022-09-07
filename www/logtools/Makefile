@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.coker.com.au/logtools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful tools to deal with CLF files (Common Log File format)
+WWW=		https://doc.coker.com.au/projects/logtools/
 
 LICENSE=	GPLv2
 

@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Music player for big local collections
+WWW=		https://mpz-player.org/
 
 LICENSE=	GPLv3+
 

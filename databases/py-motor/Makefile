@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Non-blocking MongoDB driver for Tornado or asyncio
+WWW=		https://pypi.org/project/motor/
 
 LICENSE=	APACHE20
 

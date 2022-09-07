@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Natural language toolkit written in python
+WWW=		https://www.nltk.org/
 
 LICENSE=	APACHE20
 

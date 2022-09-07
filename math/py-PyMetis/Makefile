@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python wrapper for the Metis graph partitioning software
+WWW=		https://mathema.tician.de/software/pymetis/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

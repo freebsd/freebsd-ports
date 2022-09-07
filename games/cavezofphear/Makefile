@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Boulder Dash / Digger-like game for consoles/terminals
+WWW=		https://github.com/AMDmi3/cavezofphear
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

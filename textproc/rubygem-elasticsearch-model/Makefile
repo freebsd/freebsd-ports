@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ActiveModel/Record integrations for Elasticsearch
+WWW=		https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-model
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -11,6 +11,7 @@ LICENSE=	GPLv2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolbox bundle for GNUstep
+WWW=		https://www.nongnu.org/toolbox/
 
 USES=		gnustep
 USE_GNUSTEP=	back build

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Useful base class for deriving other modules
+WWW=		https://metacpan.org/release/Class-Base
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

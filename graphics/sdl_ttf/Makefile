@@ -7,6 +7,7 @@ DISTNAME=	SDL_ttf-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library to use TrueType fonts to render text in SDL applications
+WWW=		https://www.libsdl.org/projects/SDL_ttf/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING

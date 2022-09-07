@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Methods for retrieving RSS-ish information from an HTML document
+WWW=		https://metacpan.org/release/HTML-RSSAutodiscovery
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

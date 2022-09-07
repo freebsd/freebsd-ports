@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Number of source filters for perl5 programs
+WWW=		https://metacpan.org/release/Filter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

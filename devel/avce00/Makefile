@@ -5,6 +5,7 @@ MASTER_SITES=	http://avce00.maptools.org/dl/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	OpenSource C library convert Arc/Info Vector Coverages to E00
+WWW=		http://avce00.maptools.org/avce00/
 
 OPTIONS_DEFINE=	DOCS
 

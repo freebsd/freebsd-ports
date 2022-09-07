@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Extension to audit your password-store password repository
+WWW=		https://github.com/roddhjav/pass-audit
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

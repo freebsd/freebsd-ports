@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Fluent plugin which provides directives for loop extraction
+WWW=		https://github.com/tagomoris/fluent-plugin-config-expander
 
 LICENSE=	APACHE20
 

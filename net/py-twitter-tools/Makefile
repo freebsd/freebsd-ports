@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-tools
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	API and command-line toolset for Twitter (twitter.com)
+WWW=		https://github.com/sixohsix/twitter
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

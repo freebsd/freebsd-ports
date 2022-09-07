@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	nomoo@nomoo.ru
 COMMENT=	Window switcher, run dialog and dmenu replacement
+WWW=		https://github.com/davatorium/rofi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

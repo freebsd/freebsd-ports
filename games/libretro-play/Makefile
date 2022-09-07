@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	libretro-
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Play! - PlayStation 2 Emulator
+WWW=		https://purei.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt

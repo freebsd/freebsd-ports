@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-fem
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Adaptive multi-level finite element toolbox
+WWW=		http://www.alberta-fem.de/
 
 LICENSE=	GPLv2+
 

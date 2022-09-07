@@ -7,6 +7,7 @@ DISTNAME=	PyPDF2-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Pure-Python PDF toolkit
+WWW=		https://mstamy2.github.io/PyPDF2/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

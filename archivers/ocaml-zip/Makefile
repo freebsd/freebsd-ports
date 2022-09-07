@@ -6,6 +6,7 @@ DISTNAME=	caml${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	OCaml library to manipulate ZIP/GZIP/JAR archives
+WWW=		https://github.com/xavierleroy/camlzip
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

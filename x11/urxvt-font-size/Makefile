@@ -5,6 +5,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Perl extension for rxvt-unicode terminal emulator to change font size
+WWW=		https://github.com/majutsushi/urxvt-font-size
 
 LICENSE=	MIT
 

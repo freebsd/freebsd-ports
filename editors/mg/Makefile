@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/ibara/mg/releases/download/mg-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast Emacs-like editor
+WWW=		https://github.com/ibara/mg
 
 LICENSE=	PD
 

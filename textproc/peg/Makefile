@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.piumarta.com/software/peg/
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Recursive-descent parser generators for C
+WWW=		https://www.piumarta.com/software/peg/
 
 LICENSE=	MIT
 

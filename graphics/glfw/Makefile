@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/glfw/glfw/releases/download/${PORTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Portable framework for OpenGL development
+WWW=		https://www.glfw.org/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

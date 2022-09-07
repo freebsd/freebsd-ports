@@ -8,6 +8,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/relea
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Plugins for Nagios
+WWW=		https://nagios-plugins.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

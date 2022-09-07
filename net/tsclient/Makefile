@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@thepentagon.org
 COMMENT=	GNOME 2 frontend for rdesktop and vncviewer
+WWW=		https://sourceforge.net/projects/tsclient/
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: gConnect
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: gConnect

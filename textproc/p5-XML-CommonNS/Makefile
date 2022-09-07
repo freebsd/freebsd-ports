@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	List of commonly used namespaces
+WWW=		https://metacpan.org/release/XML-CommonNS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

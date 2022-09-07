@@ -4,6 +4,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Waifu2x (waifu2x-ncnn-vulkan) plugin for VapourSynth
+WWW=		https://github.com/Nlzy/vapoursynth-waifu2x-ncnn-vulkan
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

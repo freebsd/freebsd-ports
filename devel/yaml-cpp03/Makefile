@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	03
 
 MAINTAINER=	tim@niemueller.de
 COMMENT=	YAML parser and emitter in C++ matching the YAML 1.2 spec
+WWW=		https://code.google.com/p/yaml-cpp/
 
 LICENSE=	MIT
 

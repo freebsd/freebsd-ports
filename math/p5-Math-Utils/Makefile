@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Useful mathematical functions not in Perl
+WWW=		https://metacpan.org/release/Math-Utils
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

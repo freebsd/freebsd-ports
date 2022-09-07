@@ -4,6 +4,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	NSS module implementing multicast DNS name resolution
+WWW=		https://github.com/lathiat/nss-mdns
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

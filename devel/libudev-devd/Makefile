@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	libudev-compatible interface for devd
+WWW=		https://github.com/wulf7/libudev-devd
 
 LICENSE=	BSD2CLAUSE
 

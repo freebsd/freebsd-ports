@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Library for loading and using triangular meshes
+WWW=		https://pypi.org/project/trimesh/ #description
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -3,6 +3,7 @@ PKGNAMESUFFIX=	-img
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Pager/text-based WWW browser with Japanese and inline image support
+WWW=		http://w3m.sourceforge.net/
 
 MASTERDIR=	${.CURDIR}/../../www/w3m
 PKGDIR=		${.CURDIR}

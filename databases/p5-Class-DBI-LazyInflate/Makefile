@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Defer inflating of columns until they are used
+WWW=		https://metacpan.org/release/Class-DBI-LazyInflate
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Lazy>=0:devel/p5-Data-Lazy \

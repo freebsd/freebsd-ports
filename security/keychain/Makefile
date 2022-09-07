@@ -4,6 +4,7 @@ CATEGORIES=	security
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	User-friendly front-end to ssh-agent(1)
+WWW=		https://www.funtoo.org/Keychain
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

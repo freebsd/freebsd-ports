@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Tiling window manager for Adventurers
+WWW=		https://leftwm.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

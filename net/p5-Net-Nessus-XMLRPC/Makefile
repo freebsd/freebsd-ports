@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl5 interface for communication with Nessus scanner over XMLRPC
+WWW=		https://metacpan.org/release/Net-Nessus-XMLRPC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

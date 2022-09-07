@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	c.kworr@gmail.com
 COMMENT=	ANSII Color formatting for output in terminal
+WWW=		https://pypi.org/project/termcolor/
 
 LICENSE=	MIT
 

@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	WINGs Display Manager; an xdm replacement
+WWW=		https://github.com/voins/wdm
 
 LICENSE=	GPLv2+
 

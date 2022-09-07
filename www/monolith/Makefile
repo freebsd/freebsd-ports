@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	CLI tool for saving complete web pages as a single HTML file
+WWW=		https://github.com/Y2Z/monolith
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	Komodo-Edit-${DISTVERSION}-18122-linux-x86
 
 MAINTAINER=	allanjude@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
+WWW=		https://www.activestate.com/Products/komodo_edit/
 
 # https://www.activestate.com/komodo-edit/license-agreement
 LICENSE=	KEL11 MPL11

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate simple Atom syndication feeds with Perl
+WWW=		https://metacpan.org/release/XML-Atom-SimpleFeed
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Define abstract method in Ruby
+WWW=		https://rubygems.org/gems/abstract
 
 LICENSE=	RUBY
 

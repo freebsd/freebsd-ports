@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Top-like interface for Docker container metrics
+WWW=		https://ctop.sh
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	10
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Munkres implementation for Python
+WWW=		https://software.clapper.org/munkres/
 
 LICENSE=	APACHE20
 

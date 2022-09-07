@@ -6,6 +6,7 @@ MASTER_SITES=	http://downloads.digitalcorpora.org/downloads/${PORTNAME}/
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Program that captures data transmitted as part of TCP connections
+WWW=		https://github.com/simsong/tcpflow
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

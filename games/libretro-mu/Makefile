@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	PalmOS emulator to the libretro API
+WWW=		https://github.com/libretro/Mu
 
 LICENSE=	GPLv3 MIT
 LICENSE_COMB=	multi

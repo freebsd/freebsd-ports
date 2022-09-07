@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/vslavik/${PORTNAME}/releases/download/v${PORTVE
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor
+WWW=		https://www.poedit.net/
 
 LICENSE=	BSD2CLAUSE
 

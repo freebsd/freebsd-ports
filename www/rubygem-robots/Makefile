@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple library to parse robots.txt files
+WWW=		https://github.com/fizx/robots
 
 LICENSE=	MIT
 

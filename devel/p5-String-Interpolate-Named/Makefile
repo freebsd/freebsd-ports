@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interpolated named arguments in string
+WWW=		https://metacpan.org/dist/String-Interpolate-Named
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

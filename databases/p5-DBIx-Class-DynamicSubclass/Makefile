@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Use dynamic subclassing with DBIx::Class
+WWW=		https://metacpan.org/release/DBIx-Class-DynamicSubclass
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBIx-Class>=0.07003:databases/p5-DBIx-Class

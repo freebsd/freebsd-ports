@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Common database access interface for Tcl
+WWW=		http://tdbc.tcl.tk
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

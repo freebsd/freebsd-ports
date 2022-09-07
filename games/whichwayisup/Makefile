@@ -11,6 +11,7 @@ EXTRACT_ONLY=	${PORTNAME}_b${DISTVERSION:S/.//g}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platformer game with rotational twist
+WWW=		https://www.oletus.fi/static/whichwayisup/
 
 LICENSE=	GPLv2
 

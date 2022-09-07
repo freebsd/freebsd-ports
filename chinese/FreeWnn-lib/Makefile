@@ -2,6 +2,7 @@ CATEGORIES=	chinese
 PKGNAMESUFFIX=	-lib
 
 COMMENT=	Japanese/Chinese/Korean input method (Chinese client libraries)
+WWW=		http://www.freewnn.org/
 
 MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
 PKGDIR=		${.CURDIR}

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Simple IDE for NASM, MASM, GAS and FASM assembly languages
+WWW=		https://dman95.github.io/SASM/english.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

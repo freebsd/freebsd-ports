@@ -8,6 +8,7 @@ DISTNAME=	Canna${PORTVERSION:S/.//g}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Kana-to-Kanji conversion system, library part
+WWW=		http://canna.sourceforge.jp/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

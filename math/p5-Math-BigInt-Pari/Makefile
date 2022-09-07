@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use Math::Pari for Math::BigInt routines
+WWW=		https://metacpan.org/release/Math-BigInt-Pari
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

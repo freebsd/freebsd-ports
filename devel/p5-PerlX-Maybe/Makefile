@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Return a pair only if they are both defined
+WWW=		https://metacpan.org/pod/PerlX::Maybe
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

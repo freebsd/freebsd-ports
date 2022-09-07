@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBIx::Class based session engine for Dancer2
+WWW=		https://metacpan.org/release/Dancer2-Session-DBIC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

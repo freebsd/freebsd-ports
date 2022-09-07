@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Pure python package for reading/writing dbf files
+WWW=		https://pypi.org/project/dbf/
 
 LICENSE=	BSD3CLAUSE
 

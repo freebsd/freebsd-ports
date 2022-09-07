@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Copy the contents of one Regexp object to another
+WWW=		https://metacpan.org/release/Regexp-Copy
 
 USES=		perl5
 USE_PERL5=	configure

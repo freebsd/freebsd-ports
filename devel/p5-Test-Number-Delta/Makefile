@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Compare the difference between two numbers within a specified amount
+WWW=		https://metacpan.org/release/Test-Number-Delta
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -11,6 +11,7 @@ DISTFILES=
 
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Neverwinter Nights Data Files
+WWW=		http://www.neverwinternights.info/
 
 LICENSE=	Proprietary
 LICENSE_NAME=	Proprietary

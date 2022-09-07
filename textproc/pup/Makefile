@@ -10,6 +10,7 @@ PATCHFILES=	107.patch:-p1 \
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Command-line jq-like HTML parser using CSS selectors
+WWW=		https://github.com/ericchiang/pup
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 artwork, styles and assets for the Breeze visual style
+WWW=		https://www.kde.org/plasma-desktop
 
 LICENSE=	GPLv2
 

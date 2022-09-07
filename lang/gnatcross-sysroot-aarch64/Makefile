@@ -10,6 +10,7 @@ DIST_SUBDIR=	gnatcross/arm64-aarch64/R11_3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD sysroots for C/Ada cross-compiler (${ARCH})
+WWW=		http://www.dragonlace.net
 
 # avoid aarch64 x aarch64
 ONLY_FOR_ARCHS=		amd64 i386

@@ -7,6 +7,7 @@ MASTER_SITES=	http://he.fi/aprsc/down/ \
 
 MAINTAINER=	toyokun@gmail.com
 COMMENT=	Plain APRS-IS server
+WWW=		http://he.fi/aprsc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

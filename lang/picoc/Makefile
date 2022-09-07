@@ -5,6 +5,7 @@ CATEGORIES=	lang devel
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Very small C interpreter for scripting
+WWW=		https://github.com/zsaleeba/picoc
 
 LICENSE=	BSD3CLAUSE
 

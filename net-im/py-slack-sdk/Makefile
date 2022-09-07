@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Slack SDK for several API
+WWW=		https://slack.dev/python-slack-sdk/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

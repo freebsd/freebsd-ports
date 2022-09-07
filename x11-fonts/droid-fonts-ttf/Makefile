@@ -6,6 +6,7 @@ MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Droid typeface family
+WWW=		https://www.droidfonts.com/
 
 LICENSE=	APACHE20
 

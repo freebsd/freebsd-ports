@@ -4,6 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MFC/R2 call setup library
+WWW=		https://libopenr2.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

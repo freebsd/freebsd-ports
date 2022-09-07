@@ -7,6 +7,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Open-source Java web server by Apache, 10.0.x branch
+WWW=		https://tomcat.apache.org/
 
 LICENSE=	APACHE20
 

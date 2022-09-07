@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DKIM (DomainKeys Identified Mail) library
+WWW=		http://dkim.org/
 
 LICENSE=	APACHE20
 

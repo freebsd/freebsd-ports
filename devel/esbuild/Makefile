@@ -6,6 +6,7 @@ CATEGORIES=	devel www
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Extremely fast JavaScript bundler and minifier
+WWW=		https://esbuild.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

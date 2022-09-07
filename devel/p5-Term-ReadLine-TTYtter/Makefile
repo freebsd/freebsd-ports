@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Perl5 module for Term::ReadLine allowing rich editing
+WWW=		https://metacpan.org/release/Term-ReadLine-TTYtter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

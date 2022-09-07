@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Commonly used date and time related utility functions
+WWW=		https://pypi.org/project/zope.datetime/
 
 LICENSE=	ZPL21
 

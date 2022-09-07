@@ -4,6 +4,7 @@ CATEGORIES=	www databases haskell
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	PostgREST create a REST API to an existing Postgres database
+WWW=		https://postgrest.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

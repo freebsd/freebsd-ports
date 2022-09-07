@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extension for LWP to allow parallel HTTP and FTP access
+WWW=		https://metacpan.org/release/ParallelUserAgent
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

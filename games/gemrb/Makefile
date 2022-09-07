@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	GemRB (Game engine made with preRendered Background)
+WWW=		https://www.gemrb.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

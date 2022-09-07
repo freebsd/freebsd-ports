@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	JSmol viewer widget for Jupyter Notebooks and JupyterLab
+WWW=		https://github.com/fekad/jupyter-jsmol
 
 LICENSE=	BSD3CLAUSE
 

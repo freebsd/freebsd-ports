@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.wrcad.com/ftp/pub/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptation of the Berkeley Spice3f4 with superconductivity
+WWW=		http://www.wrcad.com/jspice3.html
 
 BROKEN_aarch64=		fails to install: jspice3: No such file or directory
 BROKEN_riscv64=		fails to install: jspice3: No such file or directory

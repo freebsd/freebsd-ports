@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	JavaScript Object Notation in PHP
+WWW=		https://pecl.php.net/package/jsond
 
 LICENSE=	PHP301
 

@@ -7,6 +7,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library to describe geometrical objects
+WWW=		https://github.com/thliebig/CSXCAD
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

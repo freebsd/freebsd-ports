@@ -10,6 +10,7 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS-log-message-to-ChangeLog conversion script
+WWW=		https://www.red-bean.com/cvs2cl/
 
 LICENSE=	GPLv2+
 

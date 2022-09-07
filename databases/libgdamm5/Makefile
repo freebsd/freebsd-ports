@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgda5 library
+WWW=		https://www.gtkmm.org/
 
 USES=		gmake libtool pathfix pkgconfig tar:xz compiler:c++11-lang gnome
 USE_CXXSTD=	c++11

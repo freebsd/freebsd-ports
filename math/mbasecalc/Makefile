@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple calculator program inspired by basecalc
+WWW=		https://www.muquit.com/muquit/software/mbasecalc/mbasecalc.html
 
 LICENSE=	GPLv2
 

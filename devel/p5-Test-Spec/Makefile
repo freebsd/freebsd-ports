@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write tests in a declarative specification style
+WWW=		https://metacpan.org/release/Test-Spec
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

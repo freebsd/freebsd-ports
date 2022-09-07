@@ -6,6 +6,7 @@ MASTER_SITES=	http://mpx.freeshell.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio mixer (gtk and Xlib) for X11R6
+WWW=		http://mpx.freeshell.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

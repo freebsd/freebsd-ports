@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Makes searching and colorizing logs trivial without piping
+WWW=		https://metacpan.org/release/Log-Colorize-Helper
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

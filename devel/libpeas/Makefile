@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Next evolution of the Gedit plugins engine
+WWW=		http://live.gnome.org/libpeas
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

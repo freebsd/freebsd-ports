@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Messaging in the Emacs World for emacs
+WWW=		https://www.Mew.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/00copyright

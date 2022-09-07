@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jpbeconne@free.fr
 COMMENT=	Automate Package and Project Setup
+WWW=		https://CRAN.R-project.org/package=usethis
 
 LICENSE=	GPLv3
 

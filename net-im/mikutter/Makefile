@@ -6,6 +6,7 @@ MASTER_SITES=	https://mikutter.hachune.net/bin/ \
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Simple, powerful, and moeful Twitter client
+WWW=		https://mikutter.hachune.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

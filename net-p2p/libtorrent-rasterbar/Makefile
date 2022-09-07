@@ -7,6 +7,7 @@ MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERS
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library implementing a BitTorrent client
+WWW=		https://libtorrent.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

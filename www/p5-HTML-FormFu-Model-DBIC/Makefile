@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Integrate HTML::FormFu with DBIx::Class
+WWW=		https://metacpan.org/release/HTML-FormFu-Model-DBIC
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

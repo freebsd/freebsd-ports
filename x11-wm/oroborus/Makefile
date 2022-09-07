@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	matt@peterson.org
 COMMENT=	Small and simple GNOME-compatible window manager
+WWW=		https://www.oroborus.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

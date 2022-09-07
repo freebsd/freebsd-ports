@@ -4,6 +4,7 @@ CATEGORIES=		multimedia
 
 MAINTAINER=		rozhuk.im@gmail.com
 COMMENT=		Camera control and image acquisition viewer
+WWW=		https://github.com/AravisProject/aravis
 
 LICENSE=		LGPL21+
 LICENSE_FILE=		${WRKSRC}/COPYING

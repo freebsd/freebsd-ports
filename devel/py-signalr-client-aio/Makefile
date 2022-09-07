@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Simple python SignalR client using asyncio
+WWW=		https://github.com/slazarov/python-signalr-client
 
 LICENSE=	MIT
 

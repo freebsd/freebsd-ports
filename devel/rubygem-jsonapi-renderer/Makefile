@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Render JSONAPI documents
+WWW=		https://github.com/jsonapi-rb/jsonapi-renderer
 
 LICENSE=	MIT
 

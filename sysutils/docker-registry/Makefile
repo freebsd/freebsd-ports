@@ -6,6 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@yapsoft.it
 COMMENT=	Docker implementation of the OCI Distribution Specification
+WWW=		https://github.com/docker/distribution/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

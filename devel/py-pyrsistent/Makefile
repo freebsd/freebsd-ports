@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Persistent/Functional/Immutable data structures
+WWW=		https://github.com/tobgu/pyrsistent
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.mit

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Windows / Hyper-V library for OpenStack projects
+WWW=		https://github.com/openstack/os-win
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

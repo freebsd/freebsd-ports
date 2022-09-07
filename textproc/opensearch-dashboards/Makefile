@@ -6,6 +6,7 @@ MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DIS
 
 MAINTAINER=	opensearch@FreeBSD.org
 COMMENT=	Visualization dashboards for OpenSearch
+WWW=		https://opensearch.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

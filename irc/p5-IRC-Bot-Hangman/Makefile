@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IRC hangman bot
+WWW=		https://metacpan.org/release/IRC-Bot-Hangman
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Bot-BasicBot>=0:irc/p5-Bot-BasicBot \

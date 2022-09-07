@@ -4,6 +4,7 @@ CATEGORIES=	multimedia kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE professional quality non-linear video editing suite
+WWW=		https://www.kdenlive.org
 
 LICENSE=	GPLv2
 

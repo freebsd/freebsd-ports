@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.enderunix.org/voipong/
 
 MAINTAINER=	siseci@EnderUNIX.org
 COMMENT=	Detect Voice Over IP calls and dump them to separate wave files
+WWW=		http://www.enderunix.org/voipong/
 
 USE_LDCONFIG=	yes
 PORTDOCS=	ALGORITHMS AUTHORS ChangeLog COPYING INSTALL KNOWN_BUGS \

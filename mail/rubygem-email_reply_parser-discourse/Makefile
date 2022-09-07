@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Email Reply Parser
+WWW=		https://github.com/github/email_reply_parser
 
 LICENSE=	MIT
 

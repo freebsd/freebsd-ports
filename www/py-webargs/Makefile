@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Python library for parsing and validating HTTP request objects
+WWW=		https://github.com/marshmallow-code/webargs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

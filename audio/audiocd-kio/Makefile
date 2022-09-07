@@ -4,6 +4,7 @@ CATEGORIES=	audio kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE IOSlave for accessing audio CDs
+WWW=		https://www.kde.org/
 
 LICENSE=	GPLv2
 

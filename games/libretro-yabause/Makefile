@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Saturn emulator for libretro
+WWW=		https://github.com/libretro/yabause
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Roundcube yubikey auth plugin
+WWW=		https://github.com/northox/roundcube-yubikey-plugin
 
 LICENSE=	GPLv2
 

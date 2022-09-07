@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Represents a network connection as a object
+WWW=		https://metacpan.org/release/Net-Connection
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

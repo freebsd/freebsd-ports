@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Header-only implementation of the WebSocket protocol
+WWW=		https://www.zaphoyd.com/websocketpp/
 
 LICENSE=	MIT BSD3CLAUSE ZLIB
 LICENSE_COMB=	multi

@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.mavetju.org/download/
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Get a 'graphical' tree-overview of installed packages
+WWW=		https://www.mavetju.org/unix/general.php
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

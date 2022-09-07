@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Check whether a given LV2 plugin is up to the specification
+WWW=		https://github.com/OpenMusicKontrollers/lv2lint
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSES/Artistic-2.0.txt

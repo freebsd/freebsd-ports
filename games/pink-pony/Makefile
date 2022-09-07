@@ -5,6 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tron-like multiplayer racing game
+WWW=		https://github.com/ginkgo/pink-pony
 
 LICENSE=	GPLv3+
 

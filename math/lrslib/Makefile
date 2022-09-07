@@ -5,6 +5,7 @@ MASTER_SITES=	http://cgm.cs.mcgill.ca/~avis/C/lrslib/archive/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Reverse search algorithm for vertex enumeration/convex hull problems
+WWW=		http://cgm.cs.mcgill.ca/~avis/C/lrs.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

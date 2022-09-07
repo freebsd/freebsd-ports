@@ -8,6 +8,7 @@ DISTNAME=	pa_stable_v190600_20161030
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Portable cross-platform Audio API
+WWW=		http://www.portaudio.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

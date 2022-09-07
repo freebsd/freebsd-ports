@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	PopularMoment@protonmail.com
 COMMENT=	Backblaze B2 SDK
+WWW=		https://github.com/Backblaze/b2-sdk-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

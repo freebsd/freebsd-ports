@@ -8,6 +8,7 @@ DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Reimplementation of the standard Zope2 MailHost
+WWW=		https://pypi.org/project/Products.SecureMailHost/
 
 LICENSE=	ZPL21
 

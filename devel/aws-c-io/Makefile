@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Event driven framework for implementing application protocols
+WWW=		https://github.com/awslabs/aws-c-io
 
 LICENSE=	APACHE20
 

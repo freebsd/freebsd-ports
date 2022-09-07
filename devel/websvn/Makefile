@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	Online Subversion repository browser
+WWW=		https://websvnphp.github.io/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt

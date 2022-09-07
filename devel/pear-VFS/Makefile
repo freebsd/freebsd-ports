@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR Virtual File System API
+WWW=		https://pear.php.net/package/VFS
 
 BUILD_DEPENDS=	${PEARDIR}/Log/null.php:sysutils/pear-Log@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/Log/null.php:sysutils/pear-Log@${PHP_FLAVOR}

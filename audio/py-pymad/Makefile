@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python wrapper for the MPEG Audio Decoder library
+WWW=		https://github.com/jaqx0r/pymad
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

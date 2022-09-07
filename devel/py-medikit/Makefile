@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automated release engineer assistant
+WWW=		https://python-medikit.github.io/
 
 LICENSE=	APACHE20
 

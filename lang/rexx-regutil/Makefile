@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Implementation of IBM's RexxUtil function library for Regina
+WWW=		http://pages.interlog.com/~pjtm/
 
 LICENSE=	MPL10
 

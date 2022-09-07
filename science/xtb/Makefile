@@ -5,6 +5,7 @@ CATEGORIES=	science
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Semiempirical Extended Tight-Binding Program Package
+WWW=		https://github.com/grimme-lab/xtb
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.ai.mit.edu/projects/im/magnus/nenscript/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of the proprietary enscript program from Adobe Systems
+WWW=		http://www.ai.mit.edu/projects/im/magnus/nenscript/
 
 USES=		tar:bzip2
 

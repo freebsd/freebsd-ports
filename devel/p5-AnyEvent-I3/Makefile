@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Communicate with the i3 window manager
+WWW=		https://metacpan.org/release/AnyEvent-I3
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

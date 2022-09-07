@@ -8,6 +8,7 @@ DISTNAME=	proxyper${PORTVERSION}-freebsd7-x86
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Official distributed.net v2 personal proxy
+WWW=		https://www.distributed.net/Download_proxies
 
 ONLY_FOR_ARCHS=	amd64 i386
 

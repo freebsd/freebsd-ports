@@ -4,6 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Intelligent Input Bus for Unix-like systems
+WWW=		https://github.com/ibus/ibus
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

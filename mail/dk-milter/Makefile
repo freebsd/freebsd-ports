@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/DomainKeys%20Milter/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail
+WWW=		http://sendmail.net/dk-milter/
 
 USE_RC_SUBR=	milter-dk
 USES+=		ssl groff

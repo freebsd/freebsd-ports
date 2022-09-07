@@ -4,6 +4,7 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Implements singly and doubly-linked lists
+WWW=		https://pear.php.net/package/Structures_LinkedList
 
 USES=		pear
 

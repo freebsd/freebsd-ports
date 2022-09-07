@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Phone compositor
+WWW=		https://gitlab.gnome.org/World/Phosh/phoc
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

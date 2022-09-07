@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python One Time Password Library
+WWW=		https://github.com/pyauth/pyotp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ DISTFILES=	anki-yarn-cache-${DISTVERSION}${EXTRACT_SUFX}:yarncache
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Flashcard trainer with spaced repetition
+WWW=		https://apps.ankiweb.net/
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

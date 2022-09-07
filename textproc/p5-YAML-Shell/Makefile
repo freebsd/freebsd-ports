@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	YAML Test Shell
+WWW=		https://metacpan.org/release/YAML-Shell
 
 BUILD_DEPENDS=	p5-YAML>=0.67:textproc/p5-YAML
 RUN_DEPENDS=	p5-YAML>=0.67:textproc/p5-YAML

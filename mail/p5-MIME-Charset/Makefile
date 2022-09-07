@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 # blanket update approval granted, see pr136540
 MAINTAINER=	Olivier.Girard@univ-angers.fr
 COMMENT=	Charset Informations for MIME
+WWW=		https://metacpan.org/release/MIME-Charset
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

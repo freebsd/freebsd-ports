@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Plugin that verifies YubiKey OTP tokens
+WWW=		https://pypi.org/project/django-otp-yubikey/
 
 LICENSE=	BSD2CLAUSE
 

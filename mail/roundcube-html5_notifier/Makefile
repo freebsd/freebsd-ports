@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	HTML5 desktop notifier plugin for roundcube
+WWW=		https://github.com/stremlau/html5_notifier
 
 LICENSE=	GPLv3
 

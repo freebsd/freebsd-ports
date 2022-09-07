@@ -6,6 +6,7 @@ MASTER_SITES=	http://xrootd.org/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for fast, low latency, scalable data access
+WWW=		http://xrootd.org/
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual

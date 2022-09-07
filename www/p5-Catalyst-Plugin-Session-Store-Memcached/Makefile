@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Memcached storage backend for session data
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Session-Store-Memcached
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

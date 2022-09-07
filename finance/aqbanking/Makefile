@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/400/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
+WWW=		https://www.aquamaniac.de/rdm/projects/aqbanking
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

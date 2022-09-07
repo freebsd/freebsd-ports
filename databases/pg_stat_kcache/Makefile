@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Gather statistics about PostgreSQL I/O and CPU usage
+WWW=		https://github.com/dalibo/pg_stat_kcache
 
 LICENSE=	PostgreSQL
 

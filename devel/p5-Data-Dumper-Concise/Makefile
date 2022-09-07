@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Less indentation and newlines plus sub deparsing
+WWW=		https://metacpan.org/release/Data-Dumper-Concise
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

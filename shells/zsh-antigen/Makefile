@@ -5,6 +5,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	gudfitz@gmail.com
 COMMENT=	Tool for managing Zshell plugins inspired by Vundle
+WWW=		https://github.com/zsh-users/antigen
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

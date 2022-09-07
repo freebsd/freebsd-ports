@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataObjects Adapter for DataMapper
+WWW=		https://github.com/datamapper/dm-do-adapter
 
 LICENSE=	MIT
 

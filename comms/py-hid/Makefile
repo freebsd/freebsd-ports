@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Ctypes bindings to comms/hidapi
+WWW=		https://github.com/apmorton/pyhidapi
 
 LICENSE=	MIT
 

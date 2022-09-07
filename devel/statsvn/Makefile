@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subversion repository activity report generator
+WWW=		https://www.statsvn.org/
 
 LICENSE=	LGPL21+
 

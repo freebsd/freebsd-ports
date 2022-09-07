@@ -6,6 +6,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool to manage multiple virtualenvs
+WWW=		https://pypi.org/project/pew/
 
 LICENSE=	MIT
 

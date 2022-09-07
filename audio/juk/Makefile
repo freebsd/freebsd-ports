@@ -5,6 +5,7 @@ CATEGORIES=	audio kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Jukebox, tagger and music collection manager
+WWW=		https://www.kde.org/applications/multimedia/juk/
 
 LICENSE=	GPLv2
 

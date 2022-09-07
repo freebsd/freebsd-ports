@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Subroutine definitions with parameter lists
+WWW=		https://metacpan.org/release/Function-Parameters
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Module to hyphenate text based on Hunspell dictionaries
+WWW=		https://pyphen.org/
 
 LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	multi

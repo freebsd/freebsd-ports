@@ -5,6 +5,7 @@ MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Allow to push code to review and interact with a Gerrit server
+WWW=		https://docs.opendev.org/opendev/git-review/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

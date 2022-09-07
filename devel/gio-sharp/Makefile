@@ -6,6 +6,7 @@ MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GIO bindings not available in gtk-sharp
+WWW=		https://github.com/mono/gio-sharp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_CSC=${LOCALBASE}/bin/mcs

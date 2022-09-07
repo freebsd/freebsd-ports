@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Twitter script to irssi
+WWW=		https://twirssi.com/
 
 LICENSE=	GPLv2
 

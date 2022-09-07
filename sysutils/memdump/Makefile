@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.porcupine.org/forensics/
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Forensic utility for memory dumping
+WWW=		http://www.porcupine.org/forensics/tct.html
 
 LICENSE=	IBM
 LICENSE_NAME=	IBM Public License 1.0

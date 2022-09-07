@@ -12,6 +12,7 @@ MASTER_SITES=	http://lftp.tech/ftp/ \
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Shell-like command line FTP client
+WWW=		https://lftp.tech/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

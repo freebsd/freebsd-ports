@@ -5,6 +5,7 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VAAPI legacy driver for Intel GMA 4500 (Gen4) to UHD 630 (Gen9.5)
+WWW=		https://01.org/linuxmedia
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

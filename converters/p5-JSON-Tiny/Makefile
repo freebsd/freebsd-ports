@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Minimalistic JSON
+WWW=		https://metacpan.org/release/JSON-Tiny
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

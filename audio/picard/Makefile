@@ -7,6 +7,7 @@ MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Next generation MusicBrainz Tagger
+WWW=		https://picard.musicbrainz.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

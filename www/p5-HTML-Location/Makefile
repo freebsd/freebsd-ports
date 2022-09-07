@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Working with disk to URI file mappings (deprecated: see URI::ToDisk)
+WWW=		https://metacpan.org/release/HTML-Location
 
 BUILD_DEPENDS=	p5-Clone>=0.23:devel/p5-Clone \
 		p5-URI>=1.35:net/p5-URI

@@ -8,6 +8,7 @@ DISTNAME=	wxGTK-${PORTVERSION}
 
 MAINTAINER?=	desktop@FreeBSD.org
 COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings
+WWW=		https://www.wxwidgets.org/
 
 LIB_DEPENDS+=	libpng.so:graphics/png\
 		libtiff.so:graphics/tiff\

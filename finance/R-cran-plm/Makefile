@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Linear Models for Panel Data
+WWW=		https://cran.r-project.org/web/packages/plm/
 
 LICENSE=	GPLv2+
 

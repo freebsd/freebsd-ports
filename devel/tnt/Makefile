@@ -9,6 +9,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Template Numerical Toolkit
+WWW=		https://math.nist.gov/tnt/
 
 USES=		zip:infozip
 NO_BUILD=	yes

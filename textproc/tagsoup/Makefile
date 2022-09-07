@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	SAX-compliant parser written in Java
+WWW=		http://vrici.lojban.org/~cowan/XML/tagsoup
 
 LICENSE=	APACHE20
 

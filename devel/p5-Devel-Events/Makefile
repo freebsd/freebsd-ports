@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module providing an extensible instrumentation framework
+WWW=		https://metacpan.org/release/Devel-Events
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

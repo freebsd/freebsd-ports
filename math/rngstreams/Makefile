@@ -6,6 +6,7 @@ MASTER_SITES=	http://statmath.wu-wien.ac.at/software/RngStreams/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C implementation of a high-quality uniform random number generator
+WWW=		http://statmath.wu-wien.ac.at/software/RngStreams/
 
 LICENSE=	GPLv2+ # code says GPLv2+, COPYING is GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

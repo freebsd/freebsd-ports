@@ -5,6 +5,7 @@ CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Create a 3D model of an aircraft defined by engineering parameters
+WWW=		http://www.openvsp.org/
 
 LICENSE=	NOSA13
 LICENSE_NAME=	NASA Open Source Agreement version 1.3

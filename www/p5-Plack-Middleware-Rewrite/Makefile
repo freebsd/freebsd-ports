@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	mod_rewrite for Plack
+WWW=		https://metacpan.org/pod/Plack::Middleware::Rewrite
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

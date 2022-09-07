@@ -6,6 +6,7 @@ MASTER_SITES=	https://devel.ringlet.net/files/sys/timelimit/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Limit the absolute execution time of a process
+WWW=		https://devel.ringlet.net/sysutils/timelimit/
 
 LICENSE=	BSD2CLAUSE
 

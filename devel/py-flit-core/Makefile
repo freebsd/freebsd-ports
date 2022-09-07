@@ -7,6 +7,7 @@ DISTNAME=	flit_core-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Distribution-building parts of Flit
+WWW=		https://github.com/pypa/flit/tree/main/flit_core
 
 LICENSE=	BSD3CLAUSE
 

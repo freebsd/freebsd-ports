@@ -8,6 +8,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimized Sparse Fast Fourier Transform
+WWW=		https://spiral.net/software/sfft.html
 
 LICENSE=	GPLv2
 

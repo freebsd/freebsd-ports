@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Expiry plug-in for Memoize that adds LRU cache expiration
+WWW=		https://metacpan.org/release/Memoize-ExpireLRU
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

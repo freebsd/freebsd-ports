@@ -6,6 +6,7 @@ CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Light-weight tight-binding framework
+WWW=		https://github.com/tblite/tblite
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

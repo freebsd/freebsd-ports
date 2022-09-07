@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.ml1.org.uk/distfiles/ \
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Edinburgh Compatible Context Editor
+WWW=		https://www.gtoal.com/ecce/
 
 LICENSE=	CC0-1.0
 

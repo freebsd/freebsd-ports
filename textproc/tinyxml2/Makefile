@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small C++ XML Parser
+WWW=		https://grinninglizard.com/tinyxml2/index.html
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

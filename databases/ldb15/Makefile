@@ -8,6 +8,7 @@ PKGNAMESUFFIX?=		15
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		LDAP-like embedded database
+WWW=		https://ldb.samba.org/
 
 LICENSE=		GPLv3+
 

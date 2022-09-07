@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal disk space navigator
+WWW=		https://github.com/imsnif/diskonaut
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

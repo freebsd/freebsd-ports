@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	damjan.jov@gmail.com
 COMMENT=	Gecko Layout Engine for Wine development branch (HTML support)
+WWW=		https://wiki.winehq.org/Gecko
 
 LICENSE=	MPL20 GPLv2 GPLv3 LGPL21 LGPL3
 LICENSE_COMB=	multi

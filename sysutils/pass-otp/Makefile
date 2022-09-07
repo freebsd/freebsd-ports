@@ -5,6 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	alex@xanderio.de
 COMMENT=	Pass extension for managing one-time-password (OTP) tokens
+WWW=		https://github.com/tadfisher/pass-otp
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

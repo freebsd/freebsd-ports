@@ -4,6 +4,7 @@ CATEGORIES=	security net net-vpn
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Layer Two Peer-to-peer VPN
+WWW=		https://www.ntop.org/products/n2n/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Search for and retrieve US Patent and Trademark Office Patent Data
+WWW=		https://github.com/daneads/pypatent
 
 LICENSE=	GPLv3
 

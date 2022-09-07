@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Annotate and delegate hooked OPs
+WWW=		https://metacpan.org/release/B-Hooks-OP-Annotation
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

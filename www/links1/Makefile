@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	1
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser
+WWW=		http://www.jikos.cz/~mikulas/links/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

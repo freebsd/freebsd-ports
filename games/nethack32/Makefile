@@ -10,6 +10,7 @@ PATCHFILES=	nh-3.2.2-3.2.3.diff
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dungeon explorin', slashin', hackin' game
+WWW=		https://www.nethack.org/
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-3.2.2
 

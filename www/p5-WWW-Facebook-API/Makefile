@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Facebook API implementation in Perl
+WWW=		https://metacpan.org/release/WWW-Facebook-API
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Pidgin plugin for ICQ/WIM protocol
+WWW=		https://github.com/EionRobb/icyque
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

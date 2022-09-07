@@ -6,6 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Icon Theme Specification implementation in D programming language
+WWW=		https://github.com/FreeSlave/icontheme
 
 LICENSE=	BSL
 

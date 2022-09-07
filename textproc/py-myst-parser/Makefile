@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extended commonmark compliant parser with bridges to docutils & sphinx
+WWW=		https://github.com/executablebooks/MyST-Parser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

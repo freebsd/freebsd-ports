@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	max.n.boyarov@gmail.com
 COMMENT=	DICT protocol client for [X]Emacs
+WWW=		https://sourceforge.net/projects/dictem/
 
 LICENSE=	GPLv2
 

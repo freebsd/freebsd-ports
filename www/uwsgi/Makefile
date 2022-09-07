@@ -5,6 +5,7 @@ MASTER_SITES=	http://projects.unbit.it/downloads/
 
 MAINTAINER=	eugene@zhegan.in
 COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
+WWW=		https://projects.unbit.it/uwsgi/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

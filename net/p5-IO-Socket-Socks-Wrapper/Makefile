@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gehm@physik.tu-berlin.de
 COMMENT=	Add SOCKS support for any perl object, package or program
+WWW=		https://metacpan.org/release/IO-Socket-Socks-Wrapper
 
 LICENSE=	LGPL21
 

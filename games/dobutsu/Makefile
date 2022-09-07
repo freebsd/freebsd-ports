@@ -5,6 +5,7 @@ MASTER_SITES=	http://fuz.su/~fuz/dobutsu/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Tablebase and Engine for Dobutsu Shogi
+WWW=		https://github.com/clausecker/dobutsu
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

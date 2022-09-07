@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Label-based networking daemon
+WWW=		https://github.com/NuxiNL/flower
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

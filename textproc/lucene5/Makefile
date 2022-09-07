@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search engine for Java, 5.x branch
+WWW=		https://lucene.apache.org/core/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

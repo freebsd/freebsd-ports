@@ -6,6 +6,7 @@ MASTER_SITES=	https://github.com/rcaelers/workrave/releases/download/v${PORTVERS
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	RSI prevention tool
+WWW=		https://www.workrave.org/
 
 LICENSE=	GPLv3+
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Time the different stages of an HTTP request
+WWW=		https://metacpan.org/release/LWPx-TimedHTTP
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

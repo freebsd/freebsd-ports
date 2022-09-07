@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/dirkvdb/${PORTNAME}/releases/download/${PORTVER
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight video thumbnailer that can be used by file managers
+WWW=		https://github.com/dirkvdb/ffmpegthumbnailer
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

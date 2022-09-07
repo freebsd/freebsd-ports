@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME:S/s//}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface for NetHack 3.4.3
+WWW=		https://www.darkarts.co.za/vulture-for-nethack
 
 LICENSE=	nethack
 LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Generate, verify and enforce software licenses
+WWW=		https://github.com/pivotal/LicenseFinder
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

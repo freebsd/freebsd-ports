@@ -9,6 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Verilog and VHDL editor plugin for eclipse
+WWW=		http://veditor.sourceforge.net/
 
 RUN_DEPENDS=	eclipse:java/eclipse
 

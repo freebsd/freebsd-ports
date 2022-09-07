@@ -8,6 +8,7 @@ DISTNAME=	XStatic-D3-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	D3 (Data-Driven Documents) (XStatic packaging standard)
+WWW=		https://d3js.org/
 
 LICENSE=	BSD3CLAUSE
 

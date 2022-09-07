@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Utility for looking for perl objects that are not reclaimed
+WWW=		https://metacpan.org/release/Devel-Leak
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

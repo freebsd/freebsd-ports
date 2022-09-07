@@ -7,6 +7,7 @@ DISTNAME=	RexxCURL-${PORTVERSION}
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	External function package providing an interface to the cURL package
+WWW=		http://rexxcurl.sourceforge.net/
 
 BROKEN=		does not build with curl 7.85.0: use of undeclared identifier 'CURLOPT_FTP_RESPONSE_TIMEOUT'
 

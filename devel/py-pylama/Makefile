@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alex@xanderio.de
 COMMENT=	Code audit tool for Python
+WWW=		https://github.com/klen/pylama
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

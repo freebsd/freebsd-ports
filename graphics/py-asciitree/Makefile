@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Draws ASCII trees
+WWW=		https://github.com/mbr/asciitree
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

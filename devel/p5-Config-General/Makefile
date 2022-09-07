@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for handling Apache-style configuration files
+WWW=		https://metacpan.org/release/Config-General
 
 LICENSE=	ART20
 

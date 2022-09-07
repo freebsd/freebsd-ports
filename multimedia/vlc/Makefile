@@ -9,6 +9,7 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSIO
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Qt based multimedia player and streaming server
+WWW=		https://www.videolan.org
 
 LICENSE=	GPLv2
 

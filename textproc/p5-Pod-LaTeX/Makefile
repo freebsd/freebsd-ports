@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert Pod data to formatted LaTeX
+WWW=		https://metacpan.org/release/Pod-LaTeX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

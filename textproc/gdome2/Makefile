@@ -6,6 +6,7 @@ MASTER_SITES=	http://gdome2.cs.unibo.it/tarball/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome DOM Engine
+WWW=		http://gdome2.cs.unibo.it/
 
 USES=		gnome libtool pathfix pkgconfig
 USE_GNOME=	glib20 libxml2

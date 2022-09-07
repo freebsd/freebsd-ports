@@ -6,6 +6,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mose@mose.com
 COMMENT=	CLI tool for shell-based presentations
+WWW=		https://github.com/mose/shellplay
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

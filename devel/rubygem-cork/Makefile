@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Delightful CLI UI module
+WWW=		https://github.com/CocoaPods/Cork
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Easily test your HTTP library against a local copy of httpbin.org
+WWW=		https://github.com/kevin1024/pytest-httpbin
 
 LICENSE=	MIT
 

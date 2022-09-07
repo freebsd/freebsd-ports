@@ -5,6 +5,7 @@ MASTER_SITES=	http://erdgeist.org/arts/software/jaildaemon/
 
 MAINTAINER=	erdgeist@erdgeist.org
 COMMENT=	Fixed command-line interface for FreeBSD jails to their host system
+WWW=		https://erdgeist.org/arts/software/jaildaemon/
 
 LICENSE=	BEERWARE
 LICENSE_NAME=	beerware

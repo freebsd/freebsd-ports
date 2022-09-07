@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Libpurple plugin for Telegram messenger
+WWW=		https://github.com/majn/telegram-purple
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

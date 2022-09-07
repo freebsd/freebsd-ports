@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Book Viewer
+WWW=		http://ebview.sourceforge.net/
 
 LICENSE=	GPLv2+
 

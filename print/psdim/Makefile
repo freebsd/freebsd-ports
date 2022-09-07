@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/psdim/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calculates the optimal placement of the pages for n-up printing
+WWW=		https://www.mathstat.dal.ca/~selinger/psdim/
 
 LICENSE=	GPLv2
 

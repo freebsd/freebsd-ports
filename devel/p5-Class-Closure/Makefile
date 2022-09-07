@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Encapsulated, declarative classes in Perl
+WWW=		https://metacpan.org/release/Class-Closure
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-PadWalker>=0:devel/p5-PadWalker \

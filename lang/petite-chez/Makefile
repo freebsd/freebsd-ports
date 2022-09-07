@@ -8,6 +8,7 @@ DISTNAME=	pcsv${PORTVERSION}-${CHEZ_MACHTYPE}
 
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Free interpreter for Chez Scheme system
+WWW=		https://www.scheme.com/petitechezscheme.html
 
 # Both install bin/scheme-script
 CONFLICTS=	ikarus

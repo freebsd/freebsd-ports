@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sub-command friendly, like Getopt::Compact
+WWW=		https://metacpan.org/release/Getopt-Compact-WithCmd
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

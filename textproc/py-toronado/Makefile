@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast lxml-based CSS stylesheet inliner
+WWW=		https://github.com/disqus/toronado
 
 LICENSE=	APACHE20
 

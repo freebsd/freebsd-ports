@@ -6,6 +6,7 @@ DISTNAME=	unrarsrc-${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	RAR archive extraction library
+WWW=		https://www.rarlab.com/
 
 LICENSE=	UNRAR
 LICENSE_NAME=	UnRAR License

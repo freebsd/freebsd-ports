@@ -5,6 +5,7 @@ DISTNAME=	CodeGen-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool to create code generators that operate on XML descriptions
+WWW=		https://pear.php.net/package/CodeGen
 
 USES=		pear
 

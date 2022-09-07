@@ -6,6 +6,7 @@ MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/libtar/libtar-1.2.11.tar.g
 
 MAINTAINER=	manuelj.munoz@gmail.com
 COMMENT=	Library for manipulating POSIX and GNU tar files
+WWW=		http://www.feep.net/libtar/
 
 USES=		cpe gmake
 GNU_CONFIGURE=	yes

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Ncurses-based hex-editor with diff mode
+WWW=		https://www.dettus.net/dhex/
 
 LICENSE=	GPLv2
 

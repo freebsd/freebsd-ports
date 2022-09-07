@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-rails60
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Take a peek into your Rails application
+WWW=		https://github.com/peek/peek
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

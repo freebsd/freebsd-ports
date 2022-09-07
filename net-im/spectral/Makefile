@@ -5,6 +5,7 @@ CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Glossy Matrix IM client based on Qt technologies
+WWW=		https://gitlab.com/spectral-im/spectral
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

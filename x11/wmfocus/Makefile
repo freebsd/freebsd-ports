@@ -9,6 +9,7 @@ PATCHFILES+=	c646aa39614b.patch:-p1 # https://github.com/svenstaro/wmfocus/pull/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Visually focus windows by label
+WWW=		https://github.com/svenstaro/wmfocus
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

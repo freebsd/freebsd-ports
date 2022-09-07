@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Reporting module for Icinga Web 2
+WWW=		https://github.com/Icinga/icingaweb2-module-reporting
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

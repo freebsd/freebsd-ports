@@ -5,6 +5,7 @@ CATEGORIES=	x11-themes
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Wallpaper collection for adapta-project
+WWW=		https://github.com/adapta-project/adapta-backgrounds
 
 LICENSE=	GPLv2 CC-BY-SA-4.0
 LICENSE_COMB=	multi

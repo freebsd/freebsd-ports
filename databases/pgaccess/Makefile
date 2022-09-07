@@ -6,6 +6,7 @@ MASTER_SITES=	https://BSDforge.com/projects/source/databases/pgaccess/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Powerful PostgreSQL database GUI administration tool and toolkit
+WWW=		https://BSDforge.com/projects/databases/pgaccess/
 
 LICENSE=	BSD4CLAUSE
 

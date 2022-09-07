@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	C++ library for symbolic mathematical calculations
+WWW=		https://www.ginac.de/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

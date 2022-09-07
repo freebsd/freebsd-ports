@@ -5,6 +5,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	Quotes from Epictetus
+WWW=		https://github.com/akosela/fortune-mod-epictetus
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

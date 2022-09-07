@@ -5,6 +5,7 @@ CATEGORIES=	graphics editors games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	General purpose tile map editor
+WWW=		https://www.mapeditor.org/
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2+
 LICENSE_COMB=	multi

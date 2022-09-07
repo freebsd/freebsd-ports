@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test::More-style wrapper around HTML::Tidy
+WWW=		https://metacpan.org/release/Test-HTML-Tidy
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

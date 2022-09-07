@@ -8,6 +8,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	niwi@niwi.be
 COMMENT=	Simple Library to Allow Python Applications to Use CouchDB
+WWW=		https://code.google.com/p/couchdb-python/
 
 LICENSE=	BSD3CLAUSE
 

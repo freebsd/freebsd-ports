@@ -6,6 +6,7 @@ CATEGORIES=	multimedia audio
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt 5 multimedia player based on libmpv
+WWW=		https://bakamplayer.u8sand.net/
 
 LICENSE=	GPLv2
 

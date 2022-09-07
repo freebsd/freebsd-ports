@@ -9,6 +9,7 @@ PATCHFILES+=	76e7c31709a2.patch:-p1 # https://gitlab.gnome.org/World/Authenticat
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Generate Two-Factor Codes
+WWW=		https://gitlab.gnome.org/World/Authenticator
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

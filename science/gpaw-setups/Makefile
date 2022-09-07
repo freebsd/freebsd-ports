@@ -5,6 +5,7 @@ MASTER_SITES=	https://wiki.fysik.dtu.dk/gpaw-files/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Setups (data files) for py-gpaw, the DFT quantum chemistry software
+WWW=		https://wiki.fysik.dtu.dk/gpaw/setups/setups.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

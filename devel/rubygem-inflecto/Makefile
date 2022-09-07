@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Inflector for strings
+WWW=		https://github.com/mbj/inflecto
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

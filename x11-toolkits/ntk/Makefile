@@ -6,6 +6,7 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fork of FLTK 1.3.0 which adds graphics rendering via Cairo, etc
+WWW=		https://github.com/original-male/ntk
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

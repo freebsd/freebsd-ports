@@ -5,6 +5,7 @@ CATEGORIES=	www
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Google Search, Google Site Search, Google News from the terminal
+WWW=		https://github.com/jarun/googler
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

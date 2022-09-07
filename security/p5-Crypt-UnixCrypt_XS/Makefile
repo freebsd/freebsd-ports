@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl XS interface for a portable traditional crypt function
+WWW=		https://metacpan.org/release/Crypt-UnixCrypt_XS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

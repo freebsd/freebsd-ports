@@ -4,6 +4,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical effects and filters library for Qt5
+WWW=		https://sourceforge.net/projects/qimageblitz/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

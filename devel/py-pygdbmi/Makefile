@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse gdb machine interface output with Python
+WWW=		https://github.com/cs01/pygdbmi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

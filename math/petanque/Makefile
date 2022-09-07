@@ -5,6 +5,7 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library that helps manipulate symbolic boolean expressions
+WWW=		https://github.com/quarkslab/arybo/tree/master/petanque
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

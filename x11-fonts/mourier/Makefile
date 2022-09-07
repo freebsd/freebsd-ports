@@ -5,6 +5,7 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Alphabet of geometric symbols based on 7x7 units
+WWW=		https://velvetyne.fr/fonts/mourier/
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

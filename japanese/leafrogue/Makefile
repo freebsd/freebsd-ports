@@ -7,6 +7,7 @@ DISTNAME=	lfrog${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LeafRogue for message separated version of Rogue-clone
+WWW=		http://games.roguelife.org/~roguelike/leaf/
 
 RUN_DEPENDS=	rogue_s:japanese/rogue_s
 

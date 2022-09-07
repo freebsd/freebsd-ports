@@ -5,6 +5,7 @@ CATEGORIES=		devel
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Dependency manager for the Crystal programming language
+WWW=		https://github.com/crystal-lang/shards
 
 LICENSE=	APACHE20
 

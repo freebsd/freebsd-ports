@@ -7,6 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome On-Screen keyboard
+WWW=		https://live.gnome.org/Caribou
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

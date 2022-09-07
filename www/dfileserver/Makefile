@@ -7,6 +7,7 @@ MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Compact webserver designed to make sharing files easy
+WWW=		http://www.bebik.net/doku.php?id=software:dfileserver
 
 LICENSE=	BSD3CLAUSE
 

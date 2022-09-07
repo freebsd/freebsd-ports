@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ISIC%20v${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	IP Stack Integrity Checker
+WWW=		https://sourceforge.net/projects/isic/
 
 LICENSE=	BSD2CLAUSE
 

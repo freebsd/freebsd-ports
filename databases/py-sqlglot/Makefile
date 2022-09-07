@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easily customizable SQL parser and transpiler
+WWW=		https://github.com/tobymao/sqlglot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

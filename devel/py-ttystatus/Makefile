@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Python progress reporting to /dev/tty
+WWW=		https://liw.fi/ttystatus/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

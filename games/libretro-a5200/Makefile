@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Port of Atari 5200 emulator for GCW0
+WWW=		https://github.com/libretro/a5200
 
 LICENSE=	GPLv2
 

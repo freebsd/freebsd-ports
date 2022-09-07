@@ -7,6 +7,7 @@ DISTFILES=
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Script to generate mdoc(7) markup from C functions
+WWW=		https://bsdforge.com/projects/devel/c2mdoc/
 
 RUN_DEPENDS=	cproto:devel/cproto
 

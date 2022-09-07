@@ -5,6 +5,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Daemon for communication with eBUS heating systems
+WWW=		https://github.com/john30/ebusd/wiki
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

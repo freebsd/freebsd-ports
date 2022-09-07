@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_src_${PORTVERSION}
 
 MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	MUltiple Sequence Comparison by Log-Expectation
+WWW=		https://www.drive5.com/muscle/
 
 LICENSE=	PD
 

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for standalone HTTP/1.0 server
+WWW=		https://metacpan.org/release/Starlet
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

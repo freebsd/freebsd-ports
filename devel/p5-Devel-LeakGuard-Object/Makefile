@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Scoped checks for object leaks
+WWW=		https://metacpan.org/release/Devel-LeakGuard-Object
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Test-Differences>=0:devel/p5-Test-Differences

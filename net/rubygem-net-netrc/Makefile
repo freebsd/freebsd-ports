@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	Net::Netrc provides ftp(1)-style .netrc parsing
+WWW=		https://rubygems.org/gems/net-netrc
 
 RUN_DEPENDS=	rubygem-platform>=0.3.0:devel/rubygem-platform
 

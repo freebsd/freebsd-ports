@@ -9,6 +9,7 @@ PATCHFILES=	7caa6ceec64ebb313444eabea7d892d8fee99dd9.patch:-p1 \
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Daemon for hotplug and screen reconfigure events of X displays
+WWW=		https://gitlab.com/0mp/x-on-resize
 
 LICENSE=	GPLv2
 

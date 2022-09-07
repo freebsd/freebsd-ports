@@ -6,6 +6,7 @@ DISTNAME=	FileBot_${DISTVERSION}-portable
 
 MAINTAINER=	dan.kotowski@a9development.com
 COMMENT=	FileBot is the ultimate tool for organizing and renaming your media
+WWW=		https://www.filebot.net/
 
 LICENSE=	FileBot_EULA
 LICENSE_NAME=	FileBot End User License Agreement

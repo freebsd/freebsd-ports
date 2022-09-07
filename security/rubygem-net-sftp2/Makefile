@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the SFTP client protocol
+WWW=		https://github.com/net-ssh/net-sftp
 
 LICENSE=	MIT
 

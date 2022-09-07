@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vladimirv@ixsystems.com
 COMMENT=	Python module that facilitates writing Net-SNMP subagents in Python
+WWW=		https://pypi.org/project/netsnmpagent/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

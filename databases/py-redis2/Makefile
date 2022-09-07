@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python client for Redis key-value store
+WWW=		https://github.com/andymccurdy/redis-py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

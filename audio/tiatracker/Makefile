@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music tracker for making Atari VCS 2600
+WWW=		https://bitbucket.org/kylearan/tiatracker/src/master/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt

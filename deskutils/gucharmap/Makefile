@@ -9,6 +9,7 @@ PATCHFILES+=	a8ee037f8cf1.patch:-p1 # meson 0.61
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Unicode/ISO10646 character map and font viewer
+WWW=		https://wiki.gnome.org/Gucharmap
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

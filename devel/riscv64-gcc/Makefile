@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	riscv64-
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Cross GNU Compiler Collection for ${PKGNAMEPREFIX:C/-//g}
+WWW=		https://github.com/freebsd-riscv/riscv-gcc
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi

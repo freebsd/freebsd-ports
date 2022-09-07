@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.arda.homeunix.net/software-downloads/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User authentication and password changing daemon utility
+WWW=		http://www.arda.homeunix.net/store/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

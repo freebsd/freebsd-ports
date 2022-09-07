@@ -5,6 +5,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Character set conversion library
+WWW=		https://www.gnu.org/software/libiconv/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

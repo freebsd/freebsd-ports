@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Bindings to PicoSAT (a SAT solver)
+WWW=		https://github.com/ContinuumIO/pycosat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,6 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	git filter-repo is a versatile tool for rewriting history
+WWW=		https://github.com/newren/git-filter-repo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.mit

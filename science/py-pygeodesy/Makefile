@@ -8,6 +8,7 @@ DISTNAME=	PyGeodesy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Python geodesy tools
+WWW=		https://github.com/mrJean1/PyGeodesy
 
 LICENSE=	MIT
 

@@ -6,6 +6,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple face detector for batch processing
+WWW=		https://www.thregr.org/~wavexx/software/facedetect/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

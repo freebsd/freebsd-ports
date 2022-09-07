@@ -6,6 +6,7 @@ DISTNAME=	xalloc-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Memory allocation library with error checking
+WWW=		http://shh.thathost.com/pub-unix/ #xalloc
 
 OPTIONS_DEFINE=	DOCS
 

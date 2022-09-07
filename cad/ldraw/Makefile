@@ -10,6 +10,7 @@ EXTRACT_ONLY=	complete.zip
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LDraw-format CAD files representing many of LEGO bricks produced
+WWW=		https://www.ldraw.org/
 
 LICENSE=	CC-BY-2.0
 

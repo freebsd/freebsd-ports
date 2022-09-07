@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde password changing application
+WWW=		https://www.horde.org/apps/passwd/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

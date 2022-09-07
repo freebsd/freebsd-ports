@@ -7,6 +7,7 @@ DISTNAME=	grappelli_safe-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fork of django-grappelli for Mezzanine CMS
+WWW=		https://github.com/stephenmcd/grappelli-safe
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

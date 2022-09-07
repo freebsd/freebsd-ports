@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Asynchronous job queue for Mojolicious
+WWW=		https://metacpan.org/release/Minion
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

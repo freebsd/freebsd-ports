@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}-src-${DISTVERSIONFULL}${EXTRACT_SUFX}
 
 MAINTAINER=	enriquefynn@gmail.com
 COMMENT=	Traffic simulation suite for road vehicles, public transportation, etc
+WWW=		http://sumo-sim.org
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libFOX-1.6.so:x11-toolkits/fox16 \

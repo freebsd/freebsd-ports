@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	TIFF reader for R
+WWW=		https://cran.r-project.org/web/packages/rtiff/
 
 LICENSE=	GPLv3
 

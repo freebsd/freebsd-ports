@@ -5,6 +5,7 @@ MASTER_SITES=	SUNSITE/apps/sound/mixers
 
 MAINTAINER=	jerry@freebsd.se
 COMMENT=	ncurses-based console mixer
+WWW=		http://rus.members.beeb.net/rexima.html
 
 LICENSE=	GPLv2
 

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Graphical client for chess servers
+WWW=		https://www.jinchess.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/src/free/jin/legal/copyright.txt

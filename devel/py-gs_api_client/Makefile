@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Official Python wrapper for gridscale's API
+WWW=		https://pypi.org/project/gs-api-client
 
 LICENSE=	MIT
 

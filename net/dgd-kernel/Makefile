@@ -9,6 +9,7 @@ DIST_SUBDIR=	dgd
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Kernel mudlib, for use with DGD
+WWW=		http://ftp.dworkin.nl/kernellib/
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dgd:net/dgd
 
@@ -33,14 +34,12 @@ do-install:
 .for DIR in include kernel usr
 	@cd ${WRKSRC}/kernellib && ${COPYTREE_SHARE} ${DIR} ${STAGEDIR}${DATADIR}/kernel
 .endfor
-	@# Install an RC script for dgd-kernel
 	@${CAT} ${FILESDIR}/dgd-kernel.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
 		-e "s:%%DATADIR%%:${DATADIR}:" > \
 		${STAGEDIR}${PREFIX}/etc/rc.d/dgd-kernel.sh.sample
 	@${CHMOD} a+x ${STAGEDIR}${PREFIX}/etc/rc.d/dgd-kernel.sh.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/kernellib && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}
-	@# Need a temporary directory for certain files
 	@${MKDIR} ${STAGEDIR}${DATADIR}/tmp
 
 .include <bsd.port.mk>

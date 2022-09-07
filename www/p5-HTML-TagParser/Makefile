@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet another HTML tag parser by pure Perl implementation
+WWW=		https://metacpan.org/release/HTML-TagParser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

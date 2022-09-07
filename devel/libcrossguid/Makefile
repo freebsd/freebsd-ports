@@ -10,6 +10,7 @@ PATCHFILES=	23a8c007a668413c2e8cbd00984d223ed5ecfe05.patch:-p1
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	Minimal and cross platform C++ GUID library
+WWW=		https://github.com/graeme-hill/crossguid
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

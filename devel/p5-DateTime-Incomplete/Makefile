@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Incomplete DateTime, like January 5
+WWW=		https://metacpan.org/release/DateTime-Incomplete
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

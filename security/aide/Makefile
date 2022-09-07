@@ -5,6 +5,7 @@ MASTER_SITES=	https://github.com/aide/aide/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File and directory integrity checker
+WWW=		https://aide.github.io/
 
 LIB_DEPENDS=	libmhash.so:security/mhash \
 		libpcre.so:devel/pcre

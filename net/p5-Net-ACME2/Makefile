@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Interface to the Let's Encrypt ACMEv2 API
+WWW=		https://metacpan.org/release/Net-ACME2
 
 LICENSE=	ART20
 

@@ -7,6 +7,7 @@ DISTNAME=	cku${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Portable scriptable network and serial communication program
+WWW=		https://www.kermitproject.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.TXT

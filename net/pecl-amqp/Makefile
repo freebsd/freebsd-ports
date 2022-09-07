@@ -4,6 +4,7 @@ CATEGORIES=	net pear
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	PHP extension for AMQP API
+WWW=		https://pecl.php.net/package/amqp
 
 # Remove these once upgraded to 1.11.0
 DEPRECATED=	Requires php 7.4 which is set to expire on 2022-11-29

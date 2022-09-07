@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vladimirv@ixsystems.com
 COMMENT=	Python Client for Azure Storage
+WWW=		https://pypi.org/project/azure-storage/
 
 LICENSE=	APACHE20
 

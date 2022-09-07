@@ -7,6 +7,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Tool for linting and formatting Markdown in-place (similar to gofmt)
+WWW=		https://github.com/shurcooL/markdownfmt
 
 LICENSE=	MIT
 # License file is not included.

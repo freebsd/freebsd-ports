@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Parse XML
+WWW=		https://cran.r-project.org/web/packages/xml2/
 
 LICENSE=	MIT
 

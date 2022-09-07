@@ -7,6 +7,7 @@ MASTER_SITES=	https://codesynthesis.com/~boris/tmp/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	W3C XML Schema to C++ translator
+WWW=		https://www.codesynthesis.com/projects/xsd/
 
 LICENSE=		FLOSSE GPLv2
 LICENSE_COMB=		dual

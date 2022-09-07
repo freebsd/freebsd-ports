@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ACL support for Catalyst applications
+WWW=		https://metacpan.org/release/Catalyst-Plugin-Authorization-ACL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

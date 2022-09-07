@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Yet Another Pragger implementation
+WWW=		https://github.com/yuanying/yapra
 
 LICENSE=	MIT
 

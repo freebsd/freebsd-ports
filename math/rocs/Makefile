@@ -5,6 +5,7 @@ CATEGORIES=	math education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Graph theory IDE
+WWW=		https://www.kde.org/applications/education/rocs
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 

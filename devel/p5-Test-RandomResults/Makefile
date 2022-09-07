@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Test non-deterministic functions
+WWW=		https://metacpan.org/release/Test-RandomResults
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -4,6 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	GTK based volume control tool
+WWW=		https://github.com/rozhuk-im/gtk-mixer
 
 LICENSE=	GPLv2
 

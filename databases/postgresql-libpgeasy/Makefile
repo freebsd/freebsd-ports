@@ -8,6 +8,7 @@ DIST_SUBDIR=	postgresql
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Easy-to-use C interface to PostgreSQL
+WWW=		https://www.postgresql.org/docs/7.2/static/pgeasy.html
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

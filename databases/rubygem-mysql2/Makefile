@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple, fast MySQL library for Ruby, binding to libmysql
+WWW=		https://github.com/brianmario/mysql2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

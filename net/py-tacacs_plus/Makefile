@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Client for TACACS+ authentication
+WWW=		https://github.com/ansible/tacacs_plus
 
 LICENSE=	BSD3CLAUSE
 

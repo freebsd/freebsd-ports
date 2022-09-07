@@ -8,6 +8,7 @@ DISTNAME=	TWiki-${PORTVERSION}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Flexible, powerful, and easy to use enterprise wiki
+WWW=		https://twiki.org/
 
 RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \

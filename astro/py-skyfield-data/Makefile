@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Minimal data files to work with py-skyfield
+WWW=		https://github.com/brunobord/skyfield-data
 
 LICENSE=	MIT
 

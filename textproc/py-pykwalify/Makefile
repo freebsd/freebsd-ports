@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Python library and CLI for JSON/YAML schema validation
+WWW=		https://github.com/Grokzen/pykwalify
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

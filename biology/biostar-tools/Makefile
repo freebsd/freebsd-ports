@@ -4,6 +4,7 @@ CATEGORIES=	biology python
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
+WWW=		https://www.biostarhandbook.com
 
 LICENSE=	BSD2CLAUSE
 

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for Embeddable Fulltext Search Engine
+WWW=		https://metacpan.org/release/Senna
 
 LICENSE=	LGPL21
 

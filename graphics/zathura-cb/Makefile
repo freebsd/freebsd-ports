@@ -5,6 +5,7 @@ MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Comic book plugin for Zathura PDF viewer
+WWW=		https://pwmt.org/projects/zathura-cb/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE

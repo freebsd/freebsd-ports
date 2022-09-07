@@ -5,6 +5,7 @@ MASTER_SITES=	http://files.nothingisreal.com/software/gpp/
 
 MAINTAINER=	jos@catnook.com
 COMMENT=	The Generic Preprocessor
+WWW=		https://www.nothingisreal.com/gpp/
 
 USES=	tar:bzip2
 GNU_CONFIGURE=	yes

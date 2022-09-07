@@ -2,6 +2,8 @@ PORTVERSION=		2.99.5
 PORTREVISION=		1
 PKGNAMESUFFIX=		3
 
+WWW=		https://corosync.github.io/corosync/
+
 .include "${.CURDIR}/../corosync2/Makefile.common"
 
 LIB_DEPENDS+=		libknet.so:devel/kronosnet

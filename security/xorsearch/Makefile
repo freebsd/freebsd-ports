@@ -6,6 +6,7 @@ DISTNAME=	XORSearch_V${DISTVERSION}
 
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Search for a given string in an XOR or ROL encoded binary file
+WWW=		https://blog.didierstevens.com/programs/xorsearch/
 
 LICENSE=	PD
 

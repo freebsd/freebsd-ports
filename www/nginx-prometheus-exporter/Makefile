@@ -6,6 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	arcade@b1t.name
 COMMENT=	Prometheus exporter for NGINX and NGINX Plus stats
+WWW=		https://github.com/nginxinc/nginx-prometheus-exporter
 
 LICENSE=	APACHE20
 

@@ -8,6 +8,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Two players, two castles, and a hill in between
+WWW=		https://baller.tuxfamily.org/
 
 LICENSE=	GPLv3+
 

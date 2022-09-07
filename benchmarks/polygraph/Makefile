@@ -7,6 +7,7 @@ EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking tool for Web proxies
+WWW=		https://www.web-polygraph.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

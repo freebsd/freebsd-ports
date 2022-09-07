@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl 5 module to produce tied separate but combined variables
+WWW=		https://metacpan.org/release/IO-TieCombine
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -5,6 +5,7 @@ MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Read, manipulate, and display geo data
+WWW=		https://web.archive.org/web/20130807000308/http://www.tkgeomap.org/
 
 LICENSE=	GPLv2
 

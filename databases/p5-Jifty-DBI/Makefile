@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-relational persistence Perl framework
+WWW=		https://metacpan.org/release/Jifty-DBI
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

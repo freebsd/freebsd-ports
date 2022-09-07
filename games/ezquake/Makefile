@@ -11,6 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Modern QuakeWorld client
+WWW=		https://www.ezquake.com/
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \

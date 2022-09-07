@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for parsing, and generating iCalendar data
+WWW=		https://github.com/rubyredrick/ri_cal
 
 LICENSE=	MIT
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://download.rsyslog.com/liblogging/
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Easy to use system logging library
+WWW=		https://www.liblogging.org/
 
 LICENSE=	BSD2CLAUSE
 

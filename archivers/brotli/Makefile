@@ -6,6 +6,7 @@ CATEGORIES=	archivers devel
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Generic-purpose lossless compression algorithm
+WWW=		https://github.com/google/brotli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

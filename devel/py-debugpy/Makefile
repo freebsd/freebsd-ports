@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the Debug Adapter Protocol for Python
+WWW=		https://github.com/microsoft/debugpy
 
 LICENSE=	EPL MIT
 LICENSE_COMB=	dual

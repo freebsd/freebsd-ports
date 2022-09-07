@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	contato@kanazuchi.com
 COMMENT=	Translate PO file strings with Google Translate API
+WWW=		https://github.com/kanazux/transpopy
 
 LICENSE=	BSD2CLAUSE
 

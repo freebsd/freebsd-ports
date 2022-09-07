@@ -7,6 +7,7 @@ DISTNAME=	PySDL2-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python bindings to the SDL2 libraries
+WWW=		https://github.com/py-sdl/py-sdl2
 
 LICENSE=	PD CC0-1.0 ZLIB
 LICENSE_COMB=	dual

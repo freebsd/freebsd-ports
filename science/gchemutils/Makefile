@@ -7,6 +7,7 @@ DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ classes and Gtk3 widgets related to chemistry
+WWW=		https://www.nongnu.org/gchemutils/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

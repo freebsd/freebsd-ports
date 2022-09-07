@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	OpenBSD relay daemon
+WWW=		https://github.com/mmatuska/relayd
 
 LICENSE=	ISCL
 

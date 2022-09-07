@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Standard collection of generic color themes
+WWW=		https://metacpan.org/release/ColorThemes-Standard
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

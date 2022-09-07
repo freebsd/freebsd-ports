@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Document Object Model for Cascading Style Sheets
+WWW=		https://metacpan.org/release/CSS-DOM
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

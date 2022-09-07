@@ -5,6 +5,7 @@ CATEGORIES=	java devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for IntelliJ's fsnotifier
+WWW=		https://github.com/t6/fsnotifier
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

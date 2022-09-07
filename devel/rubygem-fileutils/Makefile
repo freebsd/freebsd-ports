@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Several file utility methods for copying, moving, removing, etc
+WWW=		https://github.com/ruby/fileutils
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

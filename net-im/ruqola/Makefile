@@ -6,6 +6,7 @@ CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Rocket.Chat client
+WWW=		https://apps.kde.org/ruqola/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

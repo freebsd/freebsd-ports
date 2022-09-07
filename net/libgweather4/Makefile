@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to access online weather information
+WWW=		https://www.gnome.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

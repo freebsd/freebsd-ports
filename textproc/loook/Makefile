@@ -6,6 +6,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple Python tool that search in LibreOffice/OpenOffice files
+WWW=		https://mechtilde.de/Loook/
 
 LICENSE=	GPLv2+
 

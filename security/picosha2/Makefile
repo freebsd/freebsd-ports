@@ -6,6 +6,7 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only SHA256 hash generator
+WWW=		https://github.com/okdshin/PicoSHA2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

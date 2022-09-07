@@ -5,6 +5,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Journaled log library
+WWW=		https://labs.omniti.com/labs/jlog
 
 LICENSE=	BSD3CLAUSE
 

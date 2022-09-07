@@ -6,6 +6,7 @@ MASTER_SITES=	http://nl.dl.xonotic.org/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast-paced, chaotic, and intense multiplayer first person shooter
+WWW=		https://www.xonotic.org/
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \

@@ -5,6 +5,7 @@ MASTER_SITES=	http://azsky2.html.xdomain.jp/arc/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	16-bit RGB full color painting application
+WWW=		http://azsky2.html.xdomain.jp/soft/azpainter.html
 
 LICENSE=	GPLv3
 

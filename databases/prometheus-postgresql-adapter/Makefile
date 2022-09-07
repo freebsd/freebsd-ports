@@ -6,6 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	felix@userspace.com.au
 COMMENT=	Use PostgreSQL as a remote storage database for Prometheus
+WWW=		https://github.com/timescale/prometheus-postgresql-adapter
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

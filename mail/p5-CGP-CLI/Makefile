@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	avk@vl.ru
 COMMENT=	CommunigatePro Command Line Interface perl module
+WWW=		https://metacpan.org/release/CGP-CLI
 
 USES=		perl5
 USE_PERL5=	configure

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility functions for checking references
+WWW=		https://metacpan.org/release/Ref-Util
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

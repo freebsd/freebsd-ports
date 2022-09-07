@@ -5,6 +5,7 @@ CATEGORIES=	shells
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	POSIX shell feature detection and language extension library
+WWW=		https://github.com/modernish/modernish
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

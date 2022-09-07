@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	deprecated API for integrating Xlib and GdkPixbuf
+WWW=		https://developer.gnome.org/gdk-pixbuf/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

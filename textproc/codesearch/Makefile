@@ -6,6 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	eborisch@gmail.com
 COMMENT=	Fast (indexed) text search tool from Google
+WWW=		https://github.com/google/codesearch
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

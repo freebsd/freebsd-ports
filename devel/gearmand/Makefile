@@ -6,6 +6,7 @@ MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gearman C Server and Library
+WWW=		http://www.gearman.org/
 
 BROKEN_FreeBSD_13=	error: use of undeclared identifier 'abi'
 

@@ -5,6 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interface to CSV files and data
+WWW=		https://github.com/ruby/csv
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual

@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to display flash messages in python web applications
+WWW=		http://python-rum.org/wiki/WebFlash
 
 LICENSE=	MIT
 

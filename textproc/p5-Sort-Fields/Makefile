@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to sort lines containing delimited fields
+WWW=		https://metacpan.org/release/Sort-Fields
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

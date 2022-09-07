@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.bleb.org/software/bkmrkconv/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netscape bookmarks.html converter
+WWW=		http://www.bleb.org/software/bkmrkconv/
 
 LICENSE=	ART10
 

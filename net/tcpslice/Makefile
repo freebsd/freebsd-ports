@@ -5,6 +5,7 @@ CATEGORIES=	net
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Tool for extracting portions of pcap files
+WWW=		https://www.tcpdump.org/related.html
 
 LICENSE=	BSD3CLAUSE
 

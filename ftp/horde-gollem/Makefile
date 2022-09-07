@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Web-based File Manager
+WWW=		https://www.horde.org/apps/gollem/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

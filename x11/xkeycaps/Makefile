@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.jwz.org/xkeycaps/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphically display and edit the keyboard mapping
+WWW=		https://www.jwz.org/xkeycaps/
 
 LICENSE=	MIT
 

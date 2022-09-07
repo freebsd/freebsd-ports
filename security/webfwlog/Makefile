@@ -6,6 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 
 MAINTAINER=	zeus@ix.netcom.com
 COMMENT=	Web-based firewall log analyzer
+WWW=		http://www.webfwlog.net/
 
 LICENSE=	GPLv2
 

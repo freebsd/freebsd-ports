@@ -6,6 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	OLSR routing daemon
+WWW=		http://www.olsr.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

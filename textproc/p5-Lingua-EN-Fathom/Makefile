@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Measure readability of English text
+WWW=		https://metacpan.org/release/Lingua-EN-Fathom
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
