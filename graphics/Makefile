@@ -625,6 +625,7 @@
     SUBDIR += ospray
     SUBDIR += ospray-studio
     SUBDIR += ossim
+    SUBDIR += oxipng
     SUBDIR += oyranos
     SUBDIR += p5-Acme-Steganography-Image-Png
     SUBDIR += p5-Algorithm-Line-Bresenham

@@ -1,0 +1,3 @@
+Oxipng is a multithreaded lossless PNG compression optimizer. It can
+be used via a command-line interface or as a library in other Rust
+programs.
