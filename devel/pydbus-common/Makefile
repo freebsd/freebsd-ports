@@ -1,5 +1,5 @@
 PORTNAME=	dbus
-DISTVERSION=	1.2.18
+DISTVERSION=	1.3.2
 PORTREVISION?=	0
 CATEGORIES=	devel gnome python
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
