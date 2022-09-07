@@ -49,6 +49,7 @@ include/python%%XYDOT%%%%ABI%%/internal/hamt.h
 include/python%%XYDOT%%%%ABI%%/internal/hash.h
 include/python%%XYDOT%%%%ABI%%/internal/import.h
 include/python%%XYDOT%%%%ABI%%/internal/mem.h
+include/python%%XYDOT%%%%ABI%%/internal/pycore_long.h
 include/python%%XYDOT%%%%ABI%%/internal/pygetopt.h
 include/python%%XYDOT%%%%ABI%%/internal/pystate.h
 include/python%%XYDOT%%%%ABI%%/internal/warnings.h
