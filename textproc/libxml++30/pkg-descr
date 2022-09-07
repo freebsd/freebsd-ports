@@ -1,0 +1,5 @@
+libxml++ is a C++ interface for working with XML files, using libxml
+(gnome-xml) to parse and write the actual XML files. It has a simple
+but complete API.
+
+WWW: http://libxmlplusplus.sourceforge.net/
