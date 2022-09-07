@@ -1,5 +1,6 @@
 PORTNAME=	drm-kmod
 PORTVERSION=	20220907
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,15 +15,18 @@ RUN_DEPENDS=	gpu-firmware-kmod>=20220511:graphics/gpu-firmware-kmod
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
 .else
-.if ${ARCH} == "amd64"
-.if ${OSVERSION} < 1300000
-RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-fbsd12.0-kmod
-.elif ${OSVERSION} >= 1301000
-RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-510-kmod
-.else
+.  if ${OSVERSION} < 1300000
+RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-fbsd12.0-kmod
+_DRM_ARCHS=	amd64 i386
+.  elif ${OSVERSION} >= 1301000
+RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-510-kmod
+_DRM_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
+.  else
+_DRM_ARCHS=
+.  endif
+.  if ! ${_DRM_ARCHS:M${ARCH}}
 IGNORE=		not supported for this configuration
-.endif
-.endif
+.  endif
 .endif
 
 .include <bsd.port.mk>
