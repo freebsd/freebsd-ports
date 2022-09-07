@@ -21,7 +21,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libsnappy.so:archivers/snappy \
 		libsodium.so:security/libsodium \
 		libunwind.so:devel/libunwind \
-		libzstd.so:archivers/zstd			
+		libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++14-lang ssl cpe
 CPE_VENDOR=	facebook

@@ -28,7 +28,7 @@ XML_LIB_DEPENDS=libxslt.so:textproc/libxslt \
 		libxml2.so:textproc/libxml2
 XML_CONFIGURE_WITH=	libxml libxslt
 
-post-configure: 
+post-configure:
 		@cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} symlinks
 
 post-install:

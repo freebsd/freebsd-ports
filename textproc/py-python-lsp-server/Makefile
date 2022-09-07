@@ -39,7 +39,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}yapf>0:textproc/py-yapf@${PY_FLAVOR} \
 		${PYNUMPY}
 
-# make test: 3 failed, 134 passed, 9 skipped, 18 warnings 
+# make test: 3 failed, 134 passed, 9 skipped, 18 warnings
 # mainly because of py-numpy>=1.23.0 ...
 USES=		python:3.7+ pytest
 USE_PYTHON=	autoplist concurrent distutils

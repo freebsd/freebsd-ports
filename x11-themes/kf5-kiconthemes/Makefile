@@ -10,7 +10,7 @@ USE_KDE=	archive auth codecs config configwidgets coreaddons \
 		i18n itemviews widgetsaddons \
 		ecm_build
 USE_QT=		concurrent core dbus gui script svg widgets xml \
-		buildtools_build qmake_build 
+		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	ICONS
 OPTIONS_DEFAULT=	ICONS

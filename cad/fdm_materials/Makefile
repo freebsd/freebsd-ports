@@ -10,7 +10,7 @@ COMMENT=	FDM Material database for 3D printers
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake 
+USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker

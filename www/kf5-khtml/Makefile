@@ -18,7 +18,7 @@ USE_KDE=	archive auth bookmarks codecs completion config \
 		ecm_build
 USE_QT=		concurrent core dbus gui network phonon4 \
 		printsupport widgets x11extras xml \
-		buildtools_build qmake_build 
+		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xext
 
 .include <bsd.port.mk>

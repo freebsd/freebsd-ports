@@ -12,6 +12,6 @@ USES=		cmake compiler:c++11-lib kde:5 pathfix qt:5 tar:xz
 USE_KDE=	activities config \
 		ecm_build
 USE_QT=		core dbus sql \
-		buildtools_build qmake_build 
+		buildtools_build qmake_build
 
 .include <bsd.port.mk>

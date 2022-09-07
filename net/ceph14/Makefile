@@ -57,7 +57,7 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}cherrypy>=0:www/py-cherrypy@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}pecan>=0:www/py-pecan@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}routes>=0:www/py-routes@${PY_FLAVOR} 
+	${PYTHON_PKGNAMEPREFIX}routes>=0:www/py-routes@${PY_FLAVOR}
 
 USES=		cmake:noninja compiler:c++17-lang cpe dos2unix fuse gettext-runtime gmake ncurses \
 		pkgconfig python:3.8-3.9 readline shebangfix ssl

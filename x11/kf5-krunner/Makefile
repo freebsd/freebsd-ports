@@ -11,6 +11,6 @@ USE_KDE=	activities config coreaddons i18n kio package plasma-framework \
 		service solid threadweaver \
 		ecm_build
 USE_QT=		concurrent core dbus declarative gui network widgets \
-		buildtools_build qmake_build 
+		buildtools_build qmake_build
 
 .include <bsd.port.mk>

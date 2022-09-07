@@ -23,6 +23,6 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/README.freebsd-* ${STAGEDIR}${DOCSDIR}	
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/README.freebsd-* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

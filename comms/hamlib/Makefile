@@ -39,7 +39,7 @@ post-patch:
 post-build:
 	${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' \
 		${WRKSRC}/bindings/Hamlib-pl.mk
- 
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Hamlib/Hamlib.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

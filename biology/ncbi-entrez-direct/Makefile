@@ -44,7 +44,7 @@ GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color \
 SHEBANG_FILES=	nquire edirect.pl word-at-a-time accn-at-a-time \
 		amino-acid-composition between-two-genes exclude-uid-lists \
 		filter-stop-words intersect-uid-lists phrase-search \
-		skip-if-file-exists theme-aliases test-edirect hgvs2spdi 
+		skip-if-file-exists theme-aliases test-edirect hgvs2spdi
 
 PSCRIPTS=	efetch efilter einfo elink epost esearch esummary nquire
 SCRIPTS=	accn-at-a-time amino-acid-composition archive-pubmed \

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	alberta-fem>0:math/alberta \
 		openmpi>0:net/openmpi \
 		psurface>0:math/psurface \
-		vc>0:devel/vc 
+		vc>0:devel/vc
 LIB_DEPENDS=	libdunecommon.so:math/dune-common \
 		libdunegeometry.so:math/dune-geometry \
 		libduneuggrid.so:math/dune-uggrid \

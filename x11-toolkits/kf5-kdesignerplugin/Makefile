@@ -13,6 +13,6 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		doctools_build ecm_build
 USE_QT=		concurrent core dbus designer gui linguisttools \
 		network webkit widgets xml \
-		buildtools_build qmake_build 
+		buildtools_build qmake_build
 
 .include <bsd.port.mk>

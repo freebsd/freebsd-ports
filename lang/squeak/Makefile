@@ -33,7 +33,7 @@ LIB_DEPENDS=	libaudio.so:audio/nas \
 USES=		gl gnome iconv pkgconfig xorg
 USE_GL=		gl
 USE_GNOME=	cairo pango
-USE_XORG=	ice sm x11 xext xrender 
+USE_XORG=	ice sm x11 xext xrender
 
 VM_VERSION=	${PORTVERSION}.${SVN_VERSION}
 SVN_VERSION=	2614

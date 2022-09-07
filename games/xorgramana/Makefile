@@ -9,7 +9,7 @@ DISTNAME=	XorGramana-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Logic word puzzle game set inside a series of mazes
 
-USES=		gl gmake sdl tar:bzip2 
+USES=		gl gmake sdl tar:bzip2
 USE_SDL=	sdl image
 USE_GL=		glu
 

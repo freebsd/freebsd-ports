@@ -176,7 +176,7 @@ post-install-TOOLS-on:
 	for F in ${TOOLS_TO_STRIP} ; do \
 	 ${STRIP_CMD} "${STAGEDIR}${PREFIX}/bin/$${F}" ; \
 	done
- 
+
 
 # ===============================================================================
 repository:	_mkrepos

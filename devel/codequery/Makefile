@@ -13,7 +13,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/querylib/README.txt
 LICENSE_FILE_MPL20=	${WRKSRC}/LICENSE.md
 
 USES=		cmake:insource compiler:c++11-lang ninja qt:5 sqlite
-		
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ruben2020
 

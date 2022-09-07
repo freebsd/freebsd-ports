@@ -59,7 +59,7 @@ BUREMOVE=	addr2line \
 		windmc \
 		windres
 
-OPTIONS_DEFINE=	RELRO STATIC 
+OPTIONS_DEFINE=	RELRO STATIC
 RELRO_DESC=	enable -z relro in ELF linker by default
 
 RELRO_CONFIGURE_ON=	--enable-relro

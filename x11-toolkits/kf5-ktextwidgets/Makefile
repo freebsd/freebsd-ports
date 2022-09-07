@@ -10,7 +10,7 @@ USE_KDE=	auth codecs completion config configwidgets \
 		coreaddons i18n service sonnet widgetsaddons \
 		ecm_build
 USE_QT=		concurrent core gui widgets xml \
-		buildtools_build qmake_build 
+		buildtools_build qmake_build
 
 OPTIONS_DEFINE=		AUDIO
 OPTIONS_DEFAULT=	AUDIO

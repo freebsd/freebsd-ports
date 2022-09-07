@@ -187,7 +187,7 @@ do-build:
 		${STRIP_CMD} $${bin} ; \
 	done
 .endif
-		
+
 do-install:
 	@${TAR} -cf - -C ${INTERIM_WORLD} ${PORTNAME}-${TI_VERSION} | ${TAR} -xf - -C ${STAGEDIR}${PREFIX}
 	@${ECHO_MSG} "Remove unneeded host files..."

@@ -69,7 +69,7 @@ OPTIONS_DEFINE_sparc64=	SUNFFB
 OPTIONS_DEFAULT_sparc64=SUNFFB
 
 AMDGPU_DESC=		Install amdgpu video driver
-ATI_DESC=		Install ati (radeon) video driver 
+ATI_DESC=		Install ati (radeon) video driver
 GEODE_DESC=		Install geode video driver
 INTEL_DESC=		Install intel video driver
 SUNFFB_DESC=		Install sunffb video driver

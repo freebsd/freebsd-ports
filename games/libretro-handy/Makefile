@@ -19,5 +19,5 @@ PLIST_FILES=	lib/libretro/handy_libretro.so
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
 	${INSTALL_LIB} ${WRKSRC}/handy_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
-	
+
 .include <bsd.port.mk>

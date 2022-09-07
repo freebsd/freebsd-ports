@@ -9,6 +9,6 @@ USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	config widgetsaddons \
 		ecm_build
 USE_QT=		core gui linguisttools widgets xml \
-		buildtools_build qmake_build 
+		buildtools_build qmake_build
 
 .include <bsd.port.mk>

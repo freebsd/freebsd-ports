@@ -25,7 +25,7 @@ INSTALLDIR=	${STAGEDIR}${PREFIX}/share/icons
 do-install:
 	@${MKDIR} ${INSTALLDIR}
 .for theme in ${THEMES}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${theme} ${INSTALLDIR})	
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${theme} ${INSTALLDIR})
 
 .if ${FAENZA_LIGHT} == ${theme} || ${FAENZA_DARK} == ${theme}
 	@cd ${INSTALLDIR}/${theme}/places/scalable && \

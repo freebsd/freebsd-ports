@@ -61,5 +61,5 @@ do-install:
 		${STAGEDIR}${ETCDIR}/sip-communicator.properties.sample
 	${INSTALL_DATA} ${WRKSRC}/jvb/target/${PORTNAME}${PKGNAMESUFFIX}-2.1-SNAPSHOT-jar-with-dependencies.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}${PKGNAMESUFFIX}.jar
- 	
+
 .include <bsd.port.mk>

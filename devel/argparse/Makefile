@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Argument Parser for Modern C++ 
+COMMENT=	Argument Parser for Modern C++
 
 LICENSE=	MIT
 

@@ -12,7 +12,7 @@ LIB_DEPENDS=	libxapian.so:databases/xapian-core \
 		libgmime-3.0.so:mail/gmime30 \
 		libgc-threaded.so:devel/boehm-gc-threaded \
 		libjson-glib-1.0.so:devel/json-glib
- 
+
 USES=		autoreconf compiler:c++14-lang gettext-runtime gmake gnome \
 		libtool makeinfo pkgconfig
 USE_GITHUB=	yes

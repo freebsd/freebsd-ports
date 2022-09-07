@@ -55,5 +55,5 @@ do-install:
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-1.1-SNAPSHOT-jar-with-dependencies.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
- 	
+
 .include <bsd.port.mk>

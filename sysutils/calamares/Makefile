@@ -19,5 +19,5 @@ USE_QT=		concurrent core dbus declarative gui network quickcontrols2 \
 		buildtools_build qmake_build
 
 CMAKE_OFF=	INSTALL_POLKIT
-		
+
 .include <bsd.port.mk>

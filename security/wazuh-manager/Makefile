@@ -103,7 +103,7 @@ WAZUHMOD750=	/ /logs/wazuh /logs/archives /logs/alerts /logs/firewall \
 		/wodles/aws /wodles/azure /wodles/docker /wodles/gcloud \
 		/wodles/gcloud/buckets /wodles/gcloud/pubsub /wodles/oscap \
 		/wodles/oscap/content /stats /integrations
-         
+
 WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/rootcheck \
 		/etc/rules /etc/shared/default /logs /queue/agent-groups \
 		/queue/alerts /queue/cluster /queue/fim /queue/fim/db \

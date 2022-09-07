@@ -25,7 +25,7 @@ post-patch:
 	@${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},' \
 		${WRKSRC}/CMakeLists.txt \
 		${WRKSRC}/default-rsync.lua
-	
+
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/lsyncd.conf.sample ${STAGEDIR}${PREFIX}/etc
 

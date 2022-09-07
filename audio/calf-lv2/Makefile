@@ -52,7 +52,7 @@ PORTDOCS=	*
 .if ${ARCH} == powerpc64le
 USES+=		compiler:gcc-c++11-lib
 .else
-USES+=		compiler:c++11-lang 
+USES+=		compiler:c++11-lang
 .endif
 
 .include <bsd.port.pre.mk>

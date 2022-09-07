@@ -13,7 +13,7 @@ USE_GL=		gl
 USE_KDE=	archive attica baloo completion config coreaddons crash ecm \
 		filemetadata guiaddons i18n iconthemes jobwidgets \
 		kdeclarative kio newstuff package service solid \
-		widgetsaddons windowsystem 
+		widgetsaddons windowsystem
 USE_QT=		concurrent core dbus declarative gui network opengl sql widgets xml \
 		buildtools_build qmake_build
 USE_XORG=	x11

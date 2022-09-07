@@ -15,6 +15,6 @@ USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
 		ecm_build
 USE_QT=		core dbus declarative gui network sensors widgets x11extras xml \
 		buildtools_build qmake_build testlib_build
-USE_XORG=	x11 xcb xext xi 
+USE_XORG=	x11 xcb xext xi
 
 .include <bsd.port.mk>

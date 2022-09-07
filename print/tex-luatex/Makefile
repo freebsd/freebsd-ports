@@ -96,6 +96,6 @@ post-install:
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -type d -empty | ${SORT} -r | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
 	${ECHO_CMD} "share/texmf-var/web2c/luatex/lollipop.log" >> ${TMPPLIST}
-	${ECHO_CMD} "share/texmf-var/web2c/luatex/lollipop.fmt" >> ${TMPPLIST} 
+	${ECHO_CMD} "share/texmf-var/web2c/luatex/lollipop.fmt" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
