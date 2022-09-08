@@ -5338,7 +5338,7 @@
     SUBDIR += py-stringcase
     SUBDIR += py-structlog
     SUBDIR += py-subprocess-tee
-#   SUBDIR += py-subversion
+    SUBDIR += py-subversion
     SUBDIR += py-sure
     SUBDIR += py-swagger-spec-validator
     SUBDIR += py-synr
