@@ -377,6 +377,7 @@
     SUBDIR += tilda
     SUBDIR += tilix
     SUBDIR += tint
+    SUBDIR += tofi
     SUBDIR += trayer
     SUBDIR += ulauncher
     SUBDIR += urxvt-font-size
