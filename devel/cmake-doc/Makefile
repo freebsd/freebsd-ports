@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
-DISTINFO_FILE=	${.CURDIR}/../cmake/distinfo
+DISTINFO_FILE=	${.CURDIR}/../cmake-core/distinfo
 
 NO_ARCH=	yes
 USES=		cmake qt:5

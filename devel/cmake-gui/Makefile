@@ -45,7 +45,7 @@ CXXFLAGS+=	-D__BSD_VISIBLE
 
 INSTALL_WRKSRC=	${WRKSRC}/Source/QtDialog
 
-DISTINFO_FILE=	${.CURDIR}/../cmake/distinfo
+DISTINFO_FILE=	${.CURDIR}/../cmake-core/distinfo
 
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \
