@@ -1,9 +1,9 @@
 PORTNAME=	feh
-PORTVERSION=	3.9
+PORTVERSION=	3.9.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://feh.finalrewind.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jrms@FreeBSD.org
 COMMENT=	Image viewer that utilizes Imlib2
 WWW=		https://feh.finalrewind.org/
 
