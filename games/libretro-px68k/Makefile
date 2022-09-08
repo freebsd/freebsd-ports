@@ -2,7 +2,7 @@ PORTNAME=	libretro-px68k
 PORTVERSION=	0.20220311
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SHARP X68000 libretro core
 WWW=		https://github.com/libretro/px68k-libretro
 

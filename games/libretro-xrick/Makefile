@@ -2,7 +2,7 @@ PORTNAME=	libretro-xrick
 PORTVERSION=	0.20220331
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libretro implementation of "Rick Dangerous"
 WWW=		https://github.com/libretro/xrick-libretro
 

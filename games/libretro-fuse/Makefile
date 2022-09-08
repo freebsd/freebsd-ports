@@ -2,7 +2,7 @@ PORTNAME=	libretro-fuse
 PORTVERSION=	0.20220213
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of the Fuse Unix Spectrum Emulator to libretro
 WWW=		https://github.com/libretro/fuse-libretro
 

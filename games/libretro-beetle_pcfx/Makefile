@@ -2,7 +2,7 @@ PORTNAME=	libretro-beetle_pcfx
 PORTVERSION=	0.20220307
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone port of Mednafen PCFX to libretro
 WWW=		https://github.com/libretro/beetle-gba-libretro
 

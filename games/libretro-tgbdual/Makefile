@@ -2,7 +2,7 @@ PORTNAME=	libretro-tgbdual
 PORTVERSION=	0.20210606
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source GB/GBC emulator with game link support
 WWW=		https://github.com/libretro/tgbdual-libretro
 

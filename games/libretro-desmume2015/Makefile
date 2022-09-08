@@ -3,7 +3,7 @@ PORTVERSION=	0.20220405
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of Desmume to libretro based on Desmume SVN circa 2015
 WWW=		https://github.com/libretro/desmume2015
 

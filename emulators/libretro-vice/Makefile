@@ -3,7 +3,7 @@ PORTVERSION=	0.20201218
 CATEGORIES=	emulators games
 PKGNAMESUFFIX=	-${FLAVOR}
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	${${FLAVOR}_COMMENT}
 WWW=		https://github.com/libretro/vice-libretro
 

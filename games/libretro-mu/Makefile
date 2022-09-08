@@ -2,7 +2,7 @@ PORTNAME=	libretro-mu
 PORTVERSION=	0.20220317
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PalmOS emulator to the libretro API
 WWW=		https://github.com/libretro/Mu
 

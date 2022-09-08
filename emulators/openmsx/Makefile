@@ -2,7 +2,7 @@ PORTNAME=	openmsx
 DISTVERSION=	18.0
 CATEGORIES=	emulators
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source MSX emulator
 WWW=		https://openmsx.org
 

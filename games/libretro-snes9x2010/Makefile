@@ -2,7 +2,7 @@ PORTNAME=	libretro-snes9x2010
 PORTVERSION=	0.20220328
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Snes9x - Portable Super Nintendo emulator (1.52)
 WWW=		https://github.com/libretro/snes9x2010
 

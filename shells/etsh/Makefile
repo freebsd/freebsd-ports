@@ -3,7 +3,7 @@ DISTVERSION=	5.4.0
 CATEGORIES=	shells
 MASTER_SITES=	https://etsh.nl/src/${PORTNAME}_${PORTVERSION}/
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced V6 Thompson Compatible Shell
 WWW=		https://etsh.nl/
 

@@ -2,7 +2,7 @@ PORTNAME=	libretro-mame2003
 PORTVERSION=	0.20220206
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MAME 0.78 for libretro
 WWW=		https://github.com/libretro/mame2003-libretro
 

@@ -3,7 +3,7 @@ PORTVERSION=	3.9
 CATEGORIES=	graphics
 MASTER_SITES=	https://feh.finalrewind.org/
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer that utilizes Imlib2
 WWW=		https://feh.finalrewind.org/
 

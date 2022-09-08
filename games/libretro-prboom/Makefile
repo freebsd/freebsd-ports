@@ -2,7 +2,7 @@ PORTNAME=	libretro-prboom
 PORTVERSION=	0.20220327
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of prboom to libretro
 WWW=		https://github.com/libretro/libretro-prboom
 

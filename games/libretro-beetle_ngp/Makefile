@@ -2,7 +2,7 @@ PORTNAME=	libretro-beetle_ngp
 PORTVERSION=	0.20220217
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone port of Mednafen NGP to the libretro API
 WWW=		https://github.com/libretro/beetle-ngp-libretro
 

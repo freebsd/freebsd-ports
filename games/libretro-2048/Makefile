@@ -2,7 +2,7 @@ PORTNAME=	libretro-2048
 PORTVERSION=	0.20220327
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of 2048 puzzle game to the libretro API
 WWW=		https://github.com/libretro/libretro-2048
 

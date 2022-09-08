@@ -2,7 +2,7 @@ PORTNAME=	libretro
 PORTVERSION=	0.3
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for libretro cores
 WWW=		https://www.libretro.com
 

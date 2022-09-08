@@ -2,7 +2,7 @@ PORTNAME=	libretro-beetle_lynx
 PORTVERSION=	0.20220327
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone port of Mednafen Lynx to libretro, itself a fork of Handy
 WWW=		https://github.com/libretro/beetle-lynx-libretro
 

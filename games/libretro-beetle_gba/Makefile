@@ -2,7 +2,7 @@ PORTNAME=	libretro-beetle_gba
 PORTVERSION=	0.20210918
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone port of Mednafen GBA to libretro
 WWW=		https://github.com/libretro/beetle-gba-libretro
 

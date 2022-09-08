@@ -2,7 +2,7 @@ PORTNAME=	libretro-fbneo
 PORTVERSION=	0.20220406
 CATEGORIES=	games
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Final Burn Alpha fork for libretro
 WWW=		https://github.com/libretro/FBNeo
 

@@ -3,7 +3,7 @@ PORTVERSION=	3.0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.com/menelkir/${PORTNAME}/-/archive/${PORTVERSION}/
 
-MAINTAINER=	dmenelkir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon for Logitech G15 Keyboards
 WWW=		https://gitlab.com/menelkir/g15daemon
 
