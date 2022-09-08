@@ -1,6 +1,6 @@
 PORTNAME=	ncbi-entrez-direct
 DISTVERSION=	14.9.20210423
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology perl5
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERSION}/
 DISTFILES=	edirect.tar.gz
