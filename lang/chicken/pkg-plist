@@ -1,0 +1,148 @@
+bin/chicken
+bin/chicken-do
+bin/chicken-install
+bin/chicken-profile
+bin/chicken-status
+bin/chicken-uninstall
+bin/csc
+bin/csi
+%%FEATHERS%%bin/feathers
+include/chicken/chicken-config.h
+include/chicken/chicken.h
+lib/chicken/%%BINARYVERSION%%/chicken.base.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.bitwise.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.blob.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.compiler.user-pass.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.condition.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.continuation.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.csi.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.errno.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.eval.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.file.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.file.posix.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.fixnum.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.flonum.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.foreign.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.format.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.gc.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.internal.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.io.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.irregex.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.keyword.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.load.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.locative.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.memory.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.memory.representation.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.pathname.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.platform.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.plist.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.port.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.pretty-print.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.process-context.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.process-context.posix.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.process.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.process.signal.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.random.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.read-syntax.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.repl.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.sort.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.string.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.syntax.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.tcp.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.time.import.so
+lib/chicken/%%BINARYVERSION%%/chicken.time.posix.import.so
+lib/chicken/%%BINARYVERSION%%/srfi-4.import.so
+lib/chicken/%%BINARYVERSION%%/types.db
+lib/libchicken.a
+lib/libchicken.so
+lib/libchicken.so.%%BINARYVERSION%%
+man/man1/chicken-do.1.gz
+man/man1/chicken-install.1.gz
+man/man1/chicken-profile.1.gz
+man/man1/chicken-status.1.gz
+man/man1/chicken-uninstall.1.gz
+man/man1/chicken.1.gz
+man/man1/csc.1.gz
+man/man1/csi.1.gz
+%%FEATHERS%%man/man1/feathers.1.gz
+%%FEATHERS%%%%DATADIR%%/feathers.tcl
+%%DATADIR%%/setup.defaults
+%%PORTDOCS%%%%DOCSDIR%%/DEPRECATED
+@comment %%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/manual/Accessing external objects.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Acknowledgements.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Bibliography.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Bugs and limitations.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/C interface.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Cross development.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Data representation.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Debugging.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Declarations.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Deployment.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Deviations from the standard.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Egg specification format.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Embedding.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Extension tools.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Extensions to the standard.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Foreign type specifiers.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Getting started.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Included modules.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Interface to external functions and variables.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken base).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken bitwise).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken blob).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken condition).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken continuation).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken csi).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken errno).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken eval).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken file posix).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken file).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken fixnum).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken flonum).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken foreign).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken format).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken gc).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken io).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken irregex).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken keyword).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken load).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken locative).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken memory representation).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken memory).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken module).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken pathname).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken platform).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken plist).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken port).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken pretty-print).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken process signal).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken process).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken process-context posix).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken process-context).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken random).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken read-syntax).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken repl).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken sort).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken string).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken syntax).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken tcp).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken time posix).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken time).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken type).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module r4rs.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module r5rs.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module scheme.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module srfi-4.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Modules.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/The User's Manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Types.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Units and linking model.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Using the compiler.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Using the interpreter.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
+@postexec %D/bin/chicken-install -update-db
+@postunexec rm -f %D/lib/chicken/%%BINARYVERSION%%/modules.db

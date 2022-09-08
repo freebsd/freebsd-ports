@@ -1,15 +1,12 @@
 PORTNAME=	chicken
 DISTVERSION=	5.3.0
+PORTEPOCH=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	https://code.call-cc.org/releases/${DISTVERSION}/
-PKGNAMESUFFIX=	5
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Scheme-to-C compiler
 WWW=		https://www.call-cc.org/
-
-DEPRECATED=	Please use lang/chicken instead
-EXPIRATION_DATE=2022-10-30
 
 LICENSE=	BSD3CLAUSE PD
 LICENSE_COMB=	multi
@@ -28,17 +25,15 @@ MAKE_ARGS=	C_COMPILER="${CC}" \
 		LIBRARIAN="${AR}" \
 		LINKER_OPTIONS="${LDFLAGS}" \
 		MANDIR=${PREFIX}/man \
-		PREFIX=${PREFIX} \
-		PROGRAM_SUFFIX="${PKGNAMESUFFIX}"
+		PREFIX=${PREFIX}
 # parallel build not supported
 MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 
-DATADIR=	${PREFIX}/share/chicken${PKGNAMESUFFIX}
-DOCSDIR=	${PREFIX}/share/doc/chicken${PKGNAMESUFFIX}
+DATADIR=	${PREFIX}/share/chicken
+DOCSDIR=	${PREFIX}/share/doc/chicken
 
-PLIST_SUB=	BINARYVERSION=${_CHICKEN_BINARYVERSION} \
-		SUFFIX=${PKGNAMESUFFIX}
+PLIST_SUB=	BINARYVERSION=${_CHICKEN_BINARYVERSION}
 
 OPTIONS_DEFINE=	DOCS FEATHERS
 OPTIONS_SUB=	yes
@@ -52,8 +47,8 @@ _CHICKEN_BINARYVERSION=	11
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/c* \
-		${STAGEDIR}${PREFIX}/lib/chicken${PKGNAMESUFFIX}/${_CHICKEN_BINARYVERSION}/*.so \
-		${STAGEDIR}${PREFIX}/lib/libchicken${PKGNAMESUFFIX}.so
+		${STAGEDIR}${PREFIX}/lib/chicken/${_CHICKEN_BINARYVERSION}/*.so \
+		${STAGEDIR}${PREFIX}/lib/libchicken.so
 
 post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
