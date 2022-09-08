@@ -1,0 +1,24 @@
+--- tools/meson.build.orig	2022-08-31 20:00:01 UTC
++++ tools/meson.build
+@@ -89,10 +89,10 @@ install_subdir('registers', install_dir : datadir)
+ 
+ install_subdir('registers', install_dir : datadir)
+ 
+-executable('intel_gpu_top', 'intel_gpu_top.c',
+-	   install : true,
+-	   install_rpath : bindir_rpathdir,
+-	   dependencies : [lib_igt_perf,lib_igt_device_scan,lib_igt_drm_fdinfo,math])
++#executable('intel_gpu_top', 'intel_gpu_top.c',
++#	   install : true,
++#	   install_rpath : bindir_rpathdir,
++#	   dependencies : [lib_igt_perf,lib_igt_device_scan,lib_igt_drm_fdinfo,math])
+ 
+ executable('amd_hdmi_compliance', 'amd_hdmi_compliance.c',
+ 	   dependencies : [tool_deps],
+@@ -111,5 +111,5 @@ endif
+ 			install : true)
+ endif
+ 
+-subdir('i915-perf')
++#subdir('i915-perf')
+ subdir('null_state_gen')
