@@ -445,8 +445,8 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/CardDAV.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/Classes/Contact.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/Classes/Property.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/Classes/Tag.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/Enumerations/PropertyType.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/Legacy.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/PdoAddressBook.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/Utils.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Providers/Domain.php
@@ -531,6 +531,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/Sabre/VObject/Property/VCard/LanguageTag.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/Sabre/VObject/Property/VCard/PhoneNumber.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/Sabre/VObject/Property/VCard/TimeStamp.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/Sabre/VObject/Property/XCrypto.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/Sabre/VObject/Reader.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/Sabre/VObject/Recur/EventIterator.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/Sabre/VObject/Recur/MaxInstancesExceededException.php
