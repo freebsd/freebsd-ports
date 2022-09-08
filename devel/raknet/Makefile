@@ -29,7 +29,9 @@ NO_WRKSUBDIR=	yes
 USES=		dos2unix cmake:insource zip
 
 USE_LDCONFIG=	yes
-USE_GCC=	yes
+# XXX Does not build with GCC 12
+# See: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=266190
+USE_GCC=	11
 
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 
