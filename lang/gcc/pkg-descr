@@ -2,6 +2,4 @@ GCC, the GNU Compiler Collection, supports a number of languages.  This
 port pulls in the default version of GCC in the Ports Collection, and
 defines symlinks called gcc, g++, and gfortran.
 
-WWW: https://gcc.gnu.org
-
 Gerald Pfeifer <gerald@FreeBSD.org>

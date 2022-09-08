@@ -6,7 +6,5 @@ software when listening the MIDI-file music.
 And, Support for auto-judge MIDI-file XG/GS/GM mode & auto add the
 Tone-Generator ReSet code when the ReSet code isn't exist in a MIDI-file.
 
-WWW: https://ja.osdn.net/projects/playumidi/
-
 - Koine Yuusuke (koinec)
   koinec@users.osdn.me

@@ -9,5 +9,4 @@ If you want to use the client from shell, you have to install
 the JDK first (${PORTSDIR}/java/jdk/).
 
 A commercial version for SSH-2 is available here:
-WWW: http://www.mindbright.se/mindterm/
 (This version is no longer supported)

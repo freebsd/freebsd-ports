@@ -12,6 +12,4 @@ News::Newsrc
 (which itself requires Set::IntSpan), MIME::Parser, MIME::Base64,
 IO::Stringy, and MailTools (distribution).
 
-WWW: http://ubh.sourceforge.net/
-
 [ This port is maintained by John Holland <john@zoner.org> ]

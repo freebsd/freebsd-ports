@@ -1,5 +1,3 @@
-WWW: http://code.google.com/p/python-wikitools/
-
 A Python package for interacting with a MediaWiki wiki using
 the MediaWiki API.
 Designed for MediaWiki version 1.15 and higher, should work

@@ -2,7 +2,5 @@ This is a port of ALD - the Assembly Language Debugger. It provides
 breakpoint debugging capabilities to those wishing to debug their
 assembly language programs. Currently, x86 platforms are supported.
 
-WWW: http://ald.sourceforge.net
-
 Patrick Alken
 alken (at) colorado.edu

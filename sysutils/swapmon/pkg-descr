@@ -4,6 +4,4 @@ size of SWAP_STEP percent of the current swapspace and activate it.  If
 less than SWAP_LOW percent of swapspace is in use it will deactivate a
 previously added swapspace file and remove it.
 
-WWW: http://www.nagilum.net/swapmon/
-
 freebsd@nagilum.org

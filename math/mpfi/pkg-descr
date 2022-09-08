@@ -13,5 +13,4 @@ operation or function, by MPFR.  Further advantages of using MPFR are
 its portability and compliance with the IEEE 754 standard for
 floating-point arithmetic.
 
-WWW: http://perso.ens-lyon.fr/nathalie.revol/software.html
 www: http://mpfi.gforge.inria.fr/

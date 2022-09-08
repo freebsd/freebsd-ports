@@ -3,7 +3,5 @@ includes such features as MouseKeys, AccessX, StickyKeys, BounceKeys, and
 SlowKeys. It also includes a perl/tk gui program to help with MouseKeys
 acceleration management.
 
-WWW: http://www.math.missouri.edu/~stephen/software/#xkbset
-
 Stephen Montgomery-Smith
 stephen@math.missouri.edu
