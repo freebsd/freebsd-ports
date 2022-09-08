@@ -1,7 +1,7 @@
 PORTNAME=	peruse
 DISTVERSION=	1.80
 CATEGORIES=	graphics kde
-MASTER_SITES=	KDE
+MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Comic book viewer
