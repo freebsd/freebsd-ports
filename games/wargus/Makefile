@@ -5,7 +5,8 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Warcraft 2 mod for the Stratagus game engine
-WWW=		https://stratagus.com/
+WWW=		https://stratagus.com/ \
+		https://github.com/Wargus/wargus
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

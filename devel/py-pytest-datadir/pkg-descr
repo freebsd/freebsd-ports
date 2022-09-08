@@ -1,3 +1,1 @@
 pytest plugin for manipulating test data directories and files.
-
-See also: https://github.com/gabrielcnr/pytest-datadir

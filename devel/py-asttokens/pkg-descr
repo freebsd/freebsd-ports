@@ -5,5 +5,3 @@ generated them.
 It makes it possible for tools that work with logical AST nodes to
 find the particular text that resulted in those nodes, for example
 for automated refactoring or highlighting.
-
-See also: https://github.com/gristlabs/asttokens

@@ -9,5 +9,3 @@ can decode a whole sound file and hand back a single pointer to the
 whole waveform. SDL_sound can also handle sample rate, audio format,
 and channel conversion on-the-fly and behind-the-scenes, if the
 programmer desires.
-
-See also: https://github.com/icculus/SDL_sound

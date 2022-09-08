@@ -4,7 +4,8 @@ CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Diff tool that compares files based on their syntax
-WWW=		https://difftastic.wilfred.me.uk/
+WWW=		https://difftastic.wilfred.me.uk/ \
+		https://github.com/Wilfred/difftastic
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

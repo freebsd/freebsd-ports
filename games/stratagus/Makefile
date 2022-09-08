@@ -5,7 +5,8 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
-WWW=		https://stratagus.com/stratagus.html
+WWW=		https://stratagus.com/stratagus.html \
+		https://github.com/Wargus/stratagus
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

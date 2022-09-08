@@ -4,7 +4,9 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical roguelike game
-WWW=		https://attnam.com/
+WWW=		https://attnam.com/ \
+		http://ivan.sourceforge.net/ \
+		https://github.com/Attnam/ivan
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
