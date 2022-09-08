@@ -1,6 +1,6 @@
 PORTNAME=	norm
 PORTVERSION=	1.5r6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.pf.itd.nrl.navy.mil/norm/archive/:norm \
 		https://waf.io/:waf
@@ -8,6 +8,10 @@ DISTNAME=	src-norm-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:norm \
 		waf-2.0.19:waf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	https://github.com/USNavalResearchLaboratory/protolib/commit/
+PATCHFILES=     ba9ca1ca7d73592268ebfd5a43271303e76f461e.patch:-p1
+PATCH_DIST_ARGS=	-d protolib
 
 MAINTAINER=	hd@oc.dk
 COMMENT=	NACK-Oriented Reliable Multicast (NORM)
