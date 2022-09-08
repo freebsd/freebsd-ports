@@ -4,6 +4,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	rihaz.jerrin@gmail.com
 COMMENT=	Enumerate DNS information and discover non-contiguous IP blocks
+WWW=		https://github.com/fwaeytens/dnsenum
 
 LICENSE=	GPLv2
 
