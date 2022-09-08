@@ -29,4 +29,3 @@ lib/postgresql/ltree_plpython3.so
 %%DATADIR%%/extension/jsonb_plpython3u.control
 %%DATADIR%%/extension/ltree_plpython3u--1.0.sql
 %%DATADIR%%/extension/ltree_plpython3u.control
-@dir lib/postgresql/pgxs/src/pl/plpython
