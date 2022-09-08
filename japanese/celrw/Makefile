@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.nurs.or.jp/~kurati/celrw/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cellular phone-number read/write tool (in Japan only)
+WWW=		http://www.nurs.or.jp/~kurati/celrw/
 
 USES=	tar:bzip2
 GNU_CONFIGURE=	yes

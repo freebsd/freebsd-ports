@@ -6,6 +6,7 @@ DISTNAME=	geonext.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive (dynamic) elementary Geometry Software
+WWW=		http://www.geonext.de
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt

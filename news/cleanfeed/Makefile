@@ -8,6 +8,7 @@ GH_TAGNAME=	dd177d4a3b6ea2e538da17bbb2a74772cea4a49a
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Spam filter for Usenet news servers
+WWW=		http://www.exit109.com/~jeremy/news/cleanfeed.html
 
 FLAVORS=	inn inncurrent
 FLAVOR?=	${FLAVORS:[1]}

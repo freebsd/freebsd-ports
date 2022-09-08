@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.mod6.net/destroy/ \
 
 MAINTAINER=	modsix@gmail.com
 COMMENT=	Securely destroy files on the hard disk
+WWW=		http://www.mod6.net
 
 LICENSE=	BSD4CLAUSE
 

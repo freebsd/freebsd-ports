@@ -5,6 +5,7 @@ CATEGORIES=		sysutils security
 
 MAINTAINER=		pen@lysator.liu.se
 COMMENT=		ACL manipulation tool
+WWW=			https://github.com/ptrrkssn/acltool
 
 LICENSE=		BSD3CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

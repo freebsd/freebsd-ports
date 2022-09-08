@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plotting wavefunctions (molecular orbitals) in 3D
+WWW=		http://zarbi.chem.yale.edu/products/psi88/index.shtml
 
 USES=		fortran tar:Z
 MAKE_ARGS=	BIN=${STAGEDIR}${PREFIX}/bin

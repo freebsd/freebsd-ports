@@ -7,6 +7,7 @@ DISTNAME=	gcc-${DIST_VERSION}
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	GNU Compiler Collection 11
+WWW=		https://gcc.gnu.org
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi

@@ -9,6 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ghostscript 9.x PostScript interpreter, X11 support
+WWW=		https://www.cs.wisc.edu/~ghost/doc/GPL/index.htm
 
 LICENSE=	GPLv3
 

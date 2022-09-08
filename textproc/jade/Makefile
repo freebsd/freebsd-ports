@@ -12,6 +12,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
+WWW=		http://www.jclark.com/jade/
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 

@@ -5,6 +5,7 @@ MASTER_SITES=	LOCAL/madpilot/xearth
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Set the root window to the image of earth
+WWW=		https://xearth.org/
 
 LICENSE=	Xearth
 LICENSE_NAME=	Xearth license

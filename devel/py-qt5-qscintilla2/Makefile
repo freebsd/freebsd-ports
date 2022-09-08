@@ -8,6 +8,7 @@ DISTNAME=	${QSCI2_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for QScintilla2 (PyQt5), QSci module
+WWW=		https://riverbankcomputing.com/software/pyqt
 
 LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 

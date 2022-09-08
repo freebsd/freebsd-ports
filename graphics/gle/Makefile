@@ -9,6 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}\
 
 MAINTAINER=	ports@dclg.ca
 COMMENT=	GL Tubing and Extrusion Library
+WWW=		https://linas.org/gle/
 
 USES=		gl libtool xorg
 USE_XORG=	ice xt xmu

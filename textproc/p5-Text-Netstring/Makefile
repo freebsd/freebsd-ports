@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	james@now.ie
 COMMENT=	Perl module to create and manipulate netstring encoded strings
+WWW=		https://metacpan.org/release/Text-Netstring
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

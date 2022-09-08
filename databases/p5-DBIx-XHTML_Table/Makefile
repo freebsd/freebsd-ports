@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create XHTML tables from SQL queries
+WWW=		https://metacpan.org/release/DBIx-XHTML_Table
 
 LICENSE=	ART20
 

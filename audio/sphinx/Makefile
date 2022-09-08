@@ -7,6 +7,7 @@ DISTNAME=	sphinx2-0.4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
+WWW=		http://cmusphinx.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

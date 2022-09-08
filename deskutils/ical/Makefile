@@ -6,6 +6,7 @@ MASTER_SITES=	https://launchpad.net/ical-tcl/+download/ \
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Calendar application
+WWW=		https://www.isi.edu/~johnh/SOFTWARE/ICAL/
 
 LICENSE=	GPLv2
 

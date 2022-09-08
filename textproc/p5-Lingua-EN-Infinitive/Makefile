@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Determine the infinitive form of a conjugated word
+WWW=		https://metacpan.org/release/Lingua-EN-Infinitive
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

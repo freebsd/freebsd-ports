@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kai@xs4all.nl
 COMMENT=	Perl extension to strip the high bit off of ISO-8859-1 text
+WWW=		https://metacpan.org/release/Text-Striphigh
 
 USES=		perl5
 USE_PERL5=	configure

@@ -6,6 +6,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Recent items extensions for the GNOME3 shell
+WWW=		https://github.com/bananenfisch/RecentItems
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

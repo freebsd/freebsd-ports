@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for base 85 numbers, as referenced by RFC 1924
+WWW=		https://metacpan.org/release/Math-Base85
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

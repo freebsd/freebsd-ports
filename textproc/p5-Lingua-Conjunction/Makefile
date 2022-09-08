@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert Perl lists into linguistic conjunctions
+WWW=		https://metacpan.org/release/Lingua-Conjunction
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

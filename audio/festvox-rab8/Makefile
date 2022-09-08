@@ -8,6 +8,7 @@ DIST_SUBDIR=	festival
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	British English male voice, sampled at 8 kHz, for Festival
+WWW=		https://www.cstr.ed.ac.uk/projects/festival/
 
 RUN_DEPENDS=	\
 ${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:audio/festlex-poslex \

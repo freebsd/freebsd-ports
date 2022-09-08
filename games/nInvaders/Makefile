@@ -6,6 +6,7 @@ DISTNAME=	ninvaders-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Space Invaders clone for ncurses
+WWW=		http://ninvaders.sourceforge.net/
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: alienBlock
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: alienBlock

@@ -8,6 +8,7 @@ DISTNAME=	sgb-2009-08-10
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	The Stanford GraphBase: A Platform for Combinatorial Computing
+WWW=		https://www-cs-faculty.stanford.edu/~knuth/sgb.html
 
 BUILD_DEPENDS=	ctangle:devel/cweb
 

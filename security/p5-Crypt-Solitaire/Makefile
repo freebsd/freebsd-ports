@@ -7,6 +7,7 @@ PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		skreuzer@FreeBSD.org
 COMMENT=	Solitaire encryption
+WWW=		https://metacpan.org/release/Crypt-Solitaire
 
 USES=		perl5
 USE_PERL5=	configure

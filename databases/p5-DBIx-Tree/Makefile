@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for generating a tree from a self-referential table
+WWW=		https://metacpan.org/release/DBIx-Tree
 
 LICENSE=	ART20
 

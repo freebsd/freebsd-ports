@@ -5,6 +5,7 @@ MASTER_SITES=		OSDN/${PORTNAME}
 
 MAINTAINER=		koinec@users.osdn.me
 COMMENT=		Standard MIDI format 0/1 player for FreeBSD USB-MIDI(umidi) device
+WWW=			https://ja.osdn.net/projects/playumidi/
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE

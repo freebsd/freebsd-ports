@@ -6,6 +6,7 @@ DISTNAME=	POpen4-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Cross platform API for managing child processes
+WWW=		https://github.com/shairontoledo/popen4
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual

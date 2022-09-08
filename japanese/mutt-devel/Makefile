@@ -38,6 +38,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	st@be.to
 COMMENT=	Text-based mail client (Japanised development version)
+WWW=		http://www.emaillab.org/mutt/
 
 LICENSE=	GPLv2
 

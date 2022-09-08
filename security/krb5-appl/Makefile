@@ -10,6 +10,7 @@ PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		MIT implementation of RFC 4120 network authentication clients
+WWW=			https://web.mit.edu/kerberos/
 
 BUILD_DEPENDS=		krb5-config:security/krb5
 

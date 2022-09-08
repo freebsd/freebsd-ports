@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extract delimited text sequences from strings
+WWW=		https://metacpan.org/release/Text-Balanced
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

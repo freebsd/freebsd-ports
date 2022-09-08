@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.jedsoft.org/releases/most/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pager (like less) which has support for windows and binary files
+WWW=		https://www.jedsoft.org/most/
 
 LICENSE=	GPLv2
 

@@ -8,6 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	damjan.jov@gmail.com
 COMMENT=	Microsoft Windows compatibility environment
+WWW=		https://www.winehq.org
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

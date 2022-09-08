@@ -7,6 +7,7 @@ DISTNAME=	GDialog-090400-25
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Project X addon to read Siemens Gigaset M740AV video recordings
+WWW=		https://sourceforge.net/projects/gdialog-x/
 
 LICENSE=	GPLv2
 

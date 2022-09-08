@@ -6,6 +6,7 @@ MASTER_SITES=	ftp://ftp.figlet.org/pub/figlet/program/unix/ \
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SysV banner-like program prints strings in large fancy ASCII art
+WWW=		http://www.figlet.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

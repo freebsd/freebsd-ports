@@ -5,6 +5,7 @@ MASTER_SITES=	https://gforge.inria.fr/frs/download.php/file/38111/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Multiple Precision Floating-point Interval library
+WWW=		https://perso.ens-lyon.fr/nathalie.revol/software.html
 
 LICENSE=	LGPL3 GPLv3
 LICENSE_COMB=	dual

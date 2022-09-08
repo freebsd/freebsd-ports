@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.dsl.gr.jp/~tf/pool/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WAEIJIRO English - Japanese Dictionary (EPWING V1 format)
+WWW=		https://www.dsl.gr.jp/~tf/
 
 # Converted from RESTRICTED
 LICENSE=	waeijiro

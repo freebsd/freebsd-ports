@@ -5,6 +5,7 @@ MASTER_SITES=	https://www.jwz.org/${PORTNAME}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Rather neat animated clock
+WWW=		https://www.jwz.org/xdaliclock/
 
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 

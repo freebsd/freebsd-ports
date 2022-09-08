@@ -8,6 +8,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert LaTeX to HTML
+WWW=		http://para.inria.fr/~maranget/hevea/
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 

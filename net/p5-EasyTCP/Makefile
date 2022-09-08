@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easily create TCP/IP clients and servers
+WWW=		https://metacpan.org/release/EasyTCP
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Crypt-RSA>=0:security/p5-Crypt-RSA

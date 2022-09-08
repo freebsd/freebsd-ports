@@ -6,6 +6,7 @@ MASTER_SITES=	GNU
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Unit conversion and calculation
+WWW=		https://www.gnu.org/software/units/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

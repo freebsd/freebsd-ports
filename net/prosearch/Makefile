@@ -6,6 +6,7 @@ MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${P
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful file search
+WWW=		https://sourceforge.net/projects/pro-search/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

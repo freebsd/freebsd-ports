@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Stick Things together with The Goo
+WWW=		https://metacpan.org/release/Goo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

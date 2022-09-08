@@ -9,6 +9,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
+WWW=		http://www.libpng.org/pub/png/libpng.html
 
 LICENSE=	Libpng
 LICENSE_GROUPS=	FSF GPL OSI
