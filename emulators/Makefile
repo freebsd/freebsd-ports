@@ -116,6 +116,7 @@
     SUBDIR += qemu-user-static
     SUBDIR += qemu-user-static-devel
     SUBDIR += qemu6
+    SUBDIR += qemu70
     SUBDIR += qmc2
     SUBDIR += quasi88
     SUBDIR += reicast
