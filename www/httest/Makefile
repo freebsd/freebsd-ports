@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpcre.so:devel/pcre \
 		libapr-1.so:devel/apr1
 
-USES=		iconv lua libtool bdb ssl
+USES=		iconv lua:-52 libtool bdb ssl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
