@@ -59,6 +59,10 @@ VIDEOREC_CMAKE_OFF=	-DNOVIDEOREC=1
 BUILD_DEPENDS+=	ghc:lang/ghc
 .endif
 
+post-extract:
+	# Remove included CMakeFile, which is incompatible with >= cmake-3.24
+	${RM} ${WRKSRC}/cmake_modules/CMakeSystemSpecificInformation.cmake
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/cmake_modules/*.cmake
 	@${REINPLACE_CMD} -e "s|'liblua'|'liblua-${LUA_VER}'|" ${WRKSRC}/hedgewars/LuaPas.pas
