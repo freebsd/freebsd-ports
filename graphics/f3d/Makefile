@@ -1,7 +1,6 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
-PORTREVISION=	2
+DISTVERSION=	1.3.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,26 +15,45 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libnetcdf.so:science/netcdf \
 		libvtkCommonMisc-9.1.so:math/vtk9
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gl tar:bzip2 xorg
+USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl xorg
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	f3d-app
 
-PLIST_FILES=	bin/f3d \
-		lib/libf3d.so \
-		share/applications/f3d.desktop \
-		share/bash-completion/completions/f3d \
-		share/fish/vendor_completions.d/f3d.fish \
-		share/icons/hicolor/32x32/apps/f3d.png \
-		share/icons/hicolor/48x48/apps/f3d.png \
-		share/icons/hicolor/64x64/apps/f3d.png \
-		share/icons/hicolor/scalable/apps/f3d.svg \
-		share/metainfo/io.github.f3d_app.f3d.metainfo.xml \
-		share/zsh/site-functions/_f3d
+OPTIONS_GROUP=			MODULES
+OPTIONS_GROUP_MODULES=		ALEMBIC ASSIMP EXODUS EXTERNAL_RENDERING OCCT RAYTRACING
+OPTIONS_DEFAULT=		ALEMBIC ASSIMP EXODUS
+
+MODULES_DESC=			Build modules:
+
+ALEMBIC_DESC=			Alembic module (ABC files)
+ALEMBIC_CMAKE_BOOL=		F3D_MODULE_ALEMBIC
+ALEMBIC_LIB_DEPENDS=		libAlembic.so:graphics/alembic
+
+ASSIMP_DESC=			Assimp module (FBX, OFF, DAE and DXF files)
+ASSIMP_CMAKE_BOOL=		F3D_MODULE_ASSIMP
+ASSIMP_LIB_DEPENDS=		libassimp.so:multimedia/assimp
+
+EXODUS_DESC=			ExodusII module
+EXODUS_CMAKE_BOOL=		F3D_MODULE_EXODUS
+
+EXTERNAL_RENDERING_DESC=	External rendering module
+EXTERNAL_RENDERING_CMAKE_BOOL=	F3D_MODULE_EXTERNAL_RENDERING
+EXTERNAL_RENDERING_BROKEN=	Requires VTK::RenderingExternal enabled in VTK
+
+OCCT_DESC=			OpenCASCADE module (STEP and IGES files)
+OCCT_CMAKE_BOOL=		F3D_MODULE_OCCT
+OCCT_LIB_DEPENDS=		libTKBRep.so:cad/opencascade
+OCCT_CMAKE_ON=			-DOpenCASCADE_DIR=${LOCALBASE}/lib/cmake
+OCCT_BROKEN=			configure fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=266280
+
+RAYTRACING_DESC=		Raytracing module
+RAYTRACING_CMAKE_BOOL=		F3D_MODULE_RAYTRACING
+RAYTRACING_BROKEN=		Requires VTK::RenderingRayTracing enabled in VTK
 
 post-install:
-	@cd ${STAGEDIR}${PREFIX} && ${RM} LICENSE README.md
+	@${RM} -r ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
