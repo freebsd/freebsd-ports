@@ -15,7 +15,7 @@ WWW=			https://web.mit.edu/kerberos/
 
 LICENSE=		MIT
 
-CONFLICTS=		heimdal krb5 krb5-*
+CONFLICTS=		heimdal krb5 krb5-11*
 CONFLICTS_BUILD=	boringssl
 
 IGNORE_SSL=		libressl libressl-devel
